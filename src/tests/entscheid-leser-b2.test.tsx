@@ -25,7 +25,7 @@
  * vorher verkleinert hatte (Lesespalte < 640 px, Reglement R1). Für GENAU
  * dieses Breitenpaar (Raster + `order`-Spalte in `EntscheidLeser.tsx`, den
  * ganzen Rail in `ErwaegungsRail.tsx`) trägt seither ein eigener, immer
- * vorhandener Container (`@5xl/leser`) die Schwelle — unbedingt, ohne
+ * vorhandener Container (`@[57rem]/leser`) die Schwelle — unbedingt, ohne
  * JS-Fallentscheidung. Die übrigen A-2-Sonden (Sticky-Struktur, `sm:`-Paar,
  * A-5, B-5, KANON) bleiben unverändert gültig.
  *
@@ -89,7 +89,7 @@ function quelle(pfad?: string): string {
  * Stellen (Raster + `order`-Spalte in `EntscheidLeser.tsx`, alle drei
  * `pk()`-Aufrufe in `ErwaegungsRail.tsx`) tragen die Schwelle jetzt
  * UNBEDINGT über einen eigenen, immer vorhandenen Container
- * (`@5xl/leser`) statt über `pk()`/`imPane` — Herleitung am Raster in
+ * (`@[57rem]/leser`) statt über `pk()`/`imPane` — Herleitung am Raster in
  * `EntscheidLeser.tsx`. Die Parität dieser Sonde gilt darum nur noch für
  * das verbleibende Paar `sm:` → `@xl/pane:`.
  */
@@ -148,10 +148,10 @@ describe('A-2 — der Leser misst im Pane die Pane, nicht das Fenster', () => {
     const q = quelle();
     // Das Zweispalten-Raster (Lesespalte/Rail) trägt seit Bündel D KEINE
     // Viewport-Form mehr (s. o., `PAAR`) — es rendert unbedingt über
-    // `@5xl/leser`, ohne JS-Fallentscheidung, darum auch prerendered
+    // `@[57rem]/leser`, ohne JS-Fallentscheidung, darum auch prerendered
     // identisch. Nur das verbleibende Definitionslisten-Paar bleibt
     // `pk()`-gesteuert (unverändert von Bündel D).
-    expect(q).toContain('@5xl/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
+    expect(q).toContain('@[57rem]/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
     expect(q).not.toContain('xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
     expect(q).toContain('sm:grid-cols-[7rem_minmax(0,1fr)]');
   });
@@ -166,11 +166,11 @@ describe('A-2 — der Leser misst im Pane die Pane, nicht das Fenster', () => {
 
   it('der Rail folgt DERSELBEN Schwelle wie sein Raster (sonst überlappen die Kinder)', () => {
     const rail = quelle('src/components/rechtsprechung/ErwaegungsRail.tsx');
-    // Bündel D (29.9.2026): dieselbe Schwelle, jetzt `@5xl/leser` statt
+    // Bündel D (29.9.2026): dieselbe Schwelle, jetzt `@[57rem]/leser` statt
     // `@5xl/pane` — der Rail liegt im selben `@container/leser` wie sein
     // Raster (`EntscheidLeser.tsx`), nicht mehr an `pk()`/`imPane` gebunden.
-    expect(rail).toContain('@5xl/leser:col-start-2');
-    expect(rail).toContain('@5xl/leser:sticky');
+    expect(rail).toContain('@[57rem]/leser:col-start-2');
+    expect(rail).toContain('@[57rem]/leser:sticky');
     expect(rail).not.toContain('@5xl/pane:');
     expect(rail).not.toMatch(/\bxl:(?:order-2|col-start-2|row-start-1|sticky|hidden|mt-0|block)\b/);
     // §17-Rückbau: die Boolean-Prop trug keine Aussage mehr, die nicht der

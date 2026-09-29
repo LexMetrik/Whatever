@@ -65,10 +65,20 @@ for (const { breite, leiste, spalten, clamp, umbruch } of FAELLE) {
 // Nachher: Spalte 640, Rail 400 (@1536 mit Leiste 356), Abstand 32 px.
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit): in EntscheidLeser.tsx die Spalten
 // auf `xl:grid-cols-[minmax(0,1fr)_15rem]` zurücksetzen → Einzug 80 px.
+// NACHTRAG Gegenprüfung PR #1155 (29.9.2026): dieselbe Rot-Probe gilt auch für
+// die Container-Schwelle `@[57rem]/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]`
+// (`EntscheidLeser.tsx`) — sie auf `@5xl/leser:` (64 rem statt 57 rem) zurücksetzen
+// lässt @1280 mit Seitenleiste 256 unten (Container 976 px, LESER_FAELLE) fälschlich
+// einspaltig werden.
 const LESER_FAELLE = [
   { breite: 1920, leiste: 0 },
   { breite: 1280, leiste: 0 },
   { breite: 1536, leiste: 460 },
+  // Bündel-D-Nachbesserung Gegenprüfung PR #1155 (29.9.2026): Container
+  // 1280 − 256 − 48 (px-5 sm:px-6-Polsterung) = 976 px = 61 rem — über der
+  // korrekten 57-rem-Schwelle, unter der alten 64-rem-Schwelle (Rot-Beweis:
+  // mit `@5xl/leser` blieb dieser Fall einspaltig, Rail-Abstand 0 statt 32 px).
+  { breite: 1280, leiste: 256 },
 ] as const;
 
 for (const { breite, leiste } of LESER_FAELLE) {
@@ -94,3 +104,29 @@ for (const { breite, leiste } of LESER_FAELLE) {
     expect(m.abstand, `Abstand Text → Rail ${m.abstand}px`).toBeCloseTo(2 * REM, 0);
   });
 }
+
+// ── Bündel-D-Nachbesserung Gegenprüfung PR #1155 (29.9.2026) · GEGENFALL ────
+// Bleibt der Container ECHT unter 57 rem (hier: @1280 mit Seitenleiste 460 px,
+// 1280 − 460 − 48 px Rahmen-Polsterung = 772 px = 48.25 rem), MUSS der Leser
+// einspaltig bleiben (Rail über dem Text, `order-1`) und der Klapp-Griff
+// sichtbar sein — sonst ist die Gliederung weder als Spalte noch als
+// aufklappbarer Block erreichbar (B6). ROT ZU BEKOMMEN: die Schwelle auf ein
+// `@[…]rem]`, das unter 48.25 rem liegt (z. B. `@[40rem]/leser`), setzen →
+// der Griff verschwindet (`hidden`), ohne dass die zweite Spalte existiert.
+test('/rechtsprechung/bge_152_V_122 @1280 mit Seitenleiste 460 px: Container 772 px bleibt unter der 57-rem-Schwelle -> einspaltig, Klapp-Griff sichtbar', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('lexmetrik-seitenleiste-eingeklappt.v2', '0');
+    localStorage.setItem('lexmetrik-seitenleiste-breite', '460');
+  });
+  await page.setViewportSize({ width: 1280, height: 1000 });
+  await page.goto('/rechtsprechung/bge_152_V_122');
+  await expect(page.locator('[data-erw-rail]')).toBeVisible();
+  await expect(page.locator('[data-erw-rail-griff]')).toBeVisible();
+  const m = await page.evaluate(() => {
+    const art = document.querySelector('main#inhalt article.rsp-anker')!.getBoundingClientRect();
+    const rail = document.querySelector('[data-erw-rail]')!.getBoundingClientRect();
+    return { railBottom: rail.bottom, artTop: art.top };
+  });
+  expect(m.railBottom, `Rail (bis ${m.railBottom}px) muss ÜBER dem Text (ab ${m.artTop}px) stehen — gestapelt, nicht daneben`)
+    .toBeLessThanOrEqual(m.artTop);
+});

@@ -978,6 +978,12 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // Logikverlust, den §1 der Optik vorzieht.
         // Der `@3xl`-Wert aus `Rechtsprechung.tsx` gilt dort für ZWEI GLEICHE
         // Kartenspalten; er ist das Vorbild für die Mechanik, nicht für die Zahl.
+        // NACHTRAG Gegenprüfung PR #1155 (29.9.2026): diese 64-rem-Herleitung
+        // gilt weiter für `@5xl/pane`, das die Rahmen-Polsterung der Pane
+        // MIT misst (`Pane.tsx`, unverändert an anderen Stellen im Repo). Der
+        // eigene Container unten (`@container/leser`, Bündel D) misst dagegen
+        // OHNE diese Polsterung — dort gilt die andere Schwelle, siehe Nachtrag
+        // beim Bündel-D-Absatz unten.
         // ── W2·31-BILDSCHIRMBREITE B7 (25.9.2026) · DER RAND GEHÖRT DEM RAIL ─
         // Vorher `minmax(0,1fr)_15rem`: die Lesespalte war 800 px breit, der
         // Text darin 640 px mittig — je 80 px tote Fläche, der Text 80 px
@@ -1008,8 +1014,19 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // die eigene Schwelle `@5xl/leser`, identische Zahl wie zuvor `@5xl/pane`
         // (dieselbe Herleitung, jetzt auf einen Rahmen angewendet, den es auch
         // im 1-Pane-Fall gibt). Gemessen: „Rot-Beweis" und Messreihe im PR.
+        // NACHTRAG Gegenprüfung PR #1155 (29.9.2026): «identische Zahl» war
+        // FALSCH — `@container/leser` misst die Inhaltsbreite OHNE die
+        // Rahmen-Polsterung, die `@5xl/pane` (über `Pane.tsx`) mitmisst;
+        // gemessen 48 px schmaler bei gleicher realer Breite (718→670 px,
+        // 958→910 px). 64 rem verlangte hier darum ~7 rem zu viel und liess
+        // die zweite Spalte bei @1280/Seitenleiste 256 (Container 976 px)
+        // fälschlich entfallen. Schwelle jetzt direkt aus dem Bedarf berechnet
+        // — `max-w-reading` 40 rem + Rail-Mindestbreite 15 rem + `gap-8` 2 rem
+        // = 57 rem, OHNE Polsterungs-Zuschlag (der Container hat hier keinen) —
+        // als freier Wert `@[57rem]/leser:` (Muster wie `@[96rem]/pane:` in
+        // `layout/seitenbreite.ts`), nicht als benannte Stufe.
         <div className="@container/leser">
-          <div className="flex flex-col gap-4 @5xl/leser:grid @5xl/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @5xl/leser:items-start @5xl/leser:gap-8">
+          <div className="flex flex-col gap-4 @[57rem]/leser:grid @[57rem]/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @[57rem]/leser:items-start @[57rem]/leser:gap-8">
           {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
               Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
               eigenen), die Treffer-Markierung ist abgeschaltet und jeder
@@ -1049,7 +1066,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           {/* Dieselbe Schwelle wie der Grid darüber — sonst stünde die
               Lesespalte in der Pane einspaltig unter einem zweispaltigen
               Raster (`order`/`col-start` müssen mit dem Grid schalten). */}
-          <div className="order-2 min-w-0 @5xl/leser:order-1 @5xl/leser:col-start-1 @5xl/leser:row-start-1">
+          <div className="order-2 min-w-0 @[57rem]/leser:order-1 @[57rem]/leser:col-start-1 @[57rem]/leser:row-start-1">
             {/* Regeste prominent im Leitentscheid-Auszug (zeigeRegeste). Beim amtlich
                 publizierten BGE «Regeste», sonst maschinelle «Zusammenfassung» — ehrlich
                 gekennzeichnet (Abnahme-Kritik: kein Etikettenschwindel).

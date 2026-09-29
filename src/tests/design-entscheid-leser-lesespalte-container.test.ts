@@ -30,13 +30,13 @@ describe('W2·31 Bündel D · Entscheid-Leser: Lesespalte hängt an der eigenen 
   it('das Zweispalten-Grid zeichnet über @container/leser, nicht mehr über pk()/xl:', () => {
     expect(inhalt).toContain('<div className="@container/leser">');
     expect(inhalt).toContain(
-      'className="flex flex-col gap-4 @5xl/leser:grid @5xl/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @5xl/leser:items-start @5xl/leser:gap-8"',
+      'className="flex flex-col gap-4 @[57rem]/leser:grid @[57rem]/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @[57rem]/leser:items-start @[57rem]/leser:gap-8"',
     );
   });
 
-  it('die order/col-start-Spalte darunter schaltet an derselben Schwelle @5xl/leser', () => {
+  it('die order/col-start-Spalte darunter schaltet an derselben Schwelle @[57rem]/leser', () => {
     expect(inhalt).toContain(
-      'className="order-2 min-w-0 @5xl/leser:order-1 @5xl/leser:col-start-1 @5xl/leser:row-start-1"',
+      'className="order-2 min-w-0 @[57rem]/leser:order-1 @[57rem]/leser:col-start-1 @[57rem]/leser:row-start-1"',
     );
   });
 

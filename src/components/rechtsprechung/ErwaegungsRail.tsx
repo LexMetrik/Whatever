@@ -79,6 +79,13 @@ export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl
 // noch als aufklappbarer Block erreichbar (schlimmer als der Ausgangsbefund).
 // Der Rail liest die Lage darum jetzt aus DEMSELBEN `@container/leser` wie
 // sein Raster — `usePaneKlasse`/`pk()` entfallen hier ersatzlos.
+//
+// NACHTRAG Gegenprüfung PR #1155 (29.9.2026): die Schwelle oben («64 rem»,
+// `@5xl/leser`) war zu hoch — `@container/leser` misst ohne Rahmen-Polsterung,
+// siehe Nachtrag in `EntscheidLeser.tsx` bei derselben Bündel-D-Stelle. Rail
+// UND Raster lesen jetzt `@[57rem]/leser:` (40 rem Lesemass + 15 rem
+// Rail-Mindestbreite + 2 rem `gap-8`) — weiterhin DIESELBE Schwelle für
+// beide, sonst verschwände der Klapp-Griff, ohne dass die Spalte existiert.
 export const ErwaegungsRail = memo(function ErwaegungsRail({
   gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter, sucheAktiv,
   mindestHinweis = false,
@@ -132,7 +139,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   return (
     <aside
       data-erw-rail
-      className="order-1 min-w-0 @5xl/leser:order-2 @5xl/leser:col-start-2 @5xl/leser:row-start-1 @5xl/leser:sticky"
+      className="order-1 min-w-0 @[57rem]/leser:order-2 @[57rem]/leser:col-start-2 @[57rem]/leser:row-start-1 @[57rem]/leser:sticky"
       // `top` gilt nur, WENN die Spalte klebt — sonst ist es ein wirkungsloser
       // Wert. Es steht darum unbedingt da: eine zweite Weiche für dieselbe
       // Aussage wäre genau die Doppelung, die A-2 hier auflöst.
@@ -144,7 +151,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
       <button type="button" data-erw-rail-griff
         onClick={() => setOffen((v) => !v)}
         aria-expanded={offen}
-        className="lc-chip w-full justify-between @5xl/leser:hidden">
+        className="lc-chip w-full justify-between @[57rem]/leser:hidden">
         {/* Wortwahl bewusst «Gliederung» statt «Erwägungen»: der Reader trägt
             bereits einen Abschnitts-Chip «Erwägungen» in der Sprungleiste; zwei
             gleichnamige Bedienelemente auf einer Seite sind für Screenreader und
@@ -153,7 +160,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
         <span aria-hidden className="text-base leading-none">{offen ? '▾' : '▸'}</span>
       </button>
 
-      <div className={`${offen ? 'mt-2 block' : 'hidden'} @5xl/leser:mt-0 @5xl/leser:block space-y-3`}>
+      <div className={`${offen ? 'mt-2 block' : 'hidden'} @[57rem]/leser:mt-0 @[57rem]/leser:block space-y-3`}>
         {/* «Im Entscheid suchen» — Pendant zur In-Gesetz-Suche (A35). Das Feld
             markiert im Lesetext (Highlight-API, kein DOM-Eingriff) und listet
             hier die Erwägungen mit Treffern. */}
