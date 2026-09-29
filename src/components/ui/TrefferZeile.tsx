@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { isValidElement, type ReactNode } from 'react';
 
 // ─── TrefferZeile: EINE Treffer-/Werkzeug-Zeile (C-4, 31.8.2026) ─────────────
 //
@@ -34,6 +34,19 @@ import type { ReactNode } from 'react';
  *  seine eigene Optik (Karte/Streifen) DARÜBER — der Gruppen-Name muss der
  *  gleiche sein, sonst greift der Titel-Hover nicht. */
 export const TREFFER_ZEILE_RAHMEN = 'group/treffer flex items-center gap-3 min-w-0';
+
+/** Reiner Wortlaut eines ReactNode — für `title` an der gekappten
+ *  Untertitel-Zeile. `sansAmp()` (typografie.tsx) macht aus einem String mit
+ *  «&» ein Array `[Teil, <span>&amp;</span>, Teil]`, kein reiner String mehr;
+ *  ohne diese Auflösung bliebe `title` an genau diesen Zeilen leer (Rot-Probe
+ *  Posten 2026-09-26: 6 von 23 Katalog-Zeilen auf /rechner). */
+function textVon(node: ReactNode): string {
+  if (node === null || node === undefined || typeof node === 'boolean') return '';
+  if (typeof node === 'string' || typeof node === 'number') return String(node);
+  if (Array.isArray(node)) return node.map(textVon).join('');
+  if (isValidElement<{ children?: ReactNode }>(node)) return textVon(node.props.children);
+  return '';
+}
 
 export function TrefferZeile({ titel, untertitel, meta, marke, pfeil = '→', streifen }: {
   titel: ReactNode;
@@ -72,7 +85,20 @@ export function TrefferZeile({ titel, untertitel, meta, marke, pfeil = '→', st
           klickbar ? ' underline-offset-2 group-hover/treffer:underline' : ''}${
           streifen ? ' max-sm:line-clamp-2 sm:truncate' : ''}`}>{titel}</span>
         {untertitel !== undefined && untertitel !== null && untertitel !== '' && (
-          <span className="block lc-wortumbruch line-clamp-2 text-body-s leading-snug text-ink-600">{untertitel}</span>
+          // `block` UND `line-clamp-2` gemeinsam auf einer Zeile brachen die Kappung:
+          // Tailwind reiht `.line-clamp-2 { display: -webkit-box }` VOR `.block
+          // { display: block }` (beide einfache Klassen, gleiche Spezifität) — die
+          // spätere Regel gewann die Kaskade und stellte `display: block` wieder
+          // her, `-webkit-line-clamp` griff ohne den `-webkit-box`-Kontext nicht
+          // mehr (Katalog-Zeile lief bis 7 Zeilen; Posten 2026-09-26, gemessen
+          // @1920: `getComputedStyle(...).display` war `block` statt `-webkit-box`).
+          // `line-clamp-2` liefert den Block-Kontext selbst — `block` ist
+          // überflüssig und entfällt. `title` (via `textVon`, s. o.) hält den
+          // vollen Wortlaut zugänglich, wenn er über zwei Zeilen hinausginge —
+          // Ergänzung, nie Ersatz (S3 «KEIN title-ERSATZ», bestehendes Muster
+          // u. a. in LeserTrefferListe.tsx).
+          <span className="lc-wortumbruch line-clamp-2 text-body-s leading-snug text-ink-600"
+            title={textVon(untertitel)}>{untertitel}</span>
         )}
         {meta && (
           <span className="mt-1 flex flex-wrap items-center gap-x-2 text-micro text-ink-500">{meta}</span>

@@ -4889,7 +4889,37 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   .kt-werkbank > .kt-einstieg {
     grid-column: 1; grid-row: 1 / span 2; align-self: start;
     border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
+    /* Posten 2026-09-26 (W2·31 B): ab hier steht der Einstieg als Spalte —
+       ohne `sticky` lief die linke Spalte beim Scrollen leer mit, ab dem
+       ersten Bildschirm. Der `top`-Offset (`--app-kopf-h` + 1.5rem Luft)
+       übernimmt `pages/Suche.tsx:158` (`data-suche-filter`, ebenfalls
+       klebende Randspalte) — `max-height`/`overflow-y` sind NEU, dort gibt es
+       kein Gegenstück: `Suche.tsx` deckelt nicht, weil seine Facettenliste
+       kurz und ungeklappt bleibt. Hier kann die aufgeklappte Rechtsgebiet-
+       Liste den Rest-Viewport sprengen (die Klapp-Zeilen in
+       `ZweiachsigerEinstieg.tsx` bleiben zu, bis man selbst öffnet) — darum
+       eigene Scrollfläche mit demselben Luft-Mass unten als Deckel. */
+    position: sticky;
+    top: calc(var(--app-kopf-h) + 1.5rem);
+    max-height: calc(100dvh - var(--app-kopf-h) - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
+  /* Nachbesserung Gegenprüfung PR #1153 (29.9.2026), dieselbe Fehlerklasse wie
+     Ä67 (~Z. 2446, `e2e/leser-v3-fokusring-suchfeld.e2e.ts`): `overflow-y: auto`
+     oben lässt `overflow-x` (Spezifikation) nicht mehr auf `visible` stehen,
+     sondern berechnet es implizit zu `auto` — `.kt-einstieg` ist damit ein
+     Clip-Behälter wie jeder andere Scroller. `summary`/`a` in der Leiste haben
+     kein horizontales Innenmass (`padding-left: 0`) und stehen flush an der
+     linken Innenkante; der App-weite `:focus-visible`-Ring (2 px + 2 px Offset,
+     ~Z. 1350) ragt 4 px über die Elementkante hinaus und wurde links
+     abgeschnitten (gemessen @1280, Tab-Fokus auf «Zivilprozess (ZPO) &
+     Bundesgericht»: Ring 4 px ausserhalb des Scrollers). FIX im selben Muster
+     wie Ä67: den Ring INNERHALB der Border-Box zeichnen, statt den Behälter zu
+     ändern (`overflow-x: hidden` bräche horizontales Scrollen bei sehr langen
+     Titeln) — dann kann ihn kein Scroller mehr beschneiden, an keiner Kante.
+     Wächter: `e2e/katalog-themenleiste-fokusring.e2e.ts`, rot gezeigt. */
+  .kt-einstieg :focus-visible { outline-offset: -2px; }
   .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
   /* W2·31-BILDSCHIRMBREITE B10 (26.9.2026): neben der Themenleiste GENAU zwei
      Spalten, sobald das Raster 2 × 350 + 26 = 726 px fasst (350 = die Zeile
