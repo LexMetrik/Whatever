@@ -6,4 +6,4 @@ anlass: Session-Notizen 2026-09-26
 
 im Breitenwächter als Tabelle ausgenommen; prüfen/deckeln (B1c)
 
-**Erledigt 2026-09-29:** PR #1156
+Wiedereröffnet 30.9.2026: Deckel erzeugt Mehr-Kappung (PR #1156, Gegenprüfung) — braucht Entscheid Titel-Kappung vs. Lesemass.
