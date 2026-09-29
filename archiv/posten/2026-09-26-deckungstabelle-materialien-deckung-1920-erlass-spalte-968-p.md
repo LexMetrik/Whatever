@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 Zeilen-Hervorhebung/Leitlinie oder Abstand begrenzen (Prüfer B2, niedrig)
+
+**Erledigt 2026-09-29:** PR #1156

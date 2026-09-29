@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 Blickfeld-Frage wie Deckungstabelle (Prüfer B4)
+
+**Erledigt 2026-09-29:** PR #1156
