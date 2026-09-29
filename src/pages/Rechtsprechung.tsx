@@ -197,7 +197,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
             beiden Raster getrennt.
             W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026): der frühere `pk()`-
             Umschalter (Viewport `xl:` ausserhalb, `@3xl/pane` NUR im
-            Split-View) massporte ausserhalb einer Pane weiterhin am Fenster —
+            Split-View) mass ausserhalb einer Pane weiterhin am Fenster —
             mit offener Seitenleiste (Sidebar.tsx, kein Split-View) blieb
             `imPane` false, das Raster bekam also bei @1280/1440 zwei Spalten,
             obwohl die tatsächliche Breite dafür nicht reichte (Karten < 33 rem,

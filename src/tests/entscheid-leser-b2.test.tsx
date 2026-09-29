@@ -17,6 +17,18 @@
  * schärfste ist die A-2-Paritätssonde: sie war vor dem Bau an 14 von 14
  * Viewport-Klassen rot, weil es KEINE einzige Container-Entsprechung gab.
  *
+ * NACHZUG (W2·31-BILDSCHIRMBREITE Bündel D, 29.9.2026, deklarierte Änderung):
+ * `pk()`/`imPane` beantwortete «bin ich in einer Split-View-Pane?», nicht
+ * «wie breit ist meine Spalte wirklich?» — mit offener APP-Seitenleiste (kein
+ * Split-View) blieb `imPane` false, und das Zweispalten-Raster (Lesespalte/
+ * Rail) mass weiter am Fenster, obwohl die Seitenleiste den Platz schon
+ * vorher verkleinert hatte (Lesespalte < 640 px, Reglement R1). Für GENAU
+ * dieses Breitenpaar (Raster + `order`-Spalte in `EntscheidLeser.tsx`, den
+ * ganzen Rail in `ErwaegungsRail.tsx`) trägt seither ein eigener, immer
+ * vorhandener Container (`@5xl/leser`) die Schwelle — unbedingt, ohne
+ * JS-Fallentscheidung. Die übrigen A-2-Sonden (Sticky-Struktur, `sm:`-Paar,
+ * A-5, B-5, KANON) bleiben unverändert gültig.
+ *
  * Reine Darstellung (§3).
  */
 import { describe, it, expect } from 'vitest';
@@ -67,11 +79,21 @@ function quelle(pfad?: string): string {
  * `sm:` (40 rem Fenster) → `@xl/pane:` (36 rem Container) ist die Abbildung,
  * die `ui/SeitenTitel` (A-1) im Haus gesetzt hat; die 4-rem-Differenz ist grob
  * die App-Chrome, die die Fensterzahl mitträgt, die Containerzahl aber nicht.
- * `xl:` → `@5xl/pane:` ist EIGENS gerechnet (Herleitung am Zweispalten-Raster
- * in `EntscheidLeser.tsx`): erst ab 64 rem Pane behält die Lesespalte neben dem
- * 15-rem-Rail ihre vollen 40 rem und damit die 60–75-Zeichen-Regel (R1).
+ *
+ * W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026, deklarierte Änderung): das Paar
+ * `xl:` → `@5xl/pane:` ist ERSATZLOS ENTFALLEN — das Zweispalten-Raster
+ * (Lesespalte/Rail) und der Erwägungs-Rail selbst massen ausserhalb einer
+ * Pane weiterhin am VIEWPORT, obwohl eine offene Seitenleiste den
+ * verfügbaren Platz vorher verkleinert (Rot-Beweis: Lesespalte < 640 px
+ * @1280 mit gezogener Seitenleiste, Reglement R1 verletzt). Die drei
+ * Stellen (Raster + `order`-Spalte in `EntscheidLeser.tsx`, alle drei
+ * `pk()`-Aufrufe in `ErwaegungsRail.tsx`) tragen die Schwelle jetzt
+ * UNBEDINGT über einen eigenen, immer vorhandenen Container
+ * (`@5xl/leser`) statt über `pk()`/`imPane` — Herleitung am Raster in
+ * `EntscheidLeser.tsx`. Die Parität dieser Sonde gilt darum nur noch für
+ * das verbleibende Paar `sm:` → `@xl/pane:`.
  */
-const PAAR: Record<string, string> = { 'sm:': '@xl/pane:', 'xl:': '@5xl/pane:' };
+const PAAR: Record<string, string> = { 'sm:': '@xl/pane:' };
 
 /**
  * DEKLARIERTE AUSNAHMEN — Viewport-Klassen ohne Container-Gegenstück, mit
@@ -114,16 +136,23 @@ describe('A-2 — der Leser misst im Pane die Pane, nicht das Fenster', () => {
 
   it('POSITIV-SONDE: die Paritätssonde sieht überhaupt Klassen (sonst prüfte sie nichts)', () => {
     // Ohne diese Zeile wäre die Sonde oben auf einer leeren Menge trivial grün —
-    // dieselbe Falle wie ein Tor ohne Rot-Beweis (§6.7).
-    expect(viewportKlassen(quelle('src/pages/EntscheidLeser.tsx')).length).toBeGreaterThan(8);
+    // dieselbe Falle wie ein Tor ohne Rot-Beweis (§6.7). Schwelle seit Bündel D
+    // (29.9.2026) von 8 auf 4 gesenkt: die sechs `xl:`-Klassen des Zweispalten-
+    // Rasters sind ersatzlos entfallen (s. o.), es bleiben 6 `sm:`-Klassen übrig
+    // — deklarierte Änderung, keine stillschweigende Verwässerung der Sonde.
+    expect(viewportKlassen(quelle('src/pages/EntscheidLeser.tsx')).length).toBeGreaterThan(4);
     expect(viewportKlassen(quelle('src/components/rechtsprechung/LesemodusOverlay.tsx')).length).toBeGreaterThan(1);
   });
 
-  it('der Prerender-Pfad bleibt: die Viewport-Klassen stehen NEBEN den Container-Klassen', () => {
+  it('der Prerender-Pfad bleibt: die verbliebene Viewport-Klasse steht NEBEN ihrer Container-Klasse', () => {
     const q = quelle();
-    // Ausserhalb eines Panes liefert `pk` weiterhin die Viewport-Kette — die
-    // 5'093 prerenderten Entscheid-Seiten ändern sich dadurch nicht.
-    expect(q).toContain('xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
+    // Das Zweispalten-Raster (Lesespalte/Rail) trägt seit Bündel D KEINE
+    // Viewport-Form mehr (s. o., `PAAR`) — es rendert unbedingt über
+    // `@5xl/leser`, ohne JS-Fallentscheidung, darum auch prerendered
+    // identisch. Nur das verbleibende Definitionslisten-Paar bleibt
+    // `pk()`-gesteuert (unverändert von Bündel D).
+    expect(q).toContain('@5xl/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
+    expect(q).not.toContain('xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
     expect(q).toContain('sm:grid-cols-[7rem_minmax(0,1fr)]');
   });
 
@@ -137,8 +166,13 @@ describe('A-2 — der Leser misst im Pane die Pane, nicht das Fenster', () => {
 
   it('der Rail folgt DERSELBEN Schwelle wie sein Raster (sonst überlappen die Kinder)', () => {
     const rail = quelle('src/components/rechtsprechung/ErwaegungsRail.tsx');
-    expect(rail).toContain('@5xl/pane:col-start-2');
-    expect(rail).toContain('@5xl/pane:sticky');
+    // Bündel D (29.9.2026): dieselbe Schwelle, jetzt `@5xl/leser` statt
+    // `@5xl/pane` — der Rail liegt im selben `@container/leser` wie sein
+    // Raster (`EntscheidLeser.tsx`), nicht mehr an `pk()`/`imPane` gebunden.
+    expect(rail).toContain('@5xl/leser:col-start-2');
+    expect(rail).toContain('@5xl/leser:sticky');
+    expect(rail).not.toContain('@5xl/pane:');
+    expect(rail).not.toMatch(/\bxl:(?:order-2|col-start-2|row-start-1|sticky|hidden|mt-0|block)\b/);
     // §17-Rückbau: die Boolean-Prop trug keine Aussage mehr, die nicht der
     // Kontext schon trägt — sie ist ersatzlos entfallen.
     expect(rail).not.toMatch(/imPane\?: boolean/);
