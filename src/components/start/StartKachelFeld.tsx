@@ -52,6 +52,11 @@ export interface KachelDef {
   einheit: string;
   nutzen: string;
   teile?: string;
+  /** W2·31 G (26.9.2026): `teile` nur ab `2xl` (1536 px) zeigen — für Kacheln,
+   *  deren Teile-Zeile NUR den Leerraum füllt, der erst ab `weit` entsteht
+   *  (Kachel 348→508 px, Höhe bleibt 280 px fest, U13-Deckel). Kacheln unter
+   *  1536 px bleiben so unverändert (Bauregel des Bündels). */
+  teileAb2xl?: boolean;
 }
 
 const BLATT_ID = 'lm-start-blatt';
@@ -319,7 +324,9 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
 function gesicht(k: KachelDef) {
   return {
     reg: k.reg, titel: <span className="break-words">{k.titel}</span>, zahl: k.zahl, einheit: k.einheit, nutzen: k.nutzen,
-    extra: k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>,
+    extra: k.teile && (
+      <span className={`num text-body-s leading-snug text-ink-700 ${k.teileAb2xl ? 'hidden 2xl:block' : ''}`}>{k.teile}</span>
+    ),
   };
 }
 

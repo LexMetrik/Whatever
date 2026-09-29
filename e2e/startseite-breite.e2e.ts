@@ -91,6 +91,32 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     });
   }
 
+  // W2·31 G (26.9.2026, Posten «Kachelinneres 508×280 recht leer, v. a.
+  // Rechtsprechung»): die Rechtsprechungs-Kachel zeigt ihre Teile-Zeile
+  // («Leitentscheide») erst ab 1536 px — darunter bleibt die Kachel
+  // UNVERÄNDERT (Bauregel des Bündels): gleiche Höhe (280 px), Zeile
+  // unsichtbar. ROT ZU BEKOMMEN: `teileAb2xl` an der Kachel streichen
+  // (Zeile zeigt sich schon @1440) oder `hidden`/`2xl:block` in
+  // `StartKachelFeld.tsx`s `gesicht()` entfernen.
+  for (const [breite, sichtbar] of [[1440, false], [1536, true], [1920, true]] as const) {
+    test(`(1b) @${breite}: Rechtsprechung-Teile «Leitentscheide» ${sichtbar ? 'sichtbar' : 'verborgen'}, Zelle 280 px`, async ({ page }) => {
+      await start(page, breite, 1000);
+      const m = await page.evaluate(() => {
+        const zelle = document.querySelectorAll('.lc-start-zelle')[1]!;
+        const span = [...zelle.querySelectorAll('span')].find((s) => (s.textContent ?? '').includes('Leitentscheide'));
+        const r = span?.getBoundingClientRect();
+        return {
+          zelleH: Math.round(zelle.getBoundingClientRect().height),
+          teileImDom: !!span,
+          teileSichtbar: !!r && r.width > 0 && r.height > 0,
+        };
+      });
+      expect(m.zelleH, JSON.stringify(m)).toBe(280);
+      expect(m.teileImDom, JSON.stringify(m)).toBe(true);
+      expect(m.teileSichtbar, JSON.stringify(m)).toBe(sichtbar);
+    });
+  }
+
   for (const { breite, leiste, spalten } of [
     { breite: 1920, leiste: 0, spalten: 3 },
     { breite: 1440, leiste: 0, spalten: 2 },
