@@ -16,21 +16,54 @@ import { useEffect, useState } from 'react';
  *  Nicht-Komponenten-Export bricht Fast Refresh (eslint
  *  `react-refresh/only-export-components`, Tor `npm run lint`).
  *
- *  §3: reine Darstellung — der Haken weiss nicht, WAS da sichtbar wird. */
+ *  W2·31-BILDSCHIRMBREITE-Folgeposten (29.9.2026): Die −45-%-Boden-Marge geht
+ *  von einem GESTAPELTEN Ziel aus, das erst nach spürbarem Scrollen brauchbar
+ *  im Bild steht. Seit B3 (#1146) steht das Ergebnis auf breiten Rechnern
+ *  NEBEN der Eingabe (`.lc-rechner-spalten`, eigene Spalte, deutlich schmaler
+ *  als das Fenster) — auf derselben Höhe wie die Eingabe, kein Scrollen nötig.
+ *  Gemessen @1920 auf `/rechner/verjaehrung`: Ergebnisplatz-Oberkante 541 px
+ *  (Fensterhöhe 900, oberste 55 % = 495 px) — die Marke blieb wegen der 45 px
+ *  Differenz sichtbar, obwohl das Ergebnis längst im Bild stand. Ein Ziel gilt
+ *  darum als Spalte, wenn es schmaler als 60 % der Fensterbreite ist; dort
+ *  genügt jede Überschneidung mit dem Fenster («beliebig»). Gestapelt (volle
+ *  Breite) bleibt die bisherige Regel unverändert: erst die oberen 55 % zählen
+ *  als «im Bild» («oben»). §3: reine Darstellung — der Haken weiss nicht, WAS
+ *  da sichtbar wird, nur WIE es im Bild steht (Spalte oder Bahn). */
 export function useZielSichtbar(zielId: string) {
   const [zielSichtbar, setZielSichtbar] = useState(false);
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
     const el = document.getElementById(zielId);
     if (!el) return;
-    // −45 % Boden-Marge: als «sichtbar» gilt das Ziel erst, wenn es spürbar in
-    // den oberen Bildbereich rückt (nicht schon beim ersten Pixel am unteren Rand).
-    const io = new IntersectionObserver(
-      ([eintrag]) => setZielSichtbar(eintrag.isIntersecting),
+
+    let spalte = el.getBoundingClientRect().width < window.innerWidth * 0.6;
+    let beliebig = false;
+    let oben = false;
+    const auswerten = () => setZielSichtbar(spalte ? beliebig : oben);
+
+    // Erkennt den Wechsel Spalte ↔ Bahn (Container-Query-Schwelle, Schriftskala,
+    // Fenstergrösse) — reine Breitenmessung, kein Layout-Wissen.
+    const breiteBeobachter = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(([eintrag]) => {
+      spalte = eintrag.contentRect.width < window.innerWidth * 0.6;
+      auswerten();
+    });
+    breiteBeobachter?.observe(el);
+
+    // «Beliebig»: jede Überschneidung mit dem Fenster zählt (Spalten-Fall).
+    const beliebigBeobachter = new IntersectionObserver(([eintrag]) => {
+      beliebig = eintrag.isIntersecting;
+      auswerten();
+    });
+    beliebigBeobachter.observe(el);
+
+    // «Oben»: unverändert die oberen 55 % (−45 % Boden-Marge, Bahn-Fall).
+    const obenBeobachter = new IntersectionObserver(
+      ([eintrag]) => { oben = eintrag.isIntersecting; auswerten(); },
       { rootMargin: '0px 0px -45% 0px' },
     );
-    io.observe(el);
-    return () => io.disconnect();
+    obenBeobachter.observe(el);
+
+    return () => { breiteBeobachter?.disconnect(); beliebigBeobachter.disconnect(); obenBeobachter.disconnect(); };
   }, [zielId]);
   return zielSichtbar;
 }

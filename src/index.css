@@ -5174,14 +5174,31 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
      `tap-ziel-token.test.ts`). Der Scroll-Schatten entfällt mit dem Schieben.
      Hier und nicht als `@[72rem]/rechnerkarte:`-Utility im Baustein: das
      Container-Plugin gibt seine Varianten VOR `sm:` aus, `sm:h-9` gewann
-     (gemessen: zweite Reiterzeile überlappte das nächste Feld). */
-  .lc-rechner-spalten .lc-reiterleiste {
-    flex-wrap: wrap;
-    height: auto;
-    overflow-x: visible;
-    background: none;
-  }
+     (gemessen: zweite Reiterzeile überlappte das nächste Feld). Die feste
+     Höhe gilt nur HIER (Zwei-Spalten-Fall) — sie diente dem Tailwind-
+     Kaskadenproblem, nicht dem Umbruch selbst; die Stufe `content` unten
+     braucht sie nicht (kein Grid, keine Kaskaden-Kollision). */
   .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
+}
+
+/* Folgeposten (29.9.2026, W2·31-BILDSCHIRMBREITE): derselbe Umbruch wie eben
+   auch UNTERHALB der 72rem-Schwelle. Die Werkzeug-Karte der Stufe `content`
+   bleibt zwischen 640 und 1535 px Fensterbreite konstant 1008 px innen breit
+   (`@container/rechnerkarte` greift dort nie, das Formular liegt einspaltig).
+   Gemessen (Playwright, vorher/nachher): SchKG-Phasenleiste 1088 px Inhalt in
+   1008–1072 px Karte scrollte quer auf JEDER Breite von 640 bis 1535 px
+   (vorbestehend, nicht erst durch B3) — ZPO (684 px) blieb darunter unberührt.
+   `flex-wrap` bricht nur, wo der Platz tatsächlich fehlt (§3 Minimalismus:
+   eine Regel statt einer dritten Schwelle) — Leisten, die schon passen,
+   bleiben einzeilig. Unter 400 px gilt weiterhin die eigene, weitergehende
+   R-1-Regel (zusätzlich Trefferfläche `min-h-11`); ab 72rem-Karte die feste
+   Reiterhöhe oben — beide bleiben unverändert, diese Regel überschneidet sich
+   mit ihnen nur in denselben Eigenschaften (keine Kollision). */
+.lc-rechner-spalten .lc-reiterleiste {
+  flex-wrap: wrap;
+  height: auto;
+  overflow-x: visible;
+  background: none;
 }
 
 /* ═══ Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026;
