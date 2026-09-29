@@ -285,57 +285,18 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             Satz kannte ihn nie und stand auch am Streckenende noch da, §8). */}
         {/* B2 (W2·31-BILDSCHIRMBREITE, 25.9.2026) · DIE BREITE GEHT AN DEN
             TITEL. Die fünf Zahlenspalten tragen `w-px` + `whitespace-nowrap`:
-            sie schrumpfen auf ihren Inhalt (Kopf bricht dafür um). Unter `sm`
-            unverändert (Spalten 112/94/88/91/61/69 px).
-            Bündel C (W2·31-BILDSCHIRMBREITE, 29.9.2026, Prüferbefund B2
-            «niedrig»): B2 liess den GANZEN Rest an die Erlass-Spalte fallen —
-            GEMESSEN (headless Playwright, vorher): 648 px @1280/1440, 968 px
-            ab 1536, während die Titel median nur 384 px brauchen (Range auf
-            den Titel-`<span>`); Median-Lücke Titelende→Spaltenrand 264 px
-            @1280, 584 px @1920, das Auge verliert die Erlass↔Zahlen-Zeile.
-            Deckel = derselbe Wert wie `reading-s`/die Titel-Spur der
-            Gesetzes-Register (30rem, s. `.tb-link` in index.css) — EIN Mass
-            für dieselbe Anatomie (§5/§10), kein neuer. `max-width` allein
-            auf der `<th>` reicht nicht: automatisches Tabellen-Layout dehnt
-            eine `w-px`-lose Spalte trotzdem über ihr `max-width` (GETESTET:
-            569/739 px statt 480 px). Der Deckel wirkt nur über `<colgroup>`
-            MIT einer eigenen Leerspalte am Ende, die den Rest abfängt (sonst
-            floss der Rest wieder zurück in die Erlass-Spalte). Die Leerspalte
-            trägt `aria-hidden`, damit kein Screenreader eine leere Zelle
-            ansagt.
-            Nachbesserung Gegenprüfung (Bündel C, 30.9.2026, Prüferbefund 1
-            «HOCH»): `sm:w-[30rem]` auf `<col>` ist in automatischem
-            Tabellen-Layout kein Deckel, sondern eine MINDESTBREITE — die
-            Spalte wird nie schmaler, auch wenn der Rahmen es ist. GEMESSEN
-            (headless Playwright, PR-Kopf vs. `main`, `/materialien/deckung`):
-            verdeckte Zahlen-Pixel @640 88→314, @768 0→186, unter Schriftskala
-            1.4 @1024 0→284, @1280 0→28 — der Deckel griff ab `sm` (640 px)
-            immer, auch dort, wo 30 rem nie hinpassen. Der Deckel bleibt exakt
-            bei 30 rem (kein neuer Wert), wirkt aber erst ab `2xl` (1536 px,
-            derselbe Rahmen wie der `weit`-Token in tailwind.config.js) — bis
-            dahin unverändert `main`: `<th>` `sm:max-w-[16rem]`, `<col>` ohne
-            Breite, Leerspalte unter `2xl` ausgeblendet (`hidden 2xl:table-*`),
-            sonst zählte ihr Randstrich 2-4 px mit. NACHHER (derselbe Messweg,
-            alle sieben Breiten × beide Schriftskalen): verdeckt 0 überall,
-            identisch zu `main` unter 1536 px. Bei ≥1536 px bleibt der
-            Kompromiss aus Prüferbefund 2 («MITTEL») unverändert bestehen —
-            Median-Lücke 94.7 px @1920 (Ziel ≤120 px, Kriterium c erfüllt),
-            aber mehr gekappte Titel als `main` (2→74 @1920 fs0, 3→74 fs1.4):
-            das ist der PREIS des Deckels selbst (ein 30-rem-Deckel kappt
-            zwangsläufig mehr als ein Feld, das bis 968 px wachsen darf) und
-            nicht mehr durch die Breakpoint-Verschiebung behebbar — ehrlich
-            gemeldet statt erzwungen (§6.7, Rückgabe-Bericht). */}
+            sie schrumpfen auf ihren Inhalt (Kopf bricht dafür um), der ganze
+            Rest fällt an die Erlass-Spalte. Gemessen (Preview): vorher 328 px
+            Erlass-Spalte und 148 per Ellipse gekappte Titel @1280–1920, die
+            Zahlenspalten 103–220 px breit; nachher 648 px / 30 gekappt @1280
+            und @1440 (content), 968 px / 2 gekappt ab 1536 (weit). Unter `sm`
+            unverändert (Spalten 112/94/88/91/61/69 px). */}
         <div className="mt-2 overflow-x-auto lc-scrollrand-x sm:mt-4">
           <table data-deckung-tabelle className="w-full min-w-[30rem] border-collapse text-body-s sm:min-w-[38rem]">
             <caption className="sr-only">
               Deckung je Erlass: Fussnoten-Deckung, erfasste Änderungen und Alt-Blöcke des
               Fassungsvergleichs. Die Spaltenköpfe sortieren.
             </caption>
-            <colgroup>
-              <col className="2xl:w-[30rem]" />
-              <col /><col /><col /><col /><col />
-              <col className="hidden 2xl:table-column" />
-            </colgroup>
             <thead>
               <tr>
                 {SPALTEN.map((sp) => (
@@ -362,17 +323,12 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                     </button>
                   </th>
                 ))}
-                {/* Leerspalte zum Deckel oben — fängt den Rest ab, trägt
-                    nichts an (kein `scope`, `aria-hidden`). Nur ab `2xl`
-                    aktiv (Nachbesserung Befund 1): darunter trüge ihr
-                    Randstrich sonst 2-4 px bei, die main nicht kennt. */}
-                <th aria-hidden className="hidden border-b-2 border-rule 2xl:table-cell" />
               </tr>
             </thead>
             <tbody>
               {liste.map((z) => (
                 <tr key={z.key} data-deckung-zeile={z.key} className="border-b border-rule-soft align-baseline">
-                  <th scope="row" className="max-w-[7rem] py-1.5 pr-3 text-left font-normal sm:max-w-[16rem] sm:pr-4 2xl:max-w-[30rem]">
+                  <th scope="row" className="max-w-[7rem] py-1.5 pr-3 text-left font-normal sm:max-w-[16rem] sm:pr-4">
                     {/* §5: die Erlass-Adresse hat EINE Ableitung. Hier stand
                         `/gesetze/bund/<key>` von Hand — für die 14 erfassten
                         Staatsverträge (CISG, EMRK, UNO_PAKT_I/II …) wäre das
@@ -402,7 +358,6 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                   <td className="lc-ziffern w-px whitespace-nowrap py-1.5 pl-2 text-right sm:pl-4 text-ink-600">
                     {z.ohneEreignis === undefined ? '—' : nf(z.ohneEreignis)}
                   </td>
-                  <td aria-hidden className="hidden 2xl:table-cell" />
                 </tr>
               ))}
             </tbody>
