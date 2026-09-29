@@ -206,6 +206,18 @@ for (const slug of ['zpo-fristen', 'schkg-fristen']) {
 // 72rem-Container-Query) streichen; (8) in `useZielSichtbar.ts` die
 // Spalten-Erkennung (`spalte`/`beliebig`) entfernen und wieder nur die
 // −45-%-Marge auswerten.
+//
+// Nachbesserung Gegenprüfung PR #1154 (29.9.2026, Befund 1+2 [HOCH/MITTEL]):
+// die Regel unter (7) war UNBEDINGT (kein `@container`) und hob damit auch
+// UNTERHALB der Stufe content (Handy, 401–1535 px) die feste Reiterhöhe
+// (`h-11`/`sm:h-9`) auf `height:auto` auf — 44/36 px → 23 px Inhaltshöhe,
+// ausserdem verlor das Handy (401–600 px) die gewollte einzeilige
+// Scroll-Leiste (Umbruch statt Schieben). Die Tests unten prüften bisher nur
+// eine OBERGRENZE (`toBeLessThanOrEqual(36)`), die 23 px ebenfalls erfüllt —
+// blind für genau diesen Rückgang. Jetzt: Untergrenze UND die Handy-Breiten
+// 412/430/600 (einzeilig + Höhe), gemessen gegen den PR-Kopf 1d0132f10 rot
+// (`npx playwright test e2e/rechner-breite.e2e.ts -g "einzeilig"`, 8/8 rot:
+// Höhe 23 statt 36/44, teils mehrzeilig).
 
 for (const breite of [1280, 1535]) {
   test(`/rechner/schkg-fristen @${breite}: Phasen-Leiste ohne Querscroll (Stufe content, gestapelt)`, async ({ page }) => {
@@ -228,7 +240,32 @@ for (const breite of [1280, 1535]) {
     await expect(leiste).toBeVisible();
     const { hoehe } = await leiste.evaluate((l) => ({ hoehe: l.getBoundingClientRect().height }));
     expect(hoehe).toBeLessThanOrEqual(36); // eine Zeile (h-9 = 2.25rem = 36px), kein Umbruch
+    expect(hoehe).toBeGreaterThanOrEqual(34); // Untergrenze: nicht auf Inhaltshöhe (23 px) zusammengefallen
   });
+}
+
+// Nachbesserung Gegenprüfung PR #1154 (Befund 2, 29.9.2026): Handy-Breiten
+// unterhalb der Stufe content (401–600 px) bleiben von den Umbruch-Regeln
+// oben UNBERÜHRT — «genau wie vor dem PR», einzeilige Scroll-Leiste, feste
+// Trefferhöhe `h-11` (44 px). Geprüft an ZPO (passt in den Rahmen, reine
+// Höhenfrage) UND SchKG (1088 px Inhalt, muss auch hier scrollen statt
+// umbrechen — Umbruch ist erst ab der Stufe content, ≥ 640 px, vorgesehen).
+for (const breite of [412, 430, 600]) {
+  for (const slug of ['zpo-fristen', 'schkg-fristen']) {
+    test(`/rechner/${slug} @${breite}: Handy — einzeilige Scroll-Leiste, 44 px Trefferhöhe (unverändert)`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 });
+      await page.goto(`/rechner/${slug}`);
+      const leiste = page.getByRole('group', { name: 'Verfahrensphase' });
+      await expect(leiste).toBeVisible();
+      const m = await leiste.evaluate((l) => {
+        const tops = new Set([...l.querySelectorAll('.lc-tab')].map((k) => Math.round(k.getBoundingClientRect().top)));
+        return { hoehe: Math.round(l.getBoundingClientRect().height), zeilen: tops.size };
+      });
+      expect(m.zeilen).toBe(1); // einzeilig, kein Umbruch unterhalb der Stufe content
+      expect(m.hoehe).toBeGreaterThanOrEqual(40); // h-11 = 44 px, nicht auf Inhaltshöhe (23 px) geschrumpft
+      expect(m.hoehe).toBeLessThanOrEqual(44);
+    });
+  }
 }
 
 for (const slug of ['verjaehrung', 'zpo-fristen', 'erbteilung']) {
@@ -245,3 +282,17 @@ for (const slug of ['verjaehrung', 'zpo-fristen', 'erbteilung']) {
     await expect(page.locator('[data-verdikt-sprung]')).toBeVisible();
   });
 }
+
+// Nachbesserung Gegenprüfung PR #1154 (Befund 3, 29.9.2026): im Spalten-Fall
+// zählte bisher jede Überschneidung (`isIntersecting`), auch 1 px — bei
+// niedrigem Fenster (548 px) stand vom 1057 px hohen Ergebnisplatz auf
+// /rechner/verjaehrung nur die obersten 7 px im Bild (0.7 %), die Marke
+// verschwand trotzdem. `useZielSichtbar.ts` verlangt jetzt mindestens 20 %
+// der Zielhöhe (Herleitung dort). ROT ZU BEKOMMEN: in `useZielSichtbar.ts`
+// den `MINDEST_SICHTBARKEIT`-Schwellenwert auf 0 zurücksetzen.
+test('/rechner/verjaehrung @1920×548: Sprungmarke bleibt sichtbar — nur 7 px des Ergebnisses im Bild', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 548 });
+  await page.goto('/rechner/verjaehrung');
+  await expect(page.locator('[data-ergebnisplatz], [data-platzhalter]').first()).toBeVisible();
+  await expect(page.locator('[data-verdikt-sprung]')).toBeVisible();
+});

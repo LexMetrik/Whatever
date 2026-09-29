@@ -5181,24 +5181,55 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
 }
 
-/* Folgeposten (29.9.2026, W2·31-BILDSCHIRMBREITE): derselbe Umbruch wie eben
-   auch UNTERHALB der 72rem-Schwelle. Die Werkzeug-Karte der Stufe `content`
-   bleibt zwischen 640 und 1535 px Fensterbreite konstant 1008 px innen breit
-   (`@container/rechnerkarte` greift dort nie, das Formular liegt einspaltig).
-   Gemessen (Playwright, vorher/nachher): SchKG-Phasenleiste 1088 px Inhalt in
-   1008–1072 px Karte scrollte quer auf JEDER Breite von 640 bis 1535 px
-   (vorbestehend, nicht erst durch B3) — ZPO (684 px) blieb darunter unberührt.
-   `flex-wrap` bricht nur, wo der Platz tatsächlich fehlt (§3 Minimalismus:
-   eine Regel statt einer dritten Schwelle) — Leisten, die schon passen,
-   bleiben einzeilig. Unter 400 px gilt weiterhin die eigene, weitergehende
-   R-1-Regel (zusätzlich Trefferfläche `min-h-11`); ab 72rem-Karte die feste
-   Reiterhöhe oben — beide bleiben unverändert, diese Regel überschneidet sich
-   mit ihnen nur in denselben Eigenschaften (keine Kollision). */
-.lc-rechner-spalten .lc-reiterleiste {
-  flex-wrap: wrap;
-  height: auto;
-  overflow-x: visible;
-  background: none;
+/* Folgeposten (29.9.2026, W2·31-BILDSCHIRMBREITE) — NACHGEBESSERT
+   (Gegenprüfung PR #1154, Befund 1 [HOCH], 29.9.2026): die erste Fassung
+   dieser Regel stand UNBEDINGT (kein `@container`/`@media`) und griff damit
+   auch unterhalb der Stufe content, sogar auf dem Handy (401–1535 px) — dort
+   hob `height: auto` die feste Trefferhöhe (`h-11`/`sm:h-9`, Tabs.tsx) auf
+   Inhaltshöhe herab (44/36 px → 23 px) und brach die gewollte einzeilige
+   Scroll-Leiste unter 640 px zu Unrecht um (ZPO/SchKG @412/430/600 mehrzeilig
+   statt einzeilig).
+   Ein `@container rechnerkarte (width >= …)`-Schwellenwert allein trifft die
+   Schwelle NICHT zuverlässig: die Karte trägt `p-6 sm:p-8` (Card.tsx) — beim
+   Wechsel `p-6`→`sm:p-8` an genau der Fensterbreite 640 px SPRINGT ihr
+   Innenmass (Content-Box, das, was `@container` misst) von 551 auf 528 px
+   (Gemessen, Playwright, `.lc-werkzeug-karte`): nicht monoton, ein einzelner
+   Content-Box-Schwellenwert läge entweder zu früh (aktiviert schon ~617 px)
+   oder zu spät (erst ~664 px). Die Aussenmasse (Border-Box, `getBoundingClientRect`)
+   dagegen wachsen linear mit dem Fenster und geben keinen sauberen
+   Container-Schwellenwert für genau 640 px her.
+   Darum unmittelbar an der Fensterbreite (`@media (min-width: 40rem)` = 640 px
+   — dieselbe Tailwind-`sm`-Schwelle, an der Tabs.tsx selbst auf `sm:h-9`
+   wechselt), OHNE obere Container-Schranke: der 72rem-Block oben hat seit dem
+   Sprungmarke-Fix (52f6e1d95) selbst KEIN `flex-wrap` mehr (nur noch die feste
+   Reiterhöhe) — würde diese Regel bei width ≥ 72rem aussetzen, fehlte der
+   Umbruch dort ganz (Rot-Beweis beim ersten Versuch dieser Nachbesserung:
+   SchKG @1920 wieder 1088/640 px Querscroll). Die zwei Blöcke überschneiden
+   sich deshalb absichtlich ab 72rem — dieselben Werte, keine Kollision:
+   SchKG-Phasenleiste 1088 px Inhalt in 1008–1072 px Karte (Stufe content)
+   scrollte quer auf jeder Breite von 640 bis 1535 px (vorbestehend, nicht
+   erst durch B3) — ZPO (684 px) blieb darunter unberührt. Unterhalb 640 px
+   bleibt die Leiste unverändert wie vor diesem Schritt: Tabs.tsx trägt Höhe
+   und Umbruch dort allein (`h-11` bzw. R-1s eigene `max-[400px]:`-Regel).
+   Der CONTAINER bleibt `height: auto` (muss über mehrere Zeilen wachsen
+   dürfen); ohne eigene Höhenangabe an den REITERN strecken sich deren
+   Flex-Kinder in einer umgebrochenen Zeile aber nur auf deren Inhaltshöhe
+   (23 px) — derselbe Mechanismus, der den Fehler oben erzeugte. Fester
+   `height: 2.25rem` an `.lc-tab` (nicht `min-height`: der Wächter
+   `tap-ziel-token.test.ts`, F9/D2, lässt nur `var(--tap-ziel)` als
+   Untergrenze zu, keine rohe Zahl — passend, denn das hier ist keine
+   WCAG-Trefferflächen-Untergrenze, sondern dieselbe feste ANATOMIE-Höhe der
+   Grössenvariante `m` wie im 72rem-Block oben, exakt übernommen). 2.25rem,
+   weil ab 640 px auch die Tailwind-Höhe der Leiste selbst bereits auf
+   `sm:h-9` steht (deckungsgleiche Schwelle). */
+@media (min-width: 40rem) {
+  .lc-rechner-spalten .lc-reiterleiste {
+    flex-wrap: wrap;
+    height: auto;
+    overflow-x: visible;
+    background: none;
+  }
+  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
 }
 
 /* ═══ Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026;
