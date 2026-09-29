@@ -1,5 +1,4 @@
 import { memo, useState, type ReactNode } from 'react';
-import { usePaneKlasse } from '../layout/PaneKontext';
 import { erwaegungsWort } from '../../lib/rechtsprechung/abschnitte';
 
 // ─── V5 · Erwägungs-Navigation im Entscheid-Leser (W2·10-UI-NAV) ─────────────
@@ -60,13 +59,33 @@ export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl
 // Der Rail hing an einer BOOLEAN-Prop `imPane`: gesetzt ⇒ «es gibt hier keine
 // Spalte», also immer die aufklappbare Form. Das war richtig, solange der
 // EntscheidLeser im Pane grundsätzlich einspaltig blieb. Seit derselbe Leser
-// sein Zweispalten-Bild an der PANE-Breite ausrichtet (`@5xl/pane`, Herleitung
-// in `pages/EntscheidLeser.tsx`), wäre die Boolean eine zweite, widersprechende
-// Aussage: das Raster stellte eine zweite Spalte bereit, der Rail hielte sich
-// weiter für spaltenlos, und beide Kinder landeten in Spalte 1 übereinander.
-// Der Rail liest die Lage darum aus DERSELBEN Quelle wie sein Raster
-// (`usePaneKlasse`, §5) — und die Prop entfällt ersatzlos (§17-Rückbau: sie
-// trug keine Aussage mehr, die nicht der Kontext schon trägt).
+// sein Zweispalten-Bild an der PANE-Breite ausrichtet, wäre die Boolean eine
+// zweite, widersprechende Aussage: das Raster stellte eine zweite Spalte
+// bereit, der Rail hielte sich weiter für spaltenlos, und beide Kinder
+// landeten in Spalte 1 übereinander. Der Rail liest die Lage darum aus
+// DERSELBEN Quelle wie sein Raster — und die Prop entfällt ersatzlos
+// (§17-Rückbau: sie trug keine Aussage mehr, die nicht der Kontext schon trägt).
+//
+// ── W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026) · DIESELBE QUELLE, JETZT
+// EIN EIGENER CONTAINER ─────────────────────────────────────────────────────
+// «Dieselbe Quelle wie sein Raster» galt bis hierher `usePaneKlasse`/`pk()`
+// (Viewport `xl:` ausserhalb einer Pane, `@5xl/pane:` nur im Split-View). Das
+// Raster in `EntscheidLeser.tsx` misst seit Bündel D stattdessen IMMER den
+// eigenen Container (`@5xl/leser`, auch ausserhalb einer Pane — Herleitung
+// dort). Bliebe der Rail bei `pk()`, träfe er bei offener Seitenleiste @1280
+// (Container < 64 rem, Raster bleibt einspaltig) trotzdem die VIEWPORT-Stufe
+// `xl:` (Viewport ≥ 1280 px) — der Klapp-Griff verschwände (`xl:hidden`),
+// OHNE dass die zweite Spalte existiert: die Gliederung wäre weder als Rail
+// noch als aufklappbarer Block erreichbar (schlimmer als der Ausgangsbefund).
+// Der Rail liest die Lage darum jetzt aus DEMSELBEN `@container/leser` wie
+// sein Raster — `usePaneKlasse`/`pk()` entfallen hier ersatzlos.
+//
+// NACHTRAG Gegenprüfung PR #1155 (29.9.2026): die Schwelle oben («64 rem»,
+// `@5xl/leser`) war zu hoch — `@container/leser` misst ohne Rahmen-Polsterung,
+// siehe Nachtrag in `EntscheidLeser.tsx` bei derselben Bündel-D-Stelle. Rail
+// UND Raster lesen jetzt `@[57rem]/leser:` (40 rem Lesemass + 15 rem
+// Rail-Mindestbreite + 2 rem `gap-8`) — weiterhin DIESELBE Schwelle für
+// beide, sonst verschwände der Klapp-Griff, ohne dass die Spalte existiert.
 export const ErwaegungsRail = memo(function ErwaegungsRail({
   gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter, sucheAktiv,
   mindestHinweis = false,
@@ -109,7 +128,6 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   // zuerst ans Auge. Ob die Spalte steht, entscheidet allein CSS — kein
   // Media-Query in JS, damit Server- und Client-Markup nicht auseinanderlaufen.
   const [offen, setOffen] = useState(false);
-  const pk = usePaneKlasse();
 
   // Nichts zu navigieren ⇒ gar keine Fläche (kein leerer Kasten, §15.2/§13 F4).
   if (gliederung.length === 0 && normen.length === 0) return null;
@@ -121,10 +139,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   return (
     <aside
       data-erw-rail
-      className={pk(
-        'order-1 min-w-0 xl:order-2 xl:col-start-2 xl:row-start-1 xl:sticky',
-        'order-1 min-w-0 @5xl/pane:order-2 @5xl/pane:col-start-2 @5xl/pane:row-start-1 @5xl/pane:sticky',
-      )}
+      className="order-1 min-w-0 @[57rem]/leser:order-2 @[57rem]/leser:col-start-2 @[57rem]/leser:row-start-1 @[57rem]/leser:sticky"
       // `top` gilt nur, WENN die Spalte klebt — sonst ist es ein wirkungsloser
       // Wert. Es steht darum unbedingt da: eine zweite Weiche für dieselbe
       // Aussage wäre genau die Doppelung, die A-2 hier auflöst.
@@ -136,7 +151,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
       <button type="button" data-erw-rail-griff
         onClick={() => setOffen((v) => !v)}
         aria-expanded={offen}
-        className={pk('lc-chip w-full justify-between xl:hidden', 'lc-chip w-full justify-between @5xl/pane:hidden')}>
+        className="lc-chip w-full justify-between @[57rem]/leser:hidden">
         {/* Wortwahl bewusst «Gliederung» statt «Erwägungen»: der Reader trägt
             bereits einen Abschnitts-Chip «Erwägungen» in der Sprungleiste; zwei
             gleichnamige Bedienelemente auf einer Seite sind für Screenreader und
@@ -145,7 +160,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
         <span aria-hidden className="text-base leading-none">{offen ? '▾' : '▸'}</span>
       </button>
 
-      <div className={`${offen ? 'mt-2 block' : 'hidden'} ${pk('xl:mt-0 xl:block', '@5xl/pane:mt-0 @5xl/pane:block')} space-y-3`}>
+      <div className={`${offen ? 'mt-2 block' : 'hidden'} @[57rem]/leser:mt-0 @[57rem]/leser:block space-y-3`}>
         {/* «Im Entscheid suchen» — Pendant zur In-Gesetz-Suche (A35). Das Feld
             markiert im Lesetext (Highlight-API, kein DOM-Eingriff) und listet
             hier die Erwägungen mit Treffern. */}
