@@ -262,28 +262,39 @@ async function simuliereWeit(page: Page): Promise<void> {
   });
 }
 
-const ARTEN = Object.entries(SEITENBREITE) as Array<[Seitenart, { stufe: Breitenstufe; beispielPfad: string }]>;
+const ARTEN = Object.entries(SEITENBREITE) as Array<
+  [Seitenart, { stufe: Breitenstufe; beispielPfad: string; variantenPfade?: readonly string[] }]
+>;
+
+/** Rahmen + Flucht + Scroll + Lesemass @1280–1920 + Weit-Simulation — die volle
+ *  Batterie aus (1)–(5), parametrisiert über den Pfad. Gemeinsame Grundlage für
+ *  `beispielPfad` UND jeden `variantenPfad` (Folgeposten 30.9.2026, Bündel E) —
+ *  dieselbe Prüfung auf einer zweiten Route derselben Art, kein zweiter
+ *  Mechanismus (§5/§10). */
+async function pruefeRahmenUndLesemassVoll(page: Page, ort0: string, stufe: Breitenstufe, pfad: string): Promise<void> {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.setViewportSize(VIEWPORTS[0]);
+  await lade(page, pfad);
+  for (const vp of VIEWPORTS) {
+    await page.setViewportSize(vp);
+    const ort = `${ort0} @${vp.width}`;
+    pruefeRahmen(await messeRahmen(page), stufe, ort);
+    await pruefeLesemass(page, ort);
+  }
+  // (5) Weit-Simulation @1920 (Viewport steht schon auf 1920).
+  expect(page.viewportSize()?.width).toBe(BREIT.width);
+  await simuliereWeit(page);
+  const sim = await messeRahmen(page);
+  const ort = `${ort0} @1920 weit-simuliert`;
+  expect(sim.innen.w, `${ort}: Simulation greift (${sim.innen.w}px)`).toBeCloseTo(Math.min(REM_WEIT * sim.rootPx, sim.mainPx), 0);
+  pruefeFlucht(sim, ort);
+  await pruefeLesemass(page, ort);
+}
 
 test.describe('Seitenbreite je Seitenart (W2·31-BILDSCHIRMBREITE B1c)', () => {
-  for (const [art, { stufe, beispielPfad }] of ARTEN) {
+  for (const [art, { stufe, beispielPfad, variantenPfade }] of ARTEN) {
     test(`${art} ${beispielPfad}: Rahmen, Flucht, Scroll, Lesemass @1280–1920 + Weit-Simulation`, async ({ page }) => {
-      await page.emulateMedia({ colorScheme: 'light' });
-      await page.setViewportSize(VIEWPORTS[0]);
-      await lade(page, beispielPfad);
-      for (const vp of VIEWPORTS) {
-        await page.setViewportSize(vp);
-        const ort = `${art} @${vp.width}`;
-        pruefeRahmen(await messeRahmen(page), stufe, ort);
-        await pruefeLesemass(page, ort);
-      }
-      // (5) Weit-Simulation @1920 (Viewport steht schon auf 1920).
-      expect(page.viewportSize()?.width).toBe(BREIT.width);
-      await simuliereWeit(page);
-      const sim = await messeRahmen(page);
-      const ort = `${art} @1920 weit-simuliert`;
-      expect(sim.innen.w, `${ort}: Simulation greift (${sim.innen.w}px)`).toBeCloseTo(Math.min(REM_WEIT * sim.rootPx, sim.mainPx), 0);
-      pruefeFlucht(sim, ort);
-      await pruefeLesemass(page, ort);
+      await pruefeRahmenUndLesemassVoll(page, art, stufe, beispielPfad);
     });
 
     test(`${art} ${beispielPfad}: Schriftskala ${SKALA} @1280 und @1920`, async ({ page }) => {
@@ -300,5 +311,42 @@ test.describe('Seitenbreite je Seitenart (W2·31-BILDSCHIRMBREITE B1c)', () => {
         await pruefeLesemass(page, ort);
       }
     });
+
+    // Variantenpfade (Folgeposten 30.9.2026, Bündel E — Lehre B8: derselbe
+    // Deckel kann auf einer inhaltlich anderen Route derselben Art reissen,
+    // ohne dass `beispielPfad` es je sieht) — dieselbe volle Batterie, ohne
+    // die Schriftskala-Zusicherung (Laufzeit; Skala ist artenweit geprüft).
+    for (const variante of variantenPfade ?? []) {
+      test(`${art} ${variante} (Variante): Rahmen, Flucht, Scroll, Lesemass @1280–1920 + Weit-Simulation`, async ({ page }) => {
+        await pruefeRahmenUndLesemassVoll(page, `${art} ${variante}`, stufe, variante);
+      });
+    }
+  }
+});
+
+// ─── Vorlage in einem späteren Prüf-Schritt (Folgeposten 30.9.2026, Bündel E) ─
+//
+// `beispielPfad` der Art `vorlage` misst nur Schritt 0 (leeres Formular, keine
+// Vorschau-Inhalte). Ab Schritt 3 («Erbeinsetzung», nach «Mit Musterdaten
+// füllen») trägt die Vorschau echten, variabel langen Text (Erben-Absätze,
+// Bausteinprotokoll) — genau die Art Inhalt, an der ein Lesemass-Deckel reisst
+// (B8-Lehre). Eigener Ladeweg statt `lade()`, weil er Interaktion statt eines
+// blossen `goto` braucht — misst mit denselben `pruefeRahmen`/`pruefeLesemass`
+// wie der Rest der Datei (kein zweiter Mechanismus).
+test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt statt nur Schritt 0): Rahmen, Lesemass @1280 und @1920', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.setViewportSize(VIEWPORTS[0]);
+  await page.goto('/vorlagen/testament');
+  await bereit(page);
+  await page.getByRole('button', { name: 'Mit Musterdaten füllen' }).click();
+  const weiter = page.getByRole('button', { name: 'Weiter →' });
+  await weiter.click(); // Schritt 1 (Person) → 2 (Familie)
+  await weiter.click(); // Schritt 2 (Familie) → 3 (Erbeinsetzung)
+  await expect(page.getByRole('heading', { name: 'Erbeinsetzung' })).toBeVisible();
+  for (const vp of [VIEWPORTS[0], BREIT]) {
+    await page.setViewportSize(vp);
+    const ort = `vorlage /vorlagen/testament Schritt 3 @${vp.width}`;
+    pruefeRahmen(await messeRahmen(page), SEITENBREITE.vorlage.stufe, ort);
+    await pruefeLesemass(page, ort);
   }
 });

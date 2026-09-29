@@ -23,24 +23,41 @@ export type Seitenart =
 
 /** Die EINE Deklaration. `beispielPfad`: eine prerenderte Route der Art, die
  *  auf sich selbst zurückklassifiziert (Unit-Test) und die der e2e-Breiten-
- *  wächter (B1c) je Art misst. Leser-Schlüssel aus `public/*\/register.json`. */
-export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; beispielPfad: string }>> = {
+ *  wächter (B1c) je Art misst. Leser-Schlüssel aus `public/*\/register.json`.
+ *  `variantenPfade` (Folgeposten 30.9.2026, W2·31-BILDSCHIRMBREITE Bündel E):
+ *  je Art können mehrere Beispiele denselben Rahmen tragen und trotzdem
+ *  unterschiedlichen INHALT — ein Deckel, der auf `beispielPfad` hält, kann
+ *  auf einer Schwester-Route brechen (Beleg B8, 25.9.2026: die Botschaft
+ *  `/materialien/BOTSCHAFT-2025-1478` riss den Lesemass-Deckel mit 90 ch,
+ *  unsichtbar für `/materialien/ESTV-KS-DBG-5A`). Der Wächter (B1c) misst
+ *  jeden Eintrag hier mit derselben Rahmen-/Lesemass-Prüfung wie den
+ *  `beispielPfad` — optional, damit stille Arten (kein zweites Beispiel
+ *  bekannt) nichts Erfundenes tragen. */
+export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; beispielPfad: string; variantenPfade?: readonly string[] }>> = {
   startseite: { stufe: 'weit', beispielPfad: '/' }, // W2·31 (25.9.2026): Kachelspalte, Blätter, «Häufig gebraucht»
   rubrik: { stufe: 'weit', beispielPfad: '/rechner' }, // B10 (26.9.2026): Katalog-Raster /rechner, /vorlagen
-  rechner: { stufe: 'weit', beispielPfad: '/rechner/kuendigung' }, // B3 (25.9.2026): Eingabe ‖ Ergebnis
-  vorlage: { stufe: 'weit', beispielPfad: '/vorlagen/testament' }, // B5 (26.9.2026): Formular ‖ grösseres Papier
+  // Variante: Erbteilung trägt die Erben-Tabelle (`min-w-[42rem]`, eigene
+  // Mindestbreite) statt der schlichten Kachel-Ergebnisse von «kündigung».
+  rechner: { stufe: 'weit', beispielPfad: '/rechner/kuendigung', variantenPfade: ['/rechner/erbteilung'] }, // B3 (25.9.2026): Eingabe ‖ Ergebnis
+  // Variante: die Mappen-Vorlage (Papier über die ganze Rahmenbreite, index.css
+  // B5-Kommentar) statt des Wizard-Papiers von «testament».
+  vorlage: { stufe: 'weit', beispielPfad: '/vorlagen/testament', variantenPfade: ['/vorlagen/gmbh-gruendung'] }, // B5 (26.9.2026): Formular ‖ grösseres Papier
   gesetze: { stufe: 'weit', beispielPfad: '/gesetze' }, // B4 (25.9.2026): Erlass-Register (Titel-Spur)
   'gesetz-leser': { stufe: 'content', beispielPfad: '/gesetze/bund/OR' },
   rechtsprechung: { stufe: 'weit', beispielPfad: '/rechtsprechung' },
   'entscheid-leser': { stufe: 'content', beispielPfad: '/rechtsprechung/bge_152_V_122' },
   materialien: { stufe: 'weit', beispielPfad: '/materialien' }, // B2 (25.9.2026): Karten-Raster
   'materialien-deckung': { stufe: 'weit', beispielPfad: '/materialien/deckung' }, // B2: Deckungstabelle
-  'material-leser': { stufe: 'content', beispielPfad: '/materialien/ESTV-KS-DBG-5A' },
+  // Variante: eine Botschaft (Randspalte + Anker-Liste, B8 25.9.2026) statt
+  // des ESTV-Kreisschreibens — genau die Route, die den 90-ch-Fund trug.
+  'material-leser': { stufe: 'content', beispielPfad: '/materialien/ESTV-KS-DBG-5A', variantenPfade: ['/materialien/BOTSCHAFT-2025-1478'] },
   info: { stufe: 'content', beispielPfad: '/ueber' },
   methodik: { stufe: 'content', beispielPfad: '/methodik' },
   abdeckung: { stufe: 'content', beispielPfad: '/abdeckung' },
   einstellungen: { stufe: 'content', beispielPfad: '/einstellungen' },
-  suche: { stufe: 'content', beispielPfad: '/suche' },
+  // Variante: echte Trefferliste (Randspalte-Filter, B9 25.9.2026) statt der
+  // leeren Such-Einstiegsseite — derselbe Deep-Link wie `suche-seite.e2e.ts`.
+  suche: { stufe: 'content', beispielPfad: '/suche', variantenPfade: ['/suche?q=Miete'] },
   fehlerseite: { stufe: 'content', beispielPfad: '/gibt-es-nicht' },
 };
 

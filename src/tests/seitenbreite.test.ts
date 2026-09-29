@@ -63,6 +63,18 @@ describe('seitenbreite: Tabelle', () => {
     }
   });
 
+  // Folgeposten (30.9.2026, Bündel E): eine variantenPfade-Route ist dieselbe
+  // Seitenart mit anderem Inhalt (B8-Lehre) — auch sie muss auf ihre Art
+  // zurückklassifizieren, sonst würde der e2e-Wächter (B1c) die falsche
+  // Rahmenbreite erwarten.
+  it('jeder variantenPfad klassifiziert auf seine eigene Seitenart zurück', () => {
+    for (const [art, { variantenPfade }] of Object.entries(SEITENBREITE)) {
+      for (const pfad of variantenPfade ?? []) {
+        expect(seitenartVon(pfad), `${art} ← ${pfad}`).toBe(art);
+      }
+    }
+  });
+
   it('die Leser-Beispiele verweisen auf existierende Schlüssel (Identität, kein Teilstring)', () => {
     const lies = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
     const erlass = SEITENBREITE['gesetz-leser'].beispielPfad.split('/');
