@@ -19,7 +19,15 @@ import type { GliederungsKnoten } from '../gliederungsModell';
  *  Aufgehoben-Signal — dieselbe Definition wie `title`/`aria-label` der
  *  Sprung-Zeile in SektionBaumTOC.tsx (§5: eine Stelle, kein Zweitrechner). */
 export function vollText(k: GliederungsKnoten): string {
-  return [k.label, k.aufgehoben ? 'aufgehoben' : ''].filter(Boolean).join(' — ');
+  return [k.label, zustandsWort(k)].filter(Boolean).join(' — ');
+}
+
+/** W2·27 (30.9.2026, Nachzug A2): das Zustandswort einer Baum-/Index-Zeile aus den Datenfeldern —
+ *  `aufgehoben` bzw. amtlich `gegenstandslos` (eigenes Wort, nie «aufgehoben», §1/§8); fehlen
+ *  beide, `''` (kein Wort ohne Beleg). EINE Quelle für das SICHTBARE Wort und den zugänglichen
+ *  Namen (title/aria-label) — WCAG 2.5.3 «Label in Name»: was man liest, steht im Namen (§5). */
+export function zustandsWort(z: { aufgehoben?: boolean; gegenstandslos?: boolean }): string {
+  return z.aufgehoben ? 'aufgehoben' : z.gegenstandslos ? 'gegenstandslos' : '';
 }
 
 /**

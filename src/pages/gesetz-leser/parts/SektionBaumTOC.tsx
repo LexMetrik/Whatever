@@ -2,7 +2,7 @@ import { memo, useMemo, type KeyboardEvent, type MouseEvent, type ReactNode } fr
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
 import { zeilenAnsicht, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
-import { vollText, berechneKlappKontext } from './klappNamen';
+import { vollText, zustandsWort, berechneKlappKontext } from './klappNamen';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
 //
@@ -276,6 +276,7 @@ const Zeile = memo(function Zeile({
   // Vollwert wäre der Rest still verloren (§8). Er nennt genau das, was die Zeile
   // auch zeigt: Etikett und, wenn zutreffend, das Aufgehoben-Signal.
   const voll = vollText(k);
+  const wort = zustandsWort(k);
   // QS-UI-Nachzug (5.9.2026, Klasse PR #685): NUR gesetzt, wenn `voll` im
   // Baum mehrfach als Chevron-Titel vorkommt (klappNamen.ts) — sonst bleibt
   // der Name unverändert, wie im Auftrag verlangt.
@@ -456,9 +457,8 @@ const Zeile = memo(function Zeile({
           {/* Aufgehoben-Signal (§3.3, Inventar C «heute klappt man blind auf»):
               sichtbarer Text, nicht nur `title`. Statisch je Knoten ⇒ kein CLS. */}
           {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
-          {k.aufgehoben
-            ? <span className="ml-1 text-micro text-ink-500">aufgehoben</span>
-            : k.gegenstandslos && <span className="ml-1 text-micro text-ink-500">gegenstandslos</span>}
+          {/* Nachzug A2 (30.9.2026): dasselbe Wort steht im Namen (`vollText`, klappNamen.ts). */}
+          {wort && <span className="ml-1 text-micro text-ink-500">{wort}</span>}
         </TocZeile>
         {/* Hier stand bis zum 9.8.2026 der adaptive Zählwert — gestrichen auf
             Entscheid David («keine relevante Information»), Herleitung oben. */}

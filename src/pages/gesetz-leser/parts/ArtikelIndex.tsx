@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
 import { margLabel } from '../helpers';
+import { zustandsWort } from './klappNamen';
 import type { ArtikelIndexGruppe } from '../gliederungsModell';
 
 // ═══ Artikel-Index der Seitenleiste (Zone B, Modus B2/B4) ════════════════════
@@ -50,7 +51,7 @@ function Zeile({ z, aktiv, onSprung }: {
 }) {
   // W2·27 (30.9.2026): das Zustandswort kommt aus dem Datenfeld — `aufgehoben` bzw. `gegenstandslos`
   // (eigenes Wort, nie «aufgehoben», §1/§8); fehlen beide, steht hier keines (kein Wort ohne Beleg).
-  const wort = z.aufgehoben ? 'aufgehoben' : z.gegenstandslos ? 'gegenstandslos' : '';
+  const wort = zustandsWort(z);
   const voll = [z.label, z.randtitel, wort].filter(Boolean).join(' — ');
   return (
     <li>

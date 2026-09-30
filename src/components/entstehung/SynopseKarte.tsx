@@ -1,7 +1,8 @@
 import { datumCh } from '../../lib/normtext/erlassKopfText';
+import { sagtKeinText } from '../normtext/leerstellenAnzeige';
 import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort, type LeerstellenStatus } from '../../lib/normtext/darstellung';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
-import { standVon, type SynopseShard } from '../../lib/entstehung/synopse';
+import { standVon, type SynopseBlock, type SynopseShard } from '../../lib/entstehung/synopse';
 import { entwurfUrl, type EntwurfArtikel, type EntwurfShard } from '../../lib/entstehung/synopse-entwurf';
 import {
   hatUnterschied, nurTitelGeaendert, synopseZeilen,
@@ -110,8 +111,15 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
  *  ohne Vermerk (`leer-ungeklaert`) ⇒ «kein Text im Snapshot», nie «aufgehoben» (§1/§8). Ein
  *  Folgestand (`neuHerkunft` ≠ geltend) ist ein früherer amtlicher Stand mit eigener Auslassung:
  *  der HEUTIGE Zustand des Artikels beschreibt ihn nicht, dort bleibt das Zeilenwort. */
-function entfallWortFuer(zustand: LeerstellenStatus | undefined, neuHerkunft: string): string {
+function entfallWortFuer(
+  zustand: LeerstellenStatus | undefined, neuHerkunft: string, neuBloecke: readonly SynopseBlock[],
+): string {
   if (neuHerkunft !== 'geltend' || zustand === undefined) return ZEILEN_WORT.entfernt;
+  // Nachzug A3 (30.9.2026): dieselbe Wortlaut-Sperre wie der Körper (`sagtKeinText`, §5) — der
+  // amtliche Wortlaut «Aufgehoben» ist Quelle und bleibt «aufgehoben», auch ohne Feld. Die Zeile
+  // trägt ihren Block nicht mehr (`neu: null`): gilt als «kein Text» nur, wenn ALLE rechten Blöcke
+  // reine Platzhalter sind; ein Wortlaut darunter hält das Zeilenwort (vorsichtig, nie eine Behauptung).
+  if (zustand === 'leer-ungeklaert' && !neuBloecke.every((b) => sagtKeinText(zustand, b[2]))) return ZEILEN_WORT.entfernt;
   return leerstellenWort(zustand) ?? ZEILEN_WORT.entfernt;
 }
 
@@ -352,7 +360,7 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
           nicht sicher einem einzelnen Erlass.
         </p>
       )}
-      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} entfallWort={entfallWortFuer(zustand, neuHerkunft)} />}
+      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} entfallWort={entfallWortFuer(zustand, neuHerkunft, neu ?? [])} />}
       {!hatUnterschied(zeilen) && (nurTitelGeaendert(artikel, zeilen)
         ? <p className={S.hinweis} data-synopse-lage="nur-titel">
             Am Wortlaut dieses Artikels ist zwischen den beiden Ständen kein Unterschied erkennbar —

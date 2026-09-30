@@ -10,6 +10,7 @@ import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln } from './BildElemente';
 import { WJ } from './wortverbinder';
+import { sagtKeinText } from './leerstellenAnzeige';
 import { StaffelTabelle, MehrspaltigeTabelle, TarifTabelle } from './ArtikelTabellen';
 import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // B2 (Bug-Check §9 zu W2·19-S8): der Aufhebungs-Platzhalter ist BEDIENUNG, kein
@@ -248,9 +249,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // wie Statuszeile, Nachbar-Pfeil und Synopse (`artikelLeerstellenStatus`, §5). Ein «…»-ABSATZ in
   // einem sonst lebenden Artikel bleibt «aufgehoben» (amtliche Absatz-Auslassung, David 16.6.2026).
   // Nur der «…»-Platzhalter wird so umgedeutet; der amtliche Wortlaut «Aufgehoben» ist Quelle.
-  const ganzUngeklaert = artikelLeerstellenStatus(bloecke, artikelAufgehoben, artikelGegenstandslos) === 'leer-ungeklaert';
+  const leerZustand = artikelLeerstellenStatus(bloecke, artikelAufgehoben, artikelGegenstandslos);
   const platzhalter = (text: string) => {
-    const ungeklaert = ganzUngeklaert && /^[….\s]*$/.test(text.trim());
+    // EINE Entscheidung mit der Synopse (`sagtKeinText`, §5).
+    const ungeklaert = sagtKeinText(leerZustand, text);
     return (
       <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
         title={ungeklaert ? LEERSTELLE_ERLAEUTERUNG : undefined}>{ungeklaert ? LEERSTELLE_KURZ : entfallWort}</span>
