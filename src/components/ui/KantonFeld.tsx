@@ -30,7 +30,7 @@ import type { Kanton } from '../../types/legal';
 // welche Werte gültig sind, entscheidet unverändert die Permalink-Spec des
 // Aufrufers.
 
-export interface KantonGruppe {
+interface KantonGruppe {
   /** Beschriftung der `<optgroup>`. */
   label: string;
   kantone: readonly Kanton[];
