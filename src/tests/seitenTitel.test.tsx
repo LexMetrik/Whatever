@@ -24,7 +24,11 @@ const IM_PANE = { imPane: true as const, rolle: 'sekundaer' as const, wurzel: nu
 describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen', () => {
   it('ausserhalb eines Panes: zeichengleich zum Vorzustand (Prerender unberührt)', () => {
     const html = renderToString(<SeitenTitel>Streitwert</SeitenTitel>);
-    expect(html).toContain('class="text-h2 sm:text-h1 font-display font-semibold text-ink-900"');
+    // DEKLARIERTE ANPASSUNG (HN-D2, 30.9.2026, §6.3 — fachliche Änderung des
+    // Bausteins, kein Refactoring): Stufe 1 der Titelordnung (DESIGN-REGLEMENT
+    // F0.11) ist Literata 400. Vorher `font-display font-semibold` als Standard;
+    // das Gewicht 400 stand nur im Band (`.ub-kopf h1`), nicht am Baustein.
+    expect(html).toContain('class="text-h2 sm:text-h1 font-serif font-normal text-ink-900"');
   });
 
   it('im Pane: die Kaskade misst die PANE-Breite, nicht den Viewport', () => {
@@ -35,13 +39,13 @@ describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen'
     expect(html, 'der Viewport-Zweig steht im Pane noch da').not.toContain('sm:text-h1');
   });
 
-  it('Zwei-Stimmen-Regel (§e): `serif` ersetzt die Display-Stimme, nichts sonst', () => {
+  it('Stimme: es gibt nur die Serif-Stimme; die Übergangs-Prop `serif` ändert nichts', () => {
     const html = renderToString(
       <PaneProvider value={KEIN_PANE}>
         <SeitenTitel stimme="serif" className="min-h-titel-2z">OR</SeitenTitel>
       </PaneProvider>,
     );
-    expect(html).toContain('class="text-h2 sm:text-h1 font-serif font-semibold text-ink-900 min-h-titel-2z"');
+    expect(html).toContain('class="text-h2 sm:text-h1 font-serif font-normal text-ink-900 min-h-titel-2z"');
     expect(html).not.toContain('font-display');
   });
 

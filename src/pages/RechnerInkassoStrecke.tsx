@@ -39,7 +39,7 @@ const STRECKE: Schritt[] = [
     nr: 3,
     titel: 'Mahnung / Inverzugsetzung schreiben',
     norm: 'Art. 102 OR',
-    text: 'Die Mahnung setzt den Verzug in Kraft und ist nachweisbar zuzustellen. Sie ist keine Betreibung; den Verzugszins bziffert der Rechner, der Brief rechnet ihn nicht nach.',
+    text: 'Die Mahnung setzt den Verzug in Kraft und ist nachweisbar zuzustellen. Sie ist keine Betreibung; den Verzugszins beziffert der Rechner, der Brief rechnet ihn nicht nach.',
     ziel: { label: 'Mahnung erstellen', to: '/vorlagen/mahnung' },
   },
   {

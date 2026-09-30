@@ -136,7 +136,11 @@ export function VerzugszinsForm() {
 
         <Field label="Stichtag (Berechnung bis)" hint="Zahlung / Urteilstag / heute">
           <div className="flex gap-2">
-            <DatumsFeld value={form.stichtag} onChange={(v) => set('stichtag', v)} className="lc-input" />
+            {/* A11y (HN-D6, Übergabe DK-Bericht): `Field` umschliesst hier ein `div`
+                (Datumsfeld + «heute»-Knopf) — ein `div` ist nicht beschriftbar, das
+                Feld hiess darum nur «TT.MM.JJJJ» (Platzhalter). Der Name steht am
+                Feld selbst; Wortlaut = das sichtbare Label. */}
+            <DatumsFeld value={form.stichtag} onChange={(v) => set('stichtag', v)} className="lc-input" aria-label="Stichtag (Berechnung bis)" />
             {/* LM-099/LM-088 (W2·17-UI-BEFUNDE B17, 4.9.2026): war
                 `lc-btn-ghost` — gemessen 80×44 mit transparenter Fläche und
                 border 0, also fetter Text neben einem Eingabefeld und nicht

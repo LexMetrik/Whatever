@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
-import { KANTONE } from '../lib/kantone';
-import { KANTON_NAMEN } from '../data/tarif/typen';
-import type { Kanton } from '../types/legal';
 import { useEinstellungen, setzeEinstellung } from '../lib/einstellungen';
 import { DETAILGRAD_OPTIONEN } from '../lib/vorlagen/detailgrad';
 import { speichereThema, wendeThemaAn, systemThema, useThemaWahl, type ThemaWahl } from '../components/thema';
 import { useAusgabeStil, setAusgabeStil } from '../components/vorlagen/ausgabeStil';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
+import { KantonFeld } from '../components/ui/KantonFeld';
 import { SchriftgroessenRegler } from '../components/ui/SchriftgroessenRegler';
 import { useSchriftskala } from '../components/layout/useSchriftskala';
 
@@ -133,11 +131,9 @@ export function Einstellungen() {
 
       <section className="es-gruppe">
         <Zeile titel="Standard-Kanton" hinweis="Wird in Fristen- und Gebührenrechnern vorgewählt (ein Permalink oder eine eigene Wahl im Formular geht weiter vor).">
-          <select aria-label="Standard-Kanton" value={e.standardKanton}
-            onChange={(ev) => setzeEinstellung('standardKanton', ev.target.value as Kanton)}
-            className="lc-input w-full max-w-xs">
-            {KANTONE.map((k) => <option key={k} value={k}>{KANTON_NAMEN[k]} ({k})</option>)}
-          </select>
+          <KantonFeld aria-label="Standard-Kanton" value={e.standardKanton}
+            onChange={(k) => setzeEinstellung('standardKanton', k)}
+            className="w-full max-w-xs" />
         </Zeile>
 
         <Zeile titel="Profil (Name & Adresse)" hinweis="Optional. Füllt passende Absender-/Verfasser-Felder in Vorlagen vor. Leere Felder bleiben leer.">
@@ -211,7 +207,7 @@ export function Einstellungen() {
       <section className="es-gruppe">
         <Zeile titel="Zurücksetzen" hinweis="Löscht alle gespeicherten Einstellungen, offenen Reiter, Favoriten und Vorlagen-Entwürfe in diesem Browser.">
           <button type="button" onClick={reset}
-            className="rounded-lg border border-danger-line bg-surface px-3.5 py-2 text-body-s font-medium text-danger-700 transition-colors hover:bg-danger-bg">
+            className="lc-btn-danger lc-btn-sm">
             Alles zurücksetzen …
           </button>
         </Zeile>

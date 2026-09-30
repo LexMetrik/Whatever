@@ -82,7 +82,7 @@ export function Field({ label, children, hint, optional, fehlt }: {
       : children;
   return (
     <div className="space-y-1">
-      <label id={`${id}-label`} htmlFor={nativ ? id : undefined} className="block text-body-s font-medium text-ink-700">
+      <label id={`${id}-label`} htmlFor={nativ ? id : undefined} className="lc-feldlabel block text-body-s font-medium text-ink-700">
         {label}{optional && <span className="text-ink-500 font-normal"> · optional</span>}
       </label>
       {control}

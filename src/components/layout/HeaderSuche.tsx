@@ -32,6 +32,11 @@ const PLATZHALTER = 'Suchen · «OR 257d» springt zum Artikel';
 // `tabIndex={-1}` an der Hülle genügt der Regel nicht). Nur der HEADER-Pfad ist
 // gekappt; Hero und `/suche` nutzen dieselbe `SuchResultate` ungekappt.
 const SCROLL_KAPPUNG = 'max-h-[70vh] overflow-y-auto overscroll-contain';
+// W2·31 P3: der Leerzustand trägt unter der Listbox eine Fusszeile («Nur auf diesem
+// Gerät» + «Verlauf leeren», ~3 rem, NICHT scrollend) — die Kappung der Liste gibt
+// sie ab, damit Panel und Kopf (4 rem) in niedrigen Fenstern (Handy quer) nicht
+// über 70 vh + 4 rem hinauswachsen.
+const LEER_KAPPUNG = 'max-h-[calc(70vh-3rem)] overflow-y-auto overscroll-contain';
 
 // ─── Globale Suche im Top-Streifen (UI-Welle: Dropdown überall) ─────────────
 //
@@ -229,6 +234,10 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     const esc = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return;
       e.preventDefault();
+      // Nachzug Zweitprüfung #1188: steht der Fokus im Panel (Knopf «Verlauf
+      // leeren» im Leerzustand), verschwindet er mit dem Panel und fiele auf
+      // <body> — dann zurück ins Suchfeld (derselbe Fokus-Halt wie D2).
+      if (huelle.current?.contains(document.activeElement)) feld.current?.focus();
       setOffen(false); setWert(''); setQ(''); setAktivKey(null); setEnterQ(null);
     };
     window.addEventListener('pointerdown', aus);
@@ -513,8 +522,9 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert
             // das Feld in einem Zug (wie Enter/Tastatur-Auswahl).
-            ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}
-                onNavigate={(href) => { navigate(href); auswahl(); }} />
+            ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId} panelKlasse={LEER_KAPPUNG}
+                onNavigate={(href) => { navigate(href); auswahl(); }}
+                onVerlaufGeleert={() => feld.current?.focus()} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId} panelKlasse={SCROLL_KAPPUNG}
                 /* F6 · das Entprellungs-Fenster (120 ms, oben): getippt ist
                    schon, übernommen noch nicht — sonst stünde das Panel hier

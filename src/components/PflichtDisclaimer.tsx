@@ -15,7 +15,7 @@ export function PflichtDisclaimer({ text, kurz }: { text?: string; kurz?: string
     //  Die beiden anderen `role="note"`-Fundorte (ArtikelBody-Popover,
     //  ErlassLeserKopf) sitzen auf <span>/<div> und bleiben unberührt.
     <details className="lc-notice">
-      <summary className="lc-overline cursor-pointer">Rechtlicher Hinweis – keine Rechtsberatung</summary>
+      <summary className="lc-overline lc-tap-polster cursor-pointer">Rechtlicher Hinweis – keine Rechtsberatung</summary>
       {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt — auf
           24 Nutzern (`grep -rl "<PflichtDisclaimer" src`) lief der Hinweis
           unter `content` bereits auf 973 px / 120–149 Zeichen je Zeile, über

@@ -1291,6 +1291,10 @@
      nur der Fliesstext ohne eigene Gewichtsangabe erbt die 450. Darum steht hier
      eine Regel und kein Eingriff an ~40 Aufrufstellen (§5/§10). */
   :where([class~="font-serif"]) { font-weight: var(--lese-gewicht); }
+  /* Basis der Titelordnung (DESIGN-REGLEMENT F0.11): h2/h3 OHNE eigene Klassen
+     sind Stufe 2 (Archivo 600). h1 setzt `ui/SeitenTitel` selbst (Stufe 1:
+     Literata 400, überschreibt diese Zeile); `.lc-randtitel` (Stufe 3) und
+     `.lc-overline` (Stufe 4) setzen ihre Familie an der Klasse. */
   h1, h2, h3 { font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; letter-spacing: -0.015em; color: var(--ink-900); }
 
   /* ══ W2·24-NACHZUG R6I (7.9.2026) · DIE VORSCHAU-INSEL SCHWENKT NIE UM ═════
@@ -1981,6 +1985,13 @@
   input[type="checkbox"], input[type="radio"] {
     accent-color: var(--brass-500);
     width: 1.1rem; height: 1.1rem;
+    /* Grösse gilt unabhängig von der Label-Länge (W2·31-BILDSCHIRMBREITE P2,
+       30.9.2026): als Flex-Kind schrumpfte ein Kästchen neben langem,
+       umbrechendem Text auf seinen Eigenmass-Mindestwert (Chromium ~13 px statt
+       17.6 px; gemessen fristerstreckung S2/ schlichtungsgesuch-bs S4 @375,
+       ag-gruendung S2 @640…1280, Vorher 27 von 1571). Nur ein Baustein
+       (`Checkbox`) trug `shrink-0` — hier EINMAL für alle rohen Kästchen/Radios. */
+    flex-shrink: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -2294,6 +2305,32 @@
      Konsistenzfrage — sie liegt bei David (Runde-5-Rückgabe), nicht hier. */
   .lc-hover-flaeche { @apply transition-colors; }
   .lc-hover-flaeche:hover { background-color: var(--well); }
+
+  /* DK-12 (HN-D6, 30.9.2026) · DIE ZWEITE HOVER-ROLLE: AKTIONS-FLÄCHE.
+     `.lc-hover-flaeche` (oben) gehört der anklickbaren ZEILE und tönt neutral
+     (`--well`). Daneben steht seit Langem die Hover-Grammatik der AKTION —
+     `.lc-btn-outline/-ghost/-mini:hover` tönen Messing-100 (`--brass-100`) —,
+     und 27 Stellen schrieben sie in neun Werten von Hand (`hover:bg-brass-100`
+     11×, `…/40` 4×, `…-200` 3×, `…/30`, `…-300/60` u. a.; Zählung `grep -rn
+     "hover:bg-" src`). Die Klasse ist die EINE Schreibweise der vollen Stufe
+     für Elemente, die selbst keine Fläche tragen (Akkordeon-Kopf, Kalender-
+     Knopf, Tageszelle). Dieselbe Schicht-Falle wie oben: eine Fläche an der
+     Aufrufstelle (`bg-*` als Utility) schlüge sie — dort bleibt die Utility. */
+  .lc-hover-akzent { @apply transition-colors; }
+  .lc-hover-akzent:hover { background-color: var(--brass-100); }
+
+  /* DK-11 (HN-D6, 30.9.2026) · DEAKTIVIERT OHNE EIGENE FLÄCHE.
+     `.lc-btn:disabled` (oben) trägt den Zustand über Fläche + Tinte («Deckkraft
+     ist kein Zustand», B17). Griffe OHNE Fläche — Text-/Icon-Knöpfe wie A−/A+,
+     «Suche», Schliessen — haben nichts, was sich einsenken liesse, und
+     schrieben `disabled:opacity-30/40/50` von Hand (11 Stellen, drei Werte).
+     Die Rolle ist die häufigste Stufe (0.4, 7 von 11) plus der Cursor, den
+     `.lc-btn:disabled` auch setzt. Deckkraft bleibt hier die Auskunft, weil
+     sonst keine Auskunft bleibt; ein Griff mit Fläche nimmt stattdessen
+     `.lc-btn*`. Restposten ausserhalb der Rolle: Pane-Kopf/Tab-Panel (0.3) und
+     «Zur Frist»-Knopf in ZpoFristenForm (0.5) — eine Angleichung wäre sichtbar,
+     nicht optikneutral (Posten-Stand im PR). */
+  .lc-deaktiviert:disabled { opacity: .4; cursor: not-allowed; }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   /* U2: dieselbe Umstellung wie `.lc-card`. Die Ergebnis-Kachel steht in
      Reihen nebeneinander; ihre Abgrenzung ist die Oberlinie, nicht der Kasten
@@ -2591,6 +2628,14 @@
   .lc-btn-outline:hover { background: var(--brass-100); }
   .lc-btn-ghost { @apply lc-btn bg-transparent text-ink-700; }
   .lc-btn-ghost:hover { background: var(--brass-100); }
+  /* DK-13 (HN-D6, 30.9.2026): die Gefahr-Aktion («Alles zurücksetzen …») hatte
+     als einzige Knopf-Form keinen Baustein und stand handgebaut auf `rounded-lg`
+     (10 px = Karten-Stufe) statt der Knopf-Stufe 8 px (F0.5). Anatomie = die des
+     `.lc-btn-outline` (Haarlinie, Fläche, Radius), Ton = die Gefahr-Rolle
+     (`danger-line`/`danger-700`, Hover `danger-bg`) statt Messing. Reine
+     Darstellung (§3): WAS zurückgesetzt wird, entscheidet der Aufrufer. */
+  .lc-btn-danger { @apply lc-btn bg-surface border text-danger-700; border-color: var(--danger-line); }
+  .lc-btn-danger:hover { background: var(--danger-bg); }
   /* Kleine Variante für Buttons in Zeilen/Toolbars (statt Inline-Höhen) */
   .lc-btn-sm { height: 36px; padding: 0 12px; font-size: .875rem; }
   /* Disabled einheitlich (Hover wirkt nicht mehr): @apply kopiert keine
@@ -2609,7 +2654,7 @@
      eine durchscheinende Fläche über wechselndem Untergrund ist kein Zustand,
      sondern ein Zufall. §3: reine Darstellung, KEINE Bedienlogik — welcher
      Knopf `disabled` ist, entscheidet unverändert der Aufrufer. */
-  .lc-btn:disabled, .lc-btn-primary:disabled, .lc-btn-outline:disabled, .lc-btn-ghost:disabled {
+  .lc-btn:disabled, .lc-btn-primary:disabled, .lc-btn-outline:disabled, .lc-btn-ghost:disabled, .lc-btn-danger:disabled {
     opacity: 1; cursor: not-allowed;
     background: var(--well); color: var(--ink-600);
     border: 1px solid var(--line);
@@ -2617,6 +2662,7 @@
   .lc-btn-primary:disabled { background: var(--well); }
   .lc-btn-outline:disabled { background: var(--well); border-color: var(--line); }
   .lc-btn-ghost:disabled { background: var(--well); }
+  .lc-btn-danger:disabled { background: var(--well); }
 
   /* ── Mini-Aktion in DICHTEN Zeilen (W2·17-UI-BEFUNDE, LM-091/LM-086) ──────
      Eine Aktion, die als Aktion erkennbar sein muss, ohne die Zeile zu
@@ -2647,6 +2693,19 @@
     min-height: var(--tap-ziel); padding: 0 6px;
   }
   .lc-btn-mini:hover { border-color: var(--brass-400); background: var(--brass-100); }
+
+  /* DK-08 (HN-D6, 30.9.2026) · TIPPZIEL OHNE LAYOUT-ÄNDERUNG.
+     Ein Link oder Klapp-Kopf in Fliesstext-Grösse (Zeile 15–17 px) steht unter
+     WCAG 2.5.8 / F9 (≥ `--tap-ziel` in beiden Achsen). Gemessen @390 hell:
+     Katalog-Listenlinks auf /rechner 15.0 px hoch (51 von 53 unter 24),
+     «Rechtlicher Hinweis» (`PflichtDisclaimer`-summary) 16.8 px auf jedem der
+     24 Rechner. Die Klasse polstert oben/unten um 5 px und nimmt dasselbe als
+     negativen Aussenrand zurück: bei einem Block-Element (summary) bleibt der
+     Platz im Fluss gleich, bei einem Inline-Element (Link) hat der vertikale
+     Aussenrand ohnehin keine Wirkung, das Polster wirkt aber auf Fläche und
+     `getBoundingClientRect` — die Zeile bleibt, wie sie war, die Trefferfläche
+     wächst. Die Benennung der Mindestgrösse bleibt beim Token (F9). */
+  .lc-tap-polster { padding-block: .3125rem; margin-block: -.3125rem; }
 
   /* L5 (6.9.2026): die `bg-well`-FUELLUNG faellt weg. Der Chip trug damit zwei
      Signale fuer eine Sache — Flaeche UND Tick; das Zielbild laesst den Tick
@@ -3747,6 +3806,14 @@
   :where(.lc-vorlagen-schritt) :where(label.flex) > :where(span) { max-width: theme('maxWidth.reading-s'); }
   :where(.lc-vorlagen-schritt) :where(span.block.text-xs) { max-width: theme('maxWidth.kleintext'); }
   :where(.lc-vorlagen-schritt) :where(ul.text-body-s, ol.text-body-s, dl.text-body-s) > :where(li, dd) { max-width: theme('maxWidth.reading-s'); }
+  /* W2·31-BILDSCHIRMBREITE P2 (30.9.2026): Feldbeschriftung (`Field`, vorlagen/
+     ui.tsx; `label.block`, keine Klassen-Stufe an p/li) lief bei Satz-langen
+     Labels bis 86 ch (ag-gruendung S2 @640, «Zustand der Sacheinlage …»).
+     Haken `lc-feldlabel` statt Selektor `label.block`: andere `label.block`
+     (AdresseBundSuche, PlzGemeindeWahl) UMSCHLIESSEN ihr Eingabefeld — ein Deckel
+     dort verschmälerte das Feld. Die Beschriftung ist reiner Text, das Feld
+     darunter behält seine Breite. (0,0,0) wie (b)/(c). */
+  :where(.lc-vorlagen-schritt) :where(.lc-feldlabel) { max-width: theme('maxWidth.reading-s'); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
@@ -4433,7 +4500,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   border-top: 2px solid var(--reg-marke, var(--rule));
   padding: 0.875rem 1rem 1rem;
 }
-.ub-kopf h1 { font-weight: 400; }
+/* HN-D2 (30.9.2026): hier stand `.ub-kopf h1 { font-weight: 400 }` — eine
+   Überschreibung von aussen gegen das `font-semibold` des Bausteins, die nur im
+   Band wirkte (Leser, Entscheid, Material blieben 600). Das Gewicht der H1
+   trägt jetzt `ui/SeitenTitel` selbst (F0.11 Stufe 1: Literata 400). */
 /* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-route .ub-kopf .lc-overline,
    .ub-kopf .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16, unten)
    trägt dasselbe; gemessen Farbe vorher = nachher, siehe PR-Body.) */
@@ -4730,7 +4800,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    Wort für Wort gültig — `.lc-overline` selbst wird NICHT angefasst, sie bleibt
    Archivo. `.lc-randtitel` ist die Variante für die Zeile, die einen Abschnitt
    BENENNT (Gruppenkopf, Blattname, Marginalie); sie ist ein Rezept, kein
-   Einzelstellen-Stil. */
+   Einzelstellen-Stil.
+   HN-D2 (30.9.2026): das ist Stufe 3 der Titelordnung (F0.11) — Literata
+   kursiv 12 px, Gewicht aus der Basis-Regel h1–h3 (600 an h2/h3, 400 an `p`/
+   `span`); die Klasse pinnt es bewusst NICHT, weil geschichtete Gewichts-
+   Utilities (`font-medium` an den Leser-Randtiteln) sonst überstimmt würden. */
 .lc-randtitel {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
@@ -4756,8 +4830,15 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-normzeile button.lc-chip {
   border: 0;
   background: transparent;
-  padding-inline: 0;
-  margin-inline-end: .125rem;
+  /* DK-08 (HN-D6, 30.9.2026): `padding-inline: 0` machte das Normkürzel 16–20 px
+     breit (gemessen @390 hell: 220 von 1'017 Kürzeln auf /rechtsprechung unter
+     24 px, «BV» 16.0 × 24.0). Die Hitbox wächst OPTIKNEUTRAL: 4 px Polster je
+     Seite, durch gleich grosse NEGATIVE Aussenränder ausgeglichen — der Text
+     steht exakt wo vorher (Start-Rand −4, End-Rand 2 − 4), nur die Fläche ist
+     8 px breiter; der Unterstrich im Hover läuft weiter nur unter dem Text. */
+  padding-inline: .25rem;
+  margin-inline: -.25rem -.125rem;
+  min-width: var(--tap-ziel);
   font-weight: 400;
   color: var(--ink-500);
 }
@@ -4889,10 +4970,61 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    in dem er noch Platz hätte: Skala 1.2 @~490–520, 1.3 @~520–567, 1.4 @~560–600 px
    Fenster. Kein Überlauf, nur ein früher ausgeblendeter Knopf; eine skalen-
    abhängige Schwelle wäre ein Designentscheid. */
+/* NACHZUG W2·31 P3 (30.9.2026, Posten «Topbar-Verlauf-Schwelle … auf Skala 1.0 geeicht»
+   und «Kopfstreifen Skala 1.4 @481–496»): die feste Schwelle 25.5 rem (oben) ist ersetzt
+   durch den MESSBAREN Bedarf je Schriftskala. Der Streifen besteht aus rem-Anteilen
+   (Gaps, Griffe à 2.75 rem, Schrift) UND px-Anteilen (Siegel 28 px, Glyph-SVGs): sein
+   Bedarf ist linear in der Wurzelschrift, nicht konstant in rem (Fit gemessen 30.9.2026,
+   Preview-Build, Skala 1.0–1.4, Fenster < 640 px, Suchfeldboden 9 rem eingerechnet; Bedarf
+   = Streifen-Inhaltsbreite − Feldbreite + 9 rem):
+     mit Verlauf-Knopf  356.6 + 50 = 406.6 / 435.5 / 464.4 / 493.4 / 522.3 px  (Skala 1.0 … 1.4)
+                        = 18.08 rem + 117.3 px (Skala 0.9: 381.9 px, 4 px über der Geraden)
+     ohne Verlauf-Knopf 356.6 / 380.5 / 404.4 / 428.4 / 452.3 px = 14.95 rem + 117.4 px
+   Ab 640 px (`sm`) wachsen die Gaps (gap-3 → gap-5, gap-1.5 → gap-2): + 1.75 rem mit,
+   + 1.625 rem ohne Verlauf-Knopf (gemessen 1.2 / 1.3 / 1.4: 33.7 / 36.4 / 39.2 px bzw.
+   36.4 px ohne). Die Schwellen sind Gerade + kleine Reserve (Verlauf 18.1 rem + 124 px,
+   Boden 15 rem + 120 px; 0.4–5 px über dem Bedarf), damit der Knopf genau dort steht, wo
+   er Platz HAT — bei Skala 1.0 (Standard) ≈ 25.75 rem statt 25.5 rem, also unverändert.
+   GEMESSEN (Preview-Build, Sweep Fenster 481–800 px je 1 px, `/gesetze?ebene=bund` mit
+   gefülltem Verlauf): der Knopf erscheint ab Fenster 481 / 481 / 481 / 510 / 543 / 575 px bei
+   Skala 0.9 / 1.0 / 1.1 / 1.2 / 1.3 / 1.4 (vorher ab 481 / 481 / 484 / 528 / 572 / 616 — aus der
+   alten Schwelle 25.5 rem gerechnet, Stichproben @520/560/600/615 bestätigt: Band ohne Knopf
+   trotz Platz bei 1.2 @510–527, 1.3 @543–571, 1.4 @575–615), 0 Breiten mit Überlauf, und der Knopf fehlt höchstens 8 px (Fenster) unter der echten Grenze (die
+   Reserve der Schwelle). `calc()` in der Containerabfrage: wo ein Browser sie nicht liest, bleibt
+   `display: none` — der Knopf fehlt dann, der Streifen läuft nie über (und «Verlauf
+   leeren» steht zusätzlich im Such-Leerzustand, `SucheLeerzustand`). */
 .lc-topbar-verlauf { display: none; }
 @media (min-width: 481px) {
-  @container topbar-zeile (width >= 25.5rem) {
+  @container topbar-zeile (width >= calc(18.1rem + 124px)) {
     .lc-topbar-verlauf { display: block; }
+  }
+}
+@media (min-width: 640px) {
+  @container topbar-zeile (width < calc(19.85rem + 124px)) {
+    .lc-topbar-verlauf { display: none; }
+  }
+}
+/* Der 9-rem-Boden des Kopf-Suchfelds (D9-Nachzug, `min-[481px]:min-w-[9rem]` an der Feld-Hülle
+   in `Topbar.tsx`) galt bisher ab Fenster 481 px ohne Rücksicht auf die Schrift: Skala 1.4
+   @481 / 490 / 496 ragte der Streifen 16.1 / 7.1 / 1.1 px in sein rechtes Polster
+   (Seiten-Querscroll 0, Polster-Überlauf). Jetzt fällt der Boden WEG, wo der Streifen ihn
+   nicht trägt (Bedarf OHNE Verlauf-Knopf, s. o.): das Feld schrumpft dort um die Restmasse
+   (≤ 0.8 rem bei Skala 1.4, @481: 8.3 rem statt 9 rem) statt den Streifen zu sprengen —
+   ein Feld von 8 rem ist noch ein Feld, ein Überlauf ist ein Defekt. Die Zahl 9 rem bleibt
+   bewusst in der Utility (F9-Wächter `tap-ziel-token.test.ts` verbietet eine rohe
+   min-width-Zahl in CSS-Deklarationen); hier steht nur die Rücknahme (`min-width: 0`). Zwei Klassen (`.lc-topbar-zeile
+   .lc-topbar-suche`), weil die Regel im gebauten CSS VOR der Media-Utility steht (Tailwind 3
+   emittiert die `min-[481px]:`-Variante ans Ende; gemessen in `dist`: Regel bei Byte ~98 k,
+   Utility `.min-[481px]:min-w-[9rem]` bei ~131 k), bei gleicher Spezifität also die spätere
+   Utility gewönne. Einklassig gemessen (Nachzug #1188, 30.9.2026, Spec `seitenbreite`, Skala
+   1.4 @496): der Streifen ragte weiter 1.1 px ins Polster — die Regel griff nicht. (Die Regel
+   steht im Quelltext ausserhalb jedes `@layer`; das ändert an der Ausgabe-Reihenfolge nichts.) */
+@container topbar-zeile (width < calc(15rem + 120px)) {
+  .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
+}
+@media (min-width: 640px) {
+  @container topbar-zeile (width < calc(16.625rem + 120px)) {
+    .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
   }
 }
 

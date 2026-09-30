@@ -20,11 +20,17 @@ import { SITE_TITEL } from '../lib/seo';
 // seit dem Qualitäts-Pass 29.8.2026 im `SeitenKopf` selbst (T1/L5), und die
 // Wege-Zeile ist keine Fliesstext-Zeile.
 const WEGE: [FehlWeg, ...FehlWeg[]] = [
-  { to: '/', label: 'Katalog – alle Rechner & Vorlagen' },
+  { to: '/rechner', label: 'Alle Rechner' },
+  { to: '/vorlagen', label: 'Alle Vorlagen' },
   { to: '/methodik', label: 'Methodik' },
   { to: '/kontakt', label: 'Kontakt' },
 ];
 
+// DK-23 (HN-D6, 30.9.2026): das erste Ziel hiess «Katalog – alle Rechner & Vorlagen»
+// und führte auf «/», die Startseite — die beiden Kataloge liegen seit dem Umbau
+// unter `/rechner` und `/vorlagen` (Herz-und-Nieren-Prüfung 24.9.2026, DK-23).
+// Darum zwei Ziele, je eines pro Katalog, statt einer Beschriftung, die das
+// Ziel verfehlt.
 // ── LM-188 (W2·17-UI-BEFUNDE/B14) · EIGENER SEITENTITEL, KEIN FREMDES CANONICAL ─
 // Gemessen 4.9.2026 @1440 auf `/gibtesnicht` (Preview von origin/main): Tab-Titel
 // UND `link[rel=canonical]` waren die der STARTSEITE. Herkunft: die 404-Adresse ist
