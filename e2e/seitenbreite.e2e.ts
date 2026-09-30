@@ -584,6 +584,65 @@ test.describe(`Schriftskala ${SKALA} Handy 320–560 (W2·31 L)`, () => {
   }
 });
 
+// ─── FristenHauptKarte: Umbruch nur bei echtem Platzmangel (W2·31 L, Gegenprüfung) ─
+//
+// BEFUND (Prüfer, PR #1174): das reine `flex-wrap` an der Titelzeile der Haupt-
+// Karte «Fristenrechner» (`Katalog.tsx`, `.kt-haupt`) schob «Entwurf» + Pfeil
+// schon bei STANDARD-Schrift in eine zweite Zeile (@375 Skala 1: Titel 215 → 317 px,
+// Karte 151 → 178 px; @414/430 Titel 2 → 1 Zeile): der Umbruch rechnet mit der
+// vollen Textbreite, nicht mit der Schrumpfbreite. Fix: Titel `basis-[min-content]
+// grow max-w-max` — Umbruch erst, wenn das längste Wort + Marke + Pfeil nicht passt.
+// Zwei Zusicherungen, beide nötig:
+//  (a) Skala 1, 360–480: Marke und Pfeil stehen in der ZEILE des Titels (Oberkante
+//      vor der Titel-Unterkante) und die Karte bleibt ≤ 160 px hoch (vorher 151.3,
+//      reines `flex-wrap` 178.4) — UND ≥ 140 px (nicht kaputt gekappt).
+//  (b) Skala 1.4 @320/@375: nichts ragt über den Kartenrand (vorher Pfeil R 372 gegen
+//      Karte R 347 @375).
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Katalog.tsx` dem Titel `basis-[min-content]
+// grow max-w-max` nehmen (reines `flex-wrap`) → (a) rot @360–430; `flex-wrap` ganz
+// weg → (b) rot (Beweise im PR-Bericht).
+test.describe('FristenHauptKarte Umbruch nur bei Platzmangel (W2·31 L)', () => {
+  const messeKarte = (page: Page) => page.evaluate(() => {
+    const karte = document.querySelector('.kt-haupt') as HTMLElement;
+    const zeile = karte.children[0] as HTMLElement;
+    const [titel, ...rest] = [...zeile.children].map((c) => c.getBoundingClientRect());
+    const k = karte.getBoundingClientRect();
+    return {
+      karteH: k.height,
+      ueberRand: Math.max(...[titel, ...rest].map((r) => r.right - k.right)),
+      beiTitel: rest.every((r) => r.top < titel.bottom),
+      marke: rest.length,
+    };
+  });
+
+  test('Skala 1: «Entwurf» und Pfeil bleiben in der Titelzeile @360–480', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' });
+    for (const width of [360, 375, 414, 430, 480]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/rechner');
+      await bereit(page);
+      const m = await messeKarte(page);
+      const ort = `FristenHauptKarte @${width} Skala 1`;
+      expect(m.marke, `${ort}: Marke + Pfeil vorhanden`).toBe(2);
+      expect(m.beiTitel, `${ort}: Marke/Pfeil rutschten in eine zweite Zeile (Karte ${m.karteH.toFixed(1)} px)`).toBe(true);
+      expect(m.karteH, `${ort}: Kartenhöhe ${m.karteH.toFixed(1)} px`).toBeLessThanOrEqual(160);
+      expect(m.karteH, `${ort}: Kartenhöhe ${m.karteH.toFixed(1)} px`).toBeGreaterThanOrEqual(140);
+    }
+  });
+
+  test(`Skala ${SKALA}: nichts ragt über den Kartenrand @320/375`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+    for (const width of [320, 375]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/rechner');
+      await bereit(page);
+      const m = await messeKarte(page);
+      expect(m.ueberRand, `FristenHauptKarte @${width} Skala ${SKALA}: ${m.ueberRand.toFixed(1)} px über dem Kartenrand`).toBeLessThanOrEqual(0.5);
+    }
+  });
+});
+
 // ─── Untergrenze der Wortmarke (Nachbesserung Gegenprüfung #1161, 30.9.2026) ──
 //
 // Die Tests oben sichern nur OBERgrenzen (kein Überlauf). Eine Regression, die

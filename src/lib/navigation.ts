@@ -115,10 +115,8 @@ const werkzeugGruppe = (label: string, kinder: NavLink[], ziel?: string): NavGru
 // O2 (W2·10-UI-NAV-O · Sidebar-Konsistenz): die Vorlagen-Gruppen tragen ein
 // `ziel` — wie Kantone/International. Das Gruppen-Label navigiert damit ÜBERALL,
 // der Chevron klappt überall. Sprungziel ist der Übersichtsanker der Rubrikseite:
-//   · `vorlage-<sektion.id>` — Katalog.tsx `VorlagenRegister` (damals scroll-mt-24;
-//     seit W2·31 Bündel L `.lc-sprungziel`, index.css — `scroll-mt-24` lag
-//     2–3 px unter der Arbeitsleiste; der Kommentar dort nennt die Seitenleiste
-//     als Absender)
+//   · `vorlage-<sektion.id>` — Katalog.tsx `VorlagenRegister` (scroll-mt-24;
+//     der Kommentar dort nennt die Seitenleiste als Absender)
 // Den Sprung führt ScrollZuHash (App.tsx) aus — kein neuer Mechanismus (§5).
 // Das Gegenstück `RECHNER_ANKER` (`/rechner#register-<kat.id>`) ist mit den
 // Rechner-Kategorie-Gruppen entfallen (D26); die Anker selbst rendert
