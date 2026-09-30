@@ -101,6 +101,13 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Die Kantone-Karte im Gesetze-Blatt (`2xl:max-w-[15.5rem]`) bleibt UN-
 //     VERÄNDERT: gemessen 26.9.2026 @1536×864 `scrollHeight === clientHeight`
 //     (0 px Reserve) — jede Vergrösserung der Karte reisst U13 sofort.
+//   · W2·31 J (30.9.2026, Posten «Teile-Zeile `2xl:block` hängt am Viewport»):
+//     seit J heisst das Feld `teileNurBreit` und die Zeile hängt an der
+//     KACHELBREITE (`@md/kachel`, 28 rem des Kachel-Containers) statt an `2xl`.
+//     Gemessen: Kachel 348 px (1440, 21.75 rem) aus, 508 px (≥ 1536, 31.75 rem)
+//     an — wie bei G; neu aus bei 326 px (1536 mit Seitenleiste 460, 20.4 rem)
+//     und bei Skala 1.4 @1536 (471 px = 21 rem), an bei Skala 1.4 @1920
+//     (663 px = 29.6 rem). U13 bei Skala 1.4 bleibt offen, s. Posten-Bericht.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -125,10 +132,11 @@ const KACHELN: readonly KachelDef[] = [
   // (Stufe `weit`) blieben rund 148 px Höhe ungenutzt (gemessen, Zelle bleibt
   // fest 280 px hoch, U13-Deckel). `teile` nutzt eine bereits geladene
   // Zählerzahl (§15: keine neue Datenlast), `teileAb2xl`: die Zeile zeigt nur
-  // ab 1536 px — unter 1536 bleibt die Kachel unverändert (Bauregel).
+  // ab 1536 px — unter 1536 bleibt die Kachel unverändert (Bauregel). Seit
+  // W2·31 J `teileNurBreit`: Schwelle Kachelbreite ≥ 28 rem statt Fenster 2xl.
   { rubrik: 'rechtsprechung', reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: nf(z.rechtsprechungVolltext),
     einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet',
-    teile: `${nf(z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`, teileAb2xl: true },
+    teile: `${nf(z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`, teileNurBreit: true },
   // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
   // enthalten»): die Kachel führt BEIDE Gattungen (Hausbegriffe wie im Leser,
   // `lib/materialien/gattung.ts`) — vorher nannte der Nutzen nur die

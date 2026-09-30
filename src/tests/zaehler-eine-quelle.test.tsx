@@ -126,7 +126,11 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     const rKnopf = kacheln[1];
     const rTeile = [...rKnopf.querySelectorAll('span')].find((s) => (s.textContent ?? '').includes('Leitentscheide'));
     expect(rTeile?.className, 'Teile-Zeile bleibt unter 1536 px verborgen').toContain('hidden');
-    expect(rTeile?.className, 'Teile-Zeile zeigt sich ab 1536 px (2xl)').toContain('2xl:block');
+    // DEKLARIERTE DARSTELLUNGSÄNDERUNG W2·31 J (30.9.2026): die Schwelle hängt
+    // an der Kachelbreite (`@md/kachel`, 28 rem des Kachel-Containers), nicht
+    // mehr am Fenster (`2xl`) — Wächter am Browser: `e2e/startseite-breite.e2e.ts` (1c).
+    expect(rTeile?.className, 'Teile-Zeile zeigt sich ab Kachelbreite 28 rem').toContain('@md/kachel:block');
+    expect(rTeile?.className, 'Teile-Zeile hängt nicht mehr am Fenster').not.toContain('2xl:block');
     // DEKLARIERTE ANPASSUNG U12 (David 24.9.2026, «materialien soll
     // erläuterungen und materialien enthalten», §6.3): die Einheit hiess
     // «amtliche Materialien erfasst» und mischte die Hausbegriffe; jetzt nennt
