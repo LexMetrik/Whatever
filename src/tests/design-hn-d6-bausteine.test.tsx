@@ -98,7 +98,7 @@ describe('DK-02 · KantonFeld — eine Beschriftung, eine Reihenfolge, eine Name
   });
 });
 
-describe('DK-14 · DatenTabelle — PROBE', () => {
+describe('DK-14 · DatenTabelle — eine ruhige Grundform', () => {
   const html = renderToStaticMarkup(
     <DatenTabelle
       spalten={[{ kopf: 'Typ', zelle: 'text-ink-900' }, { kopf: 'Frist', ziffern: true }, { kopf: 'Normen' }]}
