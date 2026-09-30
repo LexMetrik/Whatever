@@ -20,7 +20,7 @@ export function Kategorie({ id, offen, onToggle, kopf, anzahl, children }: {
   return (
     <details id={id} open={offen}
       onToggle={(e) => { if ((e.currentTarget as HTMLDetailsElement).open !== offen) onToggle(); }}
-      className="group border border-rule-soft scroll-mt-24">
+      className="group border border-rule-soft lc-sprungziel">
       <summary className="flex items-baseline gap-3 cursor-pointer select-none px-4 py-3 lc-hover-flaeche after:content-none">
         <span aria-hidden className="text-ink-500 transition-transform group-open:rotate-90">›</span>
         {kopf}

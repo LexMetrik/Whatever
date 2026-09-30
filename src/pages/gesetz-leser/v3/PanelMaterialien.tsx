@@ -203,8 +203,16 @@ export function PanelMaterialien({ stand, ebene, locale = 'de', aenderungNachBot
                     Herkunft (`bsKanten[].quelle`) fliesst absichtlich NICHT ins
                     Browser-Manifest (nur `register-provenienz.json`, „vom Browser
                     NIE geholt“) — hier bleibt nur die Textunterscheidung am
-                    `hinweis`-Präfix, den der Generator setzt. */}
-                {g.hinweis && !g.hinweis.startsWith('Zuordnung amtlich') && <StatusBadge praedikat="maschinell" />}
+                    `hinweis`-Präfix, den der Generator setzt.
+                    ERGÄNZT 30.9.2026 (W2·27-BUND-FERTIG, Nachprüfung Bug-Check
+                    #1097): der letzte Satz ist überholt. Die Präfix-Deutung galt
+                    je GESCHÄFT — ein gemischtes Geschäft (amtlich an Erlass A,
+                    maschinell an B) hätte am maschinellen Erlass B das Etikett
+                    verloren (§8). Seither trägt das Kern-Manifest die Herkunft
+                    JE ERLASS (`bsZuordnung`, vom Generator aus
+                    `bsKanten[].quelle`), `ratschlaege.ts` reicht sie als
+                    `zuordnung` durch; fehlt sie, gilt «maschinell». */}
+                {g.zuordnung !== 'amtlich' && <StatusBadge praedikat="maschinell" />}
               </span>
               <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                 {g.titel}{' '}

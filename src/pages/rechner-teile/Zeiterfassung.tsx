@@ -112,7 +112,10 @@ export function Zeiterfassung() {
           aria-label="Aufgabe"
           className="lc-input flex-1 min-w-0 basis-full sm:basis-auto sm:min-w-[12rem]"
         />
-        <div className="flex gap-2">
+        {/* `flex-wrap` (W2·31 L, 30.9.2026): «Start» + «Zurücksetzen» sind @320 Skala
+            1.4 zusammen 273 px breit, die Karte lässt 208 px (+52 px Seitenüberlauf
+            auf /rechner). Nur bei Platzmangel steht der zweite Knopf darunter. */}
+        <div className="flex flex-wrap gap-2">
           <button type="button" onClick={laeuft ? stoppenUndBuchen : starten}
             className="lc-btn lc-btn-primary"
             style={laeuft ? { background: 'var(--danger-700)' } : undefined}>

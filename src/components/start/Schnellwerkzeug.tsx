@@ -84,8 +84,16 @@ export function Schnellwerkzeug() {
 
   return (
     <StartFlaeche titel={aktiv.titel}>
+      {/* `flex-wrap @[11rem]:flex-nowrap` (W2·31 L, 30.9.2026): die drei Reiter
+          (`whitespace-nowrap`) sind @320 Skala 1.4 zusammen 267 px breit, die Kachel
+          lässt 208 px (9.3 rem) — die einspaltige Grid-Spur folgte der Mindestbreite und
+          schob Kopf, Reiter und Formular 3 px über den Fensterrand. Unter 11 rem
+          Kachelbreite darf die Reihe umbrechen (Mindestbreite = der breiteste EINE
+          Reiter). Ab 11 rem bleibt es bei EINER Reihe wie bisher: @375 Skala 1.4 (263 px
+          = 11.7 rem) ragt sie 4 px ins Kachelpolster (28 px), ohne Seitenüberlauf — dort
+          wäre ein Umbruch mehr Eingriff als der Befund (gemessen: Reihenzahl 1 → 2). */}
       <div role="tablist" aria-label="Schnellwerkzeug wählen" onKeyDown={taste}
-        className="flex gap-1">
+        className="flex flex-wrap gap-1 @[11rem]:flex-nowrap">
         {SCHNELL_WAHLEN.map((w, i) => {
           const gewaehlt = w.code === wahl;
           return (

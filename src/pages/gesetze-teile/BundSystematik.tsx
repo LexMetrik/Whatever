@@ -50,9 +50,20 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
       {kategorien.map((kat) => (
         <Kategorie key={kat.id} id={`sys-${kat.id}`} offen={offen.has(kat.id)} onToggle={() => toggle(kat.id)} anzahl={kat.anzahl}
           kopf={
-            <span className="flex items-baseline gap-2.5">
-              <span aria-hidden className="num font-display text-h3 leading-none text-reg-g">{kat.nr}</span>
-              <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
+            /* W2·31 L (30.9.2026): `min-w-0` an Hülle UND Titel, `shrink-0` an der
+               Nummer — wie in `KantonSystematik`. Ohne sie ist die Mindestbreite eines
+               Flex-Kindes sein längstes Wort: «Zwangsvollstreckungsrecht» (341 px @375,
+               Skala 1.4) sprengte die Zeile um +116 px (@320 +171; @320 Skala 1 +31),
+               die Zahl rechts («141», «6») stand im Nichts. `lc-wortumbruch`
+               (hyphens + Umbruch-Garant, index.css) trennt «Zwangsvollstreckungs-
+               recht» an der Silbe statt nach «…rec» / «ht» (harter Umbruch, gesehen
+               @375 Skala 1). Standard-Skala: nur dieser eine Titel ändert sich, und
+               nur @320–375 (2 → 3 Zeilen; vorher ragte die Zahl 13 px in den Kasten-
+               rand bzw. @320 31 px über das Fenster); die übrigen vier Titel sind
+               @320–1280 zeilengleich (Silbentrennung misst je Zeile, gemessen). */
+            <span className="flex min-w-0 items-baseline gap-2.5">
+              <span aria-hidden className="num font-display text-h3 leading-none text-reg-g shrink-0">{kat.nr}</span>
+              <span className="min-w-0 lc-wortumbruch font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
             </span>
           }>
           <p className="text-body-s text-ink-500 max-w-reading-s">{kat.lede}</p>

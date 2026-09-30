@@ -77,8 +77,19 @@ function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabe
 function FristenHauptKarte({ k, untertitel }: { k: CalculatorCard; untertitel: string }) {
   return (
     <Link to={k.href!} className="kt-haupt lc-hover-flaeche group flex min-w-0 flex-col gap-1 no-underline">
-      <span className="flex items-baseline gap-3">
-        <span className="font-sans font-semibold text-ink-900 text-h3 leading-snug underline-offset-4 group-hover:underline">{sansAmp(k.title)}</span>
+      {/* `flex-wrap` + Titel `basis-min-content grow max-w-max` (W2·31 L, 30.9.2026; Nachbesserung
+          Gegenprüfung): Titel + «Entwurf» + Pfeil liefen @320 Skala 1.4 über den Kartenrand
+          (Marke R 332, Pfeil R 372 bei Fenster 320). Nur bei ECHTEM Platzmangel rutschen
+          Marke und Pfeil in die zweite Zeile: das reine `flex-wrap` tat es schon bei
+          Standard-Schrift (Titel @375 215 → 317 px, Karte 151 → 178 px), weil der Umbruch mit
+          der vollen Textbreite des Titels rechnet, nicht mit seiner Schrumpfbreite. Mit
+          Basis `min-content` rechnet der Umbruch mit dem längsten Wort; `grow` +
+          `max-w-max` lassen den Titel danach bis zu seiner Textbreite wachsen (nicht
+          darüber: die Marke bleibt am Titelende, wie zuvor) und höchstens bis zum
+          Zeilenrand. Kein fester rem-Wert. Skala 1.0: Karten-Rects @320–1280
+          deckungsgleich mit dem Stand vor W2·31 L. */}
+      <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="basis-[min-content] grow max-w-max font-sans font-semibold text-ink-900 text-h3 leading-snug underline-offset-4 group-hover:underline">{sansAmp(k.title)}</span>
         {k.status === 'entwurf' && (
           <span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
         )}
@@ -241,7 +252,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
       {proGruppe.map(({ s, verf }) => (
         /* id-Anker «vorlage-<id>»: Sprungziel der Seitenleisten-Vorlagen-
            Untergruppen (navigation.ts → ScrollZuHash). */
-        <div key={s.id} id={`vorlage-${s.id}`} className="space-y-2 scroll-mt-24">
+        <div key={s.id} id={`vorlage-${s.id}`} className="space-y-2 lc-sprungziel">
           <GruppenKopf titel={s.title} zahl={verf.length} />
           <p className="text-body-s text-ink-500 max-w-reading-s">{s.lede}</p>
           {s.art === 'eingabe' ? (
@@ -378,8 +389,16 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebiets
               ist die Seiten-Überschrift, kein Struktur-Etikett (§G-e).
               K4: die Zahl in Tinte statt Messing; die Registerkante trägt
               `.kt-kopf` (2-px-Strich oben). */}
-          <div className="flex items-baseline gap-4">
-            <h2 id={`register-titel-${kat.id}`} className="whitespace-nowrap">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            {/* W2·31 L (30.9.2026): Titel darf umbrechen (`whitespace-nowrap` entfällt)
+                und die Zeile darf umbrechen (`flex-wrap`). Gemessen /rechner Skala 1.4:
+                Titel einzeilig + «9 verfügbar» (nowrap) = 32 px über den Rand @375;
+                @320 «Zuständigkeiten» (197 px, EIN Wort) + «4 verfügbar» (84 px) + 2
+                Lücken = 326 px in 264 px. Beides greift nur, wenn die Zeile sonst
+                überliefe — was einzeilig passt, bleibt einzeilig (Zeilenzahl vorher/
+                nachher @320–1920 × Skala 1/1.4 gleich ausser den behobenen Überläufen);
+                dann steht «n verfügbar» in der zweiten Zeile statt im Nichts. */}
+            <h2 id={`register-titel-${kat.id}`}>
               <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
             </h2>
             <span aria-hidden className="flex-1 h-px bg-line" />

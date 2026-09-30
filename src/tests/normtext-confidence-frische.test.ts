@@ -10,6 +10,8 @@ function basis(): FrischeEingabe {
   return {
     gemeldeterKorpusSha: 'abc123',
     aktuellerManifestSha: 'abc123',
+    gemeldeterDateiSha: 'def456',
+    aktuellerDateiSha: 'def456',
     gemeldeteErlasse: 10,
     aktuelleDateianzahl: 10,
     erzeugt: '2026-09-15',
@@ -42,6 +44,20 @@ describe('pruefeFrische', () => {
     expect(befund.frisch).toBe(false);
     expect(befund.gruende).toHaveLength(1);
     expect(befund.gruende[0].klasse).toBe('anzahl-abweichung');
+  });
+
+  it('meldet datei-sha-abweichung bei Umbenennung (artikel.sha und Dateianzahl unverändert, Prüfer #888)', () => {
+    const befund = pruefeFrische({ ...basis(), aktuellerDateiSha: 'umbenannt' });
+    expect(befund.frisch).toBe(false);
+    expect(befund.gruende).toHaveLength(1);
+    expect(befund.gruende[0].klasse).toBe('datei-sha-abweichung');
+  });
+
+  it('meldet datei-sha-fehlt bei einer Alt-Datei ohne korpus.dateiSha', () => {
+    const befund = pruefeFrische({ ...basis(), gemeldeterDateiSha: undefined });
+    expect(befund.frisch).toBe(false);
+    expect(befund.gruende).toHaveLength(1);
+    expect(befund.gruende[0].klasse).toBe('datei-sha-fehlt');
   });
 
   it('meldet BEIDE Gründe gleichzeitig, wenn sha und Anzahl abweichen', () => {

@@ -4097,9 +4097,37 @@
     transition: color .15s, border-color .15s;
   }
   .lc-tab:hover { color: var(--ink-900); border-bottom-color: var(--rule-soft); }
-  /* Fokus als Strich, nicht als Kasten — dasselbe Bild wie `.lc-menu-zeile`
-     und `.lc-input` (EIN Fokus-Bild für die ganze App, R3-F3). */
-  .lc-tab:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
+  /* Fokus = der 2-px-Ring der Regel F3, nach INNEN gezogen.
+
+     W2·19 DK-A (30.9.2026, Posten «Frist-Tab ohne sichtbaren Fokusindikator»):
+     bis dahin stand hier `outline: none` und der Fokus lag allein als
+     `border-bottom-color` (`--focus`) auf dem Zustandsstrich. Der AKTIVE Reiter
+     trägt aber schon einen `border-bottom-color` (`--ink-900`, Regel unten,
+     gleiche Spezifität, später im Quelltext) — die Fokus-Farbe verlor dort, und
+     der aktive Reiter zeigte fokussiert exakt das Bild des unfokussierten.
+     Ausgerechnet der aktive ist bei ARIA-Tabs (roving tabindex) der EINZIGE per
+     Tab erreichbare Reiter: gemessen 30.9.2026 an Startseite «Frist»,
+     Tagerechner, ZPO-Fristen, Kündigung — `outline-style: none`,
+     `box-shadow: none`, Randfarbe unverändert (hell UND dunkel). Ein Strich, der
+     in der Farbe des Zustandsstrichs fällt (hell: `--focus` = Tinte = aktiver
+     Strich), ist auch mit eigenem Träger kaum vom aktiven Reiter zu
+     unterscheiden — F3 verlangt einen Ring (≥ 2 px, ≥ 3:1), nicht einen dickeren
+     Strich. Darum: die globale `:focus-visible`-Outline bleibt stehen, nur der
+     Versatz geht nach innen (`-2px`): die Leiste ist ein `overflow-x: auto`-
+     Behälter, ein Ring ausserhalb würde oben/unten/seitlich abgeschnitten
+     (Muster `.kt-einstieg :focus-visible`, `.tb-link`).
+
+     KORREKTUR (Gegenprüfung 30.9.2026): der erste Wurf stand auf `-2px` und
+     behauptete, der Zustandsstrich bleibe darunter sichtbar. Das stimmt nicht —
+     der Ring übermalt bei `-2px` die Unterkante (Chromium, gemessen
+     per Screenshot-Pixel, Startseite/Tagerechner/ZPO-Fristen dunkel: unterste
+     Zeile = Ringfarbe 148,144,136 statt Strichfarbe; Dokumentmappe dunkel: Strich
+     230,185,90 → Ring); fokussiert-gewählt und fokussiert-ungewählt
+     unterschieden sich nur noch durch die Schriftstärke. Darum `-4px`: zwischen
+     Reiterkante und Ring bleibt die volle Breite des 2-px-Rands frei, der
+     Zustandsstrich des aktiven Reiters bleibt sichtbar (bewacht von
+     `e2e/reiter-fokusring.e2e.ts`, Pixelprobe der Unterkante). */
+  .lc-tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -4px; color: var(--ink-900); }
   .lc-tab[aria-selected="true"],
   .lc-tab[aria-pressed="true"] { color: var(--ink-900); font-weight: 500; border-bottom-color: var(--ink-900); }
   /* W2·29-WERKBANK-VORLAGEN V3 · die Prop ist da (`data-reg`, bisher nur die
@@ -4831,6 +4859,32 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 @media (min-width: 640px) {
   @container topbar-zeile (width >= 33.25rem) {
     .lc-topbar-wortmarke { display: block; }
+  }
+}
+/* W2·31 Bündel L (30.9.2026) · DER VERLAUF-KNOPF BRAUCHT PLATZ, NICHT NUR 481 PX.
+   Bis hierher `max-[480px]:hidden` (C2, 29.8.2026): ab 481 px immer da. Die Schwelle
+   ist ein Fenster-px-Wert, die Schriftskala skaliert aber rem — GEMESSEN (Preview,
+   Verlauf gefüllt, `/`, Skala 1.4): Streifen + Verlauf + 9-rem-Suchfeldboden brauchen
+   523 px Inhaltsbreite, das Fenster @481 bietet 436: scrollWidth +64 @481, +25 @520,
+   @560 7.1 px im rechten Polster; ab 567 px passt es. Gleiches Rezept wie die
+   Wortmarke (H, #1161): die Containerabfrage misst die INHALTSBREITE des Streifens.
+   Gemessener Bedarf mit Verlauf (Marke ohne Wortmarke): 25.41 / 24.75 / 24.19 /
+   23.72 / 23.32 rem bei Skala 1.0 / 1.1 / 1.2 / 1.3 / 1.4 — Schwelle 25.5 rem, eine
+   Zehntel-rem über dem grössten (Skala 1.0). STANDARD-SKALA UNVERÄNDERT: die
+   Fenster-Bedingung (≥ 481 px) bleibt, und @481 Skala 1.0 misst die Inhaltsbreite
+   449 px = 28.06 rem ≥ 25.5 (mit 17-px-Scrollleiste 27 rem); die Bedingung greift
+   erst, wo der Streifen sonst überliefe (Skala ≥ 1.1 im Fenster 481–~500 px bzw.
+   Skala 1.4 bis 616 px). Bewacht von `e2e/seitenbreite.e2e.ts` («Schriftskala 1.4 schmal»).
+   OFFEN, bewusst nicht geändert (Gegenprüfung 30.9.2026): die eine Schwelle 25.5 rem
+   ist auf Skala 1.0 geeicht (grösster Bedarf 25.41 rem); bei höherer Skala sinkt der
+   Bedarf (23.3–24.75 rem), die Schwelle bleibt — der Knopf fehlt dort in einem Band,
+   in dem er noch Platz hätte: Skala 1.2 @~490–520, 1.3 @~520–567, 1.4 @~560–600 px
+   Fenster. Kein Überlauf, nur ein früher ausgeblendeter Knopf; eine skalen-
+   abhängige Schwelle wäre ein Designentscheid. */
+.lc-topbar-verlauf { display: none; }
+@media (min-width: 481px) {
+  @container topbar-zeile (width >= 25.5rem) {
+    .lc-topbar-verlauf { display: block; }
   }
 }
 

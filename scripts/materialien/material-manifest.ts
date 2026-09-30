@@ -53,7 +53,7 @@ export const REGISTER_PROVENIENZ_PFAD = join('public', 'materialien', 'register-
 const KERN_FELDER = [
   'key', 'behoerde', 'behoerdeName', 'behoerdeKuerzel', 'doktyp', 'doktypLabel',
   'titel', 'nummer', 'rechtsgebiet', 'sprache', 'status', 'quelleUrl', 'stand',
-  'rang', 'normKeys', 'hinweis', 'vernehmlassung', 'fundstelle',
+  'rang', 'normKeys', 'hinweis', 'vernehmlassung', 'fundstelle', 'bsZuordnung',
 ] as const satisfies ReadonlyArray<keyof BrowseMaterial>;
 
 /**
@@ -167,7 +167,25 @@ export function shaEintrag(r: MaterialRegistereintrag): string {
   return createHash('sha256').update(norm, 'utf8').digest('hex');
 }
 
-function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
+/**
+ * Herkunft je Erlass aus den Kanten eines BS-Geschäfts (Kern-Feld `bsZuordnung`). Der
+ * Generator vergibt je (Geschäft, Erlass) genau EINE Kante; kämen doch zwei mit
+ * verschiedener Herkunft, gewinnt «maschinell» (§8: nie mehr Gewicht zusprechen, als
+ * belegt ist). Schlüssel nach Erlass sortiert → byte-deterministisch (§2).
+ */
+export function zuordnungJeErlass(
+  kanten: ReadonlyArray<{ erlass: string; quelle: 'amtlich' | 'maschinell' }>,
+): Record<string, 'amtlich' | 'maschinell'> {
+  const je = new Map<string, 'amtlich' | 'maschinell'>();
+  for (const k of kanten) {
+    const bisher = je.get(k.erlass);
+    je.set(k.erlass, bisher === 'maschinell' || k.quelle === 'maschinell' ? 'maschinell' : 'amtlich');
+  }
+  return Object.fromEntries([...je.entries()].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
+}
+
+/** Ein Registereintrag → der volle Manifest-Eintrag (exportiert für Tests, unverändert). */
+export function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
   const b = behoerdeVon(r.behoerde);
   // Botschaften-Zusatzfelder NUR für BR emittieren → bestehende Einträge byte-identisch
   // (keine neuen null-Keys in den kuratierten register.json-Zeilen).
@@ -197,7 +215,7 @@ function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
   const bsFelder = r.behoerde === 'BS-GR'
     ? {
         ...(r.ereignisse?.length ? { ereignisse: r.ereignisse } : {}),
-        ...(r.bsKanten?.length ? { bsKanten: r.bsKanten } : {}),
+        ...(r.bsKanten?.length ? { bsKanten: r.bsKanten, bsZuordnung: zuordnungJeErlass(r.bsKanten) } : {}),
       }
     : {};
   return {

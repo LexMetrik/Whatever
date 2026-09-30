@@ -1,9 +1,10 @@
 /**
  * Drift-Check für Norm-Snapshots (§7 Zitat-Ausnahme d — automatische Drift-Erkennung).
  *
- * Drei Prüfungen:
+ * Vier Prüfungen (2c = Label-/Anker-Riegel, W2·27-BUND-FERTIG):
  *   1. Bund-Fassung (OFFLINE): fassungsToken jedes Snapshots vs. Konsolidierung aus fedlex-cache.sh.
  *   2. Bund-Vollständigkeit (OFFLINE): Pflicht-Anker aus fedlex-cache.sh müssen als Snapshot existieren.
+ *   2c. Label/Anker (OFFLINE): artikelLabel/quelleUrl gegen die id-Form (golden-neutral, sonst ungewacht).
  *   3. Kanton-Drift (NETZ, nur mit --netz): versionUid aus LexWork vs. fassungsToken im Snapshot.
  *
  * §2: kein Date.now/Math.random. §8: kein stilles Versagen (Exit 1 bei echten Problemen).
@@ -30,7 +31,7 @@ import { holeHtm } from './adapter-htm.ts';
 import { holeZhPdf } from './adapter-zh-pdf.ts';
 import { holePdf, PDF_PROFILE } from './adapter-pdf.ts';
 import { pdfLawIdSafe } from './lawid-safe.ts';
-import { pruefeBundFassung, pruefeBundVollstaendigkeit, pruefeCoverage } from './drift-logik.ts';
+import { pruefeBundFassung, pruefeBundVollstaendigkeit, pruefeCoverage, pruefeLabelUrl } from './drift-logik.ts';
 import type { NormSnapshot, RegisterEintragLite } from './drift-logik.ts';
 import { PDF_EMBED_QUELLEN } from '../../src/lib/normtext/pdf-embed.ts';
 
@@ -177,12 +178,20 @@ async function main(): Promise<void> {
     coverageStatus = 'übersprungen (register.json fehlt)';
   }
 
+  // ─── Prüfung 2c: Label-/Anker-Riegel (offline, W2·27-BUND-FERTIG) ──────────
+  const labelUrl = pruefeLabelUrl(snapshots);
+  if (labelUrl.length > 0) {
+    console.error('\nFEHLER Label/Anker: artikelLabel/quelleUrl passen nicht zur id (golden-neutral, sonst ungewacht):');
+    for (const b of labelUrl) console.error(`  [${b.regel}] ${b.id}: ${b.text}`);
+    exitCode = 1;
+  }
+
   // ─── Report Prüfung 1+2 ────────────────────────────────────────────────────
   const gepruefte = snapshots.filter((s) => s.id.startsWith('bund/')).length;
   const driftStatus = mismatches.length === 0 ? 'ok' : `${mismatches.length} Mismatch(es)`;
   const fehlendStatus = fehlend.length === 0 ? 'ok' : `${fehlend.length} fehlend`;
   console.log(
-    `check:normtext (offline): ${gepruefte} Bund-Snapshots geprüft — Drift: ${driftStatus}, Fehlend: ${fehlendStatus}, Coverage: ${coverageStatus}`,
+    `check:normtext (offline): ${gepruefte} Bund-Snapshots geprüft — Drift: ${driftStatus}, Fehlend: ${fehlendStatus}, Coverage: ${coverageStatus}, Label/Anker: ${labelUrl.length === 0 ? 'ok' : `${labelUrl.length} Befund(e)`}`,
   );
 
   // ─── Prüfung 3: Kanton-Drift (NETZ) ────────────────────────────────────────

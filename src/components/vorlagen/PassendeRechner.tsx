@@ -24,7 +24,7 @@ export function PassendeRechner() {
       {rechner.map((r, i) => (
         <span key={r.id}>
           {i > 0 && ' · '}
-          <Link to={r.href} className="text-brass-700 hover:text-brass-600 no-underline">{r.title} →</Link>
+          <Link to={r.href} className="text-brass-700 hover:text-brass-600 lc-link">{r.title} →</Link>
         </span>
       ))}
     </p>

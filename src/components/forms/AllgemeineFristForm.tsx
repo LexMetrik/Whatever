@@ -292,7 +292,7 @@ export function AllgemeineFristForm({ live }: {
               Dieser Rechner zählt nur Kalenderjahre – Unterbrechung (Art. 135 ff. OR) und
               Stillstand (Art. 134 OR) rechnet der{' '}
               <Link to="/rechner/verjaehrung"
-                className="font-medium text-brass-700 hover:text-brass-600 no-underline whitespace-nowrap">
+                className="font-medium text-brass-700 hover:text-brass-600 lc-link whitespace-nowrap">
                 Verjährungsrechner →
               </Link>
             </p>
@@ -382,8 +382,8 @@ export function AllgemeineFristForm({ live }: {
                   und Links unverändert (Text aus lib/allgemeineFrist.ts, §5). */}
               <p className="text-body-s text-ink-500 max-w-reading-s">
                 {ALLG_FRIST_HINWEIS.replace(' den ZPO-Fristenrechner, für betreibungsrechtliche den SchKG-Fristenrechner verwenden.', ':')}{' '}
-                <Link to="/rechner/zpo-fristen" className="text-brass-700 no-underline hover:text-brass-600">ZPO-Fristen →</Link>{' · '}
-                <Link to="/rechner/schkg-fristen" className="text-brass-700 no-underline hover:text-brass-600">SchKG-Fristen →</Link>
+                <Link to="/rechner/zpo-fristen" className="text-brass-700 lc-link hover:text-brass-600">ZPO-Fristen →</Link>{' · '}
+                <Link to="/rechner/schkg-fristen" className="text-brass-700 lc-link hover:text-brass-600">SchKG-Fristen →</Link>
               </p>
             </ErgebnisBlock>
           )}

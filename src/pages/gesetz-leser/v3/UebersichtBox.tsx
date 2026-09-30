@@ -75,7 +75,7 @@ export function UebersichtBox({ angaben, rohdaten, offen }: {
             {links.map((l) => (
               <a key={l.id} data-v3-uebersicht-link={l.id} href={l.href}
                 target="_blank" rel="noopener noreferrer"
-                className="text-brass-700">
+                className="lc-link text-brass-700">
                 {l.zeichen === '↗'
                   ? <>{l.label} <span aria-hidden>↗</span></>
                   : <><span aria-hidden>{l.zeichen}</span> {l.label}</>}
@@ -90,7 +90,7 @@ export function UebersichtBox({ angaben, rohdaten, offen }: {
             welche Fassung in der Datei liegt (§7 Bst. a). */}
         {rohdaten && (
           <p data-v3-uebersicht-rohdaten className="mt-1 text-xs leading-snug text-ink-500">
-            <a href={rohdaten.href} className="text-brass-700" download>
+            <a href={rohdaten.href} className="lc-link text-brass-700" download>
               <span aria-hidden>⬇</span> Rohdaten (JSON)
             </a>
             {rohdaten.stand && <> — <span className="lc-ziffern">{`Fassung ${rohdaten.stand}`}</span></>}

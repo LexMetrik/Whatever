@@ -610,7 +610,7 @@ const CONFIG: VorlagenSeitenConfig<SgAnswers, SgZ> = {
       <p className="text-xs text-ink-500 mt-2">
         Kantonale Erlasse (nur Erlass-Seiten, keine §-Anker):{' '}
         {SG_KANTONALE_ERLASSE.map((e, i) => (
-          <span key={e.label}>{i > 0 && ' · '}<a className="text-brass-700 hover:underline" href={e.url} target="_blank" rel="noopener noreferrer">{e.label}</a></span>
+          <span key={e.label}>{i > 0 && ' · '}<a className="lc-link text-brass-700 hover:text-brass-800" href={e.url} target="_blank" rel="noopener noreferrer">{e.label}</a></span>
         ))}
       </p>
     </details>
