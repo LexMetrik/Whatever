@@ -9,3 +9,5 @@ anlass: Fahrplan-Eintrag fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md §4, migriert 24.
 *Dach vom Eintrag selbst genannt («Dach: `W2·27-BUND-FERTIG`»).*
 
 Migriert 24.9.2026 aus `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md` (§4, vormals Z. 275) — dort steht jetzt ein Zeiger hierher (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET).
+
+**Erledigt 2026-09-30:** schon gebaut in #888 (3202047ae, 15.9.2026): Tor check:confidence-frische; Nachprüfung 30.9.2026 grün, Rot-Kette belegt (Agent-Bericht)
