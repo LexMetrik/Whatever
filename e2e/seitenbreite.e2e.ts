@@ -444,3 +444,71 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
       .toEqual([]);
   }
 });
+
+// ─── Schriftskala 1.4 im schmalen Band 640–768 px (W2·31 Bündel H, 30.9.2026) ─
+//
+// BEFUND (Posten 2026-09-30 «/gesetze … Schriftskala 1.4 @640» und «/rechner/
+// tagerechner Nebenleiste … 640–768»): die Schriftskala skaliert rem, die
+// Medienabfragen (`sm` = 640 px) sehen sie nicht. @640 lief der Kopfstreifen
+// (`layout/Topbar`) mit Wortmarke, 9-rem-Suchfeld-Boden und drei Werkzeug-
+// Griffen über den Rand: +26 px ohne, +88 px mit Verlauf-Knopf, +28 px @700 —
+// auf JEDER Seite, nicht nur auf /gesetze und dem Tagerechner. Fix:
+// `.lc-topbar-wortmarke` (index.css) zeigt die Wortmarke nur, wenn der Streifen
+// 35 rem breit ist (Containerabfrage, wächst mit der Skala).
+//
+// Gemessen wird in zwei Weisen, beide nötig:
+//  (a) Seiten-Querscroll: scrollWidth ≤ innerWidth.
+//  (b) Der Streifen passt in sein eigenes Polster: der rechte Rand des letzten
+//      Streifen-Kindes liegt nicht hinter dem inneren Rand (Polster 1.5 rem).
+//      Zwischen 728 und 762 px frass der Streifen @1.4 das rechte Polster auf,
+//      ohne dass scrollWidth es zeigte — (a) allein ist dort grün.
+// Vorbedingung: der Verlauf-Knopf steht im Streifen (der Vorlauf öffnet den
+// Tagerechner, `useZuletzt` trägt ihn ein) — der breiteste Zustand; ohne ihn
+// wäre der Wächter zu gnädig. Pfade: alle `beispielPfad`/`variantenPfade`
+// aus `SEITENBREITE` plus die in den Posten genannten Fälle.
+//
+// ROT ZU BEKOMMEN (§6.7): in `Topbar.tsx` die Wortmarke wieder
+// `className="hidden sm:block text-h3"` statt `lc-topbar-wortmarke` → (a) und
+// (b) schlagen @640 an (Beweis im PR-Bericht).
+const SKALA_SCHMAL_BREITEN = [640, 700, 768] as const;
+const SKALA_SCHMAL_EXTRA = [
+  '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
+  '/gesetze?ebene=kanton&kt=BS', '/rechner/tagerechner',
+] as const;
+const SKALA_SCHMAL_PFADE = [...new Set([
+  ...ARTEN.flatMap(([, { beispielPfad, variantenPfade }]) => [beispielPfad, ...(variantenPfade ?? [])]),
+  ...SKALA_SCHMAL_EXTRA,
+])];
+
+test.describe(`Schriftskala ${SKALA} schmal 640–768 (W2·31 H)`, () => {
+  for (const pfad of SKALA_SCHMAL_PFADE) {
+    test(`${pfad}: kein Querscroll, Kopfstreifen im Polster @${SKALA_SCHMAL_BREITEN.join('/')}`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+      await page.setViewportSize({ width: SKALA_SCHMAL_BREITEN[0], height: 900 });
+      // Vorlauf: ein Rechner-Besuch füllt den Verlauf (breitester Streifen).
+      await page.goto('/rechner/tagerechner');
+      await bereit(page);
+      await page.goto(pfad);
+      await bereit(page);
+      await expect(page.locator('header [aria-label="Verlauf – zuletzt geöffnet"]').first(), `${pfad}: Vorbedingung Verlauf-Knopf im Streifen`).toBeVisible();
+      for (const width of SKALA_SCHMAL_BREITEN) {
+        await page.setViewportSize({ width, height: 900 });
+        const m = await page.evaluate(() => {
+          const de = document.documentElement;
+          const streifen = document.querySelector('header > div')!;
+          const polster = parseFloat(getComputedStyle(streifen).paddingRight);
+          const sichtbar = [...streifen.children].filter((c) => c.getBoundingClientRect().width > 0);
+          const letztes = sichtbar[sichtbar.length - 1];
+          return {
+            scrollW: de.scrollWidth, innerW: window.innerWidth,
+            ueberPolster: letztes.getBoundingClientRect().right - (streifen.getBoundingClientRect().right - polster),
+          };
+        });
+        const ort = `${pfad} @${width} Skala ${SKALA}`;
+        expect(m.scrollW, `${ort}: Seiten-Querscroll (scrollWidth ${m.scrollW} > innerWidth ${m.innerW})`).toBeLessThanOrEqual(m.innerW);
+        expect(m.ueberPolster, `${ort}: Kopfstreifen ragt ${m.ueberPolster.toFixed(1)} px in sein rechtes Polster`).toBeLessThanOrEqual(0.5);
+      }
+    });
+  }
+});

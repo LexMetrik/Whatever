@@ -4748,6 +4748,33 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-topbar-griff:hover .lc-griff-glyph,
 .lc-topbar-griff:focus-visible .lc-griff-glyph { text-decoration: underline; text-underline-offset: 3px; }
 
+/* ─── W2·31 H (30.9.2026) · DIE WORTMARKE BRAUCHT PLATZ, NICHT NUR `sm` ──────
+   BEFUND (gemessen, Preview-Build, Skala über localStorage `lexmetrik-
+   schriftskala`, dieselbe Quelle wie die App): bei Schriftskala 1.4 lief
+   `documentElement.scrollWidth − clientWidth` @640 auf JEDER Seite um 26 px
+   über (ohne Verlauf-Knopf), mit Verlauf-Knopf (Rechner-/Vorlagen-Seiten nach
+   dem ersten Besuch) um 88 px, @700 um 28 px; Skala 1.2: 1 px, 1.3: 44 px.
+   Ursache: der Streifen (`layout/Topbar`) ist `px-6 gap-5` (rem, wächst mit der
+   Skala) mit Siegel, Wortmarke (ab `sm` = 640 px, px-Medienabfrage, von der
+   Skala unberührt), Suchfeld-Boden 9 rem und drei Werkzeug-Griffen à 44 px;
+   sein Mindestbedarf (Streifenbreite, gemessen) liegt bei 1.2 / 1.3 / 1.4 auf
+   670 / 716 / 762 px = 34.9 / 34.4 / 34.0 rem. Die Medienabfrage `sm` sieht
+   die Skala nicht — die Containerabfrage misst dagegen in der Wurzelschrift,
+   wächst also mit. Darum: Wortmarke nur, wenn `sm` UND der Streifen (Inhalts-
+   breite, ohne die beiden Polster von je 1.5 rem) mindestens 32 rem hat
+   = 35 rem Streifenbreite, knapp über dem gemessenen Bedarf. Unter Skala 1.0
+   (35 rem = 560 px) und 1.1 (616 px) ändert sich nichts: der Streifen ist dort
+   schon ab 640 px breit genug; darunter (<640 px) bleibt sie wie bisher weg (F7).
+   Das Siegel bleibt immer. Bewacht von `e2e/seitenbreite.e2e.ts`
+   («Schriftskala 1.4 schmal»). */
+.lc-topbar-zeile { container: topbar-zeile / inline-size; }
+.lc-topbar-wortmarke { display: none; }
+@media (min-width: 640px) {
+  @container topbar-zeile (width >= 32rem) {
+    .lc-topbar-wortmarke { display: block; }
+  }
+}
+
 /* ─── GB-20/21 · DIE WAHL-KACHEL IST EINE ZEILE ─────────────────────────────
    BEFUND G20 (gemessen): die Ferien-/Stillstand-Auswahl des Rechners ist ein
    Raster aus 6 gerahmten Kästen (`div.border.border-line`) mit je 3–5 Zeilen
