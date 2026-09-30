@@ -351,7 +351,7 @@ export function klassiere(f: Fakten): Befunde {
   return { branches, worktrees, ghVerfuegbar: f.ghVerfuegbar };
 }
 
-export const TAG_S = 86_400;
+const TAG_S = 86_400;
 
 /** Alter in Tagen als Kurztext; `null`-Zeitstempel ⇒ leer. */
 export function alter(letzterCommitUnix: number | null, jetztUnix: number): string {
