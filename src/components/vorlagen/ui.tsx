@@ -374,7 +374,7 @@ export function FehlerBox({ fehler, titel = 'Eingabefehler' }: {
   return (
     <div role="alert" data-fehlerbox="" className="lc-notice lc-notice-danger space-y-1">
       <p className="lc-overline text-danger-700 mb-1">{titel}</p>
-      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={f} /></p>)}
+      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{fehler.length >= 2 ? '• ' : null}<NormText text={f} /></p>)}
     </div>
   );
 }
