@@ -26,14 +26,18 @@ const ELI_FORM = /^https:\/\/www\.fedlex\.admin\.ch\/eli\//;
  * Positivliste für `__N`-Token (W2·27): das Fragment muss ein amtlicher Fedlex-NAMENS-Anker
  * sein, genau die Form, die amtlicherAnker() (scripts/normtext/artikel-vorkommen.ts) aus dem
  * `<a name="…">` vor dem Artikel-Kopf liefert: «a»+Nummer(+Buchstaben), ggf. mit «t»-Präfixen
- * (Wiederholungs-Vorkommen: `ta126z`, `tta1`) und Bereichs-Wiederholung (`a29a29f`). Kein «_»,
+ * (Wiederholungs-Vorkommen: `ta126z`, `tta1`) und Bereichs-Fortsetzung Nummer(+Buchstaben) (`a29a29f`, `a28d28f`). Kein «_»,
  * kein «/» — alle Struktur-ids (`art_…`, `disp_u1/art_…`, `annex_…`, `lvl_…`, `scope_…`,
- * `decl_…`) sind damit ausgeschlossen. Empirie: 3 171 <article> in ZGB/OR/KKV, ausnahmslos
- * diese Form (Sweep 30.9.2026). Eine Sperrliste wäre unvollständig: der Anhang-/Sektions-Pfad
+ * `decl_…`) sind damit ausgeschlossen. Empirie (Erstsweep 30.9.2026): 3 171 <article> in ZGB/OR/KKV,
+ * «ausnahmslos diese Form» — Nachzug-Messung 30.9.2026 (Gegenprüfung Runde 2): zu eng; 4/3 171
+ * Bereichs-Namen beginnen den Bereich nicht mit «a» (ZGB `a28d28f`, OR `a226f226k`/`a663d663h`,
+ * KKV `a107b107e`; dazu BetmG `a28b28l`, ERV `a148k148m`, SVG `a104c104d`). Mit der Form unten sind
+ * 3 862/3 862 `<a name>` in 9 Filestore-Pins (ZGB, OR, KKV, BankV, BetmG, ERV, PaVo, SVG, VwVG)
+ * gedeckt; `annex_1`, `lvl_u1`, `art_126_z`, `a`, `ta`, `xa126z`, `ta126z_x` bleiben ausgeschlossen. Eine Sperrliste wäre unvollständig: der Anhang-/Sektions-Pfad
  * des Generators schreibt bei `__N` den Basis-Anker (= 1. Vorkommen) und ruft amtlicherAnker()
  * nicht auf (Gegenprüfung PR #1166).
  */
-const AMTLICHER_NAMENS_ANKER = /^t*(?:a\d+[a-z]*)+$/;
+const AMTLICHER_NAMENS_ANKER = /^t*a\d+[a-z]*(?:\d+[a-z]*)*$/;
 
 /**
  * Outbound-Link «amtliche Fassung» für EINEN Artikel: die vom Generator
