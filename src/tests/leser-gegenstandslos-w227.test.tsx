@@ -18,7 +18,7 @@ import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
 const erlass: BrowseErlass = {
   key: 'STGB', ebene: 'bund', kanton: null, kuerzel: 'StGB', titel: 'Strafgesetzbuch',
-  sr: '311.0', rechtsgebiet: 'strafrecht', sprache: 'de', rang: 0, status: 'snapshot',
+  sr: '311.0', rechtsgebiet: 'oeffentlich', sprache: 'de', rang: 0, status: 'snapshot',
   datei: 'bund/STGB.json', artikelAnzahl: 1, stand: '2026-06-12',
   quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de', fassungsToken: '20260612',
   pdfPfad: null,
