@@ -139,7 +139,6 @@ test.describe('/rechtsprechung — Richter-Facette', () => {
     expect(await feld(page).getAttribute('aria-controls')).toBeNull()
     const leerBefund = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .disableRules(['link-in-text-block'])
       .analyze()
     expect(
       leerBefund.violations
@@ -211,9 +210,8 @@ test.describe('/rechtsprechung — Richter-Facette', () => {
 
     const ergebnis = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      // Inline-Link-Marken ohne Unterstreichung = dokumentierter Markenentscheid
-      // (a11y-BERICHT.md B-2), wie an allen anderen Prüfpunkten dieser Rubrik.
-      .disableRules(['link-in-text-block'])
+      // `link-in-text-block` gatet mit (damals abgeschaltet als Markenentscheid B-2;
+      // seit R3-Nachzug 6.9.2026 sind Inline-Links unterstrichen, F0.8).
       .analyze()
     const schwer = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')
     if (ergebnis.violations.length > 0) {

@@ -505,12 +505,9 @@ test('axe: das offene Panel mit dem Fussnoten-Schalter ist sauber', async ({ pag
 
   const ergebnis = await new AxeBuilder({ page }).withTags(TAGS).analyze();
   // Gleiche Tor-Politik wie a11y.e2e.ts: critical/serious gaten. `link-in-text-block`
-  // ist der dokumentierte Marken-Entscheid B-2 (Inline-Links ohne Unterstreichung)
-  // und gilt für die ganze Reader-Seite, nicht für diese Fläche.
-  const bekannt = new Set(['link-in-text-block']);
-  const schwer = ergebnis.violations.filter(
-    (v) => (v.impact === 'critical' || v.impact === 'serious') && !bekannt.has(v.id),
-  );
+  // gatet mit (damals als Marken-Entscheid B-2 bekannt/ausgenommen; seit R3-Nachzug
+  // 6.9.2026 sind Inline-Links unterstrichen, F0.8).
+  const schwer = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious');
   if (ergebnis.violations.length > 0) {
     await testInfo.attach('hist-ansicht-befunde.json', {
       body: JSON.stringify(ergebnis.violations.map((v) => ({
