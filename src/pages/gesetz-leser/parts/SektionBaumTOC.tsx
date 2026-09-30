@@ -456,7 +456,9 @@ const Zeile = memo(function Zeile({
           {/* Aufgehoben-Signal (§3.3, Inventar C «heute klappt man blind auf»):
               sichtbarer Text, nicht nur `title`. Statisch je Knoten ⇒ kein CLS. */}
           {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
-          {k.aufgehoben && <span className="ml-1 text-micro text-ink-500">aufgehoben</span>}
+          {k.aufgehoben
+            ? <span className="ml-1 text-micro text-ink-500">aufgehoben</span>
+            : k.gegenstandslos && <span className="ml-1 text-micro text-ink-500">gegenstandslos</span>}
         </TocZeile>
         {/* Hier stand bis zum 9.8.2026 der adaptive Zählwert — gestrichen auf
             Entscheid David («keine relevante Information»), Herleitung oben. */}

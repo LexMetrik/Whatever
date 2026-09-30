@@ -1,5 +1,5 @@
 import { datumCh } from '../../lib/normtext/erlassKopfText';
-import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, type LeerstellenStatus } from '../../lib/normtext/darstellung';
+import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort, type LeerstellenStatus } from '../../lib/normtext/darstellung';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
 import { standVon, type SynopseShard } from '../../lib/entstehung/synopse';
 import { entwurfUrl, type EntwurfArtikel, type EntwurfShard } from '../../lib/entstehung/synopse-entwurf';
@@ -105,11 +105,14 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
   eingefuegt: 'eingefügt',
 };
 
-/** W2·27 (30.9.2026): das Wort für «Wortlaut → «…»» an der rechten, GELTENDEN Spalte. Ist der
- *  Artikel amtlich «gegenstandslos», steht hier dasselbe Wort wie im Hinweis darüber — nie
- *  «aufgehoben» (§1/§8). Alle anderen Fälle (auch ohne Vermerk) bleiben beim bisherigen Wort. */
+/** W2·27 (30.9.2026): das Wort für «Wortlaut → «…»» an der rechten, GELTENDEN Spalte — EINE
+ *  Quelle mit Leser und Popover: `leerstellenWort` (§5). Amtlich «gegenstandslos» ⇒ «gegenstandslos»;
+ *  ohne Vermerk (`leer-ungeklaert`) ⇒ «kein Text im Snapshot», nie «aufgehoben» (§1/§8). Ein
+ *  Folgestand (`neuHerkunft` ≠ geltend) ist ein früherer amtlicher Stand mit eigener Auslassung:
+ *  der HEUTIGE Zustand des Artikels beschreibt ihn nicht, dort bleibt das Zeilenwort. */
 function entfallWortFuer(zustand: LeerstellenStatus | undefined, neuHerkunft: string): string {
-  return zustand === 'gegenstandslos' && neuHerkunft === 'geltend' ? 'gegenstandslos' : ZEILEN_WORT.entfernt;
+  if (neuHerkunft !== 'geltend' || zustand === undefined) return ZEILEN_WORT.entfernt;
+  return leerstellenWort(zustand) ?? ZEILEN_WORT.entfernt;
 }
 
 /**

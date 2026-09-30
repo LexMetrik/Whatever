@@ -4,7 +4,7 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normtext/passusZiel';
 import {
   trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben, LEERSTELLE_KURZ,
-  LEERSTELLE_ERLAEUTERUNG, leerstellenWort,
+  LEERSTELLE_ERLAEUTERUNG, leerstellenWort, artikelLeerstellenStatus,
 } from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
@@ -243,6 +243,19 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // W2·27 (30.9.2026): das Wort für den Ersatztext «…»/leer — am amtlichen Artikel-Vermerk,
   // nicht am Platzhalter (§1/§8). EINE Quelle: `leerstellenWort` (darstellung.ts, §5).
   const entfallWort = leerstellenWort(artikelGegenstandslos ? 'gegenstandslos' : 'aufgehoben');
+  // W2·27 (30.9.2026, «…»-Anzeige einheitlich): besteht der Artikel GANZ nur aus «…»/leer und
+  // trägt KEINEN amtlichen Vermerk, sagt auch der Körper «kein Text im Snapshot» — dasselbe Wort
+  // wie Statuszeile, Nachbar-Pfeil und Synopse (`artikelLeerstellenStatus`, §5). Ein «…»-ABSATZ in
+  // einem sonst lebenden Artikel bleibt «aufgehoben» (amtliche Absatz-Auslassung, David 16.6.2026).
+  // Nur der «…»-Platzhalter wird so umgedeutet; der amtliche Wortlaut «Aufgehoben» ist Quelle.
+  const ganzUngeklaert = artikelLeerstellenStatus(bloecke, artikelAufgehoben, artikelGegenstandslos) === 'leer-ungeklaert';
+  const platzhalter = (text: string) => {
+    const ungeklaert = ganzUngeklaert && /^[….\s]*$/.test(text.trim());
+    return (
+      <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
+        title={ungeklaert ? LEERSTELLE_ERLAEUTERUNG : undefined}>{ungeklaert ? LEERSTELLE_KURZ : entfallWort}</span>
+    );
+  };
   // Im Lesefluss zitierte Normen/Urteile klickbar machen (D2); sonst Klartext.
   // #9 (M10): verwaiste Leerzeichen VOR Punkt/Komma glätten — sie entstehen beim
   // Strippen eines Inline-Fussnoten-Markers (Fedlex «…sinngemäss<sup>2</sup>.» →
@@ -455,7 +468,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
                       title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>
                   : it.text.trim() === '' || istAufgehoben(it.text)
-                  ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">{entfallWort}</span>
+                  ? platzhalter(it.text)
                   : (() => {
                       // Tarif-Staffel auch in Items als Tabelle (viele
                       // Notariats-/Grundbuchtarife stehen als lit./Ziff.).
@@ -724,7 +737,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 if (!hatItems && !anzeige.trim() && !artikelAufgehoben && !artikelGegenstandslos)
                   return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
                     title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>;
-                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">{entfallWort}</span>;
+                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return platzhalter(anzeige);
                 if (!anzeige.trim()) return null;
                 const zeilen = staffelZeilen(anzeige);
                 // Tausender-Gruppierung NUR in Geld-Kontext (§3, FIX 2 — 22.6.2026):
