@@ -6,6 +6,7 @@ import { AbschnittKopf } from './layout/AbschnittKopf';
 // FAHRPLAN-DESIGN 2.6: lokaler NormChip entfernt — NormLink (vorlagen/ui)
 // ist die EINE Fedlex-Chip-Komponente (deckt «bemerkung» jetzt mit ab).
 import { KopierButton, NormLink } from './vorlagen/ui';
+import { meldungspunkt } from './vorlagen/meldungspunkt';
 
 // Status-Badges (Design-Doc 5.8): gesichert→sage · umstritten/kein Anspruch→warn · nichtig/unzulässig→danger.
 // «verdikt» färbt den Hauptsatz (Design-Review 6.6.2026): ok bleibt neutrale
@@ -247,7 +248,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
             {(annahmenOffen || druckErzwingtOffen) && (
               <ul className="px-4 py-3 space-y-1">
                 {ergebnis.annahmen.map((a, i) => (
-                  <li key={i} className="text-body-s text-ink-600">• <NormText text={a} /></li>
+                  <li key={i} className="text-body-s text-ink-600">{meldungspunkt(ergebnis.annahmen.length)}<NormText text={a} /></li>
                 ))}
               </ul>
             )}
