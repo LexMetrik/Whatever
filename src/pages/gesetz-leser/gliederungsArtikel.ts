@@ -136,6 +136,7 @@ export function baueArtikelIndex(
   const randtitelVon = (e: NormSnapshot): string | null => artikelRandtitel(e, struktur);
   const zeileFuer = (e: NormSnapshot): ArtikelIndexZeile => ({
     token: e.artikel, label: e.artikelLabel, randtitel: randtitelVon(e), aufgehoben: e.aufgehoben === true,
+    ...(e.gegenstandslos === true ? { gegenstandslos: true } : {}),
   });
   const gruppen: ArtikelIndexGruppe[] = [];
   if (sektionen.length > 0) {
@@ -238,6 +239,7 @@ function baueArtikelZeile(e: NormSnapshot, tiefe: number, struktur: StrukturMap 
     // Teil der amtlichen Zählung, und ihr Verschwinden aus der Gliederung
     // erzeugte eine Lücke, die es im Erlass nicht gibt.
     aufgehoben: e.aufgehoben === true,
+    ...(e.gegenstandslos === true ? { gegenstandslos: true } : {}),
     anhang: istAnhangEintrag(e),
   };
 }

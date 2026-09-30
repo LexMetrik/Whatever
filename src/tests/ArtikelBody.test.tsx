@@ -64,9 +64,13 @@ describe('ArtikelBody', () => {
     expect(out.split('data-passus-item="true"')[1]).toContain('zweiter Buchstabe');
   });
 
-  it('aufgehobene Stelle («…») → «aufgehoben»', () => {
+  // RE-BLESS W2·27 (30.9.2026, §6.3 deklariert): der Fall war ein Artikel GANZ aus «…» ohne
+  // amtliches Feld — dort sagt der Körper jetzt «kein Text im Snapshot» (leser-auslassung-einheitlich-
+  // w227.test.tsx). «aufgehoben» bleibt für den «…»-ABSATZ eines sonst lebenden Artikels (David 16.6.).
+  it('aufgehobene Stelle («…» neben lebendem Absatz) → «aufgehoben»', () => {
     const out = renderToString(
-      <ArtikelBody bloecke={[{ absatz: '1', text: '…' }]} artikel="1" passus={{ absatz: null }} />,
+      <ArtikelBody bloecke={[{ absatz: '1', text: 'Gültiger Wortlaut.' }, { absatz: '2', text: '…' }]}
+        artikel="1" passus={{ absatz: null }} />,
     );
     expect(out).toContain('aufgehoben');
     expect(out).not.toContain('>…<');
