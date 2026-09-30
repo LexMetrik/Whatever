@@ -142,7 +142,7 @@ export function IntlRechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) 
     .map((k) => ({ ...k, items: (proZiffer.get(k.ziffer) ?? []).sort((a, b) => (a.sr ?? '').localeCompare(b.sr ?? '', 'de', { numeric: true })) }))
     .filter((k) => k.items.length > 0);
   if (gruppen.length === 0 && euRecht.length === 0) {
-    return <Leerzustand art="bestand" text="Kein Eintrag gefunden." />;
+    return <Leerzustand art="bestand" text="Keine Erlasse erfasst." />;
   }
   return (
     <div className="space-y-10">

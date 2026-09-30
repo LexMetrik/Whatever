@@ -86,14 +86,23 @@ export function MappenSeite({ karte: card, titel, badge, intro, musterdaten, chi
 
 /** Ein Abschnitt der Mappe: Linien statt Karte — 2 px Tinte oben, Haarlinie
  *  unten (F0.6), wie `data-formular-karte` im Wizard-Rahmen. */
-export function MappenAbschnitt({ titel, lead, className = 'space-y-3', children }: {
+export function MappenAbschnitt({ titel, lead, className = 'space-y-3', mitPapier = false, children }: {
   titel?: ReactNode;
   lead?: ReactNode;
   className?: string;
+  /** Der Abschnitt enthält die Papier-Vorschau (`VorschauPanel`): bleibt
+   *  ausserhalb des Lesemass-Scopes — das Papier ist ein offener
+   *  Design-Entscheid (Posten «Vorlagen-Vorschau: Papier in A4-Proportion»). */
+  mitPapier?: boolean;
   children: ReactNode;
 }) {
   return (
-    <section className={`border-t-2 border-b border-t-rule border-b-rule-soft pt-5 pb-6 ${className}`}>
+    // `lc-vorlagen-schritt` (W2·31-BILDSCHIRMBREITE P2, 30.9.2026): der EINE
+    // Scope-Anker des Lesemass-Deckels (index.css, eingeführt mit dem Wizard-
+    // Schritt-Rahmen `wizard.tsx`) — die Einzelseiten-Mappen (GmbH-Gründung,
+    // Kapitalerhöhung) haben keinen Wizard-Rahmen und lagen bisher ausserhalb:
+    // Checkbox-Text 88 ch @640 / 101 ch @700.
+    <section className={`${mitPapier ? '' : 'lc-vorlagen-schritt '}border-t-2 border-b border-t-rule border-b-rule-soft pt-5 pb-6 ${className}`}>
       {titel && (
         <div>
           <GruppenTitel>{titel}</GruppenTitel>
