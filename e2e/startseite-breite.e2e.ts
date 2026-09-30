@@ -267,7 +267,9 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
   // Unterspalten nach der BLATTBREITE (Container `blatt`, ≥ 44 rem) ODER `xl`
   // (Fenster ≥ 1280), nicht mehr nur nach dem Fenster. Gemessen vorher: Fenster
   // 1100 + Seitenleiste 208 (Blatt 802 px breit) einspaltig, Überlauf 163 px.
-  // Die drei «unverändert»-Zellen sichern «ohne Seitenleiste alles wie vorher»:
+  // Die drei «unverändert»-Zellen sichern «ohne Seitenleiste alles wie vorher»
+  // (bei Browser-Grundschrift 16 px; kleine Grundschrift 9/12 px wird gewollt
+  // zweispaltig, siehe WerkzeugeBlatt.tsx):
   // @1200 Skala 1 (Blatt 670 px = 41.9 rem, der Deckel ohne Seitenleiste) und
   // @1279 Skala 1.2 (739 px = 38.5 rem, das breiteste Blatt unter `xl` in px) bleiben
   // EINspaltig; @1100 + Seitenleiste 460 (Blatt 550 px) ebenso.

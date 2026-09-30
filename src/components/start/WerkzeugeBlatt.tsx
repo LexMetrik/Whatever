@@ -119,7 +119,10 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
             Blattbreite ohne Seitenleiste deckelt sich bei 41.9 rem (670 px bei
             Schrift 1, 603 bei 0.9, 737 bei 1.1; 739 px = 38.5 rem bei 1.2 am
             Fenster 1279), die Schwelle liegt darüber, wird also OHNE Seitenleiste
-            unter `xl` nirgends erreicht, und wandert mit der Schriftskala mit. */}
+            unter `xl` nicht erreicht — bei Browser-Grundschrift 16 px. Bei kleiner
+            Grundschrift (9/12 px) ist die Startseite einspaltig, das Blatt ~64 rem:
+            dort wird die Liste auch ohne Seitenleiste zweispaltig (gewollt,
+            Überlauf 115–143 px → 0; Prüfer #1214). */}
         <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2 xl:columns-2 xl:gap-x-2 lg:@[44rem]/blatt:columns-2 lg:@[44rem]/blatt:gap-x-2">
           {WERKZEUGE_VORLAGEN_GEBIETE.map((g) => {
             const n = vorlagenZahl(g.name);
