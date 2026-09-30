@@ -1439,14 +1439,10 @@ export function alleAnhangAnker(html: string): string[] {
   // KEIN eigener Anhang → ausschliessen (sonst Dublette zur Gliederung «Anhänge»).
   // Fehlt jede Nummerierung (BVG/KVG/KAG/FIDLEG: ein einziger «Anhang»), IST die
   // unnummerierte Sektion der Anhang → behalten.
-  //
-  // W2·27-BUND-FERTIG (30.9.2026, Gegenprüfung #1183): ein Deckblatt ist EINE
-  // Sektion — trägt dieselbe unnummerierte id MEHRFACH, sind es eigene Anhänge
-  // (VZV: drei <section id="annex_u1"> = «Beilage», «Anhänge 5 und 6», «Anhang 8
-  // und 9»; alle drei fielen vorher als «Deckblatt» weg). Darum schliesst der
-  // Ausschluss nur Ids aus, die im Anhang-Container genau einmal vorkommen.
-  // Sweep über 231 Bund-Caches (30.9.2026): ausser der VZV verliert heute nur
-  // ChemRRV annex_u1 «Anhänge» — ein echtes Deckblatt (Inhaltsübersicht).
+  // W2·27-BUND-FERTIG (30.9.2026): ein Deckblatt ist EINE Sektion. Dieselbe
+  // unnummerierte id MEHRFACH = eigene Anhänge (VZV: drei annex_u1 «Beilage»,
+  // «Anhänge 5 und 6», «Anhang 8 und 9»), nur Einzel-Ids fallen weg. Sweep 231
+  // Caches: ausser VZV verliert nur ChemRRV annex_u1 (echtes Deckblatt).
   const hatNummerierte = records.some((k) => /^annex_\d/.test(k.id));
   const idAnzahl = new Map<string, number>();
   for (const k of records) idAnzahl.set(k.id, (idAnzahl.get(k.id) ?? 0) + 1);
