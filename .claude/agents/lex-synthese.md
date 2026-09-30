@@ -53,11 +53,8 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe
   (Beleg 16.8.2026: --noEmit gruen, tsc -b rot an ungenutztem Parameter).
   Die CI-Ueberspring-Markierung (eckige Klammer + skip ci / ci skip) NIE
-  woertlich in einen Commit-Text schreiben, auch nicht erklaerend zitierend —
-  das Squash-Schutz-Tor (ci.yml, Kommentar ~Z. 757-764) scannt JEDEN
-  Commit-Betreff/-Text im PR auf die blosse Zeichenfolge, ohne Kontext; PR
-  #950 wurde deshalb faelschlich rot und musste als #952 neu eroeffnet werden
-  (20.9.2026). Erwaehnung immer umschreiben («die CI-Ueberspring-Markierung»).
+  woertlich in Commit-Texte, auch nicht zitierend: das Squash-Schutz-Tor
+  (ci.yml) scannt jeden Commit kontextfrei (PR #950 -> #952, 20.9.2026).
 4b ROLLEN-/SELEKTOR-WECHSEL WIRKT REPO-WEIT. Wer Rolle, Tag oder zugaenglichen
   Namen eines Bedienelements aendert (button→a, aria-label, Klassen-Anker),
   grept VOR dem Push alle Sonden (e2e/**, src/tests/**) auf den alten
@@ -89,10 +86,6 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Tore `npx vitest run src/tests/design-` und `npm run check:sediment`
   (Sekunden, kein Browser) — Belege #1053 (24.9.2026, Kasten-Optik design-r5
   erst im Orchestrator-Gate) und #1073/#1087 (25.9.2026, Export ohne Aufrufer).
-  Tor-Logs in den EIGENEN Worktree (`.gate/` oder `<branch-slug>-gate.log`),
-  nie unter festem Namen in den Session-Scratchpad: parallele Agenten teilen
-  ihn und ueberschreiben sich (30.9.2026, #1180/#1181: gate.log mit fremden
-  Risiko-Dateien).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
@@ -108,7 +101,9 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten gemahnt).
   600 s ohne Ausgabe bricht den Agenten ab (Watchdog, 3x 25.9.2026, einmal
   110 Dateien uncommittet): vorher WIP-committen, lange Laeufe
-  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`.
+  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`. <log> liegt im EIGENEN
+  Worktree, nie mit festem Namen im geteilten Session-Scratchpad (30.9.2026:
+  parallele Agenten ueberschrieben sich gate.log, #1180/#1181).
 
 Steuer-Doku: dieser Text lenkt Folge-Sessions. Ehrlich, mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.
 RÜCKGABE: der Text selbst + betroffene Pfade + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7; uncommittiert ⇒ ausdrücklich sagen).
