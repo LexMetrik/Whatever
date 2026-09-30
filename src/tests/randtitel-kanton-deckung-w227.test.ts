@@ -49,9 +49,9 @@ describe('W2·27 Randtitel Phase 2 — Kanton: Sidecar deckt jedes `titel`', () 
   const messung = (() => {
     let artikel = 0;
     let mitTitel = 0;
-    let ohneSidecarSachtitel: string[] = [];
-    let ohneSidecarDatei: string[] = [];
-    let abweichend: string[] = [];
+    const ohneSidecarSachtitel: string[] = [];
+    const ohneSidecarDatei: string[] = [];
+    const abweichend: string[] = [];
     for (const datei of dateien) {
       const snap = JSON.parse(readFileSync(join(wurzel, 'kanton', datei), 'utf8')) as { eintraege?: SnapEintrag[] };
       const sp = join(wurzel, 'struktur/kanton', datei);
