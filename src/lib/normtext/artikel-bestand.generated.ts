@@ -1,5 +1,5 @@
 // AUTO-GENERIERT von scripts/normtext/artikel-bestand-generieren.ts — NICHT von Hand editieren.
-// Artikel-Bestand je Bund-Snapshot (231 Erlasse, 7043 Läufe/Token),
+// Artikel-Bestand je Bund-Snapshot (231 Erlasse, 7046 Läufe/Token),
 // lauf-kodiert: «a-b» = geschlossener Ganzzahl-Lauf, alles Übrige wörtlich.
 // Quelle: public/normtext/bund/*.json (Projektion, §5). Herleitung, §15-Messung
 // und der Mechanik-Entscheid stehen im Kopf des Generators.
@@ -228,7 +228,7 @@ export const ARTIKEL_BESTAND: Readonly<Record<string, string>> = {
   VWVG: '1-82,11_a,11_b,21_a,22_a,25_a,30_a,33_a,33_b,46_a,47_a,71_a_71_d',
   VZAE: '1-92,13_a,18_a,19_a,19_b,1_a,20_a,20_b,22_a,22_b,30_a,36_a,53_a,61_a,62_a,65_a,65_b,65_c,67_a,71_a,71_b,71_c,71_d,71_e,71_f,71_g,71_h,71_i,72_a,72_b,72_c,73_a,73_b,74_a,77_a,77_b,77_c,77_d,77_e,77_f,77_g,82_a,82_b,82_c,82_d,82_e,82_f,82_g,83_a,87_a,87_b,87_c,87_d,87_e,88_a,89_a,90_a,91_a,91_b,91_c,91_d,annex_1,annex_2,annex_3,annex_4',
   VZG: '1-132,106_a,130_a,130_b,130_c,130_d,130_e,130_f,130_g,133_134,23_a,23_b,23_c,23_d,60_a,73_a,73_b,73_c,73_d,73_e,73_f,73_g,73_h,73_i,78_a,84_a,disp_u1_art_135,disp_u1_art_136',
-  VZV: '1-37,40-46,65-97,105-110,114-124,127-129,143-154,111_113,11_a,11_b,11_c,125_126,12_a,130_142_c,151_a,151_b,151_c,151_d,151_e,151_f,151_g,151_h,151_i,151_j,151_k,151_l,151_m,151_n,151_o,151_p,17_a,19_a,20_a,24_a,24_b,24_c,24_d,24_e,24_f,24_g,24_h,26_a,26_b,27_a,27_b,27_c,27_d,27_e,27_f,27_g,28_a,30_a,30_b,35_a,35_b,38_39,44_a,47_64,5_a,5_a_bis,5_b,5_c,5_d,5_e,5_f,5_g,5_h,5_i,5_j,5_k,64_a,64_b,64_c,64_d,64_e,64_f,68_a,72_a,72_b,87_a,88_a,98_104,annex_1,annex_10,annex_11,annex_12,annex_1_bis,annex_2,annex_2_a,annex_3,annex_3_a,annex_4,annex_4_a,annex_7',
+  VZV: '1-37,40-46,65-97,105-110,114-124,127-129,143-154,111_113,11_a,11_b,11_c,125_126,12_a,130_142_c,151_a,151_b,151_c,151_d,151_e,151_f,151_g,151_h,151_i,151_j,151_k,151_l,151_m,151_n,151_o,151_p,17_a,19_a,20_a,24_a,24_b,24_c,24_d,24_e,24_f,24_g,24_h,26_a,26_b,27_a,27_b,27_c,27_d,27_e,27_f,27_g,28_a,30_a,30_b,35_a,35_b,38_39,44_a,47_64,5_a,5_a_bis,5_b,5_c,5_d,5_e,5_f,5_g,5_h,5_i,5_j,5_k,64_a,64_b,64_c,64_d,64_e,64_f,68_a,72_a,72_b,87_a,88_a,98_104,annex_1,annex_10,annex_11,annex_12,annex_1_bis,annex_2,annex_2_a,annex_3,annex_3_a,annex_4,annex_4_a,annex_7,annex_u1,annex_u1__2,annex_u1__3',
   WAG: '1-57,21_a,27_a,28_a,34_a,34_b,37_a,37_b,38_a,41_a,41_b,48_a,50_a,5_a',
   WAV: '1-25,28-35,38-54,60-70,12_a,13_a,17_a,17_b,26_27,36_37,37_a,37_b,37_c,38_a,40_a,40_b,55_59,66_a,8_a,9_a,annex_u1',
   ZAVV: '1-39,5_a,annex_u1',

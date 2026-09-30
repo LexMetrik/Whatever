@@ -7459,167 +7459,7 @@
         },
         {
           "absatz": null,
-          "text": "B. Untersuchungsbefunde"
-        },
-        {
-          "absatz": null,
-          "text": "Fernvisus:"
-        },
-        {
-          "absatz": null,
-          "text": "rechts: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
-          "text": "links: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
-          "text": "Einäugigkeit:"
-        },
-        {
-          "absatz": null,
-          "text": "Doppelbilder:"
-        },
-        {
-          "absatz": null,
-          "text": "Lichtreaktion:"
-        },
-        {
-          "absatz": null,
-          "text": "Motilität:"
-        },
-        {
-          "absatz": null,
-          "text": "Gesichtsfeld:"
-        },
-        {
-          "absatz": null,
-          "text": "Einstichstellen:"
-        },
-        {
-          "absatz": null,
-          "text": "auffälliges Nasenseptum:"
-        },
-        {
-          "absatz": null,
-          "text": "Leber-Stigmata:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Stimmung:"
-        },
-        {
-          "absatz": null,
-          "text": "Affekt:"
-        },
-        {
-          "absatz": null,
-          "text": "Aufmerksamkeit:"
-        },
-        {
-          "absatz": null,
-          "text": "Konzentration:"
-        },
-        {
-          "absatz": null,
-          "text": "Gedächtnis:"
-        },
-        {
-          "absatz": null,
-          "text": "kognitive Defizite:"
-        },
-        {
-          "absatz": null,
-          "text": "Anhaltspunkte für beginnende Demenz:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Motorik (Koordination, Romberg, Reflexe):"
-        },
-        {
-          "absatz": null,
-          "text": "Sensibilität (Vibrations- und Lagesinn):"
-        },
-        {
-          "absatz": null,
-          "text": "Strichgang:"
-        },
-        {
-          "absatz": null,
-          "text": "vegetative Zeichen/Tremor:"
-        },
-        {
-          "absatz": null,
-          "text": "Puls:"
-        },
-        {
-          "absatz": null,
-          "text": "Blutdruck: evtl. zweiter Blutdruckwert:"
-        },
-        {
-          "absatz": null,
-          "text": "periphere Pulse:"
-        },
-        {
-          "absatz": null,
-          "text": "Auskultation/Herzgrenzen:"
-        },
-        {
-          "absatz": null,
-          "text": "Venen:"
-        },
-        {
-          "absatz": null,
-          "text": "Insuffizienzzeichen:"
-        },
-        {
-          "absatz": null,
-          "text": "Thorax:"
-        },
-        {
-          "absatz": null,
-          "text": "obere Luftwege:"
-        },
-        {
-          "absatz": null,
-          "text": "Auskultation:"
-        },
-        {
-          "absatz": null,
-          "text": "Perkussion:"
-        },
-        {
-          "absatz": null,
-          "text": "Lebergrösse:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Defekte:"
-        },
-        {
-          "absatz": null,
-          "text": "Lähmungen:"
-        },
-        {
-          "absatz": null,
-          "text": "Unfallfolgen:"
-        },
-        {
-          "absatz": null,
-          "text": "Funktions- und Bewegungseinschränkungen (insbes. Kopfdrehen):",
+          "text": "B. Untersuchungsbefunde",
           "items": [
             {
               "marke": "1",
@@ -7628,42 +7468,42 @@
             },
             {
               "marke": "2",
-              "text": "Sehvermögen",
+              "text": "Sehvermögen Fernvisus: rechts: unkorr.: korr.: links: unkorr.: korr.: Einäugigkeit: Doppelbilder: Lichtreaktion: Motilität: Gesichtsfeld:",
               "trenner": ""
             },
             {
               "marke": "3",
-              "text": "Haut",
+              "text": "Haut Einstichstellen: auffälliges Nasenseptum: Leber-Stigmata: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "4",
-              "text": "Psyche",
+              "text": "Psyche Stimmung: Affekt: Aufmerksamkeit: Konzentration: Gedächtnis: kognitive Defizite: Anhaltspunkte für beginnende Demenz: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "5",
-              "text": "Nervensystem",
+              "text": "Nervensystem Motorik (Koordination, Romberg, Reflexe): Sensibilität (Vibrations- und Lagesinn): Strichgang: vegetative Zeichen/Tremor:",
               "trenner": ""
             },
             {
               "marke": "6",
-              "text": "Herz-Kreislauf",
+              "text": "Herz-Kreislauf Puls: Blutdruck: evtl. zweiter Blutdruckwert: periphere Pulse: Auskultation/Herzgrenzen: Venen: Insuffizienzzeichen:",
               "trenner": ""
             },
             {
               "marke": "7",
-              "text": "Atmungsorgane",
+              "text": "Atmungsorgane Thorax: obere Luftwege: Auskultation: Perkussion:",
               "trenner": ""
             },
             {
               "marke": "8",
-              "text": "Abdominalorgane",
+              "text": "Abdominalorgane Lebergrösse: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "9",
-              "text": "Bewegungsapparat",
+              "text": "Bewegungsapparat Defekte: Lähmungen: Unfallfolgen: Funktions- und Bewegungseinschränkungen (insbes. Kopfdrehen):",
               "trenner": ""
             },
             {
@@ -7704,7 +7544,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_2",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
-      "sha": "2ebe6c29b9f7656e75c8348c21f3d73794975216dd71df1b774327e96f34b327"
+      "sha": "f799603b01a8d13f583a06333420177a1834a598540c3fefb7b186c55355b647"
     },
     {
       "id": "bund/VZV/annex_2_a",
@@ -7770,179 +7610,7 @@
         },
         {
           "absatz": null,
-          "text": "B. Untersuchungsbefunde"
-        },
-        {
-          "absatz": null,
-          "text": "Fernvisus:"
-        },
-        {
-          "absatz": null,
-          "text": "rechts: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
-          "text": "links: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
-          "text": "Einäugigkeit:"
-        },
-        {
-          "absatz": null,
-          "text": "Doppelbilder:"
-        },
-        {
-          "absatz": null,
-          "text": "Lichtreaktion:"
-        },
-        {
-          "absatz": null,
-          "text": "Motilität:"
-        },
-        {
-          "absatz": null,
-          "text": "Gesichtsfeld:"
-        },
-        {
-          "absatz": null,
-          "text": "Konversationssprache: …… Meter (rechts/links)"
-        },
-        {
-          "absatz": null,
-          "text": "Flüstersprache: …… Meter (rechts/links)"
-        },
-        {
-          "absatz": null,
-          "text": "Krankheiten des Innen- oder Mittelohres:"
-        },
-        {
-          "absatz": null,
-          "text": "Einstichstellen:"
-        },
-        {
-          "absatz": null,
-          "text": "auffälliges Nasenseptum:"
-        },
-        {
-          "absatz": null,
-          "text": "Leber-Stigmata:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Stimmung:"
-        },
-        {
-          "absatz": null,
-          "text": "Affekt:"
-        },
-        {
-          "absatz": null,
-          "text": "Aufmerksamkeit:"
-        },
-        {
-          "absatz": null,
-          "text": "Konzentration:"
-        },
-        {
-          "absatz": null,
-          "text": "Gedächtnis:"
-        },
-        {
-          "absatz": null,
-          "text": "kognitive Defizite:"
-        },
-        {
-          "absatz": null,
-          "text": "Anhaltspunkte für beginnende Demenz:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Motorik (Koordination, Romberg, Reflexe):"
-        },
-        {
-          "absatz": null,
-          "text": "Sensibilität (Vibrations- und Lagesinn):"
-        },
-        {
-          "absatz": null,
-          "text": "Strichgang:"
-        },
-        {
-          "absatz": null,
-          "text": "vegetative Zeichen/Tremor:"
-        },
-        {
-          "absatz": null,
-          "text": "Puls:"
-        },
-        {
-          "absatz": null,
-          "text": "Blutdruck: evtl. zweiter Blutdruckwert:"
-        },
-        {
-          "absatz": null,
-          "text": "periphere Pulse:"
-        },
-        {
-          "absatz": null,
-          "text": "Auskultation/Herzgrenzen:"
-        },
-        {
-          "absatz": null,
-          "text": "Venen:"
-        },
-        {
-          "absatz": null,
-          "text": "Insuffizienzzeichen:"
-        },
-        {
-          "absatz": null,
-          "text": "Thorax:"
-        },
-        {
-          "absatz": null,
-          "text": "obere Luftwege:"
-        },
-        {
-          "absatz": null,
-          "text": "Auskultation:"
-        },
-        {
-          "absatz": null,
-          "text": "Perkussion:"
-        },
-        {
-          "absatz": null,
-          "text": "Lebergrösse:"
-        },
-        {
-          "absatz": null,
-          "text": "andere Auffälligkeiten:"
-        },
-        {
-          "absatz": null,
-          "text": "Defekte:"
-        },
-        {
-          "absatz": null,
-          "text": "Lähmungen:"
-        },
-        {
-          "absatz": null,
-          "text": "Unfallfolgen:"
-        },
-        {
-          "absatz": null,
-          "text": "Funktions- und Bewegungseinschränkungen",
+          "text": "B. Untersuchungsbefunde",
           "items": [
             {
               "marke": "1",
@@ -7951,47 +7619,47 @@
             },
             {
               "marke": "2",
-              "text": "Sehvermögen",
+              "text": "Sehvermögen Fernvisus: rechts: unkorr.: korr.: links: unkorr.: korr.: Einäugigkeit: Doppelbilder: Lichtreaktion: Motilität: Gesichtsfeld:",
               "trenner": ""
             },
             {
               "marke": "3",
-              "text": "Hörvermögen",
+              "text": "Hörvermögen Konversationssprache: …… Meter (rechts/links) Flüstersprache: …… Meter (rechts/links) Krankheiten des Innen- oder Mittelohres:",
               "trenner": ""
             },
             {
               "marke": "4",
-              "text": "Haut",
+              "text": "Haut Einstichstellen: auffälliges Nasenseptum: Leber-Stigmata: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "5",
-              "text": "Psyche",
+              "text": "Psyche Stimmung: Affekt: Aufmerksamkeit: Konzentration: Gedächtnis: kognitive Defizite: Anhaltspunkte für beginnende Demenz: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "6",
-              "text": "Nervensystem",
+              "text": "Nervensystem Motorik (Koordination, Romberg, Reflexe): Sensibilität (Vibrations- und Lagesinn): Strichgang: vegetative Zeichen/Tremor:",
               "trenner": ""
             },
             {
               "marke": "7",
-              "text": "Herz-Kreislauf",
+              "text": "Herz-Kreislauf Puls: Blutdruck: evtl. zweiter Blutdruckwert: periphere Pulse: Auskultation/Herzgrenzen: Venen: Insuffizienzzeichen:",
               "trenner": ""
             },
             {
               "marke": "8",
-              "text": "Atmungsorgane",
+              "text": "Atmungsorgane Thorax: obere Luftwege: Auskultation: Perkussion:",
               "trenner": ""
             },
             {
               "marke": "9",
-              "text": "Abdominalorgane",
+              "text": "Abdominalorgane Lebergrösse: andere Auffälligkeiten:",
               "trenner": ""
             },
             {
               "marke": "10",
-              "text": "Bewegungsapparat",
+              "text": "Bewegungsapparat Defekte: Lähmungen: Unfallfolgen: Funktions- und Bewegungseinschränkungen",
               "trenner": ""
             },
             {
@@ -8022,7 +7690,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_2_a",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
-      "sha": "a4dd8969609735df46c4d651ea606036251fd69e08ccf4487a550a7293eea894"
+      "sha": "c49eb688fb4464cbf10395550fb0b282bd9eaf047bde50ebeccdc431c67f1f6a"
     },
     {
       "id": "bund/VZV/annex_3",
@@ -8076,14 +7744,6 @@
         },
         {
           "absatz": null,
-          "text": "rechts: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
-          "text": "links: unkorr.: korr.:"
-        },
-        {
-          "absatz": null,
           "text": "Es bestehen die folgenden verkehrsmedizinisch relevanten Erkrankungen oder Zustände:",
           "items": [
             {
@@ -8093,7 +7753,7 @@
             },
             {
               "marke": "1.1",
-              "text": "Sehschärfe:",
+              "text": "Sehschärfe: rechts: unkorr.: korr.: links: unkorr.: korr.:",
               "trenner": ""
             },
             {
@@ -8207,11 +7867,11 @@
         },
         {
           "absatz": null,
-          "text": "Es bestehen ernsthafte Zweifel an der Fahreignung, weshalb bis zur weiteren Abklärung kein Fahrzeug geführt werden sollte",
+          "text": "",
           "items": [
             {
               "marke": "2.2",
-              "text": "Unklares Ergebnis: Die definitive Beurteilung soll von einer anerkannten Ärztin oder einem anerkannten Arzt der Stufe 3 oder 4 vorgenommen werden",
+              "text": "Unklares Ergebnis: Die definitive Beurteilung soll von einer anerkannten Ärztin oder einem anerkannten Arzt der Stufe 3 oder 4 vorgenommen werden Es bestehen ernsthafte Zweifel an der Fahreignung, weshalb bis zur weiteren Abklärung kein Fahrzeug geführt werden sollte",
               "trenner": ""
             },
             {
@@ -8255,19 +7915,7 @@
         },
         {
           "absatz": null,
-          "text": "Meldung des Resultats der ärztlichen Kontrolle an die kantonale Behörde in …… Monat/en"
-        },
-        {
-          "absatz": null,
-          "text": "Normale Kontrollabstände nach VZV"
-        },
-        {
-          "absatz": null,
-          "text": "Kürzere Kontrollabstände als nach VZV:"
-        },
-        {
-          "absatz": null,
-          "text": "Nächste Kontrolluntersuchung in …… Monat/en durch eine anerkannte Ärztin oder einen anerkannten Arzt der Stufe ……",
+          "text": "Meldung des Resultats der ärztlichen Kontrolle an die kantonale Behörde in …… Monat/en",
           "items": [
             {
               "marke": "3.3",
@@ -8276,7 +7924,7 @@
             },
             {
               "marke": "4",
-              "text": "Nächste Kontrolluntersuchung",
+              "text": "Nächste Kontrolluntersuchung Normale Kontrollabstände nach VZV Kürzere Kontrollabstände als nach VZV: Nächste Kontrolluntersuchung in …… Monat/en durch eine anerkannte Ärztin oder einen anerkannten Arzt der Stufe ……",
               "trenner": ""
             }
           ]
@@ -8298,7 +7946,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_3",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
-      "sha": "078871489381c251b307d7a3d7d676b15d5e0d14bc0e651ea8f7f6e54459dd38"
+      "sha": "219bc85c6766885fd28984fd0b1dd4c38145672c58d0713c7757a5e5bac90872"
     },
     {
       "id": "bund/VZV/annex_3_a",
@@ -8991,11 +8639,11 @@
         },
         {
           "absatz": null,
-          "text": "Falls eine der Fragen unter 5.1−5.3 mit «Ja» beantwortet wird, muss diesem Gesuch ein Bericht der behandelnden Ärztin oder des behandelnden Arztes beigelegt werden (andernfalls zwingende Überweisung an eine anerkannte Ärztin/einen anerkannten Arzt mindestens der Stufe 3).",
+          "text": "",
           "items": [
             {
               "marke": "5.4",
-              "text": "Bemerkungen oder Ergänzungen zu den obigen Angaben:",
+              "text": "Bemerkungen oder Ergänzungen zu den obigen Angaben: Falls eine der Fragen unter 5.1−5.3 mit «Ja» beantwortet wird, muss diesem Gesuch ein Bericht der behandelnden Ärztin oder des behandelnden Arztes beigelegt werden (andernfalls zwingende Überweisung an eine anerkannte Ärztin/einen anerkannten Arzt mindestens der Stufe 3).",
               "trenner": ""
             },
             {
@@ -9248,15 +8896,11 @@
         },
         {
           "absatz": null,
-          "text": "Sind Sie minderjährig oder stehen Sie ja nein unter umfassender Beistandschaft?"
-        },
-        {
-          "absatz": null,
-          "text": "Name und Adresse der gesetzlichen Vertreterin/des gesetzlichen Vertreters:",
+          "text": "",
           "items": [
             {
               "marke": "6",
-              "text": "Vormundschaft und Beistandschaft",
+              "text": "Vormundschaft und Beistandschaft Sind Sie minderjährig oder stehen Sie ja nein unter umfassender Beistandschaft? Name und Adresse der gesetzlichen Vertreterin/des gesetzlichen Vertreters:",
               "trenner": ""
             }
           ]
@@ -9322,7 +8966,128 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_4",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
-      "sha": "66da6c4a86d908a5b9e8424d2c45057627ba0301545d6c50f3e69de6278ee18a"
+      "sha": "17c70d2e7bda02ecd237f5f7b564d2cf1d5e794746cf62fe8e369962666be301"
+    },
+    {
+      "id": "bund/VZV/annex_u1",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1",
+      "artikelLabel": "Beilage",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Beschreibung der Führerausweiskategorien, -unterkategorien und -spezialkategorien",
+          "titel": 2
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "items": [
+            {
+              "marke": "[tab]",
+              "text": "Kategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "A",
+              "text": "Motorräder",
+              "trenner": ":"
+            },
+            {
+              "marke": "B",
+              "text": "Motorwagen und dreirädrige Motorfahrzeuge mit einem Gesamtgewicht von nicht mehr als 3500 kg und nicht mehr als acht Plätzen ausser dem Führersitz; Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt; Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 3500 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C",
+              "text": "Motorwagen mit einem Gesamtgewicht von mehr als 3500 kg und nicht mehr als acht Plätzen ausser dem Führersitz; Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie C und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D",
+              "text": "Motorwagen zum Personentransport mit mehr als acht Plätzen ausser dem Führersitz; Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie D und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "BE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger, die als Kombination nicht unter die Kategorie B fallen;",
+              "trenner": ":"
+            },
+            {
+              "marke": "CE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie C und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg;",
+              "trenner": ":"
+            },
+            {
+              "marke": "DE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie D und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg.",
+              "trenner": ":"
+            },
+            {
+              "marke": "[tab]",
+              "text": "Unterkategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "A1",
+              "text": "Motorräder mit einem Hubraum von nicht mehr als 125 cm 3 und einer Motorleistung von höchstens 11 kW;",
+              "trenner": ":"
+            },
+            {
+              "marke": "B1",
+              "text": "dreirädrige Motorfahrzeuge mit einem Leergewicht von nicht mehr als 670 kg und Kleinmotorfahrzeuge;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C1",
+              "text": "Motorwagen mit einem Gesamtgewicht von mehr als 3500 kg, aber nicht mehr als 7500 kg und nicht mehr als acht Plätzen ausser dem Führersitz; Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie C1 und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D1",
+              "text": "Motorwagen zum Personentransport mit mehr als acht, aber nicht mehr als 16 Plätzen ausser dem Führersitz; Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie D1 und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C1E",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie C1 und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 12 000 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D1E",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie D1 und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 12 000 kg nicht übersteigt und der Anhänger nicht zum Personentransport verwendet wird.",
+              "trenner": ":"
+            },
+            {
+              "marke": "[tab]",
+              "text": "Spezialkategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "F",
+              "text": "Motorfahrzeuge, ausgenommen Motorräder, mit einer Höchstgeschwindigkeit bis 45 km/h;",
+              "trenner": ":"
+            },
+            {
+              "marke": "G",
+              "text": "Land- und forstwirtschaftliche Motorfahrzeuge mit einer Höchstgeschwindigkeit bis 30 km/h, unter Ausschluss der Ausnahmefahrzeuge;",
+              "trenner": ":"
+            },
+            {
+              "marke": "M",
+              "text": "Motorfahrräder.",
+              "trenner": ":"
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_u1",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "7f692ef4396d14fa1ebb57dbb4fab009d5e63292c1d3566eb9d195f955d8d3b5"
     },
     {
       "id": "bund/VZV/annex_4_a",
@@ -9413,6 +9178,26 @@
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
       "sha": "1bdcc6cede5080b94d64511bd44333ad2cb9eb6d733fa441e4f9013b70ac5775"
+    },
+    {
+      "id": "bund/VZV/annex_u1__2",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1__2",
+      "artikelLabel": "Anhänge 5 und 6",
+      "aufgehoben": true,
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#fnbck-d367071e19095",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
       "id": "bund/VZV/annex_7",
@@ -9594,6 +9379,26 @@
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
       "sha": "dcfe3d534de54f35043e96e8e1081f11f2fd75d659bce85baca64fb412b07393"
+    },
+    {
+      "id": "bund/VZV/annex_u1__3",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1__3",
+      "artikelLabel": "Anhang 8 und 9",
+      "aufgehoben": true,
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#fnbck-d367071e19320",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
       "id": "bund/VZV/annex_10",
