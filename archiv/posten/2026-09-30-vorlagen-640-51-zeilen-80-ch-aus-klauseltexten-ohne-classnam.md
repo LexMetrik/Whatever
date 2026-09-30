@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 Darstellung der Klausel-Vorschau, vorbestehend (Bau #1159); Fix nur in Darstellungsschicht, src/lib/vorlagen ist Risikopfad.
+
+**Erledigt 2026-09-30:** PR #1164
