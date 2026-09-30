@@ -9,9 +9,17 @@
  * Klick, Zurücksetzen bei Filterwechsel, Filter über den GANZEN Bestand
  * (ein Treffer hinter dem Deckel bleibt auffindbar).
  *
+ * B1 (Zweitprüfung): das aufgeklappte Fenster je Behörde überlebt «Detailseite
+ * und zurück» (Unmount + neuer Mount über dieselbe Sitzung), Filterwechsel setzt
+ * es zurück, die Behörden teilen kein Fenster. B2: der Zähler wird als Element
+ * des Gruppenkopfs (`.num`) geprüft, nicht als Teilstring der ganzen Gruppe.
+ *
  * ROT ZU BEKOMMEN: in `MaterialRaster.tsx` `.slice(0, sichtbar)` streichen →
  * «100 Karten» rot; oder die Zurücksetz-Zeile (`setVorherMenge`) streichen →
- * «Filterwechsel setzt den Deckel zurück» rot.
+ * «Filterwechsel setzt den Deckel zurück» rot; das lazy `leseFenster` im
+ * `useState` durch `MATERIAL_DECKEL` ersetzen → «Fenster kommt zurück» rot;
+ * `zahl={g.materialien.length}` in `Materialien.tsx` auf `Math.min(…, 100)`
+ * kürzen → die beiden Kopfzähler-Prüfungen rot.
  */
 import { act } from 'react';
 import { MemoryRouter } from 'react-router-dom';
@@ -38,7 +46,18 @@ const MANIFEST = { erzeugt: '2026-09-30', materialien: [...GROSS, ...GENAU, ...E
 
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
-async function oeffne() {
+// Sitzungsspeicher-Attrappe (linkedom hat keinen): ein Objekt je Testfall, das
+// über Unmount/Neu-Mount hinweg derselbe bleibt — wie die Browser-Sitzung.
+function sitzung() {
+  const m = new Map<string, string>();
+  return {
+    getItem: (k: string) => m.get(k) ?? null,
+    setItem: (k: string, v: string) => { m.set(k, v); },
+    removeItem: (k: string) => { m.delete(k); },
+  };
+}
+
+async function oeffne(speicher: ReturnType<typeof sitzung> = sitzung()) {
   const { document, window } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
   // React wählt beim ersten Laden von react-dom/client, ob es `input`-Ereignisse
   // direkt hört (`'oninput' in document`) — darum Stub VOR dem dynamischen Import.
@@ -46,6 +65,7 @@ async function oeffne() {
   vi.stubGlobal('window', Object.assign(window, { setTimeout: globalThis.setTimeout, clearTimeout: globalThis.clearTimeout }));
   vi.stubGlobal('document', document);
   vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
+  vi.stubGlobal('sessionStorage', speicher);
   vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => MANIFEST })));
   const { createRoot } = await import('react-dom/client');
   const ziel = document.getElementById('app') as unknown as HTMLElement;
@@ -63,14 +83,15 @@ async function oeffne() {
       feld.dispatchEvent(new window.Event('input', { bubbles: true }));
     });
   };
-  return { ziel, root, gruppe, karten, knopf, klick, tippe };
+  const kopfZahl = (id: string) => gruppe(id).querySelector('.num')?.textContent;
+  return { ziel, root, gruppe, karten, knopf, klick, tippe, kopfZahl };
 }
 
 describe('P6 · Deckel je Behörde auf /materialien', () => {
   it('250 Einträge → 100 Karten, Kopf zählt 250, Knopf nennt 150 weitere', async () => {
     const t = await oeffne();
     expect(t.karten('b-BR'.slice(2))).toBe(MATERIAL_DECKEL);
-    expect(t.gruppe('BR').textContent).toContain('250');
+    expect(t.kopfZahl('BR')).toBe('250');
     expect(t.knopf('BR')?.textContent).toBe('Weitere anzeigen (150 weitere)');
     act(() => t.root.unmount());
   });
@@ -117,9 +138,46 @@ describe('P6 · Deckel je Behörde auf /materialien', () => {
     expect(t.knopf('BR')?.textContent).toBe('Weitere anzeigen (150 weitere)');
     // Bei aktivem Filter gilt der Deckel auf die gefilterte Menge, der Kopf zählt sie.
     await t.tippe('Nr. 1');              // 1, 10–19, 100–199 = 111 Treffer
-    expect(t.gruppe('BR').textContent).toContain('111');
+    expect(t.kopfZahl('BR')).toBe('111');
     expect(t.karten('BR')).toBe(MATERIAL_DECKEL);
     expect(t.knopf('BR')?.textContent).toBe('Weitere anzeigen (11 weitere)');
+    act(() => t.root.unmount());
+  });
+
+  it('B1: nach «Detailseite und zurück» (Unmount, neuer Mount, gleiche Sitzung) steht das aufgeklappte Fenster wieder', async () => {
+    const speicher = sitzung();
+    const a = await oeffne(speicher);
+    await a.klick(a.knopf('BR')!);
+    await a.klick(a.knopf('BR')!);
+    expect(a.karten('BR')).toBe(250);
+    await act(async () => { a.root.unmount(); });
+    const b = await oeffne(speicher);
+    expect(b.karten('BR')).toBe(250);            // sofort im ersten Render, nicht wieder 100
+    expect(b.knopf('BR')).toBeUndefined();
+    // Je Behörde ein eigenes Fenster: die Nachbarn bleiben beim Deckel.
+    expect(b.karten('SECO')).toBe(MATERIAL_DECKEL);
+    expect(b.knopf('SECO')?.textContent).toBe('Weitere anzeigen (1 weitere)');
+    act(() => b.root.unmount());
+  });
+
+  it('B1: ein Filterwechsel verwirft das Fenster auch für die Rückkehr', async () => {
+    const speicher = sitzung();
+    const a = await oeffne(speicher);
+    await a.klick(a.knopf('BR')!);
+    expect(a.karten('BR')).toBe(2 * MATERIAL_DECKEL);
+    await a.tippe('Botschaft');                  // neue Menge → Fenster wieder am Deckel
+    expect(a.karten('BR')).toBe(MATERIAL_DECKEL);
+    await act(async () => { a.root.unmount(); });
+    const b = await oeffne(speicher);            // Rückkehr OHNE weiteren Filterwechsel
+    expect(b.karten('BR')).toBe(MATERIAL_DECKEL);
+    act(() => b.root.unmount());
+  });
+
+  it('B1: ein unplausibles Sitzungsfenster fällt auf den Deckel zurück (kein erzwungenes DOM)', async () => {
+    const speicher = sitzung();
+    speicher.setItem('rsp:deckel:materialien:BR', '0:999999');
+    const t = await oeffne(speicher);
+    expect(t.karten('BR')).toBe(MATERIAL_DECKEL);
     act(() => t.root.unmount());
   });
 

@@ -74,3 +74,38 @@ test('/materialien: der Filter findet einen Eintrag hinter dem Deckel; Sprungzie
   await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('ArGV 1 Artikel 32a');
   await expect(page.getByText('ArGV 1 Artikel 32a', { exact: false }).first()).toBeVisible();
 });
+
+// B1 (Zweitprüfung #1185): das aufgeklappte Fenster überlebt den Weg in eine
+// Detailseite und zurück (Hausmuster /rechtsprechung: `leseFenster` lazy im ersten
+// Render). Ohne das ist das Fenster nach «zurück» wieder 100 hoch, das Dokument zu
+// kurz, und die Y-basierte Scroll-Wiederherstellung (App.tsx) greift ins Leere.
+// ROT ZU BEKOMMEN: in `MaterialRaster.tsx` das lazy `leseFenster` im useState
+// durch `MATERIAL_DECKEL` ersetzen → das Fenster ist nach «zurück» wieder 100.
+test('/materialien: nach Detailseite und «zurück» steht das aufgeklappte Fenster wieder und die Position trägt', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/materialien');
+  await expect(page.locator('a.lc-card').first()).toBeVisible({ timeout: 15000 });
+  // Die grösste Gruppe (BUND, 831 Einträge) über ihre id festhalten, 3× «Weitere» → 400 Karten.
+  const id = await page.locator('section[id^="b-"]').evaluateAll((els) => {
+    const zahl = (s: Element) => Number((s.querySelector('.num')?.textContent ?? '').replace(/\D/g, ''));
+    return els.reduce((a, b) => (zahl(b) > zahl(a) ? b : a)).id;
+  });
+  const gruppe = page.locator(`#${id}`);
+  for (let i = 1; i <= 3; i++) {
+    await gruppe.getByRole('button', { name: /Weitere anzeigen/ }).click();
+    await expect(gruppe.locator('a.lc-card')).toHaveCount((i + 1) * DECKEL);
+  }
+  const karte = gruppe.locator('a.lc-card').nth(350);
+  await karte.scrollIntoViewIfNeeded();
+  const href = (await karte.getAttribute('href'))!;
+  const vorher = await karte.evaluate((a) => a.getBoundingClientRect().top);
+  await karte.click();
+  await expect(page).toHaveURL(/\/materialien\/[^/]+$/);
+  await page.goBack();
+  // Das Fenster ist sofort wieder 400 hoch (nicht 100) …
+  await expect(gruppe.locator('a.lc-card')).toHaveCount(4 * DECKEL, { timeout: 15000 });
+  // … und die Rückkehr landet wieder auf DERSELBEN Karte (Position ±1 Zeile).
+  const wieder = page.locator(`a.lc-card[href="${href}"]`);
+  await expect(wieder).toBeVisible();
+  await expect.poll(async () => Math.abs((await wieder.evaluate((a) => a.getBoundingClientRect().top)) - vorher), { timeout: 10000 }).toBeLessThan(120);
+});

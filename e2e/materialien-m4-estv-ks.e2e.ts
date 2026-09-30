@@ -41,5 +41,11 @@ test('Materialien-Übersicht listet die neuen ESTV-KS-Einträge, 390px ohne Over
   await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('Kreisschreiben Nr. 12: Umsatzabgabe')
   await expect(page.getByText('Kreisschreiben Nr. 12: Umsatzabgabe', { exact: false }).first()).toBeVisible({ timeout: 15000 })
 
+  // B3 (Zweitprüfung #1185): die erste Messung oben sieht nur die ersten 100 Karten
+  // je Gruppe. Dieselbe Messung läuft darum auch auf der GEFILTERTEN Menge — dort
+  // steht die Karte hinter dem Deckel, die sonst nie gemessen würde.
+  const overflowGefiltert = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+  expect(overflowGefiltert, `horizontaler Overflow ${overflowGefiltert}px bei 390px (gefilterte Menge)`).toBeLessThanOrEqual(1)
+
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })

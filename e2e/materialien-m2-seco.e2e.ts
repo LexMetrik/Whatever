@@ -46,5 +46,11 @@ test('Materialien-Übersicht listet die neuen SECO-Einträge, 390px ohne Overflo
   await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('ArGV 1 Artikel 32a')
   await expect(page.getByText('ArGV 1 Artikel 32a', { exact: false }).first()).toBeVisible({ timeout: 15000 })
 
+  // B3 (Zweitprüfung #1185): die erste Messung oben sieht nur die ersten 100 Karten
+  // je Gruppe. Dieselbe Messung läuft darum auch auf der GEFILTERTEN Menge — dort
+  // steht die Karte hinter dem Deckel, die sonst nie gemessen würde.
+  const overflowGefiltert = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+  expect(overflowGefiltert, `horizontaler Overflow ${overflowGefiltert}px bei 390px (gefilterte Menge)`).toBeLessThanOrEqual(1)
+
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BrowseMaterial } from '../../lib/materialien/typen';
+import { leseFenster, schreibeFenster } from '../rechtsprechung/zustand';
 import { WeitereKnopf } from '../ui/WeitereKnopf';
 import { MaterialKarte } from './MaterialKarte';
 
@@ -25,12 +26,32 @@ import { MaterialKarte } from './MaterialKarte';
 // `lib/materialien/browse.ts`; hier wird nur das Fenster gesetzt.
 export const MATERIAL_DECKEL = 100;
 
-export function MaterialRaster({ materialien, klasse }: { materialien: BrowseMaterial[]; klasse: string }) {
-  const [sichtbar, setSichtbar] = useState(MATERIAL_DECKEL);
+// Harte Obergrenze eines WIEDERHERGESTELLTEN Fensters (wie `FENSTER_MAX` in
+// `pages/Rechtsprechung.tsx`): sessionStorage ist schreibbar, ohne Schranke liesse
+// sich ein beliebig grosses DOM erzwingen. 20 Stapel übersteigen die grösste Gruppe.
+const FENSTER_MAX = MATERIAL_DECKEL * 20;
+
+// `speicherKey` = die Behörde (eigenes Fenster je Gruppe). Die Sitzungs-Helfer
+// sind die der Rechtsprechung (`rechtsprechung/zustand`, §5): ein Fenster ist
+// dort wie hier «[von, bis)» — hier immer ab 0, der Deckel wächst nur nach unten.
+export function MaterialRaster({ materialien, klasse, speicherKey }: {
+  materialien: BrowseMaterial[]; klasse: string; speicherKey: string;
+}) {
+  // B1 (Zweitprüfung #1185): das aufgeklappte Fenster kommt LAZY aus der Sitzung
+  // zurück, schon im ersten Render — nach «zurück» aus einer Detailseite muss das
+  // Dokument sofort wieder so hoch sein, sonst greift die Y-basierte
+  // Scroll-Wiederherstellung (App.tsx) ins Leere (Muster `Rechtsprechung::Liste`).
+  const schluessel = `materialien:${speicherKey}`;
+  const [sichtbar, setSichtbar] = useState(
+    () => leseFenster(schluessel, MATERIAL_DECKEL, FENSTER_MAX).bis);
+  // Jeden Stand (auch das Zurücksetzen unten) festhalten: so stellt die Rückkehr
+  // nie ein Fenster her, das ein Filterwechsel schon verworfen hat.
+  useEffect(() => { schreibeFenster(schluessel, { von: 0, bis: sichtbar }); }, [schluessel, sichtbar]);
   // Filterwechsel = neue Menge (`gruppiereNachBehoerde` liefert je `gefiltert`
   // frische Arrays): das Fenster beginnt wieder beim Deckel. Zurücksetzen im
   // Render (wie `Rechtsprechung`), nicht im Effekt — sonst ein Frame mit dem
-  // alten, womöglich sehr langen Fenster.
+  // alten, womöglich sehr langen Fenster. Beim MOUNT greift es nicht (gleiche
+  // Referenz): die wiederhergestellte Höhe überlebt die Rückkehr.
   const [vorherMenge, setVorherMenge] = useState(materialien);
   if (vorherMenge !== materialien) { setVorherMenge(materialien); setSichtbar(MATERIAL_DECKEL); }
 

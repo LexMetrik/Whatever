@@ -202,6 +202,7 @@ export function Materialien() {
                       weiter die ganze (gefilterte) Gruppe. */}
                   <MaterialRaster
                     materialien={g.materialien}
+                    speicherKey={g.behoerde}
                     klasse={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:@[78rem]/raster:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[78rem]/raster:grid-cols-4 gap-3')}
                   />
                 </section>
