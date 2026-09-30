@@ -3726,14 +3726,21 @@
      genau auf die Box-Breite (gemessen: alle 128 Notice-Boxen der Vorlagen
      haben Breite = Eltern-Breite). 19 px = 16 px Innenabstand links + 3 px
      Registerstrich (`.lc-notice`, oben); unterhalb von 30 rem + 19 px bleibt der
-     normale 16-px-Abstand, die Box ändert sich dann nicht.
+     normale 16-px-Abstand, die Box ändert sich dann nicht. Die Regel ist
+     bewusst an keine Breitenstufe gebunden: ab 768 px greift sie, wo die Box
+     breiter als 30 rem + 19 px ist (Gegenprüfung #1164: @1280/1920 Box 520 px
+     → rechts 21 statt 16 px; @1920 Skala 1.4 Box 728 px → 37 px).
      Spezifität (0,1,0) wie `.lc-notice` selbst (steht später → gewinnt); ein
      Aufrufstellen-Utility (`pr-*`) schlägt sie weiterhin.
      (b) Checkbox-Text und -Hinweis (`ui.tsx` Checkbox: `label.flex > span.min-w-0`
      und `span.block.text-xs`; dazu die selbstgebauten Kontrollkästchen-Zeilen
      `label.flex > span`, z. B. VorlageSchlichtungsgesuchBs): nur im
      Schritt-Rahmen gedeckelt, nicht am Baustein — er steht auch in
-     Rechnern/Kontakt, deren Breiten nicht Teil dieses Bündels sind. (c) Listenpunkte, deren Schriftstufe an der Liste statt am `li` hängt
+     Rechnern/Kontakt, deren Breiten nicht Teil dieses Bündels sind.
+     `span.block.text-xs` trifft im Schritt auch die Untertitel der
+     Auswahlkarten (`SelectionGrid.tsx`; vollmacht S0 @700: 616 → 384 px),
+     die Karte selbst behält ihre Breite (Gegenprüfung #1164).
+     (c) Listenpunkte, deren Schriftstufe an der Liste statt am `li` hängt
      (`ul.text-body-s > li`): die #1159-Regel kennt nur die Stufe am Element selbst.
      (b)/(c) mit Spezifität (0,0,0): jede Aufrufstelle mit eigenem `max-w-*` gewinnt. */
   :where(.lc-vorlagen-schritt) [class*="lc-notice"] { padding-inline-end: max(16px, calc(100% - theme('maxWidth.reading-s') - 19px)); }
