@@ -115,6 +115,10 @@ zusammengestellt.
   Tore `npx vitest run src/tests/design-` und `npm run check:sediment`
   (Sekunden, kein Browser) — Belege #1053 (24.9.2026, Kasten-Optik design-r5
   erst im Orchestrator-Gate) und #1073/#1087 (25.9.2026, Export ohne Aufrufer).
+  Tor-Logs in den EIGENEN Worktree (`.gate/` oder `<branch-slug>-gate.log`),
+  nie unter festem Namen in den Session-Scratchpad: parallele Agenten teilen
+  ihn und ueberschreiben sich (30.9.2026, #1180/#1181: gate.log mit fremden
+  Risiko-Dateien).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
