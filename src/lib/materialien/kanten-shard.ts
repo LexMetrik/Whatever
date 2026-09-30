@@ -83,6 +83,26 @@ const FEHLER: KantenShardErgebnis = { zustand: 'fehler' };
 
 const shardPromises = new Map<string, Promise<KantenShardErgebnis>>();
 
+// «Erholt»-Signal (W2·27-BUND-FERTIG, Posten Praxis-Zeile 30.9.2026): mehrere
+// Flächen fragen denselben Shard (Praxis-Zeile, Artikel-Gruppe, Erlass-Tafel,
+// Popover). Ein gescheiterter Abruf wird nicht gecacht — holt EINE Fläche per
+// «Erneut laden» nach, müssen die anderen, die noch den Fehler zeigen, es
+// erfahren, sonst bleibt ihre Zeile stehen, obwohl die Daten da sind.
+const hatteFehler = new Set<string>();
+const erholtHoerer = new Map<string, Set<() => void>>();
+
+/**
+ * Meldet, sobald der Shard EINES Erlasses nach einem Fehlschlag erstmals wieder
+ * geladen ist (`ok` oder `leer`). Gedacht für Flächen, die gerade `fehler`
+ * zeigen: Rückruf = ihren eigenen Abruf wiederholen. Gibt die Abmeldung zurück.
+ */
+export function beiKantenShardErholt(erlassKey: string, rueckruf: () => void): () => void {
+  let hoerer = erholtHoerer.get(erlassKey);
+  if (!hoerer) { hoerer = new Set(); erholtHoerer.set(erlassKey, hoerer); }
+  hoerer.add(rueckruf);
+  return () => { hoerer.delete(rueckruf); };
+}
+
 /** `null` = 404 (Datei gibt es nicht); jeder andere Fehlschlag wirft. */
 async function holeJson(pfad: string): Promise<RohShard | null> {
   const res = await fetch(pfad);
@@ -128,7 +148,14 @@ export async function ladeKantenShardErgebnis(erlassKey: string): Promise<Kanten
     p = versuch;
     shardPromises.set(erlassKey, versuch);
     // Fehlschlag nie cachen (dasselbe Muster wie `ladeMaterialManifest`).
-    void versuch.then((e) => { if (e.zustand === 'fehler' && shardPromises.get(erlassKey) === versuch) shardPromises.delete(erlassKey); });
+    void versuch.then((e) => {
+      if (e.zustand === 'fehler') {
+        if (shardPromises.get(erlassKey) === versuch) shardPromises.delete(erlassKey);
+        hatteFehler.add(erlassKey);
+      } else if (hatteFehler.delete(erlassKey)) {
+        for (const rueckruf of [...(erholtHoerer.get(erlassKey) ?? [])]) rueckruf();
+      }
+    });
   }
   return p;
 }
@@ -147,4 +174,5 @@ export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | 
 /** Nur für Tests: den Shard-Promise-Cache leeren. */
 export function _leereKantenShardCache(): void {
   shardPromises.clear();
+  hatteFehler.clear();
 }

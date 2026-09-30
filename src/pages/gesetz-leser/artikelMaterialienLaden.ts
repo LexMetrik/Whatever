@@ -31,7 +31,7 @@
 // entschieden: der Leser, der nur liest, zahlt nichts.
 
 import { useCallback, useEffect, useState } from 'react';
-import { ladeKantenShardErgebnis, type KantenShard } from '../../lib/materialien/kanten-shard';
+import { beiKantenShardErholt, ladeKantenShardErgebnis, type KantenShard } from '../../lib/materialien/kanten-shard';
 import { ladeMaterialManifest } from '../../lib/materialien/browse';
 import { projiziereMaterialien } from '../../lib/kontext';
 import { beiLeerlauf } from '../../lib/leerlauf';
@@ -117,7 +117,14 @@ export function useArtikelMaterialien(
     return () => { lebt = false; abbrechen?.(); };
   }, [erlassKey, laden, versuch]);
 
-  if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return [LEER, false, erneut, false];
+  const aktuell = !!erlassKey && stand?.key === erlassKey && stand.versuch === versuch;
+  // Holt eine andere Fläche den gescheiterten Shard nach (Praxis-Zeile, Erlass-Tafel),
+  // zieht dieser Hook mit — sonst bliebe seine Fehlerzeile trotz geladener Daten stehen.
+  const shardAusfall = aktuell && stand.shardFehler;
+  useEffect(() => (shardAusfall && erlassKey ? beiKantenShardErholt(erlassKey, erneut) : undefined),
+    [shardAusfall, erlassKey, erneut]);
+
+  if (!erlassKey || !aktuell) return [LEER, false, erneut, false];
   // Ab hier ist der Lade-VERSUCH durch: ein fehlender Shard (404 = Erlass ohne
   // Material-Kanten) ergibt die LEERE Liste, nicht `undefined` — sonst stünde
   // die Skelett-Zeile «lädt …» für immer (§8: «nichts erfasst» ist eine Antwort,

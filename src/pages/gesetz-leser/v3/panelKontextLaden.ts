@@ -5,7 +5,8 @@ import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/mat
 import { kantonaleGesetzgebungFuer, type KantonalesGeschaeft } from '../../../lib/materialien/ratschlaege';
 import { ladeMaterialManifest } from '../../../lib/materialien/browse';
 import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
-import { kontextSoftLaw, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
+import { kontextSoftLawErgebnis, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
+import { beiKantenShardErholt } from '../../../lib/materialien/kanten-shard';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 
 // ─── Nachladen der Reiter «Änderungen» und «Materialien» (H3, Kap. 7) ────────
@@ -114,14 +115,26 @@ export interface ErlaeuterungStand {
   erzeugt: string;
 }
 
+// W2·27-BUND-FERTIG (30.9.2026, ERGÄNZUNG zum Absatz oben, der Stand 31.8./23.9.
+// bleibt als Beleg stehen): `kontextSoftLawErgebnis` meldet seither, ob ein
+// Kanten-Shard gescheitert ist (`fehler`). Dann ist die Liste ein Rest, keine
+// Auskunft — wie beim Manifest `null` (Fehlerzeile + «Erneut laden», die den
+// Abruf wirklich wiederholt: ein Shard-Fehlschlag wird nicht gecacht).
 async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungStand | null> {
-  const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLaw('norm', [key])]);
-  if (!manifest) return null;
-  return { liste: mischeMaterialien(materialienFuer([key]), weich), erzeugt: manifest.erzeugt };
+  const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLawErgebnis('norm', [key])]);
+  if (!manifest || weich.fehler) return null;
+  return { liste: mischeMaterialien(materialienFuer([key]), weich.liste), erzeugt: manifest.erzeugt };
 }
 
 export function useErlaeuterungen(erlassKey: string | undefined, laden: boolean): Geladen<ErlaeuterungStand> {
-  return useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  const stand = useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  // Holt eine andere Fläche den gescheiterten Shard nach («Erneut laden» der
+  // Artikel-Gruppe/Praxis-Zeile), zieht diese Tafel mit (`lib/materialien/kanten-shard`).
+  const { fertig, wert, erneut } = stand;
+  const ausfall = fertig && wert === null;
+  useEffect(() => (ausfall && erlassKey && erneut ? beiKantenShardErholt(erlassKey, erneut) : undefined),
+    [ausfall, erlassKey, erneut]);
+  return stand;
 }
 
 /** Gesetzgebungsmaterialien eines Erlasses (Reiter «Materialien»). Je Liste

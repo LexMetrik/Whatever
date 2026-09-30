@@ -4,6 +4,7 @@ import { kontextFuerArtikel, type ArtikelKontext } from '../../lib/kontext';
 import { KontextGruppe } from './KontextPanel';
 import { StatusBadge } from '../verzahnung/StatusBadge';
 import { Datum } from '../ui/Datum';
+import { AbrufFehler } from '../ui/AbrufFehler';
 
 // ─── VerweisKontext — artikelscharfe Verzahnung im Verweis-Popover ───────────
 //
@@ -44,7 +45,10 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
 }) {
   // Ergebnis trägt seinen eigenen Key → Zustand abgeleitet, kein synchrones
   // setState im Effekt-Body (Repo-Muster wie KontextPanel, §6.4).
-  const key = `${erlassKey}/${artikel}`;
+  // §8 (W2·27-BUND-FERTIG 30.9.2026): `versuch` = «Erneut laden» der Material-
+  // Fehlerzeile; er steckt im Key, damit der Zustand des Fehlversuchs nicht stehen bleibt.
+  const [versuch, setVersuch] = useState(0);
+  const key = `${erlassKey}/${artikel}/${versuch}`;
   const [geladen, setGeladen] = useState<{ key: string; ctx: ArtikelKontext } | null>(null);
   useEffect(() => {
     let lebt = true;
@@ -52,7 +56,7 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
     return () => { lebt = false; };
   }, [erlassKey, artikel, key]);
   const ctx = geladen && geladen.key === key ? geladen.ctx : null;
-  if (!ctx || (ctx.entscheide.length === 0 && ctx.materialien.length === 0)) return null;
+  if (!ctx || (ctx.entscheide.length === 0 && ctx.materialien.length === 0 && !ctx.materialienFehler)) return null;
 
   const entscheide = ctx.entscheide.slice(0, MAX_ZEILEN);
   const restE = ctx.entscheide.length - entscheide.length;
@@ -85,6 +89,11 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
             </Link>
           )}
         </KontextGruppe>
+      )}
+      {ctx.materialienFehler && (
+        // Kein «leer»: die Quelle war nicht erreichbar (Shard/Manifest), das Popover
+        // darf nicht so tun, als gäbe es zu diesem Artikel keine Materialien.
+        <AbrufFehler gegenstand="Amtliche Materialien" mehrzahl onErneut={() => setVersuch((v) => v + 1)} />
       )}
       {ctx.materialien.length > 0 && (
         <KontextGruppe titel="Amtliche Materialien" richtung="Legt aus" punkt="material" anzahl={ctx.materialien.length}>
