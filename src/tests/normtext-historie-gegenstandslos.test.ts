@@ -100,6 +100,15 @@ describe('Fassungs-Etikett: «Gegenstandslos seit …» statt «Gilt seit …» 
     expect(fassungsSchild(hist)).toBe('Gegenstandslos');
   });
 
+  it('Rangfolge: «Gegenstandslos seit …» geht vor «Gilt seit …» (giltSeit 2011 + gegenstandslos 2018), in Marke UND Schild', () => {
+    const hist = h({ giltSeit: '2011-01-01', gegenstandslos: { seit: '2018-01-01' } });
+    expect(fassungsMarkeEtikett(hist)).toMatch(/^Gegenstandslos seit .*2018/);
+    expect(fassungsSchild(hist)).toMatch(/^Gegenstandslos seit .*2018/);
+    expect(fassungsSchild(hist)).not.toMatch(/Gilt seit/);
+    // undatiert gegenstandslos schlägt ein vorhandenes giltSeit ebenso (kein «Gilt seit» für einen gegenstandslosen Artikel)
+    expect(fassungsSchild(h({ giltSeit: '2011-01-01', gegenstandslos: { seit: null } }))).toBe('Gegenstandslos');
+  });
+
   it('aufgehoben geht vor gegenstandslos; ohne beides bleibt «Gilt seit …»', () => {
     expect(fassungsSchild(h({ aufgehobenSeit: '2008-01-01', gegenstandslos: { seit: '2018-01-01' } }))).toMatch(/^Aufgehoben seit /);
     expect(fassungsSchild(h({ giltSeit: '2017-01-01' }))).toMatch(/^Gilt seit /);
