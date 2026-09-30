@@ -78,7 +78,7 @@ CREATE TABLE artikel (
   artikel_label  TEXT NOT NULL,          -- NormSnapshot.artikelLabel ('Art. 41', '§ 4') — Spalten-Weg (E1)
   grundlage      TEXT,                   -- NormSnapshot.grundlage? (Delegationsnorm-Verweis); NULL = weggelassen
   marg           TEXT,                   -- Randtitel (NormSnapshot.titel; Kanton). Bund E1 = NULL
-  aufgehoben     INTEGER,                -- G-AUFH-ART: NormSnapshot.aufgehoben? (1 = true); NULL = Feld weggelassen
+  aufgehoben     INTEGER,                -- G-AUFH-ART: NormSnapshot.aufgehoben? (1 = aufgehoben) bzw. .gegenstandslos? (2 = gegenstandslos, W2·27); NULL = beide Felder weggelassen
   quelle_url     TEXT NOT NULL,          -- NormSnapshot.quelleUrl (mit Artikel-Anker) — §7(b)/(c)
   bloecke_json   TEXT NOT NULL,
   sha            TEXT NOT NULL,          -- trägt auch die Umzugs-Erkennung (§3.3)

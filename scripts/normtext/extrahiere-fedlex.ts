@@ -16,6 +16,8 @@
 export interface ArtikelText {
   /** G-AUFH-ART (W2·27) — GANZER Artikel amtlich aufgehoben. Regel + Belege + die Grenze «kein Signal ≠ gilt» (§7): `aufhebung-signal.ts`. */
   aufgehoben?: true;
+  /** Amtlich «Gegenstandslos» (eigene Kategorie, NICHT «aufgehoben»): `aufhebung-signal.ts`. */
+  gegenstandslos?: true;
   /** G23 (M8): Delegationsnorm-Verweis «(Art. N ArG)» aus
    *  <p class="man-template-referenz"> — die Trägergesetz-Grundlage, auf der eine
    *  Verordnungsbestimmung beruht. Steht in Fedlex direkt unter der Überschrift;
@@ -64,7 +66,7 @@ export interface BildRef {
 }
 
 import { artikelRohHtml } from './artikel-vorkommen.ts';
-import { artikelTextMitAufhebung } from './aufhebung-signal.ts';
+import { artikelTextMitAufhebung, anhangAmtlichesSignal } from './aufhebung-signal.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
 
@@ -1211,6 +1213,9 @@ export interface AnhangText {
    *  aus der ersten <hN class="heading"> der Sektion. */
   titel: string;
   bloecke: ArtikelText['bloecke'];
+  /** Leerer Körper + amtlicher Kopf-Vermerk (W2·27, `anhangAmtlichesSignal`). */
+  aufgehoben?: true;
+  gegenstandslos?: true;
 }
 
 /**
@@ -1608,7 +1613,10 @@ export function extrahiereAnhang(html: string, ankerRoh: string): AnhangText | n
   // faithful als «aufgehoben»-Marker («…») behalten statt stumm zu verlieren
   // (§8 Ehrlichkeit; der Reader zeigt «aufgehoben»). So bleibt der Anhang in der
   // Vollständigkeit/Struktur erfasst und konsistent mit dem Artikel-Pfad.
-  if (bloecke.length === 0) return { titel, bloecke: [{ absatz: null, text: '…' }] };
+  if (bloecke.length === 0) {
+    const signal = anhangAmtlichesSignal(innerRoh); // W2·27: amtlicher Kopf-Vermerk (aufgehoben | gegenstandslos)
+    return { titel, bloecke: [{ absatz: null, text: '…' }], ...(signal ? { [signal]: true as const } : {}) };
+  }
   ergaenzeFehlendeBilder(bloecke, koerper);
   markiereFormeln(bloecke);
   return { titel, bloecke };

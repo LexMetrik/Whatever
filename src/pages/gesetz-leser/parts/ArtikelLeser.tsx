@@ -3,6 +3,7 @@ import { ArtikelBody, FnRef } from '../../../components/normtext/ArtikelBody';
 import { type InternRefs } from '../../../components/NormText';
 import {
   labelMitBereich, artikelLeerstellenStatus, LEERSTELLE_KURZ, LEERSTELLE_ERLAEUTERUNG,
+  LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort,
 } from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
@@ -189,7 +190,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Die FORM (Dämpfung, fehlendes Chevron, eingeklappt) ist für beide gleich:
   // in beiden Fällen gibt es nichts zu entfalten — nur die Statuszeile
   // unterscheidet, und genau das ist der §8-Punkt.
-  const leerstelle = artikelLeerstellenStatus(e.bloecke, e.aufgehoben);
+  const leerstelle = artikelLeerstellenStatus(e.bloecke, e.aufgehoben, e.gegenstandslos);
   const ganzAufgehoben = leerstelle === 'aufgehoben';
   const ohneWortlaut = leerstelle !== 'lebt';
   // Welche Fussnoten der Apparat zeigt und in welcher Reihenfolge:
@@ -393,6 +394,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500"
                 title={LEERSTELLE_ERLAEUTERUNG}>· {LEERSTELLE_KURZ}</span>
             )}
+            {/* W2·27 (30.9.2026): amtlich «gegenstandslos» — eigenes Wort, nie
+                «aufgehoben» (§1/§8); dieselbe Dämpfung, dieselbe Rolle. */}
+            {leerstelle === 'gegenstandslos' && (
+              <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500"
+                title={LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG}>{`· ${leerstellenWort(leerstelle)}`}</span>
+            )}
             {/* ── W2·5m · NACHBAR-ARTIKEL «‹ Art. 89 · Art. 90a ›» ───────────
                 Muster gesetze-im-internet/dejure/buzer, hier als Anker im
                 selben Dokument (der Leser zeigt den ganzen Erlass auf EINER
@@ -440,6 +447,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
             /* W2·27: der amtliche Artikel-Beleg deckt auch die leeren Blöcke. */
             artikelAufgehoben={ganzAufgehoben}
+            /* W2·27 (30.9.2026): amtlich «gegenstandslos» → der Körper sagt dasselbe Wort wie die Statuszeile. */
+            artikelGegenstandslos={leerstelle === 'gegenstandslos'}
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}

@@ -25,6 +25,7 @@ import {
   anhangLabelVonAnker,
 } from './normtext/extrahiere-fedlex.ts';
 import { labelFuerAnker } from './normtext/doppel-id-label.ts';
+import { signalFelder } from './normtext/aufhebung-signal.ts';
 import { amtlicherAnker } from './normtext/artikel-vorkommen.ts';
 import {
   sammleKantonInventar,
@@ -1274,8 +1275,8 @@ async function main(): Promise<void> {
         erlass,
         artikel: token,
         artikelLabel: labelFuerAnker(html, ankerVoll, artikelLabel(token.replace(/__\d+$/, ''))), // Basis-Token nur noch hier gebraucht (die quelleUrl rechnet seit dem Anker-Fix selbst zurück) — darum inline statt eigener const
-        // Artikel-Metadaten: `aufgehoben` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
-        ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
+        // Artikel-Metadaten: `aufgehoben`/`gegenstandslos` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
+        ...signalFelder(extrakt),
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
         bloecke: extrakt.bloecke,
         stand,
@@ -1313,7 +1314,7 @@ async function main(): Promise<void> {
         erlass,
         artikel: token,
         artikelLabel: labelFuerAnker(html, anker, artikelLabel(schlussteilLabelSuffix(anker))), // W2·27 wie Haupttext (heute kein «__N»-Schlussteil im Korpus, aber der Pfad erbt die alte Halbwahrheit nicht)
-        ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
+        ...signalFelder(extrakt), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
         bloecke: extrakt.bloecke,
         stand,
         // Amtlicher Anker (mit «/») als Live-Sprungziel; bei «__N» der Namens-Anker des N-ten Vorkommens (amtlicherAnker(), s. Haupttext-Pfad).
@@ -1351,6 +1352,7 @@ async function main(): Promise<void> {
         erlass,
         artikel: token,
         artikelLabel: extrakt.titel || anhangLabelVonAnker(anker),
+        ...signalFelder(extrakt), // W2·27: leerer Anhang + amtlicher Kopf-Vermerk (aufgehoben | gegenstandslos)
         bloecke: extrakt.bloecke,
         stand,
         // Roher Anker als Live-Sprungziel (Anhänge tragen kein «/», ggf. Synthese-Suffix entfernen).
