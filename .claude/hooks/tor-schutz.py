@@ -124,6 +124,28 @@ for seg in re.split(r"&&|;|\n", cmd):
         )
         break
 
+# 1b. Push nur hinter `&&` an ein Tor (Vorfall #1194, 30.9.2026): `npm run gate
+# …; echo $?; …; git push` pushte trotz rotem gate. Trennt `;`, `||` oder Zeilenende
+# Tor und Push, laeuft der Push auch bei Exit != 0. (`git -C`/Alias: nicht erfasst.)
+def ist_lauf(muster: str, stufe: str) -> bool:
+    m = re.search(muster, stufe)
+    return bool(m) and all(STARTER.match(t) for t in PFAD_ENDE.sub("", stufe[: m.start()]).split())
+
+
+teile = re.split(r"(&&|\|\||;|\n)", cmd)
+tor_da, nur_und = False, True
+for i in range(0, len(teile), 2):
+    nur_und = nur_und and (i == 0 or teile[i - 1] == "&&")
+    if tor_da and not nur_und and ist_lauf(r"\bgit\s+push\b", teile[i]):
+        probleme.append(
+            "BLOCKIERT (Skill landung Ziff. 7, Vorfall #1194 30.9.2026): `git push` "
+            "nach einem Tor, aber nicht per `&&` daran gekettet — bei rotem Tor "
+            "laeuft der Push trotzdem. Tor und Push nur mit `&&` verbinden."
+        )
+        break
+    if any(ist_tor_lauf(t) or ist_lauf(r"npm run gate\b", t) for t in teile[i].split("|")):
+        tor_da, nur_und = True, True
+
 if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
     probleme.append(
         "BLOCKIERT: git commit --amend ist in diesem Repo verboten "
