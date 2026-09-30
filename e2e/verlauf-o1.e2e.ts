@@ -75,8 +75,9 @@ test.describe('UI-NAV O1 — Verlauf-Initiative', () => {
   // sichtbar, das Leeren aber unerreichbar. Beide Fälle hier; beide Male wird
   // zuerst bewiesen, dass der Topbar-Knopf WIRKLICH fehlt (sonst prüfte der Test
   // den Zugang, den es schon gab).
-  // ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `SucheLeerzustand.tsx` die Zeile mit
-  // `VerlaufLeerenKnopf` entfernen → der Klick auf «Verlauf leeren» findet nichts.
+  // ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `SucheLeerzustand.tsx` die Fusszeile
+  // abschalten (`{verlauf.length > 0 && (` → `{false && (`) → beide Fälle schlagen an
+  // (Knopf nicht zu finden; Beweis im PR-Bericht).
   for (const fall of [
     { name: '@400 (Topbar-Verlauf unter 481 px weg)', width: 400, skala: '1.0' },
     { name: 'Skala 1.4 @520 (Topbar-Verlauf bei grosser Schrift weg)', width: 520, skala: '1.4' },
