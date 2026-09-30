@@ -14,3 +14,7 @@ Gemeinsam für alle Design-Einheiten: Massstab ist das Reglement in der Fassung 
 DK-15 (Registerfarbe als Schrift) wartet auf den eigenen Posten W-HN-2.
 
 Quelle: Herz-und-Nieren-Prüfung 24.9.2026, UMSETZUNGSPLAN.md Einheit HN-D4 (Projektordner `~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/`; Belege in BEFUNDLISTE.md und berichte/). Kürzel: NT normtext-treue · PS pruefsystem · VS verschlankung · SA sicherheit-a11y · DK design-konsistenz · RR rechtslogik-rest; b = zweitgeprüft bestätigt, EA = nur Erstprüfer (vor dem Fix reproduzieren, sonst fällt der Beifang mit Begründungszeile im PR weg). Zeilenangaben Stand main 1d6eeb3c5 (24.9.2026) — vor dem Bau nachmessen.
+
+**Erledigt 2026-09-30:** PR #1177
+
+**Schliess-Beleg 30.9.2026 (PR #1177, W2·19 DK-C):** DK-06, DK-16, DK-17, DK-22 erledigt (Vitest `src/tests/design-dk-c-farbe-kontrast.test.tsx`, Farbwelt-RISSE in `scripts/farbwelt-tabellen.ts`). Die `entstehung/*`-Stellen von DK-06 hatte bereits `W2·29-WERKBANK-REST` S2 erledigt. **DK-15 (Registerfarbe als Schrift) ist NICHT gebaut und lebt im Posten `w-hn-2-registerfarbe-als-schriftfarbe-erlauben` weiter (wartet auf Davids Entscheid).** DK-17-Befundzahl (brass-500 4.41:1) seit Grundton nicht mehr reproduzierbar (4.58 hell); stattdessen die Schwester «Beendigung» (ok-solid, dunkel 3.68:1) behoben.
