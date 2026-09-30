@@ -26,6 +26,12 @@
 // Kopf der N-ten Sektion, die im Dokument genau einmal als id="…" und nie als
 // name="…" vorkommt. Sonst bleibt es beim Basis-Anker (= Verhalten vor diesem
 // Fix, mit der bekannten Unschärfe «springt aufs erste Vorkommen», §8).
+//
+// Flüchtigkeit (Nachzug GP-Befund 30.9.2026, ergänzt): die `fnbck-…`-ids sind von
+// Fedlex generiert und werden je Ausgabe (Konsolidierung) NEU erzeugt — sie sind
+// nur für den gepinnten Stand gültig. Ändert sich der Pin, holt die Neugenerierung
+// der Snapshots (npm run normtext) die neuen ids nach; der Drift-Riegel (B3,
+// drift-logik.ts) fängt ein Doppelziel, check:normtext-netz die Fassung.
 
 import { findeSectionEnde } from './extrahiere-fedlex.ts';
 
