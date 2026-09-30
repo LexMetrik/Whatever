@@ -70,6 +70,10 @@ export const ARTEFAKT_ERWARTET: ReadonlyMap<string, number> = new Map([
   ['VVV|bund/VVV/annex_1', 1],
   ['VVV|bund/VVV/annex_4', 1],
   ['VZV|bund/VZV/annex_2', 2],
+  // W2·27-BUND-FERTIG (30.9.2026): VZV «Beilage» (annex_u1, neu im Snapshot) — 3 Tab-Platzhalter
+  // (Kategorien/Unterkategorien/Spezialkategorien); Item-TEXT vollständig, nur das Marken-Label
+  // trägt den Fedlex-Platzhalter. Sanierung = der deferierte [tab]-Batch.
+  ['VZV|bund/VZV/annex_u1', 3],
   ['ZPO|bund/ZPO/art_250', 1],
   // ── P1-a/b Kanonik-Re-Pin (11.7.2026): die kanonischen isExemplifiedBy-
   // Fassungen tragen mehr Anhang-/Tabellen-Inhalt als die alten Alias-Dumps →

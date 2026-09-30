@@ -52,6 +52,7 @@ export function RechnerVerjaehrungBoard() {
                 Breite verschob sich mit der Ausrichtung, «10 Jahre» brach sonst
                 hinter der Zahl um). Reine Darstellung (§3), Werte unverändert. */}
             <DatenTabelle
+              caption="Verjährungs-Regime im OR: relative und absolute Frist, Fristbeginn, Normen"
               spalten={[
                 { kopf: 'Anspruchstyp', zelle: 'text-ink-900' },
                 { kopf: 'Relative Frist', ziffern: true },

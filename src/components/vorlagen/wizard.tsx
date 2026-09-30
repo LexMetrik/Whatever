@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
 import { PruefBefund } from './PruefBefund';
@@ -88,11 +88,19 @@ export function VorlagenWizardRahmen({
   // Sprung in den Schritt mit der Lücke: `beruehrt` setzen (sonst schweigt
   // dort die FehlerBox), Fokus auf die Schritt-Überschrift (der
   // `key={schritt}`-Remount lässt die Ref-Callback beim Ankommen feuern).
+  // Gleiches bei «Weiter»/«Zurück» (W2·19, 30.9.2026): der Knopf verschwindet
+  // bzw. wird ausgegraut, der Fokus fiele auf BODY (gemessen /vorlagen/mahnung)
+  // — Tastatur- und Screenreader-Nutzer stünden wieder am Seitenanfang. Nur
+  // durch eine Nutzeraktion gesetzt, nie beim ersten Rendern (kein Fokus-Klau).
   const springFokus = useRef(false);
-  const springeZuSchritt = (i: number) => { setBeruehrt(true); springFokus.current = true; setSchritt(i); };
+  const wechsleSchritt = (naechster: SetStateAction<number>) => { springFokus.current = true; setSchritt(naechster); };
+  const springeZuSchritt = (i: number) => { setBeruehrt(true); wechsleSchritt(i); };
   const titelRef = (el: HTMLHeadingElement | null) => {
     if (el && springFokus.current) { springFokus.current = false; el.focus(); }
   };
+  // Die Marke gilt für EINEN Commit: springt der Wizard auf den Schritt, in dem
+  // er schon steht (kein Remount), darf sie nicht bis zum nächsten Wechsel liegen.
+  useEffect(() => { springFokus.current = false; });
   // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane).
   const pk = usePaneKlasse();
   // RL-12 PR 2 (R3-06): Prüfstand der Karte zum Pfad — der Rahmen kennt seine
@@ -222,7 +230,7 @@ export function VorlagenWizardRahmen({
           <div className="flex items-end justify-between gap-3 pt-2 border-t border-line">
             {/* LM-094: Outline neben Primär — die beiden Navigationsknöpfe
                 lesen sich als Paar, die Rangfolge bleibt. */}
-            <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
+            <button type="button" onClick={() => wechsleSchritt((s) => Math.max(0, s - 1))}
               disabled={schritt === 0} className="lc-btn-outline">← Zurück</button>
             {schritt < schritte.length - 1 && (
               <div className="flex flex-col items-end gap-1">
@@ -231,7 +239,7 @@ export function VorlagenWizardRahmen({
                 {weiterAus && (
                   <p id="weiter-hinweis" className="text-xs text-ink-500">Bitte Pflichtfelder ausfüllen</p>
                 )}
-                <button type="button" onClick={() => setSchritt((s) => s + 1)}
+                <button type="button" onClick={() => wechsleSchritt((s) => s + 1)}
                   disabled={weiterAus} aria-describedby={weiterAus ? 'weiter-hinweis' : undefined}
                   className="lc-btn-primary">
                   Weiter →

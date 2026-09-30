@@ -28,7 +28,9 @@ export function AbschnittKopf({ overline, titel, children, className = '', stufe
   id?: string;
   /** Fokus-Ziel des Titels (Wizard-Schrittwechsel). */
   titelRef?: Ref<HTMLHeadingElement>;
-  /** `-1` = nur programmatisch fokussierbar, keine Tab-Station. */
+  /** `-1` = nur programmatisch fokussierbar, keine Tab-Station. Als Fokus-Ziel
+   *  trägt der Titel `lc-sprungziel`: die Fokussierung scrollt ihn sonst unter
+   *  die klebende Krone (gemessen @375, Titel-Oberkante y = 0 statt ≥ 98 px). */
   tabIndex?: -1;
   /** Einleitung unter dem Titel (Fliesstext, darf Links tragen). */
   children?: ReactNode;
@@ -38,7 +40,7 @@ export function AbschnittKopf({ overline, titel, children, className = '', stufe
   return (
     <div className={`min-w-0${className ? ' ' + className : ''}`}>
       {overline && <p className="lc-overline">{overline}</p>}
-      <Titel id={id} ref={titelRef} tabIndex={tabIndex} className="text-h3 font-display font-semibold text-ink-900 mt-0.5">{sansAmp(titel)}</Titel>
+      <Titel id={id} ref={titelRef} tabIndex={tabIndex} className={`text-h3 font-display font-semibold text-ink-900 mt-0.5${tabIndex ? ' lc-sprungziel' : ''}`}>{sansAmp(titel)}</Titel>
       {children && <p className="text-body-s text-ink-600 max-w-reading-s mt-1">{children}</p>}
     </div>
   );
