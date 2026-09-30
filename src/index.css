@@ -3654,6 +3654,52 @@
   .lc-notice { @apply rounded-none text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
+  /* KEIN Lesemass-Deckel an `.lc-notice`/-warn/-danger (Gegenprüfung
+     30.9.2026 zu W2·31 Bündel F): die Box TRÄGT ihr `text-body-s`/`text-xs`
+     selbst (83 Aufrufstellen, z. B. VorlageKlageOrdentlich.tsx:85
+     `<p className="lc-notice text-body-s">`) — ein Deckel auf dieser Klasse
+     deckelt die Box (Hintergrund, linker Registerstrich) selbst, nicht nur
+     ihren Fliesstext. Befund: 119 Boxen schmaler als ihre Spalte, u. a.
+     /rechner/verjaehrung-board 1008→480 px @1280. `.lc-notice` bleibt daher
+     ohne eigenen Lesemass-Deckel — die Box darf so breit sein wie ihr
+     Container; ein Lesemass-Bedarf im FLIESSTEXT gehört an den Text, nicht
+     an die Box (vgl. `.lc-vorlagen-schritt` unten, das nur Text-Elemente
+     trifft, nie das Box-Element selbst). */
+
+  /* Lesemass in den Vorlagen-Schritten (dieselbe W2·31-Ursache): die 26
+     gemeldeten Fundstellen (bis 116 Zeichen/Zeile, WCAG-Deckel 80) sind KEINE
+     `.lc-notice`, sondern freistehende Absätze/Listenpunkte — Fliesstext-Tipps
+     («Tipp: …»), Prüf-Vorbehalte, Feld-Hinweise (`Field`-`hint`-Prop, ui.tsx)
+     und die «Offene Verifikationen»-Listen der Prüf-Schritte, alle in
+     text-xs/text-body-s und ink-500/600 (Nachmessung per Playwright-Wort-Rect-
+     Block-Detection, dieselbe Methode wie `e2e/seitenbreite.e2e.ts`
+     `messeLesemass`, über alle 30 Vorlagen/alle Schritte: 26 Treffer — exakte
+     Deckung mit der Posten-Zahl). EIN Deckel an EINEM Scope-Anker statt an 26
+     Einzelstellen (§5/§10): `.lc-vorlagen-schritt` markiert den
+     Schritt-Inhalt-Rahmen (wizard.tsx, EINE Stelle, alle Vorlagen laufen
+     darüber).
+     `:not([class*="lc-notice"])` schliesst Box-Elemente aus: mehrere
+     Vorlagen setzen `text-body-s`/`text-xs` direkt auf ein `<p>`/`<div>`, das
+     GLEICHZEITIG `lc-notice` trägt (z. B. VorlageVollmacht.tsx:64
+     `<p className="lc-notice text-body-s">`) — ohne den Ausschluss deckelt
+     dieselbe Regel wieder die Box statt nur freien Fliesstext (Gegenprüfung
+     30.9.2026, zweiter Teil des Befunds zu Ziff. 1).
+     Spezifität KORRIGIERT (Gegenprüfung 30.9.2026 Ziff. 2 — die frühere
+     Behauptung «:where() hält die Spezifität auf NULL» war falsch: nur der
+     Inhalt von `:where(...)` selbst zählt nicht, die Klassen `.lc-vorlagen-
+     schritt` und `.text-body-s`/`.text-xs` sassen aber AUSSERHALB der Klammer
+     und ergaben (0,2,0) — das schlägt jede einzelne Tailwind-Utility wie
+     `max-w-none` (0,1,0), weil dieses Projekt ohne CSS-`@layer` baut (Tailwind
+     3.4.19, Probe: `text-xs max-w-none` blieb trotzdem bei 384 px). Jetzt
+     liegt JEDER Selektor-Teil in `:where()` (auch `:not()`, dessen Argument
+     sonst mitzählt) → Gesamt-Spezifität (0,0,0); eine Aufrufstelle mit
+     eigenem `max-w-*`-Utility gewinnt jetzt tatsächlich, der Deckel greift
+     nur, wo keine eigene Utility steht. Rot-Beweis:
+     e2e/vorlagen-hinweise-lesemass.e2e.ts. */
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])):where(.text-body-s),
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])) :where(.text-body-s) { max-width: theme('maxWidth.reading-s'); }
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])):where(.text-xs),
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])) :where(.text-xs) { max-width: theme('maxWidth.kleintext'); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */

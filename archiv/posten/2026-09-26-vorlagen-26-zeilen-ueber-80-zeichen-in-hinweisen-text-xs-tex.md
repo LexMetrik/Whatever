@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 vorbestehend, Breitenwächter prüft nur Schritt 0 von testament (B5, 26.9.2026)
+
+**Erledigt 2026-09-29:** PR #1159
