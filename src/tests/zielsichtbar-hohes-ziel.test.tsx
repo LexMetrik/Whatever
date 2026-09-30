@@ -29,7 +29,13 @@ type Eintrag = Pick<IntersectionObserverEntry, 'intersectionRatio' | 'isIntersec
 class MockIO {
   static alle: MockIO[] = [];
   getrennt = false;
-  constructor(public rueckruf: (e: Eintrag[]) => void, public optionen: IntersectionObserverInit = {}) { MockIO.alle.push(this); }
+  rueckruf: (e: Eintrag[]) => void;
+  optionen: IntersectionObserverInit;
+  constructor(rueckruf: (e: Eintrag[]) => void, optionen: IntersectionObserverInit = {}) {
+    this.rueckruf = rueckruf;
+    this.optionen = optionen;
+    MockIO.alle.push(this);
+  }
   observe() {}
   disconnect() { this.getrennt = true; }
   liefere(e: Eintrag) { this.rueckruf([e]); }
