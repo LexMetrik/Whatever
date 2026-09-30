@@ -54,7 +54,7 @@ export default defineConfig([
   // .scratch: gitignorierte Wegwerf-Skripte/Messläufe — machten das Gate rot,
   // obwohl sie nie deployt werden (8.8.2026, QS-SKILL-DIAET-Session; eslint
   // liest .gitignore nicht von selbst).
-  globalIgnores(['dist', '.claude', '.scratch']),
+  globalIgnores(['dist', '.claude', '.scratch', '.gate']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
