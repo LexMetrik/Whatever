@@ -72,8 +72,11 @@ describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-A
       const url = verifizierLinkArtikel(e, GELTEND);
       if (url == null) continue;
       freigaben += 1;
-      // Unabhängiges Orakel (Zeichen-Schleife, NICHT der Produktiv-Regex): nur [a-z0-9], «t»-Präfixe,
-      // dann «a»+Ziffer; kein «_», kein «/». Messung 30.9.2026 Nachzug: 3 862 <a name> in 9 Filestore-Pins
+      // Zweite, regex-freie Implementierung DERSELBEN Sprache (Zeichen-Schleife, nicht der Produktiv-Regex):
+      // nur [a-z0-9], «t»-Präfixe, dann «a»+Ziffer; kein «_», kein «/». Ehrlich (Gegenprüfung #1166 R3):
+      // das ist KEIN unabhängiger Zeuge für die Sprach-DEFINITION — es fängt Regex-Schreib-/Dialektfehler
+      // (Äquivalenz alt/neu bewiesen in verifikationslink-regex.test.ts); die Definition selbst trägt allein die
+      // Empirie-Messung unten. Messung 30.9.2026 Nachzug: 3 862 <a name> in 9 Filestore-Pins
       // (ZGB, OR, KKV, BankV, BetmG, ERV, PaVo, SVG, VwVG), alle gedeckt. Der Erstsweep (3 171 <article>
       // in ZGB/OR/KKV, «ausnahmslos a+Nummer(+Buchstaben), ggf. t-Präfix, Bereich a…a…») war zu eng:
       // 4/3 171 Bereichs-Namen beginnen den Bereich nicht mit «a» (a28d28f, a226f226k, a663d663h, a107b107e).
