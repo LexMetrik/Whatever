@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 linke Spalte ab erstem Bildschirm leer, auf Stufe weit auffälliger (B10)
+
+**Erledigt 2026-09-29:** PR #1153

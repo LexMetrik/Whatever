@@ -968,16 +968,22 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // während dasselbe Bild im Fenster ab 1280 px zweispaltig stand. Jetzt
         // entscheidet in der Pane die Pane-Breite (Mechanik wie
         // `Rechtsprechung.tsx`, `usePaneKlasse`).
-        // SCHWELLE `@5xl/pane` = 64 rem, GERECHNET statt gewählt: die zweite
+        // SCHWELLE 64 rem, GERECHNET statt gewählt: die zweite
         // Spalte lohnt erst, wenn die Lesespalte daneben ihre volle Breite
         // behält. Nötig sind `max-w-reading` 40 rem + Rail 15 rem + `gap-8`
-        // 2 rem = 57 rem INHALT, plus die Pane-Polsterung 2×1.25 rem = 59.5 rem
-        // Pane-Breite. Die nächste Container-Stufe darüber ist 64 rem; die
+        // 2 rem = 57 rem INHALT, plus die Rahmen-Polsterung 2×1.25 rem = 59.5 rem
+        // Rahmen-Breite. Die nächste Container-Stufe darüber ist 64 rem; die
         // Stufe darunter (@4xl, 56 rem) drückte die Lesespalte auf ~36 rem und
         // damit unter die 60–75-Zeichen-Regel (Reglement R1) — genau der
         // Logikverlust, den §1 der Optik vorzieht.
         // Der `@3xl`-Wert aus `Rechtsprechung.tsx` gilt dort für ZWEI GLEICHE
         // Kartenspalten; er ist das Vorbild für die Mechanik, nicht für die Zahl.
+        // NACHTRAG Gegenprüfung PR #1155 (29.9.2026): diese 64-rem-Herleitung
+        // gilt weiter für `@5xl/pane`, das die Rahmen-Polsterung der Pane
+        // MIT misst (`Pane.tsx`, unverändert an anderen Stellen im Repo). Der
+        // eigene Container unten (`@container/leser`, Bündel D) misst dagegen
+        // OHNE diese Polsterung — dort gilt die andere Schwelle, siehe Nachtrag
+        // beim Bündel-D-Absatz unten.
         // ── W2·31-BILDSCHIRMBREITE B7 (25.9.2026) · DER RAND GEHÖRT DEM RAIL ─
         // Vorher `minmax(0,1fr)_15rem`: die Lesespalte war 800 px breit, der
         // Text darin 640 px mittig — je 80 px tote Fläche, der Text 80 px
@@ -991,10 +997,36 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // feste Obergrenze vor `fr`). Die Seitenart bleibt Stufe `content`:
         // 90 rem gäben dem Rail 720 px für Nummern-Einträge — Leerfläche,
         // kein Inhalt.
-        <div className={pk(
-          'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] xl:items-start xl:gap-8',
-          'flex flex-col gap-4 @5xl/pane:grid @5xl/pane:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @5xl/pane:items-start @5xl/pane:gap-8',
-        )}>
+        // ── W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026) · AUCH OHNE SPLIT-VIEW ─
+        // Der Schalter hing hier ausserhalb einer Pane weiterhin am VIEWPORT
+        // (`xl:`, 1280 px) statt an der tatsächlich verfügbaren Breite — bei
+        // offener Seitenleiste (Sidebar.tsx/useSeitenleiste.ts, NICHT der
+        // Split-View-Pane aus A-2 oben) blieb `imPane` false, `pk()` wählte
+        // also die Viewport-Stufe, und die Lesespalte (`minmax(0,40rem)`)
+        // schrumpfte gemessen @1280 mit offener Seitenleiste unter 640 px
+        // (Lesemass, Reglement R1). Fix: ein EIGENER, IMMER vorhandener
+        // Container (`@container/leser`), der die Messung von `imPane` löst —
+        // er sitzt unter derselben Breitenspalte wie zuvor `main` (Shell.tsx)
+        // und misst darum in beiden Fällen (Fenster mit/ohne Seitenleiste,
+        // Pane) dieselbe reale Breite. `pk()` bleibt daneben für die übrigen,
+        // unveränderten Stellen dieser Seite (Zeilen 140/736) bestehen — nur
+        // dieses eine Breitenpaar (Grid + `order` direkt darunter) wechselt auf
+        // die eigene Schwelle `@5xl/leser`, identische Zahl wie zuvor `@5xl/pane`
+        // (dieselbe Herleitung, jetzt auf einen Rahmen angewendet, den es auch
+        // im 1-Pane-Fall gibt). Gemessen: „Rot-Beweis" und Messreihe im PR.
+        // NACHTRAG Gegenprüfung PR #1155 (29.9.2026): «identische Zahl» war
+        // FALSCH — `@container/leser` misst die Inhaltsbreite OHNE die
+        // Rahmen-Polsterung, die `@5xl/pane` (über `Pane.tsx`) mitmisst;
+        // gemessen 48 px schmaler bei gleicher realer Breite (718→670 px,
+        // 958→910 px). 64 rem verlangte hier darum ~7 rem zu viel und liess
+        // die zweite Spalte bei @1280/Seitenleiste 256 (Container 976 px)
+        // fälschlich entfallen. Schwelle jetzt direkt aus dem Bedarf berechnet
+        // — `max-w-reading` 40 rem + Rail-Mindestbreite 15 rem + `gap-8` 2 rem
+        // = 57 rem, OHNE Polsterungs-Zuschlag (der Container hat hier keinen) —
+        // als freier Wert `@[57rem]/leser:` (Muster wie `@[96rem]/pane:` in
+        // `layout/seitenbreite.ts`), nicht als benannte Stufe.
+        <div className="@container/leser">
+          <div className="flex flex-col gap-4 @[57rem]/leser:grid @[57rem]/leser:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @[57rem]/leser:items-start @[57rem]/leser:gap-8">
           {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
               Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
               eigenen), die Treffer-Markierung ist abgeschaltet und jeder
@@ -1034,10 +1066,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           {/* Dieselbe Schwelle wie der Grid darüber — sonst stünde die
               Lesespalte in der Pane einspaltig unter einem zweispaltigen
               Raster (`order`/`col-start` müssen mit dem Grid schalten). */}
-          <div className={pk(
-            'order-2 min-w-0 xl:order-1 xl:col-start-1 xl:row-start-1',
-            'order-2 min-w-0 @5xl/pane:order-1 @5xl/pane:col-start-1 @5xl/pane:row-start-1',
-          )}>
+          <div className="order-2 min-w-0 @[57rem]/leser:order-1 @[57rem]/leser:col-start-1 @[57rem]/leser:row-start-1">
             {/* Regeste prominent im Leitentscheid-Auszug (zeigeRegeste). Beim amtlich
                 publizierten BGE «Regeste», sonst maschinelle «Zusammenfassung» — ehrlich
                 gekennzeichnet (Abnahme-Kritik: kein Etikettenschwindel).
@@ -1056,6 +1085,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               </article>
             )}
           </div>
+        </div>
         </div>
       )}
 

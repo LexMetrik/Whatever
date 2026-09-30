@@ -93,6 +93,25 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Kantone-Karte bleibt auf ihrer `content`-Grösse (`GesetzeBlatt.tsx`).
 //     Gruss (eine Zeile ≤ 30 Zeichen) und Vertrauensfuss (`max-w-kleintext`)
 //     wachsen nicht mit.
+//   · W2·31 G (26.9.2026, Posten «Startseite @1920: Kachelinneres 508×280
+//     recht leer»): die Rechtsprechungs-Kachel bekommt ab 1536 px eine
+//     Teile-Zeile («Leitentscheide») wie die drei anderen (`teileAb2xl`,
+//     `StartKachelFeld.tsx`) — die Kachelhöhe bleibt 280 px (U13-Deckel,
+//     0 px Scroll-Reserve gemessen bei `/?blatt=gesetze` 1536×864, s. dort).
+//     Die Kantone-Karte im Gesetze-Blatt (`2xl:max-w-[15.5rem]`) bleibt UN-
+//     VERÄNDERT: gemessen 26.9.2026 @1536×864 `scrollHeight === clientHeight`
+//     (0 px Reserve) — jede Vergrösserung der Karte reisst U13 sofort.
+//   · W2·31 J (30.9.2026, Posten «Teile-Zeile `2xl:block` hängt am Viewport»):
+//     seit J heisst das Feld `teileNurBreit` und die Zeile hängt an der
+//     KACHELBREITE (`@md/kachel`, 28 rem des Kachel-Containers) statt an `2xl`.
+//     Gemessen: Kachel 348 px (1440, 21.75 rem) aus, 508 px (≥ 1536, 31.75 rem)
+//     an — wie bei G; neu aus bei 326 px (1536 mit Seitenleiste 460, 20.4 rem)
+//     und bei Skala 1.4 @1536 (471 px = 21 rem), an bei Skala 1.4 @1920
+//     (663 px = 29.6 rem). U13 bei Skala 1.4 bleibt offen, s. Posten-Bericht.
+//     Bewusste Folge (Gegenprüfung 30.9.2026): 1920 + Seitenleiste 460 + Skala
+//     1.4 (Kachel 433 px = 19.3 rem) zeigte die Zeile auf main einzeilig und
+//     zeigt sie jetzt nicht mehr; «dreizeilig» trifft nur den 241-px-Fall
+//     (1536 + Seitenleiste + Skala 1.4), der 433-px-Fall fällt der Schwelle zum Opfer.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -112,8 +131,16 @@ const KACHELN: readonly KachelDef[] = [
     einheit: 'Erlasse im Volltext, Bund und Kantone',
     nutzen: 'Bundesrecht nach Rechtsgebiet, Kantone über die Landeskarte, internationales Recht',
     teile: `${nf(z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(z.gesetzeInternationalVolltext)} Staatsverträge` },
+  // W2·31 G (26.9.2026, Posten «Kachelinneres 508×280 recht leer»): die
+  // Kachel trug als einzige der vier keine Teile-Zeile — bei 508 px Breite
+  // (Stufe `weit`) blieben rund 148 px Höhe ungenutzt (gemessen, Zelle bleibt
+  // fest 280 px hoch, U13-Deckel). `teile` nutzt eine bereits geladene
+  // Zählerzahl (§15: keine neue Datenlast), `teileAb2xl`: die Zeile zeigt nur
+  // ab 1536 px — unter 1536 bleibt die Kachel unverändert (Bauregel). Seit
+  // W2·31 J `teileNurBreit`: Schwelle Kachelbreite ≥ 28 rem statt Fenster 2xl.
   { rubrik: 'rechtsprechung', reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: nf(z.rechtsprechungVolltext),
-    einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet' },
+    einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet',
+    teile: `${nf(z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`, teileNurBreit: true },
   // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
   // enthalten»): die Kachel führt BEIDE Gattungen (Hausbegriffe wie im Leser,
   // `lib/materialien/gattung.ts`) — vorher nannte der Nutzen nur die

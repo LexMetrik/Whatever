@@ -63,6 +63,18 @@ describe('seitenbreite: Tabelle', () => {
     }
   });
 
+  // Folgeposten (30.9.2026, Bündel E): eine variantenPfade-Route ist dieselbe
+  // Seitenart mit anderem Inhalt (B8-Lehre) — auch sie muss auf ihre Art
+  // zurückklassifizieren, sonst würde der e2e-Wächter (B1c) die falsche
+  // Rahmenbreite erwarten.
+  it('jeder variantenPfad klassifiziert auf seine eigene Seitenart zurück', () => {
+    for (const [art, { variantenPfade }] of Object.entries(SEITENBREITE)) {
+      for (const pfad of variantenPfade ?? []) {
+        expect(seitenartVon(pfad), `${art} ← ${pfad}`).toBe(art);
+      }
+    }
+  });
+
   it('die Leser-Beispiele verweisen auf existierende Schlüssel (Identität, kein Teilstring)', () => {
     const lies = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
     const erlass = SEITENBREITE['gesetz-leser'].beispielPfad.split('/');
@@ -74,6 +86,42 @@ describe('seitenbreite: Tabelle', () => {
     const material = SEITENBREITE['material-leser'].beispielPfad.split('/')[2];
     expect(lies('public/materialien/register.json').materialien
       .some((e: { key: string }) => e.key === material)).toBe(true);
+  });
+
+  // Gegenprüfung 30.9.2026 (Befund 1a, Bündel E-Nachbesserung): die Prüfung
+  // oben deckte nur `beispielPfad` — ein `variantenPfad` mit einem toten
+  // Schlüssel (Tippfehler, gelöschter Eintrag) fiel auf die Fehlerseite
+  // zurück, OHNE dass dieser Unit-Test es sah (der e2e-Wächter B1c prüfte
+  // damals nur ein sichtbares `h1`, das auch die Fehlerseite trägt — Fix
+  // dazu in `e2e/seitenbreite.e2e.ts`). Dieselbe Methode wie oben, nur über
+  // `variantenPfade` statt `beispielPfad`; heute nur `material-leser`
+  // betroffen (`/materialien/BOTSCHAFT-2025-1478`), die Schleife ist generisch
+  // für jede künftige Leser-Variante.
+  it('jeder Leser-variantenPfad verweist auf einen existierenden Schlüssel (Identität, kein Teilstring)', () => {
+    const lies = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
+    const REGISTER: Partial<Record<Seitenart, { pfad: string; feld: string }>> = {
+      'gesetz-leser': { pfad: 'public/normtext/register.json', feld: 'erlasse' },
+      'entscheid-leser': { pfad: 'public/rechtsprechung/register.json', feld: 'entscheide' },
+      'material-leser': { pfad: 'public/materialien/register.json', feld: 'materialien' },
+    };
+    let geprueft = 0;
+    for (const [art, cfg] of Object.entries(SEITENBREITE)) {
+      const register = REGISTER[art as Seitenart];
+      if (!register) continue;
+      for (const pfad of cfg.variantenPfade ?? []) {
+        geprueft++;
+        const teile = pfad.split('/');
+        const eintraege = lies(register.pfad)[register.feld] as Array<{ key: string; ebene?: string }>;
+        if (art === 'gesetz-leser') {
+          expect(eintraege.some((e) => e.ebene === teile[2] && e.key === teile[3]), pfad).toBe(true);
+        } else {
+          expect(eintraege.some((e) => e.key === teile[2]), pfad).toBe(true);
+        }
+      }
+    }
+    // Kontrolle: die Schleife lief wirklich über mindestens einen Fall (sonst
+    // wäre das leere `for` eine stille Nicht-Prüfung).
+    expect(geprueft).toBeGreaterThan(0);
   });
 
   // §6.3-DEKLARATION (B1c, 25.9.2026): hier stand «alle Seitenarten stehen

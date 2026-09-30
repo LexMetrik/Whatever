@@ -105,7 +105,7 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           Preview: mit `border-b-2` am <header> waren es 66 px — zwei Pixel mehr
           als `APP_TOPBAR_H` in `leserGeometrie.ts` annimmt, und der klebende
           Leser-Kopf sässe um genau diese zwei Pixel falsch. */}
-      <div className="px-4 sm:px-6 h-16 border-b-2 border-rule flex items-center gap-3 sm:gap-5">
+      <div className="lc-topbar-zeile px-4 sm:px-6 h-16 border-b-2 border-rule flex items-center gap-3 sm:gap-5">
         {/* ── GB-15 (W2·24, Befund G15, 7.9.2026) · EINE KNOPF-FORM ───────────
             GEMESSEN @390, hell und dunkel: in EINER Zeile standen drei Formen —
             ☰ ohne Kasten (`lc-btn-ghost`), 🔍/◐/«DE ▾» mit 1-px-Rahmen UND
@@ -170,8 +170,13 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             als Ersatz. Bewacht von `e2e/topbar-kein-ueberlauf-320.e2e.ts`. */}
         <Link to="/" className={`inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
           <LexMetrikSiegel size={28} />
-          {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte. */}
-          <LexMetrikWortmarke className="hidden sm:block text-h3" />
+          {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte.
+              W2·31 H (30.9.2026): zusätzlich nur, wenn der Streifen sie TRÄGT
+              (`.lc-topbar-wortmarke`, index.css): unter Schriftskala ≥ 1.2
+              passte der Streifen zwischen 640 px und ~35 rem Streifenbreite
+              nicht mehr (Sprache-Griff ragte bis 88 px über den Rand → Quer-
+              scroll auf JEDER Seite); das Siegel bleibt, wie unter 640 px (F7). */}
+          <LexMetrikWortmarke className="lc-topbar-wortmarke text-h3" />
         </Link>
 
         {/* Die Suche des Hauses — auf JEDER Route dieselbe (D18). Die Hülle ist

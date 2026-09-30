@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 Entscheid-Leser mit offener Seitenleiste @1280: Lesespalte < 640 px, Schalter am Viewport `xl` (vorbestehend, B7)
+
+**Erledigt 2026-09-29:** PR #1155

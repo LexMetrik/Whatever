@@ -23,7 +23,14 @@ export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
   ];
 
   return (
-    <nav aria-label="Sachgebiete" className="lg:sticky lg:top-20">
+    // W2·31 Bündel I (30.9.2026): `lg:top-20` (5 rem = 80 px) war ein geratener Anschlag aus der Zeit
+    // vor der klebenden Arbeitsleiste. Die Leiste (`layout/Reiterleiste.tsx`, 34 px, deckend, z-leiste)
+    // belegt 64–98 px IMMER — auch ohne Reiter, dann nur papierfarben und darum unsichtbar; der Anschlag
+    // bei 80 px lag 18 px UNTER ihr, «Alle Sachgebiete» stand halb verdeckt (gemessen @1280 /rechtsprechung:
+    // elementFromPoint auf die oberen 18 px des Streifens → Reiterleiste). Jetzt wie die Facettenspalte
+    // auf `/suche` und die Themenleiste auf `/rechner`: `--app-kopf-h` (= Krone + Arbeitsleiste, folgt der
+    // Schriftskala) + 1.5 rem Luft.
+    <nav aria-label="Sachgebiete" className="lg:sticky lg:top-[calc(var(--app-kopf-h)+1.5rem)]">
       {/* Desktop: vertikale Rail. Mobil/Tablet: scrollbares Chip-Band. */}
       {/* ── LM-063 (B8, 31.8.2026) · DER STATISCHE VERLAUF IST ERSETZT ─────────
           Bis hier lag unter der Liste ein absolut gesetzter Verlaufsstreifen

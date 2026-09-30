@@ -115,6 +115,23 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     expect(g).toContain(nf(Z.gesetzeVolltext));
     expect(g).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
     expect(r).toContain(`${nf(Z.rechtsprechungVolltext)}Entscheide im Volltext`);
+    // W2·31 G (26.9.2026, Posten «Kachelinneres 508×280 recht leer, v. a.
+    // Rechtsprechung»): einzige der vier Kacheln ohne Teile-Zeile — jetzt mit
+    // `teile`, sichtbar nur ab 1536 px (`teileAb2xl`, `StartKachelFeld.tsx`).
+    // ROT ZU BEKOMMEN: den Text streichen, oder `hidden`/`2xl:block` von der
+    // Teile-Zeile entfernen (macht sie wieder unter 1536 px sichtbar).
+    // Nachtrag 30.9.2026 (W2·31 J): heute `teileNurBreit` / `@md/kachel:block`.
+    expect(r).toContain(`${nf(Z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`);
+    expect(Z.rechtsprechungLeitentscheide).toBeGreaterThan(0);
+    expect(Z.rechtsprechungLeitentscheide).toBeLessThanOrEqual(Z.rechtsprechungVolltext);
+    const rKnopf = kacheln[1];
+    const rTeile = [...rKnopf.querySelectorAll('span')].find((s) => (s.textContent ?? '').includes('Leitentscheide'));
+    expect(rTeile?.className, 'Teile-Zeile bleibt unter 1536 px verborgen').toContain('hidden');
+    // DEKLARIERTE DARSTELLUNGSÄNDERUNG W2·31 J (30.9.2026): die Schwelle hängt
+    // an der Kachelbreite (`@md/kachel`, 28 rem des Kachel-Containers), nicht
+    // mehr am Fenster (`2xl`) — Wächter am Browser: `e2e/startseite-breite.e2e.ts` (1c).
+    expect(rTeile?.className, 'Teile-Zeile zeigt sich ab Kachelbreite 28 rem').toContain('@md/kachel:block');
+    expect(rTeile?.className, 'Teile-Zeile hängt nicht mehr am Fenster').not.toContain('2xl:block');
     // DEKLARIERTE ANPASSUNG U12 (David 24.9.2026, «materialien soll
     // erläuterungen und materialien enthalten», §6.3): die Einheit hiess
     // «amtliche Materialien erfasst» und mischte die Hausbegriffe; jetzt nennt

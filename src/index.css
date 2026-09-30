@@ -1962,6 +1962,17 @@
      Entscheid-Lesers, B3-Fix): der Reader setzt die Variable layout-abhängig
      (Einzelansicht vs. Pane) inline; der Default deckt den Einzelansicht-Fall. */
   .nt-anker { scroll-margin-top: var(--nt-stick, calc(4rem + 2.25rem + 3rem)); }
+  /* Sprungziel der schwebenden Marken «↓ Ergebnis» / «↓ Dokumente» / «Vorschau ↓»
+     (W2·31-BILDSCHIRMBREITE Bündel I, 30.9.2026). Die Marke ruft `scrollIntoView
+     ({block:'start'})`; ohne Rand landete die Oberkante des Ziels bei y = 0 —
+     UNTER der klebenden Krone (64 px) und der deckenden Arbeitsleiste (34 px).
+     Gemessen @375–1920, Skala 1 und 1.4, `/rechner/erbteilung`: Ziel-Oberkante
+     bei −0.4…2.4 px statt ≥ 98 px (Skala 1.4: 137 px), also die ersten 98/137 px
+     des Ergebnisses verdeckt. Die Vorlagen-Ziele trugen `scroll-mt-24` (96 px,
+     ein Wert aus der Zeit vor der Arbeitsleiste): 2 px darunter. Anschlag jetzt
+     `--app-kopf-h` (Krone + Arbeitsleiste, folgt der Schriftskala) + 1 rem Luft —
+     die EINE Quelle wie bei den klebenden Leisten (`/suche`, `/rechner`). */
+  .lc-sprungziel { scroll-margin-top: calc(var(--app-kopf-h) + 1rem); }
 
   /* Ankreuzfelder im Hausakzent (Messing) statt Browser-Blau, dazu etwas
      grösser für die Fingerbedienung (Redesign E7: native ~13px waren auf
@@ -3654,6 +3665,52 @@
   .lc-notice { @apply rounded-none text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
+  /* KEIN Lesemass-Deckel an `.lc-notice`/-warn/-danger (Gegenprüfung
+     30.9.2026 zu W2·31 Bündel F): die Box TRÄGT ihr `text-body-s`/`text-xs`
+     selbst (83 Aufrufstellen, z. B. VorlageKlageOrdentlich.tsx:85
+     `<p className="lc-notice text-body-s">`) — ein Deckel auf dieser Klasse
+     deckelt die Box (Hintergrund, linker Registerstrich) selbst, nicht nur
+     ihren Fliesstext. Befund: 119 Boxen schmaler als ihre Spalte, u. a.
+     /rechner/verjaehrung-board 1008→480 px @1280. `.lc-notice` bleibt daher
+     ohne eigenen Lesemass-Deckel — die Box darf so breit sein wie ihr
+     Container; ein Lesemass-Bedarf im FLIESSTEXT gehört an den Text, nicht
+     an die Box (vgl. `.lc-vorlagen-schritt` unten, das nur Text-Elemente
+     trifft, nie das Box-Element selbst). */
+
+  /* Lesemass in den Vorlagen-Schritten (dieselbe W2·31-Ursache): die 26
+     gemeldeten Fundstellen (bis 116 Zeichen/Zeile, WCAG-Deckel 80) sind KEINE
+     `.lc-notice`, sondern freistehende Absätze/Listenpunkte — Fliesstext-Tipps
+     («Tipp: …»), Prüf-Vorbehalte, Feld-Hinweise (`Field`-`hint`-Prop, ui.tsx)
+     und die «Offene Verifikationen»-Listen der Prüf-Schritte, alle in
+     text-xs/text-body-s und ink-500/600 (Nachmessung per Playwright-Wort-Rect-
+     Block-Detection, dieselbe Methode wie `e2e/seitenbreite.e2e.ts`
+     `messeLesemass`, über alle 30 Vorlagen/alle Schritte: 26 Treffer — exakte
+     Deckung mit der Posten-Zahl). EIN Deckel an EINEM Scope-Anker statt an 26
+     Einzelstellen (§5/§10): `.lc-vorlagen-schritt` markiert den
+     Schritt-Inhalt-Rahmen (wizard.tsx, EINE Stelle, alle Vorlagen laufen
+     darüber).
+     `:not([class*="lc-notice"])` schliesst Box-Elemente aus: mehrere
+     Vorlagen setzen `text-body-s`/`text-xs` direkt auf ein `<p>`/`<div>`, das
+     GLEICHZEITIG `lc-notice` trägt (z. B. VorlageVollmacht.tsx:64
+     `<p className="lc-notice text-body-s">`) — ohne den Ausschluss deckelt
+     dieselbe Regel wieder die Box statt nur freien Fliesstext (Gegenprüfung
+     30.9.2026, zweiter Teil des Befunds zu Ziff. 1).
+     Spezifität KORRIGIERT (Gegenprüfung 30.9.2026 Ziff. 2 — die frühere
+     Behauptung «:where() hält die Spezifität auf NULL» war falsch: nur der
+     Inhalt von `:where(...)` selbst zählt nicht, die Klassen `.lc-vorlagen-
+     schritt` und `.text-body-s`/`.text-xs` sassen aber AUSSERHALB der Klammer
+     und ergaben (0,2,0) — das schlägt jede einzelne Tailwind-Utility wie
+     `max-w-none` (0,1,0), weil dieses Projekt ohne CSS-`@layer` baut (Tailwind
+     3.4.19, Probe: `text-xs max-w-none` blieb trotzdem bei 384 px). Jetzt
+     liegt JEDER Selektor-Teil in `:where()` (auch `:not()`, dessen Argument
+     sonst mitzählt) → Gesamt-Spezifität (0,0,0); eine Aufrufstelle mit
+     eigenem `max-w-*`-Utility gewinnt jetzt tatsächlich, der Deckel greift
+     nur, wo keine eigene Utility steht. Rot-Beweis:
+     e2e/vorlagen-hinweise-lesemass.e2e.ts. */
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])):where(.text-body-s),
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])) :where(.text-body-s) { max-width: theme('maxWidth.reading-s'); }
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])):where(.text-xs),
+  :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])) :where(.text-xs) { max-width: theme('maxWidth.kleintext'); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
@@ -4702,6 +4759,45 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-topbar-griff:hover .lc-griff-glyph,
 .lc-topbar-griff:focus-visible .lc-griff-glyph { text-decoration: underline; text-underline-offset: 3px; }
 
+/* ─── W2·31 H (30.9.2026) · DIE WORTMARKE BRAUCHT PLATZ, NICHT NUR `sm` ──────
+   BEFUND (gemessen, Preview-Build, Skala über localStorage `lexmetrik-
+   schriftskala`, dieselbe Quelle wie die App): bei Schriftskala 1.4 lief
+   `documentElement.scrollWidth − clientWidth` @640 auf JEDER Seite um 26 px
+   über (ohne Verlauf-Knopf), mit Verlauf-Knopf (Rechner-/Vorlagen-Seiten nach
+   dem ersten Besuch) um 88 px, @700 um 28 px; Skala 1.2: 1 px, 1.3: 44 px.
+   Ursache: der Streifen (`layout/Topbar`) ist `px-6 gap-5` (rem, wächst mit der
+   Skala) mit Siegel, Wortmarke (ab `sm` = 640 px, px-Medienabfrage, von der
+   Skala unberührt), Suchfeld-Boden 9 rem und drei Werkzeug-Griffen à 44 px;
+   sein Mindestbedarf (Streifenbreite, gemessen) liegt bei 1.2 / 1.3 / 1.4 auf
+   670 / 716 / 762 px = 34.9 / 34.4 / 34.0 rem. Die Medienabfrage `sm` sieht
+   die Skala nicht — die Containerabfrage misst dagegen in der Wurzelschrift,
+   wächst also mit. Darum: Wortmarke nur, wenn `sm` UND der Streifen (Inhalts-
+   breite, ohne die beiden Polster von je 1.5 rem) mindestens 32 rem hat
+   = 35 rem Streifenbreite (Erstfassung) — NACHBESSERUNG Gegenprüfung (30.9.2026): zu knapp.
+   Gemessener Bedarf des Streifens (Wortmarke + Verlauf-Knopf, breitester
+   Zustand): 36.13 / 35.4 / 34.9 / 34.42 / 34.02 rem bei Skala 1.0 / 1.1 / 1.2 /
+   1.3 / 1.4; bei 1.1 blieben mit 35 rem und einer 17-px-Windows-Scrollleiste
+   (Fenster 623 px) 0 px Reserve. Darum 33.25 rem Inhaltsbreite = 36.25 rem
+   Streifenbreite, eine Viertel-rem über dem grössten Bedarf (Skala 1.0).
+   Die Abfrage misst die INHALTSBREITE des Streifens (Container-Query auf
+   `inline-size` = Inhaltsbox, ohne die zwei Polster à 1.5 rem ab `sm`).
+   Folge je Skala @640 ohne / mit Scrollleiste (Streifen 640 / 623 px): 1.0 sichtbar /
+   sichtbar (36.25 rem = 580 px); 1.1 sichtbar (638 px) / weg (623 < 638);
+   ab 1.2 weg (≥ 696 px); darunter (<640 px) wie bisher weg (F7).
+   Das Siegel bleibt immer. Bewacht von `e2e/seitenbreite.e2e.ts`
+   («Schriftskala 1.4 schmal»). */
+/* FALLE: `.lc-topbar-zeile` ist jetzt der nächste Container für jede UNBENANNTE
+   `@container`-/`@[..]:`-Regel in einer Kopf-Komponente (sie würde gegen die
+   Streifenbreite statt gegen ihr Eltern-Pane messen) — dort `@[..]/name`
+   mit benanntem Container verwenden. Heute gibt es im Kopf keine solche Regel. */
+.lc-topbar-zeile { container: topbar-zeile / inline-size; }
+.lc-topbar-wortmarke { display: none; }
+@media (min-width: 640px) {
+  @container topbar-zeile (width >= 33.25rem) {
+    .lc-topbar-wortmarke { display: block; }
+  }
+}
+
 /* ─── GB-20/21 · DIE WAHL-KACHEL IST EINE ZEILE ─────────────────────────────
    BEFUND G20 (gemessen): die Ferien-/Stillstand-Auswahl des Rechners ist ein
    Raster aus 6 gerahmten Kästen (`div.border.border-line`) mit je 3–5 Zeilen
@@ -4889,7 +4985,37 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   .kt-werkbank > .kt-einstieg {
     grid-column: 1; grid-row: 1 / span 2; align-self: start;
     border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
+    /* Posten 2026-09-26 (W2·31 B): ab hier steht der Einstieg als Spalte —
+       ohne `sticky` lief die linke Spalte beim Scrollen leer mit, ab dem
+       ersten Bildschirm. Der `top`-Offset (`--app-kopf-h` + 1.5rem Luft)
+       übernimmt `pages/Suche.tsx:158` (`data-suche-filter`, ebenfalls
+       klebende Randspalte) — `max-height`/`overflow-y` sind NEU, dort gibt es
+       kein Gegenstück: `Suche.tsx` deckelt nicht, weil seine Facettenliste
+       kurz und ungeklappt bleibt. Hier kann die aufgeklappte Rechtsgebiet-
+       Liste den Rest-Viewport sprengen (die Klapp-Zeilen in
+       `ZweiachsigerEinstieg.tsx` bleiben zu, bis man selbst öffnet) — darum
+       eigene Scrollfläche mit demselben Luft-Mass unten als Deckel. */
+    position: sticky;
+    top: calc(var(--app-kopf-h) + 1.5rem);
+    max-height: calc(100dvh - var(--app-kopf-h) - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
+  /* Nachbesserung Gegenprüfung PR #1153 (29.9.2026), dieselbe Fehlerklasse wie
+     Ä67 (~Z. 2446, `e2e/leser-v3-fokusring-suchfeld.e2e.ts`): `overflow-y: auto`
+     oben lässt `overflow-x` (Spezifikation) nicht mehr auf `visible` stehen,
+     sondern berechnet es implizit zu `auto` — `.kt-einstieg` ist damit ein
+     Clip-Behälter wie jeder andere Scroller. `summary`/`a` in der Leiste haben
+     kein horizontales Innenmass (`padding-left: 0`) und stehen flush an der
+     linken Innenkante; der App-weite `:focus-visible`-Ring (2 px + 2 px Offset,
+     ~Z. 1350) ragt 4 px über die Elementkante hinaus und wurde links
+     abgeschnitten (gemessen @1280, Tab-Fokus auf «Zivilprozess (ZPO) &
+     Bundesgericht»: Ring 4 px ausserhalb des Scrollers). FIX im selben Muster
+     wie Ä67: den Ring INNERHALB der Border-Box zeichnen, statt den Behälter zu
+     ändern (`overflow-x: hidden` bräche horizontales Scrollen bei sehr langen
+     Titeln) — dann kann ihn kein Scroller mehr beschneiden, an keiner Kante.
+     Wächter: `e2e/katalog-themenleiste-fokusring.e2e.ts`, rot gezeigt. */
+  .kt-einstieg :focus-visible { outline-offset: -2px; }
   .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
   /* W2·31-BILDSCHIRMBREITE B10 (26.9.2026): neben der Themenleiste GENAU zwei
      Spalten, sobald das Raster 2 × 350 + 26 = 726 px fasst (350 = die Zeile
@@ -5174,7 +5300,55 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
      `tap-ziel-token.test.ts`). Der Scroll-Schatten entfällt mit dem Schieben.
      Hier und nicht als `@[72rem]/rechnerkarte:`-Utility im Baustein: das
      Container-Plugin gibt seine Varianten VOR `sm:` aus, `sm:h-9` gewann
-     (gemessen: zweite Reiterzeile überlappte das nächste Feld). */
+     (gemessen: zweite Reiterzeile überlappte das nächste Feld). Die feste
+     Höhe gilt nur HIER (Zwei-Spalten-Fall) — sie diente dem Tailwind-
+     Kaskadenproblem, nicht dem Umbruch selbst; die Stufe `content` unten
+     braucht sie nicht (kein Grid, keine Kaskaden-Kollision). */
+  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
+}
+
+/* Folgeposten (29.9.2026, W2·31-BILDSCHIRMBREITE) — NACHGEBESSERT
+   (Gegenprüfung PR #1154, Befund 1 [HOCH], 29.9.2026): die erste Fassung
+   dieser Regel stand UNBEDINGT (kein `@container`/`@media`) und griff damit
+   auch unterhalb der Stufe content, sogar auf dem Handy (401–1535 px) — dort
+   hob `height: auto` die feste Trefferhöhe (`h-11`/`sm:h-9`, Tabs.tsx) auf
+   Inhaltshöhe herab (44/36 px → 23 px) und brach die gewollte einzeilige
+   Scroll-Leiste unter 640 px zu Unrecht um (ZPO/SchKG @412/430/600 mehrzeilig
+   statt einzeilig).
+   Ein `@container rechnerkarte (width >= …)`-Schwellenwert allein trifft die
+   Schwelle NICHT zuverlässig: die Karte trägt `p-6 sm:p-8` (Card.tsx) — beim
+   Wechsel `p-6`→`sm:p-8` an genau der Fensterbreite 640 px SPRINGT ihr
+   Innenmass (Content-Box, das, was `@container` misst) von 551 auf 528 px
+   (Gemessen, Playwright, `.lc-werkzeug-karte`): nicht monoton, ein einzelner
+   Content-Box-Schwellenwert läge entweder zu früh (aktiviert schon ~617 px)
+   oder zu spät (erst ~664 px). Die Aussenmasse (Border-Box, `getBoundingClientRect`)
+   dagegen wachsen linear mit dem Fenster und geben keinen sauberen
+   Container-Schwellenwert für genau 640 px her.
+   Darum unmittelbar an der Fensterbreite (`@media (min-width: 40rem)` = 640 px
+   — dieselbe Tailwind-`sm`-Schwelle, an der Tabs.tsx selbst auf `sm:h-9`
+   wechselt), OHNE obere Container-Schranke: der 72rem-Block oben hat seit dem
+   Sprungmarke-Fix (52f6e1d95) selbst KEIN `flex-wrap` mehr (nur noch die feste
+   Reiterhöhe) — würde diese Regel bei width ≥ 72rem aussetzen, fehlte der
+   Umbruch dort ganz (Rot-Beweis beim ersten Versuch dieser Nachbesserung:
+   SchKG @1920 wieder 1088/640 px Querscroll). Die zwei Blöcke überschneiden
+   sich deshalb absichtlich ab 72rem — dieselben Werte, keine Kollision:
+   SchKG-Phasenleiste 1088 px Inhalt in 1008–1072 px Karte (Stufe content)
+   scrollte quer auf jeder Breite von 640 bis 1535 px (vorbestehend, nicht
+   erst durch B3) — ZPO (684 px) blieb darunter unberührt. Unterhalb 640 px
+   bleibt die Leiste unverändert wie vor diesem Schritt: Tabs.tsx trägt Höhe
+   und Umbruch dort allein (`h-11` bzw. R-1s eigene `max-[400px]:`-Regel).
+   Der CONTAINER bleibt `height: auto` (muss über mehrere Zeilen wachsen
+   dürfen); ohne eigene Höhenangabe an den REITERN strecken sich deren
+   Flex-Kinder in einer umgebrochenen Zeile aber nur auf deren Inhaltshöhe
+   (23 px) — derselbe Mechanismus, der den Fehler oben erzeugte. Fester
+   `height: 2.25rem` an `.lc-tab` (nicht `min-height`: der Wächter
+   `tap-ziel-token.test.ts`, F9/D2, lässt nur `var(--tap-ziel)` als
+   Untergrenze zu, keine rohe Zahl — passend, denn das hier ist keine
+   WCAG-Trefferflächen-Untergrenze, sondern dieselbe feste ANATOMIE-Höhe der
+   Grössenvariante `m` wie im 72rem-Block oben, exakt übernommen). 2.25rem,
+   weil ab 640 px auch die Tailwind-Höhe der Leiste selbst bereits auf
+   `sm:h-9` steht (deckungsgleiche Schwelle). */
+@media (min-width: 40rem) {
   .lc-rechner-spalten .lc-reiterleiste {
     flex-wrap: wrap;
     height: auto;

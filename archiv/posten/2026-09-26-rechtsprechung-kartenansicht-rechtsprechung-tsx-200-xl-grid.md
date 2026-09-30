@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-26
 -->
 
 mit offener Seitenleiste zu schmale Karten; auf @container umstellen (design-gruppenkopf-karten-c.test.ts pinnt die Klasse wörtlich) (B6)
+
+**Erledigt 2026-09-29:** PR #1155

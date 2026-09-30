@@ -67,8 +67,24 @@ export function MaterialEntstehung({ materialKey, doktyp }: {
             amtliche Text nicht eindeutig (§8).</>}
       </p>
       {/* REST S2 (25.9.2026): Form der gelöschten `.lr8-entst-anker` als Token-
-          Utility — Liste mit Kante, wie die Verfahrenskette am Artikel. */}
-      <ul className="grid gap-0.5 border-l border-rule-soft pl-2.5 text-xs text-ink-600">
+          Utility — Liste mit Kante, wie die Verfahrenskette am Artikel.
+          `max-w-kleintext` (Folgeposten 30.9.2026, W2·31-BILDSCHIRMBREITE
+          Bündel E): dieselbe Symmetrie wie die zwei `xs`-Absätze oben (B8) —
+          ohne eigenen Deckel wuchs die Liste mit der Randspalte mit, in der
+          sie steht (`MaterialLeser.tsx`, `@[62rem]/material`-Raster). Gemessen
+          per Weit-Simulation @1920 (`e2e/seitenbreite.e2e.ts`): «Art. 61 und
+          62 Kürzung von Solidaritätsbeiträgen bei Migrationsdruck Kürzung von
+          Solidaritätsbeiträg…» — 105 ch bei 629 px auf /materialien/
+          BOTSCHAFT-2025-1478, unsichtbar bei der heutigen Stufe `content`
+          (Randspalte damals schmal genug), aber ein Fund, der bei einer
+          künftigen Umstellung der Art auf `weit` sofort aufgetreten wäre.
+          ERGÄNZUNG (Gegenprüfung 30.9.2026, Befund 3): «unsichtbar» galt dem
+          Lesemass-FUND (keine Zeile über 80 ch), nicht dem Deckel selbst — der
+          greift auch heute: real @1920 auf derselben Route schrumpft die
+          Liste von 400 px (Randspalten-Breite, unveränderter Elternrahmen) auf
+          384 px (`max-w-kleintext` = 24rem), gemessen per Playwright
+          (`ul.getBoundingClientRect().width`). */}
+      <ul className="grid gap-0.5 border-l border-rule-soft pl-2.5 text-xs text-ink-600 max-w-kleintext">
         {sidecar.anker.map((a) => (
           <li key={a.eId}>
             {ziel
