@@ -1,0 +1,62 @@
+// «• » vor Meldungen nur ab zwei Einträgen — auch ausserhalb der FehlerBox
+// (W2·19 Kleinaufräumen 2, 30.9.2026; Prüfer-Fund aus #1187: Zustellung-
+// Fahrplan und PruefBefund trugen den Punkt noch vor einzelnen Meldungen).
+// Die FehlerBox selbst prüft `fehlerbox-aufzaehlung.test.tsx`.
+import { renderToStaticMarkup } from 'react-dom/server';
+import { describe, expect, it } from 'vitest';
+import { meldungspunkt } from '../components/vorlagen/meldungspunkt';
+import { PruefBefund } from '../components/vorlagen/PruefBefund';
+import { ZustErgebnisEinleitung } from '../components/forms/ZustErgebnisEinleitung';
+import { ZustErgebnisRechtsmittel } from '../components/forms/ZustErgebnisRechtsmittel';
+import type { ZustaendigkeitFormModell } from '../components/forms/useZustaendigkeitForm';
+
+const punkte = (html: string): number => (html.match(/•/g) ?? []).length;
+
+/** Minimales Modell: nur das, was der Fahrplan-Leerzustand liest. */
+const modell = (instanz: 'einleitung' | 'rechtsmittel', fehler: string[]) =>
+  ({ f: { instanz }, zeige: () => true, fehler, ergebnis: null, r: null, rechtsmittel: null }) as unknown as ZustaendigkeitFormModell;
+
+describe('meldungspunkt', () => {
+  it('Grenzen: 0 und 1 ohne Punkt, ab 2 mit', () => {
+    expect(meldungspunkt(0)).toBe('');
+    expect(meldungspunkt(1)).toBe('');
+    expect(meldungspunkt(2)).toBe('• ');
+    expect(meldungspunkt(7)).toBe('• ');
+  });
+});
+
+describe('Zustellung-Fahrplan: Leerzustand', () => {
+  it.each(['einleitung', 'rechtsmittel'] as const)('%s: eine Meldung ohne Punkt, zwei mit', (instanz) => {
+    const Komp = instanz === 'einleitung' ? ZustErgebnisEinleitung : ZustErgebnisRechtsmittel;
+    const eine = renderToStaticMarkup(<Komp z={modell(instanz, ['Streitwert angeben.'])} />);
+    expect(eine).toContain('Streitwert angeben.');
+    expect(punkte(eine)).toBe(0);
+    const zwei = renderToStaticMarkup(<Komp z={modell(instanz, ['Streitwert angeben.', 'Kanton wählen.'])} />);
+    expect(punkte(zwei)).toBe(2);
+  });
+
+  it.each(['einleitung', 'rechtsmittel'] as const)('%s: Ersatztext ohne Fehlerliste steht ohne Punkt', (instanz) => {
+    const Komp = instanz === 'einleitung' ? ZustErgebnisEinleitung : ZustErgebnisRechtsmittel;
+    const html = renderToStaticMarkup(<Komp z={modell(instanz, [])} />);
+    expect(html).toContain('Bitte die vorherigen Schritte vervollständigen.');
+    expect(punkte(html)).toBe(0);
+  });
+});
+
+describe('PruefBefund: Punkt je Schritt-Liste erst ab zwei Meldungen', () => {
+  it('ein Fehler je Schritt: kein Punkt; zwei in einem Schritt: zwei Punkte', () => {
+    const einzeln = renderToStaticMarkup(
+      <PruefBefund onSpringe={() => {}} befunde={[
+        { index: 0, label: 'Parteien', fehler: ['Name fehlt.'] },
+        { index: 2, label: 'Betrag', fehler: ['Betrag fehlt.'] },
+      ]} />);
+    expect(einzeln).toContain('Name fehlt.');
+    expect(punkte(einzeln)).toBe(0);
+    const doppelt = renderToStaticMarkup(
+      <PruefBefund onSpringe={() => {}} befunde={[
+        { index: 0, label: 'Parteien', fehler: ['Name fehlt.', 'Adresse fehlt.'] },
+        { index: 2, label: 'Betrag', fehler: ['Betrag fehlt.'] },
+      ]} />);
+    expect(punkte(doppelt)).toBe(2);
+  });
+});

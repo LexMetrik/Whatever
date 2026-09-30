@@ -30,6 +30,16 @@ const WURZEL = resolve(import.meta.dirname ?? '.', '..');
 const DOSSIER = 'pages/gesetz-leser/parts/ArtikelDossier.tsx';
 const lies = (p: string) => readFileSync(resolve(WURZEL, p), 'utf8');
 // Kommentare zählen nicht (geteiltes Sieb `ohneKommentare`) — sie NENNEN die Lader, das ist ihr Zweck.
+/**
+ * Nur Code, auch für POSITIV-Proben (W2·19 Kleinaufräumen 2, 30.9.2026): das
+ * geteilte Sieb streicht ganze Kommentarzeilen und Blöcke, lässt aber den
+ * Zeilenend-Kommentar hinter Code stehen (`x(); // marken: readonly BezugsMarke[]`).
+ * Für die ABWESENHEITS-Probe (Lader) ist das unschädlich (ein Kommentar kann nur
+ * zu viel finden), für eine ANWESENHEITS-Probe ist es ein Schlupfloch: ein
+ * Kommentar könnte sie erfüllen, nachdem der Code weg ist. `[ \t]//` (Leerraum
+ * vor dem Doppelstrich) lässt `http://` in Zeichenketten unberührt.
+ */
+const nurCode = (s: string): string => ohneKommentare(s).replace(/[ \t]\/\/.*$/gm, '');
 
 /**
  * Die Datenlader des Artikel-Kontexts. Jeder von ihnen ist ein eigener
@@ -58,7 +68,7 @@ describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
   it('das Dossier bezieht seinen Bestand aus der Prop `marken`', () => {
     // Positiv formuliert, damit die Sonde nicht bloss Abwesenheit prüft: fiele
     // die Prop weg, käme der Bestand zwangsläufig von woanders.
-    const quelle = ohneKommentare(lies(DOSSIER));
+    const quelle = nurCode(lies(DOSSIER));
     expect(quelle).toMatch(/marken:\s*readonly BezugsMarke\[\]/);
     expect(quelle).toMatch(/bloeckeAus\(marken\)/);
   });
@@ -91,7 +101,7 @@ describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
     for (const v of verzeichnisse) {
       for (const datei of readdirSync(resolve(WURZEL, v))) {
         if (!datei.endsWith('.tsx') && !datei.endsWith('.ts')) continue;
-        const quelle = ohneKommentare(lies(`${v}/${datei}`));
+        const quelle = nurCode(lies(`${v}/${datei}`));
         // Eine Marken-RECHNUNG erkennt man am FELD eines Objektliterals — am
         // Komma dahinter. Weder die Typ-Annotation (`const raus: BezugsMarke[]
         // = []`, eine leere Sammelliste) noch die Union im Typ selbst
@@ -108,10 +118,28 @@ describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
     // wird Block 3 NICHT ausgeliefert — ein prominenter Block mit erheblichem
     // Fehlanteil ist negativer Mehrwert. Die Sonde hält den Stand fest: fällt
     // die Konstante still auf `true`, ist DAS der Diff.
-    const quelle = ohneKommentare(lies(DOSSIER));
+    const quelle = nurCode(lies(DOSSIER));
     expect(quelle).toMatch(/RECHTSPRECHUNG_BLOCK_FREI\s*=\s*false/);
     // Und die Marke `r` wird ausschliesslich durch diese Konstante gefiltert —
     // nicht dadurch, dass sie gar nicht erst hereinkäme.
     expect(quelle).toMatch(/reg === 'r' && !RECHTSPRECHUNG_BLOCK_FREI/);
+  });
+});
+
+describe('nurCode (Selbsttest der Positiv-Proben)', () => {
+  it('ein Zeilenend-Kommentar erfüllt keine Anwesenheits-Probe mehr; Code und URLs bleiben', () => {
+    const quelle = [
+      'const url = "https://x.ch/a"; // bleibt',
+      'const a = 1; // marken: readonly BezugsMarke[]',
+      '/* bloeckeAus(marken) */ const b = 2;',
+      'const RECHTSPRECHUNG_BLOCK_FREI = false;',
+    ].join('\n');
+    // Das geteilte Sieb allein liesse den Zeilenend-Kommentar stehen (der Schlupf) …
+    expect(ohneKommentare(quelle)).toMatch(/marken:\s*readonly BezugsMarke\[\]/);
+    // … nurCode nicht; Code-Treffer bleiben erhalten.
+    expect(nurCode(quelle)).not.toMatch(/marken:\s*readonly BezugsMarke\[\]/);
+    expect(nurCode(quelle)).not.toMatch(/bloeckeAus\(marken\)/);
+    expect(nurCode(quelle)).toMatch(/RECHTSPRECHUNG_BLOCK_FREI\s*=\s*false/);
+    expect(nurCode(quelle)).toContain('https://x.ch/a');
   });
 });

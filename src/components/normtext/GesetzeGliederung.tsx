@@ -57,7 +57,7 @@ function RelevanzHinweis({ children }: { children: React.ReactNode }) {
  *  (relevanz.ts). Die relevantesten Erlasse zuerst (A15). */
 export function RelevanzGitter({ erlasse }: { erlasse: BrowseErlass[] }) {
   const sortiert = nachRelevanz(erlasse);
-  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
+  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Keine Erlasse erfasst." />;
   return (
     <div className="space-y-4">
       <RelevanzHinweis>
@@ -76,7 +76,7 @@ export function KantonRelevanzListe({ erlasse, sys }: {
   erlasse: BrowseErlass[]; sys?: KantonSystematik;
 }) {
   const sortiert = nachKantonRelevanz(erlasse, sys);
-  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
+  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Keine Erlasse erfasst." />;
   // D24: EIN Raster über beide Spalten (s. `ui/ListenTabelle`); der frühere
   // Erklärabsatz steht als `title` am Reiter «Relevanz» (GLIEDERUNG_HINWEIS).
   return (
@@ -103,7 +103,7 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
   const gruppen = GEBIETE
     .map((g) => ({ ...g, items: (proGebiet.get(g.id) ?? []).sort((a, b) => a.titel.localeCompare(b.titel, 'de')) }))
     .filter((g) => g.items.length > 0);
-  if (gruppen.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
+  if (gruppen.length === 0) return <Leerzustand art="bestand" text="Keine Erlasse erfasst." />;
   return (
     <div className="space-y-6">
       <RelevanzHinweis>

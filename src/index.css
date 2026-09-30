@@ -5483,6 +5483,15 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   background: var(--reg-m-flaeche);
   border-top-color: var(--reg-m);
 }
+/* Sonderregel bleibt (W2·19 Kleinaufräumen 2, 30.9.2026, gemessen im Build @1280):
+   ③ `.lc-route[data-reg] header .lc-overline` greift im Band (das Band ist ein
+   `div` IM `<header>`) und liefert dort die Registermarke — g hell/dunkel
+   rgb(29,78,137)/rgb(143,184,240), r rgb(122,31,43)/rgb(227,154,166), jeweils
+   kursive Literata; m bekäme rgb(47,122,62) (4.25:1 < AA). Das Band in ③
+   auszusparen (Option «Rolle statt Sonderregel») wäre NICHT farbgleich: g und r
+   fielen auf ink-600 rgb(92,86,74)/rgb(165,158,144) und verlören die kursive
+   Literata (③ setzt Farbe UND Schrift) — Designentscheid,
+   kein Aufräumen. Darum nur der m-Zweig. */
 .lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
 .lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }
 
