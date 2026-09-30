@@ -60,14 +60,18 @@ describe('W3-10 · Berichtigung mit mehreren Auswirkungs-Daten = EINE Zeile ohne
     const k: RevisionsKontext = {
       abstractEli: 'cc/1995/4964_4964_4964', basicAct: OC('1995/4964_4964_4964'), inkrafttreten: '1996-01-01',
       auswirkungen: [
+        { oc: OC('2017/700'), typ: 1, datum: '2018-01-01', fassung: '2018-01-01' }, // älterer Stand: 2018-07-31 liegt NACH dem ältesten Eintrag
         { oc: OC('2018/432'), typ: 6, datum: '2018-07-31', fassung: '2018-07-31' },
         { oc: OC('2018/432'), typ: 6, datum: '2019-01-01', fassung: '2019-01-01' },
       ],
-      ocStamm: {},
+      ocStamm: { [OC('2017/700')]: { dateForce: '2018-01-01' } },
     };
     const bindings = [bind({ oc: OC('2018/432'), dateForce: '2019-01-01', dateDoc: '2018-07-31', roId: 'RO 2018 2837' })];
-    const s = baueRevisionen(erlass, bindings, ['2018-07-31', '2019-01-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
-    expect(s.revisionen.map((r) => [r.art, r.dateEntryInForce, r.etappen])).toEqual([['aenderung', '2019-01-01', undefined]]);
+    const s = baueRevisionen(erlass, bindings, ['2018-01-01', '2018-07-31', '2019-01-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.art, r.dateEntryInForce, r.etappen])).toEqual([
+      ['aenderung', '2019-01-01', undefined],
+      ['aenderung', '2018-01-01', undefined],
+    ]);
   });
 
   it('liegt das Eigen-Datum nicht unter den Auswirkungs-Daten, gilt das früheste (nie ein Datum erfinden, §7)', () => {
