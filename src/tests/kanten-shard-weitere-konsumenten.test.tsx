@@ -37,6 +37,22 @@ import { useErlaeuterungen } from '../pages/gesetz-leser/v3/panelKontextLaden';
 import { kontextFuerArtikel, kontextSoftLaw, kontextSoftLawErgebnis } from '../lib/kontext';
 import { beiKantenShardErholt, ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { _leereShardCache } from '../lib/rechtsprechung/norm-index';
+import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterungen';
+
+// Zweitprüfung #1181: Anmeldungen/Abmeldungen des Erholt-Signals zählen (Durchreicher,
+// Verhalten unverändert) — die Abmeldung beim Unmount ist sonst nicht beobachtbar.
+const abo = vi.hoisted(() => ({ an: 0, ab: 0 }));
+vi.mock('../lib/materialien/kanten-shard', async (orig) => {
+  const m = await orig<typeof import('../lib/materialien/kanten-shard')>();
+  return {
+    ...m,
+    beiKantenShardErholt: (k: string, r: () => void) => {
+      abo.an++;
+      const ab = m.beiKantenShardErholt(k, r);
+      return () => { abo.ab++; ab(); };
+    },
+  };
+});
 
 const KANTE = { dok: 'DOK-A', artikel: '6', quelle: 'amtlich', konfidenz: 'regex-hoch', stand: '2025-01-01', fundstellen: [{ z: '1' }] };
 const KOPF = (erlass: string) => ({ erzeugt: '2026-09-30', erlass, dokumente: { 'DOK-A': { urlBasis: 'https://x', stand: '2025-01-01' } }, kanten: [KANTE] });
@@ -92,6 +108,7 @@ const text = () => (ziel.textContent ?? '').replace(/\s+/g, ' ');
 const erneutKnoepfe = () => Array.from(ziel.querySelectorAll('[data-abruf-erneut]'));
 
 afterEach(async () => {
+  abo.an = 0; abo.ab = 0;
   if (root) { const r = root; root = null; await act(async () => r.unmount()); }
   vi.unstubAllGlobals();
   _leereKantenShardCache();
@@ -327,5 +344,114 @@ describe('beiKantenShardErholt — meldet genau die Erholung nach einem Fehlschl
     expect((await ladeKantenShardErgebnis('MWSTG')).zustand).toBe('ok');
     await settle();
     expect(abgemeldet).not.toHaveBeenCalled();
+  });
+});
+
+// ─── Zweitprüfung #1181 (30.9.2026) ─────────────────────────────────────────
+// ROT ZU BEKOMMEN (§6.7): mC = in `artikelMaterialienLaden.ts` das Erholt-Abo
+// (`beiKantenShardErholt(erlassKey, erneut)`) stilllegen; mE = dasselbe in
+// `panelKontextLaden.useErlaeuterungen`; Unmount = den Cleanup-Rückgabewert der
+// beiden Abo-Effekte entfernen; kuratiert = in `ladeErlaeuterungen` `rest: null`
+// setzen; Hörer-Reset = in `_leereKantenShardCache` `erholtHoerer.clear()` streichen.
+describe('Erholt-Abo der Hooks — andere Fläche/Loader erholt den Shard, diese lädt nach', () => {
+  it('useArtikelMaterialien: Fehler sichtbar, ein ANDERER Abruf heilt den Shard ⇒ Liste ohne eigenen Klick', async () => {
+    let netzDa = false;
+    stubFetch({
+      '/materialien/register.json': { status: 200, body: MANIFEST },
+      '/materialien/kanten/ARG.json': () => (netzDa ? { status: 200, body: KOPF('ARG') } : 'netz'),
+    });
+    function Sonde() {
+      const [nachschlag, unsicher] = useArtikelMaterialien('ARG', true);
+      return createElement('div', null, unsicher ? 'FEHLER' : null, (nachschlag('6') ?? []).map((m) => createElement('span', { key: m.key }, m.titel)));
+    }
+    await rendere(createElement(Sonde));
+    expect(text()).toContain('FEHLER');
+    netzDa = true;
+    expect((await act(async () => ladeKantenShardErgebnis('ARG'))).zustand).toBe('ok'); // die andere Fläche
+    await settle();
+    expect(text()).toContain('Titel A');
+    expect(text()).not.toContain('FEHLER');
+  });
+
+  it('useErlaeuterungen: ein ANDERER Abruf heilt den Shard ⇒ Tafel lädt ohne eigenen Klick nach', async () => {
+    let netzDa = false;
+    stubFetch({
+      '/materialien/register.json': { status: 200, body: MANIFEST },
+      '/materialien/kanten/ARG.json': () => (netzDa ? { status: 200, body: KOPF('ARG') } : 'netz'),
+    });
+    function Sonde() {
+      const s = useErlaeuterungen('ARG', true);
+      return createElement('div', null, s.fertig && s.wert === null ? 'FEHLER' : null,
+        (s.wert?.liste ?? []).map((m) => createElement('span', { key: m.key }, m.titel)));
+    }
+    await rendere(createElement(Sonde));
+    expect(text()).toContain('FEHLER');
+    netzDa = true;
+    await act(async () => { await ladeKantenShardErgebnis('ARG'); });
+    await settle();
+    expect(text()).toContain('Titel A');
+    expect(text()).not.toContain('FEHLER');
+  });
+
+  it('Unmount meldet BEIDE Hooks ab: danach kein aktives Abo mehr (Abmeldung wirkt)', async () => {
+    stubFetch({
+      '/materialien/register.json': { status: 200, body: MANIFEST },
+      '/materialien/kanten/ARG.json': 'netz',
+    });
+    function Sonde() {
+      useArtikelMaterialien('ARG', true);
+      useErlaeuterungen('ARG', true);
+      return null;
+    }
+    await rendere(createElement(Sonde));
+    expect(abo.an).toBeGreaterThanOrEqual(2); // beide Flächen zeigen den Fehler und hören zu
+    expect(abo.an - abo.ab).toBe(abo.an); // solange gemountet: keine Abmeldung
+    const r = root!; root = null;
+    await act(async () => r.unmount());
+    expect(abo.ab).toBe(abo.an); // Cleanup hat jede Anmeldung zurückgenommen
+  });
+
+  it('Hörer-Reset: `_leereKantenShardCache` leert auch die Erholt-Hörer (Test-Isolation)', async () => {
+    let netzDa = false;
+    stubFetch({ '/materialien/kanten/ARG.json': () => (netzDa ? { status: 200, body: KOPF('ARG') } : 'netz') });
+    const rueckruf = vi.fn();
+    beiKantenShardErholt('ARG', rueckruf);
+    _leereKantenShardCache();
+    expect((await ladeKantenShardErgebnis('ARG')).zustand).toBe('fehler');
+    netzDa = true;
+    expect((await ladeKantenShardErgebnis('ARG')).zustand).toBe('ok');
+    await settle();
+    expect(rueckruf).not.toHaveBeenCalled();
+  });
+});
+
+// ─── Kuratierte Einträge bleiben bei Shard-Ausfall sichtbar ─────────────────
+describe('Erläuterungen-Tafel bei Shard-Ausfall: kuratierte Bundle-Einträge + Fehlerzeile «unvollständig»', () => {
+  // ARG führt im MATERIAL_REGISTER kuratierte Einträge (Bundle, kein Netz nötig).
+  function Tafel() {
+    const s = useErlaeuterungen('ARG', true);
+    return createElement(MemoryRouter, null, createElement(PanelErlaeuterungen, { stand: s }));
+  }
+
+  it('Shard 5xx/Netz: kuratierte Einträge sichtbar, dazu Fehlerzeile mit «Erneut laden»; Klick heilt und ergänzt den Shard-Teil', async () => {
+    let netzDa = false;
+    const f = stubFetch({
+      '/materialien/register.json': { status: 200, body: MANIFEST },
+      '/materialien/kanten/ARG.json': () => (netzDa ? { status: 200, body: KOPF('ARG') } : 'netz'),
+    });
+    await rendere(createElement(Tafel));
+    expect(text()).toContain('Merkblatt zum Pikettdienst'); // kuratiert (SECO-MERKBLATT-PIKETT), liegt im Bundle
+    expect(text()).not.toContain('Titel A'); // der Shard-Teil fehlt — und das wird gesagt:
+    expect(text()).toContain('Ein Teil der behördlichen Erläuterungen konnte nicht geladen werden.');
+    expect(ziel.querySelectorAll('[data-v3-panel-unvollstaendig]')).toHaveLength(1);
+    expect(erneutKnoepfe()).toHaveLength(1);
+    const vorher = kantenAufrufe(f);
+    netzDa = true;
+    await klick(erneutKnoepfe()[0]);
+    expect(kantenAufrufe(f)).toBeGreaterThan(vorher);
+    expect(text()).toContain('Merkblatt zum Pikettdienst');
+    expect(text()).toContain('Titel A'); // jetzt vollständig
+    expect(text()).not.toContain('konnte nicht geladen werden');
+    expect(erneutKnoepfe()).toHaveLength(0);
   });
 });

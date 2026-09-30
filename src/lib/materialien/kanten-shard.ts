@@ -175,4 +175,5 @@ export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | 
 export function _leereKantenShardCache(): void {
   shardPromises.clear();
   hatteFehler.clear();
+  erholtHoerer.clear(); // Test-Isolation: ein nicht abgemeldeter Hörer darf nicht in den nächsten Test rufen
 }

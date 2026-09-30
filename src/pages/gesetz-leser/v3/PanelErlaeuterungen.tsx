@@ -99,6 +99,26 @@ function Posten({ p, revisionShard }: { p: ErlaeuterungPosten; revisionShard: Re
   );
 }
 
+/** Die Liste selbst — geteilt zwischen vollständigem Stand und Rest bei Shard-Ausfall. */
+function ErlaeuterungListe({ posten, stand, revisionShard }: {
+  posten: ErlaeuterungPosten[]; stand: ErlaeuterungStand; revisionShard: RevisionShard | null | undefined;
+}) {
+  return (
+    <section data-v3-erlaeuterungen className="pt-1">
+      <GruppenKopf als="p" dicht titel="Behördliche Erläuterungen" zahl={posten.length} />
+      {/* §8: Rang, Erfassungsart und Datenstand werden genannt, nicht
+          vorausgesetzt. «Erfasste» statt einer Vollzähligkeits-Behauptung. */}
+      <p className="pb-1 pt-0.5 text-micro leading-snug text-ink-500">
+        Erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden) — kein Gesetzesrang.
+        {' '}<span className="num">Datenstand {datumAnzeige(stand.erzeugt)}</span>.
+      </p>
+      <ul className="mt-0.5">
+        {posten.map((p) => <Posten key={p.art === 'dokument' ? p.m.key : p.key} p={p} revisionShard={revisionShard} />)}
+      </ul>
+    </section>
+  );
+}
+
 export function PanelErlaeuterungen({ stand, revisionShard, ebene }: {
   stand: Geladen<ErlaeuterungStand>;
   /** Revisions-Shard des Erlasses (derselbe wie im Reiter «Entscheide») —
@@ -110,6 +130,18 @@ export function PanelErlaeuterungen({ stand, revisionShard, ebene }: {
     return <p data-v3-panel-reiter-inhalt="erlaeuterungen" className="px-3 py-3 text-body-s text-ink-600">Behördliche Erläuterungen werden geladen …</p>;
   }
   if (stand.wert === null) {
+    // Shard-Ausfall mit kuratiertem Bundle-Rest (Zweitprüfung 30.9.2026): der Rest
+    // bleibt sichtbar, die Fehlerzeile sagt, dass die Liste unvollständig ist.
+    const restPosten = stand.rest ? ordneErlaeuterungen(stand.rest.liste) : [];
+    if (stand.rest && restPosten.length > 0) {
+      return (
+        <div data-v3-panel-reiter-inhalt="erlaeuterungen" className="px-3 py-1">
+          <AbrufFehler gegenstand="Ein Teil der behördlichen Erläuterungen" onErneut={stand.erneut}
+            className="pt-2" daten={{ 'data-v3-panel-fehler': '', 'data-v3-panel-unvollstaendig': '' }} />
+          <ErlaeuterungListe posten={restPosten} stand={stand.rest} revisionShard={revisionShard} />
+        </div>
+      );
+    }
     return (
       <AbrufFehler gegenstand="Behördliche Erläuterungen" mehrzahl onErneut={stand.erneut}
         className="px-3 py-3" daten={{ 'data-v3-panel-reiter-inhalt': 'erlaeuterungen', 'data-v3-panel-fehler': '' }} />
@@ -128,18 +160,7 @@ export function PanelErlaeuterungen({ stand, revisionShard, ebene }: {
   }
   return (
     <div data-v3-panel-reiter-inhalt="erlaeuterungen" className="px-3 py-1">
-      <section data-v3-erlaeuterungen className="pt-1">
-        <GruppenKopf als="p" dicht titel="Behördliche Erläuterungen" zahl={posten.length} />
-        {/* §8: Rang, Erfassungsart und Datenstand werden genannt, nicht
-            vorausgesetzt. «Erfasste» statt einer Vollzähligkeits-Behauptung. */}
-        <p className="pb-1 pt-0.5 text-micro leading-snug text-ink-500">
-          Erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden) — kein Gesetzesrang.
-          {' '}<span className="num">Datenstand {datumAnzeige(stand.wert.erzeugt)}</span>.
-        </p>
-        <ul className="mt-0.5">
-          {posten.map((p) => <Posten key={p.art === 'dokument' ? p.m.key : p.key} p={p} revisionShard={revisionShard} />)}
-        </ul>
-      </section>
+      <ErlaeuterungListe posten={posten} stand={stand.wert} revisionShard={revisionShard} />
     </div>
   );
 }

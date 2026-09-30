@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { revisionenFuerNorm, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { botschaftenFuer, type BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
@@ -41,6 +41,11 @@ export interface Geladen<T> {
    *  der Griff stösst den Effekt nur noch einmal an. Fehlt er, gibt es keinen
    *  Wiederholungsweg (Tests, reine Anzeige). */
   erneut?: () => void;
+  /** W2·27-BUND-FERTIG (30.9.2026, Befund Zweitprüfung): bei `wert: null` der
+   *  Teil, der OHNE die gescheiterte Quelle vorliegt (Bundle-Daten) und darum
+   *  sichtbar bleibt — die Fläche zeigt ihn samt Fehlerzeile («unvollständig»),
+   *  statt mit dem Netz auch das Bekannte auszublenden (§1/§8). */
+  rest?: T;
 }
 
 const NICHT_FERTIG = { wert: null, fertig: false } as const;
@@ -120,21 +125,33 @@ export interface ErlaeuterungStand {
 // Kanten-Shard gescheitert ist (`fehler`). Dann ist die Liste ein Rest, keine
 // Auskunft — wie beim Manifest `null` (Fehlerzeile + «Erneut laden», die den
 // Abruf wirklich wiederholt: ein Shard-Fehlschlag wird nicht gecacht).
-async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungStand | null> {
+// Zweitprüfung desselben Tages: die kuratierten `materialienFuer`-Einträge liegen
+// im Bundle und brauchen kein Netz — sie bleiben bei Shard-Ausfall sichtbar
+// (`rest`, neben `wert: null`), die Tafel sagt dazu, dass die Liste unvollständig
+// ist. Beim Manifest-Ausfall gibt es weder Datenstand noch `rest`: wie bisher
+// nur die Fehlerzeile (AN-4).
+interface ErlaeuterungLadung { stand: ErlaeuterungStand | null; rest: ErlaeuterungStand | null }
+
+async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungLadung> {
   const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLawErgebnis('norm', [key])]);
-  if (!manifest || weich.fehler) return null;
-  return { liste: mischeMaterialien(materialienFuer([key]), weich.liste), erzeugt: manifest.erzeugt };
+  if (!manifest) return { stand: null, rest: null };
+  const stand = { liste: mischeMaterialien(materialienFuer([key]), weich.liste), erzeugt: manifest.erzeugt };
+  return weich.fehler ? { stand: null, rest: stand } : { stand, rest: null };
 }
 
 export function useErlaeuterungen(erlassKey: string | undefined, laden: boolean): Geladen<ErlaeuterungStand> {
-  const stand = useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  const roh = useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  const { fertig, erneut } = roh;
+  const stand = fertig ? roh.wert?.stand ?? null : null;
+  const rest = fertig ? roh.wert?.rest ?? null : null;
   // Holt eine andere Fläche den gescheiterten Shard nach («Erneut laden» der
   // Artikel-Gruppe/Praxis-Zeile), zieht diese Tafel mit (`lib/materialien/kanten-shard`).
-  const { fertig, wert, erneut } = stand;
-  const ausfall = fertig && wert === null;
+  const ausfall = fertig && stand === null;
   useEffect(() => (ausfall && erlassKey && erneut ? beiKantenShardErholt(erlassKey, erneut) : undefined),
     [ausfall, erlassKey, erneut]);
-  return stand;
+  return useMemo<Geladen<ErlaeuterungStand>>(
+    () => (fertig ? { wert: stand, fertig: true, erneut, ...(rest ? { rest } : {}) } : NICHT_FERTIG),
+    [fertig, stand, rest, erneut]);
 }
 
 /** Gesetzgebungsmaterialien eines Erlasses (Reiter «Materialien»). Je Liste
