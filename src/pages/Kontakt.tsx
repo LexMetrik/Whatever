@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Checkbox, Field, inputCls, KopierButton } from '../components/vorlagen/ui';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { meldungspunkt } from '../components/vorlagen/meldungspunkt';
 import { KONTAKT_EMPFAENGER, kontaktMailto, type KontaktEingaben } from '../lib/kontakt';
 
 // Seite «Kontakt»: schlichtes Formular im Stil der Wizards. Kein Backend –
@@ -90,7 +91,7 @@ export function Kontakt() {
 
         {beruehrt && fehler.length > 0 && (
           <div role="alert" className="lc-notice lc-notice-danger space-y-0.5">
-            {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">• {f}</p>)}
+            {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{meldungspunkt(fehler.length)}{f}</p>)}
           </div>
         )}
 

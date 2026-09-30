@@ -2,6 +2,7 @@ import { useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'r
 import { agGruendungsunterlagen, finmaBegriffsTreffer } from '../lib/gruendungsunterlagen';
 import { Field, inputCls } from '../components/vorlagen/ui';
 import { NormText } from '../components/NormText';
+import { meldungspunkt } from '../components/vorlagen/meldungspunkt';
 import { VorlagenWizardRahmen, VorschauPanel } from '../components/vorlagen/wizard';
 import { agMusterdaten, musterdatenAnwenden } from '../components/vorlagen/musterdaten';
 import { useWizardState } from '../components/vorlagen/useWizardState';
@@ -128,7 +129,7 @@ export function VorlageAgGruendung() {
         <button key={b.text} type="button"
           onClick={() => setSchritt(BEREICH_SCHRITT[b.bereich])}
           className="block w-full text-left text-body-s text-danger-700 hover:underline">
-          • {b.text} <span aria-hidden>→ {SCHRITTE[BEREICH_SCHRITT[b.bereich]].label}</span>
+          {meldungspunkt(mappe.gates.blockerDetails.length)}{b.text} <span aria-hidden>→ {SCHRITTE[BEREICH_SCHRITT[b.bereich]].label}</span>
         </button>
       ))}
     </div>
@@ -321,16 +322,17 @@ export function VorlageAgGruendung() {
   ];
   // In den Eingabe-Schritten unten eine kompakte, klickbare Offen-Liste
   // (Engine-Reihenfolge; Praxis-Check NIEDRIG-2: Kommentar präzisiert).
+  const offenJeSchritt = inhalteRoh.map((_, i) => mappe.gates.blockerDetails.filter((b) => BEREICH_SCHRITT[b.bereich] === i));
   const inhalte = inhalteRoh.map((inhalt, i) => i === inhalteRoh.length - 1 ? inhalt : (
     <div className="space-y-4">
       {/* P10 (Perfektion): Feldmarkierung — der Schritt, in dem Eingaben
           fehlen, trägt oben eine rote Sektion mit SEINEN Blockern
           (Zuordnung aus den Engine-Bereichs-Tags, §3). */}
-      {mappe.gates.blockerDetails.some((b) => BEREICH_SCHRITT[b.bereich] === i) && (
+      {offenJeSchritt[i].length > 0 && (
         <div className="lc-notice lc-notice-danger space-y-1" role="alert">
           <p className="text-body-s font-medium text-danger-700">In diesem Schritt noch offen:</p>
-          {mappe.gates.blockerDetails.filter((b) => BEREICH_SCHRITT[b.bereich] === i).map((b) => (
-            <p key={b.text} className="text-body-s text-danger-700">• {b.text}</p>
+          {offenJeSchritt[i].map((b) => (
+            <p key={b.text} className="text-body-s text-danger-700">{meldungspunkt(offenJeSchritt[i].length)}{b.text}</p>
           ))}
         </div>
       )}
@@ -345,7 +347,7 @@ export function VorlageAgGruendung() {
               <button key={b.text} type="button"
                 onClick={() => setSchritt(BEREICH_SCHRITT[b.bereich])}
                 className="block w-full max-w-reading-s text-left text-body-s text-ink-700 hover:text-brass-700 hover:underline">
-                • {b.text} <span aria-hidden className="text-ink-500">→ {SCHRITTE[BEREICH_SCHRITT[b.bereich]].label}</span>
+                {meldungspunkt(mappe.gates.blockerDetails.length)}{b.text} <span aria-hidden className="text-ink-500">→ {SCHRITTE[BEREICH_SCHRITT[b.bereich]].label}</span>
               </button>
             ))}
           </div>

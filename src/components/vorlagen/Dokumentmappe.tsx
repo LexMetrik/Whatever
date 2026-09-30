@@ -8,6 +8,7 @@ import { WerkzeugKopf } from '../layout/WerkzeugKopf';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { useKopieren } from '../useKopieren';
 import { NormText } from '../NormText';
+import { meldungspunkt } from './meldungspunkt';
 import type { karte } from '../../lib/startseiteConfig';
 import type { gmbhGruendungsunterlagen, Phase } from '../../lib/gruendungsunterlagen';
 import { BANNER_MAPPE_FERTIG, type PdfBanner } from '../../lib/vorlagen/banner';
@@ -217,7 +218,7 @@ export function MappenGates({ gates }: { gates: { blocker: string[]; warnungen: 
   const zeilen = (texte: string[], linie: string) => (
     <ul>
       {texte.map((t, i) => (
-        <li key={i} className={`border-t ${linie} py-1.5 first:border-t-0 first:pt-0 last:pb-0 text-body-s max-w-reading-s`}>• <NormText text={t} /></li>
+        <li key={i} className={`border-t ${linie} py-1.5 first:border-t-0 first:pt-0 last:pb-0 text-body-s max-w-reading-s`}>{meldungspunkt(texte.length)}<NormText text={t} /></li>
       ))}
     </ul>
   );

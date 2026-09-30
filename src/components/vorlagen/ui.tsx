@@ -6,6 +6,7 @@ import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { useZielSichtbar } from './useZielSichtbar';
+import { meldungspunkt } from './meldungspunkt';
 
 // Geteilter Formular-Baukasten BEIDER Werkzeug-Familien — Rechner und Vorlagen
 // (Field, inputCls, FehlerBox, BeruehrtRahmen, Stepper, EckdatenKachel, …;
@@ -374,7 +375,7 @@ export function FehlerBox({ fehler, titel = 'Eingabefehler' }: {
   return (
     <div role="alert" data-fehlerbox="" className="lc-notice lc-notice-danger space-y-1">
       <p className="lc-overline text-danger-700 mb-1">{titel}</p>
-      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{fehler.length >= 2 ? '• ' : null}<NormText text={f} /></p>)}
+      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{meldungspunkt(fehler.length)}<NormText text={f} /></p>)}
     </div>
   );
 }
