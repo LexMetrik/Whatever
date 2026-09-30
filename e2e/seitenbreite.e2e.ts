@@ -471,7 +471,15 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
 // ROT ZU BEKOMMEN (§6.7): in `Topbar.tsx` die Wortmarke wieder
 // `className="hidden sm:block text-h3"` statt `lc-topbar-wortmarke` → (a) und
 // (b) schlagen @640 an (Beweis im PR-Bericht).
-const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768] as const; // 750: im Polster-Fenster 728–762 (b)
+// W2·31 L (30.9.2026): 560 und 520 kommen dazu — Skala 1.4 + Verlauf-Knopf liess den
+// Streifen zwischen 481 und 567 px überlaufen (+64 px Seiten-Querscroll @481, +25 @520,
+// 7.1 px im Polster @560; `.lc-topbar-verlauf`, index.css). ABSICHTLICH NICHT 481–496:
+// dort ragt der 9-rem-Suchfeldboden bei Skala 1.4 noch ≤ 16 px ins Polster (offen,
+// Designentscheid). Die Vorbedingung «Verlauf-Knopf im Streifen» gilt am ERSTEN Wert
+// (640); @520/@560 weicht der Knopf bewusst — der Streifen ohne ihn muss passen.
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Topbar.tsx` `lc-topbar-verlauf` durch
+// `max-[480px]:hidden` ersetzen → @520 und @560 schlagen an (Beweis im PR-Bericht).
+const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768, 560, 520] as const; // 750: im Polster-Fenster 728–762 (b)
 const SKALA_SCHMAL_EXTRA = [
   '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
   '/gesetze?ebene=kanton&kt=BS', '/rechner/tagerechner',
@@ -512,6 +520,127 @@ test.describe(`Schriftskala ${SKALA} schmal 640–768 (W2·31 H)`, () => {
       }
     });
   }
+});
+
+// ─── Schriftskala 1.4 auf dem Handy 320–560 px (W2·31 Bündel L, 30.9.2026) ────
+//
+// BEFUND (Prüfer #1161/#1163, gemessen @375/@320, Skala 1.4, dist): vorbestehende
+// Seiten-Querscroller — die rem-skalierte Schrift sprengt Zeilen, die bei Skala 1
+// gerade passen. Verursachendes Element und Fix je Fall:
+//  · /gesetze?ebene=bund @375 +116 px (@320 +171; @320 Skala 1 schon +31): die Titel der
+//    Bund-Kategorien («Zivilprozess- und Zwangsvollstreckungsrecht», ein Wort = 341 px)
+//    standen als Flex-Kind OHNE `min-w-0` → `gesetze-teile/BundSystematik.tsx`.
+//  · /rechner @375 +32 px (@320 +87): `Katalog.tsx`, Kopfzeile der Kategorie
+//    («Titel — Linie — n verfügbar», Titel und Zähler `whitespace-nowrap`); dazu @320
+//    drei weitere Quellen: `FristenHauptKarte` (Titel + «Entwurf» + Pfeil) und die
+//    Zeiterfassung (Start + Zurücksetzen).
+//  · / @320 +3 px: Kachel «Schnellwerkzeug» — die drei nowrap-Reiter (267 px) gegen
+//    208 px Kachelinhalt; die Grid-Spur folgte der Mindestbreite.
+//  · Streifen @481–567 (Verlauf-Knopf): siehe Block «640–768» oben.
+// NICHT BEHOBEN, Designentscheid (mit Messwert gemeldet): /gesetze/bund/OR @320 +5 px —
+// die drei Griffe des Erlass-Kopfs («Erlass-Blatt», «Gliederung», «Ansicht ▾») brauchen
+// 286 px, die Zeile lässt 264 (+ Kürzel-Zone 0 px); dort ist nur ein Inhalts-Entscheid
+// möglich (ein Griff weniger oder Icons). Der Fall steht darum nur @375/@560.
+//
+// Geprüft: scrollWidth ≤ innerWidth, mit dem obersten überragenden Element in der
+// Meldung. Schriftskala wie die App: localStorage `lexmetrik-schriftskala`.
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `BundSystematik.tsx` `min-w-0` an Hülle und
+// Titel entfernen → bund @320/@375 rot; in `Katalog.tsx` `flex-wrap` der Kopfzeile und
+// `whitespace-nowrap` am h2 zurück → /rechner @375 rot; in `Schnellwerkzeug.tsx`
+// `flex-wrap @[11rem]:flex-nowrap` → `flex` → `/` @320 rot (Beweise im PR-Bericht).
+const HANDY_FAELLE = [
+  { pfad: '/', breiten: [320, 375, 560] },
+  { pfad: '/gesetze?ebene=bund', breiten: [320, 375, 560] },
+  { pfad: '/rechner', breiten: [320, 375, 560] },
+  { pfad: '/gesetze/bund/OR', breiten: [375, 560] }, // @320 +5 px: offen (Designentscheid, s. o.)
+] as const;
+
+test.describe(`Schriftskala ${SKALA} Handy 320–560 (W2·31 L)`, () => {
+  for (const { pfad, breiten } of HANDY_FAELLE) {
+    test(`${pfad}: kein Seiten-Querscroll @${breiten.join('/')}`, async ({ page }) => {
+      test.setTimeout(90_000); // der Leser (OR) lädt je Breite ~10 s; 30 s sind unter Last zu knapp
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+      for (const width of breiten) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(pfad);
+        await bereit(page);
+        const m = await page.evaluate(() => {
+          const de = document.documentElement;
+          const grenze = de.clientWidth;
+          const raus = [...document.body.querySelectorAll('*')].filter((el) => {
+            const r = el.getBoundingClientRect();
+            return r.width > 0 && r.right > grenze + 0.5;
+          });
+          const oben = raus.filter((el) => !raus.includes(el.parentElement as Element));
+          return {
+            ueber: de.scrollWidth - grenze,
+            quellen: oben.slice(0, 4).map((el) => `${el.tagName}.${String(el.className).trim().split(/\s+/).slice(0, 4).join('.')} «${(el.textContent ?? '').trim().slice(0, 28)}» right=${Math.round(el.getBoundingClientRect().right)}`),
+          };
+        });
+        expect(m.ueber, `${pfad} @${width} Skala ${SKALA}: Seiten-Querscroll +${m.ueber} px — ${m.quellen.join(' | ') || 'keine Quelle'}`).toBeLessThanOrEqual(0);
+      }
+    });
+  }
+});
+
+// ─── FristenHauptKarte: Umbruch nur bei echtem Platzmangel (W2·31 L, Gegenprüfung) ─
+//
+// BEFUND (Prüfer, PR #1174): das reine `flex-wrap` an der Titelzeile der Haupt-
+// Karte «Fristenrechner» (`Katalog.tsx`, `.kt-haupt`) schob «Entwurf» + Pfeil
+// schon bei STANDARD-Schrift in eine zweite Zeile (@375 Skala 1: Titel 215 → 317 px,
+// Karte 151 → 178 px; @414/430 Titel 2 → 1 Zeile): der Umbruch rechnet mit der
+// vollen Textbreite, nicht mit der Schrumpfbreite. Fix: Titel `basis-[min-content]
+// grow max-w-max` — Umbruch erst, wenn das längste Wort + Marke + Pfeil nicht passt.
+// Zwei Zusicherungen, beide nötig:
+//  (a) Skala 1, 360–480: Marke und Pfeil stehen in der ZEILE des Titels (Oberkante
+//      vor der Titel-Unterkante) und die Karte bleibt ≤ 160 px hoch (vorher 151.3,
+//      reines `flex-wrap` 178.4) — UND ≥ 140 px (nicht kaputt gekappt).
+//  (b) Skala 1.4 @320/@375: nichts ragt über den Kartenrand (vorher Pfeil R 372 gegen
+//      Karte R 347 @375).
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Katalog.tsx` dem Titel `basis-[min-content]
+// grow max-w-max` nehmen (reines `flex-wrap`) → (a) rot @360–430; `flex-wrap` ganz
+// weg → (b) rot (Beweise im PR-Bericht).
+test.describe('FristenHauptKarte Umbruch nur bei Platzmangel (W2·31 L)', () => {
+  const messeKarte = (page: Page) => page.evaluate(() => {
+    const karte = document.querySelector('.kt-haupt') as HTMLElement;
+    const zeile = karte.children[0] as HTMLElement;
+    const [titel, ...rest] = [...zeile.children].map((c) => c.getBoundingClientRect());
+    const k = karte.getBoundingClientRect();
+    return {
+      karteH: k.height,
+      ueberRand: Math.max(...[titel, ...rest].map((r) => r.right - k.right)),
+      beiTitel: rest.every((r) => r.top < titel.bottom),
+      marke: rest.length,
+    };
+  });
+
+  test('Skala 1: «Entwurf» und Pfeil bleiben in der Titelzeile @360–480', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' });
+    for (const width of [360, 375, 414, 430, 480]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/rechner');
+      await bereit(page);
+      const m = await messeKarte(page);
+      const ort = `FristenHauptKarte @${width} Skala 1`;
+      expect(m.marke, `${ort}: Marke + Pfeil vorhanden`).toBe(2);
+      expect(m.beiTitel, `${ort}: Marke/Pfeil rutschten in eine zweite Zeile (Karte ${m.karteH.toFixed(1)} px)`).toBe(true);
+      expect(m.karteH, `${ort}: Kartenhöhe ${m.karteH.toFixed(1)} px`).toBeLessThanOrEqual(160);
+      expect(m.karteH, `${ort}: Kartenhöhe ${m.karteH.toFixed(1)} px`).toBeGreaterThanOrEqual(140);
+    }
+  });
+
+  test(`Skala ${SKALA}: nichts ragt über den Kartenrand @320/375`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' });
+    await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+    for (const width of [320, 375]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/rechner');
+      await bereit(page);
+      const m = await messeKarte(page);
+      expect(m.ueberRand, `FristenHauptKarte @${width} Skala ${SKALA}: ${m.ueberRand.toFixed(1)} px über dem Kartenrand`).toBeLessThanOrEqual(0.5);
+    }
+  });
 });
 
 // ─── Untergrenze der Wortmarke (Nachbesserung Gegenprüfung #1161, 30.9.2026) ──

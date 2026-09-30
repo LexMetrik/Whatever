@@ -231,7 +231,11 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
               ── C2 · DER VERLAUF-TRIGGER WEICHT UNTER 480 px: er ist der einzige
               Werkzeug-Knopf mit einem ZWEITEN Zugang (der leere Suchzustand
               speist sich aus derselben Quelle `useZuletzt`). */}
-          <div className="max-[480px]:hidden"><VerlaufUebersicht /></div>
+          {/* W2·31 L (30.9.2026): `.lc-topbar-verlauf` (index.css) = das frühere
+              `max-[480px]:hidden` PLUS eine Streifenbreiten-Bedingung (Containerabfrage,
+              wächst mit der Schriftskala). Skala 1.4 + Verlauf: der Streifen lief von 481
+              bis 567 px über (+64 scrollWidth @481, +47 px ins Polster @520, +7 px @560). */}
+          <div className="lc-topbar-verlauf"><VerlaufUebersicht /></div>
           <ThemaUmschalter />
           <SprachUmschalter />
         </div>
