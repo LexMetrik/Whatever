@@ -152,7 +152,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
         <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
-        <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Amtliches PDF in neuem Tab öffnen ↗</a>
+        <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="lc-link text-brass-700 hover:text-brass-800">Amtliches PDF in neuem Tab öffnen ↗</a>
       </nav>
     </div>
   );
@@ -203,7 +203,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
         <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
-        {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} className="text-brass-700 hover:underline" />}
+        {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} />}
       </nav>
     </div>
   );

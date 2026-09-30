@@ -23,7 +23,7 @@ export function ThemenEinstieg({ label, links }: {
       {links.map((l, i) => (
         <Fragment key={l.to}>
           {i > 0 && ' · '}
-          <Link to={l.to} className="text-brass-700 hover:text-brass-600 no-underline">{l.label}</Link>
+          <Link to={l.to} className="text-brass-700 hover:text-brass-600 lc-link">{l.label}</Link>
         </Fragment>
       ))}
     </p>

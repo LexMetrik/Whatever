@@ -511,7 +511,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
       return (
         <Link key={i} to={erlassPfadVonKey(link.intern.key, link.intern.ebene)}
           title="Intern öffnen"
-          className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{richText(t, `fn${i}`)}</Link>
+          className="lc-link text-brass-700 decoration-dotted underline-offset-2 hover:text-brass-800">{richText(t, `fn${i}`)}</Link>
       );
     }
     const kinder = richText(t, `fn${i}`);
@@ -537,7 +537,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
       return (
         <Link key={i} to={erlassPfadVonKey(intern.key, intern.ebene)}
           title={titel}
-          className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{kinder}</Link>
+          className="lc-link text-brass-700 decoration-dotted underline-offset-2 hover:text-brass-800">{kinder}</Link>
       );
     }
     // LM-154 (W2·17-UI-BEFUNDE-B4): reine Fedlex-Verweise (BBl/AS ohne SR-Treffer)

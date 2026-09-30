@@ -8,7 +8,7 @@ export function TagerechnerRueckverweis() {
     <p className="text-body-s text-ink-500">
       Nur ein Datum und eine feste gesetzliche Länge – ohne die Sonderregeln dieses Rechners?{' '}
       <Link to="/rechner/tagerechner"
-        className="font-medium text-brass-700 hover:text-brass-600 no-underline whitespace-nowrap">
+        className="font-medium text-brass-700 hover:text-brass-600 lc-link whitespace-nowrap">
         Zum Fristenrechner →
       </Link>
     </p>

@@ -99,7 +99,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
       <p data-v3-panel-reiter-inhalt="aenderungen" data-v3-panel-abdeckung="kanton" className="px-3 py-3 text-body-s text-ink-600">
         Änderungsverläufe sind für kantonale Erlasse bisher nicht erfasst.
         Die Änderungsgeschichte führt die amtliche Sammlung des Kantons:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
+        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="lc-link text-brass-700">Amtliche Fassung ↗</a>
       </p>
     );
   }
@@ -108,7 +108,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
       <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">
         Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst,
         oder die Quelle war nicht erreichbar. Amtliche Quelle:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
+        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="lc-link text-brass-700">Amtliche Fassung ↗</a>
       </p>
     );
   }
@@ -210,7 +210,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
                 <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                   {revisionTitel(r, sprache(locale)) ?? ''}{' '}
                   <a href={fedlexLokalisiert(r.quelleUrl, locale)} rel="nofollow noopener noreferrer" target="_blank"
-                    className="whitespace-nowrap text-brass-700">Fedlex ↗</a>
+                    className="lc-link whitespace-nowrap text-brass-700">Fedlex ↗</a>
                 </span>
               </li>
             ))}
@@ -316,12 +316,12 @@ function AenderungZeile({ r, bezug, amArtikel, botschaft, locale }: {
         {marker ? null : <>{titel ?? 'Änderungserlass (ohne erfassten Titel).'}{' '}</>}
         {/* Ä121: «amtlich ↗» nannte kein Ziel — genannt wird, WOHIN er führt. */}
         <a href={fedlexLokalisiert(r.quelleUrl, locale)} rel="nofollow noopener noreferrer" target="_blank"
-          className="whitespace-nowrap text-brass-700">Fedlex ↗</a>
+          className="lc-link whitespace-nowrap text-brass-700">Fedlex ↗</a>
         {/* AE-7 · Botschafts-Link nur bei BELEGTEM Match (`botschaftKey`). */}
         {botschaft && (
           <>{' · '}<a href={fedlexLokalisiert(botschaft.quelleUrl, locale)} rel="nofollow noopener noreferrer" target="_blank"
             title="Zugehörige Botschaft des Bundesrates" data-v3-panel-aenderung-botschaft
-            className="whitespace-nowrap text-brass-700">Botschaft{botschaft.nummer ? ` ${botschaft.nummer}` : ''} ↗</a></>
+            className="lc-link whitespace-nowrap text-brass-700">Botschaft{botschaft.nummer ? ` ${botschaft.nummer}` : ''} ↗</a></>
         )}
       </span>
       {/* AE-7 · §8-Marker (Gegenprüfung #703/#827), wie im Ist-Panel: nur, was
