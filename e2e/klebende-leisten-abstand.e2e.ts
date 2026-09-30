@@ -87,3 +87,65 @@ for (const skala of [1, 1.4]) {
     }
   }
 }
+
+// ─── Sprungziele der schwebenden Marken: nicht unter Krone + Arbeitsleiste ───
+//
+// Zweiter gemessener Fund desselben Bündels («Sprung auf ein Anker-Ziel»): die
+// Marken «↓ Ergebnis» (`ErgebnisSprung`, /rechner/*) und «Vorschau ↓»
+// (Vorlagen-Wizard, nur unter md) rufen `scrollIntoView({block:'start'})`. Das
+// Ziel `#lc-ergebnis` trug keinen Rand und landete bei y = −0.4…2.4 px (Skala
+// 1.4 @768–1920: 137 px Kopf) — die ersten 98/137 px des Ergebnisses unter der
+// klebenden Krone und der deckenden Arbeitsleiste. Die Vorlagen-Ziele trugen
+// `scroll-mt-24` (96 px): 2 px darunter. Jetzt `.lc-sprungziel` (index.css):
+// `--app-kopf-h` + 1 rem.
+//
+// Untergrenze: Ziel-Oberkante ≥ Arbeitsleisten-Unterkante (nicht verdeckt);
+// Obergrenze: ≤ Unterkante + 1 rem + 4 px (nicht zu weit unten geparkt).
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): `.lc-sprungziel` in `index.css` auf
+// `scroll-margin-top: 0` setzen → Untergrenze reisst (Ziel bei ≈ 0 px).
+
+const SPRUNG_ZIELE = [
+  { name: '/rechner/erbteilung «↓ Ergebnis»', route: '/rechner/erbteilung', ziel: '#lc-ergebnis', breiten: [375, 768, 1024, 1280, 1440] },
+  { name: '/vorlagen/arbeitsvertrag «Vorschau ↓»', route: '/vorlagen/arbeitsvertrag', ziel: '#wizard-vorschau', breiten: [375, 600] },
+] as const;
+
+for (const skala of [1, 1.4]) {
+  for (const sprung of SPRUNG_ZIELE) {
+    for (const breite of sprung.breiten) {
+      test(`${sprung.name} @${breite} Skala ${skala}: Sprungziel landet unter der Arbeitsleiste, unverdeckt`, async ({ page }) => {
+        await page.addInitScript(([key, wert]) => {
+          try { window.localStorage.setItem(key, String(wert)); } catch { /* Speicher gesperrt: Standardskala */ }
+        }, [SKALA_KEY, skala] as const);
+        await page.setViewportSize({ width: breite, height: 900 });
+        await page.goto(sprung.route);
+        const marke = page.locator('[data-verdikt-sprung]').first();
+        await expect(marke).toBeVisible();
+        await marke.click();
+
+        const messen = () => page.evaluate((selektor) => {
+          const ziel = document.querySelector(selektor)!;
+          const arbeitsleiste = document.querySelector('nav[aria-label="Offene Reiter"]')!.getBoundingClientRect();
+          return {
+            abstand: ziel.getBoundingClientRect().top - arbeitsleiste.bottom,
+            wurzelPx: parseFloat(getComputedStyle(document.documentElement).fontSize),
+          };
+        }, sprung.ziel);
+        // Weiches Scrollen ausschwingen lassen: lesen, sobald die Scrollposition
+        // dreimal hintereinander (je 150 ms) unverändert ist — feste Wartezeit
+        // reicht auf langen Seiten (3000 px weiches Scrollen) unter Last nicht.
+        let letzte = -1;
+        let ruhig = 0;
+        for (let i = 0; i < 80 && ruhig < 3; i++) {
+          await page.waitForTimeout(150);
+          const y = await page.evaluate(() => window.scrollY);
+          ruhig = y === letzte ? ruhig + 1 : 0;
+          letzte = y;
+        }
+        expect(ruhig, 'Scrollen ist zur Ruhe gekommen').toBeGreaterThanOrEqual(3);
+        const m = await messen();
+        expect(m.abstand, 'Ziel-Oberkante nicht unter der Arbeitsleiste (Untergrenze)').toBeGreaterThanOrEqual(-1);
+        expect(m.abstand, 'Ziel-Oberkante nicht weit unter dem Kopf geparkt (Obergrenze)').toBeLessThanOrEqual(m.wurzelPx + 4);
+      });
+    }
+  }
+}

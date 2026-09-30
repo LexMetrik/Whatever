@@ -243,7 +243,7 @@ export function VorlagenWizardRahmen({
 
         {/* Vorschau – mobil einklappbar, Desktop klebend; identischer Inhalt
             zweimal platziert (kein Remount, wie bisheriger Funktionsaufruf) */}
-        <details id="wizard-vorschau" className={`${pk('md:hidden', '@3xl/pane:hidden')} bg-surface border border-line scroll-mt-24`}
+        <details id="wizard-vorschau" className={`${pk('md:hidden', '@3xl/pane:hidden')} bg-surface border border-line lc-sprungziel`}
           open={vorschauOffen} onToggle={(e) => setVorschauOffen((e.currentTarget as HTMLDetailsElement).open)}>
           {/* `data-dokument-platz`: auf schmalen Schirmen ist dieser Griff die
               STELLE des Dokuments (qsui-hierarchie I8: nie nichts). Die

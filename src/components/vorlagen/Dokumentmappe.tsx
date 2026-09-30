@@ -261,7 +261,7 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
   // WELCHE Angabe fehlt, sagen weiterhin die Blocker aus `MappenGates` darüber.
   if (!dok) {
     return (
-      <div id={zielId} data-dokument-platz className="scroll-mt-24">
+      <div id={zielId} data-dokument-platz className="lc-sprungziel">
         <ErgebnisPlatzhalter titel="Dokumente"
           was="Sobald die Angaben oben vollständig sind, entstehen hier die Dokumente der Mappe — mit Live-Vorschau und Export." />
       </div>
@@ -300,7 +300,7 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
           Sprungziel darf sich nicht verschieben, sobald die Dokumente entstehen. */}
       {/* V3: Registerfläche (F0.2), Haus-Reiter `.lc-tab` mit `data-reg="w"`
           (Kante im Register); Umbruch statt Querscroll — alle Dokumente sichtbar. */}
-      <div id={zielId} data-dokument-platz className="flex flex-wrap gap-x-4 bg-reg-w-flaeche px-3 scroll-mt-24" role="tablist" aria-label="Dokumente der Mappe">
+      <div id={zielId} data-dokument-platz className="flex flex-wrap gap-x-4 bg-reg-w-flaeche px-3 lc-sprungziel" role="tablist" aria-label="Dokumente der Mappe">
         {dokumente.map((d, i) => {
           const aktiv = d.id === dok.id;
           return (
