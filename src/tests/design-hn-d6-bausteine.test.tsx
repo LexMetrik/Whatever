@@ -174,9 +174,10 @@ describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
   it('DK-11 · Deaktiviert-Rolle: kein `disabled:opacity-40` mehr, die Rolle steht einmal in index.css', () => {
     expect(CSS).toMatch(/\.lc-deaktiviert:disabled\s*\{\s*opacity:\s*\.4;/);
     const rest = alleTsx().filter((p) => /disabled:opacity-40/.test(liesOhneKommentare(p))).map(rel);
-    // MappenDialog: ein FÜLL-Knopf (`lc-btn-primary`) — dort trägt `.lc-btn-primary:disabled` die Fläche;
-    // die Angleichung wäre sichtbar, nicht optikneutral (Posten-Stand).
-    expect(rest).toEqual(['components/layout/reiterleiste/MappenDialog.tsx']);
+    // Damals (#1191) blieb MappenDialog als FÜLL-Knopf (`lc-btn-primary`) stehen — dort trägt
+    // `.lc-btn-primary:disabled` die Fläche. Seit #1194 (30.9.2026) ist die doppelte Dämpfung dort
+    // entfernt; die Liste ist leer und bleibt es.
+    expect(rest).toEqual([]);
   });
 
   it('DK-12 · Hover-Rolle «Aktion»: `lc-hover-akzent` in index.css, die geteilten Bausteine nutzen sie', () => {
