@@ -99,6 +99,7 @@
     "materialien:botschaften": "vite-node scripts/materialien/botschaften-generieren-run.ts --",
     "materialien:bs": "vite-node scripts/materialien/bs-materialien-run.ts --",
     "normtext:revisionen": "vite-node scripts/normtext/revisionen-generieren-run.ts --",
+    "normtext:revisionen-aus-raw": "vite-node scripts/normtext/revisionen-aus-raw-run.ts",
     "check:revisionen": "vite-node scripts/normtext/check-revisionen.ts",
     "check:revisionen-netz": "vite-node scripts/normtext/check-revisionen.ts -- --netz",
     "check:revisionen-rectifies": "vite-node scripts/normtext/check-revisionen-rectifies.ts",

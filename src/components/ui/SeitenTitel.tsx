@@ -43,14 +43,15 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 
 /**
  * Schriftstimme des Titels (DESIGN-REGLEMENT F0.11, Stufe 1): die Serif-Stimme
- * des Gelesenen. Es gibt keine zweite Stimme mehr — die Prop bleibt bis zur
- * Aufrufer-Umstellung (HN-D2 PR 2), weil fünf Aufrufer sie noch ausdrücklich
- * schreiben, davon drei in Flächen im Umbau (Erlass-, Entscheid-, Material-Kopf).
+ * des Gelesenen. Es gibt keine zweite Stimme mehr — die Prop bleibt nur, weil
+ * `ErlassLeserKopf` (gesetz-leser, Fläche im Umbau) sie noch schreibt; die
+ * übrigen Aufrufer sind seit HN-D2 PR 2 (30.9.2026) umgestellt.
  */
 export type TitelStimme = 'serif';
 
 export function SeitenTitel({ className, id, children }: {
-  /** Übergang (s. o.): wird nicht gelesen, die Stimme ist immer `serif`. */
+  /** @deprecated — letzter Verwender ErlassLeserKopf (gesetz-leser, Nachzug).
+   *  Wird nicht gelesen, die Stimme ist immer `serif`. */
   stimme?: TitelStimme;
   /** Zusätzliche Klassen des Aufrufers (Umbruch-Regeln, Höhen-Reservierung). */
   className?: string;

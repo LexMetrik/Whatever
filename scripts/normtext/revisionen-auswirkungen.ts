@@ -118,6 +118,35 @@ export function ocWurzel(uri: string): string | undefined {
   return /^(https:\/\/fedlex\.data\.admin\.ch\/eli\/oc\/[^/]+\/[^/]+)/.exec(uri)?.[1];
 }
 
+/**
+ * W3-10 (W2·27-BUND-FERTIG, 30.9.2026): eine BERICHTIGUNG ist kein gestaffelt in Kraft gesetzter
+ * Erlass. Fedlex führt für sie mehrere Auswirkungs-Daten (Geltung des berichtigten Textes und
+ * Publikationsdatum); daraus machte der Generator je Datum eine Zeile mit «gestaffelt in Kraft …»
+ * (6 Zeilen in BMV/HMG/KLV, gemessen 30.9.2026). Amtlich: BMV ← oc/2016/497 (AS 2016 2965), pdf-a
+ * «Berichtigung (Art. 10 Abs. 1 PublG) … Art. 4 Abs. 2 Betrifft nur den italienischen Text. 23.
+ * August 2016 Bundeskanzlei» — EINE Berichtigung (KLV ← AS 2018 2837 «24. Juli 2018», HMG ←
+ * AS 2018 5449 «13. Dezember 2018»: je eine). Regel (eng, deterministisch): hat ein ändernder oc
+ * NUR Auswirkungen vom Typ «berichtigung» und mehr als ein Datum, bleibt EINE Zeile am Datum,
+ * das Fedlex dem oc selbst als `dateEntryInForce` gibt (`eigenDatum`; in allen 45 reinen
+ * Berichtigungen mit mehreren ROHEN Auswirkungsdaten liegt es darunter, Messung 30.9.2026 über
+ * den store-raw; liegt es nicht darunter: das früheste). Erlasse mit weiteren Wirkungen und echte Etappen bleiben unberührt
+ * (AE-5). Mutiert `datiert` (oc → Datum → Wirkungen) und liefert die weggefallenen Daten: deren
+ * Fassungen ordnet Fedlex der Berichtigung zu — sie dürfen keinen Sammelerlass-Marker tragen.
+ */
+export function kollabiereBerichtigungen(
+  datiert: Map<string, Map<string, Set<Wirkung>>>, eigenDatum: (oc: string) => string | undefined,
+): Set<string> {
+  const entfallen = new Set<string>();
+  for (const [oc, proDatum] of datiert) {
+    if (proDatum.size < 2 || [...proDatum.values()].some((s) => [...s].some((w) => w !== 'berichtigung'))) continue;
+    const daten = [...proDatum.keys()].sort();
+    const eigen = eigenDatum(oc)?.slice(0, 10);
+    const datum = eigen && proDatum.has(eigen) ? eigen : daten[0];
+    for (const d of daten) if (d !== datum) { proDatum.delete(d); entfallen.add(d); }
+  }
+  return entfallen;
+}
+
 // ── Pfad (c): Rechtsanalyse «Auswirkungen» + Geltungsfenster je Abstract ────────────
 // WAF-FALLE (live 23.9.2026): der Endpunkt steht hinter einer Web-Application-Firewall
 // des BIT, die SQL-ähnliche Abfragen mit HTTP 400 + HTML-Seite «Web Page Blocked!»

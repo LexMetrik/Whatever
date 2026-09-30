@@ -161,25 +161,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/824",
-      "dateDocument": "2018-12-13",
-      "roFundstelle": "AS 2018 5449",
-      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
-      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
-      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2019-01-01",
-        "2020-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/824/de",
-      "sha": "8ffce63f5e646fa0be2dcd1bcf52aee512286b640b9598e193e26956698d7909"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2020-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/272",
       "dateDocument": "2019-04-10",
       "roFundstelle": "AS 2019 1393",
@@ -256,12 +237,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2019-01-01",
-        "2020-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/824/de",
-      "sha": "2c026d63a522cff1718655e44e2667df0eed08f13f3fc299eb39f946fc0b8f48"
+      "sha": "4df82bd954eb8d674aadccbfc17ee6b1af03d56b3736d580a297ec6e6a3027ac"
     },
     {
       "art": "aenderung",
@@ -470,5 +447,5 @@
       "sha": "401698c8b628c3623d3b7777804327d8d90513a50352aad03b6f106dc9afdc23"
     }
   ],
-  "sha": "e303ddf3e779404f3ad599e65b5946b970cf6f2a5848f5c3a21d837c6eef314b"
+  "sha": "c6632c62197ddd4bc8882cd5ad8669105d0fa5f44228d80f84699d7134feb6c1"
 }

@@ -24,7 +24,7 @@
 // nicht. Wer die Klasse dort dicht braucht: Scan-Wurzeln/Endungen erweitern.
 
 import { describe, expect, it } from 'vitest';
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -37,7 +37,7 @@ import {
   routenEbeneVonKey,
 } from '../lib/normtext/erlassAdresse';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
-import { ohneKommentare } from './appDateien';
+import { appDateien, ohneKommentare } from './appDateien';
 import { umzugsZiel } from '../pages/gesetz-leser/adressUmzug';
 
 const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
@@ -58,20 +58,16 @@ const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
  *  geteilte `ohneKommentare` aus `appDateien.ts` — es streicht nur ganze
  *  Kommentarzeilen und laesst `://` in Code-Zeilen stehen (alle Tests dieser
  *  Datei unveraendert gruen). Was oben als Ausnahme gefuehrt wird, betrifft nur
- *  noch die eigene Verzeichnis-Wanderung `dateien()`. */
-
-function dateien(ordner: string, treffer: string[] = []): string[] {
-  for (const n of readdirSync(ordner)) {
-    const p = join(ordner, n);
-    if (statSync(p).isDirectory()) {
-      if (n === 'tests' || n === 'fixtures' || n === 'node_modules') continue;
-      dateien(p, treffer);
-    } else if (/\.tsx?$/.test(n)) {
-      treffer.push(p);
-    }
-  }
-  return treffer;
-}
+ *  noch die eigene Verzeichnis-Wanderung `dateien()`.
+ *
+ *  Ergaenzung 2 (W2·19 Kleinaufraeumen 2, 30.9.2026): auch `dateien()` ist
+ *  seither der geteilte Sweep `appDateien(['.ts', '.tsx'], wurzel)` — gemessen
+ *  dieselbe Dateimenge wie die alte eigene Wanderung (src 820, scripts 424,
+ *  e2e 207, abnahme 1; Mengenvergleich, kein `node_modules` unter den Wurzeln).
+ *  Damit ruft diese Datei kein `readdirSync` mehr, und die Sweep-Ausnahme in
+ *  `design-r5-konsistenz` (R5-A) ist entfallen; der Begruendungssatz oben bleibt
+ *  stehen (Belege altern nicht). */
+const dateien = (wurzel: string): string[] => appDateien(['.ts', '.tsx'], wurzel);
 
 // Die eine erlaubte Stelle. Alles andere ruft sie.
 const QUELLE = 'src/lib/normtext/erlassAdresse.ts';
