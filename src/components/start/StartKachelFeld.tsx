@@ -52,11 +52,16 @@ export interface KachelDef {
   einheit: string;
   nutzen: string;
   teile?: string;
-  /** W2·31 G (26.9.2026): `teile` nur ab `2xl` (1536 px) zeigen — für Kacheln,
-   *  deren Teile-Zeile NUR den Leerraum füllt, der erst ab `weit` entsteht
-   *  (Kachel 348→508 px, Höhe bleibt 280 px fest, U13-Deckel). Kacheln unter
-   *  1536 px bleiben so unverändert (Bauregel des Bündels). */
-  teileAb2xl?: boolean;
+  /** W2·31 G (26.9.2026): `teile` nur zeigen, wo die Kachel breit ist — für
+   *  Kacheln, deren Teile-Zeile NUR den Leerraum füllt, der erst ab `weit`
+   *  entsteht (Kachel 348→508 px, Höhe bleibt 280 px fest, U13-Deckel).
+   *  W2·31 J (30.9.2026): die Schwelle hängt an der KACHELBREITE
+   *  (`@md/kachel` = 28 rem des Kachel-Containers, `.lc-start-zelle` und
+   *  `.lc-start-gesicht`), nicht mehr am Fenster (`2xl`): eine offene
+   *  Seitenleiste verkleinert die Kachel, ohne dass `2xl` es merkt (gemessen
+   *  @1536 mit Seitenleiste 460: Kachel 326 px, Zeile trotzdem sichtbar;
+   *  Skala 1.4 dreizeilig). Darunter bleibt die Kachel unverändert (Bauregel G). */
+  teileNurBreit?: boolean;
 }
 
 const BLATT_ID = 'lm-start-blatt';
@@ -276,7 +281,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           const klappt = AUFKLAPPBAR.has(k.rubrik);
           const diese = offen && sicht?.rubrik === k.rubrik;
           return (
-            <div key={k.rubrik} className="lc-start-zelle"
+            <div key={k.rubrik} className="lc-start-zelle @container/kachel"
               ref={(el) => { if (el) zellen.current.set(k.rubrik, el); else zellen.current.delete(k.rubrik); }}
               data-zurueck={zurueckgetreten && !diese ? '' : undefined}>
               <RubrikKachel {...gesicht(k)} kompakt={schmal}
@@ -307,7 +312,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           </div>
           {!schmal && kontur && (
             <div aria-hidden className={`lc-start-schicht ${FLAECHE[kachel.reg]}`} data-an={bewegt ? '' : undefined}>
-              <div className="lc-start-gesicht"
+              <div className="lc-start-gesicht @container/kachel"
                 style={{ top: kontur.oben, left: kontur.links, width: kontur.breite, height: kontur.hoehe }}>
                 <RubrikKachel {...gesicht(kachel)} alsBild />
               </div>
@@ -325,7 +330,7 @@ function gesicht(k: KachelDef) {
   return {
     reg: k.reg, titel: <span className="break-words">{k.titel}</span>, zahl: k.zahl, einheit: k.einheit, nutzen: k.nutzen,
     extra: k.teile && (
-      <span className={`num text-body-s leading-snug text-ink-700 ${k.teileAb2xl ? 'hidden 2xl:block' : ''}`}>{k.teile}</span>
+      <span className={`num text-body-s leading-snug text-ink-700 ${k.teileNurBreit ? 'hidden @md/kachel:block' : ''}`}>{k.teile}</span>
     ),
   };
 }

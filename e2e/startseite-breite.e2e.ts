@@ -98,6 +98,7 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
   // unsichtbar. ROT ZU BEKOMMEN: `teileAb2xl` an der Kachel streichen
   // (Zeile zeigt sich schon @1440) oder `hidden`/`2xl:block` in
   // `StartKachelFeld.tsx`s `gesicht()` entfernen.
+  // Nachtrag 30.9.2026 (W2·31 J): heute `teileNurBreit` / `@md/kachel:block`.
   for (const [breite, sichtbar] of [[1440, false], [1536, true], [1920, true]] as const) {
     test(`(1b) @${breite}: Rechtsprechung-Teile «Leitentscheide» ${sichtbar ? 'sichtbar' : 'verborgen'}, Zelle 280 px`, async ({ page }) => {
       await start(page, breite, 1000);
@@ -117,6 +118,54 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     });
   }
 
+  // W2·31 J (30.9.2026, Posten «Teile-Zeile `2xl:block` hängt am Viewport»):
+  // die Teile-Zeile der Rechtsprechungs-Kachel hängt an der KACHELBREITE
+  // (Container `kachel`, Schwelle `@md` = 28 rem), nicht am Fenster. Mit offener
+  // Seitenleiste (460 px) ist die Kachel @1536 nur 326 px breit — die Zeile
+  // blieb trotzdem sichtbar (`2xl` sieht nur das Fenster); Skala 1.4 schiebt
+  // dieselbe Kachel in rem auf 21 rem. Zusicherung mit Unter- UND Obergrenze:
+  // sichtbar ⇔ Kachelbreite ≥ 28 rem (am ECHTEN Wurzelmass gerechnet, nicht
+  // an einer festen px-Zahl), und sichtbar heisst genau EINE Zeile; die Zelle
+  // bleibt 17.5 rem hoch (U13). ROT ZU BEKOMMEN (§6.7): in `StartKachelFeld.tsx`
+  // `hidden @md/kachel:block` zurück auf `hidden 2xl:block` — dann bleibt die Zeile
+  // @1536 mit Seitenleiste sichtbar (326 px = 20.4 rem) und bei Skala 1.4 @1536.
+  const SKALA_KEY = 'lexmetrik-schriftskala'; // useSchriftskala.ts
+  for (const { breite, hoehe, leiste, skala, sichtbar } of [
+    { breite: 1440, hoehe: 900, leiste: 0, skala: '1', sichtbar: false }, // 348 px = 21.75 rem
+    { breite: 1536, hoehe: 864, leiste: 0, skala: '1', sichtbar: true }, // 508 px = 31.75 rem
+    { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1', sichtbar: false }, // 326 px = 20.4 rem (vorher sichtbar)
+    { breite: 1920, hoehe: 1080, leiste: LEISTE, skala: '1', sichtbar: true }, // 508 px
+    { breite: 1536, hoehe: 864, leiste: 0, skala: '1.4', sichtbar: false }, // 471 px = 21.0 rem
+    { breite: 1920, hoehe: 1080, leiste: 0, skala: '1.4', sichtbar: true }, // 663 px = 29.6 rem
+    { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1.4', sichtbar: false }, // 241 px = 10.8 rem (vorher dreizeilig sichtbar)
+    { breite: 1750, hoehe: 1000, leiste: 0, skala: '1.4', sichtbar: false }, // 578 px = 25.81 rem (gemessen 30.9.2026) — knapp UNTER der 28-rem-Schwelle; ohne diesen Fall bliebe eine auf 22/24 rem gesenkte Schwelle grün (Nachbesserung Gegenprüfung)
+  ]) {
+    test(`(1c) @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ''} Skala ${skala}: Teile «Leitentscheide» ${sichtbar ? 'sichtbar, eine Zeile' : 'verborgen'} (Kachelbreite ${sichtbar ? '≥' : '<'} 28 rem)`, async ({ page }) => {
+      if (leiste) await mitLeiste(page, leiste);
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
+      await start(page, breite, hoehe);
+      const m = await page.evaluate(() => {
+        const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const zelle = document.querySelectorAll('.lc-start-zelle')[1]!;
+        const span = [...zelle.querySelectorAll('span')].find((s) => (s.textContent ?? '').includes('Leitentscheide'))!;
+        const r = span.getBoundingClientRect();
+        return {
+          kachelRem: Math.round(zelle.getBoundingClientRect().width / rem * 100) / 100,
+          zelleRem: Math.round(zelle.getBoundingClientRect().height / rem * 100) / 100,
+          sichtbar: r.width > 0 && r.height > 0,
+          zeilen: r.height > 0 ? Math.round(r.height / parseFloat(getComputedStyle(span).lineHeight)) : 0,
+        };
+      });
+      expect(m.sichtbar, JSON.stringify(m)).toBe(sichtbar);
+      expect(m.kachelRem >= 28, `sichtbar ⇔ Kachel ≥ 28 rem (${JSON.stringify(m)})`).toBe(sichtbar);
+      if (sichtbar) expect(m.zeilen, `Teile-Zeile einzeilig (${JSON.stringify(m)})`).toBe(1);
+      // Die Teile-Zeile darf die Zelle nie über die Mindesthöhe treiben (U13);
+      // die schmalste Zelle (241 px, Skala 1.4 mit Seitenleiste) wächst schon
+      // ohne sie durch ihren Fliesstext — dort gilt die Zusicherung nicht.
+      if (sichtbar) expect(m.zelleRem, `Zelle bleibt 17.5 rem (${JSON.stringify(m)})`).toBe(17.5);
+    });
+  }
+
   for (const { breite, leiste, spalten } of [
     { breite: 1920, leiste: 0, spalten: 3 },
     { breite: 1440, leiste: 0, spalten: 2 },
@@ -131,14 +180,23 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     });
   }
 
-  for (const { breite, hoehe, leiste } of [
-    { breite: 1536, hoehe: 864, leiste: 0 },
-    { breite: 1680, hoehe: 1050, leiste: 0 },
-    { breite: 1920, hoehe: 1080, leiste: 0 },
-    { breite: 1536, hoehe: 864, leiste: LEISTE },
+  // W2·31 J (30.9.2026): U13 bei Schriftskala 1.4. Gemessen @1536×864: Feldkopf
+  // 305 px + Blatt 806 px (2 × 17.5 rem × 1.4 + Lücke) = Unterkante 1112 px —
+  // das Blatt ist an der Mindesthöhe der Kachel (rem!) gebunden und die Gesetze-
+  // Wahl braucht natürlich selbst 743–767 px; vor 1112 px Fensterhöhe hält U13
+  // bei 1.4 darum KEINE Bauart ohne Inhaltsverlust (Bericht W2·31 J). Gehalten
+  // wird und hier bewacht: ab Fensterhöhe 1200 steht jedes Blatt ganz im Fenster
+  // (Obergrenze: Blatt wächst bei 1.4 nie über 1200 − 305 px).
+  for (const { breite, hoehe, leiste, skala } of [
+    { breite: 1536, hoehe: 864, leiste: 0, skala: '1' },
+    { breite: 1680, hoehe: 1050, leiste: 0, skala: '1' },
+    { breite: 1920, hoehe: 1080, leiste: 0, skala: '1' },
+    { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1' },
+    { breite: 1920, hoehe: 1200, leiste: 0, skala: '1.4' },
   ]) {
-    test(`(3) U13 @${breite}×${hoehe}${leiste ? ' mit Seitenleiste' : ''}: alle vier Blätter ganz im Fenster`, async ({ page }) => {
+    test(`(3) U13 @${breite}×${hoehe}${leiste ? ' mit Seitenleiste' : ''}${skala !== '1' ? ` Skala ${skala}` : ''}: alle vier Blätter ganz im Fenster`, async ({ page }) => {
       if (leiste) await mitLeiste(page, leiste);
+      if (skala !== '1') await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
       await page.setViewportSize({ width: breite, height: hoehe });
       for (const name of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge']) {
         await page.goto('/');

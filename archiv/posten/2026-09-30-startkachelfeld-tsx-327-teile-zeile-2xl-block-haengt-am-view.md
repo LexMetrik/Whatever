@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 kosmetisch, Container-Query wie #1155 (Prüfer #1157).
+
+**Erledigt 2026-09-30:** PR #1162
