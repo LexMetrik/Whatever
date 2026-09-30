@@ -218,6 +218,16 @@ export interface BrowseMaterial {
   rang: number;
   normKeys: string[];
   hinweis: string | null;
+  /**
+   * Herkunft der Zuordnung JE ERLASS (nur behoerde==='BS-GR'; Erlass-Key → 'amtlich'
+   * | 'maschinell'), vom Generator aus `bsKanten[].quelle` geschrieben (W2·27-BUND-FERTIG,
+   * Nachprüfung Bug-Check #1097). Bleibt im Kern, weil das Panel «Materialien» das
+   * «maschinell»-Etikett je Erlass zeigt; `hinweis` gilt dagegen je GESCHÄFT und darf
+   * nicht als Herkunft eines einzelnen Erlasses gedeutet werden (ein gemischtes Geschäft
+   * trägt beide Texte). Regel/Beleg bleiben in `bsKanten` (register-provenienz.json, kein
+   * Browser-Kanal). Fehlt der Erlass hier, gilt «maschinell» (§8).
+   */
+  bsZuordnung?: Readonly<Record<string, 'amtlich' | 'maschinell'>>;
   /** BBl-Fundstelle («BBl 2006 1»; nur Botschaften, M-7 25.9.2026). */
   fundstelle?: string;
   /** Vernehmlassungs-Zustand (Paket 3; nur bei doktyp==='vernehmlassung' gesetzt).
