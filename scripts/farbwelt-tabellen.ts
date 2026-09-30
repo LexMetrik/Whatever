@@ -301,11 +301,11 @@ export const RISSE: { fg: string; bg: string; mode: Mode; schwelle: number; ist:
   // reg-w 4.59·4.18 — die zwei hellen Paare reg-m/reg-w tragen 4.5 knapp und
   // stehen darum nicht hier). Es ist KEIN Bau-Mangel, solange die Flächen-Rolle
   // «Tinte leise» (`index.css`, `:is(.bg-reg-*-flaeche, …) :is(.text-ink-500,
-  // .lc-overline)`) die Tinte auf ink-600 hebt — deren Paar sind die PFLICHT-
+  // .lc-overline)` — der Overline-Zweig nur OHNE eigene Farb-Utility) die Tinte auf ink-600 hebt — deren Paar sind die PFLICHT-
   // Zeilen `ink-600`/`reg-*-flaeche` oben. Die Risse halten fest, WARUM die
   // Rolle besteht (Rückbau-Signal: fällt einer «geheilt», ist sie für dieses
   // Paar überflüssig) und dass eine Flächen-Verschiebung nicht tiefer sinkt.
-  // Verknüpfung zur Rolle: `src/tests/design-dk-c-farbe-kontrast.test.ts`.
+  // Verknüpfung zur Rolle: `src/tests/design-dk-c-farbe-kontrast.test.tsx`.
   { fg: 'ink-500', bg: 'reg-g-flaeche', mode: 'hell', schwelle: 4.5, ist: 4.42, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.63)' },
   { fg: 'ink-500', bg: 'reg-g-flaeche', mode: 'dunkel', schwelle: 4.5, ist: 4.24, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.25)' },
   { fg: 'ink-500', bg: 'reg-r-flaeche', mode: 'hell', schwelle: 4.5, ist: 4.31, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.49)' },

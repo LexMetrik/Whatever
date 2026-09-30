@@ -16,6 +16,12 @@
  * Quelltext messbar ist «diese Form kommt nicht vor»; der gerechnete Kontrast
  * kommt aus `scripts/farbwelt-messung.ts` (dieselbe Quelle wie das Farbwelt-Tor).
  *
+ * GRENZE DIESES WÄCHTERS (Gegenprüfung 30.9.2026): die Quelltext-Sonde sieht
+ * die KASKADE nicht — eine später stehende, überschreibende Regel bliebe grün.
+ * Dass die Rolle tatsächlich gewinnt (und eine eigene Farb-Utility am Overline
+ * NICHT überschreibt), belegt die Messung im Browser:
+ * `e2e/design-tinte-leise.e2e.ts` (computed color), nicht dieser Test.
+ *
  * ROT-BEWEIS (§6.7): jede Sonde trägt eine NEGATIV-KONTROLLE mit dem Wortlaut
  * VOR dem Bündel (Belege, nie nachgeführt, §2b). Diese Datei steht ausserhalb
  * der App-Sweeps (`tests/` wird nicht gefegt), darf also die verbotenen Formen
@@ -132,9 +138,15 @@ const hatRiss = (fg: string, bg: string, mode: Mode): boolean =>
   new RegExp(`\\{\\s*fg:\\s*'${fg}',\\s*bg:\\s*'${bg}',\\s*mode:\\s*'${mode}'`).test(TABELLEN);
 const MODI: Mode[] = ['hell', 'dunkel'];
 
-/** Die Klassen der Rolle: `:is(<liste>) :is(.text-ink-500, .lc-overline) { color: var(--ink-600) }`. */
+/** Der Overline-Zweig der Rolle: nur Overlines OHNE eigene Farb-Utility (Gegenprüfung 30.9.2026). */
+const OVERLINE_OHNE_FARBE = String.raw`\.lc-overline:where\(:not\(\[class\^="text-"\],\s*\[class\*=" text-"\],\s*\[class\*=":text-"\]\)\)`;
+
+/**
+ * Die Klassen der Rolle: `:is(<liste>) :is(.text-ink-500, <Overline ohne eigene Farbe>)
+ * { color: var(--ink-600) }`. Die Liste darf Zeilen umbrechen.
+ */
 function rollenKlassen(css: string): string[] | null {
-  const m = /:is\(([^)]*)\)\s*:is\(\s*\.text-ink-500\s*,\s*\.lc-overline\s*\)\s*\{\s*color\s*:\s*var\(--ink-600\)/.exec(css);
+  const m = new RegExp(String.raw`:is\(([^)]*)\)\s*:is\(\s*\.text-ink-500\s*,\s*${OVERLINE_OHNE_FARBE}\s*\)\s*\{\s*color\s*:\s*var\(--ink-600\)`).exec(css);
   return m ? m[1].split(',').map((k) => k.trim()).filter(Boolean) : null;
 }
 
@@ -153,8 +165,25 @@ function flaechenOhneRolle(css: string, rolle: readonly string[]): string[] {
 describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
   it('die Rolle steht in index.css und trägt alle vier bg-reg-*-flaeche-Utilities', () => {
     const rolle = rollenKlassen(CSS);
-    expect(rolle, 'Regel `:is(…) :is(.text-ink-500, .lc-overline) { color: var(--ink-600) }` fehlt').not.toBeNull();
+    expect(rolle, 'Regel `:is(…) :is(.text-ink-500, .lc-overline:where(:not(…text-…))) { color: var(--ink-600) }` fehlt').not.toBeNull();
     for (const f of FLAECHEN) expect(rolle, `bg-reg-${f}-flaeche`).toContain(`.bg-reg-${f}-flaeche`);
+  });
+
+  it('der Overline-Zweig trifft nur Overlines ohne eigene Farbe (`text-danger-700` bleibt Warnfarbe)', () => {
+    const m = /:where\(:not\(([^)]*)\)\)/.exec(CSS.slice(CSS.indexOf('.lc-overline:where(')));
+    expect(m, '`.lc-overline:where(:not(…))` fehlt an der Rolle').not.toBeNull();
+    for (const muster of ['[class^="text-"]', '[class*=" text-"]', '[class*=":text-"]']) {
+      expect(m![1], muster).toContain(muster);
+    }
+  });
+
+  it('ROT-BEWEIS: die Rolle VOR der Nachbesserung (`.lc-overline` unbedingt) wird nicht als Rolle erkannt', () => {
+    // Wortlaut vor 30.9.2026 (Gegenprüfung): der Overline-Zweig ohne Ausschluss
+    // schlug per Ungeschichtet-Vorrang auch `lc-overline text-danger-700`.
+    const vorher = ':is(.bg-reg-g-flaeche, .ub-kopf) :is(.text-ink-500, .lc-overline) { color: var(--ink-600); }';
+    expect(rollenKlassen(vorher)).toBeNull();
+    const nachher = ':is(.bg-reg-g-flaeche, .ub-kopf) :is(.text-ink-500, .lc-overline:where(:not([class^="text-"], [class*=" text-"], [class*=":text-"]))) { color: var(--ink-600); }';
+    expect(rollenKlassen(nachher)).toEqual(['.bg-reg-g-flaeche', '.ub-kopf']);
   });
 
   it('jede CSS-Fläche mit --reg-*-flaeche als Hintergrund gehört zur Rolle', () => {
