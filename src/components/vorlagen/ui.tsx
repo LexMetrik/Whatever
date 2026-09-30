@@ -363,12 +363,17 @@ export function BeruehrtRahmen({ children }: { children: React.ReactNode }) {
 /** Einheitliche Eingabefehler-Box (vorher 4 Varianten; immer role="alert").
  *  `data-fehlerbox`: Anker für `.lc-rechner-spalten` (index.css, W2·31 B3-
  *  Nachzug) — steht kein Ergebnis da, nimmt die Box dessen Platz rechts ein. */
-export function FehlerBox({ fehler }: { fehler: string[] }) {
+export function FehlerBox({ fehler, titel = 'Eingabefehler' }: {
+  fehler: string[];
+  /** Überschrift der Box. Vorgabe «Eingabefehler»; ein Fehler, der nicht aus
+   *  einer Eingabe stammt (Sammlung nicht ladbar), benennt sich selbst (§8). */
+  titel?: string;
+}) {
   const beruehrt = useContext(BeruehrtContext);
   if (!beruehrt || fehler.length === 0) return null;
   return (
     <div role="alert" data-fehlerbox="" className="lc-notice lc-notice-danger space-y-1">
-      <p className="lc-overline text-danger-700 mb-1">Eingabefehler</p>
+      <p className="lc-overline text-danger-700 mb-1">{titel}</p>
       {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={f} /></p>)}
     </div>
   );

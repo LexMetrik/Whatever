@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import type { Register } from '../layout/bereiche';
+import { Ladeanzeige } from '../ui/Ladeanzeige';
 import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
+import { FehlerBox } from '../vorlagen/ui';
 
 // ─── Startseite · geteilte Bausteine der aufgeklappten Blätter (W2·29-WERKBANK-START-FEINSCHLIFF)
 //
@@ -47,6 +49,20 @@ export function WeitereKnopf({ rest, mehr }: { rest: number; mehr: () => void })
       Weitere anzeigen (<span className="num">{rest.toLocaleString('de-CH')}</span> weitere)
     </button>
   );
+}
+
+/** Laden · Fehler · bereit einer Sammlung im Blatt — EINE Weiche statt je Blatt
+ *  eine eigene (Gesetze, Materialien, Rechtsprechung trugen je eine Kopie: nackter
+ *  `<p>` in ink-500 bzw. ink-700, Fehler ohne Haus-Box). Laden = der eine
+ *  Lade-Zustand (`ui/Ladeanzeige`, Ablesekante + Text, `role="status"`), Fehler =
+ *  die Haus-Fehlerbox (`FehlerBox`, `role="alert"`). Der Wortlaut bleibt beim
+ *  Aufrufer: er nennt die Sammlung (§8), der Baustein nicht. W2·19 DK-B. */
+export function BlattLaedt({ laedt, fehler, ladetext, fehlertext, children }: {
+  laedt: boolean; fehler: boolean; ladetext: string; fehlertext: string; children: () => ReactNode;
+}) {
+  if (fehler) return <FehlerBox titel="Laden fehlgeschlagen" fehler={[fehlertext]} />;
+  if (laedt) return <Ladeanzeige text={ladetext} className="py-6" />;
+  return <>{children()}</>;
 }
 
 /** Fläche je Register — volle Klassennamen, damit Tailwind sie findet. */
