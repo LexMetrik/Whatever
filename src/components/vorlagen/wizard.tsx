@@ -544,7 +544,11 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
             ? `${ergebnis.protokoll.length} aufgenommen · ${nichtAufgenommen.length} nicht aufgenommen`
             : `${ergebnis.protokoll.length} Bausteine`})
         </summary>
-        <ul className="mt-3 space-y-2.5">
+        {/* Lesemass (W2·31 Bündel K): die Begründungstexte der Bausteine (p ohne
+            Klasse, aus den Vorlagen-Schemas) liefen @640 (Mobil-Vorschau, volle
+            Breite) bis 88 Zeichen/Zeile; Deckel an der Liste, nicht am Kasten
+            (`details.lc-card`). */}
+        <ul className="mt-3 max-w-reading-s space-y-2.5">
           {ergebnis.protokoll.map((p) => (
             <li key={p.bausteinId} className="text-body-s text-ink-600 space-y-1">
               <p><span className="num text-ink-500">{p.bausteinId}</span> – <NormText text={p.begruendung} /></p>

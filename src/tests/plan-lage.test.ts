@@ -7,7 +7,12 @@
 // Bau-Messreihe über scripts/plan/retro17Kern) ist mit retro:17/selbstopt:erheben
 // entfallen (Entscheid David 20.9.2026, Rückbau QS-EFFIZIENZ — Nachfolge-Messung
 // `npm run tor:bewaehrung`).
+import { execFileSync } from 'node:child_process';
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import {
+  laufeEcht,
   lageBlock,
   type LageRoh,
   lageZeilen,
@@ -294,6 +299,187 @@ describe('lageBlock — Verdrahtung wie in der CLI', () => {
     expect(() => lageBlock([], [], { prs: true, laufe: kaputt })).not.toThrow();
     const zeilen = lageBlock([], [], { prs: true, laufe: kaputt });
     expect(zeilen.filter((z) => z.startsWith('⚠️')).length).toBe(1);
+  });
+});
+
+// ─── W2·27-BUND-FERTIG: nur gelandete Arbeit ist keine Bau-Spur ────────────────
+// Vorfall 25.–30.9.2026: `QS-KORPUS` stand fünf Tage auf wip, weil der lokale
+// Branch `docs/qs-korpus-posten-rest-2` als Spur zählte, obwohl sein einziger
+// Commit per Squash gelandet war (`git cherry origin/main <branch>` → nur
+// `-`-Zeilen). `staleWip` schwieg, `plan:next` meldete das Baufeld belegt.
+describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)', () => {
+  const wip = (...ids: string[]) => ids.map((id) => ({ id, feld: null }));
+  const gelandet = (...branches: string[]) => new Set(branches);
+  const warnungen = (roh: LageRoh) => lageZeilen(roh, IDS).filter((z) => z.startsWith('⚠️'));
+
+  it('einziger Branch des Schritts nur gelandet → stale, Warnung nennt Grund und Branch', () => {
+    const roh = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'],
+      gelandet: gelandet('docs/qs-plan-review-rest'),
+    });
+    expect(staleWip(roh, IDS)).toEqual(['QS-PLAN-REVIEW']);
+    expect(warnungen(roh)).toContain(
+      '⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (Spur nur gelandete Arbeit: docs/qs-plan-review-rest): QS-PLAN-REVIEW' +
+        ' — Branch abräumen (npm run aufraeumen:git), dann freigeben (plan:set QS-PLAN-REVIEW status=ready|done|parked) oder Bau wieder aufnehmen.',
+    );
+  });
+
+  it('ein weiterer Branch MIT eigener Arbeit (nicht in der Karte) hält die Spur', () => {
+    const roh = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest', 'feat/qs-plan-review-neu'],
+      gelandet: gelandet('docs/qs-plan-review-rest'),
+    });
+    expect(staleWip(roh, IDS)).toEqual([]);
+    expect(warnungen(roh)).toEqual([]);
+  });
+
+  it('Bau-Platz, dessen Branch nur gelandet ist → stale; detached Platz bleibt Spur', () => {
+    const plaetze = parseWorktrees(PORCELAIN); // agent-abc [feat/qs-plan-review-lage], agent-def detached
+    const nurBranch = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: plaetze, branches: ['main', 'feat/qs-plan-review-lage'],
+      gelandet: gelandet('feat/qs-plan-review-lage'),
+    });
+    expect(staleWip(nurBranch, IDS)).toEqual(['QS-PLAN-REVIEW']);
+    const detached = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'),
+      worktrees: [{ name: 'qs-plan-review-platz', branch: null, haupt: false }],
+      branches: ['main', 'feat/qs-plan-review-lage'],
+      gelandet: gelandet('feat/qs-plan-review-lage'),
+    });
+    expect(staleWip(detached, IDS)).toEqual([]);
+  });
+
+  it('offener PR bleibt Spur, auch wenn der Branch nur gelandet ist', () => {
+    const roh = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'], prsGewuenscht: true,
+      prs: [{ number: 9, headRefName: 'agent-1', titel: 'QS-PLAN-REVIEW Stufe 3' }],
+      gelandet: gelandet('docs/qs-plan-review-rest'),
+    });
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('ohne Messung (gelandet fehlt) gilt der Namenstreffer wie bisher als Spur', () => {
+    const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'] });
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+});
+
+describe('sammleLage — Messung «nur gelandet» über git cherry (Attrappe)', () => {
+  const wip = [{ id: 'QS-PLAN-REVIEW', feld: null }];
+  const BASIS = { 'git worktree': '', 'git branch': 'main\ndocs/qs-plan-review-rest', 'git rev-parse': 'abc' };
+
+  it('nur `-`-Zeilen → gelandet; Basis ist origin/main', () => {
+    const aufrufe: string[] = [];
+    const laufe: Laufe = (cmd, args) => {
+      aufrufe.push(`${cmd} ${args.join(' ')}`);
+      return runner({ ...BASIS, 'git cherry': '- 111\n- 222\n' })(cmd, args);
+    };
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(roh.gelandet?.has('docs/qs-plan-review-rest')).toBe(true);
+    expect(aufrufe).toContain('git cherry refs/remotes/origin/main refs/heads/docs/qs-plan-review-rest');
+  });
+
+  it('eine `+`-Zeile → ungelandet → keine Karte, Branch bleibt Spur', () => {
+    const roh = sammleLage(wip, { prs: false, laufe: runner({ ...BASIS, 'git cherry': '- 111\n+ 222\n' }) });
+    expect(roh.gelandet).toBeUndefined();
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('cherry scheitert → nicht gemessen → Branch bleibt Spur (nicht stale)', () => {
+    const roh = sammleLage(wip, { prs: false, laufe: runner({ ...BASIS, 'git cherry': new Error('fatal') }) });
+    expect(roh.gelandet).toBeUndefined();
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('kein origin/main → Fallback auf lokales main', () => {
+    const aufrufe: string[] = [];
+    const laufe: Laufe = (cmd, args) => {
+      aufrufe.push(`${cmd} ${args.join(' ')}`);
+      return runner({ ...BASIS, 'git rev-parse': new Error('nicht da'), 'git cherry': '' })(cmd, args);
+    };
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(aufrufe).toContain('git cherry refs/heads/main refs/heads/docs/qs-plan-review-rest');
+    expect(roh.gelandet?.has('docs/qs-plan-review-rest')).toBe(true);
+  });
+
+  it('nur Branches eines wip-Schritts werden gemessen — Fremdbranches kosten keinen git-Aufruf', () => {
+    const laufe = vi.fn(runner({ ...BASIS, 'git branch': 'main\nchore/aufraeumen\nfeat/qs-code-turso-fts', 'git cherry': '' }));
+    sammleLage(wip, { prs: false, laufe });
+    expect(laufe.mock.calls.filter((c) => c[1][0] === 'cherry')).toEqual([]);
+  });
+});
+
+// Echte Squash-Landung gegen ein temporäres Repo — der Vorfall selbst, ohne
+// Attrappe: Branch mit EINEM Commit, dessen Patch per `merge --squash` auf main
+// liegt. `git branch --merged` kennt ihn nicht (Spitze ist kein Vorfahre), das
+// Patch-Gleichheits-Kriterium schon.
+describe('sammleLage — Squash-Landung gegen echtes Repo', () => {
+  const wip = [{ id: 'QS-PLAN-REVIEW', feld: null }];
+  const BRANCH = 'docs/qs-plan-review-rest';
+  const dirs: string[] = [];
+  afterAll(() => { for (const d of dirs) rmSync(d, { recursive: true, force: true }); });
+
+  const baue = (opt: { extraCommit?: boolean; mainZurueck?: boolean } = {}) => {
+    const root = mkdtempSync(join(tmpdir(), 'lexm-lage-gelandet-'));
+    dirs.push(root);
+    const repo = join(root, 'repo');
+    mkdirSync(repo);
+    const g = (args: string[], cwd = repo) => execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    g(['init', '-b', 'main']);
+    g(['config', 'user.email', 'test@example.invalid']);
+    g(['config', 'user.name', 'Test']);
+    g(['config', 'commit.gpgsign', 'false']);
+    const commit = (datei: string, text: string) => {
+      writeFileSync(join(repo, datei), text);
+      g(['add', '-A']);
+      g(['commit', '-m', `${datei}: ${text}`]);
+    };
+    commit('a.txt', 'A');
+    g(['checkout', '-b', BRANCH]);
+    commit('b.txt', 'B');
+    if (opt.extraCommit) commit('c.txt', 'C');
+    g(['checkout', 'main']);
+    // Squash: derselbe Patch als NEUER Commit auf main — kein Vorfahr-Verhältnis.
+    g(['merge', '--squash', opt.extraCommit ? `${BRANCH}~1` : BRANCH]);
+    g(['commit', '-m', 'squash: B']);
+    if (opt.mainZurueck) {
+      g(['update-ref', 'refs/remotes/origin/main', 'HEAD']);
+      g(['reset', '--hard', 'HEAD~1']); // lokales main hinkt hinterher, origin/main kennt die Landung
+    }
+    const laufe: Laufe = (cmd, args, cwd) => laufeEcht(cmd, args, cwd ?? repo);
+    return { root, repo, g, laufe };
+  };
+
+  it('ROT-BEWEIS Vorfall: Squash-gelandeter Branch ist keine Spur → wip stale', () => {
+    const { laufe } = baue();
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(roh.gelandet?.has(BRANCH)).toBe(true);
+    expect(staleWip(roh, IDS)).toEqual(['QS-PLAN-REVIEW']);
+    expect(lageZeilen(roh, IDS).join('\n')).toContain(`Spur nur gelandete Arbeit: ${BRANCH}`);
+  });
+
+  it('Branch mit einem ungelandeten Zusatz-Commit bleibt Spur', () => {
+    const { laufe } = baue({ extraCommit: true });
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(roh.gelandet).toBeUndefined();
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('origin/main hat Vorrang vor einem hinterherhinkenden lokalen main', () => {
+    const { laufe } = baue({ mainZurueck: true });
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(roh.gelandet?.has(BRANCH)).toBe(true);
+  });
+
+  it('ausgecheckt im SAUBEREN Worktree → gelandet; mit uncommitteter Datei → bleibt Spur', () => {
+    const { root, g, laufe } = baue();
+    const wt = join(root, 'wt-rest');
+    g(['worktree', 'add', wt, BRANCH]);
+    expect(sammleLage(wip, { prs: false, laufe }).gelandet?.has(BRANCH)).toBe(true);
+    writeFileSync(join(wt, 'unversioniert.txt'), 'noch nicht committet');
+    const schmutzig = sammleLage(wip, { prs: false, laufe });
+    expect(schmutzig.gelandet).toBeUndefined();
+    expect(staleWip(schmutzig, IDS)).toEqual([]);
   });
 });
 

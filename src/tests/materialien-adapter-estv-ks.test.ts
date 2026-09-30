@@ -7,6 +7,7 @@ import {
   erlasseAusBeschreibung,
   titelDatumNachIso,
   beschreibungDatumNachIso,
+  wSignaturAusTitel,
   versionsJahrAusTitel,
   anzeigeNummer,
   dokRang,
@@ -286,5 +287,136 @@ describe('verarbeiteIndexSeiten (Count-Gates + Dedupe + Skip)', () => {
     expect(() =>
       verarbeiteIndexSeiten([{ def: ESTV_KS_SEITEN[0], html }], '2026-07-04'),
     ).toThrow(/< 70/);
+  });
+});
+
+// W2·27-BUND-FERTIG (30.9.2026) — Randfälle Datum und W-Signatur (Befund Gegenprüfung #1096:
+// `titelDatumNachIso`/`beschreibungDatumNachIso`/`wSignaturAusTitel` ohne Randfall-Tests).
+// Beispieltitel sind REAL: amtliche ESTV-Titel, wie sie public/materialien/register.json (Stand
+// main ed4e7fe19) aus den Indexseiten https://www.estv.admin.ch/de/kreisschreiben-direkten-bundessteuer
+// und …/weisungen-direkten-bundessteuer (Adapter-Abruf 25.9.2026) führt; Beschreibungs-Beispiele
+// sind die im Adapter-Kommentar/den Tests zu AN-2 dokumentierten Live-Zeilen (25.9.2026).
+describe('titelDatumNachIso — Schreibweisen und Randfälle', () => {
+  it('reale W-Titel: zweistellige Tage/Monate, Datum nach der Signatur, Gegenstand dahinter', () => {
+    expect(titelDatumNachIso('W01-006D vom 06.06.2001: Verordnung über die pauschale Steueranrechnung')).toBe('2001-06-06');
+    expect(titelDatumNachIso('W81-004D vom 30.04.1980: Steuerliche Behandlung der Entschädigung nach Artikel 334 ZGB (Lidlohn)')).toBe('1980-04-30');
+    expect(titelDatumNachIso('W95-028D vom 29.01.1996')).toBe('1996-01-29');
+  });
+  it('einstellige Tage/Monate werden auf zwei Stellen aufgefüllt (Datum ≠ Monatserster)', () => {
+    expect(titelDatumNachIso('W95-002D vom 6.6.1992')).toBe('1992-06-06');
+    expect(titelDatumNachIso('W95-002D vom 3.12.1993')).toBe('1993-12-03');
+    expect(titelDatumNachIso('W95-002D vom 27.3.1993')).toBe('1993-03-27');
+  });
+  it('ausgeschriebener Monat («27. März 2008», «Version vom 7. Februar 2024») → null (nur numerische Form)', () => {
+    expect(titelDatumNachIso('Besteuerung von Trusts vom 27. März 2008')).toBeNull();
+    expect(titelDatumNachIso('Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Anzuwendende Prinzipien für die Land- und Forstwirtschaft')).toBeNull();
+  });
+  it('kein Datum → null', () => {
+    expect(titelDatumNachIso('')).toBeNull();
+    expect(titelDatumNachIso('Kreisschreiben Nr. 11: Krankheits- und Unfallkosten')).toBeNull();
+  });
+  it('mehrere numerische Daten → das ERSTE «vom …» gilt', () => {
+    expect(titelDatumNachIso('W01-006D vom 06.06.2001: Änderung vom 09.03.2001')).toBe('2001-06-06');
+  });
+  it('ohne «vom» keine Aussage; Überlänge der Jahreszahl zählt nicht; Satzpunkt dahinter stört nicht', () => {
+    expect(titelDatumNachIso('Stand 06.06.2001')).toBeNull();
+    expect(titelDatumNachIso('W01-006D vom 06.06.20011')).toBeNull();
+    expect(titelDatumNachIso('Entwurf vom 06.06.2001.')).toBe('2001-06-06');
+  });
+  it('geschütztes Leerzeichen zwischen «vom» und Datum wird wie ein Leerzeichen gelesen', () => {
+    expect(titelDatumNachIso('W95-002D vom 12.11.1992')).toBe('1992-11-12');
+  });
+});
+
+describe('beschreibungDatumNachIso — nur erste Zeile, nur numerische Form', () => {
+  it('reale Live-Zeile (KS Nr. 11): Datum am Zeilenende vor der Steuerart-Klammer', () => {
+    expect(beschreibungDatumNachIso('Abzug von Krankheits- und Unfallkosten sowie von behinderungsbedingten Kosten vom 31.08.2005 (Direkte Bundessteuer)')).toBe('2005-08-31');
+  });
+  it('leere Beschreibung → null', () => {
+    expect(beschreibungDatumNachIso('')).toBeNull();
+  });
+  it('ausgeschriebenes Datum in der ersten Zeile → null (Upload-Label bleibt Rückfall)', () => {
+    expect(beschreibungDatumNachIso('Besteuerung von Trusts vom 27. März 2008 (Direkte Bundessteuer)')).toBeNull();
+  });
+  it('mehrere Daten in der ersten Zeile → das erste gilt; Folgezeilen werden nie gelesen', () => {
+    expect(beschreibungDatumNachIso('Gegenstand vom 31.08.2005 (DBG), ergänzt vom 01.01.2006\nAnhang vom 02.02.2007')).toBe('2005-08-31');
+    expect(beschreibungDatumNachIso('Gegenstand ohne Datum\nAnhang vom 02.02.2007')).toBeNull();
+  });
+  it('einstelliger Tag/Monat in der Beschreibung wird aufgefüllt', () => {
+    expect(beschreibungDatumNachIso('Verordnung über die Besteuerung nach dem Aufwand vom 3.12.1993')).toBe('1993-12-03');
+  });
+});
+
+describe('wSignaturAusTitel — W-Serie', () => {
+  it('reale Titel: Sprach-«D» fällt weg, Serienjahr und Laufnummer bleiben', () => {
+    expect(wSignaturAusTitel('W01-006D vom 06.06.2001: Verordnung über die pauschale Steueranrechnung')).toBe('W01-006');
+    expect(wSignaturAusTitel('W02-008D vom 18.12.2001')).toBe('W02-008');
+    expect(wSignaturAusTitel('W95-002D vom 12.11.1992')).toBe('W95-002');
+    expect(wSignaturAusTitel('W81-004D vom 30.04.1980')).toBe('W81-004');
+    expect(wSignaturAusTitel('W99-005D vom 19.08.1999')).toBe('W99-005');
+  });
+  it('Signatur ohne Sprach-«D» und Signatur als ganzer Titel', () => {
+    expect(wSignaturAusTitel('W01-006 vom 06.06.2001')).toBe('W01-006');
+    expect(wSignaturAusTitel('W81-004D')).toBe('W81-004');
+    expect(wSignaturAusTitel('W81-004')).toBe('W81-004');
+  });
+  it('KS-Nummern mit Buchstaben-Suffix («11a», «50a») sind keine W-Signatur → null', () => {
+    expect(wSignaturAusTitel('Kreisschreiben Nr. 11a')).toBeNull();
+    expect(wSignaturAusTitel('Kreisschreiben Nr. 50a: Unzulässigkeit …')).toBeNull();
+    expect(wSignaturAusTitel('Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Anzuwendende Prinzipien')).toBeNull();
+  });
+  it('fehlende oder nicht am Titelanfang stehende Signatur → null', () => {
+    expect(wSignaturAusTitel('')).toBeNull();
+    expect(wSignaturAusTitel('Mitteilung-020-DVS-2024-d vom 18.09.2024 - Checkliste für Spezialfälle')).toBeNull();
+    expect(wSignaturAusTitel('Siehe W01-006D vom 06.06.2001')).toBeNull();
+  });
+  it('Format streng: dreistellige Laufnummer, zweistelliges Serienjahr, Grossbuchstabe W', () => {
+    expect(wSignaturAusTitel('W1-006D')).toBeNull();
+    expect(wSignaturAusTitel('W01-06D')).toBeNull();
+    expect(wSignaturAusTitel('W01-0060D')).toBeNull();
+    expect(wSignaturAusTitel('w01-006D')).toBeNull();
+  });
+  it('Buchstabe direkt an der Laufnummer (ausser «D») bricht die Wortgrenze → null, kein Teilmatch', () => {
+    expect(wSignaturAusTitel('W01-006a vom 06.06.2001')).toBeNull();
+    expect(wSignaturAusTitel('W01-006Da')).toBeNull();
+  });
+});
+
+describe('baueDokUndKanten — W-Signatur/Datum im Zusammenspiel (Randfälle)', () => {
+  const dbst = ESTV_KS_SEITEN[0];
+  const basis: RohEstvItem = {
+    href: 'https://x/dam/de/sd-web/T/dbst-ks-w95-002-de.pdf',
+    titel: 'W95-002D vom 12.11.1992',
+    beschreibung: 'Einkommen aus selbständiger Erwerbstätigkeit nach Artikel 18 DBG',
+    datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-w95-002-de.pdf',
+  };
+  it('W-Titel mit Signatur UND Datum: nummer = Signatur, stand = Titel-Datum, Beschreibungs-Datum wird nicht gelesen', () => {
+    const { dok } = baueDokUndKanten({ ...basis, beschreibung: 'Gegenstand vom 01.01.2006' }, [dbst], '2026-09-25');
+    expect(dok.nummer).toBe('W95-002');
+    expect(dok.stand).toBe('1992-11-12');
+    expect(dok.stand_quelle).toBe('hub-label');
+  });
+  it('W-Datei mit «Kreisschreiben»-Titel (keine W-Signatur): nummer aus dem Dateinamen, Datum aus dem Upload-Label', () => {
+    const roh: RohEstvItem = {
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-w95-003-2024-de.pdf',
+      titel: 'Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Anzuwendende Prinzipien für die Land- und Forstwirtschaft',
+      beschreibung: '', datumLabel: '7. Februar 2024', dateiname: 'dbst-ks-w95-003-2024-de.pdf',
+    };
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.nummer).toBe('W95-003-2024');
+    expect(dok.titel).toBe(roh.titel);
+    expect(dok.stand).toBe('2024-02-07');
+    expect(dok.stand_quelle).toBe('hub-label');
+  });
+  it('KS-Datei: Titel ohne Datum, Beschreibung mit ausgeschriebenem Datum → Upload-Label bleibt', () => {
+    const roh: RohEstvItem = {
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-2008-1-030-d-de.pdf',
+      titel: 'Kreisschreiben Nr. 30: Besteuerung von Trusts',
+      beschreibung: 'Besteuerung von Trusts vom 27. März 2008 (Direkte Bundessteuer)',
+      datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-2008-1-030-d-de.pdf',
+    };
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.stand).toBe('2023-10-10');
+    expect(dok.stand_quelle).toBe('hub-label');
   });
 });
