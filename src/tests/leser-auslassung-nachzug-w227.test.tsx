@@ -56,21 +56,23 @@ describe('A3 — SynopseKarte: dieselbe Wortlaut-Sperre wie ArtikelBody', () => 
     erlass: 'EPV', eli: 'cc/x', normProfil: 'p/1', erzeugt: '2026-09-30', fensterAb: '2021-01-01',
     kuenftigeStaende: [], staende: [], schritte: [],
   } as unknown as SynopseShard;
-  const lage = (neuText: string[]) => ({
+  type Bl = [absatz: string, num: string, text: string];
+  const lage = (neuBloecke: Bl[], altBloecke: Bl[] = [['', '', 'Früherer Wortlaut des Artikels.']]) => ({
     art: 'vergleich',
     treffer: {
       schritt: { von: '2021-01-01', bis: '2024-01-01', artikel: [] },
       artikel: {
         eId: 'art_2', token: '2', label: 'Art. 2', art: 'geaendert', zustand: 'ereignis', shaNorm: 'a'.repeat(64),
-        alt: [['', '', 'Früherer Wortlaut des Artikels.']],
+        alt: altBloecke,
       },
-      neu: neuText.map((t) => ['', '', t]),
+      neu: neuBloecke,
       neuHerkunft: 'geltend',
       mehrdeutig: false,
     },
   } as unknown as SynopseLage);
+  const einzeln = (texte: string[]): Bl[] => texte.map((t) => ['', '', t]);
   const karte = (neuText: string[], zustand: LeerstellenStatus) => renderToStaticMarkup(
-    <SynopseKarte lage={lage(neuText)} shard={shard} geltend={{ stand: '2026-06-12' }} zustand={zustand} id="x" />);
+    <SynopseKarte lage={lage(einzeln(neuText))} shard={shard} geltend={{ stand: '2026-06-12' }} zustand={zustand} id="x" />);
 
   it('rechte Spalte «Aufgehoben» (Wortlaut), Zustand leer-ungeklaert ⇒ «aufgehoben», nie «kein Text im Snapshot»', () => {
     const out = karte(['Aufgehoben'], 'leer-ungeklaert');
@@ -86,9 +88,33 @@ describe('A3 — SynopseKarte: dieselbe Wortlaut-Sperre wie ArtikelBody', () => 
     expect(out).toContain(`>${KURZ}<`);
   });
 
-  it('gemischt «…» + «Aufgehoben» ⇒ vorsichtig «aufgehoben» (die Zeile kennt ihren Block nicht)', () => {
-    const out = karte(['…', 'Aufgehoben'], 'leer-ungeklaert');
-    expect(out).not.toContain(`>${KURZ}<`);
+  /** Die Entfall-Wörter je `entfernt`-Zeile (Zeilenmarke) — der Prüfer-Repro (B1) braucht ECHTE Entfall-Zeilen. */
+  const zeilenWorte = (html: string) =>
+    [...html.matchAll(/data-synopse-zeile="entfernt"[\s\S]*?<span class="text-ink-500">([^<]*)<\/span>/g)].map((m) => m[1]);
+  const karteMit = (alt: Bl[], neu: Bl[], zustand: LeerstellenStatus) => renderToStaticMarkup(
+    <SynopseKarte lage={lage(neu, alt)} shard={shard} geltend={{ stand: '2026-06-12' }} zustand={zustand} id="x" />);
+
+  it('B1: gemischt «…» + «Aufgehoben» ⇒ BEIDE Entfall-Zeilen «aufgehoben» (vorsichtig; die Zeile kennt ihren Block nicht)', () => {
+    const out = karteMit(
+      [['1', '', 'Wortlaut eins.'], ['2', '', 'Wortlaut zwei.']],
+      [['1', '', '…'], ['2', '', 'Aufgehoben']],
+      'leer-ungeklaert');
+    expect(zeilenWorte(out)).toEqual(['aufgehoben', 'aufgehoben']);
+    expect(out).not.toContain(KURZ);
+  });
+
+  it('B1: Kontrolle — beide rechts «…» ⇒ BEIDE Entfall-Zeilen «kein Text im Snapshot»', () => {
+    const out = karteMit(
+      [['1', '', 'Wortlaut eins.'], ['2', '', 'Wortlaut zwei.']],
+      [['1', '', '…'], ['2', '', '…']],
+      'leer-ungeklaert');
+    expect(zeilenWorte(out)).toEqual([KURZ, KURZ]);
+  });
+
+  it('B1: rechte Seite leer (neu = []), geltend ⇒ «kein Text im Snapshot» (every über leere Liste)', () => {
+    const out = karteMit([['', '', 'Früherer Wortlaut des Artikels.']], [], 'leer-ungeklaert');
+    expect(zeilenWorte(out)).toEqual([KURZ]);
+    expect(out).not.toContain('>aufgehoben<');
   });
 });
 
