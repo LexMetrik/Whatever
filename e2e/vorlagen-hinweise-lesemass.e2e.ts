@@ -1,6 +1,7 @@
 // @shard-gruppe: 4
 import { test, expect, type Page } from '@playwright/test';
 import tailwindConfig from '../tailwind.config.js';
+import { weiterKnopf } from './helpers/weiterKnopf';
 
 // ─── Lesemass der Vorlagen-Hinweise (W2·31-BILDSCHIRMBREITE Bündel F, 30.9.2026) ─
 //
@@ -124,7 +125,7 @@ async function musterdatenFuellen(page: Page): Promise<void> {
 
 async function weiter(page: Page, n: number): Promise<void> {
   for (let i = 0; i < n; i++) {
-    const w = page.getByRole('button', { name: /^Weiter(?!lesen)/ });
+    const w = weiterKnopf(page);
     await expect(w, `Weiter-Klick ${i + 1}/${n}`).toBeEnabled();
     await w.click();
     await page.waitForTimeout(100);
@@ -242,7 +243,7 @@ async function sammleNoticeBreiten(page: Page): Promise<{ box: number; eltern: n
 
 async function bisZumEnde(page: Page): Promise<void> {
   for (let i = 0; i < 10; i++) {
-    const w = page.getByRole('button', { name: /^Weiter(?!lesen)/ });
+    const w = weiterKnopf(page);
     if (!(await w.count()) || !(await w.isEnabled())) break;
     await w.click();
     await page.waitForTimeout(100);

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BrowseMaterial } from '../../lib/materialien/typen';
-import { leseFenster, schreibeFenster } from '../rechtsprechung/zustand';
+import { leseFenster, schreibeFenster } from '../ui/listenFenster';
 import { WeitereKnopf } from '../ui/WeitereKnopf';
 import { MaterialKarte } from './MaterialKarte';
 
@@ -32,8 +32,9 @@ export const MATERIAL_DECKEL = 100;
 const FENSTER_MAX = MATERIAL_DECKEL * 20;
 
 // `speicherKey` = die Behörde (eigenes Fenster je Gruppe). Die Sitzungs-Helfer
-// sind die der Rechtsprechung (`rechtsprechung/zustand`, §5): ein Fenster ist
-// dort wie hier «[von, bis)» — hier immer ab 0, der Deckel wächst nur nach unten.
+// sind die geteilten aus `ui/listenFenster` (§5, seit P10b; vorher in
+// `rechtsprechung/zustand`): ein Fenster ist dort wie hier «[von, bis)» — hier
+// immer ab 0, der Deckel wächst nur nach unten.
 export function MaterialRaster({ materialien, klasse, speicherKey }: {
   materialien: BrowseMaterial[]; klasse: string; speicherKey: string;
 }) {

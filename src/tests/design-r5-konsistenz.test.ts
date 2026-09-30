@@ -68,10 +68,10 @@ const SWEEP_AUSNAHMEN = [
     datei: 'tests/design-r5-konsistenz.test.ts',
     begruendung: 'der seinen eigenen Rot-Beweis als Verstoss liest',
   },
-  {
-    datei: 'tests/erlass-adresse.test.ts',
-    begruendung: 'sucht nach ADRESSEN, also nach Zeichenketten mit `//` darin',
-  },
+  // `tests/erlass-adresse.test.ts` stand hier bis 30.9.2026 (Begründung: «sucht
+  // nach ADRESSEN …»); seit W2·19 Kleinaufräumen 2 nutzt sie `appDateien` und
+  // ruft kein `readdirSync` mehr — die Ausnahme ist entfallen (das Sieb, nicht
+  // die Wanderung, war der Grund; das Sieb ist längst das geteilte).
 ] as const;
 
 describe('R5-A · die App wird von EINEM Sweep gefegt', () => {

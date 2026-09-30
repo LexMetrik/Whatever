@@ -24,11 +24,12 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { KantonFeld } from '../components/ui/KantonFeld';
 import { DatenTabelle } from '../components/ui/DatenTabelle';
 import { FristenKalender } from '../components/FristenKalender';
-import { KANTONE, KANTON_NAMEN } from '../data/tarif/typen';
+import { KANTONE } from '../lib/kantone';
 import type { Kanton } from '../types/legal';
 import { alleTsx, liesOhneKommentare, rel } from './appDateien';
 
 const CSS = readFileSync(new URL('../index.css', import.meta.url), 'utf8');
+const ohne = (p: string) => liesOhneKommentare(new URL(`../${p}`, import.meta.url).pathname);
 const optionen = (html: string) => [...html.matchAll(/<option value="([^"]*)"[^>]*>([^<]*)<\/option>/g)].map((m) => [m[1], m[2]]);
 
 describe('DK-02 · KantonFeld — eine Beschriftung, eine Reihenfolge, eine Namensquelle', () => {
@@ -38,8 +39,14 @@ describe('DK-02 · KantonFeld — eine Beschriftung, eine Reihenfolge, eine Name
     const o = optionen(html);
     expect(o.map(([v]) => v)).toEqual([...KANTONE]);
     expect(o).toHaveLength(26);
-    for (const [v, text] of o) expect(text).toBe(`${v} – ${KANTON_NAMEN[v as Kanton]}`);
+    // Namen NICHT aus der Quelle (`data/tarif/typen`) gelesen: ein Import dort machte die
+    // Sonde zum Risiko-Engine-Test (check:fachaenderung, P12 30.9.2026). Form + Stichproben
+    // als unabhängiges Orakel; dass der Baustein die EINE Quelle liest, prüft die Quelltext-Sonde.
+    for (const [v, text] of o) expect(text, v).toMatch(new RegExp(`^${v} – \\S`));
+    expect(ohne('components/ui/KantonFeld.tsx')).toContain('KANTON_NAMEN[');
     expect(o[0]).toEqual(['ZH', 'ZH – Zürich']);
+    expect(o[11]).toEqual(['BS', 'BS – Basel-Stadt']);
+    expect(o[14]).toEqual(['AR', 'AR – Appenzell A.Rh.']);
     expect(o[25]).toEqual(['JU', 'JU – Jura']);
   });
 
@@ -103,21 +110,38 @@ describe('DK-14 · DatenTabelle — eine ruhige Grundform', () => {
   it('Kopf in ink-600 mit Haarlinie, Zeilen mit Haarlinie, Polster py-2 pr-4 (letzte Spalte ohne rechten Rand)', () => {
     expect(html).toContain('<table class="w-full text-body-s border-collapse min-w-[26rem]">');
     expect(html).toContain('<tr class="text-left text-ink-600 border-b border-line">');
-    expect(html).toContain('<th class="py-2 pr-4 font-medium">Typ</th>');
-    expect(html).toContain('<th class="py-2 font-medium">Normen</th>');
+    expect(html).toContain('<th scope="col" class="py-2 pr-4 font-medium">Typ</th>');
+    expect(html).toContain('<th scope="col" class="py-2 font-medium">Normen</th>');
     expect(html).toContain('<tr class="border-b border-line align-top">');
     expect(html).toContain('<td class="py-2 pr-4 text-ink-900">Kauf</td>');
     expect(html).toContain('<td class="py-2">Art. 127 OR</td>');
   });
 
   it('Zahlenspalte: rechtsbündig, Tabellenziffern (`num`, die eine Ziffern-Klasse), kein Umbruch — im Kopf wie in der Zelle', () => {
-    expect(html).toContain('<th class="py-2 pr-4 font-medium text-right whitespace-nowrap">Frist</th>');
+    expect(html).toContain('<th scope="col" class="py-2 pr-4 font-medium text-right whitespace-nowrap">Frist</th>');
     expect(html).toContain('<td class="py-2 pr-4 num text-right whitespace-nowrap">10 Jahre</td>');
+  });
+
+  it('A11y (P12): jeder Spaltenkopf trägt scope="col"; ohne `caption`/`zeilenkopf` sonst nichts Neues', () => {
+    expect([...html.matchAll(/<th scope="col"/g)]).toHaveLength(3);
+    expect(html).not.toContain('<caption');
+    expect(html).not.toContain('scope="row"');
+  });
+
+  it('A11y (P12): `caption` ist standardmässig sr-only, `captionSichtbar` zeigt sie; `zeilenkopf` macht die Spalte zu th scope=row', () => {
+    const spalten = [{ kopf: 'Typ', zeilenkopf: true, zelle: 'text-ink-900' }, { kopf: 'Frist', ziffern: true }];
+    const zeilen = [{ key: 'a', zellen: ['Kauf', '10 Jahre'] }];
+    const still = renderToStaticMarkup(<DatenTabelle spalten={spalten} zeilen={zeilen} caption="Verjährungsfristen" />);
+    expect(still).toContain('<caption class="sr-only">Verjährungsfristen</caption>');
+    expect(still).toContain('<th scope="row" class="py-2 pr-4 text-left font-normal text-ink-900">Kauf</th>');
+    expect(still).toContain('<td class="py-2 num text-right whitespace-nowrap">10 Jahre</td>');
+    const sichtbar = renderToStaticMarkup(<DatenTabelle spalten={spalten} zeilen={zeilen} caption="Verjährungsfristen" captionSichtbar />);
+    expect(sichtbar).toContain('<caption class="text-left text-body-s font-medium text-ink-700 pb-2">Verjährungsfristen</caption>');
+    expect(sichtbar).not.toContain('sr-only');
   });
 });
 
 describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
-  const ohne = (p: string) => liesOhneKommentare(new URL(`../${p}`, import.meta.url).pathname);
 
   it('DK-02 · Einstellungen baut keine eigene Kantonsliste mehr', () => {
     const q = ohne('pages/Einstellungen.tsx');
@@ -144,10 +168,31 @@ describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
     'pages/VorlageVorsorgeauftrag.tsx': 1, 'pages/vorlage-ag-gruendung/schritte-eingabe.tsx': 1,
   };
 
+  /** W2·19 P12 (30.9.2026): das Muster erkannte nur `KANTONE.map((k) => …` mit Klammern um den
+   *  Parameter — `KANTONE.map(k => <option` (ohne Klammern), mit Index `(k, i)` oder mit
+   *  `{ return <option … }` lief unbemerkt an der Ratsche vorbei. Zählstand am 30.9.2026 mit dem
+   *  alten wie mit dem erweiterten Muster gleich (34 in 30 Dateien, `vite-node`-Zählung im PR):
+   *  die Erweiterung ist vorbeugend, sie hebt keinen bestehenden Stand an. */
+  const HANDKOPIE_MUSTER = /KANTONE\.map\(\s*(?:\(\s*\w+\s*(?:,\s*\w+\s*)?\)|\w+)\s*=>\s*(?:\(\s*|\{\s*return\s*\(?\s*)?<option/g;
+  const ALTES_MUSTER = /KANTONE\.map\(\s*\(\w+\)\s*=>\s*(?:\(\s*)?<option/g;
+
+  it('DK-02 · die Ratsche erkennt auch Klammerlos, mit Index und mit `return` (Muster-Beweis §6.7: das alte Muster nicht)', () => {
+    const formen = [
+      '{KANTONE.map(k => <option key={k}>{k}</option>)}',
+      '{KANTONE.map(k => (\n <option key={k}>{k}</option>\n))}',
+      '{KANTONE.map((k, i) => <option key={i}>{k}</option>)}',
+      '{KANTONE.map((k) => { return <option key={k}>{k}</option>; })}',
+      '{KANTONE.map((k) => (<option key={k}>{k}</option>))}',
+    ];
+    for (const f of formen) expect(f.match(new RegExp(HANDKOPIE_MUSTER.source, 'g'))?.length, f).toBe(1);
+    expect(formen.filter((f) => new RegExp(ALTES_MUSTER.source, 'g').test(f))).toHaveLength(1);
+    expect('{KANTONE.map((k) => <li>{k}</li>)}').not.toMatch(HANDKOPIE_MUSTER);
+  });
+
   it('DK-02 · Ratsche: handgebaute `KANTONE.map(… <option` nur noch in der Liste — und nie mehr als dort', () => {
     const ist: Record<string, number> = {};
     for (const p of alleTsx()) {
-      const n = liesOhneKommentare(p).match(/KANTONE\.map\(\s*\(\w+\)\s*=>\s*(?:\(\s*)?<option/g)?.length ?? 0;
+      const n = liesOhneKommentare(p).match(HANDKOPIE_MUSTER)?.length ?? 0;
       if (n > 0) ist[rel(p)] = n;
     }
     const zuViele = Object.entries(ist).filter(([d, n]) => n > (HANDKOPIEN[d] ?? 0)).map(([d, n]) => `${d}: ${n} > ${HANDKOPIEN[d] ?? 0}`);
@@ -174,9 +219,10 @@ describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
   it('DK-11 · Deaktiviert-Rolle: kein `disabled:opacity-40` mehr, die Rolle steht einmal in index.css', () => {
     expect(CSS).toMatch(/\.lc-deaktiviert:disabled\s*\{\s*opacity:\s*\.4;/);
     const rest = alleTsx().filter((p) => /disabled:opacity-40/.test(liesOhneKommentare(p))).map(rel);
-    // MappenDialog: ein FÜLL-Knopf (`lc-btn-primary`) — dort trägt `.lc-btn-primary:disabled` die Fläche;
-    // die Angleichung wäre sichtbar, nicht optikneutral (Posten-Stand).
-    expect(rest).toEqual(['components/layout/reiterleiste/MappenDialog.tsx']);
+    // Damals (#1191) blieb MappenDialog als FÜLL-Knopf (`lc-btn-primary`) stehen — dort trägt
+    // `.lc-btn-primary:disabled` die Fläche. Seit #1194 (30.9.2026) ist die doppelte Dämpfung dort
+    // entfernt; die Liste ist leer und bleibt es.
+    expect(rest).toEqual([]);
   });
 
   it('DK-12 · Hover-Rolle «Aktion»: `lc-hover-akzent` in index.css, die geteilten Bausteine nutzen sie', () => {

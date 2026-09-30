@@ -9,6 +9,7 @@ import { NormText } from '../NormText';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { WerkzeugKopf } from '../layout/WerkzeugKopf';
+import { AbschnittKopf } from '../layout/AbschnittKopf';
 import { dokumentAlsText } from '../../lib/vorlagen/vorlagenText';
 import { karteFuerPfad } from '../../lib/seo';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
@@ -206,7 +207,7 @@ export function VorlagenWizardRahmen({
             {/* tabIndex=-1: KEINE Tab-Station (die Überschrift bleibt aus der
                 Reihenfolge), nur programmatisch fokussierbar — das Ziel des
                 Sprungs aus dem Prüf-Befund (D5). */}
-            <h2 ref={titelRef} tabIndex={-1} className="text-h3 font-serif font-semibold text-ink-900">{schritte[schritt].label}</h2>
+            <AbschnittKopf titel={schritte[schritt].label} titelRef={titelRef} tabIndex={-1} />
             {/* D5: Der Befund steht VOR dem Schritt-Inhalt — er ist die
                 Antwort auf «Prüfen», nicht eine Fussnote darunter. */}
             {imPruefSchritt && <PruefBefund befunde={befunde} onSpringe={springeZuSchritt} />}

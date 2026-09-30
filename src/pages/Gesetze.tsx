@@ -524,8 +524,13 @@ export function Gesetze() {
                  («sonst ohne — nicht erfinden»). Der WORTLAUT bleibt unangetastet
                  «Kein Erlass gefunden.»: die Zweiteilung gefunden/erfasst ist
                  bedeutungstragend und wurde in Runde 1 ausdrücklich NICHT als
-                 Befund geführt — sie hier nachzuziehen wäre ein eigener Schritt. */
-              ? <Leerzustand art="bestand" text="Kein Erlass gefunden." />
+                 Befund geführt — sie hier nachzuziehen wäre ein eigener Schritt.
+                 Nachtrag 30.9.2026 (W2·19 Kleinaufräumen 2): dieser Schritt ist
+                 getan — Bestands-Leere heisst «Keine Erlasse erfasst.» (Kanon),
+                 «Kein Erlass gefunden.» bleibt der Such-/Filter-Leere (oben,
+                 art="filter"). Gleiches in `GesetzeGliederung` (alle Aufrufer
+                 laufen nur bei leerem Suchfeld) und im Kanton-Zweig unten. */
+              ? <Leerzustand art="bestand" text="Keine Erlasse erfasst." />
               : (
                 <div className="space-y-4">
                   {/* A15 — Gliederungs-Umschalter, linksbündig über seiner Erklärung
@@ -667,7 +672,7 @@ export function Gesetze() {
               {/* D-7, wie oben: leeres Suchfeld ⇒ `kantGefiltert` ist der volle
                   kantonale Bestand; leer heisst «nichts da», nicht «verdeckt».
                   Kein Weiterweg, weil keiner existiert. */}
-              {kantGefiltert.length === 0 && <Leerzustand art="bestand" text="Kein Erlass gefunden." />}
+              {kantGefiltert.length === 0 && <Leerzustand art="bestand" text="Keine Erlasse erfasst." />}
             </div>
           )}
           </div>

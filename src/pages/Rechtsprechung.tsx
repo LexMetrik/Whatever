@@ -18,9 +18,10 @@ import {
 import {
   achsenDiff, leseFilterAusUrl, lokaleWerte, wendeAchsenAn,
   leseDichte, schreibeDichte, leseSort, schreibeSort, leseKlappe, schreibeKlappe,
-  leseFenster, schreibeFenster, zaehleAktiveFilter, type Fenster,
+  zaehleAktiveFilter,
   type Dichte, type UrlAchse,
 } from '../components/rechtsprechung/zustand';
+import { leseFenster, schreibeFenster, type Fenster } from '../components/ui/listenFenster';
 import { zaehleBaender, istChronologisch, type BandGruppe } from '../components/rechtsprechung/baender';
 import { FilterSheet } from '../components/rechtsprechung/FilterSheet';
 import { MEHR_KNOPF_KLASSEN } from '../components/ui/mehrKnopfKlassen';

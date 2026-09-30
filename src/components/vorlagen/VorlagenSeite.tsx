@@ -2,6 +2,7 @@ import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction }
 import { DatumsFeld } from '../DatumsFeld';
 import { Checkbox, Field, inputCls } from './ui';
 import { NormText } from '../NormText';
+import { meldungspunkt } from './meldungspunkt';
 import { useWizardState } from './useWizardState';
 import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste } from './wizard';
 import { musterdatenAnwenden } from './musterdaten';
@@ -308,7 +309,7 @@ export function VorlagenSeite<
       {config.blockerKasten && gates.blocker.length > 0 && (
         <div role="alert" className="lc-notice-danger space-y-1">
           <p className="lc-overline text-danger-700 mb-1">{typeof config.blockerKasten === 'string' ? config.blockerKasten : 'Export gesperrt'}</p>
-          {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={b} /></p>)}
+          {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">{meldungspunkt(gates.blocker.length)}<NormText text={b} /></p>)}
         </div>
       )}
       {config.blockerEinzeln && gates.blocker.map((b, i) => (

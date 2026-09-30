@@ -212,11 +212,15 @@ describe('F2-4 · «… konnte nicht geladen werden» läuft über EINEN Baustei
     // Revisionen, Vernehmlassungen) verteilen sich seither über zwei Dateien —
     // Revisionen zog nach `RevisionenGruppe.tsx` um. Die Gesamtzahl bleibt 3
     // (rein additiv gezählt, keine Datei trägt den Revisionen-Fund doppelt).
+    // DEKLARIERTE FACHLICHE ERWEITERUNG (§6.3, 30.9.2026, W2·27-BUND-FERTIG): seither
+    // VIER — die Zeile «Amtliche Materialien konnten nicht geladen werden» (Shard-/
+    // Manifest-Ausfall der Erläuterungen im KontextPanel). Der Kanon gilt auch für
+    // sie; die Zählung ist der Wächter, dass kein fünfter Fund unbemerkt dazukommt.
     expect(
       (lies('components/kontext/KontextPanel.tsx').match(/<AbrufFehler/g) ?? []).length
       + (lies('components/kontext/RevisionenGruppe.tsx').match(/<AbrufFehler/g) ?? []).length,
-      'KontextPanel + RevisionenGruppe haben zusammen drei Abruf-Fehler (Botschaften, Revisionen, Vernehmlassungen)',
-    ).toBe(3);
+      'KontextPanel + RevisionenGruppe haben zusammen vier Abruf-Fehler (Botschaften, Revisionen, Vernehmlassungen, Amtliche Materialien)',
+    ).toBe(4);
   });
 
   it('keine handgeschriebene Fehlerzeile mehr im Baum', () => {

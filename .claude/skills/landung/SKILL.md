@@ -141,7 +141,9 @@ npm run check:perf-budget  # liest dist, Chrome-frei
   `vercel.json`, `package.json`): unabhängige Review-Agents über das
   Deploy-Delta (Code-Lupe + empirische Repros; grosse Deltas: 6 Strang-Finder
   × 2 adversariale Lupen). Bestätigte Befunde fixen, Regressionstests dazu,
-  Tore aus Schritt 1 erneut.
+  Tore aus Schritt 1 erneut. Befunde an NEUEN Tests (Laufzeit, Reihenfolge)
+  vor dem Einreihen beheben, nie als Posten vertagen — sie kippen später unter
+  Last (#1179 → #1192, 30.9.2026).
 - **Reiner Doku-/Plan-/Test-Diff** (`*.md`, `fahrplaene/`, `bibliothek/`,
   `.claude/`, `src/tests/**` ohne `src/lib`): **kein** Agenten-Bug-Check —
   die Tore sind die Prüfung (15.8.: ~40–80k Token je Leerprüfung).
@@ -203,8 +205,8 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    nicht); **Risikopfad** ⇒ nach Verdikt von Hand `gh pr merge <nr> --squash`,
    nie `--auto`. Ein roter PR wird nie eingereiht: rot = Stopp, kein «mergen
    und nachbessern».
-   **Push auf den Feature-Branch ist stehend freigegeben** (David 2.7.2026);
-   der Live-Gang-Entscheid ist die Merge-Freigabe. **Direkte main-Pushes gibt
+   **Push auf den Feature-Branch ist stehend freigegeben** (David 2.7.2026;
+   nach Tor nur per `&&`, #1194); der Live-Gang-Entscheid ist die Merge-Freigabe. **Direkte main-Pushes gibt
    es nicht mehr** — auch nicht gebündelt am Session-Ende (Ruleset + Hook; der
    Auto-Modus-Klassifikator lehnt `git push origin …:main` als CI-Bypass ab).
    **Feature einzeln landen, Verwaltung bündeln** (David 15.8.2026): sie fährt
@@ -232,7 +234,7 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 8. **Nächste PR:** mit Überschneidung erst, wenn der Vordermann auf main ist
    (Ziff. 3.2, zurück zu Schritt 1); überschneidungsfreie dürfen
-   nebeneinander in der Queue stehen.
+   nebeneinander in der Queue stehen, auch ohne Ratschen-Kopplung (#1194).
 
 9. **Schritt-Status schliessen — wip verlässt die Session nie.** **Der PR,
    der den Schritt abschliesst, trägt den Status im Diff:** `plan:set --

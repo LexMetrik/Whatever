@@ -30,7 +30,7 @@ export function SeitenKopf({ overline, ausgabe, titel, intro, children }: {
       <div className="ub-kopf space-y-1">
         {overline && <p className="lc-overline">{overline}</p>}
         {/* A-1: die H1 kommt aus dem EINEN Titel-Baustein (`ui/SeitenTitel`). */}
-        <SeitenTitel stimme="serif">{titel}</SeitenTitel>
+        <SeitenTitel>{titel}</SeitenTitel>
         {ausgabe && <p className="ub-ausgabe">{ausgabe}</p>}
       </div>
       {/* T1/L5 (29.8.2026, W2·11-DESIGN): der Lead lief ohne Lesespalte über die

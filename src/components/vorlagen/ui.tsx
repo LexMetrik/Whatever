@@ -6,6 +6,7 @@ import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { useZielSichtbar } from './useZielSichtbar';
+import { meldungspunkt } from './meldungspunkt';
 
 // Geteilter Formular-Baukasten BEIDER Werkzeug-Familien — Rechner und Vorlagen
 // (Field, inputCls, FehlerBox, BeruehrtRahmen, Stepper, EckdatenKachel, …;
@@ -29,6 +30,14 @@ export const NICHT_GESPEICHERT_HINWEIS =
 /** HTML-«labelable elements», soweit in Formularen dieses Hauses gebraucht.
  *  Steuert, wann `Field` `htmlFor` setzen darf (siehe dort). */
 const BESCHRIFTBAR = ['input', 'select', 'textarea'];
+/** Host-Elemente, die als Kind von `Field` ein ZUSAMMENGESETZTES Control tragen
+ *  (Datumsfeld + «heute»-Knopf, Zahl + Einheit, Checkbox-Raster). Nicht
+ *  beschriftbar — das Label benennt die GRUPPE über `role="group"` +
+ *  `aria-labelledby` (W2·19 P12, 30.9.2026). Die Controls darin brauchen
+ *  weiterhin einen eigenen Namen (z. B. `aria-label` in VerzugszinsForm —
+ *  nicht zurückbauen). `ul`/`ol` bewusst nicht: `role="group"` nähme ihnen
+ *  die Listen-Rolle, die `li` stünden ohne Liste (axe listitem). */
+const GRUPPIERBAR = ['div', 'section', 'fieldset'];
 
 export function Field({ label, children, hint, optional, fehlt }: {
   /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine
@@ -75,11 +84,20 @@ export function Field({ label, children, hint, optional, fehlt }: {
   const invalid = nativ && fehlt
     ? { 'aria-invalid': true as const, 'aria-describedby': fehlerId }
     : {};
+  // Gruppe: Host-Wrapper (div …) ohne eigenen Namen/Rolle → Label als Gruppenname.
+  const gruppe = isValidElement(children) && typeof children.type === 'string'
+    && GRUPPIERBAR.includes(children.type)
+    && (children.props as Record<string, unknown>)['aria-label'] === undefined
+    && (children.props as Record<string, unknown>)['aria-labelledby'] === undefined
+    && (children.props as Record<string, unknown>).role === undefined;
   const control = nativ
     ? cloneElement(children as React.ReactElement<{ id?: string }>, { id, ...invalid })
     : komposit
       ? cloneElement(children as React.ReactElement<{ 'aria-labelledby'?: string }>, { 'aria-labelledby': `${id}-label` })
-      : children;
+      : gruppe
+        ? cloneElement(children as React.ReactElement<{ role?: string; 'aria-labelledby'?: string }>,
+          { ...((children as React.ReactElement).type === 'fieldset' ? {} : { role: 'group' }), 'aria-labelledby': `${id}-label` })
+        : children;
   return (
     <div className="space-y-1">
       <label id={`${id}-label`} htmlFor={nativ ? id : undefined} className="lc-feldlabel block text-body-s font-medium text-ink-700">
@@ -374,7 +392,7 @@ export function FehlerBox({ fehler, titel = 'Eingabefehler' }: {
   return (
     <div role="alert" data-fehlerbox="" className="lc-notice lc-notice-danger space-y-1">
       <p className="lc-overline text-danger-700 mb-1">{titel}</p>
-      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{fehler.length >= 2 ? '• ' : null}<NormText text={f} /></p>)}
+      {fehler.map((f, i) => <p key={i} className="text-body-s text-danger-700">{meldungspunkt(fehler.length)}<NormText text={f} /></p>)}
     </div>
   );
 }

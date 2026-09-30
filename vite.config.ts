@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig, type Plugin } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { MESS_FENSTER, portAusPfad } from './scripts/lib/worktree-port.ts';
 
 // §15.2 CLS-Fix (A9-Forensik `fix/e2e-ci-haertung`, 19.7.2026): der Reader-Ingress
 // (font-serif = Source Serif 4) trug auf dem 2-vCPU-Linux-Runner deterministisch
@@ -109,6 +110,13 @@ export default defineConfig({
   // Session fand den Port belegt und kam nicht an ihre Vorschau (24.9.2026, §17).
   // Ohne `PORT` bleibt Vites Vorgabe; `strictPort` nur mit zugewiesenem Port.
   server: process.env.PORT ? { port: Number(process.env.PORT), strictPort: true } : undefined,
+  // Preview-Server (Messung): LOKAL Port aus dem Worktree-Pfad (Fenster 4800–4999,
+  // strictPort) — `npx vite preview` ohne `--port` nahm sonst in JEDEM Worktree 4173
+  // und mass fremden Code (2. Vorfall 30.9.2026, scripts/lib/worktree-port.ts). Ein
+  // ausdrückliches `--port` (CI, e2e, Mess-Skripte) schlägt die Config; CI unverändert.
+  preview: process.env.CI
+    ? undefined
+    : { port: portAusPfad(process.cwd(), MESS_FENSTER), strictPort: true },
   // O-1.9: Build-Kennung für den Fehlerkanal — Vercel-Commit-SHA (kurz), sonst 'dev'.
   // Erlaubt es, einen gemeldeten Client-Fehler einem Deploy zuzuordnen. Kein Geheimnis.
   define: {
