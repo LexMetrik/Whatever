@@ -109,8 +109,9 @@ export function schreibeErlass(db: DatabaseSync, meta: ErlasseMeta, snapshots: N
       s.artikelLabel,
       s.grundlage ?? null,
       s.titel ?? null,
-      // G-AUFH-ART: 1 = true, NULL = Feld weggelassen (§7: nichts fabrizieren).
-      s.aufgehoben ? 1 : null,
+      // G-AUFH-ART: 1 = aufgehoben, 2 = gegenstandslos (W2·27, eigene Kategorie — gleiche Spalte,
+      // kein Schema-/Turso-Eingriff), NULL = Feld weggelassen (§7: nichts fabrizieren).
+      s.aufgehoben ? 1 : s.gegenstandslos ? 2 : null,
       s.quelleUrl,
       JSON.stringify(s.bloecke),
       s.sha,
@@ -133,7 +134,7 @@ interface ArtikelRow {
 /**
  * Projiziert EINEN Erlass (eine Fassung) byte-gleich in die NormSnapshotDatei-Form.
  * Feldreihenfolge exakt wie der Generator sie emittiert (id, ebene, quelle, erlass,
- * artikel, artikelLabel, [titel], [aufgehoben], [grundlage], bloecke, stand, quelleUrl,
+ * artikel, artikelLabel, [titel], [aufgehoben|gegenstandslos], [grundlage], bloecke, stand, quelleUrl,
  * abgerufen, fassungsToken, sha) — sonst kippt die Byte-Parität. `titel`(Kanton, aus
  * Spalte marg) und `grundlage`(Bund) schliessen sich empirisch aus; `aufgehoben`
  * (G-AUFH-ART, LexWork/Kanton) kann NEBEN `titel` stehen (BS 132.100 §76a/§76b behalten
@@ -168,7 +169,8 @@ export function projiziereErlass(db: DatabaseSync, key: string, fassungsToken: s
     o.artikel = r.artikel;
     o.artikelLabel = r.artikel_label;
     if (r.marg !== null) o.titel = r.marg; // Kanton-Randtitel (N1)
-    if (r.aufgehoben) o.aufgehoben = true; // G-AUFH-ART: 1 = true; NULL/0 = Feld weggelassen
+    if (r.aufgehoben === 1) o.aufgehoben = true; // G-AUFH-ART: 1 = aufgehoben; NULL/0 = Feld weggelassen
+    else if (r.aufgehoben === 2) o.gegenstandslos = true; // W2·27: 2 = gegenstandslos (eigenes Feld, s. typen.ts)
     if (r.grundlage !== null) o.grundlage = r.grundlage; // Bund-Delegationsnorm (G23)
     o.bloecke = JSON.parse(r.bloecke_json);
     o.stand = fass.stand;

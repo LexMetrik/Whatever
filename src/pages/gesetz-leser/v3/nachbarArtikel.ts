@@ -63,7 +63,7 @@ const ziel = (e: NormSnapshot): NachbarZiel => ({
   label: labelMitBereich(e.artikelLabel, e.artikel),
   // §5: dieselbe Prüfung, die `parts/ArtikelLeser` für seine eigene Statuszeile
   // stellt — Marker vor Text-Heuristik, Beleggrund im Ergebnis.
-  zustand: artikelLeerstellenStatus(e.bloecke, e.aufgehoben),
+  zustand: artikelLeerstellenStatus(e.bloecke, e.aufgehoben, e.gegenstandslos),
 });
 
 /**

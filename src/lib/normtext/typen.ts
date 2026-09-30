@@ -50,6 +50,18 @@ export interface NormSnapshot {
    */
   aufgehoben?: true;
   /**
+   * W2·27 (30.9.2026) — ARTIKEL-/ANHANG-genau «GEGENSTANDSLOS»: Fedlex führt den
+   * Artikel ohne Wortlaut mit dem amtlichen Fussnoten-Vermerk «Gegenstandslos
+   * [gemäss …]» (StGB Art. 67f, OR Schlusstitel Art. 6). Bewusst ein EIGENES Feld,
+   * kein Fall von `aufgehoben` (§1: «gegenstandslos» ≠ «aufgehoben» — nicht durch
+   * einen Aufhebungsakt gestrichen, sondern gegenstandslos geworden); die Lesesicht
+   * zeigt das eigene Zustandswort (`artikelLeerstellenStatus`, darstellung.ts).
+   * Nur Bund (Fedlex-Fussnote); Regel und Grenzen: `scripts/normtext/aufhebung-signal.ts`.
+   * `aufgehoben` und `gegenstandslos` schliessen sich aus. In der DB teilen beide die
+   * Spalte `artikel.aufgehoben` (1 = aufgehoben, 2 = gegenstandslos; erlass-rows.ts).
+   */
+  gegenstandslos?: true;
+  /**
    * G23 (M8) — Delegationsnorm-Verweis «(Art. N ArG)» aus Fedlex
    * (<p class="man-template-referenz">): das Trägergesetz-Fundament einer
    * Verordnungsbestimmung. Artikel-level Metadatum wie titel (NICHT im Block-sha,
