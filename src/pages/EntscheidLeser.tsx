@@ -593,14 +593,9 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
 
   return (
     <div className="space-y-5 flow-root" style={{ '--rsp-stick': stickHoehe } as CSSProperties}>
-      {/* `flow-root` (W2·31 P13b, 1.10.2026, Lade-CLS-Wächter unter CPU-Drosselung):
-          Tailwind-3-`space-y` setzt `margin-top` an jedes Kind, dem ein nicht-`hidden`-
-          Geschwister vorausgeht — das `<style>` unten ist dieses Geschwister, also trägt
-          der Kopf 20 px Rand OBEN. Der kollabierte durch diesen Wrapper und `.lc-route`
-          hinaus und zog die Route-Hülle beim Wechsel von Lade-Anzeige (y 167) auf Inhalt
-          auf y 187 (Shift 0.0176 @375, sobald die Ladeanzeige einmal gemalt wird). `flow-root`
-          fängt den Rand hier ab: die Hülle bleibt bei y 167, der Kopf steht pixelgleich
-          bei y 187 (gleiches Muster wie `.lc-leser[data-leser-v3="rahmen"]`, index.css). */}
+      {/* `flow-root` (W2·31 P13b): das `<style>` macht den Kopf per Tailwind-3-`space-y` zum
+          zweiten Geschwister (20 px margin-top), der Rand kollabierte durch `.lc-route` und
+          schob die Hülle beim Laden y 167→187 (CLS 0.0176); hier abgefangen, Kopf pixelgleich. */}
       {/* Anker-Sektionen des EntscheidBody tragen ein festes scroll-mt-[7rem]; hier
           auf die tatsächliche sticky-Höhe (--rsp-stick) heben, damit ein angesprungener
           Abschnitt nicht hinter dem gemeinsamen Kopf-Block verschwindet. Greift nur im
