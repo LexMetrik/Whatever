@@ -273,7 +273,7 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
   // EINspaltig; @1100 + Seitenleiste 460 (Blatt 550 px) ebenso.
   // ROT ZU BEKOMMEN (§6.7, gegen den Quellcode): in `WerkzeugeBlatt.tsx`
   // `lg:@[44rem]/blatt:` streichen → Zelle 1100+208 rot; Schwelle auf `@[38rem]`
-  // senken → die Zelle @1279 Skala 1.2 (38.5 rem) kippt auf 2 Spalten, rot.
+  // senken auf 38 rem → die Zellen @1200 (41.9 rem) und @1279 Skala 1.2 (38.5 rem) kippen auf 2 Spalten, rot. Beide Proben gemessen 1.10.2026 (Logs .gate/p17-rot1/2.log).
   for (const { breite, leiste, skala, cols } of [
     { breite: 1100, leiste: 208, skala: '1', cols: 2 },
     { breite: 1100, leiste: LEISTE, skala: '1', cols: 1 },
