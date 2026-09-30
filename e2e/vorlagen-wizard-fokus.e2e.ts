@@ -32,10 +32,17 @@ for (const breite of [375, 1280]) {
       // Erstes Rendern: kein Fokus-Klau.
       await expect(titel).not.toBeFocused()
 
+      // Fokussieren scrollt den Titel ins Bild — aber nicht unter die klebende
+      // Krone (64 px) + Arbeitsleiste (34 px): `lc-sprungziel` am Titel.
+      const nichtVerdeckt = async () => {
+        const oben = await titel.evaluate((e) => e.getBoundingClientRect().top)
+        expect(oben, 'Titel-Oberkante unter Krone + Arbeitsleiste').toBeGreaterThanOrEqual(98)
+      }
       const weiter = weiterKnopf(page)
       await weiter.click() // → Parteien
       await expect(titel).toHaveText(/Parteien/i)
       await expect(titel).toBeFocused()
+      await nichtVerdeckt()
       // Der Titel ist Fokus-Ziel, keine Tab-Station.
       await expect(titel).toHaveAttribute('tabindex', '-1')
 
@@ -47,17 +54,20 @@ for (const breite of [375, 1280]) {
       await weiter.click() // → Prüfen & Unterzeichnen (letzter Schritt, kein «Weiter» mehr)
       await expect(titel).toHaveText(/Prüfen/)
       await expect(titel).toBeFocused()
+      await nichtVerdeckt()
 
       // Zurück bis zum ersten Schritt — auch dort, wo der Knopf danach ausgegraut ist.
       const zurueck = page.getByRole('button', { name: '← Zurück' })
       await zurueck.click()
       await expect(titel).toHaveText(/Forderung/)
       await expect(titel).toBeFocused()
+      await nichtVerdeckt()
       await zurueck.click()
       await expect(titel).toBeFocused()
       await zurueck.click()
       await expect(zurueck).toBeDisabled()
       await expect(titel).toBeFocused()
+      await nichtVerdeckt()
     })
   })
 }
