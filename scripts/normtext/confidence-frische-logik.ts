@@ -25,8 +25,12 @@
 export interface FrischeEingabe {
   /** confidence.json: korpus.sha (fehlt bei Alt-Dateien ohne Kopplung). */
   gemeldeterKorpusSha: string | undefined;
+  /** confidence.json: korpus.dateiSha (fehlt bei Alt-Dateien ohne Datei-Namen-Kopplung). */
+  gemeldeterDateiSha: string | undefined;
   /** aktuell aus daten-manifest.json gelesener normtext.db.artikel.sha. */
   aktuellerManifestSha: string;
+  /** aktuell aus daten-manifest.json gelesener normtext.db.datei.sha (trägt die Dateipfade). */
+  aktuellerDateiSha: string;
   /** confidence.json: zusammenfassung.erlasse. */
   gemeldeteErlasse: number;
   /** jetzt gezählte Anzahl Snapshot-Dateien in public/normtext/{bund,kanton} (ohne index.json). */
@@ -35,7 +39,12 @@ export interface FrischeEingabe {
   erzeugt: string | undefined;
 }
 
-export type FrischeGrundKlasse = 'sha-fehlt' | 'sha-abweichung' | 'anzahl-abweichung';
+export type FrischeGrundKlasse =
+  | 'sha-fehlt'
+  | 'sha-abweichung'
+  | 'datei-sha-fehlt'
+  | 'datei-sha-abweichung'
+  | 'anzahl-abweichung';
 
 export interface FrischeGrund {
   klasse: FrischeGrundKlasse;
@@ -50,6 +59,7 @@ export interface FrischeBefund {
 /**
  * (a) korpus.sha fehlt (Alt-Datei ohne Kopplung),
  * (b) korpus.sha weicht vom aktuell im Manifest stehenden Wert ab,
+ * (b2) korpus.dateiSha fehlt bzw. weicht von normtext.db.datei.sha ab (Dateinamen-Kopplung),
  * (c) zusammenfassung.erlasse weicht von der jetzt gezählten Dateianzahl ab.
  * Jede zutreffende Bedingung erzeugt einen eigenen Grund — nicht nur die erste.
  */
@@ -67,6 +77,25 @@ export function pruefeFrische(eingabe: FrischeEingabe): FrischeBefund {
       text:
         `korpus.sha (${eingabe.gemeldeterKorpusSha.slice(0, 12)}…) weicht vom aktuellen ` +
         `daten-manifest.json#normtext.db.artikel.sha (${eingabe.aktuellerManifestSha.slice(0, 12)}…) ab.`,
+    });
+  }
+
+  // Umbenennungs-Lücke (Prüfer #888, W2·27-BUND-FERTIG): artikel.sha läuft über Artikel-Zeilen
+  // und trägt den Dateinamen NICHT (Bund-Erlass-Key = quelle, nicht Dateiname); die Dateianzahl
+  // bleibt bei Umbenennung gleich. normtext.db.datei.sha läuft über die Datei-Pfade (Tabelle
+  // `datei`, ingestEintragDateien) und bewegt sich bei Umbenennung, Zu- und Abgang.
+  if (eingabe.gemeldeterDateiSha === undefined) {
+    gruende.push({
+      klasse: 'datei-sha-fehlt',
+      text: 'confidence.json trägt kein korpus.dateiSha (Alt-Datei ohne Datei-Namen-Kopplung).',
+    });
+  } else if (eingabe.gemeldeterDateiSha !== eingabe.aktuellerDateiSha) {
+    gruende.push({
+      klasse: 'datei-sha-abweichung',
+      text:
+        `korpus.dateiSha (${eingabe.gemeldeterDateiSha.slice(0, 12)}…) weicht vom aktuellen ` +
+        `daten-manifest.json#normtext.db.datei.sha (${eingabe.aktuellerDateiSha.slice(0, 12)}…) ab ` +
+        '(Snapshot-Datei umbenannt, hinzugekommen oder entfernt).',
     });
   }
 
