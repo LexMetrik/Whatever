@@ -1,8 +1,11 @@
 // Farbwelt-Tor: Kategorie «durch Rolle ausgeschlossen» (W2·19 Kleinaufräumen 30.9.2026).
 // Sie zählt nicht als beratende Warnung und hat keinen Baseline-Guard; echte
 // Risse behalten beides. Die Auswertung ist rein (scripts/farbwelt-risse.ts).
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { werteRisseAus, type Riss } from '../../scripts/farbwelt-risse';
+import { APP_WURZEL, ohneKommentare } from './appDateien';
 
 const RISS: Riss = { fg: 'a', bg: 'b', mode: 'hell', schwelle: 3, ist: 2.72, tag: 'Echt' };
 const ROLLE: Riss = { fg: 'c', bg: 'd', mode: 'dunkel', schwelle: 4.5, ist: 4.24, tag: 'Rolle' };
@@ -33,5 +36,28 @@ describe('werteRisseAus: Kategorien', () => {
 
   it('die Zählung: leere Kategorien liefern leere Listen', () => {
     expect(werteRisseAus([], [], feste(1), TOL)).toEqual({ warnungen: [], fehler: [], ausgeschlossen: [] });
+  });
+});
+
+// ─── Die Tabellen des Farbwelt-Tors: wo die sechs ink-500-Paare stehen ──────
+// Text-Sonde (`farbwelt-tabellen.ts` zieht `tailwind.config.js` ein, das die
+// App-tsconfig nicht typisiert — Begründung wie in design-dk-c-farbe-kontrast).
+const TABELLEN = ohneKommentare(readFileSync(join(APP_WURZEL, '..', 'scripts', 'farbwelt-tabellen.ts'), 'utf8'));
+const ab = TABELLEN.indexOf('export const DURCH_ROLLE');
+const RISSE_TEXT = TABELLEN.slice(TABELLEN.indexOf('export const RISSE'), ab);
+const ROLLE_TEXT = TABELLEN.slice(ab);
+const paare = (t: string) =>
+  [...t.matchAll(/fg:\s*'([\w-]+)',\s*bg:\s*'([\w-]+)',\s*mode:\s*'(\w+)'/g)].map((m) => `${m[1]}/${m[2]} ${m[3]}`);
+
+describe('farbwelt-tabellen: Kategorie-Zuordnung', () => {
+  it('RISSE führt nur noch den echten Riss; die sechs ink-500-Registerflächen-Paare stehen in DURCH_ROLLE', () => {
+    expect(ab).toBeGreaterThan(-1);
+    expect(paare(RISSE_TEXT)).toEqual(['danger-500/paper dunkel']);
+    expect(paare(ROLLE_TEXT).sort()).toEqual([
+      'ink-500/reg-g-flaeche dunkel', 'ink-500/reg-g-flaeche hell',
+      'ink-500/reg-m-flaeche dunkel',
+      'ink-500/reg-r-flaeche dunkel', 'ink-500/reg-r-flaeche hell',
+      'ink-500/reg-w-flaeche dunkel',
+    ]);
   });
 });

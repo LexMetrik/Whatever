@@ -8,7 +8,7 @@
  *   DK-16 · FLÄCHEN-ROLLE «Tinte leise»: jede Registerfläche trägt ihre
  *           gedämpfte Tinte in ink-600 — EINE Regel in `index.css` statt einer
  *           Selektorliste; das Paar ink-500 auf Registerfläche steht im
- *           Farbwelt-Tor (`scripts/farbwelt-tabellen.ts`, DURCH_ROLLE).
+ *           Farbwelt-Tor (`scripts/farbwelt-tabellen.ts`, RISSE).
  *   DK-17 · Zeitstrahl-Beschriftung in Tinte, Farbe nur am Punkt.
  *   DK-22 · `color-mix` nur `in oklab` (F2b-Nachtrag D-3).
  *
@@ -135,7 +135,7 @@ const FLAECHEN = ['g', 'r', 'm', 'w'] as const;
 const TABELLEN = ohneKommentare(readFileSync(join(APP_WURZEL, '..', 'scripts', 'farbwelt-tabellen.ts'), 'utf8'));
 const hatPflicht = (fg: string, bg: string): boolean => TABELLEN.includes(`TEXT('${fg}', '${bg}'`);
 const hatRiss = (fg: string, bg: string, mode: Mode): boolean =>
-  new RegExp(`\\{\\s*fg:\\s*'${fg}',\\s*bg:\\s*'${bg}',\\s*mode:\\s*'${mode}'`).test(TABELLEN.slice(TABELLEN.indexOf('export const DURCH_ROLLE')));
+  new RegExp(`\\{\\s*fg:\\s*'${fg}',\\s*bg:\\s*'${bg}',\\s*mode:\\s*'${mode}'`).test(TABELLEN);
 const MODI: Mode[] = ['hell', 'dunkel'];
 
 /** Der Overline-Zweig der Rolle: nur Overlines OHNE eigene Farb-Utility (Gegenprüfung 30.9.2026). */
@@ -208,7 +208,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
     expect(funde, 'die Rolle in index.css trägt das; ein Einzel-Selektor ist die abgelöste Selektorliste').toEqual([]);
   });
 
-  it('das Farbwelt-Tor kennt das Paar: jedes Paar ink-500/Fläche unter 4.5 steht in DURCH_ROLLE, ink-600 in PFLICHT', () => {
+  it('das Farbwelt-Tor kennt das Paar: jedes Paar ink-500/Fläche unter 4.5 steht in RISSE, ink-600 in PFLICHT', () => {
     for (const f of FLAECHEN) {
       const bg = `reg-${f}-flaeche`;
       expect(
@@ -220,7 +220,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
         if (kontrast('ink-500', bg, mode) < 4.5) {
           expect(
             hatRiss('ink-500', bg, mode),
-            `ink-500/${bg} ${mode} = ${kontrast('ink-500', bg, mode).toFixed(2)}:1 liegt unter 4.5 und gehört in DURCH_ROLLE (scripts/farbwelt-tabellen.ts)`,
+            `ink-500/${bg} ${mode} = ${kontrast('ink-500', bg, mode).toFixed(2)}:1 liegt unter 4.5 und gehört in RISSE (scripts/farbwelt-tabellen.ts)`,
           ).toBe(true);
         }
       }
@@ -229,7 +229,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
 
   it('die Rolle ist begründet: auf mindestens einem Flächen-Paar liegt ink-500 unter AA (Rückbau-Signal)', () => {
     // Wird ink-500 auf ALLEN acht Paaren ≥ 4.5, ist die Rolle überflüssig
-    // (§17-Gegengewicht): dann Rolle samt DURCH_ROLLE zurückbauen.
+    // (§17-Gegengewicht): dann Rolle samt RISSE zurückbauen.
     const unter = FLAECHEN.flatMap((f) => MODI.filter((m) => kontrast('ink-500', `reg-${f}-flaeche`, m) < 4.5));
     expect(unter.length).toBeGreaterThan(0);
   });
@@ -244,7 +244,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
     expect(flaechenOhneRolle('.ub-kopf { background: var(--reg-marke-flaeche, var(--well)); }', rolle)).toEqual([]);
     expect(flaechenOhneRolle('.lc-x { color: var(--reg-g-flaeche); }', rolle)).toEqual([]);
     expect(rollenKlassen('.lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }')).toBeNull();
-    // Die Tabellen-Sonde unterscheidet Modus und Fläche (hell reg-m trägt 4.59 und steht nicht in DURCH_ROLLE).
+    // Die Tabellen-Sonde unterscheidet Modus und Fläche (hell reg-m trägt 4.59 und steht nicht in RISSE).
     expect(hatRiss('ink-500', 'reg-m-flaeche', 'dunkel')).toBe(true);
     expect(hatRiss('ink-500', 'reg-m-flaeche', 'hell')).toBe(false);
     expect(hatPflicht('ink-600', 'reg-x-flaeche')).toBe(false);
