@@ -16,6 +16,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { ListenEditor } from '../components/vorlagen/ui';
+import { ohneKommentare } from './appDateien';
 
 /** Alle handgeschriebenen Darstellungs-Dateien unter src/ (ohne Tests: die
  *  zitieren die verbotenen Muster als Beleg — dieselbe Vorsichtsmassnahme wie
@@ -41,9 +42,7 @@ function darstellungsDateien(wurzel = 'src'): string[] {
   return raus;
 }
 
-// Kommentare fliegen raus, bevor gesucht wird.
-const ohneKommentare = (s: string) =>
-  s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+// Kommentare fliegen raus, bevor gesucht wird (geteiltes Sieb, §5).
 
 const quellen = darstellungsDateien().map((p) => [p, ohneKommentare(readFileSync(p, 'utf8'))] as const);
 

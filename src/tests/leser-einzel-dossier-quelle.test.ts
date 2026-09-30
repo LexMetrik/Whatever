@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { ohneKommentare } from './appDateien';
 
 // ═══ W2·5m/E2 · DER §5-WÄCHTER DER DOSSIER-BLÖCKE ═══════════════════════════
 //
@@ -28,9 +29,7 @@ import { describe, expect, it } from 'vitest';
 const WURZEL = resolve(import.meta.dirname ?? '.', '..');
 const DOSSIER = 'pages/gesetz-leser/parts/ArtikelDossier.tsx';
 const lies = (p: string) => readFileSync(resolve(WURZEL, p), 'utf8');
-/** Kommentare zählen nicht — sie NENNEN die Lader, das ist ihr Zweck. */
-const ohneKommentare = (s: string) =>
-  s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1');
+// Kommentare zählen nicht (geteiltes Sieb `ohneKommentare`) — sie NENNEN die Lader, das ist ihr Zweck.
 
 /**
  * Die Datenlader des Artikel-Kontexts. Jeder von ihnen ist ein eigener

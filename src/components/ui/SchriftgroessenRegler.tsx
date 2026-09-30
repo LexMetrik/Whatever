@@ -67,7 +67,7 @@ export function SchriftgroessenRegler({
   // zieht denselben Baustein und wird damit mitgeändert — genau der Zweck des
   // gemeinsamen Rezepts (§5). Zwei Anatomien für dasselbe Knopf-Paar wären der
   // Befund, den C1 hier abgeräumt hat.
-  const knopf = 'lc-btn-mini text-body-s font-medium text-ink-600 hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40';
+  const knopf = 'lc-btn-mini text-body-s font-medium text-ink-600 hover:text-ink-900 disabled:pointer-events-none lc-deaktiviert';
   return (
     <span className="inline-flex items-center gap-1">
       <button

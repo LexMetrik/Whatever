@@ -54,7 +54,7 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
         <>
           <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
             <Field label="Typ">
-              <select value={e.typ} onChange={(ev) => onChange(sperrereignisTypSetzen(wert, i, ev.target.value as SperrereignisTyp))} className={inputCls + ' text-xs'}>
+              <select value={e.typ} onChange={(ev) => onChange(sperrereignisTypSetzen(wert, i, ev.target.value as SperrereignisTyp))} className={inputCls}>
                 {SPERREREIGNIS_TYPEN.map((t) => <option key={t.code} value={t.code}>{t.label}</option>)}
               </select>
             </Field>
@@ -62,15 +62,15 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
                 die 6-Monats-Kappung des Art. 329i OR läuft ab Beginn der
                 RAHMENFRIST, nicht zwingend ab Urlaubsbeginn. */}
             <Field label={e.typ === 'betreuungsurlaub' ? 'Von (Beginn der Rahmenfrist)' : 'Von'}>
-              <DatumsFeld value={e.von} onChange={(v) => update(i, { von: v })} className={inputCls + ' text-xs'} />
+              <DatumsFeld value={e.von} onChange={(v) => update(i, { von: v })} className={inputCls} />
             </Field>
             <Field label="Bis">
-              <DatumsFeld value={e.bis} onChange={(v) => update(i, { bis: v })} className={inputCls + ' text-xs'} />
+              <DatumsFeld value={e.bis} onChange={(v) => update(i, { bis: v })} className={inputCls} />
             </Field>
           </div>
           {MIT_NIEDERKUNFT.includes(e.typ) && (
             <Field label="Niederkunft" optional>
-              <DatumsFeld value={e.niederkunft ?? ''} onChange={(v) => update(i, { niederkunft: v })} className={inputCls + ' text-xs'} />
+              <DatumsFeld value={e.niederkunft ?? ''} onChange={(v) => update(i, { niederkunft: v })} className={inputCls} />
             </Field>
           )}
           {e.typ === 'schwangerschaft' && (
@@ -101,7 +101,7 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
           {e.typ === 'krankheit_unfall' && wert.slice(0, i).some((f) => f.typ === 'krankheit_unfall') && (
             <Field label="Rückfall derselben Ursache wie … (§1.3)">
               <select
-                className={inputCls + ' text-xs'}
+                className={inputCls}
                 value={e.gleicheUrsacheWieEreignis ?? ''}
                 onChange={(ev) => update(i, { gleicheUrsacheWieEreignis: ev.target.value === '' ? null : Number(ev.target.value) })}
               >

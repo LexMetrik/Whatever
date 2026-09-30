@@ -116,7 +116,7 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
             seit REST S1 (25.9.2026) aus dem Baustein `ui/SchalterGruppe`. */}
         <SchalterGruppe name="Sortierung" wert={sortNach} onWahl={setzeSort} optionen={SORT_OPTIONEN} />
         <button type="submit" disabled={!q.trim() || laden}
-          className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900 disabled:opacity-40">
+          className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900 lc-deaktiviert">
           {laden ? 'sucht …' : 'Suchen'}
         </button>
       </form>

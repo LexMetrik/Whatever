@@ -59,12 +59,9 @@ test.describe('J3 · Rechtsgebiets-Übersicht auf /gesetze', () => {
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .include('#rechtsgebiete-uebersicht')
       .analyze()
-    // Bekannter, dokumentierter Markenentscheid (B-2, a11y.e2e.ts
-    // BEKANNTE_BEFUNDE): Inline-Links ohne Unterstreichung — gilt app-weit,
-    // auch für die neue Sektion; nicht neu, gatet dort ebenfalls nicht.
-    const schwer = ergebnis.violations.filter(
-      (v) => (v.impact === 'critical' || v.impact === 'serious') && v.id !== 'link-in-text-block',
-    )
+    // `link-in-text-block` gatet mit (damals ausgenommen als Markenentscheid B-2;
+    // seit R3-Nachzug 6.9.2026 sind Inline-Links unterstrichen, F0.8).
+    const schwer = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')
     expect(
       schwer.map((v) => `${v.id} (${v.impact}): ${v.help} — ${v.nodes.length} Knoten`),
       'axe J3-Rechtsgebietsübersicht: keine critical/serious-Verstösse',

@@ -155,7 +155,7 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                 <label className="flex items-center gap-2 text-body-s text-ink-700 pt-2">
                   <input type="checkbox" checked={s.grundstueck}
                     onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, grundstueck: e.target.checked } : x))} />
-                  Grundstück enthalten (Vertrag wird öffentlich beurkundet, Art. 657 ZGB — Export nur als Entwurf)
+                  <span>Grundstück enthalten (Vertrag wird öffentlich beurkundet, Art. 657 ZGB — Export nur als Entwurf)</span>
                 </label>
                 <Field label="Zustand der Sacheinlage (für den Gründungsbericht; bei Geschäft: Würdigung je Bilanzposten)">
                   <textarea className={inputCls} rows={2} value={s.zustand}

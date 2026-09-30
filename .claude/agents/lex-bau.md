@@ -53,11 +53,8 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe
   (Beleg 16.8.2026: --noEmit gruen, tsc -b rot an ungenutztem Parameter).
   Die CI-Ueberspring-Markierung (eckige Klammer + skip ci / ci skip) NIE
-  woertlich in einen Commit-Text schreiben, auch nicht erklaerend zitierend —
-  das Squash-Schutz-Tor (ci.yml, Kommentar ~Z. 757-764) scannt JEDEN
-  Commit-Betreff/-Text im PR auf die blosse Zeichenfolge, ohne Kontext; PR
-  #950 wurde deshalb faelschlich rot und musste als #952 neu eroeffnet werden
-  (20.9.2026). Erwaehnung immer umschreiben («die CI-Ueberspring-Markierung»).
+  woertlich in Commit-Texte, auch nicht zitierend: das Squash-Schutz-Tor
+  (ci.yml) scannt jeden Commit kontextfrei (PR #950 -> #952, 20.9.2026).
 4b ROLLEN-/SELEKTOR-WECHSEL WIRKT REPO-WEIT. Wer Rolle, Tag oder zugaenglichen
   Namen eines Bedienelements aendert (button→a, aria-label, Klassen-Anker),
   grept VOR dem Push alle Sonden (e2e/**, src/tests/**) auf den alten
@@ -104,7 +101,9 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten gemahnt).
   600 s ohne Ausgabe bricht den Agenten ab (Watchdog, 3x 25.9.2026, einmal
   110 Dateien uncommittet): vorher WIP-committen, lange Laeufe
-  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`.
+  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`. <log> liegt im EIGENEN
+  Worktree, nie mit festem Namen im geteilten Session-Scratchpad (30.9.2026:
+  parallele Agenten ueberschrieben sich gate.log, #1180/#1181).
 
 TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.
 QUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Zeile im Gegenprüfungs-Register, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026); Verdikt kommt vom Prüf-Agenten, Quittung setzt der Orchestrator.

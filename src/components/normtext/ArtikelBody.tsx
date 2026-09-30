@@ -4,7 +4,7 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normtext/passusZiel';
 import {
   trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben, LEERSTELLE_KURZ,
-  LEERSTELLE_ERLAEUTERUNG,
+  LEERSTELLE_ERLAEUTERUNG, leerstellenWort,
 } from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
@@ -182,7 +182,7 @@ function etabliertFremdgesetz(absatzText: string, eigenesKuerzel?: string): bool
   return false;
 }
 
-export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern, artikelAufgehoben = false }: {
+export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern, artikelAufgehoben = false, artikelGegenstandslos = false }: {
   bloecke: NormSnapshot['bloecke'];
   /** Artikel-Token des Snapshots — steuert die Tarif-Darstellungs-Normalisierung. */
   artikel: string;
@@ -233,8 +233,16 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
    *  «aufgehoben» — s. den Block «LEERER BLOCK ≠ AUFHEBUNG» unten. Default
    *  `false` hält Popover/Vorschau byte-gleich (golden, §6). */
   artikelAufgehoben?: boolean;
+  /** W2·27 (30.9.2026): Der GANZE Artikel trägt amtlich den Vermerk «gegenstandslos»
+   *  (`NormSnapshot.gegenstandslos`, StGB Art. 67f) — EIGENE Kategorie, nie «aufgehoben»
+   *  (§1/§8). Deckt einen LEEREN Block/ein leeres Item wie `artikelAufgehoben`, sagt aber
+   *  «gegenstandslos». Default `false` hält Fälle ohne Vermerk byte-gleich (golden, §6). */
+  artikelGegenstandslos?: boolean;
 }) {
   const { passusMarke, zielItemKey } = bestimmePassusZiel(bloecke, passus);
+  // W2·27 (30.9.2026): das Wort für den Ersatztext «…»/leer — am amtlichen Artikel-Vermerk,
+  // nicht am Platzhalter (§1/§8). EINE Quelle: `leerstellenWort` (darstellung.ts, §5).
+  const entfallWort = leerstellenWort(artikelGegenstandslos ? 'gegenstandslos' : 'aufgehoben');
   // Im Lesefluss zitierte Normen/Urteile klickbar machen (D2); sonst Klartext.
   // #9 (M10): verwaiste Leerzeichen VOR Punkt/Komma glätten — sie entstehen beim
   // Strippen eines Inline-Fussnoten-Markers (Fedlex «…sinngemäss<sup>2</sup>.» →
@@ -443,11 +451,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                     Grenze wie am Absatz unten (Block «LEERER BLOCK ≠ AUFHEBUNG»).
                     Der amtliche Wortlaut «Aufgehoben» (istAufgehoben) bleibt
                     unberührt: er ist Quelle, keine Heuristik. */}
-                {it.text.trim() === '' && !artikelAufgehoben
+                {it.text.trim() === '' && !artikelAufgehoben && !artikelGegenstandslos
                   ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
                       title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>
                   : it.text.trim() === '' || istAufgehoben(it.text)
-                  ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>
+                  ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">{entfallWort}</span>
                   : (() => {
                       // Tarif-Staffel auch in Items als Tabelle (viele
                       // Notariats-/Grundbuchtarife stehen als lit./Ziff.).
@@ -713,10 +721,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 // Kanton hat gar keinen. Das gehört an die Bauzeit
                 // (scripts/normtext/**) und ist als eigener Schritt vermerkt.
                 // B2: Ersatztext, kein Wortlaut → `data-such-meta` (s. Import).
-                if (!hatItems && !anzeige.trim() && !artikelAufgehoben)
+                if (!hatItems && !anzeige.trim() && !artikelAufgehoben && !artikelGegenstandslos)
                   return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
                     title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>;
-                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>;
+                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">{entfallWort}</span>;
                 if (!anzeige.trim()) return null;
                 const zeilen = staffelZeilen(anzeige);
                 // Tausender-Gruppierung NUR in Geld-Kontext (§3, FIX 2 — 22.6.2026):

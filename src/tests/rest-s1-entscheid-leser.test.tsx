@@ -48,7 +48,10 @@ describe('(1) Titelblatt-Band mit Register und nachBand', () => {
   it('das Rezept liest das Register «r» und hebt die Overline auf ink-600', () => {
     const css = quelle('src/index.css');
     expect(css).toMatch(/\.lc-titelblatt-band\[data-reg="r"\]\s*\{[^}]*--reg-r-flaeche[^}]*--reg-r\)/);
-    expect(css).toContain('.lc-titelblatt-band[data-reg] .lc-overline { color: var(--ink-600); }');
+    // Seit W2·19 Kleinaufräumen (30.9.2026) hebt die Flächen-Rolle «Tinte leise» die
+    // Overline im Band; die Einzel-Regel `.lc-titelblatt-band[data-reg] .lc-overline` ist entfallen
+    // (Farbe vorher = nachher gemessen). Zusicherung bleibt: Band-Overline = ink-600.
+    expect(css).toMatch(/:is\([^)]*\.lc-titelblatt-band[^)]*\)\s*:is\(\.text-ink-500,\s*\.lc-overline[^{]*\{\s*color: var\(--ink-600\);/);
   });
   it('der Entscheid-Leser nutzt das Band mit Register «r»', () => {
     const q = quelle('src/pages/EntscheidLeser.tsx');

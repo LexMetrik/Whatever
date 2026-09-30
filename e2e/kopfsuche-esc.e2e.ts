@@ -36,3 +36,31 @@ test('D2/D3 · Esc leert das Feld, hält den Fokus und schliesst das Panel', asy
   await page.keyboard.type('ZGB')
   await expect(f).toHaveValue('ZGB')
 })
+
+// ═══ Nachzug Zweitprüfung #1188 (30.9.2026) · Esc mit Fokus im Leer-Panel ═══
+//
+// GEMESSEN am Stand `8474b5c9`: seit P3 trägt das Leer-Panel den fokussierbaren
+// Knopf «Verlauf leeren» (`layout/VerlaufLeerenKnopf`). Tab vom Suchfeld auf den
+// Knopf, dann Esc ⇒ das Panel schloss, der Knopf verschwand, der Fokus fiel auf
+// <body> (derselbe Verlust wie D2, nur über den neuen Knopf). FIX: liegt der
+// Fokus beim Esc in der Panel-Hülle, geht er ins Suchfeld zurück.
+test('Esc mit Fokus auf «Verlauf leeren» schliesst das Panel und gibt den Fokus ans Feld', async ({ page }) => {
+  await page.goto('/rechner/tagerechner')
+  await expect(page.locator('h1').first()).toBeVisible()
+  await page.goto('/rechner/verjaehrung')
+  await expect(page.locator('h1').first()).toBeVisible()
+
+  const f = feld(page)
+  const suchBereich = page.getByRole('search').filter({ has: f })
+  await f.click()
+  const leeren = suchBereich.getByRole('button', { name: 'Verlauf leeren' })
+  await expect(leeren).toBeVisible()
+  await page.keyboard.press('Tab')
+  await expect(leeren, 'Tab vom Feld landet auf «Verlauf leeren»').toBeFocused()
+
+  await page.keyboard.press('Escape')
+
+  await expect(f).toHaveAttribute('aria-expanded', 'false')
+  await expect(leeren).toHaveCount(0)
+  await expect(f, 'Fokus darf nicht auf <body> fallen').toBeFocused()
+})

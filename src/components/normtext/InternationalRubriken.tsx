@@ -32,7 +32,7 @@ export function InternationalRubriken({ erlasse, gruppe }: { erlasse: BrowseErla
   const weitere = gruppe ? [] : erlasse.filter((e) => !zugeordnet.has(e.key));
 
   if (gruppen.length === 0 && weitere.length === 0) {
-    return <Leerzustand art="bestand" text="Kein Eintrag gefunden." />;
+    return <Leerzustand art="bestand" text="Keine Erlasse erfasst." />;
   }
 
   return (

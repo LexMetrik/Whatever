@@ -148,10 +148,10 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
           <span className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Grösse nur des Entscheidtexts">
             <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
               aria-label="Entscheidtext verkleinern"
-              className="min-h-6 px-2 py-1 text-ink-600 lc-hover-flaeche disabled:opacity-40" title="Entscheidtext verkleinern">A−</button>
+              className="min-h-6 px-2 py-1 text-ink-600 lc-hover-flaeche lc-deaktiviert" title="Entscheidtext verkleinern">A−</button>
             <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
               aria-label="Entscheidtext vergrössern"
-              className="border-l border-line min-h-6 px-2 py-1 text-ink-600 lc-hover-flaeche disabled:opacity-40" title="Entscheidtext vergrössern">A+</button>
+              className="border-l border-line min-h-6 px-2 py-1 text-ink-600 lc-hover-flaeche lc-deaktiviert" title="Entscheidtext vergrössern">A+</button>
           </span>
           <button ref={schliessRef} type="button" onClick={onClose}
             className="lc-chip no-underline hover:text-accent-text hover:border-accent-line" title="Lesemodus schliessen (Esc)">
