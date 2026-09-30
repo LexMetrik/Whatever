@@ -76,8 +76,7 @@ import { sparqlBatch, sparqlSelect, type SparqlBinding, type FetchImpl } from '.
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
 import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts';
 import {
-  LANG, WIRKUNGEN, wirkungAusTyp, inkrafttretenDerAuswirkung, fassungsUrl,
-  type Wirkung, type RevisionsKontext,
+  LANG, WIRKUNGEN, wirkungAusTyp, inkrafttretenDerAuswirkung, fassungsUrl, kollabiereBerichtigungen, type Wirkung, type RevisionsKontext,
 } from './revisionen-auswirkungen.ts';
 // Pfad (c) lebt seit 23.9.2026 in revisionen-auswirkungen.ts (§6.6-Schlankheit); die
 // Re-Exporte halten die bestehenden Importpfade (Runner, check:revisionen, Tests) stabil.
@@ -210,7 +209,6 @@ export const REICHWEITE =
   'Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht ' +
   'je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker ' +
   'gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).';
-
 
 // Sammelerlass-Marker (Pfad-(a)-Geltungsstände ohne primären oc-Erlass) NUR ab dieser
 // Grenze — sie ist die dokumentierte Verlässlichkeits-Schwelle (§8 «ab ~2000»). Frühere
@@ -439,7 +437,7 @@ export function baueRevisionen(
   const zeilen = new Map<string, Map<string, Set<Wirkung>>>();
   // Daten, die als Erfassungsartefakt erkannt sind (Auswirkungsdatum NACH der einarbeitenden
   // Fassung, s. unten) — an ihnen entsteht auch kein Marker (s. Pfad-(a)-Cross-Check).
-  const artefaktDaten = new Set<string>();
+  const artefaktDaten = new Set<string>(), berichtigungsDaten = new Set<string>(); // berichtigungsDaten: W3-10, s. kollabiereBerichtigungen
   // (oc|datum)-Paare, deren Datum NICHT aus einer eigenen Auswirkung stammt, sondern aus dem
   // Inkrafttreten des ändernden Erlasses (Ersatz für Beschluss-/undatierte/widersprüchliche
   // Auswirkungsdaten, Pfad-(b)-Einträge) → `datumAusErlass` (§8, s. RevisionEintrag).
@@ -475,6 +473,7 @@ export function baueRevisionen(
         s.add(w); undatiert.set(a.oc, s);
       }
     }
+    for (const d of kollabiereBerichtigungen(datiert, (oc) => proOc.get(oc)?.dateForce ?? kontext.ocStamm[oc]?.dateForce)) berichtigungsDaten.add(d);
     for (const [oc, proDatum] of datiert) zeilen.set(oc, proDatum);
     for (const [oc, w] of undatiert) {
       if (zeilen.has(oc)) continue; // datierte Auswirkungen gehen vor
@@ -580,7 +579,7 @@ export function baueRevisionen(
     // Beleg 23.9.2026: AHVG trägt eine Fassung 2066-01-01 (dateApplicability), erzeugt von
     // der Auswirkung oc/1965/537_541_535 «2066-01-01», eingearbeitet 2021-01-01; als Marker
     // hiesse sie «tritt am 01.01.2066 in Kraft». Fedlex-Datenfehler, bleibt dort gemeldet (§8).
-    if (artefaktDaten.has(stand)) continue;
+    if (artefaktDaten.has(stand) || berichtigungsDaten.has(stand)) continue; // W3-10: Fassung der (auf eine Zeile kollabierten) Berichtigung
     if (!kontext?.abstractEli) {
       // AE-2: bis 22.9.2026 hier `https://www.fedlex.admin.ch/eli/cc/${erlass.sr}` — die SR-
       // Nummer ist kein ELI-Pfad (Fedlex «page-not-found», 1978 Links in 196 Sidecars).

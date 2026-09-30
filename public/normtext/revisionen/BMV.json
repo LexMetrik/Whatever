@@ -32,12 +32,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2016-08-01",
-        "2016-08-23"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/497/de",
-      "sha": "d7bc9c4b0844c1a0e9b0912ce0ca041a09957e3ac2a87f03136b4f413347a4b3"
+      "sha": "e888d97ea57d309299f2f4688f7fdfec94cbd3640f233bfbc2a1ac12addc6dba"
     },
     {
       "art": "aenderung",
@@ -53,25 +49,6 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/423/de",
       "sha": "c0cdb5ec6e4f0cafe70e32a47efaeb3fe24e1195d53f0d6f8b3cd25336ba3ab0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/497",
-      "dateDocument": "2016-08-23",
-      "roFundstelle": "AS 2016 2965",
-      "titelDe": "Verordnung über die eidgenössische Berufsmaturität (Berufsmaturitätsverordnung, BMV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance sur la maturité professionnelle fédérale (OMPr) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza sulla maturità professionale federale (Ordinanza sulla maturità professionale, OMPr)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2016-08-01",
-        "2016-08-23"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/497/de",
-      "sha": "54da74bc771ab23c600f0ab3ef55c96c2fa629743a6156becbd84bfead4bffd0"
     },
     {
       "art": "aenderung",
@@ -134,5 +111,5 @@
       "sha": "03e49d1b4b8ea13fbadec14a2d1e08eeee7443a36dce66a098c6ddb7c35fbb5a"
     }
   ],
-  "sha": "a6b8adf05cf4059ea9cb64175e5766a1f7d9c0b4fd37e329c13ab42ceb47f29f"
+  "sha": "d017ceaa3d744e4b8a5aaa6330cfec1ca11b665bb321d9538915f5894e8bf4d4"
 }
