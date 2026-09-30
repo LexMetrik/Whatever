@@ -3712,6 +3712,35 @@
   :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])):where(.text-xs),
   :where(.lc-vorlagen-schritt) :where(p, li, dd, blockquote, figcaption):where(:not([class*="lc-notice"])) :where(.text-xs) { max-width: theme('maxWidth.kleintext'); }
 
+  /* Lesemass-Rest der Vorlagen-Schritte (W2·31-BILDSCHIRMBREITE Bündel K,
+     30.9.2026). Messung (Vollsweep 30 Vorlagen × alle Schritte, Wort-Rect-
+     Zeilen, Zeichen/Zeile > 80): die Lücke liegt im einspaltigen Bereich
+     640–767 px (das Formular steht ab md/768 px in der halben Spalte, ≤ 520 px):
+     bei 700 px Hinweis-Boxen bis 106 ch, Checkbox-Texte bis 101 ch. Drei
+     Bausteine, alle nur am TEXT, nie an der Box (Gegenprüfung #1159):
+     (a) Hinweis-Box-TEXT: die Box (`lc-notice`, Registerstrich/Füllung) behält
+     ihre Breite; den Text hält ein rechter Innenabstand auf 30 rem. Direkte
+     Textknoten der Box sind keine Kinder, die sich deckeln liessen (83
+     Aufrufstellen setzen den Text unmittelbar in die Box) — Prozent-Padding
+     bezieht sich auf die Breite des umgebenden Blocks, bei Block-Eltern also
+     genau auf die Box-Breite (gemessen: alle 128 Notice-Boxen der Vorlagen
+     haben Breite = Eltern-Breite). 19 px = 16 px Innenabstand links + 3 px
+     Registerstrich (`.lc-notice`, oben); unterhalb von 30 rem + 19 px bleibt der
+     normale 16-px-Abstand, die Box ändert sich dann nicht.
+     Spezifität (0,1,0) wie `.lc-notice` selbst (steht später → gewinnt); ein
+     Aufrufstellen-Utility (`pr-*`) schlägt sie weiterhin.
+     (b) Checkbox-Text und -Hinweis (`ui.tsx` Checkbox: `label.flex > span.min-w-0`
+     und `span.block.text-xs`; dazu die selbstgebauten Kontrollkästchen-Zeilen
+     `label.flex > span`, z. B. VorlageSchlichtungsgesuchBs): nur im
+     Schritt-Rahmen gedeckelt, nicht am Baustein — er steht auch in
+     Rechnern/Kontakt, deren Breiten nicht Teil dieses Bündels sind. (c) Listenpunkte, deren Schriftstufe an der Liste statt am `li` hängt
+     (`ul.text-body-s > li`): die #1159-Regel kennt nur die Stufe am Element selbst.
+     (b)/(c) mit Spezifität (0,0,0): jede Aufrufstelle mit eigenem `max-w-*` gewinnt. */
+  :where(.lc-vorlagen-schritt) [class*="lc-notice"] { padding-inline-end: max(16px, calc(100% - theme('maxWidth.reading-s') - 19px)); }
+  :where(.lc-vorlagen-schritt) :where(label.flex) > :where(span) { max-width: theme('maxWidth.reading-s'); }
+  :where(.lc-vorlagen-schritt) :where(span.block.text-xs) { max-width: theme('maxWidth.kleintext'); }
+  :where(.lc-vorlagen-schritt) :where(ul.text-body-s, ol.text-body-s, dl.text-body-s) > :where(li, dd) { max-width: theme('maxWidth.reading-s'); }
+
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
   /* U2: aus dem 2-px-Vollrahmen mit Messing-Wash werden zwei 2-px-Kanten
