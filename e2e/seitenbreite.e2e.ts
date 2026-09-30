@@ -16,6 +16,12 @@ import tailwindConfig from '../tailwind.config.js';
 // (dessen Startseiten-Sonderregel ist durch die Tabelle überholt).
 //
 // Zusicherungen je Seitenart (hell, Viewports unten):
+//  (0) Mindestzusicherung (Gegenprüfung 30.9.2026, Befund 1 zu Bündel E): h1
+//      ist nicht die Fehler-/404-Fläche (`ui/FehlSeite.tsx`, immer «… nicht
+//      gefunden») — ein toter Pfad klassifiziert sonst still auf seine Art
+//      und der Wächter misst die Fehlerseite, ohne es zu merken. Für Suche,
+//      Material, Rechner, Vorlage zusätzlich seitenart-spezifischer
+//      Mindestinhalt (Trefferliste/Textblock/Formularfeld).
 //  (1) Rahmen: Breite des Innencontainers `main#inhalt > div` = Stufen-Deckel
 //      (content 70rem; weit ab 2xl = 1536 px Viewport 90rem) × Root-font-size,
 //      höchstens die verfügbare `<main>`-Breite. rem-Werte aus
@@ -47,6 +53,10 @@ const LESEMASS_AUSNAHMEN: ReadonlyArray<readonly [string, string]> = [
 ];
 //
 // ROT ZU BEKOMMEN (§6.7, Beweise im Commit-Bericht B1c):
+//  (0) einen `variantenPfad` auf einen toten Schlüssel setzen (z. B.
+//      `/materialien/DOES-NOT-EXIST`) → fällt auf `FehlSeite` zurück, h1 endet
+//      auf «nicht gefunden» → rot (Nachbesserung Gegenprüfung 30.9.2026,
+//      Rot-Beweis im PR-Bericht).
 //  (1) `KLASSE.weit.fenster` in seitenbreite.ts auf 'max-w-content' und eine
 //      Art auf `weit` → @1680/@1920 misst 1120 statt 1440 px.
 //  (2) Footer-Innencontainer hart `max-w-content` bei einer Art auf `weit`.
@@ -255,6 +265,70 @@ async function pruefeLesemass(page: Page, ort: string): Promise<void> {
     .toEqual([]);
 }
 
+// ─── (0) Mindestzusicherung je Pfad (Gegenprüfung 30.9.2026, Befund 1) ───────
+//
+// `bereit()` verlangt nur ein SICHTBARES `main#inhalt h1` — das hat die
+// Fehler-/404-Fläche auch. Probe am unbehobenen Stand: `/materialien/
+// BOTSCHAFT-9999-0000` (toter Schlüssel) und ein toter `/rechner/:slug`
+// klassifizieren zwar richtig auf ihre Art (`seitenartVon`), rendern aber
+// `NotFound`/die geteilte `FehlSeite` (`src/components/ui/FehlSeite.tsx`) —
+// der Wächter mass Rahmen und Lesemass der FEHLERSEITE, hielt sie aber für
+// die Seitenart. Zwei zusätzliche, günstige Prüfungen VOR der teuren
+// Viewport-Schleife schliessen das:
+
+/** `ui/FehlSeite.tsx` setzt AUSNAHMSLOS `titel={\`${objekt} nicht gefunden\`}`
+ *  als h1 (über `SeitenKopf` → `ui/SeitenTitel`) — die einzige Stelle im Haus,
+ *  die diesen Wortlaut trägt (`NotFound`, `MaterialLeser`-Fehlzweig,
+ *  `EntscheidLeser`-Fehlzweig, `gesetz-leser/FehlSeite`, alle über denselben
+ *  Baustein). Aus dem Code ermittelt, nicht geraten. */
+const FEHLERSEITE_H1_ENDE = 'nicht gefunden';
+
+async function pruefeKeineFehlerseite(page: Page, art: Seitenart, ort: string): Promise<void> {
+  if (art === 'fehlerseite') return; // diese Art IST bewusst die Fehlerseite (Kontrollroute /gibt-es-nicht)
+  const h1 = (await page.locator('main#inhalt h1').first().textContent())?.trim() ?? '';
+  expect(h1.endsWith(FEHLERSEITE_H1_ENDE), `${ort}: h1 «${h1}» — sieht wie die Fehlerseite aus (FehlSeite.tsx setzt immer «… nicht gefunden»); Pfad prüfen`)
+    .toBe(false);
+}
+
+/** Seitenart-spezifischer Mindestinhalt: «h1 ist nicht die Fehlerseite»
+ *  allein übersieht eine Fläche, deren PRERENDERTES h1 stimmt, deren Körper
+ *  aber leer bleibt (z. B. eine Trefferliste, die nie füllt). Nur für die
+ *  vier Arten geprüft, die heute `variantenPfade` tragen — an genau denen
+ *  fand B8 die Lücke. */
+async function pruefeSeitenartInhalt(page: Page, art: Seitenart, pfad: string, ort: string): Promise<void> {
+  switch (art) {
+    case 'suche': {
+      // `beispielPfad` (`/suche`, ohne `q=`) zeigt bewusst den Tipp-Block statt
+      // einer Trefferliste (Suche.tsx) — dort ist 0 kein Fund. Auf `/suche`
+      // selbst läuft `SuchResultate` OHNE `listboxId` (nur `sektionsRollen`,
+      // Suche.tsx:198) — jede Trefferzeile ist dort ein schlichtes
+      // `<li><Link>` (SuchResultate.tsx `alsOption` false), kein
+      // `role="option"` (das trägt nur der Listbox-Modus des Header-Dropdowns).
+      // Die Skelett-Zeilen (`SkelettListe`) sitzen in einem `<ul aria-hidden>`
+      // ohne inneren Link — `a[href]` zählt darum nur echte Treffer.
+      if (!pfad.includes('q=')) return;
+      const n = await page.locator('[data-suche-lesespalte] ul li a[href]').count();
+      expect(n, `${ort}: Trefferliste leer (0 Treffer-Links) bei ${pfad}`).toBeGreaterThan(0);
+      break;
+    }
+    case 'material-leser': {
+      // `data-material-lesespalte` steht nur im Gefunden-Zweig von
+      // MaterialLeser.tsx (der Fehlzweig kehrt vorher mit `<FehlSeite>` zurück).
+      const n = await page.locator('main#inhalt article [data-material-lesespalte]').count();
+      expect(n, `${ort}: Textblock (Kontext-Panel) fehlt`).toBeGreaterThan(0);
+      break;
+    }
+    case 'rechner':
+    case 'vorlage': {
+      const n = await page.locator('main#inhalt input, main#inhalt select, main#inhalt textarea').count();
+      expect(n, `${ort}: kein Formularfeld gefunden`).toBeGreaterThan(0);
+      break;
+    }
+    default:
+      break;
+  }
+}
+
 /** (5) Rahmen (Inhalt + beide Footer-Container) auf 90rem erzwingen. */
 async function simuliereWeit(page: Page): Promise<void> {
   await page.addStyleTag({
@@ -262,28 +336,41 @@ async function simuliereWeit(page: Page): Promise<void> {
   });
 }
 
-const ARTEN = Object.entries(SEITENBREITE) as Array<[Seitenart, { stufe: Breitenstufe; beispielPfad: string }]>;
+const ARTEN = Object.entries(SEITENBREITE) as Array<
+  [Seitenart, { stufe: Breitenstufe; beispielPfad: string; variantenPfade?: readonly string[] }]
+>;
+
+/** (0) Fehlerseiten-/Mindestinhalt-Check + Rahmen + Flucht + Scroll + Lesemass
+ *  @1280–1920 + Weit-Simulation — die volle Batterie aus (0)–(5), parametrisiert
+ *  über Art und Pfad. Gemeinsame Grundlage für `beispielPfad` UND jeden
+ *  `variantenPfad` (Folgeposten 30.9.2026, Bündel E) — dieselbe Prüfung auf
+ *  einer zweiten Route derselben Art, kein zweiter Mechanismus (§5/§10). */
+async function pruefeRahmenUndLesemassVoll(page: Page, ort0: string, art: Seitenart, stufe: Breitenstufe, pfad: string): Promise<void> {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.setViewportSize(VIEWPORTS[0]);
+  await lade(page, pfad);
+  await pruefeKeineFehlerseite(page, art, ort0);
+  await pruefeSeitenartInhalt(page, art, pfad, ort0);
+  for (const vp of VIEWPORTS) {
+    await page.setViewportSize(vp);
+    const ort = `${ort0} @${vp.width}`;
+    pruefeRahmen(await messeRahmen(page), stufe, ort);
+    await pruefeLesemass(page, ort);
+  }
+  // (5) Weit-Simulation @1920 (Viewport steht schon auf 1920).
+  expect(page.viewportSize()?.width).toBe(BREIT.width);
+  await simuliereWeit(page);
+  const sim = await messeRahmen(page);
+  const ort = `${ort0} @1920 weit-simuliert`;
+  expect(sim.innen.w, `${ort}: Simulation greift (${sim.innen.w}px)`).toBeCloseTo(Math.min(REM_WEIT * sim.rootPx, sim.mainPx), 0);
+  pruefeFlucht(sim, ort);
+  await pruefeLesemass(page, ort);
+}
 
 test.describe('Seitenbreite je Seitenart (W2·31-BILDSCHIRMBREITE B1c)', () => {
-  for (const [art, { stufe, beispielPfad }] of ARTEN) {
+  for (const [art, { stufe, beispielPfad, variantenPfade }] of ARTEN) {
     test(`${art} ${beispielPfad}: Rahmen, Flucht, Scroll, Lesemass @1280–1920 + Weit-Simulation`, async ({ page }) => {
-      await page.emulateMedia({ colorScheme: 'light' });
-      await page.setViewportSize(VIEWPORTS[0]);
-      await lade(page, beispielPfad);
-      for (const vp of VIEWPORTS) {
-        await page.setViewportSize(vp);
-        const ort = `${art} @${vp.width}`;
-        pruefeRahmen(await messeRahmen(page), stufe, ort);
-        await pruefeLesemass(page, ort);
-      }
-      // (5) Weit-Simulation @1920 (Viewport steht schon auf 1920).
-      expect(page.viewportSize()?.width).toBe(BREIT.width);
-      await simuliereWeit(page);
-      const sim = await messeRahmen(page);
-      const ort = `${art} @1920 weit-simuliert`;
-      expect(sim.innen.w, `${ort}: Simulation greift (${sim.innen.w}px)`).toBeCloseTo(Math.min(REM_WEIT * sim.rootPx, sim.mainPx), 0);
-      pruefeFlucht(sim, ort);
-      await pruefeLesemass(page, ort);
+      await pruefeRahmenUndLesemassVoll(page, art, art, stufe, beispielPfad);
     });
 
     test(`${art} ${beispielPfad}: Schriftskala ${SKALA} @1280 und @1920`, async ({ page }) => {
@@ -300,5 +387,60 @@ test.describe('Seitenbreite je Seitenart (W2·31-BILDSCHIRMBREITE B1c)', () => {
         await pruefeLesemass(page, ort);
       }
     });
+
+    // Variantenpfade (Folgeposten 30.9.2026, Bündel E — Lehre B8: derselbe
+    // Deckel kann auf einer inhaltlich anderen Route derselben Art reissen,
+    // ohne dass `beispielPfad` es je sieht) — dieselbe volle Batterie, ohne
+    // die Schriftskala-Zusicherung (Laufzeit; Skala ist artenweit geprüft).
+    for (const variante of variantenPfade ?? []) {
+      test(`${art} ${variante} (Variante): Rahmen, Flucht, Scroll, Lesemass @1280–1920 + Weit-Simulation`, async ({ page }) => {
+        await pruefeRahmenUndLesemassVoll(page, `${art} ${variante}`, art, stufe, variante);
+      });
+    }
+  }
+});
+
+// ─── Vorlage in einem späteren Prüf-Schritt (Folgeposten 30.9.2026, Bündel E) ─
+//
+// `beispielPfad` der Art `vorlage` misst nur Schritt 0 (leeres Formular, keine
+// Vorschau-Inhalte). Ab Schritt 3 («Erbeinsetzung», nach «Mit Musterdaten
+// füllen») trägt die Vorschau echten, variabel langen Text (Erben-Absätze,
+// Bausteinprotokoll) — genau die Art Inhalt, an der ein Lesemass-Deckel reisst
+// (B8-Lehre). Eigener Ladeweg statt `lade()`, weil er Interaktion statt eines
+// blossen `goto` braucht — misst mit denselben `pruefeRahmen`/`messeLesemass`
+// wie der Rest der Datei (kein zweiter Mechanismus).
+//
+// Fund beim ersten Lauf (30.9.2026, Rot-Beweis): der «Tipp:»-Hinweistext
+// unter der Erben-Liste (`VorlageTestament.tsx`) lief mit 99 ch @1280 über den
+// Deckel — einer der 26 bereits erfassten Vorlagen-Hinweis-Funde aus
+// `plan/posten/2026-09-26-vorlagen-26-zeilen-ueber-80-zeichen-in-hinweisen-text-xs-tex.md`
+// («vorbestehend, Breitenwächter prüft nur Schritt 0 von testament» — genau
+// die Lücke, die dieser spätere Prüf-Schritt hier schliesst). Der Posten lief
+// zunächst im PARALLELEN Bündel F (eigener Worktree
+// `feat/w2-31-vorlagen-hinweise`, `.lc-vorlagen-schritt`-Deckel in
+// `index.css`/`wizard.tsx`, PR #1159) — bis zu dessen Landung (30.9.2026, mit
+// main gemergt) stand hier eine namentliche Ausnahme für genau diesen einen
+// Fund («Tipp: Decken Sie den ganzen Nachlass ab»). Nachbesserung
+// Gegenprüfung (30.9.2026, Befund 2): Bündel F ist gelandet, die Ausnahme
+// entfernt — der Fund ist jetzt durch den `.lc-vorlagen-schritt`-Deckel
+// mitbehoben (Messung im PR-Bericht), kein Ausnahme-Bedarf mehr.
+
+test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt statt nur Schritt 0): Rahmen, Lesemass @1280 und @1920', async ({ page }) => {
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.setViewportSize(VIEWPORTS[0]);
+  await page.goto('/vorlagen/testament');
+  await bereit(page);
+  await page.getByRole('button', { name: 'Mit Musterdaten füllen' }).click();
+  const weiter = page.getByRole('button', { name: 'Weiter →' });
+  await weiter.click(); // Schritt 1 (Person) → 2 (Familie)
+  await weiter.click(); // Schritt 2 (Familie) → 3 (Erbeinsetzung)
+  await expect(page.getByRole('heading', { name: 'Erbeinsetzung' })).toBeVisible();
+  for (const vp of [VIEWPORTS[0], BREIT]) {
+    await page.setViewportSize(vp);
+    const ort = `vorlage /vorlagen/testament Schritt 3 @${vp.width}`;
+    pruefeRahmen(await messeRahmen(page), SEITENBREITE.vorlage.stufe, ort);
+    const funde = await messeLesemass(page);
+    expect(funde, `${ort} (4) Zeilen über ${MAX_CH} Zeichen:\n${funde.map((f) => `  ${f.ch} ch · ${f.px}px · <${f.tag}> in #${f.anker} «${f.zeile}»`).join('\n')}`)
+      .toEqual([]);
   }
 });

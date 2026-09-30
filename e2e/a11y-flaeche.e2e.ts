@@ -144,6 +144,35 @@ test('Zustand — Vorlagen-Wizard Schritt 2', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'zustand-wizard-schritt-2')
 })
 
+// Posten 30.9.2026 (Prüfer B3, 26.9.2026): alle Zustände oben liefen bisher
+// nur @1280 — dort steht ein Rechner GESTAPELT (Stufe `content`, einspaltig).
+// Ab 72rem Kartenbreite (`@container/rechnerkarte`, W2·31-BILDSCHIRMBREITE B3)
+// stellt `.lc-rechner-spalten` den Ergebnis- bzw. Fehlerplatz RECHTS neben die
+// Eingabe — eine eigene DOM-Anordnung (grid-column 2), die axe nie sah. Slug
+// und Auslöser wie im bestehenden Breiten-Wächter (`e2e/rechner-breite.e2e.ts`,
+// FEHLERFAELLE): ZPO-Fristen, Datumsfeld geleert → `[data-fehlerbox]` nimmt
+// den Ergebnisplatz ein (role="alert"). @1920 wie dort, damit dieselbe
+// Kartenbreite (≥ 72rem) gemessen wird.
+// ROT ZU BEKOMMEN (§6.7): in index.css `.lc-rechner-spalten > [data-fehlerbox]`-
+// Grid-Platzierung streichen → Box bleibt links, dieser Test bleibt trotzdem
+// grün (er prüft axe, nicht die Position — die Positions-Zusicherung trägt
+// `rechner-breite.e2e.ts`); ein `aria-live`/Label-Verstoss NUR in der
+// zweispaltigen Anordnung (z. B. verdeckter Fokusrahmen der Ergebnisspalte)
+// zeigt sich dagegen NUR hier, nicht in `a11y.e2e.ts` (@1280 gestapelt).
+test('Zustand — Rechner zweispaltig, Fehlerbox rechts (ZPO-Fristen @1920)', async ({ page }, testInfo) => {
+  testInfo.setTimeout(60_000)
+  await page.setViewportSize({ width: 1920, height: 1080 })
+  await oeffnen(page, '/rechner/zpo-fristen')
+  await expect(page.locator('h1').first()).toBeVisible()
+  const feld = page.getByLabel('Auslösendes Ereignis (Datum)')
+  await feld.fill('')
+  await feld.blur()
+  const box = page.locator('.lc-rechner-spalten > [data-fehlerbox]')
+  await expect(box).toBeVisible()
+  await expect(box).toHaveAttribute('role', 'alert')
+  await axePruefen(page, testInfo, 'zustand-rechner-zweispaltig-fehlerbox')
+})
+
 // ── Wächter gegen stille Auslassung ─────────────────────────────────────────
 // Die Ausnahmeliste oben ist der einzige Weg, eine Route aus dem Tor zu nehmen.
 // Ein Tippfehler darin (oder eine im Bestand entfernte Route) würde sonst still
