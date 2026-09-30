@@ -6,6 +6,7 @@ import { datumAnzeige } from '../rechtsprechung/format';
 import { Leerzustand } from '../ui/Leerzustand';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
 import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Rechtsprechung-Kachel: sofort Suche (W2·29-WERKBANK-START S3-Nachzug)
@@ -47,6 +48,7 @@ export function RechtsprechungBlatt() {
   const [alle, setAlle] = useState<BrowseEntscheid[] | null>(null);
   const [fehler, setFehler] = useState(false);
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const [nurLeit, setNurLeit] = useState(false);
   const [ebene, setEbene] = useState<Ebene>(null);
   const [portion, setPortion] = useState(PORTION);
@@ -90,7 +92,7 @@ export function RechtsprechungBlatt() {
   return (
     <div className="space-y-4">
       <BlattSuchFeld wert={suche} setze={setSuche} label="Rechtsprechung durchsuchen"
-        platzhalter="Thema, Aktenzeichen oder BGE-Nummer …" />
+        platzhalter="Thema, Aktenzeichen oder BGE-Nummer …" feldRef={feldRef} />
       <div className="flex flex-wrap items-center gap-2">
         <button type="button" onClick={() => setNurLeit((v) => !v)} aria-pressed={nurLeit} className="ub-schalter">
           Leitentscheide
@@ -109,7 +111,7 @@ export function RechtsprechungBlatt() {
         fehlertext="Die Rechtsprechungs-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.">
         {() => (gefiltert.length === 0 ? (
           <Leerzustand art="filter" ansage text="Kein Entscheid gefunden."
-            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setNurLeit(false); setEbene(null); } }} />
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setNurLeit(false); setEbene(null); zumFeld(); } }} />
         ) : (
           <div className="space-y-3">
             <TrefferZahl n={gefiltert.length} einzahl="Entscheid" mehrzahl="Entscheide" />

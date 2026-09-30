@@ -218,7 +218,9 @@ describe('DK-B (2)/(4) — Gesetze-Blatt', () => {
     await zeige(ziel, gesetze(['bund', '02']));
     expect(leer(ziel)?.getAttribute('data-leerzustand'), 'nichts da ⇒ bestand').toBe('bestand');
     expect(leer(ziel)?.querySelectorAll('button')).toHaveLength(0);
-    expect(leerText(ziel)).toBe('Kein Erlass gefunden.');
+    // Kanon (Leerzustand.tsx-Kopf): Bestands-Leere heisst «Keine X erfasst.»,
+    // nicht «Kein X gefunden.» (Gegenprüfung 30.9.2026).
+    expect(leerText(ziel)).toBe('Keine Erlasse erfasst.');
 
     await tippe(ziel, 'zzzzq');
     expect(leer(ziel)?.getAttribute('data-leerzustand'), 'verdeckt ⇒ filter').toBe('filter');
@@ -240,6 +242,26 @@ describe('DK-B (2)/(4) — Gesetze-Blatt', () => {
       expect(leer(ziel)?.getAttribute('data-leerzustand') ?? null).not.toBe('filter');
     });
   }
+
+  it('International-Gruppe: Suche trifft NUR einen Vertrag einer anderen Gruppe ⇒ Filter-Leere mit «Suche leeren» (nicht Bestands-Leere ohne Ausweg)', async () => {
+    // FZA steht in der Gruppe «schweiz-eu», nicht in «menschenrechte»: die
+    // Suche «Freizügigkeit» lässt über ALLE Staatsverträge einen Treffer übrig,
+    // in der gewählten Gruppe aber keinen (vorher: `intl.length !== 0` ⇒ die
+    // Gruppe zeigte «Kein Eintrag gefunden.» ohne Weiterweg).
+    const reg = { erlasse: [
+      erlass({ key: 'EMRK', kuerzel: 'EMRK', titel: 'Europäische Menschenrechtskonvention', rechtsgebiet: 'international' }),
+      erlass({ key: 'FZA', kuerzel: 'FZA', titel: 'Freizügigkeitsabkommen Schweiz–EU', rechtsgebiet: 'international' }),
+    ] };
+    const ziel = aufbauen(regFetch(reg));
+    await zeige(ziel, gesetze(['international', 'menschenrechte']));
+    expect(leer(ziel), 'ohne Suche: die Gruppe hat einen Eintrag').toBeNull();
+    await tippe(ziel, 'Freizügigkeit');
+    expect(leer(ziel)?.getAttribute('data-leerzustand'), 'verdeckt ⇒ filter').toBe('filter');
+    expect(leerText(ziel)).toContain('Kein Erlass gefunden.');
+    await klickeKnopf(ziel, 'Suche leeren');
+    expect(feld(ziel).value).toBe('');
+    expect(leer(ziel)).toBeNull();
+  });
 
   it('Laden: die eine Ladeanzeige (role=status, Ablesekante) statt nacktem Absatz', async () => {
     const ziel = aufbauen(() => new Promise(() => {})); // Register hängt

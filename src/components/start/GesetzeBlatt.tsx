@@ -9,6 +9,7 @@ import type { BlattOrt } from '../../lib/startBlatt';
 import { Leerzustand } from '../ui/Leerzustand';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 import { Laedt, StufenSuche, useRegister } from './GesetzeSuche';
 import { SchweizKarte } from '../SchweizKarte';
 import { InternationalRubriken } from '../normtext/InternationalRubriken';
@@ -235,6 +236,7 @@ const istIntl = (e: BrowseErlass) => e.rechtsgebiet === 'international';
 function GebietErlasse({ nr }: { nr: string }) {
   const erlasse = useRegister();
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const kat = gebiet(nr);
   const gruppen = useMemo(() => {
     if (!erlasse || !kat) return [];
@@ -248,7 +250,7 @@ function GebietErlasse({ nr }: { nr: string }) {
   return (
     <div className="space-y-4">
       <p className="max-w-reading-s font-sans text-body-s text-ink-600">{kat.lede}</p>
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In «${kat.titel}» filtern`} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In «${kat.titel}» filtern`} feldRef={feldRef} />
       <Laedt erlasse={erlasse}>
         {() => gruppen.length
           ? gruppen.map((g) => <GruppenInhalt key={g.id} titel={g.titel} items={g.items} />)
@@ -257,8 +259,8 @@ function GebietErlasse({ nr }: { nr: string }) {
           // nichts DA (`bestand`) — vorher stand hier in beiden Fällen «Kein
           // Erlass passt auf «»», im zweiten mit leerem Suchwort.
           : suche.trim() !== ''
-            ? <Leerzustand art="filter" ansage text="Kein Erlass gefunden." weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
-            : <Leerzustand art="bestand" ansage text="Kein Erlass gefunden." />}
+            ? <Leerzustand art="filter" ansage text="Kein Erlass gefunden." weiterweg={{ text: 'Suche leeren', onKlick: () => { setSuche(''); zumFeld(); } }} />
+            : <Leerzustand art="bestand" ansage text="Keine Erlasse erfasst." />}
       </Laedt>
     </div>
   );
@@ -277,6 +279,7 @@ function KantonErlasse({ kt }: { kt: string }) {
   const erlasse = useRegister();
   const [sys, setSys] = useState<Record<string, KantonSystematikBaum> | null>(null);
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   useEffect(() => {
     let lebt = true;
     ladeKantonSystematik().then((s) => { if (lebt) setSys(s); });
@@ -288,10 +291,10 @@ function KantonErlasse({ kt }: { kt: string }) {
   );
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In ${kantonName(kt)} filtern`} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In ${kantonName(kt)} filtern`} feldRef={feldRef} />
       <Laedt erlasse={erlasse}>
         {() => (eig.length === 0 && suche.trim() !== ''
-          ? <SucheLeer leeren={() => setSuche('')} />
+          ? <SucheLeer leeren={() => { setSuche(''); zumFeld(); }} />
           : <KantonSystematik erlasse={eig} sys={sys?.[kt]} sysGeladen={sys !== null} />)}
       </Laedt>
     </div>
@@ -302,15 +305,25 @@ function KantonErlasse({ kt }: { kt: string }) {
 function International({ gruppe }: { gruppe?: string }) {
   const erlasse = useRegister();
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
+  // Bei gewählter Gruppe zählt nur DEREN Bestand: `intl` (alle Staatsverträge)
+  // war bei Suche ohne Treffer IN der Gruppe nicht leer, sobald ein Vertrag
+  // einer anderen Gruppe passte — die Gruppe zeigte dann «Kein Eintrag
+  // gefunden.» als Bestands-Leere ohne Ausweg (Gegenprüfung 30.9.2026).
   const intl = useMemo(() => (erlasse ? filtern(erlasse.filter(istIntl), suche) : []), [erlasse, suche]);
+  const imBereich = useMemo(() => {
+    if (!gruppe) return intl;
+    const keys = new Set(INTERNATIONAL_GRUPPEN.find((g) => g.id === gruppe)?.keys ?? []);
+    return intl.filter((e) => keys.has(e.key));
+  }, [intl, gruppe]);
   // Kurzform im Filterfeld: der volle Titel lief dort in die Auslassung.
   const titel = gruppe ? INTL_KURZ[gruppe] ?? INTERNATIONAL_GRUPPEN.find((g) => g.id === gruppe)?.titel : undefined;
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge filtern'} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge filtern'} feldRef={feldRef} />
       <Laedt erlasse={erlasse}>
-        {() => (intl.length === 0 && suche.trim() !== ''
-          ? <SucheLeer leeren={() => setSuche('')} />
+        {() => (imBereich.length === 0 && suche.trim() !== ''
+          ? <SucheLeer leeren={() => { setSuche(''); zumFeld(); }} />
           : <InternationalRubriken erlasse={intl} gruppe={gruppe} />)}
       </Laedt>
     </div>

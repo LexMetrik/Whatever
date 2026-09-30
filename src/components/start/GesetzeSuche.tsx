@@ -5,6 +5,7 @@ import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { GruppenInhalt } from '../../pages/gesetze-teile/geteilt';
 import { Leerzustand } from '../ui/Leerzustand';
 import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · Gesetze-Blatt: Register und Suche auf allen Stufen ─────────
@@ -87,14 +88,15 @@ export function StufenSuche({ bereich, label, schmal, className, children }: {
 }) {
   const [suche, setSuche] = useState('');
   const [gewollt, setGewollt] = useState(false);
+  const { feldRef, zumFeld } = useSuchFokus();
   const erlasse = useRegister(gewollt);
   const aktiv = suche.trim() !== '';
   return (
     <div className={className}>
-      <BlattSuchFeld schmal={schmal} wert={suche} label={label} onFocus={() => setGewollt(true)}
+      <BlattSuchFeld schmal={schmal} wert={suche} label={label} onFocus={() => setGewollt(true)} feldRef={feldRef}
         setze={(s) => { setGewollt(true); setSuche(s); }} />
       {aktiv
-        ? <Laedt erlasse={erlasse}>{() => <Treffer erlasse={erlasse ?? []} bereich={bereich} suche={suche} leeren={() => setSuche('')} />}</Laedt>
+        ? <Laedt erlasse={erlasse}>{() => <Treffer erlasse={erlasse ?? []} bereich={bereich} suche={suche} leeren={() => { setSuche(''); zumFeld(); }} />}</Laedt>
         : children}
     </div>
   );

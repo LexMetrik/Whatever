@@ -9,6 +9,7 @@ import { StandChip } from '../ui/StandChip';
 import { Tabs } from '../ui/Tabs';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
 import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Materialien-Kachel: sofort Suche (W2·29-WERKBANK-START S3)
@@ -55,6 +56,7 @@ export function MaterialienBlatt() {
   const [alle, setAlle] = useState<BrowseMaterial[] | null>(null);
   const [fehler, setFehler] = useState(false);
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const [gattung, setGattung] = useState<GattungWahl>('alle');
   const [behoerde, setBehoerde] = useState<BehoerdeId | ''>('');
   const [doktyp, setDoktyp] = useState<DoktypId | ''>('');
@@ -108,7 +110,7 @@ export function MaterialienBlatt() {
   return (
     <div className="space-y-4">
       <BlattSuchFeld wert={suche} setze={setSuche} label="Materialien durchsuchen"
-        platzhalter="Titel, Nummer oder Behörde …" />
+        platzhalter="Titel, Nummer oder Behörde …" feldRef={feldRef} />
       <Tabs items={GATTUNG_WAHL} value={gattung} onChange={waehleGattung} groesse="s" mode="pressed"
         ariaLabel="Gattung" />
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -134,7 +136,7 @@ export function MaterialienBlatt() {
         fehlertext="Die Materialien-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.">
         {() => (gefiltert.length === 0 ? (
           <Leerzustand art="filter" ansage text="Kein Material gefunden."
-            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setGattung('alle'); setBehoerde(''); setDoktyp(''); } }} />
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setGattung('alle'); setBehoerde(''); setDoktyp(''); zumFeld(); } }} />
         ) : (
           <div className="space-y-3">
             <TrefferZahl n={gefiltert.length} einzahl="Dokument" mehrzahl="Dokumente" />

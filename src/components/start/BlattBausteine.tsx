@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import type { Register } from '../layout/bereiche';
 import { Ladeanzeige } from '../ui/Ladeanzeige';
 import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
@@ -17,15 +17,19 @@ import { FehlerBox } from '../vorlagen/ui';
  *  ohne eigenen `platzhalter` — zugleich der Platzhalter. `schmal`: auf
  *  Lesebreite begrenzt (Filter über einer Liste); ohne: volle Blattbreite
  *  (die Suche IST die Stufe, Materialien/Rechtsprechung). */
-export function BlattSuchFeld({ wert, setze, label, platzhalter, schmal = false, onFocus }: {
+export function BlattSuchFeld({ wert, setze, label, platzhalter, schmal = false, onFocus, feldRef }: {
   wert: string; setze: (s: string) => void; label: string; platzhalter?: string; schmal?: boolean;
+  /** Ziel für `useSuchFokus` (suchFokus.ts) — damit der Weiterweg des Leerzustands den Fokus
+   *  aufs Feld zurückgibt (sonst verschwindet der gedrückte Knopf und der
+   *  Tastaturfokus fällt auf `body`). */
+  feldRef?: RefObject<HTMLInputElement | null>;
   /** Vorabruf beim Fokus (U11, Gesetze-Blatt: Register erst auf Wunsch, §15). */
   onFocus?: () => void;
 }) {
   return (
     <label className={schmal ? 'block max-w-md' : 'block'}>
       <span className="sr-only">{label}</span>
-      <input type="search" value={wert} onChange={(e) => setze(e.target.value)} placeholder={platzhalter ?? label}
+      <input ref={feldRef} type="search" value={wert} onChange={(e) => setze(e.target.value)} placeholder={platzhalter ?? label}
         onFocus={onFocus} className="lc-input" />
     </label>
   );

@@ -9,6 +9,7 @@ import { WERKZEUGE_RECHNER_KATEGORIEN, WERKZEUGE_VORLAGEN_GEBIETE, type BlattOrt
 import { Leerzustand } from '../ui/Leerzustand';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 
 // ─── Startseite · die Stufen der Werkzeuge-Kachel (W2·29-WERKBANK-START S2) ──
 //
@@ -149,6 +150,7 @@ function VorlagenGebiet({ id }: { id: string }) {
 
 function RechnerListe() {
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const q = suche.trim();
   const karten = useMemo(
     () => (q === '' ? KATALOG_KARTEN : KATALOG_KARTEN.filter((k) => kartePasst(k, { ...LEERER_FILTER, suche: q }))),
@@ -160,10 +162,10 @@ function RechnerListe() {
   );
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" feldRef={feldRef} />
       {kategorien.length === 0
         ? <Leerzustand art="filter" ansage text="Kein Rechner gefunden."
-            weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
+            weiterweg={{ text: 'Suche leeren', onKlick: () => { setSuche(''); zumFeld(); } }} />
         : kategorien.map((kat) => (
             <KategorieSektion key={kat.id} kat={kat} karten={kartenDerKategorie(karten, kat.id)} alleOffen={q !== ''} />
           ))}
@@ -173,6 +175,7 @@ function RechnerListe() {
 
 function VorlagenListe() {
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const q = suche.trim();
   const basis = useMemo(() => kartenDerKategorie(KATALOG_KARTEN, 'vorlagen'), []);
   const karten = useMemo(
@@ -181,7 +184,7 @@ function VorlagenListe() {
   );
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Vorlagen filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Vorlagen filtern" feldRef={feldRef} />
       {/* Gegenprüfung S2 (24.9.2026): `KategorieSektion` bringt für die
           Kategorie «vorlagen» ein EIGENES Rechtsgebiet-Feld mit, das über
           `setSearchParams` ohne den Blatt-Verlaufsstatus schreibt (verliert
@@ -191,7 +194,7 @@ function VorlagenListe() {
           unterdrückt es; die Textsuche oben deckt den Anwendungsfall hier ab. */}
       {karten.length === 0
         ? <Leerzustand art="filter" ansage text="Keine Vorlage gefunden."
-            weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
+            weiterweg={{ text: 'Suche leeren', onKlick: () => { setSuche(''); zumFeld(); } }} />
         : <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={karten} ohneKopf alleOffen={q !== ''} ohneGebietsFilter />}
     </div>
   );
