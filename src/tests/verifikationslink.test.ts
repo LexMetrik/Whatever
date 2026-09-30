@@ -63,7 +63,7 @@ describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-A
     expect(verifizierLinkArtikel(e, GELTEND)).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
   });
 
-  it('Korpus-Sweep: jede Freigabe eines «__N»-Tokens trägt einen amtlichen Namens-Anker (Positiv-Form); KKV 126_z__2 ist dabei', () => {
+  it('Korpus-Sweep: jede Freigabe eines «__N»-Tokens trägt einen amtlichen Namens-Anker (Struktur-Orakel ohne Produktiv-Regex); KKV 126_z__2 ist dabei', () => {
     const bund = ['KKV', 'ZGB', 'OR'].flatMap((n) => lade(`bund/${n}.json`).eintraege);
     const nToken = bund.filter((e) => /__\d+$/.test(e.artikel));
     expect(nToken.map((e) => e.artikel)).toContain('126_z__2'); // Sabotage-Schutz: nicht leer (§6.7b)
@@ -72,14 +72,30 @@ describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-A
       const url = verifizierLinkArtikel(e, GELTEND);
       if (url == null) continue;
       freigaben += 1;
-      // Positiv-Form (unabhängiges Orakel, nicht der Produktiv-Regex): «a»+Nummer(+Buchstaben), ggf.
-      // «t»-Präfixe, ggf. Bereichs-Wiederholung («a29a29f») — kein «_», kein «/»
-      // (Empirie-Sweep über 3 171 <article> in ZGB/OR/KKV, 30.9.2026).
-      expect(url.slice(url.indexOf('#') + 1)).toMatch(/^t*(?:a\d+[a-z]*)+$/);
+      // Unabhängiges Orakel (Zeichen-Schleife, NICHT der Produktiv-Regex): nur [a-z0-9], «t»-Präfixe,
+      // dann «a»+Ziffer; kein «_», kein «/». Messung 30.9.2026 Nachzug: 3 862 <a name> in 9 Filestore-Pins
+      // (ZGB, OR, KKV, BankV, BetmG, ERV, PaVo, SVG, VwVG), alle gedeckt. Der Erstsweep (3 171 <article>
+      // in ZGB/OR/KKV, «ausnahmslos a+Nummer(+Buchstaben), ggf. t-Präfix, Bereich a…a…») war zu eng:
+      // 4/3 171 Bereichs-Namen beginnen den Bereich nicht mit «a» (a28d28f, a226f226k, a663d663h, a107b107e).
+      expect(istNamensAnkerStruktur(url.slice(url.indexOf('#') + 1)), url).toBe(true);
     }
     expect(freigaben).toBeGreaterThan(0);
   });
 });
+
+/** Struktur-Orakel ohne Regex: «t»* · «a» · Ziffer · dann nur [a-z0-9] (kein «_», kein «/»). */
+function istNamensAnkerStruktur(f: string): boolean {
+  let i = 0;
+  while (f[i] === 't') i += 1;
+  if (f[i] !== 'a') return false;
+  i += 1;
+  if (f[i] === undefined || f[i] < '0' || f[i] > '9') return false;
+  for (; i < f.length; i += 1) {
+    const c = f[i];
+    if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z'))) return false;
+  }
+  return true;
+}
 
 describe('verifizierLinkArtikel — «__N» nur bei amtlichem Namens-Anker, nie bei Struktur-Basis-Anker (Positivliste, W2·27)', () => {
   const BASIS = 'https://www.fedlex.admin.ch/eli/cc/2006/859/de';
@@ -108,6 +124,9 @@ describe('verifizierLinkArtikel — «__N» nur bei amtlichem Namens-Anker, nie 
     ['x__2', 'xa126z'], // fremdes Präfix
     ['x__2', 'ta126z_x'], // «_» → Struktur-Id-Form
     ['x__2', 'ta126z/x'],
+    ['x__2', 'a28d_28f'], // «_» mitten im Bereich → Struktur-Id-Form
+    ['x__2', 'a28d28f/x'],
+    ['x__2', 'art_28d'],
   ])('%s → Fragment #%s ist kein amtlicher Namens-Anker → null', (artikel, fragment) => {
     expect(verifizierLinkArtikel(mit(artikel, fragment), GELTEND)).toBeNull();
   });
@@ -116,6 +135,16 @@ describe('verifizierLinkArtikel — «__N» nur bei amtlichem Namens-Anker, nie 
   // der <a name>-Wert vor dem Artikelkopf (Sweep ZGB+OR+KKV: «a126z», «ta126z», «tta1», «a29a29f»).
   it.each(['ta126z', 'a126z', 'a10', 'tta1', 'ttttta2', 'a29a29f', 'a226a226d'])(
     '«__N» mit amtlichem Namens-Anker #%s → Deep-Link freigegeben',
+    (fragment) => {
+      expect(verifizierLinkArtikel(mit('x__2', fragment), GELTEND)).toBe(`${BASIS}#${fragment}`);
+    },
+  );
+
+  // Bereichs-Namensanker, deren Bereich NICHT mit «a» beginnt (Filestore-Pin-Sweep 30.9.2026, Nachzug
+  // Gegenprüfung Runde 2): ZGB a28d28f, OR a226f226k/a663d663h, KKV a107b107e, BetmG a28b28l,
+  // ERV a148k148m, SVG a104c104d — alle amtlich, je im Dokument genau 1×.
+  it.each(['a28d28f', 'a226f226k', 'a663d663h', 'a107b107e', 'a28b28l', 'a148k148m', 'a104c104d', 'ta28d28f'])(
+    '«__N» mit amtlichem Bereichs-Namens-Anker #%s (Bereich ohne «a»-Präfix) → Deep-Link freigegeben',
     (fragment) => {
       expect(verifizierLinkArtikel(mit('x__2', fragment), GELTEND)).toBe(`${BASIS}#${fragment}`);
     },
