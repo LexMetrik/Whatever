@@ -215,12 +215,12 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             werden); darunter nimmt das Feld den Platz, den der Streifen ihm
             ohnehin lässt. `min-w-0` bleibt der Schutz gegen Überlauf @320
             (`e2e/topbar-kein-ueberlauf-320.e2e.ts`). */}
-        {/* W2·31 P3 (30.9.2026): der Boden steht jetzt als `.lc-topbar-suche` (index.css)
-            — er gilt ab 481 px UND nur, wo der Streifen ihn trägt (Containerabfrage, wächst
+        {/* W2·31 P3 (30.9.2026): der Boden gilt weiter ab 481 px, fällt aber WEG, wo der
+            Streifen ihn nicht trägt (`.lc-topbar-suche`, index.css: Containerabfrage, wächst
             mit der Schriftskala). Skala 1.4 @481–496 ragte der Streifen mit dem festen
-            `min-w-[9rem]` bis 16.1 px ins Polster; jetzt schrumpft das Feld dort um ≤ 0.8 rem.
-            Darunter (< 481 px) weiter kein Boden, wie bisher. */}
-        <div className="flex-1 min-w-0 lc-topbar-suche sm:max-w-xs xl:max-w-sm">
+            Boden bis 16.1 px ins Polster; jetzt schrumpft das Feld dort um ≤ 0.8 rem.
+            Unter 481 px weiter kein Boden, wie bisher. */}
+        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] lc-topbar-suche sm:max-w-xs xl:max-w-sm">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 

@@ -486,8 +486,8 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
 // trägt; Skala 1.4 ragte dort vorher 16.1 / 7.1 / 1.1 px ins Polster (Messung im
 // PR). 600 / 615 kommen dazu: die Verlauf-Schwelle ist skalenrichtig (Knopf ab
 // 481/481/481/510/543/575 px bei 0.9…1.4), das Band 560–615 bei 1.3/1.4 ist der
-// Übergang. ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Topbar.tsx` `lc-topbar-suche`
-// durch `min-[481px]:min-w-[9rem]` ersetzen → @481/@490/@496 schlagen an.
+// Übergang. ROT ZU BEKOMMEN (§6.7, gegen `src/`): die beiden `.lc-topbar-suche`-Regeln
+// (`min-width: 0`, index.css) entfernen → @481/@490/@496 schlagen an.
 const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768, 615, 600, 560, 520, 496, 490, 481] as const; // 750: im Polster-Fenster 728–762 (b)
 const SKALA_SCHMAL_EXTRA = [
   '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
@@ -723,8 +723,8 @@ test.describe('Wortmarke Untergrenze (W2·31 H Nachbesserung)', () => {
 //      «Verlauf leeren» (`e2e/verlauf-o1.e2e.ts`).
 // ROT ZU BEKOMMEN (§6.7, gegen `src/`): in index.css die Schwelle der Containerabfrage
 // `.lc-topbar-verlauf` zurück auf `width >= 25.5rem` (ohne die zweite ≥640-Regel) → (b)
-// schlägt bei 1.2 @520, 1.3 @560 und 1.4 @600 an; `.lc-topbar-suche` zurück auf
-// `min-[481px]:min-w-[9rem]` in Topbar.tsx → (a) schlägt bei 1.4 @481/490/496 an.
+// schlägt bei 1.2 @520, 1.3 @560 und 1.4 @600 an; die beiden `.lc-topbar-suche`-Regeln
+// (`min-width: 0`) in index.css entfernen → (a) schlägt bei 1.4 @481/490/496 an.
 const VERLAUF_SKALEN = ['1.0', '1.1', '1.2', '1.3', '1.4'] as const;
 const VERLAUF_BREITEN = [320, 375, 481, 490, 496, 520, 560, 600, 615, 768] as const;
 // Erwarteter Knopf-Beginn (Fenster-px) je Skala; Breiten darunter: weg.

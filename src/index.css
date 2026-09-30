@@ -4915,21 +4915,23 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
     .lc-topbar-verlauf { display: none; }
   }
 }
-/* Der 9-rem-Boden des Kopf-Suchfelds (D9-Nachzug in `Topbar.tsx`) galt bisher ab Fenster
-   481 px ohne Rücksicht auf die Schrift: Skala 1.4 @481 / 490 / 496 ragte der Streifen
-   16.1 / 7.1 / 1.1 px in sein rechtes Polster (Seiten-Querscroll 0, Polster-Überlauf).
-   Jetzt gilt der Boden nur, wo der Streifen ihn trägt (Bedarf OHNE Verlauf-Knopf, s. o.);
-   darunter schrumpft das Feld um die Restmasse (≤ 0.8 rem bei Skala 1.4, @481: 8.3 rem
-   statt 9 rem) statt den Streifen zu sprengen — ein Feld von 8 rem ist noch ein Feld,
-   ein Überlauf ist ein Defekt. */
-@media (min-width: 481px) {
-  @container topbar-zeile (width >= calc(15rem + 120px)) {
-    .lc-topbar-suche { min-width: 9rem; }
-  }
+/* Der 9-rem-Boden des Kopf-Suchfelds (D9-Nachzug, `min-[481px]:min-w-[9rem]` an der Feld-Hülle
+   in `Topbar.tsx`) galt bisher ab Fenster 481 px ohne Rücksicht auf die Schrift: Skala 1.4
+   @481 / 490 / 496 ragte der Streifen 16.1 / 7.1 / 1.1 px in sein rechtes Polster
+   (Seiten-Querscroll 0, Polster-Überlauf). Jetzt fällt der Boden WEG, wo der Streifen ihn
+   nicht trägt (Bedarf OHNE Verlauf-Knopf, s. o.): das Feld schrumpft dort um die Restmasse
+   (≤ 0.8 rem bei Skala 1.4, @481: 8.3 rem statt 9 rem) statt den Streifen zu sprengen —
+   ein Feld von 8 rem ist noch ein Feld, ein Überlauf ist ein Defekt. Die Zahl 9 rem bleibt
+   bewusst in der Utility (F9-Wächter `tap-ziel-token.test.ts` verbietet eine rohe
+   min-width-Zahl in CSS-Deklarationen); hier steht nur die Rücknahme (`min-width: 0`). Zwei Klassen (`.lc-topbar-zeile
+   .lc-topbar-suche`), weil die Utility `min-[481px]:min-w-[9rem]` (eine Klasse, Tailwind-
+   Reihenfolge) eine einklassige Regel sonst überstimmt (gemessen: 1.4 @481 blieb bei 16.1 px). */
+@container topbar-zeile (width < calc(15rem + 120px)) {
+  .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
 }
 @media (min-width: 640px) {
   @container topbar-zeile (width < calc(16.625rem + 120px)) {
-    .lc-topbar-suche { min-width: 0; }
+    .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
   }
 }
 
