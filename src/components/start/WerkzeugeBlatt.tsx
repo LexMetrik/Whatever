@@ -64,6 +64,12 @@ export function WerkzeugeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOr
 // Klartext in ink-600, im Katalog (`/rechner`, `KategorieSektion`) als Marke
 // `lc-badge-geplant` — ein Status, zwei Formen. Jetzt die eine Marke mit dem
 // Kanon-Wortlaut «In Vorbereitung» (Wächter design-konsistenz-chips-marken).
+// STAND DER MARKE: hinter dem Namen, im Textfluss (`ml-2 align-middle`, wie
+// `VorlagenSprung`/`ZustErgebnisEinleitung`), NICHT als rechte Spalte neben ihm:
+// gemessen 30.9.2026 verschmälerte die 103-px-Marke (135 px bei Schrift 1.4) die
+// Namensspalte @1024/1.4 von 46 auf 23 px (6 → 12 Zeilen, Überlauf 461 → 977 px)
+// und @1280/1.4 von 61 auf 38 px — breiter als der 80-px-Klartext davor. Im
+// Fluss bricht sie als Ganzes in die nächste Zeile.
 
 const VORLAGEN_KARTEN = kartenDerKategorie(KATALOG_KARTEN, 'vorlagen');
 const rechnerZahl = (id: OberkategorieId) => kartenDerKategorie(KATALOG_KARTEN, id).filter(istVerfuegbar).length;
@@ -110,10 +116,11 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
             return (
               <li key={g.id} className="break-inside-avoid border-t border-rule-soft">
                 <button type="button" onClick={zu('vorlagen', g.id)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
-                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.name}</span>
-                  {n > 0
-                    ? <span className="num shrink-0 text-xs text-ink-700">{nf(n)}</span>
-                    : <span className="lc-badge-geplant shrink-0">In Vorbereitung</span>}
+                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">
+                    {g.name}
+                    {n === 0 && <span className="lc-badge-geplant ml-2 align-middle">In Vorbereitung</span>}
+                  </span>
+                  {n > 0 && <span className="num shrink-0 text-xs text-ink-700">{nf(n)}</span>}
                 </button>
               </li>
             );

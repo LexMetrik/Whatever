@@ -264,6 +264,15 @@ function GebietErlasse({ nr }: { nr: string }) {
   );
 }
 
+/** Suche ohne Treffer auf der Kantons- bzw. Staatsvertrags-Stufe. Vorher
+ *  (gemessen 30.9.2026, «zzzzq» in `gesetze/kantone/ZH`): KEINE Meldung — nur der
+ *  Knopf «Alle aufklappen» über leerer Fläche; in `gesetze/international`
+ *  «Kein Eintrag gefunden.» als Bestands-Leere ohne Ausweg, obwohl nur die Suche
+ *  verdeckt (Lage ⇒ `filter`, leerzustand-d7 R4-E). */
+function SucheLeer({ leeren }: { leeren: () => void }) {
+  return <Leerzustand art="filter" ansage text="Kein Erlass gefunden." weiterweg={{ text: 'Suche leeren', onKlick: leeren }} />;
+}
+
 function KantonErlasse({ kt }: { kt: string }) {
   const erlasse = useRegister();
   const [sys, setSys] = useState<Record<string, KantonSystematikBaum> | null>(null);
@@ -281,7 +290,9 @@ function KantonErlasse({ kt }: { kt: string }) {
     <div className="space-y-4">
       <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In ${kantonName(kt)} filtern`} />
       <Laedt erlasse={erlasse}>
-        {() => <KantonSystematik erlasse={eig} sys={sys?.[kt]} sysGeladen={sys !== null} />}
+        {() => (eig.length === 0 && suche.trim() !== ''
+          ? <SucheLeer leeren={() => setSuche('')} />
+          : <KantonSystematik erlasse={eig} sys={sys?.[kt]} sysGeladen={sys !== null} />)}
       </Laedt>
     </div>
   );
@@ -297,7 +308,11 @@ function International({ gruppe }: { gruppe?: string }) {
   return (
     <div className="space-y-4">
       <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge filtern'} />
-      <Laedt erlasse={erlasse}>{() => <InternationalRubriken erlasse={intl} gruppe={gruppe} />}</Laedt>
+      <Laedt erlasse={erlasse}>
+        {() => (intl.length === 0 && suche.trim() !== ''
+          ? <SucheLeer leeren={() => setSuche('')} />
+          : <InternationalRubriken erlasse={intl} gruppe={gruppe} />)}
+      </Laedt>
     </div>
   );
 }

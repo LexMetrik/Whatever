@@ -227,6 +227,20 @@ describe('DK-B (2)/(4) — Gesetze-Blatt', () => {
     expect(leer(ziel)?.getAttribute('data-leerzustand')).toBe('bestand');
   });
 
+  for (const [pfad, name] of [[['kantone', 'ZH'], 'Kantons-Stufe'], [['international'], 'Staatsvertrags-Stufe']] as const) {
+    it(`${name}: Suche ohne Treffer ⇒ Filter-Leere mit «Suche leeren» (vorher Stille bzw. Bestands-Leere ohne Ausweg)`, async () => {
+      const ziel = aufbauen(regFetch(REGISTER));
+      await zeige(ziel, gesetze([...pfad]));
+      expect(leer(ziel)?.getAttribute('data-leerzustand'), 'ohne Suche keine Filter-Leere').not.toBe('filter');
+      await tippe(ziel, 'zzzzq');
+      expect(leer(ziel)?.getAttribute('data-leerzustand')).toBe('filter');
+      expect(leerText(ziel)).toContain('Kein Erlass gefunden.');
+      await klickeKnopf(ziel, 'Suche leeren');
+      expect(feld(ziel).value).toBe('');
+      expect(leer(ziel)?.getAttribute('data-leerzustand') ?? null).not.toBe('filter');
+    });
+  }
+
   it('Laden: die eine Ladeanzeige (role=status, Ablesekante) statt nacktem Absatz', async () => {
     const ziel = aufbauen(() => new Promise(() => {})); // Register hängt
     await zeige(ziel, gesetze([]));
