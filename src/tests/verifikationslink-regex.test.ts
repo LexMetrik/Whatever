@@ -12,7 +12,7 @@ import { verifizierLinkArtikel } from '../lib/normtext/verifikationslink';
 
 const ALT = /^t*a\d+[a-z]*(?:\d+[a-z]*)*$/; // frühere, katastrophal backtrackende Fassung (NUR kurze Eingaben!)
 const BASIS = 'https://www.fedlex.admin.ch/eli/cc/2006/859/de';
-const GELTEND = { aufgehoben: false };
+const GELTEND = { aufgehoben: undefined } as const; // wie verifikationslink.test.ts:29
 
 /** Produktiv-Verhalten: Freigabe eines «__N»-Tokens mit Fragment `f` (= Regex trifft). */
 const neu = (f: string): boolean =>
