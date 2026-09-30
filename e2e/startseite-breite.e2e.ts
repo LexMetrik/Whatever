@@ -234,6 +234,7 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1' },
     { breite: 1280, hoehe: 800, leiste: LEISTE, skala: '1' },
     { breite: 1440, hoehe: 900, leiste: LEISTE, skala: '1' },
+    { breite: 1100, hoehe: 900, leiste: 208, skala: '1' }, // P17: Werkzeuge-Liste 163 px Überlauf (Fenster < 1280)
     { breite: 1920, hoehe: 1200, leiste: 0, skala: '1.4' },
   ]) {
     test(`(3) U13 @${breite}×${hoehe}${leiste ? ' mit Seitenleiste' : ''}${skala !== '1' ? ` Skala ${skala}` : ''}: alle vier Blätter ganz im Fenster`, async ({ page }) => {
@@ -259,6 +260,46 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
           expect(m.ueber, `${name}-Wahl ohne Überlauf (${JSON.stringify(m)})`).toBeLessThanOrEqual(1);
         }
       }
+    });
+  }
+
+  // W2·31 P17 (1.10.2026): die Vorlagen-Liste im Werkzeuge-Blatt wählt ihre zwei
+  // Unterspalten nach der BLATTBREITE (Container `blatt`, ≥ 44 rem) ODER `xl`
+  // (Fenster ≥ 1280), nicht mehr nur nach dem Fenster. Gemessen vorher: Fenster
+  // 1100 + Seitenleiste 208 (Blatt 802 px breit) einspaltig, Überlauf 163 px.
+  // Die drei «unverändert»-Zellen sichern «ohne Seitenleiste alles wie vorher»
+  // (bei Browser-Grundschrift 16 px; kleine Grundschrift 9/12 px wird gewollt
+  // zweispaltig, siehe WerkzeugeBlatt.tsx):
+  // @1200 Skala 1 (Blatt 670 px = 41.9 rem, der Deckel ohne Seitenleiste) und
+  // @1279 Skala 1.2 (739 px = 38.5 rem, das breiteste Blatt unter `xl` in px) bleiben
+  // EINspaltig; @1100 + Seitenleiste 460 (Blatt 550 px) ebenso.
+  // ROT ZU BEKOMMEN (§6.7, gegen den Quellcode): in `WerkzeugeBlatt.tsx`
+  // `lg:@[44rem]/blatt:` streichen → Zelle 1100+208 rot; Schwelle auf `@[38rem]`
+  // senken auf 38 rem → die Zellen @1200 (41.9 rem) und @1279 Skala 1.2 (38.5 rem) kippen auf 2 Spalten, rot. Beide Proben gemessen 1.10.2026 (Logs .gate/p17-rot1/2.log).
+  for (const { breite, leiste, skala, cols } of [
+    { breite: 1100, leiste: 208, skala: '1', cols: 2 },
+    { breite: 1100, leiste: LEISTE, skala: '1', cols: 1 },
+    { breite: 1200, leiste: 0, skala: '1', cols: 1 },
+    { breite: 1279, leiste: 0, skala: '1.2', cols: 1 },
+    { breite: 1280, leiste: 0, skala: '1', cols: 2 },
+  ]) {
+    test(`(3d) P17 @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ''} Skala ${skala}: Vorlagen-Liste ${cols}-spaltig`, async ({ page }) => {
+      if (leiste) await mitLeiste(page, leiste);
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
+      await start(page, breite, 900, '/?blatt=werkzeuge');
+      await expect(page.locator('#lm-start-blatt')).toHaveAttribute('data-phase', 'offen');
+      const liste = page.getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' });
+      await expect(liste).toBeVisible();
+      const m = await liste.evaluate((ul) => {
+        const i = document.querySelector('.lc-start-blatt-inhalt')!;
+        const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const cs = getComputedStyle(i);
+        return {
+          spalten: getComputedStyle(ul).columnCount === '2' ? 2 : 1,
+          blattRem: Math.round((i.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)) / rem * 10) / 10,
+        };
+      });
+      expect(m.spalten, JSON.stringify(m)).toBe(cols);
     });
   }
 
