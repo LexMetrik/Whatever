@@ -13,7 +13,8 @@
 
 import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { jahrVon, bandVon, zaehleBaender, istChronologisch } from '../components/rechtsprechung/baender';
-import { zaehleAktiveFilter, leseFenster, schreibeFenster, DECKEL_PRAEFIX } from '../components/rechtsprechung/zustand';
+import { zaehleAktiveFilter } from '../components/rechtsprechung/zustand';
+import { leseFenster, schreibeFenster, DECKEL_PRAEFIX } from '../components/ui/listenFenster';
 import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 
 function e(teil: Partial<BrowseEntscheid> & { key: string }): BrowseEntscheid {

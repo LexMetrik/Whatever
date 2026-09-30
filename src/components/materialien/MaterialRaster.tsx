@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { BrowseMaterial } from '../../lib/materialien/typen';
-import { leseFenster, schreibeFenster } from '../rechtsprechung/zustand';
+import { leseFenster, schreibeFenster } from '../ui/listenFenster';
 import { WeitereKnopf } from '../ui/WeitereKnopf';
 import { MaterialKarte } from './MaterialKarte';
 
