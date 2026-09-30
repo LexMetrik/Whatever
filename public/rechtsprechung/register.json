@@ -37737,38 +37737,6 @@
       }
     },
     {
-      "key": "ag_gerichte_HOR_2025_3",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "HOR.2025.3",
-      "bgeReferenz": null,
-      "datum": "2025-08-21",
-      "zitierung": "Obergericht AG HOR.2025.3 vom 21.08.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "HEUE",
-        "HREGV",
-        "IPRG",
-        "LUGUE",
-        "OR",
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/HOR_2025_3.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11417",
-      "fassungsToken": "8637316e6ebd210a60cd0d3c1b9aeb77ac0e22620e39e703ba8728771ed5b36b"
-    },
-    {
       "key": "ag_gerichte_ZOR_2024_64",
       "gericht": "ag_gerichte",
       "gerichtName": "Obergericht AG",
@@ -72468,35 +72436,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "ag_gerichte_ST_2024_216",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "ST.2024.216",
-      "bgeReferenz": null,
-      "datum": "2024-12-20",
-      "zitierung": "Obergericht AG ST.2024.216 vom 20.12.2024",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "EMRK",
-        "STGB",
-        "STPO",
-        "SVG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/ST_2024_216.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/10249",
-      "fassungsToken": "f0deabd4c8695d0738c00af021f89363e8c3d9f497ff0a939af24f0ed0ae18fe"
     },
     {
       "key": "bge_151_II_345",

@@ -2,10 +2,8 @@
 // Erfasste Rechtsprechungs-Keys (interne Verlinkung, synchron konsultiert, Fahrplan 8.5).
 export const ERFASST: ReadonlySet<string> = new Set([
   "ag_gerichte_HOR_2024_19",
-  "ag_gerichte_HOR_2025_3",
   "ag_gerichte_SBE_2024_32",
   "ag_gerichte_SST_2024_213",
-  "ag_gerichte_ST_2024_216",
   "ag_gerichte_VBE_2024_399",
   "ag_gerichte_VBE_2024_460",
   "ag_gerichte_VBE_2024_584",

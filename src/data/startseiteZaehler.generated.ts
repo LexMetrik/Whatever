@@ -176,13 +176,13 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5470,
+  "rechtsprechungVolltext": 5468,
   "rechtsprechungVollurteilVerweise": 1333,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
       "label": "Privatrecht",
-      "anzahl": 1095
+      "anzahl": 1094
     },
     {
       "id": "straf",
@@ -197,7 +197,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     {
       "id": "oeffentlich",
       "label": "Öffentliches Recht",
-      "anzahl": 1455
+      "anzahl": 1454
     },
     {
       "id": "steuern",
