@@ -1,9 +1,10 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  kontextSync, kontextEntscheide, kontextSoftLaw, mischeMaterialien, normenFuer,
+  kontextSync, kontextEntscheide, kontextSoftLawErgebnis, mischeMaterialien, normenFuer,
   type KontextTyp, type EntscheidRef, type MaterialBezug, type ArtikelKontextAnsicht,
 } from '../../lib/kontext';
+import { beiKantenShardErholt } from '../../lib/materialien/kanten-shard';
 import { ladeLeitfallShard, artikelProEntscheid } from '../../lib/rechtsprechung/norm-index';
 import { artikelWerkzeugGruppen } from '../../lib/normtext/werkzeuge';
 import { botschaftenFuer, type BotschaftBezug } from '../../lib/materialien/botschaften';
@@ -182,16 +183,32 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   // Adapter erfassten Behördenpublikationen (300+ Dokumente, artikelscharf) liegen
   // als erlass-lokale Shards und werden hier nachgeladen. Ergebnis trägt seinen
   // eigenen Key → Ladezustand abgeleitet (kein synchrones setState im Effekt-Body).
-  const [softLawGeladen, setSoftLawGeladen] = useState<{ key: string; refs: MaterialBezug[] } | null>(null);
+  //
+  // §8 (W2·27-BUND-FERTIG 30.9.2026): `kontextSoftLawErgebnis` statt der dünnen
+  // Fassung — bei Shard-/Manifest-Ausfall ist die Liste ein Rest, keine Auskunft.
+  // Dann steht der Hausbaustein `AbrufFehler` mit «Erneut laden» (Muster der
+  // Erlass-Tafel `PanelErlaeuterungen` und des Popovers `VerweisKontext`); `versuch`
+  // steckt im Ergebnis-Key, damit der Zustand des Fehlversuchs nicht stehen bleibt.
+  const [versuch, setVersuch] = useState(0);
+  const softKey = `${normKeysKey}#${versuch}`;
+  const [softLawGeladen, setSoftLawGeladen] = useState<{ key: string; refs: MaterialBezug[]; fehler: boolean } | null>(null);
   useEffect(() => {
     if (typ === 'material') return; // Material-Reader IST das Material
     const keys = normKeysKey ? normKeysKey.split(',') : [];
     let lebt = true;
-    kontextSoftLaw(typ, keys).then((r) => { if (lebt) setSoftLawGeladen({ key: normKeysKey, refs: r }); });
+    kontextSoftLawErgebnis(typ, keys).then((r) => { if (lebt) setSoftLawGeladen({ key: softKey, refs: r.liste, fehler: r.fehler }); });
     return () => { lebt = false; };
-  }, [typ, normKeysKey]);
-  const softLaw: MaterialBezug[] =
-    softLawGeladen && softLawGeladen.key === normKeysKey ? softLawGeladen.refs : [];
+  }, [typ, normKeysKey, softKey]);
+  const softLawAktuell = softLawGeladen && softLawGeladen.key === softKey ? softLawGeladen : null;
+  const softLaw: MaterialBezug[] = softLawAktuell?.refs ?? [];
+  const softLawFehler = softLawAktuell?.fehler === true;
+  // Holt eine ANDERE Fläche den gescheiterten Shard nach, zieht dieses Panel mit.
+  useEffect(() => {
+    if (!softLawFehler) return;
+    const abmelden = normKeysKey.split(',').filter(Boolean)
+      .map((k) => beiKantenShardErholt(k, () => setVersuch((v) => v + 1)));
+    return () => { abmelden.forEach((ab) => ab()); };
+  }, [softLawFehler, normKeysKey]);
 
   // Entstehungsgeschichte (Paket 2, W2·6, Moat-Hebel 1 «Norm-Kontext-Bus»): die
   // Botschaften des Bundesrates zur Norm — Genese, semantisch VOR Anwendung/Auslegung.
@@ -304,7 +321,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   const alleMaterialien = mischeMaterialien(materialien, softLaw);
   // Solange die async-Materialien für den aktuellen Key noch laden, gilt das Panel
   // NICHT als leer (kein vorzeitiges Leerbild → kein Flash/CLS).
-  const softLawLaden = typ !== 'material' && (!softLawGeladen || softLawGeladen.key !== normKeysKey);
+  const softLawLaden = typ !== 'material' && !softLawAktuell;
 
   // S7: der Artikel-Kontext wird HIER gegatet — `typ === 'norm'` schliesst den
   // Entscheid-/Material-Reader aus, selbst wenn eine künftige Aufrufstelle die
@@ -316,7 +333,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   // solche Menge; er darf die Leer-Aussage darunter darum weder auslösen noch
   // unterdrücken.
   const hatSync = normen.length > 0 || alleMaterialien.length > 0 || werkzeuge.length > 0 || zeigeArtikelWerkzeuge;
-  const istLeer = !zusatzGruppen && !hatSync && !entscheideLaden && !softLawLaden
+  const istLeer = !zusatzGruppen && !hatSync && !entscheideLaden && !softLawLaden && !softLawFehler
     && !botschaftenLaden && !botschaftenFehler && botschaften.length === 0
     && !revLaden && !revFehler && alleRevisionen.length === 0
     && !vernehmlassungenLaden && !vernehmlassungenFehler && vernehmlassungen.length === 0
@@ -601,7 +618,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               reine ERLASS-EBENE-Kanten dezenter HINTER dem Zähler (<details>,
               tastatur-/CLS-fest wie RegesteBlock) — keine Chip-Wüste, Dichte-Regel
               bleibt. Staleness-Hinweis §2.4, «maschinell»-Badge nur bei Heuristik. */}
-          {alleMaterialien.length > 0 && (() => {
+          {(alleMaterialien.length > 0 || softLawFehler) && (() => {
             const artikelScharf = alleMaterialien.filter((m) => m.artikel || m.sublabel);
             const erlassEbene = alleMaterialien.filter((m) => !m.artikel && !m.sublabel);
             const sichtbarScharf = artikelScharf.slice(0, MAX_MATERIALIEN);
@@ -637,7 +654,17 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
             };
             return (
               <KontextGruppe titel="Amtliche Materialien" richtung="Legt aus" punkt="material" anzahl={alleMaterialien.length}
-                hinweis={<><span className="num">{alleMaterialien.length}</span> erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) — kein Gesetzesrang.</>}>
+                hinweis={alleMaterialien.length > 0
+                  ? <><span className="num">{alleMaterialien.length}</span> erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) — kein Gesetzesrang.</>
+                  : undefined}>
+                {softLawFehler && (
+                  // §8: die Quelle (Kanten-Shard/Manifest) war nicht erreichbar — kein «nichts
+                  // erfasst». Die Zeile steht IN der Gruppe (wie bei Botschaften/Revisionen);
+                  // bleibt ein kuratierter Rest stehen, sagt sie, dass die Liste unvollständig ist.
+                  <AbrufFehler gegenstand={alleMaterialien.length > 0 ? 'Ein Teil der amtlichen Materialien' : 'Amtliche Materialien'}
+                    mehrzahl={alleMaterialien.length === 0} onErneut={() => setVersuch((v) => v + 1)}
+                    daten={{ 'data-kontext-material-fehler': '' }} />
+                )}
                 {artikelScharf.length > 0 && (
                   <ul className="flex flex-col gap-1.5">{sichtbarScharf.map(zeile)}</ul>
                 )}
