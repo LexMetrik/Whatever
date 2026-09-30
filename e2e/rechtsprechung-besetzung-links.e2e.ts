@@ -91,9 +91,8 @@ test.describe('Entscheid-Leser — klickbare Besetzung', () => {
     const ergebnis = await new AxeBuilder({ page })
       .include('dl')
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      // Inline-Link-Marken ohne Unterstreichung = dokumentierter Markenentscheid
-      // (a11y-BERICHT.md B-2), wie an den übrigen Prüfpunkten dieser Rubrik.
-      .disableRules(['link-in-text-block'])
+      // `link-in-text-block` gatet mit (damals abgeschaltet als Markenentscheid B-2;
+      // seit R3-Nachzug 6.9.2026 sind Inline-Links unterstrichen, DESIGN-REGLEMENT F0.8).
       .analyze()
     const schwer = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')
     if (ergebnis.violations.length > 0) {
