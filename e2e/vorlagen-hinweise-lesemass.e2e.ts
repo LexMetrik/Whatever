@@ -124,7 +124,7 @@ async function musterdatenFuellen(page: Page): Promise<void> {
 
 async function weiter(page: Page, n: number): Promise<void> {
   for (let i = 0; i < n; i++) {
-    const w = page.getByRole('button', { name: /^Weiter/ });
+    const w = page.getByRole('button', { name: /^Weiter(?!lesen)/ });
     await expect(w, `Weiter-Klick ${i + 1}/${n}`).toBeEnabled();
     await w.click();
     await page.waitForTimeout(100);
@@ -242,7 +242,7 @@ async function sammleNoticeBreiten(page: Page): Promise<{ box: number; eltern: n
 
 async function bisZumEnde(page: Page): Promise<void> {
   for (let i = 0; i < 10; i++) {
-    const w = page.getByRole('button', { name: /^Weiter/ });
+    const w = page.getByRole('button', { name: /^Weiter(?!lesen)/ });
     if (!(await w.count()) || !(await w.isEnabled())) break;
     await w.click();
     await page.waitForTimeout(100);
@@ -314,7 +314,7 @@ test.describe('Notice-Boxen: Breite = Breite ihres Spalten-Elternteils', () => {
 // Protokoll-Liste (wizard.tsx) entfernen → (2) schlägt mit den Original-Werten
 // (88/93/101/106/111 ch) fehl, (3) misst keinen Deckel.
 
-type Klasse = 'notice' | 'cbText' | 'cbHint' | 'ulLi' | 'protokoll';
+type Klasse = 'notice' | 'cbText' | 'cbHint' | 'ulLi' | 'protokoll' | 'feldlabel' | 'blockerKnopf' | 'platzLi' | 'cbZeile';
 
 const REST_SELEKTOR: Record<Klasse, string> = {
   notice: '.lc-vorlagen-schritt [class*="lc-notice"]',
@@ -322,11 +322,21 @@ const REST_SELEKTOR: Record<Klasse, string> = {
   cbHint: '.lc-vorlagen-schritt span.block.text-xs',
   ulLi: '.lc-vorlagen-schritt :is(ul, ol, dl).text-body-s > :is(li, dd)',
   protokoll: '[data-vorschau-panel] details.lc-card > summary + ul > li',
+  // Paket P2 (30.9.2026): Feldbeschriftung, Sprungknöpfe der Offen-Liste, Leerzustand-Liste.
+  // Bewusst NICHT über die Fix-Klasse `lc-feldlabel` gewählt (sonst fände der Test
+  // ohne den Fix nichts und wäre «rot» nur durch Abwesenheit, nicht durch das Mass).
+  feldlabel: '.lc-vorlagen-schritt label[id$="-label"]',
+  // Ganze Kontrollkästchen-Zeile (Label-Kasten, Text direkt oder im span): misst
+  // nur Zeichen/Zeile, unabhängig davon, WO der Deckel sitzt.
+  cbZeile: '.lc-vorlagen-schritt label.flex',
+  blockerKnopf: '.lc-vorlagen-schritt details > div > button.block',
+  platzLi: '[data-dokument-platz] ul > li',
 };
 // Obergrenze des Deckels je Klasse in rem (Token aus tailwind.config.js).
 const REST_REM: Record<Klasse, number> = {
   notice: pxVon('reading-s') / 16, cbText: pxVon('reading-s') / 16, cbHint: pxVon('kleintext') / 16,
   ulLi: pxVon('reading-s') / 16, protokoll: pxVon('reading-s') / 16,
+  feldlabel: pxVon('reading-s') / 16, cbZeile: pxVon('reading-s') / 16, blockerKnopf: pxVon('reading-s') / 16, platzLi: pxVon('kleintext') / 16,
 };
 const MAX_CH_SPITZE = 85;
 const MIN_INNEN_PX = 240; // innere Text-Breite der Notice — darunter kollabiert die Zeile
@@ -336,7 +346,7 @@ interface RestFund {
   deckelPx: number; innenPx: number; boxPx: number; elternPx: number; rootPx: number;
 }
 
-async function sammleRest(page: Page, klasse: Klasse): Promise<RestFund[]> {
+async function sammleRest(page: Page, klasse: Klasse, selektor?: string): Promise<RestFund[]> {
   return page.evaluate(({ sel, klasse: k }) => {
     const wortRe = /\S+/g;
     const range = document.createRange();
@@ -387,7 +397,7 @@ async function sammleRest(page: Page, klasse: Klasse): Promise<RestFund[]> {
       const laengen = zeilen.map((z) => { z.sort((a, b) => a.x - b.x); return z.reduce((s, w, i) => s + w.t.length + (i > 0 && w.weiss ? 1 : 0), 0); });
       const voll = laengen.slice(0, -1);
       const cs = getComputedStyle(el);
-      const deckelEl = k === 'protokoll' ? (el.parentElement as Element) : el;
+      const deckelEl = k === 'protokoll' || k === 'platzLi' ? (el.parentElement as Element) : el;
       const pb = (el.parentElement as Element).getBoundingClientRect();
       const iMax = voll.indexOf(Math.max(...voll));
       funde.push({
@@ -400,10 +410,10 @@ async function sammleRest(page: Page, klasse: Klasse): Promise<RestFund[]> {
       });
     }
     return funde;
-  }, { sel: REST_SELEKTOR[klasse], klasse });
+  }, { sel: selektor ?? REST_SELEKTOR[klasse], klasse });
 }
 
-interface RestFall { klasse: Klasse; slug: string; schritt: number; vps: number[]; skala?: string; }
+interface RestFall { klasse: Klasse; slug: string; schritt: number; vps: number[]; skala?: string; ohneMuster?: boolean; selektor?: string; }
 
 // Stellen aus dem Vollsweep (Schritt = Anzahl «Weiter» nach «Mit Musterdaten füllen»).
 const REST_FAELLE: RestFall[] = [
@@ -419,6 +429,17 @@ const REST_FAELLE: RestFall[] = [
   { klasse: 'ulLi', slug: 'verjaehrungsverzicht', schritt: 2, vps: [640, 700] },
   { klasse: 'protokoll', slug: 'klage-ordentlich', schritt: 0, vps: [640] },
   { klasse: 'protokoll', slug: 'verjaehrungsverzicht', schritt: 0, vps: [1280] },
+  // Paket P2 (30.9.2026, Posten ag-gruendung / gmbh-gruendung): die Stellen, die
+  // #1164 als Nebenfund offen liess. Werte vorher (Vorlagen-Mittel/Längste ch):
+  // feldlabel 86 @640, cbText AG-Grundstück 83 @760, gmbh Checkbox 88 @640 /
+  // 101 @700 (Seite ohne Wizard-Rahmen), AG-Offen-Liste 82-104 ch.
+  { klasse: 'feldlabel', slug: 'ag-gruendung', schritt: 2, vps: [640] },
+  { klasse: 'cbZeile', slug: 'ag-gruendung', schritt: 2, vps: [760] },
+  // gmbh-gruendung liegt ohne Wizard-Rahmen: Selektor ohne Scope-Anker wählen, sonst
+  // fände der Test vor dem Fix (Seite ohne `.lc-vorlagen-schritt`) gar nichts.
+  { klasse: 'cbText', slug: 'gmbh-gruendung', schritt: 0, vps: [640, 700], selektor: 'main#inhalt label.flex > span' },
+  { klasse: 'blockerKnopf', slug: 'ag-gruendung', schritt: 0, vps: [700, 760], ohneMuster: true },
+  { klasse: 'platzLi', slug: 'ag-gruendung', schritt: 0, vps: [700, 760], ohneMuster: true },
 ];
 
 test.describe('Vorlagen-Schritte: Lesemass-Rest (Bündel K)', () => {
@@ -430,10 +451,10 @@ test.describe('Vorlagen-Schritte: Lesemass-Rest (Bündel K)', () => {
         await page.setViewportSize({ width: vp, height: 900 });
         await page.goto(`/vorlagen/${fall.slug}`);
         await bereit(page);
-        await musterdatenFuellen(page);
+        if (!fall.ohneMuster) await musterdatenFuellen(page);
         await weiter(page, fall.schritt);
         await oeffneDetails(page);
-        const funde = await sammleRest(page, fall.klasse);
+        const funde = await sammleRest(page, fall.klasse, fall.selektor);
         const wo = `${fall.klasse} ${fall.slug} S${fall.schritt} @${vp}${skalaTxt}`;
         expect(funde.length, `${wo}: mindestens ein mehrzeiliger Fund erwartet (sonst prüft der Test nichts, §6.7)`).toBeGreaterThan(0);
         for (const f of funde) {
@@ -447,11 +468,68 @@ test.describe('Vorlagen-Schritte: Lesemass-Rest (Bündel K)', () => {
             expect(f.boxPx, `${was} Box-Obergrenze (Eltern ${f.elternPx}px)`).toBeLessThanOrEqual(f.elternPx + NOTICE_BOX_MAX_ABW_PX);
             expect(f.innenPx, `${was} Textbreite Untergrenze`).toBeGreaterThan(MIN_INNEN_PX);
             expect(f.innenPx, `${was} Textbreite Obergrenze`).toBeLessThanOrEqual(obergrenze);
-          } else {
+          } else if (fall.klasse !== 'cbZeile') {
             expect(f.deckelPx, `${was} Deckel kollabiert`).toBeGreaterThan(MIN_DECKEL_PX);
             expect(f.deckelPx, `${was} Deckel weicht von der Token-Zahl ab`).toBeLessThanOrEqual(obergrenze);
           }
         }
+      });
+    }
+  }
+});
+
+// ─── Kontrollkästchen/Radios behalten ihre Grösse (Paket P2, 30.9.2026) ─────
+//
+// Posten `2026-09-30-vorlagen-kontrollkaestchen-ohne-shrink-0-werden-zusammengedr`:
+// ein rohes `<input type=checkbox|radio>` als Flex-Kind mit umbrechendem Label
+// schrumpfte auf sein Eigenmass (Chromium ~13 px statt 1.1 rem = 17.6 px) —
+// nur der Baustein `Checkbox` trug `shrink-0`. Vollsweep vorher (30 Vorlagen,
+// alle Schritte, Musterdaten, 320/375/640/700/760/1024/1280): 27 von 1571
+// Kästchen zu klein, u. a. fristerstreckung S2 @375 (13 px), schlichtungsgesuch-bs
+// S4 @375 (13), ag-gruendung S2 @640…1280 (13–16), testament S2 @320 (14.6).
+// Fix EINMAL an der globalen Regel `input[type=checkbox], input[type=radio]`
+// (index.css: `flex-shrink: 0`). Zusicherung: JEDES sichtbare Kästchen/Radio der
+// Seite ist so breit und hoch wie 1.1 rem (−0.5 px Rundung), und es gibt
+// mindestens eines (sonst prüft der Test nichts, §6.7).
+//
+// ROT ZU BEKOMMEN (§6.7): `flex-shrink: 0` in index.css entfernen → die Fälle
+// unten melden 13…15 px statt 17.6 px.
+
+interface KastenFall { slug: string; schritt: number; vps: number[]; }
+const KASTEN_FAELLE: KastenFall[] = [
+  { slug: 'fristerstreckung', schritt: 1, vps: [375, 1024] },
+  { slug: 'schlichtungsgesuch-bs', schritt: 3, vps: [375, 1024] },
+  { slug: 'schlichtungsgesuch-bs', schritt: 5, vps: [375, 1024] },
+  { slug: 'ag-gruendung', schritt: 2, vps: [640, 1280] },
+  { slug: 'testament', schritt: 1, vps: [320] },
+];
+
+test.describe('Vorlagen: Kontrollkästchen und Radios behalten ihre Grösse (P2)', () => {
+  for (const fall of KASTEN_FAELLE) {
+    for (const vp of fall.vps) {
+      test(`${fall.slug} S${fall.schritt} @${vp}: Kästchen/Radios ≥ 1.1 rem`, async ({ page }) => {
+        await page.setViewportSize({ width: vp, height: 900 });
+        await page.goto(`/vorlagen/${fall.slug}`);
+        await bereit(page);
+        await musterdatenFuellen(page);
+        await weiter(page, fall.schritt);
+        await oeffneDetails(page);
+        const r = await page.evaluate(() => {
+          const root = parseFloat(getComputedStyle(document.documentElement).fontSize);
+          const kleine: string[] = [];
+          let n = 0;
+          for (const i of document.querySelectorAll('main#inhalt input[type="checkbox"], main#inhalt input[type="radio"]')) {
+            const b = i.getBoundingClientRect();
+            if (b.width < 1) continue;
+            n++;
+            if (b.width < 1.1 * root - 0.5 || b.height < 1.1 * root - 0.5) {
+              kleine.push(`${(i as HTMLInputElement).type} ${b.width.toFixed(1)}×${b.height.toFixed(1)} px «${(i.closest('label')?.textContent ?? '').trim().slice(0, 50)}»`);
+            }
+          }
+          return { n, kleine, soll: 1.1 * root };
+        });
+        expect(r.n, `${fall.slug} S${fall.schritt} @${vp}: mindestens ein Kästchen/Radio erwartet (sonst prüft der Test nichts, §6.7)`).toBeGreaterThan(0);
+        expect(r.kleine, `${fall.slug} S${fall.schritt} @${vp}: zusammengedrückt (Soll ${r.soll} px)`).toEqual([]);
       });
     }
   }
