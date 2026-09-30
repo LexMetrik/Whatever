@@ -27,7 +27,9 @@
  * Änderung bewegt, geprüft gegen scripts/datenhaltung/ingest.ts::
  * ingestNormtextZiel — dieselben Dateien, die `ladeErlasse` unten einliest).
  * Ohne `--datum` bricht `--schreibe` jetzt ab, statt `erzeugt` still
- * wegzulassen. Das begleitende Tor `check:confidence-frische`
+ * wegzulassen. Zusätzlich `korpus.dateiSha` (= `normtext.db.datei.sha`, trägt die
+ * Dateipfade): eine Umbenennung bewegt weder artikel.sha noch die Dateianzahl
+ * (Prüfer #888, W2·27-BUND-FERTIG). Das begleitende Tor `check:confidence-frische`
  * (check-confidence-frische.ts) hält die Kopplung fest.
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -131,16 +133,21 @@ if (process.argv.includes('--schreibe')) {
   }
   const manifestPfad = join(process.cwd(), 'daten-manifest.json');
   const manifest = JSON.parse(readFileSync(manifestPfad, 'utf-8')) as {
-    'normtext.db'?: { artikel?: { sha?: string } };
+    'normtext.db'?: { artikel?: { sha?: string }; datei?: { sha?: string } };
   };
   const manifestSha = manifest['normtext.db']?.artikel?.sha;
   if (!manifestSha) {
     throw new Error(`${manifestPfad} trägt kein normtext.db.artikel.sha — Manifest neu bauen (npm run datenhaltung:manifest).`);
   }
+  // Umbenennungs-Lücke (Prüfer #888): artikel.sha trägt keine Dateinamen, datei.sha schon.
+  const dateiSha = manifest['normtext.db']?.datei?.sha;
+  if (!dateiSha) {
+    throw new Error(`${manifestPfad} trägt kein normtext.db.datei.sha — Manifest neu bauen (npm run datenhaltung:manifest).`);
+  }
   const out = {
     erzeugt: datum,
     schwelle,
-    korpus: { quelle: 'daten-manifest.json#normtext.db.artikel.sha', sha: manifestSha, erlasseDateien: befunde.length },
+    korpus: { quelle: 'daten-manifest.json#normtext.db.artikel.sha', sha: manifestSha, dateiSha, erlasseDateien: befunde.length },
     zusammenfassung: { erlasse: befunde.length, autoAkzept: autoAkzept.length, quarantaene: quarantaene.length, klassen },
     erlasse: befunde.map((b) => ({
       datei: b.datei, ebene: b.ebene, key: b.key, artikelTotal: b.artikelTotal,

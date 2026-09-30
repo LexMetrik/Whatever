@@ -7,8 +7,9 @@
  *
  * Prüft die Kopplung `confidence.json.korpus` ↔ `daten-manifest.json` ↔
  * aktueller Dateibestand (reine Vergleichslogik: confidence-frische-logik.ts).
- * Rot bei einer der drei Bedingungen aus dem Auftrag (Spec §Soll Ziff. 2):
+ * Rot bei einer der Bedingungen aus dem Auftrag (Spec §Soll Ziff. 2):
  *   (a) korpus.sha fehlt, (b) korpus.sha ≠ aktueller Manifest-Wert,
+ *   (b2) korpus.dateiSha fehlt/≠ normtext.db.datei.sha (Umbenennung, Prüfer #888),
  *   (c) zusammenfassung.erlasse ≠ Zahl der Snapshot-Dateien im Korpus.
  * §2: dieser Runner ist reine FS-Hülle, die Bewertung steht in der Logik-Datei.
  *
@@ -20,11 +21,11 @@ import { pruefeFrische, type FrischeEingabe } from './confidence-frische-logik.t
 
 interface ConfidenceDatei {
   erzeugt?: string;
-  korpus?: { quelle?: string; sha?: string; erlasseDateien?: number };
+  korpus?: { quelle?: string; sha?: string; dateiSha?: string; erlasseDateien?: number };
   zusammenfassung?: { erlasse?: number };
 }
 interface ManifestDatei {
-  'normtext.db'?: { artikel?: { sha?: string } };
+  'normtext.db'?: { artikel?: { sha?: string }; datei?: { sha?: string } };
 }
 
 const wurzel = process.cwd();
@@ -53,6 +54,12 @@ if (!aktuellerManifestSha) {
   process.exit(1);
 }
 
+const aktuellerDateiSha = manifest['normtext.db']?.datei?.sha;
+if (!aktuellerDateiSha) {
+  console.error(`check:confidence-frische ROT — daten-manifest.json trägt kein normtext.db.datei.sha.`);
+  process.exit(1);
+}
+
 function zaehleSnapshotDateien(ebene: 'bund' | 'kanton'): number {
   const dir = join(wurzel, 'public', 'normtext', ebene);
   return readdirSync(dir).filter((n) => n.endsWith('.json') && n !== 'index.json').length;
@@ -61,7 +68,9 @@ const aktuelleDateianzahl = zaehleSnapshotDateien('bund') + zaehleSnapshotDateie
 
 const eingabe: FrischeEingabe = {
   gemeldeterKorpusSha: confidence.korpus?.sha,
+  gemeldeterDateiSha: confidence.korpus?.dateiSha,
   aktuellerManifestSha,
+  aktuellerDateiSha,
   gemeldeteErlasse: confidence.zusammenfassung?.erlasse ?? -1,
   aktuelleDateianzahl,
   erzeugt: confidence.erzeugt,
