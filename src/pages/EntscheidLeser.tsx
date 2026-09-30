@@ -859,11 +859,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
                 <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
                   aria-label="Entscheidtext verkleinern"
                   title="Entscheidtext verkleinern — die Anwendung bleibt gleich gross"
-                  className="lc-btn-mini text-ink-600 hover:text-accent-text disabled:opacity-40">A−</button>
+                  className="lc-btn-mini text-ink-600 hover:text-accent-text lc-deaktiviert">A−</button>
                 <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
                   aria-label="Entscheidtext vergrössern"
                   title="Entscheidtext vergrössern — die Anwendung bleibt gleich gross"
-                  className="lc-btn-mini text-ink-600 hover:text-accent-text disabled:opacity-40">A+</button>
+                  className="lc-btn-mini text-ink-600 hover:text-accent-text lc-deaktiviert">A+</button>
               </span>
             </span>
             <button type="button" onClick={kopiereZitat}

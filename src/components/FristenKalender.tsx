@@ -299,8 +299,12 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
 
       {/* Textgleichwertige Zusammenfassung für Screenreader (die Matrix oben
           ist aria-hidden). Datum deterministisch, keine Logik. */}
+      {/* HN-D6 (A11y-Übergabe DK-Bericht): fallen Ereignistag und Fristbeginn auf
+          denselben Tag (Lohnfortzahlung: beide «Beginn der Verhinderung»), nannte
+          der Satz denselben Tag zweimal. Wie die Legende darunter
+          (`ereignisISO !== aQuoISO`) zählt dann nur der Fristbeginn. */}
       <p className="sr-only">
-        {`Fristenlauf: ${L.ereignis} am ${fmtDatum(ereignis)}, ${aQuo ? `${L.aquo} am ${fmtDatum(aQuo)}, ` : ''}${L.adquem} am ${fmtDatum(adQuem)}.${stillstandSichtbar ? ' Im Zeitraum liegt ein Gerichtsstillstand.' : ''}`}
+        {`Fristenlauf: ${aQuo && aQuoISO === ereignisISO ? '' : `${L.ereignis} am ${fmtDatum(ereignis)}, `}${aQuo ? `${L.aquo} am ${fmtDatum(aQuo)}, ` : ''}${L.adquem} am ${fmtDatum(adQuem)}.${stillstandSichtbar ? ' Im Zeitraum liegt ein Gerichtsstillstand.' : ''}`}
       </p>
 
       {luecken && <p className="text-body-s text-ink-500 mt-3 italic">Dazwischenliegende Monate sind nicht dargestellt.</p>}

@@ -2294,6 +2294,32 @@
      Konsistenzfrage — sie liegt bei David (Runde-5-Rückgabe), nicht hier. */
   .lc-hover-flaeche { @apply transition-colors; }
   .lc-hover-flaeche:hover { background-color: var(--well); }
+
+  /* DK-12 (HN-D6, 30.9.2026) · DIE ZWEITE HOVER-ROLLE: AKTIONS-FLÄCHE.
+     `.lc-hover-flaeche` (oben) gehört der anklickbaren ZEILE und tönt neutral
+     (`--well`). Daneben steht seit Langem die Hover-Grammatik der AKTION —
+     `.lc-btn-outline/-ghost/-mini:hover` tönen Messing-100 (`--brass-100`) —,
+     und 27 Stellen schrieben sie in neun Werten von Hand (`hover:bg-brass-100`
+     11×, `…/40` 4×, `…-200` 3×, `…/30`, `…-300/60` u. a.; Zählung `grep -rn
+     "hover:bg-" src`). Die Klasse ist die EINE Schreibweise der vollen Stufe
+     für Elemente, die selbst keine Fläche tragen (Akkordeon-Kopf, Kalender-
+     Knopf, Tageszelle). Dieselbe Schicht-Falle wie oben: eine Fläche an der
+     Aufrufstelle (`bg-*` als Utility) schlüge sie — dort bleibt die Utility. */
+  .lc-hover-akzent { @apply transition-colors; }
+  .lc-hover-akzent:hover { background-color: var(--brass-100); }
+
+  /* DK-11 (HN-D6, 30.9.2026) · DEAKTIVIERT OHNE EIGENE FLÄCHE.
+     `.lc-btn:disabled` (oben) trägt den Zustand über Fläche + Tinte («Deckkraft
+     ist kein Zustand», B17). Griffe OHNE Fläche — Text-/Icon-Knöpfe wie A−/A+,
+     «Suche», Schliessen — haben nichts, was sich einsenken liesse, und
+     schrieben `disabled:opacity-30/40/50` von Hand (11 Stellen, drei Werte).
+     Die Rolle ist die häufigste Stufe (0.4, 7 von 11) plus der Cursor, den
+     `.lc-btn:disabled` auch setzt. Deckkraft bleibt hier die Auskunft, weil
+     sonst keine Auskunft bleibt; ein Griff mit Fläche nimmt stattdessen
+     `.lc-btn*`. Restposten ausserhalb der Rolle: Pane-Kopf/Tab-Panel (0.3) und
+     «Zur Frist»-Knopf in ZpoFristenForm (0.5) — eine Angleichung wäre sichtbar,
+     nicht optikneutral (Posten-Stand im PR). */
+  .lc-deaktiviert:disabled { opacity: .4; cursor: not-allowed; }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   /* U2: dieselbe Umstellung wie `.lc-card`. Die Ergebnis-Kachel steht in
      Reihen nebeneinander; ihre Abgrenzung ist die Oberlinie, nicht der Kasten
@@ -2591,6 +2617,14 @@
   .lc-btn-outline:hover { background: var(--brass-100); }
   .lc-btn-ghost { @apply lc-btn bg-transparent text-ink-700; }
   .lc-btn-ghost:hover { background: var(--brass-100); }
+  /* DK-13 (HN-D6, 30.9.2026): die Gefahr-Aktion («Alles zurücksetzen …») hatte
+     als einzige Knopf-Form keinen Baustein und stand handgebaut auf `rounded-lg`
+     (10 px = Karten-Stufe) statt der Knopf-Stufe 8 px (F0.5). Anatomie = die des
+     `.lc-btn-outline` (Haarlinie, Fläche, Radius), Ton = die Gefahr-Rolle
+     (`danger-line`/`danger-700`, Hover `danger-bg`) statt Messing. Reine
+     Darstellung (§3): WAS zurückgesetzt wird, entscheidet der Aufrufer. */
+  .lc-btn-danger { @apply lc-btn bg-surface border text-danger-700; border-color: var(--danger-line); }
+  .lc-btn-danger:hover { background: var(--danger-bg); }
   /* Kleine Variante für Buttons in Zeilen/Toolbars (statt Inline-Höhen) */
   .lc-btn-sm { height: 36px; padding: 0 12px; font-size: .875rem; }
   /* Disabled einheitlich (Hover wirkt nicht mehr): @apply kopiert keine
@@ -2609,7 +2643,7 @@
      eine durchscheinende Fläche über wechselndem Untergrund ist kein Zustand,
      sondern ein Zufall. §3: reine Darstellung, KEINE Bedienlogik — welcher
      Knopf `disabled` ist, entscheidet unverändert der Aufrufer. */
-  .lc-btn:disabled, .lc-btn-primary:disabled, .lc-btn-outline:disabled, .lc-btn-ghost:disabled {
+  .lc-btn:disabled, .lc-btn-primary:disabled, .lc-btn-outline:disabled, .lc-btn-ghost:disabled, .lc-btn-danger:disabled {
     opacity: 1; cursor: not-allowed;
     background: var(--well); color: var(--ink-600);
     border: 1px solid var(--line);
@@ -2617,6 +2651,7 @@
   .lc-btn-primary:disabled { background: var(--well); }
   .lc-btn-outline:disabled { background: var(--well); border-color: var(--line); }
   .lc-btn-ghost:disabled { background: var(--well); }
+  .lc-btn-danger:disabled { background: var(--well); }
 
   /* ── Mini-Aktion in DICHTEN Zeilen (W2·17-UI-BEFUNDE, LM-091/LM-086) ──────
      Eine Aktion, die als Aktion erkennbar sein muss, ohne die Zeile zu
@@ -2647,6 +2682,19 @@
     min-height: var(--tap-ziel); padding: 0 6px;
   }
   .lc-btn-mini:hover { border-color: var(--brass-400); background: var(--brass-100); }
+
+  /* DK-08 (HN-D6, 30.9.2026) · TIPPZIEL OHNE LAYOUT-ÄNDERUNG.
+     Ein Link oder Klapp-Kopf in Fliesstext-Grösse (Zeile 15–17 px) steht unter
+     WCAG 2.5.8 / F9 (≥ `--tap-ziel` in beiden Achsen). Gemessen @390 hell:
+     Katalog-Listenlinks auf /rechner 15.0 px hoch (51 von 53 unter 24),
+     «Rechtlicher Hinweis» (`PflichtDisclaimer`-summary) 16.8 px auf jedem der
+     24 Rechner. Die Klasse polstert oben/unten um 5 px und nimmt dasselbe als
+     negativen Aussenrand zurück: bei einem Block-Element (summary) bleibt der
+     Platz im Fluss gleich, bei einem Inline-Element (Link) hat der vertikale
+     Aussenrand ohnehin keine Wirkung, das Polster wirkt aber auf Fläche und
+     `getBoundingClientRect` — die Zeile bleibt, wie sie war, die Trefferfläche
+     wächst. Die Benennung der Mindestgrösse bleibt beim Token (F9). */
+  .lc-tap-polster { padding-block: .3125rem; margin-block: -.3125rem; }
 
   /* L5 (6.9.2026): die `bg-well`-FUELLUNG faellt weg. Der Chip trug damit zwei
      Signale fuer eine Sache — Flaeche UND Tick; das Zielbild laesst den Tick
@@ -4748,8 +4796,15 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-normzeile button.lc-chip {
   border: 0;
   background: transparent;
-  padding-inline: 0;
-  margin-inline-end: .125rem;
+  /* DK-08 (HN-D6, 30.9.2026): `padding-inline: 0` machte das Normkürzel 16–20 px
+     breit (gemessen @390 hell: 220 von 1'017 Kürzeln auf /rechtsprechung unter
+     24 px, «BV» 16.0 × 24.0). Die Hitbox wächst OPTIKNEUTRAL: 4 px Polster je
+     Seite, durch gleich grosse NEGATIVE Aussenränder ausgeglichen — der Text
+     steht exakt wo vorher (Start-Rand −4, End-Rand 2 − 4), nur die Fläche ist
+     8 px breiter; der Unterstrich im Hover läuft weiter nur unter dem Text. */
+  padding-inline: .25rem;
+  margin-inline: -.25rem -.125rem;
+  min-width: var(--tap-ziel);
   font-weight: 400;
   color: var(--ink-500);
 }
