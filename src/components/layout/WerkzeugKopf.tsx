@@ -69,7 +69,7 @@ export function WerkzeugKopf({ overline, titel, titelKlasse, status, etikett, vo
       <div className="ub-kopf wk-kopf flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
         <div className="min-w-0 space-y-1">
           <p className="lc-overline">{overline}</p>
-          <SeitenTitel stimme="serif" className={titelKlasse}>{titel}</SeitenTitel>
+          <SeitenTitel className={titelKlasse}>{titel}</SeitenTitel>
         </div>
         {(status === 'entwurf' || etikett) && (
           <div className="flex min-w-0 flex-wrap items-center gap-2">

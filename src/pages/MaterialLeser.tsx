@@ -137,8 +137,9 @@ export function MaterialLeser() {
         /* G3 (Gesamtprüfung 6.9.2026): dieselbe Serif-Stimme wie Erlass-,
            Entscheid- und Vorlagen-Leser. Ein Material ist gelesener Quelltext,
            kein Bedienelement — die Stimmen-Wahl ist die einzige, die dieser
-           Kopf noch von den drei anderen Lesern unterschied. */
-        titel={<SeitenTitel stimme="serif">{m.titel}</SeitenTitel>}
+           Kopf noch von den drei anderen Lesern unterschied. (Ergänzung
+           30.9.2026, HN-D2 PR 2: die Prop entfällt, der Baustein setzt Literata.) */
+        titel={<SeitenTitel>{m.titel}</SeitenTitel>}
         fakten={[
           m.behoerdeName,
           // B-3: das Datum lief hier in der Mono-Stimme (`.num`) — die ist nach

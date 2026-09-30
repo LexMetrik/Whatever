@@ -670,8 +670,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
            und Vorlagen-Leser Literata sprechen — im Split-View standen beide
            nebeneinander (Screen 15). Ein Urteil IST zitierfähiger Quelltext,
            also die Stimme, für die `ui/SeitenTitel` sie vorsieht. Die
-           `num`-Klasse bleibt: sie setzt nur `tabular-nums`, keine Schriftart. */
-        titel={<SeitenTitel stimme="serif" className={`num${lese ? ' hidden' : ''}`}>{snap.zitierung}</SeitenTitel>}
+           `num`-Klasse bleibt: sie setzt nur `tabular-nums`, keine Schriftart.
+           (Ergänzung 30.9.2026, HN-D2 PR 2: die Prop entfällt, Literata 400 ist
+           die Stimme des Bausteins selbst, F0.11.) */
+        titel={<SeitenTitel className={`num${lese ? ' hidden' : ''}`}>{snap.zitierung}</SeitenTitel>}
         nachTitel={
           <>
             {/* 3 Abgeleitete Sachgebiets-Leitzeile — nur wenn weder ein Rubrum-Gegenstand
