@@ -4061,9 +4061,27 @@
     transition: color .15s, border-color .15s;
   }
   .lc-tab:hover { color: var(--ink-900); border-bottom-color: var(--rule-soft); }
-  /* Fokus als Strich, nicht als Kasten — dasselbe Bild wie `.lc-menu-zeile`
-     und `.lc-input` (EIN Fokus-Bild für die ganze App, R3-F3). */
-  .lc-tab:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
+  /* Fokus = der 2-px-Ring der Regel F3, nach INNEN gezogen.
+
+     W2·19 DK-A (30.9.2026, Posten «Frist-Tab ohne sichtbaren Fokusindikator»):
+     bis dahin stand hier `outline: none` und der Fokus lag allein als
+     `border-bottom-color` (`--focus`) auf dem Zustandsstrich. Der AKTIVE Reiter
+     trägt aber schon einen `border-bottom-color` (`--ink-900`, Regel unten,
+     gleiche Spezifität, später im Quelltext) — die Fokus-Farbe verlor dort, und
+     der aktive Reiter zeigte fokussiert exakt das Bild des unfokussierten.
+     Ausgerechnet der aktive ist bei ARIA-Tabs (roving tabindex) der EINZIGE per
+     Tab erreichbare Reiter: gemessen 30.9.2026 an Startseite «Frist»,
+     Tagerechner, ZPO-Fristen, Kündigung — `outline-style: none`,
+     `box-shadow: none`, Randfarbe unverändert (hell UND dunkel). Ein Strich, der
+     in der Farbe des Zustandsstrichs fällt (hell: `--focus` = Tinte = aktiver
+     Strich), ist auch mit eigenem Träger kaum vom aktiven Reiter zu
+     unterscheiden — F3 verlangt einen Ring (≥ 2 px, ≥ 3:1), nicht einen dickeren
+     Strich. Darum: die globale `:focus-visible`-Outline bleibt stehen, nur der
+     Versatz geht nach innen (`-2px`): die Leiste ist ein `overflow-x: auto`-
+     Behälter, ein Ring ausserhalb würde oben/unten/seitlich abgeschnitten
+     (Muster `.kt-einstieg :focus-visible`, `.tb-link`). Der Zustandsstrich
+     bleibt darunter sichtbar (Ring-Unterkante = Oberkante des 2-px-Rands). */
+  .lc-tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; color: var(--ink-900); }
   .lc-tab[aria-selected="true"],
   .lc-tab[aria-pressed="true"] { color: var(--ink-900); font-weight: 500; border-bottom-color: var(--ink-900); }
   /* W2·29-WERKBANK-VORLAGEN V3 · die Prop ist da (`data-reg`, bisher nur die
