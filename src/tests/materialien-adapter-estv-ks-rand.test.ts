@@ -3,6 +3,7 @@ import {
   titelDatumNachIso,
   beschreibungDatumNachIso,
   wSignaturAusTitel,
+  wSpracheAusTitel,
   baueDokUndKanten,
   ESTV_KS_SEITEN,
   type RohEstvItem,
@@ -85,5 +86,49 @@ describe('wSignaturAusTitel — Sprachkürzel D/F/I, keine gekürzte Fremdform (
     expect(dok.nummer).toBe('W01-006');
     expect(dok.titel).toBe("W01-006F vom 06.06.2001: Ordonnance sur l'imputation forfaitaire d'impôt");
     expect(dok.stand).toBe('2001-06-06');
+  });
+});
+
+// Nachzug #1179 (30.9.2026): alle Trennzeichen einheitlich, Sprache aus dem Signatur-Suffix.
+describe('wSignaturAusTitel — Gedankenstrich/Schrägstrich/Punkt wie der Bindestrich (Nachzug #1179)', () => {
+  it('Trennzeichen unmittelbar vor Ziffer/Buchstabe → null (Halbgeviert, Geviert, «/», «.»), nie die gekürzte «W95-003»', () => {
+    for (const t of ['W95-003–2024', 'W95-003D–2024', 'W95-003—2024', 'W95-003D/2024', 'W95-003/2024', 'W95-003D.2024', 'W95-003.2024', 'W95-003D−2024', 'W95-003D/Nachtrag']) {
+      expect(wSignaturAusTitel(t), t).toBeNull();
+    }
+  });
+  it('Trennzeichen vor Leerzeichen oder am Ende bleibt gültig', () => {
+    expect(wSignaturAusTitel('W95-003D / 2024')).toBe('W95-003');
+    expect(wSignaturAusTitel('W95-003D. Titel')).toBe('W95-003');
+    expect(wSignaturAusTitel('W95-003–')).toBe('W95-003');
+  });
+});
+
+describe('wSpracheAusTitel + baueDokUndKanten — Sprache aus D/F/I, sonst «de» (Nachzug #1179)', () => {
+  it('D/F/I → de/fr/it; ohne Kürzel oder mit Wort-Anhang → null', () => {
+    expect(wSpracheAusTitel('W01-006D vom 06.06.2001')).toBe('de');
+    expect(wSpracheAusTitel('W01-006F vom 06.06.2001')).toBe('fr');
+    expect(wSpracheAusTitel('W01-006I vom 06.06.2001')).toBe('it');
+    expect(wSpracheAusTitel('W01-006 vom 06.06.2001')).toBeNull();
+    expect(wSpracheAusTitel('W01-006Fa')).toBeNull();
+    expect(wSpracheAusTitel('Kreisschreiben Nr. 3; Version vom 7. Februar 2024')).toBeNull();
+  });
+  it('F-/I-Titel → dok.sprache fr/it; D-Titel und Titel ohne Kürzel → de (bisheriges Verhalten)', () => {
+    const bau = (titel: string) => baueDokUndKanten({
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-w01-006-de.pdf', titel, beschreibung: 'Gegenstand',
+      datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-w01-006-de.pdf',
+    }, [ESTV_KS_SEITEN[0]], '2026-09-30').dok;
+    expect(bau('W01-006F vom 06.06.2001').sprache).toBe('fr');
+    expect(bau('W01-006I vom 06.06.2001').sprache).toBe('it');
+    expect(bau('W01-006D vom 06.06.2001').sprache).toBe('de');
+    expect(bau('Kreisschreiben Nr. 3; Version vom 7. Februar 2024').sprache).toBe('de');
+  });
+  it('Festschreibung Ist-Stand: Titel ohne W-Signatur behält die Dateinamen-Nummer (1 realer Eintrag, W95-003-2024)', () => {
+    const { dok } = baueDokUndKanten({
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-w95-003-2024-de.pdf',
+      titel: 'Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Land- und Forstwirtschaft', beschreibung: '',
+      datumLabel: '7. Februar 2024', dateiname: 'dbst-ks-w95-003-2024-de.pdf',
+    }, [ESTV_KS_SEITEN[0]], '2026-09-30');
+    expect(dok.nummer).toBe('W95-003-2024');
+    expect(dok.sprache).toBe('de');
   });
 });
