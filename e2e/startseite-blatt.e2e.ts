@@ -727,3 +727,55 @@ test.describe('Startseite · U13 kein Scroll beim Aufklappen', () => {
     })
   }
 })
+
+// ─── W2·19 DK-B (30.9.2026, HN-D5/DK-05) · Leer-, Lade- und Fehlerzustand ────
+//
+// Vorher zeichneten die Blätter alle drei Zustände von Hand (ink-600/-700-
+// Absatz, ohne Weiterweg, ohne Haus-Fehlerbox). Jetzt: Leerzustand-Baustein mit
+// «Suche leeren» / «Filter zurücksetzen», Ladeanzeige, FehlerBox. U13 gilt für
+// JEDEN Zustand: der Zustand darf das Blatt nie aus dem Fenster schieben
+// (gemessen @1280×800 und @1440×900 vorher/nachher: Unterkante 795 px, Seite 0).
+test.describe('Startseite · Zustände der Blätter aus den Hausbausteinen (DK-B)', () => {
+  const imFenster = async (page: Page, was: string) => {
+    const m = await page.evaluate(() => {
+      const b = document.querySelector('#lm-start-blatt')!.getBoundingClientRect()
+      return { unten: Math.round(b.bottom), vh: innerHeight, sy: Math.round(scrollY) }
+    })
+    expect(m.unten, `${was}: Blatt-Unterkante im Fenster (${JSON.stringify(m)})`).toBeLessThanOrEqual(m.vh)
+    expect(m.sy, `${was}: Seite unverschoben`).toBe(0)
+  }
+
+  for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
+    test(`@${breite}×${hoehe}: Werkzeuge — Filter ohne Treffer zeigt den Leerzustand, «Suche leeren» führt zurück`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto('/?blatt=werkzeuge/rechner')
+      await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+      const feld = blatt(page).getByRole('searchbox', { name: 'Rechner filtern' })
+      await feld.fill('zzzzq')
+      const leer = blatt(page).locator('[data-leerzustand="filter"]')
+      await expect(leer).toHaveText('Kein Rechner gefunden. Suche leeren')
+      await imFenster(page, 'Leerzustand')
+      await leer.getByRole('button', { name: 'Suche leeren' }).click()
+      await expect(feld).toHaveValue('')
+      await expect(blatt(page).locator('[data-leerzustand]')).toHaveCount(0)
+    })
+  }
+
+  test('Materialien: Register verzögert ⇒ Ladeanzeige, Register fehlt ⇒ FehlerBox — beide im Fenster', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.route('**/materialien/register.json', async (route) => {
+      await new Promise((r) => setTimeout(r, 2500))
+      await route.abort()
+    })
+    await page.goto('/?blatt=materialien')
+    await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+    const laden = blatt(page).locator('[role="status"]:has(.scale-rule)')
+    await expect(laden).toContainText('Die Sammlung wird abgerufen …')
+    await imFenster(page, 'Ladeanzeige')
+    const fehler = blatt(page).locator('[role="alert"].lc-notice-danger')
+    await expect(fehler).toContainText('Laden fehlgeschlagen')
+    await expect(fehler).toContainText('Die Materialien-Sammlung konnte nicht geladen werden.')
+    await expect(fehler).not.toContainText('Eingabefehler')
+    await imFenster(page, 'FehlerBox')
+  })
+})
