@@ -166,7 +166,7 @@ describe('V5 · Musterdaten für alle Vorlagen (W2·29-WERKBANK-VORLAGEN)', () =
     expect(w).toMatchInlineSnapshot(`
       {
         "ag-gruendung": [
-          "• Geschäftsübernahme von Anna Muster: Mit der Übernahme von Aktiven und Passiven haftet die Gesellschaft den Gläubigern ab Mitteilung bzw. Auskündigung; die bisherige Schuldnerin haftet drei Jahre solidarisch weiter (Art. 181 Abs. 1 und 2 OR). Bei im Handelsregister eingetragenen Rechtsträgern richtet sich die Übernahme nach dem Fusionsgesetz (Art. 181 Abs. 4 OR).",
+          "Geschäftsübernahme von Anna Muster: Mit der Übernahme von Aktiven und Passiven haftet die Gesellschaft den Gläubigern ab Mitteilung bzw. Auskündigung; die bisherige Schuldnerin haftet drei Jahre solidarisch weiter (Art. 181 Abs. 1 und 2 OR). Bei im Handelsregister eingetragenen Rechtsträgern richtet sich die Übernahme nach dem Fusionsgesetz (Art. 181 Abs. 4 OR).",
         ],
         "kuendigung-mieter": [
           "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
