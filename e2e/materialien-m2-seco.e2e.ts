@@ -32,12 +32,19 @@ test('Materialien-Übersicht listet die neuen SECO-Einträge, 390px ohne Overflo
   await page.setViewportSize({ width: 390, height: 900 })
   await page.goto('/materialien')
 
-  // register.json wird async gefetcht → auf einen neuen SECO-Wegleitungs-Titel warten.
-  await expect(page.getByText('ArGV 1 Artikel 32a', { exact: false }).first()).toBeVisible({ timeout: 15000 })
+  await expect(page.locator('a.lc-card').first()).toBeVisible({ timeout: 15000 })
 
   // Kein horizontaler Overflow trotz der zusätzlichen ~150 Karten (Lesbarkeit/§15).
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
   expect(overflow, `horizontaler Overflow ${overflow}px bei 390px`).toBeLessThanOrEqual(1)
+
+  // DEKLARIERTE ANPASSUNG (W2·31-BILDSCHIRMBREITE P6, 30.9.2026): die Übersicht
+  // rendert je Behörde höchstens 100 Karten (+ «Weitere anzeigen»); der Titel
+  // steht hinter dem Deckel. Er wird darum über das Filterfeld gesucht — das
+  // läuft über den ganzen Bestand und belegt zugleich, dass der Deckel keinen
+  // Eintrag unauffindbar macht. Der Overflow-Wächter darüber misst die gedeckelte Seite.
+  await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('ArGV 1 Artikel 32a')
+  await expect(page.getByText('ArGV 1 Artikel 32a', { exact: false }).first()).toBeVisible({ timeout: 15000 })
 
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })
