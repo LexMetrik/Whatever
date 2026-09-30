@@ -17,12 +17,9 @@ Unfall-Muster.
 Prompt-Cache (QS-TOK/T19): PreToolUse liegt AUSSERHALB des gecachten
 Präfix — dieser Hook kostet bei Grün 0 Token und keine Cache-Invalidierung.
 
-MCP-Kanal-Deckung (QS-EFFIZIENZ 15.8.2026, Werkzeug-Analyse Befund 3): Der
-Hook hing allein am Matcher `Bash`. `start_process`/`interact_with_process`
-(Desktop Commander u. a.) starten dieselbe Shell und erzielen damit dieselbe
-Wirkung — dort heisst das Feld aber `command` bzw. `input`. Unten wird nur die
-HERKUNFT normalisiert; die drei Regeln selbst sind Wort für Wort unverändert,
-der Bash-Pfad bleibt byte-gleich.
+MCP-Kanal-Deckung (QS-EFFIZIENZ 15.8.2026): `start_process`/
+`interact_with_process` starten dieselbe Shell (Feld `command` bzw. `input`);
+unten wird nur die HERKUNFT normalisiert, der Bash-Pfad bleibt byte-gleich.
 
 Exit 2 = Aufruf blockieren, stderr geht als Feedback an Claude.
 """
@@ -83,17 +80,13 @@ TOR_MUSTER = re.compile(
     # Tor bleibt Tor, egal ob via npm-Alias oder Skript-Pfad aufgerufen.
     r"|bibliothek-check\.sh|scripts/check-[a-z-]+\.(?:ts|sh)|struktur-rotieren\.py --check"
 )
-# §17-Nachtrag 29.8.2026 (Steuerungs-Diät, Auftrag David): Regel 1 greift nur
-# noch, wenn das Tor-Kommando SELBST ausgefuehrt wird. Bisher genuegte das
-# blosse VORKOMMEN des Namens im Segment — rein lesende Aufrufe wurden geblockt
-# (drei reproduzierte Fehlalarme 29.8.2026: `grep -n "check:plan"
-# scripts/check-tor-paritaet.ts | head`, dieselbe Zeile unquoted,
-# `wc -l scripts/check-plan.ts | tail`). Massstab ist jetzt die KOMMANDO-
-# POSITION: vor dem Tor-Treffer duerfen nur Umgebungs-Zuweisungen, Starter
-# (bash/npx/node/python3/time/…) und ein direkt anhaengender Pfad stehen. Die
-# Quote-Ausnahme fuer grep/rg (7.8.2026) ist damit abgeloest und entfaellt —
-# `rg 'npm run lint' f | head` faellt schon ueber die Kommando-Position durch,
-# `grep "x" f | npm run lint | tail` blockiert weiter (beides getestet).
+# §17-Nachtrag 29.8.2026: Regel 1 greift nur, wenn das Tor SELBST ausgefuehrt
+# wird (KOMMANDO-POSITION: davor nur Umgebungs-Zuweisungen, Starter und ein
+# anhaengender Pfad). Das blosse Vorkommen im Segment blockte rein lesende
+# Aufrufe (3 Fehlalarme: `grep -n "check:plan" scripts/check-tor-paritaet.ts
+# | head`, unquoted, `wc -l scripts/check-plan.ts | tail`); die Quote-Ausnahme
+# fuer grep/rg (7.8.2026) entfaellt damit. Beides getestet: `rg 'npm run lint'
+# f | head` durch, `grep "x" f | npm run lint | tail` blockiert.
 STARTER = re.compile(
     r"^(?:[A-Za-z_]\w*=\S+|sudo|env|time|command|nice|xargs"
     r"|bash|sh|zsh|npx|node|python3?|vite-node|tsx|ts-node)$"
@@ -124,9 +117,7 @@ for seg in re.split(r"&&|;|\n", cmd):
         )
         break
 
-# 1b. Push nur hinter `&&` an ein Tor (Vorfall #1194, 30.9.2026): `npm run gate
-# …; echo $?; …; git push` pushte trotz rotem gate. Trennt `;`, `||` oder Zeilenende
-# Tor und Push, laeuft der Push auch bei Exit != 0. (`git -C`/Alias: nicht erfasst.)
+# 1b. Push nur per `&&` hinter einem Tor (#1194, 30.9.2026: `gate; echo $?; git push`).
 def ist_lauf(muster: str, stufe: str) -> bool:
     m = re.search(muster, stufe)
     return bool(m) and all(STARTER.match(t) for t in PFAD_ENDE.sub("", stufe[: m.start()]).split())
@@ -138,9 +129,8 @@ for i in range(0, len(teile), 2):
     nur_und = nur_und and (i == 0 or teile[i - 1] == "&&")
     if tor_da and not nur_und and ist_lauf(r"\bgit\s+push\b", teile[i]):
         probleme.append(
-            "BLOCKIERT (Skill landung Ziff. 7, Vorfall #1194 30.9.2026): `git push` "
-            "nach einem Tor, aber nicht per `&&` daran gekettet — bei rotem Tor "
-            "laeuft der Push trotzdem. Tor und Push nur mit `&&` verbinden."
+            "BLOCKIERT (landung Ziff. 7, #1194): `git push` nach einem Tor nur "
+            "per `&&` — sonst laeuft der Push auch bei rotem Tor."
         )
         break
     if any(ist_tor_lauf(t) or ist_lauf(r"npm run gate\b", t) for t in teile[i].split("|")):
@@ -155,16 +145,12 @@ if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
 
 # ── Merge-Erkennung: Kommando-Position, nicht Textvorkommen ───────────────
 # BEFUND adversariale Pruefung 20.7.2026: die erste Fassung traf nur
-# /\bgh\s+pr\s+merge\b/. Zwei belegte Umgehungen blieben offen:
-#   (a) `gh api -X PUT repos/o/r/pulls/315/merge --field merge_method=squash`
-#       passierte den Hook mit Exit 0 bei rotem Tor.
-#   (b) `gh pr merge --auto` prueft den Stand im Moment des AKTIVIERENS;
-#       danach gepushte Risiko-Commits merged GitHub serverseitig, ohne dass
-#       je wieder ein Bash-Aufruf und damit dieser Hook laeuft.
-# (a) ist unten mitgefasst. (b) ist mit einem PreToolUse-Hook strukturell
-# nicht schliessbar — darum wird `--auto` auf Risikopfaden GANZ gesperrt und
-# auf den nachgelagerten Merge nach gruener CI verwiesen. Der eigentliche
-# Schliesser bleibt der Required Check in den Branch-Regeln (DAVID-GATE).
+# /\bgh\s+pr\s+merge\b/. Zwei Umgehungen: (a) `gh api -X PUT
+# repos/o/r/pulls/315/merge …` passierte bei rotem Tor (unten mitgefasst);
+# (b) `gh pr merge --auto` prueft nur beim AKTIVIEREN, danach gepushte
+# Risiko-Commits merged GitHub serverseitig ohne Hook — per PreToolUse nicht
+# schliessbar, darum `--auto` auf Risikopfaden GANZ gesperrt. Eigentlicher
+# Schliesser: der Required Check der Branch-Regeln (DAVID-GATE).
 #
 # §17-Wurzelfix 5.9.2026: das Muster traf jedes TEXTvorkommen — ein
 # `grep 'gh pr merge' src/` wurde blockiert (reproduziert 5.9.). Massstab ist
@@ -226,15 +212,11 @@ if merge_stufen and re.search(
 
 # ── 2b. Direkter main-Push = Deploy (Auftrag David 15.8.2026) ─────────────
 # Jeder Push auf origin/main loest einen Vercel-Deploy aus UND laesst jeden
-# offenen Auto-Merge-PR auf BEHIND fallen (= je ein weiterer Deploy pro
-# Nachzug). Realfall 15.8.2026: ~15 kleine Verwaltungs-Pushes (Buchung,
-# wip-Marker, Nachzuege) rissen das Tageslimit, sechs fertige PRs standen
-# stundenlang. Regel (Skill landung Ziff. 7): Feature einzeln per PR landen,
-# Verwaltung im PR mitfahren oder am Session-Ende in EINEM Push buendeln.
-# Der Hook blockt darum den DIREKTEN Push auf main. Freigabe fuer den
-# gebuendelten Schluss-Push: Umgebungsvariable LEXMETRIK_MAIN_PUSH=1 im
-# selben Kommando (bewusster Akt, nicht Gewohnheit) — der Merge via PR
-# (gh pr merge) ist davon unberuehrt.
+# offenen Auto-Merge-PR auf BEHIND fallen. Realfall 15.8.2026: ~15 kleine
+# Verwaltungs-Pushes rissen das Tageslimit, sechs fertige PRs standen
+# stundenlang. Regel (Skill landung Ziff. 7): Feature einzeln per PR, Verwaltung
+# im PR oder am Session-Ende in EINEM Push. Freigabe fuer diesen Schluss-Push:
+# `LEXMETRIK_MAIN_PUSH=1` im selben Kommando; `gh pr merge` bleibt unberuehrt.
 if re.search(r"\bgit\s+push\b[^\n|;&]*\borigin\s+(HEAD:)?main\b", cmd) \
         and "LEXMETRIK_MAIN_PUSH=1" not in cmd:
     probleme.append(
@@ -250,12 +232,10 @@ if re.search(r"\bgit\s+push\b[^\n|;&]*\borigin\s+(HEAD:)?main\b", cmd) \
 # Nur bei Merge-Kommandos (selten) — die ~3 s Laufzeit fallen sonst nie an.
 # Muster und Umgehungs-Befunde stehen oben bei MERGE_MUSTER.
 #
-# §17-Wurzelfix 5.9.2026 (Beleg 02:30): geprueft wurde die LOKALE Arbeitskopie.
-# Stand das Haupt-Checkout auf einem fremden Risiko-Branch (Trailer
-# «Gegenpruefung: ausstehend»), blockierte der Hook die Landung voellig
-# anderer, reiner UI-PRs (#679) — falsche Flaeche. Nennt das Kommando eine
-# PR-Nummer, wird darum der PR-HEAD geprueft (MERGE_SCHUTZ_KOPF). Ohne
-# `gh`/Netz Rueckfall aufs bisherige Verhalten — nie still gruen (§6.7).
+# §17-Wurzelfix 5.9.2026: geprueft wurde die LOKALE Arbeitskopie; ein fremder
+# Risiko-Branch im Haupt-Checkout blockierte die Landung reiner UI-PRs (#679).
+# Nennt das Kommando eine PR-Nummer, wird darum der PR-HEAD geprueft
+# (MERGE_SCHUTZ_KOPF). Ohne `gh`/Netz Rueckfall auf HEAD — nie still gruen (§6.7).
 if merge_stufen:
     projekt = os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd()
     umfeld = dict(os.environ)

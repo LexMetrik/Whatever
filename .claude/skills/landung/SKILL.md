@@ -203,8 +203,9 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    nicht); **Risikopfad** ⇒ nach Verdikt von Hand `gh pr merge <nr> --squash`,
    nie `--auto`. Ein roter PR wird nie eingereiht: rot = Stopp, kein «mergen
    und nachbessern».
-   **Push auf den Feature-Branch ist stehend freigegeben** (David 2.7.2026);
-   der Live-Gang-Entscheid ist die Merge-Freigabe. **Direkte main-Pushes gibt
+   **Push auf den Feature-Branch ist stehend freigegeben** (David 2.7.2026),
+   im Kommando mit einem Tor nur hinter `&&` (Hook `tor-schutz` 1b, #1194
+   30.9.2026); der Live-Gang-Entscheid ist die Merge-Freigabe. **Direkte main-Pushes gibt
    es nicht mehr** — auch nicht gebündelt am Session-Ende (Ruleset + Hook; der
    Auto-Modus-Klassifikator lehnt `git push origin …:main` als CI-Bypass ab).
    **Feature einzeln landen, Verwaltung bündeln** (David 15.8.2026): sie fährt
@@ -232,7 +233,10 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 8. **Nächste PR:** mit Überschneidung erst, wenn der Vordermann auf main ist
    (Ziff. 3.2, zurück zu Schritt 1); überschneidungsfreie dürfen
-   nebeneinander in der Queue stehen.
+   nebeneinander in der Queue stehen — überschneidungsfrei schliesst Test-
+   Kopplung ein: keine Ratsche/Zählliste des einen PRs hält Stellen fest, die
+   der andere ändert (#1191/#1194 30.9.2026: konfliktfrei, Probe-Merge sauber,
+   PR-Lauf nach der Landung rot).
 
 9. **Schritt-Status schliessen — wip verlässt die Session nie.** **Der PR,
    der den Schritt abschliesst, trägt den Status im Diff:** `plan:set --
