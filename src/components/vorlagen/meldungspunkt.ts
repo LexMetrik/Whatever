@@ -2,8 +2,8 @@
  *  zwei Meldungen trägt; eine einzelne Meldung steht ohne Punkt (W2·19
  *  Kleinaufräumen 30.9.2026, Kanon wie `FehlerBox`). Eine Quelle für die
  *  Warn-/Befund-Listen ausserhalb der FehlerBox (Zustellung, PruefBefund).
- *  Offen: `FehlerBox` (ui.tsx) trägt dieselbe Regel noch inline — nach dem
- *  Landen von #1193 (fasst ui.tsx an) auf diesen Helfer umstellen. */
+ *  Seit W2·19 P12 (30.9.2026) nutzt auch `FehlerBox` (ui.tsx) diesen
+ *  Helfer — Stand davor: inline `fehler.length >= 2`. */
 export function meldungspunkt(anzahl: number): string {
   return anzahl >= 2 ? '• ' : '';
 }

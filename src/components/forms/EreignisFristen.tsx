@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Checkbox, ErgebnisPlatzhalter, Field, inputCls, NormLink } from '../vorlagen/ui';
 import { NormText } from '../NormText';
+import { meldungspunkt } from '../vorlagen/meldungspunkt';
 import { AbschnittKopf } from '../layout/AbschnittKopf';
 import { DatumsFeld } from '../DatumsFeld';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
@@ -365,7 +366,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
           )}
           <div className="lc-notice">
             <p className="lc-overline mb-1">Annahmen</p>
-            {ergebnis.annahmen.map((a, i) => <p key={i} className="text-body-s text-ink-600">• {a}</p>)}
+            {ergebnis.annahmen.map((a, i) => <p key={i} className="text-body-s text-ink-600">{meldungspunkt(ergebnis.annahmen.length)}{a}</p>)}
           </div>
         </div>
       )}

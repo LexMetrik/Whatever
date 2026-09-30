@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
 import { margLabel } from '../helpers';
+import { zustandsWort } from './klappNamen';
 import type { ArtikelIndexGruppe } from '../gliederungsModell';
 
 // ═══ Artikel-Index der Seitenleiste (Zone B, Modus B2/B4) ════════════════════
@@ -48,7 +49,10 @@ interface ArtikelIndexProps {
 function Zeile({ z, aktiv, onSprung }: {
   z: ArtikelIndexGruppe['zeilen'][number]; aktiv: boolean; onSprung: (token: string) => void;
 }) {
-  const voll = [z.label, z.randtitel, z.aufgehoben ? 'aufgehoben' : ''].filter(Boolean).join(' — ');
+  // W2·27 (30.9.2026): das Zustandswort kommt aus dem Datenfeld — `aufgehoben` bzw. `gegenstandslos`
+  // (eigenes Wort, nie «aufgehoben», §1/§8); fehlen beide, steht hier keines (kein Wort ohne Beleg).
+  const wort = zustandsWort(z);
+  const voll = [z.label, z.randtitel, wort].filter(Boolean).join(' — ');
   return (
     <li>
       <div className="flex items-start">
@@ -71,7 +75,7 @@ function Zeile({ z, aktiv, onSprung }: {
           <span className="line-clamp-2 [overflow-wrap:anywhere]">
             <span className="num font-medium text-ink-800">{z.label}</span>
             {z.randtitel && <span className="text-ink-600"> — {margLabel(z.randtitel)}</span>}
-            {z.aufgehoben && <span className="ml-1 text-micro text-ink-500">aufgehoben</span>}
+            {wort && <span className="ml-1 text-micro text-ink-500">{wort}</span>}
           </span>
         </button>
       </div>
