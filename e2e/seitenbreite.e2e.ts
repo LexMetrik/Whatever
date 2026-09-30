@@ -481,7 +481,14 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
 // (640); @520/@560 weicht der Knopf bewusst — der Streifen ohne ihn muss passen.
 // ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Topbar.tsx` `lc-topbar-verlauf` durch
 // `max-[480px]:hidden` ersetzen → @520 und @560 schlagen an (Beweis im PR-Bericht).
-const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768, 560, 520] as const; // 750: im Polster-Fenster 728–762 (b)
+// ERGÄNZT W2·31 P3 (30.9.2026): 481 / 490 / 496 sind jetzt dabei — der Boden des
+// Suchfelds (`.lc-topbar-suche`, index.css) gilt nur noch, wo der Streifen ihn
+// trägt; Skala 1.4 ragte dort vorher 16.1 / 7.1 / 1.1 px ins Polster (Messung im
+// PR). 600 / 615 kommen dazu: die Verlauf-Schwelle ist skalenrichtig (Knopf ab
+// 481/481/481/510/543/575 px bei 0.9…1.4), das Band 560–615 bei 1.3/1.4 ist der
+// Übergang. ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `Topbar.tsx` `lc-topbar-suche`
+// durch `min-[481px]:min-w-[9rem]` ersetzen → @481/@490/@496 schlagen an.
+const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768, 615, 600, 560, 520, 496, 490, 481] as const; // 750: im Polster-Fenster 728–762 (b)
 const SKALA_SCHMAL_EXTRA = [
   '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
   '/gesetze?ebene=kanton&kt=BS', '/rechner/tagerechner',
@@ -691,6 +698,69 @@ test.describe('Wortmarke Untergrenze (W2·31 H Nachbesserung)', () => {
       const wortmarke = page.locator('header .lc-topbar-wortmarke').first();
       if (sichtbar) await expect(wortmarke, `Wortmarke @${width} Skala ${skala}`).toBeVisible();
       else await expect(wortmarke, `Wortmarke @${width} Skala ${skala}`).toBeHidden();
+    });
+  }
+});
+
+// ─── Verlauf-Knopf und Suchfeld-Boden je Schriftskala (W2·31 P3, 30.9.2026) ───
+//
+// BEFUND (Posten «Topbar-Verlauf-Schwelle 25.5 rem auf Skala 1.0 geeicht» und
+// «Kopfstreifen Skala 1.4 @481–496», Prüfer #1174): die eine Schwelle 25.5 rem
+// liess den Verlauf-Knopf in einem Band fehlen, in dem er Platz hatte (1.2 @510–527,
+// 1.3 @543–571, 1.4 @575–615), und der 9-rem-Suchfeldboden ragte bei 1.4 @481–496
+// bis 16.1 px ins Polster. Jetzt messen `.lc-topbar-verlauf` und `.lc-topbar-suche`
+// (index.css) den Bedarf je Schrift (calc-Containerabfrage, Herleitung dort).
+//
+// Zwei Seiten, beide nötig (nur Obergrenzen-Tests liessen eine Regression «Knopf
+// immer weg» grün):
+//  (a) Überlauf: bei JEDER Skala × Breite kein Querscroll, der Streifen bleibt im
+//      Polster — Knopf sichtbar oder nicht.
+//  (b) Untergrenze: wo der Streifen Platz hat, steht der Knopf; wo nicht, fehlt er.
+//      Erwartung aus dem 1-px-Sweep 481–800 (Preview-Build, `/gesetze?ebene=bund`):
+//      Knopf ab Fenster 481 / 481 / 481 / 510 / 543 / 575 px bei Skala 0.9…1.4. Die
+//      Testbreiten liegen ≥ 10 px von der Grenze weg (Schwelle = Gerade + kleine Reserve).
+//      < 481 px bleibt der Knopf bewusst weg (C2) — dort trägt der Such-Leerzustand
+//      «Verlauf leeren» (`e2e/verlauf-o1.e2e.ts`).
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in index.css die Schwelle der Containerabfrage
+// `.lc-topbar-verlauf` zurück auf `width >= 25.5rem` (ohne die zweite ≥640-Regel) → (b)
+// schlägt bei 1.2 @520, 1.3 @560 und 1.4 @600 an; `.lc-topbar-suche` zurück auf
+// `min-[481px]:min-w-[9rem]` in Topbar.tsx → (a) schlägt bei 1.4 @481/490/496 an.
+const VERLAUF_SKALEN = ['1.0', '1.1', '1.2', '1.3', '1.4'] as const;
+const VERLAUF_BREITEN = [320, 375, 481, 490, 496, 520, 560, 600, 615, 768] as const;
+// Erwarteter Knopf-Beginn (Fenster-px) je Skala; Breiten darunter: weg.
+const VERLAUF_AB: Record<(typeof VERLAUF_SKALEN)[number], number> = { '1.0': 481, '1.1': 481, '1.2': 510, '1.3': 543, '1.4': 575 };
+
+test.describe('Verlauf-Knopf und Suchfeld-Boden je Schriftskala (W2·31 P3)', () => {
+  for (const skala of VERLAUF_SKALEN) {
+    test(`Skala ${skala}: kein Überlauf @${VERLAUF_BREITEN.join('/')}, Knopf ab ${VERLAUF_AB[skala]} px`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
+      await page.setViewportSize({ width: 768, height: 900 });
+      await page.goto('/rechner/tagerechner'); // Vorlauf: füllt den Verlauf
+      await bereit(page);
+      await page.goto('/gesetze?ebene=bund');
+      await bereit(page);
+      for (const width of VERLAUF_BREITEN) {
+        await page.setViewportSize({ width, height: 900 });
+        const m = await page.evaluate(() => {
+          const de = document.documentElement;
+          const streifen = document.querySelector('header > div')!;
+          const polster = parseFloat(getComputedStyle(streifen).paddingRight);
+          const sichtbar = [...streifen.children].filter((c) => c.getBoundingClientRect().width > 0);
+          const letztes = sichtbar[sichtbar.length - 1];
+          const knopf = document.querySelector('header .lc-topbar-verlauf');
+          return {
+            scrollW: de.scrollWidth, innerW: window.innerWidth,
+            ueberPolster: letztes.getBoundingClientRect().right - (streifen.getBoundingClientRect().right - polster),
+            knopf: knopf != null && getComputedStyle(knopf).display !== 'none',
+          };
+        });
+        const ort = `Skala ${skala} @${width}`;
+        expect(m.scrollW, `${ort}: Seiten-Querscroll (scrollWidth ${m.scrollW} > innerWidth ${m.innerW})`).toBeLessThanOrEqual(m.innerW);
+        expect(m.ueberPolster, `${ort}: Kopfstreifen ragt ${m.ueberPolster.toFixed(1)} px in sein rechtes Polster`).toBeLessThanOrEqual(0.5);
+        const erwartet = width >= VERLAUF_AB[skala];
+        expect(m.knopf, `${ort}: Verlauf-Knopf ${erwartet ? 'fehlt, obwohl der Streifen Platz hat (ab ' + VERLAUF_AB[skala] + ' px)' : 'steht, obwohl der Streifen ihn nicht trägt'}`).toBe(erwartet);
+      }
     });
   }
 });
