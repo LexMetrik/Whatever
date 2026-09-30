@@ -62,11 +62,6 @@ import { parsePassus } from '../lib/normtext/passus';
 //  3. AXE-AUSNAHME. `link-in-text-block` ist eine ausdrückliche Ausnahme mit
 //     David-Entscheid (`docs/ux-audit-2026-07/BERICHT.md` B-2); ihre Reichweite
 //     eigenmächtig auszuweiten ist kein Nachzug.
-//     (Damals: axe-Freibrief; seit 30.9.2026 (W2·19, #1184/#1186) gibt es
-//     keinen mehr — `link-in-text-block` gatet überall, der Markenentscheid B-2
-//     ist seit dem R3-Nachzug 6.9.2026 aufgehoben. Die Darstellung hier bleibt
-//     unverändert: die gepunktete Linie im Ruhezustand IST das nichtfarbliche
-//     Signal, das die Regel erfüllt — Nachmessung 30.9.2026 siehe e2e/a11y.e2e.ts.)
 //
 // Warum ein FARB-Token die Frage nicht löst (S2-Rechnung, hier aufbewahrt, weil
 // sie in Davids Entscheid eingeht): ein Verweis-Token müsste ZWEI Schranken

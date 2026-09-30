@@ -8,7 +8,7 @@
  *   DK-16 · FLÄCHEN-ROLLE «Tinte leise»: jede Registerfläche trägt ihre
  *           gedämpfte Tinte in ink-600 — EINE Regel in `index.css` statt einer
  *           Selektorliste; das Paar ink-500 auf Registerfläche steht im
- *           Farbwelt-Tor (`scripts/farbwelt-tabellen.ts`, RISSE oder DURCH_ROLLE).
+ *           Farbwelt-Tor (`scripts/farbwelt-tabellen.ts`, RISSE).
  *   DK-17 · Zeitstrahl-Beschriftung in Tinte, Farbe nur am Punkt.
  *   DK-22 · `color-mix` nur `in oklab` (F2b-Nachtrag D-3).
  *
@@ -208,7 +208,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
     expect(funde, 'die Rolle in index.css trägt das; ein Einzel-Selektor ist die abgelöste Selektorliste').toEqual([]);
   });
 
-  it('das Farbwelt-Tor kennt das Paar: jedes Paar ink-500/Fläche unter 4.5 steht in RISSE oder DURCH_ROLLE, ink-600 in PFLICHT', () => {
+  it('das Farbwelt-Tor kennt das Paar: jedes Paar ink-500/Fläche unter 4.5 steht in RISSE, ink-600 in PFLICHT', () => {
     for (const f of FLAECHEN) {
       const bg = `reg-${f}-flaeche`;
       expect(
@@ -220,7 +220,7 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
         if (kontrast('ink-500', bg, mode) < 4.5) {
           expect(
             hatRiss('ink-500', bg, mode),
-            `ink-500/${bg} ${mode} = ${kontrast('ink-500', bg, mode).toFixed(2)}:1 liegt unter 4.5 und gehört in RISSE oder DURCH_ROLLE (scripts/farbwelt-tabellen.ts)`,
+            `ink-500/${bg} ${mode} = ${kontrast('ink-500', bg, mode).toFixed(2)}:1 liegt unter 4.5 und gehört in RISSE (scripts/farbwelt-tabellen.ts)`,
           ).toBe(true);
         }
       }
