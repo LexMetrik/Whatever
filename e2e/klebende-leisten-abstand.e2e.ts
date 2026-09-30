@@ -102,16 +102,26 @@ for (const skala of [1, 1.4]) {
 // Untergrenze: Ziel-Oberkante ≥ Arbeitsleisten-Unterkante (nicht verdeckt);
 // Obergrenze: ≤ Unterkante + 1 rem + 4 px (nicht zu weit unten geparkt).
 // ROT ZU BEKOMMEN (§6.7, gegen `src/`): `.lc-sprungziel` in `index.css` auf
-// `scroll-margin-top: 0` setzen → Untergrenze reisst (Ziel bei ≈ 0 px).
+// `scroll-margin-top: 0` setzen → Untergrenze reisst (Ziel bei ≈ 0 px). Gilt auch
+// für die Dokumentmappe-Fälle (`.lc-sprungziel` an `Dokumentmappe.tsx` entfernen).
 
+// `breiten` je Schriftskala (wie bei LEISTEN): ein Fall steht nur dort, wo der
+// Sprung messbar ist. GEMESSEN (dist): Erbteilung @1920 Skala 1 zeigt das Ziel
+// schon im ersten Bild ⇒ die Marke «↓ Ergebnis» verschwindet (useZielSichtbar),
+// nichts zu klicken; Dokumentmappe (gmbh-gruendung) @1280 Skala 1 ist die
+// Schlussstelle der Seite — Scrollende bei y = 4575, das Ziel kann gar nicht an
+// den Kopf rücken (169 px darunter, 160 px hoch), der Fall könnte die
+// Untergrenze nie beweisen. Dort also nur Skala 1.4 (Seite länger).
 const SPRUNG_ZIELE = [
-  { name: '/rechner/erbteilung «↓ Ergebnis»', route: '/rechner/erbteilung', ziel: '#lc-ergebnis', breiten: [375, 768, 1024, 1280, 1440] },
-  { name: '/vorlagen/arbeitsvertrag «Vorschau ↓»', route: '/vorlagen/arbeitsvertrag', ziel: '#wizard-vorschau', breiten: [375, 600] },
+  { name: '/rechner/erbteilung «↓ Ergebnis»', route: '/rechner/erbteilung', ziel: '#lc-ergebnis', breiten: { 1: [375, 768, 1024, 1280, 1440], 1.4: [375, 768, 1024, 1280, 1440, 1920] } },
+  { name: '/vorlagen/arbeitsvertrag «Vorschau ↓»', route: '/vorlagen/arbeitsvertrag', ziel: '#wizard-vorschau', breiten: { 1: [375, 600], 1.4: [375, 600] } },
+  // Nachbesserung Gegenprüfung #1163: Dokumentmappe (`Dokumentmappe.tsx`, zwei `lc-sprungziel`-Stellen).
+  { name: '/vorlagen/gmbh-gruendung «↓ Dokumente»', route: '/vorlagen/gmbh-gruendung', ziel: '#vorlagen-dokumente', breiten: { 1: [375], 1.4: [375, 1280] } },
 ] as const;
 
 for (const skala of [1, 1.4]) {
   for (const sprung of SPRUNG_ZIELE) {
-    for (const breite of sprung.breiten) {
+    for (const breite of sprung.breiten[skala as 1 | 1.4]) {
       test(`${sprung.name} @${breite} Skala ${skala}: Sprungziel landet unter der Arbeitsleiste, unverdeckt`, async ({ page }) => {
         await page.addInitScript(([key, wert]) => {
           try { window.localStorage.setItem(key, String(wert)); } catch { /* Speicher gesperrt: Standardskala */ }
