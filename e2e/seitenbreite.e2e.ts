@@ -444,3 +444,122 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
       .toEqual([]);
   }
 });
+
+// ─── Schriftskala 1.4 im schmalen Band 640–768 px (W2·31 Bündel H, 30.9.2026) ─
+//
+// BEFUND (Posten 2026-09-30 «/gesetze … Schriftskala 1.4 @640» und «/rechner/
+// tagerechner Nebenleiste … 640–768»): die Schriftskala skaliert rem, die
+// Medienabfragen (`sm` = 640 px) sehen sie nicht. @640 lief der Kopfstreifen
+// (`layout/Topbar`) mit Wortmarke, 9-rem-Suchfeld-Boden und drei Werkzeug-
+// Griffen über den Rand: +26 px ohne, +88 px mit Verlauf-Knopf, +28 px @700 —
+// auf JEDER Seite, nicht nur auf /gesetze und dem Tagerechner. Fix:
+// `.lc-topbar-wortmarke` (index.css) zeigt die Wortmarke nur, wenn der Streifen
+// 35 rem breit ist (Containerabfrage, wächst mit der Skala; Nachbesserung
+// Gegenprüfung 30.9.2026: Schwelle 36.25 rem, siehe index.css).
+//
+// Gemessen wird in zwei Weisen, beide nötig:
+//  (a) Seiten-Querscroll: scrollWidth ≤ innerWidth.
+//  (b) Der Streifen passt in sein eigenes Polster: der rechte Rand des letzten
+//      Streifen-Kindes liegt nicht hinter dem inneren Rand (Polster 1.5 rem).
+//      Zwischen 728 und 762 px frass der Streifen @1.4 das rechte Polster auf,
+//      ohne dass scrollWidth es zeigte — (a) allein ist dort grün.
+// Vorbedingung: der Verlauf-Knopf steht im Streifen (der Vorlauf öffnet den
+// Tagerechner, `useZuletzt` trägt ihn ein) — der breiteste Zustand; ohne ihn
+// wäre der Wächter zu gnädig. Pfade: alle `beispielPfad`/`variantenPfade`
+// aus `SEITENBREITE` plus die in den Posten genannten Fälle.
+//
+// ROT ZU BEKOMMEN (§6.7): in `Topbar.tsx` die Wortmarke wieder
+// `className="hidden sm:block text-h3"` statt `lc-topbar-wortmarke` → (a) und
+// (b) schlagen @640 an (Beweis im PR-Bericht).
+const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768] as const; // 750: im Polster-Fenster 728–762 (b)
+const SKALA_SCHMAL_EXTRA = [
+  '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
+  '/gesetze?ebene=kanton&kt=BS', '/rechner/tagerechner',
+] as const;
+const SKALA_SCHMAL_PFADE = [...new Set([
+  ...ARTEN.flatMap(([, { beispielPfad, variantenPfade }]) => [beispielPfad, ...(variantenPfade ?? [])]),
+  ...SKALA_SCHMAL_EXTRA,
+])];
+
+test.describe(`Schriftskala ${SKALA} schmal 640–768 (W2·31 H)`, () => {
+  for (const pfad of SKALA_SCHMAL_PFADE) {
+    test(`${pfad}: kein Querscroll, Kopfstreifen im Polster @${SKALA_SCHMAL_BREITEN.join('/')}`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+      await page.setViewportSize({ width: SKALA_SCHMAL_BREITEN[0], height: 900 });
+      // Vorlauf: ein Rechner-Besuch füllt den Verlauf (breitester Streifen).
+      await page.goto('/rechner/tagerechner');
+      await bereit(page);
+      await page.goto(pfad);
+      await bereit(page);
+      await expect(page.locator('header [aria-label="Verlauf – zuletzt geöffnet"]').first(), `${pfad}: Vorbedingung Verlauf-Knopf im Streifen`).toBeVisible();
+      for (const width of SKALA_SCHMAL_BREITEN) {
+        await page.setViewportSize({ width, height: 900 });
+        const m = await page.evaluate(() => {
+          const de = document.documentElement;
+          const streifen = document.querySelector('header > div')!;
+          const polster = parseFloat(getComputedStyle(streifen).paddingRight);
+          const sichtbar = [...streifen.children].filter((c) => c.getBoundingClientRect().width > 0);
+          const letztes = sichtbar[sichtbar.length - 1];
+          return {
+            scrollW: de.scrollWidth, innerW: window.innerWidth,
+            ueberPolster: letztes.getBoundingClientRect().right - (streifen.getBoundingClientRect().right - polster),
+          };
+        });
+        const ort = `${pfad} @${width} Skala ${SKALA}`;
+        expect(m.scrollW, `${ort}: Seiten-Querscroll (scrollWidth ${m.scrollW} > innerWidth ${m.innerW})`).toBeLessThanOrEqual(m.innerW);
+        expect(m.ueberPolster, `${ort}: Kopfstreifen ragt ${m.ueberPolster.toFixed(1)} px in sein rechtes Polster`).toBeLessThanOrEqual(0.5);
+      }
+    });
+  }
+});
+
+// ─── Untergrenze der Wortmarke (Nachbesserung Gegenprüfung #1161, 30.9.2026) ──
+//
+// Die Tests oben sichern nur OBERgrenzen (kein Überlauf). Eine Regression, die
+// die Wortmarke immer ausblendet, bliebe dort grün. Hier die Untergrenze: wo
+// der Streifen Platz hat, ist `.lc-topbar-wortmarke` SICHTBAR — auch im
+// breitesten Zustand (Verlauf-Knopf im Streifen). Schwelle: Streifen 36.25 rem
+// (Inhaltsbreite 33.25 rem). Gemessen (Preview, Streifenbreite = Fenster <1024):
+// Skala 1.0 @640 = 40.0 rem (sichtbar; mit 17-px-Scrollleiste 623 px = 38.9 rem,
+// sichtbar), 1.1 @640 = 36.36 rem (sichtbar) und 1.1 @640 MIT 17-px-Scrollleiste
+// = 623 px = 35.4 rem = Bedarf (Reserve 0: weg, kein Überlauf — die Erstfassung
+// 32rem hielt sie hier sichtbar, `ueberPolster` 0.5 px), 1.4 @800 = 35.71 rem
+// (weg, bewusst: unter der Schwelle) und @830 = 37.05 rem (sichtbar). Die
+// Scrollleiste wird als `html{width:calc(100% - 17px)}` nachgestellt (headless
+// Chromium blendet Scrollleisten aus; die Medienabfrage `sm` sieht weiter 640).
+// ROT ZU BEKOMMEN (§6.7): `.lc-topbar-wortmarke` dauerhaft `display: none`
+// (Container-Regel in index.css entfernen) → alle Sichtbar-Fälle schlagen an;
+// Schwelle zurück auf 32rem → die Weg-Fälle 1.1 @640+Scrollleiste / 1.4 @800 schlagen an.
+const WORTMARKE_FAELLE = [
+  { skala: '1.0', width: 640, sichtbar: true },
+  { skala: '1.0', width: 1024, sichtbar: true },
+  { skala: '1.1', width: 640, sichtbar: true },
+  { skala: '1.0', width: 640, sichtbar: true, scrollleiste: 17 },
+  { skala: '1.1', width: 640, sichtbar: false, scrollleiste: 17 },
+  { skala: '1.4', width: 830, sichtbar: true },
+  { skala: '1.4', width: 1280, sichtbar: true },
+  { skala: '1.4', width: 800, sichtbar: false },
+  { skala: '1.4', width: 640, sichtbar: false },
+] as const;
+
+test.describe('Wortmarke Untergrenze (W2·31 H Nachbesserung)', () => {
+  for (const fall of WORTMARKE_FAELLE) {
+    const { skala, width, sichtbar } = fall;
+    const scrollleiste = 'scrollleiste' in fall ? fall.scrollleiste : 0;
+    test(`Wortmarke ${sichtbar ? 'sichtbar' : 'weg'} @${width}${scrollleiste ? ` mit ${scrollleiste}-px-Scrollleiste` : ''} Skala ${skala} (Verlauf-Knopf im Streifen)`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/rechner/tagerechner'); // Vorlauf: füllt den Verlauf
+      await bereit(page);
+      await page.goto('/gesetze?ebene=bund');
+      await bereit(page);
+      await expect(page.locator('header [aria-label="Verlauf – zuletzt geöffnet"]').first(), 'Vorbedingung Verlauf-Knopf (breitester Zustand)').toBeVisible();
+      if (scrollleiste) await page.addStyleTag({ content: `html{width:calc(100% - ${scrollleiste}px)}` });
+      const wortmarke = page.locator('header .lc-topbar-wortmarke').first();
+      if (sichtbar) await expect(wortmarke, `Wortmarke @${width} Skala ${skala}`).toBeVisible();
+      else await expect(wortmarke, `Wortmarke @${width} Skala ${skala}`).toBeHidden();
+    });
+  }
+});
