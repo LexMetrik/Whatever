@@ -192,6 +192,8 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     { breite: 1680, hoehe: 1050, leiste: 0, skala: '1' },
     { breite: 1920, hoehe: 1080, leiste: 0, skala: '1' },
     { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1' },
+    { breite: 1280, hoehe: 800, leiste: LEISTE, skala: '1' },
+    { breite: 1440, hoehe: 900, leiste: LEISTE, skala: '1' },
     { breite: 1920, hoehe: 1200, leiste: 0, skala: '1.4' },
   ]) {
     test(`(3) U13 @${breite}×${hoehe}${leiste ? ' mit Seitenleiste' : ''}${skala !== '1' ? ` Skala ${skala}` : ''}: alle vier Blätter ganz im Fenster`, async ({ page }) => {
