@@ -4762,15 +4762,27 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    die Skala nicht — die Containerabfrage misst dagegen in der Wurzelschrift,
    wächst also mit. Darum: Wortmarke nur, wenn `sm` UND der Streifen (Inhalts-
    breite, ohne die beiden Polster von je 1.5 rem) mindestens 32 rem hat
-   = 35 rem Streifenbreite, knapp über dem gemessenen Bedarf. Unter Skala 1.0
-   (35 rem = 560 px) und 1.1 (616 px) ändert sich nichts: der Streifen ist dort
-   schon ab 640 px breit genug; darunter (<640 px) bleibt sie wie bisher weg (F7).
+   = 35 rem Streifenbreite (Erstfassung) — NACHBESSERUNG Gegenprüfung (30.9.2026): zu knapp.
+   Gemessener Bedarf des Streifens (Wortmarke + Verlauf-Knopf, breitester
+   Zustand): 36.13 / 35.4 / 34.9 / 34.42 / 34.02 rem bei Skala 1.0 / 1.1 / 1.2 /
+   1.3 / 1.4; bei 1.1 blieben mit 35 rem und einer 17-px-Windows-Scrollleiste
+   (Fenster 623 px) 0 px Reserve. Darum 33.25 rem Inhaltsbreite = 36.25 rem
+   Streifenbreite, eine Viertel-rem über dem grössten Bedarf (Skala 1.0).
+   Die Abfrage misst die INHALTSBREITE des Streifens (Container-Query auf
+   `inline-size` = Inhaltsbox, ohne die zwei Polster à 1.5 rem ab `sm`).
+   Folge je Skala @640 ohne / mit Scrollleiste (Streifen 640 / 623 px): 1.0 sichtbar /
+   sichtbar (36.25 rem = 580 px); 1.1 sichtbar (638 px) / weg (623 < 638);
+   ab 1.2 weg (≥ 696 px); darunter (<640 px) wie bisher weg (F7).
    Das Siegel bleibt immer. Bewacht von `e2e/seitenbreite.e2e.ts`
    («Schriftskala 1.4 schmal»). */
+/* FALLE: `.lc-topbar-zeile` ist jetzt der nächste Container für jede UNBENANNTE
+   `@container`-/`@[..]:`-Regel in einer Kopf-Komponente (sie würde gegen die
+   Streifenbreite statt gegen ihr Eltern-Pane messen) — dort `@[..]/name`
+   mit benanntem Container verwenden. Heute gibt es im Kopf keine solche Regel. */
 .lc-topbar-zeile { container: topbar-zeile / inline-size; }
 .lc-topbar-wortmarke { display: none; }
 @media (min-width: 640px) {
-  @container topbar-zeile (width >= 32rem) {
+  @container topbar-zeile (width >= 33.25rem) {
     .lc-topbar-wortmarke { display: block; }
   }
 }
