@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { NormText } from '../NormText';
 import { KantonNormText } from '../KantonNormText';
 import { EckdatenKachel, GruppenTitel, inputCls } from '../vorlagen/ui';
+import { meldungspunkt } from '../vorlagen/meldungspunkt';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { BegruendungSlot } from '../BegruendungSlot';
@@ -40,8 +41,8 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
             <GruppenTitel>Fahrplan</GruppenTitel>
             <p className="text-body-s text-ink-700">Für den Fahrplan fehlen noch Angaben:</p>
             {fehler.length > 0
-              ? fehler.map((x, i) => <p key={i} className="text-body-s text-warn-700">• {x}</p>)
-              : <p className="text-body-s text-warn-700">• Bitte die vorherigen Schritte vervollständigen.</p>}
+              ? fehler.map((x, i) => <p key={i} className="text-body-s text-warn-700">{meldungspunkt(fehler.length)}{x}</p>)
+              : <p className="text-body-s text-warn-700">Bitte die vorherigen Schritte vervollständigen.</p>}
           </div>
         )}
         {zeige('ergebnis') && ergebnis && r && f.instanz === 'einleitung' && (

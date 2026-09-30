@@ -1,5 +1,6 @@
 import { NormText } from '../NormText';
 import { befundZahl, type SchrittBefund } from './seiteHelfer';
+import { meldungspunkt } from './meldungspunkt';
 
 // ─── D5 (W2·24-DESIGN-IDENTITAET) · Der «Prüfen»-Schritt prüft ───────────────
 //
@@ -57,7 +58,7 @@ export function PruefBefund({ befunde, onSpringe }: {
             </button>
             <ul className="space-y-0.5">
               {b.fehler.map((f, i) => (
-                <li key={i} className="text-body-s text-danger-700">• <NormText text={f} /></li>
+                <li key={i} className="text-body-s text-danger-700">{meldungspunkt(b.fehler.length)}<NormText text={f} /></li>
               ))}
             </ul>
           </li>
