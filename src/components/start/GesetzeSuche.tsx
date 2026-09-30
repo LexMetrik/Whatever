@@ -3,7 +3,8 @@ import { KANTONE, KANTON_NAMEN } from '../../data/tarif/typen';
 import { ladeBrowseManifest, filtern } from '../../lib/normtext/browse';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { GruppenInhalt } from '../../pages/gesetze-teile/geteilt';
-import { BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { Leerzustand } from '../ui/Leerzustand';
+import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · Gesetze-Blatt: Register und Suche auf allen Stufen ─────────
@@ -42,12 +43,17 @@ export function useRegister(aktiv = true): BrowseErlass[] | null {
   return erlasse;
 }
 
+/** Register-Weiche der Gesetze-Stufen: Laden und Fehler aus den Hausbausteinen
+ *  (`BlattLaedt` → `Ladeanzeige` / `FehlerBox`, W2·19 DK-B), hier nur der
+ *  Wortlaut und die Übersetzung `null` = lädt, `[]` = nicht erreichbar. */
 export function Laedt({ erlasse, children }: { erlasse: BrowseErlass[] | null; children: () => ReactNode }) {
-  if (erlasse === null) return <p className="font-sans text-body-s text-ink-500" role="status">Erlasse werden geladen …</p>;
-  if (erlasse.length === 0) {
-    return <p className="font-sans text-body-s text-ink-700" role="alert">Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.</p>;
-  }
-  return <>{children()}</>;
+  return (
+    <BlattLaedt laedt={erlasse === null} fehler={erlasse?.length === 0}
+      ladetext="Erlasse werden geladen …"
+      fehlertext="Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.">
+      {children}
+    </BlattLaedt>
+  );
 }
 
 /** Suchbereich einer Stufe: Wahl = alles, Gebiete = Bundesrecht ohne
@@ -87,12 +93,14 @@ export function StufenSuche({ bereich, label, schmal, className, children }: {
     <div className={className}>
       <BlattSuchFeld schmal={schmal} wert={suche} label={label} onFocus={() => setGewollt(true)}
         setze={(s) => { setGewollt(true); setSuche(s); }} />
-      {aktiv ? <Laedt erlasse={erlasse}>{() => <Treffer erlasse={erlasse ?? []} bereich={bereich} suche={suche} />}</Laedt> : children}
+      {aktiv
+        ? <Laedt erlasse={erlasse}>{() => <Treffer erlasse={erlasse ?? []} bereich={bereich} suche={suche} leeren={() => setSuche('')} />}</Laedt>
+        : children}
     </div>
   );
 }
 
-function Treffer({ erlasse, bereich, suche }: { erlasse: BrowseErlass[]; bereich: SuchBereich; suche: string }) {
+function Treffer({ erlasse, bereich, suche, leeren }: { erlasse: BrowseErlass[]; bereich: SuchBereich; suche: string; leeren: () => void }) {
   const [portion, setPortion] = useState(PORTION);
   // Neue Eingabe → wieder bei der ersten Portion (Muster MaterialienBlatt).
   const [vorSuche, setVorSuche] = useState(suche);
@@ -107,7 +115,7 @@ function Treffer({ erlasse, bereich, suche }: { erlasse: BrowseErlass[]; bereich
       .sort((a, b) => a.h.rang - b.h.rang || a.genau - b.genau);
   }, [erlasse, bereich, suche]);
   if (treffer.length === 0) {
-    return <p className="font-sans text-body-s text-ink-600" role="status">Kein Erlass passt auf «{suche.trim()}».</p>;
+    return <Leerzustand art="filter" ansage text="Kein Erlass gefunden." weiterweg={{ text: 'Suche leeren', onKlick: leeren }} />;
   }
   // Gruppen aus der gezeigten Portion — aufeinanderfolgend, da nach Herkunft sortiert.
   const gruppen: { titel: string; items: BrowseErlass[] }[] = [];

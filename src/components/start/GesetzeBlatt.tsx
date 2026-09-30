@@ -6,6 +6,7 @@ import { ladeKantonSystematik, filtern } from '../../lib/normtext/browse';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { erfassungsgrad, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import type { BlattOrt } from '../../lib/startBlatt';
+import { Leerzustand } from '../ui/Leerzustand';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
 import { Laedt, StufenSuche, useRegister } from './GesetzeSuche';
@@ -251,7 +252,13 @@ function GebietErlasse({ nr }: { nr: string }) {
       <Laedt erlasse={erlasse}>
         {() => gruppen.length
           ? gruppen.map((g) => <GruppenInhalt key={g.id} titel={g.titel} items={g.items} />)
-          : <p className="font-sans text-body-s text-ink-600">Kein Erlass passt auf «{suche}».</p>}
+          // Lage entscheidet die Art (R4-E, leerzustand-d7): mit Suchtext ist
+          // etwas VERDECKT (`filter`, Weiterweg); ohne Suchtext ist im Gebiet
+          // nichts DA (`bestand`) — vorher stand hier in beiden Fällen «Kein
+          // Erlass passt auf «»», im zweiten mit leerem Suchwort.
+          : suche.trim() !== ''
+            ? <Leerzustand art="filter" ansage text="Kein Erlass gefunden." weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
+            : <Leerzustand art="bestand" ansage text="Kein Erlass gefunden." />}
       </Laedt>
     </div>
   );

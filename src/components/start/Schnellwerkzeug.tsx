@@ -2,6 +2,7 @@ import { Suspense, useId, useRef, useState, type KeyboardEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { lazyRetry } from '../../lazyRetry';
 import { EinfacheFristForm } from '../forms/EinfacheFristForm';
+import { Ladeanzeige } from '../ui/Ladeanzeige';
 import { StartFlaeche } from './StartFlaeche';
 import { SCHNELL_WAHLEN, leseSchnellWahl, speichereSchnellWahl, type SchnellWahl } from './schnellwerkzeugWahl';
 
@@ -113,7 +114,7 @@ export function Schnellwerkzeug() {
             </p>
           </div>
         ) : (
-          <Suspense fallback={<p className="font-sans text-body-s text-ink-500" aria-busy="true">Rechner wird geladen …</p>}>
+          <Suspense fallback={<Ladeanzeige text="Rechner wird geladen …" className="py-6" />}>
             {wahl === 'verzugszins' ? <VerzugszinsSchnellForm /> : <VerjaehrungSchnellForm />}
           </Suspense>
         )}

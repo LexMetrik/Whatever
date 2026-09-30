@@ -322,7 +322,8 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
 
     const gebiete = blatt(page).getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' })
     // §8: ein Gebiet nur mit geplanten Vorlagen sagt das, statt «0» zu zählen.
-    await expect(gebiete.getByRole('button', { name: /Strafrecht/ })).toContainText('in Vorbereitung')
+    // W2·19 DK-B (DK-27): die Marke `lc-badge-geplant` mit Kanon-Wortlaut «In Vorbereitung».
+    await expect(gebiete.getByRole('button', { name: /Strafrecht/ })).toContainText('In Vorbereitung')
     await gebiete.getByRole('button', { name: /Familienrecht/ }).click()
     await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen\/familienrecht$/)
     await expect(pfad).toContainText('Familienrecht')

@@ -6,6 +6,7 @@ import { kartenDerKategorie } from '../../lib/katalogKategorie';
 import { kartePasst, LEERER_FILTER } from '../../lib/katalogSuche';
 import { KategorieSektion } from '../Katalog';
 import { WERKZEUGE_RECHNER_KATEGORIEN, WERKZEUGE_VORLAGEN_GEBIETE, type BlattOrt } from '../../lib/startBlatt';
+import { Leerzustand } from '../ui/Leerzustand';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
 
@@ -58,6 +59,11 @@ export function WerkzeugeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOr
 //     Gebiet NUR mit geplanten Vorlagen sagt «in Vorbereitung» statt «0» (§8).
 // Die Summen sind der Kachel-Zähler (Vitest `start-blatt-adresse`): gezählt,
 // nicht behauptet.
+//
+// W2·19 DK-B (30.9.2026, HN-D5/DK-27): «in Vorbereitung» stand hier als
+// Klartext in ink-600, im Katalog (`/rechner`, `KategorieSektion`) als Marke
+// `lc-badge-geplant` — ein Status, zwei Formen. Jetzt die eine Marke mit dem
+// Kanon-Wortlaut «In Vorbereitung» (Wächter design-konsistenz-chips-marken).
 
 const VORLAGEN_KARTEN = kartenDerKategorie(KATALOG_KARTEN, 'vorlagen');
 const rechnerZahl = (id: OberkategorieId) => kartenDerKategorie(KATALOG_KARTEN, id).filter(istVerfuegbar).length;
@@ -107,7 +113,7 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
                   <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.name}</span>
                   {n > 0
                     ? <span className="num shrink-0 text-xs text-ink-700">{nf(n)}</span>
-                    : <span className="shrink-0 text-xs text-ink-600">in Vorbereitung</span>}
+                    : <span className="lc-badge-geplant shrink-0">In Vorbereitung</span>}
                 </button>
               </li>
             );
@@ -149,7 +155,8 @@ function RechnerListe() {
     <div className="space-y-4">
       <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" />
       {kategorien.length === 0
-        ? <p className="font-sans text-body-s text-ink-600">Kein Rechner passt auf «{q}».</p>
+        ? <Leerzustand art="filter" ansage text="Kein Rechner gefunden."
+            weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
         : kategorien.map((kat) => (
             <KategorieSektion key={kat.id} kat={kat} karten={kartenDerKategorie(karten, kat.id)} alleOffen={q !== ''} />
           ))}
@@ -176,7 +183,8 @@ function VorlagenListe() {
           neben dem Blatt-eigenen `Filter` oben. `ohneGebietsFilter`
           unterdrückt es; die Textsuche oben deckt den Anwendungsfall hier ab. */}
       {karten.length === 0
-        ? <p className="font-sans text-body-s text-ink-600">Keine Vorlage passt auf «{q}».</p>
+        ? <Leerzustand art="filter" ansage text="Keine Vorlage gefunden."
+            weiterweg={{ text: 'Suche leeren', onKlick: () => setSuche('') }} />
         : <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={karten} ohneKopf alleOffen={q !== ''} ohneGebietsFilter />}
     </div>
   );

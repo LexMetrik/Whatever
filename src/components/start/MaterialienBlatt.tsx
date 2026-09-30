@@ -4,10 +4,11 @@ import { ladeMaterialManifest, filtere, vorhandeneDoktypen } from '../../lib/mat
 import { BEHOERDEN } from '../../lib/materialien/register';
 import { GATTUNG_LABEL, gattungVon, type Gattung } from '../../lib/materialien/gattung';
 import type { BrowseMaterial, BehoerdeId, DoktypId } from '../../lib/materialien/typen';
+import { Leerzustand } from '../ui/Leerzustand';
 import { StandChip } from '../ui/StandChip';
 import { Tabs } from '../ui/Tabs';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
-import { BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Materialien-Kachel: sofort Suche (W2·29-WERKBANK-START S3)
@@ -49,14 +50,6 @@ const GATTUNG_WAHL: readonly { code: GattungWahl; label: string }[] = [
   { code: 'materialien', label: GATTUNG_LABEL.materialien },
   { code: 'erlaeuterungen', label: GATTUNG_LABEL.erlaeuterungen },
 ];
-
-function Laedt({ alle, fehler, children }: { alle: BrowseMaterial[] | null; fehler: boolean; children: () => React.ReactNode }) {
-  if (fehler) {
-    return <p className="font-sans text-body-s text-ink-700" role="alert">Die Materialien-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.</p>;
-  }
-  if (alle === null) return <p className="font-sans text-body-s text-ink-500" role="status">Die Sammlung wird abgerufen …</p>;
-  return <>{children()}</>;
-}
 
 export function MaterialienBlatt() {
   const [alle, setAlle] = useState<BrowseMaterial[] | null>(null);
@@ -137,9 +130,11 @@ export function MaterialienBlatt() {
         </label>
       </div>
 
-      <Laedt alle={alle} fehler={fehler}>
+      <BlattLaedt laedt={alle === null && !fehler} fehler={fehler} ladetext="Die Sammlung wird abgerufen …"
+        fehlertext="Die Materialien-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.">
         {() => (gefiltert.length === 0 ? (
-          <p className="font-sans text-body-s text-ink-700" role="status">Kein Material gefunden.</p>
+          <Leerzustand art="filter" ansage text="Kein Material gefunden."
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setGattung('alle'); setBehoerde(''); setDoktyp(''); } }} />
         ) : (
           <div className="space-y-3">
             <TrefferZahl n={gefiltert.length} einzahl="Dokument" mehrzahl="Dokumente" />
@@ -163,7 +158,7 @@ export function MaterialienBlatt() {
             )}
           </div>
         ))}
-      </Laedt>
+      </BlattLaedt>
     </div>
   );
 }

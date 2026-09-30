@@ -44,6 +44,11 @@ type LeerzustandWeiterweg = {
 type Basis = {
   /** Der Aussagesatz. Endet mit «.», nie mit «?» (Sonde im Test). */
   text: string;
+  /** `true`: der Satz wird Vorlesehilfen als Statusmeldung angesagt
+   *  (`role="status"`). Für Leere, die erst NACH einer Eingabe entsteht und
+   *  sonst nur dem Auge auffällt (Start-Blätter, W2·19 DK-B); die Seiten-Listen
+   *  melden ihre Trefferzahl selbst. Vorgabe: keine Rolle. */
+  ansage?: boolean;
 };
 
 export type LeerzustandProps =
@@ -54,7 +59,7 @@ export function Leerzustand(props: LeerzustandProps) {
   const { text } = props;
   const weiterweg = props.weiterweg;
   return (
-    <p data-leerzustand={props.art} className="text-body-s text-ink-500">
+    <p data-leerzustand={props.art} role={props.ansage ? 'status' : undefined} className="text-body-s text-ink-500">
       {text}
       {weiterweg && (
         <>
