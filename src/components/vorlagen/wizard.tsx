@@ -108,7 +108,11 @@ export function VorlagenWizardRahmen({
   // Dokumente-Schritt, gemessen → BODY, der Knopf verschwindet im Remount) —
   // und der Fokus ist verloren, landet er auf dem Schritttitel. Liegt er noch
   // auf einem Bedienelement (Stepper-Reiter), bleibt er dort; nie beim ersten
-  // Rendern (Schritt unverändert).
+  // Rendern (Schritt unverändert). Kein Schutz vor sichtbar bleibenden
+  // Auslösern: Chromium fokussiert Buttons beim Mausklick, Safari/Firefox (Mac)
+  // nicht — dort ist `activeElement` nach einem Klick BODY, das Netz setzt den
+  // Fokus auch bei einem sichtbar bleibenden Auslöser auf den Titel (harmlos,
+  // der Titel ist dort sichtbar).
   const letzterFokusSchritt = useRef(schritt);
   useEffect(() => {
     if (letzterFokusSchritt.current === schritt) return;

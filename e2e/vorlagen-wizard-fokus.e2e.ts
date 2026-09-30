@@ -123,7 +123,7 @@ test.describe('Wizard-Fokus — Stepper, AG-Blocker, Zuständigkeit', () => {
       await expect(titel).toBeFocused()
     })
 
-    test(`Zuständigkeit @${breite}: Weiter/Zurück führen den Fokus auf die Schritt-Überschrift`, async ({ page }) => {
+    test(`Zuständigkeit @${breite}: Fokus → Überschrift nur an den Rändern, im mittleren Schritt bleibt er auf «Weiter»`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: breite === 375 ? 812 : 800 })
       await page.emulateMedia({ reducedMotion: 'reduce' })
       await page.goto('/rechner/zustaendigkeit')
@@ -135,8 +135,12 @@ test.describe('Wizard-Fokus — Stepper, AG-Blocker, Zuständigkeit', () => {
 
       const weiter = page.getByRole('button', { name: 'Weiter →' })
       const zurueck = page.getByRole('button', { name: '← Zurück' })
+      // MITTLERER Schritt (Nachzug Prüfer-Auflage P16b): Der Knopf bleibt sichtbar
+      // und aktiv — der Fokus bleibt auf ihm, nicht auf der sr-only-Überschrift
+      // (1×1, clip): sehende Tastaturnutzer behalten ihre Fokusanzeige.
       await weiter.click() // Rechtsweg → Streitsache
-      await expect(titel).toBeFocused()
+      await expect(weiter).toBeFocused()
+      await expect(titel).not.toBeFocused()
       await zurueck.click() // → erster Schritt, «Zurück» danach ausgegraut
       await expect(zurueck).toBeDisabled()
       await expect(titel).toBeFocused()
@@ -144,9 +148,12 @@ test.describe('Wizard-Fokus — Stepper, AG-Blocker, Zuständigkeit', () => {
       // Bis zum letzten Schritt: dort verschwindet «Weiter →».
       await weiter.click()
       await weiter.click()
+      await expect(weiter).toBeFocused()
       await page.getByLabel('Postleitzahl', { exact: true }).fill('4001')
       await expect(weiter).toBeEnabled()
-      await weiter.click() // → Streitwert
+      await weiter.click() // → Streitwert: «Weiter» dort gesperrt (leerer Streitwert)
+      await expect(weiter).toBeDisabled()
+      await expect(titel).toBeFocused() // ausgegrauter Knopf kann den Fokus nicht halten
       await page.getByLabel('Streitwert in Franken', { exact: true }).fill('20000')
       await expect(weiter).toBeEnabled()
       await weiter.click() // → weitere Schritte bis zum Fahrplan (letzter Schritt)

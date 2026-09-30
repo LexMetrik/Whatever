@@ -49,15 +49,22 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
   // ersten Schritt (Knopf danach ausgegraut) und nach dem letzten «Weiter →»
   // (Knopf verschwindet) auf BODY. Der Rechner hat keine sichtbare
   // Schritt-Überschrift (der Stepper nennt sie) — das Fokus-Ziel ist darum eine
-  // nur vorlesbare (`sr-only`) Überschrift. Marke nur durch die Nutzeraktion,
-  // nie beim ersten Rendern; Darstellung, keine Rechenlogik (§3).
+  // nur vorlesbare (`sr-only`, 1×1) Überschrift. Nachzug P16b (1.10.2026,
+  // Prüfer-Auflage): in einem MITTLEREN Schritt bleibt der auslösende Knopf
+  // sichtbar und aktiv — dort bliebe die Fokusanzeige für Sehende auf der
+  // unsichtbaren Überschrift verloren; der Fokus bleibt auf dem Knopf. Die
+  // Überschrift fängt ihn nur, wenn das Element danach verschwunden, ausgegraut
+  // oder nicht mehr im Dokument ist. Marke nur durch die Nutzeraktion, nie beim
+  // ersten Rendern; Darstellung, keine Rechenlogik (§3).
   const titelRef = useRef<HTMLHeadingElement>(null);
   const fokusMarke = useRef(false);
   const wechsleSchritt = (n: SetStateAction<number>) => { fokusMarke.current = true; setSchritt(n); };
   useEffect(() => {
     if (!fokusMarke.current) return;
     fokusMarke.current = false;
-    titelRef.current?.focus();
+    const a = document.activeElement;
+    const verloren = !a || a === document.body || !a.isConnected || a.matches(':disabled');
+    if (verloren) titelRef.current?.focus();
   }, [aktiverSchritt]);
 
   return (
