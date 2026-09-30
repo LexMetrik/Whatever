@@ -36,9 +36,11 @@ async function oeffnen(page: Page, url: string, thema: 'hell' | 'dunkel' = 'hell
 
 // Regel-IDs, die als bekannt/begründet NICHT gaten (je Prüfpunkt).
 // Eintrag NUR mit zugehörigem Befund-Eintrag im BERICHT.md.
-// - link-in-text-block: Inline-Links (brass-700) sind nur farblich vom
-//   Fliesstext unterschieden — `no-underline` ist Markenentscheid; Hebung
-//   (Unterstreichung o. Ä.) = Entscheid David (BERICHT.md B-2).
+// - link-in-text-block: KEIN Freibrief mehr (30.9.2026, W2·19). Der frühere
+//   B-2-Markenentscheid «Inline-Links ohne Unterstreichung» ist seit dem
+//   R3-Nachzug 6.9.2026 aufgehoben (DESIGN-REGLEMENT F0.8: Inline-Textlinks
+//   tragen den Strich); alle 14 Prüfpunkte, die ihn trugen, messen ohne
+//   Freibrief grün. Die Regel gatet überall.
 // - color-contrast (nur tagerechner): FristenKalender Sa/So/arbeitsfrei in
 //   ink-400 = dokumentierter E3-Kompromiss (FAHRPLAN-DESIGN 3.5,
 //   «Abschwächung ist Gestaltungsabsicht; Info zusätzlich in title+Legende»);
@@ -52,33 +54,14 @@ const BEKANNTE_BEFUNDE: Record<string, string[]> = {
   // ist damit gegenstandslos und GESTRICHEN, nicht umgeschrieben. Ab jetzt gatet
   // die Regel auf «/» wieder (verifiziert: mit Freibrief grün, ohne Freibrief
   // grün — der Befund ist behoben, nicht versteckt).
-  'tagerechner': ['link-in-text-block'],
-  'tagerechner-kalender': ['link-in-text-block'],
-  'vorlage-arbeitsvertrag': ['link-in-text-block'],
-  'zustaendigkeit-plz-wahl': ['link-in-text-block'],
   // W3.6 (25.6.2026): die früher hier dokumentierten color-contrast-Befunde
   // (gedämpftes «aufgehoben»/Zitiermarke/Meta in ink-400) sind GEFIXT — der
   // gesamte faintest-Text-Tier wurde ink-400→ink-500 gehoben (AA ≥4.5:1 in hell
   // UND dunkel, per axe in beiden Modi auf 0 verifiziert). 'color-contrast' ist
   // daher hier NICHT mehr whitelisted; ein neuer Kontrast-Verstoss gatet wieder.
-  // Bleibt: link-in-text-block = Inline-SR/Norm-Link-Marken ohne Unterstreichung
-  // (B-2 Markenentscheid, scheme-unabhängig).
-  'gesetze-kanton-BS': ['link-in-text-block'],
-  'gesetze-leser-BS': ['link-in-text-block'],
-  'gesetze-leser-bund': ['link-in-text-block'],
-  // /suche (UI-NAV S5): Inline-Links (Abdeckung/«Was ist durchsuchbar») + die
-  // brass-Trefferlinks tragen denselben Markenentscheid (B-2, no-underline).
-  'suche-seite': ['link-in-text-block'],
-  'rechtsprechung-uebersicht': ['link-in-text-block'],
-  // BS-Facette/-Reader (W2·6-BS Block B): dieselben Inline-Link-Marken (B-2).
-  'rechtsprechung-uebersicht-bs': ['link-in-text-block'],
-  'rechtsprechung-leser': ['link-in-text-block'],
-  'rechtsprechung-leser-bs': ['link-in-text-block'],
-  'international': ['link-in-text-block'],
-  // Tab-Streifen-Prüfpunkt lädt /rechner/tagerechner: derselbe dokumentierte
-  // Inline-Link-Marken-Entscheid (B-2) der Seite. Der Streifen SELBST ist
-  // a11y-sauber (keine tablist/tab-Rollen, Kontraste auf ink-500/600 gehoben).
-  'tab-streifen': ['link-in-text-block'],
+  // (Damals «Bleibt: link-in-text-block … B-2»; seit 30.9.2026 W2·19 gestrichen, s. o.)
+  // (Die Freibriefe für /suche, BS-Facette/-Reader und den Tab-Streifen-Prüfpunkt, die
+  // denselben B-2-Entscheid trugen, sind mit ihm am 30.9.2026 (W2·19) gestrichen.)
 }
 
 async function axePruefen(page: Page, testInfo: TestInfo, punkt: string) {
@@ -256,7 +239,8 @@ test('Gesetze — Reader BS-640.100', async ({ page }, testInfo) => {
 
 // W1.7 (SEO W1.1-Detailseiten + bisher ungetestete Rubriken): Rechtsprechung +
 // International + ein Bund-Reader ins Tor ziehen. Strukturell a11y-sauber
-// verifiziert (nur link-in-text-block/B-2; color-contrast nach W3.6 = 0).
+// verifiziert (damals nur link-in-text-block/B-2, seit 30.9.2026 W2·19 ohne
+// Freibrief grün; color-contrast nach W3.6 = 0).
 // Bund-Reader an einem KLEINEN Erlass (GebV-HReg, 11 Art.) statt OR (1099 Art.,
 // axe-Timeout): gleiche GesetzLeser-Komponente, und als Gebührenverordnung mit
 // Tarif-/Mehrspalten-Tabelle deckt sie den scrollable-region-Fix (tabIndex) ab.
