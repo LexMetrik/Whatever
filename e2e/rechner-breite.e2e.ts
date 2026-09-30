@@ -296,3 +296,35 @@ test('/rechner/verjaehrung @1920×548: Sprungmarke bleibt sichtbar — nur 7 px 
   await expect(page.locator('[data-ergebnisplatz], [data-platzhalter]').first()).toBeVisible();
   await expect(page.locator('[data-verdikt-sprung]')).toBeVisible();
 });
+
+// W2·31 Bündel I (30.9.2026, Posten «useZielSichtbar: Schwelle 20 % unerreichbar
+// bei Ziel > 5 Fensterhöhen»): kein echtes Ergebnis ist so hoch (Maximum heute
+// 1596 px), darum wird das Ziel im Browser künstlich auf 9000 px gestreckt
+// (10 Fensterhöhen, Anteil ≤ 10 % — die alte 20-%-Schwelle war unerreichbar).
+// Vorher (dist, gemessen @1920×900): Marke AN bei 900 px sichtbarem Ergebnis,
+// also über einem das ganze Fenster füllenden Ziel. Jetzt: unter einer halben
+// Fensterhöhe sichtbar (400 px) bleibt die Marke, ab einer halben (500 px)
+// verschwindet sie. Der IntersectionObserver feuert nur an Schwellen — dieser
+// Test läuft im echten Chromium und beweist damit, dass die Pixel-Schwelle
+// tatsächlich in der Schwellenliste steht (das Vitest-Gegenstück mockt ihn).
+// ROT ZU BEKOMMEN: in `useZielSichtbar.ts` `zielSchwellen` auf
+// `[0, MINDEST_SICHTBARKEIT]` zurücksetzen.
+test('/rechner/verjaehrung @1920: sehr hohes Ergebnis — Sprungmarke weicht ab halber Fensterhöhe im Bild', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 900 });
+  await page.goto('/rechner/verjaehrung');
+  const ziel = page.locator('[data-ergebnisplatz], [data-platzhalter]').first();
+  await expect(ziel).toBeVisible();
+  await page.addStyleTag({ content: '[data-ergebnisplatz], [data-platzhalter] { min-height: 9000px !important; }' });
+  const oberkanteImDokument = await ziel.evaluate((el) => el.getBoundingClientRect().top + window.scrollY);
+  expect(await ziel.evaluate((el) => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(9000);
+
+  // Oberkante des Ziels bei Fenster-y = 500 → 400 px (44 %) im Bild: Marke bleibt.
+  await page.evaluate((t) => window.scrollTo(0, t - 500), oberkanteImDokument);
+  await expect(page.locator('[data-verdikt-sprung]')).toBeVisible();
+  // Oberkante bei y = 400 → 500 px (56 %) im Bild: Marke weg (Anteil nur 5.6 %).
+  await page.evaluate((t) => window.scrollTo(0, t - 400), oberkanteImDokument);
+  await expect(page.locator('[data-verdikt-sprung]')).toHaveCount(0);
+  // Fenster voll Ergebnis: bleibt weg.
+  await page.evaluate((t) => window.scrollTo(0, t + 3000), oberkanteImDokument);
+  await expect(page.locator('[data-verdikt-sprung]')).toHaveCount(0);
+});

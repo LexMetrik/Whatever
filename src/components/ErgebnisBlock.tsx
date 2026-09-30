@@ -43,7 +43,7 @@ export function ErgebnisBlock({ id = 'lc-ergebnis', live = true, sprung = true, 
       {sprung && <ErgebnisSprung zielId={id} />}
       {/* `data-ergebnisplatz`: Anker der rechten Spalte in `.lc-rechner-spalten`
           (index.css, W2·31-BILDSCHIRMBREITE B3) — reine Darstellung. */}
-      <div id={id} className="lc-reveal space-y-4" aria-live="polite" data-ergebnisplatz="">
+      <div id={id} className="lc-reveal lc-sprungziel space-y-4" aria-live="polite" data-ergebnisplatz="">
         {live && <LiveHeader />}
         {children}
       </div>
