@@ -38,11 +38,10 @@ import { prerenderRouten } from '../src/lib/seo'
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']
 
-// App-weit dokumentierter Markenentscheid (BERICHT.md B-2, abnahme/design-2026-06):
-// Inline-Links sind nur farblich vom Fliesstext unterschieden (`no-underline`).
-// Das ist eine Entscheid-Frage für David, kein Bau-Befund — sie gatet darum
-// nicht, hier so wenig wie in `a11y.e2e.ts`. JEDE andere Regel gatet.
-const NICHT_GATEND = new Set(['link-in-text-block'])
+// Kein Freibrief: `link-in-text-block` war bis 30.9.2026 (W2·19) als «B-2-Marken-
+// entscheid, no-underline» ausgenommen; der Entscheid ist seit dem R3-Nachzug
+// 6.9.2026 aufgehoben (DESIGN-REGLEMENT F0.8), alle Flächen messen ohne
+// Ausnahme grün. JEDE Regel gatet.
 
 // In `a11y.e2e.ts` bereits mit demselben nackten Aufruf abgedeckt (Stand
 // 5.9.2026) — hier ausgelassen, damit dieselbe Messung nicht zweimal läuft.
@@ -73,7 +72,7 @@ async function oeffnen(page: Page, url: string) {
 async function axePruefen(page: Page, testInfo: TestInfo, punkt: string) {
   const ergebnis = await new AxeBuilder({ page }).withTags(TAGS).analyze()
   const schwer = ergebnis.violations.filter(
-    (v) => (v.impact === 'critical' || v.impact === 'serious') && !NICHT_GATEND.has(v.id),
+    (v) => (v.impact === 'critical' || v.impact === 'serious'),
   )
   const dokumentieren = ergebnis.violations.filter((v) => !schwer.includes(v))
   if (dokumentieren.length > 0) {
