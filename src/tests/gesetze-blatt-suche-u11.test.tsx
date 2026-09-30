@@ -125,7 +125,8 @@ describe('U11 · Gesetze-Blatt: Suche auf allen Stufen', () => {
     expect(kopfTexte(ziel)).toContain('Staatsverträge');
 
     await tippe(ziel, 'xyzq');
-    expect(status(ziel).join(' ')).toContain('Kein Erlass passt auf «xyzq»');
+    // W2·19 DK-B: Leerzustand-Baustein (Hausform + Weiterweg) statt «passt auf «…»».
+    expect(status(ziel).join(' ')).toContain('Kein Erlass gefunden. Suche leeren');
 
     await tippe(ziel, '');
     expect(ziel.querySelector('ul[aria-label="Rechtsgebiete des Bundes"]')).toBeTruthy();

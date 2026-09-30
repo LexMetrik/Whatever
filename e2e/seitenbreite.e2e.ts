@@ -97,7 +97,9 @@ function erwarteteRem(stufe: Breitenstufe, viewport: number): number {
 
 async function bereit(page: Page): Promise<void> {
   await expect(page.locator('main#inhalt h1').first()).toBeVisible();
-  await expect(page.locator('[aria-busy="true"]')).toHaveCount(0);
+  // W2·19 DK-B: der Fallback des Schnellwerkzeugs ist die eine Ladeanzeige
+  // (`role="status"` + Ablesekante) statt `<p aria-busy>` — die Wartebedingung zieht mit.
+  await expect(page.locator('[aria-busy="true"], [role="status"]:has(.scale-rule)')).toHaveCount(0);
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => document.fonts?.ready);
 }

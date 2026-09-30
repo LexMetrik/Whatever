@@ -322,7 +322,8 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
 
     const gebiete = blatt(page).getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' })
     // §8: ein Gebiet nur mit geplanten Vorlagen sagt das, statt «0» zu zählen.
-    await expect(gebiete.getByRole('button', { name: /Strafrecht/ })).toContainText('in Vorbereitung')
+    // W2·19 DK-B (DK-27): die Marke `lc-badge-geplant` mit Kanon-Wortlaut «In Vorbereitung».
+    await expect(gebiete.getByRole('button', { name: /Strafrecht/ })).toContainText('In Vorbereitung')
     await gebiete.getByRole('button', { name: /Familienrecht/ }).click()
     await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen\/familienrecht$/)
     await expect(pfad).toContainText('Familienrecht')
@@ -725,4 +726,95 @@ test.describe('Startseite · U13 kein Scroll beim Aufklappen', () => {
       }
     })
   }
+})
+
+// ─── W2·19 DK-B (30.9.2026, HN-D5/DK-05) · Leer-, Lade- und Fehlerzustand ────
+//
+// Vorher zeichneten die Blätter alle drei Zustände von Hand (ink-600/-700-
+// Absatz, ohne Weiterweg, ohne Haus-Fehlerbox). Jetzt: Leerzustand-Baustein mit
+// «Suche leeren» / «Filter zurücksetzen», Ladeanzeige, FehlerBox. U13 gilt für
+// Gegenprüfung W2·19 DK-B (30.9.2026): der Weiterweg des Leerzustands ist ein
+// Knopf, der mit dem Leerzustand aus dem DOM fällt — der Tastaturfokus stand
+// danach auf <body> (Escape schloss das Blatt nicht mehr, der nächste Tab
+// übersprang das Suchfeld). Geprüft wird die ECHTE Tastenfolge: vom Suchfeld
+// per Tab zum Weiterweg, Enter, dann MUSS das Suchfeld den Fokus tragen und
+// Escape das Blatt schliessen.
+test.describe('Startseite · Fokus nach dem Weiterweg des Leerzustands', () => {
+  const FAELLE = [
+    { name: 'Werkzeuge/Rechner', url: '/?blatt=werkzeuge/rechner', suche: 'zzzzq', knopf: 'Suche leeren' },
+    { name: 'Werkzeuge/Vorlagen', url: '/?blatt=werkzeuge/vorlagen', suche: 'zzzzq', knopf: 'Suche leeren' },
+    { name: 'Gesetze (Wahl-Stufe)', url: '/?blatt=gesetze', suche: 'zzzzq', knopf: 'Suche leeren' },
+    { name: 'Gesetze/International-Gruppe', url: '/?blatt=gesetze/international/menschenrechte', suche: 'zzzzq', knopf: 'Suche leeren' },
+    { name: 'Materialien', url: '/?blatt=materialien', suche: 'zzzzq', knopf: 'Filter zurücksetzen' },
+    { name: 'Rechtsprechung', url: '/?blatt=rechtsprechung', suche: 'zzzzq', knopf: 'Filter zurücksetzen' },
+  ] as const
+
+  for (const f of FAELLE) {
+    test(`${f.name}: Tab zum Knopf, Enter ⇒ Fokus im Suchfeld, Escape schliesst das Blatt`, async ({ page }) => {
+      await page.setViewportSize({ width: 1280, height: 800 })
+      await page.goto(f.url)
+      await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+      const suchfeld = blatt(page).getByRole('searchbox').first()
+      await suchfeld.fill(f.suche)
+      const knopf = blatt(page).locator('[data-leerzustand="filter"]').getByRole('button', { name: f.knopf })
+      await expect(knopf).toBeVisible()
+      await suchfeld.focus()
+      for (let i = 0; i < 12 && !(await knopf.evaluate((k) => k === document.activeElement)); i++) {
+        await page.keyboard.press('Tab')
+      }
+      await expect(knopf).toBeFocused()
+      await page.keyboard.press('Enter')
+      await expect(suchfeld).toHaveValue('')
+      await expect(suchfeld, 'Fokus bleibt im Blatt, nicht auf <body>').toBeFocused()
+      await page.keyboard.press('Escape')
+      await expect(blatt(page)).toHaveCount(0)
+    })
+  }
+})
+
+// JEDEN Zustand: der Zustand darf das Blatt nie aus dem Fenster schieben
+// (gemessen @1280×800 und @1440×900 vorher/nachher: Unterkante 795 px, Seite 0).
+test.describe('Startseite · Zustände der Blätter aus den Hausbausteinen (DK-B)', () => {
+  const imFenster = async (page: Page, was: string) => {
+    const m = await page.evaluate(() => {
+      const b = document.querySelector('#lm-start-blatt')!.getBoundingClientRect()
+      return { unten: Math.round(b.bottom), vh: innerHeight, sy: Math.round(scrollY) }
+    })
+    expect(m.unten, `${was}: Blatt-Unterkante im Fenster (${JSON.stringify(m)})`).toBeLessThanOrEqual(m.vh)
+    expect(m.sy, `${was}: Seite unverschoben`).toBe(0)
+  }
+
+  for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
+    test(`@${breite}×${hoehe}: Werkzeuge — Filter ohne Treffer zeigt den Leerzustand, «Suche leeren» führt zurück`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto('/?blatt=werkzeuge/rechner')
+      await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+      const feld = blatt(page).getByRole('searchbox', { name: 'Rechner filtern' })
+      await feld.fill('zzzzq')
+      const leer = blatt(page).locator('[data-leerzustand="filter"]')
+      await expect(leer).toHaveText('Kein Rechner gefunden. Suche leeren')
+      await imFenster(page, 'Leerzustand')
+      await leer.getByRole('button', { name: 'Suche leeren' }).click()
+      await expect(feld).toHaveValue('')
+      await expect(blatt(page).locator('[data-leerzustand]')).toHaveCount(0)
+    })
+  }
+
+  test('Materialien: Register verzögert ⇒ Ladeanzeige, Register fehlt ⇒ FehlerBox — beide im Fenster', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.route('**/materialien/register.json', async (route) => {
+      await new Promise((r) => setTimeout(r, 2500))
+      await route.abort()
+    })
+    await page.goto('/?blatt=materialien')
+    await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+    const laden = blatt(page).locator('[role="status"]:has(.scale-rule)')
+    await expect(laden).toContainText('Die Sammlung wird abgerufen …')
+    await imFenster(page, 'Ladeanzeige')
+    const fehler = blatt(page).locator('[role="alert"].lc-notice-danger')
+    await expect(fehler).toContainText('Laden fehlgeschlagen')
+    await expect(fehler).toContainText('Die Materialien-Sammlung konnte nicht geladen werden.')
+    await expect(fehler).not.toContainText('Eingabefehler')
+    await imFenster(page, 'FehlerBox')
+  })
 })

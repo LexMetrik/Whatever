@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { ladeEntscheidManifest, filterEntscheide, sortiere, hauptIdentitaet, themaText, istVolltextVerweis } from '../../lib/rechtsprechung/browse';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { datumAnzeige } from '../rechtsprechung/format';
+import { Leerzustand } from '../ui/Leerzustand';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
-import { BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { BlattLaedt, BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Rechtsprechung-Kachel: sofort Suche (W2·29-WERKBANK-START S3-Nachzug)
@@ -42,18 +44,11 @@ const PORTION = 20;
 
 type Ebene = 'bund' | 'kanton' | null;
 
-function Laedt({ alle, fehler, children }: { alle: BrowseEntscheid[] | null; fehler: boolean; children: () => React.ReactNode }) {
-  if (fehler) {
-    return <p className="font-sans text-body-s text-ink-700" role="alert">Die Rechtsprechungs-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.</p>;
-  }
-  if (alle === null) return <p className="font-sans text-body-s text-ink-500" role="status">Die Sammlung wird abgerufen …</p>;
-  return <>{children()}</>;
-}
-
 export function RechtsprechungBlatt() {
   const [alle, setAlle] = useState<BrowseEntscheid[] | null>(null);
   const [fehler, setFehler] = useState(false);
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const [nurLeit, setNurLeit] = useState(false);
   const [ebene, setEbene] = useState<Ebene>(null);
   const [portion, setPortion] = useState(PORTION);
@@ -97,7 +92,7 @@ export function RechtsprechungBlatt() {
   return (
     <div className="space-y-4">
       <BlattSuchFeld wert={suche} setze={setSuche} label="Rechtsprechung durchsuchen"
-        platzhalter="Thema, Aktenzeichen oder BGE-Nummer …" />
+        platzhalter="Thema, Aktenzeichen oder BGE-Nummer …" feldRef={feldRef} />
       <div className="flex flex-wrap items-center gap-2">
         <button type="button" onClick={() => setNurLeit((v) => !v)} aria-pressed={nurLeit} className="ub-schalter">
           Leitentscheide
@@ -112,9 +107,11 @@ export function RechtsprechungBlatt() {
         </button>
       </div>
 
-      <Laedt alle={alle} fehler={fehler}>
+      <BlattLaedt laedt={alle === null && !fehler} fehler={fehler} ladetext="Die Sammlung wird abgerufen …"
+        fehlertext="Die Rechtsprechungs-Sammlung konnte nicht geladen werden. Bitte die Seite neu laden.">
         {() => (gefiltert.length === 0 ? (
-          <p className="font-sans text-body-s text-ink-700" role="status">Kein Entscheid gefunden.</p>
+          <Leerzustand art="filter" ansage text="Kein Entscheid gefunden."
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setSuche(''); setNurLeit(false); setEbene(null); zumFeld(); } }} />
         ) : (
           <div className="space-y-3">
             <TrefferZahl n={gefiltert.length} einzahl="Entscheid" mehrzahl="Entscheide" />
@@ -135,7 +132,7 @@ export function RechtsprechungBlatt() {
             )}
           </div>
         ))}
-      </Laedt>
+      </BlattLaedt>
     </div>
   );
 }

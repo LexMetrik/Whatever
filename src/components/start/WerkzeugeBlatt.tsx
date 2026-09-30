@@ -6,8 +6,10 @@ import { kartenDerKategorie } from '../../lib/katalogKategorie';
 import { kartePasst, LEERER_FILTER } from '../../lib/katalogSuche';
 import { KategorieSektion } from '../Katalog';
 import { WERKZEUGE_RECHNER_KATEGORIEN, WERKZEUGE_VORLAGEN_GEBIETE, type BlattOrt } from '../../lib/startBlatt';
+import { Leerzustand } from '../ui/Leerzustand';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
+import { useSuchFokus } from './suchFokus';
 
 // ─── Startseite · die Stufen der Werkzeuge-Kachel (W2·29-WERKBANK-START S2) ──
 //
@@ -58,6 +60,17 @@ export function WerkzeugeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOr
 //     Gebiet NUR mit geplanten Vorlagen sagt «in Vorbereitung» statt «0» (§8).
 // Die Summen sind der Kachel-Zähler (Vitest `start-blatt-adresse`): gezählt,
 // nicht behauptet.
+//
+// W2·19 DK-B (30.9.2026, HN-D5/DK-27): «in Vorbereitung» stand hier als
+// Klartext in ink-600, im Katalog (`/rechner`, `KategorieSektion`) als Marke
+// `lc-badge-geplant` — ein Status, zwei Formen. Jetzt die eine Marke mit dem
+// Kanon-Wortlaut «In Vorbereitung» (Wächter design-konsistenz-chips-marken).
+// STAND DER MARKE: hinter dem Namen, im Textfluss (`ml-2 align-middle`, wie
+// `VorlagenSprung`/`ZustErgebnisEinleitung`), NICHT als rechte Spalte neben ihm:
+// gemessen 30.9.2026 verschmälerte die 103-px-Marke (135 px bei Schrift 1.4) die
+// Namensspalte @1024/1.4 von 46 auf 23 px (6 → 12 Zeilen, Überlauf 461 → 977 px)
+// und @1280/1.4 von 61 auf 38 px — breiter als der 80-px-Klartext davor. Im
+// Fluss bricht sie als Ganzes in die nächste Zeile.
 
 const VORLAGEN_KARTEN = kartenDerKategorie(KATALOG_KARTEN, 'vorlagen');
 const rechnerZahl = (id: OberkategorieId) => kartenDerKategorie(KATALOG_KARTEN, id).filter(istVerfuegbar).length;
@@ -104,10 +117,11 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
             return (
               <li key={g.id} className="break-inside-avoid border-t border-rule-soft">
                 <button type="button" onClick={zu('vorlagen', g.id)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
-                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.name}</span>
-                  {n > 0
-                    ? <span className="num shrink-0 text-xs text-ink-700">{nf(n)}</span>
-                    : <span className="shrink-0 text-xs text-ink-600">in Vorbereitung</span>}
+                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">
+                    {g.name}
+                    {n === 0 && <span className="lc-badge-geplant ml-2 align-middle">In Vorbereitung</span>}
+                  </span>
+                  {n > 0 && <span className="num shrink-0 text-xs text-ink-700">{nf(n)}</span>}
                 </button>
               </li>
             );
@@ -136,6 +150,7 @@ function VorlagenGebiet({ id }: { id: string }) {
 
 function RechnerListe() {
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const q = suche.trim();
   const karten = useMemo(
     () => (q === '' ? KATALOG_KARTEN : KATALOG_KARTEN.filter((k) => kartePasst(k, { ...LEERER_FILTER, suche: q }))),
@@ -147,9 +162,10 @@ function RechnerListe() {
   );
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" feldRef={feldRef} />
       {kategorien.length === 0
-        ? <p className="font-sans text-body-s text-ink-600">Kein Rechner passt auf «{q}».</p>
+        ? <Leerzustand art="filter" ansage text="Kein Rechner gefunden."
+            weiterweg={{ text: 'Suche leeren', onKlick: () => { setSuche(''); zumFeld(); } }} />
         : kategorien.map((kat) => (
             <KategorieSektion key={kat.id} kat={kat} karten={kartenDerKategorie(karten, kat.id)} alleOffen={q !== ''} />
           ))}
@@ -159,6 +175,7 @@ function RechnerListe() {
 
 function VorlagenListe() {
   const [suche, setSuche] = useState('');
+  const { feldRef, zumFeld } = useSuchFokus();
   const q = suche.trim();
   const basis = useMemo(() => kartenDerKategorie(KATALOG_KARTEN, 'vorlagen'), []);
   const karten = useMemo(
@@ -167,7 +184,7 @@ function VorlagenListe() {
   );
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Vorlagen filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Vorlagen filtern" feldRef={feldRef} />
       {/* Gegenprüfung S2 (24.9.2026): `KategorieSektion` bringt für die
           Kategorie «vorlagen» ein EIGENES Rechtsgebiet-Feld mit, das über
           `setSearchParams` ohne den Blatt-Verlaufsstatus schreibt (verliert
@@ -176,7 +193,8 @@ function VorlagenListe() {
           neben dem Blatt-eigenen `Filter` oben. `ohneGebietsFilter`
           unterdrückt es; die Textsuche oben deckt den Anwendungsfall hier ab. */}
       {karten.length === 0
-        ? <p className="font-sans text-body-s text-ink-600">Keine Vorlage passt auf «{q}».</p>
+        ? <Leerzustand art="filter" ansage text="Keine Vorlage gefunden."
+            weiterweg={{ text: 'Suche leeren', onKlick: () => { setSuche(''); zumFeld(); } }} />
         : <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={karten} ohneKopf alleOffen={q !== ''} ohneGebietsFilter />}
     </div>
   );

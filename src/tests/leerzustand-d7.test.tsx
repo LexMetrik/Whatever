@@ -68,6 +68,20 @@ function aufrufe(quelle: string): string[] {
   return quelle.match(/<Leerzustand\b[\s\S]*?\/>/g) ?? [];
 }
 
+/**
+ * Die EINE Ausnahme, mit ihrer Begründung AM FUNDORT (nicht bloss hier).
+ *
+ * Die Fehlseite ist selbst schon die Antwort auf «hier ist nichts»; ihr
+ * Weiterweg steht als Sprungliste darunter. Ein zweiter Baustein mit
+ * zweitem Ausweg in derselben Ansicht wäre die Doppelung, nicht die
+ * Vereinheitlichung. Form und Wortlaut sind identisch zum Kanon.
+ */
+const AUSNAHMEN = [{
+  datei: 'pages/gesetz-leser/FehlSeite.tsx',
+  begruendung: 'dieser Satz steht INNERHALB einer',
+}] as const;
+
+
 describe('D-7 (1) — Form: der Baustein rendert den Kanon', () => {
   it('Bestands-Leere: nackter Absatz, kein Kasten, kein Knopf', () => {
     const out = renderToStaticMarkup(<Leerzustand art="bestand" text="Kein Erlass gefunden." />);
@@ -177,19 +191,6 @@ describe('D-7 (3) — App-weit: die Rohform des Leerzustands existiert nirgends 
   /** Der Kanon-Absatz des Leerzustands, von Hand gezeichnet. */
   const ROHFORM = /<p className="(?=[^"]*text-body-s)(?=[^"]*text-ink-500)[^"]*">\s*(?:Kein|Keine|Noch kein)/;
 
-  /**
-   * Die EINE Ausnahme, mit ihrer Begründung AM FUNDORT (nicht bloss hier).
-   *
-   * Die Fehlseite ist selbst schon die Antwort auf «hier ist nichts»; ihr
-   * Weiterweg steht als Sprungliste darunter. Ein zweiter Baustein mit
-   * zweitem Ausweg in derselben Ansicht wäre die Doppelung, nicht die
-   * Vereinheitlichung. Form und Wortlaut sind identisch zum Kanon.
-   */
-  const AUSNAHMEN = [{
-    datei: 'pages/gesetz-leser/FehlSeite.tsx',
-    begruendung: 'dieser Satz steht INNERHALB einer',
-  }] as const;
-
   it('jede Ausnahme trägt ihre Begründung am Fundort', () => {
     expect(() => pruefeAusnahmen(AUSNAHMEN)).not.toThrow();
   });
@@ -213,5 +214,67 @@ describe('D-7 (3) — App-weit: die Rohform des Leerzustands existiert nirgends 
     ]) {
       expect(ROHFORM.test(vorher), vorher).toBe(true);
     }
+  });
+});
+
+// ─── W2·19 DK-B (30.9.2026, HN-D5 / DK-05) · STELLEN OHNE IMPORT ─────────────
+//
+// DER BEFUND (Herz-und-Nieren-Prüfung 24.9.2026, Sonde G am lebenden System):
+// `werkzeuge-blatt` und `gesetze-blatt` lieferten KEIN `[data-leerzustand]`,
+// obwohl die Aufrufstellen-Sonde oben grün war — sie findet per Konstruktion nur
+// Dateien, die `<Leerzustand …/>` schon AUFRUFEN, und die Start-Blätter haben den
+// Baustein nie importiert. (A) fand sie nicht (kein Aufruf), (B) fand sie nicht
+// (Rohform verlangt `text-ink-500`, die Blätter trugen `text-ink-600/-700`).
+//
+// Diese Sonde greift am SATZ, nicht am Import und nicht an der Klasse: die
+// Hausform «Kein X gefunden.» / «Kein X passt auf «q».» steht in der App nur noch
+// INNERHALB eines `<Leerzustand …/>`-Aufrufs (oder in der begründeten Ausnahme).
+describe('DK-B (4) — die Hausform des Leersatzes steht nur im Baustein (auch ohne Import)', () => {
+  /** «Kein(e) … gefunden.» bzw. «Kein(e) … passt auf «…».» — der Satz endet
+   *  unmittelbar (Schlusspunkt); «Keine amtliche Adresse gefunden — …» (Sucherfolg
+   *  MIT fachlichem Weiterweg im Satz) ist bewusst NICHT die Hausform. */
+  const LEERSATZ = /\bKeine?\s[^<>"`{}—–]{1,40}?\s(?:gefunden|passt auf|passen auf)\b(?:\s«[^»]*»)?\./g;
+
+  /** Quelltext ohne die `<Leerzustand …/>`-Aufrufe — was übrig bleibt, hat den
+   *  Baustein umgangen. */
+  const ohneBaustein = (q: string) => q.replace(/<Leerzustand\b[\s\S]*?\/>/g, '');
+
+  function umgeher(): string[] {
+    const erlaubt = pruefeAusnahmen(AUSNAHMEN);
+    const funde: string[] = [];
+    for (const d of alleTsx()) {
+      if (erlaubt.has(rel(d))) continue;
+      for (const m of ohneBaustein(liesOhneKommentare(d)).matchAll(LEERSATZ)) funde.push(`${rel(d)}: ${m[0]}`);
+    }
+    return funde;
+  }
+
+  it('kein Leersatz ausserhalb des Bausteins (Datei egal, Import egal, Klasse egal)', () => {
+    const funde = umgeher();
+    expect(
+      funde,
+      `${funde.length} handgezeichnete Leersätze ausserhalb von <Leerzustand>: Filter-Leere = `
+      + '`art="filter"` mit Weiterweg, Bestands-Leere = `art="bestand"` (C1: nie eine Sackgasse).',
+    ).toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die sechs Vorher-Formen der Start-Blätter', () => {
+    const vorher = [
+      '<p className="font-sans text-body-s text-ink-600">Kein Rechner passt auf «{q}».</p>',
+      '<p className="font-sans text-body-s text-ink-600">Keine Vorlage passt auf «{q}».</p>',
+      '<p className="font-sans text-body-s text-ink-600">Kein Erlass passt auf «{suche}».</p>',
+      '<p className="font-sans text-body-s text-ink-600" role="status">Kein Erlass passt auf «{suche.trim()}».</p>',
+      '<p className="font-sans text-body-s text-ink-700" role="status">Kein Entscheid gefunden.</p>',
+      '<p className="font-sans text-body-s text-ink-700" role="status">Kein Material gefunden.</p>',
+    ];
+    for (const z of vorher) expect(ohneBaustein(z).match(LEERSATZ), z).not.toBeNull();
+  });
+
+  it('GEGEN-KONTROLLE: Baustein-Aufruf, Sucherfolg mit Weg im Satz und Prosa fallen NICHT auf', () => {
+    for (const ok of [
+      '<Leerzustand art="filter" text="Kein Rechner gefunden." weiterweg={{ text: \'Suche leeren\', onKlick: () => {} }} />',
+      '<p>Keine amtliche Adresse gefunden — Schreibweise prüfen oder PLZ/Gemeinde von Hand eingeben.</p>',
+      'Keine Rechtsberatung. «ungeprüft» = maschinell erfasst.',
+    ]) expect(ohneBaustein(ok).match(LEERSATZ), ok).toBeNull();
   });
 });
