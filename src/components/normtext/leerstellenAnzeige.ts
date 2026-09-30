@@ -9,7 +9,7 @@ import type { LeerstellenStatus } from '../../lib/normtext/darstellung';
 
 /** Besteht der Text NUR aus Auslassungs-Platzhalter (leer, «…», «.», Leerraum)? Dann ist er
  *  kein Wortlaut — im Gegensatz zum amtlichen Wort «Aufgehoben». */
-export function istLeerPlatzhalter(text: string): boolean {
+function istLeerPlatzhalter(text: string): boolean {
   return /^[….\s]*$/.test(text.trim());
 }
 
