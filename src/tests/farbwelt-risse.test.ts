@@ -11,6 +11,8 @@ const RISS: Riss = { fg: 'a', bg: 'b', mode: 'hell', schwelle: 3, ist: 2.72, tag
 const ROLLE: Riss = { fg: 'c', bg: 'd', mode: 'dunkel', schwelle: 4.5, ist: 4.24, tag: 'Rolle' };
 const TOL = 0.03;
 const feste = (k: number) => () => k;
+/** Paar-Farbe `ist`, die ROLLEN-Farbe (Vorgabe ink-600) `rolle`. */
+const je = (ist: number, rolle: number) => (fg: string) => (fg === 'ink-600' ? rolle : ist);
 
 describe('werteRisseAus: Kategorien', () => {
   it('ein echter Riss ist Warnung; ein Rollen-Paar unter der Schwelle nicht', () => {
@@ -23,9 +25,21 @@ describe('werteRisseAus: Kategorien', () => {
 
   it('Verschlechterung eines echten Risses ist Fehler, bei einem Rollen-Paar nie (auch weit unter Baseline)', () => {
     expect(werteRisseAus([RISS], [], feste(2.5), TOL).fehler).toHaveLength(1);
-    expect(werteRisseAus([], [ROLLE], feste(3.0), TOL).fehler).toEqual([]);
+    // Das Paar (ink-500 o. ä.) darf beliebig tief sinken — die Rolle fängt es auf.
+    expect(werteRisseAus([], [ROLLE], je(3.0, 5.6), TOL).fehler).toEqual([]);
     // Toleranzrand: Baseline − tol ist noch erlaubt (Randwert ≠ Glücksfall).
     expect(werteRisseAus([RISS], [], feste(2.72 - TOL + 0.001), TOL).fehler).toEqual([]);
+  });
+
+  it('Mindestwert-Wächter: trägt die ROLLEN-Farbe die Schwelle nicht, ist das ein Fehler', () => {
+    // Die Rolle (ink-600) fällt unter 4.5 → rot, auch wenn das Paar selbst wie immer darunter liegt.
+    const r = werteRisseAus([], [ROLLE], je(4.24, 4.4), TOL);
+    expect(r.fehler).toHaveLength(1);
+    expect(r.fehler[0]).toContain('Rolle trägt nicht ink-600/d dunkel: 4.40:1 < 4.5:1');
+    // Randwert: genau auf der Schwelle hält (≥, kein Glücksfall bei 4.5).
+    expect(werteRisseAus([], [ROLLE], je(4.24, 4.5), TOL).fehler).toEqual([]);
+    // Andere Rollen-Farbe ist wählbar (kein hartes ink-600 in der Logik).
+    expect(werteRisseAus([], [ROLLE], (fg) => (fg === 'x' ? 4.0 : 9), TOL, 'x').fehler).toHaveLength(1);
   });
 
   it('ein Rollen-Paar über der Schwelle meldet «Rolle überflüssig» (Rückbau-Signal), keine Warnung', () => {
