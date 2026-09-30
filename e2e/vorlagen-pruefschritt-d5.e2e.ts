@@ -9,6 +9,7 @@
 // nachfragt (§8 · Daueranweisung David 12.6.2026: jede Vorlage bleibt
 // jederzeit herunterladbar).
 import { test, expect } from '@playwright/test'
+import { weiterKnopf } from './helpers/weiterKnopf'
 
 const PARTEIEN: [string, string][] = [
   ['Ihr Name', 'A. Muster'],
@@ -25,7 +26,7 @@ test.describe('D5 — Prüfen-Schritt der Vorlagen', () => {
     await page.evaluate(() => localStorage.clear())
     await page.reload()
 
-    const weiter = page.getByRole('button', { name: /^Weiter/ })
+    const weiter = weiterKnopf(page)
     await weiter.click() // Schritt 1 «Was mahnen Sie an?» → Parteien
     for (const [label, wert] of PARTEIEN) await page.getByLabel(label, { exact: true }).fill(wert)
     await weiter.click() // → Forderung & Frist

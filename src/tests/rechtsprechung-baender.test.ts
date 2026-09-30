@@ -13,7 +13,8 @@
 
 import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { jahrVon, bandVon, zaehleBaender, istChronologisch } from '../components/rechtsprechung/baender';
-import { zaehleAktiveFilter, leseFenster, schreibeFenster, DECKEL_PRAEFIX } from '../components/rechtsprechung/zustand';
+import { zaehleAktiveFilter } from '../components/rechtsprechung/zustand';
+import { leseFenster, schreibeFenster, DECKEL_PRAEFIX } from '../components/ui/listenFenster';
 import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 
 function e(teil: Partial<BrowseEntscheid> & { key: string }): BrowseEntscheid {
@@ -187,6 +188,14 @@ describe('leseFenster · Plausibilisierung', () => {
 
   it('liefert den Grundzustand, wenn nichts gespeichert ist', () => {
     expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+  });
+
+  it('SPEICHER-VERTRAG: der Sitzungsschlüssel bleibt byte-gleich («rsp:deckel:» + Liste, Wert «von:bis»)', () => {
+    // P10b (30.9.2026): der Helfer zog nach ui/listenFenster; das Präfix bleibt, sonst verlöre
+    // jeder Nutzer beim Deploy sein aufgeklapptes Fenster (sessionStorage überlebt im offenen Tab).
+    schreibeFenster('materialien:BR', { von: 0, bis: 200 });
+    expect(sitzung.get('rsp:deckel:materialien:BR')).toBe('0:200');
+    expect(DECKEL_PRAEFIX).toBe('rsp:deckel:');
   });
 
   it('stellt ein plausibles Fenster wieder her', () => {
