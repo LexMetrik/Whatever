@@ -112,6 +112,18 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     1.4 (Kachel 433 px = 19.3 rem) zeigte die Zeile auf main einzeilig und
 //     zeigt sie jetzt nicht mehr; «dreizeilig» trifft nur den 241-px-Fall
 //     (1536 + Seitenleiste + Skala 1.4), der 433-px-Fall fällt der Schwelle zum Opfer.
+//   · W2·31 P15 (1.10.2026, Posten «Standardschrift 1280×800 / 1440×900 mit
+//     Seitenleiste 460»): die Wurzel ist `@container/start`, und die
+//     ZWEISPALTIGKEIT (Kachelfeld | Spalte 20rem) hängt im Einzelfenster an der
+//     Breite der Startseite selbst statt am Fenster: ab 960 px (= Fenster 1024
+//     ohne Seitenleiste bei 48 px Seitenrand; px statt rem, damit die Schwelle
+//     mit der Schriftskala NICHT wandert — `lg` ist eine Medien-Abfrage und
+//     misst ohnehin in Standard-px). Gemessen vorher: mit Seitenleiste 460
+//     @1280 Kachel 198 px breit/340 hoch, Blatt 915 > 800, @1440 Gesetze-Wahl 88 px
+//     Überlauf; nachher einspaltig wie bei gleicher Breite ohne Seitenleiste
+//     (Blatt 772/932 px, Unterkante 795, Überlauf 0). Ohne Seitenleiste und im
+//     Pane (`@5xl/pane`) ist nichts verändert. Kachelhöhe (`lg:`) und Abstand
+//     (`lg:-mt-5`) bleiben am Fenster: sie tragen U13 und hängen an der Höhe.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -158,9 +170,9 @@ const KACHELN: readonly KachelDef[] = [
 export function Startseite() {
   const pk = usePaneKlasse();
   return (
-    <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
+    <div className={`@container/start grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:-mt-5 ', '@5xl/pane:-mt-5 ')}${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
+      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:-mt-5 ', '@5xl/pane:-mt-5 ')}${pk('@[960px]/start:grid-cols-[minmax(0,1fr)_20rem] @[960px]/start:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
         <div className={`grid gap-y-4 ${pk(
           'lg:grid-rows-[auto_minmax(0,1fr)] lg:[&_.lc-start-zelle]:min-h-start-kachel-breit',
           '@5xl/pane:grid-rows-[auto_minmax(0,1fr)] @5xl/pane:[&_.lc-start-zelle]:min-h-start-kachel-breit')}`}>

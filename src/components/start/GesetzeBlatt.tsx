@@ -140,8 +140,13 @@ function Wahl({ zu }: { zu: Zu }) {
               die fest 216 px grosse Karte leer»): `.lc-start-blatt-inhalt`
               @1536×864 hat `scrollHeight === clientHeight` (0 px Reserve) —
               der Deckel bleibt bewusst unverändert, jede Vergrösserung der
-              Karte reisst U13 sofort. */}
-          <div className="mx-auto max-w-xs px-4 lg:max-w-none 2xl:max-w-[15.5rem]">
+              Karte reisst U13 sofort.
+              ERGÄNZT W2·31 P15 (1.10.2026): der Deckel gilt seither schon ab `lg`
+              statt erst ab `2xl`. Mit offener Seitenleiste (460 px) ist das Blatt
+              auch bei 1440 px Fenster 932 px breit (Karte ohne Deckel ~330 px,
+              Wahl 10–88 px zu hoch); ohne Seitenleiste bindet er unter `2xl`
+              weiterhin nie (Karte 217 px). */}
+          <div className="mx-auto max-w-xs px-4 lg:max-w-[15.5rem]">
             {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
                 U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
             <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
