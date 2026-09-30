@@ -43,7 +43,7 @@ export function ZweiachsigerEinstieg() {
                     {z.karten.map((k) => (
                       <li key={k.id}>
                         {k.href ? (
-                          <Link to={k.href} className="text-body-s no-underline">{k.title}</Link>
+                          <Link to={k.href} className="text-body-s no-underline lc-tap-polster">{k.title}</Link>
                         ) : (
                           <span className="text-body-s text-ink-600">{k.title}</span>
                         )}

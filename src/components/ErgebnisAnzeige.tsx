@@ -195,7 +195,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
         <div className={`border-y border-rule-soft ${rechenWegOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
           <button type="button"
             onClick={() => setRechenWegOffen(!rechenWegOffen)}
-            className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 hover:bg-brass-100 text-left transition-colors"
+            className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 lc-hover-akzent text-left"
           >
             <span className="text-body-s font-medium text-ink-700">Rechenweg ({ergebnis.rechenweg.length} Schritte)</span>
             <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${rechenWegOffen ? 'rotate-90' : ''}`}>▸</span>
@@ -239,7 +239,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           <div className={`border-y border-rule-soft ${annahmenOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
             <button type="button"
               onClick={() => setAnnahmenOffen(!annahmenOffen)}
-              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 hover:bg-brass-100 text-left transition-colors"
+              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 lc-hover-akzent text-left"
             >
               <span className="text-body-s font-medium text-ink-700">Annahmen ({ergebnis.annahmen.length})</span>
               <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${annahmenOffen ? 'rotate-90' : ''}`}>▸</span>

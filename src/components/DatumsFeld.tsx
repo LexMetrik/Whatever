@@ -155,7 +155,7 @@ export function DatumsFeld({ value, onChange, className = 'lc-input', wrapperCla
   // Monat (nach ‹/›-Blättern), wird der Monatserste tabbar (Bug-Check §9).
   const fokusImMonat = !!fokusIso && fokusIso.startsWith(format(monat, 'yyyy-MM'));
 
-  const navBtn = 'inline-flex items-center justify-center w-7 h-7 rounded-md text-brass-700 hover:bg-brass-100 transition-colors';
+  const navBtn = 'inline-flex items-center justify-center w-7 h-7 rounded-md text-brass-700 lc-hover-akzent';
 
   return (
     <div ref={wrapRef} className={`relative ${wrapperClassName}`}>
@@ -169,7 +169,7 @@ export function DatumsFeld({ value, onChange, className = 'lc-input', wrapperCla
         ref={toggleRef}
         type="button" onClick={() => (offen ? setOffen(false) : oeffnen())}
         aria-label="Kalender öffnen" aria-expanded={offen} aria-haspopup="dialog"
-        className="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-8 h-8 rounded-md text-brass-700 hover:bg-brass-100 transition-colors"
+        className="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-8 h-8 rounded-md text-brass-700 lc-hover-akzent"
       >
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -234,7 +234,7 @@ export function DatumsFeld({ value, onChange, className = 'lc-input', wrapperCla
                           // (a11y-Fang 31.8.2026, gefangen von e2e/a11y «Dunkel —
                           // Tagerechner mit offenem Kalender-Popover»).
                           ? 'bg-brass-100 text-brass-700 font-semibold ring-1 ring-inset ring-brass-500'
-                          : 'text-ink-700 hover:bg-brass-100'
+                          : 'text-ink-700 lc-hover-akzent'
                       }`}
                       style={!istGewaehlt && istHeute ? { boxShadow: 'inset 0 0 0 1px var(--brass-500)' } : undefined}
                     >
