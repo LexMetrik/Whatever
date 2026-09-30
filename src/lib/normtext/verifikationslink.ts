@@ -43,7 +43,7 @@ const AMTLICHER_NAMENS_ANKER = /^t*a\d[a-z0-9]*$/;
 // = (\d+[a-z]*)+ ist genau die Menge der nichtleeren Wörter über [0-9a-z], die mit einer Ziffer
 // beginnen (jedes solche Wort zerfällt eindeutig in maximale «Ziffern·Buchstaben»-Läufe, jeder Lauf
 // beginnt mit einer Ziffer) = `\d[a-z0-9]*`. «t*» und «a» sind disjunkt → kein Backtracking.
-// Beweis durch Differential-Test: src/tests/verifikationslink.test.ts («Regex-Äquivalenz»).
+// Beweis durch Differential-Test: src/tests/verifikationslink-regex.test.ts («Regex-Äquivalenz»).
 
 /**
  * Outbound-Link «amtliche Fassung» für EINEN Artikel: die vom Generator
