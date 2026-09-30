@@ -35,6 +35,8 @@ for (const breite of [1920, 375]) {
     // `buffered: true` (wie gesetze-historie-badge): zieht die Shifts der ganzen
     // Ladephase nach — genau die, um die es hier geht. Eine Sekunde Nachlauf für späte Shifts.
     await clsBeobachtenInstallieren(page, true);
+    // Messfenster statt Zustand (kein Marker für «späte Shifts durch»); ungedrosselt,
+    // ohne `reducedMotion` — Verschärfung wie in `leser-lade-cls.e2e.ts` (P13b) steht aus.
     await page.waitForTimeout(1000);
     const { cls, bericht } = await clsAuslesen(page);
     expect(cls, `Lade-CLS ${cls.toFixed(4)} @${breite} — ${bericht}`).toBeLessThanOrEqual(LATTE);
