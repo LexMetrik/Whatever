@@ -58,9 +58,16 @@ export const rel = (abs: string): string => abs.slice(APP_WURZEL.length + 1);
  * Kommentar, der die ALTE Bauform beim Namen nennt. Läse die Sonde den Rohtext,
  * wäre sie für immer rot — und die naheliegende «Reparatur» wäre, die Belege zu
  * löschen (§2b: Belege altern nicht).
+ *
+ * REIHENFOLGE (W2·19 DK-A, 30.9.2026): ZEILEN-Kommentare zuerst, dann Blöcke.
+ * Umgekehrt las ein Zeilenkommentar, der einen Glob wie `src/lib/normtext/**`
+ * nennt, das `/**` als Blockanfang und verschluckte den Code bis zum nächsten Blockende
+ * (gemessen: `PanelAenderungen.tsx` −2641, `EreignisFristen.tsx` −2269,
+ * `ArtikelBody.tsx` −1271, `Begruessung.tsx` −280 Zeichen — jede Sonde sah dort
+ * einen Teil der Datei nicht).
  */
 export const ohneKommentare = (s: string): string =>
-  s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+  s.replace(/^\s*\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
 
 /** Datei-Inhalt ohne Kommentare. */
 export const liesOhneKommentare = (pfad: string): string => ohneKommentare(readFileSync(pfad, 'utf8'));
