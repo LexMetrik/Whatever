@@ -105,6 +105,13 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
   eingefuegt: 'eingefügt',
 };
 
+/** W2·27 (30.9.2026): das Wort für «Wortlaut → «…»» an der rechten, GELTENDEN Spalte. Ist der
+ *  Artikel amtlich «gegenstandslos», steht hier dasselbe Wort wie im Hinweis darüber — nie
+ *  «aufgehoben» (§1/§8). Alle anderen Fälle (auch ohne Vermerk) bleiben beim bisherigen Wort. */
+function entfallWortFuer(zustand: LeerstellenStatus | undefined, neuHerkunft: string): string {
+  return zustand === 'gegenstandslos' && neuHerkunft === 'geltend' ? 'gegenstandslos' : ZEILEN_WORT.entfernt;
+}
+
 /**
  * Die Gegenüberstellung selbst.
  *
@@ -114,10 +121,11 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
  * bei einem Gesetzestext darf keine Sekunde Zweifel bestehen, welche Spalte
  * gilt (§8).
  */
-function Gegenueberstellung({ zeilen, altWort, neuWort }: {
+function Gegenueberstellung({ zeilen, altWort, neuWort, entfallWort }: {
   zeilen: readonly SynopseZeile[];
   altWort: string;
   neuWort: string;
+  entfallWort: string;
 }) {
   return (
     <ol className={S.zeilen} data-synopse-zeilen>
@@ -126,7 +134,7 @@ function Gegenueberstellung({ zeilen, altWort, neuWort }: {
           <p className={S.marke}>
             {marke(z)}
             {marke(z) && ' · '}
-            <span className="text-ink-500">{ZEILEN_WORT[z.art]}</span>
+            <span className="text-ink-500">{z.art === 'entfernt' ? entfallWort : ZEILEN_WORT[z.art]}</span>
           </p>
           {z.art === 'gleich' ? (
             // Unverändertes steht EINMAL über beide Spalten. Weglassen wäre
@@ -146,7 +154,7 @@ function Gegenueberstellung({ zeilen, altWort, neuWort }: {
               <div className={S.spalte}>
                 <span className={S.seite}>{neuWort}</span>
                 {z.neu ? <p className={S.text} data-synopse-text><Stuecke stuecke={z.neu} flach={z.art === 'eingefuegt'} /></p>
-                  : <p className={S.leer}>— aufgehoben</p>}
+                  : <p className={S.leer}>{`— ${entfallWort}`}</p>}
               </div>
             </>
           )}
@@ -341,7 +349,7 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
           nicht sicher einem einzelnen Erlass.
         </p>
       )}
-      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} />}
+      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} entfallWort={entfallWortFuer(zustand, neuHerkunft)} />}
       {!hatUnterschied(zeilen) && (nurTitelGeaendert(artikel, zeilen)
         ? <p className={S.hinweis} data-synopse-lage="nur-titel">
             Am Wortlaut dieses Artikels ist zwischen den beiden Ständen kein Unterschied erkennbar —

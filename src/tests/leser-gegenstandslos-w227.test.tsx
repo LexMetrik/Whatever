@@ -7,9 +7,18 @@
  * (c) die COMMITTETEN Bund-Snapshots tragen das Feld `gegenstandslos` genau dort, wo Fedlex den
  * Vermerk führt — und die 14 aufgehobenen Anhänge das Feld `aufgehoben`.
  */
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { renderToString } from 'react-dom/server';
+import { act, createElement } from 'react';
+import { createRoot, type Root } from 'react-dom/client';
+import { renderToString, renderToStaticMarkup } from 'react-dom/server';
+import { MemoryRouter } from 'react-router-dom';
+import { parseHTML } from 'linkedom';
+import { ArtikelBody } from '../components/normtext/ArtikelBody';
+import { NormPopover } from '../components/NormPopover';
+import { SynopseKarte } from '../components/entstehung/SynopseKarte';
+import type { SynopseLage } from '../lib/entstehung/synopse-diff';
+import type { SynopseShard } from '../lib/entstehung/synopse';
 import { ArtikelLeser } from '../pages/gesetz-leser/parts';
 import { baueNachbarn } from '../pages/gesetz-leser/v3/nachbarArtikel';
 import { leerstellenWort } from '../lib/normtext/darstellung';
@@ -101,6 +110,126 @@ describe('Committete Bund-Snapshots — Feld dort, wo Fedlex den Vermerk führt'
   it('kein Eintrag trägt beide Felder', () => {
     for (const key of ['STGB', 'OR', 'KKV', 'VRV']) {
       for (const e of lade(key)) expect(Boolean(e.aufgehoben && e.gegenstandslos), `${key}/${e.id}`).toBe(false);
+    }
+  });
+});
+
+// ── NACHZUG (30.9.2026, Gegenprüfung #1183): auch der AUFGEKLAPPTE Körper, Popover/Vorschau und
+//    die Synopse-Karte sagen «gegenstandslos» — nicht «aufgehoben». Die erste Fassung prüfte nur
+//    die Statuszeile im zugeklappten Zustand; der Körper (ArtikelBody) schrieb «aufgehoben».
+
+/** Der Text innerhalb der Ersatztext-Spans (`italic text-ink-500`) — das Wort des Körpers. */
+const koerperWorte = (html: string) =>
+  [...html.matchAll(/<span[^>]*class="italic text-ink-500"[^>]*>([^<]*)<\/span>/g)].map((m) => m[1]);
+
+describe('ArtikelBody — Körper folgt dem amtlichen Artikel-Vermerk (§1/§8)', () => {
+  const block = (text: string) => [{ absatz: null, text }];
+  const item = [{ absatz: '1', text: 'Einleitung:', items: [{ marke: 'a', text: '' }] }];
+
+  it('«…» mit artikelGegenstandslos → «gegenstandslos», nicht «aufgehoben»', () => {
+    const out = renderToStaticMarkup(<ArtikelBody bloecke={block('…')} artikel="67_f" passus={{ absatz: null }} artikelGegenstandslos />);
+    expect(koerperWorte(out)).toEqual(['gegenstandslos']);
+    expect(out).not.toContain('aufgehoben');
+  });
+
+  it('LEERER Block mit artikelGegenstandslos → «gegenstandslos» (nicht «kein Text im Snapshot»)', () => {
+    const out = renderToStaticMarkup(<ArtikelBody bloecke={block('')} artikel="67_f" passus={{ absatz: null }} artikelGegenstandslos />);
+    expect(koerperWorte(out)).toEqual(['gegenstandslos']);
+    expect(out).not.toContain('kein Text im Snapshot');
+  });
+
+  it('leeres Item mit artikelGegenstandslos → «gegenstandslos»', () => {
+    const out = renderToStaticMarkup(<ArtikelBody bloecke={item} artikel="67_f" passus={{ absatz: null }} artikelGegenstandslos />);
+    expect(koerperWorte(out)).toContain('gegenstandslos');
+    expect(out).not.toContain('>aufgehoben<');
+  });
+
+  it('Gegenproben, byte-gleich zu vorher: aufgehoben → «aufgehoben»; ohne Beleg «…» → «aufgehoben»; leer → «kein Text im Snapshot»', () => {
+    const ab = (b: ReturnType<typeof block>, extra: { artikelAufgehoben?: boolean } = {}) =>
+      renderToStaticMarkup(<ArtikelBody bloecke={b} artikel="48" passus={{ absatz: null }} {...extra} />);
+    expect(koerperWorte(ab(block('…'), { artikelAufgehoben: true }))).toEqual(['aufgehoben']);
+    expect(koerperWorte(ab(block('…')))).toEqual(['aufgehoben']); // EPV Anhang 2 u. ä.: eigener Posten, unverändert
+    expect(koerperWorte(ab(block('')))).toEqual(['kein Text im Snapshot']);
+  });
+});
+
+describe('ArtikelLeser — AUFGEKLAPPT trägt der Körper dasselbe Wort wie die Statuszeile', () => {
+  let root: Root | null = null;
+  afterEach(async () => {
+    if (root) { const r = root; root = null; await act(async () => r.unmount()); }
+    vi.unstubAllGlobals();
+  });
+
+  it('StGB 67f, nachdem der Artikel offen war (Zustand bleibt bei Wechsel von `e`): Körper «gegenstandslos»', async () => {
+    const { document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
+    vi.stubGlobal('window', { document, location: { origin: 'https://lexmetrik.test' }, setTimeout: globalThis.setTimeout, clearTimeout: globalThis.clearTimeout });
+    vi.stubGlobal('document', document);
+    vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
+    root = createRoot(document.getElementById('app') as unknown as HTMLElement);
+    const lebend = eintrag('67_f', { bloecke: [{ absatz: '1', text: 'Lebender Wortlaut des Artikels.' }] });
+    const render = (e: NormSnapshot) => act(async () => {
+      root!.render(createElement(ArtikelLeser, { e, erlass, basisPfad: '/gesetze/bund/STGB' }));
+    });
+    await render(lebend); // startet aufgeklappt (artOffen = true)
+    expect(document.body.innerHTML).toContain('Lebender Wortlaut');
+    await render(eintrag('67_f', { gegenstandslos: true })); // dieselbe Instanz, nun gegenstandslos — bleibt offen
+    const out = document.body.innerHTML;
+    expect(out).toContain('· gegenstandslos'); // Kopf
+    expect(koerperWorte(out)).toContain('gegenstandslos'); // Körper
+    expect(out).not.toContain('aufgehoben');
+  });
+});
+
+describe('NormPopover/Vorschau — dasselbe Wort wie der Leser (§5)', () => {
+  const popover = (e: NormSnapshot) => renderToString(
+    <MemoryRouter><NormPopover snapshot={e} passus={{ absatz: null }} onClose={() => {}} /></MemoryRouter>);
+
+  it('gegenstandslos → «gegenstandslos» im Körper, nirgends «aufgehoben»', () => {
+    const out = popover(eintrag('67_f', { gegenstandslos: true }));
+    expect(koerperWorte(out)).toEqual(['gegenstandslos']);
+    expect(out).not.toContain('aufgehoben');
+  });
+
+  it('Gegenprobe: aufgehoben und Eintrag ohne Feld bleiben «aufgehoben» (byte-gleich)', () => {
+    expect(koerperWorte(popover(eintrag('48', { aufgehoben: true })))).toEqual(['aufgehoben']);
+    expect(koerperWorte(popover(eintrag('108')))).toEqual(['aufgehoben']);
+  });
+});
+
+describe('SynopseKarte — rechte Spalte «Wortlaut → …» trägt das Zustandswort', () => {
+  const shard = {
+    erlass: 'STGB', eli: 'cc/54/757_781_799', normProfil: 'p/1', erzeugt: '2026-09-30', fensterAb: '2021-01-01',
+    kuenftigeStaende: [], staende: [], schritte: [],
+  } as unknown as SynopseShard;
+  const lage = {
+    art: 'vergleich',
+    treffer: {
+      schritt: { von: '2021-01-01', bis: '2024-01-01', artikel: [] },
+      artikel: {
+        eId: 'art_67_f', token: '67_f', label: 'Art. 67f', art: 'geaendert', zustand: 'ereignis', shaNorm: 'a'.repeat(64),
+        alt: [['', '', 'Früherer Wortlaut des Artikels.']],
+      },
+      neu: [['', '', '…']],
+      neuHerkunft: 'geltend',
+      mehrdeutig: false,
+    },
+  } as unknown as SynopseLage;
+  const karte = (zustand: 'gegenstandslos' | 'aufgehoben' | 'leer-ungeklaert') => renderToStaticMarkup(
+    <SynopseKarte lage={lage} shard={shard} geltend={{ stand: '2026-06-12' }} zustand={zustand} id="x" />);
+
+  it('gegenstandslos: Zeilenmarke und rechte Spalte «gegenstandslos», kein «aufgehoben»', () => {
+    const out = karte('gegenstandslos');
+    expect(out).toContain('— gegenstandslos');
+    expect(out).toContain('>gegenstandslos<');
+    expect(out).not.toContain('aufgehoben');
+  });
+
+  it('Gegenproben: aufgehoben und ohne Vermerk bleiben «aufgehoben» (byte-gleich)', () => {
+    for (const z of ['aufgehoben', 'leer-ungeklaert'] as const) {
+      const out = karte(z);
+      expect(out, z).toContain('— aufgehoben');
+      expect(out, z).toContain('>aufgehoben<');
+      expect(out, z).not.toContain('gegenstandslos');
     }
   });
 });

@@ -441,6 +441,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
             /* W2·27: der amtliche Artikel-Beleg deckt auch die leeren Blöcke. */
             artikelAufgehoben={ganzAufgehoben}
+            /* W2·27 (30.9.2026): amtlich «gegenstandslos» → der Körper sagt dasselbe Wort wie die Statuszeile. */
+            artikelGegenstandslos={leerstelle === 'gegenstandslos'}
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
