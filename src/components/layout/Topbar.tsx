@@ -89,10 +89,16 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
   // (`z-dropdown` = 30) daran nicht vorbei — 30 gilt nur INNERHALB des
   // Headers.
   // `z-dropdown` am Header hebt den ganzen Kontext eine Stufe an. Das ist
-  // geometrisch folgenlos: der Header überlappt in Ruhe NICHTS (die
+  // geometrisch folgenlos FÜR DEN HEADER: er überlappt in Ruhe NICHTS (die
   // Reiterleiste klebt bei `top: var(--app-krone-h)`, also exakt unter
-  // ihm, Inhaltskopf und Leser-Sticky liegen bei 19 und darunter). Die
-  // EINZIGE Änderung ist die gewollte: was aus dem Header herausragt —
+  // ihm). Nicht jede Schicht darunter ist frei von Überdeckung: `InhaltsKopf`
+  // (z 19, `sticky top-16`) klebt an derselben Kante wie die Arbeitsleiste
+  // (z 20) und liegt beim Scrollen HINTER ihr — gemessen 30.9.2026 (/rechner/
+  // tagerechner, 1280, gescrollt): Arbeitsleiste 64–98 px, Inhaltskopf 64–101 px,
+  // nur die untersten 3 px ragen vor; das Sticky ist dort faktisch tot (offener
+  // David-Entscheid, Posten «InhaltsKopf.tsx:163 sticky top-16 … hinter der
+  // Arbeitsleiste»). Die Leser-Sticky-Leisten (z 15–17) liegen in der Schichtung unter dem Inhaltskopf. Die
+  // EINZIGE Änderung hier ist die gewollte: was aus dem Header herausragt —
   // das Such-Panel, das Sprach- und das Thema-Menü — liegt jetzt über der
   // Reiterleiste statt darunter. Die Reiterleiste selbst bleibt
   // unangetastet (sie gehört R11).
@@ -209,7 +215,12 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
             werden); darunter nimmt das Feld den Platz, den der Streifen ihm
             ohnehin lässt. `min-w-0` bleibt der Schutz gegen Überlauf @320
             (`e2e/topbar-kein-ueberlauf-320.e2e.ts`). */}
-        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] sm:max-w-xs xl:max-w-sm">
+        {/* W2·31 P3 (30.9.2026): der Boden gilt weiter ab 481 px, fällt aber WEG, wo der
+            Streifen ihn nicht trägt (`.lc-topbar-suche`, index.css: Containerabfrage, wächst
+            mit der Schriftskala). Skala 1.4 @481–496 ragte der Streifen mit dem festen
+            Boden bis 16.1 px ins Polster; jetzt schrumpft das Feld dort um ≤ 0.8 rem.
+            Unter 481 px weiter kein Boden, wie bisher. */}
+        <div className="flex-1 min-w-0 min-[481px]:min-w-[9rem] lc-topbar-suche sm:max-w-xs xl:max-w-sm">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
@@ -234,7 +245,12 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
           {/* W2·31 L (30.9.2026): `.lc-topbar-verlauf` (index.css) = das frühere
               `max-[480px]:hidden` PLUS eine Streifenbreiten-Bedingung (Containerabfrage,
               wächst mit der Schriftskala). Skala 1.4 + Verlauf: der Streifen lief von 481
-              bis 567 px über (+64 scrollWidth @481, +47 px ins Polster @520, +7 px @560). */}
+              bis 567 px über (+64 scrollWidth @481, +47 px ins Polster @520, +7 px @560).
+              NACHZUG W2·31 P3 (30.9.2026): die Streifenbreiten-Bedingung ist nicht mehr eine
+              feste Schwelle (25.5 rem, auf Skala 1.0 geeicht), sondern der gemessene Bedarf je
+              Schrift (`calc(18.1rem + 124px)`, Herleitung in index.css) — der Knopf fehlt nur
+              noch, wo er den Streifen sprengte. Unter 481 px bleibt er weg (C2); dort und wo
+              er fehlt, trägt «Verlauf leeren» der Such-Leerzustand (`SucheLeerzustand`). */}
           <div className="lc-topbar-verlauf"><VerlaufUebersicht /></div>
           <ThemaUmschalter />
           <SprachUmschalter />

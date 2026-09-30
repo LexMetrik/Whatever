@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import { useZuletzt } from './useZuletzt';
-import { leereZuletzt } from '../../lib/zuletztVerwendet';
 import { gruppiereVerlauf } from '../../lib/verlaufGruppen';
 import { MenueGruppe, MenueTitel, MenueZeile } from '../ui/Menue';
 import { useDialogFokus } from './useDialogFokus';
+import { VerlaufLeerenKnopf } from './VerlaufLeerenKnopf';
 
 // ─── «Verlauf»-Übersicht in der Topbar (UI-NAV O1, Schritt 3) ───────────────
 //
@@ -148,13 +148,7 @@ export function VerlaufUebersicht() {
                 (§5/§10). Nebenbei behoben: der bisherige Hover
                 `hover:bg-paper-sunken/60` erzeugte gar keine CSS-Regel
                 (Deckkraft-Suffix auf opakem Hex-Token, DESIGN-D0). */}
-            <button
-              type="button"
-              onClick={() => { leereZuletzt(); setPanelOffen(false); }}
-              className="lc-btn-outline lc-btn-sm shrink-0"
-            >
-              Verlauf leeren
-            </button>
+            <VerlaufLeerenKnopf onGeleert={() => setPanelOffen(false)} />
           </div>
         </div>,
         document.body,

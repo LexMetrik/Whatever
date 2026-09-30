@@ -4889,10 +4889,61 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    in dem er noch Platz hätte: Skala 1.2 @~490–520, 1.3 @~520–567, 1.4 @~560–600 px
    Fenster. Kein Überlauf, nur ein früher ausgeblendeter Knopf; eine skalen-
    abhängige Schwelle wäre ein Designentscheid. */
+/* NACHZUG W2·31 P3 (30.9.2026, Posten «Topbar-Verlauf-Schwelle … auf Skala 1.0 geeicht»
+   und «Kopfstreifen Skala 1.4 @481–496»): die feste Schwelle 25.5 rem (oben) ist ersetzt
+   durch den MESSBAREN Bedarf je Schriftskala. Der Streifen besteht aus rem-Anteilen
+   (Gaps, Griffe à 2.75 rem, Schrift) UND px-Anteilen (Siegel 28 px, Glyph-SVGs): sein
+   Bedarf ist linear in der Wurzelschrift, nicht konstant in rem (Fit gemessen 30.9.2026,
+   Preview-Build, Skala 1.0–1.4, Fenster < 640 px, Suchfeldboden 9 rem eingerechnet; Bedarf
+   = Streifen-Inhaltsbreite − Feldbreite + 9 rem):
+     mit Verlauf-Knopf  356.6 + 50 = 406.6 / 435.5 / 464.4 / 493.4 / 522.3 px  (Skala 1.0 … 1.4)
+                        = 18.08 rem + 117.3 px (Skala 0.9: 381.9 px, 4 px über der Geraden)
+     ohne Verlauf-Knopf 356.6 / 380.5 / 404.4 / 428.4 / 452.3 px = 14.95 rem + 117.4 px
+   Ab 640 px (`sm`) wachsen die Gaps (gap-3 → gap-5, gap-1.5 → gap-2): + 1.75 rem mit,
+   + 1.625 rem ohne Verlauf-Knopf (gemessen 1.2 / 1.3 / 1.4: 33.7 / 36.4 / 39.2 px bzw.
+   36.4 px ohne). Die Schwellen sind Gerade + kleine Reserve (Verlauf 18.1 rem + 124 px,
+   Boden 15 rem + 120 px; 0.4–5 px über dem Bedarf), damit der Knopf genau dort steht, wo
+   er Platz HAT — bei Skala 1.0 (Standard) ≈ 25.75 rem statt 25.5 rem, also unverändert.
+   GEMESSEN (Preview-Build, Sweep Fenster 481–800 px je 1 px, `/gesetze?ebene=bund` mit
+   gefülltem Verlauf): der Knopf erscheint ab Fenster 481 / 481 / 481 / 510 / 543 / 575 px bei
+   Skala 0.9 / 1.0 / 1.1 / 1.2 / 1.3 / 1.4 (vorher ab 481 / 481 / 484 / 528 / 572 / 616 — aus der
+   alten Schwelle 25.5 rem gerechnet, Stichproben @520/560/600/615 bestätigt: Band ohne Knopf
+   trotz Platz bei 1.2 @510–527, 1.3 @543–571, 1.4 @575–615), 0 Breiten mit Überlauf, und der Knopf fehlt höchstens 8 px (Fenster) unter der echten Grenze (die
+   Reserve der Schwelle). `calc()` in der Containerabfrage: wo ein Browser sie nicht liest, bleibt
+   `display: none` — der Knopf fehlt dann, der Streifen läuft nie über (und «Verlauf
+   leeren» steht zusätzlich im Such-Leerzustand, `SucheLeerzustand`). */
 .lc-topbar-verlauf { display: none; }
 @media (min-width: 481px) {
-  @container topbar-zeile (width >= 25.5rem) {
+  @container topbar-zeile (width >= calc(18.1rem + 124px)) {
     .lc-topbar-verlauf { display: block; }
+  }
+}
+@media (min-width: 640px) {
+  @container topbar-zeile (width < calc(19.85rem + 124px)) {
+    .lc-topbar-verlauf { display: none; }
+  }
+}
+/* Der 9-rem-Boden des Kopf-Suchfelds (D9-Nachzug, `min-[481px]:min-w-[9rem]` an der Feld-Hülle
+   in `Topbar.tsx`) galt bisher ab Fenster 481 px ohne Rücksicht auf die Schrift: Skala 1.4
+   @481 / 490 / 496 ragte der Streifen 16.1 / 7.1 / 1.1 px in sein rechtes Polster
+   (Seiten-Querscroll 0, Polster-Überlauf). Jetzt fällt der Boden WEG, wo der Streifen ihn
+   nicht trägt (Bedarf OHNE Verlauf-Knopf, s. o.): das Feld schrumpft dort um die Restmasse
+   (≤ 0.8 rem bei Skala 1.4, @481: 8.3 rem statt 9 rem) statt den Streifen zu sprengen —
+   ein Feld von 8 rem ist noch ein Feld, ein Überlauf ist ein Defekt. Die Zahl 9 rem bleibt
+   bewusst in der Utility (F9-Wächter `tap-ziel-token.test.ts` verbietet eine rohe
+   min-width-Zahl in CSS-Deklarationen); hier steht nur die Rücknahme (`min-width: 0`). Zwei Klassen (`.lc-topbar-zeile
+   .lc-topbar-suche`), weil die Regel im gebauten CSS VOR der Media-Utility steht (Tailwind 3
+   emittiert die `min-[481px]:`-Variante ans Ende; gemessen in `dist`: Regel bei Byte ~98 k,
+   Utility `.min-[481px]:min-w-[9rem]` bei ~131 k), bei gleicher Spezifität also die spätere
+   Utility gewönne. Einklassig gemessen (Nachzug #1188, 30.9.2026, Spec `seitenbreite`, Skala
+   1.4 @496): der Streifen ragte weiter 1.1 px ins Polster — die Regel griff nicht. (Die Regel
+   steht im Quelltext ausserhalb jedes `@layer`; das ändert an der Ausgabe-Reihenfolge nichts.) */
+@container topbar-zeile (width < calc(15rem + 120px)) {
+  .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
+}
+@media (min-width: 640px) {
+  @container topbar-zeile (width < calc(16.625rem + 120px)) {
+    .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
   }
 }
 

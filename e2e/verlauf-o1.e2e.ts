@@ -68,4 +68,52 @@ test.describe('UI-NAV O1 — Verlauf-Initiative', () => {
     await expect(verlaufKnopf(page)).toHaveCount(0)
     expect(fehler).toEqual([])
   })
+
+  // W2·31 P3 (30.9.2026): «Verlauf leeren» steht auch im Such-Leerzustand. Der
+  // Topbar-Verlauf fehlt unter 481 px (C2) und bei grosser Schrift bis ~570 px
+  // (`.lc-topbar-verlauf`, index.css) — die Liste blieb über die leere Suche
+  // sichtbar, das Leeren aber unerreichbar. Beide Fälle hier; beide Male wird
+  // zuerst bewiesen, dass der Topbar-Knopf WIRKLICH fehlt (sonst prüfte der Test
+  // den Zugang, den es schon gab).
+  // ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `SucheLeerzustand.tsx` die Fusszeile
+  // abschalten (`{verlauf.length > 0 && (` → `{false && (`) → beide Fälle schlagen an
+  // (Knopf nicht zu finden; Beweis im PR-Bericht).
+  for (const fall of [
+    { name: '@400 (Topbar-Verlauf unter 481 px weg)', width: 400, skala: '1.0' },
+    { name: 'Skala 1.4 @520 (Topbar-Verlauf bei grosser Schrift weg)', width: 520, skala: '1.4' },
+  ]) {
+    test(`Such-Leerzustand: «Verlauf leeren» erreichbar ${fall.name}`, async ({ page }) => {
+      const fehler = fehlerSammeln(page)
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v) } catch { /* gesperrt */ } }, ['lexmetrik-schriftskala', fall.skala])
+      await page.setViewportSize({ width: fall.width, height: 800 })
+      await verlaufAufbauen(page)
+      // Vorbedingung: der Topbar-Knopf steht hier NICHT im Bild.
+      await expect(verlaufKnopf(page)).toBeHidden()
+
+      // Unter 481 px öffnet die Lupe das Feld; darüber steht das Feld schon da.
+      const lupe = page.locator('[data-suche-lupe]')
+      if (await lupe.isVisible()) await lupe.click()
+      else await sucheFeld(page).click()
+      const suchBereich = page.getByRole('search').filter({ has: sucheFeld(page) })
+      await expect(suchBereich.getByRole('option', { name: /Verjährung/i }).first()).toBeVisible()
+      // §8: die Fussnote steht weiter da, der Knopf neben ihr — und nicht IN der Listbox.
+      await expect(suchBereich.getByText('Nur auf diesem Gerät', { exact: true })).toBeVisible()
+      const leeren = suchBereich.getByRole('button', { name: 'Verlauf leeren', exact: true })
+      await expect(leeren).toBeVisible()
+      await expect(suchBereich.getByRole('listbox').getByRole('button')).toHaveCount(0)
+
+      await leeren.click()
+      await expect(suchBereich.getByText('Noch nichts geöffnet.')).toBeVisible()
+      await expect(suchBereich.getByRole('option')).toHaveCount(0)
+      await expect(suchBereich.getByRole('button', { name: 'Verlauf leeren', exact: true })).toHaveCount(0)
+      // Der Fokus fällt nicht auf <body>: er geht zurück ins Suchfeld.
+      await expect(sucheFeld(page)).toBeFocused()
+
+      // Wirklich gelöscht (nicht nur ausgeblendet): die eine Quelle (`lib/zuletztVerwendet`,
+      // Schlüssel `lexmetrik-zuletzt`) ist leer. Kein Neuladen: die Seite, auf der man
+      // steht, trüge sich beim Laden sofort wieder in den Verlauf ein.
+      expect(await page.evaluate(() => localStorage.getItem('lexmetrik-zuletzt'))).toBeNull()
+      expect(fehler).toEqual([])
+    })
+  }
 })
