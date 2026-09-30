@@ -2,6 +2,7 @@ import { useId, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
+import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { EntstehungsBlock } from '../../../components/entstehung/EntstehungsBlock';
 import { sammleVerweise } from '../parts/ArtikelLeser.fussnoten';
 import type { BlattArtikel } from './panelModell';
@@ -158,12 +159,17 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
 /** Die artikelscharfe Gruppe oben in «Materialien», «Erläuterungen» und
  *  «Werkzeuge». Leer ⇒ ehrlich «Zu Art. N nichts erfasst.» (§8, Auftrag
  *  24.9.2026) — aber erst, wenn die Quelle GELADEN ist: vorher wäre «nichts»
- *  eine Behauptung über etwas, das noch kommt. */
-export function BlattArtikelGruppe({ titel, zahl, daten, token, geladen = true, children }: {
+ *  eine Behauptung über etwas, das noch kommt. Ist die Quelle GESCHEITERT
+ *  (`ladefehler`), steht der Fehler-Baustein statt «nichts erfasst» (§8,
+ *  W3-5-Rest 30.9.2026: ein Ladefehler ist keine Auskunft über den Artikel). */
+export function BlattArtikelGruppe({ titel, zahl, daten, token, geladen = true, ladefehler, children }: {
   titel: string;
   zahl: number;
   /** Ist die Quelle der Gruppe durch? Sonst steht (noch) nichts. */
   geladen?: boolean;
+  /** Die Quelle ist gescheitert: ehrlicher Fehlertext (+ «Erneut laden», wenn
+   *  `onErneut` gesetzt) statt «nichts erfasst». Vorrang vor `geladen`/`zahl`. */
+  ladefehler?: { gegenstand: string; onErneut?: () => void };
   /** Anker der Sonden: `data-v3-blatt-artikelgruppe="<reiter>"`. */
   daten: string;
   /** Token des aktiven Artikels — `data-v3-blatt-artikel`, damit eine Sonde
@@ -171,7 +177,14 @@ export function BlattArtikelGruppe({ titel, zahl, daten, token, geladen = true, 
   token: string | null;
   children: ReactNode;
 }) {
-  if (!token || !geladen) return null;
+  if (!token) return null;
+  if (ladefehler) {
+    return (
+      <AbrufFehler gegenstand={ladefehler.gegenstand} mehrzahl onErneut={ladefehler.onErneut}
+        className="px-3 pt-2" daten={{ 'data-v3-blatt-artikelgruppe': daten, 'data-v3-blatt-artikel': token, 'data-v3-blatt-fehler': '' }} />
+    );
+  }
+  if (!geladen) return null;
   if (zahl === 0) {
     return (
       <p data-v3-blatt-artikelgruppe={daten} data-v3-blatt-artikel={token} data-v3-blatt-leer

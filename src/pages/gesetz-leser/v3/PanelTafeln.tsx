@@ -104,8 +104,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // W3-5 (Audit 25.9.2026): `unsicher` = das Manifest (`/materialien/register.json`)
   // konnte nicht geladen werden — dann ist eine leere `artMat` kein «nichts
   // erfasst», sondern derselbe Ausfall, den die Erläuterungen-Tafel gleich
-  // darunter als Fehlermeldung zeigt.
-  const [artikelMaterialien, artikelMaterialienUnsicher] = useArtikelMaterialien(erlassKey, laden);
+  // darunter als Fehlermeldung zeigt. W3-5-Rest (30.9.2026): `unsicher` gilt
+  // ebenso, wenn nur der Kanten-Shard scheiterte — dann zeigt keine andere Tafel
+  // den Ausfall, die Artikel-Gruppe sagt ihn selbst (mit «Erneut laden»).
+  const [artikelMaterialien, artikelMaterialienUnsicher, artikelMaterialienErneut] = useArtikelMaterialien(erlassKey, laden);
 
   const botschaftNachKey = useMemo(() => new Map<string, BotschaftBezug>(
     (materialien.wert?.botschaften ?? []).map((b) => [b.key, b]),
@@ -196,7 +198,8 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       erlaeuterungen: (
         <>
           <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token}
-            geladen={artMat !== undefined && erlZahl !== 0 && !artikelMaterialienUnsicher}>
+            geladen={artMat !== undefined && erlZahl !== 0 && !artikelMaterialienUnsicher}
+            ladefehler={artikelMaterialienUnsicher ? { gegenstand: `Erläuterungen ${zu.replace(/^Zu /, 'zu ')}`, onErneut: artikelMaterialienErneut } : undefined}>
             {(artMat ?? []).map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
           </BlattArtikelGruppe>
           <ErlassTeil was="Erläuterungen" zahl={erlZahl} daten="erlaeuterungen">
