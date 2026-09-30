@@ -3,7 +3,7 @@
 // gegen `vite preview` (gebautes dist/), in der CI nach dem Build-Schritt.
 // Specs heissen *.e2e.ts, damit Vitest sie nicht aufsammelt.
 import { defineConfig } from '@playwright/test'
-import { createHash } from 'node:crypto'
+import { E2E_FENSTER, portAusPfad } from './scripts/lib/worktree-port'
 // Locator-Assertions warten per `locator.waitFor()` vor, statt in JEDEM Poll einen
 // Aria-Snapshot des ganzen Dokuments zu rechnen (Playwright 1.60, auf grossen
 // Erlassen Sekunden je Poll im Seiten-Hauptthread → Flacker). Wirkt auf jedes
@@ -31,15 +31,11 @@ import './e2e/helpers/expectVorwarten'
 // (scripts/messung-cwv.ts). `--strictPort` (unten) macht eine trotzdem belegte
 // Portnummer laut statt still.
 const CI_PORT = '4317'
-const PORT_BASIS = 4400
-const PORT_SPANNE = 400
+// Die Ableitung selbst liegt seit 30.9.2026 in scripts/lib/worktree-port.ts
+// (geteilt mit dem Mess-Server in vite.config.ts, anderes Fenster).
 
-function portAusPfad(pfad: string): string {
-  const summe = createHash('sha256').update(pfad).digest().readUInt32BE(0)
-  return String(PORT_BASIS + (summe % PORT_SPANNE))
-}
-
-const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad(process.cwd()))
+const E2E_PORT = process.env.E2E_PORT
+  ?? (process.env.CI ? CI_PORT : String(portAusPfad(process.cwd(), E2E_FENSTER)))
 
 // Bekannt schwere Specs (Forensik 17.7.): erhalten via Projekt-Override ein
 // 60-s-Timeout statt der globalen 30 s (Begründung unten bei `projects`).
