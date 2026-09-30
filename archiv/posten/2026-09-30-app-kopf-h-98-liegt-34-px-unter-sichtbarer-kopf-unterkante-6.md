@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 gewollt? (Prüfer #1153)
+
+**Erledigt 2026-09-30:** PR #1163
