@@ -4966,10 +4966,29 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    auch `.lc-overline`, die ink-500 als Klassenfarbe trägt; W2·29-WERKBANK-RECHNER R2).
    Ungeschichtet, damit es die Utility schlägt — kein Umdefinieren des Tokens
    (tokens-drift). */
-.lc-titelblatt-band .text-ink-500,
-[data-toc-aktiv] .text-ink-500,
-.lc-akzent-w .text-ink-500,
-.lc-akzent-w .lc-overline { color: var(--ink-600); }
+/* ── DK-16 (W2·19 HN-D4, 30.9.2026) · FLÄCHEN-ROLLE «TINTE LEISE» ────────────
+   An die Stelle der Selektorliste (`.lc-titelblatt-band`/`[data-toc-aktiv]`/
+   `.lc-akzent-w` je `.text-ink-500` — und zwei Gegenstücke als Utility-Variante
+   `[&_.text-ink-500]:text-ink-600` in RubrikKachel/BlattBausteine) tritt EINE
+   Rolle: jede Registerfläche (`bg-reg-*-flaeche` als Utility, dazu die
+   CSS-Flächen `.lc-titelblatt-band`, `.lc-akzent-w`, `.ub-kopf`) trägt ihre
+   gedämpfte Tinte in ink-600, sei sie als `.text-ink-500` oder als Klassenfarbe
+   von `.lc-overline` geschrieben. GEMESSEN 30.9.2026 (Kontrast aus den Tokens,
+   hell·dunkel): ink-500 auf reg-g 4.42·4.24 · reg-r 4.31·4.28 · reg-m 4.59·4.15
+   · reg-w 4.59·4.18 — sechs der acht Paare unter 4.5; ink-600 5.63·5.25 ·
+   5.49·5.30 · 5.85·5.14 · 5.84·5.18. Die Selektorliste liess jede neue Fläche
+   still durchfallen: live auf `/` (Gesetze-Blatt, `WahlSpalte`) stand die
+   Overline «Erfassungsgrad» auf `reg-g-flaeche` mit 4.42:1 hell / 4.24:1 dunkel,
+   weil die Utility-Variante nur `.text-ink-500` fing, nicht `.lc-overline`.
+   Wächter: `src/tests/design-dk-c-farbe-kontrast.test.ts` (jede CSS-Fläche mit
+   `--reg-*-flaeche` als Hintergrund muss in dieser Liste stehen) und die RISSE
+   in `scripts/farbwelt-tabellen.ts`. Ungeschichtet, damit es die Utility
+   schlägt; Spezifität (0,2,0) wie die abgelösten Regeln — `.lc-route[data-reg]
+   header .lc-overline` (③, oben) gewinnt weiter. */
+:is(.bg-reg-g-flaeche, .bg-reg-r-flaeche, .bg-reg-m-flaeche, .bg-reg-w-flaeche,
+    .lc-titelblatt-band, .lc-akzent-w, .ub-kopf) :is(.text-ink-500, .lc-overline) {
+  color: var(--ink-600);
+}
 
 /* ── W2·29-WERKBANK-REST S1 (25.9.2026) · TITELBLATT «RECHTSPRECHUNG» ──────
    `layout/LeserKopfGeruest` mit `register="r"` (Entscheid-Leser): dasselbe

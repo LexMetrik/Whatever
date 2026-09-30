@@ -99,7 +99,11 @@ function Marker({ p, iso, color, label, oben = false }: { p: number; iso?: strin
       <div className="absolute flex flex-col pointer-events-none"
         style={{ ...(oben ? { top: 0 } : { bottom: 0 }), ...anker }}>
         <span className="num text-ink-700 whitespace-nowrap leading-tight text-micro">{fmt(iso)}</span>
-        <span className="whitespace-nowrap font-medium leading-tight text-micro" style={{ color, order: oben ? -1 : 1 }}>{label}</span>
+        {/* DK-17 (30.9.2026): die BESCHRIFTUNG steht in Tinte, die Farbe trägt nur der
+            Punkt (+ Lot, + Legende). `color` ist eine Nicht-Text-Rolle: als 11-px-Schrift
+            misst `--ok-solid` «Beendigung» dunkel 3.68:1 auf `--surface` (< 4.5, SC 1.4.3);
+            `--brass-500` «frühestens neu kündbar» lag im Befund 24.9.2026 bei 4.41:1. */}
+        <span className="whitespace-nowrap font-medium leading-tight text-micro text-ink-900" style={{ order: oben ? -1 : 1 }}>{label}</span>
       </div>
     </>
   );

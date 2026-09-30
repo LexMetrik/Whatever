@@ -189,7 +189,7 @@ function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revis
         markeStellung="rechts"
         marke={traegtWeiterzugHinweis(g.liste) ? (
           <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
-            className="ml-1 normal-case font-normal text-ink-400">ⓘ</span>
+            className="ml-1 normal-case font-normal text-ink-500">ⓘ</span>
         ) : undefined}
       />
       <ul ref={listeRef} className="mt-0.5">

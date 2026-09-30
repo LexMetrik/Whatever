@@ -159,7 +159,10 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
         <div id="az-register-panel" className="space-y-4">
           {/* Buchstaben-Leiste: Navigation, tastatur-bedienbar (native Buttons,
               Fokus über globales :focus-visible); leere Klassen deaktiviert,
-              aria-label trägt die Anzahl (nie nur Farbe/Zustand, §11.6.8). */}
+              aria-label trägt die Anzahl (nie nur Farbe/Zustand, §11.6.8).
+              DK-06 (30.9.2026): das `text-ink-300` der leeren Klassen ist
+              gewollt — `disabled` ist eine inaktive Komponente, SC 1.4.3
+              nimmt sie vom Kontrast aus. */}
           <nav aria-label="Erlasse nach Anfangsbuchstaben">
             <ul className="m-0 flex list-none flex-wrap gap-1 p-0">
               {AZ_KLASSEN.map((k) => {

@@ -211,7 +211,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
       {/* R3 · «kein Abschnitt ohne title»: der Gruppenname wird gekappt, sobald
           das Blatt schmal wird — der Tooltip gibt ihn ganz zurück (§8). */}
       <span className="flex-1 truncate" title={label}>{label}</span>
-      <span className="num text-micro text-ink-400">{anzahl}</span>
+      <span className="num text-micro text-ink-500">{anzahl}</span>
     </button>
   );
 

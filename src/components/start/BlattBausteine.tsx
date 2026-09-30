@@ -91,7 +91,7 @@ const SPALTEN_FLAECHE: Record<Register, string> = {
 // Kopfschrift fluchtet mit den Listenzeilen darunter (px-2 + px-2 = 16 px).
 export function WahlSpalte({ reg, kopf, children }: { reg: Register; kopf: ReactNode; children: ReactNode }) {
   return (
-    <div className={`flex min-w-0 flex-col rounded-xl ${SPALTEN_FLAECHE[reg]} pb-3 [&_.text-ink-500]:text-ink-600 lg:row-span-2 lg:grid lg:grid-rows-subgrid`}>
+    <div className={`flex min-w-0 flex-col rounded-xl ${SPALTEN_FLAECHE[reg]} pb-3 lg:row-span-2 lg:grid lg:grid-rows-subgrid`}>
       <div className="flex lg:[&>button]:p-4">{kopf}</div>
       <div className="min-w-0">{children}</div>
     </div>

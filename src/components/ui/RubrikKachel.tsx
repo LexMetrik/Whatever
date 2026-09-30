@@ -65,9 +65,11 @@ export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, 
    *  Unterzeile weg, das Gesicht sprang beim Klick (FEINSCHLIFF 24.9.2026). */
   alsBild?: boolean;
 }) {
-  // `[&_.text-ink-500]:text-ink-600`: Zusatz-Tinte im `extra`-Slot hebt auf der
-  // Fläche eine Stufe (ink-500 4.22:1 auf `reg-g-flaeche` < AA; S2 ③b).
-  const klasse = `group flex h-full w-full flex-col gap-1.5 rounded-xl border-t-2 text-left no-underline [&_.text-ink-500]:text-ink-600 ${kompakt ? 'p-3.5' : 'p-5'} ${REGISTER_KLASSE[reg]}`;
+  // Zusatz-Tinte im `extra`-Slot: die Flächen-Rolle «Tinte leise» in `index.css`
+  // (DK-16) hebt `.text-ink-500` und `.lc-overline` auf jeder `bg-reg-*-flaeche`
+  // auf ink-600 (ink-500 < AA auf der Fläche) — kein Einzel-Selektor an der Kachel
+  // mehr (vorher `[&_.text-ink-500]:text-ink-600`, S2 ③b).
+  const klasse = `group flex h-full w-full flex-col gap-1.5 rounded-xl border-t-2 text-left no-underline ${kompakt ? 'p-3.5' : 'p-5'} ${REGISTER_KLASSE[reg]}`;
   const inhalt = (
     <>
       {zahl !== undefined && (
