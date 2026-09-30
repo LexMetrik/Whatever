@@ -190,6 +190,14 @@ describe('leseFenster · Plausibilisierung', () => {
     expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
   });
 
+  it('SPEICHER-VERTRAG: der Sitzungsschlüssel bleibt byte-gleich («rsp:deckel:» + Liste, Wert «von:bis»)', () => {
+    // P10b (30.9.2026): der Helfer zog nach ui/listenFenster; das Präfix bleibt, sonst verlöre
+    // jeder Nutzer beim Deploy sein aufgeklapptes Fenster (sessionStorage überlebt im offenen Tab).
+    schreibeFenster('materialien:BR', { von: 0, bis: 200 });
+    expect(sitzung.get('rsp:deckel:materialien:BR')).toBe('0:200');
+    expect(DECKEL_PRAEFIX).toBe('rsp:deckel:');
+  });
+
   it('stellt ein plausibles Fenster wieder her', () => {
     schreibeFenster(KEY, { von: 300, bis: 500 });
     expect(leseFenster(KEY, GRUND, MAX)).toEqual({ von: 300, bis: 500 });

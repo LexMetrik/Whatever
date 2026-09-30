@@ -34,5 +34,13 @@ test('Materialien-Übersicht listet die neuen EDÖB-Einträge, 390px ohne Overfl
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
   expect(overflow, `horizontaler Overflow ${overflow}px bei 390px`).toBeLessThanOrEqual(1)
 
+  // Nachzug P10b (W2·31-BILDSCHIRMBREITE, Prüfer-Fund #1185 B3): die Messung oben sieht seit dem
+  // Deckel (100 Karten je Behörde) nur die gedeckelte Seite. Wie in m2/m4 zusätzlich auf der
+  // GEFILTERTEN Menge messen — das Filterfeld läuft über den ganzen Bestand.
+  await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('Leitfaden')
+  await expect(page.getByText('Leitfaden Gesuchsbeurteilung', { exact: false }).first()).toBeVisible({ timeout: 15000 })
+  const overflowGefiltert = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+  expect(overflowGefiltert, `horizontaler Overflow ${overflowGefiltert}px bei 390px (gefilterte Menge)`).toBeLessThanOrEqual(1)
+
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })

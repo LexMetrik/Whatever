@@ -93,7 +93,14 @@ export function Materialien() {
 
       {/* W3-7 (Posten, REST S2): der eine Lade-Baustein statt der eigenen
           Kopie — trägt zusätzlich `role="status"` (Ankündigung für Vorlesehilfen). */}
-      {!materialien && !fehler && <Ladeanzeige text="Die Übersicht wird abgerufen …" className="py-12" />}
+      {/* Lade-CLS (W2·31 P10b, Hausmuster /gesetze: W2·15-CLS): gemessen am
+          Preview-Build 30.9.2026 (headless Chromium, 3 Läufe je Breite) CLS 0.41
+          @1920 / 0.33–0.35 @375 — einzige Quelle das `<footer>`: beim ersten Paint
+          (kurzer Ladezustand) im Fold, beim Einwachsen der Liste wieder daraus
+          (2 Shifts, 0.098 + 0.313). Der Ladezustand reserviert darum dieselbe
+          Höhe (`inhalt-region`) wie der Inhalt; der Footer beginnt unterhalb des
+          Folds. Reine Platz-Reservierung, kein Inhalt gekürzt (§15). */}
+      {!materialien && !fehler && <Ladeanzeige text="Die Übersicht wird abgerufen …" className="min-h-inhalt-region py-12" />}
 
       {materialien && (
         <>
