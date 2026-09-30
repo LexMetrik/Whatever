@@ -170,7 +170,7 @@ export function Materialien() {
           ) : (
             <div className="@container/raster space-y-6">
               {gruppen.map((g) => (
-                <section key={g.behoerde} id={`b-${g.behoerde}`} className="space-y-3 scroll-mt-24">
+                <section key={g.behoerde} id={`b-${g.behoerde}`} className="space-y-3 lc-sprungziel">
                   <div className="space-y-1.5">
                     {/* C-6 (31.8.2026): der Behörden-Gruppenkopf war einer von
                         zwei Sans-H3-Ausreissern unter sonst durchgehend

@@ -159,3 +159,78 @@ for (const skala of [1, 1.4]) {
     }
   }
 }
+
+// ─── Register-Sprungziele (Anker-Sprung per #hash) — W2·31 Bündel L, 30.9.2026 ─
+//
+// Nebenfund der Gegenprüfer #1161/#1163: vier Register-Ziele trugen noch
+// `scroll-mt-24` (96 px), ein Wert aus der Zeit vor der Arbeitsleiste — die
+// Arbeitsleiste reicht bis 98 px (Skala 1.4: 137.2). GEMESSEN (dist, echter Sprung
+// `route#hash` über `ScrollZuHash`, 375/768/1280/1920 × Skala 1 und 1.4, je drei Ziele
+// pro Seite, 96 Messungen): Ziel-Oberkante −1.5 … −3.3 px UNTER der Unterkante der
+// Arbeitsleiste, in JEDER Kombination — die obersten 2–3 px des Rubrikkopfs verdeckt:
+//   · `/vorlagen#vorlage-<id>`            `Katalog.tsx`  (Seitenleisten-Vorlagen-Gruppen)
+//   · `/materialien#b-<behoerde>`         `Materialien.tsx`
+//   · `/gesetze?ebene=bund#sys-<id>`      `gesetze-teile/geteilt.tsx` (Kategorie)
+//   · `/gesetze?ebene=international#<id>` `normtext/InternationalRubriken.tsx`
+// Jetzt `.lc-sprungziel` (index.css): Abstand 15.5–16.x px (Skala 1 = 1 rem) bzw.
+// 22–22.9 px (Skala 1.4 = 1 rem). NICHT umgestellt: `Gesetze.tsx` (Kanton-Abschnitt,
+// `scroll-mt-24` ohne `id`) — kein Sprungziel, die Klasse ist dort wirkungslos.
+//
+// Zusicherung mit Unter- UND Obergrenze: Ziel-Oberkante ≥ Arbeitsleisten-Unterkante
+// (nicht verdeckt) und ≤ Unterkante + 1 rem + 4 px (nicht zu weit unten geparkt).
+// Gewählt sind nur Ziele, die der Seite nach erreichbar an den Kopf rücken (nicht die
+// letzten Abschnitte: `vorlage-vorsorge` @1920 endet die Seite bei 61.7 px Abstand).
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): an EINER der vier Stellen `lc-sprungziel` durch
+// `scroll-mt-24` ersetzen → der Fall der Seite schlägt an der Untergrenze an (−2 px).
+const REGISTER_ZIELE = [
+  { name: '/vorlagen', route: '/vorlagen', ziele: 'main div[id^="vorlage-"]' },
+  { name: '/materialien', route: '/materialien', ziele: 'main section[id^="b-"]' },
+  { name: '/gesetze?ebene=bund', route: '/gesetze?ebene=bund', ziele: 'main details[id^="sys-"]' },
+  { name: '/gesetze?ebene=international', route: '/gesetze?ebene=international', ziele: 'main section[id]' },
+] as const;
+
+for (const skala of [1, 1.4]) {
+  for (const reg of REGISTER_ZIELE) {
+    for (const breite of [375, 1280, 1920]) {
+      test(`${reg.name}#Anker @${breite} Skala ${skala}: Register-Sprungziel landet unter der Arbeitsleiste`, async ({ page }) => {
+        await page.addInitScript(([key, wert]) => {
+          try { window.localStorage.setItem(key, String(wert)); } catch { /* Speicher gesperrt: Standardskala */ }
+        }, [SKALA_KEY, skala] as const);
+        await page.setViewportSize({ width: breite, height: 900 });
+        await page.goto(reg.route);
+        await page.locator(reg.ziele).nth(1).waitFor({ state: 'attached' });
+        const ids = await page.locator(reg.ziele).evaluateAll((els) => els.slice(0, 2).map((e) => e.id));
+        expect(ids.length, 'mindestens zwei Register-Ziele auf der Seite').toBe(2);
+
+        for (const id of ids) {
+          // Kaltstart mit #hash = der Seitenleisten-Tieflink: erst auf eine andere Route,
+          // damit `ScrollZuHash` den Anker wirklich neu einlöst.
+          await page.goto('/');
+          await page.goto(`${reg.route}#${id}`);
+          await expect(page.locator(`[id="${id}"]`)).toBeAttached();
+          // Der Sprung ist gelaufen, wenn die Seite gescrollt hat (alle Ziele liegen > 300 px tief).
+          await page.waitForFunction(() => window.scrollY > 50);
+          let letzte = -1;
+          let ruhig = 0;
+          for (let i = 0; i < 40 && ruhig < 3; i++) {
+            await page.waitForTimeout(150);
+            const y = await page.evaluate(() => window.scrollY);
+            ruhig = y === letzte ? ruhig + 1 : 0;
+            letzte = y;
+          }
+          expect(ruhig, 'Scrollen ist zur Ruhe gekommen').toBeGreaterThanOrEqual(3);
+          const m = await page.evaluate((zielId) => {
+            const ziel = document.getElementById(zielId)!;
+            const arbeitsleiste = document.querySelector('nav[aria-label="Offene Reiter"]')!.getBoundingClientRect();
+            return {
+              abstand: ziel.getBoundingClientRect().top - arbeitsleiste.bottom,
+              wurzelPx: parseFloat(getComputedStyle(document.documentElement).fontSize),
+            };
+          }, id);
+          expect(m.abstand, `#${id}: Ziel-Oberkante nicht unter der Arbeitsleiste (Untergrenze), Abstand ${m.abstand.toFixed(1)} px`).toBeGreaterThanOrEqual(0);
+          expect(m.abstand, `#${id}: Ziel-Oberkante nicht weit unter dem Kopf geparkt (Obergrenze), Abstand ${m.abstand.toFixed(1)} px`).toBeLessThanOrEqual(m.wurzelPx + 4);
+        }
+      });
+    }
+  }
+}

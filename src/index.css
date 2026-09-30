@@ -4833,6 +4833,26 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
     .lc-topbar-wortmarke { display: block; }
   }
 }
+/* W2·31 Bündel L (30.9.2026) · DER VERLAUF-KNOPF BRAUCHT PLATZ, NICHT NUR 481 PX.
+   Bis hierher `max-[480px]:hidden` (C2, 29.8.2026): ab 481 px immer da. Die Schwelle
+   ist ein Fenster-px-Wert, die Schriftskala skaliert aber rem — GEMESSEN (Preview,
+   Verlauf gefüllt, `/`, Skala 1.4): Streifen + Verlauf + 9-rem-Suchfeldboden brauchen
+   523 px Inhaltsbreite, das Fenster @481 bietet 436: scrollWidth +64 @481, +25 @520,
+   @560 7.1 px im rechten Polster; ab 567 px passt es. Gleiches Rezept wie die
+   Wortmarke (H, #1161): die Containerabfrage misst die INHALTSBREITE des Streifens.
+   Gemessener Bedarf mit Verlauf (Marke ohne Wortmarke): 25.41 / 24.75 / 24.19 /
+   23.72 / 23.32 rem bei Skala 1.0 / 1.1 / 1.2 / 1.3 / 1.4 — Schwelle 25.5 rem, eine
+   Zehntel-rem über dem grössten (Skala 1.0). STANDARD-SKALA UNVERÄNDERT: die
+   Fenster-Bedingung (≥ 481 px) bleibt, und @481 Skala 1.0 misst die Inhaltsbreite
+   449 px = 28.06 rem ≥ 25.5 (mit 17-px-Scrollleiste 27 rem); die Bedingung greift
+   erst, wo der Streifen sonst überliefe (Skala ≥ 1.1 im Fenster 481–~500 px bzw.
+   Skala 1.4 bis 616 px). Bewacht von `e2e/seitenbreite.e2e.ts` («Schriftskala 1.4 schmal»). */
+.lc-topbar-verlauf { display: none; }
+@media (min-width: 481px) {
+  @container topbar-zeile (width >= 25.5rem) {
+    .lc-topbar-verlauf { display: block; }
+  }
+}
 
 /* ─── GB-20/21 · DIE WAHL-KACHEL IST EINE ZEILE ─────────────────────────────
    BEFUND G20 (gemessen): die Ferien-/Stillstand-Auswahl des Rechners ist ein

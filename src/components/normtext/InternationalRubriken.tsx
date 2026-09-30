@@ -38,7 +38,7 @@ export function InternationalRubriken({ erlasse, gruppe }: { erlasse: BrowseErla
   return (
     <div className="space-y-10">
       {gruppen.map((g) => (
-        <section key={g.id} id={g.id} className="space-y-3 scroll-mt-24">
+        <section key={g.id} id={g.id} className="space-y-3 lc-sprungziel">
           <div className="space-y-1.5">
             {/* C-6 (31.8.2026): zweiter Sans-H3-Ausreisser unter sonst
                 Overline-gesetzten Gruppenköpfen — angeglichen (§G-e). Der
