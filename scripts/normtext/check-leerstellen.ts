@@ -40,6 +40,11 @@
  *       (BKV Art. 8).
  *   (4) Anhänge (`annex_*`) — eigenes `<section>`-Schema, vom Artikel-Signal
  *       noch nicht erfasst (AKKBV Anhang 3, EPV Anhang 1/2, EBG Anhang).
+ *   ERGÄNZT 30.9.2026 (W2·27-BUND-FERTIG, damals obige Messung 14.9.2026; seither
+ *   geschlossen): die Klasse (4) für AUFGEHOBENE Anhänge (14 Sektionen, EPV Anhang 2
+ *   bleibt als befristet ungeklärt) und «Gegenstandslos» aus (3) (StGB Art. 67f, OR
+ *   Schlusstitel Art. 6 — eigenes Feld `gegenstandslos`, nicht `aufgehoben`). Beide
+ *   tragen jetzt ein amtliches Feld und zählen hier als geklärt (aufhebung-signal.ts).
  * Sie auf 0 zu zwingen hiesse raten (§7). Sichtbar halten ist die ehrliche
  * Antwort (§8) — und der Zuwachs-Riegel fängt genau den Extraktionsfehler, um
  * dessentwillen das Tor existiert.
@@ -63,6 +68,7 @@ interface Eintrag {
   artikelLabel: string;
   bloecke: Parameters<typeof artikelGanzAufgehoben>[0];
   aufgehoben?: true;
+  gegenstandslos?: true;
 }
 
 interface Datei {
@@ -99,7 +105,7 @@ export function sammleLeerstellen(wurzelDir: string, ebene: 'bund' | 'kanton'): 
     }
     if (!Array.isArray(doc.eintraege)) continue;
     for (const e of doc.eintraege) {
-      if (e.aufgehoben) continue; // amtlich deklariert ⇒ geklärt
+      if (e.aufgehoben || e.gegenstandslos) continue; // amtlich deklariert (aufgehoben | gegenstandslos) ⇒ geklärt
       if (!Array.isArray(e.bloecke)) continue;
       if (artikelGanzAufgehoben(e.bloecke)) funde.push({ ebene, key, label: e.artikelLabel });
     }

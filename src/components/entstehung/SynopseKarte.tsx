@@ -1,5 +1,5 @@
 import { datumCh } from '../../lib/normtext/erlassKopfText';
-import { LEERSTELLE_ERLAEUTERUNG, type LeerstellenStatus } from '../../lib/normtext/darstellung';
+import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, type LeerstellenStatus } from '../../lib/normtext/darstellung';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
 import { standVon, type SynopseShard } from '../../lib/entstehung/synopse';
 import { entwurfUrl, type EntwurfArtikel, type EntwurfShard } from '../../lib/entstehung/synopse-entwurf';
@@ -323,6 +323,10 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
           — dass kein Wortlaut da ist —, und nicht, was sie vermutet (§8). */}
       {zustand === 'leer-ungeklaert' && neuHerkunft === 'geltend' && (
         <p className={S.hinweis}>{LEERSTELLE_ERLAEUTERUNG} Die rechte Spalte zeigt den Korpus-Stand.</p>
+      )}
+      {/* W2·27 (30.9.2026): amtlich «gegenstandslos» — eigene Aussage, nie «aufgehoben» (§1/§8). */}
+      {zustand === 'gegenstandslos' && neuHerkunft === 'geltend' && (
+        <p className={S.hinweis}>{LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG} Die rechte Spalte zeigt den Korpus-Stand.</p>
       )}
       {artikel.zustand === 'ohne_ereignis' && (
         <p className={S.hinweis} data-synopse-ohne-ereignis>

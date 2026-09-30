@@ -360,7 +360,7 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   // ── Der geltende Wortlaut als rechte Spalte (§5: keine zweite Ablage) ──────
   const geltend = geltendeBloecke(snapshot?.bloecke);
   // W2·27 (15.9.2026): dreiwertig — «aufgehoben» nur mit amtlichem Beleg (§8).
-  const geltendZustand = snapshot ? artikelLeerstellenStatus(snapshot.bloecke, snapshot.aufgehoben) : 'lebt';
+  const geltendZustand = snapshot ? artikelLeerstellenStatus(snapshot.bloecke, snapshot.aufgehoben, snapshot.gegenstandslos) : 'lebt';
   const geltendQuelle = {
     stand: snapshot?.stand, quelleUrl: snapshot?.quelleUrl, abgerufen: snapshot?.abgerufen,
   };

@@ -38,6 +38,32 @@
 //       UNGEKLÄRT und bekommt KEIN Feld (§7: nichts fabrizieren). Der Wächter
 //       `check:leerstellen` zählt diese Fälle und wird rot, sobald sie zunehmen.
 //
+// ERGÄNZT 30.9.2026 (W2·27-BUND-FERTIG, Prüfer #892) — zwei Lücken geschlossen:
+//
+//   (d) «GEGENSTANDSLOS» (StGB Art. 67f «Gegenstandslos gemäss Ziff. IV 1 des BG
+//       vom 19. Juni 2015 …, mit Wirkung seit 1. Jan. 2018»; OR Schlusstitel
+//       disp_u16/art_6 «Gegenstandslos.»). Fedlex führt den Artikel ohne Wortlaut
+//       mit diesem Vermerk. «Gegenstandslos» ist NICHT «Aufgehoben» (§1: zwei
+//       rechtlich verschiedene Fälle, keine gemeinsame Abstraktion): der Artikel
+//       wurde nicht durch einen Aufhebungsakt gestrichen, sondern ist
+//       gegenstandslos geworden. Darum ein EIGENES Feld `NormSnapshot.gegenstandslos`
+//       und ein eigenes Zustandswort in der Darstellung — nie «aufgehoben» (§8).
+//       Die Fussnoten-Grammatik `historie-parse.ts` kennt «Gegenstandslos» nicht
+//       (kein Änderungs-Ereignis mit Verb-Kopf); sie wird bewusst NICHT erweitert
+//       (Historie-Shards/UI-Mappings hingen daran) — der Vermerk wird hier am
+//       Fussnoten-ANFANG erkannt (`fussnoteGegenstandslos`). Nicht erkannt, weil
+//       Absatz-/Teil-Skopus: «Gegenstandslose UeB.» (KOV Art. 99, VZG Art. 135),
+//       «Dritter Satz gegenstandslos» (VSTG Art. 36a), «… ist heute gegenstandslos»
+//       (GEBV SchKG Art. 61) — dort lebt der Artikel.
+//
+//   (e) ANHÄNGE (`<section id="annex_*">`, kein `<article>`): Fedlex rendert einen
+//       aufgehobenen Anhang als Überschrift `<h1 class="heading">` mit Kopf-Marker,
+//       Fussnoten-Div (Klasse «footnotes» ODER «footnotes section-heading-footnote»)
+//       und leerem `<div class="collapseable">`. Der Extraktor synthetisiert dann den
+//       «…»-Block (`extrahiereAnhang`); `anhangAmtlichesSignal` liest den Vermerk am
+//       Kopf-Marker. Nur bei LEEREM Körper — ein Anhang mit Wortlaut trägt nie ein
+//       Signal (§1: lieber nicht markieren als falsch).
+//
 // ABGRENZUNG: Dieses Modul entscheidet NUR über den GANZEN Artikel
 // (`NormSnapshot.aufgehoben`, G-AUFH-ART). Aufhebungen einzelner Absätze/Items
 // sind Sache der Artikel-Historie (public/normtext/historie/*.json).
@@ -61,25 +87,42 @@ export interface SignalBlock {
  * Delegiert an die kalibrierte Fussnoten-Grammatik (§5) und fragt nur, ob eines
  * der erkannten Ereignisse vom Typ «aufgehoben» ist («Aufgehoben durch/in/gemäss …»).
  *
- * BEWUSST NICHT erkannt (§7, nichts fabrizieren): «Gegenstandslos [gemäss …]»
- * (StGB Art. 67f, OR Schlusstitel) und der amtliche Tippfehler «Aufgehobn durch …»
- * (BKV Art. 8). Beide sind der Grammatik unbekannt; sie bleiben ungeklärt und
- * erscheinen im Wächter-Bericht, statt eine zweite Muster-Wahrheit neben
- * historie-parse.ts zu eröffnen (§5).
+ * BEWUSST NICHT erkannt (§7, nichts fabrizieren): der amtliche Tippfehler
+ * «Aufgehobn durch …» (BKV Art. 8) — der Grammatik unbekannt; er bleibt
+ * ungeklärt und erscheint im Wächter-Bericht, statt eine zweite Muster-Wahrheit
+ * neben historie-parse.ts zu eröffnen (§5). «Gegenstandslos [gemäss …]» (StGB
+ * Art. 67f, OR Schlusstitel) wird seit 30.9.2026 NICHT hier, sondern von
+ * `fussnoteGegenstandslos` erkannt: es ist kein Aufhebungs-Vermerk (§1).
  */
 export function fussnoteHebtAuf(text: string): boolean {
   if (!text.trim()) return false;
   return parseFussnoteHistorie({ text }).ereignisse.some((e) => e.typ === 'aufgehoben');
 }
 
-/** Fussnoten-Definitionen `fn-…` → Prosatext, aus dem Apparat EINES Artikels. */
-export function fussnotenTexte(articleInner: string): Map<string, string> {
+/**
+ * Trägt dieser Fussnoten-Prosatext den amtlichen Vermerk «GEGENSTANDSLOS»?
+ * Nur am Fussnoten-ANFANG («Gegenstandslos gemäss Ziff. IV 1 des BG …», «Gegenstandslos.»)
+ * und nur als ganzes Wort — «Gegenstandslose UeB.» (Adjektiv, Absatz-Skopus) und
+ * Mitte-Satz-Formen («ist dieser Art. gegenstandslos») gehören nicht hierher:
+ * dort lebt der Artikel bzw. betrifft der Vermerk nur einen Teil (§1/§7).
+ * Bewusst KEIN Aufhebungs-Vermerk — s. Kopf-Doku Klasse (d).
+ */
+export function fussnoteGegenstandslos(text: string): boolean {
+  return /^Gegenstandslos(?=[\s.,;:]|$)/.test(text.trim());
+}
+
+/** `<p id="fn-…">`-Definitionen eines HTML-Fragments → Prosatext. */
+function fussnotenDefinitionen(fragment: string): Map<string, string> {
   const map = new Map<string, string>();
-  const apparat = articleInner.match(/<div\s+class="footnotes">[\s\S]*$/i)?.[0] ?? '';
-  for (const m of apparat.matchAll(/<p\s+id="(fn-[^"]+)"\s*>([\s\S]*?)<\/p>/gi)) {
+  for (const m of fragment.matchAll(/<p\s+id="(fn-[^"]+)"\s*>([\s\S]*?)<\/p>/gi)) {
     map.set(m[1], nurText(m[2]));
   }
   return map;
+}
+
+/** Fussnoten-Definitionen `fn-…` → Prosatext, aus dem Apparat EINES Artikels. */
+export function fussnotenTexte(articleInner: string): Map<string, string> {
+  return fussnotenDefinitionen(articleInner.match(/<div\s+class="footnotes">[\s\S]*$/i)?.[0] ?? '');
 }
 
 /** Fussnoten-Marker (`href="#fn-…"`) eines HTML-Fragments in Reihenfolge. */
@@ -119,6 +162,43 @@ function nurText(html: string): string {
     .replace(/^\d+\s*/, ''); // führende Fussnoten-Nummer
 }
 
+/** Amtliches Signal eines GANZEN Artikels/Anhangs: Fedlex-Vermerk am Kopf bzw. an jedem Platzhalter. */
+export type AmtlichesSignal = 'aufgehoben' | 'gegenstandslos';
+
+/** Gemeinsamer Rumpf für «aufgehoben» und «gegenstandslos»: dieselbe Rangfolge
+ *  (Tabelle → jeder Block Platzhalter → Vermerk am Kopf/Absatz), nur das Vermerk-
+ *  Prädikat und der Wortlaut-Kurzschluss unterscheiden sich (§5: eine Regel, eine Stelle). */
+function artikelMitVermerk(
+  hebt: (fussnote: string) => boolean,
+  wortlautKurzschluss: boolean,
+  articleInner: string,
+  bloecke: readonly SignalBlock[],
+  quellen: readonly (string | null)[],
+): boolean {
+  // Tabellen/Mehrspaltiges sind LEBENDER Inhalt und schlagen alles (dieselbe
+  // Rangfolge wie artikelGanzAufgehoben, Gegenprüfung 27.7.2026).
+  if (bloecke.some((b) => (b.tabelle?.length ?? 0) > 0 || (b.mehrspaltig?.zeilen.length ?? 0) > 0)) {
+    return false;
+  }
+  if (!bloecke.length) return false;
+
+  const fn = fussnotenTexte(articleInner);
+  const kopfHebtAuf = markerIds(kopfFragment(articleInner)).some((id) => hebt(fn.get(id) ?? ''));
+
+  // JEDER Block muss eine amtlich gekennzeichnete Stelle sein — ein einziger lebender
+  // Absatz macht den Artikel lebendig (§1: lieber nicht markieren als falsch).
+  return bloecke.every((b, i) => {
+    const items = b.items ?? [];
+    const platzhalter = istPlatzhalter(b.text) && items.every((it) => istPlatzhalter(it.text));
+    if (!platzhalter) return false;
+    if (wortlautKurzschluss && istWortlautAufgehoben(b.text)) return true; // amtlicher Wortlaut selbst
+    const span = quellen[i];
+    if (span == null) return kopfHebtAuf; // synthetisierter «…»-Block → Kopf-Vermerk
+    const eigen = markerIds(span).some((id) => hebt(fn.get(id) ?? ''));
+    return eigen || kopfHebtAuf;
+  });
+}
+
 /**
  * Ist der GANZE Artikel amtlich aufgehoben? Entscheidet allein aus dem
  * Quell-HTML — Klassen (a)/(b) oben. Rückgabe `false` heisst «kein amtliches
@@ -135,30 +215,48 @@ export function artikelAmtlichAufgehoben(
   bloecke: readonly SignalBlock[],
   quellen: readonly (string | null)[],
 ): boolean {
-  // Tabellen/Mehrspaltiges sind LEBENDER Inhalt und schlagen alles (dieselbe
-  // Rangfolge wie artikelGanzAufgehoben, Gegenprüfung 27.7.2026).
-  if (bloecke.some((b) => (b.tabelle?.length ?? 0) > 0 || (b.mehrspaltig?.zeilen.length ?? 0) > 0)) {
-    return false;
-  }
-  if (!bloecke.length) return false;
+  return artikelMitVermerk(fussnoteHebtAuf, true, articleInner, bloecke, quellen);
+}
 
-  const fn = fussnotenTexte(articleInner);
-  const kopfHebtAuf = markerIds(kopfFragment(articleInner)).some((id) =>
-    fussnoteHebtAuf(fn.get(id) ?? ''),
-  );
+/**
+ * Amtliches Signal des GANZEN Artikels: «aufgehoben» (Klassen (a)/(b)), «gegenstandslos»
+ * (Klasse (d)) oder `null` (kein Signal — bleibt ungeklärt, §7). «aufgehoben» hat Vorrang;
+ * gemischte Belege (ein Block aufgehoben, ein anderer gegenstandslos) ergeben `null`.
+ */
+export function artikelAmtlichesSignal(
+  articleInner: string,
+  bloecke: readonly SignalBlock[],
+  quellen: readonly (string | null)[],
+): AmtlichesSignal | null {
+  if (artikelAmtlichAufgehoben(articleInner, bloecke, quellen)) return 'aufgehoben';
+  return artikelMitVermerk(fussnoteGegenstandslos, false, articleInner, bloecke, quellen) ? 'gegenstandslos' : null;
+}
 
-  // JEDER Block muss eine amtlich aufgehobene Stelle sein — ein einziger lebender
-  // Absatz macht den Artikel lebendig (§1: lieber nicht markieren als falsch).
-  return bloecke.every((b, i) => {
-    const items = b.items ?? [];
-    const platzhalter = istPlatzhalter(b.text) && items.every((it) => istPlatzhalter(it.text));
-    if (!platzhalter) return false;
-    if (istWortlautAufgehoben(b.text)) return true; // amtlicher Wortlaut selbst
-    const span = quellen[i];
-    if (span == null) return kopfHebtAuf; // synthetisierter «…»-Block → Kopf-Vermerk
-    const eigen = markerIds(span).some((id) => fussnoteHebtAuf(fn.get(id) ?? ''));
-    return eigen || kopfHebtAuf;
-  });
+/**
+ * Amtliches Signal eines ANHANGS (`<section id="annex_*">`, Klasse (e)). Aufrufen NUR
+ * bei leerem Körper (der Extraktor synthetisiert dann «…»): gelesen wird der Vermerk
+ * an den Kopf-Markern der Überschrift. Die Fussnoten-Div-Klasse variiert («footnotes»,
+ * «footnotes section-heading-footnote»), darum werden alle `<p id="fn-…">` der Sektion gelesen.
+ * @param sektionInner  Inneres der `<section>` (Überschrift + Fussnoten-Apparat)
+ */
+export function anhangAmtlichesSignal(sektionInner: string): AmtlichesSignal | null {
+  const fn = fussnotenDefinitionen(sektionInner);
+  const texte = markerIds(kopfFragment(sektionInner)).map((id) => fn.get(id) ?? '');
+  if (texte.some(fussnoteHebtAuf)) return 'aufgehoben';
+  return texte.some(fussnoteGegenstandslos) ? 'gegenstandslos' : null;
+}
+
+/** Die Signal-Felder eines Extrakts als Spread für den Snapshot-Eintrag. Reihenfolge
+ *  aufgehoben → gegenstandslos: die DB-Projektion (erlass-rows.ts) emittiert sie so,
+ *  jede andere Reihenfolge kippt die Byte-Parität. */
+export function signalFelder(r: {
+  aufgehoben?: true;
+  gegenstandslos?: true;
+}): { aufgehoben?: true; gegenstandslos?: true } {
+  return {
+    ...(r.aufgehoben ? { aufgehoben: true as const } : {}),
+    ...(r.gegenstandslos ? { gegenstandslos: true as const } : {}),
+  };
 }
 
 /**
@@ -167,19 +265,24 @@ export function artikelAmtlichAufgehoben(
  * `extrahiere-fedlex.ts` unter dem §6.6-Zeilendeckel steht (Baseline 1496,
  * erlaubt bis 1645) — die Regel gehört ohnehin zu diesem Modul.
  *
- * SCHLÜSSEL-REIHENFOLGE: `aufgehoben` steht VOR `grundlage`. Die DB-Projektion
- * emittiert id…artikelLabel, [titel], [aufgehoben], [grundlage], bloecke…
- * (scripts/datenhaltung/erlass-rows.ts, `projiziereErlass`); eine andere
- * Reihenfolge im Generator kippt die Byte-Parität zwischen DB und Snapshot.
- * `aufgehoben` fliesst NICHT in `sha256Bloecke` — Artikel-Metadatum wie `titel`
- * und `grundlage`, darum golden-neutral.
+ * SCHLÜSSEL-REIHENFOLGE: `aufgehoben`/`gegenstandslos` stehen VOR `grundlage`. Die
+ * DB-Projektion emittiert id…artikelLabel, [titel], [aufgehoben|gegenstandslos],
+ * [grundlage], bloecke… (scripts/datenhaltung/erlass-rows.ts, `projiziereErlass`);
+ * eine andere Reihenfolge im Generator kippt die Byte-Parität zwischen DB und
+ * Snapshot. Beide Felder fliessen NICHT in `sha256Bloecke` — Artikel-Metadaten wie
+ * `titel` und `grundlage`, darum golden-neutral.
  */
 export function artikelTextMitAufhebung<
   B extends SignalBlock,
   T extends { bloecke: B[]; quellen: (string | null)[]; grundlage?: string },
->(articleInner: string, r: T): { aufgehoben?: true; grundlage?: string; bloecke: B[] } {
+>(
+  articleInner: string,
+  r: T,
+): { aufgehoben?: true; gegenstandslos?: true; grundlage?: string; bloecke: B[] } {
+  const signal = artikelAmtlichesSignal(articleInner, r.bloecke, r.quellen);
   return {
-    ...(artikelAmtlichAufgehoben(articleInner, r.bloecke, r.quellen) ? { aufgehoben: true as const } : {}),
+    ...(signal === 'aufgehoben' ? { aufgehoben: true as const } : {}),
+    ...(signal === 'gegenstandslos' ? { gegenstandslos: true as const } : {}),
     ...(r.grundlage != null ? { grundlage: r.grundlage } : {}),
     bloecke: r.bloecke,
   };

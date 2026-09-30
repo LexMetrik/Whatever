@@ -342,6 +342,10 @@ export function artikelGanzAufgehoben(
 //   'aufgehoben'      amtlich belegt: `NormSnapshot.aufgehoben` (Bund aus der
 //                     Fedlex-Aufhebungsfussnote, Kanton aus dem LexWork-Segment
 //                     ohne jeden Body-Block; Herleitung in `typen.ts`).
+//   'gegenstandslos'  amtlich belegt, aber EIGENE Kategorie (W2·27, 30.9.2026): Fedlex-
+//                     Vermerk «Gegenstandslos [gemäss …]» (`NormSnapshot.gegenstandslos`,
+//                     StGB Art. 67f, OR Schlusstitel Art. 6). Nicht «aufgehoben» (§1/§8):
+//                     der Artikel wurde nicht durch einen Aufhebungsakt gestrichen.
 //   'leer-ungeklaert' NUR die Text-Heuristik greift: Body ist leer oder «…».
 //                     Was das heisst, WEISS der Korpus nicht — es kann eine
 //                     Aufhebung ohne Vermerk sein, ein Änderungsartikel, eine
@@ -354,7 +358,7 @@ export function artikelGanzAufgehoben(
 // Daten (§3) — nur den Satz, den der Leser darüber schreibt.
 
 /** Belegstufe einer Artikel-Leerstelle — s. Block darüber. */
-export type LeerstellenStatus = 'lebt' | 'aufgehoben' | 'leer-ungeklaert';
+export type LeerstellenStatus = 'lebt' | 'aufgehoben' | 'gegenstandslos' | 'leer-ungeklaert';
 
 /** Kurzform für die Statuszeile am Artikel. Bewusst eine AUSSAGE ÜBER DAS
  *  ARTEFAKT, nicht über die Rechtslage: der Snapshot trägt hier keinen Text —
@@ -368,6 +372,12 @@ export const LEERSTELLE_KURZ = 'kein Text im Snapshot';
 export const LEERSTELLE_ERLAEUTERUNG =
   'Die amtliche Quelle zeigt hier keinen Wortlaut — Änderungsartikel, künftige '
   + 'Bestimmung oder Aufhebung ohne Vermerk. Massgeblich ist die amtliche Fassung.';
+
+/** Erläuterung (title/Tooltip) zu «gegenstandslos»: sagt, was die Quelle sagt — und nicht,
+ *  dass der Artikel «aufgehoben» sei (§8). */
+export const LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG =
+  'Die amtliche Fassung führt diese Bestimmung ohne Wortlaut mit dem Vermerk «gegenstandslos» '
+  + '(Fussnote) — nicht mit einem Aufhebungsvermerk. Massgeblich ist die amtliche Fassung.';
 
 /**
  * Belegstufe EINES Artikels. Baut auf `artikelGanzAufgehoben` auf statt die
@@ -385,16 +395,21 @@ export const LEERSTELLE_ERLAEUTERUNG =
  *  `null` = nichts zu sagen (lebender Artikel → kein Platzhalter, §8/M1). */
 export function leerstellenWort(zustand: LeerstellenStatus): string | null {
   if (zustand === 'aufgehoben') return 'aufgehoben';
+  if (zustand === 'gegenstandslos') return 'gegenstandslos';
   return zustand === 'leer-ungeklaert' ? LEERSTELLE_KURZ : null;
 }
 
 export function artikelLeerstellenStatus(
   bloecke: Parameters<typeof artikelGanzAufgehoben>[0],
   markiert?: boolean,
+  gegenstandslos?: boolean,
 ): LeerstellenStatus {
   if (!artikelGanzAufgehoben(bloecke, markiert)) return 'lebt';
   // `artikelGanzAufgehoben` war true — also hat entweder `markiert` entschieden
   // (Stufe 2) oder die Text-Heuristik (Stufe 3). Die Tabelle ist damit bereits
   // ausgeschlossen, sonst wäre der Wert false gewesen.
-  return markiert === true ? 'aufgehoben' : 'leer-ungeklaert';
+  if (markiert === true) return 'aufgehoben';
+  // `gegenstandslos` ist ein amtlicher Beleg NEBEN `aufgehoben`, kein Ersatz (W2·27): der
+  // Text-Heuristik-Zweig (Platzhalter) trifft hier ohnehin zu, der Marker benennt den Grund.
+  return gegenstandslos === true ? 'gegenstandslos' : 'leer-ungeklaert';
 }
