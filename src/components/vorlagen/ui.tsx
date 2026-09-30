@@ -30,6 +30,12 @@ export const NICHT_GESPEICHERT_HINWEIS =
 /** HTML-«labelable elements», soweit in Formularen dieses Hauses gebraucht.
  *  Steuert, wann `Field` `htmlFor` setzen darf (siehe dort). */
 const BESCHRIFTBAR = ['input', 'select', 'textarea'];
+/** Host-Elemente, die als Kind von `Field` ein ZUSAMMENGESETZTES Control tragen
+ *  (Datumsfeld + «heute»-Knopf, Zahl + Einheit, Checkbox-Raster). Nicht
+ *  beschriftbar — das Label erreicht sie über `role="group"` +
+ *  `aria-labelledby` (W2·19 P12, 30.9.2026; vorher blieb das Control ohne
+ *  zugänglichen Namen, lokal nur in VerzugszinsForm per `aria-label` behoben). */
+const GRUPPIERBAR = ['div', 'section', 'ul', 'ol', 'fieldset'];
 
 export function Field({ label, children, hint, optional, fehlt }: {
   /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine
@@ -76,11 +82,20 @@ export function Field({ label, children, hint, optional, fehlt }: {
   const invalid = nativ && fehlt
     ? { 'aria-invalid': true as const, 'aria-describedby': fehlerId }
     : {};
+  // Gruppe: Host-Wrapper (div …) ohne eigenen Namen/Rolle → Label als Gruppenname.
+  const gruppe = isValidElement(children) && typeof children.type === 'string'
+    && GRUPPIERBAR.includes(children.type)
+    && (children.props as Record<string, unknown>)['aria-label'] === undefined
+    && (children.props as Record<string, unknown>)['aria-labelledby'] === undefined
+    && (children.props as Record<string, unknown>).role === undefined;
   const control = nativ
     ? cloneElement(children as React.ReactElement<{ id?: string }>, { id, ...invalid })
     : komposit
       ? cloneElement(children as React.ReactElement<{ 'aria-labelledby'?: string }>, { 'aria-labelledby': `${id}-label` })
-      : children;
+      : gruppe
+        ? cloneElement(children as React.ReactElement<{ role?: string; 'aria-labelledby'?: string }>,
+          { ...((children as React.ReactElement).type === 'fieldset' ? {} : { role: 'group' }), 'aria-labelledby': `${id}-label` })
+        : children;
   return (
     <div className="space-y-1">
       <label id={`${id}-label`} htmlFor={nativ ? id : undefined} className="lc-feldlabel block text-body-s font-medium text-ink-700">
