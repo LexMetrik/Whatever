@@ -4924,8 +4924,12 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    ein Feld von 8 rem ist noch ein Feld, ein Überlauf ist ein Defekt. Die Zahl 9 rem bleibt
    bewusst in der Utility (F9-Wächter `tap-ziel-token.test.ts` verbietet eine rohe
    min-width-Zahl in CSS-Deklarationen); hier steht nur die Rücknahme (`min-width: 0`). Zwei Klassen (`.lc-topbar-zeile
-   .lc-topbar-suche`), weil die Utility `min-[481px]:min-w-[9rem]` (eine Klasse, Tailwind-
-   Reihenfolge) eine einklassige Regel sonst überstimmt (gemessen: 1.4 @481 blieb bei 16.1 px). */
+   .lc-topbar-suche`), weil die Regel im gebauten CSS VOR der Media-Utility steht (Tailwind 3
+   emittiert die `min-[481px]:`-Variante ans Ende; gemessen in `dist`: Regel bei Byte ~98 k,
+   Utility `.min-[481px]:min-w-[9rem]` bei ~131 k), bei gleicher Spezifität also die spätere
+   Utility gewönne. Einklassig gemessen (Nachzug #1188, 30.9.2026, Spec `seitenbreite`, Skala
+   1.4 @496): der Streifen ragte weiter 1.1 px ins Polster — die Regel griff nicht. (Die Regel
+   steht im Quelltext ausserhalb jedes `@layer`; das ändert an der Ausgabe-Reihenfolge nichts.) */
 @container topbar-zeile (width < calc(15rem + 120px)) {
   .lc-topbar-zeile .lc-topbar-suche { min-width: 0; }
 }

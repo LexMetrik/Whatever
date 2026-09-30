@@ -234,6 +234,10 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     const esc = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return;
       e.preventDefault();
+      // Nachzug Zweitprüfung #1188: steht der Fokus im Panel (Knopf «Verlauf
+      // leeren» im Leerzustand), verschwindet er mit dem Panel und fiele auf
+      // <body> — dann zurück ins Suchfeld (derselbe Fokus-Halt wie D2).
+      if (huelle.current?.contains(document.activeElement)) feld.current?.focus();
       setOffen(false); setWert(''); setQ(''); setAktivKey(null); setEnterQ(null);
     };
     window.addEventListener('pointerdown', aus);
