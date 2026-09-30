@@ -309,16 +309,13 @@ describe('lageBlock — Verdrahtung wie in der CLI', () => {
 // `-`-Zeilen). `staleWip` schwieg, `plan:next` meldete das Baufeld belegt.
 describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)', () => {
   const wip = (...ids: string[]) => ids.map((id) => ({ id, feld: null }));
-  const JETZT = 1_790_000_000;
-  const TAG = 86_400;
-  const gelandet = (...eintraege: [string, number | null][]) =>
-    new Map(eintraege.map(([b, t]) => [b, { letzterCommitUnix: t }]));
+  const gelandet = (...branches: string[]) => new Set(branches);
   const warnungen = (roh: LageRoh) => lageZeilen(roh, IDS).filter((z) => z.startsWith('⚠️'));
 
   it('einziger Branch des Schritts nur gelandet → stale, Warnung nennt Grund und Branch', () => {
     const roh = rohStandard({
       wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'],
-      gelandet: gelandet(['docs/qs-plan-review-rest', JETZT - TAG]), jetztUnix: JETZT,
+      gelandet: gelandet('docs/qs-plan-review-rest'),
     });
     expect(staleWip(roh, IDS)).toEqual(['QS-PLAN-REVIEW']);
     expect(warnungen(roh)).toContain(
@@ -330,7 +327,7 @@ describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)',
   it('ein weiterer Branch MIT eigener Arbeit (nicht in der Karte) hält die Spur', () => {
     const roh = rohStandard({
       wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest', 'feat/qs-plan-review-neu'],
-      gelandet: gelandet(['docs/qs-plan-review-rest', JETZT]), jetztUnix: JETZT,
+      gelandet: gelandet('docs/qs-plan-review-rest'),
     });
     expect(staleWip(roh, IDS)).toEqual([]);
     expect(warnungen(roh)).toEqual([]);
@@ -340,14 +337,14 @@ describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)',
     const plaetze = parseWorktrees(PORCELAIN); // agent-abc [feat/qs-plan-review-lage], agent-def detached
     const nurBranch = rohStandard({
       wip: wip('QS-PLAN-REVIEW'), worktrees: plaetze, branches: ['main', 'feat/qs-plan-review-lage'],
-      gelandet: gelandet(['feat/qs-plan-review-lage', JETZT]), jetztUnix: JETZT,
+      gelandet: gelandet('feat/qs-plan-review-lage'),
     });
     expect(staleWip(nurBranch, IDS)).toEqual(['QS-PLAN-REVIEW']);
     const detached = rohStandard({
       wip: wip('QS-PLAN-REVIEW'),
       worktrees: [{ name: 'qs-plan-review-platz', branch: null, haupt: false }],
       branches: ['main', 'feat/qs-plan-review-lage'],
-      gelandet: gelandet(['feat/qs-plan-review-lage', JETZT]), jetztUnix: JETZT,
+      gelandet: gelandet('feat/qs-plan-review-lage'),
     });
     expect(staleWip(detached, IDS)).toEqual([]);
   });
@@ -356,7 +353,7 @@ describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)',
     const roh = rohStandard({
       wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'], prsGewuenscht: true,
       prs: [{ number: 9, headRefName: 'agent-1', titel: 'QS-PLAN-REVIEW Stufe 3' }],
-      gelandet: gelandet(['docs/qs-plan-review-rest', JETZT]),
+      gelandet: gelandet('docs/qs-plan-review-rest'),
     });
     expect(staleWip(roh, IDS)).toEqual([]);
   });
@@ -365,43 +362,25 @@ describe('staleWip — Branch mit nur gelandeter Arbeit ist keine Spur (Karte)',
     const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'] });
     expect(staleWip(roh, IDS)).toEqual([]);
   });
-
-  it('Alter erscheint erst ab mehr als 3 Tagen (Uhr injiziert, deterministisch)', () => {
-    const warnung = (vorSekunden: number) =>
-      warnungen(rohStandard({
-        wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'],
-        gelandet: gelandet(['docs/qs-plan-review-rest', JETZT - vorSekunden]), jetztUnix: JETZT,
-      }))[0];
-    expect(warnung(5 * TAG + 60)).toContain('(Spur nur gelandete Arbeit: docs/qs-plan-review-rest · jüngster Commit 5 Tage alt)');
-    expect(warnung(3 * TAG)).not.toContain('jüngster Commit'); // genau 3 Tage: noch kein Hinweis
-    expect(warnung(3 * TAG + 1)).toContain('jüngster Commit 3 Tage alt');
-    // ohne injizierte Uhr nie ein Alter
-    const ohneUhr = warnungen(rohStandard({
-      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'docs/qs-plan-review-rest'],
-      gelandet: gelandet(['docs/qs-plan-review-rest', JETZT - 9 * TAG]),
-    }))[0];
-    expect(ohneUhr).not.toContain('jüngster Commit');
-  });
 });
 
 describe('sammleLage — Messung «nur gelandet» über git cherry (Attrappe)', () => {
   const wip = [{ id: 'QS-PLAN-REVIEW', feld: null }];
   const BASIS = { 'git worktree': '', 'git branch': 'main\ndocs/qs-plan-review-rest', 'git rev-parse': 'abc' };
 
-  it('nur `-`-Zeilen → gelandet, Zeitstempel aus git log; Basis ist origin/main', () => {
+  it('nur `-`-Zeilen → gelandet; Basis ist origin/main', () => {
     const aufrufe: string[] = [];
     const laufe: Laufe = (cmd, args) => {
       aufrufe.push(`${cmd} ${args.join(' ')}`);
-      return runner({ ...BASIS, 'git cherry': '- 111\n- 222\n', 'git log': '1789000000\n' })(cmd, args);
+      return runner({ ...BASIS, 'git cherry': '- 111\n- 222\n' })(cmd, args);
     };
-    const roh = sammleLage(wip, { prs: false, laufe, jetztUnix: 1_790_000_000 });
-    expect(roh.gelandet?.get('docs/qs-plan-review-rest')).toEqual({ letzterCommitUnix: 1_789_000_000 });
-    expect(roh.jetztUnix).toBe(1_790_000_000);
+    const roh = sammleLage(wip, { prs: false, laufe });
+    expect(roh.gelandet?.has('docs/qs-plan-review-rest')).toBe(true);
     expect(aufrufe).toContain('git cherry refs/remotes/origin/main refs/heads/docs/qs-plan-review-rest');
   });
 
   it('eine `+`-Zeile → ungelandet → keine Karte, Branch bleibt Spur', () => {
-    const roh = sammleLage(wip, { prs: false, laufe: runner({ ...BASIS, 'git cherry': '- 111\n+ 222\n', 'git log': '1\n' }) });
+    const roh = sammleLage(wip, { prs: false, laufe: runner({ ...BASIS, 'git cherry': '- 111\n+ 222\n' }) });
     expect(roh.gelandet).toBeUndefined();
     expect(staleWip(roh, IDS)).toEqual([]);
   });
@@ -416,7 +395,7 @@ describe('sammleLage — Messung «nur gelandet» über git cherry (Attrappe)', 
     const aufrufe: string[] = [];
     const laufe: Laufe = (cmd, args) => {
       aufrufe.push(`${cmd} ${args.join(' ')}`);
-      return runner({ ...BASIS, 'git rev-parse': new Error('nicht da'), 'git cherry': '', 'git log': '5\n' })(cmd, args);
+      return runner({ ...BASIS, 'git rev-parse': new Error('nicht da'), 'git cherry': '' })(cmd, args);
     };
     const roh = sammleLage(wip, { prs: false, laufe });
     expect(aufrufe).toContain('git cherry refs/heads/main refs/heads/docs/qs-plan-review-rest');
