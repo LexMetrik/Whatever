@@ -86,13 +86,18 @@ describe('AMTLICHER_NAMENS_ANKER — Äquivalenz alte/neue Form und lineare Lauf
   });
 
   it('Laufzeit: lange Nicht-Treffer-Eingaben (Ziffernketten + Fremdzeichen) in linearer Zeit', () => {
+    // Alt: bereits n=28 ≈ 1,6 s (exponentiell), n=100 000 praktisch unendlich (Regex ist synchron, kein
+    // Test-Timeout greift). Darum zuerst die eine n=28-Messung mit eigener Schwelle: bei einer Rückkehr zur
+    // alten Form scheitert sie nach ~1,6 s, statt dass der Lauf an den grossen n hängt.
+    const t28 = performance.now();
+    expect(neu(`ta${'1'.repeat(28)}_`)).toBe(false);
+    expect(performance.now() - t28).toBeLessThan(250);
     const t0 = performance.now();
-    for (const n of [28, 1_000, 100_000]) {
+    for (const n of [1_000, 100_000]) {
       expect(neu(`ta${'1'.repeat(n)}_`)).toBe(false);
       expect(neu(`ta${'1a'.repeat(n)}/`)).toBe(false);
       expect(neu(`ta${'1'.repeat(n)}`)).toBe(true);
     }
-    // Alt: bereits n=28 ≈ 1,6 s (exponentiell), n=100 000 praktisch unendlich. Neu: Millisekunden.
-    expect(performance.now() - t0).toBeLessThan(1000);
+    expect(performance.now() - t0).toBeLessThan(1000); // Neu: Millisekunden
   });
 });
