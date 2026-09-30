@@ -95,12 +95,27 @@ export function VorlagenWizardRahmen({
   const springFokus = useRef(false);
   const wechsleSchritt = (naechster: SetStateAction<number>) => { springFokus.current = true; setSchritt(naechster); };
   const springeZuSchritt = (i: number) => { setBeruehrt(true); wechsleSchritt(i); };
+  const titelEl = useRef<HTMLHeadingElement | null>(null);
   const titelRef = (el: HTMLHeadingElement | null) => {
+    titelEl.current = el;
     if (el && springFokus.current) { springFokus.current = false; el.focus(); }
   };
   // Die Marke gilt für EINEN Commit: springt der Wizard auf den Schritt, in dem
   // er schon steht (kein Remount), darf sie nicht bis zum nächsten Wechsel liegen.
   useEffect(() => { springFokus.current = false; });
+  // Auffangnetz (W2·19, 1.10.2026): wechselt der Schritt ohne Marke — die Seite
+  // ruft ihr eigenes `setSchritt` (AG-Gründung: Klick auf einen Blocker im
+  // Dokumente-Schritt, gemessen → BODY, der Knopf verschwindet im Remount) —
+  // und der Fokus ist verloren, landet er auf dem Schritttitel. Liegt er noch
+  // auf einem Bedienelement (Stepper-Reiter), bleibt er dort; nie beim ersten
+  // Rendern (Schritt unverändert).
+  const letzterFokusSchritt = useRef(schritt);
+  useEffect(() => {
+    if (letzterFokusSchritt.current === schritt) return;
+    letzterFokusSchritt.current = schritt;
+    const a = document.activeElement;
+    if (!a || a === document.body) titelEl.current?.focus();
+  }, [schritt]);
   // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane).
   const pk = usePaneKlasse();
   // RL-12 PR 2 (R3-06): Prüfstand der Karte zum Pfad — der Rahmen kennt seine
@@ -184,8 +199,8 @@ export function VorlagenWizardRahmen({
       {/* Kopf-Schalter (Detailgrad/Untertyp) – optional, vor dem Stepper */}
       {kopfSchalter}
 
-      {/* Stepper */}
-      <Stepper schritte={schritte} aktiv={schritt} onWechsel={setSchritt} />
+      {/* Stepper — Klick auf den AKTIVEN Reiter setzt keine Marke (kein Remount, die Marke bliebe bis zum nächsten Render liegen und stähle dort den Fokus). */}
+      <Stepper schritte={schritte} aktiv={schritt} onWechsel={(i) => { if (i !== schritt) wechsleSchritt(i); }} />
 
       {/* Zweispaltig: Formular links, klebende Vorschau rechts; mobil
           einspaltig mit einklappbarer Vorschau. `items-start`: die Karte
