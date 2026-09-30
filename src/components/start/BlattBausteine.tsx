@@ -1,7 +1,6 @@
 import type { ReactNode, RefObject } from 'react';
 import type { Register } from '../layout/bereiche';
 import { Ladeanzeige } from '../ui/Ladeanzeige';
-import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
 import { FehlerBox } from '../vorlagen/ui';
 
 // ─── Startseite · geteilte Bausteine der aufgeklappten Blätter (W2·29-WERKBANK-START-FEINSCHLIFF)
@@ -46,14 +45,9 @@ export function TrefferZahl({ n, einzahl, mehrzahl }: { n: number; einzahl: stri
   );
 }
 
-/** «Weitere anzeigen» unter einer portionierten Liste. */
-export function WeitereKnopf({ rest, mehr }: { rest: number; mehr: () => void }) {
-  return (
-    <button type="button" onClick={mehr} className={`lc-btn-mini ${MEHR_KNOPF_KLASSEN}`}>
-      Weitere anzeigen (<span className="num">{rest.toLocaleString('de-CH')}</span> weitere)
-    </button>
-  );
-}
+/** «Weitere anzeigen» unter einer portionierten Liste — Baustein seit W2·31 P6
+ *  in `ui/WeitereKnopf` (vierter Aufrufer: `/materialien`); hier weitergeführt. */
+export { WeitereKnopf } from '../ui/WeitereKnopf';
 
 /** Laden · Fehler · bereit einer Sammlung im Blatt — EINE Weiche statt je Blatt
  *  eine eigene (Gesetze, Materialien, Rechtsprechung trugen je eine Kopie: nackter

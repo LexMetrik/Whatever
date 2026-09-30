@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
-import { MaterialKarte } from '../components/materialien/MaterialKarte';
+import { MaterialRaster } from '../components/materialien/MaterialRaster';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
 import { Ladeanzeige } from '../components/ui/Ladeanzeige';
@@ -196,9 +196,14 @@ export function Materialien() {
                       `@[78rem]/raster:grid-cols-4` gegen `lg:grid-cols-3`
                       (im Build-CSS nachgesehen). Eine 78rem breite Spalte
                       setzt ohnehin ≥ lg voraus, die Stapelung ändert nichts. */}
-                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:@[78rem]/raster:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[78rem]/raster:grid-cols-4 gap-3')}>
-                    {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}
-                  </div>
+                  {/* W2·31-BILDSCHIRMBREITE P6 (30.9.2026): DOM-Deckel je Gruppe
+                      (100 + «Weitere anzeigen»), Herleitung und Logikverlust-
+                      Bewertung in `MaterialRaster`. Der Gruppenkopf oben zählt
+                      weiter die ganze (gefilterte) Gruppe. */}
+                  <MaterialRaster
+                    materialien={g.materialien}
+                    klasse={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:@[78rem]/raster:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[78rem]/raster:grid-cols-4 gap-3')}
+                  />
                 </section>
               ))}
             </div>
