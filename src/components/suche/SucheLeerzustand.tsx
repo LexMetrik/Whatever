@@ -4,6 +4,7 @@ import { suchOptionId } from './suchOptionId';
 import { RegisterMarke } from './RegisterMarke';
 import { artVonRoute } from './suchArt';
 import { Leerzustand } from '../ui/Leerzustand';
+import { VerlaufLeerenKnopf } from '../layout/VerlaufLeerenKnopf';
 
 // ─── Leerzustand der Suche (⌘K / Fokus ohne Eingabe) — UI-NAV O1, Schritt 2 ──
 //
@@ -47,7 +48,7 @@ import { Leerzustand } from '../ui/Leerzustand';
 
 const ZEILE_CLS = 'lc-hover-flaeche flex items-center gap-3 px-4 py-2 text-body-s text-ink-900 transition-colors cursor-pointer';
 
-export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, panelKlasse }: {
+export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, onVerlaufGeleert, panelKlasse }: {
   /** Verlauf-Einträge (bereits auf 5 gekappt) — EIN geteilter useZuletzt()-Aufruf
    *  beim Aufrufer, damit Anzeige und Tastatur-Navigation (leerOptionen) exakt
    *  dieselbe Liste sehen. */
@@ -59,11 +60,16 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, pane
   aktivId?: string;
   /** Maus/Touch-Navigation (Optionen sind keine `<a>` mehr, s. SuchResultate). */
   onNavigate: (href: string) => void;
+  /** Nach «Verlauf leeren» (W2·31 P3): der Aufrufer gibt den Fokus zurück an das
+   *  Suchfeld — der Knopf verlässt mit der Liste das DOM, der Fokus fiele sonst
+   *  auf <body>. */
+  onVerlaufGeleert?: () => void;
   /** Zusatzklassen an der Listbox (Kopf-Dropdown: Scroll-Kappung) — Herleitung
    *  bei `SuchResultate.panelKlasse` (axe `scrollable-region-focusable`). */
   panelKlasse?: string;
 }) {
   return (
+    <>
     <div className={`lc-suchpanel${panelKlasse ? ` ${panelKlasse}` : ''}`} role="listbox" id={listboxId} aria-label="Suche — zuletzt geöffnet">
       <p className="lc-overline px-4 pt-3 pb-1.5">Zuletzt geöffnet</p>
       {verlauf.length === 0
@@ -83,8 +89,7 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, pane
         // Leerzustand — der Baustein nimmt bewusst keine Zusatzklassen.
         ? <div className="px-4 pb-3"><Leerzustand art="bestand" text="Noch nichts geöffnet." /></div>
         : (
-          <>
-            <ul role="none" className="pb-1">
+          <ul role="none" className="pb-1">
               {verlauf.map((e) => {
                 const oid = suchOptionId(listboxId, 'verlauf', e.route);
                 const art = artVonRoute(e.route);
@@ -99,10 +104,19 @@ export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate, pane
                 );
               })}
             </ul>
-            {/* §8: der Verlauf liegt nur lokal — als Fussnote UNTER der Liste. */}
-            <p className="px-4 pb-2.5 text-micro leading-snug text-ink-500">Nur auf diesem Gerät</p>
-          </>
         )}
     </div>
+    {verlauf.length > 0 && (
+      // §8: der Verlauf liegt nur lokal — als Fussnote UNTER der Liste, und mit ihr
+      // «Verlauf leeren» (W2·31 P3): der Topbar-Knopf des Verlaufs fehlt unter 481 px
+      // und bei grosser Schrift bis ~570 px, die Liste hier bleibt sichtbar. Die Zeile
+      // steht als GESCHWISTER der Listbox (ein Knopf in `role=listbox` ist kein
+      // erlaubtes Kind) und ausserhalb ihrer Scroll-Kappung: sie bleibt im Bild.
+      <div className="flex items-center justify-between gap-2 px-4 pb-2.5">
+        <p className="text-micro leading-snug text-ink-500">Nur auf diesem Gerät</p>
+        <VerlaufLeerenKnopf onGeleert={onVerlaufGeleert} />
+      </div>
+    )}
+    </>
   );
 }
