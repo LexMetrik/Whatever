@@ -150,13 +150,16 @@ describe('leiteMaterialNachschlag — `unsicher` trägt den Ladefehler des Shard
   });
 
   it('Shard-Abruf gescheitert: unsicher (die leere Liste ist dann KEIN «nichts erfasst»)', () => {
-    const { nachschlag, unsicher } = leiteMaterialNachschlag({ shard: null, shardFehler: true, manifest: MANIFEST });
+    const { nachschlag, unsicher, shardFehler } = leiteMaterialNachschlag({ shard: null, shardFehler: true, manifest: MANIFEST });
     expect(unsicher).toBe(true);
+    expect(shardFehler).toBe(true);
     expect(nachschlag('6')).toEqual([]);
   });
 
   it('Manifest gescheitert (W3-5): weiterhin unsicher', () => {
-    expect(leiteMaterialNachschlag({ shard: SHARD, shardFehler: false, manifest: null }).unsicher).toBe(true);
+    const r = leiteMaterialNachschlag({ shard: SHARD, shardFehler: false, manifest: null });
+    expect(r.unsicher).toBe(true);
+    expect(r.shardFehler).toBe(false); // B3: nur der Shard-Ausfall löst die Fehlerzeile der Artikel-Gruppe aus
   });
 });
 

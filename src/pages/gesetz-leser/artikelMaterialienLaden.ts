@@ -61,7 +61,7 @@ interface MaterialStand {
  */
 export function leiteMaterialNachschlag(
   stand: Pick<MaterialStand, 'shard' | 'shardFehler' | 'manifest'>,
-): { nachschlag: MaterialNachschlag; unsicher: boolean } {
+): { nachschlag: MaterialNachschlag; unsicher: boolean; shardFehler: boolean } {
   const { shard, shardFehler, manifest } = stand;
   return {
     nachschlag: (artikelToken: string) => projiziereMaterialien(shard, manifest, artikelToken),
@@ -71,11 +71,15 @@ export function leiteMaterialNachschlag(
     // gescheiterter Shard-Abruf (`/materialien/kanten/<ERLASS>.json`), den
     // `ladeKantenShard` bisher als `null` = «keine Kanten» weitergab.
     unsicher: manifest === null || shardFehler,
+    // Getrennt mitgeführt: nur der Shard-Ausfall meldet die Artikel-Gruppe selbst;
+    // den Manifest-Ausfall meldet `PanelErlaeuterungen` (AN-4) — sonst zwei
+    // Fehlerzeilen, zwei Knöpfe für denselben Ausfall (Gegenprüfung B3, 30.9.2026).
+    shardFehler,
   };
 }
 
 /**
- * @returns Tripel `[nachschlagen, unsicher, erneut]`. W3-5 (Audit 25.9.2026): bricht
+ * @returns Quadrupel `[nachschlagen, unsicher, erneut, shardFehler]`. W3-5 (Audit 25.9.2026): bricht
  *  das Manifest (`/materialien/register.json`, `ladeMaterialManifest`) ab,
  *  liefert es `null` (Fangnetz dort) — `projiziereMaterialien` kann daraus
  *  nicht mehr unterscheiden, ob am Artikel wirklich nichts erfasst ist oder
@@ -89,7 +93,7 @@ export function leiteMaterialNachschlag(
  */
 export function useArtikelMaterialien(
   erlassKey: string | undefined, laden: boolean,
-): [MaterialNachschlag, boolean, () => void] {
+): [MaterialNachschlag, boolean, () => void, boolean] {
   // Der Zustand trägt den SCHLÜSSEL mit (Muster aus `bezuegeZaehler.ts`): ohne
   // ihn zeigte die Zeile nach einem Erlass-Wechsel kurz die Materialien des
   // vorigen Erlasses, und der Effekt müsste synchron `null` setzen.
@@ -113,11 +117,11 @@ export function useArtikelMaterialien(
     return () => { lebt = false; abbrechen?.(); };
   }, [erlassKey, laden, versuch]);
 
-  if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return [LEER, false, erneut];
+  if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return [LEER, false, erneut, false];
   // Ab hier ist der Lade-VERSUCH durch: ein fehlender Shard (404 = Erlass ohne
   // Material-Kanten) ergibt die LEERE Liste, nicht `undefined` — sonst stünde
   // die Skelett-Zeile «lädt …» für immer (§8: «nichts erfasst» ist eine Antwort,
   // «lädt» wäre eine Unwahrheit).
-  const { nachschlag, unsicher } = leiteMaterialNachschlag(stand);
-  return [nachschlag, unsicher, erneut];
+  const { nachschlag, unsicher, shardFehler } = leiteMaterialNachschlag(stand);
+  return [nachschlag, unsicher, erneut, shardFehler];
 }
