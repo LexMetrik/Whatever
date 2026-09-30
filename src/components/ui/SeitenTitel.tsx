@@ -27,18 +27,30 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 // «welches Tag, welche Stimme, welches Gewicht» an vier Stellen stehen und nur
 // die Kaskade wäre geteilt (§5/§10).
 
-/**
- * Schriftstimme des Titels (DESIGN-REGLEMENT §e, Zwei-Stimmen-Regel).
- *
- * `display` — die Sans-Display-Stimme der Produkt-Oberfläche (Rechner,
- *             Vorlagen, statische Seiten).
- * `serif`   — die Serif-Stimme des zitierfähigen Quelltexts. Sie trägt den
- *             Erlass-Kopf; die Wahl ist bedeutungstragend und bleibt darum
- *             eine ausdrückliche Angabe des Aufrufers, kein Default.
- */
-export type TitelStimme = 'display' | 'serif';
+// ─── HN-D2 (W2·19-DESIGN-KONSISTENZ, 30.9.2026) · STUFE 1 DER TITELORDNUNG ─────
+//
+// GEMESSEN (30.9.2026, 1440 hell, vite preview von dist/): derselbe Baustein
+// zeichnete die H1 in drei Gestalten — Gewicht 400 auf den 12 Seiten im
+// Titelblatt-Band (`.ub-kopf h1`, index.css überschrieb `font-semibold` von
+// aussen), 600 in Leser, Entscheid und Material, und im Lesemodus-Overlay die
+// Voreinstellung «display» (Archivo) für DIESELBE BGE-Zitierung, die der
+// EntscheidLeser in Literata setzt. Soll ist die Mehrheit und das Reglement
+// (F0.4 «Literata liest», F0.11): Stufe 1 = Literata, Gewicht 400, von
+// DIESEM Baustein selbst gesetzt — die Überschreibung im Band fällt weg
+// (§17-Rückbau: die Regel trägt jetzt der Baustein, nicht ein Selektor daneben).
+// Die Display-Stimme hat keinen Aufrufer mehr und ist gestrichen; die Prop
+// `stimme` bleibt nur als Übergang (PR 2 zieht die Aufrufer um, dann entfällt sie).
 
-export function SeitenTitel({ stimme = 'display', className, id, children }: {
+/**
+ * Schriftstimme des Titels (DESIGN-REGLEMENT F0.11, Stufe 1): die Serif-Stimme
+ * des Gelesenen. Es gibt keine zweite Stimme mehr — die Prop bleibt bis zur
+ * Aufrufer-Umstellung (HN-D2 PR 2), weil fünf Aufrufer sie noch ausdrücklich
+ * schreiben, davon drei in Flächen im Umbau (Erlass-, Entscheid-, Material-Kopf).
+ */
+export type TitelStimme = 'serif';
+
+export function SeitenTitel({ className, id, children }: {
+  /** Übergang (s. o.): wird nicht gelesen, die Stimme ist immer `serif`. */
   stimme?: TitelStimme;
   /** Zusätzliche Klassen des Aufrufers (Umbruch-Regeln, Höhen-Reservierung). */
   className?: string;
@@ -48,8 +60,7 @@ export function SeitenTitel({ stimme = 'display', className, id, children }: {
   const pk = usePaneKlasse();
   const klassen = [
     pk('text-h2 sm:text-h1', 'text-h2 @xl/pane:text-h1'),
-    stimme === 'serif' ? 'font-serif' : 'font-display',
-    'font-semibold text-ink-900',
+    'font-serif font-normal text-ink-900',
     className,
   ].filter(Boolean).join(' ');
   return <h1 id={id} className={klassen}>{children}</h1>;

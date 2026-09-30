@@ -365,6 +365,38 @@ Zeile «aufgehoben» in der §-Konkordanz, der Wortlaut im Archiv (konsolidiert
 D-3/D-4/D-5/QS-UI-8a wörtlich — abgelöst ist ihr Geltungsanspruch, nicht ihre
 Richtigkeit (Belege altern nicht).
 
+**F0.11 — Titelordnung (HN-D2, 30.9.2026; Go David 24.9.2026).** Gleiche Stufe =
+gleiche Schrift, gleiches Gewicht, auf jeder Seite. Vier Stufen, je EIN Baustein;
+die Grössen stammen aus der Skala (B2).
+
+| Stufe | Rolle | Tag | Schrift · Gewicht | Grösse | Baustein |
+|---|---|---|---|---|---|
+| 1 | Seitentitel | `h1` | Literata · 400 | `text-h2`, ab `sm` (im Pane: `@xl/pane`) `text-h1` | `ui/SeitenTitel` |
+| 2 | Abschnittstitel | `h2` (unter einem `h2`: `h3`) | Archivo · 600 | `text-h3` (20 px) | `layout/AbschnittKopf` (Overline optional) |
+| 3 | Gruppenkopf | `h2`–`h4` oder `p` | Literata kursiv · 600 am `h2`/`h3` (Registerfarbe) | 12 px | `ui/GruppenKopf` (`.lc-randtitel`) |
+| 4 | Etikett, Unterabschnitt | `p`, `span`, `h4` | Archivo · 400 | 12 px | `.lc-overline` |
+
+- **Gemessen** (30.9.2026, 1440 hell, `dist/`): H1 auf den 12 Seiten im Band
+  Gewicht 400, in Leser, Entscheid und Material 600, im Lesemodus-Overlay Archivo
+  statt Literata; der Abschnittstitel der Vorlagen-Schritte Literata statt
+  Archivo; Unterabschnitte in Formularen als `h4` `text-body-s font-semibold`
+  statt `.lc-overline`. Soll ist die Mehrheit: Literata 400 für die H1, Archivo 600
+  für Stufe 2.
+- **Stufe 2 in dichten Flächen** darf eine Skalenstufe kleiner stehen (Start-Blatt
+  `text-body-s`, Deckung/Register `text-body`) — Familie und Gewicht bleiben.
+- **Ergebnis-Titel** ist Stufe 2 und bleibt `h2` (axe `heading-order`, R5-F2): der
+  Ergebnisblock ist die zweite Ebene unter dem Seiten-`h1`, nie `h3`.
+- **Etikett an Überschrift:** Stufe 4 steht als `p`/`span`/`h4` (Gewicht 400); ein
+  `h2`/`h3` mit `.lc-overline` erbt 600 aus der Basisregel h1–h3 und ist dort nur
+  als Gruppenkopf (Stufe 3) gewollt.
+- **Ausnahmen:** die Begrüssung auf «/» (Literata kursiv, `start/SuchBlock`, A-1-
+  Ausnahme) ist keine Seitentitel-Stufe; der Gruppenkopf im Leser-Panel
+  (`[data-v3-panel]`, Archivo 600) bleibt bis zum Ende der Auflage
+  `W2·29-WERKBANK-LESER`.
+- Wächter: `src/tests/design-titelordnung.test.tsx` (Signatur je Stufe, Bausteine
+  und Quellsonde; die noch nicht umgestellten Aufrufer stehen dort als Schuldliste,
+  die nur schrumpfen darf).
+
 ---
 
 Gegründet auf doppelt-verifizierte UI-Design-Recherche (25.6.2026,
@@ -1581,7 +1613,8 @@ Reihenfolge — vom Verdikt zur Mitnahme:
                             MASSGEBLICHEN Werts — i. d. R. Fristende bzw.
                             Hauptbetrag — trägt Strich + Fläche «Werkzeuge»,
                             `.lc-akzent-w`, EckdatenKachel akzent)
-  2. ErgebnisAnzeige        (Status-Verdikt → Vorbehalte → Rechenweg →
+  2. ErgebnisAnzeige        (Kopf: Overline «Ergebnis» + Titel als `h2`, Stufe 2
+                            F0.11; dann Status-Verdikt → Vorbehalte → Rechenweg →
                             Annahmen → Normverweise → Volltext-Disclaimer)
   3. Visualisierung         (FristenKalender · Timeline — falls vorhanden)
   4. BegruendungAbsatz      (zitierfähiger Fliesstext, R6)
@@ -1681,8 +1714,11 @@ Link-Absätze auf Seitenebene.
 
 ### §R-11 · Typografie/Token (Kurzfassung; Werte: `design/tokens.json`)
 
-- Überschriften: h1 nur im RechnerKopf; Abschnitts-Beschriftungen als
-  `lc-overline`; Ergebnis-Titel als h3 (ErgebnisAnzeige).
+- Überschriften: Titelordnung F0.11 (vier Stufen, je ein Baustein). Die h1
+  zeichnet nur `SeitenTitel` (im Rechner über `RechnerKopf`/`WerkzeugKopf`);
+  Abschnitte sind `AbschnittKopf` (Stufe 2); Abschnitts-Beschriftungen und
+  Unterabschnitte `lc-overline`; der Ergebnis-Titel ist `h2` (ErgebnisAnzeige,
+  axe `heading-order` — nicht h3).
 - Werte/Daten/Beträge im `num`-Schnitt (Tabellenziffern); Boxen nur
   über die `lc-*`-Klassen (card/tile/panel/notice/badge/chip);
   Tailwind-Defaults `text-sm`/`text-lg` sind verboten.

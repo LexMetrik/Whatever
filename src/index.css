@@ -1291,6 +1291,10 @@
      nur der Fliesstext ohne eigene Gewichtsangabe erbt die 450. Darum steht hier
      eine Regel und kein Eingriff an ~40 Aufrufstellen (§5/§10). */
   :where([class~="font-serif"]) { font-weight: var(--lese-gewicht); }
+  /* Basis der Titelordnung (DESIGN-REGLEMENT F0.11): h2/h3 OHNE eigene Klassen
+     sind Stufe 2 (Archivo 600). h1 setzt `ui/SeitenTitel` selbst (Stufe 1:
+     Literata 400, überschreibt diese Zeile); `.lc-randtitel` (Stufe 3) und
+     `.lc-overline` (Stufe 4) setzen ihre Familie an der Klasse. */
   h1, h2, h3 { font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; letter-spacing: -0.015em; color: var(--ink-900); }
 
   /* ══ W2·24-NACHZUG R6I (7.9.2026) · DIE VORSCHAU-INSEL SCHWENKT NIE UM ═════
@@ -4433,7 +4437,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   border-top: 2px solid var(--reg-marke, var(--rule));
   padding: 0.875rem 1rem 1rem;
 }
-.ub-kopf h1 { font-weight: 400; }
+/* HN-D2 (30.9.2026): hier stand `.ub-kopf h1 { font-weight: 400 }` — eine
+   Überschreibung von aussen gegen das `font-semibold` des Bausteins, die nur im
+   Band wirkte (Leser, Entscheid, Material blieben 600). Das Gewicht der H1
+   trägt jetzt `ui/SeitenTitel` selbst (F0.11 Stufe 1: Literata 400). */
 .lc-route .ub-kopf .lc-overline, .ub-kopf .lc-overline { color: var(--ink-600); }
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
    Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
@@ -4722,7 +4729,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    Wort für Wort gültig — `.lc-overline` selbst wird NICHT angefasst, sie bleibt
    Archivo. `.lc-randtitel` ist die Variante für die Zeile, die einen Abschnitt
    BENENNT (Gruppenkopf, Blattname, Marginalie); sie ist ein Rezept, kein
-   Einzelstellen-Stil. */
+   Einzelstellen-Stil.
+   HN-D2 (30.9.2026): das ist Stufe 3 der Titelordnung (F0.11) — Literata
+   kursiv 12 px, Gewicht aus der Basis-Regel h1–h3 (600 an h2/h3, 400 an `p`/
+   `span`); die Klasse pinnt es bewusst NICHT, weil geschichtete Gewichts-
+   Utilities (`font-medium` an den Leser-Randtiteln) sonst überstimmt würden. */
 .lc-randtitel {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
