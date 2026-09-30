@@ -9325,6 +9325,147 @@
       "sha": "66da6c4a86d908a5b9e8424d2c45057627ba0301545d6c50f3e69de6278ee18a"
     },
     {
+      "id": "bund/VZV/annex_u1",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1",
+      "artikelLabel": "Beilage",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Beschreibung der Führerausweiskategorien, -unterkategorien und -spezialkategorien",
+          "titel": 2
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;"
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 3500 kg nicht übersteigt;"
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie C und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;"
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie D und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;"
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie C1 und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;"
+        },
+        {
+          "absatz": null,
+          "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie D1 und einem Anhänger, dessen Gesamtgewicht 750 kg nicht übersteigt;",
+          "items": [
+            {
+              "marke": "[tab]",
+              "text": "Kategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "A",
+              "text": "Motorräder",
+              "trenner": ":"
+            },
+            {
+              "marke": "B",
+              "text": "Motorwagen und dreirädrige Motorfahrzeuge mit einem Gesamtgewicht von nicht mehr als 3500 kg und nicht mehr als acht Plätzen ausser dem Führersitz;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C",
+              "text": "Motorwagen mit einem Gesamtgewicht von mehr als 3500 kg und nicht mehr als acht Plätzen ausser dem Führersitz;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D",
+              "text": "Motorwagen zum Personentransport mit mehr als acht Plätzen ausser dem Führersitz;",
+              "trenner": ":"
+            },
+            {
+              "marke": "BE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie B und einem Anhänger, die als Kombination nicht unter die Kategorie B fallen;",
+              "trenner": ":"
+            },
+            {
+              "marke": "CE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie C und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg;",
+              "trenner": ":"
+            },
+            {
+              "marke": "DE",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Kategorie D und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg.",
+              "trenner": ":"
+            },
+            {
+              "marke": "[tab]",
+              "text": "Unterkategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "A1",
+              "text": "Motorräder mit einem Hubraum von nicht mehr als 125 cm 3 und einer Motorleistung von höchstens 11 kW;",
+              "trenner": ":"
+            },
+            {
+              "marke": "B1",
+              "text": "dreirädrige Motorfahrzeuge mit einem Leergewicht von nicht mehr als 670 kg und Kleinmotorfahrzeuge;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C1",
+              "text": "Motorwagen mit einem Gesamtgewicht von mehr als 3500 kg, aber nicht mehr als 7500 kg und nicht mehr als acht Plätzen ausser dem Führersitz;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D1",
+              "text": "Motorwagen zum Personentransport mit mehr als acht, aber nicht mehr als 16 Plätzen ausser dem Führersitz;",
+              "trenner": ":"
+            },
+            {
+              "marke": "C1E",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie C1 und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 12 000 kg nicht übersteigt;",
+              "trenner": ":"
+            },
+            {
+              "marke": "D1E",
+              "text": "Fahrzeugkombinationen aus einem Zugfahrzeug der Unterkategorie D1 und einem Anhänger mit einem Gesamtgewicht von mehr als 750 kg, sofern das Gesamtzugsgewicht 12 000 kg nicht übersteigt und der Anhänger nicht zum Personentransport verwendet wird.",
+              "trenner": ":"
+            },
+            {
+              "marke": "[tab]",
+              "text": "Spezialkategorien:",
+              "trenner": ""
+            },
+            {
+              "marke": "F",
+              "text": "Motorfahrzeuge, ausgenommen Motorräder, mit einer Höchstgeschwindigkeit bis 45 km/h;",
+              "trenner": ":"
+            },
+            {
+              "marke": "G",
+              "text": "Land- und forstwirtschaftliche Motorfahrzeuge mit einer Höchstgeschwindigkeit bis 30 km/h, unter Ausschluss der Ausnahmefahrzeuge;",
+              "trenner": ":"
+            },
+            {
+              "marke": "M",
+              "text": "Motorfahrräder.",
+              "trenner": ":"
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#annex_u1",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "e259840e484438ccc4300f2dde0d8ad48aeacd6e2bc912f54bf9d31d55015375"
+    },
+    {
       "id": "bund/VZV/annex_4_a",
       "ebene": "bund",
       "quelle": "VZV",
@@ -9413,6 +9554,26 @@
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
       "sha": "1bdcc6cede5080b94d64511bd44333ad2cb9eb6d733fa441e4f9013b70ac5775"
+    },
+    {
+      "id": "bund/VZV/annex_u1__2",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1__2",
+      "artikelLabel": "Anhänge 5 und 6",
+      "aufgehoben": true,
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#fnbck-d367071e19095",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
       "id": "bund/VZV/annex_7",
@@ -9594,6 +9755,26 @@
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
       "sha": "dcfe3d534de54f35043e96e8e1081f11f2fd75d659bce85baca64fb412b07393"
+    },
+    {
+      "id": "bund/VZV/annex_u1__3",
+      "ebene": "bund",
+      "quelle": "VZV",
+      "erlass": "VZV",
+      "artikel": "annex_u1__3",
+      "artikelLabel": "Anhang 8 und 9",
+      "aufgehoben": true,
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1976/2423_2423_2423/de#fnbck-d367071e19320",
+      "abgerufen": "2026-09-30",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
       "id": "bund/VZV/annex_10",
