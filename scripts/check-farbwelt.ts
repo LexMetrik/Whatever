@@ -25,9 +25,8 @@
 //       stillschweigend falsch werden).
 //   (e) KEINE HEX-FARBE IN EINER DATA-URI in src/index.css (R3-F2, 6.9.2026) —
 //       Farbwerte in URLs erben keine Token und überleben jede Rekalibrierung.
-//   + BEKANNTE RISSE (D-1-Input): heute unter der Schwelle liegende Paare —
-//       WARNUNG + Fail NUR bei Verschlechterung (Baseline-Guard), damit das Tor
-//       auf dem IST-Stand grün ist, ohne die Risse zu verstecken.
+//   + BEKANNTE RISSE (D-1-Input): Paare unter der Schwelle — WARNUNG, Fail nur
+//       bei Verschlechterung (Baseline-Guard); Rollen-Paare: farbwelt-risse.ts.
 //
 // Lauf:  npm run check:farbwelt   (Teil von check:seriell → run-parallel → gate).
 import { readFileSync } from 'node:fs';
@@ -37,9 +36,10 @@ import { calcAPCA } from 'apca-w3';
 // Fail/Warn-Politik, Bericht (§6.6-Trennung, 31.8.2026).
 import { hex, kontrast, loeseFarbe, oklchOf, tokensOf, ueber, type Mode } from './farbwelt-messung';
 import {
-  ALIAS, APCA_PROBEN, BASELINE_TOL, CONFIG_TOKENS, FAMILIEN, FIXPUNKT,
+  ALIAS, APCA_PROBEN, BASELINE_TOL, CONFIG_TOKENS, DURCH_ROLLE, FAMILIEN, FIXPUNKT,
   HUE_DRIFT_MAX, PFLICHT, REFERENZ, REF_TOL, RISSE,
 } from './farbwelt-tabellen';
+import { werteRisseAus } from './farbwelt-risse';
 
 // ── Tor-Zustand ─────────────────────────────────────────────────────────────
 const fehler: string[] = [];
@@ -82,13 +82,8 @@ for (const f of FIXPUNKT) {
 }
 
 // Bekannte Risse (Baseline-Guard)
-for (const r of RISSE) {
-  const ist = kontrast(r.fg, r.bg, r.mode);
-  const marke = ist < r.schwelle ? 'RISS' : 'geheilt';
-  warnungen.push(`[${marke}] ${r.fg}/${r.bg} ${r.mode}: ${ist.toFixed(2)}:1 (Ziel ${r.schwelle}:1) — ${r.tag}`);
-  if (ist < r.ist - BASELINE_TOL)
-    fehler.push(`Verschlechterung ${r.fg}/${r.bg} ${r.mode}: ${ist.toFixed(2)}:1 < Baseline ${r.ist.toFixed(2)}:1 — bekannter Riss darf nicht tiefer sinken (${r.tag}).`);
-}
+const risse = werteRisseAus(RISSE, DURCH_ROLLE, kontrast, BASELINE_TOL);
+warnungen.push(...risse.warnungen); fehler.push(...risse.fehler);
 
 // ── (e) KEINE HEX-FARBE IN EINER DATA-URI (R3-F2, 6.9.2026) ─────────────────
 //
@@ -174,6 +169,11 @@ if (warnungen.length) {
   for (const w of warnungen) console.log('  · ' + w);
   console.log('');
 }
+if (risse.ausgeschlossen.length) {
+  console.log(`DURCH ROLLE AUSGESCHLOSSEN (keine Warnung, ${risse.ausgeschlossen.length}):`);
+  for (const a of risse.ausgeschlossen) console.log('  · ' + a);
+  console.log('');
+}
 console.log('APCA (beratend, KEIN Tor — WCAG 2.2 ist das Gate):');
 for (const z of apcaZeilen) console.log(z);
 console.log('');
@@ -186,6 +186,6 @@ if (fehler.length) {
 console.log(
   `Farbwelt-Tor ok — ${PFLICHT.length * 2} WCAG-Pflichtpaare (hell+dunkel), ` +
   `${REFERENZ.length * 2} Referenzwerte (§4b-B), ${FIXPUNKT.length} Fixpunkte, ` +
-  `Flächen-L-Leiter beide Modi, kein Hex in data-URIs. ${warnungen.length} beratende Warnung(en) offen (D-1/D-4/D-5).`,
+  `Flächen-L-Leiter beide Modi, kein Hex in data-URIs. ${warnungen.length} beratende Warnung(en) offen (D-1/D-4/D-5), ${risse.ausgeschlossen.length} Paare durch Rolle ausgeschlossen.`,
 );
 
