@@ -186,6 +186,7 @@ export type LabelKlasse =
   | 'art-bereich'
   | 'annex'
   | 'annex-frei'
+  | 'annex-doppelt'
   | 'disp'
   | 'scope'
   | 'decl'
@@ -196,6 +197,9 @@ const ART_ID = /^art_(\d+)((?:_[a-z]+)*)(?:__(\d+))?$/;
 const ART_TOKEN = '\\d+(?:_[a-z]+)*';
 const ART_BEREICH = new RegExp(`^art_(${ART_TOKEN})_(${ART_TOKEN})$`);
 const ANNEX_FREI = /^annex_u\d+$/;
+// Folge-Vorkommen einer doppelten Anhang-id (VZV: annex_u1__2, annex_u1__3;
+// W2·27-BUND-FERTIG 30.9.2026). Label und Anker sind nicht aus der id ableitbar.
+const ANNEX_DOPPELT = /^(?:annex|scope|decl)_[A-Za-z0-9_]*__\d+$/;
 const ANNEX_ID = /^annex_((?:\d+|[IVXLC]+)(?:_(?:\d+|[a-z]+))*)$/;
 const DISP_ID = /^disp_(u\d+)_(art_.+)$/;
 const SCOPE_ID = /^scope_u\d+$/;
@@ -236,6 +240,9 @@ export interface LabelRegel {
   labelFormat?: RegExp;
   /** Erwarteter Anker (id-Token; bei disp mit amtlichem «/»). */
   anker: string;
+  /** Anker NICHT aus der id ableitbar (Folge-Vorkommen doppelter Anhang-id):
+   *  geprüft wird nur «kein Synthese-Suffix» (B2) und Eindeutigkeit (B3). */
+  ankerFrei?: true;
 }
 
 /**
@@ -252,6 +259,7 @@ export function klassifiziere(token: string): LabelRegel | null {
   const bereich = artTeilLabel(token);
   if (bereich !== null) return { klasse: 'art-bereich', label: bereich, anker: token };
   if (ANNEX_FREI.test(token)) return { klasse: 'annex-frei', label: null, anker: token };
+  if (ANNEX_DOPPELT.test(token)) return { klasse: 'annex-doppelt', label: null, anker: token, ankerFrei: true };
   const a = token.match(ANNEX_ID);
   if (a) {
     const [erster, ...rest] = a[1].split('_');
@@ -388,7 +396,18 @@ export function pruefeLabelUrlMitDeckung(snapshots: NormSnapshot[]): {
         });
       }
     }
-    if (anker !== null && anker !== regel.anker) {
+    if (regel.ankerFrei) {
+      // Folge-Vorkommen: der Anker darf nie der Synthese-Token sein (amtlich nicht
+      // existent); dass er nicht auf das 1. Vorkommen zeigt, erzwingt B3 (URL je Erlass eindeutig).
+      if (anker !== null && /__\d+$/.test(anker)) {
+        befunde.push({
+          id: s.id,
+          regel: 'B2-anker-synthese',
+          klasse: regel.klasse,
+          text: `Anker "#${anker}" trägt den Synthese-Suffix (amtlich nicht existent)`,
+        });
+      }
+    } else if (anker !== null && anker !== regel.anker) {
       befunde.push({
         id: s.id,
         regel: 'B1-anker',

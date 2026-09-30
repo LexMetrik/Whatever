@@ -101,7 +101,7 @@ describe('Drift-Riegel: Anhang-Folge-Vorkommen', () => {
   });
 
   it('rot: Synthese-Suffix im Anker, leeres Label, Basis-Anker doppelt (Fehlsprung aufs 1. Vorkommen)', () => {
-    expect(regeln([snap('bund/VZV/annex_u1__2', 'X', `${B}#annex_u1__2`)])).toContain('B2-anker-synthese');
+    expect(regeln([snap('bund/VZV/annex_u1__2', 'X', `${B}#annex_u1__2`)])).toEqual(['B2-anker-synthese:annex-doppelt']);
     expect(regeln([snap('bund/VZV/annex_u1__2', '', `${B}#fnbck-d367071e19095`)])).toEqual(['B1-label:annex-doppelt']);
     const beide = regeln([
       snap('bund/VZV/annex_u1', 'Beilage', `${B}#annex_u1`),
