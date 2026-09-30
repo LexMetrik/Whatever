@@ -218,6 +218,19 @@ function quellenAusSegment(segment: string, links: ReadonlyArray<FnLink>): FnLin
   return quellen;
 }
 
+/**
+ * W3-11 (W2·27-BUND-FERTIG, 30.9.2026): «Berichtigt von der Redaktionskommission der BVers
+ * (Art. 33 GVG – AS 1974 1051)» nennt die RECHTSGRUNDLAGE der Berichtigung samt deren Fundstelle,
+ * nicht die Fundstelle der Berichtigung (die Fussnote nennt keine). oc/1974/1051_1051_1051 ist
+ * «Geschäftsverkehrsgesetz, Änderung» (SPARQL 30.9.2026; ausser Kraft 2003-12-01), Art. 58 ParlG
+ * (SR 171.10) seine heutige Entsprechung — dieselbe Fussnotenform schreibt dort «(Art. 58 Abs. 1
+ * ParlG; SR 171.10)» und lieferte nie eine Quelle. 10 Ereignisse trugen «AS 1974 1051» als Quelle
+ * der Berichtigung (ATSG 47, AVIG 43a, BETMG 17, DESG 36, OR 328/336c/685d/716a, STG 29, STGB
+ * 305bis). Eng: nur die Klammer «(Art. N [Abs. M] GVG|ParlG – AS …)» (runde oder eckige Klammer);
+ * jede andere Fundstelle im Segment bleibt Quelle.
+ */
+const RECHTSGRUNDLAGE_RE = /[([]\s*Art\.\s*\d+[a-z]*(?:\s+Abs\.\s*\d+)?\s+(?:GVG|ParlG)\s*[–—;,-]\s*AS\b[^()[\]]*[)\]]/g;
+
 /** Datiertes In-Kraft-/Wirkungs-Ergebnis eines Segments: {datum,wirkung} oder null. */
 function datumAusSegment(segment: string): { datum: string | null; wirkung: boolean } | null {
   TRIGGER_RE.lastIndex = 0;
@@ -267,7 +280,7 @@ export function parseFussnoteHistorie(fn: FnEingang): FussnoteHistorie {
         typ,
         datum: dat?.datum ?? null,
         wirkung: dat?.wirkung ?? false,
-        quellen: quellenAusSegment(segment, links),
+        quellen: quellenAusSegment(typ === 'berichtigt' ? segment.replace(RECHTSGRUNDLAGE_RE, ' ') : segment, links),
         absatz,
         item,
       });
