@@ -175,7 +175,7 @@ export function VerzugszinsForm() {
 
       {/* Teilzahlungen & Satzänderungen */}
       <div className="space-y-3">
-        <h4 className="text-body-s font-semibold text-ink-700">Teilzahlungen &amp; Satzänderungen (Art. 85 OR)</h4>
+        <h4 className="lc-overline">Teilzahlungen &amp; Satzänderungen (Art. 85 OR)</h4>
         {/* R2-F/F1-9: EINE Liste, zwei Hinzufügen-Knöpfe — dafür trägt der
             ListenEditor `weitere`. Die Knöpfe standen bisher ÜBER der Liste
             (Kanon: darunter), das «Entfernen» war eine vierte Grid-Spalte.

@@ -32,7 +32,7 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
 
   return (
     <div className="space-y-3">
-      <h4 className="text-body-s font-semibold text-ink-700">
+      <h4 className="lc-overline">
         Sperrereignisse (Art. 336c OR)
         {hinweis && <span className="ml-2 text-xs font-normal text-ink-500">({hinweis})</span>}
       </h4>

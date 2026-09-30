@@ -13,9 +13,9 @@
  *   C · CSS: kein Selektor überstimmt die H1 von aussen (vor HN-D2 tat es
  *       `.ub-kopf h1 { font-weight: 400 }` — die Band-Seiten 400, der Rest 600);
  *       Stufe 3 und 4 tragen ihre Familie an der Klasse.
- *   D · Quellsonde: Formen, die gegen die Tabelle verstossen, stehen NUR noch in
- *       der Schuldliste von PR 2. Die Liste darf nur schrumpfen: wer eine Stelle
- *       umstellt, streicht sie hier (sonst rot), wer eine neue baut, scheitert.
+ *   D · Quellsonde: Formen, die gegen die Tabelle verstossen, gibt es nirgends
+ *       mehr — die Schuldliste aus PR 1 ist mit PR 2 (Aufrufer, 30.9.2026)
+ *       leer; wer eine neue Stelle gegen die Tabelle baut, scheitert.
  *   E · NEGATIV-KONTROLLEN (§6.7): jeder Ausdruck findet die Vorher-Form, wie sie
  *       am 30.9.2026 im Repo stand.
  *
@@ -228,22 +228,19 @@ function funde(probe: (quelle: string) => boolean): string[] {
   return alleTsx().filter((d) => probe(liesOhneKommentare(d))).map(rel).sort();
 }
 
-describe('HN-D2 D — Schuldliste für PR 2 (Aufrufer-Umstellung); darf nur schrumpfen', () => {
-  const WIE = 'Die Stelle ist umgestellt → hier streichen. Eine NEUE Stelle → nicht eintragen, sondern nach F0.11 bauen.';
+describe('HN-D2 D — Quellsonde: die Schuldliste von PR 1 ist abgetragen (PR 2, 30.9.2026)', () => {
+  const WIE = 'Eine NEUE Stelle gegen die Tabelle → nicht eintragen, sondern nach F0.11 bauen (Baustein statt Einzelklasse).';
 
-  it('Abschnittstitel (text-h3) in Literata: nur noch der Wizard-Schritttitel → AbschnittKopf', () => {
-    expect(funde(serifAbschnitt), WIE).toEqual(['components/vorlagen/wizard.tsx']);
+  it('Abschnittstitel (text-h3) in Literata: keine Stelle mehr (Wizard → AbschnittKopf)', () => {
+    expect(funde(serifAbschnitt), WIE).toEqual([]);
   });
 
-  it('Zwischenüberschrift als fetter h4 statt .lc-overline: zwei Formular-Stellen', () => {
-    expect(funde(fetteH4), WIE).toEqual([
-      'components/forms/SperrereignisseEditor.tsx',
-      'components/forms/VerzugszinsForm.tsx',
-    ]);
+  it('Zwischenüberschrift als fetter h4 statt .lc-overline: keine Stelle mehr', () => {
+    expect(funde(fetteH4), WIE).toEqual([]);
   });
 
-  it('Etikett in Versalien mit Sperrsatz (F0.7): nur noch ZweiachsigerEinstieg', () => {
-    expect(funde(versalEtikett), WIE).toEqual(['components/ZweiachsigerEinstieg.tsx']);
+  it('Etikett in Versalien mit Sperrsatz (F0.7): keine Stelle mehr', () => {
+    expect(funde(versalEtikett), WIE).toEqual([]);
   });
 
   it('POSITIV-SONDE: der Sweep sieht den Baustein selbst (sonst fegte er ins Leere)', () => {
