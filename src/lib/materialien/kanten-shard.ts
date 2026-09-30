@@ -20,7 +20,9 @@
 // scripts/materialien/kanten-erlasse.ts; Drift-Tor check:materialien). Vorher ging
 // jeder Erlass ohne Shard als Netz-404 über die Leitung (Konsolenfehler je Erlass,
 // gemessen gegen Prod 24.9.2026: KVG.json 404). Fachlich unverändert: kein Shard =
-// `null` = «keine Kanten».
+// `leer` = «keine Kanten». Ladefehler sind davon getrennt (`fehler`, W3-5-Rest
+// 30.9.2026): `ladeKantenShard` bleibt als dünne `null`-Fassung, die Anzeige nimmt
+// `ladeKantenShardErgebnis`.
 
 import { KANTEN_ERLASSE } from './kanten-erlasse.generated';
 
@@ -64,54 +66,82 @@ interface RohShard {
 
 const KANTEN_BASIS = '/materialien/kanten';
 
-const shardPromises = new Map<string, Promise<KantenShard | null>>();
+/**
+ * Ergebnis eines Shard-Ladens, DREI Zustände (§8, Posten W3-5-Rest 25.9.2026):
+ * «leer» (Erlass ohne Material-Kanten — nicht in `KANTEN_ERLASSE` oder 404) ist
+ * eine ANTWORT; «fehler» (Netz-/Parse-Fehler, 5xx, fehlender Bucket) ist KEINE —
+ * die Fläche darf sie nie als «nichts erfasst» ausgeben. Muster wie
+ * `Geladen<T>` (`wert: null` = Quelle unerreichbar, leere Liste = nichts erfasst).
+ */
+export type KantenShardErgebnis =
+  | { zustand: 'ok'; shard: KantenShard }
+  | { zustand: 'leer' }
+  | { zustand: 'fehler' };
 
+const LEER: KantenShardErgebnis = { zustand: 'leer' };
+const FEHLER: KantenShardErgebnis = { zustand: 'fehler' };
+
+const shardPromises = new Map<string, Promise<KantenShardErgebnis>>();
+
+/** `null` = 404 (Datei gibt es nicht); jeder andere Fehlschlag wirft. */
 async function holeJson(pfad: string): Promise<RohShard | null> {
   const res = await fetch(pfad);
-  if (!res.ok) return null;
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return (await res.json()) as RohShard;
 }
 
 /**
- * Lädt den Kanten-Shard EINES Erlasses (mit Bucket-Vereinigung). `null` =
- * Erlass ohne Material-Kanten (nicht in `KANTEN_ERLASSE`, oder doch 404) oder
- * transienter Fehler. Promise-Cache je
- * Erlass; ein 404 wird gecacht (dauerhaft kein Shard), ein Netz-/Parse-Fehler
- * NICHT (§8 — späterer Aufruf darf erneut versuchen).
+ * Lädt den Kanten-Shard EINES Erlasses (mit Bucket-Vereinigung) und sagt, ob er
+ * `ok` geladen wurde, `leer` ist (nicht in `KANTEN_ERLASSE`, oder Kopf-404) oder
+ * `fehler` war (Netz-/Parse-Fehler, 5xx, ein Bucket fehlt/scheitert — der Kopf
+ * hat ihn ja angekündigt). Promise-Cache je Erlass; `ok` und `leer` werden
+ * gecacht, `fehler` NICHT (§8 — ein späterer Aufruf, z. B. «Erneut laden»,
+ * versucht es wieder).
  */
-export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | null> {
-  if (!KANTEN_ERLASSE.has(erlassKey)) return null; // kein Shard committet → kein Netzweg
+export async function ladeKantenShardErgebnis(erlassKey: string): Promise<KantenShardErgebnis> {
+  if (!KANTEN_ERLASSE.has(erlassKey)) return LEER; // kein Shard committet → kein Netzweg
   let p = shardPromises.get(erlassKey);
   if (!p) {
-    p = (async () => {
+    const versuch = (async (): Promise<KantenShardErgebnis> => {
       try {
         const kopf = await holeJson(`${KANTEN_BASIS}/${encodeURIComponent(erlassKey)}.json`);
-        if (!kopf) return null; // 404 = kein Shard (kein Fehler)
+        if (!kopf) return LEER; // 404 = kein Shard (kein Fehler)
         const dokumente = kopf.dokumente ?? {};
         if (Array.isArray(kopf.kanten)) {
-          return { erlass: kopf.erlass, dokumente, kanten: kopf.kanten };
+          return { zustand: 'ok', shard: { erlass: kopf.erlass, dokumente, kanten: kopf.kanten } };
         }
         if (Array.isArray(kopf.buckets)) {
           const teile = await Promise.all(
             kopf.buckets.map((b) => holeJson(`${KANTEN_BASIS}/${encodeURIComponent(erlassKey)}/${encodeURIComponent(b)}.json`)),
           );
-          if (teile.some((t) => t === null)) {
-            // Ein Bucket fehlte transient → nicht dauerhaft null cachen.
-            shardPromises.delete(erlassKey);
-            return null;
-          }
+          // Ein vom Kopf angekündigter Bucket, der 404 liefert, ist ein Defekt, kein «leer».
+          if (teile.some((t) => t === null)) return FEHLER;
           const kanten = teile.flatMap((t) => t!.kanten ?? []);
-          return { erlass: kopf.erlass, dokumente, kanten };
+          return { zustand: 'ok', shard: { erlass: kopf.erlass, dokumente, kanten } };
         }
-        return { erlass: kopf.erlass, dokumente, kanten: [] };
+        return { zustand: 'ok', shard: { erlass: kopf.erlass, dokumente, kanten: [] } };
       } catch {
-        shardPromises.delete(erlassKey);
-        return null;
+        return FEHLER;
       }
     })();
-    shardPromises.set(erlassKey, p);
+    p = versuch;
+    shardPromises.set(erlassKey, versuch);
+    // Fehlschlag nie cachen (dasselbe Muster wie `ladeMaterialManifest`).
+    void versuch.then((e) => { if (e.zustand === 'fehler' && shardPromises.get(erlassKey) === versuch) shardPromises.delete(erlassKey); });
   }
   return p;
+}
+
+/**
+ * Lädt den Kanten-Shard EINES Erlasses. `null` = Erlass ohne Material-Kanten
+ * ODER Ladefehler — die beiden sind hier NICHT unterscheidbar; wer es wissen
+ * muss (Anzeige «nichts erfasst»), nimmt `ladeKantenShardErgebnis`. Dünne
+ * Fassung darüber, Verhalten für bestehende Aufrufer unverändert.
+ */
+export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | null> {
+  const e = await ladeKantenShardErgebnis(erlassKey);
+  return e.zustand === 'ok' ? e.shard : null;
 }
 
 /** Nur für Tests: den Shard-Promise-Cache leeren. */
