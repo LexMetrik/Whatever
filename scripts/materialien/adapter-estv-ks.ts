@@ -218,10 +218,22 @@ export function erlasseAusBeschreibung(beschreibung: string): ('DBG' | 'VSTG' | 
   return out;
 }
 
-/** «vom DD.MM.YYYY» im amtlichen Titel (W-Serie/Mitteilung) → ISO; null wenn nicht vorhanden. */
+const TAGE_PRO_MONAT = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+/** Existiert das Datum im (proleptisch) gregorianischen Kalender? Jahr ≥ 1 (kein Jahr 0000). */
+function istKalenderdatum(jahr: number, monat: number, tag: number): boolean {
+  if (jahr < 1 || monat < 1 || monat > 12 || tag < 1) return false;
+  const schaltjahr = (jahr % 4 === 0 && jahr % 100 !== 0) || jahr % 400 === 0;
+  return tag <= (monat === 2 && schaltjahr ? 29 : TAGE_PRO_MONAT[monat - 1]);
+}
+
+/** «vom DD.MM.YYYY» (auch «Vom», Gross-/Kleinschreibung egal) im amtlichen Titel (W-Serie/Mitteilung)
+ *  → ISO; null wenn nicht vorhanden ODER kein Kalenderdatum («vom 31.02.2005»): ein nicht existierendes
+ *  Datum wird nie erfunden oder «zurechtgerückt» (§8) — null fällt im Aufrufer auf die deklarierten
+ *  Stufen Beschreibung/Hub-Label zurück. Nur die ERSTE «vom»-Angabe zählt (kein Weitersuchen). */
 export function titelDatumNachIso(titel: string): string | null {
-  const m = /\bvom\s+(\d{1,2})\.(\d{1,2})\.(\d{4})\b/.exec(titel);
-  if (!m) return null;
+  const m = /\bvom\s+(\d{1,2})\.(\d{1,2})\.(\d{4})\b/i.exec(titel);
+  if (!m || !istKalenderdatum(Number(m[3]), Number(m[2]), Number(m[1]))) return null;
   return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
 }
 
@@ -238,11 +250,13 @@ export function beschreibungDatumNachIso(beschreibung: string): string | null {
 }
 
 /** AN-13: amtliche Signatur der W-Serie im Titel («W01-006D vom 06.06.2001» → «W01-006»; das
- *  «D» ist das Sprachkürzel). Der Dateiname (dbst-ks-w03-006) gruppiert ESTV-intern anders —
+ *  «D» ist das Sprachkürzel, ebenso «F»/«I»). Direkt hinter Signatur (+Sprachkürzel) darf kein
+ *  Buchstabe, keine Ziffer, kein «_» und kein «-» folgen — «W95-003-2024» ist eine andere, hier
+ *  unbekannte Form und ergibt null (Dateinamen-Fallback), nie die gekürzte «W95-003» (§8). Der Dateiname (dbst-ks-w03-006) gruppiert ESTV-intern anders —
  *  live 25.9.2026 w03-006 ↔ W01-006D, w03-008 ↔ W02-008D —, darum trägt die ANZEIGE die
  *  Titel-Signatur, der Key bleibt dateinamen-stabil (§2.6). */
 export function wSignaturAusTitel(titel: string): string | null {
-  const m = /^(W\d{2}-\d{3})D?\b/.exec(titel);
+  const m = /^(W\d{2}-\d{3})[DFI]?(?![\p{L}\p{N}_-])/u.exec(titel);
   return m ? m[1] : null;
 }
 
@@ -388,7 +402,7 @@ export function baueDokUndKanten(
   // Kreisschreiben selbst betitelt («Kreisschreiben Nr. 50: <Gegenstand>»).
   const wSignatur = b.familie === 'w' ? wSignaturAusTitel(roh.titel) : null;
   const gegenstand = (roh.beschreibung.split('\n')[0] ?? '').trim();
-  const titel = wSignatur && /^W\d{2}-\d{3}D? vom \d{1,2}\.\d{1,2}\.\d{4}$/.test(roh.titel.trim()) && gegenstand
+  const titel = wSignatur && /^W\d{2}-\d{3}[DFI]? vom \d{1,2}\.\d{1,2}\.\d{4}$/.test(roh.titel.trim()) && gegenstand
     ? `${roh.titel.trim()}: ${gegenstand}`
     : roh.titel;
   const shaId = createHash('sha256')

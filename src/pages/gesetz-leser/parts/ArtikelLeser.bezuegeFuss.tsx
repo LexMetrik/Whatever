@@ -8,6 +8,7 @@ import { entscheidZahl } from '../entscheidZahl';
 import { BezuegeZeile } from './BezuegeZeile';
 import { LeitfallZeile } from './ArtikelLeser.leitfaelle';
 import { EntstehungsBlock } from '../../../components/entstehung/EntstehungsBlock';
+import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
@@ -69,7 +70,7 @@ const LISTE = 'm-0 grid list-none gap-1 pl-2.5 font-sans text-leser-rand [&>li]:
 const ART = 'text-micro text-ink-500';
 
 export function ArtikelBezuegeFuss({
-  bezuege, bezuegeImFuss, historie, leitfaelle, materialien, verweise, werkzeuge, zaehler,
+  bezuege, bezuegeImFuss, historie, leitfaelle, materialien, materialienLadefehler, verweise, werkzeuge, zaehler,
   zitat, revision, onOeffnen, laedt, aktionen, onImBlatt, erlassKey, artikel, snapshot,
 }: {
   bezuege?: ArtikelBezuege;
@@ -83,6 +84,10 @@ export function ArtikelBezuegeFuss({
   historie?: ArtikelHistorie;
   leitfaelle?: LeitfallRef[];
   materialien?: MaterialBezug[];
+  /** Quelle der Materialien gescheitert (§8, `ArtikelLeser.materialienLadefehler`):
+   *  der Wert ist «Erneut laden». Dann steht in der Rubrik die Fehlerzeile, nie
+   *  ein leerer Block unter der Zahl. */
+  materialienLadefehler?: () => void;
   /** Die im Artikel genannten, auflösbaren Normverweise (`sammleVerweise`). */
   verweise: string[];
   /** Rechner/Vorlagen an genau diesem Artikel (`randNotizWerkzeuge`). */
@@ -279,7 +284,12 @@ export function ArtikelBezuegeFuss({
       nebenGriff: onImBlatt
         ? <ImBlattGriff reiter="erlaeuterungen" name={`Behördliche Erläuterungen zum Erlass im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
         : undefined,
-      inhalt: materialien && materialien.length > 0
+      inhalt: materialienLadefehler && !(materialien && materialien.length > 0)
+        // §8 (W2·27-BUND-FERTIG 30.9.2026): die Zahl oben kommt aus der Zähl-Datei
+        // und steht; scheiterte das Laden der LISTE, bliebe der Block sonst leer.
+        // Derselbe Hausbaustein und derselbe Wortlaut wie der Reiter «Erläuterungen».
+        ? <AbrufFehler gegenstand="Behördliche Erläuterungen" mehrzahl onErneut={materialienLadefehler} />
+        : materialien && materialien.length > 0
         ? (
           <>
             <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Erläuterungen</span>

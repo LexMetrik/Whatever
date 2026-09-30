@@ -1,4 +1,4 @@
-import { useEffect, useId, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArtikelHistorieZeile } from '../../pages/gesetz-leser/parts/ArtikelHistorie';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
@@ -16,7 +16,8 @@ import {
   type SynopseLage,
 } from '../../lib/entstehung/synopse-diff';
 import { SynopseKarte, type EntwurfFund } from './SynopseKarte';
-import { ladeKantenShardErgebnis } from '../../lib/materialien/kanten-shard';
+import { beiKantenShardErholt, ladeKantenShardErgebnis } from '../../lib/materialien/kanten-shard';
+import { AbrufFehler } from '../ui/AbrufFehler';
 import { artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { ArtikelHistorie, HistorieEreignis } from '../../lib/normtext/historie-laden';
@@ -276,6 +277,9 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   /** Wie viele Wegleitungen diesen Artikel nennen — `undefined` = noch unterwegs,
    *  `'fehler'` = der Shard-Abruf ist gescheitert (KEINE Auskunft über den Artikel). */
   const [praxis, setPraxis] = useState<number | 'fehler' | undefined>(undefined);
+  /** «Erneut laden» der Praxis-Fehlerzeile: Zähler, der den Abruf-Effekt neu anstösst. */
+  const [praxisVersuch, setPraxisVersuch] = useState(0);
+  const praxisErneut = useCallback(() => { setPraxis(undefined); setPraxisVersuch((v) => v + 1); }, []);
   const kartenId = useId();
   /** Welcher Fassungsvergleich steht offen? `p<i>` = Punkt i der Leiste,
    *  `o<i>` = Eintrag i des Abschnitts «ohne Fussnoten-Ereignis». */
@@ -319,7 +323,13 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
       setPraxis(dok.size);
     });
     return () => { lebt = false; };
-  }, [erlassKey, artikel]);
+  }, [erlassKey, artikel, praxisVersuch]);
+
+  // Holt eine andere Fläche desselben Blatts den gescheiterten Shard nach («Erneut
+  // laden» der Artikel-Gruppe oder der Erlass-Tafel), zieht diese Zeile mit — der
+  // Fehlschlag ist nicht gecacht, die Zeile bliebe sonst trotz geladener Daten stehen.
+  useEffect(() => (praxis === 'fehler' && erlassKey ? beiKantenShardErholt(erlassKey, praxisErneut) : undefined),
+    [praxis, erlassKey, praxisErneut]);
 
   // ── Der Fassungsvergleich lädt ERST auf «Alt/Neu» ──────────────────────────
   //    Ein Klick, ein Shard, je Erlass einmal (die Promise im Loader ist
@@ -550,22 +560,26 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
           </ul>
         </div>
       )}
-      <p className={E.praxis} data-entstehung-praxis>
-        <span className={praxis === 'fehler' ? 'text-warn-700' : 'text-ink-500'}>
-          {praxis === undefined
-            ? 'Praxis: lädt …'
-            : praxis === 'fehler'
-              // Kein Zähl-Satz: die Quelle war nicht erreichbar, nicht leer.
-              ? 'Praxis-Angaben konnten nicht geladen werden.'
-            : praxis === 0
-              // §8: «erfasst» ist der Kern des Satzes — er sagt etwas über
-              // unseren Bestand, nie über die Rechtswirklichkeit.
-              ? 'Keine Wegleitung erfasst, die diesen Artikel nennt.'
-              : praxis === 1
-                ? '1 Wegleitung nennt diesen Artikel — siehe Rubrik «Materialien».'
-                : `${praxis} Wegleitungen nennen diesen Artikel — siehe Rubrik «Materialien».`}
-        </span>
-      </p>
+      {praxis === 'fehler'
+        // Kein Zähl-Satz: die Quelle war nicht erreichbar, nicht leer (§8). Der
+        // Hausbaustein statt einer Handzeile — Ton, Satzbau und «Erneut laden».
+        ? <AbrufFehler gegenstand="Praxis-Angaben" mehrzahl onErneut={praxisErneut}
+            className="mt-0.5" daten={{ 'data-entstehung-praxis': '' }} />
+        : (
+          <p className={E.praxis} data-entstehung-praxis>
+            <span className="text-ink-500">
+              {praxis === undefined
+                ? 'Praxis: lädt …'
+                : praxis === 0
+                  // §8: «erfasst» ist der Kern des Satzes — er sagt etwas über
+                  // unseren Bestand, nie über die Rechtswirklichkeit.
+                  ? 'Keine Wegleitung erfasst, die diesen Artikel nennt.'
+                  : praxis === 1
+                    ? '1 Wegleitung nennt diesen Artikel — siehe Rubrik «Materialien».'
+                    : `${praxis} Wegleitungen nennen diesen Artikel — siehe Rubrik «Materialien».`}
+            </span>
+          </p>
+        )}
     </div>
   );
 }

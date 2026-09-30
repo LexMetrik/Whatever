@@ -18,7 +18,7 @@ import {
 import { ERLASS_REGISTER } from './normtext/register';
 import { rechtsprechungFuerErlass, leitfaelleFuerArtikel, type EntscheidRef, type LeitfallRef } from './rechtsprechung/norm-index';
 import { ladeMaterialManifest } from './materialien/browse';
-import { ladeKantenShard, type KantenShard } from './materialien/kanten-shard';
+import { ladeKantenShardErgebnis, type KantenShard } from './materialien/kanten-shard';
 import type { BrowseMaterial, MaterialManifest } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
 import { erlassPfad } from './normtext/erlassAdresse';
@@ -203,18 +203,35 @@ interface DokSammler {
  * Fundstelle bleibt ohne Sublabel. Dokument-Metadaten (Titel/Behörde/Doktyp/Stand)
  * aus dem Browse-Register (register.json). Der Material-Reader IST das Material →
  * leer (kein Selbstverweis). Dedupliziert über alle normKeys.
+ *
+ * Dünne Fassung über `kontextSoftLawErgebnis` (Verhalten für Altaufrufer
+ * unverändert): ein Ladefehler und «nichts erfasst» sind hier NICHT
+ * unterscheidbar; wer es wissen muss, nimmt `kontextSoftLawErgebnis`.
  */
 export async function kontextSoftLaw(typ: KontextTyp, normKeys: readonly string[]): Promise<MaterialBezug[]> {
-  if (typ === 'material') return [];
+  return (await kontextSoftLawErgebnis(typ, normKeys)).liste;
+}
+
+/** Soft-Law-Liste + ob sie UNVOLLSTÄNDIG ist (§8, W2·27-BUND-FERTIG 30.9.2026):
+ *  `fehler` = das Manifest oder mindestens ein Kanten-Shard war nicht ladbar —
+ *  die Liste ist dann keine Auskunft über den Bestand, sondern ein Rest. Ein
+ *  Erlass ohne Shard (`leer`/404) ist KEIN Fehler. */
+export interface SoftLawErgebnis { liste: MaterialBezug[]; fehler: boolean }
+
+export async function kontextSoftLawErgebnis(typ: KontextTyp, normKeys: readonly string[]): Promise<SoftLawErgebnis> {
+  if (typ === 'material') return { liste: [], fehler: false };
   const manifest = await ladeMaterialManifest();
-  if (!manifest) return [];
+  if (!manifest) return { liste: [], fehler: true };
   const regByKey = new Map<string, BrowseMaterial>(manifest.materialien.map((m) => [m.key, m]));
 
   const proDok = new Map<string, DokSammler>();
   const reihenfolge: string[] = [];
+  let fehler = false;
   for (const k of new Set(normKeys)) {
-    const shard = await ladeKantenShard(k);
-    if (!shard) continue;
+    const ergebnis = await ladeKantenShardErgebnis(k);
+    if (ergebnis.zustand === 'fehler') { fehler = true; continue; }
+    if (ergebnis.zustand !== 'ok') continue; // leer = Erlass ohne Material-Kanten (Antwort, kein Fehler)
+    const shard = ergebnis.shard;
     for (const kante of shard.kanten) {
       let s = proDok.get(kante.dok);
       if (!s) { s = { quellen: new Set(), artikel: new Set(), ziffern: new Set() }; proDok.set(kante.dok, s); reihenfolge.push(kante.dok); }
@@ -248,7 +265,7 @@ export async function kontextSoftLaw(typ: KontextTyp, normKeys: readonly string[
       herkunft: aggregiereHerkunft(s.quellen), stand: reg.stand, artikel, sublabel,
     });
   }
-  return out.sort((a, b) => a.behoerdeKuerzel.localeCompare(b.behoerdeKuerzel) || a.key.localeCompare(b.key));
+  return { liste: out.sort((a, b) => a.behoerdeKuerzel.localeCompare(b.behoerdeKuerzel) || a.key.localeCompare(b.key)), fehler };
 }
 
 /**
@@ -278,6 +295,9 @@ export function mischeMaterialien(sync: readonly MaterialBezug[], softLaw: reado
 export interface ArtikelKontext {
   entscheide: LeitfallRef[];
   materialien: MaterialBezug[];
+  /** §8 (W2·27-BUND-FERTIG 30.9.2026): die Material-Quelle ist gescheitert —
+   *  `materialien: []` ist dann KEINE Auskunft «nichts erfasst». */
+  materialienFehler: boolean;
 }
 
 /**
@@ -287,8 +307,21 @@ export interface ArtikelKontext {
  * nicht (mehr) gelistete Dokumente still ausgelassen (§8, kein toter Link).
  */
 export async function materialienFuerArtikel(erlassKey: string, artikelToken: string): Promise<MaterialBezug[]> {
-  const [shard, manifest] = await Promise.all([ladeKantenShard(erlassKey), ladeMaterialManifest()]);
-  return projiziereMaterialien(shard, manifest, artikelToken);
+  return (await materialienFuerArtikelErgebnis(erlassKey, artikelToken)).materialien;
+}
+
+/** Wie `materialienFuerArtikel`, aber mit der Auskunft, ob eine leere Liste ein
+ *  Ladefehler ist (§8): Shard gescheitert, oder Shard da und das Manifest (Titel,
+ *  Behörde) fehlt. Ein Erlass ohne Shard ist eine ANTWORT (`fehler: false`). */
+async function materialienFuerArtikelErgebnis(
+  erlassKey: string, artikelToken: string,
+): Promise<{ materialien: MaterialBezug[]; fehler: boolean }> {
+  const [ergebnis, manifest] = await Promise.all([ladeKantenShardErgebnis(erlassKey), ladeMaterialManifest()]);
+  const shard = ergebnis.zustand === 'ok' ? ergebnis.shard : null;
+  return {
+    materialien: projiziereMaterialien(shard, manifest, artikelToken),
+    fehler: ergebnis.zustand === 'fehler' || (shard !== null && manifest === null),
+  };
 }
 
 /**
@@ -342,11 +375,11 @@ export function projiziereMaterialien(
  * Materialien parallel geladen. Rein projizierend, deterministisch je Shard-Stand.
  */
 export async function kontextFuerArtikel(erlassKey: string, artikelToken: string): Promise<ArtikelKontext> {
-  const [entscheide, materialien] = await Promise.all([
+  const [entscheide, { materialien, fehler }] = await Promise.all([
     leitfaelleFuerArtikel(erlassKey, artikelToken),
-    materialienFuerArtikel(erlassKey, artikelToken),
+    materialienFuerArtikelErgebnis(erlassKey, artikelToken),
   ]);
-  return { entscheide, materialien };
+  return { entscheide, materialien, materialienFehler: fehler };
 }
 
 /**

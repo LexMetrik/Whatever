@@ -32,7 +32,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, materialienLadefehler, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -135,6 +135,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  Bis dahin `undefined` — die Rubrik zeigt dann ihre gezählte Zahl aus der
    *  Zähl-Datei und noch keine Liste. Gleiche Quelle wie die Zahl (§5). */
   materialien?: MaterialBezug[];
+  /** W2·27-BUND-FERTIG (30.9.2026, §8) · die Quelle der Materialien ist
+   *  GESCHEITERT (Shard oder Manifest): gesetzt ⇒ das Dossier zeigt statt eines
+   *  stummen Leerblocks die Fehlerzeile, und der Wert ist deren «Erneut laden».
+   *  Referenz-stabil (`memo`-Schranke, §15): `useArtikelMaterialien` liefert ihn
+   *  aus einem `useCallback`; ungesetzt im Normalfall. */
+  materialienLadefehler?: () => void;
   /** D30 · wird beim Aufklappen der Bezüge-Zeile gerufen und armiert den
    *  bestehenden Ladepfad (`v3/panelModell.ts` → `weckeDaten`). Ohne die Prop
    *  bleibt die Zeile, was sie war (Ist-Hülle, Tests, Druck). */
@@ -587,7 +593,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           ? (
             <ArtikelBezuegeFuss bezuege={bezuege} bezuegeImFuss={bezuegeImFuss}
               erlassKey={erlass?.key} artikel={e.artikel} snapshot={e}
-              historie={historie} leitfaelle={leitfaelle} materialien={materialien} verweise={verweise}
+              historie={historie} leitfaelle={leitfaelle} materialien={materialien} materialienLadefehler={materialienLadefehler} verweise={verweise}
               werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat} revision={revision}
               onOeffnen={onBezuegeOeffnen} onImBlatt={onImBlatt} laedt={bezuegeLaedt && !bezuege}
               aktionen={aktionen} />
