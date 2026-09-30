@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../components/ui/Card';
+import { DatenTabelle } from '../components/ui/DatenTabelle';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { AbschnittKopf } from '../components/layout/AbschnittKopf';
 import { getCalculator } from '../lib/calculators';
@@ -39,43 +40,41 @@ export function RechnerVerjaehrungBoard() {
             die Allgemeinen-Teil-Mechanik (Art. 132/134/135 ff. OR).
           </AbschnittKopf>
           <div className="overflow-x-auto">
-            <table className="w-full text-body-s border-collapse">
-              <thead>
-                <tr className="text-left text-ink-600 border-b border-line">
-                  <th className="py-2 pr-4 font-medium">Anspruchstyp</th>
-                  {/* LM-191 (W2·17-UI-BEFUNDE/B18): Zahlenspalten rechtsbündig.
-                      Linksbündig stand «Jahre» bei «10 Jahre» eine Ziffernbreite
-                      neben «5 Jahre»/«3 Jahre» — die Spalte liess sich nicht als
-                      Spalte lesen. `num` (Tabellenziffern) allein reicht dafür
-                      nicht: es hält die ZIFFERN gleich breit, nicht die Zahlen
-                      gleich lang. Reine Darstellung (§3), Werte unverändert.
-                      `whitespace-nowrap`: die Auto-Layout-Breite verschob sich mit
-                      der Ausrichtung, «10 Jahre» brach sonst hinter der Zahl um. */}
-                  <th className="py-2 pr-4 font-medium text-right whitespace-nowrap">Relative Frist</th>
-                  <th className="py-2 pr-4 font-medium text-right whitespace-nowrap">Absolute Frist</th>
-                  <th className="py-2 pr-4 font-medium">Fristbeginn</th>
-                  <th className="py-2 font-medium">Normen</th>
-                </tr>
-              </thead>
-              <tbody>
-                {REGIME_REIHE.map((r) => {
-                  const m = REGIME[r];
-                  return (
-                    <tr key={r} className="border-b border-line align-top">
-                      <td className="py-2 pr-4 text-ink-900">{m.label.split(' – ')[0]}</td>
-                      <td className="py-2 pr-4 num text-right whitespace-nowrap">{jahre(m.relativJahre)}</td>
-                      <td className="py-2 pr-4 num text-right whitespace-nowrap">{m.absolutJahre != null ? jahre(m.absolutJahre) : '—'}</td>
-                      <td className="py-2 pr-4 text-ink-700">{m.beginnLabel}</td>
-                      <td className="py-2">
-                        <div className="flex flex-wrap gap-1">
-                          {m.normen.map((n) => <NormLink key={n.artikel} artikel={n.artikel} bemerkung={n.bemerkung} />)}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            {/* HN-D6/DK-14 (30.9.2026): die Tabelle stand von Hand da — sie ist der
+                erste Aufrufer des geteilten Bausteins `ui/DatenTabelle`; Klassen
+                und Zeilen sind Zeichen für Zeichen dieselben (Prerender-Vergleich
+                im PR). LM-191 (W2·17-UI-BEFUNDE/B18): Zahlenspalten rechtsbündig.
+                Linksbündig stand «Jahre» bei «10 Jahre» eine Ziffernbreite neben
+                «5 Jahre»/«3 Jahre» — die Spalte liess sich nicht als Spalte
+                lesen. `num` (Tabellenziffern) allein reicht dafür nicht: es hält
+                die ZIFFERN gleich breit, nicht die Zahlen gleich lang. Darum
+                `ziffern` = rechtsbündig + `whitespace-nowrap` (die Auto-Layout-
+                Breite verschob sich mit der Ausrichtung, «10 Jahre» brach sonst
+                hinter der Zahl um). Reine Darstellung (§3), Werte unverändert. */}
+            <DatenTabelle
+              spalten={[
+                { kopf: 'Anspruchstyp', zelle: 'text-ink-900' },
+                { kopf: 'Relative Frist', ziffern: true },
+                { kopf: 'Absolute Frist', ziffern: true },
+                { kopf: 'Fristbeginn', zelle: 'text-ink-700' },
+                { kopf: 'Normen' },
+              ]}
+              zeilen={REGIME_REIHE.map((r) => {
+                const m = REGIME[r];
+                return {
+                  key: r,
+                  zellen: [
+                    m.label.split(' – ')[0],
+                    jahre(m.relativJahre),
+                    m.absolutJahre != null ? jahre(m.absolutJahre) : '—',
+                    m.beginnLabel,
+                    <div className="flex flex-wrap gap-1">
+                      {m.normen.map((n) => <NormLink key={n.artikel} artikel={n.artikel} bemerkung={n.bemerkung} />)}
+                    </div>,
+                  ],
+                };
+              })}
+            />
           </div>
           <div className="lc-notice text-body-s">
             <p className="lc-overline mb-1">Verzahnung: Rügefrist ↔ Verjährung</p>

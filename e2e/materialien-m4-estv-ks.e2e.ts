@@ -27,12 +27,25 @@ test('Materialien-Übersicht listet die neuen ESTV-KS-Einträge, 390px ohne Over
   await page.setViewportSize({ width: 390, height: 900 })
   await page.goto('/materialien')
 
-  // register.json wird async gefetcht → auf einen neuen ESTV-KS-Titel warten (Stempel-Serie).
-  await expect(page.getByText('Kreisschreiben Nr. 12: Umsatzabgabe', { exact: false }).first()).toBeVisible({ timeout: 15000 })
+  await expect(page.locator('a.lc-card').first()).toBeVisible({ timeout: 15000 })
 
   // Kein horizontaler Overflow trotz der zusätzlichen ~90 ESTV-Karten (Lesbarkeit/§15).
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
   expect(overflow, `horizontaler Overflow ${overflow}px bei 390px`).toBeLessThanOrEqual(1)
+
+  // DEKLARIERTE ANPASSUNG (W2·31-BILDSCHIRMBREITE P6, 30.9.2026): die Übersicht
+  // rendert je Behörde höchstens 100 Karten (+ «Weitere anzeigen»); der Titel
+  // steht hinter dem Deckel. Er wird darum über das Filterfeld gesucht — das
+  // läuft über den ganzen Bestand und belegt zugleich, dass der Deckel keinen
+  // Eintrag unauffindbar macht. Der Overflow-Wächter darüber misst die gedeckelte Seite.
+  await page.getByPlaceholder('Titel, Nummer oder Behörde …').fill('Kreisschreiben Nr. 12: Umsatzabgabe')
+  await expect(page.getByText('Kreisschreiben Nr. 12: Umsatzabgabe', { exact: false }).first()).toBeVisible({ timeout: 15000 })
+
+  // B3 (Zweitprüfung #1185): die erste Messung oben sieht nur die ersten 100 Karten
+  // je Gruppe. Dieselbe Messung läuft darum auch auf der GEFILTERTEN Menge — dort
+  // steht die Karte hinter dem Deckel, die sonst nie gemessen würde.
+  const overflowGefiltert = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+  expect(overflowGefiltert, `horizontaler Overflow ${overflowGefiltert}px bei 390px (gefilterte Menge)`).toBeLessThanOrEqual(1)
 
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })

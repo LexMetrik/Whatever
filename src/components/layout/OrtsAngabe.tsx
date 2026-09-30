@@ -158,12 +158,20 @@ export function OrtsAngabe({ breadcrumb, blattLabel, artikel, aufKrume, mitLink,
   // Übersicht, auf die auch die Sektions-Krume führt: kein Ziel geht verloren.
   const eltern = krumen.slice(0, letzter).reverse().find((b) => b.to);
   const artikelKurz = kuerzeArtikel(artikel, blatt?.label);
+  // HN-D6 (A11y-Übergabe DK-Bericht, 30.9.2026): auf den Vorlagen-Seiten meldet
+  // der Kopf keine Krume (`ortsLeistenKrumen` → leer, kein Blatt-Fallback) und
+  // keinen Artikel — die Zone blieb trotzdem ein `<nav aria-label="Brotkrümel">`,
+  // eine LEERE Landmarke in der Screenreader-Liste (gemessen: 0 Kinder, 0 px
+  // hoch auf /vorlagen/nda). Die Zone selbst bleibt als `flex-1`-Füller der
+  // Leiste (die Griffe rechts behalten ihren Platz), nur die Rolle entfällt.
+  const leer = krumen.length === 0 && !artikel;
+  const Wurzel = leer ? 'div' : 'nav';
   return (
     // `@container/ort` — die Zone misst SICH SELBST (Herleitung im Kopf dieser
     // Datei). `min-w-0` + `overflow-hidden` machen sie zur einzigen schrumpfenden
     // Zone ihrer Leiste: die Griffe daneben behalten in jeder Breite ihre Plätze
     // (keine Umbruch-Wanderung, CLS 0 beim Einlaufen des Live-Artikels).
-    <nav aria-label={navLabel}
+    <Wurzel aria-label={leer ? undefined : navLabel}
       className="@container/ort flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap text-xs text-ink-500">
       {/* In schmalen Zonen: EIN Rücksprung statt vier zerhackter Krumen. */}
       {eltern?.to && (
@@ -215,6 +223,6 @@ export function OrtsAngabe({ breadcrumb, blattLabel, artikel, aufKrume, mitLink,
           </span>
         </>
       )}
-    </nav>
+    </Wurzel>
   );
 }
