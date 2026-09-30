@@ -229,7 +229,7 @@ function quellenAusSegment(segment: string, links: ReadonlyArray<FnLink>): FnLin
  * 305bis). Eng: nur die Klammer «(Art. N [Abs. M] GVG|ParlG – AS …)» (runde oder eckige Klammer);
  * jede andere Fundstelle im Segment bleibt Quelle.
  */
-const RECHTSGRUNDLAGE_RE = /[(\[]\s*Art\.\s*\d+[a-z]*(?:\s+Abs\.\s*\d+)?\s+(?:GVG|ParlG)\s*[–—;,-]\s*AS\b[^()[\]]*[)\]]/g;
+const RECHTSGRUNDLAGE_RE = /[([]\s*Art\.\s*\d+[a-z]*(?:\s+Abs\.\s*\d+)?\s+(?:GVG|ParlG)\s*[–—;,-]\s*AS\b[^()[\]]*[)\]]/g;
 
 /** Datiertes In-Kraft-/Wirkungs-Ergebnis eines Segments: {datum,wirkung} oder null. */
 function datumAusSegment(segment: string): { datum: string | null; wirkung: boolean } | null {
