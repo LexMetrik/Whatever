@@ -31,7 +31,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { type Einheit } from './parse';
-import { parseWorktreeFakten, platzName } from './gitFlaechen';
+import { alter, parseWorktreeFakten, platzName, schmutz, TAG_S, type WorktreeRoh } from './gitFlaechen';
 import { idTrifft } from './specBindung';
 
 /** Ein `wip`-Schritt mit dem von ihm belegten Baufeld (`feld:`). */
@@ -57,6 +57,16 @@ export interface PrKurz {
   titel: string;
 }
 
+/**
+ * Messergebnis zu einem Branch, der NUR gelandete Arbeit trägt (kein eigener
+ * Commit gegenüber `origin/main`, oder jeder eigene Commit ist patch-gleich in
+ * main) und — falls ausgecheckt — in einem sauberen Worktree liegt.
+ */
+export interface GelandeteSpur {
+  /** Unix-Sekunden des jüngsten Commits auf dem Branch; `null` = nicht erhoben. */
+  letzterCommitUnix: number | null;
+}
+
 /** Rohdaten des Lage-Blocks. `null` heisst «Quelle ausgefallen», nie «leer». */
 export interface LageRoh {
   wip: WipFlaeche[];
@@ -67,6 +77,14 @@ export interface LageRoh {
   prsGewuenscht: boolean;
   /** Namen der ausgefallenen Quellen, für die eine Hinweiszeile. */
   ausfaelle: string[];
+  /**
+   * Branches, die nur gelandete Arbeit tragen (Schlüssel = Branchname). Fehlt
+   * die Angabe oder der Branch, gilt er als echte Bau-Spur — «nicht gemessen»
+   * ist nie «gelandet» (fail-closed, W2·27-BUND-FERTIG).
+   */
+  gelandet?: ReadonlyMap<string, GelandeteSpur>;
+  /** Mess-Zeitpunkt in Unix-Sekunden für die Alters-Anzeige; fehlt er, entfällt sie. */
+  jetztUnix?: number;
 }
 
 /**
@@ -144,17 +162,94 @@ export function wipFlaechen(einheiten: Einheit[], inArbeit: string[]): WipFlaech
   }));
 }
 
-/** Erhebt die Lage. Kein Wurf nach aussen — Ausfälle landen in `ausfaelle`. */
+function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
+  try {
+    return laufe(cmd, args, cwd);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Misst, welche Branches der wip-Schritte NUR gelandete Arbeit tragen
+ * (W2·27-BUND-FERTIG, Vorfall 25.–30.9.2026: `QS-KORPUS` stand fünf Tage auf
+ * `wip`, weil der Branch `docs/qs-korpus-posten-rest-2` als Bau-Spur zählte,
+ * obwohl sein einziger Commit längst per Squash gelandet war).
+ *
+ * Kriterium: `git cherry origin/main <branch>` (Fallback `main`) ohne
+ * `+`-Zeile — kein eigener Commit, oder jeder patch-gleich in main. Netzfrei.
+ * Ein ausgecheckter Branch zählt nur bei sauberem Worktree (`schmutz()` aus
+ * gitFlaechen.ts, dieselbe Regel wie `aufraeumen:git`, §5) als gelandet.
+ *
+ * Vorfilter: nur Branches, deren Name oder Platzname den Slug EINES wip-Schritts
+ * trägt. Mit der wip-Liste statt aller Schritt-IDs ist das eine Obermenge der
+ * späteren Zuordnung (ein Treffer mit allen IDs ist immer auch einer mit den
+ * wip-IDs) — es wird höchstens zu viel gemessen, nie zu wenig. Das hält die
+ * git-Aufrufe am Pflicht-Einstieg klein.
+ *
+ * Fail-closed: jede nicht messbare Stelle (cherry scheitert, Status scheitert,
+ * kein Basis-Ref) lässt den Branch AUS der Karte — er bleibt echte Bau-Spur.
+ */
+function messeGelandet(
+  laufe: Laufe,
+  wip: WipFlaeche[],
+  raw: WorktreeRoh[],
+  branches: string[],
+): Map<string, GelandeteSpur> {
+  const karte = new Map<string, GelandeteSpur>();
+  const wipIds = wip.map((w) => w.id);
+  if (wipIds.length === 0) return karte;
+
+  // Branch → Pfad des Worktrees, in dem er ausgecheckt ist (Haupt-Checkout eingeschlossen).
+  const pfadVon = new Map<string, string>();
+  const kandidaten = new Set<string>();
+  for (const w of raw) {
+    if (!w.branch) continue;
+    pfadVon.set(w.branch, w.pfad);
+    const name = w.haupt ? w.branch : `${platzName(w.pfad)} [${w.branch}]`;
+    if (schrittFuerNamen(name, wipIds)) kandidaten.add(w.branch);
+  }
+  for (const b of branches) if (schrittFuerNamen(b, wipIds)) kandidaten.add(b);
+  kandidaten.delete('main');
+  if (kandidaten.size === 0) return karte;
+
+  const basis = stillLaufen(laufe, 'git', ['rev-parse', '--verify', '--quiet', 'refs/remotes/origin/main']) !== null
+    ? 'refs/remotes/origin/main'
+    : 'refs/heads/main';
+
+  for (const b of kandidaten) {
+    const cherry = stillLaufen(laufe, 'git', ['cherry', basis, `refs/heads/${b}`]);
+    if (cherry === null) continue;
+    if (cherry.split('\n').some((z) => z.startsWith('+'))) continue;
+    const pfad = pfadVon.get(b);
+    if (pfad !== undefined) {
+      const status = stillLaufen(laufe, 'git', ['status', '--porcelain', '--ignored'], pfad);
+      if (status === null || schmutz(status.split('\n')) !== null) continue;
+    }
+    const ts = Number.parseInt((stillLaufen(laufe, 'git', ['log', '-1', '--format=%ct', `refs/heads/${b}`]) ?? '').trim(), 10);
+    karte.set(b, { letzterCommitUnix: Number.isNaN(ts) ? null : ts });
+  }
+  return karte;
+}
+
+/**
+ * Erhebt die Lage. Kein Wurf nach aussen — Ausfälle landen in `ausfaelle`.
+ *
+ * `jetztUnix` ist injizierbar (Test deterministisch); Default ist die Uhr —
+ * die Erhebung ist Beschaffung, keine Rechenlogik (§2).
+ */
 export function sammleLage(
   wip: WipFlaeche[],
-  opt: { prs: boolean; laufe?: Laufe } = { prs: false },
+  opt: { prs: boolean; laufe?: Laufe; jetztUnix?: number } = { prs: false },
 ): LageRoh {
   const laufe = opt.laufe ?? laufeEcht;
   const ausfaelle: string[] = [];
 
   let worktrees: BauPlatz[] | null = null;
+  let worktreesRoh: WorktreeRoh[] | null = null;
   try {
-    worktrees = parseWorktrees(laufe('git', ['worktree', 'list', '--porcelain']));
+    worktreesRoh = parseWorktreeFakten(laufe('git', ['worktree', 'list', '--porcelain']));
+    worktrees = worktreesRoh.map((w) => ({ name: platzName(w.pfad), branch: w.branch, haupt: w.haupt }));
   } catch {
     ausfaelle.push('git worktree list');
   }
@@ -178,10 +273,18 @@ export function sammleLage(
     }
   }
 
-  return { wip, worktrees, branches, prs, prsGewuenscht: opt.prs, ausfaelle };
+  // Nur messen, wenn beide Quellen da sind — sonst warnt `staleWip` ohnehin nicht.
+  const gelandet = worktreesRoh !== null && branches !== null ? messeGelandet(laufe, wip, worktreesRoh, branches) : undefined;
+  return {
+    wip, worktrees, branches, prs, prsGewuenscht: opt.prs, ausfaelle,
+    ...(gelandet && gelandet.size > 0 ? { gelandet, jetztUnix: opt.jetztUnix ?? Math.floor(Date.now() / 1000) } : {}),
+  };
 }
 
 const TRENNER = ' · ';
+
+/** Ab wie vielen Tagen das Alter einer gelandeten Spur in der Warnung erscheint. */
+const ALTER_SCHWELLE_TAGE = 3;
 
 /**
  * **Frische-Prüfung «stale wip»** (Schritt `QS-PLAN-WIP-FRISCHE`).
@@ -211,17 +314,48 @@ const TRENNER = ' · ';
  * sie fordert zum Freigeben einer Fläche auf, die belegt sein kann.
  */
 export function staleWip(roh: LageRoh, ids: string[]): string[] {
+  return staleWipBefunde(roh, ids).map((b) => b.id);
+}
+
+/** Ein stale-wip-Schritt samt Grund: gar keine Spur, oder nur gelandete Branches. */
+export interface StaleBefund {
+  id: string;
+  /** Branches, die den Schritt nur scheinbar belegen (nur gelandete Arbeit); leer = gar keine Spur. */
+  gelandet: string[];
+  /** Jüngster Commit dieser gelandeten Branches (Unix-Sekunden); `null` = unbekannt/keine. */
+  letzterCommitUnix: number | null;
+}
+
+/**
+ * **Nur gelandete Arbeit ist keine Spur** (W2·27-BUND-FERTIG, 30.9.2026).
+ *
+ * Ein Branch oder Bau-Platz, den `roh.gelandet` als «nur gelandete Arbeit»
+ * ausweist (kein eigener Commit gegenüber `origin/main` bzw. alle patch-gleich
+ * in main, Worktree sauber), belegt den Schritt nicht mehr — der Schritt gilt
+ * dann als stale, und der Befund nennt die Branches, damit die Session weiss,
+ * dass sie abräumen und freigeben kann. Fehlt die Messung (`gelandet` nicht
+ * gesetzt oder Branch nicht darin), bleibt es bei der alten Regel: Namenstreffer
+ * = Spur. Ein detached Bau-Platz ohne Branch bleibt immer Spur.
+ */
+export function staleWipBefunde(roh: LageRoh, ids: string[]): StaleBefund[] {
   if (roh.worktrees === null || roh.branches === null) return [];
   const spuren = new Set<string>();
+  const nurGelandet = new Map<string, Set<string>>();
+  const spur = (id: string | null, branch: string | null) => {
+    if (!id) return;
+    if (branch !== null && roh.gelandet?.has(branch)) {
+      const menge = nurGelandet.get(id) ?? new Set<string>();
+      menge.add(branch);
+      nurGelandet.set(id, menge);
+    } else {
+      spuren.add(id);
+    }
+  };
   for (const w of roh.worktrees) {
     if (w.haupt) continue;
-    const t = schrittFuerNamen(`${w.name}${w.branch ? ` [${w.branch}]` : ''}`, ids);
-    if (t) spuren.add(t);
+    spur(schrittFuerNamen(`${w.name}${w.branch ? ` [${w.branch}]` : ''}`, ids), w.branch);
   }
-  for (const b of roh.branches) {
-    const t = schrittFuerNamen(b, ids);
-    if (t) spuren.add(t);
-  }
+  for (const b of roh.branches) spur(schrittFuerNamen(b, ids), b);
   for (const p of roh.prs ?? []) {
     const t = schrittFuerNamen(p.headRefName, ids);
     if (t) spuren.add(t);
@@ -229,7 +363,17 @@ export function staleWip(roh: LageRoh, ids: string[]): string[] {
   }
   // Stabile Reihenfolge ohne Locale-Abhängigkeit (§2): `sort()` vergleicht
   // Code-Einheiten, `localeCompare` das Gebietsschema der Maschine.
-  return roh.wip.map((w) => w.id).filter((id) => !spuren.has(id)).sort();
+  return roh.wip
+    .map((w) => w.id)
+    .filter((id) => !spuren.has(id))
+    .sort()
+    .map((id) => {
+      const branches = [...(nurGelandet.get(id) ?? [])].sort();
+      const zeiten = branches
+        .map((b) => roh.gelandet?.get(b)?.letzterCommitUnix ?? null)
+        .filter((t): t is number => t !== null);
+      return { id, gelandet: branches, letzterCommitUnix: zeiten.length ? Math.max(...zeiten) : null };
+    });
 }
 
 function bezug(name: string, ids: string[]): string {
@@ -294,11 +438,23 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
 
   // Frische-Warnung: die Schlussfolgerung aus allem darüber, deshalb danach —
   // und VOR der Ausfall-Zeile, die den Block abschliesst.
-  const stale = staleWip(roh, ids);
-  for (const id of stale) {
+  const stale = staleWipBefunde(roh, ids);
+  for (const b of stale) {
+    if (b.gelandet.length === 0) {
+      z.push(
+        `⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (kein Branch/Bauplatz): ${b.id}` +
+          ` — freigeben (plan:set ${b.id} status=ready|done|parked) oder Bau wieder aufnehmen.`,
+      );
+      continue;
+    }
+    // Alter nur, wenn es auffällt (> 3 Tage) und die Uhr von aussen kam.
+    const alt =
+      roh.jetztUnix !== undefined && b.letzterCommitUnix !== null && roh.jetztUnix - b.letzterCommitUnix > ALTER_SCHWELLE_TAGE * TAG_S
+        ? ` · jüngster Commit ${alter(b.letzterCommitUnix, roh.jetztUnix)}`
+        : '';
     z.push(
-      `⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (kein Branch/Bauplatz): ${id}` +
-        ` — freigeben (plan:set ${id} status=ready|done|parked) oder Bau wieder aufnehmen.`,
+      `⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (Spur nur gelandete Arbeit: ${b.gelandet.join(', ')}${alt}): ${b.id}` +
+        ` — Branch abräumen (npm run aufraeumen:git), dann freigeben (plan:set ${b.id} status=ready|done|parked) oder Bau wieder aufnehmen.`,
     );
   }
   if (stale.length && roh.prs === null) {
