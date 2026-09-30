@@ -1,11 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { revisionenFuerNorm, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { botschaftenFuer, type BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
 import { kantonaleGesetzgebungFuer, type KantonalesGeschaeft } from '../../../lib/materialien/ratschlaege';
 import { ladeMaterialManifest } from '../../../lib/materialien/browse';
 import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
-import { kontextSoftLaw, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
+import { kontextSoftLawErgebnis, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
+import { beiKantenShardErholt } from '../../../lib/materialien/kanten-shard';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 
 // ─── Nachladen der Reiter «Änderungen» und «Materialien» (H3, Kap. 7) ────────
@@ -40,6 +41,11 @@ export interface Geladen<T> {
    *  der Griff stösst den Effekt nur noch einmal an. Fehlt er, gibt es keinen
    *  Wiederholungsweg (Tests, reine Anzeige). */
   erneut?: () => void;
+  /** W2·27-BUND-FERTIG (30.9.2026, Befund Zweitprüfung): bei `wert: null` der
+   *  Teil, der OHNE die gescheiterte Quelle vorliegt (Bundle-Daten) und darum
+   *  sichtbar bleibt — die Fläche zeigt ihn samt Fehlerzeile («unvollständig»),
+   *  statt mit dem Netz auch das Bekannte auszublenden (§1/§8). */
+  rest?: T;
 }
 
 const NICHT_FERTIG = { wert: null, fertig: false } as const;
@@ -114,14 +120,38 @@ export interface ErlaeuterungStand {
   erzeugt: string;
 }
 
-async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungStand | null> {
-  const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLaw('norm', [key])]);
-  if (!manifest) return null;
-  return { liste: mischeMaterialien(materialienFuer([key]), weich), erzeugt: manifest.erzeugt };
+// W2·27-BUND-FERTIG (30.9.2026, ERGÄNZUNG zum Absatz oben, der Stand 31.8./23.9.
+// bleibt als Beleg stehen): `kontextSoftLawErgebnis` meldet seither, ob ein
+// Kanten-Shard gescheitert ist (`fehler`). Dann ist die Liste ein Rest, keine
+// Auskunft — wie beim Manifest `null` (Fehlerzeile + «Erneut laden», die den
+// Abruf wirklich wiederholt: ein Shard-Fehlschlag wird nicht gecacht).
+// Zweitprüfung desselben Tages: die kuratierten `materialienFuer`-Einträge liegen
+// im Bundle und brauchen kein Netz — sie bleiben bei Shard-Ausfall sichtbar
+// (`rest`, neben `wert: null`), die Tafel sagt dazu, dass die Liste unvollständig
+// ist. Beim Manifest-Ausfall gibt es weder Datenstand noch `rest`: wie bisher
+// nur die Fehlerzeile (AN-4).
+interface ErlaeuterungLadung { stand: ErlaeuterungStand | null; rest: ErlaeuterungStand | null }
+
+async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungLadung> {
+  const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLawErgebnis('norm', [key])]);
+  if (!manifest) return { stand: null, rest: null };
+  const stand = { liste: mischeMaterialien(materialienFuer([key]), weich.liste), erzeugt: manifest.erzeugt };
+  return weich.fehler ? { stand: null, rest: stand } : { stand, rest: null };
 }
 
 export function useErlaeuterungen(erlassKey: string | undefined, laden: boolean): Geladen<ErlaeuterungStand> {
-  return useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  const roh = useNachladen(erlassKey, laden, ladeErlaeuterungen);
+  const { fertig, erneut } = roh;
+  const stand = fertig ? roh.wert?.stand ?? null : null;
+  const rest = fertig ? roh.wert?.rest ?? null : null;
+  // Holt eine andere Fläche den gescheiterten Shard nach («Erneut laden» der
+  // Artikel-Gruppe/Praxis-Zeile), zieht diese Tafel mit (`lib/materialien/kanten-shard`).
+  const ausfall = fertig && stand === null;
+  useEffect(() => (ausfall && erlassKey && erneut ? beiKantenShardErholt(erlassKey, erneut) : undefined),
+    [ausfall, erlassKey, erneut]);
+  return useMemo<Geladen<ErlaeuterungStand>>(
+    () => (fertig ? { wert: stand, fertig: true, erneut, ...(rest ? { rest } : {}) } : NICHT_FERTIG),
+    [fertig, stand, rest, erneut]);
 }
 
 /** Gesetzgebungsmaterialien eines Erlasses (Reiter «Materialien»). Je Liste

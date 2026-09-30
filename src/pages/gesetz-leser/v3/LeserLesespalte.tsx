@@ -96,7 +96,8 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // Lesespalte ist der einzige Konsument, §6.6-Schwelle des Modells).
   // W3-5: die Randnotiz zeigt hier keinen «nichts erfasst»-Text, nur die
   // Nachschlage-Funktion; das `unsicher`-Flag ist ihr Konsument (PanelTafeln).
-  const [artikelMaterialien] = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
+  // Ergänzt 30.9.2026: im Einzelmodus meldet `unsicher` nur das Dossier (Fehlerzeile statt Leerblock).
+  const [artikelMaterialien, materialienUnsicher, materialienErneut] = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
   // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
   // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
   const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
@@ -163,6 +164,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
       // zählt — ungefiltert. Herleitung in `../bezuegeLaden` (D30).
       bezuegeImFuss={bezuege?.alleFuer(e.artikel)}
       materialien={artikelMaterialien(e.artikel)}
+      materialienLadefehler={einzel && materialienUnsicher ? materialienErneut : undefined}
       onBezuegeOeffnen={weckeBezuege}
       onImBlatt={oeffneBlatt}
       // «lädt …» heisst: geweckt, aber der Lade-VERSUCH ist noch nicht durch.
