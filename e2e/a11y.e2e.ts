@@ -45,6 +45,11 @@ async function oeffnen(page: Page, url: string, thema: 'hell' | 'dunkel' = 'hell
 //   ink-400 = dokumentierter E3-Kompromiss (FAHRPLAN-DESIGN 3.5,
 //   «Abschwächung ist Gestaltungsabsicht; Info zusätzlich in title+Legende»);
 //   Hebung = Entscheid David (BERICHT.md B-1).
+//   (Damals so geführt; seit W3.6 (25.6.2026) sind die Sa/So/arbeitsfrei-Tage
+//   ink-400→ink-500 gehoben, `BEKANNTE_BEFUNDE` ist leer — auch `tagerechner`
+//   und `tagerechner-kalender` gaten color-contrast ohne Freibrief; Nachmessung
+//   30.9.2026 W2·19 Kleinaufräumen 2: beide Prüfpunkte grün. Der Punkt steht
+//   hier als Historie, nicht als geltende Ausnahme.)
 const BEKANNTE_BEFUNDE: Record<string, string[]> = {
   // R3-NACHZUG 6.9.2026 (W2·24, Befund R3-F1): 'startseite' und
   // 'startseite-suche' standen hier mit 'link-in-text-block' — dem

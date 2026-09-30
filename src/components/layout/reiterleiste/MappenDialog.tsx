@@ -114,7 +114,12 @@ export function MappenDialog({
               <button type="button" onClick={onSchliessen} className="lc-btn-ghost lc-btn-sm">Abbrechen</button>
               <button type="button" onClick={speichernAbsenden} disabled={!name.trim()}
                 data-mappen-aktion="speichern"
-                className="lc-btn-primary lc-btn-sm disabled:opacity-40">
+                /* Gesperrt = EINE Dämpfung: die Anatomie von `.lc-btn-primary:disabled`
+                   (index.css: versenkte Fläche, ink-600, `opacity: 1`). Das frühere
+                   `disabled:opacity-40` legte eine zweite obendrauf (doppelt gedämpft,
+                   W2·19 Kleinaufräumen 2, Fund aus #1191 «DK-11-Rest»); alle anderen
+                   `lc-btn-primary` tragen die Sperre allein über die Anatomie. */
+                className="lc-btn-primary lc-btn-sm">
                 {schonVergeben ? 'Überschreiben' : 'Speichern'}
               </button>
             </div>
