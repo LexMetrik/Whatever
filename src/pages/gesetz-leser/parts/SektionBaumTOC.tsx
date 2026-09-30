@@ -416,8 +416,10 @@ const Zeile = memo(function Zeile({
           // W2·29 S3: die Marken-Zeile trägt die Registerfläche `reg-g-flaeche`
           // (vorher `brass-100`, W2·18-FEHLERBUCH); Hover `.lc-hover-flaeche`
           // wie im Artikel-Index (§5). Gedämpfte Zusätze darin hebt index.css
-          // (`[data-toc-aktiv] .text-ink-500`) auf ink-600 — ink-500 misst auf
-          // der Fläche 4.22:1. Kein Radius (F0.5).
+          // auf ink-600 — ink-500 misst auf der Fläche 4.22:1. Seit DK-16
+          // (30.9.2026) trägt das die Rolle «Tinte leise» (`bg-reg-g-flaeche`
+          // als Fläche), vorher der Einzel-Selektor `[data-toc-aktiv]
+          // .text-ink-500`. Kein Radius (F0.5).
           className={`flex-1 min-w-0 text-left no-underline px-1.5 py-0.5 leading-snug transition-colors ${form} ${tinte} ${istMarke ? 'bg-reg-g-flaeche' : 'hover:text-ink-900 lc-hover-flaeche'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen

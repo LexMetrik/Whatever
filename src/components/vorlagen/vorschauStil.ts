@@ -80,7 +80,9 @@ export const VORSCHAU = {
   posNr: { fontWeight: 600, color: 'var(--ink-700)' } as CSSProperties,
   // «– »-Unterpunkt – doppelt eingezogen.
   sub: { display: 'grid', gridTemplateColumns: `${r(1.25)} 1fr`, columnGap: 0, marginLeft: r(1.9), marginBottom: r(0.3) } as CSSProperties,
-  subDash: { color: 'var(--ink-400)' } as CSSProperties,
+  // DK-06 (30.9.2026): `--ink-500` statt `--ink-400` — der Strich ist Text, gemessen
+  // live in 8 Vorlagen-Vorschauen 3.53:1 hell / 2.88:1 dunkel (AA verlangt 4.5).
+  subDash: { color: 'var(--ink-500)' } as CSSProperties,
 
   // Dokumenttitel (Verfügung/Vertrag – Eingaben tragen ihn im Betreff).
   titel: { textAlign: 'center', fontWeight: 700, fontSize: '1.2em', letterSpacing: '0.01em' } as CSSProperties,

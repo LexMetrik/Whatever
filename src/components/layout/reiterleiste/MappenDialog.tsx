@@ -148,7 +148,7 @@ export function MappenDialog({
                   // ein Emoji wäre eine dreizehnte Bildsprache (§13 Ziff. 4).
                   <li key={t.path} className="flex gap-1 truncate" title={t.path}>
                     <span className="truncate">{t.path}</span>
-                    {t.fest && <span className="shrink-0 text-ink-400">angeheftet</span>}
+                    {t.fest && <span className="shrink-0 text-ink-500">angeheftet</span>}
                   </li>
                 ))}
               </ol>

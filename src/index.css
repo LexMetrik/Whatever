@@ -4959,17 +4959,49 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   letter-spacing: 0;
 }
 
-/* ③b Auf der Registerfläche `reg-g-flaeche` ink-600 statt ink-500 (5.38/5.25:1
-   gegen 4.22): Titelblatt-Band (S2) und die Marken-Zeile der Gliederung (S3,
+/* ③b (W2·29, 1. Fassung; seit DK-16 abgelöst — Historie): Auf der
+   Registerfläche `reg-g-flaeche` ink-600 statt ink-500 (5.38/5.25:1 gegen
+   4.22): Titelblatt-Band (S2) und die Marken-Zeile der Gliederung (S3,
    `[data-toc-aktiv]`); dazu die massgebliche Rechner-Kachel auf
    `reg-w-flaeche` (ink-600 5.84/5.18:1; ink-500 dunkel nur 4.18:1 — darum
    auch `.lc-overline`, die ink-500 als Klassenfarbe trägt; W2·29-WERKBANK-RECHNER R2).
-   Ungeschichtet, damit es die Utility schlägt — kein Umdefinieren des Tokens
-   (tokens-drift). */
-.lc-titelblatt-band .text-ink-500,
-[data-toc-aktiv] .text-ink-500,
-.lc-akzent-w .text-ink-500,
-.lc-akzent-w .lc-overline { color: var(--ink-600); }
+   Damals eine Selektorliste je Fläche; diese Liste trägt seit 30.9.2026 die
+   Rolle «Tinte leise» (DK-16, unten). Ungeschichtet, damit es die Utility
+   schlägt — kein Umdefinieren des Tokens (tokens-drift). */
+/* ── DK-16 (W2·19 HN-D4, 30.9.2026) · FLÄCHEN-ROLLE «TINTE LEISE» ────────────
+   An die Stelle der Selektorliste (`.lc-titelblatt-band`/`[data-toc-aktiv]`/
+   `.lc-akzent-w` je `.text-ink-500` — und zwei Gegenstücke als Utility-Variante
+   `[&_.text-ink-500]:text-ink-600` in RubrikKachel/BlattBausteine) tritt EINE
+   Rolle: jede Registerfläche (`bg-reg-*-flaeche` als Utility, dazu die
+   CSS-Flächen `.lc-titelblatt-band`, `.lc-akzent-w`, `.ub-kopf`) trägt ihre
+   gedämpfte Tinte in ink-600, sei sie als `.text-ink-500` oder als Klassenfarbe
+   von `.lc-overline` geschrieben. GEMESSEN 30.9.2026 (Kontrast aus den Tokens,
+   hell·dunkel): ink-500 auf reg-g 4.42·4.24 · reg-r 4.31·4.28 · reg-m 4.59·4.15
+   · reg-w 4.59·4.18 — sechs der acht Paare unter 4.5; ink-600 5.63·5.25 ·
+   5.49·5.30 · 5.85·5.14 · 5.84·5.18. Die Selektorliste liess jede neue Fläche
+   still durchfallen: live auf `/` (Gesetze-Blatt, `WahlSpalte`) stand die
+   Overline «Erfassungsgrad» auf `reg-g-flaeche` mit 4.42:1 hell / 4.24:1 dunkel,
+   weil die Utility-Variante nur `.text-ink-500` fing, nicht `.lc-overline`.
+   NUR OVERLINES OHNE EIGENE FARBE (Gegenprüfung 30.9.2026): die Rolle ist
+   ungeschichtet und schlägt damit JEDE Farb-Utility, gleich welcher
+   Spezifität — `lc-overline text-danger-700` auf einer Registerfläche würde
+   sonst still zu ink-600 (Warnfarbe weg, §8). Darum trägt der `.lc-overline`-
+   Zweig `:where(:not(…))`: ein Overline mit eigener Farb-Utility (Klasse
+   beginnt mit `text-`, enthält ` text-` oder `:text-`) fällt heraus; `:where`
+   hält die Spezifität bei (0,2,0). Ein explizites `.text-ink-500` (auch am
+   Overline) bleibt im ersten Zweig getroffen. Wächter:
+   `src/tests/design-dk-c-farbe-kontrast.test.tsx` (jede CSS-Fläche mit
+   `--reg-*-flaeche` als Hintergrund muss in dieser Liste stehen; der
+   Farb-Ausschluss ist dort als Quelltext-Sonde, die Kaskade selbst in
+   `e2e/design-tinte-leise.e2e.ts` gemessen) und die RISSE in
+   `scripts/farbwelt-tabellen.ts`. Ungeschichtet, damit es die Utility
+   schlägt; Spezifität (0,2,0) wie die abgelösten Regeln — `.lc-route[data-reg]
+   header .lc-overline` (③, oben) gewinnt weiter. */
+:is(.bg-reg-g-flaeche, .bg-reg-r-flaeche, .bg-reg-m-flaeche, .bg-reg-w-flaeche,
+    .lc-titelblatt-band, .lc-akzent-w, .ub-kopf)
+  :is(.text-ink-500, .lc-overline:where(:not([class^="text-"], [class*=" text-"], [class*=":text-"]))) {
+  color: var(--ink-600);
+}
 
 /* ── W2·29-WERKBANK-REST S1 (25.9.2026) · TITELBLATT «RECHTSPRECHUNG» ──────
    `layout/LeserKopfGeruest` mit `register="r"` (Entscheid-Leser): dasselbe

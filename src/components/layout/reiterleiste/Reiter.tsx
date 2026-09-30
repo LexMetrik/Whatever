@@ -700,7 +700,10 @@ export function Reiter({
           an dem 24 px definiert sind — dieselbe Quelle, aus der das ✕ sie
           zieht. Der Zuwachs von 4 px je Reiter fällt nur ab `lg` an (darunter
           ist der Griff gar nicht da) und dort, wo Platz ist; die Leiste rückt
-          ihn wie jede andere Breite ins Fenster ein (R13-2). */}
+          ihn wie jede andere Breite ins Fenster ein (R13-2).
+          DK-06 (30.9.2026): `text-ink-400` am Knopf färbt KEINE Schrift — sein
+          einziges Kind ist die aria-hidden-Glyphe ⧉, ein Bedienelement-Symbol
+          (SC 1.4.11: 3:1; ink-400 misst auf `paper` 3.44 hell / 3.31 dunkel). */}
       {!fest && kannOeffnen && !istOffen(t.path) && (
         <button type="button" onClick={() => onDaneben(t.path)}
           aria-label={`«${name}» daneben öffnen`} title="Daneben öffnen"

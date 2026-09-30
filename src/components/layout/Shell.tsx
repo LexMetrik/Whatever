@@ -455,7 +455,7 @@ export function Shell({ children }: { children: ReactNode }) {
               // die App-Leiste offen daneben steht (genau so blieb A1 unbemerkt).
               data-app-seitenleiste
               className="hidden lg:flex lg:flex-col shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-line"
-              style={{ width: seitenleiste.breite, background: 'color-mix(in srgb, var(--paper-sunken) 35%, var(--paper))' }}
+              style={{ width: seitenleiste.breite, background: 'color-mix(in oklab, var(--paper-sunken) 35%, var(--paper))' }}
             >
               <Sidebar />
             </aside>
