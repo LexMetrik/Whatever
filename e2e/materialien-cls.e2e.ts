@@ -17,8 +17,15 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // (≈ 0.0001), weit unter dem Fehler (≥ 0.33).
 // ROT ZU BEKOMMEN (§6.7): in `pages/Materialien.tsx` `min-h-inhalt-region` am
 // `<Ladeanzeige …>` streichen, `npm run build` → CLS ≈ 0.41 @1920.
+//
+// NACHSCHÄRFUNG 0.05 → 0.01 (W2·31 P13, 30.9.2026; Hausmuster gesetze-footer-cls
+// toBe(0), d21 ≤ 0.01): Streuung vor der Schärfung, Preview-Build, headless
+// Chromium, lokal warm, 10 Läufe je Breite, Beobachter `buffered` wie unten:
+// @1920 0.0000–0.0001 (Mittel 0.0000, sd 0.0000), @375 0.0000 (10/10); dazu
+// 5× die Spec selbst grün. Fehlerwert ≥ 0.33 — Abstand zur Latte > Faktor 30.
+// Unter 2-vCPU-CI-Last nicht gemessen (kein Vorfall, Nachmessung bei Flake).
 
-const LATTE = 0.05;
+const LATTE = 0.01;
 
 for (const breite of [1920, 375]) {
   test(`/materialien @${breite}: Lade-CLS unter ${LATTE} (Footer springt nicht aus dem Bild)`, async ({ page }) => {
