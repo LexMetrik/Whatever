@@ -1,0 +1,60 @@
+{
+  "erzeugt": "2026-09-28",
+  "eintraege": [
+    {
+      "id": "kanton/BE/be_verwaltungsgericht/2002026590",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "abteilung": null,
+      "nummer": "200 2026 590",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungsgericht BE 200 2026 590 vom 17.08.2026",
+      "datum": "2026-08-17",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": null,
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Auf die Beschwerde wird nicht eingetreten."
+            },
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Es werden weder Verfahrenskosten erhoben noch wird eine Parteientschädigung zugesprochen."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Zu eröffnen (R): - A.________ - B.________ (mit E-Mail vom 16. August 2026 samt Beilagen) - Regierungsstatthalterin des Verwaltungskreises Biel/Bienne (mit E- Mail vom 16. August 2026 samt Beilagen) Der Einzelrichter: Die Gerichtsschreiberin: Rechtsmittelbelehrung Gegen dieses Urteil kann innert 30 Tagen seit Zustellung der schriftlichen Begründung beim Bundesgericht, Schweizerhofquai 6, 6004 Luzern, Beschwerde in öffentlich-rechtlichen Angelegenheiten gemäss Art. 39 ff., 82 ff. und 90 ff. des Bundesgesetzes vom 17. Juni 2005 über das Bundesgericht (BGG; SR 173.110) geführt werden."
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 102 VRPG"
+      ],
+      "normKeys": [],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_590_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad24efc88730477e749b586be3339ce10b8420cd975348732905560805809f657b06c0aee68fbcf054ed84a176ab064c296?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad24efc88730477e749b586be3339ce10b8420cd975348732905560805809f657b06c0aee68fbcf054ed84a176ab064c296&pathIsEncrypted=1&dossiernummer=200_2026_590",
+      "abgerufen": "2026-09-28",
+      "fassungsToken": "242b27e5d1d4fb9cf752e8ac5526add82a67ba294b721d7e56fa521bfb57320d",
+      "sha": "79b79b6e825e01922638284a1d6c972dbe97e3356840a206719529afe6883952",
+      "ecli": "ECLI:CH:BEV:2026:200.2026.590"
+    }
+  ]
+}

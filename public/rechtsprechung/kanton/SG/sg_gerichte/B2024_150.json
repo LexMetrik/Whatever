@@ -1,0 +1,60 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/SG/sg_gerichte/B2024_150",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "abteilung": "B",
+      "nummer": "B 2024/150",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/150 vom 22.08.2025",
+      "datum": "2025-08-22",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": null,
+      "regeste": {
+        "text": "Baurecht, Art. 19 Abs. 1 RPG, Art. 67 lit. a PBG, Art. 63 Abs. 2 und Art. 100 StrG; Art. 6 Abs. 1 NHG, Art. 115 lit. g PBG; Art. 79 PBG, kommunale Bauordnung.\nDie Beschwerdeführer beanstanden die Bewilligung des Abbruchs und Neubaus eines Mehrfamilienhauses unter den Aspekten der Erschliessung, der Einwirkungen auf ein gemäss Bundesinventar in seiner Struktur geschütztes Ortsbild und auf zwei in einem für Verwaltung verbindlichen Inventar schützenswerte Kulturobjekte erfassten benachbarten Gebäuden sowie der Einhaltung der Bauvorschriften beim Attikageschoss. Die Beschwerde erweist sich als unbegründet. (Verwaltungsgericht, B 2024/150)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "St.Gallen Verwaltungsgericht 21.08.2025 B 2024/150 Saint-Gall Verwaltungsgericht 21.08.2025 B 2024/150 San Gallo Verwaltungsgericht 21.08.2025 B 2024/150\n\nBaurecht, Art. 19 Abs. 1 RPG, Art. 67 lit. a PBG, Art. 63 Abs. 2 und Art. 100 StrG; Art. 6 Abs. 1 NHG, Art. 115 lit. g PBG; Art. 79 PBG, kommunale Bauordnung. Die Beschwerdeführer beanstanden die Bewilligung des Abbruchs und Neubaus eines Mehrfamilienhauses unter den Aspekten der Erschliessung, der Einwirkungen auf ein gemäss Bundesinventar in seiner Struktur geschütztes Ortsbild und auf zwei in einem für Verwaltung verbindlichen Inventar schützenswerte Kulturobjekte erfassten benachbarten Gebäuden sowie der Einhaltung der Bauvorschriften beim Attikageschoss. Die Beschwerde erweist sich als unbegründet. (Verwaltungsgericht, B 2024/150)\n\nSt.Gallen Verwaltungsgericht Saint-Gall Verwaltungsgericht San Gallo Verwaltungsgericht"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 100 STRG",
+        "Art. 115 PBG",
+        "Art. 19 Abs. 1 RPG",
+        "Art. 6 Abs. 1 NHG",
+        "Art. 67 PBG",
+        "Art. 79 PBG"
+      ],
+      "normKeys": [
+        "NHG",
+        "RPG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=14091&type=1563347022&cHash=6747f6fc7041ac70b4d5eb1c1cc8c317",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "f818aef95372b51f47583d48cc6cce562e580f645cc1315724a6f8e8f3dd9fd0",
+      "sha": "c7fbfb976b4b77b2813799069b8aa21e61db802455f906c5aa99600f363d9206",
+      "ecli": "ECLI:CH:SGG:2025:B.2024.150"
+    }
+  ]
+}

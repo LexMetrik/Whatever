@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"VZAE",
 "erlassEbene":"bund",
 "dokumente":{
@@ -70,7 +70,8 @@
 "bs_appellationsgericht_VD.2025.205":{"zitierung":"Appellationsgericht BS VD.2025.205 vom 02.03.2026","regesteKurz":"Familiennachzug","datum":"2026-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.57":{"zitierung":"Appellationsgericht BS VD.2025.57 vom 17.10.2025","regesteKurz":"Widerruf der Aufenthaltsbewilligung EU/EFTA und Wegweisung","datum":"2025-10-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.6":{"zitierung":"Appellationsgericht BS VD.2025.6 vom 20.05.2025","regesteKurz":"Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung","datum":"2025-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2025.7":{"zitierung":"Appellationsgericht BS VD.2025.7 vom 12.06.2025","regesteKurz":"Familiennachzug","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.7":{"zitierung":"Appellationsgericht BS VD.2025.7 vom 12.06.2025","regesteKurz":"Familiennachzug","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202564":{"zitierung":"Kantonsgericht GR VR1 2025 64 vom 16.09.2026","regesteKurz":null,"datum":"2026-09-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "5":[{"key":"bs_appellationsgericht_VD.2023.175","gewicht":null}],
@@ -82,8 +83,9 @@
 "36":[{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null}],
 "47":[{"key":"bge_146_I_185","gewicht":0}],
 "48":[{"key":"bge_147_I_89","gewicht":0}],
-"49":[{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null}],
+"49":[{"key":"gr_gerichte_VR1202564","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null}],
 "59":[{"key":"bge_149_I_207__voll","gewicht":0,"erwaegungen":["E. 4.2"]}],
+"61":[{"key":"gr_gerichte_VR1202564","gewicht":null}],
 "62":[{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null}],
 "63":[{"key":"bger_2C_1060_2020","gewicht":0}],
 "70":[{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null}],
@@ -111,8 +113,9 @@
 "36":{"kantonal":1},
 "47":{"bge":1},
 "48":{"bge":1},
-"49":{"kantonal":2},
+"49":{"kantonal":3},
 "59":{"bger":1},
+"61":{"kantonal":1},
 "62":{"kantonal":1},
 "63":{"bger":1},
 "70":{"kantonal":1},

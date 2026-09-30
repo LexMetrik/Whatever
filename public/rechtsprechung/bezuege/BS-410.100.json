@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"BS-410.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -21,13 +21,14 @@
 "bs_appellationsgericht_ZB.2022.41":{"zitierung":"Appellationsgericht BS ZB.2022.41 vom 27.02.2023","regesteKurz":"Vorsorgliche Massnahmen im Scheidungsverfahren (BGer 5A_306/2023 vom 1. Dezember 2023)","datum":"2023-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2023.62":{"zitierung":"Appellationsgericht BS ZB.2023.62 vom 24.09.2024","regesteKurz":"Kindesunterhalt","datum":"2024-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2024.34":{"zitierung":"Appellationsgericht BS ZB.2024.34 vom 20.12.2024","regesteKurz":"Getrenntleben","datum":"2024-12-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.42-79679":{"zitierung":"Appellationsgericht BS ZB.2024.42 vom 20.05.2026","regesteKurz":"Kinderbelange Name, Obhut, persönlicher Verkehr, Unterhalt sowie Beistandschaft (Beschwerde am BG)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_IV.2023.101":{"zitierung":"Sozialversicherungsgericht BS IV.2023.101 vom 03.07.2024","regesteKurz":"Medizinisches Gutachten und ergänzende Stellungnahme verwertbar; Status korrekt; Beschwerdeabweisung","datum":"2024-07-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "2":[{"key":"bs_appellationsgericht_ZB.2023.62","gewicht":null}],
 "5":[{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.211","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.41","gewicht":null}],
 "32":[{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
-"56":[{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_ZB.2024.34","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null}],
+"56":[{"key":"bs_appellationsgericht_ZB.2024.42-79679","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_ZB.2024.34","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null}],
 "61":[{"key":"bs_appellationsgericht_VD.2022.71","gewicht":null}],
 "64":[{"key":"bs_appellationsgericht_VD.2023.142","gewicht":null}],
 "86":[{"key":"bs_appellationsgericht_VD.2022.71","gewicht":null}],
@@ -42,7 +43,7 @@
 "2":{"kantonal":1},
 "5":{"kantonal":3},
 "32":{"kantonal":1},
-"56":{"kantonal":3},
+"56":{"kantonal":4},
 "61":{"kantonal":1},
 "64":{"kantonal":1},
 "86":{"kantonal":1},

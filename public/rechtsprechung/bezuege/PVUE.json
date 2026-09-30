@@ -1,17 +1,21 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"PVUE",
 "erlassEbene":"bund",
 "dokumente":{
+"bpatger_O2022_006":{"zitierung":"BPatGer O2022_006 vom 15. April 2024","regesteKurz":"Erfinderische Tätigkeit, Neuheit, Örtliche Zuständigkeit international, Priorität, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2024-04-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
+"bpatger_O2022_007":{"zitierung":"BPatGer O2022_007 vom 5. März 2024","regesteKurz":"Erfinderische Tätigkeit, Feststellungsinteresse, Gutachten (Gericht), Priorität","datum":"2024-03-05","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bpatger_O2023_017":{"zitierung":"BPatGer O2023_017 vom 12. Juni 2025","regesteKurz":"Erfinderische Tätigkeit, Feststellungsinteresse, Neuheit","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bpatger_S2024_005_S2024_006_S2024_007":{"zitierung":"BPatGer S2024_005, S2024_006, S2024_007 vom 8. Juli 2025","regesteKurz":"Erfinderische Tätigkeit, Neuheit, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}}
 },
 "proArtikel":{
-"4a":[{"key":"bpatger_O2023_017","gewicht":null}],
-"4b":[{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null}]
+"4":[{"key":"bpatger_O2022_007","gewicht":null}],
+"4a":[{"key":"bpatger_O2023_017","gewicht":null},{"key":"bpatger_O2022_006","gewicht":null},{"key":"bpatger_O2022_007","gewicht":null}],
+"4b":[{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null},{"key":"bpatger_O2022_007","gewicht":null}]
 },
 "gesamtProArtikel":{
-"4a":{"eidg":1},
-"4b":{"eidg":1}
+"4":{"eidg":1},
+"4a":{"eidg":3},
+"4b":{"eidg":2}
 }
 }

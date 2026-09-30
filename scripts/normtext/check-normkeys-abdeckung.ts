@@ -197,6 +197,19 @@ const IGNORE: Record<string, IgnoreEintrag> = {
       + 'z.B. kanton/BE/be_verwaltungsgericht/200202645 «Art. 79 Abs. 1 VRPG», '
       + '«Art. 32 Abs. 2 VRPG». Ein Bundes-key wäre hier schlicht falsch (§1).',
   },
+  GSOG: {
+    grund: 'kantonal',
+    kommentar:
+      'Gesetz vom 11. Juni 2009 über die Organisation der Gerichtsbehörden und der '
+      + 'Staatsanwaltschaft (BE: BSG 161.1) — kantonaler Erlass. Amtliche Kurzform im '
+      + 'Korpus: kanton/BE/be_verwaltungsgericht/2002022398 «… des kantonalen Gesetzes '
+      + 'vom 11. Juni 2009 über die Organisation der Gerichtsbehörden und der '
+      + 'Staatsanwaltschaft [GSOG; BSG 161.1]»; Zitat-Beleg kanton/BE/'
+      + 'be_verwaltungsgericht/1002025363 «Art. 57 Abs. 1 GSOG». Alle Belege (23 '
+      + 'Snapshots) stammen aus Berner Verwaltungsgerichts-Entscheiden; ein '
+      + 'Bundes-key wäre falsch (§1). Nachzug 28.9.2026: BE-Zuwachs +12 hob das '
+      + 'Token über die Schwelle.',
+  },
 
   // ── ausserhalb des Korpus (EU-Recht / Bundeserlass ohne Register-Eintrag) ──
   RL: {
@@ -247,6 +260,20 @@ const IGNORE: Record<string, IgnoreEintrag> = {
       + 'ERLASS_REGISTER. Beleg im Korpus: public/normtext/struktur/kanton/AR-524.2 '
       + 'zitiert «Waffengesetz (WG; SR 514.54)»; Anwendungsfälle z.B. bund/bge/'
       + '152_IV_107 «Art. 33 Abs. 1 lit. a WG». Korpus-Kandidat.',
+  },
+  PATGG: {
+    grund: 'ausserhalb-korpus',
+    srNummer: '173.41',
+    kommentar:
+      'Bundesgesetz vom 20. März 2009 über das Bundespatentgericht (Patentgerichts'
+      + 'gesetz, PatGG), SR 173.41 — echter Bundeserlass, (noch) NICHT im '
+      + 'ERLASS_REGISTER. Amtliche Kurzform mit SR-Nummer im Korpus: bund/bge/151_III_227 '
+      + '«… über das Bundespatentgericht [Patentgerichtsgesetz, PatGG; SR 173.41]», '
+      + 'bund/bge/146_III_177 «Art. 32 Satz 1 PatGG (SR 173.41)»; Anwendung in '
+      + 'bund/bpatger/O2022_006 «Art. 32 PatGG i.V.m. Art. 3 lit. a KR-PatGer». Das '
+      + 'Token erreichte mit dem bpatger-Zuwachs des Nachzugs 28.9.2026 die Schwelle '
+      + '(20 Snapshots). Korpus-Kandidat: die Lücke schliesst man durch Aufnahme des '
+      + 'Erlasses, nicht durch ein Alias.',
   },
 
   // ── aufgehobenes / abgelöstes Recht ───────────────────────────────────────

@@ -1,0 +1,54 @@
+{
+  "erzeugt": "2026-09-28",
+  "eintraege": [
+    {
+      "id": "kanton/SG/sg_gerichte/I_1_2023_157_158",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "abteilung": null,
+      "nummer": "I/1-2023/157, 158",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG I/1-2023/157, 158 vom 30.05.2024",
+      "datum": "2024-05-30",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "steuern",
+      "legalArea": "tax",
+      "rubrum": null,
+      "regeste": {
+        "text": "• Steuerpflicht, Art. Art. 50 und Art. 58 DBG. Der deutsche Fiskus nahm einen steuerrechtlichen Durchgriff vor und besteuerte nicht die steuerpflichtige GmbH, sondern die dahinter stehende Privatperson. Angesichts der fehlenden Steuerpflicht in Deutschland, kann die steuerpflichtige GmbH im Sinne des Doppelbesteuerungsabkommens nicht als in Deutschland ansässig gelten, weshalb auch keine Doppelbesteuerung resultiert. (Verwaltungsrekurskommission, Abteilung I/1, 30. Mai 2024, I/1-2023/157, 158). Gegen diesen Entscheid wurde beim Verwaltungsgericht Beschwerde erhoben. Das Verwaltungsgericht hat die Beschwerde mit Entscheid vom 12. Mai 2025 abgewiesen (B 2024/142).",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "St.Gallen Verwaltungsrekurskommission 30.05.2024 I/1-2023/157, 158 Saint-Gall Verwaltungsrekurskommission 30.05.2024 I/1-2023/157, 158 San Gallo Verwaltungsrekurskommission 30.05.2024 I/1-2023/157, 158\n\n• Steuerpflicht, Art. Art. 50 und Art. 58 DBG. Der deutsche Fiskus nahm einen steuerrechtlichen Durchgriff vor und besteuerte nicht die steuerpflichtige GmbH, sondern die dahinter stehende Privatperson. Angesichts der fehlenden Steuerpflicht in Deutschland, kann die steuerpflichtige GmbH im Sinne des Doppelbesteuerungsabkommens nicht als in Deutschland ansässig gelten, weshalb auch keine Doppelbesteuerung resultiert. (Verwaltungsrekurskommission, Abteilung I/1, 30. Mai 2024, I/1-2023/157, 158). Gegen diesen Entscheid wurde beim Verwaltungsgericht Beschwerde erhoben. Das Verwaltungsgericht hat die Beschwerde mit Entscheid vom 12. Mai 2025 abgewiesen (B 2024/142).\n\nSt.Gallen Verwaltungsrekurskommission Saint-Gall Verwaltungsrekurskommission San Gallo Verwaltungsrekurskommission Abgaben und öffentliche Dienstpflichten"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 58 DBG"
+      ],
+      "normKeys": [
+        "DBG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=12867&type=1563347022&cHash=4c0c1968b54c5e921b948d8a14a510a2",
+      "abgerufen": "2026-09-28",
+      "fassungsToken": "7b7256bd019cc35318fe3ec3640693e5d6dcd5b0c9f5f605d9a54c4a52e8055a",
+      "sha": "b38f6152d28c42ccf2cfe88410af41918c2a1d29ba0657175f33f2eb14fa7a68",
+      "ecli": "ECLI:CH:SGG:2024:I.1-2023.157.158"
+    }
+  ]
+}
