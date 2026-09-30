@@ -4079,9 +4079,19 @@
      Strich. Darum: die globale `:focus-visible`-Outline bleibt stehen, nur der
      Versatz geht nach innen (`-2px`): die Leiste ist ein `overflow-x: auto`-
      Behälter, ein Ring ausserhalb würde oben/unten/seitlich abgeschnitten
-     (Muster `.kt-einstieg :focus-visible`, `.tb-link`). Der Zustandsstrich
-     bleibt darunter sichtbar (Ring-Unterkante = Oberkante des 2-px-Rands). */
-  .lc-tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; color: var(--ink-900); }
+     (Muster `.kt-einstieg :focus-visible`, `.tb-link`).
+
+     KORREKTUR (Gegenprüfung 30.9.2026): der erste Wurf stand auf `-2px` und
+     behauptete, der Zustandsstrich bleibe darunter sichtbar. Das stimmt nicht —
+     der Ring übermalt bei `-2px` die Unterkante (Chromium, gemessen
+     per Screenshot-Pixel, Startseite/Tagerechner/ZPO-Fristen dunkel: unterste
+     Zeile = Ringfarbe 148,144,136 statt Strichfarbe; Dokumentmappe dunkel: Strich
+     230,185,90 → Ring); fokussiert-gewählt und fokussiert-ungewählt
+     unterschieden sich nur noch durch die Schriftstärke. Darum `-4px`: zwischen
+     Reiterkante und Ring bleibt die volle Breite des 2-px-Rands frei, der
+     Zustandsstrich des aktiven Reiters bleibt sichtbar (bewacht von
+     `e2e/reiter-fokusring.e2e.ts`, Pixelprobe der Unterkante). */
+  .lc-tab:focus-visible { outline: 2px solid var(--focus); outline-offset: -4px; color: var(--ink-900); }
   .lc-tab[aria-selected="true"],
   .lc-tab[aria-pressed="true"] { color: var(--ink-900); font-weight: 500; border-bottom-color: var(--ink-900); }
   /* W2·29-WERKBANK-VORLAGEN V3 · die Prop ist da (`data-reg`, bisher nur die

@@ -65,9 +65,18 @@ export const rel = (abs: string): string => abs.slice(APP_WURZEL.length + 1);
  * (gemessen: `PanelAenderungen.tsx` −2641, `EreignisFristen.tsx` −2269,
  * `ArtikelBody.tsx` −1271, `Begruessung.tsx` −280 Zeichen — jede Sonde sah dort
  * einen Teil der Datei nicht).
+ *
+ * NACHBESSERUNG (Gegenprüfung 30.9.2026): die Zwei-Durchgänge-Lösung hatte die
+ * Gegenrichtung offen — Blockanfang, darin eine Zeile `// x` MIT dem
+ * schliessenden Blockende, danach Code: der Zeilen-Durchgang entfernte diese
+ * Zeile samt SCHLIESSENDEM Blockende, der Blockanfang blieb unbeendet und
+ * verschluckte den Code (gemessen mit dem Fall (b) in `appDateien.test.ts`).
+ * Jetzt EIN Durchgang mit zwei Alternativen: das linkeste Match entscheidet, ein
+ * Zeilen-Doppelschrägstrich innerhalb eines Blocks ist nie ein eigener Treffer,
+ * ein Blockanfang in einem Zeilenkommentar ebenso wenig.
  */
 export const ohneKommentare = (s: string): string =>
-  s.replace(/^\s*\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+  s.replace(/\/\*[\s\S]*?\*\/|^\s*\/\/.*$/gm, '');
 
 /** Datei-Inhalt ohne Kommentare. */
 export const liesOhneKommentare = (pfad: string): string => ohneKommentare(readFileSync(pfad, 'utf8'));

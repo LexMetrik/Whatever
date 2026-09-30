@@ -204,10 +204,18 @@ function strichVerstoss(klassen: readonly string[]): 'messing-ohne-strich' | 'nu
 /**
  * EINZELN BEGRÜNDETE AUSNAHMEN — je Datei UND exakter Klassen-Zeichenkette, nie
  * pauschal je Datei (eine Datei-Ausnahme verdeckte den nächsten Verstoss in
- * derselben Datei, §6.7). Die Klassen-Zeichenkette muss am Fundort noch stehen
- * (`pruefeAusnahmen` über `begruendung`), sonst fällt die Ausnahme.
+ * derselben Datei, §6.7). Die Zeichenkette `begruendung` muss am Fundort noch
+ * stehen (`pruefeAusnahmen`), sonst fällt die Ausnahme — UND jede Ausnahme muss
+ * im Sweep mindestens einen Verstoss tatsächlich freistellen (unbenutzte
+ * Ausnahme ⇒ rot, Test «Ausnahmen sind benutzt»).
+ *
+ * `klassen` (optional) schärft die Zuordnung: die Klassen des Link-Tags müssen
+ * GENAU dieser Zeichenkette entsprechen (Leerzeichen-verbunden). Ohne `klassen`
+ * genügt, dass die `begruendung` in den Klassen des Links vorkommt.
  */
-const STRICH_AUSNAHMEN = [
+type StrichAusnahme = { datei: string; begruendung: string; klassen?: string; grund: string };
+
+const STRICH_AUSNAHMEN: readonly StrichAusnahme[] = [
   {
     datei: 'components/ui/FehlSeite.tsx',
     begruendung: 'text-body-s font-medium text-brass-700 hover:text-brass-600 no-underline',
@@ -233,6 +241,50 @@ const STRICH_AUSNAHMEN = [
     begruendung: 'inline-flex items-center gap-1.5 rounded-md border border-brass-400 px-3 py-2 text-body-s font-medium text-brass-700 no-underline',
     grund: 'Umriss-Knopf der Verweiskarte (border + Padding): Kasten-Form trägt die Affordanz (Kommentar am Fundort: «Container-Grammatik (Umriss-Knopf)»).',
   },
+  // ── Tabellenzellen der Kantons-Vergleiche und Popover-Aktionszeilen (vormals NUR_HOVER_ERLAUBT, pauschal je Datei) ──
+  {
+    datei: 'components/forms/GrundbuchEintragForm.tsx',
+    begruendung: 'className="hover:underline" title={r.posten?.quelle.erlassName}>{r.kanton}',
+    klassen: 'hover:underline',
+    grund: 'Kantons-Name in der Vergleichstabelle: Datenzeile ohne Linkfarbe, keine Satz-Affordanz (F0.8: Listenzeilen ohne Strich).',
+  },
+  {
+    datei: 'components/forms/BeurkundungForm.tsx',
+    begruendung: 'className="hover:underline" title={r.posten?.quelle.erlassName}>{r.kanton}',
+    klassen: 'hover:underline',
+    grund: 'Kantons-Name in der Vergleichstabelle: Datenzeile ohne Linkfarbe, keine Satz-Affordanz (F0.8: Listenzeilen ohne Strich).',
+  },
+  {
+    datei: 'components/forms/NotariatGrundbuchForm.tsx',
+    begruendung: 'className="hover:underline" title={r.beurkundung.quelle.erlassName}>{r.kanton}',
+    klassen: 'hover:underline',
+    grund: 'Kantons-Name in der Vergleichstabelle: Datenzeile ohne Linkfarbe, keine Satz-Affordanz (F0.8: Listenzeilen ohne Strich).',
+  },
+  {
+    datei: 'components/forms/ProzesskostenForm.tsx',
+    begruendung: 'className="hover:underline" title={`${r.gerichtskosten.quelle.erlassName} (${r.gerichtskosten.quelle.erlassNr})`}>{r.kanton}',
+    // die Sonde liest ALLE Literale des Attributtexts: das `title`-Template kommt als Klassen-Token mit (bekannte Grenze, siehe oben)
+    klassen: 'hover:underline ${r.gerichtskosten.quelle.erlassName} (${r.gerichtskosten.quelle.erlassNr})',
+    grund: 'Kantons-Name in der Vergleichstabelle: Datenzeile ohne Linkfarbe, keine Satz-Affordanz (F0.8: Listenzeilen ohne Strich).',
+  },
+  {
+    datei: 'components/NormPopover.tsx',
+    begruendung: 'className="inline-block text-xs text-brass-700 hover:underline"',
+    klassen: 'inline-block text-xs text-brass-700 hover:underline',
+    grund: 'Aktionszeile «Im Gesetz öffnen ›» in der Popover-Fusszeile: Affordanz aus dem Pfeil ›, kein Satz.',
+  },
+  {
+    datei: 'components/verzahnung/RegestePopover.tsx',
+    begruendung: 'className="inline-flex min-h-6 items-center text-xs text-brass-700 hover:underline"',
+    klassen: 'inline-flex min-h-6 items-center text-xs text-brass-700 hover:underline',
+    grund: 'Aktionszeile «Öffnen ›» in der Popover-Fusszeile: Affordanz aus dem Pfeil ›, kein Satz.',
+  },
+  {
+    datei: 'pages/RechnerStub.tsx',
+    begruendung: 'className="inline-block text-body-s font-medium text-brass-700">← Zurück zur Rechnerübersicht',
+    klassen: 'inline-block text-body-s font-medium text-brass-700',
+    grund: 'Zurück-Navigation zur Rechnerübersicht (← …): wie die übrigen Zurück-Knöpfe Navigation ohne Satz-Strich (F0.8).',
+  },
 ] as const;
 
 /**
@@ -245,31 +297,33 @@ const STRICH_AUSNAHMEN = [
  *
  * AKTIONSZEILE IM POPOVER: «Im Gesetz öffnen ›» / «Öffnen ›» — die Aktion neben
  * dem ⧉-Knopf, Affordanz aus dem Pfeil ›; Popover-Fusszeile, kein Satz.
+ *
+ * Beide stehen seit der Nachbesserung (Gegenprüfung 30.9.2026) als EINZELNE
+ * Einträge in `STRICH_AUSNAHMEN` (Datei + exakte Klassen), nicht mehr als
+ * pauschale Dateiliste `NUR_HOVER_ERLAUBT` (die jeden weiteren Nur-Hover-Link in
+ * derselben Datei verdeckt hätte).
  */
-const NUR_HOVER_ERLAUBT = [
-  'components/forms/GrundbuchEintragForm.tsx',
-  'components/forms/BeurkundungForm.tsx',
-  'components/forms/NotariatGrundbuchForm.tsx',
-  'components/forms/ProzesskostenForm.tsx',
-  'components/NormPopover.tsx',
-  'components/verzahnung/RegestePopover.tsx',
-] as const;
-
 describe('B-L1c · Textlink im Fliesstext trägt einen Grundstrich (DK-A / HN-D3)', () => {
-  function funde(): string[] {
+  /** Sweep: Funde + welche Ausnahmen mindestens einen Verstoss tatsächlich freigestellt haben. */
+  function sweep(): { funde: string[]; benutzt: Set<number> } {
     const erlaubt = pruefeAusnahmen(STRICH_AUSNAHMEN);
-    const nurHoverOk = new Set<string>(NUR_HOVER_ERLAUBT);
-    return alleTsx().flatMap((p) => {
+    const benutzt = new Set<number>();
+    const funde = alleTsx().flatMap((p) => {
       const r = rel(p);
       return linkKlassen(liesRoh(p)).flatMap((l) => {
         const art = strichVerstoss(l.klassen);
         if (!art) return [];
-        if (art === 'nur-hover' && nurHoverOk.has(r)) return [];
-        if (erlaubt.has(r) && STRICH_AUSNAHMEN.some((a) => a.datei === r && l.klassen.join(' ').includes(a.begruendung))) return [];
-        return [`${r} <${l.tag}> ${art}: ${l.klassen.join(' ')}`];
+        const zeile = l.klassen.join(' ');
+        const idx = erlaubt.has(r)
+          ? STRICH_AUSNAHMEN.findIndex((a) => a.datei === r && (a.klassen !== undefined ? zeile === a.klassen : zeile.includes(a.begruendung)))
+          : -1;
+        if (idx >= 0) { benutzt.add(idx); return []; }
+        return [`${r} <${l.tag}> ${art}: ${zeile}`];
       });
     });
+    return { funde, benutzt };
   }
+  const funde = () => sweep().funde;
 
   it('kein Messing-Link ohne Grundstrich, kein Link mit Strich nur bei Hover', () => {
     expect(
@@ -278,6 +332,25 @@ describe('B-L1c · Textlink im Fliesstext trägt einen Grundstrich (DK-A / HN-D3
       + 'Navigation/Listen/Knöpfe/Karten dürfen strichlos stehen, sagen das aber als benannte, '
       + 'begründete Ausnahme (STRICH_AUSNAHMEN), nicht still.',
     ).toEqual([]);
+  });
+
+  it('Ausnahmen sind benutzt: jede stellt mindestens einen echten Verstoss frei (verfallende Ausnahme ⇒ rot)', () => {
+    const { benutzt } = sweep();
+    const unbenutzt = STRICH_AUSNAHMEN.flatMap((a, i) => (benutzt.has(i) ? [] : [`${a.datei}: «${a.begruendung}»`]));
+    expect(unbenutzt, 'Ausnahme ohne Verstoss, den sie freistellt — streichen statt bewachen (§17-Rückbau)').toEqual([]);
+  });
+
+  it('ROT-BEWEIS (Ausnahmen): eine verfälschte Klassen-Zeichenkette fällt auf, nicht still durch', () => {
+    const fremd: StrichAusnahme[] = [
+      // verfälscht: Fundort-Zitat stimmt nicht mehr mit dem Quelltext überein
+      { ...STRICH_AUSNAHMEN.find((a) => a.datei === 'components/NormPopover.tsx')!, begruendung: 'className="inline-block text-xs text-brass-700 hover:underline FALSCH"' },
+    ];
+    expect(() => pruefeAusnahmen(fremd), 'verfälschte Begründung muss werfen').toThrow(/Ausnahme ohne Begründung/);
+    // und eine `klassen`-Zeichenkette, die nicht exakt passt, stellt den Link NICHT frei
+    const linkZeile = linkKlassen('<Link to="/x" className="inline-block text-xs text-brass-700 hover:underline">A</Link>')[0].klassen.join(' ');
+    const a = STRICH_AUSNAHMEN.find((x) => x.datei === 'components/NormPopover.tsx')!;
+    expect(linkZeile).toBe(a.klassen);
+    expect(linkZeile === `${a.klassen} extra`).toBe(false);
   });
 
   it('ROT-BEWEIS: die Sonde erkennt die Formen, die vor DK-A im Repo standen', () => {

@@ -136,7 +136,7 @@ export function ArtikelKontextZeilen({ k, werkzeugZielBereit = true }: {
                 const panel = e.currentTarget.closest('section[aria-labelledby="kontext-titel"]');
                 panel?.querySelector('#kontext-werkzeuge')?.scrollIntoView({ block: 'start', behavior: 'auto' });
               }}
-              className="text-brass-700 hover:underline">
+              className="lc-link text-brass-700 hover:text-brass-800">
               Rechner/Vorlagen zu {k.werkzeugGruppe} ↓
             </button>
           )

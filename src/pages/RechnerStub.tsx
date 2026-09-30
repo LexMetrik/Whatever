@@ -27,7 +27,7 @@ export function RechnerStub() {
           Dieser Rechner ist noch nicht verfügbar. Die Berechnungslogik wird separat ergänzt;
           der Seitenrahmen folgt bereits der gemeinsamen Vorlage.
         </p>
-        <Link to="/rechner" className="lc-link inline-block text-body-s font-medium text-brass-700">← Zurück zur Rechnerübersicht</Link>
+        <Link to="/rechner" className="inline-block text-body-s font-medium text-brass-700">← Zurück zur Rechnerübersicht</Link>
       </div>
     </div>
   );
