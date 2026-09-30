@@ -4434,7 +4434,9 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   padding: 0.875rem 1rem 1rem;
 }
 .ub-kopf h1 { font-weight: 400; }
-.lc-route .ub-kopf .lc-overline, .ub-kopf .lc-overline { color: var(--ink-600); }
+/* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-route .ub-kopf .lc-overline,
+   .ub-kopf .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16, unten)
+   trägt dasselbe; gemessen Farbe vorher = nachher, siehe PR-Body.) */
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
    Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
 .lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
@@ -5023,7 +5025,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   background: var(--reg-r-flaeche);
   border-top-color: var(--reg-r);
 }
-.lc-titelblatt-band[data-reg] .lc-overline { color: var(--ink-600); }
+/* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-titelblatt-band[data-reg]
+   .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16) trägt `.lc-titelblatt-band`
+   samt Overline; gemessen Farbe vorher = nachher. Der Material-Zweig (`[data-reg="m"]`, unten)
+   bleibt: er schlägt ③ und ist von der Rolle nicht gedeckt.) */
 /* Randnotiz statt Kasten (`StatusBadge variant="text"`, «maschinell»): Board
    «Unter-Rechtsprechung-Register» — gepunktet unterstrichener Text in der
    Schriftgrösse der Zeile, ink-500 (5.34:1 auf paper, KONTRAST-R1). Die
