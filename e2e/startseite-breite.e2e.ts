@@ -28,7 +28,7 @@ import { test, expect, type Page } from '@playwright/test';
 //  (3b) W2·31 P15 (1.10.2026): dazu die Zellen @1280×800 und @1440×900 mit
 //      Seitenleiste 460 (Standardschrift). Rot vorher: @1280 Gesetze-Blatt
 //      Unterkante 915 > 800, @1440 Gesetze-Wahl 88 px Überlauf. Rot-Proben
-//      nach dem Fix: `@[960px]/start:grid-cols-…` in Startseite.tsx zurück auf
+//      nach dem Fix: `lg:@[936px]/start:grid-cols-…` (P15: `@[960px]/start:`) zurück auf
 //      `lg:grid-cols-…` → @1280 rot (Unterkante 915) und @1440 rot (Überlauf 88);
 //      `lg:max-w-[15.5rem]` der Kantone-Karte in GesetzeBlatt.tsx zurück auf
 //      `lg:max-w-none 2xl:max-w-[15.5rem]` → nur @1440 rot (Überlauf 10 px).
@@ -185,6 +185,33 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
       await start(page, breite, 1000);
       const cols = await page.locator(HAEUFIG).evaluate((ul) => getComputedStyle(ul).gridTemplateColumns.split(' ').length);
       expect(cols).toBe(spalten);
+    });
+  }
+
+  // W2·31 P15b (1.10.2026, Prüfer-Auflage 1 «ohne Seitenleiste unverändert»):
+  // die Zweispaltigkeit (Kachelfeld | Spalte rechts) hängt an Fenster ≥ 1024 UND
+  // Startseitenbreite ≥ 936 px. Gemessen vorher (PR-Stand 75c0a5de3, nur 960 px):
+  // @1016 Skala 1 zweispaltig mit 296×242-Kacheln (Mischzustand, main: einspaltig
+  // 476×220), @1024 Skala 1.4 einspaltig (Container 956.8 px; main: zweispaltig).
+  // `spalten` = 2 ⇔ die rechte Spalte steht NEBEN dem Kachelfeld, nicht darunter.
+  for (const { breite, leiste, skala, spalten, wie } of [
+    { breite: 1016, leiste: 0, skala: '1', spalten: 1, wie: 'einspaltig wie main (kein Mischzustand unter 1024)' },
+    { breite: 1024, leiste: 0, skala: '1', spalten: 2, wie: 'zweispaltig wie main' },
+    { breite: 1024, leiste: 0, skala: '1.4', spalten: 2, wie: 'zweispaltig wie main (Container 956.8 px)' },
+    { breite: 1440, leiste: LEISTE, skala: '1', spalten: 1, wie: 'einspaltig (Container 932 px)' },
+  ]) {
+    test(`(2b) P15b @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ' ohne Seitenleiste'} Skala ${skala}: ${wie}`, async ({ page }) => {
+      if (leiste) await mitLeiste(page, leiste);
+      if (skala !== '1') await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, ['lexmetrik-schriftskala', skala]);
+      await start(page, breite, 900);
+      const m = await page.evaluate(() => {
+        const aside = document.querySelector('aside[aria-label="Arbeitsplatz"]')!;
+        const feld = aside.previousElementSibling!.getBoundingClientRect();
+        const a = aside.getBoundingClientRect();
+        const z = document.querySelector('.lc-start-zelle')!.getBoundingClientRect();
+        return { spalten: a.left >= feld.right - 1 ? 2 : 1, kachel: `${Math.round(z.width)}x${Math.round(z.height)}` };
+      });
+      expect(m.spalten, JSON.stringify(m)).toBe(spalten);
     });
   }
 

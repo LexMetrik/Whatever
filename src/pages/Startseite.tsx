@@ -114,16 +114,29 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     (1536 + Seitenleiste + Skala 1.4), der 433-px-Fall fällt der Schwelle zum Opfer.
 //   · W2·31 P15 (1.10.2026, Posten «Standardschrift 1280×800 / 1440×900 mit
 //     Seitenleiste 460»): die Wurzel ist `@container/start`, und die
-//     ZWEISPALTIGKEIT (Kachelfeld | Spalte 20rem) hängt im Einzelfenster an der
-//     Breite der Startseite selbst statt am Fenster: ab 960 px (= Fenster 1024
-//     ohne Seitenleiste bei 48 px Seitenrand; px statt rem, damit die Schwelle
-//     mit der Schriftskala NICHT wandert — `lg` ist eine Medien-Abfrage und
-//     misst ohnehin in Standard-px). Gemessen vorher: mit Seitenleiste 460
-//     @1280 Kachel 198 px breit/340 hoch, Blatt 915 > 800, @1440 Gesetze-Wahl 88 px
-//     Überlauf; nachher einspaltig wie bei gleicher Breite ohne Seitenleiste
-//     (Blatt 772/932 px, Unterkante 795, Überlauf 0). Ohne Seitenleiste und im
-//     Pane (`@5xl/pane`) ist nichts verändert. Kachelhöhe (`lg:`) und Abstand
-//     (`lg:-mt-5`) bleiben am Fenster: sie tragen U13 und hängen an der Höhe.
+//     ZWEISPALTIGKEIT (Kachelfeld | Spalte 20rem) braucht im Einzelfenster BEIDES:
+//     Fenster ≥ `lg` (1024, wie auf main — unter 1024 bleibt alles wie dort, kein
+//     Mischzustand aus zweispaltig und fehlenden `lg:`-Kachelhöhen) UND Breite der
+//     Startseite selbst ≥ 936 px (`lg:@[936px]/start:`). Die 936 px sind GEMESSEN,
+//     nicht «1024 − 48»: die Containerbreite ist Fenster − Scrollbar − Seitenrand,
+//     und der Seitenrand wächst mit der Schriftskala (rem). Ohne Seitenleiste bei
+//     Fenster 1024 (Prüfer-Nachmessung 1.10.2026, Chromium): 976 px (Skala 1, Overlay-
+//     Scrollbar), 959 px (17-px-Scrollbar), 956.8 px (Skala 1.4), 939.8 px (Skala 1.4
+//     + 17-px-Scrollbar, der schmalste Fall, Skala max. 1.4) — alle ≥ 936 und wie
+//     main zweispaltig; mit Seitenleiste 460 @1440 932 px (915 mit Scrollbar) < 936
+//     und damit einspaltig, wie der Posten es braucht (zweispaltig: Gesetze-Wahl
+//     10–88 px Überlauf). Das Fenster der Schwelle ist eng (933–939 px); px statt
+//     rem, damit sie mit der Schriftskala nicht wandert. VERBLEIBENDE ABWEICHUNG,
+//     ehrlich: Fenster 1024 + Skala 1.4 + 17-px-Scrollbar hat nur 3.8 px Luft zur
+//     Schwelle; eine noch breitere Scrollbar oder ein Seitenrand über 1.4 × 48 px
+//     würde ohne Seitenleiste einspaltig kippen. Mit Seitenleiste ist die Seite
+//     einspaltig, BEHÄLT aber die `lg:`-Kachelhöhe (280 px) und `lg:-mt-5` — sie
+//     ist also NICHT gleich einem schmalen Fenster unter 1024 (Kacheln dort 220 px):
+//     U13 und Kachelhöhe hängen an der Fensterhöhe, nicht an der Spalten-
+//     zahl. Gemessen vorher: mit Seitenleiste 460 @1280 Kachel 198 px breit/340
+//     hoch, Blatt 915 > 800, @1440 Gesetze-Wahl 88 px Überlauf; nachher einspaltig
+//     (Blatt 772/932 px, Unterkante 795, Überlauf 0). Im Pane (`@5xl/pane`) ist
+//     nichts verändert.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -172,7 +185,7 @@ export function Startseite() {
   return (
     <div className={`@container/start grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:-mt-5 ', '@5xl/pane:-mt-5 ')}${pk('@[960px]/start:grid-cols-[minmax(0,1fr)_20rem] @[960px]/start:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
+      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:-mt-5 ', '@5xl/pane:-mt-5 ')}${pk('lg:@[936px]/start:grid-cols-[minmax(0,1fr)_20rem] lg:@[936px]/start:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
         <div className={`grid gap-y-4 ${pk(
           'lg:grid-rows-[auto_minmax(0,1fr)] lg:[&_.lc-start-zelle]:min-h-start-kachel-breit',
           '@5xl/pane:grid-rows-[auto_minmax(0,1fr)] @5xl/pane:[&_.lc-start-zelle]:min-h-start-kachel-breit')}`}>
