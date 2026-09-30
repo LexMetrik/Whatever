@@ -287,3 +287,172 @@ test.describe('Notice-Boxen: Breite = Breite ihres Spalten-Elternteils', () => {
     }
   }
 });
+
+// ─── Lesemass-Rest der Vorlagen-Schritte (Bündel K, 30.9.2026) ───────────────
+//
+// Posten `2026-09-30-vorlagen-640-51-zeilen-80-ch-aus-klauseltexten-ohne-classnam`
+// und `2026-09-30-vorlagen-hinweise-nach-1159-4-span-hinweise-80-ch-vorlagewer`.
+// Der Vollsweep (30 Vorlagen × alle Schritte) fand die Lücke im einspaltigen
+// Bereich 640–767 px (ab 768 steht das Formular in der halben Spalte, ≤ 520 px):
+// Hinweis-Box-TEXT bis 106 ch (@700), Kontrollkästchen-Text bis 101 ch,
+// Checkbox-Hinweis (`span.block.text-xs`) bis 111 ch, `ul.text-body-s > li` bis
+// 96 ch und — @640 — die Begründungstexte des Bausteinprotokolls (`p` ohne
+// Klasse, aus den Schemas in src/lib/vorlagen, dort nicht änderbar) bis 88 ch.
+// Fünf Klassen, je ein Deckel an der Darstellung (index.css `.lc-vorlagen-schritt
+// …`, wizard.tsx VorschauPanel), nie an einer gerahmten Box:
+//   notice     Box-Breite bleibt (= Eltern, ±2 px); der TEXT wird über den
+//              rechten Innenabstand auf 30 rem gehalten (innere Breite 240…480 px)
+//   cbText/cbHint/ulLi/protokoll   max-width 30 rem bzw. 24 rem (Hinweis)
+// Zusicherung je Fall: (1) mindestens ein mehrzeiliger Fund (§6.7); (2) Mittel
+// der vollen Zeilen ≤ 80 und längste Zeile ≤ 85 (+5 ch Toleranz für Zeilen aus
+// schmalen Glyphen: ein 30-rem-Deckel kann einzelne Zeilen auf 81 bringen, der
+// Mittelwert ist das Mass wie oben); (3) Unter- UND Obergrenze der wirksamen
+// Breite (Deckel kollabiert nicht, weicht nicht von tailwind.config.js ab).
+//
+// ROT ZU BEKOMMEN (§6.7, Beweis im PR-Bericht): die Regeln nach dem Kommentar
+// «Lesemass-Rest der Vorlagen-Schritte» in index.css und `max-w-reading-s` an der
+// Protokoll-Liste (wizard.tsx) entfernen → (2) schlägt mit den Original-Werten
+// (88/93/101/106/111 ch) fehl, (3) misst keinen Deckel.
+
+type Klasse = 'notice' | 'cbText' | 'cbHint' | 'ulLi' | 'protokoll';
+
+const REST_SELEKTOR: Record<Klasse, string> = {
+  notice: '.lc-vorlagen-schritt [class*="lc-notice"]',
+  cbText: '.lc-vorlagen-schritt label.flex > span',
+  cbHint: '.lc-vorlagen-schritt span.block.text-xs',
+  ulLi: '.lc-vorlagen-schritt :is(ul, ol, dl).text-body-s > :is(li, dd)',
+  protokoll: '[data-vorschau-panel] details.lc-card > summary + ul > li',
+};
+// Obergrenze des Deckels je Klasse in rem (Token aus tailwind.config.js).
+const REST_REM: Record<Klasse, number> = {
+  notice: pxVon('reading-s') / 16, cbText: pxVon('reading-s') / 16, cbHint: pxVon('kleintext') / 16,
+  ulLi: pxVon('reading-s') / 16, protokoll: pxVon('reading-s') / 16,
+};
+const MAX_CH_SPITZE = 85;
+const MIN_INNEN_PX = 240; // innere Text-Breite der Notice — darunter kollabiert die Zeile
+
+interface RestFund {
+  ch: number; max: number; zeilen: number; zeile: string;
+  deckelPx: number; innenPx: number; boxPx: number; elternPx: number; rootPx: number;
+}
+
+async function sammleRest(page: Page, klasse: Klasse): Promise<RestFund[]> {
+  return page.evaluate(({ sel, klasse: k }) => {
+    const wortRe = /\S+/g;
+    const range = document.createRange();
+    const funde: RestFund[] = [];
+    const rootPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    for (const el of document.querySelectorAll(sel)) {
+      const eb = el.getBoundingClientRect();
+      if (eb.width <= 1 || eb.height <= 1) continue;
+      type Wort = { t: string; weiss: boolean; x: number; cy: number; h: number };
+      const woerter: Wort[] = [];
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      // `weiss`: steht im Quelltext Leerraum vor dem Wort? Nur dann zählt die Lücke
+      // als Zeichen (Textknoten, die ohne Leerschlag am Vorknoten kleben — Links,
+      // Normchips — sonst verlängerten sie die Zeile künstlich; wie messeLesemass).
+      let vorher = ' ';
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const text = n.textContent ?? '';
+        if (!text.trim()) { if (text) vorher = ' '; continue; }
+        const vorKnoten = vorher;
+        vorher = text.slice(-1);
+        for (const m of text.matchAll(wortRe)) {
+          range.setStart(n, m.index!);
+          range.setEnd(n, m.index! + m[0].length);
+          const rs = [...range.getClientRects()].filter((r) => r.width > 0 && r.height > 0);
+          const davor = m.index! > 0 ? text[m.index! - 1] : vorKnoten;
+          if (!rs.length) continue;
+          // Ein am Zeilenende getrenntes Wort («(Praxis-|Standard)») hat ein Rect je
+          // Zeile: Zeichen anteilig nach Breite verteilen, sonst zählte das ganze
+          // Wort in JEDE Zeile (wie messeLesemass in seitenbreite.e2e.ts).
+          const summe = rs.reduce((acc, r) => acc + r.width, 0);
+          let ab = 0;
+          rs.forEach((r, i) => {
+            const bis = i === rs.length - 1 ? m[0].length : Math.round(m[0].length * (rs.slice(0, i + 1).reduce((acc, q) => acc + q.width, 0) / summe));
+            woerter.push({ t: m[0].slice(ab, bis), weiss: i === 0 && (davor === '' || /\s/.test(davor)), x: r.left, cy: (r.top + r.bottom) / 2, h: r.height });
+            ab = bis;
+          });
+        }
+      }
+      if (woerter.length < 2) continue;
+      woerter.sort((a, b) => a.cy - b.cy || a.x - b.x);
+      const zeilen: Wort[][] = [];
+      for (const w of woerter) {
+        const z = zeilen[zeilen.length - 1];
+        if (z && Math.abs(w.cy - z[0].cy) < z[0].h / 2) z.push(w); else zeilen.push([w]);
+      }
+      if (zeilen.length < 2) continue;
+      // Zeilenlänge: Zeichen + Lücken ZWISCHEN den Wörtern (kein Leerzeichen vor dem ersten).
+      const laengen = zeilen.map((z) => { z.sort((a, b) => a.x - b.x); return z.reduce((s, w, i) => s + w.t.length + (i > 0 && w.weiss ? 1 : 0), 0); });
+      const voll = laengen.slice(0, -1);
+      const cs = getComputedStyle(el);
+      const deckelEl = k === 'protokoll' ? (el.parentElement as Element) : el;
+      const pb = (el.parentElement as Element).getBoundingClientRect();
+      const iMax = voll.indexOf(Math.max(...voll));
+      funde.push({
+        ch: Math.round((voll.reduce((s, v) => s + v, 0) / voll.length) * 10) / 10,
+        max: Math.max(...voll), zeilen: zeilen.length,
+        zeile: zeilen[iMax].map((w) => w.t).join(' ').slice(0, 90),
+        deckelPx: Math.round(parseFloat(getComputedStyle(deckelEl).maxWidth) || 0),
+        innenPx: Math.round((el as HTMLElement).clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)),
+        boxPx: Math.round(eb.width), elternPx: Math.round(pb.width), rootPx,
+      });
+    }
+    return funde;
+  }, { sel: REST_SELEKTOR[klasse], klasse });
+}
+
+interface RestFall { klasse: Klasse; slug: string; schritt: number; vps: number[]; skala?: string; }
+
+// Stellen aus dem Vollsweep (Schritt = Anzahl «Weiter» nach «Mit Musterdaten füllen»).
+const REST_FAELLE: RestFall[] = [
+  { klasse: 'notice', slug: 'rubrum', schritt: 3, vps: [640, 700, 1280] },
+  { klasse: 'notice', slug: 'kuendigung-arbeitnehmer', schritt: 4, vps: [640, 700] },
+  { klasse: 'notice', slug: 'forderungsabtretung', schritt: 0, vps: [700] },
+  { klasse: 'notice', slug: 'forderungsabtretung', schritt: 0, vps: [1920], skala: '1.4' },
+  { klasse: 'cbText', slug: 'klage-ordentlich', schritt: 0, vps: [640, 700] },
+  { klasse: 'cbText', slug: 'schlichtungsgesuch-bs', schritt: 4, vps: [700] },
+  { klasse: 'cbText', slug: 'vorsorgeauftrag', schritt: 0, vps: [700] },
+  { klasse: 'cbText', slug: 'verjaehrungsverzicht', schritt: 1, vps: [1280] },
+  { klasse: 'cbHint', slug: 'werkvertrag', schritt: 1, vps: [640, 700, 1280] },
+  { klasse: 'ulLi', slug: 'verjaehrungsverzicht', schritt: 2, vps: [640, 700] },
+  { klasse: 'protokoll', slug: 'klage-ordentlich', schritt: 0, vps: [640] },
+  { klasse: 'protokoll', slug: 'verjaehrungsverzicht', schritt: 0, vps: [1280] },
+];
+
+test.describe('Vorlagen-Schritte: Lesemass-Rest (Bündel K)', () => {
+  for (const fall of REST_FAELLE) {
+    for (const vp of fall.vps) {
+      const skalaTxt = fall.skala ? `, Schriftskala ${fall.skala}` : '';
+      test(`${fall.klasse} ${fall.slug} S${fall.schritt} @${vp}${skalaTxt}: Mittel ≤ 80 ch, Deckel/Box in Grenzen`, async ({ page }) => {
+        if (fall.skala) await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* ohne Speicher */ } }, ['lexmetrik-schriftskala', fall.skala]);
+        await page.setViewportSize({ width: vp, height: 900 });
+        await page.goto(`/vorlagen/${fall.slug}`);
+        await bereit(page);
+        await musterdatenFuellen(page);
+        await weiter(page, fall.schritt);
+        await oeffneDetails(page);
+        const funde = await sammleRest(page, fall.klasse);
+        const wo = `${fall.klasse} ${fall.slug} S${fall.schritt} @${vp}${skalaTxt}`;
+        expect(funde.length, `${wo}: mindestens ein mehrzeiliger Fund erwartet (sonst prüft der Test nichts, §6.7)`).toBeGreaterThan(0);
+        for (const f of funde) {
+          const was = `${wo}: "${f.zeile}" (Mittel ${f.ch}, längste ${f.max}, Box ${f.boxPx}px, Deckel ${f.deckelPx}px, innen ${f.innenPx}px)`;
+          expect(f.ch, `${was} Mittel`).toBeLessThanOrEqual(MAX_CH);
+          expect(f.max, `${was} längste Zeile`).toBeLessThanOrEqual(MAX_CH_SPITZE);
+          const obergrenze = REST_REM[fall.klasse] * f.rootPx + 1;
+          if (fall.klasse === 'notice') {
+            // Box bleibt so breit wie ihr Block-Elternteil (±2 px), der Text liegt im Deckel.
+            expect(f.boxPx, `${was} Box-Untergrenze (Eltern ${f.elternPx}px)`).toBeGreaterThanOrEqual(f.elternPx - NOTICE_BOX_MAX_ABW_PX);
+            expect(f.boxPx, `${was} Box-Obergrenze (Eltern ${f.elternPx}px)`).toBeLessThanOrEqual(f.elternPx + NOTICE_BOX_MAX_ABW_PX);
+            expect(f.innenPx, `${was} Textbreite Untergrenze`).toBeGreaterThan(MIN_INNEN_PX);
+            expect(f.innenPx, `${was} Textbreite Obergrenze`).toBeLessThanOrEqual(obergrenze);
+          } else {
+            expect(f.deckelPx, `${was} Deckel kollabiert`).toBeGreaterThan(MIN_DECKEL_PX);
+            expect(f.deckelPx, `${was} Deckel weicht von der Token-Zahl ab`).toBeLessThanOrEqual(obergrenze);
+          }
+        }
+      });
+    }
+  }
+});
