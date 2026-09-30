@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { kontextFuerArtikel, type ArtikelKontext } from '../../lib/kontext';
+import { beiKantenShardErholt } from '../../lib/materialien/kanten-shard';
 import { KontextGruppe } from './KontextPanel';
 import { StatusBadge } from '../verzahnung/StatusBadge';
 import { Datum } from '../ui/Datum';
@@ -56,6 +57,10 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
     return () => { lebt = false; };
   }, [erlassKey, artikel, key]);
   const ctx = geladen && geladen.key === key ? geladen.ctx : null;
+  // Holt eine ANDERE Fläche den gescheiterten Shard nach, lädt dieses Popover mit.
+  const materialienFehler = ctx?.materialienFehler === true;
+  useEffect(() => (materialienFehler ? beiKantenShardErholt(erlassKey, () => setVersuch((v) => v + 1)) : undefined),
+    [materialienFehler, erlassKey]);
   if (!ctx || (ctx.entscheide.length === 0 && ctx.materialien.length === 0 && !ctx.materialienFehler)) return null;
 
   const entscheide = ctx.entscheide.slice(0, MAX_ZEILEN);

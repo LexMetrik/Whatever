@@ -108,6 +108,13 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // ebenso, wenn nur der Kanten-Shard scheiterte — dann zeigt keine andere Tafel
   // den Ausfall, die Artikel-Gruppe sagt ihn selbst (mit «Erneut laden»);
   // beim Manifest-Ausfall bleibt sie ausgeblendet (die Tafel meldet ihn schon).
+  // ERGÄNZUNG 30.9.2026 (#1181, derselbe Tag, später): der Satz «dann zeigt keine
+  // andere Tafel den Ausfall» gilt seither nur noch für zugeklappte Reiter — die
+  // Tafel «Erläuterungen» zeigt bei aufgeklapptem Reiter ihre EIGENE Fehlerzeile
+  // (`PanelErlaeuterungen`, Shard-Ausfall ⇒ «Ein Teil der behördlichen
+  // Erläuterungen …»). Der Ausfall steht dann zweimal, an zwei verschiedenen
+  // Stellen (am Artikel, im Erlass-Teil) — gewollt, beide tragen «Erneut laden»
+  // und heilen einander über `beiKantenShardErholt`.
   const [artikelMaterialien, artikelMaterialienUnsicher, artikelMaterialienErneut, artikelShardFehler] = useArtikelMaterialien(erlassKey, laden);
 
   const botschaftNachKey = useMemo(() => new Map<string, BotschaftBezug>(
