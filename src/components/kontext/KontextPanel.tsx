@@ -618,15 +618,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               reine ERLASS-EBENE-Kanten dezenter HINTER dem Zähler (<details>,
               tastatur-/CLS-fest wie RegesteBlock) — keine Chip-Wüste, Dichte-Regel
               bleibt. Staleness-Hinweis §2.4, «maschinell»-Badge nur bei Heuristik. */}
-          {softLawFehler && (
-            // §8: die Quelle (Kanten-Shard/Manifest) war nicht erreichbar — kein
-            // «nichts erfasst». Bleibt ein kuratierter Rest stehen, sagt die Zeile,
-            // dass die Liste darunter unvollständig ist.
-            <AbrufFehler gegenstand={alleMaterialien.length > 0 ? 'Ein Teil der amtlichen Materialien' : 'Amtliche Materialien'}
-              mehrzahl={alleMaterialien.length === 0} onErneut={() => setVersuch((v) => v + 1)}
-              daten={{ 'data-kontext-material-fehler': '' }} />
-          )}
-          {alleMaterialien.length > 0 && (() => {
+          {(alleMaterialien.length > 0 || softLawFehler) && (() => {
             const artikelScharf = alleMaterialien.filter((m) => m.artikel || m.sublabel);
             const erlassEbene = alleMaterialien.filter((m) => !m.artikel && !m.sublabel);
             const sichtbarScharf = artikelScharf.slice(0, MAX_MATERIALIEN);
@@ -662,7 +654,17 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
             };
             return (
               <KontextGruppe titel="Amtliche Materialien" richtung="Legt aus" punkt="material" anzahl={alleMaterialien.length}
-                hinweis={<><span className="num">{alleMaterialien.length}</span> erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) — kein Gesetzesrang.</>}>
+                hinweis={alleMaterialien.length > 0
+                  ? <><span className="num">{alleMaterialien.length}</span> erfasste Behördenpublikationen (Kreisschreiben, Wegleitungen, Leitfäden u. a.) — kein Gesetzesrang.</>
+                  : undefined}>
+                {softLawFehler && (
+                  // §8: die Quelle (Kanten-Shard/Manifest) war nicht erreichbar — kein «nichts
+                  // erfasst». Die Zeile steht IN der Gruppe (wie bei Botschaften/Revisionen);
+                  // bleibt ein kuratierter Rest stehen, sagt sie, dass die Liste unvollständig ist.
+                  <AbrufFehler gegenstand={alleMaterialien.length > 0 ? 'Ein Teil der amtlichen Materialien' : 'Amtliche Materialien'}
+                    mehrzahl={alleMaterialien.length === 0} onErneut={() => setVersuch((v) => v + 1)}
+                    daten={{ 'data-kontext-material-fehler': '' }} />
+                )}
                 {artikelScharf.length > 0 && (
                   <ul className="flex flex-col gap-1.5">{sichtbarScharf.map(zeile)}</ul>
                 )}

@@ -95,8 +95,10 @@ const text = () => (ziel.textContent ?? '').replace(/\s+/g, ' ');
 const materialFehler = () => ziel.querySelectorAll('[data-kontext-material-fehler]');
 
 afterEach(async () => {
-  abo.an = 0; abo.ab = 0;
+  // Erst unmounten (der Cleanup meldet ab und zählt), DANN die Zähler zurücksetzen —
+  // sonst landet die Abmeldung im nächsten Test (Zweitprüfung #1196, Shuffle-Seed 3).
   if (root) { const r = root; root = null; await act(async () => r.unmount()); }
+  abo.an = 0; abo.ab = 0;
   vi.unstubAllGlobals();
   _leereKantenShardCache();
   _leereShardCache();
@@ -162,6 +164,29 @@ describe('R1 · KontextPanel: Shard-Ausfall ⇒ AbrufFehler + «Erneut laden» s
     expect(text()).toContain('Merkblatt zum Pikettdienst');
     expect(materialFehler()).toHaveLength(0);
     expect(text()).not.toContain('Ein Teil der amtlichen Materialien');
+  });
+
+  it('Erlass OHNE kuratierte Einträge, Shard scheitert: Voll-Ausfall «Amtliche Materialien konnten …» IN der Gruppe, nicht der Leerzustand', async () => {
+    // MWSTV: in KANTEN_ERLASSE, aber ohne Bundle-Einträge/Werkzeuge/Normen ⇒ ohne den Fehler wäre das Panel «leer».
+    // typ 'entscheid' (EntscheidLeser): Botschaften/Revisionen/Vernehmlassungen sind norm-only und liefern
+    // hier weder Fehler noch Inhalt — sonst verdeckte deren 404-Fehlerzeile die `istLeer`-Bedingung.
+    stubFetch({ '/materialien/register.json': { status: 200, body: MANIFEST }, '/materialien/kanten/MWSTV.json': 'netz' });
+    await rendere(createElement(MemoryRouter, null, createElement(KontextPanel, { typ: 'entscheid', normKeys: ['MWSTV'] })));
+    expect(materialFehler()).toHaveLength(1);
+    expect(text()).not.toContain('Noch keine Querverweise'); // istLeer trägt `!softLawFehler`
+    const gruppe = ziel.querySelector('[data-kontext-material-fehler]')!.closest('[data-kontext-rolle]')!;
+    expect(gruppe.textContent).toContain('Amtliche Materialien');
+    expect(gruppe.textContent).toContain('Amtliche Materialien konnten nicht geladen werden.'); // Mehrzahl, kein «Ein Teil»
+    expect(gruppe.textContent).not.toContain('Ein Teil der');
+    expect(gruppe.textContent).not.toContain('erfasste Behördenpublikationen'); // kein Zähler-Hinweis ohne Liste
+  });
+
+  it('Teil-Ausfall: die Fehlerzeile steht in derselben Gruppe wie der kuratierte Rest', async () => {
+    stubFetch({ '/materialien/register.json': { status: 200, body: MANIFEST }, '/materialien/kanten/ARG.json': { status: 503 } });
+    await rendere(panel());
+    const gruppe = ziel.querySelector('[data-kontext-material-fehler]')!.closest('[data-kontext-rolle]')!;
+    expect(gruppe.textContent).toContain('Merkblatt zum Pikettdienst');
+    expect(gruppe.textContent).toContain('Ein Teil der amtlichen Materialien konnte nicht geladen werden.');
   });
 
   it('Shard 404 (Erlass ohne Kanten) ist eine ANTWORT: keine Fehlerzeile', async () => {
