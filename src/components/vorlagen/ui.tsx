@@ -32,10 +32,12 @@ export const NICHT_GESPEICHERT_HINWEIS =
 const BESCHRIFTBAR = ['input', 'select', 'textarea'];
 /** Host-Elemente, die als Kind von `Field` ein ZUSAMMENGESETZTES Control tragen
  *  (Datumsfeld + «heute»-Knopf, Zahl + Einheit, Checkbox-Raster). Nicht
- *  beschriftbar — das Label erreicht sie über `role="group"` +
- *  `aria-labelledby` (W2·19 P12, 30.9.2026; vorher blieb das Control ohne
- *  zugänglichen Namen, lokal nur in VerzugszinsForm per `aria-label` behoben). */
-const GRUPPIERBAR = ['div', 'section', 'ul', 'ol', 'fieldset'];
+ *  beschriftbar — das Label benennt die GRUPPE über `role="group"` +
+ *  `aria-labelledby` (W2·19 P12, 30.9.2026). Die Controls darin brauchen
+ *  weiterhin einen eigenen Namen (z. B. `aria-label` in VerzugszinsForm —
+ *  nicht zurückbauen). `ul`/`ol` bewusst nicht: `role="group"` nähme ihnen
+ *  die Listen-Rolle, die `li` stünden ohne Liste (axe listitem). */
+const GRUPPIERBAR = ['div', 'section', 'fieldset'];
 
 export function Field({ label, children, hint, optional, fehlt }: {
   /** Beschriftung. `ReactNode` (R2-E/F1-2), weil einzelne Felder dem Namen eine

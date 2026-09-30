@@ -1,9 +1,9 @@
-// Field: auch ein zusammengesetztes Control (div-Wrapper) bekommt seinen Namen
-// (W2·19 P12, 30.9.2026). Vorher: ein `div` ist nicht beschriftbar, `htmlFor`
-// blieb leer, das Control darin hiess nur nach seinem Platzhalter; lokal war das
-// nur in VerzugszinsForm per `aria-label` behoben (HN-D6-Übergabe DK-Bericht).
-// Jetzt trägt der Baustein es selbst: `role="group"` + `aria-labelledby` auf das
-// Label. Kein DOM-Environment im Haus — der zugängliche Name wird aus dem
+// Field: auch ein zusammengesetztes Control (div-Wrapper) bekommt einen
+// Gruppennamen (W2·19 P12, 30.9.2026). Vorher: ein `div` ist nicht beschriftbar,
+// `htmlFor` blieb leer, die Gruppe war namenlos (HN-D6-Übergabe DK-Bericht).
+// Jetzt trägt der Baustein `role="group"` + `aria-labelledby` auf das Label.
+// Das benennt nur die Gruppe — innere Controls brauchen weiterhin einen eigenen
+// Namen (VerzugszinsForm `aria-label`, Prüfer #1202). Kein DOM-Environment im Haus — der zugängliche Name wird aus dem
 // gerenderten Markup gelesen (Label-id ↔ aria-labelledby/htmlFor).
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
