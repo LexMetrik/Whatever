@@ -37,24 +37,16 @@ import {
   routenEbeneVonKey,
 } from '../lib/normtext/erlassAdresse';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { ohneKommentare } from './appDateien';
 import { umzugsZiel } from '../pages/gesetz-leser/adressUmzug';
 
 const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
 
 // ── A · Eine Ableitung ──────────────────────────────────────────────────────
 
-/** Zeilen- und Blockkommentare entfernen, damit Herleitungs-PROSA (die die
- *  Alt-Form zwangsläufig zitiert) nicht als Verstoss zählt. Strings bleiben
- *  stehen — genau sie sollen gefunden werden.
- *
- *  R5-A (5.9.2026) · begruendete Ausnahme von `appDateien.ts`: dieser Waechter
- *  sucht nach ADRESSEN, also nach Zeichenketten mit `//` darin. Das geteilte
- *  Sieb streicht jede Zeile ab `//` und wuerde damit genau die gesuchten
- *  URL-Formen unsichtbar machen; das Sieb hier schuetzt `://` ausdruecklich
- *  (`(^|[^:])//`). Gleiche Absicht, notwendig anderes Sieb — keine Dublette. */
-function ohneKommentare(q: string): string {
-  return q.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1');
-}
+// Zeilen- und Blockkommentare entfernen (geteiltes Sieb `ohneKommentare`, §5),
+// damit Herleitungs-PROSA (die die Alt-Form zwangsläufig zitiert) nicht als
+// Verstoss zählt. Strings bleiben stehen — genau sie sollen gefunden werden.
 
 function dateien(ordner: string, treffer: string[] = []): string[] {
   for (const n of readdirSync(ordner)) {

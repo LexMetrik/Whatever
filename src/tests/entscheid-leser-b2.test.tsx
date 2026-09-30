@@ -33,6 +33,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { liesOhneKommentare } from './appDateien';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { referenzImTitel } from '../pages/entscheidLeserRegeln';
 import { QuellLink } from '../components/ui/QuellLink';
@@ -58,18 +59,13 @@ const FLAECHE = [
   'src/components/rechtsprechung/leseGroesse.ts',
 ] as const;
 
-/** Quelltext ohne Kommentare — geprüft wird der ausführbare Teil. Die
- *  Begründungen am Fundort zitieren den Vorzustand wörtlich (§2b: datierte
- *  Belege werden nie nachgeführt), sie dürfen die Sonden nicht auslösen. */
-function ohneKommentare(pfad: string): string {
-  return readFileSync(pfad, 'utf8')
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .split('\n').filter((z) => !/^\s*(\/\/|\*)/.test(z)).join('\n');
-}
-
-/** Ohne Argument: die ganze Fläche. Mit Pfad: genau diese Datei. */
+/** Ohne Argument: die ganze Fläche. Mit Pfad: genau diese Datei.
+ *  Quelltext ohne Kommentare (geteiltes Sieb `liesOhneKommentare`) — geprüft
+ *  wird der ausführbare Teil. Die Begründungen am Fundort zitieren den
+ *  Vorzustand wörtlich (§2b: datierte Belege werden nie nachgeführt), sie
+ *  dürfen die Sonden nicht auslösen. */
 function quelle(pfad?: string): string {
-  return (pfad ? [pfad] : [...FLAECHE]).map(ohneKommentare).join('\n');
+  return (pfad ? [pfad] : [...FLAECHE]).map(liesOhneKommentare).join('\n');
 }
 
 // ── A-2 ────────────────────────────────────────────────────────────────────
