@@ -25,9 +25,9 @@
  */
 import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { kontrast, type Mode } from '../../scripts/farbwelt-messung';
-import { PFLICHT, RISSE } from '../../scripts/farbwelt-tabellen';
 import { KuendigungTimeline } from '../components/KuendigungTimeline';
 import type { SperrfristenErgebnis } from '../lib/sperrfristen';
 import { APP_WURZEL, alleQuellen, liesRoh, ohneKommentare, pruefeAusnahmen, rel } from './appDateien';
@@ -120,6 +120,16 @@ describe('DK-06 · Text steht nicht in ink-300/ink-400', () => {
 
 const CSS = ohneKommentare(liesRoh(join(APP_WURZEL, 'index.css')));
 const FLAECHEN = ['g', 'r', 'm', 'w'] as const;
+/**
+ * Das Farbwelt-Tor als Text gelesen: `scripts/farbwelt-tabellen.ts` zieht
+ * `tailwind.config.js` ein, das die App-tsconfig (`tsc -b`) nicht typisiert —
+ * ein Import käme also nur mit einer Typ-Ausnahme durch. Die Zeilen sind
+ * einfache Literale; der Text ist dieselbe Quelle.
+ */
+const TABELLEN = ohneKommentare(readFileSync(join(APP_WURZEL, '..', 'scripts', 'farbwelt-tabellen.ts'), 'utf8'));
+const hatPflicht = (fg: string, bg: string): boolean => TABELLEN.includes(`TEXT('${fg}', '${bg}'`);
+const hatRiss = (fg: string, bg: string, mode: Mode): boolean =>
+  new RegExp(`\\{\\s*fg:\\s*'${fg}',\\s*bg:\\s*'${bg}',\\s*mode:\\s*'${mode}'`).test(TABELLEN);
 const MODI: Mode[] = ['hell', 'dunkel'];
 
 /** Die Klassen der Rolle: `:is(<liste>) :is(.text-ink-500, .lc-overline) { color: var(--ink-600) }`. */
@@ -173,14 +183,14 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
     for (const f of FLAECHEN) {
       const bg = `reg-${f}-flaeche`;
       expect(
-        PFLICHT.some((p) => p.fg === 'ink-600' && p.bg === bg && p.min === 4.5),
+        hatPflicht('ink-600', bg),
         `PFLICHT ink-600/${bg} (das Paar der Rolle)`,
       ).toBe(true);
       for (const mode of MODI) {
         expect(kontrast('ink-600', bg, mode), `ink-600/${bg} ${mode}`).toBeGreaterThanOrEqual(4.5);
         if (kontrast('ink-500', bg, mode) < 4.5) {
           expect(
-            RISSE.some((r) => r.fg === 'ink-500' && r.bg === bg && r.mode === mode),
+            hatRiss('ink-500', bg, mode),
             `ink-500/${bg} ${mode} = ${kontrast('ink-500', bg, mode).toFixed(2)}:1 liegt unter 4.5 und gehört in RISSE (scripts/farbwelt-tabellen.ts)`,
           ).toBe(true);
         }
@@ -205,6 +215,10 @@ describe('DK-16 · Flächen-Rolle «Tinte leise» statt Selektorliste', () => {
     expect(flaechenOhneRolle('.ub-kopf { background: var(--reg-marke-flaeche, var(--well)); }', rolle)).toEqual([]);
     expect(flaechenOhneRolle('.lc-x { color: var(--reg-g-flaeche); }', rolle)).toEqual([]);
     expect(rollenKlassen('.lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }')).toBeNull();
+    // Die Tabellen-Sonde unterscheidet Modus und Fläche (hell reg-m trägt 4.59 und steht nicht in RISSE).
+    expect(hatRiss('ink-500', 'reg-m-flaeche', 'dunkel')).toBe(true);
+    expect(hatRiss('ink-500', 'reg-m-flaeche', 'hell')).toBe(false);
+    expect(hatPflicht('ink-600', 'reg-x-flaeche')).toBe(false);
   });
 });
 
