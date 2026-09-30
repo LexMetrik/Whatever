@@ -37,7 +37,13 @@ const ELI_FORM = /^https:\/\/www\.fedlex\.admin\.ch\/eli\//;
  * des Generators schreibt bei `__N` den Basis-Anker (= 1. Vorkommen) und ruft amtlicherAnker()
  * nicht auf (Gegenprüfung PR #1166).
  */
-const AMTLICHER_NAMENS_ANKER = /^t*a\d+[a-z]*(?:\d+[a-z]*)*$/;
+const AMTLICHER_NAMENS_ANKER = /^t*a\d[a-z0-9]*$/;
+// Linearform (Posten 30.9.2026): die frühere Fassung `^t*a\d+[a-z]*(?:\d+[a-z]*)*$` backtrackte
+// katastrophal (28 Ziffern + Fremdzeichen ≈ 1,6 s, exponentiell). Sprachgleich: (\d+[a-z]*)(\d+[a-z]*)*
+// = (\d+[a-z]*)+ ist genau die Menge der nichtleeren Wörter über [0-9a-z], die mit einer Ziffer
+// beginnen (jedes solche Wort zerfällt eindeutig in maximale «Ziffern·Buchstaben»-Läufe, jeder Lauf
+// beginnt mit einer Ziffer) = `\d[a-z0-9]*`. «t*» und «a» sind disjunkt → kein Backtracking.
+// Beweis durch Differential-Test: src/tests/verifikationslink.test.ts («Regex-Äquivalenz»).
 
 /**
  * Outbound-Link «amtliche Fassung» für EINEN Artikel: die vom Generator
