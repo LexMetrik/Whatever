@@ -168,10 +168,14 @@ describe('R1 · KontextPanel: Shard-Ausfall ⇒ AbrufFehler + «Erneut laden» s
 
   it('Erlass OHNE kuratierte Einträge, Shard scheitert: Voll-Ausfall «Amtliche Materialien konnten …» IN der Gruppe, nicht der Leerzustand', async () => {
     // MWSTV: in KANTEN_ERLASSE, aber ohne Bundle-Einträge/Werkzeuge/Normen ⇒ ohne den Fehler wäre das Panel «leer».
-    // typ 'entscheid' (EntscheidLeser): Botschaften/Revisionen/Vernehmlassungen sind norm-only und liefern
-    // hier weder Fehler noch Inhalt — sonst verdeckte deren 404-Fehlerzeile die `istLeer`-Bedingung.
-    stubFetch({ '/materialien/register.json': { status: 200, body: MANIFEST }, '/materialien/kanten/MWSTV.json': 'netz' });
-    await rendere(createElement(MemoryRouter, null, createElement(KontextPanel, { typ: 'entscheid', normKeys: ['MWSTV'] })));
+    // Der Revisions-Sidecar wird leer-erfolgreich gestubbt: sonst verdeckte DESSEN 404-Fehlerzeile die
+    // `istLeer`-Bedingung und die Probe (Mutation ohne `!softLawFehler`) bliebe grün (Zweitprüfung M4).
+    stubFetch({
+      '/materialien/register.json': { status: 200, body: MANIFEST },
+      '/normtext/revisionen/MWSTV.json': { status: 200, body: { revisionen: [] } },
+      '/materialien/kanten/MWSTV.json': 'netz',
+    });
+    await rendere(createElement(MemoryRouter, null, createElement(KontextPanel, { typ: 'norm', normKeys: ['MWSTV'] })));
     expect(materialFehler()).toHaveLength(1);
     expect(text()).not.toContain('Noch keine Querverweise'); // istLeer trägt `!softLawFehler`
     const gruppe = ziel.querySelector('[data-kontext-material-fehler]')!.closest('[data-kontext-rolle]')!;
