@@ -54,10 +54,128 @@ describe('verifizierLinkArtikel — echte Snapshot-Fälle (§7)', () => {
   });
 });
 
-describe('verifizierLinkArtikel — kein Link statt falscher Link (§8)', () => {
-  it('Synthese-Suffix «__2» (KKV 126_z__2): Fragment existiert auf Fedlex NICHT → null', () => {
+describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-Anker (W2·27, Nebenfund #890)', () => {
+  it('KKV 126_z__2 («Wesentliche Mängel»): quelleUrl trägt #ta126z → Deep-Link freigegeben', () => {
+    // Live-Beleg 30.9.2026 (fedlex.admin.ch, Chromium): …/eli/cc/2006/859/de#ta126z landet am
+    // 2. Vorkommen «Art. 126z tredecies» (top −237 px), das 1. liegt bei −3334 px.
     const e = eintrag(kkv, '126_z__2');
+    expect(e.quelleUrl).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
+    expect(verifizierLinkArtikel(e, GELTEND)).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
+  });
+
+  it('Korpus-Sweep: jede Freigabe eines «__N»-Tokens trägt einen amtlichen Namens-Anker (Struktur-Orakel ohne Produktiv-Regex); KKV 126_z__2 ist dabei', () => {
+    const bund = ['KKV', 'ZGB', 'OR'].flatMap((n) => lade(`bund/${n}.json`).eintraege);
+    const nToken = bund.filter((e) => /__\d+$/.test(e.artikel));
+    expect(nToken.map((e) => e.artikel)).toContain('126_z__2'); // Sabotage-Schutz: nicht leer (§6.7b)
+    let freigaben = 0;
+    for (const e of nToken) {
+      const url = verifizierLinkArtikel(e, GELTEND);
+      if (url == null) continue;
+      freigaben += 1;
+      // Unabhängiges Orakel (Zeichen-Schleife, NICHT der Produktiv-Regex): nur [a-z0-9], «t»-Präfixe,
+      // dann «a»+Ziffer; kein «_», kein «/». Messung 30.9.2026 Nachzug: 3 862 <a name> in 9 Filestore-Pins
+      // (ZGB, OR, KKV, BankV, BetmG, ERV, PaVo, SVG, VwVG), alle gedeckt. Der Erstsweep (3 171 <article>
+      // in ZGB/OR/KKV, «ausnahmslos a+Nummer(+Buchstaben), ggf. t-Präfix, Bereich a…a…») war zu eng:
+      // 4/3 171 Bereichs-Namen beginnen den Bereich nicht mit «a» (a28d28f, a226f226k, a663d663h, a107b107e).
+      expect(istNamensAnkerStruktur(url.slice(url.indexOf('#') + 1)), url).toBe(true);
+    }
+    expect(freigaben).toBeGreaterThan(0);
+  });
+});
+
+/** Struktur-Orakel ohne Regex: «t»* · «a» · Ziffer · dann nur [a-z0-9] (kein «_», kein «/»). */
+function istNamensAnkerStruktur(f: string): boolean {
+  let i = 0;
+  while (f[i] === 't') i += 1;
+  if (f[i] !== 'a') return false;
+  i += 1;
+  if (f[i] === undefined || f[i] < '0' || f[i] > '9') return false;
+  for (; i < f.length; i += 1) {
+    const c = f[i];
+    if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z'))) return false;
+  }
+  return true;
+}
+
+describe('verifizierLinkArtikel — «__N» nur bei amtlichem Namens-Anker, nie bei Struktur-Basis-Anker (Positivliste, W2·27)', () => {
+  const BASIS = 'https://www.fedlex.admin.ch/eli/cc/2006/859/de';
+  const mit = (artikel: string, fragment: string): NormSnapshot => ({
+    ...eintrag(kkv, '126_z__2'), artikel, quelleUrl: `${BASIS}#${fragment}`,
+  });
+
+  // Anhang-/Sektions-Pfad des Generators (scripts/normtext-snapshot.ts): bei «__N» wird der
+  // Basis-Anker (= ERSTES Vorkommen) geschrieben, amtlicherAnker() läuft dort nicht.
+  it.each([
+    ['annex_1__2', 'annex_1'],
+    ['annex_u1__2', 'annex_u1'],
+    ['lvl_u1__2', 'lvl_u1'],
+    ['scope_u1__2', 'scope_u1'],
+    ['decl_u1__2', 'decl_u1'],
+  ])('%s → Fragment #%s (Basis-Anker des 1. Vorkommens) → null', (artikel, fragment) => {
+    expect(verifizierLinkArtikel(mit(artikel, fragment), GELTEND)).toBeNull();
+  });
+
+  it.each([
+    ['disp_u1_art_1__2', 'disp_u1/art_1'],
+    ['126_z__2', 'art_126_z'],
+    ['x__2', 'book_1/part_1/tit_19/chap_3'],
+    ['x__2', 'a'], // kein Ziffernteil
+    ['x__2', 'ta'], // kein Ziffernteil
+    ['x__2', 'xa126z'], // fremdes Präfix
+    ['x__2', 'ta126z_x'], // «_» → Struktur-Id-Form
+    ['x__2', 'ta126z/x'],
+    ['x__2', 'a28d_28f'], // «_» mitten im Bereich → Struktur-Id-Form
+    ['x__2', 'a28d28f/x'],
+    ['x__2', 'art_28d'],
+  ])('%s → Fragment #%s ist kein amtlicher Namens-Anker → null', (artikel, fragment) => {
+    expect(verifizierLinkArtikel(mit(artikel, fragment), GELTEND)).toBeNull();
+  });
+
+  // Die Formen, die amtlicherAnker() (scripts/normtext/artikel-vorkommen.ts) tatsächlich liefert:
+  // der <a name>-Wert vor dem Artikelkopf (Sweep ZGB+OR+KKV: «a126z», «ta126z», «tta1», «a29a29f»).
+  it.each(['ta126z', 'a126z', 'a10', 'tta1', 'ttttta2', 'a29a29f', 'a226a226d'])(
+    '«__N» mit amtlichem Namens-Anker #%s → Deep-Link freigegeben',
+    (fragment) => {
+      expect(verifizierLinkArtikel(mit('x__2', fragment), GELTEND)).toBe(`${BASIS}#${fragment}`);
+    },
+  );
+
+  // Bereichs-Namensanker, deren Bereich NICHT mit «a» beginnt (Filestore-Pin-Sweep 30.9.2026, Nachzug
+  // Gegenprüfung Runde 2): ZGB a28d28f, OR a226f226k/a663d663h, KKV a107b107e, BetmG a28b28l,
+  // ERV a148k148m, SVG a104c104d — alle amtlich, je im Dokument genau 1×.
+  it.each(['a28d28f', 'a226f226k', 'a663d663h', 'a107b107e', 'a28b28l', 'a148k148m', 'a104c104d', 'ta28d28f'])(
+    '«__N» mit amtlichem Bereichs-Namens-Anker #%s (Bereich ohne «a»-Präfix) → Deep-Link freigegeben',
+    (fragment) => {
+      expect(verifizierLinkArtikel(mit('x__2', fragment), GELTEND)).toBe(`${BASIS}#${fragment}`);
+    },
+  );
+
+  it('Nicht-«__N»-Token bleiben unberührt: annex_1 (ohne Suffix) behält sein Fragment', () => {
+    expect(verifizierLinkArtikel(mit('annex_1', 'annex_1'), GELTEND)).toBe(`${BASIS}#annex_1`);
+  });
+});
+
+describe('verifizierLinkArtikel — kein Link statt falscher Link (§8)', () => {
+  it('Synthese-Suffix «__2» OHNE eigenen amtlichen Anker (Fallback auf den Basis-Anker = 1. Vorkommen) → null', () => {
+    // amtlicherAnker() fällt bei nicht eindeutigem Namens-Anker auf den Basis-Anker zurück
+    // — der zeigt auf das ERSTE Vorkommen, also auf einen FREMDEN Artikel (§8).
+    const e = { ...eintrag(kkv, '126_z__2'), quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de#art_126_z' };
     expect(verifizierLinkArtikel(e, GELTEND)).toBeNull();
+  });
+
+  it('Synthese-Suffix «__2» im Schlussteil mit Basis-Anker «disp_u1/art_1» (fremder Artikel) → null', () => {
+    const e = {
+      ...eintrag(kkv, '126_z__2'),
+      artikel: 'disp_u1_art_1__2',
+      quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de#disp_u1/art_1',
+    };
+    expect(verifizierLinkArtikel(e, GELTEND)).toBeNull();
+  });
+
+  it('Synthese-Suffix «__2» ohne Fragment / ohne ELI-Form → null', () => {
+    const e = eintrag(kkv, '126_z__2');
+    expect(verifizierLinkArtikel({ ...e, quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de' }, GELTEND)).toBeNull();
+    expect(verifizierLinkArtikel({ ...e, quelleUrl: 'https://fedlex.data.admin.ch/filestore/x/de/html/x.html#ta126z' }, GELTEND)).toBeNull();
   });
 
   it('Kanton-Eintrag (kein Fedlex-eId-Raum) → null', () => {
