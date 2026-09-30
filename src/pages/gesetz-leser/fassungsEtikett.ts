@@ -27,7 +27,7 @@ import { formatiereDatum } from './helpers';
  * Der datierte Stand dieses Artikels, wörtlich so, wie er in der Oberfläche
  * steht — oder `null`, wenn der Shard kein Datum trägt.
  *
- * REIHENFOLGE: «Aufgehoben seit …» geht vor «Gilt seit …». Ein aufgehobener
+ * REIHENFOLGE: «Aufgehoben seit …» und «Gegenstandslos [seit …]» gehen vor «Gilt seit …». Ein aufgehobener
  * Artikel GILT nicht mehr; sein Wirkungs-Stand ist die Auskunft, die zählt
  * (dieselbe Rangfolge, die `parts/ArtikelHistorie.tsx` seit G-HIST-UI führt —
  * von dort ist sie unverändert hierher gezogen, nicht neu erfunden).
@@ -35,6 +35,12 @@ import { formatiereDatum } from './helpers';
 function fassungsStand(historie: ArtikelHistorie | undefined): string | null {
   if (!historie) return null;
   if (historie.aufgehobenSeit) return `Aufgehoben seit ${formatiereDatum(historie.aufgehobenSeit)}`;
+  // W2·27-BUND-FERTIG (1.10.2026): amtlich «gegenstandslos» ist EIN ANDERER Stand als «aufgehoben» (§1) und
+  // gilt ebenso nicht mehr als «Gilt seit …» — dasselbe Wort wie im Normtext-Leser (`leerstellenWort`).
+  // Ohne amtliches Datum steht das blosse Wort, nie ein geschätztes Datum (§2).
+  if (historie.gegenstandslos) {
+    return historie.gegenstandslos.seit ? `Gegenstandslos seit ${formatiereDatum(historie.gegenstandslos.seit)}` : 'Gegenstandslos';
+  }
   if (historie.giltSeit) return `Gilt seit ${formatiereDatum(historie.giltSeit)}`;
   return null;
 }

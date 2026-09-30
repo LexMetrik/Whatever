@@ -56,6 +56,12 @@
 //       «Dritter Satz gegenstandslos» (VSTG Art. 36a), «… ist heute gegenstandslos»
 //       (GEBV SchKG Art. 61) — dort lebt der Artikel.
 //
+//       NACHTRAG 1.10.2026 (W2·27-BUND-FERTIG, §0 Ziff. 2b — ergänzt, nicht nachgeführt): «bewusst NICHT
+//       erweitert» galt für #1183. Seither kennt `historie-parse.ts` «Gegenstandslos» als eigenen
+//       HistorieTyp 'gegenstandslos' (Gegenprüfung #1183, §8: die Historie zeigte 67f als «In Kraft»);
+//       `fussnoteHebtAuf` bleibt davon unberührt (fragt nur typ 'aufgehoben'), die Vermerk-Regel hier
+//       (`fussnoteGegenstandslos`) und die Grammatik dort teilen dasselbe Muster am Fussnoten-Anfang.
+//
 //   (e) ANHÄNGE (`<section id="annex_*">`, kein `<article>`): Fedlex rendert einen
 //       aufgehobenen Anhang als Überschrift `<h1 class="heading">` mit Kopf-Marker,
 //       Fussnoten-Div (Klasse «footnotes» ODER «footnotes section-heading-footnote»)
