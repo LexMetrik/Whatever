@@ -1728,12 +1728,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2018-07-31",
-        "2019-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/432/de",
-      "sha": "e7a26ffbb73ff906f04f6b98bf1ca6cf8efcafc215a787da1f19e94ae9b29c86"
+      "sha": "3adade264b0ecbb0642fbcc0ea7bce0567657f7b833fc56c418a9205f5d8be4b"
     },
     {
       "art": "aenderung",
@@ -1827,25 +1823,6 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/339/de",
       "sha": "57519035d694b398fcc9b82a922aadcb731dce2582ccc7078bf9e7acd319b3c3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-07-31",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/432",
-      "dateDocument": "2018-07-31",
-      "roFundstelle": "AS 2018 2837",
-      "titelDe": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV) (Betrifft nur den französischen Text)",
-      "titelFr": "Ordonnance du DFI sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS)",
-      "titelIt": "Ordinanza del DFI sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre) (Concerne soltanto il testo francese)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2018-07-31",
-        "2019-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/432/de",
-      "sha": "11a71ac527c9fe1adfa9708ebf42ba872a072b82c87d4079189a4b73c1a0e334"
     },
     {
       "art": "aenderung",
@@ -3830,5 +3807,5 @@
       "sha": "ed9ac31cf89df6e2f980dbb90ce327861d3a6e2c3298491d99f84aa4ccb11759"
     }
   ],
-  "sha": "1a00b5e18e037a925117f2760356896355414879b874b76f8ec2ee70b69a6dd1"
+  "sha": "7dd8c7184a99fffe56a70b34fc7ab8ddc263a71c8b350de401eb655d8eebb787"
 }
