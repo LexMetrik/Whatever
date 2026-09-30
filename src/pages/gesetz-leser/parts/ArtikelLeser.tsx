@@ -392,7 +392,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 «aufgehoben» (§1/§8); dieselbe Dämpfung, dieselbe Rolle. */}
             {leerstelle === 'gegenstandslos' && (
               <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500"
-                title={LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG}>· {leerstellenWort(leerstelle)}</span>
+                title={LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG}>{`· ${leerstellenWort(leerstelle)}`}</span>
             )}
             {/* ── W2·5m · NACHBAR-ARTIKEL «‹ Art. 89 · Art. 90a ›» ───────────
                 Muster gesetze-im-internet/dejure/buzer, hier als Anker im
