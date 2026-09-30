@@ -409,7 +409,7 @@ export function ZpoFristenForm({ live }: {
               {[...bggErgebnis.annahmen, ...bggErgebnis.warnungen, bvZustellfiktionSatz('bgg'), BGG_PRESET_ZPO_FELDER].map((z) => <li key={z}>{z}</li>)}
             </ul>
             <p className="text-body-s">
-              <Link to="/rechner/bgg-fristen" className="font-medium text-brass-700 hover:text-brass-600 no-underline">
+              <Link to="/rechner/bgg-fristen" className="font-medium text-brass-700 hover:text-brass-600 lc-link">
                 Zulässigkeit, Rügen und Frist im BGer-Rechtsweg-Rechner prüfen →
               </Link>
             </p>

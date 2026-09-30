@@ -576,7 +576,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     })}
                   </ul>
                   {restEntscheide > 0 && (
-                    <Link to={alleEntscheideZiel} className="text-body-s text-brass-700 hover:underline">
+                    <Link to={alleEntscheideZiel} className="text-body-s lc-link text-brass-700 hover:text-brass-800">
                       Alle <span className="num">{entscheide?.length}</span> erfassten Entscheide ansehen →
                     </Link>
                   )}
@@ -642,7 +642,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                   <ul className="flex flex-col gap-1.5">{sichtbarScharf.map(zeile)}</ul>
                 )}
                 {restScharf > 0 && (
-                  <Link to="/materialien" className="text-body-s text-brass-700 hover:underline">
+                  <Link to="/materialien" className="text-body-s lc-link text-brass-700 hover:text-brass-800">
                     Noch <span className="num">{restScharf}</span> weitere mit Artikel-Bezug · alle Materialien ansehen →
                   </Link>
                 )}

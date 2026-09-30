@@ -80,7 +80,7 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
             ))}
           </ul>
           {restE > 0 && (
-            <Link to={`/rechtsprechung?norm=${encodeURIComponent(erlassKey)}`} className="text-body-s text-brass-700 hover:underline">
+            <Link to={`/rechtsprechung?norm=${encodeURIComponent(erlassKey)}`} className="text-body-s lc-link text-brass-700 hover:text-brass-800">
               Alle <span className="num">{ctx.entscheide.length}</span> erfassten Entscheide ansehen →
             </Link>
           )}
@@ -104,7 +104,7 @@ export function VerweisKontext({ erlassKey, artikel, artikelZitat }: {
             ))}
           </ul>
           {restM > 0 && (
-            <Link to="/materialien" className="text-body-s text-brass-700 hover:underline">
+            <Link to="/materialien" className="text-body-s lc-link text-brass-700 hover:text-brass-800">
               Noch <span className="num">{restM}</span> weitere · alle Materialien ansehen →
             </Link>
           )}

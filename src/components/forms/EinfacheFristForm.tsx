@@ -474,7 +474,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
             )}
             {!knapp && verfeinernZiel && (
               <p className="text-body-s">
-                <Link to={verfeinernZiel} className="font-medium text-brass-700 hover:text-brass-600 no-underline">
+                <Link to={verfeinernZiel} className="font-medium text-brass-700 hover:text-brass-600 lc-link">
                   Im {ferien === 'zpo' ? 'ZPO' : 'SchKG'}-Rechner verfeinern (Verfahren, Zustellart, Hemmung …) →
                 </Link>
               </p>

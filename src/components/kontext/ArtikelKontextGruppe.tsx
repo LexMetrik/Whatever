@@ -94,9 +94,9 @@ export function ArtikelKontextZeilen({ k, werkzeugZielBereit = true }: {
           <span key={v.label}>
             {i > 0 && <span aria-hidden className="text-ink-300"> · </span>}
             {v.pfad
-              ? <Link to={v.pfad} className="text-brass-700 hover:underline">{richText(v.label, `vw${i}`)}</Link>
+              ? <Link to={v.pfad} className="lc-link text-brass-700 hover:text-brass-800">{richText(v.label, `vw${i}`)}</Link>
               : v.url
-                ? <a href={v.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">{richText(v.label, `vw${i}`)} ↗</a>
+                ? <a href={v.url} target="_blank" rel="noopener noreferrer" className="lc-link text-brass-700 hover:text-brass-800">{richText(v.label, `vw${i}`)} ↗</a>
                 : richText(v.label, `vw${i}`)}
           </span>
         ))}
@@ -136,7 +136,7 @@ export function ArtikelKontextZeilen({ k, werkzeugZielBereit = true }: {
                 const panel = e.currentTarget.closest('section[aria-labelledby="kontext-titel"]');
                 panel?.querySelector('#kontext-werkzeuge')?.scrollIntoView({ block: 'start', behavior: 'auto' });
               }}
-              className="text-brass-700 hover:underline">
+              className="lc-link text-brass-700 hover:text-brass-800">
               Rechner/Vorlagen zu {k.werkzeugGruppe} ↓
             </button>
           )

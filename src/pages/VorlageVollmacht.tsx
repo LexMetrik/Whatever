@@ -64,9 +64,9 @@ function EingabeSchritt({ ctx: { a, set }, schritt }: { ctx: SeiteCtx<VollmachtA
         <p className="lc-notice text-body-s">
           Für die Vorsorge bei <strong>Urteilsunfähigkeit</strong> (Personensorge, Vermögenssorge im
           Vorsorgefall) ist nicht die Vollmacht, sondern der{' '}
-          <Link to="/vorlagen/vorsorgeauftrag" className="text-brass-700 hover:underline">Vorsorgeauftrag (Art. 360 ff. ZGB)</Link>{' '}
+          <Link to="/vorlagen/vorsorgeauftrag" className="lc-link text-brass-700 hover:text-brass-800">Vorsorgeauftrag (Art. 360 ff. ZGB)</Link>{' '}
           das gesetzlich vorgesehene Instrument; für medizinische Behandlungswünsche die{' '}
-          <Link to="/vorlagen/patientenverfuegung" className="text-brass-700 hover:underline">Patientenverfügung</Link>.
+          <Link to="/vorlagen/patientenverfuegung" className="lc-link text-brass-700 hover:text-brass-800">Patientenverfügung</Link>.
         </p>
       </div>
     );
@@ -214,8 +214,8 @@ function EingabeSchritt({ ctx: { a, set }, schritt }: { ctx: SeiteCtx<VollmachtA
             </div>
             <p className="lc-notice text-body-s">
               Gesundheits- und Personensorge sind hier bewusst <strong>nicht</strong> wählbar – dafür sind{' '}
-              <Link to="/vorlagen/vorsorgeauftrag" className="text-brass-700 hover:underline">Vorsorgeauftrag</Link> und{' '}
-              <Link to="/vorlagen/patientenverfuegung" className="text-brass-700 hover:underline">Patientenverfügung</Link> da.
+              <Link to="/vorlagen/vorsorgeauftrag" className="lc-link text-brass-700 hover:text-brass-800">Vorsorgeauftrag</Link> und{' '}
+              <Link to="/vorlagen/patientenverfuegung" className="lc-link text-brass-700 hover:text-brass-800">Patientenverfügung</Link> da.
             </p>
           </>
         )}
@@ -267,7 +267,7 @@ function EingabeSchritt({ ctx: { a, set }, schritt }: { ctx: SeiteCtx<VollmachtA
           <p className="lc-notice-warn text-body-s">
             Eine Dauervollmacht deckt den Vorsorgefall nur unvollkommen – Banken und Behörden akzeptieren
             sie bei eingetretener Urteilsunfähigkeit nicht zuverlässig. Für die Vorsorge:{' '}
-            <Link to="/vorlagen/vorsorgeauftrag" className="text-brass-700 hover:underline">Vorsorgeauftrag (Art. 360 ff. ZGB)</Link>.
+            <Link to="/vorlagen/vorsorgeauftrag" className="lc-link text-brass-700 hover:text-brass-800">Vorsorgeauftrag (Art. 360 ff. ZGB)</Link>.
           </p>
         )}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

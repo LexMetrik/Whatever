@@ -320,7 +320,7 @@ export function PanelEntscheide({
           darunter trennt (sonst zwei Linien 8 px übereinander, gemessen @1440). */}
       <p data-v3-panel-abdeckung-zeile className="px-3 py-1.5 text-micro leading-snug text-ink-600">
         {ABDECKUNG_SATZ}{' '}
-        <Link to="/abdeckung" className="text-brass-700">Abdeckung ›</Link>
+        <Link to="/abdeckung" className="lc-link text-brass-700">Abdeckung ›</Link>
       </p>
 
       {/* ── Fundstellen des gelesenen Artikels ────────────────────────────────
