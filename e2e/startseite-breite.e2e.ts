@@ -33,6 +33,11 @@ import { test, expect, type Page } from '@playwright/test';
 //      `lg:max-w-[15.5rem]` der Kantone-Karte in GesetzeBlatt.tsx zurück auf
 //      `lg:max-w-none 2xl:max-w-[15.5rem]` → nur @1440 rot (Überlauf 10 px).
 //      Beide gemessen 1.10.2026 gegen den Quellcode (Probe-Logs `.gate/p15-probe*.log`).
+//  (3c) W2·31 P15b (1.10.2026): Zellen (2b) «ohne Seitenleiste wie main». Rot-Probe
+//      gegen den Quellcode: `lg:@[936px]/start:` in Startseite.tsx zurück auf
+//      `@[960px]/start:` (Stand 75c0a5de3) → 2 von 4 Zellen rot: @1016 Skala 1
+//      (erwartet 1 Spalte, gemessen 2) und @1024 Skala 1.4 (erwartet 2, gemessen 1);
+//      Log `.gate/p15b-rot-probe.log`.
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit):
 //  (1) `startseite` in seitenbreite.ts zurück auf `content` → Kachel 348 px.
 //  (2) `@[52rem]:grid-cols-3` in HaeufigGebraucht.tsx streichen → 2 Spalten.
