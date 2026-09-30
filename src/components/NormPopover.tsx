@@ -150,7 +150,10 @@ export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onC
         artikel={snapshot.artikel}
         passus={passus}
         passusRef={passusRef}
-        /* W2·27 (30.9.2026): amtlich «gegenstandslos» → Körper sagt «gegenstandslos», nicht «aufgehoben» (§1/§8). */
+        /* W2·27 (30.9.2026): der amtliche Artikel-Vermerk bestimmt das Wort des Körpers (§5/§8) —
+           `aufgehoben` ⇒ «aufgehoben», `gegenstandslos` ⇒ «gegenstandslos», beides fehlt und der
+           Artikel ist nur «…» ⇒ «kein Text im Snapshot» (wie Leser und Synopse). */
+        artikelAufgehoben={snapshot.aufgehoben === true}
         artikelGegenstandslos={snapshot.gegenstandslos === true}
         /* W2·29-WERKBANK-GRUNDTON: Marker für «Normtext-Körper gerade» (index.css); Rest = Vorgabe aus ArtikelBody */
         className="lc-normtext-koerper px-5 py-4 space-y-2.5"

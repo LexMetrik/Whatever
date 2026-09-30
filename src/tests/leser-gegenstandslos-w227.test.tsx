@@ -144,11 +144,14 @@ describe('ArtikelBody — Körper folgt dem amtlichen Artikel-Vermerk (§1/§8)'
     expect(out).not.toContain('>aufgehoben<');
   });
 
-  it('Gegenproben, byte-gleich zu vorher: aufgehoben → «aufgehoben»; ohne Beleg «…» → «aufgehoben»; leer → «kein Text im Snapshot»', () => {
+  // RE-BLESS W2·27 (30.9.2026, §6.3 deklariert — «…»-Anzeige einheitlich): «…» OHNE Beleg (EPV Anhang 2
+  // u. ä.) hiess hier «aufgehoben»; der Leser sagt an denselben Artikeln «kein Text im Snapshot». Jetzt
+  // sagen es alle Flächen (Leser/Popover/Synopse; eigene Datei leser-auslassung-einheitlich-w227).
+  it('Gegenproben: aufgehoben → «aufgehoben»; ohne Beleg «…» → «kein Text im Snapshot»; leer → «kein Text im Snapshot»', () => {
     const ab = (b: ReturnType<typeof block>, extra: { artikelAufgehoben?: boolean } = {}) =>
       renderToStaticMarkup(<ArtikelBody bloecke={b} artikel="48" passus={{ absatz: null }} {...extra} />);
     expect(koerperWorte(ab(block('…'), { artikelAufgehoben: true }))).toEqual(['aufgehoben']);
-    expect(koerperWorte(ab(block('…')))).toEqual(['aufgehoben']); // EPV Anhang 2 u. ä.: eigener Posten, unverändert
+    expect(koerperWorte(ab(block('…')))).toEqual(['kein Text im Snapshot']); // EPV Anhang 2 u. ä.
     expect(koerperWorte(ab(block('')))).toEqual(['kein Text im Snapshot']);
   });
 });
@@ -190,9 +193,11 @@ describe('NormPopover/Vorschau — dasselbe Wort wie der Leser (§5)', () => {
     expect(out).not.toContain('aufgehoben');
   });
 
-  it('Gegenprobe: aufgehoben und Eintrag ohne Feld bleiben «aufgehoben» (byte-gleich)', () => {
+  // RE-BLESS W2·27 (30.9.2026, §6.3 deklariert): der Eintrag OHNE Feld hiess hier «aufgehoben» —
+  // eine Aufhebung ohne Vermerk (StGB Art. 108 «bleibt … leer»); jetzt wie im Leser «kein Text im Snapshot».
+  it('Gegenprobe: aufgehoben bleibt «aufgehoben» (byte-gleich); Eintrag ohne Feld ⇒ «kein Text im Snapshot»', () => {
     expect(koerperWorte(popover(eintrag('48', { aufgehoben: true })))).toEqual(['aufgehoben']);
-    expect(koerperWorte(popover(eintrag('108')))).toEqual(['aufgehoben']);
+    expect(koerperWorte(popover(eintrag('108')))).toEqual(['kein Text im Snapshot']);
   });
 });
 
@@ -224,12 +229,17 @@ describe('SynopseKarte — rechte Spalte «Wortlaut → …» trägt das Zustand
     expect(out).not.toContain('aufgehoben');
   });
 
-  it('Gegenproben: aufgehoben und ohne Vermerk bleiben «aufgehoben» (byte-gleich)', () => {
-    for (const z of ['aufgehoben', 'leer-ungeklaert'] as const) {
-      const out = karte(z);
-      expect(out, z).toContain('— aufgehoben');
-      expect(out, z).toContain('>aufgehoben<');
-      expect(out, z).not.toContain('gegenstandslos');
-    }
+  // RE-BLESS W2·27 (30.9.2026, §6.3 deklariert): ohne Vermerk (`leer-ungeklaert`) stand hier
+  // «aufgehoben» (Zeilenmarke und rechte Spalte) — die Karte behauptete, was der Leser nicht sagt.
+  it('Gegenproben: aufgehoben bleibt «aufgehoben» (byte-gleich); ohne Vermerk ⇒ «kein Text im Snapshot»', () => {
+    const a = karte('aufgehoben');
+    expect(a).toContain('— aufgehoben');
+    expect(a).toContain('>aufgehoben<');
+    expect(a).not.toContain('gegenstandslos');
+    const u = karte('leer-ungeklaert');
+    expect(u).toContain('— kein Text im Snapshot');
+    expect(u).toContain('>kein Text im Snapshot<');
+    expect(u).not.toContain('>aufgehoben<');
+    expect(u).not.toContain('gegenstandslos');
   });
 });
