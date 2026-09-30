@@ -38,7 +38,7 @@ export function ZweiachsigerEinstieg() {
             <div className="mt-2 space-y-2 pb-1">
               {g.zellen.map((z) => (
                 <div key={z.kategorie} className="space-y-0.5">
-                  <p className="text-xs font-medium uppercase tracking-wide text-ink-500">{z.titel}</p>
+                  <p className="lc-overline">{z.titel}</p>
                   <ul className="space-y-0.5">
                     {z.karten.map((k) => (
                       <li key={k.id}>

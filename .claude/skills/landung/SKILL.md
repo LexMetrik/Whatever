@@ -141,7 +141,9 @@ npm run check:perf-budget  # liest dist, Chrome-frei
   `vercel.json`, `package.json`): unabhängige Review-Agents über das
   Deploy-Delta (Code-Lupe + empirische Repros; grosse Deltas: 6 Strang-Finder
   × 2 adversariale Lupen). Bestätigte Befunde fixen, Regressionstests dazu,
-  Tore aus Schritt 1 erneut.
+  Tore aus Schritt 1 erneut. Befunde an NEUEN Tests (Laufzeit, Reihenfolge)
+  vor dem Einreihen beheben, nie als Posten vertagen — sie kippen später unter
+  Last (#1179 → #1192, 30.9.2026).
 - **Reiner Doku-/Plan-/Test-Diff** (`*.md`, `fahrplaene/`, `bibliothek/`,
   `.claude/`, `src/tests/**` ohne `src/lib`): **kein** Agenten-Bug-Check —
   die Tore sind die Prüfung (15.8.: ~40–80k Token je Leerprüfung).
