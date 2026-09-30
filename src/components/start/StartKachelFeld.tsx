@@ -300,7 +300,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           onKeyDown={(e) => { if (e.key === 'Escape') { e.stopPropagation(); schliessen(); } }}>
           <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} hoch={hoch}
             zurueck={zurueck} schliessen={schliessen} />
-          <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
+          <div className="lc-start-blatt-inhalt @container/blatt" data-sichtbar={phase === 'offen' ? '' : undefined}>
             <BlattRuheKontext.Provider value={ruhe}>
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
               {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
