@@ -29,8 +29,10 @@ import { test, expect, type Page } from '@playwright/test';
 //      Seitenleiste 460 (Standardschrift). Rot vorher: @1280 Gesetze-Blatt
 //      Unterkante 915 > 800, @1440 Gesetze-Wahl 88 px Überlauf. Rot-Proben
 //      nach dem Fix: `@[960px]/start:grid-cols-…` in Startseite.tsx zurück auf
-//      `lg:grid-cols-…` → @1280 rot; `lg:max-w-[15.5rem]` der Kantone-Karte in
-//      GesetzeBlatt.tsx zurück auf `lg:max-w-none 2xl:max-w-[15.5rem]` → @1440 rot.
+//      `lg:grid-cols-…` → @1280 rot (Unterkante 915) und @1440 rot (Überlauf 88);
+//      `lg:max-w-[15.5rem]` der Kantone-Karte in GesetzeBlatt.tsx zurück auf
+//      `lg:max-w-none 2xl:max-w-[15.5rem]` → nur @1440 rot (Überlauf 10 px).
+//      Beide gemessen 1.10.2026 gegen den Quellcode (Probe-Logs `.gate/p15-probe*.log`).
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit):
 //  (1) `startseite` in seitenbreite.ts zurück auf `content` → Kachel 348 px.
 //  (2) `@[52rem]:grid-cols-3` in HaeufigGebraucht.tsx streichen → 2 Spalten.
