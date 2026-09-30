@@ -31,7 +31,13 @@ import { holeHtm } from './adapter-htm.ts';
 import { holeZhPdf } from './adapter-zh-pdf.ts';
 import { holePdf, PDF_PROFILE } from './adapter-pdf.ts';
 import { pdfLawIdSafe } from './lawid-safe.ts';
-import { pruefeBundFassung, pruefeBundVollstaendigkeit, pruefeCoverage, pruefeLabelUrl } from './drift-logik.ts';
+import {
+  labelDeckungText,
+  pruefeBundFassung,
+  pruefeBundVollstaendigkeit,
+  pruefeCoverage,
+  pruefeLabelUrlMitDeckung,
+} from './drift-logik.ts';
 import type { NormSnapshot, RegisterEintragLite } from './drift-logik.ts';
 import { PDF_EMBED_QUELLEN } from '../../src/lib/normtext/pdf-embed.ts';
 
@@ -107,6 +113,19 @@ function ladeKantonFassungsTokens(): Map<string, string> {
   return map;
 }
 
+/** Anzahl committeter Kanton-Snapshot-Einträge (für den «ungeprüft»-Ausweis der Label-Deckung). */
+function zaehleKantonEintraege(): number {
+  const kantonDir = 'public/normtext/kanton';
+  if (!existsSync(kantonDir)) return 0;
+  let n = 0;
+  for (const datei of readdirSync(kantonDir)) {
+    if (!datei.endsWith('.json') || datei === 'index.json') continue;
+    const inhalt = JSON.parse(readFileSync(`${kantonDir}/${datei}`, 'utf8')) as SnapshotDatei;
+    n += inhalt.eintraege?.length ?? 0;
+  }
+  return n;
+}
+
 // ─── Hauptprogramm ────────────────────────────────────────────────────────────
 
 // Höfliche Nebenläufigkeit (Werkzeug-Audit §Audit-1): die Netz-Drift-Schleifen
@@ -179,12 +198,16 @@ async function main(): Promise<void> {
   }
 
   // ─── Prüfung 2c: Label-/Anker-Riegel (offline, W2·27-BUND-FERTIG) ──────────
-  const labelUrl = pruefeLabelUrl(snapshots);
+  const { befunde: labelUrl, deckung: labelDeckung } = pruefeLabelUrlMitDeckung(snapshots);
   if (labelUrl.length > 0) {
     console.error('\nFEHLER Label/Anker: artikelLabel/quelleUrl passen nicht zur id (golden-neutral, sonst ungewacht):');
     for (const b of labelUrl) console.error(`  [${b.regel}] ${b.id}: ${b.text}`);
     exitCode = 1;
   }
+
+  // Kanton-Labels: kein #Anker, Label nicht aus der id ableitbar → vom Riegel
+  // UNGEPRÜFT; das Tor weist das aus (§8), statt «ok» zu suggerieren.
+  console.log(`  Label-Deckung: ${labelDeckungText(labelDeckung, zaehleKantonEintraege())}`);
 
   // ─── Report Prüfung 1+2 ────────────────────────────────────────────────────
   const gepruefte = snapshots.filter((s) => s.id.startsWith('bund/')).length;

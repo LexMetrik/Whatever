@@ -4441,7 +4441,9 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    Überschreibung von aussen gegen das `font-semibold` des Bausteins, die nur im
    Band wirkte (Leser, Entscheid, Material blieben 600). Das Gewicht der H1
    trägt jetzt `ui/SeitenTitel` selbst (F0.11 Stufe 1: Literata 400). */
-.lc-route .ub-kopf .lc-overline, .ub-kopf .lc-overline { color: var(--ink-600); }
+/* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-route .ub-kopf .lc-overline,
+   .ub-kopf .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16, unten)
+   trägt dasselbe; gemessen Farbe vorher = nachher, siehe PR-Body.) */
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
    Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
 .lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
@@ -4680,6 +4682,12 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .fc-zeile[data-reg="r"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-r); }
 .fc-zeile[data-reg="m"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-m); }
 .fc-zeile[data-reg="w"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-w); }
+/* Fokus gewinnt über die Registerkante (W2·19 Kleinaufräumen 30.9.2026): die vier
+   Zeilen oben haben Spezifität (0,4,0) und überschrieben `.fc-schalter:focus-visible`
+   (0,2,0) — ein gedrückter Schalter in einer `data-reg`-Zeile zeigte beim Tastatur-
+   Fokus NICHTS (gemessen /rechtsprechung: border-bottom-color blieb reg-r, Farbe
+   unverändert). Gleiche Spezifität, später im Blatt, sonst gleiche Aussage. */
+.fc-zeile[data-reg] .fc-schalter:focus-visible { border-bottom-color: var(--focus); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GB · «LEBEN»: REGISTERFARBE, SERIFEN-AKZENT, LINIEN STATT KÄSTEN
@@ -5028,7 +5036,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   background: var(--reg-r-flaeche);
   border-top-color: var(--reg-r);
 }
-.lc-titelblatt-band[data-reg] .lc-overline { color: var(--ink-600); }
+/* (Ergänzung 30.9.2026, W2·19 Kleinaufräumen: hier stand `.lc-titelblatt-band[data-reg]
+   .lc-overline { color: var(--ink-600) }` — die Rolle «Tinte leise» (DK-16) trägt `.lc-titelblatt-band`
+   samt Overline; gemessen Farbe vorher = nachher. Der Material-Zweig (`[data-reg="m"]`, unten)
+   bleibt: er schlägt ③ und ist von der Rolle nicht gedeckt.) */
 /* Randnotiz statt Kasten (`StatusBadge variant="text"`, «maschinell»): Board
    «Unter-Rechtsprechung-Register» — gepunktet unterstrichener Text in der
    Schriftgrösse der Zeile, ink-500 (5.34:1 auf paper, KONTRAST-R1). Die

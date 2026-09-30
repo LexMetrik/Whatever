@@ -198,8 +198,8 @@ for (const [name, url] of [
     const ergebnis = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .include('section[aria-labelledby="kontext-titel"]')
-      // Marken-Entscheid B-2 (BERICHT.md): Inline-Links ohne Unterstreichung.
-      .disableRules(['link-in-text-block'])
+      // `link-in-text-block` gatet mit (damals abgeschaltet, Marken-Entscheid B-2;
+      // seit R3-Nachzug 6.9.2026 Inline-Links unterstrichen, F0.8).
       .analyze()
     const hart = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')
     expect(hart.map((v) => `${v.id}: ${v.nodes.length}×`)).toEqual([])

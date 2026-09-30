@@ -37,6 +37,7 @@ import {
   routenEbeneVonKey,
 } from '../lib/normtext/erlassAdresse';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { ohneKommentare } from './appDateien';
 import { umzugsZiel } from '../pages/gesetz-leser/adressUmzug';
 
 const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
@@ -51,10 +52,13 @@ const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
  *  sucht nach ADRESSEN, also nach Zeichenketten mit `//` darin. Das geteilte
  *  Sieb streicht jede Zeile ab `//` und wuerde damit genau die gesuchten
  *  URL-Formen unsichtbar machen; das Sieb hier schuetzt `://` ausdruecklich
- *  (`(^|[^:])//`). Gleiche Absicht, notwendig anderes Sieb — keine Dublette. */
-function ohneKommentare(q: string): string {
-  return q.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1');
-}
+ *  (`(^|[^:])//`). Gleiche Absicht, notwendig anderes Sieb — keine Dublette.
+ *
+ *  Ergaenzung (W2·19 Kleinaufraeumen 30.9.2026): das Sieb selbst ist seither das
+ *  geteilte `ohneKommentare` aus `appDateien.ts` — es streicht nur ganze
+ *  Kommentarzeilen und laesst `://` in Code-Zeilen stehen (alle Tests dieser
+ *  Datei unveraendert gruen). Was oben als Ausnahme gefuehrt wird, betrifft nur
+ *  noch die eigene Verzeichnis-Wanderung `dateien()`. */
 
 function dateien(ordner: string, treffer: string[] = []): string[] {
   for (const n of readdirSync(ordner)) {

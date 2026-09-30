@@ -373,8 +373,8 @@ Umschichtung 20.9.2026 (2)):*
   LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
   damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
-- [ ] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
-  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: ready · blocker: null · dep: [] · feld: design -->
+- [~] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
+  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: wip · blocker: null · dep: [] · feld: design -->
   Anlass: Inventar 25.9.2026 (messen2.mjs) — ab 1280 px ist Inhalt überall auf 1072 px gedeckelt,
   bei 1920 bleiben 424 px je Seite leer. Aufträge David 25.9.2026 (wörtlich): «für alle arten von
   seiten … bildschirmbreite bei allen seiten optimiert wird» · «für jede seitenart eine eigene
@@ -384,8 +384,8 @@ Umschichtung 20.9.2026 (2)):*
   (Startseite) läuft als Posten unter `W2·29-WERKBANK-REST`. Inventar:
   `~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md`.
 
-- [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
-  <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
+- [~] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
+  <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
   Dieselbe Inhaltsklasse site-weit im selben Muster (Split-View vs. Vollansicht, Leser-Köpfe,
   Chips, Leerzustände …); Massstab ist das Reglement, Vereinheitlichung über geteilte Bausteine
   (§5/§10), Normtext-Körper farbfrei/golden. Methode: Finder-Wellen → umsetzen → **run till dry**

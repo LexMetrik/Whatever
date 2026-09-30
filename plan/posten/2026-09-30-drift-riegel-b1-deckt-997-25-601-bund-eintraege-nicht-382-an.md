@@ -1,7 +1,13 @@
 <!-- @posten
 dach: W2·27-BUND-FERTIG
-titel: Drift-Riegel B1 deckt 997/25 601 Bund-Einträge nicht (382 annex, 294 art-Bereiche art_627_628, 276 disp, 28 scope, 17 decl): Label-/Anker-Änderung dort still. Regel «Anker mit / → _ == id-Token» gilt heute 997/997 -> B1-anker ausdehnen; drift-logik.ts:148-Kommentar korrigieren; Kanton-Labels ungeprüft ausweisen; B2 «Label länger» zu schwach (Art. 126zX); B4 Referenz = erster Eintrag (#1171 GP).
-anlass: Session-Notizen 2026-09-30
+titel: Drift-Riegel Rest nach B1-Ausdehnung: Kanton-Labels ungeprüft (34 907 Einträge), freie Labels annex_u/decl (98) nur nichtleer, Datenfund VRV annex_II «+Anhang II».
+anlass: Session-Notizen 2026-09-30; B1-Ausdehnung auf 997 Bund-Einträge gebaut (Branch fix/w227-drift-riegel-b1)
 -->
 
-Drift-Riegel B1 deckt 997/25 601 Bund-Einträge nicht (382 annex, 294 art-Bereiche art_627_628, 276 disp, 28 scope, 17 decl): Label-/Anker-Änderung dort still. Regel «Anker mit / → _ == id-Token» gilt heute 997/997 -> B1-anker ausdehnen; drift-logik.ts:148-Kommentar korrigieren; Kanton-Labels ungeprüft ausweisen; B2 «Label länger» zu schwach (Art. 126zX); B4 Referenz = erster Eintrag (#1171 GP).
+Drift-Riegel Rest nach B1-Ausdehnung (30.9.2026): B1 deckt jetzt alle 25 601 Bund-Einträge (Label aus id für 25 474, Format/nichtleer für 126, 1 festgenagelte Ausnahme); B2 («Label = Basis + Wiederholungs-Adverb, eindeutig») und B4 (Mehrheits-Basis statt erster Eintrag) sind geschärft. Offen bleibt, was sich nicht aus der id ableiten lässt und in der Tor-Ausgabe als «UNGEPRÜFT» steht:
+
+1. **Kanton-Labels (34 907 Einträge, `public/normtext/kanton`)**: kein `#Anker`, Label nicht aus der id ableitbar — eine Prüfung braucht eine amtliche Label-Regel je Kanton/Erlass (z. B. «§ n» vs. «Art. n»), nicht raten.
+2. **Freie Labels** `annex_u` (81) und `decl` (17): Fedlex-Titel, nur «nichtleer» geprüft; `scope` (28) nur auf Format.
+3. **Datenfund (Daten-Session, nicht im Riegel)**: `bund/VRV/annex_II` trägt `artikelLabel` «+Anhang II» — GP #1180 bestätigt: Artefakt der deutschen Fedlex-Fassung (VRV Filestore 20260701 html-8; FR «Annexe II», IT «Allegato II»); Extraktor soll auf «Anhang II» normalisieren, Snapshot per Generator korrigieren, danach `LABEL_AUSNAHMEN` in `scripts/normtext/drift-logik.ts` leeren (der Riegel meldet die überholte Ausnahme selbst).
+4. **B4-Basis ungebunden (GP #1180 F1, mittel, vorbestehend)**: B4 prüft nur Einheitlichkeit je Erlass, nicht gegen das gepinnte ELI/Sprache — alle 118 VRV-URLs auf AIG-ELI oder `/fr` statt `/de` bleiben grün. Soll: Basis == `…/eli/<pin>/de` aus `scripts/fedlex-cache.sh`.
+5. **«Art. N und M» (GP #1180 F2, tief)**: amtlich 12 Paare «und» (OR 10, AIG 1, AHVG 1), Snapshot/Riegel «Art. N–M» — wortgetreue Neu-Extraktion würde rot; ORDINAL_SUFFIX endet bei «decies».
