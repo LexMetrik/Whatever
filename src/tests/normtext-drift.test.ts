@@ -10,6 +10,7 @@ import {
   pruefeBundVollstaendigkeit,
   pruefeCoverage,
   fedlexEliAusUrl,
+  pruefeLabelUrl,
 } from '../../scripts/normtext/drift-logik.ts';
 import type { NormSnapshot, RegisterEintragLite } from '../../scripts/normtext/drift-logik.ts';
 
@@ -198,5 +199,73 @@ describe('pruefeCoverage', () => {
       pdfEmbedKeys,
     );
     expect(luecken).toHaveLength(0);
+  });
+});
+
+// ─── pruefeLabelUrl (W2·27-BUND-FERTIG: Label-/Anker-Riegel) ─────────────────
+
+describe('pruefeLabelUrl', () => {
+  const B = 'https://www.fedlex.admin.ch/eli/cc/2006/859/de';
+  const snap = (id: string, artikelLabel: string, quelleUrl: string): NormSnapshot => ({
+    id,
+    quelle: 'KKV',
+    fassungsToken: '20251125',
+    artikelLabel,
+    quelleUrl,
+  });
+  const regeln = (s: NormSnapshot[]) => pruefeLabelUrl(s).map((b) => b.regel);
+
+  it('sauberer Bestand (Basis, Ordinal-Suffix, __N mit Ordinal-Label) ist grün', () => {
+    expect(
+      regeln([
+        snap('bund/KKV/art_126_z', 'Art. 126z', `${B}#art_126_z`),
+        snap('bund/KKV/art_126_z_bis', 'Art. 126zbis', `${B}#art_126_z_bis`),
+        snap('bund/KKV/art_126_z__2', 'Art. 126ztredecies', `${B}#ta126z`),
+        snap('bund/KKV/disp_u2_art_1', 'Art. 1', `${B}#disp_u2/art_1`),
+      ]),
+    ).toEqual([]);
+  });
+
+  it('B1: Label weicht von der id ab / Anker weicht vom id-Token ab', () => {
+    expect(regeln([snap('bund/KKV/art_41', 'Art. 42', `${B}#art_41`)])).toEqual(['B1-label']);
+    expect(regeln([snap('bund/KKV/art_41', 'Art. 41', `${B}#art_42`)])).toEqual(['B1-anker']);
+  });
+
+  it('B2: __N-Rückfall — Label == Basis-Label (PR #890) und Anker mit Synthese-Suffix', () => {
+    const r = regeln([
+      snap('bund/KKV/art_126_z', 'Art. 126z', `${B}#art_126_z`),
+      snap('bund/KKV/art_126_z__2', 'Art. 126z', `${B}#art_126_z__2`),
+    ]);
+    expect(r).toContain('B2-label');
+    expect(r).toContain('B2-anker-synthese');
+  });
+
+  it('B3: zwei Artikel desselben Erlasses mit derselben quelleUrl', () => {
+    expect(
+      regeln([
+        snap('bund/KKV/art_126_z', 'Art. 126z', `${B}#art_126_z`),
+        snap('bund/KKV/art_126_z__2', 'Art. 126ztredecies', `${B}#art_126_z`),
+      ]),
+    ).toEqual(['B3-url-doppelt']);
+  });
+
+  it('B4: fehlender Anker; abweichende Basis-URL im selben Erlass', () => {
+    expect(regeln([snap('bund/KKV/disp_u2_art_1', 'Art. 1', B)])).toEqual(['B4-ohne-anker']);
+    expect(
+      regeln([
+        snap('bund/KKV/art_1', 'Art. 1', `${B}#art_1`),
+        snap('bund/KKV/art_2', 'Art. 2', 'https://anderswo.example/de#art_2'),
+      ]),
+    ).toEqual(['B4-basis-url']);
+  });
+
+  it('gleiche URL in VERSCHIEDENEN Erlassen ist kein B3; Nicht-Bund-ids werden übersprungen', () => {
+    expect(
+      regeln([
+        snap('bund/OR/art_1', 'Art. 1', `${B}#art_1`),
+        snap('bund/ZGB/art_1', 'Art. 1', `${B}#art_1`),
+        snap('kanton/AG/291.150/art_4', '§ 4', ''),
+      ]),
+    ).toEqual([]);
   });
 });
