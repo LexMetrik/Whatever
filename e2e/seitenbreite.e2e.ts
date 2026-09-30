@@ -470,7 +470,7 @@ test('vorlage /vorlagen/testament Schritt 3 (Musterdaten, später Prüf-Schritt 
 // ROT ZU BEKOMMEN (§6.7): in `Topbar.tsx` die Wortmarke wieder
 // `className="hidden sm:block text-h3"` statt `lc-topbar-wortmarke` → (a) und
 // (b) schlagen @640 an (Beweis im PR-Bericht).
-const SKALA_SCHMAL_BREITEN = [640, 700, 768] as const;
+const SKALA_SCHMAL_BREITEN = [640, 700, 750, 768] as const; // 750: im Polster-Fenster 728–762 (b)
 const SKALA_SCHMAL_EXTRA = [
   '/gesetze?ebene=bund', '/gesetze?ebene=international', '/gesetze?q=vertrag',
   '/gesetze?ebene=kanton&kt=BS', '/rechner/tagerechner',
