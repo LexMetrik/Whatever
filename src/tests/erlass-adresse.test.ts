@@ -44,9 +44,21 @@ const SRC = resolve(fileURLToPath(import.meta.url), '..', '..');
 
 // ── A · Eine Ableitung ──────────────────────────────────────────────────────
 
-// Zeilen- und Blockkommentare entfernen (geteiltes Sieb `ohneKommentare`, §5),
-// damit Herleitungs-PROSA (die die Alt-Form zwangsläufig zitiert) nicht als
-// Verstoss zählt. Strings bleiben stehen — genau sie sollen gefunden werden.
+/** Zeilen- und Blockkommentare entfernen, damit Herleitungs-PROSA (die die
+ *  Alt-Form zwangsläufig zitiert) nicht als Verstoss zählt. Strings bleiben
+ *  stehen — genau sie sollen gefunden werden.
+ *
+ *  R5-A (5.9.2026) · begruendete Ausnahme von `appDateien.ts`: dieser Waechter
+ *  sucht nach ADRESSEN, also nach Zeichenketten mit `//` darin. Das geteilte
+ *  Sieb streicht jede Zeile ab `//` und wuerde damit genau die gesuchten
+ *  URL-Formen unsichtbar machen; das Sieb hier schuetzt `://` ausdruecklich
+ *  (`(^|[^:])//`). Gleiche Absicht, notwendig anderes Sieb — keine Dublette.
+ *
+ *  Ergaenzung (W2·19 Kleinaufraeumen 30.9.2026): das Sieb selbst ist seither das
+ *  geteilte `ohneKommentare` aus `appDateien.ts` — es streicht nur ganze
+ *  Kommentarzeilen und laesst `://` in Code-Zeilen stehen (alle Tests dieser
+ *  Datei unveraendert gruen). Was oben als Ausnahme gefuehrt wird, betrifft nur
+ *  noch die eigene Verzeichnis-Wanderung `dateien()`. */
 
 function dateien(ordner: string, treffer: string[] = []): string[] {
   for (const n of readdirSync(ordner)) {
