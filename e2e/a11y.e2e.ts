@@ -513,6 +513,17 @@ const TAP_FLAECHEN = [
   // `StreitwertForm` trug die Pille vorher von Hand mit `py-0.5` (18 px) und
   // stand damit unter WCAG 2.5.8, ohne dass eine Sonde es sah.
   '[data-selection-pille]',
+  // HN-D6 / DK-08 (30.9.2026 — die Liste WÄCHST): drei Flächen, die die Messung
+  // bis hierher nicht kannte (sie lief nur auf Gesetz- und Entscheid-Leser;
+  // Herz-und-Nieren-Prüfung DK-08, @390 hell: /rechner 54 von 92 Zielen unter
+  // 24 px, /rechtsprechung 28 von 167, jeder Rechner 3–5). `.lc-tap-polster` =
+  // Katalog-Listenlinks (`ZweiachsigerEinstieg`) und der Pflicht-Hinweis
+  // (`PflichtDisclaimer`-summary); `.lc-normzeile .lc-chip` = die Normkürzel der
+  // Trefferliste (oben über `.lc-chip` schon gemeint, dort aber nur im Leser
+  // gemessen — hier zusätzlich genannt, damit das Entfernen von `.lc-chip` sie
+  // nicht still aus der Messung nimmt). Die Nachrüstliste oben wächst nicht.
+  '.lc-tap-polster',
+  '.lc-normzeile .lc-chip',
 ].join(', ')
 
 // Sub-Pixel-Toleranz: getBoundingClientRect liefert je nach Zoom/Rundung 23.99
@@ -570,6 +581,29 @@ for (const thema of ['hell', 'dunkel'] as const) {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
     await expect(page.locator('.lc-chip').first()).toBeVisible()
     await tapFlaechenPruefen(page, await tapZielLesen(page), `entscheid-leser/${thema}`)
+  })
+}
+
+// HN-D6 / DK-08: die drei neu gemessenen Flächen auf ihren EIGENEN Seiten, @390
+// (dort, wo der Befund gemessen wurde; der Finger ist das Werkzeug). Die Sonde
+// verlangt zuerst, dass die Fläche überhaupt da ist (PS-19: ein Tor über einer
+// leeren Menge ist grün, weil nichts zu messen war), und misst dann alle
+// TAP_FLAECHEN der Seite.
+const TAP_SEITEN: Array<[url: string, name: string, vorhanden: string]> = [
+  ['/rechner', 'katalog', 'a.lc-tap-polster'],
+  ['/rechtsprechung', 'trefferliste', '.lc-normzeile .lc-chip'],
+  ['/rechner/tagerechner', 'rechner-pflichthinweis', 'summary.lc-tap-polster'],
+]
+for (const [url, name, vorhanden] of TAP_SEITEN) {
+  test(`Trefferflächen — ${name} @390 (hell)`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await oeffnen(page, url, 'hell')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    // Anzahl statt «sichtbar»: die Katalog-Links stehen in `<details>`-Gruppen,
+    // die @390 teils zu sind — gemessen wird auch dort (die Fläche hat ihre
+    // Grösse, sobald die Gruppe aufgeht).
+    await expect.poll(() => page.locator(vorhanden).count(), { message: `${name}: Fläche «${vorhanden}» ist da` }).toBeGreaterThan(0)
+    await tapFlaechenPruefen(page, await tapZielLesen(page), `${name}/hell@390`)
   })
 }
 
