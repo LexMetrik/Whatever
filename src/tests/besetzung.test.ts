@@ -390,6 +390,29 @@ describe('Gegenprüfung 20.7.2026 — erfundene Amtsträger:innen', () => {
     expect(r).toEqual(['sauder-gregory:vorsitz', 'felley-yanick:mitglied']);
   });
 
+  it('«président(e) du collège» ist ein Vorsitz-Marker, kein Namensrest (BVGer D-2751/2023, E-1016/2022)', () => {
+    // Reale Freitexte; Wochen-Nachzug 28.9.2026. Vor dem Fix blieb «( du collège)» als
+    // Namensteil stehen → Phantom-Slug `felley-du-college-yanick` neben `felley-yanick`.
+    const d = slugs(
+      'Yanick Felley (président du collège), Camilla Mariéthoz Wyssen, Daniele Cattaneo, juges, Nicole Ricklin, greffière',
+      'bvger',
+    );
+    expect(d).toEqual([
+      'felley-yanick:vorsitz', 'mariethoz-wyssen-camilla:mitglied',
+      'cattaneo-daniele:mitglied', 'ricklin-nicole:gerichtsschreiber',
+    ]);
+    const e = slugs(
+      "Camilla Mariéthoz Wyssen (présidente du collège), Deborah D'Aveni, David R. Wenger, juges, Miléna Follonier, greffière",
+      'bvger',
+    );
+    expect(e[0]).toBe('mariethoz-wyssen-camilla:vorsitz');
+    expect(e.join(' ')).not.toMatch(/college/);
+    // Italienische Schwesterform, gleiche Logik.
+    const it = slugs('Yanick Felley (presidente del collegio), Daniele Cattaneo, giudici', 'bvger');
+    expect(it[0]).toBe('felley-yanick:vorsitz');
+    expect(it.join(' ')).not.toMatch(/collegio/);
+  });
+
   it('«Dr. phil. II» ist ein Grad, kein Richter «II» (bpatger O2024_002)', () => {
     const r = slugs('Richter Dr. phil. II, Dipl. Biochem. Andreas Schöllhorn Savary', 'bpatger');
     expect(r).toEqual(['schollhorn-savary-andreas:vorsitz']);
