@@ -63,15 +63,66 @@ describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-A
     expect(verifizierLinkArtikel(e, GELTEND)).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
   });
 
-  it('Korpus-Sweep: jedes «__N»-Token liefert entweder null oder einen NICHT-«art_»-Anker; KKV 126_z__2 ist dabei', () => {
+  it('Korpus-Sweep: jede Freigabe eines «__N»-Tokens trägt einen amtlichen Namens-Anker (Positiv-Form); KKV 126_z__2 ist dabei', () => {
     const bund = ['KKV', 'ZGB', 'OR'].flatMap((n) => lade(`bund/${n}.json`).eintraege);
     const nToken = bund.filter((e) => /__\d+$/.test(e.artikel));
     expect(nToken.map((e) => e.artikel)).toContain('126_z__2'); // Sabotage-Schutz: nicht leer (§6.7b)
+    let freigaben = 0;
     for (const e of nToken) {
       const url = verifizierLinkArtikel(e, GELTEND);
       if (url == null) continue;
-      expect(url.slice(url.indexOf('#') + 1)).not.toMatch(/(^|\/)art_/);
+      freigaben += 1;
+      // Positiv-Form (unabhängiges Orakel, nicht der Produktiv-Regex): «a»+Nummer(+Buchstaben), ggf.
+      // «t»-Präfixe, ggf. Bereichs-Wiederholung («a29a29f») — kein «_», kein «/»
+      // (Empirie-Sweep über 3 171 <article> in ZGB/OR/KKV, 30.9.2026).
+      expect(url.slice(url.indexOf('#') + 1)).toMatch(/^t*(?:a\d+[a-z]*)+$/);
     }
+    expect(freigaben).toBeGreaterThan(0);
+  });
+});
+
+describe('verifizierLinkArtikel — «__N» nur bei amtlichem Namens-Anker, nie bei Struktur-Basis-Anker (Positivliste, W2·27)', () => {
+  const BASIS = 'https://www.fedlex.admin.ch/eli/cc/2006/859/de';
+  const mit = (artikel: string, fragment: string): NormSnapshot => ({
+    ...eintrag(kkv, '126_z__2'), artikel, quelleUrl: `${BASIS}#${fragment}`,
+  });
+
+  // Anhang-/Sektions-Pfad des Generators (scripts/normtext-snapshot.ts): bei «__N» wird der
+  // Basis-Anker (= ERSTES Vorkommen) geschrieben, amtlicherAnker() läuft dort nicht.
+  it.each([
+    ['annex_1__2', 'annex_1'],
+    ['annex_u1__2', 'annex_u1'],
+    ['lvl_u1__2', 'lvl_u1'],
+    ['scope_u1__2', 'scope_u1'],
+    ['decl_u1__2', 'decl_u1'],
+  ])('%s → Fragment #%s (Basis-Anker des 1. Vorkommens) → null', (artikel, fragment) => {
+    expect(verifizierLinkArtikel(mit(artikel, fragment), GELTEND)).toBeNull();
+  });
+
+  it.each([
+    ['disp_u1_art_1__2', 'disp_u1/art_1'],
+    ['126_z__2', 'art_126_z'],
+    ['x__2', 'book_1/part_1/tit_19/chap_3'],
+    ['x__2', 'a'], // kein Ziffernteil
+    ['x__2', 'ta'], // kein Ziffernteil
+    ['x__2', 'xa126z'], // fremdes Präfix
+    ['x__2', 'ta126z_x'], // «_» → Struktur-Id-Form
+    ['x__2', 'ta126z/x'],
+  ])('%s → Fragment #%s ist kein amtlicher Namens-Anker → null', (artikel, fragment) => {
+    expect(verifizierLinkArtikel(mit(artikel, fragment), GELTEND)).toBeNull();
+  });
+
+  // Die Formen, die amtlicherAnker() (scripts/normtext/artikel-vorkommen.ts) tatsächlich liefert:
+  // der <a name>-Wert vor dem Artikelkopf (Sweep ZGB+OR+KKV: «a126z», «ta126z», «tta1», «a29a29f»).
+  it.each(['ta126z', 'a126z', 'a10', 'tta1', 'ttttta2', 'a29a29f', 'a226a226d'])(
+    '«__N» mit amtlichem Namens-Anker #%s → Deep-Link freigegeben',
+    (fragment) => {
+      expect(verifizierLinkArtikel(mit('x__2', fragment), GELTEND)).toBe(`${BASIS}#${fragment}`);
+    },
+  );
+
+  it('Nicht-«__N»-Token bleiben unberührt: annex_1 (ohne Suffix) behält sein Fragment', () => {
+    expect(verifizierLinkArtikel(mit('annex_1', 'annex_1'), GELTEND)).toBe(`${BASIS}#annex_1`);
   });
 });
 
