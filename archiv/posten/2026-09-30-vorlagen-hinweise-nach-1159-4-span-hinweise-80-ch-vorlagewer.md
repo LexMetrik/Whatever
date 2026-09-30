@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 Deckel auf Box-KINDER statt Box (Prüfer #1159 R2).
+
+**Erledigt 2026-09-30:** PR #1164
