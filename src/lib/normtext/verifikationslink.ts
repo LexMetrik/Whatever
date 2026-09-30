@@ -22,23 +22,34 @@ import type { BrowseErlass } from './browse-typen';
 /** Zitierfähige ELI-Basis (§12.0 Ziff. 3) — Identitäts-Präfix, kein Substring. */
 const ELI_FORM = /^https:\/\/www\.fedlex\.admin\.ch\/eli\//;
 
+/** Fedlex-Artikel-id-Form (`art_…` bzw. `disp_u1/art_…`) — bei doppelter id mehrdeutig. */
+const ARTIKEL_ID_FRAGMENT = /(^|\/)art_/;
+
 /**
  * Outbound-Link «amtliche Fassung» für EINEN Artikel: die vom Generator
  * geschriebene per-Artikel-ELI-URL (`quelleUrl` trägt das `#art_…`-Fragment).
  * null (= kein Link, §8) bei: Kanton (kein Fedlex-eId-Raum), ganz aufgehobenem
- * Erlass (Kopf-Konvention «geltende Fassung»), Synthese-Suffix `__N`
- * (Fedlex-Doppel-Anker — das Fragment existiert dort nicht als eigene Stelle),
- * Nicht-ELI-Quelle oder fehlendem Fragment.
+ * Erlass (Kopf-Konvention «geltende Fassung»), Nicht-ELI-Quelle oder fehlendem
+ * Fragment — und bei Synthese-Suffix `__N` (doppelte Fedlex-id), sofern das
+ * Fragment kein eigener amtlicher Namens-Anker ist.
+ *
+ * `__N` (W2·27, Nebenfund #890): bei doppelter id fällt `amtlicherAnker()`
+ * (scripts/normtext/artikel-vorkommen.ts) auf den Basis-Anker `art_…` zurück,
+ * wenn der Namens-Anker des N-ten Vorkommens nicht eindeutig ist — der löst im
+ * Browser auf das ERSTE Vorkommen auf, also auf einen fremden Artikel (§8). Nur
+ * ein Fragment OHNE `art_`-id-Form (KKV 126_z__2 → `#ta126z`, amtlicher
+ * `<a name>` VOR dem Kopf, im Dokument genau 1×) trifft die richtige Stelle und
+ * wird durchgereicht.
  */
 export function verifizierLinkArtikel(
   e: Pick<NormSnapshot, 'ebene' | 'artikel' | 'quelleUrl'>,
   erlass: Pick<BrowseErlass, 'aufgehoben'>,
 ): string | null {
   if (e.ebene !== 'bund' || erlass.aufgehoben) return null;
-  if (/__\d+$/.test(e.artikel)) return null;
   if (!ELI_FORM.test(e.quelleUrl)) return null;
   const i = e.quelleUrl.indexOf('#');
   if (i < 0 || i === e.quelleUrl.length - 1) return null;
+  if (/__\d+$/.test(e.artikel) && ARTIKEL_ID_FRAGMENT.test(e.quelleUrl.slice(i + 1))) return null;
   return e.quelleUrl;
 }
 
