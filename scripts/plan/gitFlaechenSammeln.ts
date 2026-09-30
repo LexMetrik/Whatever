@@ -12,7 +12,7 @@
 // gitFlaechen.ts).
 
 import { realpathSync } from 'node:fs';
-import { laufeEcht, type Laufe } from './lage';
+import { laufeEcht, stillLaufen, type Laufe } from './lage';
 import {
   klassiere,
   parseWorktreeFakten,
@@ -74,14 +74,6 @@ export interface SammelOpt {
 
 /** Obergrenze der PR-Abfrage. Ein älterer gemergter PR fällt fail-closed in «offen». */
 const PR_LIMIT = '200';
-
-function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
-  try {
-    return laufe(cmd, args, cwd);
-  } catch {
-    return null;
-  }
-}
 
 /**
  * Wie `stillLaufen`, aber ein Programm, das mit Code ≠ 0 endet UND etwas
