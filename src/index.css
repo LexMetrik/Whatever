@@ -1981,6 +1981,13 @@
   input[type="checkbox"], input[type="radio"] {
     accent-color: var(--brass-500);
     width: 1.1rem; height: 1.1rem;
+    /* Grösse gilt unabhängig von der Label-Länge (W2·31-BILDSCHIRMBREITE P2,
+       30.9.2026): als Flex-Kind schrumpfte ein Kästchen neben langem,
+       umbrechendem Text auf seinen Eigenmass-Mindestwert (Chromium ~13 px statt
+       17.6 px; gemessen fristerstreckung S2/ schlichtungsgesuch-bs S4 @375,
+       ag-gruendung S2 @640…1280, Vorher 27 von 1571). Nur ein Baustein
+       (`Checkbox`) trug `shrink-0` — hier EINMAL für alle rohen Kästchen/Radios. */
+    flex-shrink: 0;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -3747,6 +3754,14 @@
   :where(.lc-vorlagen-schritt) :where(label.flex) > :where(span) { max-width: theme('maxWidth.reading-s'); }
   :where(.lc-vorlagen-schritt) :where(span.block.text-xs) { max-width: theme('maxWidth.kleintext'); }
   :where(.lc-vorlagen-schritt) :where(ul.text-body-s, ol.text-body-s, dl.text-body-s) > :where(li, dd) { max-width: theme('maxWidth.reading-s'); }
+  /* W2·31-BILDSCHIRMBREITE P2 (30.9.2026): Feldbeschriftung (`Field`, vorlagen/
+     ui.tsx; `label.block`, keine Klassen-Stufe an p/li) lief bei Satz-langen
+     Labels bis 86 ch (ag-gruendung S2 @640, «Zustand der Sacheinlage …»).
+     Haken `lc-feldlabel` statt Selektor `label.block`: andere `label.block`
+     (AdresseBundSuche, PlzGemeindeWahl) UMSCHLIESSEN ihr Eingabefeld — ein Deckel
+     dort verschmälerte das Feld. Die Beschriftung ist reiner Text, das Feld
+     darunter behält seine Breite. (0,0,0) wie (b)/(c). */
+  :where(.lc-vorlagen-schritt) :where(.lc-feldlabel) { max-width: theme('maxWidth.reading-s'); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */

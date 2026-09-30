@@ -344,7 +344,7 @@ export function VorlageAgGruendung() {
             {mappe.gates.blockerDetails.map((b) => (
               <button key={b.text} type="button"
                 onClick={() => setSchritt(BEREICH_SCHRITT[b.bereich])}
-                className="block w-full text-left text-body-s text-ink-700 hover:text-brass-700 hover:underline">
+                className="block w-full max-w-reading-s text-left text-body-s text-ink-700 hover:text-brass-700 hover:underline">
                 • {b.text} <span aria-hidden className="text-ink-500">→ {SCHRITTE[BEREICH_SCHRITT[b.bereich]].label}</span>
               </button>
             ))}
@@ -383,7 +383,7 @@ export function VorlageAgGruendung() {
         <p className="text-body-s text-ink-600">
           Die Vorschau erscheint, sobald die Pflichtangaben vollständig sind:
         </p>
-        <ul className="lc-list space-y-1 text-xs text-ink-600">
+        <ul className="lc-list max-w-kleintext space-y-1 text-xs text-ink-600">
           {mappe.gates.blocker.slice(0, 8).map((b) => <li key={b}><NormText text={b} /></li>)}
         </ul>
       </div>
