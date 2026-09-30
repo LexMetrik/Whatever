@@ -132,3 +132,62 @@ describe('wSpracheAusTitel + baueDokUndKanten — Sprache aus D/F/I, sonst «de�
     expect(dok.sprache).toBe('de');
   });
 });
+
+// Nachzug #1195 (30.9.2026, Gegenprüfung): ein verworfener Signatur-Titel darf NICHT auf den Dateinamen-Stamm
+// zurückfallen (ESTV gruppiert dort anders: dbst-ks-w03-006 ↔ W01-006D → «W03-006» wäre eine falsche Nummer, §8).
+describe('wSignaturAusTitel — «,», «;», «:», NBSP, U+00AD wie die übrigen Trenner (Nachzug #1195)', () => {
+  it('Komma/Semikolon/Doppelpunkt/NBSP/weicher Trennstrich unmittelbar vor Ziffer/Buchstabe → null', () => {
+    for (const t of ['W95-003,2024', 'W95-003D,Nachtrag', 'W95-003;2024', 'W95-003D;Nachtrag', 'W95-003:2024', 'W95-003D:Nachtrag',
+      'W95-003 2024', 'W95-003D Nachtrag', 'W95-003­2024', 'W95-003D­Nachtrag']) {
+      expect(wSignaturAusTitel(t), JSON.stringify(t)).toBeNull();
+    }
+  });
+  it('dieselben Trenner vor Leerzeichen oder am Ende bleiben gültig', () => {
+    for (const t of ['W95-003D, Titel', 'W95-003D; Titel', 'W95-003D: Titel', 'W95-003D  Titel', 'W95-003D­ Titel', 'W95-003D,', 'W95-003D;', 'W95-003D:', 'W95-003D ', 'W95-003D­']) {
+      expect(wSignaturAusTitel(t), JSON.stringify(t)).toBe('W95-003');
+    }
+  });
+});
+
+describe('wSpracheAusTitel — null, sobald die Signatur verworfen ist (Nachzug #1195)', () => {
+  it('«W02-008F-2024» & Co.: Kürzel F wird NICHT als fr gelesen, solange wSignaturAusTitel null ist', () => {
+    for (const t of ['W02-008F-2024', 'W02-008F–2024', 'W02-008F/2024', 'W02-008F.2024', 'W02-008F,2024', 'W02-008F;2024', 'W02-008F:2024', 'W02-008F 2024', 'W02-008F­2024', 'W02-008I-2024']) {
+      expect(wSignaturAusTitel(t), JSON.stringify(t)).toBeNull();
+      expect(wSpracheAusTitel(t), JSON.stringify(t)).toBeNull();
+    }
+  });
+  it('gültige Signatur bleibt: F → fr, I → it (Regression)', () => {
+    expect(wSpracheAusTitel('W02-008F vom 01.01.2002')).toBe('fr');
+    expect(wSpracheAusTitel('W02-008I: Titel')).toBe('it');
+  });
+  it('baueDokUndKanten: «W02-008F-2024» → sprache de (Rückfall), nicht fr', () => {
+    const { dok } = baueDokUndKanten({
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-w02-008-de.pdf', titel: 'W02-008F-2024 Nachtrag', beschreibung: 'Gegenstand',
+      datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-w02-008-de.pdf',
+    }, [ESTV_KS_SEITEN[0]], '2026-09-30');
+    expect(dok.sprache).toBe('de');
+  });
+});
+
+describe('baueDokUndKanten — nummer: verworfene W-Signatur ⇒ null, nie der Dateinamen-Stamm (Nachzug #1195)', () => {
+  const bau = (titel: string, dateiname = 'dbst-ks-w03-006-de.pdf') => baueDokUndKanten({
+    href: `https://x/dam/de/sd-web/T/${dateiname}`, titel, beschreibung: 'Gegenstand',
+    datumLabel: '10. Oktober 2023', dateiname,
+  }, [ESTV_KS_SEITEN[0]], '2026-09-30').dok;
+  it('amtlich belegtes Paar Datei w03-006 ↔ Titel W01-006D: «W01-006D–Nachtrag vom 06.06.2001» → null (nicht «W03-006»)', () => {
+    for (const t of ['W01-006D–Nachtrag vom 06.06.2001', 'W01-006D—Nachtrag vom 06.06.2001', 'W01-006D/Nachtrag vom 06.06.2001', 'W01-006D.Nachtrag vom 06.06.2001',
+      'W01-006D-2024', 'W01-006D,Nachtrag', 'W01-006D;Nachtrag', 'W01-006D:Nachtrag', 'W01-006D Nachtrag', 'W01-006D­Nachtrag']) {
+      expect(bau(t).nummer, JSON.stringify(t)).toBeNull();
+    }
+  });
+  it('gültige Signatur → Titel-Signatur (W01-006), nicht der Stamm (W03-006) — unverändert', () => {
+    expect(bau('W01-006D vom 06.06.2001').nummer).toBe('W01-006');
+  });
+  it('Titel OHNE W-Signatur (real: W95-003-2024) → Dateinamen-Stamm wie bisher', () => {
+    expect(bau('Kreisschreiben Nr. 3; Version vom 7. Februar 2024', 'dbst-ks-w95-003-2024-de.pdf').nummer).toBe('W95-003-2024');
+    expect(bau('Nachtrag zum Kreisschreiben', 'dbst-ks-w95-003-de.pdf').nummer).toBe('W95-003');
+  });
+  it('Nicht-W-Familien unberührt: KS-Nummer bleibt «Nr. 11»', () => {
+    expect(bau('Kreisschreiben Nr. 11', 'dbst-ks-2005-1-011-d-de.pdf').nummer).toBe('Nr. 11');
+  });
+});
