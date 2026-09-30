@@ -4673,6 +4673,12 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .fc-zeile[data-reg="r"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-r); }
 .fc-zeile[data-reg="m"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-m); }
 .fc-zeile[data-reg="w"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-w); }
+/* Fokus gewinnt über die Registerkante (W2·19 Kleinaufräumen 30.9.2026): die vier
+   Zeilen oben haben Spezifität (0,4,0) und überschrieben `.fc-schalter:focus-visible`
+   (0,2,0) — ein gedrückter Schalter in einer `data-reg`-Zeile zeigte beim Tastatur-
+   Fokus NICHTS (gemessen /rechtsprechung: border-bottom-color blieb reg-r, Farbe
+   unverändert). Gleiche Spezifität, später im Blatt, sonst gleiche Aussage. */
+.fc-zeile[data-reg] .fc-schalter:focus-visible { border-bottom-color: var(--focus); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GB · «LEBEN»: REGISTERFARBE, SERIFEN-AKZENT, LINIEN STATT KÄSTEN
