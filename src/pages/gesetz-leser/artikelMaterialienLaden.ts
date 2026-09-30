@@ -30,8 +30,8 @@
 // H3 den Bezugs-Shard entschärft hat (`panelModell.ts`), an derselben Stelle
 // entschieden: der Leser, der nur liest, zahlt nichts.
 
-import { useEffect, useState } from 'react';
-import { ladeKantenShard, type KantenShard } from '../../lib/materialien/kanten-shard';
+import { useCallback, useEffect, useState } from 'react';
+import { ladeKantenShardErgebnis, type KantenShard } from '../../lib/materialien/kanten-shard';
 import { ladeMaterialManifest } from '../../lib/materialien/browse';
 import { projiziereMaterialien } from '../../lib/kontext';
 import { beiLeerlauf } from '../../lib/leerlauf';
@@ -43,8 +43,43 @@ export type MaterialNachschlag = (artikelToken: string) => MaterialBezug[] | und
 
 const LEER: MaterialNachschlag = () => undefined;
 
+/** Ergebnis EINES Lade-Versuchs (Shard + Manifest), an den Erlass-Key gebunden. */
+interface MaterialStand {
+  key: string;
+  versuch: number;
+  shard: KantenShard | null;
+  /** W3-5-Rest: der Shard-Abruf ist gescheitert (Netz/Parse/5xx) — NICHT «Erlass
+   *  ohne Kanten» (das ist `shard: null` bei `shardFehler: false`). */
+  shardFehler: boolean;
+  manifest: MaterialManifest | null;
+}
+
 /**
- * @returns Tupel `[nachschlagen, unsicher]`. W3-5 (Audit 25.9.2026): bricht
+ * Die reine Ableitung hinter `useArtikelMaterialien` (testbar ohne DOM).
+ * `unsicher` = mindestens EINE der beiden Quellen ist gescheitert; dann ist
+ * eine leere Liste keine Auskunft («nichts erfasst»), sondern ein Ladefehler.
+ */
+export function leiteMaterialNachschlag(
+  stand: Pick<MaterialStand, 'shard' | 'shardFehler' | 'manifest'>,
+): { nachschlag: MaterialNachschlag; unsicher: boolean; shardFehler: boolean } {
+  const { shard, shardFehler, manifest } = stand;
+  return {
+    nachschlag: (artikelToken: string) => projiziereMaterialien(shard, manifest, artikelToken),
+    // W3-5: `manifest === null` heisst NICHT «kein Manifest nötig» (das Manifest
+    // ist erlassübergreifend, kein 404-Normalfall wie der Shard) — es heisst,
+    // `ladeMaterialManifest` ist gescheitert. W3-5-Rest (30.9.2026): ebenso ein
+    // gescheiterter Shard-Abruf (`/materialien/kanten/<ERLASS>.json`), den
+    // `ladeKantenShard` bisher als `null` = «keine Kanten» weitergab.
+    unsicher: manifest === null || shardFehler,
+    // Getrennt mitgeführt: nur der Shard-Ausfall meldet die Artikel-Gruppe selbst;
+    // den Manifest-Ausfall meldet `PanelErlaeuterungen` (AN-4) — sonst zwei
+    // Fehlerzeilen, zwei Knöpfe für denselben Ausfall (Gegenprüfung B3, 30.9.2026).
+    shardFehler,
+  };
+}
+
+/**
+ * @returns Quadrupel `[nachschlagen, unsicher, erneut, shardFehler]`. W3-5 (Audit 25.9.2026): bricht
  *  das Manifest (`/materialien/register.json`, `ladeMaterialManifest`) ab,
  *  liefert es `null` (Fangnetz dort) — `projiziereMaterialien` kann daraus
  *  nicht mehr unterscheiden, ob am Artikel wirklich nichts erfasst ist oder
@@ -53,36 +88,40 @@ const LEER: MaterialNachschlag = () => undefined;
  *  während direkt darunter derselbe Ausfall als Fehlermeldung stand.
  *  `unsicher` macht die fehlende Unterscheidung explizit, statt sie in
  *  `src/lib/kontext.projiziereMaterialien` (Risikopfad) nachzuziehen.
+ *  W3-5-Rest (30.9.2026): dasselbe für den Kanten-Shard — Ladefehler ≠ 404.
+ *  `erneut` stösst den Abruf noch einmal an (beide Lader cachen keinen Fehlschlag).
  */
-export function useArtikelMaterialien(erlassKey: string | undefined, laden: boolean): [MaterialNachschlag, boolean] {
+export function useArtikelMaterialien(
+  erlassKey: string | undefined, laden: boolean,
+): [MaterialNachschlag, boolean, () => void, boolean] {
   // Der Zustand trägt den SCHLÜSSEL mit (Muster aus `bezuegeZaehler.ts`): ohne
   // ihn zeigte die Zeile nach einem Erlass-Wechsel kurz die Materialien des
   // vorigen Erlasses, und der Effekt müsste synchron `null` setzen.
-  const [stand, setStand] = useState<
-    { key: string; shard: KantenShard | null; manifest: MaterialManifest | null } | null
-  >(null);
+  const [stand, setStand] = useState<MaterialStand | null>(null);
+  const [versuch, setVersuch] = useState(0);
+  const erneut = useCallback(() => setVersuch((v) => v + 1), []);
   useEffect(() => {
     if (!laden || !erlassKey) return;
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
-      void Promise.all([ladeKantenShard(erlassKey), ladeMaterialManifest()]).then(([shard, manifest]) => {
-        if (lebt) setStand({ key: erlassKey, shard, manifest });
+      void Promise.all([ladeKantenShardErgebnis(erlassKey), ladeMaterialManifest()]).then(([ergebnis, manifest]) => {
+        if (!lebt) return;
+        setStand({
+          key: erlassKey, versuch,
+          shard: ergebnis.zustand === 'ok' ? ergebnis.shard : null,
+          shardFehler: ergebnis.zustand === 'fehler',
+          manifest,
+        });
       });
     });
     return () => { lebt = false; abbrechen?.(); };
-  }, [erlassKey, laden]);
+  }, [erlassKey, laden, versuch]);
 
-  if (!erlassKey || stand?.key !== erlassKey) return [LEER, false];
+  if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return [LEER, false, erneut, false];
   // Ab hier ist der Lade-VERSUCH durch: ein fehlender Shard (404 = Erlass ohne
   // Material-Kanten) ergibt die LEERE Liste, nicht `undefined` — sonst stünde
   // die Skelett-Zeile «lädt …» für immer (§8: «nichts erfasst» ist eine Antwort,
   // «lädt» wäre eine Unwahrheit).
-  const { shard, manifest } = stand;
-  return [
-    (artikelToken: string) => projiziereMaterialien(shard, manifest, artikelToken),
-    // W3-5: `manifest === null` heisst hier NICHT «kein Manifest nötig» (das
-    // Manifest ist erlassübergreifend, kein 404-Normalfall wie der Shard) —
-    // es heisst, `ladeMaterialManifest` ist gescheitert.
-    manifest === null,
-  ];
+  const { nachschlag, unsicher, shardFehler } = leiteMaterialNachschlag(stand);
+  return [nachschlag, unsicher, erneut, shardFehler];
 }

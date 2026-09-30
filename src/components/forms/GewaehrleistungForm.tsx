@@ -286,7 +286,7 @@ export function GewaehrleistungForm() {
                   : <span className="text-ok-text font-semibold">nicht verjährt</span>}
               </p>
               <p className="text-xs text-ink-500">
-                Stillstand/Unterbrechung/Verzicht: <Link to="/rechner/verjaehrung" className="text-brass-700 no-underline hover:text-brass-600">Verjährungsrechner →</Link>
+                Stillstand/Unterbrechung/Verzicht: <Link to="/rechner/verjaehrung" className="text-brass-700 lc-link hover:text-brass-600">Verjährungsrechner →</Link>
               </p>
             </div>
           </div>

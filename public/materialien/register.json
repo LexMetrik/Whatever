@@ -38234,7 +38234,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-26.0600",
@@ -38254,7 +38257,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-26.0321",
@@ -38274,7 +38280,10 @@
       "normKeys": [
         "BS-861.500"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-861.500": "maschinell"
+      }
     },
     {
       "key": "BS-GR-26.0508",
@@ -38294,7 +38303,10 @@
       "normKeys": [
         "BS-494.300"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-494.300": "maschinell"
+      }
     },
     {
       "key": "BS-GR-25.1222",
@@ -38314,7 +38326,10 @@
       "normKeys": [
         "BS-610.500"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-610.500": "maschinell"
+      }
     },
     {
       "key": "BS-GR-25.1370",
@@ -38334,7 +38349,10 @@
       "normKeys": [
         "BS-162.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-162.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-25.0675",
@@ -38354,7 +38372,10 @@
       "normKeys": [
         "BS-164.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-164.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-25.0082",
@@ -38374,7 +38395,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-24.1746",
@@ -38394,7 +38418,10 @@
       "normKeys": [
         "BS-820.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-820.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-24.0748",
@@ -38414,7 +38441,10 @@
       "normKeys": [
         "BS-164.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-164.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.1247",
@@ -38434,7 +38464,10 @@
       "normKeys": [
         "BS-119.500"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-119.500": "amtlich"
+      }
     },
     {
       "key": "BS-GR-23.0859",
@@ -38454,7 +38487,10 @@
       "normKeys": [
         "BS-300.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-300.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-23.1410",
@@ -38474,7 +38510,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-23.1307",
@@ -38494,7 +38533,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-22.1784",
@@ -38514,7 +38556,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-22.0538",
@@ -38534,7 +38579,10 @@
       "normKeys": [
         "BS-497.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-22.0168",
@@ -38554,7 +38602,10 @@
       "normKeys": [
         "BS-563.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-563.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.1809",
@@ -38574,7 +38625,10 @@
       "normKeys": [
         "BS-915.200"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-915.200": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.1696",
@@ -38594,7 +38648,10 @@
       "normKeys": [
         "BS-772.300"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-772.300": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.1239",
@@ -38614,7 +38671,10 @@
       "normKeys": [
         "BS-153.260"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-153.260": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.1675",
@@ -38634,7 +38694,10 @@
       "normKeys": [
         "BS-442.400"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-442.400": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.0550",
@@ -38654,7 +38717,10 @@
       "normKeys": [
         "BS-371.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-371.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-21.0406",
@@ -38674,7 +38740,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.1734",
@@ -38694,7 +38763,10 @@
       "normKeys": [
         "BS-510.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-510.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.0651",
@@ -38714,7 +38786,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.1038",
@@ -38734,7 +38809,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.0944",
@@ -38754,7 +38832,10 @@
       "normKeys": [
         "BS-610.500"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-610.500": "maschinell"
+      }
     },
     {
       "key": "BS-GR-20.0533",
@@ -38774,7 +38855,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-19.1830",
@@ -38794,7 +38878,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-19.1517",
@@ -38814,7 +38901,10 @@
       "normKeys": [
         "BS-561.100"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-561.100": "amtlich"
+      }
     },
     {
       "key": "BS-GR-19.0843",
@@ -38834,7 +38924,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.0206",
@@ -38854,7 +38947,10 @@
       "normKeys": [
         "BS-780.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-780.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.1625",
@@ -38874,7 +38970,10 @@
       "normKeys": [
         "BS-300.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-300.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.0919",
@@ -38894,7 +38993,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.0541",
@@ -38914,7 +39016,10 @@
       "normKeys": [
         "BS-497.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.0110",
@@ -38934,7 +39039,10 @@
       "normKeys": [
         "BS-331.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-331.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-18.0111",
@@ -38954,7 +39062,10 @@
       "normKeys": [
         "BS-300.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-300.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.1961",
@@ -38974,7 +39085,10 @@
       "normKeys": [
         "BS-772.300"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-772.300": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.0752",
@@ -38994,7 +39108,10 @@
       "normKeys": [
         "BS-772.300"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-772.300": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.1203",
@@ -39014,7 +39131,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.0998",
@@ -39034,7 +39154,10 @@
       "normKeys": [
         "BS-153.260"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-153.260": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.0670",
@@ -39054,7 +39177,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.0347",
@@ -39074,7 +39200,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-17.0067",
@@ -39094,7 +39223,10 @@
       "normKeys": [
         "BS-811.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-811.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-16.1509",
@@ -39114,7 +39246,10 @@
       "normKeys": [
         "BS-300.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-300.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-16.0736",
@@ -39134,7 +39269,10 @@
       "normKeys": [
         "BS-162.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-162.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-16.0479",
@@ -39154,7 +39292,10 @@
       "normKeys": [
         "BS-151.200"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-151.200": "amtlich"
+      }
     },
     {
       "key": "BS-GR-16.0252",
@@ -39174,7 +39315,10 @@
       "normKeys": [
         "BS-371.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-371.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-16.0031",
@@ -39194,7 +39338,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-15.1353",
@@ -39214,7 +39361,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-15.1308",
@@ -39234,7 +39384,10 @@
       "normKeys": [
         "BS-420.200"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-420.200": "maschinell"
+      }
     },
     {
       "key": "BS-GR-15.1315",
@@ -39254,7 +39407,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-15.1159",
@@ -39274,7 +39430,10 @@
       "normKeys": [
         "BS-300.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-300.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.1792",
@@ -39294,7 +39453,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.1864",
@@ -39314,7 +39476,10 @@
       "normKeys": [
         "BS-811.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-811.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.1710",
@@ -39334,7 +39499,10 @@
       "normKeys": [
         "BS-440.400"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-440.400": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.1218",
@@ -39354,7 +39522,10 @@
       "normKeys": [
         "BS-953.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-953.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.0923",
@@ -39374,7 +39545,10 @@
       "normKeys": [
         "BS-170.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-170.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-14.0386",
@@ -39394,7 +39568,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-13.0779",
@@ -39414,7 +39591,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-13.0303",
@@ -39435,7 +39615,11 @@
         "BS-111.100",
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-111.100": "maschinell",
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-13.0434",
@@ -39455,7 +39639,10 @@
       "normKeys": [
         "BS-811.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-811.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-13.0334",
@@ -39475,7 +39662,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.2084",
@@ -39496,7 +39686,11 @@
         "BS-258.100",
         "BS-510.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-258.100": "maschinell",
+        "BS-510.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.2005",
@@ -39516,7 +39710,10 @@
       "normKeys": [
         "BS-162.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-162.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.1414",
@@ -39536,7 +39733,10 @@
       "normKeys": [
         "BS-497.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.0895",
@@ -39556,7 +39756,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.0652",
@@ -39576,7 +39779,10 @@
       "normKeys": [
         "BS-510.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-510.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.0697",
@@ -39596,7 +39802,10 @@
       "normKeys": [
         "BS-211.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-211.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.0472",
@@ -39616,7 +39825,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-12.0199",
@@ -39636,7 +39848,10 @@
       "normKeys": [
         "BS-131.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-131.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-11.1996",
@@ -39656,7 +39871,10 @@
       "normKeys": [
         "BS-811.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-811.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-11.1520",
@@ -39676,7 +39894,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-11.1273",
@@ -39696,7 +39917,10 @@
       "normKeys": [
         "BS-610.100"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-610.100": "amtlich"
+      }
     },
     {
       "key": "BS-GR-11.0152",
@@ -39716,7 +39940,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-10.1642",
@@ -39736,7 +39963,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-10.1600",
@@ -39756,7 +39986,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-10.1162",
@@ -39776,7 +40009,10 @@
       "normKeys": [
         "BS-164.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-164.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-10.0902",
@@ -39796,7 +40032,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-10.0197",
@@ -39816,7 +40055,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-09.0594",
@@ -39836,7 +40078,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-08.1776",
@@ -39856,7 +40101,10 @@
       "normKeys": [
         "BS-257.900"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-257.900": "amtlich"
+      }
     },
     {
       "key": "BS-GR-08.1828",
@@ -39876,7 +40124,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-410.100": "amtlich"
+      }
     },
     {
       "key": "BS-GR-07.1956",
@@ -39896,7 +40147,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-08.0948",
@@ -39916,7 +40170,10 @@
       "normKeys": [
         "BS-162.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-162.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-06.1706",
@@ -39936,7 +40193,10 @@
       "normKeys": [
         "BS-890.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-890.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-07.0128",
@@ -39956,7 +40216,10 @@
       "normKeys": [
         "BS-834.400"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-834.400": "maschinell"
+      }
     },
     {
       "key": "BS-GR-07.0972",
@@ -39976,7 +40239,10 @@
       "normKeys": [
         "BS-790.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-790.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-07.0904",
@@ -39996,7 +40262,10 @@
       "normKeys": [
         "BS-497.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-06.1970",
@@ -40016,7 +40285,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-132.100": "amtlich"
+      }
     },
     {
       "key": "BS-GR-05.1156",
@@ -40036,7 +40308,10 @@
       "normKeys": [
         "BS-211.100"
       ],
-      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+      "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.",
+      "bsZuordnung": {
+        "BS-211.100": "amtlich"
+      }
     },
     {
       "key": "BS-GR-05.0699",
@@ -40056,7 +40331,10 @@
       "normKeys": [
         "BS-111.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-111.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-05.1161",
@@ -40076,7 +40354,10 @@
       "normKeys": [
         "BS-670.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-670.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-05.8376",
@@ -40096,7 +40377,10 @@
       "normKeys": [
         "BS-152.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-152.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.0683",
@@ -40116,7 +40400,10 @@
       "normKeys": [
         "BS-162.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-162.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.2014",
@@ -40136,7 +40423,10 @@
       "normKeys": [
         "BS-451.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-451.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.8107",
@@ -40157,7 +40447,11 @@
         "BS-152.110",
         "BS-610.200"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-152.110": "maschinell",
+        "BS-610.200": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.2068",
@@ -40178,7 +40472,11 @@
         "BS-640.100",
         "BS-834.400"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell",
+        "BS-834.400": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.0728",
@@ -40198,7 +40496,10 @@
       "normKeys": [
         "BS-153.600"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-153.600": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.0801",
@@ -40218,7 +40519,10 @@
       "normKeys": [
         "BS-491.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-491.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.0869",
@@ -40239,7 +40543,11 @@
         "BS-640.100",
         "BS-650.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell",
+        "BS-650.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-04.0707",
@@ -40259,7 +40567,10 @@
       "normKeys": [
         "BS-270.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-270.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.1945",
@@ -40279,7 +40590,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.1560",
@@ -40299,7 +40613,10 @@
       "normKeys": [
         "BS-253.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-253.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.1858",
@@ -40319,7 +40636,10 @@
       "normKeys": [
         "BS-772.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-772.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.1561",
@@ -40339,7 +40659,10 @@
       "normKeys": [
         "BS-835.200"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-835.200": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.1361",
@@ -40359,7 +40682,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-03.0267",
@@ -40379,7 +40705,10 @@
       "normKeys": [
         "BS-640.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-640.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-02.2030",
@@ -40399,7 +40728,10 @@
       "normKeys": [
         "BS-497.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-02.2427",
@@ -40419,7 +40751,10 @@
       "normKeys": [
         "BS-410.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-410.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-02.0403",
@@ -40439,7 +40774,10 @@
       "normKeys": [
         "BS-154.130"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-154.130": "maschinell"
+      }
     },
     {
       "key": "BS-GR-01.0353",
@@ -40459,7 +40797,10 @@
       "normKeys": [
         "BS-132.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-132.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-01.0221",
@@ -40479,7 +40820,10 @@
       "normKeys": [
         "BS-510.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-510.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-96.1713",
@@ -40499,7 +40843,10 @@
       "normKeys": [
         "BS-351.100"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-351.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-93.1135",
@@ -40519,7 +40866,10 @@
       "normKeys": [
         "BS-211.100"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-211.100": "maschinell"
+      }
     },
     {
       "key": "BS-GR-93.1938",
@@ -40539,7 +40889,10 @@
       "normKeys": [
         "BS-230.900"
       ],
-      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-230.900": "maschinell"
+      }
     },
     {
       "key": "BS-GR-85.0123",
@@ -40559,7 +40912,10 @@
       "normKeys": [
         "BS-650.500"
       ],
-      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft."
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-650.500": "maschinell"
+      }
     }
   ]
 }

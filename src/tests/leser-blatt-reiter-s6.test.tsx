@@ -91,7 +91,7 @@ describe('Reiter «Materialien» — nur Gesetzgebung, amtlich beschriftet', () 
     expect(html).toContain('Vernehmlassungen (abgeschlossen)');
   });
   it('M-3: kantonale Ratschläge stehen da', () => {
-    const html = materialien({ kanton: [{ key: 'BS-GR-24.1692', titel: 'Ratschlag betreffend Änderung', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS', nummer: '24.1692', stand: '2024-11-20', quelleUrl: 'https://grosserrat.bs.ch/?gnr=24.1692', hinweis: null }] });
+    const html = materialien({ kanton: [{ key: 'BS-GR-24.1692', titel: 'Ratschlag betreffend Änderung', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS', nummer: '24.1692', stand: '2024-11-20', quelleUrl: 'https://grosserrat.bs.ch/?gnr=24.1692', zuordnung: 'maschinell' }] });
     expect(html).toContain('Ratschläge und Berichte an den Grossen Rat');
     expect(html).toContain('24.1692');
   });
@@ -99,13 +99,13 @@ describe('Reiter «Materialien» — nur Gesetzgebung, amtlich beschriftet', () 
     const amtlichHtml = materialien({ kanton: [{
       key: 'BS-GR-19.1517', titel: 'Ratschlag Anzeigesteuergesetz', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS',
       nummer: '19.1517', stand: '2019-08-21', quelleUrl: 'https://grosserrat.bs.ch/?gnr=19.1517',
-      hinweis: 'Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.',
+      zuordnung: 'amtlich',
     }] });
     expect(amtlichHtml).not.toContain('maschinell');
     const maschinellHtml = materialien({ kanton: [{
       key: 'BS-GR-25.0082', titel: 'Ratschlag Schulgesetz', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS',
       nummer: '25.0082', stand: '2025-02-05', quelleUrl: 'https://grosserrat.bs.ch/?gnr=25.0082',
-      hinweis: 'Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.',
+      zuordnung: 'maschinell',
     }] });
     expect(maschinellHtml).toContain('maschinell');
   });

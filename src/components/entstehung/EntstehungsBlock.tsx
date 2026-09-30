@@ -16,7 +16,7 @@ import {
   type SynopseLage,
 } from '../../lib/entstehung/synopse-diff';
 import { SynopseKarte, type EntwurfFund } from './SynopseKarte';
-import { ladeKantenShard } from '../../lib/materialien/kanten-shard';
+import { ladeKantenShardErgebnis } from '../../lib/materialien/kanten-shard';
 import { artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { ArtikelHistorie, HistorieEreignis } from '../../lib/normtext/historie-laden';
@@ -273,8 +273,9 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   const [offen, setOffen] = useState<number | null>(null);
   /** Anker-Sidecars, die schon eingetroffen sind (je Botschafts-Key). */
   const [ankerCache, setAnkerCache] = useState<Record<string, AnkerSidecar | null>>({});
-  /** Wie viele Wegleitungen diesen Artikel nennen — `undefined` = noch unterwegs. */
-  const [praxis, setPraxis] = useState<number | undefined>(undefined);
+  /** Wie viele Wegleitungen diesen Artikel nennen — `undefined` = noch unterwegs,
+   *  `'fehler'` = der Shard-Abruf ist gescheitert (KEINE Auskunft über den Artikel). */
+  const [praxis, setPraxis] = useState<number | 'fehler' | undefined>(undefined);
   const kartenId = useId();
   /** Welcher Fassungsvergleich steht offen? `p<i>` = Punkt i der Leiste,
    *  `o<i>` = Eintrag i des Abschnitts «ohne Fussnoten-Ereignis». */
@@ -306,8 +307,12 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   useEffect(() => {
     if (!erlassKey) return;
     let lebt = true;
-    void ladeKantenShard(erlassKey).then((shard) => {
+    void ladeKantenShardErgebnis(erlassKey).then((ergebnis) => {
       if (!lebt) return;
+      // §8 (W3-5-Rest, Gegenprüfung B1 30.9.2026): ein Ladefehler ist kein
+      // «nichts erfasst» — `leer` (404/kein Shard) ist eine Antwort, `fehler` nicht.
+      if (ergebnis.zustand === 'fehler') { setPraxis('fehler'); return; }
+      const shard = ergebnis.zustand === 'ok' ? ergebnis.shard : null;
       // Ein Eintrag je DOKUMENT (nicht je Fundstelle) — dieselbe Entdopplung,
       // die auch die Rubrik «Materialien» zeigt (§5, `projiziereMaterialien`).
       const dok = new Set((shard?.kanten ?? []).filter((k) => k.artikel === artikel).map((k) => k.dok));
@@ -546,9 +551,12 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
         </div>
       )}
       <p className={E.praxis} data-entstehung-praxis>
-        <span className="text-ink-500">
+        <span className={praxis === 'fehler' ? 'text-warn-700' : 'text-ink-500'}>
           {praxis === undefined
             ? 'Praxis: lädt …'
+            : praxis === 'fehler'
+              // Kein Zähl-Satz: die Quelle war nicht erreichbar, nicht leer.
+              ? 'Praxis-Angaben konnten nicht geladen werden.'
             : praxis === 0
               // §8: «erfasst» ist der Kern des Satzes — er sagt etwas über
               // unseren Bestand, nie über die Rechtswirklichkeit.

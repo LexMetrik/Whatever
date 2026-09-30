@@ -34,16 +34,20 @@ export interface KantonalesGeschaeft {
   stand: string;
   /** Amtliche Quelle (Grossrats-Geschäftsdatenbank). */
   quelleUrl: string;
-  /** Zuordnungs-Hinweis des Registers («maschinell … fachlich nicht geprüft»). */
-  hinweis: string | null;
+  /** Herkunft der Zuordnung AN DIESEM ERLASS (Register `bsZuordnung`, W2·27-BUND-FERTIG):
+   *  'amtlich' = Fussnote der Gesetzessammlung nennt das Geschäft; sonst 'maschinell'
+   *  (auch wenn die Angabe fehlt, §8). Je Erlass, nicht je Geschäft — `hinweis` des
+   *  Registers gilt je Geschäft und trägt bei gemischten Geschäften beide Texte. */
+  zuordnung: 'amtlich' | 'maschinell';
 }
 
 let indexCache: { manifest: MaterialManifest; index: Map<string, KantonalesGeschaeft[]> } | null = null;
 
-function alsGeschaeft(m: BrowseMaterial): KantonalesGeschaeft {
+function alsGeschaeft(m: BrowseMaterial, erlass: string): KantonalesGeschaeft {
   return {
     key: m.key, titel: m.titel, doktypLabel: m.doktypLabel, behoerdeKuerzel: m.behoerdeKuerzel,
-    nummer: m.nummer, stand: m.stand, quelleUrl: m.quelleUrl, hinweis: m.hinweis,
+    nummer: m.nummer, stand: m.stand, quelleUrl: m.quelleUrl,
+    zuordnung: m.bsZuordnung?.[erlass] === 'amtlich' ? 'amtlich' : 'maschinell',
   };
 }
 
@@ -56,8 +60,8 @@ function baueKantonsIndex(manifest: MaterialManifest): Map<string, KantonalesGes
   const index = new Map<string, KantonalesGeschaeft[]>();
   for (const m of manifest.materialien) {
     if (!KANTONALE_GESETZGEBUNG.has(m.doktyp)) continue;
-    const g = alsGeschaeft(m);
     for (const nk of m.normKeys) {
+      const g = alsGeschaeft(m, nk);
       const liste = index.get(nk) ?? [];
       liste.push(g);
       index.set(nk, liste);
@@ -75,11 +79,15 @@ export async function kantonaleGesetzgebungFuer(normKeys: readonly string[]): Pr
   if (!indexCache || indexCache.manifest !== manifest) {
     indexCache = { manifest, index: baueKantonsIndex(manifest) };
   }
-  const seen = new Set<string>();
+  const seen = new Map<string, KantonalesGeschaeft>();
   const out: KantonalesGeschaeft[] = [];
   for (const k of normKeys) {
     for (const g of indexCache.index.get(k) ?? []) {
-      if (!seen.has(g.key)) { seen.add(g.key); out.push(g); }
+      const schon = seen.get(g.key);
+      if (!schon) { const kopie = { ...g }; seen.set(g.key, kopie); out.push(kopie); }
+      // Mehrere Erlasse derselben Seite treffen dasselbe Geschäft: «maschinell» gewinnt
+      // (§8 — das Etikett fällt nur weg, wenn JEDER Treffer amtlich belegt ist).
+      else if (g.zuordnung === 'maschinell') schon.zuordnung = 'maschinell';
     }
   }
   return out.sort(vergleiche);

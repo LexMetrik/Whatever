@@ -270,7 +270,7 @@ function PflichtteilePanel({ a, pflichtteile }: { a: TestamentAntworten; pflicht
       </ul>
       <p className="text-xs text-ink-500">
         Quoten unter dem Pflichtteil sind nicht nichtig, aber herabsetzbar (Art. 522 ff. ZGB).{' '}
-        <Link to="/rechner/erbteilung" className="text-brass-700 no-underline hover:text-brass-600">Details im Pflichtteils-Rechner →</Link>
+        <Link to="/rechner/erbteilung" className="text-brass-700 lc-link hover:text-brass-600">Details im Pflichtteils-Rechner →</Link>
       </p>
     </section>
   ) : null;

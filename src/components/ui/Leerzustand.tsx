@@ -64,11 +64,11 @@ export function Leerzustand(props: LeerzustandProps) {
               gültiges Inhaltsmodell (phrasing content), der Fokusring kommt
               unverändert vom globalen :focus-visible (F3). */}
           {weiterweg.href
-            ? <Link to={weiterweg.href} className="font-medium text-brass-700 hover:text-brass-600">
+            ? <Link to={weiterweg.href} className="lc-link font-medium text-brass-700 hover:text-brass-600">
                 {weiterweg.text}
               </Link>
             : <button type="button" onClick={weiterweg.onKlick}
-                className="font-medium text-brass-700 hover:text-brass-600">
+                className="lc-link font-medium text-brass-700 hover:text-brass-600">
                 {weiterweg.text}
               </button>}
         </>

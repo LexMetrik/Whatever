@@ -223,7 +223,7 @@ export function RechnerTagerechner() {
                     {abzweigungen.map((a) => (
                       <p key={a.karte.id} className="text-body-s text-ink-600 leading-snug">
                         <Link to={a.karte.href!}
-                          className="font-medium text-brass-700 hover:text-brass-600 no-underline">
+                          className="font-medium text-brass-700 hover:text-brass-600 lc-link">
                           {sansAmp(a.karte.title)} →
                         </Link>{' '}
                         <span className="text-ink-500">– {a.warum}</span>
