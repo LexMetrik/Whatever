@@ -599,7 +599,7 @@ export function Gesetze() {
                       })}
                     </div>
                   </div>
-                  <section className="border-t-2 border-reg-g pt-4 space-y-5 scroll-mt-24">
+                  <section className="border-t-2 border-reg-g pt-4 space-y-5">
                     {/* IA-2 Erfassungs-Kopf (§11.1 / K-2c): «n Erlasse erfasst — [Wort]»
                         + Weiterweg zur amtlichen Sammlung (lexfind) + /abdeckung. Für
                         dünne Kantone IST diese Zeile der Lücken-Hinweis (nie Sackgasse,

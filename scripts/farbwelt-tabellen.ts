@@ -17,6 +17,7 @@
 
 import tw from '../tailwind.config.js';
 import type { Mode } from './farbwelt-messung';
+import type { Riss } from './farbwelt-risse';
 
 // (a) WCAG-PFLICHTPAARE — heute erfüllt, FAIL bei Unterschreitung.
 type Paar = { fg: string; bg: string; min: number; art: 'Text' | 'Nicht-Text'; quelle: string };
@@ -287,13 +288,21 @@ export const FIXPUNKT: { token: string; mode: Mode; soll: string }[] = [
 // (Baseline) BEKANNTE RISSE (D-1-Input): heute unter Schwelle → WARNUNG, FAIL nur
 // bei Verschlechterung gegenüber dem gemessenen Ist-Wert (Baseline-Guard).
 export const BASELINE_TOL = 0.03;
-export const RISSE: { fg: string; bg: string; mode: Mode; schwelle: number; ist: number; tag: string }[] = [
+export const RISSE: Riss[] = [
   // D-4 ✅ (13.7.): ink-500/well hell 4.48→4.62 (L −0.007 bei Hue-Normalisierung) —
   // aus RISSE entfernt, jetzt harte PFLICHT (s. o.).
   // D-1.3 ✅: alle direkten Nicht-Text-Call-Sites von danger-500 sind auf
   // --danger-line aliassiert (dunkel = -700, 7.54:1) — das Token-PAAR bleibt
   // als Baseline-Guard, bis D-4/D-5 die -500-Mitte selbst kalibriert.
   { fg: 'danger-500', bg: 'paper', mode: 'dunkel', schwelle: 3.0, ist: 2.72, tag: 'D-1.3 Call-Sites aliassiert (--danger-line); Token-Paar bis D-4/D-5' },
+];
+
+// (Kategorie) DURCH ROLLE AUSGESCHLOSSEN (Ergänzung W2·19 Kleinaufräumen 30.9.2026):
+// die sechs ink-500-Paare standen mit DK-16 (#1177) in RISSE und erschienen als
+// Dauer-[RISS]-Warnungen samt Baseline-Guard (Toleranz 0.03 hätte bei einer
+// Token-Verschiebung rot werden können, obwohl die Rolle das Paar auffängt).
+// Jetzt eigene Kategorie: keine Warnung, kein Guard, Auswertung farbwelt-risse.ts.
+export const DURCH_ROLLE: Riss[] = [
   // ── DK-16 (W2·19 HN-D4, 30.9.2026) · ink-500 AUF DEN REGISTERFLÄCHEN ─────────
   // Die gedämpfte Tinte (`.text-ink-500`, Klassenfarbe von `.lc-overline`) liegt
   // auf `reg-*-flaeche` in sechs von acht Paaren unter 4.5:1 (gemessen 30.9.2026,
@@ -306,6 +315,7 @@ export const RISSE: { fg: string; bg: string; mode: Mode; schwelle: number; ist:
   // Rolle besteht (Rückbau-Signal: fällt einer «geheilt», ist sie für dieses
   // Paar überflüssig) und dass eine Flächen-Verschiebung nicht tiefer sinkt.
   // Verknüpfung zur Rolle: `src/tests/design-dk-c-farbe-kontrast.test.tsx`.
+  // (Ergänzung: «Risse»/Baseline oben meint den Stand DK-16; seither Kategorie DURCH_ROLLE.)
   { fg: 'ink-500', bg: 'reg-g-flaeche', mode: 'hell', schwelle: 4.5, ist: 4.42, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.63)' },
   { fg: 'ink-500', bg: 'reg-g-flaeche', mode: 'dunkel', schwelle: 4.5, ist: 4.24, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.25)' },
   { fg: 'ink-500', bg: 'reg-r-flaeche', mode: 'hell', schwelle: 4.5, ist: 4.31, tag: 'DK-16 Rolle «Tinte leise» hebt auf ink-600 (5.49)' },
