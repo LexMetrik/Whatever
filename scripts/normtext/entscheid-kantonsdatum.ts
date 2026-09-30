@@ -190,6 +190,28 @@ export async function kopfSeitenMitRueckfallMeldung(det: OclKopfFelder & { court
   return seiten;
 }
 
+/**
+ * Fremdes Aktenzeichen im EIGENEN Urteilskopf (Wochenlauf 28.9.2026, AG): OCL führt als
+ * `docket_number` das Aktenzeichen des Aggregators, das mit dem amtlichen nicht identisch sein muss —
+ * `HOR.2025.3` (amtlich im Kopf: `HOR.2021.17`, decwork decrees/11417) und `ST.2024.216`
+ * (amtlich `SST.2024.216`, decwork decrees/10249); Datum und Text stimmten, das Aktenzeichen nicht.
+ * Liefert das erste Aktenzeichen des Kopf-Bereichs (Form `XX.JJJJ.N`, die Form des eigenen
+ * Aktenzeichens), wenn der Kopf Aktenzeichen dieser Form trägt, das EIGENE (`aktenzeichenRe`,
+ * Wortgrenze) aber nicht darunter ist; sonst null. Bewusst eng: greift nur bei dieser Form
+ * (AG/BS-Stil; BE/SG/GR/ZH schreiben anders) und nur, wenn der Kopf überhaupt ein Aktenzeichen
+ * nennt — ein Kopf ganz ohne Aktenzeichen belegt nichts und bleibt wie bisher unbeanstandet. Rein (§2).
+ */
+const AZ_FORM = /^[A-Z]{1,5}\.\d{4}\.\d+$/;
+export function fremdesAktenzeichenImKopf(det: OclKopfFelder): string | null {
+  const docket = String(det.docket_number ?? '').trim();
+  if (!AZ_FORM.test(docket) || typeof det.full_text !== 'string') return null;
+  const kopf = pdfKopfNormalisieren(kopfBereich(det.full_text));
+  const az = aktenzeichenRe(docket);
+  if (!az || az.test(kopf)) return null;
+  const fremd = kopf.match(/(?<![\p{L}\d.])[A-Z]{1,5}\.\d{4}\.\d+(?![\p{L}\d]|\.\d)/u);
+  return fremd ? fremd[0] : null;
+}
+
 /** Zurückgehaltener kantonaler Neuabruf (Meldekanal `KopfHoleOpts.zurueckgehalten`). */
 export interface Zurueckgehalten { decisionId: string; court: string; nummer: string; grund: string }
 
@@ -213,7 +235,13 @@ export interface KopfHoleOpts {
 export function kopfZurueckhalten(det: OclKopfFelder & { decision_id?: unknown; court?: unknown }, seiten: string[] | null, o: KopfHoleOpts): boolean {
   if (!o.nurMitAmtlichemKopf || String(det.canton ?? 'CH') === 'CH') return false;
   const r = kantonsEntscheiddatum(det, seiten);
-  if (ausEigenemTitel(r)) return false;
+  if (ausEigenemTitel(r)) {
+    // Identität des Aktenzeichens (Wochenlauf 28.9.2026): ein eigener Titel belegt nur das DATUM.
+    const fremd = fremdesAktenzeichenImKopf(det);
+    if (!fremd) return false;
+    o.zurueckgehalten?.({ decisionId: String(det.decision_id ?? ''), court: String(det.court ?? ''), nummer: String(det.docket_number ?? ''), grund: `Aktenzeichen-Widerspruch: OCL ${String(det.docket_number ?? '')}, amtlicher Urteilskopf nennt ${fremd}` });
+    return true;
+  }
   o.zurueckgehalten?.({ decisionId: String(det.decision_id ?? ''), court: String(det.court ?? ''), nummer: String(det.docket_number ?? ''), grund: `${r.quelle} ${r.datum || '—'}: ${r.grund ?? r.kopf.status}` });
   return true;
 }
