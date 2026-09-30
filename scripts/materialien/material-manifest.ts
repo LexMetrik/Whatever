@@ -167,7 +167,8 @@ export function shaEintrag(r: MaterialRegistereintrag): string {
   return createHash('sha256').update(norm, 'utf8').digest('hex');
 }
 
-function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
+/** Ein Registereintrag → der volle Manifest-Eintrag (exportiert für Tests, unverändert). */
+export function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
   const b = behoerdeVon(r.behoerde);
   // Botschaften-Zusatzfelder NUR für BR emittieren → bestehende Einträge byte-identisch
   // (keine neuen null-Keys in den kuratierten register.json-Zeilen).
