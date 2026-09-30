@@ -52,6 +52,7 @@ export type HistorieTyp =
   | 'eingefuegt' // «Eingefügt durch …»
   | 'fassung' // «Fassung gemäss/des …» (Neufassung)
   | 'aufgehoben' // «Aufgehoben durch/in …, mit Wirkung seit …»
+  | 'gegenstandslos' // «Gegenstandslos [gemäss …, mit Wirkung seit …]» — EIGENE Kategorie, nie «aufgehoben» (§1)
   | 'ausdruck' // «Ausdruck gemäss …» (Begriff im ganzen Text ersetzt)
   | 'bezeichnung' // «Bezeichnung gemäss …» / «Die Bezeichnung …»
   | 'angenommen' // «Angenommen in der Volksabstimmung vom …» (BV)
@@ -105,6 +106,11 @@ const DATUM_FENSTER = 30;
 // («… eingefügt durch», «… aufgehoben durch»).
 const VERBEN: ReadonlyArray<readonly [HistorieTyp, RegExp]> = [
   ['aufgehoben', /^(?:Aufgehoben (?:durch|in|gemäss)|aufgehoben durch)/],
+  // W2·27-BUND-FERTIG (1.10.2026): «Gegenstandslos gemäss Ziff. IV 1 …, mit Wirkung seit 1. Jan. 2018» (StGB 67f),
+  // «Gegenstandslos.» (OR SchlT 6). Nur das GANZE Wort am Segment-Anfang — dieselbe Regel wie
+  // `fussnoteGegenstandslos` (scripts/normtext/aufhebung-signal.ts): «Gegenstandslose UeB.», «Dritter Satz
+  // gegenstandslos», «… ist heute gegenstandslos» sind Teil-Skopus und bleiben ausserhalb.
+  ['gegenstandslos', /^Gegenstandslos(?=[\s.,;:]|$)/],
   ['eingefuegt', /^(?:Eingefügt (?:durch|Ziff)|eingefügt (?:durch|Ziff))/],
   ['fassung', /^Fassung (?:gemäss|des|von|dieser|dieses|zweiter|erster|Abs)/],
   ['ausdruck', /^Ausdruck gemäss/],
@@ -325,6 +331,11 @@ export interface ArtikelHistorie {
   giltSeit: string | null;
   /** Nur wenn der GANZE Artikel aufgehoben ist (Aufhebungs-Fussnote auf Artikelebene): ISO-Wirkungsdatum. */
   aufgehobenSeit?: string;
+  /** Nur wenn der GANZE Artikel amtlich «gegenstandslos» ist (Vermerk auf Artikelebene, StGB 67f, OR SchlT 6).
+   *  EIGENE Kategorie neben `aufgehobenSeit` (§1: nicht durch Aufhebungsakt gestrichen). `seit` = ISO-Wirkungsdatum
+   *  aus der amtlichen Klausel, `null` = Fedlex nennt keins (nie geschätzt, §2). Deckt sich mit
+   *  `NormSnapshot.gegenstandslos` (W2·27, #1183) — Test `normtext-historie-gegenstandslos`. */
+  gegenstandslos?: { seit: string | null };
   /** Alle Ereignisse in amtlicher Dokumentreihenfolge (Fedlex: ältester Eingriff je Fussnote zuerst). */
   ereignisse: HistorieEreignis[];
 }
@@ -404,8 +415,29 @@ export function baueArtikelHistorie(
   // Feld für den Kopf-Unter-Ort) siehe ROADMAP RL-11-Nachzug.
   if (aufgehobenSeit && opts.koerperLebend === true) aufgehobenSeit = undefined;
 
+  // Ganz-Artikel-«gegenstandslos» (W2·27, 1.10.2026): dieselben Skopus-Regeln wie die Ganzaufhebung
+  // (Artikelkopf, kein Teil-Skopus, nicht am Gliederungstitel), dieselben beiden Widerlegungen
+  // (lebender Körper ⇒ Kopf-Anker betrifft die Sachüberschrift; spätere Textänderung ⇒ Artikel lebt).
+  let gegenstandslos: { seit: string | null } | undefined;
+  for (const fn of fussnoten ?? []) {
+    if (!artikelAufhebungMoeglich(fn)) continue;
+    for (const e of parseFussnoteHistorie(fn).ereignisse) {
+      if (e.typ !== 'gegenstandslos') continue;
+      if (!gegenstandslos || (e.datum && (!gegenstandslos.seit || e.datum > gegenstandslos.seit))) gegenstandslos = { seit: e.datum };
+    }
+  }
+  if (gegenstandslos?.seit) {
+    const seit = gegenstandslos.seit;
+    const widerlegt = (fussnoten ?? []).some(
+      (fn) => !fn.sektion && parseFussnoteHistorie(fn).ereignisse.some((e) => e.datum && GILT_TYPEN.has(e.typ) && e.datum >= seit),
+    );
+    if (widerlegt) gegenstandslos = undefined;
+  }
+  if (gegenstandslos && opts.koerperLebend === true) gegenstandslos = undefined;
+
   const historie: ArtikelHistorie = { giltSeit, ereignisse };
   if (aufgehobenSeit) historie.aufgehobenSeit = aufgehobenSeit;
+  if (gegenstandslos) historie.gegenstandslos = gegenstandslos;
   return { historie, unparsed, refCount, ereignisFnCount };
 }
 

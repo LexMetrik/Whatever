@@ -54,6 +54,7 @@ const TYP_LABEL: Readonly<Record<HistorieTyp, string>> = {
   eingefuegt: 'Eingefügt',
   fassung: 'Neufassung',
   aufgehoben: 'Aufgehoben',
+  gegenstandslos: 'Gegenstandslos',
   ausdruck: 'Ausdruck angepasst',
   bezeichnung: 'Bezeichnung angepasst',
   angenommen: 'Angenommen (Abstimmung)',
@@ -149,7 +150,7 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
   // §8: ohne datierten Stand UND ohne Ereignis nichts anzeigen (kein leerer Kasten, §13).
   if (!historie) return null;
   const ereignisse = historie.ereignisse ?? [];
-  const hatDatum = !!historie.giltSeit || !!historie.aufgehobenSeit;
+  const hatDatum = !!historie.giltSeit || !!historie.aufgehobenSeit || !!historie.gegenstandslos;
   if (!hatDatum && ereignisse.length === 0) return null;
 
   // Badge-Text (§8, nie erfunden): aufgehobener Artikel zeigt den Wirkungs-Stand,

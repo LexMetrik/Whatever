@@ -10487,10 +10487,10 @@
    ]
   },
   "67_f": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
-     "typ": "inkraft",
+     "typ": "gegenstandslos",
      "datum": "2018-01-01",
      "wirkung": true,
      "quellen": [
@@ -10506,7 +10506,10 @@
      "absatz": null,
      "item": null
     }
-   ]
+   ],
+   "gegenstandslos": {
+    "seit": "2018-01-01"
+   }
   },
   "75_a": {
    "giltSeit": "2007-01-01",
