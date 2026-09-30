@@ -367,7 +367,9 @@ Richtigkeit (Belege altern nicht).
 
 **F0.11 — Titelordnung (HN-D2, 30.9.2026; Go David 24.9.2026).** Gleiche Stufe =
 gleiche Schrift, gleiches Gewicht, auf jeder Seite. Vier Stufen, je EIN Baustein;
-die Grössen stammen aus der Skala (B2).
+die Grössen stammen aus der Skala (B2). «Titel» in F0.4 und §e (Literata trägt die
+getragenen Titel) meint Stufe 1 und 3; Stufe 2 gehört als Gliederung der Bedienung
+zu Archivo — kein Widerspruch, sondern die Abgrenzung (Zweitprüfung #1190).
 
 | Stufe | Rolle | Tag | Schrift · Gewicht | Grösse | Baustein |
 |---|---|---|---|---|---|

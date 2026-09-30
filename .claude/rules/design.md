@@ -12,10 +12,10 @@ konkretisiert je Domäne (§N/§R/§J/§V). Bei Konflikt gewinnt das speziellere
 innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 **jeder Rechtswert mit Norm, Link und Stand** (D1) — ist mit §7 verzahnt.
 
-## Handschrift «Sammlung» (6.9.2026) — zwölf Zeilen, Detail in §F0
+## Handschrift «Sammlung» (6.9.2026) — Detail in §F0
 <!-- @wiedervorlage: 2027-09-06 -->
 
-1. Literata liest, Archivo bedient, Mono nur Rechenweg/Code (Zahlen `tabular-nums`) → F0.4
+1. Literata liest, Archivo bedient, Mono nur Rechenweg/Code (Zahlen `tabular-nums`) → F0.4; Titel → F0.11
 2. Papier/Tinte chromafrei-nah, Leiter `well<paper<surface<paper-raised` → F0.1
 3. Reinweiss existiert genau einmal: `--paper-raised`, die schwebende Ebene → §G d
 4. Registerfarben `--reg-g/r/m/w` Strich/Kante/Marke; Fläche nur `--reg-*-flaeche`, Tinte darauf → F0.2
