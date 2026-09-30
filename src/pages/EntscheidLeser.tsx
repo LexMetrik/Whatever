@@ -484,8 +484,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   }
   // W2·29-WERKBANK-REST S1: der geteilte Lade-Baustein (`ui/Ladeanzeige`,
   // W3-7) statt der siebten Kopie — Text wörtlich, neu mit `role="status"`.
+  // `min-h-inhalt-region` (W2·31 P13, 30.9.2026): ohne Reserve ragte der Footer
+  // in den Fold und sprang beim Einwachsen wieder hinaus (Lade-CLS 0.45 @1920,
+  // 0.94 @375 gemessen; Hausmuster /materialien, #1198).
   if (zustand === 'laden' || !snap) {
-    return <Ladeanzeige text="Der Entscheid wird abgerufen …" className="py-12" />;
+    return <Ladeanzeige text="Der Entscheid wird abgerufen …" className="min-h-inhalt-region py-12" />;
   }
 
   const regesteText = snap.regeste ? normalisiereRegeste(snap.regeste.text) : null;
