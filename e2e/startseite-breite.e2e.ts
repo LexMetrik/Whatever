@@ -98,6 +98,7 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
   // unsichtbar. ROT ZU BEKOMMEN: `teileAb2xl` an der Kachel streichen
   // (Zeile zeigt sich schon @1440) oder `hidden`/`2xl:block` in
   // `StartKachelFeld.tsx`s `gesicht()` entfernen.
+  // Nachtrag 30.9.2026 (W2·31 J): heute `teileNurBreit` / `@md/kachel:block`.
   for (const [breite, sichtbar] of [[1440, false], [1536, true], [1920, true]] as const) {
     test(`(1b) @${breite}: Rechtsprechung-Teile «Leitentscheide» ${sichtbar ? 'sichtbar' : 'verborgen'}, Zelle 280 px`, async ({ page }) => {
       await start(page, breite, 1000);
@@ -137,6 +138,7 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     { breite: 1536, hoehe: 864, leiste: 0, skala: '1.4', sichtbar: false }, // 471 px = 21.0 rem
     { breite: 1920, hoehe: 1080, leiste: 0, skala: '1.4', sichtbar: true }, // 663 px = 29.6 rem
     { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1.4', sichtbar: false }, // 241 px = 10.8 rem (vorher dreizeilig sichtbar)
+    { breite: 1750, hoehe: 1000, leiste: 0, skala: '1.4', sichtbar: false }, // 578 px = 25.81 rem (gemessen 30.9.2026) — knapp UNTER der 28-rem-Schwelle; ohne diesen Fall bliebe eine auf 22/24 rem gesenkte Schwelle grün (Nachbesserung Gegenprüfung)
   ]) {
     test(`(1c) @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ''} Skala ${skala}: Teile «Leitentscheide» ${sichtbar ? 'sichtbar, eine Zeile' : 'verborgen'} (Kachelbreite ${sichtbar ? '≥' : '<'} 28 rem)`, async ({ page }) => {
       if (leiste) await mitLeiste(page, leiste);

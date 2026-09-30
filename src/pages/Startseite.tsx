@@ -108,6 +108,10 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     an — wie bei G; neu aus bei 326 px (1536 mit Seitenleiste 460, 20.4 rem)
 //     und bei Skala 1.4 @1536 (471 px = 21 rem), an bei Skala 1.4 @1920
 //     (663 px = 29.6 rem). U13 bei Skala 1.4 bleibt offen, s. Posten-Bericht.
+//     Bewusste Folge (Gegenprüfung 30.9.2026): 1920 + Seitenleiste 460 + Skala
+//     1.4 (Kachel 433 px = 19.3 rem) zeigte die Zeile auf main einzeilig und
+//     zeigt sie jetzt nicht mehr; «dreizeilig» trifft nur den 241-px-Fall
+//     (1536 + Seitenleiste + Skala 1.4), der 433-px-Fall fällt der Schwelle zum Opfer.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.

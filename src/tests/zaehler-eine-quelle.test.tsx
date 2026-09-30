@@ -120,6 +120,7 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     // `teile`, sichtbar nur ab 1536 px (`teileAb2xl`, `StartKachelFeld.tsx`).
     // ROT ZU BEKOMMEN: den Text streichen, oder `hidden`/`2xl:block` von der
     // Teile-Zeile entfernen (macht sie wieder unter 1536 px sichtbar).
+    // Nachtrag 30.9.2026 (W2·31 J): heute `teileNurBreit` / `@md/kachel:block`.
     expect(r).toContain(`${nf(Z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`);
     expect(Z.rechtsprechungLeitentscheide).toBeGreaterThan(0);
     expect(Z.rechtsprechungLeitentscheide).toBeLessThanOrEqual(Z.rechtsprechungVolltext);
