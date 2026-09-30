@@ -54,10 +54,48 @@ describe('verifizierLinkArtikel — echte Snapshot-Fälle (§7)', () => {
   });
 });
 
-describe('verifizierLinkArtikel — kein Link statt falscher Link (§8)', () => {
-  it('Synthese-Suffix «__2» (KKV 126_z__2): Fragment existiert auf Fedlex NICHT → null', () => {
+describe('verifizierLinkArtikel — «__N»-Token mit eigenem amtlichem Namens-Anker (W2·27, Nebenfund #890)', () => {
+  it('KKV 126_z__2 («Wesentliche Mängel»): quelleUrl trägt #ta126z → Deep-Link freigegeben', () => {
+    // Live-Beleg 30.9.2026 (fedlex.admin.ch, Chromium): …/eli/cc/2006/859/de#ta126z landet am
+    // 2. Vorkommen «Art. 126z tredecies» (top −237 px), das 1. liegt bei −3334 px.
     const e = eintrag(kkv, '126_z__2');
+    expect(e.quelleUrl).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
+    expect(verifizierLinkArtikel(e, GELTEND)).toBe('https://www.fedlex.admin.ch/eli/cc/2006/859/de#ta126z');
+  });
+
+  it('Korpus-Sweep: jedes «__N»-Token liefert entweder null oder einen NICHT-«art_»-Anker; KKV 126_z__2 ist dabei', () => {
+    const bund = ['KKV', 'ZGB', 'OR'].flatMap((n) => lade(`bund/${n}.json`).eintraege);
+    const nToken = bund.filter((e) => /__\d+$/.test(e.artikel));
+    expect(nToken.map((e) => e.artikel)).toContain('126_z__2'); // Sabotage-Schutz: nicht leer (§6.7b)
+    for (const e of nToken) {
+      const url = verifizierLinkArtikel(e, GELTEND);
+      if (url == null) continue;
+      expect(url.slice(url.indexOf('#') + 1)).not.toMatch(/(^|\/)art_/);
+    }
+  });
+});
+
+describe('verifizierLinkArtikel — kein Link statt falscher Link (§8)', () => {
+  it('Synthese-Suffix «__2» OHNE eigenen amtlichen Anker (Fallback auf den Basis-Anker = 1. Vorkommen) → null', () => {
+    // amtlicherAnker() fällt bei nicht eindeutigem Namens-Anker auf den Basis-Anker zurück
+    // — der zeigt auf das ERSTE Vorkommen, also auf einen FREMDEN Artikel (§8).
+    const e = { ...eintrag(kkv, '126_z__2'), quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de#art_126_z' };
     expect(verifizierLinkArtikel(e, GELTEND)).toBeNull();
+  });
+
+  it('Synthese-Suffix «__2» im Schlussteil mit Basis-Anker «disp_u1/art_1» (fremder Artikel) → null', () => {
+    const e = {
+      ...eintrag(kkv, '126_z__2'),
+      artikel: 'disp_u1_art_1__2',
+      quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de#disp_u1/art_1',
+    };
+    expect(verifizierLinkArtikel(e, GELTEND)).toBeNull();
+  });
+
+  it('Synthese-Suffix «__2» ohne Fragment / ohne ELI-Form → null', () => {
+    const e = eintrag(kkv, '126_z__2');
+    expect(verifizierLinkArtikel({ ...e, quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2006/859/de' }, GELTEND)).toBeNull();
+    expect(verifizierLinkArtikel({ ...e, quelleUrl: 'https://fedlex.data.admin.ch/filestore/x/de/html/x.html#ta126z' }, GELTEND)).toBeNull();
   });
 
   it('Kanton-Eintrag (kein Fedlex-eId-Raum) → null', () => {
