@@ -45,4 +45,24 @@ describe('tor-schutz 1b: Push nur per && an ein Tor', () => {
     expect(exitFuer('git push; npm run gate > .gate/g.log 2>&1; echo $?')).toBe(0);
     expect(exitFuer('grep -n "npm run gate" CLAUDE.md; git push')).toBe(0);
   });
+
+  // Prüfer-Auflage PR #1200: Heredoc-Körper und Quote-Inhalte sind Text, kein Kommando.
+  it('lässt Tor-Namen in Heredoc-Körpern und Anführungszeichen durch (Falsch-Positive)', () => {
+    expect(
+      exitFuer("git commit -m \"$(cat <<'EOF'\nfix: x\n\nnpm run lint gruen\nEOF\n)\" && git push -u origin feat/x"),
+    ).toBe(0);
+    expect(exitFuer("git commit -q -F- <<'EOF'\nfix: x\n\nnpm run gate gruen\nEOF\ngit push")).toBe(0);
+    expect(exitFuer('gh pr create --body "Tore:\nnpm test gruen\n" ; git push')).toBe(0);
+  });
+
+  it('blockt weiter, wenn das Tor NACH dem Heredoc/den Quotes wirklich läuft', () => {
+    expect(exitFuer("git commit -q -F- <<'EOF'\nmsg\nEOF\nnpm run gate > g.log 2>&1; git push")).toBe(2);
+    expect(exitFuer('git commit -m "npm run gate gruen"; npm run lint; git push')).toBe(2);
+  });
+
+  it('erkennt git mit Globaloptionen (-C, -c) vor push', () => {
+    expect(exitFuer('npm run gate; git -C /x push')).toBe(2);
+    expect(exitFuer('npm run gate; git -c k=v -C "/a b" push origin feat/x')).toBe(2);
+    expect(exitFuer('npm run gate && git -C /x push')).toBe(0);
+  });
 });
