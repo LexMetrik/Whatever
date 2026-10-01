@@ -54,9 +54,17 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
     expect(m.modus).toBe('b1-kompakt');
     expect(m.kennzahlen.zeilenVoll).toBeGreaterThan(OFFEN_MAX_ZEILEN);
     expect(m.kennzahlen.amtlicheKnoten).toBe(171);
-    // Zahl ABGELEITET statt Literal (W2·27-BUND-FERTIG, 1.10.2026): Fedlex hat OR Art. 697l/697m zu EINEM
-    // Artikel-Element zusammengefasst (20260101: 1686, 20261001: 1685) — ein Literal reisst bei jeder OR-Revision.
-    expect(m.kennzahlen.artikelAnzahl).toBe(m.eintraege.length);
+    // Der exakte Artikelzahl-Pin (frueher `toBe(1686)`) ist ENTFALLEN (W2·27-BUND-FERTIG, 1.10.2026):
+    // Fedlex hat OR Art. 697l/697m zu EINEM Artikel-Element zusammengefasst (20260101: 1686, 20261001:
+    // 1685) — ein Literal reisst bei jeder OR-Revision und stoppt den Frische-Workflow. Ein Ersatz
+    // `artikelAnzahl === m.eintraege.length` wurde verworfen: gliederungsModell.ts definiert die Kennzahl
+    // selbst als eintraege.length, die Assertion koennte nie scheitern (§6.7). Die Sorge «ein Artikel
+    // fehlt im Snapshot» tragen zwei unabhaengige Tore (Beleg 1.10.2026: art_697_m aus
+    // public/normtext/bund/OR.json geloescht, 1686 -> 1685, danach):
+    //   · `npm run check:segmente` (Modus B, leerer Cache) Exit 1 — «1 im Soll bekannte Artikel haben
+    //     KEINEN Projektions-Eintrag mehr (Rueckschritt): OR art_697_m»;
+    //   · `npm run check:vollstaendigkeit` Exit 1 — «OR: 1 Artikel in HTML, nicht im Snapshot:
+    //     bund/OR/art_697_m».
     // Die Spec verankert «OR/ZGB 134–171 amtliche Knoten» — hier belegt.
     expect(m.startOffeneTiefe).toBe(0);
   });

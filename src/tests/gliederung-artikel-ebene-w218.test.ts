@@ -338,6 +338,23 @@ describe('W2·18 — artikel-granulare Bäume: jeder Artikel erreichbar, keine D
     expect(flacheZeilen(m.knoten).filter((k) => k.id.startsWith(`${ID_ARTIKEL}:`)).length).toBe(artikelZeilen);
   });
 
+  it('OR: die Lücken-Regel gibt auch dem ERSTEN Artikel eines reinen Artikel-Knotens eine Zeile (Re-Pin-fest)', () => {
+    // Datenunabhängige Invariante statt Zeilenzahl-Literal (W2·27-BUND-FERTIG, 1.10.2026). Ein Knoten, der
+    // AUSSCHLIESSLICH Artikel-Zeilen trägt, springt (ersterArtikel) seinen ersten Artikel selbst an; die
+    // Lücken-Regel hängt trotzdem ALLE seine Artikel als Zeilen auf — die erste Zeile MUSS also genau diesen
+    // ersten Artikel tragen. Fehlte sie (Mutation M2b 1.10.2026: Lücken-Regel ohne Zeile für den ersten
+    // Artikel, `arts.slice(1)`), blieben die Zeilen-Ids 115 -> 83 und diese Gleichung bricht — der
+    // «jeder Artikel erreichbar»-Test merkt es nicht (der Knoten springt den ersten Artikel ja selbst an).
+    const m = lade('bund', 'OR');
+    const reineArtikelKnoten = flacheZeilen(m.knoten)
+      .filter((k) => k.art !== 'artikel' && k.kinder.length > 0 && k.kinder.every((kk) => kk.art === 'artikel'));
+    // Nicht-vakuös: der OR hat solche Knoten (Untergrenze, kein Literal).
+    expect(reineArtikelKnoten.length).toBeGreaterThan(0);
+    for (const k of reineArtikelKnoten) {
+      expect(k.kinder[0].ersterArtikel, `Knoten ${k.id}: erste Artikel-Zeile`).toBe(k.ersterArtikel);
+    }
+  });
+
   it('die 20 artikel-granularen Erlasse, namentlich (F4 des §9-Bug-Checks)', () => {
     // Der Kommentar an ARTIKEL_EBENE_MAX_BLATT_DECKUNG verweist auf «die Liste
     // im Unit-Test» — bis zum Bug-Check gab es sie nicht. Hier ist sie:
