@@ -341,6 +341,86 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     await warteLeser(page)
   })
 
+  test('(f3) Zuschnittwechsel VOR der Navigation: ein verspätet ankommendes history.back() bricht sie nicht ab', async ({ page }) => {
+    // DIE REIHENFOLGE, DIE (f2) NICHT ABDECKT (W2·18-FEHLERBUCH, 1.10.2026,
+    // PR-Lauf 36890985162, Shard 5): das alte Dokument räumt AUF — Zuschnittwechsel
+    // → React-Commit → `useZurueckSchliesst`-Cleanup (`v3/blattGesten`) — BEVOR die
+    // Navigation beginnt, und das `history.back()` erreicht den Browser erst
+    // NACH deren Start (der Weg Renderer → Browser ist asynchron, auch aus einem
+    // Mikrotask). Dann hilft kein `beforeunload`-Merker (er feuert erst nach dem
+    // Cleanup): der Erstfix #1239 (b2da71ad2) stand in dieser Reihenfolge nackt da.
+    // Der Fall stellt die Ankunft DETERMINISTISCH her: das Init-Skript hält jeden
+    // `history.back()`-Aufruf an einem Tor (Fetch auf eine Route, die der Test
+    // erst öffnet, wenn die Navigation hängt) und gibt ihn dann erst an den
+    // Browser. Dieselbe Tor-Zusage schliesst über `tor.then(…)` in Aufrufreihenfolge:
+    // «tor-offen» wird erst NACH einem etwaigen `back()` gemeldet — so ist
+    // «zugestellt» ein Ereignis, kein Zeitablauf (kein `waitForTimeout`).
+    // Mit dem Fix wird beim Zuschnittwechsel gar kein `back()` mehr gerufen; das
+    // Tor hält dann nichts, und die Navigation läuft durch.
+    // ROT (gemessen 1.10.2026 gegen main UND gegen b2da71ad2): in
+    // `blattGesten.ts` den Cleanup wieder `history.back()` rufen lassen ⇒
+    // «page.goto: net::ERR_ABORTED».
+    await page.addInitScript(() => {
+      const echtes = History.prototype.back
+      let tor: Promise<unknown> | null = null
+      const torAuf = () => (tor ??= fetch('/__lm-nachzug-tor').then((r) => r.text()))
+      History.prototype.back = function (this: History) {
+        const dieses = this
+        void torAuf().then(() => echtes.call(dieses))
+      }
+      let gemeldet = false
+      new MutationObserver(() => {
+        if (gemeldet || !document.querySelector('[data-v3-panel-modal="nein"]')) return
+        gemeldet = true
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          console.log('lm-nachzug-f3:settled')
+          void torAuf().then(() => console.log('lm-nachzug-f3:tor-offen'))
+        }))
+      }).observe(document, { subtree: true, childList: true, attributes: true })
+    })
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO')
+    await warteLeser(page)
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await panelAufziehen(page)
+    await expect(page.locator('[data-v3-panel-modal="ja"]')).toBeVisible()
+
+    let halten = false
+    let navFreigeben!: () => void
+    const navTor = new Promise<void>((r) => { navFreigeben = r })
+    let torFreigeben!: () => void
+    const torPromise = new Promise<void>((r) => { torFreigeben = r })
+    await page.route('**/__lm-nachzug-tor', async (route) => {
+      await torPromise
+      await route.fulfill({ status: 200, contentType: 'text/plain', body: 'auf' })
+    })
+    await page.route('**/gesetze/bund/STPO', async (route) => {
+      if (halten && route.request().isNavigationRequest()) await navTor
+      await route.continue()
+    })
+
+    // 1) Das alte Dokument wechselt den Zuschnitt und räumt auf — noch keine Navigation.
+    const settled = page.waitForEvent('console', { predicate: (m) => m.text() === 'lm-nachzug-f3:settled', timeout: 15_000 })
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await settled
+
+    // 2) Jetzt beginnt die Navigation und hängt an der Route.
+    halten = true
+    const gehe = page.goto('/gesetze/bund/STPO').then(() => null, (e: Error) => e.message.split('\n')[0])
+    await page.waitForRequest((r) => r.isNavigationRequest() && r.url().endsWith('/gesetze/bund/STPO'))
+
+    // 3) Erst JETZT wird ein etwaiges `back()` dem Browser zugestellt. «tor-offen»
+    //    kommt nach ihm (Aufrufreihenfolge der Tor-Zusage).
+    const torOffen = page.waitForEvent('console', { predicate: (m) => m.text() === 'lm-nachzug-f3:tor-offen', timeout: 15_000 })
+    torFreigeben()
+    await torOffen
+
+    halten = false
+    navFreigeben()
+    expect(await gehe, 'ein verspätet zugestelltes history.back() hat die laufende Navigation abgebrochen').toBeNull()
+    await warteLeser(page)
+  })
+
   test('(g) Ä54 · die Filterzeile ist eine Zeile, nicht ein Block', async ({ page }) => {
     // VORHER, gemessen @1440 (StPO): der Filter-Block war 348 px hoch, die erste
     // Entscheid-Gruppe begann 352 px unter dem Panel-Kopf — drei Erklär-Absätze,
