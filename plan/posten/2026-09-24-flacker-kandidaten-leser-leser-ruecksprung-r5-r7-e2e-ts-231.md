@@ -12,3 +12,5 @@ Drei Flacker-Kandidaten aus den Landungen vom 24./25.9.2026, alle diff-fremd, Wu
 Weiterer Beleg 24.9.2026 23:47 UTC: merge_group-Lauf 36073915574 (PR #1087, kein Leser-Code), Job «Browser-Smoke Shard 5/8», Zeile 301 «Overlay ist wieder verschwunden» (toBeNull), auch im Retry rot → PR aus der Queue geworfen.
 
 **Umgehängt 25.9.2026** von `W2·29-WERKBANK-LESER` nach `W2·29-WERKBANK-NACHLAUF` — LESER mit Welle 3 abgeschlossen (Entscheid David 25.9.2026 «Leser Welle 3 als letzte Runde, dann Rest starten»). Scheibe N2 (Flakes).
+
+Weiterer Beleg 1.10.2026 07:29 UTC: PR-Lauf 36829388441 (PR #1221, kein Leser-Code), Job «Browser-Smoke Shard 5/8», Zeile 301 «Overlay ist wieder verschwunden» — dritter Beleg; Rerun `--failed` grün.
