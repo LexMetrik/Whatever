@@ -12,7 +12,7 @@
 // SEHR wohl und lebt darum NICHT dort, sondern ausschliesslich im eigenen,
 // standalone Tor `check:vernehmlassungen-alter` (check-vernehmlassungen-alter.ts).
 // Grund: check-materialien.ts wird von mehreren, fachlich UNVERWANDTEN Jobs beim
-// Namen aufgerufen (z. B. normen-monatslauf.yml Job `bs-grossrat`: "check:bs-materialien
+// Namen aufgerufen (z. B. normen-monitor.yml Job `bs-grossrat`: "check:bs-materialien
 // && check:materialien", NUR diese zwei Skripte — nicht die volle check:seriell-Kette).
 // Ein wanduhr-abhängiger Alterungs-Fehler dort würde bei jedem Lauf, in dem die
 // Vernehmlassungen zufällig zu alt sind, den BS-Grossrat-Job VOR dessen eigenem
