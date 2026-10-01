@@ -45,3 +45,25 @@ describe('P7 #11 · fnDefinitionen: Hochstellungen im Text bleiben, Marker-Hochs
     expect(d?.links).toEqual([{ label: 'AS <b>1957</b> 262', url: 'https://fedlex.data.admin.ch/eli/oc/1957/262_264_275' }]);
   });
 });
+
+// P7-Nachzug T1/T2 (1.10.2026, Gegenprüfung #1249): Hochstellungen, die KEIN Text sind, fallen wie bisher — BV: «<sup>*</sup>»
+// vor «Mit Übergangsbestimmung.» (25×, Sternchen-Marker), AVG Art. 2: Fedlex-Satzzeichen-Artefakt «<sup>¶h</sup>hh».
+const BV_STERN = '<p id="fn-b1"><sup><a href="#fnbck-b1">12</a></sup><sup></sup><sup>*</sup> Mit Übergangsbestimmung.</p>';
+const AVG_ARTEFAKT =
+  '<p id="fn-v1"><sup><a href="#fnbck-v1">3</a></sup> Diese Änd. ist im ganzen Erlass berücksichtigt.<sup>¶h</sup>hh</p>';
+
+describe('P7-Nachzug · Marker- und Artefakt-Hochstellungen fallen wie vor P7', () => {
+  it('BV: «<sup>*</sup>» erzeugt kein führendes Sternchen (^-verankerte Muster bleiben gültig)', () => {
+    expect(fnDefinitionen(BV_STERN).get('fn-b1')?.text).toBe('Mit Übergangsbestimmung.');
+  });
+
+  it('AVG Art. 2: «<sup>¶h</sup>» bleibt draussen (alte Behandlung: nur die Hochstellung fällt)', () => {
+    expect(fnDefinitionen(AVG_ARTEFAKT).get('fn-v1')?.text).toBe('Diese Änd. ist im ganzen Erlass berücksichtigt.hh');
+  });
+
+  it('Gegenprobe: Text-Hochstellungen daneben bleiben (BVG Fn 327 «BBl 2018 5813»)', () => {
+    const bbl =
+      '<p id="fn-c1"><sup><a href="#fnbck-c1">9</a></sup> (<a href="https://fedlex.data.admin.ch/eli/fga/2018/2131">BBl <sup><b><inl>2018</inl></b></sup><sup><inl> 5813</inl></sup></a>).</p>';
+    expect(fnDefinitionen(bbl).get('fn-c1')?.text).toBe('(BBl <b>2018</b> 5813).');
+  });
+});

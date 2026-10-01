@@ -63,6 +63,9 @@ function clean(s: string): string {
     .replace(/^\s*(?:<sup\b[^>]*>\s*(?:<a\b[\s\S]*?<\/a>|\d+[a-z]?)?\s*<\/sup>\s*)+/i, '')
     .replace(/<sup\b[^>]*>\s*<a\b[\s\S]*?<\/a>\s*<\/sup>/gi, '')
     .replace(/<sup\b[^>]*>\s*<\/sup>/gi, '')
+    // Nachzug P7 (Gegenprüfung #1249): Hochstellungen, die kein Text sind — Sternchen-Marker «<sup>*</sup>» (BV, 25×, vor
+    // «Mit Übergangsbestimmung.») und das Fedlex-Satzzeichen-Artefakt «<sup>¶h</sup>hh» (AVG Art. 2) — fielen vor P7 mit.
+    .replace(/<sup\b[^>]*>\s*(?:\*|¶h)\s*<\/sup>/gi, '')
     .replace(/<(b|i)\b[^>]*>/gi, (_m, t: string) => `<${t.toLowerCase()}>`)
     .replace(/<\/(b|i)\s*>/gi, (_m, t: string) => `</${t.toLowerCase()}>`)
     .replace(/<(?!\/?[bi]>)[^>]*>/g, '')
