@@ -413,7 +413,7 @@ jobs:
       # fährt `npm run check` (= check:seriell) und führt den Alterungs-Wächter darum
       # gar nicht aus; er kann an KEINEM der beiden Vernehmlassungs-Befunde mehr
       # scheitern. Dazu der hier vermisste Kreislauf: der Vernehmlassungs-Generator
-      # läuft jetzt monatlich mit im normen-monitor.yml (Job `vernehmlassungen`, Cron
+      # läuft jetzt monatlich in normen-monatslauf.yml (Job `vernehmlassungen`, Cron
       # `11 4 1 * *`) und öffnet bei Änderung einen eigenen PR (kein Auto-Merge); der
       # Alterungs-Wächter selbst läuft wöchentlich im Job `normen` (Ersatz-Arbiter,
       # `if: always()`, direkt nach `check:verfall` — derselbe K7-Platz).

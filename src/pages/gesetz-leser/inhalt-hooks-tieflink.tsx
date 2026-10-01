@@ -170,25 +170,19 @@ export function useTieflinkSprung(opts: {
     // des CLS. Ein Fuss, der für zwei Frames am Kopf des Dokuments steht, ist
     // dieselbe Verschiebung wie ein springender Artikel — nur an einem anderen
     // Knoten. Welche Flächen still bleiben, sagt die Regel in `index.css`.
+    // (Die Verdeckung selbst setzt `starte` unten — erst wenn das Ziel steht.)
     const wurzelEl = typeof document !== 'undefined' ? document.documentElement : null;
-    wurzelEl?.setAttribute('data-lr6-anker-warten', '');
     let aufgedeckt = false;
     const aufdecken = () => { aufgedeckt = true; wurzelEl?.removeAttribute('data-lr6-anker-warten'); };
     const ziel = () => findeArt(paneRoot(imPane, wurzel), token);
     // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
     // EINE Sprung-Stelle für Erst-Sprung, Einschwingen und Nachzug (§5).
     const springe = (el: HTMLElement) => el.scrollIntoView({ block: 'start', behavior: 'auto' });
-    const erstZiel = ziel();
-    if (erstZiel) {
-      springe(erstZiel);
-      erstZiel.classList.add('lc-ziel-blink');
-      window.setTimeout(() => erstZiel.classList.remove('lc-ziel-blink'), 2400);
-    }
     // Deckel für den Aufdeck-Zeitpunkt. GEMESSEN schwingt der Sprung nach
     // 127 ms ein (1313 → 1440); 600 ms ist das Vierfache davon und damit die
     // Reserve für langsame Geräte, nicht der Regelfall.
     const AUFDECK_MS = 600;
-    const deckel = window.setTimeout(aufdecken, AUFDECK_MS);
+    let deckel = 0;
     // ── W2·24-D34 · DER NACHZUG: WAS NACH DEM AUFDECKEN NOCH WÄCHST ─────────
     //
     // BEFUND (CI-Rot 34111127560, Shard 5; lokal byte-gleich nachgestellt,
@@ -284,17 +278,21 @@ export function useTieflinkSprung(opts: {
     // (Z. 87) den Pane-Wechsel. Beim Browser-Zurück läuft dieser Effekt also
     // gar nicht erst bis hierher; die Sonde unten belegt das.
     let eingeschwungen = false;
+    let nachzugDeckel = 0;
+    let warteDeckel = 0;
+    let warteBeobachter: MutationObserver | null = null;
     const UEBERNAHME = ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const;
     const beende = () => {
       if (fertig) return;
       fertig = true;
       window.clearTimeout(deckel);
       window.clearTimeout(nachzugDeckel);
+      window.clearTimeout(warteDeckel);
+      warteBeobachter?.disconnect();
       window.cancelAnimationFrame(rafId);
       for (const ev of UEBERNAHME) window.removeEventListener(ev, beende);
       aufdecken();
     };
-    const nachzugDeckel = window.setTimeout(beende, NACHZUG_MS);
     for (const ev of UEBERNAHME) window.addEventListener(ev, beende, { passive: true, once: true });
     const nachziehen = () => {
       if (fertig) return;
@@ -314,7 +312,61 @@ export function useTieflinkSprung(opts: {
       letzteLage = lage;
       rafId = window.requestAnimationFrame(nachziehen);
     };
-    rafId = window.requestAnimationFrame(nachziehen);
+    // ── W2·18-FEHLERBUCH · DAS ZIEL KANN NACH DEM SAMEN ERST ENTSTEHEN ───────
+    //
+    // BEFUND (Merge-Queue-Wurf 30.9.2026, Lauf 36780379937, Shard 1,
+    // `e2e/leser-position-u.e2e.ts:117`: «Art. 18 gerendert, viewport ratio 0»;
+    // lokal deterministisch nachgestellt, Chromium 1440×900, `currency.json` per
+    // `page.route` um 3 s verzögert, rAF-Sampler auf dem Pane-Scroller):
+    //     t  588 ms  Effekt läuft, Verdeckung an
+    //     t  591 ms  Verdeckung weg — der erste Frame fand kein Ziel
+    //     t 4721 ms  Art. 18 im DOM, Pane-scrollTop 0, Ziel bei 11'254 px
+    // WURZEL: `FruehAnsicht` zeigt den Volltext erst, wenn `currency.json` da
+    // ist (A9 §15.2-Pin, `inhalt-ansichten.tsx`). Der Seed-Effekt hängt aber nur
+    // an `eintraege` + `sektionen` — beides kann VOR der Currency-Datei stehen
+    // (zwei unabhängige Fetches; die Kommentare dort behaupten «i. d. R. lange
+    // vor dem grossen eintraege-Fetch», auf dem 4-Kern-Runner unter Last ist
+    // es ein Rennen). Stand der Artikel im ersten Frame nicht im DOM, rief die
+    // Schleife `beende()`, und `hashSeedGetan` (A34) sperrte jeden zweiten
+    // Versuch: der Leser blieb für immer am Seitenanfang. Ein echter
+    // Nutzerfehler bei langsamer Leitung, kein Test-Artefakt.
+    //
+    // DER WEG: das Ziel wird ERWARTET, nicht vorausgesetzt. Fehlt es beim Start,
+    // beobachtet ein MutationObserver die Lesefläche (Pane-Wurzel bzw. Body) und
+    // startet den Sprung in dem Moment, in dem der Artikel entsteht — im
+    // Microtask nach dem Commit, also VOR dem Paint des ersten Volltext-Frames
+    // (ein rAF-Polling liesse diesen Frame ungesprungen ins Bild). Während des
+    // Wartens wird NICHTS verdeckt: da steht der Lade-Platzhalter, und eine
+    // Seite, die bis zu `WARTE_MS` lang unsichtbar wäre, ist schlimmer als der
+    // Versatz. Verdeckung, Einschwingen und Nachzug laufen unverändert ab dem
+    // Fund. KLAMMERN: `WARTE_MS` (kein Dauerwächter, wenn der Artikel nie
+    // entsteht — z. B. Token ohne Fassung), dieselben Übernahme-Ereignisse
+    // (wer scrollt/tippt, bestimmt die Lage selbst) und der Effekt-Cleanup.
+    const WARTE_MS = 15000;
+    const starte = (erstZiel: HTMLElement) => {
+      wurzelEl?.setAttribute('data-lr6-anker-warten', '');
+      springe(erstZiel);
+      erstZiel.classList.add('lc-ziel-blink');
+      window.setTimeout(() => erstZiel.classList.remove('lc-ziel-blink'), 2400);
+      deckel = window.setTimeout(aufdecken, AUFDECK_MS);
+      nachzugDeckel = window.setTimeout(beende, NACHZUG_MS);
+      rafId = window.requestAnimationFrame(nachziehen);
+    };
+    const erstZiel = ziel();
+    if (erstZiel) {
+      starte(erstZiel);
+    } else if (typeof MutationObserver !== 'undefined') {
+      warteDeckel = window.setTimeout(beende, WARTE_MS);
+      warteBeobachter = new MutationObserver(() => {
+        if (fertig) return;
+        const el = ziel();
+        if (!el) return;
+        warteBeobachter?.disconnect();
+        window.clearTimeout(warteDeckel);
+        starte(el);
+      });
+      warteBeobachter.observe(paneRoot(imPane, wurzel) ?? document.body, { childList: true, subtree: true });
+    }
     return beende;
     // location.hash bewusst NICHT in den Deps: der Effekt springt EINMAL beim
     // Erlass-Laden an die (Pane-lokale bzw. Fenster-)Fundstelle — die Primär-

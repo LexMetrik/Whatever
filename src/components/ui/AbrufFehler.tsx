@@ -32,7 +32,7 @@ import { QuellLink } from './QuellLink';
 //
 // Reine Darstellungsschicht (§1/§3): der Baustein weiss nicht, WARUM der Abruf
 // fehlschlug, und entscheidet nichts.
-export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onErneut, className, daten }: {
+export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onErneut, className, daten, klein = false }: {
   /** Was nicht geladen werden konnte, im Nominativ und so, wie die Fläche es
    *  überschreibt («Materialien», «Änderungsverlauf»). */
   gegenstand: string;
@@ -58,10 +58,17 @@ export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onEr
   /** Marker-Attribute der Fläche (`data-…`), an denen bestehende Sonden hängen.
    *  Sie gehören dem Aufrufer, nicht dem Baustein. */
   daten?: Record<string, string>;
+  /** Dichte Gestalt für Flächen in `text-micro` (11 px, `EntstehungsBlock`): Satz UND Knopf
+   *  in `text-micro`, Zeilenhöhe der Nachbarzeilen. Eine Prop statt `className`, weil zwei
+   *  Schriftgrad-Klassen am selben Element nicht in der Reihenfolge des Attributs, sondern
+   *  des Stylesheets gelten (W2·27-BUND-FERTIG P2 #12; DESIGN-REGLEMENT F0.12). Ohne Angabe
+   *  bleibt `text-body-s`. */
+  klein?: boolean;
 }) {
   const verb = mehrzahl ? 'konnten' : 'konnte';
+  const gr = klein ? 'text-micro' : 'text-body-s';
   return (
-    <p {...daten} className={`text-body-s text-warn-700${className ? ` ${className}` : ''}`}>
+    <p {...daten} className={`${klein ? 'text-micro leading-[1.35]' : 'text-body-s'} text-warn-700${className ? ` ${className}` : ''}`}>
       {/* EINE Zeichenkette und nicht «{gegenstand} konnte …»: `renderToString`
           setzt zwischen zwei Textknoten ein `<!-- -->`, und der Satz landet so
           zerschnitten in jeder SSR-Zeichenketten-Sonde (dieselbe Falle notiert
@@ -71,7 +78,7 @@ export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onEr
         : `${gegenstand} ${verb} nicht geladen werden.`}
       {onErneut && (
         <>{' '}<button type="button" onClick={onErneut} data-abruf-erneut
-          className="lc-btn-mini text-body-s">Erneut laden</button></>
+          className={`lc-btn-mini ${gr}`}>Erneut laden</button></>
       )}
     </p>
   );

@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 Designentscheid Baustein-Variante «klein» (GP #1181).
+
+**Erledigt 2026-10-01:** PR #1246 — AbrufFehler klein, Reglement F0.12
