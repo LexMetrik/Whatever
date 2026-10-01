@@ -105,6 +105,39 @@ test.describe('Wizard-Fokus — Stepper, AG-Blocker, Zuständigkeit', () => {
     await expect(titel).not.toBeFocused()
   })
 
+  // W2·19 Wurzel-Nachzug P18 (1.10.2026): künftige Reiter (`aria-disabled`, Klick tut
+  // nichts) waren Tab-Stationen — Tab ab dem letzten erreichbaren Reiter landete auf
+  // toten Zielen. Sie stehen weiter im DOM (Schrittliste lesbar), nur ausserhalb der
+  // Tab-Reihenfolge; besuchte und aktiver Reiter bleiben erreichbar.
+  test('Stepper-Reiter @1280: künftige Reiter liegen nicht in der Tab-Reihenfolge', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.goto('/vorlagen/mahnung')
+    await page.evaluate(() => localStorage.clear())
+    await page.reload()
+    const reiter = page.locator('nav[aria-label="Schritte"] button')
+    await expect(reiter).toHaveCount(4)
+    await weiterKnopf(page).click() // → Parteien (Schritt 2 aktiv)
+    await expect(page.locator('[data-formular-karte] h2').first()).toHaveText(/Parteien/i)
+
+    // Reiter 1 (besucht) und 2 (aktiv) erreichbar, 3 und 4 (künftig) nicht — aber im DOM.
+    await expect(reiter.nth(0)).not.toHaveAttribute('tabindex', '-1')
+    await expect(reiter.nth(1)).not.toHaveAttribute('tabindex', '-1')
+    await expect(reiter.nth(2)).toHaveAttribute('tabindex', '-1')
+    await expect(reiter.nth(3)).toHaveAttribute('tabindex', '-1')
+    await expect(reiter.nth(2)).toHaveAttribute('aria-disabled', 'true')
+
+    // Verhalten: ab dem aktiven Reiter springt Tab NICHT auf einen künftigen.
+    await reiter.nth(1).focus()
+    await page.keyboard.press('Tab')
+    const aufKuenftigem = await page.evaluate(() =>
+      !!document.activeElement?.closest('nav[aria-label="Schritte"] button[aria-disabled="true"]'))
+    expect(aufKuenftigem, 'Tab vom aktiven Reiter landete auf einem künftigen Reiter').toBe(false)
+    // Umgekehrt: Shift+Tab vom Folgeelement führt zurück auf den aktiven Reiter.
+    await page.keyboard.press('Shift+Tab')
+    await expect(reiter.nth(1)).toBeFocused()
+  })
+
   for (const breite of [375, 1280]) {
     test(`AG-Gründung @${breite}: Sprung über einen Blocker landet auf dem Schritttitel`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: breite === 375 ? 812 : 800 })
