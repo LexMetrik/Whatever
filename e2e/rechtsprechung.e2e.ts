@@ -449,6 +449,21 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // nachher). Was Suche oder Sprung an Lesetext, Kopf, Treffer-Slot oder
     // Normen-Block verschieben, zählt weiterhin voll — und damit ist die Latte
     // wieder exakt 0 (unten), schärfer als ≤ 0.001, nicht lockerer.
+    // [Wortlaut vom 1.10.2026, BERICHTIGT durch die Ergänzung unten:
+    // «schärfer als zuvor, nicht lockerer» galt nur AUSSERHALB des Verzeichnisses.]
+    //
+    // ERGÄNZUNG 1.10.2026 (Zweitprüfung #1244, ergänzt statt umgeschrieben): die
+    // Verzeichnis-Ausnahme galt zunächst über den GANZEN Ablauf. Prüfer-Mutation
+    // «LI oben ins Verzeichnis einfügen, 700 ms nach dem Rail-Klick, ohne
+    // Eingabe»: alte Messung 0.00198, mit der Ausnahme über den ganzen Ablauf 0 —
+    // sie entging. Darum gilt die Ausnahme NUR in der SUCHPHASE (Flag unmittelbar
+    // vor `fill()` bis nach sichtbarem `[data-erw-treffer]` samt zwei Frames,
+    // Zeitfenster per `startTime`, weil Layout-Shift-Einträge asynchron zugestellt
+    // werden). Genaue Abgrenzung: AUSSERHALB des Verzeichnisses ist die Latte
+    // schärfer als zuvor (exakt 0 statt ≤ 0.001); INNERHALB des Verzeichnisses ist
+    // nur die Suchphase ausgenommen — davor (Rail-Sprung) und danach
+    // (Treffer-Sprung) zählen Verzeichnis-Shifts voll, und die Suchphase selbst
+    // deckt die Versatz-Gegenprobe (vorher / nach Suche / nach Treffer-Sprung).
     //
     // Gegenstück: die Ortsgrenze blendet die Listeneinträge aus — damit wäre ein
     // einwachsender Treffer-Slot (§15.2: Auskunftszeile schöbe das Verzeichnis
@@ -466,6 +481,7 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     const versatzVorher = await verzeichnisVersatz()
     await page.evaluate(() => {
       ;(window as unknown as { __cls: number }).__cls = 0
+      ;(window as unknown as { __suche: { von: number; bis: number } }).__suche = { von: Infinity, bis: -Infinity }
       const inhalt = document.querySelector('main')
       const verzeichnis = document.querySelector('[data-erw-rail] nav[aria-label="Erwägungen"]')
       new PerformanceObserver((l) => {
@@ -479,9 +495,13 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
           const bewegt = (q: { previousRect: DOMRectReadOnly; currentRect: DOMRectReadOnly }) =>
             q.previousRect.x !== q.currentRect.x || q.previousRect.y !== q.currentRect.y
             || q.previousRect.width !== q.currentRect.width || q.previousRect.height !== q.currentRect.height
-          const ausserhalbVerzeichnis = quellen.some((q) =>
-            q.node && inhalt?.contains(q.node) && !verzeichnis?.contains(q.node) && bewegt(q))
-          if (ausserhalbVerzeichnis) (window as unknown as { __cls: number }).__cls += s.value
+          // Verzeichnis-Ausnahme NUR in der Suchphase (Zeitfenster per startTime).
+          const such = (window as unknown as { __suche: { von: number; bis: number } }).__suche
+          const inSuchphase = e.startTime >= such.von && e.startTime <= such.bis
+          const zaehlt = quellen.some((q) =>
+            q.node && inhalt?.contains(q.node) && bewegt(q)
+            && (!verzeichnis?.contains(q.node) || !inSuchphase))
+          if (zaehlt) (window as unknown as { __cls: number }).__cls += s.value
         }
       }).observe({ type: 'layout-shift' })
     })
@@ -496,10 +516,21 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
 
     // Suche tippen (Highlight-API + Trefferliste) — die teuerste Interaktion.
     const feld = rail.getByRole('searchbox', { name: 'Im Entscheid suchen' })
+    // Suchphase öffnen (Verzeichnis-Ausnahme gilt nur bis zu ihrem Ende).
+    await page.evaluate(() => {
+      ;(window as unknown as { __suche: { von: number; bis: number } }).__suche = { von: performance.now(), bis: Infinity }
+    })
     t0 = Date.now()
     await feld.fill('Rechtsgut')
     await expect(rail.locator('[data-erw-treffer]')).toContainText('Treffer in', { timeout: REAKTIONS_LATTE })
     expect(Date.now() - t0, 'Suche im Entscheid zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+    // Suchphase schliessen: zwei Frames Nachlauf für die Filter-Antwort.
+    await page.evaluate(() => new Promise<void>((fertig) => {
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        ;(window as unknown as { __suche: { von: number; bis: number } }).__suche.bis = performance.now()
+        fertig()
+      }))
+    }))
     const versatzNachher = await verzeichnisVersatz()
 
     // Sprung auf einen Treffer aus der gefilterten Liste.
@@ -509,6 +540,7 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     await treffer.click()
     await expect(page.locator(`#${trefferAnker}`)).toBeVisible({ timeout: REAKTIONS_LATTE })
     expect(Date.now() - t0, 'Treffer-Sprung zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+    const versatzTreffer = await verzeichnisVersatz()
 
     await client.send('Emulation.setCPUThrottlingRate', { rate: 1 })
     const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
@@ -532,8 +564,15 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // (Spur: gleiche Grössenordnung, gleiche Runner-Abhängigkeit). Mit der
     // zweiten Ortsgrenze trägt die Latte wieder die Aussage des Testnamens:
     // exakt 0, schärfer als zuvor.
+    // PRÄZISIERUNG 1.10.2026 (Zweitprüfung #1244): «schärfer als zuvor» gilt
+    // AUSSERHALB des Verzeichnisses; innerhalb ist nur die Suchphase ausgenommen
+    // und dort durch die Versatz-Gegenprobe (unten) gedeckt — siehe Ergänzung oben.
     expect(cls, 'CLS über Rail-Sprung/Suche (ausserhalb des gefilterten Verzeichnisses) muss 0 sein').toBe(0)
     expect(versatzNachher, 'Treffer-Slot schiebt das Verzeichnis (reservierter Slot wächst ein)').toBeCloseTo(versatzVorher, 0)
+    // ERGÄNZUNG 1.10.2026 (Zweitprüfung #1244): auch NACH dem Treffer-Sprung. Ein
+    // Verzeichnis-Sprung direkt am Klick trägt `hadRecentInput` und fiele sonst
+    // durch beide Netze (Beobachter und Versatz «nach Suche»).
+    expect(versatzTreffer, 'Treffer-Sprung schiebt das Verzeichnis gegen die Rail-Oberkante').toBeCloseTo(versatzVorher, 0)
     expect(fehler).toEqual([])
   })
 })
