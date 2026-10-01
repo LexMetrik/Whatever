@@ -325,8 +325,13 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
               aria-current={istAktiv ? 'step' : undefined}
               // LM-058 (B15): Unerreichbarkeit wird GESAGT (`aria-disabled` +
               // `title`), nicht mit `disabled` erzwungen — das nähme den Reiter
-              // aus der Tabreihenfolge und änderte die Bedienung (§3).
+              // aus dem DOM-Lesefluss/Zustandsbaum (§3). W2·19 P18 (1.10.2026):
+              // künftige Reiter tun beim Klick nichts, waren aber Tab-Stationen
+              // (tote Ziele ab dem letzten erreichbaren Reiter) — `tabIndex=-1`
+              // nimmt sie aus der Tab-Reihenfolge, sie bleiben in der Schrittliste
+              // lesbar; besuchte und aktiver Reiter bleiben erreichbar.
               aria-disabled={i > aktiv ? true : undefined}
+              tabIndex={i > aktiv ? -1 : undefined}
               title={i > aktiv ? 'Noch nicht erreichbar — vorherige Schritte zuerst ausfüllen' : undefined}
               className={`-mb-px inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-2 text-xs font-medium transition-colors ${
                 istAktiv ? 'border-reg-w text-ink-900'
