@@ -342,9 +342,10 @@ describe('W2·18 — artikel-granulare Bäume: jeder Artikel erreichbar, keine D
     // Datenunabhängige Invariante statt Zeilenzahl-Literal (W2·27-BUND-FERTIG, 1.10.2026). Ein Knoten, der
     // AUSSCHLIESSLICH Artikel-Zeilen trägt, springt (ersterArtikel) seinen ersten Artikel selbst an; die
     // Lücken-Regel hängt trotzdem ALLE seine Artikel als Zeilen auf — die erste Zeile MUSS also genau diesen
-    // ersten Artikel tragen. Fehlte sie (Mutation M2b 1.10.2026: Lücken-Regel ohne Zeile für den ersten
-    // Artikel, `arts.slice(1)`), blieben die Zeilen-Ids 115 -> 83 und diese Gleichung bricht — der
-    // «jeder Artikel erreichbar»-Test merkt es nicht (der Knoten springt den ersten Artikel ja selbst an).
+    // ersten Artikel tragen. Fehlte sie (Mutation M2b 1.10.2026: in haengeArtikelZeilen `arts.slice(1)`, wo der Knoten
+    // den ersten Artikel selbst anspringt), sänke die Zeilenzahl 115 -> 83 und diese Gleichung bricht
+    // («sek-67: expected '40_g' to be '40_f'»); der «jeder Artikel erreichbar»-Test merkt es nicht (der
+    // Knoten springt den ersten Artikel ja selbst an) — gemessen: mit M2b rot NUR dieser Test.
     const m = lade('bund', 'OR');
     const reineArtikelKnoten = flacheZeilen(m.knoten)
       .filter((k) => k.art !== 'artikel' && k.kinder.length > 0 && k.kinder.every((kk) => kk.art === 'artikel'));
