@@ -249,7 +249,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // trägt KEINEN amtlichen Vermerk, sagt auch der Körper «kein Text im Snapshot» — dasselbe Wort
   // wie Statuszeile, Nachbar-Pfeil und Synopse (`artikelLeerstellenStatus`, §5). Ein «…»-ABSATZ in
   // einem sonst lebenden Artikel bleibt «aufgehoben» (amtliche Absatz-Auslassung, David 16.6.2026).
-  // Nur der «…»-Platzhalter wird so umgedeutet; der amtliche Wortlaut «Aufgehoben» ist Quelle.
+  // Nur «…» wird umgedeutet, der Wortlaut «Aufgehoben» bleibt. OFFEN (P2 #28/#33, David): 340 ZH-
+  // Artikel nur aus «Aufgehoben» OHNE Feld — Körper «aufgehoben», Statuszeile «kein Text», und das
+  // Wort ist dort Adapter-Platzhalter (`zh-tor-regeln` PLATZHALTER: «steht so in KEINEM PDF»).
   const leerZustand = artikelLeerstellenStatus(bloecke, artikelAufgehoben, artikelGegenstandslos);
   const platzhalter = (text: string) => {
     // EINE Entscheidung mit der Synopse (`sagtKeinText`, §5).
