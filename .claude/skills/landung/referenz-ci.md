@@ -156,26 +156,6 @@ stash/amend), «§12.3» = Ziff. 3 (Deploy nur aus sauberem HEAD-Worktree).
 Fahrpläne nummerieren ihre eigenen Abschnitte dateiintern ebenfalls «§12.x» —
 solche Verweise sind dateigebunden, nie Reglement-Anker.
 
-### Realfall #445 (5.8.2026) — scharfer Auto-Merge ist keine Landung
-
-*Seit 19.9.2026 durch die Merge-Queue gegenstandslos (§Merge-Queue unten) — Wortlaut bleibt als Beleg stehen.*
-
-16 h scharf, grün, kein Merge: bei `mergeStateStatus: BEHIND` feuert
-Auto-Merge NIE von selbst. Darum nach jeder main-Landung die verbleibenden
-Auto-Merge-PRs per `gh pr view <n> --json mergeStateStatus` prüfen und bei
-BEHIND `gh pr update-branch` fahren.
-
-### Realfälle zu Schritt 6 (CI-Grün)
-
-`cancelled`/`skipped` zählen als ROT: Realfall 20.7.2026, fünf stumme
-`turso-sync`-Abbrüche — GitHub färbt cancelled GRAU, der Suchindex veraltete
-unbemerkt. FEHLENDE Checks zählen als PENDING, nie als grün: Realfall
-4./5.8.2026 — nach einem Push fehlte die Kern-Batterie im Lauf, beinahe
-ungeprüft gemerged. Ein Vercel-Rot mit echtem Build-Fehler bleibt Rot; an
-landeintensiven Tagen die Kette seriell und ohne überflüssige Zwischen-Pushes
-fahren (jedes `update-branch` frisst einen App-Deploy — Ära vor dem
-17.8.2026; seither kostet es nur CI-Minuten).
-
 ### Realfall 15.8.2026 zu Schritt 7 (Verwaltung bündeln)
 
 *Seit 19.9.2026: der «Sammel-Push» ist ersatzlos entfallen (§Merge-Queue unten); die Regel «Verwaltung bündeln» lebt als Doku-PR weiter.*
@@ -195,13 +175,6 @@ CLEAN`; nach Davids Branch-Schutz-Edit standen sie auf `UNSTABLE`
 (nicht-required Vercel-Kontext rot, alle 11 Required grün) — 7 h kein Merge
 (17:24→00:33), zwei weitere PRs `DIRTY` (Konflikt), ebenfalls stumm. Erst
 Davids Nachfrage brachte es ans Licht.
-
-### Historie zu Schritt 9 (Trailer im PR-Body)
-
-Vereinfachung 15.8.2026 (§5): vorher Commit-Trailer UND PR-Body — heute 2×
-still verloren, 3× nachgebessert. Der Standard-Squash-Text verliert
-Commit-Trailer ohnehin (PR #491); seither liest `plan-buchung.yml` den Block
-aus dem PR-Body und macht einen halben Block laut rot.
 
 ### Realfälle zur Nachkontrolle 1 (Deploy-Zuordnung)
 
@@ -286,10 +259,8 @@ nicht in den Commit», 2.9.2026) für die Queue überholt.
   main aus, der Deploy-Job läuft seriell in der Gruppe `prod-deploy`. F13
   (#629) bleibt ungeklärt.
 
-**Flake (19.9.2026):** `e2e/leser-r1-r2.e2e.ts:420` (S8) im PR-Lauf von #917
-auch im Retry rot, `gh run rerun <id> --failed` grün. Die Queue prüft alle
-vier Required ein zweites Mal — ein Flackern wirft den Eintrag und baut die
-Nachfolger neu.
+**Flake (19.9.2026, #917):** Die Queue prüft alle vier Required ein zweites
+Mal — ein Flackern wirft den Eintrag und baut die Nachfolger neu.
 
 **Rückbau (§17-Gegengewicht), alle 19.9.2026:** `autozug`-Job in
 `waechter.yml` (BEHIND-Nachzug, QS-MERGE-AUTOZUG; Zweig `feat/qs-org-umzug`) ·
@@ -302,8 +273,7 @@ Commit im `merge_group`) · STRUKTUR-Rotation am SessionStart
 Session) · Nachkontrolle 0 alter Fassung («kein main-Push vor grünem
 Deploy-Job») · Stillstands-Schwelle 25/30 min → 60 min (Check-Timeout; der
 belegte Durchlauf dauerte 27–30 min, die alte Schwelle hätte jedes Mal
-gefeuert). Dependabot: nach dem Umzug neu geöffnet; Patch/Minor werden
-eingereiht (`--auto` zulässig), Hauptversionen mit Begründung geschlossen.
+gefeuert).
 
 **Werkzeug-Falle:** aus einem Worktree sperrt das Write-Werkzeug der App
 Schreibzugriffe auf `<Haupt-Checkout>/.claude/` — die Notizen-Datei dort nur
@@ -330,10 +300,8 @@ dabei.
 - **Flacker-Wächter** `check:e2e-flake` (#779): ein Shard, der nur im Wiederholungsversuch grün
   wird, ist rot — ausser die Spec steht mit Datum/Grund in `e2e/flake-ausnahmen.json` (Verfall
   30 Tage). Flackern wird also einmal angeschaut, nie stillschweigend weggeklickt.
-  **Melde-Modus bis 22.9.2026** (`e2e/flake-modus.json`): Messung 8.9.2026 zeigte 6 verschiedene
-  flackernde Specs über drei Läufe (je Lauf andere) — bis zum Stichtag nur `::warning`, danach
-  automatisch hart; fehlende oder kaputte Modus-Datei ⇒ hart. Auftrag bis dahin: Wurzel je Spec
-  messen (Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4), nicht Ausnahmen sammeln.
+  **Melde-Modus bis 22.9.2026** (`e2e/flake-modus.json`, dort Grund und Messung 8.9.2026): bis
+  zum Stichtag nur `::warning`, danach automatisch hart; fehlende/kaputte Modus-Datei ⇒ hart.
 - **Browser-Installation** läuft in beiden Playwright-Jobs über `scripts/ci/playwright-install.sh`
   (#785): zwei Versuche mit Prozessbaum-Kill, `dpkg --configure -a` und Warten auf die
   dpkg-Sperre — Anlass 8.9.2026: eine Timeout-Waise `apt-get` machte jeden Retry wirkungslos.

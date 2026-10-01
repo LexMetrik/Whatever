@@ -18,6 +18,7 @@ import {
   lageZeilen,
   type Laufe,
   parseWorktrees,
+  sammleDependabot,
   sammleLage,
   schrittFuerNamen,
   slug,
@@ -483,3 +484,49 @@ describe('sammleLage — Squash-Landung gegen echtes Repo', () => {
   });
 });
 
+
+// ─── QS-BASIS: offene Dependabot-Zweige in plan:next (netzfrei) ────────────────
+// Anlass 30.9./1.10.2026: Dependabot öffnete drei grüne Fix-PRs (#1206–#1208), die
+// niemand bemerkte — die Session sah nur «GitHub found N vulnerabilities». Die
+// Zweige stehen nach `git fetch --prune` als Remote-Refs `origin/dependabot/*`.
+describe('Dependabot-Zweige — Zeile im Lage-Block', () => {
+  const DEP = '🤖 Dependabot:';
+  const dep = (zeilen: string[]) => zeilen.filter((z) => z.startsWith(DEP));
+
+  it('0 Zweige → «keine offenen Zweige»', () => {
+    expect(dep(lageZeilen(rohStandard({ dependabot: [] }), IDS))).toEqual(['🤖 Dependabot: — (keine offenen Zweige)']);
+  });
+
+  it('n Zweige → Anzahl, Kurznamen ohne Präfix, Einordnungs-Hinweis', () => {
+    const zeilen = lageZeilen(rohStandard({ dependabot: ['npm_and_yarn/dompurify-3.4.16', 'github_actions/actions/checkout-6'] }), IDS);
+    expect(dep(zeilen)).toEqual([
+      '🤖 Dependabot: 2 offene Zweige (npm_and_yarn/dompurify-3.4.16 · github_actions/actions/checkout-6) — einordnen: Patch/Minor einreihen, Major mit Begründung schliessen (Skill landung §Session-Ende 3)',
+    ]);
+    expect(dep(lageZeilen(rohStandard({ dependabot: ['npm_and_yarn/x-1'] }), IDS))[0]).toMatch(/^🤖 Dependabot: 1 offener Zweig \(npm_and_yarn\/x-1\) — einordnen/);
+  });
+
+  it('Ausfall → «nicht abfragbar», nie still', () => {
+    expect(dep(lageZeilen(rohStandard({ dependabot: null }), IDS))).toEqual(['🤖 Dependabot: — (nicht abfragbar)']);
+  });
+
+  it('sammleDependabot: liest Remote-Refs, kürzt den Präfix, sortiert; leer → []', () => {
+    const laufe = vi.fn(runner({ 'git for-each-ref': 'npm_and_yarn/b-2\ngithub_actions/a-1\n' }));
+    expect(sammleDependabot(laufe)).toEqual(['github_actions/a-1', 'npm_and_yarn/b-2']);
+    expect(laufe.mock.calls[0][1]).toContain('refs/remotes/origin/dependabot/');
+    expect(sammleDependabot(runner({ 'git for-each-ref': '' }))).toEqual([]);
+  });
+
+  it('sammleDependabot: Kommando wirft → null', () => {
+    expect(sammleDependabot(runner({ 'git for-each-ref': new Error('ETIMEDOUT') }))).toBeNull();
+  });
+
+  it('lageBlock verdrahtet die Zeile; Ausfall landet in der einen Hinweiszeile', () => {
+    const basis = { 'git worktree': PORCELAIN, 'git branch': BRANCHES };
+    const mit = lageBlock([], [], { prs: false, laufe: runner({ ...basis, 'git for-each-ref': 'npm_and_yarn/dompurify-3.4.16' }) });
+    expect(dep(mit)).toEqual([expect.stringMatching(/^🤖 Dependabot: 1 offener Zweig \(npm_and_yarn\/dompurify-3\.4\.16\)/)]);
+    expect(mit.filter((z) => z.startsWith('⚠️'))).toEqual([]);
+    const aus = lageBlock([], [], { prs: false, laufe: runner({ ...basis, 'git for-each-ref': new Error('x') }) });
+    expect(dep(aus)).toEqual(['🤖 Dependabot: — (nicht abfragbar)']);
+    expect(aus.filter((z) => z.startsWith('⚠️'))).toEqual(['⚠️  Lage unvollständig — nicht abfragbar: git for-each-ref (dependabot) (kein Fehler des Plans)']);
+  });
+});

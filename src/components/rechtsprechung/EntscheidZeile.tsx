@@ -75,7 +75,7 @@ export function EntscheidZeile({ e, onNorm }: {
               Hover und im A11y-Baum her. Ein Anteil statt einer Pixelzahl,
               damit die Regel ueber alle Viewports gilt. */}
           <span title={hauptIdentitaet(e)}
-            className={`num shrink-0 max-w-[60%] truncate text-xs ${istBge(e) ? 'font-medium text-reg-r' : 'text-ink-500'}`}>
+            className={`num shrink-0 max-w-[60%] truncate text-xs ${istBge(e) ? 'font-medium text-ink-900' : 'text-ink-500'}`}>
             {hauptIdentitaet(e)}
           </span>
         </div>
@@ -83,7 +83,7 @@ export function EntscheidZeile({ e, onNorm }: {
         {/* Metazeile — Rechtsgebiet, Status, angewandte Normen (klickbar). Chips
             mit relative/z über dem Overlay-Link, damit sie klickbar bleiben. */}
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-500">
-          <span className="text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+          <span title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
           {/* REST S1 (25.9.2026): «maschinell» als Randnotiz DIREKT hinter dem
               Sachgebiet, das es qualifiziert (Board) — feste Stelle in Zeile
               und Karte, statt je nach Umbruch links oder rechts. */}

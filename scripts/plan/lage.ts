@@ -50,6 +50,8 @@ export interface LageRoh {
    * Bau-Spur — «nicht gemessen» ist nie «gelandet» (fail-closed, W2·27-BUND-FERTIG).
    */
   gelandet?: ReadonlySet<string>;
+  /** Kurznamen der Remote-Zweige `origin/dependabot/*`; `null` = nicht abfragbar, fehlt = nicht erhoben. */
+  dependabot?: string[] | null;
 }
 
 /**
@@ -198,6 +200,12 @@ export function sammleLage(
   };
 }
 
+/** Offene Dependabot-Zweige aus den Remote-Refs (netzfrei); `null` bei Ausfall. */
+export function sammleDependabot(laufe: Laufe): string[] | null {
+  const aus = stillLaufen(laufe, 'git', ['for-each-ref', '--format=%(refname:lstrip=4)', 'refs/remotes/origin/dependabot/']);
+  return aus === null ? null : aus.split('\n').map((r) => r.trim()).filter(Boolean).sort();
+}
+
 const TRENNER = ' · ';
 
 /**
@@ -309,6 +317,17 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
     for (const p of roh.prs) z.push(`   #${p.number} ${bezug(p.headRefName, ids)} — ${p.titel}`);
   }
 
+  if (roh.dependabot === null) {
+    z.push('🤖 Dependabot: — (nicht abfragbar)');
+  } else if (roh.dependabot !== undefined) {
+    const n = roh.dependabot.length;
+    z.push(
+      n === 0
+        ? '🤖 Dependabot: — (keine offenen Zweige)'
+        : `🤖 Dependabot: ${n} offene${n === 1 ? 'r Zweig' : ' Zweige'} (${roh.dependabot.join(TRENNER)}) — einordnen: Patch/Minor einreihen, Major mit Begründung schliessen (Skill landung §Session-Ende 3)`,
+    );
+  }
+
   // Frische-Warnung: Schlussfolgerung aus allem darüber, VOR der Ausfall-Zeile.
   const stale = staleWipBefunde(roh, ids);
   for (const b of stale) {
@@ -334,5 +353,7 @@ export function lageBlock(
   opt: { prs: boolean; laufe?: Laufe },
 ): string[] {
   const roh = sammleLage(wipFlaechen(einheiten, inArbeit), opt);
+  roh.dependabot = sammleDependabot(opt.laufe ?? laufeEcht);
+  if (roh.dependabot === null) roh.ausfaelle.push('git for-each-ref (dependabot)');
   return lageZeilen(roh, einheiten.map((e) => e.id));
 }

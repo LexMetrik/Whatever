@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-29",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/BKV/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_1",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "5decb960e660630fcf1cba8f539a66a4421b6d9dfeba4ecb1423da78007ae10b"
     },
@@ -39,7 +39,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_2",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "e91a840a5e3a3607caf410fc74f082a996ca1a9d8a6f499ba1a4b60c5fc60268"
     },
@@ -58,7 +58,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_3",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "3d899755241ca0e824d1797472f85a91005ffdf5e852e4854d79212b354799eb"
     },
@@ -77,7 +77,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_4",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "ef3c148a79702c694738a206c75ad96239430f85e46eb1c0e32e7dd3b3db9335"
     },
@@ -110,7 +110,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_5",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "82d8151777ea79b2b8d563c22a5c014622be41effe20bfc4fc8431df1d8aa3a8"
     },
@@ -133,7 +133,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_5_a",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "91cbd2ea29cc04472d76feb455cf5be7a0e28956226f4c90607a0eec9f0fceba"
     },
@@ -182,7 +182,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_6",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "8553d320a2a5d557de3b4fd4083c018659ec325d752d3ef0222bb2a3a676aeca"
     },
@@ -205,7 +205,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_7",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "78c6b0a6c499c2fa3b0998b73ea5451db705c28895ee78dea9f34a1509e5cc69"
     },
@@ -216,6 +216,7 @@
       "erlass": "BKV",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -224,7 +225,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_8",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -255,7 +256,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_9",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "d5676988735206917bb60362137cd0ea90f6374d55cb85e8785a01b9146e41f4"
     },
@@ -274,7 +275,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_10",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "6f50c16e7b344bc0a85ded4fbb8015e8842e24c45a3cdacfbd83024ede7a0c03"
     },
@@ -297,7 +298,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#art_11",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "e0a7d52d6aeece49233d251876eb57b202662b311af8a7ebb9d093807ac78905"
     },
@@ -484,7 +485,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/1363_1363_1363/de#annex_u1",
-      "abgerufen": "2026-08-29",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260101",
       "sha": "437bced0cd157a2b83e88aebf400cd2a4a7fb621e272967ae585a5f2afabb901"
     }

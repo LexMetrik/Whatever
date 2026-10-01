@@ -41,7 +41,7 @@ function ThemaMitgliedZeile({ e, m }: { e: BrowseErlass; m: ThemaMitglied }) {
     >
       <span className="font-medium text-ink-700 shrink-0">{e.kuerzel}</span>
       {m.spanne
-        ? <span className="num text-xs text-reg-g shrink-0">{m.spanne}</span>
+        ? <span className="num text-xs text-ink-600 shrink-0">{m.spanne}</span>
         : <span className="text-ink-500 truncate">{e.titel}</span>}
       {m.spanne && <span className="text-ink-500 truncate">{e.titel}</span>}
     </Link>

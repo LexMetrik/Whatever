@@ -260,11 +260,10 @@ Behauptung. Maschinell dreifach: Required-Check
 **Verdikt im Queue-Squash (behoben 19.9.2026, #925 `95cb5a712`):** Das
 `Gegenpruefung:`-Verdikt gehört in den Trailer-Block des **PR-BODY**. Der
 Queue-Squash bricht ihn bei 72 Zeichen um und hängt die Co-author-Sektion
-an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: Lauf
-35449385978, #921 rot im `merge_group`). Echt-Beleg: #921 gelandet
-`2db154675` (19.9.2026). Risikopfad-PRs weiter strikt einzeln einreihen —
+an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: #921
+rot im `merge_group`, `referenz-ci.md`). Risikopfad-PRs weiter strikt einzeln einreihen —
 jeder hängt eine Register-Zeile an (Ziff. 3.4).
-**Falle (gemessen 19.9.2026, #923, Lauf 35458509735):** lokales
+**Falle (gemessen 19.9.2026, #923):** lokales
 `check:merge-schutz` liest die ZWEIG-Commits, die Queue den Squash aus
 PR-Titel + PR-Body — ein im Body verkürztes Verdikt («… — keine», Befund-Teil
 < 15 Zeichen) ist lokal grün und fällt in der Queue. Das Verdikt im PR-Body
@@ -330,7 +329,6 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
   Commit als schon geprüft belegt findet — sonst volles Programm. Beleg seit 19.9.2026: ein
   grüner `merge_group`-Lauf am GEPUSHTEN SHA mit allen vier Required-Kontexten (fällt die
   Queue weg, gibt es keinen solchen Lauf ⇒ von selbst Volllauf); massgeblich: `ci.yml`-Kopf.
-- **Dependabot** läuft monatlich ohne Auto-Rebase; Einordnung je Session: «Session-Ende» Ziff. 3.
 - Nachmessung Sparplan fällig **8.10.2026** (Datei siehe Merge-Queue-Kopf; gleiche Methode:
   Jobs je Lauf aufgerundet; Ausgangswert 61 381 min/30 Tage).
 
@@ -350,10 +348,12 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    LOKALE Kopf, nicht `origin/<branch>` — vorher `git log origin/<branch>..<branch>`
    prüfen (Beleg 25.9.2026: Tag auf den Remote-Kopf gesetzt, drei nie gepushte
    Commits nur per Reflog gerettet → zweites Tag).
-3. **Dependabot je Session einordnen:** Patch/Minor einreihen (`gh pr merge
-   <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
-   Hauptversionen mit Begründung schliessen — nie liegen lassen (8.9.2026:
-   113 CI-Läufe aus 13 Zweigen).
+3. **Dependabot je Session einordnen:** `plan:next` zeigt die offenen Zweige
+   (`origin/dependabot/*`, netzfrei nach `git fetch --prune`). Patch/Minor
+   einreihen (`gh pr merge <n> --squash`, `--auto` zulässig — kein Risikopfad,
+   kein Nachzug), Hauptversionen mit Begründung schliessen — nie liegen lassen
+   (8.9.2026: 113 CI-Läufe aus 13 Zweigen). Sicherheits-PR (Alert offen) sofort
+   einordnen, als Major nie ersatzlos schliessen (30.9.2026: drei grüne Fix-PRs #1206–#1208 unbemerkt).
 4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum; danach schliessen.
 5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (18.9.2026):
    ist der Pfad weg, stehen Bash UND Read still (Hooks
