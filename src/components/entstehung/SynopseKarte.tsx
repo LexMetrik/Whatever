@@ -1,6 +1,6 @@
 import { datumCh } from '../../lib/normtext/erlassKopfText';
 import { sagtKeinText } from '../normtext/leerstellenAnzeige';
-import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort, type LeerstellenStatus } from '../../lib/normtext/darstellung';
+import { LEERSTELLE_ERLAEUTERUNG, LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, LEERSTELLE_KURZ, leerstellenWort, type LeerstellenStatus } from '../../lib/normtext/darstellung';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
 import { standVon, type SynopseBlock, type SynopseShard } from '../../lib/entstehung/synopse';
 import { entwurfUrl, type EntwurfArtikel, type EntwurfShard } from '../../lib/entstehung/synopse-entwurf';
@@ -113,13 +113,19 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
  *  der HEUTIGE Zustand des Artikels beschreibt ihn nicht, dort bleibt das Zeilenwort. */
 function entfallWortFuer(
   zustand: LeerstellenStatus | undefined, neuHerkunft: string, neuBloecke: readonly SynopseBlock[],
+  zeile?: SynopseZeile,
 ): string {
   if (neuHerkunft !== 'geltend' || zustand === undefined) return ZEILEN_WORT.entfernt;
-  // Nachzug A3 (30.9.2026): dieselbe Wortlaut-Sperre wie der Körper (`sagtKeinText`, §5) — der
-  // amtliche Wortlaut «Aufgehoben» ist Quelle und bleibt «aufgehoben», auch ohne Feld. Die Zeile
-  // trägt ihren Block nicht mehr (`neu: null`): gilt als «kein Text» nur, wenn ALLE rechten Blöcke
-  // reine Platzhalter sind; ein Wortlaut darunter hält das Zeilenwort (vorsichtig, nie eine Behauptung).
-  if (zustand === 'leer-ungeklaert' && !neuBloecke.every((b) => sagtKeinText(zustand, b[2]))) return ZEILEN_WORT.entfernt;
+  if (zustand === 'leer-ungeklaert') {
+    // P2 #42 (1.10.2026): die Zeile kennt ihren rechten Block (`neuErsatz`) — dieselbe Wortlaut-Sperre
+    // wie der Körper, aber JE ZEILE: «…» ⇒ «kein Text im Snapshot», der amtliche Wortlaut «Aufgehoben»
+    // ⇒ «aufgehoben» (Quelle, auch ohne Feld). Eine gemischte rechte Spalte wird so nicht mehr über
+    // einen Kamm geschoren (`sagtKeinText`, §5).
+    if (zeile?.neuErsatz !== undefined) return sagtKeinText(zustand, zeile.neuErsatz) ? LEERSTELLE_KURZ : ZEILEN_WORT.entfernt;
+    // Ohne Gegenblock (Alt-Block ganz weg): Nachzug A3 (30.9.2026) — «kein Text» nur, wenn ALLE rechten
+    // Blöcke reine Platzhalter sind; ein Wortlaut darunter hält das Zeilenwort (vorsichtig, nie eine Behauptung).
+    if (!neuBloecke.every((b) => sagtKeinText(zustand, b[2]))) return ZEILEN_WORT.entfernt;
+  }
   return leerstellenWort(zustand) ?? ZEILEN_WORT.entfernt;
 }
 
@@ -136,16 +142,19 @@ function Gegenueberstellung({ zeilen, altWort, neuWort, entfallWort }: {
   zeilen: readonly SynopseZeile[];
   altWort: string;
   neuWort: string;
-  entfallWort: string;
+  /** Das Wort einer `entfernt`-Zeile — je Zeile, weil sie ihren rechten Block kennt (P2 #42). */
+  entfallWort: (zeile: SynopseZeile) => string;
 }) {
   return (
     <ol className={S.zeilen} data-synopse-zeilen>
-      {zeilen.map((z, i) => (
+      {zeilen.map((z, i) => {
+        const entfall = z.art === 'entfernt' ? entfallWort(z) : '';
+        return (
         <li key={i} className={S.zeile} data-synopse-zeile={z.art}>
           <p className={S.marke}>
             {marke(z)}
             {marke(z) && ' · '}
-            <span className="text-ink-500">{z.art === 'entfernt' ? entfallWort : ZEILEN_WORT[z.art]}</span>
+            <span className="text-ink-500">{z.art === 'entfernt' ? entfall : ZEILEN_WORT[z.art]}</span>
           </p>
           {z.art === 'gleich' ? (
             // Unverändertes steht EINMAL über beide Spalten. Weglassen wäre
@@ -165,12 +174,13 @@ function Gegenueberstellung({ zeilen, altWort, neuWort, entfallWort }: {
               <div className={S.spalte}>
                 <span className={S.seite}>{neuWort}</span>
                 {z.neu ? <p className={S.text} data-synopse-text><Stuecke stuecke={z.neu} flach={z.art === 'eingefuegt'} /></p>
-                  : <p className={S.leer}>{`— ${entfallWort}`}</p>}
+                  : <p className={S.leer}>{`— ${entfall}`}</p>}
               </div>
             </>
           )}
         </li>
-      ))}
+        );
+      })}
     </ol>
   );
 }
@@ -360,7 +370,7 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
           nicht sicher einem einzelnen Erlass.
         </p>
       )}
-      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} entfallWort={entfallWortFuer(zustand, neuHerkunft, neu ?? [])} />}
+      {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} entfallWort={(z) => entfallWortFuer(zustand, neuHerkunft, neu ?? [], z)} />}
       {!hatUnterschied(zeilen) && (nurTitelGeaendert(artikel, zeilen)
         ? <p className={S.hinweis} data-synopse-lage="nur-titel">
             Am Wortlaut dieses Artikels ist zwischen den beiden Ständen kein Unterschied erkennbar —
