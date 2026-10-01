@@ -11,7 +11,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { renderToString as rohRender } from 'react-dom/server';
 import type { ReactElement } from 'react';
 import {
-  ladeKantenShard, ladeKantenShardErgebnis, _leereKantenShardCache,
+  ladeKantenShardErgebnis, _leereKantenShardCache,
 } from '../lib/materialien/kanten-shard';
 import { leiteMaterialNachschlag } from '../pages/gesetz-leser/artikelMaterialienLaden';
 import { BlattArtikelGruppe } from '../pages/gesetz-leser/v3/BlattArtikel';
@@ -116,17 +116,6 @@ describe('ladeKantenShardErgebnis — leer ≠ fehler ≠ ok', () => {
       '/materialien/kanten/DBG/2.json': { status: 200, body: bucket('2') },
     });
     expect(await ladeKantenShardErgebnis('DBG')).toEqual({ zustand: 'fehler' });
-  });
-
-  it('ladeKantenShard (Altfassung): ok → Shard, leer und fehler → null (Verhalten der Altaufrufer unverändert)', async () => {
-    stubFetch({ '/materialien/kanten/ARG.json': { status: 200, body: KOPF_KLEIN } });
-    expect((await ladeKantenShard('ARG'))?.kanten).toHaveLength(1);
-    _leereKantenShardCache();
-    stubFetch({ '/materialien/kanten/ARG.json': 'netz' });
-    expect(await ladeKantenShard('ARG')).toBeNull();
-    _leereKantenShardCache();
-    stubFetch({ '/materialien/kanten/ARG.json': { status: 404 } });
-    expect(await ladeKantenShard('ARG')).toBeNull();
   });
 });
 

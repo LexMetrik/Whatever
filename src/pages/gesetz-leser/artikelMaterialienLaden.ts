@@ -14,7 +14,8 @@
 // ── KEINE NEUE RECHNUNG (§5) ────────────────────────────────────────────────
 // Projiziert wird mit `projiziereMaterialien` aus `lib/kontext` — derselben
 // Funktion, die das Verweis-Popover seit W2·5d/A7 benutzt (dort als async
-// `materialienFuerArtikel`, die jetzt ihr Wrapper ist). Hier steht nur das
+// `materialienFuerArtikel`, seit #1196 `materialienFuerArtikelErgebnis` — ihr Wrapper;
+// die dünne Fassung ist am 1.10.2026 entfernt). Hier steht nur das
 // Laden und das Gedächtnis, keine Zuordnung.
 //
 // ── EIN LADEN JE ERLASS, NICHT JE ARTIKEL (§15) ─────────────────────────────

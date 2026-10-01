@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { ladeKantenShard, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
+import { ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { KANTEN_ERLASSE } from '../lib/materialien/kanten-erlasse.generated';
 import {
   kantenErlasseAusVerzeichnis,
@@ -47,19 +47,19 @@ describe('Kanten-Existenzliste (kein Netz-404 für Erlasse ohne Shard)', () => {
     const f = stubFetch();
     const keys = kantenErlasseAusVerzeichnis(KANTEN_DIR);
     for (const k of keys) {
-      const shard = await ladeKantenShard(k);
-      expect(shard, k).not.toBeNull();
-      expect(shard!.erlass).toBe(k);
+      const e = await ladeKantenShardErgebnis(k);
+      expect(e.zustand, k).toBe('ok');
+      expect(e.zustand === 'ok' && e.shard.erlass).toBe(k);
     }
     const geholt = f.mock.calls.map((c) => String(c[0]));
     expect(geholt).toEqual(keys.map((k) => `/materialien/kanten/${encodeURIComponent(k)}.json`));
   });
 
-  it('(b) Erlass OHNE Shard: null ohne jeden Fetch', async () => {
+  it('(b) Erlass OHNE Shard: `leer` ohne jeden Fetch', async () => {
     const f = stubFetch();
     const ohne = ['KVG', 'ZPO', 'OR', 'ZGB', 'mwstg'];
     for (const k of ohne) expect(KANTEN_ERLASSE.has(k), k).toBe(false);
-    for (const k of ohne) expect(await ladeKantenShard(k), k).toBeNull();
+    for (const k of ohne) expect(await ladeKantenShardErgebnis(k), k).toEqual({ zustand: 'leer' });
     expect(f).not.toHaveBeenCalled();
   });
 
