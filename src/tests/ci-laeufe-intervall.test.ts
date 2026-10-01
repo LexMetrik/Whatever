@@ -14,6 +14,8 @@ describe('intervallStunden', () => {
   it.each([
     ['17 7 * * *', 24],
     ['37 5 * * 1', 24 * 7],
+    // POSIX/GitHub: Tag UND Wochentag gesetzt = am Tag ODER am Wochentag → wöchentlich
+    ['0 0 1 * 1', 24 * 7],
     ['0 */6 * * *', 6],
     ['43 */6 * * *', 6],
     ['*/10 * * * *', 1],

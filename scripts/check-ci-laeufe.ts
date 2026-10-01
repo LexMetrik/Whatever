@@ -47,8 +47,8 @@ const SELBST = 'waechter.yml';
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
 export function intervallStunden(cron: string): number {
   const [, stunde, tag, monat, wochentag] = cron.trim().split(/\s+/);
-  if (tag !== '*' || monat !== '*') return 24 * 31;       // monatlich (Tag/Monat fix)
   if (wochentag !== '*') return 24 * 7;                   // wöchentlich
+  if (tag !== '*' || monat !== '*') return 24 * 31;       // monatlich (Tag/Monat fix)
   if (stunde.includes('/')) return Number(stunde.split('/')[1]) || 6;
   return stunde === '*' ? 1 : 24;                         // stündlich : täglich
 }
