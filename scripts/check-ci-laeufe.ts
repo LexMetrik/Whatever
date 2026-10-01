@@ -34,31 +34,23 @@ const DIR = '.github/workflows';
 const STUNDE = 3_600_000;
 
 // ─── SELBSTAUSSCHLUSS (Reparatur 3.8.2026, Fehlerklasse K6) ──────────────────
-// Dieses Tor läuft SELBST als cron-Workflow (waechter.yml) und fand sich darum
-// in der eigenen Prüfmenge wieder — eine Rückkopplung, die sich nicht mehr
-// öffnen kann: Der GERADE LAUFENDE Lauf ist `status: in_progress` und wird von
-// der `completed`-Filterung unten verworfen; beurteilt wird also stets der
-// VORIGE Lauf. Ist der rot, meldet das Tor «waechter.yml: jüngster Lauf
-// 'failure'», wird dadurch selbst rot — und liefert der nächsten Ausführung
+// Dieses Tor läuft SELBST als cron-Workflow (waechter.yml) und fand sich in der
+// eigenen Prüfmenge wieder: der GERADE LAUFENDE Lauf ist `in_progress` und fällt
+// aus der `completed`-Filterung, beurteilt wird also stets der VORIGE. War der
+// rot, wurde das Tor dadurch selbst rot und lieferte der nächsten Ausführung
 // erneut ein rotes Vorbild. BELEG: seit Anlage am 20.7.2026 fünfzehn Läufe,
-// fünfzehnmal `failure` (Lauf 30803981348: «waechter.yml: jüngster Lauf
-// 'failure'» als einer von zwei Befunden). Ein Wächter, der nur noch seine
-// eigene Vergangenheit anzeigt, überwacht nichts mehr.
-//
-// Der Ausschluss kostet keine Abdeckung: Der Zustand DIESES Workflows ist
-// nicht auf einen Melder angewiesen, weil er das Melde-Ergebnis selbst ist —
-// scheitert er, steht sein eigener roter Lauf in der Actions-Liste, und das
-// ist genau die Sichtbarkeit, die er für die anderen herstellt. Fremd-
-// überwachung des Wächters bliebe zirkulär, egal wer sie ausspricht.
+// fünfzehnmal `failure` (Lauf 30803981348). Der Ausschluss kostet keine
+// Abdeckung: scheitert dieser Workflow, steht sein roter Lauf in der Actions-
+// Liste — Fremdüberwachung des Wächters bliebe zirkulär, egal wer sie ausspricht.
 const SELBST = 'waechter.yml';
 
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
 export function intervallStunden(cron: string): number {
-  const [minute, stunde, , , wochentag] = cron.trim().split(/\s+/);
-  if (wochentag && wochentag !== '*') return 24 * 7;      // wöchentlich
+  const [, stunde, tag, monat, wochentag] = cron.trim().split(/\s+/);
+  if (tag !== '*' || monat !== '*') return 24 * 31;       // monatlich (Tag/Monat fix)
+  if (wochentag !== '*') return 24 * 7;                   // wöchentlich
   if (stunde.includes('/')) return Number(stunde.split('/')[1]) || 6;
-  if (stunde === '*') return minute.includes('/') ? 1 : 1;
-  return 24;                                              // täglich
+  return stunde === '*' ? 1 : 24;                         // stündlich : täglich
 }
 
 /** Ein Workflow mit mehreren Crons gilt als so häufig wie sein häufigster. */
@@ -225,18 +217,11 @@ function main(): void {
   }
 
   // ─── UNTERBEFEHL `--bericht` (QS-AUTOMATIK-BERICHT, Fahrplan §3.1) ───────────
-  // Das Tor oben beantwortet «ist ein geplanter Workflow kaputt?». Der Bericht
-  // beantwortet die zwei Fragen daneben, für die es bis 15.8.2026 KEINE Stelle
-  // gab: «wie geht es den Wächtern insgesamt?» und «welche Zweige/Worktrees sind
-  // gelandet, aber nicht abgeräumt?». Beides war Handarbeit (Aufräum-Disziplin
-  // 27.7.2026) und skaliert nicht über parallele Sessions — dieselbe Bewegung wie
-  // beim Plansystem: aus der Regel wird ein Werkzeug.
-  //
-  // ABGRENZUNG zum Tor: der Bericht läuft NICHT in `check:seriell` und nicht in
-  // CI. Er misst den Zustand einer ARBEITSMASCHINE (lokale Worktrees, lokale
-  // Zweige) — auf einem CI-Runner gibt es die nicht, ein Urteil dort wäre
-  // bedeutungslos. Er ist trotzdem kein blosser Ausdruck: findet er Verwaistes,
-  // endet er mit Exit 1 (§6.7 — was nicht scheitern kann, ist kein Befund).
+  // Neben dem Tor («ist ein geplanter Workflow kaputt?») beantwortet der Bericht,
+  // was es bis 15.8.2026 nur als Handarbeit gab: «wie geht es den Wächtern?» und
+  // «welche Zweige/Worktrees sind gelandet, aber nicht abgeräumt?». ABGRENZUNG:
+  // kein Teil von `check:seriell`/CI (misst eine ARBEITSMASCHINE, auf dem Runner
+  // bedeutungslos); findet er Verwaistes, endet er mit Exit 1 (§6.7).
   if (process.argv.includes('--bericht')) bericht();
 
   // Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
