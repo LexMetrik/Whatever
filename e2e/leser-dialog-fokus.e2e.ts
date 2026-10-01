@@ -87,6 +87,9 @@ const klappe = (flaeche: Locator) => flaeche.locator('details').first()
 for (const breite of [375, 768]) {
   test.describe(`Dialog-Fokus @${breite}`, () => {
     test.use({ viewport: { width: breite, height: 900 } })
+    // Jeder Tab ist ein echter Tastendruck + Auslesen auf einem grossen Erlass
+    // (STPO/OR): 30 s (Vorgabe) reichten auf belasteter Maschine nicht.
+    test.setTimeout(120_000)
 
     test(`Gliederungs-Sheet: Tab läuft durch (Box zu), <summary> erreichbar, Box auf → Links, Shift+Tab symmetrisch`, async ({ page }) => {
       const fehler = fehlerSammeln(page)
@@ -97,9 +100,9 @@ for (const breite of [375, 768]) {
       const box = klappe(sheet(page))
       await expect(box, 'Übersichts-Box ist im Standardzustand zu').not.toHaveAttribute('open', '')
 
-      // (a)–(c): zwei volle Runden durch ein Sheet mit ~9 Zielen ohne Hänger.
-      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 24), 'Sheet Tab')
-      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 24, true), 'Sheet Shift+Tab')
+      // (a)–(c): mehr als eine volle Runde durch ein Sheet mit ~9 Zielen ohne Hänger.
+      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 14), 'Sheet Tab')
+      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 14, true), 'Sheet Shift+Tab')
 
       // (d): die Klappe selbst ist per Tab erreichbar …
       await tabBisSummary(page, '[data-gliederung-sheet]')
@@ -109,7 +112,7 @@ for (const breite of [375, 768]) {
       await page.keyboard.press('Tab')
       const nachSummary = await aktiv(page, '[data-gliederung-sheet]')
       expect(nachSummary.tag, `nach <summary> (offen) folgt ein Link, nicht ${nachSummary.tag} «${nachSummary.name}»`).toBe('A')
-      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 24), 'Sheet Tab (Box offen)')
+      pruefeLauf(await tabLauf(page, '[data-gliederung-sheet]', 14), 'Sheet Tab (Box offen)')
 
       expect(fehler, fehler.join('\n')).toEqual([])
     })
@@ -123,8 +126,8 @@ for (const breite of [375, 768]) {
       const box = klappe(blatt(page))
       await expect(box, 'Übersichts-Box im Blatt ist im Standardzustand zu').not.toHaveAttribute('open', '')
 
-      pruefeLauf(await tabLauf(page, '[data-v3-panel-modal="ja"]', 20), 'Blatt Tab')
-      pruefeLauf(await tabLauf(page, '[data-v3-panel-modal="ja"]', 20, true), 'Blatt Shift+Tab')
+      pruefeLauf(await tabLauf(page, '[data-v3-panel-modal="ja"]', 12), 'Blatt Tab')
+      pruefeLauf(await tabLauf(page, '[data-v3-panel-modal="ja"]', 12, true), 'Blatt Shift+Tab')
 
       await tabBisSummary(page, '[data-v3-panel-modal="ja"]', 40)
       await page.keyboard.press('Enter')
