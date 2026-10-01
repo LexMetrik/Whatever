@@ -153,7 +153,6 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   'components/Katalog.tsx': 1,
   'components/NormPopover.tsx': 1,
   'components/SprachUmschalter.tsx': 1,
-  'components/kontext/ArtikelKontextGruppe.tsx': 1,
   'components/kontext/KontextPanel.tsx': 1,
   'components/normtext/ArtikelBody.tsx': 1,
   'components/normtext/ArtikelBody.zitier.tsx': 1,
@@ -219,8 +218,12 @@ describe('B-K1 · jeder Knopf traegt einen Baustein — oder steht mit Zahl in d
   // Modul-Baukasten gelöscht (Auswahlfrage David «Streichen») — deklarierte
   // Test-Änderung (§6.3) nach demselben Muster wie oben: die Datei ging, kein
   // Knopf wurde umgebucht; die neuen Start-Knöpfe tragen Bausteine.
-  it('die Ratsche kennt ihren eigenen Stand (23.9.2026: 129 in 77 Dateien)', () => {
-    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(77);
+  // W2·27-BUND-FERTIG P3 (1.10.2026): 77 → 76 Dateien, Summe −1. `kontext/
+  // ArtikelKontextGruppe.tsx` ist mit dem toten Artikel-Kontext-Cluster gelöscht
+  // (kein Produktionsaufrufer) — deklarierte Test-Änderung (§6.3) nach demselben
+  // Muster: die Datei ging, kein Knopf wurde umgebucht.
+  it('die Ratsche kennt ihren eigenen Stand (23.9.2026: 129 in 77 Dateien; 1.10.2026: 76)', () => {
+    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(76);
     expect(SUMME_IST, 'Summe der Hoechstzahlen — sie darf nur sinken').toBeLessThanOrEqual(135);
   });
 

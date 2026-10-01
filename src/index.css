@@ -2208,17 +2208,6 @@
      lc-overline mit normal-case + Inline-letter-spacing zweckzuentfremden. */
   .lc-fineprint { font-family: var(--font-sans), system-ui, sans-serif; font-size: .6875rem; line-height: 1.5; letter-spacing: .01em; color: var(--ink-600); } /* ink-500→ink-600 (Auftrag David 25.6.2026): 11px-Feinschrift 4.85:1→7.2:1 */
 
-  /* W2·19-GLIEDERUNG/S7 · Artikel-Kontext-Block im KontextPanel
-     (components/kontext/KontextPanel.tsx, Bau-Spec §5.2 «höhenfester Block»).
-     Vier einzeilige Rollen-Zeilen (Praxis · Verweise · Änderung · Werkzeuge) zu
-     je 1.375em = 5.5em, `overflow:hidden` als Riegel. Der Inhalt wechselt beim
-     SCROLLEN — also ohne Nutzer-Input, also CLS-pflichtig (§15.2). Eine feste
-     Höhe ist hier das einzig tragfähige Mittel: sie hält auch dann, wenn ein
-     Artikel vier volle Zeilen hat und der nächste nur den Leer-Satz.
-     `height` statt `min-height`: Anatomie, keine Trefferflächen-Untergrenze
-     (F9-Abgrenzung, src/tests/tap-ziel-token.test.ts). */
-  .lc-artikelkontext { line-height: 1.375; height: 5.5em; overflow: hidden; }
-
   /* Signature-Element neu: Messing-Akzentlinie (Designsystem §4) —
      Haarlinie mit kurzem, nach rechts auslaufendem Messing-Akzent.
      Ruhiger als die frühere Strichskala; sparsam einsetzen. */
