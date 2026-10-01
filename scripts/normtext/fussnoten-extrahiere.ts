@@ -55,8 +55,14 @@ export interface Fussnote {
 // fnTextMitLinks (Lesesicht) rendert daraus Rich-Text; die Link-Label-Erkennung
 // und die SR-Erkennung (M11) strippen die Tags wieder, bleiben also robust.
 function clean(s: string): string {
+  // P7 #11 (1.10.2026): nur MARKER-<sup> fallen — der führende Marker-Block (Nummer im <a>, leere <sup>, bei älteren
+  // Aspose-Dumps die nackte Nummer «<sup>12</sup>TEXT»), Link-Marker mitten im Text und leere <sup>. Hochstellungen im
+  // TEXT («Art. 29<sup>bis</sup>», «Bst. c<sup>ter</sup>») bleiben als Text: bis dahin warf `clean()` jedes <sup> und
+  // verstümmelte die Norm-Angabe («Ursprünglich Art. 29bis» stand als «… Art. 29»; 83 Fussnoten, 31 in «Ursprünglich»).
   return s
-    .replace(/<sup\b[\s\S]*?<\/sup>/gi, '')
+    .replace(/^\s*(?:<sup\b[^>]*>\s*(?:<a\b[\s\S]*?<\/a>|\d+[a-z]?)?\s*<\/sup>\s*)+/i, '')
+    .replace(/<sup\b[^>]*>\s*<a\b[\s\S]*?<\/a>\s*<\/sup>/gi, '')
+    .replace(/<sup\b[^>]*>\s*<\/sup>/gi, '')
     .replace(/<(b|i)\b[^>]*>/gi, (_m, t: string) => `<${t.toLowerCase()}>`)
     .replace(/<\/(b|i)\s*>/gi, (_m, t: string) => `</${t.toLowerCase()}>`)
     .replace(/<(?!\/?[bi]>)[^>]*>/g, '')

@@ -197,6 +197,16 @@ describe('P7 #11 · frueher = alte Bezeichnung hinter «Ursprünglich»', () => 
     expect(r.ereignisse.some((e) => 'frueher' in e)).toBe(false);
   });
 
+  it('Bestand: Hochstellungen der Fussnote bleiben in frueher (AHVG 29ter «Art. 29bis», OR 336c «Bst. cbis, dann cter»), nicht verstümmelt', () => {
+    const lies = (erlass: string, token: string) =>
+      (JSON.parse(readFileSync(`public/normtext/historie/${erlass}.json`, 'utf8')) as {
+        artikel: Record<string, { ereignisse: Array<{ typ: string; frueher?: string }> }>;
+      }).artikel[token].ereignisse.filter((e) => e.typ === 'urspruenglich').map((e) => e.frueher);
+    expect(lies('AHVG', '29_ter')).toEqual(['Art. 29bis']);
+    expect(lies('OR', '336_c')).toEqual(['Bst. cbis, dann cter']);
+    expect(lies('IVG', '14_a')).toEqual(['IIbis']);
+  });
+
   it('Bestand: jedes «urspruenglich»-Ereignis im Shard trägt frueher (ausser leerem Wortlaut) und nie ein Datum', () => {
     const ohne: string[] = [];
     const datiert: string[] = [];
