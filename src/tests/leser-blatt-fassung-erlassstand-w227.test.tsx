@@ -3,8 +3,9 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { renderToString } from 'react-dom/server';
 import {
-  erlassStandErlaubt, erlassStandFuerArtikel, ErlassStandZeile, type ErlassStandEingang,
+  erlassStandErlaubt, erlassStandFuerArtikel, type ErlassStandEingang,
 } from '../pages/gesetz-leser/v3/PanelTafeln';
+import { ErlassStandZeile } from '../pages/gesetz-leser/v3/BlattArtikel';
 import type { ArtikelHistorie } from '../lib/normtext/historie-parse';
 import type { HistorieShard } from '../lib/normtext/historie-laden';
 import type { ArtikelRevision } from '../lib/verzahnung/artikel-revisionen';

@@ -17,7 +17,7 @@ import type { PanelReiter } from './panelModell';
 import { bestimmungDativ, type BestimmungsWort } from './erlassWortlaut';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
-import { ArtikelErlaeuterung, ArtikelWerkzeug, BlattArtikelGruppe, BlattFassung, ErlassTeil, type BlattArtikel } from './BlattArtikel';
+import { ArtikelErlaeuterung, ArtikelWerkzeug, BlattArtikelGruppe, BlattFassung, ErlassStandZeile, ErlassTeil, type BlattArtikel } from './BlattArtikel';
 import { botschaftenZumArtikel } from './blattMaterialien';
 import { werkzeugAnsicht } from './werkzeugModell';
 
@@ -139,15 +139,6 @@ export function erlassStandFuerArtikel(a: ErlassStandEingang): string | undefine
   if (artikelLeerstellenStatus(eintrag.bloecke, eintrag.aufgehoben, eintrag.gegenstandslos) !== 'lebt') return undefined;
   if (a.historieShard?.residuum.some((r) => r.token === eintrag.artikel)) return undefined;
   return a.inkraftSeit;
-}
-
-export function ErlassStandZeile({ iso, token }: { iso: string; token: string }) {
-  return (
-    <p data-v3-blatt-fassung-erlass={token} className="px-3 pt-2 text-body-s text-ink-700"
-      title="Amtliches Inkrafttreten des Erlasses (Fedlex) — keine Aussage über spätere Änderungen dieses Artikels">
-      Erlass in Kraft seit {datumAnzeige(iso)}.
-    </p>
-  );
 }
 
 export interface PanelTafeln {
