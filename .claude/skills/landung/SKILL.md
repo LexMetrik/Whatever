@@ -352,9 +352,8 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    (`origin/dependabot/*`, netzfrei nach `git fetch --prune`). Patch/Minor
    einreihen (`gh pr merge <n> --squash`, `--auto` zulässig — kein Risikopfad,
    kein Nachzug), Hauptversionen mit Begründung schliessen — nie liegen lassen
-   (8.9.2026: 113 CI-Läufe aus 13 Zweigen). Ein Sicherheits-PR (Security-Update,
-   Alert offen) sofort beim Sichten einordnen, nicht erst am Session-Ende
-   (30.9.2026: drei grüne Fix-PRs #1206–#1208 unbemerkt).
+   (8.9.2026: 113 CI-Läufe aus 13 Zweigen). Sicherheits-PR (Alert offen) sofort
+   einordnen, als Major nie ersatzlos schliessen (30.9.2026: drei grüne Fix-PRs #1206–#1208 unbemerkt).
 4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum; danach schliessen.
 5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (18.9.2026):
    ist der Pfad weg, stehen Bash UND Read still (Hooks
