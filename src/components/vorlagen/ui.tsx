@@ -294,6 +294,10 @@ export function NormLink({ artikel, title, bemerkung }: { artikel: string; title
 // Werkzeug-Register (`--reg-w`), erledigte Schritte das ✓ in derselben Farbe
 // (Glyphe = Form, nicht Farbe allein: F2/B3). Kein Gewichtswechsel am aktiven
 // Reiter — die Zeile darf beim Umschalten nicht springen (wie `.ub-schalter`).
+// Nachtrag 1.10.2026 (W2·19 P2, Entscheid David W-HN-2 a): das ✓ steht seither in
+// Tinte (`text-ink-900`), nicht in `--reg-w` — Registerfarbe nur als Gruppentitel/
+// Listenlink; die Registerfarbe trägt hier nur noch die 2-px-Unterkante (Form bleibt:
+// Glyphe, nicht Farbe allein). Der Satz «das ✓ in derselben Farbe» oben ist damit überholt.
 export function Stepper({ schritte, aktiv, onWechsel }: {
   schritte: readonly { id: string; label: string }[];
   aktiv: number;
@@ -339,7 +343,7 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
                 : 'border-transparent text-ink-600 cursor-not-allowed'
               }`}>
               {/* GB-21: Ziffer blank in der Zeile, kein Kästchen; erledigt = ✓. */}
-              <span className={`num ${istAktiv || erledigt ? 'text-reg-w' : ''}`}>{erledigt ? '✓' : i + 1}</span>
+              <span className="num">{erledigt ? '✓' : i + 1}</span>
               {s.label}
             </button>
           );

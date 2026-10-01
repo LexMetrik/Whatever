@@ -43,7 +43,7 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
     <div className="space-y-3">
       <div className="flex justify-end">
         <button type="button" onClick={toggleAlle}
-          className="text-body-s font-medium text-reg-g underline decoration-1 underline-offset-4 hover:decoration-2">
+          className="text-body-s font-medium text-ink-700 underline decoration-1 underline-offset-4 hover:text-ink-900 hover:decoration-2">
           {alleOffen ? 'Alle einklappen' : 'Alle aufklappen'}
         </button>
       </div>

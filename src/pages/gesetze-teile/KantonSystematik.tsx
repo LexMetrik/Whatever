@@ -118,7 +118,7 @@ export function KantonSystematik(
       )}
       <div className="flex justify-end">
         <button type="button" onClick={toggleAlle}
-          className="text-body-s font-medium text-reg-g underline decoration-1 underline-offset-4 hover:decoration-2">
+          className="text-body-s font-medium text-ink-700 underline decoration-1 underline-offset-4 hover:text-ink-900 hover:decoration-2">
           {alleOffen ? 'Alle einklappen' : 'Alle aufklappen'}
         </button>
       </div>
@@ -152,7 +152,7 @@ export function KantonSystematik(
                     CSS-Regel erzeugt). */}
                 {u.titel && (
                   <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
-                    marke={<span aria-hidden className="num text-xs text-reg-g shrink-0">{u.sub}</span>} />
+                    marke={<span aria-hidden className="num text-xs text-ink-600 shrink-0">{u.sub}</span>} />
                 )}
                 {/* D24: EIN Raster über beide Spalten (s. `ui/ListenTabelle`). */}
                 <ErlassTabelle erlasse={u.items}

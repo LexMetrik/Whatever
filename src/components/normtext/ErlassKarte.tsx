@@ -84,7 +84,7 @@ function vollMeta(e: BrowseErlass, lesbar: boolean): ReactNode {
         title="Kein Volltext in LexMetrik — der Eintrag führt direkt zur amtlichen Fassung.">nur Live-Link</span>}
       <StandChip stand={e.stand} />
       {werkzeuge > 0 && (
-        <span className="text-reg-w">{werkzeuge} {werkzeuge === 1 ? 'passendes Werkzeug' : 'passende Werkzeuge'}</span>
+        <span className="text-ink-600">{werkzeuge} {werkzeuge === 1 ? 'passendes Werkzeug' : 'passende Werkzeuge'}</span>
       )}
       {!lesbar && <span className="tb-extern">amtliche Fassung ↗</span>}
     </>

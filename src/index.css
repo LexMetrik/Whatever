@@ -4616,8 +4616,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   white-space: nowrap;
   font-size: 0.75rem; line-height: 1.5; color: var(--ink-500);
 }
-/* «↗» = führt aus der App hinaus (amtliche Fremdquelle, §8). */
-.tb-extern { color: var(--reg-g); }
+/* «↗» = führt aus der App hinaus (amtliche Fremdquelle, §8). Kleintext in der
+   Metazeile: Tinte, nicht Registerfarbe (F0.2, Entscheid David 1.10.2026, W-HN-2 a;
+   vorher `var(--reg-g)`, gemessen 24.9.2026). */
+.tb-extern { color: var(--ink-700); }
 
 /* Volle Dichte: Kürzel · Titel · alle Angaben. Schmal gestapelt, die Meta
    bricht um (fünf Angaben passen @390 nicht in eine Zeile). */
@@ -5492,7 +5494,15 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    fielen auf ink-600 rgb(92,86,74)/rgb(165,158,144) und verlören die kursive
    Literata (③ setzt Farbe UND Schrift) — Designentscheid,
    kein Aufräumen. Darum nur der m-Zweig. */
-.lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
+/* Ergänzung 1.10.2026 (W2·19 P2, Entscheid David W-HN-2 a: auf einer Registerfläche
+   NIE Registerfarbe als Text): die Sonderregel gilt jetzt für ALLE Register. Gemessen
+   vorher @1440 hell/dunkel auf `/gesetze/bund/OR`: Overline «Bundesgesetz» im Band
+   stand in `reg-g` auf `reg-g-flaeche` (6.48/6.84:1, bestanden, aber verboten);
+   die kursive Literata aus ③ bleibt, nur die Farbe wird ink-600. */
+/* Nachzug Zweitprüfung 1.10.2026: dieselbe Farb-Ausnahme wie DK-16 (`:where(:not(…))`,
+   Spezifität unverändert (0,4,0)) — eine `lc-overline text-danger-*` im Band behält
+   ihre Warnfarbe (§8), statt still auf ink-600 zu fallen. */
+.lc-route[data-reg] .lc-titelblatt-band .lc-overline:where(:not([class^="text-"], [class*=" text-"], [class*=":text-"])) { color: var(--ink-600); }
 .lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }
 
 /* ═══ Rechner: Eingabe ‖ Ergebnis (W2·31-BILDSCHIRMBREITE B3, 25.9.2026) ═════
