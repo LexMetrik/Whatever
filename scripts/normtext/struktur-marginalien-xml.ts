@@ -8,10 +8,14 @@
  * Überschrift. Der HTML-Weg (struktur-extrahiere.ts) hängt an der h1–h5/div-Klassifikation
  * der Rendering-Schicht; der XML-Weg liest die Eigenschaft, die der Redaktor gesetzt hat.
  *
- * Reine Funktion (§2): gleiche Eingabe → gleiche Ausgabe, kein Netz. Liefert NUR die
+ * Reine Funktionen (§2): gleiche Eingabe → gleiche Ausgabe, kein Netz. Liefert NUR die
  * Marginalien-Kette je Artikel-Token (`marginalie`); Gliederung, Fussnoten und Kopf
  * bleiben beim HTML-Pfad. Schlüssel IDENTISCH zu `extrahiereStruktur` (Token über
  * `ankerZuToken`, Doppel-eId-Zählung `__N`), damit der Join byte-gleich bleibt.
+ *
+ * Die Rolle (was ist ein Randtitel, welche Kette) kommt aus dem XML; für den Wortlaut
+ * wählt `waehleRandtitel` je Glied zwischen XML und HTML (das XML verliert vereinzelt
+ * Leerraum, das HTML vereinzelt Ordinal-Suffixe — Messung dort).
  */
 
 import { ankerZuToken } from './extrahiere-fedlex.ts';
