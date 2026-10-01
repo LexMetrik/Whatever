@@ -182,8 +182,79 @@ export function grundartMeta(key: string): {
  * Rein und deterministisch (§2): nur das LETZTE Klammerpaar am Ende fällt, und
  * nur, wenn es dort steht — «Verordnung (EU) 2016/679 über …» bleibt unberührt.
  */
-export function titelOhneKlammerSuffix(titel: string): string {
-  return titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
+export function titelOhneKlammerSuffix(titel: string, kuerzel = ''): string {
+  const t = titel.trim();
+  const k = kuerzel.trim().toLowerCase();
+  // Der Registerwert IST der Volltitel (Kantone führen dort teils den ganzen
+  // Titel samt Klammer): da gibt es kein Suffix, das fallen könnte — die Klammer
+  // gehört zum Namen («… (Arbeitsgesetz)»), und der Kopf hätte sonst «Titel
+  // (Titel)» gedruckt (PA-6/E-D16-B01).
+  if (k && t.toLowerCase() === k) return t;
+  const letzte = t.match(/\(([^)]*)\)\s*$/);
+  if (letzte) {
+    const inhalt = letzte[1] ?? '';
+    // PA-6-B05: «(revidiert in Stockholm am 14. Juli 1967)» ist die Revisionsakte
+    // und damit Teil des amtlichen Titels — kein Kürzel, kein SR-Verweis.
+    if (/^revidiert\b/i.test(inhalt.trim())) return t;
+    // PA-6-B04: «Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, …)»
+    // — steht das Kürzel schon in der Klammer DAVOR, ist die letzte Klammer der
+    // Sachtitel, nicht das angehängte Kürzel. Eine Nummer («(760.12)», «(LS 230)»)
+    // ist dagegen nie ein Sachtitel und fällt wie bisher.
+    if (!/\d/.test(inhalt) && kuerzelImKlammerGlied(t.slice(0, letzte.index), kuerzel)) return t;
+  }
+  return t.replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+/**
+ * Steht das Kürzel als eigenes GLIED einer Klammer im Titel? «(ArGV 4)» ja,
+ * «(Strafprozessordnung, StPO)» für «StPO» ja, «(revidiert in Paris am 24. Juli
+ * 1971, RBÜ)» für «RBÜ» ja — «Vorschriften» für «OR» nein (ganzes Glied, nie
+ * Teilstring; CLAUDE.md §7: Identität statt Substring).
+ */
+export function kuerzelImKlammerGlied(titel: string, kuerzel: string): boolean {
+  const k = kuerzel.trim().toLowerCase();
+  if (!k) return false;
+  for (const m of titel.matchAll(/\(([^()]*)\)/g)) {
+    if ((m[1] ?? '').split(/[,;]/).some((glied) => glied.trim().toLowerCase() === k)) return true;
+  }
+  return false;
+}
+
+/**
+ * Ab wie vielen Zeichen ein Registerwert in `kuerzel` keine Kennung mehr ist.
+ * Gezählt am Register 1.10.2026 (1580 Erlasse, 233 mit vorangestellter Kennung,
+ * `.gate/titel-explore2.mjs` im Bau-Worktree): bis 69 Zeichen stehen dort Kürzel
+ * und Kurztitel («ArGV 4», «Covid-19-Verordnung Unterstützungsprogramm
+ * Gastronomie und Hotellerie», der längste); von 87 Zeichen an sind es Volltitel
+ * (6 × AR/BS/ZH: der Registerwert IST der Titel) und Satzfragmente («handelnd
+ * aufgrund seines Aufsichtsrechts …», BS-390.760). Dazwischen liegt kein Wert —
+ * 70 ist die Mitte der Lücke, nicht geraten.
+ */
+export const KENNUNG_MAX_ZEICHEN = 70;
+
+/** Bis zu dieser Länge bleibt eine vorangestellte Kennung eine nicht umbrechende
+ *  Marke («ArGV 4», «LugÜ»); darüber darf sie umbrechen — sonst sprengt sie die
+ *  Zeile (AR/BS @390: 35 Zeichen = 452 px in 318 px; E-D16-B01). 20 Zeichen
+ *  passen auch in die 268 px der Lesezelle bei 320 px Fensterbreite. */
+export const KENNUNG_NOWRAP_MAX_ZEICHEN = 20;
+
+/**
+ * Die Titelzeile des Erlass-Kopfs (H1) — EINE Ableitung für `parts/ErlassLeserKopf`
+ * und die Zählung über den Korpus (§5).
+ *
+ *  · `kennung` gesetzt: die Kennung steht davor, der Titel ohne Klammer-Suffix.
+ *  · Kürzel leer / identisch mit dem Titel: nur der Titel.
+ *  · Kürzel steht schon als Klammerglied im Titel («(ArGV 4)», «…, RBÜ)») oder ist
+ *    länger als `KENNUNG_MAX_ZEICHEN` (Volltitel/Fragment, kein Kürzel): kein
+ *    Anhang «(Kürzel)» — er stünde doppelt bzw. wäre ein Satzfragment.
+ *  · sonst die S3-Zitierform «Titel (Kürzel)».
+ */
+export function kopfTitelZeile(erlass: { titel: string; kuerzel: string }, kennung: string | null): string {
+  const kuerzel = erlass.kuerzel.trim();
+  const angezeigt = titelOhneKlammerSuffix(erlass.titel, kuerzel);
+  if (!kuerzel || kennung || angezeigt.toLowerCase() === kuerzel.toLowerCase()) return angezeigt || kuerzel;
+  if (kuerzel.length > KENNUNG_MAX_ZEICHEN || kuerzelImKlammerGlied(angezeigt, kuerzel)) return angezeigt;
+  return `${angezeigt} (${kuerzel})`;
 }
 
 /**
@@ -211,8 +282,13 @@ export function titelOhneKlammerSuffix(titel: string): string {
  * Rein und deterministisch (§2). Rot-Beweis: `src/tests/tab-titel-redundanz.test.ts`.
  */
 export function tabTitel(kuerzel: string, titel: string): string {
-  const kurz = titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? titel;
-  const redundant = kurz.trim().toLowerCase() === kuerzel.trim().toLowerCase();
+  const klammer = titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? titel;
+  const redundant = klammer.trim().toLowerCase() === kuerzel.trim().toLowerCase();
+  // PA-6-B06: «RBÜ (revidiert in Paris am 24. Juli 1971, RBÜ)» — steht das Kürzel
+  // als Glied IN der Klammer, entfällt es dort (es steht ja davor).
+  const glieder = klammer.split(/\s*[,;]\s*/);
+  const ohneKuerzel = glieder.filter((g) => g.trim().toLowerCase() !== kuerzel.trim().toLowerCase());
+  const kurz = ohneKuerzel.length > 0 && ohneKuerzel.length < glieder.length ? ohneKuerzel.join(', ') : klammer;
   return redundant ? `${kuerzel} — LexMetrik` : `${kuerzel} (${kurz}) — LexMetrik`;
 }
 
