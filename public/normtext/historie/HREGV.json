@@ -1,9 +1,9 @@
 {
  "erlass": "HREGV",
  "abdeckung": {
-  "fussnoten": 293,
-  "ereignis": 246,
-  "referenz": 46,
+  "fussnoten": 295,
+  "ereignis": 247,
+  "referenz": 47,
   "unparsed": 1
  },
  "artikel": {
@@ -112,7 +112,7 @@
    ]
   },
   "10": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -126,6 +126,19 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "g"
     }
    ]
   },
@@ -3960,8 +3973,8 @@
  "residuum": [
   {
    "token": "29_a",
-   "nr": "57",
-   "roh": "ISO/IEC 8859-15, 1999, Informationstechnik - 8-Bit-Einzelbyte-codierte Schriftzeichensätze - Teil 15: Lateinisches Alphabet Nr. 9. Die aufgeführte Norm kann eingesehen und bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur, www.snv.ch. Sie ist auch im Internet auf der Homepage der Internationalen Organisation für Normung (www.iso.org) abrufbar."
+   "nr": "59",
+   "roh": "ISO/IEC 8859-15, 1999, Informationstechnik - 8-Bit-Einzelbyte-codierte Schriftzeichensätze - Teil 15: Lateinisches Alphabet Nr. 9. Die aufgeführte Norm kann eingesehen und bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur, www.snv.ch . Sie ist auch im Internet auf der Homepage der Internationalen Organisation für Normung ( www.iso.org ) abrufbar."
   }
  ]
 }

@@ -1,8 +1,8 @@
 {
  "erlass": "RVOV",
  "abdeckung": {
-  "fussnoten": 108,
-  "ereignis": 82,
+  "fussnoten": 109,
+  "ereignis": 83,
   "referenz": 26,
   "unparsed": 0
  },
@@ -606,6 +606,24 @@
       {
        "label": "AS 2004 5251",
        "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "27_c_bis": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 420",
+       "url": ""
       }
      ],
      "absatz": null,

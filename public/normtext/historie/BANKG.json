@@ -1,9 +1,9 @@
 {
  "erlass": "BANKG",
  "abdeckung": {
-  "fussnoten": 208,
+  "fussnoten": 207,
   "ereignis": 166,
-  "referenz": 42,
+  "referenz": 41,
   "unparsed": 0
  },
  "artikel": {
@@ -1686,11 +1686,11 @@
    ]
   },
   "14_b": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2020-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -1704,8 +1704,26 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "19_22": {
    "giltSeit": null,
@@ -1731,6 +1749,45 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "1_a": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 732",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+      },
+      {
+       "label": "BBl 2020 6359",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1555"
+      }
+     ],
+     "absatz": null,
+     "item": "b"
+    }
+   ]
+  },
+  "1_b": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
     {
@@ -1786,7 +1843,7 @@
     }
    ]
   },
-  "1_b": {
+  "1_bis": {
    "giltSeit": null,
    "ereignisse": [
     {
@@ -1825,45 +1882,6 @@
     }
    ],
    "aufgehobenSeit": "2016-01-01"
-  },
-  "1_bis": {
-   "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
-      },
-      {
-       "label": "BBl 2015 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
-      }
-     ],
-     "absatz": null,
-     "item": null
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 732",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/732"
-      },
-      {
-       "label": "BBl 2020 6359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1555"
-      }
-     ],
-     "absatz": null,
-     "item": "b"
-    }
-   ]
   },
   "23_bis": {
    "giltSeit": "2016-01-01",

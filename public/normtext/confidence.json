@@ -3,8 +3,8 @@
   "schwelle": 0.95,
   "korpus": {
     "quelle": "daten-manifest.json#normtext.db.artikel.sha",
-    "sha": "861dfa56838eeefbb6f0f495e4fbce1daadf1c1fd742fa0e50d12bde10605106",
-    "dateiSha": "d8953ad0d70f6ff6d9afde3d3c41bf79404541500e02774cc866132938c654da",
+    "sha": "702e839aaa78f1154da939d9d189b4a98ed704386ef4bfb3a2b128ab15dba990",
+    "dateiSha": "4f4ddea39db770fc0dff1d09c8b7038d958079a50b12d4204266d3e112b454da",
     "erlasseDateien": 1570
   },
   "zusammenfassung": {
@@ -254,7 +254,7 @@
       "datei": "bund/BBG.json",
       "ebene": "bund",
       "key": "BBG",
-      "artikelTotal": 77,
+      "artikelTotal": 81,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -263,7 +263,7 @@
       "datei": "bund/BBV.json",
       "ebene": "bund",
       "key": "BBV",
-      "artikelTotal": 100,
+      "artikelTotal": 99,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -832,7 +832,7 @@
       "datei": "bund/FINIG.json",
       "ebene": "bund",
       "key": "FINIG",
-      "artikelTotal": 78,
+      "artikelTotal": 79,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -976,7 +976,7 @@
       "datei": "bund/GWG.json",
       "ebene": "bund",
       "key": "GWG",
-      "artikelTotal": 59,
+      "artikelTotal": 70,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -1417,7 +1417,7 @@
       "datei": "bund/OR.json",
       "ebene": "bund",
       "key": "OR",
-      "artikelTotal": 1686,
+      "artikelTotal": 1685,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -1561,7 +1561,7 @@
       "datei": "bund/RVOV.json",
       "ebene": "bund",
       "key": "RVOV",
-      "artikelTotal": 98,
+      "artikelTotal": 99,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -1964,7 +1964,7 @@
       "datei": "bund/VRV.json",
       "ebene": "bund",
       "key": "VRV",
-      "artikelTotal": 118,
+      "artikelTotal": 119,
       "score": 1,
       "vetos": 0,
       "flags": []

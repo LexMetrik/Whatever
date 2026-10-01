@@ -1,8 +1,8 @@
 {
  "erlass": "VTS",
  "abdeckung": {
-  "fussnoten": 929,
-  "ereignis": 856,
+  "fussnoten": 933,
+  "ereignis": 860,
   "referenz": 70,
   "unparsed": 3
  },
@@ -1766,7 +1766,7 @@
    ]
   },
   "32": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1780,6 +1780,19 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 454",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/454"
+      }
+     ],
+     "absatz": "2",
+     "item": "e"
     }
    ]
   },
@@ -5785,7 +5798,7 @@
    ]
   },
   "99": {
-   "giltSeit": "2022-04-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5840,6 +5853,19 @@
      "item": "d"
     },
     {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 454",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/454"
+      }
+     ],
+     "absatz": "2",
+     "item": "e"
+    },
+    {
      "typ": "fassung",
      "datum": "2022-04-01",
      "wirkung": false,
@@ -5881,7 +5907,7 @@
    ]
   },
   "100": {
-   "giltSeit": "2019-02-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5895,6 +5921,19 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 454",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/454"
+      }
+     ],
+     "absatz": "1",
+     "item": "c"
     }
    ]
   },
@@ -11950,7 +11989,7 @@
    ]
   },
   "104_b": {
-   "giltSeit": "2024-04-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -11990,6 +12029,19 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 454",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/454"
+      }
+     ],
+     "absatz": "3",
+     "item": "c"
     }
    ]
   },
@@ -13427,17 +13479,17 @@
  "residuum": [
   {
    "token": "110",
-   "nr": "529",
+   "nr": "533",
    "roh": "RS 741.51"
   },
   {
    "token": "222_k",
-   "nr": "916",
+   "nr": "920",
    "roh": "Analog zur Richtlinie 2003/97/EG bzw. 2007/38/EG"
   },
   {
    "token": "41",
-   "nr": "274",
+   "nr": "275",
    "roh": "Die Texte dieser Normen können kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch ."
   }
  ]

@@ -1,9 +1,9 @@
 {
  "erlass": "VRV",
  "abdeckung": {
-  "fussnoten": 416,
-  "ereignis": 376,
-  "referenz": 37,
+  "fussnoten": 423,
+  "ereignis": 379,
+  "referenz": 41,
   "unparsed": 3
  },
  "artikel": {
@@ -226,7 +226,7 @@
    ]
   },
   "3": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -278,20 +278,46 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": null
     },
     {
      "typ": "fassung",
-     "datum": "2005-10-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2005 4109",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/544"
+       "label": "AS 2026 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": "5",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": "6",
+     "item": null
     }
    ]
   },
@@ -4859,19 +4885,6 @@
    "giltSeit": "2002-08-01",
    "ereignisse": [
     {
-     "typ": "aufgehoben",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1972 1573",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1972/1573_1605_1777"
-      }
-     ],
-     "absatz": null,
-     "item": null
-    },
-    {
      "typ": "fassung",
      "datum": "2002-08-01",
      "wirkung": false,
@@ -5268,6 +5281,24 @@
       }
      ],
      "absatz": "3",
+     "item": null
+    }
+   ]
+  },
+  "41_c": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -5755,17 +5786,17 @@
  "residuum": [
   {
    "token": "3_a",
-   "nr": "34",
+   "nr": "38",
    "roh": "Richtlinie 91/671/EWG des Rates vom 16. Dezember 1991 zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über die Gurtanlegepflicht in Kraftfahrzeugen mit einem Gewicht von weniger als 3,5 Tonnen, ABl. L 373 vom 31.12.1991, S. 26; zuletzt geändert durch Richtlinie 2014/37/EU, ABl. L 59 vom 28.02.2014, S. 32."
   },
   {
    "token": "3_b",
-   "nr": "43",
+   "nr": "47",
    "roh": "SN EN 1077, 2007, Helme für alpine Skiläufer und für Snowboarder. Diese Norm kann gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch ."
   },
   {
    "token": "3_b",
-   "nr": "44",
+   "nr": "48",
    "roh": "SN EN 1078, 2013, Helme für Radfahrer und für Benutzer von Skateboards und Rollschuhen. Diese Norm kann gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch ."
   }
  ]

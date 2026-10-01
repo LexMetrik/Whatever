@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/VEV/art_1",
@@ -96,10 +96,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_1",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5cefa7f7c2a6e79204bdad8ea5f778f864cc6a4dba9394afc74b6fd411700694"
     },
     {
@@ -164,16 +164,20 @@
             },
             {
               "marke": "h",
-              "text": "Grenzüberschreitende Regionen: alle Kantone entlang der Landesgrenze der Schweiz zuzüglich der Kantone Appenzell Ausserrhoden und Appenzell Innerrhoden."
+              "text": "Grenzüberschreitende Regionen: alle Kantone entlang der Landesgrenze der Schweiz zuzüglich der Kantone Appenzell Ausserrhoden und Appenzell Innerrhoden;"
+            },
+            {
+              "marke": "i",
+              "text": "ETIAS-Reisegenehmigung: ein gemäss der Verordnung (EU) 2018/1240 erlassener Entscheid, der eine Voraussetzung für die Einreise und den Aufenthalt im Schengen-Raum darstellt."
             }
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_2",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "20631fb52b803970b3df4aeaac4dfe85fcaf8edbdca9a051f472b208e67ba819"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "9e986c2743bc7f6d872fc785fcce340da42a2ee8494080317f7e9da4433d8616"
     },
     {
       "id": "bund/VEV/art_3",
@@ -232,10 +236,10 @@
           "text": "Für Personen, die der Visumpflicht unterstehen und denen nach Absatz 4 die Einreise bewilligt wurde, wird ein Visum mit räumlich beschränkter Gültigkeit für die Schweiz ausgestellt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_3",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f79b7ac3b6bada174238e48f8c5c083edabee64af68ce73c7b036fa504d3761d"
     },
     {
@@ -252,7 +256,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Sie müssen, sofern erforderlich, über ein Visum für einen längerfristigen Aufenthalt nach Artikel 9 verfügen."
+              "text": "Sie müssen über ein Visum für einen längerfristigen Aufenthalt nach Artikel 9 oder eine ETIAS-Reisegenehmigung verfügen."
             },
             {
               "marke": "b",
@@ -265,11 +269,11 @@
           "text": "Ausländerinnen und Ausländern, die die Voraussetzungen von Absatz 1 nicht erfüllen, kann in begründeten Fällen aus humanitären Gründen die Einreise in die Schweiz für einen längerfristigen Aufenthalt bewilligt werden. Ein solcher Fall liegt insbesondere dann vor, wenn die betreffende Person im Herkunftsstaat unmittelbar, ernsthaft und konkret an Leib und Leben gefährdet ist."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_4",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "677775e5a3a8a8a39d5e7c1472eacc376fa1bdcbfe7810a3b9bc32e9dfe441d1"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "d47b243eb18961723bf3d097b679d50c668a90f59eb8bf7250693b61a5d5cad7"
     },
     {
       "id": "bund/VEV/art_5",
@@ -310,10 +314,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_5",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5a36896422b11efd3f017e3a800566439f97a8162057ba63df4daf3f92ca1a64"
     },
     {
@@ -402,10 +406,10 @@
           "text": "Das SEM kann in begründeten Fällen Reisedokumente anerkennen, die nicht den Voraussetzungen nach Absatz 4 entsprechen. Dies betrifft insbesondere Reisedokumente von Personen, die nicht die Staatsangehörigkeit des ausstellenden Staates besitzen, sich aber legal im ausstellenden Staat aufhalten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_6",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4a0ca63002672a29d43f1f84d0e3faf1536101850b4221372ee77b78fea27907"
     },
     {
@@ -421,10 +425,10 @@
           "text": "Das SEM kann in begründeten Fällen Ausnahmen von der Reisedokumentenpflicht bewilligen, insbesondere aus humanitären Gründen oder zur Wahrung nationaler Interessen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_7",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "91481f1930b860a3716156b0a9bda3668fd3d3582d0e4b225ddb3c8a2fd56dcd"
     },
     {
@@ -504,10 +508,10 @@
           "text": "Das Eidgenössische Justiz- und Polizeidepartement (EJPD) passt Anhang 3 an, sobald die Schweiz über den Abschluss eines Abkommens zwischen der EU und einem der in Anhang II der Verordnung (EU) 2018/1806 genannten Staaten oder einer der dort genannten Gebietskörperschaften zur Aufhebung der Visumpflicht informiert worden ist."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_8",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "beb3d71530f84b6b107b4da91efe63e81dbcd4fb9534d712df3c026fb1d443ce"
     },
     {
@@ -527,10 +531,10 @@
           "text": "In Abweichung von Absatz 1 sind Staatsangehörige folgender Staaten von der Visumpflicht für längerfristige Aufenthalte befreit: Andorra, Australien, Brunei Darussalam, Japan, Malaysia, Monaco, Neuseeland, San Marino, Singapur, Vatikanstadt und Vereinigtes Königreich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_9",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b0940f6ef1aa92dd2b3f914bc652b30a33767648a31bdd8ef0cc1532ed08c6a2"
     },
     {
@@ -627,10 +631,10 @@
           "text": "Flugpassagiere, die von der Visumpflicht nach den Artikeln 8 und 9 befreit sind, sind ebenfalls von der Visumpflicht für den Flughafentransit befreit."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_10",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1b3f6f8fa90576c698c9c024dea20b1c294d5c13a64c234d69d7410dea5bc01b"
     },
     {
@@ -669,10 +673,10 @@
           "text": "Für Personen, die der Visumpflicht unterstehen und denen nach Absatz 1 und 2 die Einreise bewilligt wurde, wird ein Visum mit räumlich beschränkter Gültigkeit für die Schweiz ausgestellt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_10_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c649343ae375c10a0ced1d880f7c83f15a8ffa5b76b3b1f4bd37e1c55edfebd7"
     },
     {
@@ -698,10 +702,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_10_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "029af8893868bd69b4e1000f0496628b9a5b158d2e7b39b43b057fd25fa3e5f7"
     },
     {
@@ -731,10 +735,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_11",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3d4596bf6b8a2a5884a91c1537b98c6913c7fb4f0930697ea3a4417c24efb34a"
     },
     {
@@ -754,10 +758,10 @@
           "text": "Diese Bestimmungen werden durch die Artikel 13–19 dieser Verordnung ergänzt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_12",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c010cdd8f4ab9dc672da940434c0c6b896dbab89ee14507ceaeea49bab8cd4b9"
     },
     {
@@ -777,10 +781,10 @@
           "text": "Sie können zudem verwendet werden, um die Identität der Gesuchstellerin oder des Gesuchstellers nach Artikel 102 Absatz 1 AIG festzustellen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_13",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2a0fd398a87dc9ac1e6f97070368766263f07967df7f0182ff1a61cd61e84dbe"
     },
     {
@@ -818,10 +822,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_14",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "90ee4a0cc57cb09020ec63f438426c06275fdefffe5236901fb28aecc527c57d"
     },
     {
@@ -867,10 +871,10 @@
           "text": "Die Garantiesumme beträgt für Einzelpersonen sowie für gemeinsam reisende Gruppen und Familien bis höchstens zehn Personen 30 000 Franken."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_15",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0dd3e967bf2bd77997175eb5e1ff1578acc7f010209a98e6893ad551ff071479"
     },
     {
@@ -890,10 +894,10 @@
           "text": "Sie kann den interessierten Behörden, namentlich den Sozialhilfebehörden, in begründeten Einzelfällen Daten über die Verpflichtungserklärung bekannt geben."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_16",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "450caf9ba2bdf84c11f4c3499fd75806e0bd64240ebe722e3a8cccf111fbe893"
     },
     {
@@ -927,10 +931,10 @@
           "text": "Für Visumgesuche, die an der Grenze gestellt werden, ist eine Krankenversicherung nicht erforderlich. Das SEM kann jedoch in Ausnahmefällen diese Pflicht wieder vorsehen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_17",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "bbab115adf7d2ef157c57dfe24384f30f49b35c97f218736d7ed46127819665f"
     },
     {
@@ -946,10 +950,10 @@
           "text": "Mit Zustimmung der zuständigen Bewilligungsbehörden können Ausländerinnen und Ausländer den Nachweis ausreichender Mittel zur Bestreitung des Lebensunterhalts (Art. 3 Abs. 2) mit einer Bankgarantie einer schweizerischen Bank oder mit anderen vergleichbaren Sicherheiten erbringen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_18",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f62d7fa191316006484bfa3d296992171c0f0fd516753ec3adfec41cd3e826a2"
     },
     {
@@ -965,10 +969,10 @@
           "text": "Für die Bearbeitung eines Visumgesuchs für einen kurzfristigen Aufenthalt oder für den Flughafentransit wird eine Gebühr erhoben nach Artikel 16 des Visakodex und nach der Gebührenverordnung AIG vom 24. Oktober 2007 (GebV-AIG)."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_19",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0864073d1b41a8a5fe4d805168843c767467ec7f0ff247aa836f039fe3825008"
     },
     {
@@ -985,10 +989,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_20",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1036,10 +1040,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_21",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "aef209e4158dff48f3150595440fca4b53aebf4205e823b7232d0a90dbac53b2"
     },
     {
@@ -1063,10 +1067,10 @@
           "text": "Eine schweizerische Vertretung kann das Gesuch einer ausländischen Person, die nicht in ihrem Konsularbezirk rechtmässig wohnhaft ist, entgegennehmen, wenn sie die Gründe, weshalb diese Person ihr Gesuch nicht bei der zuständigen schweizerischen Vertretung einreichen konnte, als annehmbar erachtet."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_22",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6f11e3e9d659a30993e39453fc266d5e3ed734ea97113ccbd5c7f36d3bf821a9"
     },
     {
@@ -1090,10 +1094,10 @@
           "text": "In den Fällen nach Artikel 4 Absatz 2 ist das persönliche Erscheinen grundsätzlich zwingend. Das SEM kann bei Vorliegen ausserordentlicher Umstände von dieser Pflicht absehen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_23",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0cc096d8ec106df1efc252a2ab8bee60a82d4a94f73464f66b0ab35491df857e"
     },
     {
@@ -1109,10 +1113,10 @@
           "text": "Das SEM bestimmt die Liste der erforderlichen Dokumente zum Nachweis, dass die Voraussetzungen für die Erteilung eines Visums für einen längerfristigen Aufenthalt erfüllt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_24",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e0af9b03de51022c39f09bb11cdfec1d85b0dc4b567d6750b018a2ef383588b1"
     },
     {
@@ -1128,10 +1132,10 @@
           "text": "Für die Behandlung von Visumgesuchen für einen längerfristigen Aufenthalt wird eine Gebühr nach der GebV-AIG erhoben."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_25",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "92ff3232982fc3f37bac47e01a7c2d8977fc34dc6bd3e3730302f6da6aefa198"
     },
     {
@@ -1155,10 +1159,10 @@
           "text": "In den Fällen nach Artikel 4 Absatz 2 werden in jedem Fall die Fingerabdrücke erfasst."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_26",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2c62c7d093b7058b9a500a505511df47e3e63c5ba1196872e8a343f0b4e356a3"
     },
     {
@@ -1178,10 +1182,10 @@
           "text": "In Abweichung von Absatz 1 und nach Artikel 18 Absatz 2 des Schengener Durchführungsübereinkommens kann Ausländerinnen und Ausländern, die innerhalb von zwölf Monaten insgesamt längstens vier Monate in der Schweiz erwerbstätig sind (Art. 19 Abs. 4 Bst. a der Verordnung vom 24. Oktober 2007 über Zulassung, Aufenthalt und Erwerbstätigkeit), ein Visum für einen längerfristigen Aufenthalt mit einer Gültigkeitsdauer von 120 Tagen erteilt werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_27",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "786d7a6332a62e9f898e33a954aba3a8fc3f27b51482eaf34e11f8946b662ed8"
     },
     {
@@ -1197,10 +1201,10 @@
           "text": "Die Regelung der Ein- und der Ausreise richtet sich nach dem Schengener Grenzkodex. Vorbehalten bleiben die zollrechtlichen Vorschriften nach dem Zollgesetz vom 18. März 2005 und die entsprechenden Ausführungsbestimmungen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_28",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "580b09e29ffb24214aa88f9197997069fd5c189ed717935e4715547c67d218fa"
     },
     {
@@ -1221,10 +1225,10 @@
           "text": "Für Einreisen an Flugplätzen, die nicht zu den Schengen-Aussengrenzen gehören, wird eine vorgängige Bewilligung der für die Grenzkontrollen am Landeort zuständigen Behörde benötigt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_29",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "93128eb2332ffddc89334d086e0efe53b24973031ff9b99c64d9bce144181f6d"
     },
     {
@@ -1244,10 +1248,10 @@
           "text": "Das SEM erlässt Weisungen zur Abgrenzung der Kontrollen nach Absatz 1 von den Grenzkontrollen an den Schengener Aussengrenzen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_29_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f5f1574b1406e73b901ce37ad062a3329eda7b3493f69ccde40dde4156923bb9"
     },
     {
@@ -1286,10 +1290,10 @@
           "text": "Der Bundesrat informiert die zuständigen Kommissionen beider Räte über die Wiedereinführung und die Verlängerung der Grenzkontrollen sowie über deren Dauer."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_30",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "da6df38f3b063b1f03f044a820d652df9d81b31ce93905fa1e18110be7a19514"
     },
     {
@@ -1317,10 +1321,10 @@
           "text": "Die Kantone können die für die Grenzkontrollen zuständigen Mitarbeiterinnen und Mitarbeiter des BAZG ermächtigen, die Wegweisungsverfügung nach Artikel 64 Absatz 1 Buchstaben a und b und nach Artikel 64cbis AIG zu erlassen und zu eröffnen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_31",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f684b0c026cfe2e098fc7142c15836b68c09949d988b7ac6211ebec4013d44cb"
     },
     {
@@ -1352,7 +1356,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "vor der Abreise kontrolliert wird, ob die für die Einreise in den Schengen-Raum oder für den Flughafentransit erforderlichen Reisedokumente, Visa und Aufenthaltstitel gültig und anerkannt sind;"
+              "text": "vor der Abreise kontrolliert wird, ob die für die Einreise in den Schengen-Raum oder für den Flughafentransit erforderlichen Reisedokumente, ETIAS-Reisegenehmigungen, Visa und Aufenthaltstitel gültig und anerkannt sind;"
             },
             {
               "marke": "b",
@@ -1382,20 +1386,20 @@
             },
             {
               "marke": "b",
-              "text": "die Anzahl der Personen stark ansteigt, die nicht über die für die Einreise in den Schengen-Raum oder für den Flughafentransit erforderlichen Reisedokumente, Visa und Aufenthaltstitel verfügen."
+              "text": "die Anzahl der Personen, die nicht über die für die Einreise in den Schengen-Raum oder für den Flughafentransit erforderlichen Reisedokumente, ETIAS-Reisegenehmigungen, Visa und Aufenthaltstitel verfügen, stark ansteigt."
             }
           ]
         },
         {
           "absatz": "4",
-          "text": "Als zusätzliche Massnahme gilt insbesondere das Erstellen von Kopien von Reisedokumenten, Visa oder Aufenthaltstiteln vor dem Abflug."
+          "text": "Als zusätzliche Massnahme gilt insbesondere das Erstellen von Kopien von Reisedokumenten, ETIAS-Reisegenehmigungen, Visa oder Aufenthaltstiteln vor dem Abflug."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_32",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "3b7562d445aa1aacc285338bfd6092e679b1d1b51bbd537c3242bd51bd68e60d"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "e4ae39850d4abcae225689bd09be0c2079a782a6ae25ad6d3cd7a0568bdd7bd9"
     },
     {
       "id": "bund/VEV/art_33",
@@ -1411,7 +1415,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "die Mitwirkung des SEM bei der beruflichen Aus- und Weiterbildung auf dem Gebiet der einschlägigen Rechtsvorschriften sowie der Methoden zur Verhinderung der Einreise von Personen, die nicht über die erforderlichen Reisedokumente, Visa und Aufenthaltstitel verfügen;"
+              "text": "die Mitwirkung des SEM bei der beruflichen Aus- und Weiterbildung auf dem Gebiet der einschlägigen Rechtsvorschriften sowie der Methoden zur Verhinderung der Einreise von Personen, die nicht über die erforderlichen Reisedokumente, ETIAS-Reisegenehmigungen, Visa und Aufenthaltstitel verfügen;"
             },
             {
               "marke": "b",
@@ -1432,11 +1436,11 @@
           "text": "Wurden kostendeckende Pauschalen nach Artikel 94 Absatz 2 Buchstabe b AIG vereinbart, so übernimmt das SEM die Lebenshaltungs- und Betreuungskosten der Passagiere nach Artikel 93 AIG."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_33",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "7556ba8c0fc166dd6cf379c2548c6244dc6fde94ca0e9f403ecd5cc17eb63f76"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "ddff856a6e0ebb76e970b123643d30d5b59cbed63afacabb87ce9ab892689862"
     },
     {
       "id": "bund/VEV/art_34",
@@ -1551,10 +1555,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1857ab54e78bf5388739c137098391c60e0bc6fc236d4df271d76c3296eff365"
     },
     {
@@ -1714,10 +1718,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0d38283e6078415396642d7dbb748b1c10cbd75e8ca6ea0d870c565177ec2006"
     },
     {
@@ -1781,10 +1785,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "75a4e8e6f00dca6473c126d1abd09980f7353a93406a0e773f36edac1aa61011"
     },
     {
@@ -1832,10 +1836,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ab5c410e6de8374f8afddbf8ab880b2cd02404848d7eb620b7fbf8be31f7ee78"
     },
     {
@@ -1865,10 +1869,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "72bca285a9cc984f488137489c37690c88c928707e6bda51a35bd1146181afda"
     },
     {
@@ -1960,10 +1964,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "75a0c6e445a224b4711f1a3a9485de2907c6caf60145793228f1d5a448de4e98"
     },
     {
@@ -2001,10 +2005,10 @@
           "text": "Es ist zuständig für den Abschluss von völkerrechtlichen Verträgen zur Übernahme von delegierten Rechtsakten der Europäischen Kommission zur Verordnung (EU) 2021/1160, sofern die delegierten Rechtsakte gestützt auf Artikel 114 Absatz 2 der Verordnung (EU) 2021/1060 erlassen wurden und sofern die Verträge völkerrechtliche Verträge von beschränkter Tragweite im Sinne von Artikel 7a RVOG darstellen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d4f2a3ce5ea7b4dd82849bfad913446499848dddb675cc3e3723e4b68b142443"
     },
     {
@@ -2020,10 +2024,10 @@
           "text": "Das SEM ist zuständig für den Abschluss von völkerrechtlichen Verträgen zur Übernahme von Durchführungsrechtsakten der Europäischen Kommission, welche die Liste der visierfähigen Reisedokumente, die zum Überschreiten der Aussengrenzen berechtigen, erstellen oder aktualisieren und die gestützt auf den Beschluss Nr. 1105/2011/EU erlassen wurden, sofern sie völkerrechtliche Verträge von beschränkter Tragweite im Sinne von Artikel 7a RVOG darstellen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "43b2ceb54b49428935bd63732078691a7453d79c36aea699ad7c2e9b0c03da30"
     },
     {
@@ -2039,10 +2043,10 @@
           "text": "Das SEM ist zuständig für den Abschluss von völkerrechtlichen Verträgen zur Übernahme von Durchführungsrechtsakten der Europäischen Kommission zur Verordnung (EG) Nr. 694/2003, sofern sie völkerrechtliche Verträge von beschränkter Tragweite im Sinne von Artikel 7a RVOG darstellen und sofern die Durchführungsrechtsakte gestützt auf Artikel 2 der Verordnung (EG) Nr. 694/2003 erlassen wurden und technische Spezifikationen für das einheitliche Dokument für den erleichterten Transit, einschliesslich des Transits im Eisenbahnverkehr, oder den geheimen Charakter dieser Spezifikationen festlegen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_h",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a6c74a901e4d87eca3f78c549ada4d652a1bd3f24d628d03b8e5ef2f0987eb37"
     },
     {
@@ -2086,10 +2090,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_i",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "cbad1e402f7f6647b38cf8ac190d14422b2bcff48babe4f8fc396d991dc6215a"
     },
     {
@@ -2115,10 +2119,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_j",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "088af6ce477ad40a9043eaa3b1e5e1e31e30e4d47290cd91583b80aa77afc18b"
     },
     {
@@ -2178,10 +2182,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_34_k",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "86c384bc4caeaeebf4717a788b325bff442b070e0d084adb85a34bc11c92f2c9"
     },
     {
@@ -2231,10 +2235,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_35",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b855ef3ec62fc450b9f361ccf0cac96b9f826c1ff0691bab6cad02e29079ecc3"
     },
     {
@@ -2250,10 +2254,10 @@
           "text": "Die Auslandvertretungen sind zuständig für die Erteilung, Verweigerung, Annullierung und Aufhebung von Visa für kurzfristige oder längerfristige Aufenthalte oder Visa für den Flughafentransit im Namen der zuständigen Behörden, das heisst des SEM, des EDA und der Kantone."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_36",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "aaa60a531aac840d371d0947b4ae497535f6389c049d4e140b78cceb3dcc02fa"
     },
     {
@@ -2269,10 +2273,10 @@
           "text": "Die für die Kontrolle der Einreisevoraussetzungen an den Flugplätzen, die eine Schengen-Aussengrenze bilden, und für die Kontrolle der Voraussetzungen für den Flughafentransit zuständigen Behörden sind zuständig für die Erteilung, Verweigerung, Annullierung und Aufhebung von Visa für kurzfristige oder längerfristige Aufenthalte oder Visa für den Flughafentransit je nach Zuständigkeit im Namen des SEM, des EDA oder der Kantone."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_37",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "56a35743e98981c19d023199fb7fa5debf8d4eae7beb691723413411baba1bff"
     },
     {
@@ -2285,7 +2289,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das EDA ist zuständig für die Bewilligung oder Verweigerung der Einreise in die Schweiz von:",
+          "text": "Das EDA ist zuständig für die Bewilligung oder Verweigerung der Einreise in die Schweiz von folgenden visumpflichtigen Personen:",
           "items": [
             {
               "marke": "a",
@@ -2310,11 +2314,11 @@
           "text": "Das EDA erlässt Weisungen zu den Visa in seinem Zuständigkeitsbereich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_38",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "765f81684014c1570b44514c05c9df4110daf2094a11cf76100514ec3d0e6240"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "5b2259cf60907dd84f334b010bb625001b9caf5a4ecbaa0013cab9616769f774"
     },
     {
       "id": "bund/VEV/art_39",
@@ -2343,10 +2347,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_39",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2432b384816302b9c871032614341c0de7e47879b184b0b475500797eeadc371"
     },
     {
@@ -2404,10 +2408,10 @@
           "text": "Nach Artikel 42 des Visakodex können die Honorarkonsulinnen und -konsuln ebenfalls einige oder alle der Aufgaben nach Artikel 43 Absatz 6 des Visakodex ausführen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_39_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "004c8fadf87cc345075f043521ce99d349c7f85a4b87c1e75fb1a3b255387c79"
     },
     {
@@ -2427,10 +2431,10 @@
           "text": "Das EJPD beaufsichtigt den Vollzug der übrigen Einreisebestimmungen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_40",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "19c8287f9779316bed347fe667672c1fafe2e8ddf70ef90b5928779e9a1c6631"
     },
     {
@@ -2476,10 +2480,10 @@
           "text": "Das SEM unterrichtet in den nach den Artikeln 31 und 34 des Visakodex vorgesehenen Fällen die anderen Schengen-Staaten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_41",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d4ef51210a5bae8645b660c9f9b38fcd35a570871ac7d11ea8f81e219fd3a008"
     },
     {
@@ -2499,10 +2503,10 @@
           "text": "Das EDA kann im Einvernehmen mit dem EJPD mit den Schengen-Staaten Verträge über die gegenseitige Stellvertretung im Visumverfahren abschliessen. Es berücksichtigt dabei die völkerrechtlichen Verpflichtungen sowie die Gesamtheit der Beziehungen der Schweiz zu den betroffenen Staaten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_42",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b52f2cb9eaeb38aed8de9c147827f733d45026e7f358f035b50d01bb77e2792f"
     },
     {
@@ -2518,10 +2522,10 @@
           "text": "Für die Zusammenarbeit im Visumverfahren zwischen den Auslandvertretungen der Schengen-Staaten gilt Artikel 48 des Visakodex."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_43",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8aaa6a92247d4aa48512ea063ffa34fef4ed28176b4b1f62bf8deb3ea458b3d6"
     },
     {
@@ -2537,10 +2541,10 @@
           "text": "Die für den Vollzug der Einreisebestimmungen zuständigen Behörden des Bundes und der Kantone arbeiten eng zusammen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_44",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a6662b830a4942924e4690e8d724a2682910052010ec8cda53aaed3cbac5be54"
     },
     {
@@ -2566,10 +2570,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_45",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d320f607e2b8f4f59ac5e424d0ddecbe24c0a3b8bb896734d7ea56aff2f034bf"
     },
     {
@@ -2586,10 +2590,10 @@
           "text": "Aufgehoben"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_46_53",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -2605,10 +2609,10 @@
           "text": "Die für die Grenzkontrollen zuständigen Behörden können als technisches Erkennungsverfahren nach Artikel 103 Absatz 1 AIG ein Gesichtserkennungssystem betreiben. Es beruht auf einem biometrischen Verfahren zur Vermessung der Gesichter ankommender Personen am Flughafen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_54",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "266f12a6439233117c2a2348246f5ac255c5b3f89208177e2a670985840a50c3"
     },
     {
@@ -2666,10 +2670,10 @@
           "text": "Die Daten nach Absatz 1 Buchstaben a–f werden aus den Reisedokumenten und den Flugdokumenten übernommen. Für Daten, die sich nicht aus diesen Dokumenten entnehmen lassen, wird auf die mündlichen Angaben der betroffenen Person abgestellt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_55",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d3f27eaa928aaa66ce5728584005c9cff0b8c00c6f516ebbb73a5574b5749564"
     },
     {
@@ -2685,10 +2689,10 @@
           "text": "Das Gesichtserkennungssystem darf eingesetzt werden bei einer Person, die auf dem Luftweg in die Schweiz einreist und bei der ein Verdacht auf illegale Migration oder auf eine konkrete Gefährdung der inneren oder äusseren Sicherheit der Schweiz besteht."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_56",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e5718a6e4695e86d785e044ba02659feb974ebea56139ed1f4c156fba8aa0d51"
     },
     {
@@ -2714,10 +2718,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_57",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "94950f5d5b47b90e7417e65b47ef390047f0fb5a5190644b6f40c365ac661c8a"
     },
     {
@@ -2737,10 +2741,10 @@
           "text": "Stimmen die biometrischen Daten überein, so zeigt das Gesichtserkennungssystem die Daten nach Artikel 55 Absatz 1 an."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_58",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e625d7bbe9f5ac35eaccea0ff0cde4a2b86328ddcb67452c5f72ecc17e8ba91c"
     },
     {
@@ -2770,10 +2774,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_59",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fcb2dacbe99ff78eb95934da99509f76f06887b973708b35c0cd26ed88e9ed19"
     },
     {
@@ -2797,10 +2801,10 @@
           "text": "Die bei einer Datenabfrage für den Vergleich mit dem Erstbild erstellte Einzelbildaufnahme und die dazugehörenden biometrischen Daten müssen unmittelbar nach der Datenabfrage vernichtet werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_60",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0d8ddb6f56eeb8aee2c40dac580c0dccd6e762b42b49ef6bcefa2f605b3d927c"
     },
     {
@@ -2816,10 +2820,10 @@
           "text": "Die für die Grenzkontrollen zuständigen Behörden sind verantwortlich für die Sicherheit des Gesichtserkennungssystems und die Rechtmässigkeit der Bearbeitung der Personendaten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_61",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6817c8ffac46e3947dc5b8a0fca81baa0da6b45572e348288a72b1f057980e48"
     },
     {
@@ -2835,10 +2839,10 @@
           "text": "Die Rechte der Betroffenen, die Datensicherheit, die Statistik und die Auswertung richten sich sinngemäss nach den Artikeln 50 Absatz 3 und 51–53."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_62",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c8bd5eed6a324af6f825a7d663e109057902be1c3c2d5f985bea4dddef213bc3"
     },
     {
@@ -2858,10 +2862,10 @@
           "text": "In den Abkommen nach Absatz 1 ist namentlich festzulegen, welchen Tätigkeiten die Dokumentenberaterinnen und -berater im Hoheitsgebiet des anderen Staates nachgehen dürfen, wie sie sich anmelden müssen und welchen Status sie innehaben."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_63",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "af350be0d0581a3bdbbab15c515cdd9aad7b85262604f1fad29f68d6c781b29e"
     },
     {
@@ -2891,10 +2895,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_64",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d8caffe11fb384502b0bb87c303d4d3ba3ffe0b2577b8155ca9934b2d4b028b4"
     },
     {
@@ -2932,10 +2936,10 @@
           "text": "Die entsendenden Behörden sind für die operative Umsetzung der Einsätze der Dokumentenberaterinnen und -berater zuständig."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_65",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5dc418a4258501dd6af5040d2cce2880a4f87d65ef637b20d9ff54ec7827c384"
     },
     {
@@ -2973,10 +2977,10 @@
           "text": "Die schweizerischen für die Grenzkontrolle am Einsatzort zuständigen Behörden sind für die operative Umsetzung der Einsätze ausländischer Dokumentenberaterinnen und -berater in der Schweiz zuständig."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_66",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a305e3ee9c35b1b69451b6febd030b655e09ce7aa5a958ee6a680b999227e71c"
     },
     {
@@ -3000,10 +3004,10 @@
           "text": "Gegen Verfügungen der kantonalen Migrationsbehörden nach Artikel 39 stehen die kantonalen Rechtswege offen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_67",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "60bc1c92f2fc3135ae05270c813670e68ecb9f09f748c0cc86e367e69a7c27f8"
     },
     {
@@ -3023,10 +3027,10 @@
           "text": "Verfügungen über die Verweigerung, Annullierung oder Aufhebung von Visa nach Artikel 21 Absatz 1 Buchstabe c werden im Namen des SEM mit einem Formular erlassen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ef8cde961d0fed85555ad931a105b3866eeeebb9e58b55e0ec53d181ab3d8395"
     },
     {
@@ -3082,10 +3086,10 @@
           "text": "Das SEM stellt den für die Überprüfung zuständigen Behörden die erforderlichen Unterlagen zur Verfügung, um eine einheitliche Information zu gewährleisten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "41be3abe6d120f53456c36688fc1176b37bc6f6f06da1bad34af6dc2b3391061"
     },
     {
@@ -3111,10 +3115,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "454e957fb4a242274bb3171e16afd160aeb8b8f2680c049a69e0252e32b27cf7"
     },
     {
@@ -3148,10 +3152,10 @@
           "text": "Reichen Ausländerinnen und Ausländer während der Überprüfung ein Asylgesuch ein, so werden sie nach Abschluss der Überprüfung an ein Zentrum des Bundes nach Artikel 24 AsylG beziehungsweise an ein kantonal oder kommunal geführtes Zentrum nach Artikel 24d AsylG verwiesen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5d54d5ce4dff4c61a0c9db02bd51482476905e401b8c7d1d72c558c04c90427f"
     },
     {
@@ -3179,10 +3183,10 @@
           "text": "Die zuständige Behörde leitet das ausgefüllte Formular an die für das nachfolgende Verfahren zuständige Behörde weiter."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2a259357cd34edfae285475afff19006ff1eda8bf1788fa5da5129ecc6bf3518"
     },
     {
@@ -3202,10 +3206,10 @@
           "text": "Sie darf davon ausgehen, dass eine Überprüfung bereits erfolgt ist, wenn die betroffene Person nach dem 12. Juni 2026 im Informationssystem Eurodac erfasst wurde."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "03e383b37553b66cf942e0a7e8de6096e4a92ddb7d99d1eeaffa8538000ec68f"
     },
     {
@@ -3225,10 +3229,10 @@
           "text": "Wird während der Überprüfung ein Straf- oder Auslieferungsverfahren gegen die betroffene Person eingeleitet, so wird die Überprüfung beendet. Ausgenommen davon sind Strafverfahren, die gestützt auf Artikel 115 AIG eingeleitet werden. Der Grund für die Beendigung wird im Formular nach Artikel 68d vermerkt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_68_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5d8b85af9362f19e646f316cd3a9ae425d94be648fc4cc62f328e870f70814a2"
     },
     {
@@ -3252,10 +3256,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_69",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c3153bfd7d55e3f2f8f5d2f0574f88910e6f3dc163a6786b5259b94dfcc85fb0"
     },
     {
@@ -3271,10 +3275,10 @@
           "text": "Verfahren, die bei Inkrafttreten dieser Verordnung hängig sind, werden nach neuem Recht fortgeführt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_70",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "64c7f69ca80821965f60f355c1750c0d2712c399ba49cd65902502a836e61aa3"
     },
     {
@@ -3290,10 +3294,10 @@
           "text": "Diese Verordnung tritt am 15. September 2018 in Kraft."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#art_71",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "837e0ed19ccf7c1baba43d6c5a34acfca6d4c8522d4418569a05c3d4f7d71008"
     },
     {
@@ -3344,10 +3348,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#annex_1",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ab3cf1263c4fa7a94e54d3756c710e733aee473b8ae0ec35e354f435fde5fa55"
     },
     {
@@ -3408,10 +3412,10 @@
           "text": "Ukraine"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#annex_2",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ede50028a479840cbcecd1e17d0bd10c176c5164b202869acacd4ac9687d40a4"
     },
     {
@@ -3538,10 +3542,10 @@
           }
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#annex_3",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d724092218cbe9b863aeb785545054a52604aa80ef848f06aada0e130e87f435"
     },
     {
@@ -3574,10 +3578,10 @@
           "text": "Türkei"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#annex_4",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1f4abed1b19313bfc4a4df932b3f48d5f33f617f38da5bc884ddfdf9b7a7b2ca"
     },
     {
@@ -3602,10 +3606,10 @@
           "text": "Durchführungsverordnung (EU) 2026/496 der Kommission vom 6. März 2026 über die vorübergehende Aussetzung der Befreiung von der Visumpflicht für Staatsangehörige Georgiens, die Inhaber von Diplomaten-, Dienst- oder Amtspässen sind, Fassung gemäss ABl. L, 2026/496, 6.3.2026."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/493/de#annex_5",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0a3664b4221e37f22cf8829b95e922e714e62625301f00a69b7843c08dd95d1e"
     }
   ]

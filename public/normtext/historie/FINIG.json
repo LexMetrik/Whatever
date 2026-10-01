@@ -1,8 +1,8 @@
 {
  "erlass": "FINIG",
  "abdeckung": {
-  "fussnoten": 46,
-  "ereignis": 9,
+  "fussnoten": 47,
+  "ereignis": 10,
   "referenz": 36,
   "unparsed": 1
  },
@@ -161,6 +161,28 @@
     }
    ]
   },
+  "61_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "74_a": {
    "giltSeit": null,
    "ereignisse": [
@@ -204,7 +226,7 @@
  "residuum": [
   {
    "token": "75",
-   "nr": "48",
+   "nr": "49",
    "roh": "V vom 6. Nov. 2019 (AS 2019 4631)."
   }
  ]
