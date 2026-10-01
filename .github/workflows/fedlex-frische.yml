@@ -497,10 +497,11 @@ jobs:
           else
             echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
           fi
-          # Auto-Merge tolerant: scheitert nur an Setting/Token, der PR wartet sichtbar.
+          # Auto-Merge bleibt tolerant: scheitert NUR an Repo-Setting/Token-Rechten,
+          # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
           gh pr merge --auto --squash "$branch" || echo "Auto-Merge nicht aktivierbar (Repo-Setting/Token) — PR bleibt offen zur Abnahme."
 
-      # Zettel-Muster (Label, Trap) wie waechter.yml; legt an/kommentiert, schliesst nie.
+      # Zettel-Muster (1.10.2026, QS-MONITOR-ROT) wie waechter.yml; schliesst nie selbst.
       - name: Handschritt-Zettel (überholt, aber html-N nicht auflösbar)
         if: steps.repin.outputs.handschritt == '1'
         env:

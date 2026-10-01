@@ -1,10 +1,7 @@
-# ─── Prod-Smoke: Watchdog über die eigene Live-Site ─────────────────────────
-# FAHRPLAN-BASIS-AUSBAU §A5 (B-11). Gegenstück zu normen-monitor.yml: jener
-# überwacht die QUELLEN (Fedlex/LexWork/Materialien), dieser die eigene PROD.
-# Prüft Kernrouten (200 + Inhalt), den ehrlichen JSON-503/200 der Edge-Suche,
-# Sitemap, statische Assets und die CSP-Kopfzeile. Bei Rot ein sichtbarer Issue
-# (Muster wie normen-monitor; keine Issue-Flut). Reine Netz-Prüfung, kein
-# npm-Build, keine Env-Secrets nötig.
+# ─── Prod-Smoke: Watchdog über die eigene Live-Site ────────────────
+# FAHRPLAN-BASIS-AUSBAU §A5 (B-11). Gegenstück zu normen-monitor.yml (QUELLEN):
+# prüft die eigene PROD — Kernrouten, Edge-Suche (JSON-503/200), Sitemap, Assets,
+# CSP. Reine Netz-Prüfung ohne Build/Secrets. Bei Rot ein Zettel (Muster: waechter.yml).
 name: Prod-Smoke
 
 on:
@@ -40,7 +37,6 @@ jobs:
         env:
           SMOKE_BASE_URL: ${{ github.event.inputs.base_url }}
         run: npm run smoke:prod
-            # Zettel-Muster (Label alarm:prod-smoke, Trap) wie waechter.yml.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
         if: failure()
         env:

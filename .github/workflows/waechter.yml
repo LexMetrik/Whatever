@@ -10,17 +10,20 @@
 # Der Wächter darf darum NICHT an `ci.yml` hängen: ein PR-getriebenes Tor
 # meldet nur, wenn jemand einen PR fährt. Der Auslöser muss die ZEIT sein.
 #
-# Er läuft bewusst NICHT in `check:seriell`: sein Befund betrifft die Automatik
-# auf `main`, nicht einen Arbeitsbaum — ein kaputter Wochen-Job soll den lokalen
-# Bau nicht blockieren, sondern sichtbar sein (rot in der Actions-Liste).
+# Er läuft bewusst NICHT in `check:seriell`: sein Befund betrifft den Zustand
+# der Automatik auf `main`, nicht die Korrektheit eines Arbeitsbaums. Ein
+# kaputter Wochen-Job soll den lokalen Bau nicht blockieren — er soll sichtbar
+# sein. Sichtbarkeit stellt dieser Workflow her (rot in der Actions-Liste).
 name: Wächter (geplante Läufe)
 
 on:
   schedule:
     - cron: '11 6 * * *' # täglich 06:11 UTC — nach den 04:43/05:17-Jobs
-  # Rückbau 19.9.2026 (QS-ORG-UMZUG): `push`-Auslöser, Job `autozug` (BEHIND-
-  # Nachzug) und `if: github.event_name != 'push'` gestrichen — die native
-  # Merge-Queue (Ruleset 23699779) zieht Zweige selbst nach.
+  # Rückbau 19.9.2026 (QS-ORG-UMZUG): Auslöser `push: branches: [main]`, der Job
+  # `autozug` (BEHIND-Nachzug per `gh pr update-branch`) und das dazugehörige
+  # `if: github.event_name != 'push'` am Job `laeufe` ersatzlos gestrichen — seit
+  # dem Org-Umzug serialisiert die native Merge-Queue auf main (Ruleset 23699779)
+  # und zieht den Zweig selbst nach; ein BEHIND-Rennen kann es nicht mehr geben.
   workflow_dispatch:
 
 permissions:
@@ -31,7 +34,11 @@ permissions:
   checks: read
   pull-requests: read
   statuses: read
-  # `issues: write` seit 14.8.2026 (Aktivierungs-Audit) — Selbstmeldung unten.
+  # `issues: write` seit 14.8.2026 (Aktivierungs-Audit) — für die Selbstmeldung
+  # unten (Muster normen-monitor.yml). Vorher hatte dieser Workflow als
+  # einziger geplanter Wächter KEINE Issue-Eskalation: er war seit 10.8.2026
+  # täglich rot (5/5), ohne dass es jemand erfuhr — genau die Fehlerklasse,
+  # gegen die er selbst gebaut wurde (Kopf-Kommentar oben).
   issues: write
 
 jobs:
@@ -155,14 +162,20 @@ jobs:
           done < prs.tsv
 
       # ── Selbstmeldung (14.8.2026, Aktivierungs-Audit) ───────────────────────
-      # Muster normen-monitor.yml: bis dahin war dies der einzige geplante
-      # Wächter ohne Issue-Eskalation — täglich rot seit 10.8.2026 (5/5),
-      # unbemerkt. `if: failure()`/`success()` werten ALLE vorangehenden
-      # Schritte des Jobs aus. ZETTEL-MUSTER (1.10.2026, QS-MONITOR-ROT; alle
-      # vier Alarm-Workflows gleich): Fund per Label `alarm:<name>` + Autor
-      # github-actions statt Titelsuche (Handzettel bleiben unberührt); der
-      # ERR-Trap macht jede Pflege-Panne zur `::warning::` mit Exit 0 — die
-      # Zettel-Pflege färbt den Lauf nie, den Rot-Status trägt der Prüfschritt.
+      # Muster von normen-monitor.yml (dort seit A2/K5 bewährt): dieser
+      # Workflow war der einzige geplante Wächter OHNE Issue-Eskalation — er
+      # war seit 10.8.2026 täglich rot (5/5), und niemand erfuhr es. Genau die
+      # Fehlerklasse «ein Ausfall, den niemand bemerkt» (Kopf-Kommentar oben),
+      # nur diesmal am Melder selbst. `if: failure()`/`if: success()` sind die
+      # eingebauten GitHub-Actions-Statusfunktionen: sie werten den Zustand
+      # ALLER vorangehenden Schritte dieses Jobs aus (auch den `if: always()`-
+      # Nachzug oben), nicht nur des unmittelbar vorigen.
+      # ZETTEL-MUSTER (1.10.2026, QS-MONITOR-ROT; gilt gleich für normen-monitor,
+      # prod-smoke, fedlex-frische): Fund per Label `alarm:<name>` + Autor
+      # github-actions statt per Titelsuche — ein Handzettel mit gleichen
+      # Titelwörtern bleibt unberührt. Der ERR-Trap macht jede Pflege-Panne
+      # (API-Störung) zur `::warning::` mit Exit 0: die Zettel-Pflege ändert das
+      # Lauf-Ergebnis nie, Rot kommt allein vom Prüfschritt.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
         if: failure()
         env:
