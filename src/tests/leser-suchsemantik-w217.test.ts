@@ -51,7 +51,7 @@ describe('findeVorkommen — Zeichenvarianten werden vereinheitlicht (PE-C9-B05)
     const text = 'Fussgänger';
     const [[von, bis]] = findeVorkommen(text, 'Fussgänger');
     expect([von, bis]).toEqual([0, text.length]);
-    expect(findeVorkommen(text, 'ä')).toEqual([[6, 8]]);
+    expect(findeVorkommen(text, 'ä')).toEqual([[5, 7]]);
     // akzenttreu bleibt es: «a» findet das zerlegte ä NICHT.
     expect(findeVorkommen(text, 'ga')).toEqual([]);
   });
@@ -63,7 +63,7 @@ describe('findeVorkommen — Zeichenvarianten werden vereinheitlicht (PE-C9-B05)
   });
 
   it('geschützte Leerzeichen ≙ Leerzeichen («Art. 97» = «Art. 97»)', () => {
-    expect(findeVorkommen('nach Art. 97 OR', 'Art. 97')).toEqual([[5, 13]]);
+    expect(findeVorkommen('nach Art. 97 OR', 'Art. 97')).toEqual([[5, 12]]);
   });
 
   it('Tausender-Faltung und Gross/Klein bleiben unverändert (B1, §6.3)', () => {
@@ -223,7 +223,7 @@ describe('Fussnoten-Reihenfolge im Index = Anzeige (nach Nummer) (PE-C9-B04)', (
       },
     });
     const f = artikelFundstellen(baueLeserSuchIndex('X', e, st), '61', 'x ');
-    expect(f.map((x) => x.ausschnitt.nach)).toEqual(['neun', 'zehn', 'zehn a', 'ohne Nummer']);
+    expect(f.map((x) => x.ausschnitt.nach.trim())).toEqual(['neun', 'zehn', 'zehn a', 'ohne Nummer']);
   });
 });
 

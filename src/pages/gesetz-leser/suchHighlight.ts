@@ -45,53 +45,174 @@ export const SUCH_HIGHLIGHT = 'lc-such-treffer';
 //
 // LÄNGENTREUE ÜBER EINE KARTE, nicht über gleich lange Ersetzung: die Offsets
 // dieser Funktion adressieren Text-Knoten (Range-Grenzen) und Ausschnitte, sie
-// MÜSSEN also auf den rohen Text zeigen. `karte[i]` hält zu jedem gefalteten
-// Zeichen seinen ursprünglichen Index.
+// MÜSSEN also auf den rohen Text zeigen. `von[i]`/`bis[i]` halten zu jedem
+// gefalteten Zeichen seinen ursprünglichen Bereich (Stand 1.10.2026: Anfang UND
+// Ende, weil seit PE-C9-B05 ein gefaltetes Zeichen mehrere rohe Zeichen decken
+// kann — zerlegter Umlaut — oder umgekehrt, ß → «ss»).
 const TRENNER = new Set(["'", '’', '‘', '´', '`', ' ', ' ', ' ', ' ']);
 
 function istZiffer(z: string | undefined): boolean {
   return z !== undefined && z >= '0' && z <= '9';
 }
 
-/** Tausendertrenner aus dem Vergleich nehmen; `karte` bildet nach roh zurück. */
-function falteZahlgruppen(text: string): { gefaltet: string; karte: number[] } {
+// ─── W2·17-UI-BEFUNDE · PE-C9-B05 · Zeichenvarianten ─────────────────────────
+//
+// Derselbe Gedanke wie bei den Tausendern, eine Stufe davor: der Korpus trägt
+// Zeichen, die im Satzbild gleich aussehen, im Zeichenvergleich aber verschieden
+// sind — gemessen 1.10.2026 über public/normtext: geschützter Bindestrich U+2011
+// 871× in 166 Dateien (193× INNERHALB eines Wortes, «IV‑Stelle»), zerlegte Umlaute
+// (a + U+0308) 34×, ß 20×, unsichtbare Trennzeichen (U+00AD/200B/2060) im Wort 15×.
+// Wer «IV-Stelle» tippte, bekam in der IVV 101 Fundstellen und verfehlte sieben
+// Artikel stumm; «Gleichmässigkeit» fand in der VZV nichts, der Text trägt
+// «Gleichmäßigkeit». Zähler UND Hervorhebung waren dabei untereinander gleich —
+// beide meldeten zu wenig (§8: «kein Artikel gefunden» bei sichtbarem Wort).
+//
+// Die Faltung steht im selben Vergleich wie die Tausender-Faltung (§5: ein
+// Vergleichsort) und gilt auf BEIDEN Seiten:
+//   · NFC — zerlegte Umlaute werden zusammengesetzt (akzenttreu bleibt es: «a»
+//     findet «ä» nicht);
+//   · U+2010/U+2011 → «-»;
+//   · U+00AD, U+200B–U+200D, U+2060 (der Wortverbinder, den die Darstellung vor
+//     jeden Fussnoten-Marker setzt), U+FEFF fallen aus;
+//   · geschützte/schmale Leerzeichen U+00A0, U+2007, U+2009, U+202F → «␠»;
+//   · ß → «ss» (Schweizer Schreibweise tippt ss; der Text kann ß tragen).
+// Nichts davon verändert den gespeicherten oder gezeigten Text; die Karte bildet
+// jede Stelle des gefalteten Vergleichs auf den ROHEN Bereich zurück (von/bis).
+const UNSICHTBAR = new Set(['­', '​', '‌', '‍', '⁠', '﻿']);
+const LEERARTIG = new Set([' ', ' ', ' ', ' ']);
+const BINDESTRICH = new Set(['‐', '‑']);
+/** Schneller Vorlauf: enthält der (kleingeschriebene) Text etwas, das gefaltet wird? */
+const FALTUNG_NOETIG = /[̀-ͯ­​-‍⁠﻿‐‑    ß]|[0-9][ '’‘´`][0-9]{3}/;
+
+interface Gefaltet {
+  gefaltet: string;
+  /** Roh-Anfang/-Ende je gefaltetem Zeichen; `null` = Identität (nichts gefaltet). */
+  von: number[] | null;
+  bis: number[] | null;
+}
+
+/** Stufe 1: Zeichen-Faltung samt Rück-Karte (nur im langsamen Pfad). */
+function falteZeichen(roh: string): { s: string; von: number[]; bis: number[] } {
+  let s = '';
+  const von: number[] = [];
+  const bis: number[] = [];
+  const n = roh.length;
+  for (let i = 0; i < n;) {
+    let j = i + 1;
+    // kombinierende Zeichen (U+0300–U+036F) gehören zu ihrem Grundzeichen
+    while (j < n && roh.charCodeAt(j) >= 0x300 && roh.charCodeAt(j) <= 0x36f) j++;
+    let teil = roh.slice(i, j);
+    if (j - i > 1) teil = teil.normalize('NFC');
+    for (const z of teil.toLowerCase()) {
+      if (UNSICHTBAR.has(z)) continue;
+      const aus = z === 'ß' ? 'ss' : BINDESTRICH.has(z) ? '-' : LEERARTIG.has(z) ? ' ' : z;
+      for (let k = 0; k < aus.length; k++) { s += aus[k]; von.push(i); bis.push(j); }
+    }
+    i = j;
+  }
+  return { s, von, bis };
+}
+
+/** Tausendertrenner aus dem Vergleich nehmen; die Karte bildet nach roh zurück. */
+function falteZahlgruppen(text: string): { gefaltet: string; behalten: number[] | null } {
   let gefaltet = '';
-  const karte: number[] = [];
+  const behalten: number[] = [];
+  let weg = false;
   for (let i = 0; i < text.length; i++) {
     if (
       TRENNER.has(text[i])
       && istZiffer(text[i - 1])
       && istZiffer(text[i + 1]) && istZiffer(text[i + 2]) && istZiffer(text[i + 3])
       && !istZiffer(text[i + 4])
-    ) continue; // Tausendertrenner — fällt aus dem Vergleich
+    ) { weg = true; continue; } // Tausendertrenner — fällt aus dem Vergleich
     gefaltet += text[i];
-    karte.push(i);
+    behalten.push(i);
   }
-  return { gefaltet, karte };
+  return weg ? { gefaltet, behalten } : { gefaltet: text, behalten: null };
+}
+
+/** Vergleichsform eines Textes (klein, gefaltet) samt Rück-Karte auf den rohen Text. */
+function falte(roh: string): Gefaltet {
+  const klein = roh.toLowerCase();
+  // Häufigster Fall: nichts zu falten ⇒ Identität, keine Karte, keine Kopie.
+  if (klein.length === roh.length && !FALTUNG_NOETIG.test(klein)) return { gefaltet: klein, von: null, bis: null };
+  const z = falteZeichen(roh);
+  const g = falteZahlgruppen(z.s);
+  if (!g.behalten) return { gefaltet: z.s, von: z.von, bis: z.bis };
+  return {
+    gefaltet: g.gefaltet,
+    von: g.behalten.map((k) => z.von[k]),
+    bis: g.behalten.map((k) => z.bis[k]),
+  };
 }
 
 /** Substring-Vorkommen (case-insensitiv) als [start, end)-Offsetpaare IM ROHEN
  *  Text. Rein und vitest-getestet. Vergleichsgrundlage ist der akzenttreue
  *  Teilstring über `toLowerCase` — wie `passtAufSuche` (helpers.tsx) — ZUZÜGLICH
- *  der Tausender-Faltung oben, die `passtAufSuche` bewusst NICHT kennt: dort
- *  geht es um Katalog-/Listenfilter, hier um den Abgleich zwischen Index und
- *  gemaltem Wortlaut, und nur dieser trägt den §4.4-Vertrag. */
+ *  der Tausender- und Zeichen-Faltung oben, die `passtAufSuche` bewusst NICHT
+ *  kennt: dort geht es um Katalog-/Listenfilter, hier um den Abgleich zwischen
+ *  Index und gemaltem Wortlaut, und nur dieser trägt den §4.4-Vertrag. */
 export function findeVorkommen(text: string, begriff: string): Array<[number, number]> {
-  const b = falteZahlgruppen(begriff.toLowerCase()).gefaltet;
+  const b = falte(begriff).gefaltet;
   if (b === '') return [];
-  const { gefaltet: hay, karte } = falteZahlgruppen(text.toLowerCase());
+  const { gefaltet: hay, von, bis } = falte(text);
   const treffer: Array<[number, number]> = [];
   let ab = 0;
+  let letztesEnde = 0;
   // indexOf-Schleife statt Regex: der Begriff ist frei (Sonderzeichen), und ein
   // Teilstring-Vergleich braucht kein Escaping. Fortschritt IMMER ≥1 (b.length≥1).
   for (;;) {
     const i = hay.indexOf(b, ab);
     if (i < 0) break;
-    // Zurück in den ROHEN Text: Anfang des ersten, Ende des letzten Zeichens.
-    treffer.push([karte[i], karte[i + b.length - 1] + 1]);
     ab = i + b.length;
+    // Zurück in den ROHEN Text: Anfang des ersten, Ende des letzten Zeichens.
+    const s = von ? von[i] : i;
+    const e = bis ? bis[i + b.length - 1] : i + b.length;
+    // Zwei Treffer, die im Rohtext dasselbe Zeichen decken (Suche «s» in «ß» =
+    // «ss»), sind EINE Stelle — sonst zählte und malte der Leser sie doppelt.
+    if (s < letztesEnde) continue;
+    treffer.push([s, e]);
+    letztesEnde = e;
   }
   return treffer;
+}
+
+/** Eine Fundstelle über mehrere Textknoten: Knoten-Index + Offset je Ende. */
+export interface KnotenStelle {
+  vonKnoten: number;
+  vonOffset: number;
+  bisKnoten: number;
+  bisOffset: number;
+}
+
+/**
+ * Vorkommen des Begriffs in einer FOLGE zusammenhängender Textknoten — W2·17-
+ * UI-BEFUNDE / PE-C9-B03. Der Wortlaut ist im DOM an Autolinks und Fussnoten-
+ * Markern in mehrere Textknoten zerlegt («nach » | `<a>Artikel 269</a>`); der
+ * Index zählt den Satz am Stück. Wer je Knoten verglich, malte «nach Artikel»
+ * 6 von 49 Mal (OR) und sprang auf die falsche Stelle. Hier wird über die
+ * verkettete Zeichenkette verglichen (dieselbe `findeVorkommen`, also dieselbe
+ * Faltung) und jedes Ende auf seinen Knoten zurückgerechnet. Rein (§2).
+ * Voraussetzung: keine leeren Knoten (der Aufrufer filtert sie).
+ */
+export function findeUeberKnoten(texte: readonly string[], begriff: string): KnotenStelle[] {
+  if (texte.length === 0) return [];
+  if (texte.length === 1) {
+    return findeVorkommen(texte[0], begriff)
+      .map(([v, b]) => ({ vonKnoten: 0, vonOffset: v, bisKnoten: 0, bisOffset: b }));
+  }
+  const starts: number[] = [];
+  let summe = 0;
+  for (const t of texte) { starts.push(summe); summe += t.length; }
+  const out: KnotenStelle[] = [];
+  let k = 0;
+  for (const [von, bis] of findeVorkommen(texte.join(''), begriff)) {
+    while (k + 1 < texte.length && starts[k + 1] <= von) k++; // Treffer wachsen: k nur vorwärts
+    let ke = k;
+    while (ke + 1 < texte.length && starts[ke + 1] < bis) ke++;
+    out.push({ vonKnoten: k, vonOffset: von - starts[k], bisKnoten: ke, bisOffset: bis - starts[ke] });
+  }
+  return out;
 }
 
 // Die CSS Custom Highlight API ist (je nach TS-lib) nicht typisiert — darum über
@@ -193,6 +314,22 @@ function istGerendert(el: Element): boolean {
 }
 
 /**
+ * Beendet dieses Element den laufenden Textlauf (PE-C9-B03)? Ja bei jedem
+ * Nicht-Inline-Element — Absatz, Zelle, Listenpunkt, hängende Marke (`inline-
+ * block`) — und bei `<br>`. Autolinks, Auszeichnungen und die (ohnehin
+ * übersprungenen) Marker sind `inline` und halten den Lauf zusammen. Index und
+ * DOM stimmen damit an den Grenzen überein, an denen der Index seine Bausteine
+ * trennt (Absatz | Marke | Randtitel | Label); `display: contents` ist
+ * durchsichtig.
+ */
+function trenntLauf(el: Element): boolean {
+  if (el.tagName === 'BR') return true;
+  if (typeof getComputedStyle !== 'function') return false;
+  const d = getComputedStyle(el).display;
+  return d !== 'inline' && d !== 'contents';
+}
+
+/**
  * Sammelt die Treffer-Bereiche des Begriffs in `container` — in DOKUMENT-
  * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
  *
@@ -215,33 +352,46 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
   // Ab-1-Zeichen genügt (passtAufSuche matcht ab 1 Zeichen); leer ⇒ nichts.
   if (!container || b === '' || typeof document === 'undefined') return [];
   const ranges: Range[] = [];
-  // SHOW_ELEMENT mitlaufen lassen, damit FILTER_REJECT einen ganzen Teilbaum
-  // abschneiden kann (ein reiner SHOW_TEXT-Walker sieht die Elemente nicht und
-  // müsste je Textknoten die Vorfahrenkette hochlaufen).
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
-    acceptNode(k) {
-      if (k.nodeType !== Node.ELEMENT_NODE) return NodeFilter.FILTER_ACCEPT;
-      const el = k as Element;
-      if (el.hasAttribute(SUCH_META) || istFussnotenMarker(el) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
-      // Das Element selbst trägt keinen Text — nur seine Kinder besuchen.
-      return NodeFilter.FILTER_SKIP;
-    },
-  });
-  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
-    const text = n.nodeValue ?? '';
-    if (text === '') continue;
+  // W2·17-UI-BEFUNDE / PE-C9-B03: der Vergleich läuft über LÄUFE zusammen-
+  // hängender Textknoten, nicht je Knoten. Ein Lauf endet an jeder Blockgrenze
+  // (`trenntLauf`); Autolinks und Marker (übersprungen, aber KEINE Grenze)
+  // unterbrechen ihn nicht — so ist «nach Artikel» auch dort eine Stelle, wo der
+  // Artikelverweis ein eigenes `<a>` ist. Die Elemente werden selbst besucht
+  // (statt TreeWalker), weil eine Blockgrenze Betreten UND Verlassen kennt.
+  let knoten: Text[] = [];
+  let texte: string[] = [];
+  const leere = () => {
+    if (texte.length === 0) return;
     // B1: DIESELBE Vergleichsfunktion wie der Index — nicht ein zweiter
-    // indexOf daneben. Bis hierher lief hier eine eigene Schleife, und genau
-    // deshalb konnte der DOM eine Schreibweise finden, die der Index nicht
-    // kannte (und umgekehrt). `findeVorkommen` liefert Offsets im ROHEN Text,
-    // also taugen sie unverändert als Range-Grenzen.
-    for (const [von, bis] of findeVorkommen(text, b)) {
+    // indexOf daneben (`findeUeberKnoten` ruft `findeVorkommen`).
+    for (const st of findeUeberKnoten(texte, b)) {
       const r = document.createRange();
-      r.setStart(n, von);
-      r.setEnd(n, bis);
+      r.setStart(knoten[st.vonKnoten], st.vonOffset);
+      r.setEnd(knoten[st.bisKnoten], st.bisOffset);
       ranges.push(r);
     }
-  }
+    knoten = [];
+    texte = [];
+  };
+  const besuche = (el: Node) => {
+    for (let k = el.firstChild; k; k = k.nextSibling) {
+      if (k.nodeType === Node.TEXT_NODE) {
+        const t = k.nodeValue ?? '';
+        if (t !== '') { knoten.push(k as Text); texte.push(t); }
+        continue;
+      }
+      if (k.nodeType !== Node.ELEMENT_NODE) continue;
+      const e = k as Element;
+      // Der GANZE Teilbaum fällt weg (Bedien-Zeilen, Verweiszeichen, Nicht-Gerendertes).
+      if (e.hasAttribute(SUCH_META) || istFussnotenMarker(e) || !istGerendert(e)) continue;
+      const grenze = trenntLauf(e);
+      if (grenze) leere();
+      besuche(e);
+      if (grenze) leere();
+    }
+  };
+  besuche(container);
+  leere();
   return ranges;
 }
 
