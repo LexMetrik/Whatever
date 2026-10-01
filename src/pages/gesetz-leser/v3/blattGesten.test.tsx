@@ -154,7 +154,7 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     // Fall (f), Läufe 35984783583/36009374111).
     setTimeout(() => reihenfolge.push('fremde-navigation'), 0);
 
-    // Schliessen (✕/Esc/Scrim): aktiv → false, der Cleanup läuft synchron
+    // Schliessen (✕/Esc/Scrim): offen → false, der Cleanup läuft synchron
     // und plant den Mikrotask.
     await rendern(ziel, false, () => {});
     await act(async () => { await Promise.resolve(); }); // Mikrotasks abarbeiten
@@ -192,7 +192,7 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     expect(fenster.history.back).not.toHaveBeenCalled();
   });
 
-  it('Zuschnittwechsel, dann ✕ auf dem breiten Zuschnitt: weiter kein back() (der Hook ist inaktiv)', async () => {
+  it('Zuschnittwechsel, dann Schliessen auf dem breiten Zuschnitt: weiter kein back() (der Hook ist inaktiv)', async () => {
     const { ziel, fenster } = aufbauen();
     await rendern(ziel, true, () => {});
     await rendern(ziel, true, () => {}, false);

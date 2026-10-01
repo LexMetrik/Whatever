@@ -372,8 +372,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
       let tor: Promise<unknown> | null = null
       const torAuf = () => (tor ??= fetch('/__lm-nachzug-tor').then((r) => r.text()))
       History.prototype.back = function (this: History) {
-        const dieses = this
-        void torAuf().then(() => echtes.call(dieses))
+        void torAuf().then(() => echtes.call(this))
       }
       let gemeldet = false
       new MutationObserver(() => {
