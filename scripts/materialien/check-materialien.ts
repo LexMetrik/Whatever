@@ -29,7 +29,7 @@
 //    (Erhebungsdatum zu alt ⇒ rot) lebt bewusst NICHT hier, sondern im eigenen, standalone
 //    Tor `check:vernehmlassungen-alter` (K7-Entscheid, Begründung dort UND in
 //    scripts/materialien/vernehmlassungen-tor.ts) — sonst würde ein wanduhr-Rot fachfremde
-//    Aufrufer dieses Tors (z. B. normen-monitor.yml Job `bs-grossrat`) vor deren PR-Schritt
+//    Aufrufer dieses Tors (z. B. normen-monatslauf.yml Job `bs-grossrat`) vor deren PR-Schritt
 //    mit einem Vernehmlassungs-Befund töten.
 // Harte Verstösse → exit 1.
 

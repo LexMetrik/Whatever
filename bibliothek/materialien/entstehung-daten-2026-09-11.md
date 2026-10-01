@@ -151,7 +151,7 @@ Zahl — Entscheid David 11.9.2026 Nr. 3.
 | Verfahrensketten | mit jedem Botschaften-Lauf | `npm run materialien:botschaften -- --datum=$(date +%F)`; Arbiter `check:botschaften-netz` |
 | Anker-Sidecars | wenn eine neue Botschaft dazukommt | `npm run materialien:anker -- --datum=$(date +%F)`; Parser-Änderung nur mit `--parser-neu="<Grund>"` |
 | Deckungs-Register | nach jedem Historie-/Revisions-Lauf | `npm run entstehung:deckung -- --datum=$(date +%F)`; Senkung nur mit Feld `grund` |
-| Curia-Shards | Monatslauf | `normen-monitor.yml`, nie in der Gate-Kette (≈ 20 min) |
+| Curia-Shards | Monatslauf | `normen-monatslauf.yml`, nie in der Gate-Kette (≈ 20 min) |
 | `type-projet`-Tabelle | wenn der Generator einen unbekannten Code meldet | gegen das amtliche Vokabular nachführen, nie raten |
 
 ## 6 · Offen

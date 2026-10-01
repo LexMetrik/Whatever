@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-30
 -->
 
 Randinkonsistenz (#1201-Bericht).
+
+Bewertet P2 (1.10.2026): derselbe Befund wie Posten «Kanton: 340 Artikel …» — beide sind EIN Entscheid (Option A/B/C dort). Nicht gebaut.
