@@ -114,9 +114,12 @@ export function markenAnzeige(marke: string, trenner?: string): string {
   const art = markenArt(marke, trenner);
   if (art === 'strich') return '–';
   if (trenner !== undefined) return `${marke.trimEnd()}${trenner}`;
-  if (art !== 'label') return `${marke}.`;
+  // W2·17 E-D2-B02: endet die Marke schon auf ein Satzzeichen (Phrasen-Marke
+  // «1. Légalisation de signature:» aus Tabellenzeilen-Items, «a)»), wird keines
+  // angehängt — «signature:.» war ein erfundenes Zeichen (§1).
   const m = marke.trimEnd();
-  return /[:.;,]$/.test(m) ? m : `${m}:`;
+  if (/[:.;,)]$/.test(m)) return m;
+  return art !== 'label' ? `${marke}.` : `${m}:`;
 }
 
 /** Verschachtelungsstufe je Item. PRIMÄR aus der EXPLIZITEN `tiefe` des
@@ -132,12 +135,24 @@ export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): num
   const hatTiefe = items.some((it) => typeof it.tiefe === 'number');
   if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
   const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  const arten = items.map((it) => typ(it.marke));
+  // W2·17 E-D2-B01: kantonale Listen «1. a. b. c. 2. 3.» stellen die lit. UNTER
+  // die Ziff. Erkennbar daran, dass die erste Nicht-Strich-Marke eine Ziffer ist
+  // UND später eine lit. auf eine Ziff. folgt (Ziff.→lit.-Übergang). Dann ist die
+  // Ziff. die äussere Stufe; die Bund-Reihenfolge «a. 1. 2. b.» (lit. zuerst)
+  // bleibt unverändert. Ohne diese Umkehr stand Ziff. 2 ff. als Kind der letzten
+  // lit. — und der Zitierknopf lieferte «Art. 1 Abs. 1 lit. c Ziff. 2».
+  const erste = arten.find((a) => a !== 'strich');
+  // «Echte» lit. = Kleinbuchstaben-Marke («a», «abis», «a)»); Phrasen-, Symbol-
+  // und Leer-Marken («[tab]», «½‰», «Somme du gage:») lösen die Umkehr nicht aus.
+  const echteLit = (i: number) => arten[i] === 'lit' && /^\p{Ll}+[).]?$/u.test(items[i].marke.trim());
+  const ziffAussen = erste === 'ziff' && arten.some((_, i) => echteLit(i) && arten.slice(0, i).includes('ziff'));
   const stufen: number[] = [];
   let sahLit = false, letzteNichtStrich = 0;
-  for (const it of items) {
-    const t = typ(it.marke);
+  for (const t of arten) {
     let lv: number;
     if (t === 'strich') lv = letzteNichtStrich + 1;
+    else if (ziffAussen) { lv = t === 'ziff' ? 0 : 1; letzteNichtStrich = lv; }
     else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
     else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
     stufen.push(lv);
