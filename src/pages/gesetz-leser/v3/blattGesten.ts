@@ -39,6 +39,14 @@ export function useZurueckSchliesst(aktiv: boolean, schliesse: () => void): void
   useEffect(() => {
     if (!aktiv || typeof window === 'undefined') return;
     laeuft.current = true;
+    // Ganzseiten-Navigation unterwegs? `beforeunload` feuert bei einer vom
+    // Browser angestossenen Navigation (Adresse tippen, Lesezeichen, Test-
+    // `page.goto`) BEVOR die Anfrage rausgeht — das alte Dokument lebt dann
+    // noch, bis die Antwort committet. Siehe Cleanup: dort darf kein
+    // `history.back()` mehr hinterherlaufen.
+    let verlassen = false;
+    const onVerlassen = () => { verlassen = true; };
+    window.addEventListener('beforeunload', onVerlassen);
     if (!traegtMarke()) {
       const st: unknown = window.history.state;
       window.history.pushState({ ...(typeof st === 'object' && st ? st : {}), [MARKE]: true }, '');
@@ -52,6 +60,7 @@ export function useZurueckSchliesst(aktiv: boolean, schliesse: () => void): void
     window.addEventListener('popstate', onPop);
     return () => {
       window.removeEventListener('popstate', onPop);
+      window.removeEventListener('beforeunload', onVerlassen);
       laeuft.current = false;
       // Einen Takt später: StrictMode baut den Effekt im Dev sofort wieder auf —
       // dann steht `laeuft` wieder, und der Eintrag bleibt (sonst schlösse das
@@ -73,7 +82,21 @@ export function useZurueckSchliesst(aktiv: boolean, schliesse: () => void): void
       // Rückkehr zur Ereignisschleife) —, lässt aber keine Makrotask-Lücke für
       // eine fremde Navigation offen: Mikrotasks laufen restlos VOR der
       // nächsten Makrotask (jede weitere Nutzer- oder Test-Aktion), nie danach.
-      if (!perZurueck) queueMicrotask(() => { if (!laeuft.current && traegtMarke()) window.history.back(); });
+      //
+      // ZWEITE LÜCKE, NICHT DURCH DEN MIKROTASK GESCHLOSSEN (§17-Nachzug zu
+      // #1046, 1.10.2026, W2·18-FEHLERBUCH; Rot: `e2e/leser-v3-panel-nachzug`
+      // Fall (f2), deterministisch): der Mikrotask schützt nur, wenn die
+      // Navigation NACH dem Aufräumen beginnt. Beginnt sie DAVOR — die
+      // Dokument-Antwort ist noch unterwegs, der Zuschnittwechsel (Resize →
+      // React-Commit → dieses Cleanup) läuft erst jetzt, etwa weil der
+      // Renderer unter Last hinterherhinkt —, bricht ein `history.back()`
+      // die hängende Ganzseiten-Navigation ab (`net::ERR_ABORTED`; für Nutzer:
+      // Drehen des Telefons während eines Seitenwechsels verwirft ihn). Dann
+      // verlassen wir das Dokument ohnehin: der Eintrag ist egal, `back()`
+      // unterbleibt. Wurde das Verlassen im Browser abgebrochen («Seite
+      // verlassen?»), bleibt der Eintrag stehen — der Zustand VOR D-7, kein
+      // Schaden ausser einem zusätzlichen Zurück.
+      if (!perZurueck && !verlassen) queueMicrotask(() => { if (!laeuft.current && traegtMarke()) window.history.back(); });
     };
   }, [aktiv]);
 }

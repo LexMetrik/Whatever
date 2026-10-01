@@ -275,6 +275,72 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
+  test('(f2) Zuschnittwechsel im alten Dokument bricht eine bereits hängende Navigation nicht ab', async ({ page }) => {
+    // FLACKER-WURZEL VON (f) (W2·18-FEHLERBUCH, 1.10.2026): `useZurueckSchliesst`
+    // (`v3/blattGesten`) räumt beim Verlassen des modalen Zustands seinen
+    // History-Eintrag per `history.back()` auf. #1046 (24.9.2026) schloss die
+    // Lücke «Navigation beginnt NACH dem Aufräumen» (Mikrotask statt
+    // Makrotask). Offen blieb die Gegenrichtung: die Navigation läuft SCHON,
+    // das alte Dokument lebt bis zum Commit der Antwort weiter — und räumt dann
+    // auf, weil der Renderer mit Resize → React-Commit hinterherhinkt (so in
+    // CI: `setViewportSize` kehrt zurück, bevor das Dokument reagiert hat, und
+    // das nächste `page.goto` ist schon unterwegs). Das `back()` bricht die
+    // Navigation ab: `net::ERR_ABORTED` am `page.goto`.
+    // Dieser Fall stellt die Reihenfolge DETERMINISTISCH her, statt sie vom
+    // Takt des Runners zu erhoffen: eine Route hält die Dokument-Antwort der
+    // Navigation fest, während das alte Dokument den Zuschnitt wechselt.
+    // ROT: in `blattGesten.ts` die `verlassen`-Prüfung entfernen ⇒
+    // «page.goto: net::ERR_ABORTED» (gemessen 1.10.2026 gegen den Stand von main, 5/5 rot).
+    //
+    // WERKZEUG-FALLE (gemessen 1.10.2026): solange die Navigation an der Route
+    // hängt, antwortet das Dokument dem TEST nicht — `page.evaluate`, jede
+    // Locator-Prüfung UND der Rückgabewert von `setViewportSize` blockieren bis
+    // zur Freigabe oder zum Abbruch. Beobachten lässt sich das alte Dokument nur
+    // über Konsolen-Ereignisse seines eigenen Init-Skripts: es meldet «settled»,
+    // sobald der Zuschnittwechsel committet ist (MutationObserver auf
+    // `data-v3-panel-modal="nein"`) und zwei Frames — samt Passiv-Effekt-
+    // Aufräumen und Mikrotask — darüber vergangen sind.
+    await page.addInitScript(() => {
+      let gemeldet = false
+      new MutationObserver(() => {
+        if (gemeldet || !document.querySelector('[data-v3-panel-modal="nein"]')) return
+        gemeldet = true
+        requestAnimationFrame(() => requestAnimationFrame(() => console.log('lm-nachzug-f2:settled')))
+      }).observe(document, { subtree: true, childList: true, attributes: true })
+    })
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO')
+    await warteLeser(page)
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await panelAufziehen(page)
+    // Modal heisst: das Blatt belegt einen History-Eintrag (D-7).
+    await expect(page.locator('[data-v3-panel-modal="ja"]')).toBeVisible()
+
+    let halten = false
+    let freigeben!: () => void
+    const tor = new Promise<void>((r) => { freigeben = r })
+    await page.route('**/gesetze/bund/STPO', async (route) => {
+      if (halten && route.request().isNavigationRequest()) await tor
+      await route.continue()
+    })
+    halten = true
+    const gehe = page.goto('/gesetze/bund/STPO').then(() => null, (e: Error) => e.message.split('\n')[0])
+    await page.waitForRequest((r) => r.isNavigationRequest() && r.url().endsWith('/gesetze/bund/STPO'))
+
+    // Navigation hängt; das alte Dokument wechselt jetzt den Zuschnitt. Der
+    // Rückgabewert von `setViewportSize` kommt erst nach der Freigabe (s. o.) —
+    // nicht abwarten, sondern auf das «settled» des Dokuments.
+    const settled = page.waitForEvent('console', { predicate: (m) => m.text() === 'lm-nachzug-f2:settled', timeout: 15_000 })
+    const viewport = page.setViewportSize({ width: 1440, height: 900 })
+    await settled
+
+    halten = false
+    freigeben()
+    await viewport
+    expect(await gehe, 'die hängende Navigation wurde vom alten Dokument abgebrochen').toBeNull()
+    await warteLeser(page)
+  })
+
   test('(g) Ä54 · die Filterzeile ist eine Zeile, nicht ein Block', async ({ page }) => {
     // VORHER, gemessen @1440 (StPO): der Filter-Block war 348 px hoch, die erste
     // Entscheid-Gruppe begann 352 px unter dem Panel-Kopf — drei Erklär-Absätze,

@@ -45,9 +45,10 @@ interface FensterStumpf {
 
 let root: Root | null = null;
 
-function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern: () => void } {
+function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern: () => void; verlassenFeuern: () => void } {
   const { document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
   const popHoerer = new Set<() => void>();
+  const verlassenHoerer = new Set<() => void>();
   let zustand: unknown = null;
   const fenster: FensterStumpf = {
     history: {
@@ -60,8 +61,14 @@ function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern
         popHoerer.forEach((h) => h());
       }),
     },
-    addEventListener: (typ: string, h: () => void) => { if (typ === 'popstate') popHoerer.add(h); },
-    removeEventListener: (typ: string, h: () => void) => { if (typ === 'popstate') popHoerer.delete(h); },
+    addEventListener: (typ: string, h: () => void) => {
+      if (typ === 'popstate') popHoerer.add(h);
+      if (typ === 'beforeunload') verlassenHoerer.add(h);
+    },
+    removeEventListener: (typ: string, h: () => void) => {
+      if (typ === 'popstate') popHoerer.delete(h);
+      if (typ === 'beforeunload') verlassenHoerer.delete(h);
+    },
     document,
   };
   vi.stubGlobal('window', fenster);
@@ -74,6 +81,9 @@ function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern
     // bereits weg (der Browser hat den Eintrag schon genommen), erst DANACH
     // feuert `popstate` — anders als bei unserem eigenen `history.back()` oben.
     popstateFeuern: () => { zustand = null; popHoerer.forEach((h) => h()); },
+    // Simuliert den Beginn einer Ganzseiten-Navigation (Adresse tippen,
+    // `page.goto`): `beforeunload` feuert, das Dokument lebt noch.
+    verlassenFeuern: () => { verlassenHoerer.forEach((h) => h()); },
   };
 }
 
@@ -147,5 +157,23 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     await act(async () => { vi.advanceTimersByTime(0); }); // die Fremd-Makrotask
 
     expect(reihenfolge).toEqual(['eigenes-back', 'fremde-navigation']);
+  });
+
+  it('Navigation SCHON unterwegs (beforeunload), dann Schliessen: history.back() unterbleibt (Nachzug W2·18-FEHLERBUCH)', async () => {
+    const { ziel, fenster, verlassenFeuern } = aufbauen();
+    await rendern(ziel, true, () => {});
+    verlassenFeuern();
+    // Zuschnittwechsel im alten Dokument: aktiv → false, Cleanup läuft.
+    await rendern(ziel, false, () => {});
+    await act(async () => { await Promise.resolve(); }); // Mikrotasks abarbeiten
+    expect(fenster.history.back).not.toHaveBeenCalled();
+  });
+
+  it('Gegenprobe: ohne beforeunload ruft das Schliessen history.back() genau einmal', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, false, () => {});
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
   });
 });
