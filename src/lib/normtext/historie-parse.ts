@@ -421,8 +421,14 @@ export function baueArtikelHistorie(
   let gegenstandslos: { seit: string | null } | undefined;
   for (const fn of fussnoten ?? []) {
     if (!artikelAufhebungMoeglich(fn)) continue;
-    for (const e of parseFussnoteHistorie(fn).ereignisse) {
+    const evs = parseFussnoteHistorie(fn).ereignisse;
+    for (let i = 0; i < evs.length; i++) {
+      const e = evs[i];
       if (e.typ !== 'gegenstandslos') continue;
+      // P7 #27 (1.10.2026): ein UNDATIERTES «Gegenstandslos» lässt sich nicht per Datum widerlegen (s. u.). Die Fussnote
+      // ordnet ihre Eingriffe amtlich chronologisch (ältester zuerst): folgt dem Vermerk in DERSELBEN Fussnote eine
+      // Neufassung/Einfügung, lebt der Artikel wieder. Über Fussnoten hinweg gibt es keine Reihenfolge — dort bleibt er.
+      if (!e.datum && evs.slice(i + 1).some((v) => GILT_TYPEN.has(v.typ))) continue;
       if (!gegenstandslos || (e.datum && (!gegenstandslos.seit || e.datum > gegenstandslos.seit))) gegenstandslos = { seit: e.datum };
     }
   }
