@@ -339,7 +339,7 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
                 : 'border-transparent text-ink-600 cursor-not-allowed'
               }`}>
               {/* GB-21: Ziffer blank in der Zeile, kein Kästchen; erledigt = ✓. */}
-              <span className={`num ${istAktiv || erledigt ? 'text-reg-w' : ''}`}>{erledigt ? '✓' : i + 1}</span>
+              <span className="num">{erledigt ? '✓' : i + 1}</span>
               {s.label}
             </button>
           );

@@ -253,7 +253,9 @@ Flächen-Token `--reg-*-flaeche` (14 % Registerfarbe auf Papier, beide Modi; Wer
 und Rezept: → `design/tokens.json` `reg-g` … `reg-w`, `reg-g-flaeche` …
 `reg-w-flaeche`). Auf einer Fläche steht Tinte (`ink-*`), nie die Registerfarbe
 selbst als Text (gemessen 22.9.2026, hell: `reg-m` 4.10:1 und `reg-w` 4.30:1 auf
-der eigenen Fläche < 4.5). Nie allein bedeutungstragend (F2/B3); im
+der eigenen Fläche < 4.5). Als Schrift nur eng erlaubt: Gruppentitel und
+Listenlinks auf Papier; Zähler und Kleintext bleiben Tinte (Entscheid David
+1.10.2026, W-HN-2 a; Wächter `src/tests/design-registerfarbe-schrift.test.ts`). Nie allein bedeutungstragend (F2/B3); im
 Normtext-Körper gilt weiter §N-4b-B (farbfrei). Kontrast-Schwellen unverändert;
 die Paare — Registerfarbe auf den vier Flächen, Tinte und Registerstrich auf den
 vier Flächen-Token — sind Pflichtpaare im Tor `check:farbwelt`

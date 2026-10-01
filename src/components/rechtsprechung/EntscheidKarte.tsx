@@ -60,7 +60,7 @@ export function EntscheidKarte({ e, onNorm }: {
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
               : leit && <span className="lc-badge lc-badge-ok">Leitentscheid</span>}
-            <span className="lc-overline text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+            <span className="lc-overline" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
             {/* REST S1 (25.9.2026, Posten «maschinell springt @390»): die
                 Randnotiz stand in der RECHTEN Gruppe und sprang mit deren
                 Umbruch mal nach rechts, mal an den linken Rand. Jetzt fest
@@ -145,7 +145,7 @@ export function EntscheidKarte({ e, onNorm }: {
         <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-ink-500">
           {/* Identität führend: amtliche BGE-Zitierung (erkannt/zitierbar) hervorgehoben,
               sonst das Aktenzeichen gedämpft. */}
-          <span className={`num ${istBge(e) ? 'font-medium text-reg-r' : 'text-ink-500'}`}>{hauptIdentitaet(e)}</span>
+          <span className={`num ${istBge(e) ? 'font-medium text-ink-900' : 'text-ink-500'}`}>{hauptIdentitaet(e)}</span>
           <span className="text-ink-300" aria-hidden>·</span>
           <span>{e.gerichtName}</span>
           <span className="text-ink-300" aria-hidden>·</span>

@@ -68,7 +68,7 @@ export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
                     versicherung & Abgaben»). Mobil (horizontale Scroll-Reihe)
                     bleibt es einzeilig. */}
                 <span className="truncate lg:overflow-visible lg:whitespace-normal lg:leading-snug">{e.label}</span>
-                <span className={`num text-xs ${an ? 'text-reg-r' : 'text-ink-500'}`}>{zahlGruppiert(e.count)}</span>
+                <span className={`num text-xs ${an ? 'text-ink-700' : 'text-ink-500'}`}>{zahlGruppiert(e.count)}</span>
               </button>
             </li>
           );

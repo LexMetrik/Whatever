@@ -152,7 +152,7 @@ export function KantonSystematik(
                     CSS-Regel erzeugt). */}
                 {u.titel && (
                   <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
-                    marke={<span aria-hidden className="num text-xs text-reg-g shrink-0">{u.sub}</span>} />
+                    marke={<span aria-hidden className="num text-xs text-ink-600 shrink-0">{u.sub}</span>} />
                 )}
                 {/* D24: EIN Raster über beide Spalten (s. `ui/ListenTabelle`). */}
                 <ErlassTabelle erlasse={u.items}

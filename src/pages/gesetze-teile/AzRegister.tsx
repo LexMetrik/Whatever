@@ -83,7 +83,7 @@ function AzZeile({ e }: { e: BrowseErlass }) {
       <span className="shrink-0 flex items-baseline gap-2 text-xs text-ink-500">
         <span>{ebeneLabel(e)}</span>
         {/* 'nur-live-link' führt ehrlich nach aussen (§8) — wie ErlassZeile. */}
-        {!istLesbar(e) && <span aria-hidden className="text-reg-g">↗</span>}
+        {!istLesbar(e) && <span aria-hidden>↗</span>}
       </span>
     </>
   );
