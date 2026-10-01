@@ -42,7 +42,9 @@
 // Fixture-Antwort muss mindestens einmal angefragt werden (keine toten Daten).
 // Die Zähler `STARTSEITE_ZAEHLER.materialien` (+ seit S5b die Gattungs-Zähler der
 // Ausgabe-Zeile; Generat, wandert mit jedem Register-Lauf) sind auf den Stand
-// 25.9.2026 festgesetzt.
+// 25.9.2026 festgesetzt. Ebenso das Verfallsregister auf /methodik
+// (`fixtures/rest-flaechen/verfall-termine.json`, Stand 1.10.2026) — es wandert
+// mit jedem Fedlex-Re-Pin (W2·27, Wochen-Lauf 28.9.2026 rot).
 // UHR: fest auf den 7.10.2026, 12:00 (nur `Date`) — die Verfalls-Übersicht auf
 // /methodik rechnet gegen «heute».
 //
@@ -72,6 +74,19 @@ vi.mock('../data/startseiteZaehler.generated', async (original) => {
       ...o.STARTSEITE_ZAEHLER, materialien: 1684, materialienGesetzgebung: 1357, materialienErlaeuterungen: 327,
     },
   };
+});
+
+// /methodik rendert das Verfallsregister (VerfallUebersicht). Das Generat wandert mit
+// jedem Re-Pin (Fedlex-Frische-Lauf: «Künftige Fassung …»-Zeilen) — eingefroren auf
+// den Stand 1.10.2026, sonst kippte jeder Wochen-Lauf die Ratsche (rot 28.9.2026).
+vi.mock('../data/verfallTermine.generated', async () => {
+  const { readFileSync: lies } = await import('node:fs');
+  const { join: verbinde } = await import('node:path');
+  const { _meta, ...daten } = JSON.parse(
+    lies(verbinde(__dirname, 'fixtures', 'rest-flaechen', 'verfall-termine.json'), 'utf8'),
+  );
+  void _meta;
+  return daten;
 });
 
 const FIXTURE = join(__dirname, 'fixtures', 'rest-flaechen.json');
