@@ -32,6 +32,8 @@ export interface ArtikelText {
      *  steht in `text` und ist dort abgedeckt. Nur Anhang-Einträge tragen das
      *  Feld; bestehende Artikel nie → golden-neutral (additiv). */
     titel?: number;
+    /** Ziffer-Ebene (P6, `ziffer-ebene.ts`): nackte Ziffer-Marke, zu der dieser Block gehört. Reine Struktur, nicht im sha. */
+    ziffer?: string;
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
     /** Fedlex-<table> als Mehrspalten-Block (Bug-Fix 23.6.2026: Tabellen wurden
      *  zuvor komplett gedroppt — z.B. IVG art_28b Rententabelle, AHVG art_34bis).
@@ -67,6 +69,7 @@ export interface BildRef {
 
 import { artikelRohHtml } from './artikel-vorkommen.ts';
 import { STERN_NOTE_ALTERNATIVE } from './stern-note.ts';
+import { ZIFFER_TITEL_ALTERNATIVE, zifferTitelBlock, ordneZiffern } from './ziffer-ebene.ts';
 import { artikelTextMitAufhebung, anhangAmtlichesSignal } from './aufhebung-signal.ts';
 import { ohneFortsetzungen } from './anhang-fortsetzung.ts';
 import { dekodiereEntities } from './html-entities.ts';
@@ -196,7 +199,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       // Inventur 5.7.2026). Steht ZULETZT: echte Tabellen (Alt 5) konsumieren ihre Zellen-<p> vorher,
       // Absatz/Bild behalten Vorrang. Beleg: p3-drop-klassen-inventar-2026-07-05.md.
       // Alt 8 (P3b, W2·27-BUND-FERTIG): dieselbe Note als absatz8pt (VRV ab 20261001) → stern-note.ts
-      '|<p[^>]*\\bclass="[^"]*man-template-tab-krpr[^"]*"[^>]*>((?:(?!</p>)[\\s\\S])*?)</p>' + `|${STERN_NOTE_ALTERNATIVE}`,
+      '|<p[^>]*\\bclass="[^"]*man-template-tab-krpr[^"]*"[^>]*>((?:(?!</p>)[\\s\\S])*?)</p>' + `|${STERN_NOTE_ALTERNATIVE}` + `|${ZIFFER_TITEL_ALTERNATIVE}`,
     'gi',
   );
   const bloecke: ArtikelText['bloecke'] = [];
@@ -377,6 +380,10 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       // vor entferneTags tilgen (sonst leakt die Ziffer, vgl. Absatz-Pfad).
       const txt = entferneTags(entferneFussnotenSups(match[7] ?? match[8]!)).trim();
       if (txt) bloecke.push({ absatz: null, text: txt });
+    } else if (match[9] !== undefined) {
+      // Ziffer-Überschrift (P6, ziffer-ebene.ts): nur nummerierte Titel («12. …») werden Block.
+      const ziffTitel = zifferTitelBlock(entferneTags(entferneFussnotenSups(match[9])));
+      if (ziffTitel) bloecke.push(ziffTitel);
     }
     // Alle in dieser Iteration erzeugten Blöcke tragen denselben Quell-Span (A31a).
     for (let qi = vorBlockZahl; qi < bloecke.length; qi++) quellen[qi] = matchQuelle;
@@ -401,6 +408,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
     return { ...mitGrundlage, bloecke: [{ absatz: null, text: '…' }], quellen: [null] };
   }
 
+  ordneZiffern(bloecke, quellen);
   ergaenzeFehlendeBilder(bloecke, inner);
   markiereFormeln(bloecke);
   // Nachträglich ergänzte reine Bild-Blöcke (ohne Quell-Span) längentreu auffüllen

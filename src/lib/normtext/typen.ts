@@ -88,6 +88,11 @@ export interface NormSnapshot {
      *  Wert = Heading-Tiefe (2–6). Nur Anhang-Einträge tragen das Feld; der
      *  Renderer (ArtikelBody) zeigt den `text` dann als Zwischenüberschrift. */
     titel?: number;
+    /** Ziffer-Ebene (P6, HN-05-Auflage): nackte Ziffer-Marke («12», «5bis»), zu der dieser
+     *  Block gehört — BV Art. 197 (Überschrift-Ziffern, jede zählt ihre Absätze neu) und
+     *  StGB-Strafnormen («1. Wer …»). Reine Struktur wie `titel`/`absatz`, NICHT im sha.
+     *  Fehlt, wo der Artikel keine Ziffer-Gliederung trägt. Auflösung: passusZiel.ts. */
+    ziffer?: string;
     /** `trenner` (#679, 12.9.2026): der AMTLICHE Trenner hinter der <dt>-Marke
      *  der Quelle — ':' (Label/Kategorie, «BE:»), ')' (Ordinalmarke «a)»), '.'
      *  (Punkt bei nicht-kanonischer Marke) oder '' (kein Trenner, «BAS»).
