@@ -83,7 +83,7 @@ beforeAll(() => {
   writeFileSync(join(cacheDir, `${AUSFALL.name}.html.pin`), 'alt|20200101|1', 'utf8');
   writeFileSync(join(cacheDir, `${ABBRUCH.name}.html.pin`), 'alt|20200101|1', 'utf8');
   ergebnis = lauf();
-});
+}, 60_000); // hookTimeout-Default 10 s reicht unter Gate-Last nicht (13,8 s gemessen, 1.10.2026)
 
 afterAll(() => rmSync(wurzel, { recursive: true, force: true }));
 
