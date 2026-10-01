@@ -203,6 +203,8 @@ jobs:
       #       «ESKALATION:». Der Unterschied zwischen «einmal rot» (Quelle
       #       kurz weg) und «dauerhaft rot» (echter Rechtsstands-Defekt) muss
       #       im Titel stehen, nicht im vierten Kommentar.
+      # Zettel-Muster (1.10.2026, QS-MONITOR-ROT): Label `alarm:normen-monitor`, ERR-Trap
+      # → Warnung statt Lauf-Rot; Wortlaut bei waechter.yml.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren/eskalieren
         if: failure()
         env:
@@ -210,7 +212,8 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           rumpf="Der wöchentliche Normen-Monitor ist fehlgeschlagen — ein gepinnter Rechtsstand ist möglicherweise überholt, ein Anker weg, eine amtliche Quelle nicht erreichbar ODER die Live-Site/eine Runtime-API defekt. Prüfen: **§7-Verifikation** (Pins/Wortlaute/Verfallsregister) bzw. **Betriebs-Fix** (Site/API). Lauf: ${RUN_URL}"
 
           # Rot-Serie zählen: abgeschlossene Vorläufer, solange sie NICHT
@@ -219,9 +222,10 @@ jobs:
           # lit. c, dieselbe Regel wie in check:ci-laeufe). Der laufende Lauf
           # ist noch nicht 'completed', darum zählt er als +1.
           serie=1
-          for c in $(gh run list --workflow normen-monitor.yml --limit 15 \
-                       --json conclusion,status \
-                       --jq '.[] | select(.status=="completed") | .conclusion'); do
+          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status \
+                   --jq '.[] | select(.status=="completed") | .conclusion') \
+            || { echo "::warning::Rot-Serie nicht ermittelbar"; runs=; }
+          for c in $runs; do
             [ "$c" = "success" ] && break
             serie=$((serie + 1))
           done
@@ -231,7 +235,7 @@ jobs:
             gh issue comment "$offen" --body "Erneut rot am $(date +%F) — ${serie}. roter Lauf in Folge. ${rumpf}"
             nr="$offen"
           else
-            nr=$(gh issue create --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" | grep -oE '[0-9]+$')
+            nr=$(for l in "--label alarm:normen-monitor" ""; do gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" && break; done | grep -oE '[0-9]+$')
           fi
 
           if [ "$serie" -ge 3 ]; then
@@ -256,7 +260,8 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           if [ -z "$offen" ]; then
             echo "Monitor grün, kein offener Zettel — nichts zu schliessen."
             exit 0
