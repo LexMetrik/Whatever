@@ -20,7 +20,7 @@ import type { Geladen, MaterialStand } from './panelKontextLaden';
 // Entscheide nach Instanz gruppiert bleiben (§8).
 //
 // SOFT LAW BLEIBT DRAUSSEN: das Ist-Kontext-Panel führt zusätzlich
-// Behörden-Ressourcen («kontextSoftLaw») und «passende Werkzeuge». Beides ist
+// Behörden-Ressourcen («kontextSoftLawErgebnis», vormals die dünne `kontextSoftLaw`) und «passende Werkzeuge». Beides ist
 // kein MATERIAL zur Entstehung des Erlasses, sondern eine dritte und vierte
 // Sache — sie in diesen Reiter zu kippen wäre die Rückkehr zu den sechs
 // bedingten Sektionen, die Kap. 4d gerade auflöst. Offener Punkt im

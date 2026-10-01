@@ -110,7 +110,7 @@ function DanebenKnopf({ ziel, label, oeffneDaneben, className = 'ml-1' }: {
   );
 }
 
-export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, artikelKontext = null, variante = 'lesespalte', stichtag = null }: {
+export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, artikelKontext = null, stichtag = null }: {
   typ: KontextTyp;
   normKeys: readonly string[];
   /** Reader-eigene Gruppen (KontextGruppe), VOR den Standard-Gruppen gerendert —
@@ -137,17 +137,11 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
    *  und setzt diese Prop nie — beides zusammen schliesst ein Leck aus
    *  (Sonde: src/tests/kontext-artikel-s7.test.tsx). */
   artikelKontext?: ArtikelKontextAnsicht | null;
-  /** E4/A32 (David 16.7.2026): 'seitenleiste' = kompakte Darstellung unterhalb
-   *  der Gliederung in der TOC-Spalte des Gesetz-Readers. Zwei Unterschiede zur
-   *  Standard-Lesespalten-Form (Markup dort byte-gleich unverändert):
-   *  (a) enge Aussenmasse (der Spalten-Wrapper trägt Trenner/Abstand selbst);
-   *  (b) §15.2-CLS-Gating: solange noch EINE async-Gruppe lädt, steht ein
-   *  stabiler «wird geladen»-Platzhalter und die Gruppen erscheinen dann ALLE
-   *  AUF EINMAL — unter dem Panel steht in der Spalte nichts, also verschiebt
-   *  der Wechsel kein sichtbares Element (kein Layout-Springen in der sticky
-   *  Gliederungsspalte). In der Lesespalte bleibt das bisherige gruppenweise
-   *  Einwachsen (dort sitzt das Panel am Leseende, unterhalb des Folds). */
-  variante?: 'lesespalte' | 'seitenleiste';
+  /* Die frühere Prop `variante: 'lesespalte' | 'seitenleiste'` (E4/A32, David
+   * 16.7.2026: kompakte TOC-Spalten-Form mit §15.2-CLS-Gating) ist am 1.10.2026
+   * gestrichen (W2·27-BUND-FERTIG): kein Produktionsaufrufer setzte je
+   * 'seitenleiste' (grep -rn über src/ ausser src/tests: vier Aufrufer, alle
+   * ohne `variante`). Es gilt die Lesespalten-Form; deren Markup ist unverändert. */
   /** S6 (AE-1): `currency.geprueftAm` — Stichtag «künftig / in Kraft» der Revisionen. */
   stichtag?: string | null;
 }) {
@@ -339,20 +333,9 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
     && !vernehmlassungenLaden && !vernehmlassungenFehler && vernehmlassungen.length === 0
     && (entscheide?.length ?? 0) === 0;
 
-  // E4/A32: Seitenleisten-CLS-Gating (§15.2) — erst rendern, wenn ALLE async-
-  // Gruppen aufgelöst sind (eine Einblendung statt gruppenweisem Nachrücken).
-  const seitenleiste = variante === 'seitenleiste';
-  const laedtNoch = entscheideLaden || softLawLaden || botschaftenLaden
-    || revLaden || vernehmlassungenLaden;
-  // Verdeckt das Gating die Querverweis-Gruppen gerade? Der Wegweiser braucht
-  // die Antwort, weil sein Werkzeug-Sprung auf eine dieser Gruppen zielt: ein
-  // Knopf, dessen Ziel noch gar nicht im DOM steht, wäre ein toter Knopf
-  // (§13/F4) — dieselbe Regel, die der Bug-Check als B4 aufgestellt hat.
-  const gruppenVerdeckt = seitenleiste && laedtNoch;
-
   return (
     <section aria-labelledby="kontext-titel"
-      className={seitenleiste ? 'space-y-4' : 'mt-12 border-t border-line pt-6 space-y-5 max-w-reading'}>
+      className="mt-12 border-t border-line pt-6 space-y-5 max-w-reading">
       {/* C-2/C-6/C-7-NACHZUG (R2-A, 31.8.2026): der Panel-Kopf zeichnete das
           Gruppenkopf-Rezept (Overline + Haarlinie) selbst nach. Jetzt der
           geteilte Baustein — Kopien werden gelöscht, nicht angeglichen (§5/§10).
@@ -390,14 +373,12 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
           <div data-artikel-kontext className="lc-artikelkontext flex flex-col text-micro leading-snug text-ink-600">
             {!artikelKtx.token ? (
               <p className="truncate">Noch keine Leseposition erfasst.</p>
-            ) : <ArtikelKontextZeilen k={artikelKtx} werkzeugZielBereit={zeigeArtikelWerkzeuge && !gruppenVerdeckt} />}
+            ) : <ArtikelKontextZeilen k={artikelKtx} werkzeugZielBereit={zeigeArtikelWerkzeuge} />}
           </div>
         </KontextGruppe>
       )}
 
-      {gruppenVerdeckt ? (
-        <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
-      ) : istLeer ? (
+      {istLeer ? (
         <Leerzustand art="bestand"
           text="Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst." />
       ) : (
@@ -705,16 +686,12 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     <span className="num lc-overline shrink-0 text-ink-600" title={g.beleg}>{g.label}</span>
                     {g.werkzeuge.map((w) => (
                       <span key={w.id} className="inline-flex items-center">
-                        {/* LM-152 (W2·17-UI-BEFUNDE-B4): in der schmalen `seitenleiste`
-                            (TOC-Spalte, 256 px) zwang `whitespace-nowrap` lange
-                            Werkzeug-Titel («Mietvertrag (Wohnen · Geschäft ·
-                            Untermiete)») über die Spaltenbreite hinaus (374 px Inhalt
-                            bei 245 px Sicht, gemessen) — horizontaler Überhang trotz
-                            `flex-wrap` auf dem Eltern-`<li>`, weil das einzelne Chip-
-                            Label selbst nicht umbrach. In `lesespalte` (breite
-                            Hauptspalte) bleibt das bewährte Einzeilen-Chip erhalten. */}
+                        {/* LM-152 (W2·17-UI-BEFUNDE-B4): `whitespace-nowrap` hält das Chip
+                            in der breiten Lesespalte einzeilig. (Die schmale
+                            `seitenleiste`-Variante, für die LM-152 den Umbruch erlaubte,
+                            ist am 1.10.2026 mit der Prop `variante` gestrichen.) */}
                         <Link to={w.href}
-                          className={`lc-chip no-underline hover:text-brass-700 hover:border-brass-400 ${seitenleiste ? '' : 'whitespace-nowrap'}`}>
+                          className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400 whitespace-nowrap">
                           <span className="text-ink-500 mr-1" aria-hidden>{w.modus === 'rechner' ? '⊞' : '▤'}</span>{w.titel}
                         </Link>
                         {kannOeffnen && !istOffen(w.href) && (
@@ -734,35 +711,27 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
           {!zeigeArtikelWerkzeuge && werkzeuge.length > 0 && (
             <KontextGruppe titel="Passende Werkzeuge" anzahl={werkzeuge.length}
               hinweis="Aus den verknüpften Normen abgeleitet (grobe Zuordnung, keine kuratierte Empfehlung).">
-              {/* Mobil eine scrollbare Chip-Reihe, ab sm normaler Umbruch. LM-152:
-                  `seitenleiste` erzwingt IMMER Umbruch (nie horizontal-scrollend) —
-                  sonst ein zweiter Scroll-Richtungswechsel innerhalb der bereits
-                  vertikal scrollenden 256-px-TOC-Spalte. */}
-              <ul className={seitenleiste
-                ? 'flex flex-wrap gap-2'
-                // ── W2·18 Welle 3 Punkt 1, NEBENFUND (R8-Sweep 13.9.2026) ·
-                //    DIE AFFORDANZ IST DIE GETEILTE, NICHT DER DÜNNE BALKEN ──
-                // Der dritte Entscheid-Vertreter des Sweeps (`ag_gerichte_
-                // HOR_2024_19`) hat diese Zeile zum ersten Mal in die Messung
-                // gebracht: GEMESSEN @320 und @390 `scrollWidth 435` gegen
-                // `clientWidth 280` bzw. `350` — Kategorie
-                // `a-ueberlauf-ohne-scroller`. Gescrollt hat sie schon vorher
-                // (`overflow-x: auto` + `[scrollbar-width:thin]`), aber ohne
-                // die geteilte Affordanz `lc-scrollrand-x` (B8, 31.8.2026:
-                // JEDER Scroller trägt sie) — und der Detektor verlangt genau
-                // sie, weil ein dünner Balken auf Touch gar nicht erscheint.
-                // `sm:bg-none`: ab `sm` steht `overflow-visible`, dort gäbe
-                // der Verlauf eine Fortsetzung vor, die es nicht gibt (§8).
-                : 'lc-scrollrand-x sm:bg-none flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]'}>
+              {/* Mobil eine scrollbare Chip-Reihe, ab sm normaler Umbruch. (LM-152:
+                  die `seitenleiste`-Variante mit erzwungenem Umbruch ist am
+                  1.10.2026 gestrichen.) */}
+              {/* ── W2·18 Welle 3 Punkt 1, NEBENFUND (R8-Sweep 13.9.2026) ·
+                   DIE AFFORDANZ IST DIE GETEILTE, NICHT DER DÜNNE BALKEN ──
+                Der dritte Entscheid-Vertreter des Sweeps (`ag_gerichte_
+                HOR_2024_19`) hat diese Zeile zum ersten Mal in die Messung
+                gebracht: GEMESSEN @320 und @390 `scrollWidth 435` gegen
+                `clientWidth 280` bzw. `350` — Kategorie
+                `a-ueberlauf-ohne-scroller`. Gescrollt hat sie schon vorher
+                (`overflow-x: auto` + `[scrollbar-width:thin]`), aber ohne
+                die geteilte Affordanz `lc-scrollrand-x` (B8, 31.8.2026:
+                JEDER Scroller trägt sie) — und der Detektor verlangt genau
+                sie, weil ein dünner Balken auf Touch gar nicht erscheint.
+                `sm:bg-none`: ab `sm` steht `overflow-visible`, dort gäbe
+                der Verlauf eine Fortsetzung vor, die es nicht gibt (§8). */}
+              <ul className="lc-scrollrand-x sm:bg-none flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]">
                 {werkzeuge.map((w) => (
-                  <li key={w.id} className={seitenleiste ? 'inline-flex items-center' : 'shrink-0 inline-flex items-center'}>
-                    {/* LM-152: dieselbe Umbruch-Ausnahme wie oben (Werkzeuge zu
-                        einzelnen Artikeln) — `seitenleiste` bricht lange Titel um
-                        statt die 256-px-TOC-Spalte horizontal zu überhängen; `shrink-0`
-                        entfällt dort ebenfalls, sonst hielte das `<li>` seine
-                        Inhaltsbreite gegen den Umbruch. */}
+                  <li key={w.id} className="shrink-0 inline-flex items-center">
                     <Link to={w.href}
-                      className={`lc-chip no-underline hover:text-brass-700 hover:border-brass-400 ${seitenleiste ? '' : 'whitespace-nowrap'}`}>
+                      className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400 whitespace-nowrap">
                       <span className="text-ink-500 mr-1" aria-hidden>{w.modus === 'rechner' ? '⊞' : '▤'}</span>{w.titel}
                     </Link>
                     {/* «daneben öffnen»: Norm bleibt links, Werkzeug erscheint
