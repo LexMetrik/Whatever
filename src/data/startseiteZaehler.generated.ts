@@ -211,8 +211,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1340,
-  "materialien": 1684,
-  "materialienGesetzgebung": 1357,
+  "materialien": 1685,
+  "materialienGesetzgebung": 1358,
   "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
@@ -273,15 +273,15 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BS-GR",
       "kuerzel": "GR BS",
       "name": "Grosser Rat des Kantons Basel-Stadt",
-      "anzahl": 117
+      "anzahl": 118
     }
   ],
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-09-30",
   "standRechtsprechung": "2026-09-28",
-  "standMaterialien": "2026-09-25",
+  "standMaterialien": "2026-10-01",
   "juengsterGesetzStand": "2026-09-02",
   "juengsterEntscheid": "2026-09-21",
-  "juengsteMaterialie": "2026-09-18"
+  "juengsteMaterialie": "2026-09-23"
 };
