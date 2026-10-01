@@ -16,6 +16,50 @@ function traegtMarke(): boolean {
   return typeof st === 'object' && st !== null && (st as Record<string, unknown>)[MARKE] === true;
 }
 
+function schreibeMarke(): void {
+  const st: unknown = window.history.state;
+  window.history.pushState({ ...(typeof st === 'object' && st ? st : {}), [MARKE]: true }, '');
+}
+
+// ── E-D15-B01 (W2·17-UI-BEFUNDE, 1.10.2026) · EIN `back()` IST UNTERWEGS ──────
+// `history.back()` kehrt sofort zurück, das `popstate` kommt später (Dev ~0,5-1,4 s).
+// Öffnet der Nutzer das Blatt in dieser Lücke, sieht der neue Setup die Marke noch
+// stehen (kein Push) und registriert `onPop`; das verspätete `popstate` des EIGENEN
+// Rücksprungs landete dann auf dem unmarkierten Eintrag und schloss das frisch
+// geöffnete Blatt (OR#art-336_c @390: Esc, dann `r` nach 2 Mikrotasks, 5/5 Läufe).
+//
+// Darum zählt jeder eigene Rücksprung mit. `onPop` fragt `eigenerRuecksprung()`:
+// ja ⇒ nicht schliessen, den Eintrag neu belegen (der Nutzer hat ein offenes Blatt
+// und braucht seinen Zurück-Eintrag); nein ⇒ Nutzergeste. Entschieden wird an der
+// ANZAHL, nicht an der Hörer-Reihenfolge: der Hörer des Rücksprungs (`h`, beim
+// `back()` angelegt) kommt VOR jedem später registrierten `onPop` und gibt den
+// Zähler erst per Makrotask frei, also nach allen Hörern desselben `popstate`.
+// Notnetz: kommt nie ein `popstate` (eine inzwischen begonnene Ganzseiten-
+// Navigation bricht das `back()` ab), gibt ein Timer den Zähler nach 5 s frei —
+// sonst verschluckte der Zähler die nächste ECHTE Zurück-Geste.
+let rueckUnterwegs = 0;
+const RUECK_NOTNETZ_MS = 5000;
+
+function eigenerRuecksprung(): boolean {
+  return rueckUnterwegs > 0;
+}
+
+function eigenesZurueck(): void {
+  rueckUnterwegs++;
+  let frei = false;
+  const gib = () => {
+    if (frei) return;
+    frei = true;
+    window.removeEventListener('popstate', h);
+    clearTimeout(notnetz);
+    rueckUnterwegs--;
+  };
+  const h = () => { setTimeout(gib, 0); };
+  const notnetz = setTimeout(gib, RUECK_NOTNETZ_MS);
+  window.addEventListener('popstate', h);
+  window.history.back();
+}
+
 /**
  * Browser-Zurück schliesst das offene MODALE Blatt zuerst.
  *
@@ -102,18 +146,18 @@ export function useZurueckSchliesst(offen: boolean, modal: boolean, schliesse: (
     vorherAktiv.current = aktiv;
     if (typeof window === 'undefined') return;
     if (warOffen && !offen && !warAktiv && !aktiv) {
-      queueMicrotask(() => { if (!offenRef.current && traegtMarke()) window.history.back(); });
+      queueMicrotask(() => { if (!offenRef.current && traegtMarke()) eigenesZurueck(); });
     }
   }, [offen, aktiv]);
   useEffect(() => {
     if (!aktiv || typeof window === 'undefined') return;
-    if (!traegtMarke()) {
-      const st: unknown = window.history.state;
-      window.history.pushState({ ...(typeof st === 'object' && st ? st : {}), [MARKE]: true }, '');
-    }
+    if (!traegtMarke()) schreibeMarke();
     let perZurueck = false;
     const onPop = () => {
       if (traegtMarke()) return;
+      // E-D15-B01: das verspätete `popstate` unseres EIGENEN `back()` (Blatt zu,
+      // sofort wieder auf): nicht schliessen, aber den Eintrag neu belegen.
+      if (eigenerRuecksprung()) { schreibeMarke(); return; }
       perZurueck = true;
       schliesseRef.current();
     };
@@ -133,7 +177,7 @@ export function useZurueckSchliesst(offen: boolean, modal: boolean, schliesse: (
       // läuft, ändert daran nichts; für ✕ & Co. gilt es unverändert.) Seit dem
       // Nachzug 1.10.2026 trägt der Mikrotask zusätzlich die Ordnung gegenüber
       // `offenRef`: erst nach dem Setup-Lauf desselben Commits ist `offen` gültig.
-      if (!perZurueck) queueMicrotask(() => { if (!offenRef.current && traegtMarke()) window.history.back(); });
+      if (!perZurueck) queueMicrotask(() => { if (!offenRef.current && traegtMarke()) eigenesZurueck(); });
     };
   }, [aktiv]);
 }
