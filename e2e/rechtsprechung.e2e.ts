@@ -425,18 +425,63 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // zuzuschreiben; ihn global wegzudefinieren hiesse, den Wächter stumpf zu
     // machen. Darum die Ortsgrenze: alles, was der Rail-Sprung und die Suche im
     // Lesebereich anrichten, fällt weiterhin voll ins Gewicht.
+    //
+    // ── ZWEITE ORTSGRENZE: das Such-Verzeichnis selbst (W2·18-FEHLERBUCH, ──────
+    // ── 1.10.2026, Merge-Queue-Lauf 36894892472) ───────────────────────────────
+    // GEMESSEN (Reproduktion lokal, 4×-Drossel wie CI): der Rest-Shift 0.00105926…
+    // — bitgleich der CI-Wert — ist die UMORDNUNG DES VERZEICHNISSES DURCH DIE
+    // SUCHE: Tippt man «Rechtsgut», filtert `ErwaegungsRail` die Liste
+    // (`nav[aria-label="Erwägungen"]`, `liste ?? gliederung`), die Einträge
+    // darunter rücken um je 26 px nach oben bzw. erscheinen neu (Quellen: vier
+    // `LI` dieser Liste, previousRect/currentRect nur in y verschoben). Das ist
+    // die gewollte Antwort auf die Eingabe, kein Layout-Sprung. Ob Chrome sie
+    // zählt, entschied bisher nur die UHR: `hadRecentInput` gilt 500 ms nach der
+    // letzten ECHTEN Eingabe (hier dem Klick auf den Rail-Sprung), und
+    // `fill()` ist keine — es setzt den Wert ohne Tastendruck. Auf einem
+    // langsamen/belasteten Runner liegen > 500 ms zwischen Sprung-Klick und
+    // Füllen, der Filter-Shift fällt aus dem Fenster und zählt voll: gleicher
+    // Code, anderes Tempo, anderes Ergebnis (lokal mit 700 ms Pause vor `fill()`
+    // reproduzierbar rot, ohne Pause grün). Die Latte «≤ 0.001» (6.9.2026) hat
+    // das nur kaschiert — sie riss, sobald ein Eintrag mehr wanderte (4 Quellen
+    // = 0.00106); «Subpixel-Rauschen» war die falsche Diagnose.
+    // Darum die Ortsgrenze statt der Uhr: ein Shift zählt nur, wenn sich eine
+    // Quelle AUSSERHALB des Verzeichnisses tatsächlich bewegt hat (Rect vorher ≠
+    // nachher). Was Suche oder Sprung an Lesetext, Kopf, Treffer-Slot oder
+    // Normen-Block verschieben, zählt weiterhin voll — und damit ist die Latte
+    // wieder exakt 0 (unten), schärfer als ≤ 0.001, nicht lockerer.
+    //
+    // Gegenstück: die Ortsgrenze blendet die Listeneinträge aus — damit wäre ein
+    // einwachsender Treffer-Slot (§15.2: Auskunftszeile schöbe das Verzeichnis
+    // nach unten) im Beobachter unsichtbar, denn dann verschiebt sich der
+    // Behälter samt seinen Einträgen. Diese Schutzaufgabe trägt darum eine
+    // eigene, geometrische Zusage: der Abstand des Verzeichnisses zur Oberkante
+    // des Rails (scroll-unabhängig, der Rail klebt) bleibt durch die Suche
+    // UNVERÄNDERT. Gemessen und im Quellcode gegengeprüft (Slot-Mutation: ohne
+    // `min-h-12` wächst der Abstand um die Auskunftszeile, der Fall wird rot).
+    const verzeichnisVersatz = () => page.evaluate(() => {
+      const a = document.querySelector('[data-erw-rail]')!
+      const n = a.querySelector('nav[aria-label="Erwägungen"]')!
+      return n.getBoundingClientRect().top - a.getBoundingClientRect().top
+    })
+    const versatzVorher = await verzeichnisVersatz()
     await page.evaluate(() => {
       ;(window as unknown as { __cls: number }).__cls = 0
       const inhalt = document.querySelector('main')
+      const verzeichnis = document.querySelector('[data-erw-rail] nav[aria-label="Erwägungen"]')
       new PerformanceObserver((l) => {
         for (const e of l.getEntries() as PerformanceEntry[]) {
           const s = e as unknown as {
-            value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[]
+            value: number; hadRecentInput: boolean
+            sources?: { node?: Node | null; previousRect: DOMRectReadOnly; currentRect: DOMRectReadOnly }[]
           }
           if (s.hadRecentInput) continue
           const quellen = s.sources ?? []
-          const imInhalt = quellen.some((q) => q.node && inhalt?.contains(q.node))
-          if (imInhalt) (window as unknown as { __cls: number }).__cls += s.value
+          const bewegt = (q: { previousRect: DOMRectReadOnly; currentRect: DOMRectReadOnly }) =>
+            q.previousRect.x !== q.currentRect.x || q.previousRect.y !== q.currentRect.y
+            || q.previousRect.width !== q.currentRect.width || q.previousRect.height !== q.currentRect.height
+          const ausserhalbVerzeichnis = quellen.some((q) =>
+            q.node && inhalt?.contains(q.node) && !verzeichnis?.contains(q.node) && bewegt(q))
+          if (ausserhalbVerzeichnis) (window as unknown as { __cls: number }).__cls += s.value
         }
       }).observe({ type: 'layout-shift' })
     })
@@ -455,6 +500,7 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     await feld.fill('Rechtsgut')
     await expect(rail.locator('[data-erw-treffer]')).toContainText('Treffer in', { timeout: REAKTIONS_LATTE })
     expect(Date.now() - t0, 'Suche im Entscheid zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+    const versatzNachher = await verzeichnisVersatz()
 
     // Sprung auf einen Treffer aus der gefilterten Liste.
     const treffer = rail.locator('a[href^="#e-"]').first()
@@ -478,7 +524,16 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // schlägt jeder Shift, der ein Bedienelement um mehr als rund einen Pixel
     // verschiebt, weiterhin voll durch. Die Ortsgrenze (nur Shifts INNERHALB
     // `main`) bleibt unverändert.
-    expect(cls, 'CLS über Rail-Sprung/Suche muss unter dem Subpixel-Rauschen bleiben').toBeLessThanOrEqual(0.001)
+    // ERGÄNZUNG 1.10.2026 (W2·18-FEHLERBUCH, ergänzt statt nachgeführt): diese
+    // Latte riss am 1.10. mit 0.0010592592592592591 (Merge-Queue-Lauf
+    // 36894892472); die Diagnose «Subpixel-Rauschen» ist FALSIFIZIERT — gemessen
+    // ist es das Filter-Reflow des Verzeichnisses (zweite Ortsgrenze oben). Ob der
+    // damalige Wert 0.000631… dieselbe Quelle hatte, wurde nicht nachgemessen
+    // (Spur: gleiche Grössenordnung, gleiche Runner-Abhängigkeit). Mit der
+    // zweiten Ortsgrenze trägt die Latte wieder die Aussage des Testnamens:
+    // exakt 0, schärfer als zuvor.
+    expect(cls, 'CLS über Rail-Sprung/Suche (ausserhalb des gefilterten Verzeichnisses) muss 0 sein').toBe(0)
+    expect(versatzNachher, 'Treffer-Slot schiebt das Verzeichnis (reservierter Slot wächst ein)').toBeCloseTo(versatzVorher, 0)
     expect(fehler).toEqual([])
   })
 })
