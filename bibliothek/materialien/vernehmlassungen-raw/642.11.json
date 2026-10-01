@@ -1236,5 +1236,34 @@
       "xml:lang": "it",
       "value": "Legge federale e ordinanza sul trattamento dei dati personali in ambito fiscale (atti mantello su modifiche di LTB, LIFD, LIP, LAID e LTEO e sulle relative ordinanze; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 e RS 661.1)"
     }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/92/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Abschaffung umfassende Beistandschaft - Änderung des ZGB"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Suppression de la curatelle de portée générale - Modification du CC"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Abrogazione della curatela generale - Modifica del codice civile"
+    }
   }
 ]
