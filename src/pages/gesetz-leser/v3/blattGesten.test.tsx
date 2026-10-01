@@ -25,6 +25,15 @@
  *    mit der alten `setTimeout(…, 0)`-Variante wäre die Reihenfolge
  *    umgekehrt (Rot-Beweis im Bau-Bericht dokumentiert, hier als
  *    Wegwerf-Änderung gezeigt, nicht committet).
+ *
+ * ── NACHZUG W2·18-FEHLERBUCH (1.10.2026) ─────────────────────────────────
+ * Ein Zuschnittwechsel bei offenem Blatt und der Abbau der Komponente rufen
+ * KEIN `history.back()` mehr — `back()` kommt asynchron im Browser an und
+ * bricht eine inzwischen begonnene Ganzseiten-Navigation ab (Beleg:
+ * `e2e/leser-v3-panel-nachzug.e2e.ts` (f3)). Nur `offen` → false (Nutzergeste:
+ * ✕, Esc, Scrim) nimmt den Eintrag zurück. Die Fälle ab «Gegenprobe» decken das
+ * ab; der `beforeunload`-Merker aus #1239 ist zurückgebaut (seine Fälle sind
+ * ersetzt, die Fremd-Navigation-Mechanik trägt der e2e-Fall (f3)).
  */
 import { StrictMode, act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
@@ -35,7 +44,7 @@ import { useZurueckSchliesst } from './blattGesten';
 interface FensterStumpf {
   history: {
     state: unknown;
-    pushState: (state: unknown, title: string) => void;
+    pushState: ReturnType<typeof vi.fn>;
     back: () => void;
   };
   addEventListener: (typ: string, hoerer: () => void) => void;
@@ -52,7 +61,7 @@ function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern
   const fenster: FensterStumpf = {
     history: {
       get state() { return zustand; },
-      pushState: (s: unknown) => { zustand = s; },
+      pushState: vi.fn((s: unknown) => { zustand = s; }),
       // Echtes `back()` nimmt den zuletzt gepushten Eintrag weg — die Marke
       // verschwindet, GENAU wie im Browser, bevor `popstate` feuert.
       back: vi.fn(() => {
@@ -60,8 +69,12 @@ function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern
         popHoerer.forEach((h) => h());
       }),
     },
-    addEventListener: (typ: string, h: () => void) => { if (typ === 'popstate') popHoerer.add(h); },
-    removeEventListener: (typ: string, h: () => void) => { if (typ === 'popstate') popHoerer.delete(h); },
+    addEventListener: (typ: string, h: () => void) => {
+      if (typ === 'popstate') popHoerer.add(h);
+    },
+    removeEventListener: (typ: string, h: () => void) => {
+      if (typ === 'popstate') popHoerer.delete(h);
+    },
     document,
   };
   vi.stubGlobal('window', fenster);
@@ -77,15 +90,16 @@ function aufbauen(): { ziel: HTMLElement; fenster: FensterStumpf; popstateFeuern
   };
 }
 
-function Sonde({ aktiv, schliesse }: { aktiv: boolean; schliesse: () => void }) {
-  useZurueckSchliesst(aktiv, schliesse);
+function Sonde({ offen, modal, schliesse }: { offen: boolean; modal: boolean; schliesse: () => void }) {
+  useZurueckSchliesst(offen, modal, schliesse);
   return null;
 }
 
-async function rendern(ziel: HTMLElement, aktiv: boolean, schliesse: () => void) {
+/** `offen` = Absicht des Nutzers, `modal` = Gestalt des Zuschnitts (Standard: modal). */
+async function rendern(ziel: HTMLElement, offen: boolean, schliesse: () => void, modal = true) {
   if (!root) root = createRoot(ziel);
   await act(async () => {
-    root!.render(createElement(StrictMode, null, createElement(Sonde, { aktiv, schliesse })));
+    root!.render(createElement(StrictMode, null, createElement(Sonde, { offen, modal, schliesse })));
   });
 }
 
@@ -140,12 +154,109 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     // Fall (f), Läufe 35984783583/36009374111).
     setTimeout(() => reihenfolge.push('fremde-navigation'), 0);
 
-    // Schliessen (✕/Esc/Scrim): aktiv → false, der Cleanup läuft synchron
+    // Schliessen (✕/Esc/Scrim): offen → false, der Cleanup läuft synchron
     // und plant den Mikrotask.
     await rendern(ziel, false, () => {});
     await act(async () => { await Promise.resolve(); }); // Mikrotasks abarbeiten
     await act(async () => { vi.advanceTimersByTime(0); }); // die Fremd-Makrotask
 
     expect(reihenfolge).toEqual(['eigenes-back', 'fremde-navigation']);
+  });
+
+  it('Gegenprobe: Nutzergeste «Blatt zu» (offen → false) ruft history.back() genau einmal', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, false, () => {});
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
+  });
+
+  it('Zuschnittwechsel (offen bleibt, modal → false): KEIN history.back(), die Marke bleibt stehen', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    // Gestalt wechselt über die Breiten-Schwelle: das Blatt bleibt offen.
+    await rendern(ziel, true, () => {}, false);
+    await act(async () => { await Promise.resolve(); }); // Mikrotasks abarbeiten
+    await act(async () => { vi.advanceTimersByTime(1000); }); // und jede Makrotask
+    expect(fenster.history.back).not.toHaveBeenCalled();
+    expect((fenster.history.state as Record<string, unknown>).lmErlassBlatt).toBe(true);
+  });
+
+  it('Zuschnittwechsel und wieder zurück: der Eintrag wird belegt, nicht ein zweiter geschrieben', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, true, () => {}, false);
+    await rendern(ziel, true, () => {}, true);
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.pushState).toHaveBeenCalledTimes(1);
+    expect(fenster.history.back).not.toHaveBeenCalled();
+  });
+
+  it('Nachzug 2 (Milderung A): Nutzergeste «Blatt zu» am breiten Zuschnitt MIT stehender Marke nimmt den Eintrag weg (history.back() genau einmal)', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, true, () => {}, false); // Zuschnittwechsel: Marke bleibt stehen
+    expect(fenster.history.back).not.toHaveBeenCalled();
+    await rendern(ziel, false, () => {}, false); // Nutzer schliesst auf dem breiten Zuschnitt
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
+  });
+
+  it('Nachzug 2: breiter Zuschnitt OHNE Marke (nie modal gewesen): Schliessen ruft kein history.back()', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {}, false);
+    await rendern(ziel, false, () => {}, false);
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).not.toHaveBeenCalled();
+  });
+
+  it('Nachzug 2: Schliessen und Zuschnittwechsel im selben Commit ruft history.back() genau EINMAL (kein Doppel)', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, false, () => {}, false); // offen → false UND modal → false zugleich
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
+  });
+
+  it('Nachzug 2: breiter Zuschnitt, Eintrag steht, Blatt offen → zu → wieder offen → zu: je Geste höchstens ein back(), nie ein pushState', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, true, () => {}, false);
+    await rendern(ziel, false, () => {}, false);
+    await act(async () => { await Promise.resolve(); });
+    await rendern(ziel, true, () => {}, false); // Marke ist durch back() weg
+    await rendern(ziel, false, () => {}, false);
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1); // zweite Geste: keine Marke → kein back()
+    expect(fenster.history.pushState).toHaveBeenCalledTimes(1); // nur das erste Öffnen am schmalen Zuschnitt
+  });
+
+  it('verwaister Eintrag (Zuschnittwechsel, dann Zurück-Geste am breiten Zuschnitt) bleibt wirkungslos: schliesse() wird nicht gerufen', async () => {
+    const { ziel, popstateFeuern } = aufbauen();
+    const schliesse = vi.fn();
+    await rendern(ziel, true, schliesse);
+    await rendern(ziel, true, schliesse, false);
+    popstateFeuern();
+    expect(schliesse).not.toHaveBeenCalled();
+  });
+
+  it('Abbau der Komponente bei offenem Blatt: KEIN history.back()', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await abbauen();
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).not.toHaveBeenCalled();
+  });
+
+  it('Zurück-Geste schliesst, ohne selbst history.back() zu rufen (der Eintrag ist schon weg)', async () => {
+    const { ziel, fenster, popstateFeuern } = aufbauen();
+    let offen = true;
+    const schliesse = vi.fn(() => { offen = false; });
+    await rendern(ziel, true, schliesse);
+    popstateFeuern();
+    await rendern(ziel, offen, schliesse);
+    await act(async () => { await Promise.resolve(); });
+    expect(schliesse).toHaveBeenCalledTimes(1);
+    expect(fenster.history.back).not.toHaveBeenCalled();
   });
 });

@@ -192,7 +192,7 @@ export function LeserPanelZone({
   const imPaneBlatt = paneZiel != null;
   const modal = !imPaneBlatt && form === 'unten';
   const spalte = form === 'spalte' && !imPaneBlatt;
-  useZurueckSchliesst(offen && modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
+  useZurueckSchliesst(offen, modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
   const wisch = useWischZu(panelRef, schliesse);
 
   usePopoverAutoZu({
