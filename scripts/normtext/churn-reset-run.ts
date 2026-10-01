@@ -6,8 +6,8 @@
 // git-Fehlern. Ausgabe: je Datei ein Verdikt, am Ende Zähler.
 
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
-import { istReinerDatumsChurn } from './churn-reset.ts';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { istReinerDatumsChurn, setzeUnveraenderteEintraegeZurueck } from './churn-reset.ts';
 
 function arg(name: string): string | undefined {
   return process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
@@ -25,6 +25,7 @@ const geaendert = git(['diff', '--name-only', '--diff-filter=M', '--', ...pfade]
 
 let churn = 0;
 let substanz = 0;
+let eintraege = 0; // je Eintrag zurückgesetzt (Dateien mit Substanz)
 const zurueck: string[] = [];
 for (const datei of geaendert) {
   let alt: string;
@@ -40,6 +41,13 @@ for (const datei of geaendert) {
     zurueck.push(datei);
   } else {
     substanz += 1;
+    // Datei mit Substanz: unveränderte Einträge behalten ihr altes `abgerufen` (je Eintrag).
+    const r = setzeUnveraenderteEintraegeZurueck(alt, neu);
+    if (r !== null && r.zurueckgesetzt > 0) {
+      eintraege += r.zurueckgesetzt;
+      if (!trocken) writeFileSync(datei, r.text, 'utf8');
+      console.log(`  eintrag  ${datei}: ${r.zurueckgesetzt} unveränderte(r) Eintrag/Einträge${trocken ? ' (trocken)' : ''}`);
+    }
   }
 }
 
@@ -52,5 +60,6 @@ if (zurueck.length && !trocken) {
 for (const d of zurueck) console.log(`  churn    ${d}${trocken ? ' (trocken, nicht zurückgesetzt)' : ''}`);
 console.log(
   `normtext:churn-reset — ${geaendert.length} geänderte JSON-Datei(en) unter ${pfade.join(', ')}: ` +
-  `${churn} reiner Datums-Churn ${trocken ? 'erkannt' : 'zurückgesetzt'}, ${substanz} mit Substanz belassen.`,
+  `${churn} reiner Datums-Churn ${trocken ? 'erkannt' : 'zurückgesetzt'}, ${substanz} mit Substanz belassen ` +
+  `(darin ${eintraege} unveränderte Einträge je Eintrag ${trocken ? 'erkannt' : 'zurückgesetzt'}).`,
 );
