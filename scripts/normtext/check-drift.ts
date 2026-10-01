@@ -198,7 +198,10 @@ async function main(): Promise<void> {
   }
 
   // ─── Prüfung 2c: Label-/Anker-Riegel (offline, W2·27-BUND-FERTIG) ──────────
-  const { befunde: labelUrl, deckung: labelDeckung } = pruefeLabelUrlMitDeckung(snapshots);
+  const { befunde: labelUrl, deckung: labelDeckung } = pruefeLabelUrlMitDeckung(
+    snapshots,
+    new Map(cacheEintraege.map((e) => [e.name.toLowerCase(), e.eli])),
+  );
   if (labelUrl.length > 0) {
     console.error('\nFEHLER Label/Anker: artikelLabel/quelleUrl passen nicht zur id (golden-neutral, sonst ungewacht):');
     for (const b of labelUrl) console.error(`  [${b.regel}] ${b.id}: ${b.text}`);
