@@ -14,3 +14,7 @@ anlass: Session-Notizen 2026-10-01
 - leser-ruecksprung-r5-r7 R7: Test-Defekt (Gatter `toHaveCount(0)` vor dem Erscheinen vakuum-wahr) — PR #1238.
 - leser-position-u A17: App-Defekt (Tieflink-Sprung gibt auf, wenn `currency.json` nach dem Erlass-Text eintrifft) — PR #1240.
 - leser-v3-panel-nachzug (f): App-Defekt (`history.back()` beim Zuschnittwechsel bricht laufende Navigation ab) — PR #1239, erster Ansatz in der Prüfung widerlegt (Flake im eigenen PR-Lauf), Nachzug läuft.
+
+**Abschluss 1.10.2026 — gelandet (belegt per `git log origin/main`):** #1242 `24718e53f` (CI: Playwright-Install ohne apt, wenn Chromium startet — neue Rauswurf-Ursache «Paketspiegel gestört», am 1.10. vier Queue-Läufe rot), #1238 `7d9e817b9` (R7, Test), #1240 `9c88580c0` (Position-U, App), #1239 `5c9e70104` (Panel-Nachzug (f), App; erster Ansatz in der Prüfung widerlegt, Weg (b)), #1244 `b9f1c7e48` (rechtsprechung A9 CLS, Test — am 1.10. neu aufgetretener Flacker). Je PR Opus-Zweitprüfung, Auflagen erfüllt. Keine Ausnahme in `e2e/flake-ausnahmen.json`, keine Retry-/Timeout-Erhöhung. Nachmessung: seit #1242 (17:55 UTC) 8/8 Queue-Läufe grün; Quote über eine Woche neu messen (Basislinie 19.9.–1.10.: 25/347 failure, davon 8 Flacker-Wächter). Folge-Posten: Verlaufsmodell Erlass-Blatt, A9-Restlücke, R7-Standzeit-Obergrenze, playwright-install-Folge (Fonts/volles Chromium), Lighthouse-Rauswürfe (QS-CI-MINUTEN), Artefakt-Retention (QS-CI-MINUTEN) u. a. — alle als `plan/posten/2026-10-01-*.md`. Methodik-Lehren: `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md` §4.
+
+**Erledigt 2026-10-01:** —
