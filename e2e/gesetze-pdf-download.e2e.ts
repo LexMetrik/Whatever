@@ -1,6 +1,14 @@
 // @shard-gruppe: 3
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { OR_LESER_FRIST } from './helpers/orLeser';
+
+// Gepinnte OR-Konsolidierung aus der Pin-Zeile von scripts/fedlex-cache.sh — kein
+// Datums-Literal, sonst stoppt jeder OR-Re-Pin den Browser-Smoke (Fedlex-Frische
+// #1234, 1.10.2026: Literal «20260101» rot nach Re-Pin auf 20261001).
+const OR_PIN = /"or\|cc\/27\/317_321_377\|(\d{8})\|/.exec(
+  readFileSync('scripts/fedlex-cache.sh', 'utf8'),
+)?.[1];
 
 // W2·5d U-PDF / A12 — die Download-Aktion lädt das AMTLICHE PDF der gepinnten
 // Fassung (Bund: Fedlex-Filestore pdf-a; Kanton: LexWork). Reine Verifikation der
@@ -25,7 +33,8 @@ test.describe('U-PDF · Download = amtliches PDF (A12)', () => {
     const href = await pdf.getAttribute('href');
     expect(href).toMatch(/^https:\/\/fedlex\.data\.admin\.ch\/filestore\/.*\/pdf-a\/.*\.pdf$/);
     expect(href).toContain('cc/27/317_321_377'); // OR-ELI
-    expect(href).toContain('20260101'); // gepinnte Konsolidierung
+    expect(OR_PIN, 'OR-Pin-Zeile in scripts/fedlex-cache.sh').toMatch(/^\d{8}$/);
+    expect(href).toContain(`/${OR_PIN}/`); // gepinnte Konsolidierung
     // A9-DoD: neuer Tab (amtliche Fremd-URL) + aria + Tastaturfokus.
     await expect(pdf).toHaveAttribute('target', '_blank');
     await expect(pdf).toHaveAttribute('aria-label', /Amtliches PDF.*herunterladen/);
