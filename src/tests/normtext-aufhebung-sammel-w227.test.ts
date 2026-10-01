@@ -141,7 +141,7 @@ describe('fussnoteDiesenArtGegenstandslos — «… ist dieser Art. gegenstandsl
 
   it('artikelTextMitAufhebung setzt für Art. 122 `gegenstandslos`, lässt bloecke unberührt', () => {
     const r = extrahiereArtikelAusAnker(ASYLG_ART_122, 'art_122')!;
-    const out = artikelTextMitAufhebung(ASYLG_ART_122, { bloecke: r.bloecke, quellen: r.quellen });
+    const out = artikelTextMitAufhebung(ASYLG_ART_122, { bloecke: r.bloecke, quellen: r.bloecke.map(() => null as string | null) });
     expect(out.gegenstandslos).toBe(true);
     expect('aufgehoben' in out).toBe(false);
     expect(out.bloecke).toBe(r.bloecke);

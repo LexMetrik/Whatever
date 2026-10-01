@@ -9,6 +9,7 @@ import {
 } from '../lib/normtext/historie-parse';
 import { fassungsMarkeEtikett, fassungsSchild } from '../pages/gesetz-leser/fassungsEtikett';
 import { tokenAusId } from '../../scripts/normtext/historie-aufgehoben-lebend';
+import { artikelGanzAufgehoben } from '../lib/normtext/darstellung';
 
 // W2·27-BUND-FERTIG (1.10.2026) · «Gegenstandslos» ist ein EIGENES Historie-Ereignis.
 // Befund Gegenprüfung #1183 (§8): StGB Art. 67f zeigte «Fassung · Gilt seit 01.01.2018 · In Kraft», obwohl
@@ -122,10 +123,23 @@ describe('Korpus-Konsistenz (§5): Historie-Shard ⇔ Normtext-Flag «gegenstand
 
   it('jeder Artikel mit Snapshot-Flag `gegenstandslos` trägt im Historie-Shard `gegenstandslos`, und umgekehrt', () => {
     const snapshot = new Set<string>();
+    // W2·27-BUND-FERTIG (1.10.2026, Fachänderung): Artikel, die amtlich «ist dieser Art. gegenstandslos» tragen, aber
+    // NOCH Wortlaut führen (AsylG Art. 122), kann die Historie bewusst nicht spiegeln — `baueArtikelHistorie` verwirft
+    // «gegenstandslos» bei lebendem Körper (`koerperLebend`). Sie werden getrennt und EXAKT gepinnt, damit jede
+    // weitere Ausnahme sichtbar bleibt; für alle übrigen (leerer Körper) gilt die Gleichheit unverändert.
+    const lebendMitVermerk = new Set<string>();
     for (const f of readdirSync(TEXT).filter((x) => x.endsWith('.json'))) {
-      const doc = JSON.parse(readFileSync(resolve(TEXT, f), 'utf8')) as { eintraege?: Array<{ id: string; gegenstandslos?: true }> };
-      for (const e of doc.eintraege ?? []) if (e.gegenstandslos === true) snapshot.add(`${f.replace(/\.json$/, '')}:${tokenAusId(e.id)}`);
+      const doc = JSON.parse(readFileSync(resolve(TEXT, f), 'utf8')) as {
+        eintraege?: Array<{ id: string; gegenstandslos?: true; bloecke: Parameters<typeof artikelGanzAufgehoben>[0] }>;
+      };
+      for (const e of doc.eintraege ?? []) {
+        if (e.gegenstandslos !== true) continue;
+        const key = `${f.replace(/\.json$/, '')}:${tokenAusId(e.id)}`;
+        if (artikelGanzAufgehoben(e.bloecke)) snapshot.add(key);
+        else lebendMitVermerk.add(key);
+      }
     }
+    expect([...lebendMitVermerk].sort()).toEqual(['ASYLG:122']);
     const historie = new Set<string>();
     for (const f of readdirSync(HIST).filter((x) => x.endsWith('.json'))) {
       const doc = JSON.parse(readFileSync(resolve(HIST, f), 'utf8')) as { artikel?: Record<string, ArtikelHistorie> };
