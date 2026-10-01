@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
@@ -203,6 +203,16 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
       ? historieFuerArtikel(historieShard.shard, artikel)
       : undefined
   ), [erlass, historieShard]);
+  // P5 · B1 (1.10.2026): WANN der Shard da ist — dieselbe Quelle wie `historieFuer`
+  // (Leerlauf-Fetch oben, rIC-Timeout 1200 ms), an den Erlass-Key gebunden. Das Panel
+  // sperrt «Erlass in Kraft seit»/«nichts erfasst» darauf, nicht auf einen eigenen
+  // Lader: dessen «geladen» kam VOR `historieFuer` (Aufblitzen an Artikeln mit Ereignis).
+  // `wert: null` bei `fertig` = kein Shard ODER Netzfehler (der Lader trennt das nicht).
+  const historieStand = useMemo<{ wert: HistorieShard | null; fertig: boolean }>(() => (
+    erlass && historieShard?.key === erlass.key
+      ? { wert: historieShard.shard, fertig: true }
+      : { wert: null, fertig: false }
+  ), [erlass, historieShard]);
 
   return {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
@@ -210,7 +220,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
+    revisionFuer, historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
   };
 }
 

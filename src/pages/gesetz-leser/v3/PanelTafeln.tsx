@@ -12,7 +12,7 @@ import { BotschaftZeile, PanelMaterialien } from './PanelMaterialien';
 import { PanelErlaeuterungen } from './PanelErlaeuterungen';
 import { ordneErlaeuterungen } from './erlaeuterungModell';
 import { PanelWerkzeuge } from './PanelWerkzeuge';
-import { useArtikelRevisionShard, useErlaeuterungen, useHistorieShard, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
+import { useArtikelRevisionShard, useErlaeuterungen, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
 import type { PanelReiter } from './panelModell';
 import { bestimmungDativ, type BestimmungsWort } from './erlassWortlaut';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
@@ -147,7 +147,7 @@ export interface PanelTafeln {
   artikelRevisionen: Geladen<RevisionShard | null>;
 }
 
-export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort, erlassSr, inkraftSeit }: {
+export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort, erlassSr, inkraftSeit, historie }: {
   erlassKey: string | undefined;
   /** `zustand.jeGeoeffnet` — das Gate (Herleitung in `./panelKontextLaden`). */
   laden: boolean;
@@ -164,11 +164,17 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   /** P5 · SR-Nummer und Ur-Inkrafttreten des Erlasses (Register) — Zeile «Erlass in Kraft seit …». */
   erlassSr?: string | null;
   inkraftSeit?: string | null;
+  /** P5 · B1 (1.10.2026): der Historie-Shard des LESERS (`inhalt-zustand`, Leerlauf-
+   *  Fetch) samt Bereitschaft — dieselbe Quelle, aus der `blatt.historie` stammt.
+   *  Ein eigener Panel-Lader meldete «geladen», solange `blatt.historie` noch
+   *  `undefined` war, und liess «Erlass in Kraft seit»/«nichts erfasst» an Artikeln
+   *  MIT Ereignis aufblitzen. `wert: null` = kein Shard ODER Netzfehler (der Lader
+   *  unterscheidet beides nicht, `lib/normtext/historie-laden`). */
+  historie: Geladen<HistorieShard | null>;
 }): PanelTafeln {
   const { locale } = useLocale();
   const revisionen = useRevisionen(erlassKey, laden);
   const artikelRevisionen = useArtikelRevisionShard(erlassKey, laden);
-  const historieShard = useHistorieShard(erlassKey, laden);
   const materialien = useMaterialien(erlassKey, laden, locale);
   const erlaeuterungen = useErlaeuterungen(erlassKey, laden);
   // W3-5 (Audit 25.9.2026): `unsicher` = das Manifest (`/materialien/register.json`)
@@ -210,11 +216,14 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const matZahl = mat ? (mat.botschaften?.length ?? 0) + (mat.vernehmlassungen?.length ?? 0) + (mat.kanton?.length ?? 0) : null;
   // «Änderungen» ohne jeden Beleg am Artikel: weder Fassungshistorie noch ein
   // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
-  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
+  // B1: erst wenn BEIDE Quellen geladen sind — die Historie kommt vom Leser, nicht
+  // vom Panel-Lader (`historie.fertig`), sonst blitzte die Leerzeile an Artikeln
+  // mit Ereignis kurz auf.
+  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   const erlassStand = erlassStandFuerArtikel({
     erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
-    historieFertig: historieShard.fertig, historieShard: historieShard.wert,
+    historieFertig: historie.fertig, historieShard: historie.wert,
   });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
   // 231 Sidecars kantonal, Beleg in `PanelAenderungen`) — das ist eine Auskunft

@@ -5,6 +5,8 @@ import type { BestimmungsWort } from './erlassAnsicht';
 import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { usePanelTafeln } from './PanelTafeln';
+import type { Geladen } from './panelKontextLaden';
+import type { HistorieShard } from '../../../lib/normtext/historie-laden';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { blattFlaeche } from './blattFlaeche';
@@ -85,7 +87,7 @@ import { BlattVerweise, type BlattArtikel } from './BlattArtikel';
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel, erlassSr, inkraftSeit,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel, erlassSr, inkraftSeit, historie,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
    *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die Tafeln
@@ -144,6 +146,8 @@ export function LeserPanelZone({
    *  durchgereicht für «Erlass in Kraft seit …» im Reiter Änderungen (`./PanelTafeln`). */
   erlassSr?: string | null;
   inkraftSeit?: string | null;
+  /** P5 · B1: Historie-Shard des Lesers samt Bereitschaft (`historieStand`) — Sperre für «Erlass in Kraft seit»/«nichts erfasst». */
+  historie: Geladen<HistorieShard | null>;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -222,7 +226,7 @@ export function LeserPanelZone({
   // Shard (§7b-Deckungslücke, normrevision-badge.e2e.ts) kommt von dort mit.
   const { tafeln, artikelRevisionen } = usePanelTafeln({
     erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt: artikel,
-    normZitat, wort: bestimmungsWort, erlassSr, inkraftSeit,
+    normZitat, wort: bestimmungsWort, erlassSr, inkraftSeit, historie,
   });
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════

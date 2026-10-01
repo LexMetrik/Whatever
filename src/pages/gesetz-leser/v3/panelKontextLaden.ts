@@ -5,7 +5,6 @@ import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/mat
 import { kantonaleGesetzgebungFuer, type KantonalesGeschaeft } from '../../../lib/materialien/ratschlaege';
 import { ladeMaterialManifest } from '../../../lib/materialien/browse';
 import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
-import { ladeHistorieShard, type HistorieShard } from '../../../lib/normtext/historie-laden';
 import { kontextSoftLawErgebnis, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
 import { beiKantenShardErholt } from '../../../lib/materialien/kanten-shard';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
@@ -88,18 +87,6 @@ export function useRevisionen(erlassKey: string | undefined, laden: boolean): Ge
 // Promise-Cache NICHT setzt, also beim nächsten Aufruf erneut versucht).
 export function useArtikelRevisionShard(erlassKey: string | undefined, laden: boolean): Geladen<RevisionShard | null> {
   return useNachladen(erlassKey, laden, ladeRevisionShard);
-}
-
-// ── W2·27-BUND-FERTIG P5 (1.10.2026) · der Historie-Shard für das Residuum-Gate ──
-// Der Leser hält ihn ohnehin (`inhalt-zustand`, `ladeHistorieShard`, gecachte
-// Promise je Erlass) — das Panel liest ihn hier ein ZWEITES Mal nur aus dem Cache,
-// KEIN zweiter Fetch (§15). Gebraucht wird, was `historieFuer` nicht liefert: ob
-// der Shard GELADEN ist (sonst blitzte «Erlass in Kraft seit» kurz an Artikeln
-// auf, die ein Ereignis tragen) und sein `residuum` (Fussnoten, die die Grammatik
-// nicht als Ereignis erkannt hat). `null` = kein Shard ODER Netzfehler (der
-// Lader unterscheidet beides nicht; das Fehlerverhalten ist dort beschrieben).
-export function useHistorieShard(erlassKey: string | undefined, laden: boolean): Geladen<HistorieShard | null> {
-  return useNachladen(erlassKey, laden, ladeHistorieShard);
 }
 
 // ── W2·7-VZUI (31.8.2026) · Behörden-Ressourcen für den Reiter «Anwendung» ───
