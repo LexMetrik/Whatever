@@ -78,7 +78,6 @@ import {
   leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
-  projektionOhneSoll,
   projektionsBlob,
   segmentiereAnker,
   segmenteZuFingerabdruecken,
@@ -94,6 +93,7 @@ import {
   type SollPin,
   type ZeilenStatistik,
 } from './segmente-logik.ts';
+import { projektionOhneSoll } from './segmente-anker.ts';
 import {
   B6_BASIS_REF,
   B6_KOPF_REF,

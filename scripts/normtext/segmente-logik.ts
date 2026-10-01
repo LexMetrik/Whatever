@@ -21,7 +21,7 @@
  * unbelegte Wahrheit).
  */
 import { parseHTML } from 'linkedom';
-import { zerlegeVorkommenSuffix } from './anhang-vorkommen.ts';
+import { lokalisiereAnker } from './segmente-anker.ts';
 import { leereZeilenStatistik, type Fingerabdruck, type ZeilenStatistik } from './segmente-soll.ts';
 
 // Soll-/Basislinien-Logik liegt seit Runde 3 (25.9.2026) in `segmente-soll.ts`
@@ -332,56 +332,6 @@ export function alleAnhangEids(dokument: { querySelectorAll: (sel: string) => It
     eids.add(n === 1 ? ankerId : `${ankerId}__${n}`);
   }
   return [...eids];
-}
-
-/**
- * Lokalisiert einen Anker im geparsten Dokument. `getElementById` löst eine
- * doppelte id immer auf das ERSTE Element auf und kennt den Synthese-Suffix
- * «__N» nicht (er existiert als Attribut-Wert nie) — daher: eine echte id
- * gewinnt; sonst ist «<basis>__N» das N-te `<section id="<basis>">` in
- * Dokumentreihenfolge (Konvention und Zerlegung geteilt mit der Anhang-Anker-
- * Auflösung, `zerlegeVorkommenSuffix`; der Extraktor zählt dieselben
- * `<section>`-Öffnungen, `extrahiereAnhang`).
- *
- * Bewusst NUR `<section>` (Anhänge, Gliederung): ein doppeltes `<article>`
- * (KKV art_126_z, Fedlex-Quellfehler) bleibt «nicht lokalisierbar» und ist die
- * einzige dokumentierte Ausklammerung (`AUSKLAMMERUNG_AUSNAHME`, check-segmente.ts).
- */
-export function lokalisiereAnker(
-  dokument: { getElementById: (id: string) => Knoten | null; querySelectorAll: (sel: string) => Iterable<Knoten> },
-  ankerId: string,
-): Knoten | null {
-  const direkt = dokument.getElementById(ankerId);
-  if (direkt) return direkt;
-  const suffix = zerlegeVorkommenSuffix(ankerId);
-  if (!suffix || suffix.nth < 2) return null;
-  const gleichnamig = [...dokument.querySelectorAll('section[id]')].filter(
-    (el) => el.getAttribute('id') === suffix.basis,
-  );
-  return gleichnamig[suffix.nth - 1] ?? null;
-}
-
-/**
- * Modus B (§6.7, 1.10.2026): jeder Projektions-Eintrag eines Erlasses muss im
- * Soll einen Schlüssel tragen (das Soll entsteht aus HTML-Ankern VEREINIGT mit
- * den Projektions-eIds). Fehlt einer, hat das Tor ihn nie geprüft — das Soll ist
- * hinter der Projektion zurück (#1204: VZV annex_u1__2/__3). Ohne diese Prüfung
- * las der CI-Lauf (nur Soll, keine HTML) grün, bis die Neugenerierung rot wurde.
- * @param praefix «bund/<KEY>/»; liefert die eIds OHNE Präfix.
- */
-export function projektionOhneSoll(
-  praefix: string,
-  projektionsIds: Iterable<string>,
-  sollEids: Iterable<string>,
-): string[] {
-  const soll = new Set(sollEids);
-  const fehlend: string[] = [];
-  for (const id of projektionsIds) {
-    if (!id.startsWith(praefix)) continue;
-    const eId = id.slice(praefix.length);
-    if (!soll.has(eId)) fehlend.push(eId);
-  }
-  return fehlend;
 }
 
 // Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —

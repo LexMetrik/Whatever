@@ -11,13 +11,8 @@
 // Eintrag OHNE Soll-Eintrag (#1204: Soll nicht nachgezogen) blieb unsichtbar ⇒
 // CI grün, obwohl das Tor den Eintrag nie geprüft hat (§6.7).
 import { describe, it, expect } from 'vitest';
-import {
-  alleAnhangEids,
-  lokalisiereAnker,
-  parseErlassHtml,
-  projektionOhneSoll,
-  segmentiereArtikel,
-} from '../../scripts/normtext/segmente-logik.ts';
+import { alleAnhangEids, parseErlassHtml, segmentiereArtikel } from '../../scripts/normtext/segmente-logik.ts';
+import { lokalisiereAnker, projektionOhneSoll } from '../../scripts/normtext/segmente-anker.ts';
 import { zerlegeVorkommenSuffix } from '../../scripts/normtext/anhang-vorkommen.ts';
 
 const sektion = (titel: string, text: string): string =>
