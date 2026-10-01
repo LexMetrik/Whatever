@@ -464,6 +464,12 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // nur die Suchphase ausgenommen — davor (Rail-Sprung) und danach
     // (Treffer-Sprung) zählen Verzeichnis-Shifts voll, und die Suchphase selbst
     // deckt die Versatz-Gegenprobe (vorher / nach Suche / nach Treffer-Sprung).
+    // BERICHTIGUNG 1.10.2026 (Auflagen-Kontrolle #1244): die Versatz-Gegenprobe
+    // deckt nur die Verschiebung des Verzeichnis-BEHÄLTERS (Oberkante gegen die
+    // Rail). Eine Umordnung INNERHALB des Verzeichnisses während der Suchphase
+    // (z. B. ein oben eingefügter Eintrag) ist ungeprüft — Restlücke, als Posten
+    // im Fehlerbuch (W2·18-FEHLERBUCH); ebenso ein Rail-Sprung-Nachlauf im
+    // Verzeichnis, der erst nach dem Öffnen des Suchfensters eintrifft.
     //
     // Gegenstück: die Ortsgrenze blendet die Listeneinträge aus — damit wäre ein
     // einwachsender Treffer-Slot (§15.2: Auskunftszeile schöbe das Verzeichnis
@@ -567,6 +573,7 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     // PRÄZISIERUNG 1.10.2026 (Zweitprüfung #1244): «schärfer als zuvor» gilt
     // AUSSERHALB des Verzeichnisses; innerhalb ist nur die Suchphase ausgenommen
     // und dort durch die Versatz-Gegenprobe (unten) gedeckt — siehe Ergänzung oben.
+    // (Berichtigung oben: gedeckt ist nur der Behälter, nicht die Umordnung darin.)
     expect(cls, 'CLS über Rail-Sprung/Suche (ausserhalb des gefilterten Verzeichnisses) muss 0 sein').toBe(0)
     expect(versatzNachher, 'Treffer-Slot schiebt das Verzeichnis (reservierter Slot wächst ein)').toBeCloseTo(versatzVorher, 0)
     // ERGÄNZUNG 1.10.2026 (Zweitprüfung #1244): auch NACH dem Treffer-Sprung. Ein
