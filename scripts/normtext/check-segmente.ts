@@ -78,6 +78,7 @@ import {
   leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
+  projektionOhneSoll,
   projektionsBlob,
   segmentiereAnker,
   segmenteZuFingerabdruecken,
@@ -270,7 +271,7 @@ function pruefeErlassGegenProjektion(
   key: string,
   artikelSoll: Record<string, [number, string][]>,
   auszuegeJeEid?: Map<string, Map<string, string>>,
-): { funde: Fund[]; keinProjektionsEintrag: string[]; geprueftArtikel: number } {
+): { funde: Fund[]; keinProjektionsEintrag: string[]; geprueftArtikel: number; projektionOhneSollEids: string[] } {
   const projektion = ladeProjektion(key);
   const funde: Fund[] = [];
   const keinProjektionsEintrag: string[] = [];
@@ -290,7 +291,10 @@ function pruefeErlassGegenProjektion(
       funde.push({ erlass: key, eId, hash: fp.hash, laenge: fp.laenge, auszug: auszuegeJeEid?.get(eId)?.get(fp.hash) });
     }
   }
-  return { funde, keinProjektionsEintrag, geprueftArtikel };
+  // §6.7 (1.10.2026): die Gegenrichtung — Projektions-Eintrag ohne Soll-Schlüssel (nur in
+  // Modus B ausgewertet, s. `berichteUndBewerte`; in Modus C deckt es die frische Ableitung).
+  const projektionOhneSollEids = projektionOhneSoll(`bund/${key}/`, projektion?.keys() ?? [], Object.keys(artikelSoll));
+  return { funde, keinProjektionsEintrag, geprueftArtikel, projektionOhneSollEids };
 }
 
 // ── B1: Ausklammerungen (Anker nicht in der HTML lokalisierbar) ────────────
@@ -374,6 +378,7 @@ interface Zwischenergebnis {
   geprueftArtikelGesamt: number;
   geprueftErlasse: Set<string>; // B10: welche Erlass-KEYs diesen Lauf TATSÄCHLICH geprüft wurden (nicht keinSoll/sollVeraltet)
   keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }>; // B1: nur Modus C (Modus B rührt die HTML nie an)
+  projektionOhneSollGesamt: Array<{ erlass: string; eId: string }>; // §6.7: nur Modus B (Gegenstück zu B1 ohne HTML)
   restmeldungenGesamt: string[]; // B2: nur Modus C
   zeilenStatistik: ZeilenStatistik; // G1: B aus den Soll-Dateien, C frisch aus der HTML
   dispAusserhalb?: { abschnitte: number; erlasse: number }; // G10: nur Modus C
@@ -384,6 +389,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const sollVeraltet: string[] = [];
   const keinSoll: string[] = [];
   const keinProjektionsEintragGesamt: Array<{ erlass: string; eId: string }> = [];
+  const projektionOhneSollGesamt: Array<{ erlass: string; eId: string }> = [];
   const geprueftErlasse = new Set<string>();
   const zeilenStatistik = leereZeilenStatistik();
   let geprueftArtikelGesamt = 0;
@@ -402,9 +408,13 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     const key = e.name.toUpperCase();
     geprueftErlasse.add(key);
     if (committedSoll.zeilenStatistik) addiereZeilenStatistik(zeilenStatistik, committedSoll.zeilenStatistik);
-    const { funde, keinProjektionsEintrag, geprueftArtikel } = pruefeErlassGegenProjektion(key, committedSoll.artikel);
+    const { funde, keinProjektionsEintrag, geprueftArtikel, projektionOhneSollEids } = pruefeErlassGegenProjektion(
+      key,
+      committedSoll.artikel,
+    );
     alleFunde.push(...funde);
     for (const eId of keinProjektionsEintrag) keinProjektionsEintragGesamt.push({ erlass: key, eId });
+    for (const eId of projektionOhneSollEids) projektionOhneSollGesamt.push({ erlass: key, eId });
     geprueftArtikelGesamt += geprueftArtikel;
   }
   return {
@@ -417,6 +427,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     geprueftArtikelGesamt,
     geprueftErlasse,
     keinAnkerLokalisierbarGesamt: [],
+    projektionOhneSollGesamt,
     restmeldungenGesamt: [],
     zeilenStatistik,
   };
@@ -478,6 +489,7 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     geprueftArtikelGesamt,
     geprueftErlasse,
     keinAnkerLokalisierbarGesamt,
+    projektionOhneSollGesamt: [],
     restmeldungenGesamt,
     zeilenStatistik,
     dispAusserhalb: { abschnitte: dispAbschnitte, erlasse: dispErlasse },
@@ -519,6 +531,21 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
           `${AUSKLAMMERUNG_AUSNAHME.replace('\u0000', ' ')}):`,
       );
       for (const a of unerwartet.slice(0, 30)) console.error(`   · ${a}`);
+    }
+  }
+  // §6.7 (1.10.2026): Modus B kennt keine HTML, sieht aber die Projektion — ein Eintrag OHNE
+  // Soll-Schlüssel wurde vom Tor nie geprüft (Soll hinter der Projektion zurück, #1204:
+  // VZV annex_u1__2/__3). Dieselbe Ausnahme wie B1 (KKV art_126_z__2: kein Anker, also kein Soll).
+  if (z.projektionOhneSollGesamt.length > 0) {
+    const ohneSoll = unerwarteteAusklammerungen(z.projektionOhneSollGesamt);
+    if (ohneSoll.length > 0) {
+      fehler = true;
+      console.error(
+        `❌ FEHLER (§6.7): ${ohneSoll.length} Projektions-Eintrag/Einträge OHNE Soll-Schlüssel — vom Tor nie geprüft ` +
+          `(Soll hinter der Projektion zurück; ausser ${AUSKLAMMERUNG_AUSNAHME.replace('\u0000', ' ')}):`,
+      );
+      for (const a of ohneSoll.slice(0, 30)) console.error(`   · ${a}`);
+      console.error('   → mit vollständigem Cache: npm run check:segmente -- --schreiben');
     }
   }
   // G10: bekannte Lücke des Prüfumfangs sichtbar halten (nur C — braucht die HTML).
