@@ -40,7 +40,10 @@ function alphaFaehig(baum) {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  // Tests sind keine Klassen-Quelle: eine Regex mit eckiger Zeichenklasse in
+  // einem Test wurde als «arbitrary property» gelesen und brach den Build
+  // (1.10.2026, Nachzug #1222).
+  content: ['./index.html', './src/**/*.{ts,tsx}', '!./src/tests/**', '!./src/**/*.test.{ts,tsx}'],
   theme: {
     extend: {
       // FARBEN. Die Token-Einträge kommen aus `tailwind.tokens.generated.js`
