@@ -55,3 +55,14 @@ jobs:
           else
             gh issue create --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf"
           fi
+
+      - name: Bei Grün — offenen Zettel schliessen
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          offen=$(gh issue list --state open --search 'Prod-Smoke rot in:title' --json number --jq '.[0].number // empty')
+          [ -z "$offen" ] && exit 0
+          gh issue close "$offen" --reason completed --comment "🟢 Prod-Smoke wieder grün am $(date +%F). Lauf: ${RUN_URL}"
