@@ -472,8 +472,11 @@ for e in "${EINTRAEGE[@]}"; do
   fi
   # Alter Pin-Marker gilt nur für den alten Inhalt: vor dem Abruf weg, nur bei OK neu (unten).
   rm -f "${datei}.pin"
-  # -m: ein hängender Abruf bricht ab (HTTP 000 → FEHLER unten), statt den Lauf zu blockieren.
+  # -m: ein hängender Abruf bricht ab, statt den Lauf zu blockieren. ACHTUNG: -m nach den Headern
+  # (langsamer Transfer) liefert %{http_code}=200 UND curl-Exit 28 mit abgeschnittener Datei —
+  # darum den Exit-Code `rc` unmittelbar festhalten; rc≠0 ist FEHLER (1.10.2026, PR #1247).
   code=$(curl -s --connect-timeout 15 -m 90 -o "$datei" -w "%{http_code}" "$url")
+  rc=$?
   groesse=$(wc -c < "$datei" | tr -d ' ')
   # Schwelle 20 kB: SPA-Shell/Fehlerseiten sind ~9 kB bzw. ~77 kB OHNE Anker —
   # die Anker-Prüfung unten fängt grosse Blindgänger; kleinster echter Cache
@@ -499,8 +502,9 @@ for e in "${EINTRAEGE[@]}"; do
   #      auf dieselbe Frage (§5).
   # Darum jetzt: der gepinnte Abruf scheitert LAUT. Reparatur ist Sache des
   # Re-Pins, nicht dieses Skripts.
-  if [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
-    echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, ${groesse} B)"
+  if [ "$rc" -ne 0 ] || [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
+    echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, curl-Exit ${rc}, ${groesse} B)"
+    [ "$rc" -ne 0 ] && rm -f "$datei"  # Teil-Datei nie als Cache stehen lassen
     echo "        URL: ${url}"
     echo "        KEIN Fallback auf andere html-Revisionen — das würde still eine"
     echo "        nicht-kanonische Fassung einsetzen. Reparatur: Konsolidierung ${kons}"
