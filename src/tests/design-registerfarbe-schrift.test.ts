@@ -32,9 +32,14 @@ import { alleTsx, APP_WURZEL, liesRoh, ohneKommentare, rel } from './appDateien'
 
 const norm = (s: string): string => s.replace(/\s+/g, ' ').trim();
 
-/** Ganzes Klassen-Token (ohne Variante, ohne Bindestrich-Nachbarn): `x` ≠ `no-x`, `x-offset-4`, `hover:x`. */
+/**
+ * Ganzes Klassen-Token (durch Leerraum begrenzt): `x` ≠ `no-x`, `x-offset-4`, `hover:x`.
+ * Bewusst OHNE Zeichenklassen in eckigen Klammern im Quelltext: Tailwind scannt diese
+ * Datei (`content`) und las eine solche Klasse als beliebige Eigenschaft →
+ * lightningcss-Syntaxfehler im Build (Nachzug 1.10.2026, Build rot gemessen).
+ */
 const token = (zeile: string, name: string): boolean =>
-  new RegExp(`(?<![-:\\w])${name}(?![-\\w])`).test(zeile);
+  new RegExp(`(^| )${name}( |$)`).test(zeile.replace(/\s+/g, ' '));
 
 /** Alle `text-reg-*`-Fundstellen (auch mit Variante) ausserhalb der erlaubten Rollen. */
 function verstoesseTsx(quelle: string): string[] {
