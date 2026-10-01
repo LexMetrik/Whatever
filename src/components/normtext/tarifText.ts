@@ -14,9 +14,22 @@
 // gegen «übersteigenden» ab (dort folgt kein « Ziffer»). KEINE \b-Wortgrenze:
 // Umlaute zählen in JS-Regex nicht als \w, «\büber» würde nie matchen. Die erste
 // Zeile (Kopf + erstes Band) wird vor «bis <Zahl>» getrennt.
+// Eigene Gliederungsabschnitte im Fliesstext: « — ab) …», « — 2. …» (Tabellenzeilen,
+// die der Adapter als « — »-getrennte Abschnitte abgelegt hat, BS-952.200 § 22).
+const EIGENE_GLIEDERUNG = /\s—\s(?:\p{Ll}{1,2}\)|\d{1,2}\.)\s/u;
+// «vom Mehrbetrag über» direkt hinter «plus N ‰/%» gehört zu diesem Band (kein eigener Marker).
+const OHNE_PLUS_DAVOR = String.raw`(?<!plus \d[\d.,']*\s?[‰%]\s)`;
+const BAND_MARKER = new RegExp(`${OHNE_PLUS_DAVOR}vom Mehrbetrag über|plus \\d`, 'g');
+const BAND_SCHNITT = new RegExp(`(?=${OHNE_PLUS_DAVOR}vom Mehrbetrag über|plus \\d)`);
 export function staffelZeilen(text: string): string[] | null {
   // (1) Gerichtsgebühren-Staffel «über N …» (ZH GebV OG § 4-Stil).
-  if (/zuzügl\.|Grundgebühr|betragen/.test(text) && (text.match(/über \d/g) ?? []).length >= 2) {
+  //     W2·17 E-D4-B01: NICHT bei Texten, die ihre Zeilen schon selbst gliedern
+  //     («… CHF: 300 — ab) über 30,00 m · … — ac) vorderer Überhang über 3,00 m»,
+  //     BS-952.200 § 22: Tabellenzeilen als « — »-getrennte Gliederungsabschnitte).
+  //     Ein Schnitt vor «über N» schöbe dort die Litera + Bezeichnung der NÄCHSTEN
+  //     Position ans Ende der VORIGEN Zeile — falsch zugeordnete Gliederung (§1).
+  //     Solche Texte bleiben Fliesstext (Wortlaut unverändert).
+  if (/zuzügl\.|Grundgebühr|betragen/.test(text) && !EIGENE_GLIEDERUNG.test(text) && (text.match(/über \d/g) ?? []).length >= 2) {
     const zeilen = text
       .split(/(?=über \d)/)
       .flatMap((s, i) => (i === 0 ? s.split(/(?=bis \d)/) : [s]))
@@ -41,10 +54,13 @@ export function staffelZeilen(text: string): string[] | null {
   //     NUR Zeilenumbrüche an den Band-Markern «vom Mehrbetrag über» bzw.
   //     «plus N ‰/%» — der WORTLAUT bleibt unverändert (kein Ziffern-Trennen,
   //     §1), darum risikolos. ENG: Tarif-Marke (‰/Promille/Mehrbetrag) + ≥2 Bänder.
+  //     W2·17 E-D4-B02: «plus N ‰ vom Mehrbetrag über …» ist EIN Band — der Schnitt
+  //     liegt vor «plus», nicht zusätzlich vor dem direkt folgenden «vom Mehrbetrag»
+  //     (OW-213.61 § 6: sonst «plus 1 ‰» allein in einer Zeile; LU-3870 § 29 lit. d
+  //     tabelliert, die gleich gebauten lit. b/c nicht).
   if (/‰|promille|mehrbetrag/i.test(text)) {
-    const marker = text.match(/vom Mehrbetrag über|plus \d/g) ?? [];
-    if (marker.length >= 2) {
-      const zeilen = text.split(/(?=vom Mehrbetrag über|plus \d)/).map((s) => s.trim()).filter(Boolean);
+    if ((text.match(BAND_MARKER) ?? []).length >= 2) {
+      const zeilen = text.split(BAND_SCHNITT).map((s) => s.trim()).filter(Boolean);
       if (zeilen.length >= 3) return zeilen;
     }
   }
@@ -59,8 +75,14 @@ export function staffelZeilen(text: string): string[] | null {
 // entfernt oder umgestellt (Freigabe David 17.6.2026: Darstellung darf normalisiert
 // werden, solange der Wortlaut nicht angefasst wird).
 export function normalisiereTarifText(text: string): string {
+  // W2·17 E-D1-B03/E-D4-B05: Formeln/Einheiten bleiben wortgleich — «CO2», «PM10»,
+  // «NO2» (1–2 Versalien + Ziffer), «m2»/«cm2»/«km2». «CO2-Emissionsrechte»
+  // (BS-786.310 § 4.2.2) wurde sonst zu «CO 2-Emissionsrechte» (Zeichen verschoben, §1).
+  // Die PDF-Verschmelzungen des Tarif-Textes («Allgemeinen1.1.1», «mindestens100»)
+  // haben Kleinbuchstaben-Wörter vor der Ziffer und werden weiter getrennt.
   return text
-    .replace(/(\p{L})(\d)/gu, '$1 $2')
+    .replace(/(\p{L}+)(\d)/gu, (m, wort: string, z: string) =>
+      /^(?:\p{Lu}{1,2}|[ck]?m)$/u.test(wort) ? m : `${wort} ${z}`)
     .replace(/(‰)(\d)/gu, '$1 $2')
     .replace(/ {2,}/g, ' ')
     .trim();
