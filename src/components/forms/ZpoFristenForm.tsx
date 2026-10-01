@@ -384,7 +384,7 @@ export function ZpoFristenForm({ live }: {
                 <DatumsFeld value={fiktionDatum} onChange={(v) => setFiktionDatum(v)} className={inputCls} />
                 <button type="button" disabled={!fiktionDatum}
                   onClick={() => set('ereignis', zustellfiktion(fiktionDatum))}
-                  className="text-body-s px-3 py-2 bg-surface hover:bg-brass-100 disabled:opacity-50 text-ink-700 whitespace-nowrap">
+                  className="text-body-s px-3 py-2 bg-surface hover:bg-brass-100 lc-deaktiviert text-ink-700 whitespace-nowrap">
                   → als Ereignis übernehmen
                 </button>
               </div>

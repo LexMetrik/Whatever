@@ -266,7 +266,7 @@ export function AllgemeineFristForm({ live }: {
             <span className="lc-overline lc-overline-soft">Voreinstellung:</span>
             {MECHANIK_PRESETS.map((p) => (
               <button type="button" key={p.label} onClick={() => setForm((f) => ({ ...f, ...p.patch }))}
-                title={p.info} className="lc-chip hover:bg-brass-200 transition-colors">{p.label}</button>
+                title={p.info} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
           </div>
           {/* Fach-Presets Familienrecht & Status (gebaut 10.6.2026, Bauspez.
@@ -278,7 +278,7 @@ export function AllgemeineFristForm({ live }: {
             {FAM_STATUS_PRESETS.map((p) => (
               <button type="button" key={p.label}
                 onClick={() => { setForm((f) => ({ ...f, ...famPresetPatch(p) })); setFamPreset(p); }}
-                title={`${p.norm} — ${p.info}`} className="lc-chip hover:bg-brass-200 transition-colors">{p.label}</button>
+                title={`${p.norm} — ${p.info}`} className="lc-chip lc-hover-akzent">{p.label}</button>
             ))}
           </div>
           {famHinweis && (

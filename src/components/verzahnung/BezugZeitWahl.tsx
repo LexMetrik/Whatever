@@ -128,7 +128,7 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
           <button
             type="button"
             onClick={() => onBereich('', '')}
-            className="rounded px-1.5 py-0.5 text-micro text-ink-500 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
+            className="rounded px-1.5 py-0.5 text-micro text-ink-500 lc-hover-akzent hover:text-brass-700"
             title="Zeitraum aufheben — wieder alle Entscheide zeigen"
           >
             {label} ×
