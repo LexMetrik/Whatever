@@ -23,8 +23,7 @@ jobs:
       issues: write
     steps:
       # fetch-depth: 0 — der Prod-Stand-Wächter (QS-AUTOMATIK 16.8.2026) vergleicht
-      # den ausgelieferten Build-SHA gegen origin/main. Ein flacher Klon kennt den
-      # Build-Commit oft nicht und der Wächter meldete «unbekannter Build-SHA».
+      # den Build-SHA gegen origin/main; ein flacher Klon kennt ihn oft nicht.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -45,13 +44,12 @@ jobs:
         run: |
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
-          offen=$(gh issue list -s open -l alarm:prod-smoke -S author:app/github-actions --json number -q '.[0].number // empty')
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:prod-smoke&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           rumpf="Der Prod-Smoke ist rot — die Live-Site verletzt einen harten Betriebs-Vertrag (Kernroute nicht 200, Edge-Suche liefert HTML statt JSON, Sitemap/Asset weg oder CSP-Kopf fehlt). **Neu seit 16.8.2026**: auch «Prod hinkt hinter main» — dann ist die AUSLIEFERUNG defekt, nicht die Site. Erst den Ignored Build Step und den Deployment-State in Vercel prüfen (READY statt CANCELED), nicht rollbacken. **Rückweg** bei echtem Site-Defekt: docs/betrieb/rollback-runbook.md (\`vercel rollback\`). Lauf: ${RUN_URL}"
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Erneut rot am $(date +%F). ${rumpf}"
           else
-            gh label create alarm:prod-smoke -f -c B60205 >/dev/null
-            gh issue create --label alarm:prod-smoke --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf"
+            for l in "--label alarm:prod-smoke" ""; do gh issue create $l --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf" && break; done
           fi
 
       - name: Bei Grün — offenen Zettel schliessen
@@ -62,6 +60,6 @@ jobs:
         run: |
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
-          offen=$(gh issue list -s open -l alarm:prod-smoke -S author:app/github-actions --json number -q '.[0].number // empty')
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:prod-smoke&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           [ -z "$offen" ] && exit 0
           gh issue close "$offen" --reason completed --comment "🟢 Wieder grün am $(date +%F): ${RUN_URL}"

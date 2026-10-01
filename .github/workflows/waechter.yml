@@ -175,7 +175,10 @@ jobs:
       # github-actions statt per Titelsuche — ein Handzettel mit gleichen
       # Titelwörtern bleibt unberührt. Der ERR-Trap macht jede Pflege-Panne
       # (API-Störung) zur `::warning::` mit Exit 0: die Zettel-Pflege ändert das
-      # Lauf-Ergebnis nie, Rot kommt allein vom Prüfschritt.
+      # Lauf-Ergebnis nie, Rot kommt allein vom Prüfschritt. Fund über die Issues-API
+      # (kein Such-Index-Verzug); Anlage erst MIT Label, scheitert das, OHNE — der
+      # Alarm geht nie am Label verloren (Zweitprüfung #1237). fedlex-frische: dort
+      # ist der Zettel das einzige Signal, nur die Suche wird Warnung, Anlage-Fehler = rot.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
         if: failure()
         env:
@@ -184,16 +187,15 @@ jobs:
         run: |
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
-          offen=$(gh issue list -s open -l alarm:waechter -S author:app/github-actions --json number -q '.[0].number // empty')
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:waechter&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Weiterhin rot am $(date +%F). Lauf: ${RUN_URL}"
             echo "Zettel #${offen} kommentiert (weiterhin rot)."
           else
-            gh label create alarm:waechter -f -c B60205 >/dev/null
-            nr=$(gh issue create --label alarm:waechter \
+            nr=$(for l in "--label alarm:waechter" ""; do gh issue create $l \
               --title "🔴 Wächter rot seit $(date +%F) — geplante Läufe/PR-Kontexte prüfen" \
               --body "Der tägliche Wächter (geplante Läufe, .github/workflows/waechter.yml) ist fehlgeschlagen — mindestens ein geplanter Workflow ist laut \`check:ci-laeufe\` nicht in Ordnung, ODER der PR-Kontext-Nachzug (K2/K11) ist an einer anderen Stelle als der bekannten, tolerierten Branch-Schutz-403-Lücke gescheitert. Lauf-Log prüfen. Lauf: ${RUN_URL}" \
-              | grep -oE '[0-9]+$')
+              && break; done | grep -oE '[0-9]+$')
             echo "Zettel #${nr} angelegt (erstmals rot)."
           fi
 
@@ -205,7 +207,7 @@ jobs:
         run: |
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
-          offen=$(gh issue list -s open -l alarm:waechter -S author:app/github-actions --json number -q '.[0].number // empty')
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:waechter&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           if [ -z "$offen" ]; then
             echo "Wächter grün, kein offener Zettel — nichts zu schliessen."
             exit 0
