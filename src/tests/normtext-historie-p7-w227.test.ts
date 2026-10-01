@@ -6,6 +6,7 @@
  * Abruf der Caches 1.10.2026) bzw. aus den Struktur-Sidecars `public/normtext/struktur/bund/*.json`.
  */
 import { describe, it, expect } from 'vitest';
+import { readFileSync, readdirSync } from 'node:fs';
 import { fussnoteDiesenArtGegenstandslos } from '../../scripts/normtext/aufhebung-signal';
 import { parseFussnoteHistorie, baueArtikelHistorie, type FnEingang } from '../lib/normtext/historie-parse';
 import { pruefeAufgehobenGiltSeit, leseHistorieShards } from '../../scripts/normtext/historie-aufgehoben-lebend';
@@ -117,6 +118,105 @@ describe('P7 #53 · Tor: Text-Shard «aufgehoben» ⇒ Historie ohne «Gilt seit
   it('mit aufgehobenSeit ist «Gilt seit» daneben zulässig (Anzeige führt «Aufgehoben seit»)', () => {
     const shard = new Map([['AVO', { artikel: { '22_a_22_c': { giltSeit: '2015-07-01', aufgehobenSeit: '2020-01-01' } } }]]);
     expect(pruefeAufgehobenGiltSeit(shard, textWurzel).befunde).toEqual([]);
+  });
+});
+
+// ── #11 · «Ursprünglich» nennt die ALTE Bezeichnung (`frueher`), nie ein geratenes Datum ──────────────────────────────
+// Die Zeile «Ursprünglich · Abs. 1, lit./Ziff. cquater» sagte nicht, WAS ursprünglich galt; die Fussnote trägt es im
+// Wortlaut («Ursprünglich: Bst. c, dann c. Eingefügt durch …»). Gemessen 1.10.2026 (public/normtext/struktur/bund):
+// 284 Vorkommen in 282 Fussnoten. Das Datum der Ur-Bezeichnung nennt die Fussnote NICHT — sie datiert nur den
+// folgenden «Eingefügt durch …»-Teil (eigenes Ereignis) bzw. die Versetzung («; hierher versetzt gemäss …, in Kraft
+// seit …», AHVV 28/31): beides gehört nicht zur Ur-Bezeichnung und wird ihr nicht zugeschrieben (§7).
+describe('P7 #11 · frueher = alte Bezeichnung hinter «Ursprünglich»', () => {
+  const fn = (text: string, extra: Partial<FnEingang> = {}): FnEingang => ({ text, links: [], absatz: null, item: null, ...extra });
+  const frueher = (text: string, extra: Partial<FnEingang> = {}) =>
+    parseFussnoteHistorie(fn(text, extra)).ereignisse.filter((e) => e.typ === 'urspruenglich').map((e) => e.frueher);
+
+  it('EOG 20 Abs. 1 lit. g: «Ursprünglich: Bst. e. Eingefügt durch …» ⇒ frueher «Bst. e», Skopus bleibt, Folge-Ereignis eigen', () => {
+    const r = parseFussnoteHistorie(fn(
+      'Ursprünglich: Bst. e. Eingefügt durch Ziff. I des BG vom 1. Okt. 2021, in Kraft seit 1. Jan. 2023 (AS 2022 468).', { absatz: '1', item: 'g' },
+    ));
+    expect(r.ereignisse.map((e) => [e.typ, e.frueher, e.datum, e.absatz, e.item])).toEqual([
+      ['urspruenglich', 'Bst. e', null, '1', 'g'],
+      ['eingefuegt', undefined, '2023-01-01', '1', 'g'],
+    ]);
+  });
+
+  it('Belegte Wortlaut-Formen (Korpus): mit/ohne Doppelpunkt, mit/ohne Schlusspunkt, «vor Art.», Sammelform, Mehrfach', () => {
+    expect(frueher('Ursprünglich Art. 29. Eingefügt durch Ziff. I des BG vom 21. Dez. 1956 (AS 1957 262).')).toEqual(['Art. 29']);
+    expect(frueher('Ursprünglich: Art. 49a. Eingefügt durch Ziff. I des BG vom 23. Juni 2000 (AS 2000 2749).')).toEqual(['Art. 49a']);
+    expect(frueher('Ursprünglich vor Art. 56')).toEqual(['vor Art. 56']);
+    expect(frueher('Ursprünglich: Vor Art. 103. Fassung gemäss Ziff. I des BG vom 25. Sept. 2015, in Kraft seit 1. März 2019 (AS 2016 3101).')).toEqual(['Vor Art. 103']);
+    expect(frueher('Ursprünglich Bst. D, danach Bst. E. Eingefügt durch Ziff. I des BRB vom 10. Jan. 1969 (AS 1969 125).')).toEqual(['Bst. D, danach Bst. E']);
+    expect(frueher('Ursprünglich Art. 50 Eingefügt durch Ziff. I der V vom 26. Sept. 1994, in Kraft seit 1. Jan. 1995 (AS 1994 2162).')).toEqual(['Art. 50']);
+    expect(frueher('Ursprünglich:Artikel 325. Eingefügt durch Ziff. II Art. 4 des BG vom 15. Dez. 1989 (AS 1990 1).')).toEqual(['Artikel 325']);
+    expect(frueher('Ursprünglich: Art. 1a. Ursprünglich Art. 1. Fassung gemäss Ziff. I der V vom 11. Dez. 1995, in Kraft seit 1. Jan. 1996 (AS 1996 295).')).toEqual(['Art. 1a', 'Art. 1']);
+  });
+
+  it('Abkürzungs-Punkt gehört zur Ur-Bezeichnung (Kap., Abschn., Tit.), der Satz-Punkt nicht', () => {
+    expect(frueher('Ursprünglich 3. Kap. Fassung gemäss Ziff. I des BG vom 21. Dez. 1995, in Kraft seit 1. Juli 1997 (AS 1997 1155).')).toEqual(['3. Kap.']);
+    expect(frueher('Ursprünglich: 2. Abschn. Fassung gemäss Ziff. I der V vom 10. und 22. Juni 2011, in Kraft seit 1. Jan. 2012 (AS 2011 3435).')).toEqual(['2. Abschn.']);
+    expect(frueher('Ursprünglich 2. Abschn. des 1. Kap. Fassung gemäss Art. 2 Ziff. 1 des BB vom 5. Okt. 2007 (AS 2008 38).')).toEqual(['2. Abschn. des 1. Kap.']);
+    expect(frueher('Ursprünglich Tit. vor Art. 27')).toEqual(['Tit. vor Art. 27']);
+  });
+
+  it('AHVV 28: «; hierher versetzt gemäss …, in Kraft seit 1. Jan. 1966» gehört NICHT zur Ur-Bezeichnung — weder Text noch Datum noch Fundstelle', () => {
+    const link = { label: 'AS 1965 1021', url: 'https://fedlex.data.admin.ch/eli/oc/1965/1021_1033_1019' };
+    const r = parseFussnoteHistorie({
+      text: 'Ursprünglich Tit. vor Art. 27; hierher versetzt gemäss Ziff. II Abs. 2 des BRB vom 19. Nov. 1965, in Kraft seit 1. Jan. 1966 (AS 1965 1021).',
+      links: [link], absatz: null, item: null,
+    });
+    expect(r.ereignisse).toEqual([{ typ: 'urspruenglich', datum: null, wirkung: false, quellen: [], absatz: null, item: null, frueher: 'Tit. vor Art. 27' }]);
+  });
+
+  it('eine Fundstelle in Klammer hinter der Ur-Bezeichnung bleibt Quelle, nicht Teil des Textes (BVV 2 Art. 60e)', () => {
+    const link = { label: 'AS 2005 5257', url: 'https://fedlex.data.admin.ch/eli/oc/2005/5257' };
+    const r = parseFussnoteHistorie({ text: 'Ursprünglich Art. 60b (AS 2005 5257).', links: [link], absatz: null, item: null });
+    expect(r.ereignisse[0]).toMatchObject({ typ: 'urspruenglich', frueher: 'Art. 60b', datum: null });
+    expect(r.ereignisse[0].quellen.map((q) => q.label)).toEqual(['AS 2005 5257']);
+  });
+
+  it('ohne Wortlaut dahinter («Ursprünglich.»): Ereignis ohne frueher', () => {
+    expect(frueher('Ursprünglich.')).toEqual([undefined]);
+  });
+
+  it('MWSTG 28 Abs. 3: «… Ursprünglicher Abs. 3 aufgehoben durch …» — «Ursprünglicher» (anderes Wort) liefert kein frueher und schluckt die Vor-Bezeichnung nicht', () => {
+    const r = parseFussnoteHistorie(fn(
+      'Ursprünglich: Abs. 4. Ursprünglicher Abs. 3 aufgehoben durch Ziff. I des BG vom 30. Sept. 2016, mit Wirkung seit 1. Jan. 2018 (AS 2017 3575).', { absatz: '3' },
+    ));
+    // Bestand der Grammatik (nicht Teil von #11): «Ursprünglicher» ist weiterhin ein eigener Anker; hier nur: kein Müll-Text.
+    expect(r.ereignisse.map((e) => [e.typ, e.frueher, e.datum])).toEqual([
+      ['urspruenglich', 'Abs. 4', null],
+      ['urspruenglich', undefined, null],
+      ['aufgehoben', undefined, '2018-01-01'],
+    ]);
+  });
+
+  it('andere Ereignis-Typen tragen nie ein frueher (Form des Shards unverändert)', () => {
+    const r = parseFussnoteHistorie(fn('Eingefügt durch Ziff. I des BG vom 1. Jan. 2000 (AS 2000 1). Fassung gemäss Ziff. I des BG vom 1. Jan. 2010, in Kraft seit 1. Jan. 2011 (AS 2010 1).'));
+    expect(r.ereignisse.some((e) => 'frueher' in e)).toBe(false);
+  });
+
+  it('Bestand: jedes «urspruenglich»-Ereignis im Shard trägt frueher (ausser leerem Wortlaut) und nie ein Datum', () => {
+    const ohne: string[] = [];
+    const datiert: string[] = [];
+    let n = 0;
+    for (const f of readdirSync('public/normtext/historie').filter((x) => x.endsWith('.json'))) {
+      const s = JSON.parse(readFileSync(`public/normtext/historie/${f}`, 'utf8')) as {
+        artikel: Record<string, { ereignisse: Array<{ typ: string; datum: string | null; frueher?: string }> }>;
+      };
+      for (const [token, a] of Object.entries(s.artikel)) {
+        for (const e of a.ereignisse) {
+          if (e.typ !== 'urspruenglich') continue;
+          n++;
+          if (!e.frueher) ohne.push(`${f} ${token}`);
+          if (e.datum) datiert.push(`${f} ${token}`);
+        }
+      }
+    }
+    expect(n).toBeGreaterThan(250); // 284 am 1.10.2026 — das Tor liest real
+    expect(ohne).toEqual(['MWSTG.json 28']); // «Ursprünglicher Abs. 3 aufgehoben …» (anderes Wort, s. oben) — die einzige Ausnahme
+    expect(datiert).toEqual([]);
   });
 });
 

@@ -102,7 +102,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Bst. B"
     },
     {
      "typ": "fassung",
@@ -1186,16 +1187,12 @@
     },
     {
      "typ": "urspruenglich",
-     "datum": "1966-01-01",
+     "datum": null,
      "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1965 1021",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1965/1021_1033_1019"
-      }
-     ],
+     "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Tit. vor Art. 27"
     }
    ]
   },
@@ -1357,16 +1354,12 @@
     },
     {
      "typ": "urspruenglich",
-     "datum": "1979-01-01",
+     "datum": null,
      "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1978 420",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
-      }
-     ],
+     "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Tit. vor Art. 30"
     }
    ]
   },
@@ -2096,7 +2089,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 56"
     }
    ]
   },
@@ -2278,7 +2272,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "frueher": "Abs. 1"
     },
     {
      "typ": "eingefuegt",
@@ -2325,7 +2320,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Bst. F, danach Bst. G"
     },
     {
      "typ": "fassung",
@@ -5546,7 +5542,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 222"
     },
     {
      "typ": "fassung",
@@ -5567,7 +5564,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Neunter Abschnitt"
     }
    ]
   },
@@ -6362,7 +6360,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 1"
     },
     {
      "typ": "fassung",
@@ -7232,7 +7231,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 50"
     },
     {
      "typ": "eingefuegt",
@@ -8485,7 +8485,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Bst. D, danach Bst. E"
     },
     {
      "typ": "eingefuegt",
@@ -8550,7 +8551,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Bst. E, danach Bst. F"
     },
     {
      "typ": "eingefuegt",
@@ -8789,7 +8791,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 6"
     },
     {
      "typ": "eingefuegt",
@@ -8828,7 +8831,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 6"
     },
     {
      "typ": "eingefuegt",

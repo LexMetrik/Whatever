@@ -76,6 +76,10 @@ export interface HistorieEreignis {
   absatz: string | null;
   /** Skopus der Quell-Fussnote: lit./Ziff.-Marke innerhalb des Absatzes bzw. null. */
   item: string | null;
+  /** NUR bei typ 'urspruenglich' (P7 #11): die ALTE Bezeichnung im Wortlaut der Fussnote («Art. 29», «Bst. c, dann c»,
+   *  «vor Art. 56»). Fehlt, wenn die Fussnote nach «Ursprünglich» nichts nennt. Ein Datum gehört NICHT dazu — die
+   *  Fussnote datiert nur das folgende Ereignis, nie die Ur-Bezeichnung (§7). */
+  frueher?: string;
 }
 
 /** Klassifikation + Ergebnis EINER Fussnote. */
@@ -237,6 +241,29 @@ function quellenAusSegment(segment: string, links: ReadonlyArray<FnLink>): FnLin
  */
 const RECHTSGRUNDLAGE_RE = /[([]\s*Art\.\s*\d+[a-z]*(?:\s+Abs\.\s*\d+)?\s+(?:GVG|ParlG)\s*[–—;,-]\s*AS\b[^()[\]]*[)\]]/g;
 
+/** «Ursprünglich» als GANZES Wort am Segment-Anfang (nicht «Ursprünglicher Abs. 3 …»); Doppelpunkt optional. */
+const URSPRUNG_KOPF_RE = /^Ursprünglich(?::|(?=\s|$))/;
+
+/**
+ * P7 #11 (1.10.2026): Ur-Bezeichnung eines «Ursprünglich»-Segments. `kopf` = der Teil, der zur Ur-Bezeichnung gehört —
+ * bis zum ersten «;»: «Ursprünglich Tit. vor Art. 27; hierher versetzt gemäss …, in Kraft seit 1. Jan. 1966 (AS …)»
+ * (AHVV 28/31) datiert die VERSETZUNG, nicht die Ur-Bezeichnung; Datum und Fundstelle daraus würden ihr fälschlich
+ * zugeschrieben (§7). `frueher` = der Wortlaut hinter «Ursprünglich[:]» ohne Schlusspunkt und ohne Klammer-Fundstellen
+ * («(AS 2005 5257)» bleibt Quelle, nicht Text); null, wenn dort nichts steht oder das Wort nicht «Ursprünglich» ist.
+ */
+function ursprungAusSegment(segment: string): { kopf: string; frueher: string | null } {
+  const kopf = segment.split(';')[0];
+  if (!URSPRUNG_KOPF_RE.test(kopf)) return { kopf, frueher: null };
+  const text = kopf
+    .replace(URSPRUNG_KOPF_RE, '')
+    .replace(/\s*\((?:AS|BBl)\b[^)]*\)/g, '')
+    .trim();
+  // Satz-Punkt weg, Abkürzungs-Punkt bleibt («3. Kap.», «2. Abschn.», «Tit.»): an der Ur-Bezeichnung ist ein
+  // Schluss-Punkt nach einer dieser Abkürzungen Teil des Wortes, sonst endet damit der Satz.
+  const frueher = /\b(?:Abschn|Kap|Tit|Art|Abs|Bst|Ziff|Anh|Abt)\.$/.test(text) ? text : text.replace(/\.+$/, '').trim();
+  return { kopf, frueher: frueher || null };
+}
+
 /** Datiertes In-Kraft-/Wirkungs-Ergebnis eines Segments: {datum,wirkung} oder null. */
 function datumAusSegment(segment: string): { datum: string | null; wirkung: boolean } | null {
   TRIGGER_RE.lastIndex = 0;
@@ -285,14 +312,17 @@ export function parseFussnoteHistorie(fn: FnEingang): FussnoteHistorie {
       const segment = text.slice(einzigartig[i], grenzen[i + 1]);
       const typ = verbTyp(segment);
       if (!typ) continue;
-      const dat = datumAusSegment(segment);
+      const ur = typ === 'urspruenglich' ? ursprungAusSegment(segment) : null;
+      const rumpf = ur ? ur.kopf : segment; // Datum/Fundstellen: bei «Ursprünglich» nur der Ur-Teil (s. ursprungAusSegment)
+      const dat = datumAusSegment(rumpf);
       ereignisse.push({
         typ,
         datum: dat?.datum ?? null,
         wirkung: dat?.wirkung ?? false,
-        quellen: quellenAusSegment(typ === 'berichtigt' ? segment.replace(RECHTSGRUNDLAGE_RE, ' ') : segment, links),
+        quellen: quellenAusSegment(typ === 'berichtigt' ? rumpf.replace(RECHTSGRUNDLAGE_RE, ' ') : rumpf, links),
         absatz,
         item,
+        ...(ur?.frueher ? { frueher: ur.frueher } : {}),
       });
     }
     if (ereignisse.length > 0) return { klasse: 'ereignis', ereignisse };
