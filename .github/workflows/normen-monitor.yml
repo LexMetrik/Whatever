@@ -223,7 +223,8 @@ jobs:
           # ist noch nicht 'completed', darum zählt er als +1.
           serie=1
           runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status \
-                   --jq '.[] | select(.status=="completed") | .conclusion')
+                   --jq '.[] | select(.status=="completed") | .conclusion') \
+            || { echo "::warning::Rot-Serie nicht ermittelbar"; runs=; }
           for c in $runs; do
             [ "$c" = "success" ] && break
             serie=$((serie + 1))
