@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-10-01
 -->
 
 Modus B sah Projektion ohne Soll nicht. Wurzel-Tor jetzt projektionOhneSoll (Fix-PR); prüfen, ob korpus-werkstatt-Skill einen Satz braucht.
+
+**Erledigt 2026-10-01:** PR #1247 (b242bc926): Satz in .claude/skills/korpus-werkstatt/SKILL.md Eiserne Regeln

@@ -11,6 +11,9 @@
 set -u
 
 BASIS="https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli"
+# Cache-Ort: /tmp; nur Tests/Rot-Beweise setzen LEXMETRIK_FEDLEX_CACHE_DIR (wie check-segmente.ts).
+CACHE_DIR="${LEXMETRIK_FEDLEX_CACHE_DIR:-/tmp}"
+mkdir -p "$CACHE_DIR"
 
 # gesetz|eli|konsolidierung|html-N|pflicht-anker|sr
 #
@@ -459,7 +462,7 @@ for e in "${EINTRAEGE[@]}"; do
   # html-1 = VAG (SR 961.01); das art_1-Tor allein war blind dafür. Fehlt das
   # Feld (Altbestand), läuft die Prüfung wie bisher (rückwärtskompatibel, §6).
   IFS='|' read -r name eli kons n anker sr <<<"$e"
-  datei="/tmp/${name}.html"
+  datei="${CACHE_DIR}/${name}.html"
   pfad="${eli//\//-}"
   # n=0: Datei OHNE «-N»-Suffix (Spezialfall GebV SchKG, festgestellt 7.6.2026)
   if [ "$n" = "0" ]; then
@@ -467,7 +470,13 @@ for e in "${EINTRAEGE[@]}"; do
   else
     url="${BASIS}/${eli}/${kons}/de/html/fedlex-data-admin-ch-eli-${pfad}-${kons}-de-html-${n}.html"
   fi
-  code=$(curl -s -o "$datei" -w "%{http_code}" "$url")
+  # Alter Pin-Marker gilt nur für den alten Inhalt: vor dem Abruf weg, nur bei OK neu (unten).
+  rm -f "${datei}.pin"
+  # -m: ein hängender Abruf bricht ab, statt den Lauf zu blockieren. ACHTUNG: -m nach den Headern
+  # (langsamer Transfer) liefert %{http_code}=200 UND curl-Exit 28 mit abgeschnittener Datei —
+  # darum den Exit-Code `rc` unmittelbar festhalten; rc≠0 ist FEHLER (1.10.2026, PR #1247).
+  code=$(curl -s --connect-timeout 15 -m 90 -o "$datei" -w "%{http_code}" "$url")
+  rc=$?
   groesse=$(wc -c < "$datei" | tr -d ' ')
   # Schwelle 20 kB: SPA-Shell/Fehlerseiten sind ~9 kB bzw. ~77 kB OHNE Anker —
   # die Anker-Prüfung unten fängt grosse Blindgänger; kleinster echter Cache
@@ -493,8 +502,9 @@ for e in "${EINTRAEGE[@]}"; do
   #      auf dieselbe Frage (§5).
   # Darum jetzt: der gepinnte Abruf scheitert LAUT. Reparatur ist Sache des
   # Re-Pins, nicht dieses Skripts.
-  if [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
-    echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, ${groesse} B)"
+  if [ "$rc" -ne 0 ] || [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
+    echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, curl-Exit ${rc}, ${groesse} B)"
+    [ "$rc" -ne 0 ] && rm -f "$datei"  # Teil-Datei nie als Cache stehen lassen
     echo "        URL: ${url}"
     echo "        KEIN Fallback auf andere html-Revisionen — das würde still eine"
     echo "        nicht-kanonische Fassung einsetzen. Reparatur: Konsolidierung ${kons}"
@@ -535,6 +545,9 @@ for e in "${EINTRAEGE[@]}"; do
     echo "FEHLER  ${name} (${kons}, ${groesse} B):${fehlend:+ fehlende Anker:${fehlend}}${sr_problem}${shell_problem}"
     fehler=$((fehler+1))
   else
+    # Pin-Marker = Identität des frisch geprüften Abrufs (Format pinIdentitaet, cache-pin-befund.ts);
+    # ohne ihn meldeten check:p-klassen/check:vollstaendigkeit «pin-ungültig» (24./25.9.2026).
+    printf '%s' "${eli}|${kons}|${n}" > "${datei}.pin"
     echo "OK      ${name} (${kons}) → ${datei} (${groesse} B), ${#LISTE[@]}/${ankerzahl} Anker${sr:+ + SR ${sr}} geprüft"
   fi
 done
