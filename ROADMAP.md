@@ -542,8 +542,8 @@ Umschichtung 20.9.2026 (2)):*
   Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
 
-- [~] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
-  <!-- @meta id: QS-BASIS · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+- [ ] **Basis-Ausbau — Fundament** *(`QS-BASIS`, `[OF]`)*
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   Befundliste: ebenda, Abschnitt «Restposten aus ROADMAP.md» *(verlagert 20.9.2026, Nachzug)*.
