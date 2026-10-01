@@ -53,6 +53,12 @@ export function zifferTitelBlock(
   return m ? { absatz: null, text: text.trim(), titel: ZIFFER_TITEL_TIEFE, ziffer: m[1] } : null;
 }
 
+/** Wie `zifferTitelBlock`, hängt den Block (falls Ziffer-Überschrift) an `bloecke` an — Einzeiler für den Extraktor. */
+export function zifferTitelZu(bloecke: unknown[], text: string): void {
+  const b = zifferTitelBlock(text);
+  if (b) bloecke.push(b);
+}
+
 // «N.» + optional ein Fussnoten-<sup> + ZWEI &nbsp; — die Doppel-nbsp-Signatur
 // trennt die Ziffer-Absatz-Form sicher von Tagesdaten («1. Januar 2020 …») und
 // Bereichs-Auslassungen («2. und 3. …»); einfaches «1.&nbsp;Die» (SSV 116, FZV 24:
