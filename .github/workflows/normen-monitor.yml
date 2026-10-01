@@ -40,44 +40,10 @@ on:
     # 10 Pins, 31.8.: StGB). Reihenfolge-Entscheid: erst reparieren, dann messen; der
     # Detektor prüft main, nicht den Reparatur-Branch.
     - cron: '17 7 * * 1'
-    # MONATSLAUF Curia Vista (W2·6c E4, FAHRPLAN-MATERIALIEN-VERZAHNUNG §11.6, Kritik B3).
-    # Bewusst NICHT in der Gate-Kette: ~8 Anfragen je Geschäft über ~400 Geschäfte bei
-    # <=2 Anfragen/s sind ~27 min — das ist keine Zahl, die vor einen Merge gehört, und
-    # ein Delta-Sync ist nicht möglich (`Modified` trug am 10.2.2026 für verschiedene
-    # Geschäfte denselben Zeitstempel = systemweiter Reindex, R4 §5). Erster des Monats,
-    # 03:23 UTC — vor dem Reparatur-Arm (04:43) und dem Detektor (07:17), damit ein
-    # Curia-PR nicht mit deren Läufen um dieselben Dateien streitet.
-    - cron: '23 3 1 * *'
-    # MONATSLAUF BS-Grossratsgeschäfte (K-16, W2·13-KANTONE-DATEN). Eigener Job aus
-    # demselben Grund wie Curia: der Abgleich lädt drei Vollexporte von data.bs.ch
-    # (~31 MB, ~40 s) — das gehört nicht vor einen Merge, sondern einmal im Monat.
-    # Erster des Monats, 03:47 UTC: nach dem Curia-Lauf (03:23, andere Dateien, aber
-    # derselbe Branch-Raum) und vor dem Reparatur-Arm (04:43).
-    - cron: '47 3 1 * *'
-    # MONATSLAUF Vernehmlassungs-Register (§17-Wurzelfix, ex-Finding-7-Wanduhr-Befund
-    # 5./12.9.2026, FAHRPLAN-OFFENE-BEFUNDE §2 QS-MONITOR-ROT). Der Vernehmlassungs-
-    # Generator lief bisher NUR von Hand — der Erhebungsstand (`stand` in
-    # vernehmlassungen.generated.ts) alterte unbemerkt, bis check:materialien
-    # (Finding 7, damals wanduhr-abhängig) an jedem Tag mit abgelaufener Frist rot
-    # wurde, ohne dass ein Bau daran schuld war. Jetzt deterministisch (Finding 7
-    # prüft gegen den committeten `stand`, nicht gegen heute) PLUS dieser Kreislauf,
-    # der den Stand selbst aktuell hält. Erster des Monats, 04:11 UTC: nach BS (03:47)
-    # und vor dem Reparatur-Arm (04:43) — dieselbe Reihenfolge-Überlegung wie oben.
-    - cron: '11 4 1 * *'
+    # Die drei Monatsläufe (Curia, BS-Grossrat, Vernehmlassungen) liegen seit 1.10.2026 in
+    # normen-monatslauf.yml: eigene Datei = eigener «jüngster Lauf» für den Wächter
+    # (check:ci-laeufe wertet je Workflow-Datei) und eigene Rot-Serie dieses Zettels.
   workflow_dispatch:
-
-# Lauf-Titel (QS-MONITOR-ROT, 1.10.2026): die drei Monats-Crons starten je einen EIGENEN
-# Workflow-Lauf, der in der Lauf-Liste sonst genau wie der Montags-Lauf heisst. Der Titel
-# macht sie unterscheidbar — die Rot-Serie des Zettels (Job `normen`, Schritt «Bei Rot»)
-# überspringt Läufe mit dem Präfix «Normen-Monitor Monatslauf», weil dort der Netz-Check
-# gar nicht lief und ihr Ergebnis nichts über den Rechtsstand aussagt. Vor dem 1.10.2026
-# trugen alle Läufe den Titel «Normen-Monitor»; das war richtig, denn damals fuhr jeder
-# Cron den vollen Netz-Check mit (Läufe 36847965485 / 36849266701 / 36852166670).
-run-name: >-
-  ${{ github.event.schedule == '23 3 1 * *' && 'Normen-Monitor Monatslauf Curia'
-  || github.event.schedule == '47 3 1 * *' && 'Normen-Monitor Monatslauf BS-Grossrat'
-  || github.event.schedule == '11 4 1 * *' && 'Normen-Monitor Monatslauf Vernehmlassungen'
-  || 'Normen-Monitor' }}
 
 env:
   PROD_URL: https://lexmetrik.vercel.app
@@ -93,16 +59,6 @@ env:
 jobs:
   normen:
     name: Rechtsstände (check:netz) · Live-Site-Smoke · Runtime-APIs
-    # NUR Montags-Cron und Zuruf (QS-MONITOR-ROT, 1.10.2026). Ohne diese Zeile startete jeder
-    # der drei Monats-Crons (Curia/BS/Vernehmlassungen, je am 1.) diesen vollen, ~20-min-Netz-
-    # Check mit: am 1.10.2026 dreimal (Läufe 36847965485, 36849266701, 36852166670 — GitHub
-    # verzögerte die Crons um Stunden), dreifache CI-Minuten und drei «rote Läufe in Folge»
-    # für die Eskalation auf #956 nach einem einzigen Befund. Chesterton: die Monats-Jobs
-    # haben kein `needs: normen`, und der Kommentar bei Curia («der wöchentliche Detektor
-    # bleibt unberührt») zeigt, dass das Mitlaufen nie gewollt war (Einführung 71db836ca).
-    # Die Schritte «Bei Rot»/«Bei Grün» sind Teil dieses Jobs: ein übersprungener Job legt
-    # weder einen Rechtsstands-Zettel an noch kommentiert oder schliesst er einen.
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '17 7 * * 1'
     runs-on: ubuntu-latest
     # 45 statt 25 seit 18.9.2026 (§17): der Netz-Lauf ist seriell und wächst mit dem Korpus —
     # 5.9. grün in 22 min, 14.9. bei 25 min mitten in `check:be-sprengel-netz` abgewürgt
@@ -153,7 +109,7 @@ jobs:
       # Derselbe K7-Platz wie check:verfall oben (§17-Wurzelfix PR #803, Gegenprüfungs-
       # Auflage A1): der Alterungs-Wächter des Vernehmlassungs-Registers ist wanduhr-
       # abhängig und darf darum NICHT in check-materialien.ts hängen — dort würde er
-      # fachfremde Aufrufer (z. B. den Job `bs-grossrat` unten) vor deren PR-Schritt
+      # fachfremde Aufrufer (z. B. den Job `bs-grossrat` in normen-monatslauf.yml) vor deren PR-Schritt
       # töten. Sein einziger Aufrufer ist dieser wöchentliche Detektor. `if: always()`
       # aus demselben Grund wie oben — ein Netzfehler soll den Alterungs-Befund nicht
       # verdecken. Begründung ausführlich: scripts/materialien/vernehmlassungen-tor.ts.
@@ -244,14 +200,9 @@ jobs:
           # ein grauer Lauf ist kein bestandener Lauf (CLAUDE.md §6 Ziff. 7
           # lit. c, dieselbe Regel wie in check:ci-laeufe). Der laufende Lauf
           # ist noch nicht 'completed', darum zählt er als +1.
-          # Monatsläufe (Titel «Normen-Monitor Monatslauf …», siehe run-name) werden
-          # übersprungen — weder gezählt noch als Serien-Abbruch gewertet: dort lief
-          # der Netz-Check nicht, ein grüner Monatslauf sagt nichts über einen roten
-          # Montag. Ein roter Monats-PR-Lauf bleibt als Lauf-Rot sichtbar (Wächter
-          # check:ci-laeufe), gehört aber nicht in die Rechtsstands-Serie.
           serie=1
-          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status,displayTitle \
-                   --jq '.[] | select(.status=="completed") | select(.displayTitle | startswith("Normen-Monitor Monatslauf") | not) | .conclusion') \
+          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status \
+                   --jq '.[] | select(.status=="completed") | .conclusion') \
             || { echo "::warning::Rot-Serie nicht ermittelbar"; runs=; }
           for c in $runs; do
             [ "$c" = "success" ] && break
@@ -296,237 +247,3 @@ jobs:
           fi
           gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor wieder grün am $(date +%F) — alle Netz-Tore, Live-Site und Runtime-APIs bestanden. Zettel geschlossen; bei erneutem Rot legt der Monitor einen neuen an. Lauf: ${RUN_URL}"
           echo "Zettel #${offen} geschlossen (Monitor grün)."
-
-  # ── Curia-Vista-Monatslauf (W2·6c E4) ─────────────────────────────────────────
-  # Eigener Job, NICHT im Detektor-Job: er schreibt (Shards + Zustandsträger) und
-  # braucht darum andere Rechte und ein anderes Zeitbudget. Er läuft nur am
-  # Monats-Cron oder auf Zuruf — der wöchentliche Detektor bleibt unberührt.
-  curia:
-    name: Curia Vista — Monats-Vollabgleich (Parlaments-Etappen)
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '23 3 1 * *'
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    env:
-      TZ: Europe/Zurich
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      # npm 11 wie überall sonst (18.9.2026, §17): das bare `npm ci` des Runners (npm 10) bricht am
-      # npm-11-Lockfile mit EUSAGE ab — Lauf 35353185468, alle drei Monats-Jobs rot nach < 1 min.
-      - run: npx -y npm@11 ci
-      - name: Abrufdatum (Zürich, nie Date.now im Generator)
-        id: datum
-        run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
-      - name: Vollabgleich Curia Vista (Beschlüsse · Kommissionen · NR-Aggregat)
-        run: npm run materialien:curia -- --datum=${{ steps.datum.outputs.iso }}
-      # §17-Wurzelfix (QS-MONITOR-ROT, Rot-Beleg Lauf 35373415150, 18.9.2026): die
-      # Curia-Shards sind eine Quelle der Deckungs-Sicht (deckung-projektion-quellen.ts,
-      # CURIA_DIR) — ohne diesen Nachzug meldete `check:entstehung` Ziff. 7 «1 Abweichung
-      # zur Neuberechnung», weil `public/materialien/deckungs-sicht.json` nie neu gebaut
-      # wurde. Dieselbe Teilkaskade wie `materialien:kaskade` (§5, EINE Glieder-Liste,
-      # scripts/entstehung/projektion-kaskade.ts) — schreibt am Ende auch das
-      # Datenhaltungs-Manifest, darum kein separater `datenhaltung:manifest`-Schritt mehr.
-      - name: Entstehungs-/Deckungs-Projektion nachziehen (Teilkaskade)
-        run: npm run entstehung:projektion-kaskade
-      - name: Vorflug-Pruefung gegen die eben geschriebenen Dateien (kein Drift-Tor — das ist die PR-CI)
-        run: npm run check:entstehung && npm run check:datenhaltung
-      - name: Änderungen feststellen
-        id: diff
-        run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain)" ]; then echo "geaendert=1" >> "$GITHUB_OUTPUT"; else echo "geaendert=0" >> "$GITHUB_OUTPUT"; fi
-      - name: PR eröffnen (NIE Auto-Merge — Risikopfad, Gegenprüfung nachgelagert)
-        if: steps.diff.outputs.geaendert == '1'
-        env:
-          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
-          DATUM: ${{ steps.datum.outputs.iso }}
-        run: |
-          set -euo pipefail
-          branch="chore/curia-monatslauf-${DATUM}"
-          git config user.name  "curia-monatslauf-bot"
-          git config user.email "noreply@anthropic.com"
-          git checkout -b "$branch"
-          git add -A
-          git commit -F - <<'EOF'
-          chore(entstehung): Curia-Vista-Monatslauf — Parlaments-Etappen nachgeführt
-
-          Automatischer Vollabgleich gegen ws.parlament.ch (OData v3). Quelle:
-          Parlamentsdienste der Bundesversammlung, Bern. Keine Personendaten
-          (weder gespeichert noch abgefragt), Stimmenzahlen nur aggregiert und
-          als eigene Auszaehlung beschriftet.
-
-          Roadmap: W2·6c-ENTSTEHUNG-DATEN
-          Gegenpruefung: ausstehend — automatischer Lauf, adversariale Pruefung nachgelagert
-          Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
-          EOF
-          git push -u origin "$branch"
-          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$offen" ]; then
-            echo "PR #${offen} für ${branch} ist bereits offen (idempotent)."
-          else
-            gh pr create --base main --head "$branch" \
-              --title "chore(entstehung): Curia-Vista-Monatslauf ${DATUM}" \
-              --body "Automatischer Monats-Vollabgleich der Parlaments-Etappen (W2·6c E4). KEIN Auto-Merge: die Curia-Shards liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
-          fi
-
-  bs-grossrat:
-    name: Basel-Stadt — Monats-Vollabgleich (Grossratsgeschäfte)
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '47 3 1 * *'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      TZ: Europe/Zurich
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci  # s. Job `curia`: bares `npm ci` bricht am npm-11-Lockfile
-      - name: Abrufdatum (Zürich, nie Date.now im Generator)
-        id: datum
-        run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
-      - name: Vollabgleich data.bs.ch (Geschäfte · Dokumente · Gesetzessammlung)
-        run: npm run materialien:bs -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Projektion auf dem frischen Stand
-        run: npm run materialien -- --datum=${{ steps.datum.outputs.iso }}
-      # §17-Wurzelfix (QS-MONITOR-ROT, 19.9.2026, Beleg: lokale Simulation mit
-      # --datum=morgen, Bericht der Bau-Session): `materialien` schreibt bei JEDEM Lauf
-      # `register-provenienz.json#erzeugt` neu — unabhängig davon, ob sich ein Eintrag
-      # inhaltlich ändert (material-manifest.ts `provenienz: { erzeugt: voll.erzeugt }`).
-      # Dieses Feld geht UNGEFILTERT in `deckungs-sicht.json` ein (deckung-projektion.ts
-      # `staende.provenienz` + `ebenen.verfahrenBund/verfahrenBs/zh.stand`) — ohne
-      # Nachzug wird `check:entstehung` beim nächsten PR rot, sobald dieser Lauf nicht
-      # zufällig denselben Kalendertag trifft wie die letzte Deckungs-Projektion (genau
-      # dieselbe Fehlerklasse wie im Job `curia`, hier über eine andere Quelle). Ersetzt
-      # die frühere separate «Zähler nachziehen» + den Schreib-Teil von «Datenhaltungs-
-      # Manifest» — dieselbe Teilkaskade wie im Job `curia` (§5, EINE Glieder-Liste).
-      - name: Entstehungs-/Deckungs-Projektion + Zähler + Manifest nachziehen (Teilkaskade)
-        run: npm run entstehung:projektion-kaskade
-      - name: Vorflug-Pruefung gegen die eben geschriebenen Dateien (kein Drift-Tor — das ist die PR-CI)
-        run: npm run check:bs-materialien && npm run check:materialien && npm run check:entstehung && npm run check:datenhaltung
-      - name: Änderungen feststellen
-        id: diff
-        run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain)" ]; then echo "geaendert=1" >> "$GITHUB_OUTPUT"; else echo "geaendert=0" >> "$GITHUB_OUTPUT"; fi
-      - name: PR eröffnen (NIE Auto-Merge — Risikopfad, Gegenprüfung nachgelagert)
-        if: steps.diff.outputs.geaendert == '1'
-        env:
-          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
-          DATUM: ${{ steps.datum.outputs.iso }}
-        run: |
-          set -euo pipefail
-          branch="chore/bs-grossrat-monatslauf-${DATUM}"
-          git config user.name  "bs-grossrat-monatslauf-bot"
-          git config user.email "noreply@anthropic.com"
-          git checkout -b "$branch"
-          git add -A
-          git commit -F - <<'EOF'
-          chore(materialien): BS-Grossrat-Monatslauf — kantonale Materialien nachgefuehrt
-
-          Automatischer Vollabgleich gegen data.bs.ch (OpenDataSoft Explore v2.1,
-          CC BY 4.0). Quelle: Kanton Basel-Stadt. Keine Personendaten — die
-          Abfrage waehlt die erlaubten Felder einzeln an, Namen und Parteien der
-          Vorstoss-Urheber werden nicht geholt.
-
-          Roadmap: W2·13-KANTONE-DATEN
-          Gegenpruefung: ausstehend — automatischer Lauf, adversariale Pruefung nachgelagert
-          Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
-          EOF
-          git push -u origin "$branch"
-          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$offen" ]; then
-            echo "PR #${offen} für ${branch} ist bereits offen (idempotent)."
-          else
-            gh pr create --base main --head "$branch" \
-              --title "chore(materialien): BS-Grossrat-Monatslauf ${DATUM}" \
-              --body "Automatischer Monats-Vollabgleich der Basler Grossratsgeschaefte (K-16). KEIN Auto-Merge: die Materialien-Artefakte liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
-          fi
-
-  vernehmlassungen:
-    name: Vernehmlassungs-Register — Monatslauf (Erhebungsstand nachführen)
-    # §17-Wurzelfix (FAHRPLAN-OFFENE-BEFUNDE §2 QS-MONITOR-ROT, Befund 5./12.9.2026):
-    # check:materialien Finding 7 prüft seither deterministisch gegen den committeten
-    # `stand` (Erhebungsdatum) statt gegen die Wanduhr — das reicht aber nur, wenn der
-    # Erhebungsstand selbst regelmässig nachgeführt wird (dafür der Alterungs-Wächter
-    # im selben Tor, 35-Tage-Deckel). Dieser Job ist der Kreislauf, der ihn frisch hält.
-    # Eigener Job wie Curia/BS: er schreibt (generierte Datei + Projektion + Zähler)
-    # und braucht Schreibrechte; läuft nur am Monats-Cron oder auf Zuruf.
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '11 4 1 * *'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      TZ: Europe/Zurich
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci  # s. Job `curia`: bares `npm ci` bricht am npm-11-Lockfile
-      - name: Abrufdatum (Zürich, nie Date.now im Generator)
-        id: datum
-        run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
-      - name: Vernehmlassungs-Generator (Fedlex-Gesetzgebungs-Graph, SPARQL)
-        run: npm run materialien:vernehmlassungen -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Projektion auf dem frischen Stand
-        run: npm run materialien -- --datum=${{ steps.datum.outputs.iso }}
-      # §17-Wurzelfix — dieselbe Lücke und derselbe Nachzug wie im Job `bs-grossrat`
-      # oben (Begründung dort): `materialien` bumpt register-provenienz.json#erzeugt bei
-      # jedem Lauf, was ungeprüft in deckungs-sicht.json einginge.
-      - name: Entstehungs-/Deckungs-Projektion + Zähler + Manifest nachziehen (Teilkaskade)
-        run: npm run entstehung:projektion-kaskade
-      - name: Vorflug-Pruefung gegen die eben geschriebenen Dateien (Finding 7 + Alterungs-Waechter; kein Drift-Tor — das ist die PR-CI)
-        run: npm run check:materialien && npm run check:entstehung && npm run check:datenhaltung
-      - name: Änderungen feststellen
-        id: diff
-        run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain)" ]; then echo "geaendert=1" >> "$GITHUB_OUTPUT"; else echo "geaendert=0" >> "$GITHUB_OUTPUT"; fi
-      - name: PR eröffnen (NIE Auto-Merge — Risikopfad, Gegenprüfung nachgelagert)
-        if: steps.diff.outputs.geaendert == '1'
-        env:
-          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
-          DATUM: ${{ steps.datum.outputs.iso }}
-        run: |
-          set -euo pipefail
-          branch="chore/vernehmlassungen-monatslauf-${DATUM}"
-          git config user.name  "vernehmlassungen-monatslauf-bot"
-          git config user.email "noreply@anthropic.com"
-          git checkout -b "$branch"
-          git add -A
-          git commit -F - <<'EOF'
-          chore(materialien): Vernehmlassungs-Monatslauf — Erhebungsstand nachgeführt
-
-          Automatischer Vollabgleich gegen den Fedlex-Gesetzgebungs-Graphen (SPARQL,
-          data.admin.ch). Quelle: Bundeskanzlei/Fedlex. Hält den Erhebungsstand
-          (`stand`) der Vernehmlassungen frisch, gegen den check:materialien
-          Finding 7 deterministisch prüft (§17-Wurzelfix, FAHRPLAN-OFFENE-BEFUNDE §2
-          QS-MONITOR-ROT) — verhindert den Alterungs-Wächter-Rotlauf (35-Tage-Deckel).
-
-          Roadmap: QS-MONITOR-ROT
-          Gegenpruefung: ausstehend — automatischer Lauf, adversariale Pruefung nachgelagert
-          Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
-          EOF
-          git push -u origin "$branch"
-          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$offen" ]; then
-            echo "PR #${offen} für ${branch} ist bereits offen (idempotent)."
-          else
-            gh pr create --base main --head "$branch" \
-              --title "chore(materialien): Vernehmlassungs-Monatslauf ${DATUM}" \
-              --body "Automatischer Monats-Vollabgleich des Vernehmlassungs-Registers (Fedlex-Gesetzgebungs-Graph). KEIN Auto-Merge: die Materialien-Artefakte liegen auf dem Risikopfad (istRisikoPfad), die adversariale Gegenpruefung ist nachgelagert."
-          fi
