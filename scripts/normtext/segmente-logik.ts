@@ -72,7 +72,12 @@ export const SEGMENT_MINDESTLAENGE = 8;
 // 4 (Nachzug R3-1, Gegenprüfung 3, 25.9.2026): Häufigkeit zählt (Multimenge,
 // `fehlendeIndizes`); Zellen verschachtelter Tabellen nur noch EINMAL
 // segmentiert (vorher dreifach, heute 1 Fall: SSV annex_2).
-export const SEGMENTER_VERSION = 4;
+//
+// 5 (W2·27-BUND-FERTIG, 1.10.2026): Ankerauflösung `lokalisiereAnker` kennt das
+// N-te Vorkommen einer doppelten Sektions-id («<id>__N», VZV annex_u1__2/__3),
+// und die HTML-Anhang-Menge `alleAnhangEids` nennt diese Folge-Vorkommen —
+// ein Soll von Version 4 führt sie nicht (Tor sah die Einträge nie).
+export const SEGMENTER_VERSION = 5;
 
 // ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
 // Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
