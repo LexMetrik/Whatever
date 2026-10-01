@@ -36,7 +36,7 @@
 import { useRef, useState } from 'react';
 import { zahlGruppiert } from '../typografie';
 import {
-  bereichAusJahren, bereichLabel, istBereichOffen, jahrImBereich,
+  bereichAusJahren, bereichLabel, istBereichOffen, istUebernehmbar, jahrImBereich,
   type Histogramm, type Zeitbereich,
 } from '../../pages/gesetz-leser/bezugZeit';
 
@@ -50,12 +50,18 @@ const STRAHL_HOEHE = 'h-9';
  *  Rechtsprechung, die die Daten nicht decken (§8). */
 const MIN_ANTEIL = 8;
 
-export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
+export function BezugZeitWahl({ bereich, histogramm, onBereich, keineInstanz = false, instanzEingegrenzt = false }: {
   /** Aktiver Von-Bis-Bereich; beide Enden '' = offen. */
   bereich: Zeitbereich;
   /** Verteilung, AUS DER gewählt wird (ohne Zeitfilter — siehe bezuegeLaden.ts). */
   histogramm: Histogramm;
   onBereich: (von: string, bis: string) => void;
+  /** E5-B03: alle Instanzen sind abgewählt — dann ist die Verteilung leer, weil
+   *  nichts eingeschaltet ist, nicht weil sie fehlt. Nur der Leertext ändert sich. */
+  keineInstanz?: boolean;
+  /** E5-B04: die Verteilung und ihre Zahl gelten nur den eingeschalteten
+   *  Instanzen/Kantonen (`histogrammAusShard`) — der Fusssatz sagt es dann. */
+  instanzEingegrenzt?: boolean;
 }) {
   const streifenRef = useRef<HTMLDivElement>(null);
   // Laufende Zieh-Geste: [Anker, aktuell] als Balken-Indizes. null = keine Geste.
@@ -128,7 +134,7 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
           <button
             type="button"
             onClick={() => onBereich('', '')}
-            className="rounded px-1.5 py-0.5 text-micro text-ink-500 lc-hover-akzent hover:text-brass-700"
+            className="relative rounded px-1.5 py-0.5 text-micro text-ink-500 lc-hover-akzent hover:text-brass-700 after:absolute after:inset-x-0 after:top-1/2 after:h-[var(--tap-ziel)] after:-translate-y-1/2 after:content-['']"
             title="Zeitraum aufheben — wieder alle Entscheide zeigen"
           >
             {label} ×
@@ -141,7 +147,9 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
         // der Shard noch nicht da oder dieser Erlass hat keine datierten Kanten —
         // beides wird gesagt, statt eine Grafik ohne Inhalt zu zeigen.
         <p className="pt-1 text-micro leading-snug text-ink-500">
-          Für diesen Erlass ist noch keine Verteilung geladen. Die Datumsfelder wirken trotzdem.
+          {keineInstanz
+            ? 'Alle Instanzen sind abgewählt — darum zeigt der Strahl keine Verteilung. Die Datumsfelder wirken trotzdem.'
+            : 'Für diesen Erlass ist noch keine Verteilung geladen. Die Datumsfelder wirken trotzdem.'}
         </p>
       ) : (
         <>
@@ -253,6 +261,7 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
                 `tabular-nums` (R4-C, 5.9.2026: die Utility nahm lining-nums weg). */}
             <span className="num">{zahlGruppiert(gesamt)}</span>
             {gesamt === 1 ? ' Verknüpfung' : ' Verknüpfungen'} in diesem Erlass
+            {instanzEingegrenzt && ' (nur eingeschaltete Instanzen)'}
             {ohneJahr > 0 && <> · <span className="num">{zahlGruppiert(ohneJahr)}</span> ohne Datum (bleiben immer sichtbar)</>}
             {'. '}
           </>
@@ -279,14 +288,29 @@ function DatumsFeld({ label, wert, titel, onWert }: {
   titel: string;
   onWert: (neu: string) => void;
 }) {
+  // E5-B01 (1.10.2026): Zwischenstufen beim Tippen des Jahres («2» ⇒ 0002-…) sind
+  // keine Absicht und gehen NICHT in den Bereich (`istUebernehmbar`, Herleitung
+  // dort). Das Feld muss sie aber weiter ANZEIGEN, sonst setzt React den Wert auf
+  // den alten zurück, solange die Eingabe läuft. Darum ein Entwurf, der nur gilt,
+  // solange der übernommene Wert derselbe ist, an dem er begann (`basis`): ein
+  // von aussen geänderter Wert («Zeitraum aufheben», Zieh-Geste) verdrängt ihn
+  // ohne Effekt und ohne zweite Wahrheit. Beim Verlassen des Feldes verfällt ein
+  // nicht übernommener Entwurf — das Feld zeigt wieder, was wirklich filtert.
+  const [entwurf, setEntwurf] = useState<{ basis: string; text: string } | null>(null);
+  const gezeigt = entwurf !== null && entwurf.basis === wert ? entwurf.text : wert;
   return (
     <label className="flex items-center gap-2 text-xs text-ink-600" title={titel}>
       <span className="w-6 shrink-0">{label}</span>
       <input
         type="date"
-        value={wert}
+        value={gezeigt}
         data-zeit-feld={label}
-        onChange={(e) => onWert(e.target.value)}
+        onChange={(e) => {
+          const v = e.target.value;
+          if (istUebernehmbar(v)) { setEntwurf(null); onWert(v); }
+          else setEntwurf({ basis: wert, text: v });
+        }}
+        onBlur={() => setEntwurf(null)}
         /* QS-UI 8a (F3): `focus:outline-none` entfernt. Tailwind setzt darunter
            `outline:2px solid transparent` — gemessen 3.8.2026 hatte das Feld im
            Tastatur-Fokus einen 2-px-Perimeter in Alpha 0, also KEINEN sichtbaren
