@@ -32,6 +32,16 @@ function traegtMarke(): boolean {
  * Führt ein Link aus dem Blatt fort, hat der Router seinen Eintrag schon
  * geschrieben — die Marke steht dann nicht mehr oben, und nichts wird genommen.
  *
+ * NACHTRAG 1.10.2026 (#1239, W2·18-FEHLERBUCH; der Wortlaut oben gilt als
+ * Stand vom 23.9.2026 und bleibt stehen): «NUR modal … ohne Eintrag gibt es auch
+ * kein Doppel-Zurück» stimmt seither nur noch für das ÖFFNEN — geschrieben wird
+ * der Eintrag weiter nur, solange das Blatt modal ist. Ein Zuschnittwechsel auf
+ * breit lässt ihn aber MIT Marke stehen (kein `back()`, Begründung im nächsten
+ * Absatz); am Desktop kann nach dem Breitwerden also ein Eintrag gleicher Adresse
+ * übrig sein, und ein Zurück darüber hat keine sichtbare Wirkung. Schliesst der
+ * Nutzer das Blatt dort per Geste, räumt `history.back()` ihn weg, solange die
+ * Marke oben steht (Nachzug 2, Milderung A).
+ *
  * NUR EINE NUTZERGESTE NIMMT DEN EINTRAG WEG (§17-Wurzelfix W2·18-FEHLERBUCH,
  * 1.10.2026). `offen` (die Absicht des Nutzers) und `modal` (die Gestalt des
  * Zuschnitts) sind getrennte Argumente, weil das Blatt auf zwei verschiedene
@@ -75,6 +85,26 @@ export function useZurueckSchliesst(offen: boolean, modal: boolean, schliesse: (
   // darum noch den alten Wert — gelesen wird er erst im Mikrotask danach.
   const offenRef = useRef(offen);
   useEffect(() => { offenRef.current = offen; }, [offen]);
+  // NACHZUG 2 (1.10.2026, Prüfer-Befund 4): Schliesst der Nutzer das Blatt per
+  // Geste, während es NICHT modal ist (breiter Zuschnitt, der Eintrag steht noch
+  // mit Marke da), läuft der Cleanup unten nicht — `aktiv` war schon false und
+  // bleibt es. Ohne diesen Zweig bliebe der Eintrag als wirkungsloses Zurück
+  // stehen. Ausgelöst NUR von `offen` true → false (Nutzergeste), nie vom
+  // Zuschnittwechsel; gleiches Risikoprofil wie ✕ am Telefon (keine laufende
+  // Navigation, Mikrotask-Ordnung gegenüber `offenRef` wie unten). Kein Doppel:
+  // war `aktiv` im Vorcommit wahr, nimmt der Cleanup den Eintrag, nicht dieser Zweig.
+  const vorherOffen = useRef(offen);
+  const vorherAktiv = useRef(aktiv);
+  useEffect(() => {
+    const warOffen = vorherOffen.current;
+    const warAktiv = vorherAktiv.current;
+    vorherOffen.current = offen;
+    vorherAktiv.current = aktiv;
+    if (typeof window === 'undefined') return;
+    if (warOffen && !offen && !warAktiv && !aktiv) {
+      queueMicrotask(() => { if (!offenRef.current && traegtMarke()) window.history.back(); });
+    }
+  }, [offen, aktiv]);
   useEffect(() => {
     if (!aktiv || typeof window === 'undefined') return;
     if (!traegtMarke()) {

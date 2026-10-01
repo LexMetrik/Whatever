@@ -192,13 +192,43 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     expect(fenster.history.back).not.toHaveBeenCalled();
   });
 
-  it('Zuschnittwechsel, dann Schliessen auf dem breiten Zuschnitt: weiter kein back() (der Hook ist inaktiv)', async () => {
+  it('Nachzug 2 (Milderung A): Nutzergeste «Blatt zu» am breiten Zuschnitt MIT stehender Marke nimmt den Eintrag weg (history.back() genau einmal)', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, true, () => {}, false); // Zuschnittwechsel: Marke bleibt stehen
+    expect(fenster.history.back).not.toHaveBeenCalled();
+    await rendern(ziel, false, () => {}, false); // Nutzer schliesst auf dem breiten Zuschnitt
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
+  });
+
+  it('Nachzug 2: breiter Zuschnitt OHNE Marke (nie modal gewesen): Schliessen ruft kein history.back()', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {}, false);
+    await rendern(ziel, false, () => {}, false);
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).not.toHaveBeenCalled();
+  });
+
+  it('Nachzug 2: Schliessen und Zuschnittwechsel im selben Commit ruft history.back() genau EINMAL (kein Doppel)', async () => {
+    const { ziel, fenster } = aufbauen();
+    await rendern(ziel, true, () => {});
+    await rendern(ziel, false, () => {}, false); // offen → false UND modal → false zugleich
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1);
+  });
+
+  it('Nachzug 2: breiter Zuschnitt, Eintrag steht, Blatt offen → zu → wieder offen → zu: je Geste höchstens ein back(), nie ein pushState', async () => {
     const { ziel, fenster } = aufbauen();
     await rendern(ziel, true, () => {});
     await rendern(ziel, true, () => {}, false);
     await rendern(ziel, false, () => {}, false);
     await act(async () => { await Promise.resolve(); });
-    expect(fenster.history.back).not.toHaveBeenCalled();
+    await rendern(ziel, true, () => {}, false); // Marke ist durch back() weg
+    await rendern(ziel, false, () => {}, false);
+    await act(async () => { await Promise.resolve(); });
+    expect(fenster.history.back).toHaveBeenCalledTimes(1); // zweite Geste: keine Marke → kein back()
+    expect(fenster.history.pushState).toHaveBeenCalledTimes(1); // nur das erste Öffnen am schmalen Zuschnitt
   });
 
   it('verwaister Eintrag (Zuschnittwechsel, dann Zurück-Geste am breiten Zuschnitt) bleibt wirkungslos: schliesse() wird nicht gerufen', async () => {
