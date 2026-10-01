@@ -291,6 +291,13 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // Navigation fest, während das alte Dokument den Zuschnitt wechselt.
     // ROT: in `blattGesten.ts` die `verlassen`-Prüfung entfernen ⇒
     // «page.goto: net::ERR_ABORTED» (gemessen 1.10.2026 gegen den Stand von main, 5/5 rot).
+    // NACHTRAG (1.10.2026, selber Tag, PR-Lauf 36890985162): der `verlassen`-Merker
+    // (`beforeunload`) trug die Sorge nicht — (f3) unten stellt die andere
+    // Reihenfolge her und war gegen ihn rot — und ist zurückgebaut. Dieser Fall
+    // bleibt, weil er weiter etwas Richtiges beweist: ein Zuschnittwechsel im alten
+    // Dokument bricht eine bereits hängende Navigation nicht ab, gleich wie das
+    // Aufräumen gelöst ist. ROT jetzt: den Cleanup wieder `history.back()` rufen
+    // lassen (`blattGesten.ts`, Zweig `!offenRef.current` entfernen).
     //
     // WERKZEUG-FALLE (gemessen 1.10.2026): solange die Navigation an der Route
     // hängt, antwortet das Dokument dem TEST nicht — `page.evaluate`, jede
