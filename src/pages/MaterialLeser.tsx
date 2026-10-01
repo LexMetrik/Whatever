@@ -75,7 +75,9 @@ export function MaterialLeser() {
 
   // W3-7 (Posten, REST S2): der eine Lade-Baustein (`ui/Ladeanzeige`, mit
   // `role="status"`) statt der eigenen Kopie.
-  if (laden) return <Ladeanzeige text="Das Material wird abgerufen …" className="py-12" />;
+  // `min-h-inhalt-region` (W2·31 P13, 30.9.2026): Footer-Sprung beim Laden
+  // (CLS 0.27–0.94 gemessen; Hausmuster /materialien, #1198).
+  if (laden) return <Ladeanzeige text="Das Material wird abgerufen …" className="min-h-inhalt-region py-12" />;
 
   // ── D-6 (Design-Konsistenz, 31.8.2026) · EINE FEHLSEITE ──────────────────
   // Der Fehl-Zweig baute Kopf und Rückweg selbst: `SeitenKopf` + ein

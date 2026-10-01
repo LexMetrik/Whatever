@@ -484,8 +484,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   }
   // W2·29-WERKBANK-REST S1: der geteilte Lade-Baustein (`ui/Ladeanzeige`,
   // W3-7) statt der siebten Kopie — Text wörtlich, neu mit `role="status"`.
+  // `min-h-inhalt-region` (W2·31 P13, 30.9.2026): ohne Reserve ragte der Footer
+  // in den Fold und sprang beim Einwachsen wieder hinaus (Lade-CLS 0.45 @1920,
+  // 0.94 @375 gemessen; Hausmuster /materialien, #1198).
   if (zustand === 'laden' || !snap) {
-    return <Ladeanzeige text="Der Entscheid wird abgerufen …" className="py-12" />;
+    return <Ladeanzeige text="Der Entscheid wird abgerufen …" className="min-h-inhalt-region py-12" />;
   }
 
   const regesteText = snap.regeste ? normalisiereRegeste(snap.regeste.text) : null;
@@ -589,7 +592,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   };
 
   return (
-    <div className="space-y-5" style={{ '--rsp-stick': stickHoehe } as CSSProperties}>
+    <div className="space-y-5 flow-root" style={{ '--rsp-stick': stickHoehe } as CSSProperties}>
+      {/* `flow-root` (W2·31 P13b): das `<style>` macht den Kopf per Tailwind-3-`space-y` zum
+          zweiten Geschwister (20 px margin-top), der Rand kollabierte durch `.lc-route` und
+          schob die Hülle beim Laden y 167→187 (CLS 0.0176); hier abgefangen, Kopf pixelgleich. */}
       {/* Anker-Sektionen des EntscheidBody tragen ein festes scroll-mt-[7rem]; hier
           auf die tatsächliche sticky-Höhe (--rsp-stick) heben, damit ein angesprungener
           Abschnitt nicht hinter dem gemeinsamen Kopf-Block verschwindet. Greift nur im
