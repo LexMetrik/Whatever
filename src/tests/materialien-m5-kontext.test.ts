@@ -1,13 +1,14 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { materialienFuerNorm } from '../lib/normtext/werkzeuge';
-import { kontextSoftLaw, mischeMaterialien, type MaterialBezug } from '../lib/kontext';
-import { ladeKantenShard, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
+import { kontextSoftLawErgebnis, mischeMaterialien, type MaterialBezug } from '../lib/kontext';
+import { ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 
 // ─── E6a·M5: Amtliche-Materialien-Delta ─────────────────────────────────────
 // (1) Kuratierte artikelscharfe Nachtrags-Anker (§2.4/§7): DATABREACH→Art. 24 DSG,
 //     KS 6a→Art. 65 DBG; DSFA bleibt Erlass-Ebene (Stand < revDSG-Cutoff).
 // (2) mischeMaterialien: dedupe per key, Sortierung Behörde→key.
-// (3) kontextSoftLaw + ladeKantenShard: Shard-/Bucket-Fetch, Aggregation je
+// (3) kontextSoftLawErgebnis + ladeKantenShardErgebnis (die dünnen Fassungen
+//     kontextSoftLaw/ladeKantenShard sind seit 1.10.2026 entfernt): Shard-/Bucket-Fetch, Aggregation je
 //     Dokument, Sublabel, Herkunft, Register-Join.
 
 describe('materialienFuerNorm — kuratierte Artikel-Nachträge (M5, §2.4/§7)', () => {
@@ -87,7 +88,15 @@ afterEach(() => {
   // dieselbe Register-Antwort, daher unkritisch; kanten-Cache wird geleert.
 });
 
-describe('kontextSoftLaw — Aggregation je Dokument (M5)', () => {
+// Die Liste der Soft-Law-Bezüge; jeder Aufruf hier ist ein Nicht-Fehler-Fall (§8:
+// Ladefehler sind eigene Tests, kanten-shard-weitere-konsumenten).
+async function softLaw(typ: 'norm' | 'material', keys: string[]) {
+  const e = await kontextSoftLawErgebnis(typ, keys);
+  expect(e.fehler).toBe(false);
+  return e.liste;
+}
+
+describe('kontextSoftLawErgebnis — Aggregation je Dokument (M5)', () => {
   it('artikelscharf: repräsentativer (kleinster) Artikel + «u. a.» bei mehreren', async () => {
     stubFetch({
       '/materialien/register.json': REGISTER,
@@ -100,7 +109,7 @@ describe('kontextSoftLaw — Aggregation je Dokument (M5)', () => {
         ],
       },
     });
-    const out = await kontextSoftLaw('norm', ['MWSTG']);
+    const out = await softLaw('norm', ['MWSTG']);
     expect(out).toHaveLength(1);
     expect(out[0].key).toBe('DOK-A');
     expect(out[0].artikel).toBe('11'); // kleinster Token repräsentativ
@@ -127,9 +136,9 @@ describe('kontextSoftLaw — Aggregation je Dokument (M5)', () => {
         kanten: [{ dok: 'DOK-B', quelle: 'maschinell', konfidenz: 'regex-niedrig', stand: '2024-06-01', fundstellen: [] }],
       },
     });
-    const shard = await ladeKantenShard('DBG');
-    expect(shard!.kanten).toHaveLength(2); // beide Buckets vereinigt
-    const out = await kontextSoftLaw('norm', ['DBG']);
+    const shard = await ladeKantenShardErgebnis('DBG');
+    expect(shard.zustand === 'ok' && shard.shard.kanten).toHaveLength(2); // beide Buckets vereinigt
+    const out = await softLaw('norm', ['DBG']);
     expect(out).toHaveLength(1);
     expect(out[0].herkunft).toBe('maschinell'); // Badge-relevante Abweichung
     expect(out[0].artikel).toBeUndefined(); // reine Erlass-Ebene
@@ -137,11 +146,11 @@ describe('kontextSoftLaw — Aggregation je Dokument (M5)', () => {
 
   it('Material-Reader zeigt keine Materialien (Selbst-Korpus)', async () => {
     stubFetch({ '/materialien/register.json': REGISTER });
-    expect(await kontextSoftLaw('material', ['MWSTG'])).toEqual([]);
+    expect(await softLaw('material', ['MWSTG'])).toEqual([]);
   });
 
   it('Erlass ohne Shard (404) → leer, kein Fehler', async () => {
     stubFetch({ '/materialien/register.json': REGISTER });
-    expect(await kontextSoftLaw('norm', ['OR'])).toEqual([]);
+    expect(await softLaw('norm', ['OR'])).toEqual([]);
   });
 });

@@ -1,7 +1,17 @@
 <!-- @posten
 dach: W2·27-BUND-FERTIG
-titel: Nach #1196 (tief): Kommentare werkzeuge.ts:531, panelKontextLaden.ts:93-114, PanelMaterialien.tsx:23 nennen kontextSoftLaw; VerweisKontext ctx kurz null bei Erholt-Bump (Popover flackert einen Render); Popover-Erholt nur bei Shard-, nicht Manifest-Ausfall; KontextPanel variante="seitenleiste" ohne Produktionsaufrufer (toter Zweig); Manifest-Ausfall-Tests reihenfolgeabhängig (--sequence.shuffle Seeds 1–3 rot, auch kanten-shard-weitere-konsumenten).
+titel: Nach #1196 (tief), Rest: Kommentar werkzeuge.ts:531 (Risikopfad), VerweisKontext ctx kurz null bei Erholt-Bump (Popover flackert), Popover-Erholt nur bei Shard-, nicht Manifest-Ausfall
 anlass: Session-Notizen 2026-09-30
 -->
 
-Nach #1196 (tief): Kommentare werkzeuge.ts:531, panelKontextLaden.ts:93-114, PanelMaterialien.tsx:23 nennen kontextSoftLaw; VerweisKontext ctx kurz null bei Erholt-Bump (Popover flackert einen Render); Popover-Erholt nur bei Shard-, nicht Manifest-Ausfall; KontextPanel variante="seitenleiste" ohne Produktionsaufrufer (toter Zweig); Manifest-Ausfall-Tests reihenfolgeabhängig (--sequence.shuffle Seeds 1–3 rot, auch kanten-shard-weitere-konsumenten).
+Nach #1196 (tief): Rest nach der Teil-Erledigung vom 1.10.2026.
+
+Erledigt 1.10.2026 (Branch chore/w227-kontext-rueckbau):
+- Kommentare panelKontextLaden.ts:93-114 und PanelMaterialien.tsx:23 nennen `kontextSoftLawErgebnis` (Namensstand-Absatz, datierte Belege bleiben).
+- `KontextPanel variante="seitenleiste"`: toter Zweig gestrichen (kein Produktionsaufrufer; SSR der Lesespalten-Form byte-gleich, 6/6).
+- Manifest-Ausfall-Tests reihenfolgeabhängig: Wurzel war der Modul-Cache von `ladeMaterialManifest` (Erfolg blieb stehen); `_leereMaterialManifestCache` im afterEach, Shuffle-Seeds 1–7 grün (vorher 1–5 rot).
+
+Offen:
+- Kommentar `src/lib/normtext/werkzeuge.ts:531` («kontextSoftLaw») — RISIKOPFAD (`istRisikoPfad` wahr), darum in diesem Nicht-Risiko-Auftrag nicht angefasst; nur ein Kommentarwort, bei nächster Berührung der Datei mit Gegenprüfung nachziehen (`kontextSoftLawErgebnis`).
+- `VerweisKontext` (components/kontext): beim Erholt-Bump (`versuch`) ändert sich der Key, `ctx` ist einen Render lang `null` — das Popover flackert. Behebung ist eine UX-Entscheidung (alter Fehler-Stand bliebe bis zum Ergebnis stehen), nicht klein/sicher genug für den Rückbau-Auftrag.
+- Popover-Erholt-Abo wird nur bei `materialienFehler` gesetzt, auch bei reinem Manifest-Ausfall; dort feuert `beiKantenShardErholt` nie (harmlos, nur ein tot angemeldeter Hörer).

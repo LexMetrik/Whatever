@@ -90,6 +90,11 @@ export function useArtikelRevisionShard(erlassKey: string | undefined, laden: bo
 }
 
 // ── W2·7-VZUI (31.8.2026) · Behörden-Ressourcen für den Reiter «Anwendung» ───
+// NAMENSSTAND 1.10.2026 (W2·27-BUND-FERTIG, ERGÄNZUNG — die Absätze unten sind
+// Belege vom 31.8./23.9. und bleiben wörtlich): wo hier `kontextSoftLaw` steht,
+// ist die dünne Fassung gemeint, die am 1.10.2026 entfernt wurde (seit #1196 ohne
+// Aufrufer); geladen wird mit `kontextSoftLawErgebnis`, und die Sätze «NICHT
+// unterscheidbar» gelten für das Ergebnis NICHT mehr — es trägt `fehler`.
 // Derselbe Lade-/Gate-Rhythmus wie oben, dritte Quelle: `kontextSoftLaw` zieht
 // die Material-Kanten-Shards und das Browse-Register und liefert die
 // Behördenpublikationen zu diesem Erlass (Kreisschreiben, Wegleitungen,

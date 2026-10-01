@@ -7,11 +7,11 @@
  * wird als «nichts erfasst» bzw. gar nicht gemeldet):
  *
  *  · P1  `lib/kontext` — `projiziereMaterialien`/`kontextFuerArtikel` (Verweis-
- *        Popover) und `kontextSoftLaw` setzten Fehler = `[]`.
+ *        Popover) und die (inzwischen entfernte, 1.10.2026) dünne `kontextSoftLaw` setzten Fehler = `[]`.
  *  · P2  Dossier des Einzelmodus: Zähler «N Erläuterungen», darunter ein leerer Block.
  *  · P3  `EntstehungsBlock`: Praxis-Fehlerzeile von Hand, ohne «Erneut laden»,
  *        und sie blieb nach «Erneut laden» einer ANDEREN Fläche stehen.
- *  · P4  `kontextSoftLaw`: die Erläuterungsliste verlor bei Shard-Fehler still
+ *  · P4  `kontextSoftLaw` (heute `kontextSoftLawErgebnis`): die Erläuterungsliste verlor bei Shard-Fehler still
  *        Einträge; «Erneut laden» hätte nichts Neues geholt.
  *
  * ROT ZU BEKOMMEN (§6.7), je Stelle:
@@ -34,7 +34,8 @@ import { VerweisKontext } from '../components/kontext/VerweisKontext';
 import { ArtikelBezuegeFuss } from '../pages/gesetz-leser/parts/ArtikelLeser.bezuegeFuss';
 import { useArtikelMaterialien } from '../pages/gesetz-leser/artikelMaterialienLaden';
 import { useErlaeuterungen } from '../pages/gesetz-leser/v3/panelKontextLaden';
-import { kontextFuerArtikel, kontextSoftLaw, kontextSoftLawErgebnis } from '../lib/kontext';
+import { kontextFuerArtikel, kontextSoftLawErgebnis } from '../lib/kontext';
+import { _leereMaterialManifestCache } from '../lib/materialien/browse';
 import { beiKantenShardErholt, ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { _leereShardCache } from '../lib/rechtsprechung/norm-index';
 import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterungen';
@@ -113,10 +114,12 @@ afterEach(async () => {
   vi.unstubAllGlobals();
   _leereKantenShardCache();
   _leereShardCache();
+  _leereMaterialManifestCache(); // Manifest-Erfolg bleibt sonst im Modul stehen ⇒ «Manifest-Ausfall»-Tests reihenfolgeabhängig (Shuffle 1.10.2026)
 });
 
-// ─── Das Manifest ZUERST scheitern lassen: `ladeMaterialManifest` cacht nur Erfolge ─
-describe('P1/P4 · Manifest fehlt (vor jedem erfolgreichen Abruf dieser Datei)', () => {
+// ─── Manifest-Ausfall: `ladeMaterialManifest` cacht Erfolge; `afterEach` leert den Cache
+// (`_leereMaterialManifestCache`, 1.10.2026), die Tests sind reihenfolgeunabhängig ───
+describe('P1/P4 · Manifest fehlt', () => {
   it('kontextSoftLawErgebnis: Manifest 500 ⇒ fehler (nicht «nichts erfasst»)', async () => {
     stubFetch({ '/materialien/register.json': { status: 500 }, '/materialien/kanten/ARG.json': { status: 200, body: KOPF('ARG') } });
     const e = await kontextSoftLawErgebnis('norm', ['ARG']);
@@ -149,11 +152,11 @@ describe('P4 · kontextSoftLawErgebnis unterscheidet Shard-Fehler von «ohne Sha
     expect(await kontextSoftLawErgebnis('norm', ['ARG'])).toEqual({ liste: [], fehler: false });
   });
 
-  it('Erfolgsfall unverändert: die dünne Fassung `kontextSoftLaw` liefert dieselbe Liste', async () => {
+  it('Erfolgsfall: Manifest und Shard da ⇒ fehler=false, die Liste trägt das Dokument', async () => {
     stubFetch({ '/materialien/register.json': { status: 200, body: MANIFEST }, '/materialien/kanten/ARG.json': { status: 200, body: KOPF('ARG') } });
     const e = await kontextSoftLawErgebnis('norm', ['ARG']);
     expect(e.fehler).toBe(false);
-    expect(await kontextSoftLaw('norm', ['ARG'])).toEqual(e.liste);
+    expect(e.liste.map((m) => m.key)).toEqual(['DOK-A']);
   });
 
   it('Erläuterungen-Tafel: Shard-Fehler ⇒ Fehlerzeile statt Teilliste; «Erneut laden» holt wirklich neu', async () => {

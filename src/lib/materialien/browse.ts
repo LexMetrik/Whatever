@@ -39,6 +39,13 @@ export async function ladeMaterialManifest(): Promise<MaterialManifest | null> {
   return manifestPromise;
 }
 
+/** Nur für Tests: den Manifest-Promise-Cache leeren (Test-Isolation — ohne das
+ *  hing «Manifest-Ausfall»-Tests an der Reihenfolge: ein früherer erfolgreicher
+ *  Abruf blieb im Modul stehen; Shuffle-Seeds 1–5, 1.10.2026). */
+export function _leereMaterialManifestCache(): void {
+  manifestPromise = null;
+}
+
 // ── FR/IT-Titel (eigene Projektion, eigener Abruf) ───────────────────────────
 //
 // Getrennt vom Kern, weil der deutsche Lesefluss sie nie anfasst: 70,6 KB gzip,
