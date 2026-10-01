@@ -12,7 +12,9 @@
  *  · Ablauf «Erneut laden»: Shard-Fehler → Zeile + Knopf → Klick → neuer Abruf
  *    → Treffer statt Fehler.
  *
- * ROT ZU BEKOMMEN: in `EntstehungsBlock` wieder `ladeKantenShard` nehmen (B1);
+ * ROT ZU BEKOMMEN: in `EntstehungsBlock` das `fehler`-Feld von
+ * `ladeKantenShardErgebnis` ignorieren, d. h. Fehler wie «leer» behandeln (B1;
+ * die Altfassung `ladeKantenShard` ist seit 1.10.2026 gelöscht);
  * in `PanelTafeln` `ladefehler` an `artikelMaterialienUnsicher` statt an den
  * Shard-Fehler hängen (B3); `erneut` im Hook nicht an `versuch` koppeln.
  */

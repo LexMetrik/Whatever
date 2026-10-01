@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { kontextFuerArtikel, materialienFuerArtikel } from '../lib/kontext';
+import { kontextFuerArtikel } from '../lib/kontext';
 import { _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { _leereShardCache } from '../lib/rechtsprechung/norm-index';
 
@@ -52,10 +52,19 @@ afterEach(() => {
   _leereShardCache();
 });
 
-describe('materialienFuerArtikel — artikelscharfe Kanten-Projektion (A7/A13)', () => {
+// Seit 1.10.2026 (W2·27-BUND-FERTIG) ohne die dünne `materialienFuerArtikel`: dieselbe
+// Projektion über `kontextFuerArtikel(…).materialien` (Hilfsfunktion `materialien`),
+// dazu die Auskunft `materialienFehler` — ein Leerzustand ist hier nie ein Ladefehler.
+async function materialien(erlassKey: string, artikel: string) {
+  const k = await kontextFuerArtikel(erlassKey, artikel);
+  expect(k.materialienFehler).toBe(false);
+  return k.materialien;
+}
+
+describe('kontextFuerArtikel(…).materialien — artikelscharfe Kanten-Projektion (A7/A13)', () => {
   it('filtert auf den EINEN Artikel; Sublabel = Fundstellen-Ziffer, «u. a.» bei mehreren', async () => {
     stubFetch({ '/materialien/register.json': REGISTER, '/materialien/kanten/MWSTG.json': KANTEN });
-    const out = await materialienFuerArtikel('MWSTG', '5');
+    const out = await materialien('MWSTG', '5');
     // DOK-UNGELISTET fällt §8-still raus; Erlass-Ebene-Kante zählt nicht.
     expect(out.map((m) => m.key)).toEqual(['DOK-B', 'DOK-A']); // Behörde EDÖB < ESTV
     const a = out.find((m) => m.key === 'DOK-A')!;
@@ -69,12 +78,12 @@ describe('materialienFuerArtikel — artikelscharfe Kanten-Projektion (A7/A13)',
 
   it('Artikel ohne Kanten ⇒ leere Liste (ruhiger Leerzustand)', async () => {
     stubFetch({ '/materialien/register.json': REGISTER, '/materialien/kanten/MWSTG.json': KANTEN });
-    expect(await materialienFuerArtikel('MWSTG', '999')).toEqual([]);
+    expect(await materialien('MWSTG', '999')).toEqual([]);
   });
 
   it('Erlass ohne Shard (404) ⇒ leere Liste, kein Fehler', async () => {
     stubFetch({ '/materialien/register.json': REGISTER });
-    expect(await materialienFuerArtikel('XYZ', '1')).toEqual([]);
+    expect(await materialien('XYZ', '1')).toEqual([]);
   });
 });
 

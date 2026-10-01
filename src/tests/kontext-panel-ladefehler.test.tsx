@@ -12,7 +12,8 @@
  *        die Mutation `if (!manifest) return { stand: null, rest: {…} }` blieb grün.
  *
  * ROT ZU BEKOMMEN (§6.7):
- *  · R1: in `KontextPanel.tsx` `softLawFehler` fest `false` (oder wieder `kontextSoftLaw`).
+ *  · R1: in `KontextPanel.tsx` `softLawFehler` fest `false` (die Altfassung `kontextSoftLaw` ist
+ *    seit 1.10.2026 gelöscht).
  *  · R2: in `VerweisKontext.tsx` den `beiKantenShardErholt`-Effekt streichen.
  *  · R3: in `panelKontextLaden.ladeErlaeuterungen` bei `!manifest` ein `rest` liefern.
  */
@@ -27,6 +28,7 @@ import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterunge
 import { useErlaeuterungen } from '../pages/gesetz-leser/v3/panelKontextLaden';
 import { ladeKantenShardErgebnis, _leereKantenShardCache } from '../lib/materialien/kanten-shard';
 import { _leereShardCache } from '../lib/rechtsprechung/norm-index';
+import { _leereMaterialManifestCache } from '../lib/materialien/browse';
 
 // Anmeldungen/Abmeldungen des Erholt-Signals zählen (Durchreicher, Verhalten unverändert).
 const abo = vi.hoisted(() => ({ an: 0, ab: 0 }));
@@ -102,10 +104,11 @@ afterEach(async () => {
   vi.unstubAllGlobals();
   _leereKantenShardCache();
   _leereShardCache();
+  _leereMaterialManifestCache(); // Manifest-Erfolg bleibt sonst im Modul stehen ⇒ «Manifest-Ausfall»-Tests reihenfolgeabhängig (Shuffle 1.10.2026)
 });
 
-// ─── Manifest-Ausfall ZUERST: `ladeMaterialManifest` cacht nur Erfolge, eine Datei-
-// weite Vorbelegung gibt es nicht — vor jedem erfolgreichen Abruf dieser Datei ──
+// ─── Manifest-Ausfall: `ladeMaterialManifest` cacht Erfolge; `afterEach` leert den Cache
+// (`_leereMaterialManifestCache`, 1.10.2026) — die Tests sind reihenfolgeunabhängig ───
 function tafelHelfer() {
   function Tafel() {
     const s = useErlaeuterungen('ARG', true);
@@ -118,7 +121,7 @@ function tafelHelfer() {
 }
 const panelArg = () => createElement(MemoryRouter, null, createElement(KontextPanel, { typ: 'norm', normKeys: ['ARG'] }));
 
-describe('0 · Manifest-Ausfall (vor jedem erfolgreichen Abruf dieser Datei)', () => {
+describe('0 · Manifest-Ausfall', () => {
   const { Tafel, attr } = tafelHelfer();
   it('R1 · KontextPanel: Fehlerzeile mit Knopf, nie ein stilles «nichts erfasst»', async () => {
     stubFetch({ '/materialien/register.json': { status: 500 }, '/materialien/kanten/ARG.json': { status: 200, body: KOPF('ARG') } });

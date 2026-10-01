@@ -21,8 +21,9 @@
 // jeder Erlass ohne Shard als Netz-404 über die Leitung (Konsolenfehler je Erlass,
 // gemessen gegen Prod 24.9.2026: KVG.json 404). Fachlich unverändert: kein Shard =
 // `leer` = «keine Kanten». Ladefehler sind davon getrennt (`fehler`, W3-5-Rest
-// 30.9.2026): `ladeKantenShard` bleibt als dünne `null`-Fassung, die Anzeige nimmt
-// `ladeKantenShardErgebnis`.
+// 30.9.2026): die Anzeige nimmt `ladeKantenShardErgebnis`; die dünne `null`-Fassung
+// `ladeKantenShard` hatte seit #1196 keinen Aufrufer mehr und ist am 1.10.2026
+// entfernt (W2·27-BUND-FERTIG).
 
 import { KANTEN_ERLASSE } from './kanten-erlasse.generated';
 
@@ -158,17 +159,6 @@ export async function ladeKantenShardErgebnis(erlassKey: string): Promise<Kanten
     });
   }
   return p;
-}
-
-/**
- * Lädt den Kanten-Shard EINES Erlasses. `null` = Erlass ohne Material-Kanten
- * ODER Ladefehler — die beiden sind hier NICHT unterscheidbar; wer es wissen
- * muss (Anzeige «nichts erfasst»), nimmt `ladeKantenShardErgebnis`. Dünne
- * Fassung darüber, Verhalten für bestehende Aufrufer unverändert.
- */
-export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | null> {
-  const e = await ladeKantenShardErgebnis(erlassKey);
-  return e.zustand === 'ok' ? e.shard : null;
 }
 
 /** Nur für Tests: den Shard-Promise-Cache leeren. */

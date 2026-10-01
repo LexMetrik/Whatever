@@ -204,15 +204,11 @@ interface DokSammler {
  * aus dem Browse-Register (register.json). Der Material-Reader IST das Material →
  * leer (kein Selbstverweis). Dedupliziert über alle normKeys.
  *
- * Dünne Fassung über `kontextSoftLawErgebnis` (Verhalten für Altaufrufer
- * unverändert): ein Ladefehler und «nichts erfasst» sind hier NICHT
- * unterscheidbar; wer es wissen muss, nimmt `kontextSoftLawErgebnis`.
- */
-export async function kontextSoftLaw(typ: KontextTyp, normKeys: readonly string[]): Promise<MaterialBezug[]> {
-  return (await kontextSoftLawErgebnis(typ, normKeys)).liste;
-}
-
-/** Soft-Law-Liste + ob sie UNVOLLSTÄNDIG ist (§8, W2·27-BUND-FERTIG 30.9.2026):
+ * Die Antwort trägt `fehler`: ein Ladefehler und «nichts erfasst» sind darin
+ * unterscheidbar (§8). Die frühere dünne Fassung `kontextSoftLaw` (nur die Liste)
+ * hatte seit #1196 keinen Aufrufer und ist am 1.10.2026 entfernt.
+ *
+ * Soft-Law-Liste + ob sie UNVOLLSTÄNDIG ist (§8, W2·27-BUND-FERTIG 30.9.2026):
  *  `fehler` = das Manifest oder mindestens ein Kanten-Shard war nicht ladbar —
  *  die Liste ist dann keine Auskunft über den Bestand, sondern ein Rest. Ein
  *  Erlass ohne Shard (`leer`/404) ist KEIN Fehler. */
@@ -301,18 +297,16 @@ export interface ArtikelKontext {
 }
 
 /**
- * Artikelscharfe Materialien zu (erlassKey, artikelToken) aus dem Kanten-Shard.
+ * Artikelscharfe Materialien zu (erlassKey, artikelToken) aus dem Kanten-Shard,
+ * mit der Auskunft, ob eine leere Liste ein Ladefehler ist (§8): Shard
+ * gescheitert, oder Shard da und das Manifest (Titel, Behörde) fehlt. Ein Erlass
+ * ohne Shard ist eine ANTWORT (`fehler: false`).
  * Je Dokument EIN Eintrag; Sublabel = Fundstellen-Ziffer (eindeutig) bzw.
  * «Ziff. X u. a.» bei mehreren. Dokument-Metadaten aus dem Browse-Register;
  * nicht (mehr) gelistete Dokumente still ausgelassen (§8, kein toter Link).
+ * (Die frühere dünne Fassung `materialienFuerArtikel` ohne `fehler` hatte seit
+ * #1196 keinen Aufrufer und ist am 1.10.2026 entfernt.)
  */
-export async function materialienFuerArtikel(erlassKey: string, artikelToken: string): Promise<MaterialBezug[]> {
-  return (await materialienFuerArtikelErgebnis(erlassKey, artikelToken)).materialien;
-}
-
-/** Wie `materialienFuerArtikel`, aber mit der Auskunft, ob eine leere Liste ein
- *  Ladefehler ist (§8): Shard gescheitert, oder Shard da und das Manifest (Titel,
- *  Behörde) fehlt. Ein Erlass ohne Shard ist eine ANTWORT (`fehler: false`). */
 async function materialienFuerArtikelErgebnis(
   erlassKey: string, artikelToken: string,
 ): Promise<{ materialien: MaterialBezug[]; fehler: boolean }> {
@@ -325,7 +319,7 @@ async function materialienFuerArtikelErgebnis(
 }
 
 /**
- * Die reine Projektion hinter `materialienFuerArtikel` — dieselbe Rechnung, nur
+ * Die reine Projektion hinter `materialienFuerArtikelErgebnis` — dieselbe Rechnung, nur
  * ohne das Laden davor.
  *
  * HERAUSGEZOGEN IN W2·24-R5-F1K (D30, 6.9.2026), OHNE EINE ZEILE ZU ÄNDERN: die

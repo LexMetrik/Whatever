@@ -140,27 +140,17 @@ describe('S7/Bug-Check — B1: kein nackter Hash-Anker zur Werkzeug-Gruppe', () 
 // Diese Tests nageln beide Hälften fest. Sie sind billig zu haben, weil SSR den
 // Lade-Zustand exakt abbildet: `useEffect` läuft dort nicht, also sind ALLE fünf
 // async-Gruppen unaufgelöst — genau die CI-Lage.
-describe('S7/CI — der Wegweiser steht VOR dem Lade-Gating der Querverweis-Gruppen', () => {
-  it('Seitenleiste im Lade-Zustand: Wegweiser da, Platzhalter daneben', () => {
-    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL, variante: 'seitenleiste' });
-    expect(html).toContain('Kontext wird geladen');       // Gating aktiv …
-    expect(html).toContain('data-artikel-kontext');       // … und der Wegweiser trotzdem da
-    expect(html).toContain('Zu Art. 41');
-  });
-
-  it('Der Werkzeug-Sprung wird erst angeboten, wenn sein Ziel im DOM steht', () => {
-    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL, variante: 'seitenleiste' });
-    // Ziel liegt hinter dem Gating ⇒ noch kein Knopf (kein toter Knopf, §13/F4) …
-    expect(html).not.toContain('id="kontext-werkzeuge"');
-    expect(html).not.toContain('<button');
-    // … aber die AUSKUNFT steht, und die Zeile bleibt einzeilig (Höhe konstant).
-    expect(html).toContain('Rechner/Vorlagen zu');
-  });
-
-  it('Lesespalten-Variante hat kein Gating — dort ist alles sofort da', () => {
+// Seit 1.10.2026 (W2·27-BUND-FERTIG): die Seitenleisten-Variante samt Lade-Gating
+// ist gestrichen (kein Produktionsaufrufer) — die zwei Tests, die das Gating mit
+// `variante: 'seitenleiste'` festnagelten, entfallen mit ihrem Gegenstand. Es bleibt
+// die Zusicherung, die für die einzige noch vorhandene Form zählt.
+describe('S7/CI — der Wegweiser hängt an keinem Lade-Gating der Querverweis-Gruppen', () => {
+  it('Kein Gating: alles ist sofort da, Wegweiser, Werkzeug-Ziel und «Zu Art. 41»', () => {
     const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
     expect(html).not.toContain('Kontext wird geladen');
     expect(html).toContain('data-artikel-kontext');
+    expect(html).toContain('Zu Art. 41');
+    expect(html).toContain('id="kontext-werkzeuge"'); // Ziel des Sprungs im DOM
   });
 });
 
