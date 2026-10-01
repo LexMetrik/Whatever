@@ -8,7 +8,7 @@
 // in den Default «täglich» (24 h), und das Minimum aus beiden drückte die
 // Kulanz auf 48 h. Falschalarm; ein Monats-Cron ist selten, nicht täglich.
 import { describe, expect, it } from 'vitest';
-import { intervallDerCrons, intervallStunden } from '../../scripts/check-ci-laeufe.ts';
+import { intervallDerCrons, intervallStunden, neuOhneLaufRot } from '../../scripts/check-ci-laeufe.ts';
 
 describe('intervallStunden', () => {
   it.each([
@@ -35,4 +35,27 @@ describe('intervallDerCrons', () => {
     expect(intervallDerCrons(['41 2 3 * *', '37 5 * * 1'])).toBe(24 * 7));
   it('allein stehender Monats-Cron → monatlich', () =>
     expect(intervallDerCrons(['41 2 3 * *'])).toBeGreaterThanOrEqual(24 * 28));
+});
+
+// ANLASS 1.10.2026 (QS-MONITOR-ROT, PR #1241): ein NEU angelegter Workflow
+// (normen-monatslauf.yml, Crons nur am 1. des Monats) hat bis zum ersten Termin
+// keinen Lauf — «kein einziger abgeschlossener Lauf» wäre einen Monat lang
+// tägliches Falsch-Rot. ROT erst, wenn die Datei älter ist als die Kulanz
+// (2 × Intervall); unbekanntes Alter (flacher Checkout, keine Historie) bleibt
+// ROT — lieber falscher Alarm als stilles Grün.
+describe('neuOhneLaufRot', () => {
+  const kulanz = 2 * intervallStunden('11 4 1 * *'); // 1488 h
+  it('Datei jünger als die Kulanz → noch nicht rot', () => {
+    expect(neuOhneLaufRot(0, kulanz)).toBe(false);
+    expect(neuOhneLaufRot(30 * 24, kulanz)).toBe(false);
+  });
+  it('Datei älter als die Kulanz → rot', () => {
+    expect(neuOhneLaufRot(kulanz + 1, kulanz)).toBe(true);
+    expect(neuOhneLaufRot(200 * 24, kulanz)).toBe(true);
+  });
+  it('Alter unbekannt (null) → rot', () => expect(neuOhneLaufRot(null, kulanz)).toBe(true));
+  it('täglicher Workflow: nach 3 Tagen rot, nach 1 Tag nicht', () => {
+    expect(neuOhneLaufRot(24, 48)).toBe(false);
+    expect(neuOhneLaufRot(72, 48)).toBe(true);
+  });
 });
