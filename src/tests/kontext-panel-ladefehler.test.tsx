@@ -12,7 +12,8 @@
  *        die Mutation `if (!manifest) return { stand: null, rest: {…} }` blieb grün.
  *
  * ROT ZU BEKOMMEN (§6.7):
- *  · R1: in `KontextPanel.tsx` `softLawFehler` fest `false` (oder wieder `kontextSoftLaw`).
+ *  · R1: in `KontextPanel.tsx` `softLawFehler` fest `false` (die Altfassung `kontextSoftLaw` ist
+ *    seit 1.10.2026 gelöscht).
  *  · R2: in `VerweisKontext.tsx` den `beiKantenShardErholt`-Effekt streichen.
  *  · R3: in `panelKontextLaden.ladeErlaeuterungen` bei `!manifest` ein `rest` liefern.
  */

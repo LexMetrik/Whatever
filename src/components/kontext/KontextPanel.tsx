@@ -448,8 +448,8 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               massgeblich bleibt die amtliche Sammlung.
               §6.6-Split (12.9.2026): die JSX-Darstellung lebt in `RevisionenGruppe`
               daneben (Begründung dort); Ladezustand/Filterung bleiben hier, weil
-              `revLaden`/`revFehler`/`alleRevisionen` auch `laedtNoch`/`istLeer`
-              speisen (§5, kein zweiter Zustands-Bus). */}
+              `revLaden`/`revFehler`/`alleRevisionen` auch `istLeer` speisen
+              (`laedtNoch` entfiel mit der Seitenleiste, 1.10.2026) (§5, kein zweiter Zustands-Bus). */}
           {(revFehler || alleRevisionen.length > 0) && (
             <RevisionenGruppe revFehler={revFehler} revAenderungen={revAenderungen}
               revMarker={revMarker} botschaftNachKey={botschaftNachKey} locale={locale} stichtag={stichtag} />
