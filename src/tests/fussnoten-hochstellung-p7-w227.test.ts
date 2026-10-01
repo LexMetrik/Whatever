@@ -7,6 +7,8 @@
  * 1.10.2026 an den gepinnten Fedlex-Caches: 83 von 33'709 Fussnoten tragen Hochstellungen im Text, 31 davon in
  * «Ursprünglich»-Segmenten. Die Marker-<sup> (Nummer im <a>, leere <sup>, führende Nummer älterer Aspose-Dumps) fallen
  * weiterhin aus dem Text.
+ * Ergänzung 1.10.2026 (Gegenprüfung #1249): Nachzählung = 80 geänderte Fussnotentexte in den Sidecars (origin/main ↔ Branch,
+ * alle 231); Sternchen- (BV) und «¶h»-Hochstellungen (AVG) fallen weiterhin, siehe unten.
  *
  * Fixtures: WÖRTLICH aus dem Fedlex-Filestore-HTML (AHVG cc/63/837_843_843 / 20260101 html-1; OR cc/27/317_321_377 /
  * 20261001 html-2, Abruf der Caches 1.10.2026).

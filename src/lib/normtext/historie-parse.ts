@@ -76,7 +76,7 @@ export interface HistorieEreignis {
   absatz: string | null;
   /** Skopus der Quell-Fussnote: lit./Ziff.-Marke innerhalb des Absatzes bzw. null. */
   item: string | null;
-  /** NUR bei typ 'urspruenglich' (P7 #11): die ALTE Bezeichnung im Wortlaut der Fussnote («Art. 29», «Bst. c, dann c»,
+  /** NUR bei typ 'urspruenglich' (P7 #11): die ALTE Bezeichnung im Wortlaut der Fussnote («Art. 29bis», «Bst. cbis, dann cter»,
    *  «vor Art. 56»). Fehlt, wenn die Fussnote nach «Ursprünglich» nichts nennt. Ein Datum gehört NICHT dazu — die
    *  Fussnote datiert nur das folgende Ereignis, nie die Ur-Bezeichnung (§7). */
   frueher?: string;
