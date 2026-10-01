@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
 import { PruefBefund } from './PruefBefund';
@@ -88,11 +88,38 @@ export function VorlagenWizardRahmen({
   // Sprung in den Schritt mit der Lücke: `beruehrt` setzen (sonst schweigt
   // dort die FehlerBox), Fokus auf die Schritt-Überschrift (der
   // `key={schritt}`-Remount lässt die Ref-Callback beim Ankommen feuern).
+  // Gleiches bei «Weiter»/«Zurück» (W2·19, 30.9.2026): der Knopf verschwindet
+  // bzw. wird ausgegraut, der Fokus fiele auf BODY (gemessen /vorlagen/mahnung)
+  // — Tastatur- und Screenreader-Nutzer stünden wieder am Seitenanfang. Nur
+  // durch eine Nutzeraktion gesetzt, nie beim ersten Rendern (kein Fokus-Klau).
   const springFokus = useRef(false);
-  const springeZuSchritt = (i: number) => { setBeruehrt(true); springFokus.current = true; setSchritt(i); };
+  const wechsleSchritt = (naechster: SetStateAction<number>) => { springFokus.current = true; setSchritt(naechster); };
+  const springeZuSchritt = (i: number) => { setBeruehrt(true); wechsleSchritt(i); };
+  const titelEl = useRef<HTMLHeadingElement | null>(null);
   const titelRef = (el: HTMLHeadingElement | null) => {
+    titelEl.current = el;
     if (el && springFokus.current) { springFokus.current = false; el.focus(); }
   };
+  // Die Marke gilt für EINEN Commit: springt der Wizard auf den Schritt, in dem
+  // er schon steht (kein Remount), darf sie nicht bis zum nächsten Wechsel liegen.
+  useEffect(() => { springFokus.current = false; });
+  // Auffangnetz (W2·19, 1.10.2026): wechselt der Schritt ohne Marke — die Seite
+  // ruft ihr eigenes `setSchritt` (AG-Gründung: Klick auf einen Blocker im
+  // Dokumente-Schritt, gemessen → BODY, der Knopf verschwindet im Remount) —
+  // und der Fokus ist verloren, landet er auf dem Schritttitel. Liegt er noch
+  // auf einem Bedienelement (Stepper-Reiter), bleibt er dort; nie beim ersten
+  // Rendern (Schritt unverändert). Kein Schutz vor sichtbar bleibenden
+  // Auslösern: Chromium fokussiert Buttons beim Mausklick, Safari/Firefox (Mac)
+  // nicht — dort ist `activeElement` nach einem Klick BODY, das Netz setzt den
+  // Fokus auch bei einem sichtbar bleibenden Auslöser auf den Titel (harmlos,
+  // der Titel ist dort sichtbar).
+  const letzterFokusSchritt = useRef(schritt);
+  useEffect(() => {
+    if (letzterFokusSchritt.current === schritt) return;
+    letzterFokusSchritt.current = schritt;
+    const a = document.activeElement;
+    if (!a || a === document.body) titelEl.current?.focus();
+  }, [schritt]);
   // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane).
   const pk = usePaneKlasse();
   // RL-12 PR 2 (R3-06): Prüfstand der Karte zum Pfad — der Rahmen kennt seine
@@ -176,8 +203,8 @@ export function VorlagenWizardRahmen({
       {/* Kopf-Schalter (Detailgrad/Untertyp) – optional, vor dem Stepper */}
       {kopfSchalter}
 
-      {/* Stepper */}
-      <Stepper schritte={schritte} aktiv={schritt} onWechsel={setSchritt} />
+      {/* Stepper — Klick auf den AKTIVEN Reiter setzt keine Marke (kein Remount, die Marke bliebe bis zum nächsten Render liegen und stähle dort den Fokus). */}
+      <Stepper schritte={schritte} aktiv={schritt} onWechsel={(i) => { if (i !== schritt) wechsleSchritt(i); }} />
 
       {/* Zweispaltig: Formular links, klebende Vorschau rechts; mobil
           einspaltig mit einklappbarer Vorschau. `items-start`: die Karte
@@ -222,7 +249,7 @@ export function VorlagenWizardRahmen({
           <div className="flex items-end justify-between gap-3 pt-2 border-t border-line">
             {/* LM-094: Outline neben Primär — die beiden Navigationsknöpfe
                 lesen sich als Paar, die Rangfolge bleibt. */}
-            <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
+            <button type="button" onClick={() => wechsleSchritt((s) => Math.max(0, s - 1))}
               disabled={schritt === 0} className="lc-btn-outline">← Zurück</button>
             {schritt < schritte.length - 1 && (
               <div className="flex flex-col items-end gap-1">
@@ -231,7 +258,7 @@ export function VorlagenWizardRahmen({
                 {weiterAus && (
                   <p id="weiter-hinweis" className="text-xs text-ink-500">Bitte Pflichtfelder ausfüllen</p>
                 )}
-                <button type="button" onClick={() => setSchritt((s) => s + 1)}
+                <button type="button" onClick={() => wechsleSchritt((s) => s + 1)}
                   disabled={weiterAus} aria-describedby={weiterAus ? 'weiter-hinweis' : undefined}
                   className="lc-btn-primary">
                   Weiter →

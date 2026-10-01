@@ -2,9 +2,9 @@
  "erlass": "OR",
  "abdeckung": {
   "fussnoten": 932,
-  "ereignis": 809,
+  "ereignis": 810,
   "referenz": 115,
-  "unparsed": 8
+  "unparsed": 7
  },
  "artikel": {
   "13": {
@@ -17484,6 +17484,22 @@
    ],
    "aufgehobenSeit": "2004-07-01"
   },
+  "disp_u16_art_6": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "gegenstandslos",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    }
+   ],
+   "gegenstandslos": {
+    "seit": null
+   }
+  },
   "disp_u17_art_1": {
    "giltSeit": "1992-07-01",
    "ereignisse": [
@@ -17537,11 +17553,6 @@
    "token": "disp_u16_art_3",
    "nr": "926",
    "roh": "Dieser Art. hat heute eine neue Fassung."
-  },
-  {
-   "token": "disp_u16_art_6",
-   "nr": "928",
-   "roh": "Gegenstandslos."
   },
   {
    "token": "disp_u2_art_3",

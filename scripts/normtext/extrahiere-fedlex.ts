@@ -67,6 +67,7 @@ export interface BildRef {
 
 import { artikelRohHtml } from './artikel-vorkommen.ts';
 import { artikelTextMitAufhebung, anhangAmtlichesSignal } from './aufhebung-signal.ts';
+import { ohneFortsetzungen } from './anhang-fortsetzung.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
 
@@ -526,6 +527,8 @@ function parseDefinitionsListe(
   // Garbling-Klasse im Haupttext — Staatsverträge i→ii, Abkürzungs-Legenden — ist
   // ein eigener, deklarierter Folgeschritt mit Artikel-Re-Bless).
   anhang = false,
+  // Nur Anhang: Texte der hier an ihr Item gehängten Fortsetzungszeilen (→ ohneFortsetzungen).
+  absorbiert?: string[],
 ): Array<{ marke: string; text: string; tiefe?: number; trenner?: string }> {
   const items: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }> = [];
   // Iterativer Scan über die direkten <dt>…<dd>-Paare DIESER Ebene. Ein <dd>
@@ -540,6 +543,9 @@ function parseDefinitionsListe(
   // <dt> eine direkte Unter-<dl>, wird sie rekursiv eine Stufe tiefer zerlegt.
   const dlRe = /<dl\b[^>]*>/gi;
   let pos = 0;
+  // Nur Anhang: Vorgänger = markiertes Item OHNE Unterliste. Hinter einem Item MIT Unterliste
+  // mehrdeutig (FIDLEV Anh. 2 «Nicht zum Handel zugelassene Basiswerte:» ≠ lit. e) → Notiz.
+  let hostOffen = false;
   while (pos < dlInner.length) {
     dtRe.lastIndex = pos;
     const m = dtRe.exec(dlInner);
@@ -550,7 +556,8 @@ function parseDefinitionsListe(
       // dt/dd-Zweig unten mitsamt seinem <dd>): rekursiv, eine Stufe tiefer.
       const anonEnde = findeDlEnde(dlInner, d.index);
       const anonInner = dlInner.slice(d.index + d[0].length, anonEnde - '</dl>'.length);
-      for (const sub of parseDefinitionsListe(anonInner, tiefe + 1, anhang)) items.push(sub);
+      for (const sub of parseDefinitionsListe(anonInner, tiefe + 1, anhang, absorbiert)) items.push(sub);
+      hostOffen = false;
       pos = anonEnde;
       continue;
     }
@@ -686,17 +693,17 @@ function parseDefinitionsListe(
     // im markenlosen Folge-<dd>). Ohne dies ging die Beschreibung stumm verloren,
     // weil ein markenloses Item unten verworfen wird (§1, Text-Adjazenz). An den
     // Text des letzten Items DIESER Ebene anhängen (Dokumentreihenfolge).
-    // NUR im Haupttext-Pfad (!anhang): der Anhang-Pfad (extrahiereAnhang) erfasst
-    // markenlose <dd>-Notizen bereits SEPARAT via markeloseNotizen() als eigene
-    // Prosa-Blöcke VOR der Liste — dort würde ein zweites Anhängen die Notiz
-    // DOPPELN (VTS-Anhang-Mess-Tabellen). Nur bei vorhandenem Vorgänger-Item
-    // anhängen: ein FÜHRENDES markenloses <dd> (ohne Vorgänger) tritt im Haupttext
+    // Anhang (W2·27, GP-Befund «Beilage» 30.9.2026): gleiche Regel, sonst steht die Zeile
+    // lose VOR der Liste (VZV-Kat. B ohne Anhänger-Kombinationen); `absorbiert` →
+    // markeloseNotizen-Abzug, keine Dublette. Strenger (hostOffen); Haupttext byte-gleich.
+    // Nur bei vorhandenem Vorgänger-Item anhängen: ein FÜHRENDES markenloses <dd> (ohne Vorgänger) tritt im Haupttext
     // empirisch nicht auf (alle Haupt-Artikel-<dl> der betroffenen Erlasse starten
     // lettered/nummeriert; Fedlex-Chapeaus stehen als eigenes <p> vor der <dl>).
     // §6: greift nur bei zuvor VERLORENEM Text — additiv, keine Marke fabriziert.
-    if (!anhang && !marke && text && subDlIdx < 0 && items.length > 0) {
+    if (!marke && text && subDlIdx < 0 && (anhang ? hostOffen : items.length > 0)) {
       const vorheriges = items[items.length - 1];
       vorheriges.text = vorheriges.text ? `${vorheriges.text} ${text}` : text;
+      absorbiert?.push(text);
     } else if (marke && (text || subDlIdx >= 0)) {
       // Eltern-Item: auch ohne eigenen Text aufnehmen, WENN eine Unterliste folgt
       // (sonst ginge die lit-Ebene verloren — der eigentliche Bug). Andernfalls
@@ -710,6 +717,10 @@ function parseDefinitionsListe(
         ...(tiefe > 0 ? { tiefe } : {}),
         ...(trennerFeld !== undefined ? { trenner: trennerFeld } : {}),
       });
+      hostOffen = subDlIdx < 0;
+    } else if (marke || text || subDlIdx >= 0) {
+      // Leeres Paar (VZV Anh. 4 Ziff. 5.4) ändert nichts; sonst Kette unterbrochen.
+      hostOffen = false;
     }
 
     // Unterliste rekursiv anhängen (in Dokumentreihenfolge nach dem Eltern-Item),
@@ -718,7 +729,7 @@ function parseDefinitionsListe(
       const subEnde = findeDlEnde(ddRoh, subDlIdx);
       const subOpenLen = ddRoh.slice(subDlIdx).match(/^<dl\b[^>]*>/i)![0].length;
       const subInner = ddRoh.slice(subDlIdx + subOpenLen, subEnde - '</dl>'.length);
-      for (const sub of parseDefinitionsListe(subInner, tiefe + 1, anhang)) items.push(sub);
+      for (const sub of parseDefinitionsListe(subInner, tiefe + 1, anhang, absorbiert)) items.push(sub);
     }
   }
   return items;
@@ -1311,12 +1322,10 @@ export function findeTableEnde(html: string, startIdx: number): number {
 }
 
 /**
- * Marke-LOSE <dd>-Notizen einer Anhang-<dl> (Fedlex nutzt <dl><dt></dt><dd>…</dd>
- * auch als reine Einrückung/Notiz, ohne lit./Ziff.-Marke). parseDefinitionsListe
- * verwirft marke-lose Items (Artikel-Pfad, golden-fixiert) → im Anhang ginge der
- * <dd>-Notiztext stumm verloren (§1; FIDLEV/VTS/LRV-Anhänge nutzen das hundertfach).
- * Liefert je marke-loser Top-Level-<dd> den reinen Notiztext (VOR einer evtl.
- * Unterliste — deren markierte Items erfasst parseDefinitionsListe separat).
+ * Marke-LOSE <dd>-Notizen einer Anhang-<dl> (Fedlex: <dl><dt></dt><dd>…</dd> als Einrückung/
+ * Notiz). parseDefinitionsListe verwirft marke-lose Items (Artikel-Pfad, golden-fixiert) →
+ * im Anhang ginge der Text stumm verloren (§1; FIDLEV/VTS/LRV hundertfach). Je marke-loser
+ * <dd> der reine Notiztext VOR einer evtl. Unterliste (deren Items erfasst parseDefinitionsListe).
  */
 function markeloseNotizen(dlInner: string): string[] {
   const notizen: string[] = [];
@@ -1327,11 +1336,9 @@ function markeloseNotizen(dlInner: string): string[] {
     const ddEnde = findeDdEnde(dlInner, ddStart);
     const ddRoh = dlInner.slice(ddStart, ddEnde);
     dtRe.lastIndex = ddEnde + '</dd>'.length;
-    // Marke-los-Bestimmung MUSS mit parseDefinitionsListe übereinstimmen (Roh-Tag-
-    // Strip, der «[tab]» behält) — sonst hielte markeloseNotizen ein «<dt>[tab]</dt>»
-    // für marke-los (Notiz) UND parseDefinitionsListe für ein Item → Text doppelt
-    // (Fix 1.7.2026: entferneTags strippt den [tab]-Spacer für Tabellen, darf hier
-    // aber die Disjunktheit nicht kippen). Nur Fussnoten-Sups vorher tilgen.
+    // Marke-los-Bestimmung MUSS mit parseDefinitionsListe übereinstimmen (Roh-Tag-Strip,
+    // der «[tab]» behält), sonst Text doppelt (Fix 1.7.2026: entferneTags strippt den
+    // [tab]-Spacer für Tabellen). Nur Fussnoten-Sups vorher tilgen.
     const marke = dekodiereEntities(m[1].replace(/<sup[^>]*><a[\s\S]*?<\/a><\/sup>/gi, '').replace(/<[^>]+>/g, ''))
       .replace(/[.)]\s*$/, '').trim();
     const subDlIdx = ddRoh.search(/<dl\b[^>]*>/i);
@@ -1340,11 +1347,9 @@ function markeloseNotizen(dlInner: string): string[] {
       const ddText = entferneTags(entferneFussnotenSups(subDlIdx >= 0 ? ddRoh.slice(0, subDlIdx) : ddRoh)).trim();
       if (ddText) notizen.push(ddText);
     }
-    // REKURSION: auch UNTER einem MARKIERTEN Eltern-Item kann eine ganze Unterliste
-    // marke-loser <dd> stecken (z.B. VTS Anhang 7 Bremsverzögerungen «Klasse 3: 2,9
-    // m/s²»). parseDefinitionsListe verwirft marke-lose Items auf JEDER Ebene → der
-    // Top-Level-Scan allein verlöre verschachtelte Notizen (§1). Daher in jede
-    // Unterliste absteigen (marke-los vs. marke-tragend bleibt disjunkt → keine Dublette).
+    // REKURSION: auch UNTER einem MARKIERTEN Eltern-Item kann eine Unterliste marke-loser
+    // <dd> stecken (VTS Anhang 7 «Klasse 3: 2,9 m/s²»); parseDefinitionsListe verwirft sie
+    // auf JEDER Ebene (§1) → in jede Unterliste absteigen (disjunkt, keine Dublette).
     if (subDlIdx >= 0) {
       const subEnde = findeDlEnde(ddRoh, subDlIdx);
       const subOpen = ddRoh.slice(subDlIdx).match(/^<dl\b[^>]*>/i);
@@ -1439,9 +1444,15 @@ export function alleAnhangAnker(html: string): string[] {
   // KEIN eigener Anhang → ausschliessen (sonst Dublette zur Gliederung «Anhänge»).
   // Fehlt jede Nummerierung (BVG/KVG/KAG/FIDLEG: ein einziger «Anhang»), IST die
   // unnummerierte Sektion der Anhang → behalten.
+  // W2·27-BUND-FERTIG (30.9.2026): ein Deckblatt ist EINE Sektion. Dieselbe
+  // unnummerierte id MEHRFACH = eigene Anhänge (VZV: drei annex_u1 «Beilage»,
+  // «Anhänge 5 und 6», «Anhang 8 und 9»), nur Einzel-Ids fallen weg. Sweep 231
+  // Caches: ausser VZV verliert nur ChemRRV annex_u1 (echtes Deckblatt).
   const hatNummerierte = records.some((k) => /^annex_\d/.test(k.id));
+  const idAnzahl = new Map<string, number>();
+  for (const k of records) idAnzahl.set(k.id, (idAnzahl.get(k.id) ?? 0) + 1);
   const echte = hatNummerierte
-    ? records.filter((k) => !/^(?:annex_u\d+|lvl_u\d+)$/.test(k.id))
+    ? records.filter((k) => !(/^(?:annex_u\d+|lvl_u\d+)$/.test(k.id) && idAnzahl.get(k.id) === 1))
     : records;
   const anzahl = new Map<string, number>();
   const anker: string[] = [];
@@ -1587,13 +1598,13 @@ export function extrahiereAnhang(html: string, ankerRoh: string): AnhangText | n
       const dlEnde = findeDlEnde(koerper, match.index);
       const dlInner = koerper.slice(match.index + match[5].length, dlEnde - '</dl>'.length);
       re.lastIndex = dlEnde;
-      // Marke-lose <dd>-Notizen (leeres <dt>, Fedlex-Einrückung) ZUERST als Prosa
-      // sichern — sonst Textverlust (§1) UND falsche Lesereihenfolge: die Notiz
-      // leitet i.d.R. ihre Unterliste EIN («… wie folgt gekennzeichnet:» vor a/b/c).
-      // Die nachfolgende Item-Liste hängt sich dann an die letzte Notiz an (Lead +
-      // Items = ein Block), statt VOR ihr zu stehen.
-      for (const notiz of markeloseNotizen(dlInner)) bloecke.push({ absatz: null, text: notiz });
-      const items = parseDefinitionsListe(dlInner, 0, true);
+      const absorbiert: string[] = [];
+      // Marke-lose <dd>-Notizen (Fedlex-Einrückung) ZUERST als Prosa sichern (§1): sie
+      // leiten i.d.R. ihre Unterliste EIN («… wie folgt gekennzeichnet:»); die Item-Liste
+      // hängt sich an die letzte Notiz (Lead + Items = ein Block). Fortsetzungszeilen
+      // stehen schon am Item (absorbiert) und fehlen hier.
+      const items = parseDefinitionsListe(dlInner, 0, true, absorbiert);
+      for (const notiz of ohneFortsetzungen(markeloseNotizen(dlInner), absorbiert)) bloecke.push({ absatz: null, text: notiz });
       if (items.length > 0) {
         const vor = bloecke[bloecke.length - 1];
         // An den vorausgehenden Einleitungs-Absatz/Notiz anhängen — NUR wenn der ein
@@ -1607,12 +1618,10 @@ export function extrahiereAnhang(html: string, ankerRoh: string): AnhangText | n
     }
   }
 
-  // Leerer Anhang-Körper: in der Praxis ein AUFGEHOBENER Anhang (Fedlex rendert
-  // «Anhang N» + Aufhebungs-Fussnote, sonst nichts — die Fussnote ist oben
-  // gestrippt). Wie beim aufgehobenen Artikel (s. extrahiereArtikelAusAnker)
-  // faithful als «aufgehoben»-Marker («…») behalten statt stumm zu verlieren
-  // (§8 Ehrlichkeit; der Reader zeigt «aufgehoben»). So bleibt der Anhang in der
-  // Vollständigkeit/Struktur erfasst und konsistent mit dem Artikel-Pfad.
+  // Leerer Anhang-Körper = AUFGEHOBENER Anhang (Fedlex rendert «Anhang N» + Aufhebungs-
+  // Fussnote, oben gestrippt): wie beim aufgehobenen Artikel (extrahiereArtikelAusAnker)
+  // als «aufgehoben»-Marker («…») behalten statt stumm zu verlieren (§8; Vollständigkeit/
+  // Struktur konsistent mit dem Artikel-Pfad).
   if (bloecke.length === 0) {
     const signal = anhangAmtlichesSignal(innerRoh); // W2·27: amtlicher Kopf-Vermerk (aufgehoben | gegenstandslos)
     return { titel, bloecke: [{ absatz: null, text: '…' }], ...(signal ? { [signal]: true as const } : {}) };

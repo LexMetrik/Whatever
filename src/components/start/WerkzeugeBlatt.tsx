@@ -82,7 +82,7 @@ const vorlagenZahl = (name: string) => gebietKarten(name).filter(istVerfuegbar).
 
 function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
   return (
-    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.35fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)]">
+    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.35fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:@[44rem]/blatt:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)]">
       <WahlSpalte reg="w" kopf={<RubrikKachel reg="w" onWahl={zu('rechner')} titel="Rechner" zahl={nf(z.rechner)} einheit="Rechner" />}>
         <ul aria-label="Rechner nach Kategorie" className="px-2">
           {RECHNER_KATEGORIEN.map((k) => (
@@ -110,8 +110,20 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
             abwärts), Zeile nie geteilt: Überlauf 0 px @1280×800/1440×900/
             1920×1080; fünf Namen brechen am Wortende auf zwei Zeilen, keiner
             mit Trennstrich. Unter `xl` (1024: Überlauf nur 163 → 9 px, aber neun
-            Zeilen auf 2–3 Zeilen gequetscht) bleibt die eine Spalte. */}
-        <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2 xl:columns-2 xl:gap-x-2">
+            Zeilen auf 2–3 Zeilen gequetscht) bleibt die eine Spalte.
+            ERGÄNZT W2·31 P17 (1.10.2026): `xl` (Fenster ≥ 1280) ODER das Blatt selbst
+            ≥ 44 rem breit (`lg:@[44rem]/blatt:`, Container `.lc-start-blatt-inhalt`
+            in `StartKachelFeld`). Grund: mit Seitenleiste 208 bei Fenster 1100
+            ist das Blatt 802 px breit (Seite einspaltig), das Fenster aber < 1280 —
+            die Liste blieb einspaltig, 163 px Überlauf. `rem` statt px: die
+            Blattbreite ohne Seitenleiste deckelt sich bei 41.9 rem (670 px bei
+            Schrift 1, 603 bei 0.9, 737 bei 1.1; 739 px = 38.5 rem bei 1.2 am
+            Fenster 1279), die Schwelle liegt darüber, wird also OHNE Seitenleiste
+            unter `xl` nicht erreicht — bei Browser-Grundschrift 16 px. Bei kleiner
+            Grundschrift (9/12 px) ist die Startseite einspaltig, das Blatt ~64 rem:
+            dort wird die Liste auch ohne Seitenleiste zweispaltig (gewollt,
+            Überlauf 115–143 px → 0; Prüfer #1214). */}
+        <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2 xl:columns-2 xl:gap-x-2 lg:@[44rem]/blatt:columns-2 lg:@[44rem]/blatt:gap-x-2">
           {WERKZEUGE_VORLAGEN_GEBIETE.map((g) => {
             const n = vorlagenZahl(g.name);
             return (

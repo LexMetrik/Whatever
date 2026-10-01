@@ -2,9 +2,9 @@
  "erlass": "FINMAG",
  "abdeckung": {
   "fussnoten": 124,
-  "ereignis": 87,
+  "ereignis": 88,
   "referenz": 36,
-  "unparsed": 1
+  "unparsed": 0
  },
  "artikel": {
   "1": {
@@ -338,6 +338,14 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "gegenstandslos",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": "2",
+     "item": "a"
     },
     {
      "typ": "eingefuegt",
@@ -1721,11 +1729,5 @@
    ]
   }
  },
- "residuum": [
-  {
-   "token": "15",
-   "nr": "37",
-   "roh": "Gegenstandslos. Siehe Art. 75 Abs. 5 des Finanzinstitutsgesetzes vom 15. Juni 2018 (SR 954.1)."
-  }
- ]
+ "residuum": []
 }

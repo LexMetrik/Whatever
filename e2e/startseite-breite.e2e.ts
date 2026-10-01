@@ -25,6 +25,19 @@ import { test, expect, type Page } from '@playwright/test';
 //      texte, «Häufig gebraucht» und die offenen Blätter Gesetze/Werkzeuge
 //      höchstens 80 Zeichen je Zeile (wortgenau, Methode wie seitenbreite);
 //      der Gruss (h1) bleibt ≤ 40rem.
+//  (3b) W2·31 P15 (1.10.2026): dazu die Zellen @1280×800 und @1440×900 mit
+//      Seitenleiste 460 (Standardschrift). Rot vorher: @1280 Gesetze-Blatt
+//      Unterkante 915 > 800, @1440 Gesetze-Wahl 88 px Überlauf. Rot-Proben
+//      nach dem Fix: `lg:@[936px]/start:grid-cols-…` (P15: `@[960px]/start:`) zurück auf
+//      `lg:grid-cols-…` → @1280 rot (Unterkante 915) und @1440 rot (Überlauf 88);
+//      `lg:max-w-[15.5rem]` der Kantone-Karte in GesetzeBlatt.tsx zurück auf
+//      `lg:max-w-none 2xl:max-w-[15.5rem]` → nur @1440 rot (Überlauf 10 px).
+//      Beide gemessen 1.10.2026 gegen den Quellcode (Probe-Logs `.gate/p15-probe*.log`).
+//  (3c) W2·31 P15b (1.10.2026): Zellen (2b) «ohne Seitenleiste wie main». Rot-Probe
+//      gegen den Quellcode: `lg:@[936px]/start:` in Startseite.tsx zurück auf
+//      `@[960px]/start:` (Stand 75c0a5de3) → 2 von 4 Zellen rot: @1016 Skala 1
+//      (erwartet 1 Spalte, gemessen 2) und @1024 Skala 1.4 (erwartet 2, gemessen 1);
+//      Log `.gate/p15b-rot-probe.log`.
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit):
 //  (1) `startseite` in seitenbreite.ts zurück auf `content` → Kachel 348 px.
 //  (2) `@[52rem]:grid-cols-3` in HaeufigGebraucht.tsx streichen → 2 Spalten.
@@ -180,6 +193,33 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     });
   }
 
+  // W2·31 P15b (1.10.2026, Prüfer-Auflage 1 «ohne Seitenleiste unverändert»):
+  // die Zweispaltigkeit (Kachelfeld | Spalte rechts) hängt an Fenster ≥ 1024 UND
+  // Startseitenbreite ≥ 936 px. Gemessen vorher (PR-Stand 75c0a5de3, nur 960 px):
+  // @1016 Skala 1 zweispaltig mit 296×242-Kacheln (Mischzustand, main: einspaltig
+  // 476×220), @1024 Skala 1.4 einspaltig (Container 956.8 px; main: zweispaltig).
+  // `spalten` = 2 ⇔ die rechte Spalte steht NEBEN dem Kachelfeld, nicht darunter.
+  for (const { breite, leiste, skala, spalten, wie } of [
+    { breite: 1016, leiste: 0, skala: '1', spalten: 1, wie: 'einspaltig wie main (kein Mischzustand unter 1024)' },
+    { breite: 1024, leiste: 0, skala: '1', spalten: 2, wie: 'zweispaltig wie main' },
+    { breite: 1024, leiste: 0, skala: '1.4', spalten: 2, wie: 'zweispaltig wie main (Container 956.8 px)' },
+    { breite: 1440, leiste: LEISTE, skala: '1', spalten: 1, wie: 'einspaltig (Container 932 px)' },
+  ]) {
+    test(`(2b) P15b @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ' ohne Seitenleiste'} Skala ${skala}: ${wie}`, async ({ page }) => {
+      if (leiste) await mitLeiste(page, leiste);
+      if (skala !== '1') await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, ['lexmetrik-schriftskala', skala]);
+      await start(page, breite, 900);
+      const m = await page.evaluate(() => {
+        const aside = document.querySelector('aside[aria-label="Arbeitsplatz"]')!;
+        const feld = aside.previousElementSibling!.getBoundingClientRect();
+        const a = aside.getBoundingClientRect();
+        const z = document.querySelector('.lc-start-zelle')!.getBoundingClientRect();
+        return { spalten: a.left >= feld.right - 1 ? 2 : 1, kachel: `${Math.round(z.width)}x${Math.round(z.height)}` };
+      });
+      expect(m.spalten, JSON.stringify(m)).toBe(spalten);
+    });
+  }
+
   // W2·31 J (30.9.2026): U13 bei Schriftskala 1.4. Gemessen @1536×864: Feldkopf
   // 305 px + Blatt 806 px (2 × 17.5 rem × 1.4 + Lücke) = Unterkante 1112 px —
   // das Blatt ist an der Mindesthöhe der Kachel (rem!) gebunden und die Gesetze-
@@ -192,6 +232,9 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
     { breite: 1680, hoehe: 1050, leiste: 0, skala: '1' },
     { breite: 1920, hoehe: 1080, leiste: 0, skala: '1' },
     { breite: 1536, hoehe: 864, leiste: LEISTE, skala: '1' },
+    { breite: 1280, hoehe: 800, leiste: LEISTE, skala: '1' },
+    { breite: 1440, hoehe: 900, leiste: LEISTE, skala: '1' },
+    { breite: 1100, hoehe: 900, leiste: 208, skala: '1' }, // P17: Werkzeuge-Liste 163 px Überlauf (Fenster < 1280)
     { breite: 1920, hoehe: 1200, leiste: 0, skala: '1.4' },
   ]) {
     test(`(3) U13 @${breite}×${hoehe}${leiste ? ' mit Seitenleiste' : ''}${skala !== '1' ? ` Skala ${skala}` : ''}: alle vier Blätter ganz im Fenster`, async ({ page }) => {
@@ -217,6 +260,46 @@ test.describe('Startseite · Stufe weit (W2·31-BILDSCHIRMBREITE)', () => {
           expect(m.ueber, `${name}-Wahl ohne Überlauf (${JSON.stringify(m)})`).toBeLessThanOrEqual(1);
         }
       }
+    });
+  }
+
+  // W2·31 P17 (1.10.2026): die Vorlagen-Liste im Werkzeuge-Blatt wählt ihre zwei
+  // Unterspalten nach der BLATTBREITE (Container `blatt`, ≥ 44 rem) ODER `xl`
+  // (Fenster ≥ 1280), nicht mehr nur nach dem Fenster. Gemessen vorher: Fenster
+  // 1100 + Seitenleiste 208 (Blatt 802 px breit) einspaltig, Überlauf 163 px.
+  // Die drei «unverändert»-Zellen sichern «ohne Seitenleiste alles wie vorher»
+  // (bei Browser-Grundschrift 16 px; kleine Grundschrift 9/12 px wird gewollt
+  // zweispaltig, siehe WerkzeugeBlatt.tsx):
+  // @1200 Skala 1 (Blatt 670 px = 41.9 rem, der Deckel ohne Seitenleiste) und
+  // @1279 Skala 1.2 (739 px = 38.5 rem, das breiteste Blatt unter `xl` in px) bleiben
+  // EINspaltig; @1100 + Seitenleiste 460 (Blatt 550 px) ebenso.
+  // ROT ZU BEKOMMEN (§6.7, gegen den Quellcode): in `WerkzeugeBlatt.tsx`
+  // `lg:@[44rem]/blatt:` streichen → Zelle 1100+208 rot; Schwelle auf `@[38rem]`
+  // senken auf 38 rem → die Zellen @1200 (41.9 rem) und @1279 Skala 1.2 (38.5 rem) kippen auf 2 Spalten, rot. Beide Proben gemessen 1.10.2026 (Logs .gate/p17-rot1/2.log).
+  for (const { breite, leiste, skala, cols } of [
+    { breite: 1100, leiste: 208, skala: '1', cols: 2 },
+    { breite: 1100, leiste: LEISTE, skala: '1', cols: 1 },
+    { breite: 1200, leiste: 0, skala: '1', cols: 1 },
+    { breite: 1279, leiste: 0, skala: '1.2', cols: 1 },
+    { breite: 1280, leiste: 0, skala: '1', cols: 2 },
+  ]) {
+    test(`(3d) P17 @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ''} Skala ${skala}: Vorlagen-Liste ${cols}-spaltig`, async ({ page }) => {
+      if (leiste) await mitLeiste(page, leiste);
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, skala]);
+      await start(page, breite, 900, '/?blatt=werkzeuge');
+      await expect(page.locator('#lm-start-blatt')).toHaveAttribute('data-phase', 'offen');
+      const liste = page.getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' });
+      await expect(liste).toBeVisible();
+      const m = await liste.evaluate((ul) => {
+        const i = document.querySelector('.lc-start-blatt-inhalt')!;
+        const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const cs = getComputedStyle(i);
+        return {
+          spalten: getComputedStyle(ul).columnCount === '2' ? 2 : 1,
+          blattRem: Math.round((i.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)) / rem * 10) / 10,
+        };
+      });
+      expect(m.spalten, JSON.stringify(m)).toBe(cols);
     });
   }
 

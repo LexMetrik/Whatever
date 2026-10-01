@@ -27,6 +27,7 @@ import {
 import { labelFuerAnker } from './normtext/doppel-id-label.ts';
 import { signalFelder } from './normtext/aufhebung-signal.ts';
 import { amtlicherAnker } from './normtext/artikel-vorkommen.ts';
+import { amtlicherAnhangAnker } from './normtext/anhang-vorkommen.ts';
 import {
   sammleKantonInventar,
   sammleFallback,
@@ -1355,8 +1356,8 @@ async function main(): Promise<void> {
         ...signalFelder(extrakt), // W2·27: leerer Anhang + amtlicher Kopf-Vermerk (aufgehoben | gegenstandslos)
         bloecke: extrakt.bloecke,
         stand,
-        // Roher Anker als Live-Sprungziel (Anhänge tragen kein «/», ggf. Synthese-Suffix entfernen).
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${anker.replace(/__\d+$/, '')}`,
+        // Live-Sprungziel: ohne Synthese-Suffix der rohe Anker (Anhänge tragen kein «/»); bei «__N» (doppelte Fedlex-id, VZV annex_u1) die eindeutige amtliche id im Kopf des N-ten Vorkommens, sonst der Basis-Anker — Gegenstück zu amtlicherAnker() des Haupttexts (normtext/anhang-vorkommen.ts, W2·27-BUND-FERTIG).
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${amtlicherAnhangAnker(html, anker)}`,
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),

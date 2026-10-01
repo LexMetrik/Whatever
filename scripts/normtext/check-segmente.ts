@@ -118,12 +118,9 @@ const OHNE_PROJEKTION_BEKANNT: ReadonlyMap<string, string> = new Map([
   // Deckblatt «Anhänge» — reine Inhaltsübersicht der nummerierten Anhänge,
   // kein eigener Anhang (dieselbe Regel wie der Extraktor, dort `alleAnhangAnker`).
   ['CHEMRRV\u0000annex_u1', 'Deckblatt-Inhaltsübersicht, kein eigener Eintrag'],
-  // ECHTER VERLUST, neue Verlust-Klasse: die «Beilage — Beschreibung der
-  // Führerausweiskategorien» (VZV, SR 741.51, Stand 1.1.2026) steht in HTML und
-  // AKN-XML (eId annex_u1/lvl_u1), fehlt in der Projektion; der Extraktor
-  // verwirft unnummerierte annex_uN als Deckblatt, sobald nummerierte Anhänge
-  // existieren. Extraktor-Fix: plan/posten/2026-09-25-extraktor-fix-vzv-beilage-….
-  ['VZV\u0000annex_u1', 'normtext-treue-deckblatt: Beilage vom Extraktor als Deckblatt verworfen (echter Verlust)'],
+  // (VZV annex_u1 «Beilage» stand hier als ECHTER VERLUST, 25.9.2026 — behoben
+  // W2·27-BUND-FERTIG 30.9.2026: Deckblatt-Ausschluss gilt nur noch für Einzel-
+  // Vorkommen einer unnummerierten id, `alleAnhangAnker`; Ausnahme gestrichen.)
 ]);
 
 const STANDARD_CACHE_DIR = '/tmp';

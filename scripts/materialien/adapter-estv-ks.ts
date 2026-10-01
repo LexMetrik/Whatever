@@ -251,13 +251,44 @@ export function beschreibungDatumNachIso(beschreibung: string): string | null {
 
 /** AN-13: amtliche Signatur der W-Serie im Titel («W01-006D vom 06.06.2001» → «W01-006»; das
  *  «D» ist das Sprachkürzel, ebenso «F»/«I»). Direkt hinter Signatur (+Sprachkürzel) darf kein
- *  Buchstabe, keine Ziffer, kein «_» und kein «-» folgen — «W95-003-2024» ist eine andere, hier
- *  unbekannte Form und ergibt null (Dateinamen-Fallback), nie die gekürzte «W95-003» (§8). Der Dateiname (dbst-ks-w03-006) gruppiert ESTV-intern anders —
+ *  Buchstabe, keine Ziffer, kein «_» und kein Bindestrich folgen, und ein Trennzeichen (Bindestrich,
+ *  Gedanken-/Halbgeviertstrich, Minuszeichen, «/», «\», «.», «,», «;», «:», geschütztes Leerzeichen U+00A0,
+ *  weicher Trennstrich U+00AD) darf nicht unmittelbar vor einem Buchstaben oder einer Ziffer stehen —
+ *  «W95-003-2024», «W95-003–2024», «W95-003D/2024», «W95-003D.2024», «W95-003D:2024» sind andere, hier
+ *  unbekannte Formen und ergeben einheitlich null, nie die gekürzte «W95-003» (§8). Den Fallback bei
+ *  null regelt `nummerAnzeige` (Nachzug #1195: NICHT blind der Dateinamen-Stamm). Ein Trennzeichen vor
+ *  Leerzeichen oder am Ende («W95-003F.») bleibt gültig.
+ *  Der Dateiname (dbst-ks-w03-006) gruppiert ESTV-intern anders —
  *  live 25.9.2026 w03-006 ↔ W01-006D, w03-008 ↔ W02-008D —, darum trägt die ANZEIGE die
  *  Titel-Signatur, der Key bleibt dateinamen-stabil (§2.6). */
 export function wSignaturAusTitel(titel: string): string | null {
-  const m = /^(W\d{2}-\d{3})[DFI]?(?![\p{L}\p{N}_-])/u.exec(titel);
+  const m = /^(W\d{2}-\d{3})[DFI]?(?![\p{L}\p{N}_-]|[\p{Pd}\u2212/\\.,;:\u00A0\u00AD][\p{L}\p{N}])/u.exec(titel);
   return m ? m[1] : null;
+}
+
+/** Sprache aus dem Sprachkürzel der W-Signatur im Titel («W01-006F» → 'fr'; D → 'de', I → 'it');
+ *  null, wo keines dasteht (Aufrufer: bisheriges Verhalten 'de'). Das Kürzel muss unmittelbar hinter
+ *  der Signatur stehen und darf nicht Teil eines längeren Worts sein («W95-003Fa» → null). Konsistent zur
+ *  Signatur (Nachzug #1195): ist `wSignaturAusTitel` null (verworfene Form wie «W02-008F-2024»), ist auch
+ *  die Sprache null — ein verworfenes Kürzel liefert kein «fr». */
+export function wSpracheAusTitel(titel: string): 'de' | 'fr' | 'it' | null {
+  if (wSignaturAusTitel(titel) === null) return null;
+  const m = /^W\d{2}-\d{3}([DFI])/u.exec(titel);
+  return m ? (m[1] === 'F' ? 'fr' : m[1] === 'I' ? 'it' : 'de') : null;
+}
+
+/** Anzeige-Nummer der Indexseiten-Zeile (Nachzug #1195, §8): W-Serie mit gültiger Titel-Signatur → diese;
+ *  trägt der Titel eine W-Signatur (^W\d{2}-\d{3}), die `wSignaturAusTitel` verwirft («W01-006D–Nachtrag»),
+ *  → null — lieber keine Nummer als der Dateinamen-Stamm, der ESTV-intern anders gruppiert
+ *  (dbst-ks-w03-006 ↔ W01-006D) und eine FALSCHE Nummer zeigte. Trägt der Titel keine W-Signatur
+ *  (real: ESTV-KS-W95-003-2024, «Kreisschreiben Nr. 3; Version vom …») → Dateinamen-Stamm wie bisher. */
+export function nummerAnzeige(b: DateinamenBefund, titel: string): string | null {
+  if (b.familie === 'w') {
+    const sig = wSignaturAusTitel(titel);
+    if (sig) return sig;
+    if (/^W\d{2}-\d{3}/u.test(titel)) return null;
+  }
+  return anzeigeNummer(b);
 }
 
 /** Anzeige-Nummer je Familie ('Nr. 50a' | 'Nr. 45 · Anhang 1-1' | 'W95-002' | 'Mitteilung 020' |
@@ -414,12 +445,12 @@ export function baueDokUndKanten(
     behoerde: 'ESTV',
     doktyp,
     titel,
-    nummer: wSignatur ?? anzeigeNummer(b),
+    nummer: nummerAnzeige(b, roh.titel),
     // W2-TRENNUNG (29.8.2026): ESTV = Eidgenössische STEUERverwaltung —
     // Kreis-/Rundschreiben zur direkten Bundessteuer und zur Verrechnungs-
     // steuer sind ausnahmslos Steuerdokumente, nie Sozialversicherung.
     rechtsgebiet: BEHOERDE_RECHTSGEBIET.ESTV,
-    sprache: 'de',
+    sprache: (b.familie === 'w' ? wSpracheAusTitel(roh.titel) : null) ?? 'de',
     rang: dokRang(b),
     normKeys: erlasse,
     hinweis: zuordnung === 'maschinell' ? HINWEIS_MASCHINELL : HINWEIS_ESTV,

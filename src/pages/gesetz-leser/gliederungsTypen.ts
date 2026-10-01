@@ -115,6 +115,9 @@ export interface GliederungsKnoten {
   ersterArtikel?: string;
   /** Alle Artikel des Teilbaums tragen `aufgehoben` — im Baum sichtbar zu machen. */
   aufgehoben: boolean;
+  /** W2·27 (30.9.2026): der Artikel dieser BLATT-Zeile trägt amtlich «gegenstandslos» (nur die
+   *  Artikel-Zeile; Sammel-Knoten aggregieren das Wort nicht). Fehlt, wo nicht zutreffend. */
+  gegenstandslos?: boolean;
   /** Reiner Anhang-Teilbaum (kein «Bereich»-Badge, gehört unter die Anhang-Wurzel). */
   anhang: boolean;
   /**
@@ -202,6 +205,9 @@ export interface ArtikelIndexZeile {
    *  Fallback, dieselbe Quelle wie `hatRandtitel`) — `null` = keine vorhanden. */
   randtitel: string | null;
   aufgehoben: boolean;
+  /** W2·27 (30.9.2026): amtlich «gegenstandslos» (`NormSnapshot.gegenstandslos`) — eigenes Wort,
+   *  nie «aufgehoben» (§1/§8). Fehlt, wenn der Artikel den Vermerk nicht trägt. */
+  gegenstandslos?: boolean;
 }
 
 /**

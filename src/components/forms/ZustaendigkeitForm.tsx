@@ -1,4 +1,5 @@
 
+import { useEffect, useRef, type SetStateAction } from 'react';
 import { NormText } from '../NormText';
 import { BeruehrtRahmen, Checkbox, FehlerBox, Field, GruppenTitel, inputCls, Stepper } from '../vorlagen/ui';
 import { SelectionGrid } from '../ui/SelectionGrid';
@@ -43,6 +44,29 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
   const { f, setF, set, rechtsweg, setRechtsweg, setSchritt, plzTreffer, istMiete, istArbeit, istGeld, istScheidung, setZhStrasse, setZhNummer, fehler, kantonDaten, gemeindeFremd, schritte, maxIndex, aktiverSchritt, zeige, weiterAus } = z;
   const pk = usePaneKlasse();
 
+  // Fokus beim Schrittwechsel (W2·19, 1.10.2026; Muster `vorlagen/wizard.tsx`):
+  // gemessen auf /rechner/zustaendigkeit fiel der Fokus nach «← Zurück» in den
+  // ersten Schritt (Knopf danach ausgegraut) und nach dem letzten «Weiter →»
+  // (Knopf verschwindet) auf BODY. Der Rechner hat keine sichtbare
+  // Schritt-Überschrift (der Stepper nennt sie) — das Fokus-Ziel ist darum eine
+  // nur vorlesbare (`sr-only`, 1×1) Überschrift. Nachzug P16b (1.10.2026,
+  // Prüfer-Auflage): in einem MITTLEREN Schritt bleibt der auslösende Knopf
+  // sichtbar und aktiv — dort bliebe die Fokusanzeige für Sehende auf der
+  // unsichtbaren Überschrift verloren; der Fokus bleibt auf dem Knopf. Die
+  // Überschrift fängt ihn nur, wenn das Element danach verschwunden, ausgegraut
+  // oder nicht mehr im Dokument ist. Marke nur durch die Nutzeraktion, nie beim
+  // ersten Rendern; Darstellung, keine Rechenlogik (§3).
+  const titelRef = useRef<HTMLHeadingElement>(null);
+  const fokusMarke = useRef(false);
+  const wechsleSchritt = (n: SetStateAction<number>) => { fokusMarke.current = true; setSchritt(n); };
+  useEffect(() => {
+    if (!fokusMarke.current) return;
+    fokusMarke.current = false;
+    const a = document.activeElement;
+    const verloren = !a || a === document.body || !a.isConnected || a.matches(':disabled');
+    if (verloren) titelRef.current?.focus();
+  }, [aktiverSchritt]);
+
   return (
     <BeruehrtRahmen>
       <div className="space-y-6">
@@ -57,7 +81,8 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
 
         {/* Geführter Schritt-Dialog (Auftrag David 6.6.2026): klickbarer Stepper
             wie bei den Vorlagen-Wizards; je nach Rechtsweg/Instanz andere Strecke. */}
-        <Stepper schritte={schritte} aktiv={aktiverSchritt} onWechsel={setSchritt} />
+        <Stepper schritte={schritte} aktiv={aktiverSchritt} onWechsel={(i) => { if (i !== aktiverSchritt) wechsleSchritt(i); }} />
+        <h2 ref={titelRef} tabIndex={-1} className="sr-only lc-sprungziel">{schritte[aktiverSchritt].label}</h2>
 
         {/* SCHRITT «Was möchten Sie tun?» – Rechtsweg + (Zivil) Einleitung/
             Rechtsmittel-Gabelung. SchKG/Straf binden hier ihre eigene Engine ein. */}
@@ -396,10 +421,10 @@ export function ZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl, minima
               ausdrücklich. Outline statt Ghost, damit die zwei Knöpfe eines
               Assistenten sichtbar zusammengehören; Begründung im Wortlaut bei
               `vorlagen/wizard.tsx`. */}
-          <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
+          <button type="button" onClick={() => wechsleSchritt((s) => Math.max(0, s - 1))}
             disabled={aktiverSchritt === 0} className="lc-btn-outline">← Zurück</button>
           {aktiverSchritt < maxIndex && (
-            <button type="button" onClick={() => setSchritt((s) => Math.min(maxIndex, s + 1))}
+            <button type="button" onClick={() => wechsleSchritt((s) => Math.min(maxIndex, s + 1))}
               disabled={weiterAus} className="lc-btn-primary">Weiter →</button>
           )}
         </div>
