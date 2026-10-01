@@ -1,11 +1,10 @@
 # ─── Normen-Monatslauf: drei monatliche Vollabgleiche mit PR-Eröffnung ───────
-# Herausgelöst aus normen-monitor.yml (QS-MONITOR-ROT, 1.10.2026): dort liefen die drei
-# Monats-Crons als eigene Workflow-Läufe neben dem Montags-Netz-Check. check:ci-laeufe
-# wertet je Workflow-DATEI den jüngsten Lauf — ein grüner Monatslauf am 1. verdeckte
-# einen roten Montags-Netz-Check, und der Zettel #750 flatterte (schloss/öffnete).
-# Eigene Datei = eigener «jüngster Lauf»; normen-monitor.yml trägt nur noch Netz-Check
-# und Zettel. Job-Inhalt unverändert (Verschiebung, keine Verhaltensänderung); `workflow_dispatch`
-# startet wie bisher alle drei Jobs.
+# Herausgelöst aus normen-monitor.yml (QS-MONITOR-ROT, 1.10.2026): dort startete jeder der
+# drei Monats-Crons auch den Job `normen` (check:netz, kein `if:`) — am 1. drei Netz-Läufe
+# mehr, Rot-Serie +3 an einem Tag (sofort ESKALATION, #956), rote Monats-Jobs färbten die
+# Serie mit. Eigene Datei = eigener Lauf und eigener «jüngster Lauf» in check:ci-laeufe.
+# Job-Inhalt unverändert. GEWOLLTE Verhaltensänderung: am 1. kein check:netz/check:verfall/
+# Zettel mehr; dispatch auf normen-monitor startet die Monats-Jobs nicht mehr (hier schon).
 name: Normen-Monatslauf
 
 on:
