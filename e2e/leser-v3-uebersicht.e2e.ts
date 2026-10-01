@@ -558,3 +558,79 @@ test.describe('a11y — die Klappe hat einen Namen und sagt ihren Zustand', () =
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 })
+
+// ═══ W2·17-UI-BEFUNDE (1.10.2026) · Übersicht: Etikett, Sheet-Deckel, Fusszeile ═
+//
+// ROT ZU BEKOMMEN (§6.7), gegen den QUELLCODE (src/), je Fall:
+//  (a) uebersichtAngaben.ts: Etikett wieder 'Aufgehoben per' ⇒ dt zweizeilig (H1-D03).
+//  (b) index.css: `.lc-scrollrand-y { --lc-scrollrand-grund: var(--paper) }` zurück
+//      ⇒ Deckel im Dunkel-Sheet ≠ Sheet-Fläche (H6-D01).
+//  (c) inhalt-ansichten.tsx: «← Alle Gesetze» wieder «← Übersicht» (H7-D01).
+//  (d) LeserLesespalte.tsx: `flex-wrap` aus der Nachbar-Zeile nehmen ⇒ «Steuerreglement»
+//      bricht @375 mitten im Wort (H9-D01).
+test.describe('W2·17-UI-BEFUNDE · Übersicht und Fusszeile', () => {
+  test('H1-D03: «Aufgehoben» steht einzeilig in der Etikettspalte (BMV @1280)', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await boxOeffnen(page, '/gesetze/bund/BMV')
+    const dt = page.locator('[data-v3-uebersicht-zeile-id="aufgehoben"] dt').first()
+    await expect(dt).toHaveText('Aufgehoben')
+    const h = await dt.evaluate((el) => el.getBoundingClientRect().height)
+    const lh = await dt.evaluate((el) => Number.parseFloat(getComputedStyle(el).lineHeight))
+    expect(h, 'ein Etikett, eine Zeile').toBeLessThan(lh * 1.5)
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  test('H6-D01: der Scroll-Rand-Deckel im Dunkel-Sheet hat die Farbe der Sheet-Fläche (@375)', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.addInitScript(() => { try { localStorage.setItem('lexmetrik-thema', 'dunkel') } catch { /* privat */ } })
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto('/gesetze/bund/STPO')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-gliederung-auf]').first().click()
+    const blatt = page.locator('[data-gliederung-sheet]')
+    await expect(blatt).toBeVisible({ timeout: 15_000 })
+    const farben = await blatt.locator('[data-toc]').first().evaluate((toc) => {
+      const roh = (v: string) => { // beliebige Farbschreibweise → ein computed rgb()
+        const p = document.createElement('div'); p.style.background = v; document.body.appendChild(p)
+        const c = getComputedStyle(p).backgroundColor; p.remove(); return c
+      }
+      const grund = getComputedStyle(toc).getPropertyValue('--lc-scrollrand-grund').trim()
+      const flaeche = getComputedStyle(toc.closest('[data-v3-pane]')!).getPropertyValue('--leser-leiste-flaeche').trim()
+      return { deckel: roh(grund), flaeche: roh(flaeche), paper: roh('var(--paper)') }
+    })
+    expect(farben.deckel, 'Deckel = Sheet-Fläche').toBe(farben.flaeche)
+    expect(farben.deckel, 'und nicht das dunklere --paper').not.toBe(farben.paper)
+  })
+
+  test('H7-D01: die Früh-Ansicht führt «← Alle Gesetze», nicht «← Übersicht» (NYÜ)', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/gesetze/international/NYUE')
+    const link = page.locator('nav[aria-label="Weitere Erlasse"] a[href="/gesetze"]')
+    await expect(link).toHaveText('← Alle Gesetze', { timeout: 20_000 })
+    await expect(page.getByRole('link', { name: '← Übersicht' })).toHaveCount(0)
+  })
+
+  test('H9-D01: kein Kürzel der Nachbar-Zeile bricht mitten im Wort (BS-640.100 @375)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto('/gesetze/kanton/BS-640.100')
+    const nav = page.locator('nav[aria-label="Weitere Erlasse"]')
+    await expect(nav).toBeAttached({ timeout: 20_000 })
+    const zerrissen = await nav.evaluate((n) => {
+      const out: string[] = []
+      for (const a of n.querySelectorAll('a')) {
+        const walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT)
+        for (let tn = walker.nextNode() as Text | null; tn; tn = walker.nextNode() as Text | null) {
+          for (const m of tn.data.matchAll(/\S+/g)) {
+            const r = document.createRange(); r.setStart(tn, m.index!); r.setEnd(tn, m.index! + m[0].length)
+            const zeilen = new Set([...r.getClientRects()].map((c) => Math.round(c.top))).size
+            if (zeilen > 1) out.push(m[0])
+          }
+        }
+      }
+      return out
+    })
+    expect(zerrissen, 'Wörter, die über zwei Zeilen reichen').toEqual([])
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+  })
+})

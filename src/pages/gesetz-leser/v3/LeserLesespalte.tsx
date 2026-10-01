@@ -392,7 +392,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
           Ä15-Klasse). Wortgleich in `../inhalt-volltext.tsx` — V1 zeigt denselben
           Überlauf aus derselben Ursache (§5).
           Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
-      <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
+      <nav className="mt-12 border-t border-line pt-5 flex flex-wrap justify-between gap-x-4 gap-y-2 text-body-s" aria-label="Weitere Erlasse">
         {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-ink-900 [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
         {/* ── Ä119 (Live-Ästhetik-Prüfung 18.8.2026) · «ÜBERSICHT» WAR DOPPELT
             BELEGT ───────────────────────────────────────────────────────────
@@ -408,9 +408,9 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
             Link sagt jetzt, wohin er führt: «Alle Gesetze».
             `shrink-0` bleibt (B6): die Beschriftung ist kurz und konstant, sie
             gibt in der Zeile nicht nach — nachgeben sollen die Erlass-Namen
-            links und rechts, deren Länge aus den Daten kommt. */}
+            links und rechts, deren Länge aus den Daten kommt. H9-D01 (1.10.2026): `flex-wrap` statt Wortbruch @375 («Steuerregle-/ment»), `ml-auto` hält ihn rechts. */}
         <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-ink-900">Alle Gesetze</Link>
-        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-ink-900 [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
+        {nachher ? <Link to={erlassPfad(nachher)} className="ml-auto min-w-0 text-right text-ink-900 [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

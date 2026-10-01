@@ -3007,8 +3007,12 @@
      strich-Leiste B-R1 ohne Verwender, mit REST S2/VS-08 gelöscht). Nur `background-image`/-size/
      -position, nie die `background`-Kurzform: sonst löschte die Klasse die
      Tailwind-Fläche (`bg-surface`) mit. */
+  /* W2·17-UI-BEFUNDE H6-D01 / B3-D01 (1.10.2026): ein Behälter, der seine Fläche
+     über `--leser-leiste-flaeche` nennt (das Gliederungs-Sheet, `paper-raised`),
+     gilt auch für den Deckel — sonst malte er im Dunkelmodus `--paper` als
+     22-px-Band auf die hellere Sheet-Fläche. Ohne diese Variable bleibt `--paper`. */
   .lc-scrollrand-x,
-  .lc-scrollrand-y { --lc-scrollrand-grund: var(--paper); }
+  .lc-scrollrand-y { --lc-scrollrand-grund: var(--leser-leiste-flaeche, var(--paper)); }
 
   .lc-scrollrand-x {
     background-image:
