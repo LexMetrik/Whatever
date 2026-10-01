@@ -66,6 +66,7 @@ export interface BildRef {
 }
 
 import { artikelRohHtml } from './artikel-vorkommen.ts';
+import { STERN_NOTE_ALTERNATIVE } from './stern-note.ts';
 import { artikelTextMitAufhebung, anhangAmtlichesSignal } from './aufhebung-signal.ts';
 import { ohneFortsetzungen } from './anhang-fortsetzung.ts';
 import { dekodiereEntities } from './html-entities.ts';
@@ -189,15 +190,13 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       // keiner Alternative erfasst → stumm verworfen. Kommt NACH den obigen, damit
       // Absatz/Tabelle Vorrang behalten (1.7.2026).
       '|<p[^>]*>((?:(?!</p>)[\\s\\S])*?<img\\b[^>]*>(?:(?!</p>)[\\s\\S])*?)</p>' +
-      // P3 (W2·5b): STANDALONE <p class="…man-template-tab-krpr…"> — eine
-      // tabellen-artige Zeile, die NICHT in einem <table> steckt. Fedlex rendert
-      // damit Aufzählungen ausserhalb echter Tabellen: OR art_361/362 listen so
-      // die (un)abdingbaren Vorschriften («Artikel 321c: Absatz 1 …»), VRV führt
-      // damit redaktionelle Verweis-Noten («* Vgl. Art. 18.»). Beides war stiller
-      // Normtext-Verlust (89 Zeilen OR + 8 VRV; korpusweite Inventur 5.7.2026).
-      // Steht ZULETZT: echte Tabellen (Alt 5) konsumieren ihre Zellen-<p> vorher,
+      // P3 (W2·5b): STANDALONE <p class="…man-template-tab-krpr…"> — tabellen-artige Zeile AUSSERHALB
+      // eines <table>: OR art_361/362 (Listen der (un)abdingbaren Vorschriften), VRV (redaktionelle
+      // Verweis-Noten «* Vgl. Art. 18.»). Beides war stiller Normtext-Verlust (89 Zeilen OR + 8 VRV;
+      // Inventur 5.7.2026). Steht ZULETZT: echte Tabellen (Alt 5) konsumieren ihre Zellen-<p> vorher,
       // Absatz/Bild behalten Vorrang. Beleg: p3-drop-klassen-inventar-2026-07-05.md.
-      '|<p[^>]*\\bclass="[^"]*man-template-tab-krpr[^"]*"[^>]*>((?:(?!</p>)[\\s\\S])*?)</p>',
+      // Alt 8 (P3b, W2·27-BUND-FERTIG): dieselbe Note als absatz8pt (VRV ab 20261001) → stern-note.ts
+      '|<p[^>]*\\bclass="[^"]*man-template-tab-krpr[^"]*"[^>]*>((?:(?!</p>)[\\s\\S])*?)</p>' + `|${STERN_NOTE_ALTERNATIVE}`,
     'gi',
   );
   const bloecke: ArtikelText['bloecke'] = [];
@@ -370,13 +369,13 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       }
       const nach = entferneTags(innerBild.slice(letzteAdj)).trim();
       if (nach) bloecke.push({ absatz: null, text: nach });
-    } else if (match[7] !== undefined) {
+    } else if (match[7] !== undefined || match[8] !== undefined) {
       // ── Standalone-tab-krpr-Zeile (P3, W2·5b) ────────────────────────────
       // Nicht-Tabellen-<p class="…man-template-tab-krpr…"> = eine tabellen-artige
       // Aufzählungs-/Verweis-Zeile ausserhalb eines <table>. Verbatim als eigener
       // Text-Block (absatz:null) — faithful, kein Marke-Erfinden (§1/§8). Fussnoten
       // vor entferneTags tilgen (sonst leakt die Ziffer, vgl. Absatz-Pfad).
-      const txt = entferneTags(entferneFussnotenSups(match[7])).trim();
+      const txt = entferneTags(entferneFussnotenSups(match[7] ?? match[8]!)).trim();
       if (txt) bloecke.push({ absatz: null, text: txt });
     }
     // Alle in dieser Iteration erzeugten Blöcke tragen denselben Quell-Span (A31a).
