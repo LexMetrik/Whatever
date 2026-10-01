@@ -122,7 +122,7 @@ const GRIFF_BOX = 'inline-flex h-7 w-7 items-center justify-center transition-co
 // R5-D/§G-j: die Hover-Fläche ist EINE Regel, getragen von der Rolle
 // `.lc-hover-flaeche` (index.css) — keine eigene Alpha-Stärke daneben.
 const GRIFF_FLAECHE = 'lc-hover-flaeche';
-const knopf = `${GRIFF_BOX} ${GRIFF_FLAECHE} text-ink-500 hover:text-ink-900 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink-500`;
+const knopf = `${GRIFF_BOX} ${GRIFF_FLAECHE} text-ink-500 hover:text-ink-900 lc-deaktiviert disabled:hover:bg-transparent disabled:hover:text-ink-500`;
 
 export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, teilenKopiert, onLinks, onRechts, kannLinks, kannRechts, nurSteuerung, kurzform, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
   // A-2: eine Zeile, ein Zuständiger. Trägt die Seite ihre Kopfzeile selbst,
