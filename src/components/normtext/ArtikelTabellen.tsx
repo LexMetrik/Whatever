@@ -1,4 +1,5 @@
 import { gruppiereTausender } from '../../lib/normtext/darstellung';
+import { KENNZAHL_TITEL, gruppiereZelle, istJahrSpalte } from './tarifText';
 
 // Tarif- und Tabellen-KOMPONENTEN des Normtext-Artikels. Aus ArtikelBody.tsx
 // ausgelagert (verhaltensneutral, §6/§6.6-Churn-Regrowth: die Vereinigung von
@@ -84,6 +85,9 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
   }
   const rechts = (typ: TabSpalte['typ']) => typ === 'zahl' || typ === 'betrag';
   const gruppieren = (typ: TabSpalte['typ']) => typ !== 'text'; // bereich/zahl/betrag: Swiss-Apostroph
+  // W2·17 E-D4-B03: Jahres-/Kennzahl-Spalten (Referenzdatum, Jahrgang, Code) und
+  // Datums-/Nummern-Zellen bekommen keinen Tausender-Apostroph («31.01.2'022»).
+  const ohneGruppe = spalten.map((s, ci) => KENNZAHL_TITEL.test(s.titel) || istJahrSpalte(zeilen.map((z) => z[ci])));
   const hatKopf = spalten.some((s) => s.titel !== '');
   const zelleCls = (typ: TabSpalte['typ'], kopfZeile: boolean) =>
     `table-cell px-3 py-1.5 leading-snug align-baseline${rechts(typ) ? ' text-right whitespace-nowrap lc-ziffern' : ''}${
@@ -110,7 +114,7 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
                 role="cell"
                 className={`${zelleCls(spalten[ci].typ, false)}${ri > 0 || hatKopf ? ' border-t border-rule-artikel' : ''}`}
               >
-                {gruppieren(spalten[ci].typ) ? gruppiereTausender(cell) : cell}
+                {gruppieren(spalten[ci].typ) && !ohneGruppe[ci] ? gruppiereZelle(cell) : cell}
               </span>
             ))}
           </span>
@@ -163,6 +167,9 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
   const spalteNumerisch = Array.from({ length: spalten }, (_, ci) =>
     alleZeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
   );
+  // W2·17 E-D4-B04: reine Jahres-Spalten («1996 B», «2003») nie gruppieren; Daten in
+  // Prosa-Zellen («8. März 1960») schützt `gruppiereZelle`.
+  const jahrSpalte = Array.from({ length: spalten }, (_, ci) => istJahrSpalte(zeilen.map((z) => z[ci] ?? '')));
   const zelleCls = (ci: number, kopfZeile: boolean) =>
     `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem] lc-wortumbruch'}${
       kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
@@ -185,7 +192,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
                 role="cell"
                 className={`${zelleCls(ci, false)}${ri > 0 || (kopf && kopf.length) ? ' border-t border-rule-artikel' : ''}`}
               >
-                {gruppiereTausender(cell)}
+                {jahrSpalte[ci] ? cell : gruppiereZelle(cell)}
               </span>
             ))}
           </span>
