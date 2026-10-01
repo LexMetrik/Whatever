@@ -49,15 +49,26 @@ export function istIdFragmentEindeutig(html: string, fragment: string): boolean 
 }
 
 /**
+ * Synthese-Suffix «__N» (N-tes Vorkommen derselben Sektions-id, vergeben von
+ * `alleAnhangAnker`/`alleArtikelTokens` in extrahiere-fedlex.ts) in Basis-id und
+ * Vorkommens-Nummer zerlegen; `null` ohne Suffix (= erstes/einziges Vorkommen).
+ * EINE Stelle für die Namenskonvention (§5): Anhang-Anker-Auflösung (unten) und
+ * die Lokalisierung im Tor `check:segmente` (segmente-logik.ts `lokalisiereAnker`).
+ */
+export function zerlegeVorkommenSuffix(ankerRoh: string): { basis: string; nth: number } | null {
+  const treffer = ankerRoh.match(/^(.*)__(\d+)$/);
+  return treffer ? { basis: treffer[1], nth: Number(treffer[2]) } : null;
+}
+
+/**
  * Anker-Fragment für die quelleUrl eines Anhangs. Ohne Synthese-Suffix «__N»
  * (Normalfall) unverändert `ankerRoh` — byte-gleich zum Verhalten davor. Mit
  * «__N» die erste eindeutige id im Kopf der N-ten Sektion, sonst der Basis-Anker.
  */
 export function amtlicherAnhangAnker(html: string, ankerRoh: string): string {
-  const suffix = ankerRoh.match(/^(.*)__(\d+)$/);
+  const suffix = zerlegeVorkommenSuffix(ankerRoh);
   if (!suffix) return ankerRoh;
-  const basisAnker = suffix[1];
-  const nth = Number(suffix[2]);
+  const { basis: basisAnker, nth } = suffix;
   const esc = basisAnker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const opens = [...html.matchAll(new RegExp(`<section[^>]*\\sid="${esc}"[^>]*>`, 'gi'))];
   const open = opens[nth - 1];
