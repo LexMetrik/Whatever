@@ -4,13 +4,15 @@ import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { aufhebungFuerRegister } from '../../../lib/normtext/aufhebungen';
 import { revisionFuerToken, type ArtikelRevision, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-parse';
+import type { HistorieShard } from '../../../lib/normtext/historie-laden';
+import { artikelLeerstellenStatus } from '../../../lib/normtext/darstellung';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { PanelAenderungen } from './PanelAenderungen';
 import { BotschaftZeile, PanelMaterialien } from './PanelMaterialien';
 import { PanelErlaeuterungen } from './PanelErlaeuterungen';
 import { ordneErlaeuterungen } from './erlaeuterungModell';
 import { PanelWerkzeuge } from './PanelWerkzeuge';
-import { useArtikelRevisionShard, useErlaeuterungen, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
+import { useArtikelRevisionShard, useErlaeuterungen, useHistorieShard, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
 import type { PanelReiter } from './panelModell';
 import { bestimmungDativ, type BestimmungsWort } from './erlassWortlaut';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
@@ -75,13 +77,86 @@ export function artRevFassungFallback(
   return historie?.ereignisse.length ? undefined : (artRev ?? undefined);
 }
 
+// ─── W2·27-BUND-FERTIG P5 (1.10.2026) · «Erlass in Kraft seit …» am Artikel ─────
+//
+// Ein Artikel ohne Historie-Ereignis und ohne Revisions-Beleg sagte im Reiter
+// «Änderungen» nur «Zu Art. N nichts erfasst.» — bei den Staatsverträgen (CISG,
+// LugÜ, HZÜ …) ist das der Normalfall, und die Leerzeile liest sich wie «es gab
+// nie etwas», wo die Quelle schlicht keine Fussnoten führt. Die Zeile darunter
+// nennt, was amtlich BELEGT ist: das Ur-Inkrafttreten des ERLASSES (Fedlex
+// `dateEntryInForce` am Abstract, `public/normtext/inkrafttreten.json`, am
+// 1.10.2026 für alle 28 Staatsverträge live gegen SPARQL gleich).
+//
+// WORTLAUT BEWUSST ERLASS-BEZOGEN: nie «Artikel gilt seit» und nie «keine
+// Änderung» (§8). Bei LugÜ fehlen Anhang-Fussnoten (W2·5l M13), bei CMR Daten —
+// «keine Änderung» wäre eine unbelegte Behauptung; «für die Schweiz» ebenso, weil
+// nicht für jeden Vertrag belegt ist, ob Fedlex dort das Landes- oder das
+// völkerrechtliche Datum führt (§7). Das Datum gehört dem Erlass, nie dem Artikel.
+//
+// UMFANG IST EIN SCHALTER (Orchestrator-Entscheid 1.10.2026, bis David anders
+// entscheidet): ENG — nur SR `0.*`. Die datengesteuerte Ausweitung auf ALLE
+// Bund-Artikel ohne Ereignis (12 460, z. B. OR Art. 1) ist `return true` in
+// `erlassStandErlaubt`; die vier Bedingungen in `erlassStandFuerArtikel` gelten
+// unverändert für jeden Umfang.
+
+/** DER Umfangs-Schalter: für welche Erlasse nennt der Artikel den Erlass-Stand? */
+export function erlassStandErlaubt(sr: string | null | undefined): boolean {
+  return typeof sr === 'string' && /^0\./.test(sr);
+}
+
+export interface ErlassStandEingang {
+  /** SR-Nummer des Erlasses (`BrowseErlass.sr`) — für den Umfangs-Schalter. */
+  erlassSr: string | null | undefined;
+  /** `BrowseErlass.inkraftSeit` (ISO) — Quelle Fedlex, kein Wert = ehrlich leer. */
+  inkraftSeit: string | null | undefined;
+  blatt: BlattArtikel | null;
+  artRev: ArtikelRevision | null | undefined;
+  /** Artikel-Revisions-Shard geladen? Sonst ist «kein Beleg» noch keine Antwort. */
+  revisionenFertig: boolean;
+  /** Historie-Shard geladen? Sonst blitzte die Zeile an Artikeln MIT Ereignis auf. */
+  historieFertig: boolean;
+  /** `null` = kein Shard (die meisten Staatsverträge) bzw. nicht erreichbar. */
+  historieShard: HistorieShard | null;
+}
+
+/**
+ * Das Datum (ISO), das die Zeile «Erlass in Kraft seit …» trägt — oder
+ * `undefined`, wenn sie nicht steht. Alle Bedingungen müssen gelten (rein, §2):
+ *  a) KEIN Beleg am Artikel: weder Historie-Ereignis noch Revisions-Beleg
+ *     (dieselbe Bedingung wie `ohneFassung` — die Zeile ergänzt die Leerzeile);
+ *  b) beide Quellen GELADEN (nie «nichts» vor «geladen»);
+ *  c) der Artikel ist lebender Wortlaut: nicht aufgehoben, nicht gegenstandslos,
+ *     keine ungeklärte Leerstelle — kein «Erlass in Kraft» über eine Leerstelle;
+ *  d) KEINE ungeparste Fussnote (`residuum`): die Fussnote ist da, die Grammatik
+ *     hat sie nicht als Ereignis erkannt — der Artikel könnte geändert sein, und
+ *     über seinen Ur-Stand wollen wir dann nichts aussagen (§8).
+ */
+export function erlassStandFuerArtikel(a: ErlassStandEingang): string | undefined {
+  if (!erlassStandErlaubt(a.erlassSr) || !a.inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(a.inkraftSeit)) return undefined;
+  if (!a.blatt || !a.revisionenFertig || !a.historieFertig || a.artRev) return undefined;
+  const { eintrag, historie } = a.blatt;
+  if (historie?.ereignisse.length || historie?.aufgehobenSeit || historie?.gegenstandslos) return undefined;
+  if (artikelLeerstellenStatus(eintrag.bloecke, eintrag.aufgehoben, eintrag.gegenstandslos) !== 'lebt') return undefined;
+  if (a.historieShard?.residuum.some((r) => r.token === eintrag.artikel)) return undefined;
+  return a.inkraftSeit;
+}
+
+export function ErlassStandZeile({ iso, token }: { iso: string; token: string }) {
+  return (
+    <p data-v3-blatt-fassung-erlass={token} className="px-3 pt-2 text-body-s text-ink-700"
+      title="Amtliches Inkrafttreten des Erlasses (Fedlex) — keine Aussage über spätere Änderungen dieses Artikels">
+      Erlass in Kraft seit {datumAnzeige(iso)}.
+    </p>
+  );
+}
+
 export interface PanelTafeln {
   tafeln: Readonly<Record<Exclude<PanelReiter, 'entscheide'>, ReactNode>>;
   /** Der Artikel-Revisions-Shard — geteilt mit der Tafel «Entscheide». */
   artikelRevisionen: Geladen<RevisionShard | null>;
 }
 
-export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort }: {
+export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort, erlassSr, inkraftSeit }: {
   erlassKey: string | undefined;
   /** `zustand.jeGeoeffnet` — das Gate (Herleitung in `./panelKontextLaden`). */
   laden: boolean;
@@ -95,10 +170,14 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   /** Kurz-Zitat des aktiven Artikels («Art. 41 OR») und sein Zähl-Substantiv. */
   normZitat: string;
   wort: BestimmungsWort;
+  /** P5 · SR-Nummer und Ur-Inkrafttreten des Erlasses (Register) — Zeile «Erlass in Kraft seit …». */
+  erlassSr?: string | null;
+  inkraftSeit?: string | null;
 }): PanelTafeln {
   const { locale } = useLocale();
   const revisionen = useRevisionen(erlassKey, laden);
   const artikelRevisionen = useArtikelRevisionShard(erlassKey, laden);
+  const historieShard = useHistorieShard(erlassKey, laden);
   const materialien = useMaterialien(erlassKey, laden, locale);
   const erlaeuterungen = useErlaeuterungen(erlassKey, laden);
   // W3-5 (Audit 25.9.2026): `unsicher` = das Manifest (`/materialien/register.json`)
@@ -142,6 +221,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
+  const erlassStand = erlassStandFuerArtikel({
+    erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
+    historieFertig: historieShard.fertig, historieShard: historieShard.wert,
+  });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
   // 231 Sidecars kantonal, Beleg in `PanelAenderungen`) — das ist eine Auskunft
   // über den ERLASS, nicht über den einzelnen Paragrafen. «Zu § 44 nichts
@@ -173,6 +256,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
           )}
           <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token}
             geladen={ohneFassung && !aenderungenAmKantonNichtErfasst}>{null}</BlattArtikelGruppe>
+          {erlassStand && token && <ErlassStandZeile iso={erlassStand} token={token} />}
           {/* W3-4: `zahl={0}` statt `null` erzwingt bei `ErlassTeil` den
               UNGEKLAPPTEN Pfad («Null im ganzen Erlass: keine Klappzeile») —
               der ehrliche Leerzustand aus `PanelAenderungen` steht dann sofort

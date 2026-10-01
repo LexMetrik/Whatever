@@ -367,7 +367,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)}
-              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
+              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit}
               normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
