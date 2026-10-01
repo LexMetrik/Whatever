@@ -70,8 +70,7 @@ function GesetzLadeFehler({ schluessel, manifest, art }: {
           onErneut={() => ladefehlerErneut(schluessel)} />
       </div>
       <nav aria-label="Weiterweg" className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-        <Link to="/gesetze"
-          className="text-body-s font-medium text-brass-700 hover:text-brass-600 no-underline">
+        <Link to="/gesetze" className="lc-link text-body-s font-medium text-brass-700 hover:text-brass-600">
           ← Zur Gesetzessammlung
         </Link>
       </nav>
