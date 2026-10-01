@@ -89,7 +89,7 @@ function loeseTrennung(folgewort: string): string {
   return folgewort;                                      // Silbentrennung → zusammen
 }
 
-function reinText(html: string): string {
+export function reinText(html: string): string {
   return html
     // Fussnoten-<sup> (mit <a>-Anker ODER Zahl) entfernen — sie kleben sonst als
     // Ziffern am Titel («Zehnter Titel:119 …»). ABER Ordinal-Suffixe «bis/ter …»
