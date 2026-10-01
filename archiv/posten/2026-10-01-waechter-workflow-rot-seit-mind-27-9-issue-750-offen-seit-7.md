@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-10-01
 -->
 
 Alarm-Issues schliessen sich nicht selbst; Ursache waechter.yml-Rot ungelesen.
+
+**Erledigt 2026-10-01:** —

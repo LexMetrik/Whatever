@@ -5,7 +5,7 @@
 // WARUM EIN EIGENER TOR UND NICHT TEIL VON check-materialien.ts: Begründung in
 // scripts/materialien/vernehmlassungen-tor.ts (Kopf). Kurzfassung: dieser Wächter
 // liest `heute` — wanduhr-abhängig per Definition. check-materialien.ts wird von
-// fachfremden Jobs beim Namen aufgerufen (z. B. normen-monitor.yml Job
+// fachfremden Jobs beim Namen aufgerufen (z. B. normen-monatslauf.yml Job
 // `bs-grossrat`), die mit Vernehmlassungs-Frische nichts zu tun haben; ein Rot hier
 // hätte sie vor deren eigenem PR-Schritt getötet (K7-Muster, wie `check:verfall`
 // in ci.yml). Dieser Tor ist darum BEWUSST NICHT Teil von `check:seriell` — sein
