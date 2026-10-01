@@ -189,7 +189,7 @@ export function ErbteilungForm() {
             : 'Leer = nur Quoten; mit Betrag werden Erb- und Pflichtteile in CHF ausgewiesen'}>
           <input type="number" inputMode="decimal" min={0} value={betraege.direkt} disabled={gueterrechtAn}
             onChange={(e) => setBetraege((b) => ({ ...b, direkt: e.target.value }))}
-            placeholder="z. B. 500'000" className={inputCls + (gueterrechtAn ? ' opacity-50 cursor-not-allowed' : '')} />
+            placeholder="z. B. 500'000" className={inputCls + (gueterrechtAn ? ' lc-deaktiviert' : '')} />
         </Field>
       </div>
 

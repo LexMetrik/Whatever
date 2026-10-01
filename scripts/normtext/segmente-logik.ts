@@ -21,6 +21,7 @@
  * unbelegte Wahrheit).
  */
 import { parseHTML } from 'linkedom';
+import { lokalisiereAnker } from './segmente-anker.ts';
 import { leereZeilenStatistik, type Fingerabdruck, type ZeilenStatistik } from './segmente-soll.ts';
 
 // Soll-/Basislinien-Logik liegt seit Runde 3 (25.9.2026) in `segmente-soll.ts`
@@ -71,7 +72,12 @@ export const SEGMENT_MINDESTLAENGE = 8;
 // 4 (Nachzug R3-1, Gegenprüfung 3, 25.9.2026): Häufigkeit zählt (Multimenge,
 // `fehlendeIndizes`); Zellen verschachtelter Tabellen nur noch EINMAL
 // segmentiert (vorher dreifach, heute 1 Fall: SSV annex_2).
-export const SEGMENTER_VERSION = 4;
+//
+// 5 (W2·27-BUND-FERTIG, 1.10.2026): Ankerauflösung `lokalisiereAnker` kennt das
+// N-te Vorkommen einer doppelten Sektions-id («<id>__N», VZV annex_u1__2/__3),
+// und die HTML-Anhang-Menge `alleAnhangEids` nennt diese Folge-Vorkommen —
+// ein Soll von Version 4 führt sie nicht (Tor sah die Einträge nie).
+export const SEGMENTER_VERSION = 5;
 
 // ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
 // Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
@@ -309,11 +315,21 @@ export function dispTextAusserhalbArtikel(dokument: { querySelectorAll: (sel: st
 // `annex_u1` (s. OHNE_PROJEKTION_BEKANNT in check-segmente.ts).
 const ANHANG_ANKER_MUSTER = /^(?:annex|scope|decl)[^/]*$/;
 
+// W2·27-BUND-FERTIG (1.10.2026): trägt die HTML dieselbe Sektions-id MEHRFACH
+// (VZV: drei `annex_u1`), führt die Projektion die Folge-Vorkommen unter dem
+// Synthese-Schlüssel «<id>__N» (extrahiere-fedlex.ts `alleAnhangAnker`). Die
+// HTML-Menge nennt sie ebenfalls — sonst bliebe ein aus Projektion UND Soll
+// gelöschtes Folge-Vorkommen unbemerkt (B5/G3-Symmetrie), und das Tor sähe sie
+// nur über die Projektions-Vereinigung des Aufrufers.
 export function alleAnhangEids(dokument: { querySelectorAll: (sel: string) => Iterable<Knoten> }): string[] {
   const eids = new Set<string>();
+  const anzahl = new Map<string, number>();
   for (const el of dokument.querySelectorAll('section[id]')) {
     const ankerId = el.getAttribute('id') as string;
-    if (ANHANG_ANKER_MUSTER.test(ankerId)) eids.add(ankerId);
+    if (!ANHANG_ANKER_MUSTER.test(ankerId)) continue;
+    const n = (anzahl.get(ankerId) ?? 0) + 1;
+    anzahl.set(ankerId, n);
+    eids.add(n === 1 ? ankerId : `${ankerId}__${n}`);
   }
   return [...eids];
 }
@@ -579,12 +595,12 @@ function zeilenSegmente(tabelle: Knoten, segmente: RohSegment[], statistik: Zeil
  *   Zeilen-Fingerabdruck je Grund hochgezählt.
  */
 export function segmentiereAnker(
-  dokument: { getElementById: (id: string) => Knoten | null },
+  dokument: { getElementById: (id: string) => Knoten | null; querySelectorAll: (sel: string) => Iterable<Knoten> },
   ankerId: string,
   restmeldungen?: string[],
   statistik: ZeilenStatistik = leereZeilenStatistik(),
 ): RohSegment[] | null {
-  const wurzel = dokument.getElementById(ankerId);
+  const wurzel = lokalisiereAnker(dokument, ankerId);
   if (!wurzel) return null;
   const klon = wurzel.cloneNode(true);
 

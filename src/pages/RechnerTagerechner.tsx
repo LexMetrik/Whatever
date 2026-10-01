@@ -204,7 +204,7 @@ export function RechnerTagerechner() {
                     {treffer.map((e) => (
                       <li key={e.key}>
                         <button type="button" onClick={() => waehlePreset(e)}
-                          className="w-full text-left px-3 py-2 flex items-baseline justify-between gap-3 hover:bg-brass-100/40 transition-colors">
+                          className="w-full text-left px-3 py-2 flex items-baseline justify-between gap-3 lc-hover-akzent">
                           <span className="min-w-0">
                             <span className="block text-body-s font-medium text-ink-900 leading-snug">{e.label}</span>
                             {e.norm !== '' && <span className="block text-xs text-ink-500">{e.norm}</span>}

@@ -216,13 +216,30 @@ describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
     expect(q).not.toMatch(/rounded-lg border border-danger-line/);
   });
 
-  it('DK-11 · Deaktiviert-Rolle: kein `disabled:opacity-40` mehr, die Rolle steht einmal in index.css', () => {
+  it('DK-11 · Deaktiviert-Rolle: kein `disabled:opacity-30/40/50` mehr, die Rolle steht einmal in index.css', () => {
     expect(CSS).toMatch(/\.lc-deaktiviert:disabled\s*\{\s*opacity:\s*\.4;/);
-    const rest = alleTsx().filter((p) => /disabled:opacity-40/.test(liesOhneKommentare(p))).map(rel);
+    const rest = alleTsx().filter((p) => /disabled:opacity-(?:30|40|50)\b/.test(liesOhneKommentare(p))).map(rel);
     // Damals (#1191) blieb MappenDialog als FÜLL-Knopf (`lc-btn-primary`) stehen — dort trägt
     // `.lc-btn-primary:disabled` die Fläche. Seit #1194 (30.9.2026) ist die doppelte Dämpfung dort
-    // entfernt; die Liste ist leer und bleibt es.
+    // entfernt. Der Restposten (PaneKopf/TabPanel 0.3, «Zur Frist» in ZpoFristenForm 0.5) ist seit
+    // Entscheid David 1.10.2026 (Variante a, W2·19 P1) auf die Rolle umgestellt (0.4): Liste leer.
     expect(rest).toEqual([]);
+  });
+
+  it('DK-11/12 · Angleichung 1.10.2026: Pane-Kopf, Tab-Panel, ZPO-«Zur Frist» tragen die Rolle; Hover-Reste nur im Leser (Parallel-Bau W2·27)', () => {
+    for (const f of ['components/layout/PaneKopf.tsx', 'components/layout/TabPanel.tsx', 'components/forms/ZpoFristenForm.tsx']) {
+      expect(ohne(f), f).toContain('lc-deaktiviert');
+    }
+    for (const f of ['components/forms/AllgemeineFristForm.tsx', 'pages/RechnerTagerechner.tsx', 'components/verzahnung/BezugZeitWahl.tsx']) {
+      expect(ohne(f), f).toContain('lc-hover-akzent');
+    }
+    // Abweichende Hover-Stufen der Aktions-Fläche (`…-100/40`, `…-200`): SENK-Ratsche, Ist-Stand
+    // 1.10.2026 = die zwei Leser-Dateien, die W2·27 parallel baut (TABU für P1; Nachzug dort).
+    // TabPanel.tsx: Hover `/30` liegt bewusst UNTER dem Aktiv-Zustand `/50` (volle Stufe wäre
+    // dunkler als aktiv) — offen bei David (Notizen 1.10.2026), bis dahin benannter Rest.
+    const LESER_REST = ['pages/gesetz-leser/inhalt-ansichten.tsx', 'pages/gesetz-leser/parts/BezuegeZeile.tsx', 'components/layout/TabPanel.tsx'];
+    const rest = alleTsx().filter((p) => /hover:bg-brass-(?:100\/\d+|200)\b/.test(liesOhneKommentare(p))).map(rel);
+    expect(rest.filter((d) => !LESER_REST.includes(d)), 'Hover der Aktion = `lc-hover-akzent` (brass-100), keine Handstufe').toEqual([]);
   });
 
   it('DK-12 · Hover-Rolle «Aktion»: `lc-hover-akzent` in index.css, die geteilten Bausteine nutzen sie', () => {
