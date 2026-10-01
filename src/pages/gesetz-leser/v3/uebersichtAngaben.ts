@@ -8,7 +8,7 @@ import type { GliederungsKennzahlen } from '../gliederungsModell';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../../../lib/benennung';
 import { formatiereDatum, kennungText, verifiziertesSachgebiet } from '../helpers';
 import { teilerfassung, erlassOrgan } from '../erlassUebersichtDaten';
-import { erlassArt, type BestimmungsWort } from './erlassAnsicht';
+import { erlassArt, zaehlAnzahl, type BestimmungsWort } from './erlassAnsicht';
 import { datumsAngabe } from './datumsForm';
 
 // ═══ Übersichtsbox → Angaben (Auftrag David 17.8.2026, «orientiere dich an
@@ -104,7 +104,7 @@ export function ruheZeile(
 ): string {
   return [
     kennungText(erlass),
-    anzahl != null ? `${anzahl} ${zaehlWort(bestimmungsWort, kennzahlen)}` : null,
+    anzahl != null ? zaehlAnzahl(anzahl, bestimmungsWort, kennzahlen) : null,
   ].filter(Boolean).join(' · ');
 }
 
@@ -116,10 +116,15 @@ export function ruheZeile(
  */
 export function erfassungsgradSatz(grad: Erfassungsgrad): string {
   // `vollstaendig` entsteht NUR mit hinterlegtem Enumerations-Beleg.
+  // Numerus (H5-B01): UR trägt genau 1 Erlass — «bisher 1 Erlasse» war falsch.
   if (grad.stufe === 'vollstaendig') {
-    return `Aus dem Kanton ${grad.kanton} sind alle ${grad.n} Erlasse der amtlichen Sammlung erfasst.`;
+    return grad.n === 1
+      ? `Aus dem Kanton ${grad.kanton} ist der einzige Erlass der amtlichen Sammlung erfasst.`
+      : `Aus dem Kanton ${grad.kanton} sind alle ${grad.n} Erlasse der amtlichen Sammlung erfasst.`;
   }
-  return `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`;
+  return grad.n === 1
+    ? `Aus dem Kanton ${grad.kanton} ist bisher 1 Erlass erfasst — der Bestand ist nicht vollständig.`
+    : `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`;
 }
 
 /**
@@ -203,8 +208,10 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
     ? erfassungsgrad(erlass.kanton, e.kantonErlassAnzahl) : null;
   if (grad) hinweise.push(erfassungsgradSatz(grad));
   if (e.bestimmungsEtikettStatus === 'entwurf') {
+    // H5-B02: dasselbe Zählwort wie die Ruhezeile (Anhang-Dominanz → «Einträge»),
+    // sonst widerspricht der Satz der Zeile darüber.
     hinweise.push(
-      `Die Bestimmungen dieses Erlasses sind hier als «${e.bestimmungsWort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
+      `Die Bestimmungen dieses Erlasses sind hier als «${zaehlWort(e.bestimmungsWort, e.kennzahlen)}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
     );
   }
   if (e.kennzahlen && !e.kennzahlen.hatSidecar) {
