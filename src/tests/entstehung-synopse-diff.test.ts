@@ -324,6 +324,24 @@ describe('synopseZeilen: die Gegenüberstellung', () => {
     expect(z[0].neu).toBeNull();
   });
 
+  it('P2 #40: die entfernte Zeile behält den Ersatztext ihrer rechten Seite (`neu` bleibt null) — «…» wie «Aufgehoben»', () => {
+    // Vorher verwarf `synopseZeilen` den rechten Text bei `entfernt`; die Karte konnte die Zeile
+    // darum nicht blockgenau beschriften (gemischte rechte Spalte «…» + «Aufgehoben»).
+    const alt = [B('1', '', 'Wortlaut eins.'), B('2', '', 'Wortlaut zwei.')];
+    const z = synopseZeilen(alt, [B('1', '', '…'), B('2', '', 'Aufgehoben')]);
+    expect(z.map((x) => [x.art, x.neu, x.neuErsatz])).toEqual([
+      ['entfernt', null, '…'],
+      ['entfernt', null, 'Aufgehoben'],
+    ]);
+  });
+
+  it('P2 #40: ohne Gegenblock (Alt-Block ganz weg) und bei anderen Zeilenarten gibt es keinen Ersatztext', () => {
+    const z = synopseZeilen([B('1', '', 'Bleibt.'), B('2', '', 'Fällt weg.')], [B('1', '', 'Bleibt.')]);
+    expect(z.map((x) => [x.art, x.neuErsatz])).toEqual([['gleich', undefined], ['entfernt', undefined]]);
+    const e = synopseZeilen([B('1', '', '…')], [B('1', '', 'Neuer Wortlaut.')]);
+    expect(e.map((x) => [x.art, x.neuErsatz])).toEqual([['eingefuegt', undefined]]);
+  });
+
   it('meldet ehrlich, wenn zwischen zwei Ständen kein Unterschied erkennbar ist (§8)', () => {
     const gleich = [B('1', '', 'Unveränderter Wortlaut.')];
     expect(hatUnterschied(synopseZeilen(gleich, gleich))).toBe(false);

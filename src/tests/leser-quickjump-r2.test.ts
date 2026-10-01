@@ -119,3 +119,30 @@ describe('kanonischerAnkerToken — Anker der Adresse auf den Erlass-Token', () 
     expect(kanonischerAnkerToken('1a', ['1_a', '1a_'])).toBe('1a');
   });
 });
+
+// W2·27-BUND-FERTIG P2 #48 (1.10.2026): nach dem Re-Pin 20261001 sind OR Art. 697l und 697m zu EINEM
+// Fedlex-Sammelartikel «Art. 697l–697m» (Token `697_l_697_m`) geworden, BBV Art. 77/78 zu `77_78`;
+// die alten Anker leben nur noch in der historischen Synopse (`public/materialien/synopse/OR.json`,
+// Token `697_l`) und in bereits versendeten Links. `#art-697_l` fand keinen Token ⇒ kein Sprung.
+// Der Sammelartikel TRÄGT beide Artikel im Etikett — ihn anzuspringen ist kein Raten (§8).
+describe('kanonischerAnkerToken — Endpunkt eines Sammelartikels (P2 #48)', () => {
+  const TOKENS = ['1', '77_78', '226_a_226_d', '274_274_g', '627_628', '697_l_697_m', '697_n', '329_g_bis'];
+  it('beide Endpunkte führen auf den Sammelartikel (Schreibung mit/ohne Unterstrich)', () => {
+    expect(kanonischerAnkerToken('697_l', TOKENS)).toBe('697_l_697_m');
+    expect(kanonischerAnkerToken('697m', TOKENS)).toBe('697_l_697_m');
+    expect(kanonischerAnkerToken('77', TOKENS)).toBe('77_78');
+    expect(kanonischerAnkerToken('78', TOKENS)).toBe('77_78');
+    expect(kanonischerAnkerToken('627', TOKENS)).toBe('627_628');
+    expect(kanonischerAnkerToken('274_g', TOKENS)).toBe('274_274_g');
+  });
+  it('die Mitte eines Bereichs wird NICHT geraten (226b liegt zwischen 226a und 226d)', () => {
+    expect(kanonischerAnkerToken('226_b', TOKENS)).toBe('226_b');
+  });
+  it('ein exakter Token schlägt den Sammelartikel; Nicht-Bereiche (329_g_bis) bleiben unberührt', () => {
+    expect(kanonischerAnkerToken('77', ['77', '77_78'])).toBe('77');
+    expect(kanonischerAnkerToken('329_g', TOKENS)).toBe('329_g');
+  });
+  it('mehrdeutig (zwei Sammelartikel mit demselben Endpunkt) ⇒ kein Rate-Sprung', () => {
+    expect(kanonischerAnkerToken('6', ['5_6', '6_7'])).toBe('6');
+  });
+});

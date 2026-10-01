@@ -134,6 +134,37 @@ test.describe('A17 — Split-View an der Fundstelle', () => {
     await expect(art18).toBeInViewport({ timeout: 15000 })
     expect(fehler).toEqual([])
   })
+
+  // FLAKE-WURZEL (W2·18-FEHLERBUCH, Merge-Queue-Wurf 30.9.2026): der Reader zeigt den
+  // Volltext erst, wenn `currency.json` da ist (FruehAnsicht: `currency === null` ⇒
+  // Lade-Platzhalter). Traf die Datei NACH dem Erlass-Text ein, fand der Tieflink-Sprung
+  // sein Ziel im ersten Frame nicht, gab auf und das Pane blieb am Seitenanfang —
+  // Art. 18 gerendert, aber ausserhalb des Pane-Sichtbereichs. Auf dem CI-Runner ein
+  // Rennen zweier Fetches (Flacker); hier deterministisch erzwungen: `currency.json`
+  // wird um 3 s verzögert, der Erlass-Text kommt unverzögert.
+  test('Norm-⧉ (Entscheid → UVG): Pane öffnet an Art. 18 auch bei spät eintreffender currency.json', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.route('**/normtext/currency.json', async (route) => {
+      await new Promise((r) => setTimeout(r, 3000))
+      await route.continue()
+    })
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechtsprechung/bge_152_V_52')
+    await expect(page.getByRole('heading', { level: 1, name: /152 V 52/ })).toBeVisible({ timeout: 20000 })
+    const link = page.getByRole('link', { name: 'Art. 18 UVG', exact: true }).first()
+    await link.scrollIntoViewIfNeeded()
+    await link.click()
+    const dialog = page.locator('[role="dialog"]')
+    await expect(dialog).toBeVisible()
+    await dialog.getByRole('button', { name: /nebeneinander öffnen/ }).click()
+    const pane = page.locator('[data-pane="sekundaer"]')
+    await expect(pane).toBeVisible({ timeout: 10000 })
+    const art18 = pane.locator('#art-18')
+    await expect(art18).toBeVisible({ timeout: 20000 })
+    await expect(art18).toBeInViewport({ timeout: 15000 })
+    expect(fehler).toEqual([])
+  })
 })
 
 // ── A9-DoD: Scroll-Interaktion unter CPU-Throttle, CLS 0 ──────────────────────
