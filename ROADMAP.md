@@ -384,8 +384,8 @@ Umschichtung 20.9.2026 (2)):*
   (Startseite) läuft als Posten unter `W2·29-WERKBANK-REST`. Inventar:
   `~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md`.
 
-- [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
-  <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
+- [~] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
+  <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
   Dieselbe Inhaltsklasse site-weit im selben Muster (Split-View vs. Vollansicht, Leser-Köpfe,
   Chips, Leerzustände …); Massstab ist das Reglement, Vereinheitlichung über geteilte Bausteine
   (§5/§10), Normtext-Körper farbfrei/golden. Methode: Finder-Wellen → umsetzen → **run till dry**
