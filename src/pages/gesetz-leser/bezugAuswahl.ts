@@ -308,7 +308,7 @@ export function waehleBezuege<T extends WaehlbareKante>(
  * Gleiche Kriterien wie `bauePraedikate`: 'CH' ist kein Kanton und fällt weg
  * (Bundeskanten tragen es; kantonale Kanten tragen es nie).
  */
-export function wirksameKantone(
+function wirksameKantone(
   kanten: readonly { facetten: { kanton: string } }[],
   kantone: readonly string[],
 ): string[] {
