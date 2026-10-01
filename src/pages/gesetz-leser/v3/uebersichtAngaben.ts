@@ -89,6 +89,10 @@ export interface UebersichtsEingabe {
   nichtKonsolidiertSeit: string | null;
 }
 
+/** LexWork-PDF-Endpunkt (`…/versions/<id>/pdf_file[_with_annexes]`): liefert eine Datei. */
+const PDF_ENDPUNKT = /\/pdf_file(?:_with_annexes)?(?:[?#]|$)/;
+const istPdfEndpunkt = (href: string): boolean => PDF_ENDPUNKT.test(href);
+
 /**
  * Die Ruhezeile «SR 312.0 · 480 Artikel». Der Stand fällt hier bewusst weg (er
  * sprengte die Zeile, 17.8.2026); fehlende Angaben entfallen ersatzlos. «SR»
@@ -163,7 +167,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   }
   if (erlass.aufgehoben) {
     zeilen.push({
-      id: 'aufgehoben', label: 'Aufgehoben per',
+      id: 'aufgehoben', label: 'Aufgehoben',
       wert: formatiereDatum(erlass.aufgehoben.seit), ziffern: true,
     });
   }
@@ -188,9 +192,15 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // Amtliche Ziele — EIN Ziel, EIN Name (Ä110, `lib/benennung`).
   const links: UebersichtLink[] = [];
   if (erlass.quelleUrl) {
+    // H4-B03: 15 Kantonserlasse führen `quelleUrl` auf einen PDF-ENDPUNKT der
+    // Sammlung (Content-Disposition: attachment) — «↗» (verlässt die Seite)
+    // verspräche eine Webseite; dort kommt eine Datei. Zeichen und Etikett
+    // folgen dem Zieltyp (damals gemessen 1.10.2026: SG-3849, AR-1203, FR-8428).
+    const istPdf = istPdfEndpunkt(erlass.quelleUrl);
+    const name = lebt ? AMTLICHE_FASSUNG : AMTLICHE_FASSUNG_AUFGEHOBEN;
     links.push({
-      id: 'quelle', zeichen: '↗',
-      label: lebt ? AMTLICHE_FASSUNG : AMTLICHE_FASSUNG_AUFGEHOBEN,
+      id: 'quelle', zeichen: istPdf ? '⬇' : '↗',
+      label: istPdf ? `${name} (PDF)` : name,
       href: erlass.quelleUrl,
     });
   }

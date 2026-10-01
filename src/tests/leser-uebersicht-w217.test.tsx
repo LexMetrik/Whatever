@@ -11,6 +11,7 @@ import {
   erfassungsgradSatz, ruheZeile, uebersichtsAngaben, type UebersichtsEingabe,
 } from '../pages/gesetz-leser/v3/uebersichtAngaben';
 import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
+import { UebersichtBox } from '../pages/gesetz-leser/v3/UebersichtBox';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
 function erlassBauen(p: Partial<BrowseErlass>): BrowseErlass {
@@ -105,5 +106,75 @@ describe('§8-Hinweis nennt dasselbe Zählwort wie die Ruhezeile (H5-B02)', () =
       kennzahlen: { artikelAnzahl: 50, anhangArtikel: 2, hatSidecar: true } as never,
     }));
     expect(a.hinweise.find((h) => h.includes('gezählt'))).toContain('«Paragraphen»');
+  });
+});
+
+// ═══ Gruppe B · Links, Etikett, Klapp-Pfeil der Box ═════════════════════════
+const sgPdf = 'https://www.gesetzessammlung.sg.ch/api/de/versions/3849/pdf_file';
+const boxHtml = (e: BrowseErlass, extra: Partial<UebersichtsEingabe> = {}, rohdaten?: { href: string; stand: string | null }) =>
+  renderToString(<UebersichtBox angaben={uebersichtsAngaben(eingabe({ erlass: e, ...extra }))} rohdaten={rohdaten as never} offen />);
+
+describe('H4-B03 · «Amtliche Fassung» auf einen PDF-Endpunkt ist als Download gekennzeichnet', () => {
+  it('quelleUrl auf LexWork-PDF-Endpunkt: ⬇ statt ↗, Etikett nennt das PDF', () => {
+    for (const url of [sgPdf, `${sgPdf}_with_annexes`]) {
+      const a = uebersichtsAngaben(eingabe({
+        erlass: erlassBauen({ ebene: 'kanton', kanton: 'SG', quelleUrl: url }),
+      }));
+      const l = a.links.find((x) => x.id === 'quelle');
+      expect(l?.zeichen, url).toBe('⬇');
+      expect(l?.label, url).toBe('Amtliche Fassung (PDF)');
+      expect(l?.href).toBe(url);
+    }
+  });
+  it('aufgehobener Erlass behält seine Beschriftung, nur mit PDF-Zusatz', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ ebene: 'kanton', quelleUrl: sgPdf, aufgehoben: { seit: '2026-03-01' } }),
+    }));
+    expect(a.links[0].label).toBe('Amtliche (aufgehobene) Fassung (PDF)');
+    expect(a.links[0].zeichen).toBe('⬇');
+  });
+  it('HTML-Ziele bleiben ↗ (Fedlex, LexWork-Textseite)', () => {
+    for (const url of [
+      'https://www.fedlex.admin.ch/eli/cc/probe/de',
+      'https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.100',
+      'https://www.gesetzessammlung.sg.ch/api/de/texts_of_law/811.1',
+    ]) {
+      const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ quelleUrl: url }) }));
+      expect(a.links[0].zeichen, url).toBe('↗');
+      expect(a.links[0].label).toBe('Amtliche Fassung');
+    }
+  });
+  it('gerendert: das ⬇-Zeichen geht dem Etikett voran, kein ↗ am PDF-Ziel', () => {
+    const h = boxHtml(erlassBauen({ ebene: 'kanton', quelleUrl: sgPdf }));
+    const link = /<a [^>]*data-v3-uebersicht-link="quelle"[^>]*>(.*?)<\/a>/.exec(h)?.[1] ?? '';
+    expect(link).toContain('⬇');
+    expect(link).not.toContain('↗');
+    expect(link.replace(/<[^>]+>/g, '')).toBe('⬇ Amtliche Fassung (PDF)');
+  });
+});
+
+describe('H1-D03 · «Aufgehoben» passt in die 5-rem-Etikettspalte', () => {
+  it('Etikett ist ein Wort (kein Umbruch in «Aufgehoben / per»)', () => {
+    const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ aufgehoben: { seit: '2026-03-01' } }) }));
+    const z = a.zeilen.find((x) => x.id === 'aufgehoben');
+    expect(z?.label).toBe('Aufgehoben');
+    expect(z?.wert).toBe('01.03.2026');
+  });
+});
+
+describe('H1-D04 · Link-Trefferflächen ≥ 24 px (F9) · H1-D05 · Klapp-Pfeil ≥ 3:1', () => {
+  const h = boxHtml(
+    erlassBauen({ pdfUrl: 'https://example.invalid/x.pdf' }), {},
+    { href: '/normtext/bund/PROBE.json', stand: '2026-01-01' },
+  );
+  it('jeder Link der Box trägt lc-tap-polster (Quelle, PDF, Rohdaten)', () => {
+    const anker = [...h.matchAll(/<a [^>]*>/g)].map((m) => m[0]);
+    expect(anker).toHaveLength(3);
+    for (const a of anker) expect(a, a).toMatch(/class="[^"]*\blc-tap-polster\b/);
+  });
+  it('das «▸» steht in ink-500 (dunkel 2.88:1 mit ink-400)', () => {
+    const pfeil = /<span [^>]*class="([^"]*)"[^>]*>▸<\/span>/.exec(h)?.[1] ?? '';
+    expect(pfeil).toContain('text-ink-500');
+    expect(pfeil).not.toContain('text-ink-400');
   });
 });
