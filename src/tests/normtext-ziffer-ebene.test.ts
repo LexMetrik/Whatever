@@ -164,6 +164,10 @@ describe('Ziffer-Ebene: Sammel-Ziffern (B2) — Konvention «a_b» wie art_77_78
     expect(ziffern(`<p class="absatz">1.&nbsp;Die Verordnung wird aufgehoben.</p><p class="absatz">2. und 3. …${fn(9)}</p>`)).toEqual(['1', '2_3']);
   });
 
+  it('MSchG 75: «3. Der …» (einfaches Leerzeichen, nicht erkannt) erbt NICHT die Sammel-Ziffer «1_2» davor', () => {
+    expect(ziffern(`<p class="absatz">1. und 2. …${fn(120)}</p><p class="absatz">3. Der Ausdruck wird ersetzt.</p>`)).toEqual(['1_2', undefined]);
+  });
+
   it('«N. und M.» OHNE Ellipsis (Fliesstext/Datum) ist keine Sammel-Ziffer', () => {
     expect(ziffern(`<p class="absatz">1. und 2. Januar 2027 gelten als Feiertage.</p>`)).toEqual([undefined]);
   });

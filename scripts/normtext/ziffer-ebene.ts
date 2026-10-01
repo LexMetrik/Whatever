@@ -96,7 +96,7 @@ export function zifferAbsatzNummer(quellSpan: string | null): string | null {
  * ohne `ziffer`.
  */
 export function ordneZiffern(
-  bloecke: Array<{ titel?: number; ziffer?: string }>,
+  bloecke: Array<{ titel?: number; ziffer?: string; text?: string }>,
   quellen: ReadonlyArray<string | null>,
 ): void {
   const hatUeberschriften = bloecke.some((b) => b.titel === ZIFFER_TITEL_TIEFE && b.ziffer != null);
@@ -107,7 +107,16 @@ export function ordneZiffern(
       aktuell = b.ziffer;
       continue;
     }
-    if (!hatUeberschriften) aktuell = zifferAbsatzNummer(quellen[i] ?? null) ?? aktuell;
+    if (!hatUeberschriften) {
+      const z = zifferAbsatzNummer(quellen[i] ?? null);
+      // Beginnt der Text mit einer ANDEREN Ziffer-Marke, die die Signatur nicht erkennt (MSchG 75: «3. Der …» mit
+      // einfachem Leerzeichen nach «1. und 2. …»), erbt er die Vorgänger-Ziffer nicht — keine geratene Adresse (§1).
+      const fremd = z == null && aktuell != null && (() => {
+        const m = (b.text ?? '').match(/^(\d+[a-z]{0,12})\.\s/);
+        return m != null && !aktuell.split('_').includes(m[1]);
+      })();
+      aktuell = z ?? (fremd ? null : aktuell);
+    }
     if (aktuell != null) b.ziffer = aktuell;
   }
 }
