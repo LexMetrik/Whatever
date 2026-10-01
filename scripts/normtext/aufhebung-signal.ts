@@ -153,6 +153,15 @@ export function fussnoteGegenstandslos(text: string): boolean {
 }
 
 /**
+ * «… ist dieser Art. gegenstandslos» — NUR unbedingt (P7 #47, GP T2 1.10.2026, Korpus 0×): folgt auf «gegenstandslos»
+ * eine Bedingung oder Ausnahme («, soweit …», «, sofern …», «wenn …», «ausgenommen …»), ist der Artikel nur TEILWEISE
+ * gegenstandslos — kein Ganz-Vermerk (§1: lieber nicht markieren als falsch). Die Bedingung steht nach Komma/Semikolon
+ * bzw. Leerzeichen; ein Punkt beendet die Aussage («… gegenstandslos. Soweit nötig, siehe …» bleibt ein Treffer).
+ */
+const DIESER_ART_GEGENSTANDSLOS_RE =
+  /\bist dieser Art(?:\.|ikel)\s+gegenstandslos(?=[\s.,;:]|$)(?![\s,;:]*(?:[Ss]oweit|[Ss]ofern|[Ww]enn|[Ff]alls|[Ss]olange|[Aa]usser|[Aa]usgenommen|[Mm]it Ausnahme)\b)/;
+
+/**
  * Sagt diese Fussnote ausdrücklich «… ist dieser Art. gegenstandslos»? (AsylG Art. 122: «AS 1998 1582 Ziff. III.
  * Aufgrund der Annahme dieses BB in der Volksabstimmung vom 13. Juni 1999 ist dieser Art. gegenstandslos.»)
  * Die Fussnote beginnt hier mit einem AS-Zitat, darum greift die Anfangs-Regel `fussnoteGegenstandslos` nicht
@@ -162,7 +171,7 @@ export function fussnoteGegenstandslos(text: string): boolean {
  * den ganzen Artikel (§1). Kein Aufhebungs-Vermerk — s. Kopf-Doku Klassen (d)/(f).
  */
 export function fussnoteDiesenArtGegenstandslos(text: string): boolean {
-  return /\bist dieser Art(?:\.|ikel)\s+gegenstandslos(?=[\s.,;:]|$)/.test(text.trim());
+  return DIESER_ART_GEGENSTANDSLOS_RE.test(text.trim());
 }
 
 /** `<p id="fn-…">`-Definitionen eines HTML-Fragments → Prosatext. */
