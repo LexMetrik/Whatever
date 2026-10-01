@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-10-01
 -->
 
 Deep-Link-Verhalten prüfen.
+
+**Erledigt 2026-10-01:** PR #1246 — kanonischerAnkerToken Sammelartikel-Endpunkt (suchTreffer.ts); Shard unberührt
