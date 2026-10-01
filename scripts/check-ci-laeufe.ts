@@ -53,13 +53,16 @@ const STUNDE = 3_600_000;
 const SELBST = 'waechter.yml';
 
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
-function intervallStunden(cron: string): number {
+export function intervallStunden(cron: string): number {
   const [minute, stunde, , , wochentag] = cron.trim().split(/\s+/);
   if (wochentag && wochentag !== '*') return 24 * 7;      // wöchentlich
   if (stunde.includes('/')) return Number(stunde.split('/')[1]) || 6;
   if (stunde === '*') return minute.includes('/') ? 1 : 1;
   return 24;                                              // täglich
 }
+
+/** Ein Workflow mit mehreren Crons gilt als so häufig wie sein häufigster. */
+export const intervallDerCrons = (crons: string[]): number => Math.min(...crons.map(intervallStunden));
 
 /** Workflows mit schedule:-Trigger → Datei + Intervall. */
 function geplante(): { datei: string; stunden: number }[] {
@@ -70,7 +73,7 @@ function geplante(): { datei: string; stunden: number }[] {
     const inhalt = readFileSync(`${DIR}/${datei}`, 'utf8');
     const crons = [...inhalt.matchAll(/^\s*-\s*cron:\s*'([^']+)'/gm)].map((m) => m[1]);
     if (!crons.length) continue;
-    out.push({ datei, stunden: Math.min(...crons.map(intervallStunden)) });
+    out.push({ datei, stunden: intervallDerCrons(crons) });
   }
   return out;
 }
@@ -81,26 +84,6 @@ function skip(grund: string): never {
 }
 
 let laeufeRoh: string;
-try {
-  execFileSync('gh', ['auth', 'status'], { stdio: 'ignore' });
-} catch {
-  skip('`gh` fehlt oder ist nicht authentisiert');
-}
-
-// ─── UNTERBEFEHL `--bericht` (QS-AUTOMATIK-BERICHT, Fahrplan §3.1) ───────────
-// Das Tor oben beantwortet «ist ein geplanter Workflow kaputt?». Der Bericht
-// beantwortet die zwei Fragen daneben, für die es bis 15.8.2026 KEINE Stelle
-// gab: «wie geht es den Wächtern insgesamt?» und «welche Zweige/Worktrees sind
-// gelandet, aber nicht abgeräumt?». Beides war Handarbeit (Aufräum-Disziplin
-// 27.7.2026) und skaliert nicht über parallele Sessions — dieselbe Bewegung wie
-// beim Plansystem: aus der Regel wird ein Werkzeug.
-//
-// ABGRENZUNG zum Tor: der Bericht läuft NICHT in `check:seriell` und nicht in
-// CI. Er misst den Zustand einer ARBEITSMASCHINE (lokale Worktrees, lokale
-// Zweige) — auf einem CI-Runner gibt es die nicht, ein Urteil dort wäre
-// bedeutungslos. Er ist trotzdem kein blosser Ausdruck: findet er Verwaistes,
-// endet er mit Exit 1 (§6.7 — was nicht scheitern kann, ist kein Befund).
-if (process.argv.includes('--bericht')) bericht();
 
 function git(...args: string[]): string {
   try {
@@ -233,78 +216,106 @@ function bericht(): never {
   process.exit(0);
 }
 
-// Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
-// er stillschweigend nicht mehr und die Verriegelung kehrt zurück (§6.7 lit. b:
-// nie still). Darum hier hart: existiert die Datei nicht, ist der Ausschluss
-// ins Leere gelaufen und das Tor sagt es, statt weiterzulaufen.
-if (!readdirSync(DIR).includes(SELBST)) {
-  console.log(
-    `check:ci-laeufe ROT — der Selbstausschluss zeigt auf '${DIR}/${SELBST}', ` +
-    `diese Datei existiert nicht (mehr).\n` +
-    `  Wurde der Wächter-Workflow umbenannt, muss SELBST in scripts/check-ci-laeufe.ts ` +
-    `mitgezogen werden — sonst prüft das Tor wieder sich selbst und bleibt für immer rot.`);
-  process.exit(1);
-}
-
-const plaene = geplante();
-if (!plaene.length) skip(`keine Workflows mit schedule:-Trigger in ${DIR}`);
-
-const fehler: string[] = [];
-const ok: string[] = [];
-
-for (const { datei, stunden } of plaene) {
+/** Hauptlauf — nur bei direktem CLI-Aufruf, nicht beim Import durch den Test. */
+function main(): void {
   try {
-    laeufeRoh = execFileSync(
-      'gh',
-      ['run', 'list', '--workflow', datei, '--limit', '10',
-       '--json', 'conclusion,status,createdAt,url'],
-      { stdio: ['ignore', 'pipe', 'ignore'], encoding: 'utf8', timeout: 60_000 },
-    );
-  } catch (e) {
-    fehler.push(`  ${datei}: Lauf-Liste nicht abrufbar (${(e as Error).message.split('\n')[0]}).`);
-    continue;
+    execFileSync('gh', ['auth', 'status'], { stdio: 'ignore' });
+  } catch {
+    skip('`gh` fehlt oder ist nicht authentisiert');
   }
 
-  const laeufe = (JSON.parse(laeufeRoh) as Lauf[])
-    .filter((l) => l.status === 'completed');
+  // ─── UNTERBEFEHL `--bericht` (QS-AUTOMATIK-BERICHT, Fahrplan §3.1) ───────────
+  // Das Tor oben beantwortet «ist ein geplanter Workflow kaputt?». Der Bericht
+  // beantwortet die zwei Fragen daneben, für die es bis 15.8.2026 KEINE Stelle
+  // gab: «wie geht es den Wächtern insgesamt?» und «welche Zweige/Worktrees sind
+  // gelandet, aber nicht abgeräumt?». Beides war Handarbeit (Aufräum-Disziplin
+  // 27.7.2026) und skaliert nicht über parallele Sessions — dieselbe Bewegung wie
+  // beim Plansystem: aus der Regel wird ein Werkzeug.
+  //
+  // ABGRENZUNG zum Tor: der Bericht läuft NICHT in `check:seriell` und nicht in
+  // CI. Er misst den Zustand einer ARBEITSMASCHINE (lokale Worktrees, lokale
+  // Zweige) — auf einem CI-Runner gibt es die nicht, ein Urteil dort wäre
+  // bedeutungslos. Er ist trotzdem kein blosser Ausdruck: findet er Verwaistes,
+  // endet er mit Exit 1 (§6.7 — was nicht scheitern kann, ist kein Befund).
+  if (process.argv.includes('--bericht')) bericht();
 
-  if (!laeufe.length) {
-    fehler.push(`  ${datei}: kein einziger abgeschlossener Lauf — der Workflow startet nicht.`);
-    continue;
+  // Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
+  // er stillschweigend nicht mehr und die Verriegelung kehrt zurück (§6.7 lit. b:
+  // nie still). Darum hier hart: existiert die Datei nicht, ist der Ausschluss
+  // ins Leere gelaufen und das Tor sagt es, statt weiterzulaufen.
+  if (!readdirSync(DIR).includes(SELBST)) {
+    console.log(
+      `check:ci-laeufe ROT — der Selbstausschluss zeigt auf '${DIR}/${SELBST}', ` +
+      `diese Datei existiert nicht (mehr).\n` +
+      `  Wurde der Wächter-Workflow umbenannt, muss SELBST in scripts/check-ci-laeufe.ts ` +
+      `mitgezogen werden — sonst prüft das Tor wieder sich selbst und bleibt für immer rot.`);
+    process.exit(1);
   }
 
-  const juengster = laeufe[0];
-  const alterH = (Date.now() - Date.parse(juengster.createdAt)) / STUNDE;
+  const plaene = geplante();
+  if (!plaene.length) skip(`keine Workflows mit schedule:-Trigger in ${DIR}`);
 
-  if (juengster.conclusion !== 'success') {
-    const grau = juengster.conclusion === 'cancelled' || juengster.conclusion === 'skipped';
-    fehler.push(
-      `  ${datei}: jüngster Lauf '${juengster.conclusion}'` +
-      (grau ? ' (GitHub färbt das GRAU, nicht rot — genau der Vorfall vom 13.–20.7.2026)' : '') +
-      `\n      ${juengster.url}`);
-    continue;
+  const fehler: string[] = [];
+  const ok: string[] = [];
+
+  for (const { datei, stunden } of plaene) {
+    try {
+      laeufeRoh = execFileSync(
+        'gh',
+        ['run', 'list', '--workflow', datei, '--limit', '10',
+         '--json', 'conclusion,status,createdAt,url'],
+        { stdio: ['ignore', 'pipe', 'ignore'], encoding: 'utf8', timeout: 60_000 },
+      );
+    } catch (e) {
+      fehler.push(`  ${datei}: Lauf-Liste nicht abrufbar (${(e as Error).message.split('\n')[0]}).`);
+      continue;
+    }
+
+    const laeufe = (JSON.parse(laeufeRoh) as Lauf[])
+      .filter((l) => l.status === 'completed');
+
+    if (!laeufe.length) {
+      fehler.push(`  ${datei}: kein einziger abgeschlossener Lauf — der Workflow startet nicht.`);
+      continue;
+    }
+
+    const juengster = laeufe[0];
+    const alterH = (Date.now() - Date.parse(juengster.createdAt)) / STUNDE;
+
+    if (juengster.conclusion !== 'success') {
+      const grau = juengster.conclusion === 'cancelled' || juengster.conclusion === 'skipped';
+      fehler.push(
+        `  ${datei}: jüngster Lauf '${juengster.conclusion}'` +
+        (grau ? ' (GitHub färbt das GRAU, nicht rot — genau der Vorfall vom 13.–20.7.2026)' : '') +
+        `\n      ${juengster.url}`);
+      continue;
+    }
+
+    if (alterH > stunden * 2) {
+      fehler.push(
+        `  ${datei}: jüngster erfolgreicher Lauf ist ${alterH.toFixed(1)} h alt ` +
+        `(Intervall ${stunden} h, Kulanz ${stunden * 2} h) — der Zeitplan greift nicht mehr.\n` +
+        `      ${juengster.url}`);
+      continue;
+    }
+
+    ok.push(`${datei} (${alterH.toFixed(1)} h alt, Intervall ${stunden} h)`);
   }
 
-  if (alterH > stunden * 2) {
-    fehler.push(
-      `  ${datei}: jüngster erfolgreicher Lauf ist ${alterH.toFixed(1)} h alt ` +
-      `(Intervall ${stunden} h, Kulanz ${stunden * 2} h) — der Zeitplan greift nicht mehr.\n` +
-      `      ${juengster.url}`);
-    continue;
+  if (fehler.length) {
+    console.log(
+      `check:ci-laeufe ROT — ${fehler.length} von ${plaene.length} geplanten ` +
+      `Workflow(s) nicht in Ordnung:\n${fehler.join('\n')}\n\n` +
+      `  'cancelled' und 'skipped' zählen als ROT (CLAUDE.md §6 Ziff. 7 lit. c).\n` +
+      `  Ein grauer Lauf ist kein bestandener Lauf.`);
+    process.exit(1);
   }
 
-  ok.push(`${datei} (${alterH.toFixed(1)} h alt, Intervall ${stunden} h)`);
-}
-
-if (fehler.length) {
   console.log(
-    `check:ci-laeufe ROT — ${fehler.length} von ${plaene.length} geplanten ` +
-    `Workflow(s) nicht in Ordnung:\n${fehler.join('\n')}\n\n` +
-    `  'cancelled' und 'skipped' zählen als ROT (CLAUDE.md §6 Ziff. 7 lit. c).\n` +
-    `  Ein grauer Lauf ist kein bestandener Lauf.`);
-  process.exit(1);
+    `check:ci-laeufe OK — alle ${plaene.length} geplanten Workflows zuletzt ` +
+    `erfolgreich und im Zeitfenster: ${ok.join(', ')}.`);
 }
 
-console.log(
-  `check:ci-laeufe OK — alle ${plaene.length} geplanten Workflows zuletzt ` +
-  `erfolgreich und im Zeitfenster: ${ok.join(', ')}.`);
+// Entry-Erkennung über `VITEST` (vgl. check-e2e-flake.ts): `process.argv[1]`
+// zeigt unter vite-node aufs Binary; ein Import darf weder gh rufen noch exiten.
+if (!process.env.VITEST) main();
