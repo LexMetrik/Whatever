@@ -109,7 +109,6 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
 QUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Register-Zeile, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026).
 RISIKOPFAD: Gegenprüfung ist Pflicht — sie beauftragt der ORCHESTRATOR nach deiner Rückgabe, NICHT du (F5-Wartetod 15.8.2026: ein Daten-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf ein Verdikt, das ein Sub-Agent nie empfangen kann). Du lieferst committete Arbeit + Bericht ab und ENDEST. Merge ist gesperrt (check:merge-schutz).
 MANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.
-CACHE: `scripts/fedlex-cache.sh` und `normtext` schreiben fest nach /tmp — von allen Sessions geteilt. Ein lokaler Re-Pin-Probelauf (neue Pins) macht fremde gates rot (1.10.2026: check:vollstaendigkeit OR, #1229). Danach den alten Pin-Stand zurück erzeugen (`bash scripts/fedlex-cache.sh` + `npm run normtext -- --nur=bund` auf origin/main, churn-reset) und im Bericht melden.
 RÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7).
 
 Standard-Routing: Stufe stark (aktuell model=opus), effort=high — Abweichungen setzt der Orchestrator im Call.
