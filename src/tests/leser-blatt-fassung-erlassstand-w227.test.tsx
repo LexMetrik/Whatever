@@ -33,9 +33,9 @@ const shardVon = (key: string): HistorieShard | null => (existsSync(resolve(WURZ
 
 const eintrag = (artikel: string, extra: Partial<NormSnapshot> = {}): NormSnapshot => ({
   id: `bund/X/art_${artikel}`, ebene: 'bund', quelle: 'X', erlass: 'X', artikel, artikelLabel: `Art. ${artikel}`,
-  bloecke: [{ typ: 'absatz', text: 'Lebender Wortlaut.' }], stand: '2026-05-22', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/x/de',
-  abgerufen: '2026-10-01', ...extra,
-} as unknown as NormSnapshot);
+  bloecke: [{ absatz: null, text: 'Lebender Wortlaut.' }], stand: '2026-05-22', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/x/de',
+  abgerufen: '2026-10-01', fassungsToken: '20260522', sha: 'x', ...extra,
+});
 const historieMit = (...datums: string[]): ArtikelHistorie => ({
   giltSeit: datums.at(-1) ?? null,
   ereignisse: datums.map((datum) => ({ typ: 'fassung', datum, wirkung: false, quellen: [], absatz: null, item: null })),
@@ -85,15 +85,15 @@ describe('erlassStandFuerArtikel — Spec §3 a–d, Test 1 a–g', () => {
     expect(erlassStandFuerArtikel(basis({ inkraftSeit: 'März 1991' }))).toBeUndefined();
   });
   it('(e) amtlich aufgehobener Artikel ⇒ nichts (kein «in Kraft» über eine Leerstelle)', () => {
-    const e = eintrag('7', { aufgehoben: true, bloecke: [{ typ: 'absatz', text: '…' }] } as Partial<NormSnapshot>);
+    const e = eintrag('7', { aufgehoben: true, bloecke: [{ absatz: null, text: '…' }] });
     expect(erlassStandFuerArtikel(basis({ blatt: { eintrag: e } }))).toBeUndefined();
   });
   it('(e) gegenstandsloser Artikel ⇒ nichts', () => {
-    const e = eintrag('7', { gegenstandslos: true, bloecke: [{ typ: 'absatz', text: '…' }] } as Partial<NormSnapshot>);
+    const e = eintrag('7', { gegenstandslos: true, bloecke: [{ absatz: null, text: '…' }] });
     expect(erlassStandFuerArtikel(basis({ blatt: { eintrag: e } }))).toBeUndefined();
   });
   it('(e) leer-ungeklärt (Text-Heuristik: «…»-Body ohne Beleg) ⇒ nichts', () => {
-    const e = eintrag('7', { bloecke: [{ typ: 'absatz', text: '…' }] } as Partial<NormSnapshot>);
+    const e = eintrag('7', { bloecke: [{ absatz: null, text: '…' }] });
     expect(erlassStandFuerArtikel(basis({ blatt: { eintrag: e } }))).toBeUndefined();
   });
   it('(e) Historie führt aufgehobenSeit/gegenstandslos ⇒ nichts', () => {
