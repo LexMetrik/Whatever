@@ -497,10 +497,10 @@ jobs:
           else
             echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
           fi
-          # Auto-Merge bleibt tolerant: scheitert NUR an Repo-Setting/Token-Rechten,
-          # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
+          # Auto-Merge tolerant: scheitert nur an Setting/Token, der PR wartet sichtbar.
           gh pr merge --auto --squash "$branch" || echo "Auto-Merge nicht aktivierbar (Repo-Setting/Token) — PR bleibt offen zur Abnahme."
 
+      # Zettel-Muster (Label, Trap) wie waechter.yml; legt an/kommentiert, schliesst nie.
       - name: Handschritt-Zettel (überholt, aber html-N nicht auflösbar)
         if: steps.repin.outputs.handschritt == '1'
         env:
@@ -508,10 +508,12 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Fedlex-Re-Pin Handschritt in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh issue list -s open -l alarm:fedlex-repin -S author:app/github-actions --json number -q '.[0].number // empty')
           rumpf="Ein überholter Bund-Pin ist NICHT automatisch re-pinnbar (keine kanonische html-Manifestation für die geltende Konsolidierung — oft: die Fassung ist eben erst in Kraft getreten, das HTML-Exemplar lagert noch nach). §7-Handschritt: html-N via SPARQL isExemplifiedBy prüfen, sobald verfügbar, dann fedlex:repin-batch erneut. Details im Lauf-Log: ${RUN_URL}"
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Erneut am $(date -u +%F). ${rumpf}"
           else
-            gh issue create --title "🟠 Fedlex-Re-Pin Handschritt fällig ($(date -u +%F))" --body "$rumpf"
+            gh label create alarm:fedlex-repin -f -c B60205 >/dev/null
+            gh issue create --label alarm:fedlex-repin --title "🟠 Fedlex-Re-Pin Handschritt fällig ($(date -u +%F))" --body "$rumpf"
           fi

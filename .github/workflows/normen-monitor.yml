@@ -185,24 +185,17 @@ jobs:
           fi
           exit "$code"
 
-      # A2 (2.7.2026): Ein roter Lauf verhallte bisher still in der Verlaufsliste (15.6./29.6.
-      # real rot, unbemerkt). Bei Rot legen wir einen sichtbaren Aufgaben-Zettel an — ODER
-      # kommentieren den bestehenden, damit keine Issue-Flut entsteht.
-      #
-      # ── TRIAGE-NACHZUG (3.8.2026, Fehlerklasse K5) ──────────────────────────
-      # Die Kommentar-Sammelstelle hat ihr Ziel verfehlt: Issue #166 (angelegt
-      # 6.7.2026) trug am 3.8. vier Kommentare — «Erneut rot am …», immer
-      # derselbe Text, nie geschlossen, nie eskaliert. Ein Alarm, der sich vier
-      # Wochen lang unverändert wiederholt, ist kein Alarm mehr, sondern
+      # A2 (2.7.2026): rote Läufe (15.6./29.6.) verhallten still. Bei Rot ein
+      # sichtbarer Zettel — oder Kommentar am bestehenden (keine Issue-Flut).
+      # TRIAGE-NACHZUG (3.8.2026, K5): Issue #166 (6.7.2026) trug am 3.8. vier
+      # gleichlautende «Erneut rot»-Kommentare, nie geschlossen, nie eskaliert —
       # Rauschen; die 8 nicht-kanonischen Pins standen genau in dieser Zeit.
-      # Zwei Ergänzungen, beide gegen dieselbe Wurzel:
-      #   (1) Bei GRÜN wird der Zettel GESCHLOSSEN. Ohne Schliessung sagt ein
-      #       offener Zettel nichts mehr über die Gegenwart aus — er ist dann
-      #       nur noch ein Beleg, dass es einmal ein Problem gab.
-      #   (2) Ab dem 3. roten Lauf IN FOLGE bekommt der Titel das Präfix
-      #       «ESKALATION:». Der Unterschied zwischen «einmal rot» (Quelle
-      #       kurz weg) und «dauerhaft rot» (echter Rechtsstands-Defekt) muss
-      #       im Titel stehen, nicht im vierten Kommentar.
+      #   (1) Bei GRÜN wird der Zettel geschlossen (sonst sagt er nichts über
+      #       die Gegenwart).
+      #   (2) Ab dem 3. roten Lauf in Folge trägt der Titel «ESKALATION:» —
+      #       «einmal rot» vs. «dauerhaft rot» gehört in den Titel.
+      # ZETTEL-MUSTER (1.10.2026, QS-MONITOR-ROT; Details bei waechter.yml):
+      # Label `alarm:normen-monitor`, ERR-Trap → Warnung.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren/eskalieren
         if: failure()
         env:
@@ -210,7 +203,8 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh issue list -s open -l alarm:normen-monitor -S author:app/github-actions --json number -q '.[0].number // empty')
           rumpf="Der wöchentliche Normen-Monitor ist fehlgeschlagen — ein gepinnter Rechtsstand ist möglicherweise überholt, ein Anker weg, eine amtliche Quelle nicht erreichbar ODER die Live-Site/eine Runtime-API defekt. Prüfen: **§7-Verifikation** (Pins/Wortlaute/Verfallsregister) bzw. **Betriebs-Fix** (Site/API). Lauf: ${RUN_URL}"
 
           # Rot-Serie zählen: abgeschlossene Vorläufer, solange sie NICHT
@@ -231,7 +225,8 @@ jobs:
             gh issue comment "$offen" --body "Erneut rot am $(date +%F) — ${serie}. roter Lauf in Folge. ${rumpf}"
             nr="$offen"
           else
-            nr=$(gh issue create --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" | grep -oE '[0-9]+$')
+            gh label create alarm:normen-monitor -f -c B60205 >/dev/null
+            nr=$(gh issue create --label alarm:normen-monitor --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" | grep -oE '[0-9]+$')
           fi
 
           if [ "$serie" -ge 3 ]; then
@@ -246,9 +241,8 @@ jobs:
             esac
           fi
 
-      # Gegenstück zur Triage: bei GRÜN wird der Zettel geschlossen. Ein
-      # Monitor, der nur anlegt und nie schliesst, produziert eine Liste, die
-      # nur wächst — und über die Gegenwart nichts mehr aussagt (§8).
+      # Gegenstück: bei GRÜN schliessen — ein Monitor, der nur anlegt, liefert
+      # eine wachsende Liste ohne Aussage über die Gegenwart (§8).
       - name: Bei Grün — offenen Aufgaben-Zettel schliessen
         if: success()
         env:
@@ -256,7 +250,8 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh issue list -s open -l alarm:normen-monitor -S author:app/github-actions --json number -q '.[0].number // empty')
           if [ -z "$offen" ]; then
             echo "Monitor grün, kein offener Zettel — nichts zu schliessen."
             exit 0

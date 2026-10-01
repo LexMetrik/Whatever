@@ -10,20 +10,17 @@
 # Der Wächter darf darum NICHT an `ci.yml` hängen: ein PR-getriebenes Tor
 # meldet nur, wenn jemand einen PR fährt. Der Auslöser muss die ZEIT sein.
 #
-# Er läuft bewusst NICHT in `check:seriell`: sein Befund betrifft den Zustand
-# der Automatik auf `main`, nicht die Korrektheit eines Arbeitsbaums. Ein
-# kaputter Wochen-Job soll den lokalen Bau nicht blockieren — er soll sichtbar
-# sein. Sichtbarkeit stellt dieser Workflow her (rot in der Actions-Liste).
+# Er läuft bewusst NICHT in `check:seriell`: sein Befund betrifft die Automatik
+# auf `main`, nicht einen Arbeitsbaum — ein kaputter Wochen-Job soll den lokalen
+# Bau nicht blockieren, sondern sichtbar sein (rot in der Actions-Liste).
 name: Wächter (geplante Läufe)
 
 on:
   schedule:
     - cron: '11 6 * * *' # täglich 06:11 UTC — nach den 04:43/05:17-Jobs
-  # Rückbau 19.9.2026 (QS-ORG-UMZUG): Auslöser `push: branches: [main]`, der Job
-  # `autozug` (BEHIND-Nachzug per `gh pr update-branch`) und das dazugehörige
-  # `if: github.event_name != 'push'` am Job `laeufe` ersatzlos gestrichen — seit
-  # dem Org-Umzug serialisiert die native Merge-Queue auf main (Ruleset 23699779)
-  # und zieht den Zweig selbst nach; ein BEHIND-Rennen kann es nicht mehr geben.
+  # Rückbau 19.9.2026 (QS-ORG-UMZUG): `push`-Auslöser, Job `autozug` (BEHIND-
+  # Nachzug) und `if: github.event_name != 'push'` gestrichen — die native
+  # Merge-Queue (Ruleset 23699779) zieht Zweige selbst nach.
   workflow_dispatch:
 
 permissions:
@@ -34,11 +31,7 @@ permissions:
   checks: read
   pull-requests: read
   statuses: read
-  # `issues: write` seit 14.8.2026 (Aktivierungs-Audit) — für die Selbstmeldung
-  # unten (Muster normen-monitor.yml). Vorher hatte dieser Workflow als
-  # einziger geplanter Wächter KEINE Issue-Eskalation: er war seit 10.8.2026
-  # täglich rot (5/5), ohne dass es jemand erfuhr — genau die Fehlerklasse,
-  # gegen die er selbst gebaut wurde (Kopf-Kommentar oben).
+  # `issues: write` seit 14.8.2026 (Aktivierungs-Audit) — Selbstmeldung unten.
   issues: write
 
 jobs:
@@ -162,14 +155,14 @@ jobs:
           done < prs.tsv
 
       # ── Selbstmeldung (14.8.2026, Aktivierungs-Audit) ───────────────────────
-      # Muster von normen-monitor.yml (dort seit A2/K5 bewährt): dieser
-      # Workflow war der einzige geplante Wächter OHNE Issue-Eskalation — er
-      # war seit 10.8.2026 täglich rot (5/5), und niemand erfuhr es. Genau die
-      # Fehlerklasse «ein Ausfall, den niemand bemerkt» (Kopf-Kommentar oben),
-      # nur diesmal am Melder selbst. `if: failure()`/`if: success()` sind die
-      # eingebauten GitHub-Actions-Statusfunktionen: sie werten den Zustand
-      # ALLER vorangehenden Schritte dieses Jobs aus (auch den `if: always()`-
-      # Nachzug oben), nicht nur des unmittelbar vorigen.
+      # Muster normen-monitor.yml: bis dahin war dies der einzige geplante
+      # Wächter ohne Issue-Eskalation — täglich rot seit 10.8.2026 (5/5),
+      # unbemerkt. `if: failure()`/`success()` werten ALLE vorangehenden
+      # Schritte des Jobs aus. ZETTEL-MUSTER (1.10.2026, QS-MONITOR-ROT; alle
+      # vier Alarm-Workflows gleich): Fund per Label `alarm:<name>` + Autor
+      # github-actions statt Titelsuche (Handzettel bleiben unberührt); der
+      # ERR-Trap macht jede Pflege-Panne zur `::warning::` mit Exit 0 — die
+      # Zettel-Pflege färbt den Lauf nie, den Rot-Status trägt der Prüfschritt.
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
         if: failure()
         env:
@@ -177,12 +170,14 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Wächter rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh issue list -s open -l alarm:waechter -S author:app/github-actions --json number -q '.[0].number // empty')
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Weiterhin rot am $(date +%F). Lauf: ${RUN_URL}"
             echo "Zettel #${offen} kommentiert (weiterhin rot)."
           else
-            nr=$(gh issue create \
+            gh label create alarm:waechter -f -c B60205 >/dev/null
+            nr=$(gh issue create --label alarm:waechter \
               --title "🔴 Wächter rot seit $(date +%F) — geplante Läufe/PR-Kontexte prüfen" \
               --body "Der tägliche Wächter (geplante Läufe, .github/workflows/waechter.yml) ist fehlgeschlagen — mindestens ein geplanter Workflow ist laut \`check:ci-laeufe\` nicht in Ordnung, ODER der PR-Kontext-Nachzug (K2/K11) ist an einer anderen Stelle als der bekannten, tolerierten Branch-Schutz-403-Lücke gescheitert. Lauf-Log prüfen. Lauf: ${RUN_URL}" \
               | grep -oE '[0-9]+$')
@@ -196,7 +191,8 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Wächter rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh issue list -s open -l alarm:waechter -S author:app/github-actions --json number -q '.[0].number // empty')
           if [ -z "$offen" ]; then
             echo "Wächter grün, kein offener Zettel — nichts zu schliessen."
             exit 0
