@@ -8,7 +8,7 @@ import type { ArtikelHistorie } from '../lib/normtext/historie-laden';
 // Komponente setzt, was der Shard liefert, in Anführungszeichen (Wortlaut der Fussnote); ein Datum zeigt sie nur,
 // wenn der Shard eins trägt — bei der Ur-Bezeichnung nie (§7).
 
-const E = { wirkung: false, quellen: [], absatz: null, item: null } as const;
+const E = { wirkung: false, quellen: [] as ArtikelHistorie['ereignisse'][number]['quellen'], absatz: null, item: null };
 const html = (h: ArtikelHistorie) => renderToStaticMarkup(<ArtikelHistorieZeile historie={h} zeitleiste />);
 
 describe('ArtikelHistorie · Ursprünglich + alte Bezeichnung', () => {
