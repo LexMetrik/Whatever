@@ -84,10 +84,10 @@ describe('ladeErlassDateiStreng — 404 ist null, alles andere ein Fehler', () =
 describe('ladeBezuegeZaehler — Sidecar-Ladefehler ist kein «keine Zähler» (PE-E7-B02)', () => {
   it('5xx → abgelehnt, nicht gecacht; danach trifft der Neuversuch', async () => {
     let ruf = 0;
-    vi.stubGlobal('fetch', vi.fn(async () => (++ruf === 1 ? status(500) : jsonOk({ zaehler: { 'art-1': [2, 3] } }))));
+    vi.stubGlobal('fetch', vi.fn(async () => (++ruf === 1 ? status(500) : jsonOk({ zaehler: { '1': [2, 3] } }))));
     const b = await browse();
     await expect(b.ladeBezuegeZaehler('bund', 'OR')).rejects.toThrow(/500/);
-    await expect(b.ladeBezuegeZaehler('bund', 'OR')).resolves.toEqual({ 'art-1': [2, 3] });
+    await expect(b.ladeBezuegeZaehler('bund', 'OR')).resolves.toEqual({ '1': [2, 3] });
   });
 
   it('404 → null (kein Sidecar: gültige Auskunft)', async () => {

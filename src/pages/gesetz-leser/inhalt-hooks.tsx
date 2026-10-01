@@ -6,7 +6,7 @@ import { merkeAnker, bezugslinie, ankerLandepunkt } from './scrollAnker';
 import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
-  ladeBrowseManifest, ladeErlass, ladeErlassDatei, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
+  ladeBrowseManifest, ladeErlassStreng, ladeErlassDateiStreng, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
   ladeKantonLuecken,
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap, type KantonLueckenMap,
 } from '../../lib/normtext/browse';
@@ -21,6 +21,7 @@ import { mitlaufenKarte } from './klappKarte';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
+import { meldeLadefehler, loescheLadefehler, type LadefehlerArt } from './ladefehler';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -91,59 +92,84 @@ export function useLeserDaten(opts: {
 
   useEffect(() => {
     let lebt = true;
-    void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
-    void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
+    // Jeder Ladedurchlauf trägt eine Nummer: ein überholter (Erneut-Klick während
+    // der Vorgänger noch läuft) schreibt keinen Zustand mehr.
+    let lauf = 0;
     // `ebene` ist die ROUTEN-Ebene aus der Adresse; die Dateien liegen unter der
     // DATEN-Ebene (Befund 45: `/gesetze/international/CISG` lädt
     // `/normtext/struktur/bund/CISG.json`). Ohne diese Übersetzung wäre der Umzug
     // ein STILLER Fehler — 404 auf das Sidecar heisst `null`, also Leser ohne
     // Gliederung und ohne Erlass-Kopf, während die Seite sonst normal aussieht.
     const daten = datenEbeneVonRoute(ebene);
-    void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
-    void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
-    // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
-    // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
-    if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
-    // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
-    // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
-    if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
-    void ladeErlass(schluessel).then(async (e) => {
-      if (!lebt) return;
-      if (!e) {
-        // W2·10-UI-NAV/N0b: Key case-insensitiv gegen das Register auflösen und auf
-        // die kanonische URL umleiten (/gesetze/bund/or → /gesetze/bund/OR). Nur bei
-        // EINDEUTIGEM Case-Treffer (kein Rate-Sprung); sonst ehrliche Fehlseite.
-        const m = await ladeBrowseManifest();
-        if (!lebt) return;
-        const roh = schluessel.toLowerCase();
-        const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
-        if (kandidaten.length === 1) {
-          const ziel = kandidaten[0];
-          // A-1 (Audit A, S6-W1a 23.9.2026): MIT Query und Anker — bis dahin
-          // landete `/gesetze/bund/or#art-41` auf `/OR` ohne `#art-41`, der
-          // Leser stand bei Art. 1 und das Blatt zeigte Art. 1. Dasselbe
-          // Muster wie der Adress-Umzug in `GesetzLeser.tsx` (④).
-          navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
+    // W2·17-UI-BEFUNDE PA-3-B01/B02: «nicht im Bestand» (nicht im Register, Datei
+    // 404) ist etwas anderes als ein Ladefehler (Netz/5xx). Nur Letzterer wird im
+    // Kanal gemeldet (→ `GesetzFehlSeite` zeigt «konnte nicht geladen werden» mit
+    // «Erneut laden»); der Fehlerzustand selbst bleibt das eine Bit.
+    const ladefehler = (art: LadefehlerArt) => { meldeLadefehler(schluessel, art, erneut); setFehler(true); };
+    const ladeAlles = () => {
+      const mein = ++lauf;
+      const gueltig = () => lebt && mein === lauf;
+      void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
+      void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
+      void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
+      void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
+      // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
+      // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
+      if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
+      // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
+      // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
+      if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
+      void (async () => {
+        let e: BrowseErlass | null;
+        try { e = await ladeErlassStreng(schluessel); } catch { if (gueltig()) ladefehler('register'); return; }
+        if (!gueltig()) return;
+        if (!e) {
+          // W2·10-UI-NAV/N0b: Key case-insensitiv gegen das Register auflösen und auf
+          // die kanonische URL umleiten (/gesetze/bund/or → /gesetze/bund/OR). Nur bei
+          // EINDEUTIGEM Case-Treffer (kein Rate-Sprung); sonst ehrliche Fehlseite.
+          const m = await ladeBrowseManifest();
+          if (!gueltig()) return;
+          const roh = schluessel.toLowerCase();
+          const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
+          if (kandidaten.length === 1) {
+            const ziel = kandidaten[0];
+            // A-1 (Audit A, S6-W1a 23.9.2026): MIT Query und Anker — bis dahin
+            // landete `/gesetze/bund/or#art-41` auf `/OR` ohne `#art-41`, der
+            // Leser stand bei Art. 1 und das Blatt zeigte Art. 1. Dasselbe
+            // Muster wie der Adress-Umzug in `GesetzLeser.tsx` (④).
+            navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
+            return;
+          }
+          setFehler(true);
           return;
         }
-        setFehler(true);
-        return;
-      }
-      // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
-      // eingebettete amtliche PDF (eintraege bleibt null).
-      if (e.status === 'pdf-embed') { setErlass(e); return; }
-      // LIVE_VERWEIS (⑧, W2·5d G3a): kein In-App-Volltext gehostet — Erlass setzen,
-      // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
-      // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
-      if (e.status === 'nur-live-link') { setErlass(e); return; }
-      if (!e.datei) { setFehler(true); return; }
-      setErlass(e);
-      const datei = await ladeErlassDatei(e.datei);
+        // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
+        // eingebettete amtliche PDF (eintraege bleibt null).
+        if (e.status === 'pdf-embed') { setErlass(e); return; }
+        // LIVE_VERWEIS (⑧, W2·5d G3a): kein In-App-Volltext gehostet — Erlass setzen,
+        // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
+        // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
+        if (e.status === 'nur-live-link') { setErlass(e); return; }
+        if (!e.datei) { setFehler(true); return; }
+        setErlass(e);
+        let datei: Awaited<ReturnType<typeof ladeErlassDateiStreng>>;
+        try { datei = await ladeErlassDateiStreng(e.datei); } catch { if (gueltig()) ladefehler('datei'); return; }
+        if (!gueltig()) return;
+        if (!datei) { setFehler(true); return; }
+        setEintraege(datei.eintraege);
+      })();
+    };
+    // «Erneut laden» (aus dem Kanal): Meldung dieser Instanz zurücknehmen, den
+    // Fehlerzustand lösen (→ Ladeanzeige) und alles noch einmal holen — Register
+    // und Dateien sind nach einem Fehlschlag nicht gecacht (browse.ts, O-1.7).
+    const erneut = () => {
       if (!lebt) return;
-      if (!datei) { setFehler(true); return; }
-      setEintraege(datei.eintraege);
-    });
-    return () => { lebt = false; };
+      loescheLadefehler(schluessel, erneut);
+      setFehler(false);
+      ladeAlles();
+    };
+    ladeAlles();
+    return () => { lebt = false; loescheLadefehler(schluessel, erneut); };
     // Setter/navigate sind stabil; Deps bewusst auf [ebene, schluessel] gehalten
     // (byte-identisch zum früheren Inline-Effekt — kein Re-Fetch bei Render).
     // eslint-disable-next-line react-hooks/exhaustive-deps

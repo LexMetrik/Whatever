@@ -69,8 +69,26 @@ export function useBezuegeZaehler(erlass: ZaehlerErlass | null | undefined): Zae
   useEffect(() => {
     if (!ebene || !key) return;
     let lebt = true;
-    void ladeBezuegeZaehler(ebene, key).then((b) => { if (lebt) setStand({ key, block: b }); });
-    return () => { lebt = false; };
+    let abmelden: (() => void) | null = null;
+    // W2·17-UI-BEFUNDE PE-E7-B02: `ladeBezuegeZaehler` WIRFT bei Netz-/5xx-Fehler
+    // (404 = `null` = kein Sidecar, gültige Auskunft). Vorher wurde beides zu
+    // `block: null` und die Zähler fehlten still bis zum Neuladen des Tabs.
+    // Jetzt bleibt der Stand «noch nichts geladen», und die Rückkehr des Netzes
+    // (`online`) holt neu — dasselbe Muster wie der Bezugs-Shard (`bezuegeLaden`,
+    // E-14); der Fehlschlag ist nicht gecacht (browse.ts, O-1.7).
+    const laden = () => {
+      void ladeBezuegeZaehler(ebene, key).then(
+        (b) => { if (lebt) setStand({ key, block: b }); },
+        () => {
+          if (!lebt) return;
+          const neu = () => { window.removeEventListener('online', neu); laden(); };
+          window.addEventListener('online', neu);
+          abmelden = () => window.removeEventListener('online', neu);
+        },
+      );
+    };
+    laden();
+    return () => { lebt = false; abmelden?.(); };
   }, [ebene, key]);
 
   const block = stand && stand.key === key ? stand.block : null;
