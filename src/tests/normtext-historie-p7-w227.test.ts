@@ -8,6 +8,7 @@
 import { describe, it, expect } from 'vitest';
 import { fussnoteDiesenArtGegenstandslos } from '../../scripts/normtext/aufhebung-signal';
 import { parseFussnoteHistorie, baueArtikelHistorie, type FnEingang } from '../lib/normtext/historie-parse';
+import { pruefeAufgehobenGiltSeit, leseHistorieShards } from '../../scripts/normtext/historie-aufgehoben-lebend';
 
 // ── #47 · «ist dieser Art. gegenstandslos» nur UNBEDINGT (GP T2, 1.10.2026) ──────────────────────────────────────
 describe('P7 #47 · fussnoteDiesenArtGegenstandslos — bedingte Formen sind kein Ganz-Vermerk', () => {
@@ -32,6 +33,90 @@ describe('P7 #47 · fussnoteDiesenArtGegenstandslos — bedingte Formen sind kei
   it('ein Folgesatz, der zufällig mit «Soweit» beginnt, entkräftet den Vermerk nicht', () => {
     // «… ist dieser Art. gegenstandslos. Soweit …» — der Punkt beendet die Aussage (Satzgrenze), nicht ein Bedingungssatz.
     expect(fussnoteDiesenArtGegenstandslos('Aufgrund des BRB ist dieser Art. gegenstandslos. Soweit nötig, siehe Art. 5.')).toBe(true);
+  });
+});
+
+// ── #53 · Snapshot «aufgehoben» ⇔ Historie «Gilt seit …» (§8, GP M1 Aufhebungs-Sammel 1.10.2026) ──────────────────
+// 7 Artikel zeigten im Reiter «Fassung» «Gilt seit …», obwohl der Normtext amtlich «Aufgehoben» sagt:
+//   BKV 8        Fussnote «Aufgehobn durch … mit Wirkung seit 1. Jan. 2016» (amtlicher Tippfehler) lief über den
+//                generischen In-Kraft-Fall ⇒ «Gilt seit 2016» statt «Aufgehoben seit 2016»;
+//   AIG 72       «Aufgehoben durch … (AS 2006 4745). Fassung gemäss … in Kraft vom 2. Okt. 2021 bis zum 31. Dez. 2022 …
+//                verlängert … bis zum 30. Juni 2024» — befristete Wiedereinführung, Fedlex-Körper «…»;
+//   ASYLV2 65, HREGV 162–163, ZSTV 75a–75m   die «Eingefügt/Fassung gemäss …»-Fussnote hängt am GLIEDERUNGSTITEL
+//                (`sektion`), der Artikel selbst trägt nur den Wortlaut «Aufgehoben» ohne Fussnote;
+//   AVO 22a–22c, 50b–50f   Fussnote «Eingefügt durch … in Kraft seit 1. Juli 2015» am Kopf, Körper «Aufgehoben»,
+//                die Aufhebung selbst nennt die Fussnote nicht (Datum unbekannt ⇒ keins angezeigt, §2).
+describe('P7 #53 · «Aufgehobn durch …» (BKV 8) ist ein Aufhebungs-Ereignis', () => {
+  const BKV_8 = 'Aufgehobn durch Ziff. I der V des EFD vom 16. April 2014, mit Wirkung seit  1. Jan. 2016 (AS 2014 1109).';
+  const fn = (text: string, extra: Partial<FnEingang> = {}): FnEingang => ({ text, links: [], absatz: null, item: null, ...extra });
+
+  it('Grammatik: typ aufgehoben, Wirkungsdatum aus der amtlichen Klausel', () => {
+    const r = parseFussnoteHistorie(fn(BKV_8));
+    expect(r.ereignisse.map((e) => [e.typ, e.datum, e.wirkung])).toEqual([['aufgehoben', '2016-01-01', true]]);
+  });
+
+  it('Artikelebene: aufgehobenSeit 2016-01-01 (Kopf-Fussnote), kein «Gilt seit»-Anspruch mehr', () => {
+    const { historie } = baueArtikelHistorie([fn(BKV_8)], { snapshotAufgehoben: true });
+    expect(historie?.aufgehobenSeit).toBe('2016-01-01');
+  });
+
+  it('Gegenprobe: ein Wort mit gleichem Anfang («Aufgehobene Bestimmungen …») ist kein Aufhebungs-Kopf', () => {
+    expect(parseFussnoteHistorie(fn('Aufgehobene Bestimmungen siehe Art. 5.')).ereignisse.some((e) => e.typ === 'aufgehoben')).toBe(false);
+  });
+});
+
+describe('P7 #53 · snapshotAufgehoben ⇒ kein «Gilt seit» für einen amtlich aufgehobenen Artikel', () => {
+  const fn = (text: string, extra: Partial<FnEingang> = {}): FnEingang => ({ text, links: [], absatz: null, item: null, ...extra });
+  const AIG_72 =
+    'Aufgehoben durch Ziff. IV 2 des BG vom 16. Dez. 2005 (AS 2006 4745; BBl 2002 3709). Fassung gemäss Ziff. I des BG vom 1. Okt. 2021, in Kraft vom 2. Okt. 2021 bis zum 31. Dez. 2022 (AS 2021 587; BBl 2021 1901), gemäss Ziff. I des BG vom 16. Dez. 2022 (Covid-19-Test bei der Ausschaffung) verlängert vom 17. Dez. 2022 bis zum 30. Juni 2024 (AS 2022 818; BBl 2022 1359).';
+  const ASYLV2_65 = 'Fassung gemäss Ziff. I der V vom 24. Okt. 2007, in Kraft seit 1. Jan. 2008 (AS 2007 5585).';
+  const AVO_22A = 'Eingefügt durch Ziff. I der V vom 25. März 2015, in Kraft seit 1. Juli 2015 (AS 2015 1147).';
+
+  it('AIG 72 / ASYLV2 65 (Titel-Fussnote) / AVO 22a–22c: giltSeit null, Ereignisse bleiben als Chronik', () => {
+    for (const [text, extra, anzahl] of [
+      [AIG_72, {}, 2],
+      [ASYLV2_65, { sektion: '2. Abschnitt: Rückkehrberatung' }, 1],
+      [AVO_22A, {}, 1],
+    ] as const) {
+      const { historie } = baueArtikelHistorie([fn(text, extra)], { snapshotAufgehoben: true });
+      expect(historie?.giltSeit, text.slice(0, 30)).toBeNull();
+      expect(historie?.aufgehobenSeit).toBeUndefined();
+      expect(historie?.ereignisse).toHaveLength(anzahl);
+    }
+  });
+
+  it('Standard (ohne Snapshot-Auskunft oder Artikel lebt) bleibt Wort für Wort wie bisher: giltSeit aus dem jüngsten datierten Ereignis', () => {
+    expect(baueArtikelHistorie([fn(AVO_22A)]).historie?.giltSeit).toBe('2015-07-01');
+    expect(baueArtikelHistorie([fn(AVO_22A)], { snapshotAufgehoben: false }).historie?.giltSeit).toBe('2015-07-01');
+  });
+
+  it('mit datiertem aufgehobenSeit bleibt giltSeit unberührt (die Anzeige führt «Aufgehoben seit …» vor «Gilt seit …»)', () => {
+    const { historie } = baueArtikelHistorie(
+      [fn('Fassung gemäss Ziff. I der V vom 1. Jan. 2000, in Kraft seit 1. Jan. 2001 (AS 2000 1).'), fn('Aufgehoben durch Ziff. I der V vom 1. Jan. 2010, mit Wirkung seit 1. Jan. 2011 (AS 2010 1).')],
+      { snapshotAufgehoben: true },
+    );
+    expect(historie).toMatchObject({ giltSeit: '2001-01-01', aufgehobenSeit: '2011-01-01' });
+  });
+});
+
+describe('P7 #53 · Tor: Text-Shard «aufgehoben» ⇒ Historie ohne «Gilt seit» (Konsistenz Snapshot ⇔ Historie)', () => {
+  const textWurzel = 'public/normtext/bund';
+
+  it('Bestand: kein amtlich aufgehobener Bund-Artikel trägt im Historie-Shard ein «Gilt seit» ohne datierte Aufhebung', () => {
+    const { befunde, geprueft } = pruefeAufgehobenGiltSeit(leseHistorieShards('public/normtext/historie'), textWurzel);
+    expect(geprueft).toBeGreaterThan(1000); // 1261 am 1.10.2026 — das Tor prüft real, nicht leer
+    expect(befunde.map((b) => `${b.erlass} ${b.token}`)).toEqual([]);
+  });
+
+  it('Rot-Beweis (§6.7): ein Shard mit giltSeit bei Snapshot «aufgehoben» wird gemeldet', () => {
+    const shard = new Map([['AVO', { artikel: { '22_a_22_c': { giltSeit: '2015-07-01' }, '50_a': { giltSeit: '2015-07-01' } } }]]);
+    const { befunde } = pruefeAufgehobenGiltSeit(shard, textWurzel);
+    expect(befunde.map((b) => `${b.erlass} ${b.token} ${b.giltSeit}`)).toEqual(['AVO 22_a_22_c 2015-07-01']); // 50_a lebt (Snapshot ohne `aufgehoben`)
+  });
+
+  it('mit aufgehobenSeit ist «Gilt seit» daneben zulässig (Anzeige führt «Aufgehoben seit»)', () => {
+    const shard = new Map([['AVO', { artikel: { '22_a_22_c': { giltSeit: '2015-07-01', aufgehobenSeit: '2020-01-01' } } }]]);
+    expect(pruefeAufgehobenGiltSeit(shard, textWurzel).befunde).toEqual([]);
   });
 });
 

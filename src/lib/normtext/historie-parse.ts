@@ -260,7 +260,11 @@ function datumAusSegment(segment: string): { datum: string | null; wirkung: bool
  *  4. sonst: 'unparsed' (Roh-Text erhalten).
  */
 export function parseFussnoteHistorie(fn: FnEingang): FussnoteHistorie {
-  const text = normalisiere(fn.text ?? '');
+  // P7 #53 (1.10.2026): «Aufgehobn durch …» ist der amtliche Fedlex-Tippfehler von BKV Art. 8 («mit Wirkung seit 1. Jan.
+  // 2016»; Filestore BKV 20260101) — nur am TEXT-ANFANG und nur exakt dieses Wort mit folgendem «durch» (Mitte-Satz-Formen
+  // bleiben unerkannt, wie in `fussnoteHebtAuf`). Bis dahin lief die Fussnote über den generischen In-Kraft-Fall: die
+  // Historie zeigte «Gilt seit 2016», der Normtext «Aufgehoben». Die Grammatik bleibt EINE Quelle (§5).
+  const text = normalisiere(fn.text ?? '').replace(/^Aufgehobn durch(?=\s)/, 'Aufgehoben durch');
   const links = fn.links ?? [];
   const absatz = fn.absatz ?? null;
   const item = fn.item ?? null;
@@ -356,6 +360,10 @@ export function baueArtikelHistorie(
      *  Normtext im Artikel-KÖRPER (Kriterium: scripts/normtext/historie-
      *  aufgehoben-lebend.ts). undefined = unbekannt (kein Text-Eintrag). */
     koerperLebend?: boolean;
+    /** true = der Text-Shard führt den Artikel amtlich als aufgehoben (`NormSnapshot.aufgehoben`, aufhebung-
+     *  signal.ts). Dann trägt die Historie KEIN «Gilt seit» (P7 #53), es sei denn sie nennt selbst das datierte
+     *  `aufgehobenSeit`. undefined/false = unverändert. */
+    snapshotAufgehoben?: boolean;
   } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number } {
   const ereignisse: HistorieEreignis[] = [];
@@ -440,6 +448,12 @@ export function baueArtikelHistorie(
     if (widerlegt) gegenstandslos = undefined;
   }
   if (gegenstandslos && opts.koerperLebend === true) gegenstandslos = undefined;
+
+  // P7 #53 (§8): ein amtlich aufgehobener Artikel (Text-Shard: Wortlaut «Aufgehoben»/«…» mit Vermerk) GILT nicht
+  // «seit» irgendeiner Einfügung/Fassung — Fälle: Fussnote am Gliederungstitel (ASYLV2 65, HREGV 162–163, ZSTV 75a–m),
+  // Einfügungs-Fussnote ohne Aufhebungsdatum (AVO 22a–c, 50b–f), befristete Fassung (AIG 72). Ohne datiertes
+  // `aufgehobenSeit` bleibt der Stand ehrlich leer (Anzeige: «Fassungshistorie»), die Ereignisse bleiben als Chronik.
+  if (opts.snapshotAufgehoben === true && !aufgehobenSeit) giltSeit = null;
 
   const historie: ArtikelHistorie = { giltSeit, ereignisse };
   if (aufgehobenSeit) historie.aufgehobenSeit = aufgehobenSeit;

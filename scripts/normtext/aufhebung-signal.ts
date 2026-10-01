@@ -79,6 +79,9 @@
 //           `aufgehoben` (die Fussnoten-Grammatik `historie-parse.ts` kennt «Aufgehobn» nicht und wird NICHT
 //           erweitert: Historie-Shards hängen daran; der Vermerk wird wie «Gegenstandslos» hier am Fussnoten-
 //           ANFANG erkannt, eng auf genau diese zwei Wortlaute).
+//           NACHTRAG P7 #53 (1.10.2026, später am selben Tag; ergänzt, nicht nachgeführt): die Grammatik kennt
+//           «Aufgehobn durch» seither (BKV 8 zeigte in der Historie «Gilt seit 2016» statt «Aufgehoben seit 2016»);
+//           die Erkennung hier läuft damit über `parseFussnoteHistorie` — nur der Plural-Sammelvermerk bleibt hier.
 //         • «… ist dieser Art. gegenstandslos» in einer Fussnote am Artikel-KOPF, die mit einem AS-Zitat beginnt
 //           (AsylG Art. 122, «AS 1998 1582 Ziff. III. Aufgrund der Annahme dieses BB in der Volksabstimmung vom
 //           13. Juni 1999 ist dieser Art. gegenstandslos.») ⇒ `gegenstandslos`. Anders als bei (d) trägt der
@@ -110,21 +113,21 @@ export interface SignalBlock {
 }
 
 /**
- * Zwei amtliche Aufhebungs-Wortlaute, die die Fussnoten-Grammatik (`historie-parse.ts`) nicht kennt und die hier
- * eng am Fussnoten-ANFANG erkannt werden (Klasse (f), s. Kopf-Doku; ergänzt 1.10.2026):
+ * Amtlicher Aufhebungs-Wortlaut, den die Fussnoten-Grammatik (`historie-parse.ts`) nicht kennt und der hier eng am
+ * Fussnoten-ANFANG erkannt wird (Klasse (f), s. Kopf-Doku; ergänzt 1.10.2026):
  *  • «Diese aufgehobenen Art(.|ikel) …» — Plural-Sammelvermerk (StGB Art. 201–212). Wortgrenze nach «Art»/«Artikel»
  *    (kein «Artikelnummern»); NICHT «Dieser Art. …» (Singular, StGB Art. 108: «bleibt … leer»).
- *  • «Aufgehobn durch …» — amtlicher Fedlex-Tippfehler (BKV Art. 8), nur exakt dieses Wort mit folgendem «durch».
+ * (Der zweite Wortlaut dieser Klasse, der Tippfehler «Aufgehobn durch …» (BKV Art. 8), steht seit P7 #53 in der
+ * Grammatik selbst — eine Quelle, §5; `fussnoteHebtAuf` erkennt ihn über `parseFussnoteHistorie`.)
  */
 const SAMMEL_AUFGEHOBEN_RE = /^Diese aufgehobenen Art(?:\.|ikel)(?=\s)/;
-const TIPPFEHLER_AUFGEHOBN_RE = /^Aufgehobn durch(?=\s)/;
 
 /**
  * Trägt dieser Fussnoten-Prosatext einen amtlichen AUFHEBUNGS-Vermerk?
  * Delegiert an die kalibrierte Fussnoten-Grammatik (§5) und fragt nur, ob eines
  * der erkannten Ereignisse vom Typ «aufgehoben» ist («Aufgehoben durch/in/gemäss …»);
- * dazu zwei eng gefasste Anfangs-Wortlaute, die der Grammatik unbekannt sind
- * (`SAMMEL_AUFGEHOBEN_RE`, `TIPPFEHLER_AUFGEHOBN_RE` — Klasse (f)).
+ * dazu ein eng gefasster Anfangs-Wortlaut, der der Grammatik unbekannt ist
+ * (`SAMMEL_AUFGEHOBEN_RE` — Klasse (f); der Tippfehler «Aufgehobn durch» steht seit P7 #53 in der Grammatik)
  *
  * «Gegenstandslos [gemäss …]» (StGB Art. 67f, OR Schlusstitel) wird NICHT hier, sondern von
  * `fussnoteGegenstandslos` erkannt: es ist kein Aufhebungs-Vermerk (§1).
@@ -136,7 +139,7 @@ const TIPPFEHLER_AUFGEHOBN_RE = /^Aufgehobn durch(?=\s)/;
 export function fussnoteHebtAuf(text: string): boolean {
   const t = text.trim();
   if (!t) return false;
-  if (SAMMEL_AUFGEHOBEN_RE.test(t) || TIPPFEHLER_AUFGEHOBN_RE.test(t)) return true;
+  if (SAMMEL_AUFGEHOBEN_RE.test(t)) return true;
   return parseFussnoteHistorie({ text }).ereignisse.some((e) => e.typ === 'aufgehoben');
 }
 
