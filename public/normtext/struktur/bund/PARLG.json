@@ -1,6 +1,6 @@
 {
  "zaehler":{"89":[1,0]},
- "erzeugt": "2026-09-14",
+ "erzeugt": "2026-10-01",
  "stand": "2026-03-02",
  "fassungsToken": "20260302",
  "kopf": {
@@ -7236,6 +7236,12 @@
      ],
      "absatz": null,
      "item": null,
+     "absatzIndex": 9,
+     "pos": {
+      "b": 9,
+      "o": 2,
+      "l": 55
+     },
      "kl": "G"
     },
     {
@@ -7257,6 +7263,12 @@
      ],
      "absatz": null,
      "item": null,
+     "absatzIndex": 12,
+     "pos": {
+      "b": 12,
+      "o": 2,
+      "l": 91
+     },
      "kl": "A"
     },
     {
@@ -7278,6 +7290,12 @@
      ],
      "absatz": null,
      "item": null,
+     "absatzIndex": 14,
+     "pos": {
+      "b": 14,
+      "o": 2,
+      "l": 144
+     },
      "kl": "A"
     }
    ]

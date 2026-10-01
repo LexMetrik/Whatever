@@ -8,11 +8,11 @@
   "korpus": {
     "erlasse": 1570,
     "eintraege": 60527,
-    "texte": 214946
+    "texte": 214985
   },
   "gesamt": {
-    "stellen": 36281,
-    "self": 19686,
+    "stellen": 36313,
+    "self": 19718,
     "fremd": 11660,
     "text": 4935,
     "selbstmarker": 925
@@ -115,7 +115,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12889,
+      "stellen": 12921,
       "erlasse": 473,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
