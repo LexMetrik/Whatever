@@ -66,6 +66,19 @@ on:
     - cron: '11 4 1 * *'
   workflow_dispatch:
 
+# Lauf-Titel (QS-MONITOR-ROT, 1.10.2026): die drei Monats-Crons starten je einen EIGENEN
+# Workflow-Lauf, der in der Lauf-Liste sonst genau wie der Montags-Lauf heisst. Der Titel
+# macht sie unterscheidbar — die Rot-Serie des Zettels (Job `normen`, Schritt «Bei Rot»)
+# überspringt Läufe mit dem Präfix «Normen-Monitor Monatslauf», weil dort der Netz-Check
+# gar nicht lief und ihr Ergebnis nichts über den Rechtsstand aussagt. Vor dem 1.10.2026
+# trugen alle Läufe den Titel «Normen-Monitor»; das war richtig, denn damals fuhr jeder
+# Cron den vollen Netz-Check mit (Läufe 36847965485 / 36849266701 / 36852166670).
+run-name: >-
+  ${{ github.event.schedule == '23 3 1 * *' && 'Normen-Monitor Monatslauf Curia'
+  || github.event.schedule == '47 3 1 * *' && 'Normen-Monitor Monatslauf BS-Grossrat'
+  || github.event.schedule == '11 4 1 * *' && 'Normen-Monitor Monatslauf Vernehmlassungen'
+  || 'Normen-Monitor' }}
+
 env:
   PROD_URL: https://lexmetrik.vercel.app
   # Zeitzone wie in ci.yml (dort mit Begründung, Zeilen 79–83): GitHub-Runner
@@ -80,6 +93,16 @@ env:
 jobs:
   normen:
     name: Rechtsstände (check:netz) · Live-Site-Smoke · Runtime-APIs
+    # NUR Montags-Cron und Zuruf (QS-MONITOR-ROT, 1.10.2026). Ohne diese Zeile startete jeder
+    # der drei Monats-Crons (Curia/BS/Vernehmlassungen, je am 1.) diesen vollen, ~20-min-Netz-
+    # Check mit: am 1.10.2026 dreimal (Läufe 36847965485, 36849266701, 36852166670 — GitHub
+    # verzögerte die Crons um Stunden), dreifache CI-Minuten und drei «rote Läufe in Folge»
+    # für die Eskalation auf #956 nach einem einzigen Befund. Chesterton: die Monats-Jobs
+    # haben kein `needs: normen`, und der Kommentar bei Curia («der wöchentliche Detektor
+    # bleibt unberührt») zeigt, dass das Mitlaufen nie gewollt war (Einführung 71db836ca).
+    # Die Schritte «Bei Rot»/«Bei Grün» sind Teil dieses Jobs: ein übersprungener Job legt
+    # weder einen Rechtsstands-Zettel an noch kommentiert oder schliesst er einen.
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '17 7 * * 1'
     runs-on: ubuntu-latest
     # 45 statt 25 seit 18.9.2026 (§17): der Netz-Lauf ist seriell und wächst mit dem Korpus —
     # 5.9. grün in 22 min, 14.9. bei 25 min mitten in `check:be-sprengel-netz` abgewürgt
@@ -221,9 +244,14 @@ jobs:
           # ein grauer Lauf ist kein bestandener Lauf (CLAUDE.md §6 Ziff. 7
           # lit. c, dieselbe Regel wie in check:ci-laeufe). Der laufende Lauf
           # ist noch nicht 'completed', darum zählt er als +1.
+          # Monatsläufe (Titel «Normen-Monitor Monatslauf …», siehe run-name) werden
+          # übersprungen — weder gezählt noch als Serien-Abbruch gewertet: dort lief
+          # der Netz-Check nicht, ein grüner Monatslauf sagt nichts über einen roten
+          # Montag. Ein roter Monats-PR-Lauf bleibt als Lauf-Rot sichtbar (Wächter
+          # check:ci-laeufe), gehört aber nicht in die Rechtsstands-Serie.
           serie=1
-          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status \
-                   --jq '.[] | select(.status=="completed") | .conclusion') \
+          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status,displayTitle \
+                   --jq '.[] | select(.status=="completed") | select(.displayTitle | startswith("Normen-Monitor Monatslauf") | not) | .conclusion') \
             || { echo "::warning::Rot-Serie nicht ermittelbar"; runs=; }
           for c in $runs; do
             [ "$c" = "success" ] && break
