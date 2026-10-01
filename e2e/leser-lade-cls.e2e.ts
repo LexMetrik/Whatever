@@ -42,6 +42,13 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // @1920 0.0001–0.0002, Material @375 0.0003 — 30/30 grün. Jede Zelle läuft ungedrosselt
 // UND 4× gedrosselt (Messbedingung im Testtitel); 4× statt 2×, weil es die stärkere Probe
 // ist. ROT ZU BEKOMMEN: `flow-root` streichen, `npm run build` → 0.0176.
+//
+// NACHZUG P18 (1.10.2026, Wurzel statt Klammer): `flow-root` fing den Rand nur ab. Jetzt
+// steht das `<style>` des Wrappers als LETZTES Kind (kein Geschwister vor dem Kopf, also
+// kein `space-y`-Rand), die 20 px Luft über dem Kopf als `pt-5` (Padding kollabiert nicht).
+// Beleg: `flow-root` weg OHNE Umzug → Entscheid @375 ungedrosselt 0.0176 (y 167→187, rot);
+// mit Umzug + `pt-5` Layout in 24 Zellen (4 Entscheide/Ansichten × 375/1280/1920 × Bildschirm/
+// Druck, 9281 Elementkästen) identisch zum Stand mit `flow-root`.
 
 const LATTE = 0.01;
 // Drosselstufen je Zelle: 1 = ungedrosselt, 4 = `Emulation.setCPUThrottlingRate` 4

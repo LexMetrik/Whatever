@@ -592,22 +592,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   };
 
   return (
-    <div className="space-y-5 flow-root" style={{ '--rsp-stick': stickHoehe } as CSSProperties}>
-      {/* `flow-root` (W2·31 P13b): das `<style>` macht den Kopf per Tailwind-3-`space-y` zum
-          zweiten Geschwister (20 px margin-top), der Rand kollabierte durch `.lc-route` und
-          schob die Hülle beim Laden y 167→187 (CLS 0.0176); hier abgefangen, Kopf pixelgleich. */}
-      {/* Anker-Sektionen des EntscheidBody tragen ein festes scroll-mt-[7rem]; hier
-          auf die tatsächliche sticky-Höhe (--rsp-stick) heben, damit ein angesprungener
-          Abschnitt nicht hinter dem gemeinsamen Kopf-Block verschwindet. Greift nur im
-          Haupt-Body (.rsp-anker), nicht im Lesemodus-Overlay (eigene schlanke Leiste).
-          LM-002 (W2·17-UI-BEFUNDE-B3, K-01): `#kontext-titel` (KontextPanel-
-          Überschrift «Kontext») liegt AUSSERHALB von `.rsp-anker` (nach dem
-          `<footer>`, s. u.) — aber innerhalb DIESES Wrappers, der `--rsp-stick`
-          trägt, darum hier reichbar. Ohne eigene scroll-margin landete ein
-          gezielter Sprung/eine Find-Landung dorthin unter der klebenden
-          Sachverhalt/Erwägungen/Dispositiv-Leiste (nur die unterste Pixelreihe
-          der Überschrift blieb sichtbar) — reproduziert exakt wie gemeldet. */}
-      <style>{`.rsp-anker [id],#kontext-titel{scroll-margin-top:var(--rsp-stick,7rem)}`}</style>
+    <div className="space-y-5 pt-5" style={{ '--rsp-stick': stickHoehe } as CSSProperties}>
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf in der Einzelansicht, PaneKopf im
           Split-View) — kein Inline-Dup mehr (Parität zum Gesetz-Leser). */}
       {/* ── B-4 (Design-Konsistenz Runde 2, 31.8.2026) · DIE BÄNDER-ORDNUNG ───
@@ -1175,6 +1160,21 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           // kopfModell()/besetzungsTeile()).
           zeigeRubrum={zeigeRubrum} kopf={kopf} kopfLabel={kopfLabel} richterRefs={eintrag?.richter} />
       )}
+      {/* Letztes Kind, nicht erstes (W2·31 P18): Tailwind-3-`space-y` gäbe dem Kopf sonst 20 px
+          `margin-top` (`<style>` zählt als Geschwister), der durch `.lc-route` hinaus kollabierte
+          und die Hülle beim Laden verschob. Die 20 px Luft über dem Kopf stehen jetzt als `pt-5`. */}
+      {/* Anker-Sektionen des EntscheidBody tragen ein festes scroll-mt-[7rem]; hier
+          auf die tatsächliche sticky-Höhe (--rsp-stick) heben, damit ein angesprungener
+          Abschnitt nicht hinter dem gemeinsamen Kopf-Block verschwindet. Greift nur im
+          Haupt-Body (.rsp-anker), nicht im Lesemodus-Overlay (eigene schlanke Leiste).
+          LM-002 (W2·17-UI-BEFUNDE-B3, K-01): `#kontext-titel` (KontextPanel-
+          Überschrift «Kontext») liegt AUSSERHALB von `.rsp-anker` (nach dem
+          `<footer>`, s. u.) — aber innerhalb DIESES Wrappers, der `--rsp-stick`
+          trägt, darum hier reichbar. Ohne eigene scroll-margin landete ein
+          gezielter Sprung/eine Find-Landung dorthin unter der klebenden
+          Sachverhalt/Erwägungen/Dispositiv-Leiste (nur die unterste Pixelreihe
+          der Überschrift blieb sichtbar) — reproduziert exakt wie gemeldet. */}
+      <style>{`.rsp-anker [id],#kontext-titel{scroll-margin-top:var(--rsp-stick,7rem)}`}</style>
     </div>
   );
 }
