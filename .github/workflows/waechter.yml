@@ -48,9 +48,11 @@ jobs:
     steps:
       # fetch-depth 0 (1.10.2026, QS-MONITOR-ROT): check:ci-laeufe liest aus der Historie, seit
       # wann ein Workflow ohne Lauf im Repo steht; im flachen Klon wäre jede Datei «neu».
+      # filter blob:none (Partial Clone): Commit-/Datum-Historie voll, aber ~8 MB statt 363 MB.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          filter: blob:none
       - uses: actions/setup-node@v5
         with:
           node-version: 22

@@ -21,7 +21,7 @@
 //
 // KEIN STILLER SKIP (§6 Ziff. 7 lit. b): fehlt `gh` oder die Authentisierung,
 // meldet das Tor das sichtbar als SKIP mit Exit 0 — nie still grün, nie rot
-// wegen einer fehlenden Voraussetzung.
+// wegen einer fehlenden Voraussetzung, die nichts über den Zustand aussagt.
 import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
 
@@ -36,7 +36,8 @@ const STUNDE = 3_600_000;
 // stets der VORIGE — war der rot, wurde das Tor selbst rot und lieferte der
 // nächsten Ausführung ein rotes Vorbild. BELEG: seit Anlage am 20.7.2026
 // fünfzehn Läufe, fünfzehnmal `failure` (Lauf 30803981348). Keine Abdeckung
-// verloren: scheitert dieser Workflow, steht sein roter Lauf in der Actions-Liste.
+// verloren: scheitert dieser Workflow, steht sein roter Lauf in der Actions-Liste —
+// Fremdüberwachung des Wächters bliebe zirkulär, egal wer sie ausspricht.
 const SELBST = 'waechter.yml';
 
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
@@ -80,15 +81,15 @@ function git(...args: string[]): string {
   }
 }
 
-/** Seit wann (ms) die Datei im Repo steht (Commit, der sie hinzufügte); flacher Klon/unbekannt → null. */
-function hinzugefuegtAm(pfad: string): number | null {
-  if (git('rev-parse', '--is-shallow-repository') !== 'false') return null; // flach: jede Datei «neu» (falsch-grün)
-  const ct = Number(git('log', '--diff-filter=A', '--format=%ct', '-1', '--', pfad));
+/** Seit wann (ms) die Datei im Repo steht (Add-Commit); flacher Klon/unbekannt → null. `g` testbar injiziert. */
+export function hinzugefuegtAm(pfad: string, g: (...a: string[]) => string = git): number | null {
+  if (g('rev-parse', '--is-shallow-repository') !== 'false') return null; // flach: jede Datei «neu» (falsch-grün)
+  const ct = Number(g('log', '--diff-filter=A', '--format=%ct', '-1', '--', pfad));
   return ct > 0 ? ct * 1000 : null;
 }
 
-/** Noch kein Lauf: ROT erst, wenn die Datei älter ist als die Kulanz (QS-MONITOR-ROT 1.10.2026:
- *  Monats-Workflow wäre einen Monat Falsch-Rot); Alter unbekannt (null) → ROT, kein stilles Grün. */
+/** Noch kein Lauf: ROT erst nach der Kulanz (QS-MONITOR-ROT 1.10.2026: sonst einen Monat
+ *  Falsch-Rot); Alter unbekannt (null) → ROT, kein stilles Grün. */
 export const neuOhneLaufRot = (dateiAlterH: number | null, kulanzH: number): boolean =>
   dateiAlterH === null || dateiAlterH > kulanzH;
 
@@ -131,7 +132,7 @@ function abschnittVerwaist(): number {
 
   const porcelain = git('worktree', 'list', '--porcelain');
   const bloecke = porcelain.split('\n\n').filter(Boolean);
-  // Der ERSTE Block ist das Haupt-Arbeitsverzeichnis — Massstab für «ausserhalb».
+  // ERSTER Block = Haupt-Arbeitsverzeichnis, Massstab für «ausserhalb».
   const wurzel = /^worktree (.+)$/m.exec(bloecke[0] ?? '')?.[1] ?? '';
   const mitWorktree = new Set<string>();
 
@@ -153,10 +154,9 @@ function abschnittVerwaist(): number {
     // die Commit-Liste: bei --squash-Landung behält der Zweig seine Commits.
     const abweichung = git('diff', '--stat', 'origin/main', zweig);
     if (!abweichung) {
-      // SPEC-SCHÄRFUNG 15.8.2026 (Fahrplan §3.1 nachgezogen): der Diff allein genügt
-      // nicht — ein Worktree in Arbeit hat vor dem ersten Commit denselben leeren
-      // Diff wie ein abgeräumter (der Bericht meldete sich im eigenen Bauverzeichnis
-      // als verwaist). Ein Melder mit Falschalarm wird weggeklickt.
+      // SPEC-SCHÄRFUNG 15.8.2026 (Fahrplan §3.1): der Diff allein genügt nicht — ein
+      // Worktree in Arbeit hat vor dem ersten Commit denselben leeren Diff wie ein
+      // abgeräumter (der Bericht meldete sich im eigenen Bauverzeichnis als verwaist). Falschalarm wird weggeklickt.
       const schmutzig = git('-C', pfad, 'status', '--porcelain');
       if (schmutzig) {
         console.log(`  ok: ${zweig} — in Arbeit (${schmutzig.split('\n').length} Datei(en) uncommittet).`);

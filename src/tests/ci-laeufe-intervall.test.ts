@@ -8,7 +8,7 @@
 // in den Default «täglich» (24 h), und das Minimum aus beiden drückte die
 // Kulanz auf 48 h. Falschalarm; ein Monats-Cron ist selten, nicht täglich.
 import { describe, expect, it } from 'vitest';
-import { intervallDerCrons, intervallStunden, neuOhneLaufRot } from '../../scripts/check-ci-laeufe.ts';
+import { hinzugefuegtAm, intervallDerCrons, intervallStunden, neuOhneLaufRot } from '../../scripts/check-ci-laeufe.ts';
 
 describe('intervallStunden', () => {
   it.each([
@@ -58,4 +58,20 @@ describe('neuOhneLaufRot', () => {
     expect(neuOhneLaufRot(24, 48)).toBe(false);
     expect(neuOhneLaufRot(72, 48)).toBe(true);
   });
+  it('Grenzfall: Alter == Kulanz → noch nicht rot', () => expect(neuOhneLaufRot(kulanz, kulanz)).toBe(false));
+});
+
+// Die Flach-Klon-Wache trägt die Fail-closed-Eigenschaft: im flachen Klon ist jede Datei
+// «neu» (ein Commit) — ohne Wache wäre der Wächter dort falsch-grün. git wird injiziert.
+describe('hinzugefuegtAm', () => {
+  const fake = (flach: string, ct: string) => (...a: string[]) =>
+    a[0] === 'rev-parse' ? flach : a[0] === 'log' ? ct : 'unerwartet';
+  it("flacher Klon ('true') → null, auch mit gültigem Zeitstempel", () =>
+    expect(hinzugefuegtAm('x.yml', fake('true', '1700000000'))).toBeNull());
+  it("is-shallow fehlgeschlagen ('') → null", () =>
+    expect(hinzugefuegtAm('x.yml', fake('', '1700000000'))).toBeNull());
+  it("voller Klon ('false') + Zeitstempel → ms", () =>
+    expect(hinzugefuegtAm('x.yml', fake('false', '1700000000'))).toBe(1_700_000_000_000));
+  it("voller Klon ('false') + leerer Log (nie hinzugefügt) → null", () =>
+    expect(hinzugefuegtAm('x.yml', fake('false', ''))).toBeNull());
 });
