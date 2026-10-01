@@ -2327,9 +2327,8 @@
      Die Rolle ist die häufigste Stufe (0.4, 7 von 11) plus der Cursor, den
      `.lc-btn:disabled` auch setzt. Deckkraft bleibt hier die Auskunft, weil
      sonst keine Auskunft bleibt; ein Griff mit Fläche nimmt stattdessen
-     `.lc-btn*`. Restposten ausserhalb der Rolle: Pane-Kopf/Tab-Panel (0.3) und
-     «Zur Frist»-Knopf in ZpoFristenForm (0.5) — eine Angleichung wäre sichtbar,
-     nicht optikneutral (Posten-Stand im PR). */
+     `.lc-btn*`. Restposten Pane-Kopf/Tab-Panel (0.3) und ZPO-Knopf (0.5):
+     seit 1.10.2026 auf der Rolle (Entscheid David (a), PR #1221). */
   .lc-deaktiviert:disabled { opacity: .4; cursor: not-allowed; }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   /* U2: dieselbe Umstellung wie `.lc-card`. Die Ergebnis-Kachel steht in

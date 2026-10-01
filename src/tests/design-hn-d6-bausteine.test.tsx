@@ -235,8 +235,10 @@ describe('Quelltext-Sonden — die alten Bauformen kommen nicht wieder', () => {
     }
     // Abweichende Hover-Stufen der Aktions-Fläche (`…-100/40`, `…-200`): SENK-Ratsche, Ist-Stand
     // 1.10.2026 = die zwei Leser-Dateien, die W2·27 parallel baut (TABU für P1; Nachzug dort).
-    const LESER_REST = ['pages/gesetz-leser/inhalt-ansichten.tsx', 'pages/gesetz-leser/parts/BezuegeZeile.tsx'];
-    const rest = alleTsx().filter((p) => /hover:bg-brass-(?:100\/40|200)\b/.test(liesOhneKommentare(p))).map(rel);
+    // TabPanel.tsx: Hover `/30` liegt bewusst UNTER dem Aktiv-Zustand `/50` (volle Stufe wäre
+    // dunkler als aktiv) — offen bei David (Notizen 1.10.2026), bis dahin benannter Rest.
+    const LESER_REST = ['pages/gesetz-leser/inhalt-ansichten.tsx', 'pages/gesetz-leser/parts/BezuegeZeile.tsx', 'components/layout/TabPanel.tsx'];
+    const rest = alleTsx().filter((p) => /hover:bg-brass-(?:100\/\d+|200)\b/.test(liesOhneKommentare(p))).map(rel);
     expect(rest.filter((d) => !LESER_REST.includes(d)), 'Hover der Aktion = `lc-hover-akzent` (brass-100), keine Handstufe').toEqual([]);
   });
 
