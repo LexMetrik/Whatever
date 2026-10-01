@@ -46,7 +46,11 @@ jobs:
     name: Geplante Workflows — cancelled/skipped zählen als ROT
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth 0 (1.10.2026, QS-MONITOR-ROT): check:ci-laeufe liest aus der Historie, seit
+      # wann ein Workflow ohne Lauf im Repo steht; im flachen Klon wäre jede Datei «neu».
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 22

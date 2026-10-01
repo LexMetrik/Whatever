@@ -5,14 +5,11 @@
 // abgebrochenen Lauf GRAU, nicht rot — in der Lauf-Liste sieht das aus wie
 // «nichts Besonderes». Der Suchindex veraltete eine ganze Woche unbemerkt.
 //
-// WARUM EIN TOR UND KEIN SATZ IN EINEM SKILL: Der erste Anlauf verankerte die
-// Regel «cancelled und skipped zählen als ROT» im Skill »landung« (Schritt 5).
-// Die adversariale Prüfung (20.7.2026) hat das zu Recht als unwirksam
-// beanstandet: der Skill wird nur geladen, wenn zufällig jemand gerade einen PR
-// landet. Ein Ausfall, der niemanden zum Landen bringt, bleibt genau so
-// unentdeckt wie am 13.7. Der Auslöser war falsch gewählt — Landung statt
-// Zeitablauf. Dieses Tor hängt an der Zeit: es fragt den tatsächlichen Zustand
-// der geplanten Workflows ab, unabhängig davon, was jemand gerade tut.
+// WARUM EIN TOR UND KEIN SATZ IN EINEM SKILL: der erste Anlauf verankerte
+// «cancelled und skipped zählen als ROT» im Skill »landung« (Schritt 5); die
+// adversariale Prüfung (20.7.2026) beanstandete das als unwirksam — der Skill
+// lädt nur, wenn jemand gerade landet, ein Ausfall bleibt wie am 13.7.
+// unentdeckt. Dieses Tor hängt an der Zeit, nicht an der Landung.
 //
 // PRÜFUNG je Workflow mit `schedule:`-Trigger:
 //   (1) Der JÜNGSTE abgeschlossene Lauf ist `success`. `cancelled`, `skipped`,
@@ -23,8 +20,8 @@
 //       niemandem auf, weil es keinen roten Lauf zu sehen gibt.
 //
 // KEIN STILLER SKIP (§6 Ziff. 7 lit. b): fehlt `gh` oder die Authentisierung,
-// meldet das Tor das sichtbar als SKIP mit Exit 0 — nie still grün, und nie
-// rot wegen einer fehlenden Voraussetzung, die nichts über den Zustand aussagt.
+// meldet das Tor das sichtbar als SKIP mit Exit 0 — nie still grün, nie rot
+// wegen einer fehlenden Voraussetzung.
 import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
 
@@ -34,14 +31,12 @@ const DIR = '.github/workflows';
 const STUNDE = 3_600_000;
 
 // ─── SELBSTAUSSCHLUSS (Reparatur 3.8.2026, Fehlerklasse K6) ──────────────────
-// Dieses Tor läuft SELBST als cron-Workflow (waechter.yml) und fand sich in der
-// eigenen Prüfmenge wieder: der GERADE LAUFENDE Lauf ist `in_progress` und fällt
-// aus der `completed`-Filterung, beurteilt wird also stets der VORIGE. War der
-// rot, wurde das Tor dadurch selbst rot und lieferte der nächsten Ausführung
-// erneut ein rotes Vorbild. BELEG: seit Anlage am 20.7.2026 fünfzehn Läufe,
-// fünfzehnmal `failure` (Lauf 30803981348). Der Ausschluss kostet keine
-// Abdeckung: scheitert dieser Workflow, steht sein roter Lauf in der Actions-
-// Liste — Fremdüberwachung des Wächters bliebe zirkulär, egal wer sie ausspricht.
+// Dieses Tor läuft SELBST als cron-Workflow (waechter.yml): der GERADE LAUFENDE
+// Lauf ist `in_progress` und fällt aus der `completed`-Filterung, beurteilt wird
+// stets der VORIGE — war der rot, wurde das Tor selbst rot und lieferte der
+// nächsten Ausführung ein rotes Vorbild. BELEG: seit Anlage am 20.7.2026
+// fünfzehn Läufe, fünfzehnmal `failure` (Lauf 30803981348). Keine Abdeckung
+// verloren: scheitert dieser Workflow, steht sein roter Lauf in der Actions-Liste.
 const SELBST = 'waechter.yml';
 
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
@@ -85,6 +80,18 @@ function git(...args: string[]): string {
   }
 }
 
+/** Seit wann (ms) die Datei im Repo steht (Commit, der sie hinzufügte); flacher Klon/unbekannt → null. */
+function hinzugefuegtAm(pfad: string): number | null {
+  if (git('rev-parse', '--is-shallow-repository') !== 'false') return null; // flach: jede Datei «neu» (falsch-grün)
+  const ct = Number(git('log', '--diff-filter=A', '--format=%ct', '-1', '--', pfad));
+  return ct > 0 ? ct * 1000 : null;
+}
+
+/** Noch kein Lauf: ROT erst, wenn die Datei älter ist als die Kulanz (QS-MONITOR-ROT 1.10.2026:
+ *  Monats-Workflow wäre einen Monat Falsch-Rot); Alter unbekannt (null) → ROT, kein stilles Grün. */
+export const neuOhneLaufRot = (dateiAlterH: number | null, kulanzH: number): boolean =>
+  dateiAlterH === null || dateiAlterH > kulanzH;
+
 /** (a) Zustand JEDES Workflows: letzter Lauf, Ergebnis, Alter in Tagen. */
 function abschnittWaechter(): void {
   console.log('── (a) Wächter-Zustand — letzter Lauf je Workflow ──────────────────────────');
@@ -124,8 +131,7 @@ function abschnittVerwaist(): number {
 
   const porcelain = git('worktree', 'list', '--porcelain');
   const bloecke = porcelain.split('\n\n').filter(Boolean);
-  // Der ERSTE Block ist stets das Haupt-Arbeitsverzeichnis — daran misst sich,
-  // was «ausserhalb des Repo-Verzeichnisses» heisst.
+  // Der ERSTE Block ist das Haupt-Arbeitsverzeichnis — Massstab für «ausserhalb».
   const wurzel = /^worktree (.+)$/m.exec(bloecke[0] ?? '')?.[1] ?? '';
   const mitWorktree = new Set<string>();
 
@@ -143,16 +149,14 @@ function abschnittVerwaist(): number {
       funde.push(`  ${pfad}: Worktree ohne Zweig (detached HEAD) — nicht zuordenbar.`);
       continue;
     }
-    // Leerer Diff gegen origin/main = der Inhalt steckt bereits in main. Bewusst
-    // der DIFF und nicht die Commit-Liste: bei --squash-Landung behält der Zweig
-    // seine Commits, sein Inhalt ist aber angekommen.
+    // Leerer Diff gegen origin/main = Inhalt steckt in main. Bewusst der DIFF, nicht
+    // die Commit-Liste: bei --squash-Landung behält der Zweig seine Commits.
     const abweichung = git('diff', '--stat', 'origin/main', zweig);
     if (!abweichung) {
-      // SPEC-SCHÄRFUNG 15.8.2026 (beim Bau aufgefallen, Fahrplan §3.1 nachgezogen):
-      // Der Diff allein genügt nicht. Ein Worktree, in dem GERADE gearbeitet wird,
-      // hat vor dem ersten Commit denselben leeren Diff wie ein abgeräumter — der
-      // Bericht meldete sich in seinem eigenen Bauverzeichnis als verwaist. Ein
-      // Melder, der Falschalarm gibt, wird weggeklickt; dann meldet er nichts mehr.
+      // SPEC-SCHÄRFUNG 15.8.2026 (Fahrplan §3.1 nachgezogen): der Diff allein genügt
+      // nicht — ein Worktree in Arbeit hat vor dem ersten Commit denselben leeren
+      // Diff wie ein abgeräumter (der Bericht meldete sich im eigenen Bauverzeichnis
+      // als verwaist). Ein Melder mit Falschalarm wird weggeklickt.
       const schmutzig = git('-C', pfad, 'status', '--porcelain');
       if (schmutzig) {
         console.log(`  ok: ${zweig} — in Arbeit (${schmutzig.split('\n').length} Datei(en) uncommittet).`);
@@ -164,8 +168,7 @@ function abschnittVerwaist(): number {
     }
   }
 
-  // Zweige OHNE Worktree gegen die offenen PRs: ein Zweig ohne PR und ohne
-  // Worktree, dessen Inhalt schon in main steht, ist Rest einer alten Session.
+  // Zweig ohne PR und ohne Worktree, dessen Inhalt in main steht = Rest einer alten Session.
   let prZweige = new Set<string>();
   try {
     const roh = execFileSync('gh', ['pr', 'list', '--state', 'open', '--json', 'headRefName'],
@@ -208,7 +211,6 @@ function bericht(): never {
   process.exit(0);
 }
 
-/** Hauptlauf — nur bei direktem CLI-Aufruf, nicht beim Import durch den Test. */
 function main(): void {
   try {
     execFileSync('gh', ['auth', 'status'], { stdio: 'ignore' });
@@ -217,17 +219,13 @@ function main(): void {
   }
 
   // ─── UNTERBEFEHL `--bericht` (QS-AUTOMATIK-BERICHT, Fahrplan §3.1) ───────────
-  // Neben dem Tor («ist ein geplanter Workflow kaputt?») beantwortet der Bericht,
-  // was es bis 15.8.2026 nur als Handarbeit gab: «wie geht es den Wächtern?» und
-  // «welche Zweige/Worktrees sind gelandet, aber nicht abgeräumt?». ABGRENZUNG:
-  // kein Teil von `check:seriell`/CI (misst eine ARBEITSMASCHINE, auf dem Runner
-  // bedeutungslos); findet er Verwaistes, endet er mit Exit 1 (§6.7).
+  // Bis 15.8.2026 nur Handarbeit: «wie geht es den Wächtern?» und «welche
+  // Zweige/Worktrees sind gelandet, aber nicht abgeräumt?». Kein Teil von
+  // `check:seriell`/CI (misst eine ARBEITSMASCHINE); Verwaistes → Exit 1 (§6.7).
   if (process.argv.includes('--bericht')) bericht();
 
-  // Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
-  // er stillschweigend nicht mehr und die Verriegelung kehrt zurück (§6.7 lit. b:
-  // nie still). Darum hier hart: existiert die Datei nicht, ist der Ausschluss
-  // ins Leere gelaufen und das Tor sagt es, statt weiterzulaufen.
+  // Der Selbstausschluss ist ein NAME: wird waechter.yml umbenannt, greift er still
+  // nicht mehr und K6 kehrt zurück (§6.7 lit. b) — darum hier hart ROT.
   if (!readdirSync(DIR).includes(SELBST)) {
     console.log(
       `check:ci-laeufe ROT — der Selbstausschluss zeigt auf '${DIR}/${SELBST}', ` +
@@ -260,7 +258,12 @@ function main(): void {
       .filter((l) => l.status === 'completed');
 
     if (!laeufe.length) {
-      fehler.push(`  ${datei}: kein einziger abgeschlossener Lauf — der Workflow startet nicht.`);
+      const seit = hinzugefuegtAm(`${DIR}/${datei}`);
+      if (neuOhneLaufRot(seit === null ? null : (Date.now() - seit) / STUNDE, stunden * 2)) {
+        fehler.push(`  ${datei}: kein einziger abgeschlossener Lauf — der Workflow startet nicht.`);
+      } else {
+        ok.push(`${datei} (neu seit ${new Date(seit!).toISOString().slice(0, 10)}, noch kein Lauf fällig)`);
+      }
       continue;
     }
 
