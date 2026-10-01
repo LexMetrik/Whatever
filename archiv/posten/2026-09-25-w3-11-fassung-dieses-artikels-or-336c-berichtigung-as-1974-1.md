@@ -15,3 +15,5 @@ galt: die Fussnote trägt es im Wortlaut («Ursprünglich: Bst. c, dann c. Einge
   (`ArtikelHistorie.tsx` — Darstellungsschicht, daher nicht in der Daten-Einheit W3-10/11 gebaut).
 - Datum: NICHT ableitbar. Die Fussnote datiert nur den folgenden «Eingefügt durch …»-Teil, nicht die
   Ur-Bezeichnung; ein Datum wäre geraten (§7) — bleibt leer.
+
+**Erledigt 2026-10-01:** PR #1249 (Commits 3524d1ec4 + ac17bf942): frueher im Shard und in ArtikelHistorie, Datum bleibt leer; Wurzel: Fussnotentext verlor Hochstellungen
