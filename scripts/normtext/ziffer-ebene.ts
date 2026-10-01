@@ -111,10 +111,8 @@ export function ordneZiffern(
       const z = zifferAbsatzNummer(quellen[i] ?? null);
       // Beginnt der Text mit einer ANDEREN Ziffer-Marke, die die Signatur nicht erkennt (MSchG 75: «3. Der …» mit
       // einfachem Leerzeichen nach «1. und 2. …»), erbt er die Vorgänger-Ziffer nicht — keine geratene Adresse (§1).
-      const fremd = z == null && aktuell != null && (() => {
-        const m = (b.text ?? '').match(/^(\d+[a-z]{0,12})\.\s/);
-        return m != null && !aktuell.split('_').includes(m[1]);
-      })();
+      const marke = (b.text ?? '').match(/^(\d+[a-z]{0,12})\.\s/)?.[1];
+      const fremd: boolean = z == null && aktuell != null && marke != null && !aktuell.split('_').includes(marke);
       aktuell = z ?? (fremd ? null : aktuell);
     }
     if (aktuell != null) b.ziffer = aktuell;
