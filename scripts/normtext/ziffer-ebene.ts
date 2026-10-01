@@ -59,22 +59,33 @@ export function zifferTitelZu(bloecke: unknown[], text: string): void {
   if (b) bloecke.push(b);
 }
 
-// «N.» + optional ein Fussnoten-<sup> + ZWEI &nbsp; — die Doppel-nbsp-Signatur
-// trennt die Ziffer-Absatz-Form sicher von Tagesdaten («1. Januar 2020 …») und
-// Bereichs-Auslassungen («2. und 3. …»); einfaches «1.&nbsp;Die» (SSV 116, FZV 24:
-// 3 von 909 Fällen im Pin-Korpus) bleibt bewusst unerkannt (§1: lieber keine
-// Adresse als eine geratene).
-const ABSATZ_ZIFFER_RE = new RegExp(
-  `^(?:\\s|</?inl>)*(${ZIFFER})\\.(?:<sup\\b[^>]*><a\\b[\\s\\S]*?</a></sup>)?&nbsp;&nbsp;(?!&nbsp;)`,
-);
+const FN = '(?:<sup\\b[^>]*><a\\b[\\s\\S]*?</a></sup>)?';
+const VOR = '^(?:\\s|</?inl>)*';
+// «N.» (+ lat. Suffix als <sup>: «1<sup>bis</sup>.») + optional ein Fussnoten-<sup> + ein oder zwei
+// &nbsp;. Die Doppel-nbsp-Signatur trennt die Ziffer-Absatz-Form von Tagesdaten («1. Januar 2020 …»);
+// Ausnahmen (B4/B1, Befund-Runde #1251): (a) die lat. Suffix-Form «1<sup>bis</sup>.» ist datumsfrei
+// eindeutig und gilt auch mit EINEM nbsp (StGB 305bis); (b) einfaches «1.&nbsp;Wer» (MStG 177,
+// SSV 116, FZV 24) gilt, solange kein Monatsname/keine Zahl folgt (`NICHT_DATUM`).
+const ABSATZ_ZIFFER_RE = new RegExp(`${VOR}(${ZIFFER})(?:<sup>(bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)</sup>)?\\.${FN}(&nbsp;(?:&nbsp;)?)(?!&nbsp;)`);
+const NICHT_DATUM =
+  /^(?:\d|(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember|Jan|Feb|Mär|Apr|Jun|Jul|Aug|Sep|Sept|Okt|Nov|Dez)\b)/;
+// Sammel-Ziffer «2. und 3. …» / «1.–2. …» (aufgehobener Bereich, MStG 122/131, VZV 145, SSV 116):
+// EIN Block für mehrere Ziffern. Wert «2_3» (Konvention der Sammel-Artikel `art_77_78`); das
+// Ellipsis trennt sicher von Fliesstext/Datum («1. und 2. Januar»).
+const SAMMEL_ZIFFER_RE = new RegExp(`${VOR}(${ZIFFER})\\.(?:&nbsp;|\\s)*(?:und|–|-)(?:&nbsp;|\\s)*(${ZIFFER})\\.${FN}(?:&nbsp;|\\s)*…`);
 
 /** Quell-Span eines Blocks (`<p class="absatz">…</p>`) → Ziffer der Absatz-Ziffer-Form oder null. */
 export function zifferAbsatzNummer(quellSpan: string | null): string | null {
   if (quellSpan == null) return null;
   const k = quellSpan.match(/^<p\b[^>]*\bclass="[^"]*\babsatz\b[^"]*"[^>]*>([\s\S]*)<\/p>$/i);
   if (k == null) return null;
+  const sm = k[1].match(SAMMEL_ZIFFER_RE);
+  if (sm) return `${sm[1]}_${sm[2]}`;
   const m = k[1].match(ABSATZ_ZIFFER_RE);
-  return m ? m[1] : null;
+  if (m == null) return null;
+  const einNbsp = m[3] === '&nbsp;';
+  if (einNbsp && m[2] == null && NICHT_DATUM.test(k[1].slice(m[0].length))) return null;
+  return m[1] + (m[2] ?? '');
 }
 
 /**

@@ -64,7 +64,8 @@ export function absatzNorm(a: string | null): string | null {
 function bestimmeZifferZiel(bloecke: Block[], passus: PassusInfo): PassusZiel | null {
   if (passus.ziff == null) return null;
   const n = markeNorm(passus.ziff);
-  const scope = bloecke.flatMap((b, i) => (b.ziffer != null && markeNorm(b.ziffer) === n ? [i] : []));
+  // Sammel-Ziffer «3_4» («3. und 4. …», Konvention `art_77_78`) gilt für jede ihrer Ziffern.
+  const scope = bloecke.flatMap((b, i) => (b.ziffer != null && markeNorm(b.ziffer).split('_').includes(n) ? [i] : []));
   if (scope.length === 0) return null;
   const inhalt = scope.filter((i) => bloecke[i].titel === undefined);
   let treffer = inhalt;

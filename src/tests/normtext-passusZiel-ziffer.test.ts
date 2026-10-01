@@ -93,6 +93,31 @@ describe('Ziffer-Ebene — Absatz-Ziffern (StGB)', () => {
   });
 });
 
+describe('Ziffer-Ebene — «Nbis» und Sammel-Ziffern (Befund-Runde #1251, B1/B2/B3)', () => {
+  // StGB Art. 187-Form: Ziffer 1, 1bis, 2; MStG Art. 122-Form: Sammel-Ziffer «2_3».
+  const bis: B = [
+    { absatz: null, text: '1. Wer mit einem Kind …', ziffer: '1' },
+    { absatz: null, text: 'wird bestraft.', ziffer: '1' },
+    { absatz: null, text: '1bis. Hat das Kind das 12. Altersjahr noch nicht erreicht …', ziffer: '1bis' },
+    { absatz: null, text: '2. Die Handlung ist nicht strafbar …', ziffer: '2' },
+    { absatz: null, text: '3. und 4. …', ziffer: '3_4' },
+  ];
+
+  it('«Art. 187 Ziff. 1bis» markiert genau den 1bis-Block', () => {
+    expect([...ziel(bis, 'Art. 187 Ziff. 1bis StGB').zielBloecke!]).toEqual([2]);
+  });
+
+  it('«Art. 187 Ziff. 1» markiert den 1bis-Block NICHT mit', () => {
+    expect([...ziel(bis, 'Art. 187 Ziff. 1 StGB').zielBloecke!]).toEqual([0, 1]);
+  });
+
+  it('Sammel-Ziffer «3_4»: «Ziff. 4» und «Ziff. 3» treffen den Sammelblock, «Ziff. 5» nicht', () => {
+    expect([...ziel(bis, 'Art. 122 Ziff. 4 MStG').zielBloecke!]).toEqual([4]);
+    expect([...ziel(bis, 'Art. 122 Ziff. 3 MStG').zielBloecke!]).toEqual([4]);
+    expect(ziel(bis, 'Art. 122 Ziff. 5 MStG').zielBloecke).toBeUndefined();
+  });
+});
+
 describe('Ziffer-Ebene — Rückfall auf die Legacy-Auflösung (kein Verhalten ändert sich ohne ziffer)', () => {
   const legacy: B = [
     { absatz: '2', text: 'Zweiter Absatz:', items: [{ marke: '3', text: 'dritte Ziffer;' }, { marke: '4', text: 'vierte Ziffer.' }] },
