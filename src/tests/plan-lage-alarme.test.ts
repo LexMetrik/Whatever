@@ -59,8 +59,8 @@ describe('sammleAlarme — ein gh-Aufruf, Ausfall = Hinweiszeile', () => {
 
   it('Timeout bzw. fehlendes gh → Grund kurz, nie Wurf', () => {
     const wirf = (code: string): Laufe => () => { throw Object.assign(new Error('x'), { code }); };
-    expect(sammleAlarme(wirf('ETIMEDOUT'))).toBe('🚨 Alarme: nicht abrufbar (Timeout)');
-    expect(sammleAlarme(wirf('ENOENT'))).toBe('🚨 Alarme: nicht abrufbar (gh fehlt)');
+    expect(sammleAlarme(wirf('ETIMEDOUT'))).toBe('🚨 Alarme: nicht abrufbar (ETIMEDOUT)');
+    expect(sammleAlarme(wirf('ENOENT'))).toBe('🚨 Alarme: nicht abrufbar (ENOENT)');
     expect(sammleAlarme(() => { throw new Error('exit 1'); })).toBe('🚨 Alarme: nicht abrufbar (gh-Fehler)');
   });
 
@@ -70,7 +70,7 @@ describe('sammleAlarme — ein gh-Aufruf, Ausfall = Hinweiszeile', () => {
       return '';
     };
     const z = lageBlock([], [], { prs: false, laufe });
-    expect(z[2]).toBe('🚨 Alarme: nicht abrufbar (Timeout)');
+    expect(z[2]).toBe('🚨 Alarme: nicht abrufbar (ETIMEDOUT)');
     expect(z.filter((s) => s.startsWith('⚠️'))).toEqual([]);
   });
 });

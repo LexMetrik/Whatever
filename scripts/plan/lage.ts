@@ -4,9 +4,8 @@
 //
 // Bauregeln: (1) Nie crashen, immer degradieren (§8): Ausfälle = EINE Hinweiszeile.
 // (2) Netzfrei per Default, `gh` nur mit `--prs` — Ausnahme Alarm-Zeile (Entscheid
-// David 1.10.2026): ein gh-Aufruf mit hartem Timeout, sonst Hinweiszeile. (3) Nichts Bestehendes
-// verschieben. Seit 5.8.2026 (`QS-PLAN-WIP-FRISCHE`) auch «stimmt das noch»
-// (`staleWip()`); nicht abfragbare git-Lage erzeugt dort KEINE Warnung.
+// David 1.10.2026): ein gh-Aufruf mit hartem Timeout, sonst Hinweiszeile.
+// (3) Nichts Bestehendes verschieben.
 //
 // Eigener Runner statt `sh()` aus bildDaten.ts: hartes Timeout (`gh` ohne Netz
 // hängt sonst am Pflicht-Einstieg) und `plan:next` bleibt importfrei gegenüber dem
@@ -53,7 +52,6 @@ export interface LageRoh {
   gelandet?: ReadonlySet<string>;
   /** Kurznamen der Remote-Zweige `origin/dependabot/*`; `null` = nicht abfragbar, fehlt = nicht erhoben. */
   dependabot?: string[] | null;
-  /** Fertige Alarm-Zeile (`alarmZeile`); fehlt = nicht erhoben. */
   alarme?: string;
 }
 
@@ -212,11 +210,7 @@ export function sammleDependabot(laufe: Laufe): string[] | null {
 const TRENNER = ' · ';
 const ALARM = '🚨 Alarme: ';
 
-/**
- * Offene Alarm-Zettel der geplanten Workflows (Label `alarm:*`, QS-MONITOR-ROT):
- * vorher las sie niemand (#750: 25 Bot-Kommentare). Titel bleiben fremder Text
- * (§14.7) — ausgegeben werden nur Nummer, Label, Anlagedatum, ESKALATION-Präfix.
- */
+/** Offene `alarm:*`-Zettel; Titel = fremder Text (§14.7), nur das Präfix ESKALATION zählt. */
 export function alarmZeile(json: string): string {
   try {
     const liste: { number: number; title: string; created_at: string; labels: { name: string }[]; pull_request?: unknown }[] =
@@ -226,10 +220,8 @@ export function alarmZeile(json: string): string {
       .map((i) => ({ i, l: i.labels.find((l) => l.name.startsWith('alarm:'))?.name.slice(6) }))
       .filter((x) => x.l)
       .sort((a, b) => a.i.number - b.i.number)
-      .map(({ i, l }) => {
-        const [, m, t] = i.created_at.slice(0, 10).split('-').map(Number);
-        return `#${i.number} ${l} (seit ${t}.${m}.${i.title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`;
-      });
+      .map(({ i: { number, created_at: d, title }, l }) =>
+        `#${number} ${l} (seit ${+d.slice(8, 10)}.${+d.slice(5, 7)}.${title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`);
     return ALARM + (z.length ? z.join(TRENNER) : '— (keine offenen)');
   } catch {
     return `${ALARM}nicht abrufbar (Antwort unlesbar)`;
@@ -240,8 +232,7 @@ export function sammleAlarme(laufe: Laufe): string {
   try {
     return alarmZeile(laufe('gh', ['api', 'repos/{owner}/{repo}/issues?state=open&creator=github-actions%5Bbot%5D&per_page=50']));
   } catch (e) {
-    const c = (e as { code?: string }).code;
-    return `${ALARM}nicht abrufbar (${c === 'ETIMEDOUT' ? 'Timeout' : c === 'ENOENT' ? 'gh fehlt' : 'gh-Fehler'})`;
+    return `${ALARM}nicht abrufbar (${(e as { code?: string }).code ?? 'gh-Fehler'})`;
   }
 }
 
