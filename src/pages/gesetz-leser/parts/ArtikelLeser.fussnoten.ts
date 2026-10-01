@@ -142,7 +142,9 @@ export function verteileFussnoten(fussAnzeige: Fussnote[], bloecke: Bloecke): Fu
     // Ende SEINES Blocks (0-basierter Index vom Extraktor) statt auf der Artikelebene.
     // Defensiv: Index im Bereich UND Zielblock wirklich absatzlos (gegen Sidecar-Drift).
     if (idx < 0 && f.absatzIndex != null && f.absatzIndex >= 0 && f.absatzIndex < e.bloecke.length
-        && e.bloecke[f.absatzIndex].absatz == null) idx = f.absatzIndex;
+        && e.bloecke[f.absatzIndex].absatz == null
+        // P6: ein titel-Block (Ziffer-Überschrift) hat keinen Marker-Slot — Artikelebene statt Verlust.
+        && e.bloecke[f.absatzIndex].titel === undefined) idx = f.absatzIndex;
     if (f.item && idx < 0) idx = e.bloecke.findIndex((b) => (b.items ?? []).some((it) => it.marke === f.item));
     if (idx >= 0 && f.item && (e.bloecke[idx].items ?? []).some((it) => it.marke === f.item)) {
       (fnProItem[`${idx}|${f.item}`] ??= []).push(f.nr); // Fussnote am lit/Ziff-Item
