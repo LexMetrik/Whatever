@@ -5499,7 +5499,10 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    vorher @1440 hell/dunkel auf `/gesetze/bund/OR`: Overline «Bundesgesetz» im Band
    stand in `reg-g` auf `reg-g-flaeche` (6.48/6.84:1, bestanden, aber verboten);
    die kursive Literata aus ③ bleibt, nur die Farbe wird ink-600. */
-.lc-route[data-reg] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
+/* Nachzug Zweitprüfung 1.10.2026: dieselbe Farb-Ausnahme wie DK-16 (`:where(:not(…))`,
+   Spezifität unverändert (0,4,0)) — eine `lc-overline text-danger-*` im Band behält
+   ihre Warnfarbe (§8), statt still auf ink-600 zu fallen. */
+.lc-route[data-reg] .lc-titelblatt-band .lc-overline:where(:not([class^="text-"], [class*=" text-"], [class*=":text-"])) { color: var(--ink-600); }
 .lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }
 
 /* ═══ Rechner: Eingabe ‖ Ergebnis (W2·31-BILDSCHIRMBREITE B3, 25.9.2026) ═════
