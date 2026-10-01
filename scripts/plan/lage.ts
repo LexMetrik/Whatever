@@ -50,10 +50,7 @@ export interface LageRoh {
    * Bau-Spur — «nicht gemessen» ist nie «gelandet» (fail-closed, W2·27-BUND-FERTIG).
    */
   gelandet?: ReadonlySet<string>;
-  /**
-   * Kurznamen der Remote-Zweige `origin/dependabot/*` (netzfrei, aus den lokalen
-   * Remote-Refs). `null` = nicht abfragbar, fehlt = nicht erhoben (keine Zeile).
-   */
+  /** Kurznamen der Remote-Zweige `origin/dependabot/*`; `null` = nicht abfragbar, fehlt = nicht erhoben. */
   dependabot?: string[] | null;
 }
 
@@ -205,10 +202,8 @@ export function sammleLage(
 
 /** Offene Dependabot-Zweige aus den Remote-Refs (netzfrei); `null` bei Ausfall. */
 export function sammleDependabot(laufe: Laufe): string[] | null {
-  const PRAEFIX = 'origin/dependabot/';
-  const aus = stillLaufen(laufe, 'git', ['for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin/dependabot/']);
-  if (aus === null) return null;
-  return aus.split('\n').map((r) => r.trim()).filter((r) => r.startsWith(PRAEFIX)).map((r) => r.slice(PRAEFIX.length)).sort();
+  const aus = stillLaufen(laufe, 'git', ['for-each-ref', '--format=%(refname:lstrip=4)', 'refs/remotes/origin/dependabot/']);
+  return aus === null ? null : aus.split('\n').map((r) => r.trim()).filter(Boolean).sort();
 }
 
 const TRENNER = ' · ';

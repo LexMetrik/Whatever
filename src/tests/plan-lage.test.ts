@@ -510,7 +510,7 @@ describe('Dependabot-Zweige — Zeile im Lage-Block', () => {
   });
 
   it('sammleDependabot: liest Remote-Refs, kürzt den Präfix, sortiert; leer → []', () => {
-    const laufe = vi.fn(runner({ 'git for-each-ref': 'origin/dependabot/npm_and_yarn/b-2\norigin/dependabot/github_actions/a-1\n' }));
+    const laufe = vi.fn(runner({ 'git for-each-ref': 'npm_and_yarn/b-2\ngithub_actions/a-1\n' }));
     expect(sammleDependabot(laufe)).toEqual(['github_actions/a-1', 'npm_and_yarn/b-2']);
     expect(laufe.mock.calls[0][1]).toContain('refs/remotes/origin/dependabot/');
     expect(sammleDependabot(runner({ 'git for-each-ref': '' }))).toEqual([]);
@@ -522,7 +522,7 @@ describe('Dependabot-Zweige — Zeile im Lage-Block', () => {
 
   it('lageBlock verdrahtet die Zeile; Ausfall landet in der einen Hinweiszeile', () => {
     const basis = { 'git worktree': PORCELAIN, 'git branch': BRANCHES };
-    const mit = lageBlock([], [], { prs: false, laufe: runner({ ...basis, 'git for-each-ref': 'origin/dependabot/npm_and_yarn/dompurify-3.4.16' }) });
+    const mit = lageBlock([], [], { prs: false, laufe: runner({ ...basis, 'git for-each-ref': 'npm_and_yarn/dompurify-3.4.16' }) });
     expect(dep(mit)).toEqual([expect.stringMatching(/^🤖 Dependabot: 1 offener Zweig \(npm_and_yarn\/dompurify-3\.4\.16\)/)]);
     expect(mit.filter((z) => z.startsWith('⚠️'))).toEqual([]);
     const aus = lageBlock([], [], { prs: false, laufe: runner({ ...basis, 'git for-each-ref': new Error('x') }) });
