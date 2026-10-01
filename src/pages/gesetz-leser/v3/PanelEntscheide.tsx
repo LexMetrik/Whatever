@@ -128,9 +128,7 @@ function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
   // Teil-Kennzeichen wird benannt statt nackt gesetzt (Herleitung an den
   // Funktionen in `./entscheideOrdnung`).
   const regeste = b.regesteKurz ? regesteTeil(b.regesteKurz) : null;
-  // W2·17 PE-E1-B01: ein Platzhalterdatum (`datumUnbekannt`, kantonal ohne
-  // publiziertes Datum, z. B. DGS.2025.13 mit 2025-01-01) steht als «2025, o. D.»,
-  // nie als erfundenes «01.01.2025» (§8) — dieselbe Zelle wie `EntscheidZeile`.
+  // PE-E1-B01: Platzhalterdatum (`datumUnbekannt`) als «2025, o. D.», nie als echtes Datum (§8).
   return (
     <li data-v3-panel-entscheid={b.key} className="border-l-2 border-t border-line border-l-reg-r py-2 pl-2.5">
       <KanteMitVorschau
@@ -150,13 +148,6 @@ function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
   );
 }
 
-// F9 (Trefferfläche aus dem Token): das ⓘ ist optisch ein 12-px-Zeichen in der
-// Overline-Zeile; die 24-px-Hitbox (`--tap-ziel`, WCAG 2.5.8) hängt als `::after`
-// daran und lässt die Zeilenhöhe des Gruppenkopfs unberührt (Muster
-// `SelectionGrid.PILLE_HITBOX`).
-const HINWEIS_HITBOX = 'relative after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 '
-  + 'after:-translate-y-1/2 after:h-[var(--tap-ziel)] after:w-[var(--tap-ziel)] after:content-[\'\']';
-
 /**
  * EINE Gruppe des Reiters mit ihrer Portion (S6-W1b, Entscheid David 23.9.2026
  * und D-4). Der Stand «wie viele sichtbar» ist Blick-Zustand, kein gemerkter
@@ -171,13 +162,8 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
   g: EntscheidGruppe; gesamt: number; artikelLabel: string | null; bestimmungsWort: BestimmungsWort; normZitat: string;
   aktArtikel: string | null; revisionShard: RevisionShard | null;
 }) {
-  // W2·17 PE-E1-B03 / PE-E2-B01: der Zustand ist die GEWÜNSCHTE Portion (nie unter
-  // der ersten); wie viele DAVON stehen, ergibt sich erst beim Rendern aus der
-  // gerade vorliegenden Gruppe. Vorher stand hier `Math.min(ERSTE_PORTION, liste.length)`
-  // als Anfangswert: wurde die Gruppe mit 2 Einträgen eingeblendet (enger Zeitraum),
-  // blieb sie nach dem Weiten bei 2 statt 5 — der `key` trägt den Filter nicht.
-  // Verengt der Filter die Gruppe, klammert `zeige` nach unten; ein früheres
-  // «weitere» bleibt dabei erhalten, solange die Gruppe es hergibt.
+  // PE-E1-B03/E2-B01: gemerkt wird die GEWÜNSCHTE Portion, nicht `min(5, Gruppengrösse)`
+  // beim Mounten (das fror ein: mit 2 eingeblendet, nach dem Weiten blieb es bei 2).
   const [portion, setPortion] = useState(ERSTE_PORTION);
   const sichtbar = Math.min(portion, g.liste.length);
   const [hinweisOffen, setHinweisOffen] = useState(false);
@@ -192,9 +178,7 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
   }, [sichtbar]);
   const offen = g.liste.length - sichtbar;
   const statusLabel = STATUS_LABEL[g.status];
-  // W2·17 PE-E5-B02: verkürzt der Zeitraum die Gruppe, sagt der Kopf «2 von 8» —
-  // sonst behauptete der Fusssatz der Zeitwahl («die Zahl an der Gruppe nennt
-  // weiterhin den gesamten Bestand») etwas, das die gefilterte Zahl nicht trägt (§8).
+  // PE-E5-B02: verkürzt der Zeitraum die Gruppe, sagt der Kopf «2 von 8» (§8).
   const zahlTeil = gesamt > g.liste.length ? `${zahl(g.liste.length)} von ${zahl(gesamt)}` : g.liste.length;
   return (
     <section data-v3-panel-gruppe={g.status} data-v3-panel-gericht={g.gericht ?? undefined}
@@ -205,7 +189,9 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
           (Ä106). Sein `normal-case` bleibt (anders als am Zähler ist es
           dort NICHT tot: `text-transform: uppercase` bildet «ⓘ»
           U+24D8 auf «Ⓘ» U+24BE ab). Die Zahl ist die GANZE Gruppe — was
-          davon noch aussteht, sagt der Knopf am Ende (eine Zahl je Aussage). */}
+          davon noch aussteht, sagt der Knopf am Ende (eine Zahl je Aussage).
+          PE-E1-D01: das ⓘ ist ein Knopf (Tastatur, Touch), `lc-btn-mini` = Haus-Rezept
+          mit 24-px-Fläche (F9); Rand ruhig durchsichtig, `-my-1` hält die Zeilenhöhe. */}
       <GruppenKopf
         als="p" dicht
         title={`${g.gericht ? g.titel : statusLabel} — ${zahlTeil} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}
@@ -216,9 +202,7 @@ function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtike
           <button type="button" onClick={() => setHinweisOffen((v) => !v)}
             aria-expanded={hinweisOffen} aria-controls={hinweisOffen ? hinweisId : undefined}
             aria-label="Was der Klammerzusatz zum Bundesgericht bedeutet" title={WEITERZUG_ERKLAERUNG}
-            className={`${HINWEIS_HITBOX} ml-1 inline-block cursor-help normal-case font-normal text-ink-500 hover:text-ink-900`}>
-            ⓘ
-          </button>
+            className="lc-btn-mini -my-1 ml-0.5 border-transparent normal-case font-normal text-ink-500">ⓘ</button>
         ) : undefined}
       />
       {hinweisOffen && (
@@ -339,10 +323,8 @@ export function PanelEntscheide({
   onBereich: (von: string, bis: string) => void;
 }) {
   const gruppen = ordneEntscheide(kanten ?? []);
-  // PE-E5-B02: Gesamtbestand JE GRUPPE nur dann nachschlagen, wenn ein Zeitraum
-  // wirkt — sonst ist er die gefilterte Zahl (kein zweiter Gruppierungslauf, §15).
-  // Kanton und Instanz schneiden GANZE Gruppen ab, nie einzelne Zeilen einer Gruppe;
-  // darum ist der Unterschied allein der Zeitraum.
+  // PE-E5-B02: Gesamtbestand je Gruppe nur bei wirkendem Zeitraum (Kanton/Instanz
+  // schneiden ganze Gruppen ab, nie Zeilen; kein zweiter Gruppierungslauf sonst, §15).
   const gesamtJeGruppe = istBereichOffen(bereich) ? null
     : new Map(ordneEntscheide(alleKanten ?? []).map((g) => [g.id, g.liste.length]));
   const gefiltert = gruppen.length === 0
@@ -385,11 +367,8 @@ export function PanelEntscheide({
         </p>
       ) : fehler ? (
         <div data-v3-panel-lage="fehler" role="status" className="px-3 py-3 text-body-s text-ink-600">
-          {/* PE-E3-B02: «bei bestehender Verbindung wird es von selbst erneut versucht»
-              stimmte nur nach einem Verbindungsabbruch — der Selbst-Neuversuch hängt am
-              `online`-Ereignis (`useBezuege`), bei einem 5xx mit bestehender Verbindung
-              feuert es nie (gemessen: 503, 15 s gewartet, ein Abruf). Der Satz sagt jetzt,
-              was geschieht, und der Knopf ist der Weg für den Rest. */}
+          {/* PE-E3-B02: der Selbst-Neuversuch hängt am `online`-Ereignis (`useBezuege`);
+              bei 5xx mit Verbindung feuert es nie — der Satz sagt, was geschieht. */}
           <p>
             Die Entscheide konnten nicht geladen werden. Das sagt nichts über den Bestand —
             nach einem Verbindungsabbruch wird beim Wiederverbinden von selbst neu geladen,
@@ -405,10 +384,7 @@ export function PanelEntscheide({
       ) : !geladen ? (
         <p data-v3-panel-lage="laedt" className="px-3 py-3 text-body-s text-ink-600">Entscheide werden geladen …</p>
       ) : gefiltert ? (
-        // PE-E3-B01: Zeitraum/Kanton blenden alles aus, obwohl am Artikel Entscheide
-        // der eingeschalteten Instanzen stehen — das ist eine Aussage über den Filter,
-        // nicht über den Bestand. «Bestand» bleibt der Lage vorbehalten, in der es
-        // am Artikel wirklich nichts gibt.
+        // PE-E3-B01: Zeitraum/Kanton blenden alles aus — eine Aussage über den Filter, nicht den Bestand.
         <p data-v3-panel-lage="gefiltert" className="px-3 py-3 text-body-s text-ink-600">{gefiltert}</p>
       ) : gruppen.length === 0 ? (
         <p data-v3-panel-lage="bestand" className="px-3 py-3 text-body-s text-ink-600">
