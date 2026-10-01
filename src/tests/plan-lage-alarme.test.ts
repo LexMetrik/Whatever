@@ -43,6 +43,7 @@ describe('alarmZeile — reine Formatierung über die Issues-Antwort', () => {
   it('kaputtes JSON / kein Array → Hinweiszeile, kein Wurf', () => {
     expect(alarmZeile('{"message": "Bad cred')).toBe('🚨 Alarme: nicht abrufbar (Antwort unlesbar)');
     expect(alarmZeile('{"message":"Bad credentials"}')).toBe('🚨 Alarme: nicht abrufbar (Antwort unlesbar)');
+    expect(alarmZeile('[{"number":1}]')).toBe('🚨 Alarme: nicht abrufbar (Antwort unlesbar)');
   });
 });
 

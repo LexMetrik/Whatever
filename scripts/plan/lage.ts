@@ -3,7 +3,8 @@
 // Bau ist — ohne SessionStart-Hook (zerstörte den Prompt-Cache; QS-TOK/T19).
 //
 // Bauregeln: (1) Nie crashen, immer degradieren (§8): Ausfälle = EINE Hinweiszeile.
-// (2) Netzfrei per Default, `gh` nur mit `--prs`. (3) Nichts Bestehendes
+// (2) Netzfrei per Default, `gh` nur mit `--prs` — Ausnahme Alarm-Zeile (Entscheid
+// David 1.10.2026): ein gh-Aufruf mit hartem Timeout, sonst Hinweiszeile. (3) Nichts Bestehendes
 // verschieben. Seit 5.8.2026 (`QS-PLAN-WIP-FRISCHE`) auch «stimmt das noch»
 // (`staleWip()`); nicht abfragbare git-Lage erzeugt dort KEINE Warnung.
 //
@@ -52,6 +53,8 @@ export interface LageRoh {
   gelandet?: ReadonlySet<string>;
   /** Kurznamen der Remote-Zweige `origin/dependabot/*`; `null` = nicht abfragbar, fehlt = nicht erhoben. */
   dependabot?: string[] | null;
+  /** Fertige Alarm-Zeile (`alarmZeile`); fehlt = nicht erhoben. */
+  alarme?: string;
 }
 
 /**
@@ -207,6 +210,40 @@ export function sammleDependabot(laufe: Laufe): string[] | null {
 }
 
 const TRENNER = ' · ';
+const ALARM = '🚨 Alarme: ';
+
+/**
+ * Offene Alarm-Zettel der geplanten Workflows (Label `alarm:*`, QS-MONITOR-ROT):
+ * vorher las sie niemand (#750: 25 Bot-Kommentare). Titel bleiben fremder Text
+ * (§14.7) — ausgegeben werden nur Nummer, Label, Anlagedatum, ESKALATION-Präfix.
+ */
+export function alarmZeile(json: string): string {
+  try {
+    const liste: { number: number; title: string; created_at: string; labels: { name: string }[]; pull_request?: unknown }[] =
+      JSON.parse(json);
+    const z = liste
+      .filter((i) => !i.pull_request)
+      .map((i) => ({ i, l: i.labels.find((l) => l.name.startsWith('alarm:'))?.name.slice(6) }))
+      .filter((x) => x.l)
+      .sort((a, b) => a.i.number - b.i.number)
+      .map(({ i, l }) => {
+        const [, m, t] = i.created_at.slice(0, 10).split('-').map(Number);
+        return `#${i.number} ${l} (seit ${t}.${m}.${i.title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`;
+      });
+    return ALARM + (z.length ? z.join(TRENNER) : '— (keine offenen)');
+  } catch {
+    return `${ALARM}nicht abrufbar (Antwort unlesbar)`;
+  }
+}
+
+export function sammleAlarme(laufe: Laufe): string {
+  try {
+    return alarmZeile(laufe('gh', ['api', 'repos/{owner}/{repo}/issues?state=open&creator=github-actions%5Bbot%5D&per_page=50']));
+  } catch (e) {
+    const c = (e as { code?: string }).code;
+    return `${ALARM}nicht abrufbar (${c === 'ETIMEDOUT' ? 'Timeout' : c === 'ENOENT' ? 'gh fehlt' : 'gh-Fehler'})`;
+  }
+}
 
 /**
  * **Frische-Prüfung «stale wip»** (`QS-PLAN-WIP-FRISCHE`): die `wip`-Schritte
@@ -270,6 +307,7 @@ function bezug(name: string, ids: string[]): string {
 /** Formatiert den Lage-Block. Reine Funktion über `LageRoh` — im Test ohne git/gh prüfbar. */
 export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
   const z: string[] = ['', '── Lage: was gerade im Bau ist (Sichtbarkeit für Parallel-Sessions) ──'];
+  if (roh.alarme) z.push(roh.alarme);
 
   if (roh.wip.length === 0) {
     z.push('🔨 belegte Flächen (wip): — (kein Schritt auf wip)');
@@ -355,5 +393,6 @@ export function lageBlock(
   const roh = sammleLage(wipFlaechen(einheiten, inArbeit), opt);
   roh.dependabot = sammleDependabot(opt.laufe ?? laufeEcht);
   if (roh.dependabot === null) roh.ausfaelle.push('git for-each-ref (dependabot)');
+  roh.alarme = sammleAlarme(opt.laufe ?? laufeEcht);
   return lageZeilen(roh, einheiten.map((e) => e.id));
 }
