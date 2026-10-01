@@ -1,9 +1,9 @@
 {
  "erlass": "KAG",
  "abdeckung": {
-  "fussnoten": 252,
+  "fussnoten": 250,
   "ereignis": 196,
-  "referenz": 56,
+  "referenz": 54,
   "unparsed": 0
  },
  "artikel": {
@@ -1262,20 +1262,20 @@
    ]
   },
   "46": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2015-07-01",
+     "typ": "fassung",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
@@ -3956,11 +3956,11 @@
    ]
   },
   "46_a": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2015-07-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -3974,8 +3974,26 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "75_77": {
    "giltSeit": null,

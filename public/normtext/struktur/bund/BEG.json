@@ -1,11 +1,11 @@
 {
- "erzeugt": "2026-09-14",
- "stand": "2023-01-01",
- "fassungsToken": "20230101",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "957.1",
   "titel": "Bundesgesetz über Bucheffekten",
-  "erlassdatum": "vom 3. Oktober 2008 (Stand am 1. Januar 2023)",
+  "erlassdatum": "vom 3. Oktober 2008 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -1064,7 +1064,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "43",
+     "nr": "42",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1081,7 +1081,7 @@
      "kl": "A"
     },
     {
-     "nr": "44",
+     "nr": "43",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1122,7 +1122,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "45",
+     "nr": "44",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1158,7 +1158,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "46",
+     "nr": "45",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1194,7 +1194,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "47",
+     "nr": "46",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -1214,7 +1214,7 @@
      "kl": "V"
     },
     {
-     "nr": "48",
+     "nr": "47",
      "text": "Fassung gemäss Anhang Ziff. 29 des BG vom 15. Juni 2018 (Revision des Verjährungsrechts), in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5343; BBl <b>2014</b> 235).",
      "links": [
       {
@@ -1255,7 +1255,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "49",
+     "nr": "48",
      "text": "Fassung gemäss Anhang Ziff. 29 des BG vom 15. Juni 2018 (Revision des Verjährungsrechts), in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5343; BBl <b>2014</b> 235).",
      "links": [
       {
@@ -1296,7 +1296,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "50",
+     "nr": "49",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -1315,7 +1315,7 @@
      "kl": "V"
     },
     {
-     "nr": "51",
+     "nr": "50",
      "text": "Fassung gemäss Anhang Ziff. 29 des BG vom 15. Juni 2018 (Revision des Verjährungsrechts), in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5343; BBl <b>2014</b> 235).",
      "links": [
       {
@@ -1356,7 +1356,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "52",
+     "nr": "51",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1378,7 +1378,7 @@
      "kl": "A"
     },
     {
-     "nr": "53",
+     "nr": "52",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1414,7 +1414,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "54",
+     "nr": "53",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -1461,7 +1461,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "55",
+     "nr": "54",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -1518,7 +1518,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "56",
+     "nr": "55",
      "text": "BRB vom 6. Mai 2009",
      "links": [],
      "absatz": null,
@@ -1602,13 +1602,11 @@
      "eId": "chap_4/sec_3"
     }
    ],
-   "marginalie": [
-    "Weiterleitung von Informationen"
-   ],
+   "marginalie": [],
    "fussnoten": [
     {
      "nr": "41",
-     "text": "Eingefügt durch Ziff. I 8 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière, in Kraft seit 1. Juli 2015 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
+     "text": "Eingefügt durch Ziff. I 8 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015 </b>1389; BBl <b>2014 </b>605). Aufgehoben durch Anhang Ziff. 12 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, mit Wirkung seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015 </b>1389",
@@ -1617,31 +1615,19 @@
       {
        "label": "BBl <b>2014 </b>605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      },
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null,
      "kl": "A"
-    },
-    {
-     "nr": "42",
-     "text": "SR <b>220</b>",
-     "links": [
-      {
-       "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
-       "rs": "220"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "absatzIndex": 0,
-     "pos": {
-      "b": 0,
-      "o": 109,
-      "l": 273
-     },
-     "kl": "V"
     }
    ]
   },

@@ -1,7 +1,7 @@
 {
   "erlassKey": "SSV",
   "sr": "741.21",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -13,12 +13,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/438/de",
-      "sha": "23afff5828c8aeda5230a2ac60c27f4568077a22fde4fc747c2d62dad4692661"
+      "sha": "0bfc07bc68088386daedf9d6b8ddbb92f5436807466b9c92821aa0a497f56882"
     },
     {
       "art": "aenderung",
@@ -29,12 +28,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/453/de",
-      "sha": "d2db2d412894584b7e2f771ee166a1393bc1cdc51445f12288e472c5fb21cb28"
+      "sha": "abd508820adbc03ba219a54a839b7e4ba641d5967de76cfb4b64b153ec67ce48"
     },
     {
       "art": "aenderung",
@@ -45,12 +43,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/458/de",
-      "sha": "93ee303d307811f0645e7e08a730583f034c4214b40eddc871a8f33e4d32d2cc"
+      "sha": "a531acbef91eb95bbc3387ad0d1c262411f71731035076782d0b2587cfe7986b"
     },
     {
       "art": "aenderung",
@@ -825,5 +822,5 @@
       "sha": "24e9b82b2df984176466e780b6579d9d681776fe895c6b58dd884b6a538d52f1"
     }
   ],
-  "sha": "f72b8d4d8c7826594a2ba5ccbdca7ec8d203277cd5815aab1417047b173a5ea8"
+  "sha": "aca918e806c29cb012df8eb9cb994652fc448133cf14c85b33ae0b3d95cf92dc"
 }

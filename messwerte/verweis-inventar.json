@@ -7,18 +7,18 @@
   },
   "korpus": {
     "erlasse": 1570,
-    "eintraege": 60511,
-    "texte": 214853
+    "eintraege": 60527,
+    "texte": 214946
   },
   "gesamt": {
-    "stellen": 36276,
-    "self": 19680,
-    "fremd": 11665,
-    "text": 4931,
+    "stellen": 36281,
+    "self": 19686,
+    "fremd": 11660,
+    "text": 4935,
     "selbstmarker": 925
   },
   "fremdZiele": {
-    "geprueft": 10536,
+    "geprueft": 10531,
     "tot": 39,
     "sammelblock": 20,
     "ohneSnapshot": 19
@@ -27,7 +27,7 @@
     {
       "klasse": "anker-ausgeschrieben",
       "entscheid": "FREMD",
-      "stellen": 4159,
+      "stellen": 4156,
       "erlasse": 254,
       "selbstmarker": 0,
       "was": "Ausgeschriebener Artikelverweis «Artikel N … KÜRZEL» → Fremd-Artikel (Z5, W2·22)"
@@ -43,8 +43,8 @@
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2592,
-      "erlasse": 342,
+      "stellen": 2594,
+      "erlasse": 341,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
     },
@@ -75,7 +75,7 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 816,
+      "stellen": 817,
       "erlasse": 313,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
@@ -91,8 +91,8 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 906,
-      "erlasse": 215,
+      "stellen": 905,
+      "erlasse": 214,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -100,7 +100,7 @@
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
       "stellen": 995,
-      "erlasse": 265,
+      "erlasse": 264,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
     },
@@ -115,7 +115,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12883,
+      "stellen": 12889,
       "erlasse": 473,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -147,7 +147,7 @@
     {
       "klasse": "n2b-genitiv",
       "entscheid": "FREMD",
-      "stellen": 697,
+      "stellen": 693,
       "erlasse": 219,
       "selbstmarker": 0,
       "was": "Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)"
@@ -155,7 +155,7 @@
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 345,
+      "stellen": 344,
       "erlasse": 150,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
@@ -171,8 +171,8 @@
     {
       "klasse": "n2b-titel",
       "entscheid": "FREMD",
-      "stellen": 331,
-      "erlasse": 162,
+      "stellen": 332,
+      "erlasse": 163,
       "selbstmarker": 0,
       "was": "Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)"
     },
@@ -267,7 +267,7 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 510,
+      "stellen": 514,
       "erlasse": 94,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"

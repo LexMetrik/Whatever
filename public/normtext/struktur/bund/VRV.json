@@ -1,12 +1,12 @@
 {
  "zaehler":{"1":[1,0],"2":[5,0],"3":[3,0],"4":[2,0],"6":[3,0],"8":[4,0],"12":[4,0],"15":[1,0],"17":[2,0],"19":[1,0],"21":[2,0],"22":[1,0],"28":[1,0],"33":[1,0],"36":[4,0],"42":[1,0],"47":[2,0],"56":[1,0],"57":[1,0],"90":[1,0],"4a":[5,0],"59a":[1,0]},
- "erzeugt": "2026-09-14",
- "stand": "2026-07-01",
- "fassungsToken": "20260701",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "741.11",
   "titel": "Verkehrsregelnverordnung",
-  "erlassdatum": "vom 13. November 1962 (Stand am 1. Juli 2026)",
+  "erlassdatum": "vom 13. November 1962 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -453,24 +453,97 @@
     },
     {
      "nr": "30",
-     "text": "Eingefügt durch Art. 36 Ziff. I des BRB vom 27. Aug. 1969 über administrative Ausführungsbestimmungen zum Strassenverkehrsgesetz (AS <b>1969</b> 793). Fassung gemäss Ziff. I der V vom 10. Juni 2005, in Kraft seit 1. Okt. 2005 (AS <b>2005</b> 4109).",
+     "text": "Eingefügt durch Art. 36 Ziff. I des BRB vom 27. Aug. 1969 über administrative Ausführungsbestimmungen zum Strassenverkehrsgesetz (AS <b>1969</b> 793). Fassung gemäss Ziff. I der V vom 19. Aug. 2026, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 452).",
      "links": [
       {
        "label": "AS <b>1969</b> 793",
        "url": "https://fedlex.data.admin.ch/eli/oc/1969/793_813_811"
       },
       {
-       "label": "AS <b>2005</b> 4109",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/544"
+       "label": "AS <b>2026</b> 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
       }
      ],
      "absatz": "4",
-     "item": "b",
+     "item": null,
      "pos": {
       "b": 4,
-      "it": 1,
-      "o": 355,
-      "l": 355
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "31",
+     "text": "Eingefügt durch Ziff. I der V vom 19. Aug. 2026, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 452).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 413,
+      "l": 413
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "32",
+     "text": "SR <b>822.221</b>",
+     "links": [
+      {
+       "label": "SR <b>822.221</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1995/4031_4031_4031",
+       "rs": "822.221"
+      }
+     ],
+     "absatz": "6",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 282,
+      "l": 530
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "33",
+     "text": "SR <b>822.222</b>",
+     "links": [
+      {
+       "label": "SR <b>822.222</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1981/480_480_480",
+       "rs": "822.222"
+      }
+     ],
+     "absatz": "6",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 317,
+      "l": 530
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "34",
+     "text": "Eingefügt durch Ziff. I der V vom 19. Aug. 2026, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 452).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": "6",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 530,
+      "l": 530
      },
      "kl": "A"
     }
@@ -494,7 +567,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "46",
+     "nr": "50",
      "text": "Aufgehoben durch Ziff. I der V vom 20. Mai 2020, mit Wirkung seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -512,7 +585,7 @@
      "kl": "A"
     },
     {
-     "nr": "47",
+     "nr": "51",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -549,7 +622,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "53",
+     "nr": "57",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -562,7 +635,7 @@
      "kl": "A"
     },
     {
-     "nr": "54",
+     "nr": "58",
      "text": "Ausdruck gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.",
      "links": [
       {
@@ -581,7 +654,7 @@
      "kl": "A"
     },
     {
-     "nr": "55",
+     "nr": "59",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -600,7 +673,7 @@
      "kl": "A"
     },
     {
-     "nr": "56",
+     "nr": "60",
      "text": "Fassung gemäss Ziff. I der V vom 14. Okt. 2009, in Kraft seit 1. April 2010 (AS <b>2009 </b>5701).",
      "links": [
       {
@@ -613,7 +686,7 @@
      "kl": "A"
     },
     {
-     "nr": "57",
+     "nr": "61",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -626,7 +699,7 @@
      "kl": "A"
     },
     {
-     "nr": "58",
+     "nr": "62",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -645,7 +718,7 @@
      "kl": "A"
     },
     {
-     "nr": "59",
+     "nr": "63",
      "text": "Eingefügt durch Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (AS <b>1995</b> 4425). Aufgehoben durch Ziff. I der V vom 15. Nov. 2000, mit Wirkung seit 1. Jan. 2010 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -667,7 +740,7 @@
      "kl": "A"
     },
     {
-     "nr": "60",
+     "nr": "64",
      "text": "Fassung gemäss Ziff. I der V vom 2. März 2012, in Kraft seit 1. Juli 2012 (AS <b>2012</b> 1821).",
      "links": [
       {
@@ -704,7 +777,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "61",
+     "nr": "65",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -717,7 +790,7 @@
      "kl": "A"
     },
     {
-     "nr": "62",
+     "nr": "66",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -735,7 +808,7 @@
      "kl": "A"
     },
     {
-     "nr": "63",
+     "nr": "67",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. Juni 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -753,7 +826,7 @@
      "kl": "A"
     },
     {
-     "nr": "64",
+     "nr": "68",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -771,7 +844,7 @@
      "kl": "A"
     },
     {
-     "nr": "65",
+     "nr": "69",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -789,7 +862,7 @@
      "kl": "A"
     },
     {
-     "nr": "66",
+     "nr": "70",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -826,7 +899,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "67",
+     "nr": "71",
      "text": "Fassung gemäss Ziff. I der V vom 19. Dez. 2025, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 23).",
      "links": [
       {
@@ -858,7 +931,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "68",
+     "nr": "72",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -871,7 +944,7 @@
      "kl": "A"
     },
     {
-     "nr": "69",
+     "nr": "73",
      "text": "Fassung gemäss Ziff. I der V vom 14. Nov. 1979, in Kraft seit 1. Jan. 1980 (AS <b>1979</b> 1583).",
      "links": [
       {
@@ -884,7 +957,7 @@
      "kl": "A"
     },
     {
-     "nr": "70",
+     "nr": "74",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -902,7 +975,7 @@
      "kl": "A"
     },
     {
-     "nr": "71",
+     "nr": "75",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -920,7 +993,7 @@
      "kl": "A"
     },
     {
-     "nr": "72",
+     "nr": "76",
      "text": "Fassung des zweiten Satzes gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -938,7 +1011,7 @@
      "kl": "A"
     },
     {
-     "nr": "73",
+     "nr": "77",
      "text": "SR <b>741.21</b>",
      "links": [
       {
@@ -958,7 +1031,7 @@
      "kl": "V"
     },
     {
-     "nr": "74",
+     "nr": "78",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -977,7 +1050,7 @@
      "kl": "A"
     },
     {
-     "nr": "75",
+     "nr": "79",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -1014,7 +1087,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "76",
+     "nr": "80",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -1032,7 +1105,7 @@
      "kl": "A"
     },
     {
-     "nr": "77",
+     "nr": "81",
      "text": "Fassung des zweiten Satzes gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1069,7 +1142,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "78",
+     "nr": "82",
      "text": "Zweiter Satz aufgehoben durch Ziff. I der V vom 25. Jan. 1989, mit Wirkung seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1106,7 +1179,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "79",
+     "nr": "83",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1124,7 +1197,7 @@
      "kl": "A"
     },
     {
-     "nr": "80",
+     "nr": "84",
      "text": "Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -1137,7 +1210,7 @@
      "kl": "A"
     },
     {
-     "nr": "81",
+     "nr": "85",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1156,7 +1229,7 @@
      "kl": "A"
     },
     {
-     "nr": "82",
+     "nr": "86",
      "text": "Fassung des zweiten Satzes gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -1174,7 +1247,7 @@
      "kl": "A"
     },
     {
-     "nr": "83",
+     "nr": "87",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1228,7 +1301,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "84",
+     "nr": "88",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -1246,7 +1319,7 @@
      "kl": "A"
     },
     {
-     "nr": "85",
+     "nr": "89",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1264,7 +1337,7 @@
      "kl": "A"
     },
     {
-     "nr": "86",
+     "nr": "90",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1301,7 +1374,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "87",
+     "nr": "91",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -1338,7 +1411,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "88",
+     "nr": "92",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1351,7 +1424,7 @@
      "kl": "A"
     },
     {
-     "nr": "89",
+     "nr": "93",
      "text": "Siehe jedoch Art. 74<i>a</i> Abs. 4 SSV (SR <b>741.21</b>).",
      "links": [
       {
@@ -1389,7 +1462,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "90",
+     "nr": "94",
      "text": "Fassung gemäss Anhang 4 Ziff. 33 der Zollverordnung vom 1. Nov. 2006, in Kraft seit 1. Mai 2007 (AS <b>2007</b> 1469).",
      "links": [
       {
@@ -1407,7 +1480,7 @@
      "kl": "A"
     },
     {
-     "nr": "91",
+     "nr": "95",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1425,7 +1498,7 @@
      "kl": "A"
     },
     {
-     "nr": "92",
+     "nr": "96",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1443,7 +1516,7 @@
      "kl": "A"
     },
     {
-     "nr": "93",
+     "nr": "97",
      "text": "Eingefügt durch Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -1480,7 +1553,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "94",
+     "nr": "98",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1498,7 +1571,7 @@
      "kl": "A"
     },
     {
-     "nr": "95",
+     "nr": "99",
      "text": "Fassung gemäss Ziff. I der V vom 10. Dez. 1973, in Kraft seit 1. Jan. 1974 (AS <b>1973</b> 2155).",
      "links": [
       {
@@ -1535,7 +1608,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "96",
+     "nr": "100",
      "text": "Letzter Satz eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1554,7 +1627,7 @@
      "kl": "A"
     },
     {
-     "nr": "97",
+     "nr": "101",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -1567,7 +1640,7 @@
      "kl": "A"
     },
     {
-     "nr": "98",
+     "nr": "102",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -1580,7 +1653,7 @@
      "kl": "A"
     },
     {
-     "nr": "99",
+     "nr": "103",
      "text": "Fassung gemäss Ziff. II der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 1103).",
      "links": [
       {
@@ -1593,7 +1666,7 @@
      "kl": "A"
     },
     {
-     "nr": "100",
+     "nr": "104",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1630,7 +1703,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "101",
+     "nr": "105",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1662,7 +1735,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "102",
+     "nr": "106",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -1680,7 +1753,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "107",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1698,7 +1771,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "108",
      "text": "Aufgehoben durch Ziff. I der V vom 17. Aug. 2005, mit Wirkung seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -1769,7 +1842,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "110",
+     "nr": "114",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -1782,7 +1855,7 @@
      "kl": "A"
     },
     {
-     "nr": "111",
+     "nr": "115",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -1801,7 +1874,7 @@
      "kl": "V"
     },
     {
-     "nr": "112",
+     "nr": "116",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -1819,7 +1892,7 @@
      "kl": "A"
     },
     {
-     "nr": "113",
+     "nr": "117",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1837,7 +1910,7 @@
      "kl": "A"
     },
     {
-     "nr": "114",
+     "nr": "118",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -1855,7 +1928,7 @@
      "kl": "A"
     },
     {
-     "nr": "115",
+     "nr": "119",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -1874,7 +1947,7 @@
      "kl": "A"
     },
     {
-     "nr": "116",
+     "nr": "120",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1911,7 +1984,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "117",
+     "nr": "121",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1929,7 +2002,7 @@
      "kl": "A"
     },
     {
-     "nr": "118",
+     "nr": "122",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -1947,7 +2020,7 @@
      "kl": "A"
     },
     {
-     "nr": "119",
+     "nr": "123",
      "text": "Fassung gemäss Anhang Ziff. II 2 der V vom 12. Nov. 2003, in Kraft seit 14. Dez. 2003 (AS <b>2003</b> 4289).",
      "links": [
       {
@@ -1965,7 +2038,7 @@
      "kl": "A"
     },
     {
-     "nr": "120",
+     "nr": "124",
      "text": "Aufgehoben durch Anhang Ziff. II 2 der V vom 12. Nov. 2003, mit Wirkung seit 14. Dez. 2003 (AS <b>2003</b> 4289).",
      "links": [
       {
@@ -2002,7 +2075,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "121",
+     "nr": "125",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -2037,7 +2110,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "122",
+     "nr": "126",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -2069,7 +2142,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "123",
+     "nr": "127",
      "text": "Fassung gemäss Ziff. III der V vom 10. Mai 2023, in Kraft seit 15. Juli 2023 (AS <b>2023</b> 255).",
      "links": [
       {
@@ -2087,7 +2160,7 @@
      "kl": "A"
     },
     {
-     "nr": "124",
+     "nr": "128",
      "text": "Fassung gemäss Ziff. III der V vom 10. Mai 2023, in Kraft seit 15. Juli 2023 (AS <b>2023</b> 255).",
      "links": [
       {
@@ -2105,7 +2178,7 @@
      "kl": "A"
     },
     {
-     "nr": "125",
+     "nr": "129",
      "text": "Fassung gemäss Ziff. III der V vom 10. Mai 2023, in Kraft seit 15. Juli 2023 (AS <b>2023</b> 255).",
      "links": [
       {
@@ -2124,7 +2197,7 @@
      "kl": "A"
     },
     {
-     "nr": "126",
+     "nr": "130",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -2161,7 +2234,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "127",
+     "nr": "131",
      "text": "Zweiter Satz eingefügt durch Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404).",
      "links": [
       {
@@ -2179,7 +2252,7 @@
      "kl": "A"
     },
     {
-     "nr": "128",
+     "nr": "132",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -2198,7 +2271,7 @@
      "kl": "V"
     },
     {
-     "nr": "129",
+     "nr": "133",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -2216,7 +2289,7 @@
      "kl": "A"
     },
     {
-     "nr": "130",
+     "nr": "134",
      "text": "Fassung gemäss Art. 36 Ziff. I des BRB vom 27. Aug. 1969 über administrative Ausführungsbestimmungen zum Strassenverkehrsgesetz, in Kraft seit 1. Okt. 1969 (AS <b>1969</b> 793).",
      "links": [
       {
@@ -2253,7 +2326,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "131",
+     "nr": "135",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2266,7 +2339,7 @@
      "kl": "A"
     },
     {
-     "nr": "132",
+     "nr": "136",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -2285,7 +2358,7 @@
      "kl": "V"
     },
     {
-     "nr": "133",
+     "nr": "137",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -2322,7 +2395,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "134",
+     "nr": "138",
      "text": "Fassung gemäss Ziff. I der V vom 29. Nov. 2013, in Kraft seit 1. Jan. 2014 (AS <b>2013</b> 4687).",
      "links": [
       {
@@ -2335,7 +2408,7 @@
      "kl": "A"
     },
     {
-     "nr": "135",
+     "nr": "139",
      "text": "Fassung gemäss Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -2373,7 +2446,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "136",
+     "nr": "140",
      "text": "Fassung gemäss Ziff. I der V vom 29. Nov. 2013, in Kraft seit 1. Jan. 2014 (AS <b>2013</b> 4687).",
      "links": [
       {
@@ -2405,7 +2478,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "137",
+     "nr": "141",
      "text": "Fassung gemäss Ziff. I der V vom 29. Nov. 2013, in Kraft seit 1. Jan. 2014 (AS <b>2013</b> 4687).",
      "links": [
       {
@@ -2437,7 +2510,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "138",
+     "nr": "142",
      "text": "Fassung gemäss Ziff. I der V vom 16. Okt. 2024, in Kraft seit 1. Jan. 2025 (AS <b>2024</b> 607).",
      "links": [
       {
@@ -2486,7 +2559,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "139",
+     "nr": "143",
      "text": "Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -2504,7 +2577,7 @@
      "kl": "A"
     },
     {
-     "nr": "140",
+     "nr": "144",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -2522,7 +2595,7 @@
      "kl": "A"
     },
     {
-     "nr": "141",
+     "nr": "145",
      "text": "Fassung gemäss Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404).",
      "links": [
       {
@@ -2559,7 +2632,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "142",
+     "nr": "146",
      "text": "Fassung gemäss Ziff. I der V vom 19. Dez. 2025, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 23).",
      "links": [
       {
@@ -2577,7 +2650,7 @@
      "kl": "A"
     },
     {
-     "nr": "143",
+     "nr": "147",
      "text": "Fassung gemäss Ziff. I der V vom 14. Nov. 1979, in Kraft seit 1. Jan. 1980 (AS <b>1979</b> 1583).",
      "links": [
       {
@@ -2595,7 +2668,7 @@
      "kl": "A"
     },
     {
-     "nr": "144",
+     "nr": "148",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -2613,7 +2686,7 @@
      "kl": "A"
     },
     {
-     "nr": "145",
+     "nr": "149",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -2632,7 +2705,7 @@
      "kl": "A"
     },
     {
-     "nr": "146",
+     "nr": "150",
      "text": "Eingefügt durch Ziff. I der V vom 22. Dez. 1976 (AS <b>1976</b> 2810). Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 2451).",
      "links": [
       {
@@ -2654,7 +2727,7 @@
      "kl": "A"
     },
     {
-     "nr": "147",
+     "nr": "151",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139). Die Berichtigung vom 9. Febr. 2021 betrifft nur den französischen Text (AS <b>2021</b> 76).",
      "links": [
       {
@@ -2712,7 +2785,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "148",
+     "nr": "152",
      "text": "Zweiter Satz eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2730,7 +2803,7 @@
      "kl": "A"
     },
     {
-     "nr": "149",
+     "nr": "153",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -2748,7 +2821,7 @@
      "kl": "A"
     },
     {
-     "nr": "150",
+     "nr": "154",
      "text": "Fassung gemäss Ziff. I der V vom 14. Nov. 1979, in Kraft seit 1. Jan. 1980 (AS <b>1979</b> 1583).",
      "links": [
       {
@@ -2766,7 +2839,7 @@
      "kl": "A"
     },
     {
-     "nr": "151",
+     "nr": "155",
      "text": "Note aufgehoben durch Ziff. I der V vom 25. Jan. 1989, mit Wirkung seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2804,7 +2877,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "152",
+     "nr": "156",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -2822,7 +2895,7 @@
      "kl": "A"
     },
     {
-     "nr": "153",
+     "nr": "157",
      "text": "Fassung gemäss Ziff. I der V vom 29. Nov. 2013, in Kraft seit 1. Jan. 2014 (AS <b>2013</b> 4687).",
      "links": [
       {
@@ -2859,7 +2932,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "154",
+     "nr": "158",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 2451).",
      "links": [
       {
@@ -2877,7 +2950,7 @@
      "kl": "A"
     },
     {
-     "nr": "155",
+     "nr": "159",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2895,7 +2968,7 @@
      "kl": "A"
     },
     {
-     "nr": "156",
+     "nr": "160",
      "text": "Eingefügt durch Ziff. I der V vom 14. Nov. 1979 (AS <b>1979</b> 1583). Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2917,7 +2990,7 @@
      "kl": "A"
     },
     {
-     "nr": "157",
+     "nr": "161",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2954,7 +3027,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "158",
+     "nr": "162",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -2972,7 +3045,7 @@
      "kl": "A"
     },
     {
-     "nr": "159",
+     "nr": "163",
      "text": "Siehe auch die SchlB am Schluss dieser V.",
      "links": [],
      "absatz": "1",
@@ -2985,7 +3058,7 @@
      "kl": "V"
     },
     {
-     "nr": "160",
+     "nr": "164",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -3003,7 +3076,7 @@
      "kl": "A"
     },
     {
-     "nr": "161",
+     "nr": "165",
      "text": "Siehe auch die SchlB am Schluss dieser V.",
      "links": [],
      "absatz": "1bis",
@@ -3016,7 +3089,7 @@
      "kl": "V"
     },
     {
-     "nr": "162",
+     "nr": "166",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -3034,7 +3107,7 @@
      "kl": "A"
     },
     {
-     "nr": "163",
+     "nr": "167",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -3052,7 +3125,7 @@
      "kl": "A"
     },
     {
-     "nr": "164",
+     "nr": "168",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3089,7 +3162,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "169",
+     "nr": "176",
      "text": "Fassung gemäss Ziff. I der V vom 15. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1315).",
      "links": [
       {
@@ -3102,7 +3175,7 @@
      "kl": "A"
     },
     {
-     "nr": "170",
+     "nr": "177",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2016, in Kraft seit 15. Jan. 2017 (AS <b>2016</b> 5129).",
      "links": [
       {
@@ -3120,7 +3193,7 @@
      "kl": "A"
     },
     {
-     "nr": "171",
+     "nr": "178",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -3138,7 +3211,7 @@
      "kl": "A"
     },
     {
-     "nr": "172",
+     "nr": "179",
      "text": "Fassung gemäss Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -3156,7 +3229,7 @@
      "kl": "A"
     },
     {
-     "nr": "173",
+     "nr": "180",
      "text": "SR <b>741.21</b>",
      "links": [
       {
@@ -3175,7 +3248,7 @@
      "kl": "V"
     },
     {
-     "nr": "174",
+     "nr": "181",
      "text": "Eingefügt durch Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -3212,7 +3285,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "175",
+     "nr": "182",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -3225,7 +3298,7 @@
      "kl": "A"
     },
     {
-     "nr": "176",
+     "nr": "183",
      "text": "Eingefügt durch Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -3238,7 +3311,7 @@
      "kl": "A"
     },
     {
-     "nr": "177",
+     "nr": "184",
      "text": "Fassung gemäss Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404).",
      "links": [
       {
@@ -3274,7 +3347,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "181",
+     "nr": "188",
      "text": "Aufgehoben durch Ziff. I der V vom 20. Mai 2020, mit Wirkung seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3306,7 +3379,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "182",
+     "nr": "189",
      "text": "Fassung gemäss Anhang 4 Ziff. 33 der Zollverordnung vom 1. Nov. 2006, in Kraft seit 1. Mai 2007 (AS <b>2007</b> 1469).",
      "links": [
       {
@@ -3343,7 +3416,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "183",
+     "nr": "190",
      "text": "Eingefügt durch Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -3380,7 +3453,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "184",
+     "nr": "191",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. Juni 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -3398,7 +3471,7 @@
      "kl": "A"
     },
     {
-     "nr": "185",
+     "nr": "192",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. Juni 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -3416,7 +3489,7 @@
      "kl": "A"
     },
     {
-     "nr": "186",
+     "nr": "193",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3434,7 +3507,7 @@
      "kl": "A"
     },
     {
-     "nr": "187",
+     "nr": "194",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3471,7 +3544,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "188",
+     "nr": "195",
      "text": "Eingefügt durch Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -3489,7 +3562,7 @@
      "kl": "A"
     },
     {
-     "nr": "189",
+     "nr": "196",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3507,7 +3580,7 @@
      "kl": "A"
     },
     {
-     "nr": "190",
+     "nr": "197",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3525,7 +3598,7 @@
      "kl": "A"
     },
     {
-     "nr": "191",
+     "nr": "198",
      "text": "Aufgehoben durch Ziff. I der V vom 17. Aug. 2005, mit Wirkung seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -3560,7 +3633,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "192",
+     "nr": "199",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3592,7 +3665,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "194",
+     "nr": "201",
      "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -3605,7 +3678,7 @@
      "kl": "A"
     },
     {
-     "nr": "195",
+     "nr": "202",
      "text": "Aufgehoben durch Ziff. I der V vom 29. Nov. 2013, mit Wirkung seit 1. Jan. 2014 (AS <b>2013</b> 4687).",
      "links": [
       {
@@ -3623,7 +3696,7 @@
      "kl": "A"
     },
     {
-     "nr": "193",
+     "nr": "200",
      "text": "Eingefügt durch Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -3690,7 +3763,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "197",
+     "nr": "204",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -3722,7 +3795,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "198",
+     "nr": "205",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3754,7 +3827,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "199",
+     "nr": "206",
      "text": "Aufgehoben durch Ziff. I der V vom 20. Mai 2020, mit Wirkung seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3786,7 +3859,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "200",
+     "nr": "207",
      "text": "Eingefügt durch Ziff. I der V vom 28. März 2007, in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -3804,7 +3877,7 @@
      "kl": "A"
     },
     {
-     "nr": "201",
+     "nr": "208",
      "text": "Fassung gemäss Anhang 4 Ziff. 33 der Zollverordnung vom 1. Nov. 2006, in Kraft seit 1. Mai 2007 (AS <b>2007</b> 1469).",
      "links": [
       {
@@ -3846,7 +3919,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "202",
+     "nr": "209",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -3864,7 +3937,7 @@
      "kl": "A"
     },
     {
-     "nr": "203",
+     "nr": "210",
      "text": "Zweiter Satz eingefügt durch Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -3882,7 +3955,7 @@
      "kl": "A"
     },
     {
-     "nr": "204",
+     "nr": "211",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -3900,7 +3973,7 @@
      "kl": "A"
     },
     {
-     "nr": "205",
+     "nr": "212",
      "text": "Fassung gemäss Ziff. I der V vom 10. Dez. 1973, in Kraft seit 1. Jan. 1973 (AS <b>1973</b> 2155).",
      "links": [
       {
@@ -3942,7 +4015,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "206",
+     "nr": "213",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -3960,7 +4033,7 @@
      "kl": "A"
     },
     {
-     "nr": "207",
+     "nr": "214",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3978,7 +4051,7 @@
      "kl": "A"
     },
     {
-     "nr": "208",
+     "nr": "215",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -3996,7 +4069,7 @@
      "kl": "A"
     },
     {
-     "nr": "209",
+     "nr": "216",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989 (AS <b>1989</b> 410). Aufgehoben durch Ziff. I der V vom 20. Mai 2020, mit Wirkung seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -4018,7 +4091,7 @@
      "kl": "A"
     },
     {
-     "nr": "210",
+     "nr": "217",
      "text": "Eingefügt durch Ziff. I der V vom 7. März 1994 (AS <b>1994</b> 816). Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -4040,7 +4113,7 @@
      "kl": "A"
     },
     {
-     "nr": "211",
+     "nr": "218",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -4059,7 +4132,7 @@
      "kl": "V"
     },
     {
-     "nr": "212",
+     "nr": "219",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -4101,7 +4174,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "213",
+     "nr": "220",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -4138,7 +4211,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "218",
+     "nr": "225",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 1976, in Kraft seit 1. Jan. 1977 (AS <b>1976</b> 2810).",
      "links": [
       {
@@ -4151,7 +4224,7 @@
      "kl": "A"
     },
     {
-     "nr": "219",
+     "nr": "226",
      "text": "Aufgehoben durch Ziff. I der V vom 7. März 1994, in Kraft seit 1. Okt. 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -4169,7 +4242,7 @@
      "kl": "A"
     },
     {
-     "nr": "220",
+     "nr": "227",
      "text": "Fassung gemäss Ziff. I der V vom 28. März 2007, in Kraft seit 1. Juli 2007 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -4187,7 +4260,7 @@
      "kl": "A"
     },
     {
-     "nr": "221",
+     "nr": "228",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -4229,7 +4302,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "222",
+     "nr": "229",
      "text": "Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 und für Abs. 1 seit 1. Jan. 2008 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -4242,7 +4315,7 @@
      "kl": "A"
     },
     {
-     "nr": "223",
+     "nr": "230",
      "text": "Fassung gemäss Ziff. I der V vom 14. Okt. 2009, in Kraft seit 1. April 2010 (AS <b>2009 </b>5701).",
      "links": [
       {
@@ -4261,7 +4334,7 @@
      "kl": "A"
     },
     {
-     "nr": "224",
+     "nr": "231",
      "text": "Fassung gemäss Ziff. I der V vom 14. Okt. 2009, in Kraft seit 1. April 2010 (AS <b>2009 </b>5701).",
      "links": [
       {
@@ -4279,7 +4352,7 @@
      "kl": "A"
     },
     {
-     "nr": "225",
+     "nr": "232",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -4319,7 +4392,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "226",
+     "nr": "233",
      "text": "Aufgehoben durch Ziff. I der V vom 17. Aug. 2005, mit Wirkung seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -4356,7 +4429,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "227",
+     "nr": "234",
      "text": "Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -4369,7 +4442,7 @@
      "kl": "A"
     },
     {
-     "nr": "228",
+     "nr": "235",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -4389,7 +4462,7 @@
      "kl": "V"
     },
     {
-     "nr": "229",
+     "nr": "236",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -4408,7 +4481,7 @@
      "kl": "A"
     },
     {
-     "nr": "230",
+     "nr": "237",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -4426,7 +4499,7 @@
      "kl": "A"
     },
     {
-     "nr": "231",
+     "nr": "238",
      "text": "Aufgehoben durch Ziff. I der V vom 13. Dez. 2024, mit Wirkung seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -4468,7 +4541,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "232",
+     "nr": "239",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -4481,7 +4554,7 @@
      "kl": "A"
     },
     {
-     "nr": "233",
+     "nr": "240",
      "text": "Eingefügt durch Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (AS <b>1995</b> 4425). Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4498,7 +4571,7 @@
      "kl": "A"
     },
     {
-     "nr": "234",
+     "nr": "241",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 1998, in Kraft seit 15. Mai 1998 (AS <b>1998</b> 1465).",
      "links": [
       {
@@ -4516,7 +4589,7 @@
      "kl": "A"
     },
     {
-     "nr": "235",
+     "nr": "242",
      "text": "Fassung gemäss Anhang 1 Ziff. 1 der V vom 2. Sept. 1998, in Kraft seit 1. Okt. 1998 (AS <b>1998</b> 2352).",
      "links": [
       {
@@ -4558,7 +4631,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "236",
+     "nr": "243",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -4571,7 +4644,7 @@
      "kl": "A"
     },
     {
-     "nr": "237",
+     "nr": "244",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4584,7 +4657,7 @@
      "kl": "A"
     },
     {
-     "nr": "238",
+     "nr": "245",
      "text": "Fassung gemäss Ziff. I der V vom 16. Okt. 2002, in Kraft seit 1. Dez. 2002 (AS <b>2002</b> 3565).",
      "links": [
       {
@@ -4597,7 +4670,7 @@
      "kl": "A"
     },
     {
-     "nr": "239",
+     "nr": "246",
      "text": "Fassung gemäss Ziff. I der V vom 16. Okt. 2002, in Kraft seit 1. Dez. 2002 (AS <b>2002</b> 3565).",
      "links": [
       {
@@ -4615,7 +4688,7 @@
      "kl": "A"
     },
     {
-     "nr": "240",
+     "nr": "247",
      "text": "Eingefügt durch Ziff. I der V vom 5. April 2017, in Kraft seit 7. Mai 2017 (AS <b>2017</b> 2649).",
      "links": [
       {
@@ -4633,7 +4706,7 @@
      "kl": "A"
     },
     {
-     "nr": "241",
+     "nr": "248",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -4652,7 +4725,7 @@
      "kl": "V"
     },
     {
-     "nr": "242",
+     "nr": "249",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -4670,7 +4743,7 @@
      "kl": "A"
     },
     {
-     "nr": "243",
+     "nr": "250",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13; <b>2026</b> 226 Ziff. II).",
      "links": [
       {
@@ -4716,7 +4789,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "246",
+     "nr": "253",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4729,7 +4802,7 @@
      "kl": "A"
     },
     {
-     "nr": "247",
+     "nr": "254",
      "text": "Letzter Satz aufgehoben durch Ziff. I der V vom 7. März 1994, mit Wirkung seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -4772,7 +4845,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "248",
+     "nr": "255",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -4785,7 +4858,7 @@
      "kl": "A"
     },
     {
-     "nr": "249",
+     "nr": "256",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4798,7 +4871,7 @@
      "kl": "A"
     },
     {
-     "nr": "250",
+     "nr": "257",
      "text": "Fassung gemäss Ziff. I der V vom 1. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2882).",
      "links": [
       {
@@ -4816,7 +4889,7 @@
      "kl": "A"
     },
     {
-     "nr": "251",
+     "nr": "258",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4829,7 +4902,7 @@
      "kl": "A"
     },
     {
-     "nr": "252",
+     "nr": "259",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4842,7 +4915,7 @@
      "kl": "A"
     },
     {
-     "nr": "253",
+     "nr": "260",
      "text": "Eingefügt durch Ziff. I der V vom 5. April 2017, in Kraft seit 7. Mai 2017 (AS <b>2017</b> 2649).",
      "links": [
       {
@@ -4855,7 +4928,7 @@
      "kl": "A"
     },
     {
-     "nr": "254",
+     "nr": "261",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -4868,7 +4941,7 @@
      "kl": "A"
     },
     {
-     "nr": "255",
+     "nr": "262",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -4881,7 +4954,7 @@
      "kl": "A"
     },
     {
-     "nr": "256",
+     "nr": "263",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -4894,7 +4967,7 @@
      "kl": "A"
     },
     {
-     "nr": "257",
+     "nr": "264",
      "text": "Eingefügt durch Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -4912,7 +4985,7 @@
      "kl": "A"
     },
     {
-     "nr": "258",
+     "nr": "265",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -4931,7 +5004,7 @@
      "kl": "V"
     },
     {
-     "nr": "259",
+     "nr": "266",
      "text": "Eingefügt durch Ziff. I der V vom 5. April 2017 (AS <b>2017</b> 2649). Fassung gemäss Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -4953,7 +5026,7 @@
      "kl": "A"
     },
     {
-     "nr": "260",
+     "nr": "267",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13; <b>2026</b> 226 Ziff. II).",
      "links": [
       {
@@ -4975,7 +5048,7 @@
      "kl": "A"
     },
     {
-     "nr": "261",
+     "nr": "268",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2016, in Kraft seit 15. Jan. 2017 (AS <b>2016</b> 5129).",
      "links": [
       {
@@ -4988,7 +5061,7 @@
      "kl": "A"
     },
     {
-     "nr": "262",
+     "nr": "269",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -5002,7 +5075,7 @@
      "kl": "V"
     },
     {
-     "nr": "263",
+     "nr": "270",
      "text": "Eingefügt durch Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -5015,7 +5088,7 @@
      "kl": "A"
     },
     {
-     "nr": "264",
+     "nr": "271",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -5028,7 +5101,7 @@
      "kl": "A"
     },
     {
-     "nr": "265",
+     "nr": "272",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -5047,7 +5120,7 @@
      "kl": "A"
     },
     {
-     "nr": "266",
+     "nr": "273",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5065,7 +5138,7 @@
      "kl": "A"
     },
     {
-     "nr": "267",
+     "nr": "274",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5083,7 +5156,7 @@
      "kl": "A"
     },
     {
-     "nr": "268",
+     "nr": "275",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -5125,7 +5198,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "269",
+     "nr": "276",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -5138,7 +5211,7 @@
      "kl": "A"
     },
     {
-     "nr": "270",
+     "nr": "277",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5151,7 +5224,7 @@
      "kl": "A"
     },
     {
-     "nr": "271",
+     "nr": "278",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5169,7 +5242,7 @@
      "kl": "A"
     },
     {
-     "nr": "272",
+     "nr": "279",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5188,7 +5261,7 @@
      "kl": "A"
     },
     {
-     "nr": "273",
+     "nr": "280",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -5206,7 +5279,7 @@
      "kl": "A"
     },
     {
-     "nr": "274",
+     "nr": "281",
      "text": "Fassung gemäss Anhang 1 Ziff. 1 der V vom 2. Sept. 1998, in Kraft seit 1. Okt. 1998 (AS <b>1998</b> 2352).",
      "links": [
       {
@@ -5224,7 +5297,7 @@
      "kl": "A"
     },
     {
-     "nr": "275",
+     "nr": "282",
      "text": "Aufgehoben durch Ziff. I der V vom 17. Dez. 2021, mit Wirkung seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -5242,7 +5315,7 @@
      "kl": "A"
     },
     {
-     "nr": "276",
+     "nr": "283",
      "text": "Eingefügt durch Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5260,7 +5333,7 @@
      "kl": "A"
     },
     {
-     "nr": "277",
+     "nr": "284",
      "text": "Eingefügt durch Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5300,7 +5373,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "278",
+     "nr": "285",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5337,7 +5410,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "279",
+     "nr": "286",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -5355,7 +5428,7 @@
      "kl": "A"
     },
     {
-     "nr": "280",
+     "nr": "287",
      "text": "Fassung gemäss Art. 36 Ziff. 1 des BRB vom 27. Aug. 1969 über administrative Ausführungsbestimmungen zum Strassenverkehrsgesetz, in Kraft seit 1. Okt. 1969 (AS <b>1969</b> 793).",
      "links": [
       {
@@ -5373,7 +5446,7 @@
      "kl": "A"
     },
     {
-     "nr": "281",
+     "nr": "288",
      "text": "Aufgehoben durch Ziff. I der V vom 7. März 1994, mit Wirkung seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -5415,7 +5488,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "282",
+     "nr": "289",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5433,7 +5506,7 @@
      "kl": "A"
     },
     {
-     "nr": "283",
+     "nr": "290",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5475,7 +5548,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "284",
+     "nr": "291",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5493,7 +5566,7 @@
      "kl": "A"
     },
     {
-     "nr": "285",
+     "nr": "292",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -5511,7 +5584,7 @@
      "kl": "A"
     },
     {
-     "nr": "286",
+     "nr": "293",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5529,7 +5602,7 @@
      "kl": "A"
     },
     {
-     "nr": "287",
+     "nr": "294",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5571,7 +5644,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "288",
+     "nr": "295",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5589,7 +5662,7 @@
      "kl": "A"
     },
     {
-     "nr": "289",
+     "nr": "296",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5607,7 +5680,7 @@
      "kl": "A"
     },
     {
-     "nr": "290",
+     "nr": "297",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 1998, in Kraft seit 15. Mai 1998 (AS <b>1998</b> 1465).",
      "links": [
       {
@@ -5620,7 +5693,7 @@
      "kl": "A"
     },
     {
-     "nr": "291",
+     "nr": "298",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 1998, in Kraft seit 15. Mai 1998 (AS <b>1998</b> 1465).",
      "links": [
       {
@@ -5633,7 +5706,7 @@
      "kl": "A"
     },
     {
-     "nr": "292",
+     "nr": "299",
      "text": "Eingefügt durch Ziff. I der V vom 15. Nov. 2000 (AS <b>2000</b> 2883). Fassung gemäss Ziff. I der V vom 22. Dez. 2023, in Kraft seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -5650,7 +5723,7 @@
      "kl": "A"
     },
     {
-     "nr": "293",
+     "nr": "300",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -5670,7 +5743,7 @@
      "kl": "V"
     },
     {
-     "nr": "294",
+     "nr": "301",
      "text": "Fassung gemäss Ziff. II der V vom 19. Febr. 1992, in Kraft seit 1. April 1992 (AS <b>1992</b> 536).",
      "links": [
       {
@@ -5689,7 +5762,7 @@
      "kl": "A"
     },
     {
-     "nr": "295",
+     "nr": "302",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -5707,7 +5780,7 @@
      "kl": "A"
     },
     {
-     "nr": "296",
+     "nr": "303",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5749,7 +5822,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "297",
+     "nr": "304",
      "text": "Fassung gemäss Art. 72 Ziff. 2 der Tierschutzverordnung vom 27. Mai 1981, in Kraft seit 1. Juli 1981 (AS <b>1981</b> 572).",
      "links": [
       {
@@ -5762,7 +5835,7 @@
      "kl": "A"
     },
     {
-     "nr": "298",
+     "nr": "305",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5780,7 +5853,7 @@
      "kl": "A"
     },
     {
-     "nr": "299",
+     "nr": "306",
      "text": "SR <b>916.401</b>",
      "links": [
       {
@@ -5799,7 +5872,7 @@
      "kl": "V"
     },
     {
-     "nr": "300",
+     "nr": "307",
      "text": "SR <b>455.1</b>",
      "links": [
       {
@@ -5818,7 +5891,7 @@
      "kl": "V"
     },
     {
-     "nr": "301",
+     "nr": "308",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 2451).",
      "links": [
       {
@@ -5858,7 +5931,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "302",
+     "nr": "309",
      "text": "Aufgehoben durch Ziff. I der V vom 24. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -5895,7 +5968,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "303",
+     "nr": "310",
      "text": "Fassung gemäss Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404).",
      "links": [
       {
@@ -5908,7 +5981,7 @@
      "kl": "A"
     },
     {
-     "nr": "304",
+     "nr": "311",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -5921,7 +5994,7 @@
      "kl": "A"
     },
     {
-     "nr": "305",
+     "nr": "312",
      "text": "Fassung gemäss Anhang 4 Ziff. II 5 der Nationalstrassenverordnung vom 7. Nov. 2007, in Kraft seit 1. Jan. 2008(AS <b>2007</b> 5957).",
      "links": [
       {
@@ -5939,7 +6012,7 @@
      "kl": "A"
     },
     {
-     "nr": "306",
+     "nr": "313",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -5952,7 +6025,7 @@
      "kl": "A"
     },
     {
-     "nr": "307",
+     "nr": "314",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 1998, in Kraft seit 15. Mai 1998 (AS <b>1998</b> 1465).",
      "links": [
       {
@@ -5965,7 +6038,7 @@
      "kl": "A"
     },
     {
-     "nr": "308",
+     "nr": "315",
      "text": "Aufgehoben durch Ziff. I der V vom 16. Okt. 2002, mit Wirkung seit 1. Dez. 2002 (AS <b>2002</b> 3565).",
      "links": [
       {
@@ -6007,7 +6080,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "309",
+     "nr": "316",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 2023, in Kraft seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -6020,7 +6093,7 @@
      "kl": "A"
     },
     {
-     "nr": "310",
+     "nr": "317",
      "text": "Fassung gemäss Ziff. I der V vom 22. Dez. 2023, in Kraft seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -6039,7 +6112,7 @@
      "kl": "A"
     },
     {
-     "nr": "311",
+     "nr": "318",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6057,7 +6130,7 @@
      "kl": "A"
     },
     {
-     "nr": "312",
+     "nr": "319",
      "text": "Eingefügt durch Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6076,7 +6149,7 @@
      "kl": "A"
     },
     {
-     "nr": "313",
+     "nr": "320",
      "text": "Eingefügt durch Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6113,7 +6186,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "315",
+     "nr": "322",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -6132,7 +6205,7 @@
      "kl": "V"
     },
     {
-     "nr": "316",
+     "nr": "323",
      "text": "Fassung gemäss Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -6150,7 +6223,7 @@
      "kl": "A"
     },
     {
-     "nr": "317",
+     "nr": "324",
      "text": "Zweiter Satz eingefügt durch Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -6168,7 +6241,7 @@
      "kl": "A"
     },
     {
-     "nr": "318",
+     "nr": "325",
      "text": "Dritter Satz eingefügt durch Ziff. I der V vom 3. Juli 2002, in Kraft seit 1. April 2003 (AS <b>2002</b> 3212).",
      "links": [
       {
@@ -6186,7 +6259,7 @@
      "kl": "A"
     },
     {
-     "nr": "319",
+     "nr": "326",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6204,7 +6277,7 @@
      "kl": "A"
     },
     {
-     "nr": "320",
+     "nr": "327",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -6217,7 +6290,7 @@
      "kl": "A"
     },
     {
-     "nr": "321",
+     "nr": "328",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -6230,7 +6303,7 @@
      "kl": "A"
     },
     {
-     "nr": "322",
+     "nr": "329",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6243,7 +6316,7 @@
      "kl": "A"
     },
     {
-     "nr": "323",
+     "nr": "330",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -6256,7 +6329,7 @@
      "kl": "A"
     },
     {
-     "nr": "324",
+     "nr": "331",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6269,7 +6342,7 @@
      "kl": "A"
     },
     {
-     "nr": "325",
+     "nr": "332",
      "text": "Eingefügt durch Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6282,7 +6355,7 @@
      "kl": "A"
     },
     {
-     "nr": "326",
+     "nr": "333",
      "text": "Eingefügt durch Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -6295,7 +6368,7 @@
      "kl": "A"
     },
     {
-     "nr": "327",
+     "nr": "334",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -6314,7 +6387,7 @@
      "kl": "A"
     },
     {
-     "nr": "328",
+     "nr": "335",
      "text": "Eingefügt durch Ziff. I der V vom 15. Nov. 2000 (AS <b>2000</b> 2883). Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6336,7 +6409,7 @@
      "kl": "A"
     },
     {
-     "nr": "329",
+     "nr": "336",
      "text": "Aufgehoben durch Ziff. I der V vom 22. Dez. 2023, mit Wirkung seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -6373,7 +6446,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "330",
+     "nr": "337",
      "text": "Fassung gemäss Anhang 4 Ziff. II 5 der Nationalstrassenverordnung vom 7. Nov. 2007, in Kraft seit 1. Jan. 2008(AS <b>2007</b> 5957).",
      "links": [
       {
@@ -6391,7 +6464,7 @@
      "kl": "A"
     },
     {
-     "nr": "331",
+     "nr": "338",
      "text": "Fassung gemäss Anhang 4 Ziff. II 5 der Nationalstrassenverordnung vom 7. Nov. 2007, in Kraft seit 1. Jan. 2008(AS <b>2007</b> 5957).",
      "links": [
       {
@@ -6409,7 +6482,7 @@
      "kl": "A"
     },
     {
-     "nr": "332",
+     "nr": "339",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6422,7 +6495,7 @@
      "kl": "A"
     },
     {
-     "nr": "333",
+     "nr": "340",
      "text": "SR <b>741.272</b>",
      "links": [
       {
@@ -6442,7 +6515,7 @@
      "kl": "V"
     },
     {
-     "nr": "334",
+     "nr": "341",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6461,7 +6534,7 @@
      "kl": "A"
     },
     {
-     "nr": "335",
+     "nr": "342",
      "text": "Aufgehoben durch Ziff. I der V vom 6. Mai 2026, mit Wirkung seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -6479,7 +6552,7 @@
      "kl": "A"
     },
     {
-     "nr": "336",
+     "nr": "343",
      "text": "Eingefügt durch Ziff. I der V vom 1. Juli 1992 (AS <b>1993 </b>1142). Fassung gemäss Anhang 4 Ziff. II 5 der Nationalstrassenverordnung vom 7. Nov. 2007, in Kraft seit 1. Jan. 2008(AS <b>2007</b> 5957).",
      "links": [
       {
@@ -6501,7 +6574,7 @@
      "kl": "A"
     },
     {
-     "nr": "337",
+     "nr": "344",
      "text": "SR <b>725.111</b>",
      "links": [
       {
@@ -6520,7 +6593,7 @@
      "kl": "V"
     },
     {
-     "nr": "338",
+     "nr": "345",
      "text": "Eingefügt durch Anhang 4 Ziff. II 5 der Nationalstrassenverordnung vom 7. Nov. 2007 (AS <b>2007</b> 5957). Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -6561,7 +6634,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "339",
+     "nr": "346",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6579,7 +6652,7 @@
      "kl": "A"
     },
     {
-     "nr": "340",
+     "nr": "347",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6592,7 +6665,7 @@
      "kl": "A"
     },
     {
-     "nr": "341",
+     "nr": "348",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6605,7 +6678,7 @@
      "kl": "A"
     },
     {
-     "nr": "342",
+     "nr": "349",
      "text": "Eingefügt durch Ziff. I der V vom 14. Okt. 2009, in Kraft seit 1. April 2010 (AS <b>2009 </b>5701).",
      "links": [
       {
@@ -6618,7 +6691,7 @@
      "kl": "A"
     },
     {
-     "nr": "343",
+     "nr": "350",
      "text": "Eingefügt durch Ziff. I der V vom 22. Dez. 2023, in Kraft seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -6631,7 +6704,7 @@
      "kl": "A"
     },
     {
-     "nr": "344",
+     "nr": "351",
      "text": "Fassung gemäss Ziff. I der V vom 25. Jan. 1989, in Kraft seit 1. Mai 1989 (AS <b>1989</b> 410).",
      "links": [
       {
@@ -6649,7 +6722,7 @@
      "kl": "A"
     },
     {
-     "nr": "345",
+     "nr": "352",
      "text": "Fassung gemäss Ziff. I der V vom 3. Dez. 1990, in Kraft seit 1. Febr. 1991 (AS <b>1991</b> 78).",
      "links": [
       {
@@ -6667,7 +6740,7 @@
      "kl": "A"
     },
     {
-     "nr": "346",
+     "nr": "353",
      "text": "Aufgehoben durch Ziff. I der V vom 30. Juni 2004, mit Wirkung seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6702,7 +6775,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "347",
+     "nr": "354",
      "text": "Aufgehoben durch Ziff. I der V vom 7. März 1994, mit Wirkung seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6734,7 +6807,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "348",
+     "nr": "355",
      "text": "Fassung gemäss Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -6747,7 +6820,7 @@
      "kl": "A"
     },
     {
-     "nr": "349",
+     "nr": "356",
      "text": "Fassung gemäss Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404).",
      "links": [
       {
@@ -6765,7 +6838,7 @@
      "kl": "A"
     },
     {
-     "nr": "350",
+     "nr": "357",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -6800,7 +6873,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "351",
+     "nr": "358",
      "text": "Aufgehoben durch Ziff. I der V vom 30. Juni 2004, mit Wirkung seit 1. Jan. 2005 (AS <b>2004</b> 3519).",
      "links": [
       {
@@ -6849,7 +6922,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "352",
+     "nr": "359",
      "text": "Aufgehoben durch Ziff. I der V vom 28. März 2007, mit Wirkung seit 1. Juli 2007 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -6867,7 +6940,7 @@
      "kl": "A"
     },
     {
-     "nr": "353",
+     "nr": "360",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2016, in Kraft seit 15. Jan. 2017 (AS <b>2016</b> 5129).",
      "links": [
       {
@@ -6904,7 +6977,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "355",
+     "nr": "362",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6922,7 +6995,7 @@
      "kl": "A"
     },
     {
-     "nr": "356",
+     "nr": "363",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6935,7 +7008,7 @@
      "kl": "A"
     },
     {
-     "nr": "357",
+     "nr": "364",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6948,7 +7021,7 @@
      "kl": "A"
     },
     {
-     "nr": "358",
+     "nr": "365",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6966,7 +7039,7 @@
      "kl": "A"
     },
     {
-     "nr": "359",
+     "nr": "366",
      "text": "Aufgehoben durch Ziff. I der V vom 21. Nov. 2018, mit Wirkung seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -6979,7 +7052,7 @@
      "kl": "A"
     },
     {
-     "nr": "360",
+     "nr": "367",
      "text": "Fassung gemäss Ziff. I der V vom 22. Okt. 1997, in Kraft seit 1. Nov. 1997 (AS <b>1997</b> 2404). Die Berichtigung vom 20. Mai 2021 betrifft nur den italienischen Text (AS <b>2021</b> 284).",
      "links": [
       {
@@ -7002,7 +7075,7 @@
      "kl": "A"
     },
     {
-     "nr": "361",
+     "nr": "368",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7020,7 +7093,7 @@
      "kl": "A"
     },
     {
-     "nr": "354",
+     "nr": "361",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7053,7 +7126,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "362",
+     "nr": "369",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7066,7 +7139,7 @@
      "kl": "A"
     },
     {
-     "nr": "363",
+     "nr": "370",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7084,7 +7157,7 @@
      "kl": "A"
     },
     {
-     "nr": "364",
+     "nr": "371",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7102,7 +7175,7 @@
      "kl": "A"
     },
     {
-     "nr": "365",
+     "nr": "372",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7115,7 +7188,7 @@
      "kl": "A"
     },
     {
-     "nr": "366",
+     "nr": "373",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7128,7 +7201,7 @@
      "kl": "A"
     },
     {
-     "nr": "367",
+     "nr": "374",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7146,7 +7219,7 @@
      "kl": "A"
     },
     {
-     "nr": "368",
+     "nr": "375",
      "text": "Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -7159,7 +7232,7 @@
      "kl": "A"
     },
     {
-     "nr": "369",
+     "nr": "376",
      "text": "Eingefügt durch Ziff. I der V vom 7. April 1982, in Kraft seit 1. Mai 1982 (AS <b>1982</b> 531).",
      "links": [
       {
@@ -7172,7 +7245,7 @@
      "kl": "A"
     },
     {
-     "nr": "370",
+     "nr": "377",
      "text": "Eingefügt durch Ziff. I der V vom 7. März 1994 (AS <b>1994</b> 816). Fassung gemäss Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -7208,7 +7281,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "371",
+     "nr": "378",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7227,7 +7300,7 @@
      "kl": "A"
     },
     {
-     "nr": "372",
+     "nr": "379",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7259,7 +7332,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "373",
+     "nr": "380",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -7291,7 +7364,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "374",
+     "nr": "381",
      "text": "Fassung gemäss Ziff. I der V vom 7. April 1982, in Kraft seit 1. Mai 1982 (AS <b>1982</b> 531).",
      "links": [
       {
@@ -7304,7 +7377,7 @@
      "kl": "A"
     },
     {
-     "nr": "375",
+     "nr": "382",
      "text": "SR <b>741.31</b>",
      "links": [
       {
@@ -7323,7 +7396,7 @@
      "kl": "V"
     },
     {
-     "nr": "376",
+     "nr": "383",
      "text": "Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -7341,7 +7414,7 @@
      "kl": "A"
     },
     {
-     "nr": "377",
+     "nr": "384",
      "text": "Aufgehoben durch Ziff. I der V vom 22. Dez. 2023, mit Wirkung seit 1. April 2024 (AS <b>2024</b> 28).",
      "links": [
       {
@@ -7378,7 +7451,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "379",
+     "nr": "386",
      "text": "Fassung gemäss Ziff. I der V vom 1. Okt. 2010, in Kraft seit 1. Jan. 2011 (AS <b>2010</b> 4569).",
      "links": [
       {
@@ -7391,7 +7464,7 @@
      "kl": "A"
     },
     {
-     "nr": "380",
+     "nr": "387",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -7430,7 +7503,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "398",
+     "nr": "405",
      "text": "Fassung gemäss Ziff. I der V vom 1. Okt. 2010, in Kraft seit 1. Jan. 2011 (AS <b>2010</b> 4569).",
      "links": [
       {
@@ -7443,7 +7516,7 @@
      "kl": "A"
     },
     {
-     "nr": "399",
+     "nr": "406",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -7461,7 +7534,7 @@
      "kl": "A"
     },
     {
-     "nr": "400",
+     "nr": "407",
      "text": "Eingefügt durch Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -7479,7 +7552,7 @@
      "kl": "A"
     },
     {
-     "nr": "401",
+     "nr": "408",
      "text": "Fassung gemäss Anhang 2 Ziff. II 4 der Postverordnung vom 29. Aug. 2012, in Kraft seit 1. Okt. 2012 (AS <b>2012 </b>5009).",
      "links": [
       {
@@ -7492,7 +7565,7 @@
      "kl": "A"
     },
     {
-     "nr": "402",
+     "nr": "409",
      "text": "SR <b>783.01</b>",
      "links": [
       {
@@ -7512,7 +7585,7 @@
      "kl": "V"
     },
     {
-     "nr": "403",
+     "nr": "410",
      "text": "Eingefügt durch Anhang 2 Ziff. II 4 der Postverordnung vom 29. Aug. 2012, in Kraft seit 1. Okt. 2012 (AS <b>2012 </b>5009).",
      "links": [
       {
@@ -7525,7 +7598,7 @@
      "kl": "A"
     },
     {
-     "nr": "404",
+     "nr": "411",
      "text": "SR <b>783.0</b>",
      "links": [
       {
@@ -7545,7 +7618,7 @@
      "kl": "V"
     },
     {
-     "nr": "405",
+     "nr": "412",
      "text": "Aufgehoben durch Ziff. I der V vom 6. Mai 2026, mit Wirkung seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -7558,7 +7631,7 @@
      "kl": "A"
     },
     {
-     "nr": "406",
+     "nr": "413",
      "text": "Fassung gemäss Anhang 2 Ziff. II 4 der Postverordnung vom 29. Aug. 2012, in Kraft seit 1. Okt. 2012 (AS <b>2012 </b>5009).",
      "links": [
       {
@@ -7595,7 +7668,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "407",
+     "nr": "414",
      "text": "Fassung gemäss Ziff. I der V vom 28. März 2007, in Kraft seit 1. Juli 2007 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -7613,7 +7686,7 @@
      "kl": "A"
     },
     {
-     "nr": "408",
+     "nr": "415",
      "text": "Fassung gemäss Ziff. I der V vom 28. März 2007, in Kraft seit 1. Juli 2007 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -7632,7 +7705,7 @@
      "kl": "A"
     },
     {
-     "nr": "409",
+     "nr": "416",
      "text": "Aufgehoben durch Ziff. II 62 der V vom 8. Nov. 2006 über die Anpassung von Bun-desratsverordnungen an die Totalrevision der Bundesrechtspflege, mit Wirkung seit 1. Jan. 2007 (AS <b>2006</b> 4705).",
      "links": [
       {
@@ -7667,7 +7740,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "410",
+     "nr": "417",
      "text": "Aufgehoben durch Ziff. I der V vom 6. Mai 2026, mit Wirkung seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -7699,7 +7772,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "411",
+     "nr": "418",
      "text": "Eingefügt durch Ziff. I der V vom 18. Dez. 2015 (AS <b>2016</b> 403). Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -7738,7 +7811,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "412",
+     "nr": "419",
      "text": "Ausdruck gemäss Ziff. I der V vom 28. März 2007, in Kraft seit 1. Juli 2007 (AS<b> 2007</b> 2101).",
      "links": [
       {
@@ -7776,7 +7849,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "413",
+     "nr": "420",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -7813,13 +7886,9 @@
    ],
    "fussnoten": [
     {
-     "nr": "415",
-     "text": "Aufgehoben durch Ziff. I der V vom 10. Juli 1972 (AS <b>1972</b> 1573). Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
+     "nr": "422",
+     "text": "Fassung gemäss Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
-      {
-       "label": "AS <b>1972</b> 1573",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1972/1573_1605_1777"
-      },
       {
        "label": "AS <b>2002</b> 1931",
        "url": "https://fedlex.data.admin.ch/eli/oc/2002/288"
@@ -7830,7 +7899,7 @@
      "kl": "A"
     },
     {
-     "nr": "416",
+     "nr": "423",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -7869,7 +7938,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "419",
+     "nr": "426",
      "text": "AS <b>1962</b> 1362 (SVG 33 Abs. 1 und 2, 49 Abs. 2)",
      "links": [
       {
@@ -7887,7 +7956,7 @@
      "kl": "Z"
     },
     {
-     "nr": "420",
+     "nr": "427",
      "text": "[BS <b>7</b> 595 614; AS <b>1948</b> 531; <i><b>1949</b> II 1491 </i>Art. 4; <b>1959</b> 679 Art. 107 Abs. 3; <b>1960</b> 1157 Art. 28 Abs. 1 Ziff. 1; 1308 Art. 4 Abs. 6]",
      "links": [
       {
@@ -7917,7 +7986,7 @@
      "kl": "Z"
     },
     {
-     "nr": "421",
+     "nr": "428",
      "text": "[BS <b>9</b> 360]",
      "links": [],
      "absatz": "3",
@@ -7996,7 +8065,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "105",
+     "nr": "109",
      "text": "Eingefügt durch Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -8009,7 +8078,7 @@
      "kl": "A"
     },
     {
-     "nr": "106",
+     "nr": "110",
      "text": "SR <b>741.21</b>",
      "links": [
       {
@@ -8028,7 +8097,7 @@
      "kl": "V"
     },
     {
-     "nr": "107",
+     "nr": "111",
      "text": "Fassung gemäss Ziff. I der V vom 2. März 2012, in Kraft seit 1. Juli 2012 (AS <b>2012</b> 1821).",
      "links": [
       {
@@ -8041,7 +8110,7 @@
      "kl": "A"
     },
     {
-     "nr": "108",
+     "nr": "112",
      "text": "Fassung gemäss Ziff. I der V vom 2. März 2012, in Kraft seit 1. Juli 2012 (AS <b>2012</b> 1821).",
      "links": [
       {
@@ -8054,7 +8123,7 @@
      "kl": "A"
     },
     {
-     "nr": "109",
+     "nr": "113",
      "text": "Fassung gemäss Ziff. I der V vom 2. März 2012, in Kraft seit 1. Juli 2012 (AS <b>2012</b> 1821).",
      "links": [
       {
@@ -8194,7 +8263,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "31",
+     "nr": "35",
      "text": "Eingefügt durch Ziff. I der V vom 10. März 1975 (AS <b>1975</b> 541). Fassung gemäss Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -8211,7 +8280,7 @@
      "kl": "A"
     },
     {
-     "nr": "32",
+     "nr": "36",
      "text": "Fassung gemäss Ziff. I der V vom 14. Okt. 2009, in Kraft seit 1. April 2010 (AS <b>2009 </b>5701).",
      "links": [
       {
@@ -8229,7 +8298,7 @@
      "kl": "A"
     },
     {
-     "nr": "33",
+     "nr": "37",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -8242,7 +8311,7 @@
      "kl": "A"
     },
     {
-     "nr": "34",
+     "nr": "38",
      "text": "Richtlinie 91/671/EWG des Rates vom 16. Dezember 1991 zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über die Gurtanlegepflicht in Kraftfahrzeugen mit einem Gewicht von weniger als 3,5 Tonnen, ABl. L 373 vom 31.12.1991, S. 26; zuletzt geändert durch Richtlinie 2014/37/EU, ABl. L 59 vom 28.02.2014, S. 32.",
      "links": [],
      "absatz": "2",
@@ -8256,7 +8325,7 @@
      "kl": "V"
     },
     {
-     "nr": "35",
+     "nr": "39",
      "text": "Eingefügt durch Ziff. I der V vom 16. Nov. 2016, in Kraft seit 15. Jan. 2017 (AS <b>2016</b> 5129).",
      "links": [
       {
@@ -8269,7 +8338,7 @@
      "kl": "A"
     },
     {
-     "nr": "36",
+     "nr": "40",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -8288,7 +8357,7 @@
      "kl": "V"
     },
     {
-     "nr": "37",
+     "nr": "41",
      "text": "Fassung gemäss Ziff. III der V vom 9. Juni 2023, in Kraft seit 15. Juli 2023 (AS <b>2023</b> 327).",
      "links": [
       {
@@ -8306,7 +8375,7 @@
      "kl": "A"
     },
     {
-     "nr": "38",
+     "nr": "42",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -8344,7 +8413,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "39",
+     "nr": "43",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 1981 (AS <b>1981</b> 507). Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -8361,7 +8430,7 @@
      "kl": "A"
     },
     {
-     "nr": "40",
+     "nr": "44",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -8374,7 +8443,7 @@
      "kl": "A"
     },
     {
-     "nr": "41",
+     "nr": "45",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -8387,7 +8456,7 @@
      "kl": "A"
     },
     {
-     "nr": "42",
+     "nr": "46",
      "text": "Eingefügt durch Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -8400,7 +8469,7 @@
      "kl": "A"
     },
     {
-     "nr": "43",
+     "nr": "47",
      "text": "SN EN 1077, <i>2007</i>, Helme für alpine Skiläufer und für Snowboarder. Diese Norm kann gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch .",
      "links": [
       {
@@ -8418,7 +8487,7 @@
      "kl": "V"
     },
     {
-     "nr": "44",
+     "nr": "48",
      "text": "SN EN 1078, <i>2013</i>, Helme für Radfahrer und für Benutzer von Skateboards und Rollschuhen. Diese Norm kann gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch .",
      "links": [
       {
@@ -8436,7 +8505,7 @@
      "kl": "V"
     },
     {
-     "nr": "45",
+     "nr": "49",
      "text": "Fassung gemäss Ziff. I der V vom 13. Dez. 2024, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 26).",
      "links": [
       {
@@ -8473,7 +8542,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "165",
+     "nr": "169",
      "text": "Eingefügt durch Ziff. I der V vom 25. Jan. 1989 (AS <b>1989</b> 410). Fassung gemäss Ziff. II der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 1103).",
      "links": [
       {
@@ -8509,7 +8578,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "166",
+     "nr": "170",
      "text": "Eingefügt durch Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -8522,7 +8591,7 @@
      "kl": "A"
     },
     {
-     "nr": "167",
+     "nr": "171",
      "text": "Eingefügt durch Anhang 1 Ziff. II 4 der V vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge, in Kraft seit 1. Okt. 1995 (AS <b>1995</b> 4425).",
      "links": [
       {
@@ -8535,7 +8604,7 @@
      "kl": "A"
     },
     {
-     "nr": "168",
+     "nr": "172",
      "text": "Fassung gemäss Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -8551,6 +8620,76 @@
       "l": 80
      },
      "kl": "A"
+    }
+   ]
+  },
+  "41_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
+    },
+    {
+     "ebene": 2,
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
+    }
+   ],
+   "marginalie": [
+    "Schwere Motorwagen mit emissionsfreiem Antrieb"
+   ],
+   "fussnoten": [
+    {
+     "nr": "173",
+     "text": "Eingefügt durch Ziff. I der V vom 19. Aug. 2026, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 452).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 452",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/452"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "174",
+     "text": "SR <b>741.41</b>",
+     "links": [
+      {
+       "label": "SR <b>741.41</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1995/4425_4425_4425",
+       "rs": "741.41"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 70,
+      "l": 255
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "175",
+     "text": "SR <b>741.21</b>",
+     "links": [
+      {
+       "label": "SR <b>741.21</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1979/1961_1961_1961",
+       "rs": "741.21"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 80,
+      "l": 82
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8572,7 +8711,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "178",
+     "nr": "185",
      "text": "Eingefügt durch Ziff. I der V vom 17. Aug. 2005, in Kraft seit 1. März 2006 (AS <b>2005</b> 4487).",
      "links": [
       {
@@ -8585,7 +8724,7 @@
      "kl": "A"
     },
     {
-     "nr": "179",
+     "nr": "186",
      "text": "Fassung gemäss Ziff. I der V vom 15. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1315).",
      "links": [
       {
@@ -8598,7 +8737,7 @@
      "kl": "A"
     },
     {
-     "nr": "180",
+     "nr": "187",
      "text": "Fassung gemäss Ziff. I der V vom 15. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1315).",
      "links": [
       {
@@ -8635,7 +8774,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "48",
+     "nr": "52",
      "text": "Eingefügt durch Ziff. I der V vom 22. Dez. 1976 (AS <b>1976</b> 2810). Fassung gemäss Ziff. I der V vom 19. Okt. 1983, in Kraft seit 1. Jan. 1984 (AS <b>1983</b> 1651).",
      "links": [
       {
@@ -8652,7 +8791,7 @@
      "kl": "A"
     },
     {
-     "nr": "49",
+     "nr": "53",
      "text": "Fassung gemäss Ziff. I der V vom 20. Dez. 1989, in Kraft seit 1. Jan. 1990 (AS <b>1990</b> 66).",
      "links": [
       {
@@ -8671,7 +8810,7 @@
      "kl": "A"
     },
     {
-     "nr": "50",
+     "nr": "54",
      "text": "Fassung gemäss Ziff. I der V vom 20. Dez. 1989, in Kraft seit 1. Jan. 1990 (AS <b>1990</b> 66).",
      "links": [
       {
@@ -8689,7 +8828,7 @@
      "kl": "A"
     },
     {
-     "nr": "51",
+     "nr": "55",
      "text": "Eingefügt durch Ziff. I der V vom 20. Dez. 1989, in Kraft seit 1. Jan. 1990 (AS <b>1990</b> 66).",
      "links": [
       {
@@ -8707,7 +8846,7 @@
      "kl": "A"
     },
     {
-     "nr": "52",
+     "nr": "56",
      "text": "Fassung gemäss Ziff. I der V vom 20. Dez. 1989, in Kraft seit 1. Jan. 1990 (AS <b>1990</b> 66).",
      "links": [
       {
@@ -8744,7 +8883,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "196",
+     "nr": "203",
      "text": "Eingefügt durch Ziff. I der V vom 15. Mai 2002, in Kraft seit 1. Aug. 2002 (AS <b>2002</b> 1931).",
      "links": [
       {
@@ -8781,7 +8920,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "215",
+     "nr": "222",
      "text": "Eingefügt durch Ziff. I der V vom 13. Nov. 1985 (AS <b>1985</b> 1841). Fassung gemäss Ziff. I der V vom 30. Nov. 2012, in Kraft seit 1. Jan. 2013 (AS <b>2012 </b>7085).",
      "links": [
       {
@@ -8798,7 +8937,7 @@
      "kl": "A"
     },
     {
-     "nr": "214",
+     "nr": "221",
      "text": "Eingefügt durch Ziff. I der V vom 13. Nov. 1985, in Kraft seit 1. Jan. 1986 (AS <b>1985</b> 1841).",
      "links": [
       {
@@ -8836,7 +8975,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "216",
+     "nr": "223",
      "text": "Eingefügt durch Ziff. I der V vom 30. Nov. 2012, in Kraft seit 1. Jan. 2013 (AS <b>2012 </b>7085).",
      "links": [
       {
@@ -8873,7 +9012,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "217",
+     "nr": "224",
      "text": "Eingefügt durch Ziff. I der V vom 30. Nov. 2012, in Kraft seit 1. Jan. 2013 (AS <b>2012 </b>7085).",
      "links": [
       {
@@ -8910,7 +9049,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "244",
+     "nr": "251",
      "text": "Eingefügt durch Ziff. I der V vom 7. März 1994, in Kraft seit 1. April 1994 (AS <b>1994</b> 816).",
      "links": [
       {
@@ -8923,7 +9062,7 @@
      "kl": "A"
     },
     {
-     "nr": "245",
+     "nr": "252",
      "text": "Zweiter Satz eingefügt durch Ziff. I der V vom 15. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2883).",
      "links": [
       {
@@ -8961,7 +9100,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "381",
+     "nr": "388",
      "text": "Eingefügt durch Ziff. I der V vom 1. Okt. 2010, in Kraft seit 1. Jan. 2011 (AS <b>2010</b> 4569).",
      "links": [
       {
@@ -8974,7 +9113,7 @@
      "kl": "A"
     },
     {
-     "nr": "382",
+     "nr": "389",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -8987,7 +9126,7 @@
      "kl": "A"
     },
     {
-     "nr": "383",
+     "nr": "390",
      "text": "Fassung gemäss Anhang 2 Ziff. II 4 der Postverordnung vom 29. Aug. 2012, in Kraft seit 1. Okt. 2012 (AS <b>2012 </b>5009).",
      "links": [
       {
@@ -9000,7 +9139,7 @@
      "kl": "A"
     },
     {
-     "nr": "384",
+     "nr": "391",
      "text": "SR <b>783.01</b>",
      "links": [
       {
@@ -9020,7 +9159,7 @@
      "kl": "V"
     },
     {
-     "nr": "385",
+     "nr": "392",
      "text": "SR <b>783.0</b>",
      "links": [
       {
@@ -9040,7 +9179,7 @@
      "kl": "V"
     },
     {
-     "nr": "386",
+     "nr": "393",
      "text": "Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -9053,7 +9192,7 @@
      "kl": "A"
     },
     {
-     "nr": "387",
+     "nr": "394",
      "text": "SR <b>817.0</b>",
      "links": [
       {
@@ -9073,7 +9212,7 @@
      "kl": "V"
     },
     {
-     "nr": "388",
+     "nr": "395",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -9086,7 +9225,7 @@
      "kl": "A"
     },
     {
-     "nr": "389",
+     "nr": "396",
      "text": "Fassung gemäss Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -9099,7 +9238,7 @@
      "kl": "A"
     },
     {
-     "nr": "390",
+     "nr": "397",
      "text": "Eingefügt durch Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Febr. 2019 (AS <b>2019</b> 243).",
      "links": [
       {
@@ -9112,7 +9251,7 @@
      "kl": "A"
     },
     {
-     "nr": "391",
+     "nr": "398",
      "text": "Eingefügt durch Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -9125,7 +9264,7 @@
      "kl": "A"
     },
     {
-     "nr": "392",
+     "nr": "399",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -9138,7 +9277,7 @@
      "kl": "A"
     },
     {
-     "nr": "393",
+     "nr": "400",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -9151,7 +9290,7 @@
      "kl": "A"
     },
     {
-     "nr": "394",
+     "nr": "401",
      "text": "SR <b>741.41</b>",
      "links": [
       {
@@ -9171,7 +9310,7 @@
      "kl": "V"
     },
     {
-     "nr": "395",
+     "nr": "402",
      "text": "Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft seit 1. April 2022 (AS <b>2022</b> 13).",
      "links": [
       {
@@ -9184,7 +9323,7 @@
      "kl": "A"
     },
     {
-     "nr": "396",
+     "nr": "403",
      "text": "Eingefügt durch Ziff. I der V vom 6. Mai 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 226).",
      "links": [
       {
@@ -9197,7 +9336,7 @@
      "kl": "A"
     },
     {
-     "nr": "397",
+     "nr": "404",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -9234,7 +9373,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "414",
+     "nr": "421",
      "text": "Eingefügt durch Ziff. I der V vom 20. Mai 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 2139).",
      "links": [
       {
@@ -9266,7 +9405,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "417",
+     "nr": "424",
      "text": "Eingefügt durch Ziff. I der V vom 24. Juni 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>2451).",
      "links": [
       {
@@ -9279,7 +9418,7 @@
      "kl": "A"
     },
     {
-     "nr": "418",
+     "nr": "425",
      "text": "Die Berichtigung vom 15. Sept. 2015 betrifft nur den französischen Text (AS <b>2015</b> 3145).",
      "links": [
       {

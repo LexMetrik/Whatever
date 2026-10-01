@@ -2,8 +2,8 @@
  "erlass": "BBV",
  "abdeckung": {
   "fussnoten": 66,
-  "ereignis": 44,
-  "referenz": 19,
+  "ereignis": 48,
+  "referenz": 15,
   "unparsed": 3
  },
  "artikel": {
@@ -132,8 +132,47 @@
    ]
   },
   "36": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 359",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/359"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 359",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/359"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 359",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/359"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -780,6 +819,25 @@
     }
    ]
   },
+  "77_78": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 359",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/359"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ],
+   "aufgehobenSeit": "2026-10-01"
+  },
   "78_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
@@ -802,17 +860,17 @@
  "residuum": [
   {
    "token": "38",
-   "nr": "17",
+   "nr": "20",
    "roh": "Das Verzeichnis ist abrufbar unter: www.bvz.admin.ch"
   },
   {
    "token": "66_f",
-   "nr": "37",
+   "nr": "40",
    "roh": "Zu finden auf der Website der Konferenz der kantonalen Erziehungsdirektoren (EDK) unter www.edk.ch > Arbeiten > Finanzierungs-Vereinbarungen > Höhere Fachschulen"
   },
   {
    "token": "66_g",
-   "nr": "39",
+   "nr": "42",
    "roh": "Die Liste ist abrufbar unter: www.sbfi.admin.ch > Bildung > Höhere Berufsbildung > Bundesbeiträge vorbereitende Kurse BP und HFP > Liste der vorbereitenden Kurse"
   }
  ]

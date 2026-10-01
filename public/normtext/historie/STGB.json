@@ -6006,26 +6006,27 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "327": {
-   "giltSeit": "2019-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-11-01",
-     "wirkung": false,
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
      "quellen": [
       {
-       "label": "AS 2019 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 279",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "328": {
    "giltSeit": null,
@@ -8896,11 +8897,11 @@
    ]
   },
   "327_a": {
-   "giltSeit": "2019-11-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-11-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -8910,6 +8911,23 @@
       {
        "label": "BBl 2019 279",
        "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,

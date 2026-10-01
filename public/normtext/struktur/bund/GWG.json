@@ -1,12 +1,12 @@
 {
  "zaehler":{"3":[1,0],"4":[2,0],"6":[1,0],"9":[1,0],"37":[1,0],"29a":[1,0],"2a":[1,0]},
- "erzeugt": "2026-09-14",
- "stand": "2024-03-01",
- "fassungsToken": "20240301",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "955.0",
   "titel": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung",
-  "erlassdatum": "vom 10. Oktober 1997 (Stand am 1. März 2024)",
+  "erlassdatum": "vom 10. Oktober 1997 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -105,15 +105,15 @@
    "fussnoten": [
     {
      "nr": "5",
-     "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2009</b> 361",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl <b>2007</b> 6269",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/938"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -135,8 +135,28 @@
      "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 103,
-      "l": 260
+      "o": 110,
+      "l": 380
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "7",
+     "text": "SR <b>946.231</b>",
+     "links": [
+      {
+       "label": "SR <b>946.231</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2002/564",
+       "rs": "946.231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 372,
+      "l": 380
      },
      "kl": "V"
     }
@@ -155,7 +175,24 @@
    ],
    "fussnoten": [
     {
-     "nr": "7",
+     "nr": "8",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "c",
+     "kl": "A"
+    },
+    {
+     "nr": "9",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -168,17 +205,17 @@
       }
      ],
      "absatz": "1",
-     "item": "b",
+     "item": "c",
      "pos": {
       "b": 0,
-      "it": 1,
-      "o": 135,
-      "l": 135
+      "it": 2,
+      "o": 29,
+      "l": 29
      },
      "kl": "A"
     },
     {
-     "nr": "8",
+     "nr": "10",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 5247; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -195,7 +232,7 @@
      "kl": "A"
     },
     {
-     "nr": "9",
+     "nr": "11",
      "text": "SR <b>952.0</b>",
      "links": [
       {
@@ -215,7 +252,7 @@
      "kl": "V"
     },
     {
-     "nr": "10",
+     "nr": "12",
      "text": "Eingefügt durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901). Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -248,7 +285,7 @@
      "kl": "A"
     },
     {
-     "nr": "11",
+     "nr": "13",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -268,7 +305,7 @@
      "kl": "V"
     },
     {
-     "nr": "12",
+     "nr": "14",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -289,7 +326,7 @@
      "kl": "A"
     },
     {
-     "nr": "13",
+     "nr": "15",
      "text": "Eingefügt durch Anhang Ziff. II 9 des Kollektivanlagengesetzes vom 23. Juni 2006 (AS <b>2006</b> 5379; BBl <b>2005</b> 6395). Fassung gemäss Anhang Ziff. 6 des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -314,7 +351,7 @@
      "kl": "A"
     },
     {
-     "nr": "14",
+     "nr": "16",
      "text": "SR <b>951.31</b>",
      "links": [
       {
@@ -334,7 +371,7 @@
      "kl": "V"
     },
     {
-     "nr": "15",
+     "nr": "17",
      "text": "Fassung gemäss Anhang Ziff. II 9 des Kollektivanlagengesetzes vom 23. Juni 2006, in Kraft seit 1. Jan. 2007 (AS <b>2006</b> 5379; BBl <b>2005</b> 6395).",
      "links": [
       {
@@ -351,7 +388,7 @@
      "kl": "A"
     },
     {
-     "nr": "16",
+     "nr": "18",
      "text": "SR <b>961.01</b>",
      "links": [
       {
@@ -371,7 +408,7 @@
      "kl": "V"
     },
     {
-     "nr": "17",
+     "nr": "19",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -392,7 +429,7 @@
      "kl": "A"
     },
     {
-     "nr": "18",
+     "nr": "20",
      "text": "Eingefügt durch Anhang Ziff. 12 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483). Fassung gemäss Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
      "links": [
       {
@@ -421,7 +458,7 @@
      "kl": "A"
     },
     {
-     "nr": "19",
+     "nr": "21",
      "text": "SR <b>958.1</b>",
      "links": [
       {
@@ -441,7 +478,7 @@
      "kl": "V"
     },
     {
-     "nr": "20",
+     "nr": "22",
      "text": "Eingefügt durch Anhang Ziff. 12 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483). Fassung gemäss Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
      "links": [
       {
@@ -470,7 +507,7 @@
      "kl": "A"
     },
     {
-     "nr": "21",
+     "nr": "23",
      "text": "Eingefügt durch Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
      "links": [
       {
@@ -491,7 +528,7 @@
      "kl": "A"
     },
     {
-     "nr": "22",
+     "nr": "24",
      "text": "Eingefügt durch Anhang Ziff. 4 des Spielbankengesetz vom 18. Dez. 1998 (AS <b>2000</b> 677; BBl <b>1997 </b>III 145). Fassung gemäss Anhang Ziff. II 8 des Geldspielgesetzes vom 29. Sept. 2017, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 5103; BBl <b>2015</b> 8387).",
      "links": [
       {
@@ -516,7 +553,7 @@
      "kl": "A"
     },
     {
-     "nr": "23",
+     "nr": "25",
      "text": "SR <b>935.51</b>",
      "links": [
       {
@@ -536,7 +573,7 @@
      "kl": "V"
     },
     {
-     "nr": "24",
+     "nr": "26",
      "text": "Eingefügt durch Anhang Ziff. II 8 des Geldspielgesetzes vom 29. Sept. 2017, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 5103; BBl <b>2015</b> 8387).",
      "links": [
       {
@@ -553,7 +590,7 @@
      "kl": "A"
     },
     {
-     "nr": "25",
+     "nr": "27",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -574,7 +611,7 @@
      "kl": "A"
     },
     {
-     "nr": "26",
+     "nr": "28",
      "text": "SR <b>941.31</b>",
      "links": [
       {
@@ -594,7 +631,7 @@
      "kl": "V"
     },
     {
-     "nr": "27",
+     "nr": "29",
      "text": "Aufgehoben durch Anhang Ziff. II 8 des Versicherungsaufsichtsgesetzes vom 17. Dez. 2004, mit Wirkung seit 1. Jan. 2006 (AS <b>2005</b> 5269; BBl <b>2003</b> 3789).",
      "links": [
       {
@@ -611,7 +648,7 @@
      "kl": "A"
     },
     {
-     "nr": "28",
+     "nr": "30",
      "text": "Aufgehoben durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -632,7 +669,52 @@
      "kl": "A"
     },
     {
-     "nr": "29",
+     "nr": "31",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3bis",
+     "item": "e",
+     "pos": {
+      "b": 3,
+      "it": 4,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "32",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3ter",
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "33",
      "text": "Eingefügt duch Anhang Ziff. 6 des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -647,6 +729,130 @@
      "absatz": "4",
      "item": "e",
      "kl": "U"
+    },
+    {
+     "nr": "34",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": "f",
+     "kl": "A"
+    },
+    {
+     "nr": "35",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4bis",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "36",
+     "text": "SR <b>642.14</b>",
+     "links": [
+      {
+       "label": "SR <b>642.14</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1991/1256_1256_1256",
+       "rs": "642.14"
+      }
+     ],
+     "absatz": "4ter",
+     "item": "c",
+     "pos": {
+      "b": 7,
+      "it": 2,
+      "o": 236,
+      "l": 244
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "37",
+     "text": "SR <b>211.412.11</b>",
+     "links": [
+      {
+       "label": "SR <b>211.412.11</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1993/1410_1410_1410",
+       "rs": "211.412.11"
+      }
+     ],
+     "absatz": "4ter",
+     "item": "d",
+     "pos": {
+      "b": 7,
+      "it": 3,
+      "o": 107,
+      "l": 191
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "38",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4ter",
+     "item": "h",
+     "pos": {
+      "b": 7,
+      "it": 7,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "39",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     }
    ]
   },
@@ -668,7 +874,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "33",
+     "nr": "45",
      "text": "Zweiter Satz eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -690,7 +896,7 @@
      "kl": "A"
     },
     {
-     "nr": "34",
+     "nr": "46",
      "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -712,7 +918,7 @@
      "kl": "A"
     },
     {
-     "nr": "35",
+     "nr": "47",
      "text": "Die Bezeichnung der Verwaltungseinheit wurde in Anwendung von Art. 20 Abs. 2 der Publikationsverordnung vom 7. Okt. 2015 (SR <b>170.512.1</b>) angepasst. Diese Anpassung wurde im ganzen Text vorgenommen.",
      "links": [
       {
@@ -731,7 +937,7 @@
      "kl": "A"
     },
     {
-     "nr": "36",
+     "nr": "48",
      "text": "Fassung gemäss Anhang 2 Ziff. 1 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -757,7 +963,7 @@
      "kl": "A"
     },
     {
-     "nr": "31",
+     "nr": "43",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -775,7 +981,7 @@
      "kl": "A"
     },
     {
-     "nr": "32",
+     "nr": "44",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -812,7 +1018,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "37",
+     "nr": "49",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -829,7 +1035,7 @@
      "kl": "A"
     },
     {
-     "nr": "38",
+     "nr": "50",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -851,6 +1057,28 @@
       "b": 0,
       "o": 226,
       "l": 458
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "51",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 209,
+      "l": 209
      },
      "kl": "A"
     }
@@ -891,7 +1119,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "39",
+     "nr": "52",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -908,7 +1136,7 @@
      "kl": "A"
     },
     {
-     "nr": "40",
+     "nr": "53",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -925,7 +1153,7 @@
      "kl": "A"
     },
     {
-     "nr": "41",
+     "nr": "54",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -945,7 +1173,7 @@
      "kl": "V"
     },
     {
-     "nr": "42",
+     "nr": "55",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -985,7 +1213,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "43",
+     "nr": "56",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1030,16 +1258,13 @@
    ],
    "fussnoten": [
     {
-     "nr": "45",
-     "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
+     "nr": "58",
+     "text": "SR <b>946.231</b>",
      "links": [
       {
-       "label": "AS <b>2009</b> 361",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/64"
-      },
-      {
-       "label": "BBl <b>2007</b> 6269",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/938"
+       "label": "SR <b>946.231</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2002/564",
+       "rs": "946.231"
       }
      ],
      "absatz": null,
@@ -1047,8 +1272,31 @@
      "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 150,
-      "l": 231
+      "o": 210,
+      "l": 307
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "59",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 307
      },
      "kl": "A"
     }
@@ -1072,7 +1320,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "49",
+     "nr": "71",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -1089,7 +1337,7 @@
      "kl": "A"
     },
     {
-     "nr": "50",
+     "nr": "72",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -1109,7 +1357,7 @@
      "kl": "V"
     },
     {
-     "nr": "51",
+     "nr": "73",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -1126,7 +1374,7 @@
      "kl": "A"
     },
     {
-     "nr": "52",
+     "nr": "74",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -1143,7 +1391,7 @@
      "kl": "A"
     },
     {
-     "nr": "53",
+     "nr": "75",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1172,7 +1420,7 @@
      "kl": "A"
     },
     {
-     "nr": "54",
+     "nr": "76",
      "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -1195,7 +1443,7 @@
      "kl": "A"
     },
     {
-     "nr": "55",
+     "nr": "77",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -1212,7 +1460,7 @@
      "kl": "A"
     },
     {
-     "nr": "56",
+     "nr": "78",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -1229,7 +1477,7 @@
      "kl": "A"
     },
     {
-     "nr": "57",
+     "nr": "79",
      "text": "Eingefügt durch Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -1246,7 +1494,7 @@
      "kl": "A"
     },
     {
-     "nr": "58",
+     "nr": "80",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière (AS <b>2009</b> 361; BBl <b>2007</b> 6269). Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -1277,8 +1525,8 @@
      "kl": "A"
     },
     {
-     "nr": "59",
-     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
+     "nr": "81",
+     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015</b> 1389",
@@ -1287,20 +1535,51 @@
       {
        "label": "BBl <b>2014</b> 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1ter",
-     "item": null,
+     "item": "c",
      "pos": {
       "b": 2,
-      "o": 416,
-      "l": 416
+      "it": 6,
+      "o": 393,
+      "l": 393
      },
      "kl": "A"
     },
     {
-     "nr": "60",
-     "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "82",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1quater",
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 488,
+      "l": 488
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "83",
+     "text": "Ursprünglich Abs. 1. Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
        "label": "AS <b>2021</b> 656",
@@ -1315,12 +1594,58 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
       }
      ],
-     "absatz": "1quater",
+     "absatz": "1quinquies",
      "item": null,
      "pos": {
-      "b": 3,
+      "b": 4,
       "o": 356,
       "l": 356
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "84",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 5,
+     "pos": {
+      "b": 5,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "85",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "b",
+     "pos": {
+      "b": 6,
+      "it": 1,
+      "o": 118,
+      "l": 118
      },
      "kl": "A"
     }
@@ -1344,7 +1669,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "66",
+     "nr": "92",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -1361,7 +1686,7 @@
      "kl": "A"
     },
     {
-     "nr": "67",
+     "nr": "93",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -1380,7 +1705,7 @@
      "kl": "V"
     },
     {
-     "nr": "68",
+     "nr": "94",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1406,7 +1731,7 @@
      "kl": "A"
     },
     {
-     "nr": "69",
+     "nr": "95",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1451,7 +1776,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "79",
+     "nr": "105",
      "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -1468,7 +1793,7 @@
      "kl": "A"
     },
     {
-     "nr": "80",
+     "nr": "106",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -1488,7 +1813,7 @@
      "kl": "V"
     },
     {
-     "nr": "81",
+     "nr": "107",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -1508,7 +1833,7 @@
      "kl": "V"
     },
     {
-     "nr": "82",
+     "nr": "108",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1554,7 +1879,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "87",
+     "nr": "116",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -1571,20 +1896,16 @@
      "kl": "A"
     },
     {
-     "nr": "88",
-     "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
+     "nr": "117",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2018</b> 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2019</b> 4631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/762"
-      },
-      {
-       "label": "BBl <b>2015</b> 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1592,26 +1913,22 @@
      "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 96,
-      "l": 96
+      "o": 77,
+      "l": 77
      },
      "kl": "A"
     },
     {
-     "nr": "89",
-     "text": "Fassung gemäss Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
+     "nr": "118",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2021</b> 33",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "399",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/399"
-      },
-      {
-       "label": "BBl <b>2020</b> 233",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/16"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1619,16 +1936,16 @@
      "kl": "A"
     },
     {
-     "nr": "90",
-     "text": "Fassung gemäss Anhang Ziff. II 8 des Geldspielgesetzes vom 29. Sept. 2017, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 5103; BBl <b>2015</b> 8387).",
+     "nr": "119",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2018</b> 5103",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/795"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl <b>2015</b> 8387",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2039"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1636,8 +1953,8 @@
      "kl": "A"
     },
     {
-     "nr": "91",
-     "text": "Eingefügt durch Anhang Ziff. II 8 des Geldspielgesetzes vom 29. Sept. 2017 (AS <b>2018</b> 5103; BBl <b>2015</b> 8387). Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "120",
+     "text": "Eingefügt durch Anhang Ziff. II 8 des Geldspielgesetzes vom 29. Sept. 2017 (AS <b>2018</b> 5103; BBl <b>2015</b> 8387). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2018</b> 5103",
@@ -1648,16 +1965,12 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2015/2039"
       },
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1665,7 +1978,7 @@
      "kl": "A"
     },
     {
-     "nr": "92",
+     "nr": "121",
      "text": "SR <b>935.51</b>",
      "links": [
       {
@@ -1679,26 +1992,30 @@
      "pos": {
       "b": 0,
       "it": 2,
-      "o": 112,
-      "l": 138
+      "o": 131,
+      "l": 157
      },
      "kl": "V"
     },
     {
-     "nr": "93",
-     "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "122",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021 (AS <b>2021</b> 656; BBl <b>2019</b> 5451). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2021</b> 656",
        "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
        "label": "BBl <b>2019</b> 5451",
        "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1706,24 +2023,37 @@
      "kl": "A"
     },
     {
-     "nr": "94",
-     "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
+     "nr": "123",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2018</b> 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2019</b> 4631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/762"
-      },
-      {
-       "label": "BBl <b>2015</b> 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": "c",
+     "kl": "A"
+    },
+    {
+     "nr": "124",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": "d",
      "kl": "A"
     }
    ]
@@ -1744,7 +2074,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "95",
+     "nr": "127",
      "text": "Aufgehoben durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -1780,7 +2110,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "96",
+     "nr": "128",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -1798,6 +2128,73 @@
      ],
      "absatz": null,
      "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "129",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "130",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "131",
+     "text": "Zweiter Satz eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 197,
+      "l": 197
+     },
      "kl": "A"
     }
    ]
@@ -1820,7 +2217,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "97",
+     "nr": "132",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -1837,7 +2234,7 @@
      "kl": "A"
     },
     {
-     "nr": "98",
+     "nr": "133",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1863,7 +2260,7 @@
      "kl": "A"
     },
     {
-     "nr": "99",
+     "nr": "134",
      "text": "SR <b>221.302</b>",
      "links": [
       {
@@ -1882,7 +2279,7 @@
      "kl": "V"
     },
     {
-     "nr": "100",
+     "nr": "135",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1908,7 +2305,7 @@
      "kl": "A"
     },
     {
-     "nr": "101",
+     "nr": "136",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1934,7 +2331,7 @@
      "kl": "A"
     },
     {
-     "nr": "102",
+     "nr": "137",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1960,7 +2357,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "138",
      "text": "Fassung gemäss Anhang 2 Ziff. 3 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -1986,7 +2383,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "139",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2003,7 +2400,7 @@
      "kl": "A"
     },
     {
-     "nr": "105",
+     "nr": "140",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -2023,7 +2420,7 @@
      "kl": "V"
     },
     {
-     "nr": "106",
+     "nr": "141",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2040,7 +2437,7 @@
      "kl": "A"
     },
     {
-     "nr": "107",
+     "nr": "142",
      "text": "Eingefügt durch Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2074,7 +2471,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "110",
+     "nr": "145",
      "text": "Fassung gemäss Anhang 2 Ziff. 3 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2100,7 +2497,7 @@
      "kl": "A"
     },
     {
-     "nr": "111",
+     "nr": "146",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2117,7 +2514,7 @@
      "kl": "A"
     },
     {
-     "nr": "112",
+     "nr": "147",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -2137,7 +2534,7 @@
      "kl": "V"
     },
     {
-     "nr": "113",
+     "nr": "148",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -2154,7 +2551,7 @@
      "kl": "A"
     },
     {
-     "nr": "114",
+     "nr": "149",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2171,7 +2568,7 @@
      "kl": "A"
     },
     {
-     "nr": "115",
+     "nr": "150",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -2188,7 +2585,7 @@
      "kl": "A"
     },
     {
-     "nr": "116",
+     "nr": "151",
      "text": "Eingefügt durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2214,7 +2611,7 @@
      "kl": "A"
     },
     {
-     "nr": "108",
+     "nr": "143",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2232,7 +2629,7 @@
      "kl": "A"
     },
     {
-     "nr": "109",
+     "nr": "144",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2271,7 +2668,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "118",
+     "nr": "153",
      "text": "Fassung gemäss Anhang 2 Ziff. 1 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2292,7 +2689,29 @@
      "kl": "A"
     },
     {
-     "nr": "117",
+     "nr": "154",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "152",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2320,7 +2739,7 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
@@ -2329,7 +2748,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "120",
+     "nr": "156",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2346,29 +2765,29 @@
      "kl": "A"
     },
     {
-     "nr": "121",
-     "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
+     "nr": "157",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2008 </b>5207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl <b>2006</b> 2829",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1",
      "item": null,
      "pos": {
       "b": 0,
-      "o": 107,
-      "l": 107
+      "o": 145,
+      "l": 145
      },
      "kl": "A"
     },
     {
-     "nr": "122",
+     "nr": "158",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2389,7 +2808,41 @@
      "kl": "A"
     },
     {
-     "nr": "123",
+     "nr": "159",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "c",
+     "kl": "A"
+    },
+    {
+     "nr": "160",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "e",
+     "kl": "A"
+    },
+    {
+     "nr": "161",
      "text": "Aufgehoben durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2406,11 +2859,11 @@
       }
      ],
      "absatz": "1",
-     "item": "e",
+     "item": "f",
      "kl": "A"
     },
     {
-     "nr": "124",
+     "nr": "162",
      "text": "Aufgehoben gemäss Anhang Ziff. 7 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), mit Wirkung seit 1. Jan. 2015 (AS <b>2014 </b>4073; BBl <b>2013 </b>6857).",
      "links": [
       {
@@ -2432,34 +2885,30 @@
      "kl": "A"
     },
     {
-     "nr": "125",
-     "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
+     "nr": "163",
+     "text": "Aufgehoben durch Ziff. I des BG vom 26. Sept. 2025, mit Wirkung seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2018</b> 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2019</b> 4631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/762"
-      },
-      {
-       "label": "BBl <b>2015</b> 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
      "item": null,
      "pos": {
       "b": 2,
-      "o": 278,
-      "l": 278
+      "o": 1,
+      "l": 1
      },
      "kl": "A"
     },
     {
-     "nr": "126",
-     "text": "Eingefügt durch Anhang Ziff. 7 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), in Kraft seit 1. Jan. 2015 (AS <b>2014 </b>4073; BBl <b>2013 </b>6857).",
+     "nr": "164",
+     "text": "Eingefügt durch Anhang Ziff. 7 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften) (AS <b>2014 </b>4073; BBl <b>2013 </b>6857). Aufgehoben durch Ziff. I des BG vom 26. Sept. 2025, mit Wirkung seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2014 </b>4073",
@@ -2468,21 +2917,28 @@
       {
        "label": "BBl <b>2013 </b>6857",
        "url": "https://fedlex.data.admin.ch/eli/fga/2013/1303"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "4",
-     "item": "d",
+     "item": null,
      "pos": {
       "b": 3,
-      "it": 3,
-      "o": 41,
-      "l": 41
+      "o": 1,
+      "l": 1
      },
      "kl": "A"
     },
     {
-     "nr": "119",
-     "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
+     "nr": "155",
+     "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, (AS <b>2008 </b>5207; BBl <b>2006</b> 2829). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2008 </b>5207",
@@ -2491,11 +2947,19 @@
       {
        "label": "BBl <b>2006</b> 2829",
        "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "sektion": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "kl": "A"
     }
    ]
@@ -2509,14 +2973,14 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "128",
+     "nr": "167",
      "text": "Aufgehoben durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2543,7 +3007,7 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
@@ -2552,7 +3016,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "131",
+     "nr": "170",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2573,7 +3037,7 @@
      "kl": "A"
     },
     {
-     "nr": "132",
+     "nr": "171",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -2609,7 +3073,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "141",
+     "nr": "181",
      "text": "Die Bezeichnung der Verwaltungseinheit wurde in Anwendung von Art. 16 Abs. 3 der Publikationsverordnung vom 17. Nov. 2004 (AS <b>2004</b> 4937) angepasst.",
      "links": [
       {
@@ -2627,7 +3091,7 @@
      "kl": "A"
     },
     {
-     "nr": "142",
+     "nr": "182",
      "text": "Fassung gemäss Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -2649,7 +3113,7 @@
      "kl": "A"
     },
     {
-     "nr": "143",
+     "nr": "183",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2675,7 +3139,7 @@
      "kl": "A"
     },
     {
-     "nr": "144",
+     "nr": "184",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2692,7 +3156,7 @@
      "kl": "A"
     },
     {
-     "nr": "145",
+     "nr": "185",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -2712,7 +3176,7 @@
      "kl": "V"
     },
     {
-     "nr": "146",
+     "nr": "186",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -2729,7 +3193,7 @@
      "kl": "A"
     },
     {
-     "nr": "147",
+     "nr": "187",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -2746,7 +3210,7 @@
      "kl": "A"
     },
     {
-     "nr": "148",
+     "nr": "188",
      "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -2769,8 +3233,8 @@
      "kl": "A"
     },
     {
-     "nr": "149",
-     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "189",
+     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015</b> 1389",
@@ -2781,29 +3245,25 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
       },
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "5",
      "item": null,
      "pos": {
       "b": 4,
-      "o": 320,
-      "l": 320
+      "o": 361,
+      "l": 361
      },
      "kl": "A"
     },
     {
-     "nr": "150",
+     "nr": "190",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Aufgehoben durch Ziff. I des BG vom 19. März 2021, mit Wirkung seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -2835,6 +3295,28 @@
       "l": 1
      },
      "kl": "A"
+    },
+    {
+     "nr": "191",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "7",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2856,7 +3338,24 @@
    ],
    "fussnoten": [
     {
-     "nr": "151",
+     "nr": "192",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "b",
+     "kl": "A"
+    },
+    {
+     "nr": "193",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2883,7 +3382,7 @@
      "kl": "A"
     },
     {
-     "nr": "152",
+     "nr": "194",
      "text": "Eingefügt durch Anhang Ziff. 7 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften) (AS <b>2014 </b>4073; BBl <b>2013 </b>6857). Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2912,7 +3411,7 @@
      "kl": "A"
     },
     {
-     "nr": "153",
+     "nr": "195",
      "text": "SR <b>745.1</b>",
      "links": [
       {
@@ -2931,7 +3430,7 @@
      "kl": "V"
     },
     {
-     "nr": "154",
+     "nr": "196",
      "text": "Fassung gemäss Anhang Ziff. II 3 des Postorganisationsgesetzes vom 17. Dez. 2010, in Kraft seit 1. Okt. 2012 (AS <b>2012</b> 5043; BBl <b>2009</b> 5265).",
      "links": [
       {
@@ -2968,7 +3467,99 @@
     }
    ],
    "marginalie": [
-    "Reglement"
+    "Reglement und Sanktionen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "201",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "202",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "203",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "a",
+     "kl": "A"
+    },
+    {
+     "nr": "204",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "c",
+     "kl": "A"
+    },
+    {
+     "nr": "205",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "d",
+     "kl": "A"
+    }
    ]
   },
   "26": {
@@ -2989,7 +3580,29 @@
    ],
    "fussnoten": [
     {
-     "nr": "158",
+     "nr": "208",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "209",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -3026,11 +3639,11 @@
     }
    ],
    "marginalie": [
-    "Informationsaustausch und Meldepflicht"
+    "Meldepflicht"
    ],
    "fussnoten": [
     {
-     "nr": "161",
+     "nr": "212",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -3047,20 +3660,16 @@
      "kl": "A"
     },
     {
-     "nr": "162",
-     "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "213",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -3068,7 +3677,29 @@
      "kl": "A"
     },
     {
-     "nr": "163",
+     "nr": "214",
+     "text": "Aufgehoben durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, mit Wirkung seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "215",
      "text": "Fassung gemäss Anhang 2 Ziff. 3 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -3094,7 +3725,7 @@
      "kl": "A"
     },
     {
-     "nr": "164",
+     "nr": "216",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -3111,7 +3742,7 @@
      "kl": "A"
     },
     {
-     "nr": "165",
+     "nr": "217",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -3131,7 +3762,7 @@
      "kl": "V"
     },
     {
-     "nr": "166",
+     "nr": "218",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -3148,7 +3779,7 @@
      "kl": "A"
     },
     {
-     "nr": "167",
+     "nr": "219",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -3165,7 +3796,7 @@
      "kl": "A"
     },
     {
-     "nr": "168",
+     "nr": "220",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -3179,6 +3810,50 @@
      ],
      "absatz": "4",
      "item": "d",
+     "kl": "A"
+    },
+    {
+     "nr": "221",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4bis",
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 54,
+      "l": 54
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "222",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 138,
+      "l": 138
+     },
      "kl": "A"
     }
    ]
@@ -3201,7 +3876,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "169",
+     "nr": "223",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -3218,7 +3893,7 @@
      "kl": "A"
     },
     {
-     "nr": "170",
+     "nr": "224",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -3237,33 +3912,29 @@
      "kl": "V"
     },
     {
-     "nr": "171",
-     "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
+     "nr": "225",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2018</b> 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2019</b> 4631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/762"
-      },
-      {
-       "label": "BBl <b>2015</b> 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2",
      "item": null,
      "pos": {
       "b": 1,
-      "o": 229,
-      "l": 229
+      "o": 219,
+      "l": 219
      },
      "kl": "A"
     },
     {
-     "nr": "172",
+     "nr": "226",
      "text": "Aufgehoben durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3308,7 +3979,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "173",
+     "nr": "227",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -3325,33 +3996,91 @@
      "kl": "A"
     },
     {
-     "nr": "174",
-     "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "228",
+     "text": "SR <b>955.3</b>",
      "links": [
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
-      },
-      {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "SR <b>955.3</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2026/323",
+       "rs": "955.3"
       }
      ],
      "absatz": "1",
-     "item": null,
+     "item": "e",
      "pos": {
       "b": 0,
-      "o": 177,
-      "l": 177
+      "it": 4,
+      "o": 137,
+      "l": 258
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "229",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 16,
+      "l": 16
      },
      "kl": "A"
     },
     {
-     "nr": "175",
+     "nr": "230",
+     "text": "SR <b>946.231</b>",
+     "links": [
+      {
+       "label": "SR <b>946.231</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2002/564",
+       "rs": "946.231"
+      }
+     ],
+     "absatz": "1bis",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 180,
+      "l": 191
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "231",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1bis",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "232",
      "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -3366,14 +4095,14 @@
      "absatz": "2",
      "item": null,
      "pos": {
-      "b": 1,
+      "b": 2,
       "o": 337,
       "l": 548
      },
      "kl": "A"
     },
     {
-     "nr": "176",
+     "nr": "233",
      "text": "Fassung des zweiten Satzes gemäss Anhang 1 Ziff. II 95 des Datenschutzgesetzes vom 25. Sept. 2020, in Kraft seit 1. Sept. 2023 (AS <b>2022</b> 491; BBl <b>2017</b> 6941).",
      "links": [
       {
@@ -3388,14 +4117,14 @@
      "absatz": "2",
      "item": null,
      "pos": {
-      "b": 1,
+      "b": 2,
       "o": 548,
       "l": 548
      },
      "kl": "A"
     },
     {
-     "nr": "177",
+     "nr": "234",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -3410,15 +4139,15 @@
      "absatz": "2bis",
      "item": null,
      "pos": {
-      "b": 2,
+      "b": 3,
       "o": 298,
       "l": 298
      },
      "kl": "A"
     },
     {
-     "nr": "178",
-     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "235",
+     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015</b> 1389",
@@ -3429,29 +4158,25 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
       },
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2ter",
      "item": null,
      "pos": {
-      "b": 3,
-      "o": 196,
-      "l": 196
+      "b": 4,
+      "o": 202,
+      "l": 202
      },
      "kl": "A"
     },
     {
-     "nr": "179",
+     "nr": "236",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -3470,7 +4195,7 @@
      "absatz": "3",
      "item": null,
      "pos": {
-      "b": 4,
+      "b": 5,
       "o": 154,
       "l": 154
      },
@@ -3496,7 +4221,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "187",
+     "nr": "248",
      "text": "Fassung gemäss Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -3513,16 +4238,16 @@
      "kl": "A"
     },
     {
-     "nr": "188",
-     "text": "Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
+     "nr": "249",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2015 </b>1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl <b>2014 </b>605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2",
@@ -3549,7 +4274,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "189",
+     "nr": "250",
      "text": "Fassung gemäss Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -3585,7 +4310,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "192",
+     "nr": "253",
      "text": "Fassung gemäss Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -3602,7 +4327,7 @@
      "kl": "A"
     },
     {
-     "nr": "193",
+     "nr": "254",
      "text": "SR <b>360</b>",
      "links": [
       {
@@ -3621,7 +4346,7 @@
      "kl": "V"
     },
     {
-     "nr": "194",
+     "nr": "255",
      "text": "Aufgehoben durch Ziff. I des BG vom 21. Juni 2013, mit Wirkung seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -3643,8 +4368,8 @@
      "kl": "A"
     },
     {
-     "nr": "195",
-     "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière (AS <b>2009</b> 361; BBl <b>2007</b> 6269). Fassung gemäss Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
+     "nr": "256",
+     "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière (AS <b>2009</b> 361; BBl <b>2007</b> 6269). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2009</b> 361",
@@ -3655,20 +4380,20 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2007/938"
       },
       {
-       "label": "AS <b>2015 </b>1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl <b>2014 </b>605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
      "item": null,
      "pos": {
       "b": 2,
-      "o": 272,
-      "l": 272
+      "o": 305,
+      "l": 305
      },
      "kl": "A"
     }
@@ -3687,7 +4412,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "196",
+     "nr": "257",
      "text": "Fassung gemäss Anhang 1 Ziff. II 95 des Datenschutzgesetzes vom 25. Sept. 2020, in Kraft seit 1. Sept. 2023 (AS <b>2022</b> 491; BBl <b>2017</b> 6941).",
      "links": [
       {
@@ -3704,7 +4429,7 @@
      "kl": "A"
     },
     {
-     "nr": "197",
+     "nr": "258",
      "text": "SR <b>235.1</b>",
      "links": [
       {
@@ -3738,7 +4463,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "198",
+     "nr": "259",
      "text": "Fassung gemäss Anhang 2 Ziff. 2 des BG vom 19. März 2021, in Kraft seit 1. Sept. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -3759,7 +4484,7 @@
      "kl": "A"
     },
     {
-     "nr": "199",
+     "nr": "260",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -3772,39 +4497,35 @@
      "item": null,
      "pos": {
       "b": 0,
-      "o": 188,
-      "l": 248
+      "o": 221,
+      "l": 281
      },
      "kl": "V"
     },
     {
-     "nr": "200",
-     "text": "Fassung gemäss Anhang 2 Ziff. 2 des BG vom 19. März 2021, in Kraft seit 1. Sept. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "261",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1",
      "item": null,
      "pos": {
       "b": 0,
-      "o": 248,
-      "l": 248
+      "o": 281,
+      "l": 281
      },
      "kl": "A"
     },
     {
-     "nr": "201",
+     "nr": "262",
      "text": "Fassung gemäss Anhang 2 Ziff. 2 des BG vom 19. März 2021, in Kraft seit 1. Sept. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -3830,7 +4551,7 @@
      "kl": "A"
     },
     {
-     "nr": "202",
+     "nr": "263",
      "text": "SR <b>235.1</b>; BBl <b>2020</b> 7639",
      "links": [
       {
@@ -3853,7 +4574,7 @@
      "kl": "V"
     },
     {
-     "nr": "203",
+     "nr": "264",
      "text": "Fassung gemäss Anhang 2 Ziff. 2 des BG vom 19. März 2021, in Kraft seit 1. Sept. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -3893,7 +4614,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "204",
+     "nr": "265",
      "text": "SR <b>360</b>",
      "links": [
       {
@@ -3912,7 +4633,7 @@
      "kl": "V"
     },
     {
-     "nr": "205",
+     "nr": "266",
      "text": "SR <b>361</b>",
      "links": [
       {
@@ -3931,7 +4652,7 @@
      "kl": "V"
     },
     {
-     "nr": "206",
+     "nr": "267",
      "text": "Fassung gemäss Anhang 1 Ziff. 9 des BG vom 13. Juni 2008 über die polizeilichen Informationssysteme des Bundes, in Kraft seit 5. Dez. 2008 (AS <b>2008</b> 4989; BBl <b>2006</b> 5061).",
      "links": [
       {
@@ -3953,28 +4674,45 @@
      "kl": "A"
     },
     {
-     "nr": "207",
-     "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
+     "nr": "268",
+     "text": "SR <b>955.3</b>",
      "links": [
       {
-       "label": "AS <b>2021</b> 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
-      },
-      {
-       "label": "<b>2022</b> 551",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/551"
-      },
-      {
-       "label": "BBl <b>2019</b> 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "SR <b>955.3</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2026/323",
+       "rs": "955.3"
       }
      ],
      "absatz": "2",
-     "item": null,
+     "item": "e",
      "pos": {
       "b": 1,
-      "o": 173,
-      "l": 173
+      "it": 4,
+      "o": 83,
+      "l": 90
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "269",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 29,
+      "l": 29
      },
      "kl": "A"
     }
@@ -3991,7 +4729,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "210",
+     "nr": "272",
      "text": "Aufgehoben durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -4022,7 +4760,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "211",
+     "nr": "273",
      "text": "Fassung gemäss Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -4039,7 +4777,29 @@
      "kl": "A"
     },
     {
-     "nr": "212",
+     "nr": "274",
+     "text": "Zweiter Satz eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "275",
      "text": "Aufgehoben durch Anhang Ziff. 12 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -4075,7 +4835,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "213",
+     "nr": "276",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4110,7 +4870,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "215",
+     "nr": "278",
      "text": "Fassung gemäss Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2010 (AS <b>2009</b> 361 6401; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -4131,7 +4891,7 @@
      "kl": "A"
     },
     {
-     "nr": "216",
+     "nr": "279",
      "text": "Fassung gemäss Anhang 2 Ziff. 1 des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4171,7 +4931,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "217",
+     "nr": "281",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4192,7 +4952,7 @@
      "kl": "A"
     },
     {
-     "nr": "218",
+     "nr": "282",
      "text": "SR <b>941.31</b>",
      "links": [
       {
@@ -4211,7 +4971,7 @@
      "kl": "V"
     },
     {
-     "nr": "219",
+     "nr": "283",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 656; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4259,7 +5019,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "220",
+     "nr": "285",
      "text": "BRB vom 16. März 1998",
      "links": [],
      "absatz": null,
@@ -4286,7 +5046,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "70",
+     "nr": "96",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -4303,7 +5063,7 @@
      "kl": "A"
     },
     {
-     "nr": "71",
+     "nr": "97",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -4322,7 +5082,7 @@
      "kl": "V"
     },
     {
-     "nr": "72",
+     "nr": "98",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -4341,7 +5101,7 @@
      "kl": "V"
     },
     {
-     "nr": "73",
+     "nr": "99",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4367,7 +5127,7 @@
      "kl": "A"
     },
     {
-     "nr": "74",
+     "nr": "100",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4393,7 +5153,7 @@
      "kl": "A"
     },
     {
-     "nr": "75",
+     "nr": "101",
      "text": "SR <b>952.0</b>",
      "links": [
       {
@@ -4412,7 +5172,7 @@
      "kl": "V"
     },
     {
-     "nr": "76",
+     "nr": "102",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4438,8 +5198,8 @@
      "kl": "A"
     },
     {
-     "nr": "77",
-     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
+     "nr": "103",
+     "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015</b> 1389",
@@ -4448,19 +5208,27 @@
       {
        "label": "BBl <b>2014</b> 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "5",
      "item": null,
      "pos": {
       "b": 5,
-      "o": 145,
-      "l": 145
+      "o": 361,
+      "l": 361
      },
      "kl": "A"
     },
     {
-     "nr": "78",
+     "nr": "104",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -4499,7 +5267,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "84",
+     "nr": "110",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -4513,13 +5281,57 @@
      "pos": {
       "b": 0,
       "o": 150,
-      "l": 291
+      "l": 280
      },
      "kl": "V"
     },
     {
-     "nr": "85",
-     "text": "Eingefügt durch Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
+     "nr": "111",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 280,
+      "l": 280
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "112",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 548,
+      "l": 548
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "113",
+     "text": "Eingefügt durch Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität (AS <b>2021</b> 360; BBl <b>2018</b> 6427). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2021</b> 360",
@@ -4528,41 +5340,71 @@
       {
        "label": "BBl <b>2018</b> 6427",
        "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2bis",
      "item": null,
      "pos": {
       "b": 2,
-      "o": 443,
-      "l": 443
+      "o": 698,
+      "l": 698
      },
      "kl": "A"
     },
     {
-     "nr": "86",
-     "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
+     "nr": "114",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "AS <b>2021</b> 360",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl <b>2018</b> 6427",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
      "item": null,
      "pos": {
       "b": 3,
-      "o": 113,
-      "l": 113
+      "o": 143,
+      "l": 143
      },
      "kl": "A"
     },
     {
-     "nr": "83",
+     "nr": "115",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "109",
      "text": "Eingefügt durch Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -4581,6 +5423,61 @@
     }
    ]
   },
+  "12_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
+    },
+    {
+     "ebene": 2,
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
+    }
+   ],
+   "marginalie": [
+    "Koordination der Aufsicht"
+   ],
+   "fussnoten": [
+    {
+     "nr": "125",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "126",
+     "text": "SR <b>956.1</b>",
+     "links": [
+      {
+       "label": "SR <b>956.1</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736",
+       "rs": "956.1"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 134,
+      "l": 244
+     },
+     "kl": "V"
+    }
+   ]
+  },
   "18_a": {
    "gliederung": [
     {
@@ -4590,17 +5487,17 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
-    "Öffentliches Verzeichnis"
+    "Wahrung des Berufsgeheimnisses"
    ],
    "fussnoten": [
     {
-     "nr": "127",
-     "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
+     "nr": "165",
+     "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829). Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2008 </b>5207",
@@ -4609,6 +5506,50 @@
       {
        "label": "BBl <b>2006</b> 2829",
        "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      },
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "18_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
+    },
+    {
+     "ebene": 2,
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
+     "eId": "chap_3/sec_3_a"
+    }
+   ],
+   "marginalie": [
+    "Öffentliches Verzeichnis"
+   ],
+   "fussnoten": [
+    {
+     "nr": "166",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -4626,14 +5567,14 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "129",
+     "nr": "168",
      "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, (AS <b>2008 </b>5207; BBl <b>2006</b> 2829). Aufgehoben durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4672,14 +5613,14 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "130",
+     "nr": "169",
      "text": "Eingefügt durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, (AS <b>2008 </b>5207; BBl <b>2006</b> 2829). Aufgehoben gemäss Anhang Ziff. 7 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), mit Wirkung seit 1. Jan. 2015 (AS <b>2014 </b>4073; BBl <b>2013 </b>6857).",
      "links": [
       {
@@ -4714,14 +5655,14 @@
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater",
      "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "133",
+     "nr": "172",
      "text": "Aufgehoben durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -4755,9 +5696,14 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "135",
+     "nr": "174",
      "text": "www.un.org > Français > Paix et sécurité > Conseil de sécurité > Résolutions > 2001 > 1373",
-     "links": [],
+     "links": [
+      {
+       "label": "www.un.org",
+       "url": "https://www.un.org"
+      }
+     ],
      "absatz": "1",
      "item": null,
      "pos": {
@@ -4768,7 +5714,7 @@
      "kl": "U"
     },
     {
-     "nr": "136",
+     "nr": "175",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4794,7 +5740,7 @@
      "kl": "A"
     },
     {
-     "nr": "137",
+     "nr": "176",
      "text": "Fassung gemäss Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
      "links": [
       {
@@ -4815,7 +5761,7 @@
      "kl": "A"
     },
     {
-     "nr": "138",
+     "nr": "177",
      "text": "Fassung gemäss Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4836,7 +5782,24 @@
      "kl": "A"
     },
     {
-     "nr": "139",
+     "nr": "178",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "c",
+     "kl": "A"
+    },
+    {
+     "nr": "179",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4862,7 +5825,7 @@
      "kl": "A"
     },
     {
-     "nr": "140",
+     "nr": "180",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -4888,7 +5851,7 @@
      "kl": "A"
     },
     {
-     "nr": "134",
+     "nr": "173",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -4925,7 +5888,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "155",
+     "nr": "197",
      "text": "Eingefügt durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4946,7 +5909,7 @@
      "kl": "A"
     },
     {
-     "nr": "156",
+     "nr": "198",
      "text": "SR <b>221.302</b>",
      "links": [
       {
@@ -4966,7 +5929,7 @@
      "kl": "V"
     },
     {
-     "nr": "157",
+     "nr": "199",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -4982,6 +5945,97 @@
       "it": 2,
       "o": 72,
       "l": 113
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "24_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
+    },
+    {
+     "ebene": 2,
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
+    }
+   ],
+   "marginalie": [
+    "Rechtsbeziehungen und Haftung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "200",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "25_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
+    },
+    {
+     "ebene": 2,
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
+    }
+   ],
+   "marginalie": [
+    "Schiedsgericht"
+   ],
+   "fussnoten": [
+    {
+     "nr": "206",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "207",
+     "text": "SR <b>272</b>",
+     "links": [
+      {
+       "label": "SR <b>272</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2010/262",
+       "rs": "272"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 268
      },
      "kl": "V"
     }
@@ -5005,7 +6059,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "159",
+     "nr": "210",
      "text": "Eingefügt durch Anhang Ziff. II 15 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5026,7 +6080,7 @@
      "kl": "A"
     },
     {
-     "nr": "160",
+     "nr": "211",
      "text": "Fassung gemäss Ziff. I 8 des BG vom 25. Sept. 2020 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 33, 399; BBl <b>2020</b> 233).",
      "links": [
       {
@@ -5071,7 +6125,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "180",
+     "nr": "237",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -5088,7 +6142,7 @@
      "kl": "A"
     },
     {
-     "nr": "181",
+     "nr": "238",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -5107,7 +6161,7 @@
      "kl": "V"
     },
     {
-     "nr": "182",
+     "nr": "239",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -5129,7 +6183,7 @@
      "kl": "A"
     },
     {
-     "nr": "183",
+     "nr": "240",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5155,7 +6209,7 @@
      "kl": "A"
     },
     {
-     "nr": "184",
+     "nr": "241",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5181,7 +6235,29 @@
      "kl": "A"
     },
     {
-     "nr": "185",
+     "nr": "242",
+     "text": "Fassung gemäss Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 219,
+      "l": 368
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "243",
      "text": "Fassung gemäss Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5201,8 +6277,8 @@
      "item": null,
      "pos": {
       "b": 4,
-      "o": 328,
-      "l": 328
+      "o": 368,
+      "l": 368
      },
      "kl": "A"
     }
@@ -5221,10 +6297,29 @@
      "eId": "chap_4/sec_1_a"
     }
    ],
-   "marginalie": [],
+   "marginalie": [
+    "Informationsaustausch mit der Meldestelle"
+   ],
    "fussnoten": [
     {
-     "nr": "186",
+     "nr": "245",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "244",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5247,6 +6342,64 @@
     }
    ]
   },
+  "29_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
+    },
+    {
+     "ebene": 2,
+     "label": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen",
+     "eId": "chap_4/sec_1_a"
+    }
+   ],
+   "marginalie": [
+    "Informationsaustausch mit der FINMA"
+   ],
+   "fussnoten": [
+    {
+     "nr": "246",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "247",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 54,
+      "l": 54
+     },
+     "kl": "A"
+    }
+   ]
+  },
   "2_a": {
    "gliederung": [
     {
@@ -5260,7 +6413,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "30",
+     "nr": "40",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -5270,6 +6423,59 @@
       {
        "label": "BBl <b>2014</b> 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "41",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "6",
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 342,
+      "l": 342
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "2_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
+    }
+   ],
+   "marginalie": [
+    "Materiellrechtliche Koordination"
+   ],
+   "fussnoten": [
+    {
+     "nr": "42",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -5296,7 +6502,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "190",
+     "nr": "251",
      "text": "Eingefügt durch Ziff. I des BG vom 21. Juni 2013, in Kraft seit 1. Nov. 2013 (AS <b>2013</b> 3493; BBl <b>2012 </b>6941).",
      "links": [
       {
@@ -5313,7 +6519,7 @@
      "kl": "A"
     },
     {
-     "nr": "191",
+     "nr": "252",
      "text": "SR <b>360</b>",
      "links": [
       {
@@ -5347,7 +6553,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "208",
+     "nr": "270",
      "text": "Eingefügt durch Anhang 1 Ziff. 9 des BG vom 13. Juni 2008 über die polizeilichen Informationssysteme des Bundes, in Kraft seit 5. Dez. 2008 (AS <b>2008</b> 4989; BBl <b>2006</b> 5061).",
      "links": [
       {
@@ -5364,7 +6570,7 @@
      "kl": "A"
     },
     {
-     "nr": "209",
+     "nr": "271",
      "text": "Fassung gemäss Anhang 1 Ziff. 14 des Strafregistergesetzes vom 17. Juni 2016, in Kraft seit 23. Jan. 2023 (AS <b>2022</b> 600; BBl <b>2014</b> 5713).",
      "links": [
       {
@@ -5393,7 +6599,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "214",
+     "nr": "277",
      "text": "Aufgehoben durch Anhang Ziff. 17 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -5403,6 +6609,68 @@
       {
        "label": "BBl <b>2006</b> 2829",
        "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "41_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
+    }
+   ],
+   "marginalie": [
+    "Einbezug der Branchen bei FATF-Länderprüfungen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "280",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "42_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
+    }
+   ],
+   "marginalie": [
+    "Übergangsbestimmung zur Änderung vom 26. September 2025"
+   ],
+   "fussnoten": [
+    {
+     "nr": "284",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -5429,7 +6697,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "44",
+     "nr": "57",
      "text": "Eingefügt durch Ziff. I 4 des BG vom 3. Okt. 2008 zur Umsetzung der revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Febr. 2009 (AS <b>2009</b> 361; BBl <b>2007</b> 6269).",
      "links": [
       {
@@ -5463,7 +6731,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "47",
+     "nr": "61",
      "text": "Fassung gemäss Anhang Ziff. II 6 des BB vom 25. Sept. 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 360; BBl <b>2018</b> 6427).",
      "links": [
       {
@@ -5480,7 +6748,7 @@
      "kl": "A"
     },
     {
-     "nr": "48",
+     "nr": "62",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -5500,7 +6768,136 @@
      "kl": "V"
     },
     {
-     "nr": "46",
+     "nr": "63",
+     "text": "SR <b>941.31</b>",
+     "links": [
+      {
+       "label": "SR <b>941.31</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/50/345_357_401",
+       "rs": "941.31"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 86,
+      "l": 174
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "64",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "65",
+     "text": "Eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2ter",
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "66",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "67",
+     "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "68",
+     "text": "Zweiter Satz eingefügt durch Anhang Ziff. 11 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "60",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015 </b>1389; BBl <b>2014 </b>605).",
      "links": [
       {
@@ -5516,6 +6913,99 @@
      "item": null,
      "sektion": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler",
      "kl": "A"
+    }
+   ]
+  },
+  "8_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
+    },
+    {
+     "ebene": 2,
+     "label": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater",
+     "eId": "chap_2/sec_1_b"
+    }
+   ],
+   "marginalie": [
+    "Sorgfaltspflichten"
+   ],
+   "fussnoten": [
+    {
+     "nr": "69",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "sektion": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater",
+     "kl": "A"
+    }
+   ]
+  },
+  "8_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
+    },
+    {
+     "ebene": 2,
+     "label": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater",
+     "eId": "chap_2/sec_1_b"
+    }
+   ],
+   "marginalie": [
+    "Vereinfachte oder erhöhte Sorgfaltspflichten"
+   ]
+  },
+  "8_d": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
+    },
+    {
+     "ebene": 2,
+     "label": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater",
+     "eId": "chap_2/sec_1_b"
+    }
+   ],
+   "marginalie": [
+    "Organisatorische Massnahmen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "70",
+     "text": "SR <b>946.231</b>",
+     "links": [
+      {
+       "label": "SR <b>946.231</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2002/564",
+       "rs": "946.231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 216,
+      "l": 313
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5537,7 +7027,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "61",
+     "nr": "86",
      "text": "Eingefügt durch Ziff. I 7 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d’action financière, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -5554,7 +7044,7 @@
      "kl": "A"
     },
     {
-     "nr": "62",
+     "nr": "87",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -5573,7 +7063,7 @@
      "kl": "V"
     },
     {
-     "nr": "63",
+     "nr": "88",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5618,7 +7108,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "64",
+     "nr": "89",
      "text": "Eingefügt durch Ziff. I des BG vom 19. März 2021, in Kraft seit 1. Jan. 2023 (AS <b>2021</b> 656; <b>2022</b> 551; BBl <b>2019</b> 5451).",
      "links": [
       {
@@ -5639,7 +7129,7 @@
      "kl": "A"
     },
     {
-     "nr": "65",
+     "nr": "90",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -5656,6 +7146,28 @@
       "l": 332
      },
      "kl": "V"
+    },
+    {
+     "nr": "91",
+     "text": "Eingefügt durch Ziff. I des BG vom 26. Sept. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 322; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     }
    ]
   }

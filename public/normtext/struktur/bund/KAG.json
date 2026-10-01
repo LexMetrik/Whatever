@@ -1,12 +1,12 @@
 {
  "zaehler":{"1":[3,0],"7":[1,0],"8":[2,0],"9":[1,0],"11":[1,0],"23":[1,0],"25":[2,0],"26":[2,0],"27":[1,0],"28":[1,0],"30":[1,0],"34":[1,0],"35":[1,0],"39":[1,0],"58":[3,0],"78":[1,0],"87":[1,0],"90":[1,0],"119":[1,0],"120":[1,0]},
- "erzeugt": "2026-09-14",
- "stand": "2024-03-01",
- "fassungsToken": "20240301",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "951.31",
   "titel": "Bundesgesetz über die kollektiven Kapitalanlagen",
-  "erlassdatum": "vom 23. Juni 2006 (Stand am 1. März 2024)",
+  "erlassdatum": "vom 23. Juni 2006 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -2382,47 +2382,28 @@
    "fussnoten": [
     {
      "nr": "82",
-     "text": "SR <b>220</b>",
+     "text": "Fassung gemäss Anhang Ziff. 8 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
-       "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
-       "rs": "220"
-      }
-     ],
-     "absatz": "3",
-     "item": null,
-     "pos": {
-      "b": 2,
-      "o": 196,
-      "l": 321
-     },
-     "kl": "V"
-    },
-    {
-     "nr": "83",
-     "text": "Zweiter Satz eingefügt durch Ziff. I 6 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière, in Kraft seit 1. Juli 2015 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
-     "links": [
-      {
-       "label": "AS <b>2015</b> 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl <b>2014</b> 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
      "item": null,
      "pos": {
       "b": 2,
-      "o": 321,
-      "l": 321
+      "o": 139,
+      "l": 139
      },
      "kl": "A"
     },
     {
-     "nr": "84",
+     "nr": "83",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -2486,7 +2467,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "87",
+     "nr": "85",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2531,7 +2512,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "88",
+     "nr": "86",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -2597,7 +2578,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "89",
+     "nr": "87",
      "text": "SR<b> 220</b>",
      "links": [
       {
@@ -2616,7 +2597,7 @@
      "kl": "V"
     },
     {
-     "nr": "90",
+     "nr": "88",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -2666,7 +2647,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "91",
+     "nr": "89",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -2685,7 +2666,7 @@
      "kl": "V"
     },
     {
-     "nr": "92",
+     "nr": "90",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2707,7 +2688,7 @@
      "kl": "A"
     },
     {
-     "nr": "93",
+     "nr": "91",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -2726,7 +2707,7 @@
      "kl": "V"
     },
     {
-     "nr": "94",
+     "nr": "92",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -2752,7 +2733,7 @@
      "kl": "A"
     },
     {
-     "nr": "95",
+     "nr": "93",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -2771,7 +2752,7 @@
      "kl": "V"
     },
     {
-     "nr": "96",
+     "nr": "94",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -3063,7 +3044,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "97",
+     "nr": "95",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3109,7 +3090,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "98",
+     "nr": "96",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3126,7 +3107,7 @@
      "kl": "A"
     },
     {
-     "nr": "99",
+     "nr": "97",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3148,7 +3129,7 @@
      "kl": "A"
     },
     {
-     "nr": "100",
+     "nr": "98",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3170,7 +3151,7 @@
      "kl": "A"
     },
     {
-     "nr": "101",
+     "nr": "99",
      "text": "Aufgehoben durch Ziff. I des BG vom 28. Sept. 2012, mit Wirkung seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3187,7 +3168,7 @@
      "kl": "A"
     },
     {
-     "nr": "102",
+     "nr": "100",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3209,7 +3190,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "101",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3231,7 +3212,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "102",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3409,7 +3390,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "105",
+     "nr": "103",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -3428,7 +3409,7 @@
      "kl": "V"
     },
     {
-     "nr": "106",
+     "nr": "104",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3450,7 +3431,7 @@
      "kl": "A"
     },
     {
-     "nr": "107",
+     "nr": "105",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3496,7 +3477,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "108",
+     "nr": "106",
      "text": "SR <b>952.0</b>",
      "links": [
       {
@@ -3515,7 +3496,7 @@
      "kl": "V"
     },
     {
-     "nr": "109",
+     "nr": "107",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3537,7 +3518,7 @@
      "kl": "A"
     },
     {
-     "nr": "110",
+     "nr": "108",
      "text": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -3583,7 +3564,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "111",
+     "nr": "109",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -3602,7 +3583,7 @@
      "kl": "V"
     },
     {
-     "nr": "112",
+     "nr": "110",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3624,7 +3605,7 @@
      "kl": "A"
     },
     {
-     "nr": "113",
+     "nr": "111",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012 (AS <b>2013 </b>585; BBl <b>2012 </b>3639). Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3654,7 +3635,7 @@
      "kl": "A"
     },
     {
-     "nr": "114",
+     "nr": "112",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3676,7 +3657,7 @@
      "kl": "A"
     },
     {
-     "nr": "115",
+     "nr": "113",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -3722,7 +3703,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "116",
+     "nr": "114",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -3741,7 +3722,7 @@
      "kl": "V"
     },
     {
-     "nr": "117",
+     "nr": "115",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3767,7 +3748,7 @@
      "kl": "A"
     },
     {
-     "nr": "118",
+     "nr": "116",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -3839,7 +3820,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "121",
+     "nr": "119",
      "text": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -3973,7 +3954,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "122",
+     "nr": "120",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -4063,7 +4044,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "123",
+     "nr": "121",
      "text": "SR <b>220</b>. Heute: Art. 957 ff. OR.",
      "links": [
       {
@@ -4129,7 +4110,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "124",
+     "nr": "122",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -4146,7 +4127,7 @@
      "kl": "A"
     },
     {
-     "nr": "125",
+     "nr": "123",
      "text": "Ausdruck gemäss Ziff. I Abs. 3 des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885). Die Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.",
      "links": [
       {
@@ -4281,7 +4262,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "126",
+     "nr": "124",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4331,7 +4312,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "127",
+     "nr": "125",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -4348,7 +4329,7 @@
      "kl": "A"
     },
     {
-     "nr": "128",
+     "nr": "126",
      "text": "SR <b>221.301</b>",
      "links": [
       {
@@ -4414,7 +4395,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "129",
+     "nr": "127",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -4452,7 +4433,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "130",
+     "nr": "128",
      "text": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -4474,7 +4455,7 @@
      "kl": "A"
     },
     {
-     "nr": "131",
+     "nr": "129",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4500,7 +4481,7 @@
      "kl": "A"
     },
     {
-     "nr": "132",
+     "nr": "130",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -4522,7 +4503,7 @@
      "kl": "A"
     },
     {
-     "nr": "133",
+     "nr": "131",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4567,7 +4548,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "134",
+     "nr": "132",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -4623,7 +4604,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "135",
+     "nr": "133",
      "text": "Fassung gemäss Ziff. III des BG vom 25. Sept. 2015 (Firmenrecht), in Kraft seit 1. Juli 2016 (AS <b>2016 </b>1507; BBl <b>2014 </b>9305).",
      "links": [
       {
@@ -4659,7 +4640,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "136",
+     "nr": "134",
      "text": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -4676,7 +4657,7 @@
      "kl": "A"
     },
     {
-     "nr": "137",
+     "nr": "135",
      "text": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -4698,7 +4679,7 @@
      "kl": "A"
     },
     {
-     "nr": "138",
+     "nr": "136",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -4773,7 +4754,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "140",
+     "nr": "138",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -4811,7 +4792,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "141",
+     "nr": "139",
      "text": "Ausdruck gemäss Ziff. I Abs. 3 des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885). Die Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.",
      "links": [
       {
@@ -4903,7 +4884,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "142",
+     "nr": "140",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -4922,7 +4903,7 @@
      "kl": "V"
     },
     {
-     "nr": "143",
+     "nr": "141",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -4963,7 +4944,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "144",
+     "nr": "142",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -5001,7 +4982,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "145",
+     "nr": "143",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -5057,7 +5038,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "146",
+     "nr": "144",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -5108,7 +5089,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "147",
+     "nr": "145",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5195,7 +5176,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "155",
+     "nr": "153",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5221,7 +5202,7 @@
      "kl": "A"
     },
     {
-     "nr": "156",
+     "nr": "154",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -5238,7 +5219,7 @@
      "kl": "A"
     },
     {
-     "nr": "157",
+     "nr": "155",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -5255,7 +5236,7 @@
      "kl": "A"
     },
     {
-     "nr": "158",
+     "nr": "156",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5276,7 +5257,7 @@
      "kl": "A"
     },
     {
-     "nr": "159",
+     "nr": "157",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012 (AS <b>2013 </b>585; BBl <b>2012 </b>3639). Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5305,7 +5286,7 @@
      "kl": "A"
     },
     {
-     "nr": "160",
+     "nr": "158",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -5327,7 +5308,7 @@
      "kl": "A"
     },
     {
-     "nr": "161",
+     "nr": "159",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -5346,7 +5327,7 @@
      "kl": "V"
     },
     {
-     "nr": "162",
+     "nr": "160",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012 (AS <b>2013 </b>585; BBl <b>2012 </b>3639). Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5380,7 +5361,7 @@
      "kl": "A"
     },
     {
-     "nr": "163",
+     "nr": "161",
      "text": "Eingefügt durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5425,7 +5406,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "164",
+     "nr": "162",
      "text": "SR <b>952.0</b>",
      "links": [
       {
@@ -5480,7 +5461,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "165",
+     "nr": "163",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -5499,7 +5480,7 @@
      "kl": "V"
     },
     {
-     "nr": "166",
+     "nr": "164",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5561,7 +5542,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "167",
+     "nr": "165",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5582,7 +5563,7 @@
      "kl": "A"
     },
     {
-     "nr": "168",
+     "nr": "166",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5608,7 +5589,7 @@
      "kl": "A"
     },
     {
-     "nr": "169",
+     "nr": "167",
      "text": "Eingefügt durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5654,7 +5635,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "171",
+     "nr": "169",
      "text": "SR <b>221.302</b>",
      "links": [
       {
@@ -5673,7 +5654,7 @@
      "kl": "V"
     },
     {
-     "nr": "172",
+     "nr": "170",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -5692,7 +5673,7 @@
      "kl": "V"
     },
     {
-     "nr": "173",
+     "nr": "171",
      "text": "Fassung gemäss Anhang Ziff. 4 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), in Kraft seit 1. Jan. 2015 (AS <b>2014</b> 4073; BBl <b>2013</b> 6857).",
      "links": [
       {
@@ -5714,7 +5695,7 @@
      "kl": "A"
     },
     {
-     "nr": "174",
+     "nr": "172",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5735,7 +5716,7 @@
      "kl": "A"
     },
     {
-     "nr": "175",
+     "nr": "173",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5756,7 +5737,7 @@
      "kl": "A"
     },
     {
-     "nr": "176",
+     "nr": "174",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -5782,7 +5763,7 @@
      "kl": "A"
     },
     {
-     "nr": "177",
+     "nr": "175",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5808,7 +5789,7 @@
      "kl": "A"
     },
     {
-     "nr": "178",
+     "nr": "176",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -5834,7 +5815,7 @@
      "kl": "A"
     },
     {
-     "nr": "179",
+     "nr": "177",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -5853,7 +5834,7 @@
      "kl": "V"
     },
     {
-     "nr": "180",
+     "nr": "178",
      "text": "Eingefügt durch Anhang Ziff. 4 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), in Kraft seit 1. Jan. 2015 (AS <b>2014</b> 4073; BBl <b>2013</b> 6857).",
      "links": [
       {
@@ -5875,7 +5856,7 @@
      "kl": "A"
     },
     {
-     "nr": "181",
+     "nr": "179",
      "text": "Eingefügt durch Anhang Ziff. 4 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), in Kraft seit 1. Jan. 2015 (AS <b>2014</b> 4073; BBl <b>2013</b> 6857).",
      "links": [
       {
@@ -5897,7 +5878,7 @@
      "kl": "A"
     },
     {
-     "nr": "170",
+     "nr": "168",
      "text": "Ausdruck gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829). Die Änd. wurde im ganzen Text vorgenommen.",
      "links": [
       {
@@ -5938,7 +5919,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "183",
+     "nr": "181",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -5976,7 +5957,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "184",
+     "nr": "182",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6016,7 +5997,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "185",
+     "nr": "183",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6037,7 +6018,7 @@
      "kl": "A"
     },
     {
-     "nr": "186",
+     "nr": "184",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -6078,7 +6059,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "187",
+     "nr": "185",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6099,7 +6080,7 @@
      "kl": "A"
     },
     {
-     "nr": "188",
+     "nr": "186",
      "text": "SR <b>956.1</b>",
      "links": [
       {
@@ -6118,7 +6099,7 @@
      "kl": "V"
     },
     {
-     "nr": "189",
+     "nr": "187",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6159,7 +6140,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "190",
+     "nr": "188",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6233,7 +6214,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "191",
+     "nr": "189",
      "text": "Fassung gemäss Anhang Ziff. 3 des BG vom 18. März 2011 (Sicherung der Einlagen), in Kraft seit 1. Sept. 2011 (AS <b>2011</b> 3919; BBl <b>2010</b> 3993).",
      "links": [
       {
@@ -6250,7 +6231,7 @@
      "kl": "A"
     },
     {
-     "nr": "192",
+     "nr": "190",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -6276,7 +6257,7 @@
      "kl": "A"
     },
     {
-     "nr": "193",
+     "nr": "191",
      "text": "SR <b>281.1</b>",
      "links": [
       {
@@ -6295,7 +6276,7 @@
      "kl": "V"
     },
     {
-     "nr": "194",
+     "nr": "192",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -6314,7 +6295,7 @@
      "kl": "V"
     },
     {
-     "nr": "195",
+     "nr": "193",
      "text": "Fassung gemäss Anhang Ziff. 11 des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023 (AS <b>2020</b> 4005; <b>2022</b> 109; BBl <b>2017</b> 399).",
      "links": [
       {
@@ -6340,7 +6321,7 @@
      "kl": "A"
     },
     {
-     "nr": "196",
+     "nr": "194",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6381,7 +6362,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "197",
+     "nr": "195",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6398,7 +6379,7 @@
      "kl": "A"
     },
     {
-     "nr": "198",
+     "nr": "196",
      "text": "SR <b>281.1</b>",
      "links": [
       {
@@ -6436,7 +6417,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "208",
+     "nr": "206",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6457,7 +6438,7 @@
      "kl": "A"
     },
     {
-     "nr": "209",
+     "nr": "207",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6496,7 +6477,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "210",
+     "nr": "208",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -6534,7 +6515,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "211",
+     "nr": "209",
      "text": "Aufgehoben durch Anhang Ziff. 9 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -6568,7 +6549,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "212",
+     "nr": "210",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6606,7 +6587,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "213",
+     "nr": "211",
      "text": "Aufgehoben durch Anhang Ziff. 9 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -6642,7 +6623,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "214",
+     "nr": "212",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6659,7 +6640,7 @@
      "kl": "A"
     },
     {
-     "nr": "215",
+     "nr": "213",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6681,7 +6662,7 @@
      "kl": "A"
     },
     {
-     "nr": "216",
+     "nr": "214",
      "text": "SR <b>951.11</b>",
      "links": [
       {
@@ -6719,7 +6700,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "217",
+     "nr": "215",
      "text": "Fassung des zweiten Satzes gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -6745,7 +6726,7 @@
      "kl": "A"
     },
     {
-     "nr": "218",
+     "nr": "216",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -6766,7 +6747,7 @@
      "kl": "A"
     },
     {
-     "nr": "219",
+     "nr": "217",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -6792,7 +6773,7 @@
      "kl": "A"
     },
     {
-     "nr": "220",
+     "nr": "218",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -6811,7 +6792,7 @@
      "kl": "V"
     },
     {
-     "nr": "221",
+     "nr": "219",
      "text": "Fassung des dritten Satzes gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -6837,7 +6818,7 @@
      "kl": "A"
     },
     {
-     "nr": "222",
+     "nr": "220",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -6859,7 +6840,7 @@
      "kl": "A"
     },
     {
-     "nr": "223",
+     "nr": "221",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -6914,7 +6895,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "224",
+     "nr": "222",
      "text": "Fassung gemäss Anhang Ziff. 28 des BG vom 15. Juni 2018 (Revision des Verjährungsrechts), in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5343; BBl <b>2014</b> 235).",
      "links": [
       {
@@ -6950,7 +6931,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "225",
+     "nr": "223",
      "text": "Fassung gemäss Ziff. I 1 des BG vom 12. Dez. 2014 über die Ausweitung der Strafbarkeit der Verletzung des Berufsgeheimnisses, in Kraft seit 1. Juli 2015 (AS <b>2015</b> 1535; BBl <b>2014</b> 6231 6241).",
      "links": [
       {
@@ -6971,7 +6952,7 @@
      "kl": "A"
     },
     {
-     "nr": "226",
+     "nr": "224",
      "text": "Fassung gemäss Ziff. I 1 des BG vom 12. Dez. 2014 über die Ausweitung der Strafbarkeit der Verletzung des Berufsgeheimnisses, in Kraft seit 1. Juli 2015 (AS <b>2015</b> 1535; BBl <b>2014</b> 6231 6241).",
      "links": [
       {
@@ -6997,7 +6978,7 @@
      "kl": "A"
     },
     {
-     "nr": "227",
+     "nr": "225",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7018,7 +6999,7 @@
      "kl": "A"
     },
     {
-     "nr": "228",
+     "nr": "226",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7039,7 +7020,7 @@
      "kl": "A"
     },
     {
-     "nr": "229",
+     "nr": "227",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7056,7 +7037,7 @@
      "kl": "A"
     },
     {
-     "nr": "230",
+     "nr": "228",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7073,7 +7054,7 @@
      "kl": "A"
     },
     {
-     "nr": "231",
+     "nr": "229",
      "text": "Fassung gemäss Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7090,7 +7071,7 @@
      "kl": "A"
     },
     {
-     "nr": "232",
+     "nr": "230",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7111,7 +7092,7 @@
      "kl": "A"
     },
     {
-     "nr": "233",
+     "nr": "231",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7132,7 +7113,7 @@
      "kl": "A"
     },
     {
-     "nr": "234",
+     "nr": "232",
      "text": "Eingefügt durch Ziff. I 1 des BG vom 12. Dez. 2014 über die Ausweitung der Strafbarkeit der Verletzung des Berufsgeheimnisses (AS <b>2015</b> 1535; BBl <b>2014</b> 6231 6241). Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7165,7 +7146,7 @@
      "kl": "A"
     },
     {
-     "nr": "235",
+     "nr": "233",
      "text": "Eingefügt durch Ziff. I 1 des BG vom 12. Dez. 2014 über die Ausweitung der Strafbarkeit der Verletzung des Berufsgeheimnisses (AS <b>2015</b> 1535; BBl <b>2014</b> 6231 6241). Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7203,7 +7184,7 @@
      "kl": "A"
     },
     {
-     "nr": "236",
+     "nr": "234",
      "text": "Aufgehoben durch Anhang Ziff. 9 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -7244,7 +7225,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "237",
+     "nr": "235",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7261,7 +7242,7 @@
      "kl": "A"
     },
     {
-     "nr": "238",
+     "nr": "236",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7278,7 +7259,7 @@
      "kl": "A"
     },
     {
-     "nr": "239",
+     "nr": "237",
      "text": "Eingefügt durch Ziff. I 6 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière, in Kraft seit 1. Juli 2015 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
      "links": [
       {
@@ -7295,7 +7276,7 @@
      "kl": "A"
     },
     {
-     "nr": "240",
+     "nr": "238",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -7312,7 +7293,7 @@
      "kl": "A"
     },
     {
-     "nr": "241",
+     "nr": "239",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -7329,7 +7310,7 @@
      "kl": "A"
     },
     {
-     "nr": "242",
+     "nr": "240",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7351,7 +7332,7 @@
      "kl": "A"
     },
     {
-     "nr": "243",
+     "nr": "241",
      "text": "Aufgehoben durch Anhang Ziff. 9 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015, mit Wirkung seit 1. Jan. 2016 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483).",
      "links": [
       {
@@ -7373,7 +7354,7 @@
      "kl": "A"
     },
     {
-     "nr": "244",
+     "nr": "242",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7416,7 +7397,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "245",
+     "nr": "243",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -7454,7 +7435,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "246",
+     "nr": "244",
      "text": "Aufgehoben durch Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, mit Wirkung seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7494,7 +7475,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "249",
+     "nr": "247",
      "text": "Fassung gemäss Anhang Ziff. 14 des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007, in Kraft seit 1. Jan. 2009 (AS <b>2008 </b>5207 5205; BBl <b>2006</b> 2829).",
      "links": [
       {
@@ -7515,7 +7496,7 @@
      "kl": "A"
     },
     {
-     "nr": "247",
+     "nr": "245",
      "text": "Fassung gemäss Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -7533,7 +7514,7 @@
      "kl": "A"
     },
     {
-     "nr": "248",
+     "nr": "246",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -7585,7 +7566,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "253",
+     "nr": "251",
      "text": "Aufgehoben durch Ziff. I des BG vom 28. Sept. 2012, mit Wirkung seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -7602,7 +7583,7 @@
      "kl": "A"
     },
     {
-     "nr": "254",
+     "nr": "252",
      "text": "BRB vom 22. Nov. 2006",
      "links": [],
      "absatz": null,
@@ -7610,7 +7591,7 @@
      "kl": "A"
     },
     {
-     "nr": "252",
+     "nr": "250",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -7647,7 +7628,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "139",
+     "nr": "137",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -7683,7 +7664,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "149",
+     "nr": "147",
      "text": "SR <b>950.1</b>",
      "links": [
       {
@@ -7703,7 +7684,7 @@
      "kl": "V"
     },
     {
-     "nr": "148",
+     "nr": "146",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {
@@ -7825,7 +7806,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "150",
+     "nr": "148",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -7863,7 +7844,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "151",
+     "nr": "149",
      "text": "SR <b>961.01</b>",
      "links": [
       {
@@ -7901,7 +7882,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "152",
+     "nr": "150",
      "text": "SR <b>221.302</b>",
      "links": [
       {
@@ -7920,7 +7901,7 @@
      "kl": "V"
     },
     {
-     "nr": "153",
+     "nr": "151",
      "text": "SR <b>220</b>",
      "links": [
       {
@@ -7975,7 +7956,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "154",
+     "nr": "152",
      "text": "SR <b>954.1</b>",
      "links": [
       {
@@ -8096,7 +8077,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "182",
+     "nr": "180",
      "text": "Aufgehoben durch Anhang Ziff. 4 des BG vom 20. Juni 2014 (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften), mit Wirkung seit 1. Jan. 2015 (AS <b>2014</b> 4073; BBl <b>2013</b> 6857).",
      "links": [
       {
@@ -8132,7 +8113,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "199",
+     "nr": "197",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -8168,7 +8149,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "200",
+     "nr": "198",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -8185,7 +8166,7 @@
      "kl": "A"
     },
     {
-     "nr": "201",
+     "nr": "199",
      "text": "SR <b>281.1</b>",
      "links": [
       {
@@ -8204,7 +8185,7 @@
      "kl": "V"
     },
     {
-     "nr": "202",
+     "nr": "200",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8230,7 +8211,7 @@
      "kl": "A"
     },
     {
-     "nr": "203",
+     "nr": "201",
      "text": "Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8275,7 +8256,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "204",
+     "nr": "202",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012, in Kraft seit 1. März 2013 (AS <b>2013 </b>585; BBl <b>2012 </b>3639).",
      "links": [
       {
@@ -8292,7 +8273,7 @@
      "kl": "A"
     },
     {
-     "nr": "205",
+     "nr": "203",
      "text": "SR <b>952.0</b>",
      "links": [
       {
@@ -8331,7 +8312,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "206",
+     "nr": "204",
      "text": "Eingefügt durch Anhang Ziff. 9 des Finanzmarktinfrastrukturgesetzes vom 19. Juni 2015 (AS <b>2015</b> 5339; BBl <b>2014</b> 7483). Fassung gemäss Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, in Kraft seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8360,7 +8341,7 @@
      "kl": "A"
     },
     {
-     "nr": "207",
+     "nr": "205",
      "text": "SR <b>281.1</b>",
      "links": [
       {
@@ -8396,7 +8377,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "250",
+     "nr": "248",
      "text": "Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8434,7 +8415,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "251",
+     "nr": "249",
      "text": "Eingefügt durch Ziff. I des BG vom 28. Sept. 2012 (AS <b>2013 </b>585; BBl <b>2012 </b>3639). Aufgehoben durch Anhang Ziff. II 13 des Finanzinstitutsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2018</b> 5247, <b>2019</b> 4631; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8643,13 +8624,11 @@
      "eId": "tit_2/chap_2/sec_2"
     }
    ],
-   "marginalie": [
-    "Meldepflicht der Unternehmeraktionärinnen und -aktionäre"
-   ],
+   "marginalie": [],
    "fussnoten": [
     {
-     "nr": "85",
-     "text": "Eingefügt durch Ziff. I 6 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière, in Kraft seit 1. Juli 2015 (AS <b>2015</b> 1389; BBl <b>2014</b> 605).",
+     "nr": "84",
+     "text": "Eingefügt durch Ziff. I 6 des BG vom 12. Dez. 2014 zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (AS <b>2015</b> 1389; BBl <b>2014</b> 605). Aufgehoben durch Anhang Ziff. 8 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, mit Wirkung seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
      "links": [
       {
        "label": "AS <b>2015</b> 1389",
@@ -8658,30 +8637,19 @@
       {
        "label": "BBl <b>2014</b> 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      },
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null,
      "kl": "A"
-    },
-    {
-     "nr": "86",
-     "text": "SR <b>220</b>",
-     "links": [
-      {
-       "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
-       "rs": "220"
-      }
-     ],
-     "absatz": "1",
-     "item": null,
-     "pos": {
-      "b": 0,
-      "o": 162,
-      "l": 163
-     },
-     "kl": "V"
     }
    ]
   },
@@ -8706,7 +8674,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "119",
+     "nr": "117",
      "text": "Aufgehoben durch Anhang Ziff. 3 des Finanzdienstleistungsgesetzes vom 15. Juni 2018, mit Wirkung seit 1. Jan. 2020 (AS <b>2019</b> 4417; BBl <b>2015</b> 8901).",
      "links": [
       {
@@ -8747,7 +8715,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "120",
+     "nr": "118",
      "text": "Eingefügt durch Ziff. I des BG vom 17. Dez. 2021, in Kraft seit 1. März 2024 (AS <b>2024</b> 53; BBl <b>2020</b> 6885).",
      "links": [
       {

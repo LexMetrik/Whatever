@@ -1,8 +1,8 @@
 {
  "erlass": "OR",
  "abdeckung": {
-  "fussnoten": 932,
-  "ereignis": 810,
+  "fussnoten": 935,
+  "ereignis": 813,
   "referenz": 115,
   "unparsed": 7
  },
@@ -5844,7 +5844,7 @@
    ]
   },
   "718": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5861,6 +5861,23 @@
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
      "item": null
     },
     {
@@ -6406,20 +6423,20 @@
    ]
   },
   "747": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2015-07-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -7436,8 +7453,25 @@
    ]
   },
   "814": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": null
+    },
     {
      "typ": "fassung",
      "datum": "2015-07-01",
@@ -13595,6 +13629,23 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": "3"
     }
    ]
   },
@@ -15073,7 +15124,7 @@
    "aufgehobenSeit": "2021-05-01"
   },
   "697_j": {
-   "giltSeit": "2019-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -15093,23 +15144,24 @@
      "item": null
     },
     {
-     "typ": "fassung",
-     "datum": "2019-11-01",
-     "wirkung": false,
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
      "quellen": [
       {
-       "label": "AS 2019 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 279",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "697_k": {
    "giltSeit": null,
@@ -15151,8 +15203,8 @@
    ],
    "aufgehobenSeit": "2021-05-01"
   },
-  "697_l": {
-   "giltSeit": "2021-05-01",
+  "697_l_697_m": {
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -15172,62 +15224,24 @@
      "item": null
     },
     {
-     "typ": "fassung",
-     "datum": "2021-05-01",
-     "wirkung": false,
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
      "quellen": [
       {
-       "label": "AS 2019 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 279",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null
     }
-   ]
-  },
-  "697_m": {
-   "giltSeit": "2021-05-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
-      },
-      {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
-      }
-     ],
-     "absatz": null,
-     "item": null
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/583"
-      },
-      {
-       "label": "BBl 2019 279",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
-      }
-     ],
-     "absatz": null,
-     "item": null
-    }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "697_n": {
    "giltSeit": "2023-01-01",
@@ -16008,8 +16022,25 @@
    ]
   },
   "731_b": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "3"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -16233,7 +16264,7 @@
    ]
   },
   "790_a": {
-   "giltSeit": "2019-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -16253,23 +16284,24 @@
      "item": null
     },
     {
-     "typ": "fassung",
-     "datum": "2019-11-01",
-     "wirkung": false,
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
      "quellen": [
       {
-       "label": "AS 2019 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 279",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/18"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "797_a": {
    "giltSeit": "2023-01-01",
@@ -16540,7 +16572,7 @@
    ]
   },
   "928_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -16591,6 +16623,23 @@
       }
      ],
      "absatz": "3",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3bis",
      "item": null
     }
    ]
@@ -17526,7 +17575,7 @@
  "residuum": [
   {
    "token": "1033",
-   "nr": "851",
+   "nr": "854",
    "roh": "Im französischen und italienischen Text besteht dieser Artikel aus einem einzigen Absatz."
   },
   {
@@ -17536,27 +17585,27 @@
   },
   {
    "token": "disp_u13_art_6",
-   "nr": "914",
+   "nr": "917",
    "roh": "Dieser Art. ist heute aufgehoben."
   },
   {
    "token": "disp_u13_art_7",
-   "nr": "916",
+   "nr": "919",
    "roh": "1. Jan. 1972"
   },
   {
    "token": "disp_u16_art_3",
-   "nr": "925",
+   "nr": "928",
    "roh": "Dieser Art. hat heute eine neue Fassung."
   },
   {
    "token": "disp_u16_art_3",
-   "nr": "926",
+   "nr": "929",
    "roh": "Dieser Art. hat heute eine neue Fassung."
   },
   {
    "token": "disp_u2_art_3",
-   "nr": "877",
+   "nr": "880",
    "roh": "Diese Art. sind heute aufgehoben."
   }
  ]

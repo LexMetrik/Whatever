@@ -1,9 +1,9 @@
 {
  "erlass": "VEV",
  "abdeckung": {
-  "fussnoten": 202,
-  "ereignis": 116,
-  "referenz": 84,
+  "fussnoten": 210,
+  "ereignis": 123,
+  "referenz": 85,
   "unparsed": 2
  },
  "artikel": {
@@ -344,7 +344,7 @@
    ]
   },
   "2": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -410,6 +410,19 @@
      ],
      "absatz": null,
      "item": "h"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": null,
+     "item": "i"
     }
    ]
   },
@@ -432,7 +445,7 @@
    ]
   },
   "4": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -446,6 +459,19 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "1",
+     "item": "a"
     }
    ]
   },
@@ -875,7 +901,7 @@
    ]
   },
   "32": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -889,6 +915,19 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "2",
+     "item": "a"
     },
     {
      "typ": "fassung",
@@ -915,6 +954,50 @@
      ],
      "absatz": "2",
      "item": "e"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "3",
+     "item": "b"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "4",
+     "item": null
+    }
+   ]
+  },
+  "33": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "1",
+     "item": "a"
     }
    ]
   },
@@ -1111,6 +1194,24 @@
       }
      ],
      "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "38": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
+      }
+     ],
+     "absatz": "1",
      "item": null
     }
    ]
@@ -1770,7 +1871,7 @@
   },
   {
    "token": "27",
-   "nr": "93",
+   "nr": "96",
    "roh": "Übereinkommen vom 14. Juni 1985 zur Durchführung des Übereinkommens von Schengen zwischen den Regierungen der Staaten der Benelux-Wirtschaftsunion, der Bundesrepublik Deutschland und der Französischen Republik betreffend den schrittweisen Abbau der Kontrollen an den gemeinsamen Grenzen; ABl. L 239 vom 22.9.2000, S. 19."
   }
  ]
