@@ -70,6 +70,27 @@
 //       Kopf-Marker. Nur bei LEEREM Körper — ein Anhang mit Wortlaut trägt nie ein
 //       Signal (§1: lieber nicht markieren als falsch).
 //
+//   (f) DREI weitere amtliche Formen (ERGÄNZT 1.10.2026, W2·27-BUND-FERTIG — Posten «Diese aufgehobenen
+//       Art. …», «AsylG Art. 122», «Nach #1183: Bund-Leerstellen offen 82»; belegt an den gepinnten
+//       Fedlex-HTMLs, Wortlaut + URL in src/tests/normtext-aufhebung-sammel-w227.test.ts):
+//         • Plural-Sammelvermerk «Diese aufgehobenen Art. werden (mit Ausnahme von Art. 211) ersetzt durch …»
+//           (StGB Art. 201–212, EIN Sammel-Artikel `art_201_212`, leerer Body) ⇒ `aufgehoben`.
+//         • amtlicher Tippfehler «Aufgehobn durch Ziff. I der V des EFD vom 16. April 2014 …» (BKV Art. 8) ⇒
+//           `aufgehoben` (die Fussnoten-Grammatik `historie-parse.ts` kennt «Aufgehobn» nicht und wird NICHT
+//           erweitert: Historie-Shards hängen daran; der Vermerk wird wie «Gegenstandslos» hier am Fussnoten-
+//           ANFANG erkannt, eng auf genau diese zwei Wortlaute).
+//         • «… ist dieser Art. gegenstandslos» in einer Fussnote am Artikel-KOPF, die mit einem AS-Zitat beginnt
+//           (AsylG Art. 122, «AS 1998 1582 Ziff. III. Aufgrund der Annahme dieses BB in der Volksabstimmung vom
+//           13. Juni 1999 ist dieser Art. gegenstandslos.») ⇒ `gegenstandslos`. Anders als bei (d) trägt der
+//           Artikel hier NOCH Wortlaut (die bedingte Bestimmung selbst); der Vermerk ist amtlich ausdrücklich auf
+//           «dieser Art.» bezogen, steht an der Überschrift und gilt darum für den GANZEN Artikel. Das Feld ist
+//           reine Metainformation: der Wortlaut bleibt unverändert im Snapshot (§5/§7).
+//       NICHT erkannt (bleibt Posten, §1/§7): «Dieser Art. bleibt aus gesetzestechnischen Gründen leer»
+//       (StGB Art. 108 — weder Aufhebung noch Gegenstandslosigkeit, sondern ein amtlich bewusst leerer Slot),
+//       Änderungs-Artikel («Die Änderung kann unter AS … konsultiert werden»), EPV Anhang 2 (befristet),
+//       Absatz-/Teil-Skopus («Gegenstandslos. Siehe Art. 75 …» FINMAG 15, «Gegenstandslose UeB.» KOV 99/VZG 135,
+//       «Dritter Satz gegenstandslos» VSTG 36a, «Art. 61 Abs. 2 Bst. b ist heute gegenstandslos» GEBV SchKG 61).
+//
 // ABGRENZUNG: Dieses Modul entscheidet NUR über den GANZEN Artikel
 // (`NormSnapshot.aufgehoben`, G-AUFH-ART). Aufhebungen einzelner Absätze/Items
 // sind Sache der Artikel-Historie (public/normtext/historie/*.json).
@@ -89,19 +110,33 @@ export interface SignalBlock {
 }
 
 /**
+ * Zwei amtliche Aufhebungs-Wortlaute, die die Fussnoten-Grammatik (`historie-parse.ts`) nicht kennt und die hier
+ * eng am Fussnoten-ANFANG erkannt werden (Klasse (f), s. Kopf-Doku; ergänzt 1.10.2026):
+ *  • «Diese aufgehobenen Art(.|ikel) …» — Plural-Sammelvermerk (StGB Art. 201–212). Wortgrenze nach «Art»/«Artikel»
+ *    (kein «Artikelnummern»); NICHT «Dieser Art. …» (Singular, StGB Art. 108: «bleibt … leer»).
+ *  • «Aufgehobn durch …» — amtlicher Fedlex-Tippfehler (BKV Art. 8), nur exakt dieses Wort mit folgendem «durch».
+ */
+const SAMMEL_AUFGEHOBEN_RE = /^Diese aufgehobenen Art(?:\.|ikel)(?=\s)/;
+const TIPPFEHLER_AUFGEHOBN_RE = /^Aufgehobn durch(?=\s)/;
+
+/**
  * Trägt dieser Fussnoten-Prosatext einen amtlichen AUFHEBUNGS-Vermerk?
  * Delegiert an die kalibrierte Fussnoten-Grammatik (§5) und fragt nur, ob eines
- * der erkannten Ereignisse vom Typ «aufgehoben» ist («Aufgehoben durch/in/gemäss …»).
+ * der erkannten Ereignisse vom Typ «aufgehoben» ist («Aufgehoben durch/in/gemäss …»);
+ * dazu zwei eng gefasste Anfangs-Wortlaute, die der Grammatik unbekannt sind
+ * (`SAMMEL_AUFGEHOBEN_RE`, `TIPPFEHLER_AUFGEHOBN_RE` — Klasse (f)).
  *
- * BEWUSST NICHT erkannt (§7, nichts fabrizieren): der amtliche Tippfehler
- * «Aufgehobn durch …» (BKV Art. 8) — der Grammatik unbekannt; er bleibt
- * ungeklärt und erscheint im Wächter-Bericht, statt eine zweite Muster-Wahrheit
- * neben historie-parse.ts zu eröffnen (§5). «Gegenstandslos [gemäss …]» (StGB
- * Art. 67f, OR Schlusstitel) wird seit 30.9.2026 NICHT hier, sondern von
+ * «Gegenstandslos [gemäss …]» (StGB Art. 67f, OR Schlusstitel) wird NICHT hier, sondern von
  * `fussnoteGegenstandslos` erkannt: es ist kein Aufhebungs-Vermerk (§1).
+ *
+ * NACHTRAG 1.10.2026 (§0 Ziff. 2b — ergänzt, nicht nachgeführt): bis 30.9.2026 stand hier, der Tippfehler
+ * «Aufgehobn durch …» (BKV Art. 8) bleibe «bewusst NICHT erkannt». Das galt für #1183; seit 1.10.2026 ist er
+ * als amtlicher Wortlaut am Fedlex-HTML belegt und wird eng erkannt.
  */
 export function fussnoteHebtAuf(text: string): boolean {
-  if (!text.trim()) return false;
+  const t = text.trim();
+  if (!t) return false;
+  if (SAMMEL_AUFGEHOBEN_RE.test(t) || TIPPFEHLER_AUFGEHOBN_RE.test(t)) return true;
   return parseFussnoteHistorie({ text }).ereignisse.some((e) => e.typ === 'aufgehoben');
 }
 
@@ -115,6 +150,19 @@ export function fussnoteHebtAuf(text: string): boolean {
  */
 export function fussnoteGegenstandslos(text: string): boolean {
   return /^Gegenstandslos(?=[\s.,;:]|$)/.test(text.trim());
+}
+
+/**
+ * Sagt diese Fussnote ausdrücklich «… ist dieser Art. gegenstandslos»? (AsylG Art. 122: «AS 1998 1582 Ziff. III.
+ * Aufgrund der Annahme dieses BB in der Volksabstimmung vom 13. Juni 1999 ist dieser Art. gegenstandslos.»)
+ * Die Fussnote beginnt hier mit einem AS-Zitat, darum greift die Anfangs-Regel `fussnoteGegenstandslos` nicht
+ * (und bleibt unverändert, #1183). Eng gefasst: Subjekt MUSS «dieser Art.»/«dieser Artikel» sein (nicht «Art. 61
+ * Abs. 2 Bst. b», nicht «Dritter Satz»), «gegenstandslos» als ganzes Wort (nicht «gegenstandslosen»). Gilt nur für
+ * den Artikel-KOPF-Marker (`kopfDiesenArtGegenstandslos`) — an einem Absatz-Marker besagt «dieser Art.» nichts über
+ * den ganzen Artikel (§1). Kein Aufhebungs-Vermerk — s. Kopf-Doku Klassen (d)/(f).
+ */
+export function fussnoteDiesenArtGegenstandslos(text: string): boolean {
+  return /\bist dieser Art(?:\.|ikel)\s+gegenstandslos(?=[\s.,;:]|$)/.test(text.trim());
 }
 
 /** `<p id="fn-…">`-Definitionen eines HTML-Fragments → Prosatext. */
@@ -235,7 +283,22 @@ export function artikelAmtlichesSignal(
   quellen: readonly (string | null)[],
 ): AmtlichesSignal | null {
   if (artikelAmtlichAufgehoben(articleInner, bloecke, quellen)) return 'aufgehoben';
-  return artikelMitVermerk(fussnoteGegenstandslos, false, articleInner, bloecke, quellen) ? 'gegenstandslos' : null;
+  if (artikelMitVermerk(fussnoteGegenstandslos, false, articleInner, bloecke, quellen)) return 'gegenstandslos';
+  return kopfDiesenArtGegenstandslos(articleInner, bloecke) ? 'gegenstandslos' : null;
+}
+
+/**
+ * «… ist dieser Art. gegenstandslos» an der Artikel-ÜBERSCHRIFT (AsylG Art. 122) — gilt auch, wenn der Artikel noch
+ * Wortlaut trägt: der Vermerk ist amtlich ausdrücklich auf den GANZEN Artikel bezogen. Konservativ (§1): nie mit
+ * Tabelle/Mehrspaltigem (lebender Inhalt schlägt, wie bei `artikelMitVermerk`), nie wenn am selben Kopf zugleich ein
+ * Aufhebungs-Vermerk steht (widersprüchlich → kein Signal, Nichtwissen bleibt sichtbar).
+ */
+function kopfDiesenArtGegenstandslos(articleInner: string, bloecke: readonly SignalBlock[]): boolean {
+  if (!bloecke.length) return false;
+  if (bloecke.some((b) => (b.tabelle?.length ?? 0) > 0 || (b.mehrspaltig?.zeilen.length ?? 0) > 0)) return false;
+  const fn = fussnotenTexte(articleInner);
+  const kopfTexte = markerIds(kopfFragment(articleInner)).map((id) => fn.get(id) ?? '');
+  return kopfTexte.some(fussnoteDiesenArtGegenstandslos) && !kopfTexte.some(fussnoteHebtAuf);
 }
 
 /**

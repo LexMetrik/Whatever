@@ -135,7 +135,7 @@ describe('fussnoteDiesenArtGegenstandslos — «… ist dieser Art. gegenstandsl
     const r = extrahiereArtikelAusAnker(ASYLG_ART_122, 'art_122');
     expect(r?.gegenstandslos).toBe(true);
     expect(r?.aufgehoben).toBeUndefined();
-    expect(r?.bloecke.length).toBeGreaterThan(1); // der amtliche Wortlaut bleibt erhalten (§5/§7)
+    expect(r?.bloecke[0].items?.length).toBe(5); // der amtliche Wortlaut (lit. a–e) bleibt erhalten (§5/§7)
     expect(r?.bloecke[0].text).toMatch(/^Wird gegen den Bundesbeschluss vom 26\. Juni 1998/);
   });
 
