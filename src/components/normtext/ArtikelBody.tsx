@@ -18,7 +18,8 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // Die Konstante wird IMPORTIERT statt abgeschrieben: die Ausgrenzung lebt in
 // `sammleTrefferRanges` und nur dort (§5). Ein `src/components`→`src/pages`-Import
 // ist im Haus etabliert (RuecksprungChip, BezugFacettenWahl, BezugZeitWahl,
-// ArtikelKontextGruppe) und erzeugt keinen Zyklus (check:zyklen).
+// ArtikelKontextGruppe, am 1.10.2026 gelöscht — die drei übrigen bleiben der
+// Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 
 import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
