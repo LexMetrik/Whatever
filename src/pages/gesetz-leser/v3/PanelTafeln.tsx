@@ -93,18 +93,24 @@ export function artRevFassungFallback(
 // nicht für jeden Vertrag belegt ist, ob Fedlex dort das Landes- oder das
 // völkerrechtliche Datum führt (§7). Das Datum gehört dem Erlass, nie dem Artikel.
 //
-// UMFANG IST EIN SCHALTER (Orchestrator-Entscheid 1.10.2026, bis David anders
-// entscheidet): ENG — nur SR `0.*`. Die datengesteuerte Ausweitung auf ALLE
-// Bund-Artikel ohne Ereignis (12 460, z. B. OR Art. 1) ist `return true` in
-// `erlassStandErlaubt`; die vier Bedingungen in `erlassStandFuerArtikel` gelten
-// unverändert für jeden Umfang.
+// UMFANG IST EIN SCHALTER — Entscheid David 2.10.2026 (Chat, «ja» auf Empfehlung):
+// ALLE Bund-Artikel, nicht nur Staatsverträge (SR 0.*). Davor (1.10.2026,
+// Orchestrator, bis David entscheidet) war er ENG auf `0.*`. Die EBENE wird
+// ausdrücklich geprüft, nicht nur die SR-Form (Bug-Check #1253): ein Kanton-Erlass
+// trägt eine SR-artige Nummer («SAR 291.150», «BGS 211.1»), und das Register führt
+// `inkraftSeit` heute nur am Bund — der Schalter darf sich aber nicht auf dieses
+// Datenloch verlassen. Die vier Bedingungen in `erlassStandFuerArtikel` gelten
+// unverändert für jeden Umfang (kein Ereignis/artRev, Historie fertig, lebender
+// Wortlaut, Residuum-Gate, ISO-Datum).
 
-/** DER Umfangs-Schalter: für welche Erlasse nennt der Artikel den Erlass-Stand? */
-export function erlassStandErlaubt(sr: string | null | undefined): boolean {
-  return typeof sr === 'string' && /^0\./.test(sr);
+/** DER Umfangs-Schalter: für welche Erlasse nennt der Artikel den Erlass-Stand? Bund + SR-Nummer. */
+export function erlassStandErlaubt(ebene: 'bund' | 'kanton' | null | undefined, sr: string | null | undefined): boolean {
+  return ebene === 'bund' && typeof sr === 'string' && sr.trim() !== '';
 }
 
 export interface ErlassStandEingang {
+  /** Ebene des Erlasses — der Umfangs-Schalter gilt nur für `'bund'`. */
+  ebene: 'bund' | 'kanton' | null | undefined;
   /** SR-Nummer des Erlasses (`BrowseErlass.sr`) — für den Umfangs-Schalter. */
   erlassSr: string | null | undefined;
   /** `BrowseErlass.inkraftSeit` (ISO) — Quelle Fedlex, kein Wert = ehrlich leer. */
@@ -132,7 +138,7 @@ export interface ErlassStandEingang {
  *     über seinen Ur-Stand wollen wir dann nichts aussagen (§8).
  */
 export function erlassStandFuerArtikel(a: ErlassStandEingang): string | undefined {
-  if (!erlassStandErlaubt(a.erlassSr) || !a.inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(a.inkraftSeit)) return undefined;
+  if (!erlassStandErlaubt(a.ebene, a.erlassSr) || !a.inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(a.inkraftSeit)) return undefined;
   if (!a.blatt || !a.revisionenFertig || !a.historieFertig || a.artRev) return undefined;
   const { eintrag, historie } = a.blatt;
   if (historie?.ereignisse.length || historie?.aufgehobenSeit || historie?.gegenstandslos) return undefined;
@@ -222,7 +228,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   const erlassStand = erlassStandFuerArtikel({
-    erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
+    ebene, erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
     historieFertig: historie.fertig, historieShard: historie.wert,
   });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von

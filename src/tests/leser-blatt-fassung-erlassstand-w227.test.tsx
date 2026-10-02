@@ -17,9 +17,12 @@ import type { NormSnapshot } from '../lib/normtext/typen';
 // `inkrafttreten.json`), nie dem Artikel; und es steht nur, wo kein Beleg dagegen
 // spricht (Ereignis, Revision, Leerstelle, ungeparste Fussnote).
 //
-// UMFANG (Orchestrator, bis David anders entscheidet): ENG — nur SR `0.*`
-// (Staatsverträge). Die datengesteuerte Ausweitung auf alle Bund-Artikel ohne
-// Ereignis ist EIN Schalter: `erlassStandErlaubt` (Test «Schalter» unten).
+// UMFANG: seit Entscheid David 2.10.2026 (Chat, «ja» auf Empfehlung) ALLE Bund-
+// Erlasse — datengesteuert, EBENE ausdrücklich geprüft (`erlassStandErlaubt`,
+// Test «Schalter» unten). Davor (1.10.2026, Orchestrator, bis David entscheidet)
+// ENG: nur SR `0.*` (Staatsverträge) — die damaligen «Nicht-SR-0 ⇒ keine Zeile»-
+// Erwartungen sind fachlich überholt und hier als deklarierte Änderung umgestellt
+// (Commit-Trailer `Fachaenderung: Leser Erlass-Stand …`).
 
 const WURZEL = resolve(__dirname, '../..');
 const lies = <T,>(pfad: string): T => JSON.parse(readFileSync(resolve(WURZEL, 'public/normtext', pfad), 'utf8')) as T;
@@ -49,17 +52,28 @@ const shard = (residuumTokens: string[] = []): HistorieShard => ({
 /** Der Glücksfall der Spec §3: alle Bedingungen erfüllt. Jeder Test kippt GENAU eine. */
 function basis(über: Partial<ErlassStandEingang> = {}): ErlassStandEingang {
   return {
-    erlassSr: '0.221.211.1', inkraftSeit: '1991-03-01', blatt: { eintrag: eintrag('7') }, artRev: null,
+    ebene: 'bund', erlassSr: '0.221.211.1', inkraftSeit: '1991-03-01', blatt: { eintrag: eintrag('7') }, artRev: null,
     revisionenFertig: true, historieFertig: true, historieShard: null, ...über,
   };
 }
 
-describe('erlassStandErlaubt — der EINE Umfangs-Schalter (ENG: nur SR 0.*)', () => {
-  it('Staatsverträge (SR 0.*) ja', () => {
-    for (const sr of ['0.101', '0.221.211.1', '0.748.0', '0.172.030.4']) expect(erlassStandErlaubt(sr)).toBe(true);
+describe('erlassStandErlaubt — der EINE Umfangs-Schalter (alle Bund-Erlasse, Ebene geprüft)', () => {
+  it('jeder Bund-Erlass mit SR-Nummer ja — Staatsverträge (0.*) wie Gesetze (220, 170.32, 281.1) und Verordnungen', () => {
+    for (const sr of ['0.101', '0.221.211.1', '0.748.0', '220', '210', '170.32', '281.1', '831.10', '10.1', '101']) {
+      expect(erlassStandErlaubt('bund', sr), sr).toBe(true);
+    }
   });
-  it('alles andere nein — auch SR-Nummern, die nur eine 0 enthalten, und VBB/VG (kein Staatsvertrag)', () => {
-    for (const sr of ['220', '170.32', '281.31', '10.1', '101', '0', '', null, undefined]) expect(erlassStandErlaubt(sr)).toBe(false);
+  it('Kanton NEIN — auch mit SR-artiger Nummer (Bug-Check #1253: nicht nur die SR-Form prüfen)', () => {
+    for (const sr of ['0.101', '220', '211.1', 'SAR 291.150', 'BGS 211.1', null, undefined]) {
+      expect(erlassStandErlaubt('kanton', sr), String(sr)).toBe(false);
+    }
+  });
+  it('unbekannte Ebene nein (fail-closed)', () => {
+    expect(erlassStandErlaubt(undefined, '220')).toBe(false);
+    expect(erlassStandErlaubt(null, '220')).toBe(false);
+  });
+  it('Bund ohne SR-Nummer nein', () => {
+    for (const sr of ['', '  ', null, undefined]) expect(erlassStandErlaubt('bund', sr), String(sr)).toBe(false);
   });
 });
 
@@ -117,8 +131,16 @@ describe('erlassStandFuerArtikel — Spec §3 a–d, Test 1 a–g', () => {
   it('kein aktiver Artikel ⇒ nichts', () => {
     expect(erlassStandFuerArtikel(basis({ blatt: null }))).toBeUndefined();
   });
-  it('Schalter: Erlass ausserhalb des Umfangs (SR ≠ 0.*) ⇒ nichts, obwohl alles andere stimmt', () => {
-    expect(erlassStandFuerArtikel(basis({ erlassSr: '220' }))).toBeUndefined();
+  it('Schalter: Bund-Erlass ausserhalb der Staatsverträge (SR 220, 170.32) ⇒ jetzt auch das Datum des Erlasses', () => {
+    expect(erlassStandFuerArtikel(basis({ erlassSr: '220', inkraftSeit: '1912-01-01' }))).toBe('1912-01-01');
+    expect(erlassStandFuerArtikel(basis({ erlassSr: '170.32', inkraftSeit: '1971-01-01' }))).toBe('1971-01-01');
+  });
+  it('Schalter: Kanton ⇒ nichts, obwohl alles andere stimmt (auch mit Datum und 0.*-artiger Nummer)', () => {
+    expect(erlassStandFuerArtikel(basis({ ebene: 'kanton' }))).toBeUndefined();
+    expect(erlassStandFuerArtikel(basis({ ebene: 'kanton', erlassSr: '220', inkraftSeit: '1912-01-01' }))).toBeUndefined();
+    expect(erlassStandFuerArtikel(basis({ ebene: undefined }))).toBeUndefined();
+  });
+  it('Schalter: Bund ohne SR ⇒ nichts', () => {
     expect(erlassStandFuerArtikel(basis({ erlassSr: undefined }))).toBeUndefined();
   });
 });
@@ -144,7 +166,7 @@ function eingangFuer(key: string, artikel: string): ErlassStandEingang {
   const s = shardVon(key);
   const eint = snap(key).find((x) => x.artikel === artikel)!;
   return {
-    erlassSr: e.sr, inkraftSeit: e.inkraftSeit, blatt: { eintrag: eint, historie: s?.artikel[artikel] },
+    ebene: e.ebene, erlassSr: e.sr, inkraftSeit: e.inkraftSeit, blatt: { eintrag: eint, historie: s?.artikel[artikel] },
     artRev: null, revisionenFertig: true, historieFertig: true, historieShard: s,
   };
 }
@@ -160,23 +182,65 @@ describe('Render-Test am echten Korpus (Test 2)', () => {
     expect(s.artikel['19']?.ereignisse.length).toBeGreaterThan(0);
     expect(erlassStandFuerArtikel(eingangFuer('EMRK', '19'))).toBeUndefined();
   });
-  it('ein Erlass ausserhalb des Umfangs (OR, SR 220) ⇒ keine Zeile, auch ohne Ereignis', () => {
-    const e = reg('OR');
-    const eint = snap('OR').find((x) => !shardVon('OR')?.artikel[x.artikel]?.ereignisse.length && x.bloecke.some((b) => b.text.trim().length > 20))!;
-    expect(eint).toBeDefined();
-    expect(erlassStandFuerArtikel({
-      erlassSr: e.sr, inkraftSeit: e.inkraftSeit, blatt: { eintrag: eint }, artRev: null,
-      revisionenFertig: true, historieFertig: true, historieShard: shardVon('OR'),
-    })).toBeUndefined();
+  it('OR Art. 1 (SR 220, kein Staatsvertrag, kein Ereignis) ⇒ «Erlass in Kraft seit 01.01.1912» (Entscheid David 2.10.2026)', () => {
+    expect(reg('OR').inkraftSeit).toBe('1912-01-01');
+    expect(INKRAFT.OR.datum).toBe('1912-01-01');
+    expect(shardVon('OR')?.artikel['1']?.ereignisse.length ?? 0).toBe(0);
+    const iso = erlassStandFuerArtikel(eingangFuer('OR', '1'));
+    expect(iso).toBe('1912-01-01');
+    expect(renderToString(<ErlassStandZeile iso={iso!} token="1" />).replace(/<!-- -->/g, '')).toContain('Erlass in Kraft seit 01.01.1912');
   });
-  it('ein Kanton-Erlass ⇒ keine Zeile (kein inkraftSeit, kein SR 0.*)', () => {
+  it('ein OR-Artikel MIT Ereignis ⇒ keine Zeile (die Fassung spricht selbst)', () => {
+    const s = shardVon('OR')!;
+    const mit = snap('OR').find((x) => (s.artikel[x.artikel]?.ereignisse.length ?? 0) > 0)!;
+    expect(mit).toBeDefined();
+    expect(erlassStandFuerArtikel(eingangFuer('OR', mit.artikel))).toBeUndefined();
+  });
+  it('ein OR-Artikel im Residuum (ungeparste Fussnote) ⇒ keine Zeile', () => {
+    const s = shardVon('OR')!;
+    const r = s.residuum.find((x) => snap('OR').some((e) => e.artikel === x.token));
+    if (!r) return; // kein OR-Residuum im Korpus — dann deckt der Korpus-Test unten das Gate ab
+    expect(erlassStandFuerArtikel(eingangFuer('OR', r.token))).toBeUndefined();
+  });
+  it('ein Kanton-Erlass ⇒ keine Zeile — auch wenn man ihm ein Datum unterschiebt (Ebene sperrt, nicht nur das Datenloch)', () => {
     const k = REGISTER.find((e) => e.ebene === 'kanton' && e.datei)!;
     expect(k.inkraftSeit).toBeUndefined();
-    expect(erlassStandFuerArtikel(basis({ erlassSr: k.sr, inkraftSeit: k.inkraftSeit }))).toBeUndefined();
+    expect(erlassStandFuerArtikel(basis({ ebene: k.ebene, erlassSr: k.sr, inkraftSeit: k.inkraftSeit }))).toBeUndefined();
+    expect(erlassStandFuerArtikel(basis({ ebene: k.ebene, erlassSr: k.sr, inkraftSeit: '2000-01-01' }))).toBeUndefined();
+    const eint = snap(k.key)[0];
+    expect(erlassStandFuerArtikel({ ...basis({ ebene: k.ebene, erlassSr: k.sr, inkraftSeit: '2000-01-01' }), blatt: { eintrag: eint } })).toBeUndefined();
   });
 });
 
-describe('Daten-Invariante (Test 3) — inkrafttreten.json deckt jeden Staatsvertrag', () => {
+describe('Daten-Invariante (Test 3) — inkrafttreten.json deckt jeden Bund-Erlass', () => {
+  const BUND = REGISTER.filter((e) => e.ebene === 'bund' && e.datei);
+  it('jeder Bund-Registereintrag mit Normtext trägt inkraftSeit — identisch zu inkrafttreten.json (Quelle Fedlex)', () => {
+    expect(BUND.length).toBeGreaterThanOrEqual(231);
+    expect(BUND.filter((e) => !e.inkraftSeit || INKRAFT[e.key]?.datum !== e.inkraftSeit || INKRAFT[e.key]?.quelle !== 'fedlex').map((e) => e.key)).toEqual([]);
+  });
+  it('Korpus ganz: Bund zeigt die Zeile (Zehntausende Artikel), Kanton nie; Gates sperren Ereignis/Residuum/Leerstelle', () => {
+    let bundGezeigt = 0, bundGesperrt = 0, kantonGezeigt = 0;
+    for (const e of REGISTER.filter((x) => x.datei)) {
+      const s = shardVon(e.key);
+      const residuum = new Set((s?.residuum ?? []).map((r) => r.token));
+      for (const eint of snap(e.key)) {
+        const iso = erlassStandFuerArtikel(eingangFuer(e.key, eint.artikel));
+        if (e.ebene === 'kanton') { if (iso) kantonGezeigt++; continue; }
+        if (iso) {
+          bundGezeigt++;
+          expect(residuum.has(eint.artikel), `${e.key} Art. ${eint.artikel} im Residuum`).toBe(false);
+          expect(s?.artikel[eint.artikel]?.ereignisse.length ?? 0, `${e.key} Art. ${eint.artikel} hat Ereignis`).toBe(0);
+          expect(iso).toBe(e.inkraftSeit);
+        } else bundGesperrt++;
+      }
+    }
+    expect(kantonGezeigt).toBe(0);
+    expect(bundGezeigt).toBeGreaterThan(10000);
+    expect(bundGesperrt).toBeGreaterThan(0);
+  });
+});
+
+describe('Daten-Invariante (Test 3, Staatsverträge) — inkrafttreten.json deckt jeden Staatsvertrag', () => {
   it('jeder Bund-Registereintrag mit Normtext und SR 0.* trägt inkraftSeit — identisch zu inkrafttreten.json', () => {
     expect(SR0.length).toBeGreaterThanOrEqual(28);
     const luecken = SR0.filter((e) => !e.inkraftSeit || INKRAFT[e.key]?.datum !== e.inkraftSeit).map((e) => e.key);
