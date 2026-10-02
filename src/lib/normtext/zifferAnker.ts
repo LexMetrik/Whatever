@@ -13,8 +13,9 @@
 // Eine mehrstufige Ziffer «1.1» gibt es als `ziffer` nicht (das ist der Anhang-Token `1.1`, ein
 // ARTIKEL-Token); sie würde hier nicht kodiert, sondern als Ziffer nicht verankert (`istAnkerZiffer`).
 // Der Trenner «-ziff-» ist kollisionsfrei: kein Artikel-Token des Korpus enthält ihn (Wächter:
-// `src/tests/ziffer-anker.test.ts`, liest alle Bund-/Kanton-Snapshots), und die Zerlegung nimmt
-// das LETZTE «-ziff-». Sammel-Ziffer «2_3» trägt das DOM unter `…-ziff-2_3`; die Einzelziffern
+// `src/tests/ziffer-anker.test.tsx`, liest alle Bund-/Kanton-Snapshots), und die Zerlegung nimmt
+// das LETZTE «-ziff-» (die Ziffer-Klasse enthält kein «-»; bewacht: Test «mehrfaches -ziff- im
+// Token»). Sammel-Ziffer «2_3» trägt das DOM unter `…-ziff-2_3`; die Einzelziffern
 // «2» und «3» finden sie über `data-ziffer` (`zifferTeile`, dieselbe Auflösung wie «Art. 140 Ziff. 3»).
 // Gross/Klein ist egal (`markeNorm`).
 

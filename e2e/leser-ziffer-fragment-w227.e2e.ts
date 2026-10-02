@@ -43,6 +43,16 @@ test.describe('Ziffer-Fragment (W2·27 E2)', () => {
     await stehtImBild(page, 'art-122-ziff-2_3');
   });
 
+  test('Sammel-Ziffer per eigener id: MStG#art-122-ziff-2_3 landet auf der Ziffer, nicht auf dem Artikel', async ({ page }) => {
+    await page.goto('/gesetze/bund/MStG#art-122-ziff-2_3');
+    await stehtImBild(page, 'art-122-ziff-2_3');
+    // Gelandet ist die ZIFFER: sie sitzt am Sprung-Slot (~154 px unter der Krone). Landete der Sprung auf dem
+    // Artikel (Fehlerbild: `data-ziffer~="2_3"` trifft «2 3» nie), stünde der Artikel dort und die Ziffer bei ~360 px.
+    await expect.poll(async () => (await lage(page, 'art-122-ziff-2_3')) ?? 9999, { timeout: 15_000 }).toBeLessThan(250);
+    expect(await lage(page, 'art-122')).toBeLessThan(100);
+    expect(page.url()).toContain('#art-122-ziff-2_3');
+  });
+
   test('unbekannte Ziffer: Fallback auf den Artikel, kein weisser Bildschirm', async ({ page }) => {
     const fehler: string[] = [];
     page.on('pageerror', (e) => fehler.push(String(e)));
