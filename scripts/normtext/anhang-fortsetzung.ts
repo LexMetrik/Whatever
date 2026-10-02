@@ -58,8 +58,13 @@ type Block = ArtikelText['bloecke'][number];
 type BlockItem = NonNullable<Block['items']>[number];
 
 function ohneNotizFlag(it: ListenItem): BlockItem {
-  const { notiz: _notiz, ...rest } = it;
-  return rest;
+  // Schlüsselreihenfolge marke,text,tiefe,trenner ist Teil der Byte-Gleichheit (JSON-Serialisierung).
+  return {
+    marke: it.marke,
+    text: it.text,
+    ...(it.tiefe !== undefined ? { tiefe: it.tiefe } : {}),
+    ...(it.trenner !== undefined ? { trenner: it.trenner } : {}),
+  };
 }
 
 export function bloeckeAusItems(items: ListenItem[]): Block[] {
