@@ -33,7 +33,8 @@ async function umgebung() {
   (globalThis as GlobalPatch).IS_REACT_ACT_ENVIRONMENT = true;
   // linkedom kennt weder `focus()` noch `activeElement` — beides minimal nachgebildet.
   let aktiv: unknown = document.body;
-  (window.HTMLElement.prototype as unknown as { focus: () => void }).focus = function focus(this: unknown) { aktiv = this; };
+  const setzeAktiv = (el: unknown) => { aktiv = el; };
+  (window.HTMLElement.prototype as unknown as { focus: () => void }).focus = function focus(this: unknown) { setzeAktiv(this); };
   Object.defineProperty(document, 'activeElement', { get: () => aktiv, configurable: true });
 
   const React = await import('react');
