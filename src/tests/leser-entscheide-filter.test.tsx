@@ -10,7 +10,7 @@ import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
-import { BEDIENBARE_KLASSEN, istEingegrenzt, waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
+import { BEDIENBARE_KLASSEN, istEingegrenzt, kantonSchneidet, waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import { istUebernehmbar } from '../pages/gesetz-leser/bezugZeit';
 import { instanzStand } from '../pages/gesetz-leser/v3/panelModell';
 import { PanelFilterZeile } from '../pages/gesetz-leser/v3/PanelFilterZeile';
@@ -56,6 +56,26 @@ describe('E4-B01/B02 · ein Kanton ohne Entscheid am Artikel filtert nicht unsic
 
   it('ohne kantonale Klasse bleibt die Kantonwahl wirkungslos (unverändert)', () => {
     expect(schluessel(waehleBezuege(OR41, ['bge'], ['ZH']))).toEqual(['bge_1']);
+  });
+});
+
+describe('E4-B01 Nachzug · «im Kanton» am Gruppenkopf nur, wenn der Kanton hier etwas herausnimmt', () => {
+  it('Fremdkanton (ZH an OR 41): kein Kanton-Filter aktiv — auch wenn der Zeitraum kürzt', () => {
+    expect(kantonSchneidet(OR41, ALLE, ['ZH'])).toBe(false);
+  });
+
+  it('ein Kanton MIT Entscheid am Artikel: aktiv', () => {
+    expect(kantonSchneidet(OR41, ALLE, ['BS'])).toBe(true);
+    expect(kantonSchneidet(OR41, ALLE, ['ZH', 'AG'])).toBe(true);
+  });
+
+  it('ohne Wahl oder ohne kantonale Klasse: nie aktiv', () => {
+    expect(kantonSchneidet(OR41, ALLE, [])).toBe(false);
+    expect(kantonSchneidet(OR41, ['bge', 'bger'], ['BS'])).toBe(false);
+  });
+
+  it('nur Bundeskanten am Artikel (CH ist kein Kanton): nie aktiv', () => {
+    expect(kantonSchneidet([kante('bge_1', 'bge', 'CH')], ALLE, ['BS'])).toBe(false);
   });
 });
 

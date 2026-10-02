@@ -308,7 +308,7 @@ export function waehleBezuege<T extends WaehlbareKante>(
  * Gleiche Kriterien wie `bauePraedikate`: 'CH' ist kein Kanton und fällt weg
  * (Bundeskanten tragen es; kantonale Kanten tragen es nie).
  */
-function wirksameKantone(
+export function wirksameKantone(
   kanten: readonly { facetten: { kanton: string } }[],
   kantone: readonly string[],
 ): string[] {
@@ -316,6 +316,22 @@ function wirksameKantone(
   const vorhanden = new Set<string>();
   for (const k of kanten) if (k.facetten.kanton !== 'CH') vorhanden.add(k.facetten.kanton);
   return kantone.filter((k) => vorhanden.has(k));
+}
+
+/**
+ * Nimmt die Kantonwahl an DIESEN Kanten etwas heraus? Die Bedingung hinter
+ * «… im Kanton» am Gruppenkopf (`ArtikelBezuege.kantonAktiv`): kantonale Klasse
+ * an UND mindestens ein gewählter Kanton führt hier eine Kante — dieselbe
+ * Regel wie in `waehleBezuege`/`bauePraedikate` (§5). Mit der rohen Wahl
+ * behauptete der Kopf eine Kanton-Einschränkung, obwohl nur der Zeitraum
+ * kürzte (Prüfer-Befund 2.10.2026, E4-B01 Nachzug). Rein (§2).
+ */
+export function kantonSchneidet(
+  alle: readonly { facetten: { kanton: string } }[],
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): boolean {
+  return klassen.includes('kantonal') && wirksameKantone(alle, kantone).length > 0;
 }
 
 /**
