@@ -126,8 +126,9 @@ export function markenBreite(anzahl: number): number {
 // die gezeichnete Höhe `markenHoehe` — dieselben zwei Werte, aus denen
 // `TrefferLandkarte` das Rechteck zeichnet (§5, keine zweite Geometrie).
 // Überlappen sich gezeichnete Marken (Ballung, Art. 266/266a/266b), gewinnt die,
-// deren gezeichnete Mitte dem Klick am nächsten liegt; bei Gleichstand die
-// frühere (Dokumentreihenfolge).
+// die im BILD OBEN liegt — im SVG die später gezeichnete, also die spätere der
+// Dokumentreihenfolge (Gegenprüfung #1278: was man sieht, soll man treffen; «nächste
+// Mitte» traf an Überlappungen die darunterliegende Marke).
 
 /**
  * Id der Marke, deren GEZEICHNETE Fläche den anteiligen Klickpunkt `anteil`
@@ -138,15 +139,23 @@ export function markeAnAnteil(
   marken: readonly { id: string; von: number; bis: number }[],
   anteil: number,
 ): string | null {
-  let beste: string | null = null;
-  let abstand = Infinity;
+  let oben: string | null = null;
   for (const m of marken) {
-    const ende = m.von + markenHoehe(m.von, m.bis) / HOEHE;
-    if (anteil < m.von || anteil > ende) continue;
-    const d = Math.abs(anteil - (m.von + ende) / 2);
-    if (d < abstand) { abstand = d; beste = m.id; }
+    if (anteil >= m.von && anteil <= m.von + markenHoehe(m.von, m.bis) / HOEHE) oben = m.id;
   }
-  return beste;
+  return oben;
+}
+
+/**
+ * Anteilige Klicklage aus der Mausposition. `clientY` ist beim echten Mausklick
+ * GANZZAHLIG (der Pixel), die Markenkanten liegen aber auf halben Pixeln: ein Klick
+ * auf die oberste Pixelzeile einer Marke ergab `clientY` = Kante abgerundet und
+ * sprang zum Artikel DAVOR (Gegenprüfung #1278: OR «Kündigung» 42 von 122 Marken,
+ * ZGB «Erbe» 118 von 297). Der Pixel steht für seine MITTE: ganzzahlig + 0.5.
+ * Ein Bruchwert (Stift, synthetischer Klick) ist schon eine Lage und bleibt.
+ */
+export function klickAnteil(clientY: number, flaechenOben: number, flaechenHoehe: number): number {
+  return ((Number.isInteger(clientY) ? clientY + 0.5 : clientY) - flaechenOben) / flaechenHoehe;
 }
 
 // ─── PE-B12-D02 · DIE LESEPOSITION MUSS SICHTBAR SEIN ────────────────────────

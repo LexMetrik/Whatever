@@ -282,6 +282,34 @@ test.describe('W2·17-UI-BEFUNDE — Nachbar-Pfeile: Darstellung', () => {
     await expect(nach.nth(1).locator('[data-nachbar-label]')).toHaveText('Art. 1')
   })
 
+  // GEGENPRÜFUNG #1278 (HOCH): die erste Fassung der Breitenbegrenzung (`max-w-[calc(50%-…)]`
+  // am Pfeil im schrumpfenden Kopf-Paar) bezog die 50 % auf den Pfeil selbst und schnitt
+  // KURZE Beschriftungen ab — OR Art. 1: von «Art. 2 ›» blieb «›»; 9 von 15 Kopf-Pfeilen
+  // im OR (auf main 0 von 5). Kurze Beschriftungen werden NIE gekürzt, nur überlange.
+  for (const w of [375, 1024, 1440] as const) {
+    test(`(D01b) @${w}: kurze Beschriftungen («Art. 2», «Art. 335d», «Art. 1185») werden nie abgeschnitten`, async ({ page }) => {
+      test.slow()
+      await page.setViewportSize({ width: w, height: 900 })
+      const gemessen: string[] = []
+      let geprueft = 0
+      // Stichprobe aus dem OR: Anfang, Buchstaben-Kette, Mitte, Gruppenwechsel, Schlussgruppe.
+      for (const t of ['1', '335_c', '337_c', '90', '266_g', '1186', 'disp_u2_art_1']) {
+        await page.goto(einzel(OR, t))
+        await expect(page.locator('[data-nachbar]').first()).toBeVisible({ timeout: 30_000 })
+        const r = await page.evaluate(() => [...document.querySelectorAll('[data-nachbar-label]')].map((el) => ({
+          txt: el.textContent ?? '', abgeschnitten: el.scrollWidth > el.clientWidth + 0.5,
+        })))
+        for (const l of r) {
+          if (l.txt.length >= 20) continue
+          geprueft++
+          if (l.abgeschnitten) gemessen.push(`${t}: «${l.txt}»`)
+        }
+      }
+      expect(geprueft, 'keine Beschriftung gemessen — Vorbedingung fehlt (§6.7)').toBeGreaterThan(20)
+      expect(gemessen, `abgeschnittene kurze Beschriftungen @${w}: ${gemessen.join(' | ')}`).toEqual([])
+    })
+  }
+
   test('(D04) innerhalb einer Gruppe bleibt der Pfeil kurz: kein Gruppenname unter jedem Artikel', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto(einzel(OR, 'disp_u2_art_2'))

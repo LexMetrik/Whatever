@@ -141,7 +141,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           Hinweis (Kap. 15.6). */}
       {/* B11-D01 · lange Beschriftung (HAÜ: Anhang mit 244 Zeichen) steht hier bis zu zwei Zeilen
           statt einzeilig abgeschnitten; der volle Wortlaut steht im `title` des Pfeils. */}
-      <div className="grid gap-2 border-t border-line pt-3.5 [&_[data-nachbar-gruppe]]:line-clamp-2 [&_[data-nachbar-gruppe]]:whitespace-normal [&_[data-nachbar-label]]:line-clamp-2 [&_[data-nachbar-label]]:whitespace-normal [&_[data-nachbar-label]]:break-words [&_[data-nachbar]]:min-h-[var(--tap-ziel-komfort)] [&_[data-nachbar]]:items-center">
+      <div className="grid gap-2 border-t border-line pt-3.5 [&_[data-nachbar-gruppe]]:max-w-none [&_[data-nachbar-gruppe]]:line-clamp-2 [&_[data-nachbar-label]]:max-w-none [&_[data-nachbar]]:max-w-[calc(50%-0.5rem)] [&_[data-nachbar-gruppe]]:whitespace-normal [&_[data-nachbar-label]]:line-clamp-2 [&_[data-nachbar-label]]:whitespace-normal [&_[data-nachbar-label]]:break-words [&_[data-nachbar]]:min-h-[var(--tap-ziel-komfort)] [&_[data-nachbar]]:items-center">
         {nachbarn && (
           <ArtikelNachbarn nachbarn={nachbarn} adresse={adresse}
             klassen="inline-flex w-full items-baseline justify-between gap-4" />

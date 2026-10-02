@@ -527,3 +527,31 @@ test('(j) PE-B12-D01 · mit offenem Blatt deckt die Landkarte kein Bedienelement
   await expect(blatt).toHaveCount(0)
   await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(1)
 })
+
+// ─── Gegenprüfung #1278 (4) · IM SPLIT STEHT DIE LANDKARTE NIRGENDS ─────────
+// `randluft` ist im Pane `false` (und mit offener Blatt-Spur ebenfalls): ein zweites
+// Fenster darf von keinem fixierten Streifen überdeckt werden. Gemessen mit echter
+// Suche im PRIMÄREN Pane (der Zähler zeigt Treffer) bei 1440 und 1920 — die Zusage ist
+// «kein Streifen», nicht «keine Treffer».
+for (const [w, h] of [[1440, 900], [1920, 1000]] as const) {
+  test(`(k) Split @${w}: auch mit Treffern steht keine Landkarte über einem der beiden Fenster`, async ({ page }) => {
+    test.slow()
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.setViewportSize({ width: w, height: h })
+    await page.goto('/gesetze/bund/OR?leser=v3&p=/gesetze/bund/BGBM%3Fleser%3Dv3')
+    const pane = page.locator('[data-pane="primaer"], [data-v3-pane="primaer"]')
+    if (!(await pane.locator('[data-v3-suchsprung] input').first().isVisible({ timeout: 30000 }).catch(() => false))) {
+      await page.locator('[data-pane="primaer"] [data-v3-gliederung-auf]').first().click()
+    }
+    const feld = pane.locator('[data-v3-suchsprung] input').first()
+    await expect(feld).toBeVisible({ timeout: 30000 })
+    await feld.click()
+    await feld.fill(BEGRIFF)
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 30000 })
+    await feld.press('Enter')
+    // Vorbedingung (§6.7): die Suche HAT Treffer — sonst fehlte der Streifen aus dem falschen Grund.
+    await expect(page.locator('[data-v3-treffer-weg]').first()).toBeVisible({ timeout: 30000 })
+    expect((await zaehler(page)).fundstellen).toBeGreaterThan(0)
+    await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(0)
+  })
+}

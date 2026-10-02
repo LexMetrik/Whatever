@@ -62,10 +62,15 @@ import { leerstellenWort } from '../../../lib/normtext/darstellung';
 // sprengen: HAÜ trägt als Nachbarn von Art. 48 den Anhang «Verzeichnis der
 // zentralen und der zuständigen Behörden, …» (244 Zeichen) — der Pfeil war
 // 1261 px breit, die Seite @1440 1870 px (waagrechter Bildlauf), @375 1337 px.
-// Jetzt darf der Pfeil schrumpfen (`min-w-0`, höchstens die halbe Zeile — sonst drückt der lange den kurzen auf Pfeilbreite zusammen, gemessen @375: 10 px für «‹ Art. 47»): im Kopf läuft die
-// Beschriftung einzeilig mit Auslassungszeichen aus, im Fuss steht sie bis zu
-// zwei Zeilen (`LeserEinzelAnsicht`); der VOLLE Wortlaut steht im `title` und im
-// zugänglichen Namen — verkürzt wird nur die Darstellung, nie die Auskunft (§8).
+// Jetzt kürzt die BESCHRIFTUNG, nicht der Pfeil: im Kopf läuft sie ab 20 Zeichen
+// (`max-w-[20ch]`, feste Obergrenze) einzeilig mit Auslassungszeichen aus, im Fuss
+// steht sie bis zu zwei Zeilen und der Pfeil höchstens die halbe Zeile
+// (`LeserEinzelAnsicht`, dort ist die Breite definiert). Kurze Beschriftungen («Art. 335d»)
+// werden NIE gekürzt. ERSTE FASSUNG (Gegenprüfung #1278): `max-w-[50%]` am Pfeil im
+// schrumpfenden Kopf-Paar bezog sich auf den Pfeil selbst und schnitt 9 von 15 kurzen
+// Kopf-Pfeilen ab — eine Prozentbreite braucht eine Fläche mit definierter Breite.
+// Der VOLLE Wortlaut steht im `title` und im zugänglichen Namen — verkürzt wird nur
+// die Darstellung, nie die Auskunft (§8).
 // B11-D02 · der Pfeil im Kopf war 13 px hoch (11 px Schrift): unter dem
 // 24-px-Mindestmass der Trefferfläche (`--tap-ziel`, DESIGN-REGLEMENT F9). Die
 // Hitbox wächst per `::after` um 6 px nach oben und unten — OHNE Optik-Änderung.
@@ -73,7 +78,7 @@ import { leerstellenWort } from '../../../lib/normtext/darstellung';
 // Fuss-Paar nach LINKS (`justify-between` mit einem Kind): `ml-auto` am Nachfolger
 // hält ihn rechts, wo er mit Nachbar steht.
 // B11-D04 · die Gruppe als zweite Zeile, s. `nachbarBezeichnung`.
-const PFEIL_KLASSEN = 'num relative inline-flex min-w-0 max-w-[calc(50%-0.5rem)] items-baseline gap-1 text-micro text-ink-500 no-underline hover:text-ink-900 after:absolute after:inset-x-0 after:-inset-y-1.5';
+const PFEIL_KLASSEN = 'num relative inline-flex min-w-0 items-baseline gap-1 text-micro text-ink-500 no-underline hover:text-ink-900 after:absolute after:inset-x-0 after:-inset-y-1.5';
 
 function Pfeil({ ziel, richtung, adresse }: {
   ziel: NachbarZiel;
@@ -119,8 +124,8 @@ function Pfeil({ ziel, richtung, adresse }: {
     <>
       {richtung === 'vor' && <span aria-hidden>‹</span>}
       <span aria-hidden className={richtung === 'nach' ? 'min-w-0 text-right' : 'min-w-0'}>
-        <span data-nachbar-label className="block truncate">{ziel.label}</span>
-        {gruppe !== null && <span data-nachbar-gruppe className="block truncate">{gruppe}</span>}
+        <span data-nachbar-label className="block max-w-[20ch] truncate">{ziel.label}</span>
+        {gruppe !== null && <span data-nachbar-gruppe className="block max-w-[20ch] truncate">{gruppe}</span>}
       </span>
       {richtung === 'nach' && <span aria-hidden>›</span>}
     </>
