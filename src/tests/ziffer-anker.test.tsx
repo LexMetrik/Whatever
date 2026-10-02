@@ -35,6 +35,18 @@ describe('zerlegeZifferAnker — Artikel-Token und Ziffer', () => {
     expect(zerlegeZifferAnker(roh)).toEqual({ artikel, ziffer });
   });
 
+  it('mehrfaches «-ziff-» im Token: das LETZTE trennt (künstlicher Token), der Rest bleibt Artikel-Token', () => {
+    // Nagelt die Kommentar-Behauptung in zifferAnker.ts fest. Die Zerlegung ist eindeutig, weil die
+    // Ziffer-Klasse «-» nicht enthält: «(.+)» gierig oder «(.+?)» träge ergibt dasselbe (äquivalente
+    // Mutante); echt kippt nur eine Ziffer-Klasse MIT «-» (dann zerlegte ein träges Token am ERSTEN).
+    expect(zerlegeZifferAnker('art-x-ziff-1-ziff-2'.slice('art-'.length))).toEqual({ artikel: 'x-ziff-1', ziffer: '2' });
+    expect(zerlegeZifferAnker('a-ziff-1-ziff-2-ziff-3')).toEqual({ artikel: 'a-ziff-1-ziff-2', ziffer: '3' });
+    expect(zerlegeZifferAnker('x-ziff-1-ziff-')).toEqual({ artikel: 'x-ziff-1-ziff-', ziffer: null });
+    // …und die Ziffer-Id-Form trägt das Ergebnis verlustfrei zurück.
+    const z = zerlegeZifferAnker('x-ziff-1-ziff-2');
+    expect(zifferAnkerToken(z.artikel, z.ziffer)).toBe('x-ziff-1-ziff-2');
+  });
+
   it.each(['197', '1_a', 'annex_1', '1.1', '22 a', '36–42', 'x-ziff-', '-ziff-3', 'x-ziff-1.1', 'x-ziff-a b', ''])(
     'ohne gültiges Suffix unverändert: «%s»', (roh) => {
       expect(zerlegeZifferAnker(roh)).toEqual({ artikel: roh, ziffer: null });
@@ -141,6 +153,11 @@ describe('findeZiel — Ziffer-Block, sonst Artikel (nie «kein Ziel»)', () => 
   it('Einzelziffer einer Sammel-Ziffer («3» ⇒ «2_3»), auch exakte Sammel-Schreibweise', () => {
     expect(mit(() => findeZiel(null, '197', '3'))?.id).toBe('art-197-ziff-2_3');
     expect(mit(() => findeZiel(null, '197', '2'))?.id).toBe('art-197-ziff-2_3');
+  });
+  it('Sammel-Ziffer über ihre EIGENE id («2_3», wie im Anker geschrieben) ⇒ der Block, nicht der Artikel', () => {
+    // `data-ziffer` trägt «2 3» (zifferTeile): die id-Schreibweise «2_3» träfe `[data-ziffer~=…]` nie.
+    expect(mit(() => findeZiel(null, '197', '2_3'))?.id).toBe('art-197-ziff-2_3');
+    expect(mit(() => findeZiel(null, '197', '2_3'))?.getAttribute('data-ziffer')).toBe('2 3');
   });
   it('unbekannte Ziffer ⇒ der Artikel (Fallback, kein Fehler)', () => {
     expect(mit(() => findeZiel(null, '197', '99'))?.id).toBe('art-197');
