@@ -16,9 +16,10 @@
 import { describe, it, expect } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { NormText, type InternRefs } from '../components/NormText';
+import { eigeneGattungAusTitel } from '../components/normtext/fremderlassGenitiv';
 import { sammleVerweise } from '../pages/gesetz-leser/parts/ArtikelLeser.fussnoten';
 import { alleErlassKeys, art, fussnotenFuer, internFuer, lade } from './leser-verweise-w217-helfer';
-import { FN_SEGMENT_BEKANNT, ohneBekannte, pruefeKorpus } from './leser-verweise-w217-paritaet';
+import { FN_SEGMENT_BEKANNT, ohneBekannte, pruefeKorpus, wortlaut } from './leser-verweise-w217-paritaet';
 
 // ─── Einheit: NormText mit synthetischem Erlass ─────────────────────────────
 const tokenMap = new Map([['2', '2'], ['4', '4'], ['5', '5'], ['6', '6'], ['8', '8'], ['44', '44'], ['45', '45'], ['49', '49'], ['50', '50'], ['59', '59'], ['3', '3'], ['1', '1'], ['24', '24'], ['89', '89']]);
@@ -58,6 +59,14 @@ describe('§1 · kein interner Link, wenn nach Nummer + Passus ein Genitiv-Erlas
     'Artikel 5 Absätze 1 und 2 und Artikel 6 Absätze 3 und 3quater des Bundesgesetzes vom 14. Dezember 1990',
     'Artikel 5 Absatz 1 und Artikel 6 Buchstaben a und b der Verordnung',
     'Artikeln 5 und 6 ff. der Luftfahrtverordnung vom 14. November 1973',
+    // Buchstaben-Bereiche OHNE Leerzeichen (Prüfer 2.10.2026: BGG 120, CHEMV 1, FAV 30/44, FMG 39, AMBV 54, GSCHV 41c)
+    'Artikel 3 Buchstaben a–f des Tabakproduktegesetzes vom 1. Oktober 2021',
+    'Artikel 3 Buchstaben a-f des Tabakproduktegesetzes vom 1. Oktober 2021',
+    'Artikel 1 Absatz 1 Buchstaben a–cbis des Verantwortlichkeitsgesetzes vom 14. März 1958',
+    'Artikel 5 Absatz 1 Buchstaben d–l des Bundesgesetzes vom 14. Dezember 1990',
+    'Artikel 6 Absatz 2 Buchstaben gbis–hbis des Bundesgesetzes vom 14. Dezember 1990',
+    // Abkürzung + «über» ohne Datum (AR-211.1 6)
+    'Artikel 5 des BG über das Verwaltungsverfahren',
   ];
   it.each(FREMD)('«%s» → Text', (text) => {
     expect(sprungZiele(text)).toEqual([]);
@@ -82,6 +91,72 @@ describe('§1 · kein interner Link, wenn nach Nummer + Passus ein Genitiv-Erlas
   ];
   it.each(BEHALTEN)('«%s» bleibt Sprung', (text, ziele) => {
     expect(sprungZiele(text)).toEqual(ziele);
+  });
+});
+
+// ─── Gattungswort OHNE Zusatz: Selbstverweis in gleichartigem Erlass (Prüfer 2.10.2026) ─────────────
+describe('§1 · «des Abkommens» ohne Zusatz — Selbstverweis nur im gleichartigen Erlass', () => {
+  const ref = (eigeneGattung?: string): InternRefs => ({ ...bund, eigeneGattung });
+  const SELBST: [string, string][] = [
+    ['abkommen', 'Artikel 5 Absatz 1 des Abkommens verwiesen wird'],
+    ['übereinkommen', 'Artikel 5 des Übereinkommens genannten Anwendungsbereich'],
+    ['verordnung', 'Artikel 5 Absatz 1 der Verordnung beträgt 50 bis 300 Franken'],
+    ['vereinbarung', 'Artikel 5 der Vereinbarung ist der Wohnsitzkanton'],
+  ];
+  it.each(SELBST)('in «%s»: «%s» bleibt Sprung', (gattung, text) => {
+    expect(sprungZiele(text, ref(gattung))).toEqual(['/gesetze/bund/XYZ#art-5']);
+  });
+  it.each([
+    ['gesetz', 'Artikel 5 des Übereinkommens genannten Anwendungsbereich'],
+    [undefined, 'Artikel 5 des Übereinkommens genannten Anwendungsbereich'],
+    ['abkommen', 'Artikel 5 Absatz 1 der Verordnung beträgt 50'],
+    ['übereinkommen', 'Artikel 5 Absatz 2 des Protokolls 3. Den Notifikationen'], // eigene Artikelzählung des Protokolls
+  ])('in «%s» (anderer Gattung): «%s» → Text', (gattung, text) => {
+    expect(sprungZiele(text, ref(gattung))).toEqual([]);
+  });
+  it.each([
+    ['abkommen', 'Artikel 5 Absatz 1 des Abkommens vom 14. Dezember 1962 über soziale Sicherheit'],
+    ['übereinkommen', 'Artikel 5 des Übereinkommens über die gerichtliche Zuständigkeit'],
+    ['verordnung', 'Artikel 5 der Verordnung (EU) 2017/2226 des Europäischen Parlaments'],
+    ['verordnung', 'Artikel 5 Absatz 1 der Verordnung 1 vom 10. Mai 2000 zum Arbeitsgesetz'],
+    ['abkommen', 'Artikel 5 Absatz 1 des Gaststaatabkommens verwiesen wird'],
+    ['verordnung', 'Artikel 28 der Verordnung 1 zum Arbeitsgesetz vom 10. Mai 2000 erfüllt sind'],
+  ])('in «%s» MIT Zusatz/zusammengesetzt: «%s» → Text', (gattung, text) => {
+    expect(sprungZiele(text, ref(gattung))).toEqual([]);
+  });
+
+  // Die 19 Fälle des Prüfers im echten Korpus (Wortlaut-Links müssen stehen).
+  // [Erlass, Artikel, [Artikel-Token, Zahl der Wortlaut-Links darauf]] — exakte Zahlen, damit auch ein
+  // teilweiser Verlust (FZA 10: 6 von 7) rot wird.
+  const KORPUS: [string, string, [string, number][]][] = [
+    ['LUGUE', 'annex_u1', [['73', 1], ['67', 3]]], ['LUGUE', 'annex_I', [['3', 1]]],
+    ['LUGUE', 'annex_III', [['43', 1]]], ['LUGUE', 'annex_V', [['38', 1]]], ['FZA', '10', [['5', 7]]],
+    ['ISTANBUL', 'annex_u1', [['68', 1]]], ['ISTANBUL', 'scope_u1', [['78', 1]]], ['HZUE', 'annex_u1', [['12', 1]]],
+    ['HBEWUE', 'decl_u2', [['2', 2]]], ['GL-III%20B%2F3%2F2', 'a1-4', [['10', 1], ['11', 1]]],
+  ];
+  it.each(KORPUS)('Korpus %s %s: Binnenverweise %j bleiben Links', (key, artikel, erwartet) => {
+    const ebene = key.startsWith('GL-') ? 'kanton' : 'bund';
+    const eintraege = lade(ebene, key);
+    const intern = internFuer(ebene, key, eintraege);
+    const html = wortlaut(art(eintraege, artikel), intern.eigenesKuerzel ?? key, intern, fussnotenFuer(ebene, key)[artikel]);
+    for (const [t, n] of erwartet) expect(html.split(`href="${intern.basisPfad}#art-${t}"`).length - 1, `#art-${t}`).toBe(n);
+  });
+  it('LUGUE 78: «Artikel 74 … des Protokolls 3» meint das Protokoll, nicht LUGUE 74 — Text (2 der 17 Fälle des Prüfers sind keine Selbstverweise)', () => {
+    const eintraege = lade('bund', 'LUGUE');
+    const intern = internFuer('bund', 'LUGUE', eintraege);
+    const html = wortlaut(art(eintraege, '78'), 'LUGUE', intern, undefined);
+    for (const t of ['74', '77']) expect(html).not.toContain(`href="${intern.basisPfad}#art-${t}"`);
+  });
+  it('eigeneGattungAusTitel: Vollzugsverordnung («Verordnung zum …») zählt nicht', () => {
+    expect(eigeneGattungAusTitel('Verordnung über Beurkundung und Beglaubigung')).toBe('verordnung');
+    expect(eigeneGattungAusTitel('Verordnung zum Bundesgesetz vom 13. Juni 1928 betreffend Massnahmen')).toBeUndefined();
+    expect(eigeneGattungAusTitel('Abkommen vom 21. Juni 1999 zwischen der Schweiz')).toBe('abkommen');
+    expect(eigeneGattungAusTitel('Bundesgesetz über das Internationale Privatrecht')).toBeUndefined();
+  });
+  it('Gegenprobe IPRG 130: «des Übereinkommens» im Gesetz bleibt Text', () => {
+    const eintraege = lade('bund', 'IPRG');
+    const intern = internFuer('bund', 'IPRG', eintraege);
+    expect(wortlaut(art(eintraege, '130'), 'IPRG', intern, undefined)).not.toContain(`href="${intern.basisPfad}#art-13"`);
   });
 });
 
@@ -137,8 +212,8 @@ describe('Korpus-Zähler (gesamter Bestand)', () => {
     expect(z.intern).toBeGreaterThan(10000);
     expect(ohneBekannte(funde).slice(0, 20)).toEqual([]);
     // Ratsche: jeder bekannte Rest ist noch da (sonst aus FN_SEGMENT_BEKANNT streichen).
-    expect(FN_SEGMENT_BEKANNT.filter((k) => !funde.some((f) => f.startsWith(k)))).toEqual([]);
-    expect(z).toMatchObject({ fremdGenitiv: FN_SEGMENT_BEKANNT.length, selbstInListe: 0, paritaetAbweichung: 0 });
+    expect(FN_SEGMENT_BEKANNT.filter((k) => !funde.some((f) => f.startsWith(k) && f.includes('Fussnoten-Marker')))).toEqual([]);
+    expect(z).toMatchObject({ segmentierung: FN_SEGMENT_BEKANNT.length, selbstInListe: 0, paritaetAbweichung: 0 });
   }, 180_000);
 
   it('Kanton: kein interner Link vor fremdem Genitiv · kein Selbst-Chip · Liste == Wortlaut (inkl. Fussnoten)', () => {
@@ -146,6 +221,6 @@ describe('Korpus-Zähler (gesamter Bestand)', () => {
     expect(z.artikel).toBeGreaterThan(5000);
     expect(z.intern).toBeGreaterThan(4000);
     expect(funde.slice(0, 20)).toEqual([]);
-    expect(z).toMatchObject({ fremdGenitiv: 0, selbstInListe: 0, paritaetAbweichung: 0 });
+    expect(z).toMatchObject({ fremdGenitiv: 0, segmentierung: 0, selbstInListe: 0, paritaetAbweichung: 0 });
   }, 180_000);
 });

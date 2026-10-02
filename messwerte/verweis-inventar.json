@@ -2,8 +2,8 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "9737ebe96eb3f625c4d85437412d5ff974f3ea6c91170baa6d7e49148da89143",
-    "guards": 25
+    "normTextSha256": "00609abcd80626f91049c1e53150ca403e4e6363491fd61fcae86ca448e59977",
+    "guards": 24
   },
   "korpus": {
     "erlasse": 1570,
@@ -12,10 +12,10 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19140,
+    "self": 19166,
     "fremd": 11660,
-    "text": 5481,
-    "selbstmarker": 925
+    "text": 5455,
+    "selbstmarker": 963
   },
   "fremdZiele": {
     "geprueft": 10531,
@@ -75,24 +75,24 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 817,
-      "erlasse": 313,
+      "stellen": 801,
+      "erlasse": 309,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 176,
-      "erlasse": 85,
+      "stellen": 179,
+      "erlasse": 86,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 736,
-      "erlasse": 151,
+      "stellen": 734,
+      "erlasse": 150,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -115,16 +115,16 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12359,
+      "stellen": 12386,
       "erlasse": 455,
-      "selbstmarker": 606,
+      "selbstmarker": 641,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
     {
       "klasse": "fremderlass-genitiv",
       "entscheid": "TEXT",
-      "stellen": 849,
-      "erlasse": 325,
+      "stellen": 843,
+      "erlasse": 324,
       "selbstmarker": 0,
       "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
@@ -203,8 +203,8 @@
     {
       "klasse": "paragraf-fremd-name",
       "entscheid": "TEXT",
-      "stellen": 912,
-      "erlasse": 302,
+      "stellen": 909,
+      "erlasse": 300,
       "selbstmarker": 0,
       "was": "«§ N des/der/über/vom …» — Fremd-Indiz, kein Link"
     },
@@ -219,17 +219,17 @@
     {
       "klasse": "paragraf-kein-token",
       "entscheid": "TEXT",
-      "stellen": 62,
-      "erlasse": 35,
+      "stellen": 60,
+      "erlasse": 33,
       "selbstmarker": 0,
       "was": "«§ N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3282,
-      "erlasse": 463,
-      "selbstmarker": 316,
+      "stellen": 3281,
+      "erlasse": 464,
+      "selbstmarker": 319,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"
     },
     {
@@ -594,9 +594,9 @@
     }
   ],
   "zeitKanten": {
-    "stellen": 29,
-    "erlasse": 15,
-    "uebergangsTitel": 20,
+    "stellen": 30,
+    "erlasse": 16,
+    "uebergangsTitel": 21,
     "altrechtBlock": 11
   }
 }

@@ -44,6 +44,7 @@
 //
 
 import { readFileSync, existsSync } from 'node:fs';
+import { eigeneGattungAusTitel } from '../src/components/normtext/fremderlassGenitiv';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { chapeauZielFremdgesetz } from '../src/lib/fedlex';
@@ -64,7 +65,7 @@ const SNAPSHOT_WURZEL = join(WURZEL, 'public', 'normtext');
 // ─── 4 · Korpus-Lauf ────────────────────────────────────────────────────────
 
 interface RegisterErlass {
-  key: string; ebene: string; kanton: string | null; kuerzel: string; status: string; datei: string | null;
+  key: string; ebene: string; kanton: string | null; kuerzel: string; status: string; datei: string | null; titel?: string;
 }
 
 // ─── V-3 · Kürzel-Register je Kanton (Spiegel von baueKantonKuerzelKarte) ────
@@ -278,6 +279,7 @@ export function berechne(): Artefakt {
       // V-7c: NormText reicht das letzte Pfadsegment (= Register-Key) roh an
       // `fremdRoutingFormB` durch — Schlüssel der Trägergesetz-Tabelle.
       erlassKey: e.key,
+      eigeneGattung: eigeneGattungAusTitel(e.titel),
     };
 
     for (const eintrag of snap.eintraege) {

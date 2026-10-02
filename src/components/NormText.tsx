@@ -11,7 +11,7 @@ import { RechtsprechungText } from './RechtsprechungLink';
 // Format hier liefe beim nächsten Snapshot-Nachzug still daneben. Reines
 // Adress-Modul ohne eigene Importe (kein Zyklus, kein Bundle-Zuwachs).
 import { parsePassus } from '../lib/normtext/passus';
-import { FREMDERLASS_GENITIV } from './normtext/fremderlassGenitiv';
+import { fremderErlassGenitiv, selbstGattungAmZitat } from './normtext/fremderlassGenitiv';
 
 // ─── Inline-Norm-Auto-Linker (Auftrag David 17.6.2026) ─────────────────────
 //
@@ -182,6 +182,7 @@ export interface InternRefs {
    *  Register-Treffer fehlen — dort bleibt es Text. Ungesetzt (Bund, Kanton
    *  ohne Karte) ⇒ die Weiche ruht, Rendering byte-identisch. */
   kantonKuerzel?: ReadonlyMap<string, string>;
+  eigeneGattung?: string; // Gattung des gelesenen Erlasses («abkommen»): blosses «des Abkommens» ist dort Selbstverweis
 }
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // Kürzel-Kanon für IDENTITÄTS-Vergleiche (nur A–Z0–9): der Register-Schlüssel
@@ -430,7 +431,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
   // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
   const ebene: FremdEbene = ebeneFuer(intern.basisPfad);
   const pluralRegionen = artikelnPluralVerweise(s, ebene, erlassKey).map((r) => (!r.fremd && !r.unterdruecken
-    && FREMDERLASS_GENITIV.test(s.slice(r.end) + danach) ? { ...r, unterdruecken: true } : r)); // «Artikeln 5 und 6 ff. der …verordnung»
+    && fremderErlassGenitiv(s.slice(r.end) + danach, intern?.eigeneGattung) ? { ...r, unterdruecken: true } : r)); // «Artikeln 5 und 6 ff. der …verordnung»
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
   const out: React.ReactNode[] = [];
@@ -486,7 +487,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
       // V-2: ein AUSDRÜCKLICHES Selbst-Signal («§ 59 Abs. 2 des vorliegenden
       // Gesetzes», «§ 19 Personalgesetz» im Personalgesetz) steht VOR beiden
       // Fremd-Guards — sonst fängt der Grosswort-Guard das eigene Kürzel.
-      const selbst = selbstSignalAmZitat(s.slice(end), intern);
+      const selbst = selbstSignalAmZitat(s.slice(end), intern) || selbstGattungAmZitat(s.slice(end) + danach, intern.eigeneGattung);
       // V-3: … und ist es NICHT der eigene Erlass, kann das Grosswort trotzdem
       // ein benannter Erlass DESSELBEN Kantons sein (Herleitung an
       // `kantonZielAmZitat`). Steht VOR den Fremd-Guards, weil es genau die
@@ -507,7 +508,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
       }
       if (!selbst
         && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)
-          || GLIEDERUNGS_GENITIV.test(rest) || FREMDERLASS_GENITIV.test(s.slice(end) + danach))) continue;
+          || GLIEDERUNGS_GENITIV.test(rest) || fremderErlassGenitiv(s.slice(end) + danach, intern.eigeneGattung))) continue;
       const token = intern.tokenMap.get(normRef(m[1]));
       if (!token) continue; // keine solche Bestimmung in diesem Erlass → Text (§8)
       linkSpans.push({
@@ -587,7 +588,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
     // vier Fremd-Vermutungen unten (des/der, N2, M12, F41) — Herleitung und
     // Messung bei `SELBST_MARKER`. Der Fremdgesetz-Chapeau-Pfad (M6-D) bleibt
     // unberührt: `selbstSignalAmZitat` ist dort per Definition falsch.
-    const selbst = selbstSignalAmZitat(rest, intern);
+    const selbst = selbstSignalAmZitat(rest, intern) || (!intern.fremdKuerzel && selbstGattungAmZitat(rest + danach, intern.eigeneGattung));
     // V-6 (W2·20): Rest DESSELBEN Zitats ohne Passus- und Aufzählungsglieder —
     // dieselbe Definition, die `selbstSignalAmZitat` schon nutzt (§5). Bis V-6
     // sah der M12-Guard nur den ROHEN Rest, die Selbstmarker-Weiche den Rest
@@ -610,7 +611,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
     // die belegbaren Fälle VOR diesem Guard über die Form-B-Positivliste heraus
     // (Kurztitel/Volltitel, `positivliste.ts`): Guard-Klasse 1 281→930 Stellen.
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
-    if (!selbst && FREMDERLASS_GENITIV.test(rest + danach)) continue; // Genitiv-Erlassname hinter Passus (W2·17)
+    if (!selbst && fremderErlassGenitiv(rest + danach, intern.eigeneGattung)) continue; // Genitiv-Erlassname hinter Passus (W2·17)
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
     // zeigt «Artikel N» auf JENES Gesetz; der interne Self-Link wäre falsch (§1) →

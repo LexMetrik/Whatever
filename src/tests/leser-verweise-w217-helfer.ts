@@ -5,6 +5,7 @@ import type { InternRefs } from '../components/NormText';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import type { Fussnote } from '../lib/normtext/browse';
+import { eigeneGattungAusTitel } from '../components/normtext/fremderlassGenitiv';
 import { baueKantonKuerzelKarte, istParagrafDesigniert } from '../pages/gesetz-leser/inhalt-sprung';
 
 export type Eintrag = NormSnapshot;
@@ -13,7 +14,7 @@ const WURZEL = join(__dirname, '..', '..', 'public', 'normtext');
 export const lade = (ebene: 'bund' | 'kanton', key: string): Eintrag[] =>
   JSON.parse(readFileSync(join(WURZEL, ebene, `${key}.json`), 'utf8')).eintraege;
 
-type RegisterZeile = { key: string; kuerzel: string; kanton: string | null; status: string };
+type RegisterZeile = { key: string; kuerzel: string; kanton: string | null; status: string; titel?: string };
 let registerCache: BrowseErlass[] | null = null;
 const register = (): BrowseErlass[] =>
   (registerCache ??= JSON.parse(readFileSync(join(WURZEL, 'register.json'), 'utf8')).erlasse as BrowseErlass[]);
@@ -38,6 +39,7 @@ export function internFuer(ebene: 'bund' | 'kanton', key: string, eintraege: Ein
   return {
     tokenMap, basisPfad, springeZu: () => {}, paragrafDesigniert: istParagrafDesigniert(basisPfad),
     eigenesKuerzel: zeile?.kuerzel,
+    eigeneGattung: eigeneGattungAusTitel(zeile?.titel),
     kantonKuerzel: baueKantonKuerzelKarte(register(), zeile?.kanton ?? null, key),
   };
 }

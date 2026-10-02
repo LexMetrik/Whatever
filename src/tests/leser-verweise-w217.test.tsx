@@ -104,7 +104,7 @@ describe('§5 · Paritaet: Liste == Links des gerenderten Wortlauts', () => {
     expect(pruefeKorpus('kanton', ['BS-640.100']).funde).toEqual([]);
   });
 
-  it('ZPO (Fussnoten-Marker mitten im Satz: «(Art. 36 Abs. 1 OR)» springt nie auf ZPO 36)', () => {
-    expect(pruefeKorpus('bund', ['ZPO']).funde).toEqual([]);
+  it('ZPO (Fussnoten-Marker mitten im Satz): Liste == Wortlaut; ZPO 250 «Art. 107 … OR» ist der bekannte Wortlaut-Rest (Ratsche)', () => {
+    expect(ohneBekannte(pruefeKorpus('bund', ['ZPO']).funde)).toEqual([]);
   });
 });

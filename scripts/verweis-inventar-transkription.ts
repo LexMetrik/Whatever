@@ -24,6 +24,8 @@ import {
 // V-3: dieselbe Token-Ableitung wie die Produktion (§5) — der Link entsteht
 // nur, wenn `parsePassus` einen Anker liefert.
 import { parsePassus } from '../src/lib/normtext/passus';
+// W2·17 Nachzug: die Genitiv-Erlassname-Weiche ist eine exportierte Funktion — importiert, nicht transkribiert.
+import { fremderErlassGenitiv, selbstGattungAmZitat } from '../src/components/normtext/fremderlassGenitiv';
 
 const WURZEL = process.cwd();
 export const NORMTEXT_PFAD = join(WURZEL, 'src', 'components', 'NormText.tsx');
@@ -35,8 +37,6 @@ export const ARTIKELBODY_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'A
 // das bei jedem Hook-Umbau rot wird, wird abgeschaltet (§6.7). Der
 // Literal-Wächter ist hier das präzise Instrument.
 export const INHALT_SPRUNG_PFAD = join(WURZEL, 'src', 'pages', 'gesetz-leser', 'inhalt-sprung.tsx');
-// W2·17 Nachzug: die Genitiv-Erlassname-Weiche steht in einer eigenen Datei (§6.6, NormText.tsx-Schwelle).
-export const FREMDERLASS_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'fremderlassGenitiv.ts');
 
 // ─── 1 · Transkribierte Guards (Wächter-Massstab UND Compile-Quelle) ────────
 //
@@ -47,7 +47,7 @@ export const FREMDERLASS_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'f
 
 export interface GuardQuelle {
   zweck: string;
-  datei: 'NormText.tsx' | 'ArtikelBody.tsx' | 'inhalt-sprung.tsx' | 'fremderlassGenitiv.ts';
+  datei: 'NormText.tsx' | 'ArtikelBody.tsx' | 'inhalt-sprung.tsx';
   literal: string;
   stringLiteral?: true;
 }
@@ -139,11 +139,6 @@ export const G = {
     zweck: 'GESETZES_GENITIV — «des Gesetzes» hinter dem Passus ist nie ein Selbstverweis; die belegten Fälle löst V-7c davor auf (V-7d, 14.9.2026)',
     datei: 'NormText.tsx',
     literal: String.raw`/^\s*des\s+Gesetzes\b/`,
-  },
-  FREMDERLASS_GENITIV: {
-    zweck: 'FREMDERLASS_GENITIV — Genitiv-Erlassname («des Kulturgütertransfergesetzes», «der Verordnung») hinter Nummer + Passus ist nie ein Selbstverweis (W2·17 Nachzug, 2.10.2026)',
-    datei: 'fremderlassGenitiv.ts',
-    literal: String.raw`/^(?:\s+(?:Abs(?:atz|ätze|\.)|Buchstaben?|Bst\.|lit\.|Ziff(?:ern?|\.)|Satz|Sätze|Lemma|Halbsatz|und|oder|bis|sowie|ffg?\.|f\.|Anhang|Anlage|Abschn(?:itt|\.)|in\s+Verbindung\s+mit|Art(?:\.|ikeln?)|(?:erst|zweit|dritt|viert|fünft|letzt)(?:e[rsmn]?)?)(?![\p{L}])|\s+[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-]\s*[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-](?!\s*[0-9])|\s+(?!(?:in|im|am|an|zu|um|ab|so|es|er|ob|wo|da)(?![a-zäöüß]))[a-z]{1,2}(?![a-zäöüß])|\s+[a-z](?:bis|ter|quater|quinquies|sexies)(?![a-zäöüß])|\s+\([a-z0-9]{1,4}\))*\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:e?s)?|konkordat(?:e?s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:(?<!an|zu|unter|neu|rang|ein)ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu`,
   },
   SELBST_KUERZEL_TRIM: {
     zweck: 'nenntEigenesKuerzel — führender Trenner vor dem Kürzel',
@@ -258,7 +253,6 @@ export const glaetteInterpunktion = (s: string): string => s.replace(/ +([.,])/g
 const SELBST_MARKER = re(G.SELBST_MARKER.literal);
 const GLIEDERUNGS_GENITIV = re(G.GLIEDERUNGS_GENITIV.literal);
 const GESETZES_GENITIV = re(G.GESETZES_GENITIV.literal);
-const FREMDERLASS_GENITIV = re(G.FREMDERLASS_GENITIV.literal);
 
 /** Transkription von `nenntEigenesKuerzel` (NormText.tsx, V-2 Ziel 2). */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
@@ -354,6 +348,8 @@ export interface Ctx {
   /** V-3: Kürzel → Lese-Adresse der ANDEREN Erlasse desselben Kantons, wie
    *  `baueKantonKuerzelKarte` sie dem Leser gibt (Aufbau im Tor, Abschnitt 4). */
   kantonKuerzel?: ReadonlyMap<string, string>;
+  /** Gattung des gelesenen Erlasses aus dem Register-Titel (W2·17 Nachzug, `eigeneGattungAusTitel`). */
+  eigeneGattung?: string;
   /** V-7: Ebene des gelesenen Erlasses — NormText leitet sie aus dem Basispfad
    *  ab (`/gesetze/kanton/…` ⇒ kanton, sonst bund); Kurznamen mit Geltung
    *  `bund` lösen in kantonalen Erlassen nicht auf (`positivliste.ts`). */
@@ -419,7 +415,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   const ebene: FremdEbene = ctx.ebene ?? 'bund';
   // W2·17 Nachzug: wie in NormText.tsx — ein Genitiv-Erlassname hinter der Aufzählung unterdrückt die Region.
   const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey).map((r) => (!r.fremd && !r.unterdruecken
-    && FREMDERLASS_GENITIV.test(s.slice(r.end)) ? { ...r, unterdruecken: true } : r));
+    && fremderErlassGenitiv(s.slice(r.end), ctx.eigeneGattung) ? { ...r, unterdruecken: true } : r));
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -456,7 +452,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       const start = m.index, end = start + m[0].length;
       if (inPluralRegion(start)) continue;
       const nach = s.slice(end);
-      const sm = selbstSignalAmZitat(nach, ctx);
+      const sm = selbstSignalAmZitat(nach, ctx) || selbstGattungAmZitat(nach, ctx.eigeneGattung);
       // V-3: benanntes Kürzel eines ANDEREN Erlasses desselben Kantons → Link.
       // Steht wie in der Produktion VOR den Fremd-Guards und NACH dem
       // Selbst-Signal; ohne Anker-Token fällt es in die Guards zurück.
@@ -482,7 +478,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       if (!sm && GLIEDERUNGS_GENITIV.test(rest)) { textStellen.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_GROSS.test(rest)) { textStellen.push(stelle('paragraf-fremd-grosswort', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_NAME.test(rest)) { textStellen.push(stelle('paragraf-fremd-name', m[1], ctx, sm)); continue; }
-      if (!sm && FREMDERLASS_GENITIV.test(nach)) { textStellen.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
+      if (!sm && fremderErlassGenitiv(nach, ctx.eigeneGattung)) { textStellen.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
       const token = ctx.tokenMap.get(normRef(m[1]));
       if (!token) { textStellen.push(stelle('paragraf-kein-token', m[1], ctx, sm)); continue; }
       linkSpans.push({ start, end, s: stelle('paragraf-self', m[1], ctx, sm) });
@@ -523,14 +519,14 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     }
     // V-2: ausdrückliches Selbst-Signal → keine der vier Fremd-Vermutungen
     // (des/der, N2, M12, F41) greift. Reihenfolge exakt wie im Original.
-    const sm = selbstSignalAmZitat(rest, ctx);
+    const sm = selbstSignalAmZitat(rest, ctx) || (!ctx.fremdKuerzel && selbstGattungAmZitat(rest, ctx.eigeneGattung));
     // V-6: Rest ohne Passus-/Aufzählungsglieder; im Chapeau ruht die Erweiterung.
     const nachPassus = ctx.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Reihenfolge exakt wie Original).
     if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && GESETZES_GENITIV.test(nachPassus)) { out.push(stelle('gesetzes-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
-    if (!sm && FREMDERLASS_GENITIV.test(nachPassus)) { out.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
+    if (!sm && fremderErlassGenitiv(rest, ctx.eigeneGattung)) { out.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }
     // V-6: der M12-Guard greift auf dem ROHEN Rest ODER auf dem Rest nach dem
@@ -650,7 +646,6 @@ export function waechterGuards(): string[] {
     'NormText.tsx': readFileSync(NORMTEXT_PFAD, 'utf8'),
     'ArtikelBody.tsx': readFileSync(ARTIKELBODY_PFAD, 'utf8'),
     'inhalt-sprung.tsx': readFileSync(INHALT_SPRUNG_PFAD, 'utf8'),
-    'fremderlassGenitiv.ts': readFileSync(FREMDERLASS_PFAD, 'utf8'),
   };
   const fehler: string[] = [];
   for (const [name, g] of Object.entries(G) as [string, GuardQuelle][]) {
