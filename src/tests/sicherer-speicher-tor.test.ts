@@ -28,6 +28,11 @@ const AUSNAHMEN: Record<string, string> = {
   // merkeTab/letzterGeschlossener werfen nicht). Nach Landung von PR #1275
   // auf lokalSpeicher umstellen und diesen Eintrag löschen.
   'lib/tabs.ts': 'nach PR #1275 umstellen',
+  // `src/lib/normtext/**` war im Bau-Auftrag (2.10.2026) gesperrt (offener PR #1251
+  // arbeitet in diesem Verzeichnis); die Zugriffe liegen in try/catch (ladeGliederung,
+  // speichereGliederung). Beim nächsten Anfassen von gliederung.ts auf
+  // lokalSpeicher umstellen und den Eintrag löschen.
+  'lib/normtext/gliederung.ts': 'nach PR #1251 / bei nächster Berührung umstellen',
 };
 
 function funde(quelle: string, name: string): number[] {
