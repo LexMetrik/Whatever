@@ -14,16 +14,19 @@ import { describe, it, expect, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { parseHTML } from 'linkedom';
 import { baueGliederungsbaum } from '../lib/normtext/browse';
+import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
+import { baueGliederungsModell } from '../pages/gesetz-leser/gliederungsModell';
 import { pfadZu } from '../pages/gesetz-leser/helpers';
 
 type GlobalPatch = Record<string, unknown>;
 const lade = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 
-async function oeffneFuer(hash: string): Promise<{ ids: string[]; sek: ReturnType<typeof baueGliederungsbaum>['sektionen']; alle: string[] }> {
-  const d = lade('public/normtext/kanton/ZH-211.17.json');
-  const st = lade('public/normtext/struktur/kanton/ZH-211.17.json');
+async function oeffneFuer(hash: string, ebene = 'kanton', key = 'ZH-211.17'): Promise<{ ids: string[]; sek: ReturnType<typeof baueGliederungsbaum>['sektionen']; alle: string[] }> {
+  const d = lade(`public/normtext/${ebene}/${key}.json`);
+  const st = lade(`public/normtext/struktur/${ebene}/${key}.json`);
   const eintraege = d.eintraege ?? d;
-  const { sektionen } = baueGliederungsbaum(eintraege, st.artikel);
+  const { sektionen, ohneGliederung } = baueGliederungsbaum(eintraege, st.artikel);
+  const modell = baueGliederungsModell({ sektionen: kuratiereTocSektionen(sektionen), ohneGliederung, eintraege, struktur: st.artikel, startSichtbarGo: true });
   const artIndex = new Map<string, number>();
   eintraege.forEach((e: { artikel: string }, i: number) => artIndex.set(e.artikel, i));
   const { window, document } = parseHTML('<!doctype html><html><body><div id="root"></div></body></html>');
@@ -37,7 +40,7 @@ async function oeffneFuer(hash: string): Promise<{ ids: string[]; sek: ReturnTyp
   const ref = <T,>(v: T) => ({ current: v });
   function Harness() {
     useTiefLinkZweig({
-      hash, sektionen, erlassMarke: 'k', umhaengPraefix: {},
+      hash, sektionen, erlassMarke: 'k', umhaengPraefix: modell.umhaengPraefix, knoten: modell.knoten,
       artIndex,
       setTocBaum: (f) => { gesetzt = typeof f === 'function' ? f({}) : f; },
       autoOffenRef: ref(new Set<string>()), autoTickRef: ref(new Map<string, number>()), autoTickNowRef: ref(0),
@@ -66,5 +69,10 @@ describe('Tieflink-Zweig kanonisiert gegen alle Einträge (ZH-211.17)', () => {
     const zweig11 = pfadZu(sek, (s) => s.artikel.some((e) => e.artikel === '11')) ?? [];
     expect(zweig11.length).toBeGreaterThan(0);
     for (const id of zweig11) expect(ids, `Zweig von § 11 offen: ${id}`).not.toContain(id);
+  });
+
+  it('«#art-1a» (Token «1_a», kein Sektions-Token) trifft die Zeile «Ohne Abschnitt» (ASYLV3, B7 bei Nicht-Kanonik-Schreibweise)', async () => {
+    const { ids } = await oeffneFuer('#art-1a', 'bund', 'ASYLV3');
+    expect(ids).toContain('gm-vorspann');
   });
 });
