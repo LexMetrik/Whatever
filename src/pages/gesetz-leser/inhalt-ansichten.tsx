@@ -241,9 +241,11 @@ export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, k
   // Netz = 0.086). Darum ALLE Kopf-tragenden Render-Pfade (pdf-embed / nur-live-link
   // / Volltext) auf den AUFGELÖSTEN Currency-Stand pinnen (§15.2 «Client-Initialstate
   // auf den Server-Zustand pinnen»): solange `currency === null`, bleibt der
-  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `ladeCurrency`
-  // löst IMMER auf (Fetch-Fehler ⇒ {}), i. d. R. lange vor dem grossen eintraege-Fetch
-  // ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
+  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `currency` löst
+  // IMMER auf (Fetch-Fehler ⇒ `{}` im Hook `useLeserDaten`, dort zusätzlich als
+  // Teilausfall ausgewiesen, BG-02 2.10.2026; vorher stand das in `ladeCurrency`
+  // selbst, das den Fehlschlag still als `{}` cachte), i. d. R. lange vor dem grossen
+  // eintraege-Fetch ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
   if (erlass && currency === null) {
     return <LadeAnzeige />;
   }

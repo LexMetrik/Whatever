@@ -81,3 +81,86 @@ test.describe('Tieflink — Robustheit (W2·17-UI-BEFUNDE)', () => {
     expect(cls, `CLS ${cls}`).toBeLessThan(0.03);
   });
 });
+
+// ── BG-01…BG-04 (Finder-Bug-Check G, 2.10.2026) ──────────────────────────────
+//  BG-01 (hoch)   gesperrter Browserspeicher (Cookies blockiert: schon das LESEN
+//                 von `window.localStorage` wirft) → die ganze App blieb weiss.
+//  BG-02/03       ein Netz-Aussetzer bei `currency.json` / `kanton-luecken.json`
+//                 löschte «nächste Fassung ab …» bzw. den Lücken-Hinweis für die
+//                 ganze Sitzung, ohne Spur.
+//  BG-04          fällt das Struktur-Sidecar aus, verschwanden Gliederung und
+//                 Überschriften still. Jetzt: ehrliche Zeile im Titelblatt mit
+//                 «Erneut laden» (Hausbaustein `AbrufFehler`).
+test.describe('Gesperrter Speicher und Sidecar-Ausfall (W2·17-UI-BEFUNDE BG-01…04)', () => {
+  test('BG-01 · Speicher gesperrt: Startseite und OR rendern und funktionieren', async ({ page }) => {
+    const fehler: string[] = [];
+    page.on('pageerror', (e) => fehler.push(String(e)));
+    await page.addInitScript(() => {
+      for (const name of ['localStorage', 'sessionStorage']) {
+        Object.defineProperty(window, name, {
+          configurable: true,
+          get() { throw new DOMException(`Failed to read the '${name}' property from 'Window': Access is denied`, 'SecurityError'); },
+        });
+      }
+    });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('header').first()).toBeVisible({ timeout: 20_000 });
+    await expect.poll(async () => (await page.locator('body').innerText()).trim().length, { timeout: 10_000 }).toBeGreaterThan(200);
+
+    await page.goto('/gesetze/bund/OR#art-41');
+    await expect(page.locator('#art-41')).toBeAttached({ timeout: 30_000 });
+    await expect(page.locator('header').first()).toBeVisible();
+    // Die Seite lebt: Scrollen und Tastatur werfen nichts.
+    await page.keyboard.press('End');
+    expect(fehler, `Seitenfehler: ${fehler.join(' | ')}`).toEqual([]);
+  });
+
+  test('BG-02 · currency.json bricht einmal ab: Hinweis «Fassungsangaben …» mit «Erneut laden», danach «nächste Fassung ab»', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    let ruf = 0;
+    await page.route('**/normtext/currency.json', (route) => (++ruf === 1 ? route.abort() : route.continue()));
+    await page.goto('/gesetze/bund/AHVG');
+    const hinweis = page.locator('[data-leser-teilausfall~="fassung"]');
+    await expect(hinweis).toBeVisible({ timeout: 30_000 });
+    await expect(hinweis).toContainText('Fassungsangaben konnten nicht geladen werden');
+    await expect(page.getByText(/nächste Fassung ab/)).toHaveCount(0);
+    await hinweis.getByRole('button', { name: 'Erneut laden' }).click();
+    await expect(page.getByText(/nächste Fassung ab/).first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('[data-leser-teilausfall]')).toHaveCount(0);
+    expect(ruf).toBe(2);
+  });
+
+  test('BG-03 · kanton-luecken.json bricht einmal ab: Hinweis, «Erneut laden» bringt «Nicht vollständig erfasst»', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    let ruf = 0;
+    await page.route('**/normtext/kanton-luecken.json', (route) => (++ruf === 1 ? route.abort() : route.continue()));
+    await page.goto('/gesetze/kanton/ZH-101');
+    const hinweis = page.locator('[data-leser-teilausfall~="luecken"]');
+    await expect(hinweis).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByText('Nicht vollständig erfasst')).toHaveCount(0);
+    await hinweis.getByRole('button', { name: 'Erneut laden' }).click();
+    await expect(page.getByText('Nicht vollständig erfasst').first()).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('[data-leser-teilausfall]')).toHaveCount(0);
+  });
+
+  test('BG-04 · Struktur-Sidecar fällt aus: Hinweis, Tieflink hängt nicht, «Erneut laden» bringt die Gliederung zurück', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    let ruf = 0;
+    await page.route('**/normtext/struktur/**', (route) => (++ruf <= 2 ? route.abort() : route.continue()));
+    await page.goto('/gesetze/bund/ZGB#art-30');
+    const hinweis = page.locator('[data-leser-teilausfall~="struktur"]');
+    await expect(hinweis).toBeVisible({ timeout: 40_000 });
+    await expect(hinweis).toContainText('Gliederung und Überschriften konnten nicht geladen werden');
+    // Wechselwirkung #1267: `null` gilt für den Tieflink als «entschieden» — der Sprung feuert trotzdem.
+    const ziel = page.locator('#art-30');
+    await expect(ziel).toBeAttached({ timeout: 30_000 });
+    await expect.poll(async () => page.evaluate(() => window.scrollY), { timeout: 15_000 }).toBeGreaterThan(0);
+    const lage = await ziel.evaluate((el) => el.getBoundingClientRect().top);
+    expect(lage).toBeGreaterThanOrEqual(0);
+    expect(lage).toBeLessThan(900);
+    await hinweis.getByRole('button', { name: 'Erneut laden' }).click();
+    await expect(page.locator('[data-leser-teilausfall]')).toHaveCount(0, { timeout: 20_000 });
+    await expect(page.getByText('Das Personenrecht').first()).toBeAttached({ timeout: 20_000 });
+  });
+});
