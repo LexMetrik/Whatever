@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "c8e48ea5a717495065fcd1e2860d1341e028b737e20ce5d31b1b1fdf8b8b9454",
+    "normTextSha256": "401974bc4a567a24525ae23bf52731df8a56fe96f1448869ffdea41ad331408c",
     "guards": 25
   },
   "korpus": {
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19134,
+    "self": 19141,
     "fremd": 11660,
-    "text": 5487,
+    "text": 5480,
     "selbstmarker": 925
   },
   "fremdZiele": {
@@ -91,8 +91,8 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 729,
-      "erlasse": 149,
+      "stellen": 734,
+      "erlasse": 151,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -115,7 +115,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12353,
+      "stellen": 12359,
       "erlasse": 455,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -123,8 +123,8 @@
     {
       "klasse": "fremderlass-genitiv",
       "entscheid": "TEXT",
-      "stellen": 860,
-      "erlasse": 328,
+      "stellen": 847,
+      "erlasse": 325,
       "selbstmarker": 0,
       "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
@@ -219,7 +219,7 @@
     {
       "klasse": "paragraf-kein-token",
       "entscheid": "TEXT",
-      "stellen": 61,
+      "stellen": 62,
       "erlasse": 35,
       "selbstmarker": 0,
       "was": "«§ N» — Bestimmung existiert im Erlass nicht"
@@ -227,7 +227,7 @@
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3281,
+      "stellen": 3282,
       "erlasse": 463,
       "selbstmarker": 316,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"

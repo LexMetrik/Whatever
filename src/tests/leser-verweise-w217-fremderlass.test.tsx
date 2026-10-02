@@ -18,7 +18,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { NormText, type InternRefs } from '../components/NormText';
 import { sammleVerweise } from '../pages/gesetz-leser/parts/ArtikelLeser.fussnoten';
 import { alleErlassKeys, art, fussnotenFuer, internFuer, lade } from './leser-verweise-w217-helfer';
-import { pruefeKorpus } from './leser-verweise-w217-paritaet';
+import { FN_SEGMENT_BEKANNT, ohneBekannte, pruefeKorpus } from './leser-verweise-w217-paritaet';
 
 // ─── Einheit: NormText mit synthetischem Erlass ─────────────────────────────
 const tokenMap = new Map([['2', '2'], ['4', '4'], ['5', '5'], ['6', '6'], ['8', '8'], ['44', '44'], ['45', '45'], ['49', '49'], ['50', '50'], ['59', '59'], ['3', '3'], ['1', '1'], ['24', '24'], ['89', '89']]);
@@ -77,6 +77,8 @@ describe('§1 · kein interner Link, wenn nach Nummer + Passus ein Genitiv-Erlas
     ['Artikel 5 Absatz 2 der Zuordnung eines Fachbereichs', ['/gesetze/bund/XYZ#art-5']],
     // Der Erlassname gehört nicht zu DIESEM Zitat, wenn Wörter dazwischenstehen.
     ['Artikel 5 tritt schon mit der Aufnahme des Gesetzes in Kraft', ['/gesetze/bund/XYZ#art-5']],
+    // Eigene Änderungsfassung: «in der Fassung der Änderung vom …» ist kein fremder Erlass (FINFRAV-FINMA 50b).
+    ['Artikel 3 Absatz 1 Buchstaben c und e in der Fassung der Änderung vom 8. Dezember 2022 gilt', ['/gesetze/bund/XYZ#art-3']],
   ];
   it.each(BEHALTEN)('«%s» bleibt Sprung', (text, ziele) => {
     expect(sprungZiele(text)).toEqual(ziele);
@@ -128,18 +130,6 @@ describe('§1 · Korpus-Beispiele (Prüfer-Befund)', () => {
 });
 
 // ─── Korpus-weit: Zähler = 0 ────────────────────────────────────────────────
-// BEKANNTER RESTBESTAND (Nebenfund, 2.10.2026): `ArtikelBody` zerlegt den Text an Fussnoten-
-// Markern und ruft `NormText` je Stück auf; steht der Marker ZWISCHEN Nummer und Erlassname
-// («Artikel 34⁠73 des Verwaltungsgerichtsgesetzes»), sieht der Linker den Namen nicht und setzt
-// einen Selbst-Link. Der Fix gehört in `ArtikelBody` (offener PR #1251 hält die Datei) —
-// die Verweis-Liste spiegelt den Wortlaut (§5), also steht der Link dort wie hier. Die Liste
-// ist eine Ratsche: wird ein Eintrag behoben, MUSS er hier raus; ein neuer Fund ist rot.
-const FN_SEGMENT_BEKANNT = [
-  'OR disp_u13_art_6: «Artikel 64»', 'BGG 83: «Artikel 34»', 'BGERR 55: «Artikel 15»',
-  'FINFRAG 35: «7»', 'FINFRAG 35: «8»', 'DBG 196: «Artikel 28»',
-];
-const ohneBekannte = (funde: string[]) => funde.filter((f) => !FN_SEGMENT_BEKANNT.some((k) => f.startsWith(k)));
-
 describe('Korpus-Zähler (gesamter Bestand)', () => {
   it('Bund: kein interner Link vor fremdem Genitiv · kein Selbst-Chip · Liste == Wortlaut (inkl. Fussnoten)', () => {
     const { z, funde } = pruefeKorpus('bund', alleErlassKeys('bund'));

@@ -21,10 +21,10 @@ import { fussnotenFuer, internFuer, lade, type Eintrag } from './leser-verweise-
 // (Passus-Wörter, Aufzählungen, «a–f», «(ii)», «Artikel 24», «in Verbindung mit») — bewusst
 // nicht die Wortliste des Guards, sondern «alles Kurze»: so findet der Detektor auch Formen,
 // die der Guard nicht kennt.
-const KURZ = /^(?:[0-9]+[a-z]*[.,)]*|[A-Za-z]{1,2}(?:bis|ter|quater)?\.?|\([A-Za-z0-9]{1,4}\)|[,–—‒−-]|[0-9]+[–—‒−-][0-9]+|Absätze|Absatz|Abs\.|Buchstaben?|Ziffern?|Ziff\.|Artikeln?|Art\.|Anhang|Anlage|Verbindung|sowie|oder|und|erstes|Lemma|f\.|ff\.|Abschn\.|mit|in)$/u;
+const KURZ = /^(?:[0-9]+[a-z]*[.,)]*|(?!(?:in|im|am|an|zu|um|ab|so|es|er|ob|wo|da)\.?$)[A-Za-z]{1,2}(?:bis|ter|quater)?\.?|\([A-Za-z0-9]{1,4}\)|[,–—‒−-]|[0-9]+[–—‒−-][0-9]+|Absätze|Absatz|Abs\.|Buchstaben?|Ziffern?|Ziff\.|Artikeln?|Art\.|Anhang|Anlage|Verbindung|sowie|oder|und|erstes|Lemma|f\.|ff\.|Abschn\.)$/u;
 /** Besteht das Stück nur aus Passus-Wörtern, Zahlen, Buchstaben-Kürzeln und Satzzeichen? (Wortweise, ohne verschachtelte Quantoren.) */
 const zwischenOk = (stueck: string): boolean => {
-  const w = stueck.split(/\s+/).filter(Boolean);
+  const w = stueck.replace(/\bin\s+Verbindung\s+mit\b/g, 'Verbindung').split(/\s+/).filter(Boolean);
   return w.length <= 14 && w.every((x) => KURZ.test(x));
 };
 const ERLASSNAME = /(?:gesetz|(?<!an|zu|unter|neu|rang|ein)ordnung|übereinkommen|abkommen|vertrag|konvention|verfassung|reglement|dekret|konkordat|statut|satzung|beschluss|richtlinie|protokoll|charta|vereinbarung|kodex)(?:es|s|en|n)?$/i;
@@ -101,3 +101,16 @@ export function pruefeKorpus(ebene: 'bund' | 'kanton', schluessel: string[], nur
   }
   return { z, funde };
 }
+
+// BEKANNTER RESTBESTAND (Nebenfund, 2.10.2026): `ArtikelBody` zerlegt den Text an Fussnoten-
+// Markern und ruft `NormText` je Stück auf; steht der Marker ZWISCHEN Nummer und Erlassname
+// («Artikel 34⁠73 des Verwaltungsgerichtsgesetzes»), sieht der Linker den Namen nicht und setzt
+// einen Selbst-Link. Der Fix gehört in `ArtikelBody` (offener PR #1251 hält die Datei) — die
+// Verweis-Liste spiegelt den Wortlaut (§5), also steht der Link dort wie hier. Die Liste ist eine
+// Ratsche: wird ein Eintrag behoben, MUSS er hier raus (der Korpus-Test prüft, dass jeder noch da ist).
+export const FN_SEGMENT_BEKANNT = [
+  'OR disp_u13_art_6: «Artikel 64»', 'BGG 83: «Artikel 34»', 'BGERR 55: «Artikel 15»',
+  'FINFRAG 35: «7»', 'FINFRAG 35: «8»', 'DBG 196: «Artikel 28»',
+];
+export const ohneBekannte = (funde: string[]): string[] =>
+  funde.filter((f) => !FN_SEGMENT_BEKANNT.some((k) => f.startsWith(k)));
