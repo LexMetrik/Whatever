@@ -143,7 +143,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
   const frueheAnsicht = FruehAnsicht({
     fehler: m.fehler, schluessel, manifest: m.manifest, erlass: m.erlass,
-    currency: m.currency, kopf: m.kopf, internRefs: m.internRefs,
+    currency: m.currency, teilausfall: m.teilausfall, kopf: m.kopf, internRefs: m.internRefs,
   });
   // V1: Der Kopf-Anspruch der Fassade ist eine RESERVIERUNG und auf drei Wegen falsch
   // (Fehlseite · pdf-embed · nur-live-link — dort stand weder App-Krume noch ✕); der

@@ -13,7 +13,7 @@ import { UebersichtBox } from './v3/UebersichtBox';
 import { uebersichtsAngaben } from './v3/uebersichtAngaben';
 import { grundartMeta } from './helpers';
 import { GesetzFehlSeite } from './FehlSeite';
-import type { LeserFehler } from './inhalt-zustand';
+import type { LeserFehler, Teilausfall } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
@@ -65,9 +65,10 @@ function FruehUebersicht({ erlass, kopf, currency }: {
 // Massgeblich bleibt die amtliche Fassung (sichtbarer Live-Link, §7/§8 — Nomen
 // aus `lib/benennung`, B-6-Nachzug R2-A 31.8.2026); Drift-
 // Tor: check:pdf (offline Integrität + netz Drift & geltende Konsolidierung).
-function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
+function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
+  teilausfall: Teilausfall | null;
   kopf: ErlassKopf | null;
   internRefs: InternRefs | undefined;
 }) {
@@ -86,7 +87,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — hier ohne Options-Leiste,
           da am eingebetteten PDF Fussnoten/Verweise wirkungslos wären
           (keine toten Steuerelemente, §13 F4). */}
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
+      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]} ladeAusfall={teilausfall}
         // «Staatsvertrag» hing hier an `ebene === 'bund'` — heute folgenlos, weil
         // beide pdf-embed-Erlasse (EMRK, NYUE) Staatsverträge SIND, aber die
         // Auskunft kam aus der falschen Frage: ein bundesrechtliches PDF ohne
@@ -165,16 +166,17 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
 // §2.2⑧, Referenz DSGVO). Massgeblich bleibt die amtliche Fassung (§7/§8,
 // B-6-Nachzug R2-A). Reine
 // Darstellung; eintraege bleibt null (darum VOR dem Lade-Guard unten).
-function LiveVerweisAnsicht({ erlass, currency }: {
+function LiveVerweisAnsicht({ erlass, currency, teilausfall }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
+  teilausfall: Teilausfall | null;
 }) {
   // Dieselbe Ebene-Beschriftung wie Brotkrume und Reiter-Herkunft — bis Befund
   // 45 stand hier eine dritte Kopie der Vorrang-Regel (§5).
   const verweisOverline = `${ebeneAngabe(erlass).label} · amtlicher Verweis`;
   return (
     <div className="space-y-5">
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
+      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]} ladeAusfall={teilausfall}
         overline={verweisOverline}
         hinweis="Verweis — massgeblich ist die amtliche Fassung" />
       <section data-verweiskarte className="max-w-reading space-y-4 rounded-lg border border-rule-struktur bg-paper-sunken/20 p-5">
@@ -216,12 +218,14 @@ function LiveVerweisAnsicht({ erlass, currency }: {
 // Volltext». Kein Hook, keine Rechtsregel — reine Präsentationswahl (§3).
 // Der Lade-Guard `!erlass || !eintraege` bleibt bewusst im Aufrufer: er ist dort
 // zugleich die TypeScript-Verengung, von der der ganze Volltext-Zweig lebt.
-export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs }: {
+export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, teilausfall, kopf, internRefs }: {
   fehler: LeserFehler;
   schluessel: string;
   manifest: BrowseManifest | null;
   erlass: BrowseErlass | null;
   currency: CurrencyMap | null;
+  /** BG-02/03/04: ausgefallene Begleit-Sidecars — der Kopf weist sie aus. */
+  teilausfall: Teilausfall | null;
   kopf: ErlassKopf | null;
   internRefs: InternRefs | undefined;
 }): ReactNode | null {
@@ -251,11 +255,11 @@ export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, k
   }
   // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML) ──────
   if (erlass && erlass.status === 'pdf-embed' && erlass.pdfPfad) {
-    return <PdfEmbedAnsicht erlass={erlass} currency={currency} kopf={kopf} internRefs={internRefs} />;
+    return <PdfEmbedAnsicht erlass={erlass} currency={currency} teilausfall={teilausfall} kopf={kopf} internRefs={internRefs} />;
   }
   // ── ⑧ LIVE_VERWEIS: kein In-App-Volltext — ehrliche Verweiskarte (§8) ────────
   if (erlass && erlass.status === 'nur-live-link') {
-    return <LiveVerweisAnsicht erlass={erlass} currency={currency} />;
+    return <LiveVerweisAnsicht erlass={erlass} currency={currency} teilausfall={teilausfall} />;
   }
   return null;
 }
