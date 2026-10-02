@@ -1520,14 +1520,14 @@
    ]
   },
   "27": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "28": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -2348,7 +2348,7 @@
    ]
   },
   "61": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2371,7 +2371,7 @@
    ]
   },
   "62": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -2530,8 +2530,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gebühren und Aufsichtsabgabe"
+     "item": null
     }
    ]
   },
@@ -3266,7 +3265,7 @@
    ]
   },
   "81": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -4477,7 +4476,7 @@
    ]
   },
   "64_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4500,35 +4499,35 @@
    ]
   },
   "64_c": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "64_d": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "64_e": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "64_f": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "64_g": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -4756,8 +4755,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Unabhängigkeit und Aufsicht"
+     "item": null
     }
    ]
   },

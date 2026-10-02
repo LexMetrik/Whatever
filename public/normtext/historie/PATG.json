@@ -296,24 +296,6 @@
    "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
   },
   {
-   "typ": "fassung",
-   "datum": "1995-09-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1995 2879",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
-    },
-    {
-     "label": "BBl 1993 III 706",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
-  },
-  {
    "typ": "eingefuegt",
    "datum": "2011-07-01",
    "wirkung": false,
@@ -457,8 +439,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Grundsatz"
+     "item": null
     }
    ]
   },
@@ -1017,8 +998,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "A. Voraussetzungen und Wirkung der Priorität"
+     "item": null
     }
    ]
   },
@@ -1091,8 +1071,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Legitimation"
+     "item": null
     }
    ]
   },
@@ -1402,7 +1381,7 @@
    ]
   },
   "36": {
-   "giltSeit": "1995-07-01",
+   "giltSeit": "2008-09-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1436,8 +1415,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Abhängige Erfindung"
+     "item": null
     }
    ]
   },
@@ -1616,12 +1594,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Wiedereinsetzung in den früheren Stand"
+     "item": null
     }
-   ],
-   "erbt": [
-    16
    ]
   },
   "48": {
@@ -1676,12 +1650,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "C. Vorbehalt von Rechten Dritter"
+     "item": null
     }
-   ],
-   "erbt": [
-    16
    ]
   },
   "49": {
@@ -1753,13 +1723,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Im Allgemeinen"
+     "item": null
     }
    ]
   },
   "50": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2008-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1810,8 +1779,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Im Allgemeinen"
+     "item": null
     }
    ]
   },
@@ -1950,8 +1918,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Im allgemeinen"
+     "item": null
     }
    ]
   },
@@ -2136,8 +2103,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "A. Prüfungsgegenstand"
+     "item": null
     }
    ]
   },
@@ -2305,7 +2271,7 @@
     }
    ],
    "erbt": [
-    18
+    17
    ]
   },
   "62": {
@@ -2388,14 +2354,14 @@
     }
    ],
    "erbt": [
-    18
+    17
    ]
   },
   "64": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    17
    ]
   },
   "65": {
@@ -2420,7 +2386,7 @@
     }
    ],
    "erbt": [
-    18
+    17
    ]
   },
   "66": {
@@ -2524,8 +2490,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "G. Verbot der Stufenklagen"
+     "item": null
     }
    ]
   },
@@ -2860,8 +2825,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Patentberühmung"
+     "item": null
     }
    ]
   },
@@ -2928,7 +2892,7 @@
    "aufgehobenSeit": "1978-01-01"
   },
   "109": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "1978-06-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2980,13 +2944,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Anwendbares Recht"
+     "item": null
     }
    ]
   },
   "110": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2007-12-13",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3056,8 +3019,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Wirkungen"
+     "item": null
     }
    ],
    "erbt": [
@@ -3628,8 +3590,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Rechtshilfegesuche des Europäischen Patentamtes"
+     "item": null
     }
    ],
    "erbt": [
@@ -3706,8 +3667,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Anwendbares Recht"
+     "item": null
     }
    ]
   },
@@ -4454,7 +4414,7 @@
    ]
   },
   "140_d": {
-   "giltSeit": "1999-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4534,7 +4494,7 @@
    ]
   },
   "140_g": {
-   "giltSeit": "1999-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4702,7 +4662,7 @@
    ]
   },
   "140_m": {
-   "giltSeit": "1999-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4711,7 +4671,7 @@
    ]
   },
   "140_n": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4756,7 +4716,7 @@
    ]
   },
   "140_o": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4766,7 +4726,7 @@
    ]
   },
   "140_p": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4776,7 +4736,7 @@
    ]
   },
   "140_q": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4786,7 +4746,7 @@
    ]
   },
   "140_r": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4796,7 +4756,7 @@
    ]
   },
   "140_s": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4806,7 +4766,7 @@
    ]
   },
   "140_t": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4833,7 +4793,7 @@
    ]
   },
   "140_u": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4842,7 +4802,7 @@
    ]
   },
   "140_v": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4851,7 +4811,7 @@
    ]
   },
   "140_w": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4860,7 +4820,7 @@
    ]
   },
   "140_x": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4869,7 +4829,7 @@
    ]
   },
   "140_y": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10,
@@ -4895,8 +4855,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
+     "item": null
     }
    ],
    "erbt": [
@@ -5424,7 +5383,7 @@
    ]
   },
   "48_a": {
-   "giltSeit": "2011-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5447,10 +5406,10 @@
    ]
   },
   "48_b": {
-   "giltSeit": "2011-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    16
    ]
   },
   "49_a": {
@@ -5824,7 +5783,7 @@
     }
    ],
    "erbt": [
-    18
+    17
    ]
   },
   "70_a": {
@@ -6169,8 +6128,8 @@
     }
    ],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_c": {
@@ -6195,12 +6154,12 @@
     }
    ],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_d": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -6217,16 +6176,16 @@
     }
    ],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_e": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_f": {
@@ -6281,53 +6240,52 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Verfahren"
+     "item": null
     }
    ],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_g": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_h": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_i": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_j": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_k": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "86_l": {
@@ -6352,8 +6310,8 @@
     }
    ],
    "erbt": [
-    19,
-    20
+    18,
+    19
    ]
   },
   "8_a": {
@@ -6631,7 +6589,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_143": {
@@ -6673,7 +6631,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_144": {
@@ -6755,7 +6713,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_146": {
@@ -6797,7 +6755,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_147": {
@@ -6839,7 +6797,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_148": {
@@ -6864,7 +6822,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "disp_u1_art_149": {
@@ -6889,7 +6847,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   }
  },

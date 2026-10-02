@@ -167,38 +167,6 @@
   },
   {
    "typ": "eingefuegt",
-   "datum": null,
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "BBl 1928 I 205",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
-  },
-  {
-   "typ": "fassung",
-   "datum": "1997-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1995 1227",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-    },
-    {
-     "label": "BBl 1991 III 1",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
-  },
-  {
-   "typ": "eingefuegt",
    "datum": "1997-01-01",
    "wirkung": false,
    "quellen": [
@@ -235,8 +203,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "A. Betreibungs- und Konkurskreise"
+     "item": null
     }
    ]
   },
@@ -519,8 +486,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "H. Beamte und Angestellte der Betreibungs- und der Konkursämter"
+     "item": null
     }
    ]
   },
@@ -1824,7 +1790,7 @@
    ]
   },
   "61": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
@@ -2619,8 +2585,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IX. Fortsetzung der Betreibung"
+     "item": null
     }
    ]
   },
@@ -6171,7 +6136,7 @@
    ]
   },
   "221": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -6236,21 +6201,21 @@
    ]
   },
   "223": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "224": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "225": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -6282,14 +6247,14 @@
    ]
   },
   "227": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "228": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -7794,8 +7759,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "A. Grundsätze"
+     "item": null
     }
    ]
   },
@@ -8027,7 +7991,7 @@
    ]
   },
   "291": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -8276,8 +8240,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Inventar und Pfandschätzung"
+     "item": null
     }
    ],
    "erbt": [
@@ -8354,8 +8317,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "F. Gläubigerversammlung"
+     "item": null
     }
    ],
    "erbt": [
@@ -8380,8 +8342,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "G. Rechte gegen Mitverpflichtete"
+     "item": null
     }
    ],
    "erbt": [
@@ -8406,8 +8367,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "H. Sachwalterbericht; öffentliche Bekanntmachung der Verhandlung vor dem Nachlassgericht"
+     "item": null
     }
    ],
    "erbt": [
@@ -8582,21 +8542,21 @@
    ]
   },
   "311": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "312": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "313": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -8628,21 +8588,21 @@
    ]
   },
   "315": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "316": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "317": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -8716,77 +8676,77 @@
    ]
   },
   "320": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "321": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "322": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "323": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "324": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "325": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "326": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "327": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "328": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "329": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "330": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -8843,7 +8803,7 @@
    ]
   },
   "333": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -8875,21 +8835,21 @@
    ]
   },
   "335": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "336": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "337": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8926,7 +8886,7 @@
    ]
   },
   "338": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -8934,7 +8894,7 @@
    ]
   },
   "339": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -8993,8 +8953,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Beschwerde"
+     "item": null
     }
    ],
    "erbt": [
@@ -9003,7 +8962,7 @@
    ]
   },
   "341": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9011,7 +8970,7 @@
    ]
   },
   "342": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9019,7 +8978,7 @@
    ]
   },
   "343": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9027,7 +8986,7 @@
    ]
   },
   "344": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9035,7 +8994,7 @@
    ]
   },
   "345": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9043,7 +9002,7 @@
    ]
   },
   "346": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9051,7 +9010,7 @@
    ]
   },
   "347": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9085,7 +9044,7 @@
    ]
   },
   "349": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5,
@@ -9116,7 +9075,7 @@
    "aufgehobenSeit": "2014-01-01"
   },
   "351": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "nummerierung",
@@ -9153,7 +9112,7 @@
    ]
   },
   "352": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
@@ -9557,8 +9516,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Verfahren vor kantonalen Aufsichtsbehörden"
+     "item": null
     }
    ]
   },
@@ -9779,7 +9737,7 @@
    ]
   },
   "284_a": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9802,7 +9760,7 @@
    ]
   },
   "284_b": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -10118,7 +10076,7 @@
    ]
   },
   "306_a": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -10625,10 +10583,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    9,
-    10
    ]
   },
   "68_c": {
@@ -10693,14 +10647,14 @@
     }
    ],
    "erbt": [
-    11
+    9
    ]
   },
   "68_e": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    9
    ]
   },
   "85_a": {
@@ -10772,8 +10726,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Im ordentlichen und im vereinfachten Verfahren"
+     "item": null
     }
    ]
   },

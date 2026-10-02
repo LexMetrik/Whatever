@@ -206,7 +206,7 @@
  ],
  "artikel": {
   "1": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -225,7 +225,7 @@
    ]
   },
   "2": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -411,7 +411,7 @@
    ]
   },
   "13": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -430,14 +430,14 @@
    ]
   },
   "14": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "15": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -667,7 +667,7 @@
    ]
   },
   "23": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
@@ -695,7 +695,7 @@
    ]
   },
   "25": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
@@ -1537,13 +1537,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Abschnitt: Partizipationskapital"
+     "item": null
     }
    ]
   },
   "61": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1649,7 +1648,7 @@
    ]
   },
   "65": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     13
@@ -2229,8 +2228,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Währung des Stammkapitals, Revision, Auflösung und Löschung sowie Übertragung von Stammanteilen bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven"
+     "item": null
     }
    ]
   },
@@ -3056,14 +3054,14 @@
    ]
   },
   "120": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "121": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -3648,7 +3646,7 @@
    ]
   },
   "164": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -3734,7 +3732,7 @@
    ]
   },
   "168": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -3827,13 +3825,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Beglaubigungen durch das Handelsregisteramt"
+     "item": null
     }
    ]
   },
   "12_b": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3905,7 +3902,7 @@
    "aufgehobenSeit": "2018-02-01"
   },
   "12_e": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -4179,7 +4176,7 @@
    ]
   },
   "45_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4198,7 +4195,7 @@
    ]
   },
   "45_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
@@ -4224,7 +4221,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "59_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4243,14 +4240,14 @@
    ]
   },
   "59_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     11
    ]
   },
   "59_c": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     11
@@ -4301,8 +4298,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Abschnitt: Übertragung der Aktien bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven"
+     "item": null
     }
    ]
   },

@@ -424,7 +424,7 @@
    ]
   },
   "10_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -443,14 +443,14 @@
    ]
   },
   "10_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "22_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -469,7 +469,7 @@
    ]
   },
   "22_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -512,7 +512,7 @@
    ]
   },
   "7_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -531,14 +531,14 @@
    ]
   },
   "7_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "7_c": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -557,14 +557,14 @@
    ]
   },
   "7_d": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "8_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -583,7 +583,7 @@
    ]
   },
   "8_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4

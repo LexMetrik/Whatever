@@ -368,8 +368,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Titel: Aufgaben der Armee"
+     "item": null
     }
    ]
   },
@@ -1049,7 +1048,7 @@
    ]
   },
   "15": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -3038,7 +3037,7 @@
    ]
   },
   "68": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -3238,14 +3237,14 @@
    ]
   },
   "74": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
    ]
   },
   "75": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -3353,14 +3352,14 @@
    ]
   },
   "78": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
    ]
   },
   "79": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -3634,21 +3633,21 @@
    ]
   },
   "86": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
    ]
   },
   "87": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
    ]
   },
   "88": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -3680,14 +3679,14 @@
    ]
   },
   "90": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
    ]
   },
   "91": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -3856,8 +3855,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie"
+     "item": null
     }
    ]
   },
@@ -3896,8 +3894,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Betriebskontinuität und Resilienz"
+     "item": null
     }
    ]
   },
@@ -3936,8 +3933,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2b. Kapitel: Kommissariatsdienst"
+     "item": null
     }
    ]
   },
@@ -4734,14 +4730,14 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "108": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
    ]
   },
   "109": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -5427,14 +5423,14 @@
    ]
   },
   "127": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "128": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -5509,8 +5505,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+     "item": null
     }
    ],
    "erbt": [
@@ -5642,7 +5637,7 @@
    ]
   },
   "133": {
-   "giltSeit": "2026-06-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -6255,7 +6250,7 @@
    ]
   },
   "126_b": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -6287,7 +6282,7 @@
    ]
   },
   "126_d": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -6377,14 +6372,14 @@
    ]
   },
   "126_g": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "128_a": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -6434,7 +6429,7 @@
    ]
   },
   "130_b": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6,
@@ -6501,8 +6496,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Gewerbliche Leistungen"
+     "item": null
     }
    ]
   },
@@ -6541,8 +6535,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8a. Titel: Finanzielle Mittel für die Armee"
+     "item": null
     }
    ]
   },
@@ -6915,8 +6908,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Titel und Orden ausländischer Behörden"
+     "item": null
     }
    ]
   },
@@ -6955,8 +6947,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Urheberrechte"
+     "item": null
     }
    ]
   },
@@ -6978,8 +6969,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten"
+     "item": null
     }
    ]
   },
@@ -7191,8 +7181,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung"
+     "item": null
     }
    ]
   },
@@ -7237,8 +7226,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "9. Kapitel: Informationsplattformen"
+     "item": null
     }
    ]
   },

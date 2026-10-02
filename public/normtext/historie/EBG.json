@@ -473,24 +473,6 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "9. Kapitel: Rechnungswesen"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2010-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2009 5597",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
-    },
-    {
-     "label": "BBl 2005 2415",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
-    }
-   ],
-   "absatz": null,
-   "item": null,
    "ueberschrift": "10. Kapitel: Kaufrecht der Gemeinwesen"
   },
   {
@@ -510,24 +492,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2010-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2009 5597",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
-    },
-    {
-     "label": "BBl 2005 2415",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
   },
   {
    "typ": "eingefuegt",
@@ -585,7 +549,7 @@
   },
   {
    "typ": "eingefuegt",
-   "datum": "2020-07-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -599,7 +563,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+   "ueberschrift": "2a. Kapitel: Trassenvergabestelle",
+   "teilweise": "Eingefügt durch Ziff. I 3 des BG vom 28. Sept. 2018 über die Organisation der Bahninfrastruktur, in Kraft seit 1. Juli 2020, mit Ausnahme der Art. 9e, 9f, 9l–9q, 9u, und 9w, in Kraft seit 1. Jan. 2021 (AS 2020 1889; BBl 2016 8661). Siehe auch die UeB dieser Änd. am Schluss des Textes."
   }
  ],
  "artikel": {
@@ -1509,7 +1474,7 @@
    ]
   },
   "19": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1517,7 +1482,7 @@
    ]
   },
   "20": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1766,7 +1731,7 @@
    ]
   },
   "27": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1800,7 +1765,7 @@
    ]
   },
   "29": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1808,7 +1773,7 @@
    ]
   },
   "30": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1816,7 +1781,7 @@
    ]
   },
   "31": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -1824,7 +1789,7 @@
    ]
   },
   "32": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -2081,8 +2046,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt: Betriebsunterbruch"
+     "item": null
     }
    ],
    "erbt": [
@@ -2141,8 +2105,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Abschnitt: Nebenbetriebe"
+     "item": null
     }
    ],
    "erbt": [
@@ -2286,8 +2249,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten"
+     "item": null
     },
     {
      "typ": "fassung",
@@ -2304,8 +2266,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten"
+     "item": null
     }
    ],
    "erbt": [
@@ -2313,7 +2274,7 @@
    ]
   },
   "41": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2378,7 +2339,7 @@
    ]
   },
   "43": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2403,7 +2364,7 @@
    ]
   },
   "44": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     15
@@ -2456,7 +2417,7 @@
    "aufgehobenSeit": "2007-05-01"
   },
   "47": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     15
@@ -2994,21 +2955,21 @@
    ]
   },
   "63": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     24
    ]
   },
   "64": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     24
    ]
   },
   "65": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     24
@@ -3101,9 +3062,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    25
    ]
   },
   "73": {
@@ -3210,7 +3168,7 @@
     }
    ],
    "erbt": [
-    26
+    25
    ]
   },
   "80": {
@@ -3254,38 +3212,38 @@
    ]
   },
   "81": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "82": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "83": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "84": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "85": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "86": {
@@ -3358,9 +3316,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "88": {
@@ -3383,9 +3338,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "89": {
@@ -3408,9 +3360,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "90": {
@@ -3555,7 +3504,7 @@
     }
    ],
    "erbt": [
-    31
+    29
    ]
   },
   "94": {
@@ -3603,14 +3552,14 @@
     }
    ],
    "erbt": [
-    31
+    29
    ]
   },
   "96": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    31
+    29
    ]
   },
   "97": {
@@ -3652,7 +3601,7 @@
     }
    ],
    "erbt": [
-    31
+    29
    ]
   },
   "14_a": {
@@ -5280,8 +5229,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Entschädigung für Eigentumsbeschränkungen"
+     "item": null
     }
    ],
    "erbt": [
@@ -5289,7 +5237,7 @@
    ]
   },
   "18_v": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5340,8 +5288,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Landumlegung"
+     "item": null
     }
    ],
    "erbt": [
@@ -5513,7 +5460,7 @@
    ]
   },
   "23_a": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5539,7 +5486,7 @@
    ]
   },
   "23_b": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -5729,7 +5676,7 @@
    ]
   },
   "23_g": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -5842,7 +5789,7 @@
    ]
   },
   "23_k": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -5893,8 +5840,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8a. Abschnitt: Vorhaltekosten der Wehrdienste"
+     "item": null
     }
    ],
    "erbt": [
@@ -6445,7 +6391,7 @@
    ]
   },
   "40_c": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -6454,7 +6400,7 @@
    ]
   },
   "40_d": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -6463,7 +6409,7 @@
    ]
   },
   "40_e": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -6472,7 +6418,7 @@
    ]
   },
   "40_f": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -6481,7 +6427,7 @@
    ]
   },
   "48_a": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6504,35 +6450,35 @@
    ]
   },
   "48_b": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     16
    ]
   },
   "48_c": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     16
    ]
   },
   "48_d": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     16
    ]
   },
   "48_e": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     16
    ]
   },
   "48_f": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     16
@@ -6915,7 +6861,7 @@
     }
    ],
    "erbt": [
-    27
+    26
    ]
   },
   "83_a": {
@@ -6940,7 +6886,7 @@
     }
    ],
    "erbt": [
-    27
+    26
    ]
   },
   "86_a": {
@@ -7095,9 +7041,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "87_a": {
@@ -7120,9 +7063,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "87_b": {
@@ -7145,9 +7085,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "88_a": {
@@ -7187,9 +7124,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "89_a": {
@@ -7212,9 +7146,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "89_b": {
@@ -7245,9 +7176,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    28
    ]
   },
   "8_a": {
@@ -7458,8 +7386,8 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "8_e": {
@@ -7503,8 +7431,8 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "8_f": {
@@ -7548,8 +7476,8 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "96_a": {
@@ -7574,7 +7502,7 @@
     }
    ],
    "erbt": [
-    31
+    29
    ]
   },
   "96_b": {
@@ -7599,7 +7527,7 @@
     }
    ],
    "erbt": [
-    31
+    29
    ]
   },
   "9_a": {
@@ -7711,8 +7639,8 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "9_b": {
@@ -7756,8 +7684,8 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "9_c": {
@@ -7818,12 +7746,12 @@
    "erbt": [
     21,
     22,
-    29,
-    30
+    27,
+    28
    ]
   },
   "9_d": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -7841,141 +7769,142 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle",
+     "teilweise": "Eingefügt durch Ziff. I 3 des BG vom 28. Sept. 2018 über die Organisation der Bahninfrastruktur, in Kraft seit 1. Juli 2020, mit Ausnahme der Art. 9e, 9f, 9l–9q, 9u, und 9w, in Kraft seit 1. Jan. 2021 (AS 2020 1889; BBl 2016 8661). Siehe auch die UeB dieser Änd. am Schluss des Textes."
     }
    ]
   },
   "9_e": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_f": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_g": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_h": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_i": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_j": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_k": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_l": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_m": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_n": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_o": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_p": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_q": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_r": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_s": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_t": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_u": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_v": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   },
   "9_w": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    32
+    30
    ]
   }
  },

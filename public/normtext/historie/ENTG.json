@@ -240,8 +240,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1bis. Berechnung im allgemeinen"
+     "item": null
     }
    ]
   },
@@ -684,7 +683,7 @@
    ]
   },
   "44": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -779,7 +778,7 @@
    ]
   },
   "49": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -819,8 +818,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "V. Amtliche Verständigung"
+     "item": null
     }
    ]
   },
@@ -859,13 +857,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VI. Ausseramtliche Verständigung"
+     "item": null
     }
    ]
   },
   "57": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1295,8 +1292,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "a. Sachliche"
+     "item": null
     }
    ]
   },
@@ -1426,35 +1422,35 @@
    ]
   },
   "70": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "71": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "72": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "73": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "74": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1639,8 +1635,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIbis: Vorzeitige Besitzeinweisung"
+     "item": null
     }
    ]
   },
@@ -1750,7 +1745,7 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "86": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2048,8 +2043,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Verordnung des Bundesrates"
+     "item": null
     }
    ]
   },
@@ -2217,8 +2211,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Im Verfahren vor dem Bundesverwaltungsgericht und dem Bundesgericht"
+     "item": null
     }
    ]
   },
@@ -2307,7 +2300,7 @@
    "aufgehobenSeit": "2021-01-01"
   },
   "54_bis": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",

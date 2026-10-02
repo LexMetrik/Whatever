@@ -9,48 +9,6 @@
  "ueberschriftEreignisse": [
   {
    "typ": "fassung",
-   "datum": "2008-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2008 2585",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2008/367"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2008-09-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2008 3595",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2008/466"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2008-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2008 2585",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2008/367"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
-  },
-  {
-   "typ": "fassung",
    "datum": "2025-07-01",
    "wirkung": false,
    "quellen": [
@@ -405,7 +363,7 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "3": {
@@ -439,7 +397,7 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "4": {
@@ -525,7 +483,7 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "5": {
@@ -546,7 +504,7 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "8": {
@@ -1714,7 +1672,7 @@
    ]
   },
   "46": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1750,7 +1708,7 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "48": {
@@ -1771,14 +1729,14 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "49": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "50": {
@@ -1812,14 +1770,14 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "51": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "52": {
@@ -1840,7 +1798,7 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "53": {
@@ -1893,21 +1851,21 @@
     }
    ],
    "erbt": [
-    17
+    14
    ]
   },
   "55": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "56": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "57": {
@@ -1928,7 +1886,7 @@
     }
    ],
    "erbt": [
-    17
+    14
    ]
   },
   "58": {
@@ -1949,14 +1907,14 @@
     }
    ],
    "erbt": [
-    17
+    14
    ]
   },
   "59": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "60": {
@@ -2247,7 +2205,7 @@
    ]
   },
   "70": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2316,7 +2274,7 @@
     }
    ],
    "erbt": [
-    19
+    16
    ]
   },
   "73": {
@@ -2382,21 +2340,21 @@
     }
    ],
    "erbt": [
-    20
+    17
    ]
   },
   "75": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "76": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "77": {
@@ -2456,14 +2414,14 @@
     }
    ],
    "erbt": [
-    20
+    17
    ]
   },
   "78": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "79": {
@@ -2486,45 +2444,45 @@
    "aufgehobenSeit": "2017-01-01"
   },
   "80": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "81": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "82": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "83": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "84": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "85": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "86": {
@@ -2545,21 +2503,21 @@
     }
    ],
    "erbt": [
-    20
+    17
    ]
   },
   "87": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "88": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    20
+    17
    ]
   },
   "89": {
@@ -2750,9 +2708,6 @@
      "absatz": "8",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "91": {
@@ -2803,9 +2758,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "93": {
@@ -2850,9 +2802,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "94": {
@@ -2962,9 +2911,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "95": {
@@ -2996,9 +2942,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "96": {
@@ -3043,13 +2986,10 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "97": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3064,34 +3004,10 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    0
-   ]
-  },
-  "98": {
-   "giltSeit": "2008-07-01",
-   "ereignisse": [],
-   "erbt": [
-    0
-   ]
-  },
-  "99": {
-   "giltSeit": "2008-07-01",
-   "ereignisse": [],
-   "erbt": [
-    0
-   ]
-  },
-  "100": {
-   "giltSeit": "2008-07-01",
-   "ereignisse": [],
-   "erbt": [
-    0
    ]
   },
   "101": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3106,16 +3022,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    0
-   ]
-  },
-  "102": {
-   "giltSeit": "2008-07-01",
-   "ereignisse": [],
-   "erbt": [
-    0
    ]
   },
   "103": {
@@ -3134,9 +3040,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "104": {
@@ -3194,9 +3097,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "105": {
@@ -3293,9 +3193,6 @@
      "absatz": "5",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "106": {
@@ -3314,13 +3211,10 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "107": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3335,9 +3229,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "108": {
@@ -3366,9 +3257,6 @@
      "frueher": "sechster Tit.",
      "ueberschrift": "Viertes Kapitel: Veröffentlichungen des IGE"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "109": {
@@ -3387,9 +3275,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "110": {
@@ -3443,13 +3328,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Kapitel: Landwirteprivileg"
+     "item": null
     }
    ]
   },
   "111": {
-   "giltSeit": "2008-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -3475,9 +3359,6 @@
      "item": null,
      "ueberschrift": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
     }
-   ],
-   "erbt": [
-    1
    ]
   },
   "112": {
@@ -3879,7 +3760,7 @@
    ]
   },
   "128": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3898,52 +3779,52 @@
    ]
   },
   "129": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "130": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "131": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "132": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "133": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "134": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "135": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    10
    ]
   },
   "107_a": {
@@ -3962,33 +3843,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    0
-   ]
-  },
-  "111_a": {
-   "giltSeit": "2008-09-01",
-   "ereignisse": [],
-   "erbt": [
-    1,
-    2
-   ]
-  },
-  "111_b": {
-   "giltSeit": "2008-09-01",
-   "ereignisse": [],
-   "erbt": [
-    1,
-    2
-   ]
-  },
-  "111_c": {
-   "giltSeit": "2008-09-01",
-   "ereignisse": [],
-   "erbt": [
-    1,
-    2
    ]
   },
   "112_a": {
@@ -4022,7 +3876,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_b": {
@@ -4056,7 +3910,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_c": {
@@ -4090,7 +3944,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_d": {
@@ -4124,7 +3978,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_e": {
@@ -4158,7 +4012,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_f": {
@@ -4192,7 +4046,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_g": {
@@ -4213,7 +4067,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_h": {
@@ -4234,7 +4088,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "112_i": {
@@ -4255,7 +4109,7 @@
     }
    ],
    "erbt": [
-    3
+    0
    ]
   },
   "117_a": {
@@ -4436,11 +4290,11 @@
    ]
   },
   "125_b": {
-   "giltSeit": "1999-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    5
+    1,
+    2
    ]
   },
   "125_c": {
@@ -4461,8 +4315,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    1,
+    2
    ]
   },
   "127_a": {
@@ -4507,8 +4361,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Kapitel: Geltungsbereich"
+     "item": null
     }
    ]
   },
@@ -4544,8 +4397,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_c": {
@@ -4631,9 +4484,9 @@
     }
    ],
    "erbt": [
-    6,
-    7,
-    8
+    3,
+    4,
+    5
    ]
   },
   "127_d": {
@@ -4654,9 +4507,9 @@
     }
    ],
    "erbt": [
-    6,
-    7,
-    8
+    3,
+    4,
+    5
    ]
   },
   "127_e": {
@@ -4704,8 +4557,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_f": {
@@ -4726,9 +4579,9 @@
     }
    ],
    "erbt": [
-    6,
-    7,
-    9
+    3,
+    4,
+    6
    ]
   },
   "127_g": {
@@ -4745,13 +4598,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Viertes Kapitel: Erteilung des Zertifikats und Verlängerung der Schutzdauer"
+     "item": null
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_h": {
@@ -4768,13 +4620,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Veröffentlichung"
+     "item": null
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_i": {
@@ -4795,8 +4646,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_k": {
@@ -4921,8 +4772,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_l": {
@@ -4982,8 +4833,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_m": {
@@ -5004,12 +4855,12 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_n": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5027,66 +4878,66 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    3,
+    4
    ]
   },
   "127_o": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_p": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_q": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_r": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_s": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_t": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
-    10
+    3,
+    4,
+    7
    ]
   },
   "127_u": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5105,77 +4956,77 @@
    ]
   },
   "127_v": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_w": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_x": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_y": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_z": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_z_bis": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_z_octies": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    9
    ]
   },
   "127_z_quater": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_z_quinquies": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "127_z_septies": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    9
    ]
   },
   "127_z_sexies": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5194,10 +5045,10 @@
    ]
   },
   "127_z_ter": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    8
    ]
   },
   "17_a": {
@@ -5481,13 +5332,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Sechstes Kapitel: Angaben über die Quelle genetischer Ressourcen und traditionellen Wissens"
+     "item": null
     }
    ]
   },
   "45_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5506,24 +5356,24 @@
    ]
   },
   "45_c": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_d": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_e": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_f": {
@@ -5544,35 +5394,35 @@
     }
    ],
    "erbt": [
-    15
+    12
    ]
   },
   "45_g": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_h": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_i": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "45_j": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    12
    ]
   },
   "46_a": {
@@ -5606,49 +5456,49 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "46_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "46_c": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "46_d": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "46_e": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "48_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "48_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "48_c": {
@@ -5682,14 +5532,14 @@
     }
    ],
    "erbt": [
-    16
+    13
    ]
   },
   "48_d": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    13
    ]
   },
   "4_a": {
@@ -5710,7 +5560,7 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "4_b": {
@@ -5731,56 +5581,56 @@
     }
    ],
    "erbt": [
-    14
+    11
    ]
   },
   "53_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "54_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "59_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "59_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "59_c": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    14
    ]
   },
   "60_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    15
    ]
   },
   "60_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    15
    ]
   },
   "60_c": {
@@ -5827,7 +5677,7 @@
     }
    ],
    "erbt": [
-    18
+    15
    ]
   },
   "61_a": {
@@ -5991,9 +5841,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    0
    ]
   }
  },

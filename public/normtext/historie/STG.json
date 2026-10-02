@@ -1905,8 +1905,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Verzugszins"
+     "item": null
     },
     {
      "typ": "berichtigt",
@@ -1914,8 +1913,7 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Verzugszins"
+     "item": null
     }
    ]
   },
@@ -2038,7 +2036,7 @@
    ]
   },
   "39": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2281,8 +2279,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Hinterziehung"
+     "item": null
     }
    ]
   },
@@ -2377,8 +2374,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz"
+     "item": null
     }
    ]
   },
@@ -2518,8 +2514,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Datenbearbeitung"
+     "item": null
     }
    ]
   },
@@ -2581,8 +2576,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Elektronische Verfahren"
+     "item": null
     }
    ]
   },

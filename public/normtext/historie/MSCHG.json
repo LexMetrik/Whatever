@@ -476,7 +476,7 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "37": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -524,7 +524,7 @@
    ]
   },
   "39": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -673,7 +673,7 @@
    ]
   },
   "44": {
-   "giltSeit": "1997-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -696,14 +696,14 @@
    ]
   },
   "45": {
-   "giltSeit": "1997-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "46": {
-   "giltSeit": "1997-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1523,28 +1523,28 @@
    ]
   },
   "27_b": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "27_c": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "27_d": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "27_e": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1617,7 +1617,7 @@
    ]
   },
   "46_a": {
-   "giltSeit": "1997-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1754,7 +1754,7 @@
    ]
   },
   "50_a": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -1772,7 +1772,7 @@
    ]
   },
   "50_b": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": "2021-12-01",
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -1815,8 +1815,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Registrierung von geografischen Angaben"
+     "item": null
     }
    ],
    "erbt": [
@@ -1824,7 +1823,7 @@
    ]
   },
   "50_c": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1850,7 +1849,7 @@
    ]
   },
   "50_d": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -1858,7 +1857,7 @@
    ]
   },
   "50_e": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -1866,7 +1865,7 @@
    ]
   },
   "50_f": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,

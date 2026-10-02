@@ -935,7 +935,7 @@
    ]
   },
   "22": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -992,7 +992,7 @@
    ]
   },
   "25": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1141,14 +1141,14 @@
    ]
   },
   "31": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "32": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1268,7 +1268,7 @@
    ]
   },
   "42": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1348,8 +1348,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "b. Übergang der Rückgriffsansprüche"
+     "item": null
     }
    ]
   },
@@ -1573,8 +1572,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Revision und Erläuterung von Entscheiden"
+     "item": null
     }
    ]
   },
@@ -1718,8 +1716,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Verhältnis zum Bundesgesetz über die Verwaltungsstrafrecht; Besonderheiten für Widerhandlungen im kantonalen Verfahren"
+     "item": null
     }
    ]
   },

@@ -345,20 +345,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "1997-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1996 668",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "C. Beitritt zur Versicherung"
-  },
-  {
-   "typ": "fassung",
    "datum": "2001-01-01",
    "wirkung": false,
    "quellen": [
@@ -398,34 +384,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
-  },
-  {
-   "typ": "eingefuegt",
-   "datum": null,
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1969 125",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
-  },
-  {
-   "typ": "fassung",
-   "datum": "1979-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1978 420",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
   },
   {
    "typ": "fassung",
@@ -497,7 +455,7 @@
    ]
   },
   "3": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -537,7 +495,7 @@
    "aufgehobenSeit": "2010-01-01"
   },
   "5": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -2238,8 +2196,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "F. Haftung der Erben"
+     "item": null
     }
    ]
   },
@@ -2609,8 +2566,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 56",
-     "ueberschrift": "C. Ausserordentliche Renten"
+     "frueher": "vor Art. 56"
     }
    ],
    "erbt": [
@@ -2876,8 +2832,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Geltendmachung des Anspruchs"
+     "item": null
     }
    ],
    "erbt": [
@@ -3200,7 +3155,7 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "77": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4213,7 +4168,7 @@
    "aufgehobenSeit": "2008-07-01"
   },
   "135": {
-   "giltSeit": "2016-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -5137,7 +5092,7 @@
    ]
   },
   "170": {
-   "giltSeit": "1979-01-01",
+   "giltSeit": "2024-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -5189,8 +5144,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Kosten der Kassenrevision und der Arbeitgeberkontrollen"
+     "item": null
     }
    ]
   },
@@ -5221,8 +5175,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Ergänzende Revisionen und Kontrollen"
+     "item": null
     }
    ]
   },
@@ -6174,8 +6127,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Abschnitt: Schlussbestimmungen"
+     "item": null
     },
     {
      "typ": "urspruenglich",
@@ -6184,8 +6136,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Neunter Abschnitt",
-     "ueberschrift": "Zehnter Abschnitt: Schlussbestimmungen"
+     "frueher": "Neunter Abschnitt"
     }
    ]
   },
@@ -6480,7 +6431,7 @@
    ]
   },
   "134_bis": {
-   "giltSeit": "2007-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6720,7 +6671,7 @@
    ]
   },
   "141_bis": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6739,14 +6690,14 @@
    ]
   },
   "141_quater": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
    ]
   },
   "141_quinquies": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -6766,8 +6717,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Hquinquies. Meldepflicht bei Beeinträchtigungen der Informationssysteme"
+     "item": null
     }
    ]
   },
@@ -6785,13 +6735,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Hquater. Informationssystem für die Übermittlung von Anträgen"
+     "item": null
     }
    ]
   },
   "141_ter": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -7390,7 +7339,7 @@
    ]
   },
   "215_219": {
-   "giltSeit": "1975-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -7861,7 +7810,7 @@
    ]
   },
   "44_45": {
-   "giltSeit": "1969-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -8846,7 +8795,7 @@
    ]
   },
   "55_bis": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9133,16 +9082,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    24
-   ]
-  },
-  "5_b": {
-   "giltSeit": "1997-01-01",
-   "ereignisse": [],
-   "erbt": [
-    24
    ]
   },
   "5_c": {
@@ -9161,9 +9100,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    24
    ]
   },
   "5_d": {
@@ -9196,17 +9132,13 @@
      "item": null,
      "ueberschrift": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
     }
-   ],
-   "erbt": [
-    24
    ]
   },
   "5_e": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24,
-    25
+    24
    ]
   },
   "5_f": {
@@ -9227,12 +9159,11 @@
     }
    ],
    "erbt": [
-    24,
-    25
+    24
    ]
   },
   "5_g": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9248,29 +9179,24 @@
      "item": null,
      "ueberschrift": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
     }
-   ],
-   "erbt": [
-    24
    ]
   },
   "5_h": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24,
-    26
+    25
    ]
   },
   "5_i": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24,
-    26
+    25
    ]
   },
   "5_j": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9286,17 +9212,13 @@
      "item": null,
      "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
     }
-   ],
-   "erbt": [
-    24
    ]
   },
   "5_k": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24,
-    27
+    26
    ]
   },
   "61_66": {
@@ -9452,8 +9374,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Bst. E, danach Bst. F",
-     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
+     "frueher": "Bst. E, danach Bst. F"
     },
     {
      "typ": "eingefuegt",
@@ -9466,8 +9387,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
+     "item": null
     },
     {
      "typ": "fassung",
@@ -9480,8 +9400,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
+     "item": null
     }
    ],
    "erbt": [
@@ -9519,9 +9438,7 @@
     }
    ],
    "erbt": [
-    18,
-    28,
-    29
+    18
    ]
   },
   "69_bis": {
@@ -10033,7 +9950,7 @@
    ],
    "erbt": [
     18,
-    30
+    27
    ]
   },
   "79_quater": {
@@ -10100,7 +10017,7 @@
    ],
    "erbt": [
     18,
-    30
+    27
    ]
   },
   "81_82": {

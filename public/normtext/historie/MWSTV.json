@@ -887,7 +887,7 @@
    "aufgehobenSeit": "2025-01-01"
   },
   "62": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1488,7 +1488,7 @@
    ]
   },
   "112": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -2385,8 +2385,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Versandhandelsunternehmen anstelle der Plattform als einfuhrsteuerpflichtiger Person"
+     "item": null
     }
    ]
   },
@@ -2628,7 +2627,7 @@
    ]
   },
   "48_a": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2647,21 +2646,21 @@
    ]
   },
   "48_b": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "48_c": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "48_d": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -2792,7 +2791,7 @@
    ]
   },
   "76_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2811,21 +2810,21 @@
    ]
   },
   "76_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "76_c": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "76_d": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8

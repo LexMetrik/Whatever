@@ -2,8 +2,8 @@
  "erlass": "STHG",
  "abdeckung": {
   "fussnoten": 276,
-  "ereignis": 236,
-  "referenz": 40,
+  "ereignis": 235,
+  "referenz": 41,
   "unparsed": 0
  },
  "ueberschriftEreignisse": [
@@ -42,24 +42,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
-  },
-  {
-   "typ": "fassung",
-   "datum": null,
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2006 3459",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-    },
-    {
-     "label": "BBl 1999 1979",
-     "url": ""
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Sechster Titel: Steuerstrafrecht"
   }
  ],
  "artikel": {
@@ -2523,7 +2505,7 @@
    ]
   },
   "38": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2847,29 +2829,6 @@
     }
    ]
   },
-  "55": {
-   "giltSeit": null,
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
-    }
-   ]
-  },
   "56": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
@@ -2975,9 +2934,6 @@
      "absatz": "5",
      "item": "b"
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "57": {
@@ -3017,9 +2973,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "58": {
@@ -3042,9 +2995,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "59": {
@@ -3101,9 +3051,6 @@
      "absatz": "2ter",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "60": {
@@ -3126,9 +3073,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "61": {
@@ -3151,9 +3095,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "71": {
@@ -3662,7 +3603,7 @@
    ]
   },
   "38_a": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -3815,9 +3756,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "57_b": {
@@ -3840,9 +3778,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "57_bis": {
@@ -3899,9 +3834,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "62_70": {

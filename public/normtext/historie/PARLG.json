@@ -915,7 +915,7 @@
    ]
   },
   "54": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -956,7 +956,7 @@
    "aufgehobenSeit": "2009-03-02"
   },
   "55": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2255,13 +2255,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Eingaben"
+     "item": null
     }
    ]
   },
   "130": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2284,14 +2283,14 @@
    ]
   },
   "131": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "132": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -2323,49 +2322,49 @@
    ]
   },
   "134": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "135": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "136": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "137": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "138": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "139": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "140": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -2998,8 +2997,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Titel: Verkehr zwischen der Bundesversammlung und den eidgenössischen Gerichten sowie der Aufsichtsbehörde über die Bundesanwaltschaft"
+     "item": null
     }
    ]
   },
@@ -3182,8 +3180,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Verfahren bei Einsprachen gegen Verträge der Kantone unter sich oder mit dem Ausland"
+     "item": null
     }
    ]
   },
@@ -3205,8 +3202,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Feststellung der Amtsunfähigkeit von Mitgliedern des Bundesrates sowie der Bundeskanzlerin oder des Bundeskanzlers"
+     "item": null
     }
    ],
    "erbt": [
@@ -3275,8 +3271,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Haftung für Schäden"
+     "item": null
     }
    ]
   },

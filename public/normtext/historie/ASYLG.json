@@ -59,24 +59,6 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2019-03-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2016 3101",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
-    },
-    {
-     "label": "BBl 2014 7991",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
-    }
-   ],
-   "absatz": null,
-   "item": null,
    "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
   },
   {
@@ -261,7 +243,7 @@
   },
   {
    "typ": "eingefuegt",
-   "datum": "2018-01-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -275,7 +257,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+   "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+   "teilweise": "Eingefügt durch Ziff. I des BG vom 25. Sept. 2015, in Kraft seit 1. Jan. 2018, Art. 95a Abs. 1 Bst. a gilt bis 31. Dez. 2027 (AS 2016 3101, 2017 6171; BBl 2014 7991)."
   },
   {
    "typ": "eingefuegt",
@@ -2040,7 +2023,7 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "46": {
@@ -2150,7 +2133,7 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "47": {
@@ -2175,14 +2158,14 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "48": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "51": {
@@ -3086,8 +3069,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "82": {
@@ -3214,8 +3197,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "83": {
@@ -3359,8 +3342,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "84": {
@@ -3385,8 +3368,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "85": {
@@ -3429,23 +3412,23 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "86": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    13
+    10,
+    12
    ]
   },
   "87": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    13
+    10,
+    12
    ]
   },
   "88": {
@@ -3971,7 +3954,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "98": {
@@ -4013,7 +3996,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "99": {
@@ -4140,7 +4123,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "100": {
@@ -4334,12 +4317,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1c. Abschnitt: Beschwerdeverfahren auf Kantonsebene"
+     "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "104": {
@@ -4385,9 +4364,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "106": {
@@ -4444,9 +4420,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "107": {
@@ -4486,9 +4459,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "108": {
@@ -4528,9 +4498,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "109": {
@@ -4570,9 +4537,6 @@
      "absatz": "7",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "110": {
@@ -4629,9 +4593,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111": {
@@ -4671,9 +4632,6 @@
      "absatz": null,
      "item": "d"
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "112": {
@@ -4761,7 +4719,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "115": {
@@ -4937,8 +4895,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    5,
+    6
    ]
   },
   "117": {
@@ -4999,12 +4957,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Strafverfolgung"
+     "item": null
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "102_a": {
@@ -5409,13 +5366,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Videoüberwachung"
+     "item": null
     }
    ]
   },
   "102_f": {
-   "giltSeit": "2019-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -5529,8 +5485,7 @@
     }
    ],
    "erbt": [
-    2,
-    3
+    2
    ]
   },
   "102_h": {
@@ -5555,16 +5510,14 @@
     }
    ],
    "erbt": [
-    2,
-    3
+    2
    ]
   },
   "102_i": {
-   "giltSeit": "2019-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    2,
-    3
+    2
    ]
   },
   "102_j": {
@@ -5589,8 +5542,7 @@
     }
    ],
    "erbt": [
-    2,
-    3
+    2
    ]
   },
   "102_k": {
@@ -5649,8 +5601,7 @@
     }
    ],
    "erbt": [
-    2,
-    3
+    2
    ]
   },
   "102_l": {
@@ -5705,12 +5656,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Beratung und Rechtsvertretung im erweiterten Verfahren nach Zuweisung auf die Kantone"
+     "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "102_m": {
@@ -5731,12 +5678,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1b. Abschnitt: Unentgeltliche Rechtspflege"
+     "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "107_a": {
@@ -5844,9 +5787,6 @@
      "absatz": "5",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "108_a": {
@@ -5886,9 +5826,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "109_a": {
@@ -5911,9 +5848,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "109_b": {
@@ -5936,9 +5870,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "110_a": {
@@ -6018,9 +5949,6 @@
      "absatz": "1",
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111_a_bis": {
@@ -6043,9 +5971,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111_a_quater": {
@@ -6066,12 +5991,8 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Unabhängiger Überwachungsmechanismus im Rahmen der Überprüfung"
+     "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111_a_ter": {
@@ -6094,9 +6015,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111_b": {
@@ -6154,9 +6072,6 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "111_c": {
@@ -6198,8 +6113,7 @@
     }
    ],
    "erbt": [
-    2,
-    4
+    3
    ]
   },
   "111_d": {
@@ -6224,8 +6138,7 @@
     }
    ],
    "erbt": [
-    2,
-    4
+    3
    ]
   },
   "112_a": {
@@ -6263,16 +6176,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Hinderung und Stillstand der Verjährung"
+     "item": null
     }
-   ],
-   "erbt": [
-    2
    ]
   },
   "112_b": {
-   "giltSeit": "2012-09-29",
+   "giltSeit": "2014-02-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6314,8 +6223,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8a. Kapitel: Asylverfahren im Rahmen von Testphasen"
+     "item": null
     }
    ]
   },
@@ -6377,12 +6285,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Strafbestimmungen zum 7. Kapitel 2. Abschnitt"
+     "item": null
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "12_a": {
@@ -6513,7 +6420,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "24_b": {
@@ -6578,7 +6485,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "24_d": {
@@ -6620,7 +6527,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "24_e": {
@@ -6645,7 +6552,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "25_a": {
@@ -6687,7 +6594,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "25_b": {
@@ -6712,7 +6619,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "25_c": {
@@ -6737,7 +6644,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "25_d": {
@@ -6762,7 +6669,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "25_e": {
@@ -6787,7 +6694,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "26_a": {
@@ -7267,7 +7174,7 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "5_a": {
@@ -7431,8 +7338,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "82_a": {
@@ -7457,8 +7364,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "83_a": {
@@ -7483,8 +7390,8 @@
     }
    ],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "89_a": {
@@ -7662,7 +7569,7 @@
    ]
   },
   "95_a": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -7680,7 +7587,8 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "teilweise": "Eingefügt durch Ziff. I des BG vom 25. Sept. 2015, in Kraft seit 1. Jan. 2018, Art. 95a Abs. 1 Bst. a gilt bis 31. Dez. 2027 (AS 2016 3101, 2017 6171; BBl 2014 7991)."
     }
    ]
   },
@@ -7723,25 +7631,25 @@
     }
    ],
    "erbt": [
-    14
+    13
    ]
   },
   "95_c": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "95_d": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "95_e": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -7762,7 +7670,7 @@
     }
    ],
    "erbt": [
-    14
+    13
    ]
   },
   "95_f": {
@@ -7827,28 +7735,28 @@
     }
    ],
    "erbt": [
-    14
+    13
    ]
   },
   "95_h": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "95_i": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "95_j": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "95_k": {
@@ -7903,19 +7811,18 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+     "item": null
     }
    ],
    "erbt": [
-    14
+    13
    ]
   },
   "95_l": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    13
    ]
   },
   "98_a": {
@@ -7940,7 +7847,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "98_b": {
@@ -7982,7 +7889,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "99_a": {
@@ -8116,24 +8023,24 @@
     }
    ],
    "erbt": [
-    16,
-    17
+    15,
+    16
    ]
   },
   "99_c": {
-   "giltSeit": "2019-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16,
-    17
+    15,
+    16
    ]
   },
   "99_d": {
-   "giltSeit": "2019-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16,
-    17
+    15,
+    16
    ]
   }
  },

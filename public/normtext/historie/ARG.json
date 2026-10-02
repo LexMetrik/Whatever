@@ -794,7 +794,7 @@
    ]
   },
   "23": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1153,7 +1153,7 @@
    ]
   },
   "35": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1257,8 +1257,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Arbeitnehmer mit Familienpflichten"
+     "item": null
     }
    ],
    "erbt": [
@@ -1322,8 +1321,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Kontrolle, Wirkungen"
+     "item": null
     }
    ]
   },
@@ -2026,7 +2024,7 @@
    "aufgehobenSeit": "2000-08-01"
   },
   "35_a": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -2034,7 +2032,7 @@
    ]
   },
   "35_b": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -2059,8 +2057,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Andere Gruppen von Arbeitnehmern"
+     "item": null
     }
    ],
    "erbt": [
@@ -2153,8 +2150,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Vorschriften über den Gesundheitsschutz"
+     "item": null
     }
    ]
   },

@@ -65,20 +65,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "2001-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2001 138",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2001/31"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "2. Kapitel: Sistierung der Versicherungspflicht und der Unfalldeckung"
-  },
-  {
-   "typ": "fassung",
    "datum": "2003-01-01",
    "wirkung": false,
    "quellen": [
@@ -174,48 +160,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "11. Abschnitt: Planungskriterien"
-  },
-  {
-   "typ": "fassung",
-   "datum": "1998-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1997 2272",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2272_2272_2272"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "3. Kapitel: Tarife und Preise"
-  },
-  {
-   "typ": "eingefuegt",
-   "datum": null,
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1997 2272",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2272_2272_2272"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2026-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2025 834",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2025/834"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
   },
   {
    "typ": "eingefuegt",
@@ -1073,9 +1017,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "19": {
@@ -1421,7 +1362,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "30": {
@@ -1442,7 +1383,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "31": {
@@ -1463,14 +1404,14 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "32": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "33": {
@@ -1611,7 +1552,7 @@
    ]
   },
   "38": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1630,10 +1571,10 @@
    ]
   },
   "39": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "40": {
@@ -1810,7 +1751,7 @@
    ]
   },
   "45": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2266,16 +2207,6 @@
      "frueher": "1. Abschn.",
      "ueberschrift": "2. Abschnitt: Analysenliste"
     }
-   ],
-   "erbt": [
-    12
-   ]
-  },
-  "61": {
-   "giltSeit": "1998-01-01",
-   "ereignisse": [],
-   "erbt": [
-    12
    ]
   },
   "62": {
@@ -2307,13 +2238,10 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "63": {
-   "giltSeit": "1998-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -2322,12 +2250,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "2. Abschn.",
-     "ueberschrift": "3. Abschnitt: Arzneimittelliste mit Tarif"
+     "frueher": "2. Abschn."
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "64": {
@@ -2427,9 +2351,6 @@
      "absatz": "5",
      "item": "b"
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "66": {
@@ -2448,9 +2369,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "67": {
@@ -2482,9 +2400,6 @@
      "absatz": "4bis",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "68": {
@@ -2620,9 +2535,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "69": {
@@ -2667,9 +2579,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "70": {
@@ -2688,9 +2597,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "71": {
@@ -2722,13 +2628,10 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "72": {
-   "giltSeit": "1998-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2771,19 +2674,17 @@
    "aufgehobenSeit": "2024-01-01"
   },
   "73": {
-   "giltSeit": "1998-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12,
-    17
+    13
    ]
   },
   "74": {
-   "giltSeit": "1998-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12,
-    17
+    13
    ]
   },
   "75": {
@@ -2804,8 +2705,7 @@
     }
    ],
    "erbt": [
-    12,
-    17
+    13
    ]
   },
   "77": {
@@ -3528,7 +3428,7 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "120": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3627,7 +3527,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "131": {
@@ -3878,7 +3778,7 @@
    ]
   },
   "105_a": {
-   "giltSeit": "2007-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4387,7 +4287,7 @@
    ]
   },
   "106_b": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4483,7 +4383,7 @@
    ]
   },
   "106_d": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -4491,7 +4391,7 @@
    ]
   },
   "106_e": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -4875,7 +4775,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "28_c": {
@@ -4909,7 +4809,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "30_a": {
@@ -4956,7 +4856,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "30_b": {
@@ -5029,7 +4929,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "30_c": {
@@ -5063,7 +4963,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "31_a": {
@@ -5084,7 +4984,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "35_a": {
@@ -5204,7 +5104,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "37_c": {
@@ -5283,7 +5183,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "37_e": {
@@ -5356,7 +5256,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "37_f": {
@@ -5442,7 +5342,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "37_g": {
@@ -5482,14 +5382,14 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "45_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "50_a": {
@@ -5847,8 +5747,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8a. Abschnitt: Geburtshäuser"
+     "item": null
     }
    ]
   },
@@ -5902,14 +5801,14 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "58_c": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "58_d": {
@@ -5930,7 +5829,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "58_e": {
@@ -5951,7 +5850,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "58_f": {
@@ -5972,7 +5871,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "58_g": {
@@ -5989,8 +5888,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "12. Abschnitt: Qualitätsanforderungen"
+     "item": null
     }
    ]
   },
@@ -6127,7 +6025,7 @@
    ]
   },
   "59_b": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6249,11 +6147,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_c_bis": {
@@ -6272,11 +6165,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_c_quater": {
@@ -6295,11 +6183,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_c_ter": {
@@ -6318,11 +6201,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_d": {
@@ -6354,11 +6232,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_d_bis": {
@@ -6377,11 +6250,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_e": {
@@ -6400,11 +6268,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12,
-    13,
-    14
    ]
   },
   "59_f": {
@@ -6437,9 +6300,6 @@
      "item": null,
      "ueberschrift": "1a. Abschnitt: Datenbekanntgabe"
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "59_g": {
@@ -6460,8 +6320,7 @@
     }
    ],
    "erbt": [
-    12,
-    15
+    11
    ]
   },
   "59_h": {
@@ -6482,8 +6341,7 @@
     }
    ],
    "erbt": [
-    12,
-    15
+    11
    ]
   },
   "59_i": {
@@ -6504,8 +6362,7 @@
     }
    ],
    "erbt": [
-    12,
-    15
+    11
    ]
   },
   "64_a": {
@@ -6589,9 +6446,6 @@
      "absatz": "6",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_a": {
@@ -6623,9 +6477,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_b": {
@@ -6657,9 +6508,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_b_bis": {
@@ -6678,9 +6526,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_b_quater": {
@@ -6699,9 +6544,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_b_ter": {
@@ -6720,9 +6562,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_c": {
@@ -6806,9 +6645,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_c_bis": {
@@ -6827,9 +6663,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_c_quater": {
@@ -6848,9 +6681,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_c_ter": {
@@ -6869,9 +6699,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_d": {
@@ -6942,9 +6769,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_d_bis": {
@@ -6963,9 +6787,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_d_quater": {
@@ -6984,9 +6805,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_d_quinquies": {
@@ -7005,9 +6823,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_d_ter": {
@@ -7039,9 +6854,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_e": {
@@ -7099,9 +6911,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_f": {
@@ -7159,9 +6968,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "65_g": {
@@ -7180,9 +6986,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "66_a": {
@@ -7214,9 +7017,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "66_b": {
@@ -7248,9 +7048,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "67_a": {
@@ -7308,9 +7105,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "68_a": {
@@ -7329,9 +7123,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "69_a": {
@@ -7363,9 +7154,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "69_b": {
@@ -7384,9 +7172,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "6_a": {
@@ -7449,9 +7234,6 @@
      "absatz": null,
      "item": "d"
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "70_b": {
@@ -7505,9 +7287,6 @@
      "absatz": "1bis",
      "item": null
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "71_a": {
@@ -7553,9 +7332,6 @@
      "item": null,
      "ueberschrift": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
     }
-   ],
-   "erbt": [
-    12
    ]
   },
   "71_b": {
@@ -7589,8 +7365,7 @@
     }
    ],
    "erbt": [
-    12,
-    16
+    12
    ]
   },
   "71_c": {
@@ -7624,8 +7399,7 @@
     }
    ],
    "erbt": [
-    12,
-    16
+    12
    ]
   },
   "71_d": {
@@ -7698,8 +7472,7 @@
     }
    ],
    "erbt": [
-    12,
-    16
+    12
    ]
   },
   "71_e": {
@@ -7733,8 +7506,7 @@
     }
    ],
    "erbt": [
-    12,
-    16
+    12
    ]
   },
   "71_f": {
@@ -7755,12 +7527,11 @@
     }
    ],
    "erbt": [
-    12,
-    16
+    12
    ]
   },
   "75_a": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -7779,38 +7550,38 @@
    ]
   },
   "75_b": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    14
    ]
   },
   "75_c": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    14
    ]
   },
   "75_d": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    14
    ]
   },
   "75_e": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    14
    ]
   },
   "75_f": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    14
    ]
   },
   "76_a": {
@@ -8110,7 +7881,7 @@
    ]
   },
   "77_l": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8129,45 +7900,45 @@
    ]
   },
   "77_m": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "77_n": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "77_o": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "77_p": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "77_q": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "77_r": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    19
+    15
    ]
   },
   "78_a_78_c": {
@@ -8510,7 +8281,7 @@
    ]
   },
   "92_a": {
-   "giltSeit": "2012-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8588,8 +8359,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1b. Abschnitt: Prämien von nothilfeberechtigten Personen nach Artikel 82 AsylG"
+     "item": null
     }
    ]
   }

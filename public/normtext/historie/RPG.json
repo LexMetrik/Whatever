@@ -844,7 +844,7 @@
    ]
   },
   "21": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -867,14 +867,14 @@
    ]
   },
   "22": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "23": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -2184,8 +2184,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2b. Abschnitt: Berichterstattung"
+     "item": null
     }
    ]
   },

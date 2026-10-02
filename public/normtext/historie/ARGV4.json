@@ -8,20 +8,6 @@
  },
  "ueberschriftEreignisse": [
   {
-   "typ": "fassung",
-   "datum": "2000-08-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2000 1636",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-  },
-  {
    "typ": "eingefuegt",
    "datum": "2000-08-01",
    "wirkung": false,
@@ -288,13 +274,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich"
+     "item": null
     }
    ]
   },
   "2": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -337,15 +322,14 @@
    ]
   },
   "3": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    6
+    5
    ]
   },
   "4": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -361,21 +345,17 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Arbeitsräume"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "5": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    9
+    8
    ]
   },
   "6": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -391,9 +371,6 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Verkehrswege"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "7": {
@@ -414,8 +391,7 @@
     }
    ],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "8": {
@@ -462,8 +438,7 @@
     }
    ],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "9": {
@@ -497,8 +472,7 @@
     }
    ],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "10": {
@@ -519,60 +493,53 @@
     }
    ],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "11": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "12": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "13": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "14": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "15": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "16": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    1
+    0
    ]
   },
   "17": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -588,17 +555,13 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Licht, Raumluft"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "18": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0,
-    2
+    1
    ]
   },
   "19": {
@@ -631,9 +594,6 @@
      "item": null,
      "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "20": {
@@ -654,8 +614,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "21": {
@@ -676,8 +635,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "22": {
@@ -698,8 +656,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "23": {
@@ -720,8 +677,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "24": {
@@ -742,8 +698,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "25": {
@@ -764,8 +719,7 @@
     }
    ],
    "erbt": [
-    0,
-    3
+    2
    ]
   },
   "26": {
@@ -798,9 +752,6 @@
      "item": null,
      "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
     }
-   ],
-   "erbt": [
-    0
    ]
   },
   "27": {
@@ -834,12 +785,11 @@
     }
    ],
    "erbt": [
-    0,
-    4
+    3
    ]
   },
   "28": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -868,24 +818,24 @@
    ]
   },
   "29": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "30": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "31": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "32": {
@@ -906,11 +856,11 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "33": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -927,7 +877,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "34": {
@@ -948,7 +898,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "35": {
@@ -969,7 +919,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "36": {
@@ -990,7 +940,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "37": {
@@ -1036,17 +986,17 @@
    ]
   },
   "38": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "39": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "40": {
@@ -1067,7 +1017,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "41": {
@@ -1114,14 +1064,14 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "42": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "43": {
@@ -1142,7 +1092,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "44": {
@@ -1176,25 +1126,25 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "45": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "46": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "47": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1223,10 +1173,10 @@
    ]
   },
   "48": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   }
  },

@@ -65,20 +65,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "2019-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2018 3849",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
-  },
-  {
-   "typ": "fassung",
    "datum": "2008-03-15",
    "wirkung": false,
    "quellen": [
@@ -90,20 +76,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2019-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2018 3849",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "2. Kapitel: Bewilligungs- und Meldepflichten"
   },
   {
    "typ": "eingefuegt",
@@ -277,7 +249,7 @@
    ]
   },
   "4": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -296,21 +268,21 @@
    ]
   },
   "5": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "6": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "7": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -372,7 +344,7 @@
    ]
   },
   "10": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -426,21 +398,21 @@
    ]
   },
   "12": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "13": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "14": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -468,14 +440,14 @@
    ]
   },
   "16": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "17": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -503,21 +475,21 @@
    ]
   },
   "19": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "20": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "21": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -686,7 +658,7 @@
    ]
   },
   "26": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1044,16 +1016,14 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "60": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "61": {
@@ -1074,8 +1044,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "62": {
@@ -1096,8 +1065,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "63": {
@@ -1118,9 +1086,7 @@
     }
    ],
    "erbt": [
-    4,
-    6,
-    7
+    5
    ]
   },
   "64": {
@@ -1154,9 +1120,7 @@
     }
    ],
    "erbt": [
-    4,
-    6,
-    7
+    5
    ]
   },
   "65": {
@@ -1177,9 +1141,7 @@
     }
    ],
    "erbt": [
-    4,
-    6,
-    7
+    5
    ]
   },
   "66": {
@@ -1212,9 +1174,6 @@
      "item": null,
      "ueberschrift": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "67": {
@@ -1235,8 +1194,7 @@
     }
    ],
    "erbt": [
-    4,
-    9
+    7
    ]
   },
   "68": {
@@ -1257,8 +1215,7 @@
     }
    ],
    "erbt": [
-    4,
-    9
+    7
    ]
   },
   "69": {
@@ -1279,8 +1236,7 @@
     }
    ],
    "erbt": [
-    4,
-    9
+    7
    ]
   },
   "70": {
@@ -1301,8 +1257,7 @@
     }
    ],
    "erbt": [
-    4,
-    9
+    7
    ]
   },
   "71": {
@@ -1321,9 +1276,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "72": {
@@ -1342,9 +1294,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "73": {
@@ -1363,9 +1312,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "23_a": {
@@ -1564,7 +1510,7 @@
    ]
   },
   "27_b": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1605,7 +1551,7 @@
    ]
   },
   "27_c": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1633,14 +1579,14 @@
    ]
   },
   "27_e": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "27_f": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "berichtigt",
@@ -1661,14 +1607,14 @@
    ]
   },
   "27_g": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "27_h": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1767,7 +1713,7 @@
    ]
   },
   "29_d": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1775,7 +1721,7 @@
    ]
   },
   "29_e": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1783,7 +1729,7 @@
    ]
   },
   "29_f": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1813,7 +1759,7 @@
    ]
   },
   "29_h": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1821,7 +1767,7 @@
    ]
   },
   "29_i": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -2160,7 +2106,7 @@
    "aufgehobenSeit": "2014-09-01"
   },
   "58_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -2220,8 +2166,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "59_a": {
@@ -2242,8 +2187,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "62_a": {
@@ -2266,7 +2210,7 @@
    "aufgehobenSeit": "2019-01-01"
   },
   "62_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2336,7 +2280,7 @@
    "aufgehobenSeit": "2019-01-01"
   },
   "65_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2352,28 +2296,20 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
     }
-   ],
-   "erbt": [
-    4,
-    6
    ]
   },
   "65_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    6,
-    8
+    6
    ]
   },
   "65_c": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    6,
-    8
+    6
    ]
   },
   "66_a_66_b": {
@@ -2435,8 +2371,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5a. Titel: Strafbestimmung"
+     "item": null
     }
    ]
   },

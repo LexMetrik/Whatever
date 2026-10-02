@@ -80,24 +80,6 @@
    "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
   },
   {
-   "typ": "eingefuegt",
-   "datum": "2000-09-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2000 1891",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
-    },
-    {
-     "label": "BBl 1999 9005",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
-  },
-  {
    "typ": "fassung",
    "datum": "2023-09-01",
    "wirkung": false,
@@ -222,42 +204,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "Drittes Kapitel: Information über Verträge der Kantone unter sich oder mit dem Ausland"
-  },
-  {
-   "typ": "eingefuegt",
-   "datum": "2000-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1999 3071",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-    },
-    {
-     "label": "BBl 1998 2591",
-     "url": ""
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
-  },
-  {
-   "typ": "eingefuegt",
-   "datum": "2003-12-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2003 3543",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2003/510"
-    },
-    {
-     "label": "BBl 2001 3467 5428",
-     "url": ""
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
   }
  ],
  "artikel": {
@@ -752,7 +698,7 @@
    ]
   },
   "51": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -775,7 +721,7 @@
    ]
   },
   "52": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -866,14 +812,14 @@
    ]
   },
   "55": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "56": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -949,8 +895,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Externe Beratung"
+     "item": null
     }
    ]
   },
@@ -1037,7 +982,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "63": {
@@ -1303,8 +1248,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Kapitel: Gebühren"
+     "item": null
     }
    ]
   },
@@ -1348,7 +1292,7 @@
    ]
   },
   "57_a": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1374,7 +1318,7 @@
    ]
   },
   "57_b": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1382,7 +1326,7 @@
    ]
   },
   "57_c": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1390,7 +1334,7 @@
    ]
   },
   "57_d": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1398,7 +1342,7 @@
    ]
   },
   "57_e": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1406,7 +1350,7 @@
    ]
   },
   "57_f": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1436,7 +1380,7 @@
    ]
   },
   "57_h": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -1523,23 +1467,21 @@
    ]
   },
   "57_h_bis": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
     5,
-    6,
-    7
+    6
    ]
   },
   "57_h_ter": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
     5,
-    6,
-    7
+    6
    ]
   },
   "57_i": {
@@ -1600,8 +1542,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "57_j": {
@@ -1627,9 +1568,8 @@
    ],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_k": {
@@ -1655,9 +1595,8 @@
    ],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_l": {
@@ -1717,63 +1656,57 @@
    ],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_m": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_n": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_o": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_p": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_q": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    8,
-    9
+    7,
+    8
    ]
   },
   "57_r": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1795,26 +1728,23 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "57_s": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    10
+    9
    ]
   },
   "57_t": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
-    5,
-    10
+    9
    ]
   },
   "61_a": {
@@ -1893,8 +1823,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 62",
-     "ueberschrift": "Zweites Kapitel: Genehmigung kantonaler Erlasse"
+     "frueher": "vor Art. 62"
     },
     {
      "typ": "fassung",
@@ -1911,8 +1840,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweites Kapitel: Genehmigung kantonaler Erlasse"
+     "item": null
     }
    ]
   },
@@ -1957,7 +1885,7 @@
    ]
   },
   "62_a": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -1989,22 +1917,8 @@
     }
    ]
   },
-  "62_b": {
-   "giltSeit": "2000-01-01",
-   "ereignisse": [],
-   "erbt": [
-    12
-   ]
-  },
-  "62_c": {
-   "giltSeit": "2000-01-01",
-   "ereignisse": [],
-   "erbt": [
-    12
-   ]
-  },
   "62_d": {
-   "giltSeit": "2003-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -2036,13 +1950,6 @@
     }
    ]
   },
-  "62_e": {
-   "giltSeit": "2003-12-01",
-   "ereignisse": [],
-   "erbt": [
-    13
-   ]
-  },
   "62_f": {
    "giltSeit": "2003-12-01",
    "ereignisse": [
@@ -2053,8 +1960,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweites Kapitelquater",
-     "ueberschrift": "Sechstes Kapitel: Hausrecht"
+     "frueher": "Zweites Kapitelquater"
     },
     {
      "typ": "eingefuegt",
@@ -2071,8 +1977,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Sechstes Kapitel: Hausrecht"
+     "item": null
     }
    ]
   },

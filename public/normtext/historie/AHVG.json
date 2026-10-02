@@ -2,8 +2,8 @@
  "erlass": "AHVG",
  "abdeckung": {
   "fussnoten": 469,
-  "ereignis": 387,
-  "referenz": 81,
+  "ereignis": 386,
+  "referenz": 82,
   "unparsed": 1
  },
  "ueberschriftEreignisse": [
@@ -45,7 +45,7 @@
   },
   {
    "typ": "fassung",
-   "datum": "2024-01-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -59,25 +59,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "IV. Flexibler Rentenbezug"
-  },
-  {
-   "typ": "fassung",
-   "datum": "1960-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1959 854",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1959/854_884_872"
-    },
-    {
-     "label": "BBl 1958 II 1137",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1958/2_1137_1161_975"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "C. Die ausserordentlichen Renten"
+   "ueberschrift": "IV. Flexibler Rentenbezug",
+   "teilweise": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40c in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92; BBl 2019 6305). Siehe auch die UeB dieser Änd. am Schluss des Textes."
   },
   {
    "typ": "eingefuegt",
@@ -114,24 +97,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
-  },
-  {
-   "typ": "fassung",
-   "datum": null,
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2006 3459",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-    },
-    {
-     "label": "BBl 1999 1979",
-     "url": ""
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
   }
  ],
  "artikel": {
@@ -170,8 +135,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt: Anwendbarkeit des ATSG"
+     "item": null
     }
    ]
   },
@@ -1509,7 +1473,7 @@
    "aufgehobenSeit": "1997-01-01"
   },
   "23": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1532,7 +1496,7 @@
    ]
   },
   "24": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -1897,7 +1861,7 @@
    ]
   },
   "39": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1915,12 +1879,13 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "IV. Flexibler Rentenbezug"
+     "ueberschrift": "IV. Flexibler Rentenbezug",
+     "teilweise": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40c in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92; BBl 2019 6305). Siehe auch die UeB dieser Änd. am Schluss des Textes."
     }
    ]
   },
   "40": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1987,8 +1952,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "als Ziff. IV vor Art. 39 und später 40",
-     "ueberschrift": "V. Die Kürzung der ordentlichen Renten"
+     "frueher": "als Ziff. IV vor Art. 39 und später 40"
     }
    ]
   },
@@ -2103,9 +2067,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "44": {
@@ -3853,24 +3814,6 @@
      ],
      "absatz": null,
      "item": null
-    },
-    {
-     "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
     }
    ]
   },
@@ -3928,9 +3871,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    6
    ]
   },
   "89": {
@@ -3976,9 +3916,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    6
    ]
   },
   "91": {
@@ -4035,9 +3972,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    6
    ]
   },
   "92": {
@@ -5020,13 +4954,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Teil: Verhältnis zum europäischen Recht"
+     "item": null
     }
    ]
   },
   "153_b": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5049,49 +4982,49 @@
    ]
   },
   "153_c": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_d": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_e": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_f": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_g": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_h": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "153_i": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -5489,7 +5422,7 @@
    ]
   },
   "24_a": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -6508,21 +6441,21 @@
    ]
   },
   "40_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "40_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "40_c": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -6838,8 +6771,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    3,
+    4
    ]
   },
   "43_quinquies": {
@@ -6921,8 +6854,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    3,
+    4
    ]
   },
   "48_bis_48_sexies": {

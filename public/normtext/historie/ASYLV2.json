@@ -89,20 +89,6 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "2. Kapitel: Verwaltungskosten"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2008-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2007 5585",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-    }
-   ],
-   "absatz": null,
-   "item": null,
    "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
   },
   {
@@ -337,7 +323,7 @@
    ]
   },
   "4": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -773,7 +759,7 @@
    ]
   },
   "21": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -1033,7 +1019,7 @@
    ]
   },
   "25": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -1215,7 +1201,7 @@
    ]
   },
   "30": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1303,13 +1289,6 @@
     }
    ]
   },
-  "32": {
-   "giltSeit": "2008-01-01",
-   "ereignisse": [],
-   "erbt": [
-    5
-   ]
-  },
   "40": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
@@ -1395,7 +1374,8 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "1. Abschnitt: Sicherheitskosten"
+     "ueberschrift": "1. Abschnitt: Sicherheitskosten",
+     "teilweise": "Eingefügt durch Anhang der V vom 4. Sept. 2013, in Kraft vom 1. Okt. 2013 bis zum 28. Sept. 2015 (AS 2013 3065)."
     }
    ]
   },
@@ -1427,7 +1407,8 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "1a. Abschnitt: Einrichtungen für traumatisierte Personen"
+     "ueberschrift": "1a. Abschnitt: Einrichtungen für traumatisierte Personen",
+     "teilweise": "Fassung gemäss Anhang der V vom 4. Sept. 2013, in Kraft vom 1. Okt. 2013 bis zum 28. Sept. 2015 (AS 2013 3065)."
     }
    ]
   },
@@ -1500,28 +1481,28 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "48": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "49": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "50": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "51": {
@@ -1639,7 +1620,7 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "53": {
@@ -2099,7 +2080,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "67": {
@@ -2120,7 +2101,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "68": {
@@ -2154,7 +2135,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "71": {
@@ -2220,11 +2201,11 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "73": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2299,14 +2280,14 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "75": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "76": {
@@ -2327,7 +2308,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "77": {
@@ -2348,7 +2329,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "78": {
@@ -2369,7 +2350,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "83": {
@@ -2554,11 +2535,11 @@
     }
    ],
    "erbt": [
-    7
+    6
    ]
   },
   "52_a": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2577,10 +2558,10 @@
    ]
   },
   "52_b": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "52_c": {
@@ -2601,35 +2582,35 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "52_d": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "52_e": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "52_f": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "52_g": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "53_a": {
@@ -2976,11 +2957,11 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "74_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2997,7 +2978,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "76_a": {
@@ -3031,7 +3012,7 @@
     }
    ],
    "erbt": [
-    11
+    10
    ]
   },
   "79_80": {
@@ -3054,7 +3035,7 @@
    "aufgehobenSeit": "2019-03-01"
   },
   "8_9": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",

@@ -98,24 +98,6 @@
    "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
   },
   {
-   "typ": "fassung",
-   "datum": "2004-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2004 2767",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
-    },
-    {
-     "label": "BBl 2002 8060",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
-  },
-  {
    "typ": "eingefuegt",
    "datum": "2023-01-01",
    "wirkung": false,
@@ -132,24 +114,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
-  },
-  {
-   "typ": "fassung",
-   "datum": "2004-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2004 2767",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
-    },
-    {
-     "label": "BBl 2002 8060",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
   },
   {
    "typ": "eingefuegt",
@@ -594,7 +558,7 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "6": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -617,7 +581,7 @@
    ]
   },
   "7": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -640,21 +604,21 @@
    ]
   },
   "8": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "9": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "10": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -718,14 +682,14 @@
    ]
   },
   "12": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "13": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -1538,9 +1502,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "35": {
@@ -1563,16 +1524,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    5
-   ]
-  },
-  "36": {
-   "giltSeit": "2004-07-01",
-   "ereignisse": [],
-   "erbt": [
-    5
    ]
   },
   "37": {
@@ -1595,9 +1546,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "38": {
@@ -1972,7 +1920,7 @@
    "aufgehobenSeit": "1971-07-01"
   },
   "10_a": {
-   "giltSeit": "2012-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -2831,9 +2779,6 @@
      "absatz": "7",
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "37_b": {
@@ -2856,9 +2801,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "37_c": {
@@ -2904,9 +2846,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "37_e": {
@@ -2946,16 +2885,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    5
-   ]
-  },
-  "37_f": {
-   "giltSeit": "2004-07-01",
-   "ereignisse": [],
-   "erbt": [
-    5
    ]
   },
   "37_g": {
@@ -3012,13 +2941,10 @@
      "absatz": "5",
      "item": null
     }
-   ],
-   "erbt": [
-    5
    ]
   },
   "37_g_bis": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3041,24 +2967,24 @@
    ]
   },
   "37_g_quater": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "37_g_quinquies": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "37_g_ter": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "37_h": {
@@ -3165,9 +3091,6 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    7
    ]
   },
   "37_j": {
@@ -3207,9 +3130,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    7
    ]
   },
   "37_j_bis": {
@@ -3232,9 +3152,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    7
    ]
   },
   "37_k": {
@@ -3257,9 +3174,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    7
    ]
   },
   "37_l": {
@@ -3324,7 +3238,7 @@
     }
    ],
    "erbt": [
-    8
+    6
    ]
   },
   "3_a": {
@@ -3366,7 +3280,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_b": {
@@ -3391,7 +3305,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_bis": {
@@ -3518,7 +3432,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_c": {
@@ -3560,7 +3474,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_d": {
@@ -3602,7 +3516,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_e": {
@@ -3627,7 +3541,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_f": {
@@ -3652,7 +3566,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_g": {
@@ -3711,7 +3625,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_h": {
@@ -3776,7 +3690,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "3_ter": {
@@ -3835,7 +3749,7 @@
     }
    ],
    "erbt": [
-    9
+    7
    ]
   },
   "40_45": {
@@ -3900,7 +3814,7 @@
     }
    ],
    "erbt": [
-    10
+    8
    ]
   },
   "4_quater": {
@@ -3925,7 +3839,7 @@
     }
    ],
    "erbt": [
-    10
+    8
    ]
   },
   "4_quinquies": {
@@ -3950,7 +3864,7 @@
     }
    ],
    "erbt": [
-    10
+    8
    ]
   },
   "4_sexies": {
@@ -3975,7 +3889,7 @@
     }
    ],
    "erbt": [
-    10
+    8
    ]
   },
   "4_ter": {
@@ -4017,7 +3931,7 @@
     }
    ],
    "erbt": [
-    10
+    8
    ]
   },
   "50_bis": {
@@ -4123,17 +4037,17 @@
    ]
   },
   "6_a": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    9
    ]
   },
   "6_b": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    9
    ]
   }
  },

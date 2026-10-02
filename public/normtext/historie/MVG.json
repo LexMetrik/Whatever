@@ -117,8 +117,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Anwendbarkeit des ATSG"
+     "item": null
     }
    ]
   },
@@ -1762,7 +1761,7 @@
    ]
   },
   "84": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -1819,7 +1818,7 @@
    "aufgehobenSeit": "2022-01-01"
   },
   "94": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2529,7 +2528,7 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "66_a": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2552,14 +2551,14 @@
    ]
   },
   "66_b": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "66_c": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "berichtigt",
@@ -2575,7 +2574,7 @@
    ]
   },
   "66_d": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -2670,7 +2669,7 @@
    ]
   },
   "85_87": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",

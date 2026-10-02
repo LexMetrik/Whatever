@@ -134,20 +134,6 @@
    "ueberschrift": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
   },
   {
-   "typ": "fassung",
-   "datum": "2005-12-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2004 5057",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2004/780"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "132 Ausweisentzug"
-  },
-  {
    "typ": "eingefuegt",
    "datum": "2005-12-01",
    "wirkung": false,
@@ -699,7 +685,7 @@
    ],
    "erbt": [
     0,
-    12
+    11
    ]
   },
   "5": {
@@ -734,7 +720,7 @@
    ],
    "erbt": [
     0,
-    12
+    11
    ]
   },
   "6": {
@@ -1151,7 +1137,7 @@
    ]
   },
   "10": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1181,7 +1167,7 @@
    ]
   },
   "12": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -1658,7 +1644,7 @@
    ]
   },
   "23": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -2126,8 +2112,7 @@
    ],
    "erbt": [
     0,
-    6,
-    9
+    6
    ]
   },
   "33": {
@@ -2201,8 +2186,7 @@
    ],
    "erbt": [
     0,
-    6,
-    9
+    6
    ]
   },
   "34": {
@@ -2224,8 +2208,7 @@
    ],
    "erbt": [
     0,
-    6,
-    9
+    6
    ]
   },
   "35": {
@@ -2424,7 +2407,7 @@
    "erbt": [
     0,
     6,
-    11
+    10
    ]
   },
   "40": {
@@ -2587,7 +2570,7 @@
    "erbt": [
     0,
     6,
-    13
+    12
    ]
   },
   "42": {
@@ -3029,7 +3012,7 @@
    ]
   },
   "66": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -3070,7 +3053,7 @@
    ]
   },
   "68": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -3098,7 +3081,7 @@
    ]
   },
   "70": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -5406,7 +5389,7 @@
    "aufgehobenSeit": "2019-01-01"
   },
   "12_a": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -6367,7 +6350,7 @@
    ]
   },
   "27_f": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -6375,7 +6358,7 @@
    ]
   },
   "27_g": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -6526,7 +6509,7 @@
    "erbt": [
     0,
     6,
-    10
+    9
    ]
   },
   "35_b": {
@@ -6549,7 +6532,7 @@
    "erbt": [
     0,
     6,
-    10
+    9
    ]
   },
   "38_39": {
@@ -6625,7 +6608,7 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "5_a": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6678,47 +6661,47 @@
    ],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_b": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_c": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_d": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_e": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_f": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_g": {
@@ -6740,15 +6723,15 @@
    ],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_h": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_i": {
@@ -6783,7 +6766,7 @@
    ],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_j": {
@@ -6805,11 +6788,11 @@
    ],
    "erbt": [
     0,
-    14
+    13
    ]
   },
   "5_k": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -6840,7 +6823,7 @@
    ]
   },
   "64_a": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6862,11 +6845,11 @@
    ]
   },
   "64_b": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    15
+    14
    ]
   },
   "64_c": {
@@ -6888,7 +6871,7 @@
    ],
    "erbt": [
     0,
-    15
+    14
    ]
   },
   "64_d": {
@@ -6923,23 +6906,23 @@
    ],
    "erbt": [
     0,
-    15
+    14
    ]
   },
   "64_e": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    15
+    14
    ]
   },
   "64_f": {
-   "giltSeit": "2005-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
-    15
+    14
    ]
   },
   "68_a": {
@@ -7048,7 +7031,7 @@
     }
    ],
    "erbt": [
-    16
+    15
    ]
   },
   "98_104": {

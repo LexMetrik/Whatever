@@ -707,7 +707,7 @@
    "aufgehobenSeit": "2022-01-01"
   },
   "20_b": {
-   "giltSeit": "2018-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -740,7 +740,7 @@
    ]
   },
   "20_c": {
-   "giltSeit": "2018-06-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,

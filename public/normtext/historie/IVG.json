@@ -226,7 +226,7 @@
  ],
  "artikel": {
   "1": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2022-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -278,8 +278,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Anwendbarkeit des ATSG"
+     "item": null
     },
     {
      "typ": "fassung",
@@ -296,8 +295,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Anwendbarkeit des ATSG"
+     "item": null
     }
    ]
   },
@@ -3291,7 +3289,7 @@
    ]
   },
   "56": {
-   "giltSeit": "1992-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7,
@@ -3641,7 +3639,7 @@
    ]
   },
   "61": {
-   "giltSeit": "1992-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7,
@@ -4431,7 +4429,7 @@
    ]
   },
   "80": {
-   "giltSeit": "1988-01-01",
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4482,8 +4480,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Die Überwachung des finanziellen Gleichgewichts"
+     "item": null
     }
    ]
   },
@@ -4769,8 +4766,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "IIbis",
-     "ueberschrift": "IIter. Die Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "frueher": "IIbis"
     },
     {
      "typ": "eingefuegt",
@@ -4787,8 +4783,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IIter. Die Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "item": null
     }
    ],
    "erbt": [
@@ -4880,8 +4875,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IIbis. Beratung und Begleitung"
+     "item": null
     }
    ],
    "erbt": [
@@ -5082,8 +5076,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Zweck"
+     "item": null
     }
    ]
   },
@@ -5097,8 +5090,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "1. Abschn. a",
-     "ueberschrift": "1b. Kapitel: Die versicherten Personen"
+     "frueher": "1. Abschn. a"
     },
     {
      "typ": "eingefuegt",
@@ -5115,8 +5107,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1b. Kapitel: Die versicherten Personen"
+     "item": null
     }
    ]
   },
@@ -6020,8 +6011,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "A. Eingliederungsorientierte Beratung"
+     "item": null
     }
    ]
   },
@@ -6251,14 +6241,14 @@
    ]
   },
   "42_octies": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "42_quater": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -6281,7 +6271,7 @@
    ]
   },
   "42_quinquies": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -7708,8 +7698,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Massnahmen der Frühintervention"
+     "item": null
     }
    ]
   },
@@ -7774,8 +7763,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Teil: Verhältnis zum europäischen Recht"
+     "item": null
     }
    ]
   },

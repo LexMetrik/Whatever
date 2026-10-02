@@ -51,20 +51,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "2005-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2005 3",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-  },
-  {
-   "typ": "fassung",
    "datum": "2026-01-01",
    "wirkung": false,
    "quellen": [
@@ -529,7 +515,7 @@
    ]
   },
   "15": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -548,10 +534,10 @@
    ]
   },
   "16": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    3
    ]
   },
   "18": {
@@ -3350,7 +3336,7 @@
    ]
   },
   "110": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3421,7 +3407,7 @@
    "aufgehobenSeit": "2013-07-01"
   },
   "113": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3734,13 +3720,6 @@
     }
    ]
   },
-  "117": {
-   "giltSeit": "2005-01-01",
-   "ereignisse": [],
-   "erbt": [
-    3
-   ]
-  },
   "103_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
@@ -3820,7 +3799,7 @@
    ]
   },
   "104_b": {
-   "giltSeit": "2014-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -3848,14 +3827,14 @@
    ]
   },
   "104_d": {
-   "giltSeit": "2014-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "104_e": {
-   "giltSeit": "2014-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -4004,7 +3983,7 @@
    ]
   },
   "106_a": {
-   "giltSeit": "2016-12-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -4208,9 +4187,6 @@
      "absatz": "5",
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_d": {
@@ -4274,9 +4250,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_f": {
@@ -4295,9 +4268,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_g": {
@@ -4316,9 +4286,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_h": {
@@ -4337,9 +4304,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_i": {
@@ -4390,9 +4354,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_k": {
@@ -4411,9 +4372,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_l": {
@@ -4432,9 +4390,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_m": {
@@ -4622,9 +4577,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "116_n": {
@@ -4643,9 +4595,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    3
    ]
   },
   "11_a": {
@@ -6071,17 +6020,17 @@
    ]
   },
   "88_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "88_c": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "88_d": {
@@ -6102,7 +6051,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "88_d_bis": {
@@ -6123,7 +6072,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "88_d_ter": {
@@ -6144,7 +6093,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "88_e": {
@@ -6249,7 +6198,7 @@
     }
    ],
    "erbt": [
-    5
+    4
    ]
   },
   "88_g_88_j": {

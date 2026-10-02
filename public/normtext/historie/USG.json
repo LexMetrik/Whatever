@@ -81,24 +81,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "1997-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1997 1155",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
-    },
-    {
-     "label": "BBl 1993 II 1445",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "4. Kapitel: Abfälle"
-  },
-  {
-   "typ": "fassung",
    "datum": "2006-11-01",
    "wirkung": false,
    "quellen": [
@@ -114,24 +96,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
-  },
-  {
-   "typ": "fassung",
-   "datum": "1997-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 1997 1155",
-     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
-    },
-    {
-     "label": "BBl 1993 II 1445",
-     "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "5. Kapitel: Belastungen des Bodens"
   },
   {
    "typ": "eingefuegt",
@@ -913,7 +877,7 @@
    ]
   },
   "30": {
-   "giltSeit": "1997-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -943,20 +907,6 @@
      "item": null,
      "ueberschrift": "4. Kapitel: Abfälle"
     }
-   ]
-  },
-  "31": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
-  "32": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
    ]
   },
   "33": {
@@ -1029,16 +979,6 @@
      "absatz": "3",
      "item": null
     }
-   ],
-   "erbt": [
-    6
-   ]
-  },
-  "35": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    6
    ]
   },
   "37": {
@@ -1615,7 +1555,7 @@
    ]
   },
   "54": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": "2007-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1658,8 +1598,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "1. Abschn.",
-     "ueberschrift": "1a. Abschnitt: Rechtspflege"
+     "frueher": "1. Abschn."
     },
     {
      "typ": "eingefuegt",
@@ -1676,8 +1615,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Rechtspflege"
+     "item": null
     }
    ]
   },
@@ -1779,10 +1717,10 @@
    ]
   },
   "57": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    11
    ]
   },
   "58": {
@@ -1841,7 +1779,7 @@
     }
    ],
    "erbt": [
-    13
+    11
    ]
   },
   "59": {
@@ -1862,8 +1800,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Informations- und Dokumentationssysteme"
+     "item": null
     }
    ]
   },
@@ -2475,7 +2412,7 @@
    ]
   },
   "10_a": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2523,21 +2460,21 @@
    ]
   },
   "10_c": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "10_d": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "10_e": {
-   "giltSeit": "2014-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2560,14 +2497,14 @@
    ]
   },
   "10_f": {
-   "giltSeit": "2014-06-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "10_g": {
-   "giltSeit": "2014-06-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -2591,13 +2528,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Schonung der natürlichen Ressourcen und Stärkung der Kreislaufwirtschaft"
+     "item": null
     }
    ]
   },
   "29_a": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2638,7 +2574,7 @@
    ]
   },
   "29_b": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2646,7 +2582,7 @@
    ]
   },
   "29_c": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2654,7 +2590,7 @@
    ]
   },
   "29_d": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2688,7 +2624,7 @@
    ]
   },
   "29_e": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2696,7 +2632,7 @@
    ]
   },
   "29_f": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2704,7 +2640,7 @@
    ]
   },
   "29_g": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -2734,27 +2670,6 @@
    ],
    "aufgehobenSeit": "2014-06-01"
   },
-  "30_a": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
-  "30_b": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
-  "30_c": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
   "30_d": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
@@ -2775,20 +2690,10 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
-   ]
-  },
-  "30_e": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
    ]
   },
   "30_f": {
-   "giltSeit": "1997-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2807,13 +2712,10 @@
      "absatz": "4",
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "30_g": {
-   "giltSeit": "1997-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2832,23 +2734,6 @@
      "absatz": "2",
      "item": null
     }
-   ],
-   "erbt": [
-    4
-   ]
-  },
-  "30_h": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
-  "31_a": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
    ]
   },
   "31_b": {
@@ -2888,16 +2773,6 @@
      "absatz": "7",
      "item": null
     }
-   ],
-   "erbt": [
-    4
-   ]
-  },
-  "31_c": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
    ]
   },
   "32_a": {
@@ -2920,9 +2795,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_bis": {
@@ -3035,9 +2907,6 @@
      "absatz": "5",
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_octies": {
@@ -3060,9 +2929,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_quater": {
@@ -3085,9 +2951,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_quinquies": {
@@ -3110,9 +2973,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_septies": {
@@ -3135,9 +2995,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_a_sexies": {
@@ -3160,23 +3017,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
-   ]
-  },
-  "32_a_ter": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
-   ]
-  },
-  "32_b": {
-   "giltSeit": "1997-07-01",
-   "ereignisse": [],
-   "erbt": [
-    4
    ]
   },
   "32_b_bis": {
@@ -3199,9 +3039,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_c": {
@@ -3276,17 +3113,13 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "32_d": {
-   "giltSeit": "2006-11-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "32_d_bis": {
@@ -3311,8 +3144,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "32_e": {
@@ -3388,8 +3220,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "32_e_bis": {
@@ -3414,8 +3245,7 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "32_e_ter": {
@@ -3440,12 +3270,11 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    4
    ]
   },
   "35_a": {
-   "giltSeit": "1997-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3603,7 +3432,7 @@
     }
    ],
    "erbt": [
-    7
+    5
    ]
   },
   "35_d": {
@@ -3660,8 +3489,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
+     "item": null
     },
     {
      "typ": "fassung",
@@ -3678,8 +3506,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
+     "item": null
     },
     {
      "typ": "fassung",
@@ -3696,13 +3523,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
+     "item": null
     }
    ]
   },
   "35_e": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3742,38 +3568,38 @@
     }
    ],
    "erbt": [
+    6,
+    7
+   ]
+  },
+  "35_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6,
+    7,
     8,
     9
    ]
   },
-  "35_f": {
-   "giltSeit": "2025-01-01",
-   "ereignisse": [],
-   "erbt": [
-    8,
-    9,
-    10,
-    11
-   ]
-  },
   "35_g": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
+    6,
+    7,
     8,
-    9,
-    10,
-    11
+    9
    ]
   },
   "35_h": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
+    6,
+    7,
     8,
-    9,
-    10,
-    11
+    9
    ]
   },
   "35_i": {
@@ -3794,13 +3620,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Ressourcenschonende Gestaltung von Produkten und Verpackungen"
+     "item": null
     }
    ],
    "erbt": [
-    8,
-    9
+    6,
+    7
    ]
   },
   "35_j": {
@@ -3821,13 +3646,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ressourcenschonendes Bauen"
+     "item": null
     }
    ],
    "erbt": [
-    8,
-    9
+    6,
+    7
    ]
   },
   "41_a": {
@@ -3865,8 +3689,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Zusammenarbeit mit der Wirtschaft"
+     "item": null
     }
    ]
   },
@@ -3976,8 +3799,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Elektronische Kommunikation in Verwaltungsverfahren"
+     "item": null
     }
    ]
   },
@@ -4003,7 +3825,7 @@
     }
    ],
    "erbt": [
-    12
+    10
    ]
   },
   "55_b": {
@@ -4028,7 +3850,7 @@
     }
    ],
    "erbt": [
-    12
+    10
    ]
   },
   "55_c": {
@@ -4053,7 +3875,7 @@
     }
    ],
    "erbt": [
-    12
+    10
    ]
   },
   "55_d": {
@@ -4078,7 +3900,7 @@
     }
    ],
    "erbt": [
-    12
+    10
    ]
   },
   "55_e": {
@@ -4103,7 +3925,7 @@
     }
    ],
    "erbt": [
-    12
+    10
    ]
   },
   "55_f": {
@@ -4124,8 +3946,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verbandsbeschwerde gegen Bewilligungen von Organismen"
+     "item": null
     }
    ]
   },
@@ -4160,7 +3981,7 @@
     }
    ],
    "erbt": [
-    13
+    11
    ]
   },
   "59_a": {
@@ -4293,7 +4114,7 @@
     }
    ],
    "erbt": [
-    14
+    12
    ]
   },
   "59_b": {
@@ -4318,7 +4139,7 @@
     }
    ],
    "erbt": [
-    14
+    12
    ]
   },
   "59_c": {
@@ -4343,7 +4164,7 @@
     }
    ],
    "erbt": [
-    14
+    12
    ]
   },
   "59_d": {
@@ -4368,7 +4189,7 @@
     }
    ],
    "erbt": [
-    14
+    12
    ]
   },
   "61_a": {

@@ -1380,7 +1380,7 @@
    ]
   },
   "34": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1399,21 +1399,21 @@
    ]
   },
   "35": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "36": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "37": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1433,8 +1433,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle"
+     "item": null
     }
    ],
    "erbt": [
@@ -1664,7 +1663,7 @@
    ]
   },
   "44": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -1698,7 +1697,7 @@
    ]
   },
   "46": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -1756,7 +1755,7 @@
    ]
   },
   "49": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -1766,7 +1765,7 @@
    ]
   },
   "50": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2262,8 +2261,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "7. Teil",
-     "ueberschrift": "5. Teil: Strafbestimmungen"
+     "frueher": "7. Teil"
     }
    ]
   },
@@ -2600,7 +2598,7 @@
    ]
   },
   "49_b": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -2610,7 +2608,7 @@
    ]
   },
   "49_c": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -2620,7 +2618,7 @@
    ]
   },
   "49_d": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -2655,7 +2653,7 @@
    ]
   },
   "54_a": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": "2003-02-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2668,8 +2666,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Entschädigungsstelle"
+     "item": null
     }
    ],
    "erbt": [
@@ -2679,7 +2676,7 @@
    ]
   },
   "54_a_bis": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2717,7 +2714,7 @@
    ]
   },
   "54_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -2728,7 +2725,7 @@
    ]
   },
   "54_b_bis": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3,
@@ -2752,8 +2749,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "V. Ausländische radsportliche Veranstaltungen"
+     "item": null
     }
    ],
    "erbt": [

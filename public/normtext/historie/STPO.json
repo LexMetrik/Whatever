@@ -1088,7 +1088,7 @@
    ]
   },
   "137": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -1866,14 +1866,14 @@
    ]
   },
   "258": {
-   "giltSeit": "2023-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
    ]
   },
   "259": {
-   "giltSeit": "2023-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -3710,7 +3710,7 @@
    ]
   },
   "298_a": {
-   "giltSeit": "2013-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3733,21 +3733,21 @@
    ]
   },
   "298_b": {
-   "giltSeit": "2013-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "298_c": {
-   "giltSeit": "2013-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "298_d": {
-   "giltSeit": "2013-05-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -3881,8 +3881,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Übergangsbestimmung zur Änderung vom 28. September 2012"
+     "item": null
     }
    ]
   },

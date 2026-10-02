@@ -283,7 +283,7 @@
    ]
   },
   "16": {
-   "giltSeit": "2015-10-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -311,7 +311,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2015-10-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -337,14 +337,14 @@
    "aufgehobenSeit": "2010-05-01"
   },
   "20": {
-   "giltSeit": "2015-10-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "21": {
-   "giltSeit": "2015-10-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -452,8 +452,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Abschnitt: Instandhaltung und Reinigung"
+     "item": null
     }
    ]
   },
@@ -526,8 +525,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien"
+     "item": null
     }
    ]
   }

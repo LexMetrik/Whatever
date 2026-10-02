@@ -213,7 +213,7 @@
   },
   {
    "typ": "fassung",
-   "datum": "2023-01-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -227,7 +227,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind"
+   "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind",
+   "teilweise": "Fassung gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023, Art. 734f in Kraft seit 1. Jan. 2021 (AS 2020 4005; 2022 109; BBl 2017 399)."
   },
   {
    "typ": "fassung",
@@ -263,7 +264,7 @@
   },
   {
    "typ": "fassung",
-   "datum": "2021-01-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -277,7 +278,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "Dreissigster Titel: Das Handelsregister"
+   "ueberschrift": "Dreissigster Titel: Das Handelsregister",
+   "teilweise": "Fassung gemäss Ziff. I 1 des BG vom 17. März 2017 (Handelsregisterrecht), in Kraft seit 1. Jan. 2021, Art. 928b und 928c in Kraft seit 1. April 2020 (AS 2020 957; BBl 2015 3617)."
   },
   {
    "typ": "fassung",
@@ -350,24 +352,6 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "Sechster Abschnitt: Transparenz über nichtfinanzielle Belange"
-  },
-  {
-   "typ": "eingefuegt",
-   "datum": "2021-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2020 4005",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
-    },
-    {
-     "label": "BBl 2017 399",
-     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "Siebter Abschnitt: Transparenz bei Rohstoffunternehmen"
   },
   {
    "typ": "eingefuegt",
@@ -791,8 +775,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "G. Verjährung"
+     "item": null
     }
    ]
   },
@@ -814,8 +797,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "H. Verantwortlichkeit öffentlicher Beamter und Angestellter"
+     "item": null
     }
    ]
   },
@@ -1223,8 +1205,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VII. Verzicht auf die Verjährungseinrede"
+     "item": null
     }
    ]
   },
@@ -1514,8 +1495,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Für das Mass"
+     "item": null
     }
    ]
   },
@@ -1650,7 +1630,7 @@
    ]
   },
   "253": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1673,133 +1653,133 @@
    ]
   },
   "254": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "255": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "256": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "258": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "260": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "261": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "262": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "263": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "264": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "265": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "267": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "268": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "269": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "270": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "271": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "272": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1857,8 +1837,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "C. Fristen und Verfahren"
+     "item": null
     }
    ],
    "erbt": [
@@ -1866,7 +1845,7 @@
    ]
   },
   "275": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1889,175 +1868,175 @@
    ]
   },
   "276": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "277": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "278": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "279": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "280": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "281": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "282": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "283": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "284": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "285": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "286": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "287": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "288": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "289": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "290": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "291": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "292": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "293": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "294": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "295": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "296": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "297": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "298": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "299": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "300": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2089,28 +2068,28 @@
    ]
   },
   "302": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "303": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "304": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "319": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2133,35 +2112,35 @@
    ]
   },
   "320": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "321": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "322": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "323": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "324": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2193,14 +2172,14 @@
    ]
   },
   "326": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "327": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2274,8 +2253,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Freizeit"
+     "item": null
     }
    ],
    "erbt": [
@@ -2283,7 +2261,7 @@
    ]
   },
   "330": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2375,8 +2353,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Pflichten des Arbeitgebers"
+     "item": null
     }
    ],
    "erbt": [
@@ -2460,8 +2437,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Wirkungen"
+     "item": null
     }
    ],
    "erbt": [
@@ -2645,21 +2621,21 @@
    ]
   },
   "339": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "340": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "341": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2714,7 +2690,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "344": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2740,7 +2716,7 @@
    ]
   },
   "345": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
@@ -2748,7 +2724,7 @@
    ]
   },
   "346": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
@@ -2756,28 +2732,28 @@
    ]
   },
   "347": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "348": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "350": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2809,63 +2785,63 @@
    ]
   },
   "352": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "353": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "354": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "355": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "356": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "357": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "358": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "359": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "360": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -3611,7 +3587,7 @@
    ]
   },
   "492": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3630,7 +3606,7 @@
    ]
   },
   "493": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
@@ -3679,56 +3655,56 @@
    ]
   },
   "495": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "496": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "497": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "498": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "499": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "500": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "501": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "502": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
@@ -3760,63 +3736,63 @@
    ]
   },
   "504": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "505": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "506": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "507": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "508": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "509": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "510": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "511": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
    ]
   },
   "512": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     8
@@ -3857,8 +3833,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Übertragbarkeit"
+     "item": null
     }
    ]
   },
@@ -3902,7 +3877,7 @@
    ]
   },
   "552": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3921,7 +3896,7 @@
    ]
   },
   "553": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -3953,21 +3928,21 @@
    ]
   },
   "555": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "556": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "557": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4008,8 +3983,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Rechnungslegung"
+     "item": null
     }
    ],
    "erbt": [
@@ -4059,189 +4033,189 @@
    ]
   },
   "560": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "561": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "562": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "563": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "564": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "565": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "566": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "567": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "568": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "569": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "570": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "571": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "572": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "573": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "574": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "575": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "576": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "577": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "578": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "579": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "580": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "581": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "582": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "583": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "584": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "585": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "586": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4273,28 +4247,28 @@
    ]
   },
   "588": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "589": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "590": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "591": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4326,21 +4300,21 @@
    ]
   },
   "593": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "594": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "595": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4398,8 +4372,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Ort der Eintragung und Sacheinlagen"
+     "item": null
     }
    ],
    "erbt": [
@@ -4407,21 +4380,21 @@
    ]
   },
   "597": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "598": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "599": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4453,42 +4426,42 @@
    ]
   },
   "601": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "602": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "603": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "604": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "605": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "606": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4518,21 +4491,21 @@
    "aufgehobenSeit": "2016-07-01"
   },
   "608": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "609": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "610": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4564,49 +4537,49 @@
    ]
   },
   "612": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "613": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "614": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "615": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "616": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "617": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "618": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -4874,7 +4847,7 @@
    ]
   },
   "624": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -5118,8 +5091,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Inhalt"
+     "item": null
     }
    ],
    "erbt": [
@@ -5353,7 +5325,7 @@
    ]
   },
   "640": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5387,8 +5359,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Gesellschaft"
+     "item": null
     }
    ],
    "erbt": [
@@ -5476,8 +5447,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Zeitpunkt; mangelnde Voraussetzungen"
+     "item": null
     }
    ],
    "erbt": [
@@ -5519,8 +5489,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "II. Nichtigkeit von Aktien, die vor der Eintragung ausgegeben werden"
+     "item": null
     }
    ],
    "erbt": [
@@ -5528,7 +5497,7 @@
    ]
   },
   "645": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -5733,7 +5702,7 @@
    ]
   },
   "654": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5799,8 +5768,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Stellung der Vorzugsaktien"
+     "item": null
     }
    ],
    "erbt": [
@@ -5924,7 +5892,7 @@
    ]
   },
   "661": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -6205,8 +6173,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Bauzinse"
+     "item": null
     }
    ],
    "erbt": [
@@ -6214,7 +6181,7 @@
    ]
   },
   "677": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6248,8 +6215,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Tantiemen"
+     "item": null
     }
    ],
    "erbt": [
@@ -6282,7 +6248,7 @@
    ]
   },
   "679": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6333,8 +6299,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Tantiemen im Konkurs"
+     "item": null
     }
    ],
    "erbt": [
@@ -6342,7 +6307,7 @@
    ]
   },
   "680": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -6399,7 +6364,7 @@
    ]
   },
   "683": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -6549,8 +6514,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Nicht voll einbezahlte Namenaktien"
+     "item": null
     }
    ],
    "erbt": [
@@ -6558,7 +6522,7 @@
    ]
   },
   "688": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -6624,8 +6588,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Mehrere Berechtigte"
+     "item": null
     }
    ],
    "erbt": [
@@ -6658,7 +6621,7 @@
    ]
   },
   "692": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -6759,14 +6722,14 @@
    ]
   },
   "694": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "695": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -7269,8 +7232,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VI. Abberufungsrecht"
+     "item": null
     }
    ],
    "erbt": [
@@ -7278,7 +7240,7 @@
    ]
   },
   "706": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7329,8 +7291,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Legitimation und Gründe"
+     "item": null
     }
    ],
    "erbt": [
@@ -7439,7 +7400,7 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "709": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7473,8 +7434,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Vertretung von Aktionärskategorien und -gruppen"
+     "item": null
     }
    ],
    "erbt": [
@@ -7696,7 +7656,7 @@
    ]
   },
   "717": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7730,8 +7690,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Im Allgemeinen"
+     "item": null
     }
    ],
    "erbt": [
@@ -7817,7 +7776,7 @@
    ]
   },
   "719": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7867,7 +7826,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "721": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7901,8 +7860,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Prokuristen und Bevollmächtigte"
+     "item": null
     }
    ],
    "erbt": [
@@ -7998,8 +7956,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VIII. Abberufung und Einstellung"
+     "item": null
     }
    ],
    "erbt": [
@@ -8111,8 +8068,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Unabhängigkeit der Revisionsstelle"
+     "item": null
     }
    ],
    "erbt": [
@@ -8121,7 +8077,7 @@
    ]
   },
   "730": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8129,7 +8085,7 @@
    ]
   },
   "731": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8137,7 +8093,7 @@
    ]
   },
   "732": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8155,7 +8111,8 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind"
+     "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind",
+     "teilweise": "Fassung gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023, Art. 734f in Kraft seit 1. Jan. 2021 (AS 2020 4005; 2022 109; BBl 2017 399)."
     }
    ],
    "erbt": [
@@ -8163,7 +8120,7 @@
    ]
   },
   "733": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8171,7 +8128,7 @@
    ]
   },
   "734": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8179,7 +8136,7 @@
    ]
   },
   "735": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8279,7 +8236,7 @@
    ]
   },
   "739": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -8337,8 +8294,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Bestellung"
+     "item": null
     }
    ],
    "erbt": [
@@ -8371,21 +8327,21 @@
    ]
   },
   "742": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "743": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "744": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -8451,7 +8407,7 @@
    ]
   },
   "746": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -8483,7 +8439,7 @@
    ]
   },
   "751": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -8914,21 +8870,21 @@
    ]
   },
   "763": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "764": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "765": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -8953,35 +8909,35 @@
    ]
   },
   "766": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "767": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "768": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "769": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "770": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -9006,14 +8962,14 @@
    ]
   },
   "771": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "772": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9200,7 +9156,7 @@
    ]
   },
   "778": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9208,7 +9164,7 @@
    ]
   },
   "779": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9311,7 +9267,7 @@
    ]
   },
   "783": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9319,7 +9275,7 @@
    ]
   },
   "784": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9353,7 +9309,7 @@
    ]
   },
   "786": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9361,7 +9317,7 @@
    ]
   },
   "787": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9369,7 +9325,7 @@
    ]
   },
   "788": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9377,7 +9333,7 @@
    ]
   },
   "789": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9454,7 +9410,7 @@
    ]
   },
   "792": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9462,7 +9418,7 @@
    ]
   },
   "793": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9470,7 +9426,7 @@
    ]
   },
   "794": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9478,7 +9434,7 @@
    ]
   },
   "795": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9486,7 +9442,7 @@
    ]
   },
   "796": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9494,7 +9450,7 @@
    ]
   },
   "797": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9528,7 +9484,7 @@
    ]
   },
   "799": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9536,7 +9492,7 @@
    ]
   },
   "800": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9596,7 +9552,7 @@
    ]
   },
   "803": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9741,7 +9697,7 @@
    ]
   },
   "806": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9749,7 +9705,7 @@
    ]
   },
   "807": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9757,7 +9713,7 @@
    ]
   },
   "808": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9765,7 +9721,7 @@
    ]
   },
   "809": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9816,7 +9772,7 @@
    ]
   },
   "811": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9824,7 +9780,7 @@
    ]
   },
   "812": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9832,7 +9788,7 @@
    ]
   },
   "813": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9900,7 +9856,7 @@
    ]
   },
   "815": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9908,7 +9864,7 @@
    ]
   },
   "816": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9916,7 +9872,7 @@
    ]
   },
   "817": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9924,7 +9880,7 @@
    ]
   },
   "818": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9932,7 +9888,7 @@
    ]
   },
   "819": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9966,7 +9922,7 @@
    ]
   },
   "821": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9974,7 +9930,7 @@
    ]
   },
   "822": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9982,7 +9938,7 @@
    ]
   },
   "823": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9990,7 +9946,7 @@
    ]
   },
   "824": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -9998,7 +9954,7 @@
    ]
   },
   "825": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -10006,7 +9962,7 @@
    ]
   },
   "826": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -10014,7 +9970,7 @@
    ]
   },
   "827": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -10047,7 +10003,7 @@
    ]
   },
   "829": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -10320,126 +10276,126 @@
    ]
   },
   "838": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "839": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "840": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "841": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "842": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "843": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "844": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "845": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "846": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "847": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "848": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "849": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "850": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "851": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "852": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "853": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "854": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "855": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -10497,8 +10453,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Bekanntmachung des Geschäftsberichts"
+     "item": null
     }
    ],
    "erbt": [
@@ -10531,7 +10486,7 @@
    ]
   },
   "858": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -10572,14 +10527,14 @@
    "aufgehobenSeit": "2013-01-01"
   },
   "859": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "860": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -10604,14 +10559,14 @@
    ]
   },
   "861": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "862": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -10636,70 +10591,70 @@
    ]
   },
   "863": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "864": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "865": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "866": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "867": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "868": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "869": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "870": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "871": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "872": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -10756,21 +10711,21 @@
    ]
   },
   "875": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "876": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "877": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -10878,7 +10833,7 @@
    ]
   },
   "880": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -10910,42 +10865,42 @@
    ]
   },
   "882": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "883": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "884": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "885": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "886": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "887": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -10995,7 +10950,7 @@
    ]
   },
   "889": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11036,8 +10991,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VIII. Abberufung der Verwaltung und der Revisionsstelle"
+     "item": null
     }
    ],
    "erbt": [
@@ -11045,14 +10999,14 @@
    ]
   },
   "891": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "892": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11084,7 +11038,7 @@
    ]
   },
   "894": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11114,14 +11068,14 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "896": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "897": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11170,7 +11124,7 @@
    ]
   },
   "899": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11194,8 +11148,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Zeichnung"
+     "item": null
     }
    ],
    "erbt": [
@@ -11276,14 +11229,14 @@
    ]
   },
   "904": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "905": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11381,7 +11334,7 @@
    ]
   },
   "911": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11413,7 +11366,7 @@
    ]
   },
   "913": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11443,7 +11396,7 @@
    "aufgehobenSeit": "2004-07-01"
   },
   "915": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11475,14 +11428,14 @@
    ]
   },
   "917": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "918": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11531,42 +11484,42 @@
    ]
   },
   "920": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "921": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "922": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "923": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "924": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
    ]
   },
   "925": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9
@@ -11615,7 +11568,7 @@
    ]
   },
   "927": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11647,12 +11600,13 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "Dreissigster Titel: Das Handelsregister"
+     "ueberschrift": "Dreissigster Titel: Das Handelsregister",
+     "teilweise": "Fassung gemäss Ziff. I 1 des BG vom 17. März 2017 (Handelsregisterrecht), in Kraft seit 1. Jan. 2021, Art. 928b und 928c in Kraft seit 1. April 2020 (AS 2020 957; BBl 2015 3617)."
     }
    ]
   },
   "928": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11660,7 +11614,7 @@
    ]
   },
   "929": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11668,7 +11622,7 @@
    ]
   },
   "930": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11676,7 +11630,7 @@
    ]
   },
   "931": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11684,7 +11638,7 @@
    ]
   },
   "932": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11692,7 +11646,7 @@
    ]
   },
   "933": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11726,7 +11680,7 @@
    ]
   },
   "935": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11734,7 +11688,7 @@
    ]
   },
   "936": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11742,7 +11696,7 @@
    ]
   },
   "937": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11750,7 +11704,7 @@
    ]
   },
   "938": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11758,7 +11712,7 @@
    ]
   },
   "939": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11766,7 +11720,7 @@
    ]
   },
   "940": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11774,7 +11728,7 @@
    ]
   },
   "941": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11808,7 +11762,7 @@
    ]
   },
   "943": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -11816,7 +11770,7 @@
    ]
   },
   "944": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -11857,8 +11811,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Wesentlicher Inhalt"
+     "item": null
     }
    ],
    "erbt": [
@@ -11866,7 +11819,7 @@
    ]
   },
   "946": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -11946,7 +11899,7 @@
    ]
   },
   "952": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -11976,7 +11929,7 @@
    "aufgehobenSeit": "2016-07-01"
   },
   "954": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14
@@ -12000,8 +11953,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "C. Überwachung"
+     "item": null
     }
    ],
    "erbt": [
@@ -12026,8 +11978,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Schutz der Firma"
+     "item": null
     }
    ],
    "erbt": [
@@ -12035,7 +11986,7 @@
    ]
   },
   "957": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -12079,7 +12030,7 @@
    ]
   },
   "958": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -12088,7 +12039,7 @@
    ]
   },
   "959": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -12116,7 +12067,7 @@
    ]
   },
   "960": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -12126,7 +12077,7 @@
    ]
   },
   "961": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -12135,7 +12086,7 @@
    ]
   },
   "962": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -12144,7 +12095,7 @@
    ]
   },
   "963": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -12176,7 +12127,7 @@
    "aufgehobenSeit": "2002-06-01"
   },
   "965": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -12195,35 +12146,35 @@
    ]
   },
   "966": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "967": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "968": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "969": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "970": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -12255,63 +12206,63 @@
    ]
   },
   "972": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "973": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "974": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "975": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "976": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "977": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "978": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "979": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "980": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -12352,8 +12303,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Begehren"
+     "item": null
     }
    ],
    "erbt": [
@@ -12361,14 +12311,14 @@
    ]
   },
   "982": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "983": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -12400,28 +12350,28 @@
    ]
   },
   "985": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "986": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "987": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "988": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -12453,266 +12403,266 @@
    ]
   },
   "990": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "991": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "992": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "993": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "994": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "995": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "996": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "997": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "998": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "999": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1000": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1001": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1002": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1003": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1004": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1005": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1006": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1007": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1008": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1009": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1010": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1011": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1012": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1013": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1014": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1015": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1016": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1017": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1018": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1019": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1020": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1021": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1022": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1023": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1024": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1025": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1026": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1027": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -12744,301 +12694,301 @@
    ]
   },
   "1029": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1030": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1031": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1032": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1033": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1034": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1035": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1036": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1037": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1038": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1039": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1040": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1041": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1042": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1043": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1044": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1045": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1046": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1047": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1048": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1049": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1050": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1051": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1052": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1053": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1054": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1055": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1056": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1057": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1058": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1059": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1060": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1061": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1062": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1063": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1064": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1065": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1066": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1067": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1068": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1069": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1070": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1071": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -13070,28 +13020,28 @@
    ]
   },
   "1073": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1074": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1075": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1076": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -13123,280 +13073,280 @@
    ]
   },
   "1078": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1079": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1080": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1081": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1082": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1083": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1084": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1085": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1086": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1087": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1088": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1089": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1090": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1091": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1092": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1093": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1094": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1095": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1096": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1097": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1098": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1099": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1100": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1101": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1102": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1103": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1104": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1105": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1106": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1107": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1108": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1109": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1110": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1111": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1112": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1113": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1114": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1115": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1116": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1117": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -13428,238 +13378,238 @@
    ]
   },
   "1119": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1120": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1121": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1122": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1123": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1124": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1125": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1126": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1127": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1128": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1129": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1130": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1131": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1132": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1133": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1134": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1135": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1136": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1137": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1138": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1139": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1140": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1141": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1142": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1143": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1144": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1145": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1146": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1147": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1148": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1149": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1150": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1151": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1152": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -13683,8 +13633,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Im Allgemeinen"
+     "item": null
     }
    ],
    "erbt": [
@@ -13692,14 +13641,14 @@
    ]
   },
   "1154": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "1155": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -13729,7 +13678,7 @@
    "aufgehobenSeit": "2020-01-01"
   },
   "1157": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -13755,7 +13704,7 @@
    ]
   },
   "1158": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13763,7 +13712,7 @@
    ]
   },
   "1159": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13771,7 +13720,7 @@
    ]
   },
   "1160": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13779,7 +13728,7 @@
    ]
   },
   "1161": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13787,7 +13736,7 @@
    ]
   },
   "1162": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13795,7 +13744,7 @@
    ]
   },
   "1163": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13803,7 +13752,7 @@
    ]
   },
   "1164": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13854,7 +13803,7 @@
    ]
   },
   "1166": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13862,7 +13811,7 @@
    ]
   },
   "1167": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13870,7 +13819,7 @@
    ]
   },
   "1168": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13878,7 +13827,7 @@
    ]
   },
   "1169": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13886,7 +13835,7 @@
    ]
   },
   "1170": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13894,7 +13843,7 @@
    ]
   },
   "1171": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13902,7 +13851,7 @@
    ]
   },
   "1172": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13910,7 +13859,7 @@
    ]
   },
   "1173": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13918,7 +13867,7 @@
    ]
   },
   "1174": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13952,7 +13901,7 @@
    ]
   },
   "1176": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13960,7 +13909,7 @@
    ]
   },
   "1177": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13968,7 +13917,7 @@
    ]
   },
   "1178": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13976,7 +13925,7 @@
    ]
   },
   "1179": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13984,7 +13933,7 @@
    ]
   },
   "1180": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -13992,7 +13941,7 @@
    ]
   },
   "1181": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -14000,7 +13949,7 @@
    ]
   },
   "1182": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -14008,7 +13957,7 @@
    ]
   },
   "1183": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -14016,7 +13965,7 @@
    ]
   },
   "1184": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -14024,7 +13973,7 @@
    ]
   },
   "1185": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0,
@@ -14499,140 +14448,140 @@
    "aufgehobenSeit": "2014-07-01"
   },
   "253_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "253_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "256_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "256_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_d": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_e": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_f": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_g": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "257_h": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_d": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_e": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_f": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_g": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "259_h": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -14664,98 +14613,98 @@
    ]
   },
   "260_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "261_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "261_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_d": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_e": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_f": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_g": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_h": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_i": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_k": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "266_l": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -14812,49 +14761,49 @@
    ]
   },
   "266_o": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "267_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "268_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "268_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "269_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "269_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "269_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -14903,70 +14852,70 @@
    ]
   },
   "270_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "270_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "270_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "270_d": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "270_e": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "271_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "272_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "272_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "272_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "272_d": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -14998,14 +14947,14 @@
    ]
   },
   "273_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "273_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -15060,77 +15009,77 @@
    ]
   },
   "289_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "297_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "297_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "299_a": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "299_b": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "299_c": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "321_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "321_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "321_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "321_d": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "321_e": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -15162,35 +15111,35 @@
    ]
   },
   "322_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "322_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "322_d": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "323_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "323_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -15247,21 +15196,21 @@
    ]
   },
   "326_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "327_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "327_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -15286,14 +15235,14 @@
    ]
   },
   "327_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "328_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -15519,7 +15468,7 @@
    ]
   },
   "329_d": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -15752,7 +15701,7 @@
    ]
   },
   "330_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -16654,14 +16603,14 @@
    ]
   },
   "337_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "337_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -16735,14 +16684,14 @@
    ]
   },
   "338_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "339_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -16774,7 +16723,7 @@
    ]
   },
   "339_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -16806,28 +16755,28 @@
    ]
   },
   "340_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "340_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "340_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "344_a": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
@@ -16835,7 +16784,7 @@
    ]
   },
   "345_a": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
@@ -16843,7 +16792,7 @@
    ]
   },
   "346_a": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4,
@@ -16851,133 +16800,133 @@
    ]
   },
   "347_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "348_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "348_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349_d": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "349_e": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "350_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "351_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "352_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "353_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "353_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "356_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "356_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "356_c": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "357_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "357_b": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
    ]
   },
   "359_a": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -17190,7 +17139,7 @@
    ]
   },
   "406_a": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17213,14 +17162,14 @@
    ]
   },
   "406_b": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "406_c": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -17342,7 +17291,7 @@
    ]
   },
   "406_h": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -17765,7 +17714,7 @@
    ]
   },
   "418_b": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -17790,133 +17739,133 @@
    ]
   },
   "418_c": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_d": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_e": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_f": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_g": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_h": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_i": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_k": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_l": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_m": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_n": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_o": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_p": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_q": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_r": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_s": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_t": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_u": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
    ]
   },
   "418_v": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
@@ -18335,8 +18284,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Bezugsrecht und Ausgabebetrag"
+     "item": null
     }
    ],
    "erbt": [
@@ -18344,7 +18292,7 @@
    ]
   },
   "652_c": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -18378,8 +18326,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Leistung der Einlagen"
+     "item": null
     }
    ],
    "erbt": [
@@ -18455,8 +18402,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Erhöhung aus Eigenkapital"
+     "item": null
     }
    ],
    "erbt": [
@@ -18515,8 +18461,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitalerhöhungsbericht"
+     "item": null
     }
    ],
    "erbt": [
@@ -18524,7 +18469,7 @@
    ]
   },
   "652_f": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -18575,8 +18520,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Prüfungsbestätigung"
+     "item": null
     }
    ],
    "erbt": [
@@ -19522,8 +19466,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Begriff; anwendbare Vorschriften"
+     "item": null
     }
    ],
    "erbt": [
@@ -19700,8 +19643,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Bekanntgabe der Einberufung und Information über Generalversammlungsbeschlüsse"
+     "item": null
     }
    ],
    "erbt": [
@@ -21665,7 +21607,7 @@
    ]
   },
   "706_b": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -21699,8 +21641,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "VIII. Nichtigkeit"
+     "item": null
     }
    ],
    "erbt": [
@@ -22101,7 +22042,7 @@
    ]
   },
   "727_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22109,7 +22050,7 @@
    ]
   },
   "727_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22143,7 +22084,7 @@
    ]
   },
   "728_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22151,7 +22092,7 @@
    ]
   },
   "728_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22159,7 +22100,7 @@
    ]
   },
   "729_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22167,7 +22108,7 @@
    ]
   },
   "729_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22175,7 +22116,7 @@
    ]
   },
   "729_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22209,7 +22150,7 @@
    ]
   },
   "730_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22217,7 +22158,7 @@
    ]
   },
   "730_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22225,7 +22166,7 @@
    ]
   },
   "731_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22318,8 +22259,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Mängel in der Organisation der Gesellschaft"
+     "item": null
     }
    ],
    "erbt": [
@@ -22327,7 +22267,7 @@
    ]
   },
   "734_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22335,7 +22275,7 @@
    ]
   },
   "734_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22343,7 +22283,7 @@
    ]
   },
   "734_c": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22351,7 +22291,7 @@
    ]
   },
   "734_d": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22359,7 +22299,7 @@
    ]
   },
   "734_e": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22367,7 +22307,7 @@
    ]
   },
   "734_f": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22375,7 +22315,7 @@
    ]
   },
   "735_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22383,7 +22323,7 @@
    ]
   },
   "735_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22391,7 +22331,7 @@
    ]
   },
   "735_c": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22399,7 +22339,7 @@
    ]
   },
   "735_d": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22430,7 +22370,7 @@
    "aufgehobenSeit": "2004-07-01"
   },
   "774_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22461,7 +22401,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "777_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22469,7 +22409,7 @@
    ]
   },
   "777_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -22561,7 +22501,7 @@
    "aufgehobenSeit": "2021-01-01"
   },
   "779_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22595,7 +22535,7 @@
    ]
   },
   "789_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22603,7 +22543,7 @@
    ]
   },
   "789_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22651,7 +22591,7 @@
    "aufgehobenSeit": "2026-10-01"
   },
   "795_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22659,7 +22599,7 @@
    ]
   },
   "795_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22667,7 +22607,7 @@
    ]
   },
   "795_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22675,7 +22615,7 @@
    ]
   },
   "795_d": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22732,7 +22672,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "801_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22740,7 +22680,7 @@
    ]
   },
   "806_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22748,7 +22688,7 @@
    ]
   },
   "806_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22756,7 +22696,7 @@
    ]
   },
   "808_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22824,7 +22764,7 @@
    ]
   },
   "808_c": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22832,7 +22772,7 @@
    ]
   },
   "821_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22840,7 +22780,7 @@
    ]
   },
   "822_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -22848,7 +22788,7 @@
    ]
   },
   "825_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -23133,8 +23073,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "D. AHV-Nummer und Personennummer"
+     "item": null
     }
    ],
    "erbt": [
@@ -23169,7 +23108,7 @@
    ]
   },
   "936_a": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23177,7 +23116,7 @@
    ]
   },
   "936_b": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23258,7 +23197,7 @@
    ]
   },
   "957_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23267,7 +23206,7 @@
    ]
   },
   "958_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23303,7 +23242,7 @@
    ]
   },
   "958_c": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23312,7 +23251,7 @@
    ]
   },
   "958_d": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23355,8 +23294,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Veröffentlichung und Einsichtnahme"
+     "item": null
     }
    ],
    "erbt": [
@@ -23366,7 +23304,7 @@
    ]
   },
   "958_f": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23454,7 +23392,7 @@
    ]
   },
   "959_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23526,7 +23464,7 @@
    ]
   },
   "960_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23536,7 +23474,7 @@
    ]
   },
   "960_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23546,7 +23484,7 @@
    ]
   },
   "960_c": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23556,7 +23494,7 @@
    ]
   },
   "960_d": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23566,7 +23504,7 @@
    ]
   },
   "960_e": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23604,7 +23542,7 @@
    ]
   },
   "961_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23613,7 +23551,7 @@
    ]
   },
   "961_b": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23622,7 +23560,7 @@
    ]
   },
   "961_c": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23665,8 +23603,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Erleichterungen"
+     "item": null
     }
    ],
    "erbt": [
@@ -23676,7 +23613,7 @@
    ]
   },
   "962_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23729,7 +23666,7 @@
    ]
   },
   "963_b": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23738,7 +23675,7 @@
    ]
   },
   "964_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -23766,7 +23703,7 @@
    ]
   },
   "964_b": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23776,7 +23713,7 @@
    ]
   },
   "964_c": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
@@ -23786,7 +23723,7 @@
    ]
   },
   "964_d": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -23824,57 +23761,52 @@
    ]
   },
   "964_e": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
-    17,
-    20
+    17
    ]
   },
   "964_f": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
-    17,
-    20
+    17
    ]
   },
   "964_g": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
-    17,
-    20
+    17
    ]
   },
   "964_h": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
-    17,
-    20
+    17
    ]
   },
   "964_i": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
-    17,
-    20
+    17
    ]
   },
   "964_j": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -23902,23 +23834,23 @@
    ]
   },
   "964_k": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
     17,
-    21
+    20
    ]
   },
   "964_l": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     14,
     16,
     17,
-    21
+    20
    ]
   },
   "973_a": {
@@ -23987,7 +23919,7 @@
    ],
    "erbt": [
     0,
-    22
+    21
    ]
   },
   "973_c": {
@@ -24042,13 +23974,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Einfache Wertrechte"
+     "item": null
     }
    ],
    "erbt": [
     0,
-    22
+    21
    ]
   },
   "973_d": {
@@ -24202,7 +24133,7 @@
    ]
   },
   "disp_u12_art_1": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -24225,28 +24156,28 @@
    ]
   },
   "disp_u12_art_2_4": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    22
    ]
   },
   "disp_u12_art_5": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    22
    ]
   },
   "disp_u12_art_6": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    22
    ]
   },
   "disp_u13_art_1": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -24269,38 +24200,38 @@
    ]
   },
   "disp_u13_art_2": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_3": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_4": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_5": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_6": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_7": {
@@ -24325,18 +24256,18 @@
     }
    ],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u13_art_8": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    23
    ]
   },
   "disp_u14_art_1": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -24359,21 +24290,21 @@
    ]
   },
   "disp_u14_art_2": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    24
    ]
   },
   "disp_u14_art_3": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    24
    ]
   },
   "disp_u16_art_1": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -24392,31 +24323,31 @@
    ]
   },
   "disp_u16_art_10": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_11": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_12": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_13": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_14": {
@@ -24443,35 +24374,35 @@
    "aufgehobenSeit": "1989-01-01"
   },
   "disp_u16_art_15": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_16": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_17": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_18": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_19": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -24483,21 +24414,21 @@
     }
    ],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_2": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_3": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_4": {
@@ -24524,10 +24455,10 @@
    "aufgehobenSeit": "2004-07-01"
   },
   "disp_u16_art_5": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_6": {
@@ -24547,28 +24478,28 @@
    }
   },
   "disp_u16_art_7": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_8": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u16_art_9": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    25
    ]
   },
   "disp_u17_art_1": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -24591,59 +24522,59 @@
    ]
   },
   "disp_u17_art_2": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_3": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_4": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_5": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_6": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_7": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_8": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   },
   "disp_u17_art_9": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    27
+    26
    ]
   }
  },

@@ -242,20 +242,6 @@
    "ueberschrift": "5. Abschnitt: Datenbekanntgabe und Verantwortung für die Datenbearbeitung"
   },
   {
-   "typ": "eingefuegt",
-   "datum": "2008-12-12",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2008 5405",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-  },
-  {
    "typ": "fassung",
    "datum": "2026-06-12",
    "wirkung": false,
@@ -1556,7 +1542,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "55": {
@@ -1581,7 +1567,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "56": {
@@ -1606,7 +1592,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "57": {
@@ -1631,7 +1617,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "58": {
@@ -1656,7 +1642,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "59": {
@@ -1966,7 +1952,7 @@
     }
    ],
    "erbt": [
-    20
+    19
    ]
   },
   "63": {
@@ -2068,7 +2054,7 @@
     }
    ],
    "erbt": [
-    20
+    19
    ]
   },
   "64": {
@@ -2528,7 +2514,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "71": {
@@ -2587,7 +2573,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "72": {
@@ -4181,7 +4167,7 @@
     }
    ],
    "erbt": [
-    22
+    21
    ]
   },
   "94": {
@@ -4206,7 +4192,7 @@
     }
    ],
    "erbt": [
-    22
+    21
    ]
   },
   "95": {
@@ -4231,7 +4217,7 @@
     }
    ],
    "erbt": [
-    22
+    21
    ]
   },
   "96": {
@@ -4762,7 +4748,7 @@
    "aufgehobenSeit": "2025-06-15"
   },
   "108": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -4770,7 +4756,7 @@
    ]
   },
   "109": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -4864,8 +4850,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Gemeinsamer Dienst für den Abgleich biometrischer Daten (sBMS)"
+     "item": null
     }
    ]
   },
@@ -5078,7 +5063,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "117": {
@@ -5137,7 +5122,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "118": {
@@ -5162,14 +5147,14 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "119": {
-   "giltSeit": "2015-10-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    14
    ]
   },
   "120": {
@@ -5228,7 +5213,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "121": {
@@ -5293,7 +5278,7 @@
     }
    ],
    "erbt": [
-    16
+    15
    ]
   },
   "126": {
@@ -5545,7 +5530,7 @@
    ]
   },
   "102_d": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -5562,7 +5547,7 @@
    ]
   },
   "102_e": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -5579,7 +5564,7 @@
    ]
   },
   "103_a": {
-   "giltSeit": "2022-11-22",
+   "giltSeit": "2025-06-15",
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -5674,8 +5659,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Informationssystem Einreiseverweigerungen (INAD-System)"
+     "item": null
     }
    ]
   },
@@ -7785,7 +7769,7 @@
    ]
   },
   "109_h": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -7793,7 +7777,7 @@
    ]
   },
   "109_i": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -7801,7 +7785,7 @@
    ]
   },
   "109_j": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1,
@@ -8025,8 +8009,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Abschnitt: Personendossier- und Dokumentationssystem"
+     "item": null
     }
    ],
    "erbt": [
@@ -8034,7 +8017,7 @@
    ]
   },
   "110_a": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8060,7 +8043,7 @@
    ]
   },
   "110_b": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8163,8 +8146,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Europäisches Suchportal (ESP)"
+     "item": null
     }
    ],
    "erbt": [
@@ -8172,7 +8154,7 @@
    ]
   },
   "110_f": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8198,7 +8180,7 @@
    ]
   },
   "110_g": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     9,
@@ -8411,8 +8393,7 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    13
    ]
   },
   "111_b": {
@@ -8437,8 +8418,7 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    13
    ]
   },
   "111_c": {
@@ -8480,8 +8460,7 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    13
    ]
   },
   "111_d": {
@@ -8557,8 +8536,7 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    13
    ]
   },
   "111_e": {
@@ -8629,8 +8607,7 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    13
    ]
   },
   "111_h": {
@@ -8764,7 +8741,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "120_a_120_c": {
@@ -8863,7 +8840,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "120_e": {
@@ -8905,7 +8882,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "122_a": {
@@ -9015,7 +8992,7 @@
     }
    ],
    "erbt": [
-    16
+    15
    ]
   },
   "122_b": {
@@ -9057,7 +9034,7 @@
     }
    ],
    "erbt": [
-    16
+    15
    ]
   },
   "122_c": {
@@ -9099,7 +9076,7 @@
     }
    ],
    "erbt": [
-    16
+    15
    ]
   },
   "124_a": {
@@ -9457,7 +9434,7 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "55_a": {
@@ -9482,11 +9459,11 @@
     }
    ],
    "erbt": [
-    17
+    16
    ]
   },
   "58_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9509,10 +9486,10 @@
    ]
   },
   "58_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18
+    17
    ]
   },
   "59_a": {
@@ -9537,7 +9514,7 @@
     }
    ],
    "erbt": [
-    19
+    18
    ]
   },
   "59_b": {
@@ -9562,7 +9539,7 @@
     }
    ],
    "erbt": [
-    19
+    18
    ]
   },
   "59_c": {
@@ -9587,7 +9564,7 @@
     }
    ],
    "erbt": [
-    19
+    18
    ]
   },
   "61_a": {
@@ -9612,7 +9589,7 @@
     }
    ],
    "erbt": [
-    20
+    19
    ]
   },
   "64_a": {
@@ -10233,7 +10210,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "71_a_bis": {
@@ -10258,7 +10235,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "71_b": {
@@ -10283,7 +10260,7 @@
     }
    ],
    "erbt": [
-    21
+    20
    ]
   },
   "76_a": {
@@ -10721,7 +10698,7 @@
     }
    ],
    "erbt": [
-    22
+    21
    ]
   },
   "95_a": {
@@ -10742,8 +10719,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Pflichten der Flughafenbetreiber"
+     "item": null
     }
    ]
   },

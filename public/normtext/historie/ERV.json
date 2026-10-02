@@ -65,20 +65,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "2016-07-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2016 1725",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
-  },
-  {
-   "typ": "fassung",
    "datum": "2025-01-01",
    "wirkung": false,
    "quellen": [
@@ -493,7 +479,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -512,10 +498,10 @@
    ]
   },
   "19": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "20": {
@@ -549,7 +535,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "21": {
@@ -583,7 +569,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "22": {
@@ -617,28 +603,28 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "23": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "24": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "25": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "26": {
@@ -659,7 +645,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "27": {
@@ -693,14 +679,14 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "28": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "29": {
@@ -734,14 +720,14 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "30": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "31": {
@@ -762,7 +748,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "32": {
@@ -783,7 +769,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "33": {
@@ -817,14 +803,14 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "34": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "35": {
@@ -845,7 +831,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "36": {
@@ -879,7 +865,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "37": {
@@ -926,7 +912,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "38": {
@@ -947,14 +933,14 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "39": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    5
    ]
   },
   "40": {
@@ -975,7 +961,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "41": {
@@ -1454,14 +1440,14 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "65": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    7
    ]
   },
   "66": {
@@ -1482,7 +1468,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "67": {
@@ -1503,7 +1489,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "68": {
@@ -1524,7 +1510,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "69": {
@@ -1545,7 +1531,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "70": {
@@ -1566,7 +1552,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "71": {
@@ -1587,7 +1573,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72": {
@@ -1608,7 +1594,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "73": {
@@ -1642,7 +1628,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "77": {
@@ -1719,7 +1705,7 @@
    ]
   },
   "83": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1738,24 +1724,24 @@
    ]
   },
   "84": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "85": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "86": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "87": {
@@ -1772,8 +1758,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Marktrisiko-Standardansatz"
+     "item": null
     }
    ]
   },
@@ -1796,7 +1781,7 @@
    ]
   },
   "89": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1815,38 +1800,38 @@
    ]
   },
   "90": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "91": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "92": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "93": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "94": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "95": {
@@ -2139,7 +2124,7 @@
    ]
   },
   "114": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     1
@@ -2459,14 +2444,14 @@
    ]
   },
   "130": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "131": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2582,9 +2567,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "136": {
@@ -2945,7 +2927,7 @@
    ]
   },
   "131_b": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2980,9 +2962,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "132_b": {
@@ -3001,13 +2980,10 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    4
    ]
   },
   "137_138": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3123,13 +3099,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Übergangsbestimmungen zur Änderung vom 11. Mai 2016"
+     "item": null
     }
    ]
   },
   "148_c": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3148,52 +3123,52 @@
    ]
   },
   "148_d": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_e": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_f": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_g": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_h": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_i": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "148_j": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    4
    ]
   },
   "27_a": {
@@ -3214,7 +3189,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "31_a": {
@@ -3235,7 +3210,7 @@
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "40_a": {
@@ -3252,12 +3227,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Zusätzliche verlustabsorbierende Mittel für Kantonalbanken"
+     "item": null
     }
    ],
    "erbt": [
-    6
+    5
    ]
   },
   "42_a": {
@@ -3415,31 +3389,31 @@
    ]
   },
   "47_b": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "47_c": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "47_d": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "47_e": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    6
    ]
   },
   "4_a": {
@@ -3586,7 +3560,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "64_a": {
@@ -3607,7 +3581,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "64_b": {
@@ -3628,7 +3602,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "64_c": {
@@ -3649,7 +3623,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "65_a": {
@@ -3670,7 +3644,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "66_a": {
@@ -3691,7 +3665,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "68_a": {
@@ -3712,7 +3686,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "70_a": {
@@ -3733,7 +3707,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "70_b": {
@@ -3754,7 +3728,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "71_a": {
@@ -3775,7 +3749,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "71_b": {
@@ -3796,7 +3770,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_a": {
@@ -3817,7 +3791,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_b": {
@@ -3838,7 +3812,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_c": {
@@ -3872,7 +3846,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_d": {
@@ -3893,7 +3867,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_e": {
@@ -3914,7 +3888,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_f": {
@@ -3935,7 +3909,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "72_g": {
@@ -3956,7 +3930,7 @@
     }
    ],
    "erbt": [
-    8
+    7
    ]
   },
   "74_76": {
@@ -3979,7 +3953,7 @@
    "aufgehobenSeit": "2025-01-01"
   },
   "77_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3998,66 +3972,66 @@
    ]
   },
   "77_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_c": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_d": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_e": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_f": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_g": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_h": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_i": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "77_j": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    8
    ]
   },
   "78_79": {
@@ -4134,52 +4108,52 @@
    ]
   },
   "83_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    9
    ]
   },
   "86_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "92_a": {
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     10
    ]
   },
-  "92_a": {
-   "giltSeit": "2025-01-01",
-   "ereignisse": [],
-   "erbt": [
-    11
-   ]
-  },
   "92_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "92_c": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "92_d": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   },
   "93_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    10
    ]
   }
  },

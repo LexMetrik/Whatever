@@ -180,21 +180,21 @@
    ]
   },
   "2": {
-   "giltSeit": "2008-12-12",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "3": {
-   "giltSeit": "2008-12-12",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "4": {
-   "giltSeit": "2008-12-12",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -1292,7 +1292,7 @@
    ]
   },
   "66": {
-   "giltSeit": "2024-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1311,7 +1311,7 @@
    ]
   },
   "67": {
-   "giltSeit": "2024-06-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -1426,7 +1426,7 @@
    ]
   },
   "72": {
-   "giltSeit": "2011-01-24",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2528,7 +2528,7 @@
    ]
   },
   "71_c": {
-   "giltSeit": "2011-01-24",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2655,7 +2655,7 @@
    ]
   },
   "71_f": {
-   "giltSeit": "2011-01-24",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2696,7 +2696,7 @@
    ]
   },
   "71_h": {
-   "giltSeit": "2011-01-24",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -2777,7 +2777,7 @@
    ]
   },
   "72_c": {
-   "giltSeit": "2011-01-24",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2864,7 +2864,7 @@
    ]
   },
   "77_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2883,28 +2883,28 @@
    ]
   },
   "77_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
    ]
   },
   "77_c": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
    ]
   },
   "77_d": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
    ]
   },
   "77_e": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -2932,7 +2932,7 @@
    ]
   },
   "77_g": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -3264,7 +3264,7 @@
    "aufgehobenSeit": "2026-06-12"
   },
   "87_d": {
-   "giltSeit": "2015-07-20",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     7
@@ -3435,8 +3435,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "11a. Kapitel: Strafbestimmungen"
+     "item": null
     }
    ]
   },

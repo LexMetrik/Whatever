@@ -121,20 +121,6 @@
   },
   {
    "typ": "fassung",
-   "datum": "2012-01-01",
-   "wirkung": false,
-   "quellen": [
-    {
-     "label": "AS 2011 3435",
-     "url": "https://fedlex.data.admin.ch/eli/oc/2011/461"
-    }
-   ],
-   "absatz": null,
-   "item": null,
-   "ueberschrift": "3. Abschnitt: Experte für berufliche Vorsorge"
-  },
-  {
-   "typ": "fassung",
    "datum": "1996-07-01",
    "wirkung": false,
    "quellen": [
@@ -1097,7 +1083,7 @@
    ]
   },
   "27": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1129,8 +1115,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Oberstes Organ"
+     "item": null
     }
    ]
   },
@@ -1209,7 +1194,7 @@
    ]
   },
   "37": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1305,9 +1290,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    8
    ]
   },
   "41": {
@@ -1326,9 +1308,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    8
    ]
   },
   "43": {
@@ -1532,7 +1511,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "49": {
@@ -2120,10 +2099,10 @@
    "aufgehobenSeit": "2009-06-01"
   },
   "61": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    15
    ]
   },
   "62": {
@@ -2214,7 +2193,7 @@
    ]
   },
   "16_a": {
-   "giltSeit": "2004-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -2246,7 +2225,7 @@
    ]
   },
   "16_b": {
-   "giltSeit": "2004-04-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -2274,28 +2253,28 @@
    ]
   },
   "1_a": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "1_b": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "1_c": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "1_d": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -2323,14 +2302,14 @@
    ]
   },
   "1_f": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
    ]
   },
   "1_g": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -2358,7 +2337,7 @@
    ]
   },
   "1_i": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2
@@ -2681,7 +2660,7 @@
    ]
   },
   "27_a": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2743,7 +2722,7 @@
    ]
   },
   "27_d": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2771,7 +2750,7 @@
    ]
   },
   "27_f": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -2954,14 +2933,14 @@
    ]
   },
   "27_j": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
    ]
   },
   "27_k": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     6
@@ -3087,9 +3066,6 @@
      "absatz": null,
      "item": null
     }
-   ],
-   "erbt": [
-    8
    ]
   },
   "44_a": {
@@ -3239,7 +3215,7 @@
     }
    ],
    "erbt": [
-    9
+    8
    ]
   },
   "48_b": {
@@ -3292,7 +3268,7 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "48_d": {
@@ -3332,7 +3308,7 @@
     }
    ],
    "erbt": [
-    10
+    9
    ]
   },
   "48_f": {
@@ -3447,51 +3423,51 @@
    ]
   },
   "48_g": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "48_h": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "48_i": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "48_j": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "48_k": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "48_l": {
-   "giltSeit": "2011-08-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11,
-    12
+    10,
+    11
    ]
   },
   "49_a": {
@@ -3744,24 +3720,24 @@
     }
    ],
    "erbt": [
-    13,
-    14
+    12,
+    13
    ]
   },
   "60_c": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13,
-    14
+    12,
+    13
    ]
   },
   "60_d": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13,
-    14
+    12,
+    13
    ]
   },
   "60_e": {
@@ -3828,7 +3804,7 @@
     }
    ],
    "erbt": [
-    15
+    14
    ]
   },
   "60_f": {
@@ -3917,13 +3893,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausführungsbestimmungen zu Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision"
+     "item": null
     }
    ]
   },
   "62_b": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3942,10 +3917,10 @@
    ]
   },
   "62_c": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    16
    ]
   },
   "62_d": {
@@ -3975,8 +3950,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1c. Abschnitt: Ausführungsbestimmung zu Buchstabe a Buchstaben a–d der Übergangsbestimmungen der Änderung vom 17. Dezember 2021 des AHVG"
+     "item": null
     }
    ]
   }

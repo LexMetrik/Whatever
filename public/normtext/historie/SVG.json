@@ -63,7 +63,7 @@
   },
   {
    "typ": "eingefuegt",
-   "datum": "2013-01-01",
+   "datum": null,
    "wirkung": false,
    "quellen": [
     {
@@ -77,7 +77,8 @@
    ],
    "absatz": null,
    "item": null,
-   "ueberschrift": "IVa. Titel: Informationssysteme"
+   "ueberschrift": "IVa. Titel: Informationssysteme",
+   "teilweise": "Eingefügt durch Ziff. I des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit 1. Jan. 2013, Abschn. 3 in Kraft seit 1. Jan. 2014 und Abschn. 1 in Kraft seit 1. Jan. 2019 (AS 2012 6291, 2013 4669, 2018 4985; BBl 2010 8447)."
   }
  ],
  "artikel": {
@@ -800,8 +801,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Aus- und Weiterbildung der Motorfahrzeugführer"
+     "item": null
     }
    ]
   },
@@ -4068,7 +4068,7 @@
    ]
   },
   "25_a": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4091,49 +4091,49 @@
    ]
   },
   "25_b": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_c": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_d": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_e": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_f": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_g": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
    ]
   },
   "25_h": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     0
@@ -4724,7 +4724,7 @@
    ]
   },
   "89_a": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4742,7 +4742,8 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
+     "ueberschrift": "IVa. Titel: Informationssysteme",
+     "teilweise": "Eingefügt durch Ziff. I des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit 1. Jan. 2013, Abschn. 3 in Kraft seit 1. Jan. 2014 und Abschn. 1 in Kraft seit 1. Jan. 2019 (AS 2012 6291, 2013 4669, 2018 4985; BBl 2010 8447)."
     }
    ]
   },
@@ -4806,7 +4807,7 @@
    ]
   },
   "89_c": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -5025,70 +5026,70 @@
    ]
   },
   "89_f": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_g": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_h": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_i": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_j": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_k": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_l": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_m": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_n": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_o": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "berichtigt",
@@ -5109,35 +5110,35 @@
    ]
   },
   "89_p": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_q": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_r": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_s": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
    ]
   },
   "89_t": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3

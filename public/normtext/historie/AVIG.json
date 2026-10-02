@@ -187,8 +187,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
+     "item": null
     }
    ]
   },
@@ -3540,7 +3539,7 @@
    ]
   },
   "69": {
-   "giltSeit": "2003-07-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     2,
@@ -3711,8 +3710,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Kapitel: Durchführungsorgane"
+     "item": null
     }
    ]
   },
@@ -5970,8 +5968,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Viertes Kapitel: Verhältnis zum europäischen Recht"
+     "item": null
     }
    ]
   },
@@ -5994,8 +5991,7 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Viertes Kap.",
-     "ueberschrift": "Fünftes Kapitel: Referendum und Inkrafttreten"
+     "frueher": "Viertes Kap."
     }
    ]
   },
@@ -6908,7 +6904,7 @@
    ]
   },
   "64_b": {
-   "giltSeit": "2003-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",

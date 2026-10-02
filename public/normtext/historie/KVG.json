@@ -169,8 +169,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Anwendbarkeit des ATSG"
+     "item": null
     }
    ]
   },
@@ -2489,7 +2488,7 @@
    ]
   },
   "55": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     3
@@ -3540,7 +3539,7 @@
    "aufgehobenSeit": "2016-01-01"
   },
   "78": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3563,7 +3562,7 @@
    ]
   },
   "79": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -3942,7 +3941,7 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "89": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     5
@@ -4412,7 +4411,7 @@
    ]
   },
   "1_a": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5569,8 +5568,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Pilotprojekte zur Eindämmung der Kostenentwicklung"
+     "item": null
     }
    ]
   },
@@ -5900,8 +5898,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "item": null
     }
    ]
   },
@@ -6091,7 +6088,7 @@
    ]
   },
   "78_a": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [],
    "erbt": [
     4
@@ -6612,8 +6609,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Titel: Verhältnis zum europäischen Recht"
+     "item": null
     }
    ]
   }
