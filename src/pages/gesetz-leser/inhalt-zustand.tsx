@@ -468,7 +468,11 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // A3: aktuell gelesener Artikel (live) für den Einzelansicht-Kopf. Nur in der
   // Einzelansicht (!imPane) gepflegt; im Split-View trägt der PaneKopf den Titel.
   const meldeInhaltsKopf = useMeldeInhaltsKopf();
-  const [aktArtikel, setAktArtikel] = useState<string | null>(null);
+  // W2·17-UI-BEFUNDE (B10-B01): der Zustand hält den TOKEN des gelesenen Artikels,
+  // nie sein Anzeige-Label — Labels sind je Erlass nicht eindeutig («Art. 3» im
+  // Hauptteil und in der Schlusstitel-/Übergangsgruppe, 217 Artikel in OR/ZGB/SchKG).
+  // Das Label ist daraus abgeleitet (`useArtikelTokens`, `artLabelByToken`).
+  const [aktToken, setAktToken] = useState<string | null>(null);
   // B-2.5: In einem Pane scopen wir DOM-Queries + Scroll auf die Pane-Wurzel
   // (sonst kollidieren doppelte `art-`-IDs / trifft der Scroll das falsche Pane).
   // NUR ein SEKUNDÄRES Pane unterdrückt globale URL-/Reiter-Writes — das primäre
@@ -518,7 +522,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
 
   return {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys,
     kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   };

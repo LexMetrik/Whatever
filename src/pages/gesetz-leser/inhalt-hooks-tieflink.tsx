@@ -76,14 +76,13 @@ export function useTieflinkSprung(opts: {
   imPane: boolean;
   wurzel: RefObject<HTMLElement | null> | null;
   paneLocationHash: string;
-  artLabelByToken: Map<string, string>;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
-  setAktArtikel: Dispatch<SetStateAction<string | null>>;
+  setAktToken: Dispatch<SetStateAction<string | null>>;
   setAktivIds: Dispatch<SetStateAction<string[]>>;
 }): void {
   const {
     ebene, schluessel, eintraege, sektionen, istSekundaer, imPane, wurzel,
-    paneLocationHash, artLabelByToken, setOffen, setAktArtikel, setAktivIds,
+    paneLocationHash, setOffen, setAktToken, setAktivIds,
   } = opts;
   const strukturEntschieden = useStrukturEntschieden(ebene, schluessel);
 
@@ -150,8 +149,7 @@ export function useTieflinkSprung(opts: {
     // erst nach dem ersten manuellen Scroll.
     if (ids.length) {
       setAktivIds(ids);
-      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
-      setAktArtikel(artLabel);
+      setAktToken(token);
     }
     if (ids.length) oeffnePfad(ids);
     // ═══ W2·24-R6/L1 · DER TIEFLINK-SPRUNG WIRD NICHT GEMALT, BEVOR ER STEHT ══

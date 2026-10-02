@@ -257,9 +257,8 @@ export function useLeserSprungSpy(opts: {
   umhaengPraefix: Record<string, string[]>;
   istXl: boolean;
   tocOffen: boolean;
-  artLabelByToken: Map<string, string>;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
-  setAktArtikel: Dispatch<SetStateAction<string | null>>;
+  setAktToken: Dispatch<SetStateAction<string | null>>;
   setAktivIds: Dispatch<SetStateAction<string[]>>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   refs: {
@@ -278,7 +277,7 @@ export function useLeserSprungSpy(opts: {
   const {
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, gliederungsKnoten, umhaengPraefix, istXl, tocOffen,
-    artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum, refs,
+    setOffen, setAktToken, setAktivIds, setTocBaum, refs,
   } = opts;
   const {
     jumpLock, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
@@ -291,7 +290,7 @@ export function useLeserSprungSpy(opts: {
   // die Hook-Reihenfolge byte-identisch bleibt (dort die Herleitung).
   useTieflinkSprung({
     ebene, schluessel, eintraege, sektionen, istSekundaer, imPane, wurzel,
-    paneLocationHash, artLabelByToken, setOffen, setAktArtikel, setAktivIds,
+    paneLocationHash, setOffen, setAktToken, setAktivIds,
   });
 
   // Geteilter «aktueller-Artikel»-Beobachter (Auftrag David 26.6.2026): EIN
@@ -392,11 +391,13 @@ export function useLeserSprungSpy(opts: {
       letzterArtToken.current = token;
       // A3/F: aktuellen Artikel an den Kopf melden (Einzelansicht-Kopf ODER PaneKopf),
       // entprellt (150 ms) → coalesct schnelle Artikelgrenzen, weniger Pane-Re-Renders.
-      // Echtes Label des Eintrags (deckt Schlusstitel «Art. 3» korrekt ab);
-      // Fallback auf die Token-Heuristik nur, falls kein Eintrag passt.
-      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
+      // W2·17-UI-BEFUNDE (B10-B01): gemeldet wird der TOKEN, nicht das Label. Das
+      // Label «Art. 3» trägt der Hauptartikel UND der Schlusstitel-/Übergangs-
+      // artikel (217 Fälle in OR/ZGB/SchKG) — die Rückübersetzung Label→Token
+      // landete immer beim Hauptartikel. Das Label leitet `useArtikelTokens` aus
+      // dem Token ab (`artLabelByToken`, echtes artikelLabel des Eintrags).
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
-      aktArtikelTimer.current = window.setTimeout(() => setAktArtikel(artLabel), 150);
+      aktArtikelTimer.current = window.setTimeout(() => setAktToken(token), 150);
       // (b) Reiter-Live-Label: ?search (Instanz-?r) erhalten, Hash = #art-token.
       //     aktualisiereTabArtikel ist idempotent + no-op ohne passenden Reiter.
       //     Entprellt (trailing): beim schnellen Durchscrollen sonst ein
@@ -669,7 +670,7 @@ export function useLeserSprungSpy(opts: {
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current); // F3
     };
-    // Refs/Setter (jumpLock/…/setAktivIds) + artLabelByToken sind stabil bzw. bewusst
+    // Refs/Setter (jumpLock/…/setAktivIds) sind stabil bzw. bewusst
     // ausgelassen; Deps byte-identisch zum früheren Inline-Effekt (Rank 9-Kopplung).
     // S5: `gliederungsKnoten` kommt aus demselben useMemo-Takt wie `sektionen`
     // (Modell-Deps: kuratierter Baum + Snapshot + Sidecar) — der Effekt läuft

@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
+import type { StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { eindeutigeBezeichnung } from './artikelBezeichnung';
 import { holeLesePosition, merkeLesePosition, vergissLesePosition, type LesePosition } from './lesePosition';
 
 // ═══ ABSCHNITT · R4 «Weiterlesen bei Art. X» + R8 Tastatur-Navigation ════════
@@ -11,9 +13,11 @@ import { holeLesePosition, merkeLesePosition, vergissLesePosition, type LesePosi
 // Komponenten-Exporte); im Ruhezustand rendern beide `null`, das prerenderte
 // Markup bleibt also byte-gleich. Keine Rechtsregel (§3).
 
-export function useWeiterlesen({ erlass, eintraege, istSekundaer, locationHash, aktArtikel, aktivToken, springeZuArtikel }: {
+export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, locationHash, aktArtikel, aktivToken, springeZuArtikel }: {
   erlass: BrowseErlass | null;
   eintraege: NormSnapshot[] | null;
+  /** Für die eindeutige Chip-Beschriftung von Übergangsartikeln (B7). */
+  struktur: StrukturMap | null;
   istSekundaer: boolean;
   locationHash: string;
   aktArtikel: string | null;
@@ -59,8 +63,9 @@ export function useWeiterlesen({ erlass, eintraege, istSekundaer, locationHash, 
   useEffect(() => {
     if (istSekundaer || !erlass || !aktArtikel || !aktivToken) return;
     if (weiterlesenGelesen.current !== erlass.key) return; // erst nach dem Lesen schreiben
-    merkeLesePosition({ key: erlass.key, token: aktivToken, label: aktArtikel, stand: erlass.stand });
-  }, [istSekundaer, erlass, aktArtikel, aktivToken]);
+    // B7: bei Übergangsartikeln mit der Gruppe beschriftet, nie als blosses «Art. 3».
+    merkeLesePosition({ key: erlass.key, token: aktivToken, label: eindeutigeBezeichnung(aktivToken, aktArtikel, struktur), stand: erlass.stand });
+  }, [istSekundaer, erlass, aktArtikel, aktivToken, struktur]);
 
   // R4 · Verfall ohne Timer und ohne Listener: sobald der Spy einen ANDEREN
   // Artikel meldet als beim Erscheinen des Chips, liest der Nutzer bereits selbst

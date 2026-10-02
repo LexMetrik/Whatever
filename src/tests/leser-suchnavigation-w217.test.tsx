@@ -146,7 +146,7 @@ describe('(c) PE-C6-B01 / PE-C8-B02 · Bereichswechsel verwirft die Fundstellen-
       holder.api = useSuchTreffer({
         erlassKey: 'X', eintraege, struktur, sucheTrim: 'Zaunkoenig', sucheFeldLeer: false,
         sektionen: [], aktivIds: [], internRefs: undefined, aktArtikel: null,
-        tokenByLabel: new Map(), offen: {}, setOffen: () => {}, imPane: false, wurzel: null, bereich,
+        offen: {}, setOffen: () => {}, imPane: false, wurzel: null, bereich,
       });
       return null;
     }
