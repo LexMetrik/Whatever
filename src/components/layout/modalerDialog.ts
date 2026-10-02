@@ -27,7 +27,7 @@ export function offeneModaleDialoge(): ArrayLike<Element> {
 // liegt ausserhalb von `role="menu"`, s. `LeserAnsichtV3`), `role="menu"` jedes andere.
 
 /** Selektor der gerade offenen Menüs (gemountet nur, solange sie offen sind). */
-export const OFFENES_MENUE = '[data-v3-ansicht-panel], [role="menu"]';
+const OFFENES_MENUE = '[data-v3-ansicht-panel], [role="menu"]';
 
 /** Ist gerade ein Menü offen? Ohne DOM (SSR) nie. */
 export function menueOffen(): boolean {
