@@ -1,3 +1,4 @@
+import { lokalSpeicher } from '../sichererSpeicher';
 // ─── Gliederungs-Wahl der Gesetzes-Übersichten (A15, W2·5d) ───────────────────
 //
 // REINE DARSTELLUNG (§3): welche Ordnung die drei Säulen-Übersichten (Bund /
@@ -41,7 +42,7 @@ function istGliederung(v: unknown): v is Gliederung {
 function ladeGliederung(): Gliederung {
   if (typeof window === 'undefined') return GLIEDERUNG_DEFAULT;
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     return istGliederung(roh) ? roh : GLIEDERUNG_DEFAULT;
   } catch {
     // localStorage gesperrt (privater Modus) → Default.
@@ -52,7 +53,7 @@ function ladeGliederung(): Gliederung {
 /** Persistiert die Wahl (best effort — bei gesperrtem Speicher nur für die Sitzung). */
 export function speichereGliederung(g: Gliederung): void {
   try {
-    localStorage.setItem(KEY, g);
+    lokalSpeicher.schreib(KEY, g);
   } catch {
     /* Speicher gesperrt — die Wahl gilt dann nur für die Sitzung (URL trägt sie). */
   }

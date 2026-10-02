@@ -31,6 +31,7 @@ import { wendeSchriftskalaAn } from './components/layout/useSchriftskala'
 import { wendeLeserOptionenAn } from './pages/gesetz-leser/leserOptionen'
 import { meldeFehler } from './components/fehlermeldung'
 import { fruehesSuchKuerzelStarten } from './components/suche/fruehesSuchKuerzel'
+import { sitzungsSpeicher } from './lib/sichererSpeicher';
 
 // Thema so früh wie möglich anwenden (vor dem ersten App-Render) — ohne
 // CSP-verbotenes Inline-Script bleibt für Dunkel-Nutzer ein kurzes Aufblitzen
@@ -62,8 +63,8 @@ fruehesSuchKuerzelStarten()
 // über einen Lazy-Import, sondern über modulepreload geladen werden.
 window.addEventListener('vite:preloadError', () => {
   try {
-    if (!sessionStorage.getItem('lex-chunk-reload')) {
-      sessionStorage.setItem('lex-chunk-reload', '1')
+    if (!sitzungsSpeicher.lies('lex-chunk-reload')) {
+      sitzungsSpeicher.schreib('lex-chunk-reload', '1')
       window.location.reload()
     }
   } catch { /* sessionStorage nicht verfügbar */ }

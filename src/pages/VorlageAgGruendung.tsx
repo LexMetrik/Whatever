@@ -35,6 +35,7 @@ import { SCHRITTE, BEREICH_SCHRITT, BANNER_ENTWURF, STORAGE_KEY, agStandDefaults
 import type { AgSchrittCtx } from './vorlage-ag-gruendung/ctx';
 import { SchrittKonstellation, SchrittGesellschaft, SchrittKapital, SchrittPersonen, SchrittWeiteres } from './vorlage-ag-gruendung/schritte-eingabe';
 import { SchrittDokumente } from './vorlage-ag-gruendung/schritte-dokumente';
+import { lokalSpeicher } from '../lib/sichererSpeicher';
 
 export function VorlageAgGruendung() {
   const card = karte('ag-gruendung');
@@ -210,7 +211,7 @@ export function VorlageAgGruendung() {
   // sonst hydratisiert der Reload den alten Stand sofort wieder.
   const zuruecksetzen = () => {
     try {
-      localStorage.removeItem(STORAGE_KEY);
+      lokalSpeicher.entferne(STORAGE_KEY);
     } catch {
       // Speicher blockiert — Reload setzt dann nur die Sitzung zurück.
     }

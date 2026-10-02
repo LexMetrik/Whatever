@@ -17,6 +17,7 @@ import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../comp
 import { MUSTER } from '../components/vorlagen/musterdaten';
 import { KANTONE } from '../lib/kantone';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import { lokalSpeicher } from '../lib/sichererSpeicher';
 
 // ─── Vorlagen-Wizard: Einzelarbeitsvertrag (Art. 319 ff. OR) ────────────────
 // Erste Vorlage auf dem generischen Wizard-Rahmen. Validierungskern ist die
@@ -81,12 +82,12 @@ function VertragstypWahl({ regime, onWahl }: { regime: AvRegime; onWahl: (v: AvR
 export function VorlageArbeitsvertrag() {
   const [regime, setRegime] = useState<AvRegime>(() => {
     try {
-      const r = localStorage.getItem(REGIME_KEY);
+      const r = lokalSpeicher.lies(REGIME_KEY);
       if (r === 'einzel' || r === 'kader' || r === 'lehrvertrag' || r === 'handelsreisendenvertrag' || r === 'heimarbeitsvertrag') return r;
     } catch { /* defekter Speicher → Default */ }
     return 'einzel';
   });
-  useEffect(() => { try { localStorage.setItem(REGIME_KEY, regime); } catch { /* Speicher blockiert */ } }, [regime]);
+  useEffect(() => { lokalSpeicher.schreib(REGIME_KEY, regime); // Speicher blockiert }, [regime]);
 
   const kopf = <VertragstypWahl regime={regime} onWahl={setRegime} />;
   if (regime === 'lehrvertrag') return <VorlageLehrvertrag kopf={kopf} />;
