@@ -86,6 +86,13 @@ describe('(a) G4-B01 — bei offenem «Ansicht»-Menü gehören die Tasten dem M
     expect(spur).toEqual({ spruenge: [], panel: 0, blaettern: [] });
   });
 
+  it('Menü offen, aber der Fokus liegt AUSSERHALB der Fläche (Auslöser): die Tasten bedienen den Leser (w229 (g), CI-Rot #1277)', async () => {
+    const { spur, taste, document } = await aufbauen(MENUE + '<button id="ausloeser">Ansicht</button>', { panel: true });
+    expect(taste('r', { target: document.getElementById('ausloeser') })).toBe(true);
+    expect(taste('j', { target: document.getElementById('ausloeser') })).toBe(true);
+    expect(spur).toEqual({ spruenge: ['3'], panel: 1, blaettern: [] });
+  });
+
   it('Gegenprobe: ohne offenes Menü bedienen dieselben Tasten den Leser', async () => {
     const { spur, taste } = await aufbauen('', { panel: true, blaettern: true });
     expect(taste('j')).toBe(true);
@@ -99,8 +106,9 @@ describe('(a) G4-B01 — bei offenem «Ansicht»-Menü gehören die Tasten dem M
     ['Verlauf (role=dialog ohne aria-modal)', '<div role="dialog" data-menue-flaeche aria-label="Verlauf – zuletzt geöffnet" tabindex="-1"><button>x</button></div>'],
     ['Sprachwahl', '<div role="group" data-menue-flaeche aria-label="Sprache wählen"><button aria-pressed="true">de</button></div>'],
   ])('auch %s sperrt die Kürzel (gemeinsame Markierung)', async (_n, html) => {
-    const { spur, taste } = await aufbauen(html, { panel: true, blaettern: true });
-    for (const k of ['j', 'k', 't', 'r', 'ArrowRight']) expect(taste(k), k).toBe(false);
+    const { document, spur, taste } = await aufbauen(html, { panel: true, blaettern: true });
+    const drin = (document.querySelector('[data-menue-flaeche] button') ?? document.querySelector('[data-menue-flaeche]')) as unknown as Element;
+    for (const k of ['j', 'k', 't', 'r', 'ArrowRight']) expect(taste(k, { target: drin }), k).toBe(false);
     expect(spur).toEqual({ spruenge: [], panel: 0, blaettern: [] });
   });
 

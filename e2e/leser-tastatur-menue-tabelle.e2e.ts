@@ -12,7 +12,7 @@
 //    Taste = Auto-Repeat): das Overlay bleibt offen.
 //
 // ROT ZU BEKOMMEN (§6.7, gegen den QUELLCODE `src/`): in `parts/LeserTastatur.tsx`
-// `menueOffen()` / `inWaagrechtemScroller(e.target)` / `e.repeat && UMSCHALTER`
+// `imMenue(e.target)` / `inWaagrechtemScroller(e.target)` / `e.repeat && UMSCHALTER`
 // entfernen — je der Test (a)/(b)/(c) fällt.
 import { test, expect, type Page } from '@playwright/test'
 

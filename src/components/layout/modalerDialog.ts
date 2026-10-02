@@ -34,7 +34,11 @@ export function offeneModaleDialoge(): ArrayLike<Element> {
 /** Selektor der gerade offenen Menü-Flächen. */
 const OFFENES_MENUE = '[data-menue-flaeche]';
 
-/** Ist gerade ein Menü offen? Ohne DOM (SSR) nie. */
-export function menueOffen(): boolean {
-  return typeof document !== 'undefined' && document.querySelector(OFFENES_MENUE) !== null;
+/** Steht der Fokus (Ziel des Tastendrucks) IN einer offenen Menü-Fläche? Dann gehören
+ *  die Tasten dem Menü. Bewusst am Fokus, nicht am blossen «ein Menü ist offen»: das
+ *  Ansicht-Menü bleibt nach einer Wahl offen, und wer den Fokus zurück auf den Auslöser
+ *  setzt (ausserhalb der Fläche), bedient wieder den Leser — «r» schaltet dann das Blatt
+ *  (`e2e/w229-w1f-blatt-artikel.e2e.ts` (g), CI-Rot von #1277). Ohne DOM nie. */
+export function imMenue(ziel: EventTarget | null): boolean {
+  return (ziel as Element | null)?.closest?.(OFFENES_MENUE) != null;
 }

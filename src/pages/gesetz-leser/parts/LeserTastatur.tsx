@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
-import { menueOffen, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
+import { imMenue, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
 import { BLAETTERN, NAVIGATION, UMSCHALTER, belegung } from './leserTastaturBelegung';
 import { inWaagrechtemScroller } from './leserTastaturZiel';
@@ -34,7 +34,7 @@ import { inWaagrechtemScroller } from './leserTastaturZiel';
 //  2c. (G4-B01, 2.10.2026) Offenes Menü («Ansicht ▾», Reiter-Kontextmenü) → raus,
 //     und zwar VOR allem anderen: ein Menü ist kein `aria-modal`-Dialog, hat aber
 //     Fokusfalle und eigene Tasten (Pfeile, Esc, Enter); «t» schob den Fokus
-//     unter dem offenen Menü weg (`components/layout/modalerDialog`, `menueOffen`).
+//     unter dem offenen Menü weg (`components/layout/modalerDialog`, `imMenue`).
 //  2d. (G4-B02) Auto-Repeat bei den UMSCHALTERN («?», «r», «t») → raus: eine
 //     gehaltene Taste liess das Overlay flackern bzw. das Blatt hin- und herklappen.
 //     j/k/←/→ bleiben absichtlich wiederholbar (gehalten durchblättern, #1265).
@@ -175,7 +175,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // damit unberührt. Herleitung und Messwerte: `../panePrioritaet`.
       if (!tastendruckGehoertPane(paneRolleRef.current)) return;
       // Guard 2c/2d (G4-B01, G4-B02): s. Kopfkommentar.
-      if (menueOffen()) return;
+      if (imMenue(e.target)) return;
       if (e.repeat && UMSCHALTER.has(e.key)) return;
       // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
       // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
