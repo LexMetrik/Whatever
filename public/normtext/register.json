@@ -20,7 +20,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/24/233_245_233/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-24-233_245_233-20260701-de-pdf-a-1.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "1912-01-01"
+      "inkraftSeit": "1912-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "OR",
@@ -41,7 +42,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/27/317_321_377/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-27-317_321_377-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1912-01-01"
+      "inkraftSeit": "1912-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VVG",
@@ -62,7 +64,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/24/719_735_717/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-24-719_735_717-20240101-de-pdf-a.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "1910-01-01"
+      "inkraftSeit": "1910-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VMWG",
@@ -83,7 +86,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1990/835_835_835/20251001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1990-835_835_835-20251001-de-pdf-a.pdf",
       "pdfStand": "2025-10-01",
-      "inkraftSeit": "1990-07-01"
+      "inkraftSeit": "1990-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GBV",
@@ -104,7 +108,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2011/667/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2011-667-20240101-de-pdf-a-2.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2012-01-01"
+      "inkraftSeit": "2012-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HREGV",
@@ -125,7 +130,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/686/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-686-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GEBV_HREG",
@@ -146,7 +152,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/180/20210101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2020-180-20210101-de-pdf-a-1.pdf",
       "pdfStand": "2021-01-01",
-      "inkraftSeit": "2021-01-01"
+      "inkraftSeit": "2021-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "URG",
@@ -167,7 +174,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/1798_1798_1798/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-1798_1798_1798-20250701-de-pdf-a-1.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1993-07-01"
+      "inkraftSeit": "1993-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FUSG",
@@ -188,7 +196,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/320/20230101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-320-20230101-de-pdf-a-2.pdf",
       "pdfStand": "2023-01-01",
-      "inkraftSeit": "2004-07-01"
+      "inkraftSeit": "2004-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UWG",
@@ -209,7 +218,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1988/223_223_223/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1988-223_223_223-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1988-03-01"
+      "inkraftSeit": "1988-03-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MSCHG",
@@ -230,7 +240,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/274_274_274/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-274_274_274-20250701-de-pdf-a-1.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1993-04-01"
+      "inkraftSeit": "1993-04-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PATG",
@@ -251,7 +262,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1955/871_893_899/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1955-871_893_899-20250701-de-pdf-a-1.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1956-01-01"
+      "inkraftSeit": "1956-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "SORTG",
@@ -272,7 +284,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1977/862_862_862/20110101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1977-862_862_862-20110101-de-pdf-a-5.pdf",
       "pdfStand": "2011-01-01",
-      "inkraftSeit": "1977-06-01"
+      "inkraftSeit": "1977-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PRG",
@@ -293,7 +306,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3152_3152_3152/20210820/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-3152_3152_3152-20210820-de-pdf-a-1.pdf",
       "pdfStand": "2021-08-20",
-      "inkraftSeit": "1994-07-01"
+      "inkraftSeit": "1994-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BEG",
@@ -314,7 +328,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/450/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-450-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2009-10-01"
+      "inkraftSeit": "2009-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PARTG",
@@ -335,7 +350,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/782/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-782-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ZSTV",
@@ -356,7 +372,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/362/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-362-20250601-de-pdf-a-1.pdf",
       "pdfStand": "2025-06-01",
-      "inkraftSeit": "2004-07-01"
+      "inkraftSeit": "2004-07-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "IPRG",
@@ -377,7 +394,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1988/1776_1776_1776/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1988-1776_1776_1776-20260101-de-pdf-a-1.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1989-01-01"
+      "inkraftSeit": "1989-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MSCHV",
@@ -398,7 +416,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/296_296_296/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-296_296_296-20250701-de-pdf-a-2.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1993-04-01"
+      "inkraftSeit": "1993-04-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KKG",
@@ -419,7 +438,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/593/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-593-20230901-de-pdf-a.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PATV",
@@ -440,7 +460,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1977/2027_2027_2027/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1977-2027_2027_2027-20250701-de-pdf-a.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1978-01-01"
+      "inkraftSeit": "1978-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "BGBB",
@@ -461,7 +482,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/1410_1410_1410/20140101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-1410_1410_1410-20140101-de-pdf-a-2.pdf",
       "pdfStand": "2014-01-01",
-      "inkraftSeit": "1994-01-01"
+      "inkraftSeit": "1994-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DESV",
@@ -482,7 +504,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/183/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-183-20250701-de-pdf-a.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "2002-07-01"
+      "inkraftSeit": "2002-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DESG",
@@ -503,7 +526,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/226/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-226-20250701-de-pdf-a-1.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "2002-07-01"
+      "inkraftSeit": "2002-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "URV",
@@ -524,7 +548,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/1821_1821_1821/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-1821_1821_1821-20250701-de-pdf-a.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "1993-07-01"
+      "inkraftSeit": "1993-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "TGBV",
@@ -545,7 +570,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2013/3/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2013-3-20240101-de-pdf-a-3.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2013-02-01"
+      "inkraftSeit": "2013-02-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VKKG",
@@ -566,7 +592,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/594/20210701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-594-20210701-de-pdf-a-4.pdf",
       "pdfStand": "2021-07-01",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ADOV",
@@ -587,7 +614,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2011/505/20230123/de/pdf-a/fedlex-data-admin-ch-eli-cc-2011-505-20230123-de-pdf-a.pdf",
       "pdfStand": "2023-01-23",
-      "inkraftSeit": "2012-01-01"
+      "inkraftSeit": "2012-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PAVO",
@@ -608,7 +636,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1977/1931_1931_1931/20230123/de/pdf-a/fedlex-data-admin-ch-eli-cc-1977-1931_1931_1931-20230123-de-pdf-a.pdf",
       "pdfStand": "2023-01-23",
-      "inkraftSeit": "1978-01-01"
+      "inkraftSeit": "1978-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EOEBV",
@@ -629,7 +658,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/29/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-29-20240101-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2018-02-01"
+      "inkraftSeit": "2018-02-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PRHG",
@@ -668,7 +698,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-54-757_781_799-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1942-01-01"
+      "inkraftSeit": "1942-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "JSTG",
@@ -689,7 +720,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/551/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-551-20250701-de-pdf-a-1.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BETMG",
@@ -710,7 +742,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/241_241_245/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-1952-241_241_245-20230901-de-pdf-a-2.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "1952-06-01"
+      "inkraftSeit": "1952-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VSTRR",
@@ -731,7 +764,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-1974-1857_1857_1857-20230901-de-pdf-a-1.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "1975-01-01"
+      "inkraftSeit": "1975-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "OHG",
@@ -752,7 +786,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/232/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-232-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MSTG",
@@ -773,7 +808,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/43/359_375_369/20260608/de/pdf-a/fedlex-data-admin-ch-eli-cc-43-359_375_369-20260608-de-pdf-a.pdf",
       "pdfStand": "2026-06-08",
-      "inkraftSeit": "1928-01-01"
+      "inkraftSeit": "1928-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MSTP",
@@ -794,7 +830,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1979/1059_1059_1059/20240701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1979-1059_1059_1059-20240701-de-pdf-a-2.pdf",
       "pdfStand": "2024-07-01",
-      "inkraftSeit": "1980-01-01"
+      "inkraftSeit": "1980-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "IRSG",
@@ -815,7 +852,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1982/846_846_846/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1982-846_846_846-20240101-de-pdf-a-3.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "1983-01-01"
+      "inkraftSeit": "1983-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ZENTV",
@@ -836,7 +874,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/29/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-29-20230901-de-pdf-a-1.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "2002-01-01"
+      "inkraftSeit": "2002-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ZAVV",
@@ -857,7 +896,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/760/20230101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-760-20230101-de-pdf-a.pdf",
       "pdfStand": "2023-01-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BETMKV",
@@ -878,7 +918,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2011/362/20230123/de/pdf-a/fedlex-data-admin-ch-eli-cc-2011-362-20230123-de-pdf-a.pdf",
       "pdfStand": "2023-01-23",
-      "inkraftSeit": "2011-07-01"
+      "inkraftSeit": "2011-07-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ZPO",
@@ -899,7 +940,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/262/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2010-262-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "2011-01-01"
+      "inkraftSeit": "2011-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "STPO",
@@ -920,7 +962,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/267/20250401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2010-267-20250401-de-pdf-a.pdf",
       "pdfStand": "2025-04-01",
-      "inkraftSeit": "2011-01-01"
+      "inkraftSeit": "2011-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BGG",
@@ -941,7 +984,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/218/20260401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-218-20260401-de-pdf-a.pdf",
       "pdfStand": "2026-04-01",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "JSTPO",
@@ -962,7 +1006,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/226/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2010-226-20250701-de-pdf-a.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "2011-01-01"
+      "inkraftSeit": "2011-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VWVG",
@@ -983,7 +1028,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1969/737_757_755/20220701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1969-737_757_755-20220701-de-pdf-a-5.pdf",
       "pdfStand": "2022-07-01",
-      "inkraftSeit": "1969-10-01"
+      "inkraftSeit": "1969-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BGERR",
@@ -1004,7 +1050,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/834/20260201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-834-20260201-de-pdf-a.pdf",
       "pdfStand": "2026-02-01",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VGG",
@@ -1025,7 +1072,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/352/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-352-20260612-de-pdf-a.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BGFA",
@@ -1046,7 +1094,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/153/20250701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-153-20250701-de-pdf-a.pdf",
       "pdfStand": "2025-07-01",
-      "inkraftSeit": "2002-06-01"
+      "inkraftSeit": "2002-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VG",
@@ -1067,7 +1116,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1958/1413_1483_1489/20250615/de/pdf-a/fedlex-data-admin-ch-eli-cc-1958-1413_1483_1489-20250615-de-pdf-a.pdf",
       "pdfStand": "2025-06-15",
-      "inkraftSeit": "1959-01-01"
+      "inkraftSeit": "1959-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "STBOG",
@@ -1088,7 +1138,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/444/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2010-444-20240101-de-pdf-a.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2011-01-01"
+      "inkraftSeit": "2011-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VGKE",
@@ -1109,7 +1160,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/321/20100401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-321-20100401-de-pdf-a-1.pdf",
       "pdfStand": "2010-04-01",
-      "inkraftSeit": "2008-06-01"
+      "inkraftSeit": "2008-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VGR",
@@ -1130,7 +1182,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/320/20230601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-320-20230601-de-pdf-a-1.pdf",
       "pdfStand": "2023-06-01",
-      "inkraftSeit": "2008-06-01"
+      "inkraftSeit": "2008-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "SCHKG",
@@ -1151,7 +1204,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/11/529_488_529/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-11-529_488_529-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1892-01-01"
+      "inkraftSeit": "1892-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "GEBV_SCHKG",
@@ -1172,7 +1226,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/2937_2937_2937/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-2937_2937_2937-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1997-01-01"
+      "inkraftSeit": "1997-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KOV",
@@ -1193,7 +1248,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/27/751_749_771/20210801/de/pdf-a/fedlex-data-admin-ch-eli-cc-27-751_749_771-20210801-de-pdf-a-3.pdf",
       "pdfStand": "2021-08-01",
-      "inkraftSeit": "1912-01-01"
+      "inkraftSeit": "1912-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VBB",
@@ -1214,7 +1270,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/2877_2877_2877/20160101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-2877_2877_2877-20160101-de-pdf-a-1.pdf",
       "pdfStand": "2016-01-01",
-      "inkraftSeit": "1997-01-01"
+      "inkraftSeit": "1997-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VZG",
@@ -1235,7 +1292,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/36/425_433_469/20120101/de/pdf-a/fedlex-data-admin-ch-eli-cc-36-425_433_469-20120101-de-pdf-a-1.pdf",
       "pdfStand": "2012-01-01",
-      "inkraftSeit": "1921-01-01"
+      "inkraftSeit": "1921-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BV",
@@ -1256,7 +1314,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/404/20240303/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-404-20240303-de-pdf-a-3.pdf",
       "pdfStand": "2024-03-03",
-      "inkraftSeit": "2000-01-01"
+      "inkraftSeit": "2000-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "SVG",
@@ -1277,7 +1336,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/679_705_685/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1959-679_705_685-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "1959-10-01"
+      "inkraftSeit": "1959-10-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "DSG",
@@ -1298,7 +1358,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20250707/de/pdf-a/fedlex-data-admin-ch-eli-cc-2022-491-20250707-de-pdf-a.pdf",
       "pdfStand": "2025-07-07",
-      "inkraftSeit": "2023-09-01"
+      "inkraftSeit": "2023-09-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BBG",
@@ -1319,7 +1380,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/674/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-674-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2004-01-01"
+      "inkraftSeit": "2004-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BEWG",
@@ -1340,7 +1402,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1984/1148_1148_1148/20230701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1984-1148_1148_1148-20230701-de-pdf-a-1.pdf",
       "pdfStand": "2023-07-01",
-      "inkraftSeit": "1985-01-01"
+      "inkraftSeit": "1985-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KG",
@@ -1361,7 +1424,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/546_546_546/20230701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-546_546_546-20230701-de-pdf-a.pdf",
       "pdfStand": "2023-07-01",
-      "inkraftSeit": "1996-02-01"
+      "inkraftSeit": "1996-02-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BPR",
@@ -1382,7 +1446,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1978/688_688_688/20221023/de/pdf-a/fedlex-data-admin-ch-eli-cc-1978-688_688_688-20221023-de-pdf-a-1.pdf",
       "pdfStand": "2022-10-23",
-      "inkraftSeit": "1978-07-01"
+      "inkraftSeit": "1978-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PARLG",
@@ -1403,7 +1468,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/510/20260302/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-510-20260302-de-pdf-a.pdf",
       "pdfStand": "2026-03-02",
-      "inkraftSeit": "2003-12-01"
+      "inkraftSeit": "2003-12-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "RVOG",
@@ -1424,7 +1490,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022/20250501/de/pdf-a/fedlex-data-admin-ch-eli-cc-1997-2022_2022_2022-20250501-de-pdf-a.pdf",
       "pdfStand": "2025-05-01",
-      "inkraftSeit": "1997-10-01"
+      "inkraftSeit": "1997-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PUBLG",
@@ -1445,7 +1512,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/745/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-745-20230901-de-pdf-a-1.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "2005-01-01"
+      "inkraftSeit": "2005-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BPG",
@@ -1466,7 +1534,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2001/123/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2001-123-20240101-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2001-01-01"
+      "inkraftSeit": "2001-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BGOE",
@@ -1487,7 +1556,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/355/20231101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-355-20231101-de-pdf-a-3.pdf",
       "pdfStand": "2023-11-01",
-      "inkraftSeit": "2006-07-01"
+      "inkraftSeit": "2006-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "RPG",
@@ -1508,7 +1578,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1979/1573_1573_1573/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1979-1573_1573_1573-20260701-de-pdf-a-2.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "1980-01-01"
+      "inkraftSeit": "1980-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "USG",
@@ -1529,7 +1600,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1984/1122_1122_1122/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1984-1122_1122_1122-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1985-01-01"
+      "inkraftSeit": "1985-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GWG",
@@ -1550,7 +1622,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1998/892_892_892/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1998-892_892_892-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1998-04-01"
+      "inkraftSeit": "1998-04-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "AIG",
@@ -1571,7 +1644,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/758/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-758-20260612-de-pdf-a-2.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ASYLG",
@@ -1592,7 +1666,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/358/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-358-20260612-de-pdf-a.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "1999-10-01"
+      "inkraftSeit": "1999-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GLG",
@@ -1613,7 +1688,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/1498_1498_1498/20200701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-1498_1498_1498-20200701-de-pdf-a.pdf",
       "pdfStand": "2020-07-01",
-      "inkraftSeit": "1996-07-01"
+      "inkraftSeit": "1996-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINMAG",
@@ -1634,7 +1710,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/736/20250401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-736-20250401-de-pdf-a-1.pdf",
       "pdfStand": "2025-04-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "BANKG",
@@ -1655,7 +1732,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/51/117_121_129/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-51-117_121_129-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1935-03-01"
+      "inkraftSeit": "1935-03-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HMG",
@@ -1676,7 +1754,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2001/422/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2001-422-20250101-de-pdf-a-2.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2002-01-01"
+      "inkraftSeit": "2002-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "BUEG",
@@ -1697,7 +1776,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2016/404/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2016-404-20230901-de-pdf-a.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "2018-01-01"
+      "inkraftSeit": "2018-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "NHG",
@@ -1718,7 +1798,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1966/1637_1694_1679/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1966-1637_1694_1679-20250801-de-pdf-a.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "1967-01-01"
+      "inkraftSeit": "1967-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GSCHG",
@@ -1739,7 +1820,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1992/1860_1860_1860/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1992-1860_1860_1860-20250801-de-pdf-a-1.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "1992-11-01"
+      "inkraftSeit": "1992-11-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "WAG",
@@ -1760,7 +1842,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1992/2521_2521_2521/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1992-2521_2521_2521-20250801-de-pdf-a-1.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "1993-01-01"
+      "inkraftSeit": "1993-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ENTG",
@@ -1781,7 +1864,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/47/689_701_723/20210101/de/pdf-a/fedlex-data-admin-ch-eli-cc-47-689_701_723-20210101-de-pdf-a-2.pdf",
       "pdfStand": "2021-01-01",
-      "inkraftSeit": "1932-01-01"
+      "inkraftSeit": "1932-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BOEB",
@@ -1802,7 +1886,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/126/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2020-126-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "2021-01-01"
+      "inkraftSeit": "2021-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PUEG",
@@ -1823,7 +1908,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1986/895_895_895/20260508/de/pdf-a/fedlex-data-admin-ch-eli-cc-1986-895_895_895-20260508-de-pdf-a.pdf",
       "pdfStand": "2026-05-08",
-      "inkraftSeit": "1986-07-01"
+      "inkraftSeit": "1986-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FIDLEG",
@@ -1844,7 +1930,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2019/758/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2019-758-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2020-01-01"
+      "inkraftSeit": "2020-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "KAG",
@@ -1865,7 +1952,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/822/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-822-20261001-de-pdf-a-1.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINIG",
@@ -1886,7 +1974,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/801/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-801-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2020-01-01"
+      "inkraftSeit": "2020-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINFRAG",
@@ -1907,7 +1996,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/853/20240201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-853-20240201-de-pdf-a-1.pdf",
       "pdfStand": "2024-02-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "VAG",
@@ -1928,7 +2018,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/734/20240901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-734-20240901-de-pdf-a-1.pdf",
       "pdfStand": "2024-09-01",
-      "inkraftSeit": "2006-01-01"
+      "inkraftSeit": "2006-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VZAE",
@@ -1949,7 +2040,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/759/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-759-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VRV",
@@ -1970,7 +2062,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1962/1364_1409_1420/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1962-1364_1409_1420-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1963-01-01"
+      "inkraftSeit": "1963-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VZV",
@@ -1991,7 +2084,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1976/2423_2423_2423/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1976-2423_2423_2423-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1977-01-01"
+      "inkraftSeit": "1977-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "SSV",
@@ -2012,7 +2106,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1979/1961_1961_1961/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1979-1961_1961_1961-20261001-de-pdf-a-2.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1980-01-01"
+      "inkraftSeit": "1980-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DSV",
@@ -2033,7 +2128,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/568/20251201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2022-568-20251201-de-pdf-a-1.pdf",
       "pdfStand": "2025-12-01",
-      "inkraftSeit": "2023-09-01"
+      "inkraftSeit": "2023-09-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BEWV",
@@ -2054,7 +2150,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1984/1164_1164_1164/20240301/de/pdf-a/fedlex-data-admin-ch-eli-cc-1984-1164_1164_1164-20240301-de-pdf-a.pdf",
       "pdfStand": "2024-03-01",
-      "inkraftSeit": "1985-01-01"
+      "inkraftSeit": "1985-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BUEV",
@@ -2075,7 +2172,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2016/405/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-2016-405-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "2018-01-01"
+      "inkraftSeit": "2018-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "RPV",
@@ -2096,7 +2194,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2000/310/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2000-310-20260701-de-pdf-a-2.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "2000-09-01"
+      "inkraftSeit": "2000-09-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VOEB",
@@ -2117,7 +2216,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/127/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2020-127-20230901-de-pdf-a-1.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "2021-01-01"
+      "inkraftSeit": "2021-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VEV",
@@ -2138,7 +2238,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/493/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-493-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2018-09-15"
+      "inkraftSeit": "2018-09-15",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VINTA",
@@ -2159,7 +2260,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/511/20251201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-511-20251201-de-pdf-a.pdf",
       "pdfStand": "2025-12-01",
-      "inkraftSeit": "2019-01-01"
+      "inkraftSeit": "2019-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ASYLV1",
@@ -2180,7 +2282,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/359/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-359-20260612-de-pdf-a.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "1999-10-01"
+      "inkraftSeit": "1999-10-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ASYLV2",
@@ -2201,7 +2304,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/360/20260714/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-360-20260714-de-pdf-a.pdf",
       "pdfStand": "2026-07-14",
-      "inkraftSeit": "1999-10-01"
+      "inkraftSeit": "1999-10-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ASYLV3",
@@ -2222,7 +2326,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/361/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-361-20260612-de-pdf-a.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "1999-10-01"
+      "inkraftSeit": "1999-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GSCHV",
@@ -2243,7 +2348,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1998/2863_2863_2863/20251201/de/pdf-a/fedlex-data-admin-ch-eli-cc-1998-2863_2863_2863-20251201-de-pdf-a.pdf",
       "pdfStand": "2025-12-01",
-      "inkraftSeit": "1999-01-01"
+      "inkraftSeit": "1999-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "LRV",
@@ -2264,7 +2370,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1986/208_208_208/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1986-208_208_208-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1986-03-01"
+      "inkraftSeit": "1986-03-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "LSV",
@@ -2285,7 +2392,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1987/338_338_338/20260401/de/pdf-a/fedlex-data-admin-ch-eli-cc-1987-338_338_338-20260401-de-pdf-a.pdf",
       "pdfStand": "2026-04-01",
-      "inkraftSeit": "1987-04-01"
+      "inkraftSeit": "1987-04-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VVEA",
@@ -2306,7 +2414,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/891/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-891-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "CHEMV",
@@ -2327,7 +2436,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/366/20260424/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-366-20260424-de-pdf-a.pdf",
       "pdfStand": "2026-04-24",
-      "inkraftSeit": "2015-07-01"
+      "inkraftSeit": "2015-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "NHV",
@@ -2348,7 +2458,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/249_249_249/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-249_249_249-20250801-de-pdf-a.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "1991-02-01"
+      "inkraftSeit": "1991-02-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "WAV",
@@ -2369,7 +2480,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1992/2538_2538_2538/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1992-2538_2538_2538-20250801-de-pdf-a.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "1993-01-01"
+      "inkraftSeit": "1993-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "VTS",
@@ -2390,7 +2502,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/4425_4425_4425/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1995-4425_4425_4425-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1995-10-01"
+      "inkraftSeit": "1995-10-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "BANKV",
@@ -2411,7 +2524,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2014/273/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2014-273-20250101-de-pdf-a-5.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2015-01-01"
+      "inkraftSeit": "2015-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KKV",
@@ -2432,7 +2546,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/859/20251125/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-859-20251125-de-pdf-a.pdf",
       "pdfStand": "2025-11-25",
-      "inkraftSeit": "2007-01-01"
+      "inkraftSeit": "2007-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ERV",
@@ -2453,7 +2568,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/629/20250124/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-629-20250124-de-pdf-a-2.pdf",
       "pdfStand": "2025-01-24",
-      "inkraftSeit": "2013-01-01"
+      "inkraftSeit": "2013-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "FINIV",
@@ -2474,7 +2590,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2019/763/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2019-763-20250101-de-pdf-a-2.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2020-01-01"
+      "inkraftSeit": "2020-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINFRAV",
@@ -2495,7 +2612,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/854/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-854-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FIDLEV",
@@ -2516,7 +2634,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2019/759/20220101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2019-759-20220101-de-pdf-a-2.pdf",
       "pdfStand": "2022-01-01",
-      "inkraftSeit": "2020-01-01"
+      "inkraftSeit": "2020-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "AVO",
@@ -2537,7 +2656,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/735/20260226/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-735-20260226-de-pdf-a.pdf",
       "pdfStand": "2026-02-26",
-      "inkraftSeit": "2006-01-01"
+      "inkraftSeit": "2006-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GWV_FINMA",
@@ -2558,7 +2678,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/390/20230101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-390-20230101-de-pdf-a-4.pdf",
       "pdfStand": "2023-01-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VAM",
@@ -2579,7 +2700,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/588/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-588-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "2019-01-01"
+      "inkraftSeit": "2019-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "AMBV",
@@ -2600,7 +2722,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/786/20250315/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-786-20250315-de-pdf-a-1.pdf",
       "pdfStand": "2025-03-15",
-      "inkraftSeit": "2019-01-01"
+      "inkraftSeit": "2019-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "MEPV",
@@ -2621,7 +2744,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/552/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2020-552-20260701-de-pdf-a-1.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "2021-05-26"
+      "inkraftSeit": "2021-05-26",
+      "inkraftGestaffelt": true
     },
     {
       "key": "EPV",
@@ -2642,7 +2766,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/298/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-298-20250101-de-pdf-a.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BPV",
@@ -2663,7 +2788,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2001/319/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2001-319-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "2002-01-01"
+      "inkraftSeit": "2002-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "RVOV",
@@ -2684,7 +2810,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/170/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-170-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "1999-01-01"
+      "inkraftSeit": "1999-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ENG",
@@ -2705,7 +2832,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2017/762/20260401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2017-762-20260401-de-pdf-a.pdf",
       "pdfStand": "2026-04-01",
-      "inkraftSeit": "2018-01-01"
+      "inkraftSeit": "2018-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "CO2_GESETZ",
@@ -2726,7 +2854,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/855/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-855-20250101-de-pdf-a-2.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2013-01-01"
+      "inkraftSeit": "2013-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EPG",
@@ -2747,7 +2876,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/297/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-297-20250801-de-pdf-a-1.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "TXG",
@@ -2768,7 +2898,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/279/20210201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-279-20210201-de-pdf-a-4.pdf",
       "pdfStand": "2021-02-01",
-      "inkraftSeit": "2007-07-01"
+      "inkraftSeit": "2007-07-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "LMG",
@@ -2789,7 +2920,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2017/62/20241001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2017-62-20241001-de-pdf-a-1.pdf",
       "pdfStand": "2024-10-01",
-      "inkraftSeit": "2017-05-01"
+      "inkraftSeit": "2017-05-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "LFG",
@@ -2810,7 +2942,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1950/471_491_479/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1950-471_491_479-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1950-06-15"
+      "inkraftSeit": "1950-06-15",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EBG",
@@ -2831,7 +2964,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1958/335_341_347/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1958-335_341_347-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1958-07-01"
+      "inkraftSeit": "1958-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FMG",
@@ -2852,7 +2986,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1997/2187_2187_2187/20260601/de/pdf-a/fedlex-data-admin-ch-eli-cc-1997-2187_2187_2187-20260601-de-pdf-a-1.pdf",
       "pdfStand": "2026-06-01",
-      "inkraftSeit": "1997-10-20"
+      "inkraftSeit": "1997-10-20",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MG",
@@ -2873,7 +3008,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/4093_4093_4093/20260601/de/pdf-a/fedlex-data-admin-ch-eli-cc-1995-4093_4093_4093-20260601-de-pdf-a-1.pdf",
       "pdfStand": "2026-06-01",
-      "inkraftSeit": "1996-01-01"
+      "inkraftSeit": "1996-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "THG",
@@ -2894,7 +3030,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/1725_1725_1725/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-1725_1725_1725-20230901-de-pdf-a.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "1996-07-01"
+      "inkraftSeit": "1996-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BGBM",
@@ -2915,7 +3052,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/1738_1738_1738/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-1738_1738_1738-20250101-de-pdf-a.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1996-07-01"
+      "inkraftSeit": "1996-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BBV",
@@ -2936,7 +3074,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/748/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-748-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2004-01-01"
+      "inkraftSeit": "2004-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BMV_2025",
@@ -2957,7 +3096,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2025/408/20260301/de/pdf-a/fedlex-data-admin-ch-eli-cc-2025-408-20260301-de-pdf-a.pdf",
       "pdfStand": "2026-03-01",
-      "inkraftSeit": "2026-03-01"
+      "inkraftSeit": "2026-03-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ZEMIS_V",
@@ -2978,7 +3118,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2006/303/20261001/de/pdf-a/fedlex-data-admin-ch-eli-cc-2006-303-20261001-de-pdf-a.pdf",
       "pdfStand": "2026-10-01",
-      "inkraftSeit": "2006-05-29"
+      "inkraftSeit": "2006-05-29",
+      "inkraftGestaffelt": true
     },
     {
       "key": "RDV",
@@ -2999,7 +3140,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20260820/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20260820-de-pdf-a-1.pdf",
       "pdfStand": "2026-08-20",
-      "inkraftSeit": "2012-12-01"
+      "inkraftSeit": "2012-12-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UVPV",
@@ -3020,7 +3162,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1988/1931_1931_1931/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1988-1931_1931_1931-20250101-de-pdf-a.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1989-01-01"
+      "inkraftSeit": "1989-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "CHEMRRV",
@@ -3041,7 +3184,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/478/20260716/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-478-20260716-de-pdf-a.pdf",
       "pdfStand": "2026-07-16",
-      "inkraftSeit": "2005-08-01"
+      "inkraftSeit": "2005-08-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VEVA",
@@ -3062,7 +3206,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/551/20250801/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-551-20250801-de-pdf-a.pdf",
       "pdfStand": "2025-08-01",
-      "inkraftSeit": "2006-01-01"
+      "inkraftSeit": "2006-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VGVP",
@@ -3083,7 +3228,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2000/299/20220101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2000-299-20220101-de-pdf-a-4.pdf",
       "pdfStand": "2022-01-01",
-      "inkraftSeit": "2001-01-01"
+      "inkraftSeit": "2001-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "SKV",
@@ -3104,7 +3250,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/296/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-296-20260101-de-pdf-a-1.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VVV",
@@ -3125,7 +3272,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/1271_1321_1317/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1959-1271_1321_1317-20260101-de-pdf-a-1.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1959-11-20"
+      "inkraftSeit": "1959-11-20",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VIL",
@@ -3146,7 +3294,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/3050_3050_3050/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1994-3050_3050_3050-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FDV",
@@ -3167,7 +3316,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/166/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-166-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "2007-04-01"
+      "inkraftSeit": "2007-04-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "FAV",
@@ -3188,7 +3338,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2016/24/20240815/de/pdf-a/fedlex-data-admin-ch-eli-cc-2016-24-20240815-de-pdf-a-1.pdf",
       "pdfStand": "2024-08-15",
-      "inkraftSeit": "2016-06-13"
+      "inkraftSeit": "2016-06-13",
+      "inkraftGestaffelt": true
     },
     {
       "key": "AKKBV",
@@ -3209,7 +3360,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1996/1904_1904_1904/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1996-1904_1904_1904-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1996-07-01"
+      "inkraftSeit": "1996-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "NBV",
@@ -3230,7 +3382,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/233/20240701/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-233-20240701-de-pdf-a-1.pdf",
       "pdfStand": "2024-07-01",
-      "inkraftSeit": "2004-05-01"
+      "inkraftSeit": "2004-05-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KKV_FINMA",
@@ -3251,7 +3404,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2014/707/20210101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2014-707-20210101-de-pdf-a-2.pdf",
       "pdfStand": "2021-01-01",
-      "inkraftSeit": "2015-01-01"
+      "inkraftSeit": "2015-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINFRAV_FINMA",
@@ -3272,7 +3426,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2015/855/20230201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2015-855-20230201-de-pdf-a.pdf",
       "pdfStand": "2023-02-01",
-      "inkraftSeit": "2016-01-01"
+      "inkraftSeit": "2016-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FINMA_GEBV",
@@ -3293,7 +3448,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/749/20240301/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-749-20240301-de-pdf-a-2.pdf",
       "pdfStand": "2024-03-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ARG",
@@ -3314,7 +3470,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1966/57_57_57/20230901/de/pdf-a/fedlex-data-admin-ch-eli-cc-1966-57_57_57-20230901-de-pdf-a-1.pdf",
       "pdfStand": "2023-09-01",
-      "inkraftSeit": "1966-02-01"
+      "inkraftSeit": "1966-02-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ARGV1",
@@ -3335,7 +3492,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2000/243/20240901/de/pdf-a/fedlex-data-admin-ch-eli-cc-2000-243-20240901-de-pdf-a.pdf",
       "pdfStand": "2024-09-01",
-      "inkraftSeit": "2000-08-01"
+      "inkraftSeit": "2000-08-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ARGV2",
@@ -3356,7 +3514,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2000/244/20260201/de/pdf-a/fedlex-data-admin-ch-eli-cc-2000-244-20260201-de-pdf-a.pdf",
       "pdfStand": "2026-02-01",
-      "inkraftSeit": "2000-08-01"
+      "inkraftSeit": "2000-08-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ARGV3",
@@ -3377,7 +3536,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/2553_2553_2553/20240901/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-2553_2553_2553-20240901-de-pdf-a.pdf",
       "pdfStand": "2024-09-01",
-      "inkraftSeit": "1993-10-01"
+      "inkraftSeit": "1993-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ARGV4",
@@ -3398,7 +3558,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/2564_2564_2564/20150501/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-2564_2564_2564-20150501-de-pdf-a-1.pdf",
       "pdfStand": "2015-05-01",
-      "inkraftSeit": "1993-10-01"
+      "inkraftSeit": "1993-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ARGV5",
@@ -3419,7 +3580,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/692/20240401/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-692-20240401-de-pdf-a.pdf",
       "pdfStand": "2024-04-01",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ENTSG",
@@ -3440,7 +3602,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/231/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-231-20240101-de-pdf-a.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2003-06-01"
+      "inkraftSeit": "2003-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BMV",
@@ -3462,6 +3625,7 @@
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/423/20160823/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-423-20160823-de-pdf-a-1.pdf",
       "pdfStand": "2016-08-23",
       "inkraftSeit": "2009-08-01",
+      "inkraftGestaffelt": false,
       "aufgehoben": {
         "seit": "2026-03-01",
         "nachfolger": {
@@ -3491,7 +3655,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/392_392_392/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-392_392_392-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1991-07-01"
+      "inkraftSeit": "1991-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MWSTG",
@@ -3512,7 +3677,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/615/20250331/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-615-20250331-de-pdf-a-1.pdf",
       "pdfStand": "2025-03-31",
-      "inkraftSeit": "2010-01-01"
+      "inkraftSeit": "2010-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "STG",
@@ -3533,7 +3699,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1974/11_11_11/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1974-11_11_11-20240101-de-pdf-a.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "1974-07-01"
+      "inkraftSeit": "1974-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DBG",
@@ -3554,7 +3721,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184/20260902/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-1184_1184_1184-20260902-de-pdf-a.pdf",
       "pdfStand": "2026-09-02",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VSTG",
@@ -3575,7 +3743,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1966/371_385_384/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1966-371_385_384-20250101-de-pdf-a-3.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1967-01-01"
+      "inkraftSeit": "1967-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "STHG",
@@ -3596,7 +3765,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/1256_1256_1256/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-1256_1256_1256-20250101-de-pdf-a-4.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1993-01-01"
+      "inkraftSeit": "1993-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MWSTV",
@@ -3617,7 +3787,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/828/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-828-20250101-de-pdf-a-4.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2010-01-01"
+      "inkraftSeit": "2010-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "VSTV",
@@ -3638,7 +3809,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1966/1585_1641_1624/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1966-1585_1641_1624-20250101-de-pdf-a-3.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1967-01-01"
+      "inkraftSeit": "1967-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "QSTV",
@@ -3659,7 +3831,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/274/20250110/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-274-20250110-de-pdf-a.pdf",
       "pdfStand": "2025-01-10",
-      "inkraftSeit": "2021-01-01"
+      "inkraftSeit": "2021-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BKV",
@@ -3680,7 +3853,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/1363_1363_1363/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-1363_1363_1363-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KVG",
@@ -3701,7 +3875,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328/20260701/de/pdf-a/fedlex-data-admin-ch-eli-cc-1995-1328_1328_1328-20260701-de-pdf-a.pdf",
       "pdfStand": "2026-07-01",
-      "inkraftSeit": "1996-01-01"
+      "inkraftSeit": "1996-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "KVV",
@@ -3722,7 +3897,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/3867_3867_3867/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1995-3867_3867_3867-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1996-01-01"
+      "inkraftSeit": "1996-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EOG",
@@ -3743,7 +3919,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050/20260601/de/pdf-a/fedlex-data-admin-ch-eli-cc-1952-1021_1046_1050-20260601-de-pdf-a-1.pdf",
       "pdfStand": "2026-06-01",
-      "inkraftSeit": "1953-01-01"
+      "inkraftSeit": "1953-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ATSG",
@@ -3764,7 +3941,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/510/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-510-20240101-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BVG",
@@ -3785,7 +3963,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1983/797_797_797/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1983-797_797_797-20250101-de-pdf-a-4.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1985-01-01"
+      "inkraftSeit": "1985-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UVG",
@@ -3806,7 +3985,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1982/1676_1676_1676/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1982-1676_1676_1676-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1984-01-01"
+      "inkraftSeit": "1984-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "AVIG",
@@ -3827,7 +4007,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1982-2184_2184_2184-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1983-01-01"
+      "inkraftSeit": "1983-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "IVG",
@@ -3848,7 +4029,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1959/827_857_845/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1959-827_857_845-20260101-de-pdf-a-1.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1959-10-15"
+      "inkraftSeit": "1959-10-15",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FAMZG",
@@ -3869,7 +4051,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/51/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-51-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "AHVG",
@@ -3890,7 +4073,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/63/837_843_843/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-63-837_843_843-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1948-01-01"
+      "inkraftSeit": "1948-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ELG",
@@ -3911,7 +4095,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/804/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-804-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "2008-01-01"
+      "inkraftSeit": "2008-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FZG",
@@ -3932,7 +4117,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/2386_2386_2386/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1994-2386_2386_2386-20240101-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "AHVV",
@@ -3953,7 +4139,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/63/1185_1183_1185/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-63-1185_1183_1185-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1947-11-01"
+      "inkraftSeit": "1947-11-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "IVV",
@@ -3974,7 +4161,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1961/29_29_29/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-1961-29_29_29-20250601-de-pdf-a.pdf",
       "pdfStand": "2025-06-01",
-      "inkraftSeit": "1961-01-01"
+      "inkraftSeit": "1961-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ELV",
@@ -3995,7 +4183,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1971/37_37_37/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1971-37_37_37-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1971-01-01"
+      "inkraftSeit": "1971-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BVV_2",
@@ -4016,7 +4205,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1984/543_543_543/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1984-543_543_543-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1985-01-01"
+      "inkraftSeit": "1985-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UVV",
@@ -4037,7 +4227,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1983/38_38_38/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1983-38_38_38-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1984-01-01"
+      "inkraftSeit": "1984-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "AVIV",
@@ -4058,7 +4249,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1983/1205_1205_1205/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1983-1205_1205_1205-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1984-01-01"
+      "inkraftSeit": "1984-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "ATSV",
@@ -4079,7 +4271,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/569/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-569-20240101-de-pdf-a.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KLV",
@@ -4100,7 +4293,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1995/4964_4964_4964/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1995-4964_4964_4964-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1996-01-01"
+      "inkraftSeit": "1996-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FZV",
@@ -4121,7 +4315,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/2399_2399_2399/20260801/de/pdf-a/fedlex-data-admin-ch-eli-cc-1994-2399_2399_2399-20260801-de-pdf-a.pdf",
       "pdfStand": "2026-08-01",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "BVV3",
@@ -4142,7 +4337,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1985/1778_1778_1778/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1985-1778_1778_1778-20250101-de-pdf-a.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1987-01-01"
+      "inkraftSeit": "1987-01-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "MVV",
@@ -4163,7 +4359,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3080_3080_3080/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-3080_3080_3080-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1994-01-01"
+      "inkraftSeit": "1994-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EOV",
@@ -4184,7 +4381,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/187/20260601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-187-20260601-de-pdf-a.pdf",
       "pdfStand": "2026-06-01",
-      "inkraftSeit": "2005-07-01"
+      "inkraftSeit": "2005-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "FAMZV",
@@ -4205,7 +4403,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2008/52/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2008-52-20250101-de-pdf-a-1.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "2009-01-01"
+      "inkraftSeit": "2009-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MVG",
@@ -4226,7 +4425,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/3043_3043_3043/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-3043_3043_3043-20240101-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-01",
-      "inkraftSeit": "1994-01-01"
+      "inkraftSeit": "1994-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VFV",
@@ -4247,7 +4447,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1961/419_429_439/20250101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1961-419_429_439-20250101-de-pdf-a.pdf",
       "pdfStand": "2025-01-01",
-      "inkraftSeit": "1961-06-01"
+      "inkraftSeit": "1961-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "VVK",
@@ -4268,7 +4469,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2007/101/20230101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2007-101-20230101-de-pdf-a.pdf",
       "pdfStand": "2023-01-01",
-      "inkraftSeit": "2007-03-01"
+      "inkraftSeit": "2007-03-01",
+      "inkraftGestaffelt": true
     },
     {
       "key": "VKL",
@@ -4289,7 +4491,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/418/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-418-20250601-de-pdf-a.pdf",
       "pdfStand": "2025-06-01",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EMRK",
@@ -4310,7 +4513,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1974/2151_2151_2151/20220916/de/pdf-a/fedlex-data-admin-ch-eli-cc-1974-2151_2151_2151-20220916-de-pdf-a-2.pdf",
       "pdfStand": "2022-09-16",
-      "inkraftSeit": "1974-11-28"
+      "inkraftSeit": "1974-11-28",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DSGVO",
@@ -4349,7 +4553,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1991/307_307_307/20260522/de/pdf-a/fedlex-data-admin-ch-eli-cc-1991-307_307_307-20260522-de-pdf-a.pdf",
       "pdfStand": "2026-05-22",
-      "inkraftSeit": "1991-03-01"
+      "inkraftSeit": "1991-03-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "DSA",
@@ -4406,7 +4611,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2010/801/20160408/de/pdf-a/fedlex-data-admin-ch-eli-cc-2010-801-20160408-de-pdf-a-5.pdf",
       "pdfStand": "2016-04-08",
-      "inkraftSeit": "2011-01-01"
+      "inkraftSeit": "2011-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HZUE",
@@ -4427,7 +4633,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/2809_2809_2809/20230612/de/pdf-a/fedlex-data-admin-ch-eli-cc-1994-2809_2809_2809-20230612-de-pdf-a-2.pdf",
       "pdfStand": "2023-06-12",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KI_VO",
@@ -4466,7 +4673,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1994/2824_2824_2824/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-1994-2824_2824_2824-20260101-de-pdf-a.pdf",
       "pdfStand": "2026-01-01",
-      "inkraftSeit": "1995-01-01"
+      "inkraftSeit": "1995-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MICA",
@@ -4505,7 +4713,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1983/1694_1694_1694/20240613/de/pdf-a/fedlex-data-admin-ch-eli-cc-1983-1694_1694_1694-20240613-de-pdf-a-1.pdf",
       "pdfStand": "2024-06-13",
-      "inkraftSeit": "1984-01-01"
+      "inkraftSeit": "1984-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ROM_I",
@@ -4544,7 +4753,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/243/20201215/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-243-20201215-de-pdf-a-3.pdf",
       "pdfStand": "2020-12-15",
-      "inkraftSeit": "2002-06-01"
+      "inkraftSeit": "2002-06-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ROM_II",
@@ -4601,7 +4811,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1990/1112_1112_1112/20200508/de/pdf-a/fedlex-data-admin-ch-eli-cc-1990-1112_1112_1112-20200508-de-pdf-a-3.pdf",
       "pdfStand": "2020-05-08",
-      "inkraftSeit": "1990-06-06"
+      "inkraftSeit": "1990-06-06",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UNO_PAKT_II",
@@ -4622,7 +4833,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/750_750_750/20220509/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-750_750_750-20220509-de-pdf-a-4.pdf",
       "pdfStand": "2022-05-09",
-      "inkraftSeit": "1992-09-18"
+      "inkraftSeit": "1992-09-18",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UNO_PAKT_I",
@@ -4643,7 +4855,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/725_725_725/20241128/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-725_725_725-20241128-de-pdf-a-1.pdf",
       "pdfStand": "2024-11-28",
-      "inkraftSeit": "1992-09-18"
+      "inkraftSeit": "1992-09-18",
+      "inkraftGestaffelt": false
     },
     {
       "key": "KRK",
@@ -4664,7 +4877,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1998/2055_2055_2055/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-1998-2055_2055_2055-20260612-de-pdf-a.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "1997-03-26"
+      "inkraftSeit": "1997-03-26",
+      "inkraftGestaffelt": false
     },
     {
       "key": "CEDAW",
@@ -4685,7 +4899,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1999/239/20230419/de/pdf-a/fedlex-data-admin-ch-eli-cc-1999-239-20230419-de-pdf-a-1.pdf",
       "pdfStand": "2023-04-19",
-      "inkraftSeit": "1997-04-26"
+      "inkraftSeit": "1997-04-26",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UNO_ANTIFOLTER",
@@ -4706,7 +4921,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1987/1307_1307_1307/20260528/de/pdf-a/fedlex-data-admin-ch-eli-cc-1987-1307_1307_1307-20260528-de-pdf-a.pdf",
       "pdfStand": "2026-05-28",
-      "inkraftSeit": "1987-06-26"
+      "inkraftSeit": "1987-06-26",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HEUE",
@@ -4727,7 +4943,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/381/20230509/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-381-20230509-de-pdf-a.pdf",
       "pdfStand": "2023-05-09",
-      "inkraftSeit": "2009-07-01"
+      "inkraftSeit": "2009-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HAUE",
@@ -4748,7 +4965,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2003/99/20250507/de/pdf-a/fedlex-data-admin-ch-eli-cc-2003-99-20250507-de-pdf-a.pdf",
       "pdfStand": "2025-05-07",
-      "inkraftSeit": "2003-01-01"
+      "inkraftSeit": "2003-01-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "PVUE",
@@ -4769,7 +4987,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/620_620_620/20240109/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-620_620_620-20240109-de-pdf-a-1.pdf",
       "pdfStand": "2024-01-09",
-      "inkraftSeit": "1970-04-26"
+      "inkraftSeit": "1970-04-26",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ICAO",
@@ -4790,7 +5009,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/63/1377_1378_1381/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-63-1377_1378_1381-20260612-de-pdf-a-1.pdf",
       "pdfStand": "2026-06-12",
-      "inkraftSeit": "1947-04-04"
+      "inkraftSeit": "1947-04-04",
+      "inkraftGestaffelt": false
     },
     {
       "key": "GFK",
@@ -4811,7 +5031,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1955/443_461_469/20120614/de/pdf-a/fedlex-data-admin-ch-eli-cc-1955-443_461_469-20120614-de-pdf-a.pdf",
       "pdfStand": "2012-06-14",
-      "inkraftSeit": "1955-04-21"
+      "inkraftSeit": "1955-04-21",
+      "inkraftGestaffelt": false
     },
     {
       "key": "STAATENLOSE",
@@ -4832,7 +5053,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1972/2320_2374_2150/20260522/de/pdf-a/fedlex-data-admin-ch-eli-cc-1972-2320_2374_2150-20260522-de-pdf-a.pdf",
       "pdfStand": "2026-05-22",
-      "inkraftSeit": "1972-10-01"
+      "inkraftSeit": "1972-10-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "NYUE",
@@ -4871,7 +5093,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/380/20260119/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-380-20260119-de-pdf-a.pdf",
       "pdfStand": "2026-01-19",
-      "inkraftSeit": "2009-07-01"
+      "inkraftSeit": "2009-07-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "HUVUE",
@@ -4892,7 +5115,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1976/1559_1559_1559/20160915/de/pdf-a/fedlex-data-admin-ch-eli-cc-1976-1559_1559_1559-20160915-de-pdf-a.pdf",
       "pdfStand": "2016-09-15",
-      "inkraftSeit": "1976-08-01"
+      "inkraftSeit": "1976-08-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "EAUE",
@@ -4913,7 +5137,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1967/814_854_850/20230628/de/pdf-a/fedlex-data-admin-ch-eli-cc-1967-814_854_850-20230628-de-pdf-a-2.pdf",
       "pdfStand": "2023-06-28",
-      "inkraftSeit": "1967-03-20"
+      "inkraftSeit": "1967-03-20",
+      "inkraftGestaffelt": false
     },
     {
       "key": "CMR",
@@ -4934,7 +5159,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/851_851_851/20210210/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-851_851_851-20210210-de-pdf-a-1.pdf",
       "pdfStand": "2021-02-10",
-      "inkraftSeit": "1970-05-28"
+      "inkraftSeit": "1970-05-28",
+      "inkraftGestaffelt": false
     },
     {
       "key": "MONTREAL",
@@ -4955,7 +5181,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2005/566/20260407/de/pdf-a/fedlex-data-admin-ch-eli-cc-2005-566-20260407-de-pdf-a.pdf",
       "pdfStand": "2026-04-07",
-      "inkraftSeit": "2005-09-05"
+      "inkraftSeit": "2005-09-05",
+      "inkraftGestaffelt": false
     },
     {
       "key": "RBUE",
@@ -4976,7 +5203,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1993/2659_2659_2659/20240606/de/pdf-a/fedlex-data-admin-ch-eli-cc-1993-2659_2659_2659-20240606-de-pdf-a.pdf",
       "pdfStand": "2024-06-06",
-      "inkraftSeit": "1993-09-25"
+      "inkraftSeit": "1993-09-25",
+      "inkraftGestaffelt": false
     },
     {
       "key": "UNO_BRK",
@@ -4997,7 +5225,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2014/245/20260501/de/pdf-a/fedlex-data-admin-ch-eli-cc-2014-245-20260501-de-pdf-a.pdf",
       "pdfStand": "2026-05-01",
-      "inkraftSeit": "2014-05-15"
+      "inkraftSeit": "2014-05-15",
+      "inkraftGestaffelt": false
     },
     {
       "key": "ISTANBUL",
@@ -5018,7 +5247,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2018/168/20241220/de/pdf-a/fedlex-data-admin-ch-eli-cc-2018-168-20241220-de-pdf-a.pdf",
       "pdfStand": "2024-12-20",
-      "inkraftSeit": "2018-04-01"
+      "inkraftSeit": "2018-04-01",
+      "inkraftGestaffelt": false
     },
     {
       "key": "APOSTILLE",
@@ -5039,7 +5269,8 @@
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1973/348_347_349/20240904/de/pdf-a/fedlex-data-admin-ch-eli-cc-1973-348_347_349-20240904-de-pdf-a-1.pdf",
       "pdfStand": "2024-09-04",
-      "inkraftSeit": "1973-03-11"
+      "inkraftSeit": "1973-03-11",
+      "inkraftGestaffelt": false
     },
     {
       "key": "AG-291.150",

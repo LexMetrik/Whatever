@@ -1,926 +1,1472 @@
 {
   "ADOV": {
     "datum": "2012-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AHVG": {
     "datum": "1948-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste",
+      "wortlaut-hauptklausel",
+      "fussnote-teildatum"
+    ]
   },
   "AHVV": {
     "datum": "1947-11-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "AIG": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AKKBV": {
     "datum": "1996-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AMBV": {
     "datum": "2019-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "APOSTILLE": {
     "datum": "1973-03-11",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ARG": {
     "datum": "1966-02-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ARGV1": {
     "datum": "2000-08-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "ARGV2": {
     "datum": "2000-08-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ARGV3": {
     "datum": "1993-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ARGV4": {
     "datum": "1993-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ARGV5": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ASYLG": {
     "datum": "1999-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ASYLV1": {
     "datum": "1999-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "ASYLV2": {
     "datum": "1999-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "ASYLV3": {
     "datum": "1999-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ATSG": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ATSV": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AVG": {
     "datum": "1991-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AVIG": {
     "datum": "1983-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "AVIV": {
     "datum": "1984-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "AVO": {
     "datum": "2006-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BANKG": {
     "datum": "1935-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BANKV": {
     "datum": "2015-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BBG": {
     "datum": "2004-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BBV": {
     "datum": "2004-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BEG": {
     "datum": "2009-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BETMG": {
     "datum": "1952-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BETMKV": {
     "datum": "2011-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "BEWG": {
     "datum": "1985-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BEWV": {
     "datum": "1985-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGBB": {
     "datum": "1994-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGBM": {
     "datum": "1996-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGERR": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGFA": {
     "datum": "2002-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGG": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BGOE": {
     "datum": "2006-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BKV": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BMV": {
     "datum": "2009-08-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BMV_2025": {
     "datum": "2026-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BOEB": {
     "datum": "2021-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BPG": {
     "datum": "2001-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BPR": {
     "datum": "1978-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BPV": {
     "datum": "2002-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BUEG": {
     "datum": "2018-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BUEV": {
     "datum": "2018-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BV": {
     "datum": "2000-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BVG": {
     "datum": "1985-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "BVV3": {
     "datum": "1987-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste",
+      "wortlaut-hauptklausel"
+    ]
   },
   "BVV_2": {
     "datum": "1985-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CEDAW": {
     "datum": "1997-04-26",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CHEMRRV": {
     "datum": "2005-08-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CHEMV": {
     "datum": "2015-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CISG": {
     "datum": "1991-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CMR": {
     "datum": "1970-05-28",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "CO2_GESETZ": {
     "datum": "2013-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "DBG": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "DESG": {
     "datum": "2002-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "DESV": {
     "datum": "2002-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "DSG": {
     "datum": "2023-09-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "DSV": {
     "datum": "2023-09-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EAUE": {
     "datum": "1967-03-20",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EBG": {
     "datum": "1958-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ELG": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ELV": {
     "datum": "1971-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EMRK": {
     "datum": "1974-11-28",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ENG": {
     "datum": "2018-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ENTG": {
     "datum": "1932-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ENTSG": {
     "datum": "2003-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EOEBV": {
     "datum": "2018-02-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EOG": {
     "datum": "1953-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EOV": {
     "datum": "2005-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EPG": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "EPV": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ERV": {
     "datum": "2013-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "FAMZG": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "FAMZV": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FAV": {
     "datum": "2016-06-13",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "FDV": {
     "datum": "2007-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "FIDLEG": {
     "datum": "2020-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fussnote-inkraftsetzungs-v"
+    ]
   },
   "FIDLEV": {
     "datum": "2020-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FINFRAG": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "FINFRAV": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FINFRAV_FINMA": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FINIG": {
     "datum": "2020-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FINIV": {
     "datum": "2020-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FINMAG": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "FINMA_GEBV": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FMG": {
     "datum": "1997-10-20",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FUSG": {
     "datum": "2004-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FZA": {
     "datum": "2002-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FZG": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "FZV": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GBV": {
     "datum": "2012-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GEBV_HREG": {
     "datum": "2021-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GEBV_SCHKG": {
     "datum": "1997-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GFK": {
     "datum": "1955-04-21",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GLG": {
     "datum": "1996-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GSCHG": {
     "datum": "1992-11-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GSCHV": {
     "datum": "1999-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GWG": {
     "datum": "1998-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "GWV_FINMA": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HAUE": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HBEWUE": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HEUE": {
     "datum": "2009-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HKSUE96": {
     "datum": "2009-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HKUE": {
     "datum": "1984-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HMG": {
     "datum": "2002-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "HREGV": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HUVUE": {
     "datum": "1976-08-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "HZUE": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ICAO": {
     "datum": "1947-04-04",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "IPRG": {
     "datum": "1989-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "IRSG": {
     "datum": "1983-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ISTANBUL": {
     "datum": "2018-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "IVG": {
     "datum": "1959-10-15",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "IVV": {
     "datum": "1961-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "JSTG": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "JSTPO": {
     "datum": "2011-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KAG": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KG": {
     "datum": "1996-02-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KKG": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KKV": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KKV_FINMA": {
     "datum": "2015-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KLV": {
     "datum": "1996-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KOV": {
     "datum": "1912-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KRK": {
     "datum": "1997-03-26",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "KVG": {
     "datum": "1996-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fussnote-inkraftsetzungs-v"
+    ]
   },
   "KVV": {
     "datum": "1996-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "LFG": {
     "datum": "1950-06-15",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "LMG": {
     "datum": "2017-05-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "LRV": {
     "datum": "1986-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "LSV": {
     "datum": "1987-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "LUGUE": {
     "datum": "2011-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MEPV": {
     "datum": "2021-05-26",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "MG": {
     "datum": "1996-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MONTREAL": {
     "datum": "2005-09-05",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MSCHG": {
     "datum": "1993-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MSCHV": {
     "datum": "1993-04-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MSTG": {
     "datum": "1928-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MSTP": {
     "datum": "1980-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MVG": {
     "datum": "1994-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MVV": {
     "datum": "1994-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "MWSTG": {
     "datum": "2010-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel",
+      "fussnote-teildatum"
+    ]
   },
   "MWSTV": {
     "datum": "2010-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "NBV": {
     "datum": "2004-05-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "NHG": {
     "datum": "1967-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "NHV": {
     "datum": "1991-02-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "OHG": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "OR": {
     "datum": "1912-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PARLG": {
     "datum": "2003-12-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "PARTG": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "PATG": {
     "datum": "1956-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PATV": {
     "datum": "1978-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "PAVO": {
     "datum": "1978-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PRG": {
     "datum": "1994-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PUBLG": {
     "datum": "2005-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PUEG": {
     "datum": "1986-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "PVUE": {
     "datum": "1970-04-26",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "QSTV": {
     "datum": "2021-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RBUE": {
     "datum": "1993-09-25",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RDV": {
     "datum": "2012-12-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RPG": {
     "datum": "1980-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RPV": {
     "datum": "2000-09-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RVOG": {
     "datum": "1997-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "RVOV": {
     "datum": "1999-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel",
+      "fussnote-teildatum"
+    ]
   },
   "SCHKG": {
     "datum": "1892-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "SKV": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "SORTG": {
     "datum": "1977-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "SSV": {
     "datum": "1980-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "STAATENLOSE": {
     "datum": "1972-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "STBOG": {
     "datum": "2011-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "STG": {
     "datum": "1974-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "STGB": {
     "datum": "1942-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "STHG": {
     "datum": "1993-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "STPO": {
     "datum": "2011-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "SVG": {
     "datum": "1959-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "TGBV": {
     "datum": "2013-02-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "THG": {
     "datum": "1996-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "TXG": {
     "datum": "2007-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "UNO_ANTIFOLTER": {
     "datum": "1987-06-26",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UNO_BRK": {
     "datum": "2014-05-15",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UNO_PAKT_I": {
     "datum": "1992-09-18",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UNO_PAKT_II": {
     "datum": "1992-09-18",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "URG": {
     "datum": "1993-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "URV": {
     "datum": "1993-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "USG": {
     "datum": "1985-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UVG": {
     "datum": "1984-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fussnote-inkraftsetzungs-v"
+    ]
   },
   "UVPV": {
     "datum": "1989-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UVV": {
     "datum": "1984-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "UWG": {
     "datum": "1988-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VAG": {
     "datum": "2006-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VAM": {
     "datum": "2019-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "VBB": {
     "datum": "1997-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VEV": {
     "datum": "2018-09-15",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VEVA": {
     "datum": "2006-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VFV": {
     "datum": "1961-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VG": {
     "datum": "1959-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VGG": {
     "datum": "2007-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VGKE": {
     "datum": "2008-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VGR": {
     "datum": "2008-06-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VGVP": {
     "datum": "2001-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "VIL": {
     "datum": "1995-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VINTA": {
     "datum": "2019-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VKKG": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "VKL": {
     "datum": "2003-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VMWG": {
     "datum": "1990-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VOEB": {
     "datum": "2021-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VRK": {
     "datum": "1990-06-06",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VRV": {
     "datum": "1963-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VSTG": {
     "datum": "1967-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VSTRR": {
     "datum": "1975-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VSTV": {
     "datum": "1967-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VTS": {
     "datum": "1995-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "VVEA": {
     "datum": "2016-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VVG": {
     "datum": "1910-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VVK": {
     "datum": "2007-03-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "VVV": {
     "datum": "1959-11-20",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VWVG": {
     "datum": "1969-10-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VZAE": {
     "datum": "2008-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VZG": {
     "datum": "1921-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "VZV": {
     "datum": "1977-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "WAG": {
     "datum": "1993-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "WAV": {
     "datum": "1993-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "ZAVV": {
     "datum": "2009-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ZEMIS_V": {
     "datum": "2006-05-29",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "ZENTV": {
     "datum": "2002-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ZGB": {
     "datum": "1912-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-zeitleiste"
+    ]
   },
   "ZPO": {
     "datum": "2011-01-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": false,
+    "gestaffeltGrund": []
   },
   "ZSTV": {
     "datum": "2004-07-01",
-    "quelle": "fedlex"
+    "quelle": "fedlex",
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel",
+      "fussnote-teildatum"
+    ]
   }
 }
