@@ -21,7 +21,7 @@ import { alleErlassKeys, art, fussnotenFuer, internFuer, lade } from './leser-ve
 import { pruefeKorpus } from './leser-verweise-w217-paritaet';
 
 // ─── Einheit: NormText mit synthetischem Erlass ─────────────────────────────
-const tokenMap = new Map([['2', '2'], ['4', '4'], ['5', '5'], ['6', '6'], ['8', '8'], ['44', '44'], ['89', '89']]);
+const tokenMap = new Map([['2', '2'], ['4', '4'], ['5', '5'], ['6', '6'], ['8', '8'], ['44', '44'], ['45', '45'], ['49', '49'], ['50', '50'], ['89', '89']]);
 const bund: InternRefs = { tokenMap, basisPfad: '/gesetze/bund/XYZ', springeZu: () => {}, eigenesKuerzel: 'XYZ' };
 const sprungZiele = (text: string, intern: InternRefs = bund): string[] =>
   [...renderToStaticMarkup(<NormText text={text} intern={intern} />)
@@ -42,6 +42,12 @@ describe('§1 · kein interner Link, wenn nach Nummer + Passus ein Genitiv-Erlas
     'Artikel 5 Absatz 2 des Abkommens vom 14. Dezember 2001',
     'Artikel 2 Absatz 1 des Basler Übereinkommens',
     'Artikel 5 Absatz 1 der Bundesverfassung',
+    // datiertes Zitat ohne Typ-Wort (Abkürzung): BVG 18, VRV 1, DBG 167 — gemessen 2.10.2026
+    'Art. 8 Abs. 2 des BG vom 6. Okt. 2000 über den Allgemeinen Teil des Sozialversicherungsrechts',
+    'Art. 45 Abs. 1 der V vom 5. Sept. 1979 über die Strassensignalisation',
+    'Artikel 6 Absatz 1 des Schengener Grenzkodex nicht erfüllt sind',
+    'Artikel 89 Absatz 2 des bisherigen Rechts verloren',
+    'die Artikel 49 und 50 des bisherigen Rechts',
   ];
   it.each(FREMD)('«%s» → Text', (text) => {
     expect(sprungZiele(text)).toEqual([]);
@@ -55,6 +61,7 @@ describe('§1 · kein interner Link, wenn nach Nummer + Passus ein Genitiv-Erlas
     ['Artikel 8 Absatz 2 dieses Gesetzes', ['/gesetze/bund/XYZ#art-8']],
     ['Artikel 4 Absatz 1 Buchstabe a und Artikel 6', ['/gesetze/bund/XYZ#art-4', '/gesetze/bund/XYZ#art-6']],
     ['Artikel 5 Absatz 1 der Ordnung halber', ['/gesetze/bund/XYZ#art-5']],
+    ['Artikel 5 Absatz 1 der Gläubiger vom Staat bestimmt', ['/gesetze/bund/XYZ#art-5']],
   ];
   it.each(BEHALTEN)('«%s» bleibt Sprung', (text, ziele) => {
     expect(sprungZiele(text)).toEqual(ziele);

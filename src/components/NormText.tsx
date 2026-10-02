@@ -327,7 +327,11 @@ const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
 // -gesetzbuch, -verordnung (jede -ordnung ausser dem blossen «Ordnung»),
 // -übereinkommen, -abkommen, -vertrag, -konvention, -reglement, -dekret,
 // -konkordat, -statut, -satzung, -beschluss, -richtlinie, -protokoll, -charta,
-// -vereinbarung und -verfassung (nur zusammengesetzt, «Bundesverfassung»).
+// -vereinbarung, -kodex («Visakodex») und -verfassung (nur zusammengesetzt,
+// «Bundesverfassung»). Zwei Formen ohne Typ-Wort: das DATIERTE Zitat «des BG vom
+// 6. Okt. 2000», «der V vom 5. Sept. 1979» (Name bis zu vier Wörter, dann «vom
+// <Tag>.» — ein datierter Erlass ist nie dieser Artikel) und «des bisherigen/
+// früheren/alten Rechts» (Vorgänger-Fassung einer Übergangsbestimmung).
 //
 // Nur Wortendungen, keine Namensliste (§5: eine Liste läge beim nächsten Korpus-
 // Nachzug still daneben); die belegten bekannten Erlasse löst die Form-B-
@@ -338,7 +342,7 @@ const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
 // steht davor und schlägt diese Weiche; «vorliegende» ist hier ausgenommen,
 // damit auch die Schreibfehler-Form («des vorliegende Gesetzes», 2 Stellen im
 // Bestand) ihren Selbst-Link behält.
-const FREMDERLASS_GENITIV = /^\s+(?:des|der)\s+(?!vorliegende)(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])/iu;
+const FREMDERLASS_GENITIV = /^\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
   const k = (kuerzel ?? '').trim();

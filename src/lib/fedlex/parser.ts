@@ -408,7 +408,9 @@ const P_SIGNAL_RE = new RegExp(
 );
 // Unauflösbarer Fremdname am Aufzählungs-Ende («des Bundesgesetzes über …», «der
 // Verordnung …») → §1-Unterdrückung (kein geratener Self-Link).
-const P_FREMD_UNAUFL_RE = /^\s*(?:des|der|über|vom)\s+[A-ZÄÖÜ]/;
+// W2·17 Nachzug (2.10.2026): «des bisherigen/früheren/alten Rechts» ist die VORGÄNGER-Fassung
+// (Übergangsbestimmung), nicht dieser Erlass — gleiche Klasse, gleiche Unterdrückung (MWSTG 112).
+const P_FREMD_UNAUFL_RE = /^\s*(?:des|der|über|vom)\s+(?:[A-ZÄÖÜ]|(?:bisherigen|früheren|alten)\s+Rechts\b)/;
 // Unbekanntes bare KÜRZEL direkt nach der Aufzählung («… Artikeln 2 und 3 BGSA»,
 // BGSA ∉ FEDLEX): Fremdgesetz-Signal, das wir nicht auflösen können → §1-
 // Unterdrückung, nie ein falscher Self-Link (Korpus-Fund AHVV art 34; dieselbe

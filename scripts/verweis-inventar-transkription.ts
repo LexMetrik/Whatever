@@ -141,7 +141,7 @@ export const G = {
   FREMDERLASS_GENITIV: {
     zweck: 'FREMDERLASS_GENITIV — Genitiv-Erlassname («des Kulturgütertransfergesetzes», «der Verordnung») hinter Nummer + Passus ist nie ein Selbstverweis (W2·17 Nachzug, 2.10.2026)',
     datei: 'NormText.tsx',
-    literal: String.raw`/^\s+(?:des|der)\s+(?!vorliegende)(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])/iu`,
+    literal: String.raw`/^\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu`,
   },
   SELBST_KUERZEL_TRIM: {
     zweck: 'nenntEigenesKuerzel — führender Trenner vor dem Kürzel',

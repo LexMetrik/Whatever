@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "5a039ff8b6c348029c1080a90dfc6918df6bbfe2b8e71840b2840b7eaa0a401f",
+    "normTextSha256": "23225436e9e98670c29788e0932ff9b1322624a3cd866ce0356d8dbef10245a0",
     "guards": 25
   },
   "korpus": {
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19286,
+    "self": 19252,
     "fremd": 11660,
-    "text": 5335,
+    "text": 5369,
     "selbstmarker": 925
   },
   "fremdZiele": {
@@ -83,7 +83,7 @@
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 211,
+      "stellen": 210,
       "erlasse": 103,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
@@ -91,7 +91,7 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 781,
+      "stellen": 774,
       "erlasse": 171,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
@@ -115,7 +115,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12489,
+      "stellen": 12457,
       "erlasse": 460,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -123,8 +123,8 @@
     {
       "klasse": "fremderlass-genitiv",
       "entscheid": "TEXT",
-      "stellen": 615,
-      "erlasse": 248,
+      "stellen": 655,
+      "erlasse": 253,
       "selbstmarker": 0,
       "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
@@ -259,15 +259,15 @@
     {
       "klasse": "plural-glied-kein-token",
       "entscheid": "TEXT",
-      "stellen": 63,
-      "erlasse": 32,
+      "stellen": 61,
+      "erlasse": 31,
       "selbstmarker": 0,
       "was": "A10-Glied — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3500,
+      "stellen": 3498,
       "erlasse": 206,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -275,8 +275,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 514,
-      "erlasse": 94,
+      "stellen": 518,
+      "erlasse": 95,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }
