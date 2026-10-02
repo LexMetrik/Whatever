@@ -72,6 +72,38 @@ test.describe('W2·17 Split — Tastatur, Esc, Fokus', () => {
     await expect(blatt(page, 'sekundaer'), '«r» wirkte nicht im zuletzt benutzten Pane').toHaveCount(1)
   })
 
+  // Nachzug (Gegenprüfung #1275): Klicks AUF DEN REITER und AUF DIE TITELLEISTE eines
+  // Fensters liegen ausserhalb von `[data-pane]`/`[data-v3-pane]`, benennen aber ein
+  // Pane. Ohne Marke blieb das zuvor benutzte (rechte) Pane «zuletzt benutzt» — ein
+  // Rückschritt gegenüber dem alten Rückfall «primär».
+  test('F1-B01 (A): im rechten Pane gelesen, dann den Reiter des LINKEN Fensters gewählt, «r» → links', async ({ page }) => {
+    test.slow()
+    await oeffneSplit(page)
+    const sek = page.locator('[data-pane="sekundaer"]')
+    const box = (await sek.boundingBox())!
+    await page.mouse.click(box.x + box.width / 2, box.y + 400)
+    await page.locator('[data-reiter-schluessel="/gesetze/bund/ZGB"] a').first().click()
+    await page.keyboard.press('r')
+    await page.waitForTimeout(600)
+    await expect(blatt(page, 'sekundaer'), '«r» wirkte im rechten (OR-)Fenster, obwohl der linke Reiter gewählt war').toHaveCount(0)
+    await expect(blatt(page, 'primaer'), '«r» wirkte nicht im Fenster des gewählten Reiters').toHaveCount(1)
+  })
+
+  test('F1-B01 (B): im rechten Pane gearbeitet, dann auf den Kopf des linken Fensters geklickt, «r» → links', async ({ page }) => {
+    test.slow()
+    await oeffneSplit(page)
+    const sek = page.locator('[data-pane="sekundaer"]')
+    const box = (await sek.boundingBox())!
+    await page.mouse.click(box.x + box.width / 2, box.y + 400)
+    // Leere Ecke der Titelleiste (Polsterung, kein Knopf): der Fokus fällt auf <body>.
+    await page.locator('[data-pane-kopf][data-pane-rolle="primaer"]').click({ position: { x: 6, y: 3 } })
+    expect(await page.evaluate(() => document.activeElement === document.body), 'Voraussetzung: Fokus auf <body>').toBe(true)
+    await page.keyboard.press('r')
+    await page.waitForTimeout(600)
+    await expect(blatt(page, 'sekundaer'), '«r» wirkte im rechten Fenster, obwohl links geklickt wurde').toHaveCount(0)
+    await expect(blatt(page, 'primaer')).toHaveCount(1)
+  })
+
   test('F1-B02: Esc schliesst nur das Blatt des aktiven Panes, der Fokus bleibt in diesem Pane', async ({ page }) => {
     test.slow()
     const fehler = fehlerSammeln(page)

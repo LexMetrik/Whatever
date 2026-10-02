@@ -104,25 +104,15 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
   const schliesseRef = useRef(schliesse);
   useEffect(() => { schliesseRef.current = schliesse; }, [schliesse]);
 
-  // ── W2·17-UI-BEFUNDE · F1-B02 (2.10.2026) · ESC GEHÖRT DEM AKTIVEN PANE ─────
-  // Beide Esc-Wege unten hängen an `window`. Im Split stand in JEDEM Pane eine
-  // eigene Instanz dieses Hooks — Esc schloss darum alle offenen Blätter auf
-  // einmal (gemessen @1600, Blatt links UND rechts offen, ein Esc: beide weg;
-  // der Fokus landete danach im Öffner des zuerst geöffneten, also im falschen
-  // Fenster). Esc nimmt jetzt nur die Instanz an, deren Pane den Tastendruck
-  // beansprucht — dieselbe Regel und dieselbe Quelle wie «r»/j/k und ⌘K
-  // (`../panePrioritaet`). Die Pane-Rolle liest sich am Panel selbst
-  // (`data-v3-pane`, wandert mit dem Portal — Herleitung im Aufräum-Block
-  // unten); ohne Marke (Einzelansicht) gilt wie bisher jedes Esc.
-  const gehoertMir = () => {
-    const rolle = panelRef.current?.closest('[data-v3-pane]')?.getAttribute('data-v3-pane');
-    return rolle == null || tastendruckGehoertPane(rolle === 'sekundaer');
-  };
-
   // Fokus-Falle + Esc + Fokus-Rückgabe aus der GETEILTEN Mechanik — dieselbe,
   // die das Ist-Menü und das Gliederungs-Blatt verwenden (§5). NICHT im Modus
   // `beiwerk`/`spalte`: dort ist die Falle gerade das, was nicht sein darf (Kopf oben).
-  useDialogFokus(offen && !OHNE_FALLE.includes(modus), panelRef, () => { if (gehoertMir()) schliesseRef.current(); });
+  // Hier KEIN Pane-Gating des Esc (F1-B02): ein Modus mit Falle ist modal, die
+  // Bedienung ausserhalb schliesst ihn (Aussenklick) — zwei offene gleichzeitig
+  // gibt es nicht, ein Gating könnte nie scheitern (§6.7). Ein modaler Dialog
+  // DARÜBER (Norm-Popover) nimmt das Esc dagegen selbst an: `modalDarueber`
+  // in `useDialogFokus`.
+  useDialogFokus(offen && !OHNE_FALLE.includes(modus), panelRef, () => schliesseRef.current());
 
   // ── `beiwerk`/`spalte`: Fokus hinein, Esc, Rückgabe — OHNE Falle ─────────
   // Bewusst KEIN Aufruf von `useDialogFokus` mit abgeschalteter Falle: die Falle

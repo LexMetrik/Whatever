@@ -12,6 +12,7 @@
  *  · G1-B02 — `--nt-stick` im Pane: aus dem Kopf-BLOCK, nicht aus einer Summe.
  */
 import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { readFileSync } from 'node:fs';
 import { parseHTML } from 'linkedom';
 
 type GlobalPatch = Record<string, unknown>;
@@ -25,6 +26,12 @@ const SEITE = `<!doctype html><html><body>
     <div data-v3-pane="sekundaer" id="ov-s"><button id="blatt-s">blatt s</button></div>
   </div>
   <header id="topbar"><button id="topbar-knopf">oben</button></header>
+  <div data-pane-kopf data-pane-bezug="primaer"><span id="kopf-p">Kopf links</span></div>
+  <div data-pane-kopf data-pane-bezug="sekundaer"><span id="kopf-s">Kopf rechts</span></div>
+  <nav>
+    <div data-pane-bezug="primaer"><a id="reiter-links" href="#">ZGB (Fenster links)</a></div>
+    <div data-pane-bezug="sekundaer"><a id="reiter-rechts" href="#">OR (Fenster rechts)</a></div>
+  </nav>
 </body></html>`;
 
 /** Frische Modul-Instanz samt frischem Dokument — der Merker ist Modulzustand. */
@@ -46,6 +53,14 @@ async function pane() {
     /** Fokus verschwindet (Knopf entfernt, Esc), ohne dass ein Pane angeklickt wird. */
     fokusWeg: () => { aktiv = document.body; },
     klick: (el: Element) => { el.dispatchEvent(new window.Event('pointerdown', { bubbles: true })); },
+    /** ✕ am sekundären Fenster und «daneben öffnen» danach: ein NEUES Element. */
+    sekundaerNeuOeffnen: () => {
+      const neu = document.createElement('section');
+      neu.setAttribute('data-pane', 'sekundaer');
+      neu.innerHTML = '<p id="text-s2">neu</p>';
+      document.getElementById('zeile')!.appendChild(neu);
+      return neu;
+    },
     primaerHat: () => tastendruckGehoertPane(false),
     sekundaerHat: () => tastendruckGehoertPane(true),
   };
@@ -110,6 +125,65 @@ describe('F1-B01 · tastendruckGehoertPane — Overlay-Schicht und zuletzt benut
     p.id('ov-s').remove();
     expect(p.primaerHat(), 'ohne sekundäres Pane gehört der Tastendruck dem primären').toBe(true);
     expect(p.sekundaerHat()).toBe(false);
+  });
+});
+
+describe('F1-B01 (Nachzug) · Reiter und Titelleiste benennen ein Pane', () => {
+  it('A: im rechten Pane gelesen, dann den Reiter des LINKEN Fensters gewählt → links', async () => {
+    const p = await pane();
+    p.klick(p.id('text-s'));
+    p.fokus(p.id('knopf-s'));
+    p.klick(p.id('reiter-links'));
+    p.fokus(p.id('reiter-links')); // der Klick setzt den Fokus auf den Reiter (ausserhalb jedes Panes)
+    expect(p.primaerHat(), 'der Reiter des linken Fensters wurde gewählt').toBe(true);
+    expect(p.sekundaerHat()).toBe(false);
+    p.fokusWeg(); // Reiter-Link verschwindet bzw. verliert den Fokus
+    expect(p.primaerHat(), 'auch ohne Fokus gilt das zuletzt gewählte Fenster').toBe(true);
+  });
+
+  it('A\': der Reiter des rechten Fensters wählt das rechte', async () => {
+    const p = await pane();
+    p.klick(p.id('text-p'));
+    p.klick(p.id('reiter-rechts'));
+    p.fokusWeg();
+    expect(p.sekundaerHat()).toBe(true);
+    expect(p.primaerHat()).toBe(false);
+  });
+
+  it('B: im rechten Pane gearbeitet, dann auf den Kopf des linken Fensters geklickt (Fokus → Body) → links', async () => {
+    const p = await pane();
+    p.klick(p.id('text-s'));
+    p.fokus(p.id('knopf-s'));
+    p.klick(p.id('kopf-p'));
+    p.fokusWeg();
+    expect(p.primaerHat()).toBe(true);
+    expect(p.sekundaerHat()).toBe(false);
+    p.klick(p.id('kopf-s'));
+    p.fokusWeg();
+    expect(p.sekundaerHat()).toBe(true);
+  });
+
+  it('Fokus auf dem Reiter/Kopf eines Fensters = dieses Fenster (statt blind primär)', async () => {
+    const p = await pane();
+    p.fokus(p.id('reiter-rechts'));
+    expect(p.sekundaerHat()).toBe(true);
+    p.fokus(p.id('kopf-p'));
+    expect(p.primaerHat()).toBe(true);
+  });
+
+  it('Modul-Zustand veraltet nicht: ein geschlossenes und NEU geöffnetes sekundäres Fenster erbt die Merkung nicht', async () => {
+    const p = await pane();
+    p.klick(p.id('text-s'));
+    p.fokusWeg();
+    expect(p.sekundaerHat()).toBe(true);
+    p.id('text-s').closest('section')!.remove(); // ✕
+    const neu = p.sekundaerNeuOeffnen(); // «daneben öffnen» — ein anderes Element
+    expect(neu.isConnected).toBe(true);
+    expect(p.primaerHat(), 'das neue Fenster ist noch nie benutzt worden').toBe(true);
+    expect(p.sekundaerHat()).toBe(false);
+    p.klick(p.id('text-s2'));
+    p.fokusWeg();
+    expect(p.sekundaerHat(), 'nach einem Klick ins neue Fenster gilt es').toBe(true);
   });
 });
 
@@ -184,5 +258,26 @@ describe('G1-B02 · --nt-stick im Pane folgt dem Kopf-Block', () => {
       spurVersatzRem: 19.25, spurVersatzRechtsRem: 0,
     } as never) as Record<string, string>;
     expect(v['--nt-stick']).toBe('calc(var(--app-kopf-h, 4rem) + var(--leser-v3-kopf-block-h))');
+  });
+});
+
+// ── F1-B03 / Nachzug 3 · «Hauptfenster schliessen» ───────────────────────────
+// Quellsonde (der Browser-Teil — Fokus statt BODY — steht im e2e; die Buchführung
+// `liveLocs` heilt sich beim nächsten Mount selbst und ist im Browser nicht
+// beobachtbar): `schliesseHaupt` räumt den Live-Eintrag des geschlossenen Fensters
+// ab wie `schliesseUndFokus` und `zumHauptfenster`, und gibt den Fokus zurück.
+describe('Shell.schliesseHaupt', () => {
+  const shell = readFileSync(new URL('../components/layout/Shell.tsx', import.meta.url), 'utf8');
+  const start = shell.indexOf('const schliesseHaupt = () => {');
+  const rumpf = shell.slice(start, shell.indexOf('\n  };', start));
+
+  it('räumt den liveLocs-Eintrag des geschlossenen Fensters ab (Seed des ersten sekundären Panes)', () => {
+    expect(start).toBeGreaterThan(-1);
+    expect(rumpf).toMatch(/const seed = pane\.sekundaer\[0\]/);
+    expect(rumpf).toMatch(/raeumeLiveLoc\(seed\)/);
+  });
+
+  it('gibt den Fokus an den Hauptinhalt zurück', () => {
+    expect(rumpf).toMatch(/getElementById\('inhalt'\)\?\.focus\(\)/);
   });
 });

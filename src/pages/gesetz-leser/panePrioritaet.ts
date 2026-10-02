@@ -40,7 +40,15 @@
 //      Klicks bzw. Fokus-Wechsels (`pointerdown`/`focusin`, Capture-Phase am
 //      Dokument). Die Auflösung bleibt rein lesend: sie liest den Fokus bei
 //      JEDEM Tastendruck, die Merkliste ist nur der Rückfall dahinter.
-//      Ein Pane, das es nicht mehr gibt (✕), zählt nicht als Rückfall.
+//      Ein Pane, das es nicht mehr gibt (✕), zählt nicht als Rückfall — und
+//      ein NEU geöffnetes erbt die Merkung des alten nicht (Element-Identität).
+//  (3) NACHZUG (Gegenprüfung #1275): auch Klicks auf die Titelleiste und auf
+//      einen Reiter der Arbeitsleiste benennen ein Pane, liegen aber ausserhalb
+//      von `[data-pane]` und `[data-v3-pane]`. Sie tragen darum `data-pane-bezug`
+//      (`PaneKopf`: die eigene Rolle; `Reiter`: das Fenster, in dem er steht,
+//      sonst das Hauptfenster). Ohne die Marke hätte «im rechten Pane lesen,
+//      links in den Reiter klicken, r» das rechte Pane bedient — schlechter als
+//      der alte Rückfall «primär».
 //
 // WARUM EIGENE, GETEILTE DATEI: sie ist die EINE Antwort für BEIDE Kürzel-Wege
 // (`v3/suchKuerzel` für ⌘K/«/», `parts/LeserTastatur` für j/k/t/r/?). Bis zum
@@ -55,22 +63,31 @@
 
 type PaneRolle = 'primaer' | 'sekundaer';
 
-/** Rolle des Panes, in dem `el` steht — `[data-pane]` (Fläche selbst) oder
- *  `[data-v3-pane]` (Overlay-Schicht: Blatt, Sheet), sonst `null`. */
+/** Rolle des Panes, in dem `el` steht — `[data-pane]` (Fläche selbst),
+ *  `[data-v3-pane]` (Overlay-Schicht: Blatt, Sheet) oder `[data-pane-bezug]`
+ *  (Bedienelement MIT Pane-Bezug ausserhalb der Fläche: Titelleiste `PaneKopf`,
+ *  Reiter der Arbeitsleiste), sonst `null`. */
 function rolleVon(el: Element | null | undefined): PaneRolle | null {
   const marke = el?.closest?.('[data-pane]')?.getAttribute('data-pane')
     ?? el?.closest?.('[data-v3-pane]')?.getAttribute('data-v3-pane')
+    ?? el?.closest?.('[data-pane-bezug]')?.getAttribute('data-pane-bezug')
     ?? null;
   return marke === 'sekundaer' ? 'sekundaer' : marke === 'primaer' ? 'primaer' : null;
 }
 
-/** Pane des letzten Klicks bzw. Fokus-Wechsels; `null`, solange nichts geschah. */
-let zuletztBenutzt: PaneRolle | null = null;
+/** Pane des letzten Klicks bzw. Fokus-Wechsels samt der FLÄCHE, die es damals
+ *  war (Element-Identität statt blosser Rolle: ein geschlossenes und neu
+ *  geöffnetes Fenster ist ein anderes Element und erbt die Merkung nicht).
+ *  `null`, solange nichts geschah. */
+let zuletztBenutzt: { rolle: PaneRolle; flaeche: Element | null } | null = null;
 
 if (typeof document !== 'undefined') {
   const merke = (e: Event) => {
-    const rolle = rolleVon(e.target as Element | null);
-    if (rolle) zuletztBenutzt = rolle;
+    const ziel = e.target as Element | null;
+    const rolle = rolleVon(ziel);
+    if (!rolle) return;
+    const flaeche = ziel?.closest?.('[data-pane]') ?? document.querySelector(`[data-pane="${rolle}"]`);
+    zuletztBenutzt = { rolle, flaeche };
   };
   document.addEventListener('pointerdown', merke, true);
   document.addEventListener('focusin', merke, true);
@@ -90,7 +107,7 @@ export function tastendruckGehoertPane(imSekundaerenPane: boolean): boolean {
   // Rückfall: das zuletzt benutzte Pane, solange es noch im DOM steht; sonst
   // primär (auch in der Einzelansicht, wo es überhaupt kein `[data-pane]` gibt:
   // dort ist `imSekundaerenPane` false).
-  const rueckfall: PaneRolle = zuletztBenutzt === 'sekundaer' && document.querySelector('[data-pane="sekundaer"]') != null
+  const rueckfall: PaneRolle = zuletztBenutzt?.rolle === 'sekundaer' && zuletztBenutzt.flaeche?.isConnected
     ? 'sekundaer' : 'primaer';
   return ((fokusPane ?? rueckfall) === 'sekundaer') === imSekundaerenPane;
 }
