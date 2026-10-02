@@ -102,7 +102,8 @@ function Pfeil({ ziel, richtung, adresse }: {
     // bekannt sein muss (§8) — im Bild sagt ihn der Artikel selbst an.
     'aria-label': `${wort}: ${voll}${zustandsWort ? ` (${zustandsWort})` : ''}`,
     // Der volle Wortlaut für die Maus, wo die Darstellung kürzt (Gruppe oder lange Beschriftung).
-    title: gruppe !== null || ziel.label.length > 28 ? voll : undefined,
+    // Ab 18 Zeichen kann `max-w-[20ch]` kürzen (breite Glyphen) → dann muss der title stehen.
+    title: gruppe !== null || ziel.label.length >= 18 ? voll : undefined,
     // ── KEIN `text-ink-400` FÜR DEN AUFGEHOBENEN NACHBARN ──────────────────
     // Der erste Wurf dämpfte ihn auf `ink-400`. Die a11y-Sonde hat das am
     // 14.9.2026 gefangen (`e2e/a11y.e2e.ts`, Reader BS-640.100, hell UND

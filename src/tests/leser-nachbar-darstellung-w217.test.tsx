@@ -111,6 +111,14 @@ describe('B11-D01…D04 · das Markup', () => {
     expect(out).toContain(`aria-label="Nächster Artikel: ${lang}"`);
   });
 
+  it('B11-D01 · jede Beschriftung, die die 20ch-Kürzung treffen kann, trägt den title (26 Zeichen)', () => {
+    // Prüfbefund #1278: «Vorbehalte und Erklärungen» (26 Z.) wurde gekürzt, hatte aber keinen title (Schwelle 28).
+    const mittel = 'Vorbehalte und Erklärungen';
+    const kette = baueNachbarn([eintrag('48', 'Art. 48'), eintrag('decl_u1', mittel)]);
+    const out = renderToString(<ArtikelNachbarn nachbarn={kette.get('48')!} />);
+    expect(out).toContain(`title="${mittel}"`);
+  });
+
   it('B11-D02 · die Trefferfläche wächst per ::after, nicht durch eine grössere sichtbare Fläche', () => {
     const out = rendere('1186', struktur);
     expect(out).toContain('after:absolute');
