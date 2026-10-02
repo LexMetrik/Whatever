@@ -82,7 +82,7 @@ const UNSICHTBAR = new Set(['­', '​', '‌', '‍', '⁠', '﻿']);
 const LEERARTIG = new Set([' ', ' ', ' ', ' ']);
 const BINDESTRICH = new Set(['‐', '‑']);
 /** Schneller Vorlauf: enthält der (kleingeschriebene) Text etwas, das gefaltet wird? */
-const FALTUNG_NOETIG = /[̀-ͯ­​-‍⁠﻿‐‑    ß]|[0-9][ '’‘´`][0-9]{3}/;
+const FALTUNG_NOETIG = /[\u0300-\u036F\u00AD\u200B-\u200D\u2060\uFEFF\u2010\u2011\u00A0\u2007\u2009\u202F\u00DF]|[0-9][ '’‘´`][0-9]{3}/;
 
 interface Gefaltet {
   gefaltet: string;
