@@ -8,7 +8,7 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 import { useZuletzt } from './useZuletzt';
 import { usePaneSteuerung } from './usePaneLayout';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
-import { suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
+import { kuerzelHinterModal, suchKuerzelEmpfaengerAbmelden, suchKuerzelEmpfaengerAnmelden } from '../suche/fruehesSuchKuerzel';
 
 // ── D23 (David 6.9.2026) · EIN PLATZHALTER, UND ZWAR EIN KURZER ─────────────
 // Davids Befund am Bild: «Platzhalter ‹Suchen oder Norm springen (z. B. ‹OR
@@ -190,6 +190,12 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
       // ausserhalb des V3-Lesers ruft niemand `preventDefault` in Capture, das
       // Verhalten bleibt also unverändert.
       if (e.defaultPrevented) return;
+      // C2-B02 (2.10.2026): hinter einem offenen modalen Dialog (Navigations-
+      // Schublade, Kurzbefehle, Sheets) bedient das Kürzel kein Feld — der
+      // Fokus bliebe sonst nicht im Dialog (`kuerzelHinterModal`, dort die
+      // Herleitung). VOR jedem preventDefault: ein schweigender Empfänger
+      // beansprucht den Tastendruck nicht.
+      if (kuerzelHinterModal(feld.current)) return;
       if ((e.metaKey || e.ctrlKey) && !e.altKey && (e.key === 'k' || e.key === 'K')) {
         e.preventDefault();
         fokussiere();

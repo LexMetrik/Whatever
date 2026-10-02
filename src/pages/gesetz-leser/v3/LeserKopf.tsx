@@ -83,11 +83,18 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // immer beschriftet» samt Messreihe steht in `./kopfStufen`.
 // NACHTRAG 6.9.2026 (der Absatz oben bleibt als Befund vom 18.8. stehen, er
 // beschreibt den damaligen Stand richtig): mit D27 trägt DIESE Zeile den
-// Rücksprung nicht mehr. Er steht seither in der App-Seitenleiste («Gesetze»)
-// und in der Arbeitsleiste (Reiter «Gesetze», D7) — beide klebend und auf jeder
-// Breite sichtbar, also nicht schwächer als die Krume, die unter 900 px
-// Elementbreite ohnehin auf ein Wort zusammenfiel. Die Auflage «höchstens ein ✕
-// je Kopfzeile» in `./kopfStufen` ist unberührt.
+// Rücksprung nicht mehr, und die Brotkrume im Gesetz ist entfallen
+// (DESIGN-REGLEMENT §5a: die Beschriftung folgt der Lesestellung live).
+// BERICHTIGUNG 2.10.2026 (W2·17-UI-BEFUNDE, Entscheid David 2.10.2026; die
+// damalige Fassung dieses Nachtrags sagte, der Rücksprung stehe «auf jeder
+// Breite sichtbar» in der App-Seitenleiste — das stimmt nicht und war nie die
+// Absicht): einen JEDERZEIT SICHTBAREN Rückweg «Gesetze» gibt es im Leser
+// bewusst NICHT mehr. Die Seitenleiste startet eingeklappt (D25, Werkseinstellung,
+// Nutzerwahl persistent — `useSeitenleiste`); ihr Ziel «Gesetze» ist erst nach
+// dem Aufklappen zu sehen. Die Funktionen `brotkrume`/`hatRuecksprung`, an denen
+// die Zusage im Absatz oben hing, sind gestrichen (W2·17 H9-B01, 1.10.2026,
+// `./erlassAnsicht`). Die Auflage «höchstens ein ✕ je Kopfzeile» in
+// `./kopfStufen` ist unberührt.
 
 /** Die Streifen-Griffe links («‹ Gliederung ausblenden», D32) und rechts
  *  («Erlass-Blatt ausblenden ›», Entscheid A 24.9.2026) — EIN Bau für beide

@@ -61,6 +61,50 @@ export function istSuchKuerzel(e: {
   return e.key === '/' && !e.metaKey && !e.ctrlKey && !inEingabe(e.target ?? null);
 }
 
+/** ── W2·17-UI-BEFUNDE C2-B01/B02 (2.10.2026) · NICHT HINTER EINEN MODALEN DIALOG
+ *  Liegt das Such-Feld, das das Kürzel bedienen würde, HINTER einem offenen
+ *  modalen Dialog? Dann gehört der Tastendruck dem Dialog und keinem Feld.
+ *
+ *  BEFUND (reproduziert 2.10.2026, Chromium, `vite` lokal): bei offenem Dialog
+ *  «Tastatur-Kurzbefehle» (StPO, 1440) zog Ctrl+K den Fokus auf das Leser-Feld
+ *  dahinter, ebenso «/»; bei der offenen Navigations-Schublade (375, /gesetze)
+ *  tat dasselbe die Kopfleisten-Suche. Beide Male lag `document.activeElement`
+ *  ausserhalb des Dialogs, der Nutzer tippte in ein verdecktes Feld (WCAG 2.4.3,
+ *  Fokus-Reihenfolge; ARIA-Dialog-Pattern).
+ *
+ *  GEWÄHLT: der Tastendruck SCHWEIGT, statt den Dialog erst zu schliessen. Das
+ *  ist dasselbe Muster, das die Fläche schon an zwei Stellen trägt — F6 in
+ *  `Shell.tsx` («Offenen modalen Dialog nicht verlassen») und Guard 3 in
+ *  `parts/LeserTastatur` («hinter einem offenen modalen Dialog wird nichts
+ *  bedient»); und es passt zu `useDialogFokus`, dessen Dialoge den Fokus selbst
+ *  halten und nur auf Esc/Tab hören: ein Kürzel, das einen Dialog von aussen
+ *  wegräumt, kennt weder dessen Zustand (Eingaben in `MappenDialog`, offene
+ *  Auswahl im Filter-Sheet) noch dessen `onClose`; ein synthetisches Esc wäre
+ *  geraten. Wer suchen will, schliesst den Dialog (Esc) und drückt erneut.
+ *
+ *  AUSNAHME: steht das Feld SELBST im Dialog (Gliederungs-Sheet, A2 — dort
+ *  zieht der Rahmen das Feld in das Blatt), bleibt das Kürzel bedienbar; sonst
+ *  gäbe es im Blatt keinen Weg mehr zur Suche.
+ *
+ *  Der Aufrufer ruft dies VOR `preventDefault`: ein schweigender Empfänger
+ *  beansprucht den Tastendruck nicht, der Browser-Standard bleibt unberührt.
+ *
+ *  `modale` ist ein Parameter, weil Vitest ohne DOM läuft (`environment:
+ *  'node'`): die Entscheidung ist so an jeder Lage prüfbar. */
+export function kuerzelHinterModal(
+  feld: unknown,
+  modale: ArrayLike<{ contains: (n: never) => boolean }> | null = typeof document === 'undefined'
+    ? null
+    : document.querySelectorAll('[role="dialog"][aria-modal="true"]'),
+): boolean {
+  if (!modale) return false;
+  for (let i = 0; i < modale.length; i++) {
+    // Kein Feld (noch nicht gerendert) ⇒ es liegt in keinem Dialog.
+    if (feld == null || !modale[i].contains(feld as never)) return true;
+  }
+  return false;
+}
+
 /** Der angemeldete Empfänger — gesetzt, sobald `HeaderSuche` montiert ist. */
 let empfaenger: (() => void) | null = null;
 /** Ein Tastendruck aus dem Vorlauf, der noch auf seinen Empfänger wartet. */
@@ -75,6 +119,9 @@ function vorlauf(e: KeyboardEvent): void {
   // schon beansprucht hat, gewinnt.
   if (e.defaultPrevented) return;
   if (!istSuchKuerzel(e)) return;
+  // C2-B01/B02: hinter einem offenen modalen Dialog wartet kein Feld auf den
+  // Tastendruck — er wird weder gemerkt noch beansprucht.
+  if (kuerzelHinterModal(null)) return;
   // Den Browser-Default (⌘K = Adresszeile) unterbinden, sonst tippt der Nutzer
   // seine Suche ins falsche Fenster.
   e.preventDefault();

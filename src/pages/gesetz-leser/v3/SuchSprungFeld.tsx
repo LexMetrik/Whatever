@@ -1,4 +1,4 @@
-import { useRef, type RefObject } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
 import { suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 
 // ─── EIN Feld für Suchen UND Springen (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 4) ────
@@ -89,8 +89,12 @@ export function SuchSprungFeld({
 }) {
   const eigenerRef = useRef<HTMLInputElement>(null);
   const ref = feldRef ?? eigenerRef;
+  // C1-B01: das Enter wirkt erst NACH dem Nachzug der Entprellung (s. u.) und
+  // braucht dann die Props des NEUEN Renders, nicht die des Tastendrucks.
+  const neuestes = useRef({ onVor, hatTreffer, onBestaetigt });
+  useEffect(() => { neuestes.current = { onVor, hatTreffer, onBestaetigt }; });
 
-  const token = loeseArtikel && wert.trim() !== '' ? loeseArtikel(wert) : null;
+  const token =loeseArtikel && wert.trim() !== '' ? loeseArtikel(wert) : null;
 
   return (
     <div data-v3-suchsprung className="space-y-1">
@@ -161,8 +165,29 @@ export function SuchSprungFeld({
               // wegzuschalten hiesse, die Antwort auf die Eingabe zu verbergen;
               // gemessen am Zwischenstand (`leser-r1-r2`, Quickjump @390: die
               // Absage war nach ↵ nicht mehr auffindbar).
-              if (token) { onSprung(token); onBestaetigt?.(); }
-              else if (hatTreffer) { onVor?.(); onBestaetigt?.(); }
+              //
+              // ── C1-B01 (W2·17-UI-BEFUNDE, 2.10.2026) · ENTER SUCHT MIT DEM, WAS IM FELD STEHT ──
+              // Die Trefferliste (`hatTreffer`, `onVor`) hängt an einem 200-ms-
+              // entprellten Begriff. Enter vor Ablauf lief gegen den ALTEN Begriff
+              // — bei leerem alten Begriff gegen nichts, die Taste tat dann gar
+              // nichts (reproduziert 2.10.2026, StPO, «Entschädigung» + Enter im
+              // selben Task: scrollY blieb 0; nach Wechsel auf «Verteidigung»
+              // sprang Enter in einen Artikel des alten Begriffs). Darum liest
+              // Enter den Wert aus dem FELD (`currentTarget.value`, nie aus dem
+              // Render-Stand), bestätigt ihn (`setzeWert` mit dem bereits
+              // gesetzten Wert zieht den entprellten Begriff sofort nach,
+              // `inhalt-zustand`) und geht erst im nächsten Tick einen Schritt —
+              // dann steht die Liste des neuen Begriffs, `neuestes` hält ihre Props.
+              const aktuell = e.currentTarget.value;
+              const tokenJetzt = loeseArtikel && aktuell.trim() !== '' ? loeseArtikel(aktuell) : null;
+              if (tokenJetzt) { onSprung(tokenJetzt); onBestaetigt?.(); return; }
+              setzeWert(aktuell);
+              window.setTimeout(() => {
+                const n = neuestes.current;
+                if (!n.hatTreffer) return;
+                n.onVor?.();
+                n.onBestaetigt?.();
+              }, 0);
             }
           }}
           placeholder={platzhalter}

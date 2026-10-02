@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
@@ -108,7 +108,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   const [reiterToast, setReiterToast] = useState(false);
   const reiterToastTimer = useRef<number | null>(null);
   useEffect(() => () => { if (reiterToastTimer.current) window.clearTimeout(reiterToastTimer.current); }, []);
-  const [suche, setSuche] = useState('');
+  const [suche, setSucheRoh] = useState('');
   // Rank 9 (QS-PERF, §15/3): entprellter Suchwert. Das Eingabefeld bleibt sofort
   // responsiv (`suche`), aber die TEUREN Ableitungen — Treffer-Filter über ~1000
   // Artikel + IntersectionObserver-Neuaufbau — laufen erst ~200 ms nach dem letzten
@@ -117,6 +117,28 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // `springeZuArtikel` setzt setSuche('')). Reine Timing-Optimierung (§6.4): ändert
   // nur WANN gefiltert wird, nie WAS (dieselbe passtAufSuche-Menge, dieselbe Ansicht).
   const [sucheDebounced, setSucheDebounced] = useState('');
+  // ── W2·17-UI-BEFUNDE C1-B01 (2.10.2026) · ENTER BESTÄTIGT, DIE ENTPRELLUNG WARTET NICHT
+  // Reproduziert 2.10.2026 (StPO, 1440, Tippen und Enter im selben Task): (a) bei
+  // leerem alten Begriff tat Enter GAR NICHTS (`hatTreffer` hing am entprellten
+  // Wert), (b) nach einem Begriffswechsel sprang Enter zur nächsten Fundstelle
+  // des ALTEN Begriffs, während das Feld schon den neuen zeigte. Der Fehler ist
+  // die Lücke zwischen Feldwert und entprelltem Wert — nicht die Entprellung
+  // (Rank 9, §15/3: die teuren Ableitungen sollen nicht bei jedem Zeichen laufen).
+  // DAHER bleibt die Entprellung beim TIPPEN, und eine BESTÄTIGUNG zieht sie
+  // sofort nach: wer `setSuche` mit dem Wert aufruft, der schon im Feld steht
+  // (das tut Enter in `v3/SuchSprungFeld`), setzt `sucheDebounced` im selben Zug.
+  // Ein neuer Wert tippt weiter wie bisher (Feld sofort, Ableitungen nach 200 ms).
+  // Reine Timing-Frage (§6.4): dieselbe `passtAufSuche`-Menge, nur früher.
+  // Der letzte gesetzte Wert steht im Ref (im Handler geschrieben, nicht im
+  // Effekt): zwischen Tippen und Enter im selben Task ist noch nichts committet.
+  const zuletztGesetztRef = useRef('');
+  const setSuche = useCallback<Dispatch<SetStateAction<string>>>((v) => {
+    const neu = typeof v === 'function' ? v(zuletztGesetztRef.current) : v;
+    const bestaetigt = neu === zuletztGesetztRef.current;
+    zuletztGesetztRef.current = neu;
+    setSucheRoh(neu);
+    if (bestaetigt) setSucheDebounced(neu);
+  }, []);
   useEffect(() => {
     // Leeren: 0 ms (praktisch sofort, ein Tick — kein Lag beim Suche-Verlassen /
     // Treffer→Artikel-Sprung). Tippen: 200 ms entprellt. Beide über setTimeout,

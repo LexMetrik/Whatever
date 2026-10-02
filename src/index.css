@@ -309,6 +309,22 @@
     /* Ruhende Akzent-Fläche (`accent-bg`): aktiver Navigations-Grund, Badge-Grund. Trägt
        `brass-800` und `brass-700` als Text. */
     --brass-100: #F3F1ED;
+    /* Such-Hervorhebung im Wortlaut (W2·17-UI-BEFUNDE, Entscheid David 2.10.2026
+       «kräftiger»). VORHER: `brass-200` gegen das Papier 1.24:1 hell / 1.29:1
+       dunkel, der Sprung-Blink (`brass-100`) rund 1.1:1 — gemessen
+       2.10.2026 mit `scripts/farbwelt-messung.ts`. JETZT: Markierungsfläche
+       `such-treffer` ≥ 3:1 gegen `paper` (WCAG 1.4.11, tragende Fläche), die
+       Tinte darauf `such-treffer-tinte` ≥ 4.5:1 (1.4.3); `such-sprung` ist die
+       STARTFLÄCHE des Sprung-Blinks am Ziel-Artikel — sichtbar (≥ 1.5:1) und
+       bewusst schwächer als der Treffer, damit ein Treffer im blinkenden
+       Artikel sich weiter abhebt (≥ 1.5:1 gegen die Blink-Fläche). Warmer
+       Ton wie die Registerfarbe Wortlaut, aber KEIN Status und KEIN Register
+       (F0.2/B3): eine eigene Rolle «Markierung». Gerechnet: hell 3.25:1 /
+       Tinte 4.70:1, dunkel 3.25:1 / Tinte 4.92:1 — Nachweis in
+       `src/tests/leser-suchfeld-w217.test.ts`. */
+    --such-treffer: #AB8749;
+    --such-treffer-tinte: var(--ink-900);
+    --such-sprung: color-mix(in oklab, var(--such-treffer) 50%, var(--paper));
     /* Registerfarbe GESETZE. Die vier Registerfarben sind die einzige Farbe des Hauses und stehen
        als Strich, Reiter-Unterkante und Randmarke; als Fläche nur über die Flächen-Token
        `reg-*-flaeche` (F0.2 i. d. F. 22.9.2026), nie der Registerton selbst unter Fliesstext und
@@ -1180,6 +1196,13 @@
     --brass-400: #716E68;
     --brass-200: #302E2A;
     --brass-100: #242321;
+    /* Such-Hervorhebung dunkel (W2·17-UI-BEFUNDE, Herleitung am hellen Token):
+       mit `ink-900` (#E2E0DC) liesse sich ≥ 3:1 gegen das Papier UND ≥ 4.5:1
+       Text nicht zugleich halten (13.3 / 4.5 < 3) — darum trägt die Markierung
+       hier die hellste Text-Stufe `brass-800` (#F6F4F0). `such-sprung` mischt
+       wie hell aus Treffer und Papier. */
+    --such-treffer: #816637;
+    --such-treffer-tinte: var(--brass-800);
     /* Messing: Text-Töne (800–600) hell, Flächen-Töne (100/200) dunkel,
        Linien/Skala (500/400/300) bleiben Gold.
 
@@ -4327,16 +4350,21 @@
 
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */
-  @keyframes lc-ziel-blink { 0% { background: var(--brass-100); } 100% { background: transparent; } }
+  /* W2·17-UI-BEFUNDE (2.10.2026): Startfläche `--such-sprung` statt `--brass-100`
+     (vorher rund 1.1:1 gegen das Papier, kaum zu sehen) — Herleitung und Werte
+     am Token. Trifft den Sprung aus Trefferliste, Hash und Gliederung gleich. */
+  @keyframes lc-ziel-blink { 0% { background: var(--such-sprung); } 100% { background: transparent; } }
   .lc-ziel-blink { animation: lc-ziel-blink 2.4s var(--ease); border-radius: 0; } /* R1-11 */
 
   /* A35 (David 16.7.2026): Treffer-Highlight der In-Gesetz-Suche («Vertrag» im OR
      gehighlighted). Reine PAINT-Schicht über die bestehenden Text-Knoten (CSS
      Custom Highlight API, suchHighlight.ts) — keine DOM-Mutation, kein Reflow
-     (CLS 0). Messing-Tönung + volle Tinte. --brass-200 UND --ink-900 kippen beide
-     über html.dark (hell: helles Tan + dunkle Tinte; dunkel: dunkles Messing +
-     helle Tinte) → EINE Regel trägt AA in beiden Themes (§13/F2), kein Override. */
-  ::highlight(lc-such-treffer) { background-color: var(--brass-200); color: var(--ink-900); }
+     (CLS 0). W2·17-UI-BEFUNDE (Entscheid David 2.10.2026): Fläche ≥ 3:1 gegen das
+     Papier, Tinte darauf ≥ 4.5:1 — hell UND dunkel. Beide Tokens kippen über
+     html.dark (`--such-treffer`, `--such-treffer-tinte`, Werte und Herleitung dort)
+     → EINE Regel trägt in beiden Themes (§13/F2), kein Override. Vorher
+     `--brass-200`/`--ink-900`: nur 1.24:1 hell / 1.29:1 dunkel. */
+  ::highlight(lc-such-treffer) { background-color: var(--such-treffer); color: var(--such-treffer-tinte); }
 
   .lc-live { display: inline-flex; align-items: center; gap: .4rem; }
   /* F1: Live-Punkt = Zustand «live/ok» → --ok-Rolle (wertidentisch zu sage). */
