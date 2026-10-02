@@ -5,7 +5,7 @@
  */
 import { dekodiereEntities } from '../html-entities.ts';
 import { anhangAmtlichesSignal } from '../aufhebung-signal.ts';
-import { ohneFortsetzungen } from '../anhang-fortsetzung.ts';
+import { ohneFortsetzungen, bloeckeAusItems } from '../anhang-fortsetzung.ts';
 import { normalisiereTabelle } from '../tabelle-normalisieren.ts';
 import { entferneTags, entferneFussnotenSups } from './text.ts';
 import { findeDlEnde, findeDdEnde, findeSectionEnde, findeTableEnde } from './enden.ts';
@@ -391,16 +391,17 @@ export function extrahiereAnhang(html: string, ankerRoh: string): AnhangText | n
       // stehen schon am Item (absorbiert) und fehlen hier.
       const items = parseDefinitionsListe(dlInner, 0, true, absorbiert);
       for (const notiz of ohneFortsetzungen(markeloseNotizen(dlInner), absorbiert)) bloecke.push({ absatz: null, text: notiz });
-      if (items.length > 0) {
+      // P4: Zwischen-Notizen (anhang-fortsetzung.ts) teilen die Item-Liste an ihrer Stelle.
+      bloeckeAusItems(items).forEach((b, k) => {
         const vor = bloecke[bloecke.length - 1];
-        // An den vorausgehenden Einleitungs-Absatz/Notiz anhängen — NUR wenn der ein
-        // reiner Text-Block ohne eigene Liste/Tabelle/Titel ist (sonst eigener Block).
-        if (vor && vor.text && vor.titel === undefined && !vor.items && !vor.mehrspaltig) {
-          vor.items = items;
+        // Die ERSTE Item-Gruppe an den vorausgehenden Einleitungs-Absatz/Notiz anhängen — NUR wenn der
+        // ein reiner Text-Block ohne eigene Liste/Tabelle/Titel ist (sonst eigener Block).
+        if (k === 0 && b.text === '' && vor && vor.text && vor.titel === undefined && !vor.items && !vor.mehrspaltig) {
+          vor.items = b.items;
         } else {
-          bloecke.push({ absatz: null, text: '', items });
+          bloecke.push(b);
         }
-      }
+      });
     }
   }
 
