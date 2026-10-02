@@ -93,7 +93,7 @@ export function useMarkenSchalter(sucheFeldLeer: boolean): {
 
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-  internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
+  internRefs, aktArtikel, offen, setOffen, imPane, wurzel,
   bereich = 'alles', markenAus = false, einzelSprung,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
@@ -106,7 +106,6 @@ export function useSuchTreffer({
   aktivIds: string[];
   internRefs: InternRefs | undefined;
   aktArtikel: string | null;
-  tokenByLabel: Map<string, string>;
   /** Klapp-Zustand der LESESPALTE (B3/B4): welche Sektionen aufgeklappt sind.
    *  Der Sprung braucht `setOffen`, um ein Ziel in einem zugeklappten Ast
    *  überhaupt erreichbar zu machen; der Markierungs-Beobachter braucht `offen`
@@ -444,16 +443,13 @@ export function useSuchTreffer({
   // «Sie sind hier»: reine Projektion des SCHON vorhandenen Scroll-Spy-Zustands
   // (aktivIds) auf die Gliederungs-Labels — keine zusätzliche Beobachtung (§15).
   const siePfad = useMemo(() => pfadLabels(sektionen, aktivIds), [sektionen, aktivIds]);
-  // Fremdfund-Fix aus dem §9-Bug-Check (B5, echter main-Defekt seit #429): hier
-  // wurde ein LABEL in der TOKEN-Map nachgeschlagen (`artLabelByToken` ist
-  // token→label, `inhalt-hooks.tsx` setzt in `aktArtikel` aber bereits das
-  // fertige Label). Der Lookup ging darum IMMER ins Leere, `siePfadArtikel` war
-  // dauerhaft null und die Artikel-Angabe in «Sie sind hier» fehlte still — der
-  // Gliederungspfad allein füllte die Zeile, also fiel es nicht auf.
-  // `aktArtikel` IST das Anzeige-Label; die Umkehrkarte dient nur noch als
-  // Echtheitsprüfung: benannt wird ausschliesslich ein Label, das auf einen
-  // realen Artikel dieses Erlasses auflöst (§8).
-  const siePfadArtikel = aktArtikel && tokenByLabel.has(aktArtikel) ? aktArtikel : null;
+  // `aktArtikel` ist das aus dem TOKEN abgeleitete Anzeige-Label (`useArtikelTokens`)
+  // und nur dann gesetzt, wenn der Token zu einem realen Artikel dieses Erlasses
+  // gehört (§8) — die frühere Umkehrkarte Label→Token als Echtheitsprüfung ist
+  // damit überflüssig (W2·17-UI-BEFUNDE B10-B01: Labels sind nicht eindeutig).
+  // Fremdfund-Fix aus dem §9-Bug-Check (B5, #429): ein LABEL wurde dort in der
+  // TOKEN-Map nachgeschlagen und «Sie sind hier» blieb still ohne Artikel.
+  const siePfadArtikel = aktArtikel;
 
   // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der
   // Highlight-Registry hing ursprünglich AUSSCHLIESSLICH am Effekt oben — und

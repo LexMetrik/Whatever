@@ -214,7 +214,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useLeserTocZustand();
   const {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
+    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
@@ -334,9 +334,9 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, einzelSprung, planeSprung, gliederung.knoten, gliederung.umhaengPraefix]);
 
-  const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
+  const { aktivToken, aktArtikel, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktToken });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
-    erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
+    erlass, eintraege, struktur, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
   });
 
   const springeZuSektion = useSektionSprung({
@@ -357,7 +357,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad,
     offen, sucheDebounced, aktivIds, tocBaum,
     gliederungsKnoten: gliederung.knoten, umhaengPraefix: gliederung.umhaengPraefix,
-    istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
+    istXl, tocOffen, setOffen, setAktToken, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
       tocBaumTimer, tabArtikelTimer, aktArtikelTimer, tocTouchRef,
@@ -378,7 +378,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer, loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-    internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
+    internRefs, aktArtikel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
     einzelSprung: einzelSprung.navigiere, // Einzelmodus: der Fundstellen-Sprung wechselt den Artikel (PE-C3-B02)
   });
 
