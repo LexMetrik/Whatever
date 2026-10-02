@@ -76,3 +76,29 @@ describe('Tieflink-Zweig kanonisiert gegen alle Einträge (ZH-211.17)', () => {
     expect(ids).toContain('gm-vorspann');
   });
 });
+
+// W2·27-BUND-FERTIG E2 (Ziffer-Fragment, 2.10.2026): `#art-197-ziff-12` — das Suffix MUSS vor der
+// Abbildung auf die Token-Liste ab, sonst trifft «197-ziff-12» nichts und der Zweig bleibt zu
+// (derselbe Fehler wie früher bei `#art-1a`).
+describe('Ziffer-Fragment: «#art-<token>-ziff-<z>» öffnet den Zweig des ARTIKELS', () => {
+  it('BV «#art-197-ziff-12» öffnet exakt denselben Zweig wie «#art-197» (und der ist nicht leer)', async () => {
+    const mit = await oeffneFuer('#art-197-ziff-12', 'bund', 'BV');
+    const ohne = await oeffneFuer('#art-197', 'bund', 'BV');
+    expect(ohne.ids.length).toBeGreaterThan(0);
+    expect(mit.ids).toEqual(ohne.ids);
+  });
+  it('Nicht-kanonischer Artikel-Token mit Ziffer: «#art-1a-ziff-2» trifft die Zeile von «#art-1a» (ASYLV3)', async () => {
+    const { ids } = await oeffneFuer('#art-1a-ziff-2', 'bund', 'ASYLV3');
+    expect(ids).toContain('gm-vorspann');
+  });
+  it('unbekannte Ziffer ändert nichts am Zweig — Fallback auf den Artikel, kein Fehler', async () => {
+    const mit = await oeffneFuer('#art-197-ziff-99', 'bund', 'BV');
+    const ohne = await oeffneFuer('#art-197', 'bund', 'BV');
+    expect(mit.ids).toEqual(ohne.ids);
+  });
+  it('ungültige Prozent-Kodierung: kein Absturz, nichts geöffnet', async () => {
+    const { ids } = await oeffneFuer('#art-197%-ziff-12', 'bund', 'BV');
+    expect(ids).toEqual([]);
+  });
+});
+
