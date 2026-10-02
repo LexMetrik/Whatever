@@ -4,6 +4,8 @@ import type { Sektion } from '../../../lib/normtext/browse';
 import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
 import { uebersetzeRohPfad, findeSynthPfad } from '../gliederungsModell';
 import type { GliederungsKnoten } from '../gliederungsTypen';
+import { sammleArtikel } from '../gliederungsArtikel';
+import { kanonischerAnkerToken } from '../suchTreffer';
 import { sicherDekodiert } from '../../../lib/sicherDekodieren';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
@@ -79,8 +81,15 @@ export function useTiefLinkZweig(opts: {
   const pfadRef = useRef<string | null>(null);
   useLayoutEffect(() => {
     if (!hash.startsWith('#art-') || sektionen.length === 0) return;
-    const token = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
-    if (!token) return;
+    const roh = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
+    if (!roh) return;
+    // PA-4-B02 (W2·17-UI-BEFUNDE): «#art-336c» trifft den Token «336_c». Der Seed-
+    // Sprung kanonisiert (`kanonischerAnkerToken`, Nebenfund S6), dieser Zweig las
+    // den Rohtoken, fand keinen Pfad und öffnete die Gliederung erst nach dem
+    // Sprung — gemessen @1440 auf OR: CLS 0.0975 (336c) gegen 0.0004 (336_c).
+    // EINE Kanonisierung, dieselbe Funktion (§5); die Token-Liste stammt aus den
+    // Sektionen (nur dort kann dieser Zweig einen Pfad öffnen).
+    const token = kanonischerAnkerToken(roh, sektionen.flatMap((s) => sammleArtikel(s).map((a) => a.artikel)));
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;
     const rohPfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];

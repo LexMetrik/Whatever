@@ -8,6 +8,8 @@
 //                   blieb bei scrollY 0 (`!sektionen.length`-Wache). Nachgestellt
 //                   mit verzögerter Erlass-Datei: auf schneller Leitung rettet der
 //                   30-Frame-Retry in `ScrollZuHash` den Fall zufällig.
+//  PA-4-B02         `OR#art-336c` (ohne «_»): der Gliederungszweig öffnete erst NACH
+//                   dem Sprung — CLS 0.0975 @1440 gegen 0.0004 bei `#art-336_c`.
 //  B7               Artikel vor dem ersten Abschnitt: die Gliederungszeile
 //                   «Ohne Abschnitt» blieb zu, obwohl der Leser in ihr stand.
 import { test, expect } from '@playwright/test';
@@ -59,5 +61,23 @@ test.describe('Tieflink — Robustheit (W2·17-UI-BEFUNDE)', () => {
     await expect(page.locator('#art-5')).toBeAttached({ timeout: 20_000 });
     const zeile = page.locator('[data-toc] button[aria-label^="«Ohne Abschnitt»"]').first();
     await expect(zeile).toHaveAttribute('aria-expanded', 'true', { timeout: 10_000 });
+  });
+
+  test('PA-4-B02 · OR#art-336c verschiebt die Gliederung nicht nach dem ersten Bild (CLS @1440)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.addInitScript(() => {
+      (window as unknown as { __cls: number }).__cls = 0;
+      new PerformanceObserver((liste) => {
+        for (const e of liste.getEntries() as unknown as Array<{ value: number; hadRecentInput: boolean }>) {
+          if (!e.hadRecentInput) (window as unknown as { __cls: number }).__cls += e.value;
+        }
+      }).observe({ type: 'layout-shift', buffered: true });
+    });
+    await page.goto('/gesetze/bund/OR#art-336c');
+    await expect(page.locator('#art-336_c')).toBeAttached({ timeout: 30_000 });
+    await page.waitForTimeout(3500); // der Spy-Nachlauf (~1,8 s) fällt in dieses Fenster
+    const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
+    // Schwelle weit unter dem Befund (0.0975), weit über dem Gutfall (0.0004).
+    expect(cls, `CLS ${cls}`).toBeLessThan(0.03);
   });
 });

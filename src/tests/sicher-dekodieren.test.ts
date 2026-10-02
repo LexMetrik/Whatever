@@ -3,6 +3,8 @@ import { describe, it, expect } from 'vitest';
 import { sicherDekodiert } from '../lib/sicherDekodieren';
 import { artikelLabelVonPfad } from '../lib/tabGruppen';
 import { tokenAusHash } from '../pages/gesetz-leser/v3/einzelModus';
+import { gesetzPfad, entscheidPfad, materialPfad } from '../lib/verlaufLabel';
+import { internationalAnkerAbbildung } from '../lib/navigation';
 
 describe('sicherDekodiert', () => {
   it('dekodiert gültige Escapes', () => {
@@ -28,5 +30,19 @@ describe('Anker-Leser ohne Wurf bei kaputtem Escape', () => {
     expect(() => artikelLabelVonPfad('/gesetze/bund/OR#art-97%')).not.toThrow();
     expect(artikelLabelVonPfad('/gesetze/bund/OR#art-97%')).toBeNull();
     expect(artikelLabelVonPfad('/gesetze/bund/OR#art-336_c')).toBe('Art. 336c');
+  });
+});
+
+describe('weitere Adress-Leser ohne Wurf (PA-1-B01)', () => {
+  it('Pfad-Leser der Reiterleiste/Verlauf: kaputtes Escape ⇒ Rohsegment statt Wurf', () => {
+    expect(() => gesetzPfad('/gesetze/bund/OR%')).not.toThrow();
+    expect(gesetzPfad('/gesetze/bund/OR%')).toEqual({ ebene: 'bund', key: 'OR%' });
+    expect(gesetzPfad('/gesetze/kanton/ZH-230')).toEqual({ ebene: 'kanton', key: 'ZH-230' });
+    expect(() => entscheidPfad('/rechtsprechung/BGE%E0')).not.toThrow();
+    expect(() => materialPfad('/materialien/x%')).not.toThrow();
+  });
+  it('Alt-Link /international#<anker>: kaputtes Escape ⇒ kein Anker', () => {
+    expect(() => internationalAnkerAbbildung('#%')).not.toThrow();
+    expect(internationalAnkerAbbildung('#%')).toBe('');
   });
 });
