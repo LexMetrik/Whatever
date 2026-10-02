@@ -1027,7 +1027,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 29"
     },
     {
      "typ": "fassung",
@@ -1766,7 +1767,7 @@
    ]
   },
   "65": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",

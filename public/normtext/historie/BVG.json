@@ -1636,7 +1636,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "2",
-     "item": "3b"
+     "item": "3b",
+     "frueher": "Ziff. 3a"
     },
     {
      "typ": "eingefuegt",
@@ -1729,7 +1730,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "2",
-     "item": "6b"
+     "item": "6b",
+     "frueher": "Ziff. 6a"
     },
     {
      "typ": "eingefuegt",
@@ -2171,7 +2173,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Zweiter Titel"
     }
    ]
   },
@@ -2629,7 +2632,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Dritter Titel"
     },
     {
      "typ": "fassung",
@@ -3405,6 +3409,10 @@
       {
        "label": "AS 2021 312",
        "url": "https://fedlex.data.admin.ch/eli/oc/2021/312"
+      },
+      {
+       "label": "BBl 2018 5813",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2131"
       }
      ],
      "absatz": null,
@@ -3421,7 +3429,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Zweiter Titel"
     }
    ]
   },
@@ -3540,7 +3549,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Siebenter Teil"
     }
    ]
   },
@@ -4031,7 +4041,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 30f"
     }
    ]
   },

@@ -3675,7 +3675,7 @@
    ]
   },
   "162_163": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3939,7 +3939,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 90"
     },
     {
      "typ": "eingefuegt",

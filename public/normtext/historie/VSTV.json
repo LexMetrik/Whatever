@@ -3,8 +3,8 @@
  "abdeckung": {
   "fussnoten": 101,
   "ereignis": 85,
-  "referenz": 15,
-  "unparsed": 1
+  "referenz": 16,
+  "unparsed": 0
  },
  "artikel": {
   "1": {
@@ -1389,11 +1389,5 @@
    ]
   }
  },
- "residuum": [
-  {
-   "token": "70",
-   "nr": "100",
-   "roh": "BS 6 338]"
-  }
- ]
+ "residuum": []
 }

@@ -79,6 +79,9 @@
 //           `aufgehoben` (die Fussnoten-Grammatik `historie-parse.ts` kennt «Aufgehobn» nicht und wird NICHT
 //           erweitert: Historie-Shards hängen daran; der Vermerk wird wie «Gegenstandslos» hier am Fussnoten-
 //           ANFANG erkannt, eng auf genau diese zwei Wortlaute).
+//           NACHTRAG P7 #53 (1.10.2026, später am selben Tag; ergänzt, nicht nachgeführt): die Grammatik kennt
+//           «Aufgehobn durch» seither (BKV 8 zeigte in der Historie «Gilt seit 2016» statt «Aufgehoben seit 2016»);
+//           die Erkennung hier läuft damit über `parseFussnoteHistorie` — nur der Plural-Sammelvermerk bleibt hier.
 //         • «… ist dieser Art. gegenstandslos» in einer Fussnote am Artikel-KOPF, die mit einem AS-Zitat beginnt
 //           (AsylG Art. 122, «AS 1998 1582 Ziff. III. Aufgrund der Annahme dieses BB in der Volksabstimmung vom
 //           13. Juni 1999 ist dieser Art. gegenstandslos.») ⇒ `gegenstandslos`. Anders als bei (d) trägt der
@@ -110,21 +113,21 @@ export interface SignalBlock {
 }
 
 /**
- * Zwei amtliche Aufhebungs-Wortlaute, die die Fussnoten-Grammatik (`historie-parse.ts`) nicht kennt und die hier
- * eng am Fussnoten-ANFANG erkannt werden (Klasse (f), s. Kopf-Doku; ergänzt 1.10.2026):
+ * Amtlicher Aufhebungs-Wortlaut, den die Fussnoten-Grammatik (`historie-parse.ts`) nicht kennt und der hier eng am
+ * Fussnoten-ANFANG erkannt wird (Klasse (f), s. Kopf-Doku; ergänzt 1.10.2026):
  *  • «Diese aufgehobenen Art(.|ikel) …» — Plural-Sammelvermerk (StGB Art. 201–212). Wortgrenze nach «Art»/«Artikel»
  *    (kein «Artikelnummern»); NICHT «Dieser Art. …» (Singular, StGB Art. 108: «bleibt … leer»).
- *  • «Aufgehobn durch …» — amtlicher Fedlex-Tippfehler (BKV Art. 8), nur exakt dieses Wort mit folgendem «durch».
+ * (Der zweite Wortlaut dieser Klasse, der Tippfehler «Aufgehobn durch …» (BKV Art. 8), steht seit P7 #53 in der
+ * Grammatik selbst — eine Quelle, §5; `fussnoteHebtAuf` erkennt ihn über `parseFussnoteHistorie`.)
  */
 const SAMMEL_AUFGEHOBEN_RE = /^Diese aufgehobenen Art(?:\.|ikel)(?=\s)/;
-const TIPPFEHLER_AUFGEHOBN_RE = /^Aufgehobn durch(?=\s)/;
 
 /**
  * Trägt dieser Fussnoten-Prosatext einen amtlichen AUFHEBUNGS-Vermerk?
  * Delegiert an die kalibrierte Fussnoten-Grammatik (§5) und fragt nur, ob eines
  * der erkannten Ereignisse vom Typ «aufgehoben» ist («Aufgehoben durch/in/gemäss …»);
- * dazu zwei eng gefasste Anfangs-Wortlaute, die der Grammatik unbekannt sind
- * (`SAMMEL_AUFGEHOBEN_RE`, `TIPPFEHLER_AUFGEHOBN_RE` — Klasse (f)).
+ * dazu ein eng gefasster Anfangs-Wortlaut, der der Grammatik unbekannt ist
+ * (`SAMMEL_AUFGEHOBEN_RE` — Klasse (f); der Tippfehler «Aufgehobn durch» steht seit P7 #53 in der Grammatik)
  *
  * «Gegenstandslos [gemäss …]» (StGB Art. 67f, OR Schlusstitel) wird NICHT hier, sondern von
  * `fussnoteGegenstandslos` erkannt: es ist kein Aufhebungs-Vermerk (§1).
@@ -136,7 +139,7 @@ const TIPPFEHLER_AUFGEHOBN_RE = /^Aufgehobn durch(?=\s)/;
 export function fussnoteHebtAuf(text: string): boolean {
   const t = text.trim();
   if (!t) return false;
-  if (SAMMEL_AUFGEHOBEN_RE.test(t) || TIPPFEHLER_AUFGEHOBN_RE.test(t)) return true;
+  if (SAMMEL_AUFGEHOBEN_RE.test(t)) return true;
   return parseFussnoteHistorie({ text }).ereignisse.some((e) => e.typ === 'aufgehoben');
 }
 
@@ -153,6 +156,15 @@ export function fussnoteGegenstandslos(text: string): boolean {
 }
 
 /**
+ * «… ist dieser Art. gegenstandslos» — NUR unbedingt (P7 #47, GP T2 1.10.2026, Korpus 0×): folgt auf «gegenstandslos»
+ * eine Bedingung oder Ausnahme («, soweit …», «, sofern …», «wenn …», «ausgenommen …»), ist der Artikel nur TEILWEISE
+ * gegenstandslos — kein Ganz-Vermerk (§1: lieber nicht markieren als falsch). Die Bedingung steht nach Komma/Semikolon
+ * bzw. Leerzeichen; ein Punkt beendet die Aussage («… gegenstandslos. Soweit nötig, siehe …» bleibt ein Treffer).
+ */
+const DIESER_ART_GEGENSTANDSLOS_RE =
+  /\bist dieser Art(?:\.|ikel)\s+gegenstandslos(?=[\s.,;:]|$)(?![\s,;:]*(?:[Ss]oweit|[Ss]ofern|[Ww]enn|[Ff]alls|[Ss]olange|[Aa]usser|[Aa]usgenommen|[Mm]it Ausnahme)\b)/;
+
+/**
  * Sagt diese Fussnote ausdrücklich «… ist dieser Art. gegenstandslos»? (AsylG Art. 122: «AS 1998 1582 Ziff. III.
  * Aufgrund der Annahme dieses BB in der Volksabstimmung vom 13. Juni 1999 ist dieser Art. gegenstandslos.»)
  * Die Fussnote beginnt hier mit einem AS-Zitat, darum greift die Anfangs-Regel `fussnoteGegenstandslos` nicht
@@ -162,7 +174,7 @@ export function fussnoteGegenstandslos(text: string): boolean {
  * den ganzen Artikel (§1). Kein Aufhebungs-Vermerk — s. Kopf-Doku Klassen (d)/(f).
  */
 export function fussnoteDiesenArtGegenstandslos(text: string): boolean {
-  return /\bist dieser Art(?:\.|ikel)\s+gegenstandslos(?=[\s.,;:]|$)/.test(text.trim());
+  return DIESER_ART_GEGENSTANDSLOS_RE.test(text.trim());
 }
 
 /** `<p id="fn-…">`-Definitionen eines HTML-Fragments → Prosatext. */

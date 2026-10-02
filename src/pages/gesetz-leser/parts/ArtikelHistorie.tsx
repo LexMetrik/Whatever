@@ -190,6 +190,9 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
                     lit. a» sagt, WELCHEN Teil des Artikels die Änderung traf —
                     die Angabe, wegen der die Liste absatzscharf ist (M1/N1). */}
                 {sk && <span className="text-ink-500"> · {sk}</span>}
+                {/* P7 #11: «Ursprünglich» nennt die alte Bezeichnung im Wortlaut der Fussnote («Art. 29bis»,
+                    «Bst. cbis, dann cter»). Kein Datum dazu — die Fussnote datiert nur das Folge-Ereignis (§7). */}
+                {e.frueher && <span className="text-ink-500"> · «{e.frueher}»</span>}
                 {e.datum && (
                   <span> · {e.wirkung ? 'mit Wirkung seit' : 'in Kraft seit'} <span className="num text-ink-600">{formatiereDatum(e.datum)}</span></span>
                 )}
