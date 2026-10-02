@@ -80,9 +80,16 @@ export function alleKlappIds(knoten: readonly KlappKnoten[]): string[] {
 export function leistenKlappIds(
   g: { modus: GliederungsModus; knoten: readonly (KlappKnoten & { art: GliederungsKnoten['art'] })[] },
 ): string[] {
+  return alleKlappIds(leistenKnoten(g));
+}
+
+/** Die Zeilen-Wurzeln, die `LeserGliederung` als BAUM rendert (Herleitung bei `leistenKlappIds`). */
+export function leistenKnoten<K extends { art: GliederungsKnoten['art'] }>(
+  g: { modus: GliederungsModus; knoten: readonly K[] },
+): readonly K[] {
   if (g.modus === 'b3-leer') return [];
-  if (g.modus === 'b2-index' || g.modus === 'b4-mini') return alleKlappIds(g.knoten.filter((k) => k.art === 'anhang'));
-  return alleKlappIds(g.knoten);
+  if (g.modus === 'b2-index' || g.modus === 'b4-mini') return g.knoten.filter((k) => k.art === 'anhang');
+  return g.knoten;
 }
 
 /**

@@ -6,7 +6,8 @@ import { LeserUebersicht } from './LeserUebersicht';
 import { GliederungSheet } from '../parts/GliederungSheet';
 import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
-import { leistenKlappIds, alleOffen } from '../klappKarte';
+import { leistenKlappIds, leistenKnoten } from '../klappKarte';
+import { baumGanzOffen } from '../gliederungsLeiste';
 
 // ═══ DIE GLIEDERUNGS-LEISTE AN IHREN DREI ORTEN — Spalte · Sheet · Schiene ══
 //
@@ -38,7 +39,9 @@ function leistenIds(m: LeserV3Modell): string[] {
  *  zweimal übereinander). */
 export function leisteAufbau(m: LeserV3Modell, bestimmungsWort: BestimmungsWort, imSheet: boolean): ReactNode {
   const ids = leistenIds(m);
-  const alle = alleOffen(m.tocBaum, ids);
+  // Beschriftung aus dem SICHTBAREN (`baumGanzOffen`), nicht aus der Karte: ein Ast, den das
+  // Modell offen startet (EMRK-Anhang), hat keinen Karten-Eintrag und hiess «alles auf».
+  const alle = baumGanzOffen(leistenKnoten(m.gliederung), m.tocBaum, m.gliederung.startOffeneTiefe);
   // «alles auf/zu» läuft über DENSELBEN Schreiber wie der Pfeil (`tocToggleGruppe`):
   // er verbucht den Zielzustand in der Scroll-Spy-Buchhaltung
   // (`merkeKlappAstManuell`). Vorher schrieb der Knopf nur die Klapp-Karte —

@@ -17,7 +17,8 @@ import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { baueGliederungsModell, type GliederungsModell } from '../pages/gesetz-leser/gliederungsModell';
 import { SektionBaumTOC } from '../pages/gesetz-leser/parts/SektionBaumTOC';
 import { leisteAufbau } from '../pages/gesetz-leser/v3/leisteAufbau';
-import { leistenKlappIds, klappZeile } from '../pages/gesetz-leser/klappKarte';
+import { leistenKlappIds, leistenKnoten, klappZeile } from '../pages/gesetz-leser/klappKarte';
+import { baumGanzOffen } from '../pages/gesetz-leser/gliederungsLeiste';
 import type { LeserV3Modell } from '../pages/gesetz-leser/v3/leserV3Modell';
 
 function modell(key: string): GliederungsModell {
@@ -118,6 +119,26 @@ describe('B1 — Verdrahtung der Leisten-Knöpfe (leisteAufbau)', () => {
     expect(p.alleOffen).toBe(true);
     p.onAlleZu();
     expect(m.tocToggleGruppe).toHaveBeenCalledWith(leistenKlappIds(g), true);
+  });
+
+  it('B1-B03/B04: die Beschriftung folgt dem SICHTBAREN — EMRK-Anhang startet offen, der Knopf heisst «alles zu»', () => {
+    // vorher (Karten-Prüfung `alleOffen`): leere Karte = «nicht offen» → «alles auf», obwohl
+    // alles zu sehen war; der erste Klick änderte nur die Beschriftung.
+    const { p } = leiste('EMRK', {});
+    expect(p.alleOffen).toBe(true);
+    const g = modell('EMRK');
+    const ids = leistenKlappIds(g);
+    const zu = klappZeile({}, ids, true);
+    expect(baumGanzOffen(leistenKnoten(g), zu, g.startOffeneTiefe)).toBe(false);
+    expect(baumGanzOffen(leistenKnoten(g), klappZeile(zu, ids, false), g.startOffeneTiefe)).toBe(true);
+  });
+
+  it('Beschriftung im B1-Baum: zu → «alles auf»; nach «alles auf» → «alles zu»; nach «alles zu» wieder «alles auf»', () => {
+    const g = modell('OR');
+    const ids = leistenKlappIds(g);
+    expect(leiste('OR', {}).p.alleOffen).toBe(false);
+    expect(leiste('OR', klappZeile({}, ids, false)).p.alleOffen).toBe(true);
+    expect(leiste('OR', klappZeile(klappZeile({}, ids, false), ids, true)).p.alleOffen).toBe(false);
   });
 
   it('B1-B01: im B2-Index ohne Anhang (VwVG) gibt es keinen Knopf', () => {
