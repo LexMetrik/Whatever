@@ -24,6 +24,7 @@
 // derselbe Weg wie `leser-v3-highlight-split.e2e.ts`.
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 const SPLIT = `/gesetze/bund/ZGB?p=${encodeURIComponent('/gesetze/bund/OR')}#art-5`
 
@@ -175,5 +176,47 @@ test.describe('W2·17 Split — Geometrie im breiten Pane', () => {
       expect(m.spalte, `Pane ${rolle}: Gliederung als Spalte (Such-Zone steht in der Kopfzeile)`).toBe(true)
       expect(m.stick, `Pane ${rolle}: --nt-stick ${m.stick} px, klebender Kopf ${m.kopf} px`).toBe(m.kopf)
     }
+  })
+})
+
+// ── Nachzug 2 (Delta-Prüfung #1275) · Handy-Sheet: Esc muss schliessen ─────────
+// Beim Handy-Sheet ist `wurzel` (panelRef) ein KIND des `role="dialog"
+// aria-modal`-Elements. Die erste Fassung von `modalDarueber` verglich per
+// Identität (`oben !== wurzel`) und hielt das Sheet darum für «überdeckt» —
+// Esc wurde verschluckt (iPhone-13-Emulation, OR: Blatt offen, Esc, Sheet blieb).
+test.describe('W2·17 Handy-Sheet — Esc', () => {
+  test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true })
+
+  async function oeffneSheet(page: Page): Promise<void> {
+    await page.goto('/gesetze/bund/OR#art-41')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 30_000 })
+    await panelAufziehen(page)
+    await expect(page.locator('[data-v3-panel-modal="ja"]'), 'Voraussetzung: das Blatt ist hier ein modales Sheet').toHaveCount(1)
+  }
+
+  test('Esc schliesst das Blatt-Sheet', async ({ page }) => {
+    test.slow()
+    await oeffneSheet(page)
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]'), 'Esc wurde vom Sheet verschluckt').toHaveCount(0)
+  })
+
+  test('ein modaler Dialog über dem Sheet nimmt das erste Esc, das Sheet das zweite', async ({ page }) => {
+    test.slow()
+    await oeffneSheet(page)
+    // Stellvertreter für das Norm-Popover: ein späterer modaler Dialog am `body`.
+    await page.evaluate(() => {
+      const d = document.createElement('div')
+      d.id = 'test-popover'
+      d.setAttribute('role', 'dialog')
+      d.setAttribute('aria-modal', 'true')
+      document.body.appendChild(d)
+    })
+    await page.keyboard.press('Escape')
+    await page.waitForTimeout(400)
+    await expect(page.locator('[data-v3-panel]'), 'Esc schloss das Sheet trotz Dialog darüber').toHaveCount(1)
+    await page.evaluate(() => document.getElementById('test-popover')?.remove())
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]'), 'Esc schliesst das Sheet, sobald nichts darüber liegt').toHaveCount(0)
   })
 })

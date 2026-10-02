@@ -54,5 +54,8 @@ export function imMenue(ziel: EventTarget | null): boolean {
 export function modalDarueber(wurzel: Element): boolean {
   const modale = offeneModaleDialoge();
   const oben = modale[modale.length - 1];
-  return oben != null && oben !== wurzel;
+  // `wurzel` darf der Dialog SELBST oder sein NACHKOMME sein (Handy-Sheet: das
+  // Panel ist ein Kind des `role="dialog"`-Elements) — `contains` deckt beides;
+  // ein Identitätsvergleich liess das Sheet sich selbst für «überdeckt» halten.
+  return oben != null && !oben.contains(wurzel);
 }

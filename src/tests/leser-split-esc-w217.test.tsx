@@ -42,21 +42,25 @@ async function umgebung() {
   const { act } = React as unknown as { act: (fn: () => void | Promise<void>) => Promise<void> };
   const { usePopoverAutoZu } = await import('../pages/gesetz-leser/v3/usePopoverAutoZu');
 
-  function Blatt({ modus, rolle, onZu }: { modus: 'fest' | 'blatt'; rolle: 'primaer' | 'sekundaer'; onZu: () => void }) {
+  /** `dialogUmPanel`: so ist das Handy-Sheet gebaut (`LeserPanelZone`) — das
+   *  `role="dialog"`-Element UMSCHLIESST das Panel, `panelRef` ist sein KIND. */
+  function Blatt({ modus, rolle, onZu, dialogUmPanel }: { modus: 'fest' | 'blatt'; rolle: 'primaer' | 'sekundaer'; onZu: () => void; dialogUmPanel: boolean }) {
     const wrapRef = React.useRef<HTMLDivElement | null>(null);
     const panelRef = React.useRef<HTMLDivElement | null>(null);
     usePopoverAutoZu({ offen: true, schliesse: onZu, wrapRef, panelRef, modus, aussenAusnahme: '[data-oeffner]' });
+    const dialog = { role: 'dialog', 'aria-modal': 'true' };
+    const panel = React.createElement('div', {
+      ref: panelRef, tabIndex: -1, 'data-v3-panel': '',
+      ...(modus === 'blatt' && !dialogUmPanel ? dialog : {}),
+    });
     return React.createElement('div', { ref: wrapRef, 'data-v3-pane': rolle },
-      React.createElement('div', {
-        ref: panelRef, tabIndex: -1, 'data-v3-panel': '',
-        ...(modus === 'blatt' ? { role: 'dialog', 'aria-modal': 'true' } : {}),
-      }));
+      dialogUmPanel ? React.createElement('div', dialog, panel) : panel);
   }
 
-  const mounte = async (modus: 'fest' | 'blatt', rolle: 'primaer' | 'sekundaer') => {
+  const mounte = async (modus: 'fest' | 'blatt', rolle: 'primaer' | 'sekundaer', dialogUmPanel = false) => {
     const onZu = vi.fn();
     const root = createRoot(document.getElementById('wurzel') as unknown as Element);
-    await act(async () => { root.render(React.createElement(Blatt, { modus, rolle, onZu })); });
+    await act(async () => { root.render(React.createElement(Blatt, { modus, rolle, onZu, dialogUmPanel })); });
     return { onZu, root, act };
   };
   const druecke = () => {
@@ -126,6 +130,24 @@ describe('Esc · Modus «blatt» (modal, Fokus-Falle über useDialogFokus)', () 
   it('ohne Hindernis schliesst Esc das Blatt', async () => {
     const u = await umgebung();
     const b = await u.mounte('blatt', 'primaer');
+    u.druecke();
+    expect(b.onZu).toHaveBeenCalledTimes(1);
+  });
+
+  it('Handy-Sheet: das Panel ist ein KIND des modalen Dialogs — Esc schliesst es (Rückschritt der ersten Fassung)', async () => {
+    const u = await umgebung();
+    const b = await u.mounte('blatt', 'primaer', true);
+    u.druecke();
+    expect(b.onZu, 'das Sheet hielt sich selbst für überdeckt und verschluckte Esc').toHaveBeenCalledTimes(1);
+  });
+
+  it('Handy-Sheet mit Norm-Popover darüber: erst das Popover, dann das Sheet', async () => {
+    const u = await umgebung();
+    const b = await u.mounte('blatt', 'primaer', true);
+    const popover = u.modal('norm-popover');
+    u.druecke();
+    expect(b.onZu).not.toHaveBeenCalled();
+    popover.remove();
     u.druecke();
     expect(b.onZu).toHaveBeenCalledTimes(1);
   });
