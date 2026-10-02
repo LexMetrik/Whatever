@@ -21,7 +21,7 @@ import { mitlaufenKarte } from './klappKarte';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
-import { meldeLadefehler, loescheLadefehler, type LadefehlerArt } from './ladefehler';
+import type { LeserFehler } from './inhalt-zustand';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -79,7 +79,7 @@ export function useLeserDaten(opts: {
   setKantonLuecken: Dispatch<SetStateAction<KantonLueckenMap>>;
   setErlass: Dispatch<SetStateAction<BrowseErlass | null>>;
   setEintraege: Dispatch<SetStateAction<NormSnapshot[] | null>>;
-  setFehler: Dispatch<SetStateAction<boolean>>;
+  setFehler: Dispatch<SetStateAction<LeserFehler>>;
   /** A-1 (S6-W1a): Query und Anker der aufgerufenen Adresse — der Case-Redirect
    *  unten trägt sie mit. Aus dem Router des Aufrufers (im Pane ein eigener
    *  MemoryRouter), darum nicht `window.location`. */
@@ -102,10 +102,11 @@ export function useLeserDaten(opts: {
     // Gliederung und ohne Erlass-Kopf, während die Seite sonst normal aussieht.
     const daten = datenEbeneVonRoute(ebene);
     // W2·17-UI-BEFUNDE PA-3-B01/B02: «nicht im Bestand» (nicht im Register, Datei
-    // 404) ist etwas anderes als ein Ladefehler (Netz/5xx). Nur Letzterer wird im
-    // Kanal gemeldet (→ `GesetzFehlSeite` zeigt «konnte nicht geladen werden» mit
-    // «Erneut laden»); der Fehlerzustand selbst bleibt das eine Bit.
-    const ladefehler = (art: LadefehlerArt) => { meldeLadefehler(schluessel, art, erneut); setFehler(true); };
+    // 404) ist etwas anderes als ein Ladefehler (Netz/5xx). Das `fehler`-Feld DIESER
+    // Instanz trägt beides getrennt (`LeserFehler`): der Ladefehler bringt `erneut`
+    // der eigenen Instanz mit — kein Kanal je Erlass-Schlüssel (Auflage A1: zwei
+    // Fenster mit demselben Erlass mischten sich).
+    const ladefehler = (grund: 'datei' | 'register') => setFehler({ art: 'ladefehler', grund, erneut });
     const ladeAlles = () => {
       const mein = ++lauf;
       const gueltig = () => lebt && mein === lauf;
@@ -140,7 +141,7 @@ export function useLeserDaten(opts: {
             navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
             return;
           }
-          setFehler(true);
+          setFehler('nicht-im-bestand');
           return;
         }
         // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
@@ -150,26 +151,25 @@ export function useLeserDaten(opts: {
         // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
         // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
         if (e.status === 'nur-live-link') { setErlass(e); return; }
-        if (!e.datei) { setFehler(true); return; }
+        if (!e.datei) { setFehler('nicht-im-bestand'); return; }
         setErlass(e);
         let datei: Awaited<ReturnType<typeof ladeErlassDateiStreng>>;
         try { datei = await ladeErlassDateiStreng(e.datei); } catch { if (gueltig()) ladefehler('datei'); return; }
         if (!gueltig()) return;
-        if (!datei) { setFehler(true); return; }
+        if (!datei) { setFehler('nicht-im-bestand'); return; }
         setEintraege(datei.eintraege);
       })();
     };
-    // «Erneut laden» (aus dem Kanal): Meldung dieser Instanz zurücknehmen, den
-    // Fehlerzustand lösen (→ Ladeanzeige) und alles noch einmal holen — Register
-    // und Dateien sind nach einem Fehlschlag nicht gecacht (browse.ts, O-1.7).
+    // «Erneut laden» (aus dem `fehler`-Feld dieser Instanz): den Fehlerzustand
+    // lösen (→ Ladeanzeige) und alles noch einmal holen — Register und Dateien
+    // sind nach einem Fehlschlag nicht gecacht (browse.ts, O-1.7).
     const erneut = () => {
       if (!lebt) return;
-      loescheLadefehler(schluessel, erneut);
       setFehler(false);
       ladeAlles();
     };
     ladeAlles();
-    return () => { lebt = false; loescheLadefehler(schluessel, erneut); };
+    return () => { lebt = false; };
     // Setter/navigate sind stabil; Deps bewusst auf [ebene, schluessel] gehalten
     // (byte-identisch zum früheren Inline-Effekt — kein Re-Fetch bei Render).
     // eslint-disable-next-line react-hooks/exhaustive-deps

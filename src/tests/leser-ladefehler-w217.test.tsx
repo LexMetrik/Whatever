@@ -31,7 +31,13 @@ const fehler = (code: number) => ({ ok: false, status: code, json: async () => (
 
 type Antworten = { register: () => Response; datei: () => Response };
 
-/** Mountet `useLeserDaten` und liefert die Setter-Aufrufe sowie den Kanal. */
+/** Letzter Wert, den `setFehler` erhielt (das `fehler`-Feld der Instanz). */
+const letzterFehler = (m: { setFehler: { mock: { calls: unknown[][] } } }) => m.setFehler.mock.calls.at(-1)?.[0];
+const erneutLaden = (m: Parameters<typeof letzterFehler>[0] & { act: (f: () => Promise<void>) => Promise<void> }) =>
+  m.act(async () => { (letzterFehler(m) as { erneut: () => void }).erneut(); });
+const ladefehler = (grund: 'datei' | 'register') => expect.objectContaining({ art: 'ladefehler', grund, erneut: expect.any(Function) });
+
+/** Mountet `useLeserDaten` und liefert die Setter-Aufrufe. */
 async function montiere(schluessel: string, antworten: Antworten) {
   vi.resetModules();
   const { window, document } = parseHTML('<!doctype html><html><body><div id="root"></div></body></html>');
@@ -49,7 +55,6 @@ async function montiere(schluessel: string, antworten: Antworten) {
   const { createRoot } = await import('react-dom/client');
   const { act } = React as unknown as { act: (fn: () => void | Promise<void>) => Promise<void> };
   const { useLeserDaten } = await import('../pages/gesetz-leser/inhalt-hooks');
-  const kanal = await import('../pages/gesetz-leser/ladefehler');
 
   const setFehler = vi.fn();
   const setEintraege = vi.fn();
@@ -69,7 +74,7 @@ async function montiere(schluessel: string, antworten: Antworten) {
   const lasse = async () => { for (let i = 0; i < 6; i++) await act(async () => { await Promise.resolve(); await Promise.resolve(); }); };
   await act(async () => { root.render(React.createElement(Harness)); });
   await lasse();
-  return { setFehler, setEintraege, setManifest, setErlass, kanal, urls, lasse, act, root };
+  return { setFehler, setEintraege, setManifest, setErlass, urls, lasse, act, root };
 }
 
 afterEach(() => {
@@ -81,77 +86,74 @@ afterEach(() => {
 describe('useLeserDaten — Ladefehler ≠ nicht vorhanden', () => {
   it('Erlass-Datei 503: Fehlerzustand MIT Ladefehler-Marke «datei» (PA-3-B01, PE-C10-D01)', async () => {
     const m = await montiere('OR', { register: () => ok(REGISTER), datei: () => fehler(503) });
-    expect(m.setFehler).toHaveBeenCalledWith(true);
-    expect(m.kanal.ladefehlerArt('OR')).toBe('datei');
+    expect(letzterFehler(m)).toEqual(ladefehler('datei'));
     expect(m.setEintraege).not.toHaveBeenCalled();
   });
 
   it('Erlass-Datei 404 (echt): Fehlerzustand OHNE Marke — Fehlseite unverändert', async () => {
     const m = await montiere('OR', { register: () => ok(REGISTER), datei: () => fehler(404) });
-    expect(m.setFehler).toHaveBeenCalledWith(true);
-    expect(m.kanal.ladefehlerArt('OR')).toBeNull();
+    expect(letzterFehler(m)).toBe('nicht-im-bestand');
   });
 
   it('Schlüssel nicht im Register: Fehlerzustand OHNE Marke — Fehlseite unverändert', async () => {
     const m = await montiere('ORR', { register: () => ok(REGISTER), datei: () => fehler(404) });
-    expect(m.setFehler).toHaveBeenCalledWith(true);
-    expect(m.kanal.ladefehlerArt('ORR')).toBeNull();
+    expect(letzterFehler(m)).toBe('nicht-im-bestand');
   });
 
   it('Register 503: Fehlerzustand mit Marke «register», Manifest bleibt null (PA-3-B02)', async () => {
     const m = await montiere('OR', { register: () => fehler(503), datei: () => ok(DATEI) });
-    expect(m.setFehler).toHaveBeenCalledWith(true);
-    expect(m.kanal.ladefehlerArt('OR')).toBe('register');
+    expect(letzterFehler(m)).toEqual(ladefehler('register'));
     expect(m.setManifest).toHaveBeenLastCalledWith(null);
   });
 
   it('«Erneut laden» nach Datei-503: lädt neu, Fehler fällt, Marke weg, Eintraege gesetzt', async () => {
     let versuch = 0;
     const m = await montiere('OR', { register: () => ok(REGISTER), datei: () => (++versuch === 1 ? fehler(503) : ok(DATEI)) });
-    expect(m.kanal.ladefehlerArt('OR')).toBe('datei');
-    await m.act(async () => { m.kanal.ladefehlerErneut('OR'); });
+    expect(letzterFehler(m)).toEqual(ladefehler('datei'));
+    await erneutLaden(m);
     await m.lasse();
-    expect(m.setFehler).toHaveBeenLastCalledWith(false);
-    expect(m.kanal.ladefehlerArt('OR')).toBeNull();
+    expect(m.setFehler).toHaveBeenCalledWith(false); // Fehlerzustand gelöst → Ladeanzeige
+    expect(letzterFehler(m)).toBe(false); // und kein neuer Fehler danach
     expect(m.setEintraege).toHaveBeenCalledWith(DATEI.eintraege);
   });
 
   it('«Erneut laden» nach Register-503: das Register wird NEU geholt (nicht aus dem Fehler-Cache)', async () => {
     let versuch = 0;
     const m = await montiere('OR', { register: () => (++versuch === 1 ? fehler(503) : ok(REGISTER)), datei: () => ok(DATEI) });
-    expect(m.kanal.ladefehlerArt('OR')).toBe('register');
-    await m.act(async () => { m.kanal.ladefehlerErneut('OR'); });
+    expect(letzterFehler(m)).toEqual(ladefehler('register'));
+    await erneutLaden(m);
     await m.lasse();
-    expect(m.kanal.ladefehlerArt('OR')).toBeNull();
+    expect(letzterFehler(m)).toBe(false);
     expect(m.setManifest).toHaveBeenLastCalledWith(REGISTER);
     expect(m.setEintraege).toHaveBeenCalledWith(DATEI.eintraege);
     expect(m.urls.filter((u) => u.endsWith('/normtext/register.json'))).toHaveLength(2);
   });
 
-  it('scheitert der Neuversuch erneut, steht die Marke wieder (kein stilles Verschwinden)', async () => {
+  it('scheitert der Neuversuch erneut, steht der Ladefehler wieder (kein stilles Verschwinden)', async () => {
     const m = await montiere('OR', { register: () => ok(REGISTER), datei: () => fehler(503) });
-    await m.act(async () => { m.kanal.ladefehlerErneut('OR'); });
+    await erneutLaden(m);
     await m.lasse();
-    expect(m.kanal.ladefehlerArt('OR')).toBe('datei');
-    expect(m.setFehler).toHaveBeenLastCalledWith(true);
+    expect(letzterFehler(m)).toEqual(ladefehler('datei'));
   });
 
-  it('Unmount räumt die Marke weg (kein Leck in den nächsten Besuch)', async () => {
+  it('nach Unmount schreibt ein spät aufgerufenes «Erneut laden» keinen Zustand mehr (kein Leck)', async () => {
     const m = await montiere('OR', { register: () => ok(REGISTER), datei: () => fehler(503) });
-    expect(m.kanal.ladefehlerArt('OR')).toBe('datei');
+    const erneut = (letzterFehler(m) as { erneut: () => void }).erneut;
     await m.act(async () => { m.root.unmount(); });
-    expect(m.kanal.ladefehlerArt('OR')).toBeNull();
+    const anzahl = m.setFehler.mock.calls.length;
+    await m.act(async () => { erneut(); });
+    await m.lasse();
+    expect(m.setFehler.mock.calls.length).toBe(anzahl);
   });
 });
 
 describe('GesetzFehlSeite — ehrliche Meldung statt «nicht im Bestand» (PE-C10-D01)', () => {
   const ssr = async (art: 'datei' | 'register' | null) => {
     vi.resetModules();
-    const kanal = await import('../pages/gesetz-leser/ladefehler');
-    if (art) kanal.meldeLadefehler('OR', art, () => {});
     const { GesetzFehlSeite } = await import('../pages/gesetz-leser/FehlSeite');
+    const fehlerFeld = art ? { art: 'ladefehler' as const, grund: art, erneut: () => {} } : 'nicht-im-bestand' as const;
     return renderToStaticMarkup(
-      <MemoryRouter><GesetzFehlSeite schluessel="OR" manifest={art === 'register' ? null : (REGISTER as never)} /></MemoryRouter>,
+      <MemoryRouter><GesetzFehlSeite schluessel="OR" manifest={art === 'register' ? null : (REGISTER as never)} fehler={fehlerFeld} /></MemoryRouter>,
     );
   };
 

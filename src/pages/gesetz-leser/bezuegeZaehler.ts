@@ -73,17 +73,28 @@ export function useBezuegeZaehler(erlass: ZaehlerErlass | null | undefined): Zae
     // W2·17-UI-BEFUNDE PE-E7-B02: `ladeBezuegeZaehler` WIRFT bei Netz-/5xx-Fehler
     // (404 = `null` = kein Sidecar, gültige Auskunft). Vorher wurde beides zu
     // `block: null` und die Zähler fehlten still bis zum Neuladen des Tabs.
-    // Jetzt bleibt der Stand «noch nichts geladen», und die Rückkehr des Netzes
-    // (`online`) holt neu — dasselbe Muster wie der Bezugs-Shard (`bezuegeLaden`,
-    // E-14); der Fehlschlag ist nicht gecacht (browse.ts, O-1.7).
+    // Jetzt bleibt der Stand «noch nichts geladen», und der nächste Anlass holt
+    // neu; der Fehlschlag ist nicht gecacht (browse.ts, O-1.7). Anlass 1: die
+    // Rückkehr des Netzes (`online`, Muster `bezuegeLaden`, E-14). Anlass 2
+    // (Auflage A2, Gegenprüfung #1256): die Rückkehr in den Vordergrund
+    // (`visibilitychange` → sichtbar) — fiel der Abruf bei bestehender Verbindung
+    // (5xx, kurzer Aussetzer), kommt nie ein `online`. Höchstens EIN Versuch je
+    // Anlass: der erste Anlass meldet BEIDE Hörer ab, ein erneuter Fehlschlag
+    // meldet sie neu an (kein Retry-Sturm, kein Zeitgeber); Unmount meldet ab.
     const laden = () => {
       void ladeBezuegeZaehler(ebene, key).then(
         (b) => { if (lebt) setStand({ key, block: b }); },
         () => {
           if (!lebt) return;
-          const neu = () => { window.removeEventListener('online', neu); laden(); };
+          const neu = () => { abmelden?.(); laden(); };
+          const sichtbar = () => { if (document.visibilityState === 'visible') neu(); };
           window.addEventListener('online', neu);
-          abmelden = () => window.removeEventListener('online', neu);
+          document.addEventListener('visibilitychange', sichtbar);
+          abmelden = () => {
+            window.removeEventListener('online', neu);
+            document.removeEventListener('visibilitychange', sichtbar);
+            abmelden = null;
+          };
         },
       );
     };

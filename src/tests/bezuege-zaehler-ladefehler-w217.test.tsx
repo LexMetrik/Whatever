@@ -85,3 +85,74 @@ describe('useBezuegeZaehler — Ladefehler heilt beim online-Ereignis (PE-E7-B02
     expect(m.fetchMock).toHaveBeenCalledTimes(1);
   });
 });
+
+// ─── Auflage A2 der Gegenprüfung: Neuversuch auch OHNE `online`-Ereignis ──────
+// Fiel der Abruf bei bestehender Verbindung (5xx, kurzer Aussetzer), kam nie ein
+// `online` — die Zähler fehlten still bis zum Neuladen. Zweiter Auslöser: die
+// Rückkehr in den Vordergrund (`visibilitychange` → sichtbar). Höchstens EIN
+// Versuch je Auslöser, kein Retry-Sturm, Unmount-sicher.
+describe('useBezuegeZaehler — Neuversuch bei Rückkehr in den Vordergrund (A2)', () => {
+  type Dok = { visibilityState?: string; dispatchEvent: (e: Event) => boolean };
+  type Fenster = { document: Dok; Event: typeof Event };
+  const sichtbarkeit = (m: { window: Window }, stand: 'visible' | 'hidden'): Fenster => {
+    const w = m.window as unknown as Fenster;
+    Object.defineProperty(w.document, 'visibilityState', { value: stand, configurable: true });
+    return w;
+  };
+  const wechsel = async (m: Awaited<ReturnType<typeof montiere>>, stand: 'visible' | 'hidden') => {
+    const w = sichtbarkeit(m, stand);
+    await m.act(async () => { w.document.dispatchEvent(new w.Event('visibilitychange')); });
+    await m.lasse();
+  };
+
+  it('503 bei bestehender Verbindung, dann Tab wird sichtbar: Neuversuch trifft, Zähler stehen', async () => {
+    let ruf = 0;
+    const m = await montiere(() => (++ruf === 1 ? fehler(503) : ok({ zaehler: { '97': [4, 2] } })));
+    expect(m.stand.nachschlag?.('97')).toBeUndefined();
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+    expect(m.stand.nachschlag?.('97')).toEqual({ entscheide: 4, materialien: 2 });
+  });
+
+  it('Tab wird VERBORGEN: kein Abruf (nur die Rückkehr zählt)', async () => {
+    const m = await montiere(() => fehler(503));
+    await wechsel(m, 'hidden');
+    expect(m.fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('kein Retry-Sturm: online UND zweimal sichtbar kurz hintereinander = EIN Neuversuch', async () => {
+    const m = await montiere(() => fehler(503));
+    const w = sichtbarkeit(m, 'visible');
+    await m.act(async () => {
+      m.window.dispatchEvent(new w.Event('online'));
+      w.document.dispatchEvent(new w.Event('visibilitychange'));
+      w.document.dispatchEvent(new w.Event('visibilitychange'));
+    });
+    await m.lasse();
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('scheitert auch der Neuversuch, wartet der Hook auf den NÄCHSTEN Auslöser (wieder genau einer)', async () => {
+    let ruf = 0;
+    const m = await montiere(() => (++ruf < 3 ? fehler(503) : ok({ zaehler: { '97': [1, 0] } })));
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+    expect(m.stand.nachschlag?.('97')).toBeUndefined();
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(3);
+    expect(m.stand.nachschlag?.('97')).toEqual({ entscheide: 1, materialien: 0 });
+  });
+
+  it('echte 404: auch ein Sichtbarkeitswechsel löst keinen Abruf aus', async () => {
+    const m = await montiere(() => fehler(404));
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('Unmount meldet auch den Sichtbarkeits-Hörer ab', async () => {
+    const m = await montiere(() => fehler(503));
+    await m.act(async () => { m.root.unmount(); });
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(1);
+  });
+});

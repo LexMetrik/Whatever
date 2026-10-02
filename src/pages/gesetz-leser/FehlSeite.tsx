@@ -9,7 +9,7 @@ import { FehlSeite } from '../../components/ui/FehlSeite';
 import { SeitenKopf } from '../../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
 import { AbrufFehler } from '../../components/ui/AbrufFehler';
-import { ladefehlerArt, ladefehlerErneut, type LadefehlerArt } from './ladefehler';
+import type { LeserFehler, LadefehlerZustand } from './inhalt-zustand';
 
 // ─── W2·10-UI-NAV/N0b: hilfreiche Fehlseite für einen unbekannten Erlass-Key ───
 //
@@ -36,26 +36,29 @@ import { ladefehlerArt, ladefehlerErneut, type LadefehlerArt } from './ladefehle
 // 404). Ein Funkloch oder ein 5xx ist eine Auskunft über die VERBINDUNG — und
 // darf nie als erstere erscheinen: die alte Seite behauptete ««OR» ist nicht als
 // Erlass im Bestand» und schlug «OR» als Vorschlag vor (§8). Welche Auskunft
-// gilt, meldet `useLeserDaten` über `./ladefehler`; ohne Meldung bleibt die
-// Fehlseite wie sie war.
-export function GesetzFehlSeite({ schluessel, manifest }: {
+// gilt, trägt das `fehler`-Feld DIESER Leser-Instanz (`LeserFehler`, gesetzt von
+// `useLeserDaten`) — kein Kanal je Erlass-Schlüssel: zwei Fenster mit demselben
+// Erlass können verschiedene Auskünfte haben (Auflage A1, Gegenprüfung #1256).
+export function GesetzFehlSeite({ schluessel, manifest, fehler }: {
   schluessel: string;
   manifest: BrowseManifest | null;
+  /** Das Fehlerfeld der Instanz; ohne Ladefehler gilt «nicht im Bestand». */
+  fehler: Exclude<LeserFehler, false>;
 }) {
-  const art = ladefehlerArt(schluessel);
-  return art
-    ? <GesetzLadeFehler schluessel={schluessel} manifest={manifest} art={art} />
+  return typeof fehler === 'object'
+    ? <GesetzLadeFehler schluessel={schluessel} manifest={manifest} ladefehler={fehler} />
     : <GesetzNichtImBestand schluessel={schluessel} manifest={manifest} />;
 }
 
 /** Der Erlass lässt sich gerade nicht laden — ehrliche Meldung mit «Erneut laden»
  *  statt «nicht im Bestand». Kein Vorschlags-/Suchblock: der Erlass ist nicht
  *  unbekannt, es fehlt nur die Verbindung. Der Weiterweg bleibt (REGL:122/C1). */
-function GesetzLadeFehler({ schluessel, manifest, art }: {
+function GesetzLadeFehler({ schluessel, manifest, ladefehler }: {
   schluessel: string;
   manifest: BrowseManifest | null;
-  art: LadefehlerArt;
+  ladefehler: LadefehlerZustand;
 }) {
+  const art = ladefehler.grund;
   const pk = usePaneKlasse();
   // Bei «datei» steht der Erlass im Register: die amtliche Quelle ist ein echter Ausweg.
   const quelle = art === 'datei' ? manifest?.erlasse.find((e) => e.key === schluessel)?.quelleUrl : undefined;
@@ -67,7 +70,7 @@ function GesetzLadeFehler({ schluessel, manifest, art }: {
       <SeitenKopf overline="Gesetzessammlung" titel="Erlass nicht geladen" intro={erklaerung} />
       <div role="alert">
         <AbrufFehler gegenstand={`Der Erlass «${schluessel}»`} href={quelle || undefined}
-          onErneut={() => ladefehlerErneut(schluessel)} />
+          onErneut={ladefehler.erneut} />
       </div>
       <nav aria-label="Weiterweg" className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
         <Link to="/gesetze" className="lc-link text-body-s font-medium text-brass-700 hover:text-brass-600">
