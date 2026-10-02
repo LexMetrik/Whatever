@@ -35,7 +35,7 @@ export const BREITE = 48;
 export const HOEHE = 1000;
 /** Mindesthöhe einer Marke in Koordinaten-Einheiten (≈ 2.5 px bei 600 px Höhe).
  *  Ohne sie verschwände ein kurzer Artikel in einem langen Erlass. */
-export const MARKE_MIN = 4;
+const MARKE_MIN = 4;
 /**
  * HÖCHSTHÖHE einer Marke in Koordinaten-Einheiten (≈ 8 px bei 664 px Streifen).
  *
