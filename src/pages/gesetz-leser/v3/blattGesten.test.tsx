@@ -311,6 +311,59 @@ describe('useZurueckSchliesst (Leser-Blatt) — echter React-Render, Nachzug #10
     expect(schliesse).toHaveBeenCalledTimes(1);
   });
 
+  // ── F4 (Prüfer-Befund zu PR #1261, 2.10.2026) · ZWEI eigene back() zugleich ──
+  // Esc, `r`, Esc, `r` binnen ~1 s: zwei `history.back()` sind unterwegs. Mit einem
+  // Hörer je `back()` feuerten beim ERSTEN popstate beide, der Zähler stand auf 0,
+  // und das zweite popstate schloss das frisch geöffnete Blatt. Jetzt verbraucht
+  // jedes popstate genau EINEN ausstehenden Rücksprung.
+  // ROT: in `blattGesten.ts` `eigenPop` jeden Eintrag verbrauchen lassen (statt den ersten offenen).
+  async function zweiRuecksprungeUnterwegs() {
+    const a = aufbauen();
+    (a.fenster.history.back as ReturnType<typeof vi.fn>).mockImplementation(() => {});
+    const schliesse = vi.fn();
+    await rendern(a.ziel, true, schliesse);
+    await rendern(a.ziel, false, schliesse); // Esc → back() #1
+    await act(async () => { await Promise.resolve(); });
+    await rendern(a.ziel, true, schliesse); // r (die Marke steht noch: kein Push)
+    await rendern(a.ziel, false, schliesse); // Esc → back() #2
+    await act(async () => { await Promise.resolve(); });
+    await rendern(a.ziel, true, schliesse); // r
+    expect(a.fenster.history.back).toHaveBeenCalledTimes(2);
+    return { ...a, schliesse };
+  }
+
+  it('F4: zwei eigene back() unterwegs — BEIDE popstate bleiben eigene, das neue Blatt bleibt offen', async () => {
+    const { popstateFeuern, schliesse, fenster } = await zweiRuecksprungeUnterwegs();
+    popstateFeuern(); // popstate von back() #1
+    await act(async () => { vi.advanceTimersByTime(0); }); // der Hörer gibt EINEN Rücksprung frei
+    popstateFeuern(); // popstate von back() #2 — vorher: Zähler schon 0 ⇒ schloss das Blatt
+    expect(schliesse).not.toHaveBeenCalled();
+    expect((fenster.history.state as Record<string, unknown>).lmErlassBlatt).toBe(true);
+    // beide Rücksprünge verbraucht: die nächste Zurück-Geste ist wieder echt
+    await act(async () => { vi.advanceTimersByTime(0); });
+    popstateFeuern();
+    expect(schliesse).toHaveBeenCalledTimes(1);
+  });
+
+  it('F4: zwei eigene back() im SELBEN popstate-Takt (beide Ereignisse vor dem Makrotask) bleiben eigene', async () => {
+    const { popstateFeuern, schliesse } = await zweiRuecksprungeUnterwegs();
+    popstateFeuern();
+    popstateFeuern();
+    expect(schliesse).not.toHaveBeenCalled();
+    await act(async () => { vi.advanceTimersByTime(0); });
+    popstateFeuern();
+    expect(schliesse).toHaveBeenCalledTimes(1);
+  });
+
+  it('F4: kam das popstate des zweiten back() nie, gibt das Notnetz ihn frei — danach schliesst die echte Geste', async () => {
+    const { popstateFeuern, schliesse } = await zweiRuecksprungeUnterwegs();
+    popstateFeuern(); // nur das erste kommt an
+    await act(async () => { vi.advanceTimersByTime(0); });
+    await act(async () => { vi.advanceTimersByTime(10_000); }); // Notnetz des zweiten
+    popstateFeuern();
+    expect(schliesse).toHaveBeenCalledTimes(1);
+  });
+
   it('Zurück-Geste schliesst, ohne selbst history.back() zu rufen (der Eintrag ist schon weg)', async () => {
     const { ziel, fenster, popstateFeuern } = aufbauen();
     let offen = true;

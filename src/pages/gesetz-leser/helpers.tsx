@@ -8,6 +8,7 @@ import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib
 import { norm } from '../../lib/suche/normQuery';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
 import { erlassPfadRoh, erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
+import { kuerzelIstTitelSchluss, titelMitSchluss } from './titelSchluss';
 import type { OverlineGlied } from '../../components/layout/LeserKopfGeruest';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
@@ -220,18 +221,6 @@ export function kuerzelImKlammerGlied(titel: string, kuerzel: string): boolean {
   return false;
 }
 
-/**
- * Ab wie vielen Zeichen ein Registerwert in `kuerzel` keine Kennung mehr ist.
- * Gezählt am Register 1.10.2026 (1580 Erlasse, 233 mit vorangestellter Kennung,
- * `.gate/titel-explore2.mjs` im Bau-Worktree): bis 69 Zeichen stehen dort Kürzel
- * und Kurztitel («ArGV 4», «Covid-19-Verordnung Unterstützungsprogramm
- * Gastronomie und Hotellerie», der längste); von 87 Zeichen an sind es Volltitel
- * (6 × AR/BS/ZH: der Registerwert IST der Titel) und Satzfragmente («handelnd
- * aufgrund seines Aufsichtsrechts …», BS-390.760). Dazwischen liegt kein Wert —
- * 70 ist die Mitte der Lücke, nicht geraten.
- */
-export const KENNUNG_MAX_ZEICHEN = 70;
-
 /** Bis zu dieser Länge bleibt eine vorangestellte Kennung eine nicht umbrechende
  *  Marke («ArGV 4», «LugÜ»); darüber darf sie umbrechen — sonst sprengt sie die
  *  Zeile (AR/BS @390: 35 Zeichen = 452 px in 318 px; E-D16-B01). 20 Zeichen
@@ -244,16 +233,19 @@ export const KENNUNG_NOWRAP_MAX_ZEICHEN = 20;
  *
  *  · `kennung` gesetzt: die Kennung steht davor, der Titel ohne Klammer-Suffix.
  *  · Kürzel leer / identisch mit dem Titel: nur der Titel.
- *  · Kürzel steht schon als Klammerglied im Titel («(ArGV 4)», «…, RBÜ)») oder ist
- *    länger als `KENNUNG_MAX_ZEICHEN` (Volltitel/Fragment, kein Kürzel): kein
- *    Anhang «(Kürzel)» — er stünde doppelt bzw. wäre ein Satzfragment.
+ *  · Kürzel steht schon als Klammerglied im Titel («(ArGV 4)», «…, RBÜ)»): kein
+ *    Anhang «(Kürzel)» — er stünde doppelt.
+ *  · `kuerzel` ist der abgespaltene SCHLUSS des Titels (`titelSchluss.ts`, S1–S3;
+ *    BS-390.760, BS-154.123 …): der amtliche Titel `titel + ", " + kuerzel`, ohne
+ *    Kennung und ohne «(Kürzel)»-Anhang — nie etwas verwerfen (§1, F1 2.10.2026).
  *  · sonst die S3-Zitierform «Titel (Kürzel)».
  */
 export function kopfTitelZeile(erlass: { titel: string; kuerzel: string }, kennung: string | null): string {
+  if (kuerzelIstTitelSchluss(erlass)) return titelMitSchluss(erlass);
   const kuerzel = erlass.kuerzel.trim();
   const angezeigt = titelOhneKlammerSuffix(erlass.titel, kuerzel);
   if (!kuerzel || kennung || angezeigt.toLowerCase() === kuerzel.toLowerCase()) return angezeigt || kuerzel;
-  if (kuerzel.length > KENNUNG_MAX_ZEICHEN || kuerzelImKlammerGlied(angezeigt, kuerzel)) return angezeigt;
+  if (kuerzelImKlammerGlied(angezeigt, kuerzel)) return angezeigt;
   return `${angezeigt} (${kuerzel})`;
 }
 
@@ -282,6 +274,12 @@ export function kopfTitelZeile(erlass: { titel: string; kuerzel: string }, kennu
  * Rein und deterministisch (§2). Rot-Beweis: `src/tests/tab-titel-redundanz.test.ts`.
  */
 export function tabTitel(kuerzel: string, titel: string): string {
+  // F1 (2.10.2026): der Registerwert ist der abgespaltene Titel-Schluss — der Reiter
+  // nennt dann den ganzen Titel (dieselbe Zeichenkette wie die H1, `kopfTitelZeile`).
+  if (kuerzelIstTitelSchluss({ titel, kuerzel })) return `${titelMitSchluss({ titel, kuerzel })} — LexMetrik`;
+  // F3 (2.10.2026): Registerwert == Volltitel (AR-822.111, ZH-212.812 …) — der Titel
+  // steht schon vorn, seine Klammer darf nicht noch einmal dahinter stehen.
+  if (kuerzel.trim() !== '' && kuerzel.trim().toLowerCase() === titel.trim().toLowerCase()) return `${kuerzel} — LexMetrik`;
   const klammer = titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? titel;
   const redundant = klammer.trim().toLowerCase() === kuerzel.trim().toLowerCase();
   // PA-6-B06: «RBÜ (revidiert in Paris am 24. Juli 1971, RBÜ)» — steht das Kürzel

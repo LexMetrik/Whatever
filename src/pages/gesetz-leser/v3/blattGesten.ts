@@ -31,32 +31,50 @@ function schreibeMarke(): void {
 // Darum zählt jeder eigene Rücksprung mit. `onPop` fragt `eigenerRuecksprung()`:
 // ja ⇒ nicht schliessen, den Eintrag neu belegen (der Nutzer hat ein offenes Blatt
 // und braucht seinen Zurück-Eintrag); nein ⇒ Nutzergeste. Entschieden wird an der
-// ANZAHL, nicht an der Hörer-Reihenfolge: der Hörer des Rücksprungs (`h`, beim
-// `back()` angelegt) kommt VOR jedem später registrierten `onPop` und gibt den
-// Zähler erst per Makrotask frei, also nach allen Hörern desselben `popstate`.
-// Notnetz: kommt nie ein `popstate` (eine inzwischen begonnene Ganzseiten-
-// Navigation bricht das `back()` ab), gibt ein Timer den Zähler nach 5 s frei —
-// sonst verschluckte der Zähler die nächste ECHTE Zurück-Geste.
-let rueckUnterwegs = 0;
+// ANZAHL, nicht an der Hörer-Reihenfolge: der EINE Modul-Hörer `eigenPop` wird beim
+// ersten ausstehenden `back()` angelegt, steht also VOR jedem später registrierten
+// `onPop`, und gibt den Rücksprung erst per Makrotask frei, also nach allen Hörern
+// desselben `popstate`.
+//
+// F4 (Prüfer-Befund 2.10.2026): ZWEI `back()` zugleich (Esc, `r`, Esc, `r` binnen ~1 s)
+// brauchen zwei popstate. Mit einem Hörer je `back()` feuerten beim ersten popstate
+// BEIDE, der Zähler fiel auf 0, und das zweite popstate schloss das frisch geöffnete
+// Blatt. Darum gibt es eine Warteschlange und EINEN Hörer: jedes popstate verbraucht
+// genau den ersten noch unverbrauchten Eintrag.
+// Notnetz je Eintrag: kommt sein `popstate` nie (eine inzwischen begonnene Ganzseiten-
+// Navigation bricht das `back()` ab), gibt ihn ein Timer nach 5 s frei — sonst
+// verschluckte er die nächste ECHTE Zurück-Geste.
+interface AusstehendesBack {
+  verbraucht: boolean;
+  notnetz?: ReturnType<typeof setTimeout>;
+}
+const ausstehend: AusstehendesBack[] = [];
 const RUECK_NOTNETZ_MS = 5000;
 
 function eigenerRuecksprung(): boolean {
-  return rueckUnterwegs > 0;
+  return ausstehend.length > 0;
+}
+
+function freigeben(eintrag: AusstehendesBack): void {
+  const i = ausstehend.indexOf(eintrag);
+  if (i < 0) return;
+  ausstehend.splice(i, 1);
+  clearTimeout(eintrag.notnetz);
+  if (ausstehend.length === 0) window.removeEventListener('popstate', eigenPop);
+}
+
+function eigenPop(): void {
+  const eintrag = ausstehend.find((e) => !e.verbraucht);
+  if (!eintrag) return;
+  eintrag.verbraucht = true;
+  setTimeout(() => freigeben(eintrag), 0);
 }
 
 function eigenesZurueck(): void {
-  rueckUnterwegs++;
-  let frei = false;
-  const gib = () => {
-    if (frei) return;
-    frei = true;
-    window.removeEventListener('popstate', h);
-    clearTimeout(notnetz);
-    rueckUnterwegs--;
-  };
-  const h = () => { setTimeout(gib, 0); };
-  const notnetz = setTimeout(gib, RUECK_NOTNETZ_MS);
-  window.addEventListener('popstate', h);
+  const eintrag: AusstehendesBack = { verbraucht: false };
+  eintrag.notnetz = setTimeout(() => freigeben(eintrag), RUECK_NOTNETZ_MS);
+  if (ausstehend.length === 0) window.addEventListener('popstate', eigenPop);
+  ausstehend.push(eintrag);
   window.history.back();
 }
 

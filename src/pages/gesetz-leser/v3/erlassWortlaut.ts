@@ -1,4 +1,5 @@
-import { grundartMeta, KENNUNG_MAX_ZEICHEN, kuerzelImKlammerGlied, titelOhneKlammerSuffix } from '../helpers';
+import { grundartMeta, kuerzelImKlammerGlied, titelOhneKlammerSuffix } from '../helpers';
+import { kuerzelIstTitelSchluss } from '../titelSchluss';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { zaehlWort } from '../../../lib/normtext/erlassKopfText';
 
@@ -295,10 +296,12 @@ const TITEL_LANG_ZEICHEN = 80;
 export function titelKennung(erlass: Pick<BrowseErlass, 'titel' | 'kuerzel'>): string | null {
   const kuerzel = erlass.kuerzel.trim();
   if (!kuerzel) return null;
-  // E-D16-B01 (W2·17-UI-BEFUNDE, 1.10.2026): über dem Deckel ist der Registerwert
-  // ein Volltitel oder Fragment, keine Kennung — vorangestellt stünde der Titel
-  // doppelt bzw. ein Satzfragment davor (AR-822.111, BS-390.760).
-  if (kuerzel.length > KENNUNG_MAX_ZEICHEN) return null;
+  // E-D16-B01/F1 (W2·17-UI-BEFUNDE, 1.10.2026/2.10.2026): ist der Registerwert der
+  // abgespaltene SCHLUSS des Titels (BS-390.760: «handelnd aufgrund …»), ist er keine
+  // Kennung — vorangestellt stünde ein Satzfragment vor dem Titel; die H1 zeigt den
+  // vollen Titel (`kopfTitelZeile`). Ist er der Volltitel selbst (AR-822.111), fängt
+  // ihn der `startsWith`-Zweig unten (`titelOhneKlammerSuffix` mit Kürzel).
+  if (kuerzelIstTitelSchluss(erlass)) return null;
   // B1: DIESELBE Zeichenkette, die `parts/ErlassLeserKopf` als Titelzeile setzt.
   const angezeigt = titelOhneKlammerSuffix(erlass.titel, kuerzel);
   if (angezeigt.toLowerCase().startsWith(kuerzel.toLowerCase())) return null;

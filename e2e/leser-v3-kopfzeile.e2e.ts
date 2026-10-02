@@ -1004,8 +1004,11 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
 //  · PA-6-B06 — Reiter «RBÜ (revidiert in Paris am 24. Juli 1971, RBÜ)».
 //
 // ROT ZU BEKOMMEN (§6.7): in `src/pages/gesetz-leser/v3/erlassWortlaut.ts` den
-// Deckel `KENNUNG_MAX_ZEICHEN` aus `titelKennung` streichen — dann steht an
-// AR-822.111/BS-390.760 wieder eine Kennung vor dem Titel.
+// Zweig `kuerzelIstTitelSchluss` aus `titelKennung` streichen — dann steht an
+// BS-390.760 wieder eine Kennung vor dem Titel (und `startsWith`-Zweig: AR-822.111
+// bleibt durch `titelOhneKlammerSuffix(…, kuerzel)` geschützt).
+// NACHZUG 2.10.2026 (F1): der Längen-Deckel ist durch die inhaltliche Regel
+// `titelSchluss.ts` ersetzt; BS-390.760 zeigt den VOLLEN amtlichen Titel.
 
 async function oeffneTitel(page: Page, pfad: string, breite: number) {
   await page.setViewportSize({ width: breite, height: 900 })
@@ -1031,11 +1034,13 @@ test.describe('W2·17-UI-BEFUNDE — Erlass-Titel im Kopf (Browser-Seite zu lese
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  test('E-D16-B01 · BS-390.760: kein Satzfragment als Kennung vor dem Titel', async ({ page }) => {
+  test('E-D16-B01/F1 · BS-390.760: kein Satzfragment als Kennung, die H1 trägt den vollen amtlichen Titel', async ({ page }) => {
     const h1 = await oeffneTitel(page, '/gesetze/kanton/BS-390.760', 390)
     await expect(page.locator('[data-kopf-kennung]')).toHaveCount(0)
-    const text = ((await h1.textContent()) ?? '').trim()
+    const text = ((await h1.textContent()) ?? '').replace(/\s+/g, ' ').trim()
     expect(text.startsWith('Vertrag betreffend die Kremation'), `H1 beginnt mit «${text.slice(0, 40)}»`).toBe(true)
+    // F1: der abgespaltene Schluss gehört zum amtlichen Titel und steht in der H1
+    expect(text.endsWith('des Kantons Aargau vom 28. November 1919'), `H1 endet mit «${text.slice(-60)}»`).toBe(true)
     const b = await seitenBreite(page)
     expect(b.scroll).toBeLessThanOrEqual(b.fenster)
   })
