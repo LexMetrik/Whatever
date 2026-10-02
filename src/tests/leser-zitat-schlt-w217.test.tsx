@@ -146,7 +146,8 @@ describe('(1) amtliches Zitat im Panel', () => {
           const gruppe = disp.filter((y) => y.artikel.startsWith(`${ns}_`)).map((y) => nummer(y.artikelLabel));
           const fortlaufend = Math.min(...gruppe) > hauptLetzte;
           const z = zitatKuerzel(x.artikel, x.artikelLabel, kz, null, e);
-          fortlaufend ? zaehler.fortlaufend++ : zaehler.eigene++;
+          if (fortlaufend) zaehler.fortlaufend++;
+          else zaehler.eigene++;
           if (fortlaufend ? z !== kz : z === kz) falsch.push(`${kz}:${x.artikel} → «${z}»`);
         }
       }
