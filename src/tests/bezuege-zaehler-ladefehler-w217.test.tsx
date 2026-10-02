@@ -155,4 +155,22 @@ describe('useBezuegeZaehler — Neuversuch bei Rückkehr in den Vordergrund (A2)
     await wechsel(m, 'visible');
     expect(m.fetchMock).toHaveBeenCalledTimes(1);
   });
+
+  // Auflage Gegenprüfung #1256 (PA-3/E7). Der Mutant `neu = () => { laden(); }`
+  // (ohne `abmelden?.()`) liess die Hörer des ERSTEN Fehlschlags stehen; der
+  // Neuversuch meldete ein zweites Paar an, Unmount entfernte nur dieses — das
+  // erste feuerte danach weiter Abrufe. `strukturCache` bündelt nur GLEICHZEITIGE
+  // Abrufe, darum trennt erst die exakte Zählung NACH dem Unmount.
+  it('503 → sichtbar (Neuversuch scheitert erneut) → Unmount → sichtbar/online: KEIN weiterer Abruf', async () => {
+    const m = await montiere(() => fehler(503));
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+    await m.act(async () => { m.root.unmount(); });
+    await wechsel(m, 'visible');
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+    const w = sichtbarkeit(m, 'visible');
+    await m.act(async () => { m.window.dispatchEvent(new w.Event('online')); });
+    await m.lasse();
+    expect(m.fetchMock).toHaveBeenCalledTimes(2);
+  });
 });
