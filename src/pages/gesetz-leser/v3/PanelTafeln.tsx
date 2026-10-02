@@ -5,6 +5,7 @@ import { aufhebungFuerRegister } from '../../../lib/normtext/aufhebungen';
 import { revisionFuerToken, type ArtikelRevision, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-parse';
 import type { HistorieShard } from '../../../lib/normtext/historie-laden';
+import type { HistorieStand } from '../useHistorieShard';
 import { artikelLeerstellenStatus } from '../../../lib/normtext/darstellung';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { PanelAenderungen } from './PanelAenderungen';
@@ -169,8 +170,9 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
    *  Ein eigener Panel-Lader meldete «geladen», solange `blatt.historie` noch
    *  `undefined` war, und liess «Erlass in Kraft seit»/«nichts erfasst» an Artikeln
    *  MIT Ereignis aufblitzen. `wert: null` = kein Shard ODER Netzfehler (der Lader
-   *  unterscheidet beides nicht, `lib/normtext/historie-laden`). */
-  historie: Geladen<HistorieShard | null>;
+   *  unterscheidet beides nicht, `lib/normtext/historie-laden`). ERGÄNZT 1.10.2026
+   *  (PE-F10-B01): seither trägt der Stand `fehler` (Netzfehler ≠ «kein Shard») und `erneut`. */
+  historie: HistorieStand;
 }): PanelTafeln {
   const { locale } = useLocale();
   const revisionen = useRevisionen(erlassKey, laden);
@@ -208,6 +210,13 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const artikel = artRev && artikelLabel ? { label: artikelLabel, revision: artRev } : null;
   const aufhebung = erlassKey ? aufhebungFuerRegister(erlassKey) : undefined;
   const token = blatt?.eintrag.artikel ?? null;
+  // PE-F12-B03 (1.10.2026): der Artikelteil der «Materialien» ordnet BUNDESBLATT-Botschaften über
+  // die Historie-Fussnoten zu — am Kanton gibt es beides nicht (Historie 404, keine `fga`-ELI).
+  // «Zu § N nichts erfasst.» (samt Hinweis auf «Botschaften»/«Fussnote») hiesse an jedem der ~53
+  // BS-Erlasse mit Grossratsgeschäften, DIESER Paragraf sei geprüft worden (§8) — die Erlass-Liste
+  // darunter bleibt. Gleiche Linie wie W3-4 im Reiter «Änderungen» (dort mit Satz, hier stumm,
+  // weil die Erlass-Tafel die kantonalen Geschäfte schon nennt).
+  const materialArtikelToken = ebene === 'kanton' ? null : token;
   const artMat = token ? artikelMaterialien(token) : [];
   const artWz = token ? werkzeugeAmArtikel(erlassKey, token) : [];
   const zu = `Zu ${artikelLabel ?? bestimmungDativ(wort)}`;
@@ -219,11 +228,15 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // B1: erst wenn BEIDE Quellen geladen sind — die Historie kommt vom Leser, nicht
   // vom Panel-Lader (`historie.fertig`), sonst blitzte die Leerzeile an Artikeln
   // mit Ereignis kurz auf.
-  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !artRev;
+  // PE-F10-B01 (1.10.2026): ein gescheiterter Historie-Abruf (`historie.fehler`, Netz) ist
+  // KEIN «kein Shard»: weder «Zu Art. N nichts erfasst.» noch «Erlass in Kraft seit …» (an
+  // Staatsverträgen) dürfen dann stehen (§8) — statt dessen der Fehlertext mit Neuversuch.
+  const historieFehler = historie.fehler === true;
+  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !historieFehler && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   const erlassStand = erlassStandFuerArtikel({
     erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
-    historieFertig: historie.fertig, historieShard: historie.wert,
+    historieFertig: historie.fertig && !historieFehler, historieShard: historie.wert,
   });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
   // 231 Sidecars kantonal, Beleg in `PanelAenderungen`) — das ist eine Auskunft
@@ -231,7 +244,26 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // erfasst.» (die artikelscharfe Leerzeile unten) suggerierte aber genau das:
   // eine Prüfung DIESES Paragrafen, die nie stattfand. Dieselbe Bedingung wie
   // in `PanelAenderungen` (`stand.wert === null && ebene === 'kanton'`).
-  const aenderungenAmKantonNichtErfasst = ebene === 'kanton' && revisionen.fertig && revisionen.wert === null;
+  // ERGÄNZT 1.10.2026 (PA-13-B03): «keine Datei» ist seither `wert.nichtErfasst`, nicht mehr `null`.
+  // PE-F10-B04 (1.10.2026): am Kanton gilt die Sperre SOFORT, nicht erst nach dem Laden des
+  // Sidecars — vorher stand «Zu § N nichts erfasst.» kurz da und verschwand wieder, und
+  // `ErlassTeil` sprang von der Klappzeile (zahl null) auf Inline (zahl 0). Kein Kanton hat
+  // Sidecars (0 von 231); käme je einer mit Daten, entfällt die Sperre nach dem Laden.
+  const aenderungenAmKantonNichtErfasst = ebene === 'kanton'
+    && (!revisionen.fertig || revisionen.wert === null || revisionen.wert.nichtErfasst === true);
+  // E-D13-B02 (1.10.2026): ist der Revisions-Sidecar am BUND gescheitert (`null` — «keine
+  // Datei» ist `nichtErfasst`), fielen mit dem Netz regelmässig auch Historie- und Artikel-
+  // Revisions-Shard aus; ihr `null` heisst dann «nicht erreichbar», nicht «nichts erfasst».
+  // «Zu Art. N nichts erfasst.» wäre eine Falschaussage über den Artikel (§8): die Zeile
+  // schweigt, die Erlass-Tafel steht offen mit ihrem Fehlertext, und «Erneut laden» wiederholt
+  // Sidecar UND Artikel-Shard (sonst bliebe dessen alter Fehlschlag stehen und die falsche
+  // Leerzeile käme mit dem Sidecar zurück). Lücke: scheitert NUR der Artikel-Shard, trennt
+  // `ladeRevisionShard` das noch nicht von «Erlass ohne Beleg» (Nebenfund, s. PR).
+  const aenderungenLadefehler = ebene !== 'kanton' && revisionen.fertig && revisionen.wert === null;
+  // «Erneut laden» wiederholt ALLE drei Quellen des Reiters (Sidecar, Artikel-Shard, Historie):
+  // sonst käme ein alter Fehlschlag einer Quelle als falsche Leerzeile zurück, sobald eine andere
+  // sich erholt hat.
+  const aenderungenErneut = () => { revisionen.erneut?.(); artikelRevisionen.erneut?.(); historie.erneut?.(); };
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
   // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
   // W3-3 (Audit 25.9.2026): EINE Zählweise für den Reiter — die gruppierte
@@ -255,31 +287,38 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
             </p>
           )}
           <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token}
-            geladen={ohneFassung && !aenderungenAmKantonNichtErfasst}>{null}</BlattArtikelGruppe>
+            geladen={ohneFassung && !aenderungenAmKantonNichtErfasst && !aenderungenLadefehler}
+            ladefehler={historieFehler && !aenderungenLadefehler
+              ? { gegenstand: `Änderungen ${zu.replace(/^Zu /, 'zu ')}`, onErneut: aenderungenErneut } : undefined}>{null}</BlattArtikelGruppe>
           {erlassStand && token && <ErlassStandZeile iso={erlassStand} token={token} />}
           {/* W3-4: `zahl={0}` statt `null` erzwingt bei `ErlassTeil` den
               UNGEKLAPPTEN Pfad («Null im ganzen Erlass: keine Klappzeile») —
               der ehrliche Leerzustand aus `PanelAenderungen` steht dann sofort
               sichtbar, wie bei Materialien/Erläuterungen/Werkzeuge am Kanton. */}
           <ErlassTeil was="Änderungen"
-            zahl={aenderungenAmKantonNichtErfasst ? 0 : (revisionen.wert?.revisionen.length ?? null)} daten="aenderungen">
-            <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
+            zahl={aenderungenAmKantonNichtErfasst || aenderungenLadefehler ? 0 : (revisionen.wert?.revisionen.length ?? null)} daten="aenderungen">
+            <PanelAenderungen stand={aenderungenLadefehler ? { ...revisionen, erneut: aenderungenErneut } : revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
               aufhebung={aufhebung} botschaftNachKey={botschaftNachKey} artikel={artikel} locale={locale} />
           </ErlassTeil>
         </>
       ),
       materialien: (
         <>
-          {token && materialien.fertig && matZahl !== 0 && (
+          {materialArtikelToken && materialien.fertig && matZahl !== 0 && (
             // Befund Bau W1f (#1045, 24.9.2026): der Artikelteil fand nur
             // Register-Botschaften mit Fussnoten-Treffer (z. B. BGBM Art. 2 ohne
             // BBl 2022 2651) — ehrlich offenlegen statt wegglätten (§8), Zuordnung
             // bleibt unverändert (Ausbau über Geschäftsdaten: separater Schritt).
-            <p data-v3-blatt-materialien-hinweis={token} className="px-3 pb-1 pt-0.5 text-micro leading-snug text-ink-500">
+            <p data-v3-blatt-materialien-hinweis={materialArtikelToken} className="px-3 pb-1 pt-0.5 text-micro leading-snug text-ink-500">
               Nur Botschaften, die eine Fussnote dieses Artikels nennt — bei Leerstelle lohnt ein Blick in «Alle Materialien des Erlasses» unten.
             </p>
           )}
-          <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={token} geladen={materialien.fertig && matZahl !== 0}>
+          {/* PE-F12-B02: die Zuordnung läuft über die Fussnoten der Historie — «nichts erfasst»
+              erst, wenn die Historie DA ist; gescheitert ⇒ Fehlertext mit Neuversuch. */}
+          <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={materialArtikelToken}
+            geladen={materialien.fertig && matZahl !== 0 && historie.fertig && !historieFehler}
+            ladefehler={materialien.fertig && matZahl !== 0 && historieFehler
+              ? { gegenstand: `Botschaften ${zu.replace(/^Zu /, 'zu ')}`, onErneut: historie.erneut } : undefined}>
             {artBot.map((b) => <BotschaftZeile key={b.key} b={b} aenderung={aenderungNachBotschaft.get(b.key)} locale={locale} />)}
           </BlattArtikelGruppe>
           <ErlassTeil was="Materialien" zahl={matZahl} daten="materialien">

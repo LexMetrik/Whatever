@@ -47,6 +47,8 @@ export function wirkungsMarken(r: RevisionZeile): string[] {
 }
 import type { ErlassAufhebung } from '../../../lib/normtext/aufhebungen';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
+import { datumCh } from '../../../lib/normtext/erlassKopfText';
+import { aenderungZeitbezug } from '../zukunftsfassungen';
 
 // ─── Modell des Reiters «Änderungen» — S6-Zusätze (Befunde AE-6, AE-8) ───────
 //
@@ -99,4 +101,27 @@ function fundstelle(s: string | undefined | null): string {
 export function trifftArtikel(r: Pick<RevisionBezug, 'roFundstelle'>, artikel: ArtikelRevision | null | undefined): boolean {
   const as = fundstelle(artikel?.as);
   return as !== '' && fundstelle(r.roFundstelle) === as;
+}
+
+/**
+ * W2·17-UI-BEFUNDE · PA-7-B02 (1.10.2026): der Satz zur Aufhebung des GANZEN Erlasses
+ * (`aufhebungsBezug === 'aufhebend'`). Vorher stand dort «Hebt diesen Erlass auf» ohne
+ * Datum — bei der PATV (Aufhebung per 01.01.2027) erfuhr der Leser nirgends, ob der
+ * gezeigte Text schon aufgehoben ist oder erst wird.
+ *
+ * Zeitbezug wie bei jeder Änderungszeile (`aenderungZeitbezug`, §2: nie die Uhr, ein
+ * DATENGETRAGENER Bezugstag; ISO-Daten vergleichen lexikografisch):
+ *   nach dem Bezugstag   «… künftig auf» · «tritt am D in Kraft»
+ *   am/vor dem Bezugstag «… auf» · «in Kraft seit D»
+ *   ohne gültigen Tag    «… auf» · «Inkrafttreten D» — das Datum steht, aber weder
+ *                        «künftig» noch «in Kraft» wird behauptet (§8)
+ */
+export function aufhebungsSatz(iso: string, bezugstag: string | null | undefined): { label: string; datum: string } {
+  const d = datumCh(iso);
+  // `nichtKonsolidiert: true` trennt «Tag gültig» (inKraftOffen) von «kein Tag» (unbestimmt).
+  switch (aenderungZeitbezug({ dateEntryInForce: iso, nichtKonsolidiert: true }, bezugstag)) {
+    case 'kuenftig': return { label: 'Hebt diesen Erlass künftig auf', datum: `tritt am ${d} in Kraft` };
+    case 'inKraftOffen': return { label: 'Hebt diesen Erlass auf', datum: `in Kraft seit ${d}` };
+    default: return { label: 'Hebt diesen Erlass auf', datum: `Inkrafttreten ${d}` };
+  }
 }

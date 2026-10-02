@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
@@ -10,7 +10,7 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { merkeKlappAstManuell, merkeSprungAstManuell } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
-import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
+import { useHistorieShard } from './useHistorieShard';
 import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
 } from '../../lib/normtext/revisionen';
@@ -71,11 +71,9 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // Shard; klassifiziert je Leitfall-Kante, ob sich die Norm SEIT dem Entscheid
   // revidiert hat (Normrevisions-Ehrlichkeit, §V1c).
   const [revisionShard, setRevisionShard] = useState<{ key: string; shard: RevisionShard | null } | null>(null);
-  // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses. EIN idle-Fetch auf Reader-
-  // Ebene (wie Leitfall-/Revisions-Shard); der Artikel-Eintrag wird als Prop
-  // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
-  // Key gebunden — ein Pane-/Erlass-Wechsel liefert nie fremde Historie.
-  const [historieShard, setHistorieShard] = useState<{ key: string; shard: HistorieShard | null } | null>(null);
+  // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses (EIN idle-Fetch, Lade-Zustand samt
+  // Fehler und Neuversuch) — seit W2·17-UI-BEFUNDE PE-F10-B01 in `./useHistorieShard`.
+  const { historieFuer, historieStand } = useHistorieShard(erlass?.key);
   // W2·7-BEZUG/B4: facettierte Bezüge. `useBezuege` lädt den (deutlich grösseren)
   // Bezugs-Shard NUR im erweiterten Facetten-Zustand und im Leerlauf — im
   // Grundzustand fasst der Reader ihn nie an (§15). `erweitert` steuert zugleich,
@@ -130,8 +128,6 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
       // 28.7.2026). Das KontextPanel lädt den norm-index-Shard weiterhin für
       // seinen eigenen Zweck — siehe `bezuegeLaden.ts`.
       void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });
-      // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
-      void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
     });
     return () => { lebt = false; abbrechen(); };
   }, [erlass?.key, bezuegeAktiv]);
@@ -195,25 +191,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // nicht mehr der ungefilterte Marker. Vorher hätte die Übersicht bei 66 statt
   // 4 Erlassen «In Kraft getretene Änderung …» behauptet (§8).
   const nichtKonsolidiert = nichtKonsolidiertSeit !== null;
-  // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
-  // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
-  // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
-  const historieFuer = useCallback((artikel: string) => (
-    erlass && historieShard?.key === erlass.key
-      ? historieFuerArtikel(historieShard.shard, artikel)
-      : undefined
-  ), [erlass, historieShard]);
-  // P5 · B1 (1.10.2026): WANN der Shard da ist — dieselbe Quelle wie `historieFuer`
-  // (Leerlauf-Fetch oben, rIC-Timeout 1200 ms), an den Erlass-Key gebunden. Das Panel
-  // sperrt «Erlass in Kraft seit»/«nichts erfasst» darauf, nicht auf einen eigenen
-  // Lader: dessen «geladen» kam VOR `historieFuer` (Aufblitzen an Artikeln mit Ereignis).
-  // `wert: null` bei `fertig` = kein Shard ODER Netzfehler (der Lader trennt das nicht).
-  const historieStand = useMemo<{ wert: HistorieShard | null; fertig: boolean }>(() => (
-    erlass && historieShard?.key === erlass.key
-      ? { wert: historieShard.shard, fertig: true }
-      : { wert: null, fertig: false }
-  ), [erlass, historieShard]);
-
+  // Fassungshistorie je Artikel (`historieFuer`) und Bereitschaft/Fehler (`historieStand`): s. `./useHistorieShard`.
   return {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,

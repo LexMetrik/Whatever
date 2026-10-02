@@ -5,8 +5,7 @@ import type { BestimmungsWort } from './erlassAnsicht';
 import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { usePanelTafeln } from './PanelTafeln';
-import type { Geladen } from './panelKontextLaden';
-import type { HistorieShard } from '../../../lib/normtext/historie-laden';
+import type { HistorieStand } from '../useHistorieShard';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { blattFlaeche } from './blattFlaeche';
@@ -147,7 +146,7 @@ export function LeserPanelZone({
   erlassSr?: string | null;
   inkraftSeit?: string | null;
   /** P5 · B1: Historie-Shard des Lesers samt Bereitschaft (`historieStand`) — Sperre für «Erlass in Kraft seit»/«nichts erfasst». */
-  historie: Geladen<HistorieShard | null>;
+  historie: HistorieStand;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
