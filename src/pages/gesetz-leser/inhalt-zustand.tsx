@@ -9,7 +9,6 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 import { merkeKlappAstManuell, merkeSprungAstManuell, pruefeAlleZuSperre, type AlleZuSperre } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
-import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
@@ -83,11 +82,10 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // facettierte Auflistung aus dem Bezugs-Shard (`useBezuege`) — dieser ist die
   // Obermenge, der schlanke Shard also überflüssig geworden. Sind alle Facetten
   // abgewählt, wird nichts geladen und nichts gerendert.
-  // Revisions-Shard des Erlasses (V1c): Artikel-Token → Datum der letzten Text-
-  // änderung + AS-Fundstelle. EIN idle-Fetch auf Reader-Ebene wie der Leitfall-
-  // Shard; klassifiziert je Leitfall-Kante, ob sich die Norm SEIT dem Entscheid
-  // revidiert hat (Normrevisions-Ehrlichkeit, §V1c).
-  const [revisionShard, setRevisionShard] = useState<{ key: string; shard: RevisionShard | null } | null>(null);
+  // RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier lud der Leser den Revisions-Shard
+  // des Erlasses (V1c) im Leerlauf für `revisionFuer` — die Revisions-Marke der
+  // `BezuegeZeile`/`LeitfallZeile`. Beide sind gelöscht, `revisionFuer` hatte keinen
+  // Verbraucher mehr; das Panel lädt den Shard selbst (`v3/panelKontextLaden`).
   // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses. EIN idle-Fetch auf Reader-
   // Ebene (wie Leitfall-/Revisions-Shard); der Artikel-Eintrag wird als Prop
   // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
@@ -168,20 +166,11 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
       // steht unter dem Artikel nichts und es kostet null Byte (Vorgabe David
       // 28.7.2026). Das KontextPanel lädt den norm-index-Shard weiterhin für
       // seinen eigenen Zweck — siehe `bezuegeLaden.ts`.
-      void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });
       // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
       void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
     });
     return () => { lebt = false; abbrechen(); };
   }, [erlass?.key, bezuegeAktiv]);
-  // Revision r(a) des AKTUELLEN Erlass-Artikels (§V1c): undefined = Shard
-  // fehlt/lädt/Erlass nicht abgedeckt (⇒ 'unbekannt'); null = Urfassung (⇒ 'gleich');
-  // Objekt = letzte Textänderung. Stabile Referenz aus dem Shard → memo-freundlich.
-  const revisionFuer = useCallback((artikel: string) => (
-    erlass && revisionShard?.key === erlass.key
-      ? revisionFuerToken(revisionShard.shard, artikel)
-      : undefined
-  ), [erlass, revisionShard]);
   // W2·19-GLIEDERUNG/S6 (Bau-Spec §5.1, Zeile 1): trägt der Erlass mindestens
   // eine in Kraft getretene, aber nicht konsolidierte Änderung? PROMOTION, kein
   // Neubau — dieselbe Quelle, die das KontextPanel ohnehin lädt
@@ -259,7 +248,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
+    historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
   };
 }
 

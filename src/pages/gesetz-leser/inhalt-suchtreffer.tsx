@@ -182,7 +182,9 @@ export function useSuchTreffer({
       attributes: true,
       // S1: `data-verweise` ist entfallen (der Schalter ist gestrichen). D35-F3:
       // `data-fussnoten`/`data-histansicht` sind in `data-vermerke` aufgegangen.
-      attributeFilter: ['data-vermerke', 'data-leitfaelle'],
+      // 2.10.2026: `data-leitfaelle` wird seit D35-F2 von niemandem mehr gesetzt
+      // (`leserOptionen.ts`) und ist hier nicht mehr beobachtet.
+      attributeFilter: ['data-vermerke'],
     });
     return () => beob.disconnect();
   }, []);
