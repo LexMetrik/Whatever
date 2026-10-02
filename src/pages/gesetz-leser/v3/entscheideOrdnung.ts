@@ -245,8 +245,9 @@ export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }:
  * Kantonschnitt greift dann gar nicht), oder der Bestand ist (noch) unbekannt —
  * ohne geladene Kanten gäbe es keine Aussage (§8). Rein (§2).
  */
-export function kantonOhneWirkungSatz({ artikelLabel, alle, klassen, kantone, geladen }: {
-  artikelLabel: string | null;
+export function kantonOhneWirkungSatz({ ort, alle, klassen, kantone, geladen }: {
+  /** Wo die Aussage gilt, als Wortlaut mit Präposition («an Art. 41») — dasselbe `zahlOrt` wie am Schalter. */
+  ort: string;
   /** Die Kanten des Artikels OHNE UI-Auswahl (`alleKanten`). */
   alle: readonly Bezug[] | undefined;
   klassen: readonly BezugStatus[];
@@ -256,11 +257,16 @@ export function kantonOhneWirkungSatz({ artikelLabel, alle, klassen, kantone, ge
   if (!geladen || !alle || alle.length === 0 || !klassen.includes('kantonal')) return null;
   const ohne = kantonenOhneWirkung(alle, kantone);
   if (ohne.length === 0) return null;
-  const ort = artikelLabel ?? 'diesem Artikel';
   const nenne = (l: readonly string[]) => l.length < 2 ? l.join('') : `${l.slice(0, -1).join(', ')} oder ${l[l.length - 1]}`;
-  const kopf = `Kein Entscheid aus ${nenne(ohne)} zu ${ort}`;
+  const kopf = `Kein Entscheid aus ${nenne(ohne)} ${ort}`;
   const wirkt = wirksameKantone(alle, kantone);
-  if (wirkt.length > 0) return `${kopf} – angezeigt ${wirkt.length === 1 ? 'ist nur' : 'sind nur'} ${wirkt.join(', ')}.`;
+  if (wirkt.length > 0) return `${kopf} — angezeigt ${wirkt.length === 1 ? 'ist nur' : 'sind nur'} ${wirkt.join(', ')}.`;
   // Ohne jede kantonale Kante steht «alle Kantone» für nichts — dann sagt der Satz nur den ersten Teil.
-  return alle.some((b) => b.facetten.kanton !== 'CH') ? `${kopf} – angezeigt sind alle Kantone.` : `${kopf}.`;
+  return alle.some((b) => b.facetten.kanton !== 'CH') ? `${kopf} — angezeigt sind alle Kantone.` : `${kopf}.`;
+}
+
+/** Chip-Zustand UND Satz aus EINER Rechnung (`kantonenOhneWirkung`, §5) — der Chip liest `ohne`, die Zeile `satz`. */
+export function kantonWirkung(a: Parameters<typeof kantonOhneWirkungSatz>[0]): { ohne: string[]; satz: string | null } {
+  const ohne = a.geladen && a.alle && a.klassen.includes('kantonal') ? kantonenOhneWirkung(a.alle, a.kantone) : [];
+  return { ohne, satz: kantonOhneWirkungSatz(a) };
 }

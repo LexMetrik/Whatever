@@ -80,7 +80,7 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
 }
 
 export function PanelFilterZeile({
-  klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung = [], klassenZahlen, zahlOrt, histogramm, bereich,
+  klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung = [], kantonHinweis = null, klassenZahlen, zahlOrt, histogramm, bereich,
   onKlassen, onKantone, onBereich,
 }: {
   klassen: readonly BezugStatus[];
@@ -88,6 +88,8 @@ export function PanelFilterZeile({
   kantoneVerfuegbar: readonly string[];
   /** Gewählte Kantone ohne Kante am gelesenen Artikel (`kantonenOhneWirkung`) — der Chip sagt es. */
   kantoneOhneWirkung?: readonly string[];
+  /** Satz unter der Zeile, wenn die Kantonwahl am Artikel nichts schneidet (`kantonWirkung`); `null` = nichts zu sagen. */
+  kantonHinweis?: string | null;
   /** S6-W1b · D-9: Zahlen je Instanz am gelesenen ARTIKEL (nicht mehr am
    *  Erlass) — dieselbe Bezugsgrösse wie die Liste darunter. */
   klassenZahlen: Partial<Record<BezugStatus, KlassenZahlen>>;
@@ -103,6 +105,7 @@ export function PanelFilterZeile({
   const [auf, setAuf] = useState<'instanzen' | 'zeit' | null>(null);
 
   return (
+    <>
     <div data-v3-panel-filter className="flex flex-wrap items-center gap-1.5 border-b border-line px-3 py-2">
       <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen, kantone)}
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
@@ -120,5 +123,9 @@ export function PanelFilterZeile({
           Die Datenlogik bleibt `W2·7-VZUI-SACHGEBIET` (Risikopfad). */}
       <PanelSachgebiet gebiete={[]} gewaehlt={[]} onGebiete={() => {}} />
     </div>
+    {kantonHinweis && (
+      <p data-v3-panel-kanton-hinweis role="status" className="px-3 pt-1.5 text-micro leading-snug text-ink-700">{kantonHinweis}</p>
+    )}
+    </>
   );
 }

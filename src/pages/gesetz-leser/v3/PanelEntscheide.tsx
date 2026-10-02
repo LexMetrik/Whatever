@@ -9,13 +9,12 @@ import {
 } from '../../../lib/verzahnung/artikel-revisionen';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
-import { kantonenOhneWirkung } from '../bezugAuswahl';
 import { zahl } from '../bezugPortion';
 import { leereEntscheideSatz } from '../artikelBezeichnung';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import {
-  ERSTE_PORTION, datumInZitierung, gefiltertSatz, kantonOhneWirkungSatz, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide,
+  ERSTE_PORTION, datumInZitierung, gefiltertSatz, kantonWirkung, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide,
   regesteTeil, weitereText, type EntscheidGruppe,
 } from './entscheideOrdnung';
 import { PanelFilterZeile } from './PanelFilterZeile';
@@ -331,11 +330,8 @@ export function PanelEntscheide({
     : new Map(ordneEntscheide(alleKanten ?? []).map((g) => [g.id, g.liste.length]));
   const gefiltert = gruppen.length === 0
     ? gefiltertSatz({ artikelLabel, alle: alleKanten, klassen, kantone, bereich }) : null;
-  // Entscheid David 2.10.2026 (Variante A): die Kantonwahl wirkt nur, wo der Artikel eine Kante
-  // des Kantons hat — wo nicht, sagen Chip und Satz es (eine Quelle: `kantonenOhneWirkung`).
-  const kantoneOhneWirkung = geladen && alleKanten && klassen.includes('kantonal') ? kantonenOhneWirkung(alleKanten, kantone) : [];
-  const kantonHinweis = kantonOhneWirkungSatz({ artikelLabel, alle: alleKanten, klassen, kantone, geladen });
   const zahlOrt = artikelLabel ? `an ${artikelLabel}` : `an ${bestimmungDativ(bestimmungsWort)}`;
+  const kw = kantonWirkung({ ort: zahlOrt, alle: alleKanten, klassen, kantone, geladen }); // Entscheid David 2.10.2026, Variante A
 
   return (
     <div data-v3-panel-reiter-inhalt="entscheide">
@@ -343,15 +339,9 @@ export function PanelEntscheide({
           S6-W1b · D-9: die Zahlen am Instanz-Schalter gelten dem ARTIKEL, wie
           die Liste darunter — nicht mehr dem ganzen Erlass. */}
       <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-        klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt}
-        kantoneOhneWirkung={kantoneOhneWirkung}
+        klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt} kantoneOhneWirkung={kw.ohne} kantonHinweis={kw.satz}
         histogramm={histogramm} bereich={bereich}
         onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
-      {kantonHinweis && (
-        <p data-v3-panel-kanton-hinweis role="status" className="px-3 pt-1.5 text-micro leading-snug text-ink-700">
-          {kantonHinweis}
-        </p>
-      )}
       {/* S6 W1g: ohne eigene Unterlinie — die 2-px-Kante des Gruppenkopfs
           darunter trennt (sonst zwei Linien 8 px übereinander, gemessen @1440). */}
       <p data-v3-panel-abdeckung-zeile className="px-3 py-1.5 text-micro leading-snug text-ink-600">

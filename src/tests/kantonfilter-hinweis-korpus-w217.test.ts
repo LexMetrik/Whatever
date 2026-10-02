@@ -41,16 +41,16 @@ describe('Korpus-Sonde · Hinweis genau bei Kantonen ohne Kante am Artikel', () 
       it(`${erlass} ${label} × Wahl [${wahl.join(',') || 'keine'}]`, () => {
         const ohne = wahl.filter((k) => !vorhanden.has(k));
         const wirkt = wahl.filter((k) => vorhanden.has(k));
-        const satz = kantonOhneWirkungSatz({ artikelLabel: label, alle, klassen: KL, kantone: wahl, geladen: true });
+        const satz = kantonOhneWirkungSatz({ ort: `an ${label}`, alle, klassen: KL, kantone: wahl, geladen: true });
 
         // 1 · genau dann ein Satz, wenn mindestens ein gewählter Kanton keine Kante hat
         expect(satz !== null).toBe(ohne.length > 0);
         if (satz === null) return;
 
         // 2 · er nennt genau diese Kantone (und keinen wirkenden)
-        const genannt = /^Kein Entscheid aus (.+?) zu /.exec(satz)?.[1]?.split(/, | oder /);
+        const genannt = /^Kein Entscheid aus (.+?) an /.exec(satz)?.[1]?.split(/, | oder /);
         expect(genannt).toEqual(ohne);
-        for (const k of wirkt) expect(satz.split(' – ')[0]).not.toContain(k);
+        for (const k of wirkt) expect(satz.split(' — ')[0]).not.toContain(k);
 
         // 3 · «alle Kantone» nur, wenn die Wahl wirklich nichts ausblendet (Liste = ungefiltert)
         const ausgeblendet = waehleBezuege(alle, KL, wahl).length < waehleBezuege(alle, KL, []).length;

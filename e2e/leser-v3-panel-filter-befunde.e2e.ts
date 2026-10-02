@@ -149,7 +149,7 @@ for (const flaeche of [
       await panelOeffnen(page)
       const satz = panel(page).locator('[data-v3-panel-kanton-hinweis]')
       await expect(satz).toBeVisible({ timeout: 20_000 })
-      await expect(satz).toHaveText('Kein Entscheid aus ZH zu Art. 5 – angezeigt sind alle Kantone.')
+      await expect(satz).toHaveText('Kein Entscheid aus ZH an Art. 5 — angezeigt sind alle Kantone.')
       // Die kantonalen Entscheide (BS) stehen weiter da — Verhalten bleibt (Variante A).
       await expect(panel(page).locator('[data-v3-panel-gruppe="kantonal"]').first()).toBeVisible()
       await klappe(page, 0)

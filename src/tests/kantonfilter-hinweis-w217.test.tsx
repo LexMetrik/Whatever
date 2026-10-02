@@ -44,14 +44,14 @@ describe('kantonenOhneWirkung · dieselbe Quelle wie `wirksameKantone` (§5)', (
 });
 
 describe('kantonOhneWirkungSatz · Sonden-Matrix (Wahl keiner/BE/ZH/BS/gemischt)', () => {
-  const satz = (alle: Bezug[] | undefined, kantone: string[], o: { klassen?: BezugStatus[]; geladen?: boolean; label?: string | null } = {}) =>
+  const satz = (alle: Bezug[] | undefined, kantone: string[], o: { klassen?: BezugStatus[]; geladen?: boolean; ort?: string } = {}) =>
     kantonOhneWirkungSatz({
-      artikelLabel: o.label === undefined ? 'Art. 250' : o.label, alle, klassen: o.klassen ?? KL, kantone, geladen: o.geladen ?? true,
+      ort: o.ort ?? 'an Art. 250', alle, klassen: o.klassen ?? KL, kantone, geladen: o.geladen ?? true,
     });
 
   it('der Auftragssatz: BE an OR 250 (AG/GR/BS) ⇒ «Kein Entscheid aus BE … alle Kantone»', () => {
-    expect(satz(or250, ['BE'])).toBe('Kein Entscheid aus BE zu Art. 250 – angezeigt sind alle Kantone.');
-    expect(satz(or250, ['BE'], { label: null })).toBe('Kein Entscheid aus BE zu diesem Artikel – angezeigt sind alle Kantone.');
+    expect(satz(or250, ['BE'])).toBe('Kein Entscheid aus BE an Art. 250 — angezeigt sind alle Kantone.');
+    expect(satz(or250, ['BE'], { ort: 'an diesem Artikel' })).toBe('Kein Entscheid aus BE an diesem Artikel — angezeigt sind alle Kantone.');
   });
 
   it('keine Wahl ⇒ kein Satz; Wahl mit Kante ⇒ kein Satz (auch wenn sie nichts ausblendet: StPO 5 / ZGB 8 mit BS)', () => {
@@ -61,18 +61,18 @@ describe('kantonOhneWirkungSatz · Sonden-Matrix (Wahl keiner/BE/ZH/BS/gemischt)
   });
 
   it('ZH an einem nur-BS-Artikel (OR 41) ⇒ ZH genannt, alle Kantone angezeigt', () => {
-    expect(satz(nurBS, ['ZH'])).toBe('Kein Entscheid aus ZH zu Art. 250 – angezeigt sind alle Kantone.');
+    expect(satz(nurBS, ['ZH'])).toBe('Kein Entscheid aus ZH an Art. 250 — angezeigt sind alle Kantone.');
   });
 
   it('gemischt: nur ein Teil wirkt ⇒ der Satz nennt NUR die wirkungslosen und sagt, was gilt', () => {
-    expect(satz(or250, ['BE', 'GR'])).toBe('Kein Entscheid aus BE zu Art. 250 – angezeigt ist nur GR.');
-    expect(satz(or250, ['BE', 'BS', 'GR', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH zu Art. 250 – angezeigt sind nur BS, GR.');
-    expect(satz(or250, ['BE', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH zu Art. 250 – angezeigt sind alle Kantone.');
-    expect(satz(or250, ['AG', 'BE', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH zu Art. 250 – angezeigt ist nur AG.');
+    expect(satz(or250, ['BE', 'GR'])).toBe('Kein Entscheid aus BE an Art. 250 — angezeigt ist nur GR.');
+    expect(satz(or250, ['BE', 'BS', 'GR', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH an Art. 250 — angezeigt sind nur BS, GR.');
+    expect(satz(or250, ['BE', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH an Art. 250 — angezeigt sind alle Kantone.');
+    expect(satz(or250, ['AG', 'BE', 'ZH'])).toBe('Kein Entscheid aus BE oder ZH an Art. 250 — angezeigt ist nur AG.');
   });
 
   it('Artikel ohne kantonale Kante (BGG) ⇒ Satz ohne die leere Behauptung «alle Kantone angezeigt»', () => {
-    expect(satz(nurBGE, ['BS'])).toBe('Kein Entscheid aus BS zu Art. 250.');
+    expect(satz(nurBGE, ['BS'])).toBe('Kein Entscheid aus BS an Art. 250.');
   });
 
   it('Klasse «kantonal» aus, nicht geladen oder nichts bekannt ⇒ nie ein Satz (§8)', () => {
@@ -99,7 +99,7 @@ describe('Panel «Entscheide» · der Satz steht unter der Filterzeile, ohne die
   it('BE gewählt, OR 250 führt AG/GR/BS ⇒ Satz da, Liste zeigt weiter alle drei', () => {
     const h = html({ kanten: or250, alleKanten: or250, kantone: ['BE'] });
     expect(h).toContain('data-v3-panel-kanton-hinweis');
-    expect(text(h)).toContain('Kein Entscheid aus BE zu Art. 250 – angezeigt sind alle Kantone.');
+    expect(text(h)).toContain('Kein Entscheid aus BE an Art. 250 — angezeigt sind alle Kantone.');
     // der Satz steht VOR der Abdeckungszeile, also direkt unter der Filterzeile
     expect(h.indexOf('data-v3-panel-kanton-hinweis')).toBeGreaterThan(h.indexOf('data-v3-panel-filter'));
     expect(h.indexOf('data-v3-panel-kanton-hinweis')).toBeLessThan(h.indexOf('data-v3-panel-abdeckung-zeile'));
