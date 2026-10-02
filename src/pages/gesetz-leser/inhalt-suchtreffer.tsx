@@ -70,11 +70,24 @@ import {
 // und Marken — ein Schalter, der stumm über Suchen hinweg wirkte, liesse
 // Treffer verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt (§8,
 // dieselbe Begründung wie beim Suchbereich).
+//
+// ── W2·17-UI-BEFUNDE · PE-C4-B01 (1.10.2026) · LEEREN MASKIERTE NUR ──────────
+// Bis hierher stand hier `!sucheFeldLeer && markenAusRoh`: das Leeren
+// VERDECKTE den Rohwert bloss, solange das Feld leer war — der Kommentar
+// darüber versprach das Gegenteil. Gemessen (Sonde `marken.mjs`, OR/«Kündigung»):
+// Schalter aus → Feld leeren → «Kündigung» neu → `aria-pressed=false`, keine
+// Hervorhebung; der alte Stand lag unter der Maske und kam mit der nächsten
+// Eingabe zurück. JETZT wird der Rohwert im Render verworfen, sobald das Feld
+// leer ist («State beim Rendern anpassen», React-Doku — bedingt, endet nach
+// einem Durchlauf, kein Effekt). Dasselbe Ziel wie `entscheidSucheZustand.ts`
+// im Entscheid-Leser, dort im Setter; hier sieht der Hook den Feldwert nur als
+// Argument, darum der Render-Weg.
 export function useMarkenSchalter(sucheFeldLeer: boolean): {
   markenAus: boolean;
   setzeMarkenAus: (aus: boolean) => void;
 } {
   const [markenAusRoh, setzeMarkenAus] = useState(false);
+  if (sucheFeldLeer && markenAusRoh) setzeMarkenAus(false);
   return { markenAus: !sucheFeldLeer && markenAusRoh, setzeMarkenAus };
 }
 
@@ -276,9 +289,20 @@ export function useSuchTreffer({
   // in-effect). Damit kann nie eine Position zum falschen Begriff stehenbleiben
   // (§8) — dasselbe Muster, mit dem bis S8 die gemessene Fundstellenzahl
   // gültig gehalten wurde.
-  const [nav, setNav] = useState<{ begriff: string; pos: number; token: string | null }>(
-    { begriff: '', pos: -1, token: null });
-  const gueltig = nav.begriff === sucheTrim;
+  //
+  // ── W2·17-UI-BEFUNDE · PE-C6-B01 / PE-C8-B02 (1.10.2026) · AUCH DER BEREICH
+  //     GEHÖRT IN DEN SCHLÜSSEL ──────────────────────────────────────────────
+  // Der Schlüssel war nur `begriff`, die Folge hängt aber am BEREICH (`treffer`
+  // → `folge`): nach dem Wechsel stand die alte Laufnummer gegen eine andere
+  // Folge. Gemessen (OR, «Schadenersatz», ↓ 20× → «20 von 52»): «Überschriften»
+  // → «Fundstelle 20 von 11»; «Text» → «20 von 41» mit einer fremden Zeile
+  // (Art. 260) als aktiv, das nächste ↓ lief von dort weiter. JETZT gilt die
+  // Nummer nur bei gleichem Begriff UND gleichem Bereich; sonst «keine gewählt».
+  // `aenderungenAus` gehört NICHT dazu: es ändert nur `malRang`, nie Länge oder
+  // Reihenfolge der Folge — der Ansicht-Schalter darf die Position behalten.
+  const [nav, setNav] = useState<{ begriff: string; bereich: SuchBereich; pos: number; token: string | null }>(
+    { begriff: '', bereich, pos: -1, token: null });
+  const gueltig = nav.begriff === sucheTrim && nav.bereich === bereich;
   const trefferPos = gueltig ? nav.pos : -1;
   const aktivToken = gueltig ? nav.token : null;
 
@@ -307,7 +331,7 @@ export function useSuchTreffer({
     // Zielartikel in einer zugeklappten Sektion, blieb `nav.pos` stehen, und
     // jeder weitere ↑↓-Druck berechnete daraus dieselbe Position: die Folge kam
     // nicht vom Fleck, der Klick blieb ohne jede Rückmeldung (§8).
-    setNav({ begriff: sucheTrim, pos: n, token: eintrag.token });
+    setNav({ begriff: sucheTrim, bereich, pos: n, token: eintrag.token });
     const id = `art-${eintrag.token}`;
     // CSS.escape: ein Artikel-Token mit Sonderzeichen (belegt: «22 a», «36–42»)
     // darf den Selektor nicht sprengen — dieselbe Vorsicht wie `findeArt`.
@@ -365,7 +389,7 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, sektionen, setOffen]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;
