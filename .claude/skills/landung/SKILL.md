@@ -61,11 +61,15 @@ Belege: `referenz-ci.md` §Merge-Queue.
   gelandete PR macht alle übrigen CONFLICTING (#1068/#1070/#1071 an
   FAHRPLAN-WERKBANK-UMBAU.md §5d-bis, 24.9.2026). Bei mehreren offenen PRs
   eines Dachs: je Nachtrag eine Posten-Datei (`plan:posten -- neu`) statt
-  Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein.
+  Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein. Gleiches im Code: zwei
+  eigene PRs am selben Dateiende (#1275/#1277, 2.10.2026) — Landereihenfolge vorab
+  festlegen, beim Rebase beide Blöcke behalten.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind. Grund `merge_conflict`: der Nachzug-Push reiht NICHT
   wieder ein — `gh pr merge --squash --auto <nr>`, Queue-Abfrage (#1070, 25.9.).
+  Blockiert ein Flake die Queue: Wurzel-Fix als eigener Mini-PR vorziehen, nie im
+  Feature-PR mitschleppen (#1269, 2.10.2026).
 - **Nie pushen, solange der PR in der Queue steht:** erst austragen, dann
   pushen, dann neu einreihen — sonst läuft die Queue mit dem ALTEN Head
   weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
@@ -76,9 +80,7 @@ Belege: `referenz-ci.md` §Merge-Queue.
   auf origin/main cherry-picken, Inhaltsgleichheit je Datei belegen (25.9.2026).
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
   PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
-  Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen
-  19.9.2026, #931, Lauf 35456359531). Doku trotzdem bündeln — gleiche
-  Steuer-Datei wie ein Vordermann ⇒ UNMERGEABLE.
+  Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen 19.9.2026, #931, Lauf 35456359531).
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -239,9 +241,7 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 9. **Schritt-Status schliessen — wip verlässt die Session nie.** **Der PR,
    der den Schritt abschliesst, trägt den Status im Diff:** `plan:set --
    <id> status=done|ready|parked` + `check:plan`, im eigenen PR committet.
-   Keine Auto-Buchung mehr: `plan-buchung.yml` ist am 20.9.2026 abgebaut
-   (QS-CI-MINUTEN, 0 Buchungs-Commits in 12 Läufen seit der Merge-Queue
-   19.9.2026 — der Status fuhr da schon im PR mit). Zuordnung weiter per
+   Keine Auto-Buchung mehr (`plan-buchung.yml` abgebaut 20.9.2026). Zuordnung per
    Trailer **im PR-BODY**, eigener letzter Absatz, unformatiert: `Roadmap:
    <ID>` — kein `Roadmap-Status:` mehr nötig, auch wenn der Schritt `wip`
    bleibt. Form: Skill `auftrag` Ziff. 5, Formregel 5 unten; Historie:
