@@ -1,5 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { naechsterFokus } from '../../lib/normtext/fokus';
+import { modalDarueber } from './modalerDialog';
 
 // Selektor für nativ fokussierbare Elemente — dieselbe Grundliste wie im
 // NormPopover-Overlay (components/vorlagen/ui.tsx), damit alle Dialoge dieselbe
@@ -103,6 +104,9 @@ export function useDialogFokus(
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key === 'Esc') {
+        // Ein oberer modaler Dialog (Norm-Popover über dem Sheet/Blatt) nimmt
+        // dieses Esc selbst an — die Fläche dahinter bleibt stehen.
+        if (modalDarueber(wurzel)) return;
         onCloseRef.current();
         return;
       }

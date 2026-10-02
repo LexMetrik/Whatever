@@ -42,3 +42,20 @@ const OFFENES_MENUE = '[data-menue-flaeche]';
 export function imMenue(ziel: EventTarget | null): boolean {
   return (ziel as Element | null)?.closest?.(OFFENES_MENUE) != null;
 }
+
+/**
+ * Liegt über `wurzel` ein anderer offener modaler Dialog? Massgeblich ist die
+ * Dokument-Reihenfolge: später geöffnete Overlays hängen später im DOM (Portale
+ * ans `body`, spätere Pane-Overlays), der LETZTE modale Dialog ist die oberste
+ * Fläche. Esc gehört dieser obersten Fläche allein (W2·17-UI-BEFUNDE, F1-B02:
+ * ein Norm-Popover über dem Blatt/Sheet schloss mit demselben Esc die Fläche
+ * dahinter gleich mit).
+ */
+export function modalDarueber(wurzel: Element): boolean {
+  const modale = offeneModaleDialoge();
+  const oben = modale[modale.length - 1];
+  // `wurzel` darf der Dialog SELBST oder sein NACHKOMME sein (Handy-Sheet: das
+  // Panel ist ein Kind des `role="dialog"`-Elements) — `contains` deckt beides;
+  // ein Identitätsvergleich liess das Sheet sich selbst für «überdeckt» halten.
+  return oben != null && !oben.contains(wurzel);
+}

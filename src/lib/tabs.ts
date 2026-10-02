@@ -1254,7 +1254,19 @@ export function vorherigerReiter(offen: readonly TabEintrag[], aktiv: string): T
 /** Pfad für eine NEUE Instanz desselben Erlasses/Items (Auftrag David: dasselbe
  *  Gesetz mehrfach offen). Hängt den nächsten freien `?r=<n>` an den aktuellen
  *  Pfad (Artikel-Anker bleibt erhalten). Die erste Instanz trägt kein `?r`
- *  (implizit r=1), die nächste `?r=2` usw. */
+ *  (implizit r=1), die nächste `?r=2` usw.
+ *
+ *  W2·17-UI-BEFUNDE · F9-B02 (2.10.2026): auch die ÜBRIGEN Abfrage-Parameter
+ *  bleiben erhalten — allen voran `?ansicht=` (Einzelmodus «Einzelne
+ *  Bestimmung», `v3/einzelModus.ts`; bei Entscheiden `?ansicht=voll|auszug`).
+ *  Bis dahin baute die Funktion den Pfad aus `pfadTeil` allein und warf die
+ *  Abfrage weg: «Daneben öffnen» bzw. «Duplizieren» aus
+ *  `/gesetze/bund/OR?ansicht=artikel#art-336_c` öffnete das zweite Fenster in
+ *  der GESAMTANSICHT des Erlasses statt auf demselben einzelnen Artikel.
+ *  Verworfen werden nur die zwei Schlüssel, die diese Funktion selbst
+ *  verwaltet: `r` (wird neu vergeben) und `p` (Layout-Seed des geteilten
+ *  Pane-Links, `usePaneLayout` B-5 — kein Teil der Ansicht). Die Reihenfolge
+ *  der übrigen bleibt wörtlich, `r` steht zuletzt. */
 export function naechsteInstanz(path: string): string {
   const pfad = pfadTeil(path);
   const hash = path.includes('#') ? `#${path.split('#')[1]}` : '';
@@ -1262,7 +1274,10 @@ export function naechsteInstanz(path: string): string {
     .filter((t) => pfadTeil(t.path) === pfad)
     .map((t) => Number(new URLSearchParams(t.path.split('#')[0].split('?')[1] ?? '').get('r')) || 1);
   const next = (rs.length ? Math.max(...rs) : 0) + 1;
-  return `${pfad}?r=${next}${hash}`;
+  const rest = (path.split('#')[0].split('?')[1] ?? '')
+    .split('&')
+    .filter((kv) => kv !== '' && !/^(r|p)(=|$)/.test(kv));
+  return `${pfad}?${[...rest, `r=${next}`].join('&')}${hash}`;
 }
 
 /** Aktualisiert NUR den Artikel-Anker (#) eines bereits offenen Reiters mit
