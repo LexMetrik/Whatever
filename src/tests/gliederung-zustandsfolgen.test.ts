@@ -155,7 +155,10 @@ describe('W2·5m-LESER-V3 — Quellsonde: alle setTocBaum-Aufrufe laufen über k
     }
     const hooks = readFileSync('src/pages/gesetz-leser/inhalt-hooks.tsx', 'utf8');
     expect(/const aktualisieren[^;]*mitlaufenKarte\(/s.test(hooks), 'aktualisieren delegiert an mitlaufenKarte').toBe(true);
-    expect(aufrufe).toBeGreaterThanOrEqual(10);
+    // Leer-Treffer-Schutz (nicht fachlich): 10 → 8 am 2.10.2026 (W2·17-UI-BEFUNDE B1-B03/B04) —
+    // «alles auf/zu» schreibt die Karte nicht mehr selbst (`leisteAufbau`, zwei Aufrufe), sondern
+    // über `tocToggleGruppe` → `klappZeile`, dessen Aufruf hier weiter mitgezählt wird.
+    expect(aufrufe).toBeGreaterThanOrEqual(8);
     expect(funde, funde.join(' | ')).toEqual([]);
   });
 });

@@ -717,10 +717,17 @@ export function useLeserSprungSpy(opts: {
     cont.addEventListener('wheel', merke, { passive: true });
     cont.addEventListener('pointerdown', merke, { passive: true });
     cont.addEventListener('touchstart', merke, { passive: true });
+    // W2·17-UI-BEFUNDE B7 (2.10.2026): auch die TASTATUR bedient die Gliederung.
+    // Ohne `keydown` blieb der Guard beim Auf-/Zuklappen per Enter/Leertaste
+    // unarmiert (kein `pointerdown`), der Nudge schob den Scroller nach dem
+    // Umschalten zur Marke zurück — der fokussierte Pfeil sprang unter dem
+    // Finger weg (gemessen OR: Scroller 0 → 198 px, Pfeil 277 → 80 px).
+    cont.addEventListener('keydown', merke, { passive: true });
     return () => {
       cont.removeEventListener('wheel', merke);
       cont.removeEventListener('pointerdown', merke);
       cont.removeEventListener('touchstart', merke);
+      cont.removeEventListener('keydown', merke);
     };
     // tocTouchRef ist ein stabiler Ref; Deps byte-identisch zum früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps

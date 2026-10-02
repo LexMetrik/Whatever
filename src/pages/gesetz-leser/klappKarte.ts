@@ -15,6 +15,8 @@
 // #924; Wächter `src/tests/gliederung-zustandsfolgen.test.ts`). Jeder
 // `setTocBaum` im Leser ruft eine Funktion dieser Datei.
 
+import type { GliederungsKnoten, GliederungsModus } from './gliederungsTypen';
+
 /**
  * Was `alleKlappIds` von einer Gliederungszeile braucht — strukturell statt
  * `import type { GliederungsKnoten }`: gliederungsModell.ts liest
@@ -60,6 +62,27 @@ export function alleKlappIds(knoten: readonly KlappKnoten[]): string[] {
   };
   geh(knoten);
   return ids;
+}
+
+/**
+ * Die Ids, über die «alles auf/zu» der LEISTE läuft — nur Zeilen, die die Leiste
+ * wirklich rendert (W2·17-UI-BEFUNDE B1-B01, 2.10.2026). `LeserGliederung` zeigt
+ * je Modus etwas anderes: `b1` den ganzen Sektionsbaum, `b2/b4` den flachen
+ * Artikel-Index PLUS den Anhang-Ast (der Rest des Baums wird dort nie gerendert),
+ * `b3` nichts. Bis hierher lief der Knopf über `alleKlappIds(gliederung.knoten)`
+ * auch dort, wo der Baum gar nicht steht: im VwVG 31 Ids unsichtbarer Zeilen —
+ * der Knopf kippte seine Beschriftung («alles auf» → «alles zu»), und auf dem
+ * Bildschirm geschah nichts (§8: ein Knopf, der nichts tut). Eine leere Liste
+ * heisst: es gibt nichts zu klappen, die Leiste zeigt den Knopf nicht.
+ * Strukturell typisiert aus demselben Grund wie `KlappKnoten` (kein Rück-Import
+ * des Modells, check:zyklen) — `art`/`modus` kommen aus `gliederungsTypen`.
+ */
+export function leistenKlappIds(
+  g: { modus: GliederungsModus; knoten: readonly (KlappKnoten & { art: GliederungsKnoten['art'] })[] },
+): string[] {
+  if (g.modus === 'b3-leer') return [];
+  if (g.modus === 'b2-index' || g.modus === 'b4-mini') return alleKlappIds(g.knoten.filter((k) => k.art === 'anhang'));
+  return alleKlappIds(g.knoten);
 }
 
 /**
