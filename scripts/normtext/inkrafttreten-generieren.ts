@@ -190,7 +190,7 @@ function saetze(text: string): string[] {
 
 /** Subjekt = der Erlass selbst («Dieses Gesetz», «Diese Verordnung», «Es», «Sie»). */
 const SUBJEKT_ERLASS =
-  /^(?:Dieses?|Diese[rn]?)\s+(?:[\wäöüÄÖÜ.\-]+\s+){0,3}?(?:Gesetz|Verordnung|Abkommen|Übereinkommen|Beschluss|Reglement|Ordnung|Konkordat|Protokoll|Statut|Vertrag|Gesetzbuch|Verfassung|Bundesgesetz|Erlass)\b|^(?:Es|Sie)\s/;
+  /^(?:Dieses?|Diese[rn]?)\s+(?:[\wäöüÄÖÜ.-]+\s+){0,3}?(?:Gesetz|Verordnung|Abkommen|Übereinkommen|Beschluss|Reglement|Ordnung|Konkordat|Protokoll|Statut|Vertrag|Gesetzbuch|Verfassung|Bundesgesetz|Erlass)\b|^(?:Es|Sie)\s/;
 
 /** Hauptklausel: «Dieses Gesetz tritt … in Kraft» / «Der Bundesrat setzt … in Kraft». */
 function istHauptklauselSatz(satz: string): boolean {
