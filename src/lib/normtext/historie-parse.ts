@@ -21,6 +21,7 @@
 // (scripts/normtext/historie-generieren.ts) UND die Unit-Tests.
 
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
+import { randtitelKnoten } from './darstellung';
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
 interface FnLink {
@@ -80,6 +81,12 @@ export interface HistorieEreignis {
    *  «vor Art. 56»). Fehlt, wenn die Fussnote nach «Ursprünglich» nichts nennt. Ein Datum gehört NICHT dazu — die
    *  Fussnote datiert nur das folgende Ereignis, nie die Ur-Bezeichnung (§7). */
   frueher?: string;
+  /** W2·27-BUND-FERTIG (2.10.2026): Label der Gliederungsüberschrift bzw. des Randtitels, an der die Quell-Fussnote
+   *  hängt («Zehnter Titel: Der Arbeitsvertrag»). Gesetzt für Ereignisse aus Sektions-Fussnoten — am Träger-Artikel
+   *  (erster Artikel unter der Überschrift) wie an den GEERBTEN Artikeln darunter (Entscheid David 2.10.2026). Fehlt
+   *  bei Ereignissen, die die Fussnote des Artikels selbst trägt. Der Leser kennzeichnet damit, dass die Änderung
+   *  an der Überschrift vermerkt ist, nicht an diesem Artikel (§8). */
+  ueberschrift?: string;
 }
 
 /** Klassifikation + Ergebnis EINER Fussnote. */
@@ -394,6 +401,10 @@ export function baueArtikelHistorie(
      *  signal.ts). Dann trägt die Historie KEIN «Gilt seit» (P7 #53), es sei denn sie nennt selbst das datierte
      *  `aufgehobenSeit`. undefined/false = unverändert. */
     snapshotAufgehoben?: boolean;
+    /** W2·27-BUND-FERTIG (2.10.2026): Sektions-Fussnoten der Gliederungsüberschriften/Randtitel, unter denen der Artikel
+     *  steht und die an einem FRÜHEREN Artikel (dem Träger) hängen — `sektionsErbe`. Daraus erbt der Artikel die
+     *  Ereignisse der Typen `SEKTION_ERBT` (Entscheid David 2.10.2026). undefined = keine. */
+    geerbt?: ReadonlyArray<FnEingang>;
   } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number } {
   const ereignisse: HistorieEreignis[] = [];
@@ -402,11 +413,17 @@ export function baueArtikelHistorie(
   let ereignisFnCount = 0;
   for (const fn of fussnoten ?? []) {
     const res = parseFussnoteHistorie(fn);
-    if (res.klasse === 'ereignis') { ereignisse.push(...res.ereignisse); ereignisFnCount++; }
+    if (res.klasse === 'ereignis') {
+      // Herkunft (§8): Ereignisse einer Sektions-Fussnote tragen das Überschrift-Label — auch am Träger-Artikel.
+      ereignisse.push(...(fn.sektion ? res.ereignisse.map((e) => ({ ...e, ueberschrift: fn.sektion! })) : res.ereignisse));
+      ereignisFnCount++;
+    }
     else if (res.klasse === 'referenz') refCount++;
     else unparsed.push(fn);
   }
-  if (ereignisse.length === 0) return { historie: null, unparsed, refCount, ereignisFnCount };
+  // Geerbte Überschrift-Ereignisse (nie an einen amtlich aufgehobenen Artikel: seine Chronik wäre die der Überschrift).
+  const erbe = opts.snapshotAufgehoben === true ? [] : geerbteEreignisse(opts.geerbt);
+  if (ereignisse.length === 0 && erbe.length === 0) return { historie: null, unparsed, refCount, ereignisFnCount };
 
   // Dokumentreihenfolge bleibt erhalten (siehe Funktions-Doc). «giltSeit»/
   // «aufgehobenSeit» als Maximum über die datierten Ereignisse ableiten.
@@ -479,6 +496,16 @@ export function baueArtikelHistorie(
   }
   if (gegenstandslos && opts.koerperLebend === true) gegenstandslos = undefined;
 
+  // Geerbte Überschrift-Ereignisse (W2·27-BUND-FERTIG): vor die eigenen — die Überschrift steht im Dokument vor dem
+  // Artikel —, zählen wie am Träger-Artikel in «giltSeit» ein. Nicht an einen Artikel mit eigener Ganzaufhebung bzw.
+  // «gegenstandslos»: dessen Fassungsstand wäre sonst der der Überschrift (§8).
+  if (erbe.length > 0 && !aufgehobenSeit && !gegenstandslos) {
+    ereignisse.unshift(...erbe);
+    for (const e of erbe) {
+      if (e.datum && GILT_TYPEN.has(e.typ) && (!giltSeit || e.datum > giltSeit)) giltSeit = e.datum;
+    }
+  }
+
   // P7 #53 (§8): ein amtlich aufgehobener Artikel (Text-Shard: Wortlaut «Aufgehoben»/«…» mit Vermerk) GILT nicht
   // «seit» irgendeiner Einfügung/Fassung — Fälle: Fussnote am Gliederungstitel (ASYLV2 65, HREGV 162–163, ZSTV 75a–m),
   // Einfügungs-Fussnote ohne Aufhebungsdatum (AVO 22a–c, 50b–f), befristete Fassung (AIG 72). Ohne datiertes
@@ -510,4 +537,85 @@ export function baueArtikelHistorie(
 function artikelAufhebungMoeglich(fn: FnEingang): boolean {
   if (fn.absatz != null || fn.item != null || fn.absatzIndex != null || fn.pos != null || fn.sektion) return false;
   return !/\baufgehoben (?:durch|in|gemäss)\b/.test(normalisiere(fn.text ?? ''));
+}
+
+/**
+ * Ereignis-Typen einer Überschrift-Fussnote, die an ALLE Artikel unter der Überschrift weitergegeben werden
+ * (Entscheid David 2.10.2026: «Fassung gemäss» / «Eingefügt durch» an Titel/Abschnitt/Randtitel gelten für den ganzen
+ * Bereich). Bewusst eng: «Ausdruck»/«Nummerierung»/«Bereinigt»/«Angenommen»/«inkraft» an Überschriften sind
+ * gemessen (Bericht 2.10.2026), aber NICHT weitergegeben; «Aufgehoben» an einer Überschrift trifft nie die
+ * Artikel darunter, «Ursprünglich»/«Berichtigt» beschreiben die Überschrift selbst.
+ */
+export const SEKTION_ERBT: ReadonlySet<HistorieTyp> = new Set<HistorieTyp>(['eingefuegt', 'fassung']);
+
+/** Geerbte Sektions-Fussnoten → ihre weitergebbaren Ereignisse (Typ ∈ SEKTION_ERBT), je mit Herkunfts-Label. */
+function geerbteEreignisse(fns: ReadonlyArray<FnEingang> | undefined): HistorieEreignis[] {
+  const aus: HistorieEreignis[] = [];
+  for (const fn of fns ?? []) {
+    if (!fn.sektion) continue;
+    for (const e of parseFussnoteHistorie(fn).ereignisse) {
+      if (SEKTION_ERBT.has(e.typ)) aus.push({ ...e, ueberschrift: fn.sektion });
+    }
+  }
+  return aus;
+}
+
+/** Ein Artikel in Dokumentreihenfolge, soweit `sektionsErbe` seinen Gliederungspfad braucht (Sidecar-Teilmenge). */
+export interface ErbArtikel {
+  token: string;
+  gliederung?: ReadonlyArray<{ ebene: number; label: string }>;
+  marginalie?: ReadonlyArray<string>;
+  fussnoten?: ReadonlyArray<FnEingang>;
+}
+
+/**
+ * W2·27-BUND-FERTIG (2.10.2026): welche Sektions-Fussnoten gelten für welchen Artikel?
+ *
+ * Fedlex setzt «Fassung gemäss …»/«Eingefügt durch …» oft an eine Gliederungsüberschrift (Titel, Abschnitt, Randtitel)
+ * statt an jeden Artikel; das Struktur-Sidecar hängt sie (`sektion` = Überschrift-Label) nur an den ERSTEN Artikel
+ * darunter. Diese Funktion läuft in DOKUMENTREIHENFOLGE über die Artikel und führt den offenen Gliederungspfad mit —
+ * mit derselben Knoten-Identität wie `baueGliederungsbaum` (browse.ts): amtliche Stufen (`gliederung`) plus die
+ * Randtitel-Ahnen der Marginalie (`randtitelKnoten`) mit Ebene = tiefste amtliche Ebene + 1 + i; ein Knoten bleibt offen,
+ * solange die Folge-Artikel dasselbe (Ebene, Label) unter demselben Elternpfad tragen — eine Überschrift gleicher oder
+ * höherer Stufe schliesst ihn. Rückgabe: Token → die Fussnoten FRÜHERER Artikel (Träger), deren Überschrift im Pfad dieses
+ * Artikels liegt; die eigenen Sektions-Fussnoten eines Artikels stehen bereits in seiner Fussnotenliste und kommen nicht
+ * doppelt. Reihenfolge: äusserste Überschrift zuerst, je Knoten in Trägerreihenfolge. Eine Sektions-Fussnote, deren Label
+ * keine Stufe im Pfad ihres Trägers trifft, bleibt am Träger (wie bisher) und wird nicht weitergegeben.
+ */
+export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, FnEingang[]> {
+  const erbe = new Map<string, FnEingang[]>();
+  // Derselbe Baum wie `baueGliederungsbaum`: je Ebene zählt nur der LETZTE Knoten; weicht (Ebene, Label) ab, beginnt ein
+  // neuer Knoten mit leerer Kinderliste (die Gliederung ist dokumentlinear).
+  interface Knoten { ebene: number; label: string; fns: FnEingang[]; kinder: Knoten[] }
+  const wurzeln: Knoten[] = [];
+  for (const a of artikel) {
+    const gl = a.gliederung ?? [];
+    const { ahnen } = randtitelKnoten([...(a.marginalie ?? [])]);
+    const basis = gl.length ? Math.max(...gl.map((g) => g.ebene)) + 1 : 0;
+    const pfad = [
+      ...gl.map((g) => ({ ebene: g.ebene, label: g.label })),
+      ...ahnen.map((label, i) => ({ ebene: basis + i, label })),
+    ];
+    if (pfad.length === 0) continue; // «ohneGliederung» — der Baum lässt sich davon nicht berühren
+    const kette: Knoten[] = [];
+    let liste = wurzeln;
+    for (const stufe of pfad) {
+      let k = liste[liste.length - 1];
+      if (!k || k.label !== stufe.label || k.ebene !== stufe.ebene) {
+        k = { ebene: stufe.ebene, label: stufe.label, fns: [], kinder: [] };
+        liste.push(k);
+      }
+      kette.push(k);
+      liste = k.kinder;
+    }
+    // Geerbt: alles, was an den Knoten dieses Pfades schon hängt (vor den eigenen Sektions-Fussnoten dieses Artikels).
+    const geerbt = [...new Set(kette.flatMap((k) => k.fns))];
+    if (geerbt.length > 0) erbe.set(a.token, geerbt);
+    // Die eigenen Sektions-Fussnoten an die Knoten heften, deren Label sie nennen (wie baueGliederungsbaum).
+    for (const fn of a.fussnoten ?? []) {
+      if (!fn.sektion) continue;
+      for (const k of kette) if (k.label === fn.sektion) k.fns.push(fn);
+    }
+  }
+  return erbe;
 }

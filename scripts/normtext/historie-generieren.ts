@@ -21,6 +21,8 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   baueArtikelHistorie,
+  sektionsErbe,
+  type ErbArtikel,
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
@@ -32,7 +34,7 @@ const ZIEL = resolve(wurzel, 'public/normtext/historie');
 const TEXT = resolve(wurzel, 'public/normtext/bund');
 
 interface Sidecar {
-  artikel?: Record<string, { fussnoten?: FnEingang[] }>;
+  artikel?: Record<string, { fussnoten?: FnEingang[]; gliederung?: ErbArtikel['gliederung']; marginalie?: string[] }>;
 }
 
 interface Abdeckung {
@@ -75,14 +77,25 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
   let ereignisse = 0;
   let ereignisseDatiert = 0;
 
-  const tokens = Object.keys(doc.artikel ?? {}).sort();
+  // W2·27-BUND-FERTIG (2.10.2026): Sektions-Fussnoten an Gliederungsüberschriften gelten für alle Artikel darunter.
+  // Dokumentreihenfolge = Reihenfolge der Text-Shard-Einträge (die Sidecar-Schlüssel sind NICHT dokumentgeordnet:
+  // JS ordnet ganzzahlige Schlüssel vorweg); Sidecar-Token ohne Text-Eintrag folgen sortiert am Ende.
+  const sidecar = doc.artikel ?? {};
+  const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
+  const imText = new Set(reihenfolge);
+  reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
+  const erbe = sektionsErbe(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+
+  const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
-    const fussnoten = doc.artikel![token].fussnoten ?? [];
-    if (fussnoten.length === 0) continue;
+    const fussnoten = sidecar[token].fussnoten ?? [];
+    const geerbt = erbe.get(token);
+    if (fussnoten.length === 0 && !geerbt) continue;
     abdeckung.fussnoten += fussnoten.length;
     const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, {
       koerperLebend: textIndex.get(token)?.lebend,
       snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
+      geerbt,
     });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
