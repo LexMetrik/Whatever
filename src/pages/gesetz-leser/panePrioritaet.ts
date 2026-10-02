@@ -17,8 +17,30 @@
 //
 // DIE REGEL, in einem Satz: der Tastendruck gehört dem Pane, in dem
 // `document.activeElement` steht. Steht der Fokus in KEINEM Pane (Body, Topbar,
-// Krume), gewinnt das primäre — das ist die Fläche, die der Leser sieht, wenn er
-// noch nichts gewählt hat.
+// Krume), gewinnt das ZULETZT BENUTZTE Pane — und erst wenn es das noch nicht
+// gibt, das primäre (die Fläche, die der Leser sieht, wenn er noch nichts
+// gewählt hat).
+//
+// W2·17-UI-BEFUNDE (F1-B01, 2.10.2026) — ZWEI LÜCKEN DER ERSTEN FASSUNG,
+// gemessen am gebauten Stand (`e2e/leser-split-w217.e2e.ts`):
+//  (1) «Kein Pane unter dem Fokus ⇒ primär» war zu grob. Das Blatt, das
+//      Gliederungs-Sheet und jeder Popover hängen per Portal in der
+//      Overlay-Schicht des Panes (`LeserPanelZone`, `Shell.tsx`) und liegen
+//      damit AUSSERHALB von `[data-pane]` — der Fokus steht dort im sekundären
+//      Fenster, die Auflösung sah ihn nirgends und gab dem primären den
+//      Tastendruck. Gemessen @1600, Blatt des sekundären Panes offen, «r»:
+//      beide Blätter offen (das primäre ging zusätzlich auf), statt dass das
+//      Blatt, in dem man arbeitet, zuging. Die Overlay-Wurzel trägt zwar kein
+//      `data-pane`, aber `data-v3-pane` (Rolle des Panes, Portal-Vertrag
+//      `LeserRahmenV3`) — beide Marken zählen jetzt.
+//  (2) Fällt der Fokus auf den Body (ein Knopf, der ihn trug, verschwindet; Esc
+//      schliesst ein Blatt), wusste die Auflösung nichts mehr vom Pane, in dem
+//      der Leser eben noch war, und fiel auf das primäre zurück — j/k/r wirkten
+//      im FALSCHEN Fenster. Darum merkt sich dieses Modul das Pane des letzten
+//      Klicks bzw. Fokus-Wechsels (`pointerdown`/`focusin`, Capture-Phase am
+//      Dokument). Die Auflösung bleibt rein lesend: sie liest den Fokus bei
+//      JEDEM Tastendruck, die Merkliste ist nur der Rückfall dahinter.
+//      Ein Pane, das es nicht mehr gibt (✕), zählt nicht als Rückfall.
 //
 // WARUM EIGENE, GETEILTE DATEI: sie ist die EINE Antwort für BEIDE Kürzel-Wege
 // (`v3/suchKuerzel` für ⌘K/«/», `parts/LeserTastatur` für j/k/t/r/?). Bis zum
@@ -31,6 +53,29 @@
 // nicht beim Registrieren des Listeners — sonst wäre sie beim Pane-Wechsel
 // veraltet.
 
+type PaneRolle = 'primaer' | 'sekundaer';
+
+/** Rolle des Panes, in dem `el` steht — `[data-pane]` (Fläche selbst) oder
+ *  `[data-v3-pane]` (Overlay-Schicht: Blatt, Sheet), sonst `null`. */
+function rolleVon(el: Element | null | undefined): PaneRolle | null {
+  const marke = el?.closest?.('[data-pane]')?.getAttribute('data-pane')
+    ?? el?.closest?.('[data-v3-pane]')?.getAttribute('data-v3-pane')
+    ?? null;
+  return marke === 'sekundaer' ? 'sekundaer' : marke === 'primaer' ? 'primaer' : null;
+}
+
+/** Pane des letzten Klicks bzw. Fokus-Wechsels; `null`, solange nichts geschah. */
+let zuletztBenutzt: PaneRolle | null = null;
+
+if (typeof document !== 'undefined') {
+  const merke = (e: Event) => {
+    const rolle = rolleVon(e.target as Element | null);
+    if (rolle) zuletztBenutzt = rolle;
+  };
+  document.addEventListener('pointerdown', merke, true);
+  document.addEventListener('focusin', merke, true);
+}
+
 /**
  * Gehört dieser Tastendruck dem Leser in diesem Pane?
  *
@@ -41,8 +86,11 @@
 export function tastendruckGehoertPane(imSekundaerenPane: boolean): boolean {
   if (typeof document === 'undefined') return !imSekundaerenPane;
   const ziel = document.activeElement as Element | null;
-  const fokusPane = ziel?.closest?.('[data-pane]')?.getAttribute('data-pane') ?? null;
-  // Kein Pane unter dem Fokus ⇒ Fallback primär (auch in der Einzelansicht, wo
-  // es überhaupt kein `[data-pane]` gibt: dort ist `imSekundaerenPane` false).
-  return (fokusPane === 'sekundaer') === imSekundaerenPane;
+  const fokusPane = rolleVon(ziel);
+  // Rückfall: das zuletzt benutzte Pane, solange es noch im DOM steht; sonst
+  // primär (auch in der Einzelansicht, wo es überhaupt kein `[data-pane]` gibt:
+  // dort ist `imSekundaerenPane` false).
+  const rueckfall: PaneRolle = zuletztBenutzt === 'sekundaer' && document.querySelector('[data-pane="sekundaer"]') != null
+    ? 'sekundaer' : 'primaer';
+  return ((fokusPane ?? rueckfall) === 'sekundaer') === imSekundaerenPane;
 }

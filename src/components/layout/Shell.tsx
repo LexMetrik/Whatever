@@ -395,6 +395,12 @@ export function Shell({ children }: { children: ReactNode }) {
   const schliesseHaupt = () => {
     if (pane.sekundaer.length > 0) { const z = livePfad(0); pane.schliesse(0); navigate(z); }
     else navigate('/');
+    // W2·17-UI-BEFUNDE · F1-B03 (2.10.2026): wie beim Schliessen eines
+    // sekundären Panes und bei «zum Hauptfenster» (oben) — der auslösende ✕ des
+    // Hauptfensters lebt im PaneKopf, den die Navigation neu aufbaut. Gemessen
+    // @1600 (`e2e/leser-split-w217.e2e.ts`): Fokus danach `BODY`, Tastatur und
+    // Screenreader verloren den Ort. Zurück in den Hauptinhalt.
+    requestAnimationFrame(() => document.getElementById('inhalt')?.focus());
   };
   // Pane verschieben über die GANZE Liste (global: 0 = Hauptfenster, 1.. = sekundär):
   // an/über das Hauptfenster ziehen = tauschen (promote); sonst Sekundär-Reorder.
