@@ -1,3 +1,4 @@
+import { eigeneGattungAusTitel } from '../../components/normtext/fremderlassGenitiv';
 import {
   useCallback, useEffect, useMemo, useRef,
   type Dispatch, type MutableRefObject, type RefObject, type SetStateAction,
@@ -424,6 +425,8 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
       // V-3: kantons-gescopetes Kürzel-Register; der gelesene Erlass steckt
       // im Basispfad (dieselbe Ableitung wie `istParagrafDesigniert`).
       kantonKuerzel: baueKantonKuerzelKarte(manifestErlasse, kanton, schluesselAusPfad(basisPfad)),
+      // W2·17 Nachzug: Gattung des gelesenen Erlasses — blosses «des Abkommens» ist dort ein Selbstverweis.
+      eigeneGattung: eigeneGattungAusTitel(manifestErlasse?.find((e) => e.key === schluesselAusPfad(basisPfad))?.titel),
     };
   }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton]);
 }

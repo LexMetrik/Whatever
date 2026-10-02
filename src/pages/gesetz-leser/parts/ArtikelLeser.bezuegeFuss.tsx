@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { SUCH_META } from '../suchHighlight';
 import { ArtikelDossier, type BezugsMarke } from './ArtikelDossier';
+import type { Verweis } from './ArtikelLeser.fussnoten';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
 import { entscheidZahl } from '../entscheidZahl';
 import { BezuegeZeile } from './BezuegeZeile';
@@ -88,8 +89,8 @@ export function ArtikelBezuegeFuss({
    *  der Wert ist «Erneut laden». Dann steht in der Rubrik die Fehlerzeile, nie
    *  ein leerer Block unter der Zahl. */
   materialienLadefehler?: () => void;
-  /** Die im Artikel genannten, auflösbaren Normverweise (`sammleVerweise`). */
-  verweise: string[];
+  /** Die im Wortlaut verlinkten Verweise auf Bestimmungen (`sammleVerweise`). */
+  verweise: Verweis[];
   /** Rechner/Vorlagen an genau diesem Artikel (`randNotizWerkzeuge`). */
   werkzeuge: readonly Werkzeug[];
   zaehler?: { entscheide: number; materialien: number };
@@ -311,18 +312,21 @@ export function ArtikelBezuegeFuss({
       reg: 'g',
       anzahl: verweise.length,
       wort: ['Verweis', 'Verweise'],
-      /* W2·5m · Die Null ist hier GESICHERT: die Verweise stehen aus dem
-         Artikel selbst (`sammleVerweise`), es wartet kein Shard. Der Satz sagt
-         darum, was gilt — und er sagt «verweist auf», nicht «hat keine
-         Verweise»: die Rückrichtung «zitiert von» gibt es im Korpus noch nicht
-         (W2·22-VERWEIS-FEDLEX Z4), und ein Leser soll sie nicht für leer
-         halten statt für fehlend (§8, Kap. 15.5). */
-      leer: 'Dieser Artikel verweist auf keine andere Bestimmung. Wer auf ihn verweist, führen wir noch nicht.',
+      /* W2·5m · Die Liste ist der Wortlaut selbst: `sammleVerweise` (W2·17-UI-
+         BEFUNDE E-D12-B01, 1.10.2026) sammelt genau die Bestimmungs-Links, die
+         der Artikeltext rendert — Binnenverweise, «§ N», ausgeschriebene
+         Fremdverweise inklusive. Eine Null heisst darum «im Wortlaut ist keine
+         Bestimmung verlinkt», nicht «der Artikel verweist auf nichts»: ein
+         Verweis, den der Linker mit Absicht Text lässt (§1), steht auch hier
+         nicht. Der Satz sagt das und nicht mehr. Die Rückrichtung «zitiert von»
+         gibt es im Korpus noch nicht (W2·22-VERWEIS-FEDLEX Z4), und ein Leser
+         soll sie nicht für leer halten statt für fehlend (§8, Kap. 15.5). */
+      leer: 'Im Wortlaut ist keine andere Bestimmung verlinkt. Wer auf diesen Artikel verweist, führen wir noch nicht.',
       inhalt: (
         <>
           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Verweise</span>
           <span className="inline-flex flex-wrap items-center gap-1.5 align-middle">
-            {verweise.map((v) => <NormChip key={v} artikel={v} />)}
+            <VerweisChips verweise={verweise} />
           </span>
         </>
       ),
@@ -371,5 +375,18 @@ export function ArtikelBezuegeFuss({
       <ArtikelDossier marken={bezugsMarken} zitat={zitat}
         onOeffnen={onOeffnen} laedt={laedt} />
     </div>
+  );
+}
+
+/** Die Verweis-Chips (Dossier und Erlass-Blatt teilen sie, §5): Normverweise als
+ *  NormChip (Popover im Korpus, sonst Fedlex), Sprünge im Lesetext als Chip-Link
+ *  mit dem Klick-Handler des Wortlaut-Links. */
+export function VerweisChips({ verweise }: { verweise: readonly Verweis[] }) {
+  return (
+    <>
+      {verweise.map((v) => v.norm
+        ? <NormChip key={v.key} artikel={v.norm} />
+        : <a key={v.key} href={v.href} onClick={v.onKlick} className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400">{v.anzeige}</a>)}
+    </>
   );
 }

@@ -7,6 +7,7 @@ import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
+import type { Fussnote } from '../../../lib/normtext/browse';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 
 // ─── Modell des Rechtsprechungs-/Kontext-Panels (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─
@@ -367,6 +368,9 @@ export function panelBezug(
  */
 export interface BlattArtikel {
   eintrag: NormSnapshot;
+  /** Amtliche Fussnoten des Artikels (Struktur-Sidecar) — dieselbe Eingabe wie im Wortlaut
+   *  (Marker zerlegen den Text; die Verweis-Liste braucht dieselben Segmente, §5). */
+  fussnoten?: Fussnote[];
   /** `undefined` = kein Historie-Eintrag (oder Shard noch unterwegs). */
   historie?: ArtikelHistorie;
 }
@@ -376,11 +380,12 @@ export function blattArtikel(
   artIndex: ReadonlyMap<string, number>,
   historieFuer: (token: string) => ArtikelHistorie | undefined,
   token: string | null,
+  fussnotenFuer?: (token: string) => Fussnote[] | undefined,
 ): BlattArtikel | null {
   const i = token ? artIndex.get(token) : undefined;
   const eintrag = i === undefined ? undefined : eintraege[i];
   if (!eintrag || !token) return null;
-  return { eintrag, historie: historieFuer(token) };
+  return { eintrag, historie: historieFuer(token), fussnoten: fussnotenFuer?.(token) };
 }
 
 /**
