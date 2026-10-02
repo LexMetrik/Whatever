@@ -8,7 +8,7 @@
 // browse-manifest.ts projiziert es offline in register.json →
 // BrowseErlass.inkraftSeit (synchron beim Header-Render ⇒ CLS 0, §15/2).
 //
-//   npm run gen:inkrafttreten -- --datum=$(date +%F)         (Netz, manuell)
+//   npm run gen:inkrafttreten   (Netz, manuell; Runner: inkrafttreten-generieren-run.ts)
 //
 // Quelle (ausschliesslich amtlich, §7 — POC 12.7.2026 live an OR/ZGB/BV/DSG/AHVG
 // verifiziert, alle famos-belegten Ur-Daten getroffen: OR/ZGB 1912-01-01,
@@ -47,7 +47,7 @@
 // der amtlichen Fassung (rund die Hälfte) hängen an Zeitleiste, Wortlaut und Fussnoten.
 // §2/§0b: reine Erhebe-Funktion (deterministisch, injizierbare fetchImpl), getrennt
 // vom Schreiben; kein Date.now() in der Erhebung.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sparqlBatch, sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
@@ -60,8 +60,8 @@ function abstraktEli(quelleUrl: string): string | null {
 }
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
-const REGISTER_JSON = resolve(wurzel, 'public/normtext/register.json');
-const INKRAFT_JSON = resolve(wurzel, 'public/normtext/inkrafttreten.json');
+export const REGISTER_JSON = resolve(wurzel, 'public/normtext/register.json');
+export const INKRAFT_JSON = resolve(wurzel, 'public/normtext/inkrafttreten.json');
 
 export type Inkrafttreten = { datum: string; quelle: 'fedlex' };
 export type InkrafttretenMap = Record<string, Inkrafttreten>;
@@ -231,6 +231,9 @@ const VORBEHALT_AUSNAHME =
  *    Artikel 34 Absatz 3 und 78 Absatz 4», MWSTG Art. 116 Abs. 2).
  * Nur im Inkrafttretens-Artikel (Hauptklausel/Randtitel) — sonst «Art. 5 tritt in Kraft»-
  * Sätze in beliebigen Artikeln.
+ * Bewusst NICHT Signal: die blosse Ermächtigung im Satz mit Subjekt «Er» («Er kann einzelne
+ * Teile … in einem späteren Zeitpunkt in Kraft setzen», ARG Art. 74) — sie belegt keine
+ * Staffelung, und ARG trat an EINEM Tag in Kraft (Gegenprüfung 2.10.2026, ArG ⇒ false).
  */
 const TEIL_SUBJEKT = /^(?:(?:Die|Der|Das)\s+)?(?:Artikel|Art\.|Anhang|Absätze?|Abs\.|Ziff\.|Ziffern?|Abschnitte?|Kapitel|Titel|Bestimmungen)\b/;
 const ERLASS_IM_SATZ = /\b[Dd]iese[rs]?\s+(?:Verordnung|Gesetz|Bundesgesetz|Beschluss|Reglement|Ordnung|Erlass)\b/;
@@ -258,7 +261,7 @@ export function hatWortlautHauptklausel(artikel: ArtikelSicht[]): boolean {
     const ss = saetze(a.text);
     const ohneRef = (s: string) => (REFERENDUM_ABSATZ.test(a.text) ? s.replace(VORBEHALT_ABSATZ, '') : s);
     const klauselMitVorbehalt = ss.some((s) => /\bin Kraft\b/.test(s) && VORBEHALT_AUSNAHME.test(ohneRef(s))
-      && (SUBJEKT_ERLASS.test(s) || /^Der Bundesrat /.test(s) || (/^Er\s/.test(s) && istInkrafttretensArtikel(a))));
+      && (SUBJEKT_ERLASS.test(s) || /^Der Bundesrat /.test(s)));
     return klauselMitVorbehalt || (istInkrafttretensArtikel(a) && ss.some(istTeilKlauselSatz));
   });
 }
@@ -401,43 +404,3 @@ export function inkrafttretenJson(map: Record<string, Inkrafttreten | Inkrafttre
   for (const key of Object.keys(map).sort()) sortiert[key] = map[key];
   return JSON.stringify(sortiert, null, 2) + '\n';
 }
-
-// ─── CLI ─────────────────────────────────────────────────────────────────────
-
-function heute(): string {
-  const j = new Date();
-  return `${j.getFullYear()}-${String(j.getMonth() + 1).padStart(2, '0')}-${String(j.getDate()).padStart(2, '0')}`;
-}
-
-async function main() {
-  const erlasse = (JSON.parse(readFileSync(REGISTER_JSON, 'utf8')) as { erlasse: ErlassBasis[] }).erlasse;
-  const bund = erlasse.filter((e) => e.status === 'snapshot' && e.quelleUrl && e.ebene === 'bund' && e.sr);
-
-  const { map, ohne } = await bundInkrafttreten(bund, fetch);
-  const staffel = await bundStaffelung(bund, map, fetch);
-  const eintraege = inkraftEintraege(bund, map, staffel);
-  writeFileSync(INKRAFT_JSON, inkrafttretenJson(eintraege), 'utf8');
-  console.log(`Bund: ${Object.keys(map).length}/${bund.length} Ur-Inkrafttreten; ${ohne.length} ohne/mehrdeutig: ${ohne.join(', ') || '—'}`);
-  const gest = Object.entries(staffel).filter(([, v]) => v.gestaffelt);
-  console.log(`Gestaffelt: ${gest.length}/${bund.length}`);
-  for (const [k, v] of gest) console.log(`  ${k}: ${v.gestaffeltGrund.join(', ')}${v.teilDaten ? ` [${v.teilDaten.join(' ')}]` : ''}`);
-  console.log(`Kanton: bewusst 0 (LexWork trägt kein strukturelles Ur-Inkrafttreten, §8).`);
-  console.log(`\n${Object.keys(eintraege).length} Einträge → public/normtext/inkrafttreten.json (Lauf ${heute()}).`);
-  console.log('Nachlauf: `npm run normtext:register` (Projektion → register.json), `npm run datenhaltung:manifest`.');
-}
-
-/**
- * Läuft NUR, wenn dieses Skript selbst der aufgerufene Einstieg ist (`npm run
- * gen:inkrafttreten` = `vite-node scripts/normtext/inkrafttreten-generieren.ts`).
- * `process.argv[1]` ist unter vite-node das vite-node-Binary, das Skript steht als
- * eigenes argv-Element (argv[2]) — darum Pfadvergleich über ALLE argv-Elemente.
- * Der frühere Schutz nur über `!process.env.VITEST` liess jeden anderen Import
- * (Hilfsskript, vite-node-Probe) den Netzlauf starten und die Sidecar-Datei
- * überschreiben (reproduziert 2.10.2026 beim Import aus einem Scratch-Skript).
- */
-export function istHauptmodul(argv: string[] = process.argv, modulUrl: string = import.meta.url): boolean {
-  const selbst = fileURLToPath(modulUrl);
-  return argv.slice(1).some((a) => { try { return resolve(a) === selbst; } catch { return false; } });
-}
-
-if (!process.env.VITEST && istHauptmodul()) void main();

@@ -26,8 +26,14 @@
   "AIG": {
     "datum": "2008-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2008-01-01",
+      "2008-12-12"
+    ]
   },
   "AKKBV": {
     "datum": "1996-07-01",
@@ -118,8 +124,15 @@
   "ATSG": {
     "datum": "2003-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
+      "wortlaut-hauptklausel"
+    ],
+    "teilDaten": [
+      "2001-03-01",
+      "2003-01-01"
+    ]
   },
   "ATSV": {
     "datum": "2003-01-01",
@@ -130,14 +143,26 @@
   "AVG": {
     "datum": "1991-07-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1991-07-01",
+      "1992-01-01"
+    ]
   },
   "AVIG": {
     "datum": "1983-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1983-01-01",
+      "1984-01-01"
+    ]
   },
   "AVIV": {
     "datum": "1984-01-01",
@@ -180,8 +205,14 @@
   "BEG": {
     "datum": "2009-10-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2009-10-01",
+      "2010-01-01"
+    ]
   },
   "BETMG": {
     "datum": "1952-06-01",
@@ -218,8 +249,14 @@
   "BGBM": {
     "datum": "1996-07-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1996-07-01",
+      "1998-07-01"
+    ]
   },
   "BGERR": {
     "datum": "2007-01-01",
@@ -230,8 +267,10 @@
   "BGFA": {
     "datum": "2002-06-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "BGG": {
     "datum": "2007-01-01",
@@ -272,8 +311,15 @@
   "BPG": {
     "datum": "2001-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
+      "wortlaut-hauptklausel"
+    ],
+    "teilDaten": [
+      "2001-01-01",
+      "2002-01-01"
+    ]
   },
   "BPR": {
     "datum": "1978-07-01",
@@ -308,8 +354,17 @@
   "BVG": {
     "datum": "1985-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1983-07-01",
+      "1984-01-01",
+      "1984-07-01",
+      "1985-01-01",
+      "1987-01-01"
+    ]
   },
   "BVV3": {
     "datum": "1987-01-01",
@@ -437,8 +492,14 @@
   "ENTSG": {
     "datum": "2003-06-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2003-06-01",
+      "2004-06-01"
+    ]
   },
   "EOEBV": {
     "datum": "2018-02-01",
@@ -483,7 +544,13 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "fedlex-inkrafttretensdatum",
+      "wortlaut-hauptklausel"
+    ],
+    "teilDaten": [
+      "2007-03-01",
+      "2009-01-01"
     ]
   },
   "FAMZV": {
@@ -527,7 +594,12 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
       "wortlaut-hauptklausel"
+    ],
+    "teilDaten": [
+      "2016-01-01",
+      "2017-08-01"
     ]
   },
   "FINFRAV": {
@@ -545,8 +617,10 @@
   "FINIG": {
     "datum": "2020-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "wortlaut-hauptklausel"
+    ]
   },
   "FINIV": {
     "datum": "2020-01-01",
@@ -559,7 +633,12 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2008-02-01",
+      "2009-01-01"
     ]
   },
   "FINMA_GEBV": {
@@ -571,14 +650,27 @@
   "FMG": {
     "datum": "1997-10-20",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1997-10-20",
+      "1998-01-01"
+    ]
   },
   "FUSG": {
     "datum": "2004-07-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
+      "wortlaut-hauptklausel"
+    ],
+    "teilDaten": [
+      "2004-07-01",
+      "2009-07-01"
+    ]
   },
   "FZA": {
     "datum": "2002-06-01",
@@ -687,7 +779,12 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2001-10-01",
+      "2002-01-01"
     ]
   },
   "HREGV": {
@@ -735,8 +832,14 @@
   "IVG": {
     "datum": "1959-10-15",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1959-10-15",
+      "1960-01-01"
+    ]
   },
   "IVV": {
     "datum": "1961-01-01",
@@ -765,14 +868,26 @@
   "KG": {
     "datum": "1996-02-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1996-02-01",
+      "1996-07-01"
+    ]
   },
   "KKG": {
     "datum": "2003-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "2003-01-01",
+      "2004-01-01"
+    ]
   },
   "KKV": {
     "datum": "2007-01-01",
@@ -809,7 +924,12 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
       "fussnote-inkraftsetzungs-v"
+    ],
+    "teilDaten": [
+      "1995-06-01",
+      "1996-01-01"
     ]
   },
   "KVV": {
@@ -859,8 +979,14 @@
   "MG": {
     "datum": "1996-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1995-07-01",
+      "1996-01-01"
+    ]
   },
   "MONTREAL": {
     "datum": "2005-09-05",
@@ -871,8 +997,14 @@
   "MSCHG": {
     "datum": "1993-04-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1993-04-01",
+      "1994-01-01"
+    ]
   },
   "MSCHV": {
     "datum": "1993-04-01",
@@ -956,7 +1088,8 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "wortlaut-hauptklausel"
     ]
   },
   "PARTG": {
@@ -970,8 +1103,14 @@
   "PATG": {
     "datum": "1956-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1956-01-01",
+      "1959-10-01"
+    ]
   },
   "PATV": {
     "datum": "1978-01-01",
@@ -1061,7 +1200,8 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "wortlaut-hauptklausel"
     ]
   },
   "SKV": {
@@ -1097,8 +1237,14 @@
   "STG": {
     "datum": "1974-07-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1974-07-01",
+      "1975-01-01"
+    ]
   },
   "STGB": {
     "datum": "1942-01-01",
@@ -1125,7 +1271,16 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
-      "fedlex-zeitleiste"
+      "fedlex-zeitleiste",
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1959-10-01",
+      "1960-01-01",
+      "1960-11-01",
+      "1960-12-01",
+      "1963-01-01",
+      "1967-03-01"
     ]
   },
   "TGBV": {
@@ -1175,8 +1330,14 @@
   "URG": {
     "datum": "1993-07-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1993-07-01",
+      "1994-01-01"
+    ]
   },
   "URV": {
     "datum": "1993-07-01",
@@ -1195,7 +1356,12 @@
     "quelle": "fedlex",
     "gestaffelt": true,
     "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum",
       "fussnote-inkraftsetzungs-v"
+    ],
+    "teilDaten": [
+      "1982-10-01",
+      "1984-01-01"
     ]
   },
   "UVPV": {
@@ -1415,8 +1581,14 @@
   "WAG": {
     "datum": "1993-01-01",
     "quelle": "fedlex",
-    "gestaffelt": false,
-    "gestaffeltGrund": []
+    "gestaffelt": true,
+    "gestaffeltGrund": [
+      "fedlex-inkrafttretensdatum"
+    ],
+    "teilDaten": [
+      "1993-01-01",
+      "1994-01-01"
+    ]
   },
   "WAV": {
     "datum": "1993-01-01",
