@@ -94,7 +94,8 @@ describe('stelleVonReiter (DFG-F01: Stelle aus dem Label, Rückfall aus dem Toke
   });
   it('M13: Schlusstitel-Token zeigt die Artikel-Nr. samt Gruppe, nicht das Token', () => {
     expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u1_art_3' })).toMatchObject({ stelle: 'Art. 3', kern: 'SchlT ZGB' });
-    expect(stelleVonReiter({ path: '/gesetze/bund/zgb#art-disp_u1_art_31_32' })?.stelle).toBe('Art. 31–32');
-    expect(stelleVonReiter({ path: '/gesetze/bund/zgb#art-disp_u2_art_178' })?.stelle).toBe('Art. 178');
+    expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u1_art_31_32' })?.stelle).toBe('Art. 31–32');
+    // Andere Gruppe als der ZGB-Schlusstitel: ohne Einträge steht die Zitierweise nicht fest ⇒ keine Stelle.
+    expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u2_art_178' })?.stelle).toBe('');
   });
 });

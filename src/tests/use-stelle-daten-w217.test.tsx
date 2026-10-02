@@ -1,4 +1,4 @@
-import { act, createElement } from 'react';
+import { act, createElement, useEffect } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -46,7 +46,8 @@ const manifest = (...e: BrowseErlass[]): VerlaufManifeste => ({ gesetze: { erlas
 let root: Root | null = null;
 let ergebnis: VerlaufManifeste = {};
 function Sonde({ tabs, m }: { tabs: { path: string }[]; m: VerlaufManifeste }) {
-  ergebnis = useStelleDaten(tabs, m);
+  const r = useStelleDaten(tabs, m);
+  useEffect(() => { ergebnis = r; });
   return null;
 }
 async function rendere(tabs: { path: string }[], m: VerlaufManifeste) {
