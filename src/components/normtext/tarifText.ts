@@ -115,9 +115,14 @@ const MONAT =
 const JAHR = '(?:1[5-9]\\d\\d|20\\d\\d)';
 // Jede Regel hat zwei Gruppen: (Vorlauf, geschützter Lauf); der Vorlauf bleibt stehen.
 const GESCHUETZT: RegExp[] = [
+  // VOR den Jahres-Regeln: sie maskieren «2020» und nähmen der Regel «Jahr/Nummer» den Anker.
+  new RegExp('(\\d{4}/)(\\d{4,})(?!\\d)', 'g'), // (EU) 2020/1812 — Nummer des Rechtsakts nach «Jahr/»
+  new RegExp('(\\bNr\\.\\s*)(\\d{4,})(?!\\d)', 'g'), // Nr. 12345
+  new RegExp('(\\b(?:ISO|IEC|DIN|EN|Norm)(?:\\s+Norm)?\\s+)(\\d{4,})(?!\\d)', 'g'), // ISO Norm 9362:2014 — Normnummer
+  new RegExp('(:)(\\d{4,})(?!\\d)', 'g'), // …:2014 — Jahr/Teil einer Normnummer
   new RegExp(`(\\d{1,2}\\.\\d{1,2}\\.)(${JAHR})(?!\\d)`, 'g'), // 31.01.2022
   new RegExp(`((?:^|[^\\p{L}])${MONAT}\\.?\\s+)(${JAHR})(?!\\d)`, 'giu'), // 8. März 1960 · 5 octobre 1961
-  new RegExp(`()(${JAHR})(?=/\\d)`, 'g'), // 2003/37/EG
+  new RegExp(`()(${JAHR})(?=/[\\d\\ue000-\\ue009])`, 'g'), // 2003/37/EG (auch wenn die Nummer dahinter schon maskiert ist)
   new RegExp(`(\\d/)(${JAHR})(?!\\d)`, 'g'), // Nr. 167/2013
   new RegExp('(\\d,)(\\d{4,})', 'g'), // 0,192963 % — Nachkommastellen werden nie gruppiert
 ];
@@ -149,4 +154,29 @@ export const KENNZAHL_TITEL = /(?:^|\s)(?:code|codice|nr\.?|nummer|numéro|numer
  *  Kurzwörter («bis 1 000», «über 10 000 bis 100 000», «8. März 1960»), die nie
  *  mitten im Wert brechen (§N-4a). Reine Darstellung — kein Zellwortlaut ändert sich. */
 const PROSA_AB = 24;
-export const istProsaZelle = (zelle: string): boolean => zelle.trim().length >= PROSA_AB;
+// Bereichs- und Betragsmuster («über 160 000 bis 300 000», «Fr. 1 Mio.»): nur Zahlen,
+// Trenner und die Bereichswörter — auch lang nie Prosa (Gegenprüfung #1279: ZH-215.3 § 4
+// brach «300 ⏎ 000», BE-168.811 § 5 ebenso).
+const BEREICHS_MUSTER = /^(?:(?:über|bis|ab|unter|von|und|mehr als|Fr\.|Franken|CHF|Mio\.|Mia\.)\s*|[\d'’ \u00a0\u202f.,–\-%/]+)+$/iu;
+export const istProsaZelle = (zelle: string): boolean => {
+  const t = zelle.trim();
+  return t.length >= PROSA_AB && !BEREICHS_MUSTER.test(t);
+};
+
+/** Zerlegt eine Zelle in Stücke; Zifferngruppen mit Leerzeichen als Tausendertrenner
+ *  («1 000», «Fr. 1 000 000») sind `nowrap` und brechen nie mitten in der Zahl. Der
+ *  Wortlaut bleibt Zeichen für Zeichen derselbe (`stücke.join('') === zelle`) — es
+ *  ändert sich nur die Umbruch-Eigenschaft, nicht der Text für Suche und Kopieren. */
+const ZIFFERNGRUPPE = /(?:Fr\.[ \u00a0])?\d{1,3}(?:[ \u00a0]\d{3})+(?!\d)/g;
+export function teileNachZifferngruppen(text: string): { t: string; nowrap: boolean }[] {
+  const out: { t: string; nowrap: boolean }[] = [];
+  let pos = 0;
+  for (const m of text.matchAll(ZIFFERNGRUPPE)) {
+    const i = m.index ?? 0;
+    if (i > pos) out.push({ t: text.slice(pos, i), nowrap: false });
+    out.push({ t: m[0], nowrap: true });
+    pos = i + m[0].length;
+  }
+  if (pos < text.length) out.push({ t: text.slice(pos), nowrap: false });
+  return out;
+}

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { ArtikelBody } from '../components/normtext/ArtikelBody';
-import { istProsaZelle } from '../components/normtext/tarifText';
+import { gruppiereZelle, istProsaZelle, teileNachZifferngruppen } from '../components/normtext/tarifText';
 import type { NormSnapshot } from '../lib/normtext/typen';
 
 // W2·17-UI-BEFUNDE DFG-D01/D02 (2.10.2026): Prosa-Zellen brechen um, Zahlen,
@@ -20,6 +20,46 @@ describe('Prosa-Schwelle', () => {
   });
 });
 
+describe('Bereichs-/Betragsmuster sind nie Prosa, auch wenn sie lang sind (Gegenprüfung #1279)', () => {
+  it('«über 160 000 bis 300 000» (24 Zeichen) und «über 300 000 bis 1 Mio.» bleiben einzeilig', () => {
+    for (const z of ['über 160 000 bis 300 000', 'über 100 000 bis 300 000', 'über 300 000 bis 1 Mio.', 'Fr. 1 000 bis Fr. 300 000'])
+      expect(istProsaZelle(z), z).toBe(false);
+  });
+  it('ein Satz mit Zahlen bleibt Prosa', () => {
+    expect(istProsaZelle('zuzügl. 3,5% des Fr. 160 000 übersteigenden Streitwertes')).toBe(true);
+  });
+});
+
+describe('Zifferngruppen sind untrennbar, der Text bleibt gleich', () => {
+  it('«Fr. 1 000» und «300 000» sind nowrap-Stücke, der Rest nicht', () => {
+    const t = teileNachZifferngruppen('zuzügl. 20% des Fr. 1 000 übersteigenden Streitwertes, bis 300 000.');
+    expect(t.filter((x) => x.nowrap).map((x) => x.t)).toEqual(['Fr. 1 000', '300 000']);
+    expect(t.map((x) => x.t).join('')).toBe('zuzügl. 20% des Fr. 1 000 übersteigenden Streitwertes, bis 300 000.');
+  });
+  it('keine Gruppe in «2020/1812», «12 3456» (kein Dreier) oder einzelnen Zahlen', () => {
+    expect(teileNachZifferngruppen('(EU) 2020/1812 und 5 Jahre').every((x) => !x.nowrap)).toBe(true);
+    expect(teileNachZifferngruppen('12 3456').every((x) => !x.nowrap)).toBe(true);
+  });
+  it('gerenderte Zelle: nowrap-Span, textContent byte-gleich', () => {
+    const z = 'zuzügl. 20% des Fr. 1 000 übersteigenden Streitwertes';
+    const out = render({ spalten: [{ typ: 'text', titel: 'A' }, { typ: 'text', titel: 'B' }], zeilen: [['x', z]] });
+    expect(out).toContain('<span class="whitespace-nowrap">Fr. 1 000</span>');
+    expect(out.replace(/<[^>]*>/g, '')).toContain(z);
+  });
+});
+
+describe('Nummern werden nie mit Tausender-Apostroph versehen (VTS «(EU) 2020/1\'812»)', () => {
+  it('Rechtsakt-, Nr.- und ISO-Normnummern bleiben', () => {
+    expect(gruppiereZelle('Durchführungsverordnung (EU) 2020/1812 der Kommission')).toBe('Durchführungsverordnung (EU) 2020/1812 der Kommission');
+    expect(gruppiereZelle('Nr. 12345')).toBe('Nr. 12345');
+    expect(gruppiereZelle('nach ISO Norm 9362:2014')).toBe('nach ISO Norm 9362:2014');
+  });
+  it('Beträge werden weiter gruppiert', () => {
+    expect(gruppiereZelle('Fr. 1 000 bis 300 000')).toBe("Fr. 1'000 bis 300'000");
+    expect(gruppiereZelle('Betrag 12345 Franken')).toBe("Betrag 12'345 Franken");
+  });
+});
+
 describe('kanonische Tabelle: Textspalte bricht um (DFG-D02)', () => {
   const out = render({
     spalten: [{ typ: 'text', titel: 'Streitwert' }, { typ: 'betrag', titel: 'Gebühr' }, { typ: 'text', titel: '' }],
@@ -33,7 +73,7 @@ describe('kanonische Tabelle: Textspalte bricht um (DFG-D02)', () => {
   });
   it('Prosa-Zelle: Wortumbruch statt nowrap; Kurzzelle und Betrag: nowrap', () => {
     // Reihenfolge: 3 Kopfzellen, dann die 3 Zellen der Zeile.
-    expect(k[5]).toContain('lc-wortumbruch');
+    expect(k[5]).toContain('lc-zelltext');
     expect(k[5]).not.toContain('whitespace-nowrap');
     expect(k[3]).toContain('whitespace-nowrap');
     expect(k[4]).toContain('whitespace-nowrap');
@@ -54,9 +94,9 @@ describe('Legacy-Tabelle: Prosa in Spalte 2+ bricht um, leere Auffüll-Spalten s
 
   it('Prosa-Zelle in Spalte 2 bricht um, Betrag in Spalte 3 nicht', () => {
     // Kopf: k[0..2]; Zeile b.: k[3..5]; Zeile c.: k[6..8]
-    expect(k[4]).toContain('lc-wortumbruch');
+    expect(k[4]).toContain('lc-zelltext');
     expect(k[4]).not.toContain('whitespace-nowrap');
-    expect(k[7]).toContain('lc-wortumbruch');
+    expect(k[7]).toContain('lc-zelltext');
     expect(k[5]).toContain('whitespace-nowrap');
     expect(k[8]).toContain('whitespace-nowrap');
   });

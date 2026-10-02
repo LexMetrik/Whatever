@@ -62,7 +62,8 @@ async function pdfText(page: Page): Promise<string> {
  *  Die Reihenfolge verhindert den Teilstring-Treffer («8.–» in «18.–»). */
 function fehlendeZellen(pdf: string, zellen: string[], ab: string): string[] {
   // Tausender-Apostroph ist Anzeige (`gruppiereZelle`): «1 000» steht als «1'000» im Druck.
-  const kompakt = (s: string) => s.replace(/[\s'\u2019]+/g, '')
+  // Bindestrich-Varianten (U+2010–2015, U+2212) und Soft-Hyphen: pdfjs liefert sie als «-» bzw. gar nicht.
+      const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\s'\u2019\u00ad]+/g, '')
   const text = kompakt(pdf)
   let pos = text.indexOf(kompakt(ab))
   if (pos < 0) return [`(Tabellenanfang «${ab}» fehlt im PDF)`]
@@ -135,6 +136,108 @@ test.describe('W2·17 · Druck (page.pdf, A4) verliert keinen Rechtsinhalt', () 
   })
 })
 
+test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig im PDF — oder der Ausdruck sagt, dass er kürzt', () => {
+  // Gegenprüfung #1279 (§1/§8): in diesen neun Erlassen ragten Tabellen im Hochformat über
+  // die Seite (FINFRAV-FINMA Anh. 1 0/8, VZV Anh. 3a 0/1, ERV Anh. 2 0/1, VVK 9/42, ZEMIS-V …).
+  // Jede Tabelle des Erlasses: alle Zellen in Quellreihenfolge im PDF-Text ODER eine gedruckte
+  // Zeile «Tabelle im Druck sehr klein und möglicherweise gekürzt – vollständig: <Link>» je unvollständiger Tabelle.
+  // BOEB/FIDLEV/SSV tragen ausserdem die `overflow-x-clip`-Regel (Kasten schnitt im Druck ab).
+  for (const erlass of ['BOEB', 'FIDLEV', 'SSV', 'FINFRAV', 'FINFRAV_FINMA', 'ERV', 'VVK', 'VZV', 'ZEMIS_V']) {
+    test(`${erlass}: jede Tabellenzelle steht im PDF oder der Kürzungs-Hinweis`, async ({ page }) => {
+      test.setTimeout(180_000)
+      await page.goto(`/gesetze/bund/${erlass}`)
+      await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
+      await page.evaluate(() => document.fonts?.ready)
+      const tabellen = await page.evaluate(() =>
+        [...document.querySelectorAll('[data-mehrspaltig]')].map((t) =>
+          [...t.querySelectorAll('[role="cell"],[role="columnheader"]')].map((c) => c.textContent ?? '').filter((x) => x.trim() !== '')),
+      )
+      expect(tabellen.length, 'Positiv-Sonde: der Erlass trägt Tabellen').toBeGreaterThan(0)
+      const buf = await page.pdf({ format: 'A4', preferCSSPageSize: true })
+      const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
+      const doc = await pdfjs.getDocument({ data: new Uint8Array(buf), useSystemFonts: true }).promise
+      const teile: string[] = []
+      for (let i = 1; i <= doc.numPages; i++) {
+        const tc = await (await doc.getPage(i)).getTextContent()
+        teile.push(tc.items.map((it) => ('str' in it ? it.str : '')).join(' '))
+      }
+      const text = teile.join(' ')
+      // Bindestrich-Varianten (U+2010–2015, U+2212) und Soft-Hyphen: pdfjs liefert sie als «-» bzw. gar nicht.
+      const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\s'\u2019\u00ad]+/g, '')
+      const flach = kompakt(text)
+      const hinweise = (text.match(/Tabelle im Druck sehr klein/g) ?? []).length
+      // Reihenfolge-unabhängig (Querformat-Seiten und Zoom ändern die Malreihenfolge): jede Zelle
+      // muss im PDF mindestens so oft vorkommen, wie sie in den Tabellen des Erlasses steht.
+      const vorkommen = (heu: string, nadel: string) => { let n = 0; for (let k = heu.indexOf(nadel); k >= 0; k = heu.indexOf(nadel, k + 1)) n++; return n }
+      const sollAnzahl = new Map<string, number>()
+      for (const zellen of tabellen) for (const z of zellen) sollAnzahl.set(kompakt(z), (sollAnzahl.get(kompakt(z)) ?? 0) + 1)
+      const unvollstaendig: string[] = []
+      for (const [k, soll] of sollAnzahl) {
+        let ist = vorkommen(flach, k)
+        // Eine Zelle, die der Seitenumbruch teilt, steht im PDF-Text in zwei Stücken mit den
+        // Nachbarzellen dazwischen: dann gilt sie als gedruckt, wenn ihre 12-Zeichen-Stücke
+        // bis auf EIN Stück (die Bruchstelle) vorkommen. Eine abgeschnittene Zelle verliert
+        // dagegen ihr ganzes Ende.
+        if (ist < soll && soll === 1 && k.length > 24) {
+          const stuecke = k.match(/.{1,12}/g) ?? []
+          if (stuecke.filter((x) => !flach.includes(x)).length <= 1) ist = soll
+        }
+        if (ist < soll) unvollstaendig.push(`«${k.slice(0, 30)}» ${ist}/${soll}`)
+      }
+      console.log(`${erlass}: ${tabellen.length} Tabellen, ${unvollstaendig.length} Zelltexte zu selten, ${hinweise} Kürzungs-Hinweise, ${doc.numPages} Seiten`)
+      expect(hinweise > 0 ? [] : unvollstaendig, 'Zellen fehlen im PDF und kein Kürzungs-Hinweis steht da').toEqual([])
+    })
+  }
+})
+
+test.describe('W2·17 · Zahlen und Wörter in Tabellenzellen reissen nie auseinander', () => {
+  // Gegenprüfung #1279 (§1): «über 160 000 bis 300 ⏎ 000» (ZH-215.3 § 4, BE-168.811 Art. 5,
+  // 375 px und Druck), «Fr. 1 ⏎ 000» (ZH-211.11 § 4 @1440) und «übers⏎teigend⏎en» (@375).
+  // Zeichen-Rect-Sonde: jede Zifferngruppe mit Leerzeichen und jedes Wort ab 9 Buchstaben muss
+  // auf EINER Zeile stehen (alle Textrechtecke der Zeichenfolge haben dieselbe Oberkante).
+  const FAELLE = [
+    ['ZH-215.3 § 4', '/gesetze/kanton/ZH-215.3', 'art-4'],
+    ['BE-168.811 Art. 5', '/gesetze/kanton/BE-168.811', 'art-5'],
+    ['ZH-211.11 § 4', '/gesetze/kanton/ZH-211.11', 'art-4'],
+  ] as const
+  for (const [name, url, anker] of FAELLE) {
+    for (const [modus, breite] of [['Bildschirm', 375], ['Bildschirm', 1440], ['Druck', 673]] as const) {
+      test(`${name} · ${modus} @${breite}`, async ({ page }) => {
+        await page.setViewportSize({ width: breite, height: 900 })
+        await page.goto(`${url}#${anker}`)
+        await expect(page.locator(`#${anker} [data-mehrspaltig]`).first()).toBeAttached({ timeout: 20_000 })
+        await page.evaluate(() => document.fonts?.ready)
+        if (modus === 'Druck') await page.emulateMedia({ media: 'print' })
+        const m = await page.evaluate((id) => {
+          const gerissen: string[] = []
+          let geprueft = 0
+          for (const c of document.querySelectorAll(`#${id} [data-mehrspaltig] [role="cell"]`)) {
+            const knoten: { n: Text; start: number }[] = []
+            const w = document.createTreeWalker(c, NodeFilter.SHOW_TEXT)
+            let text = ''
+            for (let n = w.nextNode() as Text | null; n; n = w.nextNode() as Text | null) { knoten.push({ n, start: text.length }); text += n.data }
+            const ort = (off: number): [Text, number] => {
+              for (let i = knoten.length - 1; i >= 0; i--) if (knoten[i].start <= off) return [knoten[i].n, off - knoten[i].start]
+              return [knoten[0].n, 0]
+            }
+            for (const t of text.matchAll(/\d{1,3}(?:[  ]\d{3})+(?!\d)|[A-Za-zÄÖÜäöüß]{9,}/g)) {
+              const r = document.createRange()
+              const [a, ao] = ort(t.index ?? 0)
+              const [e, eo] = ort((t.index ?? 0) + t[0].length - 1)
+              r.setStart(a, ao); r.setEnd(e, eo + 1)
+              geprueft++
+              if (new Set([...r.getClientRects()].map((x) => Math.round(x.top))).size > 1) gerissen.push(t[0])
+            }
+          }
+          return { gerissen, geprueft }
+        }, anker)
+        expect(m.geprueft, 'Positiv-Sonde: Zifferngruppen/Wörter geprüft').toBeGreaterThan(10)
+        expect(m.gerissen, `Zahl bzw. Wort mitten im Wert umgebrochen (${modus} @${breite})`).toEqual([])
+      })
+    }
+  }
+})
+
 test.describe('W2·17 · Druck: Tabellen bleiben in der Satzspiegel-Breite', () => {
   // A4 (794 px) abzüglich `@page { margin: 1.6cm }` beidseitig = 673 px. Gemessen wird der
   // Überstand jeder Zelle über die Kastenkante. Vorher (Build 9bb82d7de, Unclip allein)
@@ -171,7 +274,7 @@ test.describe('W2·17 · Tabellen am Bildschirm: Prosa bricht um, Beträge bleib
   const BREITEN = [375, 1024, 1440, 1920]
   for (const scheme of ['light', 'dark'] as const) {
     for (const b of BREITEN) {
-      test(`D01/D02 @${b} ${scheme}: Tabellen passen in die Spalte (ab 1440), Seite läuft nie quer`, async ({ page }) => {
+      test(`D01/D02 @${b} ${scheme}: Tabellen brechen um, Seite läuft nie quer`, async ({ page }) => {
         await page.emulateMedia({ colorScheme: scheme })
         await page.setViewportSize({ width: b, height: 900 })
         const messe = async (url: string, kennwort: string) => {
@@ -194,14 +297,15 @@ test.describe('W2·17 · Tabellen am Bildschirm: Prosa bricht um, Beträge bleib
         for (const [url, kw] of [[`${ERLASS_GEBV}#art-37`, 'Restschuld'], [`${ERLASS_ZH}#art-4`, 'Grundgebühr']] as const) {
           const m = await messe(url, kw)
           expect(m.seite, `${kw}: die Seite läuft @${b} quer`).toBeLessThanOrEqual(0)
-          if (b >= 1440) {
+          if (kw === 'Grundgebühr' && b >= 1440) {
             expect(m.sw, `${kw} @${b}: Tabelle ${m.sw} px in ${m.cw} px — Gebühren liegen ${Math.round(m.rechts)} px ausserhalb`)
               .toBeLessThanOrEqual(m.cw + 1)
           } else {
-            // @375/@1024: darf im eigenen Container scrollen (Art. 37 ≈ 591 px nötig,
-            // @1024 sind 574 frei), aber nicht mehr 2.6 Kastenbreiten breit sein (vorher 1549 px).
-            expect(m.sw, `${kw} @${b}: ${m.sw} px bei ${m.cw} px Kasten`).toBeLessThan(2.1 * m.cw)
-            expect(m.rechts, `${kw} @${b}: letzte Zelle ${Math.round(m.rechts)} px ausserhalb`).toBeLessThan(350)
+            // GebV SchKG Art. 37 braucht ohne Silbentrennung 675 px (längstes Wort «Eigentumsvorbehaltes:»
+            // = 165 px) und scrollt in 574–603 px im eigenen Container; ZH § 4 scrollt @375/@1024 wenig.
+            // Vorher 1549 px bzw. 1077 px, die Gebühren 945 px ausserhalb.
+            expect(m.sw, `${kw} @${b}: ${m.sw} px bei ${m.cw} px Kasten`).toBeLessThan(Math.max(2.4 * m.cw, 700))
+            expect(m.rechts, `${kw} @${b}: letzte Zelle ${Math.round(m.rechts)} px ausserhalb`).toBeLessThan(450)
           }
         }
       })

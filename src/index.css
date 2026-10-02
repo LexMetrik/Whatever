@@ -2152,9 +2152,30 @@
        Spaltenkante ab (GebV SchKG Art. 37: letzte Spalte «6 Promille …» nur noch
        als «P», «25.–» fehlte; Seitenkante bei 596 pt, Spalte endete bei ~535 pt). */
     [class*='overflow-x-clip'] { overflow: visible !important; }
-    [data-mehrspaltig] { max-width: 100%; zoom: .8; }
+    [data-mehrspaltig] { max-width: 100%; }
+    /* `zoom` sitzt am Tabellenkörper, nicht am Kasten: am Kasten würde es auch dessen
+       Breite und den Ausbruch (`data-breit`) mitskalieren. */
+    [data-mehrspaltig] > [role='table'] { zoom: var(--druck-zoom, .8); }
     [data-mehrspaltig] [role='cell'], [data-mehrspaltig] [role='columnheader'] { min-width: 0 !important; hyphens: manual; }
-    [data-mehrspaltig] .lc-wortumbruch { overflow-wrap: anywhere; }
+    /* Prosa bricht nur zwischen Wörtern; ein Wort reisst nie (Gegenprüfung #1279,
+       ZH-211.11 § 4: «übers⏎teigend⏎en»). Reicht die Breite nicht, entscheidet
+       `tabellenDruck.ts` (Querformat, kleinere Schrift, Hinweiszeile) — nicht der Umbruch. */
+    [data-mehrspaltig] .lc-wortumbruch { overflow-wrap: break-word; }
+    /* Breite Tabellen (`data-breit`, gesetzt von `tabellenDruck.ts` bei `beforeprint`)
+       stehen auf einer Querformat-Seite über die volle Satzspiegelbreite
+       (A4 quer 29.7 cm − 2 × 1.6 cm = 26.5 cm), aus der zentrierten Lesespalte
+       ausgebrochen. Genutzt werden 23 cm: gemessen am PDF (A4 quer, FINFRAV Anh. 1)
+       sitzt die Lesespalte ~12 pt rechts der Seitenmitte und das Papier schneidet bei
+       ~776 pt statt 797 pt — 24.5 cm und 26.5 cm schnitten die letzte Spalte
+       («Zusätzliche Ausführungen») ab. Lesespalte ausgebrochen. */
+    @page breit { size: A4 landscape; margin: 1.6cm; }
+    [data-mehrspaltig][data-breit] { page: breit; width: 23cm; max-width: none; margin-left: calc(50% - 11.5cm); }
+    /* Bleibt trotz Querformat und kleinster Schrift etwas abgeschnitten, sagt der
+       Ausdruck es (§8: Unsicherheit offenlegen, nie still kürzen). */
+    [data-mehrspaltig][data-gekuerzt]::before {
+      content: 'Tabelle im Druck sehr klein und möglicherweise gekürzt – vollständig: ' attr(data-permalink);
+      display: block; padding: .25em .5em; border-bottom: 1px solid currentColor; overflow-wrap: anywhere;
+    }
     [data-mehrspaltig] [role='table'] { max-width: 100%; }
 
     /* Fundstelle mitdrucken: absolute Quell-URLs (Fedlex-ELI, amtliches PDF,
@@ -3007,21 +3028,36 @@
     overflow-wrap: break-word;
   }
 
+  /* ─── `lc-zelltext` · FLIESSTEXT IN TABELLENZELLEN: ZWISCHEN WÖRTERN BRECHEN (W2·17) ──
+     Gegenprüfung #1279 (§1): mit `lc-wortumbruch` (`hyphens: auto`) zählte die
+     Silbentrennung in die Mindestbreite der Spalte — Chromium schrumpfte die
+     Textspalte bis auf Silbenbreite und trennte «übersteigenden» (ZH-211.11 § 4 auch
+     @1440), @375 fiel das Wort in Stücke. Die Zelle bricht jetzt NUR zwischen Wörtern;
+     die Spalte schrumpft bis zum längsten Wort, nie hinein. Reicht die Breite nicht,
+     scrollt die Tabelle (Bildschirm) bzw. skaliert `tabellenDruck.ts` (Druck).
+     `break-word` bleibt als Garant für ein Wort, das breiter ist als die Spalte
+     (URL, Aktenzeichen). Die Beschriftungsspalte (Spalte 1, B11) behält
+     `lc-wortumbruch`: dort ist die Trennung die gewollte Notbremse. */
+  .lc-zelltext { overflow-wrap: break-word; }
+
   /* ─── `lc-zitiermarke` · EINE MARKE BRICHT NIE (W2·17 DFG-D03, 2.10.2026) ─────
      Die Zitiermarke vor einem Absatz oder einer Litera («1», «a.», aber auch
      «1quinquies», «2quater») ist ein Etikett, kein Fliesstext. Sie erbt vom Absatz
      `overflow-wrap: anywhere` und stand in einem festen 36-px-Kasten (`w-9`):
      «1quinquies» zerfiel zu «1qui / nqui / es» auf drei Zeilen (RPG Art. 5, 16
      Absätze im Bund), und die Marke stand nicht mehr auf der Grundlinie der
-     ersten Textzeile. Jetzt: kein Umbruch in der Marke, die Breite wächst auf die
-     Marke (`min-width: max-content` — ein Utility-`w-9` bleibt Untergrenze, weil
+     ersten Textzeile. Jetzt: die Breite wächst auf die Marke, damit gibt es keinen Umbruch
+     (`min-width: max-content` — ein Utility-`w-9` bleibt Untergrenze, weil
      es `width` setzt, nicht `min-width`), der Text dahinter rückt um den
      Überschuss nach rechts («hängend, nie überlappend»). Der Absatz-Kasten `w-9`
      bekommt innen 4 px Luft, damit die lange Marke den Text nicht berührt
      (gemessen OR Art. 928a «2quater»: vorher 3 px Abstand). Der Aufrufer
      (`ArtikelBody.tsx:676`) bleibt unberührt — eine Marken-Klasse am Aufruf wäre
-     sauberer, die Datei ist aber bis zum Landen von #1251 gesperrt. */
-  .lc-zitiermarke { white-space: nowrap; overflow-wrap: normal; min-width: max-content; }
+     sauberer, die Datei ist aber bis zum Landen von #1251 gesperrt.
+     Gegenprüfung #1279 (§6.7): `white-space: nowrap; overflow-wrap: normal` standen
+     zuerst mit in der Regel; ohne beide blieb der Test grün — gestrichen, weil
+     `min-width: max-content` allein den Umbruch verhindert. */
+  .lc-zitiermarke { min-width: max-content; }
   .lc-zitiermarke[class~='w-9'] { padding-inline-end: .25rem; }
 
   /* ─── `lc-scrollrand-x|y` · Scroll-Affordanz für JEDEN Scroller (B8, 31.8.2026) ─

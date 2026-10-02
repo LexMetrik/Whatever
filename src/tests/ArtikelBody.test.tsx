@@ -585,12 +585,12 @@ const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
  *  Hashes (Markup OHNE Klassen) sind unverändert — Text und Aufbau sind gleich. */
 const KERN_ERWARTET: Record<string, [string, string]> = {
   'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
-  'T-A Staffel-Spanne verdichtet (bereich)': ['b32a6038cf4e262dc18fa6d0ee62ce5577122db0675d37f9e803ee305856ef8c', 'ec2a8721ce88f5d6c910a387a13aff7057270edf91f752ce5560d3b97d2005f9'],
-  'T-B mehrspaltig, ≥3 Zahlspalten': ['e203a10a0bed5227851005ce320d0b43c20bc7bf1f85620d84a3fc78c02094b4', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
-  'T-C Einzel-Leerzelle bleibt (T-C7)': ['eb6f998eda2ced7f729c9576a64cfe925a542df0648567642cbcea225216110e', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
-  'T-D kopflos (T-D6)': ['9d3f04d30cdb2ec184ceefbbb983e48afc528dbbb2bd94e46166d8fea3ea47c8', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
-  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['cfb2af3dbe630cf617ef39e3bf45a9da85fb63a007e3a73398d4bf3ce7eb3b37', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
-  'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['ca2bd29a474e54aad5d045e48b6fb087dcc56184dc26be975a084c7cec69cc8c', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
+  'T-A Staffel-Spanne verdichtet (bereich)': ['c3ea45f14030a62c93909480d6846c7619934c9e01ef4941082f987c26e7ce4c', 'ec2a8721ce88f5d6c910a387a13aff7057270edf91f752ce5560d3b97d2005f9'],
+  'T-B mehrspaltig, ≥3 Zahlspalten': ['c55cd15c7390af3dba68455decdc80b1ea50ef18368938126eda96113399888b', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
+  'T-C Einzel-Leerzelle bleibt (T-C7)': ['19821352e368b4951759e9ad3690dd7bc063e6c0a983d09b240eff4ca652d72a', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
+  'T-D kopflos (T-D6)': ['6b6dcc9dd3f6a42568839a4c88c50bc10bfbc1529aefa647b854b97d5ca16860', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
+  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['e2615deff69be8c55a63b60769cd0a95c835cd461d4e3b5098ad6eff7d4d8407', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
+  'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['39877124098e7d44dddc02400e1e976d3fd1d218eda9def6417383344d20320c', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
   'T-B5 Kurzform tabelle (Kanton)': ['26e2d365456ec053e12c864353909d6fe04fdffa2e6ee94b94b41eb7f7273f5d', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
   'Formelbild (DBG Art. 22)': ['d1edd7bed07f768642ecc4d2f016c4d95ffb60318fe885a48d7ecf3206340fa8', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
   'aufgehoben (ganzer Artikel)': ['ccb9a533dab7cb8e116602b12048386d2e5421a81c30b26d0bf50ac621d194f8', '0bb7a81471bf6b806a44ee8102ca716f7053db3c43116dc6da5035acf455d79e'],
