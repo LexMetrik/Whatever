@@ -389,3 +389,134 @@ test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft
   const zone = await page.locator('[data-v3-such-zone]').evaluate((el) => Math.round(el.getBoundingClientRect().height))
   expect(zone, `Such-Zone @390 ${zone} px statt 68 px (SUCH_H_AKTIV)`).toBe(68)
 })
+
+// ═══ W2·17-UI-BEFUNDE · LANDKARTE: KLICK, LESEPOSITION, BLATT ═══════════════
+//
+// Drei Befunde der Gesamtprüfung, je am gebauten Stand im Browser belegt
+// (2.10.2026, `/gesetze/bund/OR` mit «Kündigung», 1440×900) und hier festgehalten.
+// ZUSAGEN (h)–(j) ergänzen (a)–(g) oben, sie ändern keine davon (§6.3).
+//
+//  (h) PE-B12-B01 · EIN KLICK IN DIE MITTE EINER MARKE FÜHRT ZU IHRER STELLE.
+//      Vorher sprang er zum Nachbarn: Art. 255 → 257d, 266g → 267, 318 → 320,
+//      704b → 706 (6 von 6 Proben). Die Marke wird mit Mindesthöhe gezeichnet,
+//      das Feld des Artikels ist viel kleiner — wer die gezeichnete Mitte traf,
+//      lag im Feld eines späteren Artikels. Gemessen wird an der Leseposition
+//      des Streifens selbst: nach dem Sprung muss sie auf der Höhe der
+//      angeklickten Marke stehen.
+//  (i) PE-B12-D02 · DIE LESEPOSITION IST SICHTBAR. Vorher: Fläche `--brass-200`
+//      auf `--well`, hell 1.1 : 1, dunkel 1.4 : 1, und 2.4 px hoch. WCAG 1.4.11
+//      verlangt 3 : 1 für Grafik, die zum Verstehen nötig ist.
+//  (j) PE-B12-D01 · MIT OFFENEM BLATT STEHT DIE LANDKARTE NICHT ÜBER DESSEN
+//      BEDIENELEMENTEN. Vorher lag sie (fixed, 48 px am Fensterrand) mit 24 px
+//      über «Erlass-Blatt schliessen» und mit 28 px über dem Reiter «Werkzeuge».
+//
+// ROT ZU BEKOMMEN (§6.7), alle am Bau gesehen:
+//  (h) in `components/leser/TrefferLandkarte.tsx` den Klick wieder über
+//      `feldBeiAnteil(spur, …)` allein auflösen ⇒ die Leseposition steht nach dem
+//      Klick am Nachbarn (Abstand 1–2.6 Einheiten statt 0).
+//  (i) in `components/leser/landkarteMasse.ts` `LESE_MIN` auf 4 setzen UND in
+//      `TrefferLandkarte.tsx` die Kontur (`stroke`) streichen ⇒ Kontrast 1.1 : 1.
+//  (j) die Bedingung, die den Streifen bei offenem Blatt wegnimmt, streichen ⇒
+//      der Treffer-Test am Schliessen-Knopf liefert den Streifen.
+
+/** Die y-Lage der Leseposition im Streifen (SVG-Einheiten), `null` solange sie fehlt. */
+async function leseY(page: Page): Promise<number | null> {
+  return page.locator('[data-treffer-landkarte] [data-landkarte-lese]').first()
+    .evaluate((el) => Number(el.getAttribute('y'))).catch(() => null)
+}
+
+test('(h) PE-B12-B01 · ein Klick in die Mitte einer Marke führt zu DIESER Marke, nicht zum Nachbarn', async ({ page }) => {
+  test.slow() // drei Sprünge durch das OR
+  await warteLeser(page)
+  await sucheUndLies(page)
+  const markenZahl = await page.locator(MARKEN).count()
+  expect(markenZahl, 'keine Marken — Vorbedingung fehlt (§6.7)').toBeGreaterThan(40)
+
+  // Eine frühe, eine mittlere und eine späte Marke. Gerade die kurzen Artikel
+  // trugen den Fehler: ihr Feld ist ein Bruchteil der gezeichneten Marke.
+  for (const i of [3, 25, 60]) {
+    const marke = page.locator(MARKEN).nth(i).locator('xpath=..')
+    const markeY = Number(await marke.getAttribute('y'))
+    const mitte = await marke.evaluate((el) => {
+      const r = el.getBoundingClientRect()
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 }
+    })
+    await page.mouse.click(mitte.x, mitte.y)
+    // Der Spy meldet den Artikel nach dem Scrollen; er ruht, sobald die Lage stimmt.
+    // Toleranz 0.05 Einheiten (= 0.03 px): derselbe Artikel hat DASSELBE `von`.
+    // Die Leseposition kann nach unten geklemmt sein (`leseRechteck`), die Marken
+    // der Proben liegen weit davon entfernt.
+    await expect.poll(async () => Math.abs(((await leseY(page)) ?? -1000) - markeY), {
+      timeout: 15000, message: `Marke ${i} (y=${markeY.toFixed(1)}): die Leseposition landete am Nachbarn`,
+    }).toBeLessThan(0.05)
+  }
+})
+
+async function leseKontrast(page: Page): Promise<{ hoehe: number; kontrast: number }> {
+  return page.evaluate(() => {
+    const k = document.querySelector('[data-treffer-landkarte]') as HTMLElement
+    const lese = k.querySelector('[data-landkarte-lese]') as SVGRectElement
+    const rgb = (s: string) => (s.match(/[\d.]+/g) ?? []).slice(0, 3).map(Number)
+    const lum = ([r, g, b]: number[]) => {
+      const f = (c: number) => { const x = c / 255; return x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4 }
+      return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+    }
+    const cs = getComputedStyle(lese)
+    const hg = rgb(getComputedStyle(k).backgroundColor)
+    const kontr = (v: string) => {
+      if (!v || v === 'none') return 0
+      const a = lum(rgb(v)); const b = lum(hg)
+      return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)
+    }
+    // Sichtbar ist die Leseposition über ihre Fläche ODER ihre Kontur — das bessere zählt.
+    return { hoehe: lese.getBoundingClientRect().height, kontrast: Math.max(kontr(cs.fill), kontr(cs.stroke)) }
+  })
+}
+
+for (const schema of ['light', 'dark'] as const) {
+  test(`(i) PE-B12-D02 · die Leseposition ist ${schema} sichtbar: ≥ 3 : 1 und ≥ 5 px hoch`, async ({ page }) => {
+    await page.emulateMedia({ colorScheme: schema })
+    await warteLeser(page)
+    await sucheUndLies(page)
+    await expect(page.locator('[data-treffer-landkarte] [data-landkarte-lese]')).toHaveCount(1, { timeout: 15000 })
+    const { hoehe, kontrast } = await leseKontrast(page)
+    expect(kontrast, `Leseposition ${schema}: Kontrast ${kontrast.toFixed(2)} : 1 (WCAG 1.4.11: 3 : 1)`).toBeGreaterThanOrEqual(3)
+    expect(hoehe, `Leseposition ${schema}: ${hoehe.toFixed(1)} px hoch`).toBeGreaterThanOrEqual(5)
+  })
+}
+
+test('(j) PE-B12-D01 · mit offenem Blatt deckt die Landkarte kein Bedienelement des Blatts', async ({ page }) => {
+  test.slow() // OR-Suche + Blatt: lokal gegen den Dev-Server gut 30 s
+  await warteLeser(page)
+  await sucheUndLies(page)
+  await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(1)
+
+  await page.locator('[data-v3-panel-zaehler]').first().click()
+  const blatt = page.locator('[data-v3-panel]')
+  await expect(blatt).toBeVisible({ timeout: 20000 })
+  const zu = page.getByRole('button', { name: 'Erlass-Blatt schliessen' })
+  await expect(zu).toBeVisible()
+
+  // Der TREFFER-Test entscheidet, nicht die Abwesenheit: gemessen wird, wer an der
+  // Stelle jedes Bedienelements des Blatts WIRKLICH oben liegt (`elementFromPoint`).
+  const verdeckt = await page.evaluate(() => {
+    const p = document.querySelector('[data-v3-panel]')!
+    const aus: string[] = []
+    for (const el of p.querySelectorAll('button, a[href], [role=tab], input, select')) {
+      const r = el.getBoundingClientRect()
+      if (r.width === 0 || r.height === 0 || r.right > innerWidth || r.bottom > innerHeight) continue
+      const oben = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)
+      if (oben && !el.contains(oben) && !oben.contains(el)) {
+        const name = el.getAttribute('aria-label') ?? el.textContent?.trim().slice(0, 24)
+        aus.push(`${name} ← ${oben.closest('[data-treffer-landkarte]') ? 'LANDKARTE' : oben.tagName}`)
+      }
+    }
+    return aus
+  })
+  expect(verdeckt, `Bedienelemente des Blatts unter der Landkarte: ${verdeckt.join(' | ')}`).toEqual([])
+
+  // Zu: die Landkarte kehrt zurück (Streifen und Suche bleiben, nur das Blatt war im Weg).
+  await zu.click()
+  await expect(blatt).toHaveCount(0)
+  await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(1)
+})
