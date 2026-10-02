@@ -65,8 +65,8 @@ test.describe('D30 · Bezüge-Zeile: was gezählt wird, wird auch gezeigt', () =
     await expect(page.locator('#art-336_c')).toBeVisible({ timeout: 20_000 });
     await page.waitForTimeout(1_500);
     expect(schwer, `schwere Shards ohne Aufklappen geladen: ${schwer.join(', ')}`).toEqual([]);
-    // Und im Lesekörper steht keine einzige Entscheid-Zeile (Pos. 12).
-    expect(await page.locator('#lc-lesespalte [data-bezug-gruppe]').count()).toBe(0);
+    // (Hier stand: im Lesekörper keine Entscheid-Zeile, `[data-bezug-gruppe]` = 0 — die
+    // Komponente ist am 2.10.2026 gelöscht, die Sonde konnte nicht mehr scheitern, §6.7.)
   });
 
   // §6.3-DEKLARATION (S6, 23.9.2026): die Rubrik `m` heisst seit dem Entscheid
