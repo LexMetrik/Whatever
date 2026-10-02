@@ -43,41 +43,20 @@ import {
   type Bezug, type BezugsShard, type KlassenZahlen,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import { bauePraedikate, kantonSchneidet, waehleBezuege, wirksameKantone } from './bezugAuswahl';
-import { baueJahresHistogramm, istBereichOffen, type Histogramm, type Zeitbereich } from './bezugZeit';
+import { bauePraedikate, waehleBezuege, wirksameKantone } from './bezugAuswahl';
+import { baueJahresHistogramm, type Histogramm, type Zeitbereich } from './bezugZeit';
 import { holeBezugKlassen, useBezugBis, useBezugKantone, useBezugKlassen, useBezugVon } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 
-/** Was ein Artikel-Fuss zum Rendern braucht (siehe `BezuegeZeile`). */
+/** Was ein Artikel an Bezügen führt (Kanten nach Facetten-Filter).
+ *
+ *  RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): bis dahin trug der Typ zusätzlich `gesamt`
+ *  (Kanten je Status ohne UI-Filter), `zeitAktiv` und `kantonAktiv` — Futter für
+ *  die Gruppenköpfe der `BezuegeZeile` («5 von 12 im Zeitraum», Gegenprüfung
+ *  Runde 2/J1). Mit der Komponente sind die drei Felder ohne Leser. */
 export interface ArtikelBezuege {
   /** Kanten NACH Facetten-Filter, in Shard-Ordnung. */
   kanten: Bezug[];
-  /** Kanten je Status an diesem Artikel OHNE UI-Filter — die Bezugsgrösse (§8).
-   *  AM ARTIKEL ist «Kante» = «Entscheid» (ein Dokument steht dort genau
-   *  einmal); der Unterschied entsteht erst beim Aufsummieren über einen ganzen
-   *  Erlass, siehe `KlassenZahlen` in bezuege.ts. */
-  gesamt: Partial<Record<BezugStatus, number>>;
-  /**
-   * Ist ein Zeitraum-Filter aktiv? B7: seit der Deckel weg ist, kann eine
-   * verkürzte Linie NUR noch von einem UI-Filter kommen — und dann soll am
-   * Gruppenkopf stehen, von welchem («12 von 30 im Zeitraum» statt bloss
-   * «12 von 30»). Ohne diese Auskunft läse sich die Verkürzung wie die
-   * Datenlage (§8).
-   */
-  zeitAktiv: boolean;
-  /**
-   * Ist ein Kantons-Filter aktiv? Dieselbe Frage, zweite Achse — und der
-   * Befund, der sie nachträglich erzwungen hat: ohne dieses Feld fiel der
-   * Zähler an StPO/428 mit Kanton «GR» auf «1» zurück, obwohl der Artikel 882
-   * kantonale Entscheide führt (Gegenprüfung Runde 2/J1).
-   *
-   * Die Bedingung ist `kantonSchneidet` (§5, dieselbe Regel wie in
-   * `waehleBezuege`): eine Kantonwahl wirkt nur, solange die kantonale Klasse
-   * eingeschaltet ist UND ein gewählter Kanton an diesem Artikel eine Kante
-   * führt — sonst gäbe es nichts zu schneiden, und der Zusatz behauptete eine
-   * Einschränkung, die gar nicht greift.
-   */
-  kantonAktiv: boolean;
 }
 
 /**
@@ -218,24 +197,7 @@ export function useBezuege(erlassKey: string | undefined): {
     // Stelle, dieselbe Auswahl. Ein zweiter Filter irgendwo weiter unten in der
     // Darstellung erzeugte eine zweite Auswahl-Wahrheit am selben Artikel (§5).
     const kanten = waehleBezuege(alle, klassen, kantone, bereich);
-    return {
-      kanten,
-      // Bezugsgrösse AUS DEM SHARD, nicht aus der gerenderten Liste.
-      //
-      // §8/B5-Auflage: `gesamt` bleibt die Zahl OHNE Zeitfilter. Die Zahl neben
-      // dem Gruppenkopf antwortet damit auf «wie viel gibt es zu diesem
-      // Artikel», nicht auf «wie viel habe ich gerade eingestellt» — sonst
-      // schrumpfte die Grundgesamtheit mit dem Filter mit und behauptete, es
-      // gäbe weniger Praxis, als es gibt.
-      //
-      // B7: seit der Auslieferungs-Deckel weg ist, ist diese Zahl im ungefilterten
-      // Fall gleich `kanten.length` — die Zeile zeigt dann schlicht «30» statt
-      // «8 von 30». Weichen die beiden ab, war es ein UI-Filter, und nur dann
-      // steht das «von» überhaupt da.
-      gesamt: s.gesamtProArtikel?.[token] ?? {},
-      zeitAktiv: !istBereichOffen(bereich),
-      kantonAktiv: kantonSchneidet(alle, klassen, kantone),
-    };
+    return { kanten };
   }, [aktiv, erlassKey, shard, klassen, kantone, bereich]);
 
   /**
@@ -256,10 +218,8 @@ export function useBezuege(erlassKey: string | undefined): {
    * zweiter Satz Filterknöpfe im Lesekörper wäre eine zweite Auswahl-Wahrheit.
    *
    * KEINE NEUE RECHNUNG: das ist `bezuegeFuer` ohne den einen `waehleBezuege`-
-   * Schritt. Dieselbe Quelle, dieselbe Ordnung, dieselbe `gesamt`-Angabe;
-   * `zeitAktiv`/`kantonAktiv` sind hier per Definition `false`, weil kein
-   * Filter wirkt — die Gruppenköpfe schreiben dann keine «von»-Einschränkung,
-   * und das ist wahr.
+   * Schritt. Dieselbe Quelle, dieselbe Ordnung. (Die Felder `gesamt`/`zeitAktiv`/
+   * `kantonAktiv` des Typs sind seit dem Rückbau 2.10.2026 gelöscht, s. Typ.)
    */
   const alleFuer = useCallback((artikel: string): ArtikelBezuege | undefined => {
     if (!aktiv || !erlassKey || shard?.key !== erlassKey || !shard.shard) return undefined;
@@ -267,7 +227,7 @@ export function useBezuege(erlassKey: string | undefined): {
     const token = normArtikelToken(artikel);
     const kanten = bezuegeFuerArtikel(s, token);
     if (kanten.length === 0) return undefined;
-    return { kanten, gesamt: s.gesamtProArtikel?.[token] ?? {}, zeitAktiv: false, kantonAktiv: false };
+    return { kanten };
   }, [aktiv, erlassKey, shard]);
 
   // useMemo, nicht bei jedem Render neu: die Ableitung geht über ALLE Dokumente
