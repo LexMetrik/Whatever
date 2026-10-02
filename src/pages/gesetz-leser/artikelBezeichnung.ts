@@ -61,23 +61,51 @@ export function eindeutigeBezeichnung(
 //    Darum hier die ausgeschriebene Gruppe: «Art. 1 OR (Übergangsbestimmungen
 //    zur Änderung vom 16. Dezember 2005)» — nie «Art. 1 OR» allein.
 //
-// Nur wo das Label MEHRDEUTIG ist (derselbe Anzeige-Wert steht an einem anderen
-// Artikel des Erlasses); sonst bleibt das Kürzel, wie es ist.
+// WANN QUALIFIZIERT WIRD — nicht an der Mehrdeutigkeit des Labels (Nachzug nach
+// Gegenprüfung 2.10.2026: 47 der 104 ZGB-Schlusstitel-Artikel, etwa `disp_u1_art_6_a`,
+// kollidieren mit keiner Hauptteil-Nummer und hiessen «Art. 6a ZGB» — einen
+// solchen Artikel gibt es nicht; OR `disp_u12_art_2_4` hiess «Art. 2–4 OR»), sondern
+// daran, ob die Gruppe EIGENE Nummern führt. Aus den Daten abgeleitet: eine Gruppe
+// SETZT die Folge des Hauptteils FORT, wenn alle ihre Nummern hinter dem LETZTEN
+// Hauptteil-Artikel liegen (PatG disp_u1 Art. 141–149, VZG Art. 135–136: «Art. 141
+// PatG» ist dort die richtige Zitierweise). Bewusst der letzte Artikel in
+// Dokumentreihenfolge, nicht die grösste Zahl: im PatG-Snapshot tragen drei
+// Bereichs-Token die Ziffern ohne Bindestrich («Art. 104106» für Art. 104–106) —
+// ein Datenfehler (Nebenfund), der ein Maximum verfälschte. Sonst beginnt sie neu bzw. wiederholt
+// Nummern (OR, SchKG, ZGB disp_u1 Art. 1–61, ZGB disp_u2 Art. 178–251) und das
+// Zitat trägt die Gruppe. «Nummer» = die erste Zahl des Labels («Art. 2–4» → 2).
 
 const ZGB_SCHLUSSTITEL = 'disp_u1';
+
+const ersteNummer = (label: string): number => Number(/\d+/.exec(label)?.[0] ?? NaN);
+
+type Eintrag = { artikel: string; artikelLabel: string };
+
+/** Setzt die Gruppe des Tokens die Nummernfolge des Hauptteils fort? */
+function setztFolgeFort(token: string, ns: string, eintraege: readonly Eintrag[]): boolean {
+  let hauptLetzte = NaN;
+  let gruppeMin = Infinity;
+  for (const e of eintraege) {
+    const n = ersteNummer(e.artikelLabel);
+    if (Number.isNaN(n)) continue;
+    if (/^\d/.test(e.artikel)) hauptLetzte = n;
+    else if (e.artikel.startsWith(`${ns}_`)) gruppeMin = Math.min(gruppeMin, n);
+  }
+  return token.startsWith(`${ns}_`) && Number.isFinite(gruppeMin) && gruppeMin > hauptLetzte;
+}
 
 export function zitatKuerzel(
   token: string | null,
   label: string | null,
   kuerzel: string,
   struktur: StrukturMap | null,
-  eintraege: readonly { artikel: string; artikelLabel: string }[],
+  eintraege: readonly Eintrag[],
 ): string {
   const m = token ? UEB_TOKEN.exec(token) : null;
   if (!token || !label || !m) return kuerzel;
-  const mehrdeutig = eintraege.some((e) => e.artikel !== token && e.artikelLabel === label);
-  if (!mehrdeutig) return kuerzel;
-  if (kuerzel === 'ZGB' && token.startsWith(`${ZGB_SCHLUSSTITEL}_`)) return `SchlT ${kuerzel}`;
+  const ns = `disp_u${m[1]}`;
+  if (setztFolgeFort(token, ns, eintraege)) return kuerzel;
+  if (kuerzel === 'ZGB' && ns === ZGB_SCHLUSSTITEL) return `SchlT ${kuerzel}`;
   return `${kuerzel} (${gruppenName(token, struktur) ?? gruppenRueckfall(m[1])})`;
 }
 

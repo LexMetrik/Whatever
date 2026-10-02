@@ -13,7 +13,7 @@
  *      die gemerkte Stelle wurde sofort durch «Art. 1» überschrieben (Browser,
  *      2.10.2026), der zweite Reload bot nichts mehr an.
  *
- * ROT ZU BEKOMMEN (§6.7): (1) `zitatKuerzel` auf `return kuerzel`, (3) in
+ * ROT ZU BEKOMMEN (§6.7): (1) `zitatKuerzel` auf `return kuerzel` bzw. die Regel «nur wo das Label mehrdeutig ist», (3) in
  * `useWeiterlesen` die Zeile `if (angebotOffen.current) return;` streichen.
  */
 import { act, createElement } from 'react';
@@ -94,6 +94,66 @@ describe('(1) amtliches Zitat im Panel', () => {
       expect(uebergang, `${kz}: Übergangsartikel gelesen`).toBeGreaterThan(0);
       expect([...wer].filter(([, t]) => t.length > 1), `${kz} sidecar=${mitSidecar}`).toEqual([]);
     }
+  });
+
+  describe('Nachzug · die Qualifikation hängt an «eigene Nummern», nicht an «mehrdeutig»', () => {
+    const zitatVon = (k: string, kz: string, token: string) => {
+      const e = eintraegeVon(k);
+      const x = e.find((y) => y.artikel === token)!;
+      return normZitat(x.artikelLabel, zitatKuerzel(token, x.artikelLabel, kz, strukturVon(k), e));
+    };
+
+    it('(a) ALLE ZGB-Schlusstitel-Artikel (disp_u1) tragen «SchlT» — auch die ohne Hauptteil-Gegenstück (Art. 6a)', () => {
+      const alle = zgb.filter((x) => x.artikel.startsWith('disp_u1_'));
+      const ohneSchlT = alle.filter((x) => !normZitat(x.artikelLabel, zitatKuerzel(x.artikel, x.artikelLabel, 'ZGB', zgbStruktur, zgb)).includes(' SchlT ZGB'));
+      expect(alle.length, 'Vorbedingung: der Schlusstitel ist gelesen').toBeGreaterThanOrEqual(100);
+      expect(ohneSchlT.map((x) => x.artikel)).toEqual([]);
+      expect(zitatVon('ZGB', 'ZGB', 'disp_u1_art_6_a')).toBe('Art. 6a SchlT ZGB'); // «Art. 6a ZGB» gibt es nicht
+    });
+
+    it('(b) OR disp_u12_art_2_4 («Art. 2–4») trägt die Gruppe, nicht «Art. 2–4 OR»', () => {
+      const z = zitatVon('OR', 'OR', 'disp_u12_art_2_4');
+      expect(z).toBe('Art. 2–4 OR (Schlussbestimmungen zum VIII. Titel und zum VIIIbis. Titel)');
+    });
+
+    it('(c) PatG (Art. 141–149) und VZG (Art. 135–136) setzen die Hauptnummerierung fort: blosse Form', () => {
+      const patg = eintraegeVon('PATG').filter((x) => x.artikel.startsWith('disp_'));
+      const vzg = eintraegeVon('VZG').filter((x) => x.artikel.startsWith('disp_'));
+      expect(patg.length).toBeGreaterThan(0);
+      expect(vzg.length).toBeGreaterThan(0);
+      for (const x of patg) expect(zitatVon('PATG', 'PatG', x.artikel), x.artikel).toBe(`${x.artikelLabel} PatG`);
+      for (const x of vzg) expect(zitatVon('VZG', 'VZG', x.artikel), x.artikel).toBe(`${x.artikelLabel} VZG`);
+    });
+
+    it('Gegenprobe: ZGB disp_u2 (Art. 178–251, Nummern des Hauptteils wiederholt) bleibt Gruppe, KEIN SchlT', () => {
+      const z = zitatVon('ZGB', 'ZGB', 'disp_u2_art_178');
+      expect(z).toBe('Art. 178 ZGB (Wortlaut der früheren Bestimmungen des sechsten Titels)');
+      expect(z).not.toContain('SchlT');
+    });
+
+    it('Korpus: jeder Übergangsartikel einer Gruppe mit eigenen Nummern ist qualifiziert, jede fortlaufende Gruppe blank', () => {
+      const falsch: string[] = [];
+      const zaehler = { eigene: 0, fortlaufend: 0 };
+      for (const datei of fs.readdirSync(path.join(WURZEL, 'bund')).filter((f) => f.endsWith('.json'))) {
+        const kz = datei.replace('.json', '');
+        const e = eintraegeVon(kz);
+        const disp = e.filter((x) => x.artikel.startsWith('disp_'));
+        if (!disp.length) continue;
+        const nummer = (l: string) => Number(/\d+/.exec(l)?.[0]);
+        const hauptLetzte = nummer(e.filter((x) => /^\d/.test(x.artikel)).at(-1)!.artikelLabel);
+        for (const x of disp) {
+          const ns = x.artikel.replace(/_art.*/, '');
+          const gruppe = disp.filter((y) => y.artikel.startsWith(`${ns}_`)).map((y) => nummer(y.artikelLabel));
+          const fortlaufend = Math.min(...gruppe) > hauptLetzte;
+          const z = zitatKuerzel(x.artikel, x.artikelLabel, kz, null, e);
+          fortlaufend ? zaehler.fortlaufend++ : zaehler.eigene++;
+          if (fortlaufend ? z !== kz : z === kz) falsch.push(`${kz}:${x.artikel} → «${z}»`);
+        }
+      }
+      expect(zaehler.eigene, 'Vorbedingung').toBeGreaterThan(200);
+      expect(zaehler.fortlaufend, 'Vorbedingung').toBeGreaterThan(0);
+      expect(falsch).toEqual([]);
+    });
   });
 
   describe('Reiter «Entscheide» an einem Übergangsartikel', () => {
