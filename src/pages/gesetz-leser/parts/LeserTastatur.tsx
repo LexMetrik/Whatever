@@ -47,6 +47,9 @@ function istEingabe(ziel: EventTarget | null): boolean {
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
 
+/** Wie lange ein Tasten-Sprung ohne gezeigten Artikel als «jetzt» gilt (Navigation blieb aus). */
+const FRIST_MS = 2000;
+
 export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaettern, imSekundaerenPane = false }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
    *  auf dieser Liste einen Schritt — nie auf einer DOM-Abfrage: die wäre bei
@@ -119,7 +122,21 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   const aktivRef = useRef(aktivToken);
   const sprungRef = useRef(onSprung);
   useEffect(() => { tokenRef.current = tokens; }, [tokens]);
-  useEffect(() => { aktivRef.current = aktivToken; }, [aktivToken]);
+  // W2·17-UI-BEFUNDE (Nachzug zu #1265): im EINZELMODUS ist `aktivToken` der gezeigte Artikel aus dem
+  // Router-Hash — der ändert sich erst nach dem Render der Navigation. Zwei Tasten vor diesem Render
+  // (Tastenwiederholung) rechneten beide vom alten Stand: ein Schritt ging verloren. Darum merkt sich
+  // die Taste ihre eigenen, noch nicht gezeigten Sprünge (`angesprungenRef`, in Reihenfolge) und rechnet
+  // vom letzten. Kommt ein gezeigter Artikel an, fallen die Sprünge bis zu ihm weg (ein älterer Frame
+  // setzt die Rechnung NICHT zurück: «j, j, Frame 2, j» ergibt 2, 3, 4); ein Artikel, den die Tasten
+  // nicht angesprungen haben (Klick, Zurück), verwirft alle. Ein Sprung ohne Frame (die Navigation blieb
+  // aus) verfällt nach `FRIST_MS`, ein Lesart-Wechsel verwirft ihn sofort — nichts hängt an einem
+  // Artikel, den niemand zeigt. Gesamtansicht: der Scroll-Spy führt, nichts wird gemerkt.
+  const angesprungenRef = useRef<{ token: string; bis: number }[]>([]);
+  useEffect(() => {
+    aktivRef.current = aktivToken;
+    const i = aktivToken === null ? -1 : angesprungenRef.current.findIndex((s) => s.token === aktivToken);
+    angesprungenRef.current = i < 0 ? [] : angesprungenRef.current.slice(i + 1);
+  }, [aktivToken]);
   useEffect(() => { sprungRef.current = onSprung; }, [onSprung]);
   // Wie `sprungRef`: über eine Ref gelesen, damit der Listener nicht bei jedem
   // Render des Rahmens ab- und neu registriert wird.
@@ -128,6 +145,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   // W2·5m · wie `panelRef`: über eine Ref, damit der eine Listener stehen bleibt.
   const blaetternRef = useRef(onBlaettern);
   useEffect(() => { blaetternRef.current = onBlaettern; }, [onBlaettern]);
+  // An der LESART hängt die Merkliste, nicht an der Funktion (`blaettere` ist bei jedem Render neu).
+  const imEinzelmodus = onBlaettern !== undefined;
+  useEffect(() => { angesprungenRef.current = []; }, [imEinzelmodus]); // Lesart gewechselt: gemerkte Sprünge gelten nicht mehr
   // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
   // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
   const paneRolleRef = useRef(imSekundaerenPane);
@@ -236,7 +256,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       }
       const liste = tokenRef.current;
       if (!liste.length) return;
-      const jetzt = aktivRef.current;
+      const offen = angesprungenRef.current.at(-1);
+      if (offen && offen.bis < Date.now()) angesprungenRef.current = [];
+      const jetzt = angesprungenRef.current.at(-1)?.token ?? aktivRef.current;
       const i = jetzt === null ? -1 : liste.indexOf(jetzt);
       // Ohne bekannten Bezugspunkt (noch kein Spy-Ergebnis, z. B. direkt nach dem
       // Laden ganz oben) startet «j» beim ersten Artikel und «k» tut nichts —
@@ -244,14 +266,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       const ziel = e.key === 'j' ? i + 1 : i - 1;
       if (ziel < 0 || ziel >= liste.length) return;
       e.preventDefault();
-      // W2·17-UI-BEFUNDE (Nachzug zu #1265): im EINZELMODUS (`onBlaettern` gesetzt) ist
-      // `aktivToken` der gezeigte Artikel aus dem Router-Hash — der ändert sich erst nach dem Render
-      // der Navigation, die Ref erst im Effekt danach. Zwei Tasten vor diesem Render (Tasten-
-      // wiederholung) rechneten beide vom alten Stand und sprangen zum selben Ziel: ein Schritt ging
-      // verloren. Darum den eben angesprungenen Artikel sofort als «jetzt» merken; kommt der
-      // gerenderte Stand an, schreibt der Effekt oben denselben Wert. In der Gesamtansicht führt der
-      // Scroll-Spy — dort bleibt es beim bisherigen Verhalten.
-      if (blaetternRef.current) aktivRef.current = liste[ziel];
+      if (blaetternRef.current) angesprungenRef.current.push({ token: liste[ziel], bis: Date.now() + FRIST_MS });
       sprungRef.current(liste[ziel]);
     };
     window.addEventListener('keydown', onKey);
