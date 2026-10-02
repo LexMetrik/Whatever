@@ -22,6 +22,7 @@ import { ladeKantenShardErgebnis, type KantenShard } from './materialien/kanten-
 import type { BrowseMaterial, MaterialManifest } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
 import { erlassPfad } from './normtext/erlassAdresse';
+import { nummerAusToken } from './reiterStelle';
 
 export type { MaterialBezug, EntscheidRef };
 
@@ -121,11 +122,6 @@ export function kontextSync(
 // maschinell); der Badge markiert die Abweichung ('maschinell', §1.2/§1.3 — der
 // kuratierte/amtliche Normalfall bleibt nackt). Rein projizierend (§3).
 
-/** Anzeige-Form eines Artikel-Tokens: Korpus-Unterstrich weg ('20_a' → '20a'). */
-function anzeigeArtikel(token: string): string {
-  return token.replace(/_/g, '');
-}
-
 /** §8-Herkunft je Dokument aggregiert. Doc-uniform in der Praxis; bei
  *  Misch-Provenienz gewinnt die schwächste (maschinell > kuratiert > amtlich),
  *  damit die UI nie eine Heuristik als 'amtlich' ausgibt. */
@@ -201,8 +197,8 @@ export async function kontextSoftLawErgebnis(typ: KontextTyp, normKeys: readonly
     if (repArtikel) {
       artikel = repArtikel;
       sublabel = artikelSort.length > 1
-        ? `via Art. ${anzeigeArtikel(repArtikel)} u. a.`
-        : `via Art. ${anzeigeArtikel(repArtikel)}`;
+        ? `via Art. ${nummerAusToken(repArtikel)} u. a.`
+        : `via Art. ${nummerAusToken(repArtikel)}`;
     } else if (s.ziffern.size === 1) {
       sublabel = [...s.ziffern][0]; // «Ziff. 6.10» — nur wenn eindeutig (sonst kein arbiträrer Griff)
     }

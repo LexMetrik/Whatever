@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { reiterKategorie, herkunftVon, artikelLabelVonPfad, kantonVonPfad } from '../lib/tabGruppen';
+import { reiterKategorie, herkunftVon, stelleVonReiter, kantonVonPfad } from '../lib/tabGruppen';
 import type { VerlaufManifeste } from '../lib/verlaufLabel';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -83,17 +83,19 @@ describe('kantonVonPfad', () => {
   });
 });
 
-describe('artikelLabelVonPfad', () => {
+describe('stelleVonReiter (DFG-F01: Stelle aus dem Label, Rückfall aus dem Token)', () => {
   it('extrahiert «Art. N» aus dem #art-Anker (Unterstrich→Suffix)', () => {
-    expect(artikelLabelVonPfad('/gesetze/bund/or#art-41')).toBe('Art. 41');
-    expect(artikelLabelVonPfad('/gesetze/bund/zgb?r=2#art-335_c')).toBe('Art. 335c');
+    expect(stelleVonReiter({ path: '/gesetze/bund/or#art-41' })?.gelesen).toBe('Art. 41');
+    expect(stelleVonReiter({ path: '/gesetze/bund/zgb?r=2#art-335_c' })?.gelesen).toBe('Art. 335c');
   });
-  it('null ohne Anker', () => {
-    expect(artikelLabelVonPfad('/gesetze/bund/or')).toBeNull();
+  it('null ohne Anker und ausserhalb der Gesetze', () => {
+    expect(stelleVonReiter({ path: '/gesetze/bund/or' })).toBeNull();
+    expect(stelleVonReiter({ path: '/rechner/fristen#art-41' })).toBeNull();
   });
-  it('M13: Schlusstitel-Token zeigt nur die reine Artikel-Nr., nicht das Token', () => {
-    expect(artikelLabelVonPfad('/gesetze/bund/zgb#art-disp_u1_art_3')).toBe('Art. 3');
-    expect(artikelLabelVonPfad('/gesetze/bund/zgb#art-disp_u1_art_31_32')).toBe('Art. 31–32');
-    expect(artikelLabelVonPfad('/gesetze/bund/zgb#art-disp_u2_art_178')).toBe('Art. 178');
+  it('M13: Schlusstitel-Token zeigt die Artikel-Nr. samt Gruppe, nicht das Token', () => {
+    expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u1_art_3' })).toMatchObject({ stelle: 'Art. 3', kern: 'SchlT ZGB' });
+    expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u1_art_31_32' })?.stelle).toBe('Art. 31–32');
+    // Andere Gruppe als der ZGB-Schlusstitel: ohne Einträge steht die Zitierweise nicht fest ⇒ keine Stelle.
+    expect(stelleVonReiter({ path: '/gesetze/bund/ZGB#art-disp_u2_art_178' })?.stelle).toBe('');
   });
 });

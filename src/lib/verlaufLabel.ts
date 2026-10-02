@@ -15,6 +15,7 @@ import { metaFuerPfad } from './seo';
 import type { BrowseManifest, BrowseErlass } from './normtext/browse-typen';
 import type { EntscheidManifest } from './rechtsprechung/register';
 import type { MaterialManifest } from './materialien/typen';
+import type { StelleDatenMap } from './reiterStelle';
 import { sicherDekodiert } from './sicherDekodieren';
 
 /** Pfad-Segment dekodieren; kaputtes %-Escape ⇒ Rohsegment (PA-1-B01, kein Wurf in der Reiterleiste). */
@@ -69,6 +70,10 @@ export function labelAusMeta(path: string): string | null {
 }
 
 export interface VerlaufManifeste {
+  /** Einträge je Erlass-Schlüssel für die Stelle im Reiter (`reiterStelle`,
+   *  DFG-F01): wo sie fehlen, greift die Rückfallform. Geladen von
+   *  `useStelleDaten` — nie vom Manifest selbst, das die Einträge nicht trägt. */
+  artikel?: StelleDatenMap;
   gesetze?: BrowseManifest | null;
   entscheide?: EntscheidManifest | null;
   materialien?: MaterialManifest | null;
