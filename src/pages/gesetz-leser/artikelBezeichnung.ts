@@ -19,7 +19,7 @@ import type { StrukturMap } from '../../lib/normtext/browse';
 const UEB_TOKEN = /^disp_u(\d+)_/;
 
 /** Token eines Schlusstitel-/Übergangsartikels (`disp_u<N>_art_…`)? */
-export function istUebergangsToken(token: string | null): boolean {
+function istUebergangsToken(token: string | null): boolean {
   return token !== null && UEB_TOKEN.test(token);
 }
 
