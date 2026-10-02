@@ -85,8 +85,10 @@ test.describe('V3-Panel · Entscheide-Filter — Befunde 1.10.2026', () => {
     await panelOeffnen(page)
     // Die kantonalen Entscheide (BS) stehen da — der Fremdkanton schneidet nichts.
     await expect(panel(page).locator('[data-v3-panel-gruppe="kantonal"]').first()).toBeVisible({ timeout: 20_000 })
-    // Die Klappe nennt die Wahl …
-    await expect(panel(page).locator('[data-v3-panel-klappe]').first()).toContainText('· ZH')
+    // §6.3-DEKLARATION (2.10.2026, Variante A): die Klappe nannte hier «· ZH». Ein Kanton ohne Kante am
+    // Artikel schneidet nichts und steht darum NICHT im Stand (sonst läse er sich wie ein wirkender Filter);
+    // die Auskunft trägt der Satz unter der Filterzeile und der Chip (neue Fälle unten).
+    await expect(panel(page).locator('[data-v3-panel-klappe]').first()).not.toContainText('ZH')
     // … und der Chip steht gedrückt da, auch wenn der Erlass ihn führt oder nicht.
     await klappe(page, 0)
     await expect(panel(page).locator('[data-bezug-kanton="ZH"]')).toHaveAttribute('aria-pressed', 'true')
