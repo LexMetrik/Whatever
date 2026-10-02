@@ -342,7 +342,7 @@ const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
 // steht davor und schlägt diese Weiche; «vorliegende» ist hier ausgenommen,
 // damit auch die Schreibfehler-Form («des vorliegende Gesetzes», 2 Stellen im
 // Bestand) ihren Selbst-Link behält.
-const FREMDERLASS_GENITIV = /^\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu;
+const FREMDERLASS_GENITIV = /^(?:\s+(?:Abs(?:atz|ätze|\.)|Buchstaben?|Bst\.|lit\.|Ziff(?:ern?|\.)|Satz|Sätze|Lemma|Halbsatz|und|oder|bis|sowie|ffg?\.|f\.|Anhang|Anlage|Abschn(?:itt|\.)|in\s+Verbindung\s+mit|Art(?:\.|ikeln?)|(?:erst|zweit|dritt|viert|fünft|letzt)(?:e[rsmn]?)?)(?![\p{L}])|\s+[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-]\s*[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-](?!\s*[0-9])|\s+[a-z]{1,2}(?![a-zäöüß])|\s+[a-z](?:bis|ter|quater|quinquies|sexies)(?![a-zäöüß])|\s+\([a-z0-9]{1,4}\))*\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:e?s)?|konkordat(?:e?s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:(?<!an|zu|unter|neu|rang|ein)ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
   const k = (kuerzel ?? '').trim();
@@ -537,9 +537,11 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
           continue;
         }
       }
+      // W2·17 Nachzug: auch der Genitiv-Erlassname HINTER Aufzählungsformen, die der Passus-
+      // Überleser nicht kennt («§ 8 ff. des Reglements», «§ 1 lit. a und b der …verordnung»).
       if (!selbst
         && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)
-          || GLIEDERUNGS_GENITIV.test(rest))) continue;
+          || GLIEDERUNGS_GENITIV.test(rest) || FREMDERLASS_GENITIV.test(s.slice(end) + danach))) continue;
       const token = intern.tokenMap.get(normRef(m[1]));
       if (!token) continue; // keine solche Bestimmung in diesem Erlass → Text (§8)
       linkSpans.push({
@@ -645,7 +647,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs, danach = '')
     // W2·17 Nachzug: Genitiv-Erlassname hinter Nummer + Passus ⇒ Text (an FREMDERLASS_GENITIV).
     // Steht NACH dem des/der-Guard: der fängt die passuslose Form schon (Klasse bleibt dort),
     // diese Zeile ist der Rest, den nur der Blick HINTER den Passus sieht.
-    if (!selbst && FREMDERLASS_GENITIV.test(danach ? (intern.fremdKuerzel ? rest + danach : (rest + danach).replace(PARAGRAF_ANHANG, '')) : nachPassus)) continue;
+    if (!selbst && FREMDERLASS_GENITIV.test(rest + danach)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
     // zeigt «Artikel N» auf JENES Gesetz; der interne Self-Link wäre falsch (§1) →

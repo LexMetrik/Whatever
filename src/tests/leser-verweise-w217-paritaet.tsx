@@ -17,15 +17,30 @@ import { fussnotenFuer, internFuer, lade, type Eintrag } from './leser-verweise-
 // Der Detektor ist ABSICHTLICH breiter als der Guard (andere Wortliste, bis zu
 // vier Wörter nach des/der, auch «recht(s)»): er soll finden, was der Guard
 // übersieht, nicht dessen Muster wiederholen.
-const PASSUS_GLIED = '(?:\\s+(?:Absatz|Absätze|Abs\\.|Buchstaben?|Bst\\.|lit\\.|Ziffern?|Ziff\\.|Satz|Sätze)\\s*[0-9a-z]+(?:bis|ter)?)*';
-const ERLASSNAME = /(?:gesetz|ordnung|übereinkommen|abkommen|vertrag|konvention|verfassung|reglement|dekret|konkordat|statut|satzung|beschluss|richtlinie|protokoll|charta|vereinbarung)(?:es|s|en|n)?$/i;
+// Zwischenstück zwischen Verweis und «des/der»: nur KURZE Wörter, Zahlen und Satzzeichen
+// (Passus-Wörter, Aufzählungen, «a–f», «(ii)», «Artikel 24», «in Verbindung mit») — bewusst
+// nicht die Wortliste des Guards, sondern «alles Kurze»: so findet der Detektor auch Formen,
+// die der Guard nicht kennt.
+const KURZ = /^(?:[0-9]+[a-z]*[.,)]*|[A-Za-z]{1,2}(?:bis|ter|quater)?\.?|\([A-Za-z0-9]{1,4}\)|[,–—‒−-]|[0-9]+[–—‒−-][0-9]+|Absätze|Absatz|Abs\.|Buchstaben?|Ziffern?|Ziff\.|Artikeln?|Art\.|Anhang|Anlage|Verbindung|sowie|oder|und|erstes|Lemma|f\.|ff\.|Abschn\.|mit|in)$/u;
+/** Besteht das Stück nur aus Passus-Wörtern, Zahlen, Buchstaben-Kürzeln und Satzzeichen? (Wortweise, ohne verschachtelte Quantoren.) */
+const zwischenOk = (stueck: string): boolean => {
+  const w = stueck.split(/\s+/).filter(Boolean);
+  return w.length <= 14 && w.every((x) => KURZ.test(x));
+};
+const ERLASSNAME = /(?:gesetz|(?<!an|zu|unter|neu|rang|ein)ordnung|übereinkommen|abkommen|vertrag|konvention|verfassung|reglement|dekret|konkordat|statut|satzung|beschluss|richtlinie|protokoll|charta|vereinbarung|kodex)(?:es|s|en|n)?$/i;
+const DATIERT = /^(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s/u;
 export function fremderGenitivNach(htmlNachLink: string): string | null {
-  const text = htmlNachLink.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').slice(0, 220);
-  const m = new RegExp(`^${PASSUS_GLIED}\\s+(?:des|der)\\s+([\\p{L}\\p{N}-]+(?:\\s+[\\p{L}\\p{N}-]+){0,3})`, 'u').exec(text);
-  if (!m) return null;
-  const woerter = m[1].split(/\s+/);
-  if (/^vorliegende/i.test(woerter[0])) return null;
-  return woerter.some((w) => ERLASSNAME.test(w)) ? m[0].trim() : null;
+  // Satzgrenze («5. Artikel 135 …») und Strichpunkt beenden das Zitat.
+  // Fussnoten-Marker (<button data-fn-ref>) sind kein Wortlaut — Detektor liest, was ein Mensch liest.
+  const text = htmlNachLink.replace(/<button\b[^>]*data-fn-ref[\s\S]*?<\/button>/g, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/[\u2060\u200b]+/g, '').slice(0, 220).split(/;|\.\s+[A-ZÄÖÜ][a-zäöü]/)[0];
+  if (!/^\s/.test(text)) return null;
+  const m = /\s(?:des|der)\s/.exec(text);
+  if (!m || !zwischenOk(text.slice(0, m.index))) return null;
+  const name = text.slice(m.index + m[0].length);
+  if (/^vorliegende/i.test(name)) return null;
+  const woerter = name.split(/\s+/).slice(0, 4).map((w) => w.replace(/[.,;:)]+$/, ''));
+  if (woerter.slice(0, 3).some((w) => ERLASSNAME.test(w)) || DATIERT.test(name)) return text.slice(0, m.index + m[0].length + 40).trim();
+  return null;
 }
 const maskiere = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 

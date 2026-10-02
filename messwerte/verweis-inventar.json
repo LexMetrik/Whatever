@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "23225436e9e98670c29788e0932ff9b1322624a3cd866ce0356d8dbef10245a0",
+    "normTextSha256": "c8e48ea5a717495065fcd1e2860d1341e028b737e20ce5d31b1b1fdf8b8b9454",
     "guards": 25
   },
   "korpus": {
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19252,
+    "self": 19134,
     "fremd": 11660,
-    "text": 5369,
+    "text": 5487,
     "selbstmarker": 925
   },
   "fremdZiele": {
@@ -83,23 +83,23 @@
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 210,
-      "erlasse": 103,
+      "stellen": 176,
+      "erlasse": 85,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 774,
-      "erlasse": 171,
+      "stellen": 729,
+      "erlasse": 149,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 995,
+      "stellen": 994,
       "erlasse": 264,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
@@ -115,16 +115,16 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12457,
-      "erlasse": 460,
+      "stellen": 12353,
+      "erlasse": 455,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
     {
       "klasse": "fremderlass-genitiv",
       "entscheid": "TEXT",
-      "stellen": 655,
-      "erlasse": 253,
+      "stellen": 860,
+      "erlasse": 328,
       "selbstmarker": 0,
       "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
@@ -219,16 +219,16 @@
     {
       "klasse": "paragraf-kein-token",
       "entscheid": "TEXT",
-      "stellen": 76,
-      "erlasse": 48,
+      "stellen": 61,
+      "erlasse": 35,
       "selbstmarker": 0,
       "was": "«§ N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3291,
-      "erlasse": 464,
+      "stellen": 3281,
+      "erlasse": 463,
       "selbstmarker": 316,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"
     },
@@ -259,15 +259,15 @@
     {
       "klasse": "plural-glied-kein-token",
       "entscheid": "TEXT",
-      "stellen": 61,
-      "erlasse": 31,
+      "stellen": 51,
+      "erlasse": 25,
       "selbstmarker": 0,
       "was": "A10-Glied — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3498,
+      "stellen": 3494,
       "erlasse": 206,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -275,8 +275,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 518,
-      "erlasse": 95,
+      "stellen": 536,
+      "erlasse": 100,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }

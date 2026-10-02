@@ -410,7 +410,9 @@ const P_SIGNAL_RE = new RegExp(
 // Verordnung …») → §1-Unterdrückung (kein geratener Self-Link).
 // W2·17 Nachzug (2.10.2026): «des bisherigen/früheren/alten Rechts» ist die VORGÄNGER-Fassung
 // (Übergangsbestimmung), nicht dieser Erlass — gleiche Klasse, gleiche Unterdrückung (MWSTG 112).
-const P_FREMD_UNAUFL_RE = /^\s*(?:des|der|über|vom)\s+(?:[A-ZÄÖÜ]|(?:bisherigen|früheren|alten)\s+Rechts\b)/;
+// Ein «ff.»/«f.» zwischen Aufzählung und Erlassname gehört zum Zitat («Artikeln 32 und 38 ff. der
+// Luftfahrtverordnung», VIL 29g, FDV 42).
+const P_FREMD_UNAUFL_RE = /^\s*(?:ffg?\.\s*|f\.\s*)?(?:des|der|über|vom)\s+(?:[A-ZÄÖÜ]|(?:bisherigen|früheren|alten)\s+Rechts\b)/;
 // Unbekanntes bare KÜRZEL direkt nach der Aufzählung («… Artikeln 2 und 3 BGSA»,
 // BGSA ∉ FEDLEX): Fremdgesetz-Signal, das wir nicht auflösen können → §1-
 // Unterdrückung, nie ein falscher Self-Link (Korpus-Fund AHVV art 34; dieselbe
