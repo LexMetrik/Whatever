@@ -98,6 +98,7 @@ export interface LeserV3Modell {
   // Aus dem GETEILTEN Zustand abgeleitet statt neu typisiert (§5). C3: `bezuegeFuer`
   // ist weg — seit H3 (`bezuegeVorladen: false`) durchgehend `undefined` und ohne
   // Leser; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
+  // Rückbau 2.10.2026 (W2·17-UI-BEFUNDE): `revisionFuer` ist weg — kein Verbraucher mehr.
   historieFuer: ReturnType<typeof useLeserZustand>['historieFuer']; historieStand: ReturnType<typeof useLeserZustand>['historieStand']; // P5·B1: Bereitschaft des Shards
 
   /** Leseposition (Scroll-Spy) und Klapp-Zustand des Baums. */
