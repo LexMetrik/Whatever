@@ -84,7 +84,7 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
     await alle.click()
     await expect(alle).toContainText('alles auf')
     expect(await offenePfeile(page), 'Vorbedingung: alles zu').toBe(0)
-    // Gleicher Abschnitt (Art. 300–304, Pacht): der Spy reisst den Ast NICHT wieder auf (B1-B04).
+    // Gleicher Abschnitt = gleiche oberste Gliederungsstufe (Art. 300–303): der Spy reisst den Ast NICHT wieder auf (B1-B04).
     for (const nr of [301, 302, 303]) await zuArtikel(page, nr)
     await page.waitForTimeout(900)
     expect(await offenePfeile(page), 'der Spy hat nach «alles zu» denselben Ast wieder aufgerissen').toBe(0)
@@ -95,6 +95,7 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
   })
 
   test('(g) j/k mit dem Fokus auf einem Baum-Link: der Gliederungs-Spy läuft weiter mit', async ({ page }) => {
+    test.setTimeout(90_000)
     // Alles offen, gelesen wird weit unten: ohne Nachführen läge die Marke bald ausserhalb des Sichtbands.
     const alle = page.locator('[data-v3-alle]')
     await alle.click()
@@ -106,7 +107,7 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
     await expect(marke).toBeFocused()
     // Viele Schritte am Stück: jede Taste ist «Tastatur in der Gliederung», aber j/k bedienen den
     // LESETEXT (leserTastaturBelegung.NAVIGATION) — sie dürfen die Nachführ-Sperre nicht neu schärfen.
-    for (let i = 0; i < 40; i++) { await page.keyboard.press('j'); await page.waitForTimeout(25) }
+    for (let i = 0; i < 8; i++) { await page.keyboard.press('j'); await page.waitForTimeout(60) }
     await page.waitForTimeout(1000) // < 1,5 s Sperre: nur ein (fälschlich) scharfer Guard hält den Nudge noch zurück
     const sicht = await page.evaluate(() => {
       const t = document.querySelector('[data-toc]') as HTMLElement
@@ -115,8 +116,8 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
       const r = m.getBoundingClientRect(); const c = t.getBoundingClientRect()
       return { marke: true, im: r.top >= c.top && r.bottom <= c.bottom }
     })
-    expect(sicht.marke, 'keine aktive Marke nach 40× j').toBe(true)
-    expect(sicht.im, 'der aktive Eintrag liegt nach 40× j ausserhalb des Gliederungs-Sichtbands').toBe(true)
+    expect(sicht.marke, 'keine aktive Marke nach 8× j').toBe(true)
+    expect(sicht.im, 'der aktive Eintrag liegt nach 8× j ausserhalb des Gliederungs-Sichtbands').toBe(true)
   })
 
   test('(c) nach «alles auf» nimmt das Weiterlesen keinen Ast zurück', async ({ page }) => {

@@ -166,22 +166,24 @@ describe('B1 — Verdrahtung der Leisten-Knöpfe (leisteAufbau)', () => {
 
 // ═══ B1-B04 · «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel ═
 describe('B1-B04 — «alles zu»-Sperre endet beim Abschnittswechsel (Entscheid 2.10.2026)', () => {
-  it('derselbe Pfad: Sperre bleibt, manuellZu unverändert', () => {
+  const sperre = { pfad: ['sek-1', 'sek-2'], ids: ['sek-1', 'sek-2', 'sek-9'] };
+
+  it('gleicher Abschnitt (auch tiefere Stufe wechselt): Sperre bleibt, manuellZu unverändert', () => {
     const zu = new Set(['sek-1', 'sek-2']);
-    const sperre = { pfad: ['sek-1', 'sek-2'], ids: ['sek-1', 'sek-2', 'sek-9'] };
     expect(pruefeAlleZuSperre(sperre, ['sek-1', 'sek-2'], zu)).toBe(sperre);
+    expect(pruefeAlleZuSperre(sperre, ['sek-1', 'sek-5'], zu), 'nächster Artikel-Randtitel im selben Titel').toBe(sperre);
     expect([...zu]).toEqual(['sek-1', 'sek-2']);
   });
 
-  it('anderer Abschnitt: Sperre fällt, ihre Ids verlassen manuellZu (der Spy folgt wieder)', () => {
+  it('anderer Abschnitt (oberste Stufe): Sperre fällt, ihre Ids verlassen manuellZu (der Spy folgt wieder)', () => {
     const zu = new Set(['sek-1', 'sek-2', 'sek-9', 'eigen']); // «eigen» = ein Pfeil-Klick, bleibt
-    const sperre = { pfad: ['sek-1', 'sek-2'], ids: ['sek-1', 'sek-2', 'sek-9'] };
-    expect(pruefeAlleZuSperre(sperre, ['sek-1', 'sek-3'], zu)).toBeNull();
+    expect(pruefeAlleZuSperre(sperre, ['sek-7', 'sek-8'], zu)).toBeNull();
     expect([...zu]).toEqual(['eigen']);
   });
 
-  it('keine Sperre: nichts passiert', () => {
+  it('leerer Pfad (Spy ohne Standort) und fehlende Sperre: nichts passiert', () => {
     const zu = new Set(['a']);
+    expect(pruefeAlleZuSperre(sperre, [], zu)).toBe(sperre);
     expect(pruefeAlleZuSperre(null, ['x'], zu)).toBeNull();
     expect([...zu]).toEqual(['a']);
   });

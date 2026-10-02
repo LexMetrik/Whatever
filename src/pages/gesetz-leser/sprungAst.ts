@@ -75,23 +75,25 @@ export function darfAutoAdoptieren(
  * (W2·17-UI-BEFUNDE B1-B04, Entscheid Orchestrator 2.10.2026). Direkt nach dem
  * Knopf reisst der Spy den gelesenen Ast nicht wieder auf (er steht in
  * `manuellZu`, wie nach einem Pfeil-Klick); wechselt die Leseposition aber in
- * einen anderen Abschnitt, folgt die Gliederung wieder wie gewohnt. `pfad` ist
- * der aktive Pfad im Moment des Knopfs, `ids` die dabei zugeklappten Ids.
- * Einzelne Pfeil-Klicks bleiben davon unberührt (Entscheid David 26.6.2026, «K»).
+ * einen anderen Abschnitt, folgt die Gliederung wieder wie gewohnt.
+ * «Abschnitt» = die oberste Stufe des aktiven Pfads: in OR/ZGB trägt fast jeder
+ * Artikel eine eigene Randtitel-Sektion, jeder Pfad-Wechsel wäre sonst schon der
+ * nächste Artikel und die Sperre nach einem Schritt vorbei (gemessen e2e OR).
+ * `pfad` ist der aktive Pfad im Moment des Knopfs, `ids` die dabei zugeklappten
+ * Ids. Einzelne Pfeil-Klicks bleiben unberührt (Entscheid David 26.6.2026, «K»).
  */
 export interface AlleZuSperre { pfad: readonly string[]; ids: readonly string[] }
 
 /**
- * Hebt die «alles zu»-Sperre auf, sobald der aktive Pfad ein anderer ist:
- * nimmt ihre Ids aus `manuellZu` und liefert `null`; sonst die Sperre unverändert.
- * Rein bis auf die erklärte Mutation von `manuellZu` (§2).
+ * Hebt die «alles zu»-Sperre auf, sobald die oberste Stufe des aktiven Pfads eine
+ * andere ist: nimmt ihre Ids aus `manuellZu` und liefert `null`; sonst die Sperre
+ * unverändert. Ein leerer Pfad (Spy noch ohne Standort) ändert nichts. Rein bis
+ * auf die erklärte Mutation von `manuellZu` (§2).
  */
 export function pruefeAlleZuSperre(
   sperre: AlleZuSperre | null, aktivIds: readonly string[], manuellZu: Set<string>,
 ): AlleZuSperre | null {
-  if (!sperre) return null;
-  const gleich = sperre.pfad.length === aktivIds.length && sperre.pfad.every((id, i) => id === aktivIds[i]);
-  if (gleich) return sperre;
+  if (!sperre || aktivIds.length === 0 || sperre.pfad[0] === aktivIds[0]) return sperre;
   for (const id of sperre.ids) manuellZu.delete(id);
   return null;
 }
