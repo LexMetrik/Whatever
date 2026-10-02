@@ -303,7 +303,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       onClick={() => setHilfeOffen(false)}>
       <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Tastatur-Kurzbefehle"
         tabIndex={-1} onClick={(e) => e.stopPropagation()}
-        className="lc-card w-full max-w-sm space-y-3 p-4">
+        className="lc-schwebeflaeche w-full max-w-sm space-y-3 p-4">
         <h2 className="text-body-l font-semibold">Tastatur-Kurzbefehle</h2>
         <dl className="space-y-2">
           {belegung(onPanel != null, onBlaettern != null).map((b) => (
