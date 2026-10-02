@@ -283,7 +283,15 @@ test('(f) ↑↓ führen die laufende Fundstelle in der Liste mit', async ({ pag
   await page.waitForTimeout(400)
 
   const lage = await scroller.evaluate((s) => {
-    const el = s.querySelector('[data-treffer-stelle-aktiv], [data-treffer-aktiv]')
+    // §6.3-DEKLARATION (W2·17-UI-BEFUNDE PE-C5-B01, 1.10.2026): hier stand die
+    // Selektorliste `a, b` — `querySelector` liefert damit das ERSTE Element in
+    // Dokument-Reihenfolge, und der Artikel-KOPF steht vor seinen Stellen. Der
+    // Fall mass dadurch denselben Kopf wie der Fix in `LeserTrefferSpalte` und
+    // konnte den Fehler nicht sehen (§6.7: ein Tor, das nicht scheitern kann).
+    // Jetzt Vorrang für die STELLE, der Kopf nur als Ersatz; die Prüfaussage
+    // («die laufende Zeile liegt im Scroller») bleibt dieselbe, nur trifft sie
+    // jetzt die richtige Zeile. Der Scharfbeweis steht in (g).
+    const el = s.querySelector('[data-treffer-stelle-aktiv]') ?? s.querySelector('[data-treffer-aktiv]')
     if (!el) return null
     const z = el.getBoundingClientRect()
     const k = s.getBoundingClientRect()
@@ -291,4 +299,236 @@ test('(f) ↑↓ führen die laufende Fundstelle in der Liste mit', async ({ pag
   })
   expect(lage, 'keine aktive Zeile in der Liste').not.toBeNull()
   expect(lage!.drin, `aktive Zeile ausserhalb des Scrollers: ${JSON.stringify(lage)}`).toBe(true)
+})
+
+// ═══ W2·17-UI-BEFUNDE · SUCH-NAVIGATION (Befunde PE-C4/C5/C6/C7/C8, 1.10.2026) ═
+//
+// Jeder Fall gegen den Zustand, der den Befund gezeigt hat (Messreihen in den
+// Befund-Dateien); die reinen Zustands-Regeln sitzen zusätzlich als Unit-Sonden
+// in `src/tests/leser-suchnavigation-w217.test.tsx`. Hier steht, was nur der
+// Browser sieht: Geometrie, Fokus, Bildlage.
+//
+// ROT ZU BEKOMMEN (§6.7) — je Fall ein Handgriff in `src/`, nie in `dist/`
+// (die Spec baut vor dem Lauf neu):
+//  (g) `v3/LeserTrefferSpalte.tsx`: die zwei `querySelector` zurück auf die eine
+//      Liste `'[data-treffer-stelle-aktiv], [data-treffer-aktiv]'` ⇒ die laufende
+//      Stelle wandert aus dem Scroller, (g) meldet ihre Lage.
+//  (h) `v3/LeserTrefferListe.tsx`: `Math.max(…, aktivIdx + 1)` im Deckel
+//      streichen ⇒ nach dem Sprung auf die letzte Fundstelle steht keine Zeile
+//      hervorgehoben da.
+//  (i) `v3/LeserTrefferSpalte.tsx`: Anker `sticky h-0` und `absolute` zurück auf
+//      den `sticky`-Scroller ⇒ am Seitenende liegt das Segment über der Kante.
+//  (j) `inhalt-suchtreffer.tsx` / `v3/useTrefferSicht.ts`: die Zeile mit dem
+//      Rücksetzen beim leeren Feld streichen ⇒ Schalter bleibt «aus», Liste weg.
+//  (k) `inhalt-suchtreffer.tsx`: `&& nav.bereich === bereich` streichen.
+//  (l) `v3/SuchBereichWahl.tsx`: den `onKeyDown` streichen.
+//  (m) `v3/SuchZone.tsx`: `after:`-Klassen von `SCHRITT` bzw. den `clip-path`
+//      der Zone streichen.
+
+async function laufendeStelleInListe(page: Page) {
+  return page.locator('[data-v3-treffer-spalte-scroller]').evaluate((s) => {
+    const st = s.querySelector('[data-treffer-stelle-aktiv]')
+    const k = s.getBoundingClientRect()
+    const rest = s.querySelector('[data-treffer-stellen-rest]')?.textContent ?? null
+    if (!st) return { stelle: null as string | null, drin: false, rest, lage: 'keine Stelle' }
+    const z = st.getBoundingClientRect()
+    return {
+      stelle: st.getAttribute('data-treffer-stelle'),
+      drin: z.top >= k.top - 1 && z.bottom <= k.bottom + 1,
+      rest,
+      lage: `${Math.round(z.top)}..${Math.round(z.bottom)} in ${Math.round(k.top)}..${Math.round(k.bottom)}`,
+    }
+  })
+}
+
+test('(g) ↑↓ führen die STELLE mit, nicht den Artikelkopf — und der Stellen-Deckel sagt es', async ({ page }) => {
+  test.slow()
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await warteLeser(page)
+  // «e»: OR Art. 1 trägt dutzende Stellen in EINEM Artikel — die Lage, in der
+  // Kopf und Stelle nicht mehr zugleich in den Scroller passen (PE-C7-B02).
+  await suche(page, 'e')
+  const erster = page.locator('[data-treffer-artikel]').first()
+  const stellen = Number(await erster.getAttribute('data-fundstellen-zahl'))
+  expect(stellen, 'Vorbedingung: erster Artikel hat mehr Stellen als der Deckel (40) — sonst prüft der Fall nichts (§6.7)')
+    .toBeGreaterThan(44)
+
+  const vor = page.locator('[data-treffer-vor]').first()
+  for (let i = 1; i <= 25; i += 1) await vor.click()
+  await page.waitForTimeout(300)
+  const bei25 = await laufendeStelleInListe(page)
+  expect(bei25.stelle, 'bei 25 keine laufende Stelle in der Liste').not.toBeNull()
+  expect(bei25.drin, `laufende STELLE ausserhalb des Scrollers (gemessen wurde bis hier der Kopf): ${bei25.lage}`).toBe(true)
+
+  // ↓ über den Stellen-Deckel hinaus: Zeile steht UND der Deckel nennt sich.
+  for (let i = 26; i <= 45; i += 1) await vor.click()
+  await page.waitForTimeout(300)
+  const bei45 = await laufendeStelleInListe(page)
+  expect(bei45.stelle, 'ab der 41. Stelle keine laufende Zeile (PE-C7-B04)').not.toBeNull()
+  expect(bei45.drin, `laufende Stelle 45 ausserhalb des Scrollers: ${bei45.lage}`).toBe(true)
+  expect(bei45.rest, 'der Stellen-Deckel nennt die übrigen Stellen nicht').toMatch(/^\d+ weitere Stellen/)
+
+  // PE-C7-B03: der Kopf ist ein Sprung, kein Auf-/Zu-Schalter.
+  expect(
+    await erster.locator('> button').getAttribute('aria-expanded'),
+    'aria-expanded an einem Knopf, der wegführt (PE-C7-B03)',
+  ).toBeNull()
+
+  // PE-C7-D01: die Schnipsel-Spalte springt nicht ab Rang 10.
+  const xs = await page.locator('[data-treffer-stellen] [data-treffer-stelle]').evaluateAll((bs) =>
+    bs.slice(0, 30).map((b) => Math.round(b.querySelector('.lc-such-ausschnitt')!.getBoundingClientRect().left * 10) / 10))
+  expect(xs.length).toBeGreaterThan(12)
+  expect(new Set(xs).size, `Schnipsel-Spalte springt: ${xs.join(',')}`).toBe(1)
+})
+
+test('(h) Wrap auf die LETZTE Fundstelle: die Zeile steht da, die Werkzeugzeile bleibt im Bild', async ({ page }) => {
+  test.slow()
+  await page.setViewportSize({ width: 1440, height: 700 })
+  await warteLeser(page)
+  // «der»: >1000 Treffer-Artikel, die letzte Fundstelle liegt jenseits des
+  // 200er-Deckels (PE-C7-B01); der Wrap springt ans Seitenende (PE-C7-B05).
+  await suche(page, 'der')
+  await page.locator('[data-treffer-zurueck]').first().click()
+  await expect.poll(async () => (await laufendeStelleInListe(page)).stelle, { timeout: 20000 })
+    .not.toBeNull()
+  const stelle = await laufendeStelleInListe(page)
+  expect(stelle.drin, `laufende Stelle ausserhalb des Scrollers: ${stelle.lage}`).toBe(true)
+
+  const leiste = await page.locator('[data-treffer-leiste]').evaluate((el) => {
+    const r = el.getBoundingClientRect()
+    return { top: Math.round(r.top), bottom: Math.round(r.bottom), vh: window.innerHeight }
+  })
+  expect(leiste.top, `Zähler und ↑↓ ausserhalb des Bildschirms: ${JSON.stringify(leiste)}`).toBeGreaterThanOrEqual(0)
+  expect(leiste.bottom).toBeLessThanOrEqual(leiste.vh)
+})
+
+for (const [breite, hoehe] of [[1280, 800], [375, 812]] as const) {
+  test(`(i) am Seitenende gesucht: Segment und Zähler liegen im Bild (@${breite})`, async ({ page }) => {
+    test.slow()
+    await page.setViewportSize({ width: breite, height: hoehe })
+    await warteLeser(page)
+    // «Artikel lesen, am Ende suchen» (PE-C5-D01): bis zum Dokument-Ende scrollen,
+    // mehrfach, weil der Text beim Scrollen nachwächst.
+    for (let i = 0; i < 6; i += 1) {
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight))
+      await page.waitForTimeout(400)
+    }
+    await suche(page)
+    const lage = await page.evaluate(() => {
+      const zone = document.querySelector('[data-v3-such-zone]')!.getBoundingClientRect()
+      const seg = document.querySelector('[data-v3-suchbereich]')!.getBoundingClientRect()
+      return { zoneUnten: Math.round(zone.bottom), segOben: Math.round(seg.top), segUnten: Math.round(seg.bottom), vh: window.innerHeight }
+    })
+    // Bei der Messung lag das Segment 256 px (@1280) bzw. 520 px (@375) ÜBER
+    // der Kante, Liste und Werkzeugzeile waren nicht mehr erreichbar.
+    expect(lage.segOben, `Segment über der Zone: ${JSON.stringify(lage)}`).toBeGreaterThanOrEqual(lage.zoneUnten - 1)
+    expect(lage.segUnten).toBeLessThanOrEqual(lage.vh)
+  })
+}
+
+test('(j) Leeren und denselben Begriff neu: Liste und Hervorhebung sind wieder da', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await warteLeser(page)
+  const feld = page.locator('[data-v3-suchsprung] input').first()
+  await suche(page)
+  await feld.press('Enter')                      // Sprung: die Liste weicht (D38)
+  await expect(page.locator('[data-treffer-liste]')).toHaveCount(0)
+  const schalter = page.locator('[data-treffer-marken-schalter]')
+  await expect(schalter).toHaveAttribute('aria-pressed', 'true')
+  await schalter.click()
+  await expect(schalter).toHaveAttribute('aria-pressed', 'false')
+
+  await feld.fill('')
+  await feld.fill(BEGRIFF)                       // DERSELBE Begriff (PE-C4-B02 / PE-C5-B02)
+  await expect(page.locator('[data-treffer-liste]').first(), 'Liste kommt nach Leeren + gleichem Begriff nicht zurück')
+    .toBeVisible({ timeout: 20000 })
+  // Die Zähler-Zeile mit dem Schalter erscheint wieder, sobald die Liste weicht.
+  await feld.press('Enter')
+  await expect(page.locator('[data-treffer-liste]')).toHaveCount(0)
+  await expect(schalter, 'Hervorhebung blieb nach Leeren «aus» (PE-C4-B01)').toHaveAttribute('aria-pressed', 'true')
+})
+
+test('(k) Bereichswechsel verwirft die Fundstellen-Nummer', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await warteLeser(page)
+  await suche(page, 'Schadenersatz')
+  const vor = page.locator('[data-treffer-vor]').first()
+  for (let i = 0; i < 5; i += 1) await vor.click()
+  await expect(page.locator('[data-treffer-position]')).toContainText(/Fundstelle 5 von \d+/)
+  await page.locator('[data-v3-bereich="titel"]').click()
+  await expect(page.locator('[data-v3-bereich="titel"]')).toHaveAttribute('aria-checked', 'true')
+  // Vorher «Fundstelle 5 von 11» o. ä. (PE-C6-B01: «20 von 11»): eine Nummer aus
+  // der alten Folge gegen die neue. Jetzt: keine gewählt.
+  await expect(page.locator('[data-treffer-position]')).toContainText('keine gewählt')
+  await expect(page.locator('[data-treffer-stelle-aktiv]'), 'fremde Zeile als aktiv hervorgehoben').toHaveCount(0)
+})
+
+test('(l) Suchbereich ist eine echte Radio-Gruppe: Pfeiltasten wählen, ein Tab-Stopp', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await warteLeser(page)
+  await suche(page)
+  const radios = page.locator('[data-v3-suchbereich] [role="radio"]')
+  await expect(radios).toHaveCount(4)
+  expect(
+    await radios.evaluateAll((rs) => rs.filter((r) => r.getAttribute('tabindex') === '0').length),
+    'genau EIN Tab-Stopp in der Gruppe (roving tabindex)',
+  ).toBe(1)
+
+  await page.locator('[data-v3-bereich="alles"]').focus()
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-v3-bereich="titel"]')).toHaveAttribute('aria-checked', 'true')
+  await expect(page.locator('[data-v3-bereich="titel"]'), 'Fokus folgt der Auswahl').toBeFocused()
+  await page.keyboard.press('ArrowLeft')
+  await page.keyboard.press('ArrowLeft')           // Umlauf: alles → fussnoten
+  await expect(page.locator('[data-v3-bereich="fussnoten"]')).toHaveAttribute('aria-checked', 'true')
+  await page.keyboard.press('Home')
+  await expect(page.locator('[data-v3-bereich="alles"]')).toHaveAttribute('aria-checked', 'true')
+})
+
+test('(m) ‹ › tragen eine Hitbox von 24 px (F9), die Zone schneidet an ihrer Unterkante', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 800 })
+  await warteLeser(page)
+  await suche(page)
+  await page.locator('[data-v3-suchsprung] input').first().press('Enter')   // Liste weicht, die Zeile mit ‹ › erscheint
+  await expect(page.locator('[data-v3-treffer-vor]')).toBeVisible()
+  for (const [attr, seite] of [['data-v3-treffer-zurueck', -1], ['data-v3-treffer-vor', 1]] as const) {
+    const treffer = await page.locator(`[${attr}]`).evaluate((el, [a, sx]) => {
+      const r = el.getBoundingClientRect()
+      const cx = r.left + r.width / 2
+      const cy = r.top + r.height / 2
+      // Punkte 11.5 px von der Mitte: ausserhalb der sichtbaren 20 px, innerhalb von 24.
+      // Innen (zum Nachbarn) wird nicht gemessen — dort liegt dessen Fläche.
+      const punkte = [[cx + Number(sx) * 11.5, cy], [cx, cy - 11.5], [cx, cy + 11.5]]
+      return {
+        sichtbar: [Math.round(r.width), Math.round(r.height)],
+        treffer: punkte.map(([x, y]) => !!document.elementFromPoint(x, y)?.closest(`[${String(a)}]`)),
+      }
+    }, [attr, seite])
+    expect(treffer.sichtbar, `${attr}: die sichtbare Fläche darf nicht wachsen`).toEqual([20, 20])
+    expect(treffer.treffer, `${attr}: Hitbox unter 24 px`).toEqual([true, true, true])
+  }
+
+  // PE-C4-B03: Nur-Leerraum leert die Zone SOFORT (roher Feldwert), die
+  // Zähler-Zeile hängt aber 200 ms am entprellten Begriff. In dieser Spanne ragte
+  // sie 9 px unter die Zone — und war dort anklickbar (gemessen: Treffer-Test
+  // 3 px unter der Zonenkante traf die Zeile). Frame für Frame gelesen, im
+  // selben Tick wie die Eingabe.
+  const unterhalb = await page.evaluate(async () => {
+    const feld = document.querySelector('[data-v3-suchsprung] input') as HTMLInputElement
+    const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!
+    setter.call(feld, '   ')
+    feld.dispatchEvent(new Event('input', { bubbles: true }))
+    const log: boolean[] = []
+    for (let i = 0; i < 6; i += 1) {
+      await new Promise((r) => requestAnimationFrame(r))
+      const zeile = document.querySelector('[data-v3-treffer-weg]')
+      if (!zeile) break
+      const z = document.querySelector('[data-v3-such-zone]')!.getBoundingClientRect()
+      const r = zeile.getBoundingClientRect()
+      log.push(!!document.elementFromPoint(r.left + 20, z.bottom + 3)?.closest('[data-v3-treffer-weg]'))
+    }
+    return log
+  })
+  expect(unterhalb.length, 'Vorbedingung: die Zeile stand noch (sonst misst der Fall nichts, §6.7)').toBeGreaterThan(0)
+  expect(unterhalb, 'Zähler-Zeile ragt unter die Zone (PE-C4-B03)').not.toContain(true)
 })

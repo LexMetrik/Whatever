@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
@@ -7,9 +7,8 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { beiLeerlauf } from '../../lib/leerlauf';
-import { merkeKlappAstManuell, merkeSprungAstManuell } from './sprungAst';
+import { merkeKlappAstManuell, merkeSprungAstManuell, pruefeAlleZuSperre, type AlleZuSperre } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
-import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
@@ -31,6 +30,23 @@ import { gliederungGemerktZu } from './v3/gliederungGedaechtnis';
 // Layout wählt — deckungsgleich mit der matchMedia-Schwelle (1024px, R2).
 // Modul-Konstante statt Component-Local: reiner Wert, kein Zustand.
 const PANE_BREIT_PX = 1024;
+
+/**
+ * Fehlerzustand EINER Leser-Instanz (W2·17-UI-BEFUNDE PA-3-B01/B02, PE-C10-D01;
+ * Auflage A1 der Gegenprüfung): zwei verschiedene Auskünfte (§8), je Instanz
+ * getragen statt über einen globalen Kanal je Erlass-Schlüssel gemischt.
+ *
+ *  - `false` — kein Fehler;
+ *  - `'nicht-im-bestand'` — Auskunft über den ERLASS (nicht im Register, Datei 404,
+ *    kein Dateiverweis): die Fehlseite mit «Meinten Sie …?»;
+ *  - `{ art: 'ladefehler', … }` — Auskunft über die VERBINDUNG (Netz, 5xx, Abbruch):
+ *    `grund` = was nicht erreichbar war (`register`: das Verzeichnis der Erlasse, ob
+ *    der Erlass im Bestand ist, bleibt offen; `datei`: der Erlass steht im Register,
+ *    seine Datei fehlt), `erneut` stösst den Ladevorgang GENAU dieser Instanz an.
+ */
+export type LeserFehler = false | 'nicht-im-bestand' | LadefehlerZustand;
+
+export interface LadefehlerZustand { art: 'ladefehler'; grund: 'datei' | 'register'; erneut: () => void }
 
 // ─── Block 1 · Daten-, Shard- und Such-Zustand ───────────────────────────────
 export function useLeserZustand({ bezuegeVorladen = true }: {
@@ -66,11 +82,10 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // facettierte Auflistung aus dem Bezugs-Shard (`useBezuege`) — dieser ist die
   // Obermenge, der schlanke Shard also überflüssig geworden. Sind alle Facetten
   // abgewählt, wird nichts geladen und nichts gerendert.
-  // Revisions-Shard des Erlasses (V1c): Artikel-Token → Datum der letzten Text-
-  // änderung + AS-Fundstelle. EIN idle-Fetch auf Reader-Ebene wie der Leitfall-
-  // Shard; klassifiziert je Leitfall-Kante, ob sich die Norm SEIT dem Entscheid
-  // revidiert hat (Normrevisions-Ehrlichkeit, §V1c).
-  const [revisionShard, setRevisionShard] = useState<{ key: string; shard: RevisionShard | null } | null>(null);
+  // RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier lud der Leser den Revisions-Shard
+  // des Erlasses (V1c) im Leerlauf für `revisionFuer` — die Revisions-Marke der
+  // `BezuegeZeile`/`LeitfallZeile`. Beide sind gelöscht, `revisionFuer` hatte keinen
+  // Verbraucher mehr; das Panel lädt den Shard selbst (`v3/panelKontextLaden`).
   // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses. EIN idle-Fetch auf Reader-
   // Ebene (wie Leitfall-/Revisions-Shard); der Artikel-Eintrag wird als Prop
   // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
@@ -84,14 +99,14 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
     aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
     bereich: bezugBereich,
   } = useBezuege(bezuegeVorladen ? erlass?.key : undefined);
-  const [fehler, setFehler] = useState(false);
+  const [fehler, setFehler] = useState<LeserFehler>(false);
   // W2·10-UI-NAV/N0d·O3: kurze Bestätigung nach «In neuem Reiter» — der Reader
   // wird bei der ?r-Instanz-Navigation NICHT neu gemountet (gleicher key=schluessel),
   // darum überlebt dieser Zustand den Soft-Nav und weist zum Reiter-Tracker (☰).
   const [reiterToast, setReiterToast] = useState(false);
   const reiterToastTimer = useRef<number | null>(null);
   useEffect(() => () => { if (reiterToastTimer.current) window.clearTimeout(reiterToastTimer.current); }, []);
-  const [suche, setSuche] = useState('');
+  const [suche, setSucheRoh] = useState('');
   // Rank 9 (QS-PERF, §15/3): entprellter Suchwert. Das Eingabefeld bleibt sofort
   // responsiv (`suche`), aber die TEUREN Ableitungen — Treffer-Filter über ~1000
   // Artikel + IntersectionObserver-Neuaufbau — laufen erst ~200 ms nach dem letzten
@@ -100,6 +115,28 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
   // `springeZuArtikel` setzt setSuche('')). Reine Timing-Optimierung (§6.4): ändert
   // nur WANN gefiltert wird, nie WAS (dieselbe passtAufSuche-Menge, dieselbe Ansicht).
   const [sucheDebounced, setSucheDebounced] = useState('');
+  // ── W2·17-UI-BEFUNDE C1-B01 (2.10.2026) · ENTER BESTÄTIGT, DIE ENTPRELLUNG WARTET NICHT
+  // Reproduziert 2.10.2026 (StPO, 1440, Tippen und Enter im selben Task): (a) bei
+  // leerem alten Begriff tat Enter GAR NICHTS (`hatTreffer` hing am entprellten
+  // Wert), (b) nach einem Begriffswechsel sprang Enter zur nächsten Fundstelle
+  // des ALTEN Begriffs, während das Feld schon den neuen zeigte. Der Fehler ist
+  // die Lücke zwischen Feldwert und entprelltem Wert — nicht die Entprellung
+  // (Rank 9, §15/3: die teuren Ableitungen sollen nicht bei jedem Zeichen laufen).
+  // DAHER bleibt die Entprellung beim TIPPEN, und eine BESTÄTIGUNG zieht sie
+  // sofort nach: wer `setSuche` mit dem Wert aufruft, der schon im Feld steht
+  // (das tut Enter in `v3/SuchSprungFeld`), setzt `sucheDebounced` im selben Zug.
+  // Ein neuer Wert tippt weiter wie bisher (Feld sofort, Ableitungen nach 200 ms).
+  // Reine Timing-Frage (§6.4): dieselbe `passtAufSuche`-Menge, nur früher.
+  // Der letzte gesetzte Wert steht im Ref (im Handler geschrieben, nicht im
+  // Effekt): zwischen Tippen und Enter im selben Task ist noch nichts committet.
+  const zuletztGesetztRef = useRef('');
+  const setSuche = useCallback<Dispatch<SetStateAction<string>>>((v) => {
+    const neu = typeof v === 'function' ? v(zuletztGesetztRef.current) : v;
+    const bestaetigt = neu === zuletztGesetztRef.current;
+    zuletztGesetztRef.current = neu;
+    setSucheRoh(neu);
+    if (bestaetigt) setSucheDebounced(neu);
+  }, []);
   useEffect(() => {
     // Leeren: 0 ms (praktisch sofort, ein Tick — kein Lag beim Suche-Verlassen /
     // Treffer→Artikel-Sprung). Tippen: 200 ms entprellt. Beide über setTimeout,
@@ -129,20 +166,11 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
       // steht unter dem Artikel nichts und es kostet null Byte (Vorgabe David
       // 28.7.2026). Das KontextPanel lädt den norm-index-Shard weiterhin für
       // seinen eigenen Zweck — siehe `bezuegeLaden.ts`.
-      void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });
       // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
       void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
     });
     return () => { lebt = false; abbrechen(); };
   }, [erlass?.key, bezuegeAktiv]);
-  // Revision r(a) des AKTUELLEN Erlass-Artikels (§V1c): undefined = Shard
-  // fehlt/lädt/Erlass nicht abgedeckt (⇒ 'unbekannt'); null = Urfassung (⇒ 'gleich');
-  // Objekt = letzte Textänderung. Stabile Referenz aus dem Shard → memo-freundlich.
-  const revisionFuer = useCallback((artikel: string) => (
-    erlass && revisionShard?.key === erlass.key
-      ? revisionFuerToken(revisionShard.shard, artikel)
-      : undefined
-  ), [erlass, revisionShard]);
   // W2·19-GLIEDERUNG/S6 (Bau-Spec §5.1, Zeile 1): trägt der Erlass mindestens
   // eine in Kraft getretene, aber nicht konsolidierte Änderung? PROMOTION, kein
   // Neubau — dieselbe Quelle, die das KontextPanel ohnehin lädt
@@ -220,7 +248,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
+    historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
   };
 }
 
@@ -285,8 +313,13 @@ export function useLeserTocZustand() {
   // `tocBaum` zu erraten: die Zeile kennt zusätzlich `startOffen` und
   // `startOffeneTiefe` (Modell), und eine Zeile, die ohne Eintrag in `tocBaum`
   // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
-  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
+  // «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel (`pruefeAlleZuSperre`,
+  // ./sprungAst); `aktivIdsRef` spiegelt den aktiven Pfad für den Callback (deps `[]`).
+  const aktivIdsRef = useRef<string[]>([]);
+  const alleZuSperreRef = useRef<AlleZuSperre | null>(null);
+  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean, alleZu = false) => {
     const ziel = !istOffen;
+    if (alleZu && !ziel) alleZuSperreRef.current = { pfad: aktivIdsRef.current, ids };
     // Die Buchhaltung steht seit 15.9.2026 in `./sprungAst` (§5) — sie war an
     // vier Stellen getippt, und die Kopie im Artikel-Sprung war unvollständig.
     merkeKlappAstManuell(ids, ziel, {
@@ -305,6 +338,11 @@ export function useLeserTocZustand() {
     });
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
+  useEffect(() => {
+    // Erst prüfen, dann den Spiegel fortschreiben: die Sperre kennt den Pfad VOR dem Wechsel.
+    alleZuSperreRef.current = pruefeAlleZuSperre(alleZuSperreRef.current, aktivIds, manuellZuRef.current);
+    aktivIdsRef.current = aktivIds;
+  }, [aktivIds]);
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
   // W2·10-UI-NAV/R2: «beim Öffnen Hierarchie zur aktuellen Leseposition
   // aufgeklappt + markiert». Markiert ist sie bereits (aktivIds → aktivPfad im
@@ -419,7 +457,11 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // A3: aktuell gelesener Artikel (live) für den Einzelansicht-Kopf. Nur in der
   // Einzelansicht (!imPane) gepflegt; im Split-View trägt der PaneKopf den Titel.
   const meldeInhaltsKopf = useMeldeInhaltsKopf();
-  const [aktArtikel, setAktArtikel] = useState<string | null>(null);
+  // W2·17-UI-BEFUNDE (B10-B01): der Zustand hält den TOKEN des gelesenen Artikels,
+  // nie sein Anzeige-Label — Labels sind je Erlass nicht eindeutig («Art. 3» im
+  // Hauptteil und in der Schlusstitel-/Übergangsgruppe, 217 Artikel in OR/ZGB/SchKG).
+  // Das Label ist daraus abgeleitet (`useArtikelTokens`, `artLabelByToken`).
+  const [aktToken, setAktToken] = useState<string | null>(null);
   // B-2.5: In einem Pane scopen wir DOM-Queries + Scroll auf die Pane-Wurzel
   // (sonst kollidieren doppelte `art-`-IDs / trifft der Scroll das falsche Pane).
   // NUR ein SEKUNDÄRES Pane unterdrückt globale URL-/Reiter-Writes — das primäre
@@ -469,7 +511,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
 
   return {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys,
     kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   };

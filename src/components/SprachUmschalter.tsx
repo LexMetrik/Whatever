@@ -52,7 +52,7 @@ export function SprachUmschalter() {
            trägt «IT Italiano» samt Marke ganz und bleibt unter dem
            320-px-Deckel, den das Menü-Rezept für eine schwebende Fläche
            setzt. */
-        <div role="group" aria-label="Sprache wählen" className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 w-72 max-w-[calc(100vw-1rem)] p-1 z-dropdown">
+        <div role="group" data-menue-flaeche aria-label="Sprache wählen" className="lc-schwebeflaeche absolute right-0 top-full mt-1.5 w-72 max-w-[calc(100vw-1rem)] p-1 z-dropdown">
           {LOCALES.map((l) => {
             const aktiv = l.code === locale;
             return (

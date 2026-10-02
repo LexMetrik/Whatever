@@ -29,8 +29,10 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // Gesetzestext. Der Highlight-Walker überspringt solche Teilbäume vollständig,
 // sonst zählte ein Begriff seine eigenen Ausschnitte mit (Bug-Check 4.8.2026).
 
-/** Begriff im Schnipsel wie `::highlight(lc-such-treffer)` (W2·29 S4: vorher CSS). */
-const MARKE = '[&_mark]:bg-brass-200 [&_mark]:px-px [&_mark]:text-ink-900';
+/** Begriff im Schnipsel wie `::highlight(lc-such-treffer)` (W2·29 S4: vorher CSS) — dieselben
+ *  Tokens wie dort (§5, W2·17-UI-BEFUNDE: `such-treffer`/`such-treffer-tinte`, ≥ 3:1 bzw. ≥ 4.5:1;
+ *  vorher `brass-200`/`ink-900`, 1.24:1). */
+const MARKE = '[&_mark]:bg-such-treffer [&_mark]:px-px [&_mark]:text-such-treffer-tinte';
 
 /** W2·29 S4: laufende Stelle = Registerfläche + Strich (Tokens); Strich immer da, CLS 0. */
 const zeile = (aktiv: boolean) =>
@@ -111,30 +113,43 @@ export function LeserTrefferListe({
   // «Fundstelle 0 von 88»; der Wert bleibt DATENSEITIG (§4.4, `leserSuche.ts`).
   const laufend = position < 0 ? 0 : position + 1;
 
-  // Deckel und Handauf-Zustand hängen am BEGRIFF (Gültigkeits-Schlüssel): eine
-  // neue Anfrage fängt wieder bei 200 an und klappt alles zu, sonst bliebe eine
-  // einmal geöffnete Riesenliste für den Rest der Sitzung stehen. Der Schlüssel
-  // wird beim RENDER geprüft statt in einem Effekt zurückgesetzt — kein
-  // Kaskaden-Render (react-hooks/set-state-in-effect), dasselbe Muster wie in V1.
-  const [gemerkt, setGemerkt] = useState<{ begriff: string; n: number; auf: string[] }>(
-    { begriff, n: TREFFER_DECKEL, auf: [] });
+  // Der Deckel hängt am BEGRIFF (Gültigkeits-Schlüssel): eine neue Anfrage fängt
+  // wieder bei 200 an, sonst bliebe eine einmal geöffnete Riesenliste für den
+  // Rest der Sitzung stehen. Der Schlüssel wird beim RENDER geprüft statt in
+  // einem Effekt zurückgesetzt — kein Kaskaden-Render
+  // (react-hooks/set-state-in-effect), dasselbe Muster wie in V1.
+  //
+  // ── W2·17-UI-BEFUNDE · PE-C7-B03 (1.10.2026) · KEIN «AUFKLAPPEN VON HAND» ────
+  // Hier stand ein zweiter Zustand `auf` (von Hand aufgeklappte Artikel) samt
+  // `klappe()` am Artikel-Knopf und `aria-expanded` daran. Er konnte NIE wirken:
+  // der Knopf ruft `onSprung`, und der Aufrufer (`./LeserTrefferSpalte`) nimmt
+  // damit die ganze Liste weg (D38: ein gewähltes Ziel lässt die Liste weichen)
+  // — samt diesem Zustand. Gemessen (OR «Kündigung», Kopf #3): aria-expanded
+  // «false», Klick, `[data-treffer-liste]` = 0. Zurück blieb eine FALSCHE
+  // Auskunft für Screenreader («zugeklappt, Schalter», Betätigen führt weg).
+  // JETZT ist der Kopf, was er tut: ein Sprung. Aufgeklappt ist genau der
+  // Artikel mit der laufenden Stelle (`aria-current`); dazu bleibt nur der
+  // Deckel als Zustand.
+  const [gemerkt, setGemerkt] = useState<{ begriff: string; n: number }>(
+    { begriff, n: TREFFER_DECKEL });
   const gueltig = gemerkt.begriff === begriff;
-  const deckel = gueltig ? gemerkt.n : TREFFER_DECKEL;
-  const handAuf = gueltig ? gemerkt.auf : [];
+  // ── PE-C7-B01 · DIE LAUFENDE STELLE LIEGT NIE JENSEITS DES DECKELS ──────────
+  // Der Deckel wuchs nur per Klick auf «weitere anzeigen». ↑↓ (und jeder
+  // Wrap auf die LETZTE Fundstelle) führen aber in jeden Artikel — gemessen OR
+  // «der»: «Fundstelle 12003 von 12003», 200 Artikel gerendert, KEINE Zeile
+  // hervorgehoben, der Scroll-Effekt der Spalte fand nichts (§8: eine
+  // Hervorhebung, die nicht dasteht). Der Deckel reicht jetzt mindestens bis
+  // zum Artikel der laufenden Stelle — Render-Ableitung, kein Effekt. Der
+  // Preis ist einmalig und gehört zur Handlung: wer auf die letzte Stelle
+  // springt, bekommt die Liste bis dorthin gerendert.
+  const aktivIdx = aktivStelle ? treffer.findIndex((t) => t.token === aktivStelle.token) : -1;
+  const deckel = Math.max(gueltig ? gemerkt.n : TREFFER_DECKEL, aktivIdx + 1);
 
   const sichtbar = treffer.slice(0, deckel);
   const rest = treffer.length - sichtbar.length;
   const zeilen = sichtbar.map((t, i) => ({
     t, kopf: t.gruppe !== null && t.gruppe !== (sichtbar[i - 1]?.gruppe ?? null) ? t.gruppe : null,
   }));
-
-  const klappe = (token: string) => setGemerkt((g) => {
-    const basis = g.begriff === begriff ? g : { begriff, n: TREFFER_DECKEL, auf: [] };
-    return {
-      ...basis, begriff,
-      auf: basis.auf.includes(token) ? basis.auf.filter((x) => x !== token) : [...basis.auf, token],
-    };
-  });
 
   return (
     <div {...{ [SUCH_META]: '' }} data-treffer-liste className="pb-2">
@@ -176,12 +191,27 @@ export function LeserTrefferListe({
         {zeilen.map(({ t, kopf }) => {
           const badges = badgesFuer(t, aenderungenAus);
           // Aufgeklappt ist ein Artikel, wenn die laufende Fundstelle in ihm
-          // liegt ODER der Leser ihn selbst geöffnet hat. Der erste Teil ist der
-          // wichtige: wer ↑↓ drückt, soll die Stelle SEHEN, zu der er springt —
-          // ohne ihn wäre die Hervorhebung in einem zugeklappten Ast unsichtbar.
+          // liegt: wer ↑↓ drückt, soll die Stelle SEHEN, zu der er springt —
+          // sonst wäre die Hervorhebung in einem zugeklappten Ast unsichtbar.
+          // (Ein Aufklappen von Hand gibt es nicht: PE-C7-B03, siehe oben.)
           const aktiv = aktivStelle?.token === t.token;
-          const offen = aktiv || handAuf.includes(t.token);
-          const stellen = offen ? fundstellenFuer(t.token).slice(0, STELLEN_DECKEL) : [];
+          const offen = aktiv;
+          // ── PE-C7-B04 · DER STELLEN-DECKEL SAGT, DASS ER EINER IST ──────────
+          // Ab der 41. Stelle eines Artikels fehlte die laufende Zeile UND jeder
+          // Hinweis (gemessen OR «e», Art. 1 = 64 Stellen, ↓ 42×: 40 Zeilen,
+          // `data-treffer-stelle-aktiv` 0). Der frühere Kommentar «es
+          // verschwindet keine Information» stimmte für die Liste nicht (§8).
+          // JETZT: die Zeilen reichen mindestens bis zur laufenden Stelle (die
+          // Hervorhebung steht, der Scroll-Effekt findet sie), und was der
+          // Deckel weiter abschneidet, wird mit seiner Zahl benannt.
+          const alleStellen = offen ? fundstellenFuer(t.token) : [];
+          const aktivAb = aktiv ? alleStellen.findIndex((f) => f.rang === aktivStelle?.rang) + 1 : 0;
+          const stellen = alleStellen.slice(0, Math.max(STELLEN_DECKEL, aktivAb));
+          const stellenRest = alleStellen.length - stellen.length;
+          // Breite der Rang-Spalte in Ziffern (PE-C7-D01): die Ränge sind
+          // tabellarisch gesetzt (`lc-ziffern`), die Spalte hält die Breite der
+          // grössten Zahl — der Schnipsel springt nicht ab Rang 10 (6 px) / 100.
+          const rangStellen = String(stellen.reduce((m, f) => Math.max(m, f.rang + 1), 0)).length;
           return (
             <Fragment key={t.token}>
               {kopf !== null && (
@@ -210,10 +240,9 @@ export function LeserTrefferListe({
                 </li>
               )}
               <li data-treffer-artikel={t.token} data-fundstellen-zahl={t.fundstellen} className="border-t border-line">
-                <button type="button" onClick={() => { onSprung(t.token); klappe(t.token); }}
+                <button type="button" onClick={() => onSprung(t.token)}
                   data-treffer-aktiv={aktiv ? '1' : undefined}
                   aria-current={aktiv ? 'location' : undefined}
-                  aria-expanded={offen}
                   className={`w-full px-1.5 py-2 ${zeile(aktiv)}`}>
                   {/* ── Ä10/Ä26 (H2b-Nachzug) · DAS ETIKETT SPRENGT DIE LEISTE NICHT
                       Gemessen 17.8.2026 (LugÜ, Suche «Gericht»): `shrink-0` am
@@ -305,12 +334,21 @@ export function LeserTrefferListe({
                             data-treffer-stelle-aktiv={stelleAktiv ? '1' : undefined}
                             aria-current={stelleAktiv ? 'location' : undefined}
                             className={`flex w-full items-baseline gap-1.5 px-1.5 py-1 ${zeile(stelleAktiv)}`}>
-                            <span aria-hidden className="shrink-0 text-micro lc-ziffern text-ink-600">{f.rang + 1}</span>
+                            <span aria-hidden className="shrink-0 text-right text-micro lc-ziffern text-ink-600"
+                              style={{ minWidth: `${rangStellen}ch` }}>{f.rang + 1}</span>
                             <Schnipsel a={f.ausschnitt} />
                           </button>
                         </li>
                       );
                     })}
+                    {stellenRest > 0 && (
+                      // §8 (PE-C7-B04): der Deckel benennt sich. Kein Knopf — die
+                      // übrigen Stellen erreicht man im Text mit ↑↓, und die
+                      // laufende wird beim Schreiten wieder sichtbar.
+                      <li data-treffer-stellen-rest className="px-1.5 py-1 text-micro text-ink-600">
+                        {stellenRest} weitere {stellenRest === 1 ? 'Stelle' : 'Stellen'} — im Text mit ↑↓ erreichbar
+                      </li>
+                    )}
                   </ul>
                 )}
               </li>
@@ -323,10 +361,11 @@ export function LeserTrefferListe({
         // §8: die Zahl steht dran — der Leser weiss, dass da noch etwas ist und
         // wie viel. 44-px-Tap-Ziel wie die Navigationsknöpfe (A9-DoD).
         <button type="button" data-treffer-mehr
-          onClick={() => setGemerkt((g) => ({
-            begriff, n: (g.begriff === begriff ? g.n : TREFFER_DECKEL) + TREFFER_DECKEL,
-            auf: g.begriff === begriff ? g.auf : [],
-          }))}
+          onClick={() => setGemerkt({
+            // Aufbauend auf dem WIRKSAMEN Deckel (nicht auf dem gemerkten): hat
+            // die laufende Stelle ihn angehoben, wächst «mehr» von dort aus.
+            begriff, n: deckel + TREFFER_DECKEL,
+          })}
           className="flex min-h-11 w-full items-center justify-center border-t border-line px-2 text-body-s text-ink-600 transition-colors lc-hover-flaeche hover:text-ink-900">
           {rest} weitere anzeigen
         </button>

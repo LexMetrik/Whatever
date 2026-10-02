@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { imMenue, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
-import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
+import { BLAETTERN, NAVIGATION, UMSCHALTER, belegung } from './leserTastaturBelegung';
+import { inWaagrechtemScroller } from './leserTastaturZiel';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
 //
@@ -29,6 +31,13 @@ import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
 //  3. Offener modaler Dialog (ausser dem eigenen Overlay) → raus. Ein Dialog hat
 //     eine Fokusfalle; Navigation dahinter wäre Bedienung eines unsichtbaren
 //     Dokuments (dasselbe Prinzip, nach dem `Shell.tsx` F6 sperrt).
+//  2c. (G4-B01, 2.10.2026) Offenes Menü («Ansicht ▾», Reiter-Kontextmenü) → raus,
+//     und zwar VOR allem anderen: ein Menü ist kein `aria-modal`-Dialog, hat aber
+//     Fokusfalle und eigene Tasten (Pfeile, Esc, Enter); «t» schob den Fokus
+//     unter dem offenen Menü weg (`components/layout/modalerDialog`, `imMenue`).
+//  2d. (G4-B02) Auto-Repeat bei den UMSCHALTERN («?», «r», «t») → raus: eine
+//     gehaltene Taste liess das Overlay flackern bzw. das Blatt hin- und herklappen.
+//     j/k/←/→ bleiben absichtlich wiederholbar (gehalten durchblättern, #1265).
 //
 // §3 reine Darstellung: die Komponente kennt keine Rechtslogik, nur Reihenfolge
 // von Artikel-Tokens und den (hereingereichten) Sprung. §15: EIN passiv
@@ -46,6 +55,9 @@ function istEingabe(ziel: EventTarget | null): boolean {
   if (!el || !el.tagName) return false;
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
+
+/** Wie lange ein Tasten-Sprung ohne gezeigten Artikel als «jetzt» gilt (Navigation blieb aus). */
+const FRIST_MS = 2000;
 
 export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaettern, imSekundaerenPane = false }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
@@ -119,7 +131,21 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   const aktivRef = useRef(aktivToken);
   const sprungRef = useRef(onSprung);
   useEffect(() => { tokenRef.current = tokens; }, [tokens]);
-  useEffect(() => { aktivRef.current = aktivToken; }, [aktivToken]);
+  // W2·17-UI-BEFUNDE (Nachzug zu #1265): im EINZELMODUS ist `aktivToken` der gezeigte Artikel aus dem
+  // Router-Hash — der ändert sich erst nach dem Render der Navigation. Zwei Tasten vor diesem Render
+  // (Tastenwiederholung) rechneten beide vom alten Stand: ein Schritt ging verloren. Darum merkt sich
+  // die Taste ihre eigenen, noch nicht gezeigten Sprünge (`angesprungenRef`, in Reihenfolge) und rechnet
+  // vom letzten. Kommt ein gezeigter Artikel an, fallen die Sprünge bis zu ihm weg (ein älterer Frame
+  // setzt die Rechnung NICHT zurück: «j, j, Frame 2, j» ergibt 2, 3, 4); ein Artikel, den die Tasten
+  // nicht angesprungen haben (Klick, Zurück), verwirft alle. Ein Sprung ohne Frame (die Navigation blieb
+  // aus) verfällt nach `FRIST_MS`, ein Lesart-Wechsel verwirft ihn sofort — nichts hängt an einem
+  // Artikel, den niemand zeigt. Gesamtansicht: der Scroll-Spy führt, nichts wird gemerkt.
+  const angesprungenRef = useRef<{ token: string; bis: number }[]>([]);
+  useEffect(() => {
+    aktivRef.current = aktivToken;
+    const i = aktivToken === null ? -1 : angesprungenRef.current.findIndex((s) => s.token === aktivToken);
+    angesprungenRef.current = i < 0 ? [] : angesprungenRef.current.slice(i + 1);
+  }, [aktivToken]);
   useEffect(() => { sprungRef.current = onSprung; }, [onSprung]);
   // Wie `sprungRef`: über eine Ref gelesen, damit der Listener nicht bei jedem
   // Render des Rahmens ab- und neu registriert wird.
@@ -128,6 +154,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
   // W2·5m · wie `panelRef`: über eine Ref, damit der eine Listener stehen bleibt.
   const blaetternRef = useRef(onBlaettern);
   useEffect(() => { blaetternRef.current = onBlaettern; }, [onBlaettern]);
+  // An der LESART hängt die Merkliste, nicht an der Funktion (`blaettere` ist bei jedem Render neu).
+  const imEinzelmodus = onBlaettern !== undefined;
+  useEffect(() => { angesprungenRef.current = []; }, [imEinzelmodus]); // Lesart gewechselt: gemerkte Sprünge gelten nicht mehr
   // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
   // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
   const paneRolleRef = useRef(imSekundaerenPane);
@@ -145,6 +174,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // das immer wahr (kein `[data-pane]` im Baum), das Ist-Verhalten bleibt
       // damit unberührt. Herleitung und Messwerte: `../panePrioritaet`.
       if (!tastendruckGehoertPane(paneRolleRef.current)) return;
+      // Guard 2c/2d (G4-B01, G4-B02): s. Kopfkommentar.
+      if (imMenue(e.target)) return;
+      if (e.repeat && UMSCHALTER.has(e.key)) return;
       // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
       // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
       // der eine Selbst-Ausnahme rechtfertigt: er RÄUMT den Dialog weg, statt
@@ -170,7 +202,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // Blatt der EINZIGE offene modale Dialog ist; jeder andere (Hilfe,
       // Suche) sperrt weiter.
       if (e.key === 'r' && panelRef.current) {
-        const modale = document.querySelectorAll('[role="dialog"][aria-modal="true"]');
+        const modale = offeneModaleDialoge();
         if (modale.length === 1 && modale[0].matches('[data-v3-panel-modal="ja"]')) {
           e.preventDefault();
           panelRef.current();
@@ -180,7 +212,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // Guard 3: hinter einem offenen modalen Dialog wird nichts bedient — ohne
       // Ausnahme, das eigene Overlay eingeschlossen (dasselbe Prinzip, nach dem
       // `Shell.tsx` F6 sperrt).
-      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+      if (offeneModaleDialoge().length > 0) return;
 
       if (e.key === '?') {
         e.preventDefault();
@@ -198,6 +230,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       if (richtung !== undefined) {
         const blaettere = blaetternRef.current;
         if (!blaettere) return;
+        // B11-B01/ED10: ein seitlich scrollbarer Container (breite Tabelle) hat die Pfeile
+        // selbst — kein Blättern, kein `preventDefault` (Herleitung: `./leserTastaturZiel`).
+        if (inWaagrechtemScroller(e.target)) return;
         e.preventDefault();
         blaettere(richtung);
         return;
@@ -236,7 +271,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       }
       const liste = tokenRef.current;
       if (!liste.length) return;
-      const jetzt = aktivRef.current;
+      const offen = angesprungenRef.current.at(-1);
+      if (offen && offen.bis < Date.now()) angesprungenRef.current = [];
+      const jetzt = angesprungenRef.current.at(-1)?.token ?? aktivRef.current;
       const i = jetzt === null ? -1 : liste.indexOf(jetzt);
       // Ohne bekannten Bezugspunkt (noch kein Spy-Ergebnis, z. B. direkt nach dem
       // Laden ganz oben) startet «j» beim ersten Artikel und «k» tut nichts —
@@ -244,6 +281,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       const ziel = e.key === 'j' ? i + 1 : i - 1;
       if (ziel < 0 || ziel >= liste.length) return;
       e.preventDefault();
+      if (blaetternRef.current) angesprungenRef.current.push({ token: liste[ziel], bis: Date.now() + FRIST_MS });
       sprungRef.current(liste[ziel]);
     };
     window.addEventListener('keydown', onKey);
@@ -278,8 +316,8 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
         {/* §8: die global belegten Tasten gehören in dieselbe Übersicht — sonst
             liest sich die Liste als «das ist alles, was geht». */}
         <p className="text-body-s text-ink-600">
-          Ausserdem überall: <span className="font-mono">/</span> oder{' '}
-          <span className="font-mono">⌘K</span> für die Suche.
+          Ausserdem überall: <span className="font-mono">/</span>, <span className="font-mono">⌘K</span>{' '}
+          oder <span className="font-mono">Strg+K</span> für die Suche.
         </p>
         <button type="button" onClick={() => setHilfeOffen(false)}
           className="lc-btn-outline lc-btn-sm min-h-11 w-full">Schliessen</button>

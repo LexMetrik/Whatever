@@ -56,7 +56,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
             toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
           }} />
           {erlass.pdfUrl && (
-            <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
+            <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern aufgehoben={!!erlass.aufgehoben} />
           )}
         </>
       } />

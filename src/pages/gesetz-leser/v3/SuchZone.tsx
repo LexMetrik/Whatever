@@ -69,8 +69,19 @@ export const SUCH_H_RUHE = '2.75rem';
 /** Höhe mit laufender Suche (Feld + Zähler-Zeile `min-h-5` + `gap-1`). */
 export const SUCH_H_AKTIV = '4.25rem';
 
-/** W2·29 S4 (Werkbank): ‹ › eckig mit Linie; 20 px wie die Zeile (Höhe bleibt). */
-const SCHRITT = 'inline-flex h-5 w-5 items-center justify-center border border-line bg-paper leading-none text-ink-900 transition-colors lc-hover-flaeche';
+/** W2·29 S4 (Werkbank): ‹ › eckig mit Linie; 20 px wie die Zeile (Höhe bleibt).
+ *
+ *  W2·17-UI-BEFUNDE · PE-C4-D02 / PE-C7-D01 (1.10.2026) · TREFFERFLÄCHE AUS DEM
+ *  TOKEN (F9): gemessen auf allen vier Breiten, hell und dunkel, waren die
+ *  Griffe 20×20 px mit Hitbox ±10 px um die Mitte — unter `--tap-ziel` (24 px),
+ *  und zwei davon nebeneinander (Lücke 2 px, Mittenabstand 22 < 24). Der
+ *  Kommentar «20 px wie die Zeile» begründete die Zeilenhöhe, keine benannte
+ *  F9-Ausnahme. JETZT trägt jeder Griff ein unsichtbares, zentriertes `::after`
+ *  in der Token-Grösse (F9: «Padding oder `::after`-Hitbox, nie eine grössere
+ *  sichtbare Fläche»): Optik, Zeilenhöhe und `SUCH_H_AKTIV` bleiben auf den
+ *  Pixel. Die zwei Flächen stossen in der 2-px-Lücke zusammen (je 2 px über den
+ *  Rand), ohne in den Nachbarknopf hineinzuragen. */
+const SCHRITT = 'relative inline-flex h-5 w-5 items-center justify-center border border-line bg-paper leading-none text-ink-900 transition-colors lc-hover-flaeche after:absolute after:left-1/2 after:top-1/2 after:h-[var(--tap-ziel)] after:w-[var(--tap-ziel)] after:-translate-x-1/2 after:-translate-y-1/2';
 
 export function SuchZone({
   suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
@@ -139,7 +150,18 @@ export function SuchZone({
     // D28 «Druck ohne Feld»: `print:hidden` an der ZONE, nicht am Feld — auch
     // Zähler-Zeile und Griffe fallen aus der Kanzlei-Akte (W2·29 S4: vorher die
     // eine Druck-Regel in index.css, jetzt am Markup).
-    <div data-v3-such-zone className="flex flex-col justify-start gap-1 pb-2 print:hidden"
+    // ── PE-C4-B03 (1.10.2026) · DIE ZONE SCHNEIDET AN IHRER UNTERKANTE ────────
+    // Die Zähler-Zeile hängt am ENTPRELLTEN Begriff (`sucheAktiv`), die Zonenhöhe
+    // am ROHEN Feldwert (`--leser-v3-such-h`, Rahmen). Beim Leeren (0 ms) bzw. bei
+    // Nur-Leerraum (200 ms) steht die Zeile deshalb noch einen Moment in einer
+    // schon auf 44 px geschrumpften Zone: gemessen 9 px unter ihrer Unterkante,
+    // je ein Frame. Der Rahmen (`LeserRahmenV3`) hat diesen Rohwert; hier
+    // kommt er nicht an, ohne die Aufrufkette zu ändern — darum schneidet die
+    // Zone dort, wo ihre Höhe aufhört: `clip-path` mit negativen Rändern an den
+    // drei anderen Seiten, damit der Fokusring des Feldes (liegt AUSSERHALB der
+    // Box) unberührt bleibt. Kein `overflow-hidden`: das hätte ihn gekappt.
+    <div data-v3-such-zone
+      className="flex flex-col justify-start gap-1 pb-2 [clip-path:inset(-0.5rem_-0.5rem_0_-0.5rem)] print:hidden"
       style={{ height: 'var(--leser-v3-such-h)' }}>
       {/* ── D28 · DAS FELD IST EIN FELD, KEINE WAND ──────────────────────────
           GEMESSEN 6.9.2026 @1440 (STPO, Preview 4372) nach dem Umzug: das

@@ -67,7 +67,6 @@ function modellFuer(eintraege: NormSnapshot[], struktur: StrukturMap): LeserV3Mo
     internRefs: undefined,
     offen: {},
     setOffen: () => {},
-    revisionFuer: () => undefined,
     historieFuer: () => undefined,
     // §6.3-DEKLARATION (W2·24-R6c): das Modell führt seit der Zähl-Datei einen
     // dritten Nachschlag je Artikel (`bezuegeZaehler`, `../pages/gesetz-leser/

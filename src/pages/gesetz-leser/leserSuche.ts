@@ -43,7 +43,8 @@
 
 import { findeVorkommen } from './suchHighlight';
 import { ohneMarkup } from './helpers';
-import { randtitelKnoten } from '../../lib/normtext/darstellung';
+import { randtitelKnoten, artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
+import { vergleicheFnNr } from './berechnungen';
 // W2·27 (Entscheid David 14.9.2026, Randtitel-Doppelmodell): die
 // Sachtitel-Fallback-Kette (`marginalie` vor `titel`) lebt nur noch hier —
 // vorher zweite Inline-Kopie derselben Regel wie im Gliederungs-Baum (§5).
@@ -100,10 +101,21 @@ type SuchQuelle =
  *                  Artikeln; Bild-Alt: es ist ein Attribut, kein Textknoten;
  *                  nachrangige Randtitel: sie sind seit 6b eigene
  *                  Gliederungsknoten und werden am Artikel nicht wiederholt).
- *  · `aenderung` — eine als `kl:'A'` klassifizierte ÄNDERUNGS-Fussnote: sichtbar
- *                  genau in der Stellung «Fussnoten» der Änderungs-Wahl
- *                  (`html[data-vermerke="fassung"|"aus"]` ⇒ `display:none`,
- *                  index.css).
+ *  · `aenderung` — ein Baustein des FUSSNOTEN-APPARATS: sichtbar genau in der
+ *                  Stellung «Fussnoten» (`html[data-vermerke="fussnoten"]`);
+ *                  in «aus» (der Vorgabe) blendet index.css Marker UND Apparat
+ *                  ganz aus, klassenblind (W2·26/Z8, 11.9.2026). Der Name stammt
+ *                  aus der Zeit, als nur `kl:'A'` verschwinden konnte (D35-F3,
+ *                  unten); er bleibt, weil Tests und Badge ihn führen.
+ *
+ * ── W2·17-UI-BEFUNDE PE-C9-B01 (1.10.2026) · DIE PRÄMISSE UNTEN IST ÜBERHOLT ──
+ * Der Absatz «nur kl:A kann verschwinden» galt bis Z8 (11.9.2026, vier Tage nach
+ * D35-F3): seither nimmt die Stellung «aus» den Apparat ALS GANZES weg, und «aus»
+ * ist die Vorgabe. Der Index rechnete weiter mit `immer` für jede Fussnote
+ * ausser `kl:'A'` — gemessen am OR 799 «SR» gezählt-malbar gegen 720 gemalt, in
+ * der Vorgabe-Stellung eine Fussnoten-Liste ohne einen sichtbaren Treffer und
+ * ohne «(ausgeblendet)» (§8). Jetzt trägt JEDE Fussnote `aenderung`. Der
+ * D35-F3-Text bleibt als datierter Beleg stehen (§0 Ziff. 2b).
  *
  * ── D35-F3 (7.9.2026) · WARUM DER WERT `fussnoten` NICHT MEHR STIMMT ─────────
  * Bis hierher hiess der dritte Wert `fussnoten` und meinte «hängt am
@@ -234,6 +246,15 @@ export function baueLeserSuchIndex(
     // ist die EINE Stelle für diese Regel (W2·27, vorher zweite Inline-Kopie).
     const sachtitel = artikelRandtitel(e, struktur);
     const gliederung = st?.gliederung ?? [];
+    // W2·17-UI-BEFUNDE PE-C9-B06: ein Artikel OHNE Wortlaut (amtlich aufgehoben,
+    // gegenstandslos, leer-ungeklärt) steht in der Lesespalte zugeklappt — sein
+    // Körper (ArtikelBody, Tabellen, Fussnoten an Absatz/Item) liegt NICHT im
+    // DOM, der Kopf samt Label, Randtitel, Grundlage und artikelweiten
+    // Fussnoten schon. Dasselbe Kriterium wie `ArtikelLeser.tsx` (`ohneWortlaut`,
+    // `artikelLeerstellenStatus`): findbar bleibt der Körper («Aufgehoben» steht
+    // im Snapshot), gemalt wird er nicht — der Sprung bleibt beim Artikel (§8).
+    const ohneWortlaut = artikelLeerstellenStatus(e.bloecke, e.aufgehoben, e.gegenstandslos) !== 'lebt';
+    const koerper: Malbarkeit = ohneWortlaut ? 'nie' : 'immer';
 
     const segmente: Segment[] = [];
     // 1 · Randtitel-Kette. Die Feldklassen folgen der Generator-Semantik
@@ -269,21 +290,21 @@ export function baueLeserSuchIndex(
       // Lesespalte malt — der §4.4-Vertrag «gemalte ≤ gezählte» wäre für
       // genau diese Suchen gebrochen (am BGFA vor dieser Zeile gemessen:
       // «2» → 164 gezählt gegen 184 gemalt).
-      schiebe(segmente, 't', 'Fliesstext', 'immer', b.absatz);
-      schiebe(segmente, 't', 'Fliesstext', 'immer', b.text);
+      schiebe(segmente, 't', 'Fliesstext', koerper, b.absatz);
+      schiebe(segmente, 't', 'Fliesstext', koerper, b.text);
       for (const it of b.items ?? []) {
-        schiebe(segmente, 't', 'Fliesstext', 'immer', it.marke);
-        schiebe(segmente, 't', 'Fliesstext', 'immer', it.text);
+        schiebe(segmente, 't', 'Fliesstext', koerper, it.marke);
+        schiebe(segmente, 't', 'Fliesstext', koerper, it.text);
       }
       for (const z of b.tabelle ?? []) {
-        schiebe(segmente, 'tb', 'Tabelle', 'immer', z.beschreibung);
-        schiebe(segmente, 'tb', 'Tabelle', 'immer', z.betrag);
+        schiebe(segmente, 'tb', 'Tabelle', koerper, z.beschreibung);
+        schiebe(segmente, 'tb', 'Tabelle', koerper, z.betrag);
       }
       const ms = b.mehrspaltig;
       if (ms) {
-        for (const sp of ms.spalten ?? []) schiebe(segmente, 'tb', 'Tabelle', 'immer', sp.titel);
-        for (const k of ms.kopf ?? []) schiebe(segmente, 'tb', 'Tabelle', 'immer', k);
-        for (const zeile of ms.zeilen) for (const z of zeile) schiebe(segmente, 'tb', 'Tabelle', 'immer', z);
+        for (const sp of ms.spalten ?? []) schiebe(segmente, 'tb', 'Tabelle', koerper, sp.titel);
+        for (const k of ms.kopf ?? []) schiebe(segmente, 'tb', 'Tabelle', koerper, k);
+        for (const zeile of ms.zeilen) for (const z of zeile) schiebe(segmente, 'tb', 'Tabelle', koerper, z);
       }
       // Bild-/Kachel-Blöcke: der Alt-Text ist amtlicher Inhalt (Formeln,
       // Signaltafeln) und damit findbar — malbar ist er NIE, weil er als
@@ -304,13 +325,19 @@ export function baueLeserSuchIndex(
     //     als `num`-Span vor dem Text gerendert, also ist sie gemalt — stünde
     //     sie nicht im Index, könnte die Markierung mehr zeigen als der Zähler
     //     zählt (§4.4).
-    //     D35-F3: die MALBARKEIT hängt an der build-seitigen Klasse. Fehlt `kl`
-    //     (alle Kanton-Sidecars), gilt die Fussnote als unklassifiziert und ist
-    //     in jeder Stellung sichtbar — dieselbe konservative Richtung wie im
-    //     Korpus selbst (`lib/normtext/browse.ts`: «eine fehlende Klasse blendet
-    //     nie etwas aus»).
-    for (const f of st?.fussnoten ?? []) {
-      schiebe(segmente, 'f', 'Fussnote', f.kl === 'A' ? 'aenderung' : 'immer',
+    //     MALBARKEIT (PE-C9-B01, 1.10.2026): der Apparat ist als GANZES `aenderung`
+    //     — in der Vorgabe-Stellung «aus» liegt er `display:none`, klassenblind
+    //     (Herleitung am Typ `Malbarkeit`). Im zugeklappten Artikel OHNE Wortlaut
+    //     stehen nur die artikelweiten Fussnoten im DOM (`kopfNotiz`,
+    //     `ArtikelLeser.tsx`); die an Absatz/Item hängenden nicht (PE-C9-B06).
+    //     REIHENFOLGE (PE-C9-B04): nach Nummer, wie der Apparat sie zeigt —
+    //     das Sidecar liefert die Sektions-Fussnote zuletzt, die Anzeige VOR
+    //     den artikeleigenen. `Array.sort` ist stabil (ES2019), gleiche Nummern
+    //     behalten ihre Lage.
+    const fussnoten = [...(st?.fussnoten ?? [])].sort((x, y) => vergleicheFnNr(x.nr, y.nr));
+    for (const f of fussnoten) {
+      const imDom = !ohneWortlaut || (f.absatz == null && f.item == null);
+      schiebe(segmente, 'f', 'Fussnote', imDom ? 'aenderung' : 'nie',
         f.nr ? `${f.nr} ${f.text}` : f.text);
     }
 
@@ -363,6 +390,14 @@ export interface LeserTreffer {
    *  sortiert und je Quelle aggregiert und verliert damit genau die Reihenfolge,
    *  in der `sammleTrefferRanges` die gemalten Stellen im DOM aufsammelt. */
   malbarkeiten: Malbarkeit[];
+  /** W2·17-UI-BEFUNDE PE-C8-B01: je Fundstelle die Zahl der `immer`-malbaren
+   *  Stellen, die im Artikel VOR ihr gemalt werden — über ALLE Segmente, auch
+   *  die ausserhalb des gewählten Suchbereichs (die Lesespalte malt sie trotzdem,
+   *  `sammleTrefferRanges` kennt keinen Bereich). Länge == `fundstellen`. */
+  immerDavor: number[];
+  /** Dasselbe für `aenderung`-Stellen (Fussnoten-Apparat): sie zählen nur mit,
+   *  solange der Apparat sichtbar ist — das entscheidet erst `fundstellenFolge`. */
+  aendDavor: number[];
   /** Textausschnitt um die erste Fundstelle (Entscheid c). `null` nie im Normalfall. */
   ausschnitt: Ausschnitt | null;
 }
@@ -500,7 +535,13 @@ export function sucheImErlass(
     let ausschnitt: Ausschnitt | null = null;
     let ausschnittGewicht = -1;
 
-    for (const seg of a.segmente) {
+    // Anzahl Vorkommen je Segment — nur für die Segmente IM Bereich bekannt, nur
+    // belegt, sobald ein Treffer fällt (PE-C8-B01, Phase 2 unten).
+    let anzahlJeSegment: number[] | null = null;
+    let letztesTrefferSegment = -1;
+
+    for (let si = 0; si < a.segmente.length; si++) {
+      const seg = a.segmente[si];
       // H2: der Bereich filtert VOR dem Zählen, nicht danach. Nur so bleiben
       // `fundstellen`, `malbarkeiten` und damit die ganze ↑↓-Folge auf
       // derselben Menge — ein Nachfilter über `felder` verlöre die Zuordnung
@@ -508,6 +549,8 @@ export function sucheImErlass(
       if (!imBereich(seg.feld, bereich)) continue;
       const stellen = findeVorkommen(seg.text, b);
       if (stellen.length === 0) continue;
+      (anzahlJeSegment ??= new Array<number>(a.segmente.length).fill(0))[si] = stellen.length;
+      letztesTrefferSegment = si;
       gesamt += stellen.length;
       for (let i = 0; i < stellen.length; i++) malbarkeiten.push(seg.malbar);
       const schluessel = `${seg.feld}|${seg.quelle}`;
@@ -523,12 +566,42 @@ export function sucheImErlass(
         ausschnitt = baueAusschnitt(seg.text, stellen[0][0], stellen[0][1], seg.quelle);
       }
     }
-    if (gesamt === 0) continue;
+    if (gesamt === 0 || !anzahlJeSegment) continue;
+
+    // PHASE 2 (W2·17-UI-BEFUNDE PE-C8-B01 = PE-C9-B02): der SPRUNGRANG. Die
+    // Lesespalte malt jedes Vorkommen im sichtbaren Text, der Bereich filtert
+    // das nicht (s. `SuchBereich`). Der Index in die gemalten Ranges eines
+    // Artikels ist darum die Zahl ALLER malbaren Stellen davor — auch der
+    // ausserhalb des Bereichs («Art. 40f» im Kopf, Fliesstext, Fussnoten …).
+    // Bis hierher zählte `malRang` nur Stellen im Bereich: im Bereich «Text»
+    // sprang ↑↓ auf den Artikelkopf, im Bereich «Fussnoten» an eine Stelle im
+    // Fliesstext (OR «SR», Fussnoten: 47 von 214 Schritten verfehlt). Bereichs-
+    // fremde Segmente werden NUR hier und nur bis zur letzten Fundstelle des
+    // Artikels gezählt; bei «alles» ist jede Anzahl schon bekannt (kein
+    // zweiter Vergleichslauf).
+    const immerDavor: number[] = [];
+    const aendDavor: number[] = [];
+    let immer = 0;
+    let aend = 0;
+    for (let si = 0; si <= letztesTrefferSegment; si++) {
+      const seg = a.segmente[si];
+      const inBereich = imBereich(seg.feld, bereich);
+      const n = inBereich ? anzahlJeSegment[si] : seg.malbar === 'nie' ? 0 : findeVorkommen(seg.text, b).length;
+      if (n === 0) continue;
+      if (inBereich) {
+        for (let j = 0; j < n; j++) {
+          immerDavor.push(immer + (seg.malbar === 'immer' ? j : 0));
+          aendDavor.push(aend + (seg.malbar === 'aenderung' ? j : 0));
+        }
+      }
+      if (seg.malbar === 'immer') immer += n;
+      else if (seg.malbar === 'aenderung') aend += n;
+    }
 
     const felder = [...proQuelle.values()].sort((x, y) => FELD_GEWICHT[y.feld] - FELD_GEWICHT[x.feld]);
     treffer.push({
       token: a.token, label: a.label, randtitel: a.randtitel, gruppe: a.gruppe, pos: a.pos,
-      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, ausschnitt,
+      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, immerDavor, aendDavor, ausschnitt,
     });
   }
 
@@ -634,7 +707,8 @@ export interface FundstellenSchritt {
   rang: number;
   /** B5: 0-basierter Rang unter den MALBAREN Stellen desselben Artikels — der
    *  Index in die Range-Liste von `sammleTrefferRanges`. `null`, wenn diese
-   *  Fundstelle im DOM gar nicht erscheint. */
+   *  Fundstelle im DOM gar nicht erscheint. Seit PE-C8-B01 zählt er über ALLE
+   *  gemalten Stellen des Artikels, auch bei Suchbereich ≠ «Alles». */
   malRang: number | null;
 }
 
@@ -672,11 +746,16 @@ export function fundstellenFolge(
 ): FundstellenSchritt[] {
   const out: FundstellenSchritt[] = [];
   for (const t of treffer) {
-    let malbarBisher = 0;
     for (let i = 0; i < t.fundstellen; i++) {
       const mb = t.malbarkeiten[i];
       const malbar = mb === 'immer' || (mb === 'aenderung' && !aenderungenAus);
-      out.push({ token: t.token, rang: i, malRang: malbar ? malbarBisher++ : null });
+      // PE-C8-B01: der malbare Rang zählt ALLE gemalten Stellen vor dieser —
+      // `sucheImErlass` führt sie über den ganzen Artikel, nicht nur im Bereich.
+      out.push({
+        token: t.token,
+        rang: i,
+        malRang: malbar ? t.immerDavor[i] + (aenderungenAus ? 0 : t.aendDavor[i]) : null,
+      });
     }
   }
   return out;

@@ -99,20 +99,17 @@ const VERBOTEN: [string, RegExp][] = [
   ['../parts/ArtikelSprungFeld', /\bArtikelSprungFeld\b/],
 ];
 
-// H3 · NUR DIREKT (nicht transitiv): `BezuegeZeile` ist der Artikelfuss der
-// Ist-Hülle, den V3 durch das Panel ablöst (Pos. 12). Das Verbot gilt bewusst
-// nur für den V3-Quelltext selbst — transitiv steht die Zeile weiterhin im Graph,
-// weil der KERN (`parts/ArtikelLeser`) sie rendert, wenn ein Aufrufer `bezuege`
-// setzt. Genau das tut V3 nicht mehr; der Kern bleibt unangetastet.
-const VERBOTEN_DIREKT: [string, RegExp][] = [
-  ['BezuegeZeile', /\bBezuegeZeile\b/],
-];
+// RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier stand `VERBOTEN_DIREKT` mit dem
+// Verbot `BezuegeZeile` in `v3/` (H3: der Artikelfuss der Ist-Hülle, den V3 durch
+// das Panel ablöst). Die Komponente ist gelöscht — das Verbot kann nicht mehr
+// scheitern und fällt mit ihr (§17-Gegengewicht: was nicht scheitern kann, wird
+// gestrichen).
 
 describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', () => {
   it('keine V3-Datei berührt die Ist-Hülle (Code, nicht Kommentare)', () => {
     for (const datei of ALLE_DATEIEN) {
       const quelle = ohneKommentare(LIES(datei));
-      for (const [name, muster] of [...VERBOTEN, ...VERBOTEN_DIREKT]) {
+      for (const [name, muster] of VERBOTEN) {
         expect(traegt(quelle, muster), `${datei} berührt die Ist-Hülle (${name})`).toBe(false);
       }
     }
@@ -131,35 +128,20 @@ describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge mehr', () => {
   });
 
   // ── D30 (W2·24-R5-F1K, 7.9.2026) · WARUM DANEBEN EINE ZWEITE SONDE STEHT ──
-  // Der Fall darüber ist UNVERÄNDERT (§6.3: kein Test angefasst). Er trägt
-  // weiterhin Pos. 12, und er trägt sie zu Recht: `bezuege` speiste auch den
-  // Artikelfuss der schmalen Form — gemessen @390 an der StPO schob das Setzen
-  // dieser Prop beim Öffnen des Panels jeden Artikel nach unten (`leser-v3-
-  // kontext-cls` (b), Artikel-y 1385→1493→…). D30 setzt darum eine eigene Prop,
-  // die AUSSCHLIESSLICH im `<details>` der Bezüge-Zeile landet.
-  //
-  // ── §6.3-DEKLARATION (W2·24-D34, 7.9.2026) · NUR DER NAME ─────────────────
-  // Die Prop hiess `bezuegeImKopf`, solange die Zeile unter der Artikelnummer
-  // stand. D34 hat sie auf Davids Wunsch ans ARTIKELENDE gestellt («das mit den
-  // bezügen soll unten an den artikel und nicht direkt nach der artikel
-  // nummer»), und der Name folgt dem Ort: `bezuegeImFuss`. GEÄNDERT ist hier
-  // ausschliesslich die gesuchte Zeichenkette; die drei Zusagen der Sonde
-  // (genau EINE Setzung · `alleFuer`, also ungefiltert · kein zweiter Ladepfad)
-  // stehen unverändert. Der datierte Beleg oben bleibt stehen, wie er ist — er
-  // beschreibt den Stand seines Datums (§0.2b).
-  it('D30: die aufgeklappte Bezüge-Zeile speist sich aus dem geteilten, UNGEFILTERTEN Apparat', () => {
+  // Der Fall darüber trägt Pos. 12 weiter. D30 setzte darum eine eigene Prop
+  // (`bezuegeImFuss`), die AUSSCHLIESSLICH im Dossier-Block «Entscheide»
+  // landete; Prop und Block sind seit dem Rückbau 2.10.2026 (W2·17-UI-BEFUNDE)
+  // gelöscht, die Sonde auf ihre zwei lebenden Aussagen zurückgeschnitten:
+  // kein zweiter Ladepfad in der Lesespalte, und das Aufklappen weckt den Apparat
+  // weiterhin (`onBezuegeOeffnen` — es weckt jetzt das Laden der Erläuterungen).
+  it('D30: die Lesespalte hat keinen zweiten Ladepfad und weckt den Apparat beim Aufklappen', () => {
     const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
-    const setzungen = quelle.match(/\bbezuegeImFuss=\{[^}]*\}/g) ?? [];
-    expect(setzungen.length, 'LeserLesespalte.tsx setzt `bezuegeImFuss` nicht — die Zeile bleibt leer (D30/D34)').toBe(1);
-    expect(setzungen[0], 'die Zeile liest nicht `alleFuer` des geteilten Apparats — entweder zweiter Ladepfad oder gefilterte Liste')
-      .toBe('bezuegeImFuss={bezuege?.alleFuer(e.artikel)}');
     expect(traegt(quelle, /\buseBezuege\b/), 'LeserLesespalte.tsx ruft `useBezuege` selbst — das ist der zweite Ladepfad, den H3 abgeschafft hat').toBe(false);
     expect(traegt(quelle, /\bonBezuegeOeffnen=/), 'ohne `onBezuegeOeffnen` fragt niemand nach dem Apparat — genau Davids D30-Befund').toBe(true);
   });
 
-  it('Positiv-Sonde: sie setzt `revision`/`historie` weiterhin (sonst prüfte das Verbot nur eine leere Datei)', () => {
+  it('Positiv-Sonde: sie setzt `historie` weiterhin (sonst prüfte das Verbot nur eine leere Datei)', () => {
     const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
-    expect(traegt(quelle, /\brevision=/)).toBe(true);
     expect(traegt(quelle, /\bhistorie=/)).toBe(true);
   });
 
@@ -575,7 +557,15 @@ describe('Dateigrösse: v3/ bleibt schlank', () => {
   it('der begründet grösste Baustein ist der Adapter leserV3Modell.ts (Fundament-Auflage 1)', () => {
     const zeilen: Record<string, number> = {};
     for (const datei of ALLE_DATEIEN) zeilen[datei] = LIES(datei).split('\n').length;
-    const groesste = Object.entries(zeilen).sort((a, b) => b[1] - a[1])[0];
-    expect(groesste[0]).toBe('leserV3Modell.ts');
+    // §6.3-DEKLARATION (2.10.2026, Gegenprüfung #1276): hier stand «die GRÖSSTE Datei ist
+    // der Adapter» (Sortierung, `[0]`). Bei Gleichstand gewann die zuerst gelesene Datei
+    // (`LeserRahmenV3.tsx` vor `leserV3Modell.ts`), und die Sonde bestrafte so jeden Rückbau
+    // im Adapter — dieselbe Klemme wie am 14.9.2026 (Block oben). Geändert ist nur der
+    // Vergleich: «keine ANDERE v3-Datei ist GRÖSSER als der Adapter» (`<=`). Die Zusage
+    // — der Adapter bleibt der begründet grösste Baustein, nichts anderes wächst über
+    // ihn — bleibt; ein Rückbau im Adapter braucht keine Polsterzeile mehr.
+    const adapter = zeilen['leserV3Modell.ts'];
+    const groesser = Object.entries(zeilen).filter(([datei, n]) => datei !== 'leserV3Modell.ts' && n > adapter);
+    expect(groesser, `grösser als der Adapter (${adapter} Zeilen): ${groesser.map(([d, n]) => `${d} ${n}`).join(', ')}`).toEqual([]);
   });
 });

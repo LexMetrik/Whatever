@@ -17,7 +17,10 @@
 // steht keine einzige Klasse und kein einziges Wort der Oberflaeche.
 
 import { trenneAenderungshistorie } from '../../../lib/normtext/darstellung';
-import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
+import { isValidElement, type MouseEvent, type ReactElement, type ReactNode } from 'react';
+import { ArtikelBody } from '../../../components/normtext/ArtikelBody';
+import { NormText, type InternRefs } from '../../../components/NormText';
+import { NormChip } from '../../../components/vorlagen/NormChip';
 import { fnNrSortKey } from '../berechnungen';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
@@ -155,24 +158,92 @@ export function verteileFussnoten(fussAnzeige: Fussnote[], bloecke: Bloecke): Fu
   return { fnProAbsatz, fnProItem, fnArtikelEbene, fnProSektion, fnInlineAbsatz, fnInlineItem, fnKlasse };
 }
 
-/** Im Artikel genannte, aufloesbare Normverweise (dedupliziert, in Textordnung). */
-export function sammleVerweise(bloecke: Bloecke): string[] {
-  const e = { bloecke };
-  // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
-  // Fuss sammeln (Davids Referenz). Dedupliziert; nur was fedlexLinkFuerArtikel
-  // wirklich auflöst (nie ein toter Link, §8). Inline-Links bleiben (17.6).
-  return (() => {
-    const seen = new Set<string>(); const out: string[] = [];
-    for (const b of e.bloecke) {
-      for (const t of [b.text, ...(b.items?.map((it) => it.text) ?? [])]) {
-        for (const m of t.matchAll(NORM_IM_TEXT)) {
-          const roh = m[0].trim();
-          if (fedlexLinkFuerArtikel(roh) == null) continue;
-          const key = roh.replace(/\s+/g, ' ');
-          if (!seen.has(key)) { seen.add(key); out.push(roh); }
-        }
-      }
+/** Ein im Artikel verlinkter Verweis — genau das, was der Wortlaut selbst als Link rendert. */
+export interface Verweis {
+  /** Dedupe-Schluessel: Chip-Text (Normverweis) bzw. Ziel-Adresse (Sprung). */
+  key: string;
+  /** Anzeige wie im Wortlaut («Artikel 336c», «§ 228», «Art. 51 ATSG»). */
+  anzeige: string;
+  /** Normverweis auf einen anderen Erlass: Text fuer den NormChip (Popover/Fedlex). */
+  norm?: string;
+  /** Sprung im Lesetext (eigener Erlass bzw. anderer Erlass desselben Kantons). */
+  href?: string;
+  /** Klick-Handler des Wortlaut-Links (Sprung im Leser) — derselbe wie dort. */
+  onKlick?: (e: MouseEvent<HTMLAnchorElement>) => void;
+}
+
+// Kinder eines Elementbaums in Renderreihenfolge; `besuch` meldet true = nicht tiefer.
+function wandere(n: ReactNode, besuch: (el: ReactElement<Record<string, unknown>>) => boolean): void {
+  if (Array.isArray(n)) { for (const k of n) wandere(k, besuch); return; }
+  if (!isValidElement<Record<string, unknown>>(n)) return;
+  if (besuch(n)) return;
+  wandere(n.props.children as ReactNode, besuch);
+}
+
+/**
+ * Im Artikel verlinkte Verweise (dedupliziert, in Textordnung).
+ *
+ * §5 (W2·17-UI-BEFUNDE E-D12-B01/PE-F5-B01, 1.10.2026): KEINE eigene Erkennung.
+ * Bis hierher las diese Funktion den Text mit `NORM_IM_TEXT` («Art. N KUERZEL»)
+ * und sah damit weder Binnenverweise («Artikel 336c», «§ 228»), noch die
+ * ausgeschriebene Form («Artikel 51 ATSG»), noch Plural-Ketten — der Wortlaut
+ * verlinkte sie, das Dossier sagte «0 Verweise» (§8). Jetzt laeuft derselbe
+ * Weg wie beim Rendern: `ArtikelBody` (autolink, mit Chapeau-/Selbstmarker-
+ * Weichen) liefert die `NormText`-Stellen, `NormText` liefert die Links; hier
+ * werden nur deren Ziele eingesammelt. Eine neue Weiche im Linker wirkt damit
+ * von selbst auch hier — und ein Guard, der im Wortlaut Text laesst, taucht in
+ * der Liste nie als Link auf (z. B. «Art. 52» unter dem BVG-Chapeau von
+ * ZGB 89a ist nur als «Art. 52 BVG» dabei, nie als ZGB 52).
+ *
+ * `ArtikelBody` und `NormText` sind hook-frei und werden hier wie reine
+ * Funktionen aufgerufen (kein Rendern, kein DOM). Bekommt eine der beiden einen
+ * Hook, wirft der Aufruf laut — der Paritaetstest (`leser-verweise-w217`) faengt
+ * das. `intern` ist PFLICHT: es traegt Ebene und Erlass des Lesers — ohne sie
+ * wuerde der Linker einen kantonalen Verweis wie «Art. 70a StG» (AR-621.111)
+ * als Bundesrecht aufloesen (E-D13-B01). Wer es nicht hat, zeigt keine Liste.
+ */
+export function sammleVerweise(
+  e: Pick<NormSnapshot, 'bloecke' | 'artikel'>,
+  kontext: { kuerzel: string; intern: InternRefs; fussnoten?: Fussnote[] },
+): Verweis[] {
+  const seen = new Set<string>();
+  const out: Verweis[] = [];
+  const merke = (v: Verweis) => { if (!seen.has(v.key)) { seen.add(v.key); out.push(v); } };
+  // Der eigene Artikel steht nie in seiner Liste: ein Chip auf die Seite, auf der man
+  // schon ist, sagt nichts. Der Wortlaut-Link selbst bleibt (er gehoert dem Text).
+  const selbst = `${kontext.intern.basisPfad}#art-${e.artikel}`;
+  const links = (el: ReactElement<Record<string, unknown>>): boolean => {
+    if (el.type === NormChip) {
+      const artikel = String(el.props.artikel);
+      // Nur Verweise auf BESTIMMUNGEN («Art. 51 ATSG»). Der blosse Erlass-Verweis
+      // ohne Nummer («… des StG», `artikel` = «StG») ist im Wortlaut ein Link,
+      // aber keine Bestimmung — die Liste fuehrt ihn nicht (und erbt so auch nicht
+      // dessen Kuerzel-Aufloesung, die in kantonalen Erlassen aufs Bundes-StG zeigt).
+      if (!/^Art\b/.test(artikel)) return true;
+      merke({ key: artikel.replace(/\s+/g, ' '), norm: artikel, anzeige: artikel });
+      return true;
     }
-    return out;
-  })();
+    if (el.type === 'a' && typeof el.props.children === 'string') {
+      const href = String(el.props.href);
+      if (href === selbst) return true;
+      merke({ key: href, href, anzeige: el.props.children, onKlick: el.props.onClick as Verweis['onKlick'] });
+      return true;
+    }
+    return false;
+  };
+  // Dieselben Fussnoten-Eingaben wie der Wortlaut (ArtikelLeser): ein Marker mitten im Satz
+  // zerlegt den Text in Segmente, und der Linker entscheidet je Segment (§5, Prüfer 2.10.2026).
+  const fn = verteileFussnoten(fussnotenAnzeige(e, kontext.fussnoten), e.bloecke);
+  const koerper = ArtikelBody({
+    bloecke: e.bloecke, artikel: e.artikel, passus: { absatz: null }, autolink: true,
+    intern: kontext.intern, zitierKontext: { artikelLabel: '', kuerzel: kontext.kuerzel },
+    fnProAbsatz: fn.fnProAbsatz, fnProItem: fn.fnProItem,
+    fnInlineAbsatz: fn.fnInlineAbsatz, fnInlineItem: fn.fnInlineItem, fnKlasse: fn.fnKlasse,
+  });
+  wandere(koerper, (el) => {
+    if (el.type !== NormText) return false;
+    wandere(NormText(el.props as unknown as Parameters<typeof NormText>[0]), links);
+    return true;
+  });
+  return out;
 }

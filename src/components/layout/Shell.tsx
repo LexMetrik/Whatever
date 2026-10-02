@@ -21,6 +21,7 @@ import { tabSchluessel, merkeTab, ersetzeTab, oeffnetReiter } from '../../lib/ta
 import { PaneName } from './PaneName';
 import { verlaufLabel, erlassVonPfad, gesetzPfad, entscheidPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useDialogFokus } from './useDialogFokus';
+import { offeneModaleDialoge } from './modalerDialog';
 
 // Neutraler Pane-Kontext für den 1-Pane-Fall (DOM-/verhaltensneutral, stabil).
 const KEIN_PANE = { imPane: false, rolle: 'primaer' as const, wurzel: null, overlayWurzel: null };
@@ -210,7 +211,7 @@ export function Shell({ children }: { children: ReactNode }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'F6') return;
       // Offenen modalen Dialog nicht verlassen (Fokus-Falle respektieren).
-      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+      if (offeneModaleDialoge().length > 0) return;
       const panes = Array.from(document.querySelectorAll<HTMLElement>('[data-pane]'));
       if (panes.length < 2) return;
       e.preventDefault();
