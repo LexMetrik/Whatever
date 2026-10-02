@@ -10,6 +10,7 @@
 //  (b) B1-B04 — nach «alles zu» riss der Scroll-Spy den gelesenen Ast beim
 //      nächsten Schritt wieder auf (der Knopf buchte die Zuklappung nicht); die
 //      Sperre gilt nur bis zum nächsten Abschnittswechsel (Entscheid 2.10.2026).
+//  (h) Regel K — selbst Zugeklapptes bleibt nach dem Ende der «alles zu»-Sperre zu.
 //  (g) F1 — j/k mit Fokus im Baum schärften den keydown-Guard neu: die Gliederung
 //      lief nicht mehr mit. ROT: `NAVIGATION`-Ausnahme in `inhalt-hooks.tsx` streichen.
 //      ROT: in `leisteAufbau.tsx` «alles auf/zu» wieder direkt über `setTocBaum`.
@@ -92,6 +93,29 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
     await zuArtikel(page, 700)
     await expect.poll(() => offenePfeile(page), { timeout: 8000, message: 'die Gliederung folgt dem neuen Abschnitt nicht' })
       .toBeGreaterThan(0)
+  })
+
+  test('(h) Regel K: selbst Zugeklapptes bleibt nach dem Ende der «alles zu»-Sperre zu', async ({ page }) => {
+    await zuArtikel(page, 300)
+    const alle = page.locator('[data-v3-alle]')
+    await alle.click()
+    await expect(alle).toContainText('alles zu')
+    await alle.click()
+    await expect(alle).toContainText('alles auf')
+    // Der Nutzer öffnet die «Zweite Abteilung» und schliesst sie selbst wieder (Pfeil-Knopf).
+    const abteilung = page.locator(`${baum} button[aria-label^="«Zweite Abteilung"][aria-expanded]`)
+    await expect(abteilung).toHaveCount(1)
+    await abteilung.click()
+    await expect(abteilung).toHaveAttribute('aria-expanded', 'true')
+    await abteilung.click()
+    await expect(abteilung).toHaveAttribute('aria-expanded', 'false')
+    // Weiter in einen anderen Abschnitt (Sperre fällt), dann zurück: der Spy darf sie nicht wieder öffnen.
+    await zuArtikel(page, 700)
+    await expect.poll(() => offenePfeile(page), { timeout: 8000 }).toBeGreaterThan(0)
+    await zuArtikel(page, 300)
+    await zuArtikel(page, 301)
+    await page.waitForTimeout(900)
+    await expect(abteilung, 'der Spy hat den selbst geschlossenen Ast wieder aufgerissen').toHaveAttribute('aria-expanded', 'false')
   })
 
   test('(g) j/k mit dem Fokus auf einem Baum-Link: der Gliederungs-Spy läuft weiter mit', async ({ page }) => {
