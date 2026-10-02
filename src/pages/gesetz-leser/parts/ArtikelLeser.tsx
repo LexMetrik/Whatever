@@ -366,7 +366,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             {/* A31: «Art. N» + Fussnoten-Marker als EIN Inline-/flex-Kind (whitespace-
                 nowrap) — der Marker klebt direkt an der Nummer (kein gap-x-2, kein
                 Umbruch auf eine eigene Zeile), genau wie auf Fedlex. */}
-            <span className="whitespace-nowrap">
+            {/* W2·17 E-D5-B01: ein Anhang-Titel ist ein amtlicher Satz (HAÜ: 243 Zeichen),
+                keine Nummer — `nowrap` schnitt ihn bei «Verzeichnis der zentralen und der
+                zus…» ab. Anhang: umbrechbar, auf Zeilenbreite begrenzt (`min-w-0`). */}
+            <span className={istAnhang ? 'min-w-0 break-words' : 'whitespace-nowrap'}>
             {imTreffer && onSpringe ? (
               <button type="button" onClick={() => onSpringe(e.artikel)}
                 title="Im Volltext zu diesem Artikel springen"
