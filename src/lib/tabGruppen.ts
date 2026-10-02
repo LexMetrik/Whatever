@@ -3,8 +3,9 @@
 // (ReiterUebersicht/TabPanel, Auftrag David 26.6.2026). Reine, deterministische
 // Funktionen (§2/§3): aus Pfad bzw. aufgelöstem Erlass; kein DOM, kein Register.
 
-import { pfadTeil, erlassVonPfad, materialPfad, type VerlaufManifeste } from './verlaufLabel';
-import { routenEbene } from './normtext/erlassAdresse';
+import { pfadTeil, erlassVonPfad, gesetzPfad, materialPfad, type VerlaufManifeste } from './verlaufLabel';
+import { routenEbene, datenEbeneVonRoute } from './normtext/erlassAdresse';
+import { reiterStelle, type ReiterStelle } from './reiterStelle';
 import { sicherDekodiert } from './sicherDekodieren';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
@@ -109,6 +110,23 @@ export function artikelLabelVonPfad(path: string): string | null {
   }
   const tok = roh.replace(/_/g, '');
   return tok ? `Art. ${tok}` : null;
+}
+
+/** DFG-F01 · Die Stelle, die ein Gesetzes-Reiter trägt, aus dem amtlichen Label
+ *  des Eintrags (`reiterStelle`) statt aus dem Anker-Token. Lesestellung (`#art-…`
+ *  im Pfad) vor `wahl` (D27); `null` = kein Gesetzes-Reiter oder keine Stellung.
+ *  Ohne geladene Einträge (`m.artikel`) greift die Rückfallform. */
+export function stelleVonReiter(t: { path: string; wahl?: string }, m: VerlaufManifeste = {}): ReiterStelle | null {
+  const g = gesetzPfad(t.path);
+  if (!g) return null;
+  const e = erlassVonPfad(t.path, m);
+  const i = t.path.indexOf('#');
+  return reiterStelle(
+    i === -1 ? t.wahl : t.path.slice(i),
+    e?.kuerzel || g.key,
+    e?.ebene ?? datenEbeneVonRoute(g.ebene),
+    e ? m.artikel?.[e.key] : undefined,
+  );
 }
 
 /** Welche der drei Manifeste eine Reiterliste ÜBERHAUPT braucht (W2·18 Punkt 2).

@@ -1,0 +1,14 @@
+fix(leser): Reiter-Beschriftung aus amtlichem Label statt Anker-Token — WIP ohne tabs.ts (W2·17-UI-BEFUNDE)
+
+DFG-F01: Aufloesung der Stelle im Reiter (reiterStelle, stelleVonReiter)
+aus dem Eintrag-Label des Lesers und der Gliederungs-Qualifikation von
+artikelBezeichnung.zitatKuerzel; Rueckfallform ohne Daten ohne Rohschluessel;
+Daten-Hook useStelleDaten in Reiterleiste/PaneName, TabPanel auf dieselbe
+Quelle. Korpus-Test ueber alle 60'527 Eintraege (Aufloesung gruen).
+
+WIP: Die Anbindung in src/lib/tabs.ts (2 Aufrufstellen) fehlt bewusst —
+tabs.ts gehoert zu PR #1275 (TABU-Auftrag). Die drei Wege-Tests ueber
+reiterKurzformTeile/Text sind bis dahin rot (Rot-Beweis).
+
+Roadmap: W2·17-UI-BEFUNDE
+Co-Authored-By: Claude Sonnet <noreply@anthropic.com>
