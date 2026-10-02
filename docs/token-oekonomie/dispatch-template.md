@@ -351,6 +351,8 @@ Cut und Paste im SELBEN Commit, jede Zwischenstufe verlustfrei.
 
 ## 3 · Pflicht-Rückgabe-Schema (T4)
 
+Roter CI-Lauf: `npm run ci:log -- <run-id>` liefert die Fails vollständig (Rückgabe: Fail-Block).
+
 Der Sub-Agent gibt an den Orchestrator **nur** die folgenden Felder zurück (Richtwert **≤ 2k
 Tok**). Alle Details — Diffs, lange Begründungen, Datei-Dumps — gehören in den **PR-Body**, nicht
 in die Rückgabe. Beleg: ein 500-Tok-Return statt 8k-Prosa spart pro Delegation, multiplikativ.
