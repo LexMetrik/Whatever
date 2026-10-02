@@ -70,6 +70,13 @@ import type { LeserV3Modell } from './leserV3Modell';
 //    Wortlaut (§8). Die Auskunft fehlt nirgends: Trefferliste, Zähler und ↑↓
 //    stehen unverändert. Die Fenster-Schwelle selbst trägt das Bauteil
 //    (`components/leser/TrefferLandkarte`, Herleitung dort).
+//  · nicht, solange das BLATT als Spur offen steht (PE-B12-D01, gemessen 2.10.2026
+//    @1440: die Spur reicht bis an den Fensterrand, der `fixed`e Streifen lag mit
+//    24 px über «Erlass-Blatt schliessen» und mit 28 px über dem Reiter
+//    «Werkzeuge»). Dieselbe Regel wie in der Pane — kein Element über dem
+//    Bedienbaren (§8); der Rahmen reicht sie über `randluft` herein
+//    (`!umgebung.imPane && !bild.blattSpur`). Mit dem Schliessen kehrt der
+//    Streifen zurück: Suche, Marken und Schalter sind nie weg gewesen.
 export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorSprung }: {
   m: LeserV3Modell;
   /** Zähl-Substantiv des Erlasses — DASSELBE, das die Zähler-Zeile daneben
@@ -77,7 +84,8 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
    *  wie dort vom Rahmen aus der einen Ableitung `./erlassAnsicht` (B8/§5);
    *  hier wird nichts abgeleitet, und der Streifen erfindet kein eigenes Wort. */
   bestimmungsWort: BestimmungsWort;
-  /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja.) */
+  /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja; Pane und offene
+   *  Blatt-Spur: nein.) */
   randluft: boolean;
   /** Liegt die Trefferliste GERADE über der Lesespalte? Derselbe Wert, den auch
    *  `suchZoneAufbau` als `listeSteht` bekommt — der Rahmen kennt ihn, das
