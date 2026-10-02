@@ -202,11 +202,14 @@ function wandere(n: ReactNode, besuch: (el: ReactElement<Record<string, unknown>
  */
 export function sammleVerweise(
   e: Pick<NormSnapshot, 'bloecke' | 'artikel'>,
-  kontext: { kuerzel: string; intern: InternRefs },
+  kontext: { kuerzel: string; intern: InternRefs; fussnoten?: Fussnote[] },
 ): Verweis[] {
   const seen = new Set<string>();
   const out: Verweis[] = [];
   const merke = (v: Verweis) => { if (!seen.has(v.key)) { seen.add(v.key); out.push(v); } };
+  // Der eigene Artikel steht nie in seiner Liste: ein Chip auf die Seite, auf der man
+  // schon ist, sagt nichts. Der Wortlaut-Link selbst bleibt (er gehoert dem Text).
+  const selbst = `${kontext.intern.basisPfad}#art-${e.artikel}`;
   const links = (el: ReactElement<Record<string, unknown>>): boolean => {
     if (el.type === NormChip) {
       const artikel = String(el.props.artikel);
@@ -220,14 +223,20 @@ export function sammleVerweise(
     }
     if (el.type === 'a' && typeof el.props.children === 'string') {
       const href = String(el.props.href);
+      if (href === selbst) return true;
       merke({ key: href, href, anzeige: el.props.children, onKlick: el.props.onClick as Verweis['onKlick'] });
       return true;
     }
     return false;
   };
+  // Dieselben Fussnoten-Eingaben wie der Wortlaut (ArtikelLeser): ein Marker mitten im Satz
+  // zerlegt den Text in Segmente, und der Linker entscheidet je Segment (§5, Prüfer 2.10.2026).
+  const fn = verteileFussnoten(fussnotenAnzeige(e, kontext.fussnoten), e.bloecke);
   const koerper = ArtikelBody({
     bloecke: e.bloecke, artikel: e.artikel, passus: { absatz: null }, autolink: true,
     intern: kontext.intern, zitierKontext: { artikelLabel: '', kuerzel: kontext.kuerzel },
+    fnProAbsatz: fn.fnProAbsatz, fnProItem: fn.fnProItem,
+    fnInlineAbsatz: fn.fnInlineAbsatz, fnInlineItem: fn.fnInlineItem, fnKlasse: fn.fnKlasse,
   });
   wandere(koerper, (el) => {
     if (el.type !== NormText) return false;

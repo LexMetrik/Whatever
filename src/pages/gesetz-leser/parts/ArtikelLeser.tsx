@@ -227,8 +227,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // und Dedupe in `./ArtikelLeser.fussnoten` (§5: dieselben Links wie der Text).
   // Nur das Dossier zeigt sie (Einzelmodus); die Gesamtansicht rechnet nichts.
   const verweise = useMemo(
-    () => (fussForm === 'dossier' && intern ? sammleVerweise(e, { kuerzel: erlass.kuerzel, intern }) : []),
-    [fussForm, e, erlass.kuerzel, intern],
+    () => (fussForm === 'dossier' && intern ? sammleVerweise(e, { kuerzel: erlass.kuerzel, intern, fussnoten }) : []),
+    [fussForm, e, erlass.kuerzel, intern, fussnoten],
   );
   // S6 W1f · die Aktionen: im Dossier Knöpfe (unverändert), sonst ruhige Textzeile.
   const aktionen = <ArtikelAktionen artikel={e.artikel} basisPfad={basisPfad}

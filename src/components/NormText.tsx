@@ -312,6 +312,33 @@ const GLIEDERUNGS_GENITIV = /^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|A
 // des Gesetzes» darum nicht sieht. Herleitung, Messung und der belegte Anlass
 // (KKV art_128) stehen bei TRAEGER_EINTRAEGE in `lib/fedlex/traegergesetz.ts`.
 const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
+// W2·17-UI-BEFUNDE ED10/ED13 Nachzug (Prüfer-Befund PR #1264, 2.10.2026): ein
+// GENITIV-ERLASSNAME hinter Nummer + Passus ist nie ein Selbstverweis. «Artikel 2
+// Absatz 1 des Kulturgütertransfergesetzes» (ZGB 728), «Artikel 6 … des
+// Nachrichtendienstgesetzes» (ZGB 43a), «Artikel 2 Absatz 1 des
+// Gaststaatgesetzes» (DSG 2) wurden als Sprung auf ZGB 2 / ZGB 6 / DSG 2
+// gelinkt — plausibel-falsch (§1), und seit der Verweis-Liste zusätzlich als
+// Chip in Dossier und Blatt. Wurzel: der des/der-Guard oben prüft den ROHEN
+// Rest (V-6: dort steht hinter einem Passus oft gewöhnliche Prosa — «Artikel 5
+// Absatz 1 der Quellensteuer unterliegen» ist ein echter Selbstverweis), sah
+// also nur «Absatz …». Darum trennt hier nicht das Signal «des/der», sondern
+// der NAME: nach des/der folgt (nach höchstens zwei Wörtern, «des Schweizerischen
+// Strafgesetzbuches») ein Wort, das auf einen Erlass-Typ endet — -gesetz(es),
+// -gesetzbuch, -verordnung (jede -ordnung ausser dem blossen «Ordnung»),
+// -übereinkommen, -abkommen, -vertrag, -konvention, -reglement, -dekret,
+// -konkordat, -statut, -satzung, -beschluss, -richtlinie, -protokoll, -charta,
+// -vereinbarung und -verfassung (nur zusammengesetzt, «Bundesverfassung»).
+//
+// Nur Wortendungen, keine Namensliste (§5: eine Liste läge beim nächsten Korpus-
+// Nachzug still daneben); die belegten bekannten Erlasse löst die Form-B-
+// Positivliste VOR dieser Weiche auf (V-7, N2b-Routing), hier landet nur die
+// unbelegte Restklasse — und die wird Text (§1, kein Link besser als ein
+// falscher). Ein falsch-positiver Treffer degradiert nur Link → Text. Das
+// ausdrückliche Selbst-Signal («des vorliegenden Gesetzes», `SELBST_MARKER`)
+// steht davor und schlägt diese Weiche; «vorliegende» ist hier ausgenommen,
+// damit auch die Schreibfehler-Form («des vorliegende Gesetzes», 2 Stellen im
+// Bestand) ihren Selbst-Link behält.
+const FREMDERLASS_GENITIV = /^\s+(?:des|der)\s+(?!vorliegende)(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])/iu;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
   const k = (kuerzel ?? '').trim();
@@ -398,7 +425,11 @@ function kantonZielAmZitat(rest: string, intern: InternRefs): string | null {
   return karte.get(m[1].replace(KANTON_KUERZEL_INTERPUNKTION, '')) ?? null;
 }
 
-function restMitIntern(s: string, key: string, intern?: InternRefs): React.ReactNode {
+// `danach`: der Text HINTER dem Stück (ab dem nächsten Norm-Anker). NormText zerlegt den Text an
+// seinen Ankern; ein Erlassname, der selbst ein Anker ist («des eidgenössischen
+// Steuerharmonisierungsgesetzes»), stünde sonst jenseits der Stückgrenze, und der
+// Genitiv-Guard (FREMDERLASS_GENITIV) sähe nur «des eidgenössischen».
+function restMitIntern(s: string, key: string, intern?: InternRefs, danach = ''): React.ReactNode {
   if (!intern || !s) return s ? <RechtsprechungText key={key} text={s} /> : null;
   // N2 (Bündel N): Kürzel DIESES Erlasses (aus dem Lese-Basispfad, «…/bund/AHVV»
   // → «AHVV») — nennt ein Verweis exakt das eigene Kürzel, ist es ein echter
@@ -607,6 +638,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // die belegbaren Fälle VOR diesem Guard über die Form-B-Positivliste heraus
     // (Kurztitel/Volltitel, `positivliste.ts`): Guard-Klasse 1 281→930 Stellen.
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
+    // W2·17 Nachzug: Genitiv-Erlassname hinter Nummer + Passus ⇒ Text (an FREMDERLASS_GENITIV).
+    // Steht NACH dem des/der-Guard: der fängt die passuslose Form schon (Klasse bleibt dort),
+    // diese Zeile ist der Rest, den nur der Blick HINTER den Passus sieht.
+    if (!selbst && FREMDERLASS_GENITIV.test(danach ? (intern.fremdKuerzel ? rest + danach : (rest + danach).replace(PARAGRAF_ANHANG, '')) : nachPassus)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
     // zeigt «Artikel N» auf JENES Gesetz; der interne Self-Link wäre falsch (§1) →
@@ -770,7 +805,7 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
   const teile: React.ReactNode[] = [];
   let zuletzt = 0;
   for (const s of spans) {
-    if (s.start > zuletzt) teile.push(restMitIntern(text.slice(zuletzt, s.start), `r${zuletzt}`, intern));
+    if (s.start > zuletzt) teile.push(restMitIntern(text.slice(zuletzt, s.start), `r${zuletzt}`, intern, text.slice(s.start)));
     // Anker: anzeige === artikel → `anzeige` weglassen (SSR-byte-identisch zum
     // früheren <NormChip artikel={roh}>). Propagiertes Glied: Anzeige = reiner
     // Glied-Text (zeichenidentisch, §1), Auflösung über das synthetisierte Ziel.

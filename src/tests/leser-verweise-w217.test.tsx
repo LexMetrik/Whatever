@@ -11,11 +11,9 @@
 // SELBST rendert — nicht eine zweite Erkennung. Der Paritaets-Test unten
 // vergleicht gegen das echte SSR-Markup von ArtikelBody.
 import { describe, it, expect } from 'vitest';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { ArtikelBody } from '../components/normtext/ArtikelBody';
-import type { InternRefs } from '../components/NormText';
 import { sammleVerweise } from '../pages/gesetz-leser/parts/ArtikelLeser.fussnoten';
 import { art, internFuer, lade, type Eintrag } from './leser-verweise-w217-helfer';
+import { pruefeKorpus } from './leser-verweise-w217-paritaet';
 
 
 describe('E-D12-B01 · Binnenverweise zaehlen (Wortlaut verlinkt sie)', () => {
@@ -87,56 +85,26 @@ describe('§1 · Chapeau: kein plausibel-falscher Self-Verweis', () => {
 });
 
 describe('§5 · Paritaet: Liste == Links des gerenderten Wortlauts', () => {
-  // Wortlaut-Links = Anker im SSR-Markup von ArtikelBody (autolink, intern),
-  // gerendert wie im Leser. Verglichen wird (a) jedes Sprungziel der Liste steht
-  // wortgleich im Wortlaut, (b) jedes Wortlaut-Ziel, das KEIN Sprungziel der Liste
-  // ist, ist ein Normverweis der Liste (und umgekehrt: kein Normverweis ohne
-  // Wortlaut-Anker). Damit ist die Liste weder zu eng (E-D12-B01/PE-F5-B01) noch
-  // zu weit (ein Eintrag, den der Wortlaut nicht verlinkt, waere §8-falsch).
-  const wortlautZiele = (e: Eintrag, kuerzel: string, intern: InternRefs): Set<string> => {
-    const html = renderToStaticMarkup(
-      <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
-        zitierKontext={{ artikelLabel: e.artikelLabel, kuerzel }} intern={intern} />,
-    );
-    const ziele = new Set<string>();
-    for (const m of html.matchAll(/<a\b[^>]*?\shref="([^"]+)"/g)) ziele.add(m[1]);
-    return ziele;
-  };
-
-  const probe = (ebene: 'bund' | 'kanton', key: string, kuerzel: string, max = 400) => {
-    const eintraege = lade(ebene, key);
-    const intern = internFuer(ebene, key, eintraege);
-    let geprueft = 0;
-    const abweichungen: string[] = [];
-    for (const e of eintraege.slice(0, max)) {
-      const liste = sammleVerweise(e, { kuerzel, intern });
-      const wort = wortlautZiele(e, kuerzel, intern);
-      const sprung = new Set(liste.flatMap((v) => (v.href ? [v.href] : [])));
-      // Erlass-Links ohne Bestimmung («… des StG», href ohne #art) sind im Wortlaut
-      // Links, aber keine Verweise auf Bestimmungen — die Liste fuehrt sie nicht.
-      const nurWort = [...wort].filter((h) => !sprung.has(h) && /#art[-_]/.test(h));
-      const nurListeSprung = [...sprung].filter((h) => !wort.has(h));
-      const normen = liste.filter((v) => v.norm).length;
-      if (nurListeSprung.length > 0) abweichungen.push(`${key} ${e.artikel}: Liste-Sprung ohne Wortlaut-Anker ${nurListeSprung}`);
-      if ((nurWort.length > 0) !== (normen > 0)) abweichungen.push(`${key} ${e.artikel}: Wortlaut-Ziele ${nurWort}, Normverweise ${normen}`);
-      geprueft++;
-    }
-    return { geprueft, abweichungen };
-  };
-
-  it('OR (Bund, 400 Artikel): kein Artikel mit Wortlaut-Links ohne Liste und umgekehrt', () => {
-    const r = probe('bund', 'OR', 'OR');
-    expect(r.geprueft).toBeGreaterThan(300);
-    expect(r.abweichungen).toEqual([]);
+  // Verglichen wird die MENGE DER ZIELE je Artikel (Sprung-Ziele und Chip-Ziele), mit den
+  // Eingaben des Lesers: Fussnoten (Marker zerlegen den Text in Segmente) und der echte
+  // `InternRefs` (Register-Kuerzel, Kantons-Karte). Wortlaut-Seite ist das SSR-Markup von
+  // ArtikelBody — unabhaengig von der Element-Wanderung in `sammleVerweise` (Helfer:
+  // `leser-verweise-w217-paritaet`). Der eigene Artikel steht in keiner Liste.
+  it('OR (Bund, alle Artikel mit Verweis-Text)', () => {
+    const r = pruefeKorpus('bund', ['OR']);
+    expect(r.z.artikel).toBeGreaterThan(150);
+    expect(r.funde).toEqual([]);
   });
 
   it('AHVG (ausgeschriebene Fremdverweise)', () => {
-    const r = probe('bund', 'AHVG', 'AHVG');
-    expect(r.abweichungen).toEqual([]);
+    expect(pruefeKorpus('bund', ['AHVG']).funde).toEqual([]);
   });
 
   it('BS-640.100 (kantonal, §)', () => {
-    const r = probe('kanton', 'BS-640.100', 'StG');
-    expect(r.abweichungen).toEqual([]);
+    expect(pruefeKorpus('kanton', ['BS-640.100']).funde).toEqual([]);
+  });
+
+  it('ZPO (Fussnoten-Marker mitten im Satz: «(Art. 36 Abs. 1 OR)» springt nie auf ZPO 36)', () => {
+    expect(pruefeKorpus('bund', ['ZPO']).funde).toEqual([]);
   });
 });

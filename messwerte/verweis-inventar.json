@@ -2,8 +2,8 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "ef7a647a94c74fccb46955608be35695699e892e02c1579dac341c18e9d6d850",
-    "guards": 24
+    "normTextSha256": "5a039ff8b6c348029c1080a90dfc6918df6bbfe2b8e71840b2840b7eaa0a401f",
+    "guards": 25
   },
   "korpus": {
     "erlasse": 1570,
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19686,
+    "self": 19286,
     "fremd": 11660,
-    "text": 4935,
+    "text": 5335,
     "selbstmarker": 925
   },
   "fremdZiele": {
@@ -83,16 +83,16 @@
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 302,
-      "erlasse": 130,
+      "stellen": 211,
+      "erlasse": 103,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 905,
-      "erlasse": 214,
+      "stellen": 781,
+      "erlasse": 171,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -115,10 +115,18 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12889,
-      "erlasse": 473,
+      "stellen": 12489,
+      "erlasse": 460,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
+    },
+    {
+      "klasse": "fremderlass-genitiv",
+      "entscheid": "TEXT",
+      "stellen": 615,
+      "erlasse": 248,
+      "selbstmarker": 0,
+      "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
     {
       "klasse": "gesetzes-genitiv",

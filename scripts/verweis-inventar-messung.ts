@@ -543,6 +543,12 @@ export function selbsttest(): void {
     // … und sie bleibt eng: ein anderes Wort hinter «des» ist weiter Sache des
     // des/der-Guards, die Weiche darf ihn nicht verdrängen.
     ['Der Vertreter im Sinne von Artikel 5 des Vertrages meldet.', ssv, 'art-desder-guard', false],
+    // ── W2·17 Nachzug (2.10.2026): Genitiv-Erlassname HINTER dem Passus ────
+    // Der des/der-Guard sieht nur den ROHEN Rest; mit «Absatz 1» dazwischen wurde
+    // «Artikel 2 Absatz 1 des Kulturgütertransfergesetzes» ein Selbst-Link (ZGB 728).
+    ['Es gilt Artikel 5 Absatz 1 des Kulturgütertransfergesetzes vom 20. Juni 2003.', artErlass, 'fremderlass-genitiv', false],
+    // … Prosa hinter dem Passus bleibt ein Selbstverweis (V-6: UVPV 6a, NW-521.1 118).
+    ['Es gilt Artikel 5 Absatz 1 der Quellensteuer unterliegen.', artErlass, 'art-self', false],
     // V-7a Kurztitel mit Geltung «bund»: im Bund Link, im Kanton Text (AR-146.1 heisst gleich).
     ['Es gilt Art. 7 des Datenschutzgesetzes.', ssv, 'n2b-genitiv', false],
     ['Es gilt Art. 7 des Datenschutzgesetzes.', kantonArt, 'art-desder-guard', false],

@@ -129,8 +129,8 @@ export function BlattVerweise({ artikel, zitat, wort, intern, erlassKuerzel }: {
 }) {
   const eintrag = artikel?.eintrag;
   const verweise = useMemo(
-    () => (eintrag && intern ? sammleVerweise(eintrag, { kuerzel: erlassKuerzel, intern }) : []),
-    [eintrag, intern, erlassKuerzel],
+    () => (eintrag && intern ? sammleVerweise(eintrag, { kuerzel: erlassKuerzel, intern, fussnoten: artikel?.fussnoten }) : []),
+    [eintrag, intern, erlassKuerzel, artikel?.fussnoten],
   );
   if (!eintrag || verweise.length === 0) return null;
   const titel = `Verweise ${dieses(wort)}`;

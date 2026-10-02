@@ -138,6 +138,11 @@ export const G = {
     datei: 'NormText.tsx',
     literal: String.raw`/^\s*des\s+Gesetzes\b/`,
   },
+  FREMDERLASS_GENITIV: {
+    zweck: 'FREMDERLASS_GENITIV — Genitiv-Erlassname («des Kulturgütertransfergesetzes», «der Verordnung») hinter Nummer + Passus ist nie ein Selbstverweis (W2·17 Nachzug, 2.10.2026)',
+    datei: 'NormText.tsx',
+    literal: String.raw`/^\s+(?:des|der)\s+(?!vorliegende)(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:s)?|konkordat(?:s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?)|[\p{L}\p{N}-]+(?:ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])/iu`,
+  },
   SELBST_KUERZEL_TRIM: {
     zweck: 'nenntEigenesKuerzel — führender Trenner vor dem Kürzel',
     datei: 'NormText.tsx',
@@ -251,6 +256,7 @@ export const glaetteInterpunktion = (s: string): string => s.replace(/ +([.,])/g
 const SELBST_MARKER = re(G.SELBST_MARKER.literal);
 const GLIEDERUNGS_GENITIV = re(G.GLIEDERUNGS_GENITIV.literal);
 const GESETZES_GENITIV = re(G.GESETZES_GENITIV.literal);
+const FREMDERLASS_GENITIV = re(G.FREMDERLASS_GENITIV.literal);
 
 /** Transkription von `nenntEigenesKuerzel` (NormText.tsx, V-2 Ziel 2). */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
@@ -307,6 +313,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'gliederungs-genitiv': { entscheid: 'TEXT', was: '«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)' },
   'gesetzes-genitiv': { entscheid: 'TEXT', was: '«Art. N [Passus] des Gesetzes» ohne Trägergesetz-Beleg — nie Selbstverweis, kein Link (V-7d, 14.9.2026)' },
   'art-desder-guard': { entscheid: 'TEXT', was: '«Art. N des/der/über/vom …» ohne Klammer-Kürzel' },
+  'fremderlass-genitiv': { entscheid: 'TEXT', was: '«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)' },
   'art-f41': { entscheid: 'TEXT', was: 'bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)' },
   'art-kein-token': { entscheid: 'TEXT', was: 'bare «Art. N» — Bestimmung existiert im Erlass nicht' },
   'art-m12-kuerzel': { entscheid: 'TEXT', was: '«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)' },
@@ -518,6 +525,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && GESETZES_GENITIV.test(nachPassus)) { out.push(stelle('gesetzes-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
+    if (!sm && FREMDERLASS_GENITIV.test(nachPassus)) { out.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }
     // V-6: der M12-Guard greift auf dem ROHEN Rest ODER auf dem Rest nach dem

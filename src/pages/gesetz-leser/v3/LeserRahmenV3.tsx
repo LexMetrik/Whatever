@@ -366,7 +366,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
         panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
-              paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)}
+              paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token, (tok) => m.struktur?.[tok]?.fussnoten)}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit} historie={m.historieStand}
               normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel} intern={m.internRefs}
