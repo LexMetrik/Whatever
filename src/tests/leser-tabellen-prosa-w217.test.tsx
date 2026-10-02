@@ -69,7 +69,7 @@ describe('Vorab-Markierung für den Druck steht im Render-Markup (kein Ereignis 
   });
   it('13 Spalten mit Textzellen → data-breit und --druck-zoom-vorab', () => {
     const out = render(viele(13));
-    expect(out).toMatch(/data-mehrspaltig="" data-breit="" style="--druck-zoom-vorab:0\.\d+/);
+    expect(out).toMatch(/data-mehrspaltig="" data-breit=""[^>]*--druck-zoom-vorab:0\.\d+/);
   });
   it('kleine Tabelle → kein data-breit', () => {
     expect(render({ kopf: ['A', 'B'], zeilen: [['bis 1 000', '25.–']] })).not.toContain('data-breit');
@@ -95,7 +95,14 @@ describe('Vorab-Markierung an den echten Korpus-Tabellen (Render-Markup, kein Er
     ['ZEMIS-V Anhang 1 (36 Spalten)', 'bund/ZEMIS_V', 'annex_1', 'Geschlecht'],
     ['ERV Anhang 2 (11 Spalten)', 'bund/ERV', 'annex_2', 'Zentralregierung'],
   ])('%s trägt data-breit und --druck-zoom-vorab', (_n, datei, artikel, kennwort) => {
-    expect(tabelle(datei, artikel, kennwort)).toMatch(/data-breit="" style="--druck-zoom-vorab:0\.\d+/);
+    expect(tabelle(datei, artikel, kennwort)).toMatch(/data-breit=""[^>]*--druck-zoom-vorab:0\.\d+/);
+  });
+  it.each([
+    ['VVK Anhang 1', 'bund/VVK', 'annex_u1', 'Blutgruppen'],
+    ['ZEMIS-V Anhang 1', 'bund/ZEMIS_V', 'annex_1', 'Geschlecht'],
+    ['VAM Anhang 1 (6.7 pt im PDF)', 'bund/VAM', 'annex_1', ''],
+  ])('%s: Zellschrift unter 8 pt → Hinweiszeile (data-gekuerzt)', (_n, datei, artikel, kennwort) => {
+    expect(tabelle(datei, artikel, kennwort)).toContain('data-gekuerzt=""');
   });
   it('GebV SchKG Art. 37 und ZH-211.11 § 4 bleiben im Hochformat', () => {
     expect(tabelle('bund/GEBV_SCHKG', '37', 'Restschuld')).not.toContain('data-breit');

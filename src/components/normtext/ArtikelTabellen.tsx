@@ -1,6 +1,6 @@
 import type React from 'react';
 import { gruppiereTausender } from '../../lib/normtext/darstellung';
-import { useTabellenDruck, vorabDruck } from './tabellenDruck';
+import { vorabDruck, type VorabDruck } from './tabellenDruck';
 import { KENNZAHL_TITEL, gruppiereZelle, istJahrSpalte, istProsaZelle, teileNachZifferngruppen } from './tarifText';
 
 // Tarif- und Tabellen-KOMPONENTEN des Normtext-Artikels. Aus ArtikelBody.tsx
@@ -44,13 +44,16 @@ export function StaffelTabelle({ zeilen }: { zeilen: string[] }) {
   );
 }
 
-// Vorab-Markierung für den Druck (tabellenDruck.ts, Stufe 1): `data-breit` und die geschätzte
-// Schrift stehen schon im Render-/Prerender-Markup, damit die Querformat-Regel auch ohne
-// JavaScript und ohne Druck-Ereignis greift.
-function vorabAttribute(v: { breit: boolean; zoom: number }) {
-  return v.breit
-    ? { 'data-breit': '', style: { '--druck-zoom-vorab': String(Math.round(v.zoom * 100) / 100) } as React.CSSProperties }
-    : {};
+// Vorab-Markierung für den Druck (tabellenDruck.ts): `data-breit` und die geschätzte Schrift stehen
+// schon im Render-Markup — kein Druck-Ereignis nötig. `data-gekuerzt` + Link: gedruckte Hinweiszeile,
+// wenn die Zellschrift unter MIN_PT fällt.
+function vorabAttribute(v: VorabDruck) {
+  if (!v.breit) return {};
+  return {
+    'data-breit': '',
+    ...(v.klein ? { 'data-gekuerzt': '', 'data-permalink': typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}` } : {}),
+    style: { '--druck-zoom-vorab': String(Math.round(v.zoom * 100) / 100) } as React.CSSProperties,
+  };
 }
 
 // Zifferngruppen mit Leerzeichen («Fr. 1 000», «300 000») brechen nie mitten in der Zahl
@@ -82,7 +85,6 @@ type TabSpalte = { typ: 'bereich' | 'zahl' | 'text' | 'betrag'; titel: string };
 // (Bund, M10) → dumme typgesteuerte Projektion; Alt-`{kopf,zeilen}` (Kanton/Legacy)
 // → unveränderter Alt-Renderer (abwärtskompatibel, byte-gleiche Darstellung).
 export function MehrspaltigeTabelle({ spalten, kopf, zeilen }: { spalten?: TabSpalte[]; kopf?: string[]; zeilen: string[][] }) {
-  useTabellenDruck(); // `beforeprint`: breite Tabellen quer/kleiner/mit Hinweis (tabellenDruck.ts)
   if (spalten && spalten.length > 0) return <KanonischeTabelle spalten={spalten} zeilen={zeilen} />;
   return <LegacyMehrspaltigeTabelle kopf={kopf} zeilen={zeilen} />;
 }

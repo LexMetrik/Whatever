@@ -583,9 +583,9 @@ const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
  *  gezogen, weil `ZitierMarke` die Klasse `lc-zitiermarke` trägt (Druck + Marke
  *  ohne Wortbruch) und die Tabellen-Zellen neue Umbruch-Klassen; die [struktur]-
  *  Hashes (Markup ohne Klassen) sind unverändert — Text und Aufbau sind gleich.
- *  AUSNAHME Fall «T-A Staffel-Spanne» (AHVV Art. 28, 13 Spalten): die Vorab-Markierung für den
- *  Druck (zweite Gegenprüfung #1279) setzt dort `data-breit` und `--druck-zoom-vorab` — beide
- *  Hashes dieses Falls sind neu; der Wortlaut ist unverändert (e2e-Sonden). */
+ *  AUSNAHME Fall «T-A Staffel-Spanne» (AHVV Art. 28): `zelleText` setzt ein `<span
+ *  class="whitespace-nowrap">` um «50 000» (Zifferngruppe untrennbar) — beide Hashes dieses Falls sind
+ *  neu; der Text ist unverändert, es kommen keine Attribute hinzu (die Tabelle ist nicht `data-breit`). */
 const KERN_ERWARTET: Record<string, [string, string]> = {
   'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
   'T-A Staffel-Spanne verdichtet (bereich)': ['ebf3fb58723c22e4ba46a98863f05f14762f7b85dfa033974db50326b3c930df', 'f2cd0ac7f0ff74c40b14b1b6377327c1f3f9593a0b4487f478435aa6a9fee62b'],
