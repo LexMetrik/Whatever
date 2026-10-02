@@ -432,10 +432,17 @@ export function baueArtikelHistorie(
   // Dokumentreihenfolge bleibt erhalten (siehe Funktions-Doc). «giltSeit»/
   // «aufgehobenSeit» als Maximum über die datierten Ereignisse ableiten.
   let giltSeit: string | null = null;
+  // W2·27-BUND-FERTIG (2.10.2026, vorläufig, Fachfrage an David offen): «giltSeit» bestimmt sich NUR aus den EIGENEN
+  // datierten Ereignissen des Artikels (Herkunft nicht «an einer Überschrift»), sobald er welche trägt — die Überschrift-
+  // Fassung kann dann die Überschrift selbst betreffen; sonst hätte Fedlex die ältere Artikel-Fussnote nicht stehen lassen
+  // (§8: im Zweifel das ältere, belegte Datum statt eines womöglich nicht zutreffenden jüngeren). Ohne eigene datierte
+  // Ereignisse gilt das Maximum der Überschrift-Ereignisse (am Träger wie an den Erben). Die Chronik behält alle.
+  let eigenSeit: string | null = null;
   let aufgehobenSeit: string | undefined;
   for (const e of ereignisse) {
     if (e.datum && GILT_TYPEN.has(e.typ)) {
       if (!giltSeit || e.datum > giltSeit) giltSeit = e.datum;
+      if (!e.ueberschrift && (!eigenSeit || e.datum > eigenSeit)) eigenSeit = e.datum;
     }
   }
   // Ganz-Artikel-Aufhebung (RL-11, Befund R2-01): nur Aufhebungs-Ereignisse aus
@@ -501,7 +508,7 @@ export function baueArtikelHistorie(
   if (gegenstandslos && opts.koerperLebend === true) gegenstandslos = undefined;
 
   // Geerbte Überschrift-Ereignisse (W2·27-BUND-FERTIG): vor die eigenen — die Überschrift steht im Dokument vor dem
-  // Artikel —, zählen wie am Träger-Artikel in «giltSeit» ein. Nicht an einen Artikel mit eigener Ganzaufhebung bzw.
+  // Artikel —, zählen in «giltSeit» nur ein, wenn der Artikel keine eigenen datierten Ereignisse trägt (s. o.). Nicht an einen Artikel mit eigener Ganzaufhebung bzw.
   // «gegenstandslos»: dessen Fassungsstand wäre sonst der der Überschrift (§8).
   let erbtAnzahl = 0;
   if (erbe.length > 0 && !aufgehobenSeit && !gegenstandslos) {
@@ -511,6 +518,7 @@ export function baueArtikelHistorie(
       if (e.datum && GILT_TYPEN.has(e.typ) && (!giltSeit || e.datum > giltSeit)) giltSeit = e.datum;
     }
   }
+  if (eigenSeit) giltSeit = eigenSeit;
 
   // P7 #53 (§8): ein amtlich aufgehobener Artikel (Text-Shard: Wortlaut «Aufgehoben»/«…» mit Vermerk) GILT nicht
   // «seit» irgendeiner Einfügung/Fassung — Fälle: Fussnote am Gliederungstitel (ASYLV2 65, HREGV 162–163, ZSTV 75a–m),

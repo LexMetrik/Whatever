@@ -118,7 +118,10 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f6, '1')!.ereignisse.map((e) => [e.typ, e.ueberschrift])).toEqual([['ausdruck', TITEL.label], ['urspruenglich', TITEL.label]]);
   });
 
-  it('eigenes jüngeres Ereignis bleibt massgeblich für giltSeit; ein jüngeres Überschrift-Datum rückt giltSeit vor (Entscheid David)', () => {
+  // Regel B (vorläufig, Fachfrage an David offen, Nachzug 2.10.2026): trägt ein Artikel EIGENE datierte Ereignisse, bestimmt
+  // sich «giltSeit» nur aus ihnen — eine jüngere Überschrift-Fassung rückt es nicht vor (sie kann die Überschrift selbst
+  // betreffen). Vorher (#1286): Maximum über eigene UND geerbte; die Erwartung von Art. 3 unten war dort '1972-01-01'.
+  it('Regel B: eigenes Datum bleibt massgeblich für giltSeit, auch wenn die Überschrift-Fassung jünger ist; die Chronik behält beide', () => {
     const f7: ErbArtikel[] = [
       { token: '1', gliederung: [TITEL], fussnoten: [sek(FASSUNG_1972, TITEL.label)] },
       { token: '2', gliederung: [TITEL], fussnoten: [fn(EINGEFUEGT_2012)] }, // eigen jünger (2012 > 1972)
@@ -127,7 +130,33 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     const a2 = historieVon(f7, '2')!;
     expect(a2.giltSeit).toBe('2012-01-01');
     expect(a2.ereignisse.map((e) => e.ueberschrift)).toEqual([TITEL.label, undefined]);
-    expect(historieVon(f7, '3')!.giltSeit).toBe('1972-01-01');
+    const a3 = historieVon(f7, '3')!;
+    expect(a3.giltSeit).toBe('1961-01-01'); // NICHT 1972: die jüngere Überschrift-Fassung rückt giltSeit nicht vor
+    expect(a3.ereignisse.map((e) => [e.datum, e.ueberschrift])).toEqual([['1972-01-01', TITEL.label], ['1961-01-01', undefined]]);
+  });
+
+  it('Regel B: Artikel NUR mit Überschrift-Ereignis (kein eigenes datiertes) → giltSeit = Überschrift-Datum, Maximum bei mehreren', () => {
+    const f11: ErbArtikel[] = [
+      { token: '1', gliederung: [TITEL, ABSCHNITT1], fussnoten: [sek(FASSUNG_1972, TITEL.label), { ...sek(EINGEFUEGT_2012, ABSCHNITT1.label), nr: '2' }] },
+      { token: '2', gliederung: [TITEL, ABSCHNITT1] },
+      // eigene Fussnote OHNE Datum zählt nicht als eigenes datiertes Ereignis → Überschrift-Datum gilt
+      { token: '3', gliederung: [TITEL, ABSCHNITT1], fussnoten: [fn('Fassung gemäss Ziff. I des BG vom 1. Jan. 1960 (AS 1960 1).')] },
+    ];
+    expect(historieVon(f11, '2')!.giltSeit).toBe('2012-01-01');
+    expect(historieVon(f11, '3')!.giltSeit).toBe('2012-01-01');
+  });
+
+  it('Regel B: Träger-Artikel wird gleich behandelt wie die Erben (eigene ältere Fassung + jüngere Überschrift-Fussnote am Träger)', () => {
+    const f12: ErbArtikel[] = [
+      { token: '1', gliederung: [TITEL], fussnoten: [sek(FASSUNG_1972, TITEL.label), { ...fn('Fassung gemäss Ziff. I des BG vom 1. Jan. 1960, in Kraft seit 1. Jan. 1961 (AS 1960 1).'), nr: '2' }] },
+      { token: '2', gliederung: [TITEL], fussnoten: [fn('Fassung gemäss Ziff. I des BG vom 1. Jan. 1960, in Kraft seit 1. Jan. 1961 (AS 1960 1).')] },
+      { token: '3', gliederung: [TITEL] },
+    ];
+    const traeger = historieVon(f12, '1')!;
+    expect(traeger.giltSeit).toBe('1961-01-01');
+    expect(traeger.ereignisse.map((e) => [e.datum, e.ueberschrift])).toEqual([['1972-01-01', TITEL.label], ['1961-01-01', undefined]]);
+    expect(historieVon(f12, '2')!.giltSeit).toBe(traeger.giltSeit); // Erbe mit gleicher eigener Fassung
+    expect(historieVon(f12, '3')!.giltSeit).toBe('1972-01-01'); // Erbe ohne eigenes Ereignis
   });
 
   it('amtlich aufgehobener Artikel (Text-Shard) und Artikel mit eigener Ganzaufhebung erben nichts', () => {
