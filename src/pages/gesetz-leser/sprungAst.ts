@@ -41,13 +41,25 @@ export interface AstBuchhaltung {
  * schliessen liess. Idempotent (§2).
  */
 export function merkeKlappAstManuell(ids: Iterable<string>, offen: boolean, b: AstBuchhaltung): void {
+  let schliesser = QUELLE_ZU.get(b.manuellZu);
+  if (!schliesser) { schliesser = new Map(); QUELLE_ZU.set(b.manuellZu, schliesser); }
   for (const id of ids) {
     b.autoOffen.delete(id);
     b.autoTick.delete(id);
-    if (offen) { b.manuellOffen.add(id); b.manuellZu.delete(id); }
-    else { b.manuellOffen.delete(id); b.manuellZu.add(id); }
+    if (offen) { b.manuellOffen.add(id); b.manuellZu.delete(id); schliesser.delete(id); }
+    else { b.manuellOffen.delete(id); b.manuellZu.add(id); schliesser.set(id, ids); }
   }
 }
+
+/**
+ * Wer hat diese Id zuletzt zugeklappt? Der Aufruf (genauer: sein `ids`-Argument,
+ * als Referenz) — je `manuellZu`-Menge. Nur dafür da, dass die «alles zu»-Sperre
+ * (`pruefeAlleZuSperre`) unterscheiden kann, was SIE hält und was der Nutzer
+ * danach selbst zugeklappt hat (Regel K, W2·17-UI-BEFUNDE). Die Karte lebt am
+ * Schlüssel der Menge (WeakMap) — `AstBuchhaltung` und ihre Aufrufer bleiben
+ * unverändert.
+ */
+const QUELLE_ZU = new WeakMap<Set<string>, Map<string, Iterable<string>>>();
 
 /**
  * Ein Sprung-Ziel als MANUELL GEÖFFNET verbuchen. Ein Sprung ist immer eine
@@ -87,13 +99,20 @@ export interface AlleZuSperre { pfad: readonly string[]; ids: readonly string[] 
 /**
  * Hebt die «alles zu»-Sperre auf, sobald die oberste Stufe des aktiven Pfads eine
  * andere ist: nimmt ihre Ids aus `manuellZu` und liefert `null`; sonst die Sperre
- * unverändert. Ein leerer Pfad (Spy noch ohne Standort) ändert nichts. Rein bis
+ * unverändert; von Hand zugeklappte Ids bleiben zu (s. `QUELLE_ZU`). Ein leerer Pfad (Spy noch ohne Standort) ändert nichts. Rein bis
  * auf die erklärte Mutation von `manuellZu` (§2).
  */
 export function pruefeAlleZuSperre(
   sperre: AlleZuSperre | null, aktivIds: readonly string[], manuellZu: Set<string>,
 ): AlleZuSperre | null {
   if (!sperre || aktivIds.length === 0 || sperre.pfad[0] === aktivIds[0]) return sperre;
-  for (const id of sperre.ids) manuellZu.delete(id);
+  // Nur, was die Sperre SELBST hält: hat der Nutzer eine Id danach von Hand zugeklappt
+  // (zuletzt schloss ein anderer Aufruf als «alles zu»; ohne verbuchte Herkunft gilt die Sperre als Halter), bleibt sie in `manuellZu` —
+  // Regel K (David 26.6.2026): selbst Zugeklapptes bleibt zu.
+  const quelle = QUELLE_ZU.get(manuellZu);
+  for (const id of sperre.ids) {
+    const von = quelle?.get(id);
+    if (von === undefined || von === sperre.ids) { manuellZu.delete(id); quelle?.delete(id); }
+  }
   return null;
 }
