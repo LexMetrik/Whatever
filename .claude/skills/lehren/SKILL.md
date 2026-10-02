@@ -33,47 +33,35 @@ Jede **Ablehnung eines Fremd-PRs** (Jules geschlossen, nie gemergt) und jede
 **Schein-Klasse des Diskrepanz-Finders** (Gemini-Fund als Schein protokolliert)
 wird in DERSELBEN Session nach der Formregel oben verankert — als Tor-Regel
 (Fremd-PR-Tor/Erstfilter) oder als Vorlagen-Zeile —, **nie nur als Kommentar**
-im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
-#638, `scripts/analyse/test-assertion-diff.ts`), die Kommentar-Bilanz aus
-#662 (Fremd-PR-Tor Regel 3), die Label-/Tabellen-Regeln aus #650
-(deterministischer Erstfilter). `retro:17` erinnerte daran mit einer ENTWURF-Zeile
-je frisch geschlossenem Jules-PR; das entfällt mit dem retro:17-Rückbau
-(Entscheid David 20.9.2026) und fiel seit dem Jules-Stopp 14.9.2026 auf
-nichts — Nachfolge-Messung `npm run tor:bewaehrung`.
+im Fahrplan-Register. Nachfolge-Messung `npm run tor:bewaehrung` (Belege: Archiv §Formregel-Fremdagenten).
 
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 
 | # | Klasse | Was passierte | Gegenmittel — wo es sitzt |
 |---|---|---|---|
-| **F1** | Merge vor Prüfung | PR #309: 11 erfundene Amtsträger:innen ~1 h auf prod. Die Merge-Erlaubnis stand im **Bau**-Auftrag; der Agent hat korrekt befolgt, was dastand. | `tor-schutz.py` blockiert `gh pr merge` → `check:merge-schutz` (committeter Bereich, nicht Working Tree). Prosa hätte es NICHT verhindert. <!-- @wiedervorlage: 2027-03-15 --> |
-| **F2a** | Tor validiert sich selbst | Wächter prüfte gegen die eigene Sync-Marke statt gegen eine unabhängige Grösse. **2. Beleg 21.9.2026 (PR #960, Curia-Publikationen):** die «Kreuzprobe» zählte dieselben sechs Felder über dieselben Normalisierer wie der geprüfte Dedupe-Schlüssel — dieselbe Entscheidung zweimal; die Gegenprüfung konstruierte drei Fälle, in denen beide Wege denselben Fehler machen, und 11 amtliche Zeilen blieben bei grünem Tor verschmolzen. | Wächter gegen **unabhängige** Referenz (erwartete Zeilenzahl aus dem Manifest). **Präzisiert 21.9.2026:** unabhängig heisst **andere Datenbasis** (rohe Zeilenzahl der Quelle, Manifest), nie eine zweite Schreibweise über dieselbe Feldliste. Das Gegenmittel stand nur hier und erreichte den Bau-Agenten nicht ⇒ nach Ziff. 5 Eskalation in die Dispatch-§0 als Posten `plan/posten/2026-09-21-f2a-eskalation-dispatch-unabhaengige-referenz.md`. <!-- @wiedervorlage: 2027-03-15 --> |
+| **F1** | Merge vor Prüfung | PR #309 (20.7.2026): Merge-Erlaubnis stand im Bau-Auftrag (Archiv §F1). | `tor-schutz.py` blockiert `gh pr merge` → `check:merge-schutz` (committeter Bereich, nicht Working Tree). Prosa hätte es NICHT verhindert. <!-- @wiedervorlage: 2027-03-15 --> |
+| **F2a** | Tor validiert sich selbst | Wächter prüfte gegen die eigene Sync-Marke statt gegen eine unabhängige Grösse. 2. Beleg 21.9.2026, PR #960 (Archiv §F2a). | Wächter gegen **unabhängige** Referenz (erwartete Zeilenzahl aus dem Manifest). **Präzisiert 21.9.2026:** unabhängig heisst **andere Datenbasis** (rohe Zeilenzahl der Quelle, Manifest), nie eine zweite Schreibweise über dieselbe Feldliste. Das Gegenmittel stand nur hier und erreichte den Bau-Agenten nicht ⇒ nach Ziff. 5 Eskalation in die Dispatch-§0 als Posten `plan/posten/2026-09-21-f2a-eskalation-dispatch-unabhaengige-referenz.md`. <!-- @wiedervorlage: 2027-03-15 --> |
 | **F2b** | Tor läuft in CI gar nicht | `check:seriell` fährt 36 Tore, CI 11. Lokal grün sagte nichts über CI, und CI konnte das strukturell nie melden. | `check:tor-paritaet` — Listenvergleich mit begründeter Allowlist. Friert die Lücke ein: sie kann nur kleiner werden. <!-- @wiedervorlage: 2027-03-15 --> |
 | **F2c** | `cancelled` gilt als «nicht rot» | 5 stumm abgebrochene `turso-sync`-Läufe, Suchindex veraltete unbemerkt. | `landung`-Skill Schritt 5: `cancelled`/`skipped` **zählen als rot**. <!-- @wiedervorlage: 2027-03-15 --> |
-| **F2d** | Beleg = Substring | `ft.includes(nachSlug)`: «ott» galt als belegt durch «rottenberg». **2. Beleg 25.9.2026 (Gegenprüfung #1113):** eine Log-Sonde «Gericht X kommt im Log vor» prüfte nur Substring-Präsenz — die npm-Kopfzeile (`> node … --courts=…`) enthält jeden Gerichtscode und erfüllt damit JEDE Sonde, egal ob der Schritt wirklich lief. | `istWortTreffer()` in `check-besetzung.ts` — Segment-exakte Identität. **Log-Sonden zusätzlich:** zeilenanfang-verankert auf das eigene Ausgabe-Präfix prüfen (nie die volle Log-Datei), Test mit echter npm-Kopfzeile als Gegenprobe. <!-- @wiedervorlage: 2027-03-15 --> |
-| **F2e** | Tor kann strukturell nie grün werden | Wächter (`check:ci-laeufe`) zählte sich selbst mit: einmal rot ⇒ eigener jüngster Lauf rot ⇒ für immer rot. 15/15 Läufe seit Anlage 20.7.2026 rot, niemand fand «rot» noch bedeutsam — genau die stillen Ausfälle, die er melden sollte (turso, Normen-Monitor), blieben unsichtbar. Spiegelbild von §6.7: ein Tor, das nicht grün werden KANN, ist so wertlos wie eines, das nicht rot werden kann. | Selbstausschluss im Wächter (Fix 3.8.2026, PR #419) + §6.7-Erweiterung: ein neues Tor zeigt man einmal rot UND einmal grün, bevor man ihm glaubt. <!-- @wiedervorlage: 2027-08-03 --> |
-| **F2f** | Tor prüft Container, nicht Inhalt | Bauplan-Review 4./5.8.2026: `check:plan` prüfte je `fahrplan:`-Verweis nur die Datei-Existenz — 3 §-Anker zeigten auf falsche/tote §§ (u. a. ein Risikopfad-Schritt auf eine fremde Spec), 2 weitere fand erst das neue Tor, 2 erzeugte der Fix selbst. Die Klasse «Anker löst auf, trifft aber das Falsche» ist für Existenz-Checks unsichtbar. | `check:plan` Regel 11 «Spec-Bindung» (`scripts/plan/specBindung.ts`): Anker muss als Überschrift auflösen UND der §-Abschnitt muss die Schritt-ID tragen; begründete Allowlist, Geburtsbeweis rot auf `d316f5884`. <!-- @wiedervorlage: 2027-08-05 --> |
-| **F2h** | Wächter wartet stumm auf einen Zustand, der nie kommt | 15./16.8.2026: Landeketten-Wächter merged Risikopfad-PRs nur bei `mergeStateStatus: CLEAN`; nach Davids Branch-Schutz-Edit standen sie auf `UNSTABLE` (nicht-required Vercel-Kontext rot, alle 11 Required grün) — 7 h kein Merge (17:24→00:33), zwei weitere PRs `DIRTY` (Konflikt), ebenfalls stumm. Erst Davids Nachfrage brachte es ans Licht. Spiegelbild von F2e: ein Wächter, der auf «CLEAN» wartet, wo «alle Required grün» das echte Kriterium ist, ist so wertlos wie einer, der nie grün wird. | Ein Wächter, der länger als 2 Runden ohne Zustandsänderung wartet, **meldet den Stillstand mit Grund** (welcher PR, welcher Status, was fehlt) statt weiterzuschlafen; Merge-Kriterium ist die Required-Liste (`gh api …/protection/required_status_checks`), nie ein GitHub-Sammelstatus; `DIRTY`/`UNKNOWN`-Dauerzustände sind Meldungen, keine Wartezustände. Orchestrator-Seite: `bauschritt` Station D — bei Wächter-Stille >30 min selbst nachsehen. <!-- @wiedervorlage: 2027-02-16 --> |
-| **F2g** | Tor rot ohne Defekt (Render-Timing) | 15.8.2026: `qsui-hierarchie.e2e.ts` kippte 3–6/65 unter Last — `.lc-route` blendet ab opacity:0 ein, `checkVisibility({opacityProperty:true})` auf dem Null-Frame ist für jeden Nachfahren false; wechselnde Routen, kein Produktfehler. Ein rotes Tor ohne Defekt ist die §17-Klasse «umschiffter CI-Defekt». | e2e-Specs, die Sichtbarkeit/Geometrie messen, setzen `page.emulateMedia({reducedMotion:'reduce'})` im `beforeEach` (index.css schaltet Animationen ab; Haus-Muster a11y/hist-ansicht/rechtsprechung-richter) — nie `waitForTimeout`. Beweis: 2× 65/65 unter workers=16. <!-- @wiedervorlage: 2027-08-15 --> |
-| **F3** | Diagnose ohne Verteilung | 4× an einem Tag wurde Messrauschen als Feature-Regression gedeutet; Reruns = ~72 % der CI-Wanduhr. **2. Vorfall 8./9.8.2026 TROTZ §0.3 (a33-Flake):** ein Bau-Agent schloss aus 5/5 grün auf Kausalität (reale Rate ~15 % ⇒ 5/5 ist Glück) und fuhr die Nullprobe erst nach vier widerlegten Hypothesen; derselbe Stand mass kalt 2–4/20 rot, warm 0/40 — die Messbedingung war der grössere Fund. | Dispatch §0 Ziff. 3, **eskaliert 9.8.2026**: (a) Nullprobe am ANFANG der Diagnose (Re-Run auf unverändertem Stand oder reiner Doku-Diff — `ci.yml` klassifiziert seit der CI-Härtung 3.8.2026 selbst) + (b) Streuung gegen den Schwellenabstand + (c) Stichprobe gegen die vermutete Rate dimensionieren und die Messbedingung (kalt/warm, Parallel-Last) mitnennen — eine Rate ohne Bedingung ist keine Zahl. <!-- @wiedervorlage: 2027-02-09 --> |
-| **F4** | Bericht als Wahrheit | 1× fabrizierter Erfolgsbericht bei 0 Tool-Calls; 1× Injection-Versuch. **Leise Form 21.9.2026 (PR #960):** ein Bau-Agent übernahm eine Zahl aus der Auftrags-Tabelle («27 wiedergefundene Fundstellen», Summe über neun Geschäfte) in den Titel eines Commits, der nur zwei davon enthielt — belegt waren 13; die übrigen Zahlen derselben Tabelle hatte er nachgemessen, diese nicht. Vor der Landung berichtigt. | `CLAUDE.md` §14 Ziff. 7 (Orchestrator) **+** Dispatch §0 Ziff. 1 (Sub-Agent). Bewusste Doppelablage: Sub-Agenten sehen `CLAUDE.md` nicht. <!-- @wiedervorlage: 2027-03-15 --> |
-| **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. **2. Form 15.8.2026 (Wartetod):** ein `lex-daten`-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf deren Verdikt — Sub-Agenten können keine Nachrichten empfangen, das Verdikt landete beim Orchestrator; die fertige Arbeit lag uncommittet im Worktree. | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. **Wartetod:** Sub-Agenten spawnen nie etwas, auf dessen Antwort sie warten müssten — Gegenprüfung ist Orchestrator-Sache (`lex-daten.md` RISIKOPFAD-Zeile, Skill `auftrag` Ziff. 6); der Orchestrator prüft bei >2 h Stille den Worktree (`git status`) statt zu warten. **3. Vorfall 31.8.2026 (Wartetod trotz §0.4):** lex-daten-Agent stoppte «wartend» auf seinen eigenen Hintergrund-Crawl; Weckruf des Orchestrators nötig. **Eskaliert** nach Regel 5: KEIN-WARTE-STOPP-Zeile jetzt in den generierten Agent-Definitionen (dispatch-agents.ts, liest jeder Agent). <!-- @wiedervorlage: 2027-02-28 --> |
-| **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. **2. Vorfall 28.7.2026 TROTZ §0.5:** `W2·6-NKEY` doppelt gebaut (#397 gemergt, #398 verworfen — ein voller Opus-Bau entsorgt). Die PR-Sonde war blind (Parallel-PR noch nicht offen), der Remote-Branch `worktree-w26-nkey` der Parallel-Session **war sichtbar**; zudem stand der Schritt nie auf `wip`. | Dispatch §0 Ziff. 5, **eskaliert 28.7.2026** (Regel 5): drei Sonden statt einer — PR-Liste + `git ls-remote --heads origin` + `git worktree list` — und Früh-Push des eigenen Branchs. Orchestrator-Seite: Skill `auftrag` Ziff. 2 (@meta `wip` **vor** Baubeginn setzen und pushen). **Eskalation 5.8.2026** (Spiegel-Fall: wip überlebt das Session-Ende — QS-TOK/QS-TOK-AUFRAEUMEN standen nach gelandetem Bau stundenlang «im Bau»): `plan:next` warnt maschinell bei wip ohne Bau-Spur (Branch/Worktree/PR), Landung-Skill Schritt 9 schliesst den Status vor Session-Ende. <!-- @wiedervorlage: 2027-08-05 --> |
-| **F7** | Zustands-Spiegel nur vorwärts getestet | 7.8.2026 (W2·10-UI-NAV-S): die neue `?q=`-URL-Spiegelung wurde nur vorwärts getestet (tippen → Adresse → Reload); die Gegenprüfung fand per History-Back einen deterministischen Verlust — die Echo-Merkung des Spiegels verfiel nie, ein Back wurde als eigenes Echo missdeutet und binnen 300 ms wieder überschrieben. | Wer eine Zustands↔URL-Spiegelung baut, testet auch **rückwärts** (Back/Forward, geteilte URL, Reload mitten im Debounce), nicht nur vorwärts. Wiederverwendbares Gegenmittel im Code: `src/components/suche/useSucheAusUrl.ts` (reine Übergangsfunktionen, Echo-Merkung verfällt nach genau einem Konsum) samt Unit-Kontrakt + e2e-Back-Szenario — neue Spiegelungen docken dort an statt eigene Merkung zu erfinden (§5). <!-- @wiedervorlage: 2027-08-07 --> |
+| **F2d** | Beleg = Substring | `ft.includes(nachSlug)`: «ott» galt als belegt durch «rottenberg». 2. Beleg 25.9.2026, Gegenprüfung #1113 (Archiv §F2d). | `istWortTreffer()` in `check-besetzung.ts` — Segment-exakte Identität. **Log-Sonden zusätzlich:** zeilenanfang-verankert auf das eigene Ausgabe-Präfix prüfen (nie die volle Log-Datei), Test mit echter npm-Kopfzeile als Gegenprobe. <!-- @wiedervorlage: 2027-03-15 --> |
+| **F2e** | Tor kann strukturell nie grün werden | Wächter (`check:ci-laeufe`) zählte sich selbst mit: einmal rot ⇒ eigener jüngster Lauf rot ⇒ für immer rot. 15/15 Läufe seit 20.7.2026 rot (Archiv §F2e). Spiegelbild von §6.7: ein Tor, das nicht grün werden KANN, ist so wertlos wie eines, das nicht rot werden kann. | Selbstausschluss im Wächter (Fix 3.8.2026, PR #419) + §6.7-Erweiterung: ein neues Tor zeigt man einmal rot UND einmal grün, bevor man ihm glaubt. <!-- @wiedervorlage: 2027-08-03 --> |
+| **F2f** | Tor prüft Container, nicht Inhalt | Bauplan-Review 4./5.8.2026: `check:plan` prüfte je `fahrplan:`-Verweis nur die Datei-Existenz (Archiv §F2f). Die Klasse «Anker löst auf, trifft aber das Falsche» ist für Existenz-Checks unsichtbar. | `check:plan` Regel 11 «Spec-Bindung» (`scripts/plan/specBindung.ts`): Anker muss als Überschrift auflösen UND der §-Abschnitt muss die Schritt-ID tragen; begründete Allowlist, Geburtsbeweis rot auf `d316f5884`. <!-- @wiedervorlage: 2027-08-05 --> |
+| **F2h** | Wächter wartet stumm auf einen Zustand, der nie kommt | 15./16.8.2026: Landeketten-Wächter wartete 7 h stumm auf `CLEAN` (Archiv §F2h). Spiegelbild von F2e: ein Wächter, der auf «CLEAN» wartet, wo «alle Required grün» das echte Kriterium ist, ist so wertlos wie einer, der nie grün wird. | Ein Wächter, der länger als 2 Runden ohne Zustandsänderung wartet, **meldet den Stillstand mit Grund** (welcher PR, welcher Status, was fehlt) statt weiterzuschlafen; Merge-Kriterium ist die Required-Liste (`gh api …/protection/required_status_checks`), nie ein GitHub-Sammelstatus; `DIRTY`/`UNKNOWN`-Dauerzustände sind Meldungen, keine Wartezustände. Orchestrator-Seite: `bauschritt` Station D — bei Wächter-Stille >30 min selbst nachsehen. <!-- @wiedervorlage: 2027-02-16 --> |
+| **F2g** | Tor rot ohne Defekt (Render-Timing) | 15.8.2026: `qsui-hierarchie.e2e.ts` kippte 3–6/65 unter Last, kein Produktfehler (Archiv §F2g). Ein rotes Tor ohne Defekt ist die §17-Klasse «umschiffter CI-Defekt». | e2e-Specs, die Sichtbarkeit/Geometrie messen, setzen `page.emulateMedia({reducedMotion:'reduce'})` im `beforeEach` (index.css schaltet Animationen ab; Haus-Muster a11y/hist-ansicht/rechtsprechung-richter) — nie `waitForTimeout`. Beweis: 2× 65/65 unter workers=16. <!-- @wiedervorlage: 2027-08-15 --> |
+| **F3** | Diagnose ohne Verteilung | 4× an einem Tag Messrauschen als Feature-Regression gedeutet; 2. Vorfall 8./9.8.2026 trotz §0.3 (a33-Flake) (Archiv §F3). | Dispatch §0 Ziff. 3, **eskaliert 9.8.2026**: (a) Nullprobe am ANFANG der Diagnose (Re-Run auf unverändertem Stand oder reiner Doku-Diff — `ci.yml` klassifiziert seit der CI-Härtung 3.8.2026 selbst) + (b) Streuung gegen den Schwellenabstand + (c) Stichprobe gegen die vermutete Rate dimensionieren und die Messbedingung (kalt/warm, Parallel-Last) mitnennen — eine Rate ohne Bedingung ist keine Zahl. <!-- @wiedervorlage: 2027-02-09 --> |
+| **F4** | Bericht als Wahrheit | 1× fabrizierter Erfolgsbericht bei 0 Tool-Calls; 1× Injection-Versuch. Leise Form 21.9.2026 (PR #960): Zahl aus der Auftrags-Tabelle ungeprüft in einen Commit-Titel übernommen (Archiv §F4). | `CLAUDE.md` §14 Ziff. 7 (Orchestrator) **+** Dispatch §0 Ziff. 1 (Sub-Agent). Bewusste Doppelablage: Sub-Agenten sehen `CLAUDE.md` nicht. <!-- @wiedervorlage: 2027-03-15 --> |
+| **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. 2. Form 15.8.2026 (Wartetod): Agent wartete 5 h auf ein Verdikt, das den Orchestrator erreichte (Archiv §F5). | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. **Wartetod:** Sub-Agenten spawnen nie etwas, auf dessen Antwort sie warten müssten — Gegenprüfung ist Orchestrator-Sache (`lex-daten.md` RISIKOPFAD-Zeile, Skill `auftrag` Ziff. 6); der Orchestrator prüft bei >2 h Stille den Worktree (`git status`) statt zu warten. **3. Vorfall 31.8.2026 (Wartetod trotz §0.4):** lex-daten-Agent stoppte «wartend» auf seinen eigenen Hintergrund-Crawl; Weckruf des Orchestrators nötig. **Eskaliert** nach Regel 5: KEIN-WARTE-STOPP-Zeile jetzt in den generierten Agent-Definitionen (dispatch-agents.ts, liest jeder Agent). <!-- @wiedervorlage: 2027-02-28 --> |
+| **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. 2. Vorfall 28.7.2026 trotz §0.5: `W2·6-NKEY` doppelt gebaut, #397/#398 (Archiv §F6). | Dispatch §0 Ziff. 5, **eskaliert 28.7.2026** (Regel 5): drei Sonden statt einer — PR-Liste + `git ls-remote --heads origin` + `git worktree list` — und Früh-Push des eigenen Branchs. Orchestrator-Seite: Skill `auftrag` Ziff. 2 (@meta `wip` **vor** Baubeginn setzen und pushen). **Eskalation 5.8.2026** (Spiegel-Fall: wip überlebt das Session-Ende — QS-TOK/QS-TOK-AUFRAEUMEN standen nach gelandetem Bau stundenlang «im Bau»): `plan:next` warnt maschinell bei wip ohne Bau-Spur (Branch/Worktree/PR), Landung-Skill Schritt 9 schliesst den Status vor Session-Ende. <!-- @wiedervorlage: 2027-08-05 --> |
+| **F7** | Zustands-Spiegel nur vorwärts getestet | 7.8.2026 (W2·10-UI-NAV-S): `?q=`-URL-Spiegelung nur vorwärts getestet, History-Back verlor den Zustand (Archiv §F7). | Wer eine Zustands↔URL-Spiegelung baut, testet auch **rückwärts** (Back/Forward, geteilte URL, Reload mitten im Debounce), nicht nur vorwärts. Wiederverwendbares Gegenmittel im Code: `src/components/suche/useSucheAusUrl.ts` (reine Übergangsfunktionen, Echo-Merkung verfällt nach genau einem Konsum) samt Unit-Kontrakt + e2e-Back-Szenario — neue Spiegelungen docken dort an statt eigene Merkung zu erfinden (§5). <!-- @wiedervorlage: 2027-08-07 --> |
 
-| **F8** | Beleg ans Tor angepasst | 29.8.2026 (Intl-Routing, 3. Prüf-Durchgang M7/M8): ZWEI datierte Reproduktions-Kommentare wurden beim Bau auf die neue Adresse «nachgeführt» — und damit falsch (die Adresse existierte am Belegdatum nicht; einer widersprach der Chronik derselben Änderung). Auslöser war ein neues Kanonik-Tor, das die Kommentare gar nicht las — der Beleg wurde dem Tor geopfert, nicht der Wahrheit. | Dispatch-§0 Ziff. 7 (agents-Defs + dispatch-template, 29.8.2026): **Datierte Repro-/Messbelege werden nie nachgeführt, nur ergänzt** («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …»). Heilung in Ergänzungs-Form belegt (Commit im Intl-PR). <!-- @wiedervorlage: 2027-02-28 --> |
-| **F9** | Stand-Leser nimmt Zukunft | 29.8.2026 (Frische-GP B1/B5): `leseTiStand` nahm das MAXIMUM aller «in vigore dal»-Daten der Quellseite — inkl. des Ankündigungs-Abschnitts «PROSSIME VARIAZIONI» → TI-181 bekam stand 1.1.2027 (16 Monate Zukunft) in den Grundbuchtarif-Risikopfad; gleiche Klasse vorbestehend: SZ-213.512 (2027-02-01). Dazu B2: der Zuklapp-Link «chiudi -» des neuen Seitenabschnitts landete als Normtext. | **Tor** `stand ≤ heute` über alle Snapshots (Frische-Fix-PR, rot gezeigt an TI+SZ) + Adapter-Wurzelfix (künftige Daten/Ankündigungs-Abschnitte beim Stand-Lesen ausgeschlossen, UI-Chrome-Filter). <!-- @wiedervorlage: 2027-08-29 --> |
+| **F8** | Beleg ans Tor angepasst | 29.8.2026 (Intl-Routing M7/M8): zwei datierte Repro-Kommentare auf die neue Adresse «nachgeführt» (Archiv §F8). | Dispatch-§0 Ziff. 7 (agents-Defs + dispatch-template, 29.8.2026): **Datierte Repro-/Messbelege werden nie nachgeführt, nur ergänzt** («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …»). Heilung in Ergänzungs-Form belegt (Commit im Intl-PR). <!-- @wiedervorlage: 2027-02-28 --> |
+| **F9** | Stand-Leser nimmt Zukunft | 29.8.2026 (Frische-GP B1/B5): `leseTiStand` las Ankündigungsdaten als Stand — TI-181 stand 1.1.2027 (Archiv §F9). | **Tor** `stand ≤ heute` über alle Snapshots (Frische-Fix-PR, rot gezeigt an TI+SZ) + Adapter-Wurzelfix (künftige Daten/Ankündigungs-Abschnitte beim Stand-Lesen ausgeschlossen, UI-Chrome-Filter). <!-- @wiedervorlage: 2027-08-29 --> |
 
 **F2-Verschärfungen (29.8.2026, dritter und vierter Beleg der Familie):**
-(i) *Retry-/Abschneide-Maskierung:* Playwright-`retries:2` + `maxFailures`
-verdeckten, dass der ⌘K-Wächter seit ≥16.8. auf ALLEN Branches im Erstversuch
-rot ist (69/69) und dass ein neues Tor (topbar-320) in seiner Shard-Gruppe NIE
-lief («10 did not run») — beide Funde erst durch Hand-Forensik. Gegenmittel wie
+(i) *Retry-/Abschneide-Maskierung:* (Beleg 29.8.2026: Archiv §F2-Verschaerfungen.) Gegenmittel wie
 F2b/F2e: Erstversuchs-Rot und nicht-gelaufene Specs sind Meldungen; Diagnose-
 Posten im Fehlerbuch, Retry-Politik ist David-Entscheid.
-(ii) *Automatik prüft Teilmenge:* der Fedlex-Frische-Lauf fuhr 5 handverlesene
-Offline-Tore statt des Gates — drei Regressionen (Zähler/Revisionen/PDF-Quellen)
-liefen durch, und der verschärfte Merge-Schutz (574 Risiko-Dateien ohne Verdikt)
-blockierte drei Wochen-PRs in Folge still. Gegenmittel: Workflow auf Gate-Lauf
+(ii) *Automatik prüft Teilmenge:* der Fedlex-Frische-Lauf fuhr 5 handverlesene Offline-Tore statt des Gates (Beleg: Archiv §F2-Verschaerfungen-ii). Gegenmittel: Workflow auf Gate-Lauf
 (Frische-Fix-PR); die Auto-Merge-Politik auf Risikopfaden (Verdikt-Pflicht vs.
 David-Rahmen 16.7.) wartet auf David.
 
@@ -97,10 +85,7 @@ definitionen lief als «doku» ohne Tore-Job durch; erst fremde PRs wurden an
 «werkzeug» (PR der Parallel-Session lexmetrik-a1); Quelle ändern, nie die
 Projektion (§5; Wurzel-Fix PR #624). <!-- @wiedervorlage: 2027-09-02 -->
 **F13 — Merge-Lauf auf main endete «cancelled», Merge nie live (2.9.2026, #629).**
-Beobachtung: `gh run list` zeigte den CI-Lauf des Squash-Commits 1123b1974 als
-`cancelled`, ~30 s nachdem ein Doku-Push (9cdbb6a55) auf main folgte; der
-Doku-Lauf überspringt den Deploy-Job → Live-Build blieb auf dem Vorgänger
-(Sidecar 404), erst `gh run rerun` heilte. **Ursache offen:** ci.yml hat seit
+Beobachtung (2.9.2026, #629): Merge-Lauf auf main `cancelled`, Live-Build blieb auf dem Vorgänger (Archiv §F13). **Ursache offen:** ci.yml hat seit
 26.7.2026 `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` — die
 Concurrency kann es nicht gewesen sein (Mechanik-Agent 2.9., Reproduktion
 negativ). Kandidaten: ein Selbst-Cancel-Schritt im Workflow bei bewegtem HEAD,
@@ -108,12 +93,7 @@ oder ein GitHub-seitiger Abbruch. ROADMAP-Zeile unter `QS-AUTOMATIK` (Ursache
 klären, Rot-Beweis). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
 einem Code-Merge kein weiterer main-Push, bis der Deploy-Job grün ist. <!-- @wiedervorlage: 2027-03-02 -->
 **F14 — Additiver Refresh überschreibt gute Bestandsdaten statt sie zu mergen
-(12.9.2026, PR #816, Delta-Prüfung).** Der B1-Zweig von `--regeste-refresh`
-(`scripts/normtext-entscheide.ts`) übernahm ein frisch geholtes Auszug-only-
-Ergebnis vollständig — bei 6 von 1259 amtlichen BGE verschwand dabei über
-zwei additive Nachpflege-Läufe (5.7./28.7.2026) die bereits vorhandene
-`regeste.sprachfassungen`, unbemerkt, weil kein Tor die Regeste-Vollständigkeit
-prüfte; gefangen hat es erst die Gegenprüfung, nicht der Bau. Gegenmittel
+(12.9.2026, PR #816, Delta-Prüfung).** Der B1-Zweig von `--regeste-refresh` (`scripts/normtext-entscheide.ts`) übernahm Auszug-only-Ergebnisse vollständig und löschte bei 6 von 1259 BGE die `regeste.sprachfassungen` (Beleg: Archiv §F14). Gegenmittel
 (Tor, bereits gebaut): `mergeB1Ergebnis()` (`scripts/normtext/entscheide-b1-
 merge.ts`) übernimmt additive Bestandsfelder aus dem Altwert, wenn das frische
 Ergebnis keine trägt und der flache Regeste-Text unverändert ist; neuer Ast in
@@ -122,17 +102,7 @@ Ergebnis keine trägt und der flache Regeste-Text unverändert ist; neuer Ast in
 additive Bestandsfelder, ersetzt sie nie blind. <!-- @wiedervorlage: 2027-09-12 -->
 
 **F15 — Sperre/Wächter ohne Nullprobe gegen die reale Korpus-/CI-Lage blockiert
-Nachtläufe, statt sie zu schützen (12.9.2026, drei Fälle an einem Tag).** Ein
-neuer Sperren-Mechanismus wurde je gegen den GEDACHTEN, nicht den tatsächlichen
-Bestand entworfen: #815 (A4) verlangte im Kanten-Soll auch Kanten bereits
-ENTLISTETER Dokumente und brach beim nächsten legitimen Entlistungslauf mit
-«unvollständig» ab — der einzige Reparaturweg (Generator laufen lassen) war
-damit blockiert; #818 (B1) feuerte die erste Bestandszahl-Sperren-Fassung auf
-dem unveränderten, VOLLSTÄNDIGEN Korpus, weil `altManifest.entscheide.length`
-abgeleitete `__voll`-Verweis-Einträge mitzählte, `auswahl.length` aber nicht;
-#824 (C1/D1) nahm einen `/tmp`-HTML-Cache als gegeben an — in der CI-Umgebung
-ohne diesen Cache lief das Tor unbemerkt GRÜN durch, statt den fehlenden Fetch
-zu melden (Spiegelbild von F2e/F2h: eine Schranke, die nie gegen den eigenen
+Nachtläufe, statt sie zu schützen (12.9.2026, drei Fälle an einem Tag).** Anlass (12.9.2026: #815, #818, #824 — Archiv §F15): Sperren-Mechanismen gegen den GEDACHTEN statt den tatsächlichen Bestand entworfen (Spiegelbild von F2e/F2h: eine Schranke, die nie gegen den eigenen
 Nullfall — intakter Bestand, cache-lose CI — gegengeprüft wurde, ist so
 gefährlich wie eine, die nie greift). Gegenmittel: Dispatch-§0 Regel 3(a)
 (Nullprobe an den ANFANG jeder Sperren-Diagnose) gilt genauso beim BAU einer
@@ -142,15 +112,7 @@ Caches) laufen lassen, nicht nur gegen die Fehlerkonstruktion, die den Bau
 auslöste. <!-- @wiedervorlage: 2027-03-12 -->
 
 **F16 — Marker-Semantik aus einem einzelnen RDF-Tripel als Tatsachenbehauptung
-formuliert, statt als Wiedergabe (12.9.2026, PR #827, 3 Prüfrunden Opus).** Ein neuer
-§8-Marker (`berichtigung-fremdes-as-dokument` für `jolux:rectifies`-Kanten) behauptete
-in Runde 1 einen «Fedlex-internen Widerspruch» — amtlich falsifiziert: `jolux:rectifies`
-benennt das AS-Dokument der Erstpublikation (Anhangs-Änderung), `classifiedByTaxonomyEntry`
-den betroffenen SR-Erlass; zwei verschiedene Aussagen, kein Widerspruch. Runde 2 fand in
-derselben Marker-Klasse einen echten Fehler: der Provenienz-Satz «erstpubliziert» bei
-AS 2025 686/SKV war falsch, das `rectifies`-Ziel zeigte auf AS 2025 648 statt der
-amtlichen 644 — ein Fedlex-Datenfehler, keine Extraktionslücke. Erst Runde 3 bestand: der
-Marker-Text gibt nur noch das Tripel wieder (Fremd-SR + Fundstelle), ohne Deutung.
+formuliert, statt als Wiedergabe (12.9.2026, PR #827, 3 Prüfrunden Opus).** Ein neuer §8-Marker für `jolux:rectifies`-Kanten behauptete in Runde 1 einen «Fedlex-internen Widerspruch» — amtlich falsifiziert; erst Runde 3 gab nur noch das Tripel wieder (Beleg: Archiv §F16).
 Gegenmittel: **Prüfer-Regel** — ein Marker-/Beleg-Text aus einem einzelnen RDF-Tripel
 steht im Konjunktiv oder als reine Wiedergabe, nie als Behauptung, wenn das Tripel die
 Aussage selbst nicht trägt.
@@ -163,56 +125,29 @@ der amtliche Wert künftig ab, wird der Wächter rot (Stale-Bindung) statt die A
 stillschweigend weiter zu tragen — dieselbe Prüfer-Regel, jetzt auch als Tor-Muster. <!-- @wiedervorlage: 2027-09-12 -->
 
 **F17 — Gebaut, nie gebucht: der Vollzug landet im Fahrplan, die ROADMAP-Checkbox
-bleibt offen (15.9.2026, `W2·5m-LESER-V3`, vier Posten, vier Wochen).** Die
-Bereinigung der Leser-V3-Checkliste ergab: **alle vier offenen Posten waren gebaut**
-— D0 (#534, 16.8.), S1 (#547) und S2 (#550, beide 17.8.), Kantons-Probe (#552, 18.8.).
-Vier verschiedene Wege in denselben Zustand, jeder für sich harmlos: **#534** hakte die
-Zeile ab, aber die andere — `DESIGN-D0` stand doppelt im Plan (§5), die Kopie unter dem
-Leser-Dach blieb stehen. **#547** fasste ROADMAP.md an, aber nur um drei NEUE §17-Funde
-einzutragen; die eigene Checkbox blieb unberührt. **#550** fasste ROADMAP.md gar nicht an
-und schrieb «✅ gebaut» nur in den Fahrplan — zwei Wahrheiten, kein Tor las beide. **#539**
-meldete die S4-Begriffskollision ausdrücklich und verwies sie ans «nächste Plan-Aufräumen»;
-dieses (#577, Steuerungs-Diät 29.8.) **löschte den Warn-Absatz beim Verdichten, ohne den
-darin hinterlegten Auftrag auszuführen**. Muster: eine Bau-Session führt zuverlässig, was
+bleibt offen (15.9.2026, `W2·5m-LESER-V3`, vier Posten, vier Wochen).** Die Bereinigung der Leser-V3-Checkliste (15.9.2026) fand **alle vier offenen Posten gebaut**: D0 (#534), S1 (#547), S2 (#550), Kantons-Probe (#552); vier Wege in denselben Zustand (Archiv §F17-Vollzug). Muster: eine Bau-Session führt zuverlässig, was
 ihr im Weg steht — die eigene Checkbox ist das Einzige, was nicht stört, wenn es
 stehenbleibt; und ein Doku-Aufräumen nach Zeichenzahl entfernt Warn-Absätze zuverlässiger,
-als es die darin hinterlegten Aufträge ausführt. Schaden: keine Doppelarbeit belegt, aber
-vier Wochen falsche Steuerung — `plan:next` und jeder Lagebild-Bau-Prompt lasen «offen».
+als es die darin hinterlegten Aufträge ausführt. Schaden: vier Wochen falsche Steuerung (Archiv §F17-Schaden).
 **Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** — trägt eine eingerückte
 Checklisten-Zeile eine Etappen-Kennung und markiert der per `fahrplan:` verlinkte Fahrplan
 dieselbe Kennung mit ✅/«VOLLZOGEN», ist die offene Checkbox rot
 (`scripts/plan/etappenBuchung.ts`, `src/tests/plan-check.etappen-buchung.test.ts`).
-Geburtsbeweis §6.7: rot auf `e94a3dc90` mit exakt den zwei vorhergesagten Treffern (S2, S4),
-grün nach der Bereinigung, dazu 9 Vitest-Fälle inkl. Rot-Fall — damit bleibt die Regel
-prüfbar, wenn die reale ROADMAP längst sauber ist (F2e). **Deklarierte Richtungs-Grenze:**
+Geburtsbeweis §6.7: rot auf `e94a3dc90` (zwei Treffer), grün nach Bereinigung, 9 Vitest-Fälle inkl. Rot-Fall (Archiv §F17-Geburtsbeweis). **Deklarierte Richtungs-Grenze:**
 die Regel prüft nur «Fahrplan sagt fertig, Plan sagt offen». Die Gegenrichtung ist
 Normalfall, nicht Defekt; und einen Vollzug, den WEDER Fahrplan noch ROADMAP notiert (D0,
 S1 fand die Regel nicht), fängt sie nicht — sie ist eine Untergrenze, kein
 Vollständigkeitsbeweis.
 
 **Zweite Richtung derselben Klasse (20.9.2026, `W2·24-DESIGN-IDENTITAET` und
-`W3-TARIF-STAND`, 15 Posten): «Kopf sagt fertig, Unterposten sagen offen».** Die
-Richtungs-Grenze oben wurde nach fünf Tagen real konsumiert — diesmal INNERHALB der
-ROADMAP. Zwei Schritte standen auf `status: done` und trugen darunter zusammen **15
-offene `- [ ]`-Posten** (6 unter dem Design-Kopf, 8 unter dem Tarif-Kopf, einer hinter
-den Feldtrenner `---` gerutscht). `plan:next` liest den Status des KOPFES, nie die
-Checkboxen darunter — die Arbeit stand im Plan und war im Plan unsichtbar, wochenlang,
-bei grünem `check:plan`. Schaden: 15 Posten, die keiner Session je angezeigt wurden,
-darunter **eine seit dem 5.9.2026 offene Fachfrage an David** («WARTET AUF DAVID
-(fachlich, §7): Verjährungsrevision 2020 … `verjaehrung.ts:547`») — ein Wartestand, der
-in einem `done`-Block verschwand. Zweiter Fall derselben Klasse im selben Plan: ein
-Verweis auf einen Schritt `W3-TARIF-NACHVERIFIKATION`, den es nie gab. Warum keine neue
+`W3-TARIF-STAND`, 15 Posten): «Kopf sagt fertig, Unterposten sagen offen».** Anlass (20.9.2026): zwei Schritte auf `status: done` trugen 15 offene `- [ ]`-Posten, darunter eine seit 5.9.2026 offene Fachfrage an David (Archiv §F17-Richtung2-Anlass). Warum keine neue
 Klasse: nach Ziff. 1/5 der Ablage-Anleitung unten ist eine zweimal aufgetretene Klasse
 zu ESKALIEREN, nicht zu verdoppeln — F17 hatte seine Lücke deklariert, der Vorfall hat
 sie belegt. **Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 15** — ein Kopf-Schritt
 (Checkbox auf Spalte 0), dessen Checkbox `[x]` ist oder dessen `@meta` `status: done`
 trägt, darf in seinem Block keine eingerückte `- [ ]`-Zeile führen
 (`scripts/plan/kopfBuchung.ts`, `src/tests/plan-check.kopf-buchung.test.ts`, 14
-Vitest-Fälle inkl. Rot-Fall). Geburtsbeweis §6.7: **rot auf `0e4999b48`** mit exakt den
-14 vorhergesagten Treffern (Z. 585/587/590/591/592/594 und 723–730), **grün auf
-`8f6fe6971`** mit 0 Treffern; Streuungs-Probe über 10 historische ROADMAP-Stände: 5
-Stände mit Treffern (1–25), Stichproben durchweg echte Fälle derselben Klasse, kein
-Fehlalarm. **Deklarierte Grenzen:** (1) hinter einem `---` wird nicht gesucht — dort
+Vitest-Fälle inkl. Rot-Fall). Geburtsbeweis §6.7: rot auf `0e4999b48` (14 Treffer), grün auf `8f6fe6971`, Streuungs-Probe über 10 Stände ohne Fehlalarm (Archiv §F17-Richtung2-Geburtsbeweis). **Deklarierte Grenzen:** (1) hinter einem `---` wird nicht gesucht — dort
 beginnt nach CommonMark eine neue Liste, der 15. Posten des Anlassfalls hängt an gar
 keinem Schritt mehr und ist eine eigene Klasse (verwaister Posten), darum lautet die
 Trefferzahl 14 und nicht 15; (2) nur Kopf-Schritte auf Spalte 0, eingerückte
@@ -321,11 +256,7 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
   grösstenteils bewusste, dokumentierte CI/lokal-Zweige; ein pauschaler Umbau
   bräche funktionierende Tore.
 - **Claim-Registry `.claude/anspruch.json`** gegen F6 — ein neues Zustandsfile
-  ist eine neue Drift-Quelle. *Wiederaufgerollt 28.7.2026 nach dem 2.
-  F6-Vorfall (#397/#398), Entscheid bestätigt: die Lücke war nicht fehlender
-  Zustand, sondern eine zu enge Sonde. Eskaliert wurde innerhalb der
-  Dispatch-Form (drei Sonden + Früh-Push, §0.5) plus wip-Pflicht im Skill
-  `auftrag`. Tritt F6 ein DRITTES Mal auf, ist die Registry (oder ein Tor)
+  ist eine neue Drift-Quelle. *Wiederaufgerollt 28.7.2026, Entscheid bestätigt (Archiv §Bewusst-nicht-F6-Registry). Tritt F6 ein DRITTES Mal auf, ist die Registry (oder ein Tor)
   dran.*
 - **SessionStart-Injektion von Lehren** — git-zustandsabhängiger
   `additionalContext` ist byte-instabil und zerstört den Prompt-Cache
