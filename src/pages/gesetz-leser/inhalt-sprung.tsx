@@ -17,6 +17,7 @@ import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
+import type { GliederungsKnoten } from './gliederungsTypen';
 import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
