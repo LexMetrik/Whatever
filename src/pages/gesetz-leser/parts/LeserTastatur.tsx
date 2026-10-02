@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
-import { offeneModaleDialoge } from '../../../components/layout/modalerDialog';
+import { menueOffen, offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
-import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
+import { BLAETTERN, NAVIGATION, UMSCHALTER, belegung } from './leserTastaturBelegung';
+import { inWaagrechtemScroller } from './leserTastaturZiel';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
 //
@@ -30,6 +31,13 @@ import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
 //  3. Offener modaler Dialog (ausser dem eigenen Overlay) → raus. Ein Dialog hat
 //     eine Fokusfalle; Navigation dahinter wäre Bedienung eines unsichtbaren
 //     Dokuments (dasselbe Prinzip, nach dem `Shell.tsx` F6 sperrt).
+//  2c. (G4-B01, 2.10.2026) Offenes Menü («Ansicht ▾», Reiter-Kontextmenü) → raus,
+//     und zwar VOR allem anderen: ein Menü ist kein `aria-modal`-Dialog, hat aber
+//     Fokusfalle und eigene Tasten (Pfeile, Esc, Enter); «t» schob den Fokus
+//     unter dem offenen Menü weg (`components/layout/modalerDialog`, `menueOffen`).
+//  2d. (G4-B02) Auto-Repeat bei den UMSCHALTERN («?», «r», «t») → raus: eine
+//     gehaltene Taste liess das Overlay flackern bzw. das Blatt hin- und herklappen.
+//     j/k/←/→ bleiben absichtlich wiederholbar (gehalten durchblättern, #1265).
 //
 // §3 reine Darstellung: die Komponente kennt keine Rechtslogik, nur Reihenfolge
 // von Artikel-Tokens und den (hereingereichten) Sprung. §15: EIN passiv
@@ -166,6 +174,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // das immer wahr (kein `[data-pane]` im Baum), das Ist-Verhalten bleibt
       // damit unberührt. Herleitung und Messwerte: `../panePrioritaet`.
       if (!tastendruckGehoertPane(paneRolleRef.current)) return;
+      // Guard 2c/2d (G4-B01, G4-B02): s. Kopfkommentar.
+      if (menueOffen()) return;
+      if (e.repeat && UMSCHALTER.has(e.key)) return;
       // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
       // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
       // der eine Selbst-Ausnahme rechtfertigt: er RÄUMT den Dialog weg, statt
@@ -219,6 +230,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       if (richtung !== undefined) {
         const blaettere = blaetternRef.current;
         if (!blaettere) return;
+        // B11-B01/ED10: ein seitlich scrollbarer Container (breite Tabelle) hat die Pfeile
+        // selbst — kein Blättern, kein `preventDefault` (Herleitung: `./leserTastaturZiel`).
+        if (inWaagrechtemScroller(e.target)) return;
         e.preventDefault();
         blaettere(richtung);
         return;
@@ -302,8 +316,8 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
         {/* §8: die global belegten Tasten gehören in dieselbe Übersicht — sonst
             liest sich die Liste als «das ist alles, was geht». */}
         <p className="text-body-s text-ink-600">
-          Ausserdem überall: <span className="font-mono">/</span> oder{' '}
-          <span className="font-mono">⌘K</span> für die Suche.
+          Ausserdem überall: <span className="font-mono">/</span>, <span className="font-mono">⌘K</span>{' '}
+          oder <span className="font-mono">Strg+K</span> für die Suche.
         </p>
         <button type="button" onClick={() => setHilfeOffen(false)}
           className="lc-btn-outline lc-btn-sm min-h-11 w-full">Schliessen</button>
