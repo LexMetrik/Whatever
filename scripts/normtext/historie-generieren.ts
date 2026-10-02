@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import {
   baueArtikelHistorie,
   type HistorieEreignis,
-  sektionsErbe,
+  sektionsAnalyse,
   type ErbArtikel,
   type FnEingang,
   type ArtikelHistorie,
@@ -87,7 +87,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
   const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
   const imText = new Set(reihenfolge);
   reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
-  const erbe = sektionsErbe(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+  const { erbe, geteilt } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
 
   const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
@@ -99,6 +99,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
       koerperLebend: textIndex.get(token)?.lebend,
       snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
       geerbt,
+      geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
     });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;

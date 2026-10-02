@@ -201,6 +201,9 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
                   <span> · {e.wirkung ? 'mit Wirkung seit' : 'in Kraft seit'} <span className="num text-ink-600">{formatiereDatum(e.datum)}</span></span>
                 )}
                 {e.quellen.length > 0 && <span> · <Quellen quellen={e.quellen} /></span>}
+                {/* W2·27 (Nachzug 2.10.2026, B2): gestaffelt/befristet/teilweise geltende Überschrift-Fussnote — ohne einzelnes
+                    Datum, dafür mit dem Wortlaut, damit Staffelung und Befristung nicht verschwinden (§8). */}
+                {e.teilweise && <span className="text-ink-500" data-historie-teilweise> · Fussnote an der Überschrift: «{e.teilweise}»</span>}
                 {zusatz?.(e, i)}
               </li>
             );
