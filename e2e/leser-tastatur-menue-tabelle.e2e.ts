@@ -93,4 +93,21 @@ test.describe('Leser-Tastatur — Menü, Tabelle, Auto-Repeat', () => {
     await page.keyboard.press('Escape')
     await expect(dialog).toBeHidden()
   })
+
+  test('(d) G4-B01 · offener Verlauf (role=dialog ohne aria-modal): j, → und t greifen nicht', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(`${OR}?ansicht=artikel#art-1`)
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="1"]')).toBeVisible({ timeout: 20_000 })
+    await page.getByRole('button', { name: /Verlauf/ }).first().click()
+    const verlauf = page.getByRole('dialog', { name: /Verlauf/ })
+    await expect(verlauf).toBeVisible()
+    const imVerlauf = () => page.evaluate(() => !!document.querySelector('[role="dialog"][aria-label^="Verlauf"]')?.contains(document.activeElement))
+    expect(await imVerlauf(), 'der Fokus steht nach dem Öffnen im Verlauf').toBe(true)
+    for (const taste of ['j', 'ArrowRight', 't']) await page.keyboard.press(taste)
+    await page.waitForTimeout(600) // dem fälschlichen Sprung Zeit geben
+    expect(await page.evaluate(() => location.hash), 'die Adresse (= gezeigter Artikel) bleibt Art. 1').toBe('#art-1')
+    expect(await imVerlauf(), '«t» schiebt den Fokus nicht aus dem Verlauf').toBe(true)
+    await expect(verlauf).toBeVisible()
+  })
 })

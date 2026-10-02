@@ -17,17 +17,22 @@ export function offeneModaleDialoge(): ArrayLike<Element> {
 
 // ─── Offenes MENÜ (G4-B01, 2.10.2026) · die Schwester des modalen Dialogs ────
 //
-// «Ansicht ▾» (`LeserAnsichtV3`) und das Reiter-Kontextmenü (`ReiterMenue`) sind
-// Schwebeflächen mit Fokus-Falle, aber KEIN `aria-modal` (sie lassen den Rest der
-// Seite lesbar) — `MODALER_DIALOG` sieht sie darum nicht. Gemessen im Browser: mit
-// offenem Ansicht-Menü schob «t» den Fokus in die Gliederung, das Menü blieb offen.
-// Was ein Menü an Tasten braucht (Pfeile, Home/End, Esc, Enter), trägt das Menü
-// selbst; Einzelzeichen-Kürzel dahinter bedienen ein Dokument, das man gerade nicht
-// anfasst. `data-v3-ansicht-panel` ist die Schwebefläche samt Schriftregler (der
-// liegt ausserhalb von `role="menu"`, s. `LeserAnsichtV3`), `role="menu"` jedes andere.
+// «Ansicht ▾» (`LeserAnsichtV3`), das Reiter-Kontextmenü (`ReiterMenue`), der
+// Verlauf (`VerlaufUebersicht`, `role="dialog"` OHNE `aria-modal`) und die
+// Sprachwahl (`SprachUmschalter`) sind Schwebeflächen mit Menü-Anatomie und Fokus
+// im Inneren, aber KEIN `aria-modal` (sie lassen den Rest der Seite lesbar) —
+// `MODALER_DIALOG` sieht sie darum nicht. Gemessen im Browser: mit offenem Ansicht-
+// Menü schob «t» den Fokus in die Gliederung; mit offenem Verlauf sprang «j» von
+// Art. 1 auf Art. 2 und «→» auf Art. 3. Was ein Menü an Tasten braucht (Pfeile,
+// Home/End, Esc, Enter), trägt das Menü selbst; Einzelzeichen-Kürzel dahinter
+// bedienen ein Dokument, das man gerade nicht anfasst.
+//
+// EINE Markierung statt einer wachsenden Selektorliste (§5): jede solche Fläche
+// trägt `data-menue-flaeche` an ihrem Wurzelelement (nur gemountet, solange offen).
+// Eine neue Fläche mit Menü-Anatomie setzt das Attribut — hier ändert sich nichts.
 
-/** Selektor der gerade offenen Menüs (gemountet nur, solange sie offen sind). */
-const OFFENES_MENUE = '[data-v3-ansicht-panel], [role="menu"]';
+/** Selektor der gerade offenen Menü-Flächen. */
+const OFFENES_MENUE = '[data-menue-flaeche]';
 
 /** Ist gerade ein Menü offen? Ohne DOM (SSR) nie. */
 export function menueOffen(): boolean {

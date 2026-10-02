@@ -17,6 +17,7 @@
  * ROT ZU BEKOMMEN (§6.7): in `parts/LeserTastatur.tsx` den Menü-Guard, den Scroller-Guard bzw. den
  * `e.repeat`-Guard entfernen — (a), (b) bzw. (c) fallen.
  */
+import { readFileSync } from 'node:fs';
 import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
@@ -76,7 +77,7 @@ afterEach(async () => {
 });
 
 describe('(a) G4-B01 — bei offenem «Ansicht»-Menü gehören die Tasten dem Menü', () => {
-  const MENUE = '<div data-v3-ansicht-panel tabindex="-1"><div role="menu" aria-label="Ansicht"><button role="menuitem">x</button></div></div>';
+  const MENUE = '<div data-menue-flaeche data-v3-ansicht-panel tabindex="-1"><div role="menu" aria-label="Ansicht"><button role="menuitem">x</button></div></div>';
 
   it.each(['j', 'k', 't', 'r', '?', 'ArrowLeft', 'ArrowRight'])('«%s» wird bei offenem Menü weder bedient noch verbraucht', async (key) => {
     const { spur, taste, document } = await aufbauen(MENUE, { panel: true, blaettern: true });
@@ -93,10 +94,23 @@ describe('(a) G4-B01 — bei offenem «Ansicht»-Menü gehören die Tasten dem M
     expect(spur).toEqual({ spruenge: ['3'], panel: 1, blaettern: [1] });
   });
 
-  it('auch ein offenes Reiter-Kontextmenü (role=menu) sperrt die Kürzel', async () => {
-    const { spur, taste } = await aufbauen('<div role="menu" aria-label="Reiter" tabindex="-1"><button role="menuitem">x</button></div>');
-    expect(taste('j')).toBe(false);
-    expect(spur.spruenge).toEqual([]);
+  it.each([
+    ['Reiter-Kontextmenü', '<div role="menu" data-menue-flaeche aria-label="Reiter" tabindex="-1"><button role="menuitem">x</button></div>'],
+    ['Verlauf (role=dialog ohne aria-modal)', '<div role="dialog" data-menue-flaeche aria-label="Verlauf – zuletzt geöffnet" tabindex="-1"><button>x</button></div>'],
+    ['Sprachwahl', '<div role="group" data-menue-flaeche aria-label="Sprache wählen"><button aria-pressed="true">de</button></div>'],
+  ])('auch %s sperrt die Kürzel (gemeinsame Markierung)', async (_n, html) => {
+    const { spur, taste } = await aufbauen(html, { panel: true, blaettern: true });
+    for (const k of ['j', 'k', 't', 'r', 'ArrowRight']) expect(taste(k), k).toBe(false);
+    expect(spur).toEqual({ spruenge: [], panel: 0, blaettern: [] });
+  });
+
+  it('die vier Schwebeflächen tragen die Markierung wirklich (Quellsonde, sonst bliebe der Guard blind)', () => {
+    for (const f of [
+      'components/layout/ReiterMenue.tsx', 'components/layout/VerlaufUebersicht.tsx',
+      'components/SprachUmschalter.tsx', 'pages/gesetz-leser/v3/LeserAnsichtV3.tsx',
+    ]) {
+      expect(readFileSync(new URL(`../${f}`, import.meta.url), 'utf8'), f).toMatch(/\bdata-menue-flaeche\b/);
+    }
   });
 });
 
