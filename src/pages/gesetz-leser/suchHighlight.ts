@@ -330,6 +330,44 @@ function trenntLauf(el: Element): boolean {
 }
 
 /**
+ * Mal-Zerlegung (Gegenprüfung #1266): läuft ein Treffer über einen
+ * übersprungenen Teilbaum (Fussnoten-Marker), überspannte die EINE Range den
+ * Marker mit — seine Ziffer leuchtete (OR: 99 von 240 Marker-Treffern). Die
+ * Fundstelle bleibt EINE Range (Zählung = Sprungziele, §5); gemalt werden ihre
+ * Teile OHNE den Marker. Die Zerlegung hängt an der Range (WeakMap) und wird nur
+ * von `schreibeRegistry` gelesen. Ohne Lücke im Treffer gibt es keinen Eintrag.
+ */
+const malTeile = new WeakMap<Range, Range[]>();
+
+function merkeMalTeile(r: Range, teile: Range[] | null): void {
+  if (teile) malTeile.set(r, teile);
+}
+
+function zerlegeUmLuecken(
+  st: KnotenStelle, knoten: readonly Text[], texte: readonly string[], luecke: readonly boolean[],
+): Range[] | null {
+  let hatLuecke = false;
+  for (let i = st.vonKnoten + 1; i <= st.bisKnoten; i++) if (luecke[i]) { hatLuecke = true; break; }
+  if (!hatLuecke) return null;
+  const teile: Range[] = [];
+  let a = st.vonKnoten;
+  for (let i = st.vonKnoten; i <= st.bisKnoten; i++) {
+    const ende = i === st.bisKnoten || luecke[i + 1];
+    if (!ende) continue;
+    const von = a === st.vonKnoten ? st.vonOffset : 0;
+    const bis = i === st.bisKnoten ? st.bisOffset : texte[i].length;
+    if (a !== i || von < bis) {
+      const t = document.createRange();
+      t.setStart(knoten[a], von);
+      t.setEnd(knoten[i], bis);
+      teile.push(t);
+    }
+    a = i + 1;
+  }
+  return teile;
+}
+
+/**
  * Sammelt die Treffer-Bereiche des Begriffs in `container` — in DOKUMENT-
  * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
  *
@@ -360,8 +398,12 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
   // (statt TreeWalker), weil eine Blockgrenze Betreten UND Verlassen kennt.
   let knoten: Text[] = [];
   let texte: string[] = [];
+  // `luecke[i]`: zwischen Knoten i-1 und i wurde ein ÜBERSPRUNGENES Element
+  // (Marker, Bedien-Zeile, Nicht-Gerendertes) passiert. Nur für die Mal-Zerlegung.
+  let luecke: boolean[] = [];
+  let ausgelassen = false;
   const leere = () => {
-    if (texte.length === 0) return;
+    if (texte.length === 0) { ausgelassen = false; return; }
     // B1: DIESELBE Vergleichsfunktion wie der Index — nicht ein zweiter
     // indexOf daneben (`findeUeberKnoten` ruft `findeVorkommen`).
     for (const st of findeUeberKnoten(texte, b)) {
@@ -369,21 +411,28 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
       r.setStart(knoten[st.vonKnoten], st.vonOffset);
       r.setEnd(knoten[st.bisKnoten], st.bisOffset);
       ranges.push(r);
+      merkeMalTeile(r, zerlegeUmLuecken(st, knoten, texte, luecke));
     }
     knoten = [];
     texte = [];
+    luecke = [];
+    ausgelassen = false;
   };
   const besuche = (el: Node) => {
     for (let k = el.firstChild; k; k = k.nextSibling) {
       if (k.nodeType === Node.TEXT_NODE) {
         const t = k.nodeValue ?? '';
-        if (t !== '') { knoten.push(k as Text); texte.push(t); }
+        if (t !== '') {
+          luecke.push(ausgelassen && texte.length > 0);
+          ausgelassen = false;
+          knoten.push(k as Text); texte.push(t);
+        }
         continue;
       }
       if (k.nodeType !== Node.ELEMENT_NODE) continue;
       const e = k as Element;
       // Der GANZE Teilbaum fällt weg (Bedien-Zeilen, Verweiszeichen, Nicht-Gerendertes).
-      if (e.hasAttribute(SUCH_META) || istFussnotenMarker(e) || !istGerendert(e)) continue;
+      if (e.hasAttribute(SUCH_META) || istFussnotenMarker(e) || !istGerendert(e)) { ausgelassen = true; continue; }
       const grenze = trenntLauf(e);
       if (grenze) leere();
       besuche(e);
@@ -456,7 +505,7 @@ function schreibeRegistry(): void {
   if (!api) return;
   const { reg, Ctor } = api;
   const alle: Range[] = [];
-  for (const rs of proInstanz.values()) alle.push(...rs);
+  for (const rs of proInstanz.values()) for (const r of rs) alle.push(...(malTeile.get(r) ?? [r]));
   if (alle.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
   reg.set(SUCH_HIGHLIGHT, new Ctor(...alle));
 }
