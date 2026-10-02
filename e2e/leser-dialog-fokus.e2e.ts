@@ -80,6 +80,25 @@ async function tabBisSummary(page: Page, selektor: string, max = 12): Promise<vo
   expect(await summaryAktiv(page, selektor), `<summary> in ${max} Tab-Schritten nicht erreicht`).toBe(true)
 }
 
+/**
+ * Wartet, bis die aufgeklappte Klappe GEZEICHNET ist (erster Link erfüllt `checkVisibility`).
+ *
+ * Nachweis (Flake 2.10.2026, main-Lauf 36985491689 und Queue-Lauf 36989824392, je @375 und @768, nur im
+ * ersten Versuch): `src/index.css` blendet den Inhalt jeder `<details>` über
+ * `::details-content { transition: content-visibility … allow-discrete }` ein — `[open]` steht sofort im
+ * DOM, `content-visibility` kippt aber erst mit dem ersten Frame (gemessen 0 ms: unsichtbar, 44 ms:
+ * sichtbar). Ein Tab VOR diesem Frame sieht die Links der Klappe (richtig!) nicht als Ziel und landet
+ * auf dem Knopf dahinter («⌄alles auf»). Ein Mensch drückt Tab nicht innerhalb eines Frames nach Enter;
+ * der Test tut es, sobald der Runner schnell genug ist, `open` zu beobachten, aber zu langsam für den
+ * Frame. Die Erwartung (nach der offenen Klappe folgt ein Link) bleibt unverändert.
+ */
+async function klappeGezeichnet(box: Locator): Promise<void> {
+  await expect.poll(
+    () => box.locator('a[href]').first().evaluate((el) => el.checkVisibility({ visibilityProperty: true })),
+    { message: 'Links der aufgeklappten Klappe werden nicht gezeichnet', timeout: 10_000 },
+  ).toBe(true)
+}
+
 const sheet = (page: Page) => page.locator('[data-gliederung-sheet]')
 const blatt = (page: Page) => page.locator('[data-v3-panel-modal="ja"]')
 const klappe = (flaeche: Locator) => flaeche.locator('details').first()
@@ -109,6 +128,7 @@ for (const breite of [375, 768]) {
       // … Enter klappt auf, und Tab läuft in die Links (e) statt zurück zum Anfang.
       await page.keyboard.press('Enter')
       await expect(box).toHaveAttribute('open', '')
+      await klappeGezeichnet(box)
       await page.keyboard.press('Tab')
       const nachSummary = await aktiv(page, '[data-gliederung-sheet]')
       expect(nachSummary.tag, `nach <summary> (offen) folgt ein Link, nicht ${nachSummary.tag} «${nachSummary.name}»`).toBe('A')
@@ -132,6 +152,7 @@ for (const breite of [375, 768]) {
       await tabBisSummary(page, '[data-v3-panel-modal="ja"]', 40)
       await page.keyboard.press('Enter')
       await expect(box).toHaveAttribute('open', '')
+      await klappeGezeichnet(box)
       await page.keyboard.press('Tab')
       expect((await aktiv(page, '[data-v3-panel-modal="ja"]')).tag).toBe('A')
 
