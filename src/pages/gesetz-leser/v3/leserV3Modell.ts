@@ -64,8 +64,7 @@ export interface LeserV3Modell {
   fehler: LeserFehler;
   manifest: ReturnType<typeof useLeserZustand>['manifest'];
   kantonSys: Record<string, KantonSystematik>; kantonLuecken: KantonLueckenMap; // §8-Nachzug PR #614
-  /** BG-02/03/04: ausgefallene Begleit-Sidecars (Titelblatt zeigt sie mit «Erneut laden»). */
-  teilausfall: Teilausfall | null;
+  teilausfall: Teilausfall | null; // BG-02/03/04: ausgefallene Begleit-Sidecars (Titelblatt, «Erneut laden»)
 
   /** Amtliche Gliederung: voller Baum für die Lesespalte … */
   sektionen: Sektion[];
