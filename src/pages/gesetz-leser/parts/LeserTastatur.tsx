@@ -244,6 +244,14 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       const ziel = e.key === 'j' ? i + 1 : i - 1;
       if (ziel < 0 || ziel >= liste.length) return;
       e.preventDefault();
+      // W2·17-UI-BEFUNDE (Nachzug zu #1265): im EINZELMODUS (`onBlaettern` gesetzt) ist
+      // `aktivToken` der gezeigte Artikel aus dem Router-Hash — der ändert sich erst nach dem Render
+      // der Navigation, die Ref erst im Effekt danach. Zwei Tasten vor diesem Render (Tasten-
+      // wiederholung) rechneten beide vom alten Stand und sprangen zum selben Ziel: ein Schritt ging
+      // verloren. Darum den eben angesprungenen Artikel sofort als «jetzt» merken; kommt der
+      // gerenderte Stand an, schreibt der Effekt oben denselben Wert. In der Gesamtansicht führt der
+      // Scroll-Spy — dort bleibt es beim bisherigen Verhalten.
+      if (blaetternRef.current) aktivRef.current = liste[ziel];
       sprungRef.current(liste[ziel]);
     };
     window.addEventListener('keydown', onKey);
