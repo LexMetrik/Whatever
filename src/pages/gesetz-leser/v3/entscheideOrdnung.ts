@@ -1,6 +1,6 @@
 import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
-import { BEDIENBARE_KLASSEN, KLASSE_KURZ } from '../bezugAuswahl';
+import { BEDIENBARE_KLASSEN, KLASSE_KURZ, wirksameKantone } from '../bezugAuswahl';
 import { zahl } from '../bezugPortion';
 import { istBereichOffen, type Zeitbereich } from '../bezugZeit';
 import { gruppiereKanten } from './panelModell';
@@ -198,7 +198,8 @@ export function regesteTeil(text: string): { teil: string | null; rest: string }
  *
  * `null` = die Lage liegt nicht vor (nichts erfasst, oder kein Filter wirkt) —
  * dann gilt die Bestands-Lage. Der Kanton-Filter wirkt nur, wenn «kantonal»
- * eingeschaltet ist (wie `waehleBezuege`/`bezuegeFuer`). Rein (§2).
+ * eingeschaltet ist UND ein gewählter Kanton am Artikel eine Kante führt
+ * (`wirksameKantone`, wie `waehleBezuege`/`bezuegeFuer`). Rein (§2).
  */
 export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }: {
   artikelLabel: string | null;
@@ -209,7 +210,11 @@ export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }:
   bereich: Zeitbereich;
 }): string | null {
   const zeit = !istBereichOffen(bereich);
-  const kanton = kantone.length > 0 && klassen.includes('kantonal');
+  // WIRKSAME Kantone, nicht die rohe Wahl (E4-B01, Prüfer-Probe 2.10.2026): ein
+  // gewählter Kanton ohne Kante an diesem Artikel (ZH an OR 41) schneidet nichts —
+  // sagte der Satz trotzdem «… und Kanton», behauptete er eine Einschränkung, die
+  // nicht greift (§8). Dieselbe Regel wie in `waehleBezuege` (`wirksameKantone`, §5).
+  const kanton = klassen.includes('kantonal') && wirksameKantone(alle ?? [], kantone).length > 0;
   if (!zeit && !kanton) return null;
   const n = (alle ?? []).filter((b) => klassen.includes(b.facetten.status)).length;
   if (n === 0) return null;
