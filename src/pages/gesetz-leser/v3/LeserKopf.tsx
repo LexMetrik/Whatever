@@ -3,6 +3,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
 import type { LeserModus } from './einzelModus';
 import { zeigeVolltitel } from './erlassAnsicht';
+import { KENNUNG_NOWRAP_MAX_ZEICHEN } from '../helpers';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -177,6 +178,19 @@ export function LeserKopf({
   tocOffen?: boolean;
 }) {
   const el = kopfElemente(stufe);
+  // ── W2·17-UI-BEFUNDE PA-10-B03 (1.10.2026) · DIE KENNUNG WÄCHST, DER STREIFEN GIBT NACH ──
+  // BEFUND, gemessen @1440: bei EINGEKLAPPTER Gliederung ist der linke Streifen
+  // nur die Schiene breit (56 px, `--leser-spur-versatz`); «Staatenlose» (66 px)
+  // stand dort als «Staaten…», obwohl ~250 px zwischen Suchfeld und «Ansicht»
+  // frei lagen — gegen die eigene Regel A4 (unten) und gegen (d) der Kopfzeilen-
+  // Sonde, die nur die OFFENE Gliederung misst. Steht KEIN Gliederungs-Griff im
+  // Streifen (`onGliederungZu` fehlt) und ist das Kürzel eine echte Kennung
+  // (≤ `KENNUNG_NOWRAP_MAX_ZEICHEN`), ist die Spur nur ein MINDESTmass: der
+  // Streifen wächst auf die Kürzelbreite, das Suchfeld daneben (`flex-1`) gibt
+  // nach. Mit Griff bleibt es bei der festen Spurbreite — dort bindet sie das
+  // Feld an die Textkante, und die Kennung ist gemessen unangeschnitten. Lange
+  // Registerwerte (ZH-211.11: der ganze Name) kürzen weiter, ihr `title` trägt sie.
+  const kennungWaechst = !onGliederungZu && erlass.kuerzel.trim().length <= KENNUNG_NOWRAP_MAX_ZEICHEN;
 
   return (
     // `sticky top` aus `--leser-v3-kopf-top`: der Rahmen legt den Wert EINMAL
@@ -250,7 +264,9 @@ export function LeserKopf({
         <div className={suchInZeile
           ? 'flex h-full min-w-0 shrink-0 items-center'
           : 'flex min-w-0 flex-1 items-baseline'}
-          style={suchInZeile ? { width: 'var(--leser-spur-versatz)' } : undefined}>
+          style={suchInZeile
+            ? (kennungWaechst ? { minWidth: 'var(--leser-spur-versatz)' } : { width: 'var(--leser-spur-versatz)' })
+            : undefined}>
         <div data-v3-kopf-ort
           className="flex min-w-0 items-baseline gap-1.5 overflow-hidden whitespace-nowrap text-xs text-ink-500">
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
