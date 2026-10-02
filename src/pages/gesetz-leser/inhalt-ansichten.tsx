@@ -95,7 +95,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
         overline={`${routenEbene(erlass) === 'international' ? 'Staatsvertrag' : ebeneAngabe(erlass).label} · amtliches PDF`}
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
-          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
+          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} aufgehoben={!!erlass.aufgehoben} />
         }
         // M5: der Ingress auch im pdf-embed-Pfad (ohne Struktur-Sidecar `null`).
         ingress={kopf} intern={internRefs} />
