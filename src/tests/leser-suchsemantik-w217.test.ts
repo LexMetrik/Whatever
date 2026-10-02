@@ -3,7 +3,7 @@
  * Sprungziel beschreiben EINE Menge (PE-C8-B01, PE-C9-B01…B06).
  *
  * Die DOM-Seite (Walker über Link-/Markergrenzen, Blockgrenzen) prüft
- * `e2e/leser-suchsemantik-w217.e2e.ts`; hier steht, was reine Ableitung ist:
+ * `leser-suchsemantik-dom-w217.test.ts` (linkedom); hier steht, was reine Ableitung ist:
  * die Faltung, die Knoten-Offset-Abbildung, die Malbarkeit je Fundstelle und
  * der Sprungrang (`malRang`) der Folge.
  *
@@ -250,5 +250,29 @@ describe('Artikel ohne Wortlaut: der Körper steht nicht im DOM, also nicht malb
   it('der Kopf «Art. 9» bleibt gemalt: Suche «Art. 9» ⇒ malRang 0', () => {
     const t = sucheImErlass(baueLeserSuchIndex('X', e, st), 'Art. 9');
     expect(fundstellenFolge(t, false).map((f) => f.malRang)).toEqual([0]);
+  });
+});
+
+// ═══ C9-B06 · artikelweite Fussnoten im zugeklappten Artikel ═════════════════
+describe('Artikel ohne Wortlaut: artikelweite Fussnoten stehen im DOM (kopfNotiz), absatzgebundene nicht', () => {
+  const e = [artikel('9', 'Aufgehoben', { aufgehoben: true })];
+  const st = struktur({
+    '9': {
+      gliederung: [], marginalie: [],
+      fussnoten: [
+        { nr: '1', text: 'Fassung gemäss Ziff. I des BG', links: [] },
+        { nr: '2', text: 'Fassung gemäss Ziff. II des BG', links: [], absatz: '1' },
+      ],
+    },
+  });
+  const treffer = sucheImErlass(baueLeserSuchIndex('X', e, st), 'Fassung gemäss');
+
+  it('beide Stellen sind findbar, gemalt ist nur die artikelweite (Apparat an)', () => {
+    expect(treffer[0].fundstellen).toBe(2);
+    expect(fundstellenFolge(treffer, false).map((f) => f.malRang)).toEqual([0, null]);
+  });
+
+  it('Apparat aus: auch die artikelweite ist nicht gemalt', () => {
+    expect(fundstellenFolge(treffer, true).map((f) => f.malRang)).toEqual([null, null]);
   });
 });
