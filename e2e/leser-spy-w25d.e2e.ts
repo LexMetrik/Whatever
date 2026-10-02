@@ -166,7 +166,7 @@ function abweichungen(proben: Probe[]): string[] {
 
 // ── N4 (Wächter-Härte, Bug-Check 3.8.2026) ──────────────────────────────────
 // `abweichungen` lässt Proben mit `ist == null` bewusst durch: eine einzelne
-// Probe darf in die Entprellungslücke fallen (150-ms-`setAktArtikel`-Timer), und
+// Probe darf in die Entprellungslücke fallen (150-ms-`setAktArtikel`-Timer; seit #1272, 2.10.2026: `setAktToken`), und
 // beim Kopfzeilen-Umbau ist der Selektor kurz leer. Der Preis: fiele der Kopf
 // GANZ aus (Spy feuert nie, Label wird nie gesetzt, `nav .num` verschwindet),
 // wäre jede Probe `null` und der Wächter still grün — er misst dann nichts mehr.

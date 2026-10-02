@@ -29,6 +29,10 @@ export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, loca
   // die gemerkte Stelle, noch bevor sie jemand angeboten bekäme.
   const [weiterlesen, setWeiterlesen] = useState<LesePosition | null>(null);
   const weiterlesenGelesen = useRef<string | null>(null);
+  // W2·17-UI-BEFUNDE: solange ein Angebot offen steht, bleibt die gemerkte Stelle
+  // unberührt. Synchron geführt (Ref), nicht über `weiterlesen`: der Chip erscheint
+  // erst über einen 0-ms-Timer, das Schreiben darf nicht in diese Lücke fallen.
+  const angebotOffen = useRef(false);
   useEffect(() => {
     const key = erlass?.key;
     // `eintraege` MUSS stehen, bevor der Riegel fällt (§9-Bug-Check B2): der
@@ -48,6 +52,7 @@ export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, loca
     // Dokumentanfang, verspräche der Chip eine Reise ans Ziel, an dem man steht.
     const anfang = eintraege?.[0]?.artikel ?? null;
     const angebot = pos && pos.token !== anfang ? pos : null;
+    angebotOffen.current = angebot !== null;
     // Über einen 0-ms-Timer statt synchron: ein setState direkt im Effektkörper
     // erzeugt eine Kaskade (Muster wie `sucheDebounced`). `null` räumt zugleich
     // das Angebot des zuvor gelesenen Erlasses ab.
@@ -63,9 +68,14 @@ export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, loca
   useEffect(() => {
     if (istSekundaer || !erlass || !aktArtikel || !aktivToken) return;
     if (weiterlesenGelesen.current !== erlass.key) return; // erst nach dem Lesen schreiben
+    // Beleg (Browser, 2.10.2026, ZGB): Chip «Weiterlesen bei Art. 457», ein
+    // 100-px-Scroll im Art. 1 genügte — die gemerkte Stelle war sofort «Art. 1»,
+    // der Chip noch da, der zweite Reload bot nichts mehr an. Geschrieben wird erst,
+    // wenn das Angebot beantwortet ist (Verfall, Klick, Verwerfen).
+    if (angebotOffen.current) return;
     // B7: bei Übergangsartikeln mit der Gruppe beschriftet, nie als blosses «Art. 3».
     merkeLesePosition({ key: erlass.key, token: aktivToken, label: eindeutigeBezeichnung(aktivToken, aktArtikel, struktur), stand: erlass.stand });
-  }, [istSekundaer, erlass, aktArtikel, aktivToken, struktur]);
+  }, [istSekundaer, erlass, aktArtikel, aktivToken, struktur, weiterlesen]);
 
   // R4 · Verfall ohne Timer und ohne Listener: sobald der Spy einen ANDEREN
   // Artikel meldet als beim Erscheinen des Chips, liest der Nutzer bereits selbst
@@ -76,7 +86,7 @@ export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, loca
     if (!weiterlesen) { weiterlesenStart.current = null; return; }
     if (aktivToken == null) return;
     if (weiterlesenStart.current === null) { weiterlesenStart.current = aktivToken; return; }
-    if (aktivToken !== weiterlesenStart.current) setWeiterlesen(null);
+    if (aktivToken !== weiterlesenStart.current) { angebotOffen.current = false; setWeiterlesen(null); }
   }, [weiterlesen, aktivToken]);
 
   const weiterlesenSprung = useCallback(() => {
@@ -84,12 +94,14 @@ export function useWeiterlesen({ erlass, eintraege, struktur, istSekundaer, loca
     // (StrictMode ruft ihn doppelt auf — der Sprung liefe sonst zweimal).
     if (!weiterlesen) return;
     const token = weiterlesen.token;
+    angebotOffen.current = false;
     setWeiterlesen(null);
     springeZuArtikel(token);
   }, [weiterlesen, springeZuArtikel]);
   const weiterlesenVerwerfen = useCallback(() => {
     // Weggeklickt heisst «nicht wieder anbieten» — also auch aus dem Speicher.
     if (erlass) vergissLesePosition(erlass.key);
+    angebotOffen.current = false;
     setWeiterlesen(null);
   }, [erlass]);
 

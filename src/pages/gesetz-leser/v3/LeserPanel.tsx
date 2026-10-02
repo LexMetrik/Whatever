@@ -55,7 +55,7 @@ const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
 // leere Fläche (dieselbe Regel wie bei den H1-Slots des Rahmens).
 
 export function LeserPanel({
-  panelId, titelId, artikelLabel, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
+  panelId, titelId, artikelLabel, zitat, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
   fuss, panelRef, kopfExtra, steckbrief, verweise, bezug = null,
 }: {
   panelId: string;
@@ -66,6 +66,10 @@ export function LeserPanel({
    *  der Scroll-Spy keine Leseposition kennt — dann steht dort nichts statt
    *  eines erfundenen «Art. 1» (§8). */
   artikelLabel: string | null;
+  /** Das fertige Zitat des Kopfes («Art. 41 OR», bei Übergangsartikeln mit Gruppe,
+   *  `v3/panelModell.normZitat` + `../artikelBezeichnung.zitatKuerzel`). Fehlt es,
+   *  setzt der Kopf es aus Label und Kürzel zusammen. */
+  zitat?: string;
   /** C1 (H3-Nachzug): Zähl-Substantiv des Erlasses — der Reiter-Titel sagt «zu
    *  diesem Artikel» bzw. «zu diesem Paragraphen». Kommt aus der EINEN Ableitung
    *  (`./erlassAnsicht`), wird hier nie abgeleitet (§5). */
@@ -170,7 +174,7 @@ export function LeserPanel({
               der Kopf nennt ihn darum überall. E-10: als Zitat MIT Kürzel
               («Art. 41 OR», `normZitat`, §5). */}
           <span className="num ml-1 font-normal normal-case text-ink-600">
-            · {normZitat(artikelLabel, erlassKuerzel)}
+            · {zitat ?? normZitat(artikelLabel, erlassKuerzel)}
           </span>
         </p>
         <SchliessKnopf name={`${OEFFNER_WORT} schliessen`} onClick={onSchliessen}

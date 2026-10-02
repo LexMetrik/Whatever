@@ -16,6 +16,7 @@ import { LeserLesespalte } from './LeserLesespalte';
 import { LeserLeseZeile } from './LeserLeseZeile';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
+import { zitatKuerzel } from '../artikelBezeichnung';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
 import { blattArtikel, normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
@@ -235,6 +236,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // (Begründung und Befund in `./panelModell`, `panelBezug`).
   const panelZiel = panelBezug(m.aktArtikel, m.aktivToken, eintraege[0]);
   const panelArtikel = panelZiel.label;
+  // W2·17-UI-BEFUNDE: bei Schlusstitel-/Übergangsartikeln mit mehrdeutigem Label trägt
+  // das Zitat die Gruppe («Art. 3 SchlT ZGB»), nie «Art. 3 ZGB» (`../artikelBezeichnung`).
+  const panelZitat = normZitat(panelArtikel, zitatKuerzel(panelZiel.token, panelArtikel, erlass.kuerzel, m.struktur, eintraege));
   // D35-F2: die Zone steht immer. Bis hierher hing sie an
   // `panel.oeffnerSichtbar || panel.offen` — der zweite Zweig war der F8-Fall
   // (Schalter aus, Panel per «r» aufgezogen). Mit dem Wegfall des Schalters ist
@@ -368,7 +372,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token, (tok) => m.struktur?.[tok]?.fussnoten)}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit} historie={m.historieStand}
-              normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
+              normZitat={panelZitat} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel} intern={m.internRefs}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />

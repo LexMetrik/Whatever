@@ -10,6 +10,7 @@ import {
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import { zahl } from '../bezugPortion';
+import { istUebergangsToken } from '../artikelBezeichnung';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import {
@@ -388,9 +389,15 @@ export function PanelEntscheide({
         <p data-v3-panel-lage="gefiltert" className="px-3 py-3 text-body-s text-ink-600">{gefiltert}</p>
       ) : gruppen.length === 0 ? (
         <p data-v3-panel-lage="bestand" className="px-3 py-3 text-body-s text-ink-600">
-          {artikelLabel
-            ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
-            : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
+          {istUebergangsToken(aktArtikel)
+            // W2·17-UI-BEFUNDE (§8): die Zuordnung der Entscheide kennt nur Artikel des
+            // Hauptteils (Bezugs-Shards ohne einen einzigen `disp_`-Schlüssel, gemessen
+            // 2.10.2026) — «kein Entscheid erfasst» wäre falsch: das Bundesgericht
+            // zitiert Schlusstitel-Artikel durchaus («Art. 13a SchlT ZGB»).
+            ? `Zu ${normZitat} sind keine Entscheide zugeordnet: die Zuordnung deckt die Artikel des Hauptteils ab, nicht die Schluss- und Übergangsbestimmungen.`
+            : artikelLabel
+              ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
+              : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
           {/* K-2b: der Zusatz TRITT HINZU, er ersetzt die Bestandsaussage
               nicht — beide sind wahr, und die zweite erklärt die erste. */}
           {ebene === 'kanton' && (
