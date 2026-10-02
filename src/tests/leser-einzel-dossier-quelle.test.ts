@@ -25,6 +25,10 @@ import { ohneKommentare } from './appDateien';
 //  (d) `RECHTSPRECHUNG_BLOCK_FREI` still auf `true` gesetzt
 //      ⇒  M3-Fall ROT (genau der Diff, den M3 sichtbar halten will).
 // Alle vier danach zurückgenommen; die Sonde ist grün.
+// ERGÄNZT 2.10.2026 (Rückbau Rechtsprechungs-Zeilen, W2·17-UI-BEFUNDE): (d) und der
+// zugehörige M3-Fall entfallen — die Konstante `RECHTSPRECHUNG_BLOCK_FREI` und die
+// Rubrik `r` sind aus dem Dossier gelöscht; die Abwesenheit des Blocks sichert
+// `e2e/leser-einzelmodus.e2e.ts` (`data-dossier-reg="r"` Anzahl 0).
 
 const WURZEL = resolve(import.meta.dirname ?? '.', '..');
 const DOSSIER = 'pages/gesetz-leser/parts/ArtikelDossier.tsx';
@@ -111,18 +115,6 @@ describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
     }
     expect(bauer, `Marken werden an ${bauer.length} Stellen gebaut: ${bauer.join(', ')}`)
       .toEqual(['ArtikelLeser.bezuegeFuss.tsx']);
-  });
-
-  it('M3 · der Rechtsprechungs-Block ist angeschlossen, aber nicht freigegeben', () => {
-    // Kap. 15.2/M3: solange der Phantom-Filter unter `QS-KORPUS` offen ist,
-    // wird Block 3 NICHT ausgeliefert — ein prominenter Block mit erheblichem
-    // Fehlanteil ist negativer Mehrwert. Die Sonde hält den Stand fest: fällt
-    // die Konstante still auf `true`, ist DAS der Diff.
-    const quelle = nurCode(lies(DOSSIER));
-    expect(quelle).toMatch(/RECHTSPRECHUNG_BLOCK_FREI\s*=\s*false/);
-    // Und die Marke `r` wird ausschliesslich durch diese Konstante gefiltert —
-    // nicht dadurch, dass sie gar nicht erst hereinkäme.
-    expect(quelle).toMatch(/reg === 'r' && !RECHTSPRECHUNG_BLOCK_FREI/);
   });
 });
 

@@ -88,9 +88,9 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   // LESER (17 Dateien, 28 Knoepfe) — D38: LeserTrefferBlatt.tsx gelöscht;
   // W2·29-WERKBANK-TOR-Nachzug (22.9.2026): ArtikelSprungFeld.tsx und
   // TrefferListe.tsx in #979 gelöscht — Ratschen-Leichen entfernt.
+  // 2.10.2026: BezuegeZeile.tsx gelöscht (Rückbau W2·17-UI-BEFUNDE) — Eintrag entfernt.
   'pages/gesetz-leser/parts/ArtikelIndex.tsx': 1,
   'pages/gesetz-leser/parts/ArtikelLeser.tsx': 2,
-  'pages/gesetz-leser/parts/BezuegeZeile.tsx': 1,
   'pages/gesetz-leser/parts/SektionBaumTOC.tsx': 2,
   'pages/gesetz-leser/parts/SektionKopf.tsx': 2,
   'pages/gesetz-leser/v3/LeserAnsichtV3.tsx': 1,
