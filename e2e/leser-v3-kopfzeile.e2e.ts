@@ -865,6 +865,44 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
+  // ── (d2) W2·17-UI-BEFUNDE PA-10-B03 (1.10.2026) · AUCH BEI EINGEKLAPPTER GLIEDERUNG ──
+  // BEFUND, gemessen @1440: nach «Gliederung ausblenden» ist der linke Streifen
+  // nur die Schiene breit (`--leser-spur-versatz` = 56 px), und das Kürzel stand
+  // dort in `min-w-0 truncate` — «Staatenlose» (66 px) wurde zu «Staaten…», obwohl
+  // zwischen Suchfeld und «Ansicht» ~250 px frei lagen. (d) misst nur die OFFENE
+  // Gliederung (81 von 81) und sah das nie.
+  // ROT ZU BEKOMMEN (§6.7): in `v3/LeserKopf.tsx` den Streifen wieder fest auf
+  // `width: var(--leser-spur-versatz)` setzen — dann misst STAATENLOSE hier 66 in 56.
+  test('(d2) UI-BEFUNDE PA-10-B03 · das Kürzel ist auch bei EINGEKLAPPTER Gliederung nie angeschnitten', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    for (const pfad of [
+      '/gesetze/international/STAATENLOSE', // 66 px Kürzel in 56 px Schiene
+      '/gesetze/international/UNO_PAKT_II',
+      '/gesetze/bund/FINFRAV_FINMA', // 81 px
+    ]) {
+      await page.goto(pfad)
+      const el = page.locator('[data-v3-kopf-kuerzel]')
+      await expect(el).toBeVisible({ timeout: 20_000 })
+      // Die Wahl «zu» merkt sich der Leser (Gedächtnis): ab dem zweiten Erlass steht
+      // die Gliederung schon zu, und der Griff «ausblenden» fehlt.
+      const griff = page.locator('[data-v3-gliederung-zu]')
+      if (await griff.count() > 0) await griff.click()
+      await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+      await page.waitForTimeout(400)
+      const mass = await el.evaluate((n) => ({
+        text: (n.textContent ?? '').trim(), sw: n.scrollWidth, cw: n.clientWidth,
+      }))
+      expect(mass.text, `${pfad}: kein Kürzel im Kopf`).not.toBe('')
+      expect(mass.sw, `${pfad} bei eingeklappter Gliederung: «${mass.text}» ist ellipsiert (${mass.sw} in ${mass.cw})`)
+        .toBeLessThanOrEqual(mass.cw)
+      // Das Suchfeld daneben bleibt benutzbar (der Streifen wächst nur um das Kürzel).
+      const feld = await page.locator('[data-v3-suchsprung] input').first().boundingBox()
+      expect(feld?.width ?? 0, `${pfad}: das Suchfeld ist zu schmal`).toBeGreaterThan(200)
+    }
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
   // ── (e) V6 (Nachzug 17.8.2026) · DER KOPF WÄCHST, DER TEXT BLEIBT STEHEN ───
   //
   // BEFUND des Ästhetik-Reviews, gemessen @1440 an der StPO: klappt man die
