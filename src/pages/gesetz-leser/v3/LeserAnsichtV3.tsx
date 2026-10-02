@@ -209,6 +209,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           tabIndex={-1}
           onKeyDown={menueTastenFahrt}  /* D4, s. `./menueTasten` */
           data-v3-ansicht-panel
+          data-menue-flaeche
           /* D5: 15 rem war die Breite, in der «Rechtsprechung im Kopf» und «Nur
              Gesetzestext» umbrachen (Davids Befund «letzter Eintrag zweizeilig
              umgebrochen»). 17 rem trägt beide einzeilig; die Zeilen kappen
