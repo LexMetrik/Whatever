@@ -204,6 +204,37 @@ describe('Fedlex-Angabe «Datum des Inkrafttretens» (Signal e)', () => {
       .toEqual({ vorhanden: true, daten: [] });
   });
 
+  // Nachzug Auflage A (Gegenprüfung #1288, 2.10.2026): Monatswörter, Zahldaten, fail-closed.
+  it('«Febr.» (Fedlex-Schreibweise, 1309× im Korpus) wird gelesen — nicht nur «Feb.»', () => {
+    const xml = inhalt(p('Datum des Inkrafttretens: Art. 5: 1. Febr. 1996 <br/>übrige: 1. Juli 1996'));
+    expect(fedlexInkrafttretensAngabe(xml).daten).toEqual(['1996-02-01', '1996-07-01']);
+  });
+  it('alle amtlichen Monatsformen (Jan. Febr. März Apr. Mai Juni Juli Aug. Sept. Okt. Nov. Dez.) ergeben den richtigen Monat', () => {
+    const formen = ['Jan.', 'Febr.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
+    formen.forEach((f, i) => {
+      const r = fedlexInkrafttretensAngabe(inhalt(p(`Datum des Inkrafttretens: 1. ${f} 2001`)));
+      expect(r).toEqual({ vorhanden: true, daten: [`2001-${String(i + 1).padStart(2, '0')}-01`] });
+    });
+  });
+  it('Zahldaten «1.1.2010» / «01.07.2010» werden gelesen (zwei Daten ⇒ gestaffelt-fähig)', () => {
+    const xml = inhalt(p('Datum des Inkrafttretens: Art. 1: 1.1.2010 <br/>übrige: 01.07.2010'));
+    expect(fedlexInkrafttretensAngabe(xml)).toEqual({ vorhanden: true, daten: ['2010-01-01', '2010-07-01'] });
+  });
+  it('fail-closed: Jahreszahl ohne lesbares Datum im Absatz ⇒ daten leer ⇒ «unbekannt» (nicht «ein Datum»)', () => {
+    const xml = inhalt(p('Datum des Inkrafttretens: Art. 1: 1. Januar 1995 <br/>übrige: 1. Heumonat 1996'));
+    expect(fedlexInkrafttretensAngabe(xml)).toEqual({ vorhanden: true, daten: [] });
+    const r = staffelEntscheid({ urDatum: '1995-01-01', zeitleisteErste: '1995-01-01', fedlexAngabe: fedlexInkrafttretensAngabe(xml), artikel: [art('1', 'Text.')] });
+    expect(r).toEqual({ gestaffelt: true, gestaffeltGrund: ['unbekannt'] });
+    // Tag/Monat ausser Bereich zählt als ungelesen (kein stilles «32.13.1996»)
+    expect(fedlexInkrafttretensAngabe(inhalt(p('Datum des Inkrafttretens: 32.13.1996'))).daten).toEqual([]);
+  });
+  it('fail-closed greift nicht bei Fussnoten-Jahren und nicht gegen bereits gestaffelte Absätze', () => {
+    const fn = inhalt(p(`Datum des Inkrafttretens: 1. Januar 1995${note('BRB vom 24. Jan. 1994 (AS 1994 1805)')}`));
+    expect(fedlexInkrafttretensAngabe(fn).daten).toEqual(['1995-01-01']);
+    const zwei = inhalt(p('Datum des Inkrafttretens: 1. Febr. 1996 <br/>1. Juli 1996 <br/>Art. 9: 1. Heumonat 1997'));
+    expect(fedlexInkrafttretensAngabe(zwei).daten).toEqual(['1996-02-01', '1996-07-01']);
+  });
+
   it('staffelEntscheid: zwei verschiedene Daten ⇒ gestaffelt, auch wenn Zeitleiste == Ur-Datum (KG strukturell blind)', () => {
     const r = staffelEntscheid({ urDatum: '1996-02-01', zeitleisteErste: '1996-02-01', fedlexAngabe: { vorhanden: true, daten: ['1996-02-01', '1996-07-01'] }, artikel: [art('1', 'Text.')] });
     expect(r).toEqual({ gestaffelt: true, gestaffeltGrund: ['fedlex-inkrafttretensdatum'], teilDaten: ['1996-02-01', '1996-07-01'] });

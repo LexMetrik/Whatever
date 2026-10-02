@@ -22,13 +22,24 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { sparqlBatch, type FetchImpl } from '../fedlex-sparql.ts';
 import { baueStaende, baueStaendeQuery } from '../entstehung/synopse.ts';
 
+// Monatswörter in der amtlichen Fedlex-Schreibweise. Gemessen 2.10.2026 an allen 231
+// gepinnten XML (Gesamttext, nicht nur Datums-Absätze): «Jan.» 15382, «Dez.» 4894, «Okt.»
+// 4063, «Sept.» 3481, «Nov.» 3469, «Aug.» 1563, «Febr.» 1309 (⇒ NICHT «Feb.»: nur 3×),
+// «Apr.» 5, «Sep.» 1; ausgeschrieben «Juni», «März», «Juli», «Mai», «April», … Die Liste
+// führt zusätzlich die Kurzformen ohne Punkt («Sept», «Dez», «Jan», «Okt», «Aug»), die der
+// Regex über das optionale «.» abdeckt.
 const MONAT: Record<string, number> = {
-  januar: 1, jan: 1, februar: 2, feb: 2, märz: 3, mrz: 3, april: 4, apr: 4, mai: 5,
+  januar: 1, jan: 1, februar: 2, febr: 2, feb: 2, märz: 3, mrz: 3, april: 4, apr: 4, mai: 5,
   juni: 6, jun: 6, juli: 7, jul: 7, august: 8, aug: 8, september: 9, sept: 9, sep: 9,
   oktober: 10, okt: 10, november: 11, nov: 11, dezember: 12, dez: 12,
 };
 const MONAT_RE = Object.keys(MONAT).sort((a, b) => b.length - a.length).join('|');
-const DATUM_RE = new RegExp(`(\\d{1,2})\\.\\s*(${MONAT_RE})\\.?\\s*(\\d{4})`, 'gi');
+const DATUM_RE = new RegExp(`(?<!\\d)(\\d{1,2})\\.\\s*(${MONAT_RE})\\.?\\s*(\\d{4})`, 'gi');
+// Zahldatum «1.1.2010» / «01.07.1996» (kein Monatswort). Gemessen 2.10.2026: 0 Treffer in
+// den Datums-Absätzen der 231 XML — Latenz-Absicherung, kein Korpus-Befund.
+const ZAHLDATUM_RE = /(?<!\d)(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})(?!\d)/g;
+// Vierstellige Jahreszahl (1800–2099), die nach Abzug der gelesenen Daten übrig bleibt.
+const JAHR_RE = /(?<!\d)(?:18|19|20)\d{2}(?!\d)/;
 // Drei amtliche Label-Formen (gemessen 2.10.2026 an allen 231 gepinnten XML): «Datum des
 // Inkrafttretens:» (80 Erlasse), die Tippfehler-Variante «Datum des Inkrafttreten:» (ELG,
 // ZPO, ZEMIS_V — ZPO Art. 408) und ein Absatz, der mit «Inkrafttreten:» BEGINNT (BEG,
@@ -53,16 +64,32 @@ function nurText(seg: string): string {
 export function fedlexInkrafttretensAngabe(xml: string): InkrafttretensAngabe {
   const daten = new Set<string>();
   let vorhanden = false;
+  let ungelesenesJahr = false;
+  const iso = (j: string, m: number, t: string): string | null =>
+    m >= 1 && m <= 12 && +t >= 1 && +t <= 31 ? `${j}-${String(m).padStart(2, '0')}-${t.padStart(2, '0')}` : null;
   for (const m of xml.matchAll(LABEL_RE)) {
     vorhanden = true;
     const rest = xml.slice(m.index! + m[0].length);
     const ende = rest.indexOf('</content>');
-    const text = nurText(ende >= 0 ? rest.slice(0, ende) : rest.slice(0, 4000));
-    for (const d of text.matchAll(DATUM_RE)) {
-      const mm = MONAT[d[2].toLowerCase()];
-      daten.add(`${d[3]}-${String(mm).padStart(2, '0')}-${d[1].padStart(2, '0')}`);
-    }
+    let text = nurText(ende >= 0 ? rest.slice(0, ende) : rest.slice(0, 4000));
+    const lesen = (re: RegExp, monat: (feld: string) => number): void => {
+      text = text.replace(re, (ganz: string, tag: string, feld: string, jahr: string) => {
+        const d = iso(jahr, monat(feld), tag);
+        if (d === null) return ganz; // Tag/Monat ausser Bereich ⇒ Jahr bleibt stehen ⇒ fail-closed
+        daten.add(d);
+        return ' ';
+      });
+    };
+    lesen(DATUM_RE, (feld) => MONAT[feld.toLowerCase()]);
+    lesen(ZAHLDATUM_RE, (feld) => +feld);
+    // Fail-closed (§8): eine Jahreszahl ohne gelesenes Datum (Fussnoten sind schon entfernt)
+    // heisst: der Absatz enthält ein Datum, das wir nicht verstehen.
+    if (JAHR_RE.test(text)) ungelesenesJahr = true;
   }
+  // Ungelesene Jahreszahl und höchstens ein gelesenes Datum ⇒ Angabe unlesbar ⇒ daten leer
+  // (vorhanden bleibt true) ⇒ staffelEntscheid wertet «unbekannt» (gestaffelt: true). Bei
+  // ≥ 2 gelesenen Daten ist der Erlass ohnehin gestaffelt; die gelesenen Daten bleiben.
+  if (ungelesenesJahr && daten.size <= 1) daten.clear();
   return { vorhanden, daten: [...daten].sort() };
 }
 
