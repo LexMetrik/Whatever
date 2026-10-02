@@ -34,19 +34,24 @@
 // GESTAFFELTES INKRAFTTRETEN (W2·27-BUND-FERTIG, 2.10.2026): die frühere Hoffnung,
 // «Teil-Inkrafttreten» zeige sich als MEHRERE `dateEntryInForce` am Abstract, hat
 // sich nicht bestätigt (gemessen 2.10.2026: alle 231 Bund-Erlasse tragen genau EIN
-// Datum — auch SVG, FINMAG, KVG, MWSTG, die faktisch gestaffelt in Kraft traten).
-// Das Feld `gestaffelt` (+ `gestaffeltGrund[]`) ist darum ein EIGENES Kennzeichen
-// mit vier Signalen (Belege je Signal bei den Funktionen unten). Ein Erlass mit
-// `gestaffelt: true` zeigt nie «Erlass in Kraft seit <Ur-Datum>» als Auskunft für
-// einen einzelnen Artikel — das Ur-Datum gilt dort nur für einen Teil der Artikel.
-// FAIL-CLOSED: nicht abrufbare/leere Zeitleiste oder fehlendes Ur-Datum ⇒
-// `gestaffelt: true`, Grund `unbekannt` (nie «nicht gestaffelt» aus Unwissen).
+// Datum — auch SVG, FINMAG, KVG, MWSTG, die faktisch gestaffelt in Kraft traten;
+// Fedlex setzt es auf den FRÜHESTEN Teil-Termin). Das Feld `gestaffelt`
+// (+ `gestaffeltGrund[]`, + `teilDaten[]` beim amtlichen Datums-Signal) ist darum ein
+// EIGENES Kennzeichen mit fünf Signalen (Belege je Signal bei den Funktionen unten
+// und in inkrafttreten-fedlex-datum.ts). Ein Erlass mit `gestaffelt: true` zeigt nie
+// «Erlass in Kraft seit <Ur-Datum>» als Auskunft für einen einzelnen Artikel — das
+// Ur-Datum gilt dort nur für einen Teil der Artikel.
+// FAIL-CLOSED: nicht abrufbare/leere Zeitleiste, fehlendes Ur-Datum, nicht abrufbare
+// Fedlex-XML ⇒ `gestaffelt: true`, Grund `unbekannt` (nie «nicht gestaffelt» aus
+// Unwissen). Rest-Risiko, ehrlich: Erlasse OHNE «Datum des Inkrafttretens»-Absatz in
+// der amtlichen Fassung (rund die Hälfte) hängen an Zeitleiste, Wortlaut und Fussnoten.
 // §2/§0b: reine Erhebe-Funktion (deterministisch, injizierbare fetchImpl), getrennt
 // vom Schreiben; kein Date.now() in der Erhebung.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sparqlBatch, sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
+import { fedlexInkrafttretensAngabe, ladeFedlexXml, type InkrafttretensAngabe } from './inkrafttreten-fedlex-datum.ts';
 
 /** Abstract-ELI aus register.quelleUrl (…/eli/cc/…/de → cc/…). null = kein cc-ELI. */
 function abstraktEli(quelleUrl: string): string | null {
@@ -67,13 +72,17 @@ export type StaffelGrund =
   | 'wortlaut-hauptklausel'
   | 'fussnote-teildatum'
   | 'fussnote-inkraftsetzungs-v'
+  | 'fedlex-inkrafttretensdatum'
   | 'unbekannt';
-export type Staffelung = { gestaffelt: boolean; gestaffeltGrund: StaffelGrund[] };
+/** `teilDaten` (ISO, sortiert) nur beim Grund `fedlex-inkrafttretensdatum`: die in der amtlichen
+ *  Fassung genannten verschiedenen Inkrafttretens-Daten (Beleg, offline im Test nachlesbar). */
+export type Staffelung = { gestaffelt: boolean; gestaffeltGrund: StaffelGrund[]; teilDaten?: string[] };
 /** Eintrag der Sidecar-Datei: `datum` fehlt, wenn kein EINDEUTIGES Ur-Datum vorliegt (§8). */
 export type InkrafttretenEintrag = { datum?: string; quelle: 'fedlex' } & Staffelung;
 
 export type ErlassBasis = {
   key: string; sr: string | null; ebene: string; status: string; quelleUrl: string;
+  fassungsToken?: string; // register.fassungsToken — Fassung, auf die der Normtext gepinnt ist
 };
 
 /** SPARQL: je abstract-ELI das Ur-Inkrafttreten (`dateEntryInForce`) des Erlasses. */
@@ -183,9 +192,10 @@ export type ArtikelSicht = {
 const HAUPTTEXT = /^(?!disp_|annex)/;
 
 /** Satzweise (grosser Folgebuchstabe) — «Art. 3», «Abs. 2» und Datumsangaben
- *  («am 1. Januar 2010») trennen nicht: ein Punkt nach einer Ziffer ist kein Satzende. */
+ *  («am 1. Januar 2010») trennen nicht: ein Punkt nach einer Ziffer ist kein Satzende.
+ *  Auch Abkürzungen vor einem Grossbuchstaben trennen nicht («Ziff. II», «Anhang Ziff. I»). */
 function saetze(text: string): string[] {
-  return text.split(/(?<=[^0-9.][.]|[;:])\s+(?=[A-ZÄÖÜ])/);
+  return text.split(/(?<=[^0-9.][.]|[;:])(?<!\b(?:Ziff|Art|Abs|Bst|Anh|Nr|lit|bzw|vgl|Buchst|Kap|ff)\.)\s+(?=[A-ZÄÖÜ])/);
 }
 
 /** Subjekt = der Erlass selbst («Dieses Gesetz», «Diese Verordnung», «Es», «Sie»). */
@@ -208,12 +218,49 @@ function istHauptklauselSatz(satz: string): boolean {
  * NICHT Signal: «Der Bundesrat bestimmt das Inkrafttreten» allein (ZPO Art. 408).
  */
 const VORBEHALT_AUSNAHME =
-  /\bunter Vorbehalt\b|\bvorbehältlich\b|\bmit Ausnahme\b|\bausgenommen\b|\beinzelne[rn]?\s+(?:Teile|Bestimmungen|Artikel|Absätze)\b/i;
+  /\bunter Vorbehalt\b|\bvorbehältlich\b|\bmit Ausnahme\b|\bausgenommen\b|\beinzelne[rn]?\s+(?:Teile|Bestimmungen|Artikel|Absätze)\b|\bvorzeitig\b|\b(?:früheren|späteren)\s+Zeitpunkt\b|\babweichend\b|\bgestaffelt\b|\betappenweise\b/i;
+
+/**
+ * Signal b3 — Teil-Klausel NEBEN der Hauptklausel (Nachzug 2.10.2026, Befund 2):
+ *  · Teil-Subjekt: «Artikel 2 Absätze 2 und 3 … treten nur im Falle … in Kraft»
+ *    (BGFA Art. 37) — der Satz beginnt mit Artikel/Anhang/Ziffer/Abschnitt statt mit
+ *    dem Erlass. Nennt derselbe Satz «diese Verordnung/dieses Gesetz» mit (VVV Art. 61:
+ *    «Die Artikel 58–89 SVG und diese Verordnung treten am 1. Januar 1960 in Kraft»),
+ *    ist es EIN gemeinsamer Tag und zählt nicht.
+ *  · Bundesrat bestimmt das Inkrafttreten bestimmter Teile («… das Inkrafttreten der
+ *    Artikel 34 Absatz 3 und 78 Absatz 4», MWSTG Art. 116 Abs. 2).
+ * Nur im Inkrafttretens-Artikel (Hauptklausel/Randtitel) — sonst «Art. 5 tritt in Kraft»-
+ * Sätze in beliebigen Artikeln.
+ */
+const TEIL_SUBJEKT = /^(?:(?:Die|Der|Das)\s+)?(?:Artikel|Art\.|Anhang|Absätze?|Abs\.|Ziff\.|Ziffern?|Abschnitte?|Kapitel|Titel|Bestimmungen)\b/;
+const ERLASS_IM_SATZ = /\b[Dd]iese[rs]?\s+(?:Verordnung|Gesetz|Bundesgesetz|Beschluss|Reglement|Ordnung|Erlass)\b/;
+const BR_TEIL = /^Der Bundesrat bestimmt das Inkrafttreten (?:der|von|des)\s+(?:Artikel|Art\.|Absätze?|Abs\.|Anhang|Ziff|Bestimmungen|Abschnitte?)/;
+
+function istTeilKlauselSatz(satz: string): boolean {
+  if (BR_TEIL.test(satz)) return true;
+  return TEIL_SUBJEKT.test(satz) && !ERLASS_IM_SATZ.test(satz) && /\b(?:tritt|treten)\b.{0,240}?\bin Kraft\b/.test(satz);
+}
+
+/**
+ * «unter Vorbehalt von Absatz N» in der Hauptklausel meint, wo derselbe Artikel einen
+ * Referendums-Absatz trägt («Wird das Referendum ergriffen …»), den REFERENDUMSFALL
+ * (MWSTG Art. 116 Abs. 2/3, FAMZG Art. 29) — ein anderer Zeitpunkt, kein Teil-
+ * Inkrafttreten. Dieser Vorbehalt allein ist darum kein Signal; die Staffelung dieser
+ * Erlasse trägt die Teil-Klausel (Signal b3) bzw. die Fussnote. Entscheid 2.10.2026,
+ * Gegenprüfung Befund 2 (MWSTG).
+ */
+const REFERENDUM_ABSATZ = /Referendum ergriffen/;
+const VORBEHALT_ABSATZ = /\bunter Vorbehalt von Absatz\s+\d+[a-z]*/gi;
 
 export function hatWortlautHauptklausel(artikel: ArtikelSicht[]): boolean {
-  return artikel.some((a) => HAUPTTEXT.test(a.id)
-    && saetze(a.text).some((s) => /\bin Kraft\b/.test(s) && VORBEHALT_AUSNAHME.test(s)
-      && (SUBJEKT_ERLASS.test(s) || /^Der Bundesrat /.test(s))));
+  return artikel.some((a) => {
+    if (!HAUPTTEXT.test(a.id)) return false;
+    const ss = saetze(a.text);
+    const ohneRef = (s: string) => (REFERENDUM_ABSATZ.test(a.text) ? s.replace(VORBEHALT_ABSATZ, '') : s);
+    const klauselMitVorbehalt = ss.some((s) => /\bin Kraft\b/.test(s) && VORBEHALT_AUSNAHME.test(ohneRef(s))
+      && (SUBJEKT_ERLASS.test(s) || /^Der Bundesrat /.test(s) || (/^Er\s/.test(s) && istInkrafttretensArtikel(a))));
+    return klauselMitVorbehalt || (istInkrafttretensArtikel(a) && ss.some(istTeilKlauselSatz));
+  });
 }
 
 /** Gehört der Artikel zur Inkrafttretens-Bestimmung des Erlasses? */
@@ -253,16 +300,25 @@ export function fussnoteGruende(artikel: ArtikelSicht[]): StaffelGrund[] {
   return gruende;
 }
 
-/** Reine Auswertung: Staffel-Entscheid je Erlass (Zeitleiste + Wortlaut + Fussnoten). */
+/** Reine Auswertung: Staffel-Entscheid je Erlass (Zeitleiste + amtliche Datumsangabe + Wortlaut + Fussnoten). */
 export function staffelEntscheid(i: {
   urDatum: string | null;        // eindeutiges dateEntryInForce oder null
   zeitleisteErste: string | null; // früheste Konsolidierung oder null (unbelegt)
+  fedlexAngabe: InkrafttretensAngabe | null; // «Datum des Inkrafttretens» aus der Fedlex-XML; null = Quelle nicht abrufbar
   artikel: ArtikelSicht[] | null; // null = Normtext nicht lesbar
 }): Staffelung {
   const gruende: StaffelGrund[] = [];
   let unbekannt = false;
+  let teilDaten: string[] | undefined;
   if (i.urDatum === null || i.zeitleisteErste === null) unbekannt = true;
   else if (i.zeitleisteErste < i.urDatum) gruende.push('fedlex-zeitleiste');
+  // Signal e: mehr als EIN verschiedenes Datum in der amtlichen Angabe ⇒ gestaffelt. Angabe ohne
+  // lesbares Datum oder nicht abrufbare Quelle ⇒ fail-closed. Fehlende Angabe = keine Aussage.
+  if (i.fedlexAngabe === null || (i.fedlexAngabe.vorhanden && i.fedlexAngabe.daten.length === 0)) unbekannt = true;
+  else if (i.fedlexAngabe.daten.length > 1) {
+    gruende.push('fedlex-inkrafttretensdatum');
+    teilDaten = i.fedlexAngabe.daten;
+  }
   if (i.artikel === null) unbekannt = true;
   else {
     if (hatWortlautHauptklausel(i.artikel)) gruende.push('wortlaut-hauptklausel');
@@ -271,7 +327,7 @@ export function staffelEntscheid(i: {
   // Fail-closed: «unbekannt» nur, wenn KEIN positives Signal den Erlass schon als
   // gestaffelt ausweist (die Gründe bleiben dann sachlich, nicht Unwissen).
   if (unbekannt && gruende.length === 0) gruende.push('unbekannt');
-  return { gestaffelt: gruende.length > 0, gestaffeltGrund: gruende };
+  return { gestaffelt: gruende.length > 0, gestaffeltGrund: gruende, ...(teilDaten ? { teilDaten } : {}) };
 }
 
 const tags = (s: string) => s.replace(/<[^>]*>/g, '');
@@ -296,11 +352,22 @@ export function ladeArtikelSichten(key: string, normtextDir = resolve(wurzel, 'p
   } catch { return null; }
 }
 
-/** Staffelung aller Bund-Erlasse (Zeitleiste per SPARQL, Rest aus den lokalen Shards). */
+/** Fedlex-XML je Erlass; ohne Fassungstoken/ELI gibt es keine gepinnte Quelle ⇒ null (fail-closed). */
+async function ladeXmlJeErlass(bund: ErlassBasis[], fetchImpl: FetchImpl): Promise<Map<string, string | null>> {
+  const quellen = bund.flatMap((e) => {
+    const eli = abstraktEli(e.quelleUrl);
+    return eli && e.fassungsToken ? [{ key: e.key, eli, token: e.fassungsToken }] : [];
+  });
+  return ladeFedlexXml(quellen, fetchImpl);
+}
+
+/** Staffelung aller Bund-Erlasse (Zeitleiste per SPARQL, Datumsangabe aus der Fedlex-XML, Rest aus den lokalen Shards). */
 export async function bundStaffelung(
   bund: ErlassBasis[], urDaten: InkrafttretenMap, fetchImpl: FetchImpl,
   ladeArtikel: (key: string) => ArtikelSicht[] | null = ladeArtikelSichten,
+  ladeXml: (bund: ErlassBasis[]) => Promise<Map<string, string | null>> = (b) => ladeXmlJeErlass(b, fetchImpl),
 ): Promise<Record<string, Staffelung>> {
+  const xmlMap = await ladeXml(bund);
   const elis = [...new Set(bund.map((e) => abstraktEli(e.quelleUrl)).filter((x): x is string => x !== null))];
   const beginn = elis.length ? await zeitleisteBeginn(elis, fetchImpl) : new Map<string, string>();
   const out: Record<string, Staffelung> = {};
@@ -309,6 +376,7 @@ export async function bundStaffelung(
     out[e.key] = staffelEntscheid({
       urDatum: urDaten[e.key]?.datum ?? null,
       zeitleisteErste: eli ? beginn.get(eli) ?? null : null,
+      fedlexAngabe: xmlMap.get(e.key) != null ? fedlexInkrafttretensAngabe(xmlMap.get(e.key)!) : null,
       artikel: ladeArtikel(e.key),
     });
   }
@@ -352,11 +420,24 @@ async function main() {
   console.log(`Bund: ${Object.keys(map).length}/${bund.length} Ur-Inkrafttreten; ${ohne.length} ohne/mehrdeutig: ${ohne.join(', ') || '—'}`);
   const gest = Object.entries(staffel).filter(([, v]) => v.gestaffelt);
   console.log(`Gestaffelt: ${gest.length}/${bund.length}`);
-  for (const [k, v] of gest) console.log(`  ${k}: ${v.gestaffeltGrund.join(', ')}`);
+  for (const [k, v] of gest) console.log(`  ${k}: ${v.gestaffeltGrund.join(', ')}${v.teilDaten ? ` [${v.teilDaten.join(' ')}]` : ''}`);
   console.log(`Kanton: bewusst 0 (LexWork trägt kein strukturelles Ur-Inkrafttreten, §8).`);
   console.log(`\n${Object.keys(eintraege).length} Einträge → public/normtext/inkrafttreten.json (Lauf ${heute()}).`);
   console.log('Nachlauf: `npm run normtext:register` (Projektion → register.json), `npm run datenhaltung:manifest`.');
 }
 
-// Als CLI ausführen; beim Import aus dem Unit-Test (VITEST gesetzt) NICHT laufen.
-if (!process.env.VITEST) void main();
+/**
+ * Läuft NUR, wenn dieses Skript selbst der aufgerufene Einstieg ist (`npm run
+ * gen:inkrafttreten` = `vite-node scripts/normtext/inkrafttreten-generieren.ts`).
+ * `process.argv[1]` ist unter vite-node das vite-node-Binary, das Skript steht als
+ * eigenes argv-Element (argv[2]) — darum Pfadvergleich über ALLE argv-Elemente.
+ * Der frühere Schutz nur über `!process.env.VITEST` liess jeden anderen Import
+ * (Hilfsskript, vite-node-Probe) den Netzlauf starten und die Sidecar-Datei
+ * überschreiben (reproduziert 2.10.2026 beim Import aus einem Scratch-Skript).
+ */
+export function istHauptmodul(argv: string[] = process.argv, modulUrl: string = import.meta.url): boolean {
+  const selbst = fileURLToPath(modulUrl);
+  return argv.slice(1).some((a) => { try { return resolve(a) === selbst; } catch { return false; } });
+}
+
+if (!process.env.VITEST && istHauptmodul()) void main();
