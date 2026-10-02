@@ -70,6 +70,13 @@ import type { LeserV3Modell } from './leserV3Modell';
 //    Wortlaut (§8). Die Auskunft fehlt nirgends: Trefferliste, Zähler und ↑↓
 //    stehen unverändert. Die Fenster-Schwelle selbst trägt das Bauteil
 //    (`components/leser/TrefferLandkarte`, Herleitung dort).
+//  · nicht, solange das BLATT als Spur offen steht (PE-B12-D01, gemessen 2.10.2026
+//    @1440: die Spur reicht bis an den Fensterrand, der `fixed`e Streifen lag mit
+//    24 px über «Erlass-Blatt schliessen» und mit 28 px über dem Reiter
+//    «Werkzeuge»). Dieselbe Regel wie in der Pane — kein Element über dem
+//    Bedienbaren (§8); der Rahmen reicht sie über `randluft` herein
+//    (`!umgebung.imPane && !bild.blattSpur`). Mit dem Schliessen kehrt der
+//    Streifen zurück: Suche, Marken und Schalter sind nie weg gewesen.
 export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorSprung }: {
   m: LeserV3Modell;
   /** Zähl-Substantiv des Erlasses — DASSELBE, das die Zähler-Zeile daneben
@@ -77,7 +84,8 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
    *  wie dort vom Rahmen aus der einen Ableitung `./erlassAnsicht` (B8/§5);
    *  hier wird nichts abgeleitet, und der Streifen erfindet kein eigenes Wort. */
   bestimmungsWort: BestimmungsWort;
-  /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja.) */
+  /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja; Pane und offene
+   *  Blatt-Spur: nein.) */
   randluft: boolean;
   /** Liegt die Trefferliste GERADE über der Lesespalte? Derselbe Wert, den auch
    *  `suchZoneAufbau` als `listeSteht` bekommt — der Rahmen kennt ihn, das
@@ -115,10 +123,13 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
       wortMehr={zaehlform(2, bestimmungsWort)}
       onSprung={(token) => {
         // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
-        // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5).
+        // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5). Der Klick ins
+        // Feld ohne Treffer beendet die Suche NICHT (`true`, PE-B12-B02): sonst fielen
+        // Hervorhebung, Zähler und die Landkarte selbst mit ihm weg. Im Einzelmodus
+        // führen beide Wege über den Router (PE-B12-B03, `./sprungWege`).
         onVorSprung();
         if (m.treffer.some((t) => t.token === token)) m.springeZuTreffer?.(token);
-        else m.springeZuArtikel(token);
+        else m.springeZuArtikel(token, true);
       }} />
   );
 }

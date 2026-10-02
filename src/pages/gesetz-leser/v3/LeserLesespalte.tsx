@@ -1,5 +1,4 @@
 import { useMemo, type ReactNode } from 'react';
-import type { ImBlattReiter } from '../parts/ArtikelLeser.bezuegeFuss';
 import { Link } from 'react-router-dom';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../../lib/normtext/verifikationslink';
@@ -7,8 +6,6 @@ import { ArtikelLeser, SektionKopf } from '../parts';
 import { istAnhangToken } from '../berechnungen';
 import { bestimmungsWort, erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
-import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
-import { randNotizZiel } from '../randNotizOeffnen';
 import { useBezuegeZaehler } from '../bezuegeZaehler';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import type { PanelBezuege } from './panelModell';
@@ -57,7 +54,7 @@ import { labelMitBereich } from '../../../lib/normtext/darstellung';
 // von `./LeserLeseZeile`). Genau das ist der Unterschied zum gestrichenen Prop:
 // die Liste steht nicht IM Fluss des Lesekörpers, sondern `absolute` darüber,
 // verschiebt also keinen Pixel und lässt die PX-Region hier unangetastet.
-export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuegeGeweckt = false, einzelToken, search = '' }: {
+export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = false, einzelToken, search = '' }: {
   m: LeserV3Modell;
   /** W2·5m (Kap. 15.3) · Im Einzelmodus der Token der EINEN Bestimmung.
    *  DIE SPALTE BLEIBT DIE SPALTE: die Artikel-Props werden weiter an genau
@@ -73,11 +70,6 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   bezuege?: PanelBezuege;
   /** D30 · Aufklappen der Bezüge-Zeile ⇒ Nachladen armieren (`weckeDaten`). */
   weckeBezuege?: () => void;
-  /** D35-F2 · «im Blatt öffnen ›» der Funktionszeile — referenz-stabil aus
-   *  `./panelModell` (`oeffne`, seit S6 mit dem Ziel-Reiter als Argument),
-   *  sonst fiele die `memo`-Schranke von `parts/ArtikelLeser` über alle
-   *  Artikel (§15). */
-  oeffneBlatt?: (reiter: ImBlattReiter) => void;
   /** D30 · ist bereits jemand nach den Daten gefragt worden? Steuert die
    *  Skelett-Zeile «lädt …» UND das Laden der Materialien. */
   bezuegeGeweckt?: boolean;
@@ -98,9 +90,6 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // Nachschlage-Funktion; das `unsicher`-Flag ist ihr Konsument (PanelTafeln).
   // Ergänzt 30.9.2026: im Einzelmodus meldet `unsicher` nur das Dossier (Fehlerzeile statt Leerblock).
   const [artikelMaterialien, materialienUnsicher, materialienErneut] = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
-  // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
-  // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
-  const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
   // ── W2·5m · NACHBAR-ARTIKEL, EINMAL JE ERLASS ─────────────────────────────
   // Die Map wohnt HIER und nicht im Modell — dieselbe Begründung wie bei
   // `useBezuegeZaehler` oben: die Lesespalte ist der einzige Konsument, und das
@@ -142,31 +131,18 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   const artikel = (e: (typeof eintraege)[number], einzel = false) => (
     <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)}
       intern={m.internRefs} marg={m.margAnzeige.get(e.artikel)?.teile} margBasis={m.margAnzeige.get(e.artikel)?.ab}
-      revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
+      historie={m.historieFuer(e.artikel)}
       // W2·24-R6c: die ZAHLEN der Bezüge-Zeile aus der Zähl-Datei (289 B im
       // Mittel) statt aus dem 2.2-MB-Shard — Herleitung in `../bezuegeZaehler`.
       // Der Kern rendert wie bisher; das Öffnen der Zeile lädt weiterhin lazy.
       zaehler={bezuegeZaehler(e.artikel)}
-      // ── D30 · POS. 12 IST NICHT ZURÜCK (und `bezuege` bleibt ungesetzt) ──
-      // D34 (7.9.2026): die Prop hiess bis D33 `bezuegeImKopf` — die Zeile stand
-      // damals unter der Artikelnummer, seit D34 steht sie am Artikelfuss. Nur
-      // der Name folgt dem Ort; der Ladevertrag darunter ist unverändert.
-      // Der Block darüber begründet, warum `bezuege` an dieser Stelle FIEL: die
-      // `BezuegeZeile` stand damals UNBEDINGT im Fliesstext, an jedem Artikel,
-      // und wuchs beim Eintreffen des Shards in den Lesekörper hinein. Beides
-      // ist hier nicht der Fall. Die Prop kommt nur, NACHDEM der Leser eine
-      // Bezüge-Zeile aufgeklappt hat (`bezuegeGeweckt`), und sie landet
-      // ausschliesslich INNERHALB des `<details>`, das er dafür geöffnet hat.
-      // Ein geschlossenes `<details>` rendert seinen Inhalt nicht — die 1685
-      // anderen Artikel bleiben unberührt, es gibt keinen dokumentweiten
-      // Layout-Sprung, und `leser-v3-kontext-cls` misst weiterhin dasselbe.
-      // `alleFuer`, nicht `bezuegeFuer`: die Zeile zeigt, was ihre Kopfzahl
-      // zählt — ungefiltert. Herleitung in `../bezuegeLaden` (D30).
-      bezuegeImFuss={bezuege?.alleFuer(e.artikel)}
+      // RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier setzte die Lesespalte
+      // `bezuegeImFuss` (= `bezuege?.alleFuer(e.artikel)`, D30/D34) und `revision` für
+      // die Rubrik «Entscheide» des Dossiers — zurückgebaut (`parts/ArtikelDossier.tsx`).
+      // `bezuege` bleibt als Lade-Signal (`bezuegeLaedt`) und fürs Wecken der Materialien.
       materialien={artikelMaterialien(e.artikel)}
       materialienLadefehler={einzel && materialienUnsicher ? materialienErneut : undefined}
       onBezuegeOeffnen={weckeBezuege}
-      onImBlatt={oeffneBlatt}
       // «lädt …» heisst: geweckt, aber der Lade-VERSUCH ist noch nicht durch.
       // `geladen` (nicht die Kanten) unterscheidet «unterwegs» von «leer» — die
       // A1-Lehre aus `panelModell.ts`, hier dieselbe Quelle (§5).
@@ -311,50 +287,12 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
     // A-7, V1 gegen V3) bei GLEICHER Artikelbreite mass, den Text-KERN also
     // unabhängig vom Satzspiegel bewies. Mit H5 (21.8.2026) gelöscht — V1, das
     // Vergleichsziel, gibt es nicht mehr.
-    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading"
-      // ── W2·24-R6 · SPLIT-REGEL DER RANDNOTIZ (Auftrag David 6.9.2026) ──────
-      // Ein Bezug am Rand öffnet in der ANDEREN Hälfte; der Artikel bleibt
-      // stehen. Die Regel selbst (Modifikatoren, externe Ziele, Dedup) ist rein
-      // und liegt in `../randNotizOeffnen` — hier steht nur die Verdrahtung.
-      //
-      // WARUM DELEGIERT UND NICHT AM LINK: `usePaneSteuerung` liefert bei jedem
-      // Shell-Render ein neues Objekt (`Shell.tsx`, Objektliteral). Ein Abo je
-      // Artikel hiesse auf dem OR 1'686 Abonnenten, die bei jedem
-      // Scroll-Spy-Takt neu rendern — genau die Bauart, die §15.4 an dieser
-      // Spalte verbietet. EIN Abo an der Spalte, ein Handler, kein Prop durch
-      // die memoisierte Artikelkette.
-      //
-      // ── W2·26/Z5 · D45 (Mandat David 11.9.2026) · DIE AUFGEKLAPPTE RUBRIK
-      //    «ENTSCHEIDE» IST DERSELBE APPARAT ─────────────────────────────────
-      // BEFUND (Fahrplan D45, Nebenfund des D41-Fixers): ein Klick auf einen
-      // Entscheid IN der Funktionszeile navigierte die ganze Seite weg, während
-      // derselbe Entscheid in der Randnotiz daneben aufging. Zwei Gesten für
-      // dieselbe Absicht — und die schlechtere dort, wo die Liste seit D34/D35
-      // eigentlich zuhause ist.
-      //
-      // DER JURISTISCHE GRUND IST WORTGLEICH DER VON R6 (`../randNotizOeffnen`):
-      // ein Bezug am Artikel wird GEPRÜFT, nicht besucht; der Artikel muss
-      // stehen bleiben, sonst liest man den Entscheid ohne die Norm. Genau
-      // darum ist das hier KEINE zweite Regel, sondern DERSELBE Aufruf mit
-      // einem zweiten Herkunfts-Ort (§5): ⌘/Strg-Klick bleibt neuer Reiter,
-      // Mittel-/Umschalt-Klick bleiben dem Browser, ein schon offenes Ziel wird
-      // nicht zweimal geöffnet, und wo keine zweite Hälfte möglich ist
-      // (schmales Fenster, Pane-Kontingent voll) navigiert der Klick wie bisher
-      // — `kannOeffnen` entscheidet das, nicht diese Stelle.
-      //
-      // NUR `[data-reg="r"]`: «Materialien», «Verweise» und «Rechner» führen zu
-      // Seiten, die man BESUCHT (ein Rechner, eine Botschaft, ein anderer
-      // Artikel) — dort ist Navigation die richtige Geste, und der Unterschied
-      // zwischen Apparat und Navigation ist genau der, den R6 gezogen hat. Der
-      // Neben-Griff «im Blatt öffnen ›» (D35-F2) bleibt unberührt: er ist ein
-      // `<button>`, kein `<a>`, und fällt durch `closest('a')` ohnehin heraus.
-      onClickCapture={(ev) => {
-        const ziel = (ev.target as HTMLElement | null)?.closest?.('a');
-        if (!ziel || !ziel.closest('.lr-notiz, .lr7-bez-block[data-reg="r"]')) return;
-        if (randNotizZiel(ev, ziel.getAttribute('href'), kannOeffnen, paneOffen) !== 'daneben') return;
-        ev.preventDefault();
-        oeffneDaneben(ziel.getAttribute('href') as string);
-      }}>
+    // RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE, F9-B01): hier stand die Split-Regel der
+    // Randnotiz (`onClickCapture`: Klick in `.lr-notiz` bzw. `.lr7-bez-block[data-reg="r"]`
+    // öffnet «daneben», W2·24-R6/D45). Beide Selektoren trifft kein Element mehr —
+    // `.lr-notiz` gibt es im Markup nicht, die Rubrik `r` des Dossiers ist
+    // zurückgebaut (`parts/ArtikelDossier.tsx`) — also fiel mit ihr `randNotizOeffnen.ts`.
+    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
       {einzelEintrag
         ? (
           <LeserEinzelAnsicht m={m} karte={artikel(einzelEintrag, true)} search={search}
@@ -392,7 +330,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
           Ä15-Klasse). Wortgleich in `../inhalt-volltext.tsx` — V1 zeigt denselben
           Überlauf aus derselben Ursache (§5).
           Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
-      <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
+      <nav className="mt-12 border-t border-line pt-5 flex flex-wrap justify-between gap-x-4 gap-y-2 text-body-s" aria-label="Weitere Erlasse">
         {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-ink-900 [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
         {/* ── Ä119 (Live-Ästhetik-Prüfung 18.8.2026) · «ÜBERSICHT» WAR DOPPELT
             BELEGT ───────────────────────────────────────────────────────────
@@ -408,9 +346,9 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
             Link sagt jetzt, wohin er führt: «Alle Gesetze».
             `shrink-0` bleibt (B6): die Beschriftung ist kurz und konstant, sie
             gibt in der Zeile nicht nach — nachgeben sollen die Erlass-Namen
-            links und rechts, deren Länge aus den Daten kommt. */}
+            links und rechts, deren Länge aus den Daten kommt. H9-D01 (1.10.2026): `flex-wrap` statt Wortbruch @375 («Steuerregle-/ment»), `ml-auto` hält ihn rechts. */}
         <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-ink-900">Alle Gesetze</Link>
-        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-ink-900 [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
+        {nachher ? <Link to={erlassPfad(nachher)} className="ml-auto min-w-0 text-right text-ink-900 [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

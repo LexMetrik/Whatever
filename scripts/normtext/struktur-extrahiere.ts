@@ -89,7 +89,7 @@ function loeseTrennung(folgewort: string): string {
   return folgewort;                                      // Silbentrennung → zusammen
 }
 
-function reinText(html: string): string {
+export function reinText(html: string): string {
   return html
     // Fussnoten-<sup> (mit <a>-Anker ODER Zahl) entfernen — sie kleben sonst als
     // Ziffern am Titel («Zehnter Titel:119 …»). ABER Ordinal-Suffixe «bis/ter …»
@@ -159,6 +159,9 @@ function biErsetzung(innerRoh: string, vor: string): string {
   return innerRoh;                                            // ECHTER Titeltext → Inhalt behalten
 }
 
+/** Reine Nummern-Fortsetzung bzw. Platzhalter — kein Sachtitel (auch vom XML-Pfad genutzt). */
+export const SACHTITEL_LEER = /^(?:und|et|…|\.\.\.|[–-])$/i;
+
 function artikelSachtitel(roh: string): string | null {
   const titel = reinText(
     roh
@@ -171,7 +174,7 @@ function artikelSachtitel(roh: string): string | null {
         },
       ),
   );
-  if (!titel || /^(?:und|et|…|\.\.\.|[–-])$/i.test(titel)) return null;
+  if (!titel || SACHTITEL_LEER.test(titel)) return null;
   return titel;
 }
 

@@ -309,6 +309,30 @@
     /* Ruhende Akzent-Fläche (`accent-bg`): aktiver Navigations-Grund, Badge-Grund. Trägt
        `brass-800` und `brass-700` als Text. */
     --brass-100: #F3F1ED;
+    /* Markierungsfläche der Such-Treffer im Wortlaut (`::highlight(lc-such-treffer)`).
+       W2·17-UI-BEFUNDE (Entscheid David 2.10.2026, «kräftiger»). VORHER `brass-200` gegen das
+       Papier 1.24:1 hell / 1.29:1 dunkel, der Sprung-Blink (`brass-100`) rund 1.1:1 — gemessen
+       2.10.2026 mit `scripts/farbwelt-messung.ts`. JETZT: Fläche ≥ 3:1 gegen `paper` (WCAG 1.4.11,
+       tragende Fläche), Tinte darauf `such-treffer-tinte` ≥ 4.5:1 (1.4.3). Gerechnet: hell 3.25:1 /
+       Tinte 4.70:1, dunkel 3.25:1 / Tinte 4.92:1; Nachweis `src/tests/leser-suchfeld-w217.test.ts`.
+       Warmer Ton wie die Registerfarbe Wortlaut, aber KEIN Status und KEIN Register (F0.2/B3): eine
+       eigene Rolle «Markierung». Die Blink-Startfläche `--such-sprung` ist ein Mischrezept und
+       steht ausserhalb der Marker (wie `--warn-bg`). */
+    --such-treffer: #AB8749;
+    /* Tinte auf der Such-Markierung `such-treffer`: hell die Fliesstext-Tinte (4.70:1 auf der
+       Fläche). */
+    --such-treffer-tinte: var(--ink-900);
+    /* Fläche der AKTIVEN Fundstelle im Wortlaut (`::highlight(lc-such-aktiv)`, die Stelle, zu der
+       Enter/Weiter gerade führt). W2·17-UI-BEFUNDE (Gegenprüfung #1270, Vorgabe David 2.10.2026:
+       der aktive Treffer hebt sich sichtbar vom normalen ab). Gegenstück zu `such-treffer`: die
+       Umkehrung der Helligkeit (hell dunkles Braun, dunkel helles Sand) — ≥ 3:1 gegen den normalen
+       Treffer (hell 3.49:1, dunkel 3.57:1), Tinte darauf `such-aktiv-tinte` ≥ 4.5:1. Zusätzlich
+       unterstrichen (nicht-farbliches Merkmal, WCAG 1.4.1). Nachweis
+       `src/tests/leser-suchfeld-w217.test.ts`. */
+    --such-aktiv: #46361B;
+    /* Tinte auf `such-aktiv`: hell das feste Papierweiss (11.35:1), dunkel die feste Dunkeltinte
+       (10.38:1). Beide Festtöne kippen nicht mit dem Thema und sind für genau diese Umkehrung da. */
+    --such-aktiv-tinte: var(--ink-fixed-light);
     /* Registerfarbe GESETZE. Die vier Registerfarben sind die einzige Farbe des Hauses und stehen
        als Strich, Reiter-Unterkante und Randmarke; als Fläche nur über die Flächen-Token
        `reg-*-flaeche` (F0.2 i. d. F. 22.9.2026), nie der Registerton selbst unter Fliesstext und
@@ -1037,6 +1061,15 @@
     --slate-bg:color-mix(in oklab, var(--slate-500) var(--status-tint), var(--paper));
     --warn-bg:color-mix(in oklab, var(--warn-500) var(--status-tint), var(--paper));
     --danger-bg:color-mix(in oklab, var(--danger-500) var(--status-tint), var(--paper));
+    /* W2·17-UI-BEFUNDE (2.10.2026): STARTFLÄCHE des Sprung-Blinks am Ziel-Artikel
+       (`lc-ziel-blink`) — halb Markierung, halb Papier. Vorher `--brass-100`,
+       rund 1.1:1 gegen das Papier. Jetzt hell 1.72:1 / dunkel 1.68:1: sichtbar
+       (≥ 1.5:1), bewusst schwächer als der Treffer (3.25:1), damit ein Treffer im
+       blinkenden Artikel sich weiter abhebt (≥ 1.5:1, gerechnet 1.89 / 1.93).
+       Mischrezept → ausserhalb der Token-Marker (wie die -bg-Flächen); die zwei
+       Quell-Token `such-treffer`/`paper` kippen über html.dark, das Rezept
+       zieht mit (selbes Element, selbe Kaskade). */
+    --such-sprung:color-mix(in oklab, var(--such-treffer) 50%, var(--paper));
     --ok-bg:var(--sage-bg);
     /* --app-reiter-min-b · FB (Prüfbefund 7.9.2026): der BODEN eines Reiters —
        wie schmal er werden darf, bevor der Rest ins «+N»-Blatt zieht (R13-2).
@@ -1180,6 +1213,13 @@
     --brass-400: #716E68;
     --brass-200: #302E2A;
     --brass-100: #242321;
+    --such-treffer: #816637;
+    /* Dunkel mit `ink-900` (#E2E0DC) liesse sich ≥ 3:1 der Fläche gegen das Papier UND ≥ 4.5:1 Text
+       zugleich nicht halten (13.3 / 4.5 < 3) — darum trägt die Markierung dort die hellste
+       Text-Stufe `brass-800` (#F6F4F0): 4.92:1 auf der Fläche. */
+    --such-treffer-tinte: var(--brass-800);
+    --such-aktiv: #E2D0B1;
+    --such-aktiv-tinte: var(--ink-fixed-dark);
     /* Messing: Text-Töne (800–600) hell, Flächen-Töne (100/200) dunkel,
        Linien/Skala (500/400/300) bleiben Gold.
 
@@ -1664,7 +1704,9 @@
      unsichtbar in den Artikel hinein. Der Marker `[data-leitfall-zeile]` bleibt
      vorerst am Markup stehen: über die Zukunft des Schalters entscheidet
      W2·24-D35-F2 (Kopf-Entlastung), und ein Marker, den F2 gerade begutachtet,
-     wird hier nicht nebenbei mitgenommen. */
+     wird hier nicht nebenbei mitgenommen.
+     ERGÄNZT 2.10.2026: der Marker ist mit `BezuegeZeile`/`LeitfallZeile` gelöscht
+     (Rückbau W2·17-UI-BEFUNDE). */
 
   /* ── Ä1 (LESER-V3 H2b) · die Polsterung, die der V3-Kopf verschluckt ────────
      Der Route-Wrapper polstert den Seiteninhalt oben (`py-8 sm:py-12` in
@@ -2207,17 +2249,6 @@
   /* Feinschrift (Copyright/Disclaimer-Zeilen) — eigene Rolle statt das
      lc-overline mit normal-case + Inline-letter-spacing zweckzuentfremden. */
   .lc-fineprint { font-family: var(--font-sans), system-ui, sans-serif; font-size: .6875rem; line-height: 1.5; letter-spacing: .01em; color: var(--ink-600); } /* ink-500→ink-600 (Auftrag David 25.6.2026): 11px-Feinschrift 4.85:1→7.2:1 */
-
-  /* W2·19-GLIEDERUNG/S7 · Artikel-Kontext-Block im KontextPanel
-     (components/kontext/KontextPanel.tsx, Bau-Spec §5.2 «höhenfester Block»).
-     Vier einzeilige Rollen-Zeilen (Praxis · Verweise · Änderung · Werkzeuge) zu
-     je 1.375em = 5.5em, `overflow:hidden` als Riegel. Der Inhalt wechselt beim
-     SCROLLEN — also ohne Nutzer-Input, also CLS-pflichtig (§15.2). Eine feste
-     Höhe ist hier das einzig tragfähige Mittel: sie hält auch dann, wenn ein
-     Artikel vier volle Zeilen hat und der nächste nur den Leer-Satz.
-     `height` statt `min-height`: Anatomie, keine Trefferflächen-Untergrenze
-     (F9-Abgrenzung, src/tests/tap-ziel-token.test.ts). */
-  .lc-artikelkontext { line-height: 1.375; height: 5.5em; overflow: hidden; }
 
   /* Signature-Element neu: Messing-Akzentlinie (Designsystem §4) —
      Haarlinie mit kurzem, nach rechts auslaufendem Messing-Akzent.
@@ -2913,54 +2944,10 @@
     vertical-align: .28em;
   }
 
-  /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
-     «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
-     Linie, waagrecht durchscrollbar.
-
-     SCROLL-AFFORDANZ OHNE SCROLLBALKEN-LÄRM und OHNE JavaScript: die klassische
-     Schatten-Technik aus zwei Verlaufs-Paaren. Das erste Paar ist in `local`
-     verankert (scrollt MIT dem Inhalt) und deckt in Papierfarbe ab; das zweite
-     ist in `scroll` verankert (bleibt am Rand stehen) und zeichnet den Schatten.
-     Wo nichts mehr kommt, schiebt die Abdeckung den Schatten weg — der Hinweis
-     erscheint also genau dann, wenn es etwas zu holen gibt, und verschwindet am
-     Ende von selbst. Eine JS-Variante bräuchte einen Scroll-Listener JE LINIE,
-     bei 1'000 Artikeln also Tausende; das wäre die Idle-Herde aus W2·7-VZUI
-     (§15.4) für einen Verlauf.
-
-     Der Balken selbst bleibt dünn und farblos (`scrollbar-width: thin`,
-     transparenter Track): sichtbar genug, dass die Geste erkennbar ist, leise
-     genug, dass vier Linien untereinander nicht wie ein Gitter aussehen
-     (DESIGN-REGLEMENT F1: Gruppierung über Weissraum, nicht über Rahmen).
-
-     `overscroll-behavior-x: contain` verhindert, dass ein Wisch am Ende der
-     Linie die Seite mitzieht oder die Browser-Zurück-Geste auslöst — auf dem
-     Telefon sonst der sichere Weg versehentlich aus dem Artikel heraus.
-     `scroll-padding-inline` hält den Chip, den die Tab-Taste anspringt, vom
-     Rand weg. */
-  .lc-bezug-linie {
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) transparent;
-    overscroll-behavior-x: contain;
-    scroll-padding-inline: 8px;
-    background:
-      linear-gradient(to right, var(--paper) 40%, transparent) left center / 20px 100% no-repeat local,
-      linear-gradient(to left, var(--paper) 40%, transparent) right center / 20px 100% no-repeat local,
-      radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / .10), transparent) left center / 10px 100% no-repeat scroll,
-      radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / .10), transparent) right center / 10px 100% no-repeat scroll;
-  }
-  /* Dunkel: der Schatten muss HELL sein, sonst ist er auf dunklem Papier
-     unsichtbar — dieselbe Geometrie, umgekehrte Tinte. */
-  html.dark .lc-bezug-linie {
-    background:
-      linear-gradient(to right, var(--paper) 40%, transparent) left center / 20px 100% no-repeat local,
-      linear-gradient(to left, var(--paper) 40%, transparent) right center / 20px 100% no-repeat local,
-      radial-gradient(farthest-side at 0 50%, rgb(255 255 255 / .12), transparent) left center / 10px 100% no-repeat scroll,
-      radial-gradient(farthest-side at 100% 50%, rgb(255 255 255 / .12), transparent) right center / 10px 100% no-repeat scroll;
-  }
-  .lc-bezug-linie::-webkit-scrollbar { height: 4px; }
-  .lc-bezug-linie::-webkit-scrollbar-track { background: transparent; }
-  .lc-bezug-linie::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
-
+  /* ─── Die scrollbare Instanz-Linie `.lc-bezug-linie` (W2·7-BEZUG/B7) — GELÖSCHT ──
+     RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): ihr einziger Verwender, `BezuegeZeile`,
+     ist zurückgebaut. Die Scroll-Affordanz-Technik (Schatten-Paare `local`/`scroll`)
+     lebt in `.lc-scrollrand-x` weiter. */
   /* ─── `lc-wortumbruch` · EIN LANGES WORT SPRENGT SEINE SPALTE NICHT (R8, 7.9.2026) ─
      Deutsch-schweizerisches Rechtsvokabular besteht aus Komposita: «Datenschutz-
      erklärung», «Generalversammlungsbeschlüssen», «Rechtsprechung». Ein solches
@@ -3008,8 +2995,9 @@
      Scrollern (`ui/Tabs.tsx`, `SachgebietKacheln`, Panel-Reiterleiste,
      Gliederungs-Scroller) wären vier Kopien, die beim ersten Nachjustieren
      auseinanderlaufen (§5/§10). Die Anatomie ist wortgleich die der
-     `.lc-bezug-linie` darüber — deren Fassung bleibt unangetastet, weil sie
-     zusätzlich einen sichtbaren dünnen Balken führt (Entscheid David 28.7.2026).
+     `.lc-bezug-linie` (damals darüber, seit 2.10.2026 gelöscht) — deren Fassung
+     blieb unangetastet, weil sie zusätzlich einen sichtbaren dünnen Balken führte
+     (Entscheid David 28.7.2026).
 
      `--lc-scrollrand-grund` ist der DECKEL-Ton: er muss der Fläche entsprechen,
      auf der der Scroller sitzt, sonst deckt er mit der falschen Farbe ab.
@@ -3018,8 +3006,12 @@
      strich-Leiste B-R1 ohne Verwender, mit REST S2/VS-08 gelöscht). Nur `background-image`/-size/
      -position, nie die `background`-Kurzform: sonst löschte die Klasse die
      Tailwind-Fläche (`bg-surface`) mit. */
+  /* W2·17-UI-BEFUNDE H6-D01 / B3-D01 (1.10.2026): ein Behälter, der seine Fläche
+     über `--leser-leiste-flaeche` nennt (das Gliederungs-Sheet, `paper-raised`),
+     gilt auch für den Deckel — sonst malte er im Dunkelmodus `--paper` als
+     22-px-Band auf die hellere Sheet-Fläche. Ohne diese Variable bleibt `--paper`. */
   .lc-scrollrand-x,
-  .lc-scrollrand-y { --lc-scrollrand-grund: var(--paper); }
+  .lc-scrollrand-y { --lc-scrollrand-grund: var(--leser-leiste-flaeche, var(--paper)); }
 
   .lc-scrollrand-x {
     background-image:
@@ -4334,16 +4326,31 @@
 
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */
-  @keyframes lc-ziel-blink { 0% { background: var(--brass-100); } 100% { background: transparent; } }
+  /* W2·17-UI-BEFUNDE (2.10.2026): Startfläche `--such-sprung` statt `--brass-100`
+     (vorher rund 1.1:1 gegen das Papier, kaum zu sehen) — Herleitung und Werte
+     am Token. Trifft den Sprung aus Trefferliste, Hash und Gliederung gleich. */
+  @keyframes lc-ziel-blink { 0% { background: var(--such-sprung); } 100% { background: transparent; } }
   .lc-ziel-blink { animation: lc-ziel-blink 2.4s var(--ease); border-radius: 0; } /* R1-11 */
 
   /* A35 (David 16.7.2026): Treffer-Highlight der In-Gesetz-Suche («Vertrag» im OR
      gehighlighted). Reine PAINT-Schicht über die bestehenden Text-Knoten (CSS
      Custom Highlight API, suchHighlight.ts) — keine DOM-Mutation, kein Reflow
-     (CLS 0). Messing-Tönung + volle Tinte. --brass-200 UND --ink-900 kippen beide
-     über html.dark (hell: helles Tan + dunkle Tinte; dunkel: dunkles Messing +
-     helle Tinte) → EINE Regel trägt AA in beiden Themes (§13/F2), kein Override. */
-  ::highlight(lc-such-treffer) { background-color: var(--brass-200); color: var(--ink-900); }
+     (CLS 0). W2·17-UI-BEFUNDE (Entscheid David 2.10.2026): Fläche ≥ 3:1 gegen das
+     Papier, Tinte darauf ≥ 4.5:1 — hell UND dunkel. Beide Tokens kippen über
+     html.dark (`--such-treffer`, `--such-treffer-tinte`, Werte und Herleitung dort)
+     → EINE Regel trägt in beiden Themes (§13/F2), kein Override. Vorher
+     `--brass-200`/`--ink-900`: nur 1.24:1 hell / 1.29:1 dunkel. */
+  ::highlight(lc-such-treffer) { background-color: var(--such-treffer); color: var(--such-treffer-tinte); }
+  /* AKTIVE Fundstelle (Enter/Weiter, Sprungziel; `SUCH_HIGHLIGHT_AKTIV`, Vorrang 1):
+     die Umkehrung der Treffer-Fläche — hell dunkles Braun, dunkel helles Sand —
+     gerechnet ≥ 3:1 gegen den normalen Treffer (hell 3.49:1 / dunkel 3.57:1),
+     Tinte darauf ≥ 4.5:1 (11.35 / 10.38); ZUSÄTZLICH unterstrichen, damit der
+     Unterschied nicht allein an der Farbe hängt (WCAG 1.4.1). Der Sprung-Blink am
+     Ziel-Artikel (`lc-ziel-blink`) bleibt der flüchtige Hinweis, wo man gelandet ist. */
+  ::highlight(lc-such-aktiv) {
+    background-color: var(--such-aktiv); color: var(--such-aktiv-tinte);
+    text-decoration: underline; text-decoration-thickness: 2px;
+  }
 
   .lc-live { display: inline-flex; align-items: center; gap: .4rem; }
   /* F1: Live-Punkt = Zustand «live/ok» → --ok-Rolle (wertidentisch zu sage). */
@@ -4411,9 +4418,9 @@
 
 /* ═══ LESER · ARTIKELFUSS — WAS CSS TRAGEN MUSS (W2·29-WERKBANK-LESER S1) ═════
    Die FORM von Artikelkopf, Funktionszeile, Aktionen und Rubrik-Listen steht
-   seit S1 (23.9.2026) als Token-Utility am Bauteil (`parts/Funktionszeile.tsx`,
-   `ArtikelAktionen.tsx`, `ArtikelLeser.bezuegeFuss.tsx`, `BezuegeZeile.tsx`,
-   `ArtikelLeser.tsx`); die gelöschten `.lr6-`/`.lr7-kopf*`/`.lr7-bez*`-Regeln
+   seit S1 (23.9.2026) als Token-Utility am Bauteil (`ArtikelAktionen.tsx`,
+   `ArtikelLeser.bezuegeFuss.tsx`, `ArtikelLeser.tsx`; `Funktionszeile.tsx` und
+   `BezuegeZeile.tsx` sind seit 24.9./2.10.2026 gelöscht); die gelöschten `.lr6-`/`.lr7-kopf*`/`.lr7-bez*`-Regeln
    und ihre Herleitungen stehen im Git-Verlauf dieser Datei. Hier bleibt, was an
    einem Zustand AUSSERHALB des Bauteils hängt oder geteilt ist. Die
    Klassennamen `.lr7-bez*` bleiben als Sonden-Anker (Inventar N8). */

@@ -83,8 +83,8 @@ describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () =
     'pages/gesetz-leser/v3/PanelMaterialien.tsx',
     'pages/gesetz-leser/v3/PanelEntscheide.tsx',
     'components/kontext/KontextGruppe.tsx',
-    // R4-B: vom App-weiten Sweep gefunden, nicht von der Liste.
-    'pages/gesetz-leser/parts/BezuegeZeile.tsx',
+    // (R4-B nannte hier `parts/BezuegeZeile.tsx`; die Datei ist seit dem Rückbau
+    // 2.10.2026 gelöscht, ihr Eintrag fällt mit ihr.)
   ];
 
   it('KEINE Fläche der App zeichnet das dichte Rezept noch selbst', () => {

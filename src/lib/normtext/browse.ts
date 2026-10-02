@@ -8,8 +8,8 @@ import type { KantonSystematik } from './systematik';
 import { randtitelKnoten } from './darstellung';
 import { normtextDateiUrl } from './dateiUrl';
 
-// ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
-let manifestPromise: Promise<BrowseManifest | null> | null = null;
+// ── Manifest (einmal, gecacht als laufende Promise; Fehlschläge nicht, s. u.) ─
+let manifestPromise: Promise<BrowseManifest> | null = null;
 
 // ── Kantonale Systematik-Bäume (einmal, gecacht) — für die Sachgebiets-Gliederung
 let systematikPromise: Promise<Record<string, KantonSystematik>> | null = null;
@@ -89,35 +89,66 @@ export async function ladeCurrency(): Promise<CurrencyMap> {
   return currencyPromise;
 }
 
-export async function ladeBrowseManifest(): Promise<BrowseManifest | null> {
+/** Das Register, STRENG: wirft bei jedem Ladefehler (Netz, 5xx, 404, Parse).
+ *  W2·17-UI-BEFUNDE PA-3-B02: ein gescheiterter Abruf wird NICHT gecacht — der
+ *  Cache-Eintrag fällt, der nächste Zugriff holt neu (wie `ladeErlassDatei`,
+ *  O-1.7). Vorher hielt `manifestPromise` das `null` bis zum Neuladen des Tabs,
+ *  und jede Erlass-Adresse hiess danach «nicht im Bestand». Das Register selbst
+ *  zu vermissen (404) ist kein «nicht vorhanden» im Sinne einer Auskunft über
+ *  einen Erlass, sondern eine kaputte Auslieferung — ebenfalls Ladefehler. */
+function ladeBrowseManifestStreng(): Promise<BrowseManifest> {
   if (!manifestPromise) {
-    manifestPromise = (async () => {
-      try {
-        const res = await fetch('/normtext/register.json');
-        if (!res.ok) return null;
-        return (await res.json()) as BrowseManifest;
-      } catch {
-        return null;
-      }
+    const p = (async () => {
+      const res = await fetch('/normtext/register.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status} für /normtext/register.json`);
+      return (await res.json()) as BrowseManifest;
     })();
+    p.catch(() => {
+      if (manifestPromise === p) manifestPromise = null;
+    });
+    manifestPromise = p;
   }
   return manifestPromise;
 }
 
-/** Findet den Erlass-Eintrag eines Schlüssels (key) im Manifest. */
+/** Das Register oder `null`, wenn es nicht geladen werden konnte. `null` heisst
+ *  hier NUR «kein Register da» — wer zwischen «Erlass nicht im Register» und
+ *  «Register nicht erreichbar» unterscheiden muss, nimmt `ladeErlassStreng`. */
+export async function ladeBrowseManifest(): Promise<BrowseManifest | null> {
+  try {
+    return await ladeBrowseManifestStreng();
+  } catch {
+    return null;
+  }
+}
+
+/** Findet den Erlass-Eintrag eines Schlüssels (key) im Register: `null` = der
+ *  Schlüssel steht NICHT im Register (gültige Auskunft); WIRFT, wenn das
+ *  Register nicht geladen werden konnte (Ladefehler, PA-3-B01). */
+export async function ladeErlassStreng(key: string): Promise<BrowseErlass | null> {
+  const m = await ladeBrowseManifestStreng();
+  return m.erlasse.find((e) => e.key === key) ?? null;
+}
+
+/** Wie `ladeErlassStreng`, aber ohne Unterscheidung: `null` auch bei Ladefehler. */
 export async function ladeErlass(key: string): Promise<BrowseErlass | null> {
-  const m = await ladeBrowseManifest();
-  return m?.erlasse.find((e) => e.key === key) ?? null;
+  try {
+    return await ladeErlassStreng(key);
+  } catch {
+    return null;
+  }
 }
 
 // ── Volltext-Datei eines Erlasses (lazy, gecacht) ────────────────────────────
 const dateiCache = new Map<string, Promise<NormSnapshotDatei | null>>();
 
-/** Lädt die Snapshot-Datei eines Erlasses (BrowseErlass.datei, z.B. 'bund/OR.json').
- *  Transiente Fehler (5xx/Netz/Parse) werden NICHT gecacht (O-1.7): der
- *  Cache-Eintrag wird bei Fehlschlag verworfen, der nächste Zugriff versucht neu;
- *  nur echte 404 (Datei existiert nicht) bleibt als null gecacht. */
-export function ladeErlassDatei(datei: string): Promise<NormSnapshotDatei | null> {
+/** Lädt die Snapshot-Datei eines Erlasses (BrowseErlass.datei, z.B. 'bund/OR.json'),
+ *  STRENG: `null` = die Datei existiert nicht (echte 404, bleibt als null
+ *  gecacht); WIRFT bei jedem anderen Fehler (5xx/Netz/Parse) — W2·17-UI-BEFUNDE
+ *  PA-3-B01: der Leser behauptete bei einem Funkloch «nicht im Bestand».
+ *  Transiente Fehler werden NICHT gecacht (O-1.7): der Cache-Eintrag wird bei
+ *  Fehlschlag verworfen, der nächste Zugriff versucht neu. */
+export function ladeErlassDateiStreng(datei: string): Promise<NormSnapshotDatei | null> {
   let p = dateiCache.get(datei);
   if (!p) {
     const url = normtextDateiUrl(datei);
@@ -133,7 +164,13 @@ export function ladeErlassDatei(datei: string): Promise<NormSnapshotDatei | null
     });
     dateiCache.set(datei, p);
   }
-  return p.then((x) => x, () => null);
+  return p;
+}
+
+/** Wie `ladeErlassDateiStreng`, aber ohne Unterscheidung: `null` auch bei
+ *  Ladefehler (O-1.7: der Fehler wird dennoch nicht gecacht). */
+export function ladeErlassDatei(datei: string): Promise<NormSnapshotDatei | null> {
+  return ladeErlassDateiStreng(datei).then((x) => x, () => null);
 }
 
 // ── Gruppieren / Filtern (rein, testbar) ─────────────────────────────────────
@@ -242,10 +279,10 @@ export type ZaehlBlock = Record<string, [entscheide: number, materialien: number
 interface StrukturDoc { artikel?: StrukturMap; kopf?: ErlassKopf; zaehler?: ZaehlBlock }
 const strukturCache = new Map<string, Promise<StrukturDoc | null>>();
 
-/** Lädt das Struktur-Sidecar-Dokument (Gliederung/Marginalien + Erlass-Kopf), lazy/gecacht.
- *  Transiente Fehler werden NICHT gecacht (O-1.7): Cache-Eintrag bei Fehlschlag
- *  verworfen (nächster Zugriff neu); nur echte 404 bleibt als null gecacht. */
-function ladeStrukturDoc(ebene: string, key: string): Promise<StrukturDoc | null> {
+/** Lädt das Struktur-Sidecar-Dokument (Gliederung/Marginalien + Erlass-Kopf), lazy/gecacht,
+ *  STRENG: `null` = echte 404 (bleibt gecacht); WIRFT bei Netz-/5xx-/Parse-Fehler
+ *  und verwirft den Cache-Eintrag (O-1.7: der nächste Zugriff holt neu). */
+function ladeStrukturDocStreng(ebene: string, key: string): Promise<StrukturDoc | null> {
   const url = normtextDateiUrl(`struktur/${ebene}/${key}.json`);
   let p = strukturCache.get(url);
   if (!p) {
@@ -260,7 +297,13 @@ function ladeStrukturDoc(ebene: string, key: string): Promise<StrukturDoc | null
     });
     strukturCache.set(url, p);
   }
-  return p.then((x) => x, () => null);
+  return p;
+}
+
+/** Wie `ladeStrukturDocStreng`, aber `null` auch bei Ladefehler (Gliederung/Kopf
+ *  fehlen dann sichtbar; nichts wird gecacht). */
+function ladeStrukturDoc(ebene: string, key: string): Promise<StrukturDoc | null> {
+  return ladeStrukturDocStreng(ebene, key).then((x) => x, () => null);
 }
 
 /** Lädt die Struktur-Sidecar (Gliederung+Marginalien je Artikel-Token), lazy/gecacht. */
@@ -274,9 +317,12 @@ export function ladeErlassKopf(ebene: string, key: string): Promise<ErlassKopf |
 }
 
 /** Lädt die Bezüge-Zähler aus demselben Sidecar (geteilter Cache, KEIN eigener
- *  Fetch — genau das ist der Punkt von W2·26-FUNKTIONSZEILE-ZAEHLER). */
+ *  Fetch — genau das ist der Punkt von W2·26-FUNKTIONSZEILE-ZAEHLER).
+ *  STRENG (W2·17-UI-BEFUNDE PE-E7-B02): `null` = kein Sidecar bzw. keine Zähler
+ *  (gültige Auskunft); WIRFT bei Netz-/5xx-Fehler, damit der Aufrufer den
+ *  Ladefehler nicht mit «keine Zähler» verwechselt und neu laden kann. */
 export function ladeBezuegeZaehler(ebene: string, key: string): Promise<ZaehlBlock | null> {
-  return ladeStrukturDoc(ebene, key).then((d) => d?.zaehler ?? null);
+  return ladeStrukturDocStreng(ebene, key).then((d) => d?.zaehler ?? null);
 }
 
 /** Ein Knoten der amtlichen Gliederung (Teil → Titel → Abschnitt …). */

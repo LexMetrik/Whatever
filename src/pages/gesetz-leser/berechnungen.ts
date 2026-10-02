@@ -340,3 +340,17 @@ export function fnNrSortKey(nr: string | undefined): [number, string] {
   const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
   return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
 }
+
+/** Vergleich zweier Fussnoten-Nummern in Anzeige-Ordnung (Nummer, dann Suffix;
+ *  nicht parsbare ans Ende, untereinander stabil). W2·17-UI-BEFUNDE PE-C9-B04:
+ *  Suchindex (`leserSuche.ts`) und Apparat müssen dieselbe Ordnung tragen — zwei
+ *  Ordnungen hiessen «Fundstelle 2 = Fussnote 34» in der Liste und «Fussnote 35»
+ *  im Sprung. EHRLICH (Gegenprüfung #1266): geteilt ist der SCHLÜSSEL
+ *  (`fnNrSortKey`); der Vergleich steht noch zweimal — hier und als Inline-Sort
+ *  in `fussnotenAnzeige` (`parts/ArtikelLeser.fussnoten.ts`, andere Session,
+ *  Nachzug: dort `vergleicheFnNr` aufrufen). Sie sind heute identisch, aber nicht
+ *  per Konstruktion. */
+export function vergleicheFnNr(a: string | undefined, b: string | undefined): number {
+  const ka = fnNrSortKey(a), kb = fnNrSortKey(b);
+  return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
+}

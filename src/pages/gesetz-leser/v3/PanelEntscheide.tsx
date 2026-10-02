@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
@@ -9,11 +9,13 @@ import {
 } from '../../../lib/verzahnung/artikel-revisionen';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
-import type { Histogramm, Zeitbereich } from '../bezugZeit';
+import { zahl } from '../bezugPortion';
+import { leereEntscheideSatz } from '../artikelBezeichnung';
+import { istBereichOffen, type Histogramm, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import {
-  ERSTE_PORTION, datumInZitierung, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide, regesteTeil,
-  weitereText, type EntscheidGruppe,
+  ERSTE_PORTION, datumInZitierung, gefiltertSatz, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide,
+  regesteTeil, weitereText, type EntscheidGruppe,
 } from './entscheideOrdnung';
 import { PanelFilterZeile } from './PanelFilterZeile';
 import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideKontext';
@@ -127,12 +129,13 @@ function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
   // Teil-Kennzeichen wird benannt statt nackt gesetzt (Herleitung an den
   // Funktionen in `./entscheideOrdnung`).
   const regeste = b.regesteKurz ? regesteTeil(b.regesteKurz) : null;
+  // PE-E1-B01: Platzhalterdatum (`datumUnbekannt`) als «2025, o. D.», nie als echtes Datum (§8).
   return (
     <li data-v3-panel-entscheid={b.key} className="border-l-2 border-t border-line border-l-reg-r py-2 pl-2.5">
       <KanteMitVorschau
         ziel={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
         zitierung={b.zitierung}
-        sublabel={datumInZitierung(b.zitierung) ? undefined : datumAnzeige(b.datum)}
+        sublabel={datumInZitierung(b.zitierung) ? undefined : datumAnzeige(b.datum, b.datumUnbekannt)}
         kurztext={b.regesteKurz}
         statusLabel={statusLabel}
         revidiert={revidiert} />
@@ -156,11 +159,16 @@ function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
  * sichtbaren Eintrag — beim letzten Schritt verschwindet der Knopf, und der
  * Fokus fiele sonst ins Nichts.
  */
-function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revisionShard }: {
-  g: EntscheidGruppe; artikelLabel: string | null; bestimmungsWort: BestimmungsWort; normZitat: string;
+function Gruppe({ g, gesamt, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revisionShard }: {
+  g: EntscheidGruppe; gesamt: number; artikelLabel: string | null; bestimmungsWort: BestimmungsWort; normZitat: string;
   aktArtikel: string | null; revisionShard: RevisionShard | null;
 }) {
-  const [sichtbar, setSichtbar] = useState(Math.min(ERSTE_PORTION, g.liste.length));
+  // PE-E1-B03/E2-B01: gemerkt wird die GEWÜNSCHTE Portion, nicht `min(5, Gruppengrösse)`
+  // beim Mounten (das fror ein: mit 2 eingeblendet, nach dem Weiten blieb es bei 2).
+  const [portion, setPortion] = useState(ERSTE_PORTION);
+  const sichtbar = Math.min(portion, g.liste.length);
+  const [hinweisOffen, setHinweisOffen] = useState(false);
+  const hinweisId = useId();
   const listeRef = useRef<HTMLUListElement>(null);
   const fokusAb = useRef<number | null>(null);
   useEffect(() => {
@@ -171,6 +179,8 @@ function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revis
   }, [sichtbar]);
   const offen = g.liste.length - sichtbar;
   const statusLabel = STATUS_LABEL[g.status];
+  // PE-E5-B02: verkürzt der Zeitraum die Gruppe, sagt der Kopf «2 von 8» (§8).
+  const zahlTeil = gesamt > g.liste.length ? `${zahl(g.liste.length)} von ${zahl(gesamt)}` : g.liste.length;
   return (
     <section data-v3-panel-gruppe={g.status} data-v3-panel-gericht={g.gericht ?? undefined}
       data-v3-panel-gruppe-zahl={g.liste.length} className="pt-2 first:pt-1">
@@ -180,18 +190,27 @@ function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revis
           (Ä106). Sein `normal-case` bleibt (anders als am Zähler ist es
           dort NICHT tot: `text-transform: uppercase` bildet «ⓘ»
           U+24D8 auf «Ⓘ» U+24BE ab). Die Zahl ist die GANZE Gruppe — was
-          davon noch aussteht, sagt der Knopf am Ende (eine Zahl je Aussage). */}
+          davon noch aussteht, sagt der Knopf am Ende (eine Zahl je Aussage).
+          PE-E1-D01: das ⓘ ist ein Knopf (Tastatur, Touch), `lc-btn-mini` = Haus-Rezept
+          mit 24-px-Fläche (F9); Rand ruhig durchsichtig, `-my-1` hält die Zeilenhöhe. */}
       <GruppenKopf
         als="p" dicht
-        title={`${g.gericht ? g.titel : statusLabel} — ${g.liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}
+        title={`${g.gericht ? g.titel : statusLabel} — ${zahlTeil} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}
         titel={g.titel}
-        zahl={g.liste.length}
+        zahl={zahlTeil}
         markeStellung="rechts"
         marke={traegtWeiterzugHinweis(g.liste) ? (
-          <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
-            className="ml-1 normal-case font-normal text-ink-500">ⓘ</span>
+          <button type="button" onClick={() => setHinweisOffen((v) => !v)}
+            aria-expanded={hinweisOffen} aria-controls={hinweisOffen ? hinweisId : undefined}
+            aria-label="Was der Klammerzusatz zum Bundesgericht bedeutet" title={WEITERZUG_ERKLAERUNG}
+            className="lc-btn-mini -my-1 ml-0.5 border-transparent normal-case font-normal text-ink-500">ⓘ</button>
         ) : undefined}
       />
+      {hinweisOffen && (
+        <p id={hinweisId} data-v3-panel-weiterzug-hinweis className="mt-0.5 text-micro leading-snug text-ink-600">
+          {WEITERZUG_ERKLAERUNG}
+        </p>
+      )}
       <ul ref={listeRef} className="mt-0.5">
         {g.liste.slice(0, sichtbar).map((b) => (
           <Fundstelle key={b.key} b={b} normZitat={normZitat} statusLabel={statusLabel}
@@ -200,7 +219,7 @@ function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revis
       </ul>
       {offen > 0 && (
         <button type="button" data-v3-panel-weitere={g.id}
-          onClick={() => { fokusAb.current = sichtbar; setSichtbar(naechsteMenge(sichtbar, g.liste.length)); }}
+          onClick={() => { fokusAb.current = sichtbar; setPortion(naechsteMenge(sichtbar, g.liste.length)); }}
           aria-label={`${weitereText(sichtbar, g.liste.length)} — ${g.titel} anzeigen`}
           className="lc-btn-ghost lc-btn-sm mt-1 min-h-11 text-ink-700">
           {weitereText(sichtbar, g.liste.length)}
@@ -305,6 +324,12 @@ export function PanelEntscheide({
   onBereich: (von: string, bis: string) => void;
 }) {
   const gruppen = ordneEntscheide(kanten ?? []);
+  // PE-E5-B02: Gesamtbestand je Gruppe nur bei wirkendem Zeitraum (Kanton/Instanz
+  // schneiden ganze Gruppen ab, nie Zeilen; kein zweiter Gruppierungslauf sonst, §15).
+  const gesamtJeGruppe = istBereichOffen(bereich) ? null
+    : new Map(ordneEntscheide(alleKanten ?? []).map((g) => [g.id, g.liste.length]));
+  const gefiltert = gruppen.length === 0
+    ? gefiltertSatz({ artikelLabel, alle: alleKanten, klassen, kantone, bereich }) : null;
   const zahlOrt = artikelLabel ? `an ${artikelLabel}` : `an ${bestimmungDativ(bestimmungsWort)}`;
 
   return (
@@ -324,11 +349,13 @@ export function PanelEntscheide({
       </p>
 
       {/* ── Fundstellen des gelesenen Artikels ────────────────────────────────
-          §8, VIER ZUSTÄNDE, VIER SÄTZE — nie derselbe für zwei Lagen:
+          §8, FÜNF ZUSTÄNDE, FÜNF SÄTZE — nie derselbe für zwei Lagen:
            · Facetten alle aus  → «Keine Instanz eingeschaltet» (Bedien-Zustand)
            · Laden gescheitert  → «konnte nicht geladen werden» (Leitungs-Zustand, S6-W1b)
            · lädt              → «wird geladen» (Wissens-Zustand)
            · geladen und leer  → «keine erfasst» (Bestands-Zustand)
+           · geladen, Filter blendet alles aus → «N erfasst, keiner im gewählten …»
+             (Filter-Zustand, W2·17 PE-E3-B01)
           Ein gemeinsames «keine Entscheide» hätte den Bedien- und den
           Bestands-Zustand vermischt: der Nutzer läse eine Aussage über den
           Korpus, wo eine über seinen eigenen Schalter stünde. Dasselbe galt
@@ -341,9 +368,12 @@ export function PanelEntscheide({
         </p>
       ) : fehler ? (
         <div data-v3-panel-lage="fehler" role="status" className="px-3 py-3 text-body-s text-ink-600">
+          {/* PE-E3-B02: der Selbst-Neuversuch hängt am `online`-Ereignis (`useBezuege`);
+              bei 5xx mit Verbindung feuert es nie — der Satz sagt, was geschieht. */}
           <p>
             Die Entscheide konnten nicht geladen werden. Das sagt nichts über den Bestand —
-            bei bestehender Verbindung wird es von selbst erneut versucht.
+            nach einem Verbindungsabbruch wird beim Wiederverbinden von selbst neu geladen,
+            sonst hilft «Erneut laden».
           </p>
           {onNeuLaden && (
             <button type="button" data-v3-panel-neu-laden onClick={onNeuLaden}
@@ -354,11 +384,12 @@ export function PanelEntscheide({
         </div>
       ) : !geladen ? (
         <p data-v3-panel-lage="laedt" className="px-3 py-3 text-body-s text-ink-600">Entscheide werden geladen …</p>
+      ) : gefiltert ? (
+        // PE-E3-B01: Zeitraum/Kanton blenden alles aus — eine Aussage über den Filter, nicht den Bestand.
+        <p data-v3-panel-lage="gefiltert" className="px-3 py-3 text-body-s text-ink-600">{gefiltert}</p>
       ) : gruppen.length === 0 ? (
         <p data-v3-panel-lage="bestand" className="px-3 py-3 text-body-s text-ink-600">
-          {artikelLabel
-            ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
-            : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
+          {leereEntscheideSatz(aktArtikel, artikelLabel, normZitat)}
           {/* K-2b: der Zusatz TRITT HINZU, er ersetzt die Bestandsaussage
               nicht — beide sind wahr, und die zweite erklärt die erste. */}
           {ebene === 'kanton' && (
@@ -373,7 +404,8 @@ export function PanelEntscheide({
               an BGG Art. 42 4144 Zeilen auf einmal baute (D-4). Der `key` mit
               Artikel setzt die Portion beim Artikelwechsel zurück. */}
           {gruppen.map((g) => (
-            <Gruppe key={`${aktArtikel ?? ''}|${g.id}`} g={g} artikelLabel={artikelLabel}
+            <Gruppe key={`${aktArtikel ?? ''}|${g.id}`} g={g} gesamt={gesamtJeGruppe?.get(g.id) ?? g.liste.length}
+              artikelLabel={artikelLabel}
               bestimmungsWort={bestimmungsWort} normZitat={normZitat}
               aktArtikel={aktArtikel} revisionShard={revisionShard} />
           ))}

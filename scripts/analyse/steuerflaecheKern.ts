@@ -57,16 +57,14 @@ export const FLAECHE: { re: RegExp; grund: string }[] = [
   { re: /^\.github\/workflows\//, grund: 'Prüfstrasse — Tor-Zuwachs sitzt hier' },
   { re: /^scripts\/check-[^/]*\.ts$/, grund: 'Tor-Hüllen — bisher zweiter gedeckelter Glob' },
   { re: /^scripts\/plan\//, grund: 'Plan-Werkzeuge (plan:next, check:plan, Lagebild)' },
-  // ERWEITERUNG 1: Prozess-Messung ist Steuerung. Der Ordner enthält
-  // ausschliesslich Mess- und Fremdagenten-Werkzeuge (keine Rechtslogik) und ist
-  // der nächstliegende Ausweich-Ordner für neue Steuerungs-Logik.
+  // ERWEITERUNG 1: Prozess-Messung ist Steuerung. Der Ordner enthält nur Mess- und
+  // Fremdagenten-Werkzeuge (keine Rechtslogik), nächster Ausweich-Ordner für Steuerungs-Logik.
   { re: /^scripts\/analyse\//, grund: 'Prozess-Messung (diese Datei eingeschlossen)' },
   // ERWEITERUNG 2: die Helfer, in die Tor-Hüllen ihre Logik auslagern. Ohne sie
   // wäre der `scripts/check-*.ts`-Deckel per Datei-Umzug jederzeit umgehbar —
   // genau die Bewegung, die `tor-paritaet-sonden.ts` (aus check-tor-paritaet.ts
   // herausgelöst, «Steuerungs-Flächendeckel») dokumentiert. Bewusst eine
-  // ABSCHLIESSENDE Liste statt `scripts/*.ts`: dort liegt überwiegend
-  // Produkt-/Datenwerkzeug, das nicht zur Steuerung zählt.
+  // ABSCHLIESSENDE Liste statt `scripts/*.ts` (dort überwiegend Produkt-/Datenwerkzeug).
   {
     re: /^scripts\/(dispatch|dispatch-cli|dispatch-agents|dispatch-agents-cli|tor-paritaet-sonden|fahrplan-slice|fahrplanSlicerKern|run-parallel|repo-map|aufraeumen-git)\.ts$|^scripts\/(gate|ci-log-diaet)\.sh$/,
     grund: 'Steuerungs-Helfer in scripts/ (Dispatch · Tor-Sonden · Gate-Runner)',
@@ -109,6 +107,7 @@ export const RECHTSSCHUTZ: Record<string, string> = {
   '.github/workflows/waechter.yml': 'Wächter über die Normen-/Korpus-Läufe',
   '.github/workflows/fedlex-frische.yml': 'Fedlex-Frische',
   '.github/workflows/normen-monitor.yml': 'Normen-/Verfall-Überwachung',
+  '.github/workflows/normen-monatslauf.yml': 'Monats-Vollabgleiche',
   '.github/workflows/korpus-raw-release.yml': 'Korpus-Rohdaten-Release',
   '.github/workflows/turso-sync.yml': 'Datenhaltung (DB-Sync)',
   '.github/workflows/rechtsprechung-wochenlauf.yml': 'Entscheid-Nachzug (Rechtsdaten-Kette)',

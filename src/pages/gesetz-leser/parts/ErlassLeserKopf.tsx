@@ -4,7 +4,7 @@ import type { CurrencyEintrag, ErlassKopf, KantonLueckeEintrag } from '../../../
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT,
-  nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
+  nichtKonsolidiertSatz, standausweisSatz,
 } from '../../../lib/normtext/erlassKopfText';
 import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
 import { NormText, type InternRefs } from '../../../components/NormText';
@@ -14,8 +14,9 @@ import { QuellLink } from '../../../components/ui/QuellLink';
 import { SeitenTitel } from '../../../components/ui/SeitenTitel';
 import { LeserKopfGeruest } from '../../../components/layout/LeserKopfGeruest';
 import { erlassKeyVonEli, erlassPfadVonKey } from '../../../lib/normtext/erlassAdresse';
-import { fnTextMitLinks, kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
+import { fnTextMitLinks, kennungEtikett, KENNUNG_NOWRAP_MAX_ZEICHEN, kopfTitelZeile } from '../helpers';
 import { zukunftsHinweis, type ZukunftsHinweis } from '../zukunftsfassungen';
+import { zaehlWortFuer } from '../v3/erlassWortlaut';
 
 // ═══ DAS TITELBLATT DES ERLASSES — EINE Komponente für alle Grundarten ═══════
 //
@@ -151,20 +152,14 @@ export function ErlassLeserKopf({
   /** Reader-InternRefs für die Ingress-Verlinkung (A11); fehlt im pdf-embed. */
   intern?: InternRefs;
 }) {
-  const titelOhneSuffix = titelOhneKlammerSuffix(erlass.titel);
-  const kuerzel = erlass.kuerzel.trim();
-  const titelRedundant = titelOhneSuffix.toLowerCase() === kuerzel.toLowerCase();
-  const titelZeile = !kuerzel || titelRedundant || kennung
-    ? (titelOhneSuffix || kuerzel)
-    : `${titelOhneSuffix} (${kuerzel})`;
-  const wort = zaehlWort(bestimmungsWort, kennzahlen);
+  const titelZeile = kopfTitelZeile(erlass, kennung);
   const lebt = !erlass.aufgehoben;
   const warnung = lebt && nichtKonsolidiert ? nichtKonsolidiertSatz(nichtKonsolidiertSeit) : null;
   const fakten = [
     erlass.sr
       ? <>{kennungEtikett(erlass) ? `${kennungEtikett(erlass)} ` : ''}<span className="num">{erlass.sr}</span></>
       : null,
-    artikelAnzahl != null ? <><span className="num">{artikelAnzahl}</span> {wort}</> : null,
+    artikelAnzahl != null ? <><span className="num">{artikelAnzahl}</span> {zaehlWortFuer(artikelAnzahl, bestimmungsWort, kennzahlen)}</> : null,
   ].filter(Boolean) as ReactNode[];
   const geltungUngeprueft = lebt && erlass.ebene === 'kanton' && !currency?.geprueftAm;
   const hinweisZukunft = zukunft !== undefined ? zukunft : zukunftsHinweis(erlass, currency);
@@ -200,7 +195,11 @@ export function ErlassLeserKopf({
           Teil desselben Namens; der Trenner ist `aria-hidden`. */}
       {kennung && (
         <>
-          <span data-kopf-kennung className="whitespace-nowrap">{kennung}</span>
+          {/* E-D16-B01: nur kurze Kennungen bleiben unteilbar; ein 35-Zeichen-
+              Kurztitel (BS-410.130) sprengte sonst die 318 px der Lesezelle @390. */}
+          <span data-kopf-kennung className={kennung.length <= KENNUNG_NOWRAP_MAX_ZEICHEN ? 'whitespace-nowrap' : undefined}>
+            {kennung}
+          </span>
           <span aria-hidden className="mx-2 font-normal text-ink-300">·</span>
         </>
       )}

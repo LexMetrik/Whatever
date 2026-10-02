@@ -1,6 +1,12 @@
 /**
  * V2·C-2 (Farb-Wörterbuch Teil 2, §4b-B) — Referenzschicht-Farbtöne.
  *
+ * ERGÄNZT 2.10.2026 (Rückbau Rechtsprechungs-Zeilen, W2·17-UI-BEFUNDE): Block (1)
+ * unten prüfte den Farbpunkt der «Leitfälle»-Overline an `LeitfallZeile` — die
+ * Komponente ist zurückgebaut (unerreichbar seit M3/B4), der Fall entfällt mit ihr.
+ * Der Punkt-Ton `lc-punkt-entscheid` lebt in `KontextGruppe` und ist durch
+ * `v2-c3-farbwoerterbuch.test.tsx` belegt.
+ *
  * Belegt die zwei C-2-Bausteine als reine Tick-/Punkt-Farbwahl (Anatomie
  * unverändert, CLS 0):
  *   (1) Overline-Farbpunkte: «Leitfälle» trägt den slate-Punkt (Rechtsprechung),
@@ -27,13 +33,9 @@
  */
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import { MemoryRouter } from 'react-router-dom';
-import { LeitfallZeile } from '../pages/gesetz-leser/parts/ArtikelLeser.leitfaelle';
 import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
-import type { NormSnapshot } from '../lib/normtext/typen';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { CurrencyEintrag } from '../lib/normtext/browse';
-import type { LeitfallRef } from '../lib/rechtsprechung/norm-index';
 import { naechsteFassungSatz, standausweisSatz } from '../lib/normtext/erlassKopfText';
 
 const erlass: BrowseErlass = {
@@ -43,48 +45,12 @@ const erlass: BrowseErlass = {
   pdfPfad: null,
 };
 
-const artMitLeitfall: NormSnapshot = {
-  id: 'bund/OR/art_41', ebene: 'bund', quelle: 'OR', erlass: 'OR', artikel: '41', artikelLabel: 'Art. 41',
-  bloecke: [{ absatz: '1', text: 'Wer einem andern widerrechtlich Schaden zufügt, wird ersatzpflichtig.' }],
-  stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-06-29', fassungsToken: '20260101', sha: 'x',
-};
-const leitfaelle: LeitfallRef[] = [
-  { key: 'bge_152_III_7', zitierung: 'BGE 152 III 7', regesteKurz: null, datum: '2025-03-07',
-    leitcharakter: 'leitentscheid', gericht: 'BGer', kanton: 'CH', gewicht: 3 },
-];
-
-// ── DEKLARIERTE ANPASSUNG (W2·24-D35-F1, 7.9.2026 — §6.3, kein Refactoring) ──
-// Die Sonde rendert bis hierher den GANZEN Artikel und suchte die
-// «Leitfälle»-Overline im Ergebnis. Das ging, solange die Bezüge-Rubriken auch
-// zugeklappt im DOM standen (`<details>`, D34). Seit D35-F1 klappt jede Rubrik
-// einzeln auf KLICK auf und rendert ihren Inhalt erst dann (David: «das alles
-// soll dann nur auf klick aufklappbar sein») — im SSR-Ausgabestring eines
-// frisch geladenen Artikels steht die Zeile also zu Recht nicht mehr.
-// Die ZUSAGE bleibt Wort für Wort dieselbe und wird jetzt an dem Baustein
-// gemessen, der sie trägt: `LeitfallZeile`. Das ist kein Nachführen eines
-// Belegs (§2b), sondern der engere Messpunkt — er kann nicht mehr dadurch grün
-// werden, dass ein Dritter die Zeile zufällig mitrendert.
-const ssrArtikel = () => renderToString(
-  <MemoryRouter>
-    <LeitfallZeile refs={leitfaelle} normZitat={`${artMitLeitfall.artikelLabel} ${erlass.kuerzel}`} />
-  </MemoryRouter>,
-);
-
 // Partial: die Real-Sidecars führen `geprueftAm` immer, aber der Renderer gated
 // jeden Chip einzeln (`currency?.geprueftAm && …`) — die Test-Matrix deckt darum
 // auch die Einzelfälle (nur künftige Fassung / leer) ab.
 const ssrKopf = (currency: Partial<CurrencyEintrag>) => renderToString(
   <ErlassLeserKopf erlass={erlass} overline="Bund" artikelAnzahl={1} hinweis="" currency={currency as CurrencyEintrag} />,
 );
-
-describe('C-2 (1) — Overline-Farbpunkt', () => {
-  it('«Leitfälle»-Overline trägt den slate-Punkt (aria-hidden, Rechtsprechung)', () => {
-    const out = ssrArtikel();
-    expect(out).toContain('Leitfälle');
-    expect(out).toContain('lc-punkt lc-punkt-entscheid');
-    expect(out).toContain('aria-hidden');
-  });
-});
 
 describe('C-2 (2) — Currency-Aussagen im Erlass-Kopf (S3-Fassung)', () => {
   it('Standausweis: F5-Wortlaut aus der EINEN Quelle, «(maschinell)» tragend', () => {

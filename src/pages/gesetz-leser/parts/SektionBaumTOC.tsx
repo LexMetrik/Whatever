@@ -389,7 +389,15 @@ const Zeile = memo(function Zeile({
           // springt — «erst beim zweiten Klick» waren zwei Ziele für eine
           // Absicht. NUR AUFKLAPPEN, NIE ZUKLAPPEN: sonst verschwände genau der
           // Abschnitt, zu dem er eben gesprungen ist; Zuklappen bleibt beim Pfeil.
-          aria-expanded={hatKinder ? auf : undefined}
+          // W2·17-UI-BEFUNDE B7 (2.10.2026): `aria-expanded` gehört dem KNOPF.
+          // Der Titel als Link (P8, adressierbar) ist Navigation, kein Klapp-
+          // Bedienelement — dass ein Klick darauf zusätzlich aufklappt, ist eine
+          // Begleitwirkung des Sprungs, kein zweiter Schalter. Mit `aria-expanded`
+          // am Link stand jede Zeile mit Kindern ZWEIMAL als einklappbar im
+          // Zugänglichkeitsbaum (Link + Pfeil-Knopf, gleiche Zeile, gleicher Name);
+          // der Klapp-Zustand steht jetzt allein am Pfeil-Knopf. Eine Zeile OHNE
+          // Adresse bleibt Knopf (`TocZeile`) und trägt ihn wie bisher.
+          aria-expanded={hatKinder && !sprungZiel ? auf : undefined}
           onClick={(ev) => {
             // Modifikator-/Mittelklick gehört dem Browser (neuer Reiter, neues
             // Fenster) — nur der schlichte Linksklick ist der Sprung.
@@ -453,12 +461,17 @@ const Zeile = memo(function Zeile({
               // der nächste tor-geprüfte Ton, der die Dämpfung behält.
               <span className="text-ink-500"> ({k.labelKette.slice(0, -1).join(' › ')})</span>
             )}
+            {/* Aufgehoben-Signal (§3.3, Inventar C «heute klappt man blind auf»):
+                sichtbarer Text, nicht nur `title`. Statisch je Knoten ⇒ kein CLS. */}
+            {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
+            {/* Nachzug A2 (30.9.2026): dasselbe Wort steht im Namen (`vollText`, klappNamen.ts). */}
+            {/* W2·17-UI-BEFUNDE B6-D01 (2.10.2026): INNERHALB der Klammer, wie im
+                flachen Artikel-Index (`ArtikelIndex`, dieselbe Stimme). Als Geschwister
+                des `line-clamp`-Blocks (display:flow-root) fiel das Wort auf eine
+                EIGENE Zeile und stand um das `ml-1` eingerückt — gemessen ZGB
+                «Art. 15»: 37 statt 20.5 px Zeilenhöhe, Wort 4 px rechts vom Etikett. */}
+            {wort && <span className="ml-1 text-micro text-ink-500">{wort}</span>}
           </span>
-          {/* Aufgehoben-Signal (§3.3, Inventar C «heute klappt man blind auf»):
-              sichtbarer Text, nicht nur `title`. Statisch je Knoten ⇒ kein CLS. */}
-          {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
-          {/* Nachzug A2 (30.9.2026): dasselbe Wort steht im Namen (`vollText`, klappNamen.ts). */}
-          {wort && <span className="ml-1 text-micro text-ink-500">{wort}</span>}
         </TocZeile>
         {/* Hier stand bis zum 9.8.2026 der adaptive Zählwert — gestrichen auf
             Entscheid David («keine relevante Information»), Herleitung oben. */}

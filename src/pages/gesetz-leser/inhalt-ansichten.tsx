@@ -13,6 +13,7 @@ import { UebersichtBox } from './v3/UebersichtBox';
 import { uebersichtsAngaben } from './v3/uebersichtAngaben';
 import { grundartMeta } from './helpers';
 import { GesetzFehlSeite } from './FehlSeite';
+import type { LeserFehler } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
@@ -94,7 +95,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
         overline={`${routenEbene(erlass) === 'international' ? 'Staatsvertrag' : ebeneAngabe(erlass).label} · amtliches PDF`}
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
-          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
+          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} aufgehoben={!!erlass.aufgehoben} />
         }
         // M5: der Ingress auch im pdf-embed-Pfad (ohne Struktur-Sidecar `null`).
         ingress={kopf} intern={internRefs} />
@@ -151,7 +152,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="lc-link text-brass-700 hover:text-brass-800">Amtliches PDF in neuem Tab öffnen ↗</a>
       </nav>
     </div>
@@ -202,7 +203,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} />}
       </nav>
     </div>
@@ -216,7 +217,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
 // Der Lade-Guard `!erlass || !eintraege` bleibt bewusst im Aufrufer: er ist dort
 // zugleich die TypeScript-Verengung, von der der ganze Volltext-Zweig lebt.
 export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs }: {
-  fehler: boolean;
+  fehler: LeserFehler;
   schluessel: string;
   manifest: BrowseManifest | null;
   erlass: BrowseErlass | null;
@@ -227,7 +228,7 @@ export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, k
   if (fehler) {
     // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
     // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
-    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} />;
+    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} fehler={fehler} />;
   }
   // ── A9 §15.2-Pin: Currency-Chips NICHT nachträglich einwachsen lassen ────────
   // Die Kopf-Chips «geltend geprüft am … / nächste Fassung ab …» (ErlassLeserKopf)

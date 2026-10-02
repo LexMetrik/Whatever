@@ -5,6 +5,9 @@ import type { BestimmungsWort } from './erlassAnsicht';
 import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { usePanelTafeln } from './PanelTafeln';
+import type { Geladen } from './panelKontextLaden';
+import type { HistorieShard } from '../../../lib/normtext/historie-laden';
+import type { InternRefs } from '../../../components/NormText';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { blattFlaeche } from './blattFlaeche';
@@ -85,7 +88,7 @@ import { BlattVerweise, type BlattArtikel } from './BlattArtikel';
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel, erlassSr, inkraftSeit, historie, intern,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
    *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die Tafeln
@@ -140,6 +143,14 @@ export function LeserPanelZone({
   /** S6 W1f (Entscheid David 24.9.2026) · Eintrag und Historie des aktiven
    *  Artikels — die Auskunft der gefallenen Funktionszeile (`./BlattArtikel`). */
   artikel: BlattArtikel | null;
+  /** E-D12-B01/E-D13-B01 · die Link-Weichen des Lesers (Ebene, Erlass, Kürzel) — `BlattVerweise` sammelt damit dieselben Links wie der Wortlaut. */
+  intern?: InternRefs;
+  /** W2·27-BUND-FERTIG P5 · SR-Nummer und Ur-Inkrafttreten des Erlasses (Register),
+   *  durchgereicht für «Erlass in Kraft seit …» im Reiter Änderungen (`./PanelTafeln`). */
+  erlassSr?: string | null;
+  inkraftSeit?: string | null;
+  /** P5 · B1: Historie-Shard des Lesers samt Bereitschaft (`historieStand`) — Sperre für «Erlass in Kraft seit»/«nichts erfasst». */
+  historie: Geladen<HistorieShard | null>;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -192,7 +203,7 @@ export function LeserPanelZone({
   const imPaneBlatt = paneZiel != null;
   const modal = !imPaneBlatt && form === 'unten';
   const spalte = form === 'spalte' && !imPaneBlatt;
-  useZurueckSchliesst(offen && modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
+  useZurueckSchliesst(offen, modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
   const wisch = useWischZu(panelRef, schliesse);
 
   usePopoverAutoZu({
@@ -218,7 +229,7 @@ export function LeserPanelZone({
   // Shard (§7b-Deckungslücke, normrevision-badge.e2e.ts) kommt von dort mit.
   const { tafeln, artikelRevisionen } = usePanelTafeln({
     erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt: artikel,
-    normZitat, wort: bestimmungsWort,
+    normZitat, wort: bestimmungsWort, erlassSr, inkraftSeit, historie,
   });
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
@@ -343,7 +354,7 @@ export function LeserPanelZone({
             data-v3-panel-artikel={aktArtikel ?? undefined}
             className={`${flaeche.klassen} flex flex-col`}
             style={flaeche.stil}>
-            <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
+            <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel} zitat={normZitat}
               bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt} bezug={aktArtikel}
               onSchliessen={schliesse} panelRef={panelRef}
@@ -363,7 +374,7 @@ export function LeserPanelZone({
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
               steckbrief={steckbrief}
               // S6 W1f: «Verweise … oben im Blatt», über jedem Reiter (Entscheid David 24.9.2026).
-              verweise={<BlattVerweise artikel={artikel} zitat={normZitat} wort={bestimmungsWort} />} />
+              verweise={<BlattVerweise artikel={artikel} zitat={normZitat} wort={bestimmungsWort} intern={intern} erlassKuerzel={erlassKuerzel} />} />
           </div>
         </>
       )}

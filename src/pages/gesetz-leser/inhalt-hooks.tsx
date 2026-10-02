@@ -6,7 +6,7 @@ import { merkeAnker, bezugslinie, ankerLandepunkt } from './scrollAnker';
 import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
-  ladeBrowseManifest, ladeErlass, ladeErlassDatei, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
+  ladeBrowseManifest, ladeErlassStreng, ladeErlassDateiStreng, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
   ladeKantonLuecken,
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap, type KantonLueckenMap,
 } from '../../lib/normtext/browse';
@@ -18,9 +18,11 @@ import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gli
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, markeInsSichtband, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import { darfAutoAdoptieren } from './sprungAst';
 import { mitlaufenKarte } from './klappKarte';
+import { NAVIGATION } from './parts/leserTastaturBelegung';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
+import type { LeserFehler } from './inhalt-zustand';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -78,7 +80,7 @@ export function useLeserDaten(opts: {
   setKantonLuecken: Dispatch<SetStateAction<KantonLueckenMap>>;
   setErlass: Dispatch<SetStateAction<BrowseErlass | null>>;
   setEintraege: Dispatch<SetStateAction<NormSnapshot[] | null>>;
-  setFehler: Dispatch<SetStateAction<boolean>>;
+  setFehler: Dispatch<SetStateAction<LeserFehler>>;
   /** A-1 (S6-W1a): Query und Anker der aufgerufenen Adresse — der Case-Redirect
    *  unten trägt sie mit. Aus dem Router des Aufrufers (im Pane ein eigener
    *  MemoryRouter), darum nicht `window.location`. */
@@ -91,58 +93,83 @@ export function useLeserDaten(opts: {
 
   useEffect(() => {
     let lebt = true;
-    void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
-    void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
+    // Jeder Ladedurchlauf trägt eine Nummer: ein überholter (Erneut-Klick während
+    // der Vorgänger noch läuft) schreibt keinen Zustand mehr.
+    let lauf = 0;
     // `ebene` ist die ROUTEN-Ebene aus der Adresse; die Dateien liegen unter der
     // DATEN-Ebene (Befund 45: `/gesetze/international/CISG` lädt
     // `/normtext/struktur/bund/CISG.json`). Ohne diese Übersetzung wäre der Umzug
     // ein STILLER Fehler — 404 auf das Sidecar heisst `null`, also Leser ohne
     // Gliederung und ohne Erlass-Kopf, während die Seite sonst normal aussieht.
     const daten = datenEbeneVonRoute(ebene);
-    void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
-    void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
-    // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
-    // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
-    if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
-    // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
-    // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
-    if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
-    void ladeErlass(schluessel).then(async (e) => {
-      if (!lebt) return;
-      if (!e) {
-        // W2·10-UI-NAV/N0b: Key case-insensitiv gegen das Register auflösen und auf
-        // die kanonische URL umleiten (/gesetze/bund/or → /gesetze/bund/OR). Nur bei
-        // EINDEUTIGEM Case-Treffer (kein Rate-Sprung); sonst ehrliche Fehlseite.
-        const m = await ladeBrowseManifest();
-        if (!lebt) return;
-        const roh = schluessel.toLowerCase();
-        const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
-        if (kandidaten.length === 1) {
-          const ziel = kandidaten[0];
-          // A-1 (Audit A, S6-W1a 23.9.2026): MIT Query und Anker — bis dahin
-          // landete `/gesetze/bund/or#art-41` auf `/OR` ohne `#art-41`, der
-          // Leser stand bei Art. 1 und das Blatt zeigte Art. 1. Dasselbe
-          // Muster wie der Adress-Umzug in `GesetzLeser.tsx` (④).
-          navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
+    // W2·17-UI-BEFUNDE PA-3-B01/B02: «nicht im Bestand» (nicht im Register, Datei
+    // 404) ist etwas anderes als ein Ladefehler (Netz/5xx). Das `fehler`-Feld DIESER
+    // Instanz trägt beides getrennt (`LeserFehler`): der Ladefehler bringt `erneut`
+    // der eigenen Instanz mit — kein Kanal je Erlass-Schlüssel (Auflage A1: zwei
+    // Fenster mit demselben Erlass mischten sich).
+    const ladefehler = (grund: 'datei' | 'register') => setFehler({ art: 'ladefehler', grund, erneut });
+    const ladeAlles = () => {
+      const mein = ++lauf;
+      const gueltig = () => lebt && mein === lauf;
+      void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
+      void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
+      void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
+      void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
+      // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
+      // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
+      if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
+      // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
+      // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
+      if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
+      void (async () => {
+        let e: BrowseErlass | null;
+        try { e = await ladeErlassStreng(schluessel); } catch { if (gueltig()) ladefehler('register'); return; }
+        if (!gueltig()) return;
+        if (!e) {
+          // W2·10-UI-NAV/N0b: Key case-insensitiv gegen das Register auflösen und auf
+          // die kanonische URL umleiten (/gesetze/bund/or → /gesetze/bund/OR). Nur bei
+          // EINDEUTIGEM Case-Treffer (kein Rate-Sprung); sonst ehrliche Fehlseite.
+          const m = await ladeBrowseManifest();
+          if (!gueltig()) return;
+          const roh = schluessel.toLowerCase();
+          const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
+          if (kandidaten.length === 1) {
+            const ziel = kandidaten[0];
+            // A-1 (Audit A, S6-W1a 23.9.2026): MIT Query und Anker — bis dahin
+            // landete `/gesetze/bund/or#art-41` auf `/OR` ohne `#art-41`, der
+            // Leser stand bei Art. 1 und das Blatt zeigte Art. 1. Dasselbe
+            // Muster wie der Adress-Umzug in `GesetzLeser.tsx` (④).
+            navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
+            return;
+          }
+          setFehler('nicht-im-bestand');
           return;
         }
-        setFehler(true);
-        return;
-      }
-      // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
-      // eingebettete amtliche PDF (eintraege bleibt null).
-      if (e.status === 'pdf-embed') { setErlass(e); return; }
-      // LIVE_VERWEIS (⑧, W2·5d G3a): kein In-App-Volltext gehostet — Erlass setzen,
-      // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
-      // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
-      if (e.status === 'nur-live-link') { setErlass(e); return; }
-      if (!e.datei) { setFehler(true); return; }
-      setErlass(e);
-      const datei = await ladeErlassDatei(e.datei);
+        // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
+        // eingebettete amtliche PDF (eintraege bleibt null).
+        if (e.status === 'pdf-embed') { setErlass(e); return; }
+        // LIVE_VERWEIS (⑧, W2·5d G3a): kein In-App-Volltext gehostet — Erlass setzen,
+        // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
+        // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
+        if (e.status === 'nur-live-link') { setErlass(e); return; }
+        if (!e.datei) { setFehler('nicht-im-bestand'); return; }
+        setErlass(e);
+        let datei: Awaited<ReturnType<typeof ladeErlassDateiStreng>>;
+        try { datei = await ladeErlassDateiStreng(e.datei); } catch { if (gueltig()) ladefehler('datei'); return; }
+        if (!gueltig()) return;
+        if (!datei) { setFehler('nicht-im-bestand'); return; }
+        setEintraege(datei.eintraege);
+      })();
+    };
+    // «Erneut laden» (aus dem `fehler`-Feld dieser Instanz): den Fehlerzustand
+    // lösen (→ Ladeanzeige) und alles noch einmal holen — Register und Dateien
+    // sind nach einem Fehlschlag nicht gecacht (browse.ts, O-1.7).
+    const erneut = () => {
       if (!lebt) return;
-      if (!datei) { setFehler(true); return; }
-      setEintraege(datei.eintraege);
-    });
+      setFehler(false);
+      ladeAlles();
+    };
+    ladeAlles();
     return () => { lebt = false; };
     // Setter/navigate sind stabil; Deps bewusst auf [ebene, schluessel] gehalten
     // (byte-identisch zum früheren Inline-Effekt — kein Re-Fetch bei Render).
@@ -230,9 +257,8 @@ export function useLeserSprungSpy(opts: {
   umhaengPraefix: Record<string, string[]>;
   istXl: boolean;
   tocOffen: boolean;
-  artLabelByToken: Map<string, string>;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
-  setAktArtikel: Dispatch<SetStateAction<string | null>>;
+  setAktToken: Dispatch<SetStateAction<string | null>>;
   setAktivIds: Dispatch<SetStateAction<string[]>>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   refs: {
@@ -251,7 +277,7 @@ export function useLeserSprungSpy(opts: {
   const {
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, gliederungsKnoten, umhaengPraefix, istXl, tocOffen,
-    artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum, refs,
+    setOffen, setAktToken, setAktivIds, setTocBaum, refs,
   } = opts;
   const {
     jumpLock, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
@@ -264,7 +290,7 @@ export function useLeserSprungSpy(opts: {
   // die Hook-Reihenfolge byte-identisch bleibt (dort die Herleitung).
   useTieflinkSprung({
     ebene, schluessel, eintraege, sektionen, istSekundaer, imPane, wurzel,
-    paneLocationHash, artLabelByToken, setOffen, setAktArtikel, setAktivIds,
+    paneLocationHash, setOffen, setAktToken, setAktivIds,
   });
 
   // Geteilter «aktueller-Artikel»-Beobachter (Auftrag David 26.6.2026): EIN
@@ -365,11 +391,13 @@ export function useLeserSprungSpy(opts: {
       letzterArtToken.current = token;
       // A3/F: aktuellen Artikel an den Kopf melden (Einzelansicht-Kopf ODER PaneKopf),
       // entprellt (150 ms) → coalesct schnelle Artikelgrenzen, weniger Pane-Re-Renders.
-      // Echtes Label des Eintrags (deckt Schlusstitel «Art. 3» korrekt ab);
-      // Fallback auf die Token-Heuristik nur, falls kein Eintrag passt.
-      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
+      // W2·17-UI-BEFUNDE (B10-B01): gemeldet wird der TOKEN, nicht das Label. Das
+      // Label «Art. 3» trägt der Hauptartikel UND der Schlusstitel-/Übergangs-
+      // artikel (217 Fälle in OR/ZGB/SchKG) — die Rückübersetzung Label→Token
+      // landete immer beim Hauptartikel. Das Label leitet `useArtikelTokens` aus
+      // dem Token ab (`artLabelByToken`, echtes artikelLabel des Eintrags).
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
-      aktArtikelTimer.current = window.setTimeout(() => setAktArtikel(artLabel), 150);
+      aktArtikelTimer.current = window.setTimeout(() => setAktToken(token), 150);
       // (b) Reiter-Live-Label: ?search (Instanz-?r) erhalten, Hash = #art-token.
       //     aktualisiereTabArtikel ist idempotent + no-op ohne passenden Reiter.
       //     Entprellt (trailing): beim schnellen Durchscrollen sonst ein
@@ -642,7 +670,7 @@ export function useLeserSprungSpy(opts: {
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current); // F3
     };
-    // Refs/Setter (jumpLock/…/setAktivIds) + artLabelByToken sind stabil bzw. bewusst
+    // Refs/Setter (jumpLock/…/setAktivIds) sind stabil bzw. bewusst
     // ausgelassen; Deps byte-identisch zum früheren Inline-Effekt (Rank 9-Kopplung).
     // S5: `gliederungsKnoten` kommt aus demselben useMemo-Takt wie `sektionen`
     // (Modell-Deps: kuratierter Baum + Snapshot + Sidecar) — der Effekt läuft
@@ -691,10 +719,23 @@ export function useLeserSprungSpy(opts: {
     cont.addEventListener('wheel', merke, { passive: true });
     cont.addEventListener('pointerdown', merke, { passive: true });
     cont.addEventListener('touchstart', merke, { passive: true });
+    // W2·17-UI-BEFUNDE B7 (2.10.2026): auch die TASTATUR bedient die Gliederung.
+    // Ohne `keydown` blieb der Guard beim Auf-/Zuklappen per Enter/Leertaste
+    // unarmiert (kein `pointerdown`), der Nudge schob den Scroller nach dem
+    // Umschalten zur Marke zurück — der fokussierte Pfeil sprang unter dem
+    // Finger weg (gemessen OR: Scroller 0 → 198 px, Pfeil 277 → 80 px).
+    // NICHT die Navigations-Tasten des Lesers (j/k/t/r/←/→, `NAVIGATION` — die EINE Liste,
+    // §5): mit dem Fokus auf einem Baum-Link bewegen sie den LESETEXT, und die Gliederung
+    // soll dabei mitlaufen. Jeder Druck hätte die 1,5-s-Sperre neu gescharft (OR @1440:
+    // aktiver Eintrag 0 von 5 sichtbar). Enter, Leertaste, Tab & Co. klappen/fokussieren
+    // IN der Gliederung — die armieren.
+    const merkeTaste = (ev: KeyboardEvent) => { if (!NAVIGATION.has(ev.key)) merke(); };
+    cont.addEventListener('keydown', merkeTaste, { passive: true });
     return () => {
       cont.removeEventListener('wheel', merke);
       cont.removeEventListener('pointerdown', merke);
       cont.removeEventListener('touchstart', merke);
+      cont.removeEventListener('keydown', merkeTaste);
     };
     // tocTouchRef ist ein stabiler Ref; Deps byte-identisch zum früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps

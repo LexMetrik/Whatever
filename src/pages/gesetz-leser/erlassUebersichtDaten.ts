@@ -133,13 +133,3 @@ export function erlassOrgan(kopf: ErlassKopf | null): string | null {
   if (!zeile) return null;
   return zeile.replace(/[,;]\s*$/, '');
 }
-
-/**
- * Fedlex-Fassungs-Token sind achtstellige Konsolidierungs-Daten («20260101»)
- * und als solche lesbar; kantonale Snapshots führen an derselben Stelle einen
- * SHA-256-Drift-Hash. Beide sind Provenienz (§7d), aber nur das Datum gehört in
- * die einzeilige Kurzform — der Hash steht ausgeschrieben im «Mehr»-Block.
- */
-export function istDatumsToken(token: string): boolean {
-  return /^\d{8}$/.test(token);
-}

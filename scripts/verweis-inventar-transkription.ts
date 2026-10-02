@@ -24,6 +24,8 @@ import {
 // V-3: dieselbe Token-Ableitung wie die Produktion (§5) — der Link entsteht
 // nur, wenn `parsePassus` einen Anker liefert.
 import { parsePassus } from '../src/lib/normtext/passus';
+// W2·17 Nachzug: die Genitiv-Erlassname-Weiche ist eine exportierte Funktion — importiert, nicht transkribiert.
+import { fremderErlassGenitiv, selbstGattungAmZitat } from '../src/components/normtext/fremderlassGenitiv';
 
 const WURZEL = process.cwd();
 export const NORMTEXT_PFAD = join(WURZEL, 'src', 'components', 'NormText.tsx');
@@ -307,6 +309,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'gliederungs-genitiv': { entscheid: 'TEXT', was: '«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)' },
   'gesetzes-genitiv': { entscheid: 'TEXT', was: '«Art. N [Passus] des Gesetzes» ohne Trägergesetz-Beleg — nie Selbstverweis, kein Link (V-7d, 14.9.2026)' },
   'art-desder-guard': { entscheid: 'TEXT', was: '«Art. N des/der/über/vom …» ohne Klammer-Kürzel' },
+  'fremderlass-genitiv': { entscheid: 'TEXT', was: '«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)' },
   'art-f41': { entscheid: 'TEXT', was: 'bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)' },
   'art-kein-token': { entscheid: 'TEXT', was: 'bare «Art. N» — Bestimmung existiert im Erlass nicht' },
   'art-m12-kuerzel': { entscheid: 'TEXT', was: '«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)' },
@@ -345,6 +348,8 @@ export interface Ctx {
   /** V-3: Kürzel → Lese-Adresse der ANDEREN Erlasse desselben Kantons, wie
    *  `baueKantonKuerzelKarte` sie dem Leser gibt (Aufbau im Tor, Abschnitt 4). */
   kantonKuerzel?: ReadonlyMap<string, string>;
+  /** Gattung des gelesenen Erlasses aus dem Register-Titel (W2·17 Nachzug, `eigeneGattungAusTitel`). */
+  eigeneGattung?: string;
   /** V-7: Ebene des gelesenen Erlasses — NormText leitet sie aus dem Basispfad
    *  ab (`/gesetze/kanton/…` ⇒ kanton, sonst bund); Kurznamen mit Geltung
    *  `bund` lösen in kantonalen Erlassen nicht auf (`positivliste.ts`). */
@@ -408,7 +413,9 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   const out: Stelle[] = [];
   const paragrafErlass = ctx.paragrafDesigniert;
   const ebene: FremdEbene = ctx.ebene ?? 'bund';
-  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey);
+  // W2·17 Nachzug: wie in NormText.tsx — ein Genitiv-Erlassname hinter der Aufzählung unterdrückt die Region.
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey).map((r) => (!r.fremd && !r.unterdruecken
+    && fremderErlassGenitiv(s.slice(r.end), ctx.eigeneGattung) ? { ...r, unterdruecken: true } : r));
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -445,7 +452,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       const start = m.index, end = start + m[0].length;
       if (inPluralRegion(start)) continue;
       const nach = s.slice(end);
-      const sm = selbstSignalAmZitat(nach, ctx);
+      const sm = selbstSignalAmZitat(nach, ctx) || selbstGattungAmZitat(nach, ctx.eigeneGattung);
       // V-3: benanntes Kürzel eines ANDEREN Erlasses desselben Kantons → Link.
       // Steht wie in der Produktion VOR den Fremd-Guards und NACH dem
       // Selbst-Signal; ohne Anker-Token fällt es in die Guards zurück.
@@ -471,6 +478,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       if (!sm && GLIEDERUNGS_GENITIV.test(rest)) { textStellen.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_GROSS.test(rest)) { textStellen.push(stelle('paragraf-fremd-grosswort', m[1], ctx, sm)); continue; }
       if (!sm && PARAGRAF_FREMD_NAME.test(rest)) { textStellen.push(stelle('paragraf-fremd-name', m[1], ctx, sm)); continue; }
+      if (!sm && fremderErlassGenitiv(nach, ctx.eigeneGattung)) { textStellen.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
       const token = ctx.tokenMap.get(normRef(m[1]));
       if (!token) { textStellen.push(stelle('paragraf-kein-token', m[1], ctx, sm)); continue; }
       linkSpans.push({ start, end, s: stelle('paragraf-self', m[1], ctx, sm) });
@@ -511,13 +519,14 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     }
     // V-2: ausdrückliches Selbst-Signal → keine der vier Fremd-Vermutungen
     // (des/der, N2, M12, F41) greift. Reihenfolge exakt wie im Original.
-    const sm = selbstSignalAmZitat(rest, ctx);
+    const sm = selbstSignalAmZitat(rest, ctx) || (!ctx.fremdKuerzel && selbstGattungAmZitat(rest, ctx.eigeneGattung));
     // V-6: Rest ohne Passus-/Aufzählungsglieder; im Chapeau ruht die Erweiterung.
     const nachPassus = ctx.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Reihenfolge exakt wie Original).
     if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && GESETZES_GENITIV.test(nachPassus)) { out.push(stelle('gesetzes-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
+    if (!sm && fremderErlassGenitiv(rest, ctx.eigeneGattung)) { out.push(stelle('fremderlass-genitiv', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }
     // V-6: der M12-Guard greift auf dem ROHEN Rest ODER auf dem Rest nach dem

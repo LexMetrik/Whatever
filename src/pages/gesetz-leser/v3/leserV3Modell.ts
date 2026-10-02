@@ -15,13 +15,14 @@ import { baueGliederungsModell, findeSynthPfad, uebersetzeRohPfad, type Gliederu
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
 import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from '../inhalt-hooks';
-import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from '../inhalt-zustand';
+import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand, type LeserFehler } from '../inhalt-zustand';
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useMarkenSchalter, useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
 import { oeffneSprungZiel, alleKlappIds } from '../klappKarte';
+import { useEinzelSprung, useSprungZeitplan } from './sprungWege';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
@@ -60,7 +61,7 @@ export interface LeserV3Modell {
   struktur: StrukturMap | null;
   kopf: ErlassKopf | null;
   currency: CurrencyMap | null;
-  fehler: boolean;
+  fehler: LeserFehler;
   manifest: ReturnType<typeof useLeserZustand>['manifest'];
   kantonSys: Record<string, KantonSystematik>; kantonLuecken: KantonLueckenMap; // §8-Nachzug PR #614
 
@@ -97,8 +98,7 @@ export interface LeserV3Modell {
   // Aus dem GETEILTEN Zustand abgeleitet statt neu typisiert (§5). C3: `bezuegeFuer`
   // ist weg — seit H3 (`bezuegeVorladen: false`) durchgehend `undefined` und ohne
   // Leser; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
-  revisionFuer: ReturnType<typeof useLeserZustand>['revisionFuer'];
-  historieFuer: ReturnType<typeof useLeserZustand>['historieFuer'];
+  historieFuer: ReturnType<typeof useLeserZustand>['historieFuer']; historieStand: ReturnType<typeof useLeserZustand>['historieStand']; // P5·B1: Bereitschaft des Shards
 
   /** Leseposition (Scroll-Spy) und Klapp-Zustand des Baums. */
   aktArtikel: string | null;
@@ -148,7 +148,7 @@ export interface LeserV3Modell {
   siePfadArtikel: string | null;
 
   /** Sprünge. Beide sind die EINZIGEN Bewegungs-Auslöser der Hülle. */
-  springeZuArtikel: (token: string) => void;
+  springeZuArtikel: (token: string, behalteSuche?: boolean) => void; // `behalteSuche`: der Sprung beendet die Suche nicht (Landkarte, PE-B12-B02)
   springeZuSektion: ReturnType<typeof useSektionSprung>;
   zumAnfang: () => void;
 
@@ -199,7 +199,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   const {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,
-    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
+    historieFuer, historieStand, nichtKonsolidiert, nichtKonsolidiertSeit,
     // Als `…Ref` benannt: die Lint-Regel `react-hooks/immutability` erkennt
     // einen Ref am Namen, und dieser wird beschrieben.
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
@@ -213,7 +213,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useLeserTocZustand();
   const {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
+    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
@@ -280,12 +280,13 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   });
 
   // ── Artikel-Sprung: der EINE erlaubte Adress-Schreiber (LM-202) ───────────
-  // `replaceState`, nie `pushState`, nie eine direkte Hash-Zuweisung; und nur
-  // aus dem primären Pane (die Rolle unterscheidet, nicht `imPane` — B1-Falle).
-  // Quellensonde: `src/tests/leser-v3-adresse.test.ts`.
-  const springeZuArtikel = useCallback((token: string) => {
-    scrollVorSucheRef.current = null;
-    setSuche('');
+  // `replaceState`, nie `pushState`, nie eine direkte Hash-Zuweisung; und nur aus dem primären Pane
+  // (die Rolle unterscheidet, nicht `imPane` — B1-Falle). Quellensonde: `src/tests/leser-v3-adresse.test.ts`.
+  // Im EINZELMODUS schreibt der Router (`einzelSprung`, `./sprungWege`): dort IST die Adresse der gezeigte Artikel.
+  const einzelSprung = useEinzelSprung(basisPfad, !istSekundaer);
+  const planeSprung = useSprungZeitplan(); // ein neuer Sprung verwirft den laufenden (PE-B10-B03)
+  const springeZuArtikel = useCallback((token: string, behalteSuche?: boolean) => {
+    if (!behalteSuche) { scrollVorSucheRef.current = null; setSuche(''); } // Landkarte: der Klick ins Feld ohne Treffer beendet die Suche nicht
     // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
     // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
     setTocAuf(false);
@@ -314,7 +315,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     if (typeof window === 'undefined') return;
     if (!istSekundaer) {
       const ziel = `${basisPfad}${window.location.search}#art-${token}`;
-      window.history.replaceState(null, '', ziel);
+      if (!einzelSprung.navigiere(token)) window.history.replaceState(null, '', ziel);
       aktualisiereTabArtikel(ziel);
     }
     const scrolle = () => {
@@ -327,28 +328,25 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       el.classList.add('lc-ziel-blink');
       window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
     };
-    window.requestAnimationFrame(() => window.setTimeout(() => {
-      scrolle();
-      window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
-    }, 110));
-    // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort).
+    planeSprung(scrolle, () => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); });
+    // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort); neu nur die zwei Sprung-Hilfen.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, gliederung.knoten, gliederung.umhaengPraefix]);
+  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, einzelSprung, planeSprung, gliederung.knoten, gliederung.umhaengPraefix]);
 
-  const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
+  const { aktivToken, aktArtikel, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktToken });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
-    erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
+    erlass, eintraege, struktur, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
   });
 
   const springeZuSektion = useSektionSprung({
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
-    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef, imEinzel: einzelSprung.imEinzel,
     // Pos. 14: Suche beginnen ODER beenden bewegt den Lesetext um 0 px. Die
     // Ist-Hülle scrollt an beiden Punkten (an den Anfang, dann zurück) — der
     // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
     // Herleitung am Effekt in `inhalt-sprung.tsx`, Beweis `leser-v3-esc-ohne-sprung`.
     scrollBeiSuchwechsel: false,
-    umhaengPraefix: gliederung.umhaengPraefix,
+    umhaengPraefix: gliederung.umhaengPraefix, knoten: gliederung.knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel, manifestErlasse: manifest?.erlasse, kanton: erlass?.kanton }); // V-2 · V-3 (Manifest/Kanton = Rohstoff der Kürzel-Karte)
@@ -358,7 +356,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad,
     offen, sucheDebounced, aktivIds, tocBaum,
     gliederungsKnoten: gliederung.knoten, umhaengPraefix: gliederung.umhaengPraefix,
-    istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
+    istXl, tocOffen, setOffen, setAktToken, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
       tocBaumTimer, tabArtikelTimer, aktArtikelTimer, tocTouchRef,
@@ -379,7 +377,8 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer, loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-    internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
+    internRefs, aktArtikel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
+    einzelSprung: einzelSprung.navigiere, // Einzelmodus: der Fundstellen-Sprung wechselt den Artikel (PE-C3-B02)
   });
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
@@ -401,7 +400,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       nichtKonsolidiert, nichtKonsolidiertSeit,
       vorher, nachher,
       sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
-      revisionFuer, historieFuer,
+      historieFuer, historieStand,
       aktArtikel, aktivToken, artTokens, aktivIds, offen, setOffen, tocBaum, setTocBaum,
       tocToggleGruppe,
       tocOffen, setTocOffen, tocAuf, setTocAuf,

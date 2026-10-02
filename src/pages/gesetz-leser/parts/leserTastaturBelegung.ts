@@ -60,3 +60,8 @@ export const BLAETTERN: ReadonlyMap<string, -1 | 1> = new Map([
   ['ArrowLeft', -1],
   ['ArrowRight', 1],
 ]);
+
+/** G4-B02 · die Tasten, die etwas UMSCHALTEN oder den Fokus versetzen («?» Overlay, «r» Blatt,
+ *  «t» Gliederung). Ein Auto-Repeat (`KeyboardEvent.repeat`) löst sie nicht noch einmal aus;
+ *  j/k und ←/→ stehen bewusst NICHT hier — gehalten durchblättern ist gewollt. */
+export const UMSCHALTER: ReadonlySet<string> = new Set(['?', 'r', 't']);

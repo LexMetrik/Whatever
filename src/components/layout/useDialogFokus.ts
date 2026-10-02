@@ -1,11 +1,60 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 
-// Selektor für nativ fokussierbare Elemente — identisch zum bewährten
+// Selektor für nativ fokussierbare Elemente — dieselbe Grundliste wie im
 // NormPopover-Overlay (components/vorlagen/ui.tsx), damit alle Dialoge dieselbe
 // Fokus-Falle verwenden (§5: eine Quelle für das Verhalten).
+//
+// `summary` (PE-H1-D02, 1.10.2026): die Kopfzeile einer `<details>`-Klappe ist
+// nativ fokussierbar (Enter/Space schalten); ohne sie sprang Tab über die Klappe.
 const FOKUSSIERBAR =
-  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
+
+/**
+ * Standard-Prüfung «ist das Element gezeichnet?» (Layout-Frage, braucht einen
+ * Browser). `checkVisibility` (Chromium 105+, Safari 17.4+, Firefox 106+) kennt
+ * `display: none`, `visibility: hidden` UND `content-visibility`-versteckte
+ * Teilbäume — also genau den Zustand der Inhalte einer zugeklappten `<details>`.
+ * Ohne die Methode bleibt der alte `offsetParent`-Test (blind für `<details>`,
+ * dort fängt `fokusziele` das Strukturelle selbst ab).
+ */
+export function layoutSichtbar(el: HTMLElement): boolean {
+  if (typeof el.checkVisibility === 'function') {
+    return el.checkVisibility({ visibilityProperty: true });
+  }
+  return el.offsetParent !== null;
+}
+
+/**
+ * Die Elemente innerhalb von `wurzel`, auf die Tab TATSÄCHLICH wandern kann —
+ * Grundlage der Fokus-Falle (Befund 1.10.2026, PE-H1-D01 + Erlass-Blatt).
+ *
+ * Ursache des Befunds: die Links einer ZUGEKLAPPTEN `<details>` blieben
+ * Kandidaten (in Chromium `offsetParent` ≠ null), `focus()` auf sie ist aber
+ * wirkungslos — Tab hing 5× im Suchfeld bzw. auf «schliessen». Ausgeschlossen
+ * wird darum, was nicht fokussierbar IST:
+ *  - alles in einer zugeklappten `<details>`, ausser deren eigenes `<summary>`,
+ *  - `inert`-Teilbäume,
+ *  - Ungezeichnetes (`sichtbar`, Standard `layoutSichtbar`).
+ * Das gerade fokussierte Element (`aktiv`) bleibt in jedem Fall Kandidat, damit
+ * der Index des Tab-Schritts stimmt.
+ *
+ * `aktiv`/`sichtbar` sind Parameter, damit die Auswahl in der Test-Umgebung
+ * ohne Layout prüfbar ist (`src/tests/dialog-fokus-ziele.test.ts`).
+ */
+export function fokusziele(
+  wurzel: ParentNode,
+  aktiv: Element | null = document.activeElement,
+  sichtbar: (el: HTMLElement) => boolean = layoutSichtbar,
+): HTMLElement[] {
+  return Array.from(wurzel.querySelectorAll<HTMLElement>(FOKUSSIERBAR)).filter((el) => {
+    if (el === aktiv) return true;
+    if (el.closest('[inert]') != null) return false;
+    const zu = el.closest('details:not([open])');
+    if (zu != null && !(el.tagName === 'SUMMARY' && el.parentElement === zu)) return false;
+    return sichtbar(el);
+  });
+}
 
 /**
  * Dialog-/Overlay-Fokusverwaltung nach ARIA-Dialog-Pattern (WCAG 2.4.3):
@@ -47,10 +96,7 @@ export function useDialogFokus(
     // Auslöser merken, um den Fokus beim Schliessen zurückzugeben.
     const vorherFokussiert = document.activeElement as HTMLElement | null;
 
-    const sammle = () =>
-      Array.from(wurzel.querySelectorAll<HTMLElement>(FOKUSSIERBAR)).filter(
-        (el) => el.offsetParent !== null || el === document.activeElement,
-      );
+    const sammle = () => fokusziele(wurzel);
 
     // Initialen Fokus in den Dialog setzen (sonst bleibt er auf dem Auslöser).
     (startFokus?.current ?? sammle()[0] ?? wurzel).focus();

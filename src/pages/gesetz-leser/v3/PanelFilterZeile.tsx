@@ -4,6 +4,7 @@ import { BezugZeitWahl } from '../../../components/verzahnung/BezugZeitWahl';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { Histogramm, Zeitbereich } from '../bezugZeit';
+import { istEingegrenzt } from '../bezugAuswahl';
 import { instanzStand, zeitStand } from './panelModell';
 import { PanelSachgebiet } from './PanelSachgebiet';
 
@@ -101,7 +102,7 @@ export function PanelFilterZeile({
 
   return (
     <div data-v3-panel-filter className="flex flex-wrap items-center gap-1.5 border-b border-line px-3 py-2">
-      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen)}
+      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen, kantone)}
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
         kinder={(
           <BezugFacettenWahl klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
@@ -109,7 +110,10 @@ export function PanelFilterZeile({
         )} />
       <Klappe id={`${basis}-zeit`} name="Zeitraum" stand={zeitStand(bereich)}
         offen={auf === 'zeit'} setOffen={(o) => setAuf(o ? 'zeit' : null)}
-        kinder={<BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich} />} />
+        kinder={(
+          <BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich}
+            keineInstanz={klassen.length === 0} instanzEingegrenzt={istEingegrenzt(klassen, kantone)} />
+        )} />
       {/* Vierter Filter — heute ohne Daten und darum ohne Element (Kap. 14).
           Die Datenlogik bleibt `W2·7-VZUI-SACHGEBIET` (Risikopfad). */}
       <PanelSachgebiet gebiete={[]} gewaehlt={[]} onGebiete={() => {}} />

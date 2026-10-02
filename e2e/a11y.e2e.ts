@@ -529,6 +529,10 @@ const TAP_FLAECHEN = [
   // nicht still aus der Messung nimmt). Die Nachrüstliste oben wächst nicht.
   '.lc-tap-polster',
   '.lc-normzeile .lc-chip',
+  // W2·17-UI-BEFUNDE H1-D04 (1.10.2026): die Links der Erlass-Übersichtsbox
+  // (Amtliche Fassung / PDF / Rohdaten) trugen 14–17 px; sie tragen jetzt
+  // `lc-tap-polster`. Gemessen im Test «Übersichtsbox (offen)» unten.
+  '[data-v3-uebersicht-inhalt] a',
 ].join(', ')
 
 // Sub-Pixel-Toleranz: getBoundingClientRect liefert je nach Zoom/Rundung 23.99
@@ -609,6 +613,20 @@ for (const [url, name, vorhanden] of TAP_SEITEN) {
     // Grösse, sobald die Gruppe aufgeht).
     await expect.poll(() => page.locator(vorhanden).count(), { message: `${name}: Fläche «${vorhanden}» ist da` }).toBeGreaterThan(0)
     await tapFlaechenPruefen(page, await tapZielLesen(page), `${name}/hell@390`)
+  })
+}
+
+// W2·17-UI-BEFUNDE H1-D04: die Übersichtsbox ist zu (`<details>`), ihre Links haben
+// dann keine Fläche — darum erst aufklappen, dann messen. Leiste @1280 (Spalte).
+for (const thema of ['hell', 'dunkel'] as const) {
+  test(`Trefferflächen — Übersichtsbox offen (${thema})`, async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await oeffnen(page, '/gesetze/bund/GEBV_HREG', thema)
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    const box = page.locator('[data-v3-uebersicht]').first()
+    await box.locator('summary').click()
+    await expect(box.locator('[data-v3-uebersicht-link]').first()).toBeVisible()
+    await tapFlaechenPruefen(page, await tapZielLesen(page), `uebersichtsbox/${thema}`)
   })
 }
 

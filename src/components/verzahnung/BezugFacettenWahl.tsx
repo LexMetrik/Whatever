@@ -124,8 +124,15 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
   onKlassen: (neu: BezugStatus[]) => void;
   onKantone: (neu: string[]) => void;
 }) {
-  const eingegrenzt = istEingegrenzt(klassen);
+  const eingegrenzt = istEingegrenzt(klassen, kantone);
   const alleKantone = kantone.length === 0;
+  // W2·17-UI-BEFUNDE (E4-B01, 1.10.2026): die Kantonwahl liegt global im Speicher,
+  // der Erlass führt aber nur SEINE Kantone. Ein gewählter Kanton, den dieser
+  // Erlass nicht führt, steht trotzdem als gedrückter Chip da — sonst wäre er ein
+  // Filter, den man weder sieht noch abwählen kann (§8). Alphabetisch wie
+  // `kantoneImShard`, nie in Klick-Reihenfolge (§2).
+  const kantonChips = [...new Set([...kantoneVerfuegbar, ...kantone])].sort();
+  const kantonWirkt = kantone.length > 0 && klassen.includes('kantonal');
   // Solange kein Shard geladen ist, ist das Objekt leer und JEDE Klasse
   // `undefined` — dann steht keine Zahl da. Eine 0 zu zeigen, weil man noch
   // nichts weiss, wäre eine Behauptung über den Bestand (§8).
@@ -159,7 +166,7 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
 
       {/* Kantons-Feinschnitt nur, wenn die kantonale Klasse überhaupt AN ist —
           sonst wirkungslos (§13 F4, gleiches Muster wie ZeitraumWahl). */}
-      {klassen.includes('kantonal') && kantoneVerfuegbar.length > 0 && (
+      {klassen.includes('kantonal') && kantonChips.length > 0 && (
         <div role="group" aria-label="Kantone der kantonalen Entscheide" className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5 px-2.5 pt-1.5 pb-0.5">
           <span className="lc-overline mr-1">Kantone</span>
           <button type="button" aria-pressed={alleKantone} onClick={() => onKantone([])}
@@ -167,14 +174,17 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
             className={`lc-chip ${alleKantone ? 'lc-chip-selected' : ''}`}>
             alle
           </button>
-          {kantoneVerfuegbar.map((k) => {
+          {kantonChips.map((k) => {
             const aktiv = kantone.includes(k);
+            const imErlass = kantoneVerfuegbar.includes(k);
             /* `num` entfällt: `.lc-chip` setzt die Mono-Stimme bereits (§13 e —
                Kantonskürzel sind ein Struktur-Etikett), die Zusatzklasse wäre
                eine zweite Wahrheit über dieselbe Schrift. */
             return (
               <button key={k} type="button" aria-pressed={aktiv} data-bezug-kanton={k}
-                title={`Nur kantonale Entscheide aus ${k} zeigen`}
+                title={imErlass
+                  ? `Nur kantonale Entscheide aus ${k} zeigen`
+                  : `${k} ist gewählt, führt in diesem Erlass aber keine Entscheide — abwählen`}
                 onClick={() => onKantone(schalteKanton(kantone, k))}
                 className={`lc-chip ${aktiv ? 'lc-chip-selected' : ''}`}>
                 {k}
@@ -194,7 +204,8 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           bzw. «Weitere Instanzen laden zusätzliche Daten nach». Beides war am
           Ist-Stand falsch, in drei Punkten, jeder einzeln nachgemessen:
 
-           (1) AM ARTIKEL STEHT NICHTS. Die `BezuegeZeile` am Artikelfuss ist mit
+           (1) AM ARTIKEL STEHT NICHTS. Die `BezuegeZeile` (Komponente seit 2.10.2026
+               gelöscht, W2·17-UI-BEFUNDE) am Artikelfuss ist mit
                H3 aus der Lesespalte verschwunden — `LeserLesespalte.tsx:84–88`
                reicht `bezuege` nicht mehr durch («POS. 12 · KEIN `bezuege` MEHR
                AM ARTIKEL»), und seit dem H4-Flip ist die V3-Hülle die einzige
@@ -221,7 +232,7 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           Beleg, sondern ein Fehler im Produkt. */}
       <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
         {eingegrenzt
-          ? `Eingegrenzt: nur die eingeschalteten Instanzen stehen in der Liste, jede als eigene Gruppe. Die Zahl am Schalter nennt alle Entscheide dieser Instanz ${zahlOrt} — auch ausgeblendete.`
+          ? `Eingegrenzt: nur die eingeschalteten Instanzen stehen in der Liste, jede als eigene Gruppe. ${kantonWirkt ? `Bei den kantonalen Entscheiden gilt die Kantonwahl. Hat ein gewählter Kanton ${zahlOrt} keinen Entscheid, schränkt er dort nicht ein. ` : ''}Die Zahl am Schalter nennt alle Entscheide dieser Instanz ${zahlOrt} — auch ausgeblendete.`
           : `Grundeinstellung: alle Instanzen — zuerst die Leitentscheide, dann je kantonales Gericht, dann die übrigen; je Gruppe die fünf neusten, der Rest aufklappbar. Die Zahl am Schalter nennt die Entscheide dieser Instanz ${zahlOrt}.`}
       </p>
 
@@ -234,7 +245,9 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           selbst bleibt unverändert (Toggletip-Muster, Begründung dort); nur
           der Mount-Punkt hat sich verschoben. */}
       <div className="px-2.5 pb-1">
-        <ZeichenLegende />
+        {/* E4-B05: das Panel zeigt kein ★ (Ä106 in `v3/PanelEntscheide.tsx`) —
+            seine Erklärung hätte kein Zeichen, auf das sie zeigt. */}
+        <ZeichenLegende ohneLeitentscheid />
       </div>
     </>
   );

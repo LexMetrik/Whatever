@@ -26,7 +26,9 @@
    "materialien-deckel.e2e.ts",
    "materialien-cls.e2e.ts",
    "leser-lade-cls.e2e.ts",
-   "vorlagen-wizard-fokus.e2e.ts"
+   "vorlagen-wizard-fokus.e2e.ts",
+   "leser-tieflink-robust-w217.e2e.ts",
+   "leser-suchfeld.e2e.ts"
   ],
   "2": [
    "bild-block-items.e2e.ts",
@@ -76,7 +78,9 @@
    "startseite-blatt.e2e.ts",
    "druck-dunkel-dk09.e2e.ts",
    "suche-randspalte.e2e.ts",
-   "gesetze-breite.e2e.ts"
+   "gesetze-breite.e2e.ts",
+   "leser-v3-panel-filter-befunde.e2e.ts",
+   "leser-dialog-fokus.e2e.ts"
   ],
   "4": [
    "gesetze-ux-g3a.e2e.ts",
@@ -101,7 +105,8 @@
    "leser-v3-uebersicht.e2e.ts",
    "w224-reiterverhalten.e2e.ts",
    "startseite-schnellwerkzeug.e2e.ts",
-   "vorlagen-hinweise-lesemass.e2e.ts"
+   "vorlagen-hinweise-lesemass.e2e.ts",
+   "leser-gliederung-klappen-w217.e2e.ts"
   ],
   "5": [
    "hist-ansicht-w25i.e2e.ts",
@@ -128,7 +133,8 @@
    "w229-w1f-blatt-scroll.e2e.ts",
    "kontrast-fristmarker.e2e.ts",
    "material-leser-randspalte.e2e.ts",
-   "design-tinte-leise.e2e.ts"
+   "design-tinte-leise.e2e.ts",
+   "leser-tastatur-menue-tabelle.e2e.ts"
   ],
   "6": [
    "d36-einstellungen-fuss.e2e.ts",
@@ -208,7 +214,8 @@
    "info-seiten-breite.e2e.ts",
    "startseite-breite.e2e.ts",
    "leser-tabelle-nachspann.e2e.ts",
-   "rechner-breite.e2e.ts"
+   "rechner-breite.e2e.ts",
+   "leser-wortlaut-w217.e2e.ts"
   ]
  }
 }
