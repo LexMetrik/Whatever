@@ -2,6 +2,7 @@ import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import { BEDIENBARE_KLASSEN, KLASSE_KURZ } from '../bezugAuswahl';
 import { zahl } from '../bezugPortion';
+import { istBereichOffen, type Zeitbereich } from '../bezugZeit';
 import { gruppiereKanten } from './panelModell';
 
 // ─── Reiter «Entscheide» · Ordnung, Portion, Anzeige-Helfer (S6-W1b) ─────────
@@ -183,4 +184,38 @@ export function datumInZitierung(zitierung: string): boolean {
 export function regesteTeil(text: string): { teil: string | null; rest: string } {
   const m = /^([a-z]) (?=[A-ZÄÖÜ]|a[A-ZÄÖÜ])/.exec(text);
   return m && m[1] ? { teil: m[1], rest: text.slice(m[0].length) } : { teil: null, rest: text };
+}
+
+/**
+ * Der Satz der Lage «gefiltert» (W2·17-UI-BEFUNDE PE-E3-B01, 1.10.2026).
+ *
+ * GEMESSEN (OR Art. 97, Zeitraum 1900–1901): das Panel schrieb «kein Entscheid
+ * der eingeschalteten Instanzen erfasst», obwohl sieben Leitentscheide am Artikel
+ * stehen — der persistente Zeitraum blendete sie aus. Das ist eine Aussage über
+ * den Bestand, wo eine über den eigenen Filter stünde (§8). Hier wird der Satz
+ * gebaut, der es sagt: wie viele Entscheide der EINGESCHALTETEN Instanzen es am
+ * Artikel gibt und dass der Zeitraum bzw. Kanton sie ausblendet.
+ *
+ * `null` = die Lage liegt nicht vor (nichts erfasst, oder kein Filter wirkt) —
+ * dann gilt die Bestands-Lage. Der Kanton-Filter wirkt nur, wenn «kantonal»
+ * eingeschaltet ist (wie `waehleBezuege`/`bezuegeFuer`). Rein (§2).
+ */
+export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }: {
+  artikelLabel: string | null;
+  /** Die Kanten des Artikels OHNE UI-Auswahl (`alleKanten`). */
+  alle: readonly Bezug[] | undefined;
+  klassen: readonly BezugStatus[];
+  kantone: readonly string[];
+  bereich: Zeitbereich;
+}): string | null {
+  const zeit = !istBereichOffen(bereich);
+  const kanton = kantone.length > 0 && klassen.includes('kantonal');
+  if (!zeit && !kanton) return null;
+  const n = (alle ?? []).filter((b) => klassen.includes(b.facetten.status)).length;
+  if (n === 0) return null;
+  const was = zeit && kanton ? 'Zeitraum und Kanton' : zeit ? 'Zeitraum' : 'Kanton';
+  const ort = artikelLabel ? `Zu ${artikelLabel}` : 'Zu diesem Erlass';
+  return n === 1
+    ? `${ort} ist 1 Entscheid der eingeschalteten Instanzen erfasst, er liegt aber nicht im gewählten ${was}.`
+    : `${ort} sind ${zahl(n)} Entscheide der eingeschalteten Instanzen erfasst, keiner davon liegt im gewählten ${was}.`;
 }
