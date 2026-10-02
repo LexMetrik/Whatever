@@ -21,6 +21,7 @@ import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
 import type { GliederungsKnoten } from './gliederungsTypen';
 import { sicherDekodiert } from '../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -51,7 +52,7 @@ export function useSektionSprung(opts: {
   imPane: boolean;
   wurzel: PaneWurzel;
   sucheDebounced: string;
-  springeZuArtikel: (token: string, behalteSuche?: boolean) => void;
+  springeZuArtikel: (token: string, behalteSuche?: boolean, ziffer?: string | null) => void;
   /** W2·17-UI-BEFUNDE · gilt gerade der Einzelmodus? Dort steht kein Sektionskopf im DOM (PE-B10-B02). */
   imEinzel?: () => boolean;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
@@ -210,13 +211,14 @@ export function useSektionSprung(opts: {
     if ((location.state as { sprungErledigt?: boolean } | null)?.sprungErledigt) return;
     const m = location.hash.match(/^#art-(.+)$/);
     if (!m) return;
-    const token = sicherDekodiert(m[1]); // PA-1-B01
-    if (!token) return;
+    const anker = sicherDekodiert(m[1]); // PA-1-B01
+    if (!anker) return;
+    const { artikel: token, ziffer } = zerlegeZifferAnker(anker); // E2: `#art-197-ziff-12` ⇒ Artikel + Ziffer
     // W2·17-UI-BEFUNDE (Nachzug zu #1265): «Zurück/Vor» (POP) im Einzelmodus landet auf einem Verlaufs-
     // Eintrag OHNE `sprungErledigt` (der Einstieg, oder ein Blättern) und würde die Suche beenden —
     // wer zurückgeht, will den Artikel zurück, nicht seine Fundstellen verlieren. Der Scroll bleibt.
     const behalteSuche = navTyp === 'POP' && imEinzel?.() === true;
-    const id = window.requestAnimationFrame(() => springeZuArtikel(token, behalteSuche));
+    const id = window.requestAnimationFrame(() => springeZuArtikel(token, behalteSuche, ziffer));
     return () => window.cancelAnimationFrame(id);
   }, [location.key, location.hash, location.state, sektionen, springeZuArtikel, istSekundaer, navTyp, imEinzel]);
 

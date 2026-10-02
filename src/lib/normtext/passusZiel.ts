@@ -44,6 +44,10 @@ export function markeNorm(s: string): string {
   return s.trim().replace(/^[.()\s]+|[.()\s]+$/g, '').toLowerCase();
 }
 
+// Teile einer Block-Ziffer: «2_3» = Sammel-Ziffer («2. und 3. …», Konvention `art_77_78`) gilt für
+// jede ihrer Ziffern. EINE Stelle für Passus-Auflösung UND Ziffer-Anker (`zifferAnker.ts`, §5).
+export const zifferTeile = (ziffer: string): string[] => markeNorm(ziffer).split('_');
+
 // Absatz-Vergleichs-Normalisierung: nachgestellte Punkte/Whitespace strippen.
 // Manche Snapshots tragen den Absatz als «1.» (z.B. FR-261.16), das Zitat aber
 // als «1» — ohne Normalisierung matchten sie nicht und die Hervorhebung griffe
@@ -64,8 +68,8 @@ export function absatzNorm(a: string | null): string | null {
 function bestimmeZifferZiel(bloecke: Block[], passus: PassusInfo): PassusZiel | null {
   if (passus.ziff == null) return null;
   const n = markeNorm(passus.ziff);
-  // Sammel-Ziffer «3_4» («3. und 4. …», Konvention `art_77_78`) gilt für jede ihrer Ziffern.
-  const scope = bloecke.flatMap((b, i) => (b.ziffer != null && markeNorm(b.ziffer).split('_').includes(n) ? [i] : []));
+  // Sammel-Ziffer «3_4» gilt für jede ihrer Ziffern (`zifferTeile`).
+  const scope = bloecke.flatMap((b, i) => (b.ziffer != null && zifferTeile(b.ziffer).includes(n) ? [i] : []));
   if (scope.length === 0) return null;
   const inhalt = scope.filter((i) => bloecke[i].titel === undefined);
   let treffer = inhalt;

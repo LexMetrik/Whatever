@@ -23,7 +23,8 @@ import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { istHashVerbraucht } from './scrollAnker';
 import { pfadZu } from './helpers';
 import { kanonischerAnkerToken } from './suchTreffer';
-import { paneRoot, findeArt } from './berechnungen';
+import { paneRoot, findeZiel } from './berechnungen';
+import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
 import { ladeStruktur, type Sektion } from '../../lib/normtext/browse';
 import { datenEbeneVonRoute } from '../../lib/normtext/erlassAdresse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -135,7 +136,9 @@ export function useTieflinkSprung(opts: {
     // Nebenfund S6 (23.9.2026): «#art-336c» trifft den Token «336_c» (`./suchTreffer`).
     const ankerRoh = sicherDekodiert(m[1]); // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung
     if (!ankerRoh) return;
-    const token = kanonischerAnkerToken(ankerRoh, eintraege?.map((e) => e.artikel) ?? []);
+    // E2 (Ziffer-Fragment): Suffix `-ziff-<z>` ab, BEVOR gegen die Token-Liste abgebildet wird.
+    const { artikel: artikelRoh, ziffer } = zerlegeZifferAnker(ankerRoh);
+    const token = kanonischerAnkerToken(artikelRoh, eintraege?.map((e) => e.artikel) ?? []);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     // LM-157 (W2·17-UI-BEFUNDE-B4): der Seed-Sprung öffnete den TOC-Pfad
     // (`oeffnePfad`) und scrollte den Text, setzte aber nie `aktivIds`/`aktArtikel`
@@ -207,7 +210,7 @@ export function useTieflinkSprung(opts: {
     const wurzelEl = typeof document !== 'undefined' ? document.documentElement : null;
     let aufgedeckt = false;
     const aufdecken = () => { aufgedeckt = true; wurzelEl?.removeAttribute('data-lr6-anker-warten'); };
-    const ziel = () => findeArt(paneRoot(imPane, wurzel), token);
+    const ziel = () => findeZiel(paneRoot(imPane, wurzel), token, ziffer); // Ziffer-Block, sonst der Artikel (E2)
     // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
     // EINE Sprung-Stelle für Erst-Sprung, Einschwingen und Nachzug (§5).
     const springe = (el: HTMLElement) => el.scrollIntoView({ block: 'start', behavior: 'auto' });

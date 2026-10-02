@@ -370,7 +370,7 @@ export function useLeserSprungSpy(opts: {
       const sc = paneRoot(imPane, wurzel);
       const oben = sc ? sc.getBoundingClientRect().top : 0;
       const probe = (sichtbar.keys().next().value as Element | undefined)
-        ?? (sc ?? document).querySelector('[id^="art-"]');
+        ?? (sc ?? document).querySelector('article[id^="art-"]'); // `article`: Ziffer-Anker `art-N-ziff-Z` sind keine Artikel (E2)
       const bezug = bezugslinie(oben, ankerLandepunkt(probe));
       const rects = [...sichtbar.values()]
         .filter((en) => en.isIntersecting)
@@ -638,7 +638,7 @@ export function useLeserSprungSpy(opts: {
     // → Effekt läuft über die Deps neu und beobachtet die dann sichtbaren Artikel.
     // Rank 9: an sucheDebounced statt suche gekoppelt — der Observer-Neuaufbau (alle
     // art--Knoten neu beobachten) läuft so nicht bei jedem Tastendruck.
-    (paneRoot(imPane, wurzel) ?? document).querySelectorAll('[id^="art-"]').forEach((el) => io.observe(el));
+    (paneRoot(imPane, wurzel) ?? document).querySelectorAll('article[id^="art-"]').forEach((el) => io.observe(el));
     // V3/H6 (W2·5d-SPY): zweiter Auslöser — jeder Scroll-Frame. Der Observer meldet
     // NUR Band-Ein-/Austritte; zwischen zwei solchen Ereignissen überquert die
     // Bezugslinie ungesehen Artikelgrenzen (H6-b). Mit dieser Zeile wird die

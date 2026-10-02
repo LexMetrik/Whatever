@@ -6,6 +6,10 @@
 import type { RefObject } from 'react';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { zifferSuchWert, zifferAnkerToken, istAnkerZiffer, ZIFFER_TRENNER } from '../../lib/normtext/zifferAnker';
+
+/** Anker-Token mit Ziffer-Suffix (E2) — hier mitgeführt, damit der Sprung-Adapter nur EINEN Import braucht. */
+export { zifferAnkerToken };
 
 // ─── Pane-Scoping-Helfer (B-2.5) — MODUL-Ebene = referenzstabil ────────────
 // Bewusst KEIN React Compiler im Projekt → in-Komponente definierte Funktionen
@@ -31,6 +35,24 @@ export function findeArt(root: HTMLElement | null, token: string): HTMLElement |
   // nicht sprengen. getElementById (document-Pfad) ist ohnehin selektor-frei.
   const id = `art-${token}`;
   return root.querySelector(`#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id}`);
+}
+/**
+ * Sprungziel eines Ankers `#art-<token>[-ziff-<z>]`: der Ziffer-Block, sonst der ARTIKEL.
+ * Unbekannte oder nicht verankerbare Ziffer ⇒ der Artikel (nie «kein Ziel», E2). Gesucht wird
+ * im Artikel über `data-ziffer` (Einzelziffern, auch Sammel-Ziffer «2_3» für «3»), nicht über
+ * die id: dieselbe Auflösung wie «Art. 140 Ziff. 3» (`zifferTeile`, §5). VORRANG hat der
+ * Block mit EXAKT dieser id — die Sammel-Ziffer «2_3» trägt `data-ziffer="2 3"` und wäre über
+ * die Teil-Suche nie treffbar (`#art-122-ziff-2_3` landete sonst auf dem Artikel).
+ */
+export function findeZiel(root: HTMLElement | null, token: string, ziffer: string | null): HTMLElement | null {
+  const art = findeArt(root, token);
+  if (!art || ziffer == null) return art;
+  const exaktId = `${art.id}${ZIFFER_TRENNER}${ziffer}`;
+  const exakt = istAnkerZiffer(ziffer)
+    ? art.querySelector<HTMLElement>(`#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(exaktId) : exaktId}`)
+    : null;
+  const z = zifferSuchWert(ziffer);
+  return exakt ?? (z != null ? art.querySelector<HTMLElement>(`[data-ziffer~="${z}"]`) : null) ?? art;
 }
 
 // Dokument-Position (Index des ersten enthaltenen Artikels) je Sektion — EINMAL

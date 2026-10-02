@@ -1,6 +1,8 @@
 import type { Sektion } from '../../../lib/normtext/browse';
 import type { LeerstellenStatus } from '../../../lib/normtext/darstellung';
 import { pfadZu } from '../helpers';
+import { sicherDekodiert } from '../../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../../lib/normtext/zifferAnker';
 import { kanonischerAnkerToken } from '../suchTreffer';
 import { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 
@@ -103,13 +105,12 @@ export function tokenAusHash(hash: string): string | null {
   if (!hash.startsWith('#art-')) return null;
   const roh = hash.slice('#art-'.length);
   if (!roh) return null;
-  try {
-    return decodeURIComponent(roh);
-  } catch {
-    // Ein kaputtes Prozent-Escape ist kein Artikel, sondern Müll in der
-    // Adresse — dann lieber kein Token als ein falscher (§8).
-    return null;
-  }
+  // Ein kaputtes Prozent-Escape ist kein Artikel, sondern Müll in der
+  // Adresse — dann lieber kein Token als ein falscher (§8).
+  const anker = sicherDekodiert(roh);
+  // E2 (Ziffer-Fragment): `#art-197-ziff-12` zeigt im Einzelmodus den Artikel 197; die Ziffer
+  // trägt der Sprung (`findeZiel`), nicht die Anzeige.
+  return anker === null ? null : zerlegeZifferAnker(anker).artikel;
 }
 
 /** Eine Stufe des Gliederungspfads über dem Artikel. */

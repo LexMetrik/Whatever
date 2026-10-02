@@ -175,3 +175,6 @@ export function vglFnNr(a: string, b: string): number {
   const ka = key(a), kb = key(b);
   return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
 }
+
+/** Zitat-Segment der Ziffer-Ebene («Art. 197 Ziff. 9 Abs. 1 BV»): ohne `ziffer` leer = byte-gleich. */
+export const zifferTeil = (b: { ziffer?: string }): string => (b.ziffer != null ? ` Ziff. ${b.ziffer}` : '');

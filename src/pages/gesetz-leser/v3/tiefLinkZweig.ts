@@ -7,6 +7,7 @@ import type { GliederungsKnoten } from '../gliederungsTypen';
 import { sammleArtikel } from '../gliederungsArtikel';
 import { kanonischerAnkerToken } from '../suchTreffer';
 import { sicherDekodiert } from '../../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../../lib/normtext/zifferAnker';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
 //    VOR DEM ERSTEN BILD ────────────────────────────────────────────────────
@@ -83,8 +84,11 @@ export function useTiefLinkZweig(opts: {
   const pfadRef = useRef<string | null>(null);
   useLayoutEffect(() => {
     if (!hash.startsWith('#art-') || sektionen.length === 0) return;
-    const roh = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
-    if (!roh) return;
+    const anker = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
+    if (!anker) return;
+    // E2 (Ziffer-Fragment): «197-ziff-12» ist kein Artikel-Token — das Suffix MUSS vor der Abbildung
+    // auf die Token-Liste ab, sonst trifft nichts und der Zweig bleibt zu (früherer Bug bei #art-1a).
+    const { artikel: roh } = zerlegeZifferAnker(anker);
     // PA-4-B02 (W2·17-UI-BEFUNDE): «#art-336c» trifft den Token «336_c». Der Seed-
     // Sprung kanonisiert (`kanonischerAnkerToken`, Nebenfund S6), dieser Zweig las
     // den Rohtoken, fand keinen Pfad und öffnete die Gliederung erst nach dem
