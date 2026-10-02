@@ -63,7 +63,7 @@ async function pdfText(page: Page): Promise<string> {
 function fehlendeZellen(pdf: string, zellen: string[], ab: string): string[] {
   // Tausender-Apostroph ist Anzeige (`gruppiereZelle`): «1 000» steht als «1'000» im Druck.
   // Bindestrich-Varianten (U+2010–2015, U+2212) und Soft-Hyphen: pdfjs liefert sie als «-» bzw. gar nicht.
-  const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\s'\u2019\u00ad]+/g, '')
+  const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\u00b5\u03bc]/g, 'u').replace(/[\s'\u2019\u00ad]+/g, '')
   const text = kompakt(pdf)
   let pos = text.indexOf(kompakt(ab))
   if (pos < 0) return [`(Tabellenanfang «${ab}» fehlt im PDF)`]
@@ -144,10 +144,11 @@ test.describe('W2·17 · Druck (page.pdf, A4) verliert keinen Rechtsinhalt', () 
 test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig im PDF — oder der Ausdruck sagt, dass er kürzt', () => {
   // Gegenprüfung #1279 (§1/§8): in diesen neun Erlassen ragten Tabellen im Hochformat über
   // die Seite (FINFRAV-FINMA Anh. 1 0/8, VZV Anh. 3a 0/1, ERV Anh. 2 0/1, VVK 9/42, ZEMIS-V …).
-  // Jede Tabelle des Erlasses: alle Zellen in Quellreihenfolge im PDF-Text ODER eine gedruckte
+  // (AHVV, LRV, LSV, FZA, CHEMRRV, APOSTILLE: früher eine Emulations-Sonde @673 px, hier ersetzt durch den echten PDF-Text.)
+  // Jede Tabelle des Erlasses: alle Zellen im PDF-Text ODER eine gedruckte
   // Zeile «Tabelle im Druck stark verkleinert und gekürzt – vollständig und lesbar: <Link>» je unvollständiger Tabelle.
   // BOEB/FIDLEV/SSV tragen ausserdem die `overflow-x-clip`-Regel (Kasten schnitt im Druck ab).
-  for (const erlass of ['BOEB', 'FIDLEV', 'SSV', 'FINFRAV', 'FINFRAV_FINMA', 'ERV', 'VVK', 'VZV', 'ZEMIS_V', 'VAM']) {
+  for (const erlass of ['BOEB', 'FIDLEV', 'SSV', 'FINFRAV', 'FINFRAV_FINMA', 'ERV', 'VVK', 'VZV', 'ZEMIS_V', 'VAM', 'AHVV', 'LRV', 'LSV', 'FZA', 'CHEMRRV', 'APOSTILLE']) {
     test(`${erlass}: jede Tabellenzelle steht im PDF oder der Kürzungs-Hinweis`, async ({ page }) => {
       test.setTimeout(180_000)
       await page.goto(`/gesetze/bund/${erlass}`)
@@ -168,7 +169,7 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
       }
       const text = teile.join(' ')
       // Bindestrich-Varianten (U+2010–2015, U+2212) und Soft-Hyphen: pdfjs liefert sie als «-» bzw. gar nicht.
-      const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\s'\u2019\u00ad]+/g, '')
+      const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\u00b5\u03bc]/g, 'u').replace(/[\s'\u2019\u00ad]+/g, '')
       const flach = kompakt(text)
       const hinweise = (text.match(/Tabelle im Druck stark verkleinert/g) ?? []).length
       // Reihenfolge-unabhängig (Querformat-Seiten und Zoom ändern die Malreihenfolge): jede Zelle
@@ -282,38 +283,6 @@ test.describe('W2·17 · Querformat im echten page.pdf nur für wirklich breite 
       expect(await page.locator('[data-mehrspaltig][data-breit]').count(), 'kein vorab gesetztes data-breit').toBeGreaterThan(0)
       const { quer } = await querseiten(page)
       expect(quer, 'keine Querformat-Seite im PDF').toBeGreaterThan(0)
-    })
-  }
-})
-
-test.describe('W2·17 · Druck: Tabellen bleiben in der Satzspiegel-Breite', () => {
-  // A4 (794 px) abzüglich `@page { margin: 1.6cm }` beidseitig = 673 px. Gemessen wird der
-  // Überstand jeder Zelle über die Kastenkante. Vorher (Build 9bb82d7de, Unclip allein)
-  // ragten in diesen sechs Erlassen 14 Tabellen über die Kante (AHVV 4, LRV 4, LSV 3,
-  // FZA 1, CHEMRRV 1, APOSTILLE 1); nachher 0. NICHT erfasst: Tabellen mit 10–36 Spalten und
-  // Fliesstext-Zellen (VVK, ZEMIS-V, ERV, FINFRAV) — dort reicht keine Schriftstufe.
-  for (const erlass of ['AHVV', 'LRV', 'LSV', 'FZA', 'CHEMRRV', 'APOSTILLE']) {
-    test(`${erlass}: keine Tabellenzelle ragt im Druck über die Spalte`, async ({ page }) => {
-      test.slow()
-      await page.setViewportSize({ width: 673, height: 900 })
-      await page.goto(`/gesetze/bund/${erlass}`)
-      await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
-      await page.evaluate(() => document.fonts?.ready)
-      await page.emulateMedia({ media: 'print' })
-      const m = await page.evaluate(() => {
-        const ueber: string[] = []
-        const tabellen = document.querySelectorAll('[data-mehrspaltig]')
-        for (const t of tabellen) {
-          const kante = t.getBoundingClientRect().right
-          for (const c of t.querySelectorAll('[role="cell"],[role="columnheader"]')) {
-            const r = c.getBoundingClientRect().right
-            if (r > kante + 1) { ueber.push(`${(c.textContent ?? '').slice(0, 24)} +${Math.round(r - kante)}`); break }
-          }
-        }
-        return { n: tabellen.length, ueber }
-      })
-      expect(m.n, 'Positiv-Sonde: der Erlass trägt Tabellen').toBeGreaterThan(0)
-      expect(m.ueber, 'Tabellen ragen im Druck über die Spalte').toEqual([])
     })
   }
 })
