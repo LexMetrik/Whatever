@@ -6,6 +6,7 @@ import {
   einzelAdresse, erlassAdresse, gliederungsPfad, loeseEinzelToken, vorschauMarginalie, vorschauZiel, type VorschauZiel,
 } from './einzelModus';
 import type { ArtikelNachbarn as NachbarnAmArtikel } from './nachbarArtikel';
+import { NachbarStrukturKontext } from './nachbarStruktur';
 import type { LeserV3Modell } from './leserV3Modell';
 import { leerstellenWort } from '../../../lib/normtext/darstellung';
 
@@ -95,8 +96,11 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
   const { unbekannt } = loeseEinzelToken(useLocation().hash, m.artTokens);
 
   return (
-    // `minmax(0,1fr)`: ohne es nimmt die Spur die Mindestbreite einer breiten Tabelle an und die Karte wächst
-    // über das Fenster (E-D12-B07, @375: 641 px).
+    // B11-D04 · die Gliederung für den Gruppennamen der Pfeile — im Kopf der Karte UND im Fuss
+    // (`./nachbarStruktur`).
+    <NachbarStrukturKontext.Provider value={m.struktur}>
+    {/* `minmax(0,1fr)`: ohne es nimmt die Spur die Mindestbreite einer breiten Tabelle an und die Karte wächst
+        über das Fenster (E-D12-B07, @375: 641 px). */}
     <div className="grid grid-cols-[minmax(0,1fr)] gap-5" data-einzel-artikel={token}>
       {unbekannt !== null && (
         <p role="status" data-einzel-unbekannt className="text-body-s text-ink-700">
@@ -135,7 +139,9 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           die im Einzelmodus frei sind (das Panel ist nicht gemountet, D-E4);
           `j`/`k` bleiben unverändert belegt und brauchen keinen zweiten
           Hinweis (Kap. 15.6). */}
-      <div className="grid gap-2 border-t border-line pt-3.5 [&_[data-nachbar]]:min-h-[var(--tap-ziel-komfort)] [&_[data-nachbar]]:items-center">
+      {/* B11-D01 · lange Beschriftung (HAÜ: Anhang mit 244 Zeichen) steht hier bis zu zwei Zeilen
+          statt einzeilig abgeschnitten; der volle Wortlaut steht im `title` des Pfeils. */}
+      <div className="grid gap-2 border-t border-line pt-3.5 [&_[data-nachbar-gruppe]]:line-clamp-2 [&_[data-nachbar-gruppe]]:whitespace-normal [&_[data-nachbar-label]]:line-clamp-2 [&_[data-nachbar-label]]:whitespace-normal [&_[data-nachbar-label]]:break-words [&_[data-nachbar]]:min-h-[var(--tap-ziel-komfort)] [&_[data-nachbar]]:items-center">
         {nachbarn && (
           <ArtikelNachbarn nachbarn={nachbarn} adresse={adresse}
             klassen="inline-flex w-full items-baseline justify-between gap-4" />
@@ -164,6 +170,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
         </nav>
       )}
     </div>
+    </NachbarStrukturKontext.Provider>
   );
 }
 

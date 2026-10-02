@@ -171,3 +171,122 @@ test.describe('W2·5m — Rohdaten-Link je Erlass', () => {
     expect(amtliche.length).toBeGreaterThan(0)
   })
 })
+
+// ═══ W2·17-UI-BEFUNDE · NACHBAR-PFEILE: LANGE BESCHRIFTUNG, TREFFERFLÄCHE, GRUPPE ═
+//
+// Vier Befunde der Gesamtprüfung, je am gebauten Stand im Browser belegt
+// (2.10.2026) und hier festgehalten. Sie ERGÄNZEN die Fälle oben (§6.3).
+//
+//  (D01) B11-D01 · HAÜ Art. 48: der Nachbar ist ein Anhang mit 244 Zeichen
+//        Beschriftung. `white-space: nowrap` machte den Pfeil 1261 px breit — die
+//        Seite war @1440 1870 px, @375 1337 px breit (waagrechter Bildlauf).
+//  (D02) B11-D02 · der Pfeil im Artikelkopf war 13 px hoch (11 px Schrift), unter
+//        dem 24-px-Mindestmass der Trefferfläche (DESIGN-REGLEMENT F9).
+//  (D03) B11-D03 · am ersten Artikel stand «Art. 2 ›» im Fuss-Paar LINKS, am
+//        zweiten rechts — dieselbe Bedienung sprang von Seite zu Seite.
+//  (D04) B11-D04 · OR Art. 1186 → «Art. 1 ›»: der Nachbar ist Art. 1 der
+//        Schlussbestimmungen von 1962, nicht der Hauptartikel.
+//
+// ROT ZU BEKOMMEN (§6.7), am Bau gesehen:
+//  (D01) `parts/ArtikelNachbarn.tsx`: `whitespace-nowrap` wieder an `PFEIL_KLASSEN`
+//        und `min-w-0 max-w-full` streichen ⇒ Seite breiter als das Fenster.
+//  (D02) `after:absolute after:inset-x-0 after:-inset-y-1.5` streichen ⇒ der
+//        Treffer-Test 5 px über dem Pfeil liefert die Kopfzeile.
+//  (D03) `ml-auto` am Nachfolger streichen ⇒ der Pfeil steht links.
+//  (D04) in `v3/nachbarArtikel.ts` `gruppeWechsel` auf `false` setzen ⇒ der
+//        zugängliche Name nennt keine Gruppe.
+test.describe('W2·17-UI-BEFUNDE — Nachbar-Pfeile: Darstellung', () => {
+  const HAUE = '/gesetze/international/HAUE'
+
+  for (const [w, h] of [[375, 800], [1024, 800], [1440, 900]] as const) {
+    test(`(D01) HAÜ Art. 48 @${w}: die lange Beschriftung des Nachbarn sprengt weder Spalte noch Seite`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await page.goto(einzel(HAUE, '48'))
+      await expect(page.locator('[data-nachbar="nach"]').first()).toBeVisible({ timeout: 30_000 })
+      // Vorbedingung (§6.7): der Nachbar ist wirklich der lange Anhang, sonst ist «passt» trivial wahr.
+      const name = await page.locator('[data-nachbar="nach"]').first().getAttribute('aria-label')
+      expect(name, 'Nachbar ist nicht der Anhang — Vorbedingung fehlt').toContain('Verzeichnis der zentralen')
+
+      const mass = await page.evaluate(() => {
+        const paare = [...document.querySelectorAll('[data-artikel-nachbarn]')]
+        return {
+          seite: document.documentElement.scrollWidth, fenster: innerWidth,
+          paare: paare.length,
+          draussen: paare.flatMap((p) => {
+            const pr = p.getBoundingClientRect()
+            return [...p.querySelectorAll('[data-nachbar]')].map((a) => {
+              const r = a.getBoundingClientRect()
+              return { art: a.getAttribute('data-nachbar'), links: Math.round(r.left - pr.left), rechts: Math.round(r.right - pr.right), hoch: Math.round(r.height), breit: Math.round(r.width), bis: Math.round(r.right) }
+            })
+          }),
+        }
+      })
+      expect(mass.paare, 'Kopf- und Fuss-Paar erwartet').toBe(2)
+      expect(mass.seite, `Seite ${mass.seite} px breit bei ${mass.fenster} px Fenster`).toBeLessThanOrEqual(mass.fenster)
+      for (const k of mass.draussen) {
+        expect(k.rechts, `Pfeil «${k.art}» ragt ${k.rechts} px aus seinem Paar`).toBeLessThanOrEqual(1)
+        expect(k.links, `Pfeil «${k.art}» ragt ${-k.links} px links aus seinem Paar`).toBeGreaterThanOrEqual(-1)
+        expect(k.breit, `Pfeil «${k.art}» ${k.breit} px breit bei ${mass.fenster} px Fenster`).toBeLessThanOrEqual(mass.fenster)
+        // Auch dort, wo ein Vorfahr den Überlauf abschneidet und `scrollWidth` ihn nicht meldet (@1440 gemessen).
+        expect(k.bis, `Pfeil «${k.art}» endet bei ${k.bis} px, das Fenster bei ${mass.fenster} px`).toBeLessThanOrEqual(mass.fenster)
+      }
+      // Die Auskunft geht nicht verloren: der VOLLE Wortlaut steht am Pfeil (title), nur die Darstellung kürzt.
+      const titel = await page.locator('[data-nachbar="nach"]').first().getAttribute('title')
+      expect(titel ?? '').toContain('Verzeichnis der zentralen und der zuständigen Behörden')
+      // Im Fuss höchstens zwei Zeilen (11 px · 1.5 ≈ 17 px je Zeile) — kein Textblock von 20 Zeilen.
+      const fuss = page.locator('[data-artikel-nachbarn] [data-nachbar="nach"]').last()
+      expect((await fuss.boundingBox())!.height, 'Fuss-Pfeil höher als zwei Zeilen').toBeLessThanOrEqual(80)
+    })
+  }
+
+  test('(D02) @375 der Pfeil im Artikelkopf trifft auch 5 px über und unter seiner Schrift', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 })
+    await page.goto(einzel(OR, '337_c'))
+    const pfeil = page.locator('#art-337_c [data-artikel-nachbarn] [data-nachbar="nach"]').first()
+    await expect(pfeil).toBeVisible({ timeout: 30_000 })
+    const treffer = await pfeil.evaluate((a) => {
+      const r = a.getBoundingClientRect()
+      const x = r.left + r.width / 2
+      const wer = (y: number) => !!document.elementFromPoint(x, y)?.closest('[data-nachbar]')
+      return { hoch: r.height, oben: wer(r.top - 5), mitte: wer(r.top + r.height / 2), unten: wer(r.bottom + 5) }
+    })
+    expect(treffer.mitte, 'Vorbedingung: die Mitte trifft den Pfeil').toBe(true)
+    expect(treffer.oben, `Pfeil ${treffer.hoch} px hoch: 5 px darüber trifft ihn nicht`).toBe(true)
+    expect(treffer.unten, `Pfeil ${treffer.hoch} px hoch: 5 px darunter trifft ihn nicht`).toBe(true)
+  })
+
+  test('(D03) am ersten Artikel steht der Nachfolger im Fuss rechts — wie überall sonst', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(einzel(OR, '1'))
+    const paar = page.locator('[data-artikel-nachbarn]').last()
+    await expect(paar.locator('[data-nachbar="nach"]')).toBeVisible({ timeout: 30_000 })
+    await expect(paar.locator('[data-nachbar="vor"]'), 'Vorbedingung: am ersten Artikel gibt es keinen Vorgänger').toHaveCount(0)
+    const abstand = await paar.evaluate((p) => {
+      const a = p.querySelector('[data-nachbar="nach"]')!.getBoundingClientRect()
+      return Math.round(p.getBoundingClientRect().right - a.right)
+    })
+    expect(abstand, `«Art. 2 ›» steht ${abstand} px links vom rechten Rand des Paars`).toBeLessThanOrEqual(1)
+  })
+
+  test('(D04) OR Art. 1186 → der Nachfolger ist Art. 1 der Schlussbestimmungen und sagt es (Kopf UND Fuss)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(einzel(OR, '1186'))
+    const nach = page.locator('[data-artikel-nachbarn] [data-nachbar="nach"]')
+    await expect(nach).toHaveCount(2, { timeout: 30_000 })
+    // Die Gliederung (Sidecar) lädt nach — der Name wird danach eindeutig.
+    for (const i of [0, 1]) {
+      await expect(nach.nth(i), 'der zugängliche Name nennt die Gruppe nicht')
+        .toHaveAttribute('aria-label', /Schlussbestimmungen der Änderung vom 23\. März 1962/, { timeout: 20_000 })
+    }
+    await expect(nach.nth(1).locator('[data-nachbar-gruppe]')).toHaveText('Schlussbestimmungen der Änderung vom 23. März 1962')
+    await expect(nach.nth(1).locator('[data-nachbar-label]')).toHaveText('Art. 1')
+  })
+
+  test('(D04) innerhalb einer Gruppe bleibt der Pfeil kurz: kein Gruppenname unter jedem Artikel', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(einzel(OR, 'disp_u2_art_2'))
+    await expect(page.locator('[data-nachbar="nach"]').first()).toBeVisible({ timeout: 30_000 })
+    await page.waitForTimeout(1500) // das Sidecar hätte die Gruppe inzwischen nachgeladen
+    await expect(page.locator('[data-nachbar-gruppe]')).toHaveCount(0)
+  })
+})
