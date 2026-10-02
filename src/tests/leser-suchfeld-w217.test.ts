@@ -3,6 +3,10 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { kontrast, type Mode } from '../../scripts/farbwelt-messung';
 import { kuerzelHinterModal } from '../components/suche/fruehesSuchKuerzel';
+import {
+  SUCH_HIGHLIGHT, SUCH_HIGHLIGHT_AKTIV, neueHighlightInstanz, setzeAktiveFundstelle, setzeSuchHighlightRanges,
+} from '../pages/gesetz-leser/suchHighlight';
+import { MODALER_DIALOG } from '../components/layout/modalerDialog';
 
 // ─── W2·17-UI-BEFUNDE · Suchfeld und Such-Hervorhebung des Gesetzesleser ─────
 //
@@ -118,5 +122,109 @@ describe('Such-Hervorhebung ≥ 3:1 — hell UND dunkel (Entscheid David 2.10.20
     const css = lies('index.css');
     expect(css).toMatch(/::highlight\(lc-such-treffer\)\s*\{\s*background-color:\s*var\(--such-treffer\);\s*color:\s*var\(--such-treffer-tinte\);\s*\}/);
     expect(css).toMatch(/@keyframes lc-ziel-blink\s*\{\s*0%\s*\{\s*background:\s*var\(--such-sprung\);/);
+  });
+});
+
+describe('AKTIVE Fundstelle — eigener Highlight, hebt sich vom normalen Treffer ab', () => {
+  const modi: Mode[] = ['hell', 'dunkel'];
+  for (const modus of modi) {
+    it(`${modus}: die aktive Fläche steht ≥ 3:1 gegen die normale Treffer-Fläche`, () => {
+      expect(kontrast('such-aktiv', 'such-treffer', modus)).toBeGreaterThanOrEqual(3);
+    });
+    it(`${modus}: Text auf der aktiven Fläche ≥ 4.5:1`, () => {
+      expect(kontrast('such-aktiv-tinte', 'such-aktiv', modus)).toBeGreaterThanOrEqual(4.5);
+    });
+  }
+
+  it('die CSS-Regel liest die Aktiv-Tokens und trägt zusätzlich eine Unterstreichung (WCAG 1.4.1)', () => {
+    const css = lies('index.css');
+    const regel = css.match(/::highlight\(lc-such-aktiv\)\s*\{[^}]*\}/)?.[0] ?? '';
+    expect(regel, 'keine ::highlight(lc-such-aktiv)-Regel').not.toBe('');
+    expect(regel).toMatch(/background-color:\s*var\(--such-aktiv\)/);
+    expect(regel).toMatch(/color:\s*var\(--such-aktiv-tinte\)/);
+    expect(regel).toMatch(/text-decoration:\s*underline/);
+  });
+
+  it('der Highlight-Name ist ein Vertrag mit index.css', () => {
+    expect(SUCH_HIGHLIGHT_AKTIV).toBe('lc-such-aktiv');
+  });
+
+  describe('Registry (CSS.highlights-Doppel)', () => {
+    type Doppel = { ranges: unknown[]; priority?: number };
+    function api() {
+      const g = globalThis as unknown as { CSS?: unknown; Highlight?: unknown };
+      const vCss = g.CSS; const vHl = g.Highlight;
+      const reg = new Map<string, Doppel>();
+      g.CSS = { highlights: reg };
+      g.Highlight = class { ranges: unknown[]; priority = 0; constructor(...r: unknown[]) { this.ranges = r; } };
+      return { reg, ende: () => { g.CSS = vCss; g.Highlight = vHl; } };
+    }
+    const r = (n: string) => ({ __name: n }) as unknown as Range;
+
+    it('die aktive Stelle steht in EIGENER Position mit Vorrang; die Treffer-Menge bleibt unberührt', () => {
+      const { reg, ende } = api();
+      const inst = neueHighlightInstanz('a');
+      try {
+        setzeSuchHighlightRanges([r('t1'), r('t2'), r('t3')], inst);
+        setzeAktiveFundstelle(r('t2'), inst);
+        expect(reg.get(SUCH_HIGHLIGHT)!.ranges).toHaveLength(3);
+        const aktiv = reg.get(SUCH_HIGHLIGHT_AKTIV)!;
+        expect(aktiv.ranges).toHaveLength(1);
+        expect(aktiv.priority, 'ohne Vorrang entschiede die Registrierungsreihenfolge').toBeGreaterThan(0);
+      } finally { setzeAktiveFundstelle(null, inst); setzeSuchHighlightRanges([], inst); ende(); }
+    });
+
+    it('Enter/Weiter wechselt die aktive Stelle (ersetzt, summiert nicht); null und Aufräumen löschen die Position', () => {
+      const { reg, ende } = api();
+      const inst = neueHighlightInstanz('a');
+      try {
+        setzeAktiveFundstelle(r('x1'), inst);
+        setzeAktiveFundstelle(r('x2'), inst);
+        expect((reg.get(SUCH_HIGHLIGHT_AKTIV)!.ranges[0] as { __name: string }).__name).toBe('x2');
+        expect(reg.get(SUCH_HIGHLIGHT_AKTIV)!.ranges).toHaveLength(1);
+        setzeAktiveFundstelle(null, inst);
+        expect(reg.has(SUCH_HIGHLIGHT_AKTIV), 'leere Highlight-Instanz bleibt stehen').toBe(false);
+      } finally { ende(); }
+    });
+
+    it('zwei Panes: jedes führt seine eigene aktive Stelle, das Leeren des einen nimmt die andere nicht mit', () => {
+      const { reg, ende } = api();
+      const a = neueHighlightInstanz('a'); const b = neueHighlightInstanz('b');
+      try {
+        setzeAktiveFundstelle(r('a1'), a);
+        setzeAktiveFundstelle(r('b1'), b);
+        expect(reg.get(SUCH_HIGHLIGHT_AKTIV)!.ranges).toHaveLength(2);
+        setzeAktiveFundstelle(null, a);
+        expect(reg.get(SUCH_HIGHLIGHT_AKTIV)!.ranges).toHaveLength(1);
+      } finally { setzeAktiveFundstelle(null, a); setzeAktiveFundstelle(null, b); ende(); }
+    });
+  });
+
+  it('der Leser setzt die aktive Stelle aus dem Sprungziel (malRang) und räumt sie bei Begriffswechsel', () => {
+    const q = lies('pages/gesetz-leser/inhalt-suchtreffer.tsx').replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+    expect(q).toMatch(/setzeAktiveFundstelle\([^)]*ranges\[eintrag\.malRang\]/);
+    expect(q, 'kein Aufräumen der aktiven Stelle').toMatch(/setzeAktiveFundstelle\(null,/);
+  });
+});
+
+describe('§5 · EIN Selektor für «offener modaler Dialog»', () => {
+  it('das Literal steht nur noch in modalerDialog.ts', () => {
+    const quellen = ['components/layout/Shell.tsx', 'pages/gesetz-leser/parts/LeserTastatur.tsx', 'components/suche/fruehesSuchKuerzel.ts'];
+    for (const q of quellen) {
+      const text = lies(q).replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+      expect(text, `${q} schreibt den Selektor selbst`).not.toContain('aria-modal="true"]');
+      expect(text, `${q} nutzt offeneModaleDialoge nicht`).toMatch(/offeneModaleDialoge\(/);
+    }
+    expect(MODALER_DIALOG).toBe('[role="dialog"][aria-modal="true"]');
+  });
+});
+
+describe('§5 · Treffer-Marke der Trefferliste = Wortlaut-Marke', () => {
+  it('LeserTrefferListe nutzt such-treffer/such-treffer-tinte statt brass-200/ink-900', () => {
+    const q = lies('pages/gesetz-leser/v3/LeserTrefferListe.tsx');
+    const marke = q.match(/const MARKE = '([^']*)'/)?.[1] ?? '';
+    expect(marke).toContain('[&_mark]:bg-such-treffer');
+    expect(marke).toContain('[&_mark]:text-such-treffer-tinte');
+    expect(marke).not.toMatch(/brass-200|ink-900/);
   });
 });

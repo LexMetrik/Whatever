@@ -6,7 +6,7 @@ import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz,
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz, setzeAktiveFundstelle,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
@@ -364,6 +364,13 @@ export function useSuchTreffer({
       // das sichtbar zu spät.
       rangesRef.current.set(art.id, ranges);
       male();
+      // W2·17-UI-BEFUNDE: die Fundstelle, zu der dieser Sprung führt, ist die
+      // AKTIVE — derselbe `malRang` wie für das Scrollen unten (§5), nur
+      // umgefärbt. Nicht malbar (`null`) ⇒ keine aktive Stelle, es bleibt beim
+      // Artikel-Blink. Bei weggeschalteter Hervorhebung wird auch sie nicht gemalt.
+      setzeAktiveFundstelle(
+        markenAus || eintrag.malRang === null ? null : ranges[eintrag.malRang] ?? null,
+        highlightInstanz);
       const start = eintrag.malRang === null ? undefined : ranges[eintrag.malRang]?.startContainer;
       const el = (start
         ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
@@ -402,7 +409,13 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz]);
+
+  // Die aktive Stelle gehört zu EINEM Begriff/Bereich: wechselt er (oder die
+  // Hervorhebung wird weggeschaltet, oder der Leser verschwindet), räumt der
+  // Cleanup sie — nie bleibt die Markierung am alten Begriff stehen.
+  useEffect(() => () => setzeAktiveFundstelle(null, highlightInstanz),
+    [sucheTrim, bereich, markenAus, highlightInstanz]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;

@@ -94,7 +94,7 @@ export function SuchSprungFeld({
   const neuestes = useRef({ onVor, hatTreffer, onBestaetigt });
   useEffect(() => { neuestes.current = { onVor, hatTreffer, onBestaetigt }; });
 
-  const token =loeseArtikel && wert.trim() !== '' ? loeseArtikel(wert) : null;
+  const token = loeseArtikel && wert.trim() !== '' ? loeseArtikel(wert) : null;
 
   return (
     <div data-v3-suchsprung className="space-y-1">
@@ -130,6 +130,11 @@ export function SuchSprungFeld({
           value={wert}
           onChange={(e) => setzeWert(e.target.value)}
           onKeyDown={(e) => {
+            // W2·17-UI-BEFUNDE (Gegenprüfung #1270): in einer IME-Komposition
+            // gehören Enter, ↑↓ und Esc der Kandidatenwahl, nicht der Suche —
+            // sonst sprang Enter beim Bestätigen eines Kandidaten (Chromium:
+            // `isComposing`; Safari meldet beim Abschluss-Enter `keyCode` 229).
+            if (e.nativeEvent?.isComposing || e.keyCode === 229) return;
             if (e.key === 'Escape' && escLeert) {
               // Kein Sprung, kein Scroll — nur leeren (Pos. 14). Und nicht
               // weiterreichen: sonst läge «Feld leeren» und «umgebendes Overlay

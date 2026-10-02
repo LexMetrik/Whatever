@@ -16,6 +16,9 @@
 
 /** Kanonischer Highlight-Name (mit der `::highlight()`-Regel in index.css). */
 export const SUCH_HIGHLIGHT = 'lc-such-treffer';
+/** Zweite Registry-Position: die AKTIVE Fundstelle (Enter/Weiter, Sprungziel) —
+ *  mit der `::highlight()`-Regel in index.css gekoppelt (W2·17-UI-BEFUNDE). */
+export const SUCH_HIGHLIGHT_AKTIV = 'lc-such-aktiv';
 
 // ─── B1 · Faltung der Tausender-Schreibweisen ────────────────────────────────
 //
@@ -508,6 +511,43 @@ function schreibeRegistry(): void {
   for (const rs of proInstanz.values()) for (const r of rs) alle.push(...(malTeile.get(r) ?? [r]));
   if (alle.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
   reg.set(SUCH_HIGHLIGHT, new Ctor(...alle));
+}
+
+/** Die aktive Fundstelle je Instanz (höchstens EINE Range je Leser). */
+const aktivProInstanz = new Map<HighlightInstanz, Range>();
+
+/** Schreibt die aktiven Stellen aller Instanzen in ihre eigene Registry-Position. */
+function schreibeAktiv(): void {
+  const api = highlightApi();
+  if (!api) return;
+  const { reg, Ctor } = api;
+  const teile: Range[] = [];
+  for (const r of aktivProInstanz.values()) teile.push(...(malTeile.get(r) ?? [r]));
+  if (teile.length === 0) { reg.delete(SUCH_HIGHLIGHT_AKTIV); return; }
+  const h = new Ctor(...teile) as { priority?: number };
+  // Vorrang vor `lc-such-treffer`: dieselbe Stelle liegt in BEIDEN Positionen,
+  // und ohne Priorität entschiede die Registrierungsreihenfolge, welche Fläche
+  // gewinnt.
+  h.priority = 1;
+  reg.set(SUCH_HIGHLIGHT_AKTIV, h);
+}
+
+/**
+ * W2·17-UI-BEFUNDE (Gegenprüfung #1270, Vorgabe David 2.10.2026): die AKTIVE
+ * Fundstelle — dorthin führt Enter/Weiter gerade — bekommt einen eigenen
+ * Highlight, der sich vom normalen Treffer abhebt. REINE UMFÄRBUNG: es ist
+ * dieselbe Range (dieselbe `sammleTrefferRanges`-Menge, derselbe `malRang`) wie
+ * in der Treffer-Menge; Zählung, gemalte Stellen und Sprungziele ändern sich
+ * nicht, `lc-such-treffer` bleibt vollständig. `null` = keine aktive Stelle.
+ * Je Instanz EINE Stelle (Split-View: jedes Pane führt seine eigene).
+ */
+export function setzeAktiveFundstelle(
+  range: Range | null,
+  instanz: HighlightInstanz = STANDARD_INSTANZ,
+): void {
+  if (range) aktivProInstanz.set(instanz, range);
+  else aktivProInstanz.delete(instanz);
+  schreibeAktiv();
 }
 
 /**

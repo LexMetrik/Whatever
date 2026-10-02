@@ -436,7 +436,34 @@ describe('SuchSprungFeld — Enter springt, Escape leert und springt NICHT', () 
     expect(onSprung).not.toHaveBeenCalled();
   });
 
-  it('Enter OHNE auflösbaren Token ruft nichts auf (kein Token, kein Sprung)', () => {
+  // W2·17-UI-BEFUNDE (Gegenprüfung #1270, 2.10.2026): Enter bestätigt in einer
+  // IME-Komposition (Japanisch, Chinesisch, Koreanisch, auch Akzent-Tasten) den
+  // Kandidaten — es ist KEIN Such-/Sprung-Befehl. Gemessen am Stand vor dem Fix
+  // (Chromium, Komposition per `compositionstart`): Enter sprang zu art-75.
+  for (const [name, nativ] of [
+    ['isComposing', { isComposing: true }],
+    ['keyCode 229 (Safari, sendet isComposing erst nach compositionend)', { isComposing: false, keyCode: 229 }],
+  ] as const) {
+    it(`Enter in einer IME-Komposition tut nichts — ${name}`, () => {
+      const onSprung = vi.fn();
+      const setzeWert = vi.fn();
+      const onVor = vi.fn();
+      renderToString(
+        <SuchSprungFeld wert="429" setzeWert={setzeWert} onSprung={onSprung} onVor={onVor} hatTreffer
+          loeseArtikel={() => '429_tok'} />,
+      );
+      const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: unknown) => void;
+      let verhindert = false;
+      onKeyDown({ key: 'Enter', keyCode: (nativ as { keyCode?: number }).keyCode, nativeEvent: nativ,
+        preventDefault: () => { verhindert = true; } });
+      expect(verhindert, 'Enter der Komposition darf nicht verschluckt werden').toBe(false);
+      expect(onSprung).not.toHaveBeenCalled();
+      expect(onVor).not.toHaveBeenCalled();
+      expect(setzeWert).not.toHaveBeenCalled();
+    });
+  }
+
+  it('Enter OHNE auflösbaren Token springt nicht (er bestätigt nur den Feldwert)', () => {
     const onSprung = vi.fn();
     const setzeWert = vi.fn();
     renderToString(

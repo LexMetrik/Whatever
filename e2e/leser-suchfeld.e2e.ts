@@ -88,6 +88,41 @@ test.describe('C1-B01 — Enter sucht mit dem aktuellen Feldinhalt', () => {
   })
 })
 
+test.describe('Aktive Fundstelle — eigener Highlight', () => {
+  const aktivLage = (page: Page) => page.evaluate(() => {
+    const reg = (globalThis as unknown as { CSS: { highlights: Map<string, Iterable<Range>> } }).CSS.highlights
+    const aktiv = [...(reg.get('lc-such-aktiv') ?? [])]
+    const treffer = [...(reg.get('lc-such-treffer') ?? [])]
+    const a = aktiv[0]
+    const im = a ? treffer.some((t) => t.compareBoundaryPoints(Range.START_TO_START, a) === 0
+      && t.compareBoundaryPoints(Range.END_TO_END, a) === 0) : false
+    return { anzahl: aktiv.length, text: a?.toString() ?? null, trefferAnzahl: treffer.length, ImTrefferSatz: im,
+      y: a ? Math.round(a.getBoundingClientRect().top + window.scrollY) : null }
+  })
+
+  test('(e) Enter markiert genau EINE aktive Stelle, Weiter wechselt sie, ein neuer Begriff räumt sie', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await oeffneStPO(page)
+    await suchFeld(page).fill('Verteidigung')
+    await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 15_000 })
+    await suchFeld(page).press('Enter')
+    await expect.poll(async () => (await aktivLage(page)).anzahl, { timeout: 10_000 }).toBe(1)
+    const eins = await aktivLage(page)
+    expect(eins.text?.toLowerCase()).toBe('verteidigung')
+    expect(eins.ImTrefferSatz, 'die aktive Stelle ist eine Stelle der normalen Treffer-Menge (nur umgefärbt)').toBe(true)
+    expect(eins.trefferAnzahl, 'die Treffer-Menge bleibt gemalt').toBeGreaterThanOrEqual(1)
+
+    await suchFeld(page).press('Enter')
+    await expect.poll(async () => (await aktivLage(page)).y, { timeout: 10_000 }).not.toBe(eins.y)
+    expect((await aktivLage(page)).anzahl).toBe(1)
+
+    await suchFeld(page).fill('Entschädigung')
+    await expect.poll(async () => (await aktivLage(page)).anzahl, { timeout: 10_000 }).toBe(0)
+    expect(fehler).toEqual([])
+  })
+})
+
 /** Fokus-Lage: liegt der Fokus noch im offenen modalen Dialog? */
 const fokusImDialog = (page: Page) => page.evaluate(() => {
   const dlg = document.querySelector('[role="dialog"][aria-modal="true"]')

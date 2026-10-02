@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { offeneModaleDialoge } from '../../../components/layout/modalerDialog';
 import { tastendruckGehoertPane } from '../panePrioritaet';
 import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
 
@@ -190,7 +191,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // Blatt der EINZIGE offene modale Dialog ist; jeder andere (Hilfe,
       // Suche) sperrt weiter.
       if (e.key === 'r' && panelRef.current) {
-        const modale = document.querySelectorAll('[role="dialog"][aria-modal="true"]');
+        const modale = offeneModaleDialoge();
         if (modale.length === 1 && modale[0].matches('[data-v3-panel-modal="ja"]')) {
           e.preventDefault();
           panelRef.current();
@@ -200,7 +201,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
       // Guard 3: hinter einem offenen modalen Dialog wird nichts bedient — ohne
       // Ausnahme, das eigene Overlay eingeschlossen (dasselbe Prinzip, nach dem
       // `Shell.tsx` F6 sperrt).
-      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+      if (offeneModaleDialoge().length > 0) return;
 
       if (e.key === '?') {
         e.preventDefault();

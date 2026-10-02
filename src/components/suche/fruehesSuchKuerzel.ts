@@ -33,6 +33,8 @@
 // geforderte Frühe, ohne neue Datei im Auslieferungspfad, ohne DOM-Eingriff
 // und damit ohne Layout-Shift.
 
+import { offeneModaleDialoge } from '../layout/modalerDialog';
+
 /** Tippt der Nutzer gerade in ein Feld? Dann ist «/» ein Zeichen, kein Kürzel.
  *  ⌘K/Ctrl-K greift auch dort — es ist der Einstieg von überall. */
 function inEingabe(ziel: EventTarget | null): boolean {
@@ -93,11 +95,8 @@ export function istSuchKuerzel(e: {
  *  'node'`): die Entscheidung ist so an jeder Lage prüfbar. */
 export function kuerzelHinterModal(
   feld: unknown,
-  modale: ArrayLike<{ contains: (n: never) => boolean }> | null = typeof document === 'undefined'
-    ? null
-    : document.querySelectorAll('[role="dialog"][aria-modal="true"]'),
+  modale: ArrayLike<{ contains: (n: never) => boolean }> = offeneModaleDialoge(),
 ): boolean {
-  if (!modale) return false;
   for (let i = 0; i < modale.length; i++) {
     // Kein Feld (noch nicht gerendert) ⇒ es liegt in keinem Dialog.
     if (feld == null || !modale[i].contains(feld as never)) return true;

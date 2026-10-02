@@ -46,6 +46,8 @@ export const colors = {
   such: {
     treffer: 'var(--such-treffer)',
     'treffer-tinte': 'var(--such-treffer-tinte)',
+    aktiv: 'var(--such-aktiv)',
+    'aktiv-tinte': 'var(--such-aktiv-tinte)',
   },
   reg: {
     g: 'var(--reg-g)',

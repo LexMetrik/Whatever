@@ -322,6 +322,17 @@
     /* Tinte auf der Such-Markierung `such-treffer`: hell die Fliesstext-Tinte (4.70:1 auf der
        Fläche). */
     --such-treffer-tinte: var(--ink-900);
+    /* Fläche der AKTIVEN Fundstelle im Wortlaut (`::highlight(lc-such-aktiv)`, die Stelle, zu der
+       Enter/Weiter gerade führt). W2·17-UI-BEFUNDE (Gegenprüfung #1270, Vorgabe David 2.10.2026:
+       der aktive Treffer hebt sich sichtbar vom normalen ab). Gegenstück zu `such-treffer`: die
+       Umkehrung der Helligkeit (hell dunkles Braun, dunkel helles Sand) — ≥ 3:1 gegen den normalen
+       Treffer (hell 3.49:1, dunkel 3.57:1), Tinte darauf `such-aktiv-tinte` ≥ 4.5:1. Zusätzlich
+       unterstrichen (nicht-farbliches Merkmal, WCAG 1.4.1). Nachweis
+       `src/tests/leser-suchfeld-w217.test.ts`. */
+    --such-aktiv: #46361B;
+    /* Tinte auf `such-aktiv`: hell das feste Papierweiss (11.35:1), dunkel die feste Dunkeltinte
+       (10.38:1). Beide Festtöne kippen nicht mit dem Thema und sind für genau diese Umkehrung da. */
+    --such-aktiv-tinte: var(--ink-fixed-light);
     /* Registerfarbe GESETZE. Die vier Registerfarben sind die einzige Farbe des Hauses und stehen
        als Strich, Reiter-Unterkante und Randmarke; als Fläche nur über die Flächen-Token
        `reg-*-flaeche` (F0.2 i. d. F. 22.9.2026), nie der Registerton selbst unter Fliesstext und
@@ -1207,6 +1218,8 @@
        zugleich nicht halten (13.3 / 4.5 < 3) — darum trägt die Markierung dort die hellste
        Text-Stufe `brass-800` (#F6F4F0): 4.92:1 auf der Fläche. */
     --such-treffer-tinte: var(--brass-800);
+    --such-aktiv: #E2D0B1;
+    --such-aktiv-tinte: var(--ink-fixed-dark);
     /* Messing: Text-Töne (800–600) hell, Flächen-Töne (100/200) dunkel,
        Linien/Skala (500/400/300) bleiben Gold.
 
@@ -4369,6 +4382,16 @@
      → EINE Regel trägt in beiden Themes (§13/F2), kein Override. Vorher
      `--brass-200`/`--ink-900`: nur 1.24:1 hell / 1.29:1 dunkel. */
   ::highlight(lc-such-treffer) { background-color: var(--such-treffer); color: var(--such-treffer-tinte); }
+  /* AKTIVE Fundstelle (Enter/Weiter, Sprungziel; `SUCH_HIGHLIGHT_AKTIV`, Vorrang 1):
+     die Umkehrung der Treffer-Fläche — hell dunkles Braun, dunkel helles Sand —
+     gerechnet ≥ 3:1 gegen den normalen Treffer (hell 3.49:1 / dunkel 3.57:1),
+     Tinte darauf ≥ 4.5:1 (11.35 / 10.38); ZUSÄTZLICH unterstrichen, damit der
+     Unterschied nicht allein an der Farbe hängt (WCAG 1.4.1). Der Sprung-Blink am
+     Ziel-Artikel (`lc-ziel-blink`) bleibt der flüchtige Hinweis, wo man gelandet ist. */
+  ::highlight(lc-such-aktiv) {
+    background-color: var(--such-aktiv); color: var(--such-aktiv-tinte);
+    text-decoration: underline; text-decoration-thickness: 2px;
+  }
 
   .lc-live { display: inline-flex; align-items: center; gap: .4rem; }
   /* F1: Live-Punkt = Zustand «live/ok» → --ok-Rolle (wertidentisch zu sage). */
