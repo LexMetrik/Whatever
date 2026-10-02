@@ -35,6 +35,8 @@ export const ARTIKELBODY_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'A
 // das bei jedem Hook-Umbau rot wird, wird abgeschaltet (§6.7). Der
 // Literal-Wächter ist hier das präzise Instrument.
 export const INHALT_SPRUNG_PFAD = join(WURZEL, 'src', 'pages', 'gesetz-leser', 'inhalt-sprung.tsx');
+// W2·17 Nachzug: die Genitiv-Erlassname-Weiche steht in einer eigenen Datei (§6.6, NormText.tsx-Schwelle).
+export const FREMDERLASS_PFAD = join(WURZEL, 'src', 'components', 'normtext', 'fremderlassGenitiv.ts');
 
 // ─── 1 · Transkribierte Guards (Wächter-Massstab UND Compile-Quelle) ────────
 //
@@ -45,7 +47,7 @@ export const INHALT_SPRUNG_PFAD = join(WURZEL, 'src', 'pages', 'gesetz-leser', '
 
 export interface GuardQuelle {
   zweck: string;
-  datei: 'NormText.tsx' | 'ArtikelBody.tsx' | 'inhalt-sprung.tsx';
+  datei: 'NormText.tsx' | 'ArtikelBody.tsx' | 'inhalt-sprung.tsx' | 'fremderlassGenitiv.ts';
   literal: string;
   stringLiteral?: true;
 }
@@ -140,7 +142,7 @@ export const G = {
   },
   FREMDERLASS_GENITIV: {
     zweck: 'FREMDERLASS_GENITIV — Genitiv-Erlassname («des Kulturgütertransfergesetzes», «der Verordnung») hinter Nummer + Passus ist nie ein Selbstverweis (W2·17 Nachzug, 2.10.2026)',
-    datei: 'NormText.tsx',
+    datei: 'fremderlassGenitiv.ts',
     literal: String.raw`/^(?:\s+(?:Abs(?:atz|ätze|\.)|Buchstaben?|Bst\.|lit\.|Ziff(?:ern?|\.)|Satz|Sätze|Lemma|Halbsatz|und|oder|bis|sowie|ffg?\.|f\.|Anhang|Anlage|Abschn(?:itt|\.)|in\s+Verbindung\s+mit|Art(?:\.|ikeln?)|(?:erst|zweit|dritt|viert|fünft|letzt)(?:e[rsmn]?)?)(?![\p{L}])|\s+[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-]\s*[0-9]+[a-z]*(?![0-9a-z])|\s*[,–—‒−-](?!\s*[0-9])|\s+(?!(?:in|im|am|an|zu|um|ab|so|es|er|ob|wo|da)(?![a-zäöüß]))[a-z]{1,2}(?![a-zäöüß])|\s+[a-z](?:bis|ter|quater|quinquies|sexies)(?![a-zäöüß])|\s+\([a-z0-9]{1,4}\))*\s+(?:des|der)\s+(?!vorliegende)(?:(?:[\p{L}\p{N}-]+\s+){0,2}(?:[\p{L}\p{N}-]*(?:gesetz(?:es|buch(?:es)?)?|abkommen(?:s)?|übereinkommen(?:s)?|vertrag(?:es|s)?|konvention(?:en)?|reglement(?:s)?|dekret(?:e?s)?|konkordat(?:e?s)?|statut(?:en|s)?|satzung(?:en)?|beschluss(?:es)?|richtlinie(?:n)?|protokoll(?:s|e)?|charta|vereinbarung(?:en)?|kodex)|[\p{L}\p{N}-]+(?:(?<!an|zu|unter|neu|rang|ein)ordnung(?:en)?|verfassung))(?![\p{L}\p{N}-])|(?:bisherigen|früheren|alten)\s+Rechts\b|(?:[\p{L}\p{N}.-]+\s+){1,4}vom\s+\d{1,2}\.\s)/iu`,
   },
   SELBST_KUERZEL_TRIM: {
@@ -415,7 +417,9 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   const out: Stelle[] = [];
   const paragrafErlass = ctx.paragrafDesigniert;
   const ebene: FremdEbene = ctx.ebene ?? 'bund';
-  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey);
+  // W2·17 Nachzug: wie in NormText.tsx — ein Genitiv-Erlassname hinter der Aufzählung unterdrückt die Region.
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey).map((r) => (!r.fremd && !r.unterdruecken
+    && FREMDERLASS_GENITIV.test(s.slice(r.end)) ? { ...r, unterdruecken: true } : r));
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -646,6 +650,7 @@ export function waechterGuards(): string[] {
     'NormText.tsx': readFileSync(NORMTEXT_PFAD, 'utf8'),
     'ArtikelBody.tsx': readFileSync(ARTIKELBODY_PFAD, 'utf8'),
     'inhalt-sprung.tsx': readFileSync(INHALT_SPRUNG_PFAD, 'utf8'),
+    'fremderlassGenitiv.ts': readFileSync(FREMDERLASS_PFAD, 'utf8'),
   };
   const fehler: string[] = [];
   for (const [name, g] of Object.entries(G) as [string, GuardQuelle][]) {

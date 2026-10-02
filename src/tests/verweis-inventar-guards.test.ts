@@ -31,6 +31,8 @@ const QUELLEN: Record<string, string> = {
   // V-3 (W2·20): die Kürzel-KANDIDATEN-Regel entscheidet mit über Link/kein
   // Link, steht aber in der Datenzuleitung des Lesers, nicht in NormText.
   'inhalt-sprung.tsx': 'src/pages/gesetz-leser/inhalt-sprung.tsx',
+  // W2·17 Nachzug: Genitiv-Erlassname-Weiche (aus NormText.tsx herausgelöst, §6.6).
+  'fremderlassGenitiv.ts': 'src/components/normtext/fremderlassGenitiv.ts',
 };
 
 /** Guard-Tabelle der Transkription: (Name, Quelldatei, transkribiertes Literal).

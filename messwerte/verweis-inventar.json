@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "401974bc4a567a24525ae23bf52731df8a56fe96f1448869ffdea41ad331408c",
+    "normTextSha256": "9737ebe96eb3f625c4d85437412d5ff974f3ea6c91170baa6d7e49148da89143",
     "guards": 25
   },
   "korpus": {
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 36281,
-    "self": 19141,
+    "self": 19140,
     "fremd": 11660,
-    "text": 5480,
+    "text": 5481,
     "selbstmarker": 925
   },
   "fremdZiele": {
@@ -91,7 +91,7 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 734,
+      "stellen": 736,
       "erlasse": 151,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
@@ -123,7 +123,7 @@
     {
       "klasse": "fremderlass-genitiv",
       "entscheid": "TEXT",
-      "stellen": 847,
+      "stellen": 849,
       "erlasse": 325,
       "selbstmarker": 0,
       "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
@@ -259,15 +259,15 @@
     {
       "klasse": "plural-glied-kein-token",
       "entscheid": "TEXT",
-      "stellen": 51,
-      "erlasse": 25,
+      "stellen": 58,
+      "erlasse": 30,
       "selbstmarker": 0,
       "was": "A10-Glied — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3494,
+      "stellen": 3493,
       "erlasse": 206,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -275,8 +275,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 536,
-      "erlasse": 100,
+      "stellen": 526,
+      "erlasse": 98,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }
