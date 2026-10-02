@@ -67,6 +67,8 @@ export function useTiefLinkZweig(opts: {
   umhaengPraefix: Record<string, string[]>;
   /** Zeilenbaum des Modells — für Artikel OHNE amtliche Sektion («Ohne Abschnitt», Anhang; B7). */
   knoten?: GliederungsKnoten[];
+  /** Token → Dokumentposition ALLER Einträge (`useArtikelAbleitungen`) — die Liste, gegen die auch der Seed-Sprung kanonisiert. */
+  artIndex?: ReadonlyMap<string, number>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   autoOffenRef: MutableRefObject<Set<string>>;
   autoTickRef: MutableRefObject<Map<string, number>>;
@@ -75,7 +77,7 @@ export function useTiefLinkZweig(opts: {
   manuellZuRef: MutableRefObject<Set<string>>;
 }): void {
   const {
-    hash, sektionen, erlassMarke, umhaengPraefix, knoten, setTocBaum,
+    hash, sektionen, erlassMarke, umhaengPraefix, knoten, artIndex, setTocBaum,
     autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = opts;
   const pfadRef = useRef<string | null>(null);
@@ -87,9 +89,15 @@ export function useTiefLinkZweig(opts: {
     // Sprung kanonisiert (`kanonischerAnkerToken`, Nebenfund S6), dieser Zweig las
     // den Rohtoken, fand keinen Pfad und öffnete die Gliederung erst nach dem
     // Sprung — gemessen @1440 auf OR: CLS 0.0975 (336c) gegen 0.0004 (336_c).
-    // EINE Kanonisierung, dieselbe Funktion (§5); die Token-Liste stammt aus den
-    // Sektionen (nur dort kann dieser Zweig einen Pfad öffnen).
-    const token = kanonischerAnkerToken(roh, sektionen.flatMap((s) => sammleArtikel(s).map((a) => a.artikel)));
+    // EINE Kanonisierung, dieselbe Funktion UND dieselbe Token-Liste wie der Seed-
+    // Sprung (§5): alle Einträge, nicht nur die der Sektionen. Nachzug PR #1267:
+    // gegen die Sektions-Tokens allein wurde «#art-1.1» (Anhang Ziff. 1.1, kein
+    // Sektions-Token) zu «11» und öffnete in ZH-211.17 den Zweig von § 11, während
+    // der Sprung auf 1.1 ging (Korpus: 8 Hashes). `artIndex` fehlt nur in Tests
+    // ohne Modell — dann bleibt es bei den Sektions-Tokens.
+    const token = kanonischerAnkerToken(
+      roh, artIndex ? [...artIndex.keys()] : sektionen.flatMap((s) => sammleArtikel(s).map((a) => a.artikel)),
+    );
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;
     const rohPfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
@@ -114,6 +122,6 @@ export function useTiefLinkZweig(opts: {
       if (sprungZielOffen(o, ids, ids.slice(-1))) return o; // schon offen ⇒ kein Re-Render
       return oeffneSprungZiel(o, ids, ids.slice(-1));
     });
-  }, [hash, sektionen, erlassMarke, umhaengPraefix, knoten,
+  }, [hash, sektionen, erlassMarke, umhaengPraefix, knoten, artIndex,
       autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);
 }

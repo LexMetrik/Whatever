@@ -68,6 +68,8 @@ export function useSektionSprung(opts: {
   umhaengPraefix?: Record<string, string[]>;
   /** Zeilenbaum des Modells (B7: Tieflink auf einen Artikel ohne Sektion). */
   knoten?: GliederungsKnoten[];
+  /** Token → Position aller Einträge (Tieflink-Zweig kanonisiert gegen dieselbe Liste wie der Sprung). */
+  artIndex?: ReadonlyMap<string, number>;
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -83,7 +85,7 @@ export function useSektionSprung(opts: {
   const {
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
-    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX, knoten,
+    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX, knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -91,7 +93,7 @@ export function useSektionSprung(opts: {
   // dem ersten Bild — er gehört zu den Sprüngen und steht darum hier. Befund,
   // Messreihe und Herleitung: `./v3/tiefLinkZweig`.
   useTiefLinkZweig({
-    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix, knoten,
+    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix, knoten, artIndex,
     setTocBaum, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   });
 

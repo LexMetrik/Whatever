@@ -348,7 +348,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
     // Herleitung am Effekt in `inhalt-sprung.tsx`, Beweis `leser-v3-esc-ohne-sprung`.
     scrollBeiSuchwechsel: false,
-    umhaengPraefix: gliederung.umhaengPraefix, knoten: gliederung.knoten,
+    umhaengPraefix: gliederung.umhaengPraefix, knoten: gliederung.knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel, manifestErlasse: manifest?.erlasse, kanton: erlass?.kanton }); // V-2 · V-3 (Manifest/Kanton = Rohstoff der Kürzel-Karte)
