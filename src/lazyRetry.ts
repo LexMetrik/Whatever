@@ -30,8 +30,12 @@ export function lazyRetry<T extends ComponentType<unknown>>(
         if (versuch < 2) { await schlummer(250 * (versuch + 1)); continue; }
         // Mehrfach gescheitert → wahrscheinlich veralteter Chunk nach Deploy.
         try {
-          if (!sitzungsSpeicher.lies(RELOAD_FLAG)) {
-            sitzungsSpeicher.schreib(RELOAD_FLAG, '1');
+          // Nur neu laden, wenn die Marke WIRKLICH gesetzt ist: bei gesperrtem Speicher
+          // liefert `schreib` false — ohne Marke gäbe es keine Bremse, und ein
+          // dauerhaft fehlender Chunk liefe in eine Endlos-Reload-Schleife (§15;
+          // Gegenprüfung PR #1282: 443 statt 2 Navigationen in 20 s). Dann: Fehler
+          // an die ErrorBoundary (Hinweis «Seite neu laden», ohne Automatik).
+          if (!sitzungsSpeicher.lies(RELOAD_FLAG) && sitzungsSpeicher.schreib(RELOAD_FLAG, '1')) {
             window.location.reload();
             // Der Reload übernimmt normalerweise die Anzeige, bevor dieser Timeout
             // greift. Falls der Reload NICHT durchkommt (beforeunload-Abbruch,

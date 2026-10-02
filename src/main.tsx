@@ -63,8 +63,9 @@ fruehesSuchKuerzelStarten()
 // über einen Lazy-Import, sondern über modulepreload geladen werden.
 window.addEventListener('vite:preloadError', () => {
   try {
-    if (!sitzungsSpeicher.lies('lex-chunk-reload')) {
-      sitzungsSpeicher.schreib('lex-chunk-reload', '1')
+    // Nur wenn die Marke wirklich gesetzt ist (gesperrter Speicher: schreib → false,
+    // sonst Endlos-Reload bei dauerhaft fehlendem Chunk).
+    if (!sitzungsSpeicher.lies('lex-chunk-reload') && sitzungsSpeicher.schreib('lex-chunk-reload', '1')) {
       window.location.reload()
     }
   } catch { /* sessionStorage nicht verfügbar */ }

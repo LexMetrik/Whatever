@@ -164,3 +164,65 @@ test.describe('Gesperrter Speicher und Sidecar-Ausfall (W2·17-UI-BEFUNDE BG-01�
     await expect(page.getByText('Das Personenrecht').first()).toBeAttached({ timeout: 20_000 });
   });
 });
+
+// ── Gegenprüfung PR #1282 (HOCH, §15) · Reload-Bremse braucht eine Marke ──────
+// `lazyRetry`/`vite:preloadError` laden bei einem fehlenden Chunk EINMAL neu und
+// merken das in sessionStorage. Bei gesperrtem Speicher liefert `schreib` false:
+// ohne Marke gäbe es keine Bremse, und ein dauerhaft fehlender Chunk liefe in
+// eine Endlos-Reload-Schleife (gemessen vor dem Fix: 443 Navigationen in 20 s,
+// auf main 2). Jetzt: Reload nur, wenn die Marke wirklich gesetzt ist.
+test.describe('Reload-Bremse bei fehlendem Chunk (PR #1282, Gegenprüfung)', () => {
+  const messe = async (page: import('@playwright/test').Page, gesperrt: boolean) => {
+    if (gesperrt) {
+      await page.addInitScript(() => {
+        for (const name of ['localStorage', 'sessionStorage']) {
+          Object.defineProperty(window, name, {
+            configurable: true,
+            get() { throw new DOMException(`Failed to read the '${name}' property from 'Window': Access is denied`, 'SecurityError'); },
+          });
+        }
+      });
+    }
+    await page.goto('/');
+    await expect(page.locator('header').first()).toBeVisible({ timeout: 20_000 });
+    // Ab jetzt fehlt der Chunk der Zielseite dauerhaft.
+    await page.route('**/assets/*Erbteilung*.js', (route) => route.abort());
+    let navigationen = 0;
+    page.on('framenavigated', (f) => { if (f === page.mainFrame()) navigationen++; });
+    await page.evaluate(() => {
+      history.pushState({}, '', '/rechner/erbteilung');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+    await page.waitForTimeout(8_000);
+    test.info().annotations.push({ type: 'navigationen', description: String(navigationen) });
+    console.log(`NAVIGATIONEN gesperrt=${gesperrt}: ${navigationen}`);
+    return navigationen;
+  };
+
+  test('Speicher gesperrt + Chunk fehlt: höchstens ein Reload (keine Endlosschleife)', async ({ page }) => {
+    const n = await messe(page, true);
+    // pushState zählt als Navigation (1); ein Reload wäre die zweite. Vor dem Fix: Hunderte.
+    expect(n, `Navigationen in 8 s: ${n}`).toBeLessThanOrEqual(2);
+  });
+
+  test('Speicher intakt + Chunk fehlt: genau EIN automatischer Reload (Bestandsverhalten)', async ({ page }) => {
+    const n = await messe(page, false);
+    expect(n, `Navigationen in 8 s: ${n}`).toBeLessThanOrEqual(3);
+    expect(n).toBeGreaterThanOrEqual(2);
+  });
+});
+
+// Gegenprüfung PR #1282 (mittel): `vite preview`/`dev` beantworten eine FEHLENDE Struktur-
+// Datei mit der index.html (200, text/html). Das ist «Datei fehlt», kein Ausfall — die
+// Ausfallzeile darf bei Erlassen ohne Gliederung nicht erscheinen (Prod: echter 404).
+test('BG-04 · Erlass ohne Struktur-Sidecar (AR-1203, PRHG-Verweiskarte): keine falsche Ausfallzeile', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/gesetze/kanton/AR-1203');
+  await expect(page.locator('[id^="art-"]').first()).toBeAttached({ timeout: 30_000 });
+  await page.waitForTimeout(1500);
+  await expect(page.locator('[data-leser-teilausfall]')).toHaveCount(0);
+  await page.goto('/gesetze/bund/PRHG');
+  await expect(page.locator('[data-verweiskarte]')).toBeVisible({ timeout: 30_000 });
+  await page.waitForTimeout(1500);
+  await expect(page.locator('[data-leser-teilausfall]')).toHaveCount(0);
+});

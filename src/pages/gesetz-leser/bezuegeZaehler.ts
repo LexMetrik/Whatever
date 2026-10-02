@@ -19,7 +19,7 @@
 // (`public/normtext/struktur/<ebene>/<KEY>.json`, Schlüssel `zaehler`) — der
 // Datei, die der Leser für Gliederung, Marginalien und Erlass-Kopf ohnehin holt.
 // `ladeBezuegeZaehler` greift auf DENSELBEN gecachten Fetch zu wie
-// `ladeStruktur`/`ladeErlassKopf` in `../../lib/normtext/browse` (eine Promise,
+// `ladeStruktur`/`ladeStrukturDokumentStreng` (bis 2.10.2026 `ladeErlassKopf`) in `../../lib/normtext/browse` (eine Promise,
 // eine Antwort); die eigene Datei, der eigene Cache und der `beiLeerlauf`-Aufschub
 // sind ersatzlos gefallen (§17-Gegengewicht). Warum gerade das Sidecar und nicht
 // der Snapshot: Kopf von `scripts/gen-bezuege-zaehler.ts`.

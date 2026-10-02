@@ -28,20 +28,20 @@ const AUSNAHMEN: Record<string, string> = {
   // merkeTab/letzterGeschlossener werfen nicht). Nach Landung von PR #1275
   // auf lokalSpeicher umstellen und diesen Eintrag löschen.
   'lib/tabs.ts': 'nach PR #1275 umstellen',
-  // `src/lib/normtext/**` war im Bau-Auftrag (2.10.2026) gesperrt (offener PR #1251
-  // arbeitet in diesem Verzeichnis); die Zugriffe liegen in try/catch (ladeGliederung,
-  // speichereGliederung). Beim nächsten Anfassen von gliederung.ts auf
-  // lokalSpeicher umstellen und den Eintrag löschen.
-  'lib/normtext/gliederung.ts': 'nach PR #1251 / bei nächster Berührung umstellen',
 };
+
+const STORAGE = new Set(['localStorage', 'sessionStorage']);
 
 function funde(quelle: string, name: string): number[] {
   const sf = ts.createSourceFile(name, quelle, ts.ScriptTarget.Latest, true, name.endsWith('x') ? ts.ScriptKind.TSX : ts.ScriptKind.TS);
   const zeilen: number[] = [];
   const besuche = (n: ts.Node) => {
-    if (ts.isIdentifier(n) && (n.text === 'localStorage' || n.text === 'sessionStorage')) {
-      zeilen.push(sf.getLineAndCharacterOfPosition(n.getStart(sf)).line + 1);
-    }
+    // `window.localStorage` / `globalThis.sessionStorage` / `{ localStorage } = window`
+    // sind Identifier; `window['localStorage']` ist ein String-Literal im Elementzugriff.
+    const hit = (ts.isIdentifier(n) && STORAGE.has(n.text))
+      || ((ts.isStringLiteral(n) || ts.isNoSubstitutionTemplateLiteral(n)) && STORAGE.has(n.text)
+        && !!n.parent && ts.isElementAccessExpression(n.parent) && n.parent.argumentExpression === n);
+    if (hit) zeilen.push(sf.getLineAndCharacterOfPosition(n.getStart(sf)).line + 1);
     ts.forEachChild(n, besuche);
   };
   besuche(sf);
@@ -56,8 +56,13 @@ describe('Tor: Browserspeicher nur über lib/sichererSpeicher.ts', () => {
       'const b = <em>sessionStorage</em>;',
       "const c = window.localStorage.getItem('x');",
       "const d = typeof sessionStorage;",
+      "const e = window['localStorage'].length;",
+      "const f = globalThis.localStorage;",
+      'const g = window.sessionStorage;',
+      "const { localStorage: h } = window;",
+      "const i = obj['sonst'];",
     ].join('\n');
-    expect(funde(q, 'x.tsx')).toEqual([4, 5]);
+    expect(funde(q, 'x.tsx')).toEqual([4, 5, 6, 7, 8, 9]);
   });
 
   it('kein direkter localStorage-/sessionStorage-Zugriff ausserhalb des Helfers', () => {

@@ -285,6 +285,12 @@ function ladeStrukturDocStreng(ebene: string, key: string): Promise<StrukturDoc 
       const res = await fetch(url);
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
+      // `vite preview`/`vite dev` beantworten eine FEHLENDE Datei mit der index.html
+      // (SPA-Fallback, 200, text/html) statt mit 404 (Prod: echter 404). Das ist
+      // «Datei fehlt» wie ein 404 — nicht «Ausfall» (BG-04-Nachzug, Gegenprüfung
+      // PR #1282: falsche Ausfallzeile bei PRHG/DSGVO/NYUE lokal). Mocks ohne
+      // Header-Objekt gelten als JSON.
+      if (/\btext\/html\b/i.test(res.headers?.get?.('content-type') ?? '')) return null;
       return (await res.json()) as StrukturDoc;
     })();
     p.catch(() => {

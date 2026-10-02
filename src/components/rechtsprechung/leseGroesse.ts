@@ -29,8 +29,9 @@ export function ladeFsIdx(): number {
       const alt = lokalSpeicher.lies(FS_IDX_KEY_ALT);
       if (alt !== null) {
         roh = alt;
-        lokalSpeicher.schreib(FS_IDX_KEY, alt);
-        lokalSpeicher.entferne(FS_IDX_KEY_ALT);
+        // Den alten Schlüssel nur löschen, wenn der neue wirklich geschrieben ist —
+        // sonst ginge die Wahl bei gesperrtem Speicher/Quota still verloren.
+        if (lokalSpeicher.schreib(FS_IDX_KEY, alt)) lokalSpeicher.entferne(FS_IDX_KEY_ALT);
       }
     }
     if (roh !== null) {
