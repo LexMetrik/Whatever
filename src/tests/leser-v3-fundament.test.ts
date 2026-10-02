@@ -557,7 +557,15 @@ describe('Dateigrösse: v3/ bleibt schlank', () => {
   it('der begründet grösste Baustein ist der Adapter leserV3Modell.ts (Fundament-Auflage 1)', () => {
     const zeilen: Record<string, number> = {};
     for (const datei of ALLE_DATEIEN) zeilen[datei] = LIES(datei).split('\n').length;
-    const groesste = Object.entries(zeilen).sort((a, b) => b[1] - a[1])[0];
-    expect(groesste[0]).toBe('leserV3Modell.ts');
+    // §6.3-DEKLARATION (2.10.2026, Gegenprüfung #1276): hier stand «die GRÖSSTE Datei ist
+    // der Adapter» (Sortierung, `[0]`). Bei Gleichstand gewann die zuerst gelesene Datei
+    // (`LeserRahmenV3.tsx` vor `leserV3Modell.ts`), und die Sonde bestrafte so jeden Rückbau
+    // im Adapter — dieselbe Klemme wie am 14.9.2026 (Block oben). Geändert ist nur der
+    // Vergleich: «keine ANDERE v3-Datei ist GRÖSSER als der Adapter» (`<=`). Die Zusage
+    // — der Adapter bleibt der begründet grösste Baustein, nichts anderes wächst über
+    // ihn — bleibt; ein Rückbau im Adapter braucht keine Polsterzeile mehr.
+    const adapter = zeilen['leserV3Modell.ts'];
+    const groesser = Object.entries(zeilen).filter(([datei, n]) => datei !== 'leserV3Modell.ts' && n > adapter);
+    expect(groesser, `grösser als der Adapter (${adapter} Zeilen): ${groesser.map(([d, n]) => `${d} ${n}`).join(', ')}`).toEqual([]);
   });
 });

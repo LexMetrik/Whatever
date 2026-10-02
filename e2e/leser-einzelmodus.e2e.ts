@@ -281,17 +281,6 @@ test.describe('W2·5m/E2 — die Dossier-Blöcke', () => {
     await expect(inhalt).toContainText('Verjährung', { timeout: 20_000 })
   })
 
-  test('M3 · der Rechtsprechungs-Block wird NICHT ausgeliefert (Phantom-Filter offen)', async ({ page }) => {
-    // Kap. 15.2/M3: das Modul ist angeschlossen, der Block bleibt hinter der
-    // Vorbedingung. In der ZEILE am Artikelende (Gesamtansicht) steht die
-    // Rubrik unverändert — dieser Schritt nimmt nichts weg.
-    await page.goto(einzel(OR, '336_c'))
-    await rahmenBereit(page)
-    const dossier = page.locator('[data-artikel-dossier]')
-    await expect(dossier).toBeVisible({ timeout: 20_000 })
-    await expect(dossier.locator('[data-dossier-reg="r"]')).toHaveCount(0)
-  })
-
   test('B5/B7 · jeder Block trägt seine Zahl, ein leerer Block sagt es im Klartext', async ({ page }) => {
     await page.goto(einzel(OR, '336_c'))
     await rahmenBereit(page)

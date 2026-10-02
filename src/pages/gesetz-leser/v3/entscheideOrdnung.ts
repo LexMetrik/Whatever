@@ -1,6 +1,6 @@
 import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
-import { BEDIENBARE_KLASSEN, KLASSE_KURZ } from '../bezugAuswahl';
+import { BEDIENBARE_KLASSEN, KLASSE_KURZ, waehleBezuege } from '../bezugAuswahl';
 import { zahl } from '../bezugPortion';
 import { istBereichOffen, type Zeitbereich } from '../bezugZeit';
 import { gruppiereKanten } from './panelModell';
@@ -198,7 +198,8 @@ export function regesteTeil(text: string): { teil: string | null; rest: string }
  *
  * `null` = die Lage liegt nicht vor (nichts erfasst, oder kein Filter wirkt) —
  * dann gilt die Bestands-Lage. Der Kanton-Filter wirkt nur, wenn «kantonal»
- * eingeschaltet ist (wie `waehleBezuege`/`bezuegeFuer`). Rein (§2).
+ * eingeschaltet ist UND die Kantonwahl tatsächlich Kanten ausblendet
+ * (`waehleBezuege` mit/ohne Kantonwahl, wie `bezuegeFuer`). Rein (§2).
  */
 export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }: {
   artikelLabel: string | null;
@@ -209,7 +210,14 @@ export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }:
   bereich: Zeitbereich;
 }): string | null {
   const zeit = !istBereichOffen(bereich);
-  const kanton = kantone.length > 0 && klassen.includes('kantonal');
+  // «Kanton» nur, wenn die Kantonwahl WIRKLICH etwas ausblendet (E4-B01, Prüfer-Probe
+  // und Gegenprüfung 2.10.2026): weder die rohe Wahl (ZH an OR 41, am Artikel steht nur
+  // BS) noch eine wirksame, die nichts herausnimmt (alle kantonalen Kanten aus BS, BS
+  // gewählt; StPO 5, ZGB 8) darf im Satz stehen — er behauptete sonst eine Einschränkung,
+  // die nicht greift (§8). Massstab ist `waehleBezuege` mit und ohne Kantonwahl: dieselbe
+  // Auswahl-Quelle, die die Liste bildet (§5), keine zweite Regel.
+  const kanton = klassen.includes('kantonal')
+    && waehleBezuege(alle ?? [], klassen, kantone).length < waehleBezuege(alle ?? [], klassen, []).length;
   if (!zeit && !kanton) return null;
   const n = (alle ?? []).filter((b) => klassen.includes(b.facetten.status)).length;
   if (n === 0) return null;

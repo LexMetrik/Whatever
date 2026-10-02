@@ -4418,9 +4418,9 @@
 
 /* ═══ LESER · ARTIKELFUSS — WAS CSS TRAGEN MUSS (W2·29-WERKBANK-LESER S1) ═════
    Die FORM von Artikelkopf, Funktionszeile, Aktionen und Rubrik-Listen steht
-   seit S1 (23.9.2026) als Token-Utility am Bauteil (`parts/Funktionszeile.tsx`,
-   `ArtikelAktionen.tsx`, `ArtikelLeser.bezuegeFuss.tsx`, `BezuegeZeile.tsx`,
-   `ArtikelLeser.tsx`); die gelöschten `.lr6-`/`.lr7-kopf*`/`.lr7-bez*`-Regeln
+   seit S1 (23.9.2026) als Token-Utility am Bauteil (`ArtikelAktionen.tsx`,
+   `ArtikelLeser.bezuegeFuss.tsx`, `ArtikelLeser.tsx`; `Funktionszeile.tsx` und
+   `BezuegeZeile.tsx` sind seit 24.9./2.10.2026 gelöscht); die gelöschten `.lr6-`/`.lr7-kopf*`/`.lr7-bez*`-Regeln
    und ihre Herleitungen stehen im Git-Verlauf dieser Datei. Hier bleibt, was an
    einem Zustand AUSSERHALB des Bauteils hängt oder geteilt ist. Die
    Klassennamen `.lr7-bez*` bleiben als Sonden-Anker (Inventar N8). */

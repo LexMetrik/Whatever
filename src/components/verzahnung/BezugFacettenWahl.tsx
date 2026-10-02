@@ -204,7 +204,8 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           bzw. «Weitere Instanzen laden zusätzliche Daten nach». Beides war am
           Ist-Stand falsch, in drei Punkten, jeder einzeln nachgemessen:
 
-           (1) AM ARTIKEL STEHT NICHTS. Die `BezuegeZeile` am Artikelfuss ist mit
+           (1) AM ARTIKEL STEHT NICHTS. Die `BezuegeZeile` (Komponente seit 2.10.2026
+               gelöscht, W2·17-UI-BEFUNDE) am Artikelfuss ist mit
                H3 aus der Lesespalte verschwunden — `LeserLesespalte.tsx:84–88`
                reicht `bezuege` nicht mehr durch («POS. 12 · KEIN `bezuege` MEHR
                AM ARTIKEL»), und seit dem H4-Flip ist die V3-Hülle die einzige

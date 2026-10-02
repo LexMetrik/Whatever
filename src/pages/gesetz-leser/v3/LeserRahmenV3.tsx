@@ -343,7 +343,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
-            oeffneBlatt={bild.blatt ? rohPanel.oeffne : undefined} bezuegeGeweckt={rohPanel.jeGeoeffnet}
+            bezuegeGeweckt={rohPanel.jeGeoeffnet}
             einzelToken={imEinzel ? einzel.token : null} search={einzel.search} />
         </>}
         // D38 · Trefferliste über der Lesespalte — `absolute`, ohne Platz im

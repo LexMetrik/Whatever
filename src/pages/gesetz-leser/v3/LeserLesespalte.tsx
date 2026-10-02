@@ -8,7 +8,7 @@ import { bestimmungsWort, erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 import { useBezuegeZaehler } from '../bezuegeZaehler';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
-import type { PanelBezuege, PanelReiter } from './panelModell';
+import type { PanelBezuege } from './panelModell';
 import { baueNachbarn } from './nachbarArtikel';
 import { LeserEinzelAnsicht } from './LeserEinzelAnsicht';
 import { einzelAdresse } from './einzelModus';
@@ -70,11 +70,6 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, bezuegeGeweckt = fal
   bezuege?: PanelBezuege;
   /** D30 · Aufklappen der Bezüge-Zeile ⇒ Nachladen armieren (`weckeDaten`). */
   weckeBezuege?: () => void;
-  /** RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): wird hier nicht mehr gelesen — der Griff
-   *  «im Erlass-Blatt öffnen ›» des Dossiers ist zurückgebaut (im Einzelmodus gibt es
-   *  kein Blatt). Die Prop bleibt im Typ, solange `v3/LeserRahmenV3.tsx` sie noch
-   *  reicht (Folge-Rückbau dort, Datei war beim Rückbau gesperrt). */
-  oeffneBlatt?: (reiter: PanelReiter) => void;
   /** D30 · ist bereits jemand nach den Daten gefragt worden? Steuert die
    *  Skelett-Zeile «lädt …» UND das Laden der Materialien. */
   bezuegeGeweckt?: boolean;

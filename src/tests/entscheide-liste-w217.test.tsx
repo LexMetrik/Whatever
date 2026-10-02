@@ -189,6 +189,9 @@ describe('PE-E1-D01 · der Weiterzug-Hinweis ist ein Bedienelement (Tastatur, To
 
 describe('PE-E3-B01 · «kein Entscheid erfasst» nur, wenn wirklich keiner erfasst ist', () => {
   const alle = [bge(1, '2023-05-02'), bge(2, '2024-06-03'), kante('bs_1', 'kantonal', { zitierung: 'Appellationsgericht BS X vom 15.01.2024' })];
+  // Wie `alle`, dazu eine kantonale Kante aus ZH — erst damit blendet die Wahl «BS» etwas aus.
+  const zhKante = kante('zh_1', 'kantonal', { zitierung: 'Obergericht ZH Y vom 02.02.2024' });
+  const alleMitZH = [...alle, { ...zhKante, facetten: { ...zhKante.facetten, kanton: 'ZH' } } as Bezug];
 
   it('Zeitraum blendet alles aus ⇒ Lage «gefiltert», nennt die Zahl und den Zeitraum, nie «kein Entscheid»', () => {
     const h = html({ kanten: [], alleKanten: alle, bereich: { von: '1900-01-01', bis: '1901-12-31' } });
@@ -223,9 +226,43 @@ describe('PE-E3-B01 · «kein Entscheid erfasst» nur, wenn wirklich keiner erfa
 
   it('Kanton-Filter: «Kanton» im Satz; beide Filter: «Zeitraum und Kanton»', () => {
     const k = { artikelLabel: 'Art. 97', alle, klassen: ['bge', 'kantonal'] as BezugStatus[] };
-    expect(gefiltertSatz({ ...k, kantone: ['GR'], bereich: { von: '', bis: '' } })).toMatch(/im gewählten Kanton/);
-    expect(gefiltertSatz({ ...k, kantone: ['GR'], bereich: { von: '2030-01-01', bis: '' } })).toMatch(/im gewählten Zeitraum und Kanton/);
+    // §6.3-DEKLARATION (2.10.2026, E4-B01): hier stand «GR» — der Fixture-Artikel
+    // führt aber nur BS-Kanten, die Wahl wirkte also gar nicht; der Satz nannte
+    // den Kanton trotzdem (der §8-Fehler, den der Fall darunter jetzt festhält).
+    // Geändert ist ausschliesslich der gewählte Kanton: BS führt der Artikel.
+    // Nachzug 2.10.2026: der Fixture führt dafür eine ZH-Kante dazu (`alleMitZH`), sonst
+    // blendete «BS» nichts aus und der Satz nennt den Kanton zu Recht nicht.
+    expect(gefiltertSatz({ ...k, alle: alleMitZH, kantone: ['BS'], bereich: { von: '', bis: '' } })).toMatch(/im gewählten Kanton/);
+    expect(gefiltertSatz({ ...k, alle: alleMitZH, kantone: ['BS'], bereich: { von: '2030-01-01', bis: '' } })).toMatch(/im gewählten Zeitraum und Kanton/);
     expect(gefiltertSatz({ ...k, kantone: [], bereich: { von: '2030-01-01', bis: '' } })).toMatch(/im gewählten Zeitraum\b(?! und)/);
+  });
+
+  it('E4-B01 · eine Kantonwahl OHNE Kante am Artikel (ZH an OR 41) wirkt nicht — der Satz nennt den Kanton nicht', () => {
+    // Prüfer-Probe 2.10.2026: ZH gewählt, am Artikel steht nur BS ⇒ die wirksamen
+    // Kantone sind [] (`wirksameKantone`, dieselbe Regel wie in `waehleBezuege`).
+    // Der Zeitraum 1900–1901 blendet alles aus; über den Kanton darf der Satz
+    // nichts behaupten (§8).
+    const k = { artikelLabel: 'Art. 41', alle, klassen: ['bge', 'kantonal'] as BezugStatus[], kantone: ['ZH'] };
+    const t = gefiltertSatz({ ...k, bereich: { von: '1900-01-01', bis: '1901-12-31' } });
+    expect(t).toMatch(/im gewählten Zeitraum\./);
+    expect(t).not.toMatch(/Kanton/);
+    // Nur die wirkungslose Kantonwahl, kein Zeitraum ⇒ gar kein Filter ⇒ kein Satz.
+    expect(gefiltertSatz({ ...k, bereich: { von: '', bis: '' } })).toBeNull();
+    // Gegenprobe: ein Kanton, der WIRKLICH etwas ausblendet (ZH-Kante am Artikel, BS gewählt), bleibt benannt.
+    expect(gefiltertSatz({ ...k, alle: alleMitZH, kantone: ['BS'], bereich: { von: '1900-01-01', bis: '1901-12-31' } }))
+      .toMatch(/im gewählten Zeitraum und Kanton/);
+  });
+
+  it('E4-B01 Nachzug · ein WIRKSAMER Kanton, der nichts ausblendet (alle kantonalen Kanten aus BS, BS gewählt), wird nicht genannt', () => {
+    // Gegenprüfung 2.10.2026 (z. B. StPO 5, ZGB 8): BS führt der Artikel, die Wahl ist
+    // wirksam — aber jede kantonale Kante IST aus BS, nichts fällt heraus. «Kanton» im Satz
+    // wäre eine Einschränkung, die nicht greift (§8). Massstab: `waehleBezuege` mit
+    // und ohne Kantonwahl (eine Quelle, §5).
+    const k = { artikelLabel: 'Art. 5', alle, klassen: ['bge', 'kantonal'] as BezugStatus[], kantone: ['BS'] };
+    expect(gefiltertSatz({ ...k, bereich: { von: '1900-01-01', bis: '1901-12-31' } })).toMatch(/im gewählten Zeitraum\./);
+    expect(gefiltertSatz({ ...k, bereich: { von: '1900-01-01', bis: '1901-12-31' } })).not.toMatch(/Kanton/);
+    // Nur die folgenlose Kantonwahl, kein Zeitraum ⇒ kein Filter wirkt ⇒ kein Satz.
+    expect(gefiltertSatz({ ...k, bereich: { von: '', bis: '' } })).toBeNull();
   });
 
   it('keine Filter wirksam oder nichts erfasst ⇒ kein Satz (null)', () => {
