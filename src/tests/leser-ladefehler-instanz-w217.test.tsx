@@ -53,7 +53,7 @@ async function umgebung(antwort: (url: string, nr: number) => Response) {
       ebene: 'bund', schluessel, navigate: (() => {}) as unknown as NavigateFunction, erlass: null, istSekundaer: false,
       meldeInhaltsKopf: (() => {}) as never,
       setManifest: setManifest as never, setCurrency: () => {}, setStruktur: () => {}, setKopf: () => {},
-      setKantonSys: () => {}, setKantonLuecken: () => {}, setErlass: () => {}, setEintraege: setEintraege as never,
+      setKantonSys: () => {}, setKantonLuecken: () => {}, setTeilausfall: () => {}, setErlass: () => {}, setEintraege: setEintraege as never,
       setFehler: setFehler as never,
     });
     if (fehlerZustand) {

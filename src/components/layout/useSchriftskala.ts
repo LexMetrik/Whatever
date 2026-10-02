@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Schriftskala „A− / A+" (persistent, global) ───────────────────────────
 //
@@ -44,7 +45,7 @@ function ladeFaktor(): number {
   // Ohne Fang würde der useState-Initialisierer werfen und die App weiss-
   // bildschirmen — daher Fallback auf den Default, auf die nächste Stufe gesnappt.
   try {
-    const roh = window.localStorage.getItem(SKALA_KEY);
+    const roh = lokalSpeicher.lies(SKALA_KEY);
     if (roh == null) return DEFAULT_FAKTOR;
     const n = Number(roh);
     return Number.isFinite(n) ? STUFEN[stufeIndex(n)] : DEFAULT_FAKTOR;
@@ -89,7 +90,7 @@ export function useSchriftskala(): Schriftskala {
       if (faktor === DEFAULT_FAKTOR) el.style.removeProperty('font-size');
       else el.style.fontSize = `${Math.round(faktor * 100)}%`;
     }
-    try { window.localStorage.setItem(SKALA_KEY, String(faktor)); } catch { /* Speicher gesperrt — Zustand bleibt nur für die Sitzung */ }
+    lokalSpeicher.schreib(SKALA_KEY, String(faktor)); // Speicher gesperrt — Zustand bleibt nur für die Sitzung
   }, [faktor]);
 
   const groesser = useCallback(() => setFaktor((f) => STUFEN[Math.min(STUFEN.length - 1, stufeIndex(f) + 1)]), []);

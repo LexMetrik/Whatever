@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import type { Kanton } from '../types/legal';
 import { type Detailgrad, DETAILGRAD_DEFAULT } from './vorlagen/detailgrad';
+import { lokalSpeicher } from './sichererSpeicher';
 
 // ─── Globale Einstellungen — heimatlose Nutzer-Defaults (§3/§5) ──────────────
 //
@@ -29,7 +30,7 @@ const EINSTELLUNGEN_DEFAULT: Einstellungen = {
 
 function leseGespeichert(): Einstellungen {
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     if (!roh) return EINSTELLUNGEN_DEFAULT;
     const o = JSON.parse(roh) as Partial<Einstellungen>;
     if (!o || typeof o !== 'object') return EINSTELLUNGEN_DEFAULT;
@@ -54,7 +55,7 @@ const ladeEinstellungen = (): Einstellungen => aktuell;
 
 function schreibe(e: Einstellungen): void {
   aktuell = e;
-  try { localStorage.setItem(KEY, JSON.stringify(e)); } catch { /* privat-Modus */ }
+  lokalSpeicher.schreib(KEY, JSON.stringify(e)); // privat-Modus
   // Sync: same-tab über hoerer (useSyncExternalStore-Subscriber), cross-tab über
   // den 'storage'-Listener in abonniere() — kein eigenes Custom-Event nötig.
   hoerer.forEach((f) => f());

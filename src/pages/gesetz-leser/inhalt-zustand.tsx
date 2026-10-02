@@ -48,6 +48,19 @@ export type LeserFehler = false | 'nicht-im-bestand' | LadefehlerZustand;
 
 export interface LadefehlerZustand { art: 'ladefehler'; grund: 'datei' | 'register'; erneut: () => void }
 
+/**
+ * Teilausfall EINER Leser-Instanz (W2·17-UI-BEFUNDE BG-02/BG-03/BG-04, 2.10.2026):
+ * der Erlass-Text lädt, aber ein Begleit-Sidecar nicht. Anders als `LeserFehler`
+ * ersetzt das die Seite nicht — es sagt, WAS im Kopf fehlt (§8: «nicht geladen»
+ * ist nicht «gibt es nicht»), und bringt `erneut` für genau diese Sidecars mit.
+ *  - `fassung`  — `currency.json`: Prüfdatum, «nächste Fassung ab …», «seit … gilt
+ *                 eine neuere Fassung»;
+ *  - `luecken`  — `kanton-luecken.json`: Hinweis auf nicht erfasste Teile (nur Kanton);
+ *  - `struktur` — Struktur-Sidecar: Gliederung, Abschnitts-Überschriften, Erlass-Kopf.
+ */
+export type TeilausfallTeil = 'fassung' | 'luecken' | 'struktur';
+export interface Teilausfall { teile: TeilausfallTeil[]; erneut: () => void }
+
 // ─── Block 1 · Daten-, Shard- und Such-Zustand ───────────────────────────────
 export function useLeserZustand({ bezuegeVorladen = true }: {
   /**
@@ -482,6 +495,9 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // §8-Nachzug (PR #614-Auflage): ausgewiesene Erlass-Lücken je kantonalem
   // Erlass-Key — analog `kantonSys` lazy geladen, nur für die Kanton-Lesesicht.
   const [kantonLuecken, setKantonLuecken] = useState<KantonLueckenMap>({});
+  // BG-02/03/04: welche Begleit-Sidecars nicht geladen werden konnten (+ «Erneut
+  // laden»). `null` = nichts ausgefallen. Gesetzt von `useLeserDaten`.
+  const [teilausfall, setTeilausfall] = useState<Teilausfall | null>(null);
   // BGer-Entscheide/Materialien/Werkzeuge zu diesem Erlass: das einheitliche
   // KontextPanel (B3) lädt + zeigt sie selbst (Single Source, §5) — am Leseende.
   const sekRefs = useRef<Map<string, HTMLElement>>(new Map());
@@ -512,7 +528,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   return {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
     meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys,
-    kantonLuecken, setKantonLuecken,
+    kantonLuecken, setKantonLuecken, teilausfall, setTeilausfall,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   };
 }

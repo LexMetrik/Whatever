@@ -7,6 +7,7 @@ import { STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { KorpusStand } from '../ui/KorpusStand';
 import { registerVonPfad, REG_FLAECHE, REG_HOVER_FLAECHE_BLATT } from './bereiche';
+import { sitzungsSpeicher } from '../../lib/sichererSpeicher';
 
 // Alle Nav-Ziele inkl. #Anker (statisch) — zum Erkennen, ob ein aktiver Hash
 // überhaupt einem Geschwister-Eintrag entspricht (Bug-Fix 26.6.: sonst verlieren
@@ -99,7 +100,7 @@ function abschnittSchluessel(titel: string): string {
 function ladeAbschnittOffen(titel: string): boolean | null {
   if (typeof window === 'undefined') return null;
   try {
-    const v = window.sessionStorage.getItem(abschnittSchluessel(titel));
+    const v = sitzungsSpeicher.lies(abschnittSchluessel(titel));
     return v === '1' ? true : v === '0' ? false : null;
   } catch {
     return null;
@@ -107,9 +108,8 @@ function ladeAbschnittOffen(titel: string): boolean | null {
 }
 
 function speichereAbschnittOffen(titel: string, offen: boolean) {
-  try {
-    window.sessionStorage.setItem(abschnittSchluessel(titel), offen ? '1' : '0');
-  } catch { /* Speicher gesperrt — Zustand bleibt nur für die laufende Sitzung im Speicher */ }
+  // Gesperrt → Zustand bleibt nur für die laufende Sitzung im Speicher.
+  sitzungsSpeicher.schreib(abschnittSchluessel(titel), offen ? '1' : '0');
 }
 
 function Blatt({ k, loc, onNavigate, klein }: {

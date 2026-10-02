@@ -96,10 +96,39 @@ describe('ladeBezuegeZaehler — Sidecar-Ladefehler ist kein «keine Zähler» (
     await expect(b.ladeBezuegeZaehler('bund', 'OR')).resolves.toBeNull();
   });
 
-  it('ladeStruktur/ladeErlassKopf bleiben null-bei-Fehler (NormChip & Co. unverändert)', async () => {
+  it('ladeStruktur bleibt null-bei-Fehler (NormChip, Tieflink: «entschieden» unverändert)', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => status(500)));
     const b = await browse();
     await expect(b.ladeStruktur('bund', 'OR')).resolves.toBeNull();
-    await expect(b.ladeErlassKopf('bund', 'OR')).resolves.toBeNull();
+  });
+
+  it('ladeStrukturDokumentStreng: HTML-Antwort mit 200 (vite preview/dev: SPA-Fallback für eine FEHLENDE Datei) = «Datei fehlt», KEIN Ausfall', async () => {
+    const html = { ok: true, status: 200, headers: { get: (k: string) => (k.toLowerCase() === 'content-type' ? 'text/html; charset=utf-8' : null) }, json: async () => { throw new SyntaxError('Unexpected token <'); } } as unknown as Response;
+    vi.stubGlobal('fetch', vi.fn(async () => html));
+    const b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'PRHG')).resolves.toEqual({ artikel: null, kopf: null });
+  });
+
+  it('ladeStrukturDokumentStreng: JSON mit 200 und JSON-Content-Type wird gelesen; kaputtes JSON bleibt ein Ausfall', async () => {
+    const json = (body: () => unknown) => ({ ok: true, status: 200, headers: { get: () => 'application/json' }, json: async () => body() }) as unknown as Response;
+    vi.stubGlobal('fetch', vi.fn(async () => json(() => ({ artikel: { '1': {} } }))));
+    let b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).resolves.toEqual({ artikel: { '1': {} }, kopf: null });
+    vi.stubGlobal('fetch', vi.fn(async () => json(() => { throw new SyntaxError('kaputt'); })));
+    b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).rejects.toThrow('kaputt');
+  });
+
+  it('ladeStrukturDokumentStreng (BG-04): 500 → abgelehnt, nicht gecacht; 404 → leer; Neuversuch trifft', async () => {
+    let ruf = 0;
+    const doc = { artikel: { '1': { gliederung: [] } }, kopf: { titel: 'OR' } };
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+      if (String(url).includes('FEHLT')) return status(404);
+      return ++ruf === 1 ? status(500) : jsonOk(doc);
+    }));
+    const b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).rejects.toThrow(/500/);
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).resolves.toEqual({ artikel: doc.artikel, kopf: doc.kopf });
+    await expect(b.ladeStrukturDokumentStreng('bund', 'FEHLT')).resolves.toEqual({ artikel: null, kopf: null });
   });
 });

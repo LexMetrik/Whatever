@@ -40,6 +40,7 @@
 import type { EntscheidFilterWerte, SortModus } from '../../lib/rechtsprechung/browse';
 import { INSTANZ_ORDNUNG } from '../../lib/rechtsprechung/browse';
 import type { Rechtsgebiet } from '../../lib/normtext/register';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ── INHALT: die URL-Achsen ──────────────────────────────────────────────────
 
@@ -202,15 +203,13 @@ export const SORT_LABEL: Record<SortModus, string> = {
   gericht: 'Bund → Kantone',
 };
 
-/** localStorage fehlt beim Prerender — dann gilt still der Default (§2: kein Raten). */
+/** Speicher fehlt (Prerender) oder ist gesperrt — dann gilt still der Default (§2: kein Raten). */
 function lies(key: string): string | null {
-  if (typeof localStorage === 'undefined') return null;
-  return localStorage.getItem(key);
+  return lokalSpeicher.lies(key);
 }
 
 function schreib(key: string, wert: string): void {
-  if (typeof localStorage === 'undefined') return;
-  localStorage.setItem(key, wert);
+  lokalSpeicher.schreib(key, wert);
 }
 
 export function leseDichte(): Dichte {

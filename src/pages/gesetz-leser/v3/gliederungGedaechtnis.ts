@@ -19,6 +19,8 @@
 // ROBUST STATT STRENG (wie `./blattGedaechtnis`): Speicher kann fehlen oder
 // werfen (privates Fenster, gesperrte Website-Daten) — dann gilt «offen».
 
+import { aufloesen } from '../../../lib/sichererSpeicher';
+
 const SCHLUESSEL = 'lm-leser-gliederung';
 const ZU = 'zu';
 
@@ -45,9 +47,5 @@ export function merkeGliederung(offen: boolean, speicher: Schreibend | null = lo
 }
 
 function lokal(): Storage | null {
-  try {
-    return typeof window === 'undefined' ? null : window.localStorage;
-  } catch {
-    return null;
-  }
+  return aufloesen('lokal');
 }

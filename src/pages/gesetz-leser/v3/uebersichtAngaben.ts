@@ -87,6 +87,10 @@ export interface UebersichtsEingabe {
   kantonErlassAnzahl: number | null;
   nichtKonsolidiert: boolean;
   nichtKonsolidiertSeit: string | null;
+  /** Das Struktur-Sidecar ist AUSGEFALLEN (Netz/5xx, BG-04) — dann sagt der Satz
+   *  «keine amtliche Gliederung erfasst» etwas Falsches; die Ausfallzeile im
+   *  Titelblatt trägt die Auskunft (§8). Fehlt = false. */
+  strukturAusgefallen?: boolean;
 }
 
 /**
@@ -241,7 +245,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
         : `Die Bestimmungen dieses Erlasses sind hier als «${wort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
     );
   }
-  if (e.kennzahlen && !e.kennzahlen.hatSidecar) {
+  if (e.kennzahlen && !e.kennzahlen.hatSidecar && !e.strukturAusgefallen) {
     hinweise.push('Für diesen Erlass ist keine amtliche Gliederung erfasst — die Leiste listet die Bestimmungen.');
   }
 

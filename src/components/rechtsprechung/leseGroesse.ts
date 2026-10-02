@@ -1,3 +1,4 @@
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 // ─── Lese-Schriftgrösse des Entscheidtexts (R17) ────────────────────────────
 //
 // Herausgelöst aus `pages/EntscheidLeser.tsx` am 31.8.2026 (§6.6 · Datei-
@@ -23,13 +24,14 @@ export function ladeFsIdx(): number {
   try {
     // Null-Guard (D-1.1): `Number(null) === 0` liess jeden ERSTBESUCHER still auf
     // Stufe 0 (1.0rem) statt Default 1 (1.08rem) fallen — R2-Bruch ohne Symptom.
-    let roh = localStorage.getItem(FS_IDX_KEY);
+    let roh = lokalSpeicher.lies(FS_IDX_KEY);
     if (roh === null) {
-      const alt = localStorage.getItem(FS_IDX_KEY_ALT);
+      const alt = lokalSpeicher.lies(FS_IDX_KEY_ALT);
       if (alt !== null) {
         roh = alt;
-        localStorage.setItem(FS_IDX_KEY, alt);
-        localStorage.removeItem(FS_IDX_KEY_ALT);
+        // Den alten Schlüssel nur löschen, wenn der neue wirklich geschrieben ist —
+        // sonst ginge die Wahl bei gesperrtem Speicher/Quota still verloren.
+        if (lokalSpeicher.schreib(FS_IDX_KEY, alt)) lokalSpeicher.entferne(FS_IDX_KEY_ALT);
       }
     }
     if (roh !== null) {
@@ -49,6 +51,6 @@ export function ladeFsIdx(): number {
  */
 export function speichereFsIdx(i: number): number {
   const x = Math.max(0, Math.min(FS_STUFEN.length - 1, i));
-  try { localStorage.setItem(FS_IDX_KEY, String(x)); } catch { /* egal */ }
+  lokalSpeicher.schreib(FS_IDX_KEY, String(x)); // egal
   return x;
 }

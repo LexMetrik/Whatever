@@ -1,3 +1,4 @@
+import { sitzungsSpeicher } from '../../lib/sichererSpeicher';
 // ─── Sitzungs-Fenster für gedeckelte Listen (neutraler Ort) ──────────────────
 //
 // Herkunft: `components/rechtsprechung/zustand.ts` (W2·10-UI-NAV/J1). Seit
@@ -39,12 +40,9 @@
 
 export const DECKEL_PRAEFIX = 'rsp:deckel:';
 
-/** sessionStorage fehlt beim Prerender (und in abgeschotteten Kontexten). */
+/** sessionStorage fehlt beim Prerender (und in abgeschotteten Kontexten): dann null. */
 function liesSitzung(key: string): string | null {
-  try {
-    if (typeof sessionStorage === 'undefined') return null;
-    return sessionStorage.getItem(key);
-  } catch { return null; }
+  return sitzungsSpeicher.lies(key);
 }
 
 /**
@@ -91,8 +89,6 @@ export function leseFenster(key: string, grund: number, maxSpanne: number): Fens
 }
 
 export function schreibeFenster(key: string, f: Fenster): void {
-  try {
-    if (typeof sessionStorage === 'undefined') return;
-    sessionStorage.setItem(DECKEL_PRAEFIX + key, `${f.von}:${f.bis}`);
-  } catch { /* Speicher voll oder gesperrt — das Fenster ist dann nur nicht wiederherstellbar */ }
+  // Speicher voll oder gesperrt → das Fenster ist dann nur nicht wiederherstellbar.
+  sitzungsSpeicher.schreib(DECKEL_PRAEFIX + key, `${f.von}:${f.bis}`);
 }

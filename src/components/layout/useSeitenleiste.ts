@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Seitenleisten-Layout (einklappbar + breitenverstellbar, persistent) ─────
 //
@@ -37,7 +38,7 @@ function klemme(b: number): number {
 
 function ladeBreite(): number {
   if (typeof window === 'undefined') return BREITE_STD;
-  const v = Number(window.localStorage.getItem(BREITE_KEY));
+  const v = Number(lokalSpeicher.lies(BREITE_KEY));
   return Number.isFinite(v) && v >= BREITE_MIN && v <= BREITE_MAX ? v : BREITE_STD;
 }
 
@@ -85,8 +86,8 @@ export function wahlAusSpeicher(v2: string | null, alt: string | null): boolean 
 function ladeEingeklappt(): boolean | null {
   if (typeof window === 'undefined') return null;
   return wahlAusSpeicher(
-    window.localStorage.getItem(EIN_KEY),
-    window.localStorage.getItem(EIN_KEY_ALT),
+    lokalSpeicher.lies(EIN_KEY),
+    lokalSpeicher.lies(EIN_KEY_ALT),
   );
 }
 
@@ -146,14 +147,14 @@ export function useSeitenleiste(): SeitenleisteLayout {
   const umschalten = useCallback(() => setWahl((w) => !(w ?? VORGABE_EINGEKLAPPT)), []);
 
   useEffect(() => {
-    try { window.localStorage.setItem(BREITE_KEY, String(breite)); } catch { /* Speicher gesperrt — Zustand bleibt nur für die Sitzung */ }
+    lokalSpeicher.schreib(BREITE_KEY, String(breite)); // Speicher gesperrt — Zustand bleibt nur für die Sitzung
   }, [breite]);
   useEffect(() => {
     // NUR eine echte Wahl wird abgelegt. Ohne Wahl bleibt der Schlüssel
     // ungeschrieben — genau daran erkennt der nächste Aufruf, dass er den
     // Vorgabewert seines Bereichs nehmen darf.
     if (wahl === null) return;
-    try { window.localStorage.setItem(EIN_KEY, wahl ? '1' : '0'); } catch { /* s. o. */ }
+    lokalSpeicher.schreib(EIN_KEY, wahl ? '1' : '0'); // s. o.
   }, [wahl]);
 
   return { breite, setBreite, eingeklappt: wahl ?? VORGABE_EINGEKLAPPT, umschalten };
