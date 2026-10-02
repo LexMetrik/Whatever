@@ -138,13 +138,14 @@ export interface ErlassStandEingang {
  *     über seinen Ur-Stand wollen wir dann nichts aussagen (§8).
  */
 export function erlassStandFuerArtikel(a: ErlassStandEingang): string | undefined {
-  if (!erlassStandErlaubt(a.ebene, a.erlassSr) || !a.inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(a.inkraftSeit)) return undefined;
+  const { ebene, erlassSr, inkraftSeit } = a;
+  if (!erlassStandErlaubt(ebene, erlassSr) || !inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(inkraftSeit)) return undefined;
   if (!a.blatt || !a.revisionenFertig || !a.historieFertig || a.artRev) return undefined;
   const { eintrag, historie } = a.blatt;
   if (historie?.ereignisse.length || historie?.aufgehobenSeit || historie?.gegenstandslos) return undefined;
   if (artikelLeerstellenStatus(eintrag.bloecke, eintrag.aufgehoben, eintrag.gegenstandslos) !== 'lebt') return undefined;
   if (a.historieShard?.residuum.some((r) => r.token === eintrag.artikel)) return undefined;
-  return a.inkraftSeit;
+  return inkraftSeit;
 }
 
 export interface PanelTafeln {

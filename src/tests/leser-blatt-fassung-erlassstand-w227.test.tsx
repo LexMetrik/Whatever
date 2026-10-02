@@ -221,10 +221,14 @@ describe('Daten-Invariante (Test 3) — inkrafttreten.json deckt jeden Bund-Erla
   it('Korpus ganz: Bund zeigt die Zeile (Zehntausende Artikel), Kanton nie; Gates sperren Ereignis/Residuum/Leerstelle', () => {
     let bundGezeigt = 0, bundGesperrt = 0, kantonGezeigt = 0;
     for (const e of REGISTER.filter((x) => x.datei)) {
+      // Je Erlass EINMAL laden (nicht je Artikel: snap()/shardVon() lesen die Datei neu, ~54 s statt ~1 s).
       const s = shardVon(e.key);
       const residuum = new Set((s?.residuum ?? []).map((r) => r.token));
       for (const eint of snap(e.key)) {
-        const iso = erlassStandFuerArtikel(eingangFuer(e.key, eint.artikel));
+        const iso = erlassStandFuerArtikel({
+          ebene: e.ebene, erlassSr: e.sr, inkraftSeit: e.inkraftSeit, blatt: { eintrag: eint, historie: s?.artikel[eint.artikel] },
+          artRev: null, revisionenFertig: true, historieFertig: true, historieShard: s,
+        });
         if (e.ebene === 'kanton') { if (iso) kantonGezeigt++; continue; }
         if (iso) {
           bundGezeigt++;
