@@ -10,7 +10,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
-import { baueArtikelHistorie, sektionsErbe, loeseErbeAuf, type ArtikelHistorie, type ErbArtikel, type FnEingang } from '../lib/normtext/historie-parse';
+import { baueArtikelHistorie, sektionsErbe, loeseErbeAuf, type ArtikelHistorie, type ErbArtikel, type HistorieEreignis, type FnEingang } from '../lib/normtext/historie-parse';
 import { historieFuerArtikel, type HistorieShard } from '../lib/normtext/historie-laden';
 import { baueGliederungsbaum, type Sektion } from '../lib/normtext/browse';
 import { tokenAusId } from '../../scripts/normtext/historie-aufgehoben-lebend';
@@ -235,7 +235,7 @@ describe('Korpus · committete Historie-Shards (Stichprobe) und Auflösung der g
   });
 
   it('loeseErbeAuf: geerbte Ereignisse stehen VOR den eigenen; fehlende Tabellen-Einträge werden übersprungen', () => {
-    const E = { wirkung: false, quellen: [], absatz: null, item: null } as const;
+    const E = { wirkung: false, quellen: [] as HistorieEreignis['quellen'], absatz: null, item: null };
     const a: ArtikelHistorie = { giltSeit: '2012-01-01', ereignisse: [{ ...E, typ: 'eingefuegt', datum: '2012-01-01' }], erbt: [1, 7] };
     const r = loeseErbeAuf(a, [{ ...E, typ: 'fassung', datum: '1970-01-01', ueberschrift: 'X' }, { ...E, typ: 'fassung', datum: '1972-01-01', ueberschrift: 'Y' }]);
     expect(r.ereignisse.map((e) => e.ueberschrift ?? 'eigen')).toEqual(['Y', 'eigen']);
