@@ -27,6 +27,12 @@ export interface PassusZiel {
   hervorBlock: Block | undefined;
   /** Hervorzuhebendes Item (lit/Ziff zitiert) oder undefined. */
   hervorItem: Item | undefined;
+  /**
+   * Nur bei Auflösung über die Ziffer-Ebene (`Block.ziffer`, P6): Indizes der
+   * hervorzuhebenden Inhalts-Blöcke (Überschrift-Blöcke zählen nicht). `undefined`
+   * = Legacy-Auflösung (Absatz-Vergleich je Block) — dort ändert sich nichts.
+   */
+  zielBloecke?: ReadonlySet<number>;
 }
 
 // Vergleichs-Normalisierung für lit/Ziff-Marken: case-insensitive, ohne
@@ -46,6 +52,49 @@ export function absatzNorm(a: string | null): string | null {
   return a?.replace(/[.\s]+$/, '') ?? null;
 }
 
+// Ziffer-Ebene (P6): «Ziff. N» ist dort, wo der Artikel Blöcke mit `ziffer`
+// trägt (BV Art. 196/197, StGB-Strafnormen), die Gliederungsstufe ÜBER dem Absatz
+// («Art. 197 Ziff. 9 Abs. 2 lit. b», «Art. 140 Ziff. 1 Abs. 2»), nicht eine
+// Aufzählungs-Marke. Existiert keine Ziffer N im Artikel, gilt die Legacy-
+// Auflösung unverändert (Item-Marke) — kein Verhalten ändert sich ohne `ziffer`.
+// Absatz in der Ziffer: erst per Absatz-Label (BV: jede Ziffer zählt neu ab 1);
+// trägt KEIN Block der Ziffer ein Label (StGB: unnummerierte Folge-Absätze),
+// zählt die Reihenfolge der Textblöcke (Abs. 1 = der Ziffer-Block selbst).
+// Nicht auflösbar → die Ziffer als Ganzes, nie eine fremde Ziffer.
+function bestimmeZifferZiel(bloecke: Block[], passus: PassusInfo): PassusZiel | null {
+  if (passus.ziff == null) return null;
+  const n = markeNorm(passus.ziff);
+  // Sammel-Ziffer «3_4» («3. und 4. …», Konvention `art_77_78`) gilt für jede ihrer Ziffern.
+  const scope = bloecke.flatMap((b, i) => (b.ziffer != null && markeNorm(b.ziffer).split('_').includes(n) ? [i] : []));
+  if (scope.length === 0) return null;
+  const inhalt = scope.filter((i) => bloecke[i].titel === undefined);
+  let treffer = inhalt;
+  if (passus.absatz != null && inhalt.length > 0) {
+    const a = absatzNorm(passus.absatz);
+    const perLabel = inhalt.filter((i) => absatzNorm(bloecke[i].absatz) === a);
+    const hatLabel = inhalt.some((i) => bloecke[i].absatz != null);
+    const textBloecke = inhalt.filter((i) => bloecke[i].text !== '');
+    const positional = !hatLabel && a != null && /^\d+$/.test(a) ? textBloecke[Number(a) - 1] : undefined;
+    if (perLabel.length > 0) treffer = perLabel;
+    else if (positional !== undefined) treffer = [positional];
+  }
+  const passusMarke = passus.lit != null ? markeNorm(passus.lit) : null;
+  let zielItemKey: PassusZiel['zielItemKey'] = null;
+  if (passusMarke != null) {
+    for (const bi of treffer) {
+      const ji = bloecke[bi].items?.findIndex((it) => markeNorm(it.marke) === passusMarke) ?? -1;
+      if (ji >= 0) { zielItemKey = { bi, ji }; break; }
+    }
+  }
+  return {
+    passusMarke,
+    zielItemKey,
+    hervorBlock: treffer.length > 0 ? bloecke[treffer[0]] : undefined,
+    hervorItem: zielItemKey != null ? bloecke[zielItemKey.bi].items![zielItemKey.ji] : undefined,
+    zielBloecke: new Set(treffer),
+  };
+}
+
 /**
  * Bestimmt aus den Blöcken eines Snapshots und dem zitierten Passus genau EINE
  * hervorzuhebende Stelle. Ist ein lit/ziff zitiert, gilt GENAU das erste in
@@ -53,6 +102,8 @@ export function absatzNorm(a: string | null): string | null {
  * nur das erste). Sonst (nur Absatz) der passende Block.
  */
 export function bestimmePassusZiel(bloecke: Block[], passus: PassusInfo): PassusZiel {
+  const ziffer = bestimmeZifferZiel(bloecke, passus);
+  if (ziffer != null) return ziffer;
   const passusMarke = passus.lit != null
     ? markeNorm(passus.lit)
     : passus.ziff != null ? markeNorm(passus.ziff) : null;

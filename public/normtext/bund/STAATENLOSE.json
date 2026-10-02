@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/STAATENLOSE/art_1",
@@ -11,7 +11,8 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. «Staatenlos» im Sinne dieses Übereinkommens ist eine Person, die kein Staat auf Grund seiner Gesetzgebung als seinen Angehörigen betrachtet."
+          "text": "1. «Staatenlos» im Sinne dieses Übereinkommens ist eine Person, die kein Staat auf Grund seiner Gesetzgebung als seinen Angehörigen betrachtet.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
@@ -50,12 +51,13 @@
               "tiefe": 1,
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_1",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "2e438dce398d28f86f75c1d74579a54c7e2ed0f79380486ea2e4bff95f2fc473"
     },
@@ -74,7 +76,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_2",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "41b70dc6f57d285c566b5efff62202e85e0cc63c91c8190d1440083a9f6684f1"
     },
@@ -93,7 +95,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_3",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "8b3bb7ddf00354ff9a40b5b00b34fb87bc64e484c1d91f3d0992ca4ec11e5691"
     },
@@ -112,7 +114,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_4",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "6ff20ced8f324eb28d09509e797095a25631b2a6e0fa07e68f1ba47996d40032"
     },
@@ -131,7 +133,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_5",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "f567ace5458b023cec8aea97af254ad6af52f5b729860f0e026ec6a19dceca1e"
     },
@@ -150,7 +152,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_6",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "581f74a314b146ea0c9133fc104d747b531c364cad37cd9c7970a491430f53cf"
     },
@@ -164,28 +166,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Unter Vorbehalt der in diesem Übereinkommen vorgesehenen günstigeren Bestimmungen gewährt jeder vertragschliessende Staat den Staatenlosen die Behandlung, die er Ausländern im Allgemeinen gewährt."
+          "text": "1. Unter Vorbehalt der in diesem Übereinkommen vorgesehenen günstigeren Bestimmungen gewährt jeder vertragschliessende Staat den Staatenlosen die Behandlung, die er Ausländern im Allgemeinen gewährt.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Nach dreijährigem Aufenthalt sind die Staatenlosen in den vertragschliessenden Staaten von der Gegenseitigkeit in Bezug auf die gesetzlichen Bestimmungen befreit."
+          "text": "2. Nach dreijährigem Aufenthalt sind die Staatenlosen in den vertragschliessenden Staaten von der Gegenseitigkeit in Bezug auf die gesetzlichen Bestimmungen befreit.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragschliessenden Staaten gewähren den Staatenlosen weiterhin die Rechte und Vergünstigungen, die ihnen ohne Rücksicht auf Gegenseitigkeit schon beim Inkrafttreten dieses Übereinkommens zukamen."
+          "text": "3. Die vertragschliessenden Staaten gewähren den Staatenlosen weiterhin die Rechte und Vergünstigungen, die ihnen ohne Rücksicht auf Gegenseitigkeit schon beim Inkrafttreten dieses Übereinkommens zukamen.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, den Staatenlosen bei fehlender Gegenseitigkeit weiter gehende Rechte und Vergünstigungen als die zu gewähren, auf die sie nach den Absätzen 2 und 3 Anspruch erheben können, sowie ferner die Möglichkeit, Staatenlose, die die Voraussetzungen dieser beiden Absätze nicht erfüllen, vom Erfordernis der Gegenseitigkeit zu befreien."
+          "text": "4. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, den Staatenlosen bei fehlender Gegenseitigkeit weiter gehende Rechte und Vergünstigungen als die zu gewähren, auf die sie nach den Absätzen 2 und 3 Anspruch erheben können, sowie ferner die Möglichkeit, Staatenlose, die die Voraussetzungen dieser beiden Absätze nicht erfüllen, vom Erfordernis der Gegenseitigkeit zu befreien.",
+          "ziffer": "4"
         },
         {
           "absatz": null,
-          "text": "5. Die Bestimmungen der Absätze 2 und 3 finden sowohl auf die in den Artikeln 13, 18, 19, 21 und 22 des Übereinkommens erwähnten Rechte und Vergünstigungen Anwendung als auch auf solche, die in diesem Übereinkommen nicht enthalten sind."
+          "text": "5. Die Bestimmungen der Absätze 2 und 3 finden sowohl auf die in den Artikeln 13, 18, 19, 21 und 22 des Übereinkommens erwähnten Rechte und Vergünstigungen Anwendung als auch auf solche, die in diesem Übereinkommen nicht enthalten sind.",
+          "ziffer": "5"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_7",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "5a3528718e29ec10edec78d11986d9bd3fa381f55160674f58359e1322ac9bda"
     },
@@ -204,7 +211,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_8",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "89ec4a5f73c8c5abe40b1801e03636c0bd867461e5fec0f45f13e7864c3c8a5a"
     },
@@ -223,7 +230,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_9",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "e702b1d3340ddc947567b28d654bb951ab3c3b5ef57d661676edec94f6f03de4"
     },
@@ -237,16 +244,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Ist ein Staatenloser im Verlaufe des Zweiten Weltkrieges verschleppt und in das Gebiet eines der vertragschliessenden Staaten gebracht worden und hält sich dort auf, so gilt die Dauer des Zwangsaufenthaltes in diesem Gebiet als rechtmässiger Aufenthalt."
+          "text": "1. Ist ein Staatenloser im Verlaufe des Zweiten Weltkrieges verschleppt und in das Gebiet eines der vertragschliessenden Staaten gebracht worden und hält sich dort auf, so gilt die Dauer des Zwangsaufenthaltes in diesem Gebiet als rechtmässiger Aufenthalt.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Ist ein Staatenloser während des Zweiten Weltkrieges aus dem Gebiet eines vertragschliessenden Staates verschleppt worden und vor dem Inkrafttreten dieses Übereinkommens dorthin zurückgekehrt, um dort Aufenthalt zu nehmen, so gilt die Zeit vor und nach dieser Zwangsverschleppung in allen Fällen, in denen ein ununterbrochener Aufenthalt verlangt wird, als ein einziger ununterbrochener Zeitraum."
+          "text": "2. Ist ein Staatenloser während des Zweiten Weltkrieges aus dem Gebiet eines vertragschliessenden Staates verschleppt worden und vor dem Inkrafttreten dieses Übereinkommens dorthin zurückgekehrt, um dort Aufenthalt zu nehmen, so gilt die Zeit vor und nach dieser Zwangsverschleppung in allen Fällen, in denen ein ununterbrochener Aufenthalt verlangt wird, als ein einziger ununterbrochener Zeitraum.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_10",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "0d9aa968e191149efd102ab37d677af8327ff2141c334821178dc571086e42b2"
     },
@@ -265,7 +274,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_11",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "d4ddfd536600354af7247a0b43708a712ee4c72842a5945ff875accdce8a2d1b"
     },
@@ -279,16 +288,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die personenrechtliche Stellung eines Staatenlosen bestimmt sich nach dem Gesetz seines Wohnsitzlandes oder, wenn er keinen Wohnsitz hat, nach dem Gesetz des Aufenthaltslandes."
+          "text": "1. Die personenrechtliche Stellung eines Staatenlosen bestimmt sich nach dem Gesetz seines Wohnsitzlandes oder, wenn er keinen Wohnsitz hat, nach dem Gesetz des Aufenthaltslandes.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Rechte, die ein Staatenloser vorher erworben hat und die auf seiner personenrechtlichen Stellung beruhen, insbesondere solche Rechte, die sich aus der Eheschliessung ergeben, sind von den vertragschliessenden Staaten zu achten, vorausgesetzt, dass die in der Gesetzgebung dieses Staates allfällig vorgesehenen Formalitäten erfüllt sind; Voraussetzung ist ferner, dass es sich um Rechte handelt, die von diesem Staat auch dann anerkannt worden wären, wenn die fragliche Person nicht staatenlos geworden wäre."
+          "text": "2. Rechte, die ein Staatenloser vorher erworben hat und die auf seiner personenrechtlichen Stellung beruhen, insbesondere solche Rechte, die sich aus der Eheschliessung ergeben, sind von den vertragschliessenden Staaten zu achten, vorausgesetzt, dass die in der Gesetzgebung dieses Staates allfällig vorgesehenen Formalitäten erfüllt sind; Voraussetzung ist ferner, dass es sich um Rechte handelt, die von diesem Staat auch dann anerkannt worden wären, wenn die fragliche Person nicht staatenlos geworden wäre.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_12",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "b25d635688383f20e8ef16c3b4a681a2b0be8f31a1c8986dd42ec7215d95e21c"
     },
@@ -307,7 +318,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_13",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "3dce1414b73c7e8abde367177c1807f067d176efb268766ba7fc580e76ccec44"
     },
@@ -326,7 +337,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_14",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "c1b98f82ff84cf12e1e03a35514d78066e49de04dedcead6e2c093c6ab7a4645"
     },
@@ -345,7 +356,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_15",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "5e48da5fae2c1ac670a4f887748b41b7791567ef08b0320564dd4a13e84d3613"
     },
@@ -359,20 +370,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Staatenlose haben auf dem Gebiete der vertragschliessenden Staaten freien Zutritt zu den Gerichten."
+          "text": "1. Staatenlose haben auf dem Gebiete der vertragschliessenden Staaten freien Zutritt zu den Gerichten.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Staatenlosen wird im vertragschliessenden Staat, wo sie ihren gewöhnlichen Aufenthalt haben, hinsichtlich der Zulassung vor Gericht, einschliesslich des Armenrechts und der Befreiung von der cautio judicatum solvi, die gleiche Behandlung zuteil wie den Angehörigen dieses Staates."
+          "text": "2. Staatenlosen wird im vertragschliessenden Staat, wo sie ihren gewöhnlichen Aufenthalt haben, hinsichtlich der Zulassung vor Gericht, einschliesslich des Armenrechts und der Befreiung von der cautio judicatum solvi, die gleiche Behandlung zuteil wie den Angehörigen dieses Staates.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. In den vertragschliessenden Staaten, in denen ein Staatenloser nicht seinen gewöhnlichen Aufenthalt hat, geniesst er in Bezug auf die in Absatz 2 erwähnten Rechte die gleiche Behandlung wie ein Angehöriger des Landes, in dem er seinen gewöhnlichen Aufenthalt hat."
+          "text": "3. In den vertragschliessenden Staaten, in denen ein Staatenloser nicht seinen gewöhnlichen Aufenthalt hat, geniesst er in Bezug auf die in Absatz 2 erwähnten Rechte die gleiche Behandlung wie ein Angehöriger des Landes, in dem er seinen gewöhnlichen Aufenthalt hat.",
+          "ziffer": "3"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_16",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "f7dcdd5ed09c3e206927f1d63856d64d7af82c3aa6ea7ca1d55fd97910f4225d"
     },
@@ -386,16 +400,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragschliessenden Staaten gewähren Staatenlosen, die sich rechtmässig auf ihrem Gebiet aufhalten, in Bezug auf den Stellenantritt eine möglichst günstige Behandlung, die auf alle Fälle nicht ungünstiger ist als die, welche Ausländern im allgemeinen unter den gleichen Umständen gewährt wird."
+          "text": "1. Die vertragschliessenden Staaten gewähren Staatenlosen, die sich rechtmässig auf ihrem Gebiet aufhalten, in Bezug auf den Stellenantritt eine möglichst günstige Behandlung, die auf alle Fälle nicht ungünstiger ist als die, welche Ausländern im allgemeinen unter den gleichen Umständen gewährt wird.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, Massnahmen zu treffen, um die Rechte aller Staatenlosen in Bezug auf den Stellenantritt den eigenen Staatsangehörigen anzugleichen, insbesondere der Staatenlosen, die auf Grund eines Anwerbungsprogramms für Arbeitskräfte oder eines Einwanderungsplanes in ihr Gebiet gekommen sind."
+          "text": "2. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, Massnahmen zu treffen, um die Rechte aller Staatenlosen in Bezug auf den Stellenantritt den eigenen Staatsangehörigen anzugleichen, insbesondere der Staatenlosen, die auf Grund eines Anwerbungsprogramms für Arbeitskräfte oder eines Einwanderungsplanes in ihr Gebiet gekommen sind.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_17",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "ae23328a8a428a2b19ed01bbec36c5ae41ae7045358c940c5ad6e21833fc96d3"
     },
@@ -414,7 +430,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_18",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "6d2ccd6b4dba1b2b8abf8eef70f8c628deea721226f28aef278d9d80aa1f81b5"
     },
@@ -433,7 +449,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_19",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "fc649af655bcabc0aa9a4cee6b4476623350ba5001069eeb15a7d25a3b89c994"
     },
@@ -452,7 +468,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_20",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "666fe64eaeff8fc349edcd62a51fa8c54329515c284168c04eb5adf77ae68170"
     },
@@ -471,7 +487,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_21",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "c76b3fa402662404f607accd37e622918e3fb102a37b4e3a2b624ee072228a62"
     },
@@ -485,16 +501,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragschliessenden Staaten gewähren Staatenlosen in Bezug auf den Unterricht in den Primarschulen die gleiche Behandlung wie den eigenen Staatsangehörigen."
+          "text": "1. Die vertragschliessenden Staaten gewähren Staatenlosen in Bezug auf den Unterricht in den Primarschulen die gleiche Behandlung wie den eigenen Staatsangehörigen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die vertragschliessenden Staaten gewähren den Staatenlosen hinsichtlich des Unterrichts in andern als den Primarschulen, insbesondere was die Zulassung zum Studium, die Anerkennung von ausländischen Studienzeugnissen, Diplomen und Universitätsgraden sowie den Gebührenerlass und die Erteilung von Stipendien anbetrifft, eine möglichst günstige Behandlung, die auf alle Fälle nicht ungünstiger ist als die, welche Ausländern im allgemeinen unter den gleichen Umständen gewährt wird."
+          "text": "2. Die vertragschliessenden Staaten gewähren den Staatenlosen hinsichtlich des Unterrichts in andern als den Primarschulen, insbesondere was die Zulassung zum Studium, die Anerkennung von ausländischen Studienzeugnissen, Diplomen und Universitätsgraden sowie den Gebührenerlass und die Erteilung von Stipendien anbetrifft, eine möglichst günstige Behandlung, die auf alle Fälle nicht ungünstiger ist als die, welche Ausländern im allgemeinen unter den gleichen Umständen gewährt wird.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_22",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "572c0d8824970b6d2af0791e99d12adbb58cdff1441ab8a66c60f31f0668c54b"
     },
@@ -513,7 +531,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_23",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "26f43eb0fbf7a78ef850fcabb306572fb68833a98c14c57cba7bd06b70b78897"
     },
@@ -551,24 +569,28 @@
               "tiefe": 1,
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Entschädigungsansprüche, die durch den Tod eines Staatenlosen infolge Arbeitsunfalls oder Berufskrankheit entstehen, werden dadurch nicht beeinträchtigt, dass sich der Begünstigte ausserhalb des Gebietes des vertragschliessenden Staates aufhält."
+          "text": "2. Die Entschädigungsansprüche, die durch den Tod eines Staatenlosen infolge Arbeitsunfalls oder Berufskrankheit entstehen, werden dadurch nicht beeinträchtigt, dass sich der Begünstigte ausserhalb des Gebietes des vertragschliessenden Staates aufhält.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragschliessenden Staaten erstrecken die Vorteile der untereinander abgeschlossenen oder noch abzuschliessenden Abkommen über die Erhaltung wohlerworbener Rechte und von Anwartschaften auf dem Gebiete der Sozialversicherung auf die Staatenlosen, sofern diese die Bedingungen erfüllen, die für die Staatsangehörigen der Signatarstaaten dieser Abkommen vorgesehen sind."
+          "text": "3. Die vertragschliessenden Staaten erstrecken die Vorteile der untereinander abgeschlossenen oder noch abzuschliessenden Abkommen über die Erhaltung wohlerworbener Rechte und von Anwartschaften auf dem Gebiete der Sozialversicherung auf die Staatenlosen, sofern diese die Bedingungen erfüllen, die für die Staatsangehörigen der Signatarstaaten dieser Abkommen vorgesehen sind.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, die Vorteile ähnlicher Abkommen, die zwischen ihnen und Nichtvertragsstaaten in Kraft sind oder sein werden, soweit als möglich auf Staatenlose auszudehnen."
+          "text": "4. Die vertragschliessenden Staaten prüfen wohlwollend die Möglichkeit, die Vorteile ähnlicher Abkommen, die zwischen ihnen und Nichtvertragsstaaten in Kraft sind oder sein werden, soweit als möglich auf Staatenlose auszudehnen.",
+          "ziffer": "4"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_24",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "a7b40ac8c3f161a75d6dd302a8f1c581b5739b3727e6a5d936f4982fdde65eed"
     },
@@ -582,28 +604,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Wenn ein Staatenloser normalerweise für die Ausübung eines Rechtes die Mitwirkung ausländischer Behörden benötigt, an die er nicht gelangen kann, sorgen die vertragschliessenden Staaten, auf deren Gebiet er sich aufhält, dafür, dass ihm die Beihilfe durch die eigenen Behörden gewährt wird."
+          "text": "1. Wenn ein Staatenloser normalerweise für die Ausübung eines Rechtes die Mitwirkung ausländischer Behörden benötigt, an die er nicht gelangen kann, sorgen die vertragschliessenden Staaten, auf deren Gebiet er sich aufhält, dafür, dass ihm die Beihilfe durch die eigenen Behörden gewährt wird.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die in Absatz 1 erwähnten Behörden stellen den Staatenlosen die Dokumente oder Bescheinigungen aus oder lassen sie unter ihrer Aufsicht ausstellen, die normalerweise einem Ausländer durch seine heimatlichen Behörden oder durch deren Vermittlung ausgestellt werden."
+          "text": "2. Die in Absatz 1 erwähnten Behörden stellen den Staatenlosen die Dokumente oder Bescheinigungen aus oder lassen sie unter ihrer Aufsicht ausstellen, die normalerweise einem Ausländer durch seine heimatlichen Behörden oder durch deren Vermittlung ausgestellt werden.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die in dieser Weise ausgestellten Dokumente oder Bescheinigungen ersetzen die amtlichen Urkunden, die Ausländern durch die Behörden ihres Landes oder durch deren Vermittlung ausgestellt werden, sie gelten bis zum Beweise des Gegenteils als rechtmässig."
+          "text": "3. Die in dieser Weise ausgestellten Dokumente oder Bescheinigungen ersetzen die amtlichen Urkunden, die Ausländern durch die Behörden ihres Landes oder durch deren Vermittlung ausgestellt werden, sie gelten bis zum Beweise des Gegenteils als rechtmässig.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Abgesehen von Ausnahmen, die zugunsten von Bedürftigen zugelassen werden müssen, können für die hier erwähnten Amtshandlungen Gebühren erhoben werden; diese müssen aber mässig sein und den Gebühren entsprechen, die von den eigenen Staatsangehörigen für ähnliche Amtshandlungen erhoben werden."
+          "text": "4. Abgesehen von Ausnahmen, die zugunsten von Bedürftigen zugelassen werden müssen, können für die hier erwähnten Amtshandlungen Gebühren erhoben werden; diese müssen aber mässig sein und den Gebühren entsprechen, die von den eigenen Staatsangehörigen für ähnliche Amtshandlungen erhoben werden.",
+          "ziffer": "4"
         },
         {
           "absatz": null,
-          "text": "5. Die Bestimmungen dieses Artikels berühren die Artikel 27 und 28 nicht."
+          "text": "5. Die Bestimmungen dieses Artikels berühren die Artikel 27 und 28 nicht.",
+          "ziffer": "5"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_25",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "58e44446e13575f1b315c9c745a7ac9dd3893079386505a2f0dae906266f55ac"
     },
@@ -622,7 +649,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_26",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "d2910b0261d6d09b600d218cd7a1fe70c6df80f9ab4c49e8057f73fdc3e9e53c"
     },
@@ -641,7 +668,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_27",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "179e0051ada5964d257ac23a532cc5a71c1d9c9557cfe0570015886448590c54"
     },
@@ -660,7 +687,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_28",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "f4f88e501d060bb68acabf260e48a4008abeed3cf9232deb31dbe054e3fc6151"
     },
@@ -674,16 +701,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragschliessenden Staaten erheben von den Staatenlosen keine anderen oder höheren Gebühren, Abgaben oder Steuern irgendwelcher Art, als sie unter ähnlichen Verhältnissen jetzt oder künftig von den eigenen Staatsangehörigen verlangt werden."
+          "text": "1. Die vertragschliessenden Staaten erheben von den Staatenlosen keine anderen oder höheren Gebühren, Abgaben oder Steuern irgendwelcher Art, als sie unter ähnlichen Verhältnissen jetzt oder künftig von den eigenen Staatsangehörigen verlangt werden.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Diese Vorschrift steht der Anwendung der gesetzlichen und sonstigen Bestimmungen nicht entgegen, welche die Gebühren für die Ausstellung von Verwaltungsdokumenten, einschliesslich Identitätsausweisen, an Ausländer betreffen."
+          "text": "2. Diese Vorschrift steht der Anwendung der gesetzlichen und sonstigen Bestimmungen nicht entgegen, welche die Gebühren für die Ausstellung von Verwaltungsdokumenten, einschliesslich Identitätsausweisen, an Ausländer betreffen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_29",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "903618c40f9d83fdb396321ee342bc594a39fbaabaca41f991c121b696b26799"
     },
@@ -697,16 +726,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragschliessende Staat gestattet den Staatenlosen nach Massgabe seiner Gesetze und Verordnungen, Vermögenswerte, die sie auf sein Staatsgebiet gebracht haben, in das Gebiet eines anderen Landes überzuführen, in dem sie zur Ansiedlung zugelassen worden sind."
+          "text": "1. Jeder vertragschliessende Staat gestattet den Staatenlosen nach Massgabe seiner Gesetze und Verordnungen, Vermögenswerte, die sie auf sein Staatsgebiet gebracht haben, in das Gebiet eines anderen Landes überzuführen, in dem sie zur Ansiedlung zugelassen worden sind.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Jeder vertragschliessende Staat prüft wohlwollend die Gesuche von Staatenlosen, die um die Ermächtigung nachsuchen, alle andern Vermögenswerte, die zur Ansiedlung in einem andern Land erforderlich sind, in ein anderes Land zu überführen, in dem sie zur Ansiedlung aufgenommen worden sind."
+          "text": "2. Jeder vertragschliessende Staat prüft wohlwollend die Gesuche von Staatenlosen, die um die Ermächtigung nachsuchen, alle andern Vermögenswerte, die zur Ansiedlung in einem andern Land erforderlich sind, in ein anderes Land zu überführen, in dem sie zur Ansiedlung aufgenommen worden sind.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_30",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "ddc29ef55a2ff587982137c0f804e453abc1e815055eb2ad9d72533d0c154aa9"
     },
@@ -720,20 +751,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragschliessenden Staaten weisen einen Staatenlosen, der sich rechtmässig auf ihrem Gebiet aufhält, nur aus Gründen der Staatssicherheit oder der öffentlichen Ordnung aus."
+          "text": "1. Die vertragschliessenden Staaten weisen einen Staatenlosen, der sich rechtmässig auf ihrem Gebiet aufhält, nur aus Gründen der Staatssicherheit oder der öffentlichen Ordnung aus.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Ausweisung eines Staatenlosen kann nur auf Grund eines Entscheides, der nach dem gesetzlich vorgeschriebenen Verfahren getroffen wurde, durchgeführt werden. Soweit nicht zwingende Gründe der Staatssicherheit entgegenstehen, muss dem Staatenlosen erlaubt werden, Beweise zu seiner Entlastung beizubringen, Rekurs einzureichen und sich dabei vor einer zuständigen Behörde oder vor einer oder mehreren von der zuständigen Behörde bezeichneten Personen vertreten zu lassen."
+          "text": "2. Die Ausweisung eines Staatenlosen kann nur auf Grund eines Entscheides, der nach dem gesetzlich vorgeschriebenen Verfahren getroffen wurde, durchgeführt werden. Soweit nicht zwingende Gründe der Staatssicherheit entgegenstehen, muss dem Staatenlosen erlaubt werden, Beweise zu seiner Entlastung beizubringen, Rekurs einzureichen und sich dabei vor einer zuständigen Behörde oder vor einer oder mehreren von der zuständigen Behörde bezeichneten Personen vertreten zu lassen.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragschliessenden Staaten räumen einem ausgewiesenen Staatenlosen eine angemessene Frist ein, um ihm den Versuch zu einer rechtmässigen Einreise in ein anderes Land zu ermöglichen. Die vertragschliessenden Staaten können während dieser Frist alle innerstaatlichen Massnahmen treffen, die sie für notwendig erachten."
+          "text": "3. Die vertragschliessenden Staaten räumen einem ausgewiesenen Staatenlosen eine angemessene Frist ein, um ihm den Versuch zu einer rechtmässigen Einreise in ein anderes Land zu ermöglichen. Die vertragschliessenden Staaten können während dieser Frist alle innerstaatlichen Massnahmen treffen, die sie für notwendig erachten.",
+          "ziffer": "3"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_31",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "fc1b64c33feedc870669bb702982112992af39c16ca3c09071f913cbf9fbc799"
     },
@@ -752,7 +786,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_32",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "40258db833d6f948763490c92caa4bf042355d10278a3cfdf1667518ba03a604"
     },
@@ -771,7 +805,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_33",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "8de3bfd56ef9f75e593353576b12809783db8d778e5a25666dabe156bb5d2ec5"
     },
@@ -790,7 +824,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_34",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "b2ebbbed3a988caae3eb47f9504d6dc8570ddb2171bd41a10abcacac81a29637"
     },
@@ -804,7 +838,8 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Dieses Übereinkommen liegt am Sitz der Organisation der Vereinten Nationen bis zum 31. Dezember 1955 zur Unterzeichnung auf."
+          "text": "1. Dieses Übereinkommen liegt am Sitz der Organisation der Vereinten Nationen bis zum 31. Dezember 1955 zur Unterzeichnung auf.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
@@ -825,20 +860,23 @@
               "text": "durch jeden Staat, den die Generalversammlung der Vereinten Nationen zur Unterzeichnung oder zum Beitritt eingeladen hat.",
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Es ist zu ratifizieren; die Ratifikationsurkunden sind beim Generalsekretär der Vereinten Nationen zu hinterlegen."
+          "text": "3. Es ist zu ratifizieren; die Ratifikationsurkunden sind beim Generalsekretär der Vereinten Nationen zu hinterlegen.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Die in Absatz 2 dieses Artikels bezeichneten Staaten können diesem Übereinkommen beitreten. Der Beitritt erfolgt durch Hinterlegung einer Beitrittsurkunde beim Generalsekretär der Vereinten Nationen."
+          "text": "4. Die in Absatz 2 dieses Artikels bezeichneten Staaten können diesem Übereinkommen beitreten. Der Beitritt erfolgt durch Hinterlegung einer Beitrittsurkunde beim Generalsekretär der Vereinten Nationen.",
+          "ziffer": "4"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_35",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "14d0f6c4d12fb0a0867a64f03deff50e8d422a0b0a56d2ef7ff701ee77d46697"
     },
@@ -852,20 +890,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder Staat kann im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts erklären, dass sich die Geltung dieses Übereinkommens auf alle Gebiete erstreckt, die er in den internationalen Beziehungen vertritt, oder nur auf eines oder mehrere von ihnen. Eine solche Erklärung wird in dem Zeitpunkt wirksam, in dem dieses Übereinkommen für den betreffenden Staat in Kraft tritt."
+          "text": "1. Jeder Staat kann im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts erklären, dass sich die Geltung dieses Übereinkommens auf alle Gebiete erstreckt, die er in den internationalen Beziehungen vertritt, oder nur auf eines oder mehrere von ihnen. Eine solche Erklärung wird in dem Zeitpunkt wirksam, in dem dieses Übereinkommen für den betreffenden Staat in Kraft tritt.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. In jedem späteren Zeitpunkt erfolgt diese Erweiterung des Geltungsbereichs durch eine an den Generalsekretär der Vereinten Nationen gerichtete Mitteilung; sie wird nach Ablauf von neunzig Tagen seit dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam oder in dem Zeitpunkt, in dem das Übereinkommen für den betreffenden Staat in Kraft tritt, wenn dieser letzte Zeitpunkt später liegt."
+          "text": "2. In jedem späteren Zeitpunkt erfolgt diese Erweiterung des Geltungsbereichs durch eine an den Generalsekretär der Vereinten Nationen gerichtete Mitteilung; sie wird nach Ablauf von neunzig Tagen seit dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam oder in dem Zeitpunkt, in dem das Übereinkommen für den betreffenden Staat in Kraft tritt, wenn dieser letzte Zeitpunkt später liegt.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Bei Gebieten, für die dieses Übereinkommen im Zeitpunkt der Unterzeichnung, Ratifikation oder des Beitritts nicht gilt, prüft jeder interessierte Staat die Möglichkeit, sobald wie möglich alle erforderlichen Massnahmen zu ergreifen, um den Geltungsbereich dieses Übereinkommens auf diese Gebiete zu erweitern, gegebenenfalls unter dem Vorbehalt der Zustimmung der Regierungen dieser Gebiete, wenn eine solche aus verfassungsmässigen Gründen erforderlich ist."
+          "text": "3. Bei Gebieten, für die dieses Übereinkommen im Zeitpunkt der Unterzeichnung, Ratifikation oder des Beitritts nicht gilt, prüft jeder interessierte Staat die Möglichkeit, sobald wie möglich alle erforderlichen Massnahmen zu ergreifen, um den Geltungsbereich dieses Übereinkommens auf diese Gebiete zu erweitern, gegebenenfalls unter dem Vorbehalt der Zustimmung der Regierungen dieser Gebiete, wenn eine solche aus verfassungsmässigen Gründen erforderlich ist.",
+          "ziffer": "3"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_36",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "0baa4c0af0cedba468157aa2dc11a5361d59308ea6ef75d5d88cbd28f1d205bd"
     },
@@ -901,7 +942,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_37",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "aa1c78f5cdd541425e69eb9d1143edaa83bb1a09fa3eb6a6dc677e7846a7be57"
     },
@@ -915,20 +956,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts kann jeder Staat zu den Artikeln des Übereinkommens Vorbehalte machen,"
+          "text": "1. Im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts kann jeder Staat zu den Artikeln des Übereinkommens Vorbehalte machen,",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "ausgenommen zu den Artikeln 1, 3, 4, 16 Absatz 1 und 33–42 einschliesslich."
+          "text": "ausgenommen zu den Artikeln 1, 3, 4, 16 Absatz 1 und 33–42 einschliesslich.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Jeder vertragschliessende Staat, der gemäss Absatz 1 dieses Artikels einen Vorbehalt gemacht hat, kann ihn jederzeit durch eine diesbezügliche Mitteilung an den Generalsekretär der Vereinten Nationen zurückziehen."
+          "text": "2. Jeder vertragschliessende Staat, der gemäss Absatz 1 dieses Artikels einen Vorbehalt gemacht hat, kann ihn jederzeit durch eine diesbezügliche Mitteilung an den Generalsekretär der Vereinten Nationen zurückziehen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_38",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "4a95a0fb372c65f8d8900dbdad16502ee7159ff845498bc9e3cb35c80a762b16"
     },
@@ -942,16 +986,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Dieses Übereinkommen tritt am neunzigsten Tage nach dem Zeitpunkt der Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde in Kraft."
+          "text": "1. Dieses Übereinkommen tritt am neunzigsten Tage nach dem Zeitpunkt der Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde in Kraft.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Für jeden Staat, der das Übereinkommen nach Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde ratifiziert oder ihm beitritt, tritt es am neunzigsten Tage nach dem Zeitpunkt der Hinterlegung der Ratifikations- oder Beitrittsurkunde dieses Staates in Kraft."
+          "text": "2. Für jeden Staat, der das Übereinkommen nach Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde ratifiziert oder ihm beitritt, tritt es am neunzigsten Tage nach dem Zeitpunkt der Hinterlegung der Ratifikations- oder Beitrittsurkunde dieses Staates in Kraft.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_39",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "c063865ebb95d311704c8037678f4a108efffb8d8fe1dfc5c65e2d0e95e37a15"
     },
@@ -965,20 +1011,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragschliessende Staat kann das Übereinkommen jederzeit durch eine an den Generalsekretär der Vereinten Nationen zu richtende Mitteilung kündigen."
+          "text": "1. Jeder vertragschliessende Staat kann das Übereinkommen jederzeit durch eine an den Generalsekretär der Vereinten Nationen zu richtende Mitteilung kündigen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Kündigung wird für den betreffenden Staat ein Jahr nach dem Zeitpunkt des Eingangs der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam."
+          "text": "2. Die Kündigung wird für den betreffenden Staat ein Jahr nach dem Zeitpunkt des Eingangs der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Jeder Staat, der eine Erklärung oder Mitteilung gemäss Artikel 36 gemacht hat, kann jederzeit später dem Generalsekretär der Vereinten Nationen mitteilen, dass das Übereinkommen auf das in der Mitteilung bezeichnete Gebiet nicht mehr Anwendung findet. Das Übereinkommen findet alsdann auf dieses Gebiet ein Jahr nach dem Zeitpunkt des Eingangs der Mitteilung beim Generalsekretär keine Anwendung mehr."
+          "text": "3. Jeder Staat, der eine Erklärung oder Mitteilung gemäss Artikel 36 gemacht hat, kann jederzeit später dem Generalsekretär der Vereinten Nationen mitteilen, dass das Übereinkommen auf das in der Mitteilung bezeichnete Gebiet nicht mehr Anwendung findet. Das Übereinkommen findet alsdann auf dieses Gebiet ein Jahr nach dem Zeitpunkt des Eingangs der Mitteilung beim Generalsekretär keine Anwendung mehr.",
+          "ziffer": "3"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_40",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "ecac3b3d6f2cbf092b34966ea3899341c7cdd3a2be044ee82c6d48a3f68ddd28"
     },
@@ -992,16 +1041,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragschliessende Staat kann jederzeit durch eine an den Generalsekretär der Vereinten Nationen zu richtende Mitteilung die Revision dieses Übereinkommens verlangen."
+          "text": "1. Jeder vertragschliessende Staat kann jederzeit durch eine an den Generalsekretär der Vereinten Nationen zu richtende Mitteilung die Revision dieses Übereinkommens verlangen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Generalversammlung der Vereinten Nationen empfiehlt die in Bezug auf dieses Begehren gegebenenfalls zu treffenden Massnahmen."
+          "text": "2. Die Generalversammlung der Vereinten Nationen empfiehlt die in Bezug auf dieses Begehren gegebenenfalls zu treffenden Massnahmen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_41",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "0fa61339da9cadd70c44c99251a2f6f3b9758c0cefe389aa1a488dc11a491628"
     },
@@ -1052,7 +1103,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#art_42",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "9f09d0ead00c4d91473c5d64f0597d77a30e35186004705d1f009e69a945b228"
     },
@@ -1735,7 +1786,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#annex_u1",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "cf9590271cc543b32fa6b9920bf042e9104778905a7503e71ae2852bcda48b2f"
     },
@@ -2475,7 +2526,7 @@
       ],
       "stand": "2026-05-22",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de#scope_u1",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20260522",
       "sha": "46e69c0a82e257296dd2d4a76aafd6b05d0bb40604bf00850b1e3f2d310432f0"
     }

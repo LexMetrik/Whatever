@@ -241,7 +241,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
    *  «gegenstandslos». Default `false` hält Fälle ohne Vermerk byte-gleich (golden, §6). */
   artikelGegenstandslos?: boolean;
 }) {
-  const { passusMarke, zielItemKey } = bestimmePassusZiel(bloecke, passus);
+  const { passusMarke, zielItemKey, zielBloecke } = bestimmePassusZiel(bloecke, passus);
+  // Ziffer-Ebene (P6): nur der ERSTE Ziel-Block trägt die Scroll-Marke (passusRef).
+  const ersterZielBlock = zielBloecke != null ? Math.min(...zielBloecke) : -1;
+  // Zitat-Segment der Ziffer-Ebene («Art. 197 Ziff. 9 Abs. 1 BV»): ohne ziffer leer = byte-gleich.
+  const zifferTeil = (b: { ziffer?: string }): string => (b.ziffer != null ? ` Ziff. ${b.ziffer}` : '');
   // W2·27 (30.9.2026): das Wort für den Ersatztext «…»/leer — am amtlichen Artikel-Vermerk,
   // nicht am Platzhalter (§1/§8). EINE Quelle: `leerstellenWort` (darstellung.ts, §5).
   const entfallWort = leerstellenWort(artikelGegenstandslos ? 'gegenstandslos' : 'aufgehoben');
@@ -400,7 +404,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
             // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
             // Absatzes bei Suffixen/Ziff.-Resten voneinander ab.
-            return `${zk.artikelLabel}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
+            return `${zk.artikelLabel}${zifferTeil(b)}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
           })() : '';
           return (
             <li
@@ -606,7 +610,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             </div>
           );
         }
-        const istAbsatzZitiert = passus.absatz != null && absatzNorm(b.absatz) === absatzNorm(passus.absatz);
+        const istAbsatzZitiert = zielBloecke != null
+          ? zielBloecke.has(i)
+          : passus.absatz != null && absatzNorm(b.absatz) === absatzNorm(passus.absatz);
         // Starke Block-Hervorhebung nur, wenn KEIN Item zitiert ist; bei
         // zitiertem Item wird der Block dezent umrandet, das Item trägt die
         // starke Markierung.
@@ -627,7 +633,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         return (
           <div
             key={i}
-            ref={blockStark ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
+            ref={blockStark && (zielBloecke == null || i === ersterZielBlock) ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
             data-passus={blockStark ? 'true' : 'false'}
             /* S2 (F3 = V2, David 17.8.2026 am Bildbogen): im LESER trägt dieser
                Block-Wrapper KEINEN eigenen Zeilenabstand mehr. `leading-relaxed`
@@ -673,7 +679,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
               {absMarke != null && (
                 zk
-                  ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
+                  ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel}${zifferTeil(b)} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
                   : <sup className="num mr-1 font-semibold text-ink-500">{absMarke}</sup>
               )}
               {/* DARSTELLUNGS-NORMALISIERUNG (§3, Wortlaut unverändert): nur im
