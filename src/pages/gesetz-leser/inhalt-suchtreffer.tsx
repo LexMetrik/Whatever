@@ -94,7 +94,7 @@ export function useMarkenSchalter(sucheFeldLeer: boolean): {
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
   internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
-  bereich = 'alles', markenAus = false,
+  bereich = 'alles', markenAus = false, einzelSprung,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -134,6 +134,10 @@ export function useSuchTreffer({
    *  seit A35 zieht. Zähler, Trefferliste und ↑↓-Folge bleiben unberührt: der
    *  Schalter nimmt die FARBE, nicht die Auskunft (§8). */
   markenAus?: boolean;
+  /** W2·17-UI-BEFUNDE · Einzelmodus: wechselt den gezeigten Artikel (Router) und meldet `true`;
+   *  `false`, wo die Gesamtansicht gilt. Ohne ihn liegt ein Ziel ausserhalb des gezeigten Artikels
+   *  nicht im DOM — kein Scroll, kein Wechsel (PE-C3-B02, PE-B12-B03). */
+  einzelSprung?: (token: string) => boolean;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -371,6 +375,15 @@ export function useSuchTreffer({
     };
     const da = finde();
     if (da) { zeige(da); return; }
+    if (einzelSprung?.(eintrag.token)) {
+      // Der Artikel entsteht erst im Commit der Navigation — spätestens nach ein paar Frames steht er da.
+      const warte = (n: number) => window.requestAnimationFrame(() => {
+        const el = finde();
+        if (el) zeige(el); else if (n > 0) warte(n - 1);
+      });
+      warte(8);
+      return;
+    }
     // ZIEL IN EINER ZUGEKLAPPTEN SEKTION (B3, zweite Hälfte). Die Lesespalte
     // bleibt seit S8 vollständig, aber sie bleibt auch klappbar — ein
     // Sektionskopf-Klick genügt, und der Zielartikel ist nicht im DOM. Der
@@ -389,7 +402,7 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;

@@ -22,6 +22,7 @@ import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useMarkenSchalter, useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
 import { oeffneSprungZiel, alleKlappIds } from '../klappKarte';
+import { useEinzelSprung, useSprungZeitplan } from './sprungWege';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
@@ -148,7 +149,7 @@ export interface LeserV3Modell {
   siePfadArtikel: string | null;
 
   /** Sprünge. Beide sind die EINZIGEN Bewegungs-Auslöser der Hülle. */
-  springeZuArtikel: (token: string) => void;
+  springeZuArtikel: (token: string, behalteSuche?: boolean) => void; // `behalteSuche`: der Sprung beendet die Suche nicht (Landkarte, PE-B12-B02)
   springeZuSektion: ReturnType<typeof useSektionSprung>;
   zumAnfang: () => void;
 
@@ -280,12 +281,13 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   });
 
   // ── Artikel-Sprung: der EINE erlaubte Adress-Schreiber (LM-202) ───────────
-  // `replaceState`, nie `pushState`, nie eine direkte Hash-Zuweisung; und nur
-  // aus dem primären Pane (die Rolle unterscheidet, nicht `imPane` — B1-Falle).
-  // Quellensonde: `src/tests/leser-v3-adresse.test.ts`.
-  const springeZuArtikel = useCallback((token: string) => {
-    scrollVorSucheRef.current = null;
-    setSuche('');
+  // `replaceState`, nie `pushState`, nie eine direkte Hash-Zuweisung; und nur aus dem primären Pane
+  // (die Rolle unterscheidet, nicht `imPane` — B1-Falle). Quellensonde: `src/tests/leser-v3-adresse.test.ts`.
+  // Im EINZELMODUS schreibt der Router (`einzelSprung`, `./sprungWege`): dort IST die Adresse der gezeigte Artikel.
+  const einzelSprung = useEinzelSprung(basisPfad, !istSekundaer);
+  const planeSprung = useSprungZeitplan(); // ein neuer Sprung verwirft den laufenden (PE-B10-B03)
+  const springeZuArtikel = useCallback((token: string, behalteSuche?: boolean) => {
+    if (!behalteSuche) { scrollVorSucheRef.current = null; setSuche(''); } // Landkarte: der Klick ins Feld ohne Treffer beendet die Suche nicht
     // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
     // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
     setTocAuf(false);
@@ -314,7 +316,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     if (typeof window === 'undefined') return;
     if (!istSekundaer) {
       const ziel = `${basisPfad}${window.location.search}#art-${token}`;
-      window.history.replaceState(null, '', ziel);
+      if (!einzelSprung.navigiere(token)) window.history.replaceState(null, '', ziel);
       aktualisiereTabArtikel(ziel);
     }
     const scrolle = () => {
@@ -327,13 +329,10 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       el.classList.add('lc-ziel-blink');
       window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
     };
-    window.requestAnimationFrame(() => window.setTimeout(() => {
-      scrolle();
-      window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
-    }, 110));
-    // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort).
+    planeSprung(scrolle, () => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); });
+    // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort); neu nur die zwei Sprung-Hilfen.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, gliederung.knoten, gliederung.umhaengPraefix]);
+  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, einzelSprung, planeSprung, gliederung.knoten, gliederung.umhaengPraefix]);
 
   const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
@@ -342,7 +341,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
 
   const springeZuSektion = useSektionSprung({
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
-    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef, imEinzel: einzelSprung.imEinzel,
     // Pos. 14: Suche beginnen ODER beenden bewegt den Lesetext um 0 px. Die
     // Ist-Hülle scrollt an beiden Punkten (an den Anfang, dann zurück) — der
     // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
@@ -380,6 +379,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
     internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
+    einzelSprung: einzelSprung.navigiere, // Einzelmodus: der Fundstellen-Sprung wechselt den Artikel (PE-C3-B02)
   });
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,

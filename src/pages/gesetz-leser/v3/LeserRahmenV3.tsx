@@ -295,9 +295,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         ...bild.breite,
       }}>
 
-      {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. */}
+      {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. Die Lesart-Wahl nur im PRIMÄREN Pane (E-D11-B05): im zweiten Fenster schaltete sie das erste um. */}
       <LeserKopf erlass={erlass} fussnotenAnzahl={m.fussnotenAnzahl}
-        hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={einzel.waehleModus}
+        hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={umgebung.istSekundaer ? undefined : einzel.waehleModus}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
         suchInZeile={suchInZeile} tocOffen={m.tocOffen}
         onGliederungZu={zweiSpalten ? () => setzeTocOffen(false) : undefined}
@@ -407,8 +407,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         {/* H3 · «r» schaltet das Blatt (KEINE zweite Tastaturebene, Kap. 4h).
             A2: der Listener läuft in BEIDEN Panes und beansprucht die Taste nur
             mit dem Fokus in SEINEM Pane (`../panePrioritaet`, wie ⌘K). */}
-        {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
-        <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
+        {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert, im Einzelmodus ab dem GEZEIGTEN Artikel (der Spy folgt dem Blättern nicht, PE-B10-B02). */}
+        <LeserTastatur tokens={m.artTokens} aktivToken={imEinzel ? einzel.token : m.aktivToken} onSprung={m.springeZuArtikel}
           onPanel={!bild.blatt ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
           onBlaettern={imEinzel ? einzel.blaettere : undefined}
           imSekundaerenPane={umgebung.istSekundaer} />
