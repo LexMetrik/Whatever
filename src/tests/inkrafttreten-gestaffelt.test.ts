@@ -182,7 +182,7 @@ describe('Fedlex-Angabe «Datum des Inkrafttretens» (Signal e)', () => {
     expect(fedlexInkrafttretensAngabe(xml)).toEqual({ vorhanden: true, daten: ['1996-02-01', '1996-07-01'] });
   });
   it('SVG-Form: Label allein im ersten <p>, Zeilen in Folge-<p> desselben <content>; NBSP und «Sept.»', () => {
-    const xml = inhalt(p('Datum des Inkrafttretens:'), p(`Art. 10 Abs. 3: 1. Oktober 1959${note('BRB vom 25. Aug. 1959')} <sup><br/></sup>Art. 58–75: 1. Jan. 1960`), p('x: 20. Sept. 1961')) + '<content>1. Mai 2000</content>';
+    const xml = inhalt(p('Datum des Inkrafttretens:'), p(`Art. 10 Abs. 3: 1.\u00a0Oktober 1959${note('BRB vom 25. Aug. 1959')} <sup><br/></sup>Art. 58–75: 1. Jan. 1960`), p('x: 20. Sept. 1961')) + '<content>1. Mai 2000</content>';
     expect(fedlexInkrafttretensAngabe(xml).daten).toEqual(['1959-10-01', '1960-01-01', '1961-09-20']);
   });
   it('ein einziges Datum ⇒ ein Datum (DBG), distinkt auch bei Wiederholung', () => {
