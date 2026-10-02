@@ -87,11 +87,13 @@ geroutet wird: eine Fehlroute riskiert verifizierte Kantons-Snapshots (vgl.
 - **Nur amtliche / URG-freie Quellen** (Art. 5 URG, S3): Fedlex (Bund), kantonale
   Erlasssammlungen via API, amtliche Gerichts-/Behördenseiten — keine Kommentare.
 - **Mutationsproben auf generierten Artefakten erst NACH dem Commit der
-  Regeneration fahren — und nie mit `git checkout <datei>` zurücksetzen**
-  (das stellt den ALTEN committeten Stand her und vernichtet die uncommittete
-  Regeneration; Beleg 31.8.2026, ZH-Fix-Runde 2: kostete einen vollen
-  zweiten Generatorlauf). Rücksetzen der Probe = Regenerat aus Sicherungs-
-  kopie zurückkopieren oder neu generieren.
+  Regeneration — nie mit `git checkout <datei>` zurücksetzen** (stellt den
+  ALTEN Stand her, vernichtet die uncommittete Regeneration; Beleg 31.8.2026,
+  ZH-Fix-Runde 2: ein voller zweiter Generatorlauf). Probe zurücknehmen =
+  Regenerat aus Sicherungskopie oder neu generieren.
+- **Extraktor-Fix mit neuen `__N`-Synthese-Ankern:** lokal
+  `npm run check:segmente -- --schreiben` (Modus C) mitfahren — Modus B sieht
+  eine Projektion ohne Soll nicht (Lehre #1204, Frische-Rot; Tor `projektionOhneSoll`).
 
 ## §7 · Quell-Wahl und Build-Regeln Norm-Snapshots (wohnen hier)
 
@@ -104,12 +106,12 @@ und die Zitat-Ausnahme (a)–(d), weil beides Invarianten sind.
 besten erreicht** — strukturiertes Schema > gerendertes HTML > PDF; an die
 **höchste verfügbare Struktur** andocken, nicht reflexhaft die naheliegende
 Quelle nehmen. Probe-Fetch je Kandidat, Inhalt prüfen (Soft-404-Shells
-erkennen — **Falle 19.9.2026:** der Fedlex-Filestore antwortet auf ein
-fehlendes Berichtigungs-Dokument mit HTTP 200 + Angular-Shell
-(`<title>Casemates</title>`) statt 404; ohne Content-Type-/`%PDF`-/
-`<!DOCTYPE`-Prüfung landet die Shell als «Dokument» im Cache). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC,
-Differenz) belegt, nie angenommen — Fehler sitzen oft in der eigenen
-Transformation, nicht in der Quelle. Wechsel inkrementell, nie Big-Bang.
+erkennen — **Falle 19.9.2026:** Fedlex-Filestore antwortet auf ein fehlendes
+Berichtigungs-Dokument mit HTTP 200 + Angular-Shell (`<title>Casemates</title>`)
+statt 404; ohne Content-Type-/`%PDF`-/`<!DOCTYPE`-Prüfung landet die Shell im
+Cache). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC, Differenz)
+belegt, nie angenommen — Fehler sitzen oft in der eigenen Transformation.
+Wechsel inkrementell, nie Big-Bang.
 Beispiel und Detail: Memory `extraktion-amtliche-quellen-beste-option`,
 `fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid` (Fedlex-HTML
 vs. Akoma-Ntoso-XML).
@@ -200,9 +202,8 @@ sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
 
 Zusätzlich zum Pflicht-Pass — nicht statt ihm. Bei einem **neuen oder
 aktualisierten Bund-Erlass** gleicht `scripts/analyse/gemini-diskrepanz.ts`
-den amtlichen Fedlex-Text gegen unseren Snapshot ab. Der Wert liegt in der
-Unabhängigkeit: ein zweiter, eigenständiger Parser sieht einen Bug, den der
-eigene Extraktor sich selbst nicht zeigt.
+den amtlichen Fedlex-Text gegen unseren Snapshot ab. Wert = Unabhängigkeit:
+ein zweiter Parser sieht Bugs, die der eigene Extraktor nicht zeigt.
 
 **Vorbedingung:** `agy` 1.1.24 angemeldet (`agy models`), Permissions global
 gesetzt (David), Fedlex-Pin vorhanden; Bash-Timeout ≥ `--print-timeout` + 30 s;
@@ -233,8 +234,7 @@ und die Abweichungen selbst suchen. Der AMBV-Pilot vom 4.9.2026 hat das
 widerlegt: der Diff fand 5 echte Snapshot-Defekte (zerrissene Wörter,
 Leerzeichen vor Satzzeichen), Gemini bei `--effort high` **null davon** — und
 brauchte dafür >600 s je Gruppe. Zeichengenauer Abgleich ist genau das, was
-ein Sprachmodell am schlechtesten kann und ein Diff perfekt. Seitdem macht
-jedes Werkzeug das, worin es gut ist.
+ein Sprachmodell am schlechtesten kann und ein Diff perfekt.
 
 - **Verdachtsliste, nie Beleg (§14.7).** Das gilt für **Teil 2** des Berichts.
   Gemini hat nachweislich Taten behauptet, die nicht stattfanden
@@ -257,9 +257,8 @@ jedes Werkzeug das, worin es gut ist.
   Medium-Stufe gibt es bei Gemini 3.1 Pro nicht. `high` lieferte im Pilot
   keinen Mehrwert, aber Laufzeiten über 600 s — `--effort high` also nur
   gezielt, wenn `low` bei einer konkreten Gruppe unschlüssig bleibt.
-- **Kosten.** Durch den Erstfilter hängen sie an der Zahl der ABWEICHENDEN
-  Artikel, nicht an der Erlassgrösse: ein sauberer Erlass kostet null (Schritt
-  2 entfällt ganz). Grundlast je Gruppe/Lauf ~15–40k Tokens (T2-Messung,
+- **Kosten.** Sie hängen an der Zahl der ABWEICHENDEN Artikel, nicht an der
+  Erlassgrösse: ein sauberer Erlass kostet null (Schritt 2 entfällt). Grundlast je Gruppe/Lauf ~15–40k Tokens (T2-Messung,
   `scratchpad/t2-recall/ERGEBNIS.md`); Gruppenbudget ~90k Zeichen, begrenzt
   durch die Linux-Grenze für ein einzelnes Kommandozeilen-Argument.
 - Voraussetzung ist ein gepinnter Fedlex-Cache (`scripts/fedlex-cache.sh`) —

@@ -175,6 +175,7 @@ export interface LabelUrlBefund {
     | 'B2-label'
     | 'B3-url-doppelt'
     | 'B4-ohne-anker'
+    | 'B4-basis-pin'
     | 'B4-basis-url';
   text: string;
   /** Klasse der id (nur B1-Befunde der erweiterten Deckung; siehe klassifiziere()). */
@@ -205,10 +206,12 @@ const DISP_ID = /^disp_(u\d+)_(art_.+)$/;
 const SCOPE_ID = /^scope_u\d+$/;
 const DECL_ID = /^decl_u\d+$/;
 const SCOPE_LABEL = /^Geltungsbereich(?: d\S+ \S+)? am \d{1,2}\.\s\p{L}+\s\d{4}$/u;
-// Lateinische Wiederholungs-Adverbien der Fedlex-Nummerierung (2–19): bis, ter, quater,
-// quinquies … novies, decies, undecies, duodecies, terdecies/tredecies, … novemdecies.
+// Lateinische Wiederholungs-Adverbien der Fedlex-Nummerierung: bis … novies (2–9), dann
+// Einer-Präfix + Zehner (undecies … novemdecies, vicies, unvicies … novovicies, tricies, quadragies).
+// Gemessen 1.10.2026: im Bund-Korpus höchstens «decies»/«tredecies»; ab vicies (20) sind die
+// Formen lateinische Morphologie (nicht amtlich gelistet), nur als Wiederholungs-Adverb zulässig.
 const ORDINAL_SUFFIX =
-  /^(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|(?:un|duo|ter|tre|quater|quin|sex|septen|sept|octo|oct|novem|nov)?decies)$/;
+  /^(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|(?:un|duo|ter|tre|quater|quin|sex|septen|sept|octo|oct|novem|nov|novo)?(?:decies|vicies)|tricies|quadragies)$/;
 
 /**
  * Bekannte, exakt festgenagelte Abweichungen des Fedlex-Labels von der id-Ableitung
@@ -294,7 +297,15 @@ export function pruefeLabelUrl(snapshots: NormSnapshot[]): LabelUrlBefund[] {
   return pruefeLabelUrlMitDeckung(snapshots).befunde;
 }
 
-export function pruefeLabelUrlMitDeckung(snapshots: NormSnapshot[]): {
+/**
+ * `pinElis`: Erlass-Name (klein) → gepinntes ELI aus scripts/fedlex-cache.sh. Mit Tabelle muss die
+ * Basis-URL je Erlass `https://www.fedlex.admin.ch/eli/<ELI>/de` sein (B4-basis-pin); ohne Pin-Eintrag
+ * (oder ohne Tabelle) gilt die Mehrheits-Regel.
+ */
+export function pruefeLabelUrlMitDeckung(
+  snapshots: NormSnapshot[],
+  pinElis?: ReadonlyMap<string, string>,
+): {
   befunde: LabelUrlBefund[];
   deckung: LabelDeckung;
 } {
@@ -437,8 +448,18 @@ export function pruefeLabelUrlMitDeckung(snapshots: NormSnapshot[]): {
     }
   }
 
-  // B4 Basis-URL: Referenz = Mehrheits-Basis je Erlass (Gleichstand: zuerst gelesene).
+  // B4 Basis-URL: gepinnte Erlasse gegen ELI + /de aus fedlex-cache.sh (GP #1180 F1: einheitlich
+  // falsches ELI oder /fr blieb grün); sonst Referenz = Mehrheits-Basis (Gleichstand: zuerst gelesene).
   for (const [erlass, basen] of basenJeErlass) {
+    const eli = pinElis?.get(erlass.toLowerCase());
+    if (eli !== undefined) {
+      const soll = `https://www.fedlex.admin.ch/eli/${eli}/de`;
+      for (const e of basisDerEintraege) {
+        if (e.erlass !== erlass || e.basis === soll) continue;
+        befunde.push({ id: e.id, regel: 'B4-basis-pin', text: `Basis-URL "${e.basis}" ≠ gepinnt "${soll}" (scripts/fedlex-cache.sh)` });
+      }
+      continue;
+    }
     if (basen.size < 2) continue;
     let ref: string | null = null;
     let refN = 0;

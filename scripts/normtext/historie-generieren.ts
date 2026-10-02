@@ -24,7 +24,7 @@ import {
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
-import { pruefeAufgehobenLebend, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
+import { pruefeAufgehobenLebend, pruefeAufgehobenGiltSeit, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const QUELLE = resolve(wurzel, 'public/normtext/struktur/bund');
@@ -56,18 +56,19 @@ interface Korpus extends Abdeckung {
  * Rückgabe null, wenn der Erlass weder ein Ereignis noch ein Residuum trägt.
  */
 /** RL-11: Artikel-Token → «Körper trägt lebenden Normtext» aus dem Text-Shard
- *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt. */
-function koerperLebendIndex(erlass: string): Map<string, boolean> {
-  const m = new Map<string, boolean>();
+ *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt.
+ *  P7 #53: dazu das amtliche Feld `aufgehoben` desselben Eintrags (Token ohne Feld ⇒ false). */
+function textShardIndex(erlass: string): Map<string, { lebend: boolean; aufgehoben: boolean }> {
+  const m = new Map<string, { lebend: boolean; aufgehoben: boolean }>();
   const pfad = resolve(TEXT, `${erlass}.json`);
   if (!existsSync(pfad)) return m;
-  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: [] }> };
-  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), lebenderText(e).length > LEBEND_SCHWELLE);
+  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: []; aufgehoben?: boolean | null }> };
+  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), { lebend: lebenderText(e).length > LEBEND_SCHWELLE, aufgehoben: e.aufgehoben === true });
   return m;
 }
 
 function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abdeckung; artikelMitHistorie: number; ereignisse: number; ereignisseDatiert: number } | null {
-  const lebend = koerperLebendIndex(erlass);
+  const textIndex = textShardIndex(erlass);
   const artikel: Record<string, ArtikelHistorie> = {};
   const residuum: Array<{ token: string; nr: string; roh: string }> = [];
   const abdeckung: Abdeckung = { fussnoten: 0, ereignis: 0, referenz: 0, unparsed: 0 };
@@ -79,7 +80,10 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
     const fussnoten = doc.artikel![token].fussnoten ?? [];
     if (fussnoten.length === 0) continue;
     abdeckung.fussnoten += fussnoten.length;
-    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, { koerperLebend: lebend.get(token) });
+    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, {
+      koerperLebend: textIndex.get(token)?.lebend,
+      snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
+    });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
     abdeckung.unparsed += unparsed.length;
@@ -181,7 +185,15 @@ if (!process.env.VITEST) {
       for (const b of befunde) console.error(`  ${b.erlass} Art. ${b.token} aufgehobenSeit=${b.aufgehobenSeit} (${b.zeichen} Z.) «${b.auszug}»`);
       process.exit(1);
     }
+    // P7 #53: Gegenrichtung — Text-Shard «aufgehoben» ⇒ kein «Gilt seit» in der Historie.
+    const gegen = pruefeAufgehobenGiltSeit(parsed, TEXT);
+    if (gegen.befunde.length > 0) {
+      console.error(`check:historie ROT — ${gegen.befunde.length} von ${gegen.geprueft} amtlich aufgehobenen Artikeln tragen «Gilt seit» ohne datiertes «aufgehobenSeit»:`);
+      for (const b of gegen.befunde) console.error(`  ${b.erlass} Art. ${b.token} giltSeit=${b.giltSeit}`);
+      process.exit(1);
+    }
     console.log(`check:historie: ${geprueft} Artikel mit «aufgehobenSeit» ohne lebenden Normtext (${ohneText} ohne Text-Eintrag).`);
+    console.log(`check:historie: ${gegen.geprueft} amtlich aufgehobene Artikel mit Historie ohne «Gilt seit» (ausser datiert aufgehoben).`);
     console.log(`check:historie: ${shards.size} Shards synchron mit den Struktur-Sidecars.`);
   } else {
     rmSync(ZIEL, { recursive: true, force: true }); // verwaiste Shards entfernen (kein toter Rest)

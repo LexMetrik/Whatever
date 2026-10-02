@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-10-01
 -->
 
 Regel schärfen.
+
+**Erledigt 2026-10-01:** PR #1249 (68a6eba62): bedingte Formen (soweit/sofern/wenn/ausgenommen) trifft die Regel nicht mehr, Test rot-gruen
