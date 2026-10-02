@@ -563,7 +563,7 @@ function geerbteEreignisse(fns: ReadonlyArray<FnEingang> | undefined): HistorieE
 /** Ein Artikel in Dokumentreihenfolge, soweit `sektionsErbe` seinen Gliederungspfad braucht (Sidecar-Teilmenge). */
 export interface ErbArtikel {
   token: string;
-  gliederung?: ReadonlyArray<{ ebene: number; label: string }>;
+  gliederung?: ReadonlyArray<{ ebene: number; label: string; eId?: string }>;
   marginalie?: ReadonlyArray<string>;
   fussnoten?: ReadonlyArray<FnEingang>;
 }
@@ -586,23 +586,25 @@ export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, Fn
   const erbe = new Map<string, FnEingang[]>();
   // Derselbe Baum wie `baueGliederungsbaum`: je Ebene zählt nur der LETZTE Knoten; weicht (Ebene, Label) ab, beginnt ein
   // neuer Knoten mit leerer Kinderliste (die Gliederung ist dokumentlinear).
-  interface Knoten { ebene: number; label: string; fns: FnEingang[]; kinder: Knoten[] }
+  interface Knoten { ebene: number; label: string; eId?: string; fns: FnEingang[]; kinder: Knoten[] }
   const wurzeln: Knoten[] = [];
   for (const a of artikel) {
     const gl = a.gliederung ?? [];
     const { ahnen } = randtitelKnoten([...(a.marginalie ?? [])]);
     const basis = gl.length ? Math.max(...gl.map((g) => g.ebene)) + 1 : 0;
     const pfad = [
-      ...gl.map((g) => ({ ebene: g.ebene, label: g.label })),
-      ...ahnen.map((label, i) => ({ ebene: basis + i, label })),
+      ...gl.map((g) => ({ ebene: g.ebene, label: g.label, eId: g.eId })),
+      ...ahnen.map((label, i) => ({ ebene: basis + i, label, eId: undefined as string | undefined })),
     ];
     if (pfad.length === 0) continue; // «ohneGliederung» — der Baum lässt sich davon nicht berühren
     const kette: Knoten[] = [];
     let liste = wurzeln;
     for (const stufe of pfad) {
       let k = liste[liste.length - 1];
-      if (!k || k.label !== stufe.label || k.ebene !== stufe.ebene) {
-        k = { ebene: stufe.ebene, label: stufe.label, fns: [], kinder: [] };
+      // Zusätzlich zum Baum: tragen BEIDE Stufen eine Fedlex-eId und sie weichen ab, sind es zwei Überschriften mit
+      // gleichem Label (aufgehobene Titel heissen alle «…», SORTG chap_3/lvl_u1 vs. lvl_u2) — ihre Fussnoten bleiben getrennt.
+      if (!k || k.label !== stufe.label || k.ebene !== stufe.ebene || (k.eId && stufe.eId && k.eId !== stufe.eId)) {
+        k = { ebene: stufe.ebene, label: stufe.label, eId: stufe.eId, fns: [], kinder: [] };
         liste.push(k);
       }
       kette.push(k);

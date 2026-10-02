@@ -132,6 +132,8 @@ function bblQuelle(e: HistorieEreignis): { label: string; url?: string } | null 
 
 /** Betroffener Teil des Artikels («Abs. 2, lit./Ziff. c»), sofern die Fussnote ihn trägt. */
 function betrifft(e: HistorieEreignis): string {
+  // W2·27 (2.10.2026): ein von der Gliederungsüberschrift übernommenes Ereignis betrifft die Überschrift, nicht den Artikel (§8).
+  if (e.ueberschrift) return `die Überschrift «${e.ueberschrift}»`;
   const teile: string[] = [];
   if (e.absatz) teile.push(`Abs. ${e.absatz}`);
   if (e.item) teile.push(`lit./Ziff. ${e.item}`);
