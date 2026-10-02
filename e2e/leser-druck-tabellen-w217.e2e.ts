@@ -41,7 +41,7 @@ function zellenAusKorpus(datei: string, artikel: string): string[] {
   return out
 }
 
-const norm = (s: string) => s.replace(/[   ]/g, ' ').replace(/\s+/g, ' ').trim()
+const norm = (s: string) => s.replace(/[\u00a0\u202f\u2009]/g, ' ').replace(/\s+/g, ' ').trim()
 
 /** Gesamttext des gedruckten PDF (pdfjs, Reihenfolge der Textläufe). */
 async function pdfText(page: Page): Promise<string> {
@@ -263,4 +263,33 @@ test.describe('W2·17 · D03 · lange Absatz-Marken bleiben eine Zeile', () => {
       expect(k.abstand, `«${k.text}» klebt am Text (${k.abstand} px)`).toBeGreaterThanOrEqual(3)
     }
   })
+})
+
+test.describe('W2·17 · G01 · Kurzbefehle-Hilfe («?») hat eine Fläche', () => {
+  for (const [scheme, breite] of [['light', 375], ['dark', 375], ['light', 1440], ['dark', 1440]] as const) {
+    test(`StPO @${breite} ${scheme}: der Dialog ist deckend und umrandet`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: scheme })
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/gesetze/bund/STPO#art-3')
+      await leserBereit(page)
+      await page.locator('#art-3').scrollIntoViewIfNeeded()
+      await page.keyboard.press('?')
+      const dialog = page.getByRole('dialog', { name: 'Tastatur-Kurzbefehle' })
+      await expect(dialog).toBeVisible()
+      const m = await dialog.evaluate((el) => {
+        const cs = getComputedStyle(el)
+        const rgba = (cs.backgroundColor.match(/[\d.]+/g) ?? []).map(Number)
+        const r = el.getBoundingClientRect()
+        // Was liegt an der Dialogmitte obenauf? Der Dialog selbst — sonst schimmert Normtext durch.
+        return {
+          alpha: rgba.length > 3 ? rgba[3] : 1,
+          rand: parseFloat(cs.borderTopWidth),
+          oben: document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)?.closest('[role="dialog"]') === el,
+        }
+      })
+      expect(m.alpha, 'Hintergrund des Dialogs ist transparent — der Normtext schimmert durch').toBeGreaterThanOrEqual(0.99)
+      expect(m.rand, 'der Dialog trägt keine Kante').toBeGreaterThanOrEqual(1)
+      expect(m.oben).toBe(true)
+    })
+  }
 })
