@@ -88,30 +88,40 @@ async function ueberlaeufer(page: Page): Promise<{ ueberlauf: number; quellen: s
 // dieser Zweig lief, existiert nicht mehr. DIÄT 31.8.2026: die damit
 // einelementig gewordene Schleife ist aufgelöst; der Fall behält seinen Namen.
 test.describe('B6 — die Seite läuft nicht quer', () => {
-  test('V3 @390: ZH-211.11 läuft nicht quer — die Tabelle bleibt im Scroller', async ({ page }) => {
-    await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/kanton/ZH-211.11')
-    await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 20_000 })
-    // Die Fusszeile ist das Ziel der Messung — sie muss gerendert sein.
-    await expect(page.locator('nav[aria-label="Weitere Erlasse"]')).toBeAttached({ timeout: 20_000 })
+  // W2·17-UI-BEFUNDE (2.10.2026, DFG-D02) — DEKLARIERTE TEST-ÄNDERUNG: Dieser Fall
+  // nahm ZH-211.11 § 4 als die «breite Tabelle» (Positiv-Sonde: scrollWidth > 500).
+  // `w-max` hielt dort die Textspalte einzeilig (1'077 px). Das war der Defekt
+  // DFG-D02: die Textspalte bricht jetzt um, die Tabelle passt ab 1024 in die
+  // Spalte (433 px @375). Die Aussage «die Seite läuft nicht quer» bleibt für
+  // beide Erlasse; die Sonde «breite Tabelle sitzt im Scroller» zieht auf eine
+  // Tabelle um, die auch nach dem Umbruch breiter bleibt (GebV SchKG Art. 37, 591 px).
+  for (const [erlass, name] of [['/gesetze/kanton/ZH-211.11', 'ZH-211.11'], ['/gesetze/bund/GEBV_SCHKG', 'GebV SchKG']] as const) {
+    test(`V3 @390: ${name} läuft nicht quer${name === 'GebV SchKG' ? ' — die breite Tabelle bleibt im Scroller' : ''}`, async ({ page }) => {
+      await page.setViewportSize({ width: 390, height: 844 })
+      await page.goto(erlass)
+      await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 20_000 })
+      // Die Fusszeile ist das Ziel der Messung — sie muss gerendert sein.
+      await expect(page.locator('nav[aria-label="Weitere Erlasse"]')).toBeAttached({ timeout: 20_000 })
 
-    const { ueberlauf, quellen } = await ueberlaeufer(page)
-    expect(ueberlauf, `Seiten-Überlauf @390 — ungeklippte Quellen: ${quellen.join(' | ') || '—'}`)
-      .toBeLessThanOrEqual(0)
+      const { ueberlauf, quellen } = await ueberlaeufer(page)
+      expect(ueberlauf, `Seiten-Überlauf @390 — ungeklippte Quellen: ${quellen.join(' | ') || '—'}`)
+        .toBeLessThanOrEqual(0)
+      if (name !== 'GebV SchKG') return
 
-    // Positiv-Sonde: die breite Tabelle IST da und IST gefasst. Ohne sie könnte
-    // der Fall grün werden, weil die Tabelle verschwunden ist (§6.7).
-    const scroller = await page.evaluate(() => {
-      const t = [...document.querySelectorAll('span.table')].find((x) => x.scrollWidth > 500)
-      if (!t) return null
-      const s = t.closest('.lc-scroll-x') as HTMLElement | null
-      return s ? { cw: s.clientWidth, sw: s.scrollWidth, overflowX: getComputedStyle(s).overflowX } : null
+      // Positiv-Sonde: die breite Tabelle IST da und IST gefasst. Ohne sie könnte
+      // der Fall grün werden, weil die Tabelle verschwunden ist (§6.7).
+      const scroller = await page.evaluate(() => {
+        const t = [...document.querySelectorAll('span.table')].find((x) => x.scrollWidth > 500)
+        if (!t) return null
+        const s = t.closest('.lc-scroll-x') as HTMLElement | null
+        return s ? { cw: s.clientWidth, sw: s.scrollWidth, overflowX: getComputedStyle(s).overflowX } : null
+      })
+      expect(scroller, 'die breite Tabelle sitzt in keinem `.lc-scroll-x`').not.toBeNull()
+      expect(scroller!.overflowX).toBe('auto')
+      expect(scroller!.sw, 'der Scroller hat nichts zu scrollen — die Tabelle ist nicht mehr breit')
+        .toBeGreaterThan(scroller!.cw)
     })
-    expect(scroller, 'die breite Tabelle sitzt in keinem `.lc-scroll-x`').not.toBeNull()
-    expect(scroller!.overflowX).toBe('auto')
-    expect(scroller!.sw, 'der Scroller hat nichts zu scrollen — die Tabelle ist nicht mehr breit')
-      .toBeGreaterThan(scroller!.cw)
-  })
+  }
 })
 
 // ═══ TEIL 2 · DIE GLIEDERUNG ═════════════════════════════════════════════════

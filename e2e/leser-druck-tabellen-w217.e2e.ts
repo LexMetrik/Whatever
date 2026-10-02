@@ -135,6 +135,38 @@ test.describe('W2·17 · Druck (page.pdf, A4) verliert keinen Rechtsinhalt', () 
   })
 })
 
+test.describe('W2·17 · Druck: Tabellen bleiben in der Satzspiegel-Breite', () => {
+  // A4 (794 px) abzüglich `@page { margin: 1.6cm }` beidseitig = 673 px. Gemessen wird der
+  // Überstand jeder Zelle über die Kastenkante. Vorher (Build 9bb82d7de, Unclip allein)
+  // ragten in diesen sechs Erlassen 14 Tabellen über die Kante (AHVV 4, LRV 4, LSV 3,
+  // FZA 1, CHEMRRV 1, APOSTILLE 1); nachher 0. NICHT erfasst: Tabellen mit 10–36 Spalten und
+  // Fliesstext-Zellen (VVK, ZEMIS-V, ERV, FINFRAV) — dort reicht keine Schriftstufe.
+  for (const erlass of ['AHVV', 'LRV', 'LSV', 'FZA', 'CHEMRRV', 'APOSTILLE']) {
+    test(`${erlass}: keine Tabellenzelle ragt im Druck über die Spalte`, async ({ page }) => {
+      test.slow()
+      await page.setViewportSize({ width: 673, height: 900 })
+      await page.goto(`/gesetze/bund/${erlass}`)
+      await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
+      await page.evaluate(() => document.fonts?.ready)
+      await page.emulateMedia({ media: 'print' })
+      const m = await page.evaluate(() => {
+        const ueber: string[] = []
+        const tabellen = document.querySelectorAll('[data-mehrspaltig]')
+        for (const t of tabellen) {
+          const kante = t.getBoundingClientRect().right
+          for (const c of t.querySelectorAll('[role="cell"],[role="columnheader"]')) {
+            const r = c.getBoundingClientRect().right
+            if (r > kante + 1) { ueber.push(`${(c.textContent ?? '').slice(0, 24)} +${Math.round(r - kante)}`); break }
+          }
+        }
+        return { n: tabellen.length, ueber }
+      })
+      expect(m.n, 'Positiv-Sonde: der Erlass trägt Tabellen').toBeGreaterThan(0)
+      expect(m.ueber, 'Tabellen ragen im Druck über die Spalte').toEqual([])
+    })
+  }
+})
+
 test.describe('W2·17 · Tabellen am Bildschirm: Prosa bricht um, Beträge bleiben einzeilig', () => {
   const BREITEN = [375, 1024, 1440, 1920]
   for (const scheme of ['light', 'dark'] as const) {
