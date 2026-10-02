@@ -80,14 +80,14 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
 }
 
 export function PanelFilterZeile({
-  klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung, klassenZahlen, zahlOrt, histogramm, bereich,
+  klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung = [], klassenZahlen, zahlOrt, histogramm, bereich,
   onKlassen, onKantone, onBereich,
 }: {
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
   kantoneVerfuegbar: readonly string[];
   /** Gewählte Kantone ohne Kante am gelesenen Artikel (`kantonenOhneWirkung`) — der Chip sagt es. */
-  kantoneOhneWirkung: readonly string[];
+  kantoneOhneWirkung?: readonly string[];
   /** S6-W1b · D-9: Zahlen je Instanz am gelesenen ARTIKEL (nicht mehr am
    *  Erlass) — dieselbe Bezugsgrösse wie die Liste darunter. */
   klassenZahlen: Partial<Record<BezugStatus, KlassenZahlen>>;
