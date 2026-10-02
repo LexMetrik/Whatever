@@ -4,6 +4,8 @@
  *
  * Diese Datei wächst je Befund-Gruppe; jede Sonde war gegen den Vorzustand rot.
  */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
@@ -99,6 +101,26 @@ describe('§8-Hinweis nennt dasselbe Zählwort wie die Ruhezeile (H5-B02)', () =
     expect(hinweis).toContain('«Einträge»');
     expect(hinweis).not.toContain('«Artikel»');
   });
+  it('«Einträge» ist unser Hilfswort: der Satz fragt nicht, ob es amtlich sei', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ ebene: 'kanton', kanton: 'SG', sr: null, artikelAnzahl: 607 }),
+      anzahl: 607, bestimmungsEtikettStatus: 'entwurf',
+      kennzahlen: { artikelAnzahl: 607, anhangArtikel: 590, hatSidecar: true } as never,
+    }));
+    const hinweis = a.hinweise.find((h) => h.includes('gezählt')) ?? '';
+    expect(hinweis).toContain('«Einträge»');
+    expect(hinweis).not.toMatch(/ob das die amtliche Bezeichnung ist/);
+    expect(hinweis).toMatch(/keine amtliche Bezeichnung/);
+  });
+  it('«Artikel»/«Paragraphen» behalten die offene Prüf-Aussage unverändert', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ ebene: 'kanton', kanton: 'AG', sr: '295.250' }),
+      bestimmungsWort: 'Paragraphen', bestimmungsEtikettStatus: 'entwurf',
+      kennzahlen: { artikelAnzahl: 50, anhangArtikel: 2, hatSidecar: true } as never,
+    }));
+    expect(a.hinweise.find((h) => h.includes('gezählt')))
+      .toContain('ob das die amtliche Bezeichnung ist, ist noch nicht geprüft');
+  });
   it('ohne Anhang-Dominanz bleibt das Basis-Wort', () => {
     const a = uebersichtsAngaben(eingabe({
       erlass: erlassBauen({ ebene: 'kanton', kanton: 'AG', sr: '295.250' }),
@@ -150,6 +172,39 @@ describe('H4-B03 · «Amtliche Fassung» auf einen PDF-Endpunkt ist als Download
     expect(link).toContain('⬇');
     expect(link).not.toContain('↗');
     expect(link.replace(/<[^>]+>/g, '')).toBe('⬇ Amtliche Fassung (PDF)');
+  });
+});
+
+describe('H4-B03 · ALLE PDF-liefernden Register-Quellen tragen «(PDF)»', () => {
+  const register = JSON.parse(
+    readFileSync(join(process.cwd(), 'public', 'normtext', 'register.json'), 'utf8'),
+  ) as { erlasse: { quelleUrl?: string }[] };
+  // Gemessen 2.10.2026 (curl -I, Content-Type): jede dieser URLs liefert application/pdf.
+  const pdfQuellen = register.erlasse
+    .map((e) => e.quelleUrl ?? '')
+    .filter((u) => /pdf/i.test(u));
+  it('Basis: 15 PDF-Quellen im Register (Zählung, kein Handwert)', () => {
+    expect(pdfQuellen.length).toBe(15);
+  });
+  it('jede trägt «(PDF)»; ⬇ nur beim LexWork-Endpunkt (attachment), sonst ↗', () => {
+    for (const url of pdfQuellen) {
+      const l = uebersichtsAngaben(eingabe({
+        erlass: erlassBauen({ ebene: 'kanton', kanton: 'SG', quelleUrl: url }),
+      })).links.find((x) => x.id === 'quelle');
+      expect(l?.label, url).toBe('Amtliche Fassung (PDF)');
+      expect(l?.zeichen, url).toBe(/\/pdf_file(?:_with_annexes)?$/.test(url) ? '⬇' : '↗');
+    }
+  });
+  it('keine falschen Positive: Seiten, die nur «pdf» im Pfad tragen, bleiben ohne Zusatz', () => {
+    for (const url of [
+      'https://www.fedlex.admin.ch/eli/cc/probe/de',
+      'https://example.invalid/pdfs/uebersicht.html',
+      'https://example.invalid/texts_of_law/pdf-recht',
+    ]) {
+      const l = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ quelleUrl: url }) })).links[0];
+      expect(l.label, url).toBe('Amtliche Fassung');
+      expect(l.zeichen, url).toBe('↗');
+    }
   });
 });
 

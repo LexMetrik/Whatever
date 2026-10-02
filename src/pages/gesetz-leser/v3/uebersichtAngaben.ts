@@ -89,9 +89,20 @@ export interface UebersichtsEingabe {
   nichtKonsolidiertSeit: string | null;
 }
 
-/** LexWork-PDF-Endpunkt (`…/versions/<id>/pdf_file[_with_annexes]`): liefert eine Datei. */
-const PDF_ENDPUNKT = /\/pdf_file(?:_with_annexes)?(?:[?#]|$)/;
-const istPdfEndpunkt = (href: string): boolean => PDF_ENDPUNKT.test(href);
+/**
+ * LexWork-PDF-Endpunkt (`…/versions/<id>/pdf_file[_with_annexes]`): liefert eine
+ * DATEI (`Content-Disposition: attachment`) — gemessen 2.10.2026 an allen 8
+ * Register-Quellen dieser Form (AR, FR, GR, LU, SG×3, VS).
+ */
+const PDF_DOWNLOAD = /\/pdf_file(?:_with_annexes)?(?:[?#]|$)/;
+/**
+ * Übrige PDF-Quellen: `….pdf` (SZ) und der TI-Endpunkt `…/pdfatto/…`. Sie liefern
+ * `application/pdf` OHNE attachment (gemessen 2.10.2026, 7 von 7) — der Browser
+ * ÖFFNET sie, statt zu laden. Also «(PDF)» im Etikett, aber kein ⬇-Versprechen.
+ */
+const PDF_INLINE = /\.pdf(?:[?#]|$)|\/pdfatto\//i;
+const ladetPdfHerunter = (href: string): boolean => PDF_DOWNLOAD.test(href);
+const istPdfQuelle = (href: string): boolean => ladetPdfHerunter(href) || PDF_INLINE.test(href);
 
 /**
  * Die Ruhezeile «SR 312.0 · 480 Artikel». Der Stand fällt hier bewusst weg (er
@@ -192,15 +203,16 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // Amtliche Ziele — EIN Ziel, EIN Name (Ä110, `lib/benennung`).
   const links: UebersichtLink[] = [];
   if (erlass.quelleUrl) {
-    // H4-B03: 15 Kantonserlasse führen `quelleUrl` auf einen PDF-ENDPUNKT der
-    // Sammlung (Content-Disposition: attachment) — «↗» (verlässt die Seite)
-    // verspräche eine Webseite; dort kommt eine Datei. Zeichen und Etikett
-    // folgen dem Zieltyp (damals gemessen 1.10.2026: SG-3849, AR-1203, FR-8428).
-    const istPdf = istPdfEndpunkt(erlass.quelleUrl);
+    // H4-B03: 15 Kantonserlasse führen `quelleUrl` auf ein PDF — «↗» allein
+    // verspräche eine Webseite. Das Etikett nennt das PDF bei ALLEN 15 (8 LexWork-
+    // Endpunkte + 3 SZ-`.pdf` + 4 TI-`pdfatto`, Zählung 2.10.2026 per jq auf
+    // `public/normtext/register.json`); das Zeichen folgt dem Verhalten: ⬇ nur
+    // beim LexWork-Endpunkt (lädt als Datei), ↗ bei SZ/TI (öffnet im Browser).
+    // Damals (1.10.2026) erfasste der Nachweis nur die LexWork-Form (8 von 15).
     const name = lebt ? AMTLICHE_FASSUNG : AMTLICHE_FASSUNG_AUFGEHOBEN;
     links.push({
-      id: 'quelle', zeichen: istPdf ? '⬇' : '↗',
-      label: istPdf ? `${name} (PDF)` : name,
+      id: 'quelle', zeichen: ladetPdfHerunter(erlass.quelleUrl) ? '⬇' : '↗',
+      label: istPdfQuelle(erlass.quelleUrl) ? `${name} (PDF)` : name,
       href: erlass.quelleUrl,
     });
   }
@@ -220,8 +232,13 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   if (e.bestimmungsEtikettStatus === 'entwurf') {
     // H5-B02: dasselbe Zählwort wie die Ruhezeile (Anhang-Dominanz → «Einträge»),
     // sonst widerspricht der Satz der Zeile darüber.
+    // «Einträge» ist unser Hilfswort (nie amtlich): dort KEINE Frage nach der
+    // amtlichen Bezeichnung, sondern die ehrliche Auskunft, dass es keine ist.
+    const wort = zaehlWort(e.bestimmungsWort, e.kennzahlen);
     hinweise.push(
-      `Die Bestimmungen dieses Erlasses sind hier als «${zaehlWort(e.bestimmungsWort, e.kennzahlen)}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
+      wort === 'Einträge'
+        ? `Die Bestimmungen dieses Erlasses sind hier als «${wort}» gezählt — das ist ein Zählwort dieser Anzeige, keine amtliche Bezeichnung.`
+        : `Die Bestimmungen dieses Erlasses sind hier als «${wort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
     );
   }
   if (e.kennzahlen && !e.kennzahlen.hatSidecar) {

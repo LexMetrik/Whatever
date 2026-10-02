@@ -68,7 +68,8 @@ function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: K
       {/* Ä87/Ä91 (H4-Nachzug 18.8.2026): die Prop `zeigeSchliessen` ist weg —
           die Kopfzeile trägt auf keiner Breite mehr ein ✕, ihr Ziel steht als
           beschrifteter Rücksprung in der Ort-Zone (Herleitung in
-          `v3/kopfStufen.ts`, Zusage geprüft in `erlassAnsicht.hatRuecksprung`). */}
+          `v3/kopfStufen.ts`, Zusage damals geprüft in `erlassAnsicht.hatRuecksprung`; seit W2·17
+          H9-B01, 1.10.2026, gestrichen — kein Aufrufer). */}
       {/* D27 (6.9.2026): die Prop `aktArtikel` ist weg — der laufende Artikel
           steht im Reiter, nicht mehr in dieser Zeile (Herleitung in
           `v3/LeserKopf.tsx`). */}
