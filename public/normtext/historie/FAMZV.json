@@ -6,6 +6,36 @@
   "referenz": 18,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4951",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-10-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4495",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2020-08-01",
@@ -137,7 +167,7 @@
    ]
   },
   "9": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -150,7 +180,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
     }
    ]
   },
@@ -274,6 +305,9 @@
      "absatz": "2",
      "item": "f"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -331,6 +365,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "12": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "14": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -429,6 +487,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10_b": {
@@ -447,6 +508,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_a": {
@@ -520,7 +584,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
     }
    ]
   },
@@ -553,6 +618,44 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "18_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "18_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "18_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "18_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "18_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_h": {
@@ -623,6 +726,16 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "18_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_j": {
@@ -641,6 +754,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23_a": {

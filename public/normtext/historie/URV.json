@@ -6,6 +6,50 @@
   "referenz": 8,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Gebühren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2008-07-01",
@@ -187,7 +231,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -200,8 +244,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
+   ]
+  },
+  "19": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "22": {
@@ -214,12 +280,13 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "4. Kapitel"
+     "frueher": "4. Kapitel",
+     "ueberschrift": "5. Kapitel: Schlussbestimmungen"
     }
    ]
   },
   "16_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -232,8 +299,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gebühren"
     }
+   ]
+  },
+  "16_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "16_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "16_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_e": {
@@ -263,7 +352,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
     }
    ]
   },
@@ -283,6 +373,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "16_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "17_a": {
@@ -316,6 +416,48 @@
     }
    ],
    "aufgehobenSeit": "2008-07-01"
+  },
+  "18_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "18_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "20_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "20_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "20_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "20_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
   },
   "21_a_21_f": {
    "giltSeit": null,

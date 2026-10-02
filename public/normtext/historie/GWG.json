@@ -6,6 +6,116 @@
   "referenz": 53,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1389",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    {
+     "label": "BBl 2014 605",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Pflichten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5207",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+    },
+    {
+     "label": "BBl 2006 2829",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 322",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+    },
+    {
+     "label": "BBl 2024 1607",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 656",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+    },
+    {
+     "label": "BBl 2019 5451",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1389",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    {
+     "label": "BBl 2014 605",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 322",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+    },
+    {
+     "label": "BBl 2024 1607",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-10-01",
@@ -587,7 +697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Pflichten"
     },
     {
      "typ": "fassung",
@@ -604,7 +715,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
     }
    ]
   },
@@ -662,6 +774,18 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
+   ]
+  },
+  "5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    4
    ]
   },
   "6": {
@@ -718,6 +842,10 @@
      "absatz": "2",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "7": {
@@ -740,6 +868,10 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "8": {
@@ -762,6 +894,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "9": {
@@ -1065,6 +1201,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10": {
@@ -1121,6 +1260,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -1160,6 +1302,9 @@
      "absatz": "2",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
@@ -1976,7 +2121,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
     },
     {
      "typ": "fassung",
@@ -1993,7 +2139,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
     }
    ]
   },
@@ -2040,6 +2187,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "23": {
@@ -3424,6 +3575,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11_a": {
@@ -3548,6 +3702,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12_a": {
@@ -3609,6 +3766,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "18_b": {
@@ -3631,6 +3792,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "19_a": {
@@ -4107,7 +4272,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
     }
    ]
   },
@@ -4148,6 +4314,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "2_a": {
@@ -4359,6 +4528,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "8_a": {
@@ -4483,10 +4656,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "8_b": {
-   "giltSeit": "2026-10-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4503,8 +4679,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "8_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
+   ]
+  },
+  "8_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "9_a": {
@@ -4544,6 +4740,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "9_b": {
@@ -4583,6 +4782,9 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

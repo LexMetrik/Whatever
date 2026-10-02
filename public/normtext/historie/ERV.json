@@ -6,6 +6,162 @@
   "referenz": 69,
   "unparsed": 11
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 7625",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 7625",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 804",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Operationelle Risiken"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2025-01-01",
@@ -323,7 +479,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -336,8 +492,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
     }
+   ]
+  },
+  "19": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "20": {
@@ -369,6 +533,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "21": {
@@ -400,6 +567,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "22": {
@@ -431,6 +601,30 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "26": {
@@ -449,6 +643,9 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "27": {
@@ -480,6 +677,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "28": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "29": {
@@ -511,6 +718,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "30": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "31": {
@@ -529,6 +746,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "32": {
@@ -547,6 +767,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "33": {
@@ -578,6 +801,16 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "34": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "35": {
@@ -596,6 +829,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "36": {
@@ -627,6 +863,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37": {
@@ -671,6 +910,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "38": {
@@ -689,6 +931,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "39": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "40": {
@@ -707,6 +959,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "41": {
@@ -1162,7 +1417,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
     }
    ]
   },
@@ -1182,6 +1438,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "65": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "66": {
@@ -1200,6 +1466,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "67": {
@@ -1218,6 +1487,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "68": {
@@ -1236,6 +1508,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "69": {
@@ -1254,6 +1529,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "70": {
@@ -1272,6 +1550,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "71": {
@@ -1290,6 +1571,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72": {
@@ -1308,6 +1592,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "73": {
@@ -1339,6 +1626,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "77": {
@@ -1415,7 +1705,7 @@
    ]
   },
   "83": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1428,8 +1718,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
     }
+   ]
+  },
+  "84": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "85": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "86": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "87": {
@@ -1469,7 +1781,7 @@
    ]
   },
   "89": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1482,8 +1794,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Operationelle Risiken"
     }
+   ]
+  },
+  "90": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "91": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "92": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "93": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "94": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "95": {
@@ -1642,7 +1990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
     }
    ]
   },
@@ -1662,6 +2011,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102": {
@@ -1680,6 +2032,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
@@ -1763,8 +2118,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
     }
+   ]
+  },
+  "114": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "115": {
@@ -1783,6 +2146,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "116": {
@@ -1801,6 +2167,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "117": {
@@ -1819,6 +2188,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "118": {
@@ -1837,6 +2209,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "119": {
@@ -1881,6 +2256,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "124": {
@@ -1973,7 +2351,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
     }
    ]
   },
@@ -2006,6 +2385,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "128": {
@@ -2035,7 +2417,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
     }
    ]
   },
@@ -2055,6 +2438,23 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "130": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "131": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "132": {
@@ -2132,7 +2532,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 133"
+     "frueher": "vor Art. 133",
+     "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
     },
     {
      "typ": "fassung",
@@ -2145,7 +2546,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
     }
    ]
   },
@@ -2404,6 +2806,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "126_b": {
@@ -2422,6 +2827,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "127_a": {
@@ -2492,6 +2900,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "131_a": {
@@ -2510,6 +2921,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "131_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "132_a": {
@@ -2562,7 +2983,7 @@
    ]
   },
   "137_138": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2588,7 +3009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: …"
     }
    ],
    "aufgehobenSeit": "2019-01-01"
@@ -2682,7 +3104,7 @@
    ]
   },
   "148_c": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2695,8 +3117,58 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
     }
+   ]
+  },
+  "148_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "148_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "27_a": {
@@ -2715,6 +3187,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "31_a": {
@@ -2733,6 +3208,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "40_a": {
@@ -2751,6 +3229,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "42_a": {
@@ -2902,8 +3383,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
     }
+   ]
+  },
+  "47_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "47_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "47_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "47_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "4_a": {
@@ -3048,6 +3558,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "64_a": {
@@ -3066,6 +3579,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "64_b": {
@@ -3084,6 +3600,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "64_c": {
@@ -3102,6 +3621,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "65_a": {
@@ -3120,6 +3642,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "66_a": {
@@ -3138,6 +3663,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "68_a": {
@@ -3156,6 +3684,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "70_a": {
@@ -3174,6 +3705,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "70_b": {
@@ -3192,6 +3726,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "71_a": {
@@ -3210,6 +3747,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "71_b": {
@@ -3228,6 +3768,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_a": {
@@ -3246,6 +3789,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_b": {
@@ -3264,6 +3810,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_c": {
@@ -3295,6 +3844,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_d": {
@@ -3313,6 +3865,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_e": {
@@ -3331,6 +3886,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_f": {
@@ -3349,6 +3907,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "72_g": {
@@ -3367,6 +3928,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "74_76": {
@@ -3389,7 +3953,7 @@
    "aufgehobenSeit": "2025-01-01"
   },
   "77_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3402,8 +3966,72 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
     }
+   ]
+  },
+  "77_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "77_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "78_79": {
@@ -3477,6 +4105,55 @@
      "absatz": null,
      "item": null
     }
+   ]
+  },
+  "83_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "86_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "92_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "92_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "92_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "92_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "93_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   }
  },

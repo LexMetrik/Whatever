@@ -6,6 +6,120 @@
   "referenz": 25,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 2857",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/439"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5421",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 2857",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/439"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Rechtsschutz und Beschwerdeverfahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 2857",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/439"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Rechtsschutz am Flughafen und in den Zentren des Bundes"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 2857",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/439"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Rechtsschutz im erweiterten Verfahren nach Zuweisung auf die Kantone"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 2857",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/439"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 164",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/164"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Kapitel: Internationale Verträge"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 264",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/264"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Kapitel: Internationale Verträge"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-07-01",
@@ -34,7 +148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
     }
    ]
   },
@@ -405,7 +520,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
     }
    ]
   },
@@ -425,6 +541,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -443,6 +562,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -1110,8 +1232,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Beschwerdeverfahren auf Bundesebene"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "56": {
@@ -1329,6 +1455,9 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "1_b": {
@@ -1347,6 +1476,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "1_c": {
@@ -1365,6 +1497,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20_a": {
@@ -1835,7 +1970,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Rechtsschutz und Beschwerdeverfahren"
     },
     {
      "typ": "eingefuegt",
@@ -1900,8 +2036,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechtsschutz am Flughafen und in den Zentren des Bundes"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "52_b": {
@@ -1920,6 +2060,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "52_b_bis": {
@@ -1938,6 +2082,34 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "52_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "52_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "52_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "52_f": {
@@ -1980,8 +2152,52 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Rechtsschutz im erweiterten Verfahren nach Zuweisung auf die Kantone"
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "52_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
+   ]
+  },
+  "52_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
+   ]
+  },
+  "52_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
+   ]
+  },
+  "52_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
+   ]
+  },
+  "52_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
    ]
   },
   "53_a": {
@@ -2000,6 +2216,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "53_b": {
@@ -2042,7 +2262,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Internationale Verträge"
     },
     {
      "typ": "fassung",
@@ -2055,7 +2276,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Internationale Verträge"
     }
    ]
   },
@@ -2083,6 +2305,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6,
+    7
    ]
   },
   "55_bis": {

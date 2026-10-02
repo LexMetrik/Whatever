@@ -6,6 +6,26 @@
   "referenz": 38,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/111"
+    },
+    {
+     "label": "BBl 2016 7465",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2024-01-01",
@@ -1421,7 +1441,7 @@
    ]
   },
   "16_a": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1438,8 +1458,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen"
     }
+   ]
+  },
+  "16_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "21_a": {

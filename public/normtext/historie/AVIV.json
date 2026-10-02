@@ -6,6 +6,64 @@
   "referenz": 21,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2004-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 4861",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 339",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1828",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/274"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 339",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-07-01",
@@ -34,7 +92,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
     },
     {
      "typ": "fassung",
@@ -47,7 +106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
     }
    ]
   },
@@ -92,7 +152,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "1. Tit."
+     "frueher": "1. Tit.",
+     "ueberschrift": "Titel 1a: Beiträge"
     }
    ]
   },
@@ -666,7 +727,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
     }
    ]
   },
@@ -699,6 +761,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20": {
@@ -717,6 +782,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21": {
@@ -735,6 +803,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -753,6 +824,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23": {
@@ -849,6 +923,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24": {
@@ -867,6 +944,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25": {
@@ -898,6 +978,9 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26": {
@@ -916,6 +999,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27": {
@@ -973,6 +1059,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "28": {
@@ -2217,7 +2306,7 @@
    ]
   },
   "81": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2003-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2282,7 +2371,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
     }
    ]
   },
@@ -2302,6 +2392,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "83": {
@@ -2320,6 +2413,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "84": {
@@ -2351,6 +2447,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85": {
@@ -2369,6 +2468,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "86": {
@@ -2387,6 +2489,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "87": {
@@ -2405,6 +2510,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "88": {
@@ -2462,6 +2570,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "89": {
@@ -2590,6 +2701,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "91": {
@@ -2608,6 +2722,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "92": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "93": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "94": {
@@ -2626,6 +2757,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95": {
@@ -2657,6 +2791,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96": {
@@ -2733,6 +2870,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98": {
@@ -2751,6 +2891,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "99": {
@@ -2814,6 +2957,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "104": {
@@ -4565,6 +4711,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "20_a": {
@@ -4596,6 +4746,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25_a": {
@@ -4659,6 +4812,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27_b": {
@@ -5352,6 +5508,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_b": {
@@ -5370,6 +5529,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_c": {
@@ -5433,6 +5595,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_e": {
@@ -5451,6 +5616,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85_a": {
@@ -5482,6 +5650,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "90_a": {
@@ -5565,6 +5736,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_a": {
@@ -5596,6 +5770,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_b": {
@@ -5666,6 +5843,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_c": {
@@ -5710,6 +5890,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_d": {
@@ -5767,6 +5950,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_e": {
@@ -5824,6 +6010,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96_a": {
@@ -5887,6 +6076,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "97_b": {
@@ -5918,6 +6110,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98_a": {
@@ -5949,6 +6144,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98_b": {

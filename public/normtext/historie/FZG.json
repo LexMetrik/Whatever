@@ -6,6 +6,152 @@
   "referenz": 44,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 2313",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/379"
+    },
+    {
+     "label": "BBl 2013 4887",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/942"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 2313",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/379"
+    },
+    {
+     "label": "BBl 2013 4887",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/942"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1999-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 1384",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/199"
+    },
+    {
+     "label": "BBl 1998 5569",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 4299",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/728"
+    },
+    {
+     "label": "BBl 2014 529",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/98"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2001-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2693",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/443"
+    },
+    {
+     "label": "BBl 2000 255",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2000/99"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Abschnitt: Anwendbarkeit des BVG"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 701",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/140"
+    },
+    {
+     "label": "BBl 1999 6128",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_6128_5440_5092"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Abschnitt: Internationale Koordination"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 1677",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+    },
+    {
+     "label": "BBl 2000 2637",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Abschnitt: Internationale Koordination"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 5137",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+    },
+    {
+     "label": "BBl 2018 1607",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/671"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Abschnitt: Internationale Koordination"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2024-01-01",
@@ -315,7 +461,7 @@
    ]
   },
   "15": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -332,7 +478,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
     }
    ]
   },
@@ -356,6 +503,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -463,6 +613,16 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -502,6 +662,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -539,7 +702,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
     }
    ]
   },
@@ -572,6 +736,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24": {
@@ -733,7 +900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Anwendbarkeit des BVG"
     }
    ]
   },
@@ -781,7 +949,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "8. Abschn."
+     "frueher": "8. Abschn.",
+     "ueberschrift": "9. Abschnitt: Schlussbestimmungen"
     }
    ]
   },
@@ -853,6 +1022,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19_a": {
@@ -875,6 +1047,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22_a": {
@@ -914,6 +1089,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_b": {
@@ -953,6 +1131,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_c": {
@@ -992,6 +1173,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_d": {
@@ -1014,6 +1198,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_e": {
@@ -1053,6 +1240,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_f": {
@@ -1075,10 +1265,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1112,7 +1305,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
     },
     {
      "typ": "fassung",
@@ -1129,7 +1323,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
     }
    ]
   },
@@ -1176,6 +1371,26 @@
      "absatz": null,
      "item": "b"
     }
+   ],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "24_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "24_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "24_f": {
@@ -1198,6 +1413,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "24_f_bis": {
@@ -1220,6 +1439,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "24_g": {
@@ -1281,10 +1504,13 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "25_b": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1344,7 +1570,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Internationale Koordination"
     },
     {
      "typ": "fassung",
@@ -1361,7 +1588,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Internationale Koordination"
     },
     {
      "typ": "fassung",
@@ -1378,8 +1606,45 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Internationale Koordination"
     }
+   ]
+  },
+  "25_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6,
+    7
+   ]
+  },
+  "25_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6,
+    7
+   ]
+  },
+  "25_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6,
+    7
+   ]
+  },
+  "25_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6,
+    7
    ]
   },
   "25_g": {
@@ -1402,6 +1667,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6,
+    7
    ]
   },
   "5_a": {

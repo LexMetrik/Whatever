@@ -6,6 +6,50 @@
   "referenz": 73,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2001-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 3088",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 571",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 3527",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2020-07-01",
@@ -34,7 +78,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
     }
    ]
   },
@@ -54,6 +99,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3": {
@@ -72,6 +120,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "4": {
@@ -233,6 +284,9 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
@@ -766,7 +820,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
     }
    ]
   },
@@ -812,6 +867,9 @@
      "absatz": "2",
      "item": "a"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "9": {
@@ -830,6 +888,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "10": {
@@ -3564,7 +3625,7 @@
    ]
   },
   "38_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3577,8 +3638,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
     }
+   ]
+  },
+  "38_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "38_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "38_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "38_f": {
@@ -3597,6 +3680,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "38_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "3_a": {
@@ -3673,6 +3766,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_c": {
@@ -3741,8 +3837,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_d": {
@@ -3806,6 +3906,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "4_b": {
@@ -3863,6 +3966,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7_a": {
@@ -3907,6 +4013,9 @@
      "absatz": "3",
      "item": "l"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "7_b": {
@@ -3925,6 +4034,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "7_c": {
@@ -3943,6 +4055,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_a": {
@@ -4000,6 +4115,9 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_b": {
@@ -4018,6 +4136,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_c": {
@@ -4036,6 +4157,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "9_a": {

@@ -6,6 +6,22 @@
   "referenz": 31,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6345",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-01-01",
@@ -965,7 +981,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "5. Abschn."
+     "frueher": "5. Abschn.",
+     "ueberschrift": "6. Abschnitt: Schlussbestimmungen"
     }
    ]
   },
@@ -1127,7 +1144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
     }
    ]
   },
@@ -1147,10 +1165,34 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "28_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "28_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "28_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "32_a": {
-   "giltSeit": "2005-07-01",
+   "giltSeit": "2003-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1172,7 +1214,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 33"
+     "frueher": "vor Art. 33",
+     "ueberschrift": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
     },
     {
      "typ": "fassung",
@@ -1185,12 +1228,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
     }
    ]
   },
   "34_a": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1203,7 +1247,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Datenbekanntgabe"
     }
    ]
   },
@@ -1253,7 +1298,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Führung der Militärversicherung"
     },
     {
      "typ": "fassung",
@@ -1266,7 +1312,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Führung der Militärversicherung"
     }
    ]
   },

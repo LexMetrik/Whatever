@@ -6,9 +6,29 @@
   "referenz": 3,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1998-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1998 2993 2992",
+     "url": ""
+    },
+    {
+     "label": "BBl 1995 I 999",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1995/1_999_987_835"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte"
+  }
+ ],
  "artikel": {
   "19": {
-   "giltSeit": "1998-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -25,8 +45,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte"
     }
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "21": {
@@ -49,6 +77,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -71,6 +102,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -110,6 +144,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -141,6 +178,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -189,6 +229,9 @@
      "absatz": null,
      "item": "f"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
@@ -220,6 +263,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
@@ -242,6 +288,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -264,6 +313,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -320,6 +372,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -342,6 +397,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -373,6 +431,9 @@
      "item": "c",
      "frueher": "Bst. b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -395,6 +456,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "33": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "34": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "35": {
@@ -451,6 +529,9 @@
      "absatz": null,
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -473,6 +554,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "37": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "38": {
@@ -495,6 +586,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39": {
@@ -517,6 +611,51 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "40": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "41": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "42": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "43": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "44": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "45": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "46": {
@@ -539,10 +678,48 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "47": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "50": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "51": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "52": {
-   "giltSeit": "1998-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -551,7 +728,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Abschn. V"
+     "frueher": "Abschn. V",
+     "ueberschrift": "Abschnitt III: Verschiedene Bestimmungen"
     },
     {
      "typ": "bereinigt",
@@ -568,7 +746,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Abschnitt III: Verschiedene Bestimmungen"
     }
    ]
   },

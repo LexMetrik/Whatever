@@ -6,6 +6,80 @@
   "referenz": 19,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4285",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
+    },
+    {
+     "label": "BBl 2008 8043 8079",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 2243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
+    },
+    {
+     "label": "BBl 1996 IV 1217",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 2243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
+    },
+    {
+     "label": "BBl 1996 IV 1217",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Finanzierung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4285",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
+    },
+    {
+     "label": "BBl 2008 8043 8079",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2bis. Abschnitt: Schwall und Sunk sowie Geschiebehaushalt"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2025-08-01",
@@ -469,10 +543,62 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "38": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "40": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "41": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "42": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "43": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "44": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "45": {
-   "giltSeit": "1997-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -489,8 +615,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
     }
+   ]
+  },
+  "46": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "47": {
@@ -513,6 +647,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48": {
@@ -565,6 +702,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "50": {
@@ -587,6 +734,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "51": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "52": {
@@ -609,6 +766,65 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "53": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "54": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "56": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "57": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "58": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "59": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "61": {
@@ -655,8 +871,12 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "3. Kap."
+     "frueher": "3. Kap.",
+     "ueberschrift": "4. Kapitel: Förderung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62": {
@@ -730,6 +950,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "63": {
@@ -752,6 +975,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "64": {
@@ -825,6 +1051,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65": {
@@ -881,6 +1110,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "66": {
@@ -920,6 +1152,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67": {
@@ -949,8 +1184,12 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "4. Kap."
+     "frueher": "4. Kap.",
+     "ueberschrift": "5. Kapitel: Verfahren"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "68": {
@@ -1007,6 +1246,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "69": {
@@ -1230,7 +1472,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
     }
    ]
   },
@@ -1254,6 +1497,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39_a": {
@@ -1276,6 +1522,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_a": {
@@ -1320,6 +1569,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60_a": {
@@ -1357,8 +1609,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Finanzierung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "60_b": {
@@ -1381,6 +1637,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "61_a": {
@@ -1403,6 +1663,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_a": {
@@ -1476,6 +1739,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_b": {
@@ -1515,6 +1781,9 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_c": {
@@ -1537,6 +1806,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "64_a": {
@@ -1559,6 +1831,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67_a": {
@@ -1598,6 +1873,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "78_79": {
@@ -1624,7 +1902,7 @@
    "aufgehobenSeit": "2008-08-01"
   },
   "83_a": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1641,8 +1919,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2bis. Abschnitt: Schwall und Sunk sowie Geschiebehaushalt"
     }
+   ]
+  },
+  "83_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   }
  },

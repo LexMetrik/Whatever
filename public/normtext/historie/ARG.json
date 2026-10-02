@@ -6,6 +6,80 @@
   "referenz": 14,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1569",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/242"
+    },
+    {
+     "label": "BBl 1998 1394",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Ununterbrochener Betrieb"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1569",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/242"
+    },
+    {
+     "label": "BBl 1998 1394",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IV. Sonderschutzvorschriften"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1569",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/242"
+    },
+    {
+     "label": "BBl 1998 1394",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Schwangere Frauen und stillende Mütter"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1984-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1982 1676 1724",
+     "url": ""
+    },
+    {
+     "label": "BBl 1976 III 141",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_141_143_155"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "II. Gesundheitsschutz und Plangenehmigung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2000-08-01",
@@ -288,7 +362,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Gesundheitsschutz und Plangenehmigung"
     },
     {
      "typ": "fassung",
@@ -305,7 +380,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Gesundheitsschutz und Plangenehmigung"
     }
    ]
   },
@@ -380,6 +456,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "8": {
@@ -402,6 +481,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "9": {
@@ -712,7 +794,7 @@
    ]
   },
   "23": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -746,7 +828,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Ununterbrochener Betrieb"
     }
    ],
    "aufgehobenSeit": "2000-08-01"
@@ -771,6 +854,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -800,7 +886,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 25"
+     "frueher": "vor Art. 25",
+     "ueberschrift": "4. Weitere Vorschriften"
     }
    ]
   },
@@ -934,7 +1021,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Sonderschutzvorschriften"
     }
    ]
   },
@@ -958,6 +1046,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "31": {
@@ -1031,6 +1122,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "32": {
@@ -1053,10 +1147,13 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "35": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1073,7 +1170,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Schwangere Frauen und stillende Mütter"
     },
     {
      "typ": "urspruenglich",
@@ -1082,8 +1180,12 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 33"
+     "frueher": "vor Art. 33",
+     "ueberschrift": "2. Schwangere Frauen und stillende Mütter"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36": {
@@ -1157,6 +1259,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "38": {
@@ -1918,6 +2023,22 @@
    ],
    "aufgehobenSeit": "2000-08-01"
   },
+  "35_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "35_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
   "36_a": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
@@ -1938,6 +2059,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "3_a": {

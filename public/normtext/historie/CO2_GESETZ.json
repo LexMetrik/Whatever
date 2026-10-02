@@ -6,6 +6,152 @@
   "referenz": 22,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6839",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    {
+     "label": "BBl 2013 7561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1476"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Bei Fahrzeugen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/376"
+    },
+    {
+     "label": "BBl 2022 2651",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/2651"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Bei Fahrzeugen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/376"
+    },
+    {
+     "label": "BBl 2022 2651",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/2651"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/376"
+    },
+    {
+     "label": "BBl 2022 2651",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/2651"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6839",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    {
+     "label": "BBl 2013 7561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1476"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Abgabeerhebung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6839",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    {
+     "label": "BBl 2013 7561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1476"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6839",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    {
+     "label": "BBl 2013 7561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1476"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 262",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/262"
+    },
+    {
+     "label": "BBl 2021 2252",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/2252"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Vollzug, Verfahren und Förderung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2025-01-01",
@@ -286,7 +432,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bei Fahrzeugen"
     },
     {
      "typ": "fassung",
@@ -303,7 +450,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bei Fahrzeugen"
     }
    ]
   },
@@ -327,6 +475,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "12": {
@@ -349,6 +501,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "13": {
@@ -388,6 +544,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14": {
@@ -448,7 +608,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
     }
    ]
   },
@@ -506,6 +667,9 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "17": {
@@ -545,6 +709,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "18": {
@@ -618,6 +785,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "19": {
@@ -640,6 +810,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "20": {
@@ -679,6 +852,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "21": {
@@ -718,10 +894,13 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "29": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -738,7 +917,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Abgabeerhebung"
     }
    ]
   },
@@ -762,6 +942,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "31": {
@@ -799,7 +982,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
     },
     {
      "typ": "eingefuegt",
@@ -816,7 +1000,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
     }
    ]
   },
@@ -840,6 +1025,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "33": {
@@ -1128,7 +1316,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Vollzug, Verfahren und Förderung"
     }
    ]
   },
@@ -1169,6 +1358,9 @@
      "absatz": "1",
      "item": "a"
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "41": {
@@ -1191,6 +1383,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "44": {
@@ -1293,6 +1488,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "13_a": {
@@ -1315,6 +1514,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "13_b": {
@@ -1337,6 +1540,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_a": {
@@ -1393,6 +1600,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "19_a": {
@@ -1432,6 +1642,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "22_25": {
@@ -1500,10 +1713,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "28_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1520,8 +1736,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
     }
+   ]
+  },
+  "28_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "28_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "28_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "28_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "28_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "31_a": {
@@ -1561,6 +1813,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "31_b": {
@@ -1583,6 +1838,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "31_c": {
@@ -1605,6 +1863,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "32_a": {
@@ -1642,7 +1903,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind"
     }
    ]
   },
@@ -1666,6 +1928,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "32_c": {
@@ -1820,6 +2085,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "40_b": {
@@ -1859,6 +2127,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "40_c": {
@@ -1915,6 +2186,9 @@
      "absatz": "4",
      "item": "dbis"
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "40_d": {
@@ -1937,6 +2211,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "41_a": {
@@ -1959,6 +2236,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "44_a": {

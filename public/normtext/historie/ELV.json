@@ -6,6 +6,134 @@
   "referenz": 25,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Abschnitt: Ergänzungsleistungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "A. Der Anspruch und die Berechnungsgrundlagen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 599",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1998-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 2961",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2961_2961_2961"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "III. Vergütung von Krankheits- und Behinderungskosten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 599",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "I. Anspruch"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "I. An die jährlichen Ergänzungsleistungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "II. An die Verwaltungskosten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 599",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1979-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1978 420",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2023-01-01",
@@ -47,7 +175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Abschnitt: Ergänzungsleistungen"
     },
     {
      "typ": "fassung",
@@ -60,7 +189,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Der Anspruch und die Berechnungsgrundlagen"
     },
     {
      "typ": "fassung",
@@ -73,7 +203,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Anspruch"
     }
    ]
   },
@@ -93,6 +224,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    4
    ]
   },
   "3": {
@@ -172,6 +308,11 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    4
    ]
   },
   "4": {
@@ -190,6 +331,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "5": {
@@ -217,6 +363,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "6": {
@@ -257,6 +408,11 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "7": {
@@ -327,6 +483,11 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "8": {
@@ -358,6 +519,11 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "9": {
@@ -376,6 +542,20 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
+   ]
+  },
+  "10": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "11": {
@@ -414,7 +594,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Kapitel II"
+     "frueher": "Kapitel II",
+     "ueberschrift": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
     },
     {
      "typ": "fassung",
@@ -427,8 +608,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "12": {
@@ -447,6 +633,18 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14": {
@@ -484,6 +682,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16": {
@@ -515,6 +717,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17": {
@@ -533,6 +739,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "18": {
@@ -551,6 +761,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19": {
@@ -580,8 +794,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Vergütung von Krankheits- und Behinderungskosten"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "20": {
@@ -620,8 +839,13 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Ziff. III"
+     "frueher": "Ziff. III",
+     "ueberschrift": "IV. Verschiedene Bestimmungen"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "21": {
@@ -640,6 +864,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "22": {
@@ -697,6 +925,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "23": {
@@ -728,6 +960,18 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "25": {
@@ -928,6 +1172,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "26": {
@@ -972,6 +1220,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "27": {
@@ -990,6 +1242,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "28": {
@@ -1008,6 +1264,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -1026,6 +1285,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -1044,6 +1306,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -1094,6 +1359,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
@@ -1112,6 +1380,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -1162,6 +1433,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -1180,6 +1454,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "37": {
@@ -1198,6 +1475,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "38": {
@@ -1216,6 +1496,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39": {
@@ -1284,8 +1567,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. An die jährlichen Ergänzungsleistungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "40": {
@@ -1356,6 +1643,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    5
    ]
   },
   "41": {
@@ -1374,6 +1665,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    5
    ]
   },
   "42": {
@@ -1392,6 +1687,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    5
    ]
   },
   "43": {
@@ -1447,7 +1746,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung"
     }
    ]
   },
@@ -1480,6 +1780,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "45": {
@@ -1827,6 +2130,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "11_a": {
@@ -1845,6 +2153,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14_a": {
@@ -1915,6 +2227,10 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14_b": {
@@ -1959,6 +2275,10 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15_a": {
@@ -1990,6 +2310,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15_b": {
@@ -2021,6 +2345,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15_c": {
@@ -2039,6 +2367,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15_d": {
@@ -2057,6 +2389,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15_e": {
@@ -2075,6 +2411,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_a": {
@@ -2119,6 +2459,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_b": {
@@ -2137,6 +2481,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_c": {
@@ -2155,6 +2503,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_c_bis": {
@@ -2173,6 +2525,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_d": {
@@ -2191,6 +2547,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_e": {
@@ -2209,6 +2569,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17_a": {
@@ -2288,6 +2652,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17_b": {
@@ -2306,6 +2674,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17_c": {
@@ -2324,6 +2696,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17_d": {
@@ -2342,6 +2718,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17_e": {
@@ -2360,6 +2740,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19_a": {
@@ -2449,6 +2833,11 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    3
    ]
   },
   "1_a": {
@@ -2480,6 +2869,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    4
    ]
   },
   "1_b": {
@@ -2498,6 +2892,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    4
    ]
   },
   "21_a": {
@@ -2516,6 +2915,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "21_b": {
@@ -2556,6 +2959,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "21_c": {
@@ -2574,6 +2981,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "22_a": {
@@ -2637,6 +3048,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "26_a": {
@@ -2694,6 +3109,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "26_b": {
@@ -2756,6 +3175,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "27_b": {
@@ -2796,6 +3219,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "27_c": {
@@ -2823,6 +3250,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "27_d": {
@@ -2850,6 +3281,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "28_a": {
@@ -2881,6 +3316,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32_a": {
@@ -2899,6 +3337,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39_a": {
@@ -2917,6 +3358,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    5
    ]
   },
   "3_a": {
@@ -2946,8 +3391,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "40_a": {
@@ -2966,10 +3416,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    5
    ]
   },
   "42_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2982,8 +3436,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. An die Verwaltungskosten"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "42_b": {
@@ -3002,6 +3460,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    6
    ]
   },
   "42_c": {
@@ -3033,6 +3495,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    6
    ]
   },
   "42_d": {
@@ -3051,10 +3517,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    6
    ]
   },
   "42_e": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3067,8 +3537,20 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "42_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    7
    ]
   },
   "54_a": {

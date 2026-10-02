@@ -6,6 +6,92 @@
   "referenz": 49,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 706",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Elfter Titel: Schlussbestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3914",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3914",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2913",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/511"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -373,7 +459,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
     }
    ]
   },
@@ -393,6 +480,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "17": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "18": {
@@ -411,6 +508,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "19": {
@@ -429,6 +529,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "20": {
@@ -447,6 +550,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "22": {
@@ -1097,7 +1210,7 @@
    ]
   },
   "47": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1110,8 +1223,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
     }
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "50": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "51": {
@@ -1130,6 +1265,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "52": {
@@ -1226,7 +1364,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Kap. 5"
+     "frueher": "Kap. 5",
+     "ueberschrift": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
     }
    ]
   },
@@ -1406,7 +1545,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 68"
+     "frueher": "vor Art. 68",
+     "ueberschrift": "Vierter Titel: Medizinalrecht und Tarifwesen"
     },
     {
      "typ": "fassung",
@@ -1450,7 +1590,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
     },
     {
      "typ": "fassung",
@@ -1463,7 +1604,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
     }
    ]
   },
@@ -1509,6 +1651,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4,
+    5
    ]
   },
   "70": {
@@ -2442,7 +2588,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 130"
+     "frueher": "vor Art. 130",
+     "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
     },
     {
      "typ": "fassung",
@@ -2455,7 +2602,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
     }
    ]
   },
@@ -2522,7 +2670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
     }
    ]
   },
@@ -2613,7 +2762,7 @@
    ]
   },
   "141": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2626,7 +2775,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
     }
    ]
   },
@@ -2648,6 +2798,48 @@
     }
    ],
    "aufgehobenSeit": "1996-01-01"
+  },
+  "143": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "144": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "145": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "146": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "147": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "148": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
   },
   "102_a": {
    "giltSeit": "2017-01-01",
@@ -2769,6 +2961,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "132_b": {
@@ -2787,6 +2982,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "132_c": {
@@ -2805,6 +3003,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "140_a": {
@@ -2841,6 +3042,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "147_b": {
@@ -2859,6 +3063,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "147_c": {
@@ -2877,6 +3084,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "1_a": {

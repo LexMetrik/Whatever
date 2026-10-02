@@ -6,6 +6,120 @@
   "referenz": 19,
   "unparsed": 5
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2010-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 703",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/121"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Betrieb und Bau"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2002-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 1186",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/197"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Abschnitt: Bodenabfertigungsdienste"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-03-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 595",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/135"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 703",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/121"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-03-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 595",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/135"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2014-09-01",
@@ -135,7 +249,7 @@
    ]
   },
   "4": {
-   "giltSeit": "2010-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -148,8 +262,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Betrieb und Bau"
     }
+   ]
+  },
+  "5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "7": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "8": {
@@ -168,6 +304,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "9": {
@@ -199,6 +338,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "10": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -243,6 +392,30 @@
      "absatz": "1",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "12": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "14": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -261,6 +434,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "17": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -279,6 +469,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "19": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -297,6 +511,9 @@
      "absatz": "1",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -328,6 +545,9 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -346,6 +566,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -429,6 +652,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "26": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27": {
@@ -447,6 +680,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -530,6 +766,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -561,6 +800,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -603,7 +845,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
     },
     {
      "typ": "urspruenglich",
@@ -612,7 +855,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 29"
+     "frueher": "vor Art. 29",
+     "ueberschrift": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
     }
    ]
   },
@@ -632,6 +876,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "39": {
@@ -767,6 +1014,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "61": {
@@ -785,6 +1042,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "62": {
@@ -803,6 +1063,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "63": {
@@ -821,6 +1084,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "64": {
@@ -852,6 +1118,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "65": {
@@ -870,6 +1139,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "66": {
@@ -899,7 +1171,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
     }
    ]
   },
@@ -919,6 +1192,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "68": {
@@ -937,6 +1213,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "69": {
@@ -955,6 +1234,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "70": {
@@ -973,6 +1255,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "71": {
@@ -1058,6 +1343,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_b": {
@@ -1076,6 +1364,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_c": {
@@ -1094,6 +1385,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25_a": {
@@ -1112,6 +1406,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_a": {
@@ -1130,6 +1427,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_a_bis": {
@@ -1183,6 +1483,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_a_ter": {
@@ -1201,6 +1504,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_bbis": {
@@ -1232,6 +1545,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_d": {
@@ -1250,6 +1573,16 @@
      "absatz": "1",
      "item": "a"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_f": {
@@ -1268,6 +1601,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29_a": {
@@ -1297,8 +1647,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Bodenabfertigungsdienste"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29_b": {
@@ -1317,6 +1671,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "29_c": {
@@ -1346,8 +1704,36 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "29_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
+   ]
+  },
+  "29_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
+   ]
+  },
+  "29_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
    ]
   },
   "29_g": {
@@ -1366,6 +1752,26 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2
+   ]
+  },
+  "29_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
+   ]
+  },
+  "29_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
    ]
   },
   "30_a": {
@@ -1384,6 +1790,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30_b": {
@@ -1402,6 +1811,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30_c": {
@@ -1420,6 +1832,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "32_35": {
@@ -1691,7 +2106,7 @@
    "aufgehobenSeit": "2014-09-01"
   },
   "58_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -1700,7 +2115,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 59"
+     "frueher": "vor Art. 59",
+     "ueberschrift": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
     },
     {
      "typ": "fassung",
@@ -1713,7 +2129,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
     },
     {
      "typ": "fassung",
@@ -1726,7 +2143,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -1746,6 +2164,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "59_a": {
@@ -1764,6 +2185,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "62_a": {
@@ -1786,7 +2210,7 @@
    "aufgehobenSeit": "2019-01-01"
   },
   "62_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1821,7 +2245,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 63"
+     "frueher": "vor Art. 63",
+     "ueberschrift": "2. Kapitel: Bewilligungs- und Meldepflichten"
     },
     {
      "typ": "fassung",
@@ -1834,7 +2259,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Bewilligungs- und Meldepflichten"
     },
     {
      "typ": "eingefuegt",
@@ -1847,13 +2273,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
     }
    ],
    "aufgehobenSeit": "2019-01-01"
   },
   "65_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1866,8 +2293,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
     }
+   ]
+  },
+  "65_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "65_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "66_a_66_b": {
@@ -2039,6 +2481,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

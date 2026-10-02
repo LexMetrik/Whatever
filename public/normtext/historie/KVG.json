@@ -6,6 +6,116 @@
   "referenz": 69,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 3345",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/580"
+    },
+    {
+     "label": "BBl 2013 7801",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1479"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Risikoausgleich"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 731",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/731"
+    },
+    {
+     "label": "BBl 2019 5397",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1903"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Datenweitergabe und Statistiken"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6717",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/748"
+    },
+    {
+     "label": "BBl 2016 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Wahl des Leistungserbringers, Kostenübernahme und Aufnahmepflicht der Listenspitäler"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 769",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
+    },
+    {
+     "label": "BBl 2021 2819",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2016-01-01",
@@ -392,7 +502,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Risikoausgleich"
     }
    ]
   },
@@ -416,6 +527,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -803,7 +917,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Datenweitergabe und Statistiken"
     }
    ]
   },
@@ -867,6 +982,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24": {
@@ -1712,7 +1830,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wahl des Leistungserbringers, Kostenübernahme und Aufnahmepflicht der Listenspitäler"
     }
    ]
   },
@@ -2363,8 +2482,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
     }
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "56": {
@@ -3412,7 +3539,7 @@
    "aufgehobenSeit": "2016-01-01"
   },
   "78": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3429,8 +3556,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
     }
+   ]
+  },
+  "79": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "80": {
@@ -3502,7 +3637,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
     }
    ]
   },
@@ -3566,6 +3702,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "83": {
@@ -3588,6 +3727,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84": {
@@ -3695,6 +3837,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "85": {
@@ -3717,6 +3862,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "86": {
@@ -3739,6 +3887,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "87": {
@@ -3761,6 +3912,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88": {
@@ -3785,6 +3939,13 @@
     }
    ],
    "aufgehobenSeit": "2003-01-01"
+  },
+  "89": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
   },
   "90": {
    "giltSeit": null,
@@ -3829,6 +3990,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "92": {
@@ -3910,6 +4074,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "93": {
@@ -3991,7 +4158,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "6. Tit."
+     "frueher": "6. Tit.",
+     "ueberschrift": "7. Titel: Schlussbestimmungen"
     }
    ]
   },
@@ -4212,6 +4380,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17_a": {
@@ -4234,10 +4405,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "1_a": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4254,7 +4428,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Titel: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -4606,6 +4781,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "42_a": {
@@ -5008,6 +5186,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "54_b": {
@@ -5030,6 +5211,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "54_c": {
@@ -5052,6 +5236,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "55_a": {
@@ -5091,6 +5278,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "55_b": {
@@ -5113,6 +5303,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "56_a": {
@@ -5894,6 +6087,13 @@
     }
    ]
   },
+  "78_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
   "79_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
@@ -5931,6 +6131,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "82_a": {
@@ -5953,6 +6156,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84_a": {
@@ -6213,6 +6419,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84_b": {
@@ -6235,6 +6444,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "90_a": {
@@ -6291,6 +6503,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "93_a": {

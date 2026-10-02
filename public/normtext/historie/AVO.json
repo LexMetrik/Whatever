@@ -6,9 +6,179 @@
   "referenz": 30,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Interessenkonflikte"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Titel: Versicherungsvermittlung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 425",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/425"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Titel: Allgemeines"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Geltungsbereich"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Grundsätze"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2015-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1147",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/233"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
+  }
+ ],
  "artikel": {
   "1": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -21,7 +191,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Titel: Allgemeines"
     },
     {
      "typ": "eingefuegt",
@@ -34,7 +205,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Geltungsbereich"
     }
    ]
   },
@@ -273,7 +445,7 @@
    ]
   },
   "21": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bereinigt",
@@ -286,7 +458,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Solvabilität"
     },
     {
      "typ": "fassung",
@@ -299,8 +472,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
+   ]
+  },
+  "22": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "54": {
@@ -529,7 +717,7 @@
    ]
   },
   "70": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -542,7 +730,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
     }
    ]
   },
@@ -562,6 +751,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "72": {
@@ -580,6 +772,23 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "73": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "74": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "75": {
@@ -598,6 +807,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "76": {
@@ -616,6 +828,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "77": {
@@ -634,6 +849,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "78": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "79": {
@@ -652,6 +877,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "80": {
@@ -689,6 +917,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "82": {
@@ -726,6 +957,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "84": {
@@ -794,8 +1028,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "85": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    10
+   ]
+  },
+  "86": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    10
    ]
   },
   "87": {
@@ -866,6 +1120,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "88": {
@@ -884,6 +1142,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "89": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "90": {
@@ -915,6 +1183,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91": {
@@ -959,6 +1230,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "92": {
@@ -977,6 +1251,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "93": {
@@ -1008,6 +1285,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "94": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "95": {
@@ -1052,6 +1339,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "96": {
@@ -1648,7 +1938,7 @@
    ]
   },
   "182": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1661,8 +1951,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Titel: Versicherungsvermittlung"
     }
+   ]
+  },
+  "183": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "184": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "185": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "186": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "187": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "188": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "189": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "190": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "192": {
@@ -2122,7 +2469,7 @@
    ]
   },
   "111_d": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2135,8 +2482,128 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
     }
+   ]
+  },
+  "111_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111_u": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "112_116": {
@@ -2555,7 +3022,7 @@
    ]
   },
   "14_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2568,8 +3035,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Interessenkonflikte"
     }
+   ]
+  },
+  "14_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "154_a": {
@@ -2626,8 +3101,57 @@
     }
    ]
   },
+  "182_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "182_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "182_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "182_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "190_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "190_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "190_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "190_d": {
-   "giltSeit": "2024-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2640,12 +3164,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
     }
    ]
   },
+  "190_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "190_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
   "197_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2658,8 +3197,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
     }
+   ]
+  },
+  "197_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "197_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "197_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "197_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "198_a": {
@@ -2847,6 +3415,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "1_b": {
@@ -2876,8 +3448,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Grundsätze"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "1_c": {
@@ -2896,6 +3472,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_d": {
@@ -2914,6 +3494,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_e": {
@@ -2932,6 +3516,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_f": {
@@ -2950,6 +3538,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_g": {
@@ -2968,6 +3560,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_h": {
@@ -2999,6 +3595,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "203_a": {
@@ -3404,6 +4004,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "88_a": {
@@ -3422,6 +4025,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91_a": {
@@ -3453,6 +4059,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91_b": {
@@ -3471,6 +4080,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "93_a": {
@@ -3489,6 +4101,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "96_a": {
@@ -3554,7 +4169,7 @@
    ]
   },
   "98_b": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3567,8 +4182,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
     }
+   ]
+  },
+  "98_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
+   ]
+  },
+  "98_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
+   ]
+  },
+  "98_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   }
  },

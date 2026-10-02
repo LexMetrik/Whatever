@@ -6,6 +6,78 @@
   "referenz": 46,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2014-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 2171",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 3637",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1515",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/354"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9. Kapitel: Verjährung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 569",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/569"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Dialog und Personalbeurteilung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 2871",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-08-01",
@@ -443,7 +515,7 @@
    ]
   },
   "15": {
-   "giltSeit": "2026-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -456,8 +528,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Dialog und Personalbeurteilung"
     }
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "18": {
@@ -3062,7 +3142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
     }
    ]
   },
@@ -3082,6 +3163,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
@@ -3150,8 +3234,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "107": {
@@ -3248,7 +3336,7 @@
    ]
   },
   "110": {
-   "giltSeit": "2013-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3274,7 +3362,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Verjährung"
     }
    ],
    "aufgehobenSeit": "2013-07-01"
@@ -3333,6 +3422,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "114": {
@@ -3701,6 +3793,16 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "104_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104_c": {
@@ -3719,6 +3821,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "104_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "104_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104_f": {
@@ -3756,6 +3875,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_b": {
@@ -3813,6 +3935,9 @@
      "absatz": "3",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_c": {
@@ -3831,6 +3956,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_d": {
@@ -3849,6 +3977,17 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "106_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "10_a": {
@@ -3954,7 +4093,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 117"
+     "frueher": "vor Art. 117",
+     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
     },
     {
      "typ": "fassung",
@@ -3967,7 +4107,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
     }
    ],
    "aufgehobenSeit": "2008-07-01"
@@ -5873,8 +6014,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
     }
+   ]
+  },
+  "88_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "88_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "88_d": {
@@ -5893,6 +6049,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "88_d_bis": {
@@ -5911,6 +6070,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "88_d_ter": {
@@ -5929,6 +6091,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "88_e": {
@@ -6031,6 +6196,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "88_g_88_j": {

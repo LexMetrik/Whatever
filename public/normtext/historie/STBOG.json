@@ -6,6 +6,26 @@
   "referenz": 29,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 5769",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/624"
+    },
+    {
+     "label": "BBl 2013 7109",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1333"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Berufungskammer"
+  }
+ ],
  "artikel": {
   "20": {
    "giltSeit": "2011-03-01",
@@ -448,7 +468,7 @@
    ]
   },
   "38_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -465,8 +485,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Berufungskammer"
     }
+   ]
+  },
+  "38_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "38_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62_a": {

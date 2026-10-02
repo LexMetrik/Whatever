@@ -6,6 +6,50 @@
   "referenz": 22,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "1999-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 1773",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 2347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 2347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2022-01-01",
@@ -490,7 +534,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
     },
     {
      "typ": "fassung",
@@ -503,7 +548,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
     }
    ]
   },
@@ -536,6 +582,10 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19_c": {
@@ -567,6 +617,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19_d": {
@@ -585,6 +639,18 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "19_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19_f": {
@@ -603,6 +669,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "19_g": {
@@ -632,8 +702,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
     }
+   ]
+  },
+  "19_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "19_i": {
@@ -652,6 +730,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "19_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "19_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "23_a": {

@@ -21,6 +21,9 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   baueArtikelHistorie,
+  type HistorieEreignis,
+  sektionsAnalyse,
+  type ErbArtikel,
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
@@ -32,7 +35,7 @@ const ZIEL = resolve(wurzel, 'public/normtext/historie');
 const TEXT = resolve(wurzel, 'public/normtext/bund');
 
 interface Sidecar {
-  artikel?: Record<string, { fussnoten?: FnEingang[] }>;
+  artikel?: Record<string, { fussnoten?: FnEingang[]; gliederung?: ErbArtikel['gliederung']; marginalie?: string[] }>;
 }
 
 interface Abdeckung {
@@ -71,18 +74,32 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
   const textIndex = textShardIndex(erlass);
   const artikel: Record<string, ArtikelHistorie> = {};
   const residuum: Array<{ token: string; nr: string; roh: string }> = [];
+  const tabelle: HistorieEreignis[] = [];
+  const tabellenIndex = new Map<string, number>();
   const abdeckung: Abdeckung = { fussnoten: 0, ereignis: 0, referenz: 0, unparsed: 0 };
   let ereignisse = 0;
   let ereignisseDatiert = 0;
 
-  const tokens = Object.keys(doc.artikel ?? {}).sort();
+  // W2·27-BUND-FERTIG (2.10.2026): Sektions-Fussnoten an Gliederungsüberschriften gelten für alle Artikel darunter.
+  // Dokumentreihenfolge = Reihenfolge der Text-Shard-Einträge (die Sidecar-Schlüssel sind NICHT dokumentgeordnet:
+  // JS ordnet ganzzahlige Schlüssel vorweg); Sidecar-Token ohne Text-Eintrag folgen sortiert am Ende.
+  const sidecar = doc.artikel ?? {};
+  const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
+  const imText = new Set(reihenfolge);
+  reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
+  const { erbe, geteilt } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+
+  const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
-    const fussnoten = doc.artikel![token].fussnoten ?? [];
-    if (fussnoten.length === 0) continue;
+    const fussnoten = sidecar[token].fussnoten ?? [];
+    const geerbt = erbe.get(token);
+    if (fussnoten.length === 0 && !geerbt) continue;
     abdeckung.fussnoten += fussnoten.length;
-    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, {
+    const { historie, unparsed, refCount, ereignisFnCount, erbtAnzahl } = baueArtikelHistorie(fussnoten, {
       koerperLebend: textIndex.get(token)?.lebend,
       snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
+      geerbt,
+      geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
     });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
@@ -91,9 +108,21 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
       residuum.push({ token, nr: fn.nr ?? '', roh: (fn.text ?? '').replace(/<\/?[bi]>/gi, '').replace(/\s+/g, ' ').trim() });
     }
     if (historie) {
-      artikel[token] = historie;
       ereignisse += historie.ereignisse.length;
       ereignisseDatiert += historie.ereignisse.filter((e) => e.datum).length;
+      if (erbtAnzahl > 0) {
+        // Nutzlast (Deckel public/normtext/historie, check:entstehung): die geerbten Überschrift-Ereignisse stehen je
+        // Erlass EINMAL in der Tabelle (gleicher Inhalt = gleicher Eintrag), der Artikel führt nur die Indizes.
+        const erbt = historie.ereignisse.slice(0, erbtAnzahl).map((e) => {
+          const k = JSON.stringify(e);
+          let i = tabellenIndex.get(k);
+          if (i === undefined) { i = tabelle.length; tabelle.push(e); tabellenIndex.set(k, i); }
+          return i;
+        });
+        artikel[token] = { ...historie, ereignisse: historie.ereignisse.slice(erbtAnzahl), erbt };
+      } else {
+        artikel[token] = historie;
+      }
     }
   }
 
@@ -101,7 +130,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
 
   // Deterministische Serialisierung: Erlass-Meta zuerst, dann sortierte Artikel,
   // dann Residuum in Token-Reihenfolge (stabile Byte-Ausgabe, §2).
-  const shard = { erlass, abdeckung, artikel, residuum };
+  const shard = { erlass, abdeckung, ...(tabelle.length ? { ueberschriftEreignisse: tabelle } : {}), artikel, residuum };
   return {
     json: JSON.stringify(shard, null, 1) + '\n',
     abdeckung,

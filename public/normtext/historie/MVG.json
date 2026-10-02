@@ -6,6 +6,98 @@
   "referenz": 49,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 5205",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/573"
+    },
+    {
+     "label": "BBl 2016 4691",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/1047"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Organisation, Verwaltung, Finanzierung und Haftung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Besondere Meldepflichten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -1563,7 +1655,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Organisation, Verwaltung, Finanzierung und Haftung"
     }
    ]
   },
@@ -1587,6 +1680,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "83": {
@@ -1641,7 +1737,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
     },
     {
      "typ": "fassung",
@@ -1658,8 +1755,17 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Besondere Meldepflichten"
     }
+   ]
+  },
+  "84": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "88": {
@@ -1682,6 +1788,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "93": {
@@ -1706,6 +1816,14 @@
     }
    ],
    "aufgehobenSeit": "2022-01-01"
+  },
+  "94": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
+   ]
   },
   "95": {
    "giltSeit": null,
@@ -1765,7 +1883,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: …"
     }
    ],
    "aufgehobenSeit": "2007-01-01"
@@ -2319,7 +2438,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Erstes Kap."
+     "frueher": "Erstes Kap.",
+     "ueberschrift": "1. Kapitel a: Voraussetzungen der Bundeshaftung"
     }
    ]
   },
@@ -2408,7 +2528,7 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "66_a": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2425,8 +2545,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
     }
+   ]
+  },
+  "66_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "66_c": {
@@ -2440,6 +2568,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "66_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "68_69": {
@@ -2525,10 +2663,13 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "85_87": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2562,7 +2703,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
     }
    ],
    "aufgehobenSeit": "2003-01-01"
@@ -2678,6 +2820,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "94_b": {
@@ -2961,6 +3107,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "95_b": {
@@ -3000,6 +3150,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "96_103": {

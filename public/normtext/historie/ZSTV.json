@@ -6,6 +6,64 @@
   "referenz": 40,
   "unparsed": 4
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 2923",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/446"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/243"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 4309",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 3925",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2011-01-01",
@@ -2703,7 +2761,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
     }
    ]
   },
@@ -2723,6 +2782,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "78": {
@@ -2741,6 +2803,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "79": {
@@ -2785,6 +2850,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "80": {
@@ -2803,6 +2871,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "81": {
@@ -2946,7 +3017,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
     }
    ]
   },
@@ -2979,6 +3051,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "86": {
@@ -2997,6 +3072,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "87": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "88": {
@@ -3015,6 +3100,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89": {
@@ -4106,7 +4194,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 49"
+     "frueher": "vor Art. 49",
+     "ueberschrift": "2. Abschnitt: Bekanntgabe von Amtes wegen"
     }
    ]
   },
@@ -4300,7 +4389,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
     },
     {
      "typ": "fassung",
@@ -4313,8 +4403,25 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
     }
+   ]
+  },
+  "75_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "75_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "78_a": {
@@ -4333,6 +4440,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "78_b": {
@@ -4351,6 +4461,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "79_a": {
@@ -4369,6 +4482,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_a": {
