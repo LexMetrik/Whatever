@@ -5,6 +5,8 @@ description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before
 
 # Gegenprüfung — adversariales Protokoll (QS-GP)
 
+*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/gegenpruefung.md` (QS-DOKU-DIAET 2.10.2026).*
+
 ## Zweck
 
 Die teuersten LexMetrik-Bugs (Tabellen-Drop, Footnote-Leak, `bis`/`ter`-Verlust,
@@ -35,15 +37,11 @@ Risiko-Datei, bis genau für diesen Diff ein `bestanden`-Nachweis vorliegt.
    verifizieren, jeder Wert mit Norm-Anker). **Gilt sinngemäss ausserhalb der
    Norm-Prüfung:** ein Befund zu einem technischen Mechanismus (Render-/
    Lifecycle-Verhalten, Race Conditions) ohne echten Reproduktions-Test ist
-   eine Hypothese, kein Fund. Beleg 15.9.2026 (PR #899): ein Sonnet-Prüfer
-   nannte den falschen StrictMode-Mechanismus; erst ein Nachzug mit echtem
-   Render-Test fand den realen Fall (verworfener Suspense-Render, auch Prod).
+   eine Hypothese, kein Fund. Beleg 15.9.2026 (PR #899): Archiv §Hypothese-899.
 5. **Wer quittiert.** Das Verdikt schreibt der Prüfer, die Quittung
    (`gegenpruefung:ok`, Register-Zeile, `Gegenpruefung:`-Trailer) setzt der
    Orchestrator — **nie der Bauer**. Eine Selbstbescheinigung des Bau-Agenten
-   macht den Merge-Schutz formal grün und ist inhaltlich wertlos (Vorfall
-   PR #616, 2.9.2026: «Sonnet, Ladeschicht/Identitaet» vom Bauer selbst; erst
-   die Opus-Prüfung fand vier Auflagen, darunter einen toten Link 0/15).
+   macht den Merge-Schutz formal grün und ist inhaltlich wertlos (Vorfall PR #616, 2.9.2026: Archiv §Quittung-616).
 
 ## Minimum eines echten Durchgangs
 
@@ -124,9 +122,7 @@ Ein übergebener Pin ist ein Start-Artefakt, kein Verdikt.
 **Geprüfter Stand = benannter SHA (Beleg 23.9.2026, V2d-Gegenprüfung):** Der
 Auftrag nennt den Ziel-SHA; der Prüfer bestätigt ihn zuerst mit
 `git fetch && git rev-parse HEAD` (sonst `git checkout --detach <ref>`) und
-nennt den geprüften SHA im Verdikt. Ohne diesen Schritt prüfte ein Durchgang
-teils einen anderen Baum (meldete migrierte Seiten als «nicht migriert»,
-Testzahl eines älteren Stands) — ein Verdikt ohne SHA gilt als nicht erfolgt
+nennt den geprüften SHA im Verdikt. (Beleg 23.9.2026, V2d: Archiv §SHA-V2d) — ein Verdikt ohne SHA gilt als nicht erfolgt
 (§14.7).
 
 **David-Entscheide im Wortlaut:** Stützt sich der Bau auf einen Entscheid
