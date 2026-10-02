@@ -104,9 +104,9 @@ describe('Vorab-Markierung an den echten Korpus-Tabellen (Render-Markup, kein Er
   ])('%s: Zellschrift unter 8 pt → Hinweiszeile (data-gekuerzt)', (_n, datei, artikel, kennwort) => {
     expect(tabelle(datei, artikel, kennwort)).toContain('data-gekuerzt=""');
   });
-  it('GebV SchKG Art. 37 und ZH-211.11 § 4 bleiben im Hochformat', () => {
-    expect(tabelle('bund/GEBV_SCHKG', '37', 'Restschuld')).not.toContain('data-breit');
+  it('ZH-211.11 § 4 und ZH-215.3 § 4 bleiben im Hochformat', () => {
     expect(tabelle('kanton/ZH-211.11', '4', 'Grundgebühr')).not.toContain('data-breit');
+    expect(tabelle('kanton/ZH-215.3', '4', 'Grundgebühr')).not.toContain('data-breit');
   });
 });
 

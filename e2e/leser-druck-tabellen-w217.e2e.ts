@@ -153,6 +153,9 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
       test.setTimeout(180_000)
       await page.goto(`/gesetze/bund/${erlass}`)
       await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
+      // Stresstest für andere Schriftmetriken (die CI rendert mit Linux-Schriften, breiter als auf dem Mac):
+      // W217_LAUFWEITE=0.06 spreizt jede Zeichenbreite um rund 10 %. Ohne Variable unverändert.
+      if (process.env.W217_LAUFWEITE) await page.addStyleTag({ content: `*{letter-spacing:${process.env.W217_LAUFWEITE}em !important}` })
       await page.evaluate(() => document.fonts?.ready)
       const tabellen = await page.evaluate(() =>
         [...document.querySelectorAll('[data-mehrspaltig]')].map((t) =>
@@ -264,14 +267,15 @@ test.describe('W2·17 · Querformat im echten page.pdf nur für wirklich breite 
     }
     return { quer, seiten: doc.numPages }
   }
-  for (const url of ['/gesetze/bund/GEBV_SCHKG', '/gesetze/kanton/ZH-211.11', '/gesetze/kanton/ZH-215.3']) {
-    test(`${url}: 0 Querformat-Seiten (schmale Tabellen bleiben im Hochformat)`, async ({ page }) => {
+  for (const [url, max] of [['/gesetze/bund/GEBV_SCHKG', 1], ['/gesetze/kanton/ZH-211.11', 0], ['/gesetze/kanton/ZH-215.3', 0]] as const) {
+    test(`${url}: höchstens ${max} Querformat-Seite(n) (schmale Tabellen bleiben im Hochformat)`, async ({ page }) => {
       test.setTimeout(120_000)
       await page.goto(url)
       await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
       await page.evaluate(() => document.fonts?.ready)
       const { quer, seiten } = await querseiten(page)
-      expect(quer, `${quer} von ${seiten} PDF-Seiten im Querformat`).toBe(0)
+      // GebV SchKG: nur Art. 37 (675 px, innerhalb der 10-%-Reserve der Hochformat-Grenze) darf quer stehen, nicht alle 7 Tabellen.
+      expect(quer, `${quer} von ${seiten} PDF-Seiten im Querformat`).toBeLessThanOrEqual(max)
     })
   }
   for (const erlass of ['VVK', 'ZEMIS_V', 'ERV']) {

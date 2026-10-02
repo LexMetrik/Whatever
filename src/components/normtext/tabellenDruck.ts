@@ -27,10 +27,13 @@ const QUER = 750;
 /** Mittlere Zeichenbreite (px) für die Schätzung, Zellrand je Spalte (px-3). */
 const ZEICHEN_PX = 8;
 const RAND_PX = 24;
-/** Korrektur: die Schätzung liegt im Median 16 % unter der gemessenen Mindestbreite. Kalibriert an allen
- *  674 Korpus-Tabellen (3.10.2026, Mindestbreite im Druck gemessen): mit 1.15 sind 58 markiert, davon 6 passen
- *  im Hochformat (Fehlalarm = eine Querformat-Seite zu viel), 2 breite sind verpasst; mit 1.0 wären es 23 verpasste. */
-const KORREKTUR = 1.15;
+/** Korrektur der Schätzung MIT RESERVE (vierte Prüfung #1279: LRV Anh. 3 verlor in der CI unter Linux-Schriften
+ *  Zellen, weil sie mit 1.15 «nicht breit» blieb). Kalibriert an allen 674 Korpus-Tabellen (3.10.2026,
+ *  Mindestbreite im Druck gemessen, Mac-Schriften): die Schätzung liegt im Median 16 % unter der Messung,
+ *  im Extrem (LRV Anh. 3) 31 %. Mit 1.5 ist JEDE Tabelle markiert, deren gemessene Mindestbreite innerhalb von
+ *  10 % der Hochformat-Grenze liegt (0 gefährdete verpasst); markiert sind 169, davon passen 115 auch im
+ *  Hochformat (Fehlalarm = eine Querformat-Seite zu viel, kein Verlust). Lieber ein Fehlalarm als ein Verlust. */
+const KORREKTUR = 1.5;
 
 export type VorabDruck = { breit: boolean; klein: boolean; zoom: number; geschaetzt: number };
 
