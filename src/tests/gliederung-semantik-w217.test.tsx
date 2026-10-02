@@ -18,6 +18,7 @@ import { baueGliederungsModell, type GliederungsModell } from '../pages/gesetz-l
 import { SektionBaumTOC } from '../pages/gesetz-leser/parts/SektionBaumTOC';
 import { leisteAufbau } from '../pages/gesetz-leser/v3/leisteAufbau';
 import { leistenKlappIds, leistenKnoten, klappZeile } from '../pages/gesetz-leser/klappKarte';
+import { pruefeAlleZuSperre } from '../pages/gesetz-leser/sprungAst';
 import { baumGanzOffen } from '../pages/gesetz-leser/gliederungsLeiste';
 import type { LeserV3Modell } from '../pages/gesetz-leser/v3/leserV3Modell';
 
@@ -109,7 +110,7 @@ describe('B1 — Verdrahtung der Leisten-Knöpfe (leisteAufbau)', () => {
     p.onAlleAuf();
     expect(m.setTocBaum, 'der Knopf schreibt die Karte nicht mehr selbst').not.toHaveBeenCalled();
     expect(m.tocToggleGruppe).toHaveBeenCalledTimes(1);
-    expect(m.tocToggleGruppe).toHaveBeenCalledWith(leistenKlappIds(g), false);
+    expect(m.tocToggleGruppe).toHaveBeenCalledWith(leistenKlappIds(g), false, false);
   });
 
   it('B1-B04: «alles zu» (alles offen) übergibt den sichtbaren Zustand «offen» — Ziel: zu, in die Zu-Buchhaltung', () => {
@@ -118,7 +119,7 @@ describe('B1 — Verdrahtung der Leisten-Knöpfe (leisteAufbau)', () => {
     const { m, p } = leiste('OR', alleOffen);
     expect(p.alleOffen).toBe(true);
     p.onAlleZu();
-    expect(m.tocToggleGruppe).toHaveBeenCalledWith(leistenKlappIds(g), true);
+    expect(m.tocToggleGruppe).toHaveBeenCalledWith(leistenKlappIds(g), true, true); // 3. Parameter: Sperre bis Abschnittswechsel
   });
 
   it('B1-B03/B04: die Beschriftung folgt dem SICHTBAREN — EMRK-Anhang startet offen, der Knopf heisst «alles zu»', () => {
@@ -160,5 +161,28 @@ describe('B1 — Verdrahtung der Leisten-Knöpfe (leisteAufbau)', () => {
     spalte.p.onAnfang();
     expect(spalte.m.zumAnfang).toHaveBeenCalledTimes(1);
     expect(spalte.m.setTocAuf).not.toHaveBeenCalled();
+  });
+});
+
+// ═══ B1-B04 · «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel ═
+describe('B1-B04 — «alles zu»-Sperre endet beim Abschnittswechsel (Entscheid 2.10.2026)', () => {
+  it('derselbe Pfad: Sperre bleibt, manuellZu unverändert', () => {
+    const zu = new Set(['sek-1', 'sek-2']);
+    const sperre = { pfad: ['sek-1', 'sek-2'], ids: ['sek-1', 'sek-2', 'sek-9'] };
+    expect(pruefeAlleZuSperre(sperre, ['sek-1', 'sek-2'], zu)).toBe(sperre);
+    expect([...zu]).toEqual(['sek-1', 'sek-2']);
+  });
+
+  it('anderer Abschnitt: Sperre fällt, ihre Ids verlassen manuellZu (der Spy folgt wieder)', () => {
+    const zu = new Set(['sek-1', 'sek-2', 'sek-9', 'eigen']); // «eigen» = ein Pfeil-Klick, bleibt
+    const sperre = { pfad: ['sek-1', 'sek-2'], ids: ['sek-1', 'sek-2', 'sek-9'] };
+    expect(pruefeAlleZuSperre(sperre, ['sek-1', 'sek-3'], zu)).toBeNull();
+    expect([...zu]).toEqual(['eigen']);
+  });
+
+  it('keine Sperre: nichts passiert', () => {
+    const zu = new Set(['a']);
+    expect(pruefeAlleZuSperre(null, ['x'], zu)).toBeNull();
+    expect([...zu]).toEqual(['a']);
   });
 });

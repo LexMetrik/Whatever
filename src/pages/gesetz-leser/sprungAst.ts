@@ -69,3 +69,29 @@ export function darfAutoAdoptieren(
 ): boolean {
   return !b.manuellOffen.has(id) && !b.manuellZu.has(id);
 }
+
+/**
+ * «alles zu» hält den Scroll-Spy nur bis zum nächsten ABSCHNITTSWECHSEL zurück
+ * (W2·17-UI-BEFUNDE B1-B04, Entscheid Orchestrator 2.10.2026). Direkt nach dem
+ * Knopf reisst der Spy den gelesenen Ast nicht wieder auf (er steht in
+ * `manuellZu`, wie nach einem Pfeil-Klick); wechselt die Leseposition aber in
+ * einen anderen Abschnitt, folgt die Gliederung wieder wie gewohnt. `pfad` ist
+ * der aktive Pfad im Moment des Knopfs, `ids` die dabei zugeklappten Ids.
+ * Einzelne Pfeil-Klicks bleiben davon unberührt (Entscheid David 26.6.2026, «K»).
+ */
+export interface AlleZuSperre { pfad: readonly string[]; ids: readonly string[] }
+
+/**
+ * Hebt die «alles zu»-Sperre auf, sobald der aktive Pfad ein anderer ist:
+ * nimmt ihre Ids aus `manuellZu` und liefert `null`; sonst die Sperre unverändert.
+ * Rein bis auf die erklärte Mutation von `manuellZu` (§2).
+ */
+export function pruefeAlleZuSperre(
+  sperre: AlleZuSperre | null, aktivIds: readonly string[], manuellZu: Set<string>,
+): AlleZuSperre | null {
+  if (!sperre) return null;
+  const gleich = sperre.pfad.length === aktivIds.length && sperre.pfad.every((id, i) => id === aktivIds[i]);
+  if (gleich) return sperre;
+  for (const id of sperre.ids) manuellZu.delete(id);
+  return null;
+}

@@ -26,7 +26,7 @@ import { ladeNormFixture } from './fixtures/normtext-fixture';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { pfadZu } from '../pages/gesetz-leser/helpers';
 import {
-  oeffneSprungZiel, setzeAlle, alleKlappIds, klappZeile, mitlaufenKarte, artikelSchluessel,
+  oeffneSprungZiel, alleKlappIds, klappZeile, mitlaufenKarte, artikelSchluessel,
 } from '../pages/gesetz-leser/klappKarte';
 import {
   baueGliederungsModell, flacheZeilen, zeilenAnsicht, uebersetzeRohPfad,
@@ -98,7 +98,7 @@ describe('W2·5m-LESER-V3 — Zustandsfolgen der Klapp-Karte (alle Bundeserlasse
     ['Mitlaufen → Klick-Öffnen → «alles zu» → Mitlaufen', (f) => {
       const o0 = mitlaufen({}, f.pfad);
       const o1 = klappZeile(o0, f.zeile.ids, zeilenAnsicht(f.zeile, o0, f.m.startOffeneTiefe).auf);
-      return mitlaufen(setzeAlle(o1, alleKlappIds(f.m.knoten), false), f.pfad);
+      return mitlaufen(klappZeile(o1, alleKlappIds(f.m.knoten), true), f.pfad);
     }],
     // Härtester Fall: der Spy kennt die Klick-Schliessung NICHT (leeres manuellZu).
     ['Mitlaufen → Klick-Öffnen → Klick-Zu → Mitlaufen', (f) => {
@@ -121,10 +121,10 @@ describe('W2·5m-LESER-V3 — Zustandsfolgen der Klapp-Karte (alle Bundeserlasse
     for (const key of PFLICHT) {
       const m = lade(key);
       const ids = alleKlappIds(m.knoten);
-      const alles = setzeAlle({}, ids, true);
+      const alles = klappZeile({}, ids, false);
       const schliesser: Array<[string, Karte]> = [
         ['Auto-Zu', autoZu(alles, ids)],
-        ['alles zu', setzeAlle(alles, ids, false)],
+        ['alles zu', klappZeile(alles, ids, true)],
         ['Klick-Zu', flacheZeilen(m.knoten).reduce<Karte>((o, k) => (k.kinder.length ? klappZeile(o, k.ids, true) : o), alles)],
       ];
       for (const [name, o] of schliesser) {

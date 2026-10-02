@@ -48,9 +48,10 @@ export function leisteAufbau(m: LeserV3Modell, bestimmungsWort: BestimmungsWort,
   // B1-B03: vom Spy geöffnete Äste blieben im Auto-Lager und klappten nach
   // «alles auf» beim Weiterlesen wieder zu; B1-B04: nach «alles zu» riss der Spy
   // den gelesenen Ast beim nächsten Schritt wieder auf (er kannte die
-  // Zuklappung nicht). `klappZeile` über alle Ids ist dieselbe Karten-Änderung
-  // wie `setzeAlle` (Wächter gliederung-befunde-w217).
-  const umschalten = () => m.tocToggleGruppe(ids, alle);
+  // Zuklappung nicht). `klappZeile` über alle Ids ist dieselbe Karten-Änderung,
+  // die der entfallene `setzeAlle` schrieb.
+  // Dritter Parameter: «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel.
+  const umschalten = () => m.tocToggleGruppe(ids, alle, alle);
   return (
     <LeserSeitenleiste
       uebersicht={<LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}

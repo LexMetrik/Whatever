@@ -93,27 +93,10 @@ export function leistenKnoten<K extends { art: GliederungsKnoten['art'] }>(
 }
 
 /**
- * «alles auf» / «alles zu» über alle Zeilen mit Kindern — «alles» heisst bis
- * zur Artikel-Ebene (Knopf-Titel «Alle Gliederungsstufen aufklappen»; ein
- * «alles auf», nach dem jede unterste Zeile noch einmal geklickt werden
- * muss, sagte etwas anderes als es tat, §8). §15: korpusweit kostet das wenig
- * — OR 2'181 → 2'296 Zeilen, ZGB 1'637 → 1'708 (die grössten Bäume sind
- * schon artikel-granular); StPO 156 → 636 ist der grösste relative Zuwachs.
- */
-export function setzeAlle(
-  offen: Record<string, boolean>, zeilenIds: readonly string[], ziel: boolean,
-): Record<string, boolean> {
-  if (!ziel) return schliesseZeilen(offen, zeilenIds);
-  const n = { ...offen };
-  for (const id of zeilenIds) { n[id] = true; n[artikelSchluessel(id)] = true; }
-  return n;
-}
-
-/**
  * DIE Schliess-Regel der Klapp-Karte (W2·5m-LESER-V3, Code-Zweitblick PR #924):
  * wird eine Zeile geschlossen — gleich über welchen Pfad —, ist auch ihre
  * Artikel-Ebene geschlossen. Alle Schliesser laufen hierüber: Chevron
- * (`klappZeile`), «alles zu» (`setzeAlle`), Auto-Zuklappen (`mitlaufenKarte`).
+ * (`klappZeile`), «alles zu» (`klappZeile` über alle Ids), Auto-Zuklappen (`mitlaufenKarte`).
  *
  * WARUM. Bis hierher setzte das Auto-Zuklappen nur `<id>=false`; ein vom
  * Tieflink gesetztes `art@<id>` blieb liegen, und das nächste Mitlaufen
@@ -140,12 +123,6 @@ function schliesseZeilen(offen: Record<string, boolean>, ids: readonly string[])
   const n = { ...offen };
   for (const id of ids) schliesseInKopie(n, id, false);
   return n;
-}
-
-/** Steht alles offen — samt Artikel-Ebene? (Beschriftung des Knopfs «alles auf/zu».) */
-export function alleOffen(offen: Record<string, boolean>, zeilenIds: readonly string[]): boolean {
-  return zeilenIds.length > 0
-    && zeilenIds.every((id) => offen[id] === true && offen[artikelSchluessel(id)] === true);
 }
 
 /**

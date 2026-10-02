@@ -18,6 +18,7 @@ import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gli
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, markeInsSichtband, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import { darfAutoAdoptieren } from './sprungAst';
 import { mitlaufenKarte } from './klappKarte';
+import { NAVIGATION } from './parts/leserTastaturBelegung';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
@@ -722,12 +723,18 @@ export function useLeserSprungSpy(opts: {
     // unarmiert (kein `pointerdown`), der Nudge schob den Scroller nach dem
     // Umschalten zur Marke zurück — der fokussierte Pfeil sprang unter dem
     // Finger weg (gemessen OR: Scroller 0 → 198 px, Pfeil 277 → 80 px).
-    cont.addEventListener('keydown', merke, { passive: true });
+    // NICHT die Navigations-Tasten des Lesers (j/k/t/r/←/→, `NAVIGATION` — die EINE Liste,
+    // §5): mit dem Fokus auf einem Baum-Link bewegen sie den LESETEXT, und die Gliederung
+    // soll dabei mitlaufen. Jeder Druck hätte die 1,5-s-Sperre neu gescharft (OR @1440:
+    // aktiver Eintrag 0 von 5 sichtbar). Enter, Leertaste, Tab & Co. klappen/fokussieren
+    // IN der Gliederung — die armieren.
+    const merkeTaste = (ev: KeyboardEvent) => { if (!NAVIGATION.has(ev.key)) merke(); };
+    cont.addEventListener('keydown', merkeTaste, { passive: true });
     return () => {
       cont.removeEventListener('wheel', merke);
       cont.removeEventListener('pointerdown', merke);
       cont.removeEventListener('touchstart', merke);
-      cont.removeEventListener('keydown', merke);
+      cont.removeEventListener('keydown', merkeTaste);
     };
     // tocTouchRef ist ein stabiler Ref; Deps byte-identisch zum früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps

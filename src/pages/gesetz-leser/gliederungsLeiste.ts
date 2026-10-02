@@ -10,7 +10,7 @@ import { zeilenAnsicht, type GliederungsKnoten } from './gliederungsModell';
  * Aus dem SICHTBAREN abgeleitet (`zeilenAnsicht`), nicht aus der Klapp-Karte: eine
  * Zeile, die das Modell offen startet (`startOffen`/`startOffeneTiefe` — der
  * Anhang-Ast in B2/B4, B1 offen), hat keinen Karten-Eintrag. Die Karten-Prüfung
- * (`alleOffen`, `./klappKarte`) las dort «nicht offen»: der Knopf hiess «alles
+ * (`alleOffen` in `./klappKarte`, seither entfallen) las dort «nicht offen»: der Knopf hiess «alles
  * auf», obwohl alles zu sehen war, und sein erster Klick änderte nur die
  * Beschriftung (EMRK-Anhang). Jede Zeile mit Kindern muss offen sein UND ALLE
  * ihre Kinder zeigen (die Artikel-Ebene eingeschlossen); eine zu bricht ab —

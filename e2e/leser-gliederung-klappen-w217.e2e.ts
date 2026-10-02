@@ -8,7 +8,10 @@
 //      fokussierter Pfeil 277 → 80 px. ROT: `keydown` aus der Guard-Liste in
 //      `inhalt-hooks.tsx` streichen.
 //  (b) B1-B04 — nach «alles zu» riss der Scroll-Spy den gelesenen Ast beim
-//      nächsten Schritt wieder auf (der Knopf buchte die Zuklappung nicht).
+//      nächsten Schritt wieder auf (der Knopf buchte die Zuklappung nicht); die
+//      Sperre gilt nur bis zum nächsten Abschnittswechsel (Entscheid 2.10.2026).
+//  (g) F1 — j/k mit Fokus im Baum schärften den keydown-Guard neu: die Gliederung
+//      lief nicht mehr mit. ROT: `NAVIGATION`-Ausnahme in `inhalt-hooks.tsx` streichen.
 //      ROT: in `leisteAufbau.tsx` «alles auf/zu» wieder direkt über `setTocBaum`.
 //  (c) B1-B03 — nach «alles auf» nahm das Auto-Zuklappen die vom Spy zuvor
 //      geöffneten Äste beim Weiterlesen wieder zurück. Gleicher Weg zu rot.
@@ -73,17 +76,47 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
     expect(Math.abs(nachher.y - vorher.y), `der Pfeil sprang von ${vorher.y} auf ${nachher.y}`).toBeLessThanOrEqual(2)
   })
 
-  test('(b) nach «alles zu» öffnet der Scroll-Spy keinen Ast von selbst', async ({ page }) => {
+  test('(b) nach «alles zu» öffnet der Spy den gelesenen Ast nicht — bis zum nächsten Abschnittswechsel', async ({ page }) => {
+    await zuArtikel(page, 300) // der Spy öffnet den gelesenen Pfad von selbst
     const alle = page.locator('[data-v3-alle]')
     await alle.click()
     await expect(alle).toContainText('alles zu')
     await alle.click()
     await expect(alle).toContainText('alles auf')
     expect(await offenePfeile(page), 'Vorbedingung: alles zu').toBe(0)
-    await zuArtikel(page, 300)
-    await zuArtikel(page, 600)
+    // Gleicher Abschnitt (Art. 300–304, Pacht): der Spy reisst den Ast NICHT wieder auf (B1-B04).
+    for (const nr of [301, 302, 303]) await zuArtikel(page, nr)
     await page.waitForTimeout(900)
-    expect(await offenePfeile(page), 'der Spy hat nach «alles zu» einen Ast aufgerissen').toBe(0)
+    expect(await offenePfeile(page), 'der Spy hat nach «alles zu» denselben Ast wieder aufgerissen').toBe(0)
+    // Anderer Abschnitt: die Gliederung folgt wieder wie gewohnt (Entscheid 2.10.2026).
+    await zuArtikel(page, 700)
+    await expect.poll(() => offenePfeile(page), { timeout: 8000, message: 'die Gliederung folgt dem neuen Abschnitt nicht' })
+      .toBeGreaterThan(0)
+  })
+
+  test('(g) j/k mit dem Fokus auf einem Baum-Link: der Gliederungs-Spy läuft weiter mit', async ({ page }) => {
+    // Alles offen, gelesen wird weit unten: ohne Nachführen läge die Marke bald ausserhalb des Sichtbands.
+    const alle = page.locator('[data-v3-alle]')
+    await alle.click()
+    await expect(alle).toContainText('alles zu')
+    await zuArtikel(page, 100)
+    const marke = page.locator(`${baum} [data-toc-aktiv]`)
+    await expect(marke).toHaveCount(1, { timeout: 10000 })
+    await marke.focus()
+    await expect(marke).toBeFocused()
+    // Viele Schritte am Stück: jede Taste ist «Tastatur in der Gliederung», aber j/k bedienen den
+    // LESETEXT (leserTastaturBelegung.NAVIGATION) — sie dürfen die Nachführ-Sperre nicht neu schärfen.
+    for (let i = 0; i < 40; i++) { await page.keyboard.press('j'); await page.waitForTimeout(25) }
+    await page.waitForTimeout(1000) // < 1,5 s Sperre: nur ein (fälschlich) scharfer Guard hält den Nudge noch zurück
+    const sicht = await page.evaluate(() => {
+      const t = document.querySelector('[data-toc]') as HTMLElement
+      const m = document.querySelector('[data-toc-baum] [data-toc-aktiv]') as HTMLElement | null
+      if (!m) return { marke: false, im: false }
+      const r = m.getBoundingClientRect(); const c = t.getBoundingClientRect()
+      return { marke: true, im: r.top >= c.top && r.bottom <= c.bottom }
+    })
+    expect(sicht.marke, 'keine aktive Marke nach 40× j').toBe(true)
+    expect(sicht.im, 'der aktive Eintrag liegt nach 40× j ausserhalb des Gliederungs-Sichtbands').toBe(true)
   })
 
   test('(c) nach «alles auf» nimmt das Weiterlesen keinen Ast zurück', async ({ page }) => {
