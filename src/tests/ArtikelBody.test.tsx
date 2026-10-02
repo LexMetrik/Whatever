@@ -582,10 +582,13 @@ const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
  *  (deklarierte Darstellungsänderung, §6.3): die ZEHN [voll]-Hashes sind neu
  *  gezogen, weil `ZitierMarke` die Klasse `lc-zitiermarke` trägt (Druck + Marke
  *  ohne Wortbruch) und die Tabellen-Zellen neue Umbruch-Klassen; die [struktur]-
- *  Hashes (Markup OHNE Klassen) sind unverändert — Text und Aufbau sind gleich. */
+ *  Hashes (Markup ohne Klassen) sind unverändert — Text und Aufbau sind gleich.
+ *  AUSNAHME Fall «T-A Staffel-Spanne» (AHVV Art. 28, 13 Spalten): die Vorab-Markierung für den
+ *  Druck (zweite Gegenprüfung #1279) setzt dort `data-breit` und `--druck-zoom-vorab` — beide
+ *  Hashes dieses Falls sind neu; der Wortlaut ist unverändert (e2e-Sonden). */
 const KERN_ERWARTET: Record<string, [string, string]> = {
   'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
-  'T-A Staffel-Spanne verdichtet (bereich)': ['c3ea45f14030a62c93909480d6846c7619934c9e01ef4941082f987c26e7ce4c', 'ec2a8721ce88f5d6c910a387a13aff7057270edf91f752ce5560d3b97d2005f9'],
+  'T-A Staffel-Spanne verdichtet (bereich)': ['ebf3fb58723c22e4ba46a98863f05f14762f7b85dfa033974db50326b3c930df', 'f2cd0ac7f0ff74c40b14b1b6377327c1f3f9593a0b4487f478435aa6a9fee62b'],
   'T-B mehrspaltig, ≥3 Zahlspalten': ['c55cd15c7390af3dba68455decdc80b1ea50ef18368938126eda96113399888b', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
   'T-C Einzel-Leerzelle bleibt (T-C7)': ['19821352e368b4951759e9ad3690dd7bc063e6c0a983d09b240eff4ca652d72a', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
   'T-D kopflos (T-D6)': ['6b6dcc9dd3f6a42568839a4c88c50bc10bfbc1529aefa647b854b97d5ca16860', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],

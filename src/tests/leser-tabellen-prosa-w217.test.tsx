@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { ArtikelBody } from '../components/normtext/ArtikelBody';
@@ -45,6 +46,60 @@ describe('Zifferngruppen sind untrennbar, der Text bleibt gleich', () => {
     const out = render({ spalten: [{ typ: 'text', titel: 'A' }, { typ: 'text', titel: 'B' }], zeilen: [['x', z]] });
     expect(out).toContain('<span class="whitespace-nowrap">Fr. 1 000</span>');
     expect(out.replace(/<[^>]*>/g, '')).toContain(z);
+  });
+});
+
+describe('Kopfzellen laufen durch dieselbe Zifferngruppen-Regel (zweite Gegenprüfung #1279)', () => {
+  const kopf = 'Versicherungsprämie CHF 3000 pro Jahr [bzw. «Einmaleinlage CHF 60 000.–»]';
+  it('kanonisch: «60 000» in der Kopfzelle ist nowrap, textContent gleich', () => {
+    const out = render({ spalten: [{ typ: 'text', titel: kopf }, { typ: 'text', titel: 'B' }], zeilen: [['x', 'y']] });
+    expect(out).toContain('<span class="whitespace-nowrap">60 000</span>');
+    expect(out.replace(/<[^>]*>/g, '')).toContain(kopf);
+  });
+  it('Legacy: dasselbe', () => {
+    const out = render({ kopf: [kopf, 'B'], zeilen: [['x', 'y']] });
+    expect(out).toContain('<span class="whitespace-nowrap">60 000</span>');
+  });
+});
+
+describe('Vorab-Markierung für den Druck steht im Render-Markup (kein Ereignis nötig)', () => {
+  const viele = (n: number) => ({
+    kopf: Array.from({ length: n }, (_, i) => `Spalte ${i}`),
+    zeilen: [Array.from({ length: n }, () => 'Kennzahlbezeichnung')],
+  });
+  it('13 Spalten mit Textzellen → data-breit und --druck-zoom-vorab', () => {
+    const out = render(viele(13));
+    expect(out).toMatch(/data-mehrspaltig="" data-breit="" style="--druck-zoom-vorab:0\.\d+/);
+  });
+  it('kleine Tabelle → kein data-breit', () => {
+    expect(render({ kopf: ['A', 'B'], zeilen: [['bis 1 000', '25.–']] })).not.toContain('data-breit');
+  });
+  it('kanonisch: 12 Textspalten mit langen Wörtern → data-breit', () => {
+    const spalten = Array.from({ length: 12 }, (_, i) => ({ typ: 'text' as const, titel: `Bezeichnung ${i}` }));
+    const out = render({ spalten, zeilen: [spalten.map(() => 'Kennzahlbezeichnung')] });
+    expect(out).toContain('data-breit=""');
+  });
+});
+
+describe('Vorab-Markierung an den echten Korpus-Tabellen (Render-Markup, kein Ereignis)', () => {
+  type Eintrag = { artikel?: string; bloecke?: NormSnapshot['bloecke'] };
+  const tabelle = (datei: string, artikel: string, enthaelt: string) => {
+    const d = JSON.parse(readFileSync(`public/normtext/${datei}.json`, 'utf8')) as { eintraege: Eintrag[] };
+    const e = d.eintraege.find((x) => x.artikel === artikel);
+    const b = e?.bloecke?.find((x) => x.mehrspaltig && JSON.stringify(x.mehrspaltig).includes(enthaelt));
+    if (!b?.mehrspaltig) throw new Error(`${datei} ${artikel}: Tabelle mit «${enthaelt}» fehlt`);
+    return render(b.mehrspaltig);
+  };
+  it.each([
+    ['VVK Anhang 1 (10 Spalten)', 'bund/VVK', 'annex_u1', 'Blutgruppen'],
+    ['ZEMIS-V Anhang 1 (36 Spalten)', 'bund/ZEMIS_V', 'annex_1', 'Geschlecht'],
+    ['ERV Anhang 2 (11 Spalten)', 'bund/ERV', 'annex_2', 'Zentralregierung'],
+  ])('%s trägt data-breit und --druck-zoom-vorab', (_n, datei, artikel, kennwort) => {
+    expect(tabelle(datei, artikel, kennwort)).toMatch(/data-breit="" style="--druck-zoom-vorab:0\.\d+/);
+  });
+  it('GebV SchKG Art. 37 und ZH-211.11 § 4 bleiben im Hochformat', () => {
+    expect(tabelle('bund/GEBV_SCHKG', '37', 'Restschuld')).not.toContain('data-breit');
+    expect(tabelle('kanton/ZH-211.11', '4', 'Grundgebühr')).not.toContain('data-breit');
   });
 });
 

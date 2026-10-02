@@ -1,6 +1,6 @@
 import type React from 'react';
 import { gruppiereTausender } from '../../lib/normtext/darstellung';
-import { useTabellenDruck } from './tabellenDruck';
+import { useTabellenDruck, vorabDruck } from './tabellenDruck';
 import { KENNZAHL_TITEL, gruppiereZelle, istJahrSpalte, istProsaZelle, teileNachZifferngruppen } from './tarifText';
 
 // Tarif- und Tabellen-KOMPONENTEN des Normtext-Artikels. Aus ArtikelBody.tsx
@@ -42,6 +42,15 @@ export function StaffelTabelle({ zeilen }: { zeilen: string[] }) {
       ))}
     </span>
   );
+}
+
+// Vorab-Markierung für den Druck (tabellenDruck.ts, Stufe 1): `data-breit` und die geschätzte
+// Schrift stehen schon im Render-/Prerender-Markup, damit die Querformat-Regel auch ohne
+// JavaScript und ohne Druck-Ereignis greift.
+function vorabAttribute(v: { breit: boolean; zoom: number }) {
+  return v.breit
+    ? { 'data-breit': '', style: { '--druck-zoom-vorab': String(Math.round(v.zoom * 100) / 100) } as React.CSSProperties }
+    : {};
 }
 
 // Zifferngruppen mit Leerzeichen («Fr. 1 000», «300 000») brechen nie mitten in der Zahl
@@ -112,8 +121,12 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
     `table-cell px-3 py-1.5 leading-snug align-baseline${rechts(typ) ? ' text-right lc-ziffern' : ''}${
       (istProsaZelle(zelle) && typ === 'text') || kopfZeile ? ' lc-zelltext' : ' whitespace-nowrap'
     }${kopfZeile || rechts(typ) ? ' font-medium text-ink-800' : ' text-ink-700'}`;
+  const vorab = vorabDruck(spalten.map((sp, ci) => [
+    { text: sp.titel, umbrechbar: true },
+    ...zeilen.map((z) => ({ text: z[ci] ?? '', umbrechbar: istProsaZelle(z[ci] ?? '') && sp.typ === 'text' })),
+  ]));
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
+    <span data-mehrspaltig="" {...vorabAttribute(vorab)} tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
       {/* ARIA-Tabellen-Semantik auf den display:table-Spans; je Datenzeile genau
           N cell zu N columnheader (folgt aus T-B2). Echtes <table> ist im
           Phrasing-/<p>-Kontext nicht möglich. */}
@@ -121,7 +134,7 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
         {hatKopf && (
           <span role="row" className="table-row bg-paper-sunken/40">
             {spalten.map((s, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(s.typ, true, s.titel)}>{s.titel}</span>
+              <span key={ci} role="columnheader" className={zelleCls(s.typ, true, s.titel)}>{zelleText(s.titel)}</span>
             ))}
           </span>
         )}
@@ -221,13 +234,23 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
         ? ' min-w-[9rem] lc-wortumbruch'
         : istProsaZelle(zelle) || kopfZeile ? ' lc-zelltext' : ' whitespace-nowrap'
     }${kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'}`;
+  const vorab = vorabDruck(Array.from({ length: spalten }, (_, ci) => {
+    if (leereSpalte[ci]) return [];
+    const zellen = zeilen.map((z) => {
+      const t = z[ci] ?? '';
+      // Beschriftungsspalte: mindestens 9 rem (144 px), angesetzt als 18 Zeichen einzeilig.
+      if (ci === 0 && !spalteNumerisch[ci] && t.trim().length > LABEL_AB) return { text: 'x'.repeat(18), umbrechbar: false };
+      return { text: t, umbrechbar: istProsaZelle(t) };
+    });
+    return [{ text: kopf?.[ci] ?? '', umbrechbar: true }, ...zellen];
+  }));
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
+    <span data-mehrspaltig="" {...vorabAttribute(vorab)} tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
       <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full">
         {kopf && kopf.length > 0 && (
           <span role="row" className="table-row bg-paper-sunken/40">
             {padZeile(kopf).map((h, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(ci, true, h)}>{h}</span>
+              <span key={ci} role="columnheader" className={zelleCls(ci, true, h)}>{zelleText(h)}</span>
             ))}
           </span>
         )}

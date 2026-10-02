@@ -2155,7 +2155,7 @@
     [data-mehrspaltig] { max-width: 100%; }
     /* `zoom` sitzt am Tabellenkörper, nicht am Kasten: am Kasten würde es auch dessen
        Breite und den Ausbruch (`data-breit`) mitskalieren. */
-    [data-mehrspaltig] > [role='table'] { zoom: var(--druck-zoom, .8); }
+    [data-mehrspaltig] > [role='table'] { zoom: var(--druck-zoom, var(--druck-zoom-vorab, .8)); }
     [data-mehrspaltig] [role='cell'], [data-mehrspaltig] [role='columnheader'] { min-width: 0 !important; hyphens: manual; }
     /* Prosa bricht nur zwischen Wörtern; ein Wort reisst nie (Gegenprüfung #1279,
        ZH-211.11 § 4: «übers⏎teigend⏎en»). Reicht die Breite nicht, entscheidet
@@ -2173,7 +2173,7 @@
     /* Bleibt trotz Querformat und kleinster Schrift etwas abgeschnitten, sagt der
        Ausdruck es (§8: Unsicherheit offenlegen, nie still kürzen). */
     [data-mehrspaltig][data-gekuerzt]::before {
-      content: 'Tabelle im Druck sehr klein und möglicherweise gekürzt – vollständig: ' attr(data-permalink);
+      content: 'Tabelle im Druck stark verkleinert oder gekürzt – vollständig und lesbar: ' attr(data-permalink);
       display: block; padding: .25em .5em; border-bottom: 1px solid currentColor; overflow-wrap: anywhere;
     }
     [data-mehrspaltig] [role='table'] { max-width: 100%; }

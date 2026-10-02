@@ -140,7 +140,7 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
   // Gegenprüfung #1279 (§1/§8): in diesen neun Erlassen ragten Tabellen im Hochformat über
   // die Seite (FINFRAV-FINMA Anh. 1 0/8, VZV Anh. 3a 0/1, ERV Anh. 2 0/1, VVK 9/42, ZEMIS-V …).
   // Jede Tabelle des Erlasses: alle Zellen in Quellreihenfolge im PDF-Text ODER eine gedruckte
-  // Zeile «Tabelle im Druck sehr klein und möglicherweise gekürzt – vollständig: <Link>» je unvollständiger Tabelle.
+  // Zeile «Tabelle im Druck stark verkleinert und gekürzt – vollständig und lesbar: <Link>» je unvollständiger Tabelle.
   // BOEB/FIDLEV/SSV tragen ausserdem die `overflow-x-clip`-Regel (Kasten schnitt im Druck ab).
   for (const erlass of ['BOEB', 'FIDLEV', 'SSV', 'FINFRAV', 'FINFRAV_FINMA', 'ERV', 'VVK', 'VZV', 'ZEMIS_V']) {
     test(`${erlass}: jede Tabellenzelle steht im PDF oder der Kürzungs-Hinweis`, async ({ page }) => {
@@ -165,7 +165,7 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
       // Bindestrich-Varianten (U+2010–2015, U+2212) und Soft-Hyphen: pdfjs liefert sie als «-» bzw. gar nicht.
       const kompakt = (s: string) => s.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\s'\u2019\u00ad]+/g, '')
       const flach = kompakt(text)
-      const hinweise = (text.match(/Tabelle im Druck sehr klein/g) ?? []).length
+      const hinweise = (text.match(/Tabelle im Druck stark verkleinert/g) ?? []).length
       // Reihenfolge-unabhängig (Querformat-Seiten und Zoom ändern die Malreihenfolge): jede Zelle
       // muss im PDF mindestens so oft vorkommen, wie sie in den Tabellen des Erlasses steht.
       const vorkommen = (heu: string, nadel: string) => { let n = 0; for (let k = heu.indexOf(nadel); k >= 0; k = heu.indexOf(nadel, k + 1)) n++; return n }
@@ -186,6 +186,9 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
       }
       console.log(`${erlass}: ${tabellen.length} Tabellen, ${unvollstaendig.length} Zelltexte zu selten, ${hinweise} Kürzungs-Hinweise, ${doc.numPages} Seiten`)
       expect(hinweise > 0 ? [] : unvollstaendig, 'Zellen fehlen im PDF und kein Kürzungs-Hinweis steht da').toEqual([])
+      // Zweite Gegenprüfung #1279 (§8): ZEMIS-V (36 Spalten) und VVK stehen bei ~4 pt im PDF —
+      // vollständig, aber praktisch unlesbar; der Ausdruck sagt es und verweist auf die Seite.
+      if (erlass === 'ZEMIS_V' || erlass === 'VVK') expect(hinweise, 'unlesbar kleine Tabelle ohne Hinweis').toBeGreaterThan(0)
     })
   }
 })
@@ -199,6 +202,8 @@ test.describe('W2·17 · Zahlen und Wörter in Tabellenzellen reissen nie ausein
     ['ZH-215.3 § 4', '/gesetze/kanton/ZH-215.3', 'art-4'],
     ['BE-168.811 Art. 5', '/gesetze/kanton/BE-168.811', 'art-5'],
     ['ZH-211.11 § 4', '/gesetze/kanton/ZH-211.11', 'art-4'],
+    // Kopfzelle: «… [bzw. «Einmaleinlage CHF 60 000.–»]» brach als «60 ⏎ 000.–» (zweite Gegenprüfung #1279).
+    ['AVO Anhang 4 (Kopfzelle)', '/gesetze/bund/AVO', 'art-annex_4'],
   ] as const
   for (const [name, url, anker] of FAELLE) {
     for (const [modus, breite] of [['Bildschirm', 375], ['Bildschirm', 1440], ['Druck', 673]] as const) {
@@ -211,7 +216,7 @@ test.describe('W2·17 · Zahlen und Wörter in Tabellenzellen reissen nie ausein
         const m = await page.evaluate((id) => {
           const gerissen: string[] = []
           let geprueft = 0
-          for (const c of document.querySelectorAll(`#${id} [data-mehrspaltig] [role="cell"]`)) {
+          for (const c of document.querySelectorAll(`#${id} [data-mehrspaltig] [role="cell"], #${id} [data-mehrspaltig] [role="columnheader"]`)) {
             const knoten: { n: Text; start: number }[] = []
             const w = document.createTreeWalker(c, NodeFilter.SHOW_TEXT)
             let text = ''
@@ -236,6 +241,59 @@ test.describe('W2·17 · Zahlen und Wörter in Tabellenzellen reissen nie ausein
       })
     }
   }
+})
+
+test.describe('W2·17 · Druck ohne Ereignis: Vorab-Markierung im Markup und beforeprint', () => {
+  // Zweite Gegenprüfung #1279 (§8): die Querformat-Regel hing allein am `change`-Ereignis von
+  // matchMedia('print'). Jetzt steht `data-breit` für extreme Tabellen schon im Prerender-Markup
+  // (Stufe 1) und `beforeprint` löst die Nachmessung ebenfalls aus (Stufe 2).
+  for (const erlass of ['VVK', 'ZEMIS_V', 'ERV']) {
+    test(`${erlass}: Querformat-Seiten im PDF, auch wenn KEIN Druck-Ereignis die Nachmessung auslöst`, async ({ page }) => {
+      test.setTimeout(180_000)
+      // Die Druck-Listener werden blockiert: nur die Vorab-Markierung aus dem Render-Markup bleibt.
+      await page.addInitScript(() => {
+        const orig = window.addEventListener.bind(window)
+        window.addEventListener = ((t: string, ...a: unknown[]) =>
+          (t === 'beforeprint' || t === 'afterprint' ? undefined : (orig as (...x: unknown[]) => void)(t, ...a))) as typeof window.addEventListener
+        MediaQueryList.prototype.addEventListener = () => undefined
+      })
+      await page.goto(`/gesetze/bund/${erlass}`)
+      await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
+      await page.evaluate(() => document.fonts?.ready)
+      expect(await page.locator('[data-mehrspaltig][data-breit]:not([data-breit-dyn])').count(), 'kein vorab gesetztes data-breit im Render-Markup').toBeGreaterThan(0)
+      const buf = await page.pdf({ format: 'A4', preferCSSPageSize: true })
+      const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
+      const doc = await pdfjs.getDocument({ data: new Uint8Array(buf), useSystemFonts: true }).promise
+      let quer = 0
+      for (let i = 1; i <= doc.numPages; i++) {
+        const vp = (await doc.getPage(i)).getViewport({ scale: 1 })
+        if (vp.width > vp.height) quer++
+      }
+      expect(quer, 'ohne Ereignis keine Querformat-Seite im PDF').toBeGreaterThan(0)
+    })
+  }
+
+  test('GebV SchKG Art. 37 und ZH-211.11 § 4 sind nicht vorab als breit markiert', async ({ page }) => {
+    await page.goto(ERLASS_GEBV)
+    await expect(page.locator('[data-mehrspaltig]', { hasText: 'Restschuld' })).toBeAttached({ timeout: 20_000 })
+    const gebv = await page.locator('[data-mehrspaltig][data-breit]:not([data-breit-dyn])', { hasText: 'Restschuld' }).count()
+    await page.goto(ERLASS_ZH)
+    await expect(page.locator('[data-mehrspaltig]', { hasText: 'Grundgebühr' })).toBeAttached({ timeout: 20_000 })
+    const zh = await page.locator('[data-mehrspaltig][data-breit]:not([data-breit-dyn])', { hasText: 'Grundgebühr' }).count()
+    expect({ gebv, zh }).toEqual({ gebv: 0, zh: 0 })
+  })
+
+  test('beforeprint (ohne matchMedia-Wechsel) markiert unlesbar kleine Tabellen, afterprint setzt zurück', async ({ page }) => {
+    test.slow()
+    await page.goto('/gesetze/bund/ZEMIS_V')
+    await expect(page.locator('[data-mehrspaltig]').first()).toBeAttached({ timeout: 20_000 })
+    await page.evaluate(() => document.fonts?.ready)
+    await page.waitForTimeout(500) // useEffect hat die Listener gesetzt
+    const vor = await page.evaluate(() => { window.dispatchEvent(new Event('beforeprint')); return document.querySelectorAll('[data-gekuerzt]').length })
+    const nach = await page.evaluate(() => { window.dispatchEvent(new Event('afterprint')); return document.querySelectorAll('[data-gekuerzt]').length })
+    expect(vor, 'beforeprint löst die Nachmessung nicht aus').toBeGreaterThan(0)
+    expect(nach, 'afterprint setzt nicht zurück').toBe(0)
+  })
 })
 
 test.describe('W2·17 · Druck: Tabellen bleiben in der Satzspiegel-Breite', () => {
