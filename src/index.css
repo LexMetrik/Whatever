@@ -2161,15 +2161,14 @@
        ZH-211.11 § 4: «übers⏎teigend⏎en»). Reicht die Breite nicht, entscheidet
        `tabellenDruck.ts` (Querformat, kleinere Schrift, Hinweiszeile) — nicht der Umbruch. */
     [data-mehrspaltig] .lc-wortumbruch { overflow-wrap: break-word; }
-    /* Breite Tabellen (`data-breit`, gesetzt von `tabellenDruck.ts` bei `beforeprint`)
-       stehen auf einer Querformat-Seite über die volle Satzspiegelbreite
-       (A4 quer 29.7 cm − 2 × 1.6 cm = 26.5 cm), aus der zentrierten Lesespalte
-       ausgebrochen. Genutzt werden 23 cm: gemessen am PDF (A4 quer, FINFRAV Anh. 1)
-       sitzt die Lesespalte ~12 pt rechts der Seitenmitte und das Papier schneidet bei
-       ~776 pt statt 797 pt — 24.5 cm und 26.5 cm schnitten die letzte Spalte
-       («Zusätzliche Ausführungen») ab. Lesespalte ausgebrochen. */
+    /* Breite Tabellen (`data-breit`: vorab beim Rendern, sonst von `tabellenDruck.ts`)
+       stehen auf einer Querformat-Seite (A4 quer 29.7 cm − 2 × 1.6 cm = 26.5 cm), aus der
+       zentrierten Lesespalte ausgebrochen. Genutzt werden nur 20.5 cm: gemessen am PDF
+       (A4 quer) liegt die Mitte der Lesespalte bei ~459 pt statt 421 pt (Seitenmitte), das
+       Papier schneidet rechts bei ~776 pt — 26.5 cm, 24.5 cm und 23 cm schnitten die
+       letzte Spalte ab (FINFRAV Anh. 1 «Zusätzliche Ausführungen», VVK Spalten 9–10). */
     @page breit { size: A4 landscape; margin: 1.6cm; }
-    [data-mehrspaltig][data-breit] { page: breit; width: 23cm; max-width: none; margin-left: calc(50% - 11.5cm); }
+    [data-mehrspaltig][data-breit] { page: breit; width: 20.5cm; max-width: none; margin-left: calc(50% - 10.25cm); }
     /* Bleibt trotz Querformat und kleinster Schrift etwas abgeschnitten, sagt der
        Ausdruck es (§8: Unsicherheit offenlegen, nie still kürzen). */
     [data-mehrspaltig][data-gekuerzt]::before {

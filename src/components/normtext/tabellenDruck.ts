@@ -23,13 +23,13 @@ import { useEffect } from 'react';
 
 /** Gedruckte Lesespalte A4 hoch (Rand 1.6 cm): gemessen 589 px. */
 const SPALTE_HOCH = 589;
-const MIN_ZOOM = 0.45;
+const MIN_ZOOM = 0.3;
 const BASIS_ZOOM = 0.8;
 /** Unter dieser gedruckten Schriftgrösse (pt) ist die Tabelle praktisch unlesbar: Hinweis. Mit Reserve
  *  angesetzt: Chromium verkleinert beim Druck zusätzlich (ZEMIS-V: errechnet 6.6 pt, im PDF 4.1 pt). */
 const MIN_PT = 8;
-/** Genutzte Breite A4 quer (23 cm ≈ 869 px, siehe `data-breit` in index.css), mit Sicherheitsrand. */
-const QUER = 850;
+/** Genutzte Breite A4 quer (20.5 cm ≈ 775 px, siehe `data-breit` in index.css), mit Sicherheitsrand. */
+const QUER = 750;
 /** Mittlere Zeichenbreite (px) für die Vorab-Schätzung, Zellrand je Spalte (px-3). */
 const ZEICHEN_PX = 8;
 const RAND_PX = 24;
@@ -59,7 +59,7 @@ const breite = (e: Element) => e.getBoundingClientRect().width;
 
 /** Passt der Tabellenkörper in den Kasten? Gemessen am echten Layout (Druck-Stile gelten),
  *  nicht an `min-content`: die Mindestbreite überschätzt (VVK: 2409 px, gedruckt passt sie
- *  bei 45 % in 23 cm). */
+ *  bei kleiner Schrift in die Querformat-Spalte). */
 const passt = (t: HTMLElement, tab: HTMLElement) => breite(tab) <= breite(t) + 1;
 
 function druckZuruecksetzen(): void {

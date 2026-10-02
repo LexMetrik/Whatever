@@ -184,7 +184,7 @@ test.describe('W2·17 · Druck (page.pdf): breite Tabellen stehen vollständig i
         }
         if (ist < soll) unvollstaendig.push(`«${k.slice(0, 30)}» ${ist}/${soll}`)
       }
-      console.log(`${erlass}: ${tabellen.length} Tabellen, ${unvollstaendig.length} Zelltexte zu selten, ${hinweise} Kürzungs-Hinweise, ${doc.numPages} Seiten`)
+      console.log(`${erlass}: ${tabellen.length} Tabellen, ${unvollstaendig.length} Zelltexte zu selten, ${hinweise} Kürzungs-Hinweise, ${doc.numPages} Seiten ${unvollstaendig.slice(0, 3).join(" ; ")}`)
       expect(hinweise > 0 ? [] : unvollstaendig, 'Zellen fehlen im PDF und kein Kürzungs-Hinweis steht da').toEqual([])
       // Zweite Gegenprüfung #1279 (§8): ZEMIS-V (36 Spalten) und VVK stehen bei ~4 pt im PDF —
       // vollständig, aber praktisch unlesbar; der Ausdruck sagt es und verweist auf die Seite.
