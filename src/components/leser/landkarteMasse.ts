@@ -107,3 +107,71 @@ export function markenBreite(anzahl: number): number {
   return voll * 0.45;
 }
 
+// ─── PE-B12-B01 · WO EIN KLICK TRIFFT: DIE GEZEICHNETE MARKE, NICHT IHR FELD ──
+//
+// BEFUND (W2·17-UI-BEFUNDE, gemessen 2.10.2026 auf `/gesetze/bund/OR` mit
+// «Kündigung», 1440×900): ein Klick in die MITTE einer Marke sprang zu einem
+// ANDEREN Artikel — Art. 255 → Art. 257d, Art. 266g → Art. 267, Art. 318 →
+// Art. 320, Art. 704b → Art. 706 (6 von 6 Proben).
+//
+// URSACHE: der Klick wurde über die FELDER der Spur aufgelöst (`feldBeiAnteil`,
+// echter Textumfang), die Marke aber wird mit `markenHoehe` GEZEICHNET — beim OR
+// mindestens `MARKE_MIN` Einheiten (≈ 2.4 px), während der Artikel nur
+// ≈ 0.2 Einheiten belegt. Die Mitte einer gezeichneten Marke liegt damit
+// ZWEI BIS ZEHN FELDER weiter unten; wer die Marke trifft, löste den Nachbarn
+// aus. Die Trefferfläche muss die GEZEICHNETE Fläche sein (was man sieht, ist,
+// was man trifft), das Feld nur der Rückfall für den Klick ins Leere.
+//
+// Rein und deterministisch (§2). Die Lage ist der Anfang des Bausteins (`von`),
+// die gezeichnete Höhe `markenHoehe` — dieselben zwei Werte, aus denen
+// `TrefferLandkarte` das Rechteck zeichnet (§5, keine zweite Geometrie).
+// Überlappen sich gezeichnete Marken (Ballung, Art. 266/266a/266b), gewinnt die,
+// deren gezeichnete Mitte dem Klick am nächsten liegt; bei Gleichstand die
+// frühere (Dokumentreihenfolge).
+
+/**
+ * Id der Marke, deren GEZEICHNETE Fläche den anteiligen Klickpunkt `anteil`
+ * (0 = Streifenoben, 1 = Streifenunten) enthält — oder `null`, wenn der Klick
+ * zwischen den Marken liegt (dann entscheidet das Feld, `feldBeiAnteil`).
+ */
+export function markeAnAnteil(
+  marken: readonly { id: string; von: number; bis: number }[],
+  anteil: number,
+): string | null {
+  let beste: string | null = null;
+  let abstand = Infinity;
+  for (const m of marken) {
+    const ende = m.von + markenHoehe(m.von, m.bis) / HOEHE;
+    if (anteil < m.von || anteil > ende) continue;
+    const d = Math.abs(anteil - (m.von + ende) / 2);
+    if (d < abstand) { abstand = d; beste = m.id; }
+  }
+  return beste;
+}
+
+// ─── PE-B12-D02 · DIE LESEPOSITION MUSS SICHTBAR SEIN ────────────────────────
+//
+// BEFUND (gemessen 2.10.2026, `/gesetze/bund/OR`, 1440×900): die Leseposition
+// war eine Fläche in `--brass-200` auf `--well` — hell 1.1 : 1 (#E6E4E0 auf
+// #F6F4F0), dunkel 1.4 : 1 (#302E2A auf #131211) — und beim OR nur 2.4–2.8 px
+// hoch (`MARKE_MIN`, der Artikel belegt ≈ 0.2 Einheiten). Eine Anzeige, die man
+// nicht sehen kann, beantwortet «wo stehe ich?» nicht (WCAG 1.4.11, Grafik-
+// Kontrast ≥ 3 : 1; DESIGN-REGLEMENT F2). Seither: dieselbe neutrale Messing-
+// Fläche, dazu eine Kontur in `--brass-500` (hell ≈ 4.2 : 1, dunkel ≈ 6 : 1 auf
+// `--well`) und eine Mindesthöhe von `LESE_MIN` Einheiten (≈ 6 px bei 600 px
+// Streifenhöhe) statt der 4 der Marken — die Registerfarbe der Marken bleibt die
+// einzige Farbe im Streifen (Handschrift 4).
+
+/** Mindesthöhe der Leseposition in Koordinaten-Einheiten (≈ 6 px bei 600 px). */
+export const LESE_MIN = 10;
+
+/**
+ * Das gezeichnete Rechteck der Leseposition: Mindesthöhe `LESE_MIN`, und am
+ * unteren Streifenrand nach OBEN geklemmt statt aus dem Bild ragend (die Höhe
+ * wächst nach unten — ein Artikel am Dokumentende läge sonst teils ausserhalb
+ * des SVG und sähe kürzer aus, als er ist).
+ */
+export function leseRechteck(von: number, bis: number): { y: number; h: number } {
+  const h = Math.min(HOEHE, Math.max(LESE_MIN, (bis - von) * HOEHE));
+  return { y: Math.min(von * HOEHE, HOEHE - h), h };
+}
