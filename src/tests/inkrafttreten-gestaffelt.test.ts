@@ -69,8 +69,8 @@ describe('Fussnoten (Signale a und a2)', () => {
 describe('staffelEntscheid / Zeitleiste — fail-closed', () => {
   const ohneText: ArtikelSicht[] = [art('1', 'Text.')];
 
-  it('erste Konsolidierung VOR dem Ur-Datum ⇒ gestaffelt (SVG: 1959-08-25 < 1960-01-01)', () => {
-    expect(staffelEntscheid({ urDatum: '1960-01-01', zeitleisteErste: '1959-08-25', artikel: ohneText }))
+  it('erste Konsolidierung VOR dem Ur-Datum ⇒ gestaffelt (SVG: 1959-08-25 < 1959-10-01)', () => {
+    expect(staffelEntscheid({ urDatum: '1959-10-01', zeitleisteErste: '1959-08-25', artikel: ohneText }))
       .toEqual({ gestaffelt: true, gestaffeltGrund: ['fedlex-zeitleiste'] });
   });
   it('erste Konsolidierung = Ur-Datum ⇒ nicht gestaffelt (OR)', () => {
@@ -88,7 +88,7 @@ describe('staffelEntscheid / Zeitleiste — fail-closed', () => {
     expect(staffelEntscheid({ urDatum: '1912-01-01', zeitleisteErste: '1912-01-01', artikel: null }).gestaffeltGrund).toEqual(['unbekannt']);
   });
   it('positives Signal verdrängt «unbekannt» (Gründe bleiben sachlich)', () => {
-    const r = staffelEntscheid({ urDatum: '1960-01-01', zeitleisteErste: null, artikel: [art('56', 'Diese Verordnung tritt mit Ausnahme von Artikel 21 am 1. Oktober 1999 in Kraft.')] });
+    const r = staffelEntscheid({ urDatum: '1959-10-01', zeitleisteErste: null, artikel: [art('56', 'Diese Verordnung tritt mit Ausnahme von Artikel 21 am 1. Oktober 1999 in Kraft.')] });
     expect(r.gestaffeltGrund).toEqual(['wortlaut-hauptklausel']);
   });
 

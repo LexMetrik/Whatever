@@ -128,7 +128,7 @@ export async function bundInkrafttreten(
 // ─── Signal D — Fedlex-Zeitleiste ────────────────────────────────────────────
 //
 // Beleg (live 2.10.2026, SPARQL `jolux:isMemberOf <Abstract>` + `dateApplicability`):
-// SVG (Ur-Datum 1960-01-01) hat Konsolidierungen 1959-08-25, 1959-10-01, 1959-11-20,
+// SVG (Ur-Datum 1959-10-01) hat Konsolidierungen 1959-08-25, 1959-10-01, 1959-11-20,
 // 1960-01-01 — die ERSTE liegt VOR dem Ur-Datum, weil einzelne Teile früher in Kraft
 // traten; FINMAG (Ur 2009-01-01) beginnt 2008-02-01. OR (1912-01-01), ZPO
 // (2011-01-01), BV (2000-01-01) beginnen am Ur-Datum ⇒ nicht gestaffelt.
