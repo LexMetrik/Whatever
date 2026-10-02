@@ -5,6 +5,7 @@
 
 import { pfadTeil, erlassVonPfad, materialPfad, type VerlaufManifeste } from './verlaufLabel';
 import { routenEbene } from './normtext/erlassAdresse';
+import { sicherDekodiert } from './sicherDekodieren';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
 
@@ -97,7 +98,7 @@ export function kantonVonPfad(path: string, m: VerlaufManifeste = {}): string | 
 export function artikelLabelVonPfad(path: string): string | null {
   const m = /#art-(.+)$/.exec(path);
   if (!m) return null;
-  const roh = decodeURIComponent(m[1]);
+  const roh = sicherDekodiert(m[1]); // PA-1-B01: kaputtes %-Escape ⇒ null statt Wurf (Reiterleiste)
   if (!roh) return null;
   // M13: Schlusstitel-/UeB-Token «disp_uN_art_<suffix>» tragen den Namespace im
   // Token. Nur die reine Artikel-Nummer anzeigen («Art. 3», «Art. 31–32»),

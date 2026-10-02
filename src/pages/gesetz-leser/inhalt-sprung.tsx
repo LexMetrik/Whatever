@@ -17,6 +17,8 @@ import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
+import type { GliederungsKnoten } from './gliederungsTypen';
+import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -64,6 +66,10 @@ export function useSektionSprung(opts: {
   scrollBeiSuchwechsel?: boolean;
   /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
   umhaengPraefix?: Record<string, string[]>;
+  /** Zeilenbaum des Modells (B7: Tieflink auf einen Artikel ohne Sektion). */
+  knoten?: GliederungsKnoten[];
+  /** Token → Position aller Einträge (Tieflink-Zweig kanonisiert gegen dieselbe Liste wie der Sprung). */
+  artIndex?: ReadonlyMap<string, number>;
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -79,7 +85,7 @@ export function useSektionSprung(opts: {
   const {
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
-    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX,
+    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX, knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -87,7 +93,7 @@ export function useSektionSprung(opts: {
   // dem ersten Bild — er gehört zu den Sprüngen und steht darum hier. Befund,
   // Messreihe und Herleitung: `./v3/tiefLinkZweig`.
   useTiefLinkZweig({
-    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix,
+    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix, knoten, artIndex,
     setTocBaum, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   });
 
@@ -193,7 +199,8 @@ export function useSektionSprung(opts: {
     if (istHashVerbraucht()) return;
     const m = location.hash.match(/^#art-(.+)$/);
     if (!m) return;
-    const token = decodeURIComponent(m[1]);
+    const token = sicherDekodiert(m[1]); // PA-1-B01
+    if (!token) return;
     const id = window.requestAnimationFrame(() => springeZuArtikel(token));
     return () => window.cancelAnimationFrame(id);
   }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
