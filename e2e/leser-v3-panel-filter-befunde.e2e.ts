@@ -128,3 +128,52 @@ test.describe('V3-Panel · Entscheide-Filter — Befunde 1.10.2026', () => {
     expect(await trefferHoehe(aufheben)).toBeGreaterThanOrEqual(24)
   })
 })
+
+// ─── Entscheid David 2.10.2026, Variante A: der Kantonfilter sagt, wenn die Wahl am Artikel nicht wirkt ──
+// Träger wie oben StPO Art. 5 (kantonal nur BS). «ZH» wirkt dort nicht: Chip im Zustand «gewählt, hier
+// ohne Wirkung» (Durchstreichung, nicht Farbe allein) und ein Satz UNTER der Filterzeile, ohne die Klappe
+// zu öffnen. «BS» wirkt: kein Satz, kein Sonderzustand.
+for (const flaeche of [
+  { name: '375 hell', breite: 375, hoehe: 800, farbe: 'light' as const },
+  { name: '375 dunkel', breite: 375, hoehe: 800, farbe: 'dark' as const },
+  { name: '1440 hell', breite: 1440, hoehe: 900, farbe: 'light' as const },
+  { name: '1440 dunkel', breite: 1440, hoehe: 900, farbe: 'dark' as const },
+]) {
+  test.describe(`Kantonfilter-Hinweis @${flaeche.name}`, () => {
+    test.use({ viewport: { width: flaeche.breite, height: flaeche.hoehe }, colorScheme: flaeche.farbe })
+
+    test('ZH an StPO Art. 5: Satz sichtbar, Chip durchgestrichen, Liste unverändert, kein Seitenüberlauf', async ({ page }, info) => {
+      await page.addInitScript(() => {
+        try { localStorage.setItem('lm.leser.optionen', JSON.stringify({ bezugKantone: ['ZH'] })) } catch { /* Speicher gesperrt */ }
+      })
+      await panelOeffnen(page)
+      const satz = panel(page).locator('[data-v3-panel-kanton-hinweis]')
+      await expect(satz).toBeVisible({ timeout: 20_000 })
+      await expect(satz).toHaveText('Kein Entscheid aus ZH zu Art. 5 – angezeigt sind alle Kantone.')
+      // Die kantonalen Entscheide (BS) stehen weiter da — Verhalten bleibt (Variante A).
+      await expect(panel(page).locator('[data-v3-panel-gruppe="kantonal"]').first()).toBeVisible()
+      await klappe(page, 0)
+      const chip = panel(page).locator('[data-bezug-kanton="ZH"]')
+      await expect(chip).toHaveAttribute('data-bezug-kanton-wirkung', 'keine')
+      await expect(chip).toHaveAttribute('aria-pressed', 'true')
+      await expect(chip).toHaveCSS('text-decoration-line', 'line-through')
+      await chip.scrollIntoViewIfNeeded()
+      await info.attach(`kantonfilter-${flaeche.name}`, { body: await page.screenshot(), contentType: 'image/png' })
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+      // Abwählen: Satz und Sonderzustand verschwinden.
+      await chip.click()
+      await expect(satz).toHaveCount(0)
+    })
+
+    test('BS an StPO Art. 5 wirkt: kein Satz, kein Sonderzustand', async ({ page }) => {
+      await page.addInitScript(() => {
+        try { localStorage.setItem('lm.leser.optionen', JSON.stringify({ bezugKantone: ['BS'] })) } catch { /* Speicher gesperrt */ }
+      })
+      await panelOeffnen(page)
+      await expect(panel(page).locator('[data-v3-panel-gruppe="kantonal"]').first()).toBeVisible({ timeout: 20_000 })
+      await expect(panel(page).locator('[data-v3-panel-kanton-hinweis]')).toHaveCount(0)
+      await klappe(page, 0)
+      await expect(panel(page).locator('[data-bezug-kanton="BS"]')).not.toHaveAttribute('data-bezug-kanton-wirkung', /.*/)
+    })
+  })
+}
