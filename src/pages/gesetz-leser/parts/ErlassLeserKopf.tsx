@@ -10,6 +10,7 @@ import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
 import { NormText, type InternRefs } from '../../../components/NormText';
 import { FnRef } from '../../../components/normtext/ArtikelBody';
 import { Datum } from '../../../components/ui/Datum';
+import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { QuellLink } from '../../../components/ui/QuellLink';
 import { SeitenTitel } from '../../../components/ui/SeitenTitel';
 import { LeserKopfGeruest } from '../../../components/layout/LeserKopfGeruest';
@@ -17,6 +18,7 @@ import { erlassKeyVonEli, erlassPfadVonKey } from '../../../lib/normtext/erlassA
 import { fnTextMitLinks, kennungEtikett, KENNUNG_NOWRAP_MAX_ZEICHEN, kopfTitelZeile } from '../helpers';
 import { zukunftsHinweis, type ZukunftsHinweis } from '../zukunftsfassungen';
 import { zaehlWortFuer } from '../v3/erlassWortlaut';
+import type { Teilausfall, TeilausfallTeil } from '../inhalt-zustand';
 
 // ═══ DAS TITELBLATT DES ERLASSES — EINE Komponente für alle Grundarten ═══════
 //
@@ -109,15 +111,31 @@ function Ingress({ kopf, intern }: { kopf: ErlassKopf; intern?: InternRefs }) {
   );
 }
 
+/** Was ausgefallen ist, im Wortlaut der Fläche («a, b und c»). */
+const AUSFALL_NAME: Record<TeilausfallTeil, string> = {
+  fassung: 'Fassungsangaben',
+  luecken: 'Angaben zu nicht erfassten Teilen',
+  struktur: 'Gliederung und Überschriften',
+};
+function ausfallGegenstand(teile: readonly TeilausfallTeil[]): string {
+  const namen = teile.map((t) => AUSFALL_NAME[t]);
+  return namen.length > 1 ? `${namen.slice(0, -1).join(', ')} und ${namen[namen.length - 1]}` : namen[0];
+}
+
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
   aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
-  kennung = null, luecken, teilerfassung, zukunft, ingress = null, intern,
+  kennung = null, luecken, teilerfassung, zukunft, ingress = null, intern, ladeAusfall = null,
 }: {
   erlass: BrowseErlass;
   /** §8 · belegte Fehl-/Teilerfassung (`erlassUebersichtDaten.teilerfassung`),
    *  OHNE Klick sichtbar (Entscheid David 8.8.2026). `undefined` = kein Beleg. */
   teilerfassung?: string;
+  /** BG-02/03/04 · Begleit-Sidecars, die nicht geladen werden konnten
+   *  (Fassungsangaben, Erfassungslücken, Gliederung): der Kopf sagt es, statt
+   *  «nächste Fassung ab …» o. Ä. still wegfallen zu lassen (§8), und bietet
+   *  «Erneut laden» (Hausbaustein `AbrufFehler`). `null` = nichts ausgefallen. */
+  ladeAusfall?: Teilausfall | null;
   /** §8-Nachzug (PR #614): vom §-Parser bewusst ausgelassene Teile dieses
    *  (kantonalen) Erlasses. `undefined` = keine ausgewiesene Lücke → kein Hinweis. */
   luecken?: KantonLueckeEintrag;
@@ -313,6 +331,12 @@ export function ErlassLeserKopf({
               </ul>
             )}
           </div>
+        )}
+        {ladeAusfall && ladeAusfall.teile.length > 0 && (
+          <AbrufFehler
+            gegenstand={ausfallGegenstand(ladeAusfall.teile)} mehrzahl
+            href={erlass.quelleUrl && lebt ? erlass.quelleUrl : undefined}
+            onErneut={ladeAusfall.erneut} daten={{ 'data-leser-teilausfall': ladeAusfall.teile.join(' ') }} />
         )}
         {teilerfassung && (
           <p role="note" data-v3-teilerfassung className="lc-notice text-body-s leading-snug">{teilerfassung}</p>

@@ -87,7 +87,7 @@ export function VorlageArbeitsvertrag() {
     } catch { /* defekter Speicher → Default */ }
     return 'einzel';
   });
-  useEffect(() => { lokalSpeicher.schreib(REGIME_KEY, regime); // Speicher blockiert }, [regime]);
+  useEffect(() => { lokalSpeicher.schreib(REGIME_KEY, regime); }, [regime]); // blockiert → nur Sitzung
 
   const kopf = <VertragstypWahl regime={regime} onWahl={setRegime} />;
   if (regime === 'lehrvertrag') return <VorlageLehrvertrag kopf={kopf} />;

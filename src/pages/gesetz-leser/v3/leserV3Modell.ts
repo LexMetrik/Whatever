@@ -15,7 +15,7 @@ import { baueGliederungsModell, findeSynthPfad, uebersetzeRohPfad, type Gliederu
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
 import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from '../inhalt-hooks';
-import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand, type LeserFehler } from '../inhalt-zustand';
+import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand, type LeserFehler, type Teilausfall } from '../inhalt-zustand';
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
@@ -64,6 +64,9 @@ export interface LeserV3Modell {
   fehler: LeserFehler;
   manifest: ReturnType<typeof useLeserZustand>['manifest'];
   kantonSys: Record<string, KantonSystematik>; kantonLuecken: KantonLueckenMap; // §8-Nachzug PR #614
+  /** BG-02/03/04: Begleit-Sidecars, die nicht geladen werden konnten (Titelblatt
+   *  weist es aus, mit «Erneut laden»). `null` = nichts ausgefallen. */
+  teilausfall: Teilausfall | null;
 
   /** Amtliche Gliederung: voller Baum für die Lesespalte … */
   sektionen: Sektion[];
@@ -213,13 +216,13 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useLeserTocZustand();
   const {
     tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
-    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken,
+    meldeInhaltsKopf, aktToken, setAktToken, kantonSys, setKantonSys, kantonLuecken, setKantonLuecken, teilausfall, setTeilausfall,
     sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   useLeserDaten({
     ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf, adresse: location,
-    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler, setTeilausfall,
   });
 
   // ── Ableitungen ───────────────────────────────────────────────────────────
@@ -394,7 +397,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
 
   return {
     modell: {
-      erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys, kantonLuecken,
+      erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys, kantonLuecken, teilausfall,
       sektionen, ohneGliederung, gliederung, alleKnotenIds,
       gliederungsTiefe, fussnotenAnzahl, hatAenderungsvermerke, kantonErlassAnzahl,
       nichtKonsolidiert, nichtKonsolidiertSeit,

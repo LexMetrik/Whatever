@@ -6,7 +6,7 @@ import { merkeAnker, bezugslinie, ankerLandepunkt } from './scrollAnker';
 import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
-  ladeBrowseManifest, ladeErlassStreng, ladeErlassDateiStreng, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
+  ladeBrowseManifest, ladeErlassStreng, ladeErlassDateiStreng, ladeStrukturDokumentStreng, ladeKantonSystematik, ladeCurrency,
   ladeKantonLuecken,
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap, type KantonLueckenMap,
 } from '../../lib/normtext/browse';
@@ -22,7 +22,7 @@ import { NAVIGATION } from './parts/leserTastaturBelegung';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
-import type { LeserFehler } from './inhalt-zustand';
+import type { LeserFehler, Teilausfall, TeilausfallTeil } from './inhalt-zustand';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -81,6 +81,9 @@ export function useLeserDaten(opts: {
   setErlass: Dispatch<SetStateAction<BrowseErlass | null>>;
   setEintraege: Dispatch<SetStateAction<NormSnapshot[] | null>>;
   setFehler: Dispatch<SetStateAction<LeserFehler>>;
+  /** BG-02/03/04: welche Begleit-Sidecars (Fassungsangaben, Lücken, Gliederung)
+   *  nicht geladen werden konnten — samt «Erneut laden» nur dafür. */
+  setTeilausfall: Dispatch<SetStateAction<Teilausfall | null>>;
   /** A-1 (S6-W1a): Query und Anker der aufgerufenen Adresse — der Case-Redirect
    *  unten trägt sie mit. Aus dem Router des Aufrufers (im Pane ein eigener
    *  MemoryRouter), darum nicht `window.location`. */
@@ -88,7 +91,7 @@ export function useLeserDaten(opts: {
 }): void {
   const {
     ebene, schluessel, navigate, erlass, istSekundaer, adresse,
-    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler, setTeilausfall,
   } = opts;
 
   useEffect(() => {
@@ -108,19 +111,58 @@ export function useLeserDaten(opts: {
     // der eigenen Instanz mit — kein Kanal je Erlass-Schlüssel (Auflage A1: zwei
     // Fenster mit demselben Erlass mischten sich).
     const ladefehler = (grund: 'datei' | 'register') => setFehler({ art: 'ladefehler', grund, erneut });
+    // BG-02/03/04 (2.10.2026): die BEGLEIT-Sidecars — Fassungsangaben
+    // (`currency`), Erfassungslücken (nur Kanton, §8-Nachzug PR #614-Auflage; der
+    // Bund trägt keine Einträge, §15 kein Zusatz-Fetch) und Gliederung/Erlass-Kopf.
+    // Ein Ausfall ist KEIN «leer»: er wird ausgewiesen (`setTeilausfall`, im
+    // Titelblatt mit «Erneut laden») und nicht gecacht (browse.ts). Besonders
+    // die Fassungsangaben tragen «nächste Fassung ab …» / «seit … gilt eine
+    // neuere Fassung» — das darf nie still fehlen (§1/§8). `currency` löst
+    // trotzdem IMMER auf (`{}`), damit `FruehAnsicht` nicht auf den Platzhalter
+    // wartet; `struktur`/`kopf` bleiben `null` — das ist für den Tieflink-Sprung
+    // «entschieden» (`useStrukturEntschieden`), er hängt nicht.
+    // Eigener Lauf-Zähler: «Erneut laden» holt NUR diese Sidecars, nicht den
+    // Erlass-Text noch einmal.
+    let beiwerkLauf = 0;
+    const ladeBeiwerk = () => {
+      const mein = ++beiwerkLauf;
+      const gueltig = () => lebt && mein === beiwerkLauf;
+      const ausgefallen = new Set<TeilausfallTeil>();
+      const fallAus = (teil: TeilausfallTeil) => {
+        if (!gueltig()) return;
+        ausgefallen.add(teil);
+        // Feste Reihenfolge (Satzbau im Titelblatt), unabhängig von der Ankunftszeit.
+        setTeilausfall({ teile: (['fassung', 'luecken', 'struktur'] as const).filter((t) => ausgefallen.has(t)), erneut: beiwerkErneut });
+      };
+      void ladeCurrency().then(
+        (c) => { if (gueltig()) setCurrency(c); },
+        () => { if (gueltig()) { setCurrency({}); fallAus('fassung'); } },
+      );
+      void ladeStrukturDokumentStreng(daten, schluessel).then(
+        (d) => { if (gueltig()) { setStruktur(d.artikel); setKopf(d.kopf); } },
+        () => fallAus('struktur'),
+      );
+      if (daten === 'kanton') {
+        void ladeKantonLuecken().then(
+          (l) => { if (gueltig()) setKantonLuecken(l); },
+          () => fallAus('luecken'),
+        );
+      }
+    };
+    const beiwerkErneut = () => {
+      if (!lebt) return;
+      setTeilausfall(null);
+      ladeBeiwerk();
+    };
     const ladeAlles = () => {
       const mein = ++lauf;
       const gueltig = () => lebt && mein === lauf;
+      setTeilausfall(null);
       void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
-      void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
-      void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
-      void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
+      ladeBeiwerk();
       // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
       // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
       if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
-      // §8-Nachzug (PR #614-Auflage): Erlass-Lücken ebenso nur für Kanton laden —
-      // der Bund trägt keine Einträge (§15, kein Zusatz-Fetch).
-      if (daten === 'kanton') void ladeKantonLuecken().then((l) => { if (lebt) setKantonLuecken(l); });
       void (async () => {
         let e: BrowseErlass | null;
         try { e = await ladeErlassStreng(schluessel); } catch { if (gueltig()) ladefehler('register'); return; }

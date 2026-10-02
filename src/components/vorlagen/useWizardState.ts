@@ -54,7 +54,7 @@ export function useWizardState<T extends object>(opts: {
 
   const zuruecksetzen = () => {
     setA(defaults); setSchritt(0); setBestaetigt(false);
-    if (speicherKey) { lokalSpeicher.entferne(speicherKey); // ignorieren }
+    if (speicherKey) lokalSpeicher.entferne(speicherKey);
   };
 
   // R4-D (5.9.2026): Timer-Handle, Unmount-Aufräumen und die

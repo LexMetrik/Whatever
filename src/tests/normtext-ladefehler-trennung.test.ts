@@ -96,10 +96,22 @@ describe('ladeBezuegeZaehler — Sidecar-Ladefehler ist kein «keine Zähler» (
     await expect(b.ladeBezuegeZaehler('bund', 'OR')).resolves.toBeNull();
   });
 
-  it('ladeStruktur/ladeErlassKopf bleiben null-bei-Fehler (NormChip & Co. unverändert)', async () => {
+  it('ladeStruktur bleibt null-bei-Fehler (NormChip, Tieflink: «entschieden» unverändert)', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => status(500)));
     const b = await browse();
     await expect(b.ladeStruktur('bund', 'OR')).resolves.toBeNull();
-    await expect(b.ladeErlassKopf('bund', 'OR')).resolves.toBeNull();
+  });
+
+  it('ladeStrukturDokumentStreng (BG-04): 500 → abgelehnt, nicht gecacht; 404 → leer; Neuversuch trifft', async () => {
+    let ruf = 0;
+    const doc = { artikel: { '1': { gliederung: [] } }, kopf: { titel: 'OR' } };
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+      if (String(url).includes('FEHLT')) return status(404);
+      return ++ruf === 1 ? status(500) : jsonOk(doc);
+    }));
+    const b = await browse();
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).rejects.toThrow(/500/);
+    await expect(b.ladeStrukturDokumentStreng('bund', 'OR')).resolves.toEqual({ artikel: doc.artikel, kopf: doc.kopf });
+    await expect(b.ladeStrukturDokumentStreng('bund', 'FEHLT')).resolves.toEqual({ artikel: null, kopf: null });
   });
 });

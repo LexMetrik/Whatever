@@ -36,6 +36,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
       currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
       zukunft={zukunft}
       luecken={m.kantonLuecken[erlass.key]}
+      ladeAusfall={m.teilausfall}
       teilerfassung={teilerfassung(erlass.key)?.befund}
       kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
       kennung={titelKennung(erlass)}
