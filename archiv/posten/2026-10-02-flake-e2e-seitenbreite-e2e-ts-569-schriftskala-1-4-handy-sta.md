@@ -5,3 +5,5 @@ anlass: Abschluss Session «Gesetzesleser Funktionen inventarisieren» 2.10.2026
 -->
 
 Statistik-Grid/«Ihr Nachschlagewerk» läuft @320 um +12 px über; nur im 1. Versuch, blockierte #1275 im 2. Lauf (Run 37030890002). Wurzel prüfen: Schriftladen-/Messzeitpunkt. Nullprobe auf unverändertem main (§0 Ziff. 3), Stichprobe gegen die vermutete Rate dimensionieren.
+
+**Erledigt 2026-10-02:** PR #1291 — Wurzel: Gruss «Ihr Nachschlagewerk.» @320/Skala 1.4 überlief (Zufalls-Pool), Fix min-w-0 + lc-wortumbruch, Pool-Test über 324 Grüsse
