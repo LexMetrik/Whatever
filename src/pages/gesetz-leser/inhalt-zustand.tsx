@@ -7,7 +7,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { beiLeerlauf } from '../../lib/leerlauf';
-import { merkeKlappAstManuell, merkeSprungAstManuell } from './sprungAst';
+import { merkeKlappAstManuell, merkeSprungAstManuell, pruefeAlleZuSperre, type AlleZuSperre } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
@@ -302,8 +302,13 @@ export function useLeserTocZustand() {
   // `tocBaum` zu erraten: die Zeile kennt zusätzlich `startOffen` und
   // `startOffeneTiefe` (Modell), und eine Zeile, die ohne Eintrag in `tocBaum`
   // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
-  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
+  // «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel (`pruefeAlleZuSperre`,
+  // ./sprungAst); `aktivIdsRef` spiegelt den aktiven Pfad für den Callback (deps `[]`).
+  const aktivIdsRef = useRef<string[]>([]);
+  const alleZuSperreRef = useRef<AlleZuSperre | null>(null);
+  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean, alleZu = false) => {
     const ziel = !istOffen;
+    if (alleZu && !ziel) alleZuSperreRef.current = { pfad: aktivIdsRef.current, ids };
     // Die Buchhaltung steht seit 15.9.2026 in `./sprungAst` (§5) — sie war an
     // vier Stellen getippt, und die Kopie im Artikel-Sprung war unvollständig.
     merkeKlappAstManuell(ids, ziel, {
@@ -322,6 +327,11 @@ export function useLeserTocZustand() {
     });
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
+  useEffect(() => {
+    // Erst prüfen, dann den Spiegel fortschreiben: die Sperre kennt den Pfad VOR dem Wechsel.
+    alleZuSperreRef.current = pruefeAlleZuSperre(alleZuSperreRef.current, aktivIds, manuellZuRef.current);
+    aktivIdsRef.current = aktivIds;
+  }, [aktivIds]);
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
   // W2·10-UI-NAV/R2: «beim Öffnen Hierarchie zur aktuellen Leseposition
   // aufgeklappt + markiert». Markiert ist sie bereits (aktivIds → aktivPfad im
