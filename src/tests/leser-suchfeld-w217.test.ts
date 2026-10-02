@@ -76,7 +76,7 @@ describe('C1-B01 · Enter sucht mit dem aktuellen Feldinhalt (Quellensonde)', ()
   it('SuchSprungFeld liest den Wert beim Enter aus dem Feld und bestätigt ihn vor dem Schritt', () => {
     const q = lies('pages/gesetz-leser/v3/SuchSprungFeld.tsx').replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
     const enter = q.slice(q.indexOf("e.key === 'Enter'"));
-    expect(enter, 'Enter-Zweig liest nicht den Feldinhalt (e.currentTarget.value)').toMatch(/currentTarget\.value/);
+    expect(enter, 'Enter-Zweig liest nicht den Feldinhalt (ref.current.value)').toMatch(/ref\.current\?\.value/);
     expect(enter, 'Enter-Zweig bestätigt den Wert nicht (setzeWert)').toMatch(/setzeWert\(/);
   });
 

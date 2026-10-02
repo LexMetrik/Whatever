@@ -173,16 +173,16 @@ export function SuchSprungFeld({
               // nichts (reproduziert 2.10.2026, StPO, «Entschädigung» + Enter im
               // selben Task: scrollY blieb 0; nach Wechsel auf «Verteidigung»
               // sprang Enter in einen Artikel des alten Begriffs). Darum liest
-              // Enter den Wert aus dem FELD (`currentTarget.value`, nie aus dem
+              // Enter den Wert aus dem FELD (`ref.current.value`, nie aus dem
               // Render-Stand), bestätigt ihn (`setzeWert` mit dem bereits
               // gesetzten Wert zieht den entprellten Begriff sofort nach,
               // `inhalt-zustand`) und geht erst im nächsten Tick einen Schritt —
               // dann steht die Liste des neuen Begriffs, `neuestes` hält ihre Props.
-              const aktuell = e.currentTarget.value;
+              const aktuell = ref.current?.value ?? wert;
               const tokenJetzt = loeseArtikel && aktuell.trim() !== '' ? loeseArtikel(aktuell) : null;
               if (tokenJetzt) { onSprung(tokenJetzt); onBestaetigt?.(); return; }
               setzeWert(aktuell);
-              window.setTimeout(() => {
+              setTimeout(() => {
                 const n = neuestes.current;
                 if (!n.hatTreffer) return;
                 n.onVor?.();

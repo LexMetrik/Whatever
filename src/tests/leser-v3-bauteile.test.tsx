@@ -445,6 +445,11 @@ describe('SuchSprungFeld — Enter springt, Escape leert und springt NICHT', () 
     const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: { key: string; preventDefault: () => void }) => void;
     onKeyDown({ key: 'Enter', preventDefault: () => {} });
     expect(onSprung).not.toHaveBeenCalled();
-    expect(setzeWert).not.toHaveBeenCalled();
+    // §6.3-UMSTELLUNG W2·17-UI-BEFUNDE C1-B01 (2.10.2026): bis hierher stand an
+    // dieser Stelle `expect(setzeWert).not.toHaveBeenCalled()`. Enter BESTÄTIGT
+    // seither den Feldwert (`setzeWert` mit dem schon gesetzten Wert zieht die
+    // 200-ms-Entprellung sofort nach, `inhalt-zustand`) — der Wert ändert sich
+    // dabei nie, und es gibt weiterhin keinen Sprung (`onSprung` oben).
+    expect(setzeWert).toHaveBeenCalledExactlyOnceWith('Kündigung');
   });
 });

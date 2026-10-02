@@ -43,6 +43,10 @@ export const colors = {
     700: 'var(--brass-700)',
     800: 'var(--brass-800)',
   },
+  such: {
+    treffer: 'var(--such-treffer)',
+    'treffer-tinte': 'var(--such-treffer-tinte)',
+  },
   reg: {
     g: 'var(--reg-g)',
     r: 'var(--reg-r)',
