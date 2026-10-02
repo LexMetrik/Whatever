@@ -24,6 +24,11 @@ export interface ArtikelText {
     /** Ziffer-Ebene (P6): Ziffer-Marke, zu der dieser Block gehört; nicht im sha. */
     ziffer?: string;
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
+    /** Anhang-Zwischennotiz (P4, W2·27-BUND-FERTIG): Ebene (`tiefe`, 0 = Wurzelliste) der marke-losen Zeile,
+     *  die diesen Block ausmacht — `text` ist die Zeile, `items` ihre Unterliste. Render-Hinweis wie `titel`/
+     *  `ziffer`, nicht im sha: Einrückung der Zeile auf die Ebene ihres Eltern-Punkts und Kette des Zitats
+     *  über die Blockgrenze (ArtikelBody.helfer.ts `anhangVorKette`). Nur Anhang-Einträge tragen das Feld. */
+    einzug?: number;
     /** Fedlex-<table> als Mehrspalten-Block (Bug-Fix 23.6.2026: Tabellen wurden
      *  zuvor komplett gedroppt — z.B. IVG art_28b Rententabelle, AHVG art_34bis).
      *  M10: kanonisches `spalten`-Modell (T-B1) statt rohem `{kopf,zeilen}`. */

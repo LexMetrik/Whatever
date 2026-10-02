@@ -87,10 +87,11 @@ export function bloeckeAusItems(items: ListenItem[]): Block[] {
     while (j < items.length && (items[j].tiefe ?? 0) > ebene) j++;
     const folge = bloeckeAusItems(items.slice(i + 1, j));
     const erster = folge[0];
+    // `einzug` = Ebene der Zeile (Render-Hinweis: Einrückung + Zitat-Kette, s. typen.ts), auch bei Ebene 0.
     if (erster && erster.text === '' && erster.items && erster.titel === undefined) {
-      folge[0] = { absatz: null, text: it.text, items: erster.items }; // Lead + Unterliste = ein Block
+      folge[0] = { absatz: null, text: it.text, items: erster.items, einzug: ebene }; // Lead + Unterliste = ein Block
     } else {
-      out.push({ absatz: null, text: it.text });
+      out.push({ absatz: null, text: it.text, einzug: ebene });
     }
     out.push(...folge);
     i = j;

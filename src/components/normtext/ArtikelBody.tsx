@@ -22,7 +22,7 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 import { zifferAnkerAttribute } from '../../lib/normtext/zifferAnker';
-import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, markenZitat, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
+import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, anhangVorKette, einzugStil, itemZitatSegmente, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
 import { ZitierMarke } from './ArtikelBody.zitier';
 
 export type { ZitierKontext };
@@ -376,29 +376,12 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const markeAnzeige = markenAnzeige(it.marke, it.trenner);
           // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
           // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
-          // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
-          // Mit `vorKette` (Bild-Block-Fortsetzung) läuft die Kette über die
-          // VERSCHMOLZENE Liste (Vorgänger-Items + eigene Items bis j) — so
-          // findet die Fortsetzungs-Ziff. ihren lit.-Vorfahren im
-          // Vorgängerblock (DBG 22: «Abs. 3 lit. c Ziff. 2»). Ohne vorKette
-          // bleibt der Pfad byte-identisch block-lokal.
+          // rückwärts aufbauen (itemZitatSegmente, ArtikelBody.helfer.ts). Mit
+          // `vorKette` (Bild-Block-Fortsetzung, Anhang-Zwischennotiz) läuft die
+          // Kette über die VERSCHMOLZENE Liste (DBG 22: «Abs. 3 lit. c Ziff. 2»,
+          // FAV Anh. 4: «Ziff. 3.1 lit. a»); ohne bleibt der Pfad block-lokal.
           const itemZitat = zk ? (() => {
-            const kette = vorKette != null && vorKette.length > 0
-              ? [...vorKette, ...b.items!.slice(0, j + 1)]
-              : b.items!.slice(0, j + 1);
-            const kStufen = vorKette != null && vorKette.length > 0 ? stufenFuer(kette) : stufen;
-            const seg: string[] = [];
-            const jK = kette.length - 1;
-            let lvl = kStufen[jK];
-            for (let k = jK; k >= 0 && lvl >= 0; k--) {
-              if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
-                const m2 = kette[k].marke;
-                // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE»
-                // ist in der VZV kein Zitat, die Kategorie heisst schlicht «BE».
-                seg.unshift(markenZitat(m2, kette[k].trenner));
-                lvl--;
-              }
-            }
+            const seg = itemZitatSegmente(b.items!, stufen, j, vorKette);
             // Dieselbe normalisierte Absatzmarke wie das Absatz-Zitat
             // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
             // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
@@ -675,7 +658,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             {/* Ä8 (LESER-V3 H2b): derselbe leise Hover wie an der lit.-Zeile
                 oben — Herleitung dort. Ein Absatz und eine Aufzählungszeile sind
                 dieselbe Geste und dürfen nicht zwei Farben tragen (§5). */}
-            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
+            <p style={zk ? einzugStil(b) : undefined} className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
               {absMarke != null && (
                 zk
                   ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel}${zifferTeil(b)} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
@@ -790,7 +773,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 (Daten). Das zitierte Item wird stark hervorgehoben. Rendert über
                 den geteilten Item-Pfad (itemListe, §5) — derselbe wie bei
                 Bild-Blöcken mit items. */}
-            {itemListe(b, i, absMarke)}
+            {itemListe(b, i, absMarke, false, anhangVorKette(bloecke, i))}
           </div>
         );
       })}

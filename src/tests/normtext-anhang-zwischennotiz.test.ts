@@ -163,14 +163,14 @@ describe('bloeckeAusItems: Schnitt an Zwischen-Notizen (Einheit)', () => {
     ]);
     expect(b).toEqual([
       { absatz: null, text: '', items: [{ marke: 'a', text: 'A' }] },
-      { absatz: null, text: 'N', items: [{ marke: '–', text: 'x', tiefe: 1 }] },
+      { absatz: null, text: 'N', items: [{ marke: '–', text: 'x', tiefe: 1 }], einzug: 0 },
       { absatz: null, text: '', items: [{ marke: 'b', text: 'B' }] },
     ]);
   });
   it('Notiz ohne Unterliste = reiner Text-Block; leere Liste = keine Blöcke', () => {
     expect(bloeckeAusItems([{ marke: 'a', text: 'A' }, n('N')])).toEqual([
       { absatz: null, text: '', items: [{ marke: 'a', text: 'A' }] },
-      { absatz: null, text: 'N' },
+      { absatz: null, text: 'N', einzug: 0 },
     ]);
     expect(bloeckeAusItems([])).toEqual([]);
   });
@@ -183,6 +183,62 @@ describe('Haupttext unberührt (anhang=false): keine Zwischen-Notizen, kein Flag
       '<dl><dt>a. </dt><dd>eins</dd><dt></dt><dd>Zusatz:<dl><dt>1. </dt><dd>x</dd></dl></dd><dt>b. </dt><dd>zwei</dd></dl></div></article>';
     const ex = extrahiereArtikel(html, '1')!;
     expect(JSON.stringify(ex)).not.toContain('notiz');
+    expect(JSON.stringify(ex)).not.toContain('einzug');
     expect(JSON.stringify(ex)).toContain('eins');
+  });
+});
+
+describe('bloeckeAusItems: `einzug` trägt die Ebene der Zeile (Render-Hinweis für Einrückung und Zitat-Kette)', () => {
+  const n = (text: string, tiefe?: number) => ({ marke: '', text, notiz: true as const, ...(tiefe ? { tiefe } : {}) });
+  it('Zeile auf Ebene 1 (in einer Unterliste) trägt einzug 1, auch mit eigener Unterliste (Lead + Unterliste = ein Block)', () => {
+    const b = bloeckeAusItems([
+      { marke: '2.4.2', text: 'Angaben:' },
+      { marke: 'd', text: 'D', tiefe: 1 },
+      n('Zeile:', 1),
+      { marke: '–', text: 'x', tiefe: 2 },
+      { marke: 'e', text: 'E', tiefe: 1 },
+    ]);
+    expect(b.map((x) => x.einzug)).toEqual([undefined, 1, undefined]);
+    expect(b[1]).toEqual({ absatz: null, text: 'Zeile:', items: [{ marke: '–', text: 'x', tiefe: 2 }], einzug: 1 });
+  });
+  it('die Extraktion setzt einzug an Notiz-Blöcken und nirgends sonst; sha-neutral (kein Textbestandteil)', () => {
+    const ex = liste(AVO_B7_B10);
+    const mit = ex.bloecke.filter((b) => b.einzug !== undefined);
+    expect(mit).toHaveLength(1);
+    expect(mit[0].text).toMatch(/^Sämtliche Sachschäden \(soweit sie nicht unter die Zweige B3, B4, B5, B6 oder B7/);
+    expect(mit[0].einzug).toBe(0);
+  });
+});
+
+// FZA SR 0.142.112.681 Anh. II Nr. 3 (ELI cc/2002/243, Konsolidierung 20201215, Filestore-HTML, abgerufen 2.10.2026;
+// wörtlich, i)–v) auf i) und ii) gekürzt): zwei Notizen mit/ohne Unterliste um den Punkt b).
+// «Als Familienangehörige gelten …» ist eine Notiz OHNE Unterliste; der Items-Block b) danach darf NICHT an sie
+// gehängt werden (anhang.ts: Anhängen nur der ERSTEN Item-Gruppe an den Einleitungs-Absatz, k === 0). Gegenprüfung
+// 2.10.2026, Befund 3: ohne diese Bedingung blieb jeder Test grün, b) hing aber unter «Als Familienangehörige …».
+const FZA_ANH_II_3 =
+  '<dl class="man-space-after-0"><dt class="man-space-before-4 man-space-before-2">a) </dt><dd class="man-space-before-4 man-space-before-2">Den schweizerischen Rechtsvorschriften über die Krankenversicherungspflicht unterliegen die nachstehend genannten Personen, die nicht in der Schweiz wohnen:<dl class="man-space-after-0"><dt class="man-space-before-2">i) </dt><dd class="man-space-before-2">die Personen, die nach Titel II der Verordnung den schweizerischen Rechtsvorschriften unterliegen;</dd><dt class="man-space-before-2">ii) </dt><dd class="man-space-before-2">die Personen, für die nach den Artikeln 24, 25 und 26 der Verordnung die Schweiz die Kosten für Leistungen trägt;</dd></dl></dd>' +
+  '<dt class="man-space-before-4"></dt><dd class="man-space-before-4">Als Familienangehörige gelten dabei diejenigen Personen, die nach den Rechtsvorschriften des Wohnstaates als Familienangehörige anzusehen sind.</dd>' +
+  '<dt class="man-space-before-4">b) </dt><dd class="man-space-before-4">Die in Buchstabe a genannten Personen können auf Antrag von der Versicherungspflicht befreit werden, wenn sie in einem der folgenden Staaten wohnen und nachweisen, dass sie dort für den Krankheitsfall gedeckt sind: Deutschland, Frankreich, Italien, Österreich und – was die unter Buchstabe a Ziffern iv und v genannten Personen angeht – Finnland und – was die unter Buchstabe a Ziffer ii genannten Personen angeht – Portugal.</dd>' +
+  '<dt class="man-space-before-4 man-space-before-2"></dt><dd class="man-space-before-4 man-space-before-2">Dieser Antrag:<dl class="man-space-after-0"><dt class="man-space-before-2">aa) </dt><dd class="man-space-before-2">ist innerhalb von drei Monaten nach Entstehung der Versicherungspflicht in der Schweiz zu stellen; wird in begründeten Fällen der Antrag nach diesem Zeitraum gestellt, so wird die Befreiung ab dem Zeitpunkt der Entstehung der Versicherungspflicht wirksam;</dd><dt class="man-space-before-2">bb) </dt><dd class="man-space-before-2">schliesst sämtliche im selben Staat wohnenden Familienangehörigen ein.</dd></dl></dd></dl>';
+
+describe('P4/Befund 3: Notiz ohne Unterliste nimmt den folgenden Items-Block NICHT auf (FZA Anh. II Nr. 3)', () => {
+  const ex = liste(FZA_ANH_II_3, '<p class="absatz man-space-before-4">3.&nbsp;&nbsp;Versicherungspflicht in der schweizerischen Krankenversicherung und mögliche Befreiungen:</p>');
+  const famBlock = ex.bloecke.find((b) => b.text.startsWith('Als Familienangehörige gelten dabei'))!;
+  it('«Als Familienangehörige …» bleibt ein reiner Text-Block (keine Items, Ebene 0)', () => {
+    expect(famBlock.items).toBeUndefined();
+    expect(famBlock.einzug).toBe(0);
+  });
+  it('b) steht in einem EIGENEN Items-Block hinter der Notiz, nicht darunter', () => {
+    const i = ex.bloecke.indexOf(famBlock);
+    expect(ex.bloecke[i + 1].text).toBe('');
+    expect(ex.bloecke[i + 1].items!.map((x) => x.marke)).toEqual(['b']);
+    expect(itemsVon(ex).map((x) => x.marke)).toEqual(['a', 'i', 'ii', 'b', 'aa', 'bb']);
+  });
+  it('«Dieser Antrag:» führt aa)/bb) auf Ebene 1 unter b); Lesefolge in Quellordnung', () => {
+    const antrag = ex.bloecke.find((b) => b.text === 'Dieser Antrag:')!;
+    expect(antrag.items!.map((x) => `${x.marke}/${x.tiefe}`)).toEqual(['aa/1', 'bb/1']);
+    expect(lesefolge(ex).map((x) => x.split(' ').slice(0, 2).join(' '))).toEqual([
+      '3. Versicherungspflicht', 'a Den', '.i die', '.ii die', 'Als Familienangehörige', 'b Die', 'Dieser Antrag:', '.aa ist', '.bb schliesst',
+    ]);
   });
 });
