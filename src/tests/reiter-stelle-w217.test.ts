@@ -1,5 +1,12 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { createElement } from 'react';
+import { renderToString } from 'react-dom/server';
+import { MemoryRouter } from 'react-router-dom';
+import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterungen';
+import { kontextSoftLawErgebnis } from '../lib/kontext';
+import { _leereKantenShardCache } from '../lib/materialien/kanten-shard';
+import { _leereMaterialManifestCache } from '../lib/materialien/browse';
+import { kanonArtikelToken } from '../lib/verzahnung/revisionen-extrakt';
 import { nummerAusToken, reiterStelle, stelleBrauchtDaten, type StelleDaten } from '../lib/reiterStelle';
 import { ladeTabs, reiterKurzformText, reiterKurzformTeile } from '../lib/tabs';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
@@ -26,13 +33,14 @@ describe('reiterStelle · mit Daten', () => {
     const d = daten(e('scope_u1', 'Geltungsbereich am 16. September 2022'));
     expect(reiterStelle('#art-scope_u1', 'EMRK', 'bund', d)).toMatchObject({ stelle: 'Geltungsbereich', kern: 'EMRK' });
   });
-  it('Geltungsbereich bleibt unterscheidbar, wo ein Erlass zwei führt (KRK)', () => {
+  it('Geltungsbereich heisst immer «Geltungsbereich» (KRK führt zwei: kürzer statt falsch, ohne Laden)', () => {
     const d = daten(
       e('scope_u1', 'Geltungsbereich des Übereinkommes am 7. Mai 2026'),
       e('scope_u3', 'Geltungsbereich der Änderung am 4. Juni 2014'),
     );
-    expect(reiterStelle('#art-scope_u1', 'KRK', 'bund', d)?.stelle).toBe('Geltungsbereich des Übereinkommes');
-    expect(reiterStelle('#art-scope_u3', 'KRK', 'bund', d)?.stelle).toBe('Geltungsbereich der Änderung');
+    expect(reiterStelle('#art-scope_u1', 'KRK', 'bund', d)?.stelle).toBe('Geltungsbereich');
+    expect(reiterStelle('#art-scope_u3', 'KRK', 'bund', d)?.stelle).toBe('Geltungsbereich');
+    expect(reiterStelle('#art-scope_u1', 'KRK', 'bund', null)?.stelle).toBe('Geltungsbereich');
   });
   it('Anhang: «Anhang 1», nicht «Art. annex1»', () => {
     expect(reiterStelle('#art-annex_1', 'ERV', 'bund', daten(e('annex_1', 'Anhang 1')))?.stelle).toBe('Anhang 1');
@@ -70,11 +78,16 @@ describe('reiterStelle · ohne Daten (Start aus dem Speicher)', () => {
     expect(reiterStelle('#art-226_a_226_d', 'OR', 'bund', null)?.stelle).toBe('Art. 226a–226d');
     expect(reiterStelle('#art-disp_u1_art_31_32', 'ZGB', 'bund', null)?.stelle).toBe('Art. 31–32');
   });
-  it('Schlusstitel ohne Daten: nie «Art. 12 ZGB» — ZGB «SchlT», sonst die laufende Gruppe', () => {
+  it('Schlusstitel ohne Daten: ZGB «Art. 12 SchlT ZGB», jede andere Gruppe keine Stelle (nie «Art. 12 OR»)', () => {
     expect(reiterStelle('#art-disp_u1_art_12', 'ZGB', 'bund', null)).toMatchObject({ stelle: 'Art. 12', kern: 'SchlT ZGB' });
-    const or = reiterStelle('#art-disp_u12_art_2_4', 'OR', 'bund', null)!;
-    expect(or.stelle).toBe('Art. 2–4');
-    expect(or.kern).toBe('OR (nachgestellte Bestimmungen, Gruppe 12)');
+    // PatG Art. 141 setzt die Folge des Hauptteils fort (mit Daten «Art. 141 PatG»), OR Art. 2–4 nicht:
+    // ohne Daten steht nicht fest, welche Zitierweise gilt — kürzer statt falsch.
+    expect(reiterStelle('#art-disp_u1_art_141', 'PatG', 'bund', null)).toMatchObject({ stelle: '', kern: 'PatG', gelesen: '' });
+    expect(reiterStelle('#art-disp_u12_art_2_4', 'OR', 'bund', null)).toMatchObject({ stelle: '', kern: 'OR' });
+  });
+  it('Schlusstitel-Token mit unbekannter Nummernform: keine Stelle, auch im ZGB (Guard)', () => {
+    expect(reiterStelle('#art-disp_u1_art_xyz', 'ZGB', 'bund', null)).toMatchObject({ stelle: '', kern: 'ZGB' });
+    expect(reiterStelle('#art-disp_u1_art_12', 'ZGB', 'kanton', null)?.stelle).toBe('');
   });
   it('Anhang und Geltungsbereich: ohne Rohschlüssel; unbekannte Form: keine Stelle', () => {
     expect(reiterStelle('#art-annex_1', 'ERV', 'bund', null)?.stelle).toBe('Anhang 1');
@@ -87,10 +100,14 @@ describe('reiterStelle · ohne Daten (Start aus dem Speicher)', () => {
     expect(reiterStelle('#art-4', 'GOG', 'kanton', null)?.stelle).toBe('');
   });
   it('stelleBrauchtDaten: Bund-Nummern nicht, Kanton und Sonderformen schon', () => {
-    expect(stelleBrauchtDaten('#art-336_c', 'bund')).toBe(false);
-    expect(stelleBrauchtDaten('#art-4', 'kanton')).toBe(true);
-    expect(stelleBrauchtDaten('#art-annex_1', 'bund')).toBe(true);
-    expect(stelleBrauchtDaten(undefined, 'bund')).toBe(false);
+    expect(stelleBrauchtDaten('#art-336_c', 'bund', 'OR')).toBe(false);
+    expect(stelleBrauchtDaten('#art-4', 'kanton', 'GOG')).toBe(true);
+    expect(stelleBrauchtDaten('#art-annex_1', 'bund', 'ERV')).toBe(false);
+    expect(stelleBrauchtDaten('#art-scope_u1', 'bund', 'EMRK')).toBe(false);
+    expect(stelleBrauchtDaten('#art-disp_u1_art_12', 'bund', 'ZGB')).toBe(false);
+    expect(stelleBrauchtDaten('#art-disp_u1_art_141', 'bund', 'PatG')).toBe(true);
+    expect(stelleBrauchtDaten('#art-decl_u2', 'bund', 'GFK')).toBe(true);
+    expect(stelleBrauchtDaten(undefined, 'bund', 'OR')).toBe(false);
   });
 });
 
@@ -160,11 +177,29 @@ describe('nummerAusToken: dieselbe Regel für die Anzeige-Stellen ohne Eintrag (
     expect(nummerAusToken('20_a')).toBe('20a');
     expect(nummerAusToken('226_a_226_d')).toBe('226a–226d');
   });
-  it('KontextPanel, kontext.ts und PanelErlaeuterungen streichen den Unterstrich nicht mehr ersatzlos', () => {
-    for (const f of ['src/components/kontext/KontextPanel.tsx', 'src/lib/kontext.ts', 'src/pages/gesetz-leser/v3/PanelErlaeuterungen.tsx']) {
-      const q = readFileSync(f, 'utf8');
-      expect(q, f).toContain('nummerAusToken(');
-      expect(q, f).not.toMatch(/replace\(\/_\/g, ''\)/);
-    }
+  it('Erläuterungen: der Staleness-Hinweis nennt «Art. 49–50», nicht «Art. 4950»', () => {
+    const token = '49_50';
+    const shard = { erlass: 'X', proArtikel: { [kanonArtikelToken(token)]: { iso: '2025-01-01', as: 'AS 2024 1' } } };
+    const m = { key: 'K', titel: 'K', behoerdeKuerzel: 'ESTV', doktypLabel: 'Kreisschreiben', nummer: null, pfad: '/materialien/K',
+      herkunft: 'amtlich' as const, stand: '2020-02-01', artikel: token };
+    const html = renderToString(createElement(MemoryRouter, null, createElement(PanelErlaeuterungen, {
+      stand: { fertig: true, wert: { erzeugt: '2026-09-18', liste: [m] } }, revisionShard: shard }))).replace(/<!-- -->/g, '');
+    expect(html).toContain('Dokument-Stand vor der letzten Änderung von Art. 49–50');
+    expect(html).not.toContain('Art. 4950');
+  });
+});
+
+describe('Soft-Law-Bezug (lib/kontext): «via Art. 49–50» statt «via Art. 4950»', () => {
+  afterEach(() => { vi.unstubAllGlobals(); _leereKantenShardCache(); _leereMaterialManifestCache(); });
+  it('Sublabel aus dem Token', async () => {
+    const map: Record<string, unknown> = {
+      '/materialien/register.json': { erzeugt: 'x', materialien: [{ key: 'D', behoerdeKuerzel: 'ESTV', doktypLabel: 'KS', nummer: null, titel: 'T', stand: '2025-01-01' }] },
+      '/materialien/kanten/DBG.json': { erzeugt: 'x', erlass: 'DBG', dokumente: { D: { urlBasis: 'https://x', stand: '2025-01-01' } },
+        kanten: [{ dok: 'D', artikel: '49_50', quelle: 'amtlich', konfidenz: 'regex-hoch', stand: '2025-01-01', fundstellen: [] }] },
+    };
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => (url in map
+      ? { ok: true, status: 200, json: async () => map[url] } : { ok: false, status: 404, json: async () => ({}) }) as Response));
+    const e = await kontextSoftLawErgebnis('norm', ['DBG']);
+    expect(e.liste[0].sublabel).toBe('via Art. 49–50');
   });
 });

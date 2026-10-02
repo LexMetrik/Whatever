@@ -52,9 +52,10 @@ const STELLE_MAX = 34;
 
 function kurzLabel(label: string): string {
   // «Geltungsbereich am 16. September 2022»: das Datum ist der Stand der Liste,
-  // nicht der Name der Stelle — der Reiter nennt die Stelle. «Geltungsbereich
-  // des Übereinkommes» und «… der Änderung» (KRK) bleiben dabei unterscheidbar.
-  label = label.replace(/^(Geltungsbereich\b.*?)\s+am\s+\d{1,2}\.\s+\p{L}+\s+\d{4}$/u, '$1');
+  // nicht der Name der Stelle — der Reiter nennt die Stelle. Auch «Geltungsbereich
+  // des Übereinkommes» (KRK) heisst im Reiter «Geltungsbereich»: lieber kürzer
+  // als falsch, und es erspart das Laden der Datei (der Token sagt es schon).
+  if (/^Geltungsbereich\b/.test(label)) return 'Geltungsbereich';
   if (label.length <= STELLE_MAX) return label;
   const wort = label.slice(0, STELLE_MAX).replace(/\s+\S*$/, '').trim();
   return `${wort || label.slice(0, STELLE_MAX)}…`;
@@ -69,24 +70,33 @@ export const nummerAusToken = (rest: string): string => rest.replace(/_(?=\d)/g,
  *  Buchstaben-Zusätzen oder Bereich. Alles andere braucht den Eintrag. */
 const BUND_NUMMER = /^\d+(?:_[a-z]+)*(?:_\d+(?:_[a-z]+)*)?$/;
 
-/** Rückfall ohne Daten: nur, was der Token allein sicher sagt. */
-function stelleAusToken(token: string, ebene: string | undefined): string {
-  const ueb = /^disp_u\d+_art_(.+)$/.exec(token);
-  if (ueb && BUND_NUMMER.test(ueb[1])) return `Art. ${nummerAusToken(ueb[1])}`;
+/** Rückfall ohne Daten: nur, was der Token allein SICHER sagt — und dann genau
+ *  das, was der Eintrag auch sagen würde (am ganzen Korpus gemessen). Alles
+ *  andere bleibt leer: lieber keine Stelle als eine, die der Eintrag widerlegt.
+ *  Schlusstitel: nur der ZGB-Schlusstitel (`disp_u1`), dessen Zitierweise
+ *  «SchlT ZGB» feststeht; bei jeder anderen Gruppe hängt die Zitierweise davon
+ *  ab, ob sie eigene Nummern führt (`setztFolgeFort`) — das weiss erst der Eintrag. */
+function stelleAusToken(token: string, ebene: string | undefined, kuerzel: string): string {
+  const ueb = /^disp_u1_art_(.+)$/.exec(token);
+  if (ueb) return ebene === 'bund' && kuerzel === 'ZGB' && BUND_NUMMER.test(ueb[1]) ? `Art. ${nummerAusToken(ueb[1])}` : '';
   if (/^scope_/.test(token)) return 'Geltungsbereich';
-  const anhang = /^annex_(\d+(?:_\d+)*|[IVX]+)$/.exec(token);
+  // Nur Ziffern: bei römischen Nummern führt ein Erlass «+Anhang II» (VRV) — der Eintrag sagt mehr als der Token.
+  const anhang = /^annex_(\d+(?:_\d+)*)$/.exec(token);
   if (anhang) return `Anhang ${anhang[1].replace(/_/g, '.')}`;
   if (ebene === 'bund' && BUND_NUMMER.test(token)) return `Art. ${nummerAusToken(token)}`;
   return '';
 }
 
-/** Genügt der Token-Rückfall (`true`), oder braucht die Stelle den Eintrag?
- *  Steuert, für welche Reiter die Erlass-Datei überhaupt geladen wird (§15). */
-export function stelleBrauchtDaten(anker: string | undefined, ebene: string | undefined): boolean {
+/** Kann der Eintrag die Stelle ändern (`true`), oder ist der Token-Rückfall schon
+ *  das Endergebnis? Steuert, für welche Reiter die Erlass-Datei geladen wird (§15):
+ *  jeder nicht-leere Rückfall ist per Korpus-Test gleich dem Ergebnis mit Daten. */
+export function stelleBrauchtDaten(anker: string | undefined, ebene: string | undefined, kuerzel: string): boolean {
   const token = tokenVonAnker(anker);
-  if (token === null) return false;
-  return !(ebene === 'bund' && BUND_NUMMER.test(token));
+  return token !== null && stelleAusToken(token, ebene, kuerzel) === '';
 }
+
+/** Der Reiter braucht zusätzlich die Gliederung (Struktur-Sidecar): Schlusstitel-Token. */
+export const brauchtStruktur = (anker: string | undefined): boolean => /^#art-disp_u/.test(anker ?? '');
 
 /** Token aus `#art-<token>`; `null` = kein Anker oder kaputtes %-Escape
  *  (PA-1-B01: dann lieber keine Stelle als eine falsche). */
@@ -116,7 +126,7 @@ export function reiterStelle(
     stelle = kurzLabel(e.artikelLabel);
     kern = zitatKuerzel(token, e.artikelLabel, kuerzel, daten.struktur, daten.eintraege);
   } else {
-    stelle = stelleAusToken(token, ebene);
+    stelle = stelleAusToken(token, ebene, kuerzel);
     if (stelle && /^disp_u\d+_/.test(token)) kern = zitatKuerzel(token, stelle, kuerzel, null, []);
   }
   return { stelle, kern, gelesen: stelle && kern !== kuerzel ? `${stelle} ${kern}` : stelle };

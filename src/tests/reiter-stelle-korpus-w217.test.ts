@@ -72,19 +72,26 @@ function pruefe(e: BrowseErlass, mitDaten: boolean, abw: Abw[], weg: Weg): numbe
     const zusatz = kern.startsWith(e.kuerzel) ? kern.slice(e.kuerzel.length) : kern;
     if (ROH.test(z) || ROH.test(zusatz)) melde('Rohschlüssel in der Beschriftung');
     if (!mitDaten) {
-      // Rückfall: nie etwas anderes als der Eintrag sagt. Wo der Token genügt
-      // (Bund-Nummer), muss er EXAKT das Label treffen; sonst `''`/Kurzform.
-      if (z && !stelleBrauchtDaten(`#art-${x.artikel}`, e.ebene) && !x.artikel.startsWith('disp_') && z !== x.artikelLabel) {
-        melde('Rückfall ≠ amtliches Label');
+      // Rückfall: nie etwas anderes als der Eintrag sagt. Eine nicht-leere Stelle
+      // muss Stelle UND Kern des Ergebnisses MIT Daten treffen (dann braucht der
+      // Reiter die Datei nicht, `stelleBrauchtDaten` = false); sonst bleibt sie
+      // leer und das Kürzel unqualifiziert («lieber kürzer als falsch»).
+      const anker = `#art-${x.artikel}`;
+      const mit = reiterStelle(anker, e.kuerzel, e.ebene, daten)!;
+      if (z) {
+        if (z !== mit.stelle || kern !== mit.kern) melde('Rückfall ≠ Ergebnis mit Daten');
+        if (stelleBrauchtDaten(anker, e.ebene, e.kuerzel)) melde('Rückfall ohne Bedarf an Daten, Bedarf gemeldet');
+      } else {
+        if (kern !== e.kuerzel) melde('leere Stelle, aber qualifiziertes Kürzel');
+        if (!stelleBrauchtDaten(anker, e.ebene, e.kuerzel)) melde('leere Stelle, aber kein Bedarf an Daten gemeldet');
       }
-      if (z && e.ebene === 'kanton' && !x.artikel.startsWith('scope_') && !x.artikel.startsWith('annex_')) melde('Rückfall im Kanton ohne Eintrag');
       continue;
     }
     const kurz = z.endsWith('…') ? z.slice(0, -1) : null;
     const passt = z === x.artikelLabel
       || (kurz !== null && x.artikelLabel.startsWith(kurz))
       // «Geltungsbereich am 16. September 2022» → «Geltungsbereich» (Datum = Stand der Liste)
-      || (x.artikelLabel.startsWith('Geltungsbereich') && x.artikelLabel.startsWith(z.replace(/…$/, '')));
+      || (z === 'Geltungsbereich' && x.artikelLabel.startsWith('Geltungsbereich'));
     if (!passt) melde('Stelle ≠ amtliches Label');
     if (x.artikelLabel.startsWith('§') && !z.startsWith('§')) melde('§-Erlass ohne «§»');
     if (x.artikelLabel.startsWith('Art.') && !z.startsWith('Art.')) melde('Art.-Erlass ohne «Art.»');
