@@ -1,0 +1,16 @@
+fix(leser): Reiter-Beschriftung aus amtlichem Label statt Anker-Token (W2·17-UI-BEFUNDE)
+
+DFG-F01: Die Reiter-Stelle und das Kürzel kommen in tabs.ts jetzt aus
+stelleVonReiter (amtliches artikelLabel, Qualifikation über zitatKuerzel)
+statt aus dem Anker-Token; artikelLabelVonPfad entfällt (kein Aufrufer mehr).
+
+Fachänderung der Tests (nicht verhaltensneutral, daher im fix-Commit):
+tabGruppen.test.ts und sicher-dekodieren.test.ts prüften artikelLabelVonPfad
+(«Art. 31–32» aus dem Token, Schlusstitel ohne Gruppe). Sie prüfen jetzt
+stelleVonReiter: gleiche Fälle, Schlusstitel zusätzlich mit Kern «SchlT ZGB» —
+die alte Erwartung «Art. 3 ZGB» war die falsche Rechtsangabe, die dieser Fix
+behebt. Die Leiste-Korpus- und Einzeltests (reiter-stelle-*) sind damit grün.
+
+Fachaenderung: Reiter-Stelle aus amtlichem Label (Art./§/Anhang/SchlT) statt Token; Tests tabGruppen/sicher-dekodieren portiert
+Roadmap: W2·17-UI-BEFUNDE
+Co-Authored-By: Claude Sonnet <noreply@anthropic.com>

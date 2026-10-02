@@ -6,7 +6,6 @@
 import { pfadTeil, erlassVonPfad, gesetzPfad, materialPfad, type VerlaufManifeste } from './verlaufLabel';
 import { routenEbene, datenEbeneVonRoute } from './normtext/erlassAdresse';
 import { reiterStelle, type ReiterStelle } from './reiterStelle';
-import { sicherDekodiert } from './sicherDekodieren';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
 
@@ -93,23 +92,6 @@ export function gleicheReiterGruppe(vonPath: string, nachPath: string, m: Verlau
 export function kantonVonPfad(path: string, m: VerlaufManifeste = {}): string | null {
   const e = erlassVonPfad(path, m);
   return e?.ebene === 'kanton' ? e.kanton ?? null : null;
-}
-
-/** Artikel-Token aus dem #art-Anker eines Reiter-Pfads als «Art. N» (P2). */
-export function artikelLabelVonPfad(path: string): string | null {
-  const m = /#art-(.+)$/.exec(path);
-  if (!m) return null;
-  const roh = sicherDekodiert(m[1]); // PA-1-B01: kaputtes %-Escape ⇒ null statt Wurf (Reiterleiste)
-  if (!roh) return null;
-  // M13: Schlusstitel-/UeB-Token «disp_uN_art_<suffix>» tragen den Namespace im
-  // Token. Nur die reine Artikel-Nummer anzeigen («Art. 3», «Art. 31–32»),
-  // nicht das ganze Token («Art. dispu1art3»). Haupttext bleibt byte-gleich.
-  if (roh.startsWith('disp_')) {
-    const suffix = roh.replace(/^.*_art_/, '').replace(/_(?=\d)/g, '–').replace(/_/g, '');
-    return suffix ? `Art. ${suffix}` : null;
-  }
-  const tok = roh.replace(/_/g, '');
-  return tok ? `Art. ${tok}` : null;
 }
 
 /** DFG-F01 · Die Stelle, die ein Gesetzes-Reiter trägt, aus dem amtlichen Label

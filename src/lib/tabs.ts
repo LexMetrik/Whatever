@@ -3,7 +3,7 @@ import {
   labelAusMeta,
   type VerlaufManifeste,
 } from './verlaufLabel';
-import { reiterKategorie, artikelLabelVonPfad, KAT_META } from './tabGruppen';
+import { reiterKategorie, stelleVonReiter, KAT_META } from './tabGruppen';
 import { metaFuerPfad } from './seo';
 
 // ─── Offene In-App-Reiter (Tab-Streifen, Auftrag David) ─────────────────────
@@ -381,9 +381,10 @@ function basisKurzform(t: TabEintrag, m: VerlaufManifeste): KurzformTeile {
     // REIHENFOLGE (D27): erst der gespeicherte Pfad — das ist die Stellung,
     // die der Spy führt und die den Neustart überlebt —, dann `t.wahl` als
     // Rückfall für das Fenster vor dem ersten Spy-Lauf.
-    const anker = hashVon(t.path) ?? t.wahl;
-    const art = anker ? artikelLabelVonPfad(anker) : null;
-    return { kopf: '', kern: kuerzel, stelle: art ?? '' };
+    // DFG-F01: Stelle UND Kürzel aus dem amtlichen Label des Eintrags (Art./§/
+    // Anhang, «SchlT ZGB»), nicht aus dem Anker-Token — `stelleVonReiter`, Herleitung dort.
+    const st = stelleVonReiter(t, m);
+    return { kopf: '', kern: st?.kern ?? kuerzel, stelle: st?.stelle ?? '' };
   }
   const voll = verlaufLabel(t.path, m);
   if (kat === 'rechtsprechung') return { ...zerlege(voll), stelle: null };
@@ -551,7 +552,7 @@ export function reiterKarteTeile(t: TabEintrag, m: VerlaufManifeste): ReiterKart
     // Die LESESTELLUNG. Seit D27 steht sie AUCH in der Beschriftung; hier
     // bleibt sie, weil Tooltip und Karte die einzigen Stellen sind, die sie
     // AUSSPRECHEN («gelesen bis Art. 336c») statt sie nur zu nennen.
-    gelesen: reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null,
+    gelesen: stelleVonReiter(t, m)?.gelesen || null,
   };
 }
 
