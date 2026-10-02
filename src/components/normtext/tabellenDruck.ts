@@ -30,8 +30,8 @@ const breite = (e: Element) => e.getBoundingClientRect().width;
  *  bei 45 % in 23 cm). */
 const passt = (t: HTMLElement, tab: HTMLElement) => breite(tab) <= breite(t) + 1;
 
-export function druckAnpassen(wurzel: ParentNode = document): void {
-  for (const t of wurzel.querySelectorAll<HTMLElement>(SELEKTOR)) {
+function druckAnpassen(): void {
+  for (const t of document.querySelectorAll<HTMLElement>(SELEKTOR)) {
     const tab = t.querySelector<HTMLElement>(':scope > [role="table"]');
     if (!tab) continue;
     // 1. Hochformat: Kasten so breit wie die gedruckte Lesespalte.
@@ -57,8 +57,8 @@ export function druckAnpassen(wurzel: ParentNode = document): void {
   }
 }
 
-export function druckZuruecksetzen(wurzel: ParentNode = document): void {
-  for (const t of wurzel.querySelectorAll<HTMLElement>(SELEKTOR)) {
+function druckZuruecksetzen(): void {
+  for (const t of document.querySelectorAll<HTMLElement>(SELEKTOR)) {
     for (const m of MARKEN) t.removeAttribute(m);
     t.style.removeProperty('--druck-zoom');
   }

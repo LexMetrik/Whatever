@@ -220,7 +220,7 @@ test.describe('W2·17 · Zahlen und Wörter in Tabellenzellen reissen nie ausein
               for (let i = knoten.length - 1; i >= 0; i--) if (knoten[i].start <= off) return [knoten[i].n, off - knoten[i].start]
               return [knoten[0].n, 0]
             }
-            for (const t of text.matchAll(/\d{1,3}(?:[  ]\d{3})+(?!\d)|[A-Za-zÄÖÜäöüß]{9,}/g)) {
+            for (const t of text.matchAll(/\d{1,3}(?:[ \u00a0]\d{3})+(?!\d)|[A-Za-zÄÖÜäöüß]{9,}/g)) {
               const r = document.createRange()
               const [a, ao] = ort(t.index ?? 0)
               const [e, eo] = ort((t.index ?? 0) + t[0].length - 1)
