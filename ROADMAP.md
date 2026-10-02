@@ -97,8 +97,8 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      nachfüllen, wenn der Kopf erledigt ist. Der gestrichene Schwanz steht im Wortlaut in
      ROADMAP-CHRONIK.md (Umschichtung 20.9.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Phase 1 Bund) — 30.9.2026 wieder `ready`
-> (Posten-Welle #1166–#1173 gelandet), danach `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Phase 1 Bund) — 2.10.2026 wieder `ready`
+> (Posten-Welle 1./2.10.2026, Ernte als Posten), danach `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
 > nachgeführt 24.9.2026 auf die laufenden Go-Stränge: Werkbank 22.9., Rechtslogik parallel 24.9.;
 > Bund Phase 1 folgt dahinter; David hat Veto.** Bisheriger Marker und Queue-Schwanz im Wortlaut:
 > ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
