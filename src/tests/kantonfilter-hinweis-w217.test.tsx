@@ -6,15 +6,19 @@
 //    ⇒ ZH an OR 41 (Artikel führt nur BS) fehlt im Satz bzw. BS an StPO 5 steht fälschlich darin.
 //  · `PanelEntscheide`: die Zeile `data-v3-panel-kanton-hinweis` weglassen ⇒ die SSR-Fälle rot.
 //  · `BezugFacettenWahl`: `kantonOhneWirkung` ignorieren ⇒ der Chip-Fall rot.
+import { act, createElement } from 'react';
+import { createRoot, type Root } from 'react-dom/client';
 import { renderToString } from 'react-dom/server';
+import { parseHTML } from 'linkedom';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
 import { BezugFacettenWahl } from '../components/verzahnung/BezugFacettenWahl';
 import { kantonenOhneWirkung } from '../pages/gesetz-leser/bezugAuswahl';
 import { PanelEntscheide } from '../pages/gesetz-leser/v3/PanelEntscheide';
-import { kantonOhneWirkungSatz } from '../pages/gesetz-leser/v3/entscheideOrdnung';
+import { kantonOhneWirkungSatz, kantonWirkung } from '../pages/gesetz-leser/v3/entscheideOrdnung';
+import { instanzStand } from '../pages/gesetz-leser/v3/panelModell';
 
 function kante(key: string, kanton: string): Bezug {
   const kantonal = kanton !== 'CH';
@@ -118,7 +122,7 @@ describe('Panel «Entscheide» · der Satz steht unter der Filterzeile, ohne die
 describe('BezugFacettenWahl · der Chip trägt «gewählt, hier ohne Wirkung» sichtbar (§8)', () => {
   const chips = (kantoneOhneWirkung: string[]) => renderToString(
     <BezugFacettenWahl klassen={KL} kantone={['BE', 'BS']} kantoneVerfuegbar={['AG', 'BS', 'GR']}
-      zahlOrt="an Art. 250" kantoneOhneWirkung={kantoneOhneWirkung} onKlassen={() => {}} onKantone={() => {}} />,
+      zahlOrt="an Art. 250" kantoneOhneWirkung={kantoneOhneWirkung} hinweisId="h1" onKlassen={() => {}} onKantone={() => {}} />,
   );
   const chip = (h: string, k: string) => new RegExp(`<button[^>]*data-bezug-kanton="${k}"[^>]*>`).exec(h)?.[0] ?? '';
 
@@ -127,7 +131,10 @@ describe('BezugFacettenWahl · der Chip trägt «gewählt, hier ohne Wirkung» s
     expect(chip(h, 'BE')).toContain('data-bezug-kanton-wirkung="keine"');
     expect(chip(h, 'BE')).toContain('line-through');
     expect(chip(h, 'BE')).toContain('aria-pressed="true"');
-    expect(chip(h, 'BE')).toMatch(/ohne Wirkung/);
+    // §5: der Chip verweist auf den sichtbaren Satz, statt einen zweiten, abweichenden Text zu tragen.
+    expect(chip(h, 'BE')).toContain('aria-describedby="h1"');
+    expect(chip(h, 'BE')).not.toMatch(/alle anderen|angezeigt/);
+    expect(chip(h, 'BS')).not.toContain('aria-describedby');
     expect(chip(h, 'BS')).not.toContain('data-bezug-kanton-wirkung');
     expect(chip(h, 'BS')).not.toContain('line-through');
     expect(chip(h, 'AG')).not.toContain('line-through');
@@ -135,5 +142,61 @@ describe('BezugFacettenWahl · der Chip trägt «gewählt, hier ohne Wirkung» s
 
   it('keine Kantone ohne Wirkung ⇒ kein Chip trägt den Zustand', () => {
     expect(chips([])).not.toContain('data-bezug-kanton-wirkung');
+  });
+});
+
+describe('kantonWirkung · EINE Rechnung für Chip und Satz', () => {
+  const a = { ort: 'an Art. 250', alle: or250, klassen: KL, kantone: ['BE', 'BS'], geladen: true };
+  it('liefert die wirkungslosen Kantone UND den Satz; leer bei «kantonal» aus oder nicht geladen', () => {
+    expect(kantonWirkung(a)).toEqual({ ohne: ['BE'], satz: 'Kein Entscheid aus BE an Art. 250 — angezeigt ist nur BS.' });
+    expect(kantonWirkung({ ...a, kantone: ['BS'] })).toEqual({ ohne: [], satz: null });
+    expect(kantonWirkung({ ...a, klassen: ['bge'] })).toEqual({ ohne: [], satz: null });
+    expect(kantonWirkung({ ...a, geladen: false })).toEqual({ ohne: [], satz: null });
+  });
+});
+
+describe('instanzStand · wirkungslose Kantone erscheinen nicht als aktiv (panelModell: «kein verstecktes Filter»)', () => {
+  it('BE ohne Wirkung ⇒ «BGE +3»; BE+BS mit BE ohne Wirkung ⇒ «· BS»; ohne Angabe wie bisher', () => {
+    expect(instanzStand(KL, ['BE'], ['BE'])).toBe('BGE +3');
+    expect(instanzStand(KL, ['BE', 'BS'], ['BE'])).toBe('BGE +3 · BS');
+    expect(instanzStand(KL, ['BE'])).toBe('BGE +3 · BE');
+  });
+});
+
+// ── Durchgang Panel → Filterzeile → Chip (fängt «ohne» leer / nicht durchgereicht, §6.7) ──
+let root: Root | null = null;
+let ziel: HTMLElement;
+afterEach(async () => {
+  if (root) { const r = root; root = null; await act(async () => r.unmount()); }
+  vi.unstubAllGlobals();
+});
+
+describe('Panel → Filterzeile → Chip: gewählt, aber ohne Wirkung (Client-Render, Klappe geöffnet)', () => {
+  it('OR 250-artiger Artikel (AG/GR/BS), Wahl BE+BS: Chip BE gekennzeichnet und mit dem sichtbaren Satz verbunden, Stand «· BS»', async () => {
+    const { document, window } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
+    vi.stubGlobal('window', Object.assign(window, {
+      setTimeout: globalThis.setTimeout, clearTimeout: globalThis.clearTimeout,
+      requestIdleCallback: (cb: () => void) => globalThis.setTimeout(cb, 0) as unknown as number,
+      cancelIdleCallback: (id: number) => globalThis.clearTimeout(id),
+    }));
+    vi.stubGlobal('document', document);
+    vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
+    ziel = document.getElementById('app') as unknown as HTMLElement;
+    root = createRoot(ziel);
+    await act(async () => {
+      root!.render(createElement(MemoryRouter, null, createElement(PanelEntscheide,
+        { ...basis, geladen: true, kanten: or250, alleKanten: or250, kantone: ['BE', 'BS'] })));
+    });
+    const klappe = ziel.querySelector('[data-v3-panel-klappe]')!;
+    expect(klappe.textContent).toContain('BGE +3 · BS');
+    expect(klappe.textContent).not.toContain('BE');
+    await act(async () => { klappe.dispatchEvent(new (window as unknown as { Event: typeof Event }).Event('click', { bubbles: true })); });
+    const be = ziel.querySelector('[data-bezug-kanton="BE"]')!;
+    expect(be.getAttribute('data-bezug-kanton-wirkung')).toBe('keine');
+    const satz = ziel.querySelector('[data-v3-panel-kanton-hinweis]')!;
+    expect(satz.id).not.toBe('');
+    expect(be.getAttribute('aria-describedby')).toBe(satz.id);
+    expect(satz.textContent).toBe('Kein Entscheid aus BE an Art. 250 — angezeigt ist nur BS.');
+    expect(ziel.querySelector('[data-bezug-kanton="BS"]')!.getAttribute('data-bezug-kanton-wirkung')).toBeNull();
   });
 });

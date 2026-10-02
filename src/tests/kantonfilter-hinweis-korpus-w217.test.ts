@@ -16,7 +16,7 @@ import { rohShard } from './korpusSoll.helfer';
 
 const KL: BezugStatus[] = ['bge', 'bger', 'eidg', 'kantonal'];
 const PROBEN: Array<[string, string, string]> = [
-  ['OR', '41', 'Art. 41'], ['StPO', '5', 'Art. 5'], ['ZGB', '8', 'Art. 8'], ['BS-154.100', '92', '§ 92'],
+  ['OR', '41', 'Art. 41'], ['STPO', '5', 'Art. 5'], ['ZGB', '8', 'Art. 8'], ['BS-154.100', '92', '§ 92'],
 ];
 const WAHLEN: string[][] = [[], ['BE'], ['ZH'], ['BS'], ['BE', 'BS', 'ZH']];
 

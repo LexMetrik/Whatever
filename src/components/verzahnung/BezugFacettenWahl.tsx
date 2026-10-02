@@ -56,7 +56,8 @@ import { ZeichenLegende } from './ZeichenLegende';
 const LEER = 'opacity-60';
 
 /** Kantonchip «gewählt, hier ohne Wirkung» (Entscheid David 2.10.2026): die
- *  Auswahl-Fläche fällt weg, der Rahmen wird gestrichelt, das Kürzel durchgestrichen
+ *  Auswahl-Fläche fällt weg, der Registerstrich links wird gestrichelt (die 1-px-Linien der Zeile
+ *  bleiben), das Kürzel durchgestrichen
  *  — nicht Farbe allein (F2); das ✓ des gewählten Zustands bleibt, denn gewählt IST
  *  er. Nur Tokens, kein Opazitäts-Abzug auf der Tinte (Kontrast bleibt ink-700). */
 const KEINE_WIRKUNG = 'bg-transparent text-ink-700 line-through border-dashed';
@@ -108,7 +109,7 @@ function schalterTitel(k: BezugStatus, z: KlassenZahlen | undefined, bilanz: Bez
     + `${bilanz?.artikelGesamt ?? 0} Artikeln: diese Instanz trägt selten.`;
 }
 
-export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, kantoneOhneWirkung = [], bilanz = null, onKlassen, onKantone }: {
+export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, kantoneOhneWirkung = [], hinweisId, bilanz = null, onKlassen, onKantone }: {
   /** Gewählte Instanz-Klassen (leer = nichts gewählt, siehe bezugAuswahl.ts). */
   klassen: readonly BezugStatus[];
   /** Gewählte Kantone; leer = keine Einschränkung. */
@@ -129,6 +130,9 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
    *  Variante A). Die Quelle ist `kantonenOhneWirkung` (bezugAuswahl.ts, §5); diese
    *  Komponente leitet nichts davon selbst ab. Leer/fehlt = jeder gewählte Kanton wirkt. */
   kantoneOhneWirkung?: readonly string[];
+  /** Id des sichtbaren Hinweissatzes (`kantonOhneWirkungSatz`): ein wirkungsloser Kantonchip verweist
+   *  per `aria-describedby` darauf — der Text steht EINMAL da, nicht ein zweites Mal als Titel (§5). */
+  hinweisId?: string;
   /** B7/c: korpusweite Bilanz für die Erklärung leerer Klassen. Optional —
    *  fehlt sie, entfällt nur der Zusatzsatz, nie die Zahl des Erlasses. */
   bilanz?: BezugsBilanz | null;
@@ -194,9 +198,9 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
                eine zweite Wahrheit über dieselbe Schrift. */
             return (
               <button key={k} type="button" aria-pressed={aktiv} data-bezug-kanton={k}
-                {...(ohneWirkung ? { 'data-bezug-kanton-wirkung': 'keine' } : {})}
+                {...(ohneWirkung ? { 'data-bezug-kanton-wirkung': 'keine', 'aria-describedby': hinweisId } : {})}
                 title={ohneWirkung
-                  ? `${k} ist gewählt, hat ${zahlOrt} aber keinen Entscheid — ohne Wirkung, angezeigt sind alle anderen. Abwählen`
+                  ? `${k} ist gewählt, hat ${zahlOrt} aber keinen Entscheid — abwählen`
                   : imErlass
                     ? `Nur kantonale Entscheide aus ${k} zeigen`
                     : `${k} ist gewählt, führt in diesem Erlass aber keine Entscheide — abwählen`}

@@ -102,16 +102,17 @@ export function PanelFilterZeile({
   onBereich: (von: string, bis: string) => void;
 }) {
   const basis = useId();
+  const hinweisId = `${basis}-kanton-hinweis`;
   const [auf, setAuf] = useState<'instanzen' | 'zeit' | null>(null);
 
   return (
     <>
     <div data-v3-panel-filter className="flex flex-wrap items-center gap-1.5 border-b border-line px-3 py-2">
-      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen, kantone)}
+      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen, kantone, kantoneOhneWirkung)}
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
         kinder={(
           <BezugFacettenWahl klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-            klassenZahlen={klassenZahlen} zahlOrt={zahlOrt} kantoneOhneWirkung={kantoneOhneWirkung} onKlassen={onKlassen} onKantone={onKantone} />
+            klassenZahlen={klassenZahlen} zahlOrt={zahlOrt} kantoneOhneWirkung={kantoneOhneWirkung} hinweisId={hinweisId} onKlassen={onKlassen} onKantone={onKantone} />
         )} />
       <Klappe id={`${basis}-zeit`} name="Zeitraum" stand={zeitStand(bereich)}
         offen={auf === 'zeit'} setOffen={(o) => setAuf(o ? 'zeit' : null)}
@@ -124,7 +125,7 @@ export function PanelFilterZeile({
       <PanelSachgebiet gebiete={[]} gewaehlt={[]} onGebiete={() => {}} />
     </div>
     {kantonHinweis && (
-      <p data-v3-panel-kanton-hinweis role="status" className="px-3 pt-1.5 text-micro leading-snug text-ink-700">{kantonHinweis}</p>
+      <p id={hinweisId} data-v3-panel-kanton-hinweis role="status" className="px-3 pt-1.5 text-micro leading-snug text-ink-700">{kantonHinweis}</p>
     )}
     </>
   );
