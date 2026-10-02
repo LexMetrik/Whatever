@@ -35,7 +35,7 @@
 // «Teil-Inkrafttreten» zeige sich als MEHRERE `dateEntryInForce` am Abstract, hat
 // sich nicht bestätigt (gemessen 2.10.2026: alle 231 Bund-Erlasse tragen genau EIN
 // Datum — auch SVG, FINMAG, KVG, MWSTG, die faktisch gestaffelt in Kraft traten;
-// Fedlex setzt es auf den FRÜHESTEN Teil-Termin). Das Feld `gestaffelt`
+// Fedlex setzt es auf EIN Datum der Teil-Liste). Das Feld `gestaffelt`
 // (+ `gestaffeltGrund[]`, + `teilDaten[]` beim amtlichen Datums-Signal) ist darum ein
 // EIGENES Kennzeichen mit fünf Signalen (Belege je Signal bei den Funktionen unten
 // und in inkrafttreten-fedlex-datum.ts). Ein Erlass mit `gestaffelt: true` zeigt nie

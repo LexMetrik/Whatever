@@ -346,8 +346,8 @@ describe('Korpus — inkrafttreten.json (alle Bund-Erlasse)', () => {
       expect(v.teilDaten.length, k).toBeGreaterThan(1);
       expect([...new Set(v.teilDaten)].sort(), k).toEqual(v.teilDaten);
       for (const d of v.teilDaten) expect(d, k).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      // Fedlex setzt dateEntryInForce auf den FRÜHESTEN Teil-Termin: nie später als das Ur-Datum.
-      if (v.datum) expect(v.teilDaten[0] <= v.datum, k).toBe(true);
+      // Gegenprobe amtlich ↔ amtlich: das Abstract-dateEntryInForce ist eines der Teil-Daten der Fassung.
+      if (v.datum) expect(v.teilDaten, k).toContain(v.datum);
     }
   });
 

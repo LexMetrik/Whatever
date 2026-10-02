@@ -2,9 +2,10 @@
 //
 // W2·27-BUND-FERTIG, Nachzug nach widerlegter Gegenprüfung (2.10.2026). Das
 // Abstract-`dateEntryInForce` und die Zeitleiste sehen ein Teil-Inkrafttreten nicht:
-// Fedlex setzt `dateEntryInForce` = frühester Teil-Termin, die erste Konsolidierung
-// beginnt dann am selben Tag (KG: Art. 18–25 am 1.2.1996, Rest am 1.7.1996 ⇒
-// Ur-Datum 1996-02-01 = erste Konsolidierung ⇒ Zeitleisten-Signal strukturell blind).
+// Fedlex setzt `dateEntryInForce` auf EIN Datum aus der Teil-Liste (KG: der früheste, ATSG:
+// der Haupt-Termin) und beginnt die Zeitleiste oft am selben Tag (KG: Art. 18–25 am
+// 1.2.1996, Rest am 1.7.1996 ⇒ Ur-Datum 1996-02-01 = erste Konsolidierung ⇒ das
+// Zeitleisten-Signal ist strukturell blind).
 // Die amtliche Fassung selbst listet die Teil-Daten: im Akoma-Ntoso-XML (Filestore,
 // gepinnte Fassung) steht am Ende der Inkrafttretens-Bestimmung ein Absatz
 //   «Datum des Inkrafttretens: <Teil>: <Datum> <br/> <Teil>: <Datum> …»
