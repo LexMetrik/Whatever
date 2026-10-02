@@ -1,8 +1,9 @@
 import { useMemo, type ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArtikelNachbarn } from '../parts/ArtikelNachbarn';
+import { useLeserAnsicht } from '../leserOptionen';
 import {
-  einzelAdresse, gliederungsPfad, vorschauMarginalie, vorschauZiel, type VorschauZiel,
+  einzelAdresse, erlassAdresse, gliederungsPfad, loeseEinzelToken, vorschauMarginalie, vorschauZiel, type VorschauZiel,
 } from './einzelModus';
 import type { ArtikelNachbarn as NachbarnAmArtikel } from './nachbarArtikel';
 import type { LeserV3Modell } from './leserV3Modell';
@@ -86,11 +87,22 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
   const adresse = (t: string) => einzelAdresse(basisPfad, search, t, 'artikel');
   // Der Rückweg verlässt den Einzelmodus: `?ansicht=` fällt weg, der Anker
   // bleibt — die Gesamtansicht löst ihn mit dem bestehenden Tieflink-Zweig auf
-  // (Herleitung an `PfadStufe.ersterArtikel`).
-  const rueckweg = (t: string) => einzelAdresse(basisPfad, search, t, 'erlass');
+  // (Herleitung an `PfadStufe.ersterArtikel`). Ist «Einzelne Bestimmung» GEMERKT, sagt die
+  // Adresse ausdrücklich «erlass» (E-D12-B02, `erlassAdresse`): sonst führte der Link wieder hierher.
+  const gemerkt = useLeserAnsicht();
+  const rueckweg = (t: string) => erlassAdresse(basisPfad, search, t, gemerkt);
+  // E-D11-B04: ein Anker, den der Erlass nicht führt, wird benannt — gezeigt wird dann die Lesestelle.
+  const { unbekannt } = loeseEinzelToken(useLocation().hash, m.artTokens);
 
   return (
-    <div className="grid gap-5" data-einzel-artikel={token}>
+    // `minmax(0,1fr)`: ohne es nimmt die Spur die Mindestbreite einer breiten Tabelle an und die Karte wächst
+    // über das Fenster (E-D12-B07, @375: 641 px).
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-5" data-einzel-artikel={token}>
+      {unbekannt !== null && (
+        <p role="status" data-einzel-unbekannt className="text-body-s text-ink-700">
+          Die Bestimmung «{unbekannt}» gibt es in diesem Erlass nicht. Gezeigt wird {label}.
+        </p>
+      )}
       {/* ── GLIEDERUNGSPFAD (Kap. 15.3) · zugleich der Rückweg (B4) ────────
           Im Einzelmodus ist er TRIVIAL WAHR: genau eine Bestimmung ist
           sichtbar, es gibt keine Scroll-Stellung, die von ihm abweichen könnte

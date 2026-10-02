@@ -115,10 +115,13 @@ export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorS
       wortMehr={zaehlform(2, bestimmungsWort)}
       onSprung={(token) => {
         // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
-        // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5).
+        // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5). Der Klick ins
+        // Feld ohne Treffer beendet die Suche NICHT (`true`, PE-B12-B02): sonst fielen
+        // Hervorhebung, Zähler und die Landkarte selbst mit ihm weg. Im Einzelmodus
+        // führen beide Wege über den Router (PE-B12-B03, `./sprungWege`).
         onVorSprung();
         if (m.treffer.some((t) => t.token === token)) m.springeZuTreffer?.(token);
-        else m.springeZuArtikel(token);
+        else m.springeZuArtikel(token, true);
       }} />
   );
 }
