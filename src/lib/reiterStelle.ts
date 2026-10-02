@@ -60,8 +60,10 @@ function kurzLabel(label: string): string {
   return `${wort || label.slice(0, STELLE_MAX)}…`;
 }
 
-/** Artikel-Nummer aus dem Token-Rest: `49_50` → «49–50» (Bereich), `335_c` → «335c». */
-const nummerAusToken = (rest: string): string => rest.replace(/_(?=\d)/g, '–').replace(/_/g, '');
+/** Artikel-Nummer aus dem Token-Rest: `49_50` → «49–50» (Bereich), `335_c` → «335c».
+ *  Geteilt mit den Anzeige-Stellen, die nur einen Bund-Token haben (Kontext-Panel,
+ *  Erläuterungen) — dieselbe Regel, am ganzen Korpus gemessen (§5). */
+export const nummerAusToken = (rest: string): string => rest.replace(/_(?=\d)/g, '–').replace(/_/g, '');
 
 /** Bund-Token, deren Rückfall dem amtlichen Label gleicht: Ganzzahl mit
  *  Buchstaben-Zusätzen oder Bereich. Alles andere braucht den Eintrag. */

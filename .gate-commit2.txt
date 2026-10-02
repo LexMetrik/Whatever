@@ -1,0 +1,8 @@
+fix(leser): Anzeige von Artikel-Token im Kontext-Panel und in den Erläuterungen (W2·17-UI-BEFUNDE)
+
+Nebenfund zu DFG-F01: KontextPanel, lib/kontext.ts und PanelErlaeuterungen
+strichen den Unterstrich ersatzlos («Art. 4950» statt «Art. 49–50»). Sie
+nutzen jetzt dieselbe Regel wie die Reiter-Stelle (nummerAusToken).
+
+Roadmap: W2·17-UI-BEFUNDE
+Co-Authored-By: Claude Sonnet <noreply@anthropic.com>

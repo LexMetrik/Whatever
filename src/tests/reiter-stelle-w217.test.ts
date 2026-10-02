@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { reiterStelle, stelleBrauchtDaten, type StelleDaten } from '../lib/reiterStelle';
+import { readFileSync } from 'node:fs';
+import { nummerAusToken, reiterStelle, stelleBrauchtDaten, type StelleDaten } from '../lib/reiterStelle';
 import { ladeTabs, reiterKurzformText, reiterKurzformTeile } from '../lib/tabs';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { VerlaufManifeste } from '../lib/verlaufLabel';
@@ -150,5 +151,20 @@ describe('Altbestand im Speicher wird beim Laden richtig beschriftet', () => {
     expect(tabs.map((t, i) => reiterKurzformText(t, { gesetze: ms[i].gesetze }))).toEqual([
       'Art. 12 SchlT ZGB', 'Geltungsbereich EMRK', 'Art. 49–50 GebV SchKG',
     ]);
+  });
+});
+
+describe('nummerAusToken: dieselbe Regel für die Anzeige-Stellen ohne Eintrag (Nebenfund DFG-F01)', () => {
+  it('Bereich mit Trenner, Zusätze zusammengezogen', () => {
+    expect(nummerAusToken('49_50')).toBe('49–50');
+    expect(nummerAusToken('20_a')).toBe('20a');
+    expect(nummerAusToken('226_a_226_d')).toBe('226a–226d');
+  });
+  it('KontextPanel, kontext.ts und PanelErlaeuterungen streichen den Unterstrich nicht mehr ersatzlos', () => {
+    for (const f of ['src/components/kontext/KontextPanel.tsx', 'src/lib/kontext.ts', 'src/pages/gesetz-leser/v3/PanelErlaeuterungen.tsx']) {
+      const q = readFileSync(f, 'utf8');
+      expect(q, f).toContain('nummerAusToken(');
+      expect(q, f).not.toMatch(/replace\(\/_\/g, ''\)/);
+    }
   });
 });
