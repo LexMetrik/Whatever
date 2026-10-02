@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
-import { GLYPH_LEGENDE } from './statusRezept';
+import { GLYPH_LEGENDE, REZEPT } from './statusRezept';
 
 // ─── ZeichenLegende — sichtbare Erklärung der Chip-Glyphen (LM-050) ──────────
 //
@@ -34,7 +34,15 @@ import { GLYPH_LEGENDE } from './statusRezept';
 // die Live-Region angesagt (a11y-gleichwertig zur describedby-Variante); Touch
 // und Tastatur bedienen denselben Button, Escape/Aussenklick schliessen.
 
-export function ZeichenLegende() {
+export function ZeichenLegende({ ohneLeitentscheid = false }: {
+  /** W2·17-UI-BEFUNDE (E4-B05, 1.10.2026): den ★-Eintrag weglassen, wo der
+   *  Mount-Ort kein ★ zeigt. Das Panel «Entscheide» trägt es nicht (Ä106 in
+   *  `v3/PanelEntscheide.tsx`: eine Marke an jeder Zeile einer Gruppe, in der
+   *  alle denselben Status haben, trägt keine Auskunft) — die Legende erklärte
+   *  dort ein Zeichen ohne Fundort (§8, §13 F4). Der Eintrag selbst bleibt in
+   *  `GLYPH_LEGENDE`, damit ein Mount-Ort, der das ★ zeigt, ihn bekommt. */
+  ohneLeitentscheid?: boolean;
+} = {}) {
   const { kannOeffnen } = usePaneSteuerung();
   const [offen, setOffen] = useState(false);
   const id = useId();
@@ -42,20 +50,30 @@ export function ZeichenLegende() {
 
   useEffect(() => {
     if (!offen) return;
-    const aufTaste = (e: KeyboardEvent) => { if (e.key === 'Escape') setOffen(false); };
+    // E4-B04/D02 (1.10.2026): Escape schliesst ZUERST nur das Toggletip. Das Panel
+    // hängt seinen Esc-Hörer ebenfalls ans window (`usePopoverAutoZu`,
+    // `useDialogFokus`) — beide bedienten dasselbe Escape, und das ganze Panel
+    // samt Klappen-Zustand war weg (gemessen 1280×900 und 1024×800). Der
+    // Capture-Zug am window läuft VOR jedem Bubble-Hörer; `stopPropagation`
+    // hält ihn davon ab. Ein zweites Escape erreicht das Panel dann normal.
+    const aufTaste = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' && e.key !== 'Esc') return;
+      e.stopPropagation();
+      setOffen(false);
+    };
     const aufKlick = (e: MouseEvent) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOffen(false);
     };
-    window.addEventListener('keydown', aufTaste);
+    window.addEventListener('keydown', aufTaste, true);
     window.addEventListener('mousedown', aufKlick);
     return () => {
-      window.removeEventListener('keydown', aufTaste);
+      window.removeEventListener('keydown', aufTaste, true);
       window.removeEventListener('mousedown', aufKlick);
     };
   }, [offen]);
 
   const eintraege = [
-    ...GLYPH_LEGENDE,
+    ...GLYPH_LEGENDE.filter((e) => !(ohneLeitentscheid && e.glyph === REZEPT.leitentscheid?.glyph)),
     // ⧉ ist KEIN Kopiersymbol (Befundtext-Korrektur): es öffnet den Entscheid
     // in einer zweiten Spalte — Wortlaut wie der Button-title in BezuegeZeile.
     ...(kannOeffnen
@@ -69,7 +87,7 @@ export function ZeichenLegende() {
         type="button"
         aria-controls={id}
         onClick={() => setOffen((v) => !v)}
-        className="cursor-help text-micro text-ink-500 underline decoration-dotted decoration-ink-300 underline-offset-2 hover:text-brass-700 hover:decoration-brass-500"
+        className="relative cursor-help text-micro text-ink-500 underline decoration-dotted decoration-ink-300 underline-offset-2 hover:text-brass-700 hover:decoration-brass-500 after:absolute after:inset-x-0 after:top-1/2 after:h-[var(--tap-ziel)] after:-translate-y-1/2 after:content-['']"
       >
         Zeichenerklärung
       </button>

@@ -43,7 +43,7 @@ import {
   type Bezug, type BezugsShard, type KlassenZahlen,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import { bauePraedikate, waehleBezuege } from './bezugAuswahl';
+import { bauePraedikate, kantonSchneidet, waehleBezuege, wirksameKantone } from './bezugAuswahl';
 import { baueJahresHistogramm, istBereichOffen, type Histogramm, type Zeitbereich } from './bezugZeit';
 import { holeBezugKlassen, useBezugBis, useBezugKantone, useBezugKlassen, useBezugVon } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
@@ -71,9 +71,10 @@ export interface ArtikelBezuege {
    * Zähler an StPO/428 mit Kanton «GR» auf «1» zurück, obwohl der Artikel 882
    * kantonale Entscheide führt (Gegenprüfung Runde 2/J1).
    *
-   * Die Bedingung ist DIESELBE wie in `bauePraedikate` (§5): eine Kantonswahl
-   * wirkt nur, solange die kantonale Klasse überhaupt eingeschaltet ist —
-   * sonst gäbe es nichts zu schneiden, und der Zusatz behauptete eine
+   * Die Bedingung ist `kantonSchneidet` (§5, dieselbe Regel wie in
+   * `waehleBezuege`): eine Kantonwahl wirkt nur, solange die kantonale Klasse
+   * eingeschaltet ist UND ein gewählter Kanton an diesem Artikel eine Kante
+   * führt — sonst gäbe es nichts zu schneiden, und der Zusatz behauptete eine
    * Einschränkung, die gar nicht greift.
    */
   kantonAktiv: boolean;
@@ -233,7 +234,7 @@ export function useBezuege(erlassKey: string | undefined): {
       // steht das «von» überhaupt da.
       gesamt: s.gesamtProArtikel?.[token] ?? {},
       zeitAktiv: !istBereichOffen(bereich),
-      kantonAktiv: kantone.length > 0 && klassen.includes('kantonal'),
+      kantonAktiv: kantonSchneidet(alle, klassen, kantone),
     };
   }, [aktiv, erlassKey, shard, klassen, kantone, bereich]);
 
@@ -356,17 +357,19 @@ export function histogrammAusShard(
   kantone: readonly string[],
 ): Histogramm {
   if (klassen.length === 0) return LEERES_HISTOGRAMM;
-  const praedikate = bauePraedikate(klassen, kantone);
   const daten: string[] = [];
   for (const eintraege of Object.values(shard.proArtikel)) {
-    for (const e of eintraege) {
-      const kopf = shard.dokumente[e.key];
-      // Eintrag ohne Dokument-Kopf wird ÜBERSPRUNGEN — genau wie in
-      // `bezuegeFuerArtikel`, sonst zählte der Strahl Kanten, die die Liste
-      // darunter gar nicht rendert.
-      if (!kopf) continue;
-      if (!praedikate.every((p) => p(kopf))) continue;
-      daten.push(kopf.datum);
+    // Eintrag ohne Dokument-Kopf wird ÜBERSPRUNGEN — genau wie in
+    // `bezuegeFuerArtikel`, sonst zählte der Strahl Kanten, die die Liste
+    // darunter gar nicht rendert.
+    const koepfe = eintraege.flatMap((e) => shard.dokumente[e.key] ?? []);
+    // Die Kantonwahl wirkt JE ARTIKEL, wie in `waehleBezuege` (dieselbe
+    // `wirksameKantone`, §5): ein Kanton, der an diesem Artikel keine Kante
+    // führt, schneidet dort nichts. Mit der rohen Wahl zählte der Strahl an OR
+    // + ZH 930 Kanten, die Liste 1552 (gemessen 2.10.2026).
+    const praedikate = bauePraedikate(klassen, wirksameKantone(koepfe, kantone));
+    for (const kopf of koepfe) {
+      if (praedikate.every((p) => p(kopf))) daten.push(kopf.datum);
     }
   }
   return baueJahresHistogramm(daten);

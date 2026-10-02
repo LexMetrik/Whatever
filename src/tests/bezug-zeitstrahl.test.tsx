@@ -197,3 +197,37 @@ describe('B5 · Markup der Zeit-Steuerung', () => {
     expect(s).toContain('in diesem Erlass');
   });
 });
+
+/**
+ * Nachzug E4-B01 (W2·17-UI-BEFUNDE, Prüfer-Befund 2.10.2026): der Strahl nutzt
+ * dieselbe «wirksame Kantonwahl» wie die Liste. Gemessen vor dem Fix (OR + ZH,
+ * ZH kommt in OR nicht vor): Strahl 930, Liste 1552 — der Fusssatz «930
+ * Verknüpfungen in diesem Erlass» war falsch. Die Prüf-Seite zählt hier über
+ * `waehleBezuege` je Artikel (die Auswahl der Liste), nicht über dieselbe
+ * Schleife wie der Prüfling.
+ */
+describe('E4-B01 Nachzug · Strahl = Liste bei gespeicherter Kantonwahl', () => {
+  const FAELLE: [string, string[]][] = [
+    ['OR', ['ZH']], ['OR', ['BE']], ['STPO', ['GR']], ['ZGB', ['ZH']], ['OR', ['ZH', 'BE']],
+  ];
+  for (const [key, kantone] of FAELLE) {
+    it(`${key} + ${kantone.join('/')}: Balken + ohneJahr = Summe der Liste über alle Artikel`, () => {
+      const s = shard(key);
+      const h = histogrammAusShard(s, BEDIENBARE_KLASSEN, kantone);
+      const strahl = h.balken.reduce((a, b) => a + b.anzahl, 0) + h.ohneJahr;
+      let liste = 0;
+      for (const token of Object.keys(s.proArtikel)) {
+        liste += waehleBezuege(bezuegeFuerArtikel(s, token), BEDIENBARE_KLASSEN, kantone).length;
+      }
+      expect(strahl).toBe(liste);
+      expect(strahl).toBeGreaterThan(0);
+    });
+  }
+
+  it('OR + ZH schneidet nichts (ZH fehlt in OR) — gleich viel wie ohne Kantonwahl', () => {
+    const s = shard('OR');
+    const mit = histogrammAusShard(s, BEDIENBARE_KLASSEN, ['ZH']);
+    const ohne = histogrammAusShard(s, BEDIENBARE_KLASSEN, []);
+    expect(mit).toEqual(ohne);
+  });
+});

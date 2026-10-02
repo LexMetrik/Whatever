@@ -195,12 +195,20 @@ function aufzaehlung(teile: readonly string[]): string {
  * ist eine falsche Auskunft über den Bestand (§8). Die Kurznamen kommen aus
  * `KLASSE_SCHALTER` (derselben Quelle wie die Schalter selbst, §5).
  */
-export function instanzStand(klassen: readonly BezugStatus[]): string {
+export function instanzStand(klassen: readonly BezugStatus[], kantone: readonly string[] = []): string {
   const erste = klassen[0];
   if (erste === undefined) return 'keine';
-  return klassen.length === 1
+  const klassenTeil = klassen.length === 1
     ? KLASSE_SCHALTER[erste]
     : `${KLASSE_SCHALTER[erste]} +${klassen.length - 1}`;
+  // W2·17-UI-BEFUNDE (E4-B03/D01, 1.10.2026): die Kantonwahl gehört zum Stand —
+  // sonst stand «BGE +3» im Grundzustand UND bei «nur BE» (gemessen OR Art. 41),
+  // und die eingeklappte Facette war genau das versteckte Filter, das Ä54
+  // verbietet. Nur bei eingeschalteter Klasse «kantonal»: ohne sie wirkt der
+  // Kanton nicht (`bauePraedikate`), eine Nennung behauptete eine Einschränkung,
+  // die nicht greift. Bis zwei Kantone beim Namen, darüber die Zahl.
+  if (kantone.length === 0 || !klassen.includes('kantonal')) return klassenTeil;
+  return `${klassenTeil} · ${kantone.length <= 2 ? kantone.join(', ') : `${kantone.length} Kantone`}`;
 }
 
 /** Kurzstand des Zeitraums. `bereichLabel` liefert bei offenem Bereich `null` —

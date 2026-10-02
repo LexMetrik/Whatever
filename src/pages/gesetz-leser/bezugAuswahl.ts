@@ -141,9 +141,15 @@ export const KLASSE_SCHALTER: Readonly<Record<BezugStatus, string>> = {
  * (`src/tests/bezug-auswahl.test.ts`), während die Inline-Bedingung im JSX es
  * nicht wäre.
  */
-export function istEingegrenzt(klassen: readonly BezugStatus[]): boolean {
+export function istEingegrenzt(klassen: readonly BezugStatus[], kantone: readonly string[] = []): boolean {
   const norm = normalisiereKlassen(klassen);
-  return !(norm.length === DEFAULT_KLASSEN.length && norm.every((k, i) => k === DEFAULT_KLASSEN[i]));
+  const klassenAbgewichen = !(norm.length === DEFAULT_KLASSEN.length && norm.every((k, i) => k === DEFAULT_KLASSEN[i]));
+  // W2·17-UI-BEFUNDE (E4-B03, 1.10.2026): auch ein gewählter Kanton ist eine
+  // Eingrenzung — aber nur, solange «kantonal» an ist (sonst wirkt er nicht,
+  // `bauePraedikate`). Der Hinweistext darf im Grundzustand nichts anderes
+  // sagen als in der eingegrenzten Wahl, und ein gewählter Kanton ist nicht
+  // der Grundzustand.
+  return klassenAbgewichen || (kantone.length > 0 && norm.includes('kantonal'));
 }
 
 /**
@@ -272,8 +278,60 @@ export function waehleBezuege<T extends WaehlbareKante>(
   bereich?: Zeitbereich,
 ): T[] {
   if (klassen.length === 0) return [];
-  const praedikate = bauePraedikate(klassen, kantone, bereich);
+  const praedikate = bauePraedikate(klassen, wirksameKantone(alle, kantone), bereich);
   return alle.filter((b) => praedikate.every((p) => p(b)));
+}
+
+/**
+ * Die Kantonwahl, die an DIESEN Kanten überhaupt etwas schneiden kann: die
+ * gewählten Kantone, zu denen es hier mindestens eine kantonale Kante gibt.
+ *
+ * ── DER BEFUND, DEN DAS BEHEBT (W2·17-UI-BEFUNDE E4-B01/B02, 1.10.2026) ─────
+ * Die Kantonwahl liegt GLOBAL im Speicher (`lm.leser.optionen`), nicht je
+ * Erlass. Wer an BGG Art. 44 «ZH» wählte und danach OR Art. 41 öffnete, sah dort
+ * alle 22 kantonalen Entscheide verschwinden — ohne dass ein Schalter gedrückt
+ * stand («alle» auch nicht), ohne Nennung an der Klappe, ohne Abwahl ausser über
+ * «alle». Ein Filter, den man nicht sieht, ist eine falsche Auskunft über den
+ * Bestand (§8). An 267 von 322 Erlassen führen die Shards genau diesen einen
+ * Kanton: jeder gespeicherte Fremdkanton leerte dort die ganze kantonale Liste.
+ *
+ * ── DIE ENTSCHEIDUNG (deklariert: kleinster Eingriff, keine Fachfrage gestellt) ─
+ * Die Wahl bleibt global gespeichert (wer BS lesen will, will BS überall) und
+ * wirkt dort, wo sie etwas zu schneiden hat. Hat KEIN gewählter Kanton eine Kante
+ * an diesem Ort, schneidet sie nicht — statt alles Kantonale zu löschen. Das ist
+ * die einzige Lesart, bei der die Liste nie leerer ist als die Kopfzahl des
+ * Artikels sagt, ohne dass der Nutzer etwas sieht. Die Gegenstücke stehen in der
+ * Oberfläche: gewählte Kantone sind IMMER als gedrückter Chip sichtbar (auch wenn
+ * der Erlass sie nicht führt) und der Erklärtext sagt den Satz dazu
+ * (`BezugFacettenWahl`).
+ *
+ * Gleiche Kriterien wie `bauePraedikate`: 'CH' ist kein Kanton und fällt weg
+ * (Bundeskanten tragen es; kantonale Kanten tragen es nie).
+ */
+export function wirksameKantone(
+  kanten: readonly { facetten: { kanton: string } }[],
+  kantone: readonly string[],
+): string[] {
+  if (kantone.length === 0) return [];
+  const vorhanden = new Set<string>();
+  for (const k of kanten) if (k.facetten.kanton !== 'CH') vorhanden.add(k.facetten.kanton);
+  return kantone.filter((k) => vorhanden.has(k));
+}
+
+/**
+ * Nimmt die Kantonwahl an DIESEN Kanten etwas heraus? Die Bedingung hinter
+ * «… im Kanton» am Gruppenkopf (`ArtikelBezuege.kantonAktiv`): kantonale Klasse
+ * an UND mindestens ein gewählter Kanton führt hier eine Kante — dieselbe
+ * Regel wie in `waehleBezuege`/`bauePraedikate` (§5). Mit der rohen Wahl
+ * behauptete der Kopf eine Kanton-Einschränkung, obwohl nur der Zeitraum
+ * kürzte (Prüfer-Befund 2.10.2026, E4-B01 Nachzug). Rein (§2).
+ */
+export function kantonSchneidet(
+  alle: readonly { facetten: { kanton: string } }[],
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): boolean {
+  return klassen.includes('kantonal') && wirksameKantone(alle, kantone).length > 0;
 }
 
 /**
