@@ -80,3 +80,20 @@ export function zitatKuerzel(
   if (kuerzel === 'ZGB' && token.startsWith(`${ZGB_SCHLUSSTITEL}_`)) return `SchlT ${kuerzel}`;
   return `${kuerzel} (${gruppenName(token, struktur) ?? gruppenRueckfall(m[1])})`;
 }
+
+// ─── W2·17-UI-BEFUNDE · DER LEERSATZ DES REITERS «ENTSCHEIDE» ────────────────
+//
+// Die Zuordnung der Entscheide kennt nur Artikel des Hauptteils: die Bezugs-
+// Shards tragen keinen einzigen `disp_`-Schlüssel (gemessen 2.10.2026, alle 322
+// Shards), obwohl das Bundesgericht Schlusstitel-Artikel zitiert («Art. 13a SchlT
+// ZGB», BGE 150 III 160). «Kein Entscheid erfasst» wäre dort falsch (§8) — der
+// Satz sagt, was wahr ist: nicht zugeordnet.
+
+export function leereEntscheideSatz(token: string | null, label: string | null, zitat: string): string {
+  if (istUebergangsToken(token)) {
+    return `Zu ${zitat} sind keine Entscheide zugeordnet: die Zuordnung deckt den Hauptteil des Erlasses ab, nicht die Schluss- und Übergangsbestimmungen.`;
+  }
+  return label
+    ? `Zu ${label} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
+    : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.';
+}

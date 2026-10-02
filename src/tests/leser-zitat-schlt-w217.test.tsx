@@ -109,7 +109,7 @@ describe('(1) amtliches Zitat im Panel', () => {
 
     it('sagt «nicht zugeordnet» mit dem amtlichen Zitat — nie «kein Entscheid erfasst», nie «Zu Art. 3 ZGB»', () => {
       const t = text({ aktArtikel: 'disp_u1_art_3', artikelLabel: 'Art. 3', normZitat: 'Art. 3 SchlT ZGB' });
-      expect(t).toContain('Zu Art. 3 SchlT ZGB sind keine Entscheide zugeordnet');
+      expect(t).toContain('Zu Art. 3 SchlT ZGB sind keine Entscheide zugeordnet: die Zuordnung deckt den Hauptteil des Erlasses ab');
       expect(t).not.toContain('kein Entscheid');
       expect(t).not.toContain('Zu Art. 3 ZGB');
     });

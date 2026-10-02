@@ -7,7 +7,8 @@ import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
-import type { Fussnote } from '../../../lib/normtext/browse';
+import type { Fussnote, StrukturMap } from '../../../lib/normtext/browse';
+import { zitatKuerzel } from '../artikelBezeichnung';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 
 // ─── Modell des Rechtsprechungs-/Kontext-Panels (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─
@@ -403,4 +404,12 @@ export function blattArtikel(
  */
 export function normZitat(artikelLabel: string | null, kuerzel: string): string {
   return artikelLabel ? `${artikelLabel} ${kuerzel}` : kuerzel;
+}
+
+/** Panel-Zitat des gelesenen Artikels; bei Übergangsartikeln mit Gruppe («Art. 3 SchlT ZGB», `../artikelBezeichnung`). */
+export function panelZitat(
+  ziel: { label: string | null; token: string | null }, kuerzel: string,
+  struktur: StrukturMap | null, eintraege: readonly NormSnapshot[],
+): string {
+  return normZitat(ziel.label, zitatKuerzel(ziel.token, ziel.label, kuerzel, struktur, eintraege));
 }
