@@ -2124,6 +2124,39 @@
     button.lc-druck-kopf { display: flex !important; }
     .lc-druck-chevron { display: none !important; }
 
+    /* W2·17-UI-BEFUNDE DFG-G02 (2.10.2026) · ABSATZ-NUMMER UND LITERA SIND RECHTS-
+       INHALT, KEIN BEDIENELEMENT. Die Zitiermarke (`ZitierMarke`,
+       `ArtikelBody.zitier.tsx`) ist ein `<button>` — und fiel damit unter die
+       Pauschalregel oben. Gemessen am Build 9bb82d7de (StPO Art. 3): am
+       Bildschirm «1Die Strafbehörden … 2Sie beachten … a. … d.», im Druck «Die
+       Strafbehörden … Sie beachten …» ohne jede Nummer; im PDF von ZH-211.11 fehlten
+       bei § 4 die Absätze 1–3. Ein Ausdruck ohne Absatz-Nummer lässt sich nicht
+       zitieren (§1). Die Marke bleibt als reiner Text stehen; ihre Klick- und
+       Hover-Optik hat im Druck nichts zu tun und ist über `a`-/`button`-Regeln
+       ohnehin neutral. Alle ANDEREN Bedienelemente bleiben verborgen. */
+    button.lc-zitiermarke { display: inline-block !important; }
+
+    /* W2·17-UI-BEFUNDE DFG-G03 (2.10.2026): Tabellen im Druck. Die Zellen tragen am
+       Bildschirm teils `whitespace-nowrap` (Zahlen, Beträge), die Prosa bricht um.
+       Gedruckt wird nie auf die sichtbare Breite zugeschnitten (Scroll-Kasten →
+       `overflow: visible`, oben) — also muss die Tabelle in die Seitenbreite
+       passen: höchstens Kastenbreite. Gemessen (A4, Rand 1.6 cm, Spaltenbreite
+       ~588 px): GebV SchKG Art. 37 braucht 591 px, ZEMIS-V Anhang 1 hat 36
+       Spalten. Darum im Druck KEINE Untergrenze (`min-width: 0`) und Umbruch
+       überall dort, wo die Breite fehlt (`anywhere` — wirkt nur auf den Zwang,
+       eine Zelle, die in ihre Spalte passt, bleibt ganz): lieber ein Betrag über
+       zwei Zeilen als gar keiner. Keine Silbentrennung: die Trennstelle würde im
+       PDF-Text ein Wort zerreissen, die Textsuche fände «übersteigenden» nicht. */
+    /* Der Artikel-Textkasten (`max-w-normtext … overflow-x-clip`) schneidet am
+       Bildschirm nur Überstand ab. Gedruckt schnitt er die Tabelle an der
+       Spaltenkante ab (GebV SchKG Art. 37: letzte Spalte «6 Promille …» nur noch
+       als «P», «25.–» fehlte; Seitenkante bei 596 pt, Spalte endete bei ~535 pt). */
+    [class*='overflow-x-clip'] { overflow: visible !important; }
+    [data-mehrspaltig] { max-width: 100%; zoom: .8; }
+    [data-mehrspaltig] [role='cell'], [data-mehrspaltig] [role='columnheader'] { min-width: 0 !important; hyphens: manual; }
+    [data-mehrspaltig] .lc-wortumbruch { overflow-wrap: anywhere; }
+    [data-mehrspaltig] [role='table'] { max-width: 100%; }
+
     /* Fundstelle mitdrucken: absolute Quell-URLs (Fedlex-ELI, amtliches PDF,
        entscheidsuche) treten als Text neben den Linktext. Interne SPA-Links
        bleiben unangetastet — deren relative Pfade wären nur Rauschen (D1:
@@ -2973,6 +3006,23 @@
     hyphens: auto;
     overflow-wrap: break-word;
   }
+
+  /* ─── `lc-zitiermarke` · EINE MARKE BRICHT NIE (W2·17 DFG-D03, 2.10.2026) ─────
+     Die Zitiermarke vor einem Absatz oder einer Litera («1», «a.», aber auch
+     «1quinquies», «2quater») ist ein Etikett, kein Fliesstext. Sie erbt vom Absatz
+     `overflow-wrap: anywhere` und stand in einem festen 36-px-Kasten (`w-9`):
+     «1quinquies» zerfiel zu «1qui / nqui / es» auf drei Zeilen (RPG Art. 5, 16
+     Absätze im Bund), und die Marke stand nicht mehr auf der Grundlinie der
+     ersten Textzeile. Jetzt: kein Umbruch in der Marke, die Breite wächst auf die
+     Marke (`min-width: max-content` — ein Utility-`w-9` bleibt Untergrenze, weil
+     es `width` setzt, nicht `min-width`), der Text dahinter rückt um den
+     Überschuss nach rechts («hängend, nie überlappend»). Der Absatz-Kasten `w-9`
+     bekommt innen 4 px Luft, damit die lange Marke den Text nicht berührt
+     (gemessen OR Art. 928a «2quater»: vorher 3 px Abstand). Der Aufrufer
+     (`ArtikelBody.tsx:676`) bleibt unberührt — eine Marken-Klasse am Aufruf wäre
+     sauberer, die Datei ist aber bis zum Landen von #1251 gesperrt. */
+  .lc-zitiermarke { white-space: nowrap; overflow-wrap: normal; min-width: max-content; }
+  .lc-zitiermarke[class~='w-9'] { padding-inline-end: .25rem; }
 
   /* ─── `lc-scrollrand-x|y` · Scroll-Affordanz für JEDEN Scroller (B8, 31.8.2026) ─
      LM-063 (Tab-/Phasen-Leisten schneiden das letzte Fach ab, kein Hinweis) und

@@ -143,3 +143,10 @@ export function istJahrSpalte(zellen: string[]): boolean {
 
 /** Kopf einer Kennzahl-Spalte («Code», «Nr.»): Ziffern sind Bezeichner, keine Mengen. */
 export const KENNZAHL_TITEL = /(?:^|\s)(?:code|codice|nr\.?|nummer|numéro|numero|n°)(?:\s|$)/i;
+
+/** Ab dieser Länge ist eine Tabellenzelle Fliesstext und darf umbrechen (W2·17
+ *  DFG-D01/D02, 2.10.2026). Darunter stehen Zahlen, Beträge, Daten, Bereiche und
+ *  Kurzwörter («bis 1 000», «über 10 000 bis 100 000», «8. März 1960»), die nie
+ *  mitten im Wert brechen (§N-4a). Reine Darstellung — kein Zellwortlaut ändert sich. */
+export const PROSA_AB = 24;
+export const istProsaZelle = (zelle: string): boolean => zelle.trim().length >= PROSA_AB;
