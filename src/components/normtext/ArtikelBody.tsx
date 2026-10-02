@@ -21,9 +21,8 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // ArtikelKontextGruppe, am 1.10.2026 gelöscht — die drei übrigen bleiben der
 // Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
-
-import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
-import { FREMD_LEER, NOOP, markenAnzeige, markenZitat, stufenFuer, vglFnNr } from './ArtikelBody.helfer';
+import { zifferAnkerAttribute } from '../../lib/normtext/zifferAnker';
+import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, markenZitat, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
 import { ZitierMarke } from './ArtikelBody.zitier';
 
 export type { ZitierKontext };
@@ -244,8 +243,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   const { passusMarke, zielItemKey, zielBloecke } = bestimmePassusZiel(bloecke, passus);
   // Ziffer-Ebene (P6): nur der ERSTE Ziel-Block trägt die Scroll-Marke (passusRef).
   const ersterZielBlock = zielBloecke != null ? Math.min(...zielBloecke) : -1;
-  // Zitat-Segment der Ziffer-Ebene («Art. 197 Ziff. 9 Abs. 1 BV»): ohne ziffer leer = byte-gleich.
-  const zifferTeil = (b: { ziffer?: string }): string => (b.ziffer != null ? ` Ziff. ${b.ziffer}` : '');
+  // Ziffer-Fragment (E2): `#art-<token>-ziff-<z>` am ersten Block jeder Ziffer — nur im Leser (Popover: id doppelt).
+  const zA = zitierKontext ? zifferAnkerAttribute(artikel, bloecke) : [];
   // W2·27 (30.9.2026): das Wort für den Ersatztext «…»/leer — am amtlichen Artikel-Vermerk,
   // nicht am Platzhalter (§1/§8). EINE Quelle: `leerstellenWort` (darstellung.ts, §5).
   const entfallWort = leerstellenWort(artikelGegenstandslos ? 'gegenstandslos' : 'aufgehoben');
@@ -533,7 +532,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const flach = b.titel <= 2;
           return (
             <p
-              key={i}
+              key={i} {...zA[i]}
               // W2·19-GLIEDERUNG/S9 (Bau-Spec §3.4/§6·2 «Anhang-Zwischentitel in
               // der Lesespalte erhalten Anker, damit der Ast hineinzielen
               // kann»): bis hierher war dieser Zwischentitel NICHT anspringbar
@@ -547,8 +546,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // — im Popover wäre die Id doppelt vergeben (§7: kein Anker, der
               // zweimal im DOM steht). Index i ist die stabile Block-Position
               // im Snapshot (deterministisch, §2).
-              id={zitierKontext ? undefined : `anh-${artikel}-${i}`}
-              className={`${zitierKontext ? '' : 'text-body-s '}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
+              id={zA[i]?.id ?? (zitierKontext ? undefined : `anh-${artikel}-${i}`)}
+              className={`${zitierKontext ? '' : 'text-body-s '}${zA[i] ? 'nt-anker ' : ''}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
             >
               {b.text}
             </p>
@@ -632,7 +631,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         const inlineGesetzt = new Set<string>();
         return (
           <div
-            key={i}
+            key={i} {...zA[i]}
             ref={blockStark && (zielBloecke == null || i === ersterZielBlock) ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
             data-passus={blockStark ? 'true' : 'false'}
             /* S2 (F3 = V2, David 17.8.2026 am Bildbogen): im LESER trägt dieser
@@ -648,7 +647,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                AUSSERHALB des Lesers bleibt alles unverändert (`text-body-s` hat
                lh 1.5 und braucht den lockereren Wert weiterhin) — die Änderung ist
                auf den Reader-Zweig gescopt, Vorschau/Popover sind byte-gleich. */
-            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${
+            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${zA[i] ? 'nt-anker ' : ''}${
               blockStark
                 ? 'rounded-md border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
                 : blockDezent

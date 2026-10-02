@@ -1,6 +1,7 @@
 import type { StrukturMap } from './normtext/browse';
 import { zitatKuerzel } from '../pages/gesetz-leser/artikelBezeichnung';
 import { sicherDekodiert } from './sicherDekodieren';
+import { zerlegeZifferAnker } from './normtext/zifferAnker';
 
 // ═══ W2·17-UI-BEFUNDE (DFG-F01) · DIE STELLE IM REITER ═══════════════════════
 //
@@ -102,7 +103,9 @@ export const brauchtStruktur = (anker: string | undefined): boolean => /^#art-di
  *  (PA-1-B01: dann lieber keine Stelle als eine falsche). */
 function tokenVonAnker(anker: string | undefined): string | null {
   const m = anker ? /#art-(.+)$/.exec(anker) : null;
-  return m ? sicherDekodiert(m[1]) || null : null;
+  const roh = m ? sicherDekodiert(m[1]) : null;
+  // E2: der Reiter steht auf dem ARTIKEL — das Ziffer-Suffix (`-ziff-12`) gehört nicht zur Stelle.
+  return roh ? zerlegeZifferAnker(roh).artikel : null;
 }
 
 /** Die Stelle eines Reiters. `anker` = `#art-<token>` (Lesestellung bzw. `wahl`),

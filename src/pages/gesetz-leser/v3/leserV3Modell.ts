@@ -9,7 +9,7 @@ import type { InternRefs } from '../../../components/NormText';
 import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
 import { basisAdresse, pfadZu } from '../helpers';
-import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
+import { paneRoot, findeZiel, zifferAnkerToken, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, uebersetzeRohPfad, type GliederungsModell } from '../gliederungsModell';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
@@ -286,7 +286,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   // Im EINZELMODUS schreibt der Router (`einzelSprung`, `./sprungWege`): dort IST die Adresse der gezeigte Artikel.
   const einzelSprung = useEinzelSprung(basisPfad, !istSekundaer);
   const planeSprung = useSprungZeitplan(); // ein neuer Sprung verwirft den laufenden (PE-B10-B03)
-  const springeZuArtikel = useCallback((token: string, behalteSuche?: boolean) => {
+  const springeZuArtikel = useCallback((token: string, behalteSuche?: boolean, ziffer?: string | null) => {
     if (!behalteSuche) { scrollVorSucheRef.current = null; setSuche(''); } // Landkarte: der Klick ins Feld ohne Treffer beendet die Suche nicht
     // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
     // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
@@ -315,12 +315,12 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     }
     if (typeof window === 'undefined') return;
     if (!istSekundaer) {
-      const ziel = `${basisPfad}${window.location.search}#art-${token}`;
+      const ziel = `${basisPfad}${window.location.search}#art-${zifferAnkerToken(token, ziffer)}`; // E2: die Adresse behält die Ziffer
       if (!einzelSprung.navigiere(token)) window.history.replaceState(null, '', ziel);
       aktualisiereTabArtikel(ziel);
     }
     const scrolle = () => {
-      const el = findeArt(paneRoot(imPane, wurzel), token);
+      const el = findeZiel(paneRoot(imPane, wurzel), token, ziffer ?? null); // Ziffer-Block, sonst Artikel (E2)
       if (!el) return;
       // R1: an den oberen Lese-Rand (`block:'start'` + `.nt-anker`-scroll-margin
       // aus `--nt-stick`). In V3 rechnet `--nt-stick` die eigene Kopfhöhe mit —
