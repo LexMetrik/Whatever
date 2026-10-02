@@ -222,8 +222,12 @@ describe('B-K1 · jeder Knopf traegt einen Baustein — oder steht mit Zahl in d
   // ArtikelKontextGruppe.tsx` ist mit dem toten Artikel-Kontext-Cluster gelöscht
   // (kein Produktionsaufrufer) — deklarierte Test-Änderung (§6.3) nach demselben
   // Muster: die Datei ging, kein Knopf wurde umgebucht.
-  it('die Ratsche kennt ihren eigenen Stand (23.9.2026: 129 in 77 Dateien; 1.10.2026: 76)', () => {
-    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(76);
+  // W2·17-UI-BEFUNDE Rückbau Rechtsprechungs-Zeilen (2.10.2026): 76 → 75 Dateien,
+  // Summe −1. `parts/BezuegeZeile.tsx` ist gelöscht (unerreichbar seit M3) —
+  // deklarierte Test-Änderung (§6.3) nach demselben Muster: die Datei ging,
+  // kein Knopf wurde umgebucht.
+  it('die Ratsche kennt ihren eigenen Stand (23.9.2026: 129 in 77 Dateien; 1.10.2026: 76; 2.10.2026: 75)', () => {
+    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(75);
     expect(SUMME_IST, 'Summe der Hoechstzahlen — sie darf nur sinken').toBeLessThanOrEqual(135);
   });
 
