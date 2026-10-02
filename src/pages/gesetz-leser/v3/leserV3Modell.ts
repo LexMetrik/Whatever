@@ -15,7 +15,7 @@ import { baueGliederungsModell, findeSynthPfad, uebersetzeRohPfad, type Gliederu
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
 import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from '../inhalt-hooks';
-import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from '../inhalt-zustand';
+import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand, type LeserFehler } from '../inhalt-zustand';
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
@@ -60,7 +60,7 @@ export interface LeserV3Modell {
   struktur: StrukturMap | null;
   kopf: ErlassKopf | null;
   currency: CurrencyMap | null;
-  fehler: boolean;
+  fehler: LeserFehler;
   manifest: ReturnType<typeof useLeserZustand>['manifest'];
   kantonSys: Record<string, KantonSystematik>; kantonLuecken: KantonLueckenMap; // §8-Nachzug PR #614
 

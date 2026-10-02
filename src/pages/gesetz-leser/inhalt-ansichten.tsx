@@ -13,6 +13,7 @@ import { UebersichtBox } from './v3/UebersichtBox';
 import { uebersichtsAngaben } from './v3/uebersichtAngaben';
 import { grundartMeta } from './helpers';
 import { GesetzFehlSeite } from './FehlSeite';
+import type { LeserFehler } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
@@ -216,7 +217,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
 // Der Lade-Guard `!erlass || !eintraege` bleibt bewusst im Aufrufer: er ist dort
 // zugleich die TypeScript-Verengung, von der der ganze Volltext-Zweig lebt.
 export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs }: {
-  fehler: boolean;
+  fehler: LeserFehler;
   schluessel: string;
   manifest: BrowseManifest | null;
   erlass: BrowseErlass | null;
@@ -227,7 +228,7 @@ export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, k
   if (fehler) {
     // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
     // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
-    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} />;
+    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} fehler={fehler} />;
   }
   // ── A9 §15.2-Pin: Currency-Chips NICHT nachträglich einwachsen lassen ────────
   // Die Kopf-Chips «geltend geprüft am … / nächste Fassung ab …» (ErlassLeserKopf)

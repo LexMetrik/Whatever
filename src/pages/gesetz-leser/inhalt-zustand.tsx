@@ -32,6 +32,23 @@ import { gliederungGemerktZu } from './v3/gliederungGedaechtnis';
 // Modul-Konstante statt Component-Local: reiner Wert, kein Zustand.
 const PANE_BREIT_PX = 1024;
 
+/**
+ * Fehlerzustand EINER Leser-Instanz (W2·17-UI-BEFUNDE PA-3-B01/B02, PE-C10-D01;
+ * Auflage A1 der Gegenprüfung): zwei verschiedene Auskünfte (§8), je Instanz
+ * getragen statt über einen globalen Kanal je Erlass-Schlüssel gemischt.
+ *
+ *  - `false` — kein Fehler;
+ *  - `'nicht-im-bestand'` — Auskunft über den ERLASS (nicht im Register, Datei 404,
+ *    kein Dateiverweis): die Fehlseite mit «Meinten Sie …?»;
+ *  - `{ art: 'ladefehler', … }` — Auskunft über die VERBINDUNG (Netz, 5xx, Abbruch):
+ *    `grund` = was nicht erreichbar war (`register`: das Verzeichnis der Erlasse, ob
+ *    der Erlass im Bestand ist, bleibt offen; `datei`: der Erlass steht im Register,
+ *    seine Datei fehlt), `erneut` stösst den Ladevorgang GENAU dieser Instanz an.
+ */
+export type LeserFehler = false | 'nicht-im-bestand' | LadefehlerZustand;
+
+export interface LadefehlerZustand { art: 'ladefehler'; grund: 'datei' | 'register'; erneut: () => void }
+
 // ─── Block 1 · Daten-, Shard- und Such-Zustand ───────────────────────────────
 export function useLeserZustand({ bezuegeVorladen = true }: {
   /**
@@ -84,7 +101,7 @@ export function useLeserZustand({ bezuegeVorladen = true }: {
     aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
     bereich: bezugBereich,
   } = useBezuege(bezuegeVorladen ? erlass?.key : undefined);
-  const [fehler, setFehler] = useState(false);
+  const [fehler, setFehler] = useState<LeserFehler>(false);
   // W2·10-UI-NAV/N0d·O3: kurze Bestätigung nach «In neuem Reiter» — der Reader
   // wird bei der ?r-Instanz-Navigation NICHT neu gemountet (gleicher key=schluessel),
   // darum überlebt dieser Zustand den Soft-Nav und weist zum Reiter-Tracker (☰).
