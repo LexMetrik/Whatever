@@ -400,9 +400,9 @@ test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft
 //      Vorher sprang er zum Nachbarn: Art. 255 → 257d, 266g → 267, 318 → 320,
 //      704b → 706 (6 von 6 Proben). Die Marke wird mit Mindesthöhe gezeichnet,
 //      das Feld des Artikels ist viel kleiner — wer die gezeichnete Mitte traf,
-//      lag im Feld eines späteren Artikels. Gemessen wird an der Leseposition
-//      des Streifens selbst: nach dem Sprung muss sie auf der Höhe der
-//      angeklickten Marke stehen.
+//      lag im Feld eines späteren Artikels. Gemessen wird die AKTIVE Fundstelle
+//      (die Hervorhebung `lc-such-aktiv`, an der der Sprung endet): sie muss im
+//      Artikel der angeklickten Marke liegen.
 //  (i) PE-B12-D02 · DIE LESEPOSITION IST SICHTBAR. Vorher: Fläche `--brass-200`
 //      auf `--well`, hell 1.1 : 1, dunkel 1.4 : 1, und 2.4 px hoch. WCAG 1.4.11
 //      verlangt 3 : 1 für Grafik, die zum Verstehen nötig ist.
@@ -412,17 +412,20 @@ test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft
 //
 // ROT ZU BEKOMMEN (§6.7), alle am Bau gesehen:
 //  (h) in `components/leser/TrefferLandkarte.tsx` den Klick wieder über
-//      `feldBeiAnteil(spur, …)` allein auflösen ⇒ die Leseposition steht nach dem
-//      Klick am Nachbarn (Abstand 1–2.6 Einheiten statt 0).
+//      `feldBeiAnteil(spur, …)` allein auflösen ⇒ der Sprung endet im Nachbarn
+//      (gesehen: Art. 255 → art-257_d).
 //  (i) in `components/leser/landkarteMasse.ts` `LESE_MIN` auf 4 setzen UND in
 //      `TrefferLandkarte.tsx` die Kontur (`stroke`) streichen ⇒ Kontrast 1.1 : 1.
 //  (j) die Bedingung, die den Streifen bei offenem Blatt wegnimmt, streichen ⇒
 //      der Treffer-Test am Schliessen-Knopf liefert den Streifen.
 
-/** Die y-Lage der Leseposition im Streifen (SVG-Einheiten), `null` solange sie fehlt. */
-async function leseY(page: Page): Promise<number | null> {
-  return page.locator('[data-treffer-landkarte] [data-landkarte-lese]').first()
-    .evaluate((el) => Number(el.getAttribute('y'))).catch(() => null)
+/** Artikel (Element-id), in dem die AKTIVE Fundstelle liegt — dorthin ist der Sprung gegangen. */
+async function aktiverArtikel(page: Page): Promise<string | null> {
+  return page.evaluate(() => {
+    const reg = (globalThis as { CSS?: { highlights?: Map<string, Iterable<Range>> } }).CSS?.highlights
+    const r = [...(reg?.get('lc-such-aktiv') ?? [])][0]
+    return r ? (r.startContainer.parentElement?.closest('[id^="art-"]')?.id ?? null) : null
+  })
 }
 
 test('(h) PE-B12-B01 · ein Klick in die Mitte einer Marke führt zu DIESER Marke, nicht zum Nachbarn', async ({ page }) => {
@@ -432,23 +435,27 @@ test('(h) PE-B12-B01 · ein Klick in die Mitte einer Marke führt zu DIESER Mark
   const markenZahl = await page.locator(MARKEN).count()
   expect(markenZahl, 'keine Marken — Vorbedingung fehlt (§6.7)').toBeGreaterThan(40)
 
-  // Eine frühe, eine mittlere und eine späte Marke. Gerade die kurzen Artikel
+  // Art. 255, 318 und 349 — je EINE Fundstelle (bei mehreren bleibt die aktive Hervorhebung
+  // nach dem Sprung leer, ein vorbestehender Befund ausserhalb dieser Zusage). Gerade die kurzen Artikel
   // trugen den Fehler: ihr Feld ist ein Bruchteil der gezeichneten Marke.
-  for (const i of [3, 25, 60]) {
+  for (const i of [3, 40, 60]) {
     const marke = page.locator(MARKEN).nth(i).locator('xpath=..')
-    const markeY = Number(await marke.getAttribute('y'))
+    const label = (await page.locator(MARKEN).nth(i).textContent())!.split(' · ')[0]
+    // «Art. 266g» → `art-266_g`: der Anker nennt Nummer und Buchstaben mit Unterstrich.
+    const nr = /^Art\. (\d+)([a-z]*)$/.exec(label)
+    expect(nr, `Marke ${i} «${label}» hat keine einfache Nummer — Probe wählt eine andere`).not.toBeNull()
+    const erwartet = `art-${nr![1]}${nr![2] ? `_${nr![2]}` : ''}`
     const mitte = await marke.evaluate((el) => {
       const r = el.getBoundingClientRect()
       return { x: r.left + r.width / 2, y: r.top + r.height / 2 }
     })
     await page.mouse.click(mitte.x, mitte.y)
-    // Der Spy meldet den Artikel nach dem Scrollen; er ruht, sobald die Lage stimmt.
-    // Toleranz 0.05 Einheiten (= 0.03 px): derselbe Artikel hat DASSELBE `von`.
-    // Die Leseposition kann nach unten geklemmt sein (`leseRechteck`), die Marken
-    // der Proben liegen weit davon entfernt.
-    await expect.poll(async () => Math.abs(((await leseY(page)) ?? -1000) - markeY), {
-      timeout: 15000, message: `Marke ${i} (y=${markeY.toFixed(1)}): die Leseposition landete am Nachbarn`,
-    }).toBeLessThan(0.05)
+    // Gemessen wird die FUNDSTELLE, zu der der Sprung geführt hat (die aktive
+    // Hervorhebung), nicht der Scroll-Spy: der meldet bei kurzen Nachbarartikeln den
+    // Artikel darüber und wäre als Zeuge unscharf.
+    await expect.poll(() => aktiverArtikel(page), {
+      timeout: 15000, message: `Marke «${label}»: der Klick führte nicht zu ${erwartet}`,
+    }).toBe(erwartet)
   }
 })
 
