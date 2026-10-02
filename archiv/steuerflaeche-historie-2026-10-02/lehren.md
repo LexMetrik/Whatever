@@ -233,3 +233,13 @@ Stelle: Abschnitt «Bewusst NICHT geregelt», Claim-Registry
   Zustand, sondern eine zu enge Sonde. Eskaliert wurde innerhalb der
   Dispatch-Form (drei Sonden + Früh-Push, §0.5) plus wip-Pflicht im Skill
   `auftrag`. 
+
+## §Bewusst-nicht-ROADMAP-Restrukturierung
+
+Stelle: Abschnitt «Bewusst NICHT geregelt», ROADMAP-Restrukturierung, Nachsatz 20.9.2026
+
+*Nachsatz 20.9.2026:* nach Messung (Deckel alle 8–15 Tage gerissen,
+  `ROADMAP.md` in 50 % der PRs, 4 von 10 Queue-Rauswürfen Konflikte) gab David
+  das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`,
+  Wächter `check:plan` 16 — keine zweite Wahrheit, sondern Auslagerung der
+  Nebenfunde aus der einen. Keine neue F-Klasse.

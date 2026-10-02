@@ -224,3 +224,27 @@ Stelle: «Session-Ende — Beleg 8.9.2026 und Lehre 18.9.2026», Beleg-Satz
 Beleg: Aufräumen 8.9.2026 fand 22 Remote-Branches, 3 Worktrees, 5 Dependabot-PRs
 (seit 14.8.), einen fertigen, nie eröffneten Risikopfad-Branch (9 Commits) und
 einen Autopilot-Entwurf ohne Entscheid — niemand war zuständig. Regel:
+
+## §Pruefstrasse-Wortlaut
+
+Stelle: «§Prüfstrasse — Browser-Shards, Flacker-Wächter, Browser-Installation», drei Punkte (Stand vor 19.9.2026)
+
+- **Vier Browser-Shards** statt acht. Pflicht-Kontext im Branch-Schutz ist der Sammel-Job
+  «**Browser-Smoke (Ergebnis)**», nicht die einzelnen Shards (#780, 8.9.2026): Er ist grün bei
+  Shard-Erfolg oder begründetem Skip (Diff-Klasse doku/code-fern, Push-Diät) und **rot** bei jedem
+  Shard-Fehler und jedem unbegründeten Skip. Grund: ein per `if:` übersprungener **Matrix**-Job
+  meldet nur einen Check-Run mit unexpandiertem Namen — Shard-Kontexte würden nie gemeldet, der
+  PR hinge (K12-Falle). Die Shard-**Zahl** ist damit ohne Branch-Schutz-Anpassung änderbar;
+  einzige Quelle der Zahl ist die ci.yml-Matrix (`scripts/e2e-shard-anzahl.mjs`), Union-Wächter
+  `check:e2e-shards`. Pflicht-Kontexte abschliessend: Tore · Merge-Schutz · Perf-Budget ·
+  Browser-Smoke (Ergebnis).
+- **Flacker-Wächter** `check:e2e-flake` (#779): ein Shard, der nur im Wiederholungsversuch grün
+  wird, ist rot — ausser die Spec steht mit Datum/Grund in `e2e/flake-ausnahmen.json` (Verfall
+  30 Tage). Flackern wird also einmal angeschaut, nie stillschweigend weggeklickt.
+  **Melde-Modus bis 22.9.2026** (`e2e/flake-modus.json`, dort Grund und Messung 8.9.2026): bis
+  zum Stichtag nur `::warning`, danach automatisch hart; fehlende/kaputte Modus-Datei ⇒ hart.
+- **Browser-Installation** läuft in beiden Playwright-Jobs über `scripts/ci/playwright-install.sh`
+  (#785): zwei Versuche mit Prozessbaum-Kill, `dpkg --configure -a` und Warten auf die
+  dpkg-Sperre — Anlass 8.9.2026: eine Timeout-Waise `apt-get` machte jeden Retry wirkungslos.
+  Ein 403 beim Ablegen des Balancing-Reports färbt einen bestandenen Shard nicht mehr rot.
+  Ein roter Shard ohne rote Tests ⇒ zuerst den Schritt lesen, nicht die Suite verdächtigen.

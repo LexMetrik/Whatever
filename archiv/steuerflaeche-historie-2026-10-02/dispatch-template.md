@@ -163,3 +163,12 @@ Stelle: §7 «Offen / abhängig», erster Punkt (T19)
   der SessionStart-Kette (`.claude/settings.json`) entfernt → Präfix byte-stabil. Die Schutzfunktion
   trägt jetzt mechanisch `struktur-rotieren.py` (T1-Rotation rückt die Basis nach + Re-Akkumulations-
   Wächter, size-basiert = stabil); das Lag-Audit bleibt als On-Demand-Werkzeug `npm run struktur:aktuell`.
+
+## §2-Wirkung
+
+Stelle: §2, Absatz «model und effort sind in JEDEM Task-Call explizit gesetzt», Wirkungs-Zahlen
+
+Wirkung: bis
+−48…−76 % Output auf effort-gesenkten Schritten; die Klein-Stufe ≈ 1/5 des Preises der
+Stark-Stufe. Output ist laut T2-Baseline der eigentliche $-Hebel (Stark-Output ≈ 5× Input,
+in Typ-O-Sessions 494k Tok/Session) — hier wirkt Effort-Senkung direkt.

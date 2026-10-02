@@ -5,6 +5,8 @@ description: Aufnahme und Einordnung neuer Aufträge — Plan-Stand abfragen, b�
 
 # Auftrag aufnehmen und einordnen
 
+*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/auftrag.md` (QS-DOKU-DIAET 2.10.2026).*
+
 Jeder neue Auftrag geht über **einen** Eingang, wird gebündelt und verortet —
 nie als loses Dokument danebengelegt. *(Verschlankt 14.8.2026, QS-PLAN-EINFACH:
 Regeln unverändert, Vorfall-Prosa auf Belege gekürzt — Wortlaut in der

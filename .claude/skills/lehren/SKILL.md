@@ -5,6 +5,8 @@ description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleib
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
 
+*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/lehren.md` (QS-DOKU-DIAET 2.10.2026).*
+
 ## Die Formregel (wichtiger als jede einzelne Lehre)
 
 > **Eine Regel kostet dort am wenigsten, wo sie am spätesten gelesen wird.**
@@ -265,8 +267,4 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
 - **ROADMAP-Restrukturierung** — Council-Entscheid 3.7.2026 geprüft und
   getragen: die Befunde sind Inhalts-**Frische**, nicht Architektur; ein
   zweiter autoritativer Artefakt hätte die Drift verdoppelt.
-  *Nachsatz 20.9.2026:* nach Messung (Deckel alle 8–15 Tage gerissen,
-  `ROADMAP.md` in 50 % der PRs, 4 von 10 Queue-Rauswürfen Konflikte) gab David
-  das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`,
-  Wächter `check:plan` 16 — keine zweite Wahrheit, sondern Auslagerung der
-  Nebenfunde aus der einen. Keine neue F-Klasse.
+  *Nachsatz 20.9.2026:* David gab das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`, Wächter `check:plan` 16 — keine zweite Wahrheit, sondern Auslagerung der Nebenfunde aus der einen. Keine neue F-Klasse (Messzahlen: Archiv §Bewusst-nicht-ROADMAP-Restrukturierung).

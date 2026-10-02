@@ -1,5 +1,7 @@
 # Standard-Dispatch-Template — Sub-Agenten kompakt beauftragen (QS-TOK P3)
 
+*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/dispatch-template.md` (QS-DOKU-DIAET 2.10.2026).*
+
 > **Grüne-Spur-Weiche (vor JEDEM Bau-Dispatch beantworten, Skill auftrag Ziff. 6; Lehre 5.9.2026: Prosa feuerte nachts nicht):**
 > (a) nur `src/**`, kein Risikopfad? · (b) Fertig-Kriterium maschinell (Tore, gleiche Tests, Golden), kein Sichtentscheid? · (c) ein Ziel, ≤ ~5 Dateien, Whitelist benennbar? · (d) keine offene David-Frage?
 > **4× ja ⇒ Jules-Ticket (Vorlage `jules-ticket-vorlage.md`, Kontingent vorher messen), nicht Claude-Agent.** Ein Nein ⇒ Claude, mit dem Nein als Begründung im Dispatch.
@@ -314,10 +316,7 @@ Whitelist, gelesene Dateien) bleibt erhalten, die Explorations-Runde
 ## 2 · Modell-/Effort-Routing (T15)
 
 **`model` und `effort` sind in JEDEM Task-Call explizit gesetzt** — bei den Agent-Typen
-`lex-*` liefert die Definition den Default, Abweichungen setzt der Call. Wirkung: bis
-−48…−76 % Output auf effort-gesenkten Schritten; die Klein-Stufe ≈ 1/5 des Preises der
-Stark-Stufe. Output ist laut T2-Baseline der eigentliche $-Hebel (Stark-Output ≈ 5× Input,
-in Typ-O-Sessions 494k Tok/Session) — hier wirkt Effort-Senkung direkt.
+`lex-*` liefert die Definition den Default, Abweichungen setzt der Call. Wirkung: Effort-Senkung wirkt direkt auf den Output-Anteil (Zahlen der T2-Baseline: Archiv §2-Wirkung).
 
 **Zukunftstaugliche Stufen statt Modellnamen (4.8.2026):** Dieses Routing spricht in vier
 semantischen Stufen. Die Abbildung Stufe → konkretes Modell steht **ausschliesslich** in
