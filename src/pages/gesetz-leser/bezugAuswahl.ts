@@ -318,21 +318,9 @@ export function wirksameKantone(
   return kantone.filter((k) => vorhanden.has(k));
 }
 
-/**
- * Nimmt die Kantonwahl an DIESEN Kanten etwas heraus? Die Bedingung hinter
- * «… im Kanton» am Gruppenkopf (`ArtikelBezuege.kantonAktiv`): kantonale Klasse
- * an UND mindestens ein gewählter Kanton führt hier eine Kante — dieselbe
- * Regel wie in `waehleBezuege`/`bauePraedikate` (§5). Mit der rohen Wahl
- * behauptete der Kopf eine Kanton-Einschränkung, obwohl nur der Zeitraum
- * kürzte (Prüfer-Befund 2.10.2026, E4-B01 Nachzug). Rein (§2).
- */
-export function kantonSchneidet(
-  alle: readonly { facetten: { kanton: string } }[],
-  klassen: readonly BezugStatus[],
-  kantone: readonly string[],
-): boolean {
-  return klassen.includes('kantonal') && wirksameKantone(alle, kantone).length > 0;
-}
+// RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier stand `kantonSchneidet` («… im Kanton»
+// am Gruppenkopf der `BezuegeZeile`, E4-B01 Nachzug) — ihr einziger Verbraucher war
+// `ArtikelBezuege.kantonAktiv`, und beide sind mit der Komponente gelöscht.
 
 /**
  * Eine Klasse an-/abschalten. Rein — gibt die neue, normalisierte Menge zurück

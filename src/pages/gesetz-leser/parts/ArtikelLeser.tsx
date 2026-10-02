@@ -6,9 +6,7 @@ import {
   LEERSTELLE_GEGENSTANDSLOS_ERLAEUTERUNG, leerstellenWort,
 } from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
-import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
-import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
@@ -18,11 +16,10 @@ import { SUCH_META } from '../suchHighlight';
 import { schaetzeArtikelHoehe } from '../berechnungen';
 import { fussnotenAnzeige, verteileFussnoten, sammleVerweise } from './ArtikelLeser.fussnoten';
 import { useSatzspiegel } from '../v3/satzspiegel';
-import type { ArtikelBezuege } from '../bezuegeLaden';
 import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
 import { RandTitel } from './ArtikelLeser.kopfteile';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
-import { ArtikelBezuegeFuss, type ImBlattReiter } from './ArtikelLeser.bezuegeFuss';
+import { ArtikelBezuegeFuss } from './ArtikelLeser.bezuegeFuss';
 import { ArtikelAktionen } from './ArtikelAktionen';
 import { ArtikelNachbarn } from './ArtikelNachbarn';
 import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel';
@@ -32,7 +29,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, materialienLadefehler, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, materialien, materialienLadefehler, onBezuegeOeffnen, bezuegeLaedt, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -92,44 +89,6 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    */
   fussForm?: 'zeile' | 'dossier';
   istAnhang?: boolean;
-  /** Leitfälle dieses Artikels (V1a-Form, flache BGE-Chip-Reihe).
-   *
-   *  W2·7-BEZUG/B4: DER READER SETZT DIESE PROP NICHT MEHR. Seit der Vorgabe
-   *  David 28.7.2026 speist sich der Artikelfuss ausschliesslich aus `bezuege`
-   *  (facettierte Auflistung; der Bezugs-Shard ist die Obermenge des schlanken
-   *  Leitfall-Shards). Die Prop und `LeitfallZeile` bleiben als unveränderte
-   *  Darstellungsform bestehen — sie werden weiterhin direkt konsumiert (u. a.
-   *  vom Farbwörterbuch-Test) und sind kein toter Zweig, sondern ein nicht mehr
-   *  vom Reader bedienter Eingang. */
-  leitfaelle?: LeitfallRef[];
-  /** W2·7-BEZUG/B4: facettierte Bezüge dieses Artikels, sobald der Nutzer die
-   *  Facetten erweitert hat. Gesetzt ⇒ die `BezuegeZeile` tritt AN DIE STELLE
-   *  der `LeitfallZeile` (der Bezugs-Shard ist deren Obermenge, §5 — nie beide
-   *  nebeneinander, das wären zwei Wahrheiten am selben Artikel). */
-  bezuege?: ArtikelBezuege;
-  /**
-   * D30 · der Inhalt der AUFGEKLAPPTEN Bezüge-Zeile. Sie hiess bis D33
-   * `bezuegeImFuss` — die Zeile stand damals unter der Artikelnummer; seit D34
-   * steht sie am Artikelfuss (Auftrag David 7.9.2026), und der Prop-Name folgt
-   * dem Ort.
-   *
-   * BEWUSST NICHT `bezuege` (Nullprobe 7.9.2026, `leser-v3-kontext-cls` (b)):
-   * `bezuege` speiste AUCH den unbedingten Artikelfuss der schmalen Form und
-   * der Suchsicht (`!kopfForm`). Wer im V3-Leser `bezuege` setzte, brachte
-   * damit Pos. 12 zurück — gemessen @390 an der StPO: das Öffnen des Panels lud
-   * den Shard, und die Fuss-Zeile wuchs an JEDEM Artikel in den Lesekörper
-   * hinein (Artikel-y 1385→1493, 1798→2013, 2461→2783). Genau das verbietet der
-   * CLS-Fall.
-   *
-   * DER BELEG BLEIBT STEHEN, DIE STELLE IST WEG: D34 hat den unbedingten
-   * Fuss-Zweig gelöscht — beide Props landen jetzt im selben `<details>`.
-   * Zwei Props bleiben es trotzdem, weil es zwei LADEVERTRÄGE sind: `bezuege`
-   * wird unbedingt gesetzt (Ist-Hülle, Tests, V1), diese hier erst, NACHDEM der
-   * Leser eine Zeile aufgeklappt hat. Genau diese Grenze bewacht die H3-Sonde
-   * in `src/tests/leser-v3-fundament.test.ts`; sie fiele mit einer
-   * zusammengelegten Prop ersatzlos weg (§6.7).
-   */
-  bezuegeImFuss?: ArtikelBezuege;
   /** D30 (David 6.9.2026) · die Materialien DIESES Artikels, sobald der Leser
    *  die Bezüge-Zeile einmal aufgeklappt hat (`../artikelMaterialienLaden`).
    *  Bis dahin `undefined` — die Rubrik zeigt dann ihre gezählte Zahl aus der
@@ -145,15 +104,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  bestehenden Ladepfad (`v3/panelModell.ts` → `weckeDaten`). Ohne die Prop
    *  bleibt die Zeile, was sie war (Ist-Hülle, Tests, Druck). */
   onBezuegeOeffnen?: () => void;
-  /** D35-F2 · «im Blatt öffnen ›» in den aufgeklappten Rubriken (Herleitung in
-   *  `./ArtikelLeser.bezuegeFuss.tsx`). MUSS referenz-stabil sein — diese
-   *  Komponente ist `memo`, und 1686 neue Funktionen je Render des Rahmens
-   *  hoben die Schranke auf (§15, `../v3/panelModell.oeffne`). */
-  onImBlatt?: (reiter: ImBlattReiter) => void;
   /** D30 · der Apparat ist unterwegs ⇒ Skelett-Zeile «lädt …» statt Leere. */
   bezuegeLaedt?: boolean;
-  /** Revision r(a) dieses Artikels (§V1c) — an die LeitfallZeile durchgereicht. */
-  revision?: ArtikelRevision | null;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
   // wird die Stufe einheitlich je absoluter Tiefe formatiert, auch wenn nur
   // die geänderten Stufen gezeigt werden. 0 (Default) = volle Kette (Suchsicht).
@@ -598,11 +550,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             Einzelmodus bleibt unverändert (D-E4). */}
         {fussForm === 'dossier'
           ? (
-            <ArtikelBezuegeFuss bezuege={bezuege} bezuegeImFuss={bezuegeImFuss}
+            <ArtikelBezuegeFuss
               erlassKey={erlass?.key} artikel={e.artikel} snapshot={e}
-              historie={historie} leitfaelle={leitfaelle} materialien={materialien} materialienLadefehler={materialienLadefehler} verweise={verweise}
-              werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat} revision={revision}
-              onOeffnen={onBezuegeOeffnen} onImBlatt={onImBlatt} laedt={bezuegeLaedt && !bezuege}
+              historie={historie} materialien={materialien} materialienLadefehler={materialienLadefehler} verweise={verweise}
+              werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat}
+              onOeffnen={onBezuegeOeffnen} laedt={bezuegeLaedt}
               aktionen={aktionen} />
           )
           : (
