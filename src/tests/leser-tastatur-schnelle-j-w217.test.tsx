@@ -31,7 +31,7 @@ async function aufbauen(opts: { aktivToken: string | null; einzel: boolean; spru
   vi.stubGlobal('window', {
     document,
     addEventListener: (art: string, fn: (e: unknown) => void) => { if (art === 'keydown') listener.push(fn); },
-    removeEventListener: (art: string, fn: (e: unknown) => void) => { const i = listener.indexOf(fn); if (i >= 0) listener.splice(i, 1); },
+    removeEventListener: (_art: string, fn: (e: unknown) => void) => { const i = listener.indexOf(fn); if (i >= 0) listener.splice(i, 1); },
   });
   vi.stubGlobal('document', document);
   vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);

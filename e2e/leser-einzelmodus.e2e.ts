@@ -410,6 +410,23 @@ test.describe('W2·17 — Sprünge im Einzelmodus: Adresse und Anzeige stimmen �
     await expect(suchfeld(page)).toHaveValue('Berufsregeln')
   })
 
+  test('Nachzug #1265 · «Zurück» aus einer Fundstelle zeigt den vorigen Artikel — und die Suche bleibt', async ({ page }) => {
+    await page.goto(einzel(BGFA, '37'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).click()
+    await suchfeld(page).fill('Berufsregeln')
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).press('ArrowDown')
+    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('37')
+    // Der Einstiegs-Eintrag trägt kein `sprungErledigt`: «Zurück» landet auf einem Eintrag, den der
+    // Nachlauf-Effekt für einen fremden Sprung hielt und dessen Suche er beendete.
+    await page.goBack()
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(800) // der Nachlauf läuft nach einem Frame — erst danach ist «Suche bleibt» eine Aussage
+    await expect(suchfeld(page)).toHaveValue('Berufsregeln')
+  })
+
   test('PE-B12-B03 · die Landkarte führt im Einzelmodus zum Artikel — und der Klick ins Leere beendet die Suche nicht (PE-B12-B02)', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto(einzel(BGFA, '37'))

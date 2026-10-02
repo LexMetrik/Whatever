@@ -3,7 +3,7 @@ import {
   type Dispatch, type MutableRefObject, type RefObject, type SetStateAction,
 } from 'react';
 import { flushSync } from 'react-dom';
-import type { NavigateFunction } from 'react-router-dom';
+import { useNavigationType, type NavigateFunction } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
@@ -50,7 +50,7 @@ export function useSektionSprung(opts: {
   imPane: boolean;
   wurzel: PaneWurzel;
   sucheDebounced: string;
-  springeZuArtikel: (token: string) => void;
+  springeZuArtikel: (token: string, behalteSuche?: boolean) => void;
   /** W2·17-UI-BEFUNDE · gilt gerade der Einzelmodus? Dort steht kein Sektionskopf im DOM (PE-B10-B02). */
   imEinzel?: () => boolean;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
@@ -189,6 +189,7 @@ export function useSektionSprung(opts: {
   // Navigation mit Artikel-Anker gezielt dorthin springen (Auftrag David: Klick
   // auf den Reiter führt zum gemerkten Artikel der Instanz).
   const letzteNavKey = useRef<string | null>(null);
+  const navTyp = useNavigationType();
   useEffect(() => {
     if (!sektionen.length || typeof window === 'undefined') return;
     if (istSekundaer) return; // sekundäres Pane: location.key ist fix («default»), kein Instanz-Wechsel
@@ -210,9 +211,13 @@ export function useSektionSprung(opts: {
     if (!m) return;
     const token = sicherDekodiert(m[1]); // PA-1-B01
     if (!token) return;
-    const id = window.requestAnimationFrame(() => springeZuArtikel(token));
+    // W2·17-UI-BEFUNDE (Nachzug zu #1265): «Zurück/Vor» (POP) im Einzelmodus landet auf einem Verlaufs-
+    // Eintrag OHNE `sprungErledigt` (der Einstieg, oder ein Blättern) und würde die Suche beenden —
+    // wer zurückgeht, will den Artikel zurück, nicht seine Fundstellen verlieren. Der Scroll bleibt.
+    const behalteSuche = navTyp === 'POP' && imEinzel?.() === true;
+    const id = window.requestAnimationFrame(() => springeZuArtikel(token, behalteSuche));
     return () => window.cancelAnimationFrame(id);
-  }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
+  }, [location.key, location.hash, location.state, sektionen, springeZuArtikel, istSekundaer, navTyp, imEinzel]);
 
   // Suche aktivieren → an den Anfang scrollen; Suche schliessen/leeren → an die
   // Scrollposition VOR der Suche zurück (Auftrag David). Grund fürs Hoch-Scrollen
