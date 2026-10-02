@@ -1,6 +1,6 @@
 import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
-import { BEDIENBARE_KLASSEN, KLASSE_KURZ, waehleBezuege } from '../bezugAuswahl';
+import { BEDIENBARE_KLASSEN, KLASSE_KURZ, kantonenOhneWirkung, waehleBezuege, wirksameKantone } from '../bezugAuswahl';
 import { zahl } from '../bezugPortion';
 import { istBereichOffen, type Zeitbereich } from '../bezugZeit';
 import { gruppiereKanten } from './panelModell';
@@ -226,4 +226,47 @@ export function gefiltertSatz({ artikelLabel, alle, klassen, kantone, bereich }:
   return n === 1
     ? `${ort} ist 1 Entscheid der eingeschalteten Instanzen erfasst, er liegt aber nicht im gewählten ${was}.`
     : `${ort} sind ${zahl(n)} Entscheide der eingeschalteten Instanzen erfasst, keiner davon liegt im gewählten ${was}.`;
+}
+
+/**
+ * Der Satz unter der Filterzeile, wenn die Kantonwahl AM ARTIKEL nicht wirkt
+ * (W2·17-UI-BEFUNDE, Entscheid David 2.10.2026, Variante A).
+ *
+ * Die Wahl liegt global im Speicher und schneidet nur dort, wo der Artikel eine
+ * Kante des gewählten Kantons hat (`wirksameKantone`). Wo nicht — OR 250 mit «BE»
+ * führt AG/GR/BS —, blieb der Chip «BE» gedrückt und die Liste zeigte etwas
+ * anderes, ohne dass es irgendwo stand (§8). Der Satz nennt die wirkungslosen
+ * Kantone der Wahl und sagt, was stattdessen angezeigt ist; wirkt nur ein Teil,
+ * nennt er genau diesen Teil. Dieselbe Quelle wie Liste und Chip (§5):
+ * `kantonenOhneWirkung`/`wirksameKantone`, keine zweite Ableitung.
+ *
+ * `null` = nichts zu sagen: keine Wahl, alle gewählten Kantone wirken (auch wenn
+ * sie nichts ausblenden — dann stimmt der Chip), «kantonal» ausgeschaltet (der
+ * Kantonschnitt greift dann gar nicht), oder der Bestand ist (noch) unbekannt —
+ * ohne geladene Kanten gäbe es keine Aussage (§8). Rein (§2).
+ */
+export function kantonOhneWirkungSatz({ ort, alle, klassen, kantone, geladen }: {
+  /** Wo die Aussage gilt, als Wortlaut mit Präposition («an Art. 41») — dasselbe `zahlOrt` wie am Schalter. */
+  ort: string;
+  /** Die Kanten des Artikels OHNE UI-Auswahl (`alleKanten`). */
+  alle: readonly Bezug[] | undefined;
+  klassen: readonly BezugStatus[];
+  kantone: readonly string[];
+  geladen: boolean;
+}): string | null {
+  if (!geladen || !alle || alle.length === 0 || !klassen.includes('kantonal')) return null;
+  const ohne = kantonenOhneWirkung(alle, kantone);
+  if (ohne.length === 0) return null;
+  const nenne = (l: readonly string[]) => l.length < 2 ? l.join('') : `${l.slice(0, -1).join(', ')} oder ${l[l.length - 1]}`;
+  const kopf = `Kein Entscheid aus ${nenne(ohne)} ${ort}`;
+  const wirkt = wirksameKantone(alle, kantone);
+  if (wirkt.length > 0) return `${kopf} — angezeigt ${wirkt.length === 1 ? 'ist nur' : 'sind nur'} ${wirkt.join(', ')}.`;
+  // Ohne jede kantonale Kante steht «alle Kantone» für nichts — dann sagt der Satz nur den ersten Teil.
+  return alle.some((b) => b.facetten.kanton !== 'CH') ? `${kopf} — angezeigt sind alle Kantone.` : `${kopf}.`;
+}
+
+/** Chip-Zustand UND Satz aus EINER Rechnung (`kantonenOhneWirkung`, §5) — der Chip liest `ohne`, die Zeile `satz`. */
+export function kantonWirkung(a: Parameters<typeof kantonOhneWirkungSatz>[0]): { ohne: string[]; satz: string | null } {
+  const ohne = a.geladen && a.alle && a.klassen.includes('kantonal') ? kantonenOhneWirkung(a.alle, a.kantone) : [];
+  return { ohne, satz: kantonOhneWirkungSatz(a) };
 }

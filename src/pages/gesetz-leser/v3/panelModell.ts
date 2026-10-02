@@ -197,7 +197,7 @@ function aufzaehlung(teile: readonly string[]): string {
  * ist eine falsche Auskunft über den Bestand (§8). Die Kurznamen kommen aus
  * `KLASSE_SCHALTER` (derselben Quelle wie die Schalter selbst, §5).
  */
-export function instanzStand(klassen: readonly BezugStatus[], kantone: readonly string[] = []): string {
+export function instanzStand(klassen: readonly BezugStatus[], kantone: readonly string[] = [], ohneWirkung: readonly string[] = []): string {
   const erste = klassen[0];
   if (erste === undefined) return 'keine';
   const klassenTeil = klassen.length === 1
@@ -209,8 +209,11 @@ export function instanzStand(klassen: readonly BezugStatus[], kantone: readonly 
   // verbietet. Nur bei eingeschalteter Klasse «kantonal»: ohne sie wirkt der
   // Kanton nicht (`bauePraedikate`), eine Nennung behauptete eine Einschränkung,
   // die nicht greift. Bis zwei Kantone beim Namen, darüber die Zahl.
-  if (kantone.length === 0 || !klassen.includes('kantonal')) return klassenTeil;
-  return `${klassenTeil} · ${kantone.length <= 2 ? kantone.join(', ') : `${kantone.length} Kantone`}`;
+  // Entscheid David 2.10.2026 (Variante A): ein Kanton ohne Kante am Artikel schneidet dort nichts
+  // (`kantonenOhneWirkung`) — er steht nicht im Stand, sonst läse sich «BGE +3 · BE» wie ein wirkender Filter.
+  const wirkend = kantone.filter((k) => !ohneWirkung.includes(k));
+  if (wirkend.length === 0 || !klassen.includes('kantonal')) return klassenTeil;
+  return `${klassenTeil} · ${wirkend.length <= 2 ? wirkend.join(', ') : `${wirkend.length} Kantone`}`;
 }
 
 /** Kurzstand des Zeitraums. `bereichLabel` liefert bei offenem Bereich `null` —
