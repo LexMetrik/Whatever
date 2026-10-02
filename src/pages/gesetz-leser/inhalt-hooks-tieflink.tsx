@@ -26,6 +26,7 @@ import { kanonischerAnkerToken } from './suchTreffer';
 import { paneRoot, findeArt } from './berechnungen';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
 /**
  * Layout-Effekt im Browser, gewoehnlicher Effekt im Prerender (W2·24-R6/L1).
@@ -101,7 +102,9 @@ export function useTieflinkSprung(opts: {
     // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
     if (!istSekundaer) aktualisiereTabArtikel(window.location.pathname + window.location.search + window.location.hash);
     // Nebenfund S6 (23.9.2026): «#art-336c» trifft den Token «336_c» (`./suchTreffer`).
-    const token = kanonischerAnkerToken(decodeURIComponent(m[1]), eintraege?.map((e) => e.artikel) ?? []);
+    const ankerRoh = sicherDekodiert(m[1]); // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung
+    if (!ankerRoh) return;
+    const token = kanonischerAnkerToken(ankerRoh, eintraege?.map((e) => e.artikel) ?? []);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     // LM-157 (W2·17-UI-BEFUNDE-B4): der Seed-Sprung öffnete den TOC-Pfad
     // (`oeffnePfad`) und scrollte den Text, setzte aber nie `aktivIds`/`aktArtikel`

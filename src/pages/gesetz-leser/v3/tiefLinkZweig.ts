@@ -3,6 +3,7 @@ import { pfadZu } from '../helpers';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
 import { uebersetzeRohPfad } from '../gliederungsModell';
+import { sicherDekodiert } from '../../../lib/sicherDekodieren';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
 //    VOR DEM ERSTEN BILD ────────────────────────────────────────────────────
@@ -75,7 +76,7 @@ export function useTiefLinkZweig(opts: {
   const pfadRef = useRef<string | null>(null);
   useLayoutEffect(() => {
     if (!hash.startsWith('#art-') || sektionen.length === 0) return;
-    const token = decodeURIComponent(hash.slice('#art-'.length));
+    const token = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
     if (!token) return;
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;

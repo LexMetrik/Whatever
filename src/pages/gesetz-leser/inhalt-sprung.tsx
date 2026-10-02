@@ -17,6 +17,7 @@ import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
+import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -193,7 +194,8 @@ export function useSektionSprung(opts: {
     if (istHashVerbraucht()) return;
     const m = location.hash.match(/^#art-(.+)$/);
     if (!m) return;
-    const token = decodeURIComponent(m[1]);
+    const token = sicherDekodiert(m[1]); // PA-1-B01
+    if (!token) return;
     const id = window.requestAnimationFrame(() => springeZuArtikel(token));
     return () => window.cancelAnimationFrame(id);
   }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
