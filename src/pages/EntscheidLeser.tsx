@@ -418,8 +418,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   useEffect(() => {
     if (zustand !== 'da' || typeof window === 'undefined') return;
     if (!hashRoh) return;
-    const id = sicherDekodiert(hashRoh); // PA-1-B01
-    if (!id) return;
+    const id = sicherDekodiert(hashRoh); if (!id) return; // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung
     if (hashGesprungen.current === `${schluessel}#${id}`) return;
     let frames = 0;
     let raf = requestAnimationFrame(function versuche() {
