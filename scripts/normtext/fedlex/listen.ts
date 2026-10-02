@@ -8,6 +8,10 @@ import { entferneTags } from './text.ts';
 import { findeDlEnde, findeDdEnde } from './enden.ts';
 import type { ArtikelText } from './typen.ts';
 
+/** Item der <dl>-Zerlegung. `notiz` (nur Anhang-Pfad, intern): marke-lose Zeile an ihrer Stelle — wird in
+ *  anhang-fortsetzung.ts zu einem Block und taucht nie im Snapshot auf. */
+export type ListenItem = { marke: string; text: string; tiefe?: number; trenner?: string; notiz?: true };
+
 /**
  * Fortsetzungs-Tiefe (Befund 6, 26.7.2026): Items, die an einen Bild-Block
  * angehängt werden, setzen eine vom Formelbild unterbrochene Unterliste fort,
@@ -102,10 +106,14 @@ export function parseDefinitionsListe(
   // Garbling-Klasse im Haupttext — Staatsverträge i→ii, Abkürzungs-Legenden — ist
   // ein eigener, deklarierter Folgeschritt mit Artikel-Re-Bless).
   anhang = false,
-  // Nur Anhang: Texte der hier an ihr Item gehängten Fortsetzungszeilen (→ ohneFortsetzungen).
+  // Nur Anhang: Texte der hier an ihr Item gehängten Fortsetzungszeilen UND der Zwischen-Notizen
+  // (→ ohneFortsetzungen): was hier erfasst ist, wird von markeloseNotizen() nicht ein zweites Mal gemeldet.
   absorbiert?: string[],
-): Array<{ marke: string; text: string; tiefe?: number; trenner?: string }> {
-  const items: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }> = [];
+  // Nur Anhang, intern: wir stehen in der Unterliste einer Zwischen-Notiz (P4) — dort bleibt JEDE
+  // marke-lose Zeile an ihrer Stelle (Quellreihenfolge), auch die erste der Unterliste.
+  geordnet = false,
+): ListenItem[] {
+  const items: ListenItem[] = [];
   // Iterativer Scan über die direkten <dt>…<dd>-Paare DIESER Ebene. Ein <dd>
   // kann eine verschachtelte <dl> enthalten; deren Ende wird balanciert bestimmt
   // (findeDlEnde), damit das <dd>-Ende nicht am inneren </dl> falsch erkannt wird.
@@ -131,7 +139,7 @@ export function parseDefinitionsListe(
       // dt/dd-Zweig unten mitsamt seinem <dd>): rekursiv, eine Stufe tiefer.
       const anonEnde = findeDlEnde(dlInner, d.index);
       const anonInner = dlInner.slice(d.index + d[0].length, anonEnde - '</dl>'.length);
-      for (const sub of parseDefinitionsListe(anonInner, tiefe + 1, anhang, absorbiert)) items.push(sub);
+      for (const sub of parseDefinitionsListe(anonInner, tiefe + 1, anhang, absorbiert, geordnet)) items.push(sub);
       hostOffen = false;
       pos = anonEnde;
       continue;
@@ -275,10 +283,19 @@ export function parseDefinitionsListe(
     // empirisch nicht auf (alle Haupt-Artikel-<dl> der betroffenen Erlasse starten
     // lettered/nummeriert; Fedlex-Chapeaus stehen als eigenes <p> vor der <dl>).
     // §6: greift nur bei zuvor VERLORENEM Text — additiv, keine Marke fabriziert.
+    let istNotiz = false;
     if (!marke && text && subDlIdx < 0 && (anhang ? hostOffen : items.length > 0)) {
       const vorheriges = items[items.length - 1];
       vorheriges.text = vorheriges.text ? `${vorheriges.text} ${text}` : text;
       absorbiert?.push(text);
+    } else if (anhang && absorbiert && !marke && text && (geordnet || items.length > 0)) {
+      // Anhang, P4 (W2·27-BUND-FERTIG, 2.10.2026): marke-lose Zeile, die NICHT an ihr Item gehängt werden
+      // kann (eigene Unterliste, oder Item davor trägt schon eine Unterliste/Zeile) → Zwischen-Notiz
+      // AN IHRER STELLE (Item-Liste wird dort geteilt, anhang-fortsetzung.ts), nicht lose vor der Liste.
+      // Beleg + Begründung der Regel: anhang-fortsetzung.ts. Haupttext (anhang=false) unberührt.
+      items.push({ marke: '', text, notiz: true, ...(tiefe > 0 ? { tiefe } : {}) });
+      absorbiert.push(text);
+      istNotiz = true;
     } else if (marke && (text || subDlIdx >= 0)) {
       // Eltern-Item: auch ohne eigenen Text aufnehmen, WENN eine Unterliste folgt
       // (sonst ginge die lit-Ebene verloren — der eigentliche Bug). Andernfalls
@@ -297,6 +314,7 @@ export function parseDefinitionsListe(
       // Leeres Paar (VZV Anh. 4 Ziff. 5.4) ändert nichts; sonst Kette unterbrochen.
       hostOffen = false;
     }
+    if (istNotiz) hostOffen = false; // Folgezeile NACH der Notiz steht hinter ihr, nie am Item davor
 
     // Unterliste rekursiv anhängen (in Dokumentreihenfolge nach dem Eltern-Item),
     // eine Stufe tiefer — die Stufe wird explizit geführt, nicht geraten.
@@ -304,7 +322,7 @@ export function parseDefinitionsListe(
       const subEnde = findeDlEnde(ddRoh, subDlIdx);
       const subOpenLen = ddRoh.slice(subDlIdx).match(/^<dl\b[^>]*>/i)![0].length;
       const subInner = ddRoh.slice(subDlIdx + subOpenLen, subEnde - '</dl>'.length);
-      for (const sub of parseDefinitionsListe(subInner, tiefe + 1, anhang, absorbiert)) items.push(sub);
+      for (const sub of parseDefinitionsListe(subInner, tiefe + 1, anhang, absorbiert, geordnet || istNotiz)) items.push(sub);
     }
   }
   return items;

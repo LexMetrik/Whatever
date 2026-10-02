@@ -101,6 +101,11 @@ export interface NormSnapshot {
      *  Lesesicht fällt dann auf ihre Marken-Heuristik zurück
      *  (ArtikelBody.helfer.ts `markenArt`). */
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
+    /** Anhang-Zwischennotiz (P4, W2·27-BUND-FERTIG): Ebene (`tiefe`, 0 = Wurzelliste) der marke-losen
+     *  Zeile, die diesen Block ausmacht (`text` = die Zeile, `items` = ihre Unterliste). Render-Hinweis,
+     *  nicht im sha: Einrückung auf die Ebene des Eltern-Punkts; der Folgeblock führt die Kette des
+     *  Zitats über die Blockgrenze (ArtikelBody.helfer.ts `anhangVorKette`). Fehlt: gewöhnlicher Block. */
+    einzug?: number;
     /** Stufe 1: Füllpunkt-Tarifzeilen (Beschreibung | Betrag). */
     tabelle?: Array<{ beschreibung: string; betrag: string }>;
     /**
