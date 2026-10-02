@@ -2,7 +2,8 @@ import { useLayoutEffect, useRef, type Dispatch, type MutableRefObject, type Set
 import { pfadZu } from '../helpers';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
-import { uebersetzeRohPfad } from '../gliederungsModell';
+import { uebersetzeRohPfad, findeSynthPfad } from '../gliederungsModell';
+import type { GliederungsKnoten } from '../gliederungsTypen';
 import { sicherDekodiert } from '../../../lib/sicherDekodieren';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
@@ -62,6 +63,8 @@ export function useTiefLinkZweig(opts: {
   erlassMarke: string;
   /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
   umhaengPraefix: Record<string, string[]>;
+  /** Zeilenbaum des Modells — für Artikel OHNE amtliche Sektion («Ohne Abschnitt», Anhang; B7). */
+  knoten?: GliederungsKnoten[];
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   autoOffenRef: MutableRefObject<Set<string>>;
   autoTickRef: MutableRefObject<Map<string, number>>;
@@ -70,7 +73,7 @@ export function useTiefLinkZweig(opts: {
   manuellZuRef: MutableRefObject<Set<string>>;
 }): void {
   const {
-    hash, sektionen, erlassMarke, umhaengPraefix, setTocBaum,
+    hash, sektionen, erlassMarke, umhaengPraefix, knoten, setTocBaum,
     autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = opts;
   const pfadRef = useRef<string | null>(null);
@@ -80,7 +83,16 @@ export function useTiefLinkZweig(opts: {
     if (!token) return;
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;
-    const ids = uebersetzeRohPfad(umhaengPraefix, pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? []);
+    const rohPfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    // B7 (W2·17-UI-BEFUNDE): ein Artikel ohne amtliche Sektion (vor dem ersten
+    // Abschnitt, dahinter, mittendrin, im Anhang) steht in einer synthetischen
+    // Zeile — «Ohne Abschnitt», «Anhänge». Ohne diese Auflösung blieb die Zeile
+    // bei ZH-230#art-5 zu, obwohl der Leser mitten in ihr stand. Welche Zeile den
+    // Artikel deckt, weiss allein das Modell (`findeSynthPfad`, §5) — dieselbe
+    // Frage beantwortet der Scroll-Spy ebenso.
+    const ids = rohPfad.length > 0
+      ? uebersetzeRohPfad(umhaengPraefix, rohPfad)
+      : (knoten ? findeSynthPfad(knoten, token) ?? [] : []);
     if (ids.length === 0) return;
     pfadRef.current = marke;
     const tick = autoTickNowRef.current;
@@ -93,6 +105,6 @@ export function useTiefLinkZweig(opts: {
       if (sprungZielOffen(o, ids, ids.slice(-1))) return o; // schon offen ⇒ kein Re-Render
       return oeffneSprungZiel(o, ids, ids.slice(-1));
     });
-  }, [hash, sektionen, erlassMarke, umhaengPraefix,
+  }, [hash, sektionen, erlassMarke, umhaengPraefix, knoten,
       autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);
 }

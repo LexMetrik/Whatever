@@ -65,6 +65,8 @@ export function useSektionSprung(opts: {
   scrollBeiSuchwechsel?: boolean;
   /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
   umhaengPraefix?: Record<string, string[]>;
+  /** Zeilenbaum des Modells (B7: Tieflink auf einen Artikel ohne Sektion). */
+  knoten?: GliederungsKnoten[];
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -80,7 +82,7 @@ export function useSektionSprung(opts: {
   const {
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
-    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX,
+    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX, knoten,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -88,7 +90,7 @@ export function useSektionSprung(opts: {
   // dem ersten Bild — er gehört zu den Sprüngen und steht darum hier. Befund,
   // Messreihe und Herleitung: `./v3/tiefLinkZweig`.
   useTiefLinkZweig({
-    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix,
+    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix, knoten,
     setTocBaum, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   });
 

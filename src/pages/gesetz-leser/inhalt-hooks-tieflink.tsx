@@ -18,13 +18,14 @@
 // `leser-adresse-lm202.test.ts` und `tab-titel-paritaet.test.ts` bewachen ihn
 // genau dort, und ein Refactoring passt keine Tests an (§6.3).
 
-import { useEffect, useLayoutEffect, useRef, type Dispatch, type RefObject, type SetStateAction } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type Dispatch, type RefObject, type SetStateAction } from 'react';
 import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { istHashVerbraucht } from './scrollAnker';
 import { pfadZu } from './helpers';
 import { kanonischerAnkerToken } from './suchTreffer';
 import { paneRoot, findeArt } from './berechnungen';
-import type { Sektion } from '../../lib/normtext/browse';
+import { ladeStruktur, type Sektion } from '../../lib/normtext/browse';
+import { datenEbeneVonRoute } from '../../lib/normtext/erlassAdresse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
@@ -36,6 +37,34 @@ import { sicherDekodiert } from '../../lib/sicherDekodieren';
  * laufen, und `useLayoutEffect` warnt im Server-Render.
  */
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+/**
+ * Ist das Struktur-Sidecar dieses Erlasses ENTSCHIEDEN (geladen, 404 oder
+ * Fehler)? W2·17-UI-BEFUNDE PA-4-B01.
+ *
+ * Der Tieflink-Sprung wartete mit `!sektionen.length`, bis die Gliederung
+ * steht — das ist für gegliederte Erlasse richtig (Sidecar noch unterwegs), für
+ * die rund 146 Erlasse OHNE Gliederung aber ein Warten ohne Ende: `sektionen`
+ * bleibt `[]`, der Sprung feuerte nie, die Seite blieb bei scrollY 0 (BS-954.510
+ * #art-40, BS-190.510#art-39, ZH-211.23#art-15; nachgestellt mit 1,2 s
+ * verzögerter Erlass-Datei — auf schneller Leitung rettete der Retry von
+ * `ScrollZuHash` in `App.tsx`, 30 Frames). Aus `struktur === null` allein ist
+ * «noch nicht geladen» nicht von «gibt es nicht» zu unterscheiden; darum die
+ * eigene Auskunft. Der Fetch ist derselbe geteilte Cache wie in `useLeserDaten`
+ * (`ladeStrukturDoc`), kein zweiter Request; die Erledigung kommt zwei
+ * Mikrotasks hinter dessen `setStruktur` und landet im selben Render.
+ */
+function useStrukturEntschieden(ebene: string, schluessel: string): boolean {
+  const marke = `${ebene}/${schluessel}`;
+  const [fertigFuer, setFertigFuer] = useState<string | null>(null);
+  useEffect(() => {
+    let lebt = true;
+    const fertig = () => { if (lebt) setFertigFuer(marke); };
+    void ladeStruktur(datenEbeneVonRoute(ebene), schluessel).then(fertig, fertig);
+    return () => { lebt = false; };
+  }, [ebene, schluessel, marke]);
+  return fertigFuer === marke;
+}
 
 /** Der Hash-Seed-Sprung. Signatur = genau die Werte, die der Block gelesen hat. */
 export function useTieflinkSprung(opts: {
@@ -56,6 +85,7 @@ export function useTieflinkSprung(opts: {
     ebene, schluessel, eintraege, sektionen, istSekundaer, imPane, wurzel,
     paneLocationHash, artLabelByToken, setOffen, setAktArtikel, setAktivIds,
   } = opts;
+  const strukturEntschieden = useStrukturEntschieden(ebene, schluessel);
 
   const oeffnePfad = (ids: string[]) => setOffen((o) => {
     const n = { ...o }; for (const id of ids) n[id] = true; return n;
@@ -81,7 +111,9 @@ export function useTieflinkSprung(opts: {
   // (`<Routes location={loc}>` → react-router `useLocation()` liefert den Pane-Pfad),
   // sonst wie bisher die echte Fenster-URL (Primär/Einzelansicht byte-gleich).
   useIsoLayoutEffect(() => {
-    if (!eintraege || !sektionen.length || typeof window === 'undefined') return;
+    // PA-4-B01: ohne Gliederung ist `sektionen` für immer leer — gewartet wird nur,
+    // solange das Sidecar noch unterwegs sein könnte (`useStrukturEntschieden`).
+    if (!eintraege || (!sektionen.length && !strukturEntschieden) || typeof window === 'undefined') return;
     // A34: nur der ERSTE inhaltsbereite Lauf sät den Sprung. Danach gesperrt —
     // ein `imPane`/`wurzel`-Wechsel (Split-View öffnet) re-triggert den Effekt,
     // darf aber NICHT erneut an den (alten) Hash springen. Wächter VOR dem Hash-
@@ -382,5 +414,5 @@ export function useTieflinkSprung(opts: {
     // eine tote Zeile (eslint meldet sie selbst als «unused directive»). Die
     // Dep-Liste bleibt byte-gleich; abgeschaltet war die Prüfung vorher wie
     // nachher.
-  }, [eintraege, sektionen, istSekundaer, imPane, wurzel]);
+  }, [eintraege, sektionen, strukturEntschieden, istSekundaer, imPane, wurzel]);
 }
