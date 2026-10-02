@@ -43,12 +43,16 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
   })
 
   test('(a) Enter am Pfeil-Knopf bewegt den Gliederungs-Scroller nicht', async ({ page }) => {
-    await zuArtikel(page, 300)
+    // Alles offen: die Marke (gelesene Stelle) liegt dann sicher weit unterhalb des Sichtbands.
+    const alle = page.locator('[data-v3-alle]')
+    await alle.click()
+    await expect(alle).toContainText('alles zu')
+    await zuArtikel(page, 1100)
     await expect(page.locator(`${baum} [data-toc-aktiv]`)).toHaveCount(1, { timeout: 10000 })
     // Der Nutzer blättert von Hand an den Anfang der Gliederung (Scroll arm't den Guard nicht).
     await page.evaluate(() => { (document.querySelector('[data-toc]') as HTMLElement).scrollTop = 0 })
     await page.waitForTimeout(1800) // der Spy-Nachlauf darf die Position vorher bewegen, nicht danach
-    const knopf = page.locator(pfeile).nth(1)
+    const knopf = page.locator(pfeile).first() // «Erste Abteilung», offen — Zuklappen schiebt alles darunter nach oben
     await knopf.focus()
     await expect(knopf).toBeFocused()
     const vorher = await page.evaluate(() => {
@@ -83,14 +87,15 @@ test.describe('W2·17 Gliederung — Klappen und Tastatur (OR @1440)', () => {
   })
 
   test('(c) nach «alles auf» nimmt das Weiterlesen keinen Ast zurück', async ({ page }) => {
-    await zuArtikel(page, 300) // der Spy öffnet den gelesenen Pfad von selbst (Auto-Lager)
+    await zuArtikel(page, 1100) // der Spy öffnet den gelesenen Pfad von selbst (Auto-Lager)
     const alle = page.locator('[data-v3-alle]')
     await alle.click()
     await expect(alle).toContainText('alles zu')
     const n0 = await offenePfeile(page)
     expect(n0, 'Vorbedingung: viele offene Äste').toBeGreaterThan(30)
-    // Mehr Pfadwechsel als der Auto-Zu-Nachlauf (6): quer durch das Gesetz lesen.
-    for (const nr of [500, 700, 900, 1100, 1300, 1500, 1700, 1900]) await zuArtikel(page, nr)
+    // Mehr Pfadwechsel als der Auto-Zu-Nachlauf (6), der Pfad von Art. 1100 bleibt weit zurück
+    // (oberhalb UND unterhalb des Sichtbands — beide Richtungen schliesst der Spy).
+    for (const nr of [1000, 900, 700, 500, 300, 100, 600, 1050]) await zuArtikel(page, nr)
     await page.waitForTimeout(900)
     const n1 = await offenePfeile(page)
     expect(n1, `offene Äste nach «alles auf»: ${n0}, nach dem Weiterlesen: ${n1}`).toBe(n0)
