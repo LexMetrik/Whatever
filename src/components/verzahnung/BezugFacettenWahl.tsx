@@ -55,6 +55,12 @@ import { ZeichenLegende } from './ZeichenLegende';
  *  Zahl «0» am Schalter und der Titel, nicht die Opazität. */
 const LEER = 'opacity-60';
 
+/** Kantonchip «gewählt, hier ohne Wirkung» (Entscheid David 2.10.2026): die
+ *  Auswahl-Fläche fällt weg, der Rahmen wird gestrichelt, das Kürzel durchgestrichen
+ *  — nicht Farbe allein (F2); das ✓ des gewählten Zustands bleibt, denn gewählt IST
+ *  er. Nur Tokens, kein Opazitäts-Abzug auf der Tinte (Kontrast bleibt ink-700). */
+const KEINE_WIRKUNG = 'bg-transparent text-ink-700 line-through border-dashed';
+
 /**
  * Der Titel eines Instanz-Schalters — die ganze Auskunft in einem Satz (B7/c, §8).
  *
@@ -102,7 +108,7 @@ function schalterTitel(k: BezugStatus, z: KlassenZahlen | undefined, bilanz: Bez
     + `${bilanz?.artikelGesamt ?? 0} Artikeln: diese Instanz trägt selten.`;
 }
 
-export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, bilanz = null, onKlassen, onKantone }: {
+export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, kantoneOhneWirkung = [], bilanz = null, onKlassen, onKantone }: {
   /** Gewählte Instanz-Klassen (leer = nichts gewählt, siehe bezugAuswahl.ts). */
   klassen: readonly BezugStatus[];
   /** Gewählte Kantone; leer = keine Einschränkung. */
@@ -118,6 +124,11 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
   klassenZahlen?: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** Wo die Zahlen gelten, als Wortlaut für Titel und Hinweis («an Art. 41»). */
   zahlOrt: string;
+  /** Gewählte Kantone, die am gezählten Ort (Artikel) keine Kante haben — ihr Chip
+   *  steht im Zustand «gewählt, hier ohne Wirkung» (Entscheid David 2.10.2026,
+   *  Variante A). Die Quelle ist `kantonenOhneWirkung` (bezugAuswahl.ts, §5); diese
+   *  Komponente leitet nichts davon selbst ab. Leer/fehlt = jeder gewählte Kanton wirkt. */
+  kantoneOhneWirkung?: readonly string[];
   /** B7/c: korpusweite Bilanz für die Erklärung leerer Klassen. Optional —
    *  fehlt sie, entfällt nur der Zusatzsatz, nie die Zahl des Erlasses. */
   bilanz?: BezugsBilanz | null;
@@ -177,16 +188,20 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           {kantonChips.map((k) => {
             const aktiv = kantone.includes(k);
             const imErlass = kantoneVerfuegbar.includes(k);
+            const ohneWirkung = aktiv && kantoneOhneWirkung.includes(k);
             /* `num` entfällt: `.lc-chip` setzt die Mono-Stimme bereits (§13 e —
                Kantonskürzel sind ein Struktur-Etikett), die Zusatzklasse wäre
                eine zweite Wahrheit über dieselbe Schrift. */
             return (
               <button key={k} type="button" aria-pressed={aktiv} data-bezug-kanton={k}
-                title={imErlass
-                  ? `Nur kantonale Entscheide aus ${k} zeigen`
-                  : `${k} ist gewählt, führt in diesem Erlass aber keine Entscheide — abwählen`}
+                {...(ohneWirkung ? { 'data-bezug-kanton-wirkung': 'keine' } : {})}
+                title={ohneWirkung
+                  ? `${k} ist gewählt, hat ${zahlOrt} aber keinen Entscheid — ohne Wirkung, angezeigt sind alle anderen. Abwählen`
+                  : imErlass
+                    ? `Nur kantonale Entscheide aus ${k} zeigen`
+                    : `${k} ist gewählt, führt in diesem Erlass aber keine Entscheide — abwählen`}
                 onClick={() => onKantone(schalteKanton(kantone, k))}
-                className={`lc-chip ${aktiv ? 'lc-chip-selected' : ''}`}>
+                className={`lc-chip ${aktiv ? 'lc-chip-selected' : ''} ${ohneWirkung ? KEINE_WIRKUNG : ''}`}>
                 {k}
               </button>
             );

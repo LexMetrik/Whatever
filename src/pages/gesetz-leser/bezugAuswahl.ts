@@ -318,6 +318,25 @@ export function wirksameKantone(
   return kantone.filter((k) => vorhanden.has(k));
 }
 
+/**
+ * Die gewählten Kantone, die an DIESEN Kanten nichts schneiden — das
+ * Komplement zu `wirksameKantone` (eine Quelle, §5: keine zweite Ableitung von
+ * «wirkt die Wahl hier?»).
+ *
+ * Entscheid David 2.10.2026 (Variante A): das Verhalten bleibt, wie es ist —
+ * die globale Wahl wirkt dort, wo sie etwas zu schneiden hat. Dafür zeigt die
+ * Oberfläche, wo sie es nicht tut: der Chip im Zustand «gewählt, hier ohne
+ * Wirkung» und ein Satz unter der Filterzeile (`kantonOhneWirkungSatz`). Beide
+ * lesen diese Funktion. Reihenfolge der Wahl bleibt erhalten (§2).
+ */
+export function kantonenOhneWirkung(
+  kanten: readonly { facetten: { kanton: string } }[],
+  kantone: readonly string[],
+): string[] {
+  const wirkt = new Set(wirksameKantone(kanten, kantone));
+  return kantone.filter((k) => !wirkt.has(k));
+}
+
 // RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE): hier stand `kantonSchneidet` («… im Kanton»
 // am Gruppenkopf der `BezuegeZeile`, E4-B01 Nachzug) — ihr einziger Verbraucher war
 // `ArtikelBezuege.kantonAktiv`, und beide sind mit der Komponente gelöscht.
