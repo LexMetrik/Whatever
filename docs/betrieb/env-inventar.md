@@ -44,7 +44,9 @@ Laufen **kontolos** mit dem Repo (`github.token` genügt für Issue-Schreiben):
 David-Rahmen-Gate 16.7.2026 freigegeben) und wird **rot**, wenn es fehlt — nur so
 kann ein verfallenes Secret nicht als «alles grün» durchgehen (§8). *(Bis 15.9.2026
 stand hier «keine zusätzlichen Repo-Secrets»; das war schon seit dem 16.7.2026
-nicht mehr richtig — nachgetragen, nicht umgeschrieben.)* Kämen später weitere
+nicht mehr richtig — nachgetragen, nicht umgeschrieben.)* Ebenso nicht kontolos:
+`normen-monatslauf.yml` (am 1.10.2026 aus `normen-monitor.yml` herausgelöst) eröffnet
+seine Monats-PRs mit dem Repo-Secret **`AUTOMERGE_TOKEN`**. Kämen später weitere
 dazu (z. B. externe-Sonden-Token), werden sie hier eingetragen.
 
 ## Zugänge (Werte NICHT hier — Passwort-Nachlass)

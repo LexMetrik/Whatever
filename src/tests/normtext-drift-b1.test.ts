@@ -147,6 +147,49 @@ describe('B4 — Referenz = Mehrheits-Basis, nicht der erste Eintrag', () => {
   });
 });
 
+// W2·27-BUND-FERTIG P1 (GP #1180 F1): B4 bindet die Basis an das gepinnte ELI + /de aus
+// scripts/fedlex-cache.sh. Vorher blieb «alle Einträge auf AIG-ELI oder /fr» grün (einheitlich falsch).
+describe('B4 — Basis gebunden an das gepinnte ELI/Sprache (fedlex-cache.sh)', () => {
+  const pins = new Map([['or', 'cc/27/317_321_377']]);
+  const mitPin = (s: NormSnapshot[]) =>
+    pruefeLabelUrlMitDeckung(s, pins).befunde.map((b) => `${b.regel}:${b.id}`);
+  const lauf = (basis: string) => [
+    snap('bund/OR/art_1', 'Art. 1', `${basis}#art_1`),
+    snap('bund/OR/art_2', 'Art. 2', `${basis}#art_2`),
+    snap('bund/OR/art_3', 'Art. 3', `${basis}#art_3`),
+  ];
+
+  it('Basis == …/eli/<pin>/de ist grün', () => {
+    expect(mitPin(lauf(B))).toEqual([]);
+  });
+  it('einheitlich FALSCHES ELI (AIG) oder /fr ⇒ jeder Eintrag rot (ohne Pin-Tabelle bliebe es grün)', () => {
+    const aig = 'https://www.fedlex.admin.ch/eli/cc/2007/758/de';
+    const fr = 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr';
+    expect(mitPin(lauf(aig))).toEqual(['B4-basis-pin:bund/OR/art_1', 'B4-basis-pin:bund/OR/art_2', 'B4-basis-pin:bund/OR/art_3']);
+    expect(mitPin(lauf(fr))).toHaveLength(3);
+    expect(pruefeLabelUrl(lauf(aig))).toEqual([]); // alte Mehrheits-Regel allein: blind
+  });
+  it('Erlass ohne Pin-Eintrag fällt auf die Mehrheits-Regel zurück', () => {
+    const r = pruefeLabelUrlMitDeckung([snap('bund/ZZ/art_1', 'Art. 1', 'https://x.example/de#art_1')], pins);
+    expect(r.befunde).toEqual([]);
+  });
+});
+
+describe('B2 — Wiederholungs-Adverbien ab vicies (20+)', () => {
+  const basis = snap('bund/KKV/art_126_z', 'Art. 126z', `${B}#art_126_z`);
+  const syn = (label: string) => snap('bund/KKV/art_126_z__2', label, `${B}#ta126z`);
+  it('vicies, unvicies, duovicies, tervicies, tricies, quadragies sind grün', () => {
+    for (const s of ['vicies', 'unvicies', 'duovicies', 'tervicies', 'novovicies', 'tricies', 'quadragies']) {
+      expect(regeln([basis, syn(`Art. 126z${s}`)]), s).toEqual([]);
+    }
+  });
+  it('Fantasie-Formen bleiben rot', () => {
+    for (const s of ['vicie', 'xvicies', 'vicies2', 'viciesbis', 'unvicis']) {
+      expect(regeln([basis, syn(`Art. 126z${s}`)]), s).toEqual(['B2-label']);
+    }
+  });
+});
+
 describe('Deckungs-Ausweis (§8)', () => {
   it('nennt abgeleitet / nur-Format je Klasse / Kanton UNGEPRÜFT', () => {
     const { deckung } = pruefeLabelUrlMitDeckung([

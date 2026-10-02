@@ -18,7 +18,8 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // Die Konstante wird IMPORTIERT statt abgeschrieben: die Ausgrenzung lebt in
 // `sammleTrefferRanges` und nur dort (§5). Ein `src/components`→`src/pages`-Import
 // ist im Haus etabliert (RuecksprungChip, BezugFacettenWahl, BezugZeitWahl,
-// ArtikelKontextGruppe) und erzeugt keinen Zyklus (check:zyklen).
+// ArtikelKontextGruppe, am 1.10.2026 gelöscht — die drei übrigen bleiben der
+// Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 
 import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
@@ -252,7 +253,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // trägt KEINEN amtlichen Vermerk, sagt auch der Körper «kein Text im Snapshot» — dasselbe Wort
   // wie Statuszeile, Nachbar-Pfeil und Synopse (`artikelLeerstellenStatus`, §5). Ein «…»-ABSATZ in
   // einem sonst lebenden Artikel bleibt «aufgehoben» (amtliche Absatz-Auslassung, David 16.6.2026).
-  // Nur der «…»-Platzhalter wird so umgedeutet; der amtliche Wortlaut «Aufgehoben» ist Quelle.
+  // Nur «…» wird umgedeutet, der Wortlaut «Aufgehoben» bleibt. OFFEN (P2 #28/#33, David): 340 ZH-
+  // Artikel nur aus «Aufgehoben» OHNE Feld — Körper «aufgehoben», Statuszeile «kein Text», und das
+  // Wort ist dort Adapter-Platzhalter (`zh-tor-regeln` PLATZHALTER: «steht so in KEINEM PDF»).
   const leerZustand = artikelLeerstellenStatus(bloecke, artikelAufgehoben, artikelGegenstandslos);
   const platzhalter = (text: string) => {
     // EINE Entscheidung mit der Synopse (`sagtKeinText`, §5).

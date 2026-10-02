@@ -11,6 +11,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { extrahiereStruktur, extrahiereAnhangStruktur } from './struktur-extrahiere.ts';
+import { extrahiereMarginalienXml, ueberlagereMarginalien } from './struktur-marginalien-xml.ts';
+import { sicherstelleXmlCaches, xmlPfad } from './fedlex-xml-cache.ts';
 import { extrahiereKopf } from './kopf-extrahiere.ts';
 import { extrahiereFussnoten, fnDefinitionen, type Fussnote } from './fussnoten-extrahiere.ts';
 import { klassifiziereFussnote } from './fussnoten-klassifikation.ts';
@@ -128,7 +130,7 @@ export function cacheGueltig(key: string, pins: ReadonlyMap<string, FedlexCacheE
 // JEDEM Testprozess zuverlässig (verifiziert), vite-node/tsx/node nie.
 const istCliLauf = !process.env.VITEST;
 
-function main(): void {
+async function main(): Promise<void> {
   const datumArg = process.argv.find((a) => a.startsWith('--datum='));
   const erzeugt = datumArg ? datumArg.slice('--datum='.length) : '';
   if (!/^\d{4}-\d{2}-\d{2}$/.test(erzeugt)) {
@@ -217,6 +219,11 @@ function main(): void {
     }
   }
 
+  // Randtitel kommen aus dem amtlichen XML (`fedlex:role="marginal"`), nicht aus der
+  // HTML-Auszeichnung — gleicher Stand wie das HTML-Cache (Pin). Kein stiller Fallback:
+  // fehlt das XML, bricht der Lauf ab (wie beim HTML-Cache).
+  await sicherstelleXmlCaches(bund.map((r) => r.key), cachePins);
+
   for (const reg of bund) {
     const cache = `/tmp/${reg.key.toLowerCase()}.html`;
     if (!cacheGueltig(reg.key, cachePins)) { fehlend.push(reg.key); continue; }
@@ -225,6 +232,9 @@ function main(): void {
     // M13-Annex: Anhang-Gliederung («Anhänge») additiv ergänzen — Keys lockstep
     // mit den Snapshot-Annex-Tokens (gleicher Keep-Prädikat, Konsistenz-Tor).
     Object.assign(struktur, extrahiereAnhangStruktur(html));
+    // Randtitel: XML-Rolle `marginal` ersetzt die HTML-Klassifikation (Wahl je Glied:
+    // `waehleRandtitel` — HTML-Typografie, wo beide dieselben Buchstaben/Ziffern tragen).
+    ueberlagereMarginalien(struktur, extrahiereMarginalienXml(readFileSync(xmlPfad(reg.key), 'utf8')));
     const anzahl = Object.keys(struktur).length;
     if (anzahl === 0) { fehlend.push(`${reg.key}(0)`); continue; }
     // Fussnoten (Änderungs-/AS/BBl-Historie) je Artikel dazumischen.
@@ -318,4 +328,4 @@ function main(): void {
   }
 }
 
-if (istCliLauf) main();
+if (istCliLauf) main().catch((e: unknown) => { console.error(e instanceof Error ? e.message : e); process.exit(1); });

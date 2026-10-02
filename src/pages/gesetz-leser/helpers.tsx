@@ -21,17 +21,6 @@ const SR_INTERN: ReadonlyMap<string, { key: string; ebene: 'bund' | 'kanton' }> 
 );
 
 /**
- * W2·19-GLIEDERUNG/S7: SR-Nummer → intern gehaltener Erlass, sonst `undefined`.
- * Derselbe `SR_INTERN`-Index, den der Fussnoten-Renderer weiter unten schon nutzt
- * (§5, EINE Auflösung) — exportiert, damit der Artikel-Kontext einen
- * Fussnoten-Verweis intern verlinken kann, WO wir den Erlass wirklich halten,
- * und sonst ehrlich beim amtlichen Link bleibt (§8, kein toter interner Pfad).
- */
-export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' | 'kanton' } | undefined {
-  return SR_INTERN.get(sr);
-}
-
-/**
  * §5 (W2·5m-LESER-V3/S3): die EINE ISO→CH-Datumsform lebt in
  * `lib/normtext/erlassKopfText` — der prerenderte SEO-Kopf (`lib/seo-detail.ts`)
  * braucht dieselbe Form, und die Bibliotheks-Schicht darf nicht auf `pages/`
@@ -393,14 +382,11 @@ export function pfadZu(sektionen: Sektion[], treffer: (s: Sektion) => boolean): 
 // Extraktor (fussnoten-extrahiere.clean) behält bare <b>/<i>; hier werden sie in
 // <strong>/<em> übersetzt (rekursiv für die seltene Verschachtelung <i>…<b>…</b>…</i>).
 //
-// W2·19-GLIEDERUNG/S7 (Bug-Check B2): EXPORTIERT, weil der Artikel-Kontext
-// dieselben amtlichen Labels zeigt («SR <b>281.1</b>» — 100 % der rs-Fussnoten
-// im Bund-Korpus tragen die Tags). Eine zweite Parse-Regel daneben wäre eine
-// §5-Doppelwahrheit; die eine hier ist bereits am Fussnoten-Text erprobt.
-// (Natürlicher Langzeit-Ort wäre ein geteiltes Darstellungs-Modul — der Import
-// aus der Komponenten-Schicht ist eine Schicht-Inversion für EINE reine
-// Funktion, erzeugt aber keinen Zyklus; siehe check:zyklen.)
-export function richText(s: string, keyBase: string): ReactNode {
+// W2·19-GLIEDERUNG/S7 (Bug-Check B2): war EXPORTIERT, weil der Artikel-Kontext
+// dieselben amtlichen Labels zeigte («SR <b>281.1</b>» — 100 % der rs-Fussnoten
+// im Bund-Korpus tragen die Tags); er ist am 1.10.2026 gelöscht (W2·27-BUND-FERTIG,
+// P3), `richText` seither wieder modul-intern. Die Parse-Regel bleibt die eine (§5).
+function richText(s: string, keyBase: string): ReactNode {
   if (!s.includes('<')) return s;
   const out: ReactNode[] = [];
   const re = /<(b|i)>([\s\S]*?)<\/\1>/gi;

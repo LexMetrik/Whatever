@@ -528,7 +528,7 @@ export interface MaterialBezug {
   key: string; titel: string; behoerdeKuerzel: string; doktypLabel: string;
   nummer: string | null; pfad: string;
   /** §8-Herkunft. In-Bundle-kuratierte Materialien sind 'kuratiert'; die asynchron
-   *  geladenen Soft-Law-Kanten (kontextSoftLaw) tragen die Adapter-quelle. */
+   *  geladenen Soft-Law-Kanten (kontextSoftLawErgebnis) tragen die Adapter-quelle. */
   herkunft: Herkunft;
   /** Stand der Dokument-Fassung (ISO) — Chip-Anzeige + Staleness-Klassifikation (§2.4). */
   stand: string;

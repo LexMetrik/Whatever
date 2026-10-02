@@ -1,5 +1,6 @@
 import { useId, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 import { AbrufFehler } from '../../../components/ui/AbrufFehler';
@@ -153,6 +154,18 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
       daten={{ 'data-v3-blatt-fassung': eintrag.artikel }}>
       <EntstehungsBlock historie={historie} erlassKey={erlassKey} artikel={eintrag.artikel} snapshot={eintrag} />
     </Klappzeile>
+  );
+}
+
+/** W2·27-BUND-FERTIG P5 · «Erlass in Kraft seit …» unter der Leerzeile des Reiters
+ *  «Änderungen» (Herleitung, Bedingungen und Umfangs-Schalter: `./PanelTafeln`,
+ *  `erlassStandFuerArtikel`). Das Datum gehört dem ERLASS, nie dem Artikel. */
+export function ErlassStandZeile({ iso, token }: { iso: string; token: string }) {
+  return (
+    <p data-v3-blatt-fassung-erlass={token} className="px-3 pt-2 text-body-s text-ink-700"
+      title="Amtliches Inkrafttreten des Erlasses (Fedlex) — keine Aussage über spätere Änderungen dieses Artikels">
+      Erlass in Kraft seit {datumAnzeige(iso)}.
+    </p>
   );
 }
 

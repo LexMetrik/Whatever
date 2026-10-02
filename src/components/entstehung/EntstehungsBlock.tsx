@@ -563,7 +563,7 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
       {praxis === 'fehler'
         // Kein Zähl-Satz: die Quelle war nicht erreichbar, nicht leer (§8). Der
         // Hausbaustein statt einer Handzeile — Ton, Satzbau und «Erneut laden».
-        ? <AbrufFehler gegenstand="Praxis-Angaben" mehrzahl onErneut={praxisErneut}
+        ? <AbrufFehler gegenstand="Praxis-Angaben" mehrzahl klein onErneut={praxisErneut}
             className="mt-0.5" daten={{ 'data-entstehung-praxis': '' }} />
         : (
           <p className={E.praxis} data-entstehung-praxis>
