@@ -376,7 +376,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
     }
    ]
   },
@@ -505,7 +506,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen"
     }
    ]
   },
@@ -572,8 +574,22 @@
    ]
   },
   "44": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "ausdruck",
      "datum": "2021-01-01",
@@ -624,13 +640,240 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "45": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "46": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "47": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "48": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "49": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "50": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
     }
    ]
   },
   "51": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -643,6 +886,72 @@
      ],
      "absatz": "1",
      "item": "b"
+    }
+   ]
+  },
+  "52": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    }
+   ]
+  },
+  "53": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
     }
    ]
   },
@@ -678,14 +987,56 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
      "absatz": "2",
      "item": null
     }
    ]
   },
   "56": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -701,9 +1052,42 @@
     }
    ]
   },
-  "58": {
-   "giltSeit": "2021-01-01",
+  "57": {
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "58": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -732,9 +1116,61 @@
     }
    ]
   },
-  "61": {
-   "giltSeit": "2020-01-01",
+  "59": {
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "60": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "61": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -750,9 +1186,80 @@
     }
    ]
   },
+  "62": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "63": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "64": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
   "65": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -794,6 +1301,44 @@
     }
    ]
   },
+  "66": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "67": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
   "68": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
@@ -807,8 +1352,41 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "69": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
     }
    ]
   },
@@ -826,13 +1404,60 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "71": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
     }
    ]
   },
   "72": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -861,9 +1486,61 @@
     }
    ]
   },
-  "75": {
-   "giltSeit": "2021-01-01",
+  "73": {
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "74": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    }
+   ]
+  },
+  "75": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -901,6 +1578,20 @@
   "22_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -993,7 +1684,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
     },
     {
      "typ": "fassung",
@@ -1006,13 +1698,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Geltungsbereich"
     }
    ]
   },
   "51_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5327",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -1042,8 +1763,22 @@
    ]
   },
   "65_a": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -1062,6 +1797,20 @@
   "75_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 703",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",

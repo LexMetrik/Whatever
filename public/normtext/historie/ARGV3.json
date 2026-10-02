@@ -261,7 +261,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+    }
+   ]
+  },
+  "16": {
+   "giltSeit": "2015-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
     }
    ]
   },
@@ -278,8 +298,41 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "18": {
+   "giltSeit": "2015-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
     }
    ]
   },
@@ -302,9 +355,61 @@
    ],
    "aufgehobenSeit": "2010-05-01"
   },
+  "20": {
+   "giltSeit": "2015-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+    }
+   ]
+  },
+  "21": {
+   "giltSeit": "2015-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+    }
+   ]
+  },
   "22": {
    "giltSeit": "2015-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1079",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+    },
     {
      "typ": "fassung",
      "datum": "2015-10-01",
@@ -401,7 +506,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Instandhaltung und Reinigung"
     }
    ]
   },
@@ -474,7 +580,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien"
     }
    ]
   }

@@ -59,13 +59,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
   "2": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -88,6 +107,24 @@
   "3": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -144,6 +181,24 @@
   "4": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -266,7 +321,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
     },
     {
      "typ": "fassung",
@@ -283,7 +339,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
     },
     {
      "typ": "eingefuegt",
@@ -300,13 +357,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
     }
    ]
   },
   "6": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -346,6 +458,60 @@
   "7": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -419,6 +585,60 @@
   "8": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
+    },
     {
      "typ": "fassung",
      "datum": "2020-07-01",
@@ -513,7 +733,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
     }
    ]
   },
@@ -543,6 +764,24 @@
   "12": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -590,6 +829,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
+    {
+     "typ": "fassung",
      "datum": "2020-07-01",
      "wirkung": false,
      "quellen": [
@@ -612,6 +869,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -632,6 +907,24 @@
   "16": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -771,7 +1064,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
     },
     {
      "typ": "eingefuegt",
@@ -788,13 +1082,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
     }
    ]
   },
   "18": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -861,13 +1174,132 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    }
+   ]
+  },
+  "19": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    }
+   ]
+  },
+  "20": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
     }
    ]
   },
   "21": {
-   "giltSeit": "1993-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
     {
      "typ": "fassung",
      "datum": "1993-01-01",
@@ -922,8 +1354,44 @@
    ]
   },
   "22": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -946,6 +1414,42 @@
   "23": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -983,6 +1487,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -1017,13 +1539,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
     }
    ]
   },
   "25": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1061,6 +1620,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -1082,9 +1677,86 @@
     }
    ]
   },
+  "27": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    }
+   ]
+  },
   "28": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1104,9 +1776,191 @@
     }
    ]
   },
+  "29": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    }
+   ]
+  },
+  "30": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    }
+   ]
+  },
+  "31": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    }
+   ]
+  },
+  "32": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+    }
+   ]
+  },
   "33": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1139,13 +1993,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
     }
    ]
   },
   "34": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1183,6 +2074,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1190,6 +2117,42 @@
   "36": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1231,6 +2194,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2020-07-01",
      "wirkung": false,
      "quellen": [
@@ -1268,6 +2267,24 @@
   "38": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "fassung",
      "datum": "1999-01-01",
@@ -1334,13 +2351,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Abschnitt: Betriebsunterbruch"
     }
    ]
   },
   "39": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1390,13 +2426,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "11. Abschnitt: Nebenbetriebe"
     }
    ]
   },
   "40": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "fassung",
      "datum": "1999-01-01",
@@ -1531,7 +2586,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten"
     },
     {
      "typ": "fassung",
@@ -1548,7 +2604,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten"
     }
    ]
   },
@@ -1570,13 +2627,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
     }
    ]
   },
   "42": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1614,8 +2690,26 @@
    ]
   },
   "43": {
-   "giltSeit": null,
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "1987-01-01",
@@ -1632,6 +2726,29 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "44": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
     }
    ]
   },
@@ -1681,9 +2798,50 @@
    ],
    "aufgehobenSeit": "2007-05-01"
   },
-  "48": {
-   "giltSeit": "2007-01-01",
+  "47": {
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+    }
+   ]
+  },
+  "48": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1755,7 +2913,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
     },
     {
      "typ": "fassung",
@@ -1772,7 +2931,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
     },
     {
      "typ": "eingefuegt",
@@ -1789,13 +2949,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
     }
    ]
   },
   "50": {
-   "giltSeit": "2010-01-01",
+   "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -1820,6 +3035,60 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -1840,6 +3109,60 @@
   "52": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -1967,6 +3290,60 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -2023,6 +3400,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -2053,7 +3466,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
     }
    ]
   },
@@ -2084,7 +3498,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 56"
+     "frueher": "vor Art. 56",
+     "ueberschrift": "7. Kapitel: Hilfe bei grossen Naturschäden"
     },
     {
      "typ": "fassung",
@@ -2101,7 +3516,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Hilfe bei grossen Naturschäden"
     }
    ]
   },
@@ -2174,7 +3590,77 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+    }
+   ]
+  },
+  "63": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+    }
+   ]
+  },
+  "64": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+    }
+   ]
+  },
+  "65": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
     }
    ]
   },
@@ -2205,7 +3691,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 63"
+     "frueher": "vor Art. 63",
+     "ueberschrift": "9. Kapitel: Rechnungswesen"
     },
     {
      "typ": "fassung",
@@ -2222,13 +3709,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Rechnungswesen"
     }
    ]
   },
   "67": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Rechnungswesen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -2346,13 +3852,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Kapitel: Kaufrecht der Gemeinwesen"
     }
    ]
   },
   "79": {
-   "giltSeit": "1994-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Kaufrecht der Gemeinwesen"
+    },
     {
      "typ": "fassung",
      "datum": "1994-01-01",
@@ -2403,7 +3928,123 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    }
+   ]
+  },
+  "81": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    }
+   ]
+  },
+  "82": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    }
+   ]
+  },
+  "83": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    }
+   ]
+  },
+  "84": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    }
+   ]
+  },
+  "85": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
     }
    ]
   },
@@ -2434,7 +4075,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 88"
+     "frueher": "vor Art. 88",
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
     },
     {
      "typ": "fassung",
@@ -2451,13 +4093,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
     }
    ]
   },
   "87": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -2482,6 +4143,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -2502,6 +4181,24 @@
   "89": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -2613,7 +4310,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
     }
    ]
   },
@@ -2643,6 +4341,24 @@
   "93": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -2703,13 +4419,72 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "96": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
     }
    ]
   },
   "97": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
@@ -2750,6 +4525,24 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2784,6 +4577,24 @@
   "15_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2870,6 +4681,24 @@
   "15_b": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2974,6 +4803,24 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3008,6 +4855,24 @@
   "16_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3048,6 +4913,24 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
      "wirkung": false,
@@ -3069,6 +4952,42 @@
   "17_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3143,6 +5062,42 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3181,6 +5136,42 @@
   "17_c": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
@@ -3221,6 +5212,42 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3259,6 +5286,42 @@
   "18_b": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3313,8 +5376,44 @@
    ]
   },
   "18_c": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3352,8 +5451,44 @@
    ]
   },
   "18_d": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3451,6 +5586,42 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3524,6 +5695,42 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3579,6 +5786,42 @@
   "18_h": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3650,8 +5893,44 @@
    ]
   },
   "18_i": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3691,6 +5970,42 @@
   "18_k": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3779,8 +6094,44 @@
    ]
   },
   "18_l": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -3803,6 +6154,42 @@
   "18_m": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Plangenehmigungsverfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -3842,6 +6229,24 @@
   "18_n": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -3917,13 +6322,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Projektierungszonen"
     }
    ]
   },
   "18_o": {
-   "giltSeit": "1985-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Projektierungszonen"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -3953,8 +6395,44 @@
    ]
   },
   "18_p": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Projektierungszonen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -3977,6 +6455,24 @@
   "18_q": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -4069,13 +6565,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Baulinien"
     }
    ]
   },
   "18_r": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Baulinien"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -4122,8 +6655,44 @@
    ]
   },
   "18_s": {
-   "giltSeit": "1985-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Baulinien"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -4170,8 +6739,44 @@
    ]
   },
   "18_t": {
-   "giltSeit": "1985-01-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Baulinien"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -4203,6 +6808,24 @@
   "18_u": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -4269,13 +6892,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Entschädigung für Eigentumsbeschränkungen"
     }
    ]
   },
   "18_v": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -4325,13 +6967,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Landumlegung"
     }
    ]
   },
   "18_v_bis": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -4364,13 +7025,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
     }
    ]
   },
   "18_w": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4411,6 +7109,42 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4432,6 +7166,42 @@
   "18_x": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
@@ -4455,6 +7225,42 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Sicherheit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2020-07-01",
      "wirkung": false,
@@ -4477,6 +7283,24 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -4491,13 +7315,91 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    }
+   ]
+  },
+  "23_b": {
+   "giltSeit": "2013-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
     }
    ]
   },
   "23_c": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4520,6 +7422,42 @@
   "23_c_bis": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -4544,6 +7482,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -4564,6 +7538,42 @@
   "23_e": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4587,6 +7597,42 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4608,6 +7654,42 @@
   "23_e_ter": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -4632,6 +7714,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -4646,6 +7764,47 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "23_g": {
+   "giltSeit": "2013-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
     }
    ]
   },
@@ -4675,6 +7834,42 @@
   "23_i": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -4712,6 +7907,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -4746,9 +7977,86 @@
     }
    ]
   },
+  "23_k": {
+   "giltSeit": "2013-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    }
+   ]
+  },
   "23_l": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -4772,6 +8080,24 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -4786,13 +8112,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8a. Abschnitt: Vorhaltekosten der Wehrdienste"
     }
    ]
   },
   "35_a": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2020-07-01",
@@ -4816,6 +8179,42 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -4837,6 +8236,24 @@
   "40_a": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4886,7 +8303,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
     },
     {
      "typ": "fassung",
@@ -4903,13 +8321,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
     }
    ]
   },
   "40_a_bis": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4950,6 +8423,60 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2020-07-01",
      "wirkung": false,
@@ -4971,6 +8498,60 @@
   "40_a_quater": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5011,6 +8592,60 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -5050,6 +8685,60 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2020-07-01",
      "wirkung": false,
@@ -5071,6 +8760,60 @@
   "40_a_sexies": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5110,6 +8853,60 @@
   "40_a_ter": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5180,6 +8977,24 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
      "absatz": "2",
      "item": "a"
     },
@@ -5232,7 +9047,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
     },
     {
      "typ": "eingefuegt",
@@ -5249,13 +9065,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
     }
    ]
   },
   "40_b_bis": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5973",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/731"
+      },
+      {
+       "label": "BBl 2007 4377",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/648"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -5272,6 +9143,242 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "40_c": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5973",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/731"
+      },
+      {
+       "label": "BBl 2007 4377",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/648"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    }
+   ]
+  },
+  "40_d": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5973",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/731"
+      },
+      {
+       "label": "BBl 2007 4377",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/648"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    }
+   ]
+  },
+  "40_e": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5973",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/731"
+      },
+      {
+       "label": "BBl 2007 4377",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/648"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    }
+   ]
+  },
+  "40_f": {
+   "giltSeit": "2010-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Planung, Bau und Betrieb"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5973",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/731"
+      },
+      {
+       "label": "BBl 2007 4377",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/648"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Abschnitt: Haftung"
     }
    ]
   },
@@ -5293,13 +9400,147 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
+    }
+   ]
+  },
+  "48_b": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
+    }
+   ]
+  },
+  "48_c": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
+    }
+   ]
+  },
+  "48_d": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
+    }
+   ]
+  },
+  "48_e": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
+    }
+   ]
+  },
+  "48_f": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Ausbau der Infrastruktur"
     }
    ]
   },
   "4_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -5323,6 +9564,60 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5344,6 +9639,60 @@
   "51_b": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Im Allgemeinen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -5367,6 +9716,60 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5388,6 +9791,60 @@
   "58_b": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -5411,6 +9868,60 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5433,6 +9944,60 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5454,6 +10019,60 @@
   "58_e": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 3680",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680"
+      },
+      {
+       "label": "BBl 1994 I 497",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1994/1_497_485_441"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Finanzierung der Infrastruktur"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 651",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+      },
+      {
+       "label": "BBl 2012 1577",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/305"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -5618,6 +10237,24 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2020-07-01",
      "wirkung": false,
@@ -5640,6 +10277,24 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -5661,6 +10316,24 @@
   "86_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
@@ -5816,6 +10489,24 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
      "wirkung": false,
@@ -5838,6 +10529,24 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5859,6 +10568,24 @@
   "88_a": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
@@ -5899,6 +10626,24 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
      "wirkung": false,
@@ -5920,6 +10665,24 @@
   "89_b": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
@@ -5950,6 +10713,60 @@
   "8_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5990,6 +10807,60 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Infrastrukturbetreiberinnen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6028,6 +10899,42 @@
   "8_c": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
@@ -6094,7 +11001,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
     },
     {
      "typ": "fassung",
@@ -6111,13 +11019,86 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
     }
    ]
   },
   "8_d": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
@@ -6140,6 +11121,78 @@
   "8_e": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6180,6 +11233,78 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6219,6 +11344,24 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -6241,6 +11384,24 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "13. Kapitel: Schlussbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -6260,8 +11421,80 @@
    ]
   },
   "9_a": {
-   "giltSeit": "2012-12-01",
+   "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1999-01-01",
@@ -6370,6 +11603,78 @@
    "giltSeit": "2020-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -6408,6 +11713,78 @@
   "9_c": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2835",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2835_2835_2835"
+      },
+      {
+       "label": "BBl 1997 I 909",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1997/1_909_853_809"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Eisenbahnunternehmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/679"
+      },
+      {
+       "label": "BBl 2005 2415",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/325"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2013-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 5619",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/656"
+      },
+      {
+       "label": "BBl 2011 911",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/131"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6479,7 +11856,445 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_e": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_f": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_g": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_h": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_i": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_j": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_k": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_l": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_m": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_n": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_o": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_p": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_q": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_r": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_s": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_t": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_u": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_v": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
+    }
+   ]
+  },
+  "9_w": {
+   "giltSeit": "2020-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 1889",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/393"
+      },
+      {
+       "label": "BBl 2016 8661",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/2093"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Trassenvergabestelle"
     }
    ]
   }

@@ -1138,7 +1138,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Beurkunden"
     }
    ]
   },
@@ -2703,13 +2704,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
     }
    ]
   },
   "77": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -2739,6 +2755,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2746,6 +2776,20 @@
   "79": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -2790,6 +2834,20 @@
   "80": {
    "giltSeit": "2024-11-11",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
     {
      "typ": "fassung",
      "datum": "2024-11-11",
@@ -2946,13 +3004,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
     }
    ]
   },
   "85": {
    "giltSeit": "2017-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3925",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+    },
     {
      "typ": "fassung",
      "datum": "2017-07-01",
@@ -2994,14 +3067,61 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3925",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
+      }
+     ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "87": {
+   "giltSeit": "2017-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3925",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
     }
    ]
   },
   "88": {
    "giltSeit": "2024-11-11",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3925",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/664"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+    },
     {
      "typ": "fassung",
      "datum": "2024-11-11",
@@ -4106,7 +4226,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 49"
+     "frueher": "vor Art. 49",
+     "ueberschrift": "2. Abschnitt: Bekanntgabe von Amtes wegen"
     }
    ]
   },
@@ -4300,7 +4421,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
     },
     {
      "typ": "fassung",
@@ -4313,13 +4435,94 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+    }
+   ]
+  },
+  "75_n": {
+   "giltSeit": "2022-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2923",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/446"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+    }
+   ]
+  },
+  "75_o": {
+   "giltSeit": "2022-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2923",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/446"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
     }
    ]
   },
   "78_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -4339,6 +4542,20 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4356,6 +4573,20 @@
   "79_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 4309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/693"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Zentrales Personen-Informationssystem"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",

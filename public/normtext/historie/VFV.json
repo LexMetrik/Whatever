@@ -328,6 +328,20 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
+    {
      "typ": "fassung",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -364,6 +378,20 @@
   "16": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "1976-01-01",
@@ -419,8 +447,22 @@
    ]
   },
   "17": {
-   "giltSeit": "1964-01-01",
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "1964-01-01",
@@ -439,6 +481,20 @@
   "18": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -507,13 +563,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Renten und Taggelder"
     }
    ]
   },
   "20": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1968-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1968 43",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Renten und Taggelder"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -532,6 +603,20 @@
   "21": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1968-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1968 43",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Renten und Taggelder"
+    },
     {
      "typ": "fassung",
      "datum": "1986-01-01",
@@ -650,13 +735,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Beiträge"
     }
    ]
   },
   "13_b": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -690,6 +790,20 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
      "quellen": [
@@ -706,6 +820,20 @@
   "14_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -814,6 +942,20 @@
   "18_a": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2828",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Beiträge"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",

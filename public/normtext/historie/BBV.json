@@ -326,13 +326,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beiträge für Projekte zur Entwicklung der Berufsbildung und zur Qualitätsentwicklung sowie für besondere Leistungen im öffentlichen Interesse"
     }
    ]
   },
   "64": {
-   "giltSeit": null,
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beiträge für Projekte zur Entwicklung der Berufsbildung und zur Qualitätsentwicklung sowie für besondere Leistungen im öffentlichen Interesse"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -388,7 +403,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Beiträge für die Durchführung eidgenössischer Berufsprüfungen und eidgenössischer höherer Fachprüfungen sowie für Bildungsgänge höherer Fachschulen"
     }
    ]
   },
@@ -476,7 +492,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Berufsbildungsfonds"
     }
    ]
   },
@@ -507,7 +524,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Anerkennung ausländischer Abschlüsse"
     }
    ]
   },
@@ -618,8 +636,22 @@
    "aufgehobenSeit": "2019-02-01"
   },
   "65_a": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Beiträge für die Durchführung eidgenössischer Berufsprüfungen und eidgenössischer höherer Fachprüfungen sowie für Bildungsgänge höherer Fachschulen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -649,13 +681,199 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_b": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_c": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_d": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_e": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_f": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_g": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_h": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_i": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
+    }
+   ]
+  },
+  "66_j": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Beiträge an Absolventinnen und Absolventen von vorbereitenden Kursen"
     }
    ]
   },
   "68_a": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Berufsbildungsfonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -672,8 +890,22 @@
    ]
   },
   "68_b": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 5147",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/565"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Berufsbildungsfonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -693,6 +925,20 @@
    "giltSeit": "2015-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2015-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2014 4137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2014/692"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Anerkennung ausländischer Abschlüsse"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
      "wirkung": false,
@@ -710,6 +956,20 @@
   "69_b": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2014 4137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2014/692"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Anerkennung ausländischer Abschlüsse"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",

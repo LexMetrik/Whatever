@@ -810,13 +810,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Datenbearbeitung"
     }
    ]
   },
   "28": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 5583",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/785"
+      },
+      {
+       "label": "BBl 2010 7059",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Datenbearbeitung"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1294,6 +1313,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 5583",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/785"
+      },
+      {
+       "label": "BBl 2010 7059",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Datenbearbeitung"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
      "quellen": [
@@ -1420,13 +1457,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
+  "32_b": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
     }
    ]
   },
   "32_c": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1466,6 +1545,24 @@
   "32_d": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -1528,9 +1625,73 @@
     }
    ]
   },
+  "32_e": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
+  "32_f": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
   "32_g": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1550,9 +1711,73 @@
     }
    ]
   },
+  "32_h": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
+  "32_i": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
   "32_j": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1610,6 +1835,24 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
+    {
      "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -1628,9 +1871,50 @@
     }
    ]
   },
+  "32_l": {
+   "giltSeit": "2007-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    }
+   ]
+  },
   "32_m": {
    "giltSeit": "2013-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2239",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+      },
+      {
+       "label": "BBl 2005 5829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",

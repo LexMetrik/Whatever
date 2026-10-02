@@ -533,6 +533,20 @@
    "giltSeit": "2011-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
      "typ": "aufgehoben",
      "datum": "2011-06-01",
      "wirkung": true,
@@ -556,7 +570,41 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Spülung und Entleerung von Stauräumen"
+    }
+   ]
+  },
+  "43": {
+   "giltSeit": "2011-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Geschiebehaushalt"
     }
    ]
   },
@@ -564,6 +612,20 @@
    "giltSeit": "2011-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
      "typ": "aufgehoben",
      "datum": "2011-06-01",
      "wirkung": true,
@@ -587,7 +649,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Drainagewasser aus Untertagebauten"
     }
    ]
   },
@@ -792,13 +855,123 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    }
+   ]
+  },
+  "53": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    }
+   ]
+  },
+  "54": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    }
+   ]
+  },
+  "55": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    }
+   ]
+  },
+  "56": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    }
+   ]
+  },
+  "57": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
     }
    ]
   },
   "58": {
    "giltSeit": "2025-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2025-08-01",
@@ -828,13 +1001,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
     }
    ]
   },
   "60": {
    "giltSeit": "2011-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+    },
     {
      "typ": "fassung",
      "datum": "2011-06-01",
@@ -860,6 +1048,25 @@
      ],
      "absatz": "3",
      "item": "b"
+    }
+   ]
+  },
+  "61": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
     }
    ]
   },
@@ -971,7 +1178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
     },
     {
      "typ": "eingefuegt",
@@ -984,13 +1192,75 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    }
+   ]
+  },
+  "41_b": {
+   "giltSeit": "2011-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
     }
    ]
   },
   "41_c": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-05-01",
@@ -1075,6 +1345,34 @@
    "giltSeit": "2017-05-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1106,6 +1404,34 @@
    "giltSeit": "2025-08-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-08-01",
      "wirkung": false,
@@ -1123,6 +1449,34 @@
   "41_c_ter": {
    "giltSeit": "2025-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-08-01",
@@ -1143,6 +1497,34 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -1160,6 +1542,20 @@
    "giltSeit": "2011-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
      "wirkung": false,
@@ -1170,13 +1566,75 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schwall und Sunk"
+    }
+   ]
+  },
+  "41_f": {
+   "giltSeit": "2011-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schwall und Sunk"
     }
    ]
   },
   "41_g": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schwall und Sunk"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1195,6 +1653,20 @@
   "42_a": {
    "giltSeit": "2011-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
@@ -1219,13 +1691,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Geschiebehaushalt"
     }
    ]
   },
   "42_b": {
    "giltSeit": "2011-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Geschiebehaushalt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
@@ -1244,6 +1745,34 @@
   "42_c": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1955",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Geschiebehaushalt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
@@ -1340,13 +1869,47 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8a. Kapitel: Abwasserabgabe des Bundes"
+    }
+   ]
+  },
+  "51_b": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 4791",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/786"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8a. Kapitel: Abwasserabgabe des Bundes"
     }
    ]
   },
   "51_c": {
    "giltSeit": "2017-05-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 4791",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/786"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8a. Kapitel: Abwasserabgabe des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": "2017-05-01",
@@ -1362,9 +1925,42 @@
     }
    ]
   },
+  "51_d": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 4791",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/786"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8a. Kapitel: Abwasserabgabe des Bundes"
+    }
+   ]
+  },
   "52_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -1384,6 +1980,20 @@
    "giltSeit": "2011-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
      "wirkung": false,
@@ -1402,6 +2012,20 @@
    "giltSeit": "2011-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Massnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-06-01",
      "wirkung": false,
@@ -1413,6 +2037,44 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "61_a": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+    }
+   ]
+  },
+  "61_b": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
     }
    ]
   },
@@ -1430,7 +2092,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+    }
+   ]
+  },
+  "61_d": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+    }
+   ]
+  },
+  "61_e": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+    }
+   ]
+  },
+  "61_f": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5823",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
     }
    ]
   }

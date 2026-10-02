@@ -381,6 +381,24 @@
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2014-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 4549",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/810"
+      },
+      {
+       "label": "BBl 2002 2095",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/286"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Staatssekretäre und Staatssekretärinnen"
+    },
+    {
      "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -512,13 +530,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
+    }
+   ]
+  },
+  "52": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
     }
    ]
   },
   "53": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -539,8 +599,26 @@
    ]
   },
   "54": {
-   "giltSeit": "2000-09-01",
+   "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
+    },
     {
      "typ": "fassung",
      "datum": "2000-09-01",
@@ -591,6 +669,52 @@
      ],
      "absatz": "3",
      "item": null
+    }
+   ]
+  },
+  "55": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
+    }
+   ]
+  },
+  "56": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Planung und Koordination"
     }
    ]
   },
@@ -646,7 +770,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
     },
     {
      "typ": "eingefuegt",
@@ -663,7 +788,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Externe Beratung"
     }
    ]
   },
@@ -716,6 +842,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2006-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 1265",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/224"
+      },
+      {
+       "label": "BBl 2004 7103",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1239"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Information über Verträge der Kantone unter sich oder mit dem Ausland"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
      "quellen": [
@@ -760,7 +904,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Drittes Kapitel"
+     "frueher": "Drittes Kapitel",
+     "ueberschrift": "Siebtes Kapitel: Schlussbestimmungen"
     }
    ]
   },
@@ -989,7 +1134,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Staatssekretäre und Staatssekretärinnen"
     }
    ]
   },
@@ -1011,7 +1157,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Gebühren"
     }
    ]
   },
@@ -1058,6 +1205,24 @@
    "giltSeit": "2009-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2009-01-01",
      "wirkung": false,
@@ -1072,13 +1237,255 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    }
+   ]
+  },
+  "57_b": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    }
+   ]
+  },
+  "57_c": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    }
+   ]
+  },
+  "57_d": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    }
+   ]
+  },
+  "57_e": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    }
+   ]
+  },
+  "57_f": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
     }
    ]
   },
   "57_g": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Externe Beratung und ausserparlamentarische Kommissionen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/818"
+      },
+      {
+       "label": "BBl 2007 6641",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1016"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
+    },
     {
      "typ": "inkraft",
      "datum": "2010-01-01",
@@ -1104,7 +1511,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "3. Kap."
+     "frueher": "3. Kap.",
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
     },
     {
      "typ": "eingefuegt",
@@ -1121,7 +1529,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
     },
     {
      "typ": "fassung",
@@ -1138,7 +1547,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
     },
     {
      "typ": "eingefuegt",
@@ -1155,7 +1565,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
     },
     {
      "typ": "fassung",
@@ -1172,13 +1583,204 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
+    }
+   ]
+  },
+  "57_h_bis": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
+    }
+   ]
+  },
+  "57_h_ter": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geschäftsverwaltungssysteme"
     }
    ]
   },
   "57_i": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -1211,7 +1813,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
     },
     {
      "typ": "fassung",
@@ -1228,13 +1831,86 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
     }
    ]
   },
   "57_j": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -1258,6 +1934,78 @@
    "giltSeit": "2023-09-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
@@ -1279,6 +2027,78 @@
   "57_l": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -1332,9 +2152,430 @@
     }
    ]
   },
+  "57_m": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    }
+   ]
+  },
+  "57_n": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    }
+   ]
+  },
+  "57_o": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    }
+   ]
+  },
+  "57_p": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    }
+   ]
+  },
+  "57_q": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 941",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/159"
+      },
+      {
+       "label": "BBl 2009 8513",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1469"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bearbeitung von Personendaten und von Daten juristischer Personen bei der Nutzung der elektronischen Infrastruktur"
+    }
+   ]
+  },
   "57_r": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-09-01",
@@ -1350,7 +2591,126 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Bearbeitung von Daten juristischer Personen"
+    }
+   ]
+  },
+  "57_s": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Bearbeitung von Daten juristischer Personen"
+    }
+   ]
+  },
+  "57_t": {
+   "giltSeit": "2023-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1891",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+      },
+      {
+       "label": "BBl 1999 9005",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 491",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Bearbeitung von Daten juristischer Personen"
     }
    ]
   },
@@ -1430,7 +2790,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 62"
+     "frueher": "vor Art. 62",
+     "ueberschrift": "Zweites Kapitel: Genehmigung kantonaler Erlasse"
     },
     {
      "typ": "fassung",
@@ -1447,7 +2808,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweites Kapitel: Genehmigung kantonaler Erlasse"
     }
    ]
   },
@@ -1486,7 +2848,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Information über Verträge der Kantone unter sich oder mit dem Ausland"
     }
    ]
   },
@@ -1500,7 +2863,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweites Kapitelbis"
+     "frueher": "Zweites Kapitelbis",
+     "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
     },
     {
      "typ": "eingefuegt",
@@ -1517,7 +2881,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
+    }
+   ]
+  },
+  "62_b": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
+    }
+   ]
+  },
+  "62_c": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
     }
    ]
   },
@@ -1531,7 +2942,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweites Kapitelter"
+     "frueher": "Zweites Kapitelter",
+     "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
     },
     {
      "typ": "eingefuegt",
@@ -1548,7 +2960,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
+    }
+   ]
+  },
+  "62_e": {
+   "giltSeit": "2003-12-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 3543",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/510"
+      },
+      {
+       "label": "BBl 2001 3467 5428",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
     }
    ]
   },
@@ -1562,7 +2998,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweites Kapitelquater"
+     "frueher": "Zweites Kapitelquater",
+     "ueberschrift": "Sechstes Kapitel: Hausrecht"
     },
     {
      "typ": "eingefuegt",
@@ -1579,7 +3016,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Hausrecht"
     }
    ]
   },

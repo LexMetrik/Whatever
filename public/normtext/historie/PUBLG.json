@@ -76,7 +76,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -634,7 +635,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Weitere auf der Publikationsplattform veröffentlichte Texte"
     }
    ]
   },
@@ -768,6 +770,24 @@
   "1_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3977",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/669"
+      },
+      {
+       "label": "BBl 2013 7057",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1331"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",

@@ -274,7 +274,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Eigentümertitel"
     }
    ]
   },
@@ -403,7 +404,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
     }
    ]
   },
@@ -434,7 +436,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Requisitorialpfändung"
     }
    ]
   },
@@ -465,7 +468,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Verwertungsfrist"
     }
    ]
   },
@@ -684,7 +688,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Vom Schuldner anerkannte, von einem Gläubiger mit Erfolg bestrittene Ansprüche"
     }
    ]
   },
@@ -702,7 +707,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "V. Anfechtung von Rang und Höhe. Verhältnis zwischen Gläu-bigern einer Gruppe"
     }
    ]
   },
@@ -1042,7 +1048,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "H. Ergebnislosigkeit der Steigerung"
     }
    ]
   },
@@ -1091,7 +1098,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
     }
    ]
   },
@@ -1109,7 +1117,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
     },
     {
      "typ": "fassung",
@@ -1122,13 +1131,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Fälle"
     }
    ]
   },
   "75": {
    "giltSeit": "1976-04-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
+    },
     {
      "typ": "fassung",
      "datum": "1976-04-01",
@@ -1144,9 +1168,61 @@
     }
    ]
   },
+  "76": {
+   "giltSeit": "1976-04-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
+    }
+   ]
+  },
+  "77": {
+   "giltSeit": "1976-04-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
+    }
+   ]
+  },
   "78": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1171,7 +1247,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Protokoll und Nachpfändung"
     }
    ]
   },
@@ -1336,13 +1413,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Eigentum eines Dritten. Familienwohnung"
     }
    ]
   },
   "89": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2900",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Eigentum eines Dritten. Familienwohnung"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1584,7 +1676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Wenn sich nachträglich ergibt, dass Pfand Dritteigentum oder Familieneigentum ist"
     }
    ]
   },
@@ -1700,7 +1793,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Betreibender Gläubiger nach Art. 142a (126) SchKG"
     }
    ]
   },
@@ -2180,7 +2274,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Steigerungspublikation und Spezialanzeigen"
     }
    ]
   },
@@ -2273,6 +2368,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2290,6 +2399,20 @@
   "23_b": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2322,6 +2445,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2339,6 +2476,20 @@
   "23_d": {
    "giltSeit": "1976-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2389,6 +2540,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2406,6 +2571,20 @@
   "73_b": {
    "giltSeit": "1976-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2425,6 +2604,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2443,6 +2636,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2460,6 +2667,20 @@
   "73_e": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2492,6 +2713,20 @@
    "giltSeit": "1976-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
      "wirkung": false,
@@ -2509,6 +2744,20 @@
   "73_g": {
    "giltSeit": "1976-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2529,6 +2778,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
+    {
+     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -2545,6 +2808,20 @@
   "73_i": {
    "giltSeit": "1976-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1976 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1976-04-01",
@@ -2587,7 +2864,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Versteigerung eines Miteigentumsanteils auf Anordnung des Richters"
     }
    ]
   },

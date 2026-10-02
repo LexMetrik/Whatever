@@ -34,13 +34,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Versicherungsunterstellung"
     }
    ]
   },
   "2": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Ausnahmen von der Versicherung"
+    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -57,8 +72,22 @@
    ]
   },
   "3": {
-   "giltSeit": null,
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Ausnahmen von der Versicherung"
+    },
     {
      "typ": "aufgehoben",
      "datum": "1954-01-01",
@@ -103,7 +132,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Bst. B"
+     "frueher": "Bst. B",
+     "ueberschrift": "C. Beitritt zur Versicherung"
     },
     {
      "typ": "fassung",
@@ -116,7 +146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
     }
    ]
   },
@@ -866,13 +897,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Festsetzung und Ermittlung der Beiträge"
     }
    ]
   },
   "23": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Festsetzung und Ermittlung der Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "1966-01-01",
@@ -954,6 +1000,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Festsetzung und Ermittlung der Beiträge"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -961,6 +1021,20 @@
   "25": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Festsetzung und Ermittlung der Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -998,6 +1072,20 @@
   "27": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Festsetzung und Ermittlung der Beiträge"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -1192,7 +1280,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Tit. vor Art. 27"
+     "frueher": "Tit. vor Art. 27",
+     "ueberschrift": "B. Die Beiträge der Nichterwerbstätigen"
     }
    ]
   },
@@ -1359,7 +1448,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Tit. vor Art. 30"
+     "frueher": "Tit. vor Art. 30",
+     "ueberschrift": "C. Herabsetzung und Erlass der Beiträge für Selbständigerwerbende und Nichterwerbstätige"
     }
    ]
   },
@@ -1504,7 +1594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
     },
     {
      "typ": "eingefuegt",
@@ -1517,13 +1608,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Allgemeines"
     }
    ]
   },
   "35": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Lohnbeiträge"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -1566,6 +1686,34 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Lohnbeiträge"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1573,6 +1721,34 @@
   "37": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Lohnbeiträge"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -1591,6 +1767,34 @@
   "38": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Lohnbeiträge"
+    },
     {
      "typ": "fassung",
      "datum": "1951-01-01",
@@ -1646,6 +1850,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -1659,13 +1877,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Nachzahlung und Rückerstattung von Beiträgen"
     }
    ]
   },
   "40": {
-   "giltSeit": "1973-01-01",
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Nachzahlung und Rückerstattung von Beiträgen"
+    },
     {
      "typ": "fassung",
      "datum": "1973-01-01",
@@ -1682,8 +1929,36 @@
    ]
   },
   "41": {
-   "giltSeit": "1954-01-01",
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Nachzahlung und Rückerstattung von Beiträgen"
+    },
     {
      "typ": "fassung",
      "datum": "1954-01-01",
@@ -1702,6 +1977,34 @@
   "42": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Zinsen"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -1744,13 +2047,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "F. Haftung der Erben"
     }
    ]
   },
   "46": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1769,6 +2087,20 @@
   "47": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1808,6 +2140,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -1826,6 +2172,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-01-01",
      "wirkung": false,
      "quellen": [
@@ -1842,6 +2202,20 @@
   "51": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -1953,6 +2327,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1979-01-01",
      "wirkung": false,
      "quellen": [
@@ -2010,6 +2398,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1979-01-01",
      "wirkung": false,
      "quellen": [
@@ -2054,6 +2456,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -2070,6 +2486,20 @@
   "55": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -2090,13 +2520,56 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 56"
+     "frueher": "vor Art. 56",
+     "ueberschrift": "C. Ausserordentliche Renten"
     }
    ]
   },
   "56": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2121,7 +2594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Der Rentenvorbezug"
     }
    ]
   },
@@ -2149,6 +2623,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2001-01-01",
      "wirkung": false,
      "quellen": [
@@ -2171,13 +2659,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Rentenvorausberechnungen"
     }
    ]
   },
   "59": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2629",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Rentenvorausberechnungen"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -2196,6 +2713,34 @@
   "60": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2629",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Rentenvorausberechnungen"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -2227,6 +2772,20 @@
   "67": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1984-01-01",
@@ -2321,7 +2880,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Bst. F, danach Bst. G"
+     "frueher": "Bst. F, danach Bst. G",
+     "ueberschrift": "H. Verschiedene Bestimmungen"
     },
     {
      "typ": "fassung",
@@ -2334,13 +2894,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Geltendmachung des Anspruchs"
     }
    ]
   },
   "68": {
    "giltSeit": "2007-12-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "2007-12-01",
@@ -2445,6 +3020,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
      "quellen": [
@@ -2461,6 +3050,20 @@
   "71": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -2507,6 +3110,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -2525,6 +3142,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1998-01-01",
      "wirkung": false,
      "quellen": [
@@ -2541,6 +3172,20 @@
   "74": {
    "giltSeit": "2005-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "aufgehoben",
      "datum": "1997-01-01",
@@ -2600,6 +3245,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -2637,6 +3296,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-01-01",
      "wirkung": false,
      "quellen": [
@@ -2646,7 +3319,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "VI. Nachzahlung und uneinbringliche Rückerstattung"
     }
    ]
   },
@@ -3603,7 +4277,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "H. AHV-Nummer"
     },
     {
      "typ": "eingefuegt",
@@ -3616,7 +4291,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Eigenschaften und Zuweisung"
     }
    ]
   },
@@ -3666,7 +4342,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
     },
     {
      "typ": "fassung",
@@ -3679,7 +4356,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
     }
    ],
    "aufgehobenSeit": "2008-07-01"
@@ -3707,6 +4385,34 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -3722,8 +4428,36 @@
    ]
   },
   "138": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": "2016-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -3766,8 +4500,36 @@
    ]
   },
   "139": {
-   "giltSeit": "1969-01-01",
+   "giltSeit": "2016-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -3784,8 +4546,36 @@
    ]
   },
   "140": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": "2016-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -3867,8 +4657,36 @@
    ]
   },
   "141": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": "2016-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
     {
      "typ": "fassung",
      "datum": "1999-01-01",
@@ -4515,13 +5333,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor"
     }
    ]
   },
   "169": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 750",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/750"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -4590,7 +5423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IIIa. Kosten der Kassenrevision und der Arbeitgeberkontrollen"
     }
    ]
   },
@@ -4621,7 +5455,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Ergänzende Revisionen und Kontrollen"
     }
    ]
   },
@@ -5382,6 +6217,20 @@
    "giltSeit": "1975-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1975-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1974 1594",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1974/1594_1594_1594"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1975-01-01",
      "wirkung": false,
@@ -5462,7 +6311,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
     },
     {
      "typ": "fassung",
@@ -5475,13 +6325,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
     }
    ]
   },
   "223": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 706",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -5501,6 +6380,34 @@
    "giltSeit": "2022-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 706",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
      "typ": "fassung",
      "datum": "2022-01-01",
      "wirkung": false,
@@ -5518,6 +6425,34 @@
   "225": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 706",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -5556,7 +6491,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zehnter Abschnitt: Schlussbestimmungen"
     },
     {
      "typ": "urspruenglich",
@@ -5565,7 +6501,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Neunter Abschnitt"
+     "frueher": "Neunter Abschnitt",
+     "ueberschrift": "Zehnter Abschnitt: Schlussbestimmungen"
     }
    ]
   },
@@ -5802,6 +6739,34 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "H. AHV-Nummer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Eigenschaften und Zuweisung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2007-12-01",
      "wirkung": false,
@@ -5895,7 +6860,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
     }
    ],
    "aufgehobenSeit": "2022-01-01"
@@ -5903,6 +6869,34 @@
   "134_quater": {
    "giltSeit": "2019-05-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "H. AHV-Nummer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2007-12-01",
@@ -5934,6 +6928,34 @@
   "134_quinquies": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "H. AHV-Nummer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5998,6 +7020,34 @@
    "giltSeit": "2022-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "H. AHV-Nummer"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-12-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6039,6 +7089,34 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -6057,8 +7135,36 @@
    ]
   },
   "140_bis": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": "2016-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5271",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/748"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1317",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hbis. Versicherungsausweis und individuelles Konto"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
@@ -6088,7 +7194,46 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+    }
+   ]
+  },
+  "141_quater": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5149",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/893"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+    }
+   ]
+  },
+  "141_quinquies": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5149",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/893"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
     }
    ]
   },
@@ -6106,7 +7251,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Hquinquies. Meldepflicht bei Beeinträchtigungen der Informationssysteme"
     }
    ]
   },
@@ -6124,7 +7270,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Hquater. Informationssystem für die Übermittlung von Anträgen"
+    }
+   ]
+  },
+  "141_ter": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5149",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/893"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
     }
    ]
   },
@@ -6325,6 +7491,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "A. Versicherungsunterstellung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-01-01",
      "wirkung": false,
      "quellen": [
@@ -6452,7 +7632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Ausnahmen von der Versicherung"
     }
    ]
   },
@@ -6743,7 +7924,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte"
     }
    ],
    "aufgehobenSeit": "2005-01-01"
@@ -6751,6 +7933,34 @@
   "224_bis": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 706",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
@@ -6769,6 +7979,34 @@
   "224_ter": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 706",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
@@ -6868,6 +8106,34 @@
    "giltSeit": "2001-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Allgemeines"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
      "wirkung": false,
@@ -6886,6 +8152,34 @@
    "giltSeit": "2001-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Allgemeines"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
      "wirkung": false,
@@ -6903,6 +8197,34 @@
   "34_c": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Allgemeines"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -6934,6 +8256,20 @@
   "34_d": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -7010,13 +8346,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Lohnbeiträge"
     }
    ]
   },
   "41_bis": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7119,13 +8470,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Zinsen"
     }
    ]
   },
   "41_ter": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "E. Beitragsbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 1441",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/226"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Zinsen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7181,7 +8561,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
     }
    ],
    "aufgehobenSeit": "1997-01-01"
@@ -7189,6 +8570,20 @@
   "49_bis": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -7208,6 +8603,20 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -7225,6 +8634,20 @@
   "50_a": {
    "giltSeit": "1995-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -7252,6 +8675,20 @@
   "50_b": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7284,6 +8721,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7301,6 +8752,20 @@
   "50_d": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7333,6 +8798,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7350,6 +8829,20 @@
   "50_f": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7382,6 +8875,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7400,6 +8907,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7417,6 +8938,20 @@
   "51_bis": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1979-01-01",
@@ -7475,6 +9010,20 @@
    "giltSeit": "1979-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1979-01-01",
      "wirkung": false,
@@ -7492,6 +9041,20 @@
   "51_ter": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1979-01-01",
@@ -7563,6 +9126,20 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7593,6 +9170,20 @@
   "52_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7625,6 +9216,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7642,6 +9247,20 @@
   "52_d": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7674,6 +9293,20 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -7691,6 +9324,20 @@
   "52_d_quater": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -7710,6 +9357,20 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -7727,6 +9388,20 @@
   "52_e": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7758,6 +9433,20 @@
   "52_f": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7803,6 +9492,20 @@
    "giltSeit": "2015-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
      "wirkung": false,
@@ -7820,6 +9523,20 @@
   "52_g": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7884,6 +9601,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7901,6 +9632,20 @@
   "52_k": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -7920,6 +9665,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
      "wirkung": false,
@@ -7937,6 +9696,20 @@
   "53_bis": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7969,6 +9742,20 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -7987,6 +9774,20 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -8004,6 +9805,20 @@
   "54_bis": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -8085,7 +9900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
     },
     {
      "typ": "fassung",
@@ -8098,7 +9914,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
     },
     {
      "typ": "eingefuegt",
@@ -8111,7 +9928,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Der Rentenaufschub"
     }
    ],
    "aufgehobenSeit": "2025-01-01"
@@ -8119,6 +9937,62 @@
   "55_quater": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Der Rentenaufschub"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1969-01-01",
@@ -8190,6 +10064,62 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Der Rentenaufschub"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -8234,6 +10164,62 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Der Rentenvorbezug"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -8252,6 +10238,62 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Der Rentenvorbezug"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -8269,6 +10311,62 @@
   "56_ter": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 506",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/506"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "D. Der flexible Rentenbezug"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Der Rentenvorbezug"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -8289,6 +10387,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -8302,9 +10414,42 @@
     }
    ]
   },
+  "5_b": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    }
+   ]
+  },
   "5_c": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -8323,6 +10468,20 @@
   "5_d": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -8347,13 +10506,75 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
+    }
+   ]
+  },
+  "5_e": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
     }
    ]
   },
   "5_f": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -8373,23 +10594,19 @@
    "giltSeit": "2001-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
+     "typ": "fassung",
+     "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2000 2824",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
       }
      ],
      "absatz": null,
-     "item": null
-    }
-   ]
-  },
-  "5_j": {
-   "giltSeit": "2001-01-01",
-   "ereignisse": [
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -8401,7 +10618,140 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+    }
+   ]
+  },
+  "5_h": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+    }
+   ]
+  },
+  "5_i": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+    }
+   ]
+  },
+  "5_j": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
+    }
+   ]
+  },
+  "5_k": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 668",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "C. Beitritt zur Versicherung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 2824",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/478"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
     }
    ]
   },
@@ -8427,6 +10777,20 @@
   "66_bis": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "fassung",
      "datum": "1979-01-01",
@@ -8486,7 +10850,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Bst. D, danach Bst. E"
+     "frueher": "Bst. D, danach Bst. E",
+     "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
     },
     {
      "typ": "eingefuegt",
@@ -8499,7 +10864,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
     },
     {
      "typ": "fassung",
@@ -8512,13 +10878,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
     }
    ]
   },
   "66_quater": {
    "giltSeit": "1984-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -8552,7 +10933,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Bst. E, danach Bst. F"
+     "frueher": "Bst. E, danach Bst. F",
+     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
     },
     {
      "typ": "eingefuegt",
@@ -8565,7 +10947,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
     },
     {
      "typ": "fassung",
@@ -8578,13 +10961,56 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
     }
    ]
   },
   "66_ter": {
    "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1979-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1978 420",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1979-01-01",
@@ -8616,6 +11042,20 @@
   "69_bis": {
    "giltSeit": "1992-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1969-01-01",
@@ -8661,6 +11101,20 @@
    "giltSeit": "1992-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -8692,6 +11146,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -8722,6 +11190,20 @@
   "69_ter": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -8892,6 +11374,20 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -8980,6 +11476,20 @@
   "71_ter": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2002-01-01",
@@ -9073,8 +11583,36 @@
    "aufgehobenSeit": "2003-01-01"
   },
   "79_bis": {
-   "giltSeit": "1951-01-01",
+   "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3710",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/570"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1951-01-01",
@@ -9138,6 +11676,34 @@
   "79_ter": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1969-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1969 125",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3710",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/570"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,

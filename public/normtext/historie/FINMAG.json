@@ -76,13 +76,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Titel: Allgemeine Bestimmungen"
     }
    ]
   },
   "2": {
-   "giltSeit": "2012-12-20",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-12-20",
@@ -105,6 +124,24 @@
   "3": {
    "giltSeit": "2024-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2024-03-01",
@@ -142,8 +179,26 @@
    ]
   },
   "4": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -198,7 +253,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
     },
     {
      "typ": "eingefuegt",
@@ -215,13 +271,91 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    }
+   ]
+  },
+  "6": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
   "7": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -275,9 +409,142 @@
     }
    ]
   },
-  "13": {
-   "giltSeit": "2013-07-01",
+  "8": {
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "9": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "10": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "11": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "12": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "13": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -298,8 +565,26 @@
    ]
   },
   "14": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -322,6 +607,24 @@
   "15": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -443,9 +746,96 @@
     }
    ]
   },
-  "19": {
-   "giltSeit": "2015-01-01",
+  "16": {
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "17": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "18": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "19": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -465,9 +855,96 @@
     }
    ]
   },
+  "20": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "21": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "22": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
   "23": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -488,8 +965,26 @@
    ]
   },
   "24": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -510,8 +1005,26 @@
    ]
   },
   "25": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -555,8 +1068,26 @@
    "aufgehobenSeit": "2015-01-01"
   },
   "27": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -577,8 +1108,26 @@
    ]
   },
   "28": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2015-01-01",
@@ -616,8 +1165,26 @@
    ]
   },
   "29": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -637,9 +1204,50 @@
     }
    ]
   },
+  "30": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
   "31": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -662,6 +1270,24 @@
   "32": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -698,9 +1324,119 @@
     }
    ]
   },
+  "33": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "34": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "35": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
   "37": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -738,8 +1474,26 @@
    ]
   },
   "38": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -762,6 +1516,24 @@
   "39": {
    "giltSeit": "2025-04-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -832,9 +1604,73 @@
     }
    ]
   },
-  "42": {
-   "giltSeit": "2016-01-01",
+  "40": {
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "41": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    }
+   ]
+  },
+  "42": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -867,13 +1703,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusammenarbeit mit ausländischen Stellen"
     }
    ]
   },
   "43": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5339",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/853"
+      },
+      {
+       "label": "BBl 2014 7483",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1633"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusammenarbeit mit ausländischen Stellen"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -1047,13 +1920,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
     }
    ]
   },
   "45": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1091,8 +1983,26 @@
    ]
   },
   "46": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -1168,6 +2078,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-03-01",
      "wirkung": false,
      "quellen": [
@@ -1220,7 +2148,117 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "49": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    }
+   ]
+  },
+  "50": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    }
+   ]
+  },
+  "51": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
+    }
+   ]
+  },
+  "52": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Strafbestimmungen"
     }
    ]
   },
@@ -1242,7 +2280,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Verfahren und Rechtsschutz"
+    }
+   ]
+  },
+  "54": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Titel: Verfahren und Rechtsschutz"
     }
    ]
   },
@@ -1281,7 +2343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
     },
     {
      "typ": "fassung",
@@ -1298,7 +2361,49 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Vollzug"
+    }
+   ]
+  },
+  "56": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Vollzug"
     }
    ]
   },
@@ -1320,13 +2425,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Änderung anderer Erlasse"
     }
    ]
   },
   "58": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1359,7 +2501,90 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Übergangsbestimmungen"
+    }
+   ]
+  },
+  "59": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Übergangsbestimmungen"
+    }
+   ]
+  },
+  "60": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Übergangsbestimmungen"
     }
    ]
   },
@@ -1381,13 +2606,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Referendum und Inkrafttreten"
     }
    ]
   },
   "13_a": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -1480,6 +2742,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2023-09-01",
      "wirkung": false,
      "quellen": [
@@ -1498,8 +2778,26 @@
    ]
   },
   "24_a": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -1520,8 +2818,26 @@
    ]
   },
   "28_a": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -1559,6 +2875,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1581,13 +2915,67 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
   },
   "42_a": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5339",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/853"
+      },
+      {
+       "label": "BBl 2014 7483",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1633"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusammenarbeit mit ausländischen Stellen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -1608,8 +2996,44 @@
    ]
   },
   "42_b": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5339",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/853"
+      },
+      {
+       "label": "BBl 2014 7483",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1633"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusammenarbeit mit ausländischen Stellen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -1630,8 +3054,44 @@
    ]
   },
   "42_c": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Titel: Finanzmarktaufsichtsbehörde"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5339",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/853"
+      },
+      {
+       "label": "BBl 2014 7483",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1633"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusammenarbeit mit ausländischen Stellen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -1686,7 +3146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
     },
     {
      "typ": "fassung",
@@ -1703,13 +3164,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
     }
    ]
   },
   "43_b": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -1726,6 +3224,416 @@
      ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "43_c": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_d": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_e": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_f": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_g": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_h": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_i": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_j": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_k": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    }
+   ]
+  },
+  "43_l": {
+   "giltSeit": "2022-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5247",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 656",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+      },
+      {
+       "label": "BBl 2019 5451",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Titel: Aufsicht über Vermögensverwalter und Trustees"
     }
    ]
   }

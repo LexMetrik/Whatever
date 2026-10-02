@@ -368,7 +368,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen"
     }
    ]
   },
@@ -399,13 +400,66 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
+    }
+   ]
+  },
+  "10": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
+    }
+   ]
+  },
+  "11": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
     }
    ]
   },
   "12": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -460,6 +514,44 @@
     }
    ]
   },
+  "13": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
+    }
+   ]
+  },
+  "14": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Organisation der Banken"
+    }
+   ]
+  },
   "16": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
@@ -483,6 +575,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -499,6 +605,20 @@
   "44": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -608,13 +728,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Sanier- und Liquidierbarkeit"
     }
    ]
   },
   "65": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -657,7 +792,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Information der Öffentlichkeit"
     }
    ]
   },
@@ -706,13 +842,104 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+    }
+   ]
+  },
+  "14_b": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+    }
+   ]
+  },
+  "14_c": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+    }
+   ]
+  },
+  "14_d": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+    }
+   ]
+  },
+  "14_e": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
     }
    ]
   },
   "14_f": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -764,6 +991,25 @@
      ],
      "absatz": "5",
      "item": null
+    }
+   ]
+  },
+  "14_g": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
     }
    ]
   },
@@ -848,7 +1094,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+    }
+   ]
+  },
+  "42_b": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+    }
+   ]
+  },
+  "42_c": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+    }
+   ]
+  },
+  "42_d": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
     }
    ]
   },
@@ -879,13 +1183,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
     }
    ]
   },
   "42_f": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -905,6 +1224,20 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -922,6 +1255,20 @@
   "42_h": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -941,6 +1288,20 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -958,6 +1319,20 @@
   "44_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Einlagensicherung von Banken"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -1013,6 +1388,20 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -1030,6 +1419,20 @@
   "65_b": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -1059,7 +1462,46 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+    }
+   ]
+  },
+  "66_b": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+    }
+   ]
+  },
+  "66_c": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 804",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
     }
    ]
   },
@@ -1133,6 +1575,20 @@
   "8_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",

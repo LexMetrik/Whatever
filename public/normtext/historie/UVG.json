@@ -59,7 +59,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
     }
    ]
   },
@@ -1035,13 +1036,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
     }
    ]
   },
   "37": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -1118,6 +1138,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1125,6 +1163,24 @@
   "42": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -1205,7 +1261,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "5. Kap."
+     "frueher": "5. Kap.",
+     "ueberschrift": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
     }
    ]
   },
@@ -1332,13 +1389,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Medizinalpersonen und Spitäler"
+    }
+   ]
+  },
+  "54": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Medizinalpersonen und Spitäler"
     }
    ]
   },
   "55": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Medizinalpersonen und Spitäler"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -2118,7 +2217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Finanzierung"
     }
    ]
   },
@@ -2208,7 +2308,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
     },
     {
      "typ": "fassung",
@@ -2225,13 +2326,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Rechnung"
     }
    ]
   },
   "90": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -2264,13 +2384,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
     }
    ]
   },
   "91": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -2324,6 +2463,24 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
      "absatz": "1",
      "item": null
     },
@@ -2363,9 +2520,50 @@
     }
    ]
   },
+  "93": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    }
+   ]
+  },
   "94": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -2386,8 +2584,26 @@
    ]
   },
   "95": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -2502,13 +2718,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
     }
    ]
   },
   "97": {
    "giltSeit": "2017-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3453",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/511"
+      },
+      {
+       "label": "BBl 2002 803",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -2682,6 +2917,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3453",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/511"
+      },
+      {
+       "label": "BBl 2002 803",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/114"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2721,13 +2974,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Vollstreckung und Haftung"
     }
    ]
   },
   "100": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3453",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/511"
+      },
+      {
+       "label": "BBl 2002 803",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Vollstreckung und Haftung"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -2826,13 +3098,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen"
     }
    ]
   },
   "104": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3453",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/511"
+      },
+      {
+       "label": "BBl 2002 803",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -2887,7 +3178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
     }
    ]
   },
@@ -2917,6 +3209,24 @@
   "109": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -2962,6 +3272,24 @@
   "111": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -3036,7 +3364,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zehnter Titel"
+     "frueher": "Zehnter Titel",
+     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
     }
    ]
   },
@@ -3121,6 +3450,24 @@
   "105_a": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2003-01-01",
@@ -3245,7 +3592,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zehnter Titel: Verhältnis zum europäischen Recht"
     }
    ]
   },
@@ -3319,7 +3667,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Erster Tit."
+     "frueher": "Erster Tit.",
+     "ueberschrift": "Erster Titel a. Versicherte Personen"
     }
    ]
   },
@@ -3390,8 +3739,26 @@
    ]
   },
   "54_a": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Medizinalpersonen und Spitäler"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -3709,6 +4076,24 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Finanzierung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -3730,6 +4115,42 @@
   "90_a": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -3753,6 +4174,42 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -3774,6 +4231,42 @@
   "90_c": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -3797,6 +4290,42 @@
    "giltSeit": "2022-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
      "wirkung": false,
@@ -3818,6 +4347,42 @@
   "90_d": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Rechnung und Finanzierung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/723"
+      },
+      {
+       "label": "BBl 2008 5395",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/981"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Finanzierung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",

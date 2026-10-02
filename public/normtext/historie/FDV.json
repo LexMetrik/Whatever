@@ -524,13 +524,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
     }
    ]
   },
   "28": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+    },
     {
      "typ": "fassung",
      "datum": "2026-07-01",
@@ -573,13 +588,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Standortidentifikation"
     }
    ]
   },
   "30": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Standortidentifikation"
+    },
     {
      "typ": "fassung",
      "datum": "2026-07-01",
@@ -622,13 +652,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Weitere Pflichten"
     }
    ]
   },
   "32": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Weitere Pflichten"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -654,6 +699,25 @@
      ],
      "absatz": "1",
      "item": "c"
+    }
+   ]
+  },
+  "33": {
+   "giltSeit": "2026-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Weitere Pflichten"
     }
    ]
   },
@@ -684,7 +748,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
     }
    ]
   },
@@ -1196,13 +1261,85 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    }
+   ]
+  },
+  "76": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    }
+   ]
+  },
+  "77": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    }
+   ]
+  },
+  "78": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
     }
    ]
   },
   "79": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1245,13 +1382,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
     }
    ]
   },
   "81": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1298,6 +1450,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-07-01",
      "wirkung": false,
      "quellen": [
@@ -1316,6 +1482,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-07-01",
      "wirkung": false,
      "quellen": [
@@ -1332,6 +1512,20 @@
   "84": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2026-07-01",
@@ -1412,9 +1606,80 @@
     }
    ]
   },
+  "85": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    }
+   ]
+  },
+  "86": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    }
+   ]
+  },
+  "87": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    }
+   ]
+  },
   "88": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1446,6 +1711,20 @@
   "89": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -1488,7 +1767,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sicherheitskommunikation"
     }
    ]
   },
@@ -1514,6 +1794,20 @@
   "92": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sicherheitskommunikation"
+    },
     {
      "typ": "fassung",
      "datum": "2026-07-01",
@@ -1545,6 +1839,20 @@
   "93": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sicherheitskommunikation"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1623,7 +1931,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Störungsmeldung"
     }
    ]
   },
@@ -1965,7 +2274,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Geltungsbereich"
+    }
+   ]
+  },
+  "14_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 849",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/849"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Geltungsbereich"
     }
    ]
   },
@@ -2071,13 +2400,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Übermittlung von Nummern"
     }
    ]
   },
   "28_a": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2026-07-01",
@@ -2096,6 +2440,20 @@
   "29_a": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Standortidentifikation"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-07-01",
@@ -2140,6 +2498,20 @@
   "29_b": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Standortidentifikation"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2221,6 +2593,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2228,6 +2614,20 @@
   "34_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2257,6 +2657,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2264,6 +2678,20 @@
   "34_d": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2293,6 +2721,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2311,7 +2753,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen"
     }
    ]
   },
@@ -2485,6 +2928,20 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2502,6 +2959,20 @@
   "78_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2521,6 +2992,20 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2539,6 +3024,20 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2556,6 +3055,20 @@
   "89_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 6183",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2621,13 +3134,47 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+    }
+   ]
+  },
+  "96_b": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 726",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
     }
    ]
   },
   "96_c": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 726",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2657,7 +3204,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+    }
+   ]
+  },
+  "96_e": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 726",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+    }
+   ]
+  },
+  "96_f": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 726",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+    }
+   ]
+  },
+  "96_g": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 726",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
     }
    ]
   },
@@ -2675,7 +3280,46 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+    }
+   ]
+  },
+  "96_i": {
+   "giltSeit": "2026-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 42",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/42"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+    }
+   ]
+  },
+  "96_j": {
+   "giltSeit": "2026-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 42",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/42"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
     }
    ]
   }

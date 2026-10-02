@@ -273,7 +273,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verfahrensleitung"
     }
    ]
   },
@@ -1007,13 +1008,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Unentgeltliche Rechtspflege für die Privatklägerschaft und das Opfer"
+    }
+   ]
+  },
+  "137": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 468",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/468"
+      },
+      {
+       "label": "BBl 2019 6697",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2368"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Unentgeltliche Rechtspflege für die Privatklägerschaft und das Opfer"
     }
    ]
   },
   "138": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 468",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/468"
+      },
+      {
+       "label": "BBl 2019 6697",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2368"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Unentgeltliche Rechtspflege für die Privatklägerschaft und das Opfer"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -1724,13 +1767,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
     }
    ]
   },
   "256": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+      },
+      {
+       "label": "BBl 2021 44",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
+    },
     {
      "typ": "fassung",
      "datum": "2023-08-01",
@@ -1754,6 +1816,24 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2023-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+      },
+      {
+       "label": "BBl 2021 44",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -1769,6 +1849,52 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "258": {
+   "giltSeit": "2023-08-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+      },
+      {
+       "label": "BBl 2021 44",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
+    }
+   ]
+  },
+  "259": {
+   "giltSeit": "2023-08-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+      },
+      {
+       "label": "BBl 2021 44",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Phänotypisierung"
     }
    ]
   },
@@ -3457,6 +3583,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 309",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+      },
+      {
+       "label": "BBl 2021 44",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3496,7 +3640,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Phänotypisierung"
     }
    ]
   },
@@ -3593,7 +3738,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 286"
+     "frueher": "vor Art. 286",
+     "ueberschrift": "5. Abschnitt: Verdeckte Ermittlung"
     }
    ]
   },
@@ -3615,7 +3761,77 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
+    }
+   ]
+  },
+  "298_b": {
+   "giltSeit": "2013-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 1051",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/230"
+      },
+      {
+       "label": "BBl 2012 5591 5609",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
+    }
+   ]
+  },
+  "298_c": {
+   "giltSeit": "2013-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 1051",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/230"
+      },
+      {
+       "label": "BBl 2012 5591 5609",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
+    }
+   ]
+  },
+  "298_d": {
+   "giltSeit": "2013-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 1051",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/230"
+      },
+      {
+       "label": "BBl 2012 5591 5609",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
     }
    ]
   },
@@ -3747,7 +3963,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Übergangsbestimmung zur Änderung vom 28. September 2012"
     }
    ]
   },

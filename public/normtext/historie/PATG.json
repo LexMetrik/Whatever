@@ -59,7 +59,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Grundsatz"
     }
    ]
   },
@@ -618,7 +619,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Voraussetzungen und Wirkung der Priorität"
     }
    ]
   },
@@ -691,7 +693,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Legitimation"
     }
    ]
   },
@@ -1035,7 +1038,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Abhängige Erfindung"
     }
    ]
   },
@@ -1191,7 +1195,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Gebühren"
     }
    ]
   },
@@ -1213,13 +1218,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Wiedereinsetzung in den früheren Stand"
     }
    ]
   },
   "48": {
    "giltSeit": "1996-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+    },
     {
      "typ": "inkraft",
      "datum": "1996-01-01",
@@ -1269,7 +1311,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Vorbehalt von Rechten Dritter"
     }
    ]
   },
@@ -1342,7 +1385,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im Allgemeinen"
     }
    ]
   },
@@ -1398,7 +1442,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im Allgemeinen"
     }
    ]
   },
@@ -1537,7 +1582,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im allgemeinen"
     }
    ]
   },
@@ -1722,7 +1768,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Prüfungsgegenstand"
     }
    ]
   },
@@ -1795,13 +1842,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
     }
    ]
   },
   "61": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 5085",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+      },
+      {
+       "label": "BBl 2001 5679",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+    },
     {
      "typ": "fassung",
      "datum": "2008-07-01",
@@ -1917,6 +1983,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 5085",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+      },
+      {
+       "label": "BBl 2001 5679",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+    },
+    {
+     "typ": "fassung",
      "datum": "1978-01-01",
      "wirkung": false,
      "quellen": [
@@ -1964,13 +2048,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Patentschrift"
+    }
+   ]
+  },
+  "64": {
+   "giltSeit": "2005-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 5085",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+      },
+      {
+       "label": "BBl 2001 5679",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
     }
    ]
   },
   "65": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 5085",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+      },
+      {
+       "label": "BBl 2001 5679",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+    },
     {
      "typ": "fassung",
      "datum": "2008-07-01",
@@ -2091,7 +2217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Verbot der Stufenklagen"
     }
    ]
   },
@@ -2426,7 +2553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Patentberühmung"
     }
    ]
   },
@@ -2527,7 +2655,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
     },
     {
      "typ": "eingefuegt",
@@ -2544,13 +2673,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Anwendbares Recht"
     }
    ]
   },
   "110": {
    "giltSeit": "2007-12-13",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
     {
      "typ": "fassung",
      "datum": "1978-01-01",
@@ -2583,7 +2731,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
     },
     {
      "typ": "fassung",
@@ -2600,7 +2749,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
     },
     {
      "typ": "fassung",
@@ -2617,13 +2767,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Wirkungen"
     }
    ]
   },
   "111": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2007-12-13",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-12-13",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 6479",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/848"
+      },
+      {
+       "label": "BBl 2005 3773",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/556"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+    },
     {
      "typ": "fassung",
      "datum": "1978-01-01",
@@ -2646,6 +2851,24 @@
   "117": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
     {
      "typ": "fassung",
      "datum": "1978-06-01",
@@ -2678,13 +2901,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verwaltung des europäischen Patentes"
     }
    ]
   },
   "118": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verwaltung des europäischen Patentes"
+    },
     {
      "typ": "fassung",
      "datum": "1978-06-01",
@@ -2802,6 +3062,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -2870,13 +3148,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
     }
    ]
   },
   "122": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -2914,6 +3229,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2921,6 +3272,42 @@
   "124": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -2958,7 +3345,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
     },
     {
      "typ": "eingefuegt",
@@ -2976,12 +3364,66 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
     }
    ]
   },
   "126": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3004,6 +3446,42 @@
   "127": {
    "giltSeit": "2007-12-13",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3043,6 +3521,42 @@
   "128": {
    "giltSeit": "2007-12-13",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3097,6 +3611,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3104,6 +3654,24 @@
   "130": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3136,7 +3704,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Rechtshilfegesuche des Europäischen Patentamtes"
     }
    ]
   },
@@ -3192,7 +3761,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
     },
     {
      "typ": "eingefuegt",
@@ -3209,7 +3779,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Anwendbares Recht"
     }
    ]
   },
@@ -3231,7 +3802,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
     },
     {
      "typ": "eingefuegt",
@@ -3249,12 +3821,66 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen"
     }
    ]
   },
   "133": {
    "giltSeit": "1978-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3279,6 +3905,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
      "quellen": [
@@ -3326,7 +3970,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
     },
     {
      "typ": "fassung",
@@ -3343,13 +3988,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
     }
    ]
   },
   "135": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "1995-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3370,8 +4070,62 @@
    ]
   },
   "136": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "1995-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3392,8 +4146,62 @@
    ]
   },
   "137": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "1995-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3416,6 +4224,60 @@
   "138": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3493,8 +4355,62 @@
    "aufgehobenSeit": "2008-07-01"
   },
   "140": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "1995-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Internationale Patentanmeldungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1978-06-01",
@@ -3674,6 +4590,60 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "1978-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-12-13",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 6479",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/848"
+      },
+      {
+       "label": "BBl 2005 3773",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/556"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2007-12-13",
      "wirkung": false,
      "quellen": [
@@ -3783,7 +4753,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
     },
     {
      "typ": "fassung",
@@ -3800,7 +4771,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
     },
     {
      "typ": "eingefuegt",
@@ -3817,13 +4789,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
     }
    ]
   },
   "140_b": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -3865,6 +4892,60 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "1999-05-01",
      "wirkung": false,
      "quellen": [
@@ -3899,9 +4980,122 @@
     }
    ]
   },
+  "140_d": {
+   "giltSeit": "1999-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
   "140_e": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -3942,6 +5136,60 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3960,9 +5208,122 @@
     }
    ]
   },
+  "140_g": {
+   "giltSeit": "1999-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
   "140_h": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
     {
      "typ": "fassung",
      "datum": "2008-07-01",
@@ -4002,6 +5363,60 @@
   "140_i": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -4059,6 +5474,60 @@
    "giltSeit": "1999-05-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
+    {
      "typ": "fassung",
      "datum": "1999-05-01",
      "wirkung": false,
@@ -4081,6 +5550,60 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4099,9 +5622,104 @@
     }
    ]
   },
+  "140_m": {
+   "giltSeit": "1999-05-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
   "140_n": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4117,7 +5735,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
     },
     {
      "typ": "fassung",
@@ -4134,7 +5753,393 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_o": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_p": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_q": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_r": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_s": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
     }
    ]
   },
@@ -4143,26 +6148,40 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-01-01",
+     "datum": "1995-09-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
       },
       {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
       }
      ],
      "absatz": null,
-     "item": null
-    }
-   ]
-  },
-  "140_z": {
-   "giltSeit": "2019-01-01",
-   "ereignisse": [
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -4178,7 +6197,362 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_u": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_v": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_w": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_x": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_y": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+    }
+   ]
+  },
+  "140_z": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 2879",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+      },
+      {
+       "label": "BBl 1993 III 706",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1363",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/193"
+      },
+      {
+       "label": "BBl 1998 1633",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Ergänzende Schutzzertifikate"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 2745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+      },
+      {
+       "label": "BBl 2013 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
     }
    ]
   },
@@ -4678,7 +7052,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 47"
+     "frueher": "vor Art. 47",
+     "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
     },
     {
      "typ": "fassung",
@@ -4695,7 +7070,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
     }
    ]
   },
@@ -4717,7 +7093,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Vertretung und Aufsicht"
+    }
+   ]
+  },
+  "48_b": {
+   "giltSeit": "2011-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 2259",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/312"
+      },
+      {
+       "label": "BBl 2008 407",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/143"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Abschnitt: Vertretung und Aufsicht"
     }
    ]
   },
@@ -5074,6 +7474,24 @@
    "giltSeit": "2005-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 5085",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+      },
+      {
+       "label": "BBl 2001 5679",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
      "wirkung": false,
@@ -5389,7 +7807,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     },
     {
      "typ": "fassung",
@@ -5406,13 +7825,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
    ]
   },
   "86_b": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "fassung",
      "datum": "2025-07-01",
@@ -5436,6 +7892,42 @@
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
      "typ": "fassung",
      "datum": "2025-07-01",
      "wirkung": false,
@@ -5455,8 +7947,44 @@
    ]
   },
   "86_d": {
-   "giltSeit": null,
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "bezeichnung",
      "datum": null,
@@ -5472,9 +8000,86 @@
     }
    ]
   },
+  "86_e": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    }
+   ]
+  },
   "86_f": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2025-07-01",
@@ -5524,13 +8129,255 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Verfahren"
+    }
+   ]
+  },
+  "86_g": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    }
+   ]
+  },
+  "86_h": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    }
+   ]
+  },
+  "86_i": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    }
+   ]
+  },
+  "86_j": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    }
+   ]
+  },
+  "86_k": {
+   "giltSeit": "2025-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
    ]
   },
   "86_l": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2551",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/366"
+      },
+      {
+       "label": "BBl 2006 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-07-01",
@@ -5764,13 +8611,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
     }
    ]
   },
   "disp_u1_art_142": {
    "giltSeit": "2011-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5827,6 +8693,24 @@
   "disp_u1_art_143": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5907,6 +8791,24 @@
    "giltSeit": "2008-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1978-01-01",
      "wirkung": false,
@@ -5945,6 +8847,24 @@
   "disp_u1_art_146": {
    "giltSeit": "1999-05-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5985,6 +8905,24 @@
    "giltSeit": "1999-05-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6024,6 +8962,24 @@
    "giltSeit": "2008-05-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2008-05-01",
      "wirkung": false,
@@ -6045,6 +9001,24 @@
   "disp_u1_art_149": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1978-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1977 1997",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997"
+      },
+      {
+       "label": "BBl 1976 II 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1976/2_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",

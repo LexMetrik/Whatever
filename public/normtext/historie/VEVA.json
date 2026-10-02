@@ -334,7 +334,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht"
     }
    ]
   },
@@ -921,7 +922,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+    }
+   ]
+  },
+  "32": {
+   "giltSeit": "2016-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2016-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 1117",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/207"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
     }
    ]
   },

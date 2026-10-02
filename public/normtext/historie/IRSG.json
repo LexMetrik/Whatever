@@ -1640,13 +1640,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
     }
    ]
   },
   "79": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1663,6 +1682,29 @@
      ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "80": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
     }
    ]
   },
@@ -1930,7 +1972,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Personen-, Akten- und Geschäftsverwaltungssystem"
     }
    ]
   },
@@ -1952,13 +1995,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
     }
    ]
   },
   "11_c": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -2009,6 +2071,121 @@
      ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "11_d": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+    }
+   ]
+  },
+  "11_e": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+    }
+   ]
+  },
+  "11_f": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+    }
+   ]
+  },
+  "11_g": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+    }
+   ]
+  },
+  "11_h": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 625",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+      },
+      {
+       "label": "BBl 2017 6941",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
     }
    ]
   },
@@ -2266,7 +2443,162 @@
     }
    ]
   },
+  "79_a": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    }
+   ]
+  },
+  "80_a": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    }
+   ]
+  },
+  "80_b": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    }
+   ]
+  },
+  "80_c": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    }
+   ]
+  },
+  "80_d": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    }
+   ]
+  },
   "80_d_bis": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "80_d_decies": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
     {
@@ -2284,7 +2616,169 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_duodecies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_novies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_octies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_quater": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_quinquies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_septies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_sexies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
     }
    ]
   },
@@ -2306,7 +2800,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+    }
+   ]
+  },
+  "80_d_undecies": {
+   "giltSeit": "2021-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2021-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 360",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+      },
+      {
+       "label": "BBl 2018 6427",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
     }
    ]
   },
@@ -2345,7 +2863,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
     }
    ]
   },
@@ -2372,9 +2891,50 @@
    ],
    "aufgehobenSeit": "2007-01-01"
   },
-  "80_i": {
-   "giltSeit": null,
+  "80_h": {
+   "giltSeit": "1997-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
+    }
+   ]
+  },
+  "80_i": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2007-01-01",
@@ -2394,9 +2954,50 @@
     }
    ]
   },
+  "80_k": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
+    }
+   ]
+  },
   "80_l": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -2451,13 +3052,78 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
+    }
+   ]
+  },
+  "80_n": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
+    }
+   ]
+  },
+  "80_o": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
     }
    ]
   },
   "80_p": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -2474,6 +3140,29 @@
      ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "80_q": {
+   "giltSeit": "1997-02-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 114",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+      },
+      {
+       "label": "BBl 1995 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
     }
    ]
   },

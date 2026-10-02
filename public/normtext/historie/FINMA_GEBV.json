@@ -492,7 +492,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
     },
     {
      "typ": "fassung",
@@ -505,13 +506,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
     }
    ]
   },
   "17": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -545,6 +575,34 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -561,6 +619,34 @@
   "19": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5597",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -986,7 +1072,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+    }
+   ]
+  },
+  "19_b": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+    }
+   ]
+  },
+  "19_c": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+    }
+   ]
+  },
+  "19_d": {
+   "giltSeit": "2016-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 5413",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/854"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Finanzmarktinfrastrukturen"
     }
    ]
   },
@@ -1004,7 +1148,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Personen nach Artikel 1b BankG"
+    }
+   ]
+  },
+  "19_f": {
+   "giltSeit": "2019-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 5229",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/799"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Personen nach Artikel 1b BankG"
     }
    ]
   },
@@ -1022,7 +1186,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG"
+    }
+   ]
+  },
+  "31_b": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 4633",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG"
     }
    ]
   },

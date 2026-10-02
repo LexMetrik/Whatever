@@ -1865,7 +1865,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Titel: Zeitliche Bemessung"
+    }
+   ]
+  },
+  "41": {
+   "giltSeit": "2014-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2014-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 2397",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+      },
+      {
+       "label": "BBl 2011 3593",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/525"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Titel: Zeitliche Bemessung"
+    }
+   ]
+  },
+  "42": {
+   "giltSeit": "2014-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2014-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 2397",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+      },
+      {
+       "label": "BBl 2011 3593",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/525"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Titel: Zeitliche Bemessung"
     }
    ]
   },
@@ -2660,7 +2707,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Kollektive Kapitalanlagen"
     }
    ]
   },
@@ -2916,13 +2964,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
     }
    ]
   },
   "92": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -2981,6 +3048,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
+    {
+     "typ": "fassung",
      "datum": "2013-01-01",
      "wirkung": false,
      "quellen": [
@@ -3032,9 +3117,50 @@
     }
    ]
   },
-  "95": {
-   "giltSeit": "2001-01-01",
+  "94": {
+   "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    }
+   ]
+  },
+  "95": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -3051,6 +3177,29 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "96": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
     }
    ]
   },
@@ -3118,6 +3267,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3125,6 +3292,24 @@
   "100": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -3280,7 +3465,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Organisation, elektronische Verfahren und Aufsicht"
     }
    ]
   },
@@ -4791,6 +4977,24 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 673",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/673"
+      },
+      {
+       "label": "BBl 2020 4705",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1111"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Organisation, elektronische Verfahren und Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4810,8 +5014,26 @@
    ]
   },
   "104_b": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 673",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/673"
+      },
+      {
+       "label": "BBl 2020 4705",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1111"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Organisation, elektronische Verfahren und Aufsicht"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -5834,8 +6056,26 @@
    ]
   },
   "97_a": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -5859,6 +6099,24 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -5880,6 +6138,24 @@
   "99_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",

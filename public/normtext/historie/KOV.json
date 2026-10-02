@@ -145,7 +145,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "d. Edition"
     }
    ]
   },
@@ -176,7 +177,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Elektronische Datenverarbeitung"
     }
    ]
   },
@@ -203,7 +205,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "III"
+     "frueher": "III",
+     "ueberschrift": "IV. Ordnung und Aufbewahrung der Akten"
     }
    ]
   },
@@ -266,7 +269,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "IV"
+     "frueher": "IV",
+     "ueberschrift": "V. Buch-, Kassa- und Rechnungsführung"
     }
    ]
   },
@@ -297,7 +301,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     },
     {
      "typ": "fassung",
@@ -310,7 +315,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
     }
    ]
   },
@@ -328,13 +334,102 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "27": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
     }
    ]
   },
   "28": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -363,14 +458,103 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "30": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
     }
    ]
   },
   "31": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -386,9 +570,70 @@
     }
    ]
   },
+  "32": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    }
+   ]
+  },
   "33": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -407,6 +652,34 @@
   "34": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -435,14 +708,103 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
     }
    ]
   },
   "37": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -491,6 +853,34 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -498,6 +888,20 @@
   "40": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -531,7 +935,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 39"
+     "frueher": "vor Art. 39",
+     "ueberschrift": "II. Schuldenruf"
     },
     {
      "typ": "fassung",
@@ -544,13 +949,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Spezialanzeigen über die Konkurseröffnung"
     }
    ]
   },
   "41": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -579,6 +999,20 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
      "absatz": "3",
      "item": null
     }
@@ -587,6 +1021,20 @@
   "43": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -611,13 +1059,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Aktenübergabe an ausseramtliche Konkursverwaltungen. Mitteilung"
     }
    ]
   },
   "44": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -638,6 +1101,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -654,6 +1131,20 @@
   "46": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -674,6 +1165,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -692,6 +1197,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -705,9 +1224,42 @@
     }
    ]
   },
+  "49": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
   "50": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-08-01",
@@ -728,6 +1280,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -744,6 +1310,20 @@
   "52": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -764,6 +1344,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -780,6 +1374,20 @@
   "54": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "2021-08-01",
@@ -804,13 +1412,47 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "f. Konkurrenz von Pfandansprüchen und Ansprüchen nach den Artikeln 242 und 242a SchKG mit Kompetenzansprüchen"
+    }
+   ]
+  },
+  "55": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
   "56": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -840,6 +1482,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -847,6 +1503,20 @@
   "58": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -876,6 +1546,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -883,6 +1567,20 @@
   "60": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -912,6 +1610,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -919,6 +1631,20 @@
   "62": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -934,9 +1660,61 @@
     }
    ]
   },
+  "63": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "64": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
   "65": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -961,7 +1739,46 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "aa. Innerhalb der Anfechtungsfrist"
+    }
+   ]
+  },
+  "66": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "67": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
@@ -979,7 +1796,59 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "69": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "70": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
@@ -997,13 +1866,79 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "72": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "73": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
   "74": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1041,6 +1976,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1059,7 +2008,40 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "77": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
@@ -1101,6 +2083,25 @@
    ],
    "aufgehobenSeit": "1997-01-01"
   },
+  "80": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
   "81": {
    "giltSeit": null,
    "ereignisse": [
@@ -1120,9 +2121,61 @@
    ],
    "aufgehobenSeit": "1997-01-01"
   },
+  "82": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "83": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
   "84": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1152,7 +2205,40 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "86": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
@@ -1169,8 +2255,41 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "88": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     }
    ]
   },
@@ -1226,6 +2345,44 @@
    ],
    "aufgehobenSeit": "1923-12-19"
   },
+  "92": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
+  "93": {
+   "giltSeit": "1997-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    }
+   ]
+  },
   "94": {
    "giltSeit": null,
    "ereignisse": [
@@ -1259,13 +2416,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Einfluss von Prozessen nach Art. 260 SchKG"
     }
    ]
   },
   "96": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1396,7 +2582,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Aufzeichnung auf Bild- und Datenträgern"
     }
    ]
   },
@@ -1421,6 +2608,20 @@
   "54_a": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1996 2884",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-08-01",

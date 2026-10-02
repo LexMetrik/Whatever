@@ -1134,7 +1134,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
     },
     {
      "typ": "eingefuegt",
@@ -1151,7 +1152,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Freizügigkeitsleistung"
     }
    ]
   },
@@ -2174,7 +2176,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweiter Titel"
+     "frueher": "Zweiter Titel",
+     "ueberschrift": "Dritter Titel: Sicherheitsfonds und Auffangeinrichtung"
     }
    ]
   },
@@ -2633,7 +2636,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Dritter Titel"
+     "frueher": "Dritter Titel",
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
     },
     {
      "typ": "fassung",
@@ -2650,7 +2654,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
     },
     {
      "typ": "eingefuegt",
@@ -2667,13 +2672,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Aufsicht"
     }
    ]
   },
   "62": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Aufsicht"
+    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -2819,6 +2861,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -2836,7 +2896,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Oberaufsicht"
     }
    ]
   },
@@ -2926,13 +2987,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
     }
    ]
   },
   "66": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -2952,9 +3032,50 @@
     }
    ]
   },
-  "68": {
-   "giltSeit": "2004-04-01",
+  "67": {
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    }
+   ]
+  },
+  "68": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2006-01-01",
@@ -3055,8 +3176,26 @@
    "aufgehobenSeit": "2005-01-01"
   },
   "71": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2005-01-01",
@@ -3077,8 +3216,26 @@
    ]
   },
   "72": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3358,6 +3515,24 @@
    "giltSeit": "2001-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
      "wirkung": false,
@@ -3372,13 +3547,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
     }
    ]
   },
   "81": {
    "giltSeit": "2005-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    },
     {
      "typ": "fassung",
      "datum": "2005-01-01",
@@ -3403,6 +3615,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -3420,9 +3668,109 @@
     }
    ]
   },
-  "85": {
-   "giltSeit": null,
+  "83": {
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    }
+   ]
+  },
+  "84": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    }
+   ]
+  },
+  "85": {
+   "giltSeit": "2001-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -3430,13 +3778,32 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Zweiter Titel"
+     "frueher": "Zweiter Titel",
+     "ueberschrift": "Dritter Titel: Besondere Bestimmungen"
     }
    ]
   },
   "86": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -3459,6 +3826,24 @@
   "87": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -3498,6 +3883,24 @@
   "88": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -3550,7 +3953,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Siebenter Teil"
+     "frueher": "Siebenter Teil",
+     "ueberschrift": "Achter Teil: Schlussbestimmungen"
     }
    ]
   },
@@ -3853,6 +4257,24 @@
    "giltSeit": "1995-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1995-01-01",
      "wirkung": false,
@@ -3867,13 +4289,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
     }
    ]
   },
   "30_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
     {
      "typ": "ausdruck",
      "datum": "2021-01-01",
@@ -3896,6 +4355,42 @@
   "30_c": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -3937,6 +4432,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-01-01",
      "wirkung": false,
      "quellen": [
@@ -3974,6 +4505,42 @@
   "30_e": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -4014,6 +4581,42 @@
    "giltSeit": "2005-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
      "wirkung": false,
@@ -4033,8 +4636,44 @@
    ]
   },
   "30_g": {
-   "giltSeit": null,
+   "giltSeit": "1995-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Freizügigkeitsleistung und Wohneigentumsförderung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "1995-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1994 2372",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2372_2372_2372"
+      },
+      {
+       "label": "BBl 1992 VI 237",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1992/6_237_229_209"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Wohneigentumsförderung"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -4081,7 +4720,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmer"
+    }
+   ]
+  },
+  "33_b": {
+   "giltSeit": "2011-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 4427",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/622"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmer"
     }
    ]
   },
@@ -4789,7 +5452,100 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Anlagestiftungen"
+    }
+   ]
+  },
+  "53_h": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Anlagestiftungen"
+    }
+   ]
+  },
+  "53_i": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Anlagestiftungen"
+    }
+   ]
+  },
+  "53_j": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Anlagestiftungen"
+    }
+   ]
+  },
+  "53_k": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Anlagestiftungen"
     }
    ]
   },
@@ -4941,6 +5697,42 @@
    "giltSeit": "2012-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -5003,6 +5795,42 @@
    "giltSeit": "2012-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Oberaufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -5025,6 +5853,42 @@
    "giltSeit": "2012-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Oberaufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -5046,6 +5910,42 @@
   "64_c": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Titel: Aufsicht und Oberaufsicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3393",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/458"
+      },
+      {
+       "label": "BBl 2007 5669",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2007/788"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Oberaufsicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
@@ -5138,6 +6038,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2004-04-01",
      "wirkung": false,
      "quellen": [
@@ -5177,6 +6095,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2005-01-01",
      "wirkung": false,
      "quellen": [
@@ -5212,8 +6148,26 @@
    ]
   },
   "65_c": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -5234,8 +6188,26 @@
    ]
   },
   "65_d": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -5256,8 +6228,26 @@
    ]
   },
   "65_e": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -5278,8 +6268,26 @@
    ]
   },
   "68_a": {
-   "giltSeit": "2004-04-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-04-01",
@@ -5304,6 +6312,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -5324,6 +6350,24 @@
   "71_b": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -5361,7 +6405,146 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_b": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_c": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_d": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_e": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_f": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
+    }
+   ]
+  },
+  "72_g": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3385",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+      },
+      {
+       "label": "BBl 2008 8411",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1439"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften im System der Teilkapitalisierung"
     }
    ]
   },
@@ -5417,7 +6600,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
     },
     {
      "typ": "fassung",
@@ -5434,13 +6618,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Umfang der Leistungen"
     }
    ]
   },
   "79_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Umfang der Leistungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
@@ -5498,6 +6719,42 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Erster Titel: Umfang der Leistungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -5520,6 +6777,42 @@
    "giltSeit": "2005-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
      "wirkung": false,
@@ -5539,8 +6832,44 @@
    ]
   },
   "83_a": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Steuerrechtliche Behandlung der Vorsorge"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1995-01-01",
@@ -5563,6 +6892,24 @@
   "85_a": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -5637,6 +6984,24 @@
    "giltSeit": "2001-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
      "wirkung": false,
@@ -5658,6 +7023,24 @@
   "86_a": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -5817,6 +7200,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 2374",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/363"
+      },
+      {
+       "label": "BBl 1999 4",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Teil: Umfang der Leistungen, Steuerrecht und besondere Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2004-04-01",
      "wirkung": false,
@@ -5930,7 +7331,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
     },
     {
      "typ": "fassung",
@@ -5947,7 +7349,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
     },
     {
      "typ": "fassung",
@@ -5964,13 +7367,245 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    }
+   ]
+  },
+  "89_b": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/140"
+      },
+      {
+       "label": "BBl 1999 6128",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_6128_5440_5092"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 1677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+      },
+      {
+       "label": "BBl 2000 2637",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+      },
+      {
+       "label": "BBl 2018 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/671"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    }
+   ]
+  },
+  "89_c": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/140"
+      },
+      {
+       "label": "BBl 1999 6128",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_6128_5440_5092"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 1677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+      },
+      {
+       "label": "BBl 2000 2637",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+      },
+      {
+       "label": "BBl 2018 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/671"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    }
+   ]
+  },
+  "89_d": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/140"
+      },
+      {
+       "label": "BBl 1999 6128",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_6128_5440_5092"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 1677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+      },
+      {
+       "label": "BBl 2000 2637",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+      },
+      {
+       "label": "BBl 2018 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/671"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
     }
    ]
   },
   "89_e": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/140"
+      },
+      {
+       "label": "BBl 1999 6128",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_6128_5440_5092"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2005-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 1677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+      },
+      {
+       "label": "BBl 2000 2637",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 5137",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+      },
+      {
+       "label": "BBl 2018 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2018/671"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Teil: Internationale Koordination"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",

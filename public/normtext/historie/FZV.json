@@ -490,7 +490,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
     },
     {
      "typ": "fassung",
@@ -503,13 +504,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
     }
    ]
   },
   "19_b": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1773",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
     {
      "typ": "bezeichnung",
      "datum": null,
@@ -542,6 +572,34 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1773",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
      "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -573,6 +631,34 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1773",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
      "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -587,9 +673,70 @@
     }
    ]
   },
+  "19_e": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1773",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    }
+   ]
+  },
   "19_f": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1999-05-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1773",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/285"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentralstelle 2. Säule"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -632,13 +779,47 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+    }
+   ]
+  },
+  "19_h": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
     }
    ]
   },
   "19_i": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -651,6 +832,44 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "19_j": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+    }
+   ]
+  },
+  "19_k": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2347",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/381"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Scheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
     }
    ]
   },

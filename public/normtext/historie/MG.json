@@ -42,7 +42,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Aufgaben der Armee"
     }
    ]
   },
@@ -81,13 +82,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
     }
    ]
   },
   "3": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -110,6 +130,24 @@
   "4": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -151,6 +189,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -171,6 +227,24 @@
   "6": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -208,7 +282,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
     },
     {
      "typ": "fassung",
@@ -242,13 +317,86 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Stellungspflicht und Rekrutierung"
     }
    ]
   },
   "8": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -271,6 +419,60 @@
   "9": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -372,6 +574,60 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -396,6 +652,60 @@
   "11": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -518,6 +828,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -552,13 +898,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
     }
    ]
   },
   "13": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -651,6 +1052,60 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
      "quellen": [
@@ -668,9 +1123,122 @@
     }
    ]
   },
-  "16": {
-   "giltSeit": "1996-10-01",
+  "15": {
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    }
+   ]
+  },
+  "16": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
     {
      "typ": "fassung",
      "datum": "1996-10-01",
@@ -695,6 +1263,60 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-01",
      "wirkung": false,
      "quellen": [
@@ -715,6 +1337,60 @@
   "18": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -892,6 +1568,60 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-01",
      "wirkung": false,
      "quellen": [
@@ -912,6 +1642,60 @@
   "20": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Militärdienst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1051,6 +1835,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -1136,13 +1956,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
     }
    ]
   },
   "22": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1248,6 +2123,60 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1255,6 +2184,60 @@
   "24": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1309,6 +2292,42 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -1343,13 +2362,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Pflichten ausser Dienst"
     }
    ]
   },
   "26": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Pflichten ausser Dienst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1406,6 +2480,60 @@
   "27": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Pflichten ausser Dienst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -2263,7 +3391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere"
     }
    ]
   },
@@ -2497,7 +3626,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
     },
     {
      "typ": "fassung",
@@ -2514,13 +3644,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
   "66": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2001-09-01",
@@ -2558,8 +3707,26 @@
    ]
   },
   "67": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -2579,9 +3746,50 @@
     }
    ]
   },
+  "68": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
   "69": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -2621,6 +3829,24 @@
   "70": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -2679,6 +3905,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-01",
      "wirkung": false,
      "quellen": [
@@ -2714,13 +3958,49 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
   },
   "73": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -2757,9 +4037,73 @@
     }
    ]
   },
-  "76": {
-   "giltSeit": "2004-01-01",
+  "74": {
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "75": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "76": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-01-01",
@@ -2780,8 +4124,26 @@
    ]
   },
   "77": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2004-01-01",
@@ -2852,9 +4214,73 @@
     }
    ]
   },
+  "78": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "79": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
   "80": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -2877,6 +4303,24 @@
   "81": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -2992,6 +4436,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
      "datum": "2004-01-01",
      "wirkung": false,
      "quellen": [
@@ -3065,6 +4527,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-01",
      "wirkung": false,
      "quellen": [
@@ -3087,6 +4567,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-01",
      "wirkung": false,
      "quellen": [
@@ -3104,9 +4602,96 @@
     }
    ]
   },
-  "89": {
-   "giltSeit": "2004-01-01",
+  "86": {
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "87": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "88": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "89": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "fassung",
      "datum": "2004-01-01",
@@ -3123,6 +4708,52 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "90": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    }
+   ]
+  },
+  "91": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
     }
    ]
   },
@@ -3161,7 +4792,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Titel: Polizeibefugnisse"
     }
    ]
   },
@@ -3200,13 +4832,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Grundsätze"
     }
    ]
   },
   "94": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Grundsätze"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -3284,7 +4935,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie"
     }
    ]
   },
@@ -3323,7 +4975,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Betriebskontinuität und Resilienz"
     }
    ]
   },
@@ -3362,7 +5015,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Kapitel: Kommissariatsdienst"
     }
    ]
   },
@@ -3707,13 +5361,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
     }
    ]
   },
   "100": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -3875,13 +5548,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Grade und besondere Funktionen"
     }
    ]
   },
   "103": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Grade und besondere Funktionen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2004-01-01",
@@ -3969,6 +5661,24 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Grade und besondere Funktionen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
      "absatz": "1",
      "item": null
     },
@@ -4026,13 +5736,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
     }
    ]
   },
   "106": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -4143,9 +5872,73 @@
    ],
    "aufgehobenSeit": "2008-01-01"
   },
-  "110": {
-   "giltSeit": "2007-05-01",
+  "108": {
+   "giltSeit": "2008-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    }
+   ]
+  },
+  "109": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    }
+   ]
+  },
+  "110": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2008-01-01",
@@ -4209,6 +6002,24 @@
    "giltSeit": "2026-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -4247,6 +6058,24 @@
   "113": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -4444,6 +6273,24 @@
   "114": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2004-01-01",
@@ -4805,13 +6652,78 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    }
+   ]
+  },
+  "127": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    }
+   ]
+  },
+  "128": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
     }
    ]
   },
   "129": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -4878,13 +6790,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
     }
    ]
   },
   "130": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2007-01-01",
@@ -4973,13 +6904,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
     }
    ]
   },
   "132": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/164"
+      },
+      {
+       "label": "BBl 2025 960",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/960"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -4999,9 +6949,50 @@
     }
    ]
   },
+  "133": {
+   "giltSeit": "2026-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/164"
+      },
+      {
+       "label": "BBl 2025 960",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/960"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+    }
+   ]
+  },
   "134": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 164",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/164"
+      },
+      {
+       "label": "BBl 2025 960",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/960"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -5195,13 +7186,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub"
     }
    ]
   },
   "145": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -5256,7 +7266,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Bearbeitung von Personendaten"
     }
    ]
   },
@@ -5295,7 +7306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Elektronische Verfahren"
     }
    ]
   },
@@ -5386,6 +7398,24 @@
    "giltSeit": "2026-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2026-06-01",
      "wirkung": false,
@@ -5407,6 +7437,24 @@
   "104_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 4277",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/714"
+      },
+      {
+       "label": "BBl 2014 6955",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1566"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Grade und besondere Funktionen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -5430,6 +7478,24 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -5451,6 +7517,24 @@
   "109_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -5491,6 +7575,24 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -5512,6 +7614,24 @@
   "109_c": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 5779",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+      },
+      {
+       "label": "BBl 2005 6029",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/976"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebter Titel: Armeematerial"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-01",
@@ -5558,6 +7678,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-01-01",
      "wirkung": false,
      "quellen": [
@@ -5575,9 +7713,50 @@
     }
    ]
   },
+  "126_b": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    }
+   ]
+  },
   "126_c": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-01",
@@ -5598,8 +7777,26 @@
    ]
   },
   "126_d": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2021-01-01",
@@ -5647,6 +7844,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-01-01",
      "wirkung": false,
      "quellen": [
@@ -5681,9 +7896,73 @@
     }
    ]
   },
+  "126_g": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    }
+   ]
+  },
+  "128_a": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    }
+   ]
+  },
   "130_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -5716,13 +7995,73 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien"
+    }
+   ]
+  },
+  "130_b": {
+   "giltSeit": "2011-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 3071",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+      },
+      {
+       "label": "BBl 1998 2591",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Militärische Bauten und Anlagen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien"
     }
    ]
   },
   "146_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 6617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/823"
+      },
+      {
+       "label": "BBl 2008 3213",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/701"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Bearbeitung von Personendaten"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -5777,7 +8116,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Gewerbliche Leistungen"
     }
    ]
   },
@@ -5816,7 +8156,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8a. Titel: Finanzielle Mittel für die Armee"
     }
    ]
   },
@@ -5945,6 +8286,60 @@
   "22_a": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Inhalt der Militärdienstpflicht"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -6184,7 +8579,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Titel und Orden ausländischer Behörden"
     }
    ]
   },
@@ -6223,7 +8619,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Urheberrechte"
     }
    ]
   },
@@ -6245,7 +8642,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten"
     }
    ]
   },
@@ -6457,7 +8855,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung"
     }
    ]
   },
@@ -6502,13 +8901,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Informationsplattformen"
     }
    ]
   },
   "65_a": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 3957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/570"
+      },
+      {
+       "label": "BBl 2002 858",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/118"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-01-01",
@@ -6529,8 +8965,44 @@
    ]
   },
   "65_b": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 3957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/570"
+      },
+      {
+       "label": "BBl 2002 858",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/118"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -6551,8 +9023,44 @@
    ]
   },
   "65_c": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 3957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/570"
+      },
+      {
+       "label": "BBl 2002 858",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/118"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -6573,8 +9081,26 @@
    ]
   },
   "66_a": {
-   "giltSeit": "2001-09-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-09-01",
@@ -6597,6 +9123,24 @@
   "66_b": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-09-01",
@@ -6654,6 +9198,24 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 6015",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/869"
+      },
+      {
+       "label": "BBl 2009 5917",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1057"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Militärdienstpflicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -6676,6 +9238,24 @@
    "giltSeit": "2026-06-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Einsatz der Armee"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2026-06-01",
      "wirkung": false,
@@ -6697,6 +9277,24 @@
   "92_a": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/725"
+      },
+      {
+       "label": "BBl 2021 2198",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2198"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Titel: Polizeibefugnisse"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",

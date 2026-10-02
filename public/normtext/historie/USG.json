@@ -650,7 +650,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "3. Kap."
+     "frueher": "3. Kap.",
+     "ueberschrift": "4. Kapitel: Abfälle"
     },
     {
      "typ": "fassung",
@@ -667,7 +668,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "31": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "32": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
     }
    ]
   },
@@ -698,7 +746,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "4. Kap."
+     "frueher": "4. Kap.",
+     "ueberschrift": "5. Kapitel: Belastungen des Bodens"
     },
     {
      "typ": "fassung",
@@ -715,13 +764,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Belastungen des Bodens"
     }
    ]
   },
   "34": {
    "giltSeit": "2010-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Belastungen des Bodens"
+    },
     {
      "typ": "ausdruck",
      "datum": "2010-08-01",
@@ -738,6 +806,29 @@
      ],
      "absatz": "3",
      "item": null
+    }
+   ]
+  },
+  "35": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Belastungen des Bodens"
     }
    ]
   },
@@ -1358,7 +1449,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "1. Abschn."
+     "frueher": "1. Abschn.",
+     "ueberschrift": "1a. Abschnitt: Rechtspflege"
     },
     {
      "typ": "eingefuegt",
@@ -1375,7 +1467,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Rechtspflege"
     }
    ]
   },
@@ -1414,7 +1507,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
     }
    ]
   },
@@ -1470,13 +1564,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+    }
+   ]
+  },
+  "57": {
+   "giltSeit": "2007-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
     }
    ]
   },
   "58": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "1997-07-01",
@@ -1548,7 +1684,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Informations- und Dokumentationssysteme"
     }
    ]
   },
@@ -1936,7 +2073,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "4. Tit."
+     "frueher": "4. Tit.",
+     "ueberschrift": "5. Titel: Strafbestimmungen"
     }
    ]
   },
@@ -2130,7 +2268,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "5. Tit."
+     "frueher": "5. Tit.",
+     "ueberschrift": "6. Titel: Schlussbestimmungen"
     }
    ],
    "aufgehobenSeit": "2008-08-01"
@@ -2175,13 +2314,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umweltverträglichkeitsprüfung"
     }
    ]
   },
   "10_b": {
    "giltSeit": "2014-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umweltverträglichkeitsprüfung"
+    },
     {
      "typ": "fassung",
      "datum": "2014-06-01",
@@ -2198,6 +2356,52 @@
      ],
      "absatz": "2",
      "item": "b"
+    }
+   ]
+  },
+  "10_c": {
+   "giltSeit": "2007-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umweltverträglichkeitsprüfung"
+    }
+   ]
+  },
+  "10_d": {
+   "giltSeit": "2007-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umweltverträglichkeitsprüfung"
     }
    ]
   },
@@ -2219,7 +2423,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Umweltinformationen"
+    }
+   ]
+  },
+  "10_f": {
+   "giltSeit": "2014-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2014-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2014 1021",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2014/234"
+      },
+      {
+       "label": "BBl 2012 4323",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/596"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Umweltinformationen"
+    }
+   ]
+  },
+  "10_g": {
+   "giltSeit": "2014-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2014-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2014 1021",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2014/234"
+      },
+      {
+       "label": "BBl 2012 4323",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/596"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Umweltinformationen"
     }
    ]
   },
@@ -2241,7 +2492,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Schonung der natürlichen Ressourcen und Stärkung der Kreislaufwirtschaft"
     }
    ]
   },
@@ -2263,7 +2515,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
     },
     {
      "typ": "fassung",
@@ -2280,13 +2533,173 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    }
+   ]
+  },
+  "29_b": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    }
+   ]
+  },
+  "29_c": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    }
+   ]
+  },
+  "29_d": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
     }
    ]
   },
   "29_d_bis": {
    "giltSeit": "2010-08-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2010-08-01",
@@ -2303,6 +2716,129 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "29_e": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    }
+   ]
+  },
+  "29_f": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    }
+   ]
+  },
+  "29_g": {
+   "giltSeit": "2004-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 4803",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/705"
+      },
+      {
+       "label": "BBl 2000 2391",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2000/484"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Kapitel: Umgang mit Organismen"
     }
    ]
   },
@@ -2329,9 +2865,96 @@
    ],
    "aufgehobenSeit": "2014-06-01"
   },
+  "30_a": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "30_b": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "30_c": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
   "30_d": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -2351,9 +2974,50 @@
     }
    ]
   },
-  "30_f": {
-   "giltSeit": null,
+  "30_e": {
+   "giltSeit": "1997-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "30_f": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2008-06-01",
@@ -2374,8 +3038,26 @@
    ]
   },
   "30_g": {
-   "giltSeit": null,
+   "giltSeit": "1997-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2008-06-01",
@@ -2395,9 +3077,73 @@
     }
    ]
   },
+  "30_h": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "31_a": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
   "31_b": {
    "giltSeit": "2026-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "fassung",
      "datum": "1997-11-01",
@@ -2434,9 +3180,50 @@
     }
    ]
   },
+  "31_c": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
   "32_a": {
    "giltSeit": "1997-11-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1997-11-01",
@@ -2459,6 +3246,24 @@
   "32_a_bis": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -2572,6 +3377,24 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -2593,6 +3416,24 @@
   "32_a_quater": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -2616,6 +3457,24 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -2637,6 +3496,24 @@
   "32_a_septies": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -2660,6 +3537,24 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -2678,9 +3573,73 @@
     }
    ]
   },
+  "32_a_ter": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
+  "32_b": {
+   "giltSeit": "1997-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    }
+   ]
+  },
   "32_b_bis": {
    "giltSeit": "2006-11-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2006-11-01",
@@ -2703,6 +3662,24 @@
   "32_c": {
    "giltSeit": "2025-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
     {
      "typ": "fassung",
      "datum": "2025-04-01",
@@ -2769,13 +3746,91 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+    }
+   ]
+  },
+  "32_d": {
+   "giltSeit": "2006-11-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2006-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/410"
+      },
+      {
+       "label": "BBl 2003 5008",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2003/773"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
     }
    ]
   },
   "32_d_bis": {
    "giltSeit": "2013-11-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2006-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/410"
+      },
+      {
+       "label": "BBl 2003 5008",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2003/773"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-11-01",
@@ -2798,6 +3853,42 @@
   "32_e": {
    "giltSeit": "2015-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2006-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/410"
+      },
+      {
+       "label": "BBl 2003 5008",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2003/773"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-04-01",
@@ -2872,6 +3963,42 @@
    "giltSeit": "2025-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2006-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/410"
+      },
+      {
+       "label": "BBl 2003 5008",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2003/773"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-04-01",
      "wirkung": false,
@@ -2893,6 +4020,42 @@
   "32_e_ter": {
    "giltSeit": "2025-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Abfälle"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2006-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 2677",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/410"
+      },
+      {
+       "label": "BBl 2003 5008",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2003/773"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-04-01",
@@ -2930,7 +4093,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Lenkungsabgaben"
     }
    ]
   },
@@ -3000,6 +4164,24 @@
   "35_c": {
    "giltSeit": "2025-04-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Kapitel: Lenkungsabgaben"
+    },
     {
      "typ": "fassung",
      "datum": "2025-04-01",
@@ -3088,7 +4270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
     },
     {
      "typ": "fassung",
@@ -3105,7 +4288,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
     },
     {
      "typ": "eingefuegt",
@@ -3122,7 +4306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
     },
     {
      "typ": "fassung",
@@ -3139,7 +4324,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
     },
     {
      "typ": "fassung",
@@ -3156,13 +4342,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Biogene Treib- und Brennstoffe"
     }
    ]
   },
   "35_e": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
@@ -3178,7 +4401,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
     },
     {
      "typ": "fassung",
@@ -3195,7 +4419,239 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    }
+   ]
+  },
+  "35_f": {
+   "giltSeit": "2025-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 614",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/614"
+      },
+      {
+       "label": "BBl 2019 1251",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/275"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    }
+   ]
+  },
+  "35_g": {
+   "giltSeit": "2025-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 614",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/614"
+      },
+      {
+       "label": "BBl 2019 1251",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/275"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    }
+   ]
+  },
+  "35_h": {
+   "giltSeit": "2025-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2022-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 614",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/614"
+      },
+      {
+       "label": "BBl 2019 1251",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2019/275"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
     }
    ]
   },
@@ -3204,6 +4660,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
      "quellen": [
@@ -3217,13 +4691,9 @@
       }
      ],
      "absatz": null,
-     "item": null
-    }
-   ]
-  },
-  "35_j": {
-   "giltSeit": "2025-01-01",
-   "ereignisse": [
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -3239,7 +4709,67 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Ressourcenschonende Gestaltung von Produkten und Verpackungen"
+    }
+   ]
+  },
+  "35_j": {
+   "giltSeit": "2025-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2016-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 2661",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/425"
+      },
+      {
+       "label": "BBl 2013 5737",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1036"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2025-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Ressourcenschonendes Bauen"
     }
    ]
   },
@@ -3278,7 +4808,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zusammenarbeit mit der Wirtschaft"
     }
    ]
   },
@@ -3388,13 +4919,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Elektronische Kommunikation in Verwaltungsverfahren"
     }
    ]
   },
   "55_a": {
    "giltSeit": "2007-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2007-07-01",
@@ -3432,6 +4982,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3439,6 +5007,24 @@
   "55_c": {
    "giltSeit": "2007-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2007-07-01",
@@ -3476,6 +5062,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3483,6 +5087,24 @@
   "55_e": {
    "giltSeit": "2007-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2007-07-01",
@@ -3520,13 +5142,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verbandsbeschwerde gegen Bewilligungen von Organismen"
     }
    ]
   },
   "58_a": {
-   "giltSeit": "1997-07-01",
+   "giltSeit": "2007-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2701",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/357"
+      },
+      {
+       "label": "BBl 2005 5351",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -3641,13 +5282,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Titel: Haftpflicht"
     }
    ]
   },
   "59_a_bis": {
    "giltSeit": "2010-08-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Haftpflicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-01-01",
@@ -3688,6 +5348,24 @@
    "giltSeit": "2004-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Haftpflicht"
+    },
+    {
      "typ": "fassung",
      "datum": "2004-01-01",
      "wirkung": false,
@@ -3711,6 +5389,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Haftpflicht"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2004-01-01",
      "wirkung": false,
      "quellen": [
@@ -3731,6 +5427,24 @@
   "59_d": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1997-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1997 1155",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+      },
+      {
+       "label": "BBl 1993 II 1445",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Titel: Haftpflicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-01-01",

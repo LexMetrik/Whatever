@@ -972,13 +972,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
     }
    ]
   },
   "21": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 4417",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/758"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1037,6 +1056,29 @@
     }
    ],
    "aufgehobenSeit": "2020-01-01"
+  },
+  "23": {
+   "giltSeit": "2020-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2020-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 4417",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/758"
+      },
+      {
+       "label": "BBl 2015 8901",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
+    }
+   ]
   },
   "24": {
    "giltSeit": null,
@@ -1313,13 +1355,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
     }
    ]
   },
   "47": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": "2015-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1389",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+      },
+      {
+       "label": "BBl 2014 605",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
+    },
     {
      "typ": "fassung",
      "datum": "2009-01-01",
@@ -1336,6 +1397,52 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "48": {
+   "giltSeit": "2015-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1389",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+      },
+      {
+       "label": "BBl 2014 605",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
+    }
+   ]
+  },
+  "49": {
+   "giltSeit": "2015-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2015-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 1389",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+      },
+      {
+       "label": "BBl 2014 605",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
     }
    ]
   },
@@ -2544,7 +2651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Prüfung und Aufsicht"
     }
    ]
   },
@@ -3535,7 +3643,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Titel: Schlussbestimmungen"
     },
     {
      "typ": "eingefuegt",
@@ -3552,13 +3661,73 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Vollzug; Aufhebung und Änderung bisherigen Rechts"
+    }
+   ]
+  },
+  "153": {
+   "giltSeit": "2013-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2013-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 585",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+      },
+      {
+       "label": "BBl 2012 3639",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/495"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Titel: Schlussbestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2013-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 585",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+      },
+      {
+       "label": "BBl 2012 3639",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/495"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Vollzug; Aufhebung und Änderung bisherigen Rechts"
     }
    ]
   },
   "159": {
    "giltSeit": "2013-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2013-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 585",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+      },
+      {
+       "label": "BBl 2012 3639",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2012/495"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Titel: Schlussbestimmungen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2013-03-01",
@@ -3591,7 +3760,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Referendum und Inkrafttreten"
     }
    ]
   },
@@ -3635,7 +3805,353 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_b": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_c": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_d": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_e": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_f": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_g": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_h": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_i": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_j": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_k": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_l": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_m": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_n": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_o": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+    }
+   ]
+  },
+  "118_p": {
+   "giltSeit": "2024-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 53",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+      },
+      {
+       "label": "BBl 2020 6885",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
     }
    ]
   },

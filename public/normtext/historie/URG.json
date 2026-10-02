@@ -1123,7 +1123,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Beschwerde an das Bundesverwaltungsgericht"
     }
    ]
   },
@@ -1162,13 +1163,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
    ]
   },
   "76": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "fassung",
      "datum": "2025-07-01",
@@ -1191,6 +1211,24 @@
   "77": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "fassung",
      "datum": "2025-07-01",
@@ -1526,7 +1564,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Titel: Schutz von technischen Massnahmen und von Informationen für die Wahrnehmung von Rechten"
+    }
+   ]
+  },
+  "39_b": {
+   "giltSeit": "2008-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2497",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/357"
+      },
+      {
+       "label": "BBl 2006 3389",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/359"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Schutz von technischen Massnahmen und von Informationen für die Wahrnehmung von Rechten"
+    }
+   ]
+  },
+  "39_c": {
+   "giltSeit": "2008-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 2497",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/357"
+      },
+      {
+       "label": "BBl 2006 3389",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/359"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Titel: Schutz von technischen Massnahmen und von Informationen für die Wahrnehmung von Rechten"
     }
    ]
   },
@@ -1548,7 +1633,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3b. Titel: Pflicht der Betreiber von Internet-Hosting-Diensten, die von Benützern und Benützerinnen eingegebene Informationen speichern"
     }
    ]
   },
@@ -1570,7 +1656,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Erweiterte Kollektivlizenzen"
     }
    ]
   },
@@ -1619,8 +1706,26 @@
    ]
   },
   "77_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1654,8 +1759,26 @@
    ]
   },
   "77_b": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1678,6 +1801,24 @@
   "77_c": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1749,8 +1890,26 @@
    ]
   },
   "77_d": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1771,8 +1930,26 @@
    ]
   },
   "77_e": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1793,8 +1970,26 @@
    ]
   },
   "77_f": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1815,8 +2010,26 @@
    ]
   },
   "77_g": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1837,8 +2050,26 @@
    ]
   },
   "77_h": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -1861,6 +2092,24 @@
   "77_h_bis": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2025-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2025 313",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+      },
+      {
+       "label": "BBl 2023 1184",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-07-01",
@@ -1898,7 +2147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Titel: Bearbeitung von Personendaten zum Zweck der Strafantragsstellung oder der Strafanzeigeerstattung"
     }
    ]
   },

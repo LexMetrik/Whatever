@@ -42,13 +42,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
     }
    ]
   },
   "2": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -744,13 +763,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Prüfung"
     }
    ]
   },
   "28": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5207 5205",
+       "url": ""
+      },
+      {
+       "label": "BBl 2006 2829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Prüfung"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -809,6 +847,29 @@
     }
    ],
    "aufgehobenSeit": "2015-01-01"
+  },
+  "30": {
+   "giltSeit": "2009-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5207 5205",
+       "url": ""
+      },
+      {
+       "label": "BBl 2006 2829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Prüfung"
+    }
+   ]
   },
   "31": {
    "giltSeit": "2016-01-01",
@@ -938,7 +999,123 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "41": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "42": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "43": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "44": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "45": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
     }
    ]
   },
@@ -1220,13 +1397,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
     }
    ]
   },
   "52": {
-   "giltSeit": "2011-09-01",
+   "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -1281,13 +1477,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
     }
    ]
   },
   "54": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -1359,7 +1574,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
+    }
+   ]
+  },
+  "58": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
+    }
+   ]
+  },
+  "59": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
     }
    ]
   },
@@ -1618,13 +1880,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen"
     }
    ]
   },
   "81": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1679,13 +1960,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Tarifverfügungen und Gerichte"
     }
    ]
   },
   "85": {
-   "giltSeit": null,
+   "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Tarifverfügungen und Gerichte"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1889,6 +2189,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -1896,6 +2214,24 @@
   "2_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -1933,7 +2269,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Pflichten für von der Aufsicht ausgenommene Unternehmen und Personen"
     }
    ]
   },
@@ -1955,7 +2292,77 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+    }
+   ]
+  },
+  "30_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+    }
+   ]
+  },
+  "30_c": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+    }
+   ]
+  },
+  "30_d": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
     }
    ]
   },
@@ -1977,7 +2384,31 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5b. Abschnitt: Versicherungszweckgesellschaften"
+    }
+   ]
+  },
+  "30_f": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5b. Abschnitt: Versicherungszweckgesellschaften"
     }
    ]
   },
@@ -2038,13 +2469,308 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_c": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_d": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_e": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_f": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_g": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_h": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_i": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_j": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "39_k": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+    }
+   ]
+  },
+  "45_a": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+    }
+   ]
+  },
+  "45_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
     }
    ]
   },
   "51_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -2067,6 +2793,24 @@
   "51_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -2104,13 +2848,308 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_c": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_d": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_e": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_f": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_g": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_h": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_i": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_j": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_k": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_l": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
+    }
+   ]
+  },
+  "52_m": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Sanierung"
     }
    ]
   },
   "54_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2165,6 +3204,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2187,6 +3244,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2194,6 +3269,24 @@
   "54_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2248,6 +3341,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2255,6 +3366,24 @@
   "54_c": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Versicherungskonkurs"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-09-01",
@@ -2360,13 +3489,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
     }
    ]
   },
   "54_e": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2421,6 +3569,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2428,6 +3594,24 @@
   "54_g": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -2465,6 +3649,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2487,6 +3689,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -2494,6 +3714,24 @@
   "54_j": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 355",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/355"
+      },
+      {
+       "label": "BBl 2020 8967",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2421"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2c. Abschnitt: Verfahren"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",

@@ -793,7 +793,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
     }
    ]
   },
@@ -832,7 +833,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
     }
    ]
   },
@@ -1016,7 +1018,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 25"
+     "frueher": "vor Art. 25",
+     "ueberschrift": "3. Abschnitt: Das erstinstanzliche Verfahren"
     }
    ]
   },
@@ -1548,13 +1551,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
     }
    ]
   },
   "45": {
    "giltSeit": "2022-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1715,6 +1737,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2004-04-01",
      "wirkung": false,
      "quellen": [
@@ -1822,6 +1862,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2025-04-01",
      "wirkung": false,
      "quellen": [
@@ -1836,6 +1894,29 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "48": {
+   "giltSeit": "2008-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
     }
    ]
   },
@@ -2695,7 +2776,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
     },
     {
      "typ": "fassung",
@@ -2712,13 +2794,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
     }
    ]
   },
   "81": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -2741,6 +2860,42 @@
   "82": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -2863,8 +3018,44 @@
    ]
   },
   "83": {
-   "giltSeit": "2014-02-01",
+   "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "ausdruck",
      "datum": "2008-01-01",
@@ -3004,8 +3195,44 @@
    ]
   },
   "84": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -3028,6 +3255,24 @@
   "85": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -3060,7 +3305,90 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
+    }
+   ]
+  },
+  "86": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 6521",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
+      },
+      {
+       "label": "BBl 2016 2821",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/524"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
+    }
+   ]
+  },
+  "87": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 6521",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
+      },
+      {
+       "label": "BBl 2016 2821",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2016/524"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
     }
    ]
   },
@@ -3526,13 +3854,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
     }
    ]
   },
   "97": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2008-12-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -3590,6 +3937,24 @@
    "giltSeit": "2023-09-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
@@ -3628,6 +3993,24 @@
   "99": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -3835,7 +4218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Andere Informationssysteme"
     }
    ]
   },
@@ -3865,6 +4249,24 @@
   "102": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5755",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/813"
+      },
+      {
+       "label": "BBl 2009 8881",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Andere Informationssysteme"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -3922,6 +4324,24 @@
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -3936,7 +4356,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1c. Abschnitt: Beschwerdeverfahren auf Kantonsebene"
     }
    ]
   },
@@ -3964,8 +4385,26 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "105": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -3988,6 +4427,24 @@
   "106": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -4046,6 +4503,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
      "datum": "2008-01-01",
      "wirkung": false,
      "quellen": [
@@ -4083,6 +4558,24 @@
   "108": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2019-03-01",
@@ -4137,6 +4630,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -4161,6 +4672,24 @@
   "110": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2019-03-01",
@@ -4215,8 +4744,26 @@
    ]
   },
   "111": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -4311,13 +4858,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Internationale Zusammenarbeit"
     }
    ]
   },
   "114": {
    "giltSeit": "2020-11-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2014-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+      },
+      {
+       "label": "BBl 2010 4455",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/794"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "9. Kapitel: Internationale Zusammenarbeit"
+    },
     {
      "typ": "fassung",
      "datum": "2020-11-01",
@@ -4448,7 +5014,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Kapitel: Strafbestimmungen"
     },
     {
      "typ": "eingefuegt",
@@ -4465,13 +5032,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
     }
    ]
   },
   "116": {
    "giltSeit": "2014-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Strafbestimmungen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -4535,6 +5139,24 @@
    "giltSeit": "2008-12-12",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Strafbestimmungen"
+    },
+    {
      "typ": "aufgehoben",
      "datum": "2008-12-12",
      "wirkung": true,
@@ -4566,13 +5188,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Strafverfolgung"
     }
    ]
   },
   "102_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5755",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/813"
+      },
+      {
+       "label": "BBl 2009 8881",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Andere Informationssysteme"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -4627,13 +5268,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
     }
    ]
   },
   "102_a_quater": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-12",
@@ -4658,6 +5318,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -4678,6 +5356,24 @@
   "102_a_ter": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4718,6 +5414,24 @@
    "giltSeit": "2026-06-12",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
+    {
      "typ": "fassung",
      "datum": "2026-06-12",
      "wirkung": false,
@@ -4739,6 +5453,24 @@
   "102_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -4848,6 +5580,24 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -4868,6 +5618,24 @@
   "102_d": {
    "giltSeit": "2022-11-22",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
     {
      "typ": "fassung",
      "datum": "2022-11-22",
@@ -4890,6 +5658,24 @@
   "102_e": {
    "giltSeit": "2010-12-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+    },
     {
      "typ": "fassung",
      "datum": "2010-12-01",
@@ -4944,7 +5730,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Videoüberwachung"
     }
    ]
   },
@@ -4958,7 +5745,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Vor Art. 103"
+     "frueher": "Vor Art. 103",
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
     },
     {
      "typ": "fassung",
@@ -4975,7 +5763,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
     },
     {
      "typ": "fassung",
@@ -4992,13 +5781,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
     }
    ]
   },
   "102_g": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": null,
@@ -5065,6 +5891,42 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -5082,9 +5944,86 @@
     }
    ]
   },
+  "102_i": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+    }
+   ]
+  },
   "102_j": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -5107,6 +6046,42 @@
   "102_k": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -5164,6 +6139,24 @@
    "giltSeit": "2022-09-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2022-09-01",
      "wirkung": false,
@@ -5212,13 +6205,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Beratung und Rechtsvertretung im erweiterten Verfahren nach Zuweisung auf die Kantone"
     }
    ]
   },
   "102_m": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -5234,13 +6246,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Unentgeltliche Rechtspflege"
     }
    ]
   },
   "107_a": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5346,8 +6377,26 @@
    ]
   },
   "108_a": {
-   "giltSeit": "2011-04-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5385,8 +6434,26 @@
    ]
   },
   "109_a": {
-   "giltSeit": "2014-02-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -5407,8 +6474,26 @@
    ]
   },
   "109_b": {
-   "giltSeit": "2014-02-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -5469,8 +6554,26 @@
    "aufgehobenSeit": "2019-03-01"
   },
   "111_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -5511,6 +6614,24 @@
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -5533,6 +6654,24 @@
    "giltSeit": "2026-06-12",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
@@ -5547,13 +6686,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Unabhängiger Überwachungsmechanismus im Rahmen der Überprüfung"
     }
    ]
   },
   "111_a_ter": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -5576,6 +6734,24 @@
   "111_b": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -5625,13 +6801,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
     }
    ]
   },
   "111_c": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2014-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+      },
+      {
+       "label": "BBl 2010 4455",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/794"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -5669,8 +6882,44 @@
    ]
   },
   "111_d": {
-   "giltSeit": "2014-02-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2014-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2013 4375",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+      },
+      {
+       "label": "BBl 2010 4455",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/794"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2014-02-01",
@@ -5691,8 +6940,26 @@
    ]
   },
   "112_a": {
-   "giltSeit": "2014-02-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+    },
     {
      "typ": "fassung",
      "datum": "2014-02-01",
@@ -5725,7 +6992,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Hinderung und Stillstand der Verjährung"
     }
    ]
   },
@@ -5772,7 +7040,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8a. Kapitel: Asylverfahren im Rahmen von Testphasen"
     }
    ]
   },
@@ -5820,6 +7089,24 @@
    "giltSeit": "2008-12-12",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "10. Kapitel: Strafbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2008-12-12",
      "wirkung": false,
@@ -5834,7 +7121,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Strafbestimmungen zum 7. Kapitel 2. Abschnitt"
     }
    ]
   },
@@ -5962,6 +7250,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -6007,8 +7313,26 @@
    "aufgehobenSeit": "2026-06-01"
   },
   "24_c": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -6031,6 +7355,24 @@
   "24_d": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -6085,6 +7427,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Zentren des Bundes"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -6092,6 +7452,24 @@
   "25_a": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 192",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+      },
+      {
+       "label": "BBl 2024 1107",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1107"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6146,6 +7524,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 192",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+      },
+      {
+       "label": "BBl 2024 1107",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1107"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -6153,6 +7549,24 @@
   "25_c": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 192",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+      },
+      {
+       "label": "BBl 2024 1107",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1107"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-01",
@@ -6190,6 +7604,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 192",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+      },
+      {
+       "label": "BBl 2024 1107",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1107"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -6197,6 +7629,24 @@
   "25_e": {
    "giltSeit": "2026-06-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 192",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+      },
+      {
+       "label": "BBl 2024 1107",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1107"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-01",
@@ -6667,6 +8117,24 @@
    "giltSeit": "2022-11-22",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2022-11-22",
      "wirkung": false,
@@ -6836,6 +8304,42 @@
    "giltSeit": "2016-10-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
      "wirkung": false,
@@ -6855,8 +8359,44 @@
    ]
   },
   "82_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -6877,8 +8417,44 @@
    ]
   },
   "83_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 4745",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/727"
+      },
+      {
+       "label": "BBl 2002 6845",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1106"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Kapitel: Sozialhilfe und Nothilfe"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2016-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -7090,13 +8666,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
     }
    ]
   },
   "95_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -7133,9 +8728,73 @@
     }
    ]
   },
-  "95_e": {
-   "giltSeit": null,
+  "95_c": {
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    }
+   ]
+  },
+  "95_d": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    }
+   ]
+  },
+  "95_e": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2021-01-01",
@@ -7182,6 +8841,24 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    },
+    {
      "typ": "fassung",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -7217,9 +8894,96 @@
     }
    ]
   },
+  "95_h": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    }
+   ]
+  },
+  "95_i": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    }
+   ]
+  },
+  "95_j": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    }
+   ]
+  },
   "95_k": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -7269,13 +9033,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+    }
+   ]
+  },
+  "95_l": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
     }
    ]
   },
   "98_a": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2008-12-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -7298,6 +9104,24 @@
   "98_b": {
    "giltSeit": "2008-12-12",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-12-12",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 447 5405",
+       "url": ""
+      },
+      {
+       "label": "BBl 2004 5965",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Grundsätze"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -7420,7 +9244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
     },
     {
      "typ": "fassung",
@@ -7437,13 +9262,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
     }
    ]
   },
   "99_b": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5755",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/813"
+      },
+      {
+       "label": "BBl 2009 8881",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -7460,6 +9322,88 @@
      ],
      "absatz": null,
      "item": "d"
+    }
+   ]
+  },
+  "99_c": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5755",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/813"
+      },
+      {
+       "label": "BBl 2009 8881",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    }
+   ]
+  },
+  "99_d": {
+   "giltSeit": "2019-03-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 5755",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/813"
+      },
+      {
+       "label": "BBl 2009 8881",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2016 3101",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+      },
+      {
+       "label": "BBl 2014 7991",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
     }
    ]
   }

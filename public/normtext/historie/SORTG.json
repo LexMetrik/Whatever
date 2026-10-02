@@ -42,7 +42,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -108,7 +109,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
     },
     {
      "typ": "urspruenglich",
@@ -117,7 +119,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "2. Abschn. des 1. Kap."
+     "frueher": "2. Abschn. des 1. Kap.",
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
     },
     {
      "typ": "fassung",
@@ -134,13 +137,155 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
+    }
+   ]
+  },
+  "6": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
+    }
+   ]
+  },
+  "7": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
+    }
+   ]
+  },
+  "8": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
     }
    ]
   },
   "9": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -160,9 +305,50 @@
     }
    ]
   },
+  "10": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    }
+   ]
+  },
   "11": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -186,6 +372,24 @@
    "giltSeit": "2008-09-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
      "typ": "fassung",
      "datum": "2008-09-01",
      "wirkung": false,
@@ -200,13 +404,73 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
+    }
+   ]
+  },
+  "13": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
     }
    ]
   },
   "14": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -230,6 +494,24 @@
    "giltSeit": "2008-09-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
      "typ": "fassung",
      "datum": "2008-09-01",
      "wirkung": false,
@@ -251,6 +533,24 @@
   "16": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -291,6 +591,24 @@
    "giltSeit": "2008-09-01",
    "ereignisse": [
     {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
      "typ": "fassung",
      "datum": "2008-09-01",
      "wirkung": false,
@@ -309,9 +627,96 @@
     }
    ]
   },
+  "18": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    }
+   ]
+  },
+  "19": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    }
+   ]
+  },
+  "20": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    }
+   ]
+  },
   "21": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -334,6 +739,24 @@
   "22": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -438,13 +861,78 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+    }
+   ]
+  },
+  "27": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+    }
+   ]
+  },
+  "28": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
     }
    ]
   },
   "29": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+    },
     {
      "typ": "fassung",
      "datum": "2008-09-01",
@@ -482,7 +970,48 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "31": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
     }
    ]
   },
@@ -538,7 +1067,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -622,7 +1152,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -738,9 +1269,109 @@
    ],
    "aufgehobenSeit": "2008-09-01"
   },
+  "13_a": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
+    }
+   ]
+  },
+  "13_b": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
+    }
+   ]
+  },
   "22_a": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-09-01",
@@ -778,6 +1409,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -785,6 +1434,24 @@
   "31_a": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-09-01",
@@ -827,6 +1494,47 @@
    ],
    "aufgehobenSeit": "2011-01-01"
   },
+  "8_a": {
+   "giltSeit": "2008-09-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
+    }
+   ]
+  },
   "8_b": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
@@ -845,7 +1553,26 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2008-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 3897",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+      },
+      {
+       "label": "BBl 2004 4155",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Schutzfähige Sorten"
     }
    ]
   }

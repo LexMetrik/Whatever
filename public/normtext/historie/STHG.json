@@ -2380,13 +2380,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
     }
    ]
   },
   "36": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -2480,7 +2499,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
     }
    ]
   },
@@ -2804,13 +2824,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
     }
    ]
   },
   "56": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
     {
      "typ": "fassung",
      "datum": "2010-01-01",
@@ -2919,6 +2958,24 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
+    {
      "typ": "aufgehoben",
      "datum": "2005-03-01",
      "wirkung": true,
@@ -2959,6 +3016,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
+    {
+     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -2979,6 +3054,24 @@
   "59": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -3037,6 +3130,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
+    {
+     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -3057,6 +3168,24 @@
   "61": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -3510,6 +3639,24 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -3531,6 +3678,24 @@
   "35_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -3554,6 +3719,24 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -3569,6 +3752,29 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "38_a": {
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2018 1813",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+      },
+      {
+       "label": "BBl 2015 657",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
     }
    ]
   },
@@ -3703,6 +3909,24 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -3725,6 +3949,24 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2010-01-01",
      "wirkung": false,
@@ -3746,6 +3988,24 @@
   "57_bis": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      },
+      {
+       "label": "BBl 1999 1979",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Titel: Steuerstrafrecht"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,

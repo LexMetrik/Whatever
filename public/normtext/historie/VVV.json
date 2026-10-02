@@ -78,13 +78,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
     }
    ]
   },
   "4": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -103,6 +118,20 @@
   "5": {
    "giltSeit": "2007-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2005-03-01",
@@ -175,6 +204,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2007-02-01",
      "wirkung": false,
      "quellen": [
@@ -204,6 +247,20 @@
   "7": {
    "giltSeit": "2008-12-05",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "2007-02-01",
@@ -237,6 +294,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -253,6 +324,20 @@
   "9": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
     {
      "typ": "fassung",
      "datum": "1968-01-01",
@@ -355,13 +440,42 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
     }
    ]
   },
   "10": {
    "giltSeit": "2007-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 649",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/57"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+    },
     {
      "typ": "fassung",
      "datum": "2007-02-01",
@@ -1157,13 +1271,85 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+    }
+   ]
+  },
+  "35": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+    }
+   ]
+  },
+  "37": {
+   "giltSeit": "2012-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
     }
    ]
   },
   "38": {
    "giltSeit": "2015-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+    },
     {
      "typ": "ausdruck",
      "datum": "2015-06-01",
@@ -1175,7 +1361,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle"
     }
    ]
   },
@@ -1232,7 +1419,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
     },
     {
      "typ": "fassung",
@@ -1245,7 +1433,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
     },
     {
      "typ": "fassung",
@@ -1258,7 +1447,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
     },
     {
      "typ": "fassung",
@@ -1271,13 +1461,70 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
     }
    ]
   },
   "40": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1311,6 +1558,62 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-02-01",
      "wirkung": false,
      "quellen": [
@@ -1327,6 +1630,62 @@
   "42": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1360,6 +1719,62 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-02-01",
      "wirkung": false,
      "quellen": [
@@ -1373,9 +1788,126 @@
     }
    ]
   },
+  "44": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    }
+   ]
+  },
   "45": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1391,9 +1923,126 @@
     }
    ]
   },
+  "46": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    }
+   ]
+  },
   "47": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1414,6 +2063,62 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-02-01",
      "wirkung": false,
      "quellen": [
@@ -1424,6 +2129,67 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "49": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "I. Ausländische Motorfahrzeuge und Anhänger"
     }
    ]
   },
@@ -1454,7 +2220,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
     },
     {
      "typ": "eingefuegt",
@@ -1467,7 +2234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. …"
     },
     {
      "typ": "aufgehoben",
@@ -1480,7 +2248,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. …"
     }
    ],
    "aufgehobenSeit": "2012-01-01"
@@ -1507,6 +2276,48 @@
   "52": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1596,7 +2407,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
     },
     {
      "typ": "fassung",
@@ -1609,13 +2421,84 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
     }
    ]
   },
   "53": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1649,6 +2532,76 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-02-01",
      "wirkung": false,
      "quellen": [
@@ -1680,6 +2633,34 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
      "datum": "2003-02-01",
      "wirkung": false,
      "quellen": [
@@ -1702,13 +2683,56 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
     }
    ]
   },
   "56": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+    },
     {
      "typ": "fassung",
      "datum": "2003-02-01",
@@ -1748,6 +2772,48 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+    },
+    {
+     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -1764,6 +2830,48 @@
   "59": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -1880,7 +2988,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "7. Teil"
+     "frueher": "7. Teil",
+     "ueberschrift": "5. Teil: Strafbestimmungen"
     }
    ]
   },
@@ -1907,7 +3016,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "8. Teil"
+     "frueher": "8. Teil",
+     "ueberschrift": "6. Teil: Schlussbestimmungen"
     },
     {
      "typ": "fassung",
@@ -1920,7 +3030,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Teil: Schlussbestimmungen"
     },
     {
      "typ": "fassung",
@@ -1933,7 +3044,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Inkrafttreten"
     }
    ]
   },
@@ -1989,8 +3101,36 @@
    "aufgehobenSeit": "2007-02-01"
   },
   "10_a": {
-   "giltSeit": "2001-06-01",
+   "giltSeit": "2004-03-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 649",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/57"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2001-06-01",
@@ -2009,6 +3149,34 @@
   "10_b": {
    "giltSeit": "2024-05-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2004-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 649",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/57"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2004-03-01",
@@ -2103,6 +3271,20 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
+    {
      "typ": "urspruenglich",
      "datum": null,
      "wirkung": false,
@@ -2157,6 +3339,48 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
      "quellen": [
@@ -2192,13 +3416,267 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Auskunftsstelle"
+    }
+   ]
+  },
+  "49_b": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Auskunftsstelle"
+    }
+   ]
+  },
+  "49_c": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Auskunftsstelle"
+    }
+   ]
+  },
+  "49_d": {
+   "giltSeit": "2003-02-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Nationales Versicherungsbüro"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Auskunftsstelle"
     }
    ]
   },
   "53_a": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
@@ -2215,8 +3693,50 @@
    ]
   },
   "54_a": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2003-02-01",
@@ -2228,13 +3748,56 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Entschädigungsstelle"
     }
    ]
   },
   "54_a_bis": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2246,7 +3809,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
     },
     {
      "typ": "fassung",
@@ -2259,13 +3823,206 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
+    }
+   ]
+  },
+  "54_b": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 356",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
+    }
+   ]
+  },
+  "54_b_bis": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 356",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "IV. Sanierung und Konkurs des Versicherers"
     }
    ]
   },
   "54_c": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2012-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 4933",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/713"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Nationaler Garantiefonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
@@ -2277,13 +4034,56 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "V. Ausländische radsportliche Veranstaltungen"
     }
    ]
   },
   "59_a": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -2321,6 +4121,48 @@
   "59_c": {
    "giltSeit": "2003-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1996-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 5465",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 136",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/15"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2003-02-01",
@@ -2378,6 +4220,20 @@
    "giltSeit": "2007-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2007 2107",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2007/299"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Teil: Schlussbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2427,7 +4283,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Ausnahmen, Weisungen"
     }
    ]
   },
@@ -2466,6 +4323,20 @@
   "7_a": {
    "giltSeit": "2007-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1976-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1975 1857",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",

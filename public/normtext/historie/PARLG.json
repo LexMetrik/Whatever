@@ -893,14 +893,33 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Berichterstattung im Rat"
     }
    ],
    "aufgehobenSeit": "2009-03-02"
   },
   "55": {
-   "giltSeit": null,
+   "giltSeit": "2009-03-02",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Berichterstattung im Rat"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2009-03-02",
@@ -2122,13 +2141,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Petitionen"
     }
    ]
   },
   "127": {
    "giltSeit": "2009-03-02",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Petitionen"
+    },
     {
      "typ": "fassung",
      "datum": "2009-03-02",
@@ -2151,6 +2189,24 @@
   "128": {
    "giltSeit": "2009-03-02",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Petitionen"
+    },
     {
      "typ": "fassung",
      "datum": "2009-03-02",
@@ -2188,7 +2244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Eingaben"
     }
    ]
   },
@@ -2210,7 +2267,54 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "131": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "132": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
     }
    ]
   },
@@ -2231,8 +2335,187 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
       }
      ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "134": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "135": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "136": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "137": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "138": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "139": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    }
+   ]
+  },
+  "140": {
+   "giltSeit": "2009-03-02",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
     }
    ]
   },
@@ -2863,7 +3146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Titel: Verkehr zwischen der Bundesversammlung und den eidgenössischen Gerichten sowie der Aufsichtsbehörde über die Bundesanwaltschaft"
     }
    ]
   },
@@ -3046,13 +3330,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Verfahren bei Einsprachen gegen Verträge der Kantone unter sich oder mit dem Ausland"
     }
    ]
   },
   "140_a": {
    "giltSeit": "2009-03-02",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-03-02",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+      },
+      {
+       "label": "BBl 2008 1869",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2009-03-02",
@@ -3068,7 +3371,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Feststellung der Amtsunfähigkeit von Mitgliedern des Bundesrates sowie der Bundeskanzlerin oder des Bundeskanzlers"
     }
    ]
   },
@@ -3134,7 +3438,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Haftung für Schäden"
     }
    ]
   },

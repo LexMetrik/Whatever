@@ -2207,7 +2207,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
     }
    ]
   },
@@ -4405,13 +4406,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
     }
    ]
   },
   "87": {
    "giltSeit": "2019-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/42"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+    },
     {
      "typ": "fassung",
      "datum": "2019-02-01",
@@ -4558,6 +4574,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/42"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -4589,13 +4619,41 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2019-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/42"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
   },
   "90": {
-   "giltSeit": "2006-03-01",
+   "giltSeit": "2019-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2019-02-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2019 243",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2019/42"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+    },
     {
      "typ": "fassung",
      "datum": "1982-05-01",
@@ -5444,6 +5502,20 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2002-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 1931",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/288"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -5488,13 +5560,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
     }
    ]
   },
   "59_b": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1986-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1985 1841",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1985/1841_1841_1841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -5513,6 +5600,20 @@
   "59_c": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "1986-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1985 1841",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1985/1841_1841_1841"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",

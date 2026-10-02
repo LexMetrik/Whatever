@@ -307,7 +307,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
     }
    ]
   },
@@ -346,7 +347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
     }
    ]
   },
@@ -391,7 +393,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Rechnungslegung"
     }
    ]
   },
@@ -413,7 +416,77 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfter Abschnitt: Systemrelevante Banken"
+    }
+   ]
+  },
+  "8": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Abschnitt: Systemrelevante Banken"
+    }
+   ]
+  },
+  "9": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Abschnitt: Systemrelevante Banken"
+    }
+   ]
+  },
+  "10": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Abschnitt: Systemrelevante Banken"
     }
    ]
   },
@@ -469,13 +542,78 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Zusätzliches Kapital"
+    }
+   ]
+  },
+  "12": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Zusätzliches Kapital"
+    }
+   ]
+  },
+  "13": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Zusätzliches Kapital"
     }
    ]
   },
   "14": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Zusätzliches Kapital"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -547,13 +685,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Abschnitt: Spareinlagen und Depotwerte"
     }
    ]
   },
   "16": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1997-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1995 1227",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+      },
+      {
+       "label": "BBl 1991 III 1",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Abschnitt: Spareinlagen und Depotwerte"
+    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -665,7 +822,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Neunter Abschnitt: Überwachung und Prüfung"
     }
    ]
   },
@@ -704,7 +862,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zehnter Abschnitt: Aufsicht"
     }
    ]
   },
@@ -800,13 +959,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
     }
    ]
   },
   "26": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "fassung",
      "datum": "2009-01-01",
@@ -865,6 +1043,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -919,6 +1115,24 @@
   "28": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -977,6 +1191,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
+     "typ": "fassung",
      "datum": "2011-09-01",
      "wirkung": false,
      "quellen": [
@@ -997,6 +1229,24 @@
   "30": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -1055,6 +1305,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -1075,6 +1343,24 @@
   "32": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2012-03-01",
@@ -1189,7 +1475,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 29"
+     "frueher": "vor Art. 29",
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
     },
     {
      "typ": "fassung",
@@ -1206,13 +1493,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
     }
    ]
   },
   "34": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1254,6 +1560,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
+    {
+     "typ": "fassung",
      "datum": "2011-09-01",
      "wirkung": false,
      "quellen": [
@@ -1271,9 +1595,50 @@
     }
    ]
   },
+  "36": {
+   "giltSeit": "2004-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    }
+   ]
+  },
   "37": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1664,9 +2029,50 @@
    ],
    "aufgehobenSeit": "1971-07-01"
   },
+  "10_a": {
+   "giltSeit": "2012-03-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Fünfter Abschnitt: Systemrelevante Banken"
+    }
+   ]
+  },
   "14_a": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2012-03-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 811",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+      },
+      {
+       "label": "BBl 2011 4717",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2011/762"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Zusätzliches Kapital"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -1888,6 +2294,24 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5207 5205",
+       "url": ""
+      },
+      {
+       "label": "BBl 2006 2829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zehnter Abschnitt: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2006,6 +2430,24 @@
   "23_quinquies": {
    "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5207 5205",
+       "url": ""
+      },
+      {
+       "label": "BBl 2006 2829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zehnter Abschnitt: Aufsicht"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2126,6 +2568,24 @@
    "giltSeit": "2009-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2009-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2008 5207 5205",
+       "url": ""
+      },
+      {
+       "label": "BBl 2006 2829",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zehnter Abschnitt: Aufsicht"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2164,6 +2624,24 @@
   "28_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -2226,6 +2704,24 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -2247,6 +2743,24 @@
   "30_b": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -2270,6 +2784,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -2291,6 +2823,24 @@
   "31_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-09-01",
@@ -2348,6 +2898,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2387,6 +2955,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -2409,6 +2995,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -2430,6 +3034,24 @@
   "37_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -2488,6 +3110,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -2533,6 +3173,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-08-01",
      "wirkung": false,
      "quellen": [
@@ -2553,6 +3211,24 @@
   "37_e": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -2589,9 +3265,50 @@
     }
    ]
   },
+  "37_f": {
+   "giltSeit": "2004-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    }
+   ]
+  },
   "37_g": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -2663,7 +3380,77 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+    }
+   ]
+  },
+  "37_g_quater": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 732",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+      },
+      {
+       "label": "BBl 2020 6359",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+    }
+   ]
+  },
+  "37_g_quinquies": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 732",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+      },
+      {
+       "label": "BBl 2020 6359",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+    }
+   ]
+  },
+  "37_g_ter": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2022 732",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+      },
+      {
+       "label": "BBl 2020 6359",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1555"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
     }
    ]
   },
@@ -2694,7 +3481,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "vor Art. 36"
+     "frueher": "vor Art. 36",
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
     },
     {
      "typ": "fassung",
@@ -2711,13 +3499,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
     }
    ]
   },
   "37_i": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
+    },
     {
      "typ": "fassung",
      "datum": "2011-09-01",
@@ -2775,6 +3582,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2814,6 +3639,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -2835,6 +3678,24 @@
   "37_k": {
    "giltSeit": "2011-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2004-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2004 2767",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+      },
+      {
+       "label": "BBl 2002 8060",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-09-01",
@@ -2889,13 +3750,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte"
     }
    ]
   },
   "37_m": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2011-09-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 3919",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/559"
+      },
+      {
+       "label": "BBl 2010 3993",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -2918,6 +3798,24 @@
   "3_a": {
    "giltSeit": "1999-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2958,6 +3856,24 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -2979,6 +3895,24 @@
   "3_bis": {
    "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1971-07-01",
@@ -3104,6 +4038,24 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -3142,6 +4094,24 @@
   "3_d": {
    "giltSeit": "2009-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
@@ -3182,6 +4152,24 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -3204,6 +4192,24 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -3225,6 +4231,24 @@
   "3_g": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
@@ -3322,6 +4346,24 @@
    "giltSeit": "1995-02-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1995-02-01",
      "wirkung": false,
@@ -3343,6 +4385,24 @@
   "3_ter": {
    "giltSeit": "1995-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1971-07-01",
@@ -3423,6 +4483,24 @@
    "giltSeit": "1971-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1971-07-01",
      "wirkung": false,
@@ -3462,6 +4540,24 @@
    "giltSeit": "1971-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1971-07-01",
      "wirkung": false,
@@ -3483,6 +4579,24 @@
   "4_quinquies": {
    "giltSeit": "1995-02-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1995-02-01",
@@ -3506,6 +4620,24 @@
    "giltSeit": "2021-08-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2021-08-01",
      "wirkung": false,
@@ -3527,6 +4659,24 @@
   "4_ter": {
    "giltSeit": "1971-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1971-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1971 808 824",
+       "url": ""
+      },
+      {
+       "label": "BBl 1970 I 1144",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1970/1_1144__"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1971-07-01",
@@ -3662,6 +4812,52 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "6_a": {
+   "giltSeit": "2013-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 6679",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/810"
+      },
+      {
+       "label": "BBl 2008 1589",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/416"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Rechnungslegung"
+    }
+   ]
+  },
+  "6_b": {
+   "giltSeit": "2013-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2012 6679",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2012/810"
+      },
+      {
+       "label": "BBl 2008 1589",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/416"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Rechnungslegung"
     }
    ]
   }

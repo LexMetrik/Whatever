@@ -34,13 +34,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
     }
    ]
   },
   "2": {
    "giltSeit": "2009-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
     {
      "typ": "fassung",
      "datum": "2009-07-01",
@@ -61,6 +76,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2009-07-01",
      "wirkung": false,
      "quellen": [
@@ -77,6 +106,20 @@
   "4": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -766,13 +809,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
     }
    ]
   },
   "8": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -817,6 +875,20 @@
   "9": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1911,7 +1983,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Neuropsychologie"
     }
    ]
   },
@@ -1955,7 +2028,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Psychologische Psychotherapie"
     },
     {
      "typ": "fassung",
@@ -1968,7 +2042,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Psychologische Psychotherapie"
     }
    ]
   },
@@ -1986,7 +2061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Podologie"
     },
     {
      "typ": "fassung",
@@ -1999,7 +2075,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Podologie"
     }
    ]
   },
@@ -3546,7 +3623,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Selbstbehalt bei Arzneimitteln"
     },
     {
      "typ": "fassung",
@@ -3559,7 +3637,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Selbstbehalt bei Arzneimitteln"
     }
    ]
   },
@@ -3577,13 +3656,85 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+    }
+   ]
+  },
+  "38_c": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 571",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+    }
+   ]
+  },
+  "38_d": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 571",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+    }
+   ]
+  },
+  "38_e": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 571",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
     }
    ]
   },
   "38_f": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 571",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -3596,6 +3747,25 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "38_g": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 571",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
     }
    ]
   },
@@ -3634,6 +3804,20 @@
   "3_b": {
    "giltSeit": "2014-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3678,6 +3862,20 @@
   "3_c": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3741,7 +3939,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen"
     }
    ]
   },
@@ -3782,6 +3981,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
      "quellen": [
@@ -3804,13 +4017,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Pharmazeutische Leistungen"
     }
    ]
   },
   "4_b": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2001-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2000 3088",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -3861,13 +4089,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Ärztliche komplementärmedizinische Leistungen"
     }
    ]
   },
   "7_a": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -3913,6 +4156,20 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -3931,6 +4188,20 @@
    "giltSeit": "2026-08-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2026-08-01",
      "wirkung": false,
@@ -3948,6 +4219,20 @@
   "8_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4006,6 +4291,20 @@
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
      "wirkung": false,
@@ -4023,6 +4322,20 @@
   "8_c": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2011-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3527",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -4171,7 +4484,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Ernährungsberatung"
     }
    ]
   },
@@ -4215,7 +4529,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3b. Abschnitt: Diabetesberatung"
     }
    ]
   }

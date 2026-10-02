@@ -476,13 +476,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
     }
    ]
   },
   "20": {
-   "giltSeit": null,
+   "giltSeit": "2010-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
+    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -813,13 +832,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+    }
+   ]
+  },
+  "16_b": {
+   "giltSeit": "2010-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
     }
    ]
   },
   "16_c": {
-   "giltSeit": null,
+   "giltSeit": "2010-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+    },
     {
      "typ": "bezeichnung",
      "datum": null,
@@ -835,9 +896,50 @@
     }
    ]
   },
+  "16_d": {
+   "giltSeit": "2010-07-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+    }
+   ]
+  },
   "16_e": {
    "giltSeit": "2017-05-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -865,9 +967,73 @@
     }
    ]
   },
+  "19_a": {
+   "giltSeit": "2010-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
+    }
+   ]
+  },
+  "20_a": {
+   "giltSeit": "2010-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
+    }
+   ]
+  },
   "20_b": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2010 2617",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+      },
+      {
+       "label": "BBl 2008 7275",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
+    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",

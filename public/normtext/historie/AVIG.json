@@ -59,7 +59,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
     }
    ]
   },
@@ -2084,7 +2085,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sanktionen"
     }
    ]
   },
@@ -3021,7 +3023,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
     },
     {
      "typ": "fassung",
@@ -3038,13 +3041,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
     }
    ]
   },
   "60": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3145,13 +3167,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bildungsmassnahmen"
     }
    ]
   },
   "65": {
    "giltSeit": "2003-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3218,13 +3259,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
     }
    ]
   },
   "66": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3387,13 +3465,126 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "69": {
+   "giltSeit": "2003-07-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
     }
    ]
   },
   "70": {
    "giltSeit": "2003-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3511,7 +3702,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
     }
    ]
   },
@@ -3550,7 +3742,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erstes Kapitel: Durchführungsorgane"
     }
    ]
   },
@@ -5297,13 +5490,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Besonderheiten des Verfahrens und der Rechtspflege"
     }
    ]
   },
   "101": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Besonderheiten des Verfahrens und der Rechtspflege"
+    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -5326,6 +5538,24 @@
   "102": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2002 3371",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+      },
+      {
+       "label": "BBl 1991 II 185 910",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Besonderheiten des Verfahrens und der Rechtspflege"
+    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -5735,7 +5965,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Übergangsbestimmungen"
     }
    ]
   },
@@ -5800,7 +6031,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Viertes Kapitel: Verhältnis zum europäischen Recht"
     }
    ]
   },
@@ -5823,7 +6055,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Viertes Kap."
+     "frueher": "Viertes Kap.",
+     "ueberschrift": "Fünftes Kapitel: Referendum und Inkrafttreten"
     }
    ]
   },
@@ -5955,6 +6188,24 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2006-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2005 5427",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2005/740"
+      },
+      {
+       "label": "BBl 2005 759",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/108"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Übergangsbestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -5976,6 +6227,24 @@
   "120_b": {
    "giltSeit": "2025-05-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2006-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2005 5427",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2005/740"
+      },
+      {
+       "label": "BBl 2005 759",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/108"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Übergangsbestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-05-01",
@@ -6365,6 +6634,42 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
      "wirkung": false,
@@ -6455,6 +6760,42 @@
    "giltSeit": "2003-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6494,6 +6835,42 @@
    "giltSeit": "2003-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2003-07-01",
      "wirkung": false,
@@ -6515,6 +6892,42 @@
   "59_c_bis": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
@@ -6550,6 +6963,42 @@
   "59_d": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6637,6 +7086,24 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "fassung",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -6701,13 +7168,50 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschäftigungsmassnahmen"
     }
    ]
   },
   "64_b": {
-   "giltSeit": null,
+   "giltSeit": "2003-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschäftigungsmassnahmen"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-04-01",
@@ -6770,6 +7274,42 @@
   "66_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
@@ -6935,6 +7475,42 @@
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
      "wirkung": false,
@@ -7008,6 +7584,42 @@
    "giltSeit": "2007-07-15",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -7080,6 +7692,42 @@
   "71_b": {
    "giltSeit": "2007-07-15",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -7211,6 +7859,42 @@
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+    },
+    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -7338,6 +8022,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -7383,6 +8085,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -7390,6 +8110,24 @@
   "75_b": {
    "giltSeit": "2003-07-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2003-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2003 1728",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+      },
+      {
+       "label": "BBl 2001 2245",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2003-07-01",

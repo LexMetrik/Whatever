@@ -157,7 +157,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Schlichtungsbehörden"
     }
    ]
   },
@@ -475,13 +476,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Abteilungspräsidium"
     }
    ]
   },
   "16_a": {
    "giltSeit": "2017-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2017-07-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3401",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/373"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Schlichtungsbehörden"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-07-01",

@@ -2255,13 +2255,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geheimhaltung und Amtshilfe"
     }
    ]
   },
   "75": {
-   "giltSeit": "2016-07-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -2367,7 +2386,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
     }
    ]
   },
@@ -2389,13 +2409,32 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
     }
    ]
   },
   "78": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -2429,6 +2468,52 @@
      ],
      "absatz": "7",
      "item": null
+    }
+   ]
+  },
+  "79": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+    }
+   ]
+  },
+  "80": {
+   "giltSeit": "2018-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
     }
    ]
   },
@@ -3005,8 +3090,26 @@
    ]
   },
   "75_a": {
-   "giltSeit": "2013-02-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2013-02-01",
@@ -3029,6 +3132,24 @@
   "76_a": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -3117,6 +3238,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
      "item": null
     },
     {
@@ -3156,6 +3295,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3178,6 +3335,24 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -3185,6 +3360,24 @@
   "79_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2018-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2017 3575",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+      },
+      {
+       "label": "BBl 2015 2615",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
