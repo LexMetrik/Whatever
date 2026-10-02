@@ -110,8 +110,11 @@ export function SuchBlock() {
   // dem Pool: 2 von 324 Grüssen («Ihr Nachschlagewerk.» +8, «Einen guten
   // Verhandlungstag.» +2), nur @320 Skala 1.4, darum als CI-Flake (≈ 1 von 60
   // Ladevorgängen) sichtbar. `min-w-0` an der Hülle (Grid-Item: min-width:auto
-  // = min-content) + das geteilte Rezept `lc-wortumbruch` am Gruss (Silbentrennung,
-  // darunter harter Umbruch als Garant), index.css.
+  // = min-content); den harten Umbruch des zu langen Worts trägt das globale
+  // `overflow-wrap: break-word` am body (index.css). KEIN `lc-wortumbruch`:
+  // `hyphens: auto` trennte jedes Wort am Zeilenende («die-/se», «Ter-min»,
+  // frz. Grüsse nach deutscher Regel) — Bug-Check #1291, vgl. DESIGN-REGLEMENT
+  // (Normtext bleibt `hyphens: manual`).
   return (
     <div className={`flex min-w-0 flex-col gap-y-1 border-b border-rule pb-3 ${pk('sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-6', '@xl/pane:flex-row @xl/pane:items-baseline @xl/pane:justify-between @xl/pane:gap-x-6')}`}>
       {/* Gruss kommt aus `useHeute`. Im Server-HTML steht der Build-Gruss
@@ -125,7 +128,7 @@ export function SuchBlock() {
           `hydrateRoot` stimmt der Client-Text ohnehin mit dem umgeschriebenen
           DOM überein. */}
       <h1 suppressHydrationWarning
-        className={`lc-wortumbruch min-w-0 font-serif italic text-ink-900 ${pk('text-h2 lg:text-h1', 'text-h2 @3xl/pane:text-h1')}`}>
+        className={`min-w-0 font-serif italic text-ink-900 ${pk('text-h2 lg:text-h1', 'text-h2 @3xl/pane:text-h1')}`}>
         {gruss}
       </h1>
       <script type="application/json" data-gruss="pools" dangerouslySetInnerHTML={{ __html: GRUSS_DATEN_JSON }} />
