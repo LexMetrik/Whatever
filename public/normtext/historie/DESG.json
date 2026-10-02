@@ -6,6 +6,44 @@
   "referenz": 8,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+    },
+    {
+     "label": "BBl 2001 5679",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 313",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+    },
+    {
+     "label": "BBl 2023 1184",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "9": {
    "giltSeit": "2008-07-01",
@@ -115,117 +153,37 @@
   },
   "25": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -467,26 +425,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48": {
@@ -507,49 +450,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "49": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "fassung",
      "datum": "2008-07-01",
@@ -567,29 +477,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26_a": {
    "giltSeit": "2005-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -607,6 +502,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "41_a": {
@@ -634,24 +532,6 @@
   "48_a": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -682,29 +562,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_b": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -722,29 +587,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_c": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -813,30 +663,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_d": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -853,30 +688,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_e": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -893,30 +713,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_f": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -933,30 +738,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_g": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -973,29 +763,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "49_a": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-07-01",
@@ -1013,6 +788,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   }
  },

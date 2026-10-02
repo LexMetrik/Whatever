@@ -6,6 +6,134 @@
   "referenz": 69,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2005-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 1429",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
+    },
+    {
+     "label": "BBl 2002 7522",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4689",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
+    },
+    {
+     "label": "BBl 2019 3405 3851",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4525",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
+    },
+    {
+     "label": "BBl 2019 4103",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 680",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
+    },
+    {
+     "label": "BBl 2022 2515",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4525",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
+    },
+    {
+     "label": "BBl 2019 4103",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 468",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/468"
+    },
+    {
+     "label": "BBl 2019 7095",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2553"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIId. Die Adoptionsentschädigung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -34,24 +162,6 @@
    "giltSeit": "2003-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
      "typ": "fassung",
      "datum": "1999-07-01",
      "wirkung": false,
@@ -68,6 +178,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
@@ -96,24 +209,6 @@
   "6": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "1969-01-01",
@@ -165,29 +260,14 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -205,29 +285,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "8": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "1960-01-01",
@@ -262,29 +327,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "9": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -319,29 +369,14 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10": {
    "giltSeit": "2005-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -359,29 +394,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
    "giltSeit": "2015-02-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -429,6 +449,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
@@ -458,24 +481,6 @@
    "giltSeit": "2005-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
      "typ": "fassung",
      "datum": "2005-07-01",
      "wirkung": false,
@@ -492,6 +497,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14": {
@@ -521,24 +529,6 @@
    "giltSeit": "2003-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
      "typ": "fassung",
      "datum": "1976-01-01",
      "wirkung": false,
@@ -555,29 +545,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
    "giltSeit": "2005-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -595,29 +570,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -669,29 +629,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2003-01-01",
@@ -709,29 +654,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
    "giltSeit": "2005-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -749,29 +679,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2005-07-01",
@@ -883,6 +798,9 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21": {
@@ -1384,24 +1302,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -1417,29 +1317,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1976-01-01",
@@ -1487,29 +1372,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1562,47 +1432,14 @@
      "item": null,
      "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_c": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2021-07-01",
@@ -1671,47 +1508,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_c_bis": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -1729,47 +1534,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_d": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2021-07-01",
@@ -1804,88 +1577,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_e": {
    "giltSeit": "2005-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_f": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "inkraft",
      "datum": "2025-01-01",
@@ -1899,47 +1607,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_g": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2021-07-01",
@@ -1957,47 +1633,15 @@
      "absatz": "1",
      "item": "f"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_h": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 1429",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/217"
-      },
-      {
-       "label": "BBl 2002 7522",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2002/1197"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Die Mutterschaftsentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -2015,29 +1659,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16_i": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2177,83 +1807,14 @@
      "item": null,
      "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_j": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4689",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
-      },
-      {
-       "label": "BBl 2019 3405 3851",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 680",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
-      },
-      {
-       "label": "BBl 2022 2515",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2305,83 +1866,17 @@
      "absatz": "3",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   "16_k": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4689",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
-      },
-      {
-       "label": "BBl 2019 3405 3851",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 680",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
-      },
-      {
-       "label": "BBl 2022 2515",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2399,6 +1894,12 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   "16_k_bis": {
@@ -2406,78 +1907,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4689",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
-      },
-      {
-       "label": "BBl 2019 3405 3851",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 680",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
-      },
-      {
-       "label": "BBl 2022 2515",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
      "quellen": [
@@ -2493,83 +1922,17 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   "16_l": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4689",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
-      },
-      {
-       "label": "BBl 2019 3405 3851",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 680",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
-      },
-      {
-       "label": "BBl 2022 2515",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -2583,83 +1946,17 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   "16_m": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4689",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/844"
-      },
-      {
-       "label": "BBl 2019 3405 3851",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 680",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/680"
-      },
-      {
-       "label": "BBl 2022 2515",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/2515"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIb. Die Entschädigung des andern Elternteils"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2711,6 +2008,12 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3,
+    4
    ]
   },
   "16_n": {
@@ -2718,24 +2021,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2021-07-01",
      "wirkung": false,
      "quellen": [
@@ -2752,211 +2037,49 @@
      "item": null,
      "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_o": {
    "giltSeit": "2021-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "16_p": {
    "giltSeit": "2021-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "16_q": {
    "giltSeit": "2021-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "16_r": {
    "giltSeit": "2021-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "16_s": {
    "giltSeit": "2021-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4525",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-      },
-      {
-       "label": "BBl 2019 4103",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "16_t": {
@@ -2964,24 +2087,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -2998,193 +2103,46 @@
      "item": null,
      "ueberschrift": "IIId. Die Adoptionsentschädigung"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_u": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 468",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/468"
-      },
-      {
-       "label": "BBl 2019 7095",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2553"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIId. Die Adoptionsentschädigung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "16_v": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 468",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/468"
-      },
-      {
-       "label": "BBl 2019 7095",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2553"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIId. Die Adoptionsentschädigung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "16_w": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 468",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/468"
-      },
-      {
-       "label": "BBl 2019 7095",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2553"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIId. Die Adoptionsentschädigung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "16_x": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 468",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/468"
-      },
-      {
-       "label": "BBl 2019 7095",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2553"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIId. Die Adoptionsentschädigung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "19_a": {
    "giltSeit": "2005-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1988-01-01",
@@ -3236,6 +2194,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "1_a": {
@@ -3454,24 +2415,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2015-02-01",
      "wirkung": false,
      "quellen": [
@@ -3521,6 +2464,9 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_a": {

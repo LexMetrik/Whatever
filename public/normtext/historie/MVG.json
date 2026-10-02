@@ -6,6 +6,98 @@
   "referenz": 49,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 5205",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/573"
+    },
+    {
+     "label": "BBl 2016 4691",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/1047"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Organisation, Verwaltung, Finanzierung und Haftung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Besondere Meldepflichten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -1574,24 +1666,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Organisation, Verwaltung, Finanzierung und Haftung"
-    },
-    {
-     "typ": "fassung",
      "datum": "2005-07-01",
      "wirkung": false,
      "quellen": [
@@ -1607,6 +1681,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "83": {
@@ -1686,43 +1763,10 @@
   },
   "84": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Besondere Meldepflichten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "88": {
@@ -1743,44 +1787,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "93": {
@@ -1808,43 +1820,10 @@
   },
   "94": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2,
+    4
    ]
   },
   "95": {
@@ -2574,48 +2553,14 @@
   },
   "66_b": {
    "giltSeit": "2018-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 5205",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/573"
-      },
-      {
-       "label": "BBl 2016 4691",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/1047"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "66_c": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 5205",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/573"
-      },
-      {
-       "label": "BBl 2016 4691",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/1047"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -2624,29 +2569,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_d": {
    "giltSeit": "2018-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 5205",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/573"
-      },
-      {
-       "label": "BBl 2016 4691",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/1047"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "68_69": {
@@ -2699,24 +2631,6 @@
    "giltSeit": "2005-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Organisation, Verwaltung, Finanzierung und Haftung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2003-01-01",
      "wirkung": false,
@@ -2750,6 +2664,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "85_87": {
@@ -2819,42 +2736,6 @@
   "94_a": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -2940,6 +2821,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "94_b": {
@@ -2985,42 +2870,6 @@
   "95_a": {
    "giltSeit": "2017-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -3259,47 +3108,15 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "95_b": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185 910",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besonderheiten des Verfahrens"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3334,6 +3151,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "96_103": {

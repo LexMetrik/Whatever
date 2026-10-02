@@ -6,6 +6,44 @@
   "referenz": 22,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 3207",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/538"
+    },
+    {
+     "label": "BBl 2014 4909",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/1078"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Holzförderung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3631",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+    },
+    {
+     "label": "BBl 2009 8533",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Weitere Massnahmen"
+  }
+ ],
  "artikel": {
   "5": {
    "giltSeit": "2017-01-01",
@@ -1057,25 +1095,9 @@
   },
   "34_b": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 3207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/538"
-      },
-      {
-       "label": "BBl 2014 4909",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/1078"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Holzförderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "37_a": {
@@ -1325,24 +1347,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
-      },
-      {
-       "label": "BBl 2009 8533",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Weitere Massnahmen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-08-01",
      "wirkung": false,
      "quellen": [
@@ -1358,6 +1362,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48_a": {

@@ -6,6 +6,120 @@
   "referenz": 26,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5251",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2006-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 1269",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2006-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 1269",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2010-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 3175",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5949",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5949",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/23"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 6137",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2002-10-01",
@@ -111,20 +225,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2010-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 3175",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
-    },
-    {
-     "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -136,25 +236,16 @@
      "absatz": "1",
      "item": "d"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "8": {
    "giltSeit": "2010-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2010-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 3175",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "15": {
@@ -654,59 +745,21 @@
   },
   "27_b": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_c": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_c_bis": {
    "giltSeit": "2026-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-10-01",
@@ -720,120 +773,49 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_d": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_e": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_f": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_g": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_h": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_i": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -847,25 +829,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_j": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5251",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_k": {
@@ -889,59 +862,23 @@
   },
   "27_l": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "27_m": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "27_n": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "27_o": {
@@ -965,97 +902,37 @@
   },
   "27_p": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "27_q": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "27_r": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "27_s": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "27_t": {
    "giltSeit": "2006-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2006-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 1269",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "5_a": {
@@ -1117,40 +994,16 @@
   },
   "7_a": {
    "giltSeit": "2010-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2010-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 3175",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "7_b": {
    "giltSeit": "2010-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2010-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 3175",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "8_a": {
@@ -1177,20 +1030,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2012-08-01",
      "wirkung": false,
      "quellen": [
@@ -1202,25 +1041,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_c": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1234,25 +1062,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_c_bis": {
    "giltSeit": "2010-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2010-07-01",
@@ -1266,44 +1083,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_d": {
    "giltSeit": "2009-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "8_e": {
    "giltSeit": "2019-02-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2012-08-01",
@@ -1408,25 +1202,14 @@
      "absatz": "2",
      "item": "m"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_e_bis": {
    "giltSeit": "2012-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2012-08-01",
@@ -1440,25 +1223,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_e_ter": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -1472,25 +1244,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_f": {
    "giltSeit": "2012-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -1517,25 +1278,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_f_bis": {
    "giltSeit": "2013-02-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-02-01",
@@ -1549,25 +1299,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_g": {
    "giltSeit": "2012-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2012-08-01",
@@ -1581,63 +1320,28 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_h": {
    "giltSeit": "2009-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "8_i": {
    "giltSeit": "2009-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "8_i_bis": {
    "giltSeit": "2013-02-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-02-01",
@@ -1651,25 +1355,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_i_ter": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -1683,6 +1376,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_j": {
@@ -1762,34 +1458,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5949",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-02-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/23"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -1801,6 +1469,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "8_k": {
@@ -1908,40 +1580,14 @@
   },
   "8_m": {
    "giltSeit": "2010-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "8_n": {
    "giltSeit": "2010-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2010-08-01",
@@ -1955,25 +1601,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_o": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2010-08-01",
@@ -2026,25 +1661,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_p": {
    "giltSeit": "2010-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2010-08-01",
@@ -2058,25 +1682,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_q": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -2103,25 +1716,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_r": {
    "giltSeit": "2013-02-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-02-01",
@@ -2135,44 +1737,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_s": {
    "giltSeit": "2010-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "8_t": {
    "giltSeit": "2010-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 6137",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "9_10_c": {

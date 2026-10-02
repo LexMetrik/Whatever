@@ -6,6 +6,418 @@
   "referenz": 185,
   "unparsed": 3
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 1413",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
+    },
+    {
+     "label": "BBl 2018 1685",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "14a. Kapitel: Informationssysteme"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Passagier-Informationssystem (API-System) und Zugang zu Passagierdaten im Einzelfall"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 349",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
+    },
+    {
+     "label": "BBl 2022 1449",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 349",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
+    },
+    {
+     "label": "BBl 2022 1449",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Eurodac"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Detektor für Mehrfachidentitäten (MID)"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Datenbekanntgabe und Verantwortung für die Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5405",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 229",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
+    },
+    {
+     "label": "BBl 2025 1478",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3023",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
+    },
+    {
+     "label": "BBl 2013 2561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Strafbestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3023",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
+    },
+    {
+     "label": "BBl 2013 2561",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Administrative Sanktionen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6521",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
+    },
+    {
+     "label": "BBl 2013 2397",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Integrationsförderung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6521",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
+    },
+    {
+     "label": "BBl 2013 2397",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Integrationserfordernisse"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 1413",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
+    },
+    {
+     "label": "BBl 2018 1685",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9. Kapitel: Reisedokumente und Reiseverbot"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 733",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/93"
+    },
+    {
+     "label": "BBl 2016 3007",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/574"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Erlöschen und Widerruf der Bewilligungen und Erlöschen des Aufenthaltsrechts"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-09-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3161",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
+    },
+    {
+     "label": "BBl 2017 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5407 5405",
+     "url": ""
+    },
+    {
+     "label": "BBl 2007 7937",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Pflichten der Transportunternehmen"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2008-12-12",
@@ -1126,24 +1538,6 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1160,30 +1554,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "55": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1200,30 +1579,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "56": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1240,30 +1604,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "57": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1280,30 +1629,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "58": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1320,6 +1654,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "59": {
@@ -1565,24 +1902,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2018-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 733",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/93"
-      },
-      {
-       "label": "BBl 2016 3007",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/574"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Erlöschen und Widerruf der Bewilligungen und Erlöschen des Aufenthaltsrechts"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -1645,29 +1964,14 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    20
    ]
   },
   "63": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2018-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 733",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/93"
-      },
-      {
-       "label": "BBl 2016 3007",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/574"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Erlöschen und Widerruf der Bewilligungen und Erlöschen des Aufenthaltsrechts"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1762,6 +2066,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    20
    ]
   },
   "64": {
@@ -2204,24 +2511,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2018-09-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
-      },
-      {
-       "label": "BBl 2017 4155",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-02-01",
      "wirkung": false,
      "quellen": [
@@ -2237,29 +2526,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    21
    ]
   },
   "71": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2018-09-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
-      },
-      {
-       "label": "BBl 2017 4155",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
-    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -2311,6 +2585,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    21
    ]
   },
   "72": {
@@ -3844,24 +4121,6 @@
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2008 5407 5405",
-       "url": ""
-      },
-      {
-       "label": "BBl 2007 7937",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Pflichten der Transportunternehmen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
        "label": "AS 2008 5405",
        "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
       }
@@ -3920,29 +4179,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    22
    ]
   },
   "94": {
    "giltSeit": "2015-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5407 5405",
-       "url": ""
-      },
-      {
-       "label": "BBl 2007 7937",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Pflichten der Transportunternehmen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-10-01",
@@ -3960,29 +4204,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    22
    ]
   },
   "95": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5407 5405",
-       "url": ""
-      },
-      {
-       "label": "BBl 2007 7937",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Pflichten der Transportunternehmen"
-    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -4000,6 +4229,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    22
    ]
   },
   "96": {
@@ -4412,24 +4644,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-02-01",
      "wirkung": false,
      "quellen": [
@@ -4496,6 +4710,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "103": {
@@ -4546,84 +4763,18 @@
   },
   "108": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Passagier-Informationssystem (API-System) und Zugang zu Passagierdaten im Einzelfall"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    3
    ]
   },
   "109": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    5
    ]
   },
   "110": {
@@ -4859,24 +5010,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
      "quellen": [
@@ -4943,29 +5076,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "117": {
    "giltSeit": "2015-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -5017,29 +5135,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "118": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5057,52 +5160,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "119": {
    "giltSeit": "2015-10-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    15
    ]
   },
   "120": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5154,6 +5226,9 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "121": {
@@ -5200,24 +5275,6 @@
    "giltSeit": "2015-10-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Administrative Sanktionen"
-    },
-    {
      "typ": "fassung",
      "datum": "2015-10-01",
      "wirkung": false,
@@ -5234,6 +5291,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "126": {
@@ -5336,24 +5396,6 @@
    "giltSeit": "2025-06-15",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-01-24",
      "wirkung": false,
@@ -5421,29 +5463,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102_b": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-24",
@@ -5478,29 +5505,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102_c": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -5527,29 +5539,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102_d": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -5559,29 +5556,14 @@
      "item": null,
      "frueher": "Art. 106"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102_e": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14. Kapitel: Datenbearbeitung und Datenschutz"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -5591,6 +5573,9 @@
      "item": null,
      "frueher": "Art. 107"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "103_a": {
@@ -5697,24 +5682,6 @@
   "103_b": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-05-01",
@@ -5835,47 +5802,14 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "103_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-05-01",
@@ -6046,47 +5980,15 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "103_d": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-05-01",
@@ -6121,6 +6023,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "103_e": {
@@ -6128,42 +6034,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2022-05-01",
      "wirkung": false,
      "quellen": [
@@ -6179,6 +6049,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "103_f": {
@@ -6186,42 +6060,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2022-05-01",
      "wirkung": false,
      "quellen": [
@@ -6237,47 +6075,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "103_g": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einreise- und Ausreisesystem (EES) und automatisierte Grenzkontrollen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6312,29 +6118,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "104_a": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-10-01",
@@ -6540,47 +6332,14 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Passagier-Informationssystem (API-System) und Zugang zu Passagierdaten im Einzelfall"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "104_b": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Passagier-Informationssystem (API-System) und Zugang zu Passagierdaten im Einzelfall"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-06-01",
@@ -6615,47 +6374,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    3
    ]
   },
   "104_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Passagier-Informationssystem (API-System) und Zugang zu Passagierdaten im Einzelfall"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -6716,6 +6443,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    3
    ]
   },
   "105_107": {
@@ -6744,24 +6475,6 @@
   "108_a": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -6831,47 +6544,14 @@
      "item": null,
      "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "108_b": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -6889,47 +6569,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -6964,47 +6612,15 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_d": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7039,6 +6655,10 @@
      "absatz": "5",
      "item": "c"
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_d_bis": {
@@ -7046,42 +6666,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7097,6 +6681,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_d_quater": {
@@ -7104,42 +6692,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7155,6 +6707,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_d_quinquies": {
@@ -7162,42 +6718,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7213,6 +6733,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_d_ter": {
@@ -7220,42 +6744,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7271,47 +6759,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_e": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7380,47 +6836,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_f": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7472,47 +6896,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_f_bis": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7530,47 +6922,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_g": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Europäisches Reiseinformations- und -genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7588,6 +6948,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    4
    ]
   },
   "108_h": {
@@ -7595,24 +6959,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7646,6 +6992,9 @@
      "item": null,
      "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "108_i": {
@@ -7653,42 +7002,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2025-06-15",
      "wirkung": false,
      "quellen": [
@@ -7704,47 +7017,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    5
    ]
   },
   "108_j": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7779,47 +7060,15 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1,
+    5
    ]
   },
   "108_k": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 349",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/349"
-      },
-      {
-       "label": "BBl 2022 1449",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2022/1449"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Abschnitt: Nationales Reiseinformations- und –genehmigungssystem"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -7837,29 +7086,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    5
    ]
   },
   "109_a": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-10-11",
@@ -8116,47 +7351,14 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "109_b": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-01-20",
@@ -8327,47 +7529,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    6
    ]
   },
   "109_c": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-01-20",
@@ -8453,47 +7623,15 @@
      "absatz": null,
      "item": "i"
     }
+   ],
+   "erbt": [
+    1,
+    6
    ]
   },
   "109_d": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -8545,47 +7683,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    6
    ]
   },
   "109_e": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Zentrales Visa-Informationssystem (C-VIS) und nationales Visumsystem (ORBIS)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-01-20",
@@ -8603,29 +7709,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    6
    ]
   },
   "109_f": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-09-01",
@@ -8661,47 +7753,14 @@
      "item": null,
      "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "109_g": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
-    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -8719,152 +7778,39 @@
      "absatz": "2",
      "item": "h"
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "109_h": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    7
    ]
   },
   "109_i": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    7
    ]
   },
   "109_j": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Informationssystem für die Durchführung der Rückkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    7
    ]
   },
   "109_k": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -8909,47 +7855,14 @@
      "item": null,
      "ueberschrift": "6. Abschnitt: Eurodac"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "109_l": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Eurodac"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -8984,6 +7897,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    8
    ]
   },
   "109_l_bis": {
@@ -8991,42 +7908,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Eurodac"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -9042,6 +7923,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    8
    ]
   },
   "109_l_quater": {
@@ -9049,42 +7934,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Eurodac"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -9100,6 +7949,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    8
    ]
   },
   "109_l_quinquies": {
@@ -9107,42 +7960,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Eurodac"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -9158,6 +7975,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    8
    ]
   },
   "109_l_ter": {
@@ -9165,42 +7986,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Eurodac"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -9216,29 +8001,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    8
    ]
   },
   "109_m": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14a. Kapitel: Informationssysteme"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -9257,6 +8028,9 @@
      "item": null,
      "ueberschrift": "7. Abschnitt: Personendossier- und Dokumentationssystem"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "110_a": {
@@ -9278,108 +8052,24 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
      "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "110_b": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9,
+    10
    ]
   },
   "110_b_bis": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-12",
@@ -9397,47 +8087,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "110_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-12",
@@ -9455,47 +8113,15 @@
      "absatz": "1",
      "item": "e"
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "110_d": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Gemeinsamer Speicher für Identitätsdaten (CIR)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-06-15",
@@ -9513,6 +8139,10 @@
      "absatz": "2",
      "item": "e"
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "110_e": {
@@ -9534,26 +8164,11 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
      "ueberschrift": "3. Abschnitt: Europäisches Suchportal (ESP)"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "110_f": {
@@ -9575,67 +8190,19 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
      "ueberschrift": "4. Abschnitt: Detektor für Mehrfachidentitäten (MID)"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "110_g": {
    "giltSeit": "2025-06-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Detektor für Mehrfachidentitäten (MID)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
    ]
   },
   "110_h": {
@@ -9656,24 +8223,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -9694,6 +8243,9 @@
      "item": null,
      "ueberschrift": "5. Abschnitt: Datenbekanntgabe und Verantwortung für die Datenbearbeitung"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "110_i": {
@@ -9714,44 +8266,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "14b. Kapitel: Interoperabilität zwischen den Schengen/Dublin-Informationssystemen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Datenbekanntgabe und Verantwortung für die Datenbearbeitung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-06-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 347",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
-      },
-      {
-       "label": "BBl 2020 7983",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    12
    ]
   },
   "111_a": {
@@ -9874,38 +8394,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5405",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 229",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
-      },
-      {
-       "label": "BBl 2025 1478",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-06-12",
      "wirkung": false,
      "quellen": [
@@ -9921,43 +8409,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    13,
+    14
    ]
   },
   "111_b": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5405",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 229",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
-      },
-      {
-       "label": "BBl 2025 1478",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
     {
      "typ": "ausdruck",
      "datum": "2023-09-01",
@@ -9975,43 +8435,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    13,
+    14
    ]
   },
   "111_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5405",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 229",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
-      },
-      {
-       "label": "BBl 2025 1478",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -10046,43 +8478,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    13,
+    14
    ]
   },
   "111_d": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5405",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 229",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
-      },
-      {
-       "label": "BBl 2025 1478",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -10151,6 +8555,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    13,
+    14
    ]
   },
   "111_e": {
@@ -10203,38 +8611,6 @@
    "giltSeit": "2026-06-12",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5405",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/755"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 229",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/229"
-      },
-      {
-       "label": "BBl 2025 1478",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1478"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "14c. Kapitel: Datenschutz im Rahmen der Schengen- und Dublin-Assoziierungsabkommen"
-    },
-    {
      "typ": "fassung",
      "datum": "2022-11-22",
      "wirkung": false,
@@ -10251,6 +8627,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    13,
+    14
    ]
   },
   "111_h": {
@@ -10367,24 +8747,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2018-07-01",
      "wirkung": false,
      "quellen": [
@@ -10400,6 +8762,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "120_a_120_c": {
@@ -10445,24 +8810,6 @@
   "120_d": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -10514,29 +8861,14 @@
      "absatz": null,
      "item": "f"
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "120_e": {
    "giltSeit": "2015-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-10-11",
@@ -10571,29 +8903,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "122_a": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Administrative Sanktionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-10-01",
@@ -10696,29 +9013,14 @@
      "absatz": "3",
      "item": "5"
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "122_b": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Administrative Sanktionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-10-01",
@@ -10753,29 +9055,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "122_c": {
    "giltSeit": "2025-06-15",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3023",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/570"
-      },
-      {
-       "label": "BBl 2013 2561",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/451"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Administrative Sanktionen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-10-01",
@@ -10810,6 +9097,9 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "124_a": {
@@ -11163,26 +9453,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "55_a": {
@@ -11203,26 +9478,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Integrationsförderung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    17
    ]
   },
   "58_a": {
@@ -11250,49 +9510,15 @@
   },
   "58_b": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6521",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/718"
-      },
-      {
-       "label": "BBl 2013 2397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/416"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Integrationserfordernisse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    18
    ]
   },
   "59_a": {
    "giltSeit": "2019-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "9. Kapitel: Reisedokumente und Reiseverbot"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-06-01",
      "wirkung": false,
@@ -11309,30 +9535,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    19
    ]
   },
   "59_b": {
    "giltSeit": "2019-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "9. Kapitel: Reisedokumente und Reiseverbot"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-06-01",
      "wirkung": false,
@@ -11349,29 +9560,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    19
    ]
   },
   "59_c": {
    "giltSeit": "2020-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1413",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/278"
-      },
-      {
-       "label": "BBl 2018 1685",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/673"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "9. Kapitel: Reisedokumente und Reiseverbot"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2020-04-01",
@@ -11389,29 +9585,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    19
    ]
   },
   "61_a": {
    "giltSeit": "2018-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2018-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 733",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/93"
-      },
-      {
-       "label": "BBl 2016 3007",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/574"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Erlöschen und Widerruf der Bewilligungen und Erlöschen des Aufenthaltsrechts"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-07-01",
@@ -11429,6 +9610,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    20
    ]
   },
   "64_a": {
@@ -11997,24 +10181,6 @@
    "giltSeit": "2022-09-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2018-09-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
-      },
-      {
-       "label": "BBl 2017 4155",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -12065,29 +10231,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    21
    ]
   },
   "71_a_bis": {
    "giltSeit": "2018-09-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2018-09-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
-      },
-      {
-       "label": "BBl 2017 4155",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-09-15",
@@ -12105,29 +10256,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    21
    ]
   },
   "71_b": {
    "giltSeit": "2018-09-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2018-09-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/507"
-      },
-      {
-       "label": "BBl 2017 4155",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1056"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Ausschaffung und internationale Rückführungseinsätze"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -12145,6 +10281,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    21
    ]
   },
   "76_a": {
@@ -12487,24 +10626,6 @@
    "giltSeit": "2026-06-12",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5407 5405",
-       "url": ""
-      },
-      {
-       "label": "BBl 2007 7937",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Pflichten der Transportunternehmen"
-    },
-    {
      "typ": "urspruenglich",
      "datum": null,
      "wirkung": false,
@@ -12598,6 +10719,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    22
    ]
   },
   "95_a": {

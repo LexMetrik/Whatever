@@ -6,6 +6,134 @@
   "referenz": 26,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3631",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+    },
+    {
+     "label": "BBl 2009 8533",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Geografische Marke"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+    },
+    {
+     "label": "BBl 2001 5679",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 1028",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028"
+    },
+    {
+     "label": "BBl 1996 II 1425",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/2_1425_1393_1273"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 313",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+    },
+    {
+     "label": "BBl 2023 1184",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "9": {
    "giltSeit": "2017-01-01",
@@ -375,24 +503,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
-    },
-    {
-     "typ": "fassung",
      "datum": "2002-07-01",
      "wirkung": false,
      "quellen": [
@@ -408,29 +518,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "40": {
@@ -451,26 +548,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
-      },
-      {
-       "label": "BBl 2001 5679",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41": {
@@ -615,48 +697,16 @@
   },
   "45": {
    "giltSeit": "1997-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 1028",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028"
-      },
-      {
-       "label": "BBl 1996 II 1425",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/2_1425_1393_1273"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "46": {
    "giltSeit": "1997-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 1028",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028"
-      },
-      {
-       "label": "BBl 1996 II 1425",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/2_1425_1393_1273"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "47": {
@@ -756,42 +806,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -807,6 +821,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "49": {
@@ -814,42 +832,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -865,6 +847,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50": {
@@ -872,42 +858,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -923,6 +873,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "53": {
@@ -1435,26 +1389,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72": {
@@ -1475,26 +1414,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "78": {
@@ -1600,94 +1524,30 @@
   },
   "27_b": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
-      },
-      {
-       "label": "BBl 2009 8533",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Geografische Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_c": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
-      },
-      {
-       "label": "BBl 2009 8533",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Geografische Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_d": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
-      },
-      {
-       "label": "BBl 2009 8533",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Geografische Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_e": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3631",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
-      },
-      {
-       "label": "BBl 2009 8533",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Geografische Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "35_a": {
@@ -1758,67 +1618,15 @@
   },
   "46_a": {
    "giltSeit": "1997-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 1028",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028"
-      },
-      {
-       "label": "BBl 1996 II 1425",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/2_1425_1393_1273"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "48_a": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1835,48 +1643,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_b": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1893,48 +1669,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_c": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1951,48 +1695,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_d": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -2009,48 +1721,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "49_a": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -2067,47 +1747,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50_a": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -2117,29 +1765,15 @@
      "item": null,
      "frueher": "Art. 51"
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50_b": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -2184,30 +1818,15 @@
      "item": null,
      "ueberschrift": "2. Kapitel: Registrierung von geografischen Angaben"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "50_c": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2021-12-01",
      "wirkung": false,
@@ -2225,129 +1844,33 @@
      "item": null,
      "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "50_d": {
    "giltSeit": "2021-12-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
    ]
   },
   "50_e": {
    "giltSeit": "2021-12-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
    ]
   },
   "50_f": {
    "giltSeit": "2021-12-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 742",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
-      },
-      {
-       "label": "BBl 2020 5827",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
    ]
   },
   "51_a": {
@@ -2398,24 +1921,6 @@
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2445,29 +1950,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_b": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -2485,29 +1975,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_c": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
@@ -2576,30 +2051,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_d": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2616,30 +2076,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_e": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2656,30 +2101,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_f": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2696,30 +2126,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_g": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2736,30 +2151,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_h": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -2776,29 +2176,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_i": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 313",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
-      },
-      {
-       "label": "BBl 2023 1184",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-07-01",
@@ -2816,6 +2201,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "78_a": {

@@ -6,6 +6,22 @@
   "referenz": 3,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2012-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 2887",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/343"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2012-06-01",
@@ -570,20 +586,6 @@
    "giltSeit": "2012-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2012-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 2887",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/343"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2012-06-01",
      "wirkung": false,
@@ -596,6 +598,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34_a": {

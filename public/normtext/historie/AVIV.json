@@ -6,6 +6,64 @@
   "referenz": 21,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2004-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 4861",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 339",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1828",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/274"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 339",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-07-01",
@@ -688,20 +746,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -717,6 +761,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20": {
@@ -733,22 +780,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21": {
@@ -765,22 +801,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -797,41 +822,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -923,6 +923,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24": {
@@ -939,41 +942,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -1000,25 +978,14 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
     {
      "typ": "fassung",
      "datum": "2011-04-01",
@@ -1032,25 +999,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -1103,6 +1059,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "28": {
@@ -2422,20 +2381,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2447,25 +2392,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "83": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -2479,6 +2413,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "84": {
@@ -2495,20 +2432,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -2524,6 +2447,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85": {
@@ -2531,20 +2457,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2556,6 +2468,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "86": {
@@ -2563,20 +2478,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2588,25 +2489,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "87": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2021-07-01",
@@ -2620,25 +2510,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "88": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -2691,6 +2570,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "89": {
@@ -2715,20 +2597,6 @@
   "90": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2004-01-01",
@@ -2833,6 +2701,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "91": {
@@ -2840,20 +2711,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2865,44 +2722,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "92": {
    "giltSeit": "2004-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "93": {
    "giltSeit": "2004-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "94": {
@@ -2910,20 +2746,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2935,25 +2757,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -2980,6 +2791,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96": {
@@ -3004,20 +2818,6 @@
   "97": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3070,25 +2870,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-04-01",
@@ -3102,6 +2891,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "99": {
@@ -3126,20 +2918,6 @@
   "100": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2003-07-01",
@@ -3179,6 +2957,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "104": {
@@ -4909,34 +4690,6 @@
    "giltSeit": "2021-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2003-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 1828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/274"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Titel: Anwendbarkeit des ATSG"
-    },
-    {
      "typ": "urspruenglich",
      "datum": null,
      "wirkung": false,
@@ -4958,25 +4711,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "20_a": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5003,6 +4746,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25_a": {
@@ -5041,20 +4787,6 @@
    "giltSeit": "2021-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 339",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/339"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
      "wirkung": false,
@@ -5080,6 +4812,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27_b": {
@@ -5735,20 +5470,6 @@
    "giltSeit": "2021-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
      "wirkung": false,
@@ -5787,25 +5508,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_b": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2003-07-01",
@@ -5819,6 +5529,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_c": {
@@ -5857,20 +5570,6 @@
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -5896,25 +5595,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "81_e": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2003-07-01",
@@ -5928,25 +5616,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85_a": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2003-07-01",
@@ -5973,25 +5650,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "90_a": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
@@ -6070,25 +5736,14 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_a": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6115,25 +5770,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_b": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
@@ -6199,25 +5843,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_c": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6257,25 +5890,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_d": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6328,25 +5950,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95_e": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1996-01-01",
@@ -6399,6 +6010,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96_a": {
@@ -6437,20 +6051,6 @@
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6476,26 +6076,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "97_b": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -6521,25 +6110,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98_a": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2003 4861",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2003/714"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6566,6 +6144,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98_b": {

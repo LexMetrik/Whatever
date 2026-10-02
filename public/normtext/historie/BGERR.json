@@ -6,6 +6,36 @@
   "referenz": 23,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2023-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 268",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 770",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Titel: Information und Datenschutz"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": null,
@@ -313,20 +343,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -338,25 +354,14 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -396,25 +401,14 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -480,25 +474,14 @@
      "absatz": null,
      "item": "j"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -547,25 +530,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -614,25 +586,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35": {
    "giltSeit": "2026-02-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -655,6 +616,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -892,135 +856,51 @@
   },
   "58": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "59": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "60": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "61": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "62": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "63": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "64": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "66": {
@@ -1058,20 +938,6 @@
    "giltSeit": "2026-02-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2023-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 268",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1097,25 +963,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 770",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Information und Datenschutz"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -1129,6 +984,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   }
  },

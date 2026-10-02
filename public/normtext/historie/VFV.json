@@ -6,6 +6,36 @@
   "referenz": 5,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2001-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2828",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Beiträge"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1968-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1968 43",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "E. Renten und Taggelder"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": null,
@@ -328,20 +358,6 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
-    {
      "typ": "fassung",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -354,6 +370,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -378,20 +397,6 @@
   "16": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
     {
      "typ": "fassung",
      "datum": "1976-01-01",
@@ -444,25 +449,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
     {
      "typ": "fassung",
      "datum": "1964-01-01",
@@ -476,25 +470,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -508,6 +491,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -573,20 +559,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1968-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1968 43",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Renten und Taggelder"
-    },
-    {
-     "typ": "fassung",
      "datum": "2008-01-01",
      "wirkung": false,
      "quellen": [
@@ -598,25 +570,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1968-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1968 43",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Renten und Taggelder"
-    },
     {
      "typ": "fassung",
      "datum": "1986-01-01",
@@ -643,6 +604,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -745,20 +709,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
      "quellen": [
@@ -783,25 +733,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_a": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -815,25 +754,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
@@ -873,6 +801,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_bis": {
@@ -953,22 +884,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Beiträge"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2828",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_24": {

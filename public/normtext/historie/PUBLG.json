@@ -6,6 +6,26 @@
   "referenz": 8,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3977",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/669"
+    },
+    {
+     "label": "BBl 2013 7057",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1331"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2016-01-01",
@@ -771,24 +791,6 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3977",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/669"
-      },
-      {
-       "label": "BBl 2013 7057",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1331"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -805,6 +807,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

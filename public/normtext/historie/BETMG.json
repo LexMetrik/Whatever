@@ -6,6 +6,170 @@
   "referenz": 26,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 447",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
+    },
+    {
+     "label": "BBl 2004 5965",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2013-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1451",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
+    },
+    {
+     "label": "BBl 2011 8195",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1451",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
+    },
+    {
+     "label": "BBl 2011 8195",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Strafverfolgung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6559",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/725"
+    },
+    {
+     "label": "BBl 2015 959",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/96"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Strafverfolgung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 2623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
+    },
+    {
+     "label": "BBl 2006 8573",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 2623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
+    },
+    {
+     "label": "BBl 2006 8573",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2011-07-01",
@@ -1061,24 +1225,6 @@
    "giltSeit": "2022-08-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
-    {
      "typ": "fassung",
      "datum": "2011-07-01",
      "wirkung": false,
@@ -1129,29 +1275,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "21": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-07-01",
@@ -1203,29 +1334,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "22": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-07-01",
@@ -1243,29 +1359,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "23": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "fassung",
      "datum": "1975-08-01",
@@ -1300,29 +1401,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "24": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "fassung",
      "datum": "1975-08-01",
@@ -1374,6 +1460,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "25": {
@@ -1401,48 +1490,14 @@
   },
   "26": {
    "giltSeit": "2013-10-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "27": {
    "giltSeit": "2017-05-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-07-01",
@@ -1477,6 +1532,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "28": {
@@ -1812,60 +1870,6 @@
    "giltSeit": "2022-08-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 447",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
-      },
-      {
-       "label": "BBl 2004 5965",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
-    },
-    {
      "typ": "fassung",
      "datum": "2010-12-01",
      "wirkung": false,
@@ -1899,47 +1903,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "18_d": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 447",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
-      },
-      {
-       "label": "BBl 2004 5965",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
     {
      "typ": "fassung",
      "datum": "2022-08-01",
@@ -1992,65 +1965,15 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Datenbearbeitung"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "18_e": {
    "giltSeit": "2022-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 447",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
-      },
-      {
-       "label": "BBl 2004 5965",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Datenbearbeitung"
-    },
     {
      "typ": "fassung",
      "datum": "2022-08-01",
@@ -2068,6 +1991,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    3
    ]
   },
   "18_f": {
@@ -2075,60 +2003,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 447",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
-      },
-      {
-       "label": "BBl 2004 5965",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 385",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
-      },
-      {
-       "label": "BBl 2020 6069",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Datenbearbeitung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2022-08-01",
      "wirkung": false,
      "quellen": [
@@ -2144,29 +2018,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    3
    ]
   },
   "19_a": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1975-08-01",
@@ -2218,29 +2079,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_b": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -2292,29 +2138,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_bis": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-07-01",
@@ -2332,29 +2163,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_c": {
    "giltSeit": "2013-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1975-08-01",
@@ -2372,6 +2188,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "1_a": {
@@ -2423,42 +2242,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1451",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
-      },
-      {
-       "label": "BBl 2011 8195",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Strafverfolgung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/725"
-      },
-      {
-       "label": "BBl 2015 959",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/96"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Strafverfolgung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2011-07-01",
      "wirkung": false,
      "quellen": [
@@ -2474,6 +2257,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "28_b_28_l": {
@@ -2521,24 +2308,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
-    },
-    {
-     "typ": "fassung",
      "datum": "2022-08-01",
      "wirkung": false,
      "quellen": [
@@ -2554,29 +2323,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "29_b": {
    "giltSeit": "2012-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
-    },
     {
      "typ": "fassung",
      "datum": "2012-10-01",
@@ -2594,75 +2348,30 @@
      "absatz": "2",
      "item": "2"
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "29_c": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "29_d": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "29_e": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "2_a": {
@@ -2821,24 +2530,6 @@
    "giltSeit": "2011-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    },
-    {
      "typ": "berichtigt",
      "datum": null,
      "wirkung": false,
@@ -2851,52 +2542,21 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "3_d": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_e": {
    "giltSeit": "2011-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    },
     {
      "typ": "inkraft",
      "datum": "2010-01-01",
@@ -2910,6 +2570,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "3_f": {
@@ -2937,140 +2600,44 @@
   },
   "3_g": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_h": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_i": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_j": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_k": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_l": {
    "giltSeit": "2011-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 2623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
-      },
-      {
-       "label": "BBl 2006 8573",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "8_a": {

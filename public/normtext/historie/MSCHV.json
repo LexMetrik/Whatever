@@ -6,6 +6,92 @@
   "referenz": 18,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3649",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5019",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Veröffentlichungen des IGE"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 865",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3649",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Kapitel: Herkunftsangaben"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 510",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1996-01-01",
@@ -1115,22 +1201,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Veröffentlichungen des IGE"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 5019",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/768"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44": {
@@ -1249,42 +1324,17 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "49": {
    "giltSeit": "1997-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -1311,25 +1361,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "50": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
     {
      "typ": "fassung",
      "datum": "2021-12-01",
@@ -1369,25 +1408,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "51": {
    "giltSeit": "1997-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1997-05-01",
@@ -1401,25 +1429,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "52": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -1433,6 +1450,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "54": {
@@ -1456,59 +1476,23 @@
   },
   "55": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "56": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "57": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "14_a": {
@@ -1599,78 +1583,28 @@
   },
   "24_b": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24_c": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24_d": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24_e": {
    "giltSeit": "2021-12-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
-    },
     {
      "typ": "fassung",
      "datum": "2021-12-01",
@@ -1684,6 +1618,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33_34": {
@@ -1809,20 +1746,6 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 865",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1835,6 +1758,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "52_a": {
@@ -1858,268 +1784,100 @@
   },
   "52_b": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_c": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_d": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_e": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_f": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_g": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_h": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_i": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_j": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_k": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_l": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_m": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_n": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_o": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 3649",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "52_p": {
@@ -2143,154 +1901,58 @@
   },
   "52_q": {
    "giltSeit": "2021-12-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 510",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "52_r": {
    "giltSeit": "2021-12-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 510",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "54_a": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "54_b": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "56_a": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "56_b": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "56_c": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "56_d": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "60_a": {

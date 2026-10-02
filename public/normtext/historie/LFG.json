@@ -6,6 +6,44 @@
   "referenz": 46,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1978-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1977 2110",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
+    },
+    {
+     "label": "BBl 1976 III 1232",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 3071",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+    },
+    {
+     "label": "BBl 1998 2591",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1995-01-01",
@@ -411,24 +449,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1995-01-01",
      "wirkung": false,
      "quellen": [
@@ -444,52 +464,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13": {
    "giltSeit": "1978-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "14": {
    "giltSeit": "1978-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1974-01-01",
@@ -507,6 +496,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -514,24 +506,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1964-05-01",
      "wirkung": false,
      "quellen": [
@@ -547,29 +521,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
    "giltSeit": "1978-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -577,24 +538,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1964-05-01",
      "wirkung": false,
      "quellen": [
@@ -610,29 +553,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
    "giltSeit": "1995-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1995-01-01",
@@ -651,29 +579,14 @@
      "item": null,
      "ueberschrift": "III. Landungszwang"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
    "giltSeit": "1995-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1995-01-01",
@@ -691,29 +604,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-04-01",
@@ -765,29 +663,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -840,29 +723,14 @@
      "item": null,
      "ueberschrift": "1. Zuständigkeiten und Befugnisse"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-04-01",
@@ -881,29 +749,14 @@
      "item": null,
      "ueberschrift": "1. Rettungs- und Bergungsdienst"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1960-05-01",
@@ -938,29 +791,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
    "giltSeit": "2011-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-11-01",
@@ -978,29 +816,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1053,29 +876,14 @@
      "item": null,
      "ueberschrift": "b. Untersuchungskommission für die Zivilluftfahrt"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1093,29 +901,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1998-11-15",
@@ -1167,29 +960,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28": {
    "giltSeit": "2007-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1998-11-15",
@@ -1224,29 +1002,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1998-11-15",
@@ -1298,29 +1061,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "fassung",
      "datum": "1998-11-15",
@@ -1355,6 +1103,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -1362,24 +1113,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1998-11-15",
      "wirkung": false,
      "quellen": [
@@ -1395,6 +1128,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -1402,24 +1138,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1998-11-15",
      "wirkung": false,
      "quellen": [
@@ -1435,6 +1153,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
@@ -1442,24 +1163,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1998-11-15",
      "wirkung": false,
      "quellen": [
@@ -1475,6 +1178,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -1581,24 +1287,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -1618,29 +1306,14 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "38": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1681,29 +1354,14 @@
      "frueher": "Ziff. 3",
      "ueberschrift": "10. Benützungsrecht"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39": {
    "giltSeit": "2012-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "2012-06-01",
@@ -1721,29 +1379,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "2011-04-01",
@@ -1778,29 +1421,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1818,29 +1446,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "42": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "2011-04-01",
@@ -1875,29 +1488,14 @@
      "absatz": "1bis",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "43": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "1974-01-01",
@@ -1966,29 +1564,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "1974-01-01",
@@ -2074,29 +1657,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "45": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "fassung",
      "datum": "1974-01-01",
@@ -2148,6 +1716,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "46": {
@@ -2178,24 +1749,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
-     "typ": "fassung",
      "datum": "1986-01-01",
      "wirkung": false,
      "quellen": [
@@ -2211,6 +1764,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48": {
@@ -2218,24 +1774,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2251,6 +1789,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "49": {
@@ -2258,24 +1799,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-04-01",
      "wirkung": false,
      "quellen": [
@@ -2291,6 +1814,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "50": {
@@ -4276,24 +3802,6 @@
    "giltSeit": "1995-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1995-01-01",
      "wirkung": false,
@@ -4310,30 +3818,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -4350,30 +3843,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_b": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -4390,29 +3868,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_c": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -4464,30 +3927,15 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_d": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -4504,30 +3952,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_e": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -4544,30 +3977,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_f": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -4584,29 +4002,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4658,29 +4061,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_b": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1978-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1977 2110",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
-      },
-      {
-       "label": "BBl 1976 III 1232",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4715,6 +4103,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_c": {
@@ -4761,24 +4152,6 @@
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -4795,30 +4168,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_b": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -4835,30 +4193,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_c": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -4875,29 +4218,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_d": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -4932,29 +4260,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_e": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4989,29 +4302,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5046,29 +4344,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_b": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5103,29 +4386,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_c": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5143,29 +4411,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_d": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5235,6 +4488,9 @@
      "item": null,
      "ueberschrift": "e. Einladung zur Stellungnahme, Publikation und Auflage"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_e": {
@@ -5280,24 +4536,6 @@
   "37_f": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5349,30 +4587,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_g": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5389,30 +4612,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_h": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5429,30 +4637,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_i": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5469,29 +4662,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_k": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5561,30 +4739,15 @@
      "item": null,
      "ueberschrift": "6. Einigungs- und Schätzungsverfahren, vorzeitige Besitzeinweisung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_l": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5601,30 +4764,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_m": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5641,30 +4789,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_n": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5681,30 +4814,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_o": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5721,30 +4839,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_p": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5761,30 +4864,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_q": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5801,30 +4889,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_r": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
      "wirkung": false,
@@ -5841,29 +4914,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_s": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5898,29 +4956,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_t": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -5938,29 +4981,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_u": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -6005,29 +5033,14 @@
      "item": null,
      "ueberschrift": "9a. Bestandesschutz für Landesflughäfen"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39_a": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
@@ -6045,6 +5058,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "3_a": {
@@ -6343,24 +5359,6 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -6377,29 +5375,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_a_bis": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -6460,29 +5443,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_b": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6517,30 +5485,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_b_bis": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -6557,30 +5510,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_c": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
      "wirkung": false,
@@ -6597,30 +5535,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_d": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
      "wirkung": false,
@@ -6637,30 +5560,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_e": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
      "wirkung": false,
@@ -6677,30 +5585,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_f": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
      "wirkung": false,
@@ -6717,30 +5610,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_g": {
    "giltSeit": "2011-04-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-04-01",
      "wirkung": false,
@@ -6757,30 +5635,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -6797,30 +5660,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_b": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -6837,29 +5685,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44_a": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -6869,29 +5702,14 @@
      "item": null,
      "frueher": "Art. 44bis"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44_b": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1999 3071",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
-      },
-      {
-       "label": "BBl 1998 2591",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1974-01-01",
@@ -6918,6 +5736,9 @@
      "item": null,
      "frueher": "Art. 44ter"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "53_54": {

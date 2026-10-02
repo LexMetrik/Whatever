@@ -6,6 +6,116 @@
   "referenz": 69,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 3345",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/580"
+    },
+    {
+     "label": "BBl 2013 7801",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1479"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Risikoausgleich"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 731",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/731"
+    },
+    {
+     "label": "BBl 2019 5397",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1903"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Datenweitergabe und Statistiken"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6717",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/748"
+    },
+    {
+     "label": "BBl 2016 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2016/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Wahl des Leistungserbringers, Kostenübernahme und Aufnahmepflicht der Listenspitäler"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 769",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
+    },
+    {
+     "label": "BBl 2021 2819",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2016-01-01",
@@ -402,24 +512,6 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 3345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/580"
-      },
-      {
-       "label": "BBl 2013 7801",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Risikoausgleich"
-    },
-    {
      "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -436,6 +528,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -856,24 +951,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 731",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/731"
-      },
-      {
-       "label": "BBl 2019 5397",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1903"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Datenweitergabe und Statistiken"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-01-01",
      "wirkung": false,
      "quellen": [
@@ -906,6 +983,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24": {
@@ -2410,25 +2490,9 @@
   },
   "55": {
    "giltSeit": "2026-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "56": {
@@ -3500,25 +3564,9 @@
   },
   "79": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "80": {
@@ -3627,24 +3675,6 @@
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
        "label": "AS 2002 3453",
        "url": "https://fedlex.data.admin.ch/eli/oc/2002/511"
       },
@@ -3673,29 +3703,14 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "83": {
    "giltSeit": "2007-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-12-01",
@@ -3713,29 +3728,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -3838,6 +3838,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "85": {
@@ -3858,26 +3861,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "86": {
@@ -3898,26 +3886,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "87": {
@@ -3938,26 +3911,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88": {
@@ -3985,25 +3943,9 @@
   },
   "89": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "90": {
@@ -4034,24 +3976,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-01-01",
      "wirkung": false,
      "quellen": [
@@ -4067,29 +3991,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "92": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": null,
@@ -4166,6 +4075,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "93": {
@@ -4454,24 +4366,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 3345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/580"
-      },
-      {
-       "label": "BBl 2013 7801",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1479"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Risikoausgleich"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
      "quellen": [
@@ -4487,6 +4381,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17_a": {
@@ -4507,26 +4404,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Abschnitt: Risikoausgleich"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 3345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/580"
-      },
-      {
-       "label": "BBl 2013 7801",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1479"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "1_a": {
@@ -4867,24 +4749,6 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6717",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/748"
-      },
-      {
-       "label": "BBl 2016 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2016/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Wahl des Leistungserbringers, Kostenübernahme und Aufnahmepflicht der Listenspitäler"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2009-01-01",
      "wirkung": false,
@@ -4918,6 +4782,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "42_a": {
@@ -5304,24 +5171,6 @@
    "giltSeit": "2026-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
@@ -5338,30 +5187,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "54_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
@@ -5378,30 +5212,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "54_c": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
@@ -5418,29 +5237,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "55_a": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -5475,29 +5279,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "55_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 769",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/769"
-      },
-      {
-       "label": "BBl 2021 2819",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/2819"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Massnahmen zur Eindämmung der Kostenentwicklung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
@@ -5515,6 +5304,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "56_a": {
@@ -6300,48 +6092,14 @@
   },
   "78_a": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "79_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Titel: Besondere Bestimmungen zur Koordination, zur Haftung und zum Rückgriff"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6376,29 +6134,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "82_a": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -6416,29 +6159,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84_a": {
    "giltSeit": "2017-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -6694,29 +6422,14 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "84_b": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
@@ -6734,29 +6447,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "90_a": {
    "giltSeit": "2009-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3371",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
-      },
-      {
-       "label": "BBl 1991 II 185",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_185__"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Titel: Besondere Bestimmungen zum Verfahren und zur Rechtspflege, Strafbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -6808,6 +6506,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "93_a": {

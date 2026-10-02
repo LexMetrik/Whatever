@@ -6,6 +6,116 @@
   "referenz": 31,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Integrität und Transparenz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Aufgaben und strategische Ziele"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2021-05-26",
@@ -1215,24 +1325,6 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
      "absatz": "1",
      "item": "a"
     },
@@ -1270,29 +1362,14 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1344,29 +1421,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1452,75 +1514,28 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1538,29 +1553,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1578,6 +1578,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -2154,24 +2157,6 @@
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Integrität und Transparenz"
-    },
-    {
      "typ": "fassung",
      "datum": "2020-01-01",
      "wirkung": false,
@@ -2188,6 +2173,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "57": {
@@ -2384,48 +2372,14 @@
   },
   "62": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "63": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -2443,29 +2397,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64": {
    "giltSeit": "2021-05-26",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
     {
      "typ": "fassung",
      "datum": "2021-05-26",
@@ -2483,6 +2422,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "65": {
@@ -2967,26 +2909,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Aufgaben und strategische Ziele"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "71": {
@@ -3281,26 +3208,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "79": {
@@ -3321,26 +3233,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "80": {
@@ -3361,49 +3258,18 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "81": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "82": {
@@ -4184,24 +4050,6 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4218,6 +4066,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "2_a": {
@@ -4444,24 +4295,6 @@
    "giltSeit": "2023-09-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4529,29 +4362,14 @@
      "absatz": "1",
      "item": "4"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "62_b": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -4586,29 +4404,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "62_c": {
    "giltSeit": "2021-05-26",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2021-05-26",
@@ -4626,29 +4429,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64_a": {
    "giltSeit": "2021-05-26",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -4683,6 +4471,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64_b": {
@@ -4710,117 +4501,37 @@
   },
   "64_c": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "64_d": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "64_e": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "64_f": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "64_g": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "67_a": {
@@ -4959,24 +4670,6 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4993,30 +4686,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "79_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 2745",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
-      },
-      {
-       "label": "BBl 2013 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -5033,6 +4711,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "7_a": {

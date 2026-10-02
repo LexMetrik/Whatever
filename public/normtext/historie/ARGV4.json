@@ -6,6 +6,148 @@
   "referenz": 4,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Verkehrswege"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Licht, Raumluft"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Industrielle Betriebe"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Schlussbestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Arbeitsräume"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2008-12-01",
@@ -196,55 +338,16 @@
   },
   "3": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "4": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-08-01",
      "wirkung": false,
@@ -258,59 +361,23 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Arbeitsräume"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Arbeitsräume"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    9
    ]
   },
   "6": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-08-01",
      "wirkung": false,
@@ -324,39 +391,14 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Verkehrswege"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7": {
    "giltSeit": "2015-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    },
     {
      "typ": "fassung",
      "datum": "2015-05-01",
@@ -370,39 +412,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "8": {
    "giltSeit": "2015-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    },
     {
      "typ": "fassung",
      "datum": "2006-11-01",
@@ -442,39 +460,15 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "9": {
    "giltSeit": "2006-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    },
     {
      "typ": "fassung",
      "datum": "2006-11-01",
@@ -501,39 +495,15 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "10": {
    "giltSeit": "2006-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    },
     {
      "typ": "fassung",
      "datum": "2006-11-01",
@@ -547,224 +517,64 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "11": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "12": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "13": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "15": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "16": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Verkehrswege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2000-08-01",
      "wirkung": false,
@@ -778,39 +588,17 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Licht, Raumluft"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Licht, Raumluft"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
    ]
   },
   "19": {
@@ -827,20 +615,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -857,6 +631,9 @@
      "item": null,
      "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
@@ -873,36 +650,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "21": {
@@ -919,36 +672,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "22": {
@@ -965,36 +694,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "23": {
@@ -1011,36 +716,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "24": {
@@ -1057,36 +738,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "25": {
@@ -1103,55 +760,17 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "26": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
     {
      "typ": "fassung",
      "datum": "2000-08-01",
@@ -1179,39 +798,14 @@
      "item": null,
      "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2002-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
-    },
     {
      "typ": "fassung",
      "datum": "2000-08-01",
@@ -1238,6 +832,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "28": {
@@ -1271,78 +869,28 @@
   },
   "29": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "30": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "31": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "32": {
    "giltSeit": "2009-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    },
     {
      "typ": "fassung",
      "datum": "2009-06-01",
@@ -1356,25 +904,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "33": {
    "giltSeit": "2000-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2002-06-01",
@@ -1388,6 +925,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "34": {
@@ -1395,20 +935,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-06-01",
      "wirkung": false,
      "quellen": [
@@ -1420,6 +946,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "35": {
@@ -1427,20 +956,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-06-01",
      "wirkung": false,
      "quellen": [
@@ -1452,6 +967,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "36": {
@@ -1459,20 +977,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-06-01",
      "wirkung": false,
      "quellen": [
@@ -1484,6 +988,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37": {
@@ -1530,40 +1037,16 @@
   },
   "38": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "39": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "40": {
@@ -1571,20 +1054,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-06-01",
      "wirkung": false,
      "quellen": [
@@ -1596,6 +1065,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "41": {
@@ -1603,20 +1075,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    },
-    {
-     "typ": "fassung",
      "datum": "2002-06-01",
      "wirkung": false,
      "quellen": [
@@ -1654,44 +1112,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "42": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "43": {
    "giltSeit": "2009-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    },
     {
      "typ": "fassung",
      "datum": "2009-06-01",
@@ -1705,25 +1140,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "44": {
    "giltSeit": "2002-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    },
     {
      "typ": "fassung",
      "datum": "2002-06-01",
@@ -1750,44 +1174,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "45": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "46": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "47": {
@@ -1821,21 +1224,9 @@
   },
   "48": {
    "giltSeit": "2000-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2000-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1636",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   }
  },

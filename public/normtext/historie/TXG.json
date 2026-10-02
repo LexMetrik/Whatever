@@ -6,6 +6,26 @@
   "referenz": 12,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-11-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1163",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/217"
+    },
+    {
+     "label": "BBl 2013 2317",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/414"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": null,
@@ -883,48 +903,16 @@
   },
   "15_b": {
    "giltSeit": "2017-11-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-11-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1163",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/217"
-      },
-      {
-       "label": "BBl 2013 2317",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/414"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "15_c": {
    "giltSeit": "2017-11-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-11-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1163",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/217"
-      },
-      {
-       "label": "BBl 2013 2317",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2013/414"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   }
  },

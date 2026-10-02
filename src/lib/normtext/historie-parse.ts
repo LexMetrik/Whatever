@@ -379,6 +379,10 @@ export interface ArtikelHistorie {
   gegenstandslos?: { seit: string | null };
   /** Alle Ereignisse in amtlicher Dokumentreihenfolge (Fedlex: ältester Eingriff je Fussnote zuerst). */
   ereignisse: HistorieEreignis[];
+  /** NUR im Shard (Nutzlast, W2·27 2.10.2026): Indizes in `HistorieShard.ueberschriftEreignisse` — die von der
+   *  Gliederungsüberschrift GEERBTEN Ereignisse stehen je Erlass einmal in der Tabelle statt je Artikel; sie gehen
+   *  `ereignisse` in dieser Reihenfolge VORAN. `loeseErbeAuf` (Loader) setzt sie wieder ein und entfernt das Feld. */
+  erbt?: number[];
 }
 
 /**
@@ -406,7 +410,7 @@ export function baueArtikelHistorie(
      *  Ereignisse der Typen `SEKTION_ERBT` (Entscheid David 2.10.2026). undefined = keine. */
     geerbt?: ReadonlyArray<FnEingang>;
   } = {},
-): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number } {
+): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number; erbtAnzahl: number } {
   const ereignisse: HistorieEreignis[] = [];
   const unparsed: FnEingang[] = [];
   let refCount = 0;
@@ -423,7 +427,7 @@ export function baueArtikelHistorie(
   }
   // Geerbte Überschrift-Ereignisse (nie an einen amtlich aufgehobenen Artikel: seine Chronik wäre die der Überschrift).
   const erbe = opts.snapshotAufgehoben === true ? [] : geerbteEreignisse(opts.geerbt);
-  if (ereignisse.length === 0 && erbe.length === 0) return { historie: null, unparsed, refCount, ereignisFnCount };
+  if (ereignisse.length === 0 && erbe.length === 0) return { historie: null, unparsed, refCount, ereignisFnCount, erbtAnzahl: 0 };
 
   // Dokumentreihenfolge bleibt erhalten (siehe Funktions-Doc). «giltSeit»/
   // «aufgehobenSeit» als Maximum über die datierten Ereignisse ableiten.
@@ -499,7 +503,9 @@ export function baueArtikelHistorie(
   // Geerbte Überschrift-Ereignisse (W2·27-BUND-FERTIG): vor die eigenen — die Überschrift steht im Dokument vor dem
   // Artikel —, zählen wie am Träger-Artikel in «giltSeit» ein. Nicht an einen Artikel mit eigener Ganzaufhebung bzw.
   // «gegenstandslos»: dessen Fassungsstand wäre sonst der der Überschrift (§8).
+  let erbtAnzahl = 0;
   if (erbe.length > 0 && !aufgehobenSeit && !gegenstandslos) {
+    erbtAnzahl = erbe.length;
     ereignisse.unshift(...erbe);
     for (const e of erbe) {
       if (e.datum && GILT_TYPEN.has(e.typ) && (!giltSeit || e.datum > giltSeit)) giltSeit = e.datum;
@@ -515,7 +521,7 @@ export function baueArtikelHistorie(
   const historie: ArtikelHistorie = { giltSeit, ereignisse };
   if (aufgehobenSeit) historie.aufgehobenSeit = aufgehobenSeit;
   if (gegenstandslos) historie.gegenstandslos = gegenstandslos;
-  return { historie, unparsed, refCount, ereignisFnCount };
+  return { historie, unparsed, refCount, ereignisFnCount, erbtAnzahl };
 }
 
 /**
@@ -546,7 +552,7 @@ function artikelAufhebungMoeglich(fn: FnEingang): boolean {
  * gemessen (Bericht 2.10.2026), aber NICHT weitergegeben; «Aufgehoben» an einer Überschrift trifft nie die
  * Artikel darunter, «Ursprünglich»/«Berichtigt» beschreiben die Überschrift selbst.
  */
-export const SEKTION_ERBT: ReadonlySet<HistorieTyp> = new Set<HistorieTyp>(['eingefuegt', 'fassung']);
+const SEKTION_ERBT: ReadonlySet<HistorieTyp> = new Set<HistorieTyp>(['eingefuegt', 'fassung']);
 
 /** Geerbte Sektions-Fussnoten → ihre weitergebbaren Ereignisse (Typ ∈ SEKTION_ERBT), je mit Herkunfts-Label. */
 function geerbteEreignisse(fns: ReadonlyArray<FnEingang> | undefined): HistorieEreignis[] {
@@ -620,4 +626,16 @@ export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, Fn
     }
   }
   return erbe;
+}
+
+/**
+ * Shard → Anzeige: setzt die geerbten Überschrift-Ereignisse (`erbt` → Tabelle `ueberschriftEreignisse`) wieder vor die
+ * eigenen ein und entfernt das Shard-Feld. Ohne `erbt` kommt dasselbe Objekt zurück (kein Mehraufwand für Artikel ohne
+ * Erbe, stabile Identität für `memo`).
+ */
+export function loeseErbeAuf(a: ArtikelHistorie, tabelle: ReadonlyArray<HistorieEreignis> | undefined): ArtikelHistorie {
+  if (!a.erbt || a.erbt.length === 0) return a;
+  const { erbt, ...rest } = a;
+  const geerbt = erbt.map((i) => tabelle?.[i]).filter((e): e is HistorieEreignis => e !== undefined);
+  return { ...rest, ereignisse: [...geerbt, ...a.ereignisse] };
 }

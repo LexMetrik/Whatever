@@ -6,6 +6,92 @@
   "referenz": 46,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2014-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 2171",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 3637",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1515",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/354"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9. Kapitel: Verjährung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 3",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "11. Kapitel: Schlussbestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 569",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/569"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Dialog und Personalbeurteilung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 2871",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-08-01",
@@ -463,21 +549,9 @@
   },
   "16": {
    "giltSeit": "2026-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 569",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/569"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Dialog und Personalbeurteilung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "18": {
@@ -3092,20 +3166,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2016-12-01",
      "wirkung": false,
      "quellen": [
@@ -3117,25 +3177,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-12-01",
@@ -3202,6 +3251,9 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "107": {
@@ -3372,20 +3424,6 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1515",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/354"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "9. Kapitel: Verjährung"
-    },
-    {
      "typ": "aufgehoben",
      "datum": "2013-07-01",
      "wirkung": true,
@@ -3398,6 +3436,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "114": {
@@ -3695,21 +3736,9 @@
   },
   "117": {
    "giltSeit": "2005-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "103_a": {
@@ -3774,20 +3803,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -3799,44 +3814,21 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "104_b": {
    "giltSeit": "2014-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104_c": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-07-01",
@@ -3850,44 +3842,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "104_d": {
    "giltSeit": "2014-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104_e": {
    "giltSeit": "2014-08-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104_f": {
@@ -3914,20 +3885,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2016-12-01",
      "wirkung": false,
      "quellen": [
@@ -3939,25 +3896,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-12-01",
@@ -4010,25 +3956,14 @@
      "absatz": "3",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_c": {
    "giltSeit": "2016-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-12-01",
@@ -4042,25 +3977,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105_d": {
    "giltSeit": "2016-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-12-01",
@@ -4074,39 +3998,17 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106_a": {
    "giltSeit": "2016-12-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 2171",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/367"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 3637",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/611"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "10_a": {
@@ -4268,20 +4170,6 @@
    "giltSeit": "2010-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-07-01",
      "wirkung": false,
@@ -4320,6 +4208,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_d": {
@@ -4358,20 +4249,6 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -4397,25 +4274,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_f": {
    "giltSeit": "2014-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-08-01",
@@ -4429,25 +4295,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_g": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
@@ -4461,25 +4316,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_h": {
    "giltSeit": "2018-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2018-07-01",
@@ -4493,6 +4337,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_i": {
@@ -4531,20 +4378,6 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -4557,25 +4390,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_k": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
@@ -4589,25 +4411,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_l": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -4621,25 +4432,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_m": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
@@ -4822,25 +4622,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_n": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11. Kapitel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-07-01",
@@ -4854,6 +4643,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "11_a": {
@@ -6280,59 +6072,21 @@
   },
   "88_b": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "88_c": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "88_d": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -6346,6 +6100,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88_d_bis": {
@@ -6353,20 +6110,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
      "quellen": [
@@ -6378,6 +6121,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88_d_ter": {
@@ -6385,20 +6131,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
      "quellen": [
@@ -6410,6 +6142,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88_e": {
@@ -6434,20 +6169,6 @@
   "88_f": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2871",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/379"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Berufliche Vorsorge"
-    },
     {
      "typ": "fassung",
      "datum": "2014-08-01",
@@ -6526,6 +6247,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "88_g_88_j": {

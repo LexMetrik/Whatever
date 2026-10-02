@@ -6,6 +6,120 @@
   "referenz": 14,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2014-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 909",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Erschliessung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2014-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 909",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Spezielle Nichtbauzonen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2014-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 909",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Abschnitt: Baupolizei ausserhalb der Bauzonen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6b. Abschnitt: Abbruchprämie (Art. 5a RPG)"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2014-05-01",
@@ -272,22 +386,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Erschliessung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "33": {
@@ -346,20 +449,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    },
-    {
-     "typ": "fassung",
      "datum": "2004-01-01",
      "wirkung": false,
      "quellen": [
@@ -371,6 +460,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "36": {
@@ -378,20 +470,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-09-01",
      "wirkung": false,
      "quellen": [
@@ -403,6 +481,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37": {
@@ -410,20 +491,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-09-01",
      "wirkung": false,
      "quellen": [
@@ -435,25 +502,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "38": {
    "giltSeit": "2014-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "39": {
@@ -939,116 +997,44 @@
   },
   "25_b": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_c": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_d": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_e": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_f": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_g": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Stabilisierungsziele ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "30_a": {
@@ -1073,34 +1059,6 @@
   "32_a": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
     {
      "typ": "fassung",
      "datum": "2026-01-01",
@@ -1166,39 +1124,15 @@
      "absatz": "1bis",
      "item": "c"
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_a_bis": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
@@ -1212,39 +1146,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -1258,6 +1168,10 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_bis": {
@@ -1311,34 +1225,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2022-07-01",
      "wirkung": false,
      "quellen": [
@@ -1389,6 +1275,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_d": {
@@ -1396,34 +1286,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -1435,6 +1297,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_e": {
@@ -1442,34 +1308,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -1481,6 +1319,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_f": {
@@ -1488,34 +1330,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -1527,6 +1341,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_g": {
@@ -1534,34 +1352,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -1573,6 +1363,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "32_h": {
@@ -1580,34 +1374,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Energieerzeugungs- und Infrastrukturanlagen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2026-01-01",
      "wirkung": false,
      "quellen": [
@@ -1619,26 +1385,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "33_a": {
    "giltSeit": "2026-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Spezielle Nichtbauzonen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2026-07-01",
      "wirkung": false,
@@ -1651,25 +1407,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_a": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2007-09-01",
@@ -1722,25 +1467,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "34_b": {
    "giltSeit": "2014-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2014-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2014 909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/199"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Zonenkonformität in der Landwirtschaftszone"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-05-01",
@@ -1754,6 +1488,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "38_a": {
@@ -2064,21 +1801,9 @@
   },
   "43_c": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Abschnitt: Baupolizei ausserhalb der Bauzonen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "43_d": {
@@ -2102,21 +1827,9 @@
   },
   "43_e": {
    "giltSeit": "2026-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/659"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6b. Abschnitt: Abbruchprämie (Art. 5a RPG)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "52_a": {

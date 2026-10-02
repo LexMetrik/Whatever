@@ -6,6 +6,78 @@
   "referenz": 15,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 919",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 919",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 528",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/528"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Plan für das Grundbuch"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 528",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/528"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 919",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2023-01-01",
@@ -372,21 +444,9 @@
   },
   "10_b": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 919",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "22_a": {
@@ -410,21 +470,9 @@
   },
   "22_b": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 919",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "26_a": {
@@ -484,21 +532,9 @@
   },
   "7_b": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 528",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/528"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Abschnitt: Plan für das Grundbuch"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "7_c": {
@@ -522,21 +558,9 @@
   },
   "7_d": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 528",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/528"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "8_a": {
@@ -560,21 +584,9 @@
   },
   "8_b": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 919",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/919"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   }
  },

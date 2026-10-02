@@ -6,6 +6,36 @@
   "referenz": 18,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4951",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-10-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4495",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2020-08-01",
@@ -159,20 +189,6 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -289,25 +305,14 @@
      "absatz": "2",
      "item": "f"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
    "giltSeit": "2020-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -360,63 +365,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "13": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "14": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -503,20 +475,6 @@
    "giltSeit": "2013-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -529,26 +487,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10_b": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4951",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/719"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -561,6 +508,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16_a": {
@@ -643,20 +593,6 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    },
-    {
      "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -682,120 +618,49 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "18_c": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_d": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_e": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_f": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_g": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_h": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -861,44 +726,21 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "18_i": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18_j": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/637"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Familienzulagenregister"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -912,6 +754,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23_a": {

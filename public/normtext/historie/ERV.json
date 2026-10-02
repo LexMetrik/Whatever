@@ -6,6 +6,176 @@
   "referenz": 69,
   "unparsed": 11
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 7625",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 7625",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 804",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 13",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Operationelle Risiken"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2025-01-01",
@@ -343,40 +513,14 @@
   },
   "19": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "20": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -403,25 +547,14 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "21": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -448,25 +581,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "22": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -493,82 +615,35 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "23": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "24": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "25": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "26": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -582,25 +657,14 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "27": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -627,44 +691,21 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "28": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "29": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -691,44 +732,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "30": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "31": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -742,25 +760,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "32": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -774,25 +781,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "33": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -819,44 +815,21 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "34": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "35": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -870,25 +843,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "36": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -915,25 +877,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "37": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -973,25 +924,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "38": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1005,44 +945,21 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "39": {
    "giltSeit": "2023-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "40": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -1056,6 +973,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "41": {
@@ -1530,41 +1450,18 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "65": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "66": {
@@ -1581,22 +1478,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "67": {
@@ -1613,22 +1499,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "68": {
@@ -1645,22 +1520,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "69": {
@@ -1677,22 +1541,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "70": {
@@ -1709,22 +1562,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "71": {
@@ -1741,22 +1583,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72": {
@@ -1773,22 +1604,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "73": {
@@ -1805,20 +1625,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -1834,6 +1640,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "77": {
@@ -1930,59 +1739,23 @@
   },
   "84": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "85": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "86": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "87": {
@@ -2043,97 +1816,37 @@
   },
   "90": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "91": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "92": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "93": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "94": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "95": {
@@ -2302,20 +2015,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
      "quellen": [
@@ -2327,6 +2026,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102": {
@@ -2334,20 +2036,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
      "quellen": [
@@ -2359,6 +2047,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
@@ -2449,21 +2140,9 @@
   },
   "114": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "115": {
@@ -2471,20 +2150,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
      "quellen": [
@@ -2496,6 +2161,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "116": {
@@ -2503,20 +2171,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-01-01",
      "wirkung": false,
      "quellen": [
@@ -2528,25 +2182,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "117": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -2560,25 +2203,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "118": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -2592,25 +2224,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "119": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 7625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/827"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Berechnung der Gesamtposition"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -2650,6 +2271,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "124": {
@@ -2761,20 +2385,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -2790,6 +2400,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "128": {
@@ -2828,20 +2441,6 @@
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
      "wirkung": false,
@@ -2854,44 +2453,23 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "130": {
    "giltSeit": "2016-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "131": {
    "giltSeit": "2016-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "132": {
@@ -2993,20 +2571,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -3018,6 +2582,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "136": {
@@ -3206,20 +2773,6 @@
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-07-01",
      "wirkung": false,
@@ -3271,25 +2824,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "126_b": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
@@ -3303,25 +2845,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "127_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-07-01",
@@ -3387,25 +2918,14 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "131_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -3419,44 +2939,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "131_b": {
    "giltSeit": "2016-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "132_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3483,25 +2980,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "132_b": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -3515,6 +3001,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "137_138": {
@@ -3660,154 +3149,56 @@
   },
   "148_d": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_e": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_f": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_g": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_h": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_i": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "148_j": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "27_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -3821,25 +3212,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "31_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -3853,25 +3233,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "40_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 804",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/804"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -3886,6 +3255,9 @@
      "item": null,
      "ueberschrift": "3. Kapitel: Zusätzliche verlustabsorbierende Mittel für Kantonalbanken"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "42_a": {
@@ -4044,78 +3416,30 @@
   },
   "47_b": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "47_c": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "47_d": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "47_e": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4623",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/761"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "4_a": {
@@ -4248,20 +3572,6 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4274,26 +3584,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "64_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4306,26 +3605,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "64_b": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4338,26 +3626,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "64_c": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4370,26 +3647,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "65_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4402,26 +3668,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "66_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4434,26 +3689,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "68_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4466,26 +3710,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "70_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4498,26 +3731,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "70_b": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4530,26 +3752,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "71_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4562,26 +3773,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "71_b": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4594,26 +3794,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4626,26 +3815,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_b": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4658,25 +3836,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_c": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -4703,26 +3870,15 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_d": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4735,26 +3891,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_e": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4767,26 +3912,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_f": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4799,26 +3933,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "72_g": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -4831,6 +3954,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "74_76": {
@@ -4873,173 +3999,65 @@
   },
   "77_b": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_c": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_d": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_e": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_f": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_g": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_h": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_i": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "77_j": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "78_79": {
@@ -5117,135 +4135,51 @@
   },
   "83_a": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "86_a": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "92_a": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "92_b": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "92_c": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "92_d": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "93_a": {
    "giltSeit": "2025-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 13",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/13"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Operationelle Risiken"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   }
  },

@@ -6,6 +6,62 @@
   "referenz": 24,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 3973",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
+    },
+    {
+     "label": "BBl 2009 5991",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-10-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4491",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
+    },
+    {
+     "label": "BBl 2009 6101",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Familienzulagenregister"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 2775",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/502"
+    },
+    {
+     "label": "BBl 2019 1019",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/171"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2024-01-01",
@@ -212,24 +268,6 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
      "absatz": "1",
      "item": null
     },
@@ -250,29 +288,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -307,75 +330,28 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "15": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
@@ -410,29 +386,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 3973",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/567"
-      },
-      {
-       "label": "BBl 2009 5991",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1081"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
-    },
     {
      "typ": "fassung",
      "datum": "2026-01-01",
@@ -450,6 +411,9 @@
      "absatz": "2",
      "item": "k"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -736,24 +700,6 @@
    "giltSeit": "2022-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4491",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
-      },
-      {
-       "label": "BBl 2009 6101",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Familienzulagenregister"
-    },
-    {
      "typ": "ausdruck",
      "datum": "2022-01-01",
      "wirkung": false,
@@ -770,98 +716,35 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_c": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4491",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
-      },
-      {
-       "label": "BBl 2009 6101",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "21_d": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4491",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
-      },
-      {
-       "label": "BBl 2009 6101",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "21_e": {
    "giltSeit": "2010-10-15",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4491",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
-      },
-      {
-       "label": "BBl 2009 6101",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Familienzulagenregister"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "21_e_bis": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2010-10-15",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4491",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/636"
-      },
-      {
-       "label": "BBl 2009 6101",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1101"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Familienzulagenregister"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -879,6 +762,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_f": {
@@ -906,71 +792,21 @@
   },
   "21_g": {
    "giltSeit": "2020-08-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 2775",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/502"
-      },
-      {
-       "label": "BBl 2019 1019",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/171"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "21_h": {
    "giltSeit": "2020-08-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 2775",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/502"
-      },
-      {
-       "label": "BBl 2019 1019",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/171"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "21_i": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-08-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 2775",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/502"
-      },
-      {
-       "label": "BBl 2019 1019",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/171"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -988,6 +824,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "28_a": {

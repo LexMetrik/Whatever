@@ -6,6 +6,50 @@
   "referenz": 85,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 240",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 240",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 261",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-06-12",
@@ -1270,154 +1314,58 @@
   },
   "55": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "56": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "57": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "58": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "59": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "60": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "61": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "62": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "63": {
@@ -1513,21 +1461,9 @@
   },
   "10_b": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 240",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29_a": {
@@ -2040,97 +1976,37 @@
   },
   "68_b": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 261",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68_c": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 261",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68_d": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 261",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68_e": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 261",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68_f": {
    "giltSeit": "2026-06-12",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-06-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2026 261",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   }
  },

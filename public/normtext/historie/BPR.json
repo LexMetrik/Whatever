@@ -6,6 +6,80 @@
   "referenz": 17,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 753",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
+    },
+    {
+     "label": "BBl 1993 III 445",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeines"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 753",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
+    },
+    {
+     "label": "BBl 1993 III 445",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Volksreferendum"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 753",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
+    },
+    {
+     "label": "BBl 1993 III 445",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Kantonsreferendum"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-10-23",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 466",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
+    },
+    {
+     "label": "BBl 2019 7875",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": null,
@@ -1936,24 +2010,6 @@
    "giltSeit": "2015-11-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    },
-    {
      "typ": "fassung",
      "datum": "2015-11-01",
      "wirkung": false,
@@ -2004,29 +2060,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62": {
    "giltSeit": "2015-11-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    },
     {
      "typ": "fassung",
      "datum": "2015-11-01",
@@ -2044,52 +2085,21 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "63": {
    "giltSeit": "1997-04-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "64": {
    "giltSeit": "1997-04-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    },
     {
      "typ": "fassung",
      "datum": "1997-04-01",
@@ -2124,6 +2134,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65": {
@@ -2152,24 +2165,6 @@
   "66": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    },
     {
      "typ": "fassung",
      "datum": "1997-04-01",
@@ -2238,6 +2233,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67": {
@@ -3069,26 +3067,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59_b": {
@@ -3109,26 +3092,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59_c": {
@@ -3149,49 +3117,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60_a": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Volksreferendum"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2003-01-01",
@@ -3209,6 +3144,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67_a": {
@@ -3229,49 +3167,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Kantonsreferendum"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "67_b": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 753",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753"
-      },
-      {
-       "label": "BBl 1993 III 445",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_445_405_309"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Kantonsreferendum"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1997-04-01",
@@ -3306,6 +3211,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "69_a": {
@@ -3439,209 +3347,65 @@
   },
   "76_c": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_d": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_e": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_f": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_g": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_h": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_i": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_j": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "76_k": {
    "giltSeit": "2022-10-23",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-10-23",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/466"
-      },
-      {
-       "label": "BBl 2019 7875",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2692"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5b. Titel: Transparenz bei der Politikfinanzierung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "81_82": {

@@ -6,6 +6,36 @@
   "referenz": 11,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2004-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 4167",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-04-01",
@@ -331,20 +361,6 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    },
-    {
      "typ": "aufgehoben",
      "datum": "2025-01-01",
      "wirkung": true,
@@ -370,25 +386,14 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -428,25 +433,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    },
     {
      "typ": "fassung",
      "datum": "2025-01-01",
@@ -473,63 +467,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -721,20 +682,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -750,25 +697,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "38": {
    "giltSeit": "2004-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
     {
      "typ": "fassung",
      "datum": "2004-10-01",
@@ -804,25 +740,14 @@
      "item": null,
      "frueher": "Abs. 2"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39": {
    "giltSeit": "2026-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -849,44 +774,21 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40": {
    "giltSeit": "2004-10-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "41": {
    "giltSeit": "2026-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-04-01",
@@ -900,63 +802,28 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "42": {
    "giltSeit": "2004-10-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "43": {
    "giltSeit": "2004-10-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "44": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -983,6 +850,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "45": {
@@ -1152,20 +1022,6 @@
    "giltSeit": "2004-10-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2004-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2004 4167",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/623"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1191,6 +1047,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "45_a": {

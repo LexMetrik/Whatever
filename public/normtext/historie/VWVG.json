@@ -6,6 +6,26 @@
   "referenz": 29,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1994-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 288",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
+    },
+    {
+     "label": "BBl 1991 II 465",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2007-01-01",
@@ -1614,24 +1634,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-01-01",
      "wirkung": false,
      "quellen": [
@@ -1647,6 +1649,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "73": {
@@ -1654,24 +1659,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-01-01",
      "wirkung": false,
      "quellen": [
@@ -1687,6 +1674,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "74": {
@@ -1694,24 +1684,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-01-01",
      "wirkung": false,
      "quellen": [
@@ -1727,29 +1699,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "75": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1768,29 +1725,14 @@
      "item": null,
      "ueberschrift": "2. Instruktion der Beschwerde"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
     {
      "typ": "fassung",
      "datum": "1992-02-15",
@@ -1826,29 +1768,14 @@
      "item": null,
      "ueberschrift": "3. Ausstand"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "77": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1867,6 +1794,9 @@
      "item": null,
      "ueberschrift": "4. Ergänzende Verfahrensbestimmungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "78": {
@@ -1888,49 +1818,16 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
      "ueberschrift": "II. Als einzige oder erste Instanz"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79": {
    "giltSeit": "2000-03-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1994-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 288",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
-      },
-      {
-       "label": "BBl 1991 II 465",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
-    },
     {
      "typ": "fassung",
      "datum": "2000-03-01",
@@ -1966,6 +1863,9 @@
      "item": null,
      "ueberschrift": "C. Bundesversammlung"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11_a": {

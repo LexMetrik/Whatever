@@ -6,6 +6,22 @@
   "referenz": 7,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 4621",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2008-12-01",
@@ -218,20 +234,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 4621",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -247,6 +249,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14": {
@@ -452,20 +457,6 @@
    "giltSeit": "2008-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 4621",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-12-01",
      "wirkung": false,
@@ -478,25 +469,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12_b": {
    "giltSeit": "2013-12-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 4621",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-12-01",
@@ -523,6 +503,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13_a": {

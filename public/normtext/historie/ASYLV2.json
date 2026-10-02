@@ -6,6 +6,176 @@
   "referenz": 38,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6545",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 233",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Verwaltungskosten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 3991",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 3991",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Rückkehrberatung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Programme im Ausland"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2023-01-01",
@@ -56,34 +226,6 @@
   "3": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -188,39 +330,15 @@
      "absatz": "3",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "4": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2008-01-01",
@@ -234,39 +352,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "5": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -319,39 +413,15 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "6": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
     {
      "typ": "ausdruck",
      "datum": "2019-03-01",
@@ -365,6 +435,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "7": {
@@ -380,84 +454,18 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "10": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6545",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -484,6 +492,11 @@
      "absatz": "1",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "11": {
@@ -491,48 +504,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6545",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -544,6 +515,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "12": {
@@ -551,48 +527,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6545",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -604,53 +538,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "16": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6545",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -690,6 +587,11 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "17": {
@@ -716,48 +618,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6545",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -782,6 +642,11 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "20": {
@@ -909,40 +774,14 @@
   },
   "21": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "22": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1008,25 +847,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "23": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2013-04-01",
@@ -1105,25 +933,14 @@
      "absatz": null,
      "item": "n"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "24": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -1210,44 +1027,21 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "25": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "26": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1326,25 +1120,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "27": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -1358,25 +1141,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "28": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2025-07-01",
@@ -1390,25 +1162,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "29": {
    "giltSeit": "2025-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2019-03-01",
@@ -1448,25 +1209,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2019-03-01",
@@ -1480,6 +1230,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "31": {
@@ -1552,21 +1305,9 @@
   },
   "32": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Verwaltungskosten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "40": {
@@ -1745,20 +1486,6 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
-    },
-    {
      "typ": "ausdruck",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -1771,63 +1498,30 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "48": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "49": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "50": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
-    }
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "51": {
@@ -1941,22 +1635,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "53": {
@@ -2402,20 +2085,6 @@
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Rückkehrberatung"
-    },
-    {
      "typ": "ausdruck",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -2428,25 +2097,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "67": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Rückkehrberatung"
-    },
     {
      "typ": "fassung",
      "datum": "2019-03-01",
@@ -2460,25 +2118,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "68": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Rückkehrberatung"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -2505,6 +2152,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "71": {
@@ -2557,20 +2207,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Programme im Ausland"
-    },
-    {
-     "typ": "fassung",
      "datum": "2020-11-01",
      "wirkung": false,
      "quellen": [
@@ -2582,6 +2218,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "73": {
@@ -2606,20 +2245,6 @@
   "74": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
     {
      "typ": "fassung",
      "datum": "2019-03-01",
@@ -2672,25 +2297,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "75": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "76": {
@@ -2698,20 +2314,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2019-03-01",
      "wirkung": false,
      "quellen": [
@@ -2723,6 +2325,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "77": {
@@ -2730,20 +2335,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2019-03-01",
      "wirkung": false,
      "quellen": [
@@ -2755,6 +2346,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "78": {
@@ -2762,20 +2356,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2019-03-01",
      "wirkung": false,
      "quellen": [
@@ -2787,6 +2367,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "83": {
@@ -2875,20 +2458,6 @@
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -2901,26 +2470,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "27_a": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -2933,26 +2491,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30_a": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -2965,6 +2512,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "42_43": {
@@ -2990,20 +2540,6 @@
    "giltSeit": "2020-11-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2020-11-01",
      "wirkung": false,
@@ -3016,6 +2552,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "52_a": {
@@ -3039,40 +2578,14 @@
   },
   "52_b": {
    "giltSeit": "2020-11-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "52_c": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    },
     {
      "typ": "fassung",
      "datum": "2026-06-12",
@@ -3086,82 +2599,37 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "52_d": {
    "giltSeit": "2020-11-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "52_e": {
    "giltSeit": "2020-11-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "52_f": {
    "giltSeit": "2020-11-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "52_g": {
    "giltSeit": "2020-11-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2020-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 3991",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "53_a": {
@@ -3437,34 +2905,6 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -3477,39 +2917,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "5_b": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2022 233",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3536,25 +2952,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "68_a": {
    "giltSeit": "2013-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Rückkehrberatung"
-    },
     {
      "typ": "fassung",
      "datum": "2013-04-01",
@@ -3568,25 +2974,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "74_a": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2013-04-01",
@@ -3600,25 +2995,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "76_a": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5585",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2013-04-01",
@@ -3645,6 +3029,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "79_80": {

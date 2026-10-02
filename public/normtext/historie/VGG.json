@@ -6,6 +6,44 @@
   "referenz": 37,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5207",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+    },
+    {
+     "label": "BBl 2006 2829",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Beschwerde"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5207",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+    },
+    {
+     "label": "BBl 2006 2829",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Klage"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2011-01-01",
@@ -231,24 +269,6 @@
    "giltSeit": "2021-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-02-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
-      },
-      {
-       "label": "BBl 2006 2829",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Beschwerde"
-    },
-    {
      "typ": "aufgehoben",
      "datum": "2015-01-01",
      "wirkung": true,
@@ -316,29 +336,14 @@
      "absatz": "1",
      "item": "j"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
    "giltSeit": "2025-05-15",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-02-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
-      },
-      {
-       "label": "BBl 2006 2829",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Beschwerde"
-    },
     {
      "typ": "fassung",
      "datum": "2008-02-01",
@@ -645,6 +650,9 @@
      "absatz": null,
      "item": "cquinquies"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -746,25 +754,9 @@
   },
   "36": {
    "giltSeit": "2009-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
-      },
-      {
-       "label": "BBl 2006 2829",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Klage"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "44": {

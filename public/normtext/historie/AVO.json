@@ -6,6 +6,176 @@
   "referenz": 30,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Interessenkonflikte"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Titel: Versicherungsvermittlung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 425",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/425"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Titel: Allgemeines"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Geltungsbereich"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Grundsätze"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2015-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1147",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/233"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 356",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2024-01-01",
@@ -309,40 +479,16 @@
   },
   "22": {
    "giltSeit": "2015-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2015-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1147",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "23": {
    "giltSeit": "2015-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2015-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1147",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/233"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "54": {
@@ -595,20 +741,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2015-07-01",
      "wirkung": false,
      "quellen": [
@@ -620,25 +752,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "72": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-07-01",
@@ -652,63 +773,28 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "73": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "74": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "75": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-07-01",
@@ -722,6 +808,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "76": {
@@ -738,41 +827,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "77": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-07-01",
@@ -786,25 +850,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "78": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "79": {
@@ -821,22 +876,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "80": {
@@ -872,22 +916,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "82": {
@@ -923,41 +956,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "84": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1024,105 +1032,30 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "85": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9,
+    10
    ]
   },
   "86": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9,
+    10
    ]
   },
   "87": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Zuweisung und Kontrolle"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1188,25 +1121,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "88": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-07-01",
@@ -1220,44 +1143,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "89": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "90": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1284,25 +1184,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1342,6 +1231,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "92": {
@@ -1358,41 +1250,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "93": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1419,44 +1286,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "94": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "95": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -1496,6 +1340,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "96": {
@@ -2112,154 +1959,58 @@
   },
   "183": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "184": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "185": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "186": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "187": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "188": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "189": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "190": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "192": {
@@ -2740,325 +2491,121 @@
   },
   "111_e": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_f": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_g": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_h": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_i": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_j": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_k": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_l": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_m": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_n": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_o": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_p": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_q": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_r": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_s": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_t": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "111_u": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4b. Kapitel: Versicherungszweckgesellschaften"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "112_116": {
@@ -3497,21 +3044,9 @@
   },
   "14_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Interessenkonflikte"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "154_a": {
@@ -3571,135 +3106,51 @@
   },
   "182_a": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "182_b": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "182_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "182_d": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "190_a": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "190_b": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "190_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Titel: Versicherungsvermittlung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "190_d": {
@@ -3723,40 +3174,16 @@
   },
   "190_e": {
    "giltSeit": "2024-09-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-09-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 425",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/425"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "190_f": {
    "giltSeit": "2024-09-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-09-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 425",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/425"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "197_a": {
@@ -3780,78 +3207,30 @@
   },
   "197_b": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "197_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "197_d": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "197_e": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "198_a": {
@@ -4027,34 +3406,6 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4067,26 +3418,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "1_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4113,40 +3454,15 @@
      "item": null,
      "ueberschrift": "2. Kapitel: Grundsätze"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "1_c": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4159,40 +3475,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_d": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4205,40 +3497,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_e": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4251,40 +3519,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_f": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4297,40 +3541,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_g": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4343,39 +3563,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "1_h": {
    "giltSeit": "2024-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Titel: Allgemeines"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Kapitel: Grundsätze"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -4402,6 +3598,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    7
    ]
   },
   "203_a": {
@@ -4796,20 +3996,6 @@
    "giltSeit": "2024-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
      "wirkung": false,
@@ -4822,25 +4008,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "88_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-07-01",
@@ -4854,25 +4029,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4899,25 +4063,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "91_b": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -4931,25 +4084,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "93_a": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Kapitel: Gebundenes Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-07-01",
@@ -4963,6 +4105,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "96_a": {
@@ -5048,59 +4193,23 @@
   },
   "98_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "98_d": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "98_e": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 356",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/356"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Stabilisierungspläne"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   }
  },

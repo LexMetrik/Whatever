@@ -6,6 +6,36 @@
   "referenz": 31,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6345",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 2885",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/473"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-01-01",
@@ -857,20 +887,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 2885",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/473"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
-    },
-    {
-     "typ": "fassung",
      "datum": "2003-01-01",
      "wirkung": false,
      "quellen": [
@@ -908,25 +924,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "34": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2005-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2005 2885",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/473"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -962,6 +967,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "35": {
@@ -1165,20 +1173,6 @@
    "giltSeit": "2026-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    },
-    {
      "typ": "fassung",
      "datum": "2026-01-01",
      "wirkung": false,
@@ -1191,63 +1185,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28_c": {
    "giltSeit": "2018-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28_d": {
    "giltSeit": "2018-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28_e": {
    "giltSeit": "2018-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 6345",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/705"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "32_a": {

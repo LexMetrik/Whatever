@@ -6,6 +6,134 @@
   "referenz": 81,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 758",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
+    },
+    {
+     "label": "BBl 2019 7359",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 2466",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466"
+    },
+    {
+     "label": "BBl 1990 II 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1990/2_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 92",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
+    },
+    {
+     "label": "BBl 2019 6305",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IV. Flexibler Rentenbezug"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1960-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1959 854",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1959/854_884_872"
+    },
+    {
+     "label": "BBl 1958 II 1137",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1958/2_1137_1161_975"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "C. Die ausserordentlichen Renten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 111",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120"
+    },
+    {
+     "label": "BBl 1968 I 602",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_602_627_671"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 5659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/799"
+    },
+    {
+     "label": "BBl 2010 1817",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/340"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+  },
+  {
+   "typ": "fassung",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 3459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+    },
+    {
+     "label": "BBl 1999 1979",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -1405,25 +1533,9 @@
   },
   "24": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1996 2466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466"
-      },
-      {
-       "label": "BBl 1990 II 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1990/2_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "25": {
@@ -1809,25 +1921,9 @@
   },
   "40": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 92",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
-      },
-      {
-       "label": "BBl 2019 6305",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Flexibler Rentenbezug"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "41": {
@@ -1958,24 +2054,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1960-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1959 854",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1959/854_884_872"
-      },
-      {
-       "label": "BBl 1958 II 1137",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1958/2_1137_1161_975"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "C. Die ausserordentlichen Renten"
-    },
-    {
-     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -2025,6 +2103,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "44": {
@@ -3798,24 +3879,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
-    },
-    {
-     "typ": "fassung",
      "datum": "1997-01-01",
      "wirkung": false,
      "quellen": [
@@ -3865,6 +3928,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "89": {
@@ -3895,24 +3961,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
-    },
-    {
-     "typ": "fassung",
      "datum": "2012-01-01",
      "wirkung": false,
      "quellen": [
@@ -3928,29 +3976,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "91": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
-    },
     {
      "typ": "fassung",
      "datum": "1973-01-01",
@@ -4002,6 +4035,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "92": {
@@ -5014,163 +5050,51 @@
   },
   "153_c": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_d": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_e": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_f": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_g": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_h": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "153_i": {
    "giltSeit": "2022-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 758",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
-      },
-      {
-       "label": "BBl 2019 7359",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1_a": {
@@ -5566,48 +5490,14 @@
   },
   "24_a": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1996 2466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466"
-      },
-      {
-       "label": "BBl 1990 II 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1990/2_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "24_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1996 2466",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466"
-      },
-      {
-       "label": "BBl 1990 II 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1990/2_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-01-01",
@@ -5625,6 +5515,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26_28": {
@@ -6616,71 +6509,23 @@
   },
   "40_a": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 92",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
-      },
-      {
-       "label": "BBl 2019 6305",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Flexibler Rentenbezug"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "40_b": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 92",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
-      },
-      {
-       "label": "BBl 2019 6305",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Flexibler Rentenbezug"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "40_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 92",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
-      },
-      {
-       "label": "BBl 2019 6305",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IV. Flexibler Rentenbezug"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "43_bis": {
@@ -6915,42 +6760,6 @@
    "giltSeit": "2012-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 111",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120"
-      },
-      {
-       "label": "BBl 1968 I 602",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_602_627_671"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2012-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 5659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/799"
-      },
-      {
-       "label": "BBl 2010 1817",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/340"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
-    },
-    {
      "typ": "urspruenglich",
      "datum": null,
      "wirkung": false,
@@ -7027,6 +6836,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4,
+    5
    ]
   },
   "43_quinquies": {
@@ -7078,42 +6891,6 @@
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 1969 111",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120"
-      },
-      {
-       "label": "BBl 1968 I 602",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_602_627_671"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2012-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 5659",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/799"
-      },
-      {
-       "label": "BBl 2010 1817",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/340"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
        "label": "AS 2011 5659",
        "url": "https://fedlex.data.admin.ch/eli/oc/2011/799"
       },
@@ -7142,6 +6919,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4,
+    5
    ]
   },
   "48_bis_48_sexies": {

@@ -6,6 +6,22 @@
   "referenz": 2,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2014-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 5801",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2013-01-01",
@@ -745,20 +761,6 @@
    "giltSeit": "2023-01-23",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 5801",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
-    },
-    {
      "typ": "fassung",
      "datum": "2023-01-23",
      "wirkung": false,
@@ -797,25 +799,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_c": {
    "giltSeit": "2023-01-23",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 5801",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-23",
@@ -842,25 +833,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_d": {
    "giltSeit": "2023-01-23",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 5801",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-23",
@@ -874,25 +854,14 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_e": {
    "giltSeit": "2023-01-23",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 5801",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-23",
@@ -906,25 +875,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_f": {
    "giltSeit": "2014-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 5801",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/676"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29_a": {

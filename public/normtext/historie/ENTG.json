@@ -6,6 +6,80 @@
   "referenz": 20,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
+    },
+    {
+     "label": "BBl 2018 4713",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abschnitt III: Enteignungsverfahren"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
+    },
+    {
+     "label": "BBl 2018 4713",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
+    },
+    {
+     "label": "BBl 2018 4713",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 2197 1069",
+     "url": ""
+    },
+    {
+     "label": "BBl 2001 4202",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abschnitt VII: Beschwerde"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": "1972-08-01",
@@ -229,26 +303,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -292,26 +351,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -332,26 +376,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -372,26 +401,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
@@ -412,26 +426,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -452,26 +451,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35": {
@@ -492,26 +476,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -532,26 +501,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "37": {
@@ -572,26 +526,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "38": {
@@ -612,26 +551,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39": {
@@ -652,26 +576,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "40": {
@@ -692,26 +601,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "41": {
@@ -732,26 +626,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "42": {
@@ -772,26 +651,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "43": {
@@ -812,49 +676,18 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "44": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt III: Enteignungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "45": {
@@ -1077,24 +910,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
-     "typ": "fassung",
      "datum": "1972-08-01",
      "wirkung": false,
      "quellen": [
@@ -1110,6 +925,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "59": {
@@ -1130,49 +948,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "60": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "1972-08-01",
@@ -1275,6 +1060,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "61": {
@@ -1295,49 +1083,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
     {
      "typ": "fassung",
      "datum": "1972-08-01",
@@ -1372,6 +1127,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "63": {
@@ -1392,26 +1150,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "64": {
@@ -1561,24 +1304,6 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
-    {
      "typ": "fassung",
      "datum": "2007-01-01",
      "wirkung": false,
@@ -1595,29 +1320,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "66": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1635,29 +1345,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "67": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -1675,29 +1370,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "68": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1972-08-01",
@@ -1715,29 +1395,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "69": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1755,144 +1420,49 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "70": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "71": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "72": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "73": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "74": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "75": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VIa: Schätzungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1910,6 +1480,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "76": {
@@ -2116,24 +1689,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 2197 1069",
-       "url": ""
-      },
-      {
-       "label": "BBl 2001 4202",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VII: Beschwerde"
-    },
-    {
-     "typ": "fassung",
      "datum": "1972-08-01",
      "wirkung": false,
      "quellen": [
@@ -2166,6 +1721,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "79": {
@@ -2193,48 +1751,14 @@
   },
   "86": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 2197 1069",
-       "url": ""
-      },
-      {
-       "label": "BBl 2001 4202",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VII: Beschwerde"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "87": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 2197 1069",
-       "url": ""
-      },
-      {
-       "label": "BBl 2001 4202",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VII: Beschwerde"
-    },
     {
      "typ": "aufgehoben",
      "datum": null,
@@ -2269,6 +1793,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "88": {
@@ -2806,24 +2333,6 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2840,30 +2349,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "59_quater": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2880,30 +2374,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "59_ter": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4085",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/748"
-      },
-      {
-       "label": "BBl 2018 4713",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/1660"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Abschnitt VI: Organisation der Schätzungskommissionen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -2920,6 +2399,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "80_82": {

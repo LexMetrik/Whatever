@@ -6,6 +6,216 @@
   "referenz": 80,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2007-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 2849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/374"
+    },
+    {
+     "label": "BBl 2006 551",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/54"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zehnter Titel: Anfechtung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Elfter Titel: Nachlassverfahren"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2014-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 4111",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/757"
+    },
+    {
+     "label": "BBl 2010 6455",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1144"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "E. Stundungsverfahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1921 I 507",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titel: Notstundung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titel: Notstundung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dreizehnter Titel: Schlussbestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1997-01-01",
@@ -1436,24 +1646,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
-     "typ": "fassung",
      "datum": "1950-02-01",
      "wirkung": false,
      "quellen": [
@@ -1538,29 +1730,14 @@
      "item": null,
      "ueberschrift": "1. Wegen Militär-, Zivil- oder Schutzdienst"
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "58": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1578,29 +1755,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "59": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
     {
      "typ": "fassung",
      "datum": "1950-02-01",
@@ -1631,29 +1793,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "60": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -1671,29 +1818,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "61": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "62": {
@@ -1714,26 +1848,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "63": {
@@ -1754,26 +1873,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "65": {
@@ -6124,95 +6228,32 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "223": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "224": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "225": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "226": {
@@ -6233,95 +6274,30 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "227": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "228": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "229": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -6356,29 +6332,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "230": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -6447,6 +6408,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "231": {
@@ -6467,26 +6431,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "232": {
@@ -7867,24 +7816,6 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
      "absatz": "1",
      "item": null
     },
@@ -7922,29 +7853,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "287": {
    "giltSeit": "2010-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -8013,29 +7929,14 @@
      "absatz": "3",
      "item": "2"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "288": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
     {
      "typ": "fassung",
      "datum": "1997-01-01",
@@ -8070,6 +7971,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "289": {
@@ -8090,26 +7994,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "290": {
@@ -8130,72 +8019,23 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "291": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "292": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -8213,6 +8053,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "293": {
@@ -8260,24 +8103,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8293,29 +8118,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "295": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8350,6 +8160,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "296": {
@@ -8357,24 +8170,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8390,6 +8185,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "297": {
@@ -8397,24 +8195,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8430,6 +8210,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "298": {
@@ -8437,24 +8220,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8470,29 +8235,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "299": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8529,47 +8279,14 @@
      "item": null,
      "ueberschrift": "1. Inventar und Pfandschätzung"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "300": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 4111",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/757"
-      },
-      {
-       "label": "BBl 2010 6455",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1144"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Stundungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8587,47 +8304,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "301": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2014-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 4111",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/757"
-      },
-      {
-       "label": "BBl 2010 6455",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1144"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "E. Stundungsverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8645,29 +8330,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "302": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8686,29 +8357,14 @@
      "item": null,
      "ueberschrift": "F. Gläubigerversammlung"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "303": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8727,29 +8383,14 @@
      "item": null,
      "ueberschrift": "G. Rechte gegen Mitverpflichtete"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "304": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8768,29 +8409,14 @@
      "item": null,
      "ueberschrift": "H. Sachwalterbericht; öffentliche Bekanntmachung der Verhandlung vor dem Nachlassgericht"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "305": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -8825,6 +8451,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "306": {
@@ -8832,24 +8461,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8865,6 +8476,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "307": {
@@ -8872,24 +8486,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8905,6 +8501,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "308": {
@@ -8912,24 +8511,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8945,6 +8526,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "309": {
@@ -8952,24 +8536,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -8985,6 +8551,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "310": {
@@ -8992,24 +8561,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-01-01",
      "wirkung": false,
      "quellen": [
@@ -9025,98 +8576,35 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "311": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "312": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "313": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "314": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
@@ -9134,98 +8622,35 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "315": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "316": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "317": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "318": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -9260,29 +8685,14 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "319": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -9300,282 +8710,91 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "320": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "321": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "322": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "323": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "324": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "325": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "326": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "327": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "328": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "329": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "330": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "331": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -9593,29 +8812,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "332": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -9633,52 +8837,21 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "333": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "334": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -9696,52 +8869,23 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "335": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "336": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "337": {
@@ -9783,113 +8927,23 @@
   },
   "338": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "339": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "340": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -9942,302 +8996,71 @@
      "item": null,
      "ueberschrift": "3. Beschwerde"
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "341": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "342": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "343": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "344": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "345": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "346": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "347": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "348": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -10255,43 +9078,18 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "349": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1921 I 507",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1921/1_507_579_"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titel: Notstundung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5,
+    6
    ]
   },
   "350": {
@@ -10356,25 +9154,9 @@
   },
   "352": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dreizehnter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "132_a": {
@@ -10806,24 +9588,6 @@
    "giltSeit": "2025-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
      "wirkung": false,
@@ -10840,29 +9604,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "230_a": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1997-01-01",
@@ -10880,6 +9629,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "242_a": {
@@ -11051,48 +9803,14 @@
   },
   "284_b": {
    "giltSeit": "2007-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2007-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 2849",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/374"
-      },
-      {
-       "label": "BBl 2006 551",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/54"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "288_a": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zehnter Titel: Anfechtung"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -11127,29 +9845,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "293_a": {
    "giltSeit": "2020-10-20",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
@@ -11184,30 +9887,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "293_b": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11224,30 +9912,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "293_c": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11264,30 +9937,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "293_d": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11304,30 +9962,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "295_a": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11344,30 +9987,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "295_b": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11384,30 +10012,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "295_c": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11424,30 +10037,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "296_a": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11464,30 +10062,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "296_b": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11504,30 +10087,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "297_a": {
    "giltSeit": "2014-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2014-01-01",
      "wirkung": false,
@@ -11544,29 +10112,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "306_a": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Nachlassverfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "30_a": {
@@ -11656,24 +10211,6 @@
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1950-02-01",
      "wirkung": false,
@@ -11741,30 +10278,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "57_b": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1950-02-01",
      "wirkung": false,
@@ -11798,30 +10320,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "57_c": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1950-02-01",
      "wirkung": false,
@@ -11855,29 +10362,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "57_d": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1950-02-01",
@@ -11946,29 +10438,14 @@
      "absatz": null,
      "item": "3"
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "57_e": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -12003,6 +10480,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "68_a": {
@@ -12113,38 +10593,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "BBl 1928 I 205",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "1988-01-01",
      "wirkung": false,
      "quellen": [
@@ -12177,6 +10625,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "68_c": {
@@ -12223,24 +10675,6 @@
    "giltSeit": "2013-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
-    },
-    {
      "typ": "fassung",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -12257,29 +10691,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "68_e": {
    "giltSeit": "1997-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1995 1227",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
-      },
-      {
-       "label": "BBl 1991 III 1",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
-    }
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "85_a": {

@@ -6,6 +6,26 @@
   "referenz": 8,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 747",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/747"
+    },
+    {
+     "label": "BBl 2019 8595",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2985"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2022-07-01",
@@ -370,26 +390,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 747",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/747"
-      },
-      {
-       "label": "BBl 2019 8595",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/2985"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "37_a": {

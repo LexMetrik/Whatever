@@ -6,6 +6,120 @@
   "referenz": 63,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5421",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 1431",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 190",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-24",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 99",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Ausländerausweis"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-24",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 99",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3173",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Kapitel: Integrationskriterien"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3173",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-07-20",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/358"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10a. Kapitel: Eurodac"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-07-01",
@@ -67,59 +181,21 @@
   },
   "2": {
    "giltSeit": "2008-12-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5421",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "3": {
    "giltSeit": "2008-12-12",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5421",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "4": {
    "giltSeit": "2008-12-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5421",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
-    },
     {
      "typ": "bezeichnung",
      "datum": null,
@@ -133,6 +209,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
@@ -1105,20 +1184,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1431",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
-    },
-    {
-     "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
      "quellen": [
@@ -1221,6 +1286,9 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "66": {
@@ -1244,40 +1312,14 @@
   },
   "67": {
    "giltSeit": "2024-06-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 190",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 190",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
-    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -1304,25 +1346,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "69": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 190",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1336,25 +1367,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "70": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 190",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -1368,6 +1388,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "71": {
@@ -1404,21 +1427,9 @@
   },
   "72": {
    "giltSeit": "2011-01-24",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "74": {
@@ -1981,20 +1992,6 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-12-12",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 5421",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-12-12",
      "wirkung": false,
@@ -2033,6 +2030,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_a": {
@@ -2288,20 +2288,6 @@
    "giltSeit": "2025-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1431",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -2327,26 +2313,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_b": {
    "giltSeit": "2025-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1431",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -2372,26 +2347,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_c": {
    "giltSeit": "2025-12-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 1431",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -2417,25 +2381,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67_a": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2024-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2024 190",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-06-01",
@@ -2449,25 +2402,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "71_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -2507,25 +2449,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -2591,44 +2522,21 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_c": {
    "giltSeit": "2011-01-24",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_d": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "fassung",
      "datum": "2013-12-01",
@@ -2707,25 +2615,14 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_e": {
    "giltSeit": "2019-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "fassung",
      "datum": "2019-11-01",
@@ -2752,44 +2649,21 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_f": {
    "giltSeit": "2011-01-24",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_g": {
    "giltSeit": "2019-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "fassung",
      "datum": "2019-06-01",
@@ -2816,44 +2690,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_h": {
    "giltSeit": "2011-01-24",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_i": {
    "giltSeit": "2019-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-11-01",
@@ -2867,25 +2718,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "72_a": {
    "giltSeit": "2016-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausländerausweis"
-    },
     {
      "typ": "fassung",
      "datum": "2016-08-01",
@@ -2899,6 +2739,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "72_b": {
@@ -2935,21 +2778,9 @@
   },
   "72_c": {
    "giltSeit": "2011-01-24",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-24",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 99",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "73_a": {
@@ -3053,97 +2884,35 @@
   },
   "77_b": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "77_c": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "77_d": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "77_e": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "77_f": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2025-01-01",
@@ -3157,45 +2926,22 @@
      "absatz": null,
      "item": "4"
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "77_g": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6a. Kapitel: Integrationskriterien"
-    }
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "82_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3208,26 +2954,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_b": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3240,25 +2975,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_c": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -3298,26 +3022,15 @@
      "absatz": "1bis",
      "item": "b"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_d": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3330,26 +3043,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_e": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3362,26 +3064,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_f": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 3173",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3394,6 +3085,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_g": {
@@ -3533,20 +3227,6 @@
    "giltSeit": "2026-06-12",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2015-07-20",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1849",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/358"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10a. Kapitel: Eurodac"
-    },
-    {
      "typ": "fassung",
      "datum": "2026-06-12",
      "wirkung": false,
@@ -3559,6 +3239,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "87_c": {
@@ -3582,40 +3265,14 @@
   },
   "87_d": {
    "giltSeit": "2015-07-20",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-07-20",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1849",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/358"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10a. Kapitel: Eurodac"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "87_e": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2015-07-20",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 1849",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/358"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "10a. Kapitel: Eurodac"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-06-12",
@@ -3645,6 +3302,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "88_a": {

@@ -6,6 +6,80 @@
   "referenz": 19,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4285",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
+    },
+    {
+     "label": "BBl 2008 8043 8079",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 2243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
+    },
+    {
+     "label": "BBl 1996 IV 1217",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 2243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
+    },
+    {
+     "label": "BBl 1996 IV 1217",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Finanzierung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4285",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
+    },
+    {
+     "label": "BBl 2008 8043 8079",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2bis. Abschnitt: Schwall und Sunk sowie Geschiebehaushalt"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2025-08-01",
@@ -454,24 +528,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-08-01",
      "wirkung": false,
      "quellen": [
@@ -487,167 +543,58 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "38": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "39": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "40": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "41": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "42": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "43": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "44": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "45": {
@@ -675,48 +622,14 @@
   },
   "46": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "47": {
    "giltSeit": "1997-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2005-09-01",
@@ -734,29 +647,14 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2000-01-01",
@@ -804,52 +702,21 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "49": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "50": {
    "giltSeit": "2014-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2014-06-01",
@@ -867,52 +734,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "51": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "52": {
    "giltSeit": "1997-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2014-06-01",
@@ -930,213 +766,70 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "53": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "54": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "55": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "56": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "57": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "58": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "59": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "60": {
    "giltSeit": "1997-11-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "61": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -1181,29 +874,14 @@
      "frueher": "3. Kap.",
      "ueberschrift": "4. Kapitel: Förderung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62": {
    "giltSeit": "2006-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "1997-11-01",
@@ -1272,6 +950,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "63": {
@@ -1292,49 +973,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "64": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2008-01-01",
@@ -1403,29 +1051,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "1997-11-01",
@@ -1477,29 +1110,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "66": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1534,29 +1152,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1584,29 +1187,14 @@
      "frueher": "4. Kap.",
      "ueberschrift": "5. Kapitel: Verfahren"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "68": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -1658,6 +1246,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "69": {
@@ -1890,24 +1481,6 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -1924,30 +1497,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "39_a": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -1964,6 +1522,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_a": {
@@ -1992,24 +1553,6 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -2026,30 +1569,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -2084,48 +1612,15 @@
      "item": null,
      "ueberschrift": "3. Kapitel: Finanzierung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "60_b": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Finanzierung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -2142,30 +1637,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "61_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -2182,29 +1663,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_a": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1999-01-01",
@@ -2273,29 +1739,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_b": {
    "giltSeit": "2025-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -2330,29 +1781,14 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "62_c": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -2370,29 +1806,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "64_a": {
    "giltSeit": "1997-11-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1997-11-01",
@@ -2410,29 +1831,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67_a": {
    "giltSeit": "2000-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1997-11-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1997 2243",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243"
-      },
-      {
-       "label": "BBl 1996 IV 1217",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1996/4_1217_1213_1041"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Titel: Vollzug, Grundlagenbeschaffung, Finanzierung, Förderung und Verfahren"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-01-01",
@@ -2467,6 +1873,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "78_79": {
@@ -2517,25 +1926,9 @@
   },
   "83_b": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4285",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/620"
-      },
-      {
-       "label": "BBl 2008 8043 8079",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2bis. Abschnitt: Schwall und Sunk sowie Geschiebehaushalt"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   }
  },

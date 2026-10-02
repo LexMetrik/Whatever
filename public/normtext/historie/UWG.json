@@ -6,6 +6,62 @@
   "referenz": 8,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 1739",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/262"
+    },
+    {
+     "label": "BBl 2006 7221",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/914"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4909",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
+    },
+    {
+     "label": "BBl 2009 6151",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4909",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
+    },
+    {
+     "label": "BBl 2009 6151",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": "2025-01-01",
@@ -420,24 +476,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Prozessrechtliche Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1739",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/262"
-      },
-      {
-       "label": "BBl 2006 7221",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/914"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -525,29 +563,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1739",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/262"
-      },
-      {
-       "label": "BBl 2006 7221",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/914"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Prozessrechtliche Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -592,71 +617,21 @@
   },
   "17": {
    "giltSeit": "2012-04-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "18": {
    "giltSeit": "2012-04-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "19": {
    "giltSeit": "2012-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -674,29 +649,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20": {
    "giltSeit": "2012-04-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "21": {
@@ -727,24 +689,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
      "quellen": [
@@ -760,6 +704,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "23": {
@@ -967,24 +914,6 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1739",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/262"
-      },
-      {
-       "label": "BBl 2006 7221",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/914"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Prozessrechtliche Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1994-04-01",
      "wirkung": false,
@@ -1018,6 +947,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_15": {
@@ -1047,24 +979,6 @@
    "giltSeit": "2013-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2012-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2011 4909",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2011/703"
-      },
-      {
-       "label": "BBl 2009 6151",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2009/1106"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -1081,6 +995,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26_a": {

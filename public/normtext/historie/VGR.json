@@ -6,6 +6,22 @@
   "referenz": 9,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2017-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 3401",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/373"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Schlichtungsbehörden"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2022-07-01",
@@ -485,20 +501,6 @@
    "giltSeit": "2017-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2017-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2017 3401",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2017/373"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Abschnitt: Schlichtungsbehörden"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-07-01",
      "wirkung": false,
@@ -511,6 +513,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25_a": {

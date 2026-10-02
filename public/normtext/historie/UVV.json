@@ -6,6 +6,106 @@
   "referenz": 49,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 706",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Elfter Titel: Schlussbestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3914",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3914",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2913",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/511"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -383,20 +483,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -408,25 +494,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "17": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "18": {
@@ -434,20 +511,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -459,6 +522,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "19": {
@@ -466,20 +532,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -491,25 +543,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "20": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -523,25 +564,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "21": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Pflegeleistungen und Kostenvergütungen (Sachleistungen)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "22": {
@@ -1212,78 +1244,28 @@
   },
   "48": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "49": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "50": {
    "giltSeit": "2003-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "51": {
    "giltSeit": "2003-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 3914",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/607"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
-    },
     {
      "typ": "fassung",
      "datum": "1998-01-01",
@@ -1297,6 +1279,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "52": {
@@ -1644,34 +1629,6 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2913",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/511"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Spitäler und Medizinalpersonen"
-    },
-    {
      "typ": "fassung",
      "datum": "1996-01-01",
      "wirkung": false,
@@ -1710,6 +1667,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "70": {
@@ -2676,22 +2637,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "131": {
@@ -2708,22 +2658,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "132": {
@@ -2884,116 +2823,44 @@
   },
   "143": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "144": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "145": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "146": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "147": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "148": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "102_a": {
@@ -3114,22 +2981,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 706",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "132_b": {
@@ -3146,22 +3002,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 706",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "132_c": {
@@ -3178,22 +3023,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "Achter Titel a: Unfallversicherung von Personen nach Artikel 1a Absatz 1 Buchstabe c des Gesetzes"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2022-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2021 706",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/706"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "140_a": {
@@ -3219,20 +3053,6 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1998-01-01",
      "wirkung": false,
@@ -3245,25 +3065,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "147_b": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -3277,25 +3086,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "147_c": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 4393",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Elfter Titel: Schlussbestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -3309,6 +3107,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "1_a": {

@@ -6,6 +6,92 @@
   "referenz": 22,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1983",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/419"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Waldfeststellung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1983",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/419"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Bauten und Anlagen im Wald"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2809",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 3215",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/539"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Holzförderung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5823",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/63"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+  }
+ ],
  "artikel": {
   "5": {
    "giltSeit": "2016-01-01",
@@ -240,20 +326,6 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1983",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/419"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Bauten und Anlagen im Wald"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -266,6 +338,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "15": {
@@ -555,20 +630,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2004-01-01",
      "wirkung": false,
      "quellen": [
@@ -580,25 +641,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "34": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -612,25 +662,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "35": {
    "giltSeit": "2008-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2012-01-01",
@@ -644,6 +683,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "38": {
@@ -684,20 +726,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-08-01",
      "wirkung": false,
      "quellen": [
@@ -709,25 +737,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "40": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -741,25 +758,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "41": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -812,6 +818,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "42": {
@@ -836,20 +845,6 @@
   "43": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -993,25 +988,14 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "44": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2017-01-01",
@@ -1038,196 +1022,79 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "45": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "46": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "47": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "48": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "49": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "50": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "51": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "52": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "53": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "54": {
    "giltSeit": "2008-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "60": {
@@ -1360,20 +1227,6 @@
    "giltSeit": "2013-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1983",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/419"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Waldfeststellung"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2013-07-01",
      "wirkung": false,
@@ -1386,6 +1239,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13_a": {
@@ -1512,20 +1368,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
      "quellen": [
@@ -1551,26 +1393,15 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Erhebungen"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "37_b": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1584,72 +1415,22 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Holzförderung"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "37_c": {
    "giltSeit": "2017-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2809",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/389"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Kapitel: Ausbildung und Grundlagen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2017-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 3215",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/539"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Abschnitt: Holzförderung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "38_a": {
    "giltSeit": "2025-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/63"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -1676,26 +1457,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4,
+    5
    ]
   },
   "40_a": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1708,26 +1479,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "40_b": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2008-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 5823",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/789"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "6. Kapitel: Finanzhilfen (ohne Investitionskredite) und Abgeltungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -1740,6 +1500,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "66_a": {

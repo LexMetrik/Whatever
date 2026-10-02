@@ -6,6 +6,78 @@
   "referenz": 16,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1987",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2016-01-01",
@@ -506,115 +578,23 @@
   },
   "19": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "20": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "22": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2016-01-01",
@@ -628,194 +608,47 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "23": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "24": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "25": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "26": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "27": {
@@ -831,145 +664,28 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "29": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -996,53 +712,20 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "30": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "31": {
@@ -1058,145 +741,32 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "33": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "34": {
@@ -1212,51 +782,14 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "2",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "35": {
@@ -1273,20 +806,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
      "item": null
     },
     {
@@ -1303,39 +822,14 @@
      "item": null,
      "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
-    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1375,39 +869,15 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "37": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
-    },
     {
      "typ": "fassung",
      "datum": "2013-07-01",
@@ -1434,6 +904,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "38": {
@@ -1450,36 +924,12 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "39": {
@@ -1541,20 +991,6 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -1595,53 +1031,14 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2016-01-01",
@@ -1655,53 +1052,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "22_b": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2016-01-01",
@@ -1715,53 +1075,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "23_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2016-01-01",
@@ -1788,53 +1111,20 @@
      "absatz": "1",
      "item": "h"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "24_a": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "24_b": {
@@ -1869,51 +1159,14 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "25_b": {
@@ -1930,50 +1183,13 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "25_c": {
@@ -1990,50 +1206,13 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_a": {
@@ -2049,145 +1228,28 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_b": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_c": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -2214,53 +1276,20 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_d": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_a": {
@@ -2276,145 +1305,32 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
       }
      ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
      "absatz": "3",
      "item": "j"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_b": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_c": {
    "giltSeit": "2016-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_d": {
@@ -2431,50 +1347,13 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2013 1987",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2016-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2015 5307",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   }
  },

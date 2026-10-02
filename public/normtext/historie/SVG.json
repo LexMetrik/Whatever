@@ -6,6 +6,80 @@
   "referenz": 47,
   "unparsed": 7
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 453",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
+    },
+    {
+     "label": "BBl 2021 3026",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 2767",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/408"
+    },
+    {
+     "label": "BBl 1999 4462",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 6291",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
+    },
+    {
+     "label": "BBl 2010 8447",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 6291",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
+    },
+    {
+     "label": "BBl 2010 8447",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IVa. Titel: Informationssysteme"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2013-01-01",
@@ -4018,163 +4092,51 @@
   },
   "25_b": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_c": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_d": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_e": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_f": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_g": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25_h": {
    "giltSeit": "2025-03-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2025-03-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
-      },
-      {
-       "label": "BBl 2021 3026",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "2_a": {
@@ -4389,42 +4351,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2003-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2002 2767",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/408"
-      },
-      {
-       "label": "BBl 1999 4462",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
      "quellen": [
@@ -4440,6 +4366,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "68_a": {
@@ -4820,24 +4750,6 @@
    "giltSeit": "2023-10-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    },
-    {
      "typ": "fassung",
      "datum": "2023-10-01",
      "wirkung": false,
@@ -4888,52 +4800,21 @@
      "absatz": null,
      "item": "m"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89_c": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_d": {
    "giltSeit": "2024-05-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    },
     {
      "typ": "fassung",
      "datum": "2023-10-01",
@@ -5053,29 +4934,14 @@
      "absatz": null,
      "item": "h"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89_e": {
    "giltSeit": "2023-10-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    },
     {
      "typ": "fassung",
      "datum": "2023-10-01",
@@ -5153,236 +5019,77 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89_f": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_g": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_h": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_i": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_j": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_k": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_l": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_m": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_n": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_o": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    },
     {
      "typ": "berichtigt",
      "datum": null,
@@ -5396,121 +5103,44 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89_p": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_q": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_r": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_s": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_t": {
    "giltSeit": "2013-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2013-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2012 6291",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
-      },
-      {
-       "label": "BBl 2010 8447",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "IVa. Titel: Informationssysteme"
-    }
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "90_a": {

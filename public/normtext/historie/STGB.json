@@ -6,6 +6,260 @@
   "referenz": 85,
   "unparsed": 6
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 3459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+    },
+    {
+     "label": "BBl 1999 1979",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1995-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1994 2290",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
+    },
+    {
+     "label": "BBl 1991 II 969",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1969-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 319",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
+    },
+    {
+     "label": "BBl 1968 I 585",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1969-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 319",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
+    },
+    {
+     "label": "BBl 1968 I 585",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
+  },
+  {
+   "typ": "fassung",
+   "datum": "1992-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 1670",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
+    },
+    {
+     "label": "BBl 1985 II 1009",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/454"
+    },
+    {
+     "label": "BBl 1999 5327",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5327_4911_4611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1121",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
+    },
+    {
+     "label": "BBl 1999 5497",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Neunzehnter Titel: Bestechung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 3459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+    },
+    {
+     "label": "BBl 1999 1979",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 1881",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    {
+     "label": "BBl 2006 1085",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1249",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
+    },
+    {
+     "label": "BBl 2012 4721",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 2273",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
+    },
+    {
+     "label": "BBl 2017 7307",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2007-01-01",
@@ -32,94 +286,28 @@
   },
   "2": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "3": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "4": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "5": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -189,98 +377,35 @@
      "item": null,
      "ueberschrift": "Straftaten gegen Minderjährige im Ausland"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "6": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "7": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "8": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "9": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -298,236 +423,77 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "11": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "12": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "13": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "14": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "15": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "18": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "19": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -545,259 +511,84 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "21": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "22": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "23": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "30": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -832,98 +623,35 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "32": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "33": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "34": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1010,47 +738,14 @@
      "item": null,
      "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1249",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
-      },
-      {
-       "label": "BBl 2012 4721",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1068,47 +763,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "36": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1249",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
-      },
-      {
-       "label": "BBl 2012 4721",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2018-01-01",
@@ -1126,6 +789,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "40": {
@@ -1133,42 +800,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1249",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
-      },
-      {
-       "label": "BBl 2012 4721",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -1184,6 +815,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "41": {
@@ -1191,42 +826,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2016 1249",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
-      },
-      {
-       "label": "BBl 2012 4721",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -1242,29 +841,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "42": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1316,29 +901,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "43": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1391,29 +961,14 @@
      "item": null,
      "ueberschrift": "2. Teilbedingte Freiheitsstrafe"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "44": {
    "giltSeit": "2023-01-23",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-23",
@@ -1431,52 +986,21 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "45": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "46": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1494,121 +1018,42 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "47": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "48": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "49": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "50": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "51": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1626,29 +1071,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "52": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2020-07-01",
@@ -1685,47 +1115,14 @@
      "item": null,
      "ueberschrift": "Fehlendes Strafbedürfnis"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "53": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 2273",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
-      },
-      {
-       "label": "BBl 2017 7307",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
-    },
     {
      "typ": "fassung",
      "datum": "2019-07-01",
@@ -1743,111 +1140,31 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    13
    ]
   },
   "54": {
    "giltSeit": "2020-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 2273",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
-      },
-      {
-       "label": "BBl 2017 7307",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    13
    ]
   },
   "55": {
    "giltSeit": "2020-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 2273",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
-      },
-      {
-       "label": "BBl 2017 7307",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0,
+    13
    ]
   },
   "56": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -1865,52 +1182,21 @@
      "absatz": "4bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "57": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "58": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1928,29 +1214,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -1968,121 +1239,42 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "61": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "63": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "64": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -2168,29 +1360,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "65": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2008-08-01",
@@ -2242,52 +1419,21 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "67": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -2492,98 +1638,35 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "68": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "69": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "70": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "71": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2024-01-01",
@@ -2601,29 +1684,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "72": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2021-07-01",
@@ -2641,75 +1709,28 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "73": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "74": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "75": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -2727,75 +1748,28 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "77": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "78": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -2813,6 +1787,9 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79": {
@@ -2840,117 +1817,35 @@
   },
   "80": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "81": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "82": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "83": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "84": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -2968,144 +1863,49 @@
      "absatz": "6bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "86": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "87": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "88": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "89": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "90": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -3174,29 +1974,14 @@
      "absatz": "4ter",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "91": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2007-01-01",
@@ -3223,75 +2008,28 @@
      "item": "d",
      "frueher": "Bst. c"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "92": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "93": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "94": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -3309,29 +2047,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -3349,52 +2072,21 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "97": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -3446,98 +2138,35 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "98": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "99": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "100": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "101": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3623,29 +2252,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -3663,75 +2277,28 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "103": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "104": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "105": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2016-10-01",
@@ -3766,29 +2333,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -3806,6 +2358,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "107": {
@@ -3835,24 +2390,6 @@
    "giltSeit": "2007-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "berichtigt",
      "datum": null,
      "wirkung": false,
@@ -3860,52 +2397,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "109": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "110": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -3923,6 +2429,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "111": {
@@ -4718,24 +3227,6 @@
    "giltSeit": "2007-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
      "typ": "ausdruck",
      "datum": "2007-01-01",
      "wirkung": false,
@@ -4752,29 +3243,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "139": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -4809,29 +3285,14 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "140": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "inkraft",
      "datum": "2018-01-01",
@@ -4866,98 +3327,35 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "141": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "142": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "143": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "144": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -4975,29 +3373,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "145": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "146": {
@@ -5005,24 +3390,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5038,6 +3405,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "147": {
@@ -5045,24 +3415,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5078,6 +3430,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "148": {
@@ -5085,24 +3440,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5118,144 +3455,49 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "149": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "150": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "151": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "152": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "153": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "154": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -5286,29 +3528,14 @@
      "absatz": "2",
      "item": "a"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "155": {
    "giltSeit": "2009-02-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2009-02-01",
@@ -5326,29 +3553,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "156": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5383,6 +3595,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "157": {
@@ -5390,24 +3605,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5423,6 +3620,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "158": {
@@ -5430,24 +3630,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5463,29 +3645,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "159": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "160": {
@@ -5493,24 +3662,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5526,6 +3677,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "161": {
@@ -5553,94 +3707,28 @@
   },
   "162": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "163": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "164": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "165": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-07-01",
@@ -5658,75 +3746,28 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "166": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "167": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "168": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5744,75 +3785,28 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "169": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "170": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "171": {
    "giltSeit": "1995-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -5830,6 +3824,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "172": {
@@ -5917,24 +3914,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -5950,75 +3929,28 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "175": {
    "giltSeit": "1969-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "176": {
    "giltSeit": "1969-05-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "177": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
     {
      "typ": "inkraft",
      "datum": "2007-01-01",
@@ -6036,29 +3968,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "178": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
     {
      "typ": "fassung",
      "datum": "2002-10-01",
@@ -6093,6 +4010,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "179": {
@@ -6114,26 +4034,11 @@
      ],
      "absatz": null,
      "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
      "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "180": {
@@ -6462,24 +4367,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6495,6 +4382,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "189": {
@@ -6502,24 +4392,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6535,6 +4407,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "190": {
@@ -6542,24 +4417,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6575,6 +4432,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "191": {
@@ -6582,24 +4442,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6615,6 +4457,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "192": {
@@ -6645,24 +4490,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6678,6 +4505,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "194": {
@@ -6685,24 +4515,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6718,6 +4530,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "195": {
@@ -6725,24 +4540,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
      "quellen": [
@@ -6758,6 +4555,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "196": {
@@ -6765,24 +4565,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
      "quellen": [
@@ -6798,29 +4580,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "197": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
     {
      "typ": "fassung",
      "datum": "2014-07-01",
@@ -6923,6 +4690,9 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "198": {
@@ -6930,24 +4700,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -6963,29 +4715,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "199": {
    "giltSeit": "1992-10-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    }
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "200": {
@@ -6993,24 +4732,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
      "quellen": [
@@ -7026,6 +4747,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "213": {
@@ -9544,48 +7268,16 @@
   },
   "334": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "335": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "349": {
@@ -9634,42 +7326,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
-     "typ": "fassung",
      "datum": "2011-01-01",
      "wirkung": false,
      "quellen": [
@@ -9686,47 +7342,15 @@
      "item": null,
      "ueberschrift": "a. Zuständigkeit"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "351": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -9745,47 +7369,15 @@
      "item": null,
      "ueberschrift": "b. Aufgaben"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "352": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -9821,47 +7413,15 @@
      "item": null,
      "ueberschrift": "c. Datenschutz"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "353": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2011-01-01",
@@ -9880,47 +7440,15 @@
      "item": null,
      "ueberschrift": "d. Finanzhilfen und Abgeltungen"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "354": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2023-01-23",
@@ -10048,6 +7576,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355": {
@@ -10078,42 +7610,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
-     "typ": "fassung",
      "datum": "2025-08-01",
      "wirkung": false,
      "quellen": [
@@ -10137,47 +7633,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "357": {
    "giltSeit": "2026-06-12",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2025-08-01",
@@ -10212,47 +7676,15 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "362": {
    "giltSeit": "2014-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "fassung",
      "datum": "2014-07-01",
@@ -10270,6 +7702,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "363": {
@@ -10335,24 +7771,6 @@
    "giltSeit": "2008-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-01-01",
      "wirkung": false,
@@ -10369,52 +7787,21 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "373": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "374": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -10449,144 +7836,49 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "375": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "376": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "377": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "378": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "379": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "380": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -10604,29 +7896,14 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "381": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -10644,29 +7921,14 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "382": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -10684,98 +7946,35 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "383": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "384": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "385": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "386": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "inkraft",
      "datum": "2006-01-01",
@@ -10789,29 +7988,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "387": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -10846,121 +8030,44 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "388": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "389": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "390": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "391": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "392": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    }
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "102_a": {
@@ -11033,48 +8140,14 @@
   },
   "141_bis": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "143_bis": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -11092,29 +8165,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "144_bis": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -11149,29 +8207,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "148_a": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
@@ -11189,29 +8232,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "150_bis": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "1998-01-01",
@@ -11246,6 +8274,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "161_bis": {
@@ -11336,66 +8367,14 @@
   },
   "172_ter": {
    "giltSeit": "1995-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1995-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1994 2290",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
-      },
-      {
-       "label": "BBl 1991 II 969",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "179_bis": {
    "giltSeit": "1969-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": "1969-05-01",
@@ -11413,47 +8392,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_decies": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": "2023-09-01",
@@ -11471,47 +8418,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_novies": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -11546,47 +8461,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_octies": {
    "giltSeit": "2002-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -11638,47 +8521,15 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_quater": {
    "giltSeit": "1969-05-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": "1969-05-01",
@@ -11696,47 +8547,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_quinquies": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -11788,48 +8607,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_septies": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -11863,48 +8650,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_sexies": {
    "giltSeit": "1969-05-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
-    {
      "typ": "eingefuegt",
      "datum": "1969-05-01",
      "wirkung": false,
@@ -11921,47 +8676,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_ter": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
-    },
-    {
-     "typ": "fassung",
-     "datum": "1969-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1969 319",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
-      },
-      {
-       "label": "BBl 1968 I 585",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -11996,6 +8719,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "181_a": {
@@ -12085,24 +8812,6 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -12119,30 +8828,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "197_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "1992-10-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 1670",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
-      },
-      {
-       "label": "BBl 1985 II 1009",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -12159,6 +8853,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "226_bis": {
@@ -12516,42 +9213,6 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 2725",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/454"
-      },
-      {
-       "label": "BBl 1999 5327",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5327_4911_4611"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
-    },
-    {
      "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -12568,6 +9229,10 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "264_b": {
@@ -12595,71 +9260,21 @@
   },
   "264_c": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_d": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_e": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -12677,121 +9292,44 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "264_f": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_g": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_h": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_i": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_j": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_k": {
@@ -12819,71 +9357,23 @@
   },
   "264_l": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "264_m": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "264_n": {
    "giltSeit": "2011-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 4963",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
-      },
-      {
-       "label": "BBl 2008 3863",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
-    }
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "266_bis": {
@@ -12991,24 +9481,6 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "ausdruck",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -13042,6 +9514,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "305_bis": {
@@ -13468,24 +9943,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2016-07-01",
      "wirkung": false,
      "quellen": [
@@ -13501,6 +9958,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_novies": {
@@ -13508,24 +9968,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2016-07-01",
      "wirkung": false,
      "quellen": [
@@ -13541,30 +9983,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_octies": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
-    {
      "typ": "fassung",
      "datum": "2016-07-01",
      "wirkung": false,
@@ -13581,53 +10008,22 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_quater": {
    "giltSeit": "2000-05-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    }
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "322_quinquies": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
-    {
      "typ": "fassung",
      "datum": "2016-07-01",
      "wirkung": false,
@@ -13644,29 +10040,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_septies": {
    "giltSeit": "2006-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2006-07-01",
@@ -13684,29 +10065,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_sexies": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2000-05-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 1121",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
-      },
-      {
-       "label": "BBl 1999 5497",
-       "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Neunzehnter Titel: Bestechung"
-    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -13724,6 +10090,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_ter": {
@@ -14078,42 +10447,6 @@
    "giltSeit": "2023-09-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -14147,47 +10480,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_b": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -14205,47 +10506,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_c": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -14297,48 +10566,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_d": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -14355,48 +10592,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_e": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -14413,48 +10618,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_f": {
    "giltSeit": "2019-03-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
      "wirkung": false,
@@ -14471,47 +10644,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_g": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -14563,47 +10704,15 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_h": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2019-03-01",
@@ -14655,47 +10764,15 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_a": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2006-04-01",
@@ -14765,47 +10842,15 @@
      "item": null,
      "ueberschrift": "a. Datenaustausch"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_b": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2006-04-01",
@@ -14841,47 +10886,15 @@
      "item": null,
      "ueberschrift": "b. Mandatserweiterung"
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_c": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-06-01",
@@ -14899,6 +10912,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_d": {
@@ -14945,42 +10962,6 @@
    "giltSeit": "2022-11-22",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 1881",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-      },
-      {
-       "label": "BBl 2006 1085",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-06-01",
      "wirkung": false,
@@ -15014,6 +10995,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_f_355_g": {
@@ -15232,24 +11217,6 @@
    "giltSeit": "2008-08-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
      "wirkung": false,
@@ -15267,70 +11234,21 @@
      "item": null,
      "ueberschrift": "7a. Titel: Haftung bei Aufhebung der lebenslänglichen Verwahrung"
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "48_a": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "55_a": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2020-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 2273",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
-      },
-      {
-       "label": "BBl 2017 7307",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2004-04-01",
@@ -15502,98 +11420,36 @@
      "item": null,
      "ueberschrift": "Ehegatte, eingetragene Partnerin, eingetragener Partner oder Lebenspartner als Opfer"
     }
+   ],
+   "erbt": [
+    0,
+    13
    ]
   },
   "56_a": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62_a": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62_b": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62_c": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -15611,98 +11467,35 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "62_d": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "63_a": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "63_b": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "64_a": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2008-08-01",
@@ -15720,29 +11513,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_b": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2007-01-01",
@@ -15760,29 +11538,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_c": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -15800,29 +11563,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
@@ -15993,30 +11741,15 @@
      "absatz": "1",
      "item": "p"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_a_bis": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
      "wirkung": false,
@@ -16033,30 +11766,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_b": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
      "wirkung": false,
@@ -16073,30 +11791,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_c": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
      "wirkung": false,
@@ -16113,29 +11816,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_d": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-10-01",
@@ -16166,29 +11854,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -16257,29 +11930,14 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_b": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -16297,29 +11955,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_c": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -16405,29 +12048,14 @@
      "absatz": "7bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_d": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -16445,29 +12073,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_e": {
    "giltSeit": "2007-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -16477,6 +12090,9 @@
      "item": null,
      "frueher": "Art. 67b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_f": {
@@ -16513,24 +12129,6 @@
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
        "label": "AS 2006 3539",
        "url": "https://fedlex.data.admin.ch/eli/oc/2006/550"
       },
@@ -16542,29 +12140,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "77_a": {
    "giltSeit": "2007-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "77_b": {
@@ -16572,24 +12157,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -16605,30 +12172,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79_a": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -16645,30 +12197,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79_b": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -16685,29 +12222,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "92_a": {
    "giltSeit": "2016-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2016-01-01",
@@ -16725,6 +12247,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

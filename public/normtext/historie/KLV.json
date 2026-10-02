@@ -6,6 +6,50 @@
   "referenz": 73,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2001-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 3088",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 571",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 3527",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2020-07-01",
@@ -44,20 +88,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-07-01",
      "wirkung": false,
      "quellen": [
@@ -69,6 +99,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3": {
@@ -76,20 +109,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-07-01",
      "wirkung": false,
      "quellen": [
@@ -101,25 +120,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "4": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
     {
      "typ": "fassung",
      "datum": "2022-01-01",
@@ -276,6 +284,9 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
@@ -819,20 +830,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
-    {
-     "typ": "fassung",
      "datum": "2020-01-01",
      "wirkung": false,
      "quellen": [
@@ -870,6 +867,9 @@
      "absatz": "2",
      "item": "a"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "9": {
@@ -886,22 +886,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "10": {
@@ -3663,78 +3652,28 @@
   },
   "38_c": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 571",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "38_d": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 571",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "38_e": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 571",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "38_f": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 571",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
-    },
     {
      "typ": "fassung",
      "datum": "2024-01-01",
@@ -3748,25 +3687,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "38_g": {
    "giltSeit": "2024-01-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2024-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2023 571",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2023/571"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "3_a": {
@@ -3804,20 +3734,6 @@
   "3_b": {
    "giltSeit": "2014-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3857,25 +3773,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_c": {
    "giltSeit": "2020-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -3942,6 +3847,9 @@
      "item": null,
      "ueberschrift": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3_d": {
@@ -3981,20 +3889,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2024-01-01",
      "wirkung": false,
      "quellen": [
@@ -4020,25 +3914,14 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Pharmazeutische Leistungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "4_b": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2001-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2000 3088",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2000/560"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
-    },
     {
      "typ": "fassung",
      "datum": "2021-01-01",
@@ -4092,25 +3975,14 @@
      "item": null,
      "ueberschrift": "5. Abschnitt: Ärztliche komplementärmedizinische Leistungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7_a": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -4150,25 +4022,14 @@
      "absatz": "3",
      "item": "l"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "7_b": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2011-01-01",
@@ -4182,25 +4043,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "7_c": {
    "giltSeit": "2026-08-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2026-08-01",
@@ -4214,25 +4064,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
     {
      "typ": "eingefuegt",
      "datum": null,
@@ -4285,26 +4124,15 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_b": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
      "wirkung": false,
@@ -4317,26 +4145,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "8_c": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2011-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2009 3527",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/435"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2020-01-01",
      "wirkung": false,
@@ -4349,6 +4166,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "9_a": {

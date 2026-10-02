@@ -6,6 +6,62 @@
   "referenz": 17,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2007-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 921",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
+    },
+    {
+     "label": "BBl 2003 7951",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2007-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 921",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
+    },
+    {
+     "label": "BBl 2003 7951",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 6159",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
+    },
+    {
+     "label": "BBl 2017 6559",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-07-01",
@@ -535,24 +591,6 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
      "item": "b"
     },
     {
@@ -572,29 +610,14 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    },
     {
      "typ": "fassung",
      "datum": "2007-04-01",
@@ -714,29 +737,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
    "giltSeit": "2007-04-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -780,26 +790,11 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
@@ -846,24 +841,6 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
-    },
-    {
      "typ": "fassung",
      "datum": "2021-01-01",
      "wirkung": false,
@@ -880,6 +857,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -1890,24 +1870,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    },
-    {
-     "typ": "fassung",
      "datum": "2007-04-01",
      "wirkung": false,
      "quellen": [
@@ -1923,29 +1885,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "46": {
    "giltSeit": "2021-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "47": {
@@ -2963,24 +2912,6 @@
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -3014,29 +2945,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19_b": {
    "giltSeit": "2007-04-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Grundversorgungskonzession"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2007-04-01",
@@ -3054,29 +2970,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2007-04-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2007 921",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2007/165"
-      },
-      {
-       "label": "BBl 2003 7951",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1351"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2007-04-01",
@@ -3145,6 +3046,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_b": {
@@ -3795,24 +3699,6 @@
    "giltSeit": "2021-07-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2007-04-01",
      "wirkung": false,
@@ -3863,30 +3749,15 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "45_b": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2007-04-01",
      "wirkung": false,
@@ -3903,30 +3774,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "45_c": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2007-04-01",
      "wirkung": false,
@@ -3943,29 +3799,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "46_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 6159",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/1019"
-      },
-      {
-       "label": "BBl 2017 6559",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2017/1933"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2021-01-01",
@@ -3983,6 +3824,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "48_a": {

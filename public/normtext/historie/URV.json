@@ -6,6 +6,50 @@
   "referenz": 8,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Gebühren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2008-07-01",
@@ -207,59 +251,23 @@
   },
   "19": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "20": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "21": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "22": {
@@ -298,59 +306,23 @@
   },
   "16_b": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Gebühren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_c": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Gebühren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_d": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Abschnitt: Gebühren"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_e": {
@@ -389,20 +361,6 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
-    },
-    {
      "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -415,25 +373,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "16_g": {
    "giltSeit": "2008-07-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2008-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 2427",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/348"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "17_a": {
@@ -470,116 +419,44 @@
   },
   "18_a": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "18_b": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "20_a": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "20_b": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "20_c": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "20_d": {
    "giltSeit": "2025-07-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2025-07-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 376",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
-    }
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "21_a_21_f": {

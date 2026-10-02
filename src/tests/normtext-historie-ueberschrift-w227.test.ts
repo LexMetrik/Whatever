@@ -10,7 +10,8 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
-import { baueArtikelHistorie, sektionsErbe, type ErbArtikel, type FnEingang } from '../lib/normtext/historie-parse';
+import { baueArtikelHistorie, sektionsErbe, loeseErbeAuf, type ArtikelHistorie, type ErbArtikel, type FnEingang } from '../lib/normtext/historie-parse';
+import { historieFuerArtikel, type HistorieShard } from '../lib/normtext/historie-laden';
 import { baueGliederungsbaum, type Sektion } from '../lib/normtext/browse';
 import { tokenAusId } from '../../scripts/normtext/historie-aufgehoben-lebend';
 import type { NormSnapshot } from '../lib/normtext/typen';
@@ -212,11 +213,49 @@ describe('Korpus · Knoten-Identität = baueGliederungsbaum (jeder Artikel unter
   }, 120_000);
 });
 
-describe('Korpus · committete Historie-Shards (Stichprobe)', () => {
-  const shard = (erlass: string) => JSON.parse(readFileSync(`${HISTORIE}/${erlass}.json`, 'utf8')).artikel as Record<string, { giltSeit: string | null; ereignisse: Array<{ typ: string; datum: string | null; ueberschrift?: string }> }>;
+describe('Korpus · committete Historie-Shards (Stichprobe) und Auflösung der geerbten Ereignisse', () => {
+  const lade = (erlass: string) => JSON.parse(readFileSync(`${HISTORIE}/${erlass}.json`, 'utf8')) as HistorieShard;
 
-  it('OR Art. 320 (Zehnter Titel, Fassung 1971/72) trägt das Ereignis an der Überschrift', () => {
-    const e = shard('OR')['320'].ereignisse.find((x) => x.ueberschrift?.startsWith('Zehnter Titel'));
-    expect(e).toMatchObject({ typ: 'fassung', datum: '1972-01-01' });
+  it('OR Art. 320 (Zehnter Titel, Fassung 1971/72): im Shard nur als Index, nach der Auflösung als Ereignis an der Überschrift', () => {
+    const shard = lade('OR');
+    expect(shard.artikel['320'].erbt).toHaveLength(1);
+    expect(shard.artikel['320'].ereignisse).toEqual([]); // Nutzlast: das Ereignis steht EINMAL in der Tabelle
+    const h = historieFuerArtikel(shard, '320')!;
+    expect(h.erbt).toBeUndefined();
+    expect(h.ereignisse[0]).toMatchObject({ typ: 'fassung', datum: '1972-01-01', ueberschrift: 'Zehnter Titel: Der Arbeitsvertrag' });
+    expect(h.giltSeit).toBe('1972-01-01');
+    expect(historieFuerArtikel(shard, '320')).toBe(h); // stabile Identität (memo)
+  });
+
+  it('Träger-Artikel behält sein Ereignis inline (mit Herkunft), Artikel ohne Erbe bleibt unverändert', () => {
+    const shard = lade('OR');
+    expect(shard.artikel['319'].erbt).toBeUndefined();
+    expect(shard.artikel['319'].ereignisse[0]).toMatchObject({ typ: 'fassung', ueberschrift: 'Zehnter Titel: Der Arbeitsvertrag' });
+    expect(historieFuerArtikel(shard, '319')).toBe(shard.artikel['319']);
+  });
+
+  it('loeseErbeAuf: geerbte Ereignisse stehen VOR den eigenen; fehlende Tabellen-Einträge werden übersprungen', () => {
+    const E = { wirkung: false, quellen: [], absatz: null, item: null } as const;
+    const a: ArtikelHistorie = { giltSeit: '2012-01-01', ereignisse: [{ ...E, typ: 'eingefuegt', datum: '2012-01-01' }], erbt: [1, 7] };
+    const r = loeseErbeAuf(a, [{ ...E, typ: 'fassung', datum: '1970-01-01', ueberschrift: 'X' }, { ...E, typ: 'fassung', datum: '1972-01-01', ueberschrift: 'Y' }]);
+    expect(r.ereignisse.map((e) => e.ueberschrift ?? 'eigen')).toEqual(['Y', 'eigen']);
+    expect(r.erbt).toBeUndefined();
+  });
+
+  it('jeder Index in `erbt` zeigt in die Tabelle (alle Erlasse), die Tabelle enthält nur weitergebbare Typen', () => {
+    let indizes = 0;
+    for (const datei of readdirSync(HISTORIE).filter((f) => f.endsWith('.json'))) {
+      const shard = JSON.parse(readFileSync(`${HISTORIE}/${datei}`, 'utf8')) as HistorieShard;
+      const tabelle = shard.ueberschriftEreignisse ?? [];
+      for (const [token, a] of Object.entries(shard.artikel)) {
+        for (const i of a.erbt ?? []) {
+          indizes++;
+          expect(tabelle[i], `${datei} ${token}`).toBeDefined();
+          expect(['fassung', 'eingefuegt'], `${datei} ${token}`).toContain(tabelle[i].typ);
+          expect(tabelle[i].ueberschrift, `${datei} ${token}`).toBeTruthy();
+        }
+      }
+    }
+    expect(indizes).toBeGreaterThan(8000);
   });
 });

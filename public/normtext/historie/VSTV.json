@@ -6,6 +6,36 @@
   "referenz": 16,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4633",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 5155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2023-01-01",
@@ -320,20 +350,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
-    {
-     "typ": "fassung",
      "datum": "2009-01-01",
      "wirkung": false,
      "quellen": [
@@ -358,25 +374,14 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
    "giltSeit": "2023-09-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
     {
      "typ": "fassung",
      "datum": "2023-09-01",
@@ -390,25 +395,14 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -448,44 +442,21 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -500,25 +471,14 @@
      "item": null,
      "ueberschrift": "3. Gesuch; Bewilligung"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
    "giltSeit": "2020-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
     {
      "typ": "fassung",
      "datum": "2001-01-01",
@@ -533,25 +493,16 @@
      "item": null,
      "ueberschrift": "4. Meldung; nachträgliche Einforderung der Steuer"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
    "giltSeit": "2020-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -914,20 +865,6 @@
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
-    },
-    {
-     "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
      "quellen": [
@@ -979,25 +916,16 @@
      "item": null,
      "ueberschrift": "a. Geldgewinne"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "42": {
    "giltSeit": "2019-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "47": {
@@ -1319,20 +1247,6 @@
    "giltSeit": "2020-01-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
-    {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
      "wirkung": false,
@@ -1345,25 +1259,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2019 4633",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2001-01-01",
@@ -1403,6 +1306,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "38_a": {
@@ -1460,20 +1366,6 @@
    "giltSeit": "2024-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1499,26 +1391,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_b": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1544,26 +1425,15 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_c": {
    "giltSeit": "2024-06-01",
    "ereignisse": [
     {
-     "typ": "fassung",
-     "datum": "2019-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 5155",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
-    },
-    {
      "typ": "eingefuegt",
      "datum": null,
      "wirkung": false,
@@ -1589,6 +1459,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_a": {

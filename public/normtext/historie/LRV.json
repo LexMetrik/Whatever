@@ -6,6 +6,64 @@
   "referenz": 7,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 4639",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/648"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 2965",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/395"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 1687",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/252"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1992-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 124",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/124_124_124"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Abschnitt: Verbrennen von Abfällen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1992-02-01",
@@ -578,20 +636,6 @@
    "giltSeit": "2018-06-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2009-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2008 4639",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/648"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme"
-    },
-    {
      "typ": "fassung",
      "datum": null,
      "wirkung": false,
@@ -625,6 +669,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_a": {
@@ -694,35 +741,10 @@
   },
   "20_c": {
    "giltSeit": "2018-06-01",
-   "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2010 2965",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2010/395"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
-    },
-    {
-     "typ": "fassung",
-     "datum": "2018-06-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2018 1687",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/252"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
-    }
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
    ]
   },
   "20_d_20_e": {
@@ -794,20 +816,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "1992-02-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 1992 124",
-       "url": "https://fedlex.data.admin.ch/eli/oc/1992/124_124_124"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "8. Abschnitt: Verbrennen von Abfällen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2007-09-01",
      "wirkung": false,
      "quellen": [
@@ -819,6 +827,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "39_a": {

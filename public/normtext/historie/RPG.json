@@ -6,6 +6,44 @@
   "referenz": 8,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 640",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
+    },
+    {
+     "label": "BBl 2018 7443",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Allgemeine Wirkungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 640",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
+    },
+    {
+     "label": "BBl 2018 7443",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-07-01",
@@ -830,48 +868,16 @@
   },
   "22": {
    "giltSeit": "2026-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Allgemeine Wirkungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "23": {
    "giltSeit": "2026-01-01",
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2. Abschnitt: Allgemeine Wirkungen"
-    }
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -1684,24 +1690,6 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
-    {
-     "typ": "eingefuegt",
      "datum": "2000-09-01",
      "wirkung": false,
      "quellen": [
@@ -1717,29 +1705,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-09-01",
@@ -1842,6 +1815,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_bis": {
@@ -1862,49 +1838,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_c": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-09-01",
@@ -2007,6 +1950,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_c_bis": {
@@ -2027,49 +1973,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_d": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2000-09-01",
@@ -2206,29 +2119,14 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_e": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
     {
      "typ": "eingefuegt",
      "datum": "2014-05-01",
@@ -2263,6 +2161,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_f": {
@@ -2292,24 +2193,6 @@
    "giltSeit": "2026-01-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
-    {
      "typ": "urspruenglich",
      "datum": null,
      "wirkung": false,
@@ -2335,6 +2218,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_quinquies": {
@@ -2355,49 +2241,16 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_ter": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
-    {
-     "typ": "eingefuegt",
-     "datum": "2026-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2025 640",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/640"
-      },
-      {
-       "label": "BBl 2018 7443",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2625"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "ueberschrift": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
-    },
     {
      "typ": "urspruenglich",
      "datum": null,
@@ -2424,6 +2277,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25_a": {
