@@ -436,7 +436,35 @@ describe('SuchSprungFeld — Enter springt, Escape leert und springt NICHT', () 
     expect(onSprung).not.toHaveBeenCalled();
   });
 
-  it('Enter OHNE auflösbaren Token ruft nichts auf (kein Token, kein Sprung)', () => {
+  // W2·17-UI-BEFUNDE (Gegenprüfung #1270, 2.10.2026): Enter bestätigt in einer
+  // IME-Komposition (Japanisch, Chinesisch, Koreanisch, auch Akzent-Tasten) den
+  // Kandidaten — es ist KEIN Such-/Sprung-Befehl. Gemessen am Stand vor dem Fix
+  // (Chromium, Komposition per `compositionstart`): Enter sprang zu art-75.
+  const imeFaelle: Array<[string, { isComposing: boolean; keyCode?: number }]> = [
+    ['isComposing', { isComposing: true }],
+    ['keyCode 229 (Safari, sendet isComposing erst nach compositionend)', { isComposing: false, keyCode: 229 }],
+  ];
+  for (const [name, nativ] of imeFaelle) {
+    it(`Enter in einer IME-Komposition tut nichts — ${name}`, () => {
+      const onSprung = vi.fn();
+      const setzeWert = vi.fn();
+      const onVor = vi.fn();
+      renderToString(
+        <SuchSprungFeld wert="429" setzeWert={setzeWert} onSprung={onSprung} onVor={onVor} hatTreffer
+          loeseArtikel={() => '429_tok'} />,
+      );
+      const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: unknown) => void;
+      let verhindert = false;
+      onKeyDown({ key: 'Enter', keyCode: nativ.keyCode, nativeEvent: nativ,
+        preventDefault: () => { verhindert = true; } });
+      expect(verhindert, 'Enter der Komposition darf nicht verschluckt werden').toBe(false);
+      expect(onSprung).not.toHaveBeenCalled();
+      expect(onVor).not.toHaveBeenCalled();
+      expect(setzeWert).not.toHaveBeenCalled();
+    });
+  }
+
+  it('Enter OHNE auflösbaren Token springt nicht (er bestätigt nur den Feldwert)', () => {
     const onSprung = vi.fn();
     const setzeWert = vi.fn();
     renderToString(
@@ -445,6 +473,11 @@ describe('SuchSprungFeld — Enter springt, Escape leert und springt NICHT', () 
     const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: { key: string; preventDefault: () => void }) => void;
     onKeyDown({ key: 'Enter', preventDefault: () => {} });
     expect(onSprung).not.toHaveBeenCalled();
-    expect(setzeWert).not.toHaveBeenCalled();
+    // §6.3-UMSTELLUNG W2·17-UI-BEFUNDE C1-B01 (2.10.2026): bis hierher stand an
+    // dieser Stelle `expect(setzeWert).not.toHaveBeenCalled()`. Enter BESTÄTIGT
+    // seither den Feldwert (`setzeWert` mit dem schon gesetzten Wert zieht die
+    // 200-ms-Entprellung sofort nach, `inhalt-zustand`) — der Wert ändert sich
+    // dabei nie, und es gibt weiterhin keinen Sprung (`onSprung` oben).
+    expect(setzeWert).toHaveBeenCalledExactlyOnceWith('Kündigung');
   });
 });

@@ -29,8 +29,10 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // Gesetzestext. Der Highlight-Walker überspringt solche Teilbäume vollständig,
 // sonst zählte ein Begriff seine eigenen Ausschnitte mit (Bug-Check 4.8.2026).
 
-/** Begriff im Schnipsel wie `::highlight(lc-such-treffer)` (W2·29 S4: vorher CSS). */
-const MARKE = '[&_mark]:bg-brass-200 [&_mark]:px-px [&_mark]:text-ink-900';
+/** Begriff im Schnipsel wie `::highlight(lc-such-treffer)` (W2·29 S4: vorher CSS) — dieselben
+ *  Tokens wie dort (§5, W2·17-UI-BEFUNDE: `such-treffer`/`such-treffer-tinte`, ≥ 3:1 bzw. ≥ 4.5:1;
+ *  vorher `brass-200`/`ink-900`, 1.24:1). */
+const MARKE = '[&_mark]:bg-such-treffer [&_mark]:px-px [&_mark]:text-such-treffer-tinte';
 
 /** W2·29 S4: laufende Stelle = Registerfläche + Strich (Tokens); Strich immer da, CLS 0. */
 const zeile = (aktiv: boolean) =>

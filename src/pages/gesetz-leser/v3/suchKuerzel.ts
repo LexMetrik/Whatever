@@ -1,6 +1,6 @@
 import { useEffect, type RefObject } from 'react';
 import { tastendruckGehoertPane } from '../panePrioritaet';
-import { istSuchKuerzel } from '../../../components/suche/fruehesSuchKuerzel';
+import { istSuchKuerzel, kuerzelHinterModal } from '../../../components/suche/fruehesSuchKuerzel';
 
 // ─── ⌘K / «/» im V3-Leser · Vorrang vor der Header-Suche (Bug-Check B1) ──────
 //
@@ -61,6 +61,12 @@ export function useSuchSprungKuerzel({ feldRef, onKuerzel, imSekundaerenPane = f
       // A3: erst die Zuständigkeit, dann alles andere — ein fremdes Pane darf
       // weder `preventDefault` rufen noch Fokus ziehen.
       if (!tastendruckGehoertPane(imSekundaerenPane)) return;
+      // C2-B01 (2.10.2026): liegt das Feld hinter einem offenen modalen Dialog
+      // (Kurzbefehle, Sheets, Schublade), schweigt das Kürzel — Herleitung und
+      // Wahl «schweigen statt Dialog schliessen» an `kuerzelHinterModal`. Steht
+      // das Feld SELBST im Dialog (Gliederungs-Sheet, A2), bleibt es bedienbar.
+      // Vor `preventDefault`: ein schweigender Empfänger beansprucht nichts.
+      if (kuerzelHinterModal(feldRef.current)) return;
       // Muss VOR `onKuerzel` stehen: die Vorrangregel gilt auch dann, wenn das
       // Öffnen der Fläche wirft oder nichts zu tun hat.
       e.preventDefault();
