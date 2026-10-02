@@ -1,11 +1,12 @@
-import { useId, useRef, useState, type ReactNode } from 'react';
+import { useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
-import { NormChip } from '../../../components/vorlagen/NormChip';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { EntstehungsBlock } from '../../../components/entstehung/EntstehungsBlock';
 import { sammleVerweise } from '../parts/ArtikelLeser.fussnoten';
+import { VerweisChips } from '../parts/ArtikelLeser.bezuegeFuss';
+import type { InternRefs } from '../../../components/NormText';
 import type { BlattArtikel } from './panelModell';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
@@ -106,28 +107,43 @@ function Klappzeile({ titel, rechts, name, daten, children }: {
  * «Verweise dieses Artikels» — oben im Blatt, über jedem Reiter, zugeklappt.
  *
  * NULL VERWEISE ⇒ KEINE ZEILE (Nachtrag David 24.9.2026, «nicht zu viele
- * infos»). Die Null ist gesichert — die Verweise stehen aus dem Artikel selbst,
- * es wartet kein Shard —, also verschweigt der fehlende Abschnitt nichts, was
- * erst noch käme. Die Rückrichtung («wer verweist auf ihn») führen wir nicht
- * (W2·22-VERWEIS-FEDLEX Z4); der Aufklapp-Inhalt sagt das, damit die Liste
- * nicht für vollständig gehalten wird (§8).
+ * infos»). Die Zeile sagt nie «0»; sie fehlt, wenn der Wortlaut keine
+ * Bestimmung verlinkt. Die Liste ist der Wortlaut selbst (`sammleVerweise`,
+ * W2·17-UI-BEFUNDE E-D12-B01/PE-F5-B01/E-D13-B01: dieselben Links, die der
+ * Artikeltext rendert — Binnenverweise und ausgeschriebene Fremdverweise
+ * inklusive, nie ein Verweis, den der Linker mit Absicht Text lässt). Die
+ * Rückrichtung («wer verweist auf ihn») führen wir nicht (W2·22-VERWEIS-FEDLEX
+ * Z4); der Aufklapp-Inhalt sagt das, damit die Liste nicht für vollständig
+ * gehalten wird (§8).
+ *
+ * `intern` + `erlassKuerzel`: die Weichen des Linkers (Ebene, Erlass, Kürzel-
+ * Grenzen). Ohne sie keine Liste — sonst liefe «Art. 70a StG» in einem
+ * kantonalen Erlass auf das Bundes-StG (E-D13-B01).
  */
-export function BlattVerweise({ artikel, zitat, wort }: {
+export function BlattVerweise({ artikel, zitat, wort, intern, erlassKuerzel }: {
   artikel: BlattArtikel | null;
   zitat: string;
   wort: BestimmungsWort;
+  intern: InternRefs | undefined;
+  erlassKuerzel: string;
 }) {
-  if (!artikel) return null;
-  const verweise = sammleVerweise(artikel.eintrag.bloecke);
-  if (verweise.length === 0) return null;
+  const eintrag = artikel?.eintrag;
+  const verweise = useMemo(
+    () => (eintrag && intern ? sammleVerweise(eintrag, { kuerzel: erlassKuerzel, intern }) : []),
+    [eintrag, intern, erlassKuerzel],
+  );
+  if (!eintrag || verweise.length === 0) return null;
+  const titel = `Verweise ${dieses(wort)}`;
   return (
-    <Klappzeile key={artikel.eintrag.artikel} titel={`Verweise ${dieses(wort)}`} rechts={String(verweise.length)}
-      name={`${verweise.length} Verweise in ${zitat}`}
-      daten={{ 'data-v3-blatt-verweise': artikel.eintrag.artikel }}>
+    <Klappzeile key={eintrag.artikel} titel={titel} rechts={String(verweise.length)}
+      // WCAG 2.5.3: der Name beginnt mit der sichtbaren Beschriftung; die Zahl
+      // steht ohne Substantiv («1 Verweise» gäbe es sonst).
+      name={`${titel}: ${verweise.length}, ${zitat}`}
+      daten={{ 'data-v3-blatt-verweise': eintrag.artikel }}>
       <span className="flex flex-wrap items-center gap-1.5">
-        {verweise.map((v) => <NormChip key={v} artikel={v} />)}
+        <VerweisChips verweise={verweise} />
       </span>
-      <p className="mt-1 text-micro text-ink-500">Nur Verweise, die hier stehen; wer auf diese Bestimmung verweist, führen wir noch nicht.</p>
+      <p className="mt-1 text-micro text-ink-500">Nur Bestimmungen, die im Text verlinkt sind; wer auf diese Bestimmung verweist, führen wir noch nicht.</p>
     </Klappzeile>
   );
 }
@@ -150,7 +166,8 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
   const { historie, eintrag } = artikel;
   return (
     <Klappzeile key={eintrag.artikel} titel={`Fassung ${dieses(wort)}`} rechts={fassungsMarkeEtikett(historie)}
-      name={`Fassung von ${zitat}: ${fassungsMarkeEtikett(historie)}, ${historie.ereignisse.length} Änderungsstände`}
+      // WCAG 2.5.3: der Name beginnt mit der sichtbaren Beschriftung (E-D13-B04).
+      name={`Fassung ${dieses(wort)}: ${fassungsMarkeEtikett(historie)}, ${zitat}, ${historie.ereignisse.length} ${historie.ereignisse.length === 1 ? 'Änderungsstand' : 'Änderungsstände'}`}
       daten={{ 'data-v3-blatt-fassung': eintrag.artikel }}>
       <EntstehungsBlock historie={historie} erlassKey={erlassKey} artikel={eintrag.artikel} snapshot={eintrag} />
     </Klappzeile>

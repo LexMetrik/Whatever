@@ -369,7 +369,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit} historie={m.historieStand}
               normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
-              artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
+              artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel} intern={m.internRefs}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
           )} />

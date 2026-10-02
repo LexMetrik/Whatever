@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useState, useMemo, memo } from 'react';
 import { ArtikelBody, FnRef } from '../../../components/normtext/ArtikelBody';
 import { type InternRefs } from '../../../components/NormText';
 import {
@@ -223,9 +223,13 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
         <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
-  // VERWEISE: im Artikel genannte, aufloesbare (Bund-)Normverweise als Chips am
-  // Fuss sammeln — Herleitung und Dedupe in `./ArtikelLeser.fussnoten` (§6.6-Split).
-  const verweise: string[] = sammleVerweise(e.bloecke);
+  // VERWEISE: die im Wortlaut verlinkten Bestimmungen als Chips am Fuss — Herleitung
+  // und Dedupe in `./ArtikelLeser.fussnoten` (§5: dieselben Links wie der Text).
+  // Nur das Dossier zeigt sie (Einzelmodus); die Gesamtansicht rechnet nichts.
+  const verweise = useMemo(
+    () => (fussForm === 'dossier' && intern ? sammleVerweise(e, { kuerzel: erlass.kuerzel, intern }) : []),
+    [fussForm, e, erlass.kuerzel, intern],
+  );
   // S6 W1f · die Aktionen: im Dossier Knöpfe (unverändert), sonst ruhige Textzeile.
   const aktionen = <ArtikelAktionen artikel={e.artikel} basisPfad={basisPfad}
     zitat={zitat} zitatVoll={zitatVoll} amtlich={amtlich} ruhig={fussForm !== 'dossier'} />;
