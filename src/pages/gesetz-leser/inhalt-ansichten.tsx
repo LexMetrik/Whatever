@@ -152,7 +152,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="lc-link text-brass-700 hover:text-brass-800">Amtliches PDF in neuem Tab öffnen ↗</a>
       </nav>
     </div>
@@ -203,7 +203,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} />}
       </nav>
     </div>

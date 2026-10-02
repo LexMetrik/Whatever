@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  brotkrume, ebeneAngabe, hatRuecksprung, overlineGebiet, suchFeldName, suchPlatzhalter,
-  uebersichtsZeile,
+  ebeneAngabe, overlineGebiet, suchFeldName, suchPlatzhalter,
 } from '../pages/gesetz-leser/v3/erlassAnsicht';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../lib/normtext/systematik';
@@ -10,14 +9,19 @@ import type { KantonSystematik } from '../lib/normtext/systematik';
 //
 // «Der Rahmen funktioniert für Bund, Kanton und Staatsvertrag identisch —
 //  Erlass-spezifisches kommt aus dem Datenmodell, nie aus `if (bund)`.» Diese
-// Datei prüft genau die vier Ableitungen, aus denen diese Zusage besteht:
-// `ebeneAngabe`, `uebersichtsZeile`, `overlineGebiet`, `brotkrume`. DOM-frei
-// (§2) — reine Funktionen auf einem `Pick<BrowseErlass, …>`.
+// Datei prüft die Ableitungen, aus denen diese Zusage besteht: `ebeneAngabe`,
+// `overlineGebiet` (+ Suchfeld-Wortlaut unten). DOM-frei (§2) — reine Funktionen
+// auf einem `Pick<BrowseErlass, …>`.
+//
+// W2·17-UI-BEFUNDE H9-B01 (1.10.2026) · §6.3-DEKLARATION: `uebersichtsZeile`
+// und `brotkrume` samt `hatRuecksprung` sind gestrichen (kein Aufrufer in der
+// Produktion; die Kopfzeile trägt seit D27 keine Krume, die Box baut ihre
+// Zeile in `ruheZeile`). Ihre Fälle bewachten Code ohne Verwender (§6.7,
+// §17-Gegengewicht); `ebeneAngabe` bleibt (Overline, Tiefe, Adresse).
 //
 // Rot zu bekommen: in `ebeneAngabe` den `rechtsgebiet === 'international'`-
-// Vorrang entfernen, in `uebersichtsZeile` `.filter(Boolean)` weglassen, oder
-// in `overlineGebiet` den Kanton-Zweig auf einen Platzhalter statt `null`
-// umstellen.
+// Vorrang entfernen, oder in `overlineGebiet` den Kanton-Zweig auf einen
+// Platzhalter statt `null` umstellen.
 
 describe('ebeneAngabe — die drei Ebenen des Korpus', () => {
   // Cowork-Befund 14 (18.8.2026, fachliche Korrektur): das Ziel zeigte vorher
@@ -66,38 +70,6 @@ describe('ebeneAngabe — die drei Ebenen des Korpus', () => {
   });
 });
 
-describe('uebersichtsZeile — fehlende Angaben entfallen ERSATZLOS', () => {
-  it('SR und Stand vorhanden: alle drei Teile, durch " · " getrennt', () => {
-    const zeile = uebersichtsZeile({ sr: '210', stand: '2026-01-01' }, 480, 'Artikel');
-    expect(zeile).toBe('SR 210 · 480 Artikel · Stand 01.01.2026');
-  });
-
-  it('SR fehlt: kein "SR undefined", kein leeres Trennzeichen am Anfang', () => {
-    const zeile = uebersichtsZeile({ sr: null, stand: '2026-01-01' }, 480, 'Artikel');
-    expect(zeile).toBe('480 Artikel · Stand 01.01.2026');
-    expect(zeile).not.toContain('SR undefined');
-    expect(zeile.startsWith(' ·')).toBe(false);
-  });
-
-  it('Stand fehlt: kein leeres Trennzeichen am Ende', () => {
-    const zeile = uebersichtsZeile({ sr: '210', stand: '' }, 480, 'Artikel');
-    expect(zeile).toBe('SR 210 · 480 Artikel');
-    expect(zeile.endsWith('·')).toBe(false);
-  });
-
-  it('beides fehlt: nur die Umfang-Angabe, kein Trennzeichen überhaupt', () => {
-    const zeile = uebersichtsZeile({ sr: null, stand: '' }, 480, 'Paragraphen');
-    expect(zeile).toBe('480 Paragraphen');
-    expect(zeile).not.toContain('·');
-  });
-
-  it('bestimmungsWort wird durchgereicht (kantonale Erlasse zählen Paragraphen)', () => {
-    const zeile = uebersichtsZeile({ sr: null, stand: '' }, 12, 'Paragraphen');
-    expect(zeile).toContain('12 Paragraphen');
-    expect(zeile).not.toContain('Artikel');
-  });
-});
-
 describe('overlineGebiet — Bund zeigt das Rechtsgebiet, Kanton nur Verifiziertes', () => {
   it('Bund: liefert das Rechtsgebiet-Etikett', () => {
     const e: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'sr'> = {
@@ -128,60 +100,6 @@ describe('overlineGebiet — Bund zeigt das Rechtsgebiet, Kanton nur Verifiziert
       ebene: 'kanton', kanton: 'AG', rechtsgebiet: 'oeffentlich', sr: '640.100',
     };
     expect(overlineGebiet(e, kantonSys)).toBe('Finanzrecht');
-  });
-});
-
-describe('brotkrume — genau drei Stufen, die letzte ohne `to`', () => {
-  it('Bund: Gesetze › Bund › Kürzel', () => {
-    const e: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'> = {
-      ebene: 'bund', kanton: null, rechtsgebiet: 'privat', kuerzel: 'OR',
-    };
-    const b = brotkrume(e);
-    expect(b).toHaveLength(3);
-    expect(b[0]).toEqual({ label: 'Gesetze', to: '/gesetze' });
-    // Cowork-Befund 14 (18.8.2026, fachliche Korrektur, s. o.): «Bund» führt
-    // nicht mehr zum selben Ziel wie «Gesetze».
-    expect(b[1]).toEqual({ label: 'Bund', to: '/gesetze?ebene=bund' });
-    expect(b[2]).toEqual({ label: 'OR' });
-  });
-
-  it('die letzte Stufe trägt KEIN `to` — sie ist die aktuelle Seite, nicht klickbar', () => {
-    const e: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'> = {
-      ebene: 'kanton', kanton: 'BS', rechtsgebiet: 'oeffentlich', kuerzel: 'GebT',
-    };
-    const b = brotkrume(e);
-    expect(b).toHaveLength(3);
-    expect(b[2].to).toBeUndefined();
-    expect('to' in b[2]).toBe(false);
-    // Die ersten beiden Stufen SIND klickbar.
-    expect(b[0].to).toBeDefined();
-    expect(b[1].to).toBeDefined();
-  });
-});
-
-// ═══ Ä87/Ä91 (H4-Nachzug 18.8.2026) · DIE ZUSAGE UNTER DEM GESTRICHENEN ✕ ════
-//
-// Das Kopf-✕ «Gesetz schliessen» ist weg (Messreihe und Herleitung im Kopf von
-// `v3/kopfStufen.ts`). Es DARF weg, weil sein Ziel `/gesetze` in derselben Zeile
-// als beschriftetes Wort steht — als volle Kette oder als Rücksprung
-// «‹ Gesetze». Diese Zusage ruht auf einer einzigen Eigenschaft der Krume, und
-// die wird hier geprüft statt angenommen: nähme jemand der ersten Stufe ihr
-// `to`, stünde die V3-Kopfzeile ohne jeden Weg nach oben da — still, und auf
-// jeder Breite.
-//
-// Rot zu bekommen (§6.7, gefahren 18.8.2026): in `brotkrume` beim ersten
-// Eintrag `to: '/gesetze'` weglassen.
-describe('hatRuecksprung — die Kopfzeile hat auf jeder Ebene einen Weg nach oben', () => {
-  const FAELLE: [string, Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>][] = [
-    ['Bund', { ebene: 'bund', kanton: null, rechtsgebiet: 'privat', kuerzel: 'StPO' }],
-    ['Kanton BS', { ebene: 'kanton', kanton: 'BS', rechtsgebiet: 'oeffentlich', kuerzel: 'GebT' }],
-    ['Staatsvertrag', { ebene: 'bund', kanton: null, rechtsgebiet: 'international', kuerzel: 'LugÜ' }],
-  ];
-  it.each(FAELLE)('%s: erste Krumen-Stufe trägt ein Ziel', (_name, e) => {
-    expect(hatRuecksprung(e)).toBe(true);
-    // Und zwar DASSELBE Ziel, das das ✕ hatte — sonst wäre die Streichung ein
-    // Verlust und keine Entdopplung (§5).
-    expect(brotkrume(e)[0]?.to).toBe('/gesetze');
   });
 });
 

@@ -1,5 +1,6 @@
 import { grundartMeta, titelOhneKlammerSuffix } from '../helpers';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
+import { zaehlWort } from '../../../lib/normtext/erlassKopfText';
 
 // ─── Erlass → Wortlaut der Beschriftungen (Schwesterdatei zu `erlassAnsicht`) ─
 //
@@ -71,6 +72,32 @@ export function bestimmungsWort(erlassKey: string): BestimmungsWort {
  */
 export function zaehlform(n: number, wort: BestimmungsWort): string {
   return n === 1 && wort === 'Paragraphen' ? 'Paragraph' : wort;
+}
+
+/**
+ * «Artikel» / «Paragraph» / «Einträge» / «Eintrag» — das Zähl-Substantiv zur
+ * Zahl: gewählt von der Anhang-Dominanz (`zaehlWort`) UND in der Zählform
+ * (`zaehlform` kennt nur Artikel/Paragraphen). Die EINE Stelle für
+ * Ruhezeile der Übersichtsbox und Fakten-Zeile des Titelblatts (W2·17-UI-
+ * BEFUNDE H1-B01/PA-6-B07: beide schrieben an BS-257.118 «1 Paragraphen»).
+ */
+export function zaehlWortFuer(
+  n: number,
+  basis: BestimmungsWort,
+  kennzahlen?: { artikelAnzahl: number; anhangArtikel: number } | null,
+): string {
+  const wort = zaehlWort(basis, kennzahlen);
+  if (n !== 1) return wort;
+  return wort === 'Einträge' ? 'Eintrag' : zaehlform(1, wort);
+}
+
+/** «1 Paragraph» / «607 Einträge» als EIN String (`zaehlWortFuer`). */
+export function zaehlAnzahl(
+  n: number,
+  basis: BestimmungsWort,
+  kennzahlen?: { artikelAnzahl: number; anhangArtikel: number } | null,
+): string {
+  return `${n} ${zaehlWortFuer(n, basis, kennzahlen)}`;
 }
 
 /**

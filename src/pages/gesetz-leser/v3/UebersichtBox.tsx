@@ -44,7 +44,7 @@ export function UebersichtBox({ angaben, rohdaten, offen }: {
       <summary
         data-v3-uebersicht-zeile
         className="flex cursor-pointer list-none items-baseline gap-1.5 rounded-sm py-1 text-body-s leading-snug text-ink-600 transition-colors hover:text-brass-700 [&::-webkit-details-marker]:hidden">
-        <span aria-hidden className="shrink-0 text-ink-400 transition-transform group-open:rotate-90">▸</span>
+        <span aria-hidden className="shrink-0 text-ink-500 transition-transform group-open:rotate-90">▸</span>
         <span className="min-w-0">
           <span className="font-medium text-ink-700">Übersicht</span>{' '}
           {/* Ä70 · Sans mit Tabellenziffern statt Mono: zwei Schriftstimmen in
@@ -75,7 +75,7 @@ export function UebersichtBox({ angaben, rohdaten, offen }: {
             {links.map((l) => (
               <a key={l.id} data-v3-uebersicht-link={l.id} href={l.href}
                 target="_blank" rel="noopener noreferrer"
-                className="lc-link text-brass-700">
+                className="lc-link lc-tap-polster text-brass-700">
                 {l.zeichen === '↗'
                   ? <>{l.label} <span aria-hidden>↗</span></>
                   : <><span aria-hidden>{l.zeichen}</span> {l.label}</>}
@@ -90,7 +90,7 @@ export function UebersichtBox({ angaben, rohdaten, offen }: {
             welche Fassung in der Datei liegt (§7 Bst. a). */}
         {rohdaten && (
           <p data-v3-uebersicht-rohdaten className="mt-1 text-xs leading-snug text-ink-500">
-            <a href={rohdaten.href} className="lc-link text-brass-700" download>
+            <a href={rohdaten.href} className="lc-link lc-tap-polster text-brass-700" download>
               <span aria-hidden>⬇</span> Rohdaten (JSON)
             </a>
             {rohdaten.stand && <> — <span className="lc-ziffern">{`Fassung ${rohdaten.stand}`}</span></>}

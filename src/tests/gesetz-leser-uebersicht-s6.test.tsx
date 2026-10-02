@@ -23,7 +23,7 @@ import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import {
-  nurErlassdatum, erlassOrgan, istDatumsToken, teilerfassung, TEILERFASSUNG_BELEGE,
+  nurErlassdatum, erlassOrgan, teilerfassung, TEILERFASSUNG_BELEGE,
 } from '../pages/gesetz-leser/erlassUebersichtDaten';
 import { UebersichtBox } from '../pages/gesetz-leser/v3/UebersichtBox';
 import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
@@ -147,12 +147,8 @@ describe('S6 — reine Ableitungen', () => {
     expect(erlassOrgan(null)).toBeNull();
     expect(erlassOrgan({ praeambel: [{ rolle: 'ingress', text: 'gestützt auf …' }] })).toBeNull();
   });
-
-  it('istDatumsToken trennt Fedlex-Konsolidierungsdatum vom kantonalen Drift-Hash', () => {
-    expect(istDatumsToken('20260101')).toBe(true);
-    expect(istDatumsToken('9d33cd9629e68f3f15966a7506601829703209cbaa714bae04cdd7f62bd28e88')).toBe(false);
-    expect(istDatumsToken('')).toBe(false);
-  });
+  // W2·17-UI-BEFUNDE H9-B01 (1.10.2026) · §6.3-DEKLARATION: hier stand ein Fall
+  // zu `istDatumsToken` — die Funktion hatte keinen Aufrufer und ist gestrichen.
 });
 
 describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §11 Ziff. 2)', () => {
