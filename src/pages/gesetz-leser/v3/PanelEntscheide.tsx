@@ -10,6 +10,7 @@ import {
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import { zahl } from '../bezugPortion';
+import { leereEntscheideSatz } from '../artikelBezeichnung';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import {
@@ -388,9 +389,7 @@ export function PanelEntscheide({
         <p data-v3-panel-lage="gefiltert" className="px-3 py-3 text-body-s text-ink-600">{gefiltert}</p>
       ) : gruppen.length === 0 ? (
         <p data-v3-panel-lage="bestand" className="px-3 py-3 text-body-s text-ink-600">
-          {artikelLabel
-            ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
-            : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
+          {leereEntscheideSatz(aktArtikel, artikelLabel, normZitat)}
           {/* K-2b: der Zusatz TRITT HINZU, er ersetzt die Bestandsaussage
               nicht — beide sind wahr, und die zweite erklärt die erste. */}
           {ebene === 'kanton' && (

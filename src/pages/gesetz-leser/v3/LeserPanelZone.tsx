@@ -354,7 +354,7 @@ export function LeserPanelZone({
             data-v3-panel-artikel={aktArtikel ?? undefined}
             className={`${flaeche.klassen} flex flex-col`}
             style={flaeche.stil}>
-            <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
+            <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel} zitat={normZitat}
               bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt} bezug={aktArtikel}
               onSchliessen={schliesse} panelRef={panelRef}

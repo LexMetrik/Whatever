@@ -18,7 +18,7 @@ import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
-import { blattArtikel, normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { blattArtikel, OEFFNER_NAME, OEFFNER_WORT, panelBezug, panelZitat, usePanelBezuege, usePanelZustand } from './panelModell';
 import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
@@ -368,7 +368,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token, (tok) => m.struktur?.[tok]?.fussnoten)}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit} historie={m.historieStand}
-              normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
+              normZitat={panelZitat(panelZiel, erlass.kuerzel, m.struktur, eintraege)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel} intern={m.internRefs}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
