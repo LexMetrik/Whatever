@@ -677,11 +677,14 @@ const GLIEDERUNGSZEICHEN = new RegExp(
 /**
  * Randtitel MIT Gliederungszeichen (Buchstabe/Ziffer, ggf. mit lat. Suffix: «A.», «IIIa.», «2bis.», «Asexies.»)? Entscheid
  * David 3.10.2026 («Randtitel zählt nicht»): eine Fassungs-Fussnote an einem solchen Randtitel datiert nur den Randtitel.
- * Amtliche Grundlage: Gesetzestechnische Richtlinien des Bundes (GTR, Stand 5.6.2026) Rz. 81 — Randtitel mit Gliederung
- * durch Ziffern/Buchstaben sind Teil der Gliederung des Erlasses, nicht der Artikel-Sachüberschrift (Rz. 79) — und Rz. 322:
- * der Änderungserlass nennt «Randtitel» und den Artikel-Körper getrennt (AS 2017 3699: «Art. 299 Randtitel», «Art. 300
- * Randtitel» ⇒ Körper unverändert). Die Sachüberschrift OHNE Gliederungszeichen bleibt eigen (VVG 47a: AS 2021 758 Anhang
- * Ziff. 4 ändert Randtitel UND Körper; NHG 3: AS 1999 3071 «Art. 3 Randtitel und Abs. 4»).
+ * Das Gliederungszeichen ist ein STELLVERTRETER, kein amtliches Kriterium: Gesetzestechnische Richtlinien des Bundes (GTR,
+ * Stand 5.6.2026) Rz. 81 sagt nur, dass bei Randtiteln mit Gliederung durch Ziffern/Buchstaben die Gliederung des ganzen
+ * Erlasses zu überdenken ist (Randtitel statt Sachüberschrift, Rz. 79) — NICHT, dass ein Randtitel mit Gliederung keine
+ * Artikel-Sachüberschrift sei. Die amtliche Anweisung selbst steht nur im AS-Erlass: Rz. 322 verlangt, dass die Änderung
+ * eines Randtitels als «Randtitel» in der Anweisung genannt wird (AS 2017 3699: «Art. 299 Randtitel», «Art. 300 Randtitel»
+ * ⇒ Körper unverändert). Die Sachüberschrift OHNE Gliederungszeichen bleibt eigen (VVG 47a: AS 2021 758 Anhang Ziff. 4
+ * ändert Randtitel UND Körper; NHG 3: AS 1999 3071 «Art. 3 Randtitel und Abs. 4»). Wo das Zeichen als Stellvertreter
+ * versagt, nimmt `randtitelNurRandtitel` die Fälle aus (Körper-Fundstelle, Ausdruck-Fussnote).
  * Eigenes Prädikat statt `darstellung.ts`: dessen Aufzähler-Erkennung (ENUM) kennt «Asexies.» nicht und bleibt (Anzeige, §3).
  * Quelle/Messung: bibliothek/normtext/randtitel-fussnote-gilt-seit-2026-10-03.md.
  */
@@ -711,10 +714,37 @@ function koerperTeiltQuelle(fussnoten: ReadonlyArray<FnEingang> | undefined, lab
 }
 
 /**
+ * Ist eine Randtitel-Fussnote eine «Ausdruck»-Fussnote (Ersatz eines Ausdrucks)? Erkennung am Segment-Anfang «Ausdruck gemäss»
+ * (Verb-Kopf `ausdruck`) oder am amtlichen Zusatz «Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen» /
+ * «Diese Änd. ist im ganzen Erlass berücksichtigt». Eine solche Anweisung (Ersatz von Ausdrücken, GTR Rz. 327–330) nennt den
+ * Randtitel nur als EINE der betroffenen Stellen und ändert auch den Körper (ZGB 124: AS 2023 92 Anhang Ziff. 1 «In den
+ * Artikeln 124 Randtitel und Absatz 1 …»; OR 928c: AS 2021 758 Anhang Ziff. 3 «Randtitel sowie Absätze 1 und 2»; ZGB 4:
+ * AS 1999 1118 Abs. 1 nennt Art. 4). Sie ist also keine reine Randtitel-Änderung, trotz Gliederungszeichen (Befund H1
+ * Gegenprüfung 3.10.2026; Messung: 3 von 87).
+ */
+function ausdruckFussnote(fn: FnEingang): boolean {
+  return /^Ausdruck gemäss|Diese Änd\. (?:wurde in den in der AS genannten Bestimmungen vorgenommen|ist im ganzen Erlass berücksichtigt)/.test(
+    (fn.text ?? '').replace(/<[^>]+>/g, '').trim(),
+  );
+}
+
+/**
+ * Reine Randtitel-Änderung (⇒ nur Chronik, nicht «Gilt seit»)? Nein, wenn der Änderungserlass auch den Körper angefasst hat
+ * (`koerperTeiltQuelle`) oder eine der Fussnoten dieses Randtitels eine Ausdruck-Anweisung ist (`ausdruckFussnote`).
+ * Bei gemischten Fussnoten desselben Randtitels gewinnt die Ausnahme (Verhalten wie auf main, §8: lieber keine Aussage als
+ * eine falsche).
+ */
+function randtitelNurRandtitel(fussnoten: ReadonlyArray<FnEingang> | undefined, label: string): boolean {
+  if ((fussnoten ?? []).some((f) => f.sektion === label && ausdruckFussnote(f))) return false;
+  return !koerperTeiltQuelle(fussnoten, label);
+}
+
+/**
  * `sektionsErbe` plus, je Artikel, die Labels, deren Fussnoten Überschrift-Ereignisse sind (`geteilt`): (a) die Knoten seines
  * Gliederungspfads, die MEHRERE Artikel enthalten (Vorgabe B4), (b) seine eigenen Randtitel MIT Gliederungszeichen auch bei
  * einem einzigen Artikel (Entscheid David 3.10.2026, `randtitelMitAufzaehler`), ausser der Änderungserlass hat auch den Körper
- * des Artikels angefasst (`koerperTeiltQuelle`). Ein amtlicher Gliederungsknoten mit genau
+ * des Artikels angefasst (`koerperTeiltQuelle`) oder die Fussnote eine Ausdruck-Anweisung ist (`ausdruckFussnote`,
+ * `randtitelNurRandtitel`). Ein amtlicher Gliederungsknoten mit genau
  * einem Artikel oder die Sachüberschrift des Artikels selbst (ohne Gliederungszeichen) ist EIGEN.
  */
 export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map<string, FnEingang[]>; geteilt: Map<string, Set<string>> } {
@@ -760,7 +790,7 @@ export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map
   const geteilt = new Map<string, Set<string>>();
   for (const a of artikel) {
     const labels = new Set((ketten.get(a.token) ?? []).filter((k) => k.artikel > 1).map((k) => k.label));
-    for (const m of a.marginalie ?? []) if (randtitelMitAufzaehler(m) && !koerperTeiltQuelle(a.fussnoten, m.trim())) labels.add(m.trim());
+    for (const m of a.marginalie ?? []) if (randtitelMitAufzaehler(m) && randtitelNurRandtitel(a.fussnoten, m.trim())) labels.add(m.trim());
     if (ketten.has(a.token) || labels.size > 0) geteilt.set(a.token, labels);
   }
   return { erbe, geteilt };

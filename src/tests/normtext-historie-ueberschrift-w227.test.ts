@@ -195,6 +195,34 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(andere, '981')!.giltSeit).toBeNull();
   });
 
+  // H1 (Gegenprüfung GP #1298, 3.10.2026): Das Gliederungszeichen allein trägt die Regel nicht. Eine «Ausdruck»-Fussnote am
+  // Randtitel (Ersatz von Ausdrücken, GTR Rz. 327–330) nennt den Randtitel nur als eine der betroffenen Stellen; der Änderungs-
+  // erlass hat auch den Körper geändert. Wortlaut der Fussnoten und Anweisungen aus Fedlex (Struktur-Sidecars):
+  //   ZGB 124: AS 2023 92 Anhang Ziff. 1 «In den Artikeln 124 Randtitel und Absatz 1 … «Rentenalter» … «Referenzalter»»
+  //   OR 928c: AS 2021 758 Anhang Ziff. 3 «In Artikel 928c Randtitel sowie Absätze 1 und 2 …»
+  //   ZGB 4:   AS 1999 1118 Ersatz von Ausdrücken, Abs. 1 nennt Art. 4 (Richter → Gericht), Abs. 2 «Randtitel von Art. 4»
+  const AUSDRUCK_ZGB124 = 'Ausdruck gemäss Anhang Ziff. 1 des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024 (AS 2023 92; BBl 2019 6305). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.';
+  const AUSDRUCK_OR928C = 'Ausdruck gemäss Anhang Ziff. 3 des BG vom 18. Dez. 2020 (Systematische Verwendung der AHV-Nummer durch Behörden), in Kraft seit 1. Jan. 2022 (AS 2021 758; BBl 2019 7359). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.';
+  const AUSDRUCK_ZGB4 = 'Ausdruck gemäss Ziff. I 1 des BG vom 26. Juni 1998, in Kraft seit 1. Jan. 2000 (AS 1999 1118; BBl 1996 I 1). Diese Änd. ist im ganzen Erlass berücksichtigt.';
+  it('H1: Randtitel mit Gliederungszeichen, aber «Ausdruck»-Fussnote (ZGB 124 / OR 928c / ZGB 4) → bleibt eigen, giltSeit wie auf main', () => {
+    const rt124 = 'III. Ausgleich bei Invalidenrenten vor dem reglementarischen Referenzalter';
+    const f124: ErbArtikel[] = [
+      { token: '124', gliederung: [TITEL], marginalie: ['D. Berufliche Vorsorge', rt124], fussnoten: [fn('Fassung gemäss Ziff. I des BG vom 19. Juni 2015 (Vorsorgeausgleich bei Scheidung), in Kraft seit 1. Jan. 2017 (AS 2016 2313; BBl 2013 4887).'), sek(AUSDRUCK_ZGB124, rt124)] },
+    ];
+    expect(historieVon(f124, '124')!.giltSeit).toBe('2024-01-01'); // Erstbau fälschlich 2017-01-01
+    const f928: ErbArtikel[] = [{ token: '928_c', gliederung: [TITEL], marginalie: ['D. AHV-Nummer und Personennummer'], fussnoten: [sek(AUSDRUCK_OR928C, 'D. AHV-Nummer und Personennummer')] }];
+    const h928 = historieVon(f928, '928_c')!;
+    expect(h928.giltSeit).toBe('2022-01-01'); // Erstbau fälschlich null
+    expect(h928.ereignisse[0].ueberschrift).toBeUndefined();
+    const f4: ErbArtikel[] = [{ token: '4', gliederung: [TITEL], marginalie: ['III. Gerichtliches Ermessen'], fussnoten: [sek(AUSDRUCK_ZGB4, 'III. Gerichtliches Ermessen')] }];
+    expect(historieVon(f4, '4')!.giltSeit).toBe('2000-01-01'); // Erstbau fälschlich null
+  });
+
+  it('H1: dieselbe Randtitel-Fassung ohne Ausdruck-Wortlaut bleibt «nur Chronik» (Kontrolle: ohne «Ausdruck gemäss» greift die Regel weiter)', () => {
+    const f: ErbArtikel[] = [{ token: '4', gliederung: [TITEL], marginalie: ['III. Gerichtliches Ermessen'], fussnoten: [sek(AUSDRUCK_ZGB4.replace('Ausdruck gemäss', 'Fassung gemäss').replace(' Diese Änd. ist im ganzen Erlass berücksichtigt.', ''), 'III. Gerichtliches Ermessen')] }];
+    expect(historieVon(f, '4')!.giltSeit).toBeNull();
+  });
+
   it('B4: Fussnote an der eigenen Sachüberschrift OHNE Gliederungszeichen (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
     const f13c: ErbArtikel[] = [
       { token: '47_a', gliederung: [TITEL], marginalie: ['AHV-Nummer'], fussnoten: [sek(FASSUNG_2007, 'AHV-Nummer')] },
@@ -446,12 +474,21 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
   });
 
-  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → giltSeit = eigene Fassung 1978, Chronik behält 2018', () => {
+  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → nicht mehr 2018-01-01, Chronik behält 2018', () => {
     for (const token of ['299', '300']) {
       const h = hist('ZGB', token)!;
-      expect(h.giltSeit, token).toBe('1978-01-01'); // Fassung gemäss AS 1977 237 am Artikel selbst; AS 2017 3699 änderte nur den Randtitel
+      // Wert offen, wartet auf Entscheid David zur Generalanweisung AS 1999 1118, GP #1298 H2 — der Generator liefert derzeit den
+      // Fussnotenwert 1978 (AS 1977 237); AS 1999 1118 ersetzt «Gewalt» → «Sorge» in Art. 299/300 (nicht im Modell), darum hier
+      // bewusst KEINE Zusicherung eines Positivwerts, nur die Entscheid-Wirkung («Randtitel zählt nicht»).
+      expect(h.giltSeit, token).not.toBe('2018-01-01');
       expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
     }
+  });
+
+  it('H1: ZGB 124, OR 928c, ZGB 4 (Randtitel mit Gliederungszeichen + «Ausdruck»-Fussnote, Änderungserlass auch im Körper) behalten ihr Datum wie auf main', () => {
+    expect(hist('ZGB', '124')!.giltSeit).toBe('2024-01-01'); // AS 2023 92 Anhang Ziff. 1 «Randtitel und Absatz 1»
+    expect(hist('OR', '928_c')!.giltSeit).toBe('2022-01-01'); // AS 2021 758 Anhang Ziff. 3 «Randtitel sowie Absätze 1 und 2»
+    expect(hist('ZGB', '4')!.giltSeit).toBe('2000-01-01'); // AS 1999 1118 Ersatz von Ausdrücken, Abs. 1 nennt Art. 4
   });
 
   it('B1: ZGB 457 (Träger, «Fassung dieses Wortes» 1973) zählt nicht in «giltSeit»; ZGB 458 erbt die Teil-Formel nicht', () => {

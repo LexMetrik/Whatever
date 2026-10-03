@@ -464,7 +464,7 @@
    ]
   },
   "4": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "ausdruck",
@@ -481,8 +481,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Gerichtliches Ermessen"
+     "item": null
     }
    ]
   },
@@ -2735,7 +2734,7 @@
    ]
   },
   "124": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": "2024-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2769,8 +2768,7 @@
       }
      ],
      "absatz": null,
-     "item": null,
-     "ueberschrift": "III. Ausgleich bei Invalidenrenten vor dem reglementarischen Referenzalter"
+     "item": null
     }
    ],
    "erbt": [
