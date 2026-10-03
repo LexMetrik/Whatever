@@ -81,6 +81,24 @@
   },
   {
    "typ": "fassung",
+   "datum": "1997-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 1155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+    },
+    {
+     "label": "BBl 1993 II 1445",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Abfälle"
+  },
+  {
+   "typ": "fassung",
    "datum": "2006-11-01",
    "wirkung": false,
    "quellen": [
@@ -96,6 +114,24 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 1155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155"
+    },
+    {
+     "label": "BBl 1993 II 1445",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/2_1445_1337_1213"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Belastungen des Bodens"
   },
   {
    "typ": "eingefuegt",
@@ -909,6 +945,20 @@
     }
    ]
   },
+  "31": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
   "33": {
    "giltSeit": "2004-01-01",
    "ereignisse": [
@@ -979,6 +1029,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
+   ]
+  },
+  "35": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "37": {
@@ -1720,7 +1780,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    11
+    13
    ]
   },
   "58": {
@@ -1779,7 +1839,7 @@
     }
    ],
    "erbt": [
-    11
+    13
    ]
   },
   "59": {
@@ -2670,6 +2730,27 @@
    ],
    "aufgehobenSeit": "2014-06-01"
   },
+  "30_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "30_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "30_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
   "30_d": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
@@ -2690,6 +2771,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "30_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "30_f": {
@@ -2712,6 +2803,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "30_g": {
@@ -2734,6 +2828,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "30_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "31_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "31_b": {
@@ -2773,6 +2884,16 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "31_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "32_a": {
@@ -2795,6 +2916,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_bis": {
@@ -2907,6 +3031,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_octies": {
@@ -2929,6 +3056,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_quater": {
@@ -2951,6 +3081,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_quinquies": {
@@ -2973,6 +3106,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_septies": {
@@ -2995,6 +3131,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_a_sexies": {
@@ -3017,6 +3156,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "32_a_ter": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "32_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "32_b_bis": {
@@ -3039,6 +3195,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_c": {
@@ -3113,13 +3272,17 @@
      "item": null,
      "ueberschrift": "4. Abschnitt: Sanierung belasteter Standorte"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "32_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "32_d_bis": {
@@ -3144,7 +3307,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "32_e": {
@@ -3220,7 +3384,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "32_e_bis": {
@@ -3245,7 +3410,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "32_e_ter": {
@@ -3270,7 +3436,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "35_a": {
@@ -3432,7 +3599,7 @@
     }
    ],
    "erbt": [
-    5
+    7
    ]
   },
   "35_d": {
@@ -3568,38 +3735,38 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    8,
+    9
    ]
   },
   "35_f": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
     8,
-    9
+    9,
+    10,
+    11
    ]
   },
   "35_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
     8,
-    9
+    9,
+    10,
+    11
    ]
   },
   "35_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6,
-    7,
     8,
-    9
+    9,
+    10,
+    11
    ]
   },
   "35_i": {
@@ -3624,8 +3791,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    8,
+    9
    ]
   },
   "35_j": {
@@ -3650,8 +3817,8 @@
     }
    ],
    "erbt": [
-    6,
-    7
+    8,
+    9
    ]
   },
   "41_a": {
@@ -3825,7 +3992,7 @@
     }
    ],
    "erbt": [
-    10
+    12
    ]
   },
   "55_b": {
@@ -3850,7 +4017,7 @@
     }
    ],
    "erbt": [
-    10
+    12
    ]
   },
   "55_c": {
@@ -3875,7 +4042,7 @@
     }
    ],
    "erbt": [
-    10
+    12
    ]
   },
   "55_d": {
@@ -3900,7 +4067,7 @@
     }
    ],
    "erbt": [
-    10
+    12
    ]
   },
   "55_e": {
@@ -3925,7 +4092,7 @@
     }
    ],
    "erbt": [
-    10
+    12
    ]
   },
   "55_f": {
@@ -3981,7 +4148,7 @@
     }
    ],
    "erbt": [
-    11
+    13
    ]
   },
   "59_a": {
@@ -4114,7 +4281,7 @@
     }
    ],
    "erbt": [
-    12
+    14
    ]
   },
   "59_b": {
@@ -4139,7 +4306,7 @@
     }
    ],
    "erbt": [
-    12
+    14
    ]
   },
   "59_c": {
@@ -4164,7 +4331,7 @@
     }
    ],
    "erbt": [
-    12
+    14
    ]
   },
   "59_d": {
@@ -4189,7 +4356,7 @@
     }
    ],
    "erbt": [
-    12
+    14
    ]
   },
   "61_a": {

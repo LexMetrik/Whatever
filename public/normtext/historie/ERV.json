@@ -65,6 +65,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+  },
+  {
+   "typ": "fassung",
    "datum": "2025-01-01",
    "wirkung": false,
    "quellen": [
@@ -501,7 +515,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "20": {
@@ -535,7 +549,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "21": {
@@ -569,7 +583,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "22": {
@@ -603,28 +617,28 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "23": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "24": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "25": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "26": {
@@ -645,7 +659,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "27": {
@@ -679,14 +693,14 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "28": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "29": {
@@ -720,14 +734,14 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "30": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "31": {
@@ -748,7 +762,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "32": {
@@ -769,7 +783,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "33": {
@@ -803,14 +817,14 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "34": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "35": {
@@ -831,7 +845,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "36": {
@@ -865,7 +879,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "37": {
@@ -912,7 +926,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "38": {
@@ -933,14 +947,14 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "39": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "40": {
@@ -961,7 +975,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "41": {
@@ -1440,14 +1454,14 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "65": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "66": {
@@ -1468,7 +1482,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "67": {
@@ -1489,7 +1503,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "68": {
@@ -1510,7 +1524,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "69": {
@@ -1531,7 +1545,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "70": {
@@ -1552,7 +1566,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "71": {
@@ -1573,7 +1587,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72": {
@@ -1594,7 +1608,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "73": {
@@ -1628,7 +1642,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "77": {
@@ -1727,21 +1741,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    10
    ]
   },
   "85": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    10
    ]
   },
   "86": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    10
    ]
   },
   "87": {
@@ -1803,35 +1817,35 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "91": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "92": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "93": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "94": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "95": {
@@ -2567,6 +2581,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "136": {
@@ -2962,6 +2979,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "132_b": {
@@ -2980,6 +3000,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "137_138": {
@@ -3126,49 +3149,49 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_f": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "148_j": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "27_a": {
@@ -3189,7 +3212,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "31_a": {
@@ -3210,7 +3233,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "40_a": {
@@ -3231,7 +3254,7 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "42_a": {
@@ -3392,28 +3415,28 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    7
    ]
   },
   "47_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    7
    ]
   },
   "47_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    7
    ]
   },
   "47_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    7
    ]
   },
   "4_a": {
@@ -3560,7 +3583,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "64_a": {
@@ -3581,7 +3604,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "64_b": {
@@ -3602,7 +3625,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "64_c": {
@@ -3623,7 +3646,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "65_a": {
@@ -3644,7 +3667,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "66_a": {
@@ -3665,7 +3688,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "68_a": {
@@ -3686,7 +3709,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "70_a": {
@@ -3707,7 +3730,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "70_b": {
@@ -3728,7 +3751,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "71_a": {
@@ -3749,7 +3772,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "71_b": {
@@ -3770,7 +3793,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_a": {
@@ -3791,7 +3814,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_b": {
@@ -3812,7 +3835,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_c": {
@@ -3846,7 +3869,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_d": {
@@ -3867,7 +3890,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_e": {
@@ -3888,7 +3911,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_f": {
@@ -3909,7 +3932,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "72_g": {
@@ -3930,7 +3953,7 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "74_76": {
@@ -3975,63 +3998,63 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_f": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "77_j": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    9
    ]
   },
   "78_79": {
@@ -4111,49 +4134,49 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    10
    ]
   },
   "86_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    10
    ]
   },
   "92_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "92_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "92_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "92_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "93_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   }
  },

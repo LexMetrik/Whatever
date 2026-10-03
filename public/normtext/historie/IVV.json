@@ -22,6 +22,20 @@
    "ueberschrift": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
   },
   {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/723"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Abschnitt: Eingliederung"
+  },
+  {
    "typ": "eingefuegt",
    "datum": "2008-01-01",
    "wirkung": false,
@@ -92,6 +106,20 @@
    "ueberschrift": "I. Bemessung des Invaliditätsgrades"
   },
   {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/723"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Abis. Medizinische Massnahmen"
+  },
+  {
    "typ": "eingefuegt",
    "datum": "2012-01-01",
    "wirkung": false,
@@ -132,6 +160,20 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "A. Die IV‑Stellen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1992-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 1251",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/1251_1251_1251"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "B. Die Ausgleichskassen"
   },
   {
    "typ": "eingefuegt",
@@ -177,6 +219,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/723"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "C. Festsetzung der Leistungen"
+  },
+  {
+   "typ": "fassung",
    "datum": "1992-07-01",
    "wirkung": false,
    "quellen": [
@@ -202,6 +258,20 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 5679",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/800"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
   },
   {
    "typ": "eingefuegt",
@@ -291,6 +361,9 @@
      "item": null,
      "ueberschrift": "Abis. Medizinische Massnahmen"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "3": {
@@ -309,6 +382,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "4": {
@@ -346,6 +423,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "6": {
@@ -429,6 +509,9 @@
      "absatz": "4",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "7": {
@@ -447,6 +530,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "13": {
@@ -575,6 +661,9 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "17": {
@@ -593,6 +682,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "18": {
@@ -637,6 +729,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "19": {
@@ -655,6 +750,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20": {
@@ -783,6 +881,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -801,6 +902,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23": {
@@ -878,6 +982,9 @@
      "item": null,
      "ueberschrift": "G. Wahlrecht, Zusammenarbeit und Tarife"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25": {
@@ -898,8 +1005,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "26": {
@@ -920,8 +1027,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "27": {
@@ -968,8 +1075,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "28": {
@@ -1016,7 +1123,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "29": {
@@ -1083,7 +1190,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "31": {
@@ -1104,8 +1211,8 @@
     }
    ],
    "erbt": [
-    4,
-    6
+    5,
+    8
    ]
   },
   "32": {
@@ -1139,7 +1246,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "33": {
@@ -1179,7 +1286,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "35": {
@@ -1239,7 +1346,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "36": {
@@ -1299,7 +1406,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "37": {
@@ -1320,7 +1427,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "38": {
@@ -1367,7 +1474,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "39": {
@@ -1388,7 +1495,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "40": {
@@ -1688,21 +1795,21 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "42": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    10
    ]
   },
   "43": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    10
    ]
   },
   "44": {
@@ -1765,6 +1872,13 @@
     }
    ],
    "aufgehobenSeit": "2024-01-01"
+  },
+  "46": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
+   ]
   },
   "47": {
    "giltSeit": "2004-01-01",
@@ -1829,7 +1943,7 @@
     }
    ],
    "erbt": [
-    9
+    12
    ]
   },
   "49": {
@@ -1863,7 +1977,7 @@
     }
    ],
    "erbt": [
-    9
+    12
    ]
   },
   "50": {
@@ -1916,7 +2030,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "52": {
@@ -1950,7 +2064,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "53": {
@@ -1997,7 +2111,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "54": {
@@ -2031,7 +2145,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "55": {
@@ -2065,7 +2179,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "56": {
@@ -2086,7 +2200,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "57": {
@@ -2107,7 +2221,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "65": {
@@ -2396,6 +2510,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "75": {
@@ -2563,6 +2680,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "77": {
@@ -2581,6 +2701,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "78": {
@@ -2737,7 +2860,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "80": {
@@ -2810,7 +2933,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "81": {
@@ -2844,7 +2967,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "82": {
@@ -2892,7 +3015,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "83": {
@@ -2926,8 +3049,8 @@
     }
    ],
    "erbt": [
-    12,
-    13
+    16,
+    17
    ]
   },
   "84": {
@@ -3006,7 +3129,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "86": {
@@ -3072,6 +3195,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    18
    ]
   },
   "88": {
@@ -3116,6 +3242,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    18
    ]
   },
   "89": {
@@ -4005,6 +4134,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "14_quater": {
@@ -4023,6 +4155,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "14_ter": {
@@ -4054,6 +4189,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "15_16": {
@@ -4104,6 +4242,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "1_bis": {
@@ -4183,14 +4324,14 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "1_quater": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    2
+    3
    ]
   },
   "1_quinquies": {
@@ -4216,7 +4357,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "1_sexies": {
@@ -4422,6 +4563,9 @@
      "absatz": "6",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20_quinquies": {
@@ -4453,6 +4597,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20_sexies": {
@@ -4484,6 +4631,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "20_ter": {
@@ -4515,6 +4665,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_bis": {
@@ -4559,6 +4712,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_novies": {
@@ -4590,6 +4746,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_octies": {
@@ -4647,6 +4806,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_quater": {
@@ -4691,6 +4853,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_quinquies": {
@@ -4722,6 +4887,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_septies": {
@@ -4818,6 +4986,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_sexies": {
@@ -4849,6 +5020,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21_ter": {
@@ -4880,6 +5054,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_bis": {
@@ -4953,6 +5130,9 @@
      "frueher": "vor Art. 23",
      "ueberschrift": "F. Verschiedene Bestimmungen"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_quinquies": {
@@ -4984,6 +5164,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22_ter": {
@@ -5047,6 +5230,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "23_ter": {
@@ -5078,6 +5264,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "24_bis": {
@@ -5111,7 +5300,8 @@
     }
    ],
    "erbt": [
-    3
+    1,
+    4
    ]
   },
   "24_quater": {
@@ -5132,7 +5322,8 @@
     }
    ],
    "erbt": [
-    3
+    1,
+    4
    ]
   },
   "24_quinquies": {
@@ -5153,7 +5344,8 @@
     }
    ],
    "erbt": [
-    3
+    1,
+    4
    ]
   },
   "24_septies": {
@@ -5220,7 +5412,8 @@
     }
    ],
    "erbt": [
-    3
+    1,
+    4
    ]
   },
   "24_ter": {
@@ -5241,7 +5434,8 @@
     }
    ],
    "erbt": [
-    3
+    1,
+    4
    ]
   },
   "26_bis": {
@@ -5288,8 +5482,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "27_bis": {
@@ -5323,8 +5517,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "28_bis": {
@@ -5390,7 +5584,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "29_quater": {
@@ -5424,7 +5618,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "29_ter": {
@@ -5454,7 +5648,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "2_bis": {
@@ -5473,6 +5667,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "2_ter": {
@@ -5491,6 +5689,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "30_bis": {
@@ -5556,7 +5758,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "33_bis": {
@@ -5603,7 +5805,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "33_ter": {
@@ -5624,7 +5826,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "35_bis": {
@@ -5710,7 +5912,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "35_ter": {
@@ -5731,7 +5933,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "39_a": {
@@ -5766,31 +5968,31 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "39_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_e": {
@@ -5811,8 +6013,8 @@
     }
    ],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_f": {
@@ -5833,24 +6035,24 @@
     }
    ],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_i": {
@@ -5897,8 +6099,8 @@
     }
    ],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_j": {
@@ -5945,8 +6147,8 @@
     }
    ],
    "erbt": [
-    4,
-    7
+    5,
+    9
    ]
   },
   "39_k": {
@@ -6040,7 +6242,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "39_ter": {
@@ -6104,6 +6306,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_decies": {
@@ -6122,6 +6328,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_novies": {
@@ -6153,6 +6363,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_octies": {
@@ -6171,6 +6385,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_quater": {
@@ -6221,6 +6439,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_septies": {
@@ -6239,6 +6461,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_sexies": {
@@ -6257,6 +6483,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "3_ter": {
@@ -6288,6 +6518,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "41_a": {
@@ -6308,7 +6542,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "41_b": {
@@ -6329,7 +6563,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "4_a": {
@@ -6348,6 +6582,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "4_bis": {
@@ -6400,7 +6637,8 @@
     }
    ],
    "erbt": [
-    10
+    1,
+    13
    ]
   },
   "4_octies": {
@@ -6421,7 +6659,8 @@
     }
    ],
    "erbt": [
-    10
+    1,
+    13
    ]
   },
   "4_quater": {
@@ -6454,6 +6693,9 @@
      "item": null,
      "ueberschrift": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "4_quinquies": {
@@ -6474,7 +6716,8 @@
     }
    ],
    "erbt": [
-    10
+    1,
+    13
    ]
   },
   "4_septies": {
@@ -6566,7 +6809,8 @@
     }
    ],
    "erbt": [
-    10
+    1,
+    13
    ]
   },
   "4_ter": {
@@ -6585,6 +6829,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    7
    ]
   },
   "58_64": {
@@ -6635,6 +6883,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "5_ter": {
@@ -6653,6 +6904,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "6_bis": {
@@ -6684,6 +6938,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "6_quater": {
@@ -6702,6 +6959,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "6_quinquies": {
@@ -6720,6 +6980,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "6_ter": {
@@ -6764,6 +7027,9 @@
      "absatz": "4",
      "item": "a"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "72_bis": {
@@ -6951,6 +7217,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "74_bis": {
@@ -7014,6 +7283,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "74_ter": {
@@ -7097,6 +7369,9 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    15
    ]
   },
   "79_bis": {
@@ -7130,7 +7405,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "79_quater": {
@@ -7168,7 +7443,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "79_quinquies": {
@@ -7189,7 +7464,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "79_sexies": {
@@ -7210,7 +7485,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "79_ter": {
@@ -7244,7 +7519,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "81_bis": {
@@ -7304,7 +7579,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "85_bis": {
@@ -7338,7 +7613,7 @@
     }
    ],
    "erbt": [
-    12
+    16
    ]
   },
   "86_bis": {
@@ -7444,6 +7719,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    18
    ]
   },
   "88_bis": {
@@ -7540,13 +7818,16 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    18
    ]
   },
   "88_octies": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    19
    ]
   },
   "88_quater": {
@@ -7567,7 +7848,7 @@
     }
    ],
    "erbt": [
-    15
+    20
    ]
   },
   "88_quinquies": {
@@ -7593,7 +7874,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    19
    ]
   },
   "88_sexies": {

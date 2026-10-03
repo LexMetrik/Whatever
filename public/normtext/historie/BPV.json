@@ -51,6 +51,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 3",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/2"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "11. Kapitel: Schlussbestimmungen"
+  },
+  {
+   "typ": "fassung",
    "datum": "2026-01-01",
    "wirkung": false,
    "quellen": [
@@ -537,7 +551,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3
+    4
    ]
   },
   "18": {
@@ -3720,6 +3734,13 @@
     }
    ]
   },
+  "117": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
   "103_a": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
@@ -4187,6 +4208,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_d": {
@@ -4250,6 +4274,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_f": {
@@ -4268,6 +4295,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_g": {
@@ -4286,6 +4316,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_h": {
@@ -4304,6 +4337,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_i": {
@@ -4354,6 +4390,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_k": {
@@ -4372,6 +4411,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_l": {
@@ -4390,6 +4432,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_m": {
@@ -4577,6 +4622,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "116_n": {
@@ -4595,6 +4643,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "11_a": {
@@ -6023,14 +6074,14 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "88_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    5
    ]
   },
   "88_d": {
@@ -6051,7 +6102,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "88_d_bis": {
@@ -6072,7 +6123,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "88_d_ter": {
@@ -6093,7 +6144,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "88_e": {
@@ -6198,7 +6249,7 @@
     }
    ],
    "erbt": [
-    4
+    5
    ]
   },
   "88_g_88_j": {
