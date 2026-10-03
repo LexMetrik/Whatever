@@ -558,7 +558,7 @@
    ]
   },
   "18": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -575,7 +575,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Landungszwang"
     }
    ],
    "erbt": [
@@ -726,7 +727,7 @@
    ]
   },
   "22": {
-   "giltSeit": "2011-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -743,7 +744,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Rettungs- und Bergungsdienst"
     }
    ],
    "erbt": [
@@ -1346,7 +1348,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Ziff. 3"
+     "frueher": "Ziff. 3",
+     "ueberschrift": "10. Benützungsrecht"
     }
    ],
    "erbt": [
@@ -4974,7 +4977,7 @@
    ]
   },
   "37_u": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2018-01-01",
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -5017,7 +5020,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9a. Bestandesschutz für Landesflughäfen"
     }
    ],
    "erbt": [
@@ -5336,7 +5340,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Zusammenarbeit mit ausländischen Behörden"
     }
    ]
   },

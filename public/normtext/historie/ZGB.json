@@ -464,7 +464,7 @@
    ]
   },
   "4": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "ausdruck",
@@ -481,7 +481,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Gerichtliches Ermessen"
     }
    ]
   },
@@ -855,7 +856,7 @@
    ]
   },
   "27": {
-   "giltSeit": "1985-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -872,7 +873,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Vor übermässiger Bindung"
     }
    ]
   },
@@ -1421,7 +1423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Rechte und Pflichten im Allgemeinen"
     }
    ]
   },
@@ -1548,7 +1551,7 @@
    ]
   },
   "85": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2006-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1582,12 +1585,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Änderung der Organisation auf Antrag der Aufsichtsbehörde"
     }
    ]
   },
   "86": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2006-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1621,7 +1625,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Änderung des Zwecks auf Antrag der Aufsichtsbehörde oder des obersten Stiftungsorgans"
     }
    ]
   },
@@ -2730,7 +2735,7 @@
    ]
   },
   "124": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2764,7 +2769,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Ausgleich bei Invalidenrenten vor dem reglementarischen Referenzalter"
     }
    ],
    "erbt": [
@@ -2839,7 +2845,7 @@
    ]
   },
   "132": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2856,7 +2862,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Anweisungen an die Schuldner und Sicherstellung"
     }
    ],
    "erbt": [
@@ -3213,7 +3220,7 @@
    ]
   },
   "177": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3230,7 +3237,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "b. Anweisungen an die Schuldner"
     }
    ],
    "erbt": [
@@ -4190,7 +4198,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "255": {
-   "giltSeit": "2022-07-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4242,7 +4250,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Elternschaft des Ehemannes"
     }
    ],
    "erbt": [
@@ -4250,7 +4259,7 @@
    ]
   },
   "256": {
-   "giltSeit": "2022-07-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4318,7 +4327,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Klagerecht"
     }
    ],
    "erbt": [
@@ -5327,7 +5337,7 @@
    ]
   },
   "286": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5378,7 +5388,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -5439,7 +5450,8 @@
      "quellen": [],
      "absatz": null,
      "item": null,
-     "frueher": "Ziff. II"
+     "frueher": "Ziff. II",
+     "ueberschrift": "III. Abfindung"
     }
    ],
    "erbt": [
@@ -5813,7 +5825,7 @@
    ]
   },
   "299": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5847,7 +5859,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Asexies. Stiefeltern"
     }
    ],
    "erbt": [
@@ -5857,7 +5870,7 @@
    ]
   },
   "300": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5891,7 +5904,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Asepties. Pflegeeltern"
     }
    ],
    "erbt": [
@@ -6013,7 +6027,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Erziehung"
     }
    ],
    "erbt": [
@@ -6023,7 +6038,7 @@
    ]
   },
   "303": {
-   "giltSeit": "2014-07-01",
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6057,7 +6072,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Religiöse Erziehung"
     }
    ],
    "erbt": [
@@ -6067,7 +6083,7 @@
    ]
   },
   "304": {
-   "giltSeit": "2014-07-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6152,7 +6168,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -6413,7 +6430,7 @@
    "aufgehobenSeit": "2014-07-01"
   },
   "310": {
-   "giltSeit": "2014-07-01",
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6447,7 +6464,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Aufhebung des Aufenthaltsbestimmungsrechts"
     }
    ],
    "erbt": [
@@ -6701,7 +6719,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -8559,7 +8578,7 @@
    ]
   },
   "520": {
-   "giltSeit": "1996-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8576,7 +8595,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Im Allgemeinen"
     }
    ]
   },
@@ -9114,7 +9134,7 @@
    ]
   },
   "641": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9131,7 +9151,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im Allgemeinen"
     }
    ]
   },
@@ -9331,7 +9352,7 @@
    ]
   },
   "660": {
-   "giltSeit": "1994-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9348,7 +9369,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. im Allgemeinen"
     }
    ]
   },
@@ -9749,7 +9771,7 @@
    ]
   },
   "720": {
-   "giltSeit": "2003-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9766,7 +9788,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Im Allgemeinen"
     }
    ]
   },
@@ -10083,7 +10106,7 @@
    "aufgehobenSeit": "1988-01-01"
   },
   "779": {
-   "giltSeit": "1965-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -10100,7 +10123,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Gegenstand und Aufnahme in das Grundbuch"
     }
    ]
   },
@@ -11005,7 +11029,7 @@
    ]
   },
   "949": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11022,7 +11046,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Im Allgemeinen"
     }
    ]
   },
@@ -11071,7 +11096,7 @@
    ]
   },
   "955": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11088,7 +11113,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Haftung"
     }
    ]
   },
@@ -11287,7 +11313,7 @@
    ]
   },
   "975": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11304,7 +11330,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Bei ungerechtfertigtem Eintrag"
     }
    ]
   },
@@ -11331,7 +11358,7 @@
    ]
   },
   "977": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11348,7 +11375,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Berichtigungen"
     }
    ]
   },
@@ -12936,7 +12964,7 @@
    ]
   },
   "28_a": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": "1985-07-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -12970,7 +12998,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Im Allgemeinen"
     }
    ]
   },
@@ -13110,7 +13139,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "28_g": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": "1985-07-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -13144,7 +13173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Grundsatz"
     }
    ]
   },
@@ -18625,7 +18655,7 @@
    ]
   },
   "disp_u1_art_55": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -18642,7 +18672,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -18896,7 +18927,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Im Allgemeinen"
     }
    ],
    "erbt": [
