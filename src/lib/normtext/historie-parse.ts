@@ -22,6 +22,7 @@
 
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
+import { randtitelMitAufzaehler, randtitelNurRandtitel } from './historie-randtitel';
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
 interface FnLink {
@@ -417,9 +418,11 @@ export function baueArtikelHistorie(
     geerbt?: ReadonlyArray<FnEingang>;
     /** W2·27 (Nachzug 2.10.2026, Vorgabe B4): Labels der Gliederungsknoten im Pfad des Artikels, die MEHRERE Artikel
      *  enthalten (`sektionsAnalyse`). Nur eine Sektions-Fussnote, deren Label hier steht, ist ein «Überschrift-Ereignis»
-     *  (`ueberschrift`, zählt nicht in «giltSeit»). Hängt sie an der Sachüberschrift/dem Randtitel des Artikels SELBST
-     *  (Label nicht im Pfad) oder an einem Knoten, der genau diesen einen Artikel enthält, ist sie ein EIGENES Ereignis.
-     *  undefined = jede Sektions-Fussnote gilt als Überschrift-Ereignis (Aufrufer ohne Baum, z. B. Unit-Tests). */
+     *  (`ueberschrift`, zählt nicht in «giltSeit»). Dazu zählt (Entscheid David 3.10.2026 «Randtitel zählt nicht») auch ein
+     *  EIGENER Randtitel des Artikels MIT Gliederungszeichen (`randtitelMitAufzaehler`, ZGB 299/300 «Asexies. Stiefeltern»),
+     *  auch wenn er nur diesen einen Artikel trägt. Hängt sie dagegen an der Sachüberschrift OHNE Gliederungszeichen
+     *  (VVG 47a, NHG 3) oder an einem amtlichen Gliederungsknoten, der genau diesen einen Artikel enthält, ist sie ein EIGENES
+     *  Ereignis. undefined = jede Sektions-Fussnote gilt als Überschrift-Ereignis (Aufrufer ohne Baum, z. B. Unit-Tests). */
     geteilteUeberschriften?: ReadonlySet<string>;
   } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number; erbtAnzahl: number } {
@@ -457,7 +460,7 @@ export function baueArtikelHistorie(
   // Dokumentreihenfolge bleibt erhalten (siehe Funktions-Doc). «giltSeit»/
   // «aufgehobenSeit» als Maximum über die datierten Ereignisse ableiten.
   let giltSeit: string | null = null;
-  // W2·27-BUND-FERTIG (Nachzug 2.10.2026, Vorgabe C, VORLÄUFIG — Fachfrage an David offen): Überschrift-Ereignisse
+  // W2·27-BUND-FERTIG (Nachzug 2.10.2026, Vorgabe C, VORLÄUFIG (2.10.) — bestätigt David 3.10.2026 «Regel C bestätigt»): Überschrift-Ereignisse
   // (`ueberschrift`) speisen nur die Chronik, nie «giltSeit». Eine Fassungs-Fussnote an einer Überschrift lässt sich im
   // Wortlaut nicht von einer Neufassung des ganzen Abschnitts unterscheiden (ZGB SchlT 51/53/56: Text von 1912, AS 1999 1118
   // änderte nur den Gliederungstitel) — §8: lieber keine Aussage als eine falsche. «giltSeit» = Maximum der EIGENEN
@@ -664,9 +667,12 @@ export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, Fn
 }
 
 /**
- * `sektionsErbe` plus, je Artikel, die Labels der Knoten seines Gliederungspfads, die MEHRERE Artikel enthalten
- * (`geteilt`, Vorgabe B4): nur dort ist eine Sektions-Fussnote ein Überschrift-Ereignis. Ein Knoten mit genau einem Artikel
- * (oder eine Sachüberschrift/ein Randtitel des Artikels selbst, die nie ein Knoten im Pfad sind) ist EIGEN.
+ * `sektionsErbe` plus, je Artikel, die Labels, deren Fussnoten Überschrift-Ereignisse sind (`geteilt`): (a) die Knoten seines
+ * Gliederungspfads, die MEHRERE Artikel enthalten (Vorgabe B4), (b) seine eigenen Randtitel MIT Gliederungszeichen auch bei
+ * einem einzigen Artikel (Entscheid David 3.10.2026, `randtitelMitAufzaehler`), ausser der Änderungserlass hat auch den Körper
+ * des Artikels angefasst (`koerperTeiltQuelle`) oder die Fussnote eine Ausdruck-Anweisung ist (`ausdruckFussnote`,
+ * `randtitelNurRandtitel`, alle in historie-randtitel.ts). Ein amtlicher Gliederungsknoten mit genau
+ * einem Artikel oder die Sachüberschrift des Artikels selbst (ohne Gliederungszeichen) ist EIGEN.
  */
 export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map<string, FnEingang[]>; geteilt: Map<string, Set<string>> } {
   const erbe = new Map<string, FnEingang[]>();
@@ -709,7 +715,11 @@ export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map
     }
   }
   const geteilt = new Map<string, Set<string>>();
-  for (const [token, kette] of ketten) geteilt.set(token, new Set(kette.filter((k) => k.artikel > 1).map((k) => k.label)));
+  for (const a of artikel) {
+    const labels = new Set((ketten.get(a.token) ?? []).filter((k) => k.artikel > 1).map((k) => k.label));
+    for (const m of a.marginalie ?? []) if (randtitelMitAufzaehler(m) && randtitelNurRandtitel(a.fussnoten, m.trim())) labels.add(m.trim());
+    if (ketten.has(a.token) || labels.size > 0) geteilt.set(a.token, labels);
+  }
   return { erbe, geteilt };
 }
 

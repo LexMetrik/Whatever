@@ -119,7 +119,7 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f6, '1')!.ereignisse.map((e) => [e.typ, e.ueberschrift])).toEqual([['ausdruck', TITEL.label], ['urspruenglich', TITEL.label]]);
   });
 
-  // Vorgabe C (VORLÄUFIG, Fachfrage an David offen, Nachzug 2.10.2026): Überschrift-Ereignisse speisen nur die Chronik,
+  // Vorgabe C (VORLÄUFIG (2.10.) — bestätigt David 3.10.2026 «Regel C bestätigt»): Überschrift-Ereignisse speisen nur die Chronik,
   // nie «giltSeit». Eine Fassungs-Fussnote an einer Überschrift ist im Wortlaut nicht von einer Neufassung des ganzen
   // Abschnitts zu unterscheiden (ZGB SchlT 51/53/56: Text von 1912, AS 1999 1118 änderte nur den Gliederungstitel).
   // «giltSeit» = Maximum der EIGENEN datierten Ereignisse; ohne eigene ⇒ null. Ersetzt die Regel B aus dem ersten Nachzug
@@ -162,13 +162,72 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f12, '3')!.giltSeit).toBeNull(); // Erbe ohne eigenes Ereignis
   });
 
-  // B4: eigene Sachüberschrift/Randtitel des Artikels SELBST (Label nicht im Gliederungspfad) bzw. ein Knoten, der genau
-  // diesen einen Artikel enthält, ist EIGEN (wie auf main) — echte Korpus-Beispiele VVG 47a / NHG 3 / ZGB 299 unten.
-  it('B4: Fussnote an der eigenen Randtitel-/Sachüberschrift (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
+  // B4 (Nachzug 2.10.2026) + Entscheid David 3.10.2026 «Randtitel zählt nicht» (deklarierte fachliche Änderung §6.3):
+  // Fussnote am Randtitel MIT Gliederungszeichen (ZGB 299/300 «Asexies. Stiefeltern», AS 2017 3699 änderte nur «Randtitel»)
+  // speist nur die Chronik (Überschrift-Ereignis). Sachüberschrift OHNE Gliederungszeichen (VVG 47a «AHV-Nummer»,
+  // NHG 3 «Pflichten von Bund und Kantonen») bleibt eigen — dort änderte der Änderungserlass auch den Körper.
+  it('Randtitel zählt nicht: Fussnote am eigenen Randtitel mit Gliederungszeichen («Asexies. …») → nur Chronik, giltSeit null', () => {
     const f13: ErbArtikel[] = [
       { token: '299', gliederung: [TITEL], marginalie: ['Asexies. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'Asexies. Stiefeltern')] },
     ];
     const h = historieVon(f13, '299')!;
+    expect(h.giltSeit).toBeNull();
+    expect(h.ereignisse[0]).toMatchObject({ typ: 'fassung', datum: '2007-01-01', ueberschrift: 'Asexies. Stiefeltern' });
+  });
+
+  it('Randtitel zählt nicht: eigener Körper-Eingriff datiert weiter («giltSeit» = Maximum der eigenen Ereignisse)', () => {
+    const f13b: ErbArtikel[] = [
+      { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'A. Stiefeltern'), { ...fn(FASSUNG_1972), nr: '2' }] },
+    ];
+    expect(historieVon(f13b, '299')!.giltSeit).toBe('1972-01-01');
+  });
+
+  it('Randtitel zählt nicht — Ausnahme: nennt eine Körper-Fussnote desselben Artikels dieselbe AS-Fundstelle («Randtitel und Abs. …»), bleibt das Datum eigen', () => {
+    const koerperFn = (text: string): FnEingang => ({ ...fn(text, { absatz: '2' }), nr: '2' });
+    const artikel981 = (koerper: FnEingang): ErbArtikel[] => [
+      { token: '981', gliederung: [TITEL], marginalie: ['C. Kraftloserklärung'], fussnoten: [sek(FASSUNG_2007, 'C. Kraftloserklärung'), koerper] },
+    ];
+    const h = historieVon(artikel981(koerperFn('Aufgehoben durch Ziff. I 1 des BG vom 13. Dez. 2002, in Kraft seit 1. Jan. 2007 (AS 2006 3459; BBl 1999 1979).')), '981')!;
+    expect(h.giltSeit).toBe('2007-01-01');
+    expect(h.ereignisse.find((e) => e.typ === 'fassung')!.ueberschrift).toBeUndefined();
+    // andere AS-Fundstelle im Körper ⇒ reine Randtitel-Änderung ⇒ nur Chronik
+    const andere = artikel981(koerperFn('Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).'));
+    expect(historieVon(andere, '981')!.giltSeit).toBeNull();
+  });
+
+  // H1 (Gegenprüfung GP #1298, 3.10.2026): Das Gliederungszeichen allein trägt die Regel nicht. Eine «Ausdruck»-Fussnote am
+  // Randtitel (Ersatz von Ausdrücken, GTR Rz. 327–330) nennt den Randtitel nur als eine der betroffenen Stellen; der Änderungs-
+  // erlass hat auch den Körper geändert. Wortlaut der Fussnoten und Anweisungen aus Fedlex (Struktur-Sidecars):
+  //   ZGB 124: AS 2023 92 Anhang Ziff. 1 «In den Artikeln 124 Randtitel und Absatz 1 … «Rentenalter» … «Referenzalter»»
+  //   OR 928c: AS 2021 758 Anhang Ziff. 3 «In Artikel 928c Randtitel sowie Absätze 1 und 2 …»
+  //   ZGB 4:   AS 1999 1118 Ersatz von Ausdrücken, Abs. 1 nennt Art. 4 (Richter → Gericht), Abs. 2 «Randtitel von Art. 4»
+  const AUSDRUCK_ZGB124 = 'Ausdruck gemäss Anhang Ziff. 1 des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024 (AS 2023 92; BBl 2019 6305). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.';
+  const AUSDRUCK_OR928C = 'Ausdruck gemäss Anhang Ziff. 3 des BG vom 18. Dez. 2020 (Systematische Verwendung der AHV-Nummer durch Behörden), in Kraft seit 1. Jan. 2022 (AS 2021 758; BBl 2019 7359). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.';
+  const AUSDRUCK_ZGB4 = 'Ausdruck gemäss Ziff. I 1 des BG vom 26. Juni 1998, in Kraft seit 1. Jan. 2000 (AS 1999 1118; BBl 1996 I 1). Diese Änd. ist im ganzen Erlass berücksichtigt.';
+  it('H1: Randtitel mit Gliederungszeichen, aber «Ausdruck»-Fussnote (ZGB 124 / OR 928c / ZGB 4) → bleibt eigen, giltSeit wie auf main', () => {
+    const rt124 = 'III. Ausgleich bei Invalidenrenten vor dem reglementarischen Referenzalter';
+    const f124: ErbArtikel[] = [
+      { token: '124', gliederung: [TITEL], marginalie: ['D. Berufliche Vorsorge', rt124], fussnoten: [fn('Fassung gemäss Ziff. I des BG vom 19. Juni 2015 (Vorsorgeausgleich bei Scheidung), in Kraft seit 1. Jan. 2017 (AS 2016 2313; BBl 2013 4887).'), sek(AUSDRUCK_ZGB124, rt124)] },
+    ];
+    expect(historieVon(f124, '124')!.giltSeit).toBe('2024-01-01'); // Erstbau fälschlich 2017-01-01
+    const f928: ErbArtikel[] = [{ token: '928_c', gliederung: [TITEL], marginalie: ['D. AHV-Nummer und Personennummer'], fussnoten: [sek(AUSDRUCK_OR928C, 'D. AHV-Nummer und Personennummer')] }];
+    const h928 = historieVon(f928, '928_c')!;
+    expect(h928.giltSeit).toBe('2022-01-01'); // Erstbau fälschlich null
+    expect(h928.ereignisse[0].ueberschrift).toBeUndefined();
+    const f4: ErbArtikel[] = [{ token: '4', gliederung: [TITEL], marginalie: ['III. Gerichtliches Ermessen'], fussnoten: [sek(AUSDRUCK_ZGB4, 'III. Gerichtliches Ermessen')] }];
+    expect(historieVon(f4, '4')!.giltSeit).toBe('2000-01-01'); // Erstbau fälschlich null
+  });
+
+  it('H1: dieselbe Randtitel-Fassung ohne Ausdruck-Wortlaut bleibt «nur Chronik» (Kontrolle: ohne «Ausdruck gemäss» greift die Regel weiter)', () => {
+    const f: ErbArtikel[] = [{ token: '4', gliederung: [TITEL], marginalie: ['III. Gerichtliches Ermessen'], fussnoten: [sek(AUSDRUCK_ZGB4.replace('Ausdruck gemäss', 'Fassung gemäss').replace(' Diese Änd. ist im ganzen Erlass berücksichtigt.', ''), 'III. Gerichtliches Ermessen')] }];
+    expect(historieVon(f, '4')!.giltSeit).toBeNull();
+  });
+
+  it('B4: Fussnote an der eigenen Sachüberschrift OHNE Gliederungszeichen (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
+    const f13c: ErbArtikel[] = [
+      { token: '47_a', gliederung: [TITEL], marginalie: ['AHV-Nummer'], fussnoten: [sek(FASSUNG_2007, 'AHV-Nummer')] },
+    ];
+    const h = historieVon(f13c, '47_a')!;
     expect(h.giltSeit).toBe('2007-01-01');
     expect(h.ereignisse[0].ueberschrift).toBeUndefined();
   });
@@ -410,11 +469,36 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     expect(geprueft).toBeGreaterThan(10000);
   });
 
-  it('B4: VVG 47a (Fassung 2022) und NHG 3 (Fassung 2000) behalten ihr eigenes Datum; ZGB 299/300 (eigener Randtitel 2018) ebenso', () => {
+  it('B4: VVG 47a (Fassung 2022) und NHG 3 (Fassung 2000) behalten ihr eigenes Datum (Sachüberschrift, Änderungserlass änderte auch den Körper)', () => {
     expect(hist('VVG', '47_a')!.giltSeit).toBe('2022-01-01');
     expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
-    expect(hist('ZGB', '299')!.giltSeit).toBe('2018-01-01');
-    expect(hist('ZGB', '300')!.giltSeit).toBe('2018-01-01');
+  });
+
+  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → nicht mehr 2018-01-01, Chronik behält 2018', () => {
+    for (const token of ['299', '300']) {
+      const h = hist('ZGB', token)!;
+      // Wert offen, wartet auf Entscheid David zur Generalanweisung AS 1999 1118, GP #1298 H2 — der Generator liefert derzeit den
+      // Fussnotenwert 1978 (AS 1977 237); AS 1999 1118 ersetzt «Gewalt» → «Sorge» in Art. 299/300 (nicht im Modell), darum hier
+      // bewusst KEINE Zusicherung eines Positivwerts, nur die Entscheid-Wirkung («Randtitel zählt nicht»).
+      expect(h.giltSeit, token).not.toBe('2018-01-01');
+      expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
+    }
+  });
+
+  it('Randtitel zählt nicht: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → nicht mehr 2014-07-01, Chronik behält 2014', () => {
+    const h = hist('ZGB', '310')!;
+    // Wert offen, wartet auf Entscheid David (Nachzug 2 Delta-GP, 3.10.2026): am Körper steht nur die Fassung 1978 (AS 1977 237);
+    // «Vormundschaftsbehörde» → «Kindesschutzbehörde» in Art. 310 steht in der Generalanweisung AS 2011 725 («Ersatz von Ausdrücken»,
+    // S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel). Der Generator liefert derzeit 1978-01-01; das ist NICHT als korrekt
+    // zugesichert — gesichert ist nur die Entscheid-Wirkung («Randtitel zählt nicht»), also bewusst kein Positivwert.
+    expect(h.giltSeit).not.toBe('2014-07-01');
+    expect(h.ereignisse.some((e) => e.datum === '2014-07-01' && e.ueberschrift)).toBe(true);
+  });
+
+  it('H1: ZGB 124, OR 928c, ZGB 4 (Randtitel mit Gliederungszeichen + «Ausdruck»-Fussnote, Änderungserlass auch im Körper) behalten ihr Datum wie auf main', () => {
+    expect(hist('ZGB', '124')!.giltSeit).toBe('2024-01-01'); // AS 2023 92 Anhang Ziff. 1 «Randtitel und Absatz 1»
+    expect(hist('OR', '928_c')!.giltSeit).toBe('2022-01-01'); // AS 2021 758 Anhang Ziff. 3 «Randtitel sowie Absätze 1 und 2»
+    expect(hist('ZGB', '4')!.giltSeit).toBe('2000-01-01'); // AS 1999 1118 Ersatz von Ausdrücken, Abs. 1 nennt Art. 4
   });
 
   it('B1: ZGB 457 (Träger, «Fassung dieses Wortes» 1973) zählt nicht in «giltSeit»; ZGB 458 erbt die Teil-Formel nicht', () => {
