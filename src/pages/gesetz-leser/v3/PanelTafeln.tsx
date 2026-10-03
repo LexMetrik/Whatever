@@ -124,12 +124,12 @@ const TEIL_OHNE_ERLASSSTAND = /^(annex|disp)_/;
  *  · der Artikel-Token ist kein Anhang und keine Schluss-/Übergangsbestimmung
  *    (`annex_*`, `disp_*`): diese Teile treten oft später als der Erlass in Kraft.
  */
-export function erlassStandErlaubt(e: {
+export function erlassStandErlaubt({ ebene, sr, gestaffelt, token }: {
   ebene: 'bund' | 'kanton' | null | undefined; sr: string | null | undefined;
   gestaffelt: boolean | null | undefined; token: string | null | undefined;
 }): boolean {
-  return e.ebene === 'bund' && typeof e.sr === 'string' && e.sr.trim() !== '' && e.gestaffelt === false
-    && typeof e.token === 'string' && e.token !== '' && !TEIL_OHNE_ERLASSSTAND.test(e.token);
+  return ebene === 'bund' && typeof sr === 'string' && sr.trim() !== '' && gestaffelt === false
+    && typeof token === 'string' && token !== '' && !TEIL_OHNE_ERLASSSTAND.test(token);
 }
 
 export interface ErlassStandEingang {
