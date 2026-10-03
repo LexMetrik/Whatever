@@ -592,8 +592,9 @@ function fussnoteText(fn: FnEingang): string {
  * B1 (Nachzug 2.10.2026): eine GANZE Fassung — die Fussnote beginnt (nach führendem Marker/Leerraum) mit «Fassung gemäss …»,
  * «Eingefügt durch …» oder «Fassung des <Ordnungszahl> Titels/Abschnitts/Kapitels …». Nur sie gilt für den ganzen Bereich unter
  * der Überschrift. Teil-Formeln — «Fassung dieses Wortes gemäss …» (ZGB 457–460), «Fassung des Randtit. …» (ZGB 20/21),
- * «Fassung des Tit. …» (AHVG 42/43), «Ursprünglich … Fassung gemäss …», «Titel eingefügt durch …» — nennen die Überschrift
+ * «Fassung des Tit. …» (AHVG 42/43), «Titel eingefügt durch …» — nennen die Überschrift
  * selbst oder einen Teil und werden nicht vererbt; Satzfragmente («… in der Fassung des BG …») erst recht nicht (B5).
+ * Ein «Ursprünglich …»-VORSATZ vor dem Anker schneidet `ohneUrsprungVorsatz` vorher ab.
  */
 export function ganzeFassung(text: string): boolean {
   return /^\s*(?:\d+[a-z]*\s+)?(?:Fassung gemäss|[Ee]ingefügt durch|Fassung des [^\s]+ (?:Titels|Abschnitts|Kapitels))/.test(text);
