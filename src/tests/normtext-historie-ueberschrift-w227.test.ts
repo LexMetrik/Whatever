@@ -182,6 +182,18 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f13b, '299')!.giltSeit).toBe('1972-01-01');
   });
 
+  it('Randtitel zählt nicht — Ausnahme: nennt eine Körper-Fussnote desselben Artikels dieselbe AS-Fundstelle («Randtitel und Abs. …»), bleibt das Datum eigen', () => {
+    const f13d: ErbArtikel[] = [
+      { token: '981', gliederung: [TITEL], marginalie: ['C. Kraftloserklärung'], fussnoten: [sek(FASSUNG_2007, 'C. Kraftloserklärung'), { ...fn('Aufgehoben durch Ziff. I 1 des BG vom 13. Dez. 2002, in Kraft seit 1. Jan. 2007 (AS 2006 3459; BBl 1999 1979).', { absatz: '2' }), nr: '2' }] },
+    ];
+    const h = historieVon(f13d, '981')!;
+    expect(h.giltSeit).toBe('2007-01-01');
+    expect(h.ereignisse.find((e) => e.typ === 'fassung')!.ueberschrift).toBeUndefined();
+    // andere AS-Fundstelle im Körper ⇒ reine Randtitel-Änderung ⇒ nur Chronik
+    f13d[0].fussnoten![1] = { ...f13d[0].fussnoten![1], text: 'Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).' };
+    expect(historieVon(f13d, '981')!.giltSeit).toBeNull();
+  });
+
   it('B4: Fussnote an der eigenen Sachüberschrift OHNE Gliederungszeichen (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
     const f13c: ErbArtikel[] = [
       { token: '47_a', gliederung: [TITEL], marginalie: ['AHV-Nummer'], fussnoten: [sek(FASSUNG_2007, 'AHV-Nummer')] },
@@ -433,10 +445,10 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
   });
 
-  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → giltSeit null, Chronik behält 2018', () => {
+  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → giltSeit = eigene Fassung 1978, Chronik behält 2018', () => {
     for (const token of ['299', '300']) {
       const h = hist('ZGB', token)!;
-      expect(h.giltSeit, token).toBeNull();
+      expect(h.giltSeit, token).toBe('1978-01-01'); // Fassung gemäss AS 1977 237 am Artikel selbst; AS 2017 3699 änderte nur den Randtitel
       expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
     }
   });

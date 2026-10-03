@@ -417,9 +417,11 @@ export function baueArtikelHistorie(
     geerbt?: ReadonlyArray<FnEingang>;
     /** W2·27 (Nachzug 2.10.2026, Vorgabe B4): Labels der Gliederungsknoten im Pfad des Artikels, die MEHRERE Artikel
      *  enthalten (`sektionsAnalyse`). Nur eine Sektions-Fussnote, deren Label hier steht, ist ein «Überschrift-Ereignis»
-     *  (`ueberschrift`, zählt nicht in «giltSeit»). Hängt sie an der Sachüberschrift/dem Randtitel des Artikels SELBST
-     *  (Label nicht im Pfad) oder an einem Knoten, der genau diesen einen Artikel enthält, ist sie ein EIGENES Ereignis.
-     *  undefined = jede Sektions-Fussnote gilt als Überschrift-Ereignis (Aufrufer ohne Baum, z. B. Unit-Tests). */
+     *  (`ueberschrift`, zählt nicht in «giltSeit»). Dazu zählt (Entscheid David 3.10.2026 «Randtitel zählt nicht») auch ein
+     *  EIGENER Randtitel des Artikels MIT Gliederungszeichen (`randtitelMitAufzaehler`, ZGB 299/300 «Asexies. Stiefeltern»),
+     *  auch wenn er nur diesen einen Artikel trägt. Hängt sie dagegen an der Sachüberschrift OHNE Gliederungszeichen
+     *  (VVG 47a, NHG 3) oder an einem amtlichen Gliederungsknoten, der genau diesen einen Artikel enthält, ist sie ein EIGENES
+     *  Ereignis. undefined = jede Sektions-Fussnote gilt als Überschrift-Ereignis (Aufrufer ohne Baum, z. B. Unit-Tests). */
     geteilteUeberschriften?: ReadonlySet<string>;
   } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number; erbtAnzahl: number } {
@@ -457,7 +459,7 @@ export function baueArtikelHistorie(
   // Dokumentreihenfolge bleibt erhalten (siehe Funktions-Doc). «giltSeit»/
   // «aufgehobenSeit» als Maximum über die datierten Ereignisse ableiten.
   let giltSeit: string | null = null;
-  // W2·27-BUND-FERTIG (Nachzug 2.10.2026, Vorgabe C, VORLÄUFIG — Fachfrage an David offen): Überschrift-Ereignisse
+  // W2·27-BUND-FERTIG (Nachzug 2.10.2026, Vorgabe C, VORLÄUFIG (2.10.) — bestätigt David 3.10.2026 «Regel C bestätigt»): Überschrift-Ereignisse
   // (`ueberschrift`) speisen nur die Chronik, nie «giltSeit». Eine Fassungs-Fussnote an einer Überschrift lässt sich im
   // Wortlaut nicht von einer Neufassung des ganzen Abschnitts unterscheiden (ZGB SchlT 51/53/56: Text von 1912, AS 1999 1118
   // änderte nur den Gliederungstitel) — §8: lieber keine Aussage als eine falsche. «giltSeit» = Maximum der EIGENEN
@@ -663,10 +665,57 @@ export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, Fn
   return sektionsAnalyse(artikel).erbe;
 }
 
+/** Lateinisches Vervielfältigungs-Suffix der Gliederungszeichen («Abis.», «Aquater.», «Asexies.», «Asepties.»). */
+const GLIEDERUNG_SUFFIX = '(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)';
+const GLIEDERUNGSZEICHEN_EINZEL =
+  `(?:[IVXLC]{1,6}[a-z]?${GLIEDERUNG_SUFFIX}?|[A-Za-z]${GLIEDERUNG_SUFFIX}?|[a-z]{2}|\\d{1,3}[a-z]?${GLIEDERUNG_SUFFIX}?)\\.`;
+// Einzeln («A.», «Asexies.») oder als Lauf («V.–VII.», «II. und III.», «2.–3.») — wie die Anzeige-Erkennung (darstellung.ts ENUM_RUN).
+const GLIEDERUNGSZEICHEN = new RegExp(
+  `^${GLIEDERUNGSZEICHEN_EINZEL}(?:\\s*(?:und|bis|[–-])\\s*${GLIEDERUNGSZEICHEN_EINZEL})*\\s+\\S`,
+);
+
 /**
- * `sektionsErbe` plus, je Artikel, die Labels der Knoten seines Gliederungspfads, die MEHRERE Artikel enthalten
- * (`geteilt`, Vorgabe B4): nur dort ist eine Sektions-Fussnote ein Überschrift-Ereignis. Ein Knoten mit genau einem Artikel
- * (oder eine Sachüberschrift/ein Randtitel des Artikels selbst, die nie ein Knoten im Pfad sind) ist EIGEN.
+ * Randtitel MIT Gliederungszeichen (Buchstabe/Ziffer, ggf. mit lat. Suffix: «A.», «IIIa.», «2bis.», «Asexies.»)? Entscheid
+ * David 3.10.2026 («Randtitel zählt nicht»): eine Fassungs-Fussnote an einem solchen Randtitel datiert nur den Randtitel.
+ * Amtliche Grundlage: Gesetzestechnische Richtlinien des Bundes (GTR, Stand 5.6.2026) Rz. 81 — Randtitel mit Gliederung
+ * durch Ziffern/Buchstaben sind Teil der Gliederung des Erlasses, nicht der Artikel-Sachüberschrift (Rz. 79) — und Rz. 322:
+ * der Änderungserlass nennt «Randtitel» und den Artikel-Körper getrennt (AS 2017 3699: «Art. 299 Randtitel», «Art. 300
+ * Randtitel» ⇒ Körper unverändert). Die Sachüberschrift OHNE Gliederungszeichen bleibt eigen (VVG 47a: AS 2021 758 Anhang
+ * Ziff. 4 ändert Randtitel UND Körper; NHG 3: AS 1999 3071 «Art. 3 Randtitel und Abs. 4»).
+ * Eigenes Prädikat statt `darstellung.ts`: dessen Aufzähler-Erkennung (ENUM) kennt «Asexies.» nicht und bleibt (Anzeige, §3).
+ * Quelle/Messung: bibliothek/normtext/randtitel-fussnote-gilt-seit-2026-10-03.md.
+ */
+export function randtitelMitAufzaehler(label: string): boolean {
+  return GLIEDERUNGSZEICHEN.test(label.trim());
+}
+
+/** AS-Fundstellen einer Fussnote: Fedlex-`oc`-Links plus «AS <Jahr> <Seite>» im Wortlaut (ältere Fussnoten tragen oft keinen Link). */
+function asQuellen(fn: FnEingang): Set<string> {
+  const q = new Set<string>();
+  for (const l of fn.links ?? []) if (/\/eli\/oc\//.test(l.url)) q.add(l.url);
+  for (const m of (fn.text ?? '').replace(/<[^>]+>/g, '').matchAll(/\bAS\s+(\d{4})\s+(\d+)/g)) q.add(`AS ${m[1]} ${m[2]}`);
+  return q;
+}
+
+/**
+ * Hat der Änderungserlass der Randtitel-Fussnote (`label`) auch den Körper dieses Artikels angefasst? Beleg: eine ANDERE
+ * Fussnote des Artikels (Artikelnummer/Absatz/Buchstabe — ohne `sektion`) nennt dieselbe AS-Fundstelle. Dann lautete die
+ * amtliche Anweisung «Art. N Randtitel und Abs. …» (GTR Rz. 322) und das Fassungsdatum gilt auch für den Artikel selbst
+ * (Messung 3.10.2026: IPRG 11a «Randtitel und Abs. 4», OR 981 «Randtitel und Abs. 2»; NHG 3 «Randtitel und Abs. 4»).
+ * Ohne gemeinsame Fundstelle gilt die Fussnote als reine Randtitel-Änderung (ZGB 299/300: «Art. 299 Randtitel»).
+ */
+function koerperTeiltQuelle(fussnoten: ReadonlyArray<FnEingang> | undefined, label: string): boolean {
+  const fns = fussnoten ?? [];
+  const koerper = fns.filter((f) => !f.sektion).map(asQuellen);
+  return fns.some((f) => f.sektion === label && [...asQuellen(f)].some((u) => koerper.some((k) => k.has(u))));
+}
+
+/**
+ * `sektionsErbe` plus, je Artikel, die Labels, deren Fussnoten Überschrift-Ereignisse sind (`geteilt`): (a) die Knoten seines
+ * Gliederungspfads, die MEHRERE Artikel enthalten (Vorgabe B4), (b) seine eigenen Randtitel MIT Gliederungszeichen auch bei
+ * einem einzigen Artikel (Entscheid David 3.10.2026, `randtitelMitAufzaehler`), ausser der Änderungserlass hat auch den Körper
+ * des Artikels angefasst (`koerperTeiltQuelle`). Ein amtlicher Gliederungsknoten mit genau
+ * einem Artikel oder die Sachüberschrift des Artikels selbst (ohne Gliederungszeichen) ist EIGEN.
  */
 export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map<string, FnEingang[]>; geteilt: Map<string, Set<string>> } {
   const erbe = new Map<string, FnEingang[]>();
@@ -709,7 +758,11 @@ export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map
     }
   }
   const geteilt = new Map<string, Set<string>>();
-  for (const [token, kette] of ketten) geteilt.set(token, new Set(kette.filter((k) => k.artikel > 1).map((k) => k.label)));
+  for (const a of artikel) {
+    const labels = new Set((ketten.get(a.token) ?? []).filter((k) => k.artikel > 1).map((k) => k.label));
+    for (const m of a.marginalie ?? []) if (randtitelMitAufzaehler(m) && !koerperTeiltQuelle(a.fussnoten, m.trim())) labels.add(m.trim());
+    if (ketten.has(a.token) || labels.size > 0) geteilt.set(a.token, labels);
+  }
   return { erbe, geteilt };
 }
 
