@@ -188,6 +188,12 @@ describe('erlassStandFuerArtikel — Spec §3 a–d, Test 1 a–g', () => {
       expect(erlassStandFuerArtikel(basis({ blatt: { eintrag: eintrag(token) } })), token).toBeUndefined();
     }
   });
+  it('Sperre b) Staatsvertrags-Geltungsbereich (scope_*) und Vorbehalt/Erklärung (decl_*) ⇒ keine Zeile (Bug-Check #1263, UNO-Pakt II decl_u2 2017)', () => {
+    for (const token of ['scope_u3', 'scope_u1__2', 'decl_u2', 'decl_u3']) {
+      expect(erlassStandErlaubt({ ebene: 'bund', sr: '0.103.2', gestaffelt: false, token }), token).toBe(false);
+      expect(erlassStandFuerArtikel(basis({ inkraftGestaffelt: false, blatt: { eintrag: eintrag(token) } })), token).toBeUndefined();
+    }
+  });
   it('Gegenprobe: nicht gestaffelt + normaler Artikel (Bundesgesetz und Staatsvertrag) ⇒ Zeile wie bisher', () => {
     expect(erlassStandFuerArtikel(basis({ erlassSr: '220', inkraftSeit: '1912-01-01', inkraftGestaffelt: false, blatt: { eintrag: eintrag('41') } }))).toBe('1912-01-01');
     expect(erlassStandFuerArtikel(basis({ inkraftGestaffelt: false, blatt: { eintrag: eintrag('26_28') } }))).toBe('1991-03-01');

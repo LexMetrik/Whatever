@@ -110,8 +110,13 @@ export function artRevFassungFallback(
 // bestimmungen kann das Ur-Inkrafttreten des Erlasses für den einzelnen Teil falsch
 // sein (Begründung: bibliothek/normtext/inkrafttreten-gestaffelt-signale-2026-10-02.md).
 
-/** Teile eines Erlasses, die nie ein eigenes «Erlass in Kraft seit» tragen: Anhänge und Schluss-/Übergangsbestimmungen. */
-const TEIL_OHNE_ERLASSSTAND = /^(annex|disp)_/;
+/**
+ * Teile eines Erlasses, die nie ein eigenes «Erlass in Kraft seit» tragen: Anhänge, Schluss-/Übergangsbestimmungen
+ * und (Bug-Check #1263, 3.10.2026) bei Staatsverträgen Geltungsbereich (`scope_*`) sowie Vorbehalte/Erklärungen
+ * (`decl_*`) — Fedlex führt dort eigene, spätere Daten (UNO-Pakt II SR 0.103.2 decl_u2 «am 27. März 2017
+ * wirksam geworden» bei Vertrag 18.9.1992; KRK SR 0.107 scope_u3, Änderung für CH 18.11.2002 bei Vertrag 26.3.1997).
+ */
+const TEIL_OHNE_ERLASSSTAND = /^(annex|disp|scope|decl)_/;
 
 /**
  * DER Umfangs-Schalter (ein einziger, auch für SR 0.*): nennt dieser Artikel den
@@ -122,7 +127,8 @@ const TEIL_OHNE_ERLASSSTAND = /^(annex|disp)_/;
  *    das Ur-Inkrafttreten des Erlasses dann für den einzelnen Teil falsch sein kann
  *    (`BrowseErlass.inkraftGestaffelt`, Register-Projektion W2·27-BUND-FERTIG 2.10.2026);
  *  · der Artikel-Token ist kein Anhang und keine Schluss-/Übergangsbestimmung
- *    (`annex_*`, `disp_*`): diese Teile treten oft später als der Erlass in Kraft.
+ *    (`annex_*`, `disp_*`) und kein Geltungsbereich/Vorbehalt/Erklärung eines Staatsvertrags
+ *    (`scope_*`, `decl_*`): diese Teile treten oft später als der Erlass in Kraft.
  */
 export function erlassStandErlaubt({ ebene, sr, gestaffelt, token }: {
   ebene: 'bund' | 'kanton' | null | undefined; sr: string | null | undefined;
