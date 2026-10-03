@@ -119,7 +119,7 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f6, '1')!.ereignisse.map((e) => [e.typ, e.ueberschrift])).toEqual([['ausdruck', TITEL.label], ['urspruenglich', TITEL.label]]);
   });
 
-  // Vorgabe C (VORLÄUFIG, Fachfrage an David offen, Nachzug 2.10.2026): Überschrift-Ereignisse speisen nur die Chronik,
+  // Vorgabe C (VORLÄUFIG (2.10.) — bestätigt David 3.10.2026 «Regel C bestätigt»): Überschrift-Ereignisse speisen nur die Chronik,
   // nie «giltSeit». Eine Fassungs-Fussnote an einer Überschrift ist im Wortlaut nicht von einer Neufassung des ganzen
   // Abschnitts zu unterscheiden (ZGB SchlT 51/53/56: Text von 1912, AS 1999 1118 änderte nur den Gliederungstitel).
   // «giltSeit» = Maximum der EIGENEN datierten Ereignisse; ohne eigene ⇒ null. Ersetzt die Regel B aus dem ersten Nachzug
@@ -162,13 +162,31 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(f12, '3')!.giltSeit).toBeNull(); // Erbe ohne eigenes Ereignis
   });
 
-  // B4: eigene Sachüberschrift/Randtitel des Artikels SELBST (Label nicht im Gliederungspfad) bzw. ein Knoten, der genau
-  // diesen einen Artikel enthält, ist EIGEN (wie auf main) — echte Korpus-Beispiele VVG 47a / NHG 3 / ZGB 299 unten.
-  it('B4: Fussnote an der eigenen Randtitel-/Sachüberschrift (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
+  // B4 (Nachzug 2.10.2026) + Entscheid David 3.10.2026 «Randtitel zählt nicht» (deklarierte fachliche Änderung §6.3):
+  // Fussnote am Randtitel MIT Gliederungszeichen (ZGB 299/300 «Asexies. Stiefeltern», AS 2017 3699 änderte nur «Randtitel»)
+  // speist nur die Chronik (Überschrift-Ereignis). Sachüberschrift OHNE Gliederungszeichen (VVG 47a «AHV-Nummer»,
+  // NHG 3 «Pflichten von Bund und Kantonen») bleibt eigen — dort änderte der Änderungserlass auch den Körper.
+  it('Randtitel zählt nicht: Fussnote am eigenen Randtitel mit Gliederungszeichen («Asexies. …») → nur Chronik, giltSeit null', () => {
     const f13: ErbArtikel[] = [
       { token: '299', gliederung: [TITEL], marginalie: ['Asexies. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'Asexies. Stiefeltern')] },
     ];
     const h = historieVon(f13, '299')!;
+    expect(h.giltSeit).toBeNull();
+    expect(h.ereignisse[0]).toMatchObject({ typ: 'fassung', datum: '2007-01-01', ueberschrift: 'Asexies. Stiefeltern' });
+  });
+
+  it('Randtitel zählt nicht: eigener Körper-Eingriff datiert weiter («giltSeit» = Maximum der eigenen Ereignisse)', () => {
+    const f13b: ErbArtikel[] = [
+      { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'A. Stiefeltern'), { ...fn(FASSUNG_1972), nr: '2' }] },
+    ];
+    expect(historieVon(f13b, '299')!.giltSeit).toBe('1972-01-01');
+  });
+
+  it('B4: Fussnote an der eigenen Sachüberschrift OHNE Gliederungszeichen (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {
+    const f13c: ErbArtikel[] = [
+      { token: '47_a', gliederung: [TITEL], marginalie: ['AHV-Nummer'], fussnoten: [sek(FASSUNG_2007, 'AHV-Nummer')] },
+    ];
+    const h = historieVon(f13c, '47_a')!;
     expect(h.giltSeit).toBe('2007-01-01');
     expect(h.ereignisse[0].ueberschrift).toBeUndefined();
   });
@@ -410,11 +428,17 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     expect(geprueft).toBeGreaterThan(10000);
   });
 
-  it('B4: VVG 47a (Fassung 2022) und NHG 3 (Fassung 2000) behalten ihr eigenes Datum; ZGB 299/300 (eigener Randtitel 2018) ebenso', () => {
+  it('B4: VVG 47a (Fassung 2022) und NHG 3 (Fassung 2000) behalten ihr eigenes Datum (Sachüberschrift, Änderungserlass änderte auch den Körper)', () => {
     expect(hist('VVG', '47_a')!.giltSeit).toBe('2022-01-01');
     expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
-    expect(hist('ZGB', '299')!.giltSeit).toBe('2018-01-01');
-    expect(hist('ZGB', '300')!.giltSeit).toBe('2018-01-01');
+  });
+
+  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → giltSeit null, Chronik behält 2018', () => {
+    for (const token of ['299', '300']) {
+      const h = hist('ZGB', token)!;
+      expect(h.giltSeit, token).toBeNull();
+      expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
+    }
   });
 
   it('B1: ZGB 457 (Träger, «Fassung dieses Wortes» 1973) zählt nicht in «giltSeit»; ZGB 458 erbt die Teil-Formel nicht', () => {
