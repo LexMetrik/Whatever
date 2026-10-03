@@ -308,7 +308,7 @@ function bloeckeHtml(
     if (b.text) out += `<p>${marke}${esc(b.text)}</p>`;
     else if (b.absatz) out += `<p>${marke}</p>`;
     if (b.items?.length) {
-      out += '<ul>' + b.items.map((i) => `<li><b>${esc(i.marke)}</b> ${esc(i.text)}</li>`).join('') + '</ul>';
+      out += '<ul>' + b.items.map((i) => `<li>${i.marke === '' ? '' : `<b>${esc(i.marke)}</b> `}${esc(i.text)}</li>`).join('') + '</ul>';
     }
     if (b.tabelle?.length) {
       out +=
