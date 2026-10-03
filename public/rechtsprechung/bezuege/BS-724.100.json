@@ -1,25 +1,34 @@
 {
-"erzeugt":"2026-09-28",
+"erzeugt":"2026-10-03",
 "erlass":"BS-724.100",
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_VD.2025.148":{"zitierung":"Appellationsgericht BS VD.2025.148 vom 24.03.2026","regesteKurz":"Demonstrationsverbot (Beschwerde am BGer hängig)","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2025.192":{"zitierung":"Appellationsgericht BS VD.2025.192 vom 08.07.2026","regesteKurz":"Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)","datum":"2026-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.192":{"zitierung":"Appellationsgericht BS VD.2025.192 vom 08.07.2026","regesteKurz":"Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)","datum":"2026-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.73":{"zitierung":"Appellationsgericht BS VD.2025.73 vom 05.08.2026","regesteKurz":"Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)","datum":"2026-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"10":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.148","gewicht":null}],
-"12":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
-"13":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
+"10":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.148","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"13":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
 "16":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
 "27":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"36":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
 "50":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}]
 },
 "gesamtProArtikel":{
-"10":{"kantonal":2},
-"12":{"kantonal":1},
-"13":{"kantonal":1},
+"4":{"kantonal":1},
+"5":{"kantonal":1},
+"6":{"kantonal":1},
+"10":{"kantonal":3},
+"12":{"kantonal":2},
+"13":{"kantonal":2},
 "16":{"kantonal":1},
 "27":{"kantonal":1},
+"36":{"kantonal":1},
 "50":{"kantonal":1}
 }
 }

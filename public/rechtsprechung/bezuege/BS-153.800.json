@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-28",
+"erzeugt":"2026-10-03",
 "erlass":"BS-153.800",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -24,12 +24,13 @@
 "bs_appellationsgericht_VD.2025.16":{"zitierung":"Appellationsgericht BS VD.2025.16 vom 23.09.2025","regesteKurz":"Plakat-Aushang","datum":"2025-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.23":{"zitierung":"Appellationsgericht BS VD.2025.23 vom 30.03.2026","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2026-03-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.63":{"zitierung":"Appellationsgericht BS VD.2025.63 vom 23.09.2025","regesteKurz":"Familiennachzug und Wegweisung","datum":"2025-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.73":{"zitierung":"Appellationsgericht BS VD.2025.73 vom 05.08.2026","regesteKurz":"Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)","datum":"2026-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.84":{"zitierung":"Appellationsgericht BS VD.2025.84 vom 05.09.2025","regesteKurz":"Wegweisung","datum":"2025-09-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.85":{"zitierung":"Appellationsgericht BS VD.2025.85 vom 28.10.2025","regesteKurz":"Entzug der aufschiebenden Wirkung","datum":"2025-10-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.99":{"zitierung":"Appellationsgericht BS VD.2025.99 vom 18.12.2025","regesteKurz":"unentgeltliche Rechtspflege","datum":"2025-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"6":[{"key":"bs_appellationsgericht_VD.2025.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.16","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.122","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.112","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.16","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.122","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.112","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_VD.2025.23","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.85","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.84","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.182","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.216","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.206","gewicht":null}],
 "8":[{"key":"bs_appellationsgericht_VD.2022.237","gewicht":null}],
 "10":[{"key":"bs_appellationsgericht_VD.2023.2","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.168","gewicht":null}],
@@ -37,7 +38,7 @@
 "14":[{"key":"bs_appellationsgericht_AK.2023.2","gewicht":null}]
 },
 "gesamtProArtikel":{
-"6":{"kantonal":4},
+"6":{"kantonal":5},
 "7":{"kantonal":9},
 "8":{"kantonal":1},
 "10":{"kantonal":2},

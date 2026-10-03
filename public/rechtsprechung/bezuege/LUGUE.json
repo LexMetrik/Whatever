@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-28",
+"erzeugt":"2026-10-03",
 "erlass":"LUGUE",
 "erlassEbene":"bund",
 "dokumente":{
@@ -45,7 +45,8 @@
 "bs_sozialversicherungsgericht_ZV.2021.5":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.5 vom 17.02.2022","regesteKurz":"Krankentaggeld; keine Versicherungsunterstellung","datum":"2022-02-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2021.6":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.6 vom 08.06.2022","regesteKurz":"Kein schutzwürdiges Interesse an der vorsorglichen Beweisführung in Form eines medizinischen Gutachtens glaubhaft…","datum":"2022-06-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2024.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.2 vom 25.09.2024","regesteKurz":"Krankentaggeldversicherung nach VVG Nichteintreten mangels örtlicher Zuständigkeit","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_ZV.2025.3":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.3 vom 12.03.2026","regesteKurz":"Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_ZV.2025.3":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.3 vom 12.03.2026","regesteKurz":"Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_zivilgericht_GS.2024.38":{"zitierung":"Zivilgericht BS GS.2024.38 vom 18.06.2026","regesteKurz":"(nicht rechtskräftig)","datum":"2026-06-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_zivilgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_III_345","gewicht":0},{"key":"bge_149_III_318","gewicht":0},{"key":"bge_149_III_81","gewicht":0},{"key":"bge_149_III_34","gewicht":0},{"key":"bge_147_III_491","gewicht":1},{"key":"bge_146_III_157","gewicht":1},{"key":"bge_150_III_423__voll","gewicht":0,"erwaegungen":["E. 5","E. 5.1","E. 5.3","E. 5.4"]},{"key":"bs_appellationsgericht_BEZ.2022.45","gewicht":null}],
@@ -57,7 +58,8 @@
 "13":[{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.6","gewicht":null}],
 "15":[{"key":"bge_149_III_379__voll","gewicht":0,"erwaegungen":["E. 3"]}],
 "17":[{"key":"bge_149_III_379","gewicht":0}],
-"18":[{"key":"bs_appellationsgericht_VD.2022.92","gewicht":null}],
+"18":[{"key":"bs_zivilgericht_GS.2024.38","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.92","gewicht":null}],
+"19":[{"key":"bs_zivilgericht_GS.2024.38","gewicht":null}],
 "20":[{"key":"bs_appellationsgericht_VD.2022.92","gewicht":null}],
 "21":[{"key":"bge_152_III_115","gewicht":0}],
 "22":[{"key":"bge_150_III_345","gewicht":0},{"key":"bge_147_III_337__voll","gewicht":0,"erwaegungen":["E. 2"]},{"key":"bpatger_S2025_003","gewicht":null},{"key":"bpatger_O2024_002","gewicht":null},{"key":"bpatger_O2023_017","gewicht":null}],
@@ -92,7 +94,8 @@
 "13":{"kantonal":3},
 "15":{"bger":1},
 "17":{"bge":1},
-"18":{"kantonal":1},
+"18":{"kantonal":2},
+"19":{"kantonal":1},
 "20":{"kantonal":1},
 "21":{"bge":1},
 "22":{"bge":1,"bger":1,"eidg":3},
