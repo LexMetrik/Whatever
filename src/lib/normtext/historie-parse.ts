@@ -22,6 +22,7 @@
 
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
+import { ursprungVorsatzSchnitte } from './historie-ursprung';
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
 interface FnLink {
@@ -618,13 +619,30 @@ export function teilweiseFussnote(text: string): boolean {
   return daten.size > 1;
 }
 
+/**
+ * «Ursprünglich …»-Vorsatz vor dem B1-Anker (3.10.2026, historie-ursprung.ts): beginnt der Text mit der Ur-Bezeichnung der
+ * Überschrift und folgt danach ein gültiger B1-Anker («Ursprünglich vor Art. 56. Fassung gemäss …»), gilt der Rest. Nur ein
+ * reiner Ur-Vorsatz wird abgeschnitten — nennt er selbst ein weiteres Ereignis-Verb («Berichtigt …», «Bereinigt …»),
+ * oder folgt kein Anker, bleibt der Text unverändert (§8: lieber nichts vererben). Der Vorsatz beschreibt die Überschrift
+ * selbst und kein Ereignis der Artikel darunter; `SEKTION_ERBT` gibt ihn ohnehin nie weiter.
+ */
+export function ohneUrsprungVorsatz(text: string): string {
+  for (const { vorsatz, rest } of ursprungVorsatzSchnitte(text)) {
+    if (!ganzeFassung(rest)) continue;
+    const ohneKopf = vorsatz.replace(/^\s*(?:\d+[a-z]*\s+)?Ursprünglich/, '');
+    if (new RegExp(VERB_ANKER.source).test(ohneKopf)) continue;
+    return rest;
+  }
+  return text;
+}
+
 /** Geerbte Sektions-Fussnoten → ihre weitergebbaren Ereignisse (Typ ∈ SEKTION_ERBT, nur ganze Fassungen — B1), je mit
  *  Herkunfts-Label; gestaffelte/teilweise Fussnoten (B2) ohne Datum und mit Wortlaut. */
 function geerbteEreignisse(fns: ReadonlyArray<FnEingang> | undefined): HistorieEreignis[] {
   const aus: HistorieEreignis[] = [];
   for (const fn of fns ?? []) {
     if (!fn.sektion) continue;
-    const text = fussnoteText(fn);
+    const text = ohneUrsprungVorsatz(fussnoteText(fn));
     if (!ganzeFassung(text)) continue;
     const teilweise = teilweiseFussnote(text);
     for (const e of parseFussnoteHistorie(fn).ereignisse) {
