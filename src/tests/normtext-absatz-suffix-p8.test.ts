@@ -108,10 +108,10 @@ describe('P8-B · Bestandsprobe (public/normtext/bund)', () => {
 // ── Tor: der Bund-Extraktionspfad trägt keine Handkopie der Reihe mehr (§5) ─────────
 describe('P8-B · EINE Suffix-Reihe im Bund-Extraktionspfad', () => {
   // Kantonale/LexWork/PDF-Adapter haben eine eigene Grammatik (nummer.ts, Absatz «Diese Reihe gilt für die
-  // BUND-Grammatik») und sind bewusst ausgenommen. `fedlex/listen.ts` (Marken-Reihe bis `decies`) wartet auf
-  // die Landung von #1299 (gleiche Datei) — Nachzug dort, Zeile 198.
+  // BUND-Grammatik») und sind bewusst ausgenommen. `fedlex/listen.ts` (Marken-Reihe, früher bis `decies`) stand
+  // bis zur Landung von #1299 (gleiche Datei) als Ausnahme hier; Nachzug 3.10.2026: liest jetzt `SUFFIX_ALT`.
   const DATEIEN = [
-    'extrahiere-fedlex.ts', 'fedlex/anhang.ts', 'fedlex/absatz-nr.ts', 'fussnoten-extrahiere.ts', 'ziffer-ebene.ts',
+    'extrahiere-fedlex.ts', 'fedlex/anhang.ts', 'fedlex/absatz-nr.ts', 'fedlex/listen.ts', 'fussnoten-extrahiere.ts', 'ziffer-ebene.ts',
     'segmente-logik.ts', 'check-p-klassen.ts', 'check-invarianten-logik.ts', 'p3-drop-inventar.ts', 'drift-logik.ts',
   ];
   it('keine Alternation «…quater|quinquies…» im Quelltext dieser Dateien', () => {
