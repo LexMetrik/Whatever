@@ -384,8 +384,12 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           // `vorKette` (Bild-Block-Fortsetzung, Anhang-Zwischennotiz) läuft die
           // Kette über die VERSCHMOLZENE Liste (DBG 22: «Abs. 3 lit. c Ziff. 2»,
           // FAV Anh. 4: «Ziff. 3.1 lit. a»); ohne bleibt der Pfad block-lokal.
+          const zitatSeg = zk ? itemZitatSegmente(b.items!, stufen, j, vorKette) : [];
+          // Kette am marke-losen Vorfahren abgebrochen (itemZitatSegmente: leer bei markiertem Nicht-Strich-Item):
+          // KEIN Zitierknopf — kein Zitat ist besser als ein falsches (§1/§8, A1 3.10.2026).
+          const zitatAbgebrochen = zk != null && !ohneMarke && !istStrich && zitatSeg.length === 0;
           const itemZitat = zk ? (() => {
-            const seg = itemZitatSegmente(b.items!, stufen, j, vorKette);
+            const seg = zitatSeg;
             // Dieselbe normalisierte Absatzmarke wie das Absatz-Zitat
             // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
             // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
@@ -415,7 +419,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // BEIDEN Hüllen (der Befund ist in beiden derselbe, er ist heute
               // live). Golden ist unberührt (Engines/Vorlagen), der
               // Pixelvergleich PX misst den RUHEZUSTAND und sieht keinen Hover.
-              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk && !ohneMarke ? 'transition-colors lc-hover-flaeche' : ''} ${
+              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk && !ohneMarke && !zitatAbgebrochen ? 'transition-colors lc-hover-flaeche' : ''} ${
                 istItemZitiert
                   ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
                   : 'text-ink-700'
@@ -440,7 +444,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 ? (zk ? <span aria-hidden="true" className="shrink-0 min-w-6" /> : null)
                 : istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
-                : zk && !ohneZitierMarke
+                : zk && !ohneZitierMarke && !zitatAbgebrochen
                   ? <ZitierMarke klasse="shrink-0 min-w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
                   : zk
                     ? <span className="num shrink-0 min-w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>

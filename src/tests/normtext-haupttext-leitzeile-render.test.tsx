@@ -143,6 +143,9 @@ describe('Helfer: marke-lose Zeile (`marke: \'\'`)', () => {
       { marke: '', text: 'Leitzeile', tiefe: 0 },
       { marke: '1', text: 'y', tiefe: 1 },
     ];
-    expect(itemZitatSegmente(unterLeer, stufenFuer(unterLeer), 1)).toEqual(['Ziff. 1']);
+    // ERWARTUNG GEÄNDERT (fachlich, deklariert — Gegenprüfung PR #1299, A1, 3.10.2026): bis dahin ['Ziff. 1'], ein
+    // verkürztes und damit falsches Zitat (das Eltern-Glied fehlt, §1). Seither bricht die Kette am marke-losen
+    // Vorfahren ab: kein Zitat. Absicherung: normtext-zitatkette-marke-los.test.ts.
+    expect(itemZitatSegmente(unterLeer, stufenFuer(unterLeer), 1)).toEqual([]);
   });
 });

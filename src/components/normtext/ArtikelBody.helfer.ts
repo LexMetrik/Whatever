@@ -203,9 +203,14 @@ export function itemZitatSegmente(
   const kStufen = mitVor ? stufenFuer(kette) : stufen;
   const seg: string[] = [];
   let lvl = kStufen[kette.length - 1];
+  // Marke-lose Zeile (`marke: ''`) trägt selbst kein Zitat (kein Zitierknopf).
+  if (kette[kette.length - 1].marke === '') return seg;
   for (let k = kette.length - 1; k >= 0 && lvl >= 0; k--) {
-    // Marke-lose Zeile (`marke: ''`) trägt kein Zitat-Segment und ist nie Eltern-Glied einer Kette.
-    if (kStufen[k] === lvl && kette[k].marke !== '' && !/^[–—-]$/.test(kette[k].marke.trim())) {
+    // Marke-loser VORFAHRE (nächstflachere Ebene, Wurzel-Ebene eingeschlossen): die Kette bricht ab. Übersprungen
+    // erbte das Kind das Geschwister davor als Eltern («lit. b Ziff. 1») oder verlöre das Eltern-Glied («Ziff. 1»)
+    // — kein Zitat ist besser als ein falsches (§1/§8; Gegenprüfung PR #1299, A1).
+    if (kStufen[k] === lvl && kette[k].marke === '') return [];
+    if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
       // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE» ist in der
       // VZV kein Zitat, die Kategorie heisst schlicht «BE».
       seg.unshift(markenZitat(kette[k].marke, kette[k].trenner));
