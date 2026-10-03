@@ -88,7 +88,7 @@ import { BlattVerweise, type BlattArtikel } from './BlattArtikel';
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel, erlassSr, inkraftSeit, historie, intern,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel, erlassSr, inkraftSeit, inkraftGestaffelt, historie, intern,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
    *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die Tafeln
@@ -149,6 +149,8 @@ export function LeserPanelZone({
    *  durchgereicht für «Erlass in Kraft seit …» im Reiter Änderungen (`./PanelTafeln`). */
   erlassSr?: string | null;
   inkraftSeit?: string | null;
+  /** `BrowseErlass.inkraftGestaffelt` — nur `false` zeigt «Erlass in Kraft seit …» (fehlend = gestaffelt, §8). */
+  inkraftGestaffelt?: boolean | null;
   /** P5 · B1: Historie-Shard des Lesers samt Bereitschaft (`historieStand`) — Sperre für «Erlass in Kraft seit»/«nichts erfasst». */
   historie: Geladen<HistorieShard | null>;
 }) {
@@ -229,7 +231,7 @@ export function LeserPanelZone({
   // Shard (§7b-Deckungslücke, normrevision-badge.e2e.ts) kommt von dort mit.
   const { tafeln, artikelRevisionen } = usePanelTafeln({
     erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt: artikel,
-    normZitat, wort: bestimmungsWort, erlassSr, inkraftSeit, historie,
+    normZitat, wort: bestimmungsWort, erlassSr, inkraftSeit, inkraftGestaffelt, historie,
   });
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
