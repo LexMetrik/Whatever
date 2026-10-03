@@ -33,3 +33,5 @@ mit Gegenprüfung. Der Haupttext hat dieselbe Schwäche (Zeile nach Item mit
 Unterliste hängt am letzten Unter-Item, ungemessen).
 
 - Nach-Verdikt #1204 (1.10.2026): FIDLEV Anh. 2 Ziff. 3.5.2 ×2 gehört nicht zu den «21 irreführend», sondern zu den schlichten, schon vorher losen Zeilen. Der M1-Test in `src/tests/normtext-anhang-fortsetzung.test.ts` schreibt das heutige Verhalten (Zeilen mit eigener Unterliste bleiben lose) fest — bei Umsetzung dieses Postens bewusst als Fachänderung ändern.
+
+**Erledigt 2026-10-02:** PR #1292: Zwischen-Notizen als Block an Quellstelle, einzug + Zitat-Kette, GP Opus 2 Runden
