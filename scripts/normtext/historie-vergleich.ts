@@ -6,7 +6,8 @@
 //   npm run historie:vergleich -- [--basis <git-ref>] [--kopf <git-ref>] [--erlass <KEY>] [--liste]
 //       Vergleicht «Gilt seit» je Artikel der committeten Shards `public/normtext/historie/*.json` am Git-Ref `--basis`
 //       (Default `origin/main`) mit `--kopf` (Git-Ref; Default: Arbeitsstand): Anzahl geänderter Artikel, davon → null / → älter / → neuer; `--liste` nennt
-//       jeden Artikel (Erlass Token: alt → neu); `--erlass` beschränkt auf einen Erlass (z. B. ZGB).
+//       jeden Artikel (Erlass Token: alt → neu); `--erlass` beschränkt auf einen Erlass (z. B. ZGB);
+//       `--token 4,28_a,299` nennt die genannten Artikel-Token (Shard-Schlüssel, «28a» = `28_a`) auch, wenn unverändert.
 //   npm run historie:vergleich -- --muster
 //       Zählt die Erkennung der Randtitel-Ausdruck-Ausnahme (`ausdruckFussnote`, historie-randtitel.ts) in den
 //       Struktur-Sidecars `public/normtext/struktur/bund/*.json`: alle Fussnoten / an einer Überschrift / an einem Randtitel
@@ -31,7 +32,7 @@ const git = (...args: string[]): string => execFileSync('git', args, { cwd: wurz
 const giltSeitVon = (json: string): Gilt =>
   Object.fromEntries(Object.entries((JSON.parse(json) as { artikel: Record<string, { giltSeit?: string | null }> }).artikel).map(([t, a]) => [t, a.giltSeit ?? null]));
 
-function vergleich(basis: string, kopf: string | undefined, nurErlass: string | undefined, liste: boolean): void {
+function vergleich(basis: string, kopf: string | undefined, nurErlass: string | undefined, liste: boolean, tokens: string[]): void {
   const imRef = (ref: string): string[] => git('ls-tree', '-r', '--name-only', ref, HISTORIE).split('\n').filter((p) => p.endsWith('.json'));
   const dateien = imRef(basis);
   const heute = kopf ? imRef(kopf) : readdirSync(resolve(wurzel, HISTORIE)).filter((f) => f.endsWith('.json')).map((f) => `${HISTORIE}/${f}`);
@@ -47,15 +48,19 @@ function vergleich(basis: string, kopf: string | undefined, nurErlass: string | 
       z.artikel++;
       const a = alt[token] ?? null;
       const n = neu[token] ?? null;
-      if (a === n) continue;
+      const zeile = `${erlass} ${token}: ${a ?? 'null'} → ${n ?? 'null'}`;
+      if (a === n) {
+        if (tokens.includes(token)) zeilen.push(`${zeile} (unverändert)`);
+        continue;
+      }
       z.geaendert++;
       if (n === null) z.null++;
       else if (a !== null && n < a) z.aelter++;
       else z.neuer++;
-      zeilen.push(`${erlass} ${token}: ${a ?? 'null'} → ${n ?? 'null'}`);
+      if (liste || tokens.includes(token)) zeilen.push(zeile);
     }
   }
-  if (liste) console.log(zeilen.join('\n'));
+  if (liste || tokens.length) console.log(zeilen.join('\n'));
   console.log(`Basis ${basis} ↔ ${kopf ?? 'Arbeitsstand'}${nurErlass ? ` · Erlass ${nurErlass}` : ''}: ${z.artikel} Artikel verglichen, «Gilt seit» geändert bei ${z.geaendert} (→ null ${z.null}, → älter ${z.aelter}, → neuer/neu ${z.neuer})`);
 }
 
@@ -95,4 +100,4 @@ const wert = (name: string): string | undefined => {
   return i >= 0 ? arg[i + 1] : undefined;
 };
 if (arg.includes('--muster')) muster();
-else vergleich(wert('--basis') ?? 'origin/main', wert('--kopf'), wert('--erlass'), arg.includes('--liste'));
+else vergleich(wert('--basis') ?? 'origin/main', wert('--kopf'), wert('--erlass'), arg.includes('--liste'), (wert('--token') ?? '').split(',').filter(Boolean));
