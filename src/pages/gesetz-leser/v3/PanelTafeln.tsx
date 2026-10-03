@@ -102,10 +102,34 @@ export function artRevFassungFallback(
 // Datenloch verlassen. Die vier Bedingungen in `erlassStandFuerArtikel` gelten
 // unverändert für jeden Umfang (kein Ereignis/artRev, Historie fertig, lebender
 // Wortlaut, Residuum-Gate, ISO-Datum).
+//
+// NACHZUG 3.10.2026 (#1288, Auftrag Orchestrator): die Zeile steht NUR bei
+// `inkraftGestaffelt === false` und nie an `annex_*`/`disp_*` — für ALLE Bund-Erlasse
+// inklusive der schon live gezeigten Staatsverträge (SR 0.*), im selben Schalter.
+// Grund (§8): bei gestaffelt in Kraft gesetzten Erlassen und bei Anhängen/Schluss-
+// bestimmungen kann das Ur-Inkrafttreten des Erlasses für den einzelnen Teil falsch
+// sein (Begründung: bibliothek/normtext/inkrafttreten-gestaffelt-signale-2026-10-02.md).
 
-/** DER Umfangs-Schalter: für welche Erlasse nennt der Artikel den Erlass-Stand? Bund + SR-Nummer. */
-export function erlassStandErlaubt(ebene: 'bund' | 'kanton' | null | undefined, sr: string | null | undefined): boolean {
-  return ebene === 'bund' && typeof sr === 'string' && sr.trim() !== '';
+/** Teile eines Erlasses, die nie ein eigenes «Erlass in Kraft seit» tragen: Anhänge und Schluss-/Übergangsbestimmungen. */
+const TEIL_OHNE_ERLASSSTAND = /^(annex|disp)_/;
+
+/**
+ * DER Umfangs-Schalter (ein einziger, auch für SR 0.*): nennt dieser Artikel den
+ * Erlass-Stand? Nur wenn ALLE gelten (fail-closed, §8):
+ *  · Bund mit SR-Nummer;
+ *  · der Erlass trägt `inkraftGestaffelt === false` AUSDRÜCKLICH — `true` (einzelne
+ *    Teile früher/später in Kraft) und ein FEHLENDES Feld zählen als gestaffelt, weil
+ *    das Ur-Inkrafttreten des Erlasses dann für den einzelnen Teil falsch sein kann
+ *    (`BrowseErlass.inkraftGestaffelt`, Register-Projektion W2·27-BUND-FERTIG 2.10.2026);
+ *  · der Artikel-Token ist kein Anhang und keine Schluss-/Übergangsbestimmung
+ *    (`annex_*`, `disp_*`): diese Teile treten oft später als der Erlass in Kraft.
+ */
+export function erlassStandErlaubt(e: {
+  ebene: 'bund' | 'kanton' | null | undefined; sr: string | null | undefined;
+  gestaffelt: boolean | null | undefined; token: string | null | undefined;
+}): boolean {
+  return e.ebene === 'bund' && typeof e.sr === 'string' && e.sr.trim() !== '' && e.gestaffelt === false
+    && typeof e.token === 'string' && e.token !== '' && !TEIL_OHNE_ERLASSSTAND.test(e.token);
 }
 
 export interface ErlassStandEingang {
@@ -115,6 +139,8 @@ export interface ErlassStandEingang {
   erlassSr: string | null | undefined;
   /** `BrowseErlass.inkraftSeit` (ISO) — Quelle Fedlex, kein Wert = ehrlich leer. */
   inkraftSeit: string | null | undefined;
+  /** `BrowseErlass.inkraftGestaffelt` — nur `false` lässt die Zeile zu, fehlend = gestaffelt. */
+  inkraftGestaffelt: boolean | null | undefined;
   blatt: BlattArtikel | null;
   artRev: ArtikelRevision | null | undefined;
   /** Artikel-Revisions-Shard geladen? Sonst ist «kein Beleg» noch keine Antwort. */
@@ -139,8 +165,9 @@ export interface ErlassStandEingang {
  */
 export function erlassStandFuerArtikel(a: ErlassStandEingang): string | undefined {
   const { ebene, erlassSr, inkraftSeit } = a;
-  if (!erlassStandErlaubt(ebene, erlassSr) || !inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(inkraftSeit)) return undefined;
-  if (!a.blatt || !a.revisionenFertig || !a.historieFertig || a.artRev) return undefined;
+  if (!a.blatt || !erlassStandErlaubt({ ebene, sr: erlassSr, gestaffelt: a.inkraftGestaffelt, token: a.blatt.eintrag.artikel })) return undefined;
+  if (!inkraftSeit || !/^\d{4}-\d{2}-\d{2}$/.test(inkraftSeit)) return undefined;
+  if (!a.revisionenFertig || !a.historieFertig || a.artRev) return undefined;
   const { eintrag, historie } = a.blatt;
   if (historie?.ereignisse.length || historie?.aufgehobenSeit || historie?.gegenstandslos) return undefined;
   if (artikelLeerstellenStatus(eintrag.bloecke, eintrag.aufgehoben, eintrag.gegenstandslos) !== 'lebt') return undefined;
@@ -154,7 +181,7 @@ export interface PanelTafeln {
   artikelRevisionen: Geladen<RevisionShard | null>;
 }
 
-export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort, erlassSr, inkraftSeit, historie }: {
+export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort, erlassSr, inkraftSeit, inkraftGestaffelt, historie }: {
   erlassKey: string | undefined;
   /** `zustand.jeGeoeffnet` — das Gate (Herleitung in `./panelKontextLaden`). */
   laden: boolean;
@@ -171,6 +198,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   /** P5 · SR-Nummer und Ur-Inkrafttreten des Erlasses (Register) — Zeile «Erlass in Kraft seit …». */
   erlassSr?: string | null;
   inkraftSeit?: string | null;
+  inkraftGestaffelt?: boolean | null;
   /** P5 · B1 (1.10.2026): der Historie-Shard des LESERS (`inhalt-zustand`, Leerlauf-
    *  Fetch) samt Bereitschaft — dieselbe Quelle, aus der `blatt.historie` stammt.
    *  Ein eigener Panel-Lader meldete «geladen», solange `blatt.historie` noch
@@ -229,7 +257,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && historie.fertig && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   const erlassStand = erlassStandFuerArtikel({
-    ebene, erlassSr, inkraftSeit, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
+    ebene, erlassSr, inkraftSeit, inkraftGestaffelt, blatt, artRev, revisionenFertig: artikelRevisionen.fertig,
     historieFertig: historie.fertig, historieShard: historie.wert,
   });
   // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
