@@ -81,6 +81,9 @@ describe('A1: Darstellung — das Kind unter einer marke-losen Zeile trägt kein
     expect(zitate.filter((z) => /Ziff\. 1/.test(z))).toEqual([]);
     expect(zitate).toContain('Art. 9 Abs. 1 lit. a TEST');
     expect(zitate).toContain('Art. 9 Abs. 1 lit. b TEST');
+    // Item-Knöpfe sind genau zwei (a, b): kein Rest-Knopf mit leerem Segment («Art. 9 Abs. 1  TEST», zwei Leerzeichen)
+    // für das Kind, auch keiner für die marke-lose Zeile.
+    expect(zitate.filter((z) => /Abs\. 1 (lit\.|\s)/.test(z))).toHaveLength(2);
   });
   it('der Text des Kindes bleibt sichtbar (nur das Zitat entfällt)', () => {
     expect(html).toContain('Kind eins;');
