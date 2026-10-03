@@ -20,9 +20,9 @@
 // Reine, testbare Datenschicht: dieselben Funktionen speisen den Build-Generator
 // (scripts/normtext/historie-generieren.ts) UND die Unit-Tests.
 
+import { ursprungVorsatzSchnitte } from './historie-ursprung';
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
-import { ursprungVorsatzSchnitte } from './historie-ursprung';
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
 interface FnLink {
