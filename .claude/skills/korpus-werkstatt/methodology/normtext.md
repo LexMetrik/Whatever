@@ -90,7 +90,13 @@ Sonde an → Quarantäne, Identität in `register.ts`/`fedlexKey` klären, erst 
 weiter.
 
 **4 — Snapshot generieren mit `--nur=bund`.** `npm run normtext -- --nur=bund
---datum=$(date +%F)`. *Warum der Filter:* `--nur=bund` überspringt die
+--datum=$(date +%F)`. **Einzel-Erlass (Fix an wenigen Erlassen):** `npm run normtext -- --nur=bund
+--erlass=<KEY> --datum=<bestehendes abgerufen DIESES Erlasses>` — je Erlass sein eigenes
+Datum; ein gemeinsames `--datum` verschiebt `abgerufen` und macht `check:datenhaltung`
+rot («Fassungs-Bruch»). Fügt der Fix Listen-Items ein oder verschiebt er Text, danach
+`npm run normtext:struktur -- --nur=<KEYS>`: `projektionen:normtext` zieht die
+Struktur-Sidecars NICHT nach, sonst sitzt eine Fussnote am falschen Punkt (Beleg #1299,
+3.10.2026: MSTP 119 lit. b Item-Index 1→6). *Warum der Filter:* `--nur=bund` überspringt die
 kantonalen Phasen (LexWork/ZH/HTM/PDF) und mischt den Golden-Index — die
 bestehenden kantonalen Einträge bleiben unangetastet, nur `bund/*` wird ersetzt
 (der `--nur=bund`-Zweig `if (process.argv.includes('--nur=bund'))` in
