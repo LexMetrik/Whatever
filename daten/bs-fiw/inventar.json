@@ -1,14 +1,14 @@
 {
- "erzeugt": "2026-09-28",
+ "erzeugt": "2026-10-03",
  "quelle": "https://rechtsprechung.gerichte.bs.ch (amtliches Portal, Findinfo/Omnis)",
  "portal": {
-  "gesamtN": 11035,
+  "gesamtN": 11049,
   "jahre": {
    "2022": 973,
    "2023": 905,
    "2024": 893,
-   "2025": 837,
-   "2026": 298
+   "2025": 838,
+   "2026": 309
   }
  },
  "eintraege": [
@@ -33535,7 +33535,7 @@
    "datum": "2026-03-11",
    "titel": "Verfahrenseinstellung (Beschwerde am BG hängig)",
    "erstpublikation": "2026-07-30",
-   "aktualisiert": "2026-07-30"
+   "aktualisiert": "2026-10-02"
   },
   {
    "key": 79441,
@@ -33898,6 +33898,24 @@
    "aktualisiert": "2026-05-09"
   },
   {
+   "key": 79504,
+   "gn": "BES.2025.105",
+   "gnSekundaer": "AG.2026.214",
+   "datum": "2026-03-04",
+   "titel": "Rechtsverzögerung und Rechtsverweigerung",
+   "erstpublikation": "2026-10-02",
+   "aktualisiert": "2026-10-02"
+  },
+  {
+   "key": 79505,
+   "gn": "BES.2025.100",
+   "gnSekundaer": "AG.2026.215",
+   "datum": null,
+   "titel": "Abwesenheit an der Hauptverhandlung vom 8. September 2025",
+   "erstpublikation": "2026-09-30",
+   "aktualisiert": "2026-09-30"
+  },
+  {
    "key": 79506,
    "gn": "AL.2025.20",
    "gnSekundaer": "SVG.2026.60",
@@ -34096,6 +34114,15 @@
    "aktualisiert": "2026-05-27"
   },
   {
+   "key": 79538,
+   "gn": "DGS.2025.34",
+   "gnSekundaer": "AG.2026.238",
+   "datum": "2025-12-22",
+   "titel": "Wiederherstellung der Frist zur Berufungsanmeldung",
+   "erstpublikation": "2026-09-29",
+   "aktualisiert": "2026-09-29"
+  },
+  {
    "key": 79542,
    "gn": "ZS.2026.1",
    "gnSekundaer": "AG.2026.242",
@@ -34231,6 +34258,15 @@
    "aktualisiert": "2026-08-20"
   },
   {
+   "key": 79569,
+   "gn": "VD.2025.203",
+   "gnSekundaer": "AG.2026.263",
+   "datum": "2026-04-27",
+   "titel": "Grenzgängerbewilligung",
+   "erstpublikation": "2026-10-02",
+   "aktualisiert": "2026-10-02"
+  },
+  {
    "key": 79576,
    "gn": "AUS.2026.36",
    "gnSekundaer": "AG.2026.269",
@@ -34303,6 +34339,15 @@
    "aktualisiert": "2026-08-28"
   },
   {
+   "key": 79589,
+   "gn": "BES.2025.117",
+   "gnSekundaer": "AG.2026.277",
+   "datum": "2026-04-08",
+   "titel": "Nichtigkeit des Strafbefehls und Aktenführung",
+   "erstpublikation": "2026-10-02",
+   "aktualisiert": "2026-10-02"
+  },
+  {
    "key": 79591,
    "gn": "IV.2025.79",
    "gnSekundaer": "SVG.2026.75",
@@ -34328,6 +34373,15 @@
    "titel": "IVG Abschluss der Frühintervention; Anspruch auf Eingliederungsmassnahmen",
    "erstpublikation": "2026-06-30",
    "aktualisiert": "2026-07-15"
+  },
+  {
+   "key": 79598,
+   "gn": "VD.2025.146",
+   "gnSekundaer": "AG.2026.280",
+   "datum": "2026-05-06",
+   "titel": "Strafverbüssung in Form der elektronischen Überwachung (Beschwerde beim Bundesgericht hängig)",
+   "erstpublikation": "2026-09-29",
+   "aktualisiert": "2026-09-29"
   },
   {
    "key": 79599,
@@ -34555,6 +34609,15 @@
    "aktualisiert": "2026-09-19"
   },
   {
+   "key": 79643,
+   "gn": "BES.2025.36",
+   "gnSekundaer": "AG.2026.311",
+   "datum": null,
+   "titel": "Verfahrenseinstellungen (Beschwerde am BG hängig)",
+   "erstpublikation": "2026-10-01",
+   "aktualisiert": "2026-10-02"
+  },
+  {
    "key": 79648,
    "gn": "KV.2025.2",
    "gnSekundaer": "SVG.2026.90",
@@ -34598,6 +34661,15 @@
    "titel": "ELG, Anrechnung von Einnahmen aus Untermiete",
    "erstpublikation": "2026-06-10",
    "aktualisiert": "2026-06-11"
+  },
+  {
+   "key": 79656,
+   "gn": "BES.2026.49",
+   "gnSekundaer": "AG.2026.320",
+   "datum": "2026-05-18",
+   "titel": "Nichteintreten auf Einsprache infolge Verspätung",
+   "erstpublikation": "2026-09-29",
+   "aktualisiert": "2026-09-29"
   },
   {
    "key": 79657,
@@ -34679,6 +34751,15 @@
    "titel": "Vorentscheid Generelles Baubegehren Nr. [...] (1) vom 3. Juni 2024 in Sachen Grundsatzfragen zum Vorhaben: Abbruch und Neubau MFH, Gotthardstrasse 1, 1a, Basel (nicht rechtskräftig)",
    "erstpublikation": "2026-06-17",
    "aktualisiert": "2026-07-09"
+  },
+  {
+   "key": 79674,
+   "gn": "BEZ.2026.7",
+   "gnSekundaer": "AG.2026.331",
+   "datum": "2026-05-21",
+   "titel": "Forderung aus Arbeitsvertrag",
+   "erstpublikation": "2026-10-02",
+   "aktualisiert": "2026-10-02"
   },
   {
    "key": 79675,
@@ -35254,7 +35335,7 @@
    "datum": "2026-07-23",
    "titel": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
    "erstpublikation": "2026-07-24",
-   "aktualisiert": "2026-08-06"
+   "aktualisiert": "2026-10-03"
   },
   {
    "key": 79892,
@@ -35410,6 +35491,15 @@
    "aktualisiert": "2026-08-20"
   },
   {
+   "key": 79969,
+   "gn": "VD.2025.73",
+   "gnSekundaer": "AG.2026.520",
+   "datum": "2026-08-05",
+   "titel": "Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)",
+   "erstpublikation": "2026-09-30",
+   "aktualisiert": "2026-09-30"
+  },
+  {
    "key": 79980,
    "gn": "IV.2025.67",
    "gnSekundaer": "SVG.2026.141",
@@ -35477,9 +35567,9 @@
    "gn": "BV.2025.10",
    "gnSekundaer": "SVG.2026.147",
    "datum": "2026-03-12",
-   "titel": "Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der Versicherungszeit beeinflusst?",
+   "titel": "Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der Versicherungszeit beeinflusst? (Beschwerde beim Bundesgericht hängig)",
    "erstpublikation": "2026-09-10",
-   "aktualisiert": "2026-09-19"
+   "aktualisiert": "2026-09-29"
   },
   {
    "key": 80008,
@@ -35563,6 +35653,15 @@
    "aktualisiert": "2026-09-22"
   },
   {
+   "key": 80039,
+   "gn": "IV.2025.44",
+   "gnSekundaer": "SVG.2026.154",
+   "datum": "2026-02-11",
+   "titel": "IVG",
+   "erstpublikation": "2026-09-30",
+   "aktualisiert": "2026-09-30"
+  },
+  {
    "key": 80040,
    "gn": "AUS.2026.78",
    "gnSekundaer": "AG.2026.565",
@@ -35597,6 +35696,33 @@
    "titel": "Verlängerung Ausschaffungshaft",
    "erstpublikation": "2026-09-23",
    "aktualisiert": "2026-09-23"
+  },
+  {
+   "key": 80112,
+   "gn": "AUS.2026.85",
+   "gnSekundaer": "AG.2026.613",
+   "datum": "2026-09-30",
+   "titel": "Ausschaffungshaft",
+   "erstpublikation": "2026-10-02",
+   "aktualisiert": "2026-10-02"
+  },
+  {
+   "key": 80115,
+   "gn": "AUS.2026.80",
+   "gnSekundaer": "AG.2026.616",
+   "datum": "2026-09-30",
+   "titel": "Ausschaffungshaft",
+   "erstpublikation": "2026-10-03",
+   "aktualisiert": "2026-10-03"
+  },
+  {
+   "key": 80116,
+   "gn": "GS.2024.38",
+   "gnSekundaer": "ZG.2026.5",
+   "datum": "2026-06-18",
+   "titel": "(nicht rechtskräftig)",
+   "erstpublikation": "2026-10-03",
+   "aktualisiert": "2026-10-03"
   }
  ]
 }
