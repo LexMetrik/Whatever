@@ -118,6 +118,38 @@ describe('P8-A · was NICHT angefasst wird (Abstand/Verklebung wie vorher, §1/�
   });
 });
 
+describe('P8-A · Nachzug GP M1 — der Träger ist nie der Inhalt eines anderen <sup>', () => {
+  // IRSG SR 351.1 Art. 109 — Listenpunkt mit Marke [tab], Quelle «<sup>2</sup><sup>–</sup><sup>3</sup>»: die
+  // aufgehobenen Absätze 2 bis 3. Der Erstbau lief rückwärts über das </sup> und traf die Ziffer «2» im Inhalt des
+  // VORHERIGEN <sup> als Träger → «2 ⁻ 3 …» (Minus hochgestellt). Richtig bleibt wie auf main: «2 – 3 …».
+  const IRSG_ART_109_DL =
+    '<dl class="man-space-after-0"><dt class="man-space-before-4"><span data-message="x">[tab]</span></dt>'
+    + '<dd class="man-space-before-4"><sup>2</sup><sup>–</sup><sup>3</sup>&nbsp;…</dd></dl>';
+
+  it('IRSG Art. 109: «2 – 3 …» statt «2 ⁻ 3 …» (Fixture: der Listenpunkt mit Marke [tab])', () => {
+    const items = parseArtikelInner('<p class="absatz "><sup>1</sup>&nbsp;Das Gesetz wird aufgehoben.</p>' + IRSG_ART_109_DL).bloecke[0].items!;
+    expect(items).toHaveLength(1);
+    expect(items[0].marke).toBe('[tab]');
+    expect(items[0].text).toBe('2 – 3 …');
+  });
+
+  it('dieselbe Kette ohne Listen-Rahmen und mit anderen Vorzeichen-Schreibweisen bleibt Bereichs-Label', () => {
+    expect(entferneTags('<dd><sup>2</sup><sup>–</sup><sup>3</sup>&nbsp;…</dd>')).toBe('2 – 3 …');
+    expect(entferneTags('<dd><sup>2</sup><sup>-</sup><sup>3</sup>&nbsp;…</dd>')).toBe('2 - 3 …');
+    expect(entferneTags('<dd><sup>4</sup><inl></inl><sup>+</sup><sup>5</sup> …</dd>')).toBe('4 + 5 …');
+  });
+
+  it('Tiefstellungs-Kette <sub>1</sub><sub>–</sub> trägt kein Vorzeichen an die Ziffer des Nachbar-<sub>', () => {
+    expect(entferneTags('<dd><sub>1</sub><sub>–</sub><sub>2</sub> …</dd>')).toBe('1 – 2 …');
+  });
+
+  it('Wächter: «NO₃⁻» (Vorzeichen-<sup> hinter dem Index-<sub>), «10⁻⁹» und «m/s²» bleiben Unicode', () => {
+    expect(entferneTags('Nitrat NO<sub>3</sub><sup>–</sup> und Sulfat SO<sub>4</sub><sup>2–</sup>')).toBe('Nitrat NO₃⁻ und Sulfat SO₄²⁻');
+    expect(entferneTags('Ca<sup>2+</sup> und <i>NO</i><i><sub>3</sub></i><i><sup>–</sup></i> -Gehalt')).toBe('Ca²⁺ und NO₃⁻ -Gehalt');
+    expect(entferneTags('mit 1,0 × 10<sup>-9</sup> m/s und 9,81 m/s<sup>2</sup>')).toBe('mit 1,0 × 10⁻⁹ m/s und 9,81 m/s²');
+  });
+});
+
 describe('P8-A · hochTiefUnicode (Tabelle)', () => {
   it('bildet nur Ziffern und Vorzeichen ab, alles andere ist null', () => {
     expect(hochTiefUnicode('sup', '0123456789')).toBe('⁰¹²³⁴⁵⁶⁷⁸⁹');

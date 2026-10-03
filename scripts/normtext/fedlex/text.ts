@@ -131,18 +131,26 @@ export function hochTiefUnicode(tag: 'sup' | 'sub', inhalt: string): string | nu
  * Läuft rückwärts über Inline-Tags (wie das Strippen: «tmp:inl», <i>, <span> … trennen nicht)
  * und Fussnoten-Platzhalter; Block-Tags, Textanfang, Leerraum, geschütztes Leerzeichen und
  * Satzzeichen (Punkt, Doppelpunkt, Strich …) gelten als Trennung.
+ *
+ * Der Träger ist NIE der Inhalt eines anderen Hoch-/Tief-Elements (Nachzug GP M1, IRSG Art. 109,
+ * 3.10.2026): «<sup>2</sup><sup>–</sup><sup>3</sup>» (aufgehobene Absätze 2 bis 3) trägt das Minus nicht an
+ * die «2» des Nachbar-<sup>. Wer rückwärts über ein </sup> läuft, trifft dessen Inhalt → kein Träger. Dasselbe
+ * für </sub> hinter einem <sub> (gleiche Art). Ein <sup> HINTER einem </sub> bleibt Träger-fähig: die Ladung
+ * «NO<sub>3</sub><sup>–</sup>» hängt am Index (Ion) — dort ist die Ziffer der Chemie-Index, kein Absatz-Label.
  */
-function haengtAnTraeger(ganz: string, offset: number): boolean {
+function haengtAnTraeger(ganz: string, offset: number, art: 'sup' | 'sub'): boolean {
   let i = offset;
   while (i > 0) {
     const c = ganz[i - 1];
     if (c === '>') {
       const lt = ganz.lastIndexOf('<', i - 1);
       if (lt < 0) return false;
-      const name = ganz.slice(lt, i).match(/^<\/?\s*([a-zA-Z][a-zA-Z0-9]*(?::[a-zA-Z0-9_.-]+)?)/);
+      const name = ganz.slice(lt, i).match(/^(<\/?)\s*([a-zA-Z][a-zA-Z0-9]*(?::[a-zA-Z0-9_.-]+)?)/);
       if (!name) return false;
-      const n = name[1].toLowerCase();
+      const n = name[2].toLowerCase();
       if (!(n.includes(':') || INLINE_STRIP_TAGS.has(n))) return false; // Block-Tag trennt
+      // Schliessendes Hoch-/Tief-Element: dahinter liegt dessen INHALT, nie ein Träger.
+      if (name[1] === '</' && (n === 'sup' || n === art)) return false;
       i = lt;
       continue;
     }
@@ -169,7 +177,7 @@ function ersetzeHochTief(m: string, tag: string, inhalt: string, offset: number,
   const nachLeer = /(?:\s|&nbsp;|&#0*160;|&#x0*a0;)$/i.test(inhalt);
   if (!vorLeer) {
     const bruchZaehler = art === 'sup' && BRUCH_NENNER.test(ganz.slice(offset + m.length));
-    if (bruchZaehler || haengtAnTraeger(ganz, offset)) {
+    if (bruchZaehler || haengtAnTraeger(ganz, offset, art)) {
       const u = hochTiefUnicode(art, inhalt);
       if (u !== null) return nachLeer ? `${u} ` : u;
     }
