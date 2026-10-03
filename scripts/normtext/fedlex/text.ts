@@ -56,22 +56,124 @@ const TAB_PLATZHALTER = /<span\b[^>]*\bdata-message="[^"]*"[^>]*>\s*\[[a-z]+\]\s
 // Dokumenttext, darum GANZ (inkl. Inhalt) entfernen, bevor gestrippt wird.
 const NICHT_TEXT_ELEMENTE = /<(style|script)\b[^>]*>[\s\S]*?<\/\1>/gi;
 
+// ── Hoch-/Tiefstellungen als Unicode (W2·27-BUND-FERTIG P8, 3.10.2026) ──────────
+//
+// Fedlex setzt Exponenten, Indizes und Ladungen als <sup>/<sub> («m<sup>2</sup>»,
+// «CO<sub>2</sub>», «NO<sub>3</sub><sup>–</sup>», «10<sup>-9</sup>»). Der Plain-Text-Normtext
+// kennt kein Markup; bis P8 wurde die reine Ziffer mit Leerzeichen eingerahmt
+// («m/s 2», «M 2 , M 3», «400 m 2») — irreführend: «m/s 2» ist nicht «m/s²» (§1) — und ein
+// Vorzeichen im <sup> ging verloren («10-9» las sich als Subtraktion).
+//
+// Regel (eng, §7 «nichts raten»): Besteht der Inhalt NUR aus Ziffern und/oder einem
+// Vorzeichen (+ − – -) und HÄNGT das Element unmittelbar an einem Buchstaben, einer Ziffer
+// oder einer Klammer davor (Exponent/Index/Ladung/Tabellen-Fussnotenmarke), wird er in die
+// typografisch entsprechenden Unicode-Zeichen (² ³ ₂ ₃ ⁻ …) gewandelt — ohne Leerzeichen-
+// Einschub. Ebenso der Zähler eines Bruchs «<sup>2</sup>/<sub>3</sub>» («²/₃»).
+// Alles andere bleibt, wie es war:
+//   · LOSE Ziffern (am Textanfang, nach Leerraum oder nach Satzzeichen: Absatz-Labels in
+//     Bereichen «3 und 4 Aufgehoben», «anwendbar. 3 Zuständig», Massenzahlen «68 Ga»)
+//     behalten den trennenden Abstand;
+//   · ein Element mit Leerraum IM Inhalt («<sup>2 </sup>und», «<sup> 3</sup>») ist durch
+//     die Quelle abgesetzt — ebenfalls Abstand wie bisher;
+//   · Buchstaben-/Mehrzeichen-Inhalte («vmax», «Lrk», «2n+1», «a», «*») werden nicht
+//     erraten — Unicode trägt nicht jeden Buchstaben —, sondern wie bisher verklebt.
+// Die Tabelle ist die EINE Quelle (§5) für Artikel-, Listen-, Tabellen- und Anhang-Text
+// (alle laufen durch entferneTags).
+const HOCH: Readonly<Record<string, string>> = {
+  '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
+  '+': '⁺', '-': '⁻', '–': '⁻', '−': '⁻', '‑': '⁻',
+};
+const TIEF: Readonly<Record<string, string>> = {
+  '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄', '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
+  '+': '₊', '-': '₋', '–': '₋', '−': '₋', '‑': '₋',
+};
+// Vorzeichen: + · - · en-Strich (U+2013) · Minuszeichen (U+2212) · geschützter Bindestrich (U+2011).
+const VORZEICHEN = '+\\-–−‑';
+// Ziffern, Ziffern mit Vorzeichen davor/danach (Ladung «2+», Exponent «-9») oder ein Vorzeichen allein («NO3–»).
+const WANDELBAR = new RegExp(`^(?:\\d+|[${VORZEICHEN}]\\d*|\\d+[${VORZEICHEN}])$`);
+// Zeichen, an das ein Exponent/Index «hängt»: Buchstabe, Ziffer, schliessende/öffnende Klammer, Bruchstrich, %, °.
+const TRAEGER = /[\p{L}\p{N})\]([%°/⁄]/u;
+// Entity-Schreibweisen des geschützten Leerzeichens (die Strip-Kette dekodiert erst am Schluss).
+const ENTITY_NBSP = /&nbsp;|&#0*160;|&#x0*a0;/gi;
+const ENDET_AUF_ENTITY_NBSP = /(?:&nbsp;|&#0*160;|&#x0*a0;)$/i;
+// Fussnoten-Platzhalter der Offset-Ausrichtung (fussnoten-offsets.ts): Private-Use-Zeichen.
+const PLATZHALTER_ANFANG = String.fromCharCode(0xe000);
+const PLATZHALTER_ENDE = String.fromCharCode(0xe001);
+
+/** Wandelt den reinen Ziffern-/Vorzeichen-Inhalt in Unicode — null, wenn nicht eindeutig abbildbar. */
+export function hochTiefUnicode(tag: 'sup' | 'sub', inhalt: string): string | null {
+  const t = inhalt.replace(ENTITY_NBSP, ' ').trim();
+  const tabelle = tag === 'sup' ? HOCH : TIEF;
+  if (WANDELBAR.test(t)) return [...t].map((c) => tabelle[c]).join('');
+  // Index mit angehängtem Komma («M<sub>3,</sub> N<sub>2</sub>»): die Ziffer wird Index, das Komma bleibt Satzzeichen.
+  const mitKomma = tag === 'sub' ? t.match(/^(\d+),$/) : null;
+  return mitKomma ? [...mitKomma[1]].map((c) => tabelle[c]).join('') + ',' : null;
+}
+
+/**
+ * Hängt das Element bei `offset` unmittelbar an einem Trägerzeichen (Buchstabe, Ziffer, Klammer …)?
+ * Läuft rückwärts über Inline-Tags (wie das Strippen: «tmp:inl», <i>, <span> … trennen nicht)
+ * und Fussnoten-Platzhalter; Block-Tags, Textanfang, Leerraum, geschütztes Leerzeichen und
+ * Satzzeichen (Punkt, Doppelpunkt, Strich …) gelten als Trennung.
+ */
+function haengtAnTraeger(ganz: string, offset: number): boolean {
+  let i = offset;
+  while (i > 0) {
+    const c = ganz[i - 1];
+    if (c === '>') {
+      const lt = ganz.lastIndexOf('<', i - 1);
+      if (lt < 0) return false;
+      const name = ganz.slice(lt, i).match(/^<\/?\s*([a-zA-Z][a-zA-Z0-9]*(?::[a-zA-Z0-9_.-]+)?)/);
+      if (!name) return false;
+      const n = name[1].toLowerCase();
+      if (!(n.includes(':') || INLINE_STRIP_TAGS.has(n))) return false; // Block-Tag trennt
+      i = lt;
+      continue;
+    }
+    if (c === PLATZHALTER_ENDE) {
+      const anfang = ganz.lastIndexOf(PLATZHALTER_ANFANG, i - 1);
+      if (anfang < 0) return false;
+      i = anfang;
+      continue;
+    }
+    if (c === ';' && ENDET_AUF_ENTITY_NBSP.test(ganz.slice(Math.max(0, i - 8), i))) return false;
+    return TRAEGER.test(c);
+  }
+  return false;
+}
+
+// Bruch «<sup>2</sup>/<sub>3</sub>»: der Zähler steht auch nach Leerraum («mindestens ²/₃»), er ist kein Absatz-Label.
+const BRUCH_NENNER = /^\s*[/⁄]\s*<sub\b[^>]*>\s*\d+\s*<\/sub>/i;
+
+/** <sup>/<sub> im Rohtext: Unicode, Abstand-Ziffer (bisheriges Verhalten) oder unverändert (Tags fallen später). */
+function ersetzeHochTief(m: string, tag: string, inhalt: string, offset: number, ganz: string): string {
+  const art = tag.toLowerCase() as 'sup' | 'sub';
+  // Leerraum im Inhalt = von der Quelle abgesetzt («<sup>2 </sup>und», «<sup> 3</sup>»): kein Exponent.
+  const vorLeer = /^(?:\s|&nbsp;|&#0*160;|&#x0*a0;)/i.test(inhalt);
+  const nachLeer = /(?:\s|&nbsp;|&#0*160;|&#x0*a0;)$/i.test(inhalt);
+  if (!vorLeer) {
+    const bruchZaehler = art === 'sup' && BRUCH_NENNER.test(ganz.slice(offset + m.length));
+    if (bruchZaehler || haengtAnTraeger(ganz, offset)) {
+      const u = hochTiefUnicode(art, inhalt);
+      if (u !== null) return nachLeer ? `${u} ` : u;
+    }
+  }
+  const ziffern = inhalt.match(/^\s*(\d[\d\s]*)\s*$/);
+  return ziffern ? ` ${ziffern[1].trim()} ` : m;
+}
+
 export function entferneTags(s: string): string {
   return dekodiereEntities(
     s
       .replace(NICHT_TEXT_ELEMENTE, '')
       .replace(TAB_PLATZHALTER, '')
-      // Reine Ziffern-<sup>/<sub> (Exponent «m²», typografischer Bruch «133¹⁄₃»,
-      // Absatz-Hochzahl «72³» im BV-Register, Tabellen-Fussnote «47/50¹») tragen
-      // eine Bedeutung, die beim leerzeichenlosen Verkleben an eine Nachbarziffer
-      // eine IRREFÜHRENDE grössere Zahl erzeugt («1331/3», «723»). Sie behalten
-      // darum den trennenden Abstand (bisheriges Verhalten) — §1: nie zwei Ziffern
-      // stillschweigend zu einer Zahl zusammenführen. NUR Buchstaben-Suffixe
-      // (bis/ter/g …) und sonstige Inline-Formatierung werden verklebt (N1-Fix).
-      .replace(
-        /<sup\b[^>]*>\s*(\d[\d\s]*)\s*<\/sup>|<sub\b[^>]*>\s*(\d[\d\s]*)\s*<\/sub>/gi,
-        (_m, a, b) => ` ${(a ?? b).trim()} `,
-      )
+      // Ziffern-/Vorzeichen-<sup>/<sub>: angehängt (Exponent «m²», Index «CO₂», Ladung
+      // «NO₃⁻», Bruch «133¹/₃») → Unicode, ohne Abstand (P8, s. hochTiefUnicode).
+      // LOSE reine Ziffern (Absatz-Hochzahl «72³» im BV-Register, Label «3 und 4 Aufgehoben»)
+      // behalten den trennenden Abstand (bisheriges Verhalten) — §1: nie zwei Ziffern
+      // stillschweigend zu einer Zahl zusammenführen. Sonstiges (Buchstaben-Suffixe
+      // bis/ter/g …, Mehrzeichen) wird wie bisher verklebt (N1-Fix).
+      .replace(/<(sup|sub)\b[^>]*>([^<]*)<\/\1>/gi, ersetzeHochTief)
       .replace(/<[^>]+>/g, (tag) => {
         // NAMENSRAUM MITLESEN (Befund QS-KORPUS 4.9.2026): Fedlex streut leere
         // Konversions-Marker der legi4ch-XSLT-/Word-Kette ein —

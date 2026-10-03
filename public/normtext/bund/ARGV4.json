@@ -171,19 +171,19 @@
           "items": [
             {
               "marke": "a",
-              "text": "2,75 m bei einer Bodenfläche von höchstens 100 m 2 ;"
+              "text": "2,75 m bei einer Bodenfläche von höchstens 100 m²;"
             },
             {
               "marke": "b",
-              "text": "3,00 m bei einer Bodenfläche von höchstens 250 m 2 ;"
+              "text": "3,00 m bei einer Bodenfläche von höchstens 250 m²;"
             },
             {
               "marke": "c",
-              "text": "3,50 m bei einer Bodenfläche von höchstens 400 m 2 ;"
+              "text": "3,50 m bei einer Bodenfläche von höchstens 400 m²;"
             },
             {
               "marke": "d",
-              "text": "4,00 m bei einer Bodenfläche von mehr als 400 m 2 ."
+              "text": "4,00 m bei einer Bodenfläche von mehr als 400 m²."
             }
           ]
         },
@@ -218,7 +218,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/2564_2564_2564/de#art_5",
       "abgerufen": "2026-08-29",
       "fassungsToken": "20150501",
-      "sha": "9223d7c79a1f4ddd70d7f96879724f2a3d81b4fdf7a26a30d5077b9431fb7ec8"
+      "sha": "199e7e4b45e5c5e4e8400a3e72525b446b3a848554806677c7649cd55991a6ca"
     },
     {
       "id": "bund/ARGV4/art_6",
@@ -257,11 +257,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Geschossflächen von höchstens 900 m 2 : mindestens eine Treppenanlage oder ein direkt ins Freie führender Ausgang;"
+              "text": "bei Geschossflächen von höchstens 900 m²: mindestens eine Treppenanlage oder ein direkt ins Freie führender Ausgang;"
             },
             {
               "marke": "b",
-              "text": "bei Geschossflächen von mehr als 900 m 2 : mindestens zwei Treppenanlagen."
+              "text": "bei Geschossflächen von mehr als 900 m²: mindestens zwei Treppenanlagen."
             }
           ]
         }
@@ -270,7 +270,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/2564_2564_2564/de#art_7",
       "abgerufen": "2026-08-29",
       "fassungsToken": "20150501",
-      "sha": "84013637bdf2d3f9983be2d7cf3a9d0e18bfbb0880146756e3d113d552bdba9f"
+      "sha": "ae32fe25c86bb1547e5cfc112f656fb220bc48c6ebcf527daeba48ad745df6f6"
     },
     {
       "id": "bund/ARGV4/art_8",
@@ -543,14 +543,14 @@
         },
         {
           "absatz": "6",
-          "text": "Bei natürlicher Lüftung sollen in Fassadenfenstern und Dachlichtern in der Regel auf 100 m 2 Bodenfläche mindestens 3 m 2 zur Lüftung geöffnet werden können."
+          "text": "Bei natürlicher Lüftung sollen in Fassadenfenstern und Dachlichtern in der Regel auf 100 m² Bodenfläche mindestens 3 m² zur Lüftung geöffnet werden können."
         }
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1993/2564_2564_2564/de#art_17",
       "abgerufen": "2026-08-29",
       "fassungsToken": "20150501",
-      "sha": "16527810f8ce8c71a917c722f07601b66c5d2da37583ff1ac9b52abd19318948"
+      "sha": "7443d5f0f82c1559c2e1076a742dd030535507ab4a3b2555ad7522efb0a9dd69"
     },
     {
       "id": "bund/ARGV4/art_18",

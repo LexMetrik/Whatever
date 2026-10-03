@@ -78,14 +78,17 @@ const VTS_232 =
 
 describe('P4: zwei Zeilen mit Unterliste hintereinander (VTS Anh. 7 Ziff. 232)', () => {
   it('Lesefolge: 232, Vorderrad-Zeile, Klassen, Hinterrad-Zeile, deren marke-lose Zeilen, 233', () => {
+    // P8 (3.10.2026, DEKLARIERTE FACHÄNDERUNG): die Quelle setzt «m/s<sup>2</sup>»; die Erwartung pinnte den
+    // alten Normalisierungsfehler «m/s 2» (Leerzeichen um die Ziffer). Jetzt «m/s²» — nur diese vier Zeilen ändern sich,
+    // die Lesefolge/Struktur des Tests (P4) bleibt unverändert.
     expect(lesefolge(liste(VTS_232))).toEqual([
       '232 Bremsung auf ein Rad',
       'Die Verzögerung muss bei der Bremsung mit der Vorderradbremse allein mindestens betragen für Fahrzeuge der:',
-      '.Klasse 1 3,4 m/s 2',
-      '.Klasse 2 2,7 m/s 2',
+      '.Klasse 1 3,4 m/s²',
+      '.Klasse 2 2,7 m/s²',
       'Die Verzögerung muss bei der Bremsung mit der Hinterradbremse allein mindestens betragen für Fahrzeuge der:',
-      'Klassen 1 und 2: 2,7 m/s 2',
-      'Klasse 3: 2,9 m/s 2',
+      'Klassen 1 und 2: 2,7 m/s²',
+      'Klasse 3: 2,9 m/s²',
       '233 Bremsung bei teilweise kombinierten Bremsanlagen',
     ]);
   });

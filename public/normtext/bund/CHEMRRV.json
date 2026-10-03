@@ -1077,7 +1077,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "ihr Massengehalt an Alkanen C 10 –C 13 , Chlor- nicht mehr als 1 Prozent beträgt;"
+              "text": "ihr Massengehalt an Alkanen C₁₀–C₁₃, Chlor- nicht mehr als 1 Prozent beträgt;"
             },
             {
               "marke": "b",
@@ -1091,7 +1091,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "ihr Massengehalt an Alkanen C 10 –C 13 , Chlor- nicht mehr als 0,15 Prozent beträgt;"
+              "text": "ihr Massengehalt an Alkanen C₁₀–C₁₃, Chlor- nicht mehr als 0,15 Prozent beträgt;"
             },
             {
               "marke": "b",
@@ -1258,7 +1258,7 @@
             },
             {
               "marke": "–",
-              "text": "Polychlorierte Naphthaline der Formel C 10 HnCl8–n mit 0 ≤ n ≤ 7.",
+              "text": "Polychlorierte Naphthaline der Formel C₁₀HnCl8–n mit 0 ≤ n ≤ 7.",
               "tiefe": 1,
               "trenner": ""
             },
@@ -1268,31 +1268,31 @@
             },
             {
               "marke": "–",
-              "text": "Tetrabromdiphenylether der Formel C 12 H 6 Br 4 O;",
+              "text": "Tetrabromdiphenylether der Formel C₁₂H₆Br₄O;",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "Pentabromdiphenylether der Formel C 12 H 5 Br 5 O;",
+              "text": "Pentabromdiphenylether der Formel C₁₂H₅Br₅O;",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "Hexabromdiphenylether der Formel C 12 H 4 Br 6 O;",
+              "text": "Hexabromdiphenylether der Formel C₁₂H₄Br₆O;",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "Heptabromdiphenylether der Formel C 12 H 3 Br 7 O;",
+              "text": "Heptabromdiphenylether der Formel C₁₂H₃Br₇O;",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "Decabromdiphenylether der Formel C 12 Br 10 O.",
+              "text": "Decabromdiphenylether der Formel C₁₂Br₁₀O.",
               "tiefe": 1,
               "trenner": ""
             },
@@ -1535,7 +1535,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_1",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "85e393716d9a475bea6e80a949325a64154a3c31316503271711a2f703095e6e"
+      "sha": "5e4ea4a4a599b91afeeabc742c43190a64d5e1ec426e5d9742f47252edfe5c8e"
     },
     {
       "id": "bund/CHEMRRV/annex_1_2",
@@ -1727,19 +1727,19 @@
             },
             {
               "marke": "–",
-              "text": "halogenierte Biphenyle der Formel C 12 HnX10-n; X = Halogen, 0 ≤ n ≤ 9,",
+              "text": "halogenierte Biphenyle der Formel C₁₂HnX10-n; X = Halogen, 0 ≤ n ≤ 9,",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "halogenierte Terphenyle der Formel C 18 HnX14–n; X = Halogen, 0 ≤ n ≤ 13,",
+              "text": "halogenierte Terphenyle der Formel C₁₈HnX14–n; X = Halogen, 0 ≤ n ≤ 13,",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "–",
-              "text": "halogenierte Naphthaline der Formel C 10 HnX8–n; X = Halogen, 0 ≤ n ≤ 7;",
+              "text": "halogenierte Naphthaline der Formel C₁₀HnX8–n; X = Halogen, 0 ≤ n ≤ 7;",
               "tiefe": 1,
               "trenner": ""
             },
@@ -1767,7 +1767,7 @@
             },
             {
               "marke": "g",
-              "text": "Octabromdiphenylether mit der Summenformel C 12 H 2 Br 8 O;"
+              "text": "Octabromdiphenylether mit der Summenformel C₁₂H₂Br₈O;"
             },
             {
               "marke": "h",
@@ -1796,7 +1796,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_2",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "32243a25fe7fdcfe4e0cbcae4959c7e941f5a5b3db96e569cd069c94bb1ddb9e"
+      "sha": "4b581420ae44594f9046b771998b0104dbba9e89d87b53c5d0637b14e9ee981f"
     },
     {
       "id": "bund/CHEMRRV/annex_1_3",
@@ -2588,7 +2588,7 @@
             },
             {
               "marke": "c",
-              "text": "die Menge der Stoffe, in kg und in Tonnen CO 2 -Äquivalente, sowie das Treibhauspotenzial der Stoffe."
+              "text": "die Menge der Stoffe, in kg und in Tonnen CO₂-Äquivalente, sowie das Treibhauspotenzial der Stoffe."
             }
           ]
         },
@@ -2620,7 +2620,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_4",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "2f2f12a613864b112c156afb212c671de7b6b7a366b121643a0683c4dab8a5e8"
+      "sha": "783908d735737e8baa63240487b66e30eca59358b8af6ad7ba8c7fc745036a87"
     },
     {
       "id": "bund/CHEMRRV/annex_1_5",
@@ -3321,7 +3321,7 @@
             },
             {
               "marke": "c",
-              "text": "die Menge der Stoffe, in kg und in Tonnen CO 2 -Äquivalente, sowie das Treibhauspotenzial der Stoffe."
+              "text": "die Menge der Stoffe, in kg und in Tonnen CO₂-Äquivalente, sowie das Treibhauspotenzial der Stoffe."
             }
           ]
         },
@@ -3387,7 +3387,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_5",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "7920891cabe2cfccf45581fb80d239ef5c8ad8ecc753cd33f38c055d77dbc0b9"
+      "sha": "d27222a264a574814aa983197036bf84b067b09ffc8d9625ec2c9b331db67b81"
     },
     {
       "id": "bund/CHEMRRV/annex_1_6",
@@ -3560,13 +3560,13 @@
               [
                 "",
                 "",
-                "h 1 = 40 Prozent von H",
+                "h₁ = 40 Prozent von H",
                 ""
               ],
               [
                 "",
                 "",
-                "h 2 = 60 Prozent von H",
+                "h₂ = 60 Prozent von H",
                 ""
               ],
               [
@@ -3648,7 +3648,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_6",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "4d5d8744f0e94f33febe43e6735f8a76e182ba74f74c10a8415949d1e8b599e4"
+      "sha": "ef108d0410e15fa9c741248b7226030d2706cc56c2f10419e92513f09342ac2a"
     },
     {
       "id": "bund/CHEMRRV/annex_1_7",
@@ -4532,7 +4532,7 @@
         },
         {
           "absatz": "1",
-          "text": "Verboten ist das Inverkehrbringen folgender Produktarten, wenn ihr Massengehalt an Octylphenol (Summenformel C 14 H 22 O), Nonylphenol (Summenformel C 15 H 24 O) oder deren Ethoxylaten 0,1 Prozent oder mehr beträgt:",
+          "text": "Verboten ist das Inverkehrbringen folgender Produktarten, wenn ihr Massengehalt an Octylphenol (Summenformel C₁₄H₂₂O), Nonylphenol (Summenformel C₁₅H₂₄O) oder deren Ethoxylaten 0,1 Prozent oder mehr beträgt:",
           "items": [
             {
               "marke": "a",
@@ -4639,7 +4639,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_8",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "f4c41ed4f5d3f0b6e3d30b4b4a6f8f6b5a8f34b68c52da83396b3b48e45518ca"
+      "sha": "6bc9ca5109c61e20094d15581d54b054b73e76be591c2e942030e2ec73ca2bf6"
     },
     {
       "id": "bund/CHEMRRV/annex_1_9",
@@ -4748,7 +4748,7 @@
         },
         {
           "absatz": "1",
-          "text": "Zellstoffisoliermaterialien in loser Form und Zellstoffisoliermaterialien enthaltende Gegenstände dürfen nicht in Verkehr gebracht und verwendet werden, wenn sie anorganische Ammoniumsalze enthalten, es sei denn, die Emission von Ammoniak aus den Isoliermaterialien führt in einer Testkammer unter den in Absatz 2 beschriebenen Testbedingungen zu einem Volumengehalt von weniger als 3 ppm (2,12 mg/m 3 )."
+          "text": "Zellstoffisoliermaterialien in loser Form und Zellstoffisoliermaterialien enthaltende Gegenstände dürfen nicht in Verkehr gebracht und verwendet werden, wenn sie anorganische Ammoniumsalze enthalten, es sei denn, die Emission von Ammoniak aus den Isoliermaterialien führt in einer Testkammer unter den in Absatz 2 beschriebenen Testbedingungen zu einem Volumengehalt von weniger als 3 ppm (2,12 mg/m³)."
         },
         {
           "absatz": "2",
@@ -4909,7 +4909,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_9",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "acb00d2bb42f9eb8c02c2cbca3733ec6f561897d82f02a021f2d234add25fbf6"
+      "sha": "e1b8c5d3e9f8407ce1914aae315ac251dc751bab2b1a2bb5f0ad313a6754e104"
     },
     {
       "id": "bund/CHEMRRV/annex_1_10",
@@ -5229,11 +5229,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Dinatrium-(6-(4-anisidino)-3-sulfonato-2-(3,5-dinitro-2-oxidophenylazo)-1-naphtholato)(1-(5-chlor-2-oxido-phenylazo)-2-naphtholato)chromat(1-) (Summenformel C 39 H 23 ClCrN 7 O 12 S.2Na; CAS-Nr. 118685-33-9); und"
+              "text": "Dinatrium-(6-(4-anisidino)-3-sulfonato-2-(3,5-dinitro-2-oxidophenylazo)-1-naphtholato)(1-(5-chlor-2-oxido-phenylazo)-2-naphtholato)chromat(1-) (Summenformel C₃₉H₂₃ClCrN₇O₁₂S.2Na; CAS-Nr. 118685-33-9); und"
             },
             {
               "marke": "b",
-              "text": "Trinatrium bis(6-(4-anisidino)-3-sulfonato-2-(3,5-dinitro-2-oxidophenylazo)-1-naphtholato)chromat(1-) (Summenformel C 46 H 30 CrN 10 O 20 S 2 .3Na)."
+              "text": "Trinatrium bis(6-(4-anisidino)-3-sulfonato-2-(3,5-dinitro-2-oxidophenylazo)-1-naphtholato)chromat(1-) (Summenformel C₄₆H₃₀CrN₁₀O₂₀S₂.3Na)."
             }
           ]
         },
@@ -5299,7 +5299,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_13",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "219a25d03560396399d333b9a6fb19fdfdf9286eede7d7f25a8113c15d727e31"
+      "sha": "4ceb206ba2bc1484c4a22b7ace8472637c7958ba904772f7e664259bf885f6d9"
     },
     {
       "id": "bund/CHEMRRV/annex_1_14",
@@ -5695,7 +5695,7 @@
         },
         {
           "absatz": null,
-          "text": "Als Perfluoroctansulfonsäure und ihre Derivate (PFOS) gelten Stoffe mit der Summenformel C 8 F 17 SO 2 X, wobei X bedeutet: OH, Metallsalze [O–M+], Halogenide, Amide und andere Derivate einschliesslich Polymere."
+          "text": "Als Perfluoroctansulfonsäure und ihre Derivate (PFOS) gelten Stoffe mit der Summenformel C₈F₁₇SO₂X, wobei X bedeutet: OH, Metallsalze [O⁻M⁺], Halogenide, Amide und andere Derivate einschliesslich Polymere."
         },
         {
           "absatz": null,
@@ -5741,7 +5741,7 @@
         },
         {
           "absatz": null,
-          "text": "Als Vorläuferverbindungen von Perfluorhexansulfonsäure in Form ihrer linearen oder verzweigten Isomere und ihrer Salze (PFHxS) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorhexyl-Gruppe mit der Formel C 6 F 13 in direkter Verbindung mit einem Schwefelatom als Strukturelement, die zu PFHxS abgebaut werden."
+          "text": "Als Vorläuferverbindungen von Perfluorhexansulfonsäure in Form ihrer linearen oder verzweigten Isomere und ihrer Salze (PFHxS) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorhexyl-Gruppe mit der Formel C₆F₁₃ in direkter Verbindung mit einem Schwefelatom als Strukturelement, die zu PFHxS abgebaut werden."
         },
         {
           "absatz": null,
@@ -5807,7 +5807,7 @@
         },
         {
           "absatz": "1",
-          "text": "Als Vorläuferverbindungen von Perfluoroctansäure in Form ihrer linearen oder verzweigten Isomere und ihrer Salze (PFOA) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorheptyl-Gruppe mit der Formel C 7 F 15 in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu PFOA abgebaut werden."
+          "text": "Als Vorläuferverbindungen von Perfluoroctansäure in Form ihrer linearen oder verzweigten Isomere und ihrer Salze (PFOA) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorheptyl-Gruppe mit der Formel C₇F₁₅ in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu PFOA abgebaut werden."
         },
         {
           "absatz": "2",
@@ -5815,11 +5815,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe mit der Summenformel C 8 F 17 X, wobei X bedeutet: F, Cl oder Br;"
+              "text": "Stoffe mit der Summenformel C₈F₁₇X, wobei X bedeutet: F, Cl oder Br;"
             },
             {
               "marke": "b",
-              "text": "Fluorpolymere mit dem Strukturelement CF 3 [CF 2 ]n-R mit n > 16, wobei R bedeutet: jegliche Gruppe;"
+              "text": "Fluorpolymere mit dem Strukturelement CF₃[CF₂]n-R mit n > 16, wobei R bedeutet: jegliche Gruppe;"
             },
             {
               "marke": "c",
@@ -5837,7 +5837,7 @@
         },
         {
           "absatz": "3",
-          "text": "Als Vorläuferverbindungen von Perfluornonan-, Perfluordecan-, Perfluorundecan-, Perfluordodecan-, Perfluortridecan- und Perfluortetradecansäure in Form ihrer linearen und verzweigten Isomere und Salzen (C 9 –C 14 -PFCA) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluoralkyl-Gruppe mit der Formel CnF2n+1 mit n = 8 – 13 in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu C 9 –C 14 -PFCA abgebaut werden."
+          "text": "Als Vorläuferverbindungen von Perfluornonan-, Perfluordecan-, Perfluorundecan-, Perfluordodecan-, Perfluortridecan- und Perfluortetradecansäure in Form ihrer linearen und verzweigten Isomere und Salzen (C₉–C₁₄-PFCA) gelten Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluoralkyl-Gruppe mit der Formel CnF2n+1 mit n = 8 – 13 in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu C₉–C₁₄-PFCA abgebaut werden."
         },
         {
           "absatz": "4",
@@ -5864,7 +5864,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "PFOA, C 9 –C 14 -PFCA und ihren Vorläuferverbindungen;"
+              "text": "PFOA, C₉–C₁₄-PFCA und ihren Vorläuferverbindungen;"
             },
             {
               "marke": "b",
@@ -5872,7 +5872,7 @@
             },
             {
               "marke": "1",
-              "text": "einen Massengehalt an PFOA oder an der Summe von C 9 –C 14 -PFCA von 0,0000025 Prozent (25 ppb),",
+              "text": "einen Massengehalt an PFOA oder an der Summe von C₉–C₁₄-PFCA von 0,0000025 Prozent (25 ppb),",
               "tiefe": 1
             },
             {
@@ -5882,7 +5882,7 @@
             },
             {
               "marke": "3",
-              "text": "einen Massengehalt an der Summe von C 9 –C 14 -PFCA-Vorläuferverbindungen von 0,000026 Prozent (260 ppb).",
+              "text": "einen Massengehalt an der Summe von C₉–C₁₄-PFCA-Vorläuferverbindungen von 0,000026 Prozent (260 ppb).",
               "tiefe": 1
             }
           ]
@@ -5893,7 +5893,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "einen Massengehalt an PFOA oder an der Summe von C 9 –C 14 -PFCA von 0,0000025 Prozent (25 ppb);"
+              "text": "einen Massengehalt an PFOA oder an der Summe von C₉–C₁₄-PFCA von 0,0000025 Prozent (25 ppb);"
             },
             {
               "marke": "b",
@@ -5901,7 +5901,7 @@
             },
             {
               "marke": "c",
-              "text": "einen Massengehalt an der Summe von C 9 –C 14 -PFCA-Vorläuferverbindungen von 0,000026 Prozent (260 ppb)."
+              "text": "einen Massengehalt an der Summe von C₉–C₁₄-PFCA-Vorläuferverbindungen von 0,000026 Prozent (260 ppb)."
             }
           ]
         },
@@ -5920,7 +5920,7 @@
             },
             {
               "marke": "1",
-              "text": "er PFOA, C 9 –C 14 -PFCA oder deren Vorläuferverbindungen als unvermeidliche Nebenprodukte enthält,",
+              "text": "er PFOA, C₉–C₁₄-PFCA oder deren Vorläuferverbindungen als unvermeidliche Nebenprodukte enthält,",
               "tiefe": 1
             },
             {
@@ -5930,7 +5930,7 @@
             },
             {
               "marke": "3",
-              "text": "beim Umgang mit diesem Stoff die Emissionen von PFOA, C 9 –C 14 -PFCA und deren Vorläuferverbindungen nach dem Stand der Technik vermieden oder, falls dies nicht möglich ist, auf ein Minimum reduziert werden;",
+              "text": "beim Umgang mit diesem Stoff die Emissionen von PFOA, C₉–C₁₄-PFCA und deren Vorläuferverbindungen nach dem Stand der Technik vermieden oder, falls dies nicht möglich ist, auf ein Minimum reduziert werden;",
               "tiefe": 1
             },
             {
@@ -5947,7 +5947,7 @@
             },
             {
               "marke": "e",
-              "text": "die Herstellung, das Inverkehrbringen und die Verwendung von Perfluoralkoxy-Gruppen enthaltenden Fluorpolymeren, deren Massengehalt an der Summe von C 9 –C 14 -PFCA 0,00001 Prozent (100 ppb) nicht übersteigt."
+              "text": "die Herstellung, das Inverkehrbringen und die Verwendung von Perfluoralkoxy-Gruppen enthaltenden Fluorpolymeren, deren Massengehalt an der Summe von C₉–C₁₄-PFCA 0,00001 Prozent (100 ppb) nicht übersteigt."
             }
           ]
         },
@@ -5961,7 +5961,7 @@
             },
             {
               "marke": "b",
-              "text": "einen Massengehalt an der Summe von C 9 –C 14 -PFCA und an der Summe von C 9 –C 14 -PFCA-Vorläuferverbindungen von 0,0002 Prozent (2000 ppb)."
+              "text": "einen Massengehalt an der Summe von C₉–C₁₄-PFCA und an der Summe von C₉–C₁₄-PFCA-Vorläuferverbindungen von 0,0002 Prozent (2000 ppb)."
             }
           ]
         },
@@ -5985,11 +5985,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorpentyl-Gruppe mit der Formel C 5 F 11 in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu PFHxA abgebaut werden;"
+              "text": "Stoffe einschliesslich Polymere mit einer linearen oder verzweigten Perfluorpentyl-Gruppe mit der Formel C₅F₁₁ in direkter Verbindung mit einem weiteren Kohlenstoffatom als Strukturelement, die zu PFHxA abgebaut werden;"
             },
             {
               "marke": "b",
-              "text": "Stoffe mit einer linearen oder verzweigten Perfluorhexyl-Gruppe mit der Formel C 6 F 13 als Strukturelement, die zu PFHxA abgebaut werden."
+              "text": "Stoffe mit einer linearen oder verzweigten Perfluorhexyl-Gruppe mit der Formel C₆F₁₃ als Strukturelement, die zu PFHxA abgebaut werden."
             }
           ]
         },
@@ -5999,11 +5999,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe mit der Summenformel C 6 F 14 ;"
+              "text": "Stoffe mit der Summenformel C₆F₁₄;"
             },
             {
               "marke": "b",
-              "text": "Perfluorheptansäure (CAS-Nr. 375-85-9), ihre Salze und ihre Derivate mit dem Strukturelement C 6 F 13 (CO)OX, wobei X bedeutet: jegliche Gruppe;"
+              "text": "Perfluorheptansäure (CAS-Nr. 375-85-9), ihre Salze und ihre Derivate mit dem Strukturelement C₆F₁₃(CO)OX, wobei X bedeutet: jegliche Gruppe;"
             },
             {
               "marke": "c",
@@ -6011,11 +6011,11 @@
             },
             {
               "marke": "d",
-              "text": "jeden Stoff mit einer Perfluoralkylgruppe mit dem Strukturelement C 6 F 13 , die direkt an ein Sauerstoffatom an einem nicht am Kettenende befindlichen Kohlenstoffatom gebunden ist;"
+              "text": "jeden Stoff mit einer Perfluoralkylgruppe mit dem Strukturelement C₆F₁₃, die direkt an ein Sauerstoffatom an einem nicht am Kettenende befindlichen Kohlenstoffatom gebunden ist;"
             },
             {
               "marke": "e",
-              "text": "andere Stoffe mit dem Strukturelement C 6 F 13 (CF 2 )X, wobei X bedeutet: jegliche Gruppe."
+              "text": "andere Stoffe mit dem Strukturelement C₆F₁₃(CF₂)X, wobei X bedeutet: jegliche Gruppe."
             }
           ]
         },
@@ -6085,7 +6085,7 @@
         },
         {
           "absatz": "1",
-          "text": "Als Fluoralkylsilanole und ihre Derivate gelten Stoffe mit dem Strukturelement C 6 F 13 (C 2 H 4 )Si(OH)n(OX)3-n mit 0 ≤ n ≤ 3, wobei X bedeutet: jede Alkylgruppe."
+          "text": "Als Fluoralkylsilanole und ihre Derivate gelten Stoffe mit dem Strukturelement C₆F₁₃(C₂H₄)Si(OH)n(OX)3-n mit 0 ≤ n ≤ 3, wobei X bedeutet: jede Alkylgruppe."
         },
         {
           "absatz": "2",
@@ -6146,7 +6146,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "folgende PFOA, C 9 –C 14 -PFCA oder ihre Vorläuferverbindungen enthaltende Medizinprodukte und ihre Bestandteile sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
+              "text": "folgende PFOA, C₉–C₁₄-PFCA oder ihre Vorläuferverbindungen enthaltende Medizinprodukte und ihre Bestandteile sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
             },
             {
               "marke": "1",
@@ -6160,7 +6160,7 @@
             },
             {
               "marke": "b",
-              "text": "folgende PFOA, C 9 –C 14 -PFCA oder ihre Vorläuferverbindungen enthaltende Gegenstände und ihre Bestandteile, die vor den genannten Daten erstmals in Verkehr gebracht worden sind, sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
+              "text": "folgende PFOA, C₉–C₁₄-PFCA oder ihre Vorläuferverbindungen enthaltende Gegenstände und ihre Bestandteile, die vor den genannten Daten erstmals in Verkehr gebracht worden sind, sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
             }
           ]
         },
@@ -6204,7 +6204,7 @@
           "items": [
             {
               "marke": "c",
-              "text": "folgende C 9 –C 14 -PFCA oder ihre Vorläuferverbindungen enthaltende Gegenstände und ihre Bestandteile sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
+              "text": "folgende C₉–C₁₄-PFCA oder ihre Vorläuferverbindungen enthaltende Gegenstände und ihre Bestandteile sowie für Stoffe und Zubereitungen, welche für deren Herstellung erforderlich sind:"
             },
             {
               "marke": "1",
@@ -6227,7 +6227,7 @@
             },
             {
               "marke": "2",
-              "text": "C 9 –C 14 -PFCA oder ihre Vorläuferverbindungen enthalten, und vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind.",
+              "text": "C₉–C₁₄-PFCA oder ihre Vorläuferverbindungen enthalten, und vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind.",
               "tiefe": 1
             }
           ]
@@ -6238,7 +6238,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "die Herstellung, das Inverkehrbringen und die Verwendung von PFOA, C 9 –C 14 -PFCA oder ihre Vorläuferverbindungen enthaltende Zubereitungen für fotolithografische Verfahren oder Ätzverfahren bei der Halbleiterherstellung: bis zum 4. Juli 2025;"
+              "text": "die Herstellung, das Inverkehrbringen und die Verwendung von PFOA, C₉–C₁₄-PFCA oder ihre Vorläuferverbindungen enthaltende Zubereitungen für fotolithografische Verfahren oder Ätzverfahren bei der Halbleiterherstellung: bis zum 4. Juli 2025;"
             },
             {
               "marke": "b",
@@ -6246,7 +6246,7 @@
             },
             {
               "marke": "c",
-              "text": "das Inverkehrbringen und die Verwendung von C 9 –C 14 -PFCA oder deren Vorläuferverbindungen enthaltenden Fluorpolymeren zur Dosenbeschichtung von Dosieraerosolen: bis zum 25. August 2028;"
+              "text": "das Inverkehrbringen und die Verwendung von C₉–C₁₄-PFCA oder deren Vorläuferverbindungen enthaltenden Fluorpolymeren zur Dosenbeschichtung von Dosieraerosolen: bis zum 25. August 2028;"
             },
             {
               "marke": "d",
@@ -6259,14 +6259,14 @@
             },
             {
               "marke": "2",
-              "text": "vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind, wenn sie C 9 –C 14 -PFCA oder C 9 –C 14 -PFCA-Vorläuferverbindungen nur als unvermeidliche Verunreinigungen enthalten.",
+              "text": "vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind, wenn sie C₉–C₁₄-PFCA oder C₉–C₁₄-PFCA-Vorläuferverbindungen nur als unvermeidliche Verunreinigungen enthalten.",
               "tiefe": 1
             }
           ]
         },
         {
           "absatz": "5",
-          "text": "Feuerlöschschäume, die vor dem 1. Juni 2021 erstmals in Verkehr gebracht worden sind und bestimmungsgemäss Vorläuferverbindungen von PFOA als Bestandteile enthalten, und Feuerlöschschäume, die vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind und bestimmungsgemäss Vorläuferverbindungen von C 9 –C 14 -PFCA als Bestandteile enthalten, dürfen abweichend vom Verbot nach Ziffer 3.2 Absatz 1 wie folgt verwendet werden:",
+          "text": "Feuerlöschschäume, die vor dem 1. Juni 2021 erstmals in Verkehr gebracht worden sind und bestimmungsgemäss Vorläuferverbindungen von PFOA als Bestandteile enthalten, und Feuerlöschschäume, die vor dem 1. Oktober 2022 erstmals in Verkehr gebracht worden sind und bestimmungsgemäss Vorläuferverbindungen von C₉–C₁₄-PFCA als Bestandteile enthalten, dürfen abweichend vom Verbot nach Ziffer 3.2 Absatz 1 wie folgt verwendet werden:",
           "items": [
             {
               "marke": "a",
@@ -6280,7 +6280,7 @@
         },
         {
           "absatz": "6",
-          "text": "Perfluoralkoxy-Gruppen enthaltende Fluorpolymere nach Ziffer 3.3 Absatz 1 Buchstabe e dürfen bis zum 25. August 2024 hergestellt, in Verkehr gebracht und verwendet werden, wenn deren Massengehalt an der Summe von C 9 –C 14 -PFCA 0,0002 Prozent (2000 ppb) nicht übersteigt."
+          "text": "Perfluoralkoxy-Gruppen enthaltende Fluorpolymere nach Ziffer 3.3 Absatz 1 Buchstabe e dürfen bis zum 25. August 2024 hergestellt, in Verkehr gebracht und verwendet werden, wenn deren Massengehalt an der Summe von C₉–C₁₄-PFCA 0,0002 Prozent (2000 ppb) nicht übersteigt."
         },
         {
           "absatz": "7",
@@ -6309,7 +6309,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_1_16",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "0f801b53c498b5ac41f7ff563fa96056498522b42301e76edea6a7552402a59c"
+      "sha": "65c5362f0439f52a1d38653572357b65940b1ef945a7e291873a26f4f366fd5c"
     },
     {
       "id": "bund/CHEMRRV/annex_1_17",
@@ -7877,7 +7877,7 @@
         },
         {
           "absatz": "2",
-          "text": "Eine wasserhärteabhängige Dosierung ist auf die Gesamthärtegrade weich, mittel (25° fH = 2,5 mmol CaCO 3 /l) und hart abzustimmen."
+          "text": "Eine wasserhärteabhängige Dosierung ist auf die Gesamthärtegrade weich, mittel (25° fH = 2,5 mmol CaCO₃/l) und hart abzustimmen."
         },
         {
           "absatz": null,
@@ -8021,7 +8021,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_1",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "54f0dbddcc1975f80bc17c70fdd39c06e9de8de87e6335ec7863266e70f4dd49"
+      "sha": "33eaa00715059a8148acbf57c6ede3702500300522bd7fbd9051bc4cb5dbb16a"
     },
     {
       "id": "bund/CHEMRRV/annex_2_2",
@@ -8756,7 +8756,7 @@
             },
             {
               "marke": "c",
-              "text": "Menge der Stoffe, in kg und in Tonnen CO 2 -Äquivalente sowie das Treibhauspotenzial der Stoffe."
+              "text": "Menge der Stoffe, in kg und in Tonnen CO₂-Äquivalente sowie das Treibhauspotenzial der Stoffe."
             }
           ]
         },
@@ -8876,7 +8876,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_3",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "79ae0c01e0c4ace30f7c76d67f213c12de762ee186b33441a7f1cfe4f21a64b9"
+      "sha": "cb8b6692d0fac7be7d8c683d0b6e73354a4a0dde0853699f943b486aec388a69"
     },
     {
       "id": "bund/CHEMRRV/annex_2_4",
@@ -10322,7 +10322,7 @@
         },
         {
           "absatz": "2",
-          "text": "Biuret (C 2 H 5 N 3 O 2 ) darf in organischen Düngern nicht vorhanden sein."
+          "text": "Biuret (C₂H₅N₃O₂) darf in organischen Düngern nicht vorhanden sein."
         },
         {
           "absatz": null,
@@ -10401,7 +10401,7 @@
         },
         {
           "absatz": "2",
-          "text": "Der Gehalt an Biuret (C 2 H 5 N 3 O 2 ) in organisch-mineralischen Düngern darf 12g/kg Trockenmasse nicht überschreiten."
+          "text": "Der Gehalt an Biuret (C₂H₅N₃O₂) in organisch-mineralischen Düngern darf 12g/kg Trockenmasse nicht überschreiten."
         },
         {
           "absatz": null,
@@ -10478,7 +10478,7 @@
                 ""
               ],
               [
-                "Perchlorat (ClO 4 -)",
+                "Perchlorat (ClO₄-)",
                 "50",
                 ""
               ],
@@ -10490,7 +10490,7 @@
         },
         {
           "absatz": "2",
-          "text": "Der Gehalt an Biuret (C 2 H 5 N 3 O 2 ) in anorganischen Makronährstoff-Düngern darf 12 g/kg Trockenmasse nicht überschreiten."
+          "text": "Der Gehalt an Biuret (C₂H₅N₃O₂) in anorganischen Makronährstoff-Düngern darf 12 g/kg Trockenmasse nicht überschreiten."
         },
         {
           "absatz": "3",
@@ -10791,11 +10791,11 @@
             "zeilen": [
               [
                 "Polyzyklische aromatische Kohlenwasserstoffe (PAK)",
-                "4 Milligramm pro Kilogramm Trockensubstanz 1"
+                "4 Milligramm pro Kilogramm Trockensubstanz¹"
               ],
               [
                 "Dioxine (PCDD) und Furane (PCDF)",
-                "20 Nanogramme WHO 2005 -TEQ 2 pro Kilogramm Trockensubstanz"
+                "20 Nanogramme WHO₂₀₀₅-TEQ² pro Kilogramm Trockensubstanz"
               ],
               [
                 "1 Summe der folgenden 16 PAK-Leitverbindungen der EPA (Priority pollutants list): Naphthalin, Acenaphthylen, Acenaphthen, Fluoren, Phenanthren, Anthracen, Fluoranthen, Pyren, Benzo(a)anthracen, Chrysen, Benzo(b)fluoranthen, Benzo(k)-fluoranthen, Benzo(a)pyren, Indeno(1,2,3-c,d)pyren, Dibenzo(a,h)anthracen und Benzo(g,h,i)perylen. 2 Toxizitätsequivalente gemäss Empfehlung der Weltgesundheitsorganisation WHO nach einer Konsultation von Expertinnen und Experten im Jahr 2005. Referenz: Martin van den Berg et al. (2006) The 2005 World Health Organization Reevaluation of Human and Mammalian Toxic Equivalency Factors for Dioxins and Dioxin-Like Compounds. Toxicological science 93(2):223–241. https://doi.org/10.1093/toxsci/kfl055 ."
@@ -10943,11 +10943,11 @@
             "zeilen": [
               [
                 "Polyzyklische aromatische Kohlenwasserstoffe (PAK)",
-                "4 Milligramm pro Kilogramm Trockensubstanz 1"
+                "4 Milligramm pro Kilogramm Trockensubstanz¹"
               ],
               [
                 "Dioxine (PCDD) und Furane (PCDF)",
-                "20 Nanogramme WHO 2005 -TEQ 2 pro Kilogramm Trockensubstanz"
+                "20 Nanogramme WHO₂₀₀₅-TEQ² pro Kilogramm Trockensubstanz"
               ],
               [
                 "1 Summe der folgenden 16 PAK-Leitverbindungen der EPA (Priority pollutants list): Naphthalin, Acenaphthylen, Acenaphthen, Fluoren, Phenanthren, Anthracen, Fluoranthen, Pyren, Benzo(a)anthracen, Chrysen, Benzo(b)fluoranthen, Benzo(k)-fluoranthen, Benzo(a)pyren, Indeno(1,2,3-c,d)pyren, Dibenzo(a,h)anthracen und Benzo(g,h,i)perylen. 2 Toxizitätsequivalente gemäss Empfehlung der Weltgesundheitsorganisation WHO nach einer Konsultation von Expertinnen und Experten im Jahr 2005. Referenz: Martin van den Berg et al. (2006) The 2005 World Health Organization Reevaluation of Human and Mammalian Toxic Equivalency Factors for Dioxins and Dioxin-Like Compounds. Toxicological science 93(2):223–241; https://doi.org/10.1093/toxsci/kfl055 ."
@@ -11047,15 +11047,15 @@
             "zeilen": [
               [
                 "Polyzyklische aromatische Kohlenwasserstoffe (PAK)",
-                "25 Milligramm pro Kilogramm Phosphor (P) 1"
+                "25 Milligramm pro Kilogramm Phosphor (P)¹"
               ],
               [
                 "Polychlorierte Biphenyle (PCB)",
-                "0,5 Milligramm pro Kilogramm Phosphor (P) 2"
+                "0,5 Milligramm pro Kilogramm Phosphor (P)²"
               ],
               [
                 "Dioxine (PCDD) und Furane (PCDF)",
-                "120 Nanogramm WHO 2005 -TEQ pro Kilogramm Phosphor (P) 3"
+                "120 Nanogramm WHO₂₀₀₅-TEQ pro Kilogramm Phosphor (P)³"
               ],
               [
                 "1 Summe der folgenden 16 PAK-Leitverbindungen der EPA (Priority pollutants list): Naphthalin, Acenaphthylen, Acenaphthen, Fluoren, Phenanthren, Anthracen, Fluoranthen, Pyren, Benzo(a)anthracen, Chrysen, Benzo(b)fluoranthen, Benzo(k)-fluoranthen, Benzo(a)pyren, Indeno(1,2,3-c,d)pyren, Dibenzo(a,h)anthracen und Benzo(g,h,i)perylen 2 Summe der 7 Kongeneren gemäss IRMM (Institute for Reference Materials and Measurements), IUPAC-Nr. 28, 52, 101, 118, 138, 153 und 180 3 Toxizitätsequivalente gemäss Empfehlung der Weltgesundheitsorganisation WHO nach einer Konsultation von Expertinnen und Experten im Jahr 2005. Referenz: Martin van den Berg et al. (2006) The 2005 World Health Organization Reevaluation of Human and Mammalian Toxic Equivalency Factors for Dioxins and Dioxin-Like Compounds. Toxicological science 93(2):223–241; https://doi.org/10.1093/toxsci/kfl055 ."
@@ -11137,15 +11137,15 @@
             "zeilen": [
               [
                 "Polyzyklische aromatische Kohlenwasserstoffe (PAK)",
-                "4 Milligramm pro Kilogramm Trockensubstanz 1"
+                "4 Milligramm pro Kilogramm Trockensubstanz¹"
               ],
               [
                 "Polychlorierte Biphenyle (PCB)",
-                "0,2 Milligramm pro Kilogramm Trockensubstanz 2"
+                "0,2 Milligramm pro Kilogramm Trockensubstanz²"
               ],
               [
                 "Dioxine (PCDD) und Furane (PCDF)",
-                "20 Nanogramm WHO 2005 -TEQ pro Kilogramm Trockenmasse 3"
+                "20 Nanogramm WHO₂₀₀₅-TEQ pro Kilogramm Trockenmasse³"
               ],
               [
                 "1 Summe der folgenden 16 PAK-Leitverbindungen der EPA (Priority pollutants list): Naphthalin, Acenaphthylen, Acenaphthen, Fluoren, Phenanthren, Anthracen, Fluoranthen, Pyren, Benzo(a)anthracen, Chrysen, Benzo(b)fluoranthen, Benzo(k)-fluoranthen, Benzo(a)pyren, Indeno(1,2,3-c,d)pyren, Dibenzo(a,h)anthracen und Benzo(g,h,i)perylen. Bestimmung mittels zweistündiger Rückflussextraktion mit Toluol. 2 Summe der 7 Kongeneren gemäss IRMM (Institute for Reference Materials and Measurements), IUPAC-Nr. 28, 52, 101, 118, 138, 153 und 180. Bestimmung mittels sechsstündiger Soxhletextraktion mit Toluol oder beschleunigter Lösemittelextraktion 3 Toxizitätsequivalente gemäss Empfehlung der Weltgesundheitsorganisation WHO nach einer Konsultation von Expertinnen und Experten im Jahr 2005. Referenz: Martin van den Berg et al. (2006) The 2005 World Health Organization Reevaluation of Human and Mammalian Toxic Equivalency Factors for Dioxins and Dioxin-Like Compounds. Toxicological science 93(2):223–241; https://doi.org/10.1093/toxsci/kfl055 . Bestimmung mittels 20-stündiger Soxhletextraktion mit Toluol oder beschleunigter Lösemittelextraktion"
@@ -11218,7 +11218,7 @@
         },
         {
           "absatz": "1",
-          "text": "Auf einer Hektare dürfen innert drei Jahren bis zu 25 t Kompost und festes Gärgut (bezogen auf die Trockensubstanz) oder 200 m 3 flüssiges Gärgut zu Düngezwecken verwendet werden, wenn dadurch der Bedarf der Pflanzen an Stickstoff und Phosphor nicht überstiegen wird."
+          "text": "Auf einer Hektare dürfen innert drei Jahren bis zu 25 t Kompost und festes Gärgut (bezogen auf die Trockensubstanz) oder 200 m³ flüssiges Gärgut zu Düngezwecken verwendet werden, wenn dadurch der Bedarf der Pflanzen an Stickstoff und Phosphor nicht überstiegen wird."
         },
         {
           "absatz": "2",
@@ -11305,7 +11305,7 @@
         },
         {
           "absatz": "1",
-          "text": "Die kantonale Behörde kann in Abweichung vom Verbot nach Ziffer 3.3.1 Absatz 2 gestatten, dass flüssige Hof- und Recyclingdünger in der Zone S2 von Grundwasserschutzzonen pro Vegetationsperiode bis dreimal in angemessenen Abständen in einer Menge von höchstens 20 m 3 pro ha ausgebracht werden dürfen, wenn aufgrund der Bodenbeschaffenheit gewährleistet ist, dass keine pathogenen Mikroorganismen in die Grundwasserfassung oder -anreicherungsanlage gelangen."
+          "text": "Die kantonale Behörde kann in Abweichung vom Verbot nach Ziffer 3.3.1 Absatz 2 gestatten, dass flüssige Hof- und Recyclingdünger in der Zone S2 von Grundwasserschutzzonen pro Vegetationsperiode bis dreimal in angemessenen Abständen in einer Menge von höchstens 20 m³ pro ha ausgebracht werden dürfen, wenn aufgrund der Bodenbeschaffenheit gewährleistet ist, dass keine pathogenen Mikroorganismen in die Grundwasserfassung oder -anreicherungsanlage gelangen."
         },
         {
           "absatz": "2",
@@ -11359,7 +11359,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_6",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "5eac3a0751a6cec143311a05ac454ded351a13c83f342caa8aa275ae8f52e8c9"
+      "sha": "f3bad69e824001c0adcfda56894afbf45b1d27aa4388948a61eaf271931362f8"
     },
     {
       "id": "bund/CHEMRRV/annex_2_7",
@@ -12986,7 +12986,7 @@
             },
             {
               "marke": "c",
-              "text": "Menge der Kältemittel, in kg und in Tonnen CO 2 -Äquivalenten, sowie das Treibhauspotenzial der Kältemittel;"
+              "text": "Menge der Kältemittel, in kg und in Tonnen CO₂-Äquivalenten, sowie das Treibhauspotenzial der Kältemittel;"
             },
             {
               "marke": "d",
@@ -13130,7 +13130,7 @@
             },
             {
               "marke": "b",
-              "text": "Geräte und Anlagen, die in der Luft stabile Kältemittel enthalten und deren Füllmenge mehr als 5 Tonnen CO 2 -Äquivalenten entspricht;"
+              "text": "Geräte und Anlagen, die in der Luft stabile Kältemittel enthalten und deren Füllmenge mehr als 5 Tonnen CO₂-Äquivalenten entspricht;"
             },
             {
               "marke": "c",
@@ -13144,7 +13144,7 @@
         },
         {
           "absatz": "3",
-          "text": "Die Inhaberinnen von Anlagen, die in der Luft stabile Kältemittel enthalten und deren Füllmenge 500 Tonnen CO 2 -Äquivalenten oder mehr entspricht, müssen dafür sorgen, dass:",
+          "text": "Die Inhaberinnen von Anlagen, die in der Luft stabile Kältemittel enthalten und deren Füllmenge 500 Tonnen CO₂-Äquivalenten oder mehr entspricht, müssen dafür sorgen, dass:",
           "items": [
             {
               "marke": "a",
@@ -13335,14 +13335,14 @@
         },
         {
           "absatz": "5",
-          "text": "Anlagen, die in der Luft stabile Kältemittel enthalten, deren Füllmenge 500 Tonnen CO 2 -Äquivalenten oder mehr entspricht und die vor dem 1. Januar 2025 in Betrieb genommen worden sind, dürfen noch bis zum 31. Dezember 2026 ohne Leckage-Erkennungssystem betrieben werden."
+          "text": "Anlagen, die in der Luft stabile Kältemittel enthalten, deren Füllmenge 500 Tonnen CO₂-Äquivalenten oder mehr entspricht und die vor dem 1. Januar 2025 in Betrieb genommen worden sind, dürfen noch bis zum 31. Dezember 2026 ohne Leckage-Erkennungssystem betrieben werden."
         }
       ],
       "stand": "2026-07-16",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_10",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "632d839260361a16100fbd8f9a29342ebb95a3b1d2e4512f0a66520978804eac"
+      "sha": "96e6b0e18776bfa5872ff0511ed287e0bc09e48417f16c147b2586202308337f"
     },
     {
       "id": "bund/CHEMRRV/annex_2_11",
@@ -13393,7 +13393,7 @@
         },
         {
           "absatz": null,
-          "text": "Für Löschmittel, die PFOS oder PFOA, C 9 –C 14 -PFCA, PFHxS und deren Vorläuferverbindungen enthalten, gilt Anhang 1.16."
+          "text": "Für Löschmittel, die PFOS oder PFOA, C₉–C₁₄-PFCA, PFHxS und deren Vorläuferverbindungen enthalten, gilt Anhang 1.16."
         },
         {
           "absatz": null,
@@ -13721,7 +13721,7 @@
             },
             {
               "marke": "c",
-              "text": "Menge der Löschmittel, in kg und in Tonnen CO 2 -Äquivalente sowie das Treibhauspotenzial der Löschmittel."
+              "text": "Menge der Löschmittel, in kg und in Tonnen CO₂-Äquivalente sowie das Treibhauspotenzial der Löschmittel."
             }
           ]
         }
@@ -13730,7 +13730,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_11",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "717c676cb64db211d5b76b8e15b860b9e607819cd741636534ae4e91a48e2009"
+      "sha": "449348c2c927ff7e9c635bed750cd360adb9ac15e6e0d4df0ad03b1dd172e50e"
     },
     {
       "id": "bund/CHEMRRV/annex_2_12",
@@ -13921,7 +13921,7 @@
             },
             {
               "marke": "c",
-              "text": "die Menge der Stoffe, in kg und in Tonnen CO 2 -Äquivalente sowie das Treibhauspotenzial der Stoffe."
+              "text": "die Menge der Stoffe, in kg und in Tonnen CO₂-Äquivalente sowie das Treibhauspotenzial der Stoffe."
             }
           ]
         },
@@ -13961,7 +13961,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_12",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "58f563d0fa5db99162dc2de1c51d8627b06e62e4a33d62291293861db49bbfbf"
+      "sha": "85c0d50f6da7154e972755fb09c0743b3cde08feb167d0e2fe87033b4c8e5e48"
     },
     {
       "id": "bund/CHEMRRV/annex_2_13",
@@ -14972,7 +14972,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "nicht beschichtete bleihaltige Gegenstände, wenn die Freisetzungsrate von Blei aus dem Gegenstand oder aus seinen zugänglichen Teilen 0,05 μg/cm 2 pro Stunde (entspricht 0,05 μg/g/h) nachweislich nicht überschreitet;"
+              "text": "nicht beschichtete bleihaltige Gegenstände, wenn die Freisetzungsrate von Blei aus dem Gegenstand oder aus seinen zugänglichen Teilen 0,05 μg/cm² pro Stunde (entspricht 0,05 μg/g/h) nachweislich nicht überschreitet;"
             },
             {
               "marke": "b",
@@ -15070,7 +15070,7 @@
         },
         {
           "absatz": null,
-          "text": "Fahrzeuge sind Personenkraftwagen und leichte Nutzfahrzeuge nach der Richtlinie 2000/53/EG, die unter die Klassen M 1 oder N 1 von Anhang II Teil A Ziffer 1 der Richtlinie 2007/46/EG fallen."
+          "text": "Fahrzeuge sind Personenkraftwagen und leichte Nutzfahrzeuge nach der Richtlinie 2000/53/EG, die unter die Klassen M₁ oder N₁ von Anhang II Teil A Ziffer 1 der Richtlinie 2007/46/EG fallen."
         },
         {
           "absatz": null,
@@ -15176,7 +15176,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_16",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "c888ad4df11c901823aa3f54d5bf63a77ab5d2f9c1610b943a5541bc8315e52c"
+      "sha": "93bdfdfbba2fd26995b04a95efba1e73b03226e2eb8e3c5b857684523868097d"
     },
     {
       "id": "bund/CHEMRRV/annex_2_17",
@@ -15261,7 +15261,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "Grenzwert für Formaldehyd in Milligramm pro Kubikmeter (mg/m 3 )"
+                "titel": "Grenzwert für Formaldehyd in Milligramm pro Kubikmeter (mg/m³)"
               }
             ],
             "zeilen": [
@@ -15278,7 +15278,7 @@
         },
         {
           "absatz": "3",
-          "text": "Strassenfahrzeuge dürfen nicht in Verkehr gebracht werden, wenn sie Gegenstände enthalten, deren Freisetzung von Formaldehyd unter den in Anhang XVII Anlage 14 Nummer 2 der Verordnung (EG) Nr. 1907/2006 beschriebenen Prüfbedingungen zu einer Konzentration im Innern dieser Fahrzeuge führt, die den Wert von 0,062 mg/m 3 überschreitet."
+          "text": "Strassenfahrzeuge dürfen nicht in Verkehr gebracht werden, wenn sie Gegenstände enthalten, deren Freisetzung von Formaldehyd unter den in Anhang XVII Anlage 14 Nummer 2 der Verordnung (EG) Nr. 1907/2006 beschriebenen Prüfbedingungen zu einer Konzentration im Innern dieser Fahrzeuge führt, die den Wert von 0,062 mg/m³ überschreitet."
         },
         {
           "absatz": null,
@@ -15375,7 +15375,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_17",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "0625f0a70b52188b99b1e13b4c9a159daa27befec126c18b105e44f40a4986c0"
+      "sha": "3e357e2912562646dbfe7b8698ebc85853a473f91fdc06172662183b7d09dbbc"
     },
     {
       "id": "bund/CHEMRRV/annex_2_18",
@@ -15976,7 +15976,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "für die Reparatur oder Wartung bestehender elektrischer Anlagen, wenn durch die Reparatur oder Wartung keine Erweiterung der elektrischen Anlage oder der Menge der in der elektrischen Anlage enthaltenen CO 2 -Äquivalente erfolgt; und"
+              "text": "für die Reparatur oder Wartung bestehender elektrischer Anlagen, wenn durch die Reparatur oder Wartung keine Erweiterung der elektrischen Anlage oder der Menge der in der elektrischen Anlage enthaltenen CO₂-Äquivalente erfolgt; und"
             },
             {
               "marke": "b",
@@ -16043,7 +16043,7 @@
             },
             {
               "marke": "c",
-              "text": "die Menge der Isoliergase, in kg und in Tonnen CO 2 -Äquivalente sowie das Treibhauspotenzial der Isoliergase;"
+              "text": "die Menge der Isoliergase, in kg und in Tonnen CO₂-Äquivalente sowie das Treibhauspotenzial der Isoliergase;"
             },
             {
               "marke": "d",
@@ -16128,11 +16128,11 @@
         },
         {
           "absatz": "1",
-          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 5 Tonnen CO 2 -Äquivalent in der Luft stabiler Isoliergase oder mehr als 1 kg HFO- oder Fluorketon-Isoliergase enthalten, müssen deren Dichtigkeit regelmässig überprüfen lassen."
+          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 5 Tonnen CO₂-Äquivalent in der Luft stabiler Isoliergase oder mehr als 1 kg HFO- oder Fluorketon-Isoliergase enthalten, müssen deren Dichtigkeit regelmässig überprüfen lassen."
         },
         {
           "absatz": "2",
-          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 500 Tonnen CO 2 -Äquivalent in der Luft stabiler Isoliergase oder mehr als 100 kg HFO- oder Fluorketon-Isoliergase enthalten und nach dem 1. Januar 2017 in Betrieb genommen worden sind, müssen dafür sorgen, dass:",
+          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 500 Tonnen CO₂-Äquivalent in der Luft stabiler Isoliergase oder mehr als 100 kg HFO- oder Fluorketon-Isoliergase enthalten und nach dem 1. Januar 2017 in Betrieb genommen worden sind, müssen dafür sorgen, dass:",
           "items": [
             {
               "marke": "a",
@@ -16183,7 +16183,7 @@
         },
         {
           "absatz": "1",
-          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 5 Tonnen CO 2 -Äquivalent in der Luft stabile Isoliergase oder mehr als 1 kg HFO- oder Fluorketon-Isoliergase enthalten, müssen dafür sorgen, dass ein Wartungsheft geführt wird."
+          "text": "Die Inhaberinnen von Schaltanlagen und -geräten, die mehr als 5 Tonnen CO₂-Äquivalent in der Luft stabile Isoliergase oder mehr als 1 kg HFO- oder Fluorketon-Isoliergase enthalten, müssen dafür sorgen, dass ein Wartungsheft geführt wird."
         },
         {
           "absatz": "2",
@@ -16293,14 +16293,14 @@
         },
         {
           "absatz": "4",
-          "text": "Anlagen, die mehr als 500 Tonnen CO 2 -Äquivalent in der Luft stabiler Isoliergase oder mehr als 100 kg HFO- oder Fluorketon-Isoliergase enthalten und die vor dem 1. Januar 2026 in Betrieb genommen worden sind, dürfen noch bis zum 31. Dezember 2027 ohne Leckage-Erkennungssystem betrieben werden."
+          "text": "Anlagen, die mehr als 500 Tonnen CO₂-Äquivalent in der Luft stabiler Isoliergase oder mehr als 100 kg HFO- oder Fluorketon-Isoliergase enthalten und die vor dem 1. Januar 2026 in Betrieb genommen worden sind, dürfen noch bis zum 31. Dezember 2027 ohne Leckage-Erkennungssystem betrieben werden."
         }
       ],
       "stand": "2026-07-16",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2005/478/de#annex_2_19",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260716",
-      "sha": "039ad098eb27dcb266d5227ba5033cc8c3ca0559d4d6c271a6dc00c86ebf11c7"
+      "sha": "e3c4be236e0204cfa07dfeedd3dadc3dad6d7bdee9a0d38ad82f8e1f08d89b2b"
     }
   ]
 }
