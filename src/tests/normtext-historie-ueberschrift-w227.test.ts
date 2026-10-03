@@ -183,15 +183,16 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
   });
 
   it('Randtitel zählt nicht — Ausnahme: nennt eine Körper-Fussnote desselben Artikels dieselbe AS-Fundstelle («Randtitel und Abs. …»), bleibt das Datum eigen', () => {
-    const f13d: ErbArtikel[] = [
-      { token: '981', gliederung: [TITEL], marginalie: ['C. Kraftloserklärung'], fussnoten: [sek(FASSUNG_2007, 'C. Kraftloserklärung'), { ...fn('Aufgehoben durch Ziff. I 1 des BG vom 13. Dez. 2002, in Kraft seit 1. Jan. 2007 (AS 2006 3459; BBl 1999 1979).', { absatz: '2' }), nr: '2' }] },
+    const koerperFn = (text: string): FnEingang => ({ ...fn(text, { absatz: '2' }), nr: '2' });
+    const artikel981 = (koerper: FnEingang): ErbArtikel[] => [
+      { token: '981', gliederung: [TITEL], marginalie: ['C. Kraftloserklärung'], fussnoten: [sek(FASSUNG_2007, 'C. Kraftloserklärung'), koerper] },
     ];
-    const h = historieVon(f13d, '981')!;
+    const h = historieVon(artikel981(koerperFn('Aufgehoben durch Ziff. I 1 des BG vom 13. Dez. 2002, in Kraft seit 1. Jan. 2007 (AS 2006 3459; BBl 1999 1979).')), '981')!;
     expect(h.giltSeit).toBe('2007-01-01');
     expect(h.ereignisse.find((e) => e.typ === 'fassung')!.ueberschrift).toBeUndefined();
     // andere AS-Fundstelle im Körper ⇒ reine Randtitel-Änderung ⇒ nur Chronik
-    f13d[0].fussnoten![1] = { ...f13d[0].fussnoten![1], text: 'Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).' };
-    expect(historieVon(f13d, '981')!.giltSeit).toBeNull();
+    const andere = artikel981(koerperFn('Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).'));
+    expect(historieVon(andere, '981')!.giltSeit).toBeNull();
   });
 
   it('B4: Fussnote an der eigenen Sachüberschrift OHNE Gliederungszeichen (Label nicht im Pfad) zählt in «giltSeit», ohne Überschrift-Herkunft', () => {

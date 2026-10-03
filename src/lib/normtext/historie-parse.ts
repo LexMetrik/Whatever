@@ -685,7 +685,7 @@ const GLIEDERUNGSZEICHEN = new RegExp(
  * Eigenes Prädikat statt `darstellung.ts`: dessen Aufzähler-Erkennung (ENUM) kennt «Asexies.» nicht und bleibt (Anzeige, §3).
  * Quelle/Messung: bibliothek/normtext/randtitel-fussnote-gilt-seit-2026-10-03.md.
  */
-export function randtitelMitAufzaehler(label: string): boolean {
+function randtitelMitAufzaehler(label: string): boolean {
   return GLIEDERUNGSZEICHEN.test(label.trim());
 }
 
