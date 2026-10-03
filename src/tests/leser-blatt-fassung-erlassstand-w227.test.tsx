@@ -252,10 +252,14 @@ describe('Render-Test am echten Korpus (Test 2)', () => {
     if (!r) return; // kein OR-Residuum im Korpus — dann deckt der Korpus-Test unten das Gate ab
     expect(erlassStandFuerArtikel(eingangFuer('OR', r.token))).toBeUndefined();
   });
-  it('ZGB (gestaffelt in Kraft: Register `inkraftGestaffelt: true`) Art. 1 ohne Ereignis ⇒ keine Zeile, obwohl Datum da', () => {
+  it('ZGB (gestaffelt in Kraft: Register `inkraftGestaffelt: true`): ein Artikel ohne Ereignis ⇒ keine Zeile — allein das Feld sperrt (Gegenprobe mit false ⇒ Zeile)', () => {
     expect(reg('ZGB').inkraftGestaffelt).toBe(true);
     expect(reg('ZGB').inkraftSeit).toBeDefined();
-    expect(erlassStandFuerArtikel(eingangFuer('ZGB', '1'))).toBeUndefined();
+    const s = shardVon('ZGB');
+    const frei = snap('ZGB').find((x) => !x.artikel.match(/^(annex|disp)_/) && !(s?.artikel[x.artikel]?.ereignisse.length) && !s?.residuum.some((r) => r.token === x.artikel))!;
+    expect(frei, 'ZGB hat einen ereignisfreien Artikel').toBeDefined();
+    expect(erlassStandFuerArtikel(eingangFuer('ZGB', frei.artikel))).toBeUndefined();
+    expect(erlassStandFuerArtikel({ ...eingangFuer('ZGB', frei.artikel), inkraftGestaffelt: false })).toBe(reg('ZGB').inkraftSeit);
   });
   it('ein Erlass ohne Feld `inkraftGestaffelt` ⇒ keine Zeile (fail-closed): dieselben Eingänge wie OR Art. 1, nur ohne Feld', () => {
     expect(erlassStandFuerArtikel(eingangFuer('OR', '1'))).toBe('1912-01-01');
