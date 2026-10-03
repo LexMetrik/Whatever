@@ -219,14 +219,24 @@
         },
         {
           "absatz": "6",
-          "text": "Das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (UVEK) ist zuständig für:"
+          "text": "Das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (UVEK) ist zuständig für:",
+          "items": [
+            {
+              "marke": "",
+              "text": "die Änderung der Konzession, mit Ausnahme der Ausdehnung;"
+            },
+            {
+              "marke": "",
+              "text": "die Erneuerung der Konzession."
+            }
+          ]
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1958/335_341_347/de#art_6",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260101",
-      "sha": "0f93e44e00aeb35b965eda94477cd06d1598319d1c174c6287202a21e15c48e6"
+      "sha": "0988339a29d2f9321f85ceb7b35b0ea3b04e400a09ce9116ac6c4032d759bdd7"
     },
     {
       "id": "bund/EBG/art_7",

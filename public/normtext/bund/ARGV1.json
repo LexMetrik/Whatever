@@ -1128,6 +1128,16 @@
               "text": "höchstens eingesetzt werden:"
             },
             {
+              "marke": "",
+              "text": "1. in fünf von sieben aufeinander folgenden Nächten; oder",
+              "tiefe": 1
+            },
+            {
+              "marke": "",
+              "text": "2. in sechs von neun aufeinander folgenden Nächten; und",
+              "tiefe": 1
+            },
+            {
               "marke": "b",
               "text": "an ihren freien Tagen keine Überzeitarbeit nach Artikel 25 leisten."
             }
@@ -1142,7 +1152,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2000/243/de#art_30",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20240901",
-      "sha": "3c881353abf99ccdc5b3cdffeb34bfe63c0c143a7f7cc5c2f69a40f061197c61"
+      "sha": "62a9b0cf50358eaeb41027049d6bd64f689e92e593510d4691c270a685ee6366"
     },
     {
       "id": "bund/ARGV1/art_31",
