@@ -65,6 +65,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+  },
+  {
+   "typ": "fassung",
    "datum": "2008-03-15",
    "wirkung": false,
    "quellen": [
@@ -76,6 +90,20 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Bewilligungs- und Meldepflichten"
   },
   {
    "typ": "eingefuegt",
@@ -1016,14 +1044,16 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "60": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "61": {
@@ -1044,7 +1074,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "62": {
@@ -1065,7 +1096,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "63": {
@@ -1086,7 +1118,9 @@
     }
    ],
    "erbt": [
-    5
+    4,
+    6,
+    7
    ]
   },
   "64": {
@@ -1120,7 +1154,9 @@
     }
    ],
    "erbt": [
-    5
+    4,
+    6,
+    7
    ]
   },
   "65": {
@@ -1141,7 +1177,9 @@
     }
    ],
    "erbt": [
-    5
+    4,
+    6,
+    7
    ]
   },
   "66": {
@@ -1174,6 +1212,9 @@
      "item": null,
      "ueberschrift": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "67": {
@@ -1194,7 +1235,8 @@
     }
    ],
    "erbt": [
-    7
+    4,
+    9
    ]
   },
   "68": {
@@ -1215,7 +1257,8 @@
     }
    ],
    "erbt": [
-    7
+    4,
+    9
    ]
   },
   "69": {
@@ -1236,7 +1279,8 @@
     }
    ],
    "erbt": [
-    7
+    4,
+    9
    ]
   },
   "70": {
@@ -1257,7 +1301,8 @@
     }
    ],
    "erbt": [
-    7
+    4,
+    9
    ]
   },
   "71": {
@@ -1276,6 +1321,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "72": {
@@ -1294,6 +1342,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "73": {
@@ -1312,6 +1363,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "23_a": {
@@ -2166,7 +2220,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "59_a": {
@@ -2187,7 +2242,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "62_a": {
@@ -2296,20 +2352,28 @@
      "item": null,
      "ueberschrift": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
     }
+   ],
+   "erbt": [
+    4,
+    6
    ]
   },
   "65_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    4,
+    6,
+    8
    ]
   },
   "65_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    6
+    4,
+    6,
+    8
    ]
   },
   "66_a_66_b": {

@@ -121,6 +121,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 3435",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/461"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Experte für berufliche Vorsorge"
+  },
+  {
+   "typ": "fassung",
    "datum": "1996-07-01",
    "wirkung": false,
    "quellen": [
@@ -1290,6 +1304,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "41": {
@@ -1308,6 +1325,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "43": {
@@ -1511,7 +1531,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "49": {
@@ -2102,7 +2122,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    16
    ]
   },
   "62": {
@@ -3066,6 +3086,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "44_a": {
@@ -3215,7 +3238,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "48_b": {
@@ -3268,7 +3291,7 @@
     }
    ],
    "erbt": [
-    9
+    10
    ]
   },
   "48_d": {
@@ -3308,7 +3331,7 @@
     }
    ],
    "erbt": [
-    9
+    10
    ]
   },
   "48_f": {
@@ -3426,48 +3449,48 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "48_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "48_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "48_j": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "48_k": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "48_l": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10,
-    11
+    11,
+    12
    ]
   },
   "49_a": {
@@ -3720,24 +3743,24 @@
     }
    ],
    "erbt": [
-    12,
-    13
+    13,
+    14
    ]
   },
   "60_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12,
-    13
+    13,
+    14
    ]
   },
   "60_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12,
-    13
+    13,
+    14
    ]
   },
   "60_e": {
@@ -3804,7 +3827,7 @@
     }
    ],
    "erbt": [
-    14
+    15
    ]
   },
   "60_f": {
@@ -3920,7 +3943,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    17
    ]
   },
   "62_d": {
