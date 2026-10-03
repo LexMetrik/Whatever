@@ -23,6 +23,7 @@ export interface ArtikelText {
     titel?: number;
     /** Ziffer-Ebene (P6): Ziffer-Marke, zu der dieser Block gehört; nicht im sha. */
     ziffer?: string;
+    /** `marke: ''` = marke-lose Zeile am Listenanfang (Haupttext, W2·27-BUND-FERTIG 3.10.2026), s. src/lib/normtext/typen.ts. */
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
     /** Anhang-Zwischennotiz (P4, W2·27-BUND-FERTIG): Ebene (`tiefe`, 0 = Wurzelliste) der marke-losen Zeile,
      *  die diesen Block ausmacht — `text` ist die Zeile, `items` ihre Unterliste. Render-Hinweis wie `titel`/

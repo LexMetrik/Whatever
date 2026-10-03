@@ -111,6 +111,8 @@ export function markenZitat(marke: string, trenner?: string): string {
  *  Aufzählungsmarke mit «.», Label-Marke mit «:»; trägt das Label schon ein
  *  Satzzeichen, wird keines verdoppelt. */
 export function markenAnzeige(marke: string, trenner?: string): string {
+  // Marke-lose Haupttext-Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): nichts anzeigen — KEIN erfundenes «.».
+  if (marke === '') return '';
   const art = markenArt(marke, trenner);
   if (art === 'strich') return '–';
   if (trenner !== undefined) return `${marke.trimEnd()}${trenner}`;
@@ -134,7 +136,9 @@ export function markenAnzeige(marke: string, trenner?: string): string {
 export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): number[] {
   const hatTiefe = items.some((it) => typeof it.tiefe === 'number');
   if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
-  const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  // `leer` = marke-lose Zeile (W2·27-BUND-FERTIG 3.10.2026): trägt keine Ebene aus ihrer Marke — sie steht auf Stufe 0
+  // und verändert weder `sahLit` noch die Strich-Kette noch die `erste`-Erkennung (sonst kippte «'' 1. 2.» auf Stufe 1).
+  const typ = (m: string) => m === '' ? 'leer' : /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
   const arten = items.map((it) => typ(it.marke));
   // W2·17 E-D2-B01: kantonale Listen «1. a. b. c. 2. 3.» stellen die lit. UNTER
   // die Ziff. Erkennbar daran, dass die erste Nicht-Strich-Marke eine Ziffer ist
@@ -142,7 +146,7 @@ export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): num
   // Ziff. die äussere Stufe; die Bund-Reihenfolge «a. 1. 2. b.» (lit. zuerst)
   // bleibt unverändert. Ohne diese Umkehr stand Ziff. 2 ff. als Kind der letzten
   // lit. — und der Zitierknopf lieferte «Art. 1 Abs. 1 lit. c Ziff. 2».
-  const erste = arten.find((a) => a !== 'strich');
+  const erste = arten.find((a) => a !== 'strich' && a !== 'leer');
   // «Echte» lit. = Kleinbuchstaben-Marke («a», «abis», «a)»); Phrasen-, Symbol-
   // und Leer-Marken («[tab]», «½‰», «Somme du gage:») lösen die Umkehr nicht aus.
   const echteLit = (i: number) => arten[i] === 'lit' && /^\p{Ll}+[).]?$/u.test(items[i].marke.trim());
@@ -151,7 +155,8 @@ export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): num
   let sahLit = false, letzteNichtStrich = 0;
   for (const t of arten) {
     let lv: number;
-    if (t === 'strich') lv = letzteNichtStrich + 1;
+    if (t === 'leer') lv = 0;
+    else if (t === 'strich') lv = letzteNichtStrich + 1;
     else if (ziffAussen) { lv = t === 'ziff' ? 0 : 1; letzteNichtStrich = lv; }
     else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
     else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
@@ -199,7 +204,8 @@ export function itemZitatSegmente(
   const seg: string[] = [];
   let lvl = kStufen[kette.length - 1];
   for (let k = kette.length - 1; k >= 0 && lvl >= 0; k--) {
-    if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
+    // Marke-lose Zeile (`marke: ''`) trägt kein Zitat-Segment und ist nie Eltern-Glied einer Kette.
+    if (kStufen[k] === lvl && kette[k].marke !== '' && !/^[–—-]$/.test(kette[k].marke.trim())) {
       // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE» ist in der
       // VZV kein Zitat, die Kategorie heisst schlicht «BE».
       seg.unshift(markenZitat(kette[k].marke, kette[k].trenner));

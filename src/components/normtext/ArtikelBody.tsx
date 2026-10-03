@@ -360,6 +360,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             && zielItemKey.ji === j;
           // Gedankenstrich: ohne Punkt («–» statt «–.»).
           const istStrich = /^[–—-]$/.test(it.marke.trim());
+          // Marke-lose Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): die Quelle führt keine <dt>-Marke
+          // (ARGV1 art_30 «1.  in fünf …», VBB-Legende). Kein Zitierknopf, keine erfundene Marke; in der Lesesicht
+          // hält eine leere Markenspalte den Text auf der Textspalte der Geschwister-Punkte.
+          const ohneMarke = it.marke === '';
           // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
           // erscheinen nicht mehr zusätzlich am Item-Ende.
           // INVARIANTE (wie im Absatz-Pfad, Gegenprüfung 26.7., B2/B5): der
@@ -411,7 +415,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // BEIDEN Hüllen (der Befund ist in beiden derselbe, er ist heute
               // live). Golden ist unberührt (Engines/Vorlagen), der
               // Pixelvergleich PX misst den RUHEZUSTAND und sieht keinen Hover.
-              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition-colors lc-hover-flaeche' : ''} ${
+              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk && !ohneMarke ? 'transition-colors lc-hover-flaeche' : ''} ${
                 istItemZitiert
                   ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
                   : 'text-ink-700'
@@ -432,7 +436,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   Marken bleiben an derselben Kante ausgerichtet wie bisher, und nur
                   die lange Marke schiebt IHREN eigenen Text um ihren Überschuss
                   nach rechts. Hängend, aber nie überlappend. */}
-              {istStrich
+              {ohneMarke
+                ? (zk ? <span aria-hidden="true" className="shrink-0 min-w-6" /> : null)
+                : istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
                 : zk && !ohneZitierMarke
                   ? <ZitierMarke klasse="shrink-0 min-w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
