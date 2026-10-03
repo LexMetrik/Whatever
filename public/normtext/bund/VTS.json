@@ -592,14 +592,14 @@
         },
         {
           "absatz": "2",
-          "text": "«Fahrzeuge mit emissionsfreiem Antrieb» sind Fahrzeuge ohne Verbrennungsmotor oder mit einem Verbrennungsmotor, dessen Emissionen weniger als 1 g CO 2 /kWh oder weniger als 1 g CO 2 /km betragen, insbesondere Fahrzeuge, die ausschliesslich mit Elektrizität oder Wasserstoff angetrieben werden. Die Ermittlung der CO 2 -Emissionen richtet sich dabei nach der Verordnung (EG) Nr. 595/2009 oder nach der Verordnung (EG) Nr. 715/2007."
+          "text": "«Fahrzeuge mit emissionsfreiem Antrieb» sind Fahrzeuge ohne Verbrennungsmotor oder mit einem Verbrennungsmotor, dessen Emissionen weniger als 1 g CO₂/kWh oder weniger als 1 g CO₂/km betragen, insbesondere Fahrzeuge, die ausschliesslich mit Elektrizität oder Wasserstoff angetrieben werden. Die Ermittlung der CO₂-Emissionen richtet sich dabei nach der Verordnung (EG) Nr. 595/2009 oder nach der Verordnung (EG) Nr. 715/2007."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_9_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "aeea78e85d4a4d4a1116107b9f801be8c0279c31c85fbc3616cfea6aca8b67c7"
+      "sha": "9db84eaa46a79f97d1936f528782adf623aa4e83a609a9ad9135e1b5b4eaf5fb"
     },
     {
       "id": "bund/VTS/art_10",
@@ -656,27 +656,27 @@
           "items": [
             {
               "marke": "a",
-              "text": "«Personenwagen» sind leichte Motorwagen zum Personentransport mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M 1 bis 3,50 t);"
+              "text": "«Personenwagen» sind leichte Motorwagen zum Personentransport mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M₁ bis 3,50 t);"
             },
             {
               "marke": "b",
-              "text": "«Schwere Personenwagen» sind schwere Motorwagen zum Personentransport mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M 1 über 3,50 t);"
+              "text": "«Schwere Personenwagen» sind schwere Motorwagen zum Personentransport mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M₁ über 3,50 t);"
             },
             {
               "marke": "c",
-              "text": "«Kleinbusse» sind leichte Motorwagen zum Personentransport mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M 2 bis 3,50 t);"
+              "text": "«Kleinbusse» sind leichte Motorwagen zum Personentransport mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M₂ bis 3,50 t);"
             },
             {
               "marke": "d",
-              "text": "«Gesellschaftswagen» sind schwere Motorwagen zum Personentransport mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M 2 über 3,50 t oder M 3 );"
+              "text": "«Gesellschaftswagen» sind schwere Motorwagen zum Personentransport mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin (Klasse M₂ über 3,50 t oder M₃);"
             },
             {
               "marke": "e",
-              "text": "«Lieferwagen» sind leichte Motorwagen zum Sachentransport (Klasse N 1 ), einschliesslich solcher mit zusätzlichen wegklappbaren Sitzen im Laderaum zum gelegentlichen und nicht berufsmässigen Personentransport, wenn insgesamt höchstens 9 Sitzplätze einschliesslich Führer oder Führerin vorhanden sind;"
+              "text": "«Lieferwagen» sind leichte Motorwagen zum Sachentransport (Klasse N₁), einschliesslich solcher mit zusätzlichen wegklappbaren Sitzen im Laderaum zum gelegentlichen und nicht berufsmässigen Personentransport, wenn insgesamt höchstens 9 Sitzplätze einschliesslich Führer oder Führerin vorhanden sind;"
             },
             {
               "marke": "f",
-              "text": "«Lastwagen» sind schwere Motorwagen zum Sachentransport (Klassen N 2 oder N 3 ) mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin;"
+              "text": "«Lastwagen» sind schwere Motorwagen zum Sachentransport (Klassen N₂ oder N₃) mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin;"
             },
             {
               "marke": "g",
@@ -692,7 +692,7 @@
             },
             {
               "marke": "k",
-              "text": "«Gelenkbusse» sind Gesellschaftswagen, die mit gelenkigen, fest verbundenen Nachlaufteilen einen durchgehenden Fahrgastraum aufweisen (Klassen M 2 über 3,50 t oder M 3 );"
+              "text": "«Gelenkbusse» sind Gesellschaftswagen, die mit gelenkigen, fest verbundenen Nachlaufteilen einen durchgehenden Fahrgastraum aufweisen (Klassen M₂ über 3,50 t oder M₃);"
             },
             {
               "marke": "l",
@@ -713,7 +713,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_11",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "c3f6719cfb4fa3ffb1523b6664ffa830b29872a8a097737b106564aa41488ba5"
+      "sha": "7b9ec3e957f0b7f393dd91c9aec1f34694ad3200c9786a7def679f3abbcb7de5"
     },
     {
       "id": "bund/VTS/art_12",
@@ -729,27 +729,27 @@
           "items": [
             {
               "marke": "a",
-              "text": "Klasse M 1 : Fahrzeuge mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin;"
+              "text": "Klasse M₁: Fahrzeuge mit höchstens neun Sitzplätzen einschliesslich Führer oder Führerin;"
             },
             {
               "marke": "b",
-              "text": "Klasse M 2 : Fahrzeuge mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin und mit einem Garantiegewicht von höchstens 5,00 t;"
+              "text": "Klasse M₂: Fahrzeuge mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin und mit einem Garantiegewicht von höchstens 5,00 t;"
             },
             {
               "marke": "c",
-              "text": "Klasse M 3 : Fahrzeuge mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin und mit einem Garantiegewicht von über 5,00 t;"
+              "text": "Klasse M₃: Fahrzeuge mit mehr als neun Sitzplätzen einschliesslich Führer oder Führerin und mit einem Garantiegewicht von über 5,00 t;"
             },
             {
               "marke": "d",
-              "text": "Klasse N 1 : Fahrzeuge mit einem Garantiegewicht von höchstens 3,50 t;"
+              "text": "Klasse N₁: Fahrzeuge mit einem Garantiegewicht von höchstens 3,50 t;"
             },
             {
               "marke": "e",
-              "text": "Klasse N 2 : Fahrzeuge mit einem Garantiegewicht von über 3,50 t bis höchstens 12,00 t;"
+              "text": "Klasse N₂: Fahrzeuge mit einem Garantiegewicht von über 3,50 t bis höchstens 12,00 t;"
             },
             {
               "marke": "f",
-              "text": "Klasse N 3 : Fahrzeuge mit einem Garantiegewicht von über 12,00 t."
+              "text": "Klasse N₃: Fahrzeuge mit einem Garantiegewicht von über 12,00 t."
             }
           ]
         },
@@ -821,7 +821,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_12",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "66f5dfabe5a389758c76501d7a72724340f5ac58975c87976a7ab6d09683454f"
+      "sha": "3036ca4bf3dcf0eb0bbfa21b5a71759abe76bd04e58d1b36dbbaa08ca708d8b5"
     },
     {
       "id": "bund/VTS/art_13",
@@ -934,12 +934,12 @@
             },
             {
               "marke": "1",
-              "text": "zweirädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h und einer Motorleistung von höchstens 4,00 kW sowie einem Hubraum von höchstens 50 cm 3 bei Fremdzündungsmotoren,",
+              "text": "zweirädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h und einer Motorleistung von höchstens 4,00 kW sowie einem Hubraum von höchstens 50 cm³ bei Fremdzündungsmotoren,",
               "tiefe": 1
             },
             {
               "marke": "2",
-              "text": "dreirädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einer Motorleistung von höchstens 4,00 kW, einem Hubraum von höchstens 50 cm 3 bei Fremdzündungsmotoren oder von höchstens 500 cm 3 bei Selbstzündungsmotoren sowie einem Gewicht nach Artikel 136 Absatz 1 von höchstens 0,27 t,",
+              "text": "dreirädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einer Motorleistung von höchstens 4,00 kW, einem Hubraum von höchstens 50 cm³ bei Fremdzündungsmotoren oder von höchstens 500 cm³ bei Selbstzündungsmotoren sowie einem Gewicht nach Artikel 136 Absatz 1 von höchstens 0,27 t,",
               "tiefe": 1
             },
             {
@@ -958,7 +958,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_14",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "77422eb4254adc046808cd8a257f9fbccf847dd4e42fd3f714ba1c565254a647"
+      "sha": "36f033c38049f7ab042e7700919aab402f0e2cf7ffe20bfcbbc49e0ee17e75c4"
     },
     {
       "id": "bund/VTS/art_15",
@@ -974,7 +974,7 @@
         },
         {
           "absatz": "2",
-          "text": "«Leichtmotorfahrzeuge» sind vierrädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einer Motorleistung von höchstens 4,00 kW bei offenem Aufbau oder von höchstens 6,00 kW bei geschlossenem Aufbau, einem Hubraum von höchstens 50 cm 3 bei Fremdzündungsmotoren oder von höchstens 500 cm 3 bei Selbstzündungsmotoren sowie einem Gewicht nach Artikel 136 Absatz 1 von höchstens 0,425 t."
+          "text": "«Leichtmotorfahrzeuge» sind vierrädrige Motorfahrzeuge mit einer bauartbedingten Höchstgeschwindigkeit von höchstens 45 km/h, einer Motorleistung von höchstens 4,00 kW bei offenem Aufbau oder von höchstens 6,00 kW bei geschlossenem Aufbau, einem Hubraum von höchstens 50 cm³ bei Fremdzündungsmotoren oder von höchstens 500 cm³ bei Selbstzündungsmotoren sowie einem Gewicht nach Artikel 136 Absatz 1 von höchstens 0,425 t."
         },
         {
           "absatz": "3",
@@ -989,7 +989,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_15",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "157931454664e84b9ce91cac197284b44412cb1a3db5aeead0f2f5046478fd84"
+      "sha": "263dba5f332ec5741a63f06deab8f671bd5e08a82589cc26f9863c89f28ff30a"
     },
     {
       "id": "bund/VTS/art_16",
@@ -1051,7 +1051,7 @@
             },
             {
               "marke": "1",
-              "text": "einem Verbrennungsmotor mit einem Hubraum von höchstens 50 cm 3 , oder",
+              "text": "einem Verbrennungsmotor mit einem Hubraum von höchstens 50 cm³, oder",
               "tiefe": 1
             },
             {
@@ -1092,7 +1092,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_18",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "bf4f444d869ca3c940d178fc99ac43b2d11665a114a55f6253f33b0cd956ab4b"
+      "sha": "5c2dbf8d84eacb28056db3b02ab686c36eb587d879110dd3441056eba742c693"
     },
     {
       "id": "bund/VTS/art_19",
@@ -1210,19 +1210,19 @@
           "items": [
             {
               "marke": "a",
-              "text": "Klasse O 1 : Anhänger mit einem Garantiegewicht von höchstens 0,75 t;"
+              "text": "Klasse O₁: Anhänger mit einem Garantiegewicht von höchstens 0,75 t;"
             },
             {
               "marke": "b",
-              "text": "Klasse O 2 : Anhänger mit einem Garantiegewicht von über 0,75 t bis höchstens 3,50 t;"
+              "text": "Klasse O₂: Anhänger mit einem Garantiegewicht von über 0,75 t bis höchstens 3,50 t;"
             },
             {
               "marke": "c",
-              "text": "Klasse O 3 : Anhänger mit einem Garantiegewicht von über 3,50 t bis höchstens 10,00 t;"
+              "text": "Klasse O₃: Anhänger mit einem Garantiegewicht von über 3,50 t bis höchstens 10,00 t;"
             },
             {
               "marke": "d",
-              "text": "Klasse O 4 : Anhänger mit einem Garantiegewicht von über 10,00 t."
+              "text": "Klasse O₄: Anhänger mit einem Garantiegewicht von über 10,00 t."
             }
           ]
         },
@@ -1285,7 +1285,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_21",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "9424c06f44c23e7d36fdeba5efa11762b67cf3f0be975fe818157f2ec790e26d"
+      "sha": "32e591e0e31a36ddddb6ec2533f6d4b37914c62bf5f4df173905177b031be4a7"
     },
     {
       "id": "bund/VTS/art_22",
@@ -2245,7 +2245,7 @@
             },
             {
               "marke": "f",
-              "text": "nicht für den Fahrzeugtyp genehmigte Räder, ausser Räder an Fahrzeugen der Klassen M 1 und N 1 , bei denen nur die Einpresstiefe um höchstens 5 mm von einer vom Fahrzeughersteller oder von der -herstellerin vorgesehenen Variante abweicht;"
+              "text": "nicht für den Fahrzeugtyp genehmigte Räder, ausser Räder an Fahrzeugen der Klassen M₁ und N₁, bei denen nur die Einpresstiefe um höchstens 5 mm von einer vom Fahrzeughersteller oder von der -herstellerin vorgesehenen Variante abweicht;"
             },
             {
               "marke": "g",
@@ -2298,7 +2298,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_34",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "236683e16a2d585f38229c2d032eeacc137656cb079fc9f863e2860317cfd7dd"
+      "sha": "f6a0c575f56c220ef72f77706cc322a111d74308a89328c25875352bf18ccb63"
     },
     {
       "id": "bund/VTS/art_34_a",
@@ -2384,7 +2384,7 @@
             },
             {
               "marke": "c",
-              "text": "eine Messung des Gehalts an Kohlenmonoxid (CO), Kohlenwasserstoffen (HC) und Kohlendioxid (CO 2 ) im Abgas bei Leerlaufdrehzahl, bei Fahrzeugen mit einem geregelten Dreiweg-Katalysator zusätzlich eine Messung des Gehaltes an CO und HC im Abgas bei erhöhter Drehzahl, jeweils ermittelt bei unbelastetem Motor nach den Sollwerten und Messbedingungen des Herstellers oder der Herstellerin mit einem für amtliche Kontrollen zugelassenen Messgerät."
+              "text": "eine Messung des Gehalts an Kohlenmonoxid (CO), Kohlenwasserstoffen (HC) und Kohlendioxid (CO₂) im Abgas bei Leerlaufdrehzahl, bei Fahrzeugen mit einem geregelten Dreiweg-Katalysator zusätzlich eine Messung des Gehaltes an CO und HC im Abgas bei erhöhter Drehzahl, jeweils ermittelt bei unbelastetem Motor nach den Sollwerten und Messbedingungen des Herstellers oder der Herstellerin mit einem für amtliche Kontrollen zugelassenen Messgerät."
             }
           ]
         },
@@ -2423,7 +2423,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_35",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "1cb94858cc2427b71a8e651a338da6c45d82b5e7da2659f04b5923dcb5f57c87"
+      "sha": "8d52b2a51ea690984f21e52dee853b922b9aa5a778cd038c7b8e9451a2ef329a"
     },
     {
       "id": "bund/VTS/art_36",
@@ -2562,7 +2562,7 @@
             },
             {
               "marke": "h",
-              "text": "Frontschutzsysteme an Fahrzeugen der Klassen M 1 und N 1 , sofern sie der Verordnung (EU) 2019/2144 entsprechen;"
+              "text": "Frontschutzsysteme an Fahrzeugen der Klassen M₁ und N₁, sofern sie der Verordnung (EU) 2019/2144 entsprechen;"
             },
             {
               "marke": "i",
@@ -2602,7 +2602,7 @@
             },
             {
               "marke": "s",
-              "text": "einklappbare oder einziehbare Einrichtungen zur Verringerung des Luftwiderstands an schweren Motorwagen, Kleinbussen und Anhängern der Klassen O 3 und O 4 , sofern diese Einrichtungen der Verordnung (EU) 2019/2144 entsprechen;"
+              "text": "einklappbare oder einziehbare Einrichtungen zur Verringerung des Luftwiderstands an schweren Motorwagen, Kleinbussen und Anhängern der Klassen O₃ und O₄, sofern diese Einrichtungen der Verordnung (EU) 2019/2144 entsprechen;"
             },
             {
               "marke": "t",
@@ -2651,7 +2651,7 @@
             },
             {
               "marke": "f",
-              "text": "Hebebühnen, Beladerampen und vergleichbare Einrichtungen an Fahrzeugen der Klassen M 2 , M 3 , N 2 , N 3 und O, sofern sie in nicht entfaltetem Zustand höchstens 10 mm pro Seite überstehen;"
+              "text": "Hebebühnen, Beladerampen und vergleichbare Einrichtungen an Fahrzeugen der Klassen M₂, M₃, N₂, N₃ und O, sofern sie in nicht entfaltetem Zustand höchstens 10 mm pro Seite überstehen;"
             },
             {
               "marke": "g",
@@ -2679,11 +2679,11 @@
             },
             {
               "marke": "n",
-              "text": "Sichthilfen und Ortungseinrichtungen einschliesslich Radargeräten an Fahrzeugen der Klassen M 2 , M 3 , N 2 , N 3 und O, sofern sie für beide Seiten zusammen insgesamt höchstens 100 mm überstehen;"
+              "text": "Sichthilfen und Ortungseinrichtungen einschliesslich Radargeräten an Fahrzeugen der Klassen M₂, M₃, N₂, N₃ und O, sofern sie für beide Seiten zusammen insgesamt höchstens 100 mm überstehen;"
             },
             {
               "marke": "o",
-              "text": "einklappbare oder einziehbare Einrichtungen zur Verringerung des Luftwiderstands an schweren Motorwagen, Kleinbussen und Anhängern der Klassen O 3 und O 4 , sofern diese Einrichtungen der Verordnung (EU) 2019/2144 entsprechen;"
+              "text": "einklappbare oder einziehbare Einrichtungen zur Verringerung des Luftwiderstands an schweren Motorwagen, Kleinbussen und Anhängern der Klassen O₃ und O₄, sofern diese Einrichtungen der Verordnung (EU) 2019/2144 entsprechen;"
             },
             {
               "marke": "p",
@@ -2737,7 +2737,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_38",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "e403cf3e679967f2a9780836e9128a51f78eab1dfa008f062d9629dde8ae3977"
+      "sha": "137955b9468e29f65eb2189a731ccdf15f69cad6b19e41fec96d5899db219a5c"
     },
     {
       "id": "bund/VTS/art_39",
@@ -2749,7 +2749,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Für Fahrzeuge der Klassen M 2 , M 3 , N 2 , N 3 , O 3 und O 4 können die in den folgenden Regelungen festgelegten Abmessungen und Gewichte als massgebende technische Parameter verwendet werden, auch wenn sie von den schweizerischen Vorschriften abweichen:",
+          "text": "Für Fahrzeuge der Klassen M₂, M₃, N₂, N₃, O₃ und O₄ können die in den folgenden Regelungen festgelegten Abmessungen und Gewichte als massgebende technische Parameter verwendet werden, auch wenn sie von den schweizerischen Vorschriften abweichen:",
           "items": [
             {
               "marke": "a",
@@ -2774,7 +2774,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_39",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "7f7547deda3d65730f0e984e3e20cb69149289cd7ee57d9701c6066af9eb8dcd"
+      "sha": "d61c3a0bba983bfd143893894f0caef36d7e267ccb768c2dbc5bb66c9180468e"
     },
     {
       "id": "bund/VTS/art_40",
@@ -2794,14 +2794,14 @@
         },
         {
           "absatz": "3",
-          "text": "Bezüglich Ausschwenkmass gelten für Fahrzeuge der Klassen N, M 2 und M 3 die Anforderungen der Verordnung (EU) 2019/2144."
+          "text": "Bezüglich Ausschwenkmass gelten für Fahrzeuge der Klassen N, M₂ und M₃ die Anforderungen der Verordnung (EU) 2019/2144."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_40",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "97ee82f20e1d353855fd8864a9beeb8a05c9b8a076da5b640217ff9bee644289"
+      "sha": "a058b702839332325c757ba890494cf46393eb712ccafcdde3d16d695fd72979"
     },
     {
       "id": "bund/VTS/art_41",
@@ -3041,7 +3041,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Kenngrösse wird bei Verbrennungsmotoren durch den Hubraum in Kubikzentimetern (cm 3 ), bei Elektromotoren durch die Motorleistung in kW nach Artikel 46 Absatz 2 ausgedrückt."
+          "text": "Die Kenngrösse wird bei Verbrennungsmotoren durch den Hubraum in Kubikzentimetern (cm³), bei Elektromotoren durch die Motorleistung in kW nach Artikel 46 Absatz 2 ausgedrückt."
         },
         {
           "absatz": "2",
@@ -3052,7 +3052,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_47",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "cde42d352c8ef0443cbfecea7e8442796cc7a689ca7bc25d912310238af15c87"
+      "sha": "6bbd8452bae65630837e6f1080f0d9863017997d44250dea3a4608f12b7d7731"
     },
     {
       "id": "bund/VTS/art_48",
@@ -3096,7 +3096,7 @@
             },
             {
               "marke": "d",
-              "text": "einspurige Fahrzeuge mit einem Hubraum bis 125 cm 3 oder, bei Elektromotoren, einer Motorleistung von höchstens 11 kW;"
+              "text": "einspurige Fahrzeuge mit einem Hubraum bis 125 cm³ oder, bei Elektromotoren, einer Motorleistung von höchstens 11 kW;"
             },
             {
               "marke": "e",
@@ -3109,7 +3109,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_48",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "07a0b7e13c9e6c5498efc6469d925232c233846919c5ef60490e4b163aa6d5ec"
+      "sha": "29fb4f04e7057d4b3293c3b33edf616b4063500f14cf5e1533fd64c1d9ef6222"
     },
     {
       "id": "bund/VTS/art_49",
@@ -3267,7 +3267,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Fahrzeugen der Klasse M 1 , die der Verordnung (EU) 2019/2144 oder dem UNECE-Reglement Nr. 26 entsprechen;"
+              "text": "Fahrzeugen der Klasse M₁, die der Verordnung (EU) 2019/2144 oder dem UNECE-Reglement Nr. 26 entsprechen;"
             },
             {
               "marke": "b",
@@ -3292,7 +3292,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_52",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "0d0a8eee20e17b0d5562a542de4b621f84b2a755dab3ff765a30ecb8b65a1f60"
+      "sha": "c8d0a36531209e03855b1546adf4855ace5826358ab76c546eb696e525beef3b"
     },
     {
       "id": "bund/VTS/art_53",
@@ -3425,19 +3425,19 @@
         },
         {
           "absatz": "2",
-          "text": "Geschwindigkeitsmesser müssen dem Stand der Technik entsprechen, wie er insbesondere im UNECE-Reglement Nr. 39 beschrieben ist. Die am Geschwindigkeitsmesser angezeigte Fahrgeschwindigkeit darf nie unter der tatsächlichen Geschwindigkeit liegen. Im Bereich zwischen 40 km/h und 120 km/h muss zwischen der vom Geschwindigkeitsmesser angezeigten Geschwindigkeit v 1 und der tatsächlichen Geschwindigkeit v 2 in km/h folgende Beziehung bestehen:",
+          "text": "Geschwindigkeitsmesser müssen dem Stand der Technik entsprechen, wie er insbesondere im UNECE-Reglement Nr. 39 beschrieben ist. Die am Geschwindigkeitsmesser angezeigte Fahrgeschwindigkeit darf nie unter der tatsächlichen Geschwindigkeit liegen. Im Bereich zwischen 40 km/h und 120 km/h muss zwischen der vom Geschwindigkeitsmesser angezeigten Geschwindigkeit v₁ und der tatsächlichen Geschwindigkeit v₂ in km/h folgende Beziehung bestehen:",
           "items": [
             {
               "marke": "a",
-              "text": "bei Fahrzeugen nach den Artikeln 14 Buchstabe a und 15 Absätze 1 und 3: 0 ≤ (v 1 – v 2 ) ≤ 0,1 v 2 + 8 km/h;"
+              "text": "bei Fahrzeugen nach den Artikeln 14 Buchstabe a und 15 Absätze 1 und 3: 0 ≤ (v₁ – v₂) ≤ 0,1 v₂ + 8 km/h;"
             },
             {
               "marke": "b",
-              "text": "bei Fahrzeugen der Klassen M und N: 0 ≤ (v 1 – v 2 ) ≤ 0,1 v 2 + 6 km/h;"
+              "text": "bei Fahrzeugen der Klassen M und N: 0 ≤ (v₁ – v₂) ≤ 0,1 v₂ + 6 km/h;"
             },
             {
               "marke": "c",
-              "text": "bei allen übrigen Fahrzeugen: 0 ≤ (v 1 – v 2 ) ≤ 0,1 v 2 + 4 km/h."
+              "text": "bei allen übrigen Fahrzeugen: 0 ≤ (v₁ – v₂) ≤ 0,1 v₂ + 4 km/h."
             }
           ]
         },
@@ -3454,7 +3454,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_55",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "4a814b92d454aecaffb2a5abc96ea39c8c920c80f3254aebbb660b0484d204d9"
+      "sha": "5fe50a1fb937abe75cb15eab104c387eec122ff12f4e596d2d3da36f14d6acf5"
     },
     {
       "id": "bund/VTS/art_56",
@@ -3597,7 +3597,7 @@
         },
         {
           "absatz": "2",
-          "text": "Abweichend von Absatz 1 sind bei Fahrzeugen der Klasse M 1 Noträder zulässig. Sie müssen die Anforderungen der Verordnung (EU) 2019/2144 erfüllen und entsprechend gekennzeichnet sein."
+          "text": "Abweichend von Absatz 1 sind bei Fahrzeugen der Klasse M₁ Noträder zulässig. Sie müssen die Anforderungen der Verordnung (EU) 2019/2144 erfüllen und entsprechend gekennzeichnet sein."
         },
         {
           "absatz": "3",
@@ -3622,7 +3622,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_59",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "e029cb52978c5f8e4cd7e17e6aab0b82e4092d3a16796e4373a179224d6ca39d"
+      "sha": "78c7c86abb309a09e9f270c89f9c77bd8b37d360145df6062e08d0701bfd9995"
     },
     {
       "id": "bund/VTS/art_60",
@@ -3638,7 +3638,7 @@
         },
         {
           "absatz": "2",
-          "text": "Bei Luftkammer-, Vollgummi-, Hohlkammer- und Weichreifen darf der Gewichtsanteil je Zentimeter Breite der Auflagefläche 0,20 t, bei Eisenreifen 0,10 t nicht übersteigen. Bei Raupenbändern darf der Gewichtsanteil je cm 2 der Auflagefläche höchstens 8,2 kg betragen. Als Auflagefläche gilt nur derjenige Teil der Raupenbänder, der auf einer ebenen Fahrbahn tatsächlich aufliegt."
+          "text": "Bei Luftkammer-, Vollgummi-, Hohlkammer- und Weichreifen darf der Gewichtsanteil je Zentimeter Breite der Auflagefläche 0,20 t, bei Eisenreifen 0,10 t nicht übersteigen. Bei Raupenbändern darf der Gewichtsanteil je cm² der Auflagefläche höchstens 8,2 kg betragen. Als Auflagefläche gilt nur derjenige Teil der Raupenbänder, der auf einer ebenen Fahrbahn tatsächlich aufliegt."
         },
         {
           "absatz": "3",
@@ -3661,7 +3661,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_60",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "28caaafa0357d6b6d47c30bcfb2a23546b211247a6453801d8bb7957640f7bbd"
+      "sha": "914099f452545eae934f6252dbcbf85916c9e2297ed4b8b933d9da360366a1e2"
     },
     {
       "id": "bund/VTS/art_61",
@@ -3931,11 +3931,11 @@
         },
         {
           "absatz": "2",
-          "text": "Motorfahrzeuge und Anhänger dürfen nach hinten wirkende gelbe, rote oder weisse und nach der Seite wirkende gelbe oder weisse retroreflektierende Streifen zur Kenntlichmachung nach dem UNECE-Reglement Nr. 150 oder dem UNECE-Reglement Nr. 104 aufweisen. Für retroreflektierende Streifen an Fahrzeugen, die nicht in den Geltungsbereich dieser UNECE‑Reglemente fallen, gelten deren Anforderungen sinngemäss, wobei für Motorräder, Leicht-, Klein- und dreirädrige Motorfahrzeuge sowie für Fahrzeuge der Klasse M 1 schmälere Streifen zulässig sind."
+          "text": "Motorfahrzeuge und Anhänger dürfen nach hinten wirkende gelbe, rote oder weisse und nach der Seite wirkende gelbe oder weisse retroreflektierende Streifen zur Kenntlichmachung nach dem UNECE-Reglement Nr. 150 oder dem UNECE-Reglement Nr. 104 aufweisen. Für retroreflektierende Streifen an Fahrzeugen, die nicht in den Geltungsbereich dieser UNECE‑Reglemente fallen, gelten deren Anforderungen sinngemäss, wobei für Motorräder, Leicht-, Klein- und dreirädrige Motorfahrzeuge sowie für Fahrzeuge der Klasse M₁ schmälere Streifen zulässig sind."
         },
         {
           "absatz": "2bis",
-          "text": "Fahrzeuge der Klassen N 2 mit einem Gesamtgewicht über 7,50 t und N 3 , ausgenommen Sattelschlepper, sowie O 3 und O 4 müssen bei einer Breite von über 2,10 m nach hinten und bei einer Länge von über 6,00 m nach der Seite gemäss dem UNECE-Reglement Nr. 48 kenntlich gemacht sein."
+          "text": "Fahrzeuge der Klassen N₂ mit einem Gesamtgewicht über 7,50 t und N₃, ausgenommen Sattelschlepper, sowie O₃ und O₄ müssen bei einer Breite von über 2,10 m nach hinten und bei einer Länge von über 6,00 m nach der Seite gemäss dem UNECE-Reglement Nr. 48 kenntlich gemacht sein."
         },
         {
           "absatz": "3",
@@ -3946,7 +3946,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_69",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "2a0b3c0e43a1e6994f636feea4d59bf26e54e975051cf852196284e54fae6754"
+      "sha": "6e62b1f1e1215db9d94428fce6a3b4690a2fcb97845fcfca8ae434dafc2e923d"
     },
     {
       "id": "bund/VTS/art_70",
@@ -5287,18 +5287,18 @@
         },
         {
           "absatz": "4",
-          "text": "Bei Fahrzeugen der Klassen M und N sowie bei Motorrädern, Leicht- Klein- und dreirädrigen Motorfahrzeugen sind anlässlich des Typengenehmigungsverfahrens der Treibstoff- oder Energieverbrauch und die CO 2 -Emissionen festzustellen. Davon ausgenommen sind Fahrzeuge der Klasse M 1 mit besonderer Zweckbestimmung nach der Verordnung (EU) 2018/858."
+          "text": "Bei Fahrzeugen der Klassen M und N sowie bei Motorrädern, Leicht- Klein- und dreirädrigen Motorfahrzeugen sind anlässlich des Typengenehmigungsverfahrens der Treibstoff- oder Energieverbrauch und die CO₂-Emissionen festzustellen. Davon ausgenommen sind Fahrzeuge der Klasse M₁ mit besonderer Zweckbestimmung nach der Verordnung (EU) 2018/858."
         },
         {
           "absatz": "5",
-          "text": "Die Ermittlung des Treibstoff- oder Energieverbrauches und der CO 2 -Emissionen richtet sich dabei nach der Verordnung (EG) Nr. 715/2007, nach der Verordnung (EG) Nr. 595/2009 oder nach der Verordnung (EU) Nr. 168/2013 und der delegierten Verordnung (EU) Nr. 134/2014."
+          "text": "Die Ermittlung des Treibstoff- oder Energieverbrauches und der CO₂-Emissionen richtet sich dabei nach der Verordnung (EG) Nr. 715/2007, nach der Verordnung (EG) Nr. 595/2009 oder nach der Verordnung (EU) Nr. 168/2013 und der delegierten Verordnung (EU) Nr. 134/2014."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_97",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "75274f1238c4c37e466ed9e690290a4a59fd91931bfed8eb58b7bc34d65baa92"
+      "sha": "a66f2987fee6a0650d257d0b2372f10dfe6da2a7ca1e884eb110c90b2ce47150"
     },
     {
       "id": "bund/VTS/art_98",
@@ -5329,7 +5329,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Fahrzeuge der Klassen M 2 , M 3 , N 2 , N 3 , T und C müssen mit einer automatischen Geschwindigkeitsbegrenzungseinrichtung nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 89 ausgerüstet sein."
+          "text": "Fahrzeuge der Klassen M₂, M₃, N₂, N₃, T und C müssen mit einer automatischen Geschwindigkeitsbegrenzungseinrichtung nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 89 ausgerüstet sein."
         },
         {
           "absatz": "2",
@@ -5353,13 +5353,13 @@
             },
             {
               "marke": "e",
-              "text": "Fahrzeuge der Klasse N 2 mit emissionsfreiem Antrieb, deren Gesamtgewicht höchstens 4,25 t beträgt und deren 3,50 t überschreitendes Gewicht einzig durch das Mehrgewicht der emissionsfreien Antriebstechnik verursacht wird."
+              "text": "Fahrzeuge der Klasse N₂ mit emissionsfreiem Antrieb, deren Gesamtgewicht höchstens 4,25 t beträgt und deren 3,50 t überschreitendes Gewicht einzig durch das Mehrgewicht der emissionsfreien Antriebstechnik verursacht wird."
             }
           ]
         },
         {
           "absatz": "3",
-          "text": "Für Fahrzeuge der Klassen M 2 , M 3 , N 2 und N 3 richten sich die Regelgeschwindigkeiten nach der Richtlinie Nr. 92/6/EWG. Für Fahrzeuge der Klassen T und C richtet sich die Regelgeschwindigkeit nach der bauartbedingten Höchstgeschwindigkeit."
+          "text": "Für Fahrzeuge der Klassen M₂, M₃, N₂ und N₃ richten sich die Regelgeschwindigkeiten nach der Richtlinie Nr. 92/6/EWG. Für Fahrzeuge der Klassen T und C richtet sich die Regelgeschwindigkeit nach der bauartbedingten Höchstgeschwindigkeit."
         },
         {
           "absatz": "4",
@@ -5370,7 +5370,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_99",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "afb810175b9ed793ddbbfa078ad1becd82888a94c62acb00befc6df43988e28b"
+      "sha": "7e62a1a9e193e3df14144622bfa53e01de2a7e0922aa2985e4151909d65272f8"
     },
     {
       "id": "bund/VTS/art_99_a",
@@ -5562,14 +5562,14 @@
         },
         {
           "absatz": "2",
-          "text": "Von der Ausrüstpflicht ausgenommen sind Fahrzeuge von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M 1 und N 1 herstellen."
+          "text": "Von der Ausrüstpflicht ausgenommen sind Fahrzeuge von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M₁ und N₁ herstellen."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_102_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "f0d5c357eb79925294e017580132a12c67d83c60d0bc4b765af1be29eb92994c"
+      "sha": "b3195163f1c5912208e1afe16a840cc9f8d6ad13e55af0036fcfcc1e2b8d13b5"
     },
     {
       "id": "bund/VTS/art_103",
@@ -5601,11 +5601,11 @@
         },
         {
           "absatz": "5",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 müssen hinsichtlich des Antiblockier-, Bremsassistenz- und Notbremsassistenzsystems, Fahrdynamik-Regelsystems, Notfall-Spurhalteassistenzsystems, Warnsystems bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystems bei nachlassender Konzentration, Reifendruck-Überwachungssystems, Rückfahr-Assistenzsystems sowie des Schutzes vor Cyberangriffen und vor nicht autorisierten Softwareaktualisierungen der Verordnung (EU) 2019/2144 und der Verordnung (EU) 2018/858 entsprechen oder ein gleichwertiges Schutzniveau bieten. Ausgenommen sind Fahrzeuge von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1500 Fahrzeuge der Klassen M 1 und N 1 herstellen."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ müssen hinsichtlich des Antiblockier-, Bremsassistenz- und Notbremsassistenzsystems, Fahrdynamik-Regelsystems, Notfall-Spurhalteassistenzsystems, Warnsystems bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystems bei nachlassender Konzentration, Reifendruck-Überwachungssystems, Rückfahr-Assistenzsystems sowie des Schutzes vor Cyberangriffen und vor nicht autorisierten Softwareaktualisierungen der Verordnung (EU) 2019/2144 und der Verordnung (EU) 2018/858 entsprechen oder ein gleichwertiges Schutzniveau bieten. Ausgenommen sind Fahrzeuge von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1500 Fahrzeuge der Klassen M₁ und N₁ herstellen."
         },
         {
           "absatz": "6",
-          "text": "Fahrzeuge der Klassen M 2 , M 3 , N 2 und N 3 müssen hinsichtlich des Antiblockier- und Notbremsassistenzsystems, Fahrdynamik-Regelsystems, Spurhaltewarnsystems, Warnsystems bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystems bei nachlassender Konzentration, Reifendruck-Überwachungssystems, Rückfahr-Assistenzsystems, Totwinkel-Assistenzsystems, Systems zur Warnung vor Kollisionen mit Fussgängern und Fussgängerinnen sowie Radfahrern und Radfahrerinnen sowie des Schutzes vor Cyberangriffen und vor nicht autorisierten Softwareaktualisierungen der Verordnung (EU) 2019/2144 und der Verordnung (EU) 2018/858 entsprechen."
+          "text": "Fahrzeuge der Klassen M₂, M₃, N₂ und N₃ müssen hinsichtlich des Antiblockier- und Notbremsassistenzsystems, Fahrdynamik-Regelsystems, Spurhaltewarnsystems, Warnsystems bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystems bei nachlassender Konzentration, Reifendruck-Überwachungssystems, Rückfahr-Assistenzsystems, Totwinkel-Assistenzsystems, Systems zur Warnung vor Kollisionen mit Fussgängern und Fussgängerinnen sowie Radfahrern und Radfahrerinnen sowie des Schutzes vor Cyberangriffen und vor nicht autorisierten Softwareaktualisierungen der Verordnung (EU) 2019/2144 und der Verordnung (EU) 2018/858 entsprechen."
         },
         {
           "absatz": "7",
@@ -5646,7 +5646,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_103",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "3a8ef0f202262f508613abb7ec4ab0d3721bd8b60dbab370261d4bb75ebef2e1"
+      "sha": "c78c2720b438b2a044fd8665f109bd956668569eea0ee8ac58714dbaf4e645f1"
     },
     {
       "id": "bund/VTS/art_104",
@@ -5658,7 +5658,7 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Der Aufbau oder die Radabdeckungen (Art. 66 Abs. 2) müssen bei Fahrzeugen der Klasse M 1 bei Geradeausfahrt die ganze Breite der Reifenlauffläche an folgenden Stellen abdecken:",
+          "text": "Der Aufbau oder die Radabdeckungen (Art. 66 Abs. 2) müssen bei Fahrzeugen der Klasse M₁ bei Geradeausfahrt die ganze Breite der Reifenlauffläche an folgenden Stellen abdecken:",
           "items": [
             {
               "marke": "a",
@@ -5675,7 +5675,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_104",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "236e3473871734d8baf214ce86af95154804eb4a063bed2b3efd2d905fbfdba2"
+      "sha": "8acecb0240075a4d54f52baffc71e6531536c27b9b40aabff8cb78a339603a7d"
     },
     {
       "id": "bund/VTS/art_104_a",
@@ -5687,11 +5687,11 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 müssen hinsichtlich des Schutzes der Insassen und Insassinnen beim Frontaufprall der Verordnung (EU) 2019/2144 entsprechen. Bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M 1 und N 1 herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht dem Stand der Technik entspricht."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ müssen hinsichtlich des Schutzes der Insassen und Insassinnen beim Frontaufprall der Verordnung (EU) 2019/2144 entsprechen. Bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M₁ und N₁ herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht dem Stand der Technik entspricht."
         },
         {
           "absatz": "2",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 müssen hinsichtlich des Fussgängerschutzes der Verordnung (EU) 2019/2144 entsprechen. Bei zum Eigengebrauch importierten Fahrzeugen (Art. 4 Abs. 1 TGV) sowie bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M 1 und N 1 herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht ein gleichwertiges Schutzniveau bietet."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ müssen hinsichtlich des Fussgängerschutzes der Verordnung (EU) 2019/2144 entsprechen. Bei zum Eigengebrauch importierten Fahrzeugen (Art. 4 Abs. 1 TGV) sowie bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M₁ und N₁ herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht ein gleichwertiges Schutzniveau bietet."
         },
         {
           "absatz": "2bis",
@@ -5725,11 +5725,11 @@
         },
         {
           "absatz": "3",
-          "text": "Frontschutzsysteme an Fahrzeugen der Klassen M 1 und N 1 müssen der Verordnung (EU) 2019/2144 entsprechen."
+          "text": "Frontschutzsysteme an Fahrzeugen der Klassen M₁ und N₁ müssen der Verordnung (EU) 2019/2144 entsprechen."
         },
         {
           "absatz": "4",
-          "text": "Fahrzeuge der Klassen N 2 und N 3 müssen mit einem vorderen Unterfahrschutz nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 93 ausgerüstet sein."
+          "text": "Fahrzeuge der Klassen N₂ und N₃ müssen mit einem vorderen Unterfahrschutz nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 93 ausgerüstet sein."
         },
         {
           "absatz": "5",
@@ -5754,7 +5754,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_104_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "643a7f6222e7800a8a1831cb8edfd6c5c87b47c825da620154d8d16d63877b34"
+      "sha": "32d1706379176ddb355884340247231962ecda98016cd4638f330f7bffa6c74a"
     },
     {
       "id": "bund/VTS/art_104_b",
@@ -5766,11 +5766,11 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 müssen hinsichtlich des Schutzes der Insassen und Insassinnen beim Seitenaufprall der Verordnung (EU) 2019/2144 entsprechen. Bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M 1 und N 1 herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht dem Stand der Technik entspricht."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ müssen hinsichtlich des Schutzes der Insassen und Insassinnen beim Seitenaufprall der Verordnung (EU) 2019/2144 entsprechen. Bei Fahrzeugen von Herstellern oder Herstellerinnen, die jährlich insgesamt nicht mehr als 1 500 Stück Fahrzeuge der Klassen M₁ und N₁ herstellen, genügt die Bestätigung einer anerkannten Prüfstelle nach Artikel 17 Absatz 1 TGV, dass das Fahrzeug in dieser Hinsicht dem Stand der Technik entspricht."
         },
         {
           "absatz": "2",
-          "text": "Lastwagen der Klassen N 2 und N 3 müssen mit einer seitlichen Schutzvorrichtung nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 73 ausgerüstet sein."
+          "text": "Lastwagen der Klassen N₂ und N₃ müssen mit einer seitlichen Schutzvorrichtung nach der Verordnung (EU) 2019/2144 oder nach dem UNECE-Reglement Nr. 73 ausgerüstet sein."
         },
         {
           "absatz": "3",
@@ -5786,7 +5786,7 @@
             },
             {
               "marke": "c",
-              "text": "Fahrzeuge der Klasse N 2 mit emissionsfreiem Antrieb, deren Gesamtgewicht höchstens 4,25 t beträgt und deren 3,50 t überschreitendes Gewicht einzig durch das Mehrgewicht der emissionsfreien Antriebstechnik verursacht wird."
+              "text": "Fahrzeuge der Klasse N₂ mit emissionsfreiem Antrieb, deren Gesamtgewicht höchstens 4,25 t beträgt und deren 3,50 t überschreitendes Gewicht einzig durch das Mehrgewicht der emissionsfreien Antriebstechnik verursacht wird."
             }
           ]
         }
@@ -5795,7 +5795,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_104_b",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "5b81a9c76912768f2644fa60d06471a2b6ff4a14df5d534933ac8cde8c542c46"
+      "sha": "b43451ee6b15a7a569b14512f41c42ff12aa585af60905fcdeb66a7616462286"
     },
     {
       "id": "bund/VTS/art_104_c",
@@ -5856,7 +5856,7 @@
         },
         {
           "absatz": "3",
-          "text": "Fahrzeuge der Klassen M 2 , M 3 , N 2 und N 3 müssen hinsichtlich der direkten Sicht auf ungeschützte Verkehrsteilnehmende und Minimierung des toten Winkels der Verordnung (EU) 2019/2144 entsprechen."
+          "text": "Fahrzeuge der Klassen M₂, M₃, N₂ und N₃ müssen hinsichtlich der direkten Sicht auf ungeschützte Verkehrsteilnehmende und Minimierung des toten Winkels der Verordnung (EU) 2019/2144 entsprechen."
         },
         {
           "absatz": "4",
@@ -5871,7 +5871,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_105",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "82e9b591e8a94c862e162f593c2464b2a43308dcc87f98a0d49ed680443a91e7"
+      "sha": "1613f8ad9537785c8627ddb91a5de36eb985662154e24618ac7db0cf5a6ebd4a"
     },
     {
       "id": "bund/VTS/art_106",
@@ -5883,7 +5883,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Ausrüstungspflicht und die Anforderungen an Sicherheitsgurten von Fahrzeugen der Klassen M und N richten sich nach der Verordnung (EU) 2019/2144 oder dem UNECE‑Reglement Nr. 16. Für Fahrzeuge der Klasse M 1 mit besonderer Zweckbestimmung gelten die in der Verordnung (EU) 2018/858 enthaltenen Regelungen."
+          "text": "Die Ausrüstungspflicht und die Anforderungen an Sicherheitsgurten von Fahrzeugen der Klassen M und N richten sich nach der Verordnung (EU) 2019/2144 oder dem UNECE‑Reglement Nr. 16. Für Fahrzeuge der Klasse M₁ mit besonderer Zweckbestimmung gelten die in der Verordnung (EU) 2018/858 enthaltenen Regelungen."
         },
         {
           "absatz": "2",
@@ -5895,7 +5895,7 @@
         },
         {
           "absatz": "4",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 sowie Kleinbusse müssen an den vorderen äusseren Sitzen mit Kopfstützen ausgerüstet sein."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ sowie Kleinbusse müssen an den vorderen äusseren Sitzen mit Kopfstützen ausgerüstet sein."
         },
         {
           "absatz": "5",
@@ -5906,7 +5906,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_106",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "097dc86514c2d98f4a12fc05bf54e0b12b1059291b770a2c4eb7bc26b104885a"
+      "sha": "2dd94cfac8f349249bf1b0f722f13a26ed8f2ab70ea8ceec077fb7df6e2ed9fa"
     },
     {
       "id": "bund/VTS/art_107",
@@ -5922,7 +5922,7 @@
         },
         {
           "absatz": "1bis",
-          "text": "Quer zur Fahrtrichtung angeordnete Sitze sind in Fahrzeugen der Klassen M 1 und N 1 sowie M 2 und M 3 , die nicht über bewilligte Stehplätze verfügen, nicht zulässig. Ausgenommen sind Fahrzeuge des Militärs, des Zivilschutzes, der Feuerwehr, der Polizei, des Zolls und der Sanität sowie Fahrzeuge der Klasse M 3 mit einem Gesamtgewicht über 10,00 t, in denen im hinteren Teil des Fahrzeugs nach der Seite gerichtete Sitze so gruppiert sind, dass sie einen integrierten Salon bis zu 10 Sitzen bilden."
+          "text": "Quer zur Fahrtrichtung angeordnete Sitze sind in Fahrzeugen der Klassen M₁ und N₁ sowie M₂ und M₃, die nicht über bewilligte Stehplätze verfügen, nicht zulässig. Ausgenommen sind Fahrzeuge des Militärs, des Zivilschutzes, der Feuerwehr, der Polizei, des Zolls und der Sanität sowie Fahrzeuge der Klasse M₃ mit einem Gesamtgewicht über 10,00 t, in denen im hinteren Teil des Fahrzeugs nach der Seite gerichtete Sitze so gruppiert sind, dass sie einen integrierten Salon bis zu 10 Sitzen bilden."
         },
         {
           "absatz": "2",
@@ -5937,7 +5937,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_107",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "b16588d35e3068a3dd2a7c126286bca3e3baaaa50365b588549dc87dd4cbc4d0"
+      "sha": "c954db68e199a2717a6cc8827ca4b65f38a6978b9b7ee816ff95072ba44a8b3f"
     },
     {
       "id": "bund/VTS/art_108",
@@ -6150,11 +6150,11 @@
             },
             {
               "marke": "f",
-              "text": "an Fahrzeugen der Klassen M 2 , M 3 , N 1 , N 2 und N 3 mit einer Länge von mehr als 6 m: zusätzlich zu den vorhandenen Rückfahrlichtern ein oder zwei nach hinten oder um maximal 15° nach der Seite gerichtete Rückfahrlichter; diese dürfen nur zugeschaltet werden können, wenn mindestens das Standlicht eingeschaltet ist;"
+              "text": "an Fahrzeugen der Klassen M₂, M₃, N₁, N₂ und N₃ mit einer Länge von mehr als 6 m: zusätzlich zu den vorhandenen Rückfahrlichtern ein oder zwei nach hinten oder um maximal 15° nach der Seite gerichtete Rückfahrlichter; diese dürfen nur zugeschaltet werden können, wenn mindestens das Standlicht eingeschaltet ist;"
             },
             {
               "marke": "g",
-              "text": "an Fahrzeugen der Klasse N 3 zwei zusätzliche Fernlichter, sofern insgesamt nur deren vier gleichzeitig aufleuchten können."
+              "text": "an Fahrzeugen der Klasse N₃ zwei zusätzliche Fernlichter, sofern insgesamt nur deren vier gleichzeitig aufleuchten können."
             }
           ]
         },
@@ -6223,7 +6223,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_110",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "faff63ed3039efecfe510ee2ec5fa96565e478a6d76db628f061b37472d5a23f"
+      "sha": "e68dbfe815c9dcb653199a991577a65373cb430672cea622e6c54c629917a909"
     },
     {
       "id": "bund/VTS/art_111",
@@ -6258,19 +6258,19 @@
         },
         {
           "absatz": "2",
-          "text": "Bei Fahrzeugen der Klassen M 1 und N 1 , die mit einem ausreichend grossen Heckfenster ausgerüstet sind und keine Anhänger mitführen können, kann ein Innenspiegel den rechten Aussenspiegel ersetzen."
+          "text": "Bei Fahrzeugen der Klassen M₁ und N₁, die mit einem ausreichend grossen Heckfenster ausgerüstet sind und keine Anhänger mitführen können, kann ein Innenspiegel den rechten Aussenspiegel ersetzen."
         },
         {
           "absatz": "3",
-          "text": "Rückspiegel müssen möglichst erschütterungsfrei angebracht sein und ein verzerrungsfreies Bild ergeben. Die Spiegelfläche muss bei leichten Motorwagen mindestens 70 cm 2 , bei schweren Motorwagen, wenn sie konvex ist, mindestens 150 cm 2 und, wenn sie plan ist, mindestens 300 cm 2 betragen. Der Krümmungsradius konvexer Spiegel darf nicht weniger als 0,80 m messen."
+          "text": "Rückspiegel müssen möglichst erschütterungsfrei angebracht sein und ein verzerrungsfreies Bild ergeben. Die Spiegelfläche muss bei leichten Motorwagen mindestens 70 cm², bei schweren Motorwagen, wenn sie konvex ist, mindestens 150 cm² und, wenn sie plan ist, mindestens 300 cm² betragen. Der Krümmungsradius konvexer Spiegel darf nicht weniger als 0,80 m messen."
         },
         {
           "absatz": "4",
-          "text": "Fahrzeuge der Klassen N 2 und N 3 müssen, zusätzlich zu den nach Absatz 1 vorgeschriebenen Rückspiegeln, mit folgenden Spiegeln ausgerüstet sein:",
+          "text": "Fahrzeuge der Klassen N₂ und N₃ müssen, zusätzlich zu den nach Absatz 1 vorgeschriebenen Rückspiegeln, mit folgenden Spiegeln ausgerüstet sein:",
           "items": [
             {
               "marke": "a",
-              "text": "mit einem Frontspiegel; davon ausgenommen sind Fahrzeuge der Klasse N 2 mit einem Gesamtgewicht bis 7,50 t;"
+              "text": "mit einem Frontspiegel; davon ausgenommen sind Fahrzeuge der Klasse N₂ mit einem Gesamtgewicht bis 7,50 t;"
             },
             {
               "marke": "b",
@@ -6278,7 +6278,7 @@
             },
             {
               "marke": "c",
-              "text": "auf der dem Lenkrad gegenüberliegenden Seite mit einem Anfahr- oder Rampenspiegel. Fahrzeuge der Klasse N 2 mit einem Gesamtgewicht bis 7,50 t benötigen den Anfahr- oder Rampenspiegel nur, wenn dieser in einer Höhe von mindestens 2 m über dem Boden angebracht werden kann."
+              "text": "auf der dem Lenkrad gegenüberliegenden Seite mit einem Anfahr- oder Rampenspiegel. Fahrzeuge der Klasse N₂ mit einem Gesamtgewicht bis 7,50 t benötigen den Anfahr- oder Rampenspiegel nur, wenn dieser in einer Höhe von mindestens 2 m über dem Boden angebracht werden kann."
             }
           ]
         },
@@ -6292,7 +6292,7 @@
         },
         {
           "absatz": "5",
-          "text": "Bei Motorwagen, bei denen Fahrzeugteile, Arbeits- oder Zusatzgeräte nach vorne mehr als 3,00 m, jedoch höchstens 4,00 m, vor die Mitte der Lenkvorrichtung reichen, sind Seitenblickspiegel erforderlich. Ausgenommen sind Fahrzeuge mit Schneeräumgeräten. Die Seitenblickspiegel müssen als Weitwinkelspiegel ausgeführt und bei rechteckiger oder ovaler Form im Querformat ausgerichtet sein. Sie müssen eine konvexe Spiegelfläche von je 500 cm 2 aufweisen. Sie sind möglichst weit vorne anzubringen und dürfen vom vordersten Punkt höchstens 2,50 m zurückversetzt sein. Anstelle der Seitenblickspiegel kann ein geprüftes Kamera-Monitor-System nach Absatz 6 verwendet werden."
+          "text": "Bei Motorwagen, bei denen Fahrzeugteile, Arbeits- oder Zusatzgeräte nach vorne mehr als 3,00 m, jedoch höchstens 4,00 m, vor die Mitte der Lenkvorrichtung reichen, sind Seitenblickspiegel erforderlich. Ausgenommen sind Fahrzeuge mit Schneeräumgeräten. Die Seitenblickspiegel müssen als Weitwinkelspiegel ausgeführt und bei rechteckiger oder ovaler Form im Querformat ausgerichtet sein. Sie müssen eine konvexe Spiegelfläche von je 500 cm² aufweisen. Sie sind möglichst weit vorne anzubringen und dürfen vom vordersten Punkt höchstens 2,50 m zurückversetzt sein. Anstelle der Seitenblickspiegel kann ein geprüftes Kamera-Monitor-System nach Absatz 6 verwendet werden."
         },
         {
           "absatz": "6",
@@ -6303,7 +6303,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_112",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "b09f7f15362eed177dcb2ef6271eac07712340ad592aafc67b1a9253842ff5a0"
+      "sha": "b8b53fe23cd2f054c07b320756e0dc55485c25f3005dc82b23248335d00e0477"
     },
     {
       "id": "bund/VTS/art_113",
@@ -6400,14 +6400,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Fahrzeuge der Klassen M 1 und N 1 müssen bezüglich der Recyclingfähigkeit der Richtlinie 2005/64/EG entsprechen. Ausgenommen sind Fahrzeuge eines Typs mit einer EG-Kleinserien-Typengenehmigung oder von dem jährlich nicht mehr als 100 Stück hergestellt werden."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ müssen bezüglich der Recyclingfähigkeit der Richtlinie 2005/64/EG entsprechen. Ausgenommen sind Fahrzeuge eines Typs mit einer EG-Kleinserien-Typengenehmigung oder von dem jährlich nicht mehr als 100 Stück hergestellt werden."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_116_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "6e489c9ff17fcff5dc3c885ca26f273e92777b568dfac270da2537eecc8167e4"
+      "sha": "c6fd7ca2a70a4cb0665f4833e54cff080ceb1c596f5291c2fad8da3d8132ac1c"
     },
     {
       "id": "bund/VTS/art_117",
@@ -7811,7 +7811,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Links und rechts aussen ist je ein Rückspiegel mit einer Fläche von mindestens 69 cm 2 erforderlich. Bei zweirädrigen Fahrzeugen mit einer bauartbedingten Höchstgeschwindigkeit von bis zu 50 km/h genügt ein Rückspiegel links aussen. Bezüglich Bau, Anbringung und Sichtwinkel gilt Artikel 112."
+          "text": "Links und rechts aussen ist je ein Rückspiegel mit einer Fläche von mindestens 69 cm² erforderlich. Bei zweirädrigen Fahrzeugen mit einer bauartbedingten Höchstgeschwindigkeit von bis zu 50 km/h genügt ein Rückspiegel links aussen. Bezüglich Bau, Anbringung und Sichtwinkel gilt Artikel 112."
         },
         {
           "absatz": "2",
@@ -7826,7 +7826,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_143",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "0f9df2e27fb6f50704fc1216fa8286f263c3d6515835e6b84a55af18178e94c1"
+      "sha": "21e152a7bb3679512d7cbf795a9b22b5065437ecf7d820380037b324a25678fe"
     },
     {
       "id": "bund/VTS/art_144",
@@ -8562,7 +8562,7 @@
         },
         {
           "absatz": "4",
-          "text": "An Stelle der Rückstrahler können retroreflektierende Beläge von wenigstens 100 cm 2 Leuchtfläche angebracht werden. Werden Rückstrahler oder Lichter durch Arbeitsgeräte verdeckt, so sind nachts und bei schlechter Witterung entsprechende Ersatzvorrichtungen anzubringen."
+          "text": "An Stelle der Rückstrahler können retroreflektierende Beläge von wenigstens 100 cm² Leuchtfläche angebracht werden. Werden Rückstrahler oder Lichter durch Arbeitsgeräte verdeckt, so sind nachts und bei schlechter Witterung entsprechende Ersatzvorrichtungen anzubringen."
         },
         {
           "absatz": "5",
@@ -8573,7 +8573,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_165",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "9b6429f299d403411dd0c8a192014b3fcdd992e39094c62817b12122625c606b"
+      "sha": "69ec6169b99f442922b8ed1955f8beb987430094a4ac1ec82b298e7e30116bf7"
     },
     {
       "id": "bund/VTS/art_166",
@@ -8975,7 +8975,7 @@
         },
         {
           "absatz": "2",
-          "text": "An Motorfahrrädern muss mindestens ein nach hinten gerichteter Rückstrahler mit einer Leuchtfläche von mindestens 10 cm 2 fest angebracht sein."
+          "text": "An Motorfahrrädern muss mindestens ein nach hinten gerichteter Rückstrahler mit einer Leuchtfläche von mindestens 10 cm² fest angebracht sein."
         },
         {
           "absatz": "3",
@@ -8983,7 +8983,7 @@
         },
         {
           "absatz": "4",
-          "text": "Die Pedale müssen vorne und hinten Rückstrahler mit einer Leuchtfläche von mindestens 5 cm 2 tragen. Ausgenommen sind Rennpedale, Sicherheitspedale und dergleichen."
+          "text": "Die Pedale müssen vorne und hinten Rückstrahler mit einer Leuchtfläche von mindestens 5 cm² tragen. Ausgenommen sind Rennpedale, Sicherheitspedale und dergleichen."
         },
         {
           "absatz": "5",
@@ -8998,7 +8998,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_178_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "09c7984efbec4ea30431c3e1b3a6210a72f0604ddb1f2ebcf0c4d8d5dad5a063"
+      "sha": "a51b717c3584090a740d49af1af35f3c2f4ab3b660c98e88f72efa249fb3860a"
     },
     {
       "id": "bund/VTS/art_178_b",
@@ -9147,7 +9147,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Links aussen muss ein Rückspiegel mit einer Fläche von mindestens 50 cm 2 vorhanden sein."
+          "text": "Links aussen muss ein Rückspiegel mit einer Fläche von mindestens 50 cm² vorhanden sein."
         },
         {
           "absatz": "2",
@@ -9158,7 +9158,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_179_b",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "81cd2d7a89967f3ea4eda0e981b7d8784965f13a037d462990e184c18c097d27"
+      "sha": "649897b67d902cd04c58f3dc4ed10ad2d24fbea8b4d5876abe80758e922ae622"
     },
     {
       "id": "bund/VTS/art_180",
@@ -9307,7 +9307,7 @@
         },
         {
           "absatz": "2",
-          "text": "Links aussen muss ein Rückspiegel mit einer Fläche von mindestens 50 cm 2 angebracht sein."
+          "text": "Links aussen muss ein Rückspiegel mit einer Fläche von mindestens 50 cm² angebracht sein."
         },
         {
           "absatz": "3",
@@ -9318,7 +9318,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_181_b",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "af5688262f9f52395a871473f7d71ffaa8e0e1515fb05ef512486e750b1f1101"
+      "sha": "f21e0d156055642270d17ca72eafa27f59ffb07f2fa7f7d19a4db205bb9681e7"
     },
     {
       "id": "bund/VTS/art_182",
@@ -9593,14 +9593,14 @@
         },
         {
           "absatz": "3",
-          "text": "Anhänger der Klassen O 3 und O 4 müssen hinsichtlich des Reifendruck-Überwachungssystems der Verordnung (EU) 2019/2144 entsprechen."
+          "text": "Anhänger der Klassen O₃ und O₄ müssen hinsichtlich des Reifendruck-Überwachungssystems der Verordnung (EU) 2019/2144 entsprechen."
         }
       ],
       "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_187",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "6ca6a09b9d350d4b15403601c6ab56f826374f6e7881f379bfb8022d9866a63a"
+      "sha": "ce6b0af5f35764b01278bbc802c64a74970d26f2f21230e17e9148766db51bfb"
     },
     {
       "id": "bund/VTS/art_188",
@@ -9651,11 +9651,11 @@
         },
         {
           "absatz": "6",
-          "text": "An Anhängern der Klassen O 1 und O 2 können andere Bremssysteme zugelassen werden. Für Bremsanlagen und Sicherheitsverbindungen von Anhängern, die nicht der Klasse O angehören oder deren Höchstgeschwindigkeit auf maximal 60 km/h beschränkt ist, gelten die Artikel 201 und 203."
+          "text": "An Anhängern der Klassen O₁ und O₂ können andere Bremssysteme zugelassen werden. Für Bremsanlagen und Sicherheitsverbindungen von Anhängern, die nicht der Klasse O angehören oder deren Höchstgeschwindigkeit auf maximal 60 km/h beschränkt ist, gelten die Artikel 201 und 203."
         },
         {
           "absatz": "7",
-          "text": "Anhänger der Klassen O 3 und O 4 müssen hinsichtlich Fahrdynamik-Regelsystem der Verordnung (EU) 2019/2144 entsprechen. Ausgenommen sind Anhänger mit einer Höchstgeschwindigkeit bis 60 km/h."
+          "text": "Anhänger der Klassen O₃ und O₄ müssen hinsichtlich Fahrdynamik-Regelsystem der Verordnung (EU) 2019/2144 entsprechen. Ausgenommen sind Anhänger mit einer Höchstgeschwindigkeit bis 60 km/h."
         },
         {
           "absatz": "8",
@@ -9666,7 +9666,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_189",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "754c164bdb07349a777d2e95760bbbf53ac1fca0d2372964145f707344fc71cd"
+      "sha": "f98422ac7cff46627f27b66234b7af540415b72c1d16dc276e0468d10acf78c5"
     },
     {
       "id": "bund/VTS/art_190",
@@ -10402,7 +10402,7 @@
         },
         {
           "absatz": "2",
-          "text": "Standlichter und Kontrollschildbeleuchtung sind nicht erforderlich. Retroreflektierende Beläge mit einer Fläche von mindestens 100 cm 2 können anstelle des vorderen Rückstrahlers verwendet werden."
+          "text": "Standlichter und Kontrollschildbeleuchtung sind nicht erforderlich. Retroreflektierende Beläge mit einer Fläche von mindestens 100 cm² können anstelle des vorderen Rückstrahlers verwendet werden."
         },
         {
           "absatz": "3",
@@ -10425,7 +10425,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_209",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "da0cdb5a7c3dab05945275751972c46ab839f2c3fabd091044cce48da22646bc"
+      "sha": "3250e3434ac867ddc2557d758443a5428a7f55c5d3556e5600146b9e12d8b458"
     },
     {
       "id": "bund/VTS/art_210",
@@ -10525,7 +10525,7 @@
         },
         {
           "absatz": "3",
-          "text": "Tierfuhrwerke und Handwagen, ausgenommen kleine Stosskarren, müssen auf beiden Seiten möglichst weit aussen vorn je einen weissen, hinten je einen roten Rückstrahler tragen. Die Rückstrahler der Tierfuhrwerke sind gleich wie die der land- und forstwirtschaftlichen Anhänger, diejenigen der Handwagen dürfen nicht dreieckig sein und müssen eine Fläche von 20 cm 2 aufweisen. Bei Fahrzeugen mit einer Breite bis 1,00 m genügt ein Rückstrahler hinten links oder in der Mitte. Bei Tierfuhrwerken und mehr als 1,00 m breiten Handwagen und Stosskarren richtet sich die Beleuchtung nach Artikel 120a Buchstabe a."
+          "text": "Tierfuhrwerke und Handwagen, ausgenommen kleine Stosskarren, müssen auf beiden Seiten möglichst weit aussen vorn je einen weissen, hinten je einen roten Rückstrahler tragen. Die Rückstrahler der Tierfuhrwerke sind gleich wie die der land- und forstwirtschaftlichen Anhänger, diejenigen der Handwagen dürfen nicht dreieckig sein und müssen eine Fläche von 20 cm² aufweisen. Bei Fahrzeugen mit einer Breite bis 1,00 m genügt ein Rückstrahler hinten links oder in der Mitte. Bei Tierfuhrwerken und mehr als 1,00 m breiten Handwagen und Stosskarren richtet sich die Beleuchtung nach Artikel 120a Buchstabe a."
         },
         {
           "absatz": "4",
@@ -10536,7 +10536,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_211",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "772678c18c53de6fd9bf3d417a0f85fc05269af9e929f8b4ad2ed74efa464aa5"
+      "sha": "cf841d9082eb176ed8e8b97bfe1bdf768fd71e6f8bdac8d0059d3a7fffde963d"
     },
     {
       "id": "bund/VTS/art_212",
@@ -10696,7 +10696,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "An Fahrrädern müssen mindestens ein nach vorn und ein nach hinten gerichteter Rückstrahler mit einer Leuchtfläche von mindestens 10 cm 2 fest angebracht sein. Die Rückstrahler müssen nachts bei guter Witterung auf 100 m im Scheine eines Motorfahrzeug-Fernlichts sichtbar werden."
+          "text": "An Fahrrädern müssen mindestens ein nach vorn und ein nach hinten gerichteter Rückstrahler mit einer Leuchtfläche von mindestens 10 cm² fest angebracht sein. Die Rückstrahler müssen nachts bei guter Witterung auf 100 m im Scheine eines Motorfahrzeug-Fernlichts sichtbar werden."
         },
         {
           "absatz": "2",
@@ -10719,7 +10719,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_217",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "1001bfa59338bd6c51d116643e231800056d75b64e5f6f7ad038ea374c97d385"
+      "sha": "447e3117c50fffce118d00c178e355d9f503312ef96dc0c410d86a07e1428748"
     },
     {
       "id": "bund/VTS/art_218",
@@ -10990,11 +10990,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Fahrzeuge der Klasse M 1 , die mit einer EG-Gesamtgenehmigung ausgestattet sind und ab dem 1. Januar 1996 neu typengenehmigt werden;"
+              "text": "Fahrzeuge der Klasse M₁, die mit einer EG-Gesamtgenehmigung ausgestattet sind und ab dem 1. Januar 1996 neu typengenehmigt werden;"
             },
             {
               "marke": "b",
-              "text": "alle Fahrzeuge der Klasse M 1 , die ab dem 1. Oktober 1997 neu typengenehmigt werden."
+              "text": "alle Fahrzeuge der Klasse M₁, die ab dem 1. Oktober 1997 neu typengenehmigt werden."
             }
           ]
         },
@@ -11105,7 +11105,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "e4f55191b2661a7cc24541f931794de9b5a43d364ee2b40f67e7109d0468dc36"
+      "sha": "28cfb00de92df919b99cdda6b4be7ee05f90802c053a1dec3a3e46da9e329d17"
     },
     {
       "id": "bund/VTS/art_222_a",
@@ -11133,7 +11133,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Fahrzeuge der Klasse M 2 mit einem Gesamtgewicht von höchstens 3,50 t, die ab 1. Oktober 1999 neu typengenehmigt werden, sowie für die erstmalige Zulassung solcher Fahrzeuge, die ab 1. Oktober 2001 eingeführt oder in der Schweiz hergestellt werden;"
+              "text": "Fahrzeuge der Klasse M₂ mit einem Gesamtgewicht von höchstens 3,50 t, die ab 1. Oktober 1999 neu typengenehmigt werden, sowie für die erstmalige Zulassung solcher Fahrzeuge, die ab 1. Oktober 2001 eingeführt oder in der Schweiz hergestellt werden;"
             },
             {
               "marke": "b",
@@ -11166,7 +11166,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222_a",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "4533be2c1b55abb4c2976387777343db9956a3c194179965360ee36a1e97d410"
+      "sha": "d451a3519d33641c2252833312e336a826d032cdb69199fed2bc4ca701a328df"
     },
     {
       "id": "bund/VTS/art_222_b",
@@ -11326,7 +11326,7 @@
         },
         {
           "absatz": "6",
-          "text": "Für Fahrzeuge der Klasse N 1 gilt bezüglich Artikel 97 Absatz 4 über die Ermittlung des Treibstoffverbrauchs und der CO 2 -Emissionen bis zum 1. Januar 2008 das bisherige Recht."
+          "text": "Für Fahrzeuge der Klasse N₁ gilt bezüglich Artikel 97 Absatz 4 über die Ermittlung des Treibstoffverbrauchs und der CO₂-Emissionen bis zum 1. Januar 2008 das bisherige Recht."
         },
         {
           "absatz": "7",
@@ -11345,7 +11345,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222_f",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "7db051ed3a2289713bab2516686563a6bfebbf4cf4391b61925b9141ec451d34"
+      "sha": "75a943b1c08fb28fd609407c6d3191d5a7919a73185d10a801815348b52f4d73"
     },
     {
       "id": "bund/VTS/art_222_g",
@@ -11553,7 +11553,7 @@
         },
         {
           "absatz": "4",
-          "text": "Für Fahrzeuge der Klasse N 1 , die vor dem 24. August 2015 importiert oder in der Schweiz hergestellt werden, gilt bezüglich Artikel 103 Absatz 5 über Antiblockier- und Bremsassistenzsysteme das bisherige Recht, ausser wenn sie von einem Fahrzeug der Klasse M 1 abgeleitet sind und ein Gesamtgewicht von maximal 2,5 t haben."
+          "text": "Für Fahrzeuge der Klasse N₁, die vor dem 24. August 2015 importiert oder in der Schweiz hergestellt werden, gilt bezüglich Artikel 103 Absatz 5 über Antiblockier- und Bremsassistenzsysteme das bisherige Recht, ausser wenn sie von einem Fahrzeug der Klasse M₁ abgeleitet sind und ein Gesamtgewicht von maximal 2,5 t haben."
         },
         {
           "absatz": "5",
@@ -11588,7 +11588,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222_m",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "8ede372ef45076bceb282119b053d9f5929395a01e2e8a7f2fb5dff7e2832156"
+      "sha": "e97ecbcc3533ddcb22a8bb0e4ea4654eb0a70bbbb6ae4b98e132d85d63186b5d"
     },
     {
       "id": "bund/VTS/art_222_n",
@@ -11710,7 +11710,7 @@
         },
         {
           "absatz": "3",
-          "text": "Für Seitenblickspiegel nach Artikel 112 Absatz 5, die vor dem 1. Mai 2019 angebracht worden sind, genügt eine Fläche von 300 cm 2 ."
+          "text": "Für Seitenblickspiegel nach Artikel 112 Absatz 5, die vor dem 1. Mai 2019 angebracht worden sind, genügt eine Fläche von 300 cm²."
         },
         {
           "absatz": "4",
@@ -11725,7 +11725,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222_p",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "af8f5b2c53345cadb8c64163c90b86a5aef3b0573c358aa01bc096e1646ef966"
+      "sha": "8e06c8e1384367a99c6467e0d760ffa45c9082fd3815f4b63834f8a731850443"
     },
     {
       "id": "bund/VTS/art_222_q",
@@ -11795,15 +11795,15 @@
         },
         {
           "absatz": "4",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen nicht mit einem System zur ereignisbezogenen Datenaufzeichnung nach Artikel 102a Absatz 1 ausgerüstet sein."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen nicht mit einem System zur ereignisbezogenen Datenaufzeichnung nach Artikel 102a Absatz 1 ausgerüstet sein."
         },
         {
           "absatz": "5",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen nicht mit einem Notbremsassistenzsystem, Notfall-Spurhalteassistenzsystem, Warnsystem bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystem bei nachlassender Konzentration, Reifendruck-Überwachungssystem oder Rückfahr-Assistenzsystem nach Artikel 103 Absatz 5 ausgerüstet sein."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen nicht mit einem Notbremsassistenzsystem, Notfall-Spurhalteassistenzsystem, Warnsystem bei Müdigkeit und nachlassender Aufmerksamkeit, Warnsystem bei nachlassender Konzentration, Reifendruck-Überwachungssystem oder Rückfahr-Assistenzsystem nach Artikel 103 Absatz 5 ausgerüstet sein."
         },
         {
           "absatz": "6",
-          "text": "Fahrzeuge der Klassen M 1 und N 1 ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen die Anforderung betreffend den Schutz vor nicht autorisierten Softwareaktualisierungen nach Artikel 103 Absatz 5 nicht erfüllen."
+          "text": "Fahrzeuge der Klassen M₁ und N₁ ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, müssen die Anforderung betreffend den Schutz vor nicht autorisierten Softwareaktualisierungen nach Artikel 103 Absatz 5 nicht erfüllen."
         },
         {
           "absatz": "7",
@@ -11811,11 +11811,11 @@
         },
         {
           "absatz": "8",
-          "text": "Fahrzeuge der Klasse M 1 und davon abgeleitete Fahrzeuge der Klasse N 1 , die nicht über eine EU-Gesamtgenehmigung verfügen, ein Gesamtgewicht von höchstens 2,50 t aufweisen und vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, können bezüglich Artikel 104a Absatz 2 über den Fussgängerschutz nach bisherigem Recht erstmals zum Verkehr zugelassen werden."
+          "text": "Fahrzeuge der Klasse M₁ und davon abgeleitete Fahrzeuge der Klasse N₁, die nicht über eine EU-Gesamtgenehmigung verfügen, ein Gesamtgewicht von höchstens 2,50 t aufweisen und vor dem 1. Januar 2027 eingeführt oder in der Schweiz hergestellt werden, können bezüglich Artikel 104a Absatz 2 über den Fussgängerschutz nach bisherigem Recht erstmals zum Verkehr zugelassen werden."
         },
         {
           "absatz": "9",
-          "text": "Zum Eigengebrauch importierte Fahrzeuge der Klassen M 1 und N 1 (Art. 4 Abs. 1 TGV) ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt werden und über einen Nachweis über die Einhaltung kalifornischer Abgasvorschriften verfügen, die den Abgasvorschriften nach Anhang 5 Ziffer 211 mindestens gleichwertig sind, können ohne zusätzliche Prüfung der Emissionen im praktischen Fahrbetrieb im Strassenverkehr zum Verkehr zugelassen werden."
+          "text": "Zum Eigengebrauch importierte Fahrzeuge der Klassen M₁ und N₁ (Art. 4 Abs. 1 TGV) ohne EU-Gesamtgenehmigung, die vor dem 1. Januar 2027 eingeführt werden und über einen Nachweis über die Einhaltung kalifornischer Abgasvorschriften verfügen, die den Abgasvorschriften nach Anhang 5 Ziffer 211 mindestens gleichwertig sind, können ohne zusätzliche Prüfung der Emissionen im praktischen Fahrbetrieb im Strassenverkehr zum Verkehr zugelassen werden."
         },
         {
           "absatz": "10",
@@ -11826,7 +11826,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#art_222_s",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "7a549b0e2bb6e06706aff6a332518c16e2549d198c62e0c05b9a6131fa05c3cb"
+      "sha": "09449a92ea4862003a098cac4e82a27cce21f69be1ac6b7845a1a95c723d52ff"
     },
     {
       "id": "bund/VTS/art_222_t",
@@ -12214,7 +12214,7 @@
               ],
               [
                 "Verordnung (EU) 2017/2400",
-                "Verordnung (EU) 2017/2400 der Kommission vom 12. Dezember 2017 zur Durchführung der Verordnung (EG) Nr. 595/2009 des Europäischen Parlaments und des Rates hinsichtlich der Bestimmung der CO 2 -Emissionen und des Kraftstoffverbrauchs von schweren Nutzfahrzeugen sowie zur Änderung der Richtlinie 2007/46/EG des Europäischen Parlaments und des Rates sowie der Verordnung (EU) Nr. 582/2011 der Kommission, ABl. L 349 vom 29.12.2017, S. 1; zuletzt geändert durch Verordnung (EU) 2022/1379, ABl. L 212 vom 12.8.2022, S. 1."
+                "Verordnung (EU) 2017/2400 der Kommission vom 12. Dezember 2017 zur Durchführung der Verordnung (EG) Nr. 595/2009 des Europäischen Parlaments und des Rates hinsichtlich der Bestimmung der CO₂-Emissionen und des Kraftstoffverbrauchs von schweren Nutzfahrzeugen sowie zur Änderung der Richtlinie 2007/46/EG des Europäischen Parlaments und des Rates sowie der Verordnung (EU) Nr. 582/2011 der Kommission, ABl. L 349 vom 29.12.2017, S. 1; zuletzt geändert durch Verordnung (EU) 2022/1379, ABl. L 212 vom 12.8.2022, S. 1."
               ],
               [
                 "Verordnung (EU) 2018/985",
@@ -12431,7 +12431,7 @@
               ],
               [
                 "UNECE-Reglement Nr. 9",
-                "UNECE-Reglement Nr. 9 vom 26. Januar 1994 über einheitliche Vorschriften für die Genehmigung von Fahrzeugen der Klassen L 2 , L 4 und L 5 hinsichtlich ihrer Geräuschentwicklung; geändert durch Änderungsserie 08 Ergänzung 2, in Kraft seit 8. Oktober 2022 (Add.8 Rev.4 Änd.2)."
+                "UNECE-Reglement Nr. 9 vom 26. Januar 1994 über einheitliche Vorschriften für die Genehmigung von Fahrzeugen der Klassen L₂, L₄ und L₅ hinsichtlich ihrer Geräuschentwicklung; geändert durch Änderungsserie 08 Ergänzung 2, in Kraft seit 8. Oktober 2022 (Add.8 Rev.4 Änd.2)."
               ],
               [
                 "UNECE-Reglement Nr. 10",
@@ -12595,11 +12595,11 @@
               ],
               [
                 "UNECE-Reglement Nr. 52",
-                "UNECE-Reglement Nr. 52 vom 1. November 1982 hinsichtlich der konstruktiven Merkmale von Kleinbussen und Gesellschaftswagen (M 2 , M 3 ) mit geringer Sitzplatzzahl (max. 23 inkl. Führer); zuletzt geändert durch Änderungsserie 01 Ergänzung 9, in Kraft seit 10. November 2007 (Add.51 Rev.3)."
+                "UNECE-Reglement Nr. 52 vom 1. November 1982 hinsichtlich der konstruktiven Merkmale von Kleinbussen und Gesellschaftswagen (M₂, M₃) mit geringer Sitzplatzzahl (max. 23 inkl. Führer); zuletzt geändert durch Änderungsserie 01 Ergänzung 9, in Kraft seit 10. November 2007 (Add.51 Rev.3)."
               ],
               [
                 "UNECE-Reglement Nr. 53",
-                "UNECE-Reglement Nr. 53 vom 1. Februar 1983 über einheitliche Vorschriften für die Genehmigung von L 3 -Fahrzeugen (Motorrädern) hinsichtlich des Anbaus der Beleuchtungs- und Lichtsignaleinrichtungen; zuletzt geändert durch Änderungsserie 04, Ergänzung 1, in Kraft seit 22. September 2024 (Add.52 Rev.6 Änd.1)."
+                "UNECE-Reglement Nr. 53 vom 1. Februar 1983 über einheitliche Vorschriften für die Genehmigung von L₃-Fahrzeugen (Motorrädern) hinsichtlich des Anbaus der Beleuchtungs- und Lichtsignaleinrichtungen; zuletzt geändert durch Änderungsserie 04, Ergänzung 1, in Kraft seit 22. September 2024 (Add.52 Rev.6 Änd.1)."
               ],
               [
                 "UNECE-Reglement Nr. 54",
@@ -12751,7 +12751,7 @@
               ],
               [
                 "UNECE-Reglement Nr. 92",
-                "UNECE-Reglement Nr. 92 vom 1. November 1993 über einheitliche Vorschriften für die Genehmigung von nicht originalen Austauschschalldämpferanlagen (NORESS) für Fahrzeuge der Klassen L 1 , L 2 , L 3 , L 4 und L 5 hinsichtlich der Geräuschemissionen; zuletzt geändert durch Änderungsserie 02, in Kraft seit 15. Oktober 2019 (Add.91 Rev.2)."
+                "UNECE-Reglement Nr. 92 vom 1. November 1993 über einheitliche Vorschriften für die Genehmigung von nicht originalen Austauschschalldämpferanlagen (NORESS) für Fahrzeuge der Klassen L₁, L₂, L₃, L₄ und L₅ hinsichtlich der Geräuschemissionen; zuletzt geändert durch Änderungsserie 02, in Kraft seit 15. Oktober 2019 (Add.91 Rev.2)."
               ],
               [
                 "UNECE-Reglement Nr. 93",
@@ -12759,11 +12759,11 @@
               ],
               [
                 "UNECE-Reglement Nr. 94",
-                "UNECE-Reglement Nr. 94 vom 1. Oktober 1995 über einheitliche Vorschriften für die Genehmigung der Motorfahrzeuge (M 1 < 2,5 t) hinsichtlich des Schutzes der Insassen bei einem Frontalaufprall; zuletzt geändert durch Änderungsserie 05, in Kraft seit 15. Juni 2024 (Add.93 Rev.5)."
+                "UNECE-Reglement Nr. 94 vom 1. Oktober 1995 über einheitliche Vorschriften für die Genehmigung der Motorfahrzeuge (M₁ < 2,5 t) hinsichtlich des Schutzes der Insassen bei einem Frontalaufprall; zuletzt geändert durch Änderungsserie 05, in Kraft seit 15. Juni 2024 (Add.93 Rev.5)."
               ],
               [
                 "UNECE-Reglement Nr. 95",
-                "UNECE-Reglement Nr. 95 vom 6. Juli 1995 über einheitliche Vorschriften für die Genehmigung der Motorfahrzeuge (M 1 und N 1 ) hinsichtlich des Schutzes der Insassen bei einem Seitenaufprall; zuletzt geändert durch Änderungsserie 06, in Kraft seit 15. Juni 2024 (Add.94 Rev.5)."
+                "UNECE-Reglement Nr. 95 vom 6. Juli 1995 über einheitliche Vorschriften für die Genehmigung der Motorfahrzeuge (M₁ und N₁) hinsichtlich des Schutzes der Insassen bei einem Seitenaufprall; zuletzt geändert durch Änderungsserie 06, in Kraft seit 15. Juni 2024 (Add.94 Rev.5)."
               ],
               [
                 "UNECE-Reglement Nr. 96",
@@ -12787,7 +12787,7 @@
               ],
               [
                 "UNECE-Reglement Nr. 101",
-                "UNECE-Reglement Nr. 101 vom 1. Januar 1997 über einheitliche Vorschriften für die Genehmigung der Personenwagen, die nur mit einem Verbrennungsmotor oder mit Hybrid-Elektro-Antrieb betrieben werden, hinsichtlich der Messung der Kohlendioxidemission und des Kraftstoffverbrauchs und/oder der Messung des Stromverbrauchs und der elektrischen Reichweite sowie der nur mit Elektroantrieb betriebenen Fahrzeuge der Klassen M 1 und N 1 hinsichtlich der Messung des Stromverbrauchs und der elektrischen Reichweite; zuletzt geändert durch Änderungsserie 01 Ergänzung 12, in Kraft seit 5. Januar 2024 (Add.100 Rev.3 Änd.11)."
+                "UNECE-Reglement Nr. 101 vom 1. Januar 1997 über einheitliche Vorschriften für die Genehmigung der Personenwagen, die nur mit einem Verbrennungsmotor oder mit Hybrid-Elektro-Antrieb betrieben werden, hinsichtlich der Messung der Kohlendioxidemission und des Kraftstoffverbrauchs und/oder der Messung des Stromverbrauchs und der elektrischen Reichweite sowie der nur mit Elektroantrieb betriebenen Fahrzeuge der Klassen M₁ und N₁ hinsichtlich der Messung des Stromverbrauchs und der elektrischen Reichweite; zuletzt geändert durch Änderungsserie 01 Ergänzung 12, in Kraft seit 5. Januar 2024 (Add.100 Rev.3 Änd.11)."
               ],
               [
                 "UNECE-Reglement Nr. 102",
@@ -12811,7 +12811,7 @@
               ],
               [
                 "UNECE-Reglement Nr. 107",
-                "UNECE-Reglement Nr. 107 vom 18. Juni 1998 über einheitliche Vorschriften für die Genehmigung von Fahrzeugen der Klassen M 2 und M 3 hinsichtlich ihrer allgemeinen Konstruktionsmerkmale; zuletzt geändert durch Änderungsserie 10, in Kraft seit 8. Oktober 2022 (Add.106 Rev.10)."
+                "UNECE-Reglement Nr. 107 vom 18. Juni 1998 über einheitliche Vorschriften für die Genehmigung von Fahrzeugen der Klassen M₂ und M₃ hinsichtlich ihrer allgemeinen Konstruktionsmerkmale; zuletzt geändert durch Änderungsserie 10, in Kraft seit 8. Oktober 2022 (Add.106 Rev.10)."
               ],
               [
                 "UNECE-Reglement Nr. 108",
@@ -12987,7 +12987,7 @@
               ],
               [
                 "UNECE-Reglement Nr. 152",
-                "UNECE-Reglement Nr. 152 vom 23. Januar 2020 über einheitliche Vorschriften für die Genehmigung von Motorfahrzeugen hinsichtlich des Notbremsassistenzsystems (AEBS) in Fahrzeugen der Klassen M 1 und N 1 ; zuletzt geändert durch Änderungsserie 02 Ergänzung 3, in Kraft seit 24. September 2023 (Add.151 Rev.2 Änd.3)."
+                "UNECE-Reglement Nr. 152 vom 23. Januar 2020 über einheitliche Vorschriften für die Genehmigung von Motorfahrzeugen hinsichtlich des Notbremsassistenzsystems (AEBS) in Fahrzeugen der Klassen M₁ und N₁; zuletzt geändert durch Änderungsserie 02 Ergänzung 3, in Kraft seit 24. September 2023 (Add.151 Rev.2 Änd.3)."
               ],
               [
                 "UNECE-Reglement Nr. 153",
@@ -13274,7 +13274,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_2",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "709caf9ea1f4111db87a14837a8821b5832f981d44234db5e78b342d92f627f8"
+      "sha": "1d55d3ea45cc457a77991b2f94ed069e7c57289219669f0320b6ab090a737776"
     },
     {
       "id": "bund/VTS/annex_3",
@@ -13909,7 +13909,7 @@
             "zeilen": [
               [
                 "Seitenlänge: Höhe des «S»: Breite des «S»: Strichbreite des «S»:",
-                "25 cm 2 / 3 Seitenlänge 1 / 2 Seitenlänge 1 / 10 Seitenlänge"
+                "25 cm ²/₃ Seitenlänge ¹/₂ Seitenlänge ¹/₁₀ Seitenlänge"
               ]
             ]
           }
@@ -13930,7 +13930,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_4",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "b90f56f11083747008cf90d53af404ca6618355c030f3ac6ead29300291a9a8b"
+      "sha": "fa8fcb79805f29bfb1abe95c057b68f2d83ec39d5743b9e26b675c9ee7b6ac26"
     },
     {
       "id": "bund/VTS/annex_5",
@@ -14088,7 +14088,7 @@
             },
             {
               "marke": "211.2",
-              "text": "Für Fahrzeuge der Klasse M 1 mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Abgasemissionen den für das Basisfahrzeug geltenden Anforderungen entsprechen.",
+              "text": "Für Fahrzeuge der Klasse M₁ mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Abgasemissionen den für das Basisfahrzeug geltenden Anforderungen entsprechen.",
               "trenner": ""
             },
             {
@@ -14224,7 +14224,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_5",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "56ae751f6d50cc56e0cff89b63a2b1cd95ce202a671ce2296b7a361ca379c3d1"
+      "sha": "b8bd18b1444bd0df0d64d1ba3fe6684ee81d4041aea8d626dd5273590adfca1c"
     },
     {
       "id": "bund/VTS/annex_6",
@@ -14309,7 +14309,7 @@
             },
             {
               "marke": "111.12",
-              "text": "Für Fahrzeuge der Klasse M 1 mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Geräuschemissionen den für das Basisfahrzeug geltenden Anforderungen entsprechen.",
+              "text": "Für Fahrzeuge der Klasse M₁ mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Geräuschemissionen den für das Basisfahrzeug geltenden Anforderungen entsprechen.",
               "trenner": ""
             },
             {
@@ -15134,7 +15134,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_6",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "32099a501fcb06951884f7fe773638a09fa27504ff6dab1155c737f1d78e374b"
+      "sha": "9931f8f6d396f291118d6eb38ddec6f338ea4f5fb6580f85cc47eef4aa9f7d9b"
     },
     {
       "id": "bund/VTS/annex_7",
@@ -15177,7 +15177,7 @@
         },
         {
           "absatz": null,
-          "text": "Die mittlere Vollverzögerung ist die durchschnittliche Geschwindigkeitsminderung in m/s 2 auf der Strecke, die vom Einsetzen der höchsten Bremskraft am Ende der Schwellzeit bis zum Stillstand des Fahrzeugs zurückgelegt wird."
+          "text": "Die mittlere Vollverzögerung ist die durchschnittliche Geschwindigkeitsminderung in m/s² auf der Strecke, die vom Einsetzen der höchsten Bremskraft am Ende der Schwellzeit bis zum Stillstand des Fahrzeugs zurückgelegt wird."
         },
         {
           "absatz": null,
@@ -15240,11 +15240,11 @@
               },
               {
                 "typ": "text",
-                "titel": "v 1"
+                "titel": "v₁"
               },
               {
                 "typ": "text",
-                "titel": "v 2"
+                "titel": "v₂"
               },
               {
                 "typ": "text",
@@ -15257,51 +15257,51 @@
             ],
             "zeilen": [
               [
-                "M 1",
+                "M₁",
                 "80 % vmax, ≤ 120 km/h",
-                "½ v 1",
+                "½ v₁",
                 "45 s",
                 "15"
               ],
               [
-                "M 2",
+                "M₂",
                 "80 % vmax, ≤ 100 km/h",
-                "½ v 1",
+                "½ v₁",
                 "55 s",
                 "15"
               ],
               [
-                "N 1",
+                "N₁",
                 "80 % vmax, ≤ 120 km/h",
-                "½ v 1",
+                "½ v₁",
                 "55 s",
                 "15"
               ],
               [
-                "M3, N2, N 3",
+                "M₃, N₂, N₃",
                 "80 % vmax, ≤ 60 km/h",
-                "½ v 1",
+                "½ v₁",
                 "60 s",
                 "20"
               ],
               [
                 "T, C",
                 "80 % vmax",
-                "½ v 1",
+                "½ v₁",
                 "60 s",
                 "20"
               ],
               [
                 "wahlweise, wenn vmax ≤ 40 km/h",
                 "",
-                "0,05 v 1",
+                "0,05 v₁",
                 "",
                 "18"
               ],
               [
                 "Motorräder, Leicht-, Klein- und dreirädrige Motorfahrzeuge Vorderrad / kombinierte Bremsen",
                 "70 % vmax, ≤ 100 km/h",
-                "½ v 1",
+                "½ v₁",
                 "1000 m",
                 "10"
               ],
@@ -15326,12 +15326,12 @@
             },
             {
               "marke": "132.1",
-              "text": "Fahrzeuge der Klasse M 1 : 75 %;",
+              "text": "Fahrzeuge der Klasse M₁: 75 %;",
               "trenner": ""
             },
             {
               "marke": "132.2",
-              "text": "Fahrzeuge der Klassen M 2 , M 3 , N, T und C: 80 %;",
+              "text": "Fahrzeuge der Klassen M₂, M₃, N, T und C: 80 %;",
               "trenner": ""
             },
             {
@@ -15348,7 +15348,7 @@
         },
         {
           "absatz": null,
-          "text": "Dauerbremsen von Traktoren und Fahrzeugen der Klassen N und M 2 müssen eine mittlere Verzögerung von mindestens 0,5 m/s 2 erreichen. Dauerbremsen von Gesellschaftswagen der Klasse M3, ausgenommen Gesellschaftswagen der Klasse I, und von Fahrzeugen der Klasse N 3, die zum Ziehen von Anhängern der Klasse O 4 zugelassen sind, müssen eine mittlere Verzögerung von mindestens 0,6 m/s 2 erreichen. Bei der Prüfung muss die Getriebestufe eingelegt werden, in welcher bei der Drehzahl der grössten Motornutzleistung die erreichbare Geschwindigkeit am nächsten bei 30 km/h liegt und die Motordrehzahl den vom Hersteller oder der Herstellerin vorgeschriebenen Höchstwert nicht überschreitet. Die mittlere Verzögerung ist über die Zeit und Geschwindigkeitsveränderung zu ermitteln."
+          "text": "Dauerbremsen von Traktoren und Fahrzeugen der Klassen N und M₂ müssen eine mittlere Verzögerung von mindestens 0,5 m/s² erreichen. Dauerbremsen von Gesellschaftswagen der Klasse M₃, ausgenommen Gesellschaftswagen der Klasse I, und von Fahrzeugen der Klasse N₃, die zum Ziehen von Anhängern der Klasse O₄ zugelassen sind, müssen eine mittlere Verzögerung von mindestens 0,6 m/s² erreichen. Bei der Prüfung muss die Getriebestufe eingelegt werden, in welcher bei der Drehzahl der grössten Motornutzleistung die erreichbare Geschwindigkeit am nächsten bei 30 km/h liegt und die Motordrehzahl den vom Hersteller oder der Herstellerin vorgeschriebenen Höchstwert nicht überschreitet. Die mittlere Verzögerung ist über die Zeit und Geschwindigkeitsveränderung zu ermitteln."
         },
         {
           "absatz": null,
@@ -15410,7 +15410,7 @@
         },
         {
           "absatz": null,
-          "text": "Für Fahrzeuge der Klasse M 1 mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Bremsen den für das Basisfahrzeug geltenden Anforderungen entsprechen."
+          "text": "Für Fahrzeuge der Klasse M₁ mit besonderer Zweckbestimmung (Verordnung (EU) 2018/858), die auf der Basis von Fahrzeugen einer anderen Klasse aufgebaut sind, genügt es, wenn sie hinsichtlich der Bremsen den für das Basisfahrzeug geltenden Anforderungen entsprechen."
         },
         {
           "absatz": null,
@@ -15459,11 +15459,11 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "text",
-                "titel": "v 1"
+                "titel": "v₁"
               },
               {
                 "typ": "text",
@@ -15476,21 +15476,21 @@
             ],
             "zeilen": [
               [
-                "M 1",
+                "M₁",
                 "5,8",
                 "100 km/h",
                 "500 N",
                 ""
               ],
               [
-                "N 1",
+                "N₁",
                 "5,0",
                 "80 km/h",
                 "700 N",
                 ""
               ],
               [
-                "M 2 , M 3 , N 2 , N 3",
+                "M₂, M₃, N₂, N₃",
                 "5,0",
                 "60 km/h",
                 "700 N",
@@ -15535,11 +15535,11 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "text",
-                "titel": "v 1"
+                "titel": "v₁"
               },
               {
                 "typ": "text",
@@ -15552,35 +15552,35 @@
             ],
             "zeilen": [
               [
-                "M 1",
+                "M₁",
                 "2,44",
                 "100 km/h",
                 "500 N",
                 "500 N"
               ],
               [
-                "M 2 , M 3",
+                "M₂, M₃",
                 "2,5",
                 "60 km/h",
                 "700 N",
                 "600 N"
               ],
               [
-                "N 1",
+                "N₁",
                 "2,2",
                 "70 km/h",
                 "700 N",
                 "600 N"
               ],
               [
-                "N 2",
+                "N₂",
                 "2,2",
                 "50 km/h",
                 "700 N",
                 "600 N"
               ],
               [
-                "N 3",
+                "N₃",
                 "2,2",
                 "40 km/h",
                 "700 N",
@@ -15619,12 +15619,12 @@
             },
             {
               "marke": "a",
-              "text": "20 Prozent bei Fahrzeugen der Klasse M 1 ;",
+              "text": "20 Prozent bei Fahrzeugen der Klasse M₁;",
               "tiefe": 1
             },
             {
               "marke": "b",
-              "text": "18 Prozent bei Fahrzeugen der Klassen M 2 , M 3 , N, T und C;",
+              "text": "18 Prozent bei Fahrzeugen der Klassen M₂, M₃, N, T und C;",
               "tiefe": 1
             },
             {
@@ -15639,7 +15639,7 @@
             },
             {
               "marke": "213.3",
-              "text": "Bei Handbetätigung darf die Betätigungskraft 400 N bei den Fahrzeugen der Klasse M 1 und 600 N bei allen anderen Fahrzeugen nicht übersteigen. Bei Fussbetätigung darf die Betätigungskraft 500 N bei den Fahrzeugen der Klasse M 1 und 700 N bei allen übrigen Fahrzeugen nicht übersteigen.",
+              "text": "Bei Handbetätigung darf die Betätigungskraft 400 N bei den Fahrzeugen der Klasse M₁ und 600 N bei allen anderen Fahrzeugen nicht übersteigen. Bei Fussbetätigung darf die Betätigungskraft 500 N bei den Fahrzeugen der Klasse M₁ und 700 N bei allen übrigen Fahrzeugen nicht übersteigen.",
               "trenner": ""
             },
             {
@@ -15665,44 +15665,44 @@
               },
               {
                 "typ": "text",
-                "titel": "v 1"
+                "titel": "v₁"
               },
               {
                 "typ": "zahl",
-                "titel": "beladen m/s 2"
+                "titel": "beladen m/s²"
               },
               {
                 "typ": "zahl",
-                "titel": "leer m/s 2"
+                "titel": "leer m/s²"
               }
             ],
             "zeilen": [
               [
-                "M 2",
+                "M₂",
                 "60 km/h",
                 "1,5",
                 "1,3"
               ],
               [
-                "M 3",
+                "M₃",
                 "60 km/h",
                 "1,5",
                 "1,5"
               ],
               [
-                "N 1",
+                "N₁",
                 "70 km/h",
                 "1,3",
                 "1,1"
               ],
               [
-                "N 2",
+                "N₂",
                 "50 km/h",
                 "1,3",
                 "1,1"
               ],
               [
-                "N 3",
+                "N₃",
                 "40 km/h",
                 "1,3",
                 "1,3"
@@ -15799,25 +15799,25 @@
           "items": [
             {
               "marke": "Klasse 1",
-              "text": "3,4 m/s 2",
+              "text": "3,4 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 2",
-              "text": "2,7 m/s 2",
+              "text": "2,7 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 3",
-              "text": "4,4 m/s 2",
+              "text": "4,4 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 4",
-              "text": "3,6 m/s 2",
+              "text": "3,6 m/s²",
               "tiefe": 1,
               "trenner": ":"
             }
@@ -15831,17 +15831,17 @@
         },
         {
           "absatz": null,
-          "text": "Klassen 1 und 2: 2,7 m/s 2",
+          "text": "Klassen 1 und 2: 2,7 m/s²",
           "einzug": 1
         },
         {
           "absatz": null,
-          "text": "Klasse 3: 2,9 m/s 2",
+          "text": "Klasse 3: 2,9 m/s²",
           "einzug": 1
         },
         {
           "absatz": null,
-          "text": "Klasse 4: 3,6 m/s 2",
+          "text": "Klasse 4: 3,6 m/s²",
           "einzug": 1
         },
         {
@@ -15861,25 +15861,25 @@
           "items": [
             {
               "marke": "Klassen 1 und 2",
-              "text": "4,4 m/s 2",
+              "text": "4,4 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 3",
-              "text": "5,1 m/s 2",
+              "text": "5,1 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 4",
-              "text": "5,4 m/s 2",
+              "text": "5,4 m/s²",
               "tiefe": 1,
               "trenner": ":"
             },
             {
               "marke": "Klasse 5",
-              "text": "5,0 m/s 2",
+              "text": "5,0 m/s²",
               "tiefe": 1,
               "trenner": ":"
             }
@@ -15892,7 +15892,7 @@
           "items": [
             {
               "marke": "234",
-              "text": "Bremsung der zweiten Betriebsbremsanlage oder der Hilfsbremsanlage Die Verzögerung muss mindestens betragen: 2,5 m/s 2",
+              "text": "Bremsung der zweiten Betriebsbremsanlage oder der Hilfsbremsanlage Die Verzögerung muss mindestens betragen: 2,5 m/s²",
               "trenner": ""
             },
             {
@@ -15953,7 +15953,7 @@
             },
             {
               "marke": "311.1",
-              "text": "Die Bremsverzögerung muss vom leeren und vom beladenen Fahrzeug auf ebener Strasse mit trockenem Hartbelag erreicht werden. Die Bremswirkung muss bei kalten Bremsen (Temperatur an den Bremstrommeln oder Bremsscheiben unter 100 °C) erreicht werden. Gemessen wird die mittlere Verzögerung, die definiert ist als die durchschnittliche Geschwindigkeitsminderung in m/s 2 auf der Strecke, die vom Beginn der Betätigung der Bremsanlage (inklusive der Ansprech- und Schwellzeit) bis zum Stillstand des Fahrzeuges zurückgelegt wird. Kann mit einem Messgerät nur die maximale Verzögerung ermittelt werden, so muss sie mindestens 20 Prozent höher sein als die vorgeschriebene mittlere Verzögerung. Die Wirksamkeit der Bremsen kann, insbesondere anlässlich der Nachprüfung, über die Abbremsung nach dem folgenden Verfahren ermittelt werden:",
+              "text": "Die Bremsverzögerung muss vom leeren und vom beladenen Fahrzeug auf ebener Strasse mit trockenem Hartbelag erreicht werden. Die Bremswirkung muss bei kalten Bremsen (Temperatur an den Bremstrommeln oder Bremsscheiben unter 100 °C) erreicht werden. Gemessen wird die mittlere Verzögerung, die definiert ist als die durchschnittliche Geschwindigkeitsminderung in m/s² auf der Strecke, die vom Beginn der Betätigung der Bremsanlage (inklusive der Ansprech- und Schwellzeit) bis zum Stillstand des Fahrzeuges zurückgelegt wird. Kann mit einem Messgerät nur die maximale Verzögerung ermittelt werden, so muss sie mindestens 20 Prozent höher sein als die vorgeschriebene mittlere Verzögerung. Die Wirksamkeit der Bremsen kann, insbesondere anlässlich der Nachprüfung, über die Abbremsung nach dem folgenden Verfahren ermittelt werden:",
               "trenner": ""
             }
           ]
@@ -16020,7 +16020,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "zahl",
@@ -16074,7 +16074,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "zahl",
@@ -16128,7 +16128,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "zahl",
@@ -16177,7 +16177,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               },
               {
                 "typ": "zahl",
@@ -16261,7 +16261,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               }
             ],
             "zeilen": [
@@ -16314,7 +16314,7 @@
               },
               {
                 "typ": "zahl",
-                "titel": "m/s 2"
+                "titel": "m/s²"
               }
             ],
             "zeilen": [
@@ -16366,7 +16366,7 @@
         },
         {
           "absatz": null,
-          "text": "Dauerbremsen müssen eine mittlere Verzögerung von mindestens 0,5 m/s 2 erreichen. Dabei muss die Getriebestufe eingelegt werden, in der bei der Drehzahl der grössten Motornutzleistung die erreichbare Geschwindigkeit am nächsten bei 30 km/h liegt und die Motordrehzahl den vom Hersteller oder von der Herstellerin vorgeschriebenen Höchstwert nicht überschreitet."
+          "text": "Dauerbremsen müssen eine mittlere Verzögerung von mindestens 0,5 m/s² erreichen. Dabei muss die Getriebestufe eingelegt werden, in der bei der Drehzahl der grössten Motornutzleistung die erreichbare Geschwindigkeit am nächsten bei 30 km/h liegt und die Motordrehzahl den vom Hersteller oder von der Herstellerin vorgeschriebenen Höchstwert nicht überschreitet."
         },
         {
           "absatz": null,
@@ -16556,7 +16556,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_7",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "82e3c05b078b24d431c2eae60ab0e1374a61a2dc324d8cf6f8b4076c24773e4e"
+      "sha": "bd1d5d669ac9669692010d78dcb618e94b180e7c0297ef36f6c0cd6a9ea35a35"
     },
     {
       "id": "bund/VTS/annex_8",
@@ -16961,7 +16961,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Grundfläche eines Stehplatzes muss mindestens 0,125 m 2 betragen. Die Bestimmung der für Stehplätze verfügbaren Fläche richtet sich nach Ziffer 332.1."
+          "text": "Die Grundfläche eines Stehplatzes muss mindestens 0,125 m² betragen. Die Bestimmung der für Stehplätze verfügbaren Fläche richtet sich nach Ziffer 332.1."
         },
         {
           "absatz": null,
@@ -17052,12 +17052,12 @@
             },
             {
               "marke": "322",
-              "text": "Das Gepäckgewicht (B) muss mindestens 100 kg pro m 3 Ladevolumen (V) betragen. Bei Fahrzeugen der Klassen I und A wird das Ladevolumen der nur von aussen zugänglichen Gepäckräume nicht berücksichtigt.",
+              "text": "Das Gepäckgewicht (B) muss mindestens 100 kg pro m³ Ladevolumen (V) betragen. Bei Fahrzeugen der Klassen I und A wird das Ladevolumen der nur von aussen zugänglichen Gepäckräume nicht berücksichtigt.",
               "trenner": ""
             },
             {
               "marke": "323",
-              "text": "Die Belastung des auf dem Fahrzeugdach beförderten Gepäcks (BX) darf 75 kg pro m 2 Dachfläche, die für die Gepäckbeförderung ausgerüstet ist (VX), nicht übersteigen.",
+              "text": "Die Belastung des auf dem Fahrzeugdach beförderten Gepäcks (BX) darf 75 kg pro m² Dachfläche, die für die Gepäckbeförderung ausgerüstet ist (VX), nicht übersteigen.",
               "trenner": ""
             }
           ]
@@ -17230,7 +17230,7 @@
             },
             {
               "marke": "332.1",
-              "text": "Die für Stehplätze verfügbare Fläche (S 1 ) in m 2 wird errechnet, indem die folgenden Flächen von der Gesamtbodenfläche eines Fahrzeuges abgezogen werden:",
+              "text": "Die für Stehplätze verfügbare Fläche (S₁) in m² wird errechnet, indem die folgenden Flächen von der Gesamtbodenfläche eines Fahrzeuges abgezogen werden:",
               "trenner": ""
             },
             {
@@ -17316,8 +17316,8 @@
             ],
             "zeilen": [
               [
-                "0,125 m 2",
-                "0,15 m 2"
+                "0,125 m²",
+                "0,15 m²"
               ]
             ]
           }
@@ -17370,13 +17370,13 @@
             },
             {
               "marke": "[tab]",
-              "text": "S 1 = für stehende Fahrgäste zur Verfügung stehende Fläche in m 2",
+              "text": "S₁ = für stehende Fahrgäste zur Verfügung stehende Fläche in m²",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "[tab]",
-              "text": "SSp = Grundfläche pro Stehplatz in m 2",
+              "text": "SSp = Grundfläche pro Stehplatz in m²",
               "tiefe": 1,
               "trenner": ""
             },
@@ -17394,13 +17394,13 @@
             },
             {
               "marke": "[tab]",
-              "text": "V = Für Gepäck zur Verfügung stehendes Volumen in m 3",
+              "text": "V = Für Gepäck zur Verfügung stehendes Volumen in m³",
               "tiefe": 1,
               "trenner": ""
             },
             {
               "marke": "[tab]",
-              "text": "VX = Für Gepäck zur Verfügung stehende Dachfläche in m 2",
+              "text": "VX = Für Gepäck zur Verfügung stehende Dachfläche in m²",
               "tiefe": 1,
               "trenner": ""
             },
@@ -17412,7 +17412,7 @@
             },
             {
               "marke": "343",
-              "text": "Bei Fahrzeugen der Klasse III beträgt der Wert S 1 (für stehende Fahrgäste zur Verfügung stehende Fläche) 0, da nur sitzende Fahrgäste zulässig sind.",
+              "text": "Bei Fahrzeugen der Klasse III beträgt der Wert S₁ (für stehende Fahrgäste zur Verfügung stehende Fläche) 0, da nur sitzende Fahrgäste zulässig sind.",
               "trenner": ""
             }
           ]
@@ -17436,7 +17436,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_9",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "ef82fe01e369670e2978b0db91c17375e42612f1ddf1c05a5576876e07554f15"
+      "sha": "d2d731c64f93d0dffe1889b0e7d52c5934e860ec98b1a1d26a3d36ef8c3991a2"
     },
     {
       "id": "bund/VTS/annex_10",
@@ -17611,12 +17611,12 @@
             },
             {
               "marke": "23",
-              "text": "Der Zwischenraum zwischen den Leuchtflächen der Abblendlichter und derjenige zwischen den Leuchtflächen der Richtungsblinker muss mindestens 0,50 m betragen. Dies gilt nicht für zweirädrige Motorräder mit oder ohne Seitenwagen, Motorschlitten und für Fahrzeuge der Klassen M 1 und N 1 .",
+              "text": "Der Zwischenraum zwischen den Leuchtflächen der Abblendlichter und derjenige zwischen den Leuchtflächen der Richtungsblinker muss mindestens 0,50 m betragen. Dies gilt nicht für zweirädrige Motorräder mit oder ohne Seitenwagen, Motorschlitten und für Fahrzeuge der Klassen M₁ und N₁.",
               "trenner": ""
             },
             {
               "marke": "231",
-              "text": "Beträgt die Fahrzeugbreite nicht mehr als 1,30 m, so muss der Zwischenraum zwischen den Leuchtflächen der Abblendlichter und derjenige zwischen den Leuchtflächen der Richtungsblinker mindestens 0,40 m betragen. Dies gilt nicht für zweirädrige Motorräder mit oder ohne Seitenwagen, Motorschlitten und für Fahrzeuge der Klassen M 1 und N 1 .",
+              "text": "Beträgt die Fahrzeugbreite nicht mehr als 1,30 m, so muss der Zwischenraum zwischen den Leuchtflächen der Abblendlichter und derjenige zwischen den Leuchtflächen der Richtungsblinker mindestens 0,40 m betragen. Dies gilt nicht für zweirädrige Motorräder mit oder ohne Seitenwagen, Motorschlitten und für Fahrzeuge der Klassen M₁ und N₁.",
               "trenner": ""
             },
             {
@@ -17685,7 +17685,7 @@
               ],
               [
                 "314",
-                "bei Rückfahrlichtern, ausgenommen an Fahrzeugen der Klassen M 1 und N 1 mit einer Länge bis 6 m",
+                "bei Rückfahrlichtern, ausgenommen an Fahrzeugen der Klassen M₁ und N₁ mit einer Länge bis 6 m",
                 "0,25 m"
               ],
               [
@@ -17700,7 +17700,7 @@
               ],
               [
                 "",
-                "bei Abblend- und Nebellichtern von land- und forstwirtschaftlichen Motorfahrzeugen, wenn es die Form des Aufbaus erfordert, und bei Abblendlichtern von Geländefahrzeugen der Klasse N 3",
+                "bei Abblend- und Nebellichtern von land- und forstwirtschaftlichen Motorfahrzeugen, wenn es die Form des Aufbaus erfordert, und bei Abblendlichtern von Geländefahrzeugen der Klasse N₃",
                 "1,50 m"
               ],
               [
@@ -17735,7 +17735,7 @@
               ],
               [
                 "322.3",
-                "bei Standlichtern an Fahrzeugen der Klassen O 1 und O 2",
+                "bei Standlichtern an Fahrzeugen der Klassen O₁ und O₂",
                 "2,10 m"
               ],
               [
@@ -17775,7 +17775,7 @@
               ],
               [
                 "326",
-                "bei Rückfahrlichtern, ausgenommen an Fahrzeugen der Klassen M 1 und N 1 mit einer Länge bis 6 m",
+                "bei Rückfahrlichtern, ausgenommen an Fahrzeugen der Klassen M₁ und N₁ mit einer Länge bis 6 m",
                 "1,20 m"
               ]
             ]
@@ -18362,7 +18362,7 @@
             ],
             "zeilen": [
               [
-                "Nur für Fahrzeuge bis 6 m Länge zulässig. Distanz der seitlichen Blinker vom vorderen Fahrzeugrand höchstens 2,50 m. Die leuchtende Fläche der mitblinkenden seitlichen Markierlichter muss mindestens je 12,5 cm 2 betragen."
+                "Nur für Fahrzeuge bis 6 m Länge zulässig. Distanz der seitlichen Blinker vom vorderen Fahrzeugrand höchstens 2,50 m. Die leuchtende Fläche der mitblinkenden seitlichen Markierlichter muss mindestens je 12,5 cm² betragen."
               ]
             ]
           }
@@ -18639,7 +18639,7 @@
         },
         {
           "absatz": null,
-          "text": "Bei Fahrzeugen der Klassen M 1 und N 1 können die horizontalen Sichtwinkel nach aussen auf 45° reduziert werden, wenn vorne bzw. hinten ergänzende seitliche Markierlichter mit einer Leuchtfläche von mindestens je 12,5 cm 2 angebracht sind. Bei Anhängern muss der innere Sichtwinkel mindestens 5° betragen"
+          "text": "Bei Fahrzeugen der Klassen M₁ und N₁ können die horizontalen Sichtwinkel nach aussen auf 45° reduziert werden, wenn vorne bzw. hinten ergänzende seitliche Markierlichter mit einer Leuchtfläche von mindestens je 12,5 cm² angebracht sind. Bei Anhängern muss der innere Sichtwinkel mindestens 5° betragen"
         },
         {
           "absatz": null,
@@ -18920,7 +18920,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/4425_4425_4425/de#annex_10",
       "abgerufen": "2026-10-02",
       "fassungsToken": "20261001",
-      "sha": "eb1be979af33091d7d0bd14f64b8d05c37102f101749585c6c124df81f264cc9"
+      "sha": "95d390dbf6a2e1917a912db914e09da374b8c060c908bfed70b342ba81809bcb"
     },
     {
       "id": "bund/VTS/annex_11",

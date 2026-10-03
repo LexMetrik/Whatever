@@ -1141,13 +1141,12 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2000/875"
       }
      ],
-     "absatz": null,
+     "absatz": "2sexies",
      "item": null,
-     "absatzIndex": 6,
      "pos": {
       "b": 6,
-      "o": 113,
-      "l": 113
+      "o": 105,
+      "l": 105
      },
      "kl": "A"
     },
@@ -1161,13 +1160,12 @@
        "rs": "810.21"
       }
      ],
-     "absatz": null,
+     "absatz": "2septies",
      "item": null,
-     "absatzIndex": 7,
      "pos": {
       "b": 7,
-      "o": 116,
-      "l": 117
+      "o": 107,
+      "l": 108
      },
      "kl": "V"
     },
@@ -1188,13 +1186,12 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2013/414"
       }
      ],
-     "absatz": null,
+     "absatz": "2septies",
      "item": null,
-     "absatzIndex": 7,
      "pos": {
       "b": 7,
-      "o": 117,
-      "l": 117
+      "o": 108,
+      "l": 108
      },
      "kl": "A"
     },
@@ -5390,7 +5387,7 @@
        "rs": "642.11"
       }
      ],
-     "absatz": null,
+     "absatz": "1sexies",
      "item": "a",
      "pos": {
       "b": 5,
@@ -5413,7 +5410,7 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2021/2383"
       }
      ],
-     "absatz": null,
+     "absatz": "1sexies",
      "item": "b",
      "pos": {
       "b": 5,
@@ -5436,13 +5433,12 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2021/2383"
       }
      ],
-     "absatz": null,
+     "absatz": "1septies",
      "item": null,
-     "absatzIndex": 6,
      "pos": {
       "b": 6,
-      "o": 324,
-      "l": 324
+      "o": 315,
+      "l": 315
      },
      "kl": "A"
     },
@@ -5459,13 +5455,12 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2021/2383"
       }
      ],
-     "absatz": null,
+     "absatz": "1octies",
      "item": null,
-     "absatzIndex": 7,
      "pos": {
       "b": 7,
-      "o": 130,
-      "l": 130
+      "o": 122,
+      "l": 122
      },
      "kl": "A"
     },

@@ -8,6 +8,7 @@ import { anhangAmtlichesSignal } from '../aufhebung-signal.ts';
 import { ohneFortsetzungen, bloeckeAusItems } from '../anhang-fortsetzung.ts';
 import { normalisiereTabelle } from '../tabelle-normalisieren.ts';
 import { entferneTags, entferneFussnotenSups } from './text.ts';
+import { ABSATZ_NR_EIN_SUP, ABSATZ_NR_INHALT } from './absatz-nr.ts';
 import { findeDlEnde, findeDdEnde, findeSectionEnde, findeTableEnde } from './enden.ts';
 import { parseDefinitionsListe } from './listen.ts';
 import { parseFedlexTabelle, parseRohTabelle } from './tabellen.ts';
@@ -365,12 +366,12 @@ export function extrahiereAnhang(html: string, ankerRoh: string): AnhangText | n
       // Absatznummer: führendes nacktes <sup>N</sup> (ohne <a>-Kind).
       const supMatch = roh.match(/^(?:\s|&nbsp;|<\/?inl>)*<sup(?:[^>]*)>([\s\S]*?)<\/sup>/i);
       let absatz: string | null = null;
-      if (supMatch && !/<a[\s>]/i.test(supMatch[1]) && /^\d+(?:bis|ter|quater|quinquies)?[a-z]?$/.test(supMatch[1].trim())) {
+      if (supMatch && !/<a[\s>]/i.test(supMatch[1]) && ABSATZ_NR_INHALT.test(supMatch[1].trim())) {
         absatz = supMatch[1].trim();
       }
       const ohneFootnotes = entferneFussnotenSups(roh);
       const ohneAbsatzNr = absatz
-        ? ohneFootnotes.replace(/^(?:\s|&nbsp;|<\/?inl>)*<sup[^>]*>\d+(?:bis|ter|quater|quinquies)?[a-z]?<\/sup>(?:&nbsp;|\s|<\/?inl>)*/i, '')
+        ? ohneFootnotes.replace(ABSATZ_NR_EIN_SUP, '')
         : ohneFootnotes;
       const text = entferneTags(ohneAbsatzNr).replace(/\s+([.,;:])/g, '$1').trim();
       if (text) bloecke.push({ absatz, text });

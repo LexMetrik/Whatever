@@ -4,6 +4,8 @@
  * §2: kein Date.now/Math.random — rein deterministisch.
  */
 
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+
 export interface NormSnapshot {
   id: string;
   quelle: string;
@@ -157,7 +159,7 @@ export function pruefeCoverage(
 //       nicht aus der id ableitbar) und werden in check-drift.ts ausgewiesen.
 //   B2  id mit Synthese-Suffix `__<n>` (doppelte Fedlex-id) → Anker OHNE `__<n>`
 //       (amtlich nicht existent); Label = Basis-Label + lateinisches
-//       Wiederholungs-Adverb (bis|ter|quater|…decies, z. B. «Art. 126ztredecies»)
+//       Wiederholungs-Adverb (amtliche Reihe bis|ter|quater|…|tredecies, nummer.ts; z. B. «Art. 126ztredecies»)
 //       und im selben Erlass eindeutig. «Label strikt länger» (Stand #1171)
 //       liess «Art. 126zX» durch.
 //   B3  quelleUrl je Erlass eindeutig (zwei Artikel, dieselbe Stelle = Fehlsprung).
@@ -206,12 +208,14 @@ const DISP_ID = /^disp_(u\d+)_(art_.+)$/;
 const SCOPE_ID = /^scope_u\d+$/;
 const DECL_ID = /^decl_u\d+$/;
 const SCOPE_LABEL = /^Geltungsbereich(?: d\S+ \S+)? am \d{1,2}\.\s\p{L}+\s\d{4}$/u;
-// Lateinische Wiederholungs-Adverbien der Fedlex-Nummerierung: bis … novies (2–9), dann
-// Einer-Präfix + Zehner (undecies … novemdecies, vicies, unvicies … novovicies, tricies, quadragies).
-// Gemessen 1.10.2026: im Bund-Korpus höchstens «decies»/«tredecies»; ab vicies (20) sind die
-// Formen lateinische Morphologie (nicht amtlich gelistet), nur als Wiederholungs-Adverb zulässig.
-const ORDINAL_SUFFIX =
-  /^(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|(?:un|duo|ter|tre|quater|quin|sex|septen|sept|octo|oct|novem|nov|novo)?(?:decies|vicies)|tricies|quadragies)$/;
+// Lateinische Wiederholungs-Adverbien der Fedlex-Nummerierung = die amtliche Suffix-Reihe aus
+// src/lib/fedlex/nummer.ts (EINE Quelle, §5). P8 (3.10.2026, GP #1247 T4): bis dahin liess dieser
+// Riegel eine Morphologie-Regel zu (undecies … novemdecies, vicies, unvicies … novovicies, tricies,
+// quadragies) — «novovicies»/«novodecies» hat kein Erlass je verwendet, die Schreibweisen 14–19 sind
+// amtlich ungeklärt. Gemessen an den 231 gepinnten Bund-HTMLs (alle <sup>-Inhalte «<Ziffer?><Suffix>»):
+// genau die zwölf Glieder bis … tredecies, nichts darüber. Ein neues Glied wird im Korpus gemessen und
+// DORT eingetragen (nummer.ts), nicht hier geraten (§7).
+const ORDINAL_SUFFIX = new RegExp(`^${SUFFIX_ALT}$`);
 
 /**
  * Bekannte, exakt festgenagelte Abweichungen des Fedlex-Labels von der id-Ableitung
@@ -434,7 +438,7 @@ export function pruefeLabelUrlMitDeckung(
       befunde.push({
         id: sy.id,
         regel: 'B2-label',
-        text: `artikelLabel "${sy.label}" ist nicht «${sy.basisLabel}» + Wiederholungs-Adverb (bis|ter|quater|…decies)`,
+        text: `artikelLabel "${sy.label}" ist nicht «${sy.basisLabel}» + Wiederholungs-Adverb (amtliche Reihe bis|ter|quater|…|tredecies, nummer.ts)`,
       });
       continue;
     }

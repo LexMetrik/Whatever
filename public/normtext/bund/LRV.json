@@ -246,14 +246,14 @@
         },
         {
           "absatz": "3",
-          "text": "Für Hochkamine gilt Anhang 6. Kann die erforderliche Kaminbauhöhe H nicht verwirklicht werden oder beträgt die Rechengrösse H 0 mehr als 100 m, so verschärft die Behörde ersatzweise die in den Anhängen 1–3 vorgesehenen Emissionsbegrenzungen."
+          "text": "Für Hochkamine gilt Anhang 6. Kann die erforderliche Kaminbauhöhe H nicht verwirklicht werden oder beträgt die Rechengrösse H₀ mehr als 100 m, so verschärft die Behörde ersatzweise die in den Anhängen 1–3 vorgesehenen Emissionsbegrenzungen."
         }
       ],
       "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#art_6",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "5f555fe33e11f5f4eb2cd7f0bd3e5b9112e1ebe057c9b623b8ccca2e00190ac7"
+      "sha": "f47a6a3faa46a43109ccd280beb2d315d7f74c165505fb95ee79629d37932ab6"
     },
     {
       "id": "bund/LRV/art_7",
@@ -1654,7 +1654,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Konzentration: Masse der emittierten Stoffe bezogen auf das Volumen des Abgases (z. B. in Milligramm pro Kubikmeter [mg/m 3 ]);"
+              "text": "Konzentration: Masse der emittierten Stoffe bezogen auf das Volumen des Abgases (z. B. in Milligramm pro Kubikmeter [mg/m³]);"
             },
             {
               "marke": "b",
@@ -1794,7 +1794,7 @@
         },
         {
           "absatz": null,
-          "text": "Beträgt der Massenstrom an Staub 0,20 kg/h oder mehr, so dürfen die staubförmigen Emissionen gesamthaft 20 mg/m 3 nicht überschreiten."
+          "text": "Beträgt der Massenstrom an Staub 0,20 kg/h oder mehr, so dürfen die staubförmigen Emissionen gesamthaft 20 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -1842,15 +1842,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 1 g/h oder mehr 0,2 mg/m 3"
+              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 1 g/h oder mehr 0,2 mg/m³"
             },
             {
               "marke": "b",
-              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 5 g/h oder mehr 1 mg/m 3"
+              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 5 g/h oder mehr 1 mg/m³"
             },
             {
               "marke": "c",
-              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 25 g/h oder mehr 5 mg/m 3"
+              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 25 g/h oder mehr 5 mg/m³"
             }
           ]
         },
@@ -1878,13 +1878,13 @@
             ],
             "zeilen": [
               [
-                "Antimon 1",
+                "Antimon¹",
                 "und seine Verbindungen",
                 "Sb",
                 "3"
               ],
               [
-                "Arsen 1",
+                "Arsen¹",
                 "und seine Verbindungen, ausgenommen Arsenwasserstoff",
                 "As",
                 "2"
@@ -1896,25 +1896,25 @@
                 "3"
               ],
               [
-                "Chrom 1",
+                "Chrom¹",
                 "und seine Verbindungen",
                 "Cr",
                 "3"
               ],
               [
-                "Cobalt 1",
+                "Cobalt¹",
                 "und seine Verbindungen",
                 "Co",
                 "2"
               ],
               [
-                "Cyanide 2",
+                "Cyanide²",
                 "",
                 "CN",
                 "3"
               ],
               [
-                "Fluoride 2",
+                "Fluoride²",
                 "soweit staubförmig",
                 "F",
                 "3"
@@ -1932,7 +1932,7 @@
                 "3"
               ],
               [
-                "Nickel 1",
+                "Nickel¹",
                 "und seine Verbindungen",
                 "Ni",
                 "2"
@@ -1952,7 +1952,7 @@
               [
                 "Quarzstaub",
                 "soweit kristalliner Feinstaub",
-                "SiO 2",
+                "SiO₂",
                 "3"
               ],
               [
@@ -2019,19 +2019,19 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei einem Stoff der Klasse 1 bei einem Massenstrom von 10 g/h oder mehr 1 mg/m 3"
+              "text": "bei einem Stoff der Klasse 1 bei einem Massenstrom von 10 g/h oder mehr 1 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei einem Stoff der Klasse 2 bei einem Massenstrom von 50 g/h oder mehr 5 mg/m 3"
+              "text": "bei einem Stoff der Klasse 2 bei einem Massenstrom von 50 g/h oder mehr 5 mg/m³"
             },
             {
               "marke": "c",
-              "text": "bei einem Stoff der Klasse 3 bei einem Massenstrom von 300 g/h oder mehr 30 mg/m 3"
+              "text": "bei einem Stoff der Klasse 3 bei einem Massenstrom von 300 g/h oder mehr 30 mg/m³"
             },
             {
               "marke": "d",
-              "text": "bei einem Stoff der Klasse 4 bei einem Massenstrom von 2500 g/h oder mehr 250 mg/m 3"
+              "text": "bei einem Stoff der Klasse 4 bei einem Massenstrom von 2500 g/h oder mehr 250 mg/m³"
             }
           ]
         },
@@ -2150,15 +2150,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 0,1 kg/h oder mehr 20 mg/m 3"
+              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 0,1 kg/h oder mehr 20 mg/m³"
             },
             {
               "marke": "b",
-              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 2,0 kg/h oder mehr 100 mg/m 3"
+              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 2,0 kg/h oder mehr 100 mg/m³"
             },
             {
               "marke": "c",
-              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 3,0 kg/h oder mehr 150 mg/m 3"
+              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 3,0 kg/h oder mehr 150 mg/m³"
             }
           ]
         },
@@ -2172,7 +2172,7 @@
         },
         {
           "absatz": "4",
-          "text": "Enthält das Abgas Stoffe von verschiedenen Klassen, so darf zusätzlich zu den Anforderungen nach den Absätzen 1 und 2 die Summe der Stoffe bei einem Massenstrom von insgesamt 3,0 kg/h oder mehr den Grenzwert von 150 mg/m 3 nicht übersteigen."
+          "text": "Enthält das Abgas Stoffe von verschiedenen Klassen, so darf zusätzlich zu den Anforderungen nach den Absätzen 1 und 2 die Summe der Stoffe bei einem Massenstrom von insgesamt 3,0 kg/h oder mehr den Grenzwert von 150 mg/m³ nicht übersteigen."
         },
         {
           "absatz": "5",
@@ -2208,12 +2208,12 @@
             "zeilen": [
               [
                 "Acetaldehyd",
-                "C 2 H 4 O",
+                "C₂H₄O",
                 "1"
               ],
               [
                 "Aceton",
-                "C 3 H 6 O",
+                "C₃H₆O",
                 "3"
               ],
               [
@@ -2223,7 +2223,7 @@
               ],
               [
                 "Acrylsäure",
-                "C 3 H 4 O 2",
+                "C₃H₄O₂",
                 "1"
               ],
               [
@@ -2258,7 +2258,7 @@
               ],
               [
                 "Ameisensäure",
-                "CH 2 O 2",
+                "CH₂O₂",
                 "l"
               ],
               [
@@ -2273,7 +2273,7 @@
               ],
               [
                 "Anilin",
-                "C 6 H 7 N",
+                "C₆H₇N",
                 "l"
               ],
               [
@@ -2283,27 +2283,27 @@
               ],
               [
                 "Biphenyl",
-                "C 12 H 10",
+                "C₁₂H₁₀",
                 "1"
               ],
               [
                 "Brommethan",
-                "CH 3 Br",
+                "CH₃Br",
                 "1"
               ],
               [
                 "2-Butanon",
-                "C 4 H 8 O",
+                "C₄H₈O",
                 "3"
               ],
               [
                 "2-Butoxyethanol",
-                "C 6 H 14 O 2",
+                "C₆H₁₄O₂",
                 "2"
               ],
               [
                 "Butylacetate",
-                "C 6 H 12 O 2",
+                "C₆H₁₂O₂",
                 "3"
               ],
               [
@@ -2313,32 +2313,32 @@
               ],
               [
                 "Butyraldehyd",
-                "C 4 H 8 O",
+                "C₄H₈O",
                 "2"
               ],
               [
                 "Chloracetaldehyd",
-                "C 2 H 3 ClO",
+                "C₂H₃ClO",
                 "1"
               ],
               [
                 "Chlorbenzol",
-                "C 6 H 5 Cl",
+                "C₆H₅Cl",
                 "2"
               ],
               [
                 "Chloressigsäure",
-                "C 2 H 3 ClO 2",
+                "C₂H₃ClO₂",
                 "1"
               ],
               [
                 "Chlorethan",
-                "C 2 H 5 Cl",
+                "C₂H₅Cl",
                 "1"
               ],
               [
                 "Chlormethan",
-                "CH 3 Cl",
+                "CH₃Cl",
                 "1"
               ],
               [
@@ -2353,7 +2353,7 @@
               ],
               [
                 "2-Chlorpropan",
-                "C 3 H 7 Cl",
+                "C₃H₇Cl",
                 "2"
               ],
               [
@@ -2363,7 +2363,7 @@
               ],
               [
                 "Cyclohexanon",
-                "C 6 H 10 O",
+                "C₆H₁₀O",
                 "1"
               ],
               [
@@ -2373,37 +2373,37 @@
               ],
               [
                 "Dibutylether",
-                "C 8 H 18 O",
+                "C₈H₁₈O",
                 "3"
               ],
               [
                 "1,2-Dichlorbenzol",
-                "C 6 H 4 Cl 2",
+                "C₆H₄Cl₂",
                 "1"
               ],
               [
                 "1,1-Dichlorethan",
-                "C 2 H 4 Cl 2",
+                "C₂H₄Cl₂",
                 "2"
               ],
               [
                 "1,1-Dichlorethen",
-                "C 2 H 2 Cl 2",
+                "C₂H₂Cl₂",
                 "1"
               ],
               [
                 "1,2-Dichlorethen",
-                "C 2 H 2 Cl 2",
+                "C₂H₂Cl₂",
                 "3"
               ],
               [
                 "Dichlormethan",
-                "CH 2 Cl 2",
+                "CH₂Cl₂",
                 "1"
               ],
               [
                 "Dichlorphenole",
-                "C 6 H 4 Cl 2 O",
+                "C₆H₄Cl₂O",
                 "1"
               ],
               [
@@ -2413,22 +2413,22 @@
               ],
               [
                 "Diethylamin",
-                "C 4 H 11 N",
+                "C₄H₁₁N",
                 "1"
               ],
               [
                 "Diethylether",
-                "C 4 H 10 O",
+                "C₄H₁₀O",
                 "3"
               ],
               [
                 "Di-(2-ethylhexyl)-phthalat",
-                "C 24 H 38 O 4",
+                "C₂₄H₃₈O₄",
                 "2"
               ],
               [
                 "Diisopropylether",
-                "C 6 H 14 O",
+                "C₆H₁₄O",
                 "3"
               ],
               [
@@ -2443,22 +2443,22 @@
               ],
               [
                 "Dimethylamin",
-                "C 2 H 7 N",
+                "C₂H₇N",
                 "1"
               ],
               [
                 "Dimethylether",
-                "C 2 H 6 O",
+                "C₂H₆O",
                 "3"
               ],
               [
                 "N,N-Dimethylformamid",
-                "C 3 H 7 NO",
+                "C₃H₇NO",
                 "2"
               ],
               [
                 "2,6-Dimethyl-4-heptanon",
-                "C 9 H 18 O",
+                "C₉H₁₈O",
                 "2"
               ],
               [
@@ -2468,7 +2468,7 @@
               ],
               [
                 "1,4-Dioxan",
-                "C 4 H 8 O 2",
+                "C₄H₈O₂",
                 "1"
               ],
               [
@@ -2483,7 +2483,7 @@
               ],
               [
                 "Essigsäure",
-                "C 2 H 4 O 24",
+                "C₂H₄O₂₄",
                 "2"
               ],
               [
@@ -2513,7 +2513,7 @@
               ],
               [
                 "Ethen",
-                "C 2 H 4",
+                "C₂H₄",
                 "1"
               ],
               [
@@ -2523,27 +2523,27 @@
               ],
               [
                 "2-Ethoxyethanol",
-                "C 4 H 10 O 2",
+                "C₄H₁₀O₂",
                 "2"
               ],
               [
                 "Ethylacetat",
-                "C 4 H 8 O 2",
+                "C₄H₈O₂",
                 "3"
               ],
               [
                 "Ethylacrylat",
-                "C 5 H 8 O 2",
+                "C₅H₈O₂",
                 "1"
               ],
               [
                 "Ethylamin",
-                "C 2 H 7 N",
+                "C₂H₇N",
                 "1"
               ],
               [
                 "Ethylbenzol",
-                "C 8 H 10",
+                "C₈H₁₀",
                 "1"
               ],
               [
@@ -2553,7 +2553,7 @@
               ],
               [
                 "Ethylenglykol",
-                "C 2 H 6 O 2",
+                "C₂H₆O₂",
                 "3"
               ],
               [
@@ -2593,12 +2593,12 @@
               ],
               [
                 "Formaldehyd",
-                "CH 2 O",
+                "CH₂O",
                 "1"
               ],
               [
                 "2-Furaldehyd",
-                "C 5 H 4 O 2",
+                "C₅H₄O₂",
                 "1"
               ],
               [
@@ -2608,7 +2608,7 @@
               ],
               [
                 "Furfurylalkohol",
-                "C 5 H 6 O 2",
+                "C₅H₆O₂",
                 "2"
               ],
               [
@@ -2653,12 +2653,12 @@
               ],
               [
                 "4-Hydroxy-4-methyl-2-pentanon",
-                "C 6 H 12 O 2",
+                "C₆H₁₂O₂",
                 "3"
               ],
               [
                 "2,2’-Iminodiethanol",
-                "C 4 H 11 NO 2",
+                "C₄H₁₁NO₂",
                 "1"
               ],
               [
@@ -2668,27 +2668,27 @@
               ],
               [
                 "Isopropenylbenzol",
-                "C 9 H 10",
+                "C₉H₁₀",
                 "2"
               ],
               [
                 "Isopropylbenzol",
-                "C 9 H 12",
+                "C₉H₁₂",
                 "2"
               ],
               [
                 "Kohlenstoffdisulfid",
-                "CS 2",
+                "CS₂",
                 "2"
               ],
               [
                 "Kresole",
-                "C 7 H 8 O",
+                "C₇H₈O",
                 "1"
               ],
               [
                 "Maleinsäureanhydrid",
-                "C 4 H 2 O 3",
+                "C₄H₂O₃",
                 "1"
               ],
               [
@@ -2708,27 +2708,27 @@
               ],
               [
                 "2-Methoxyethanol",
-                "C 3 H 8 O 2",
+                "C₃H₈O₂",
                 "2"
               ],
               [
                 "Methylacetat",
-                "C 3 H 6 O 2",
+                "C₃H₆O₂",
                 "2"
               ],
               [
                 "Methylacrylat",
-                "C 4 H 6 O 2",
+                "C₄H₆O₂",
                 "1"
               ],
               [
                 "Methylamin",
-                "CH 5 N",
+                "CH₅N",
                 "1"
               ],
               [
                 "Methylbenzoat",
-                "C 8 H 8 O 2",
+                "C₈H₈O₂",
                 "3"
               ],
               [
@@ -2743,7 +2743,7 @@
               ],
               [
                 "Methylcyclohexanone",
-                "C 7 H 12 O",
+                "C₇H₁₂O",
                 "2"
               ],
               [
@@ -2758,7 +2758,7 @@
               ],
               [
                 "Methylformiat",
-                "C 2 H 4 O 2",
+                "C₂H₄O₂",
                 "2"
               ],
               [
@@ -2773,47 +2773,47 @@
               ],
               [
                 "Methylmethacrylat",
-                "C 5 H 8 O 2",
+                "C₅H₈O₂",
                 "2"
               ],
               [
                 "4-Methyl-2-pentanon",
-                "C 6 H 12 O",
+                "C₆H₁₂O",
                 "3"
               ],
               [
                 "4-Methyl-m-phenylendiisocyanat",
-                "C 9 H 6 N 2 O 2",
+                "C₉H₆N₂O₂",
                 "1"
               ],
               [
                 "N-Methylpyrrolidon",
-                "C 5 H 9 NO",
+                "C₅H₉NO",
                 "3"
               ],
               [
                 "Naphthalin",
-                "C 10 H 8",
+                "C₁₀H₈",
                 "1"
               ],
               [
                 "Nitrobenzol",
-                "C 6 H 5 NO 2",
+                "C₆H₅NO₂",
                 "1"
               ],
               [
                 "Nitrokresole",
-                "C 7 H 7 NO 3",
+                "C₇H₇NO₃",
                 "1"
               ],
               [
                 "Nitrophenole",
-                "C 6 H 5 NO 3",
+                "C₆H₅NO₃",
                 "1"
               ],
               [
                 "Nitrotoluole, ausser 2-Nitrotoluol",
-                "C 7 H 7 NO 2",
+                "C₇H₇NO₂",
                 "1"
               ],
               [
@@ -2833,7 +2833,7 @@
               ],
               [
                 "Phenol",
-                "C 6 H 6 O",
+                "C₆H₆O",
                 "1"
               ],
               [
@@ -2853,22 +2853,22 @@
               ],
               [
                 "2-Propenal",
-                "C 3 H 4 O",
+                "C₃H₄O",
                 "1"
               ],
               [
                 "Propionaldehyd",
-                "C 3 H 6 O",
+                "C₃H₆O",
                 "2"
               ],
               [
                 "Propionsäure",
-                "C 3 H 6 O 2",
+                "C₃H₆O₂",
                 "2"
               ],
               [
                 "Pyridin",
-                "C 5 H 5 N",
+                "C₅H₅N",
                 "1"
               ],
               [
@@ -2878,17 +2878,17 @@
               ],
               [
                 "Styrol",
-                "C 8 H 8",
+                "C₈H₈",
                 "2"
               ],
               [
                 "1,1,2,2-Tetrachlorethan",
-                "C 2 H 2 Cl 4",
+                "C₂H₂Cl₄",
                 "1"
               ],
               [
                 "Tetrachlorethen",
-                "C 2 Cl 4",
+                "C₂Cl₄",
                 "1"
               ],
               [
@@ -2898,12 +2898,12 @@
               ],
               [
                 "Tetrachlormethan",
-                "CCl 4",
+                "CCl₄",
                 "1"
               ],
               [
                 "Tetrahydrofuran",
-                "C 4 H 8 O",
+                "C₄H₈O",
                 "1"
               ],
               [
@@ -2918,7 +2918,7 @@
               ],
               [
                 "Toluol",
-                "C 7 H 8",
+                "C₇H₈",
                 "2"
               ],
               [
@@ -2928,52 +2928,52 @@
               ],
               [
                 "1,1,1-Trichlorethan",
-                "C 2 H 3 Cl 3",
+                "C₂H₃Cl₃",
                 "1"
               ],
               [
                 "1,1,2-Trichlorethan",
-                "C 2 H 3 Cl 3",
+                "C₂H₃Cl₃",
                 "1"
               ],
               [
                 "Trichlormethan",
-                "CHCl 3",
+                "CHCl₃",
                 "1"
               ],
               [
                 "Trichlorphenole",
-                "C 6 H 3 OCl 3",
+                "C₆H₃OCl₃",
                 "1"
               ],
               [
                 "Triethylamin",
-                "C 6 H 15 N",
+                "C₆H₁₅N",
                 "1"
               ],
               [
                 "Trimethylbenzole",
-                "C 9 H 12",
+                "C₉H₁₂",
                 "2"
               ],
               [
                 "Vinylacetat",
-                "C 4 H 6 O 2",
+                "C₄H₆O₂",
                 "1"
               ],
               [
                 "Xylenole, ausgenommen 2,4-Xylenol",
-                "C 8 H 10 O",
+                "C₈H₁₀O",
                 "1"
               ],
               [
                 "2,4-Xylenol",
-                "C 8 H 10 O",
+                "C₈H₁₀O",
                 "2"
               ],
               [
                 "Xylole",
-                "C 8 H 10",
+                "C₈H₁₀",
                 "2"
               ]
             ]
@@ -3008,15 +3008,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 0,5 g/h oder mehr 0,1 mg/m 3"
+              "text": "Stoffe der Klasse 1 bei einem Massenstrom von 0,5 g/h oder mehr 0,1 mg/m³"
             },
             {
               "marke": "b",
-              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 5 g/h oder mehr 1 mg/m 3"
+              "text": "Stoffe der Klasse 2 bei einem Massenstrom von 5 g/h oder mehr 1 mg/m³"
             },
             {
               "marke": "c",
-              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 25 g/h oder mehr 5 mg/m 3"
+              "text": "Stoffe der Klasse 3 bei einem Massenstrom von 25 g/h oder mehr 5 mg/m³"
             }
           ]
         },
@@ -3050,7 +3050,7 @@
             "zeilen": [
               [
                 "Acrylnitril",
-                "C 3 H 3 N",
+                "C₃H₃N",
                 "3"
               ],
               [
@@ -3070,12 +3070,12 @@
               ],
               [
                 "Benzo(a)pyren",
-                "C 20 H 12",
+                "C₂₀H₁₂",
                 "1"
               ],
               [
                 "Benzol",
-                "C 6 H 6",
+                "C₆H₆",
                 "3"
               ],
               [
@@ -3085,7 +3085,7 @@
               ],
               [
                 "Bromethan",
-                "C 2 H 5 Br",
+                "C₂H₅Br",
                 "3"
               ],
               [
@@ -3095,7 +3095,7 @@
               ],
               [
                 "1,3-Butadien",
-                "C 4 H 6",
+                "C₄H₆",
                 "3"
               ],
               [
@@ -3105,17 +3105,17 @@
               ],
               [
                 "2-Chlor-1,3-butadien",
-                "C 4 H 5 Cl",
+                "C₄H₅Cl",
                 "3"
               ],
               [
                 "1-Chlor-2,3-epoxypropan",
-                "C 3 H 5 ClO",
+                "C₃H₅ClO",
                 "3"
               ],
               [
                 "α-Chlortoluol",
-                "C 7 H 7 Cl",
+                "C₇H₇Cl",
                 "3"
               ],
               [
@@ -3135,27 +3135,27 @@
               ],
               [
                 "Dibenz(a, h)anthracen",
-                "C 22 H 14",
+                "C₂₂H₁₄",
                 "1"
               ],
               [
                 "1,2-Dibromethan",
-                "C 2 H 4 Br 2",
+                "C₂H₄Br₂",
                 "3"
               ],
               [
                 "3,3’-Dichlorbenzidin",
-                "C 12 H 10 N 2 Cl 2",
+                "C₁₂H₁₀N₂Cl₂",
                 "2"
               ],
               [
                 "1,4 Dichlorbenzol",
-                "C 6 H 4 Cl 2",
+                "C₆H₄Cl₂",
                 "3"
               ],
               [
                 "1,2-Dichlorethan",
-                "C 2 H 4 Cl 2",
+                "C₂H₄Cl₂",
                 "3"
               ],
               [
@@ -3165,12 +3165,12 @@
               ],
               [
                 "Diethylsulfat",
-                "C 4 H 10 O 4 S",
+                "C₄H₁₀O₄S",
                 "2"
               ],
               [
                 "Dimethylsulfat",
-                "C 2 H 6 O 4 S",
+                "C₂H₆O₄S",
                 "2"
               ],
               [
@@ -3185,27 +3185,27 @@
               ],
               [
                 "1,2 Epoxypropan",
-                "C 3 H 6 O",
+                "C₃H₆O",
                 "3"
               ],
               [
                 "Ethylenimin",
-                "C 2 H 5 N",
+                "C₂H₅N",
                 "2"
               ],
               [
                 "Ethylenoxid",
-                "C 2 H 4 O",
+                "C₂H₄O",
                 "3"
               ],
               [
                 "Hydrazin",
-                "H 4 N 2",
+                "H₄N₂",
                 "3"
               ],
               [
                 "2-Naphthylamin",
-                "C 10 H 9 N",
+                "C₁₀H₉N",
                 "1"
               ],
               [
@@ -3215,27 +3215,27 @@
               ],
               [
                 "2-Nitrotoluol",
-                "C 7 H 7 NO 2",
+                "C₇H₇NO₂",
                 "3"
               ],
               [
                 "o-Toluidin",
-                "C 7 H 9 N",
+                "C₇H₉N",
                 "3"
               ],
               [
                 "Trichlorethen",
-                "C 2 HCl 3",
+                "C₂HCl₃",
                 "3"
               ],
               [
                 "Vinylchlorid",
-                "C 2 H 3 Cl",
+                "C₂H₃Cl",
                 "3"
               ],
               [
                 "N-Vinyl-2-pyrrolidon",
-                "C 6 H 9 NO",
+                "C₆H₉NO",
                 "3"
               ]
             ]
@@ -3246,7 +3246,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_1",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "86b0de9efc9d1f02a8b0d458076f312cd22c4f40af6e1197b09df2e983c8db01"
+      "sha": "cc9f6839f21b1d51586453060e9b4aacdc34e3b4fcc8eaf16041d5a603a83096"
     },
     {
       "id": "bund/LRV/annex_2",
@@ -3570,11 +3570,11 @@
         },
         {
           "absatz": "1",
-          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 200 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 200 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Ammoniak dürfen 30 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Ammoniak dürfen 30 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3583,7 +3583,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Schwefeloxiden, angegeben als Schwefeldioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 400 mg/m 3."
+          "text": "Die Emissionen von Schwefeloxiden, angegeben als Schwefeldioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 400 mg/m³."
         },
         {
           "absatz": null,
@@ -3604,11 +3604,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "die Emissionen von gasförmigen organischen Stoffen aus der Verwertung von Abfällen nach Ziffer 111 Absatz 2 dürfen 10 mg/m 3 betragen;"
+              "text": "die Emissionen von gasförmigen organischen Stoffen aus der Verwertung von Abfällen nach Ziffer 111 Absatz 2 dürfen 10 mg/m³ betragen;"
             },
             {
               "marke": "b",
-              "text": "der Grenzwert darf insgesamt 50 mg/m 3 nicht überschreiten."
+              "text": "der Grenzwert darf insgesamt 50 mg/m³ nicht überschreiten."
             }
           ]
         },
@@ -3623,7 +3623,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen 10 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3632,7 +3632,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Quecksilber und Cadmium und deren Verbindungen, angegeben als Metalle, dürfen je 0,05 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Quecksilber und Cadmium und deren Verbindungen, angegeben als Metalle, dürfen je 0,05 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3641,7 +3641,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Blei und Zink sowie deren Verbindungen, angegeben als Metalle, dürfen als Summe 1 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Blei und Zink sowie deren Verbindungen, angegeben als Metalle, dürfen als Summe 1 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3650,7 +3650,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von polychlorierten Dibenzo-p-dioxinen (Dioxine) und Dibenzofuranen (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948‑1, dürfen 0,1 ng/m 3 nicht überschreiten."
+          "text": "Die Emissionen von polychlorierten Dibenzo-p-dioxinen (Dioxine) und Dibenzofuranen (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948‑1, dürfen 0,1 ng/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3727,7 +3727,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, bei einem Massenstrom von 2000 g/h oder mehr, mindestens aber auf 150 mg/m 3."
+          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, bei einem Massenstrom von 2000 g/h oder mehr, mindestens aber auf 150 mg/m³."
         },
         {
           "absatz": null,
@@ -3740,7 +3740,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von gas- und dampfförmigen organischen Stoffen werden als Gesamtkohlenstoff angegeben und dürfen 100 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von gas- und dampfförmigen organischen Stoffen werden als Gesamtkohlenstoff angegeben und dürfen 100 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3819,7 +3819,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Schwefeloxiden aus dem Rohstoff, angegeben als Schwefeldioxid, dürfen 500 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Schwefeloxiden aus dem Rohstoff, angegeben als Schwefeldioxid, dürfen 500 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3864,7 +3864,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen 20 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen 20 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3877,7 +3877,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von gasförmigen organischen Stoffen werden als Gesamtkohlenstoff angegeben und dürfen 80 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von gasförmigen organischen Stoffen werden als Gesamtkohlenstoff angegeben und dürfen 80 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3886,7 +3886,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 100 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 100 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3895,7 +3895,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Kohlenmonoxid dürfen 500 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Kohlenmonoxid dürfen 500 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -3949,7 +3949,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Schwefeltrioxid dürfen bei konstanten Gasbedingungen 60 mg/m 3, in den übrigen Fällen 120 mg/m 3, nicht überschreiten."
+          "text": "Die Emissionen von Schwefeltrioxid dürfen bei konstanten Gasbedingungen 60 mg/m³, in den übrigen Fällen 120 mg/m³, nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4006,7 +4006,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Schwefelwasserstoff dürfen 10 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Schwefelwasserstoff dürfen 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4020,11 +4020,11 @@
         },
         {
           "absatz": "1",
-          "text": "Die Emissionen von Chlor dürfen 3 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Chlor dürfen 3 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
-          "text": "Bei Anlagen zur Herstellung von Chlor mit vollständiger Verflüssigung dürfen die Emissionen von Chlor 6 mg/m 3 nicht überschreiten."
+          "text": "Bei Anlagen zur Herstellung von Chlor mit vollständiger Verflüssigung dürfen die Emissionen von Chlor 6 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4073,7 +4073,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen gesamthaft 20 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen gesamthaft 20 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4100,7 +4100,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von organischen Stoffen im Abgas von Misch- und Formgebungsanlagen, in denen Pech, Teer oder sonstige flüchtige Binde- oder Fliessmittel bei erhöhter Temperatur verarbeitet werden, dürfen 100 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von organischen Stoffen im Abgas von Misch- und Formgebungsanlagen, in denen Pech, Teer oder sonstige flüchtige Binde- oder Fliessmittel bei erhöhter Temperatur verarbeitet werden, dürfen 100 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4109,11 +4109,11 @@
         },
         {
           "absatz": "1",
-          "text": "Die Emissionen von organischen Stoffen im Abgas von Einzelkammeröfen, Kammerverbundöfen und Tunnelöfen dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von organischen Stoffen im Abgas von Einzelkammeröfen, Kammerverbundöfen und Tunnelöfen dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von gasförmigen organischen Stoffen im Abgas von Ringöfen für Graphitelektroden, Kohlenstoffelektroden und Kohlenstoffsteine dürfen 200 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von gasförmigen organischen Stoffen im Abgas von Ringöfen für Graphitelektroden, Kohlenstoffelektroden und Kohlenstoffsteine dürfen 200 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4122,7 +4122,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von organischen Stoffen im Abgas von Imprägnieranlagen, in denen Imprägniermittel auf Teerbasis verwendet werden, dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von organischen Stoffen im Abgas von Imprägnieranlagen, in denen Imprägniermittel auf Teerbasis verwendet werden, dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4145,7 +4145,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 190 mg/m 3."
+          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 190 mg/m³."
         },
         {
           "absatz": null,
@@ -4195,11 +4195,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei einer Feuerungswärmeleistung bis 300 MW 350 mg/m 3"
+              "text": "bei einer Feuerungswärmeleistung bis 300 MW 350 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei einer Feuerungswärmeleistung von mehr als 300 MW 100 mg/m 3"
+              "text": "bei einer Feuerungswärmeleistung von mehr als 300 MW 100 mg/m³"
             }
           ]
         },
@@ -4210,7 +4210,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 300 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, dürfen 300 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4295,7 +4295,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Schwefelwasserstoff in Gasen, die nicht weiterverarbeitet werden, dürfen 10 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Schwefelwasserstoff in Gasen, die nicht weiterverarbeitet werden, dürfen 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4322,7 +4322,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Bestimmungen dieser Ziffer gelten für Grosstankanlagen mit einem Fassungsvermögen von mehr als 500 m 3 pro Tank, die zur Lagerung von Produkten mit einem Dampfdruck von mehr als 1 mbar bei einer Temperatur von 20 °C bestimmt sind."
+          "text": "Die Bestimmungen dieser Ziffer gelten für Grosstankanlagen mit einem Fassungsvermögen von mehr als 500 m³ pro Tank, die zur Lagerung von Produkten mit einem Dampfdruck von mehr als 1 mbar bei einer Temperatur von 20 °C bestimmt sind."
         },
         {
           "absatz": null,
@@ -4381,7 +4381,7 @@
         },
         {
           "absatz": null,
-          "text": "Die bei der Kernherstellung entstehenden Emissionen von Aminen dürfen 5 mg/m 3 nicht überschreiten."
+          "text": "Die bei der Kernherstellung entstehenden Emissionen von Aminen dürfen 5 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4404,7 +4404,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen gesamthaft 20 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen gesamthaft 20 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4413,7 +4413,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Kohlenmonoxid im Abgas dürfen bei Heisswindöfen mit nachgeschaltetem eigenbeheiztem Rekuperator 1000 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Kohlenmonoxid im Abgas dürfen bei Heisswindöfen mit nachgeschaltetem eigenbeheiztem Rekuperator 1000 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4471,7 +4471,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4494,7 +4494,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen gesamthaft 10 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen gesamthaft 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4503,7 +4503,7 @@
         },
         {
           "absatz": "1",
-          "text": "Die Emissionsgrenzwerte beziehen sich auf eine Abluftmenge von 3000 m 3 je Quadratmeter Zinkbadoberfläche und Stunde."
+          "text": "Die Emissionsgrenzwerte beziehen sich auf eine Abluftmenge von 3000 m³ je Quadratmeter Zinkbadoberfläche und Stunde."
         },
         {
           "absatz": "2",
@@ -4529,7 +4529,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Blei dürfen 1 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Blei dürfen 1 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4542,7 +4542,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Schwefelsäure, angegeben als H 2 SO 4, dürfen 1 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Schwefelsäure, angegeben als H₂SO₄, dürfen 1 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4639,7 +4639,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen dürfen gesamthaft 5 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen gesamthaft 5 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4648,7 +4648,7 @@
         },
         {
           "absatz": null,
-          "text": "Die in Elektrolichtbogenöfen entstehenden Emissionen polychlorierter Dibenzo-p-dioxine (Dioxine) und Dibenzofurane (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948‑1, dürfen 0.1 ng/m 3 nicht überschreiten."
+          "text": "Die in Elektrolichtbogenöfen entstehenden Emissionen polychlorierter Dibenzo-p-dioxine (Dioxine) und Dibenzofurane (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948‑1, dürfen 0.1 ng/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -4734,15 +4734,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "beim Heissräuchern bei einem Massenstrom von 50 g/h oder mehr 50 mg/m 3"
+              "text": "beim Heissräuchern bei einem Massenstrom von 50 g/h oder mehr 50 mg/m³"
             },
             {
               "marke": "b",
-              "text": "beim Kalträuchern bei einem Massenstrom von 50 g/h bis 300 g/h 120 mg/m 3"
+              "text": "beim Kalträuchern bei einem Massenstrom von 50 g/h bis 300 g/h 120 mg/m³"
             },
             {
               "marke": "c",
-              "text": "beim Kalträuchern bei einem Massenstrom von mehr als 300 g/h 50 mg/m 3"
+              "text": "beim Kalträuchern bei einem Massenstrom von mehr als 300 g/h 50 mg/m³"
             }
           ]
         },
@@ -4829,7 +4829,7 @@
         },
         {
           "absatz": null,
-          "text": "Die staubförmigen Emissionen sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 150 mg/m 3."
+          "text": "Die staubförmigen Emissionen sind so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 150 mg/m³."
         },
         {
           "absatz": null,
@@ -4905,11 +4905,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Anlagen mit einer Röstleistung bis 750 kg/h 150 mg/m 3"
+              "text": "bei Anlagen mit einer Röstleistung bis 750 kg/h 150 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Anlagen mit einer Röstleistung von mehr als 750 kg/h 50 mg/m 3"
+              "text": "bei Anlagen mit einer Röstleistung von mehr als 750 kg/h 50 mg/m³"
             }
           ]
         },
@@ -4966,11 +4966,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "beim Spritzlackieren 5 mg/m 3"
+              "text": "beim Spritzlackieren 5 mg/m³"
             },
             {
               "marke": "b",
-              "text": "beim Pulverlackieren 15 mg/m 3"
+              "text": "beim Pulverlackieren 15 mg/m³"
             }
           ]
         },
@@ -4985,11 +4985,11 @@
         },
         {
           "absatz": "2",
-          "text": "Diese Emissionen werden als Gesamtkohlenstoff angegeben und dürfen bei einem Massenstrom von 3 kg/h oder mehr gesamthaft 150 mg/m 3 nicht überschreiten."
+          "text": "Diese Emissionen werden als Gesamtkohlenstoff angegeben und dürfen bei einem Massenstrom von 3 kg/h oder mehr gesamthaft 150 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "3",
-          "text": "Werden Farben verwendet, die als Lösemittel neben Wasser ausschliesslich Ethanol bis zu 15 Prozent (% Masse) enthalten, so dürfen die Emissionen von Ethanol bei einem Massenstrom von 3 kg/h oder mehr 300 mg/m 3 nicht überschreiten."
+          "text": "Werden Farben verwendet, die als Lösemittel neben Wasser ausschliesslich Ethanol bis zu 15 Prozent (% Masse) enthalten, so dürfen die Emissionen von Ethanol bei einem Massenstrom von 3 kg/h oder mehr 300 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5139,53 +5139,53 @@
           "items": [
             {
               "marke": "a",
-              "text": "Staub 10 mg/m 3"
+              "text": "Staub 10 mg/m³"
             },
             {
               "marke": "b",
-              "text": "Blei und Zink sowie deren Verbindungen, angegeben als Metalle, als Summe 1 mg/m 3"
+              "text": "Blei und Zink sowie deren Verbindungen, angegeben als Metalle, als Summe 1 mg/m³"
             },
             {
               "marke": "c",
-              "text": "Quecksilber und Cadmium und deren Verbindungen, angegeben als Metalle, je 0,05 mg/m 3"
+              "text": "Quecksilber und Cadmium und deren Verbindungen, angegeben als Metalle, je 0,05 mg/m³"
             },
             {
               "marke": "d",
-              "text": "Schwefeloxide, angegeben als Schwefeldioxid 50 mg/m 3"
+              "text": "Schwefeloxide, angegeben als Schwefeldioxid 50 mg/m³"
             },
             {
               "marke": "e",
-              "text": "Stickoxide (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, bei einem Massen- strom von 2,5 kg/h und mehr 80 mg/m 3"
+              "text": "Stickoxide (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, bei einem Massen- strom von 2,5 kg/h und mehr 80 mg/m³"
             },
             {
               "marke": "f",
-              "text": "Gasförmige anorganische Chlorverbindungen, angegeben als Chlorwasserstoff 20 mg/m 3"
+              "text": "Gasförmige anorganische Chlorverbindungen, angegeben als Chlorwasserstoff 20 mg/m³"
             },
             {
               "marke": "g",
-              "text": "Gasförmige anorganische Fluorverbindungen, angegeben als Fluorwasserstoff 2 mg/m 3"
+              "text": "Gasförmige anorganische Fluorverbindungen, angegeben als Fluorwasserstoff 2 mg/m³"
             },
             {
               "marke": "h",
-              "text": "Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 5 mg/m 3"
+              "text": "Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 5 mg/m³"
             },
             {
               "marke": "i",
-              "text": "Gasförmige organische Stoffe, angegeben als Gesamtkohlenstoff 20 mg/m 3"
+              "text": "Gasförmige organische Stoffe, angegeben als Gesamtkohlenstoff 20 mg/m³"
             },
             {
               "marke": "k",
-              "text": "Kohlenmonoxid 50 mg/m 3"
+              "text": "Kohlenmonoxid 50 mg/m³"
             },
             {
               "marke": "l",
-              "text": "Polychlorierte Dibenzo-p-dioxine (Dioxine) und Dibenzofurane (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948-1 0,1 ng/m 3"
+              "text": "Polychlorierte Dibenzo-p-dioxine (Dioxine) und Dibenzofurane (Furane), angegeben als Summenwert der Toxizitätsäquivalente nach EN 1948-1 0,1 ng/m³"
             }
           ]
         },
         {
           "absatz": "2",
-          "text": "Für Anlagen mit einem Gehalt an Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, von 1000 mg/m 3 oder mehr im Rohgas, kann die Behörde abweichend von Absatz 1 Buchstabe h einen milderen Emissionsgrenzwert für Ammoniak und Ammoniumverbindungen festlegen."
+          "text": "Für Anlagen mit einem Gehalt an Stickoxiden (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid, von 1000 mg/m³ oder mehr im Rohgas, kann die Behörde abweichend von Absatz 1 Buchstabe h einen milderen Emissionsgrenzwert für Ammoniak und Ammoniumverbindungen festlegen."
         },
         {
           "absatz": null,
@@ -5310,11 +5310,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung bis 10 MW: 20 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung bis 10 MW: 20 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 10 MW: 10 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 10 MW: 10 mg/m³"
             }
           ]
         },
@@ -5325,7 +5325,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Blei und Zink dürfen zusammen 5 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Blei und Zink dürfen zusammen 5 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5338,7 +5338,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von gasförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von gasförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5347,15 +5347,15 @@
         },
         {
           "absatz": "1",
-          "text": "Die Emissionen von Kohlenmonoxid dürfen 250 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Kohlenmonoxid dürfen 250 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "1bis",
-          "text": "Bei Anlagen mit einer Feuerungswärmeleistung über 10 MW dürfen die Emissionen von Kohlenmonoxid 150 mg/m 3 nicht überschreiten."
+          "text": "Bei Anlagen mit einer Feuerungswärmeleistung über 10 MW dürfen die Emissionen von Kohlenmonoxid 150 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
-          "text": "Bei Anlagen mit einer Feuerungswärmeleistung über 10 MW dürfen die Emissionen von Stickoxiden, angegeben als Stickstoffdioxid 150 mg/m 3 nicht überschreiten."
+          "text": "Bei Anlagen mit einer Feuerungswärmeleistung über 10 MW dürfen die Emissionen von Stickoxiden, angegeben als Stickstoffdioxid 150 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5464,21 +5464,21 @@
               ],
               [
                 "– Feststoffe insgesamt:",
-                "mg/m 3",
+                "mg/m³",
                 "20",
                 "20",
                 "10"
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "500",
                 "250",
                 "150"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 ) 1",
-                "mg/m 3",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂)¹",
+                "mg/m³",
                 "250",
                 "250",
                 "150"
@@ -5550,7 +5550,7 @@
         },
         {
           "absatz": "1",
-          "text": "Die staubförmigen Emissionen dürfen 10 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
@@ -5594,7 +5594,7 @@
             "zeilen": [
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "",
                 "",
                 ""
@@ -5621,8 +5621,8 @@
                 "300"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 )",
-                "mg/m 3",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂)",
+                "mg/m³",
                 "",
                 "",
                 ""
@@ -5653,7 +5653,7 @@
         },
         {
           "absatz": "2",
-          "text": "Wird ein stationärer Verbrennungsmotor mit einer Entstickungsanlage betrieben, so dürfen die Emissionen von Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak, 30 mg/m 3 nicht überschreiten."
+          "text": "Wird ein stationärer Verbrennungsmotor mit einer Entstickungsanlage betrieben, so dürfen die Emissionen von Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak, 30 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5688,7 +5688,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die staubförmigen Emissionen dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die staubförmigen Emissionen dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "3",
@@ -5760,7 +5760,7 @@
             "zeilen": [
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "",
                 ""
               ],
@@ -5786,7 +5786,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Schwefeloxiden, angegeben als Schwefeldioxid, dürfen bei einem Massenstrom von 2,5 kg/h oder mehr 120 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Schwefeloxiden, angegeben als Schwefeldioxid, dürfen bei einem Massenstrom von 2,5 kg/h oder mehr 120 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5822,7 +5822,7 @@
             "zeilen": [
               [
                 "– Stickoxide (NOx)",
-                "mg/m 3",
+                "mg/m³",
                 "",
                 ""
               ],
@@ -5843,7 +5843,7 @@
         },
         {
           "absatz": "2",
-          "text": "Wird eine Gasturbine mit einer Entstickungsanlage betrieben, dürfen die Emissionen von Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak, 10 mg/m 3 nicht überschreiten."
+          "text": "Wird eine Gasturbine mit einer Entstickungsanlage betrieben, dürfen die Emissionen von Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak, 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5915,15 +5915,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Späne- und Fasertrocknern 10 mg/m 3"
+              "text": "bei Späne- und Fasertrocknern 10 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Pressen 10 mg/m 3"
+              "text": "bei Pressen 10 mg/m³"
             },
             {
               "marke": "c",
-              "text": "bei mechanischer Bearbeitung der Holzplatten 5 mg/m 3"
+              "text": "bei mechanischer Bearbeitung der Holzplatten 5 mg/m³"
             }
           ]
         },
@@ -5942,17 +5942,17 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Spänetrocknern 120 mg/m 3"
+              "text": "bei Spänetrocknern 120 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Pressen 70 mg/m 3"
+              "text": "bei Pressen 70 mg/m³"
             }
           ]
         },
         {
           "absatz": "3",
-          "text": "Bei Fasertrocknern sind die Emissionen von gas- und dampfförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 100 mg/m 3."
+          "text": "Bei Fasertrocknern sind die Emissionen von gas- und dampfförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, so weit zu begrenzen, als dies technisch und betrieblich möglich und wirtschaftlich tragbar ist, mindestens aber auf 100 mg/m³."
         },
         {
           "absatz": null,
@@ -5961,7 +5961,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Formaldehyd dürfen 10 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Formaldehyd dürfen 10 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -5974,11 +5974,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei direkt beheizten Spänetrocknern 150 mg/m 3"
+              "text": "bei direkt beheizten Spänetrocknern 150 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei direkt beheizten Fasertrocknern 50 mg/m 3"
+              "text": "bei direkt beheizten Fasertrocknern 50 mg/m³"
             }
           ]
         },
@@ -6012,7 +6012,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Beladetüre einer Textil-Reinigungsmaschine muss durch eine automatische Sicherung so lange verriegelt bleiben, bis die Konzentration an gas- und dampfförmigen organischen Stoffen in der Maschinenluft 2 g/m 3 unterschreitet"
+          "text": "Die Beladetüre einer Textil-Reinigungsmaschine muss durch eine automatische Sicherung so lange verriegelt bleiben, bis die Konzentration an gas- und dampfförmigen organischen Stoffen in der Maschinenluft 2 g/m³ unterschreitet"
         },
         {
           "absatz": "3",
@@ -6046,7 +6046,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von gas- und dampfförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 20 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von gas- und dampfförmigen organischen Stoffen, angegeben als Gesamtkohlenstoff, dürfen 20 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -6055,7 +6055,7 @@
         },
         {
           "absatz": null,
-          "text": "Die Emissionen von Kohlenmonoxid dürfen 50 mg/m 3 nicht überschreiten."
+          "text": "Die Emissionen von Kohlenmonoxid dürfen 50 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -6076,7 +6076,7 @@
             },
             {
               "marke": "b",
-              "text": "Durch eine automatische Verriegelung ist sicherzustellen, dass die Gegenstände oder Erzeugnisse erst entnommen werden können, wenn die Konzentration von halogenierten organischen Stoffen von 1 g/m 3 im Entnahmebereich erreicht oder unterschritten ist."
+              "text": "Durch eine automatische Verriegelung ist sicherzustellen, dass die Gegenstände oder Erzeugnisse erst entnommen werden können, wenn die Konzentration von halogenierten organischen Stoffen von 1 g/m³ im Entnahmebereich erreicht oder unterschritten ist."
             },
             {
               "marke": "c",
@@ -6110,7 +6110,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_2",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "cf95b953a1b409512bd29cb06600e29745b6ecd36414d80fd6977b491f710d2b"
+      "sha": "8c992825ef649f3a1d72a0d8f9568460ffb90e9adffc91ebae64f4a0ad12c01c"
     },
     {
       "id": "bund/LRV/annex_3",
@@ -6274,7 +6274,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "80 mg/m 3"
+                "80 mg/m³"
               ],
               [
                 "– Stickoxide (NOx), angegeben als Stickstoffdioxid",
@@ -6282,19 +6282,19 @@
               ],
               [
                 "a. Hellstrahler und Dunkelstrahler",
-                "200 mg/m 3"
+                "200 mg/m³"
               ],
               [
                 "b. Anlagen mit einer Heizmediumtemperatur über 110 °C",
-                "150 mg/m 3"
+                "150 mg/m³"
               ],
               [
                 "c. Übrige Anlagen",
-                "120 mg/m 3"
+                "120 mg/m³"
               ],
               [
-                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 1",
-                "30 mg/m 3"
+                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak¹",
+                "30 mg/m³"
               ],
               [
                 "Hinweise: 1 Diese Emissionsbegrenzung ist nur für Feuerungsanlagen mit Entstickungseinrichtung von Bedeutung."
@@ -6308,7 +6308,7 @@
         },
         {
           "absatz": "3",
-          "text": "Abweichend von Absatz 1 dürfen bei Anlagen mit einer Feuerungswärmeleistung über 300 MW die Emissionen von Stickoxiden, angegeben als Stickstoffdioxid, 100 mg/m 3 nicht überschreiten."
+          "text": "Abweichend von Absatz 1 dürfen bei Anlagen mit einer Feuerungswärmeleistung über 300 MW die Emissionen von Stickoxiden, angegeben als Stickstoffdioxid, 100 mg/m³ nicht überschreiten."
         },
         {
           "absatz": null,
@@ -6317,7 +6317,7 @@
         },
         {
           "absatz": "1",
-          "text": "Für Feuerungen mit einer Heizmediumtemperatur über 150 °C, bei denen die Einhaltung des Stickoxid-Grenzwertes von 150 mg/m 3 nach Ziffer 411 technisch oder betrieblich nicht möglich oder wirtschaftlich nicht tragbar ist, kann die Behörde mildere Grenzwerte festlegen. Die Emissionen an Stickoxiden, angegeben als Stickstoffdioxid, dürfen jedoch 250 mg/m 3 nicht überschreiten."
+          "text": "Für Feuerungen mit einer Heizmediumtemperatur über 150 °C, bei denen die Einhaltung des Stickoxid-Grenzwertes von 150 mg/m³ nach Ziffer 411 technisch oder betrieblich nicht möglich oder wirtschaftlich nicht tragbar ist, kann die Behörde mildere Grenzwerte festlegen. Die Emissionen an Stickoxiden, angegeben als Stickstoffdioxid, dürfen jedoch 250 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
@@ -6453,7 +6453,7 @@
               ],
               [
                 "für Heizöle mit einem Schwefelgehalt von höchstens 1 % (Masse):",
-                "mg/m 3",
+                "mg/m³",
                 "80",
                 "10",
                 "10",
@@ -6461,7 +6461,7 @@
               ],
               [
                 "für übrige Heizöle",
-                "mg/m 3",
+                "mg/m³",
                 "50",
                 "10",
                 "10",
@@ -6469,23 +6469,23 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "170",
                 "170",
                 "170",
                 "170"
               ],
               [
-                "– Schwefeloxide (SOx), angegeben als Schwefeldioxid (SO 2 )",
-                "mg/m 3",
+                "– Schwefeloxide (SOx), angegeben als Schwefeldioxid (SO₂)",
+                "mg/m³",
                 "1700",
                 "350",
                 "200",
                 "150"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 )",
-                "mg/m 3",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂)",
+                "mg/m³",
                 "150",
                 "150",
                 "150",
@@ -6493,7 +6493,7 @@
               ],
               [
                 "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak",
-                "mg/m 3",
+                "mg/m³",
                 "30",
                 "30",
                 "30",
@@ -6504,7 +6504,7 @@
         },
         {
           "absatz": "2",
-          "text": "Der Emissionsgrenzwert für Schwefeloxide von 1700 mg/m 3 gilt als eingehalten, wenn Heizöl verwendet wird, dessen Schwefelgehalt 1 Prozent (% Masse) nicht überschreitet."
+          "text": "Der Emissionsgrenzwert für Schwefeloxide von 1700 mg/m³ gilt als eingehalten, wenn Heizöl verwendet wird, dessen Schwefelgehalt 1 Prozent (% Masse) nicht überschreitet."
         },
         {
           "absatz": null,
@@ -6570,7 +6570,7 @@
               ],
               [
                 "– Feststoffe insgesamt:",
-                "mg/m 3",
+                "mg/m³",
                 "100",
                 "50",
                 "20",
@@ -6580,7 +6580,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "2500",
                 "1000",
                 "1000",
@@ -6589,7 +6589,7 @@
                 "150"
               ],
               [
-                "– Schwefeloxide (SOx), angegeben als Schwefeldioxid (SO 2 )",
+                "– Schwefeloxide (SOx), angegeben als Schwefeldioxid (SO₂)",
                 "",
                 "",
                 "",
@@ -6600,7 +6600,7 @@
               ],
               [
                 "– Wirbelschichtfeuerungen",
-                "mg/m 3",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6610,7 +6610,7 @@
               ],
               [
                 "– andere Feuerungen bei Einsatz von Steinkohle",
-                "mg/m 3",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6620,7 +6620,7 @@
               ],
               [
                 "– sonstige Anlagen",
-                "mg/m 3",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6629,8 +6629,8 @@
                 "150"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 )",
-                "mg/m 3",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂)",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6639,8 +6639,8 @@
                 "150"
               ],
               [
-                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 1",
-                "mg/m 3",
+                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak¹",
+                "mg/m³",
                 "30",
                 "30",
                 "30",
@@ -6660,7 +6660,7 @@
         },
         {
           "absatz": "3",
-          "text": "Abweichend von Absatz 1 gilt für Zentralheizungs- und Einzelherde ein Emissionsgrenzwert für Kohlenmonoxid von 4000 mg/m 3."
+          "text": "Abweichend von Absatz 1 gilt für Zentralheizungs- und Einzelherde ein Emissionsgrenzwert für Kohlenmonoxid von 4000 mg/m³."
         },
         {
           "absatz": null,
@@ -6762,7 +6762,7 @@
               ],
               [
                 "– Feststoffe insgesamt",
-                "mg/m 3",
+                "mg/m³",
                 "100",
                 "50",
                 "–",
@@ -6771,7 +6771,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "4000",
                 "4000",
                 "–",
@@ -6779,7 +6779,7 @@
                 "–"
               ],
               [
-                "– für Einzelraumfeuerungen 1 und Heizkessel handbeschickt:",
+                "– für Einzelraumfeuerungen¹ und Heizkessel handbeschickt:",
                 "",
                 "",
                 "",
@@ -6789,7 +6789,7 @@
               ],
               [
                 "– Feststoffe insgesamt",
-                "mg/m 3",
+                "mg/m³",
                 "100",
                 "50",
                 "–",
@@ -6798,7 +6798,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "2500",
                 "500",
                 "–",
@@ -6816,7 +6816,7 @@
               ],
               [
                 "– Feststoffe insgesamt",
-                "mg/m 3",
+                "mg/m³",
                 "50",
                 "50",
                 "20",
@@ -6825,7 +6825,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "1000",
                 "500",
                 "500",
@@ -6843,7 +6843,7 @@
               ],
               [
                 "– Feststoffe insgesamt",
-                "mg/m 3",
+                "mg/m³",
                 "50",
                 "50",
                 "20",
@@ -6852,7 +6852,7 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "mg/m 3",
+                "mg/m³",
                 "1000",
                 "500",
                 "500",
@@ -6860,8 +6860,8 @@
                 "150"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 )",
-                "mg/m 3",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂)",
+                "mg/m³",
                 "2",
                 "2",
                 "2",
@@ -6870,7 +6870,7 @@
               ],
               [
                 "– Gasförmige organische Stoffe, angegeben als Gesamtkohlenstoff",
-                "mg/m 3",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6878,8 +6878,8 @@
                 "50"
               ],
               [
-                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 3",
-                "mg/m 3",
+                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak³",
+                "mg/m³",
                 "–",
                 "–",
                 "–",
@@ -6898,11 +6898,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung von 50 bis 300 MW 200 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung von 50 bis 300 MW 200 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 300 MW 150 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 300 MW 150 mg/m³"
             }
           ]
         },
@@ -6912,11 +6912,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung von 100 bis 300 MW 200 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung von 100 bis 300 MW 200 mg/m³"
             },
             {
               "marke": "b",
-              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 300 MW 150 mg/m 3"
+              "text": "bei Anlagen mit einer Feuerungswärmeleistung über 300 MW 150 mg/m³"
             }
           ]
         },
@@ -6984,7 +6984,7 @@
         },
         {
           "absatz": "3",
-          "text": "Schützenswerte historische Zimmeröfen bis zu einem Volumen von 0,4 m 3 und handwerklich hergestellte Kochherde sind ebenfalls von der Abnahmemessung ausgenommen, wenn sie nach den anerkannten Regeln der Feuerungstechnik gebaut wurden oder mit einem Staubabscheidesystem nach Absatz 2 Buchstabe b ausgerüstet sind."
+          "text": "Schützenswerte historische Zimmeröfen bis zu einem Volumen von 0,4 m³ und handwerklich hergestellte Kochherde sind ebenfalls von der Abnahmemessung ausgenommen, wenn sie nach den anerkannten Regeln der Feuerungstechnik gebaut wurden oder mit einem Staubabscheidesystem nach Absatz 2 Buchstabe b ausgerüstet sind."
         },
         {
           "absatz": "4",
@@ -7036,27 +7036,27 @@
               ],
               [
                 "– Kohlenmonoxid (CO)",
-                "100 mg/m 3"
+                "100 mg/m³"
               ],
               [
-                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO 2 ):",
+                "– Stickoxide (NOx), angegeben als Stickstoffdioxid (NO₂):",
                 ""
               ],
               [
                 "a. Hellstrahler und Dunkelstrahler",
-                "200 mg/m 3"
+                "200 mg/m³"
               ],
               [
                 "b. Anlagen mit einer Heizmediumtemperatur über 110 °C",
-                "110 mg/m 3"
+                "110 mg/m³"
               ],
               [
                 "c. Übrige Anlagen",
-                "80 mg/m 3"
+                "80 mg/m³"
               ],
               [
-                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak 1",
-                "30 mg/m 3"
+                "– Ammoniak und Ammoniumverbindungen, angegeben als Ammoniak¹",
+                "30 mg/m³"
               ],
               [
                 "Hinweise: 1 Diese Emissionsbegrenzung ist nur für Feuerungsanlagen mit Entstickungseinrichtung von Bedeutung."
@@ -7074,12 +7074,12 @@
             },
             {
               "marke": "1",
-              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstaben b–e 10 mg/m 3",
+              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstaben b–e 10 mg/m³",
               "tiefe": 1
             },
             {
               "marke": "2",
-              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstabe a 5 mg/m 3",
+              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstabe a 5 mg/m³",
               "tiefe": 1
             },
             {
@@ -7088,17 +7088,17 @@
             },
             {
               "marke": "1",
-              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstaben a und c–e 35 mg/m 3",
+              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstaben a und c–e 35 mg/m³",
               "tiefe": 1
             },
             {
               "marke": "2",
-              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstabe b 5 mg/m 3",
+              "text": "beim Betrieb mit Gasbrennstoffen nach Anhang 5 Ziffer 41 Absatz 1 Buchstabe b 5 mg/m³",
               "tiefe": 1
             },
             {
               "marke": "c",
-              "text": "Stickoxide (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid 100 mg/m 3"
+              "text": "Stickoxide (Stickstoffmonoxid und Stickstoffdioxid), angegeben als Stickstoffdioxid 100 mg/m³"
             }
           ]
         },
@@ -7109,7 +7109,7 @@
         },
         {
           "absatz": "1",
-          "text": "Für Feuerungen mit einer Heizmediumtemperatur über 150 °C, für welche die Einhaltung des Stickoxid-Grenzwertes von 110 mg/m 3 nach Ziffer 61 technisch oder betrieblich nicht möglich oder wirtschaftlich nicht tragbar ist, kann die Behörde mildere Grenzwerte festlegen. Die Emissionen an Stickoxiden, angegeben als Stickstoffdioxid, dürfen jedoch 200 mg/m 3 nicht überschreiten."
+          "text": "Für Feuerungen mit einer Heizmediumtemperatur über 150 °C, für welche die Einhaltung des Stickoxid-Grenzwertes von 110 mg/m³ nach Ziffer 61 technisch oder betrieblich nicht möglich oder wirtschaftlich nicht tragbar ist, kann die Behörde mildere Grenzwerte festlegen. Die Emissionen an Stickoxiden, angegeben als Stickstoffdioxid, dürfen jedoch 200 mg/m³ nicht überschreiten."
         },
         {
           "absatz": "2",
@@ -7216,7 +7216,7 @@
           "items": [
             {
               "marke": "Gm",
-              "text": "= Mischgrenzwert, bezogen auf einen Sauerstoffgehalt B 1",
+              "text": "= Mischgrenzwert, bezogen auf einen Sauerstoffgehalt B₁",
               "trenner": ""
             },
             {
@@ -7231,7 +7231,7 @@
             },
             {
               "marke": "Etot",
-              "text": "= E 1 + E 2 + … En",
+              "text": "= E₁ + E₂ + … En",
               "trenner": ""
             },
             {
@@ -7250,7 +7250,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_3",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "2cc15e1db5946ae3ba57e6c489308d2c78e5a083f1379abceaf767b0b630c552"
+      "sha": "3adaeb9ca0a772d409f3649673c61fa392876c8fd8a03d06958a8bc0037c148f"
     },
     {
       "id": "bund/LRV/annex_4",
@@ -7299,7 +7299,7 @@
         },
         {
           "absatz": "2",
-          "text": "Die Emissionen von Baumaschinen dürfen zudem den Anzahlwert von 1×10 12 1/kWh für Feststoffpartikel mit einem Durchmesser ab 23 nm im Abgas nicht übersteigen, ermittelt nach dem anerkannten Stand der Technik, namentlich nach dem Programm der UNECE zur Partikelmessung und nach den Prüfzyklen der Richtlinie 97/68/EG."
+          "text": "Die Emissionen von Baumaschinen dürfen zudem den Anzahlwert von 1×10¹² 1/kWh für Feststoffpartikel mit einem Durchmesser ab 23 nm im Abgas nicht übersteigen, ermittelt nach dem anerkannten Stand der Technik, namentlich nach dem Programm der UNECE zur Partikelmessung und nach den Prüfzyklen der Richtlinie 97/68/EG."
         },
         {
           "absatz": "2bis",
@@ -7332,7 +7332,7 @@
             },
             {
               "marke": "d",
-              "text": "bei freier Beschleunigung des Motors den Trübungskoeffizienten von 0,15 m‑1 unterschreiten;"
+              "text": "bei freier Beschleunigung des Motors den Trübungskoeffizienten von 0,15 m⁻¹ unterschreiten;"
             },
             {
               "marke": "e",
@@ -7458,7 +7458,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_4",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "5242f4fb920b361d116ad6982cf317c6a59f82732a24e3ac1b11b9fffc22b9be"
+      "sha": "59f0f4e279986e46854f009cfbb7b8f553d8dee91ce9496dbb4b48e6b0e18fc3"
     },
     {
       "id": "bund/LRV/annex_5",
@@ -7786,7 +7786,7 @@
             },
             {
               "marke": "e",
-              "text": "Deponiegase, sofern deren Gehalt an anorganischen und organischen Chlor- und Fluorverbindungen, angegeben als Chlor- und Fluorwasserstoff, zusammen 50 mg/m 3 nicht überschreitet."
+              "text": "Deponiegase, sofern deren Gehalt an anorganischen und organischen Chlor- und Fluorverbindungen, angegeben als Chlor- und Fluorwasserstoff, zusammen 50 mg/m³ nicht überschreitet."
             }
           ]
         },
@@ -8133,7 +8133,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_5",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "b6eaf87e5924754cd7b37950a06b2434fbff8e713a8a02ba80e05dbceb0f5baa"
+      "sha": "0cb19816b0806f94af59d08f7f477f7dd85c35f42c47a96ffff767023732c676"
     },
     {
       "id": "bund/LRV/annex_6",
@@ -8184,34 +8184,34 @@
         },
         {
           "absatz": null,
-          "text": "3 Rechengrösse H 0",
+          "text": "3 Rechengrösse H₀",
           "titel": 3
         },
         {
           "absatz": null,
-          "text": "31 Bestimmung von H 0 nach Diagramm 1",
+          "text": "31 Bestimmung von H₀ nach Diagramm 1",
           "titel": 4
         },
         {
           "absatz": "1",
-          "text": "Die Rechengrösse H 0 berücksichtigt die Kurzzeit-Einwirkungen der von einer Einzelanlage emittierten luftverunreinigenden Stoffe. Sie wird mit Hilfe von Diagramm 1 bestimmt."
+          "text": "Die Rechengrösse H₀ berücksichtigt die Kurzzeit-Einwirkungen der von einer Einzelanlage emittierten luftverunreinigenden Stoffe. Sie wird mit Hilfe von Diagramm 1 bestimmt."
         },
         {
           "absatz": "2",
-          "text": "Die Grössen Q und F sind von den Emissionsbedingungen der Anlage abhängig. Für die Berechnung von H 0 werden die Werte bei Volllast und die für die Luftreinhaltung ungünstigsten Brennstoff- bzw. Emissionsbedingungen eingesetzt."
+          "text": "Die Grössen Q und F sind von den Emissionsbedingungen der Anlage abhängig. Für die Berechnung von H₀ werden die Werte bei Volllast und die für die Luftreinhaltung ungünstigsten Brennstoff- bzw. Emissionsbedingungen eingesetzt."
         },
         {
           "absatz": "3",
-          "text": "Mit der Grösse S werden die von der Anlage verursachten maximalen Kurzzeit-Immissionen auf einen bestimmten Wert (S‑Wert) begrenzt. Für die Berechnung von H 0 werden die S‑Werte nach Ziffer 9 eingesetzt."
+          "text": "Mit der Grösse S werden die von der Anlage verursachten maximalen Kurzzeit-Immissionen auf einen bestimmten Wert (S‑Wert) begrenzt. Für die Berechnung von H₀ werden die S‑Werte nach Ziffer 9 eingesetzt."
         },
         {
           "absatz": null,
-          "text": "32 Bestimmung von H 0 im Einzelfall",
+          "text": "32 Bestimmung von H₀ im Einzelfall",
           "titel": 4
         },
         {
           "absatz": "1",
-          "text": "Die Rechengrösse H 0 wird im Einzelfall nach den anerkannten Regeln zur Berechnung der Kaminhöhe und der Ausbreitung von Abgasen bestimmt, wenn:",
+          "text": "Die Rechengrösse H₀ wird im Einzelfall nach den anerkannten Regeln zur Berechnung der Kaminhöhe und der Ausbreitung von Abgasen bestimmt, wenn:",
           "items": [
             {
               "marke": "a",
@@ -8225,7 +8225,7 @@
         },
         {
           "absatz": "2",
-          "text": "Bei Abgastemperaturen unter 55 °C darf jedoch die Rechengrösse H 0 nicht kleiner sein als der Wert, der sich nach Diagramm 1 für eine Temperatur von 55 °C ergibt."
+          "text": "Bei Abgastemperaturen unter 55 °C darf jedoch die Rechengrösse H₀ nicht kleiner sein als der Wert, der sich nach Diagramm 1 für eine Temperatur von 55 °C ergibt."
         },
         {
           "absatz": null,
@@ -8238,7 +8238,7 @@
         },
         {
           "absatz": null,
-          "text": "H 1 = f × H 0"
+          "text": "H₁ = f × H₀"
         },
         {
           "absatz": null,
@@ -8271,11 +8271,11 @@
         },
         {
           "absatz": null,
-          "text": "Erhöhte Objekte (Bebauung und Bewuchs) in der Umgebung des Hochkamins werden durch einen Höhenzuschlag I 1 berücksichtigt:"
+          "text": "Erhöhte Objekte (Bebauung und Bewuchs) in der Umgebung des Hochkamins werden durch einen Höhenzuschlag I₁ berücksichtigt:"
         },
         {
           "absatz": null,
-          "text": "I 1 = g × I"
+          "text": "I₁ = g × I"
         },
         {
           "absatz": null,
@@ -8300,7 +8300,7 @@
         },
         {
           "absatz": null,
-          "text": "H = H 1 + I 1"
+          "text": "H = H₁ + I₁"
         },
         {
           "absatz": null,
@@ -8336,11 +8336,11 @@
         },
         {
           "absatz": null,
-          "text": "H 0 (m) = Rechengrösse für die Bestimmung von H 1"
+          "text": "H₀ (m) = Rechengrösse für die Bestimmung von H₁"
         },
         {
           "absatz": null,
-          "text": "H 1 (m) = Kaminmindesthöhe für ebenes, hindernisfreies Gebiet"
+          "text": "H₁ (m) = Kaminmindesthöhe für ebenes, hindernisfreies Gebiet"
         },
         {
           "absatz": null,
@@ -8348,7 +8348,7 @@
         },
         {
           "absatz": null,
-          "text": "I 1 (m) = Höhenzuschlag für Bebauung und Bewuchs"
+          "text": "I₁ (m) = Höhenzuschlag für Bebauung und Bewuchs"
         },
         {
           "absatz": null,
@@ -8364,7 +8364,7 @@
         },
         {
           "absatz": null,
-          "text": "Rn (m 3 /h) = Volumenstrom des Abgases im Normzustand (0 °C, 1013 mbar)"
+          "text": "Rn (m³/h) = Volumenstrom des Abgases im Normzustand (0 °C, 1013 mbar)"
         },
         {
           "absatz": null,
@@ -8376,11 +8376,11 @@
         },
         {
           "absatz": null,
-          "text": "F (m 4 /s 3 ) = Auftriebsflux; F = 3,18 × 10–6 × Rn × Δt"
+          "text": "F (m⁴/s³) = Auftriebsflux; F = 3,18 × 10⁻⁶ × Rn × Δt"
         },
         {
           "absatz": null,
-          "text": "S (µg/m 3 ) = S-Wert (vgl. Ziff. 3 und 9)"
+          "text": "S (µg/m³) = S-Wert (vgl. Ziff. 3 und 9)"
         },
         {
           "absatz": null,
@@ -8393,11 +8393,11 @@
           "mehrspaltig": {
             "kopf": [
               "Schadstoff",
-              "S (µg/m 3 )"
+              "S (µg/m³)"
             ],
             "zeilen": [
               [
-                "Schwebestaub (PM10) 1",
+                "Schwebestaub (PM10)¹",
                 "50"
               ],
               [
@@ -8488,7 +8488,7 @@
         },
         {
           "absatz": null,
-          "text": "Bestimmung der Rechengrösse H 0 für Hochkamine",
+          "text": "Bestimmung der Rechengrösse H₀ für Hochkamine",
           "titel": 3
         },
         {
@@ -8541,14 +8541,14 @@
         },
         {
           "absatz": null,
-          "text": "H 1 = Kaminmindesthöhe für ebenes, hindernisfreies Gebiet (Ziff. 4)"
+          "text": "H₁ = Kaminmindesthöhe für ebenes, hindernisfreies Gebiet (Ziff. 4)"
         }
       ],
       "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_6",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "f4a2d5b88ddfd2ed29acf6237d8668b5f77be24fc36b25d8cf8f5c7cc0db15df"
+      "sha": "74d7fc78492a8fc5135c60ff2e2f56869d3bf98705ce079d1fb7b340cc6e06fe"
     },
     {
       "id": "bund/LRV/annex_7",
@@ -8578,98 +8578,98 @@
             ],
             "zeilen": [
               [
-                "Schwefeldioxid (SO 2 )",
-                "30 µg/m 3",
+                "Schwefeldioxid (SO₂)",
+                "30 µg/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "",
-                "100 µg/m 3",
-                "95 % der ½-h-Mittelwerte eines Jahres ≤ 100 µg/m 3"
+                "100 µg/m³",
+                "95 % der ½-h-Mittelwerte eines Jahres ≤ 100 µg/m³"
               ],
               [
                 "",
-                "100 µg/m 3",
+                "100 µg/m³",
                 "24-h-Mittelwert; darf höchstens einmal pro Jahr überschritten werden"
               ],
               [
-                "Stickstoffdioxid (NO 2 )",
-                "30 µg/m 3",
+                "Stickstoffdioxid (NO₂)",
+                "30 µg/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "",
-                "100 µg/m 3",
-                "95 % der ½-h-Mittelwerte eines Jahres ≤ 100 µg/m 3"
+                "100 µg/m³",
+                "95 % der ½-h-Mittelwerte eines Jahres ≤ 100 µg/m³"
               ],
               [
                 "",
-                "80 µg/m 3",
+                "80 µg/m³",
                 "24-h-Mittelwert; darf höchstens einmal pro Jahr überschritten werden"
               ],
               [
                 "Kohlenmonoxid (CO)",
-                "8 mg/m 3",
+                "8 mg/m³",
                 "24-h-Mittelwert; darf höchstens einmal pro Jahr überschritten werden"
               ],
               [
-                "Ozon(O 3 )",
-                "100 µg/m 3",
-                "98 % der ½-h-Mittelwerte eines Monats ≤ 100 µg/m 3"
+                "Ozon(O₃)",
+                "100 µg/m³",
+                "98 % der ½-h-Mittelwerte eines Monats ≤ 100 µg/m³"
               ],
               [
                 "",
-                "120 µg/m 3",
+                "120 µg/m³",
                 "1-h-Mittelwert; darf höchstens einmal pro Jahr überschritten werden"
               ],
               [
                 "Schwebestaub (PM10)a",
-                "20 µg/m 3",
+                "20 µg/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "",
-                "50 µg/m 3",
+                "50 µg/m³",
                 "24-h-Mittelwert; darf höchstens dreimal pro Jahr überschritten werden"
               ],
               [
                 "Schwebestaub (PM2.5)b",
-                "10 µg/m 3",
+                "10 µg/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Blei (Pb) im Schwebestaub (PM10)",
-                "500 ng/m 3",
+                "500 ng/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Cadmium (Cd) im Schwebestaub (PM10)",
-                "1,5 ng/m 3",
+                "1,5 ng/m³",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Staubniederschlag insgesamt",
-                "200 mg/(m 2 × d)",
+                "200 mg/(m² × d)",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Blei (Pb) im Staubniederschlag",
-                "100 µg/(m 2 × d)",
+                "100 µg/(m² × d)",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Cadmium (Cd) im Staubniederschlag",
-                "2 µg/(m 2 × d)",
+                "2 µg/(m² × d)",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Zink (Zn) im Staubniederschlag",
-                "400 µg/(m 2 × d)",
+                "400 µg/(m² × d)",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
                 "Thallium (Tl) im Staubniederschlag",
-                "2 µg/(m 2 × d)",
+                "2 µg/(m² × d)",
                 "Jahresmittelwert (arithmetischer Mittelwert)"
               ],
               [
@@ -8683,7 +8683,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1986/208_208_208/de#annex_7",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260801",
-      "sha": "f0a5b41c30811d9df0aa7f1b6b1afc4b1b4dd150052940e1b3e9789de9dc5876"
+      "sha": "8ee9a1a242589934b048e088c7aedc705dcbdfff1e87a048ad12491fc89315a3"
     }
   ]
 }

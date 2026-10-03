@@ -598,12 +598,12 @@
           "text": "Sie führt die Prämienverbilligung nach Artikel 66a durch."
         },
         {
-          "absatz": null,
-          "text": "2sexies Die gemeinsame Einrichtung kann von den Kantonen gegen Entschädigung weitere Vollzugsaufgaben übernehmen."
+          "absatz": "2sexies",
+          "text": "Die gemeinsame Einrichtung kann von den Kantonen gegen Entschädigung weitere Vollzugsaufgaben übernehmen."
         },
         {
-          "absatz": null,
-          "text": "2septies Sie führt den Lebendspende-Nachsorgefonds nach Artikel 15b des Transplantationsgesetzes vom 8. Oktober 2004."
+          "absatz": "2septies",
+          "text": "Sie führt den Lebendspende-Nachsorgefonds nach Artikel 15b des Transplantationsgesetzes vom 8. Oktober 2004."
         },
         {
           "absatz": "3",
@@ -638,7 +638,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de#art_18",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260701",
-      "sha": "5c021b12220a28329546344518b5fee5dbdd65d5422e1648071b7c4c87f34e99"
+      "sha": "ad7f88f29f54bce4baac74febaf4dacd3a0b0652c8f16bf8ef81f1750873b603"
     },
     {
       "id": "bund/KVG/art_19",
@@ -3794,8 +3794,8 @@
           ]
         },
         {
-          "absatz": null,
-          "text": "1sexies Die Berechnung des Mindestanteils stützt sich auf:",
+          "absatz": "1sexies",
+          "text": "Die Berechnung des Mindestanteils stützt sich auf:",
           "items": [
             {
               "marke": "a",
@@ -3808,12 +3808,12 @@
           ]
         },
         {
-          "absatz": null,
-          "text": "1septies Für die Beurteilung, ob ein Kanton den Mindestanteil erfüllt, werden alle Beträge berücksichtigt, die er für die Bezahlung der Prämien der Versicherten aufwendet, mit Ausnahme von Forderungen, die er gestützt auf Artikel 64a Absatz 4 übernommen hat, und mit Ausnahme seines Anteils am Bundesbeitrag nach Artikel 66."
+          "absatz": "1septies",
+          "text": "Für die Beurteilung, ob ein Kanton den Mindestanteil erfüllt, werden alle Beträge berücksichtigt, die er für die Bezahlung der Prämien der Versicherten aufwendet, mit Ausnahme von Forderungen, die er gestützt auf Artikel 64a Absatz 4 übernommen hat, und mit Ausnahme seines Anteils am Bundesbeitrag nach Artikel 66."
         },
         {
-          "absatz": null,
-          "text": "1octies Der Bundesrat legt nach Anhörung der Kantone die Einzelheiten der Berechnung der Bruttokosten und des Mindestanteils fest."
+          "absatz": "1octies",
+          "text": "Der Bundesrat legt nach Anhörung der Kantone die Einzelheiten der Berechnung der Bruttokosten und des Mindestanteils fest."
         },
         {
           "absatz": "2",
@@ -3844,7 +3844,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de#art_65",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260701",
-      "sha": "9589d49350d9cbdb6384998bb6a8c9cdb9faa0aebcc36b2ad1063289a2bc92df"
+      "sha": "aa96ae1c033beb8b7cf4699cf3e59f48477606faa66721f0f076f0c8c5d0293a"
     },
     {
       "id": "bund/KVG/art_65_a",

@@ -25,6 +25,8 @@
 // (passusZiel.ts). Eigene Datei (wie stern-note.ts), damit der Extraktor nur
 // eine Alternative, einen Zweig und einen Aufruf trägt.
 
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+
 /** Heading-Tiefe der Ziffer-Überschrift (kein <h>-Tag in der Quelle; 3 = «nicht flach», s. ArtikelBody). */
 export const ZIFFER_TITEL_TIEFE = 3;
 
@@ -66,7 +68,7 @@ const VOR = '^(?:\\s|</?inl>)*';
 // Ausnahmen (B4/B1, Befund-Runde #1251): (a) die lat. Suffix-Form «1<sup>bis</sup>.» ist datumsfrei
 // eindeutig und gilt auch mit EINEM nbsp (StGB 305bis); (b) einfaches «1.&nbsp;Wer» (MStG 177,
 // SSV 116, FZV 24) gilt, solange kein Monatsname/keine Zahl folgt (`NICHT_DATUM`).
-const ABSATZ_ZIFFER_RE = new RegExp(`${VOR}(${ZIFFER})(?:<sup>(bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)</sup>)?\\.${FN}(&nbsp;(?:&nbsp;)?)(?!&nbsp;)`);
+const ABSATZ_ZIFFER_RE = new RegExp(`${VOR}(${ZIFFER})(?:<sup>(${SUFFIX_ALT})</sup>)?\\.${FN}(&nbsp;(?:&nbsp;)?)(?!&nbsp;)`);
 const NICHT_DATUM =
   /^(?:\d|(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember|Jan|Feb|Mär|Apr|Jun|Jul|Aug|Sep|Sept|Okt|Nov|Dez)\b)/;
 // Sammel-Ziffer «2. und 3. …» / «1.–2. …» (aufgehobener Bereich, MStG 122/131, VZV 145, SSV 116):

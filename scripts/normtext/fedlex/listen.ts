@@ -5,6 +5,7 @@
  */
 import { dekodiereEntities } from '../html-entities.ts';
 import { entferneTags } from './text.ts';
+import { SUFFIX_ALT } from '../../../src/lib/fedlex/nummer.ts';
 import { findeDlEnde, findeDdEnde } from './enden.ts';
 import type { ArtikelText } from './typen.ts';
 
@@ -191,11 +192,14 @@ export function parseDefinitionsListe(
     //      — ohne den nachgestellten Trenner — eine kanonische Ordinalmarke ist.
     //      Trifft das nicht zu, bleibt die Marke verbatim stehen. Damit ist jede
     //      bisher korrekte Marke byte-gleich und keine wird mehr erfunden (§1/§6).
-    // Die lat. Suffixe reichen bis `decies`: «asexies.»/«anovies.» (HMG Art. 9,
+    // Die lat. Suffixe: «asexies.»/«anovies.» (HMG Art. 9,
     // FINMA-GebV) wurden zuvor auf «a» gekürzt.
     // Der Anhang-Pfad behält seine mehrteiligen Ziffern «1.1.1»/«211.1»
     // (M13-Annex) — sie sind hier Teil des kanonischen Musters.
-    const LAT_SUFFIX = 'bis|ter|quater|quinquies|sexies|septies|octies|novies|decies';
+    // EINE Reihe (§5): SUFFIX_ALT aus src/lib/fedlex/nummer.ts (zwölf amtliche Glieder bis «tredecies»);
+    // bis 3.10.2026 eine eigene Handkopie bis «decies» (W2·27-BUND-FERTIG P8-B Nachzug). Alle Verwendungen
+    // stehen in anchored Mustern bzw. in einer Gruppe — die Reihenfolge der Alternation ist ohne Wirkung.
+    const LAT_SUFFIX = SUFFIX_ALT;
     const KANONISCHE_MARKE = anhang
       ? new RegExp(`^(?:[0-9]+(?:\\.[0-9]+)*(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)$`, 'i')
       : new RegExp(`^(?:[0-9]+(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)$`, 'i');
