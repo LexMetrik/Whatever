@@ -99,7 +99,13 @@ export interface NormSnapshot {
      *  FEHLT das Feld, ist es der Normalfall «kanonische Ordinalmarke + Punkt»
      *  ODER eine Quelle, die den Trenner nicht mitführt (Kanton-Adapter) — die
      *  Lesesicht fällt dann auf ihre Marken-Heuristik zurück
-     *  (ArtikelBody.helfer.ts `markenArt`). */
+     *  (ArtikelBody.helfer.ts `markenArt`).
+     *
+     *  `marke: ''` (W2·27-BUND-FERTIG, 3.10.2026): marke-lose Zeile am Anfang einer
+     *  (Unter-)Liste — die Quelle führt keine <dt>-Marke (ARGV1 art_30 «1.  in fünf …»,
+     *  VBB art_10 Legende, EBG art_6 CSS-Autonummer). Der Text steht an seiner Stelle, es
+     *  gibt weder Marke noch Zitierknopf (keine Marke erfunden, §1/§7); `tiefe` wie bei
+     *  jedem Item. Nur der Haupttext-Pfad schreibt sie (Anhang: eigener Block, `einzug`). */
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
     /** Anhang-Zwischennotiz (P4, W2·27-BUND-FERTIG): Ebene (`tiefe`, 0 = Wurzelliste) der marke-losen
      *  Zeile, die diesen Block ausmacht (`text` = die Zeile, `items` = ihre Unterliste). Render-Hinweis,
