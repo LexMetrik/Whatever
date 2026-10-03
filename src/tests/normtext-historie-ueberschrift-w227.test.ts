@@ -189,13 +189,16 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
   });
 
   // B1: nur GANZE Fassungen vererben.
-  it('B1: Teil-Formeln («Fassung dieses Wortes», «Fassung des Randtit.», «Fassung des Tit.», «Ursprünglich …») werden nicht vererbt', () => {
+  // 3.10.2026 (fachliche Änderung, Folge-Posten #1286): «Ursprünglich vor Art. 4. Fassung gemäss …» (ARGV4 2) stand hier als
+  // Teil-Formel; seither schneidet `ohneUrsprungVorsatz` den reinen Ur-Vorsatz ab und vererbt die Fassung dahinter
+  // (src/tests/normtext-historie-urspruenglich-vorsatz.test.ts). `ganzeFassung` selbst bleibt unverändert (Text mit Vorsatz = false).
+  it('B1: Teil-Formeln («Fassung dieses Wortes», «Fassung des Randtit.», «Fassung des Tit.») werden nicht vererbt', () => {
     const TEIL = [
       'Fassung dieses Wortes gemäss Ziff. I 3 des BG vom 30. Juni 1972, in Kraft seit 1. April 1973 (AS 1972 2819; BBl 1971 I 1200).',
       'Fassung des Randtit. gemäss Ziff. I 3 des BG vom 30. Juni 1972, in Kraft seit 1. April 1973 (AS 1972 2819, 1973 92; BBl 1971 I 1200).',
       'Fassung des Tit. gemäss Ziff. I des BG vom 19. Juni 1959, in Kraft seit 1. Jan. 1960 (AS 1959 854; BBl 1958 II 1137).',
-      'Ursprünglich vor Art. 4. Fassung gemäss Ziff. I der V vom 10. Mai 2000, in Kraft seit 1. Aug. 2000 (AS 2000 1636).',
     ];
+    expect(ganzeFassung('Ursprünglich vor Art. 4. Fassung gemäss Ziff. I der V vom 10. Mai 2000, in Kraft seit 1. Aug. 2000 (AS 2000 1636).')).toBe(false);
     for (const t of TEIL) {
       expect(ganzeFassung(t), t).toBe(false);
       const f: ErbArtikel[] = [

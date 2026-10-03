@@ -167,6 +167,38 @@
   },
   {
    "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 1227",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227"
+    },
+    {
+     "label": "BBl 1991 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+  },
+  {
+   "typ": "eingefuegt",
    "datum": "1997-01-01",
    "wirkung": false,
    "quellen": [
@@ -10583,6 +10615,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "68_c": {
@@ -10647,14 +10683,14 @@
     }
    ],
    "erbt": [
-    9
+    11
    ]
   },
   "68_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    11
    ]
   },
   "85_a": {

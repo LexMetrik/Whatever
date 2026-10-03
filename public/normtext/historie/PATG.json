@@ -296,6 +296,24 @@
    "ueberschrift": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
   },
   {
+   "typ": "fassung",
+   "datum": "1995-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1995 2879",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879"
+    },
+    {
+     "label": "BBl 1993 III 706",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1993/3_706_666_522"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+  },
+  {
    "typ": "eingefuegt",
    "datum": "2011-07-01",
    "wirkung": false,
@@ -1596,6 +1614,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "48": {
@@ -1652,6 +1673,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    16
    ]
   },
   "49": {
@@ -2271,7 +2295,7 @@
     }
    ],
    "erbt": [
-    17
+    18
    ]
   },
   "62": {
@@ -2354,14 +2378,14 @@
     }
    ],
    "erbt": [
-    17
+    18
    ]
   },
   "64": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    18
    ]
   },
   "65": {
@@ -2386,7 +2410,7 @@
     }
    ],
    "erbt": [
-    17
+    18
    ]
   },
   "66": {
@@ -5409,7 +5433,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    16
+    17
    ]
   },
   "49_a": {
@@ -5783,7 +5807,7 @@
     }
    ],
    "erbt": [
-    17
+    18
    ]
   },
   "70_a": {
@@ -6128,8 +6152,8 @@
     }
    ],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_c": {
@@ -6154,8 +6178,8 @@
     }
    ],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_d": {
@@ -6176,16 +6200,16 @@
     }
    ],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_f": {
@@ -6244,48 +6268,48 @@
     }
    ],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_j": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_k": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "86_l": {
@@ -6310,8 +6334,8 @@
     }
    ],
    "erbt": [
-    18,
-    19
+    19,
+    20
    ]
   },
   "8_a": {
@@ -6589,7 +6613,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_143": {
@@ -6631,7 +6655,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_144": {
@@ -6713,7 +6737,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_146": {
@@ -6755,7 +6779,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_147": {
@@ -6797,7 +6821,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_148": {
@@ -6822,7 +6846,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   },
   "disp_u1_art_149": {
@@ -6847,7 +6871,7 @@
     }
    ],
    "erbt": [
-    20
+    21
    ]
   }
  },

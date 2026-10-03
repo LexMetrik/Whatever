@@ -355,6 +355,24 @@
   },
   {
    "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4005",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Siebter Abschnitt: Transparenz bei Rohstoffunternehmen"
+  },
+  {
+   "typ": "eingefuegt",
    "datum": "2022-01-01",
    "wirkung": false,
    "quellen": [
@@ -23766,7 +23784,8 @@
    "erbt": [
     14,
     16,
-    17
+    17,
+    20
    ]
   },
   "964_f": {
@@ -23775,7 +23794,8 @@
    "erbt": [
     14,
     16,
-    17
+    17,
+    20
    ]
   },
   "964_g": {
@@ -23784,7 +23804,8 @@
    "erbt": [
     14,
     16,
-    17
+    17,
+    20
    ]
   },
   "964_h": {
@@ -23793,7 +23814,8 @@
    "erbt": [
     14,
     16,
-    17
+    17,
+    20
    ]
   },
   "964_i": {
@@ -23802,7 +23824,8 @@
    "erbt": [
     14,
     16,
-    17
+    17,
+    20
    ]
   },
   "964_j": {
@@ -23840,7 +23863,7 @@
     14,
     16,
     17,
-    20
+    21
    ]
   },
   "964_l": {
@@ -23850,7 +23873,7 @@
     14,
     16,
     17,
-    20
+    21
    ]
   },
   "973_a": {
@@ -23919,7 +23942,7 @@
    ],
    "erbt": [
     0,
-    21
+    22
    ]
   },
   "973_c": {
@@ -23979,7 +24002,7 @@
    ],
    "erbt": [
     0,
-    21
+    22
    ]
   },
   "973_d": {
@@ -24159,21 +24182,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    22
+    23
    ]
   },
   "disp_u12_art_5": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    22
+    23
    ]
   },
   "disp_u12_art_6": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    22
+    23
    ]
   },
   "disp_u13_art_1": {
@@ -24203,35 +24226,35 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_3": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_4": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_5": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_6": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_7": {
@@ -24256,14 +24279,14 @@
     }
    ],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u13_art_8": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    23
+    24
    ]
   },
   "disp_u14_art_1": {
@@ -24293,14 +24316,14 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    25
    ]
   },
   "disp_u14_art_3": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    25
    ]
   },
   "disp_u16_art_1": {
@@ -24326,28 +24349,28 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_11": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_12": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_13": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_14": {
@@ -24377,28 +24400,28 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_16": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_17": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_18": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_19": {
@@ -24414,21 +24437,21 @@
     }
    ],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_2": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_3": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_4": {
@@ -24458,7 +24481,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_6": {
@@ -24481,21 +24504,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_8": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u16_art_9": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    26
    ]
   },
   "disp_u17_art_1": {
@@ -24525,56 +24548,56 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_3": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_4": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_5": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_6": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_7": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_8": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   },
   "disp_u17_art_9": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    27
    ]
   }
  },

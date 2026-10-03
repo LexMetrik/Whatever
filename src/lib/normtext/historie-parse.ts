@@ -20,6 +20,7 @@
 // Reine, testbare Datenschicht: dieselben Funktionen speisen den Build-Generator
 // (scripts/normtext/historie-generieren.ts) UND die Unit-Tests.
 
+import { ursprungVorsatzSchnitte } from './historie-ursprung';
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
 
@@ -591,8 +592,9 @@ function fussnoteText(fn: FnEingang): string {
  * B1 (Nachzug 2.10.2026): eine GANZE Fassung — die Fussnote beginnt (nach führendem Marker/Leerraum) mit «Fassung gemäss …»,
  * «Eingefügt durch …» oder «Fassung des <Ordnungszahl> Titels/Abschnitts/Kapitels …». Nur sie gilt für den ganzen Bereich unter
  * der Überschrift. Teil-Formeln — «Fassung dieses Wortes gemäss …» (ZGB 457–460), «Fassung des Randtit. …» (ZGB 20/21),
- * «Fassung des Tit. …» (AHVG 42/43), «Ursprünglich … Fassung gemäss …», «Titel eingefügt durch …» — nennen die Überschrift
+ * «Fassung des Tit. …» (AHVG 42/43), «Titel eingefügt durch …» — nennen die Überschrift
  * selbst oder einen Teil und werden nicht vererbt; Satzfragmente («… in der Fassung des BG …») erst recht nicht (B5).
+ * Ein «Ursprünglich …»-VORSATZ vor dem Anker schneidet `ohneUrsprungVorsatz` vorher ab.
  */
 export function ganzeFassung(text: string): boolean {
   return /^\s*(?:\d+[a-z]*\s+)?(?:Fassung gemäss|[Ee]ingefügt durch|Fassung des [^\s]+ (?:Titels|Abschnitts|Kapitels))/.test(text);
@@ -618,13 +620,35 @@ export function teilweiseFussnote(text: string): boolean {
   return daten.size > 1;
 }
 
+/** Ereignis-Verb IM Vorsatz — gross/klein-unabhängig («…, berichtigt gemäss …») und mit «versetzt»/«verschoben»
+ *  («; hierher versetzt gemäss …»): ein solcher Vorsatz ist keine reine Ur-Bezeichnung (§8). Ohne Flag `g` (zustandslos). */
+const VORSATZ_EREIGNIS_RE = new RegExp(`${VERB_ANKER.source}|\\b(?:versetzt|verschoben)\\b`, 'i');
+
+/**
+ * «Ursprünglich …»-Vorsatz vor dem B1-Anker (3.10.2026, historie-ursprung.ts): beginnt der Text mit der Ur-Bezeichnung der
+ * Überschrift und folgt danach ein gültiger B1-Anker («Ursprünglich vor Art. 56. Fassung gemäss …»), gilt der Rest. Nur ein
+ * reiner Ur-Vorsatz wird abgeschnitten — nennt er selbst ein weiteres Ereignis-Verb («Berichtigt …», «Bereinigt …»),
+ * oder folgt kein Anker, bleibt der Text unverändert (§8: lieber nichts vererben). Der Vorsatz beschreibt die Überschrift
+ * selbst und kein Ereignis der Artikel darunter; `SEKTION_ERBT` gibt ihn ohnehin nie weiter.
+ * Die Verb-Prüfung im Vorsatz ist gross/klein-unabhängig und kennt «versetzt»/«verschoben» (`VORSATZ_EREIGNIS_RE`).
+ */
+export function ohneUrsprungVorsatz(text: string): string {
+  for (const { vorsatz, rest } of ursprungVorsatzSchnitte(text)) {
+    if (!ganzeFassung(rest)) continue;
+    const ohneKopf = vorsatz.replace(/^\s*(?:\d+[a-z]*\s+)?Ursprünglich/, '');
+    if (VORSATZ_EREIGNIS_RE.test(ohneKopf)) continue;
+    return rest;
+  }
+  return text;
+}
+
 /** Geerbte Sektions-Fussnoten → ihre weitergebbaren Ereignisse (Typ ∈ SEKTION_ERBT, nur ganze Fassungen — B1), je mit
  *  Herkunfts-Label; gestaffelte/teilweise Fussnoten (B2) ohne Datum und mit Wortlaut. */
 function geerbteEreignisse(fns: ReadonlyArray<FnEingang> | undefined): HistorieEreignis[] {
   const aus: HistorieEreignis[] = [];
   for (const fn of fns ?? []) {
     if (!fn.sektion) continue;
-    const text = fussnoteText(fn);
+    const text = ohneUrsprungVorsatz(fussnoteText(fn));
     if (!ganzeFassung(text)) continue;
     const teilweise = teilweiseFussnote(text);
     for (const e of parseFussnoteHistorie(fn).ereignisse) {
