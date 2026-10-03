@@ -23,6 +23,7 @@
 import { parseHTML } from 'linkedom';
 import { lokalisiereAnker } from './segmente-anker.ts';
 import { leereZeilenStatistik, type Fingerabdruck, type ZeilenStatistik } from './segmente-soll.ts';
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
 
 // Soll-/Basislinien-Logik liegt seit Runde 3 (25.9.2026) in `segmente-soll.ts`
 // (§6.6); hier re-exportiert, damit Aufrufer und Tests EINE Import-Quelle behalten.
@@ -336,8 +337,7 @@ export function alleAnhangEids(dokument: { querySelectorAll: (sel: string) => It
 
 // Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —
 // ganze Zeichenkette muss passen (§7 CLAUDE.md: kein Teilstring-Treffer).
-const ABSATZNUMMER_MUSTER =
-  /^\d+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)?[a-z]?\.?$/;
+const ABSATZNUMMER_MUSTER = new RegExp(`^\\d+${SUFFIX_ALT}?[a-z]?\\.?$`);
 
 /** Entfernt Fussnoten-Verweismarken (<sup> MIT <a>) aus einem (bereits geklonten) Teilbaum. */
 function ohneFussnotenmarken(klon: Knoten): Knoten {
