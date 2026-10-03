@@ -485,6 +485,16 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     }
   });
 
+  it('Randtitel zählt nicht: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → nicht mehr 2014-07-01, Chronik behält 2014', () => {
+    const h = hist('ZGB', '310')!;
+    // Wert offen, wartet auf Entscheid David (Nachzug 2 Delta-GP, 3.10.2026): am Körper steht nur die Fassung 1978 (AS 1977 237);
+    // «Vormundschaftsbehörde» → «Kindesschutzbehörde» in Art. 310 steht in der Generalanweisung AS 2011 725 («Ersatz von Ausdrücken»,
+    // S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel). Der Generator liefert derzeit 1978-01-01; das ist NICHT als korrekt
+    // zugesichert — gesichert ist nur die Entscheid-Wirkung («Randtitel zählt nicht»), also bewusst kein Positivwert.
+    expect(h.giltSeit).not.toBe('2014-07-01');
+    expect(h.ereignisse.some((e) => e.datum === '2014-07-01' && e.ueberschrift)).toBe(true);
+  });
+
   it('H1: ZGB 124, OR 928c, ZGB 4 (Randtitel mit Gliederungszeichen + «Ausdruck»-Fussnote, Änderungserlass auch im Körper) behalten ihr Datum wie auf main', () => {
     expect(hist('ZGB', '124')!.giltSeit).toBe('2024-01-01'); // AS 2023 92 Anhang Ziff. 1 «Randtitel und Absatz 1»
     expect(hist('OR', '928_c')!.giltSeit).toBe('2022-01-01'); // AS 2021 758 Anhang Ziff. 3 «Randtitel sowie Absätze 1 und 2»

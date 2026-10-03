@@ -62,17 +62,22 @@ function koerperTeiltQuelle(fussnoten: ReadonlyArray<FnKern> | undefined, label:
 
 /**
  * Ist eine Randtitel-Fussnote eine «Ausdruck»-Fussnote (Ersatz eines Ausdrucks)? Erkennung am Segment-Anfang «Ausdruck gemäss»
- * (Verb-Kopf `ausdruck`) oder am amtlichen Zusatz «Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen» /
- * «Diese Änd. ist im ganzen Erlass berücksichtigt». Eine solche Anweisung (Ersatz von Ausdrücken, GTR Rz. 327–330) nennt den
+ * (Verb-Kopf `ausdruck`). Eine solche Anweisung (Ersatz von Ausdrücken, GTR Rz. 327–330) nennt den
  * Randtitel nur als EINE der betroffenen Stellen und ändert auch den Körper (ZGB 124: AS 2023 92 Anhang Ziff. 1 «In den
  * Artikeln 124 Randtitel und Absatz 1 …»; OR 928c: AS 2021 758 Anhang Ziff. 3 «Randtitel sowie Absätze 1 und 2»; ZGB 4:
  * AS 1999 1118 Abs. 1 nennt Art. 4). Sie ist also keine reine Randtitel-Änderung, trotz Gliederungszeichen (Befund H1
  * Gegenprüfung 3.10.2026; Messung: 3 von 87).
+ *
+ * Rückbau (Nachzug 2, Delta-GP #1298, §17/§6.7): zwei weitere Muster — der Zusatz «Diese Änd. wurde in den in der AS genannten
+ * Bestimmungen vorgenommen» und «Diese Änd. ist im ganzen Erlass berücksichtigt» — liessen sich streichen, ohne dass ein Test rot
+ * wurde. Messung 3.10.2026 (`npm run historie:vergleich -- --muster`, 31 394 Fussnoten der Bund-Sidecars): an Randtiteln mit
+ * Gliederungszeichen tragen 5 bzw. 6 Fussnoten den Zusatz, ALLE beginnen mit «Ausdruck gemäss» — kein Fall, in dem der Zusatz
+ * allein trägt (0 von 5 / 0 von 6), also keine Rot-Probe und kein echtes Fixture möglich. Tripwire statt toter Muster:
+ * der Korpus-Test in normtext-historie-ueberschrift-w227.test.ts wird rot, sobald ein solcher Randtitel einen «Diese Änd.»-Zusatz
+ * OHNE «Ausdruck gemäss»-Anfang trägt; dann hier das passende Muster mit echtem Fixture nachziehen.
  */
-function ausdruckFussnote(fn: FnKern): boolean {
-  return /^Ausdruck gemäss|Diese Änd\. (?:wurde in den in der AS genannten Bestimmungen vorgenommen|ist im ganzen Erlass berücksichtigt)/.test(
-    (fn.text ?? '').replace(/<[^>]+>/g, '').trim(),
-  );
+export function ausdruckFussnote(fn: FnKern): boolean {
+  return /^Ausdruck gemäss/.test((fn.text ?? '').replace(/<[^>]+>/g, '').trim());
 }
 
 /**
