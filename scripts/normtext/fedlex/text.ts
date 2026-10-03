@@ -100,6 +100,22 @@ const ENDET_AUF_ENTITY_NBSP = /(?:&nbsp;|&#0*160;|&#x0*a0;)$/i;
 const PLATZHALTER_ANFANG = String.fromCharCode(0xe000);
 const PLATZHALTER_ENDE = String.fromCharCode(0xe001);
 
+/** Die Minus-Varianten der Quelle, auf die ⁻/₋ zurückgefaltet werden kann (je Erlass «-», «–», U+2011, U+2212). */
+export const MINUS_VARIANTEN: readonly string[] = ['-', '–', '‑', '−'];
+
+/**
+ * Rück-Faltung für Vergleichs-Tore (check:segmente): Unicode-Hoch-/Tiefstellung → ASCII-Ziffer bzw. Vorzeichen.
+ * Die Quell-HTML liefert den DOM-Text «m2» (das <sup> trägt keine Zeichen-Hochstellung), der Snapshot jetzt «m²» —
+ * ein Tor, das beide Wege vergleicht, faltet die Snapshot-Seite zurück. Das Minus (⁻/₋) kennt seine Quell-Variante
+ * nicht; der Aufrufer wählt sie über `minus` (check:segmente probiert alle `MINUS_VARIANTEN`).
+ */
+export function hochTiefZuAscii(s: string, minus = '-'): string {
+  const rueck: Record<string, string> = {};
+  const VORZ = new Set(['-', '–', '−', '‑']);
+  for (const t of [HOCH, TIEF]) for (const [a, u] of Object.entries(t)) rueck[u] = VORZ.has(a) ? minus : a;
+  return s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻₀₁₂₃₄₅₆₇₈₉₊₋]/g, (c) => rueck[c]);
+}
+
 /** Wandelt den reinen Ziffern-/Vorzeichen-Inhalt in Unicode — null, wenn nicht eindeutig abbildbar. */
 export function hochTiefUnicode(tag: 'sup' | 'sub', inhalt: string): string | null {
   const t = inhalt.replace(ENTITY_NBSP, ' ').trim();

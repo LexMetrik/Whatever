@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { extrahiereArtikel, parseArtikelInner, entferneTags, entferneFussnotenSups } from '../../scripts/normtext/extrahiere-fedlex';
-import { hochTiefUnicode } from '../../scripts/normtext/fedlex/text';
+import { hochTiefUnicode, hochTiefZuAscii } from '../../scripts/normtext/fedlex/text';
+import { fehlendeIndizesVarianten, fingerabdruck, normalisiere, projektionsBlobVarianten } from '../../scripts/normtext/segmente-logik';
 
 // ═══ W2·27-BUND-FERTIG P8 · Teil A — Hoch-/Tiefstellungen im Normtext ═══════════
 //
@@ -128,5 +129,28 @@ describe('P8-A · hochTiefUnicode (Tabelle)', () => {
       expect(hochTiefUnicode('sup', t), t).toBeNull();
       expect(hochTiefUnicode('sub', t), t).toBeNull();
     }
+  });
+});
+
+// check:segmente vergleicht die Quell-HTML (DOM-Text «m2») mit dem Snapshot («m²»): die Snapshot-Seite wird
+// zurückgefaltet. Das Minus kennt seine Quell-Variante nicht — das Tor probiert alle (-, –, U+2011, U+2212).
+describe('P8-A · Segmente-Tor: Rück-Faltung', () => {
+  it('hochTiefZuAscii: ² → 2, ₃ → 3, ⁺ → +, ⁻ → gewähltes Minus', () => {
+    expect(hochTiefZuAscii('CO₂ und m³/s² bei NO₃⁻ und NH₄⁺')).toBe('CO2 und m3/s2 bei NO3- und NH4+');
+    expect(hochTiefZuAscii('10⁻⁹', '–')).toBe('10–9');
+  });
+
+  it('ein Segment der Quelle gilt als vorhanden, gleich welche Minus-Variante sie schreibt; echter Verlust bleibt fehlend', () => {
+    const eintrag = (text: string) => ({ bloecke: [{ absatz: null, text }] }) as never;
+    const blobs = projektionsBlobVarianten(eintrag('mit einem mittleren k von 1,0 × 10⁻⁹ m/s, welche zusammen 80 cm mächtig sind'));
+    expect(blobs).toHaveLength(4);
+    for (const minus of ['-', '–', '\u2011', '\u2212']) {
+      const quelle = normalisiere(`mit einem mittleren k von 1,0 × 10${minus}9 m/s, welche zusammen 80 cm mächtig sind`);
+      expect(fehlendeIndizesVarianten(blobs, [fingerabdruck(quelle)]), minus).toEqual([]);
+    }
+    const verlust = normalisiere('mit einem mittleren k von 1,0 × 10-9 m/s, welche zusammen 90 cm mächtig sind');
+    expect(fehlendeIndizesVarianten(blobs, [fingerabdruck(verlust)])).toEqual([0]);
+    // ohne Unicode-Minus bleibt es bei EINEM Blob (kein Mehraufwand im Normalfall)
+    expect(projektionsBlobVarianten(eintrag('in m² und m³'))).toHaveLength(1);
   });
 });
