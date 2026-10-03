@@ -6,3 +6,5 @@ wartet-auf: david
 -->
 
 nur Chronik «vermerkt an der Überschrift»; Kosten: 347 Artikel verlieren «Gilt seit», auch richtige (OR 319 1972, OR 344 2004, SVG 25a 2025). B: nur wenn der Artikel keine eigene datierte Fassung trägt (Restrisiko ZGB SchlT 51/53 «2000» statt 1912). A: immer (416 Konfliktfälle falsch zu jung)
+
+**Erledigt 2026-10-03:** Entscheid David 3.10.2026 (Chat): «C bestätigt» — Überschrift-Ereignisse speisen nur die Chronik, nie «Gilt seit» (live seit #1286)
