@@ -148,3 +148,56 @@ describe('Korpus-Zusicherung (committete Historie-Shards)', () => {
     expect(ev[0]).toMatchObject({ typ: 'eingefuegt', datum: '2000-01-01', ueberschrift: 'Viertes Kapitel: Konzentriertes Entscheidverfahren' });
   });
 });
+
+// ── Nachzug Gegenprüfung PR #1300 (3.10.2026): Mutanten M3/M4/M9 und Klein-Verb-Randfall ────────────────────────
+// Die Fixtures dieses Blocks sind SYNTHETISCH (nicht Fedlex-Wortlaut): sie erzwingen die Grenzfälle der Schnitt-Grammatik,
+// die der echte Korpus (3.10.2026: 279 «Ursprünglich»-Fussnoten, Messung im PR-Body) nicht belegt.
+describe('Satzgrenze (historie-ursprung): Grossbuchstabe nach dem Punkt, Textreihenfolge, Umlaut-Anfang', () => {
+  const T_ZWEI = 'Ursprünglich vor Art. 4. Fassung gemäss Ziff. I der V vom 5. April 1978 (AS 1978 420). Eingefügt durch Ziff. II der V vom 6. Mai 1979 (AS 1979 1).';
+
+  it('M4 (letzter statt erster Kandidat): Kandidaten in Textreihenfolge, gewählt wird der ERSTE gültige Schnitt', () => {
+    const k = ursprungVorsatzSchnitte(T_ZWEI);
+    expect(k[0].vorsatz).toBe('Ursprünglich vor Art. 4.');
+    const zweiter = k.find((x) => x.rest.startsWith('Eingefügt durch Ziff. II'));
+    expect(zweiter, 'ein ZWEITER, ebenfalls ankerförmiger Kandidat existiert').toBeDefined();
+    expect(ganzeFassung(zweiter!.rest)).toBe(true);
+    expect(k.indexOf(zweiter!)).toBeGreaterThan(0);
+    const rest = ohneUrsprungVorsatz(T_ZWEI);
+    expect(rest.startsWith('Fassung gemäss Ziff. I der V vom 5. April 1978')).toBe(true);
+    expect(rest.endsWith('(AS 1979 1).')).toBe(true); // alles hinter dem ersten Schnitt bleibt, nichts wird verschluckt
+  });
+
+  it.each([
+    ['Abkürzung + Kleinbuchstabe vor «eingefügt durch»', 'Ursprünglich Abschn. 2 Bst. a. eingefügt durch Ziff. I des BG vom 3. Okt. 2003, in Kraft seit 1. Juli 2004 (AS 2004 2767).'],
+    ['Abkürzung + Ziffer vor «Fassung gemäss» (Ordnungsnummer-Präfix des Ankers)', 'Ursprünglich vor Art. 4 Fassung gemäss Ziff. I des BG vom 3. Okt. 2003, in Kraft seit 1. Juli 2004 (AS 2004 2767).'],
+  ])('M3 (Satzgrenze ohne Grossbuchstaben-Bedingung): %s — kein Schnitt', (_n, t) => {
+    expect(ursprungVorsatzSchnitte(t).every((k) => /^[A-ZÄÖÜ]/.test(k.rest)), 'jeder Rest beginnt mit Grossbuchstabe').toBe(true);
+    expect(ohneUrsprungVorsatz(t)).toBe(t);
+  });
+
+  it('M9 (nur [A-Z] ohne Umlaute): Sätze mit Ä/Ö/Ü-Anfang sind Schnitt-Kandidaten, der Schnitt davor bleibt der richtige', () => {
+    const t = 'Ursprünglich vor Art. 4. Änderung gemäss Ziff. I. Öffentlicher Titel. Übergang. Fassung gemäss Ziff. I der V vom 5. April 1978, in Kraft seit 1. Jan. 1979 (AS 1978 420).';
+    const anfaenge = ursprungVorsatzSchnitte(t).map((k) => k.rest[0]);
+    for (const u of ['Ä', 'Ö', 'Ü']) expect(anfaenge, `Kandidat mit Rest «${u}…»`).toContain(u);
+    const rest = ohneUrsprungVorsatz(t);
+    expect(rest.startsWith('Fassung gemäss Ziff. I der V vom 5. April 1978')).toBe(true);
+    expect(ganzeFassung(rest)).toBe(true);
+  });
+});
+
+describe('Vorsatz-Verb-Prüfung: gross/klein-unabhängig, «versetzt»/«verschoben» sind Ereignisse (§8: lieber nichts vererben)', () => {
+  const FASSUNG = 'Fassung gemäss Ziff. I der V vom 5. April 1978, in Kraft seit 1. Jan. 1979 (AS 1978 420).';
+  it.each([
+    ['«…, berichtigt gemäss …» (klein)', `Ursprünglich vor Art. 4, berichtigt gemäss BBl 2001 1. ${FASSUNG}`],
+    ['«…; hierher versetzt gemäss …»', `Ursprünglich Tit. vor Art. 27; hierher versetzt gemäss Ziff. II Abs. 2 des BRB vom 19. Nov. 1965. ${FASSUNG}`],
+    ['«…; nach Art. 9 verschoben gemäss …»', `Ursprünglich Tit. vor Art. 27; nach Art. 9 verschoben gemäss Ziff. II des BRB vom 19. Nov. 1965. ${FASSUNG}`],
+  ])('%s: Vorsatz ist keine reine Ur-Bezeichnung — Text bleibt unverändert', (_n, t) => {
+    expect(ursprungVorsatzSchnitte(t).some((k) => k.rest === FASSUNG), 'Anker wäre dahinter vorhanden').toBe(true);
+    expect(ohneUrsprungVorsatz(t)).toBe(t);
+  });
+
+  it('Gegenprobe: ein reiner Ur-Vorsatz mit Kleinwörtern wird weiterhin geschnitten', () => {
+    const t = `Ursprünglich vor Art. 4, danach unter dem 2. Titel. ${FASSUNG}`;
+    expect(ohneUrsprungVorsatz(t)).toBe(FASSUNG);
+  });
+});

@@ -620,18 +620,23 @@ export function teilweiseFussnote(text: string): boolean {
   return daten.size > 1;
 }
 
+/** Ereignis-Verb IM Vorsatz — gross/klein-unabhängig («…, berichtigt gemäss …») und mit «versetzt»/«verschoben»
+ *  («; hierher versetzt gemäss …»): ein solcher Vorsatz ist keine reine Ur-Bezeichnung (§8). Ohne Flag `g` (zustandslos). */
+const VORSATZ_EREIGNIS_RE = new RegExp(`${VERB_ANKER.source}|\\b(?:versetzt|verschoben)\\b`, 'i');
+
 /**
  * «Ursprünglich …»-Vorsatz vor dem B1-Anker (3.10.2026, historie-ursprung.ts): beginnt der Text mit der Ur-Bezeichnung der
  * Überschrift und folgt danach ein gültiger B1-Anker («Ursprünglich vor Art. 56. Fassung gemäss …»), gilt der Rest. Nur ein
  * reiner Ur-Vorsatz wird abgeschnitten — nennt er selbst ein weiteres Ereignis-Verb («Berichtigt …», «Bereinigt …»),
  * oder folgt kein Anker, bleibt der Text unverändert (§8: lieber nichts vererben). Der Vorsatz beschreibt die Überschrift
  * selbst und kein Ereignis der Artikel darunter; `SEKTION_ERBT` gibt ihn ohnehin nie weiter.
+ * Die Verb-Prüfung im Vorsatz ist gross/klein-unabhängig und kennt «versetzt»/«verschoben» (`VORSATZ_EREIGNIS_RE`).
  */
 export function ohneUrsprungVorsatz(text: string): string {
   for (const { vorsatz, rest } of ursprungVorsatzSchnitte(text)) {
     if (!ganzeFassung(rest)) continue;
     const ohneKopf = vorsatz.replace(/^\s*(?:\d+[a-z]*\s+)?Ursprünglich/, '');
-    if (new RegExp(VERB_ANKER.source).test(ohneKopf)) continue;
+    if (VORSATZ_EREIGNIS_RE.test(ohneKopf)) continue;
     return rest;
   }
   return text;
