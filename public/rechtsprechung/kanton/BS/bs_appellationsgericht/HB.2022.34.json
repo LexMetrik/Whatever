@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/HB.2022.34",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "HB.2022.34",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS HB.2022.34 vom 02.09.2022",
-      "datum": "2022-09-02",
+      "zitierung": "Appellationsgericht BS HB.2022.34 vom 06.09.2022",
+      "datum": "2022-09-06",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "straf",
@@ -288,13 +288,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73941&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-09-12",
       "sha": "43200c35e1da8fec9924dfdb02c5f436ff8225a340899f88a55dcc0f2789b94f",
       "erstpublikation": "2023-09-12",
       "aktualisiert": "2023-09-12",
       "nummerSekundaer": "AG.2022.552",
-      "ecli": "ECLI:CH:BSA:2022:HB.2022.34"
+      "ecli": "ECLI:CH:BSA:2022:HB.2022.34",
+      "datumPortal": "2022-09-02"
     }
   ]
 }

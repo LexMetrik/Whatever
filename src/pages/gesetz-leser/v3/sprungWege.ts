@@ -52,6 +52,24 @@ export function useEinzelSprung(basisPfad: string, fuehrtAdresse: boolean): {
   }, [basisPfad, fuehrtAdresse, navigate]);
 }
 
+/**
+ * Ist der Nachlauf-Sprung einer Navigation (`../inhalt-sprung.tsx`, ein Frame später) schon
+ * ÜBERHOLT? Im Einzelmodus ja, sobald die Adresse seit der Navigation einen anderen Anker trägt:
+ * dann hat eine NEUERE Navigation stattgefunden, deren eigener Nachlauf folgt.
+ *
+ * Befund 4.10.2026 (Flake `e2e/leser-einzelmodus` «←/→ blättern», gemessen mit Verlaufs-Sonde):
+ * → schrieb `#art-337_d`, ← 35 ms später `#art-337_c`, 3,5 ms danach schrieb der Frame-Nachlauf
+ * des →-Schritts `#art-337_d` zurück — `navigiere` liest die Adresse zum Zeitpunkt des Aufrufs,
+ * sah 337_c ≠ 337_d und navigierte. Der Leser blieb auf 337d, der ←-Schritt war verloren.
+ * React räumt den Frame erst beim nächsten Render ab; die Adresse wechselt vorher (`pushState`).
+ *
+ * Nur im Einzelmodus: in der Gesamtansicht schreibt der Sprung per `replaceState` und kann den
+ * Anker selbst umschreiben (Ziffer, kanonische Schreibweise) — dort bleibt alles, wie es war.
+ */
+export function nachlaufUeberholt(effektHash: string, jetzigerHash: string, imEinzel: boolean): boolean {
+  return imEinzel && effektHash !== jetzigerHash;
+}
+
 /** Die Uhr des Zeitplans — in der Seite Browser-Timer, in der Sonde eine falsche Uhr. */
 export interface ZeitplanUhr {
   rahmen: (fn: () => void) => number;

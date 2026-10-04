@@ -36,7 +36,7 @@ jobs:
         env:
           SMOKE_BASE_URL: ${{ github.event.inputs.base_url }}
         run: npm run smoke:prod
-      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
@@ -45,12 +45,9 @@ jobs:
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:prod-smoke&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          [ -n "$offen" ] && exit 0
           rumpf="Der Prod-Smoke ist rot — die Live-Site verletzt einen harten Betriebs-Vertrag (Kernroute nicht 200, Edge-Suche liefert HTML statt JSON, Sitemap/Asset weg oder CSP-Kopf fehlt). **Neu seit 16.8.2026**: auch «Prod hinkt hinter main» — dann ist die AUSLIEFERUNG defekt, nicht die Site. Erst den Ignored Build Step und den Deployment-State in Vercel prüfen (READY statt CANCELED), nicht rollbacken. **Rückweg** bei echtem Site-Defekt: docs/betrieb/rollback-runbook.md (\`vercel rollback\`). Lauf: ${RUN_URL}"
-          if [ -n "$offen" ]; then
-            gh issue comment "$offen" --body "Erneut rot am $(date +%F). ${rumpf}"
-          else
-            for l in "--label alarm:prod-smoke" ""; do gh issue create $l --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf" && break; done
-          fi
+          for l in "--label alarm:prod-smoke" ""; do gh issue create $l --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf" && break; done
 
       - name: Bei Grün — offenen Zettel schliessen
         if: success() && !inputs.base_url

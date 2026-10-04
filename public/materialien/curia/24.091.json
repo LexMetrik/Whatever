@@ -1,0 +1,111 @@
+{
+  "nummer": "24.091",
+  "titel": "Erstreckung der Verlustverrechnungen",
+  "geschaeftstyp": "Geschäft des Bundesrates",
+  "status": "Erledigt",
+  "eingereicht": "2024-11-27",
+  "erstrat": "Nationalrat",
+  "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240091",
+  "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
+  "abgerufen": "2026-10-01",
+  "kommissionen": [
+    {
+      "datum": "2024-11-14",
+      "name": "Finanzkommission Nationalrat",
+      "kuerzel": "FK-N"
+    },
+    {
+      "datum": "2024-11-14",
+      "name": "Finanzkommission Ständerat",
+      "kuerzel": "FK-S"
+    },
+    {
+      "datum": "2024-11-14",
+      "name": "Kommission für Wirtschaft und Abgaben Nationalrat",
+      "kuerzel": "WAK-N"
+    },
+    {
+      "datum": "2024-11-14",
+      "name": "Kommission für Wirtschaft und Abgaben Ständerat",
+      "kuerzel": "WAK-S"
+    }
+  ],
+  "beschluesse": [
+    {
+      "datum": "2025-06-04",
+      "rat": "Nationalrat",
+      "ratKuerzel": "NR",
+      "text": "Beschluss gemäss Entwurf",
+      "vorlage": 1
+    },
+    {
+      "datum": "2025-12-16",
+      "rat": "Ständerat",
+      "ratKuerzel": "SR",
+      "text": "Zustimmung",
+      "vorlage": 1
+    },
+    {
+      "datum": "2025-12-19",
+      "rat": "Nationalrat",
+      "ratKuerzel": "NR",
+      "text": "Annahme in der Schlussabstimmung",
+      "vorlage": 1
+    },
+    {
+      "datum": "2025-12-19",
+      "rat": "Ständerat",
+      "ratKuerzel": "SR",
+      "text": "Annahme in der Schlussabstimmung",
+      "vorlage": 1
+    }
+  ],
+  "publikationen": [
+    {
+      "datum": "2024-11-27",
+      "art": "Bundesblatt",
+      "jahr": "2024",
+      "nummer": "3116",
+      "text": "Botschaft vom 27. November 2024 zum Bundesgesetz über die Erstreckung der Verlustverrechnung",
+      "referendumsfrist": null,
+      "vorlage": 0
+    },
+    {
+      "datum": "2024-11-27",
+      "art": "Bundesblatt",
+      "jahr": "2024",
+      "nummer": "3117",
+      "text": "Bundesgesetz über die Erstreckung der Verlustverrechnung",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2026-01-07",
+      "art": "Bundesblatt",
+      "jahr": "2026",
+      "nummer": "23",
+      "text": null,
+      "referendumsfrist": "2026-04-17",
+      "vorlage": 1
+    }
+  ],
+  "schlussabstimmungen": [
+    {
+      "datum": "2025-12-19",
+      "vorlage": 1,
+      "rat": "Nationalrat",
+      "aggregat": {
+        "ja": 131,
+        "nein": 65,
+        "enthaltung": 1,
+        "anwesend": 0,
+        "nichtTeilgenommen": 0,
+        "entschuldigt": 2,
+        "praesidiumStimmtNicht": 1,
+        "demissioniert": 0,
+        "total": 200
+      },
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-10-01"
+    }
+  ]
+}

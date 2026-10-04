@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BES.2021.100",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BES.2021.100",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BES.2021.100 vom 08.06.2022",
-      "datum": "2022-06-08",
+      "zitierung": "Appellationsgericht BS BES.2021.100 vom 22.06.2022",
+      "datum": "2022-06-22",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "straf",
@@ -208,13 +208,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73651&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2022-09-03",
       "sha": "b4704a01a0064f26e820bb082ebbc528784e064f23e417203ae4e71b4f7a66ce",
       "erstpublikation": "2022-09-03",
       "aktualisiert": "2022-09-03",
       "nummerSekundaer": "AG.2022.404",
-      "ecli": "ECLI:CH:BSA:2022:BES.2021.100"
+      "ecli": "ECLI:CH:BSA:2022:BES.2021.100",
+      "datumPortal": "2022-06-08"
     }
   ]
 }

@@ -129,6 +129,22 @@ export interface EntscheidSnapshot {
    * Die UI zeigt den Platzhalter nie als echtes Datum (§8). BS-Tranche §3.3/§3.4.
    */
   datumUnbekannt?: true;
+  /**
+   * Das Datum, das die ANGEBENDE QUELLE (BS: Metadatum «Entscheiddatum» des
+   * Gerichtsportals; kantonale OCL-Gerichte: OCL `decision_date`) für denselben
+   * Entscheid nennt, WENN es vom amtlichen Urteilskopf-Datum in `datum` abweicht
+   * (Variante A, Entscheid David 25.9./4.10.2026: der Kopf gewinnt). Fehlt das
+   * Feld, stimmen beide überein oder die Quelle nannte keines. Rein
+   * Provenienz/§8-Hinweis («das Portal nennt den …») — nie Rechenwert.
+   */
+  datumPortal?: string;
+  /**
+   * Das Datum, das der amtliche Urteilskopf nennt, wenn es NICHT übernommen wurde
+   * (BS: mehr als 60 Tage vom Portal-Datum, vor GN-Jahr, nach Erstpublikation, Zukunft — Verdacht):
+   * `datum` bleibt dann das Portal-Datum, welches zutrifft, ist ungeklärt (§8-Hinweis
+   * «Der Urteilskopf nennt den …»). Schliesst `datumPortal` aus. Nie Rechenwert.
+   */
+  datumKopfAbweichend?: string;
   /** Erstpublikationsdatum der amtlichen Quelle (ISO), falls publiziert (BS §3.3). */
   erstpublikation?: string;
   /** Aktualisierungsdatum der amtlichen Quelle (ISO) — Drift-/Delta-Token (BS §3.3). */

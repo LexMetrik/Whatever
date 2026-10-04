@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/KV.2022.4",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "KV.2022.4",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS KV.2022.4 vom 17.01.2023",
-      "datum": "2023-01-17",
+      "zitierung": "Sozialversicherungsgericht BS KV.2022.4 vom 26.02.2023",
+      "datum": "2023-02-26",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -262,13 +262,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=74873&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-03-31",
       "sha": "9d62b72e4018b502c05aeb7067b57209c578010c6e5be5bb716d156042e99596",
       "erstpublikation": "2023-03-30",
       "aktualisiert": "2023-03-31",
       "nummerSekundaer": "SVG.2023.64",
-      "ecli": "ECLI:CH:BSS:2023:KV.2022.4"
+      "ecli": "ECLI:CH:BSS:2023:KV.2022.4",
+      "datumPortal": "2023-01-17"
     }
   ]
 }

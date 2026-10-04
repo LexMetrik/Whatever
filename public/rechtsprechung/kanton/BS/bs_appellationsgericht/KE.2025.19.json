@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/KE.2025.19",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "KE.2025.19",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS KE.2025.19 vom 03.06.2025",
-      "datum": "2025-06-03",
+      "zitierung": "Appellationsgericht BS KE.2025.19 vom 04.06.2025",
+      "datum": "2025-06-04",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -141,13 +141,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78454&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2025-09-12",
       "sha": "84ab2db6a78b8b7666ef0c697fae6302b36a8521a04cadbdb54e0e67e27b3a9a",
       "erstpublikation": "2025-09-12",
       "aktualisiert": "2025-09-12",
       "nummerSekundaer": "AG.2025.315",
-      "ecli": "ECLI:CH:BSA:2025:KE.2025.19"
+      "ecli": "ECLI:CH:BSA:2025:KE.2025.19",
+      "datumPortal": "2025-06-03"
     }
   ]
 }

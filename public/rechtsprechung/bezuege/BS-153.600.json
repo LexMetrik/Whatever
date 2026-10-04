@@ -1,17 +1,14 @@
 {
-"erzeugt":"2026-10-03",
+"erzeugt":"2026-10-04",
 "erlass":"BS-153.600",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_VD.2025.69":{"zitierung":"Appellationsgericht BS VD.2025.69 vom 12.12.2025","regesteKurz":"Besichtigungstermin / Nutzungsprüfung","datum":"2025-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2025.73":{"zitierung":"Appellationsgericht BS VD.2025.73 vom 05.08.2026","regesteKurz":"Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)","datum":"2026-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.69":{"zitierung":"Appellationsgericht BS VD.2025.69 vom 12.12.2025","regesteKurz":"Besichtigungstermin / Nutzungsprüfung","datum":"2025-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"7":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
 "13":[{"key":"bs_appellationsgericht_VD.2025.69","gewicht":null}]
 },
 "gesamtProArtikel":{
-"7":{"kantonal":1},
 "13":{"kantonal":1}
 }
 }

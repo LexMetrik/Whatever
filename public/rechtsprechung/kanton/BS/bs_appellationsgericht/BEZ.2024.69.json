@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BEZ.2024.69",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BEZ.2024.69",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BEZ.2024.69 vom 13.02.2025",
-      "datum": "2025-02-13",
+      "zitierung": "Appellationsgericht BS BEZ.2024.69 vom 19.02.2025",
+      "datum": "2025-02-19",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -173,13 +173,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78047&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2025-07-19",
       "sha": "b678ac445a7850876557b224755f5a725f0a3c0d7c630aee6d9dbb0a28525b3e",
       "erstpublikation": "2025-07-19",
       "aktualisiert": "2025-07-19",
       "nummerSekundaer": "AG.2025.104",
-      "ecli": "ECLI:CH:BSA:2025:BEZ.2024.69"
+      "ecli": "ECLI:CH:BSA:2025:BEZ.2024.69",
+      "datumPortal": "2025-02-13"
     }
   ]
 }

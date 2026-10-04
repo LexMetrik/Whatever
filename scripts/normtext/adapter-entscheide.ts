@@ -258,8 +258,16 @@ export function mappeEntscheidOCL(
   // #1 Plausibilität: kein Entscheid NACH dem Abruf (Crawl holt nichts aus der Zukunft
   // → ehrlich weglassen, §8). Kantonal gilt das Datum des amtlichen Urteilskopfs statt
   // OCL-decision_date (QS-KORPUS 25.9.2026, entscheid-kantonsdatum.ts); Bund unverändert.
-  const datumRoh = String(det.canton ?? 'CH') !== 'CH' ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten).datum : String(det.decision_date ?? '');
+  const kantonsDatum = String(det.canton ?? 'CH') !== 'CH' ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten) : null;
+  const datumRoh = kantonsDatum ? kantonsDatum.datum : String(det.decision_date ?? '');
   if (datumRoh && abgerufen && datumRoh > abgerufen) return null;
+  // §8-Hinweis (Entscheid David 4.10.2026, «jeweils hinweis wenn es abweicht»): nennt OCL für
+  // einen kantonalen Entscheid ein ANDERES Datum als der Urteilskopf, bleibt es als
+  // `datumPortal` erhalten (Anzeige «Datum laut Urteilskopf; OpenCaseLaw nennt den …»).
+  const oclDatum = String(det.decision_date ?? '');
+  // Nur wo das Datum WIRKLICH aus dem Urteilskopf stammt (`kopf-*`): bei `plattform-ohne-kopf` /
+  // `ocl-decision_date` wäre «Datum laut Urteilskopf» falsch (Gegenprüfung #1303; im Bestand 0 Fälle).
+  const datumPortal = kantonsDatum?.quelle.startsWith('kopf-') && /^\d{4}-\d{2}-\d{2}$/.test(oclDatum) && oclDatum !== datumRoh ? oclDatum : null;
 
   // ── Abschnitte aus der amtlichen Gliederung (oder Fallback full_text) ──
   const abschnitte: EntscheidAbschnitt[] = [];
@@ -390,6 +398,7 @@ export function mappeEntscheidOCL(
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
     datum: datumRoh,
+    ...(datumPortal ? { datumPortal } : {}),
     sprache,
     leitcharakter: leit ? 'leitentscheid' : 'routine',
     sachgebiet,

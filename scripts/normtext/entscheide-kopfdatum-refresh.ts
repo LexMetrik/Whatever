@@ -19,6 +19,11 @@
 // (Plattform-/OCL-Feld): ein Bestandsdatum weicht nie still einem Plattformdatum
 // (Befund 25.9.2026: SG-PDF-Zeitüberschreitung, UV 2025/14 kurz 23.10. statt 21.10.2025).
 // Bund (canton CH) und BS (eigener Import, quelle 'gerichte-bs') sind ausgenommen.
+//
+// ERGÄNZUNG 4.10.2026 (Entscheid David: «jeweils hinweis wenn es abweicht»): übernommen wird
+// seither zusätzlich `datumPortal` — das OCL-`decision_date`, wo es vom Kopf-Datum abweicht
+// (Anzeige «Datum laut Urteilskopf; OpenCaseLaw nennt den …»), ebenfalls aus demselben Mapper.
+// Basel-Stadt hat seit dem 4.10.2026 dieselbe Regel (bs-parse.ts `waehleBsDatum`).
 
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 import { mappeEntscheidOCL, jget, API, type OclDecision } from './adapter-entscheide';
@@ -59,7 +64,7 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
   const zeilen: KopfRefreshZeile[] = [];
   const ungeloest: string[] = [];
   let pdfAusfall = 0;
-  const plan: Array<{ s: EntscheidSnapshot; datum: string; zitierung: string }> = [];
+  const plan: Array<{ s: EntscheidSnapshot; datum: string; zitierung: string; datumPortal: string | undefined }> = [];
   for (const s of basis.filter(istKantonalOcl).sort((a, b) => a.id.localeCompare(b.id))) {
     const det = await deps.holeDecision(s);
     if (!det || String(det.court ?? '') !== s.gericht || normNr(det.docket_number) !== normNr(s.nummer)) {
@@ -91,16 +96,18 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
       hashDrift: !!det.content_hash && String(det.content_hash) !== s.fassungsToken,
       pdfFehlt: !!r.pdfFehlt,
     });
-    plan.push({ s, datum: m.datum, zitierung: m.zitierung });
+    plan.push({ s, datum: m.datum, zitierung: m.zitierung, datumPortal: m.datumPortal });
   }
   if (ungeloest.length) {
     throw new Error(`[kopfdatum-refresh] ABBRUCH, nichts geändert — ${ungeloest.length} kantonale Snapshot(s) ungelöst · PDF nicht verfügbar: ${pdfAusfall}: ${ungeloest.join(', ')}`);
   }
   for (const p of plan) {
-    // Nur bei Datumswechsel schreiben — sonst byte-treu (§6).
-    if (p.datum === p.s.datum) continue;
+    // Nur bei Datums- oder Hinweis-Wechsel schreiben — sonst byte-treu (§6). `datumPortal`
+    // (Hinweis «OpenCaseLaw nennt den …», 4.10.2026) kommt aus demselben Mapper.
+    if (p.datum === p.s.datum && p.datumPortal === p.s.datumPortal) continue;
     p.s.datum = p.datum;
     p.s.zitierung = p.zitierung;
+    if (p.datumPortal) p.s.datumPortal = p.datumPortal; else delete p.s.datumPortal;
   }
   return zeilen;
 }

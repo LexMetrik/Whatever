@@ -16,6 +16,8 @@
 // Dokumente neu und stempelte den Bestand um. Wiederaufnehmbar: `--delta
 // --fetch-only` / `--delta --parse-only` rechnen denselben Plan. --limit ist mit
 // --delta gesperrt (ein Teil-Delta liesse Plan-Zeilen ohne Rohdatei zurück).
+// --datum-kopf-berichtigung (Variante A, 4.10.2026): Bestand-Datum aus dem Urteilskopf, offline
+// gegen die zuvor geholten Rohdateien (`--fetch-only`), plus Änderungsliste in bibliothek/.
 // --kopfdatum-nachtrag (B-1, 23.9.2026): nur die Dokumente OHNE Metadaten-Datum
 // holen und ihr Datum aus dem Deckblatt nachtragen (`nachtragKopfdatum`); kein
 // Inventar-Neubau, kein Vollabruf.
@@ -60,6 +62,24 @@ async function main() {
     if (bericht.fehler.length) { process.exitCode = 1; return; }
     const { nachtragKopfdatum } = await import('./bs-parse');
     nachtragKopfdatum(inv, datum);
+    return;
+  }
+
+  // ── Sonderlauf Variante A (4.10.2026): Entscheiddatum des BS-BESTANDS aus dem Urteilskopf ──
+  // Offline gegen die Rohdokumente (zuvor `--fetch-only`); schreibt den Korpus und die
+  // Änderungsliste bibliothek/rechtsprechung/bs-datum-kopf-<datum>.md. `--trocken`: nur
+  // zählen und die Liste schreiben, den Korpus nicht anfassen.
+  if (hat('--datum-kopf-berichtigung')) {
+    const inv = ladeInventar();
+    const { berichtigeBsDatum } = await import('./bs-datum-berichtigung');
+    const { schreibeDatumBericht } = await import('./bs-datum-bericht');
+    const b = berichtigeBsDatum(inv, datum, !hat('--trocken'));
+    // Die Liste ist auf das Portal-Datum bezogen und bei jedem Lauf gleich (Fixpunkt).
+    const pfad = schreibeDatumBericht(b, datum, inv.erzeugt);
+    console.log(`[datum-kopf] geprüft ${b.geprueft} · Datum geändert (Kopf ≠ Portal) ${b.aenderungen.length} · Verdacht ${b.verdacht.length} · Kopf=Portal ${b.kopfGleich} · ohne Kopf ${b.ohneKopf} · Portal ohne Datum ${b.portalOhneDatum} · nicht angefasst ${b.uebersprungen.length} · in diesem Lauf geschrieben ${b.geschrieben}`);
+    console.log(`[datum-kopf] Liste: ${pfad}`);
+    for (const v of b.verdacht) console.log(`[datum-kopf] VERDACHT ${v.id}: ${v.grund}`);
+    for (const u of b.uebersprungen) console.log(`[datum-kopf] übersprungen ${u.id}: ${u.grund}`);
     return;
   }
 

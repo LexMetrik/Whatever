@@ -147,6 +147,26 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
     expect(r).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
     expect(mappeEntscheidOCL(det, null, '2026-09-25', { amtlicheKopfSeiten: seiten })!.datum).toBe('2025-10-21');
   });
+  it('Hinweis-Feld (4.10.2026): weicht OCL decision_date vom Kopf ab, bleibt es als datumPortal; sonst fehlt das Feld', () => {
+    expect(mappeEntscheidOCL(basis({}), null, '2026-09-25')!.datumPortal).toBe('2025-10-21');
+    expect(mappeEntscheidOCL(basis({ decision_date: '2025-08-21' }), null, '2026-09-25')!.datumPortal).toBeUndefined();
+    // Rückfall (kein Kopfdatum): datum IST das OCL-Datum, kein Hinweis
+    const ohne = mappeEntscheidOCL(basis({ full_text: 'Obergericht XBE.2025.10 Besetzung Oberrichterin Merkofer. Die Beschwerde wird gutgeheissen.' }), null, '2026-09-25')!;
+    expect(ohne.datumPortal).toBeUndefined();
+  });
+  it('Plattformdatum ohne Kopf (SG-Deckblatt): kein «laut Urteilskopf»-Hinweis, weil datum nicht aus dem Kopf stammt', () => {
+    const det = basis({
+      court: 'sg_gerichte', canton: 'SG', docket_number: 'UV 2025/14', decision_date: '2025-12-01',
+      full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Leistungspflicht der Unfallversicherung.',
+    });
+    const s = mappeEntscheidOCL(det, null, '2026-09-25')!;
+    expect(s.datum).toBe('2025-10-23');
+    expect(s.datumPortal).toBeUndefined();
+  });
+  it('Bund (CH) trägt nie datumPortal', () => {
+    const s = mappeEntscheidOCL(basis({ court: 'bger', canton: 'CH', docket_number: '5A_1/2025', full_text: 'Bundesgericht Urteil vom 3. März 2025 Besetzung. Erwägungen folgen hier im Text.' }), null, '2026-09-25')!;
+    expect(s.datumPortal).toBeUndefined();
+  });
   it('Zukunfts-Riegel greift auf das Kopfdatum (kantonal)', () => {
     expect(mappeEntscheidOCL(basis({ decision_date: '2025-01-01' }), null, '2025-08-01')).toBeNull();
   });
@@ -182,6 +202,14 @@ describe('kopfdatumRefresh — Bestand über den Generator (nur datum + zitierun
     expect(gr.zitierung).toBe('Kantonsgericht GR SBK 2026 38 vom 28.04.2026');
     expect([gr.sha, gr.abgerufen, gr.fassungsToken]).toEqual(['s', '2026-06-26', 'h']);
     expect(JSON.stringify([bund, bs])).toBe(vorher);
+  });
+  it('Refresh trägt datumPortal nach (Hinweis-Feld); ein zweiter Lauf ist idempotent', async () => {
+    const gr = snap({ datum: '2026-04-28', zitierung: 'Kantonsgericht GR SBK 2026 38 vom 28.04.2026' });
+    await kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten });
+    expect(gr.datumPortal).toBe('2026-06-24');
+    const eins = JSON.stringify(gr);
+    await kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten });
+    expect(JSON.stringify(gr)).toBe(eins);
   });
   it('Identitäts-Tor: fremdes Aktenzeichen ⇒ Abbruch, nichts geändert', async () => {
     const gr = snap({});

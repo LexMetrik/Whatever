@@ -1265,5 +1265,34 @@
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-11-30"
     }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/92/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Abschaffung umfassende Beistandschaft - Änderung des ZGB"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Suppression de la curatelle de portée générale - Modification du CC"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Abrogazione della curatela generale - Modifica del codice civile"
+    }
   }
 ]

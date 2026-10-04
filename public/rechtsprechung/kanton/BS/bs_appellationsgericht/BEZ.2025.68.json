@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BEZ.2025.68",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BEZ.2025.68",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BEZ.2025.68 vom 23.09.2025",
-      "datum": "2025-09-23",
+      "zitierung": "Appellationsgericht BS BEZ.2025.68 vom 24.09.2025",
+      "datum": "2025-09-24",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -178,13 +178,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78838&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-05-09",
       "sha": "2edd3316cd8888046a5fc37b626d1e398739a5c01d9e4ecae138525e73cbef00",
       "erstpublikation": "2026-05-09",
       "aktualisiert": "2026-05-09",
       "nummerSekundaer": "AG.2025.555",
-      "ecli": "ECLI:CH:BSA:2025:BEZ.2025.68"
+      "ecli": "ECLI:CH:BSA:2025:BEZ.2025.68",
+      "datumPortal": "2025-09-23"
     }
   ]
 }

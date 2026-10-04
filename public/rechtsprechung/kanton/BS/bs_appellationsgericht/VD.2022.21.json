@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2022.21",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "VD.2022.21",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS VD.2022.21 vom 07.09.2022",
-      "datum": "2022-09-07",
+      "zitierung": "Appellationsgericht BS VD.2022.21 vom 09.09.2022",
+      "datum": "2022-09-09",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -202,13 +202,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=74007&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-03-07",
       "sha": "85f0efad2df39cda0d9d528e133669dc541dface826f7864bd71b76cc50ce2e1",
       "erstpublikation": "2023-03-07",
       "aktualisiert": "2023-03-07",
       "nummerSekundaer": "AG.2022.581",
-      "ecli": "ECLI:CH:BSA:2022:VD.2022.21"
+      "ecli": "ECLI:CH:BSA:2022:VD.2022.21",
+      "datumPortal": "2022-09-07"
     }
   ]
 }
