@@ -139,3 +139,19 @@ export function DatumMeta({ snap }: { snap: EntscheidSnapshot }) {
   if (istBandjahr(snap)) return <span>BGE-Jahrgang <Datum iso={bgeJahrgang(snap)} /></span>;
   return <span>Entscheid vom <Datum iso={snap.datum} /></span>;
 }
+
+// §8-Hinweis «Datum laut Urteilskopf» (Entscheid David 4.10.2026: «jeweils hinweis wenn
+// es abweicht»). Das angezeigte Entscheiddatum ist das des amtlichen Urteilskopfs
+// (Variante A, kantonal); nennt die Angebequelle (BS: Gerichtsportal, OCL-Kantone:
+// OpenCaseLaw) ein ANDERES Datum, bleibt das als `datumPortal` im Snapshot — und wird
+// hier sichtbar, statt still überschrieben zu sein. Steht auch dort, wo die Zitierung
+// das Datum schon im Titel trägt (`DatumMeta` entfällt dann). Reine Darstellung (§3).
+export function DatumPortalHinweis({ snap }: { snap: EntscheidSnapshot }) {
+  if (!snap.datumPortal || snap.datumUnbekannt) return null;
+  const quelle = snap.quelle === 'gerichte-bs' ? 'das Gerichtsportal' : 'OpenCaseLaw';
+  return (
+    <span title="Das angezeigte Datum steht im Urteilskopf; die Datenquelle führt für diesen Entscheid ein anderes Datum.">
+      Datum laut Urteilskopf; {quelle} nennt den <Datum iso={snap.datumPortal} />
+    </span>
+  );
+}
