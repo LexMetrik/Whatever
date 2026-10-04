@@ -554,6 +554,7 @@ export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: str
   };
   if (datumlos) snap.datumUnbekannt = true;
   if (wahl.datumPortal) snap.datumPortal = wahl.datumPortal;
+  if (wahl.datumKopfAbweichend) snap.datumKopfAbweichend = wahl.datumKopfAbweichend;
   if (p.erstpublikation) snap.erstpublikation = p.erstpublikation;
   if (p.aktualisiert) snap.aktualisiert = p.aktualisiert;
   if (p.gnSekundaer) snap.nummerSekundaer = p.gnSekundaer;

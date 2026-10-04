@@ -45,6 +45,14 @@ const MONATE: Record<string, string> = {
   Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12',
 };
 const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Urteil|Beschluss|Verfügung) de[rs] [A-ZÄÖÜ][a-zäöüß]+)$/;
+// ERGÄNZUNG 4.10.2026 (Gegenprüfung #1303, A2; Rohdaten-Sweep über alle 3954 Dokumente: 47 ohne
+// erkannten Kopf, `.gate/sweep-titel.ts` — Titel-Absatz direkt vor «vom …»): zusammengesetzte
+// Titel «ZWISCHENENTSCHEID», «ZWISCHEN-ENTSCHEID», «(ZWISCHEN-)ENTSCHEID», «ZWISCHEN-URTEIL»,
+// «TEILENTSCHEID», «TEILURTEIL», «ABWESENHEITS-URTEIL», «ERLÄUTERUNGSENTSCHEID» sowie die Plain-
+// Titel in Gross-/Kleinschrift («Urteil», «Beschluss», «Zwischenentscheid»; SB.2018.43/2019.17/
+// 2022.8). NICHT erkannt (bewusst, Rückfall Portal): «URTEIL (Rektifikat)», «REKTIFIKAT» — das
+// Datum nennt dort den Berichtigungsakt, nicht gesichert den Entscheid.
+const KOPF_TITEL_KOMPOSITUM_RE = /^(?:\((?:ZWISCHEN)-\)ENTSCHEID|(?:(?:Zwischen|Teil|Abwesenheits|Erläuterungs)-?)?(?:Entscheid|Urteil|Beschluss|Verfügung))$/i;
 const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
 
 /** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
@@ -67,7 +75,9 @@ export function kopfDatumFund(einheiten: ReadonlyArray<{ text: string }>): KopfD
   const n = Math.min(einheiten.length, KOPF_FENSTER);
   for (let i = 1; i < n; i++) {
     const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
-    if (!m || !KOPF_TITEL_RE.test(kopfText(einheiten[i - 1].text))) continue;
+    if (!m) continue;
+    const titelText = kopfText(einheiten[i - 1].text);
+    if (!KOPF_TITEL_RE.test(titelText) && !KOPF_TITEL_KOMPOSITUM_RE.test(titelText)) continue;
     const tag = m[1].padStart(2, '0');
     const iso = `${m[3]}-${MONATE[m[2]]}-${tag}`;
     // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
@@ -97,8 +107,10 @@ export function plausiblesKopfDatum(kopf: string | null | undefined, gnJahrZahl:
 
 /**
  * Abstand Kopf-Datum ↔ Portal-Metadatum, ab dem das Kopf-Datum NICHT still
- * übernommen, sondern als Verdacht gemeldet wird (Auftrag David 4.10.2026). Messung
- * 4.10.2026 an den ersten acht Belegen: Abweichungen 2–30 Tage.
+ * übernommen, sondern als Verdacht gemeldet wird. SETZWERT des Orchestrator-Auftrags
+ * (Session 4.10.2026, «z. B. 60 Tage») — NICHT von David entschieden (Richtigstellung
+ * nach Gegenprüfung #1303, A1b). Messung 4.10.2026 an den ersten acht Belegen:
+ * Abweichungen 2–30 Tage; Vollmessung am Bestand: -57 … +52 Tage übernommen.
  */
 export const KOPF_PORTAL_FENSTER_TAGE = 60;
 const tageZwischen = (von: string, bis: string): number =>
@@ -112,6 +124,12 @@ export interface BsDatumWahl {
   datumPortal: string | null;
   /** Gesetzt, wenn ein gelesenes Kopf-Datum NICHT übernommen wurde (Plausibilität). */
   verdacht: string | null;
+  /**
+   * Das nicht übernommene Kopf-Datum, wenn `datum` das Portal-Datum bleibt (→ Snapshot-Feld
+   * `datumKopfAbweichend`, Hinweis «Der Urteilskopf nennt den …; welches Datum zutrifft, ist
+   * ungeklärt», §8). Entscheid David 4.10.2026 «jeweils hinweis wenn es abweicht» gilt auch hier.
+   */
+  datumKopfAbweichend: string | null;
 }
 
 /**
@@ -143,8 +161,8 @@ export function waehleBsDatum(
       verdacht = `Kopf-Datum ${kopf} weicht ${tageZwischen(portal, kopf)} Tage vom Portal-Datum ${portal} ab (> ${KOPF_PORTAL_FENSTER_TAGE})`;
     } else kopfOk = kopf;
   }
-  if (kopfOk) return { datum: kopfOk, quelle: 'kopf', datumPortal: portal && portal !== kopfOk ? portal : null, verdacht };
-  if (portal) return { datum: portal, quelle: 'portal', datumPortal: null, verdacht };
+  if (kopfOk) return { datum: kopfOk, quelle: 'kopf', datumPortal: portal && portal !== kopfOk ? portal : null, verdacht, datumKopfAbweichend: null };
+  if (portal) return { datum: portal, quelle: 'portal', datumPortal: null, verdacht, datumKopfAbweichend: kopf && kopf !== portal ? kopf : null };
   const j = gnJahrZahl;
-  return { datum: j === null ? '' : `${j}-01-01`, quelle: 'platzhalter', datumPortal: null, verdacht };
+  return { datum: j === null ? '' : `${j}-01-01`, quelle: 'platzhalter', datumPortal: null, verdacht, datumKopfAbweichend: null };
 }

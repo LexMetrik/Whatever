@@ -154,6 +154,15 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
     const ohne = mappeEntscheidOCL(basis({ full_text: 'Obergericht XBE.2025.10 Besetzung Oberrichterin Merkofer. Die Beschwerde wird gutgeheissen.' }), null, '2026-09-25')!;
     expect(ohne.datumPortal).toBeUndefined();
   });
+  it('Plattformdatum ohne Kopf (SG-Deckblatt): kein «laut Urteilskopf»-Hinweis, weil datum nicht aus dem Kopf stammt', () => {
+    const det = basis({
+      court: 'sg_gerichte', canton: 'SG', docket_number: 'UV 2025/14', decision_date: '2025-12-01',
+      full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Leistungspflicht der Unfallversicherung.',
+    });
+    const s = mappeEntscheidOCL(det, null, '2026-09-25')!;
+    expect(s.datum).toBe('2025-10-23');
+    expect(s.datumPortal).toBeUndefined();
+  });
   it('Bund (CH) trägt nie datumPortal', () => {
     const s = mappeEntscheidOCL(basis({ court: 'bger', canton: 'CH', docket_number: '5A_1/2025', full_text: 'Bundesgericht Urteil vom 3. März 2025 Besetzung. Erwägungen folgen hier im Text.' }), null, '2026-09-25')!;
     expect(s.datumPortal).toBeUndefined();

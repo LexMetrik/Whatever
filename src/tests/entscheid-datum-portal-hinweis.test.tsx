@@ -21,6 +21,13 @@ describe('DatumPortalHinweis', () => {
   it('OCL-Kantone: dieselbe Mechanik, andere Quelle', () => {
     expect(html(snap({ quelle: 'opencaselaw', datumPortal: '2025-07-04' }))).toContain('OpenCaseLaw nennt den');
   });
+  it('Verdacht (A1): Portal-Datum bleibt, Hinweis nennt den Urteilskopf und lässt offen, welches zutrifft', () => {
+    const h = html(snap({ datum: '2024-03-08', datumKopfAbweichend: '2023-03-08' }));
+    expect(h).toContain('Der Urteilskopf nennt den');
+    expect(h).toContain('08.03.2023');
+    expect(h).toContain('welches Datum zutrifft, ist ungeklärt');
+    expect(h).not.toContain('Datum laut Urteilskopf');
+  });
   it('kein Hinweis ohne Abweichung und beim datumlosen Platzhalter', () => {
     expect(html(snap({}))).toBe('');
     expect(html(snap({ datumPortal: '2022-09-16', datumUnbekannt: true }))).toBe('');
@@ -32,6 +39,6 @@ describe('DatumPortalHinweis', () => {
     expect(renderToStaticMarkup(createElement(DatumMeta, { snap: snap({}) }))).not.toContain('Gerichtsportal');
   });
   it('der Leser zeigt den Hinweis auch, wenn die Zitierung das Datum schon trägt (DatumMeta entfällt dann)', () => {
-    expect(readFileSync('src/pages/EntscheidLeser.tsx', 'utf8')).toMatch(/datumImTitel \? \(snap\.datumPortal \? <DatumPortalHinweis snap=\{snap\} \/> : null\) : <DatumMeta/);
+    expect(readFileSync('src/pages/EntscheidLeser.tsx', 'utf8')).toMatch(/datumImTitel \? \(hatDatumHinweis\(snap\) \? <DatumPortalHinweis snap=\{snap\} \/> : null\) : <DatumMeta/);
   });
 });

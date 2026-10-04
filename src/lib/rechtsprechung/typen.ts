@@ -138,6 +138,13 @@ export interface EntscheidSnapshot {
    * Provenienz/§8-Hinweis («das Portal nennt den …») — nie Rechenwert.
    */
   datumPortal?: string;
+  /**
+   * Das Datum, das der amtliche Urteilskopf nennt, wenn es NICHT übernommen wurde
+   * (BS: mehr als 60 Tage vom Portal-Datum, vor GN-Jahr, nach Erstpublikation, Zukunft — Verdacht):
+   * `datum` bleibt dann das Portal-Datum, welches zutrifft, ist ungeklärt (§8-Hinweis
+   * «Der Urteilskopf nennt den …»). Schliesst `datumPortal` aus. Nie Rechenwert.
+   */
+  datumKopfAbweichend?: string;
   /** Erstpublikationsdatum der amtlichen Quelle (ISO), falls publiziert (BS §3.3). */
   erstpublikation?: string;
   /** Aktualisierungsdatum der amtlichen Quelle (ISO) — Drift-/Delta-Token (BS §3.3). */

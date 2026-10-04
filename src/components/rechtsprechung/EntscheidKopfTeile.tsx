@@ -137,21 +137,34 @@ export function DatumMeta({ snap }: { snap: EntscheidSnapshot }) {
   // `Datum` reicht einen Nicht-ISO-Wert (hier die nackte Jahreszahl)
   // unverändert durch und setzt nur `tabular-nums` (Vertrag des Bausteins).
   if (istBandjahr(snap)) return <span>BGE-Jahrgang <Datum iso={bgeJahrgang(snap)} /></span>;
-  return <span>Entscheid vom <Datum iso={snap.datum} />{snap.datumPortal && <> · <DatumPortalHinweis snap={snap} /></>}</span>;
+  return <span>Entscheid vom <Datum iso={snap.datum} />{hatDatumHinweis(snap) && <> · <DatumPortalHinweis snap={snap} /></>}</span>;
 }
 
-// §8-Hinweis «Datum laut Urteilskopf» (Entscheid David 4.10.2026: «jeweils hinweis wenn
-// es abweicht»). Das angezeigte Entscheiddatum ist das des amtlichen Urteilskopfs
-// (Variante A, kantonal); nennt die Angebequelle (BS: Gerichtsportal, OCL-Kantone:
-// OpenCaseLaw) ein ANDERES Datum, bleibt das als `datumPortal` im Snapshot — und wird
-// hier sichtbar, statt still überschrieben zu sein. Steht auch dort, wo die Zitierung
-// das Datum schon im Titel trägt (`DatumMeta` entfällt dann). Reine Darstellung (§3).
+// §8-Hinweis zum Entscheiddatum (Entscheid David 4.10.2026: «jeweils hinweis wenn es abweicht»).
+// ZWEI Fälle, ein Baustein (§5):
+//  · `datumPortal` — das angezeigte Datum steht im Urteilskopf (Variante A, kantonal); die
+//    Angabequelle (BS: Gerichtsportal, OCL-Kantone: OpenCaseLaw) nennt ein ANDERES Datum.
+//  · `datumKopfAbweichend` — der Urteilskopf nennt ein Datum, das NICHT übernommen wurde (BS:
+//    Verdacht, > 60 Tage Abstand u. a.); angezeigt bleibt das Portal-Datum, welches zutrifft,
+//    ist ungeklärt (Gegenprüfung #1303, A1: bei VD.2023.151 hat das Portal recht, bei
+//    SB.2021.107 der Kopf — der Hinweis behauptet darum nichts).
+// Steht auch dort, wo die Zitierung das Datum schon im Titel trägt (`DatumMeta` entfällt dann).
+// Reine Darstellung (§3).
+export const hatDatumHinweis = (snap: EntscheidSnapshot): boolean => !snap.datumUnbekannt && !!(snap.datumPortal || snap.datumKopfAbweichend);
+
 export function DatumPortalHinweis({ snap }: { snap: EntscheidSnapshot }) {
-  if (!snap.datumPortal || snap.datumUnbekannt) return null;
+  if (!hatDatumHinweis(snap)) return null;
+  if (snap.datumKopfAbweichend) {
+    return (
+      <span title="Das angezeigte Datum stammt aus den Metadaten der Datenquelle; der Urteilskopf nennt ein anderes.">
+        Der Urteilskopf nennt den <Datum iso={snap.datumKopfAbweichend} />; welches Datum zutrifft, ist ungeklärt
+      </span>
+    );
+  }
   const quelle = snap.quelle === 'gerichte-bs' ? 'das Gerichtsportal' : 'OpenCaseLaw';
   return (
     <span title="Das angezeigte Datum steht im Urteilskopf; die Datenquelle führt für diesen Entscheid ein anderes Datum.">
-      Datum laut Urteilskopf; {quelle} nennt den <Datum iso={snap.datumPortal} />
+      Datum laut Urteilskopf; {quelle} nennt den <Datum iso={snap.datumPortal!} />
     </span>
   );
 }

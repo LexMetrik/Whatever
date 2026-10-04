@@ -56,13 +56,13 @@ describe('BS-Entscheiddatum: Kopf vor Portal-Metadatum (Variante A)', () => {
 describe('waehleBsDatum — Regel und Plausibilitäts-Wächter', () => {
   it('Kopf gewinnt; Portal bleibt als datumPortal, wo es abweicht', () => {
     expect(waehleBsDatum('2022-09-16', '2022-09-21', 2022, '2022-09-24', '2026-10-04'))
-      .toEqual({ datum: '2022-09-21', quelle: 'kopf', datumPortal: '2022-09-16', verdacht: null });
+      .toEqual({ datum: '2022-09-21', quelle: 'kopf', datumPortal: '2022-09-16', verdacht: null, datumKopfAbweichend: null });
   });
   it('Kopf == Portal: kein datumPortal', () => {
     expect(waehleBsDatum('2023-05-05', '2023-05-05', 2022, null, null).datumPortal).toBeNull();
   });
   it('kein Kopf-Datum lesbar: Rückfall auf das Portal-Metadatum (wie bisher)', () => {
-    expect(waehleBsDatum('2023-05-05', null, 2022, null, null)).toEqual({ datum: '2023-05-05', quelle: 'portal', datumPortal: null, verdacht: null });
+    expect(waehleBsDatum('2023-05-05', null, 2022, null, null)).toEqual({ datum: '2023-05-05', quelle: 'portal', datumPortal: null, verdacht: null, datumKopfAbweichend: null });
   });
   it('weder Kopf noch Portal: ehrlicher Platzhalter <GN-Jahr>-01-01 (wie bisher)', () => {
     expect(waehleBsDatum(null, null, 2024, null, null)).toMatchObject({ datum: '2024-01-01', quelle: 'platzhalter' });
@@ -108,10 +108,58 @@ describe('Kopf-Fundstelle, Delta, Stichprobe, Liste', () => {
   it('Liste: jede Änderung trägt ihre Kopf-Fundstelle und den Portal-Link', () => {
     const p = parseBsDokument(fix('BEZ.2025.33'));
     const md = formatiereDatumBericht({
-      geprueft: 1, unveraendert: 0, kopfGleich: 0, ohneKopf: 0, uebersprungen: [], verdacht: [],
-      aenderungen: [{ id: 'kanton/BS/x/BEZ.2025.33', gn: p.gn, key: 78501, alt: '2025-06-10', neu: '2025-06-12', portal: '2025-06-10', tage: 2, fund: p.kopfFund ?? null, zitierungAlt: 'a', zitierungNeu: 'b', url: 'https://rechtsprechung.gerichte.bs.ch/x' }],
+      geprueft: 1, kopfGleich: 0, ohneKopf: 0, portalOhneDatum: 0, geschrieben: 1, uebersprungen: [], verdacht: [],
+      aenderungen: [{ id: 'kanton/BS/x/BEZ.2025.33', gn: p.gn, key: 78501, alt: '2025-06-10', neu: '2025-06-12', tage: 2, fund: p.kopfFund ?? null, url: 'https://rechtsprechung.gerichte.bs.ch/x' }],
     }, '2026-10-04', '2026-09-28');
     expect(md).toContain('| BEZ.2025.33 | 10.06.2025 | 12.06.2025 | +2 |');
     expect(md).toMatch(/«[A-ZÄÖÜ ]+» \/ «vom 12\. Juni 2025» \(E \d+\)/);
   });
+});
+
+// ── Gegenprüfung #1303, A2: zusammengesetzte Titel («ZWISCHENENTSCHEID», «TEILENTSCHEID») ──
+describe('Kopf-Titel: Komposita werden erkannt (A2)', () => {
+  /** [Geschäftsnummer, Fixture-Titel, Portal-Metadatum, Kopf-Datum] — Rohdaten-Messung 4.10.2026. */
+  const KOMPOSITA: Array<[string, string, string, string]> = [
+    ['SB.2021.100', 'ZWISCHENENTSCHEID', '2022-01-04', '2022-02-23'],
+    ['ZK.2020.3', 'TEILENTSCHEID', '2024-04-23', '2024-04-25'],
+    ['SB.2025.50', 'ZWISCHENENTSCHEID', '2025-09-15', '2025-09-16'],
+  ];
+  for (const [gn, titel, portal, kopf] of KOMPOSITA) {
+    it(`${gn}: «${titel}» → Kopf ${kopf} statt Portal ${portal}`, () => {
+      const p = parseBsDokument(fix(gn));
+      expect(p.datum).toBe(portal);
+      expect(p.datumKopf).toBe(kopf);
+      expect(p.kopfFund?.titel).toBe(titel);
+      const s = baueSnapshot(p, zeileVon(p), p.gn, '2026-10-04');
+      expect(s.datum).toBe(kopf);
+      expect(s.datumPortal).toBe(portal);
+    });
+  }
+  it('Titel-Absätze: Komposita und Plain-Titel in Gross-/Kleinschrift; Fremdes nicht', () => {
+    const f = (titel: string) => kopfDatumFund([{ text: 'GN' }, { text: titel }, { text: 'vom 3. Mai 2024' }])?.iso ?? null;
+    for (const t of ['ZWISCHENENTSCHEID', 'ZWISCHEN-ENTSCHEID', '(ZWISCHEN-)ENTSCHEID', 'ZWISCHEN-URTEIL', 'TEILURTEIL', 'ABWESENHEITS-URTEIL', 'ERLÄUTERUNGSENTSCHEID', 'Zwischenentscheid', 'Urteil', 'Beschluss']) {
+      expect(f(t), t).toBe('2024-05-03');
+    }
+    for (const t of ['URTEIL (Rektifikat)', 'REKTIFIKAT', 'Einspracheentscheid', 'Verfügungen', 'Mit Urteil']) expect(f(t), t).toBeNull();
+  });
+});
+
+// ── Gegenprüfung #1303, A1: Verdacht trägt trotzdem den Hinweis auf das Kopf-Datum ──
+describe('Verdachtsfälle: Portal-Datum bleibt, Hinweis nennt den Kopf (A1)', () => {
+  it('waehleBsDatum: datumKopfAbweichend bei Verdacht, nie zusammen mit datumPortal', () => {
+    const w = waehleBsDatum('2025-01-10', '2025-04-01', 2025, null, '2026-10-04');
+    expect(w).toMatchObject({ datum: '2025-01-10', quelle: 'portal', datumPortal: null, datumKopfAbweichend: '2025-04-01' });
+    expect(waehleBsDatum('2025-01-10', '2025-01-12', 2025, null, null)).toMatchObject({ datumPortal: '2025-01-10', datumKopfAbweichend: null });
+    expect(waehleBsDatum('2025-01-10', null, 2025, null, null).datumKopfAbweichend).toBeNull();
+  });
+  for (const [gn, portal, kopf] of [['VD.2023.151', '2024-03-08', '2023-03-08'], ['SB.2021.107', '2022-03-29', '2023-03-29']]) {
+    it(`${gn}: Portal ${portal} bleibt, Hinweis Kopf ${kopf}`, () => {
+      const p = parseBsDokument(fix(gn));
+      const s = baueSnapshot(p, zeileVon(p), p.gn, '2026-10-04');
+      expect(s.datum).toBe(portal);
+      expect(s.datumKopfAbweichend).toBe(kopf);
+      expect(s.datumPortal).toBeUndefined();
+      expect(abweichungen(zeileVon(p), s)).toEqual([]);
+    });
+  }
 });

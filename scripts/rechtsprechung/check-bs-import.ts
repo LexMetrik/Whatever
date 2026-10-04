@@ -143,6 +143,12 @@ function main() {
       if (Math.abs(Date.parse(`${snap.datum}T00:00:00Z`) - Date.parse(`${z.datum}T00:00:00Z`)) > KOPF_PORTAL_FENSTER_TAGE * 86_400_000) {
         fehler.push(`${e.key}: Datum ${snap.datum} weicht um mehr als ${KOPF_PORTAL_FENSTER_TAGE} Tage vom Portal-Datum ${z.datum} ab (Verdacht, nie still)`);
       }
+      // Hinweis-Felder (A1, 4.10.2026): `datumPortal` (Kopf gewählt, Portal abweichend) und
+      // `datumKopfAbweichend` (Portal gewählt, Kopf abweichend) schliessen sich aus; letzteres trägt
+      // nie das angezeigte `datum`.
+      if (snap.datumPortal && snap.datumKopfAbweichend) fehler.push(`${e.key}: datumPortal und datumKopfAbweichend zugleich`);
+      if (snap.datumKopfAbweichend && snap.datumKopfAbweichend === snap.datum) fehler.push(`${e.key}: datumKopfAbweichend ${snap.datumKopfAbweichend} gleich datum`);
+      if (snap.datumKopfAbweichend && snap.datum !== z.datum) fehler.push(`${e.key}: datumKopfAbweichend gesetzt, aber datum ${snap.datum} ≠ Portal-Datum ${z.datum}`);
       const [zy, zm, zd] = snap.datum.split('-');
       if (!snap.datumUnbekannt && !snap.zitierung.endsWith(` vom ${zd}.${zm}.${zy}`)) fehler.push(`${e.key}: Zitierung «${snap.zitierung}» nennt das Datum ${snap.datum} nicht`);
       if (snap.datumUnbekannt) fehler.push(`${e.key}: datumUnbekannt trotz Metadaten-Datum`);

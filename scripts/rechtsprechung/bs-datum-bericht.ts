@@ -17,32 +17,33 @@ const ze = (s: string): string => s.replace(/\|/g, '\\|');
 export function formatiereDatumBericht(b: BsDatumBericht, datum: string, inventarStand: string): string {
   const L: string[] = [];
   const bis = b.aenderungen.map((a) => a.tage);
+  const fs = (f: { titel: string; text: string; einheit: number } | null) => (f ? `«${ze(f.titel)}» / «${ze(f.text)}» (E ${f.einheit})` : '— (kein Kopf-Datum gelesen)');
   L.push(`# BS-Entscheiddatum aus dem Urteilskopf — Änderungsliste (${datum})`);
   L.push('');
   L.push('<!-- GENERIERT von `npm run entscheide:bs -- --datum-kopf-berichtigung` — nicht von Hand editieren. -->');
   L.push('');
-  L.push(`**Anlass/Entscheid:** Gegenprüfung PR #1295 (4.10.2026); Entscheid David 4.10.2026 (Chat): Regel «Variante A» (Kopf vor Plattform, wie für die OCL-Kantone am 25.9.2026) auch für Basel-Stadt, Bestand berichtigen. Roadmap: QS-KORPUS.`);
+  L.push('**Anlass/Entscheid:** Gegenprüfung PR #1295 (4.10.2026); Entscheid David 4.10.2026 (Chat): Regel «Variante A» (Kopf vor Plattform, wie für die OCL-Kantone am 25.9.2026) auch für Basel-Stadt, Bestand berichtigen, «jeweils hinweis wenn es abweicht». Roadmap: QS-KORPUS.');
   L.push('');
-  L.push(`**Quelle und Stand:** amtliches Rechtsprechungsportal der Gerichte BS, https://rechtsprechung.gerichte.bs.ch (Dokumente abgerufen ${datum}; Portal-Inventar vom ${inventarStand}). Massgeblich ist die amtliche Fassung, nie dieses Artefakt (§7).`);
+  L.push(`**Quelle und Stand:** amtliches Rechtsprechungsportal der Gerichte BS, https://rechtsprechung.gerichte.bs.ch (Dokumente abgerufen ${datum}; Portal-Inventar vom ${inventarStand}). Massgeblich ist die amtliche Fassung, nie dieses Artefakt (§7). «alt» = Portal-Metadatum «Entscheiddatum» (Stand vor Variante A), «neu» = Datum im Urteilskopf.`);
   L.push('');
   L.push('## Zahlen (per Skript gezählt)');
   L.push('');
   L.push(`- Geprüfte Basler Entscheide (Rohdokument neu gelesen): **${b.geprueft}**`);
-  L.push(`- **Datum geändert: ${b.aenderungen.length}**${b.geprueft ? ` (${((b.aenderungen.length / b.geprueft) * 100).toFixed(1)} %)` : ''} — Kopf-Datum weicht vom Portal-Metadatum ab`);
-  L.push(`- Unverändert: ${b.unveraendert} (davon Kopf = Portal: ${b.kopfGleich}; kein Kopf-Datum lesbar, Portal bleibt: ${b.ohneKopf})`);
+  L.push(`- **Datum gegenüber dem Portal geändert: ${b.aenderungen.length}**${b.geprueft ? ` (${((b.aenderungen.length / b.geprueft) * 100).toFixed(1)} %)` : ''} — Kopf-Datum weicht ab, wird angezeigt; das Portal-Datum steht als Hinweis daneben (\`datumPortal\`)`);
+  L.push(`- **Verdacht: ${b.verdacht.length}** — Kopf-Datum nicht übernommen (> ${KOPF_PORTAL_FENSTER_TAGE} Tage / vor GN-Jahr / nach Erstpublikation / Zukunft; Setzwert Orchestrator, nicht von David). Angezeigt bleibt das Portal-Datum, daneben der Hinweis «Der Urteilskopf nennt den …; welches Datum zutrifft, ist ungeklärt» (\`datumKopfAbweichend\`)`);
+  L.push(`- Kopf = Portal: ${b.kopfGleich} · kein Kopf-Datum lesbar (Portal bleibt): ${b.ohneKopf} · Portal ohne Datum, Kopf füllt die Lücke (B-1): ${b.portalOhneDatum}`);
   L.push(`- Nicht angefasst (Vorbedingung verletzt): ${b.uebersprungen.length}`);
-  L.push(`- Verdacht (Kopf-Datum nicht übernommen, Wächter ±${KOPF_PORTAL_FENSTER_TAGE} Tage / vor GN-Jahr / nach Erstpublikation / Zukunft): ${b.verdacht.length}`);
-  if (bis.length) L.push(`- Abstand Kopf − Portal in Tagen: kleinster ${Math.min(...bis)}, grösster ${Math.max(...bis)}`);
+  if (bis.length) L.push(`- Abstand Kopf − Portal in Tagen (übernommene): kleinster ${Math.min(...bis)}, grösster ${Math.max(...bis)}`);
   L.push('');
-  L.push('Regel: `scripts/rechtsprechung/bs-parse.ts` (`waehleBsDatum`); Portal-Datum bleibt als `datumPortal` im Entscheid erhalten und wird im Leser als Hinweis gezeigt.');
+  L.push('Regel: `scripts/rechtsprechung/bs-datum.ts` (`waehleBsDatum`, Titel-Erkennung `KOPF_TITEL_RE`/`KOPF_TITEL_KOMPOSITUM_RE`). Nicht erkannt (Rückfall Portal): Titel «… (Rektifikat)» und «REKTIFIKAT» — dort nennt das Datum den Berichtigungsakt.');
   L.push('');
-  L.push(`## Verdacht (${b.verdacht.length}) — nie still übernommen`);
+  L.push(`## Verdacht (${b.verdacht.length}) — Portal-Datum bleibt, Hinweis auf das Kopf-Datum`);
   L.push('');
   if (!b.verdacht.length) L.push('Keiner.');
   else {
-    L.push('| Aktenzeichen | Grund | Portal |');
-    L.push('|---|---|---|');
-    for (const v of b.verdacht) L.push(`| ${v.gn} | ${ze(v.grund)} | [Dokument](${v.url}) |`);
+    L.push('| Aktenzeichen | Portal (angezeigt) | Kopf (Hinweis) | Grund | Kopf-Fundstelle | Portal |');
+    L.push('|---|---|---|---|---|---|');
+    for (const v of b.verdacht) L.push(`| ${v.gn} | ${v.portal ? de(v.portal) : '–'} | ${v.kopf ? de(v.kopf) : '–'} | ${ze(v.grund)} | ${fs(v.fund)} | [Dokument](${v.url}) |`);
   }
   L.push('');
   L.push(`## Nicht angefasst (${b.uebersprungen.length})`);
@@ -55,8 +56,7 @@ export function formatiereDatumBericht(b: BsDatumBericht, datum: string, inventa
   L.push('| Aktenzeichen | alt (Portal) | neu (Kopf) | Tage | Kopf-Fundstelle (Titelzeile / Datumszeile, Einheit n) | Portal |');
   L.push('|---|---|---|---:|---|---|');
   for (const a of b.aenderungen) {
-    const f = a.fund ? `«${ze(a.fund.titel)}» / «${ze(a.fund.text)}» (E ${a.fund.einheit})` : '— (Kopf nicht lesbar)';
-    L.push(`| ${a.gn} | ${de(a.alt)} | ${de(a.neu)} | ${a.tage > 0 ? '+' : ''}${a.tage} | ${f} | [Dokument](${a.url}) |`);
+    L.push(`| ${a.gn} | ${de(a.alt)} | ${de(a.neu)} | ${a.tage > 0 ? '+' : ''}${a.tage} | ${fs(a.fund)} | [Dokument](${a.url}) |`);
   }
   L.push('');
   return L.join('\n');

@@ -74,9 +74,9 @@ async function main() {
     const { berichtigeBsDatum } = await import('./bs-datum-berichtigung');
     const { schreibeDatumBericht } = await import('./bs-datum-bericht');
     const b = berichtigeBsDatum(inv, datum, !hat('--trocken'));
-    // Fixpunkt (0 Änderungen, Zweitlauf): die Liste des Erstlaufs nicht mit «0» überschreiben.
-    const pfad = b.aenderungen.length ? schreibeDatumBericht(b, datum, inv.erzeugt) : '(Fixpunkt: keine Änderung, Liste unberührt)';
-    console.log(`[datum-kopf] geprüft ${b.geprueft} · geändert ${b.aenderungen.length} · unverändert ${b.unveraendert} (Kopf=Portal ${b.kopfGleich}, ohne Kopf ${b.ohneKopf}) · nicht angefasst ${b.uebersprungen.length} · Verdacht ${b.verdacht.length}`);
+    // Die Liste ist auf das Portal-Datum bezogen und bei jedem Lauf gleich (Fixpunkt).
+    const pfad = schreibeDatumBericht(b, datum, inv.erzeugt);
+    console.log(`[datum-kopf] geprüft ${b.geprueft} · Datum geändert (Kopf ≠ Portal) ${b.aenderungen.length} · Verdacht ${b.verdacht.length} · Kopf=Portal ${b.kopfGleich} · ohne Kopf ${b.ohneKopf} · Portal ohne Datum ${b.portalOhneDatum} · nicht angefasst ${b.uebersprungen.length} · in diesem Lauf geschrieben ${b.geschrieben}`);
     console.log(`[datum-kopf] Liste: ${pfad}`);
     for (const v of b.verdacht) console.log(`[datum-kopf] VERDACHT ${v.id}: ${v.grund}`);
     for (const u of b.uebersprungen) console.log(`[datum-kopf] übersprungen ${u.id}: ${u.grund}`);

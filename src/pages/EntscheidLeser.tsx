@@ -45,7 +45,7 @@ import { KopfOverline, LeserKopfGeruest } from '../components/layout/LeserKopfGe
 // Kopf-Teile stehen in BEIDEN Ansichten dieses Lesers, die Lese-Schriftgrösse
 // bedient beide Steller-Paare, und das Overlay ist die zweite Ansicht selbst —
 // die drei Schnitte folgen den Kanten, die die Datei schon hatte.
-import { BesetzungWert, DatumMeta, DatumPortalHinweis, MassgeblicheFassung } from '../components/rechtsprechung/EntscheidKopfTeile';
+import { BesetzungWert, DatumMeta, DatumPortalHinweis, hatDatumHinweis, MassgeblicheFassung } from '../components/rechtsprechung/EntscheidKopfTeile';
 import { FS_STUFEN, ladeFsIdx, speichereFsIdx } from '../components/rechtsprechung/leseGroesse';
 import { LesemodusOverlay } from '../components/rechtsprechung/LesemodusOverlay';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
@@ -758,7 +758,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           // Zitierung darüber dasselbe Datum wörtlich führt — sonst steht das
           // Urteilsdatum zweimal in 60 px. Fehlt es im Titel (BGE-Zitierungen,
           // «Entscheiddatum nicht publiziert», BGE-Jahrgang), bleibt die Zeile.
-          datumImTitel ? (snap.datumPortal ? <DatumPortalHinweis snap={snap} /> : null) : <DatumMeta snap={snap} />,  // §8-Hinweis (4.10.2026): auch wenn die Zitierung das Datum trägt
+          datumImTitel ? (hatDatumHinweis(snap) ? <DatumPortalHinweis snap={snap} /> : null) : <DatumMeta snap={snap} />,  // §8-Hinweis (4.10.2026): auch wenn die Zitierung das Datum trägt
           snap.bgeReferenz && !referenzImTitel(snap.zitierung, snap.bgeReferenz)
             ? <span className="num">{snap.bgeReferenz}</span> : null,
           snap.nummerSekundaer
