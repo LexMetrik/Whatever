@@ -84,23 +84,34 @@ Bestand bei AUS.2022.46 (Urteilstext bestätigt den Kopf), AUS.2022.57, BES.2023
 **Entscheid David 4.10.2026 (Chat):** Variante A auch für Basel, Bestand berichtigen, «jeweils hinweis wenn
 es abweicht».
 
-- **Regel BS** (`waehleBsDatum`, `scripts/rechtsprechung/bs-parse.ts`): Kopf-Datum gewinnt; Rückfall
+- **Regel BS** (`waehleBsDatum`, `scripts/rechtsprechung/bs-datum.ts`): Kopf-Datum gewinnt; Rückfall
   Portal-Metadatum, dann der ehrliche Platzhalter (`datumUnbekannt`). Plausibilitäts-Wächter: Kopf-Datum vor
   dem GN-Jahr, nach der Erstpublikation, in der Zukunft oder mehr als 60 Tage vom Portal-Datum entfernt wird
-  **nicht übernommen**, sondern als Verdacht ausgewiesen.
-- **Bestand:** 3954 Rohdokumente neu geholt (Abruf 4.10.2026) und mit derselben Regel gelesen — **257
-  Daten geändert** (6,5 %; Abstand −57 … +52 Tage), 31 Verdachtsfälle bleiben beim Portal-Datum, 0 nicht
+  **nicht übernommen** (Setzwert des Orchestrator-Auftrags, nicht von David entschieden), sondern als Verdacht
+  ausgewiesen; das Portal-Datum bleibt angezeigt, daneben der Hinweis «Der Urteilskopf nennt den …; welches
+  Datum zutrifft, ist ungeklärt» (`datumKopfAbweichend`). Das hält die Frage offen: bei SB.2021.107 und
+  FZ.2022.7 hat amtlich der Kopf recht, bei VD.2023.151 und VD.2023.83 das Portal (Gegenprüfung #1303).
+  Titel-Erkennung: Komposita (ZWISCHENENTSCHEID, ZWISCHEN-ENTSCHEID, TEILENTSCHEID, ABWESENHEITS-URTEIL,
+  ERLÄUTERUNGSENTSCHEID, …) und Plain-Titel in Klein-/Grossschrift; **nicht erkannt** (Rückfall Portal):
+  «URTEIL (Rektifikat)», «REKTIFIKAT» — dort nennt das Datum den Berichtigungsakt.
+- **Bestand:** 3954 Rohdokumente neu geholt (Abruf 4.10.2026) und mit derselben Regel gelesen — **263
+  Daten gegenüber dem Portal geändert** (6,7 %; Abstand −57 … +52 Tage), 31 Verdachtsfälle (Portal bleibt,
+  Hinweis auf den Kopf), Kopf = Portal 3597, kein Kopf lesbar 15, Portal ohne Datum 48 (B-1), 0 nicht
   angefasst. Jede Änderung mit Kopf-Fundstelle und Portal-Link:
   [bs-datum-kopf-2026-10-04.md](bs-datum-kopf-2026-10-04.md) (generiert, `npm run entscheide:bs --
-  --datum-kopf-berichtigung`; Rohdokumente zuvor per `--fetch-only`). Die frühere Stichprobe 4/31 ≈ 13 %
+  --datum-kopf-berichtigung`; Rohdokumente zuvor per `--fetch-only`; die Liste ist auf das Portal-Datum
+  bezogen und bei jedem Lauf gleich, Zweitlauf: 0 geschrieben). Die frühere Stichprobe 4/31 ≈ 13 %
   überschätzte die Rate; massgeblich ist die Vollmessung. Ids bleiben stabil (ein docketSafe-Suffix trägt
   weiter das Portal-Datum).
-- **Hinweis-Feld `datumPortal`** (optional im Snapshot): das Datum der Angabequelle, wo es vom Kopf abweicht
-  (BS: Gerichtsportal; kantonale OCL-Gerichte: OCL `decision_date`). Der Entscheid-Kopf und der Lesemodus
-  zeigen «Datum laut Urteilskopf; das Gerichtsportal / OpenCaseLaw nennt den …». Für die OCL-Kantone aus
-  demselben Mapper (`mappeEntscheidOCL`), Bestand per `--kopfdatum-refresh`: 35 von 90 Snapshots tragen den
-  Hinweis, kein Datum geändert, ZH ohne Abweichung.
+- **Hinweis-Felder** (optional im Snapshot): `datumPortal` — das Datum der Angabequelle, wo es vom
+  angezeigten Kopf-Datum abweicht (BS: Gerichtsportal; kantonale OCL-Gerichte: OCL `decision_date`, nur wo
+  das Datum aus dem Urteilskopf stammt); `datumKopfAbweichend` — das nicht übernommene Kopf-Datum (BS-Verdacht).
+  Entscheid-Kopf und Lesemodus zeigen «Datum laut Urteilskopf; das Gerichtsportal / OpenCaseLaw nennt den …»
+  bzw. «Der Urteilskopf nennt den …; welches Datum zutrifft, ist ungeklärt». Für die OCL-Kantone aus demselben
+  Mapper (`mappeEntscheidOCL`), Bestand per `--kopfdatum-refresh`: 35 von 90 Snapshots tragen den Hinweis,
+  kein Datum geändert, ZH ohne Abweichung.
 - **Stichprobe/Tore:** die Wochenlauf-Stichprobe (`pruefeBs`) und das Tor `check:bs-entscheide` prüfen
   gegen dieselbe Regel (Kopf; Portal = `datumPortal ?? datum`), nicht mehr gegen das Portal-Feld allein (§6.7).
-- **Abnahme-Status:** maschinell verifiziert (Identitäts-Gegenleser 257/257 gegen den Rohtext), `verifiziert:false`,
-  fachliche Abnahme David offen.
+  Bekannte Grenze: `pruefeBs` nutzt `waehleBsDatum` — nicht unabhängig vom Import (Posten angelegt).
+- **Abnahme-Status:** maschinell verifiziert (unabhängiger Regex-Leser über den Rohtext, alle 294 Zeilen
+  der Liste inkl. Verdacht; 5 per Hand), `verifiziert:false`, fachliche Abnahme David offen.

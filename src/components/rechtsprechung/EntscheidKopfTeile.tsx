@@ -2,6 +2,7 @@ import { memo, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { besetzungsTeile } from '../../lib/rechtsprechung/besetzung-verlinkung';
 import { Datum } from '../ui/Datum';
+import { hatDatumHinweis } from '../../pages/entscheidLeserRegeln';
 import { QuellLink } from '../ui/QuellLink';
 import { AMTLICHE_FASSUNG } from '../../lib/benennung';
 import type { RichterRef } from '../../lib/rechtsprechung/register';
@@ -149,9 +150,7 @@ export function DatumMeta({ snap }: { snap: EntscheidSnapshot }) {
 //    ist ungeklärt (Gegenprüfung #1303, A1: bei VD.2023.151 hat das Portal recht, bei
 //    SB.2021.107 der Kopf — der Hinweis behauptet darum nichts).
 // Steht auch dort, wo die Zitierung das Datum schon im Titel trägt (`DatumMeta` entfällt dann).
-// Reine Darstellung (§3).
-export const hatDatumHinweis = (snap: EntscheidSnapshot): boolean => !snap.datumUnbekannt && !!(snap.datumPortal || snap.datumKopfAbweichend);
-
+// Die Weiche `hatDatumHinweis` steht in `pages/entscheidLeserRegeln.ts` (rein, §3).
 export function DatumPortalHinweis({ snap }: { snap: EntscheidSnapshot }) {
   if (!hatDatumHinweis(snap)) return null;
   if (snap.datumKopfAbweichend) {

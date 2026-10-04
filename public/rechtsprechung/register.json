@@ -33599,6 +33599,49 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2025.50",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2025.50",
+      "bgeReferenz": null,
+      "datum": "2025-09-16",
+      "zitierung": "Appellationsgericht BS SB.2025.50 vom 16.09.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Ungehorsam gegen amtliche Verfügungen (mehrfache Begehung) (BGer 6B_467/2026 vom 8. Juli 2026)",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.50.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78813&Template=search_result_document.html",
+      "fassungsToken": "2026-07-11",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "stramandino-desiree",
+          "r": "mitglied"
+        },
+        {
+          "s": "zimmermann-katharina",
+          "r": "mitglied"
+        },
+        {
+          "s": "noser-dussy-barbara",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bge_151_V_315",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -33759,49 +33802,6 @@
         "ansicht": "voll",
         "bgeReferenz": "152 III 51"
       }
-    },
-    {
-      "key": "bs_appellationsgericht_SB.2025.50",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "SB.2025.50",
-      "bgeReferenz": null,
-      "datum": "2025-09-15",
-      "zitierung": "Appellationsgericht BS SB.2025.50 vom 15.09.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "Ungehorsam gegen amtliche Verfügungen (mehrfache Begehung) (BGer 6B_467/2026 vom 8. Juli 2026)",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/SB.2025.50.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78813&Template=search_result_document.html",
-      "fassungsToken": "2026-07-11",
-      "richter": [
-        {
-          "s": "hoenen-christian",
-          "r": "vorsitz"
-        },
-        {
-          "s": "stramandino-desiree",
-          "r": "mitglied"
-        },
-        {
-          "s": "zimmermann-katharina",
-          "r": "mitglied"
-        },
-        {
-          "s": "noser-dussy-barbara",
-          "r": "gerichtsschreiber"
-        }
-      ]
     },
     {
       "key": "bs_appellationsgericht_BES.2024.88",
@@ -101291,6 +101291,51 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2018.43",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2018.43",
+      "bgeReferenz": null,
+      "datum": "2024-06-28",
+      "zitierung": "Appellationsgericht BS SB.2018.43 vom 28.06.2024",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "ad 1: einfache Körperverletzung (Ehegatte während der Ehe), Sachentziehen, Sachbeschädigung, mehrfache Nötigung,…",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2018.43.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77086&Template=search_result_document.html",
+      "fassungsToken": "2025-02-27",
+      "richter": [
+        {
+          "s": "henz-liselotte",
+          "r": "vorsitz"
+        },
+        {
+          "s": "frossard-jacqueline",
+          "r": "mitglied"
+        },
+        {
+          "s": "mabillard-ramon",
+          "r": "mitglied"
+        },
+        {
+          "s": "grange-barbara",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_BES.2023.114",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -104822,51 +104867,6 @@
         },
         {
           "s": "callierotti-andreas",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bs_appellationsgericht_SB.2018.43",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "SB.2018.43",
-      "bgeReferenz": null,
-      "datum": "2024-06-10",
-      "zitierung": "Appellationsgericht BS SB.2018.43 vom 10.06.2024",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "ad 1: einfache Körperverletzung (Ehegatte während der Ehe), Sachentziehen, Sachbeschädigung, mehrfache Nötigung,…",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "STGB",
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/SB.2018.43.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77086&Template=search_result_document.html",
-      "fassungsToken": "2025-02-27",
-      "richter": [
-        {
-          "s": "henz-liselotte",
-          "r": "vorsitz"
-        },
-        {
-          "s": "frossard-jacqueline",
-          "r": "mitglied"
-        },
-        {
-          "s": "mabillard-ramon",
-          "r": "mitglied"
-        },
-        {
-          "s": "grange-barbara",
           "r": "gerichtsschreiber"
         }
       ]
@@ -112074,6 +112074,62 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_ZK.2020.3",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "ZK.2020.3",
+      "bgeReferenz": null,
+      "datum": "2024-04-25",
+      "zitierung": "Appellationsgericht BS ZK.2020.3 vom 25.04.2024",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Auskunfts- und Forderungsklage (BGer 4A_580/2024 vom 07.01.25 betr. Teilentscheid AG vom 25.04.24)",
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "LUGUE",
+        "OR",
+        "STGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/ZK.2020.3.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77411&Template=search_result_document.html",
+      "fassungsToken": "2025-07-02",
+      "richter": [
+        {
+          "s": "gelzer-claudius",
+          "r": "vorsitz"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "steiner-olivier",
+          "r": "mitglied"
+        },
+        {
+          "s": "mabillard-ramon",
+          "r": "mitglied"
+        },
+        {
+          "s": "fuchs-mia",
+          "r": "mitglied"
+        },
+        {
+          "s": "seiler-benedikt",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bge_150_II_265",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -112672,62 +112728,6 @@
         },
         {
           "s": "inglese-nicola",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bs_appellationsgericht_ZK.2020.3",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "ZK.2020.3",
-      "bgeReferenz": null,
-      "datum": "2024-04-23",
-      "zitierung": "Appellationsgericht BS ZK.2020.3 vom 23.04.2024",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "Auskunfts- und Forderungsklage (BGer 4A_580/2024 vom 07.01.25 betr. Teilentscheid AG vom 25.04.24)",
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "IPRG",
-        "LUGUE",
-        "OR",
-        "STGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/ZK.2020.3.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77411&Template=search_result_document.html",
-      "fassungsToken": "2025-07-02",
-      "richter": [
-        {
-          "s": "gelzer-claudius",
-          "r": "vorsitz"
-        },
-        {
-          "s": "equey-andre",
-          "r": "mitglied"
-        },
-        {
-          "s": "steiner-olivier",
-          "r": "mitglied"
-        },
-        {
-          "s": "mabillard-ramon",
-          "r": "mitglied"
-        },
-        {
-          "s": "fuchs-mia",
-          "r": "mitglied"
-        },
-        {
-          "s": "seiler-benedikt",
           "r": "gerichtsschreiber"
         }
       ]
@@ -157166,6 +157166,51 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2022.10",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2022.10",
+      "bgeReferenz": null,
+      "datum": "2023-06-28",
+      "zitierung": "Appellationsgericht BS SB.2022.10 vom 28.06.2023",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "ad 1: mehrfache ungetreue Geschäftsbesorgung ad 2: mehrfache ungetreue Geschäftsbesorgung (Bereicherungsabsicht) ad 3:…",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2022.10.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=75455&Template=search_result_document.html",
+      "fassungsToken": "2025-10-28",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "traub-andreas",
+          "r": "mitglied"
+        },
+        {
+          "s": "fuchs-mia",
+          "r": "mitglied"
+        },
+        {
+          "s": "vogelsanger-marius",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_BEZ.2023.30",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -162798,51 +162843,6 @@
         "ansicht": "voll",
         "bgeReferenz": "149 IV 266"
       }
-    },
-    {
-      "key": "bs_appellationsgericht_SB.2022.10",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "SB.2022.10",
-      "bgeReferenz": null,
-      "datum": "2023-05-22",
-      "zitierung": "Appellationsgericht BS SB.2022.10 vom 22.05.2023",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "ad 1: mehrfache ungetreue Geschäftsbesorgung ad 2: mehrfache ungetreue Geschäftsbesorgung (Bereicherungsabsicht) ad 3:…",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "STGB",
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/SB.2022.10.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=75455&Template=search_result_document.html",
-      "fassungsToken": "2025-10-28",
-      "richter": [
-        {
-          "s": "oser-marc",
-          "r": "vorsitz"
-        },
-        {
-          "s": "traub-andreas",
-          "r": "mitglied"
-        },
-        {
-          "s": "fuchs-mia",
-          "r": "mitglied"
-        },
-        {
-          "s": "vogelsanger-marius",
-          "r": "gerichtsschreiber"
-        }
-      ]
     },
     {
       "key": "bge_149_IV_325",
@@ -184102,6 +184102,49 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2022.97",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2022.97",
+      "bgeReferenz": null,
+      "datum": "2023-01-14",
+      "zitierung": "Appellationsgericht BS SB.2022.97 vom 14.01.2023",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Eintreten auf Anschlussberufung des Beschuldigten 1",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2022.97.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=74645&Template=search_result_document.html",
+      "fassungsToken": "2023-11-22",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "spenle-christoph",
+          "r": "mitglied"
+        },
+        {
+          "s": "frossard-jacqueline",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-kaenel-lukas",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2023.2",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -185928,49 +185971,6 @@
         },
         {
           "s": "biro-noemi",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bs_appellationsgericht_SB.2022.97",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "SB.2022.97",
-      "bgeReferenz": null,
-      "datum": "2022-12-23",
-      "zitierung": "Appellationsgericht BS SB.2022.97 vom 23.12.2022",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "Eintreten auf Anschlussberufung des Beschuldigten 1",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/SB.2022.97.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=74645&Template=search_result_document.html",
-      "fassungsToken": "2023-11-22",
-      "richter": [
-        {
-          "s": "hoenen-christian",
-          "r": "vorsitz"
-        },
-        {
-          "s": "spenle-christoph",
-          "r": "mitglied"
-        },
-        {
-          "s": "frossard-jacqueline",
-          "r": "mitglied"
-        },
-        {
-          "s": "von-kaenel-lukas",
           "r": "gerichtsschreiber"
         }
       ]
@@ -234049,6 +234049,57 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_SB.2021.100",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "SB.2021.100",
+      "bgeReferenz": null,
+      "datum": "2022-02-23",
+      "zitierung": "Appellationsgericht BS SB.2021.100 vom 23.02.2022",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "mehrfache Verbrechen gegen das Betäubungsmittelgesetz (grosse Gesundheitsgefährdung, Bandenmässigkeit und…",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/SB.2021.100.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73160&Template=search_result_document.html",
+      "fassungsToken": "2022-09-24",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "wirz-annatina",
+          "r": "mitglied"
+        },
+        {
+          "s": "mabillard-ramon",
+          "r": "mitglied"
+        },
+        {
+          "s": "kreis-manuel",
+          "r": "mitglied"
+        },
+        {
+          "s": "dillena-anja",
+          "r": "mitglied"
+        },
+        {
+          "s": "biro-noemi",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_SB.2021.40",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -242303,57 +242354,6 @@
         },
         {
           "s": "noser-dussy-barbara",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bs_appellationsgericht_SB.2021.100",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "SB.2021.100",
-      "bgeReferenz": null,
-      "datum": "2022-01-04",
-      "zitierung": "Appellationsgericht BS SB.2021.100 vom 04.01.2022",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "mehrfache Verbrechen gegen das Betäubungsmittelgesetz (grosse Gesundheitsgefährdung, Bandenmässigkeit und…",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/SB.2021.100.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73160&Template=search_result_document.html",
-      "fassungsToken": "2022-09-24",
-      "richter": [
-        {
-          "s": "oser-marc",
-          "r": "vorsitz"
-        },
-        {
-          "s": "wirz-annatina",
-          "r": "mitglied"
-        },
-        {
-          "s": "mabillard-ramon",
-          "r": "mitglied"
-        },
-        {
-          "s": "kreis-manuel",
-          "r": "mitglied"
-        },
-        {
-          "s": "dillena-anja",
-          "r": "mitglied"
-        },
-        {
-          "s": "biro-noemi",
           "r": "gerichtsschreiber"
         }
       ]

@@ -20,7 +20,7 @@ import {
   ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
   referenzImTitel, urlMitHash, urlMitLese, zaehleNennungen,
-  angabeImTitel, leitzeileOhneKopfangaben, sucheWirksam,
+  angabeImTitel, leitzeileOhneKopfangaben, sucheWirksam, hatDatumHinweis,
 } from './entscheidLeserRegeln';
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
@@ -45,7 +45,7 @@ import { KopfOverline, LeserKopfGeruest } from '../components/layout/LeserKopfGe
 // Kopf-Teile stehen in BEIDEN Ansichten dieses Lesers, die Lese-Schriftgrösse
 // bedient beide Steller-Paare, und das Overlay ist die zweite Ansicht selbst —
 // die drei Schnitte folgen den Kanten, die die Datei schon hatte.
-import { BesetzungWert, DatumMeta, DatumPortalHinweis, hatDatumHinweis, MassgeblicheFassung } from '../components/rechtsprechung/EntscheidKopfTeile';
+import { BesetzungWert, DatumMeta, DatumPortalHinweis, MassgeblicheFassung } from '../components/rechtsprechung/EntscheidKopfTeile';
 import { FS_STUFEN, ladeFsIdx, speichereFsIdx } from '../components/rechtsprechung/leseGroesse';
 import { LesemodusOverlay } from '../components/rechtsprechung/LesemodusOverlay';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
