@@ -211,8 +211,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1340,
-  "materialien": 1686,
-  "materialienGesetzgebung": 1359,
+  "materialien": 1687,
+  "materialienGesetzgebung": 1360,
   "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
@@ -273,7 +273,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BS-GR",
       "kuerzel": "GR BS",
       "name": "Grosser Rat des Kantons Basel-Stadt",
-      "anzahl": 117
+      "anzahl": 118
     }
   ],
   "rechner": 23,

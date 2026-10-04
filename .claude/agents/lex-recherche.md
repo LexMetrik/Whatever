@@ -44,5 +44,6 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
 
 TABU: kein Code, keine Repo-Änderung.
 RÜCKGABE: je Fakt Quelle + Stand + Link; ungedeckte Fragen ausdrücklich als offen markieren.
+BEFUND-BEHAUPTUNG (1.10.2026, #1231/#1233): «Tor X ist rot» braucht dasselbe Artefakt wie ein Erfolgsbericht — Tor-Name + ##[error]-/ROT-Zeile; sonst Hypothese.
 
 Standard-Routing: Stufe mittel (aktuell model=sonnet), effort=medium — Abweichungen setzt der Orchestrator im Call.

@@ -731,7 +731,7 @@
    ]
   },
   "42": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -744,12 +744,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Vom Schuldner anerkannte, von einem Gläubiger mit Erfolg bestrittene Ansprüche"
     }
    ]
   },
   "43": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -762,7 +763,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "V. Anfechtung von Rang und Höhe. Verhältnis zwischen Gläu-bigern einer Gruppe"
     }
    ]
   },
@@ -1102,7 +1104,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "H. Ergebnislosigkeit der Steigerung"
     }
    ]
   },
@@ -1157,7 +1160,7 @@
    ]
   },
   "74": {
-   "giltSeit": "1976-04-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1184,7 +1187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Fälle"
     }
    ]
   },

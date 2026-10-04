@@ -3,9 +3,9 @@
 // Bau ist — ohne SessionStart-Hook (zerstörte den Prompt-Cache; QS-TOK/T19).
 //
 // Bauregeln: (1) Nie crashen, immer degradieren (§8): Ausfälle = EINE Hinweiszeile.
-// (2) Netzfrei per Default, `gh` nur mit `--prs`. (3) Nichts Bestehendes
-// verschieben. Seit 5.8.2026 (`QS-PLAN-WIP-FRISCHE`) auch «stimmt das noch»
-// (`staleWip()`); nicht abfragbare git-Lage erzeugt dort KEINE Warnung.
+// (2) Netzfrei per Default, `gh` nur mit `--prs` — Ausnahme Alarm-Zeile (Entscheid
+// David 1.10.2026): ein gh-Aufruf mit hartem Timeout, sonst Hinweiszeile.
+// (3) Nichts Bestehendes verschieben.
 //
 // Eigener Runner statt `sh()` aus bildDaten.ts: hartes Timeout (`gh` ohne Netz
 // hängt sonst am Pflicht-Einstieg) und `plan:next` bleibt importfrei gegenüber dem
@@ -63,7 +63,7 @@ export type Laufe = (cmd: string, args: string[], cwd?: string) => string;
 const TIMEOUT_MS = 5000;
 
 export const laufeEcht: Laufe = (cmd, args, cwd) =>
-  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, cwd });
+  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, killSignal: 'SIGKILL', cwd });
 
 /** Wie `laufe`, aber `null` statt Wurf — geteilt mit gitFlaechenSammeln.ts (§5). */
 export function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
@@ -207,6 +207,37 @@ export function sammleDependabot(laufe: Laufe): string[] | null {
 }
 
 const TRENNER = ' · ';
+const ALARM = '🚨 Alarme: ';
+
+/** Offene `alarm:*`-Zettel; Titel und Label = fremder Text (§14.7): Titel nur als ESKALATION-Präfix, Label nur als `[a-z0-9-]+` (sonst `?`). */
+export function alarmZeile(json: string): string {
+  try {
+    const liste: { number: number; title: string; created_at: string; labels: { name: string }[]; pull_request?: unknown }[] =
+      JSON.parse(json);
+    const z = liste
+      .filter((i) => !i.pull_request)
+      .map((i) => ({ i, l: i.labels.find((l) => l.name.startsWith('alarm:'))?.name }))
+      .filter((x) => x.l !== undefined)
+      .sort((a, b) => a.i.number - b.i.number)
+      .map(({ i: { number, created_at: d, title }, l }) =>
+        `#${+number} ${/^[a-z0-9-]+$/.test(l!.slice(6)) ? l!.slice(6) : '?'} (seit ${+d.slice(8, 10)}.${+d.slice(5, 7)}.${title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`);
+    const mehr = z.length > 10 ? `${TRENNER}+${z.length - 10} weitere` : '';
+    return ALARM + (z.length ? z.slice(0, 10).join(TRENNER) : '— (keine offenen)') + mehr + (liste.length >= 100 ? `${TRENNER}Abruf bei 100 abgeschnitten` : '');
+  } catch {
+    return `${ALARM}nicht abrufbar (Antwort unlesbar)`;
+  }
+}
+
+/** `--jq`-Projektion (Bodies sprengten den 1-MB-Puffer, ENOBUFS); `per_page=100` aufsteigend: bei Überlauf fallen die NEUESTEN weg, nie die ältesten Alarme. */
+const ALARM_JQ = '[.[]|{number,title:((.title//"")[:10]),created_at,labels:[.labels[]|{name}],pull_request:(.pull_request!=null)}]';
+
+export function sammleAlarme(laufe: Laufe): string {
+  try {
+    return alarmZeile(laufe('gh', ['api', 'repos/{owner}/{repo}/issues?state=open&creator=github-actions%5Bbot%5D&per_page=100&sort=created&direction=asc', '--jq', ALARM_JQ]));
+  } catch (e) {
+    return `${ALARM}nicht abrufbar (${(e as { code?: string }).code ?? 'gh-Fehler'})`;
+  }
+}
 
 /**
  * **Frische-Prüfung «stale wip»** (`QS-PLAN-WIP-FRISCHE`): die `wip`-Schritte

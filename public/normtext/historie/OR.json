@@ -793,12 +793,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Verjährung"
     }
    ]
   },
   "61": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -815,7 +816,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "H. Verantwortlichkeit öffentlicher Beamter und Angestellter"
     }
    ]
   },
@@ -2254,7 +2256,7 @@
    ]
   },
   "329": {
-   "giltSeit": "2021-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2271,7 +2273,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Freizeit"
     }
    ],
    "erbt": [
@@ -5343,7 +5346,7 @@
    ]
   },
   "640": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5377,7 +5380,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Gesellschaft"
     }
    ],
    "erbt": [
@@ -5431,7 +5435,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "643": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -5465,7 +5469,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Zeitpunkt; mangelnde Voraussetzungen"
     }
    ],
    "erbt": [
@@ -5769,7 +5774,7 @@
    "aufgehobenSeit": "1992-07-01"
   },
   "656": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5786,7 +5791,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Stellung der Vorzugsaktien"
     }
    ],
    "erbt": [
@@ -6174,7 +6180,7 @@
    ]
   },
   "676": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6191,7 +6197,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Bauzinse"
     }
    ],
    "erbt": [
@@ -6199,7 +6206,7 @@
    ]
   },
   "677": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6233,7 +6240,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Tantiemen"
     }
    ],
    "erbt": [
@@ -6266,7 +6274,7 @@
    ]
   },
   "679": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6317,7 +6325,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Tantiemen im Konkurs"
     }
    ],
    "erbt": [
@@ -6515,7 +6524,7 @@
    ]
   },
   "687": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6532,7 +6541,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Nicht voll einbezahlte Namenaktien"
     }
    ],
    "erbt": [
@@ -6589,7 +6599,7 @@
    ]
   },
   "690": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6606,7 +6616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Mehrere Berechtigte"
     }
    ],
    "erbt": [
@@ -7258,7 +7269,7 @@
    ]
   },
   "706": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7309,7 +7320,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Legitimation und Gründe"
     }
    ],
    "erbt": [
@@ -7418,7 +7430,7 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "709": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7452,7 +7464,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Vertretung von Aktionärskategorien und -gruppen"
     }
    ],
    "erbt": [
@@ -7674,7 +7687,7 @@
    ]
   },
   "717": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7708,7 +7721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -7844,7 +7858,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "721": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7878,7 +7892,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Prokuristen und Bevollmächtigte"
     }
    ],
    "erbt": [
@@ -7957,7 +7972,7 @@
    ]
   },
   "726": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7974,7 +7989,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "VIII. Abberufung und Einstellung"
     }
    ],
    "erbt": [
@@ -8069,7 +8085,7 @@
    ]
   },
   "729": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8086,7 +8102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Unabhängigkeit der Revisionsstelle"
     }
    ],
    "erbt": [
@@ -11149,7 +11166,7 @@
    ]
   },
   "900": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11166,7 +11183,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Zeichnung"
     }
    ],
    "erbt": [
@@ -11829,7 +11847,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Wesentlicher Inhalt"
     }
    ],
    "erbt": [
@@ -11954,7 +11973,7 @@
    ]
   },
   "955": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11971,7 +11990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Überwachung"
     }
    ],
    "erbt": [
@@ -11979,7 +11999,7 @@
    ]
   },
   "956": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11996,7 +12016,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Schutz der Firma"
     }
    ],
    "erbt": [
@@ -13634,7 +13655,7 @@
    ]
   },
   "1153": {
-   "giltSeit": "2021-02-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -13651,7 +13672,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Im Allgemeinen"
     }
    ],
    "erbt": [
@@ -18310,7 +18332,7 @@
    ]
   },
   "652_c": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -18344,7 +18366,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Leistung der Einlagen"
     }
    ],
    "erbt": [
@@ -18487,7 +18510,7 @@
    ]
   },
   "652_f": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -18538,7 +18561,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Prüfungsbestätigung"
     }
    ],
    "erbt": [
@@ -21625,7 +21649,7 @@
    ]
   },
   "706_b": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -21659,7 +21683,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "VIII. Nichtigkeit"
     }
    ],
    "erbt": [
