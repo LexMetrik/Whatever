@@ -184,7 +184,7 @@ jobs:
       #       im Titel stehen, nicht im vierten Kommentar.
       # Zettel-Muster (1.10.2026, QS-MONITOR-ROT): Label `alarm:normen-monitor`, ERR-Trap
       # → Warnung statt Lauf-Rot; Wortlaut bei waechter.yml.
-      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren/eskalieren
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/eskalieren
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
@@ -210,12 +210,9 @@ jobs:
           done
           echo "Rot-Serie in Folge (inkl. diesem Lauf): ${serie}"
 
-          if [ -n "$offen" ]; then
-            gh issue comment "$offen" --body "Erneut rot am $(date +%F) — ${serie}. roter Lauf in Folge. ${rumpf}"
-            nr="$offen"
-          else
-            nr=$(for l in "--label alarm:normen-monitor" ""; do gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" && break; done | grep -oE '[0-9]+$')
-          fi
+          # Offener Zettel: kein Wiederhol-Kommentar (seit 1.10.2026, Leser = Alarm-Zeile in plan:next).
+          nr="$offen"
+          [ -n "$nr" ] || nr=$(for l in "--label alarm:normen-monitor" ""; do gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" && break; done | grep -oE '[0-9]+$')
 
           if [ "$serie" -ge 3 ]; then
             titel=$(gh issue view "$nr" --json title --jq '.title')

@@ -4,7 +4,7 @@ import {
 } from '../pages/gesetz-leser/v3/einzelModus';
 import type { Sektion } from '../lib/normtext/browse';
 import type { NormSnapshot } from '../lib/normtext/typen';
-import { erzeugeSprungZeitplan, type ZeitplanUhr } from '../pages/gesetz-leser/v3/sprungWege';
+import { erzeugeSprungZeitplan, nachlaufUeberholt, type ZeitplanUhr } from '../pages/gesetz-leser/v3/sprungWege';
 
 // ═══ W2·17-UI-BEFUNDE · EIN SPRUNGWEG FÜR DEN EINZELMODUS ═══════════════════
 //
@@ -186,5 +186,18 @@ describe('(e) ein neuer Sprung verwirft die Timer des früheren (PE-B10-B03)', (
     vor(2000);
     expect(log).toEqual([]);
     expect(offen()).toBe(0);
+  });
+});
+
+// Flake 4.10.2026 (`e2e/leser-einzelmodus` «←/→ blättern»): der Frame-Nachlauf des →-Schritts schrieb
+// 3,5 ms nach dem ←-Schritt dessen alten Artikel zurück. ROT ZU BEKOMMEN: `nachlaufUeberholt` immer
+// `false` liefern lassen ⇒ (f1) rot; die Bedingung `imEinzel &&` streichen ⇒ (f2) rot.
+describe('(f) ein überholter Nachlauf springt nicht zurück (Flake 4.10.2026)', () => {
+  it('(f1) Einzelmodus: die Adresse trägt inzwischen einen anderen Anker ⇒ überholt', () => {
+    expect(nachlaufUeberholt('#art-337_d', '#art-337_c', true)).toBe(true);
+    expect(nachlaufUeberholt('#art-337_d', '#art-337_d', true)).toBe(false);
+  });
+  it('(f2) Gesamtansicht: nie überholt — dort schreibt der Sprung den Anker selbst um', () => {
+    expect(nachlaufUeberholt('#art-336c', '#art-336_c', false)).toBe(false);
   });
 });
