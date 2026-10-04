@@ -133,10 +133,11 @@
 "bs_appellationsgericht_ZK.2023.11":{"zitierung":"Appellationsgericht BS ZK.2023.11 vom 20.03.2024","regesteKurz":"Vorsorgliche Massnahme betreffend unlauterer Wettbewerb","datum":"2024-03-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZK.2025.3":{"zitierung":"Appellationsgericht BS ZK.2025.3 vom 25.09.2025","regesteKurz":"vorsorgliche Massnahmen betreffend UWG/Persönlichkeitsschutz","datum":"2025-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2021.5":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.5 vom 17.02.2022","regesteKurz":"Krankentaggeld; keine Versicherungsunterstellung","datum":"2022-02-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_ZV.2024.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.2 vom 25.09.2024","regesteKurz":"Krankentaggeldversicherung nach VVG Nichteintreten mangels örtlicher Zuständigkeit","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_ZV.2024.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.2 vom 25.09.2024","regesteKurz":"Krankentaggeldversicherung nach VVG Nichteintreten mangels örtlicher Zuständigkeit","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_zivilgericht_GS.2024.38":{"zitierung":"Zivilgericht BS GS.2024.38 vom 18.06.2026","regesteKurz":"(nicht rechtskräftig)","datum":"2026-06-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_zivilgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_152_III_127","gewicht":0},{"key":"bge_151_III_122","gewicht":0},{"key":"bge_150_III_268","gewicht":0},{"key":"bge_150_III_413","gewicht":0},{"key":"bge_149_III_379","gewicht":0},{"key":"bge_149_III_249","gewicht":0},{"key":"bge_149_III_81","gewicht":1},{"key":"bge_152_III_115__voll","gewicht":0,"erwaegungen":["E. 3"]},{"key":"bge_148_III_242__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"bge_147_III_337__voll","gewicht":0,"erwaegungen":["E. 2"]},{"key":"bs_appellationsgericht_ZK.2025.3","gewicht":null}],
+"1":[{"key":"bge_152_III_127","gewicht":0},{"key":"bge_151_III_122","gewicht":0},{"key":"bge_150_III_268","gewicht":0},{"key":"bge_150_III_413","gewicht":0},{"key":"bge_149_III_379","gewicht":0},{"key":"bge_149_III_249","gewicht":0},{"key":"bge_149_III_81","gewicht":1},{"key":"bge_152_III_115__voll","gewicht":0,"erwaegungen":["E. 3"]},{"key":"bge_148_III_242__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"bge_147_III_337__voll","gewicht":0,"erwaegungen":["E. 2"]},{"key":"bs_zivilgericht_GS.2024.38","gewicht":null},{"key":"bs_appellationsgericht_ZK.2025.3","gewicht":null}],
 "2":[{"key":"bge_149_III_379","gewicht":0},{"key":"bs_sozialversicherungsgericht_ZV.2024.2","gewicht":null}],
 "3":[{"key":"bge_151_III_297","gewicht":0},{"key":"bge_148_III_242","gewicht":0}],
 "5":[{"key":"bge_149_III_478","gewicht":0},{"key":"bge_149_III_71","gewicht":0},{"key":"bge_152_III_137__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"bge_148_III_242__voll","gewicht":0,"erwaegungen":["E. 3.1","E. 3.2"]}],
@@ -196,7 +197,7 @@
 "117":[{"key":"bs_appellationsgericht_ZK.2020.3","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.46","gewicht":null}],
 "119":[{"key":"bge_150_II_417","gewicht":0}],
 "120":[{"key":"bge_152_III_30","gewicht":0}],
-"121":[{"key":"bs_appellationsgericht_BEZ.2021.36","gewicht":null}],
+"121":[{"key":"bs_zivilgericht_GS.2024.38","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2021.36","gewicht":null}],
 "126":[{"key":"bge_152_III_137","gewicht":0},{"key":"bge_148_III_242__voll","gewicht":0,"erwaegungen":["E. 3.3"]}],
 "129":[{"key":"bge_148_III_377","gewicht":0},{"key":"bge_147_III_159","gewicht":0},{"key":"bs_appellationsgericht_ZK.2025.3","gewicht":null},{"key":"bs_appellationsgericht_ZB.2024.43","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.11","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.10","gewicht":null}],
 "132":[{"key":"bs_appellationsgericht_SB.2018.46","gewicht":null}],
@@ -243,7 +244,7 @@
 "8a":[{"key":"bge_149_III_379","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":7,"bger":3,"kantonal":1},
+"1":{"bge":7,"bger":3,"kantonal":2},
 "2":{"bge":1,"kantonal":1},
 "3":{"bge":2},
 "5":{"bge":2,"bger":2},
@@ -303,7 +304,7 @@
 "117":{"kantonal":2},
 "119":{"bge":1},
 "120":{"bge":1},
-"121":{"kantonal":1},
+"121":{"kantonal":2},
 "126":{"bge":1,"bger":1},
 "129":{"bge":2,"kantonal":4},
 "132":{"kantonal":1},

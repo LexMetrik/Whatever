@@ -894,6 +894,12 @@
     "bs_appellationsgericht_AUS.2026.8": [
       "BS-122.300"
     ],
+    "bs_appellationsgericht_AUS.2026.80": [
+      "BS-122.300"
+    ],
+    "bs_appellationsgericht_AUS.2026.85": [
+      "BS-122.300"
+    ],
     "bs_appellationsgericht_AUS.2026.9": [
       "BS-122.300"
     ],
@@ -2474,6 +2480,11 @@
       "BS-154.100",
       "BS-154.810"
     ],
+    "bs_appellationsgericht_BES.2025.100": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-291.400"
+    ],
     "bs_appellationsgericht_BES.2025.101": [
       "BS-154.100",
       "BS-154.810"
@@ -2486,6 +2497,11 @@
     "bs_appellationsgericht_BES.2025.104": [
       "BS-154.100",
       "BS-154.810"
+    ],
+    "bs_appellationsgericht_BES.2025.105": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-291.400"
     ],
     "bs_appellationsgericht_BES.2025.106": [
       "BS-154.100"
@@ -2505,6 +2521,11 @@
     ],
     "bs_appellationsgericht_BES.2025.116": [
       "BS-154.100"
+    ],
+    "bs_appellationsgericht_BES.2025.117": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-291.400"
     ],
     "bs_appellationsgericht_BES.2025.118": [
       "BS-154.100"
@@ -2580,6 +2601,9 @@
       "BS-154.810"
     ],
     "bs_appellationsgericht_BES.2025.35": [
+      "BS-154.100"
+    ],
+    "bs_appellationsgericht_BES.2025.36": [
       "BS-154.100"
     ],
     "bs_appellationsgericht_BES.2025.38": [
@@ -2757,6 +2781,11 @@
     "bs_appellationsgericht_BES.2026.2": [
       "BS-154.100",
       "BS-154.810"
+    ],
+    "bs_appellationsgericht_BES.2026.49": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-257.100"
     ],
     "bs_appellationsgericht_BES.2026.6": [
       "BS-154.100",
@@ -3833,6 +3862,9 @@
     "bs_appellationsgericht_BEZ.2026.6": [
       "BS-154.100"
     ],
+    "bs_appellationsgericht_BEZ.2026.7": [
+      "BS-154.100"
+    ],
     "bs_appellationsgericht_BEZ.2026.8": [
       "BS-154.100",
       "BS-230.100"
@@ -4294,6 +4326,9 @@
     "bs_appellationsgericht_DGS.2025.33": [
       "BS-154.100",
       "BS-154.810"
+    ],
+    "bs_appellationsgericht_DGS.2025.34": [
+      "BS-154.100"
     ],
     "bs_appellationsgericht_DGS.2025.36": [
       "BS-154.100"
@@ -10410,6 +10445,14 @@
       "BS-162.100",
       "BS-270.100"
     ],
+    "bs_appellationsgericht_VD.2025.146": [
+      "BS-154.100",
+      "BS-154.810",
+      "BS-258.200",
+      "BS-258.210",
+      "BS-270.100",
+      "BS-291.400"
+    ],
     "bs_appellationsgericht_VD.2025.147": [
       "BS-153.100",
       "BS-154.100",
@@ -10492,6 +10535,12 @@
     "bs_appellationsgericht_VD.2025.201": [
       "BS-154.100",
       "BS-257.900",
+      "BS-270.100"
+    ],
+    "bs_appellationsgericht_VD.2025.203": [
+      "BS-153.100",
+      "BS-154.100",
+      "BS-154.810",
       "BS-270.100"
     ],
     "bs_appellationsgericht_VD.2025.204": [
@@ -10756,6 +10805,22 @@
       "BS-270.100",
       "BS-640.100",
       "BS-650.100"
+    ],
+    "bs_appellationsgericht_VD.2025.73": [
+      "BS-153.100",
+      "BS-153.260",
+      "BS-153.600",
+      "BS-153.800",
+      "BS-153.810",
+      "BS-154.100",
+      "BS-253.100",
+      "BS-270.100",
+      "BS-291.400",
+      "BS-510.100",
+      "BS-510.110",
+      "BS-724.100",
+      "BS-724.110",
+      "BS-952.200"
     ],
     "bs_appellationsgericht_VD.2025.75": [
       "BS-153.100",
@@ -13278,6 +13343,9 @@
       "BS-154.100",
       "BS-154.200"
     ],
+    "bs_sozialversicherungsgericht_IV.2025.44": [
+      "BS-154.100"
+    ],
     "bs_sozialversicherungsgericht_IV.2025.49": [
       "BS-154.100",
       "BS-154.200"
@@ -14029,6 +14097,9 @@
       "BS-154.100",
       "BS-154.200",
       "BS-291.100"
+    ],
+    "bs_zivilgericht_GS.2024.38": [
+      "BS-154.100"
     ],
     "bs_zivilgericht_K3.2025.24": [
       "BS-154.810",

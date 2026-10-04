@@ -19,13 +19,15 @@
 "bs_appellationsgericht_SB.2024.74":{"zitierung":"Appellationsgericht BS SB.2024.74 vom 16.04.2025","regesteKurz":"Diensterschwerung","datum":"2025-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.102":{"zitierung":"Appellationsgericht BS VD.2023.102 vom 19.09.2024","regesteKurz":"Sanierung im vereinfachten Bewilligungsverfahren","datum":"2024-09-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.40":{"zitierung":"Appellationsgericht BS VD.2023.40 vom 09.08.2023","regesteKurz":"Vollzugsbefehl","datum":"2023-08-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.122":{"zitierung":"Appellationsgericht BS VD.2024.122 vom 26.03.2025","regesteKurz":"Tierhaltung","datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.122":{"zitierung":"Appellationsgericht BS VD.2024.122 vom 26.03.2025","regesteKurz":"Tierhaltung","datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.73":{"zitierung":"Appellationsgericht BS VD.2025.73 vom 05.08.2026","regesteKurz":"Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)","datum":"2026-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.48","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
 "2":[{"key":"bs_appellationsgericht_SB.2024.74","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.101","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
 "4":[{"key":"bs_appellationsgericht_DGS.2026.4","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.74","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.100","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.52","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_AUS.2024.23","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.101","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.41","gewicht":null}],
-"11":[{"key":"bs_appellationsgericht_SB.2020.97","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null}],
+"11":[{"key":"bs_appellationsgericht_VD.2025.73","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.97","gewicht":null}],
 "14":[{"key":"bs_appellationsgericht_BES.2022.48","gewicht":null}],
 "16":[{"key":"bs_appellationsgericht_SB.2021.132","gewicht":null}],
 "19":[{"key":"bs_appellationsgericht_VD.2024.122","gewicht":null}],
@@ -37,7 +39,8 @@
 "1":{"kantonal":3},
 "2":{"kantonal":3},
 "4":{"kantonal":9},
-"11":{"kantonal":1},
+"5":{"kantonal":1},
+"11":{"kantonal":2},
 "14":{"kantonal":1},
 "16":{"kantonal":1},
 "19":{"kantonal":1},

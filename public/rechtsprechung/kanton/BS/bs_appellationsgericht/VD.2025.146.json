@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-10-03",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.146",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "VD.2025.146",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS VD.2025.146 vom 06.05.2026",
-      "datum": "2026-05-06",
+      "zitierung": "Appellationsgericht BS VD.2025.146 vom 06.04.2026",
+      "datum": "2026-04-06",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -246,13 +246,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79598&Template=search_result_document.html",
-      "abgerufen": "2026-10-03",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-09-29",
       "sha": "8af5cea780792a28e31dd33c96380e0be0e00de55eabc9a7d946cd9fd12fb6f7",
       "erstpublikation": "2026-09-29",
       "aktualisiert": "2026-09-29",
       "nummerSekundaer": "AG.2026.280",
-      "ecli": "ECLI:CH:BSA:2026:VD.2025.146"
+      "ecli": "ECLI:CH:BSA:2026:VD.2025.146",
+      "datumPortal": "2026-05-06"
     }
   ]
 }
