@@ -45,7 +45,7 @@ async function umleitungFuer(schluessel: string, adresse?: { search: string; has
       ebene: 'bund', schluessel, navigate, erlass: null, istSekundaer: false,
       meldeInhaltsKopf: (() => {}) as unknown as MeldeKopf,
       setManifest: () => {}, setCurrency: () => {}, setStruktur: () => {}, setKopf: () => {},
-      setKantonSys: () => {}, setKantonLuecken: () => {}, setErlass: () => {}, setEintraege: () => {},
+      setKantonSys: () => {}, setKantonLuecken: () => {}, setTeilausfall: () => {}, setErlass: () => {}, setEintraege: () => {},
       setFehler: () => {}, adresse,
     });
     return null;

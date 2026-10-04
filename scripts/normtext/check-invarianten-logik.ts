@@ -21,6 +21,8 @@
 //     (Council-Befund); Token-Vollständigkeit + Leerblock-Sanity deckt check:
 //     vollstaendigkeit bereits ab.
 
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+
 export interface InvariantenEintrag {
   id?: string;
   artikel?: string;
@@ -101,7 +103,7 @@ export const ARTEFAKT_ERWARTET: ReadonlyMap<string, number> = new Map([
 // Text, der mit einem freistehenden lat. Zähl-Suffix + Trenner beginnt (der
 // N1-Leak «a bis .» → Text «bis . …»). Nur am ANFANG, gefolgt von Punkt/Klammer,
 // damit legitime Sätze mit «bis» («… bis zum Ende …») nicht getroffen werden.
-const SUFFIX_LEAK_RE = /^(?:bis|ter|quater|quinquies|sexies)\s*[.)]/i;
+const SUFFIX_LEAK_RE = new RegExp(`^${SUFFIX_ALT}\\s*[.)]`, 'i');
 
 function pruefeText(
   gesetz: string,

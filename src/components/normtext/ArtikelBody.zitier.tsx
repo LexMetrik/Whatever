@@ -34,7 +34,7 @@ export function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
   // Ruhezustand wäre eine neue Design-Entscheidung — die trifft nicht D0.
   const knopf = (
     <button type="button" onClick={kopiere} title={`${zitat} — kopieren`} aria-label={`${zitat} — kopieren`}
-      className={`num font-semibold cursor-pointer text-brass-700 hover:underline decoration-dotted underline-offset-2 ${klasse ?? ''}`}>
+      className={`num lc-zitiermarke font-semibold cursor-pointer text-brass-700 hover:underline decoration-dotted underline-offset-2 ${klasse ?? ''}`}>
       {ok ? '✓' : children}
     </button>
   );

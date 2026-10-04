@@ -6,9 +6,65 @@
   "referenz": 32,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 679",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/679"
+    },
+    {
+     "label": "BBl 2021 1666",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/1666"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Zweck, Ziele und Grundsätze"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 729",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/729"
+    },
+    {
+     "label": "BBl 2021 1314",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/1314"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 679",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/679"
+    },
+    {
+     "label": "BBl 2021 1666",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/1666"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+  }
+ ],
  "artikel": {
   "1": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -25,7 +81,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Zweck, Ziele und Grundsätze"
     }
    ]
   },
@@ -49,6 +106,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "3": {
@@ -71,6 +131,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "4": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "10": {
@@ -725,7 +802,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
     }
    ]
   },
@@ -749,6 +827,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26": {
@@ -788,6 +869,9 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27": {
@@ -810,6 +894,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "28": {
@@ -849,6 +936,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "29": {
@@ -990,6 +1080,9 @@
      "absatz": "3",
      "item": "j"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "30": {
@@ -2004,6 +2097,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27_a": {
@@ -2043,6 +2139,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27_b": {
@@ -2082,10 +2181,13 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "29_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2102,8 +2204,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
     }
+   ]
+  },
+  "29_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "29_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "29_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "29_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "2_a": {
@@ -2126,6 +2257,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33_a": {

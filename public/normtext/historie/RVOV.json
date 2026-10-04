@@ -1,11 +1,125 @@
 {
  "erlass": "RVOV",
  "abdeckung": {
-  "fussnoten": 108,
-  "ereignis": 82,
+  "fussnoten": 109,
+  "ereignis": 83,
   "referenz": 26,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5251",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/805"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2006-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 1269",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2006-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 1269",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2010-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 3175",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5949",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5949",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/819"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/23"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 6137",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/751"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2002-10-01",
@@ -88,7 +202,7 @@
    ]
   },
   "6": {
-   "giltSeit": "2010-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -101,7 +215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Gliederung der Bundesverwaltung"
     }
    ]
   },
@@ -121,6 +236,16 @@
      "absatz": "1",
      "item": "d"
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "15": {
@@ -475,7 +600,7 @@
    "aufgehobenSeit": "2014-01-01"
   },
   "22_a": {
-   "giltSeit": "2025-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -488,7 +613,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Ausnahmen von der Führung mit Leistungsvereinbarung"
     },
     {
      "typ": "fassung",
@@ -501,7 +627,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Ausnahmen von der Führung mit Leistungsvereinbarung"
     }
    ]
   },
@@ -596,7 +723,7 @@
    ]
   },
   "27_a": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -609,8 +736,79 @@
       }
      ],
      "absatz": null,
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Administrativuntersuchung"
+    }
+   ]
+  },
+  "27_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_c_bis": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 420",
+       "url": ""
+      }
+     ],
+     "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_i": {
@@ -629,10 +827,20 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "27_k": {
-   "giltSeit": "2006-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -645,12 +853,34 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Genehmigung kantonaler Erlasse"
     }
    ]
   },
+  "27_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "27_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "27_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "27_o": {
-   "giltSeit": "2006-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -663,8 +893,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
     }
+   ]
+  },
+  "27_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "27_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "27_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "27_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "27_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "5_a": {
@@ -721,8 +987,22 @@
     }
    ]
   },
+  "7_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "7_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
   "8_a": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -735,7 +1015,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
     }
    ]
   },
@@ -755,6 +1036,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_c": {
@@ -773,6 +1057,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_c_bis": {
@@ -791,6 +1078,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "8_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "8_e": {
@@ -900,6 +1197,9 @@
      "absatz": "2",
      "item": "m"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_e_bis": {
@@ -918,6 +1218,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_e_ter": {
@@ -936,6 +1239,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_f": {
@@ -967,6 +1273,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_f_bis": {
@@ -985,6 +1294,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_g": {
@@ -1003,6 +1315,23 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "8_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "8_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "8_i_bis": {
@@ -1021,6 +1350,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_i_ter": {
@@ -1039,6 +1371,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "8_j": {
@@ -1094,7 +1429,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
     },
     {
      "typ": "fassung",
@@ -1107,7 +1443,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
     }
    ]
   },
@@ -1127,6 +1464,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "8_k": {
@@ -1226,8 +1567,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
     }
+   ]
+  },
+  "8_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "8_n": {
@@ -1246,6 +1595,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_o": {
@@ -1303,6 +1655,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_p": {
@@ -1321,6 +1676,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_q": {
@@ -1352,6 +1710,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "8_r": {
@@ -1370,6 +1731,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "8_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "8_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "9_10_c": {

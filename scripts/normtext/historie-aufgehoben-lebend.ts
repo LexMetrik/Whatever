@@ -40,6 +40,8 @@ interface TextBlock {
 interface TextEintrag {
   id: string;
   bloecke?: TextBlock[];
+  /** Amtliches Signal «ganzer Artikel aufgehoben» (`NormSnapshot.aufgehoben`, aufhebung-signal.ts). */
+  aufgehoben?: boolean | null;
 }
 
 /** Rekursiv alle Text-Fragmente eines Blocks (inkl. verschachtelter Items). */
@@ -107,9 +109,47 @@ export function pruefeAufgehobenLebend(
   return { befunde, geprueft, ohneText };
 }
 
+export interface AufgehobenGiltSeitBefund {
+  erlass: string;
+  token: string;
+  giltSeit: string;
+}
+
+/**
+ * Gegenrichtung zu `pruefeAufgehobenLebend` (P7 #53, GP M1 Aufhebungs-Sammel 1.10.2026): trägt der Text-Shard den
+ * Artikel amtlich als aufgehoben (`aufgehoben: true`), darf die Historie kein «Gilt seit …» zeigen — ausser sie nennt
+ * selbst das datierte `aufgehobenSeit` (die Anzeige führt «Aufgehoben seit …» vor «Gilt seit …», fassungsEtikett.ts).
+ * Vor dem Fix: 7 Artikel (AIG 72, ASYLV2 65, AVO 22a–c/50b–f, BKV 8, HREGV 162–163, ZSTV 75a–m).
+ *
+ * GRENZE (offengelegt): der Generator liest dasselbe Feld, um `giltSeit` zu unterdrücken — das Tor ist ein
+ * Konsistenz-Wächter über seine eigene Regel, kein unabhängiger Zweitbeweis. Die Richtigkeit des Feldes `aufgehoben`
+ * selbst hängt an `check:leerstellen`/aufhebung-signal.ts und den amtlichen Fedlex-HTMLs.
+ */
+export function pruefeAufgehobenGiltSeit(
+  historie: ReadonlyMap<string, { artikel?: Record<string, { giltSeit?: string | null; aufgehobenSeit?: string }> }>,
+  textWurzel: string,
+): { befunde: AufgehobenGiltSeitBefund[]; geprueft: number } {
+  const befunde: AufgehobenGiltSeitBefund[] = [];
+  let geprueft = 0;
+  for (const [erlass, shard] of [...historie].sort(([a], [b]) => a.localeCompare(b))) {
+    const pfad = resolve(textWurzel, `${erlass}.json`);
+    if (!existsSync(pfad)) continue;
+    const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: TextEintrag[] };
+    for (const e of doc.eintraege ?? []) {
+      if (e.aufgehoben !== true) continue;
+      const token = tokenAusId(e.id);
+      const h = shard.artikel?.[token];
+      if (!h) continue;
+      geprueft++;
+      if (h.giltSeit && !h.aufgehobenSeit) befunde.push({ erlass, token, giltSeit: h.giltSeit });
+    }
+  }
+  return { befunde, geprueft };
+}
+
 /** Historie-Shards eines Verzeichnisses einlesen (für den Stand-alone-/Rot-Beweis-Lauf). */
-export function leseHistorieShards(dir: string): Map<string, { artikel?: Record<string, { aufgehobenSeit?: string }> }> {
-  const m = new Map<string, { artikel?: Record<string, { aufgehobenSeit?: string }> }>();
+export function leseHistorieShards(dir: string): Map<string, { artikel?: Record<string, { giltSeit?: string | null; aufgehobenSeit?: string }> }> {
+  const m = new Map<string, { artikel?: Record<string, { giltSeit?: string | null; aufgehobenSeit?: string }> }>();
   for (const f of readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
     m.set(f.replace(/\.json$/, ''), JSON.parse(readFileSync(resolve(dir, f), 'utf8')));
   }

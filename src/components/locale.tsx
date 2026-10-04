@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { lokalSpeicher } from '../lib/sichererSpeicher';
 
 // ─── Minimales i18n-Gerüst (deterministisch, ohne maschinelle Übersetzung) ──
 //
@@ -24,7 +25,7 @@ const SPEICHER_KEY = 'lexmetrik.locale';
 
 function gespeicherteLocale(): Locale {
   try {
-    const roh = localStorage.getItem(SPEICHER_KEY);
+    const roh = lokalSpeicher.lies(SPEICHER_KEY);
     if (roh === 'de' || roh === 'en' || roh === 'fr' || roh === 'it') return roh;
   } catch { /* Speicher blockiert → Default */ }
   return 'de';
@@ -39,7 +40,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = useState<Locale>(gespeicherteLocale);
 
   useEffect(() => {
-    try { localStorage.setItem(SPEICHER_KEY, locale); } catch { /* ignorieren */ }
+    lokalSpeicher.schreib(SPEICHER_KEY, locale); // ignorieren
     // <html lang> technisch an die Locale koppeln (Inhalt bleibt vorerst de)
     document.documentElement.lang = locale;
   }, [locale]);

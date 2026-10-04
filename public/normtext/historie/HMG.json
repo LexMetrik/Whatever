@@ -6,6 +6,116 @@
   "referenz": 31,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Integrität und Transparenz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Aufgaben und strategische Ziele"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 2745",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/280"
+    },
+    {
+     "label": "BBl 2013 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2013/1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2021-05-26",
@@ -1193,7 +1303,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Vertrieb, Verschreibung, Abgabe und Anwendung"
     }
    ]
   },
@@ -1251,6 +1362,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -1307,6 +1421,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
@@ -1397,6 +1514,23 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "28": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -1419,6 +1553,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -1441,6 +1578,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -2008,7 +2148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Integrität und Transparenz"
     }
    ]
   },
@@ -2032,6 +2173,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "57": {
@@ -2204,7 +2348,7 @@
    ]
   },
   "61": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2221,8 +2365,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Schweigepflicht und Datenbearbeitung"
     }
+   ]
+  },
+  "62": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "63": {
@@ -2245,6 +2397,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64": {
@@ -2267,6 +2422,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "65": {
@@ -2727,7 +2885,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Aufgaben und strategische Ziele"
     }
    ]
   },
@@ -2751,6 +2910,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "71": {
@@ -3022,7 +3184,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Finanzhaushalt und Geschäftsbericht"
     }
    ]
   },
@@ -3046,6 +3209,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "79": {
@@ -3068,6 +3234,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "80": {
@@ -3090,6 +3259,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "81": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "82": {
@@ -3886,6 +4065,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "2_a": {
@@ -4179,6 +4361,9 @@
      "absatz": "1",
      "item": "4"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "62_b": {
@@ -4218,6 +4403,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "62_c": {
@@ -4240,6 +4428,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64_a": {
@@ -4279,10 +4470,13 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64_b": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4299,8 +4493,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Informationssystem Antibiotika in der Veterinärmedizin"
     }
+   ]
+  },
+  "64_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "64_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "64_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "64_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "64_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "67_a": {
@@ -4455,6 +4685,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "79_a": {
@@ -4477,6 +4710,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "7_a": {

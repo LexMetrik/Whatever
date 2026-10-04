@@ -164,4 +164,9 @@ export function zitatMitAusweis(zitat: string, a: StandAusweis): string {
  *  als EINGABE geführt (§2: kein arg-loses `new Date()` in src/lib); der Klick-
  *  Handler in der UI-Schicht reicht `new Date()` herein. So bleibt der Baustein
  *  deterministisch/testbar, die Uhr sitzt an der UI-Grenze (Muster VerfallUebersicht). */
-export const heuteIso = (jetzt: Date): string => jetzt.toISOString().slice(0, 10);
+export const heuteIso = (jetzt: Date): string => {
+  // W2·17 E-D1-B04: LOKALES Kalenderdatum des Nutzers (nicht toISOString = UTC) —
+  // sonst trug «abgerufen am» zwischen 00:00 und 01:00/02:00 Schweizer Zeit den Vortag.
+  const z = (n: number): string => String(n).padStart(2, '0');
+  return `${jetzt.getFullYear()}-${z(jetzt.getMonth() + 1)}-${z(jetzt.getDate())}`;
+};

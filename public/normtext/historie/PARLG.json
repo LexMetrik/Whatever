@@ -6,6 +6,62 @@
   "referenz": 22,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2009-03-02",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+    },
+    {
+     "label": "BBl 2008 1869",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Petitionen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2009-03-02",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+    },
+    {
+     "label": "BBl 2008 1869",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2009-03-02",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/124"
+    },
+    {
+     "label": "BBl 2008 1869",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/423"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Berichterstattung im Rat"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2023-12-04",
@@ -859,7 +915,7 @@
    ]
   },
   "54": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -893,7 +949,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Berichterstattung im Rat"
     }
    ],
    "aufgehobenSeit": "2009-03-02"
@@ -918,6 +975,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "57": {
@@ -2122,7 +2182,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Petitionen"
     }
    ]
   },
@@ -2146,6 +2207,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "128": {
@@ -2168,6 +2232,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "129": {
@@ -2193,7 +2260,7 @@
    ]
   },
   "130": {
-   "giltSeit": "2009-03-02",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2210,8 +2277,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Wahlen, Bestätigung von Wahlen und Feststellung der Amtsunfähigkeit"
     }
+   ]
+  },
+  "131": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "132": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "133": {
@@ -2234,6 +2316,58 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "134": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "135": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "136": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "137": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "138": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "139": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "140": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "141": {
@@ -3070,6 +3204,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "154_a": {

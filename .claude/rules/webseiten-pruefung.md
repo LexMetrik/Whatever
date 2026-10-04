@@ -5,6 +5,8 @@ paths:
   - "src/components/**"
 ---
 # Webseiten-Prüfung — eigenes Ansehen/Prüfen der laufenden Webseite
+
+*Belege verschobener Passagen («Archiv §…»): `archiv/steuerflaeche-historie-2026-10-02/webseiten-pruefung.md` (QS-DOKU-DIAET 2.10.2026).*
 <!-- @wiedervorlage: 2027-02-21 -->
 
 <!-- Anlass: Auftrag David 21.8.2026. Geltung: eigenes Ansehen/Prüfen der
@@ -34,10 +36,7 @@ gemessen, nie im Browser-Pane; jede solche Messung belegt im Bericht, dass
 `document.visibilityState === 'visible'` war. Der Pane bleibt tauglich für
 Struktur (Accessibility-Snapshot), Layout, Farbe und Typografie.
 
-**Anlass:** Eine Pane-Messung meldete die Standort-Marke der Gliederung als in
-Produktion tot (`[data-toc-aktiv]` = 0 über 28'000 px, auch auf der Live-Seite).
-Der echte Defekt lag woanders (verhungerte Entprellung, `inhalt-hooks.tsx`), und
-drei der vier daraus abgeleiteten Ursachen-Verdachte waren falsch.
+**Anlass:** Fehlmessung im Pane (18.9.2026, W2·5m-LESER-V3): Archiv §Pane-Anlass.
 
 **Zweitens — Stop-and-go ist kein Lesen.** Ein Wächter, der in Schritten mit
 Wartezeit scrollt, lässt Trailing-Timer feuern, die beim durchgehenden Lesen nie
@@ -48,10 +47,7 @@ ohne Pause** — sonst misst das Tor die eigene Messpause.
 
 **Drittens — Zustand ist eine Folge, kein Schnappschuss.** Ein Wächter für
 Auf/Zu-Zustände, der jeden Prüffall frisch aus `{}` aufbaut, sieht keine
-Altlasten, die ein Pfad liegen lässt. Beleg 19.9.2026 (#924):
-`gliederung-sichtbarkeit.test.ts` war 12/12 grün, während Tieflink → Auto-Zu →
-Zurückscrollen eine reine Artikelliste öffnete (`art@` blieb beim Zuklappen
-stehen, 4'580 Fälle), gefunden erst im Code-Zweitblick. Wer Klapp- oder
+Altlasten, die ein Pfad liegen lässt. Beleg 19.9.2026 (#924): Archiv §Zustandsfolge. Wer Klapp- oder
 Markenzustand prüft, spielt **mindestens eine reale Aktionsfolge** mit den echten
 Übergangsfunktionen nach (`gliederung-zustandsfolgen.test.ts`) und bindet alle
 Schreibstellen an eine Karte (`klappKarte.ts` + Quellsonde).

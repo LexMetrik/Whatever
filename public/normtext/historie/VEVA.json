@@ -6,6 +6,22 @@
   "referenz": 5,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1117",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/207"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2010-01-01",
@@ -921,8 +937,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
     }
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "39": {

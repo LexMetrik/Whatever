@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/VZAE/art_1",
@@ -22,10 +22,10 @@
           "text": "Die Dublin-Assoziierungsabkommen sind in Anhang 4 aufgeführt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_1",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e9555625320fef2f97f87f8cae892f01a6b706a8d8b22108185e61746aabb222"
     },
     {
@@ -46,10 +46,10 @@
           "text": "Als unselbstständige Erwerbstätigkeit gilt namentlich auch die Tätigkeit als Lernende oder Lernender, Praktikantin oder Praktikant, Volontärin oder Volontär, Sportlerin oder Sportler, Sozialhelferin oder Sozialhelfer, Missionar oder Missionarin, religiöse Betreuungsperson, Künstlerin oder Künstler sowie Au-pair-Angestellte oder Au-pair-Angestellter."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_1_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0117804013c990dbc770438d08eebf22a1a843f8c66d7460ff35dab5417227b2"
     },
     {
@@ -69,10 +69,10 @@
           "text": "Als selbstständige Erwerbstätigkeit gilt auch die Ausübung eines freien Berufs wie Ärztin oder Arzt, Anwältin oder Anwalt sowie Treuhänderin oder Treuhänder."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_2",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f4b0f38274ce33609400cf4f50f0202c8b5be0ea64c6faaf55b6abcb28bb9766"
     },
     {
@@ -88,10 +88,10 @@
           "text": "Als grenzüberschreitende Dienstleistung gilt die Ausübung einer zeitlich befristeten Dienstleistung in der Schweiz im Rahmen eines Vertragsverhältnisses durch eine Person oder ein Unternehmen mit Wohnsitz oder Sitz im Ausland."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_3",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "908331cab81f4e4af5a3aba2d415dfd9ba9413dc87c167f5e1f11b7d75caa72f"
     },
     {
@@ -111,10 +111,10 @@
           "text": "Zweifelsfälle sind dem Staatssekretariat für Migration (SEM) zum Entscheid zu unterbreiten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_4",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3d1e4e77f30e885597599eb55e0810cf19ee58f5e45e6c558736463cc628d998"
     },
     {
@@ -127,14 +127,24 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Wird ein Gesuch um eine Kurzaufenthalts- oder Aufenthaltsbewilligung mit Erwerbstätigkeit von der zuständigen Behörde gutgeheissen und befindet sich die betroffene Person noch im Ausland, so ermächtigt die zuständige Behörde die Auslandvertretung zur Visumausstellung. Besteht keine Visumpflicht, so stellt die zuständige Behörde der betroffenen Person auf Gesuch hin eine Zusicherung der Bewilligung aus."
+          "text": "Wird ein Gesuch um eine Kurzaufenthalts- oder Aufenthaltsbewilligung mit Erwerbstätigkeit von der zuständigen Behörde gutgeheissen und befindet sich die betroffene Person noch im Ausland, so unternimmt die zuständige Behörde die folgenden Schritte:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Bei visumpflichtigen Personen ermächtigt sie die Auslandvertretung zur Visumausstellung."
+            },
+            {
+              "marke": "b",
+              "text": "Bei Personen, die im Besitz einer Reisegenehmigung sein müssen gemäss der Verordnung (EU) 2018/1240, stellt sie auf Gesuch hin eine Zusicherung der Kurzaufenthalts- oder Aufenthaltsbewilligung aus."
+            }
+          ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_5",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "cfe0a49b2dccd050d459961c7c7a28a7f3930d29b56ad5a35cd666a3ae8b9e42"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "faddda106ac3843814a603a0257b5f1a5dcd8cf3f8085462b2adc8930a7657e9"
     },
     {
       "id": "bund/VZAE/art_6",
@@ -153,10 +163,10 @@
           "text": "Allein aus Vorkehren wie der Einleitung ehe- und familienrechtlicher Verfahren, der Einschulung von Kindern, dem Liegenschaftserwerb, der Wohnungsmiete, dem Abschluss eines Arbeitsvertrags oder der Geschäftsgründung oder -beteiligung können keine Ansprüche im Bewilligungsverfahren abgeleitet werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_6",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "119c03c0a9522252fad449c11e252f32cae4ea24d2e139d5db3f887663011edf"
     },
     {
@@ -172,10 +182,10 @@
           "text": "Gewerbe- und gesundheitspolizeiliche Bewilligungen und ähnliche Bewilligungen zur Berufsausübung für Ausländerinnen und Ausländer ersetzen die notwendige ausländerrechtliche Bewilligung zur Ausübung einer Erwerbstätigkeit nicht. Liegt die ausländerrechtliche Bewilligung noch nicht vor, ist bei der Bewilligung zur Berufsausübung ein entsprechender Vorbehalt anzubringen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_7",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "221e70e3e7816ddd798c0ff88e9149812f5413849ffa972469d5966bf22ec59f"
     },
     {
@@ -236,10 +246,10 @@
           "text": "Die Ausländerinnen und Ausländer sind verpflichtet, das ausländische Ausweispapier den für Personenkontrollen zuständigen Behörden auf Verlangen vorzuweisen oder innerhalb einer angemessenen Frist vorzulegen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_8",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "02065fcadc740472f7340d7854f849b906261afcf814d520c2692b37a1a22c77"
     },
     {
@@ -260,10 +270,10 @@
           "text": "Die Einreisevoraussetzungen nach Artikel 5 AIG müssen während des gesamten bewilligungsfreien Aufenthalts erfüllt sein."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_9",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4bfe82c5f6588640d10f6616ec20a5a0d96c12aea69ce9a06011c90f03d8fea9"
     },
     {
@@ -283,10 +293,10 @@
           "text": "Ausländerinnen und Ausländer müssen sich spätestens 14 Tage vor Ablauf des bewilligungsfreien Aufenthalts (Art. 9) anmelden, wenn sie nach der Einreise den Aufenthaltszweck ändern wollen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_10",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "aec2de76c4dc9b0744bc3ad31e46db0fd1fdeff9b916c92e0cf6c0e54953916e"
     },
     {
@@ -302,10 +312,10 @@
           "text": "Ausländerinnen und Ausländer, deren Visum für einen Aufenthalt bis zu drei Monaten ausgestellt wurde, müssen 14 Tage vor Ablauf des Visums bei der kantonalen Migrationsbehörde (Art. 88 Abs. 1) eine Verlängerung des Visums beantragen, wenn die Ausreise nicht innerhalb der im Visum festgelegten Frist erfolgen kann oder wenn ein anderer Aufenthaltszweck angestrebt wird."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_11",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "bc4c32589759c4facfedbe2ca9753a7f76e41559b8982277269d238041b9af2c"
     },
     {
@@ -330,10 +340,10 @@
           "text": "Künstlerinnen und Künstler (Art. 19 Abs. 4 Bst. b und 19b Abs. 2 Bst. b) müssen sich unabhängig von der Aufenthaltsdauer in der Schweiz anmelden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_12",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4a05899eb80d00acb7fd6030c03c2b2161ef5a3c64adaa5cf6c22e4fbd478b6f"
     },
     {
@@ -349,10 +359,10 @@
           "text": "Ausländerinnen und Ausländer, die als Privatpersonal erwerbstätig sind und ihren nicht erwerbstätigen Arbeitgeber im Rahmen eines bewilligungsfreien Aufenthalts begleiten, unterstehen den Anmelde- und Bewilligungsvorschriften nach Artikel 9."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_13",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a677182338e13f28ae21f73668f0fddb9a747a01931ea456150c18f736c64251"
     },
     {
@@ -372,10 +382,10 @@
           "text": "Die Meldung muss vor dem Stellenantritt erfolgen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_13_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7e602e364c92293106b9dd3f02aa9e9f54c1285ef8c31ea8031dc969189b0952"
     },
     {
@@ -425,10 +435,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_14",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7e6236c1e610f419d138e7e617af924ec3a07cea0b1b41ca2f5d58d26c0857c6"
     },
     {
@@ -449,10 +459,10 @@
           "text": "Ausländerinnen und Ausländer, die ihren Wohnort in das Ausland verlegen, müssen sich spätestens 14 Tage vor der Ausreise bei der für den früheren Wohnort zuständigen Stelle abmelden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_15",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a3202716ce19ec85c897be1862c639481b4fb6f0d13a09a4a1e479da6ef066a4"
     },
     {
@@ -472,10 +482,10 @@
           "text": "Bei Aufgabe des Wochenaufenthalts müssen sie sich innerhalb von 14 Tagen bei der zuständigen Stelle nach Artikel 17 abmelden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_16",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "91f65f83af8768a3f25238664fe60f21f0c9c27fa733c4b132eed4e71a02b24d"
     },
     {
@@ -491,10 +501,10 @@
           "text": "Die Kantone legen fest, welche Stellen für die Entgegennahme der An- und Abmeldung zuständig sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_17",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fffaf9b146102b7350859d6461e63c902a089689f629fcd0b573858f94130041"
     },
     {
@@ -515,10 +525,10 @@
           "text": "Bei Gruppen erfolgt die Meldung durch eine vom verantwortlichen Reiseleiter unterschriebene Liste."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_18",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c9ea7d3913c32bca89dd37e6137d93f8fd2af7cfd1edd368758952d90ae186ec"
     },
     {
@@ -538,10 +548,10 @@
           "text": "Aufenthaltsbewilligungen nach Anhang 2 können für Aufenthalte mit Erwerbstätigkeit, die länger als ein Jahr dauern, erteilt werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_18_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "bd782de91d44f6770eeff63ba804a5e6d40422c913328116e21c8a38acd38cd6"
     },
     {
@@ -589,10 +599,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_19",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b6c68e0ae46ab842cbc55f113b8cd4fad3d9c9188ded1ba3d8756be995cfcf5e"
     },
     {
@@ -632,10 +642,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_19_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7f5b293a80d0553c2783fd0a3b1811a3e7376a106137d8edf6f531ec7e6f0d1c"
     },
     {
@@ -675,10 +685,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_19_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "110e1c8cc9a0e90d252fe3ac60bc149f0177d48594b7f5892253f4b637b4a68f"
     },
     {
@@ -702,10 +712,10 @@
           "text": "Das SEM kann die Höchstzahl des Bundes auf Gesuch hin unter den Kantonen aufteilen. Es berücksichtigt dabei die Bedürfnisse der Kantone und das gesamtwirtschaftliche Interesse während der in Anhang 2 festgesetzten Kontingentsperiode."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_20",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8bae8076382013e3ce257b0013042ef9330af30e002f51501657edd1f9e25fef"
     },
     {
@@ -731,10 +741,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_20_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b8c861cc464ffe81a52faf73ff5c99e24622e08f197eae4b4378e51d6bcbdeb3"
     },
     {
@@ -750,10 +760,10 @@
           "text": "Für Staatsangehörige des Vereinigten Königreichs, die nicht vom Geltungsbereich des Abkommens über die erworbenen Rechte erfasst werden, können die Kantone Aufenthaltsbewilligungen im Rahmen der Höchstzahlen nach Anhang 2 Ziffern 7 und 8 erteilen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_20_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7e5c058e44fad11d2d9589d737f6d3d3e100a4f96cae9c3c043038d25bedd259"
     },
     {
@@ -780,10 +790,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_21",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6a8682ba571d3e1643090ccc6ccaef0942d04eac5003adafd1be396e19380d81"
     },
     {
@@ -804,10 +814,10 @@
           "text": "Arbeitgeberinnen und Arbeitgeber müssen bei der nach dem kantonalen Recht für die Zulassung zum Arbeitsmarkt zuständigen Stelle einen Arbeitsvertrag oder eine Auftragsbestätigung einreichen. Bei grenzüberschreitenden Dienstleistungen sind die Entsendebestätigung sowie der Vertrag über die Dienstleistung einzureichen. Diese Dokumente müssen Angaben zur Dauer der Erwerbstätigkeit, zu den Anstellungsbedingungen und zur Entlöhnung enthalten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_22",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c75b523455b9a8f3323e1b62be6ecd316a82034a88858c54d217e08e117100a6"
     },
     {
@@ -828,10 +838,10 @@
           "text": "Absatz 1 gilt nicht, wenn für entsandte Arbeitnehmerinnen oder Arbeitnehmer sowie für grenzüberschreitende Dienstleistungserbringerinnen oder Dienstleistungserbringer aufgrund eines allgemeinverbindlich erklärten Gesamtarbeitsvertrags oder eines Normalarbeitsvertrags im Sinne von Artikel 360a des Obligationenrechts ein Mindestlohn garantiert ist."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_22_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8a0ae5e5c917a43a424bfe00835067da17ebc2e76b842c8ff53f95af90b9c06c"
     },
     {
@@ -852,10 +862,10 @@
           "text": "Für die Erteilung einer Aufenthaltsbewilligung muss die Betreuungs- oder Lehrperson nachweisen, dass sie in der am Arbeitsort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau B1 und schriftliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des in Europa allgemein anerkannten Referenzrahmens für Sprachen (Referenzrahmen) verfügt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_22_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6b780a624a2f27e243fdc54064224523213ab9fa4351bebdde0e010c69e185a5"
     },
     {
@@ -898,10 +908,10 @@
           "text": "Die Ausübung einer Erwerbstätigkeit richtet sich nach den Artikeln 38−40."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_23",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "04e106dbf45fb06fed5b6c33237b1a43fe5041c01e4705084400e011969b5513"
     },
     {
@@ -930,10 +940,10 @@
           "text": "In begründeten Fällen können die zuständigen Behörden zusätzlich einen Sprachtest verlangen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_24",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f690504c518fb89af9ec3ca8cefc61c2e47f812652cfb6f884f6bfcf43b91ba7"
     },
     {
@@ -971,10 +981,10 @@
           "text": "Die notwendigen finanziellen Mittel liegen vor, wenn sie den Betrag übersteigen, der einen Schweizer oder eine Schweizerin und allenfalls seine oder ihre Familienangehörigen zum Bezug von Ergänzungsleistungen nach dem Bundesgesetz vom 6. Oktober 2006 über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG) berechtigt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_25",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b179f5e375a016c931736ec704039ece5c353fb4a8eaa3267a62e8158b79c6f4"
     },
     {
@@ -1009,10 +1019,10 @@
           "text": "Die Bewilligung zur Erwerbstätigkeit für die Ehegatten und Kinder nach Absatz 1 ist auf die Gültigkeitsdauer der Kurzaufenthaltsbewilligung der Person zu befristen, die die Familienangehörigen nachgezogen hat."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_26",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ce4f9fb86bf7c93ec7a37fa81f28a79e782ea81cabc31ade852d9ae720859874"
     },
     {
@@ -1029,10 +1039,10 @@
           "text": "Ehegatten und Kinder mit Anspruch auf die Ausübung einer Erwerbstätigkeit können diese ohne zusätzliches Bewilligungsverfahren aufnehmen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_27",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6d4b8650b2ea34b57f337529e07b0415ba9a7b43780a5612e34b14f5423d6928"
     },
     {
@@ -1049,10 +1059,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_28",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1101,10 +1111,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_29",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4b368ae965ad7863c6c48986583c335b56680f4df82d4f42dcf58356da476640"
     },
     {
@@ -1129,10 +1139,10 @@
           "text": "Für Personen, deren Bürgerrecht gestützt auf Artikel 36 des BüG nichtig erklärt oder gestützt auf Artikel 42 des BüG entzogen wurde, gelten die allgemeinen Zulassungsvoraussetzungen des AIG."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_30",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "75c05a4a0a53b5cae460aba7b6fa1c604c86d3ca12436b97debd3287a511245a"
     },
     {
@@ -1183,10 +1193,10 @@
           "text": "Den Eltern und den Geschwistern der betroffenen Person kann eine Aufenthaltsbewilligung erteilt werden, wenn sie die Voraussetzungen nach Artikel 31 erfüllen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_30_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5e7a41c6dc5b8dddb7037e9306f148d230098680b194100fe93428fd0bf77dc8"
     },
     {
@@ -1253,10 +1263,10 @@
           "text": "Bei der Prüfung eines Gesuchs um Erteilung einer Aufenthaltsbewilligung nach Artikel 84 Absatz 5 AIG ist die erfolgreiche Teilnahme an Integrations- oder Beschäftigungsprogrammen zu berücksichtigen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_31",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c98013da343a095d79e45d26d3ad226e4672902435f57f1435f9e58d670dfc19"
     },
     {
@@ -1295,10 +1305,10 @@
           "text": "Die Ausübung einer Erwerbstätigkeit kann bei der Zulassung nach Absatz 1 Buchstaben a und b bewilligt werden, wenn die Voraussetzungen von Artikel 29 Absätze 2 oder 3 erfüllt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_32",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "cd5d721b13c3e4eb2a0a66aedab0b2235126c97b46fe58c96ca4581ed76cfb02"
     },
     {
@@ -1315,10 +1325,10 @@
           "text": "Pflegekindern können Aufenthaltsbewilligungen erteilt werden, wenn die zivilrechtlichen Voraussetzungen für die Aufnahme von Pflegekindern erfüllt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_33",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "49f679d1fb5dfce884e9f5e038d4bf8aa7dea42f5e1e103c1c47977388551633"
     },
     {
@@ -1335,10 +1345,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_34",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1381,10 +1391,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_35",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "16b597e16948d44e5d38cffeab8e146d1799d1167b5121718faea8c85cf96c64"
     },
     {
@@ -1435,10 +1445,10 @@
           "text": "Ein weiterer Aufenthalt kann bewilligt werden, wenn ein schwerwiegender persönlicher Härtefall vorliegt (Art. 31). Die besondere Situation von Opfern sowie Zeuginnen und Zeugen von Menschenhandel ist zu berücksichtigen. Vorbehalten bleibt die Anordnung einer vorläufigen Aufnahme (Art. 83 AIG)."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_36",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5969e62c5f898dd40be0dc07c7c415d1575300f3504696f4bdd0936ae47fd114"
     },
     {
@@ -1473,10 +1483,10 @@
           "text": "Die Ausübung einer Erwerbstätigkeit kann bewilligt werden, wenn die Voraussetzungen von Artikel 29 Absätze 2 oder 3 erfüllt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_36_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d6710a66d0a1d318495610f3e9fb097563929f7a6afa298cc7047bdfba8cb53e"
     },
     {
@@ -1511,10 +1521,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_37",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6c6ebd55b547c83f0256034b80a7423741f5e602e3d1d5492e4768e09dd0c8a0"
     },
     {
@@ -1549,10 +1559,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_38",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e43f3222bdfb629d5b2b0a166950eceb49edddbc38cc23c6a45a5114bda7176b"
     },
     {
@@ -1587,10 +1597,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_39",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d9d7bedd0396a4f8cd74e670cce79def837041cb759c18b830a3b17a6b3fa66c"
     },
     {
@@ -1621,10 +1631,10 @@
           "text": "Die Weiterbildung darf durch die Erwerbstätigkeit nicht behindert werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_40",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7aabd518eedf6933bfe19c56c6c249c67867898152195e9612937fdef230a244"
     },
     {
@@ -1667,10 +1677,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_41",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6aca7edc6684b7b815f9ff8b50a4e0f68a1b53530f854eddc04d42b306ad9825"
     },
     {
@@ -1699,10 +1709,10 @@
           "text": "Stagiairesbewilligungen können aufgrund einer Verfügung des SEM im Rahmen der maximalen Aufenthaltsdauer von 18 Monaten verlängert werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_42",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6734914da7495f66b59f3bf6bcead2b1a1e37fb069bb9525d267201016b831ea"
     },
     {
@@ -1761,10 +1771,10 @@
           "text": "Die Ehegattin oder der Ehegatte, die Lebenspartnerin oder der Lebenspartner sowie die Kinder unter 21 Jahren werden für die Dauer der Funktion von Personen nach Absatz 1 Buchstabe c im Familiennachzug zugelassen, wenn sie mit ihnen zusammenwohnen. Sie erhalten eine vom EDA ausgestellte Legitimationskarte."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_43",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "623e0de291f9b0e6b1c8847b91609a144a5df6a3e3b95e3dead9d2ea9b2d5fca"
     },
     {
@@ -1795,10 +1805,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_44",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6e6fffa322ce2d7984a83b67ba4a397e74e6874b932b238d890e14a98cc25ee9"
     },
     {
@@ -1819,10 +1829,10 @@
           "text": "Dem Ehegatten, der Lebenspartnerin oder dem Lebenspartner (Art. 43 Abs. 3) und den vor dem 21. Altersjahr im Rahmen des Familiennachzugs zugelassenen Kindern von Personen nach Artikel 43 Absatz 1 Buchstabe c kann eine Erwerbstätigkeit bewilligt werden, wenn sie einen Arbeitsvertrag oder eine verbindliche Offerte vorlegen und die Bestimmungen über die Lohn- und Arbeitsbedingungen nach Artikel 22 AIG eingehalten werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_45",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fc63f16c51dbc93d72cb51fd90f1bcf0ca2f9bac855f283cc7b407b4fbdd3e90"
     },
     {
@@ -1861,10 +1871,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_46",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "896cd703fe9fb809bce7451fe460fe3d54fc157888a031628b6c98ed9174ec75"
     },
     {
@@ -1881,10 +1891,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_47",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1935,10 +1945,10 @@
           "text": "Bewilligungen für Au-Pair-Angestellte werden für maximal zwölf Monate erteilt und können nicht verlängert werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_48",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fe855e23764a7f422878aafe900b6f7fc5e2b6f83bdc51b1dfe623a4bdc073cd"
     },
     {
@@ -1983,10 +1993,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_49",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0b25fc24cd5a778a442fa6ee503f072d4a11eb1904732d2e81619d1fe5fa2092"
     },
     {
@@ -2021,10 +2031,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_50",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "31dc0ebe650a8db22bbd0215088464f701cf8d59417cf686e28883ceddf2945f"
     },
     {
@@ -2059,10 +2069,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_51",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5efbebeb3eb6db2b9fe33b510ca62c2a2c6e53fc27b7c34386563c33c39e2858"
     },
     {
@@ -2105,10 +2115,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_52",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5c7071613f549392aaf291fb294e6c45aa8deeaa77363a3fdb904994107fccfd"
     },
     {
@@ -2129,10 +2139,10 @@
           "text": "Die Aufnahme und Beendigung einer Erwerbstätigkeit sowie ein Stellenwechsel unterliegen der Meldepflicht."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_53",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "96d986b13db2e1c7d9273edea697f41dfcc1779552e8aedfe0755ac603c6e329"
     },
     {
@@ -2149,10 +2159,10 @@
           "text": "Für Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige, die an einem Beschäftigungsprogramm teilnehmen, gelten die in diesem Beschäftigungsprogramm festgesetzten Bedingungen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_53_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "40cc80f2ebc0ee6fadec15897972baaf1e0100dfb81c722e2817b0ac28f6e636"
     },
     {
@@ -2168,10 +2178,10 @@
           "text": "Erfolgte die Erteilung einer Kurzaufenthalts- oder Aufenthaltsbewilligung gestützt auf eine Zulassungsbestimmung für einen bestimmten Aufenthaltszweck, so ist bei einer Änderung des Aufenthaltszwecks eine neue Bewilligung erforderlich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_54",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "17381dcd1ec803fbcd3848ea18c520b6e6b674c6e5e64a97c8c98f9e029c2a4d"
     },
     {
@@ -2188,10 +2198,10 @@
           "text": "Ein Stellenwechsel von Personen mit einer Kurzaufenthaltsbewilligung kann innerhalb der gleichen Branche und des gleichen Berufs bewilligt werden, wenn eine weitere Tätigkeit beim bisherigen Arbeitgeber nicht möglich oder nicht zumutbar ist und der Stellenwechsel nicht auf Grund des Verhaltens der Arbeitnehmerin oder des Arbeitnehmers erfolgt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_55",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fa6d447873c6b2e8239d192a0e138994c8c80d28d5609a25eb2496aa72f7c576"
     },
     {
@@ -2215,10 +2225,10 @@
           "text": "Einer Ausländerin oder einem Ausländer kann nur einmal eine Kurzaufenthaltsbewilligung für einen Aufenthalt als Au-Pair (Art. 48), für eine Aus- und Weiterbildung (Art. 23 und 24) oder für Stagiaires (Art. 42) erteilt werden. Ausnahmen sind in begründeten Einzelfällen möglich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_56",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e9927a0b4a71da2288082ae9e775aa49fa0d7b07c78dd692ade11aaba35e5630"
     },
     {
@@ -2256,10 +2266,10 @@
           "text": "Die betroffene Person muss sich zwischen zwei dieser Bewilligungen mindestens zwei Monate nachweislich im Ausland aufhalten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_57",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2f707b14e0d272012bc952e10385c8583f7b26b2eda6d973c44023f4d16d30dd"
     },
     {
@@ -2279,10 +2289,10 @@
           "text": "Nach Ablauf der Gültigkeitsdauer der Aufenthaltsbewilligung muss das ausländische Ausweispapier (Art. 8) noch während sechs Monaten gültig sein. Ausnahmen sind in begründeten Einzelfällen möglich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_58",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b7272f84a68053273e82677e4bf70ea38e26100b9747e9dafcca808b39a98607"
     },
     {
@@ -2302,10 +2312,10 @@
           "text": "Wurde das Verlängerungsgesuch eingereicht, darf sich die betroffene Person während des Verfahrens in der Schweiz aufhalten, sofern keine abweichende Verfügung getroffen wurde."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_59",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2683c558759f357d053a395cc8d3635f2ddf21d52ff8b474453a039df3e94223"
     },
     {
@@ -2326,10 +2336,10 @@
           "text": "Die Ausländerin oder der Ausländer muss nachweisen, dass sie oder er in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A2 und schriftliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_60",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0a2ea161db2a644d64aca02cc4668af2ec9a1e2fc5f287163a3c68976d2e43b5"
     },
     {
@@ -2350,10 +2360,10 @@
           "text": "Die Ausländerin oder der Ausländer muss nachweisen, dass sie oder er in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A2 und schriftliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_61",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a10f822f3f356c56d0b4554a5c5cfaacd8d2c0e55717e9fc1bfcc6fe180daad6"
     },
     {
@@ -2388,10 +2398,10 @@
           "text": "Die Ausländerin oder der Ausländer muss nachweisen, dass sie oder er in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A2 und schriftliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_61_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "70776a7073507f23a7d929998024e8699afd72dbefbafae109ef594c66382ab3"
     },
     {
@@ -2416,10 +2426,10 @@
           "text": "Bei der Prüfung des Gesuchs um vorzeitige Erteilung der Niederlassungsbewilligung wird der Integrationsgrad der Familienangehörigen berücksichtigt, die älter als zwölf Jahre sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_62",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f189b30db00c86f45b61fe3d885f351af66a36a597b6acd925c0c8e55eb26740"
     },
     {
@@ -2458,10 +2468,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_62_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c6beeaa0422d6fe00867c885e76580db638c69aaf3ed71e57006d6bff6dde687"
     },
     {
@@ -2478,10 +2488,10 @@
           "text": "Der Ausweis für Personen mit Niederlassungsbewilligung muss spätestens 14 Tage vor Ablauf der Laufzeit der kantonalen Migrationsbehörde (Art. 88 Abs. 1) zur Verlängerung vorgelegt oder abgegeben werden. Die Verlängerung erfolgt frühestens drei Monate vor Ablauf der Laufzeit; Ausnahmen sind in begründeten Einzelfällen möglich."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_63",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ecce50780bb94eff1811362c86b242e0749e49af501c26d845bf30d5074b5b15"
     },
     {
@@ -2506,10 +2516,10 @@
           "text": "Für den Stellenwechsel von Ausländerinnen und Ausländern, Flüchtlingen oder Staatenlosen, die in der Schweiz vorläufig aufgenommen wurden, von Flüchtlingen, die in der Schweiz Asyl erhalten haben, von Schutzbedürftigen, von Staatenlosen, die in der Schweiz anerkannt sind, sowie von Flüchtlingen oder Staatenlosen, die mit einer rechtskräftigen Landesverweisung belegt sind, gelten die Artikel 65–65c sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_64",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c986c0129d37102948beaa9bfcdf33b7ff41c8124eab0bc993253c107836573c"
     },
     {
@@ -2604,10 +2614,10 @@
           "text": "Für Behördenstellen, die Massnahmen der beruflichen Ein- und Wiedereingliederung direkt umsetzen, gelten die Absätze 4 und 7 sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_65",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "00c222d2dd60930e5977749e239f1894557769b3d564c742a16ff138b0619a8d"
     },
     {
@@ -2624,10 +2634,10 @@
           "text": "Für die Meldung der Beendigung einer Erwerbstätigkeit bei vorläufig Aufgenommenen, Flüchtlingen, Schutzbedürftigen und Staatenlosen gilt Artikel 65 Absätze 2–4 und 6 sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_65_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e9dba05ad8d4ac12ffc31e476ff0267e96d92fe88d6bf9da14a67e03fa50c745"
     },
     {
@@ -2666,10 +2676,10 @@
           "text": "Wird die Beendigung einer Erwerbstätigkeit gemeldet, so erfasst die zuständige Behörde das Datum der Beendigung im ZEMIS."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_65_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "199c6a10bf96fc67c5bf4040e35e1bb8bb89491bd2a6d10dd922966d8d48a31c"
     },
     {
@@ -2690,10 +2700,10 @@
           "text": "Sie kann zudem anderen Kontrollorganen eine Kopie der Meldung übermitteln, beispielsweise den tripartiten Kommissionen nach Artikel 360b des Obligationenrechts oder den paritätischen Kommissionen, die mit dem Vollzug des Gesamtarbeitsvertrags der betreffenden Branche beauftragt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_65_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ce3053ab2893480c002a07d42ce522aeb0a514789578d5431d20440dc20f0ba6"
     },
     {
@@ -2709,10 +2719,10 @@
           "text": "Ausländerinnen und Ausländer können nur in einem Kanton eine Kurzaufenthalts-, Aufenthalts- oder Niederlassungsbewilligung besitzen. Die Bewilligungen gelten für das Gebiet des Kantons, der sie ausgestellt hat."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_66",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "10f8cb386d89bb39478ce7d9f0409455a2bac139c8d8347a819501138bbe1761"
     },
     {
@@ -2733,10 +2743,10 @@
           "text": "Ausländerinnen und Ausländer mit einer gültigen Kurzaufenthalts-, Aufenthalts- oder Niederlassungsbewilligung benötigen für vorübergehende Aufenthalte in einem anderen Kanton bis zu drei Monaten im Kalenderjahr keine Bewilligung, und eine Anmeldung ist nicht erforderlich (Art. 37 Abs. 4 AIG). Die Regelung des Wochenaufenthalts richtet sich nach Artikel 16."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_67",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e560d8b0733ace13b18d1940dbffc83b66b5ac581e426335a0e3dc0db871a96c"
     },
     {
@@ -2789,10 +2799,10 @@
           "text": "Darüber hinaus kann das SEM einen Kantonswechsel verfügen, wenn beide Kantone damit einverstanden sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_67_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2e55e7b0714ccb28d487909fbcf6d2b20d7400a4eff398ec0fb80b8203952057"
     },
     {
@@ -2812,10 +2822,10 @@
           "text": "Gleiches gilt für Ausländerinnen und Ausländer, die in Anwendung von Artikel 36 Absatz 2 für die voraussichtliche Dauer der polizeilichen Ermittlung oder des Gerichtsverfahrens eine Kurzaufenthaltsbewilligung erhalten und sich ausserhalb des Bewilligungskantons aufhalten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_68",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a7fc018f2a729b41b23950e7edc50bb65ccdcfe096be9d640b1ab1130226af50"
     },
     {
@@ -2831,10 +2841,10 @@
           "text": "Bei ausländischen Kindern unter Vormundschaft (Art. 327a–327c des Zivilgesetzbuchs; ZGB) und bei Ausländerinnen und Ausländern unter einer umfassenden Beistandschaft (Art. 398 ZGB) ist derjenige Kanton für die ausländerrechtliche Regelung zuständig, in dem sich der Sitz der zuständigen Kindes- und Erwachsenenschutzbehörde (KESB) befindet."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_69",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9e397fe5ed5c9cb111dd4a79b0b92dd6bf47f62aa2dd9aac9d0eef90fe3ced64"
     },
     {
@@ -2854,10 +2864,10 @@
           "text": "Das Anwesenheitsverhältnis ist spätestens auf den Zeitpunkt der bedingten oder unbedingten Entlassung aus dem Strafvollzug, dem Massnahmenvollzug oder der Unterbringung neu zu regeln. Besteht die Möglichkeit, die betroffene Person zum Vollzug eines Strafurteils in den Heimatstaat zu überstellen, ist sofort über das Anwesenheitsverhältnis zu entscheiden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_70",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b759efab035ed1283520d7ead8d9ea002662fc82cf5281fcc28a187d157d4f10"
     },
     {
@@ -2881,10 +2891,10 @@
           "text": "Monatlich engagierte Künstlerinnen und Künstler und Musikerinnen und Musiker (Art. 19 Abs. 4 Bst. b und Art. 19b Abs. 2 Bst. b) erhalten zur Regelung ihres Aufenthaltes unabhängig von der Aufenthaltsdauer eine Arbeitsbestätigung und, sofern das Engagement länger als drei Monate dauert, einen Ausländerausweis."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9f4e8d76af64219d1019fae0765188bc0683c725b40a5890efbe5eccfe04c06d"
     },
     {
@@ -2945,10 +2955,10 @@
           "text": "Asylsuchende während des Asylverfahrens nach Artikel 42 AsylG, die keinem Kanton zugewiesen wurden, erhalten eine Bestätigung."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "37a9fecddbfb7c451c76b2bd347ad9932382c38b331c9bea890523f6908ca421"
     },
     {
@@ -3004,10 +3014,10 @@
           "text": "Der Ausweis für Grenzgängerinnen und Grenzgänger, die Staatsangehörige des Vereinigten Königreichs sind, die in einem Schengen-Staat Wohnsitz haben und die vom Geltungsbereich des Abkommens vom 25. Februar 2019 über die erworbenen Rechte erfasst werden, enthält die Anmerkung, dass der Ausweis gemäss diesem Abkommen ausgestellt worden ist."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e9f1b08aae9e242466ff69386e5c691ec99767816ce0be88e123253e8dd73517"
     },
     {
@@ -3023,10 +3033,10 @@
           "text": "In Einklang mit der Verordnung (EG) Nr. 1030/2002 ist der biometrische Ausländerausweis mit einem Datenchip ausgerüstet, der ein Gesichtsbild, zwei Fingerabdrücke sowie die im maschinenlesbaren Bereich eingetragenen Daten zur Inhaberin oder zum Inhaber enthält."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1d3abde1652381bbff9cf77ec0cfffb6a6bad19f597d5fb9d41b18e3de95530d"
     },
     {
@@ -3078,10 +3088,10 @@
           "text": "Staatsangehörige nach den Absätzen 1 und 4, die entweder Inhaberinnen oder Inhaber einer nicht biometrischen, nach dem 12. Dezember 2008 gemäss den Anforderungen der Verordnung (EG) Nr. 1030/2002 ausgestellten Karte oder eines anderen Dokuments in Papierform sind, können diese Karte oder dieses Dokument bis zum Ablauf der Gültigkeit behalten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4e5af2991abde250d13edba18d3ae64f96c9d712a2ddd9c40cd0fc3f884f2967"
     },
     {
@@ -3125,10 +3135,10 @@
           "text": "Personen, deren Fingerabdrücke aus körperlichen Gründen nicht abgenommen werden können, müssen sie sich nicht abnehmen lassen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4960b57ee2c6659bb46f395e98f53218eb652ed83cda6b838ede177539b9c296"
     },
     {
@@ -3152,10 +3162,10 @@
           "text": "Bei der Erneuerung des Ausweises kann sie eine persönliche Vorsprache der gesuchstellenden Person verlangen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "60caab46efb04fee4d8417041406074fca7d1be873708fa5b4886b914f5d1b82"
     },
     {
@@ -3171,10 +3181,10 @@
           "text": "Wird bei einer erwachsenen Person oder einem Kind eine dermassen starke Veränderung der Gesichtszüge festgestellt, dass sich die betreffende Person nicht mehr als Inhaberin des Ausweises identifizieren lässt, so können die kantonalen Behörden von der Person vor Ablauf der fünfjährigen Frist nach Artikel 102a Absatz 4 AIG verlangen, ihre biometrischen Daten erfassen zu lassen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6d80cbd4c31591902f4a606abe7badb9677a56e938d5e3047980d45a1ffb9e3c"
     },
     {
@@ -3190,10 +3200,10 @@
           "text": "Die Kantone übernehmen den Ausländerausweis und das entsprechende Ausfertigungsverfahren zu den Bedingungen, die der Bund mit den Dritten, die mit der Ausfertigung des Ausländerausweises betraut wurden, vereinbart hat."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_h",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a08a4fb4848e7b96b78d71a7ad8b94784840199768fe137731b524bdef1e2e80"
     },
     {
@@ -3209,10 +3219,10 @@
           "text": "Für Ausländerinnen und Ausländer, die ihren Wohnort in eine Gemeinde oder einen Kanton mit einer anderen Amtssprache verlegen, kann der Kanton einen neuen Ausweis in der entsprechenden Sprache ausstellen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_71_i",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "53d14bed24094ab0514b4633c4cee204bd2c89d2d29f0f8dfd976002ac5938f3"
     },
     {
@@ -3232,10 +3242,10 @@
           "text": "Die zuständige Migrationsbehörde kann den Ausländerausweis entziehen, wenn die Voraussetzungen für den Aufenthalt nicht mehr erfüllt sind."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_72",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "919cdf23ba29953989798d48b3af117152e43b9e90f8246f66d182b9382d9b6a"
     },
     {
@@ -3295,10 +3305,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_72_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "27ae5ecd92f24e6277e7c9393752ac7a0360337dfafe2a16399d0e5445db1a58"
     },
     {
@@ -3352,10 +3362,10 @@
           "text": "Das SEM kann verlangen, dass die mit der Ausfertigung des biometrischen Ausländerausweises betraute Stelle nach Artikel 41b AIG den guten Ruf der betroffenen Personen periodisch selbstständig überprüft und die Gewährleistung des guten Rufes bestätigt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_72_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0a0207f7a251b78f2faee925e839d55c1aaf9d1f39f4423a8009dceed7287119"
     },
     {
@@ -3405,10 +3415,10 @@
           "text": "Die mit der Ausfertigung des biometrischen Ausländerausweises betraute Stelle nach Artikel 41b AIG weist periodisch die Einhaltung und Aktualität des Qualitätsmanagementsystems und des Sicherheitskonzeptes nach."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_72_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1c3eef8987febc7e96ef089fb3063035b8ffcb6b5fba6bc6c404d11fe2f75198"
     },
     {
@@ -3436,10 +3446,10 @@
           "text": "Die Bestimmungen in den Absätzen 1–3 gelten für die eingetragene Partnerschaft gleichgeschlechtlicher Paare sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_73",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a6a5cc7a52fb6d66728989441ecb39f057eb6429b30a948a6ff050dd02d5ea87"
     },
     {
@@ -3460,10 +3470,10 @@
           "text": "Damit Ehegatten von Personen mit einer Niederlassungs- oder Aufenthaltsbewilligung die Aufenthaltsbewilligung nach Artikel 43 oder 44 AIG verlängert wird, müssen sie nachweisen, dass sie in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_73_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c1a2af9a4378ea4c4e8c89e5caf00a8413722b07bb774904766c352a4f71ec05"
     },
     {
@@ -3480,10 +3490,10 @@
           "text": "Damit Ehegatten von Schweizerinnen und Schweizern und Ehegatten von Personen mit einer Niederlassungsbewilligung eine Niederlassungsbewilligung nach Artikel 42 oder 43 AIG erteilt wird, müssen sie nachweisen, dass sie in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A2 und schriftliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_73_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "59ea9995262444f0c2eb805b79e98d79985c2a197445ae3aea939d277f6baffa"
     },
     {
@@ -3520,10 +3530,10 @@
           "text": "Die Bestimmungen in den Absätzen 1–5 gelten für die eingetragene Partnerschaft gleichgeschlechtlicher Paare sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_74",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "bcbceebda9d108ef3a88c0b931bff7bf04d6362a467138bcc64f4fd32dc5a2df"
     },
     {
@@ -3544,10 +3554,10 @@
           "text": "Wird die Voraussetzung nach Absatz 1 nicht erfüllt, so ist die Anmeldung zu einem Sprachförderungsangebot ausreichend, das mindestens zur Erreichung des Referenzniveaus A1 des Referenzrahmens führt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_74_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "54c004afa089b422d40428d16a96e5634c5e82cfccf2fe4825f2e129d3f14d4e"
     },
     {
@@ -3564,10 +3574,10 @@
           "text": "Wichtige familiäre Gründe nach Artikel 47 Absatz 4 AIG und Artikel 73 Absatz 3 und 74 Absatz 4 liegen vor, wenn das Kindswohl nur durch einen Nachzug in die Schweiz gewahrt werden kann."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_75",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5e8b0055d94b4a6584832da7ade6074a0fd581db496139045357e431dc014491"
     },
     {
@@ -3584,10 +3594,10 @@
           "text": "Wichtige Gründe für eine Ausnahme vom Erfordernis des Zusammenwohnens können insbesondere durch berufliche Verpflichtungen oder durch eine vorübergehende Trennung wegen erheblicher familiärer Probleme entstehen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_76",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "828ed6df4d1a12cc6007975f4f4c2d01cbec1d36979c3184a9a0f0c54d05c60a"
     },
     {
@@ -3604,10 +3614,10 @@
           "text": "Der Anspruch nach Artikel 50 Absatz 1 Buchstabe a AIG besteht nur, wenn die Gesuchstellerin oder der Gesuchsteller nachweist, dass sie oder er in der am Wohnort gesprochenen Landessprache über mündliche Sprachkompetenzen mindestens auf dem Referenzniveau A1 des Referenzrahmens verfügt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8521f9107b87f28cad5ffbe4f82223624d94c77d9e5b923dbf1fdcfa7f69ae83"
     },
     {
@@ -3642,10 +3652,10 @@
           "text": "Eine Gefährdung der öffentlichen Sicherheit und Ordnung liegt vor, wenn konkrete Anhaltspunkte dafür bestehen, dass der Aufenthalt der betroffenen Person in der Schweiz mit erheblicher Wahrscheinlichkeit zu einer Nichtbeachtung der öffentlichen Sicherheit und Ordnung führt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "466381143f49fb2489b59d60ec5d828e02c2392ae46500662ad01e88d430de34"
     },
     {
@@ -3662,10 +3672,10 @@
           "text": "Eine konkrete Bedrohung der inneren oder äusseren Sicherheit der Schweiz ist gegeben, wenn ein bedeutendes Rechtsgut wie Leib und Leben oder die Freiheit von Personen oder der Bestand und das Funktionieren des Staates betroffen ist, indem die betroffene Person an Aktivitäten in den Bereichen nach Artikel 6 Absatz 1 Buchstabe a Ziffern 1–5 des Nachrichtendienstgesetzes vom 25. September 2015 oder an Aktivitäten der organisierten Kriminalität teilnimmt, solche Aktivitäten unterstützt, fördert oder dazu anwirbt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ac5ecf29ec3e6bc5475a65cd748601954c0475408022c3fbe1ad35e9a8ff2b10"
     },
     {
@@ -3696,10 +3706,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d6e60616a6db2c3a067d1951ec1d2451f5adc7b22ac465b19aa4fb3da1f91540"
     },
     {
@@ -3738,10 +3748,10 @@
           "text": "Das SEM unterstützt die Kantone bei der Prüfung der Sprachnachweise nach Absatz 1 Buchstabe d. Es kann Dritte mit dieser Aufgabe betrauen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c79fd98ae5a53caf2db53b4898a2a8b5aa37b8d7acec80037de613cc5b65e93b"
     },
     {
@@ -3762,10 +3772,10 @@
           "text": "Eine Person nimmt am Erwerb von Bildung teil, wenn sie in Aus- oder Weiterbildung ist."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "da9b58911cb327ccd55e60dd6f67ef38146f338fe3d2642ae4329ce94ebf9e89"
     },
     {
@@ -3816,10 +3826,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e94377163683b648c22ef4bfba06118bdafdbb2c586167798b85478f68ed1f6a"
     },
     {
@@ -3852,10 +3862,10 @@
           "text": "Wird die Integrationsvereinbarung nicht eingehalten, so ist beim Entscheid über die Verlängerung oder den Widerruf der Kurzaufenthalts- oder Aufenthaltsbewilligung zu prüfen, ob dafür ein entschuldbarer Grund vorliegt. Liegt kein entschuldbarer Grund vor, so sind das öffentliche Interesse und die persönlichen Verhältnisse abzuwägen (Art. 96 Abs. 1 AIG)."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_77_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "716c3cf448a1402ba7ac520fbdd1fa52dc24955c92276267e95e8bdb0c76b829"
     },
     {
@@ -3876,10 +3886,10 @@
           "text": "Die Artikel 62–78 der Asylverordnung 2 vom 11. August 1999 gelten sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_78",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "37998966dcf5f5f382fe883d8323e56649e4cb6262ae2b702ef2ca9df5099784"
     },
     {
@@ -3900,10 +3910,10 @@
           "text": "Das Gesuch um Aufrechterhaltung der Niederlassungsbewilligung muss vor Ablauf der sechsmonatigen Frist (Art. 61 Abs. 2 AIG) eingereicht werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_79",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "36e93edff9c805ab1e0c2c2f0afb32a966a8977b7a866612e5a1895abf5882f5"
     },
     {
@@ -3920,10 +3930,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_80",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3940,10 +3950,10 @@
           "text": "Die kantonalen Behörden können dem SEM einen Antrag auf Erlass eines Einreiseverbots stellen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_81",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fb66aef64e22680497f2686801b8054a584cc0d5384c3afe8adc7a38724599f5"
     },
     {
@@ -3964,10 +3974,10 @@
           "text": "Eine Meldung erfolgt zudem, wenn sich eine kontrollierte Person rechtswidrig in der Schweiz aufhält."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1488115130b35ee90d318f16d8d4a19ec334ee2ec02c93b612f1c0945d1d5096"
     },
     {
@@ -3992,10 +4002,10 @@
           "text": "Die Absätze 1 und 2 gelten für die eingetragene Partnerschaft gleichgeschlechtlicher Paare sinngemäss."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5aba1a128dce69eef53a27be53b0b93448d7154db5c45f7ac4585b00926a7b53"
     },
     {
@@ -4012,10 +4022,10 @@
           "text": "Die für die Ausrichtung von Sozialhilfeleistungen zuständigen Behörden melden der kantonalen Migrationsbehörde unaufgefordert den Bezug von Sozialhilfe durch Ausländerinnen und Ausländer."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "df50855903d8ffad4084f748ae9a26d30d0d1de7b753e756cb82198dc688c107"
     },
     {
@@ -4068,10 +4078,10 @@
           "text": "Absatz 1 ist nicht anwendbar, wenn die betroffenen Personen eine Niederlassungsbewilligung besitzen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a7cae10a2d31706b0970468fdd5433a037c3516693b54427ea091dc84d222dc8"
     },
     {
@@ -4120,10 +4130,10 @@
           "text": "Verfügt die kantonale Migrationsbehörde gestützt auf die erhaltenen Daten die Nichtverlängerung oder den Widerruf einer Kurzaufenthalts- oder Aufenthaltsbewilligung, so meldet sie dies innerhalb von 20 Tagen nach Eintritt der Rechtskraft dem für die Festsetzung und die Auszahlung der Ergänzungsleistung zuständigen Organ."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6bbb7db50bc60c67970d855b68baebe434499b942bedd346c88a733ec510af9d"
     },
     {
@@ -4144,10 +4154,10 @@
           "text": "Absatz 1 ist nicht anwendbar, wenn sich die betroffene Schülerin oder der betroffene Schüler nicht rechtmässig in der Schweiz aufhält."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e0b852951e3145aa4b9fdf5ae3e9c6643687d5eaf54389962a68d6e2e7bdbe27"
     },
     {
@@ -4182,10 +4192,10 @@
           "text": "Die Gerichtsbehörden melden der kantonalen Migrationsbehörde unaufgefordert die von ihnen in einem familienrechtlichen Verfahren angeordneten Kindesschutzmassnahmen nach Absatz 1 Buchstaben a und b."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "592626421a2b1faccefcbee0aa0f05e5912a436d98dc03fe6820e325d0d8c5d8"
     },
     {
@@ -4202,10 +4212,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_82_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4248,10 +4258,10 @@
           "text": "Im Einvernehmen mit dem SEM kann anstelle von Entscheiden im Einzelfall nach Absatz 1 Buchstabe c und Absatz 2 eine Pauschalzustimmung für bestimmte Personen- und Gesuchskategorien erteilt werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_83",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9913f7e4b9c549424542d1383e178bddb63a7de26ea537bb6320f32c3ef8a0d6"
     },
     {
@@ -4275,10 +4285,10 @@
           "text": "Die Kosten für den Wegweisungsvollzug werden nach Artikel 7 der Richtlinie 2001/40/EG und nach der Entscheidung 2004/191/EG zurückerstattet. Das SEM ist die Kontaktstelle im Sinne dieser Entscheidung."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_83_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f14787f509b767966d23fb1f6c7afd14fce307c87f4e2c2bb3c669e69ebc31ac"
     },
     {
@@ -4294,10 +4304,10 @@
           "text": "Die Gültigkeitsdauer arbeitsmarktlicher Vorentscheide beträgt sechs Monate. Sie kann aus wichtigen Gründen verlängert werden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_84",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "37d2c5e16dfdd37001de7a8194b34beec355ee2f84378c1a91f42abf83f5d60c"
     },
     {
@@ -4322,10 +4332,10 @@
           "text": "Die kantonalen Arbeitsmarktbehörden (Art. 83) und die kantonalen Migrationsbehörden (Art. 88 Abs. 1) können dem SEM für die Überprüfung der bundesrechtlichen Voraussetzungen einen kantonalen Entscheid zur Zustimmung unterbreiten."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_85",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4a374989e61b7d0c449f6ec9d980f075a8314e4de0d18774939cac279ae6c98"
     },
     {
@@ -4391,10 +4401,10 @@
           "text": "Der Ausweis darf erst ausgestellt werden, wenn die Zustimmung des SEM vorliegt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_86",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c38c3538a34d59ff4d66c5b7bb0b851dd10e350c83c576263ea3c0bbda9d46be"
     },
     {
@@ -4475,8 +4485,8 @@
           "text": "Der für die Führung des AFIS zuständige Dienst übermittelt die Ergebnisse der Abgleiche nach Absatz 1quater einer vom SEM in Absprache mit der auftraggebenden Behörde bezeichneten Stelle. Diese bereitet die Abgleichergebnisse auf und leitet sie an die auftraggebende Behörde weiter."
         },
         {
-          "absatz": null,
-          "text": "1sexies Die biometrischen erkennungsdienstlichen Daten, die von den Behörden nach Artikel 4 Absatz 1 Buchstabe h der Verordnung vom 6. Dezember 2013 über die Bearbeitung biometrischer erkennungsdienstlicher Daten erhoben worden sind, werden nicht in das AFIS aufgenommen."
+          "absatz": "1sexies",
+          "text": "Die biometrischen erkennungsdienstlichen Daten, die von den Behörden nach Artikel 4 Absatz 1 Buchstabe h der Verordnung vom 6. Dezember 2013 über die Bearbeitung biometrischer erkennungsdienstlicher Daten erhoben worden sind, werden nicht in das AFIS aufgenommen."
         },
         {
           "absatz": "2",
@@ -4535,11 +4545,11 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
-      "sha": "68b216b8711ac208ef1269da6ba8963f7df16362aa82dbb95d7903577f013beb"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "17ef7599a391feebf2805216e9e3a8a2744629b1f998a315287c52a6d6bcee5e"
     },
     {
       "id": "bund/VZAE/art_87_a",
@@ -4563,10 +4573,10 @@
           "text": "Die Expertinnen und Experten übermitteln das Ergebnis der Überprüfung an das SEM sowie an die Stellen des Grenzwachtkorps oder der kantonalen und kommunalen Polizeibehörden, welche die Daten erfasst haben, die den automatischen Abgleich im Eurodac ausgelöst haben."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b0eadd318238dbb1488f04ee1be10f72c7fa17f403b1b234cf1428f8753aad4a"
     },
     {
@@ -4582,10 +4592,10 @@
           "text": "Das Verfahren zur Ausübung des Auskunftsrechts und des Rechts auf Berichtigung, Ergänzung oder Löschung von Eurodac-Daten richtet sich nach den Artikeln 11b und 11c AsylV 3."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "58d6b7fe3a8f330d6360e5abe3b571352c7a74d7ed430812b0a523483d9e5562"
     },
     {
@@ -4602,10 +4612,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4621,10 +4631,10 @@
           "text": "Die Artikel 11c und 12 AsylV 3 gelten sinngemäss für die Aufsicht über die Bearbeitung von Daten im Eurodac und für die Datensicherheit."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "113d4512ca57fcf9ca1eeb3aec9849fc9efb0070ccae357f5ba31798e1c3d2dc"
     },
     {
@@ -4747,10 +4757,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_87_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "15e8fa7d3cc045529314bf7b18e76792c0db59c1ecc148a90f8a789ec03bce89"
     },
     {
@@ -4770,10 +4780,10 @@
           "text": "Das SEM ist für alle Vollzugsaufgaben des AIG und der Ausführungsverordnungen zuständig, die nicht einer kantonalen Behörde oder einer anderen Bundesbehörde zugewiesen wurden."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_88",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "32fc6c6688b13efc42b448b4f948f470729c6b9ed71f393c06d6e8a1c62e4ffd"
     },
     {
@@ -4828,10 +4838,10 @@
           "text": "Personen, die minderjährige Personen anhören, tragen den besonderen Aspekten der Minderjährigkeit Rechnung."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_88_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "97fa26ac15ff7f7551a90cf78f287d52c700ca3548777ed46814d8dd48f5529a"
     },
     {
@@ -4847,10 +4857,10 @@
           "text": "Das SEM erlässt die für den Vollzug dieser Verordnung erforderlichen Weisungen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_89",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "84348c04a5be6a522de0349107f51043c9c43e699ee28f028a6f8472e118f0f1"
     },
     {
@@ -4866,10 +4876,10 @@
           "text": "Ein geeigneter Datenschutz der betroffenen Person im Sinne von Artikel 111d Absatz 3 AIG liegt vor, wenn die geeigneten Garantien die Anforderungen der Artikel 9–12 der Datenschutzverordnung vom 31. August 2022 erfüllen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_89_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fbe0d1963e1aa827e22ef4cfd602929b408d68cdaf538797353cddba74b3335e"
     },
     {
@@ -4885,10 +4895,10 @@
           "text": "Bei der Berechnung von Anmeldefristen wird der Tag der Einreise mitgezählt."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_90",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8c90f60ce925644851205a33acb59c29e63c6bab81c2bec789754c89f1f59965"
     },
     {
@@ -4914,10 +4924,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_90_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a148cfafd005bb84cee8fb2feaad3851894832d05a752f7d46cfccb5b75f1094"
     },
     {
@@ -4955,10 +4965,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_91",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b88ee8979161cce4229d201f01f4186f70ed654f63b40a901b79b03c4a0c1893"
     },
     {
@@ -4975,10 +4985,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_91_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4995,10 +5005,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_91_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -5026,10 +5036,10 @@
           "text": "Werden Ergänzungsleistungen nach Artikel 3 Absatz 1 Buchstabe a ELG, die vor dem 1. Januar 2019 gewährt wurden, weiterhin ausgerichtet, so unterstehen sie ebenfalls der Meldepflicht nach Artikel 82d. Die Meldung muss spätestens bis zum 1. Juli 2019 erfolgen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_91_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "79b6ea57023c4437e11dca39ad983b404009b61737ad744c26e7a826c3a2e91c"
     },
     {
@@ -5045,10 +5055,10 @@
           "text": "Staatsangehörige des Vereinigten Königreichs, die vom Geltungsbereich des Abkommens über die erworbenen Rechte erfasst werden und die beim Inkrafttreten dieser Änderung über einen nicht biometrischen Ausländerausweis im Sinne von Artikel 71b verfügen, dürfen diesen bis zum Ablauf von dessen Gültigkeitsdauer behalten, sofern nicht die Ausstellung eines neuen Ausweises erforderlich ist, insbesondere aufgrund von Ausweismutationen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_91_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9f505a12cc8d7fa7ef3533c8780d6e250619b82d4cb36c6c87fa4f24ec8c3190"
     },
     {
@@ -5064,10 +5074,10 @@
           "text": "Diese Verordnung tritt am 1. Januar 2008 in Kraft."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#art_92",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "406bee80d5032efec6de2454fa88fdc8c8dce4618b3432c9b9d222e0d1bb41f2"
     },
     {
@@ -5308,10 +5318,10 @@
           "text": "9. Die Höchstzahlen für Kurzaufenthaltsbewilligungen für Personen, die vom Geltungsbereich des Abkommens vom 11. Oktober 2024 zwischen dem Schweizerischen Bundesrat und der Regierung der Vereinigten Staaten von Amerika über den Austausch von Praktikantinnen und Praktikanten sowie jungen Berufsleuten erfasst werden (Art. 42 Abs. 2bis), werden auf 300 pro Kalenderjahr festgesetzt. Der nicht genutzte Restbestand wird nicht auf das folgende Jahr übertragen."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#annex_1",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "89f85ba24ec0962f78c071ab09edbade8b5a2d037fa1bb61028c9e3c6c840280"
     },
     {
@@ -5548,10 +5558,10 @@
           "text": "8. Die Höchstzahlen gelten für die Zeit vom 1. Januar 2026 bis zum 31. Dezember 2026 und werden quartalsweise freigegeben."
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#annex_2",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "bf45613134666da0ff61a05b74ac1f0822137f51646a5daf0b1e519f1849da29"
     },
     {
@@ -5602,10 +5612,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#annex_3",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "15a2ff32b99c3ee4aefa435108ba17a8ba56b3775ee6ced10fa167bb28ea7c61"
     },
     {
@@ -5648,10 +5658,10 @@
           ]
         }
       ],
-      "stand": "2026-06-12",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/759/de#annex_4",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20260612",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0dad92857db922f1c8947f751778eeac04dbc8e3bf21c8026a1fdbee01228c5e"
     }
   ]

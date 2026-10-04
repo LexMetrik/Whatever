@@ -6,6 +6,36 @@
   "referenz": 14,
   "unparsed": 5
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 2884",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 2884",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1997-01-01",
@@ -117,7 +147,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "frueher": "Abs. 3"
     }
    ]
   },
@@ -130,7 +161,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 12"
     },
     {
      "typ": "fassung",
@@ -200,7 +232,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "III",
+     "ueberschrift": "IV. Ordnung und Aufbewahrung der Akten"
     }
    ]
   },
@@ -262,7 +296,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "IV",
+     "ueberschrift": "V. Buch-, Kassa- und Rechnungsführung"
     }
    ]
   },
@@ -293,7 +329,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Verfahren in den einzelnen Stadien des Konkurses"
     },
     {
      "typ": "fassung",
@@ -306,7 +343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
     }
    ]
   },
@@ -326,6 +364,18 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "27": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "28": {
@@ -344,6 +394,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "29": {
@@ -362,6 +416,18 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "30": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "31": {
@@ -380,6 +446,18 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "33": {
@@ -398,6 +476,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "34": {
@@ -416,6 +498,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "35": {
@@ -434,6 +520,18 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "36": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "37": {
@@ -452,6 +550,10 @@
      "absatz": null,
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "38": {
@@ -489,6 +591,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "40": {
@@ -526,7 +632,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 39",
+     "ueberschrift": "II. Schuldenruf"
     },
     {
      "typ": "fassung",
@@ -541,6 +649,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "41": {
@@ -559,6 +670,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "42": {
@@ -577,6 +691,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "43": {
@@ -608,6 +725,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "44": {
@@ -626,6 +746,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "45": {
@@ -644,6 +767,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "46": {
@@ -662,6 +788,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "47": {
@@ -680,6 +809,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "48": {
@@ -698,6 +830,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "50": {
@@ -716,6 +858,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "51": {
@@ -734,6 +879,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "52": {
@@ -752,6 +900,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "53": {
@@ -770,6 +921,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "54": {
@@ -801,6 +955,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "56": {
@@ -819,6 +983,9 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "57": {
@@ -837,6 +1004,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "58": {
@@ -855,6 +1025,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59": {
@@ -873,6 +1046,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60": {
@@ -891,6 +1067,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "61": {
@@ -909,6 +1088,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "62": {
@@ -927,6 +1109,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "63": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "64": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "65": {
@@ -958,6 +1157,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "66": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "67": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "68": {
@@ -976,6 +1192,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "69": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "70": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "71": {
@@ -994,6 +1227,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "72": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "73": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "74": {
@@ -1020,6 +1270,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "75": {
@@ -1038,6 +1291,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76": {
@@ -1056,6 +1312,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "77": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "78": {
@@ -1096,6 +1362,13 @@
    ],
    "aufgehobenSeit": "1997-01-01"
   },
+  "80": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
   "81": {
    "giltSeit": null,
    "ereignisse": [
@@ -1115,6 +1388,20 @@
    ],
    "aufgehobenSeit": "1997-01-01"
   },
+  "82": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "83": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
   "84": {
    "giltSeit": "1997-01-01",
    "ereignisse": [
@@ -1131,6 +1418,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "85": {
@@ -1149,6 +1439,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "86": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "87": {
@@ -1167,6 +1467,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "88": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "89": {
@@ -1221,6 +1531,20 @@
    ],
    "aufgehobenSeit": "1923-12-19"
   },
+  "92": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "93": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
   "94": {
    "giltSeit": null,
    "ereignisse": [
@@ -1256,6 +1580,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96": {
@@ -1300,6 +1627,9 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "97": {
@@ -1429,6 +1759,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

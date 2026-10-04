@@ -1,3 +1,4 @@
+import { lokalSpeicher } from './sichererSpeicher';
 // ─── «Zuletzt verwendet»-Tracker (Startseite V3, Modul #5 · UI-NAV O1) ──────
 //
 // SSoT des localStorage-Keys 'lexmetrik-zuletzt' (§5) — die EINE Verlauf-Quelle
@@ -41,11 +42,6 @@ const MAX = 12;
  *  über das native `storage`-Event. */
 export const ZULETZT_EVENT = 'lm:zuletzt';
 
-/** localStorage vorhanden? (Prerender-Node hat keins → SSR-sicherer No-op.) */
-function hatSpeicher(): boolean {
-  return typeof localStorage !== 'undefined';
-}
-
 /** Inhalts-Typ aus dem Navigationspfad ableiten (§2 deterministisch). Erste
  *  Pfadebene entscheidet; unbekannte Route → 'seite' (generisches Icon), damit
  *  kein gültiger Eintrag stillschweigend verworfen wird. */
@@ -64,9 +60,8 @@ export function typVonRoute(route: string): ZuletztTyp {
 /** Die zuletzt besuchten Einträge, neueste zuerst, gekappt auf MAX. Alt-Einträge
  *  ohne `typ` (frühere Fassung) werden aus der Route migriert (kein Verwerfen). */
 export function holeZuletzt(): ZuletztEintrag[] {
-  if (!hatSpeicher()) return [];
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     const arr = roh ? JSON.parse(roh) : [];
     if (!Array.isArray(arr)) return [];
     return arr
@@ -97,25 +92,14 @@ function melde(): void {
  *  auf MAX gekappt. `typ` optional → aus der Route abgeleitet; `zeit` optionale
  *  Metadaten (Default 0) — s. Kopfkommentar. */
 export function merkeBesuch({ route, titel, typ, zeit }: { route: string; titel: string; typ?: ZuletztTyp; zeit?: number }): void {
-  if (!hatSpeicher()) return;
   if (!route || !titel) return; // ohne auflösbaren Titel kein Chip (§8: kein Rohpfad)
-  try {
-    const ohne = holeZuletzt().filter((e) => e.route !== route);
-    const neu: ZuletztEintrag = { route, titel, typ: typ ?? typVonRoute(route), zeit: zeit ?? 0 };
-    localStorage.setItem(KEY, JSON.stringify([neu, ...ohne].slice(0, MAX)));
-    melde();
-  } catch {
-    /* privater Modus / Quota — «Zuletzt» ist reiner Komfort */
-  }
+  const ohne = holeZuletzt().filter((e) => e.route !== route);
+  const neu: ZuletztEintrag = { route, titel, typ: typ ?? typVonRoute(route), zeit: zeit ?? 0 };
+  // Kein Speicher / Quota → false: «Zuletzt» ist reiner Komfort, kein Event.
+  if (lokalSpeicher.schreib(KEY, JSON.stringify([neu, ...ohne].slice(0, MAX)))) melde();
 }
 
 /** Leert den Verlauf komplett (Topbar-Verlauf «Verlauf leeren»). */
 export function leereZuletzt(): void {
-  if (!hatSpeicher()) return;
-  try {
-    localStorage.removeItem(KEY);
-    melde();
-  } catch {
-    /* privater Modus — No-op */
-  }
+  if (lokalSpeicher.entferne(KEY)) melde();
 }

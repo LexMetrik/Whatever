@@ -1,12 +1,12 @@
 {
  "zaehler":{"1":[1,0],"2":[1,0],"3":[1,0],"7":[1,0],"12":[1,0],"15":[1,0],"21":[2,0],"26":[1,0]},
- "erzeugt": "2026-09-14",
- "stand": "2024-03-01",
- "fassungsToken": "20240301",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "950.1",
   "titel": "Bundesgesetz über die Finanzdienstleistungen",
-  "erlassdatum": "vom 15. Juni 2018 (Stand am 1. März 2024)",
+  "erlassdatum": "vom 15. Juni 2018 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -32,7 +32,8 @@
     "links": [
      {
       "label": "SR <b>101</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "rs": "101"
      }
     ],
     "absatz": null,
@@ -85,7 +86,8 @@
      "links": [
       {
        "label": "SR <b>961.01</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734",
+       "rs": "961.01"
       }
      ],
      "absatz": "2",
@@ -104,7 +106,8 @@
      "links": [
       {
        "label": "SR <b>831.40</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1983/797_797_797"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1983/797_797_797",
+       "rs": "831.40"
       }
      ],
      "absatz": "2",
@@ -137,7 +140,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": null,
@@ -177,7 +181,8 @@
      "links": [
       {
        "label": "SR <b>958.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853",
+       "rs": "958.1"
       }
      ],
      "absatz": null,
@@ -217,7 +222,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": null,
@@ -263,7 +269,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "3",
@@ -282,7 +289,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "3",
@@ -301,7 +309,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "3",
@@ -744,7 +753,8 @@
      "links": [
       {
        "label": "SR <b>956.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736",
+       "rs": "956.1"
       }
      ],
      "absatz": "2",
@@ -891,7 +901,8 @@
      "links": [
       {
        "label": "SR <b>956.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736",
+       "rs": "956.1"
       }
      ],
      "absatz": "1",
@@ -945,7 +956,8 @@
      "links": [
       {
        "label": "SR <b>961.01</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734",
+       "rs": "961.01"
       }
      ],
      "absatz": "2",
@@ -964,7 +976,8 @@
      "links": [
       {
        "label": "SR <b>311.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799"
+       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
+       "rs": "311.0"
       }
      ],
      "absatz": "2",
@@ -983,7 +996,8 @@
      "links": [
       {
        "label": "SR <b>956.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736",
+       "rs": "956.1"
       }
      ],
      "absatz": "2",
@@ -1072,7 +1086,8 @@
      "links": [
       {
        "label": "SR <b>172.010</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022",
+       "rs": "172.010"
       }
      ],
      "absatz": "2",
@@ -1109,7 +1124,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": null,
@@ -1152,7 +1168,8 @@
      "links": [
       {
        "label": "SR <b>958.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853",
+       "rs": "958.1"
       }
      ],
      "absatz": "1",
@@ -1444,7 +1461,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "1",
@@ -1462,7 +1480,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "1",
@@ -1546,7 +1565,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "1",
@@ -1564,7 +1584,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "1",
@@ -1606,7 +1627,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "1",
@@ -1665,7 +1687,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "2",
@@ -1707,7 +1730,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "2",
@@ -1725,7 +1749,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "2",
@@ -1743,7 +1768,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "3",
@@ -1807,7 +1833,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": "1",
@@ -1871,7 +1898,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "2",
@@ -1889,7 +1917,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "2",
@@ -1953,7 +1982,8 @@
      "links": [
       {
        "label": "SR <b>172.010</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1997/2022_2022_2022",
+       "rs": "172.010"
       }
      ],
      "absatz": "2",
@@ -2190,7 +2220,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "1",
@@ -2209,7 +2240,8 @@
      "links": [
       {
        "label": "SR <b>961.01</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2005/734",
+       "rs": "961.01"
       }
      ],
      "absatz": "1",
@@ -2228,7 +2260,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "1",
@@ -2247,7 +2280,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "2",
@@ -2285,7 +2319,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "1",
@@ -2303,7 +2338,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "1",
@@ -2398,7 +2434,8 @@
      "links": [
       {
        "label": "SR <b>272</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2010/262"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2010/262",
+       "rs": "272"
       }
      ],
      "absatz": "2",
@@ -2623,6 +2660,25 @@
    ],
    "marginalie": [
     "Informationsaustausch"
+   ],
+   "fussnoten": [
+    {
+     "nr": "50",
+     "text": "Fassung gemäss Anhang Ziff. 7 des BG vom 26. Sept. 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 323; BBl <b>2024</b> 1607).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl <b>2024</b> 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
    ]
   },
   "89": {
@@ -2674,12 +2730,13 @@
    ],
    "fussnoten": [
     {
-     "nr": "50",
+     "nr": "51",
      "text": "SR <b>956.1</b>",
      "links": [
       {
        "label": "SR <b>956.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/736",
+       "rs": "956.1"
       }
      ],
      "absatz": null,
@@ -2743,12 +2800,13 @@
    ],
    "fussnoten": [
     {
-     "nr": "51",
+     "nr": "52",
      "text": "SR <b>954.1</b>",
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "3",
@@ -2761,7 +2819,7 @@
      "kl": "V"
     },
     {
-     "nr": "52",
+     "nr": "53",
      "text": "V vom 6. Nov. 2019 über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes (AS <b>2019</b> 4631).",
      "links": [
       {

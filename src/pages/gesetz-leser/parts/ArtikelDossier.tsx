@@ -54,17 +54,23 @@ import { useId, useState, type ReactNode } from 'react';
 
 /** Eine Rubrik: Zahl, Wort, Registerfarbe — und was sie aufklappt.
  *
+ *  RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE, Entscheid David 2.10.2026): die Rubrik
+ *  `r` (Entscheide) samt `titel` und `nebenGriff` ist weg — das Dossier filterte
+ *  sie seit M3 per Konstante aus, der «im Erlass-Blatt öffnen ›»-Griff war im
+ *  Einzelmodus nie erreichbar (dort gibt es kein Blatt). Die Entscheide stehen im
+ *  Erlass-Blatt (`../v3/PanelEntscheide.tsx`).
+ *
  *  S6 W1f (24.9.2026): der Typ stand bis hierher in `./Funktionszeile.tsx`, der
  *  Zeile am Artikelende. Die Zeile ist gefallen (Entscheid David 24.9.2026,
  *  «die zeile soll ganz weg»); ihr einziger verbliebener Leser ist dieses
  *  Dossier (Einzelmodus, D-E4 unverändert) — der Typ zieht darum hierher.
  *  Die Feldkommentare unten sind Belege ihres Datums (§0 Ziff. 2b). */
 export interface BezugsMarke {
-  /** Registerbuchstabe: r = Rechtsprechung, m = Materialien, g = Gesetze,
-   *  w = Werkzeuge; D40 · `f` = Fassung (Farbe der Gesetze, eigener Buchstabe:
+  /** Registerbuchstabe: m = Materialien, g = Gesetze, w = Werkzeuge;
+   *  D40 · `f` = Fassung (Farbe der Gesetze, eigener Buchstabe:
    *  er ist Schlüssel des Aufklapp-Zustands und der Menü-Wahl `data-fuss-aus` —
    *  `g` doppelt hiesse, «Verweise» abwählen nähme die Fassung mit). */
-  reg: 'f' | 'r' | 'm' | 'g' | 'w';
+  reg: 'f' | 'm' | 'g' | 'w';
   /** Anzahl — nur echte, gezählte Werte (§8: nie geschätzt, nie erfunden). */
   anzahl: number;
   /** Einzahl/Mehrzahl des Rubriknamens. */
@@ -73,9 +79,6 @@ export interface BezugsMarke {
    *  («Gilt seit 1.1.2023»); aufgeklappt steht die Zahl. Der Text kommt fertig
    *  vom Aufrufer (`../fassungsEtikett`), diese Datei formuliert nichts (§3). */
   etikett?: string;
-  /** W2·26/Z3 · Zusatz für den `title`: die Grundgesamtheit, wenn die sichtbare
-   *  Zahl eine GEFILTERTE ist (§8, wie der `title` in `./BezuegeZeile.tsx`). */
-  titel?: string;
   /** W2·5m · Klartext-Leerzustand bei `anzahl === 0`, nur wo die Null gesichert
    *  ist (Verweise, Rechner). Die Zeile hier wertet das Feld NICHT aus — sie
    *  filtert `anzahl > 0`; gelesen wird es vom Dossier (`./ArtikelDossier.tsx`). */
@@ -85,15 +88,12 @@ export interface BezugsMarke {
   /** Hängt der Inhalt an einem nachzuladenden Shard? Dann fragt das Aufklappen
    *  danach (`onOeffnen`) und zeigt bis dahin das Skelett. */
   brauchtDaten?: boolean;
-  /** D35-F2 · Sekundär-Griff am FUSS des aufgeklappten Blocks («im Blatt
-   *  öffnen ›», David 7.9.2026: aufklappen UND ins Blatt öffnen). Wer ihn baut,
-   *  entscheidet `./ArtikelLeser.bezuegeFuss.tsx`; hier wird nur gerendert (§3). */
-  nebenGriff?: ReactNode;
 }
 
 /**
  * Die Reihenfolge der Blöcke — F-E1, entschieden David 14.9.2026 («ja zu allen
- * drei»): Fassung · Verweise · Entscheide · Materialien · Rechner.
+ * drei»): Fassung · Verweise · Entscheide · Materialien · Rechner
+ * (die Entscheide sind seit dem Rückbau 2.10.2026 nicht mehr Teil des Dossiers).
  *
  * Sie folgt der juristischen Prüffolge: Was gilt seit wann · Was hängt daran ·
  * Wie wurde es angewendet · Warum steht es so da · Womit rechne ich. Sie
@@ -101,35 +101,12 @@ export interface BezugsMarke {
  * ist eine Chip-Leiste, in der Zahl und Farbe führen; das Dossier ist ein
  * Prüfweg.
  */
-const BLOCK_ORDNUNG: ReadonlyArray<BezugsMarke['reg']> = ['f', 'g', 'r', 'm', 'w'];
-
-/**
- * M3 (Kap. 15.2) · DER RECHTSPRECHUNGS-BLOCK IST NICHT FREIGEGEBEN.
- *
- * Der Bezüge-Korpus trägt Phantom-Kanten (ROADMAP:374, Befund Split-Bau
- * 30.8.2026/PR #582; Fix-Tiefe geführt unter `QS-KORPUS`). In der Zeile am
- * Artikelende ist eine falsche Kante eine Zeile unter vielen; als eigener,
- * grosser Block unter der Bestimmung bekäme sie Gewicht — und ein prominenter
- * Block mit erheblichem Fehlanteil ist NEGATIVER Mehrwert: er kostet den
- * Juristen die Prüfung jeder einzelnen Fundstelle und beschädigt das
- * Versprechen aus §1/§8 stärker, als ein fehlender Block es je könnte.
- *
- * DAS MODUL IST ANGESCHLOSSEN, NUR DER BLOCK NICHT AUSGELIEFERT: die Marke `r`
- * kommt unverändert aus `./ArtikelLeser.bezuegeFuss.tsx` herein, sie wird hier
- * ausschliesslich durch diese Konstante ausgefiltert. Sobald der Phantom-Filter
- * geliefert ist, ist die Freigabe eine Zeile — und die Sonde
- * `src/tests/leser-einzel-dossier.test.tsx` hält fest, dass die Zeile heute auf
- * `false` steht und der Block darum fehlt.
- *
- * In der ZEILE am Artikelende (Gesamtansicht) bleibt die Rubrik unangetastet:
- * dieser Schritt liefert eine zweite Gestalt aus, er nimmt keine bestehende weg.
- */
-const RECHTSPRECHUNG_BLOCK_FREI = false;
+const BLOCK_ORDNUNG: ReadonlyArray<BezugsMarke['reg']> = ['f', 'g', 'm', 'w'];
 
 /** Registerkante des Rubrik-Griffs — dieselbe Farbe wie die Marke in der Zeile
  *  (Fassungen tragen das Gesetzes-Register). Volle Literale für Tailwind. */
 const GRIFF_REGISTER: Readonly<Record<BezugsMarke['reg'], string>> = {
-  f: 'border-l-reg-g', g: 'border-l-reg-g', r: 'border-l-reg-r', m: 'border-l-reg-m', w: 'border-l-reg-w',
+  f: 'border-l-reg-g', g: 'border-l-reg-g', m: 'border-l-reg-m', w: 'border-l-reg-w',
 };
 
 /** Kante des AUFGEKLAPPTEN Blocks (W2·29-WERKBANK-REST S2, 25.9.2026): die
@@ -138,7 +115,7 @@ const GRIFF_REGISTER: Readonly<Record<BezugsMarke['reg'], string>> = {
  *  die Fassung (`f`) trug dort keine eigene Regel und bleibt `rule-soft`. Der
  *  Klassenname `lr7-bez-block` bleibt als Anker (`v3/LeserLesespalte`, Sonden). */
 const BLOCK_KANTE: Readonly<Record<BezugsMarke['reg'], string>> = {
-  f: 'border-l-rule-soft', g: 'border-l-reg-g', r: 'border-l-reg-r', m: 'border-l-reg-m', w: 'border-l-reg-w',
+  f: 'border-l-rule-soft', g: 'border-l-reg-g', m: 'border-l-reg-m', w: 'border-l-reg-w',
 };
 
 /** Was ein Block im Titel trägt: «3 Fassungen», «6 Verweise», «1 Rechner». */
@@ -159,7 +136,6 @@ function bloeckeAus(marken: readonly BezugsMarke[]): BezugsMarke[] {
   const nachReg = new Map(marken.map((m) => [m.reg, m]));
   const raus: BezugsMarke[] = [];
   for (const reg of BLOCK_ORDNUNG) {
-    if (reg === 'r' && !RECHTSPRECHUNG_BLOCK_FREI) continue;
     const m = nachReg.get(reg);
     if (!m) continue;
     // Eine Marke ohne Zahl steht nur, wenn ihre Null gesichert ist (s. Kopf).
@@ -226,7 +202,6 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                    Den Zustand trägt `aria-expanded`, nie das Wort
                    (ARIA_ZUSTANDSNAME, eslint.config.js). */
                 aria-label={`${blockTitel(m)} zu ${zitat}`}
-                title={m.titel}
                 onClick={() => schalte(m)}>
                 <span aria-hidden className="inline-flex w-3 justify-center text-ink-600">{auf ? '▾' : '▸'}</span>
                 <span>{blockTitel(m)}</span>
@@ -248,7 +223,6 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                         </span>
                       )
                       : m.inhalt)}
-                {m.nebenGriff}
               </div>
             )}
           </div>

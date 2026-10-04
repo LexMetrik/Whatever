@@ -190,10 +190,20 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
                     lit. a» sagt, WELCHEN Teil des Artikels die Änderung traf —
                     die Angabe, wegen der die Liste absatzscharf ist (M1/N1). */}
                 {sk && <span className="text-ink-500"> · {sk}</span>}
+                {/* P7 #11: «Ursprünglich» nennt die alte Bezeichnung im Wortlaut der Fussnote («Art. 29bis»,
+                    «Bst. cbis, dann cter»). Kein Datum dazu — die Fussnote datiert nur das Folge-Ereignis (§7). */}
+                {e.frueher && <span className="text-ink-500"> · «{e.frueher}»</span>}
+                {/* W2·27 (2.10.2026): Fedlex vermerkt «Fassung gemäss …»/«Eingefügt durch …» oft an der Gliederungs-
+                    überschrift; sie gilt für alle Artikel darunter (Entscheid David 2.10.2026). Die Kennzeichnung steht
+                    an jedem solchen Punkt — am Träger-Artikel wie an den übrigen — und nennt die Überschrift (§8). */}
+                {e.ueberschrift && <span className="text-ink-500" data-historie-ueberschrift> · an der Überschrift «{e.ueberschrift}»</span>}
                 {e.datum && (
                   <span> · {e.wirkung ? 'mit Wirkung seit' : 'in Kraft seit'} <span className="num text-ink-600">{formatiereDatum(e.datum)}</span></span>
                 )}
                 {e.quellen.length > 0 && <span> · <Quellen quellen={e.quellen} /></span>}
+                {/* W2·27 (Nachzug 2.10.2026, B2): gestaffelt/befristet/teilweise geltende Überschrift-Fussnote — ohne einzelnes
+                    Datum, dafür mit dem Wortlaut, damit Staffelung und Befristung nicht verschwinden (§8). */}
+                {e.teilweise && <span className="text-ink-500" data-historie-teilweise> · Fussnote an der Überschrift: «{e.teilweise}»</span>}
                 {zusatz?.(e, i)}
               </li>
             );

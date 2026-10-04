@@ -311,6 +311,11 @@ export interface SynopseZeile {
   /** Die Zeile ist der GANZE Artikel (die Stände zählen die Absätze verschieden,
    *  siehe `synopseZeilen`) — die Karte sagt das dazu (§8). */
   ganzerArtikel?: true;
+  /** Nur bei `entfernt` aus einem PAAR «Wortlaut → Aufhebungs-Platzhalter»: der Text der rechten
+   *  Seite («…» oder der Wortlaut «Aufgehoben»), den `neu: null` nicht mehr trägt. Damit kann die
+   *  Karte die Zeile BLOCKGENAU beschriften (W2·27 P2 #40/#42) statt über alle rechten Blöcke
+   *  zugleich. Fehlt bei einem Alt-Block ohne Gegenblock — dort gibt es keinen rechten Text. */
+  neuErsatz?: string;
 }
 
 /**
@@ -519,7 +524,7 @@ export function synopseZeilen(
     const neuTot = istAufgehoben(b[2]);
     if (altTot !== neuTot) {
       zeilen.push(neuTot
-        ? { art: 'entfernt', absatz: a[0], num: a[1], alt: [{ marke: 'weg', text: a[2] }], neu: null }
+        ? { art: 'entfernt', absatz: a[0], num: a[1], alt: [{ marke: 'weg', text: a[2] }], neu: null, neuErsatz: b[2] }
         : { art: 'eingefuegt', absatz: b[0], num: b[1], alt: null, neu: [{ marke: 'neu', text: b[2] }] });
     } else if (vergleichsform(a[2]) === vergleichsform(b[2]) || (altTot && neuTot)) {
       zeilen.push({ art: 'gleich', absatz: b[0], num: b[1], alt: [{ marke: 'gleich', text: a[2] }], neu: [{ marke: 'gleich', text: b[2] }] });

@@ -6,6 +6,22 @@
   "referenz": 7,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 4621",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2008-12-01",
@@ -199,7 +215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
     }
    ]
   },
@@ -232,6 +249,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14": {
@@ -449,6 +469,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12_b": {
@@ -480,6 +503,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13_a": {

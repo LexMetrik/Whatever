@@ -6,6 +6,26 @@
   "referenz": 29,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 491",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/491"
+    },
+    {
+     "label": "BBl 2017 6941",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Abschnitt: Schutz von Personendaten"
+  }
+ ],
  "artikel": {
   "4": {
    "giltSeit": "2007-01-01",
@@ -1053,7 +1073,7 @@
    ]
   },
   "18_a": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1070,8 +1090,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Schutz von Personendaten"
     }
+   ]
+  },
+  "18_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "18_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "18_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "18_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "31_a": {

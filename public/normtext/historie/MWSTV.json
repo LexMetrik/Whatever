@@ -6,6 +6,134 @@
   "referenz": 36,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 485",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/485"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Mehrheit von Leistungen und Befreiung von der Einfuhrsteuer"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/696"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Papierlose Belege, elektronische Verfahren"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 312",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/312"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Papierlose Belege, elektronische Verfahren"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/696"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Datenschutz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 485",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/485"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4739",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/671"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Titel: Mehrwertsteuer-Konsultativgremium"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/696"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Margenbesteuerung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/696"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Abzug fiktiver Vorsteuer"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 485",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/485"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Jährliche Abrechnung"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": "2018-01-01",
@@ -759,7 +887,7 @@
    "aufgehobenSeit": "2025-01-01"
   },
   "62": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -772,7 +900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Abzug fiktiver Vorsteuer"
     }
    ]
   },
@@ -831,6 +960,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "75": {
@@ -1356,7 +1488,7 @@
    ]
   },
   "112": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -1382,7 +1514,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Mehrheit von Leistungen und Befreiung von der Einfuhrsteuer"
     }
    ]
   },
@@ -1415,6 +1548,9 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "115": {
@@ -1524,7 +1660,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Papierlose Belege, elektronische Verfahren"
     },
     {
      "typ": "fassung",
@@ -1537,7 +1674,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Papierlose Belege, elektronische Verfahren"
     }
    ]
   },
@@ -1557,6 +1695,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "127": {
@@ -1617,7 +1759,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Datenschutz"
     }
    ]
   },
@@ -1663,6 +1806,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "133": {
@@ -1681,6 +1827,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "134": {
@@ -1712,6 +1861,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "135": {
@@ -1743,6 +1895,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "136": {
@@ -1761,6 +1916,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "137": {
@@ -1779,6 +1937,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "138": {
@@ -1797,6 +1958,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "139": {
@@ -1845,7 +2009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
     }
    ]
   },
@@ -2010,7 +2175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Titel: Mehrwertsteuer-Konsultativgremium"
     }
    ]
   },
@@ -2030,6 +2196,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "159": {
@@ -2061,6 +2230,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "160": {
@@ -2079,6 +2251,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "161": {
@@ -2097,6 +2272,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "162": {
@@ -2115,6 +2293,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "165": {
@@ -2275,6 +2456,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "140_a": {
@@ -2293,6 +2477,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "166_a": {
@@ -2440,7 +2627,7 @@
    ]
   },
   "48_a": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2453,8 +2640,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Margenbesteuerung"
     }
+   ]
+  },
+  "48_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "48_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "48_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "48_e": {
@@ -2473,6 +2682,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "4_a": {
@@ -2579,7 +2791,7 @@
    ]
   },
   "76_a": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2592,8 +2804,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Jährliche Abrechnung"
     }
+   ]
+  },
+  "76_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "76_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "76_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "99_a": {

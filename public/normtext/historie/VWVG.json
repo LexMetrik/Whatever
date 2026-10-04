@@ -6,6 +6,26 @@
   "referenz": 29,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1994-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 288",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288"
+    },
+    {
+     "label": "BBl 1991 II 465",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_465_461_413"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2007-01-01",
@@ -1625,6 +1645,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "73": {
@@ -1647,6 +1670,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "74": {
@@ -1669,6 +1695,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "75": {
@@ -1691,6 +1720,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76": {
@@ -1730,6 +1762,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "77": {
@@ -1752,6 +1787,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "78": {
@@ -1774,6 +1812,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79": {
@@ -1813,6 +1854,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11_a": {
@@ -2139,7 +2183,7 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "71_a_71_d": {
-   "giltSeit": "1994-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2190,7 +2234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Besondere Behörden"
     }
    ],
    "aufgehobenSeit": "2007-01-01"

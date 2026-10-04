@@ -1,11 +1,11 @@
 {
- "erzeugt": "2026-09-14",
- "stand": "2026-08-01",
- "fassungsToken": "20260801",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "142.513",
   "titel": "Verordnung über das Zentrale Migrationsinformationssystem",
-  "erlassdatum": "vom 12. April 2006 (Stand am 1. August 2026)",
+  "erlassdatum": "vom 12. April 2006 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -1688,6 +1688,39 @@
      "absatz": null,
      "item": "t",
      "kl": "A"
+    },
+    {
+     "nr": "93",
+     "text": "Eingefügt durch Anhang Ziff. 1 der V vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 364).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "u",
+     "kl": "A"
+    },
+    {
+     "nr": "94",
+     "text": "SR <b>955.3</b>",
+     "links": [
+      {
+       "label": "SR <b>955.3</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2026/323",
+       "rs": "955.3"
+      }
+     ],
+     "absatz": null,
+     "item": "u",
+     "pos": {
+      "b": 0,
+      "it": 42,
+      "o": 157,
+      "l": 272
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1704,7 +1737,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "93",
+     "nr": "95",
      "text": "Fassung gemäss Anhang Ziff. 9 der V vom 12. Dez. 2008, in Kraft seit 1. Jan. 2009 (AS <b>2008</b> 6305).",
      "links": [
       {
@@ -1717,7 +1750,7 @@
      "kl": "A"
     },
     {
-     "nr": "94",
+     "nr": "96",
      "text": "Fassung gemäss Ziff. I der V vom 10. Mai 2023, in Kraft seit 15. Juni 2023 (AS <b>2023</b> 247).",
      "links": [
       {
@@ -1730,7 +1763,7 @@
      "kl": "A"
     },
     {
-     "nr": "95",
+     "nr": "97",
      "text": "SR <b>361.0</b>",
      "links": [
       {
@@ -1750,7 +1783,7 @@
      "kl": "V"
     },
     {
-     "nr": "96",
+     "nr": "98",
      "text": "Fassung gemäss Ziff. I der V vom 19. Okt. 2022, in Kraft seit 22. Nov. 2022 (AS <b>2022</b> 647).",
      "links": [
       {
@@ -1763,7 +1796,7 @@
      "kl": "A"
     },
     {
-     "nr": "97",
+     "nr": "99",
      "text": "Fassung gemäss Anhang Ziff. 3 der V vom 7. Nov. 2012 über den ausserprozessualen Zeugenschutz, in Kraft seit 1. Jan. 2013 (AS <b>2012</b> 6731).",
      "links": [
       {
@@ -1776,7 +1809,7 @@
      "kl": "A"
     },
     {
-     "nr": "98",
+     "nr": "100",
      "text": "SR <b>142.31</b>",
      "links": [
       {
@@ -1796,7 +1829,7 @@
      "kl": "V"
     },
     {
-     "nr": "99",
+     "nr": "101",
      "text": "SR <b>955.0</b>",
      "links": [
       {
@@ -1816,7 +1849,7 @@
      "kl": "V"
     },
     {
-     "nr": "100",
+     "nr": "102",
      "text": "Eingefügt durch Anhang 2 Ziff. 1 der Vorläuferstoffverordnung vom 25. Mai 2022, in Kraft seit 1. Jan. 2023 (AS <b>2022</b> 353).",
      "links": [
       {
@@ -1829,7 +1862,7 @@
      "kl": "A"
     },
     {
-     "nr": "101",
+     "nr": "103",
      "text": "SR <b>941.42</b>",
      "links": [
       {
@@ -1849,7 +1882,7 @@
      "kl": "V"
     },
     {
-     "nr": "102",
+     "nr": "104",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2011, in Kraft seit 1. Dez. 2011 (AS<b> 2011</b> 5197).",
      "links": [
       {
@@ -1862,7 +1895,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "105",
      "text": "Fassung gemäss Ziff. I der V vom 14. Mai 2025, in Kraft seit 15. Juni 2025 (AS<b> 2025</b> 344).",
      "links": [
       {
@@ -1881,7 +1914,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "106",
      "text": "SR <b>351.1</b>",
      "links": [
       {
@@ -1901,7 +1934,7 @@
      "kl": "V"
     },
     {
-     "nr": "105",
+     "nr": "107",
      "text": "Fassung gemäss Ziff. I der V vom 14. Mai 2025, in Kraft seit 15. Juni 2025 (AS<b> 2025</b> 344).",
      "links": [
       {
@@ -1914,7 +1947,7 @@
      "kl": "A"
     },
     {
-     "nr": "106",
+     "nr": "108",
      "text": "SR <b>211.222.32</b>",
      "links": [
       {
@@ -1934,7 +1967,7 @@
      "kl": "V"
     },
     {
-     "nr": "107",
+     "nr": "109",
      "text": "Fassung gemäss Ziff. II 7 der V vom 8. Nov. 2006 über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege, in Kraft seit 1. Jan. 2007 (AS <b>2006</b> 4705).",
      "links": [
       {
@@ -1947,7 +1980,7 @@
      "kl": "A"
     },
     {
-     "nr": "108",
+     "nr": "110",
      "text": "Fassung gemäss Anhang Ziff. I der V vom 4. Juni 2010, in Kraft seit 1. Jan. 2011 (AS <b>2010</b> 3061).",
      "links": [
       {
@@ -1960,7 +1993,7 @@
      "kl": "A"
     },
     {
-     "nr": "109",
+     "nr": "111",
      "text": "SR <b>210</b>",
      "links": [
       {
@@ -1980,7 +2013,7 @@
      "kl": "V"
     },
     {
-     "nr": "110",
+     "nr": "112",
      "text": "SR <b>211.231</b>",
      "links": [
       {
@@ -2000,7 +2033,7 @@
      "kl": "V"
     },
     {
-     "nr": "111",
+     "nr": "113",
      "text": "Eingefügt durch Anhang Ziff. 1 der Registerharmonisierungsverordnung vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007</b> 6719).",
      "links": [
       {
@@ -2013,7 +2046,7 @@
      "kl": "A"
     },
     {
-     "nr": "112",
+     "nr": "114",
      "text": "SR <b>431.02</b>",
      "links": [
       {
@@ -2033,7 +2066,7 @@
      "kl": "V"
     },
     {
-     "nr": "113",
+     "nr": "115",
      "text": "Eingefügt durch Anhang Ziff. 9 der V vom 12. Dez. 2008 (AS <b>2008</b> 6305). Fassung gemäss Ziff. I der V vom 19. Febr. 2020, in Kraft seit 1. April 2020 (AS <b>2020</b> 933).",
      "links": [
       {
@@ -2050,7 +2083,7 @@
      "kl": "A"
     },
     {
-     "nr": "114",
+     "nr": "116",
      "text": "SR <b>121</b>",
      "links": [
       {
@@ -2070,7 +2103,7 @@
      "kl": "V"
     },
     {
-     "nr": "115",
+     "nr": "117",
      "text": "SR <b>141.0</b>",
      "links": [
       {
@@ -2090,7 +2123,7 @@
      "kl": "V"
     },
     {
-     "nr": "116",
+     "nr": "118",
      "text": "SR <b>142.20</b>",
      "links": [
       {
@@ -2110,7 +2143,7 @@
      "kl": "V"
     },
     {
-     "nr": "117",
+     "nr": "119",
      "text": "Eingefügt durch Ziff. I der V vom 16. Nov. 2011, in Kraft seit 1. Dez. 2011 (AS<b> 2011</b> 5197).",
      "links": [
       {
@@ -2123,7 +2156,7 @@
      "kl": "A"
     },
     {
-     "nr": "118",
+     "nr": "120",
      "text": "Eingefügt durch Ziff. I der V vom 16. Nov. 2011 (AS<b> 2011</b> 5197). Fassung gemäss Ziff. I der V vom 21. Nov. 2018, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 4569).",
      "links": [
       {
@@ -2140,7 +2173,7 @@
      "kl": "A"
     },
     {
-     "nr": "119",
+     "nr": "121",
      "text": "Eingefügt durch Ziff. I der V vom 16. Nov. 2011 (AS<b> 2011</b> 5197). Aufgehoben durch Ziff. I der V vom 21. Nov. 2018, mit Wirkung seit 1. Jan. 2019 (AS <b>2018</b> 4569).",
      "links": [
       {
@@ -2157,7 +2190,7 @@
      "kl": "A"
     },
     {
-     "nr": "120",
+     "nr": "122",
      "text": "Eingefügt durch Ziff. I der V vom 2. Sept. 2015, in Kraft seit 1. Okt. 2015 (AS <b>2015</b> 3047).",
      "links": [
       {
@@ -2170,7 +2203,7 @@
      "kl": "A"
     },
     {
-     "nr": "121",
+     "nr": "123",
      "text": "Eingefügt durch Ziff. I der V vom 2. Sept. 2015, in Kraft seit 1. Okt. 2015 (AS <b>2015</b> 3047).",
      "links": [
       {
@@ -2183,7 +2216,7 @@
      "kl": "A"
     },
     {
-     "nr": "122",
+     "nr": "124",
      "text": "Eingefügt durch Ziff. I der V vom 10. Mai 2023, in Kraft seit 15. Juni 2023 (AS <b>2023</b> 247).",
      "links": [
       {
@@ -2196,7 +2229,7 @@
      "kl": "A"
     },
     {
-     "nr": "123",
+     "nr": "125",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -2216,7 +2249,7 @@
      "kl": "V"
     },
     {
-     "nr": "124",
+     "nr": "126",
      "text": "Eingefügt durch Ziff. I der V vom 10. Mai 2023, in Kraft seit 15. Juni 2023 (AS <b>2023</b> 247).",
      "links": [
       {
@@ -2227,6 +2260,39 @@
      "absatz": null,
      "item": "r",
      "kl": "A"
+    },
+    {
+     "nr": "127",
+     "text": "Eingefügt durch Anhang Ziff. 1 der V vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 364).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "s",
+     "kl": "A"
+    },
+    {
+     "nr": "128",
+     "text": "SR <b>955.3</b>",
+     "links": [
+      {
+       "label": "SR <b>955.3</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2026/323",
+       "rs": "955.3"
+      }
+     ],
+     "absatz": null,
+     "item": "s",
+     "pos": {
+      "b": 0,
+      "it": 34,
+      "o": 86,
+      "l": 87
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2267,7 +2333,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "125",
+     "nr": "129",
      "text": "SR <b>142.31</b>",
      "links": [
       {
@@ -2287,7 +2353,7 @@
      "kl": "V"
     },
     {
-     "nr": "126",
+     "nr": "130",
      "text": "SR <b>431.011</b>",
      "links": [
       {
@@ -2306,7 +2372,7 @@
      "kl": "V"
     },
     {
-     "nr": "127",
+     "nr": "131",
      "text": "SR <b>431.021</b>",
      "links": [
       {
@@ -2325,7 +2391,7 @@
      "kl": "V"
     },
     {
-     "nr": "128",
+     "nr": "132",
      "text": "Eingefügt durch Anhang Ziff. 1 der Registerharmonisierungsverordnung vom 21. Nov. 2007 (AS <b>2007</b> 6719). Fassung gemäss Anhang 3 Ziff. 1 der Bundesstatistikverordnung vom 30. April 2025, in Kraft seit 1. Juni 2025 (AS <b>2025</b> 318).",
      "links": [
       {
@@ -2347,7 +2413,7 @@
      "kl": "A"
     },
     {
-     "nr": "129",
+     "nr": "133",
      "text": "Eingefügt durch Anhang Ziff. 1 der V vom 26. Jan. 2011 über die Unternehmens-Identifikationsnummer, in Kraft seit 1. April 2011 (AS <b>2011</b> 533).",
      "links": [
       {
@@ -2379,7 +2445,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "130",
+     "nr": "134",
      "text": "Aufgehoben durch Anhang 2 Ziff. II 8 der Datenschutzverordnung vom 31. Aug. 2022, mit Wirkung seit 1. Sept. 2023 (AS <b>2022</b> 568).",
      "links": [
       {
@@ -2435,7 +2501,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "132",
+     "nr": "136",
      "text": "Fassung gemäss Anhang 2 Ziff. II 6 der Informationssicherheitsverordnung vom 8. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 735).",
      "links": [
       {
@@ -2448,7 +2514,7 @@
      "kl": "A"
     },
     {
-     "nr": "133",
+     "nr": "137",
      "text": "Fassung gemäss Anhang 2 Ziff. II 8 der Datenschutzverordnung vom 31. Aug. 2022, in Kraft seit 1. Sept. 2023 (AS <b>2022</b> 568).",
      "links": [
       {
@@ -2461,7 +2527,7 @@
      "kl": "A"
     },
     {
-     "nr": "134",
+     "nr": "138",
      "text": "SR <b>235.11</b>",
      "links": [
       {
@@ -2481,7 +2547,7 @@
      "kl": "V"
     },
     {
-     "nr": "135",
+     "nr": "139",
      "text": "Fassung gemäss Anhang 2 Ziff. II 6 der Informationssicherheitsverordnung vom 8. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 735).",
      "links": [
       {
@@ -2494,7 +2560,7 @@
      "kl": "A"
     },
     {
-     "nr": "136",
+     "nr": "140",
      "text": "SR <b>128.1</b>",
      "links": [
       {
@@ -2514,7 +2580,7 @@
      "kl": "V"
     },
     {
-     "nr": "137",
+     "nr": "141",
      "text": "Fassung gemäss Anhang Ziff. 5 der V vom 24. Febr. 2021, in Kraft seit 1. April 2021 (AS <b>2021</b> 132).",
      "links": [
       {
@@ -2533,7 +2599,7 @@
      "kl": "A"
     },
     {
-     "nr": "138",
+     "nr": "142",
      "text": "SR <b>142.31</b>",
      "links": [
       {
@@ -2566,7 +2632,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "139",
+     "nr": "143",
      "text": "Ausdruck gemäss Ziff. I der V vom 19. Febr. 2020, in Kraft seit 1. April 2020 (AS <b>2020</b> 933). Diese Änd. wurde im ganzen Erlass berücksichtigt.",
      "links": [
       {
@@ -2579,7 +2645,7 @@
      "kl": "A"
     },
     {
-     "nr": "140",
+     "nr": "144",
      "text": "Fassung gemäss Ziff. I der V vom 24. Okt. 2007, in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 5615).",
      "links": [
       {
@@ -2592,7 +2658,7 @@
      "kl": "A"
     },
     {
-     "nr": "141",
+     "nr": "145",
      "text": "SR <b>142.201</b>",
      "links": [
       {
@@ -2612,7 +2678,7 @@
      "kl": "V"
     },
     {
-     "nr": "142",
+     "nr": "146",
      "text": "Fassung gemäss Ziff. I der V vom 24. Okt. 2007, in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 5615).",
      "links": [
       {
@@ -2625,7 +2691,7 @@
      "kl": "A"
     },
     {
-     "nr": "143",
+     "nr": "147",
      "text": "Eingefügt durch Anhang Ziff. 2 der V vom 17. Dez. 2010, in Kraft seit 24. Jan. 2011 (AS <b>2011</b> 99).",
      "links": [
       {
@@ -2638,7 +2704,7 @@
      "kl": "A"
     },
     {
-     "nr": "144",
+     "nr": "148",
      "text": "Eingefügt durch Anhang Ziff. 1 der V vom 15. Sept. 2023, in Kraft seit 15. Okt. 2023 (AS <b>2023</b> 552).",
      "links": [
       {
@@ -2665,7 +2731,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "145",
+     "nr": "149",
      "text": "SR <b>235.1</b>",
      "links": [
       {
@@ -2684,7 +2750,7 @@
      "kl": "V"
     },
     {
-     "nr": "146",
+     "nr": "150",
      "text": "SR <b>172.021</b>",
      "links": [
       {
@@ -2703,7 +2769,7 @@
      "kl": "V"
     },
     {
-     "nr": "147",
+     "nr": "151",
      "text": "Fassung gemäss Ziff. I der V vom 20. Mai 2026, in Kraft seit 12. Juni 2026 (AS <b>2026</b> 268).",
      "links": [
       {
@@ -2721,7 +2787,7 @@
      "kl": "A"
     },
     {
-     "nr": "148",
+     "nr": "152",
      "text": "SR <b>235.11</b>",
      "links": [
       {
@@ -2740,7 +2806,7 @@
      "kl": "V"
     },
     {
-     "nr": "149",
+     "nr": "153",
      "text": "Fassung gemäss Anhang 2 Ziff. II 8 der Datenschutzverordnung vom 31. Aug. 2022, in Kraft seit 1. Sept. 2023 (AS <b>2022</b> 568).",
      "links": [
       {
@@ -2772,7 +2838,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "150",
+     "nr": "154",
      "text": "SR <b>142.20</b>",
      "links": [
       {
@@ -2791,7 +2857,7 @@
      "kl": "V"
     },
     {
-     "nr": "151",
+     "nr": "155",
      "text": "SR <b>142.31</b>",
      "links": [
       {
@@ -2810,7 +2876,7 @@
      "kl": "V"
     },
     {
-     "nr": "152",
+     "nr": "156",
      "text": "SR <b>141.0</b>",
      "links": [
       {
@@ -2829,7 +2895,7 @@
      "kl": "V"
     },
     {
-     "nr": "153",
+     "nr": "157",
      "text": "SR <b>0.142.112.681</b>",
      "links": [
       {
@@ -2848,7 +2914,7 @@
      "kl": "V"
     },
     {
-     "nr": "154",
+     "nr": "158",
      "text": "SR <b>0.632.31</b>",
      "links": [
       {
@@ -2867,7 +2933,7 @@
      "kl": "V"
     },
     {
-     "nr": "155",
+     "nr": "159",
      "text": "Diese Abk. sind in Anhang 4 Ziff. 1 aufgeführt.",
      "links": [],
      "absatz": "2",
@@ -2880,7 +2946,7 @@
      "kl": "U"
     },
     {
-     "nr": "156",
+     "nr": "160",
      "text": "Diese Abk. sind in Anhang 4 Ziff. 2 aufgeführt.",
      "links": [],
      "absatz": "2",
@@ -2893,7 +2959,7 @@
      "kl": "U"
     },
     {
-     "nr": "157",
+     "nr": "161",
      "text": "Fassung gemäss Ziff. I 1 der V vom 22. Okt. 2008 (Schengen und Dublin), in Kraft seit 12. Dez. 2008 (AS <b>2008</b> 5421).",
      "links": [
       {
@@ -2911,7 +2977,7 @@
      "kl": "A"
     },
     {
-     "nr": "158",
+     "nr": "162",
      "text": "Verordnung (EU) 2016/399 des Europäischen Parlaments und des Rates vom 9. März 2016 über einen Gemeinschaftskodex für das Überschreiten der Grenzen durch Personen (Schengener Grenzkodex), ABl. L 77 vom 23.3.2016, S. 1; zuletzt geändert durch Verordnung (EU) 2024/1717, ABl. L, 2024/1717, 20.6.2024.",
      "links": [],
      "absatz": "2bis",
@@ -2924,7 +2990,7 @@
      "kl": "V"
     },
     {
-     "nr": "159",
+     "nr": "163",
      "text": "Eingefügt durch Ziff. I der V vom 6. Mai 2026, in Kraft seit 12. Juni 2026 (AS <b>2026</b> 242).",
      "links": [
       {
@@ -2942,7 +3008,7 @@
      "kl": "A"
     },
     {
-     "nr": "160",
+     "nr": "164",
      "text": "SR <b>431.011</b>",
      "links": [
       {
@@ -2961,7 +3027,7 @@
      "kl": "V"
     },
     {
-     "nr": "161",
+     "nr": "165",
      "text": "Fassung gemäss Anhang 3 Ziff. 1 der Bundesstatistikverordnung vom 30. April 2025, in Kraft seit 1. Juni 2025 (AS <b>2025</b> 318).",
      "links": [
       {
@@ -2979,7 +3045,7 @@
      "kl": "A"
     },
     {
-     "nr": "162",
+     "nr": "166",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2011, in Kraft seit 1. Dez. 2011 (AS<b> 2011</b> 5197).",
      "links": [
       {
@@ -3022,7 +3088,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "163",
+     "nr": "167",
      "text": "Fassung gemäss Ziff. I der V vom 16. Nov. 2011, in Kraft seit 1. Dez. 2011 (AS<b> 2011</b> 5197).",
      "links": [
       {
@@ -3040,7 +3106,7 @@
      "kl": "A"
     },
     {
-     "nr": "164",
+     "nr": "168",
      "text": "SR <b>142.209</b>",
      "links": [
       {
@@ -3059,7 +3125,7 @@
      "kl": "V"
     },
     {
-     "nr": "165",
+     "nr": "169",
      "text": "Fassung gemäss Ziff. I der V vom 24. Okt. 2007, in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 5615).",
      "links": [
       {
@@ -3091,7 +3157,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "166",
+     "nr": "170",
      "text": "[AS <b>1994</b> 2859; <b>1996</b> 194; <b>1999</b> 1240; <b>2001</b> 3184; <b>2002 </b>1741 Art. 35 Ziff. 3; <b>2003</b> 1380 Art. 18 Ziff. 1; <b>2004</b> 1569 Ziff. II 3, 4813 Anhang Ziff. 4; <b>2005</b> 1321]",
      "links": [
       {
@@ -3166,7 +3232,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "167",
+     "nr": "171",
      "text": "Aufgehoben durch Ziff. I der V vom 2. Febr. 2022, mit Wirkung seit 1. März 2022 (AS <b>2022</b> 73).",
      "links": [
       {
@@ -3203,7 +3269,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "131",
+     "nr": "135",
      "text": "Eingefügt durch Anhang Ziff. 2 der V vom 17. Dez. 2010 (AS <b>2011</b> 99). Aufgehoben durch Ziff. I der V vom 19. Febr. 2020, mit Wirkung seit 1. April 2020 (AS <b>2020</b> 933).",
      "links": [
       {
@@ -3234,7 +3300,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "168",
+     "nr": "172",
      "text": "Eingefügt durch Anhang Ziff. 1 der Registerharmonisierungsverordnung vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007</b> 6719).",
      "links": [
       {
@@ -3247,7 +3313,7 @@
      "kl": "A"
     },
     {
-     "nr": "169",
+     "nr": "173",
      "text": "SR <b>431.02</b>",
      "links": [
       {
@@ -3266,7 +3332,7 @@
      "kl": "V"
     },
     {
-     "nr": "170",
+     "nr": "174",
      "text": "SR <b>831.101</b>",
      "links": [
       {

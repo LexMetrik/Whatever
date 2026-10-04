@@ -6,6 +6,62 @@
   "referenz": 52,
   "unparsed": 3
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 3575",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+    },
+    {
+     "label": "BBl 2015 2615",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 3575",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+    },
+    {
+     "label": "BBl 2015 2615",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Datenschutz"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 3575",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/396"
+    },
+    {
+     "label": "BBl 2015 2615",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/540"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2025-01-01",
@@ -1452,7 +1508,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "frueher": "Abs. 4"
     },
     {
      "typ": "urspruenglich",
@@ -2254,7 +2311,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Geheimhaltung und Amtshilfe"
     }
    ]
   },
@@ -2278,6 +2336,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76": {
@@ -2366,12 +2427,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenschutz"
     }
    ]
   },
   "77": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2388,7 +2450,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
     }
    ]
   },
@@ -2429,6 +2492,23 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "79": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "86": {
@@ -3023,6 +3103,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "76_a": {
@@ -3096,6 +3179,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "76_b": {
@@ -3135,6 +3221,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "76_c": {
@@ -3157,6 +3246,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "76_d": {
@@ -3179,6 +3271,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "79_a": {
@@ -3201,6 +3296,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "86_a": {

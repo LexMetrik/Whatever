@@ -64,6 +64,7 @@ import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
 // `./v3/leserModus.ts`).
 import { MODUS_VORGABE, type LeserModus } from './v3/leserModus';
 import { heuteIso } from '../../lib/format';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 /**
  * ── D35-F2 (Entscheid David 7.9.2026) · DER LETZTE ZWEIWERT-SCHALTER IST WEG ─
@@ -315,7 +316,7 @@ function lade(): GeladenerZustand {
     bezugVon: '', bezugBis: '', migriert: false,
   };
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     if (!roh) return grund;
     const o = JSON.parse(roh) as Record<string, unknown>
       & { zeitraum?: unknown; schrift?: unknown; bezugKlassen?: unknown;
@@ -391,7 +392,7 @@ function speichere(): void {
   try {
     // Die gestrichenen Schlüssel (`zeitraum`, `hist`, `verweise`, `linien`)
     // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
-    localStorage.setItem(KEY, JSON.stringify({
+    lokalSpeicher.schreib(KEY, JSON.stringify({
       ...aktuell, [BEZUG_STAND_KEY]: BEZUG_STAND, schrift: aktuellSchrift,
       ansicht: aktuellAnsicht,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,

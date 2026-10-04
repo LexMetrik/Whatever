@@ -21,6 +21,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { alsPanelReiter, type PanelReiter, type PanelZustand } from './panelModell';
+import { aufloesen } from '../../../lib/sichererSpeicher';
 
 export interface BlattGedaechtnis {
   offen: boolean;
@@ -53,11 +54,7 @@ export function merkeBlatt(erlassKey: string, wert: BlattGedaechtnis, speicher: 
 }
 
 function sitzung(): Storage | null {
-  try {
-    return typeof window === 'undefined' ? null : window.sessionStorage;
-  } catch {
-    return null;
-  }
+  return aufloesen('sitzung');
 }
 
 // ── WANN WIEDERHERGESTELLT WIRD: NUR BEI ECHTER RÜCKKEHR ─────────────────────

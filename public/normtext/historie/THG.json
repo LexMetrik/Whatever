@@ -6,6 +6,44 @@
   "referenz": 5,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 2617",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+    },
+    {
+     "label": "BBl 2008 7275",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2010-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 2617",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+    },
+    {
+     "label": "BBl 2008 7275",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/1231"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Marktüberwachung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2010-07-01",
@@ -459,7 +497,7 @@
    ]
   },
   "19": {
-   "giltSeit": "2010-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -476,7 +514,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Marktüberwachung"
     }
    ]
   },
@@ -491,6 +530,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21": {
@@ -796,7 +838,7 @@
    ]
   },
   "16_a": {
-   "giltSeit": "2010-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -813,8 +855,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
     }
+   ]
+  },
+  "16_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_c": {
@@ -833,6 +883,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "16_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "16_e": {
@@ -863,6 +923,23 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "19_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "20_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "20_b": {
@@ -885,6 +962,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "28_a": {

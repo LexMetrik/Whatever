@@ -1,0 +1,7 @@
+<!-- @posten
+dach: W2·17-UI-BEFUNDE
+titel: Split-Pane-Nachzüge: Esc-Stapel mit menueOffen, Klick «Art. N» im sekundären Pane → Fokus BODY, istBreit-Start (G1-B03)
+anlass: Abschluss Session «Gesetzesleser Funktionen inventarisieren» 2.10.2026 (Station E)
+-->
+
+Aus #1275/#1277 (beide gelandet 2.10.2026): (a) Esc-Stapel — `menueOffen()` (modalerDialog.ts) ist nicht im Esc-Schutz des Blatts (usePopoverAutoZu.ts, Modus «fest»): Ansicht-Menü über offenem Blatt, ein Esc schliesst beide; dazu die im PR #1275 offen genannten Grenzen (oberste Fläche nach Dokument-Reihenfolge statt z-index; Schwebefläche ohne aria-modal über einem Modal blockiert ihr eigenes Esc). Geplanter Zweig fix/w217-esc-stapel wurde NICHT gebaut. (b) Klick «Art. N» im sekundären Pane setzt den Fokus auf BODY (Tastatur-Ziel stimmt dank Rückfall, Fokus geht trotzdem verloren). (c) G1-B03 `istBreit`-Start: inhalt-zustand.tsx ~451 `useState(false)` → breites Pane startet falsch und flippt nach dem ResizeObserver. Erledigt und NICHT mehr offen: schliesseHaupt/raeumeLiveLoc und G1-B02 `--nt-stick` (#1275); G1-B01 Schiene 1024–1204 war nicht belegbar. Quelle: Session-Notizen 2026-10-01-leser-befunde.md / 2026-10-01-leser-funktionsinventar.md (rekonstruiert 2.10.2026, Original-Befunddateien beim App-Neustart verloren: IDs tragen keinen Detailbeleg). Zeilen- und Stand-Angaben vom 2.10.2026 — vor Bau gegen origin/main prüfen und neu reproduzieren (§0 Ziff. 2).

@@ -14,6 +14,7 @@ import { FehlSeite } from '../components/ui/FehlSeite';
 import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { BrowseMaterial } from '../lib/materialien/typen';
+import { sicherDekodiert } from '../lib/sicherDekodieren';
 
 // ─── Reader EINES Materials (/materialien/:key) ─────────────────────────────
 //
@@ -35,7 +36,7 @@ export function MaterialLeser() {
 
   useEffect(() => {
     let lebt = true;
-    ladeMaterial(decodeURIComponent(key)).then((m) => {
+    ladeMaterial(sicherDekodiert(key) ?? key).then((m) => {
       if (!lebt) return;
       setData({ key, material: m });
       if (m) document.title = `${m.titel} — LexMetrik`;

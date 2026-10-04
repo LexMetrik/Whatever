@@ -103,6 +103,7 @@ export function VerlaufUebersicht() {
           ref={panelRef}
           tabIndex={-1}
           role="dialog"
+          data-menue-flaeche
           aria-label="Verlauf – zuletzt geöffnet"
           style={{ top: pos.top, left: pos.left }}
           className="lc-schwebeflaeche fixed z-overlay w-[20rem] max-w-[calc(100vw-1rem)] py-1 max-h-[70vh] overflow-y-auto focus:outline-none"

@@ -81,6 +81,27 @@ export function normalisiereBereich(von: unknown, bis: unknown): Zeitbereich {
 }
 
 /**
+ * Darf ein Wert aus einem Datumsfeld SOFORT in den Bereich übernommen werden?
+ *
+ * Ja bei leer (= offenes Ende) und bei einem vollen vierstelligen Jahr ab 1000.
+ * Grund (W2·17-UI-BEFUNDE E5-B01, 1.10.2026): das native `type=date` meldet beim
+ * Tippen des Jahres nach JEDER Ziffer einen gültigen Wert (erste «2» ⇒
+ * `0002-MM-DD`). Mit «von» = 2021-01-01 tauschte `normalisiereBereich` dann die
+ * Enden, das fokussierte «bis»-Feld sprang unter dem Cursor um, und die
+ * Folgeziffern schrieben in den falschen Zustand — Endstand «0002 … 0023», alle
+ * datierten Entscheide weg (gemessen an StPO Art. 5). Zwischenstufen eines
+ * Jahres sind keine Absicht und gehören nicht in den Bereich. Ein Jahr unter
+ * 1000 trägt kein Entscheid (ältestes Datum in den Bezugs-Shards: 2007-10-17,
+ * gemessen 1.10.2026 mit `jq -r '.dokumente[].datum' public/rechtsprechung/bezuege/*.json | sort | head -1`).
+ * Rein (§2).
+ */
+export function istUebernehmbar(wert: string): boolean {
+  if (wert === '') return true;
+  const m = /^(\d{4})-/.exec(wert);
+  return m !== null && Number(m[1]) >= 1000;
+}
+
+/**
  * Liegt ein Entscheid-Datum im Bereich? Q1-sicher (siehe Kopf-Kommentar).
  *
  * @param datum      ISO-Datum der Kante, wie es im Shard steht.

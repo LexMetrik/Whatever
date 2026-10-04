@@ -48,6 +48,14 @@ export interface BrowseErlass {
    *  (Konsolidierungsdatum) und vom Erlassdatum «vom …». Kanton trägt es nicht
    *  (LexWork hat kein strukturelles Ur-Inkrafttreten) ⇒ Feld fehlt, §8. */
   inkraftSeit?: string;
+  /** Nur status 'snapshot' (Bund): der Erlass trat GESTAFFELT in Kraft (einzelne
+   *  Teile früher/später als das Ur-Inkrafttreten). `true` ⇒ «in Kraft seit
+   *  <inkraftSeit>» gilt nur für einen Teil der Artikel und darf nicht als Auskunft
+   *  für einen einzelnen Artikel angezeigt werden. Fail-closed: bei unbekanntem
+   *  Stand `true`. Projiziert aus public/normtext/inkrafttreten.json (§5, W2·27-
+   *  BUND-FERTIG, 2.10.2026); Gründe stehen im Sidecar (`gestaffeltGrund`). Fehlt
+   *  das Feld (Kanton, alte Register), gilt es als unbekannt ⇒ wie `true` behandeln. */
+  inkraftGestaffelt?: boolean;
   // ── §8-Ehrlichkeit: Ganz-Aufhebung des Erlasses ──
   /** Der Erlass ist von Fedlex GANZ aufgehoben (jolux:dateNoLongerInForce). Aus
    *  dem Register projiziert (SSoT aufhebungen.ts). Der Snapshot bleibt lesbar

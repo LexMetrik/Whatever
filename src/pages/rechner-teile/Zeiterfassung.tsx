@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Zeiterfassung / Stoppuhr (Startseite V2) ───────────────────────────────
 //
@@ -21,7 +22,7 @@ function heuteSchluessel(): string {
 
 function ladeEintraege(schluessel: string): Eintrag[] {
   try {
-    const roh = localStorage.getItem(schluessel);
+    const roh = lokalSpeicher.lies(schluessel);
     const arr = roh ? JSON.parse(roh) : [];
     return Array.isArray(arr) ? arr.filter((e) => typeof e?.label === 'string' && typeof e?.ms === 'number') : [];
   } catch {
@@ -30,7 +31,7 @@ function ladeEintraege(schluessel: string): Eintrag[] {
 }
 
 function speichereEintraege(schluessel: string, es: Eintrag[]): void {
-  try { localStorage.setItem(schluessel, JSON.stringify(es)); } catch { /* privater Modus */ }
+  lokalSpeicher.schreib(schluessel, JSON.stringify(es)); // privater Modus
 }
 
 const zwei = (n: number) => String(n).padStart(2, '0');

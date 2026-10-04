@@ -1,11 +1,27 @@
 {
  "erlass": "SSV",
  "abdeckung": {
-  "fussnoten": 391,
-  "ereignis": 354,
+  "fussnoten": 392,
+  "ereignis": 355,
   "referenz": 36,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 2145",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/424"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-07-01",
@@ -979,8 +995,21 @@
    ]
   },
   "28": {
-   "giltSeit": null,
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 453",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/453"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
     {
      "typ": "aufgehoben",
      "datum": "2016-01-01",
@@ -2374,7 +2403,7 @@
    ]
   },
   "68": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2006-03-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2465,7 +2494,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
     }
    ]
   },
@@ -2498,6 +2528,9 @@
      "absatz": "3",
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "70": {
@@ -2594,6 +2627,9 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "71": {
@@ -2716,6 +2752,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "72": {
@@ -4295,16 +4334,16 @@
    ]
   },
   "108": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2003-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2002 3213",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2002/482"
+       "label": "AS 2026 438",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/438"
       }
      ],
      "absatz": "1",
@@ -4364,12 +4403,12 @@
     },
     {
      "typ": "fassung",
-     "datum": "2006-03-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2005 4495",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/582"
+       "label": "AS 2026 438",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/438"
       }
      ],
      "absatz": "4",
@@ -5185,6 +5224,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "72_a": {
@@ -5496,7 +5538,7 @@
  "residuum": [
   {
    "token": "103_a",
-   "nr": "333",
+   "nr": "334",
    "roh": "Die Liste der Titel der Normen sowie deren Texte können kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur, www.snv.ch ."
   }
  ]

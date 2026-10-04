@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useKopieren } from '../useKopieren';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Geteilter Zustands-Rahmen der Vorlagen-Wizards ─────────────────────────
 //
@@ -23,7 +24,7 @@ export function useWizardState<T extends object>(opts: {
     let basis = defaults;
     if (speicherKey) {
       try {
-        const roh = localStorage.getItem(speicherKey);
+        const roh = lokalSpeicher.lies(speicherKey);
         if (roh) {
           const geladen = { ...defaults, ...JSON.parse(roh) } as T;
           basis = normalisieren ? normalisieren(geladen) : geladen;
@@ -46,14 +47,14 @@ export function useWizardState<T extends object>(opts: {
   // Eingaben lokal sichern (verlassen den Browser nicht)
   useEffect(() => {
     if (!speicherKey) return;
-    try { localStorage.setItem(speicherKey, JSON.stringify(a)); } catch { /* Speicher voll/blockiert */ }
+    lokalSpeicher.schreib(speicherKey, JSON.stringify(a)); // Speicher voll/blockiert
   }, [a, speicherKey]);
 
   const set = <K extends keyof T>(k: K, v: T[K]) => setA((alt) => ({ ...alt, [k]: v }));
 
   const zuruecksetzen = () => {
     setA(defaults); setSchritt(0); setBestaetigt(false);
-    if (speicherKey) { try { localStorage.removeItem(speicherKey); } catch { /* ignorieren */ } }
+    if (speicherKey) lokalSpeicher.entferne(speicherKey);
   };
 
   // R4-D (5.9.2026): Timer-Handle, Unmount-Aufräumen und die

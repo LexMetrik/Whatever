@@ -1,27 +1,137 @@
 {
  "erlass": "GWG",
  "abdeckung": {
-  "fussnoten": 216,
-  "ereignis": 174,
-  "referenz": 42,
+  "fussnoten": 281,
+  "ereignis": 228,
+  "referenz": 53,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1389",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    {
+     "label": "BBl 2014 605",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Pflichten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5207",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+    },
+    {
+     "label": "BBl 2006 2829",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 322",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+    },
+    {
+     "label": "BBl 2024 1607",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 656",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+    },
+    {
+     "label": "BBl 2019 5451",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1389",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    {
+     "label": "BBl 2014 605",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 322",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+    },
+    {
+     "label": "BBl 2024 1607",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater"
+  }
+ ],
  "artikel": {
   "1": {
-   "giltSeit": "2009-02-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2009-02-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2009 361",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2007 6269",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/938"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -30,8 +140,25 @@
    ]
   },
   "2": {
-   "giltSeit": "2024-03-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "c"
+    },
     {
      "typ": "fassung",
      "datum": "2016-01-01",
@@ -47,7 +174,7 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "c"
     },
     {
      "typ": "fassung",
@@ -373,6 +500,40 @@
      "item": "e"
     },
     {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3bis",
+     "item": "e"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3ter",
+     "item": null
+    },
+    {
      "typ": "inkraft",
      "datum": "2024-03-01",
      "wirkung": false,
@@ -388,6 +549,74 @@
      ],
      "absatz": "4",
      "item": "e"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": "f"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4bis",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4ter",
+     "item": "h"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null
     }
    ]
   },
@@ -468,7 +697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Pflichten"
     },
     {
      "typ": "fassung",
@@ -485,12 +715,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
     }
    ]
   },
   "4": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -525,7 +756,36 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
+   ]
+  },
+  "5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    4
    ]
   },
   "6": {
@@ -582,6 +842,10 @@
      "absatz": "2",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "7": {
@@ -604,32 +868,40 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "8": {
-   "giltSeit": "2009-02-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2009-02-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2009 361",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2007 6269",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2007/938"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "9": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -820,7 +1092,7 @@
     },
     {
      "typ": "eingefuegt",
-     "datum": "2016-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -833,7 +1105,50 @@
       }
      ],
      "absatz": "1ter",
+     "item": "c"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1ter",
+     "item": "c"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1quater",
      "item": null
+    },
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": "1quinquies",
+     "item": null,
+     "frueher": "Abs. 1quater"
     },
     {
      "typ": "eingefuegt",
@@ -849,9 +1164,46 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
       }
      ],
-     "absatz": "1quater",
+     "absatz": "1quinquies",
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1sexies",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10": {
@@ -908,6 +1260,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -947,10 +1302,13 @@
      "absatz": "2",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -971,16 +1329,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2020-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2018 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2015 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -988,16 +1346,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2021-08-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 33",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2020 233",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2020/16"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1005,16 +1363,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2019-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2018 5103",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/795"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2015 8387",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2039"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1039,16 +1397,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -1056,7 +1414,7 @@
     },
     {
      "typ": "eingefuegt",
-     "datum": "2023-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -1073,20 +1431,54 @@
     },
     {
      "typ": "fassung",
-     "datum": "2020-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2018 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2015 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": "bter"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
      "item": "c"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": "d"
     }
    ]
   },
@@ -1114,7 +1506,7 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "14": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1131,6 +1523,57 @@
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "d"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
      "item": null
     }
    ]
@@ -1435,7 +1878,7 @@
    ]
   },
   "17": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1452,6 +1895,23 @@
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
      "item": null
     },
     {
@@ -1474,7 +1934,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1495,16 +1955,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2009-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2008 5207",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/736"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2006 2829",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2006/303"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1",
@@ -1528,6 +1988,40 @@
      "item": "b"
     },
     {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "c"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "e"
+    },
+    {
      "typ": "aufgehoben",
      "datum": "2020-01-01",
      "wirkung": true,
@@ -1542,7 +2036,7 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "f"
     },
     {
      "typ": "aufgehoben",
@@ -1562,17 +2056,17 @@
      "item": null
     },
     {
-     "typ": "fassung",
-     "datum": "2020-01-01",
-     "wirkung": false,
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
      "quellen": [
       {
-       "label": "AS 2018 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2015 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
@@ -1580,7 +2074,7 @@
     },
     {
      "typ": "eingefuegt",
-     "datum": "2015-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -1593,11 +2087,28 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null
     },
     {
      "typ": "eingefuegt",
-     "datum": "2009-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -1610,7 +2121,26 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3 und über die Beraterinnen und Berater"
     }
    ]
   },
@@ -1657,10 +2187,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "23": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "bezeichnung",
@@ -1796,16 +2330,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "5",
@@ -1844,12 +2378,46 @@
      ],
      "absatz": "6",
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "7",
+     "item": null
     }
    ]
   },
   "24": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": "b"
+    },
     {
      "typ": "fassung",
      "datum": "2020-01-01",
@@ -1920,9 +2488,116 @@
     }
    ]
   },
-  "26": {
-   "giltSeit": "2009-01-01",
+  "25": {
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "a"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "c"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": "d"
+    }
+   ]
+  },
+  "26": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
     {
      "typ": "fassung",
      "datum": "2009-01-01",
@@ -1943,7 +2618,7 @@
    ]
   },
   "27": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1964,19 +2639,36 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
      "item": null
     },
     {
@@ -2063,11 +2755,45 @@
      ],
      "absatz": "4",
      "item": "d"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4bis",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null
     }
    ]
   },
   "28": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2088,16 +2814,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2020-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2018 5247",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2018/801"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2015 8901",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2",
@@ -2123,7 +2849,7 @@
    ]
   },
   "29": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2144,19 +2870,36 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1",
+     "item": "g"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1bis",
      "item": null
     },
     {
@@ -2229,16 +2972,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2ter",
@@ -2264,7 +3007,7 @@
    ]
   },
   "30": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2285,16 +3028,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2016-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2",
@@ -2325,7 +3068,7 @@
    ]
   },
   "32": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2380,16 +3123,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2016-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
@@ -2420,7 +3163,7 @@
    ]
   },
   "34": {
-   "giltSeit": "2023-09-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2441,16 +3184,16 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-09-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "1",
@@ -2493,7 +3236,7 @@
    ]
   },
   "35": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2514,20 +3257,20 @@
     },
     {
      "typ": "fassung",
-     "datum": "2023-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 656",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/656"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2019 5451",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2019/1932"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": "h"
     }
    ]
   },
@@ -2555,7 +3298,7 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "37": {
-   "giltSeit": "2009-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2572,6 +3315,23 @@
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
      "item": null
     },
     {
@@ -2694,7 +3454,7 @@
    ]
   },
   "10_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2766,7 +3526,7 @@
     },
     {
      "typ": "eingefuegt",
-     "datum": "2016-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -2776,6 +3536,23 @@
       {
        "label": "BBl 2014 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": "5",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "5",
@@ -2798,14 +3575,51 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11_a": {
-   "giltSeit": "2021-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    },
+    {
      "typ": "eingefuegt",
-     "datum": "2021-07-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -2822,19 +3636,53 @@
     },
     {
      "typ": "fassung",
-     "datum": "2021-07-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2021 360",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
       },
       {
-       "label": "BBl 2018 6427",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
      "item": null
     },
     {
@@ -2854,14 +3702,39 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
-  "18_a": {
-   "giltSeit": "2009-01-01",
+  "12_a": {
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2009-01-01",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "18_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -2875,7 +3748,54 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "18_b": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "19_a": {
@@ -2982,7 +3902,7 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "22_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3034,6 +3954,23 @@
      ],
      "absatz": "2",
      "item": "b"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": "c"
     },
     {
      "typ": "fassung",
@@ -3110,6 +4047,50 @@
     }
    ]
   },
+  "24_b": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "25_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "26_a": {
    "giltSeit": "2021-08-01",
    "ereignisse": [
@@ -3150,7 +4131,7 @@
    ]
   },
   "29_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3222,6 +4203,23 @@
     },
     {
      "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
      "quellen": [
@@ -3240,8 +4238,25 @@
    ]
   },
   "29_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-01-01",
@@ -3257,12 +4272,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
     }
    ]
   },
+  "29_c": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    }
+   ],
+   "erbt": [
+    3
+   ]
+  },
   "2_a": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3276,6 +4334,45 @@
       {
        "label": "BBl 2014 605",
        "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "6",
+     "item": null
+    }
+   ]
+  },
+  "2_b": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": null,
@@ -3367,6 +4464,50 @@
    ],
    "aufgehobenSeit": "2009-01-01"
   },
+  "41_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "42_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "7_a": {
    "giltSeit": "2009-02-01",
    "ereignisse": [
@@ -3387,10 +4528,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "8_a": {
-   "giltSeit": "2021-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3411,6 +4556,91 @@
     },
     {
      "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2ter",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "3",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "4",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "5",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
      "datum": "2016-01-01",
      "wirkung": false,
      "quellen": [
@@ -3426,6 +4656,51 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "8_b": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "ueberschrift": "1b. Abschnitt: Sorgfaltspflichten der Beraterinnen und Berater"
+    }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "8_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
+   ]
+  },
+  "8_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    5
    ]
   },
   "9_a": {
@@ -3465,10 +4740,13 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "9_b": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3486,7 +4764,27 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 322",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/322"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

@@ -15,6 +15,8 @@
 // #924; Wächter `src/tests/gliederung-zustandsfolgen.test.ts`). Jeder
 // `setTocBaum` im Leser ruft eine Funktion dieser Datei.
 
+import type { GliederungsKnoten, GliederungsModus } from './gliederungsTypen';
+
 /**
  * Was `alleKlappIds` von einer Gliederungszeile braucht — strukturell statt
  * `import type { GliederungsKnoten }`: gliederungsModell.ts liest
@@ -63,27 +65,38 @@ export function alleKlappIds(knoten: readonly KlappKnoten[]): string[] {
 }
 
 /**
- * «alles auf» / «alles zu» über alle Zeilen mit Kindern — «alles» heisst bis
- * zur Artikel-Ebene (Knopf-Titel «Alle Gliederungsstufen aufklappen»; ein
- * «alles auf», nach dem jede unterste Zeile noch einmal geklickt werden
- * muss, sagte etwas anderes als es tat, §8). §15: korpusweit kostet das wenig
- * — OR 2'181 → 2'296 Zeilen, ZGB 1'637 → 1'708 (die grössten Bäume sind
- * schon artikel-granular); StPO 156 → 636 ist der grösste relative Zuwachs.
+ * Die Ids, über die «alles auf/zu» der LEISTE läuft — nur Zeilen, die die Leiste
+ * wirklich rendert (W2·17-UI-BEFUNDE B1-B01, 2.10.2026). `LeserGliederung` zeigt
+ * je Modus etwas anderes: `b1` den ganzen Sektionsbaum, `b2/b4` den flachen
+ * Artikel-Index PLUS den Anhang-Ast (der Rest des Baums wird dort nie gerendert),
+ * `b3` nichts. Bis hierher lief der Knopf über `alleKlappIds(gliederung.knoten)`
+ * auch dort, wo der Baum gar nicht steht: im VwVG 31 Ids unsichtbarer Zeilen —
+ * der Knopf kippte seine Beschriftung («alles auf» → «alles zu»), und auf dem
+ * Bildschirm geschah nichts (§8: ein Knopf, der nichts tut). Eine leere Liste
+ * heisst: es gibt nichts zu klappen, die Leiste zeigt den Knopf nicht.
+ * Strukturell typisiert aus demselben Grund wie `KlappKnoten` (kein Rück-Import
+ * des Modells, check:zyklen) — `art`/`modus` kommen aus `gliederungsTypen`.
  */
-export function setzeAlle(
-  offen: Record<string, boolean>, zeilenIds: readonly string[], ziel: boolean,
-): Record<string, boolean> {
-  if (!ziel) return schliesseZeilen(offen, zeilenIds);
-  const n = { ...offen };
-  for (const id of zeilenIds) { n[id] = true; n[artikelSchluessel(id)] = true; }
-  return n;
+export function leistenKlappIds(
+  g: { modus: GliederungsModus; knoten: readonly (KlappKnoten & { art: GliederungsKnoten['art'] })[] },
+): string[] {
+  return alleKlappIds(leistenKnoten(g));
+}
+
+/** Die Zeilen-Wurzeln, die `LeserGliederung` als BAUM rendert (Herleitung bei `leistenKlappIds`). */
+export function leistenKnoten<K extends { art: GliederungsKnoten['art'] }>(
+  g: { modus: GliederungsModus; knoten: readonly K[] },
+): readonly K[] {
+  if (g.modus === 'b3-leer') return [];
+  if (g.modus === 'b2-index' || g.modus === 'b4-mini') return g.knoten.filter((k) => k.art === 'anhang');
+  return g.knoten;
 }
 
 /**
  * DIE Schliess-Regel der Klapp-Karte (W2·5m-LESER-V3, Code-Zweitblick PR #924):
  * wird eine Zeile geschlossen — gleich über welchen Pfad —, ist auch ihre
  * Artikel-Ebene geschlossen. Alle Schliesser laufen hierüber: Chevron
- * (`klappZeile`), «alles zu» (`setzeAlle`), Auto-Zuklappen (`mitlaufenKarte`).
+ * (`klappZeile`), «alles zu» (`klappZeile` über alle Ids), Auto-Zuklappen (`mitlaufenKarte`).
  *
  * WARUM. Bis hierher setzte das Auto-Zuklappen nur `<id>=false`; ein vom
  * Tieflink gesetztes `art@<id>` blieb liegen, und das nächste Mitlaufen
@@ -110,12 +123,6 @@ function schliesseZeilen(offen: Record<string, boolean>, ids: readonly string[])
   const n = { ...offen };
   for (const id of ids) schliesseInKopie(n, id, false);
   return n;
-}
-
-/** Steht alles offen — samt Artikel-Ebene? (Beschriftung des Knopfs «alles auf/zu».) */
-export function alleOffen(offen: Record<string, boolean>, zeilenIds: readonly string[]): boolean {
-  return zeilenIds.length > 0
-    && zeilenIds.every((id) => offen[id] === true && offen[artikelSchluessel(id)] === true);
 }
 
 /**

@@ -1,3 +1,4 @@
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 // ─── W2·10-UI-NAV/R4 · Positions-Persistenz «Weiterlesen bei Art. X» ──────────
 //
 // Fahrplan R4: «den scrollAnker `{token, offset}` je Erlass-Pfad in localStorage
@@ -58,14 +59,9 @@ const KEY = 'lexmetrik-leseposition';
 // deterministisch, kein Date.now nötig — Muster `zuletztVerwendet.ts`).
 const MAX = 20;
 
-function hatSpeicher(): boolean {
-  return typeof localStorage !== 'undefined';
-}
-
 function lese(): LesePosition[] {
-  if (!hatSpeicher()) return [];
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     const arr = roh ? JSON.parse(roh) : [];
     if (!Array.isArray(arr)) return [];
     return arr.filter((e): e is LesePosition =>
@@ -91,24 +87,15 @@ export function holeLesePosition(key: string, stand: string): LesePosition | nul
 
 /** Merkt die Stelle (dedupe je Erlass-Key, neueste nach vorn, auf MAX gekappt). */
 export function merkeLesePosition(pos: LesePosition): void {
-  if (!hatSpeicher()) return;
   if (!pos.key || !pos.token || !pos.label) return; // ohne Label kein ehrlicher Chip (§8)
-  try {
-    const ohne = lese().filter((e) => e.key !== pos.key);
-    localStorage.setItem(KEY, JSON.stringify([pos, ...ohne].slice(0, MAX)));
-  } catch {
-    /* privater Modus / Quota — «Weiterlesen» ist reiner Komfort */
-  }
+  const ohne = lese().filter((e) => e.key !== pos.key);
+  // Gesperrt / Quota → still: «Weiterlesen» ist reiner Komfort.
+  lokalSpeicher.schreib(KEY, JSON.stringify([pos, ...ohne].slice(0, MAX)));
 }
 
 /** Vergisst die Stelle eines Erlasses (Chip weggeklickt: «nicht mehr anbieten»). */
 export function vergissLesePosition(key: string): void {
-  if (!hatSpeicher()) return;
-  try {
-    const rest = lese().filter((e) => e.key !== key);
-    if (rest.length) localStorage.setItem(KEY, JSON.stringify(rest));
-    else localStorage.removeItem(KEY);
-  } catch {
-    /* privater Modus — No-op */
-  }
+  const rest = lese().filter((e) => e.key !== key);
+  if (rest.length) lokalSpeicher.schreib(KEY, JSON.stringify(rest));
+  else lokalSpeicher.entferne(KEY);
 }

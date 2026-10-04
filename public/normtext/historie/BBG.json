@@ -1,9 +1,9 @@
 {
  "erlass": "BBG",
  "abdeckung": {
-  "fussnoten": 35,
-  "ereignis": 26,
-  "referenz": 9,
+  "fussnoten": 45,
+  "ereignis": 35,
+  "referenz": 10,
   "unparsed": 0
  },
  "artikel": {
@@ -104,41 +104,113 @@
    ]
   },
   "28": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2005-01-01",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2004 4929",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/745"
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
       },
       {
-       "label": "BBl 2003 7711",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1274"
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "1bis",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
      "absatz": "2",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "2bis",
      "item": null
     }
    ]
   },
   "29": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
-     "typ": "ausdruck",
-     "datum": "2013-01-01",
+     "typ": "fassung",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2012 3655",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/419"
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
      "absatz": "3",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "3bis",
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "5",
      "item": null
     }
    ]
@@ -375,11 +447,11 @@
      "quellen": [
       {
        "label": "AS 2005 4635",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/607"
+       "url": ""
       },
       {
        "label": "BBl 2004 145",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/49"
+       "url": ""
       }
      ],
      "absatz": null,
@@ -422,6 +494,72 @@
       }
      ],
      "absatz": "2",
+     "item": null
+    }
+   ]
+  },
+  "73": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "29_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "44_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
      "item": null
     }
    ]
@@ -527,6 +665,28 @@
     }
    ]
   },
+  "63_a": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "69_71": {
    "giltSeit": null,
    "ereignisse": [
@@ -565,6 +725,28 @@
       {
        "label": "BBl 2022 1498",
        "url": "https://fedlex.data.admin.ch/eli/fga/2022/1498"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "73_b": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl 2025 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
      "absatz": null,

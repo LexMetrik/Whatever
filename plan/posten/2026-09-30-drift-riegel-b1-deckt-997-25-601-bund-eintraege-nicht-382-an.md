@@ -4,6 +4,8 @@ titel: Drift-Riegel Rest nach B1-Ausdehnung: Kanton-Labels ungeprüft (34 907 Ei
 anlass: Session-Notizen 2026-09-30; B1-Ausdehnung auf 997 Bund-Einträge gebaut (Branch fix/w227-drift-riegel-b1)
 -->
 
+**Stand 1.10.2026 (W2·27 P1 Tor-Härtung, Branch feat/w227-p1-tor-haertung):** Punkt 4 (B4 an gepinntes ELI/de gebunden, Regel `B4-basis-pin`) und der ORDINAL_SUFFIX-Rest (vicies ff.) sind gebaut. Offen bleiben: Punkte 3 und 5 → Paket P8 (Daten: VRV «+Anhang II» normalisieren + LABEL_AUSNAHMEN leeren; «Art. N und M»-Schreibweise, Trennzeichen-Wahl = Fachentscheid, siehe Posten drift-riegel-schreibt-normalisierung); Punkte 1 und 2 (Kanton-Labels je Kanton, freie Labels annex_u/decl) zurückgestellt auf Phase 2 Kanton — brauchen eine amtliche Label-Regel je Kanton/Erlass, nicht raten (§7).
+
 Drift-Riegel Rest nach B1-Ausdehnung (30.9.2026): B1 deckt jetzt alle 25 601 Bund-Einträge (Label aus id für 25 474, Format/nichtleer für 126, 1 festgenagelte Ausnahme); B2 («Label = Basis + Wiederholungs-Adverb, eindeutig») und B4 (Mehrheits-Basis statt erster Eintrag) sind geschärft. Offen bleibt, was sich nicht aus der id ableiten lässt und in der Tor-Ausgabe als «UNGEPRÜFT» steht:
 
 1. **Kanton-Labels (34 907 Einträge, `public/normtext/kanton`)**: kein `#Anker`, Label nicht aus der id ableitbar — eine Prüfung braucht eine amtliche Label-Regel je Kanton/Erlass (z. B. «§ n» vs. «Art. n»), nicht raten.

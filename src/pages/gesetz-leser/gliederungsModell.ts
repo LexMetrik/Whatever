@@ -355,6 +355,18 @@ function zaehleZeilen(knoten: GliederungsKnoten[]): number {
  * «Knoten» in Zeile 3 sind die AMTLICHEN Knoten (ohne randtitel-promotete) —
  * gemessen und gegen die Spec-Zahlen belegt: VwVG 5, OR 171, ZGB 134.
  *
+ * ERGÄNZUNG 2.10.2026 (W2·17-UI-BEFUNDE, Entscheid David) · «≤ 40 ZEILEN» GILT
+ * FÜR DIE SEKTIONSZEILEN (`zeilenVoll`), NICHT FÜR DAS, WAS B1 offen BEIM START
+ * ZEIGT. Zwei Entscheide stiessen hier zusammen: 13.8.2026 «Artikel-Ebene nur
+ * beim Aufklappen, nie beim Start» und 19.9.2026 «am gemischten Knoten folgen
+ * die Artikel der Zeile» (`artikelKinderOffen`, PR #924, «bei svg art. 26 nicht
+ * ersichtlich»). Gemessen 2.10.2026 über 1'580 Erlasse: 852 starten als B1 offen,
+ * davon 8 mit > 40 Zeilen (max. 70, ZH-232.3) — der Überstand sind ausschliesslich
+ * Artikel-Zeilen gemischter Knoten. David 2.10.2026: dem NEUEREN Entscheid
+ * (19.9.) folgen, so lassen. Der 13.8.-Satz gilt unverändert dort, wo er schon
+ * galt: eine Zeile, die NUR Artikel trägt, zeigt sie beim Start nie. Wächter:
+ * `src/tests/gliederung-befunde-w217.test.ts` (b1-offen-Block).
+ *
  * B3 IST SEIT DEM 13.8.2026 DIE ECHTE LEERE, NICHT MEHR DIE FEHLENDE
  * GLIEDERUNG (Auftrag David: die Artikel-Ebene muss in JEDEM Erlass erreichbar
  * sein). Die Bedingung hiess vorher «kein Sidecar ODER (keine Sektionen UND

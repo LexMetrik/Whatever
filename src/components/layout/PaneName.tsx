@@ -1,6 +1,7 @@
 import { tabSchluessel, reiterKurzformText } from '../../lib/tabs';
 import type { VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useTabs } from './useTabs';
+import { useStelleDaten } from './useStelleDaten';
 
 // ─── L6 (Entscheid David 7.9.2026) · DER NAME EINES FENSTERS ─────────────────
 //
@@ -31,7 +32,9 @@ import { useTabs } from './useTabs';
 export function PaneName({ pfad, manifeste }: { pfad: string; manifeste: VerlaufManifeste }) {
   const tabs = useTabs();
   const teil = tabSchluessel(pfad);
-  const text = reiterKurzformText(tabs.find((t) => tabSchluessel(t.path) === teil) ?? { path: pfad }, manifeste);
+  const tab = tabs.find((t) => tabSchluessel(t.path) === teil) ?? { path: pfad };
+  // DFG-F01: die Stelle («§ 4», «Art. 12 SchlT ZGB») aus denselben Einträgen wie die Leiste.
+  const text = reiterKurzformText(tab, useStelleDaten([tab], manifeste));
   // R8 (7.9.2026): die Beschriftung kappt per `truncate` — dann MUSS der volle
   // Wortlaut per `title` erreichbar bleiben (kein stiller Anschnitt). Anatomie
   // wie die Blatt-Krume der `OrtsAngabe` daneben (text-xs · font-medium ·

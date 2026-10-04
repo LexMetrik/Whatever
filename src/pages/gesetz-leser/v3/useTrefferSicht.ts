@@ -29,6 +29,16 @@ import { useState } from 'react';
  */
 export function useTrefferSicht(begriff: string) {
   const [wegFuer, setWegFuer] = useState<string | null>(null);
+  // ── W2·17-UI-BEFUNDE · PE-C4-B02 / PE-C5-B02 (1.10.2026) · LEEREN VERGISST ──
+  // Der Merkwert stand über das Leeren hinweg: «Kündigung» → Enter (Liste weg)
+  // → Feld leeren → «Kündigung» erneut → `wegFuer === begriff`, die Liste blieb
+  // weg (gemessen `sicht.mjs`, OR @1280: Zähler-Zeile 1 statt 0) — gegen den
+  // Vertrag oben («erscheint SELBST, sobald im Suchfeld etwas steht»). Ein
+  // leeres Feld ist ein neuer Anfang: der Merkwert wird dann beim Render
+  // verworfen (bedingt, endet nach einem Durchlauf — kein Effekt, derselbe
+  // Weg wie `useMarkenSchalter` in `../inhalt-suchtreffer`). Der Aufrufer übergibt
+  // `suche.trim()`, Nur-Leerraum zählt damit als leer.
+  if (begriff === '' && wegFuer !== null) setWegFuer(null);
   return {
     /** Sichtbar, solange für DIESEN Begriff nicht weggeschaltet wurde. */
     offen: wegFuer !== begriff,

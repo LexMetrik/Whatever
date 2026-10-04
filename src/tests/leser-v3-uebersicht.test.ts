@@ -537,3 +537,20 @@ describe('P3-4 · datumsForm: wann ein Datum NICHT umgeschrieben wird', () => {
     }
   });
 });
+
+// ── BG-04-Nachzug (Gegenprüfung PR #1282, §8) ────────────────────────────────
+// Fällt das Struktur-Sidecar AUS (Netz/5xx), steht der Satz «keine amtliche
+// Gliederung erfasst» neben der Ausfallzeile des Titelblatts — und ist dann
+// falsch: es gibt eine, sie wurde nur nicht geladen.
+// ROT ZU BEKOMMEN: in uebersichtAngaben.ts `&& !e.strukturAusgefallen` entfernen.
+describe('Übersicht — Struktur-Ausfall ≠ «keine amtliche Gliederung erfasst»', () => {
+  const ohneSidecar = { artikelAnzahl: 10, anhangArtikel: 0, hatSidecar: false } as unknown as UebersichtsEingabe['kennzahlen'];
+  const satz = (a: ReturnType<typeof uebersichtsAngaben>) => a.hinweise.some((h) => h.includes('keine amtliche Gliederung erfasst'));
+
+  it('echtes «kein Sidecar» (404): der Satz steht', () => {
+    expect(satz(uebersichtsAngaben(eingabe({ erlass: erlassBauen({}), kennzahlen: ohneSidecar })))).toBe(true);
+  });
+  it('Ausfall des Sidecars: der Satz entfällt (die Ausfallzeile trägt die Auskunft)', () => {
+    expect(satz(uebersichtsAngaben(eingabe({ erlass: erlassBauen({}), kennzahlen: ohneSidecar, strukturAusgefallen: true })))).toBe(false);
+  });
+});

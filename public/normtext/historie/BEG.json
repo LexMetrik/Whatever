@@ -1,9 +1,9 @@
 {
  "erlass": "BEG",
  "abdeckung": {
-  "fussnoten": 54,
+  "fussnoten": 53,
   "ereignis": 39,
-  "referenz": 15,
+  "referenz": 14,
   "unparsed": 0
  },
  "artikel": {
@@ -725,11 +725,11 @@
    ]
   },
   "23_a": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2015-07-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -743,8 +743,26 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "8_a": {
    "giltSeit": "2019-11-01",

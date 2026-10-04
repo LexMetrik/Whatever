@@ -6,7 +6,8 @@ import { LeserUebersicht } from './LeserUebersicht';
 import { GliederungSheet } from '../parts/GliederungSheet';
 import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
-import { setzeAlle, alleOffen } from '../klappKarte';
+import { leistenKlappIds, leistenKnoten } from '../klappKarte';
+import { baumGanzOffen } from '../gliederungsLeiste';
 
 // ═══ DIE GLIEDERUNGS-LEISTE AN IHREN DREI ORTEN — Spalte · Sheet · Schiene ══
 //
@@ -21,20 +22,49 @@ import { setzeAlle, alleOffen } from '../klappKarte';
 // Schiene steht, entscheidet der Rahmen; diese Datei hat keinen Breiten- und
 // keinen `imPane`-Zweig (Fundament-Sonde).
 
+/**
+ * Die Ids, über die «alles auf/zu» läuft — je Erlass einmal gerechnet (die
+ * Leiste wird bei jedem Spy-Schritt neu gebaut, OR hat 2'296 Zeilen).
+ * W2·17-UI-BEFUNDE B1-B01: nur, was die Leiste rendert (`leistenKlappIds`).
+ */
+const LEISTEN_IDS = new WeakMap<object, string[]>();
+function leistenIds(m: LeserV3Modell): string[] {
+  let ids = LEISTEN_IDS.get(m.gliederung);
+  if (!ids) { ids = leistenKlappIds(m.gliederung); LEISTEN_IDS.set(m.gliederung, ids); }
+  return ids;
+}
+
 /** Die Seitenleiste — `imSheet` steuert allein, ob sie ihre Zone selbst
  *  benennt (Ä10: im Sheet tut es der Sheet-Kopf, sonst stünde «Gliederung»
  *  zweimal übereinander). */
 export function leisteAufbau(m: LeserV3Modell, bestimmungsWort: BestimmungsWort, imSheet: boolean): ReactNode {
+  const ids = leistenIds(m);
+  // Beschriftung aus dem SICHTBAREN (`baumGanzOffen`), nicht aus der Karte: ein Ast, den das
+  // Modell offen startet (EMRK-Anhang), hat keinen Karten-Eintrag und hiess «alles auf».
+  const alle = baumGanzOffen(leistenKnoten(m.gliederung), m.tocBaum, m.gliederung.startOffeneTiefe);
+  // «alles auf/zu» läuft über DENSELBEN Schreiber wie der Pfeil (`tocToggleGruppe`):
+  // er verbucht den Zielzustand in der Scroll-Spy-Buchhaltung
+  // (`merkeKlappAstManuell`). Vorher schrieb der Knopf nur die Klapp-Karte —
+  // B1-B03: vom Spy geöffnete Äste blieben im Auto-Lager und klappten nach
+  // «alles auf» beim Weiterlesen wieder zu; B1-B04: nach «alles zu» riss der Spy
+  // den gelesenen Ast beim nächsten Schritt wieder auf (er kannte die
+  // Zuklappung nicht). `klappZeile` über alle Ids ist dieselbe Karten-Änderung,
+  // die der entfallene `setzeAlle` schrieb.
+  // Dritter Parameter: «alles zu» sperrt den Spy nur bis zum nächsten Abschnittswechsel.
+  const umschalten = () => m.tocToggleGruppe(ids, alle, alle);
   return (
     <LeserSeitenleiste
       uebersicht={<LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
       // D28: kein Feld in der Leiste (`./SuchZone`); im Sheet: `sprungFeld` (A2).
       baum={<LeserGliederung m={m} />}
       baumTitel={imSheet ? undefined : 'Gliederung'}
-      onAlleAuf={() => m.setTocBaum((o) => setzeAlle(o, m.alleKnotenIds, true))}
-      onAlleZu={() => m.setTocBaum((o) => setzeAlle(o, m.alleKnotenIds, false))}
-      alleOffen={alleOffen(m.tocBaum, m.alleKnotenIds)}
-      onAnfang={m.zumAnfang} />
+      onAlleAuf={umschalten}
+      onAlleZu={umschalten}
+      alleOffen={alle}
+      alleKnopf={ids.length > 0}
+      // B1-B02: im Sheet liegt der Text unter dem Blatt — «↑ Anfang» gibt es
+      // frei, sonst scrollt die Seite hinter einem Blatt, das offen bleibt.
+      onAnfang={() => { m.zumAnfang(); if (imSheet) m.setTocAuf(false); }} />
   );
 }
 

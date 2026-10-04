@@ -6,6 +6,36 @@
   "referenz": 5,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2001-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2828",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/479"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Beiträge"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1968-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1968 43",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "E. Renten und Taggelder"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": null,
@@ -340,6 +370,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -416,6 +449,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -434,6 +470,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -452,6 +491,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -507,7 +549,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Renten und Taggelder"
     }
    ]
   },
@@ -527,6 +570,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "21": {
@@ -558,6 +604,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "22": {
@@ -650,7 +699,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Beiträge"
     }
    ]
   },
@@ -683,6 +733,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_a": {
@@ -701,6 +754,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_b": {
@@ -745,6 +801,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14_bis": {
@@ -827,6 +886,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_24": {

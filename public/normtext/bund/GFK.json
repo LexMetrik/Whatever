@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/GFK/art_1",
@@ -126,7 +126,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "499f83bea4a41d8206ff96b7f2ffdb96c7a86ec8d66eb34cfb016e0825d34278"
     },
@@ -145,7 +145,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "1742ec730a70590bed5dff7c7fda932c0bfe0a9a982af8b95f3b8675c6db1e1a"
     },
@@ -164,7 +164,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_3",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "4398b2ec198eb9280d1ca226c96f12a58cc7edc914cf2752e9091a92e49445d4"
     },
@@ -183,7 +183,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_4",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "6596ddc4a67a7563ab7b08c0e0d1abc8d96f565d36d063476b99847f06fa9cc7"
     },
@@ -202,7 +202,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_5",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "a440c33dc2da48d78e847a2971b7c757041af324730c0f9b9c83e3e2aca78256"
     },
@@ -221,7 +221,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_6",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "14a08f9e01496d2c90a5645c9069464652336d0ca4b0c6945d29e70535f39e29"
     },
@@ -235,28 +235,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Unter Vorbehalt günstigerer Bestimmungen dieses Abkommens hat jeder vertragsschliessende Staat den Flüchtlingen die Behandlung zuteil werden zu lassen, die er Ausländern im Allgemeinen gewährt."
+          "text": "1. Unter Vorbehalt günstigerer Bestimmungen dieses Abkommens hat jeder vertragsschliessende Staat den Flüchtlingen die Behandlung zuteil werden zu lassen, die er Ausländern im Allgemeinen gewährt.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Nach dreijährigem Aufenthalt sind die Flüchtlinge in den vertragsschliessenden Staaten von der Gegenseitigkeit in Bezug auf die gesetzlichen Bestimmungen befreit."
+          "text": "2. Nach dreijährigem Aufenthalt sind die Flüchtlinge in den vertragsschliessenden Staaten von der Gegenseitigkeit in Bezug auf die gesetzlichen Bestimmungen befreit.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragsschliessenden Staaten haben den Flüchtlingen die Rechte und Vergünstigungen, die ihnen ohne Rücksicht auf Gegenseitigkeit schon beim Inkrafttreten dieses Abkommens zukamen, weiterhin zu gewähren."
+          "text": "3. Die vertragsschliessenden Staaten haben den Flüchtlingen die Rechte und Vergünstigungen, die ihnen ohne Rücksicht auf Gegenseitigkeit schon beim Inkrafttreten dieses Abkommens zukamen, weiterhin zu gewähren.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Die vertragsschliessenden Staaten werden wohlwollend die Möglichkeit in Betracht ziehen, den Flüchtlingen bei fehlender Gegenseitigkeit weitergehende Rechte und Vergünstigungen als die zu gewähren, auf die sie gemäss den Ziffern 2 und 3 Anspruch erheben können, sowie ferner die Möglichkeit, Flüchtlinge, die die Voraussetzungen dieser beiden Ziffern nicht erfüllen, vom Erfordernis der Gegenseitigkeit zu befreien."
+          "text": "4. Die vertragsschliessenden Staaten werden wohlwollend die Möglichkeit in Betracht ziehen, den Flüchtlingen bei fehlender Gegenseitigkeit weitergehende Rechte und Vergünstigungen als die zu gewähren, auf die sie gemäss den Ziffern 2 und 3 Anspruch erheben können, sowie ferner die Möglichkeit, Flüchtlinge, die die Voraussetzungen dieser beiden Ziffern nicht erfüllen, vom Erfordernis der Gegenseitigkeit zu befreien.",
+          "ziffer": "4"
         },
         {
           "absatz": null,
-          "text": "5. Die Bestimmungen der Ziffern 2 und 3 finden sowohl auf die in den Artikeln 13, 18, 19, 21 und 22 des Abkommens erwähnten Rechte und Vergünstigungen Anwendung als auch auf solche, die in diesem Abkommen nicht enthalten sind."
+          "text": "5. Die Bestimmungen der Ziffern 2 und 3 finden sowohl auf die in den Artikeln 13, 18, 19, 21 und 22 des Abkommens erwähnten Rechte und Vergünstigungen Anwendung als auch auf solche, die in diesem Abkommen nicht enthalten sind.",
+          "ziffer": "5"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_7",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "555f432bd42b673f322de1604e09f56fde85694a9a998419e032d381640fd306"
     },
@@ -275,7 +280,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_8",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "922566482ab85d2844b518e9d5803d4f3087d070300844d3d4933ebfe62afc60"
     },
@@ -294,7 +299,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_9",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "f94bfd34a8ae06e36f04f68b7703f9adc2b28f689fcebc111c6eeebc940cadb9"
     },
@@ -308,16 +313,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Ist ein Flüchtling im Verlaufe des zweiten Weltkrieges verschleppt und in das Gebiet eines der vertragsschliessenden Staaten gebracht worden und hält sich dort auf, so gilt die Dauer des Zwangsaufenthaltes in diesem Gebiet als rechtmässige Anwesenheit."
+          "text": "1. Ist ein Flüchtling im Verlaufe des zweiten Weltkrieges verschleppt und in das Gebiet eines der vertragsschliessenden Staaten gebracht worden und hält sich dort auf, so gilt die Dauer des Zwangsaufenthaltes in diesem Gebiet als rechtmässige Anwesenheit.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Ist ein Flüchtling während des zweiten Weltkrieges aus dem Gebiet eines vertragsschliessenden Staates verschleppt worden und vor dem Inkrafttreten dieses Abkommens dorthin zurückgekehrt, um dort Wohnsitz zu nehmen, so gilt die Zeit vor und nach dieser Zwangsverschleppung in allen Fällen, in denen ein ununterbrochener Aufenthalt verlangt wird, als ein einziger ununterbrochener Zeitraum."
+          "text": "2. Ist ein Flüchtling während des zweiten Weltkrieges aus dem Gebiet eines vertragsschliessenden Staates verschleppt worden und vor dem Inkrafttreten dieses Abkommens dorthin zurückgekehrt, um dort Wohnsitz zu nehmen, so gilt die Zeit vor und nach dieser Zwangsverschleppung in allen Fällen, in denen ein ununterbrochener Aufenthalt verlangt wird, als ein einziger ununterbrochener Zeitraum.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_10",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "493ac31a4ee655c8fbbf7e9f6228aeaa3b33e13449204febecff3c394b83ddb9"
     },
@@ -336,7 +343,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_11",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "b86c0fdce795458f11f2deaac6c0dcbb89360f34b2c49ad46ab61d696e1b4402"
     },
@@ -350,16 +357,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die personenrechtliche Stellung eines Flüchtlings bestimmt sich nach dem Gesetz seines Wohnsitzlandes oder, wenn er keinen Wohnsitz hat, nach dem Gesetz des Aufenthaltslandes."
+          "text": "1. Die personenrechtliche Stellung eines Flüchtlings bestimmt sich nach dem Gesetz seines Wohnsitzlandes oder, wenn er keinen Wohnsitz hat, nach dem Gesetz des Aufenthaltslandes.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Rechte, die ein Flüchtling vorher erworben hat und die auf seiner personenrechtlichen Stellung beruhen, insbesondere solche Rechte, die sich aus der Eheschliessung ergeben, sind von den vertragsschliessenden Staaten zu achten, vorausgesetzt, dass die in der Gesetzgebung dieses Staates allfällig vorgesehenen Formalitäten erfüllt sind; Voraussetzung ist ferner, dass es sich um Rechte handelt, die von diesem Staat auch dann anerkannt worden wären, wenn die fragliche Person nicht Flüchtling geworden wäre."
+          "text": "2. Rechte, die ein Flüchtling vorher erworben hat und die auf seiner personenrechtlichen Stellung beruhen, insbesondere solche Rechte, die sich aus der Eheschliessung ergeben, sind von den vertragsschliessenden Staaten zu achten, vorausgesetzt, dass die in der Gesetzgebung dieses Staates allfällig vorgesehenen Formalitäten erfüllt sind; Voraussetzung ist ferner, dass es sich um Rechte handelt, die von diesem Staat auch dann anerkannt worden wären, wenn die fragliche Person nicht Flüchtling geworden wäre.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_12",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "9bd36f07a62e26412827a6a4ba1b74740f49c960e7f5f5cb8cbd3af3d7ed70db"
     },
@@ -378,7 +387,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_13",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "1bb91787f836a0e7304c75fbb184362aaae3c2be018dfb00679796da3e557306"
     },
@@ -397,7 +406,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_14",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "e810c3e6ace6410a84503db9bd3f0883ac2e2692d884631f708b8751191f04d1"
     },
@@ -416,7 +425,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_15",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "46f7ca975a01be6007f64e37ed174a4256d317c2056c7d08fb7b5130c58d28ba"
     },
@@ -430,20 +439,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Flüchtlinge haben auf dem Gebiete der vertragsschliessenden Staaten freien Zutritt zu den Gerichten."
+          "text": "1. Flüchtlinge haben auf dem Gebiete der vertragsschliessenden Staaten freien Zutritt zu den Gerichten.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Flüchtlingen wird im Wohnsitzstaat hinsichtlich der Zulassung vor Gericht, einschliesslich des Armenrechts und der Befreiung von der cautio judicatum solvi, die gleiche Behandlung zuteil wie den Angehörigen dieses Staates."
+          "text": "2. Flüchtlingen wird im Wohnsitzstaat hinsichtlich der Zulassung vor Gericht, einschliesslich des Armenrechts und der Befreiung von der cautio judicatum solvi, die gleiche Behandlung zuteil wie den Angehörigen dieses Staates.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. In den vertragsschliessenden Staaten, in denen ein Flüchtling nicht seinen ordentlichen Aufenthalt hat, geniesst er mit Bezug auf die in Ziffer 2 erwähnten Rechte die gleiche Behandlung wie ein Angehöriger des Landes, in dem er seinen ordentlichen Aufenthalt hat."
+          "text": "3. In den vertragsschliessenden Staaten, in denen ein Flüchtling nicht seinen ordentlichen Aufenthalt hat, geniesst er mit Bezug auf die in Ziffer 2 erwähnten Rechte die gleiche Behandlung wie ein Angehöriger des Landes, in dem er seinen ordentlichen Aufenthalt hat.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_16",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "27652ae522b79f3ead2a776ce4074aa34afa377d42ac34d671e86384751be191"
     },
@@ -457,7 +469,8 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten gewähren Flüchtlingen, die sich ordnungsgemäss auf ihrem Gebiet aufhalten, in Bezug auf den Stellenantritt die günstigste Behandlung, die sie unter denselben Umständen Angehörigen eines fremden Landes zubilligen."
+          "text": "1. Die vertragsschliessenden Staaten gewähren Flüchtlingen, die sich ordnungsgemäss auf ihrem Gebiet aufhalten, in Bezug auf den Stellenantritt die günstigste Behandlung, die sie unter denselben Umständen Angehörigen eines fremden Landes zubilligen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
@@ -478,16 +491,18 @@
               "text": "ein oder mehrere Kinder haben, die die Staatsangehörigkeit des Aufenthaltsstaates besitzen.",
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragsschliessenden Staaten prüfen wohlwollend, ob Massnahmen getroffen werden können, um die Rechte aller Flüchtlinge in Bezug auf den Stellenantritt den eigenen Staatsangehörigen möglichst anzugleichen, insbesondere der Flüchtlinge, die auf Grund eines Anwerbungsprogramms für Arbeitskräfte oder eines Einwanderungsplanes in ihr Gebiet gekommen sind."
+          "text": "3. Die vertragsschliessenden Staaten prüfen wohlwollend, ob Massnahmen getroffen werden können, um die Rechte aller Flüchtlinge in Bezug auf den Stellenantritt den eigenen Staatsangehörigen möglichst anzugleichen, insbesondere der Flüchtlinge, die auf Grund eines Anwerbungsprogramms für Arbeitskräfte oder eines Einwanderungsplanes in ihr Gebiet gekommen sind.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_17",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "b0b73aa374ca3bacbf6d0621f55ed635a5a85fd485c626eb372e0ad2043f2832"
     },
@@ -506,7 +521,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_18",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "c355399236db48b2248ba9df52ef4ad24306d06cb73e636c5b8a91e33d288cc0"
     },
@@ -520,16 +535,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragsschliessende Staat sichert den Flüchtlingen, die sich rechtmässig auf seinem Gebiet aufhalten, die Diplome besitzen, welche von den zuständigen Behörden dieses Staates anerkannt werden, und die einen freien Beruf ausüben wollen, eine möglichst günstige Behandlung zu; sie darf jedenfalls nicht ungünstiger sein als die, welche unter den gleichen Umständen Ausländern im allgemeinen gewährt wird."
+          "text": "1. Jeder vertragsschliessende Staat sichert den Flüchtlingen, die sich rechtmässig auf seinem Gebiet aufhalten, die Diplome besitzen, welche von den zuständigen Behörden dieses Staates anerkannt werden, und die einen freien Beruf ausüben wollen, eine möglichst günstige Behandlung zu; sie darf jedenfalls nicht ungünstiger sein als die, welche unter den gleichen Umständen Ausländern im allgemeinen gewährt wird.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die vertragsschliessenden Staaten tun, entsprechend ihren Gesetzen und Verfassungen, alles in ihrer Macht Liegende, um die Ansiedlung solcher Flüchtlinge in Gebieten ausserhalb des Mutterlandes zu sichern, für deren internationale Beziehungen sie verantwortlich sind."
+          "text": "2. Die vertragsschliessenden Staaten tun, entsprechend ihren Gesetzen und Verfassungen, alles in ihrer Macht Liegende, um die Ansiedlung solcher Flüchtlinge in Gebieten ausserhalb des Mutterlandes zu sichern, für deren internationale Beziehungen sie verantwortlich sind.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_19",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "363185506a8c19bc25071451605efb76c8b2c677aab8a9df155e18203036a964"
     },
@@ -548,7 +565,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_20",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "67f4f3c020abbc0cd2c3ca58ac279ad75cba3a9d377895f90917fab0e38d2185"
     },
@@ -567,7 +584,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_21",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "e2bc1f36fa9ed94e78771b967cedad834145322ea81464b0c2c345567e3e2cce"
     },
@@ -581,16 +598,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten gewähren den Flüchtlingen mit Bezug auf den Unterricht in den Primarschulen die gleiche Behandlung wie den Einheimischen."
+          "text": "1. Die vertragsschliessenden Staaten gewähren den Flüchtlingen mit Bezug auf den Unterricht in den Primarschulen die gleiche Behandlung wie den Einheimischen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die vertragsschliessenden Staaten gewähren den Flüchtlingen hinsichtlich des Unterrichts in andern als den Primarschulen, insbesondere was die Zulassung zum Studium, die Anerkennung von ausländischen Studienzeugnissen, Diplomen und Universitätsgraden, sowie den Gebührenerlass und die Erteilung von Stipendien anbetrifft, eine möglichst günstige Behandlung, die nicht ungünstiger sein soll als die Ausländern im allgemeinen unter den gleichen Umständen gewährte Behandlung."
+          "text": "2. Die vertragsschliessenden Staaten gewähren den Flüchtlingen hinsichtlich des Unterrichts in andern als den Primarschulen, insbesondere was die Zulassung zum Studium, die Anerkennung von ausländischen Studienzeugnissen, Diplomen und Universitätsgraden, sowie den Gebührenerlass und die Erteilung von Stipendien anbetrifft, eine möglichst günstige Behandlung, die nicht ungünstiger sein soll als die Ausländern im allgemeinen unter den gleichen Umständen gewährte Behandlung.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_22",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "0fa232f4210820c5d28e76935a2707425769e00c4f6bd77feadbb53ea4e9e1a4"
     },
@@ -609,7 +628,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_23",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "9bdb070083249d04e80d8dc39854c9ccbd45f1f9ea2883816d8cb5ac06741983"
     },
@@ -647,24 +666,28 @@
               "tiefe": 1,
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Entschädigungsansprüche, die durch den Tod eines Flüchtlings infolge Arbeitsunfall oder Berufskrankheit entstehen, werden dadurch nicht beeinträchtigt, dass sich der Begünstigte ausserhalb des Gebietes des vertragsschliessenden Staates aufhält."
+          "text": "2. Die Entschädigungsansprüche, die durch den Tod eines Flüchtlings infolge Arbeitsunfall oder Berufskrankheit entstehen, werden dadurch nicht beeinträchtigt, dass sich der Begünstigte ausserhalb des Gebietes des vertragsschliessenden Staates aufhält.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragsschliessenden Staaten werden die Vorteile der untereinander abgeschlossenen oder noch abzuschliessenden Abkommen über die Erhaltung wohl erworbener Rechte und von Anwartschaften auf dem Gebiete der sozialen Sicherheit auf die Flüchtlinge ausdehnen, sofern diese die Bedingungen erfüllen, die für die Staatsangehörigen der Signatarstaaten dieser Abkommen vorgesehen sind."
+          "text": "3. Die vertragsschliessenden Staaten werden die Vorteile der untereinander abgeschlossenen oder noch abzuschliessenden Abkommen über die Erhaltung wohl erworbener Rechte und von Anwartschaften auf dem Gebiete der sozialen Sicherheit auf die Flüchtlinge ausdehnen, sofern diese die Bedingungen erfüllen, die für die Staatsangehörigen der Signatarstaaten dieser Abkommen vorgesehen sind.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Die vertragsschliessenden Staaten werden mit Wohlwollen die Möglichkeit prüfen, die Vorteile ähnlicher Abkommen, die zwischen ihnen und Nichtvertragsstaaten in Kraft sind oder sein werden, soweit als möglich auf Flüchtlinge auszudehnen."
+          "text": "4. Die vertragsschliessenden Staaten werden mit Wohlwollen die Möglichkeit prüfen, die Vorteile ähnlicher Abkommen, die zwischen ihnen und Nichtvertragsstaaten in Kraft sind oder sein werden, soweit als möglich auf Flüchtlinge auszudehnen.",
+          "ziffer": "4"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_24",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "a11cee81fccba6276aa890883e18e45b99b464a3e06118450a4691fcffedcc21"
     },
@@ -678,28 +701,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Wenn ein Flüchtling normalerweise für die Ausübung eines Rechtes die Mitwirkung ausländischer Behörden benötigt, an die er nicht gelangen kann, haben die vertragsschliessenden Staaten, auf deren Gebiet er sich aufhält, dafür zu sorgen, dass ihm die Beihilfe entweder durch die eigenen Behörden oder eine internationale Behörde gewährt wird."
+          "text": "1. Wenn ein Flüchtling normalerweise für die Ausübung eines Rechtes die Mitwirkung ausländischer Behörden benötigt, an die er nicht gelangen kann, haben die vertragsschliessenden Staaten, auf deren Gebiet er sich aufhält, dafür zu sorgen, dass ihm die Beihilfe entweder durch die eigenen Behörden oder eine internationale Behörde gewährt wird.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die in Ziffer 1 erwähnten Behörden werden den Flüchtlingen die Dokumente oder Bescheinigungen ausstellen oder unter ihrer Aufsicht ausstellen lassen, die normalerweise einem Ausländer durch seine heimatlichen Behörden oder durch deren Vermittlung ausgestellt werden."
+          "text": "2. Die in Ziffer 1 erwähnten Behörden werden den Flüchtlingen die Dokumente oder Bescheinigungen ausstellen oder unter ihrer Aufsicht ausstellen lassen, die normalerweise einem Ausländer durch seine heimatlichen Behörden oder durch deren Vermittlung ausgestellt werden.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die in dieser Weise ausgestellten Dokumente oder Bescheinigungen ersetzen die amtlichen Urkunden, die Ausländern durch die Behörden ihres Landes oder durch deren Vermittlung ausgestellt werden; sie gelten als rechtmässig bis zum Beweise des Gegenteils."
+          "text": "3. Die in dieser Weise ausgestellten Dokumente oder Bescheinigungen ersetzen die amtlichen Urkunden, die Ausländern durch die Behörden ihres Landes oder durch deren Vermittlung ausgestellt werden; sie gelten als rechtmässig bis zum Beweise des Gegenteils.",
+          "ziffer": "3"
         },
         {
           "absatz": null,
-          "text": "4. Abgesehen von Ausnahmen, die zugunsten von Bedürftigen zugelassen werden müssen, können für die hier erwähnten Amtshandlungen Gebühren erhoben werden; diese müssen aber mässig sein und den Gebühren entsprechen, die von Einheimischen für ähnliche Amtshandlungen erhoben werden."
+          "text": "4. Abgesehen von Ausnahmen, die zugunsten von Bedürftigen zugelassen werden müssen, können für die hier erwähnten Amtshandlungen Gebühren erhoben werden; diese müssen aber mässig sein und den Gebühren entsprechen, die von Einheimischen für ähnliche Amtshandlungen erhoben werden.",
+          "ziffer": "4"
         },
         {
           "absatz": null,
-          "text": "5. Die Bestimmungen dieses Artikels berühren die Artikel 27 und 28 nicht."
+          "text": "5. Die Bestimmungen dieses Artikels berühren die Artikel 27 und 28 nicht.",
+          "ziffer": "5"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_25",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "ea22c8a68a3b2af53d63407c291453555061ed49965e8fed5baba671ebb1da8d"
     },
@@ -718,7 +746,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_26",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "be533512669ffdabf822df010b3e1db7dc9b4f0c0ee8e93035be69c2098b315e"
     },
@@ -737,7 +765,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_27",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "00d44ca283dc582671a548a8c15600276f5037bea4c5b14e2d9d69d1d410e631"
     },
@@ -751,16 +779,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten stellen den Flüchtlingen, die sich rechtmässig auf ihrem Gebiet aufhalten, Reiseausweise aus, die ihnen Reisen ausserhalb dieses Gebietes gestatten, vorausgesetzt, dass keine zwingenden Gründe der Staatssicherheit oder öffentlichen Ordnung entgegenstehen; die Bestimmungen im Anhang zu diesem Abkommen finden auf diese Dokumente Anwendung. Die vertragsschliessenden Staaten können einen solchen Reiseausweis auch jedem andern Flüchtling auf ihrem Gebiet ausstellen; sie werden den Fällen von Flüchtlingen besondere Aufmerksamkeit schenken, die sich auf ihrem Gebiet aufhalten und nicht in der Lage sind, von dem Lande, wo sie ihren ordentlichen Aufenthalt haben, einen Reiseausweis zu erlangen."
+          "text": "1. Die vertragsschliessenden Staaten stellen den Flüchtlingen, die sich rechtmässig auf ihrem Gebiet aufhalten, Reiseausweise aus, die ihnen Reisen ausserhalb dieses Gebietes gestatten, vorausgesetzt, dass keine zwingenden Gründe der Staatssicherheit oder öffentlichen Ordnung entgegenstehen; die Bestimmungen im Anhang zu diesem Abkommen finden auf diese Dokumente Anwendung. Die vertragsschliessenden Staaten können einen solchen Reiseausweis auch jedem andern Flüchtling auf ihrem Gebiet ausstellen; sie werden den Fällen von Flüchtlingen besondere Aufmerksamkeit schenken, die sich auf ihrem Gebiet aufhalten und nicht in der Lage sind, von dem Lande, wo sie ihren ordentlichen Aufenthalt haben, einen Reiseausweis zu erlangen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Reiseausweise, die Flüchtlingen auf Grund früherer internationaler Vereinbarungen von den Parteien dieser Vereinbarungen ausgestellt worden sind, werden von den vertragsschliessenden Staaten dieses Abkommens anerkannt und so behandelt, als wären sie den Flüchtlingen auf Grund dieses Artikels ausgestellt worden."
+          "text": "2. Die Reiseausweise, die Flüchtlingen auf Grund früherer internationaler Vereinbarungen von den Parteien dieser Vereinbarungen ausgestellt worden sind, werden von den vertragsschliessenden Staaten dieses Abkommens anerkannt und so behandelt, als wären sie den Flüchtlingen auf Grund dieses Artikels ausgestellt worden.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_28",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "7a771eaf6762ac6485965a46df4d566fc2a5d64b8bc8a738b36d814750482bd8"
     },
@@ -774,16 +804,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten erheben von den Flüchtlingen keine anderen oder höheren Gebühren, Abgaben oder Steuern irgendwelcher Art, als sie unter ähnlichen Verhältnissen jetzt oder künftig von den eigenen Staatsangehörigen verlangt werden."
+          "text": "1. Die vertragsschliessenden Staaten erheben von den Flüchtlingen keine anderen oder höheren Gebühren, Abgaben oder Steuern irgendwelcher Art, als sie unter ähnlichen Verhältnissen jetzt oder künftig von den eigenen Staatsangehörigen verlangt werden.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Diese Vorschrift steht der Anwendung der gesetzlichen und sonstigen Bestimmungen nicht entgegen, welche die Gebühren für die Ausstellung von Verwaltungsdokumenten, einschliesslich Identitätsausweisen, an Ausländer betreffen."
+          "text": "2. Diese Vorschrift steht der Anwendung der gesetzlichen und sonstigen Bestimmungen nicht entgegen, welche die Gebühren für die Ausstellung von Verwaltungsdokumenten, einschliesslich Identitätsausweisen, an Ausländer betreffen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_29",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "d11ad0255781a63a5d66c2a730d0a66e8d3eb650e3c6e2832aa0a15ee14e4dbd"
     },
@@ -797,16 +829,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragsschliessende Staat gestattet den Flüchtlingen nach Massgabe seiner Gesetze und Verordnungen, Vermögenswerte, die sie auf sein Staatsgebiet gebracht haben, in das Gebiet eines anderen Landes überzuführen, in dem sie zur Ansiedlung zugelassen worden sind."
+          "text": "1. Jeder vertragsschliessende Staat gestattet den Flüchtlingen nach Massgabe seiner Gesetze und Verordnungen, Vermögenswerte, die sie auf sein Staatsgebiet gebracht haben, in das Gebiet eines anderen Landes überzuführen, in dem sie zur Ansiedlung zugelassen worden sind.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Jeder vertragsschliessende Staat prüft wohlwollend die Gesuche von Flüchtlingen, die um die Ermächtigung nachsuchen, alle andern Vermögenswerte, die zur Ansiedlung in einem anderen Land erforderlich sind, gleichgültig wo sie liegen, in ein anderes Land zu überführen, in dem sie zur Ansiedlung aufgenommen worden sind."
+          "text": "2. Jeder vertragsschliessende Staat prüft wohlwollend die Gesuche von Flüchtlingen, die um die Ermächtigung nachsuchen, alle andern Vermögenswerte, die zur Ansiedlung in einem anderen Land erforderlich sind, gleichgültig wo sie liegen, in ein anderes Land zu überführen, in dem sie zur Ansiedlung aufgenommen worden sind.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_30",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "1884595a877172e2e6c9dd78f8fb88b0201804cd8b6f8511965270bd044017b2"
     },
@@ -820,16 +854,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten ergreifen wegen illegaler Einreise oder unrechtmässigen Aufenthalts keine Strafmassnahmen gegen Flüchtlinge, die unmittelbar aus einem Gebiet kommen, wo ihr Leben oder ihre Freiheit im Sinne von Artikel 1 bedroht war und sofern sie sich unverzüglich den Behörden stellen und triftige Gründe für ihre illegale Einreise oder Anwesenheit darlegen."
+          "text": "1. Die vertragsschliessenden Staaten ergreifen wegen illegaler Einreise oder unrechtmässigen Aufenthalts keine Strafmassnahmen gegen Flüchtlinge, die unmittelbar aus einem Gebiet kommen, wo ihr Leben oder ihre Freiheit im Sinne von Artikel 1 bedroht war und sofern sie sich unverzüglich den Behörden stellen und triftige Gründe für ihre illegale Einreise oder Anwesenheit darlegen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die vertragsschliessenden Staaten schränken die Bewegungsfreiheit dieser Flüchtlinge nur soweit notwendig ein. Solche Beschränkungen sollen nur solange bestehen, bis die Rechtsstellung der Flüchtlinge im Aufnahmeland geregelt ist oder bis sie die Einreiseerlaubnis in ein anderes Land erhalten haben. Die vertragsschliessenden Staaten gewähren solchen Flüchtlingen eine angemessene Frist und alle erforderlichen Erleichterungen, damit sie die Einreisebewilligung in ein anderes Land erhalten."
+          "text": "2. Die vertragsschliessenden Staaten schränken die Bewegungsfreiheit dieser Flüchtlinge nur soweit notwendig ein. Solche Beschränkungen sollen nur solange bestehen, bis die Rechtsstellung der Flüchtlinge im Aufnahmeland geregelt ist oder bis sie die Einreiseerlaubnis in ein anderes Land erhalten haben. Die vertragsschliessenden Staaten gewähren solchen Flüchtlingen eine angemessene Frist und alle erforderlichen Erleichterungen, damit sie die Einreisebewilligung in ein anderes Land erhalten.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_31",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "4b513b8d69eee732d26ea68c901fe976c01b1907140a9155317afbd21747397c"
     },
@@ -843,20 +879,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten weisen einen Flüchtling, der sich rechtmässig auf ihrem Gebiet aufhält, nur aus Gründen der Staatssicherheit oder der öffentlichen Ordnung aus."
+          "text": "1. Die vertragsschliessenden Staaten weisen einen Flüchtling, der sich rechtmässig auf ihrem Gebiet aufhält, nur aus Gründen der Staatssicherheit oder der öffentlichen Ordnung aus.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Ausweisung eines Flüchtlings kann nur auf Grund eines Entscheides, der nach dem gesetzlich vorgeschriebenen Verfahren getroffen wurde, durchgeführt werden. Soweit nicht zwingende Gründe der Staatssicherheit entgegenstehen, muss dem Flüchtling erlaubt werden, Beweise zu seiner Entlastung beizubringen, Rekurs einzureichen und sich dabei vor einer zuständigen Behörde oder vor einer oder mehreren von der zuständigen Behörde bezeichneten Personen vertreten zu lassen."
+          "text": "2. Die Ausweisung eines Flüchtlings kann nur auf Grund eines Entscheides, der nach dem gesetzlich vorgeschriebenen Verfahren getroffen wurde, durchgeführt werden. Soweit nicht zwingende Gründe der Staatssicherheit entgegenstehen, muss dem Flüchtling erlaubt werden, Beweise zu seiner Entlastung beizubringen, Rekurs einzureichen und sich dabei vor einer zuständigen Behörde oder vor einer oder mehreren von der zuständigen Behörde bezeichneten Personen vertreten zu lassen.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die vertragsschliessenden Staaten räumen einem ausgewiesenen Flüchtling eine angemessene Frist ein, um ihm den Versuch zu einer rechtmässigen Einreise in ein anderes Land zu ermöglichen. Die vertragsschliessenden Staaten können während dieser Frist alle innerstaatlichen Massnahmen treffen, die sie für notwendig erachten."
+          "text": "3. Die vertragsschliessenden Staaten räumen einem ausgewiesenen Flüchtling eine angemessene Frist ein, um ihm den Versuch zu einer rechtmässigen Einreise in ein anderes Land zu ermöglichen. Die vertragsschliessenden Staaten können während dieser Frist alle innerstaatlichen Massnahmen treffen, die sie für notwendig erachten.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_32",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "80006b1781910331e590a3be6a0de7561ffea8317c29bdf3fe512f5e2bdd7334"
     },
@@ -870,16 +909,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Kein vertragsschliessender Staat darf einen Flüchtling in irgendeiner Form in das Gebiet eines Landes ausweisen oder zurückstellen, wo sein Leben oder seine Freiheit wegen seiner Rasse, Religion, Staatszugehörigkeit, seiner Zugehörigkeit zu einer bestimmten sozialen Gruppe oder seiner politischen Anschauungen gefährdet wäre."
+          "text": "1. Kein vertragsschliessender Staat darf einen Flüchtling in irgendeiner Form in das Gebiet eines Landes ausweisen oder zurückstellen, wo sein Leben oder seine Freiheit wegen seiner Rasse, Religion, Staatszugehörigkeit, seiner Zugehörigkeit zu einer bestimmten sozialen Gruppe oder seiner politischen Anschauungen gefährdet wäre.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Auf diese Vorschrift kann sich ein Flüchtling nicht berufen, wenn erhebliche Gründe dafür vorliegen, dass er als eine Gefahr für die Sicherheit des Aufenthaltsstaates angesehen werden muss oder wenn er eine Bedrohung für die Gemeinschaft dieses Landes bedeutet, weil er wegen eines besonders schweren Verbrechens oder Vergehens rechtskräftig verurteilt worden ist."
+          "text": "2. Auf diese Vorschrift kann sich ein Flüchtling nicht berufen, wenn erhebliche Gründe dafür vorliegen, dass er als eine Gefahr für die Sicherheit des Aufenthaltsstaates angesehen werden muss oder wenn er eine Bedrohung für die Gemeinschaft dieses Landes bedeutet, weil er wegen eines besonders schweren Verbrechens oder Vergehens rechtskräftig verurteilt worden ist.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_33",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "1704580aa2357807d51cb9f9eecc3560ecf0fe6027e7fea899e0dd256fb69ad4"
     },
@@ -898,7 +939,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_34",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "a17cf19be9451e0d3f5376c8684aab37b5370be69d86bec90b3c8a3bd0c2fe3a"
     },
@@ -912,7 +953,8 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten verpflichten sich, mit dem Hochkommissariat der Vereinten Nationen für Flüchtlinge oder mit jeder anderen Institution, die ihm nachfolgen könnte, bei der Ausübung ihrer Befugnisse zusammenzuarbeiten und im besondern ihre Aufgabe zu erleichtern, die Durchführung dieses Abkommens zu überwachen."
+          "text": "1. Die vertragsschliessenden Staaten verpflichten sich, mit dem Hochkommissariat der Vereinten Nationen für Flüchtlinge oder mit jeder anderen Institution, die ihm nachfolgen könnte, bei der Ausübung ihrer Befugnisse zusammenzuarbeiten und im besondern ihre Aufgabe zu erleichtern, die Durchführung dieses Abkommens zu überwachen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
@@ -933,12 +975,13 @@
               "text": "die Gesetze, Verordnungen und Dekrete über Flüchtlinge, die in Kraft sind oder erlassen werden.",
               "trenner": ")"
             }
-          ]
+          ],
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_35",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "aa8f6785c68d6e7f3b5c96b042537ae42bb5a03f8e270fe439e6a053552c4c4e"
     },
@@ -957,7 +1000,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_36",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "79802087b0832549c4de6e9b3bef262ac7939c575b7936d9c6092bc906968891"
     },
@@ -976,7 +1019,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_37",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "82a55e9b4773934c328ddcd17bcc0e71584b03d3b35c2c9947cfe3a9981e976f"
     },
@@ -995,7 +1038,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_38",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "53c4a18e0410b27131a9de8a9af4c0ca25d2be728e38dddfb6179159bf95a025"
     },
@@ -1009,20 +1052,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Dieses Abkommen liegt am 28. Juli 1951 in Genf zur Unterzeichnung auf und wird nachher beim Generalsekretär der Vereinten Nationen hinterlegt. Es kann vom 28. Juli bis zum 31. August 1951 am europäischen Sitz der Vereinten Nationen und sodann erneut vom 17. September 1951 bis zum 31. Dezember 1952 am Sitz der Organisation der Vereinten Nationen unterzeichnet werden."
+          "text": "1. Dieses Abkommen liegt am 28. Juli 1951 in Genf zur Unterzeichnung auf und wird nachher beim Generalsekretär der Vereinten Nationen hinterlegt. Es kann vom 28. Juli bis zum 31. August 1951 am europäischen Sitz der Vereinten Nationen und sodann erneut vom 17. September 1951 bis zum 31. Dezember 1952 am Sitz der Organisation der Vereinten Nationen unterzeichnet werden.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Dieses Abkommen kann von allen Mitgliedstaaten der Organisation der Vereinten Nationen unterzeichnet werden sowie von jedem andern Nichtmitgliedstaat, der zur Konferenz der Bevollmächtigten über die Rechtsstellung der Flüchtlinge und Staatenlosen eingeladen worden ist, oder von jedem Staat, den die Generalversammlung zur Unterzeichnung eingeladen hat. Das Abkommen muss ratifiziert werden; die Ratifikationsurkunden sind beim Generalsekretär der Vereinten Nationen zu hinterlegen."
+          "text": "2. Dieses Abkommen kann von allen Mitgliedstaaten der Organisation der Vereinten Nationen unterzeichnet werden sowie von jedem andern Nichtmitgliedstaat, der zur Konferenz der Bevollmächtigten über die Rechtsstellung der Flüchtlinge und Staatenlosen eingeladen worden ist, oder von jedem Staat, den die Generalversammlung zur Unterzeichnung eingeladen hat. Das Abkommen muss ratifiziert werden; die Ratifikationsurkunden sind beim Generalsekretär der Vereinten Nationen zu hinterlegen.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Die in Ziffer 2 dieses Artikels genannten Staaten können diesem Abkommen vom 28. Juli 1951 an beitreten. Der Beitritt erfolgt durch Hinterlegung einer Beitrittserklärung beim Generalsekretär der Vereinten Nationen."
+          "text": "3. Die in Ziffer 2 dieses Artikels genannten Staaten können diesem Abkommen vom 28. Juli 1951 an beitreten. Der Beitritt erfolgt durch Hinterlegung einer Beitrittserklärung beim Generalsekretär der Vereinten Nationen.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_39",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "5817cd39757ac37fdc6d8f00a5bfb0c1e345bed692be43d2fd0f03690a2ea812"
     },
@@ -1036,20 +1082,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder Staat kann im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts erklären, dass sich dieses Abkommen auf alle Gebiete erstrecken soll, die er auf internationalem Boden vertritt, oder nur auf eines oder mehrere von ihnen. Eine solche Erklärung wird im Zeitpunkt des Inkrafttretens des Abkommens für den betreffenden Staat wirksam."
+          "text": "1. Jeder Staat kann im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts erklären, dass sich dieses Abkommen auf alle Gebiete erstrecken soll, die er auf internationalem Boden vertritt, oder nur auf eines oder mehrere von ihnen. Eine solche Erklärung wird im Zeitpunkt des Inkrafttretens des Abkommens für den betreffenden Staat wirksam.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. In jedem späteren Zeitpunkt erfolgt die Ausdehnung des Geltungsbereiches durch eine an den Generalsekretär der Vereinten Nationen gerichtete Mitteilung; sie wird nach Ablauf von neunzig Tagen seit dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen rechtswirksam oder allenfalls zu jenem späteren Zeitpunkt, in dem das Abkommen für den betreffenden Staat in Kraft tritt."
+          "text": "2. In jedem späteren Zeitpunkt erfolgt die Ausdehnung des Geltungsbereiches durch eine an den Generalsekretär der Vereinten Nationen gerichtete Mitteilung; sie wird nach Ablauf von neunzig Tagen seit dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen rechtswirksam oder allenfalls zu jenem späteren Zeitpunkt, in dem das Abkommen für den betreffenden Staat in Kraft tritt.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Jeder beteiligte Staat wird für die Gebiete, auf die sich dieses Abkommen im Zeitpunkt der Unterzeichnung, Ratifikation oder dem Beitritt nicht erstreckt, die Möglichkeit von Massnahmen zur Ausdehnung der Gültigkeit des Abkommens prüfen, unter dem Vorbehalt der Zustimmung der Regierungen dieser Gebiete, falls dies verfassungsmässig erforderlich ist."
+          "text": "3. Jeder beteiligte Staat wird für die Gebiete, auf die sich dieses Abkommen im Zeitpunkt der Unterzeichnung, Ratifikation oder dem Beitritt nicht erstreckt, die Möglichkeit von Massnahmen zur Ausdehnung der Gültigkeit des Abkommens prüfen, unter dem Vorbehalt der Zustimmung der Regierungen dieser Gebiete, falls dies verfassungsmässig erforderlich ist.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_40",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "0331c5257fb389c88de5c2c44255eec162ac286b91b8e48096813b16d225e883"
     },
@@ -1082,7 +1131,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_41",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "59867336649b24b62157bbc5102ee20ac6123005fde6ab70453ebd7acb7a3bc3"
     },
@@ -1096,16 +1145,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts kann jeder Staat zu den Artikeln des Abkommens Vorbehalte machen, ausgenommen zu den Artikeln 1, 3, 4, 16 Ziffer 1, 33, 36 bis einschliesslich 46."
+          "text": "1. Im Zeitpunkt der Unterzeichnung, der Ratifikation oder des Beitritts kann jeder Staat zu den Artikeln des Abkommens Vorbehalte machen, ausgenommen zu den Artikeln 1, 3, 4, 16 Ziffer 1, 33, 36 bis einschliesslich 46.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Jeder vertragsschliessende Staat, der gemäss Ziffer 1 dieses Artikels einen Vorbehalt gemacht hat, kann ihn jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen zurückziehen."
+          "text": "2. Jeder vertragsschliessende Staat, der gemäss Ziffer 1 dieses Artikels einen Vorbehalt gemacht hat, kann ihn jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen zurückziehen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_42",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "d6bf1bc9dd7e85c49ee73994c9cbbc56b4da3e4aa5024dce8b323595e8dd510e"
     },
@@ -1119,16 +1170,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Dieses Abkommen tritt am neunzigsten Tage nach dem Tage der Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde in Kraft."
+          "text": "1. Dieses Abkommen tritt am neunzigsten Tage nach dem Tage der Hinterlegung der sechsten Ratifikations‑ oder Beitrittsurkunde in Kraft.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Für jeden Staat, der das Abkommen nach Hinterlegung der sechsten Ratifikations- oder Beitrittsurkunde ratifiziert oder ihm beitritt, tritt das Abkommen am neunzigsten Tag nach dem Tag der Hinterlegung der Ratifikations‑ oder Beitrittsurkunde dieses Staates in Kraft."
+          "text": "2. Für jeden Staat, der das Abkommen nach Hinterlegung der sechsten Ratifikations- oder Beitrittsurkunde ratifiziert oder ihm beitritt, tritt das Abkommen am neunzigsten Tag nach dem Tag der Hinterlegung der Ratifikations‑ oder Beitrittsurkunde dieses Staates in Kraft.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_43",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "099f7510f91245dff40fd2bc5d39400854733c6a3c4d1522656c327abc4cb4de"
     },
@@ -1142,20 +1195,23 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die vertragsschliessenden Staaten können das Abkommen jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen kündigen."
+          "text": "1. Die vertragsschliessenden Staaten können das Abkommen jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen kündigen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Kündigung wird für den betreffenden Staat ein Jahr nach dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam."
+          "text": "2. Die Kündigung wird für den betreffenden Staat ein Jahr nach dem Eingang der Mitteilung beim Generalsekretär der Vereinten Nationen wirksam.",
+          "ziffer": "2"
         },
         {
           "absatz": null,
-          "text": "3. Jeder Staat, der eine Erklärung oder Mitteilung gemäss Artikel 40 gemacht hat, kann jederzeit später dem Generalsekretär der Vereinten Nationen mitteilen, dass das Abkommen für das bezeichnete Gebiet keine Wirksamkeit mehr hat. Das Abkommen tritt alsdann für dieses Gebiet ein Jahr nach dem Eingang der Mitteilung beim Generalsekretär ausser Kraft."
+          "text": "3. Jeder Staat, der eine Erklärung oder Mitteilung gemäss Artikel 40 gemacht hat, kann jederzeit später dem Generalsekretär der Vereinten Nationen mitteilen, dass das Abkommen für das bezeichnete Gebiet keine Wirksamkeit mehr hat. Das Abkommen tritt alsdann für dieses Gebiet ein Jahr nach dem Eingang der Mitteilung beim Generalsekretär ausser Kraft.",
+          "ziffer": "3"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_44",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "4e2b2bf2ac9b52c631ec7abd633b00e7e38c0785a8dfadaf9391516547eb82de"
     },
@@ -1169,16 +1225,18 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Jeder vertragsschliessende Staat kann jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen die Revision dieses Abkommens verlangen."
+          "text": "1. Jeder vertragsschliessende Staat kann jederzeit durch schriftliche Mitteilung an den Generalsekretär der Vereinten Nationen die Revision dieses Abkommens verlangen.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. Die Generalversammlung der Vereinten Nationen wird gegebenenfalls die im Hinblick auf dieses Gesuch zu treffenden Massnahmen beantragen."
+          "text": "2. Die Generalversammlung der Vereinten Nationen wird gegebenenfalls die im Hinblick auf dieses Gesuch zu treffenden Massnahmen beantragen.",
+          "ziffer": "2"
         }
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_45",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "64233e95193f4304dc010e40f82e925d65bc963e957f5e3b96e398507cfd8d98"
     },
@@ -1234,7 +1292,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#art_46",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "4424a164c32bd8f4917b69e75b3a27fd17e9a2f80fa671f2cd6c5683734d2a52"
     },
@@ -1401,7 +1459,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#annex_u1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "e6c2e3a13e0d37012db80872fb7c3b6e5030840b7726c346bbc0dfd951022bd8"
     },
@@ -2525,7 +2583,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#scope_u1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "f0e22761110314aaa84403c0430767a231c69ea88c7c80a83a0b1ffa64213158"
     },
@@ -2849,7 +2907,7 @@
       ],
       "stand": "2012-06-14",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de#decl_u2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-01",
       "fassungsToken": "20120614",
       "sha": "48c3a257732a9c3da87551ac3666e6fc5716a4955b30a8905310ce89f4874129"
     }

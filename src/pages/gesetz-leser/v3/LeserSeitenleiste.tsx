@@ -27,7 +27,7 @@ import { useCallback, type ReactNode } from 'react';
 // bewacht). Den Empfang hat S4 zurückgebaut, die Slot-Datei ist mit S3 gelöscht.
 
 export function LeserSeitenleiste({
-  uebersicht, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen,
+  uebersicht, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen, alleKnopf = true,
 }: {
   /** Übersichtsbox (Kap. 4b ①). `null` = noch nicht ladbar ⇒ Zeile entfällt. */
   uebersicht?: ReactNode;
@@ -43,6 +43,9 @@ export function LeserSeitenleiste({
   onAnfang: () => void;
   /** Steuert nur die Beschriftung des einen Knopfes (auf/zu), kein Zustand. */
   alleOffen: boolean;
+  /** `false` = die Leiste zeigt nichts Klappbares (flacher Artikel-Index ohne
+   *  Anhang, leere Gliederung) — dann steht der Knopf nicht da (§8, B1-B01). */
+  alleKnopf?: boolean;
 }) {
   // ── W-1 · Zone A publiziert ihre Höhe als `--toc-deckel` (Befund 16.8.2026) ─
   // Die Trefferliste klebt mit `top: var(--toc-deckel, 0px)`; ohne die Marke
@@ -91,14 +94,16 @@ export function LeserSeitenleiste({
           <div className={`flex items-center gap-2 ${baumTitel ? 'justify-between border-b-2 border-rule pb-1.5' : 'justify-end'}`}>
             {baumTitel && <h2 className="lc-overline font-semibold text-ink-600">{baumTitel}</h2>}
             <div className="flex shrink-0 items-center gap-1">
-              <button type="button" data-v3-alle
-                onClick={alleOffen ? onAlleZu : onAlleAuf}
-                aria-expanded={alleOffen}
-                title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
-                <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
-              </button>
+              {alleKnopf && (
+                <button type="button" data-v3-alle
+                  onClick={alleOffen ? onAlleZu : onAlleAuf}
+                  aria-expanded={alleOffen}
+                  title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
+                  className="lc-leiste-griff gap-1 px-1.5 text-micro">
+                  <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
+                  <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
+                </button>
+              )}
               <button type="button" data-v3-anfang onClick={onAnfang}
                 title="Zum Anfang des Erlasses"
                 className="lc-leiste-griff gap-1 px-1.5 text-micro">

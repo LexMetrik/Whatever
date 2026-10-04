@@ -113,6 +113,9 @@ tmp/
 # druckt bei Rot nur ein Kondensat in den Chat und schreibt die volle Ausgabe
 # hierher — je Maschine eigen, reproduzierbar aus dem nächsten Gate-Lauf.
 .gate/
+# Scratch-Dateien und Logs von Agenten im Repo-Wurzelverzeichnis (.gate-<auftrag>-*):
+# nie committen (Streudateien in #1283, 2.10.2026) — Logs gehören unter .gate/.
+.gate-*
 
 # Nachlass des Hooks abschluss-wache.py (QS-HOOKS-AUSBAU 14.8.2026):
 # Session-Ende-Befund über die Session-Grenze — lokal, nie committen.

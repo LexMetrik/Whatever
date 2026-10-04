@@ -3,23 +3,18 @@ import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { SUCH_META } from '../suchHighlight';
 import { ArtikelDossier, type BezugsMarke } from './ArtikelDossier';
+import type { Verweis } from './ArtikelLeser.fussnoten';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
-import { entscheidZahl } from '../entscheidZahl';
-import { BezuegeZeile } from './BezuegeZeile';
-import { LeitfallZeile } from './ArtikelLeser.leitfaelle';
 import { EntstehungsBlock } from '../../../components/entstehung/EntstehungsBlock';
 import { AbrufFehler } from '../../../components/ui/AbrufFehler';
-import type { ArtikelBezuege } from '../bezuegeLaden';
-import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
-import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 
 // ═══ Der BEZÜGE-FUSS des Artikels — EIN Baustein für BEIDE Formen ═══════════
 //
-// Diese Datei RECHNET die Rubriken (Fassung · Entscheide · Materialien ·
-// Verweise · Rechnen) und liefert je Rubrik den Inhalt, den ihr Griff
+// Diese Datei RECHNET die Rubriken (Fassung · Erläuterungen · Verweise ·
+// Werkzeuge) und liefert je Rubrik den Inhalt, den ihr Griff
 // aufklappt; die Zeile selbst (Griffe, Zustand, Aktions-Slot) steht in
 // `./Funktionszeile.tsx`, im Einzelmodus das Dossier (`./ArtikelDossier.tsx`).
 // Entscheide dazu (Wortlaut und Herleitung in der Versionsgeschichte der
@@ -41,27 +36,16 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 // «Erläuterungen» (Behördenpublikationen, Register `m`) und «Werkzeuge»
 // (Rechner/Vorlagen, Register `w`), je mit dem Griff in ihren Reiter.
 
-/** Reiter des Erlass-Blatts, in die eine Rubrik «im Erlass-Blatt öffnen ›» führt —
- *  eine Teilmenge von `../v3/panelModell.PanelReiter` (hier als Literal, weil
- *  `parts/` nicht in `v3/` hinaufimportiert). */
-export type ImBlattReiter = 'entscheide' | 'erlaeuterungen' | 'werkzeuge';
-
-/** «im Erlass-Blatt öffnen ›» — EIN Griff für alle Rubriken, die einen Reiter haben. */
-function ImBlattGriff({ reiter, name, onImBlatt }: {
-  reiter: ImBlattReiter; name: string; onImBlatt: (r: ImBlattReiter) => void;
-}) {
-  return (
-    <button type="button" onClick={() => onImBlatt(reiter)}
-      className="lc-btn-mini mt-2 text-micro text-ink-500 hover:text-ink-900"
-      /* WCAG 4.1.2 · derselbe Massstab wie an den Rubrik-Griffen: auf
-         einer Seite mit 1686 Artikeln ist «im Blatt öffnen» allein in der
-         Knopfliste eines Screenreaders nicht auffindbar. */
-      aria-label={name}
-      data-v3-bez-imblatt={reiter === 'entscheide' ? '' : reiter}>
-      {/* D-5 (S6-W1a): EIN Name der Fläche — bis 23.9.2026 «im Blatt öffnen». */}
-      im Erlass-Blatt öffnen<span aria-hidden className="inline-block transition-transform duration-fast">&nbsp;›</span></button>
-  );
-}
+// RÜCKBAU 2.10.2026 (W2·17-UI-BEFUNDE, Entscheid David 2.10.2026): die Rubrik
+// «Entscheide» (Marke `r`: `BezuegeZeile`/`LeitfallZeile`, `entscheidZahl`) und
+// der Griff «im Erlass-Blatt öffnen ›» (`ImBlattGriff`, Prop `onImBlatt`) sind
+// entfernt — beide waren unerreichbar: das Dossier filterte `r` seit M3 per
+// Konstante aus (`./ArtikelDossier.tsx`), und der Griff hing an `onImBlatt`, das
+// `LeserRahmenV3` nur ausserhalb des Einzelmodus setzt (`bild.blatt =
+// !einzelModus`, `v3/rahmenSpalten.ts`) — das Dossier gibt es aber nur im
+// Einzelmodus. Die Entscheide eines Artikels zeigt das Erlass-Blatt
+// (`../v3/PanelEntscheide.tsx`); die ausführlichen Herleitungen der entfernten
+// Stellen (D30, D34, D35-F2, W2·26/Z3, S6) stehen in der Versionsgeschichte.
 
 /** Eine Rubrik-Liste: ein Titel je Zeile, darunter leise seine Art (D30 —
  *  «Erläuterungen» und «Werkzeuge», bis S6 «Materialien» und «Rechnen», sind
@@ -70,11 +54,9 @@ const LISTE = 'm-0 grid list-none gap-1 pl-2.5 font-sans text-leser-rand [&>li]:
 const ART = 'text-micro text-ink-500';
 
 export function ArtikelBezuegeFuss({
-  bezuege, bezuegeImFuss, historie, leitfaelle, materialien, materialienLadefehler, verweise, werkzeuge, zaehler,
-  zitat, revision, onOeffnen, laedt, aktionen, onImBlatt, erlassKey, artikel, snapshot,
+  historie, materialien, materialienLadefehler, verweise, werkzeuge, zaehler,
+  zitat, onOeffnen, laedt, aktionen, erlassKey, artikel, snapshot,
 }: {
-  bezuege?: ArtikelBezuege;
-  bezuegeImFuss?: ArtikelBezuege;
   /**
    * D40 · die Fassungshistorie dieses Artikels aus dem erlass-lokalen
    * Historie-Shard (`lib/normtext/historie-laden`, idle geladen). `undefined` =
@@ -82,48 +64,24 @@ export function ArtikelBezuegeFuss({
    * Rubrik ohne echte Zahl).
    */
   historie?: ArtikelHistorie;
-  leitfaelle?: LeitfallRef[];
   materialien?: MaterialBezug[];
   /** Quelle der Materialien gescheitert (§8, `ArtikelLeser.materialienLadefehler`):
    *  der Wert ist «Erneut laden». Dann steht in der Rubrik die Fehlerzeile, nie
    *  ein leerer Block unter der Zahl. */
   materialienLadefehler?: () => void;
-  /** Die im Artikel genannten, auflösbaren Normverweise (`sammleVerweise`). */
-  verweise: string[];
+  /** Die im Wortlaut verlinkten Verweise auf Bestimmungen (`sammleVerweise`). */
+  verweise: Verweis[];
   /** Rechner/Vorlagen an genau diesem Artikel (`randNotizWerkzeuge`). */
   werkzeuge: readonly Werkzeug[];
+  /** Zähl-Datei-Eintrag (`../bezuegeZaehler`); hier wird nur `materialien`
+   *  gelesen — `entscheide` bleibt im Typ, weil das die Form des Erzeugers ist. */
   zaehler?: { entscheide: number; materialien: number };
-  /** KURZ-Zitat («Art. 957 OR») — Fundstellen-Signal für den Entscheid-Sprung. */
+  /** KURZ-Zitat («Art. 957 OR») — für die zugänglichen Namen des Dossiers. */
   zitat: string;
-  revision?: ArtikelRevision | null;
   onOeffnen?: () => void;
   laedt?: boolean;
   /** D35-F1 · die Artikel-Aktionen rechts in derselben Zeile. */
   aktionen?: ReactNode;
-  /**
-   * D35-F2 · «im Blatt öffnen ›» am Fuss der aufgeklappten Rubrik «Entscheide».
-   *
-   * Der Entscheid war «beides»: die Rubrik klappt auf UND armiert wie bisher
-   * (`onOeffnen`), und dieser Griff öffnet dieselbe Liste zusätzlich im
-   * Erlass-Blatt auf dem Reiter «Entscheide» (`../v3/panelModell`,
-   * `oeffneEntscheide`). KEIN zweiter Ladepfad und keine zweite Auswahl: das
-   * Blatt liest dieselbe Hook-Instanz, die das Aufklappen schon geweckt hat
-   * (§5, D30).
-   *
-   * NUR AN DER RUBRIK «ENTSCHEIDE»: sie ist die einzige, die im Blatt eine
-   * eigene, artikelscharfe Fläche hat. «Materialien», «Verweise» und «Rechnen»
-   * hätten dort nur ihre ERLASS-weiten Nachbarn — ein Griff, der woandershin
-   * führt als er verspricht, wäre die Scope-Verwechslung D-3/D-4, die dieser
-   * Schritt gerade abräumt (§8).
-   *
-   * ERGÄNZT S6 (23.9.2026, AN-10): «Erläuterungen» und «Werkzeuge» tragen den
-   * Griff seither ebenfalls — Auftrag «im Blatt öffnen öffnet den passenden
-   * Reiter». Die Scope-Sorge oben bleibt richtig und wird im NAMEN eingelöst,
-   * nicht verschwiegen: der Accessible-Name sagt «… zum Erlass», der Reiter-Kopf
-   * zeigt das Erlass-Kürzel (Befund 34). Wer den Griff nimmt, erfährt also,
-   * dass er vom Artikel zum ganzen Erlass wechselt.
-   */
-  onImBlatt?: (reiter: ImBlattReiter) => void;
   /**
    * W2·6c-E3 · Kanonischer Erlass-Key — die Adresse der Entstehungs-Projektion
    * (`/materialien/entstehung/<KEY>.json`). Fehlt er, zeigt die Rubrik «Fassung»
@@ -141,45 +99,6 @@ export function ArtikelBezuegeFuss({
    */
   snapshot?: NormSnapshot;
 }) {
-  /** Die Zahlen der Funktionszeile — ausschliesslich aus Daten, die der Artikel
-   *  ohnehin führt (§8: keine Rubrik ohne echte Zahl, keine neue Ladelogik). */
-  // W2·24-R6c: die Zähl-Datei schlägt beide bisherigen Quellen — sie ist
-  // GEZÄHLT, nicht gefiltert, und deshalb dieselbe Zahl vor und nach dem Laden
-  // des Shards (die Zeile springt nicht mehr um, sobald der Apparat eintrifft).
-  // Ohne Datei bleibt die frühere Reihenfolge unverändert bestehen: gefilterte
-  // Kanten, sonst Leitfälle.
-  // ── D30 (David 6.9.2026) · «ZÄHLER = LISTENLÄNGE NACH DEM LADEN» ──────────
-  // Die Reihenfolge unten bleibt die von R6c (Zähl-Datei zuerst) — sie ist der
-  // Grund, aus dem die Zahl beim Eintreffen des Shards nicht umspringt.
-  //
-  // DAVIDS REGEL IST DAMIT NICHT UMGANGEN, SONDERN AN DER WURZEL ERFÜLLT: die
-  // Zähl-Datei zählt `gesamtProArtikel` des Shards, also OHNE UI-Filter
-  // (`scripts/gen-bezuege-zaehler.ts`), und die Liste bezieht ihre Kanten seit
-  // D30 aus `alleFuer` — ebenfalls ohne UI-Filter. Beide Wege zählen dasselbe;
-  // die Zahl kann also gar nicht mehr springen, egal welcher zuerst da ist.
-  // (Bis D30 tat sie es: gemessen OR 336c «11 Entscheide» im Kopf gegen 3
-  // gezeigte, weil `bezuegeFuer` die Panel-Facetten anwandte — Herleitung in
-  // `../bezuegeLaden`.) Dass die beiden Wege übereinstimmen, ist eine ZUSAGE
-  // und keine Hoffnung: `e2e/leser-bezuege-inhalt-d30.e2e.ts` (b) misst
-  // Zeilenzahl gegen die Zahl der gerenderten Zeilen.
-  //
-  // Der Fallback nimmt `bezuegeImFuss` VOR `bezuege`: das ist die Quelle, die
-  // auch die Liste darunter zeigt — die Zahl beschriebe sonst eine andere
-  // Menge als das, was daneben steht. (Bis D34 hiess die Prop
-  // `bezuegeImKopf`; der Ort hat gewechselt, die Rangfolge nicht.)
-  const b = bezuegeImFuss ?? bezuege;
-  // ── W2·26/Z3 · EINE ZAHL, NICHT ZWEI (Mandat David 11.9.2026) ────────────
-  // Die Regel steht als reine Funktion in `../entscheidZahl` — dort auch der
-  // Befund, der sie ausgelöst hat, und die Herleitung der Rangfolge. Hier wird
-  // sie nur gerufen (§3: diese Datei rechnet die Marken, sie formuliert keine
-  // Regel zweimal), und genau darum ist sie direkt prüfbar
-  // (`src/tests/entscheid-zahl.test.ts`, Zweitblick-Auflage zu PR #788).
-  const entscheide = entscheidZahl(
-    b ? { kanten: b.kanten.length, zeitAktiv: b.zeitAktiv, kantonAktiv: b.kantonAktiv } : null,
-    zaehler ? zaehler.entscheide : null,
-    leitfaelle?.length ?? 0,
-    zitat,
-  );
   const bezugsMarken: BezugsMarke[] = [
     // ── D40 (David 7.9.2026) · «wieso ist fassung nicht auch unten am artikel?»
     {
@@ -233,35 +152,6 @@ export function ArtikelBezuegeFuss({
          «nur auf Wunsch sichtbar»). */
       inhalt: <EntstehungsBlock historie={historie} erlassKey={erlassKey} artikel={artikel} snapshot={snapshot} />,
     },
-    {
-      reg: 'r',
-      anzahl: entscheide.anzahl,
-      wort: ['Entscheid', 'Entscheide'],
-      /* Z3 · die Grundgesamtheit, wenn die sichtbare Zahl gefiltert ist —
-         nie verschwiegen, nur nicht in der Zeile (`../entscheidZahl`). */
-      titel: entscheide.titel,
-      brauchtDaten: true,
-      /* ── D30 · DIE ENTSCHEIDE, DIE DER ZÄHLER VERSPRICHT ─────────
-         `form="rand"`: senkrecht gestapelte Zeilen mit Zitierung und
-         Regeste, Leitentscheide zuerst (die Gruppen laufen nach
-         `STATUS_RANG`, BGE vor allem anderen). Das ist DIESELBE
-         Komponente und dieselbe Portionierung wie überall sonst — nur
-         die Gestalt, die R4 für die schmale Randspalte gebaut hat und
-         die hier aus demselben Grund richtig ist: in einer aufgeklappten
-         Liste unter dem Artikel sucht niemand eine waagrechte
-         Scrollachse. Der Klick öffnet daneben (Split-Regel M3) — das
-         bringt `KanteMitVorschau` mit, nicht diese Stelle. */
-      inhalt: b
-        ? <BezuegeZeile kanten={b.kanten} gesamt={b.gesamt}
-            zeitAktiv={b.zeitAktiv} kantonAktiv={b.kantonAktiv}
-            normZitat={zitat} revision={revision} form="rand" />
-        : (leitfaelle && leitfaelle.length > 0
-            ? <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />
-            : null),
-      nebenGriff: onImBlatt
-        ? <ImBlattGriff reiter="entscheide" name={`Entscheide zu ${zitat} im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
-        : undefined,
-    },
     // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
     // in `Funktionszeile` heraus) — ohne Zähl-Datei steht sie also gar nicht da,
     // statt eine Null zu behaupten (§8). Dieselbe Deckungsgleichheit wie oben:
@@ -281,9 +171,6 @@ export function ArtikelBezuegeFuss({
       anzahl: zaehler?.materialien ?? (materialien?.length ?? 0),
       wort: ['Erläuterung', 'Erläuterungen'],
       brauchtDaten: true,
-      nebenGriff: onImBlatt
-        ? <ImBlattGriff reiter="erlaeuterungen" name={`Behördliche Erläuterungen zum Erlass im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
-        : undefined,
       inhalt: materialienLadefehler && !(materialien && materialien.length > 0)
         // §8 (W2·27-BUND-FERTIG 30.9.2026): die Zahl oben kommt aus der Zähl-Datei
         // und steht; scheiterte das Laden der LISTE, bliebe der Block sonst leer.
@@ -311,18 +198,21 @@ export function ArtikelBezuegeFuss({
       reg: 'g',
       anzahl: verweise.length,
       wort: ['Verweis', 'Verweise'],
-      /* W2·5m · Die Null ist hier GESICHERT: die Verweise stehen aus dem
-         Artikel selbst (`sammleVerweise`), es wartet kein Shard. Der Satz sagt
-         darum, was gilt — und er sagt «verweist auf», nicht «hat keine
-         Verweise»: die Rückrichtung «zitiert von» gibt es im Korpus noch nicht
-         (W2·22-VERWEIS-FEDLEX Z4), und ein Leser soll sie nicht für leer
-         halten statt für fehlend (§8, Kap. 15.5). */
-      leer: 'Dieser Artikel verweist auf keine andere Bestimmung. Wer auf ihn verweist, führen wir noch nicht.',
+      /* W2·5m · Die Liste ist der Wortlaut selbst: `sammleVerweise` (W2·17-UI-
+         BEFUNDE E-D12-B01, 1.10.2026) sammelt genau die Bestimmungs-Links, die
+         der Artikeltext rendert — Binnenverweise, «§ N», ausgeschriebene
+         Fremdverweise inklusive. Eine Null heisst darum «im Wortlaut ist keine
+         Bestimmung verlinkt», nicht «der Artikel verweist auf nichts»: ein
+         Verweis, den der Linker mit Absicht Text lässt (§1), steht auch hier
+         nicht. Der Satz sagt das und nicht mehr. Die Rückrichtung «zitiert von»
+         gibt es im Korpus noch nicht (W2·22-VERWEIS-FEDLEX Z4), und ein Leser
+         soll sie nicht für leer halten statt für fehlend (§8, Kap. 15.5). */
+      leer: 'Im Wortlaut ist keine andere Bestimmung verlinkt. Wer auf diesen Artikel verweist, führen wir noch nicht.',
       inhalt: (
         <>
           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Verweise</span>
           <span className="inline-flex flex-wrap items-center gap-1.5 align-middle">
-            {verweise.map((v) => <NormChip key={v} artikel={v} />)}
+            <VerweisChips verweise={verweise} />
           </span>
         </>
       ),
@@ -333,9 +223,6 @@ export function ArtikelBezuegeFuss({
       reg: 'w',
       anzahl: werkzeuge.length,
       wort: ['Werkzeug', 'Werkzeuge'],
-      nebenGriff: onImBlatt
-        ? <ImBlattGriff reiter="werkzeuge" name={`Werkzeuge zum Erlass im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
-        : undefined,
       /* W2·5m · Ebenfalls gesichert: die Norm-Werkzeug-Kanten stehen fest im
          Code (`lib/normtext/werkzeuge.ts`), jede mit fachlichem Beleg (§7),
          Zweifelsfälle bewusst ausgelassen (§8). «Bisher» ist kein Füllwort: es
@@ -371,5 +258,18 @@ export function ArtikelBezuegeFuss({
       <ArtikelDossier marken={bezugsMarken} zitat={zitat}
         onOeffnen={onOeffnen} laedt={laedt} />
     </div>
+  );
+}
+
+/** Die Verweis-Chips (Dossier und Erlass-Blatt teilen sie, §5): Normverweise als
+ *  NormChip (Popover im Korpus, sonst Fedlex), Sprünge im Lesetext als Chip-Link
+ *  mit dem Klick-Handler des Wortlaut-Links. */
+export function VerweisChips({ verweise }: { verweise: readonly Verweis[] }) {
+  return (
+    <>
+      {verweise.map((v) => v.norm
+        ? <NormChip key={v.key} artikel={v.norm} />
+        : <a key={v.key} href={v.href} onClick={v.onKlick} className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400">{v.anzeige}</a>)}
+    </>
   );
 }

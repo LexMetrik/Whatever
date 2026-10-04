@@ -228,6 +228,11 @@ export function Reiter({
       // Die Beschriftung taugt dafür nicht — sie hängt an lazy geladenen
       // Manifesten und ist genau das, was hier NICHT gemessen werden soll.
       data-reiter-schluessel={schluessel}
+      // Pane-Bezug für die Tastatur-Zuständigkeit (`gesetz-leser/panePrioritaet`):
+      // ein Klick auf diesen Reiter benennt das Fenster, in dem er steht — der
+      // Reiter eines zweiten Fensters das sekundäre, jeder andere das Hauptfenster
+      // (er navigiert es). Nur im Split gesetzt.
+      data-pane-bezug={paneSchluessel.length > 1 ? (paneIdx > 0 ? 'sekundaer' : 'primaer') : undefined}
       // W2·25 · Mess-Anker der festen Zone: die Sonden zählen sie im DOM,
       // statt sie aus Breiten zu erraten (dieselbe Wahl wie bei
       // `data-reiter-fenster`).

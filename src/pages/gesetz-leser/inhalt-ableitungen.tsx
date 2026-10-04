@@ -76,34 +76,45 @@ export function useArtikelAbleitungen({ sektionen, eintraege, struktur }: {
 }
 
 // ─── R4 «Weiterlesen» + R8 Tastatur: «welcher Artikel ist gerade dran» ───────
-export function useArtikelTokens({ artLabelByToken, eintraege, aktArtikel }: {
+
+/**
+ * W2·17-UI-BEFUNDE (B10-B01) · der gelesene Artikel aus dem TOKEN des Scroll-Spy.
+ *
+ * Der Spy meldet den Artikel-Token (`#art-<token>`, im Erlass eindeutig). Das
+ * Anzeige-Label ist daraus ABGELEITET, nie umgekehrt: «Art. 3» trägt der
+ * Hauptartikel UND der Schlusstitel-/Übergangsartikel `disp_u1_art_3` (217
+ * Artikel in OR, ZGB, SchKG; Korpus-Sonde `src/tests/leser-aktiver-token-w217`).
+ * Die frühere Umkehrkarte Label→Token («erstes Vorkommen gewinnt») machte aus
+ * jedem dieser Artikel stillschweigend den Hauptartikel — Gliederungs-Marke,
+ * j/k-Start, Panel (Entscheide/Bezüge) und «Weiterlesen» zeigten den falschen
+ * Artikel (§1, §8). Ein Token, den der Erlass nicht kennt, liefert null — nie
+ * ein geratener Artikel.
+ */
+export function loeseAktivenArtikel(
+  artLabelByToken: ReadonlyMap<string, string>,
+  aktToken: string | null,
+): { aktivToken: string | null; aktArtikel: string | null } {
+  const label = aktToken ? artLabelByToken.get(aktToken) : undefined;
+  if (!aktToken || label === undefined) return { aktivToken: null, aktArtikel: null };
+  return { aktivToken: aktToken, aktArtikel: label };
+}
+
+export function useArtikelTokens({ artLabelByToken, eintraege, aktToken }: {
   artLabelByToken: Map<string, string>;
   eintraege: NormSnapshot[] | null;
-  aktArtikel: string | null;
+  aktToken: string | null;
 }) {
-  // Beide brauchen dasselbe: «welcher Artikel ist gerade dran» als TOKEN. Der
-  // Scroll-Spy meldet den aktiven Artikel als LABEL (`aktArtikel`, entprellt) —
-  // das ist die Form, die Kopf und Reiter zeigen. Statt einen zweiten Beobachter
-  // aufzusetzen (ein zweites «wo bin ich» wäre genau die zweite Wahrheit, die §5
-  // verbietet — und ein zweiter Scroll-Listener, den §15 nicht hergibt), wird die
-  // vorhandene Token→Label-Karte einmal umgedreht. Sie ist injektiv genug: die
-  // Labels stammen aus `labelMitBereich(artikelLabel, token)` und sind je Erlass
-  // eindeutig; bei einer Kollision gewinnt das erste Vorkommen in Dokument-
-  // Reihenfolge, und ein nicht auflösbares Label liefert schlicht null (dann wird
-  // nichts gemerkt und j/k starten am Anfang — nie ein geratener Artikel, §8).
-  const tokenByLabel = useMemo(() => {
-    const m = new Map<string, string>();
-    for (const [tok, lab] of artLabelByToken) if (!m.has(lab)) m.set(lab, tok);
-    return m;
-  }, [artLabelByToken]);
-  const aktivToken = aktArtikel ? tokenByLabel.get(aktArtikel) ?? null : null;
+  const { aktivToken, aktArtikel } = useMemo(
+    () => loeseAktivenArtikel(artLabelByToken, aktToken),
+    [artLabelByToken, aktToken],
+  );
   // R8: Artikel-Tokens in Dokument-Reihenfolge — die Liste, auf der j/k einen
   // Schritt gehen. Aus `eintraege` (der Snapshot-Reihenfolge), nicht aus dem DOM:
   // unter `content-visibility:auto` ist die DOM-Abfrage von der Renderreihenfolge
   // abhängig, die Snapshot-Reihenfolge ist die des Gesetzes.
   const artTokens = useMemo(() => (eintraege ?? []).map((e) => e.artikel), [eintraege]);
 
-  return { tokenByLabel, aktivToken, artTokens };
+  return { aktivToken, aktArtikel, artTokens };
 }
 
 // ─── Nachbar-Erlasse des Manifests ───────────────────────────────────────────

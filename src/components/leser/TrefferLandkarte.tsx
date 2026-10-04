@@ -5,7 +5,7 @@ import {
 } from './landkarteModell';
 // Die Masse des Streifens stehen in einer eigenen Datei, seit `markenHoehe`
 // für sein Tor exportierbar sein muss (21.9.2026 — Begründung dort).
-import { BREITE, HOEHE, MARKE_MIN, MARKE_X, markenBreite, markenHoehe } from './landkarteMasse';
+import { BREITE, HOEHE, MARKE_X, klickAnteil, leseRechteck, markeAnAnteil, markenBreite, markenHoehe } from './landkarteMasse';
 
 // ═══ W2·28-TREFFER-LANDKARTE · L-1 · Der Streifen neben dem Lesebereich ══════
 //
@@ -119,10 +119,15 @@ export function TrefferLandkarte({
       aria-label={name}
       title="Treffer-Landkarte — Klick springt an die Stelle im Dokument"
       onClick={(e) => {
-        const kasten = e.currentTarget.getBoundingClientRect();
-        if (kasten.height <= 0) return;
-        const feld = feldBeiAnteil(spur, (e.clientY - kasten.top) / kasten.height);
-        if (feld && feld.id !== '') onSprung(feld.id);
+        // PE-B12-B01 · GEMESSEN WIRD DIE ZEICHENFLÄCHE (das SVG), nicht der Rahmen
+        // mit seinen 1-px-Kanten, und AUFGELÖST WIRD ÜBER DIE GEZEICHNETE MARKE:
+        // `markeAnAnteil` (Herleitung und Messreihe in `./landkarteMasse`). Erst
+        // der Klick zwischen den Marken fällt auf das Feld des Textumfangs zurück.
+        const flaeche = e.currentTarget.querySelector('svg')?.getBoundingClientRect();
+        if (!flaeche || flaeche.height <= 0) return;
+        const anteil = klickAnteil(e.clientY, flaeche.top, flaeche.height);
+        const id = markeAnAnteil(marken, anteil) ?? feldBeiAnteil(spur, anteil)?.id ?? '';
+        if (id !== '') onSprung(id);
       }}
       // `hidden xl:block` steht HIER und nicht beim Aufrufer, und das ist kein
       // Zufall: es ist eine Aussage über das FENSTER (der Streifen ist `fixed`,
@@ -165,11 +170,16 @@ export function TrefferLandkarte({
             Verbot «nie Fläche» gilt der REGISTERFARBE, und Ausdehnung IST hier
             die Auskunft — die Leseposition beantwortet «wieviel vom Dokument
             habe ich vor mir», nicht «wo ist ein Treffer». */}
-        {lese && (
-          <rect x={0} y={lese.von * HOEHE} width={BREITE}
-            height={Math.max(MARKE_MIN, (lese.bis - lese.von) * HOEHE)}
-            fill="var(--brass-200)" />
-        )}
+        {lese && (() => {
+          // PE-B12-D02 · Mindesthöhe und Kontur, damit sie SICHTBAR ist — Befund und
+          // Messwerte bei `leseRechteck` (`./landkarteMasse`).
+          const { y, h } = leseRechteck(lese.von, lese.bis);
+          return (
+            <rect data-landkarte-lese x={0} y={y} width={BREITE} height={h}
+              fill="var(--brass-200)" stroke="var(--brass-500)" strokeWidth={1.5}
+              vectorEffect="non-scaling-stroke" />
+          );
+        })()}
         {/* Eine Marke je Treffer der Dokumentsuche — nie eine zweite Zählung (§5). */}
         {marken.map((m) => {
           const b = markenBreite(m.anzahl);

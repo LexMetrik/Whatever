@@ -1,12 +1,12 @@
 {
  "zaehler":{"2":[1,0],"12":[1,0],"19":[1,0],"26":[1,0],"29":[1,0],"30":[1,0],"37":[1,0],"38":[1,0],"68":[2,0]},
- "erzeugt": "2026-09-14",
- "stand": "2025-03-01",
- "fassungsToken": "20250301",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "412.10",
   "titel": "Bundesgesetz über die Berufsbildung",
-  "erlassdatum": "vom 13. Dezember 2002 (Stand am 1. März 2025)",
+  "erlassdatum": "vom 13. Dezember 2002 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -601,6 +601,50 @@
    "fussnoten": [
     {
      "nr": "9",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "1bis",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "10",
+     "text": "Fassung gemäss Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 291,
+      "l": 291
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "11",
      "text": "SR <b>170.512</b>",
      "links": [
       {
@@ -609,34 +653,34 @@
        "rs": "170.512"
       }
      ],
-     "absatz": "2",
+     "absatz": "2bis",
      "item": null,
      "pos": {
-      "b": 1,
-      "o": 382,
-      "l": 413
+      "b": 3,
+      "o": 187,
+      "l": 218
      },
      "kl": "V"
     },
     {
-     "nr": "10",
-     "text": "Vierter Satz eingefügt durch Art. 21 Ziff. 2 des Publikationsgesetzes vom 18. Juni 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 4929; BBl <b>2003 </b>7711).",
+     "nr": "12",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
      "links": [
       {
-       "label": "AS <b>2004</b> 4929",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/745"
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
       },
       {
-       "label": "BBl <b>2003 </b>7711",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2003/1274"
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
-     "absatz": "2",
+     "absatz": "2bis",
      "item": null,
      "pos": {
-      "b": 1,
-      "o": 413,
-      "l": 413
+      "b": 3,
+      "o": 218,
+      "l": 218
      },
      "kl": "A"
     }
@@ -655,20 +699,68 @@
    ],
    "fussnoten": [
     {
-     "nr": "11",
-     "text": "Ausdruck gemäss Ziff. I 8 der V vom 15. Juni 2012 (Neugliederung der Departemente), in Kraft seit 1. Jan. 2013 (AS <b>2012</b> 3655). Diese Änd. wurde im ganzen Erlass berücksichtigt.",
+     "nr": "13",
+     "text": "Fassung gemäss Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
      "links": [
       {
-       "label": "AS <b>2012</b> 3655",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2012/419"
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
      "absatz": "3",
      "item": null,
      "pos": {
       "b": 2,
-      "o": 74,
-      "l": 356
+      "o": 416,
+      "l": 416
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "14",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "3bis",
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "15",
+     "text": "Fassung gemäss Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 63,
+      "l": 63
      },
      "kl": "A"
     }
@@ -711,7 +803,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "12",
+     "nr": "17",
      "text": "SR <b>837.0</b>",
      "links": [
       {
@@ -851,7 +943,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "13",
+     "nr": "18",
      "text": "Aufgehoben durch Anhang Ziff. II 2 des Hochschulförderungs- und -koordinationsgesetzes vom 30. Sept. 2011, mit Wirkung seit 1. Jan. 2015 (AS <b>2014</b> 4103; BBl <b>2009</b> 4561).",
      "links": [
       {
@@ -1008,7 +1100,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "14",
+     "nr": "20",
      "text": "Fassung gemäss Art. 36 des EHB-Gesetzes vom 25. Sept. 2020, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 414; BBl <b>2020</b> 661).",
      "links": [
       {
@@ -1025,7 +1117,7 @@
      "kl": "A"
     },
     {
-     "nr": "15",
+     "nr": "21",
      "text": "SR <b>412.106</b>",
      "links": [
       {
@@ -1082,7 +1174,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "17",
+     "nr": "23",
      "text": "SR <b>837.0</b>",
      "links": [
       {
@@ -1120,7 +1212,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "18",
+     "nr": "24",
      "text": "Eingefügt durch Ziff. I des BG vom 16. Dez. 2016, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 5143; BBl <b>2016</b> 3089).",
      "links": [
       {
@@ -1156,7 +1248,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "19",
+     "nr": "25",
      "text": "Fassung gemäss Ziff. II 4 des BG vom 6. Okt. 2006 über die Neugestaltung des Finanzausgleichs und die Aufgabenteilung zwischen Bund und Kantonen (NFA), in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 5779; BBl <b>2005</b> 6029).",
      "links": [
       {
@@ -1282,7 +1374,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "23",
+     "nr": "29",
      "text": "Fassung gemäss Ziff. I des BG vom 16. Dez. 2016, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 5143; BBl <b>2016</b> 3089).",
      "links": [
       {
@@ -1299,7 +1391,7 @@
      "kl": "A"
     },
     {
-     "nr": "24",
+     "nr": "30",
      "text": "Fassung gemäss Ziff. I des BG vom 27. Sept. 2024, in Kraft seit 1. März 2025 (AS <b>2025</b> 75; BBl <b>2024</b> 900).",
      "links": [
       {
@@ -1316,7 +1408,7 @@
      "kl": "A"
     },
     {
-     "nr": "25",
+     "nr": "31",
      "text": "Eingefügt durch Art. 36 des EHB-Gesetzes vom 25. Sept. 2020, in Kraft seit 1. Aug. 2021 (AS <b>2021</b> 414; BBl <b>2020</b> 661).",
      "links": [
       {
@@ -1333,7 +1425,7 @@
      "kl": "A"
     },
     {
-     "nr": "26",
+     "nr": "32",
      "text": "Eingefügt durch Ziff. I des BG vom 27. Sept. 2024, in Kraft seit 1. März 2025 (AS <b>2025</b> 75; BBl <b>2024</b> 900).",
      "links": [
       {
@@ -1367,7 +1459,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "27",
+     "nr": "33",
      "text": "Fassung des zweiten Satzes gemäss Anhang Ziff. 13 des BG vom 20. Juni 2014 über die Weiterbildung, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 689; BBl <b>2013</b> 3729).",
      "links": [
       {
@@ -1389,7 +1481,7 @@
      "kl": "A"
     },
     {
-     "nr": "28",
+     "nr": "34",
      "text": "SR <b>221.215.311</b>",
      "links": [
       {
@@ -1425,7 +1517,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "29",
+     "nr": "35",
      "text": "Fassung gemäss Anhang Ziff. 35 des Verwaltungsgerichtsgesetzes vom 17. Juni 2005, in Kraft seit 1. Jan. 2007 (AS <b>2006</b> 2197 1069; BBl <b>2001</b> 4202).",
      "links": [
       {
@@ -1446,7 +1538,7 @@
      "kl": "A"
     },
     {
-     "nr": "30",
+     "nr": "36",
      "text": "Aufgehoben durch Anhang Ziff. 35 des Verwaltungsgerichtsgesetzes vom 17. Juni 2005, mit Wirkung seit 1. Jan. 2007 (AS <b>2006</b> 2197 1069; BBl <b>2001</b> 4202).",
      "links": [
       {
@@ -1503,7 +1595,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "31",
+     "nr": "37",
      "text": "SR <b>241</b>",
      "links": [
       {
@@ -1592,18 +1684,9 @@
    ],
    "fussnoten": [
     {
-     "nr": "32",
+     "nr": "40",
      "text": "Satz eingefügt durch Ziff. II des BG vom 17. Dez. 2004, in Kraft seit 5. Okt. 2005 (AS <b>2005</b> 4635; BBl <b>2004</b> 145).",
-     "links": [
-      {
-       "label": "AS <b>2005</b> 4635",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2005/607"
-      },
-      {
-       "label": "BBl <b>2004</b> 145",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2004/49"
-      }
-     ],
+     "links": [],
      "absatz": null,
      "item": null,
      "absatzIndex": 0,
@@ -1634,7 +1717,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "33",
+     "nr": "41",
      "text": "Fassung gemäss Art. 13 des BG vom 25. Sept. 2020 über die internationale Zusammenarbeit und Mobilität in der Bildung, in Kraft seit 1. April 2022 (AS <b>2022</b> 164; BBl <b>2019</b> 8327).",
      "links": [
       {
@@ -1651,7 +1734,7 @@
      "kl": "A"
     },
     {
-     "nr": "34",
+     "nr": "42",
      "text": "Fassung gemäss Art. 13 des BG vom 25. Sept. 2020 über die internationale Zusammenarbeit und Mobilität in der Bildung, in Kraft seit 1. April 2022 (AS <b>2022</b> 164; BBl <b>2019</b> 8327).",
      "links": [
       {
@@ -1695,7 +1778,26 @@
     }
    ],
    "marginalie": [
-    "Übergangsbestimmungen"
+    "Übergangsbestimmung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "44",
+     "text": "Fassung gemäss Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
    ]
   },
   "74": {
@@ -1711,9 +1813,76 @@
    ],
    "fussnoten": [
     {
-     "nr": "37",
+     "nr": "47",
      "text": "BRB vom 19. Nov. 2003",
      "links": [],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "29_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Höhere Berufsbildung",
+     "eId": "chap_3"
+    }
+   ],
+   "marginalie": [
+    "Bezeichnungsrecht"
+   ],
+   "fussnoten": [
+    {
+     "nr": "16",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "44_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
+    },
+    {
+     "ebene": 2,
+     "label": "3. Abschnitt: Höhere Berufsbildung",
+     "eId": "chap_5/sec_3"
+    }
+   ],
+   "marginalie": [
+    "Titelzusätze und vereinfachte englische Übersetzungen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "19",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
      "absatz": null,
      "item": null,
      "kl": "A"
@@ -1731,7 +1900,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "16",
+     "nr": "22",
      "text": "Eingefügt durch Anhang Ziff. 1 des BG vom 18. Juni 2010 (AS <b>2010</b> 5003; BBl <b>2009</b> 7207). Aufgehoben durch Art. 36 des EHB-Gesetzes vom 25. Sept. 2020, mit Wirkung 1. Aug. 2021 (AS <b>2021</b> 414; BBl <b>2020</b> 661).",
      "links": [
       {
@@ -1775,7 +1944,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "20",
+     "nr": "26",
      "text": "Eingefügt durch Ziff. I des BG vom 16. Dez. 2016, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 5143; BBl <b>2016</b> 3089).",
      "links": [
       {
@@ -1811,7 +1980,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "21",
+     "nr": "27",
      "text": "Eingefügt durch Ziff. I des BG vom 16. Dez. 2016, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 5143; BBl <b>2016</b> 3089).",
      "links": [
       {
@@ -1828,7 +1997,7 @@
      "kl": "A"
     },
     {
-     "nr": "22",
+     "nr": "28",
      "text": "Aufgehoben durch Anhang Ziff. 8 des BG vom 18. Dez. 2020 (Systematische Verwendung der AHV-Nummer durch Behörden), mit Wirkung seit 1. Jan. 2022 (AS <b>2021</b> 758; BBl <b>2019 </b>7359).",
      "links": [
       {
@@ -1843,6 +2012,61 @@
      "absatz": "2",
      "item": "c",
      "kl": "A"
+    }
+   ]
+  },
+  "63_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
+    },
+    {
+     "ebene": 2,
+     "label": "2. Abschnitt: Strafbestimmungen",
+     "eId": "chap_9/sec_2"
+    }
+   ],
+   "marginalie": [
+    "Unzulässige Verwendung der Bezeichnung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "38",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "39",
+     "text": "SR <b>313.0</b>",
+     "links": [
+      {
+       "label": "SR <b>313.0</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 92,
+      "l": 134
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1862,7 +2086,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "35",
+     "nr": "43",
      "text": "Aufgehoben durch Ziff. I des BG vom 27. Sept. 2024, mit Wirkung seit 1. März 2025 (AS <b>2025</b> 75; BBl <b>2024</b> 900).",
      "links": [
       {
@@ -1893,7 +2117,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "36",
+     "nr": "45",
      "text": "Eingefügt durch Anhang Ziff. 3 des BG vom 16. Dez. 2022 über die Förderung der Ausbildung im Bereich der Pflege, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 212; BBl <b>2022</b> 1498).",
      "links": [
       {
@@ -1903,6 +2127,37 @@
       {
        "label": "BBl <b>2022</b> 1498",
        "url": "https://fedlex.data.admin.ch/eli/fga/2022/1498"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "73_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
+    }
+   ],
+   "marginalie": [
+    "Übergangsbestimmungen zur Änderung vom 19. Dezember 2025"
+   ],
+   "fussnoten": [
+    {
+     "nr": "46",
+     "text": "Eingefügt durch Ziff. I des BG vom 19. Dez. 2025, in Kraft seit 1. Okt. 2026 (AS <b>2026</b> 342; BBl <b>2025</b> 1595).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 342",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/342"
+      },
+      {
+       "label": "BBl <b>2025</b> 1595",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2025/1595"
       }
      ],
      "absatz": null,

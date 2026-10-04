@@ -16,7 +16,7 @@ import { formatiereDatum } from '../helpers';
 // B-6 (31.8.2026): der Vorbehalt im `title` sagte «amtliche Quelle», der Kopf
 // zwei Zentimeter darüber «amtliche Fassung» — jetzt kommt beides aus derselben
 // Wortquelle (`lib/benennung.ts`, Zählung 10:5 zugunsten «Fassung»).
-export function AmtlichesPdf({ href, stand, extern, dateiname }: {
+export function AmtlichesPdf({ href, stand, extern, dateiname, aufgehoben }: {
   href: string;
   /** Versionsdatum (ISO) des PDF — ehrliche «Fassung vom …»-Angabe. */
   stand: string;
@@ -24,6 +24,9 @@ export function AmtlichesPdf({ href, stand, extern, dateiname }: {
   extern: boolean;
   /** Nur same-origin: Dateiname für den Speicherdialog. */
   dateiname?: string;
+  /** Der Erlass ist ganz aufgehoben: das PDF ist die letzte Fassung VOR der
+   *  Aufhebung, nie «die geltende» (PA-9-B01/D01, §8). */
+  aufgehoben?: boolean;
 }) {
   const fassung = stand ? ` (Fassung vom ${formatiereDatum(stand)})` : '';
   // LM-045: kein `no-underline` mehr — als externer Link trägt der Chip in der
@@ -36,7 +39,7 @@ export function AmtlichesPdf({ href, stand, extern, dateiname }: {
         : { download: dateiname ?? true })}
       className="lc-chip hover:text-brass-700"
       aria-label={`Amtliches PDF${fassung} herunterladen${extern ? ` ${NEUER_TAB}` : ''}`}
-      title={`Amtliches PDF der geltenden Fassung — ${MASSGEBLICH_HALBSATZ}`}
+      title={`${aufgehoben ? 'Amtliches PDF der letzten Fassung vor der Aufhebung' : 'Amtliches PDF der geltenden Fassung'} — ${MASSGEBLICH_HALBSATZ}`}
     >
       ⬇ Amtliches PDF{fassung}
     </a>

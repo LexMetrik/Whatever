@@ -1,12 +1,12 @@
 {
  "zaehler":{"8":[1,0],"7a":[1,0]},
- "erzeugt": "2026-09-14",
- "stand": "2026-03-01",
- "fassungsToken": "20260301",
+ "erzeugt": "2026-10-01",
+ "stand": "2026-10-01",
+ "fassungsToken": "20261001",
  "kopf": {
   "srNummer": "172.010.1",
   "titel": "Regierungs- und Verwaltungsorganisationsverordnung",
-  "erlassdatum": "vom 25. November 1998 (Stand am 1. März 2026)",
+  "erlassdatum": "vom 25. November 1998 (Stand am 1. Oktober 2026)",
   "praeambel": [
    {
     "rolle": "ingress",
@@ -1209,7 +1209,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "100",
+     "nr": "101",
      "text": "Fassung gemäss Ziff. I der V vom 30. Juni 2010, in Kraft seit 1. Aug. 2010 (AS <b>2010</b> 3175).",
      "links": [
       {
@@ -1241,7 +1241,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "101",
+     "nr": "102",
      "text": "Eingefügt durch Ziff. I der V vom 21. Aug. 2002, in Kraft seit 1. Okt. 2002 (AS <b>2002</b> 2827).",
      "links": [
       {
@@ -1273,7 +1273,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "102",
+     "nr": "103",
      "text": "Aufgehoben durch Ziff. I der V vom 21. Aug. 2002, mit Wirkung seit 1. Okt. 2002 (AS <b>2002</b> 2827).",
      "links": [
       {
@@ -1286,7 +1286,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "104",
      "text": "[AS <b>1991</b> 1632; <b>1996</b> 1651 Art. 22. AS <b>2005</b> 4103 Art. 22]. Siehe heute die Vernehmlassungsverordnung vom 17. Aug. 2005 (SR <b>172.061.1</b>).",
      "links": [
       {
@@ -1335,7 +1335,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "105",
+     "nr": "106",
      "text": "SR <b>311.0</b>",
      "links": [
       {
@@ -1354,7 +1354,7 @@
      "kl": "V"
     },
     {
-     "nr": "106",
+     "nr": "107",
      "text": "SR <b>351.20</b>. Heute: BG.",
      "links": [
       {
@@ -1373,7 +1373,7 @@
      "kl": "V"
     },
     {
-     "nr": "107",
+     "nr": "108",
      "text": "Eingefügt durch Anhang Ziff. 2 der V vom 19. Dez. 2003, in Kraft seit 1. Febr. 2004 (AS <b>2004</b> 433).",
      "links": [
       {
@@ -1391,7 +1391,7 @@
      "kl": "A"
     },
     {
-     "nr": "108",
+     "nr": "109",
      "text": "Fassung gemäss Anhang Ziff. 2 der V vom 19. Dez. 2003, in Kraft seit 1. Febr. 2004 (AS <b>2004</b> 433).",
      "links": [
       {
@@ -1409,7 +1409,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "105",
      "text": "Fassung gemäss Anhang Ziff. 2 der V vom 19. Dez. 2003, in Kraft seit 1. Febr. 2004 (AS <b>2004</b> 433).",
      "links": [
       {
@@ -1440,7 +1440,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "109",
+     "nr": "110",
      "text": "Aufgehoben durch Ziff. I der V vom 21. Aug. 2002, mit Wirkung seit 1. Okt. 2002 (AS <b>2002</b> 2827).",
      "links": [
       {
@@ -1470,7 +1470,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "110",
+     "nr": "111",
      "text": "Aufgehoben durch Ziff. I der V vom 16. Jan. 2008, mit Wirkung seit 1. Febr. 2008 (AS <b>2008</b> 191).",
      "links": [
       {
@@ -1500,7 +1500,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "111",
+     "nr": "112",
      "text": "[AS <b>1971 </b>1053]",
      "links": [
       {
@@ -1536,7 +1536,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "112",
+     "nr": "113",
      "text": "[AS <b>1999</b> 1757; <b>2002</b> 2827 Ziff. III; <b>2004</b> 4521; <b>2007</b> 349, 4477 Ziff. IV 7. AS <b>2008</b> 5153 Art. 11]. Diese V trat am 1. Juni 1999 in Kraft.",
      "links": [
       {
@@ -1991,6 +1991,33 @@
     "Anordnende Stelle"
    ]
   },
+  "27_c_bis": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Führung der Regierungs- und Verwaltungstätigkeit",
+     "eId": "chap_3"
+    },
+    {
+     "ebene": 2,
+     "label": "6. Abschnitt: Administrativuntersuchung",
+     "eId": "chap_3/sec_6"
+    }
+   ],
+   "marginalie": [
+    "Koordination"
+   ],
+   "fussnoten": [
+    {
+     "nr": "94",
+     "text": "Eingefügt durch Ziff. I der V vom 12. Aug. 2026, in Kraft seit 1. Okt. 2026 (AS <b>20</b><b>26</b> 420).",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
   "27_d": {
    "gliederung": [
     {
@@ -2009,7 +2036,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "94",
+     "nr": "95",
      "text": "SR <b>172.021</b>",
      "links": [
       {
@@ -2081,7 +2108,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "95",
+     "nr": "96",
      "text": "SR <b>172.021</b>",
      "links": [
       {
@@ -2136,7 +2163,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "96",
+     "nr": "97",
      "text": "Fassung gemäss Anhang 2 Ziff. II 14 der Datenschutzverordnung vom 31. Aug. 2022, in Kraft seit 1. Sept. 2023 (AS <b>2022</b> 568).",
      "links": [
       {
@@ -2149,7 +2176,7 @@
      "kl": "A"
     },
     {
-     "nr": "97",
+     "nr": "98",
      "text": "SR <b>235.1</b>",
      "links": [
       {
@@ -2200,7 +2227,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "98",
+     "nr": "99",
      "text": "Eingefügt durch Ziff. I der V vom 5. April 2006, in Kraft seit 1. Juni 2006 (AS <b>2006 </b>1269).",
      "links": [
       {
@@ -2264,7 +2291,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "99",
+     "nr": "100",
      "text": "Eingefügt durch Ziff. I der V vom 5. April 2006, in Kraft seit 1. Juni 2006 (AS <b>2006 </b>1269).",
      "links": [
       {
