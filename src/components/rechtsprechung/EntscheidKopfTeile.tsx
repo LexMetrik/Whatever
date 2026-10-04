@@ -137,7 +137,7 @@ export function DatumMeta({ snap }: { snap: EntscheidSnapshot }) {
   // `Datum` reicht einen Nicht-ISO-Wert (hier die nackte Jahreszahl)
   // unverändert durch und setzt nur `tabular-nums` (Vertrag des Bausteins).
   if (istBandjahr(snap)) return <span>BGE-Jahrgang <Datum iso={bgeJahrgang(snap)} /></span>;
-  return <span>Entscheid vom <Datum iso={snap.datum} /></span>;
+  return <span>Entscheid vom <Datum iso={snap.datum} />{snap.datumPortal && <> · <DatumPortalHinweis snap={snap} /></>}</span>;
 }
 
 // §8-Hinweis «Datum laut Urteilskopf» (Entscheid David 4.10.2026: «jeweils hinweis wenn

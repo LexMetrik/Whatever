@@ -17,7 +17,7 @@ import type { EntscheidManifest } from '../../src/lib/rechtsprechung/register';
 import type { EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 import type { Inventar } from './bs-inventar';
 import { gnJahr } from './bs-inventar';
-import { KOPF_PORTAL_FENSTER_TAGE } from './bs-parse';
+import { KOPF_PORTAL_FENSTER_TAGE } from './bs-datum';
 
 const ROOT = process.cwd();
 const PUB = join(ROOT, 'public', 'rechtsprechung');

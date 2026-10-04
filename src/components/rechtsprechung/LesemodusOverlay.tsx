@@ -2,7 +2,7 @@ import { useEffect, useRef, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { EntscheidBody } from './EntscheidBody';
 import RegesteBlock from './RegesteBlock';
-import { BesetzungWert, DatumMeta, DatumPortalHinweis, MassgeblicheFassung } from './EntscheidKopfTeile';
+import { BesetzungWert, DatumMeta, MassgeblicheFassung } from './EntscheidKopfTeile';
 import { FS_STUFEN } from './leseGroesse';
 import { SeitenTitel } from '../ui/SeitenTitel';
 import { paneKlasse } from '../layout/PaneKontext';
@@ -182,7 +182,6 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
         <SeitenTitel className="mt-2 num">{snap.zitierung}</SeitenTitel>
         <p className="mt-1 text-xs text-ink-500">
           <DatumMeta snap={snap} />
-          {snap.datumPortal && <> · <DatumPortalHinweis snap={snap} /></>}
           {/* B-5 wie im Haupt-Kopf: kein zweiter Chip für einen Namen, den die
               H1 zwei Zeilen darüber schon wörtlich trägt. */}
           {snap.bgeReferenz && !referenzImTitel(snap.zitierung, snap.bgeReferenz) && <> · <span className="num">{snap.bgeReferenz}</span></>}

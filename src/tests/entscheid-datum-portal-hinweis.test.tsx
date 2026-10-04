@@ -5,7 +5,7 @@
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
-import { DatumPortalHinweis } from '../components/rechtsprechung/EntscheidKopfTeile';
+import { DatumMeta, DatumPortalHinweis } from '../components/rechtsprechung/EntscheidKopfTeile';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 import { readFileSync } from 'node:fs';
 
@@ -25,9 +25,13 @@ describe('DatumPortalHinweis', () => {
     expect(html(snap({}))).toBe('');
     expect(html(snap({ datumPortal: '2022-09-16', datumUnbekannt: true }))).toBe('');
   });
-  it('der Leser und das Lesemodus-Overlay binden den Hinweis ein (auch wenn die Zitierung das Datum trägt)', () => {
-    for (const f of ['src/pages/EntscheidLeser.tsx', 'src/components/rechtsprechung/LesemodusOverlay.tsx']) {
-      expect(readFileSync(f, 'utf8')).toMatch(/<DatumPortalHinweis snap=\{snap\} \/>/);
-    }
+  it('DatumMeta (Kopf UND Lesemodus) trägt den Hinweis hinter «Entscheid vom …»', () => {
+    const h = renderToStaticMarkup(createElement(DatumMeta, { snap: snap({ datumPortal: '2022-09-16' }) }));
+    expect(h).toContain('Entscheid vom');
+    expect(h).toContain('das Gerichtsportal nennt den');
+    expect(renderToStaticMarkup(createElement(DatumMeta, { snap: snap({}) }))).not.toContain('Gerichtsportal');
+  });
+  it('der Leser zeigt den Hinweis auch, wenn die Zitierung das Datum schon trägt (DatumMeta entfällt dann)', () => {
+    expect(readFileSync('src/pages/EntscheidLeser.tsx', 'utf8')).toMatch(/datumImTitel \? \(snap\.datumPortal \? <DatumPortalHinweis snap=\{snap\} \/> : null\) : <DatumMeta/);
   });
 });

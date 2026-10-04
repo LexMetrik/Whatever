@@ -23,6 +23,7 @@ import { dekodiereBs, dokumentUrl } from './bs-client';
 import { rawPfad, BS_DATEN } from './bs-fetch';
 import { extrahiereBesetzung } from './bs-besetzung';
 import { gnJahr, type Inventar, type InventarZeile } from './bs-inventar';
+import { kopfDatum, kopfDatumFund, waehleBsDatum, type BsDatumWahl, type KopfDatumFund } from './bs-datum';
 import { sha256EntscheidBloecke } from '../normtext/sha-entscheide';
 import { gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe } from '../normtext/entscheide-mapping';
 import { schreibeKorpus, ladeBestandSnapshots } from '../normtext/entscheide-schreiben';
@@ -211,6 +212,10 @@ function markeVon(e: Einheit, sektion: SektionsTyp): { marke: string; tiefe: num
 
 const trimFuehrend = (s: string): string => s.replace(/^\s+/, '');
 
+// Kopf-Datum-Regel: scripts/rechtsprechung/bs-datum.ts (hier re-exportiert, Aufrufer unverändert).
+export { kopfDatum, kopfDatumFund, plausiblesKopfDatum, waehleBsDatum, KOPF_PORTAL_FENSTER_TAGE } from './bs-datum';
+export type { KopfDatumFund, BsDatumWahl, BsDatumQuelle } from './bs-datum';
+
 export interface ParseErgebnis {
   gn: string;
   gnSekundaer: string | null;
@@ -258,150 +263,6 @@ const dIso = (s: string | null): string | null => {
   const m = /(\d{2})\.(\d{2})\.(\d{4})/.exec(s ?? '');
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 };
-
-// ─── Kopf-Datum: das Entscheiddatum aus dem Deckblatt (W2·29-WERKBANK-LESER D2/B-1) ──
-//
-// BEFUND (Prüfrunde 1, reproduziert 23.9.2026): 42 der 3'765 BS-Dokumente haben im
-// Metadaten-Kopf des Portals KEIN «Entscheiddatum» (Inventar `datum: null`). Der
-// Import führte sie darum als `datumUnbekannt` mit dem Platzhalter <GN-Jahr>-01-01
-// — und dieser Platzhalter wanderte ohne das Flag in die Bezugs-Shards, wo er als
-// echtes Datum «01.01.2024» erschien und das «revidiert»-Warnzeichen auslöste.
-// Das Datum steht aber im amtlichen Dokument selbst: das Deckblatt trägt unter der
-// Titelzeile «ENTSCHEID»/«URTEIL»/«Urteil der Präsidentin» einen eigenen Absatz
-// «vom 15. September 2025» (BES.2024.88, nF30_KEY 78827).
-//
-// DIE REGEL ist strukturell, kein Fliesstext-Raten (§1/§2): ein Absatz, der
-// VOLLSTÄNDIG aus «vom <T>. <Monat> <JJJJ>» besteht UND unmittelbar auf einen
-// Absatz folgt, der VOLLSTÄNDIG eine Entscheid-Titelzeile ist, innerhalb der
-// ersten KOPF_FENSTER Einheiten (Briefkopf-Tabelle, GN, Titel, Datum stehen real
-// an Position 3–6). Ein «vom …» im Sachverhalt ist nie ein ganzer Absatz direkt
-// nach «URTEIL» und trifft darum nicht.
-//
-// GEMESSEN 23.9.2026 (Rohdokumente frisch vom Portal): 42/42 datumlose Dokumente
-// tragen genau einen solchen Kopf; Gegenprobe an 42 Dokumenten MIT Metadaten-
-// Datum (jedes 90. des Inventars): Kopf-Datum == Metadaten-Datum in allen Fällen,
-// in denen die Regel greift (Zahl im PR-Bericht). Das Metadaten-Datum bleibt die
-// erste Quelle; das Kopf-Datum füllt nur die Lücke (`baueSnapshot`).
-//
-// ERGÄNZUNG 4.10.2026 (Belege altern nicht — der Absatz oben bleibt als Stand
-// 23.9.2026 stehen): «Kopf-Datum == Metadaten-Datum in allen Fällen» ist WIDERLEGT.
-// Gegenprüfung Opus von PR #1295 (Abruf rechtsprechung.gerichte.bs.ch, 4.10.2026):
-// AUS.2026.85 Portal 30.09.2026 / Kopf 1. Oktober 2026; BES.2025.105 04.03. / 1. April;
-// BES.2025.117 08.04. / 6. Mai; VD.2025.146 06.05. / 6. April 2026; im Bestand
-// AUS.2022.46 16.9. / 21.9.22 (der Urteilstext bestätigt den Kopf), AUS.2022.57,
-// BES.2023.14, BEZ.2025.33 (4 von 31 ≈ 13 %). Seit der Variante A (Entscheid David
-// 4.10.2026) gewinnt darum der KOPF, das Portal-Metadatum ist Rückfall und bleibt
-// als `datumPortal` sichtbar (`waehleBsDatum`); Bestandsberichtigung:
-// `berichtigeBsDatum`, Liste bibliothek/rechtsprechung/bs-datum-kopf-2026-10-04.md.
-const KOPF_FENSTER = 12;
-const MONATE: Record<string, string> = {
-  Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
-  Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12',
-};
-const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Urteil|Beschluss|Verfügung) de[rs] [A-ZÄÖÜ][a-zäöüß]+)$/;
-const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
-
-/** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
-const kopfText = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
-
-/** Das gelesene Kopf-Datum samt Fundstelle im Deckblatt (für die Änderungsliste, §7). */
-export interface KopfDatumFund {
-  iso: string;
-  /** 0-basierte Einheit des Datums-Absatzes im Dokument-Body (Titelzeile = einheit − 1). */
-  einheit: number;
-  titel: string;
-  text: string;
-}
-
-/**
- * Entscheiddatum aus dem Deckblatt samt Fundstelle, oder null. Rein (§2). Die
- * Anwendung steht in `waehleBsDatum` / `baueSnapshot`.
- */
-export function kopfDatumFund(einheiten: ReadonlyArray<{ text: string }>): KopfDatumFund | null {
-  const n = Math.min(einheiten.length, KOPF_FENSTER);
-  for (let i = 1; i < n; i++) {
-    const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
-    if (!m || !KOPF_TITEL_RE.test(kopfText(einheiten[i - 1].text))) continue;
-    const tag = m[1].padStart(2, '0');
-    const iso = `${m[3]}-${MONATE[m[2]]}-${tag}`;
-    // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
-    const d = new Date(`${iso}T00:00:00Z`);
-    if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
-    return { iso, einheit: i, titel: kopfText(einheiten[i - 1].text), text: kopfText(einheiten[i].text) };
-  }
-  return null;
-}
-
-/** Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den Regressionstest. */
-export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | null {
-  return kopfDatumFund(einheiten)?.iso ?? null;
-}
-
-/**
- * Plausibilitäts-Riegel für das Kopf-Datum: nicht vor dem Jahr der Geschäftsnummer
- * (Eingang), nicht nach der Erstpublikation. Scheitert er, bleibt das Datum
- * ehrlich unbekannt (Platzhalter + `datumUnbekannt`) statt geraten.
- */
-export function plausiblesKopfDatum(kopf: string | null | undefined, gnJahrZahl: number | null, erstpublikation: string | null): string | null {
-  if (!kopf) return null;
-  if (gnJahrZahl !== null && Number(kopf.slice(0, 4)) < gnJahrZahl) return null;
-  if (erstpublikation && kopf > erstpublikation) return null;
-  return kopf;
-}
-
-/**
- * Abstand Kopf-Datum ↔ Portal-Metadatum, ab dem das Kopf-Datum NICHT still
- * übernommen, sondern als Verdacht gemeldet wird (Auftrag David 4.10.2026). Messung
- * 4.10.2026 an den ersten acht Belegen: Abweichungen 2–30 Tage.
- */
-export const KOPF_PORTAL_FENSTER_TAGE = 60;
-const tageZwischen = (von: string, bis: string): number =>
-  Math.round((Date.parse(`${bis}T00:00:00Z`) - Date.parse(`${von}T00:00:00Z`)) / 86_400_000);
-
-export type BsDatumQuelle = 'kopf' | 'portal' | 'platzhalter';
-export interface BsDatumWahl {
-  datum: string;
-  quelle: BsDatumQuelle;
-  /** Portal-Metadatum, wenn es vom gewählten `datum` abweicht (→ `datumPortal`). */
-  datumPortal: string | null;
-  /** Gesetzt, wenn ein gelesenes Kopf-Datum NICHT übernommen wurde (Plausibilität). */
-  verdacht: string | null;
-}
-
-/**
- * VARIANTE A für Basel-Stadt (Entscheid David 4.10.2026, Regel der OCL-Kantone vom
- * 25.9.2026): das Datum im Urteilskopf («ENTSCHEID/URTEIL vom …») gewinnt vor dem
- * Portal-Metadatum «Entscheiddatum»; das Metadatum ist nur Rückfall, wenn kein
- * Kopf-Datum lesbar ist. Fehlen beide: ehrlicher Platzhalter (`datumUnbekannt`).
- *
- * Plausibilitäts-Wächter (nie still übernehmen): ein Kopf-Datum vor dem GN-Jahr,
- * nach der Erstpublikation, in der Zukunft (nach `abgerufen`) oder mehr als
- * `KOPF_PORTAL_FENSTER_TAGE` Tage vom Portal-Datum entfernt wird nicht gewählt
- * (Portal/Platzhalter bleibt) und als `verdacht` ausgewiesen.
- */
-export function waehleBsDatum(
-  portal: string | null,
-  kopf: string | null,
-  gnJahrZahl: number | null,
-  erstpublikation: string | null,
-  abgerufen: string | null,
-): BsDatumWahl {
-  let verdacht: string | null = null;
-  let kopfOk: string | null = null;
-  if (kopf) {
-    if (plausiblesKopfDatum(kopf, gnJahrZahl, erstpublikation) === null) {
-      verdacht = `Kopf-Datum ${kopf} unplausibel (vor GN-Jahr ${gnJahrZahl ?? '–'} oder nach Erstpublikation ${erstpublikation ?? '–'})`;
-    } else if (abgerufen && kopf > abgerufen) {
-      verdacht = `Kopf-Datum ${kopf} liegt in der Zukunft (Abruf ${abgerufen})`;
-    } else if (portal && Math.abs(tageZwischen(portal, kopf)) > KOPF_PORTAL_FENSTER_TAGE) {
-      verdacht = `Kopf-Datum ${kopf} weicht ${tageZwischen(portal, kopf)} Tage vom Portal-Datum ${portal} ab (> ${KOPF_PORTAL_FENSTER_TAGE})`;
-    } else kopfOk = kopf;
-  }
-  if (kopfOk) return { datum: kopfOk, quelle: 'kopf', datumPortal: portal && portal !== kopfOk ? portal : null, verdacht };
-  if (portal) return { datum: portal, quelle: 'portal', datumPortal: null, verdacht };
-  const j = gnJahrZahl;
-  return { datum: j === null ? '' : `${j}-01-01`, quelle: 'platzhalter', datumPortal: null, verdacht };
-}
 
 /**
  * Alle Inhalts-Einheiten des Bodys: ALLE WordSection-Divs in Dokument-Reihenfolge
@@ -827,92 +688,4 @@ export function nachtragKopfdatum(inventar: Inventar, datum: string): { datiert:
   console.log(`[kopfdatum] ${datiert.length} datiert, ${weiterUnbekannt.length} weiterhin ohne Datum (ehrlich datumUnbekannt).`);
   for (const d of datiert) console.log(`[kopfdatum]   ${d}`);
   return { datiert, weiterUnbekannt };
-}
-
-// ─── Berichtigung des Bestands: Kopf-Datum vor Portal-Metadatum (Variante A) ──
-//
-// Entscheid David 4.10.2026: «Ich lasse die Regel für Basel als eigenen geprüften
-// Schritt bauen, berichtige dabei auch die alten Basler Daten». Der Kopf steht NICHT
-// im Snapshot (`abschnitte` beginnen nach dem Deckblatt) — die Ableitung braucht die
-// Rohdokumente (`daten/bs-fiw/raw/`, nicht eingecheckt; Abruf: `bs-import
-// --fetch-only`). Je Bestands-Snapshot wird mit DERSELBEN Regel wie im Import neu
-// gebaut (`baueSnapshot`); übernommen werden ausschliesslich `datum`, `zitierung`,
-// `datumPortal`, `datumUnbekannt` und — nur bei geändertem Datum — `abgerufen`.
-// Vorbedingungen je Dokument (sonst NICHT angefasst, sondern ausgewiesen): Inventar-
-// Zeile da, gleiche GN, Portal-Metadatum == Inventar, gleiche id, gleicher Text-`sha`.
-// Die id bleibt auch dann stehen, wenn ein docketSafe-Suffix das alte Portal-Datum
-// trägt (stabile URLs, §6) — die Kollisionsregel rechnet weiter mit dem Portal-Datum.
-
-export interface BsDatumAenderung {
-  id: string;
-  gn: string;
-  key: number;
-  /** Bisheriges `datum` (= Portal-Metadatum, bzw. Platzhalter). */
-  alt: string;
-  neu: string;
-  /** Portal-Metadatum (Inventar) oder null. */
-  portal: string | null;
-  tage: number;
-  fund: KopfDatumFund | null;
-  zitierungAlt: string;
-  zitierungNeu: string;
-  url: string;
-}
-export interface BsDatumVerdacht { id: string; gn: string; key: number; grund: string; url: string }
-export interface BsDatumBericht {
-  geprueft: number;
-  /** Datum unverändert (Kopf == Portal oder kein Kopf lesbar). */
-  unveraendert: number;
-  /** Davon: Kopf lesbar und gleich dem Portal-Datum. */
-  kopfGleich: number;
-  /** Davon: kein Kopf-Datum lesbar (Rückfall Portal bzw. Platzhalter). */
-  ohneKopf: number;
-  aenderungen: BsDatumAenderung[];
-  verdacht: BsDatumVerdacht[];
-  uebersprungen: Array<{ id: string; grund: string }>;
-}
-
-export function berichtigeBsDatum(inventar: Inventar, datum: string, schreibe = true): BsDatumBericht {
-  const bestand = ladeBestandSnapshots();
-  const zeileVon = new Map(inventar.eintraege.map((z) => [z.key, z] as const));
-  const bericht: BsDatumBericht = { geprueft: 0, unveraendert: 0, kopfGleich: 0, ohneKopf: 0, aenderungen: [], verdacht: [], uebersprungen: [] };
-  bestand.forEach((alt, i) => {
-    if (alt.quelle !== 'gerichte-bs') return;
-    const m = /nF30_KEY=(\d+)/.exec(alt.quelleUrl);
-    if (!m) throw new Error(`[datum-kopf] ${alt.id}: kein nF30_KEY in quelleUrl`);
-    const key = Number(m[1]);
-    const z = zeileVon.get(key);
-    const skip = (grund: string) => { bericht.uebersprungen.push({ id: alt.id, grund }); };
-    if (!z) return skip('nicht im Inventar');
-    const pfad = rawPfad(key);
-    if (!existsSync(pfad)) throw new Error(`[datum-kopf] Rohdatei fehlt: ${alt.nummer} (key ${key}) — zuerst bs-import --fetch-only.`);
-    const p = parseBsDokument(readFileSync(pfad));
-    if (p.gn !== z.gn) return skip(`GN-Drift Kopf «${p.gn}» ≠ Inventar «${z.gn}»`);
-    if (p.datum !== z.datum) return skip(`Portal-Metadatum jetzt ${p.datum ?? '–'}, Inventar ${z.datum ?? '–'} — Delta/Vollimport`);
-    bericht.geprueft++;
-    const neu = baueSnapshot(p, z, alt.id.slice(alt.id.lastIndexOf('/') + 1), datum);
-    if (neu.id !== alt.id) return skip(`id-Drift ${alt.id} → ${neu.id}`);
-    if (neu.sha !== alt.sha) return skip('Text-sha weicht vom Bestand ab — Dokument seit dem Import geändert');
-    const wahl = bsWahlVon(p, datum);
-    if (wahl.verdacht) bericht.verdacht.push({ id: alt.id, gn: alt.nummer, key, grund: wahl.verdacht, url: alt.quelleUrl });
-    if (neu.datum === alt.datum && (neu.datumPortal ?? null) === (alt.datumPortal ?? null) && !!neu.datumUnbekannt === !!alt.datumUnbekannt) {
-      bericht.unveraendert++;
-      if (p.datumKopf && p.datumKopf === p.datum) bericht.kopfGleich++;
-      if (!p.datumKopf) bericht.ohneKopf++;
-      return;
-    }
-    const patch: EntscheidSnapshot = { ...alt, zitierung: neu.zitierung, datum: neu.datum, abgerufen: datum };
-    if (neu.datumPortal) patch.datumPortal = neu.datumPortal; else delete patch.datumPortal;
-    if (neu.datumUnbekannt) patch.datumUnbekannt = true; else delete patch.datumUnbekannt;
-    bestand[i] = patch;
-    bericht.aenderungen.push({
-      id: alt.id, gn: alt.nummer, key, alt: alt.datum, neu: neu.datum, portal: z.datum,
-      tage: Math.round((Date.parse(`${neu.datum}T00:00:00Z`) - Date.parse(`${alt.datum}T00:00:00Z`)) / 86_400_000),
-      fund: p.kopfFund ?? null, zitierungAlt: alt.zitierung, zitierungNeu: neu.zitierung, url: alt.quelleUrl,
-    });
-  });
-  bericht.aenderungen.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
-  bericht.verdacht.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
-  if (schreibe && bericht.aenderungen.length) schreibeKorpus(bestand, datum);
-  return bericht;
 }

@@ -71,10 +71,11 @@ async function main() {
   // zählen und die Liste schreiben, den Korpus nicht anfassen.
   if (hat('--datum-kopf-berichtigung')) {
     const inv = ladeInventar();
-    const { berichtigeBsDatum } = await import('./bs-parse');
+    const { berichtigeBsDatum } = await import('./bs-datum-berichtigung');
     const { schreibeDatumBericht } = await import('./bs-datum-bericht');
     const b = berichtigeBsDatum(inv, datum, !hat('--trocken'));
-    const pfad = schreibeDatumBericht(b, datum, inv.erzeugt);
+    // Fixpunkt (0 Änderungen, Zweitlauf): die Liste des Erstlaufs nicht mit «0» überschreiben.
+    const pfad = b.aenderungen.length ? schreibeDatumBericht(b, datum, inv.erzeugt) : '(Fixpunkt: keine Änderung, Liste unberührt)';
     console.log(`[datum-kopf] geprüft ${b.geprueft} · geändert ${b.aenderungen.length} · unverändert ${b.unveraendert} (Kopf=Portal ${b.kopfGleich}, ohne Kopf ${b.ohneKopf}) · nicht angefasst ${b.uebersprungen.length} · Verdacht ${b.verdacht.length}`);
     console.log(`[datum-kopf] Liste: ${pfad}`);
     for (const v of b.verdacht) console.log(`[datum-kopf] VERDACHT ${v.id}: ${v.grund}`);

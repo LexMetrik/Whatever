@@ -758,9 +758,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           // Zitierung darüber dasselbe Datum wörtlich führt — sonst steht das
           // Urteilsdatum zweimal in 60 px. Fehlt es im Titel (BGE-Zitierungen,
           // «Entscheiddatum nicht publiziert», BGE-Jahrgang), bleibt die Zeile.
-          datumImTitel ? null : <DatumMeta snap={snap} />,
-          // Variante A (4.10.2026, §8): weicht das Datum der Quelle vom Urteilskopf ab, steht das hier.
-          snap.datumPortal ? <DatumPortalHinweis snap={snap} /> : null,
+          datumImTitel ? (snap.datumPortal ? <DatumPortalHinweis snap={snap} /> : null) : <DatumMeta snap={snap} />,  // §8-Hinweis (4.10.2026): auch wenn die Zitierung das Datum trägt
           snap.bgeReferenz && !referenzImTitel(snap.zitierung, snap.bgeReferenz)
             ? <span className="num">{snap.bgeReferenz}</span> : null,
           snap.nummerSekundaer

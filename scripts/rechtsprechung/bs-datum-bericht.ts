@@ -8,8 +8,8 @@
 
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { BsDatumBericht } from './bs-parse';
-import { KOPF_PORTAL_FENSTER_TAGE } from './bs-parse';
+import type { BsDatumBericht } from './bs-datum-berichtigung';
+import { KOPF_PORTAL_FENSTER_TAGE } from './bs-datum';
 
 const de = (iso: string): string => iso.split('-').reverse().join('.');
 const ze = (s: string): string => s.replace(/\|/g, '\\|');
