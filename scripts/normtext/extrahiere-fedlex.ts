@@ -21,6 +21,10 @@ import { artikelTextMitAufhebung } from './aufhebung-signal.ts';
 import { normalisiereTabelle } from './tabelle-normalisieren.ts';
 import type { ArtikelText } from './fedlex/typen.ts';
 import { entferneTags, entferneFussnotenSups } from './fedlex/text.ts';
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+import {
+  ABSATZ_NR_EIN_SUP, ABSATZ_NR_ZWEI_SUPS, SUFFIX_WORT_ODER_BUCHSTABE, ABSATZ_NR_INHALT,
+} from './fedlex/absatz-nr.ts';
 import { findeDlEnde } from './fedlex/enden.ts';
 import { parseDefinitionsListe, ergaenzeFortsetzungsTiefe } from './fedlex/listen.ts';
 import { parseFedlexTabelle, parseRohTabelle } from './fedlex/tabellen.ts';
@@ -136,7 +140,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
   // INNEREN — </dl> und verlor lit-Ebene + Einleitung (Bug 25.6.2026, §1).
   const bloeckeUndListenRe = new RegExp(
     '<p[^>]*\\bclass="[^"]*\\babsatz\\b[^"]*"[^>]*>([\\s\\S]*?)</p>' +
-      `|<p[^>]*>((?:\\s|&nbsp;|<\\/?inl>)*<sup\\b[^>]*>\\d+(?:bis|ter|quater|quinquies)?[a-z]?</sup>${NICHT_P})</p>` +
+      `|<p[^>]*>((?:\\s|&nbsp;|<\\/?inl>)*<sup\\b[^>]*>\\d+${SUFFIX_ALT}?[a-z]?</sup>${NICHT_P})</p>` +
       `|<p[^>]*>(${NICHT_P})</p>(?=\\s*<dl)` +
       '|(<dl[^>]*>)' +
       '|<table[^>]*>([\\s\\S]*?)</table>' +
@@ -204,8 +208,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       let absatz: string | null = null;
       // Regex, die die erkannte Absatz-Nummer (ein ODER — bei gespaltenem Suffix —
       // zwei <sup>) vom Roh-Text abtrennt. Default deckt den Ein-<sup>-Fall.
-      let absatzNrStrip =
-        /^(?:\s|&nbsp;|<\/?inl>)*<sup[^>]*>\d+(?:bis|ter|quater|quinquies)?[a-z]?<\/sup>(?:&nbsp;|\s|<\/?inl>)*/i;
+      let absatzNrStrip = ABSATZ_NR_EIN_SUP;
       if (supMatch && !/<a[\s>]/i.test(supMatch[1])) {
         const supInhalt = supMatch[1].trim();
         // GESPALTENES Suffix ZUERST prüfen: Fedlex trennt Ziffer und lat. Suffix in
@@ -237,12 +240,11 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
           split &&
           !istBereich &&
           !/<a[\s>]/i.test(split[2]) &&
-          /^(?:bis|ter|quater|quinquies|[a-z])$/i.test(split[2].trim())
+          SUFFIX_WORT_ODER_BUCHSTABE.test(split[2].trim())
         ) {
           absatz = split[1] + split[2].trim();
-          absatzNrStrip =
-            /^(?:\s|&nbsp;|<\/?inl>)*<sup[^>]*>\s*\d+\s*<\/sup>(?:&nbsp;|\s|<\/?inl>)*<sup[^>]*>\s*(?:bis|ter|quater|quinquies|[a-z])\s*<\/sup>(?:&nbsp;|\s|<\/?inl>)*/i;
-        } else if (/^\d+(?:bis|ter|quater|quinquies)?[a-z]?$/.test(supInhalt)) {
+          absatzNrStrip = ABSATZ_NR_ZWEI_SUPS;
+        } else if (ABSATZ_NR_INHALT.test(supInhalt)) {
           // Ein-<sup>-Fall (unverändert): «<sup>1bis</sup>» / «<sup>2</sup>».
           absatz = supInhalt;
         }

@@ -9,6 +9,48 @@
  "ueberschriftEreignisse": [
   {
    "typ": "fassung",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/367"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3595",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/466"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 2585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/367"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
+  },
+  {
+   "typ": "fassung",
    "datum": "2025-07-01",
    "wirkung": false,
    "quellen": [
@@ -363,7 +405,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "3": {
@@ -397,7 +439,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "4": {
@@ -483,7 +525,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "5": {
@@ -504,7 +546,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "8": {
@@ -1708,7 +1750,7 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "48": {
@@ -1729,14 +1771,14 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "49": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "50": {
@@ -1770,14 +1812,14 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "51": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "52": {
@@ -1798,7 +1840,7 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "53": {
@@ -1851,21 +1893,21 @@
     }
    ],
    "erbt": [
-    14
+    17
    ]
   },
   "55": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "56": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "57": {
@@ -1886,7 +1928,7 @@
     }
    ],
    "erbt": [
-    14
+    17
    ]
   },
   "58": {
@@ -1907,14 +1949,14 @@
     }
    ],
    "erbt": [
-    14
+    17
    ]
   },
   "59": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "60": {
@@ -2274,7 +2316,7 @@
     }
    ],
    "erbt": [
-    16
+    19
    ]
   },
   "73": {
@@ -2340,21 +2382,21 @@
     }
    ],
    "erbt": [
-    17
+    20
    ]
   },
   "75": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "76": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "77": {
@@ -2414,14 +2456,14 @@
     }
    ],
    "erbt": [
-    17
+    20
    ]
   },
   "78": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "79": {
@@ -2447,42 +2489,42 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "81": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "82": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "83": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "84": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "85": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "86": {
@@ -2503,21 +2545,21 @@
     }
    ],
    "erbt": [
-    17
+    20
    ]
   },
   "87": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "88": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    17
+    20
    ]
   },
   "89": {
@@ -2708,6 +2750,9 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "91": {
@@ -2758,6 +2803,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "93": {
@@ -2802,6 +2850,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "94": {
@@ -2911,6 +2962,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95": {
@@ -2942,6 +2996,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "96": {
@@ -2986,6 +3043,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "97": {
@@ -3004,6 +3064,30 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "98": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "99": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "100": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "101": {
@@ -3022,6 +3106,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "102": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "103": {
@@ -3040,6 +3134,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "104": {
@@ -3097,6 +3194,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105": {
@@ -3193,6 +3293,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
@@ -3211,6 +3314,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "107": {
@@ -3229,6 +3335,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "108": {
@@ -3257,6 +3366,9 @@
      "frueher": "sechster Tit.",
      "ueberschrift": "Viertes Kapitel: Veröffentlichungen des IGE"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "109": {
@@ -3275,6 +3387,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "110": {
@@ -3359,6 +3474,9 @@
      "item": null,
      "ueberschrift": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "112": {
@@ -3782,49 +3900,49 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "130": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "131": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "132": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "133": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "134": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "135": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    13
    ]
   },
   "107_a": {
@@ -3843,6 +3961,33 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "111_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "111_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "111_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
    ]
   },
   "112_a": {
@@ -3876,7 +4021,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_b": {
@@ -3910,7 +4055,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_c": {
@@ -3944,7 +4089,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_d": {
@@ -3978,7 +4123,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_e": {
@@ -4012,7 +4157,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_f": {
@@ -4046,7 +4191,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_g": {
@@ -4067,7 +4212,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_h": {
@@ -4088,7 +4233,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "112_i": {
@@ -4109,7 +4254,7 @@
     }
    ],
    "erbt": [
-    0
+    3
    ]
   },
   "117_a": {
@@ -4293,8 +4438,8 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1,
-    2
+    4,
+    5
    ]
   },
   "125_c": {
@@ -4315,8 +4460,8 @@
     }
    ],
    "erbt": [
-    1,
-    2
+    4,
+    5
    ]
   },
   "127_a": {
@@ -4397,8 +4542,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_c": {
@@ -4484,9 +4629,9 @@
     }
    ],
    "erbt": [
-    3,
-    4,
-    5
+    6,
+    7,
+    8
    ]
   },
   "127_d": {
@@ -4507,9 +4652,9 @@
     }
    ],
    "erbt": [
-    3,
-    4,
-    5
+    6,
+    7,
+    8
    ]
   },
   "127_e": {
@@ -4557,8 +4702,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_f": {
@@ -4579,9 +4724,9 @@
     }
    ],
    "erbt": [
-    3,
-    4,
-    6
+    6,
+    7,
+    9
    ]
   },
   "127_g": {
@@ -4602,8 +4747,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_h": {
@@ -4624,8 +4769,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_i": {
@@ -4646,8 +4791,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_k": {
@@ -4772,8 +4917,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_l": {
@@ -4833,8 +4978,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_m": {
@@ -4855,8 +5000,8 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_n": {
@@ -4878,62 +5023,62 @@
     }
    ],
    "erbt": [
-    3,
-    4
+    6,
+    7
    ]
   },
   "127_o": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_p": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_q": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_r": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_s": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_t": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3,
-    4,
-    7
+    6,
+    7,
+    10
    ]
   },
   "127_u": {
@@ -4959,70 +5104,70 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_w": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_x": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_y": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_z": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_z_bis": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_z_octies": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    12
    ]
   },
   "127_z_quater": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_z_quinquies": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "127_z_septies": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    12
    ]
   },
   "127_z_sexies": {
@@ -5048,7 +5193,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    8
+    11
    ]
   },
   "17_a": {
@@ -5359,21 +5504,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_f": {
@@ -5394,35 +5539,35 @@
     }
    ],
    "erbt": [
-    12
+    15
    ]
   },
   "45_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "45_j": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    12
+    15
    ]
   },
   "46_a": {
@@ -5456,49 +5601,49 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "46_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "46_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "46_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "46_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "48_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "48_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "48_c": {
@@ -5532,14 +5677,14 @@
     }
    ],
    "erbt": [
-    13
+    16
    ]
   },
   "48_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    13
+    16
    ]
   },
   "4_a": {
@@ -5560,7 +5705,7 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "4_b": {
@@ -5581,56 +5726,56 @@
     }
    ],
    "erbt": [
-    11
+    14
    ]
   },
   "53_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "54_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "59_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "59_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "59_c": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    14
+    17
    ]
   },
   "60_a": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    18
    ]
   },
   "60_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    15
+    18
    ]
   },
   "60_c": {
@@ -5677,7 +5822,7 @@
     }
    ],
    "erbt": [
-    15
+    18
    ]
   },
   "61_a": {
@@ -5841,6 +5986,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

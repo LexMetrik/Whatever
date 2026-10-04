@@ -7,6 +7,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { extrahiereArtikelAusAnker } from './extrahiere-fedlex.ts';
 import { parseFedlexCacheEintraege } from './inventar-bund.ts';
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
 
 const shell = readFileSync('scripts/fedlex-cache.sh', 'utf8');
 const eintraege = parseFedlexCacheEintraege(shell);
@@ -18,8 +19,9 @@ function normText(s: string): string {
     .replace(/\s+/g, '')
     .toLowerCase();
 }
+const ABSATZ_NR_PRAEFIX = new RegExp(`^\\d+${SUFFIX_ALT}?[a-z]?`);
 function ohneAbsatzNr(norm: string): string {
-  return norm.replace(/^\d+(?:bis|ter|quater|quinquies)?[a-z]?/, '');
+  return norm.replace(ABSATZ_NR_PRAEFIX, '');
 }
 function istAbsatzKlasse(klasse: string): boolean {
   return /(?:^|[^a-z])absatz(?:$|[^a-z])/.test(klasse);

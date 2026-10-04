@@ -2849,6 +2849,10 @@
           "text": "Die Nettopositionen werden wie folgt berechnet:",
           "items": [
             {
+              "marke": "",
+              "text": "physischer Bestand zuzüglich Titelforderungen aus Securities Lending abzüglich Titelverpflichtungen aus Securities Borrowing"
+            },
+            {
               "marke": "+",
               "text": "nicht erfüllte Kassa- und Terminkäufe (einschliesslich Financial Futures und Swaps)",
               "trenner": ""
@@ -2898,7 +2902,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/629/de#art_51",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20250124",
-      "sha": "d9b70aa87e527daed6cc823c523be38862a164bd9ae60e995eae2741bd34fd25"
+      "sha": "b194f82d9175d01f6ac4321b78410e88b0786a24fdf94ca2ec05b75cc4e58317"
     },
     {
       "id": "bund/ERV/art_52",
@@ -2912,6 +2916,10 @@
           "absatz": "1",
           "text": "Die Nettopositionen für Eigenkapitalinstrumente von im Finanzbereich tätigen Unternehmen werden, unter Berücksichtigung der zusätzlichen Anforderungen nach den Absätzen 2 und 3, wie folgt berechnet:",
           "items": [
+            {
+              "marke": "",
+              "text": "physischer Bestand zuzüglich synthetische Positionen sowie Titelforderungen aus Securities Lending abzüglich Titelverpflichtungen aus Securities Borrowing"
+            },
             {
               "marke": "+",
               "text": "nicht erfüllte Kassa- und Terminkäufe (einschliesslich Financial Futures und Swaps)",
@@ -2982,7 +2990,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/629/de#art_52",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20250124",
-      "sha": "ec00201d3df5817bc1a6ae253132b074899adba857fb2f661c73ca270a308e75"
+      "sha": "f605e20a538285700582cfe91bafb015e64450c7f23957f58b15d61c70248dd1"
     },
     {
       "id": "bund/ERV/art_53",

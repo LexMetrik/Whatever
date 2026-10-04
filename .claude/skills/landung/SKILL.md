@@ -269,6 +269,11 @@ PR-Titel + PR-Body — ein im Body verkürztes Verdikt («… — keine», Befun
 < 15 Zeichen) ist lokal grün und fällt in der Queue. Das Verdikt im PR-Body
 muss dieselbe volle Form haben wie im Commit; vor dem Einreihen den Body
 gegenlesen (Vorab-Check: ROADMAP `QS-CI-MINUTEN`).
+**Falle (3.10.2026, #1299, zweimal BLOCKIERT):** `tor-schutz.py` prüft den Body
+VOR dem Bash-Aufruf — `gh pr edit --body-file …` und `gh pr merge` darum nie in
+EINEM Aufruf ketten, sonst sieht der Hook noch den alten Body. Kurz-Trailer
+(< 72 Zeichen) und Befund ≥ 15 Zeichen zugleich: «— 18 Zeilen amtlich belegt» statt
+«— A1/A2 erfüllt» (13 Zeichen).
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 

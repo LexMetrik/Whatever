@@ -8,6 +8,20 @@
  },
  "ueberschriftEreignisse": [
   {
+   "typ": "fassung",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 4393",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/724"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titel: Unfallversicherung von arbeitslosen Personen"
+  },
+  {
    "typ": "eingefuegt",
    "datum": "2022-01-01",
    "wirkung": false,
@@ -482,14 +496,14 @@
     }
    ],
    "erbt": [
-    2
+    3
    ]
   },
   "17": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    2
+    3
    ]
   },
   "18": {
@@ -510,7 +524,7 @@
     }
    ],
    "erbt": [
-    2
+    3
    ]
   },
   "19": {
@@ -531,7 +545,7 @@
     }
    ],
    "erbt": [
-    2
+    3
    ]
   },
   "20": {
@@ -552,14 +566,14 @@
     }
    ],
    "erbt": [
-    2
+    3
    ]
   },
   "21": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    2
+    3
    ]
   },
   "22": {
@@ -1232,21 +1246,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3
+    4
    ]
   },
   "49": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3
+    4
    ]
   },
   "50": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    3
+    4
    ]
   },
   "51": {
@@ -1267,7 +1281,7 @@
     }
    ],
    "erbt": [
-    3
+    4
    ]
   },
   "52": {
@@ -1653,8 +1667,8 @@
     }
    ],
    "erbt": [
-    4,
-    5
+    5,
+    6
    ]
   },
   "70": {
@@ -2623,6 +2637,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "131": {
@@ -2641,6 +2658,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "132": {
@@ -2803,42 +2823,42 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "144": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "145": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "146": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "147": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "148": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    1
+    2
    ]
   },
   "102_a": {
@@ -2963,7 +2983,7 @@
     }
    ],
    "erbt": [
-    0
+    1
    ]
   },
   "132_b": {
@@ -2984,7 +3004,7 @@
     }
    ],
    "erbt": [
-    0
+    1
    ]
   },
   "132_c": {
@@ -3005,7 +3025,7 @@
     }
    ],
    "erbt": [
-    0
+    1
    ]
   },
   "140_a": {
@@ -3044,7 +3064,7 @@
     }
    ],
    "erbt": [
-    1
+    2
    ]
   },
   "147_b": {
@@ -3065,7 +3085,7 @@
     }
    ],
    "erbt": [
-    1
+    2
    ]
   },
   "147_c": {
@@ -3086,7 +3106,7 @@
     }
    ],
    "erbt": [
-    1
+    2
    ]
   },
   "1_a": {

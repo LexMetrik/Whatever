@@ -1450,11 +1450,11 @@
             },
             {
               "marke": "b",
-              "text": "den Beginn und die Dauer des verliehenen Nutzungsrechts, dessen Umfang, insbesondere die nutzbare Wassermenge in m 3 /s, sowie den Namen des Nutzungsberechtigten;"
+              "text": "den Beginn und die Dauer des verliehenen Nutzungsrechts, dessen Umfang, insbesondere die nutzbare Wassermenge in m³/s, sowie den Namen des Nutzungsberechtigten;"
             },
             {
               "marke": "c",
-              "text": "die Ausbauwassermenge in m 3 /s;"
+              "text": "die Ausbauwassermenge in m³/s;"
             },
             {
               "marke": "d",
@@ -1474,7 +1474,7 @@
             },
             {
               "marke": "h",
-              "text": "soweit die entsprechenden Daten bereits vorliegen, Angaben über die Abflussmenge Q 347 , das Abflussregime des Fliessgewässers oberhalb der Wasserentnahme und die dem Gewässer in jedem Monat entnommene Wassermenge in m 3 /s, gemittelt über mehrere Jahre;"
+              "text": "soweit die entsprechenden Daten bereits vorliegen, Angaben über die Abflussmenge Q₃₄₇, das Abflussregime des Fliessgewässers oberhalb der Wasserentnahme und die dem Gewässer in jedem Monat entnommene Wassermenge in m³/s, gemittelt über mehrere Jahre;"
             },
             {
               "marke": "i",
@@ -1495,7 +1495,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#art_36",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "ddcd9d54e56774994e0209e4219bc612419ca25e7cfb326ccfa45f1d4ff1034b"
+      "sha": "fc62f3c9c9f4724b0741261b804f3f642f82ac7849553fd231706553fa483844"
     },
     {
       "id": "bund/GSCHV/art_37",
@@ -1538,7 +1538,7 @@
             },
             {
               "marke": "b",
-              "text": "die Abflussmenge Q 347 ;"
+              "text": "die Abflussmenge Q₃₄₇;"
             },
             {
               "marke": "c",
@@ -1546,7 +1546,7 @@
             },
             {
               "marke": "d",
-              "text": "die dem Gewässer in jedem Monat entnommene Wassermenge in m 3 /s, gemittelt über mehrere Jahre."
+              "text": "die dem Gewässer in jedem Monat entnommene Wassermenge in m³/s, gemittelt über mehrere Jahre."
             }
           ]
         },
@@ -1577,7 +1577,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#art_38",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "38784d1171441e819a3e6ebce5945cc35645c4c2e18b64c2aa1b784aed6b273f"
+      "sha": "7212ac29abc774dd30eec1ee92e8ab30d0ed4b2ad3aa04cc035260a714ed7898"
     },
     {
       "id": "bund/GSCHV/art_39",
@@ -3807,7 +3807,7 @@
               ],
               [
                 "",
-                "Nitrat (NO 3 – - N)",
+                "Nitrat (NO₃⁻ - N)",
                 "Für Gewässer, die der Trinkwassernutzung dienen: 5,6 mg/l N (entspricht 25 mg/l Nitrat)"
               ],
               [
@@ -3818,37 +3818,37 @@
               [
                 "",
                 "Blei (Pb)",
-                "0,01 mg/l Pb (gesamt) 1 0,001 mg/l Pb (gelöst)"
+                "0,01 mg/l Pb (gesamt)¹ 0,001 mg/l Pb (gelöst)"
               ],
               [
                 "",
                 "Cadmium (Cd)",
-                "0,2 µg/l Cd (gesamt) 1 0,05 µg/l Cd (gelöst)"
+                "0,2 µg/l Cd (gesamt)¹ 0,05 µg/l Cd (gelöst)"
               ],
               [
                 "",
                 "Chrom (Cr)",
-                "0,005 mg/l Cr (gesamt) 1 0,002 mg/l Cr (III und VI)"
+                "0,005 mg/l Cr (gesamt)¹ 0,002 mg/l Cr (III und VI)"
               ],
               [
                 "",
                 "Kupfer (Cu)",
-                "0,005 mg/l Cu (gesamt) 1 0,002 mg/l Cu (gelöst)"
+                "0,005 mg/l Cu (gesamt)¹ 0,002 mg/l Cu (gelöst)"
               ],
               [
                 "",
                 "Nickel (Ni)",
-                "0,01 mg/l Ni (gesamt) 1 0,005 mg/l Ni (gelöst)"
+                "0,01 mg/l Ni (gesamt)¹ 0,005 mg/l Ni (gelöst)"
               ],
               [
                 "",
                 "Quecksilber (Hg)",
-                "0,03 µg/l Hg (gesamt) 1 0,01 µg/l Hg (gelöst)"
+                "0,03 µg/l Hg (gesamt)¹ 0,01 µg/l Hg (gelöst)"
               ],
               [
                 "",
                 "Zink (Zn)",
-                "0,02 mg/l Zn (gesamt) 1 0,005 mg/l Zn (gelöst)"
+                "0,02 mg/l Zn (gesamt)¹ 0,005 mg/l Zn (gelöst)"
               ],
               [
                 "3",
@@ -3858,17 +3858,17 @@
               [
                 "",
                 "Azithromycin (CAS-Nr. 83905-01-5)",
-                "0,18 µg/l 0,019 µg/l (andauernd) 2"
+                "0,18 µg/l 0,019 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Clarithromycin (CAS-Nr. 81103-11-9)",
-                "0,19 µg/l 0,12 µg/l (andauernd) 2"
+                "0,19 µg/l 0,12 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Diclofenac (CAS-Nr. 15307-86-5)",
-                "0,05 µg/l (andauernd) 2"
+                "0,05 µg/l (andauernd)²"
               ],
               [
                 "4",
@@ -3891,115 +3891,115 @@
                 "",
                 "Azoxystrobin (CAS-Nr. 131860-33-8)",
                 "",
-                "0,55 µg/l 0,2 µg/l (andauernd) 2"
+                "0,55 µg/l 0,2 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Chlorpyrifos (CAS-Nr. 2921-88-2)",
-                "0,0044 µg/l 0,00046 µg/l (andauernd) 2",
-                "0,0044 µg/l 0,00046 µg/l (andauernd) 2"
+                "0,0044 µg/l 0,00046 µg/l (andauernd)²",
+                "0,0044 µg/l 0,00046 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Cypermethrin (CAS-Nr. 52315-07-8)",
-                "0,00044 µg/l 0,00003 µg/l (andauernd) 2",
-                "0,00044 µg/l 0,00003 µg/l (andauernd) 2"
+                "0,00044 µg/l 0,00003 µg/l (andauernd)²",
+                "0,00044 µg/l 0,00003 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Cyprodinil (CAS-Nr. 121552-61-2)",
                 "",
-                "3,3 µg/l 0,33 µg/l (andauernd) 2"
+                "3,3 µg/l 0,33 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Diazinon (CAS-Nr. 333-41-5)",
-                "0,02 µg/l 0,012 µg/l (andauernd) 2",
-                "0,02 µg/l 0,012 µg/l (andauernd) 2"
+                "0,02 µg/l 0,012 µg/l (andauernd)²",
+                "0,02 µg/l 0,012 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Diuron (CAS-Nr. 330-54-1)",
-                "0,07 µg/l (andauernd) 2",
-                "0,25 µg/l 0,07 µg/l (andauernd) 2"
+                "0,07 µg/l (andauernd)²",
+                "0,25 µg/l 0,07 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Epoxiconazol (CAS-Nr. 133855-98-8)",
                 "",
-                "0,24 µg/l 0,2 µg/l (andauernd) 2"
+                "0,24 µg/l 0,2 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Imidacloprid (CAS-Nr. 138261-41-3)",
-                "0,013 µg/l (andauernd) 2",
-                "0,1 µg/l 0,013 µg/l (andauernd) 2"
+                "0,013 µg/l (andauernd)²",
+                "0,1 µg/l 0,013 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Isoproturon (CAS-Nr. 34123-59-6)",
                 "",
-                "1,7 µg/l 0,64 µg/l (andauernd) 2"
+                "1,7 µg/l 0,64 µg/l (andauernd)²"
               ],
               [
                 "",
                 "MCPA (CAS-Nr. 94-74-6)",
                 "",
-                "6,4 µg/l 0,66 µg/l (andauernd) 2"
+                "6,4 µg/l 0,66 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Metazachlor (CAS-Nr. 67129-08-2)",
-                "0,02 µg/l (andauernd) 2",
-                "0,28 µg/l 0,02 µg/l (andauernd) 2"
+                "0,02 µg/l (andauernd)²",
+                "0,28 µg/l 0,02 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Metribuzin (CAS-Nr. 21087-64-9)",
-                "0,058 µg/l (andauernd) 2",
-                "0,87 µg/l 0,058 µg/l (andauernd) 2"
+                "0,058 µg/l (andauernd)²",
+                "0,87 µg/l 0,058 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Nicosulfuron (CAS-Nr. 111991-09-4)",
-                "0,0087 µg/l (andauernd) 2",
-                "0,23 µg/l 0,0087 µg/l (andauernd) 2"
+                "0,0087 µg/l (andauernd)²",
+                "0,23 µg/l 0,0087 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Pirimicarb (CAS-Nr. 23103-98-2)",
-                "0,09 µg/l (andauernd) 2",
-                "1,8 µg/l 0,09 µg/l (andauernd) 2"
+                "0,09 µg/l (andauernd)²",
+                "1,8 µg/l 0,09 µg/l (andauernd)²"
               ],
               [
                 "",
                 "S-Metolachlor (CAS-Nr. 87392-12-9)",
                 "",
-                "3,3 µg/l 0,69 µg/l (andauernd) 2"
+                "3,3 µg/l 0,69 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Terbuthylazin (CAS-Nr. 5915-41-3)",
                 "",
-                "1,3 µg/l 0,22 µg/l (andauernd) 2"
+                "1,3 µg/l 0,22 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Terbutryn (CAS-Nr. 886-50-0)",
-                "0,065 µg/l (andauernd) 2",
-                "0,34 µg/l 0,065 µg/l (andauernd) 2"
+                "0,065 µg/l (andauernd)²",
+                "0,34 µg/l 0,065 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Thiacloprid (CAS-Nr. 111988-49-9)",
-                "0,08 µg/l 0,01 µg/l (andauernd) 2",
-                "0,08 µg/l 0,01 µg/l (andauernd) 2"
+                "0,08 µg/l 0,01 µg/l (andauernd)²",
+                "0,08 µg/l 0,01 µg/l (andauernd)²"
               ],
               [
                 "",
                 "Thiamethoxam (CAS-Nr. 153719-23-4)",
-                "0,042 µg/l (andauernd) 2",
-                "1,4 µg/l 0,042 µg/l (andauernd) 2"
+                "0,042 µg/l (andauernd)²",
+                "1,4 µg/l 0,042 µg/l (andauernd)²"
               ],
               [
                 "1 Massgebend ist der Wert für die gelöste Konzentration. Wird der Wert für die gesamte Konzentration eingehalten, so ist davon auszugehen, dass auch der Wert für die gelöste Konzentration eingehalten ist. 2 Konzentration gemittelt über einen Zeitraum von 2 Wochen."
@@ -4064,8 +4064,8 @@
             "zeilen": [
               [
                 "1",
-                "Biochemischer Sauerstoffbedarf (BSB 5 )",
-                "2 bis 4 mg/l O 2 Bei natürlicherweise wenig belasteten Gewässern gilt der untere Wert."
+                "Biochemischer Sauerstoffbedarf (BSB₅)",
+                "2 bis 4 mg/l O₂ Bei natürlicherweise wenig belasteten Gewässern gilt der untere Wert."
               ],
               [
                 "2",
@@ -4074,7 +4074,7 @@
               ],
               [
                 "3",
-                "Ammonium (Summe von NH 4 + ‑ N und NH 3 ‑ N)",
+                "Ammonium (Summe von NH₄⁺ ‑ N und NH₃ ‑ N)",
                 "Bei Temperaturen: – über 10 °C: 0,2 mg/l N – unter 10 °C: 0,4 mg/l N"
               ]
             ]
@@ -4103,7 +4103,7 @@
             },
             {
               "marke": "b",
-              "text": "Der Sauerstoffgehalt des Wassers darf zu keiner Zeit und in keiner Seetiefe weniger als 4 mg/l O 2 betragen; er muss zudem ausreichen, damit wenig empfindliche Tiere wie Würmer den Seegrund ganzjährig und in einer möglichst natürlichen Dichte besiedeln können. Besondere natürliche Verhältnisse bleiben vorbehalten."
+              "text": "Der Sauerstoffgehalt des Wassers darf zu keiner Zeit und in keiner Seetiefe weniger als 4 mg/l O₂ betragen; er muss zudem ausreichen, damit wenig empfindliche Tiere wie Würmer den Seegrund ganzjährig und in einer möglichst natürlichen Dichte besiedeln können. Besondere natürliche Verhältnisse bleiben vorbehalten."
             }
           ]
         },
@@ -4181,18 +4181,18 @@
               ],
               [
                 "2",
-                "Ammonium (Summe von NH 4 + - N und NH 3 - N)",
+                "Ammonium (Summe von NH₄⁺ - N und NH₃ - N)",
                 "bei oxischen Verhältnissen: 0,08 mg/l N (entspricht 0,1 mg/l Ammonium) bei anoxischen Verhältnissen: 0,4 mg/l N (entspricht 0,5 mg/l Ammonium)"
               ],
               [
                 "3",
-                "Nitrat (NO 3 – - N)",
+                "Nitrat (NO₃⁻ - N)",
                 "5,6 mg/l N (entspricht 25 mg/l Nitrat)"
               ],
               [
                 "4",
-                "Sulfat (SO 4 2 – )",
-                "40 mg/l SO 4 2 –"
+                "Sulfat (SO₄² – )",
+                "40 mg/l SO₄² –"
               ],
               [
                 "5",
@@ -4237,7 +4237,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#annex_2",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "1ecb42627e468dfef334e732b1b1cbb9b0fc6f5776e53d37ee490e11733ec964"
+      "sha": "4e1e4003024a14e8a8dcad528815a12c37bacf4c9255985b4da90e06dc362d86"
     },
     {
       "id": "bund/GSCHV/annex_3",
@@ -4339,7 +4339,7 @@
               [
                 "2",
                 "Chemischer Sauerstoffbedarf (CSB)",
-                "Für Abwasser aus Anlagen mit weniger als 10 000 EW gilt: – Abflusskonzentration: 60 mg/l O 2 und – Reinigungseffekt, bezogen auf Rohabwasser: 80 % Für Abwasser aus Anlagen ab 10 000 EW gilt: – Abflusskonzentration: 45 mg/l O 2 und – Reinigungseffekt, bezogen auf Rohabwasser: 85 %"
+                "Für Abwasser aus Anlagen mit weniger als 10 000 EW gilt: – Abflusskonzentration: 60 mg/l O₂ und – Reinigungseffekt, bezogen auf Rohabwasser: 80 % Für Abwasser aus Anlagen ab 10 000 EW gilt: – Abflusskonzentration: 45 mg/l O₂ und – Reinigungseffekt, bezogen auf Rohabwasser: 85 %"
               ],
               [
                 "3",
@@ -4358,7 +4358,7 @@
               ],
               [
                 "5",
-                "Ammonium (Summe von NH 4 + - N und NH 3 - N)",
+                "Ammonium (Summe von NH₄⁺ - N und NH₃ - N)",
                 "Können die Ammoniumkonzentrationen im Abwasser nachteilige Auswirkungen auf die Wasserqualität eines Fliessgewässers haben, gilt für eine Abwassertemperatur von mehr als 10 °C: – Abflusskonzentration: 2 mg/l N und – Wirkungsgrad der Behandlung: 90 %, ausgedrückt in"
               ],
               [
@@ -4368,7 +4368,7 @@
               ],
               [
                 "6",
-                "Nitrit (NO 2 – - N)",
+                "Nitrit (NO₂⁻ - N)",
                 "0,3 mg/l N (Richtwert)"
               ],
               [
@@ -4383,8 +4383,8 @@
               ],
               [
                 "9",
-                "Biochemischer Sauerstoffbedarf (BSB 5 , mit Nitrifikationshemmung)",
-                "Für Abwasser aus Anlagen mit weniger als 10 000 EW, bei denen die BSB 5 - Konzentrationen im Abwasser nachteilige Auswirkungen auf die Wasserqualität eines Fliessgewässers haben, gilt: – Abflusskonzentration: 20 mg/l O 2 und – Reinigungseffekt, bezogen auf Rohabwasser: 90 % Für Abwasser aus Anlagen ab 10 000 EW, bei denen die BSB 5 - Konzentrationen im Abwasser nachteilige Auswirkungen auf die Wasserqualität eines Fliessgewässers haben, gilt: – Abflusskonzentration: 15 mg/l O 2 und – Reinigungseffekt, bezogen auf Rohabwasser: 90 %"
+                "Biochemischer Sauerstoffbedarf (BSB₅, mit Nitrifikationshemmung)",
+                "Für Abwasser aus Anlagen mit weniger als 10 000 EW, bei denen die BSB₅- Konzentrationen im Abwasser nachteilige Auswirkungen auf die Wasserqualität eines Fliessgewässers haben, gilt: – Abflusskonzentration: 20 mg/l O₂ und – Reinigungseffekt, bezogen auf Rohabwasser: 90 % Für Abwasser aus Anlagen ab 10 000 EW, bei denen die BSB₅- Konzentrationen im Abwasser nachteilige Auswirkungen auf die Wasserqualität eines Fliessgewässers haben, gilt: – Abflusskonzentration: 15 mg/l O₂ und – Reinigungseffekt, bezogen auf Rohabwasser: 90 %"
               ]
             ]
           }
@@ -4530,7 +4530,7 @@
             },
             {
               "marke": "–",
-              "text": "Biochemischer Sauerstoffbedarf (BSB 5 ) 40 mg/l",
+              "text": "Biochemischer Sauerstoffbedarf (BSB₅) 40 mg/l",
               "trenner": ""
             }
           ]
@@ -4659,7 +4659,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#annex_3_1",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "fc7b808440f8fbf47640e4b21a1a4470435d0d3bfe217cdb3104160cf685638e"
+      "sha": "2cddb8863bcf2faf725a1c31721478ca8839b2e8ca599482d4a3bd6e3ae5782e"
     },
     {
       "id": "bund/GSCHV/annex_3_2",
@@ -4853,9 +4853,9 @@
               ],
               [
                 "14",
-                "Cyanide (CN–)",
-                "0,1 mg/l CN– (freies und leicht freisetzbares Cyanid)",
-                "0,5 mg/l CN– (freies und leicht freisetzbares Cyanid)"
+                "Cyanide (CN⁻)",
+                "0,1 mg/l CN⁻ (freies und leicht freisetzbares Cyanid)",
+                "0,5 mg/l CN⁻ (freies und leicht freisetzbares Cyanid)"
               ],
               [
                 "15",
@@ -5006,7 +5006,7 @@
               [
                 "4",
                 "Oberflächenbehandlung",
-                "Leichtflüchtige halogenierte Kohlenwasserstoffe (VOX): – 0,1 mg/l VOX im Tagesmittel Cyanid (CN–): – 0,2 mg/l CN– (leicht freisetzbare) im Tagesmittel Quecksilber (Hg): – 0,05 mg/l Hg im Tagesmittel oder – 0,03 kg Hg pro Tonne verwendetes Quecksilber im Tagesmittel Cadmium (Cd): – 0,2 mg/l Cd im Tagesmittel oder – 0,3 kg Cd pro Tonne verwendetes Cadmium im Tagesmittel Chrom (Cr): – 0,1 mg/l Cr-VI im Tagesmittel – 0,5 mg/l Cr (gesamt) im Tagesmittel 1 Blei (Pb): – 0,5 mg/l Pb im Tagesmittel 1 Kupfer (Cu): – 0,5 mg/l Cu im Tagesmittel 1 Nickel (Ni): – 0,5 mg/l Ni im Tagesmittel 1 Zink (Zn): – 0,5 mg/l Zn im Tagesmittel; in begründeten Fällen kann die Behörde bis zu 2 mg/l Zn im Tagesmittel zulassen Silber (Ag): – 0,1 mg/l Ag im Tagesmittel Zinn (Sn): – 2 mg/l Sn im Tagesmittel"
+                "Leichtflüchtige halogenierte Kohlenwasserstoffe (VOX): – 0,1 mg/l VOX im Tagesmittel Cyanid (CN⁻): – 0,2 mg/l CN⁻ (leicht freisetzbare) im Tagesmittel Quecksilber (Hg): – 0,05 mg/l Hg im Tagesmittel oder – 0,03 kg Hg pro Tonne verwendetes Quecksilber im Tagesmittel Cadmium (Cd): – 0,2 mg/l Cd im Tagesmittel oder – 0,3 kg Cd pro Tonne verwendetes Cadmium im Tagesmittel Chrom (Cr): – 0,1 mg/l Cr-VI im Tagesmittel – 0,5 mg/l Cr (gesamt) im Tagesmittel¹ Blei (Pb): – 0,5 mg/l Pb im Tagesmittel¹ Kupfer (Cu): – 0,5 mg/l Cu im Tagesmittel¹ Nickel (Ni): – 0,5 mg/l Ni im Tagesmittel¹ Zink (Zn): – 0,5 mg/l Zn im Tagesmittel; in begründeten Fällen kann die Behörde bis zu 2 mg/l Zn im Tagesmittel zulassen Silber (Ag): – 0,1 mg/l Ag im Tagesmittel Zinn (Sn): – 2 mg/l Sn im Tagesmittel"
               ],
               [
                 "",
@@ -5084,7 +5084,7 @@
               [
                 "1",
                 "Herstellung von Papier oder Karton",
-                "Gesamte ungelöste Stoffe: – 1 Kilogramm pro Tonne Produktion an Papier oder Karton im Tagesmittel oder 50 mg/l im Tagesmittel Chemischer Sauerstoffbedarf (CSB)/gelöster organischer Kohlenstoff (DOC): – je nach Papiertyp: 2,5–5 Kilogramm CSB pro Tonne Produktion an Papier oder Karton im Tagesmittel oder 1,5–2,5 Kilogramm DOC pro Tonne Produktion an Papier oder Karton im Tagesmittel Biochemischer Sauerstoffbedarf (BSB 5 ): – je nach Papiertyp: 0,5–1 Kilogramm pro Tonne Produktion an Papier oder Karton im Tagesmittel; in begründeten Fällen kann die Behörde an Stelle der vorgenannten Anforderung einen Wert von 25 mg/l BSB 5 im Tagesmittel zulassen.",
+                "Gesamte ungelöste Stoffe: – 1 Kilogramm pro Tonne Produktion an Papier oder Karton im Tagesmittel oder 50 mg/l im Tagesmittel Chemischer Sauerstoffbedarf (CSB)/gelöster organischer Kohlenstoff (DOC): – je nach Papiertyp: 2,5–5 Kilogramm CSB pro Tonne Produktion an Papier oder Karton im Tagesmittel oder 1,5–2,5 Kilogramm DOC pro Tonne Produktion an Papier oder Karton im Tagesmittel Biochemischer Sauerstoffbedarf (BSB₅): – je nach Papiertyp: 0,5–1 Kilogramm pro Tonne Produktion an Papier oder Karton im Tagesmittel; in begründeten Fällen kann die Behörde an Stelle der vorgenannten Anforderung einen Wert von 25 mg/l BSB₅ im Tagesmittel zulassen.",
                 "Die Behörde legt die Anforderungen im Einzelfall fest."
               ]
             ]
@@ -5112,7 +5112,7 @@
               [
                 "2",
                 "Herstellung von Sulfitzellstoff",
-                "Biochemischer Sauerstoffbedarf (BSB 5 ): – 5 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel Chemischer Sauerstoffbedarf (CSB): – 35 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel – 70 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel für Anlagen, die vor dem 1.1.1997 in Betrieb genommen wurden Anstelle des CSB-Wertes kann die Überwachung anhand des TOC-Wertes (Totaler organischer Kohlenstoff) erfolgen, wenn die Korrelation zwischen CSB und TOC gegeben und nachgewiesen ist. Gesamte ungelöste Stoffe: – 4,5 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel 8,0 Kilogramm pro Tonne Produktion an luft- trockenem Zellstoff im Monatsmittel ab 1.1.2000 für Anlagen, die vor dem 1.1.1997 in Betrieb genommen wurden und die ihre Produktionskapazität nach dem 1.1.1997 um nicht mehr als 50 Prozent erhöhen Adsorbierbare organische Halogenverbindungen (AOX), für Betriebe, die nicht ausschliesslich chlorfrei gebleichten Zellstoff herstellen: – 0,5 Kilogramm pro Tonne Produktion an gebleichtem lufttrockenem Zellstoff im Monatsmittel Molekulares Chlorverhältnis: – weniger als 0,05 bis 0,1, je nach Zellstoffsorte"
+                "Biochemischer Sauerstoffbedarf (BSB₅): – 5 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel Chemischer Sauerstoffbedarf (CSB): – 35 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel – 70 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel für Anlagen, die vor dem 1.1.1997 in Betrieb genommen wurden Anstelle des CSB-Wertes kann die Überwachung anhand des TOC-Wertes (Totaler organischer Kohlenstoff) erfolgen, wenn die Korrelation zwischen CSB und TOC gegeben und nachgewiesen ist. Gesamte ungelöste Stoffe: – 4,5 Kilogramm pro Tonne Produktion an lufttrockenem Zellstoff im Monatsmittel 8,0 Kilogramm pro Tonne Produktion an luft- trockenem Zellstoff im Monatsmittel ab 1.1.2000 für Anlagen, die vor dem 1.1.1997 in Betrieb genommen wurden und die ihre Produktionskapazität nach dem 1.1.1997 um nicht mehr als 50 Prozent erhöhen Adsorbierbare organische Halogenverbindungen (AOX), für Betriebe, die nicht ausschliesslich chlorfrei gebleichten Zellstoff herstellen: – 0,5 Kilogramm pro Tonne Produktion an gebleichtem lufttrockenem Zellstoff im Monatsmittel Molekulares Chlorverhältnis: – weniger als 0,05 bis 0,1, je nach Zellstoffsorte"
               ]
             ]
           }
@@ -5136,14 +5136,14 @@
               [
                 "1",
                 "Filterwasser aus der Wasseraufbereitung",
-                "Gesamte ungelöste Stoffe: – 30 mg/l 1 im Tagesmittel",
+                "Gesamte ungelöste Stoffe: – 30 mg/l¹ im Tagesmittel",
                 "Keine besonderen Anforderungen"
               ],
               [
                 "2",
                 "Kehrichtverbrennungs- anlagen",
-                "Blei (Pb): – 0,1 mg/l Pb 1 Cadmium (Cd): – 0,05 mg/l Cd 1 Chrom (gesamt Cr): – 0,1 mg/l Cr 1 Kupfer (Cu): – 0,1 mg/l Cu 1 Nickel (Ni): – 0,1 mg/l Ni 1 Zink (Zn): – 0,1 mg/l Zn 1 Quecksilber (Hg): – 0,001 mg/l Hg 1 Gelöster organischer Kohlenstoff (DOC): – 10 mg/l DOC 1",
-                "Blei (Pb): – 0,1 mg/l Pb 1 Cadmium (Cd): – 0,05 mg/l Cd 1 Chrom (gesamt Cr): – 0,1 mg/l Cr 1 Kupfer (Cu): – 0,1 mg/l Cu 1 Nickel (Ni): – 0,1 mg/l Ni 1 Zink (Zn): – 0,1 mg/l Zn 1 Quecksilber (Hg): – 0,001 mg/l Hg 1 Sulfat: Wenn Korrosionsgefahr in der öffentlichen Kanalisation besteht, legt die Behörde einen Wert für die zulässige Sulfatkonzentration im Einzelfall fest."
+                "Blei (Pb): – 0,1 mg/l Pb¹ Cadmium (Cd): – 0,05 mg/l Cd¹ Chrom (gesamt Cr): – 0,1 mg/l Cr¹ Kupfer (Cu): – 0,1 mg/l Cu¹ Nickel (Ni): – 0,1 mg/l Ni¹ Zink (Zn): – 0,1 mg/l Zn¹ Quecksilber (Hg): – 0,001 mg/l Hg¹ Gelöster organischer Kohlenstoff (DOC): – 10 mg/l DOC¹",
+                "Blei (Pb): – 0,1 mg/l Pb¹ Cadmium (Cd): – 0,05 mg/l Cd¹ Chrom (gesamt Cr): – 0,1 mg/l Cr¹ Kupfer (Cu): – 0,1 mg/l Cu¹ Nickel (Ni): – 0,1 mg/l Ni¹ Zink (Zn): – 0,1 mg/l Zn¹ Quecksilber (Hg): – 0,001 mg/l Hg¹ Sulfat: Wenn Korrosionsgefahr in der öffentlichen Kanalisation besteht, legt die Behörde einen Wert für die zulässige Sulfatkonzentration im Einzelfall fest."
               ],
               [
                 "3",
@@ -5223,7 +5223,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#annex_3_2",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "0847acb4e87cbaaecc08d25ada018362072e43405eb2df45d2c99053a6ae5fef"
+      "sha": "415aececf3be4749541e74490a8d8d4ba07fb80537864e4a19137bbe03ec7be9"
     },
     {
       "id": "bund/GSCHV/annex_3_3",
@@ -5389,7 +5389,7 @@
             },
             {
               "marke": "b",
-              "text": "der Biochemische Sauerstoffbedarf (BSB 5 ) nicht mehr als 20 mg/l O 2 beträgt; und"
+              "text": "der Biochemische Sauerstoffbedarf (BSB₅) nicht mehr als 20 mg/l O₂ beträgt; und"
             },
             {
               "marke": "c",
@@ -5463,7 +5463,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#annex_3_3",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "5b76af20781f70bfa650d76b97cb1fce7b180f074aa3db7d2525a9c49269d1ec"
+      "sha": "e5583ee3a924a311e3197d0a76101caf566e5fda178a34c1182c2054eb484842"
     },
     {
       "id": "bund/GSCHV/annex_4",
@@ -5801,7 +5801,7 @@
             },
             {
               "marke": "h",
-              "text": "Lagerbehälter mit wassergefährdenden Flüssigkeiten mit mehr als 450 l Nutzvolumen je Schutzbauwerk; ausgenommen sind freistehende Lagerbehälter mit Heiz- oder Dieselöl zur Energieversorgung von Gebäuden oder Betrieben für längstens zwei Jahre; das gesamte Nutzvolumen darf höchstens 30 m 3 je Schutzbauwerk betragen;"
+              "text": "Lagerbehälter mit wassergefährdenden Flüssigkeiten mit mehr als 450 l Nutzvolumen je Schutzbauwerk; ausgenommen sind freistehende Lagerbehälter mit Heiz- oder Dieselöl zur Energieversorgung von Gebäuden oder Betrieben für längstens zwei Jahre; das gesamte Nutzvolumen darf höchstens 30 m³ je Schutzbauwerk betragen;"
             },
             {
               "marke": "i",
@@ -5852,7 +5852,7 @@
             },
             {
               "marke": "h",
-              "text": "Lagerbehälter mit wassergefährdenden Flüssigkeiten mit mehr als 450 l Nutzvolumen je Schutzbauwerk; ausgenommen sind freistehende Lagerbehälter mit Heiz- oder Dieselöl zur Energieversorgung von Gebäuden oder Betrieben für längstens zwei Jahre; das gesamte Nutzvolumen darf höchstens 30 m 3 je Schutzbauwerk betragen;"
+              "text": "Lagerbehälter mit wassergefährdenden Flüssigkeiten mit mehr als 450 l Nutzvolumen je Schutzbauwerk; ausgenommen sind freistehende Lagerbehälter mit Heiz- oder Dieselöl zur Energieversorgung von Gebäuden oder Betrieben für längstens zwei Jahre; das gesamte Nutzvolumen darf höchstens 30 m³ je Schutzbauwerk betragen;"
             },
             {
               "marke": "i",
@@ -5945,7 +5945,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1998/2863_2863_2863/de#annex_4",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20251201",
-      "sha": "5322c7720b780c21839efeff14d4c7cb928720547c47ec7e34d6be66b88c43da"
+      "sha": "b16664405b2fc50de5d1e435bdfd0e85547140ffc5096a5c545fb62cdc6db810"
     },
     {
       "id": "bund/GSCHV/annex_4_a",

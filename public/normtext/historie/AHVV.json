@@ -345,6 +345,20 @@
   },
   {
    "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 668",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/668_668_668"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "C. Beitritt zur Versicherung"
+  },
+  {
+   "typ": "fassung",
    "datum": "2001-01-01",
    "wirkung": false,
    "quellen": [
@@ -384,6 +398,34 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 125",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1979-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1978 420",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "F. Die Hilflosenentschädigung und die Hilfsmittel"
   },
   {
    "typ": "fassung",
@@ -9082,6 +9124,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    24
+   ]
+  },
+  "5_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
    ]
   },
   "5_c": {
@@ -9100,6 +9152,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    24
    ]
   },
   "5_d": {
@@ -9132,13 +9187,17 @@
      "item": null,
      "ueberschrift": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
     }
+   ],
+   "erbt": [
+    24
    ]
   },
   "5_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    24
+    24,
+    25
    ]
   },
   "5_f": {
@@ -9159,7 +9218,8 @@
     }
    ],
    "erbt": [
-    24
+    24,
+    25
    ]
   },
   "5_g": {
@@ -9179,20 +9239,25 @@
      "item": null,
      "ueberschrift": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
     }
+   ],
+   "erbt": [
+    24
    ]
   },
   "5_h": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    24,
+    26
    ]
   },
   "5_i": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    25
+    24,
+    26
    ]
   },
   "5_j": {
@@ -9212,13 +9277,17 @@
      "item": null,
      "ueberschrift": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
     }
+   ],
+   "erbt": [
+    24
    ]
   },
   "5_k": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    26
+    24,
+    27
    ]
   },
   "61_66": {
@@ -9438,7 +9507,9 @@
     }
    ],
    "erbt": [
-    18
+    18,
+    28,
+    29
    ]
   },
   "69_bis": {
@@ -9950,7 +10021,7 @@
    ],
    "erbt": [
     18,
-    27
+    30
    ]
   },
   "79_quater": {
@@ -10017,7 +10088,7 @@
    ],
    "erbt": [
     18,
-    27
+    30
    ]
   },
   "81_82": {
