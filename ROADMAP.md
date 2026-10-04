@@ -87,7 +87,7 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS -->
+<!-- @queue: W2·27-BUND-FERTIG, W2·32-GENERALANWEISUNGEN, W2·5l-NORMTEXT-B2, QS-KORPUS -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
@@ -98,7 +98,7 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      ROADMAP-CHRONIK.md (Umschichtung 20.9.2026). -->
 
 > **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Phase 1 Bund) — 3.10.2026 abends wieder `ready`
-> (gelandet #1263/#1299/#1300/#1301; #1298 wartet auf David), danach `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
+> (gelandet #1263/#1299/#1300/#1301; #1298 wartet auf David — 4.10.2026 ergänzt: #1298 gelandet, Entscheid «A»), danach `W2·32-GENERALANWEISUNGEN` (4.10.2026) → `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
 > nachgeführt 24.9.2026 auf die laufenden Go-Stränge: Werkbank 22.9., Rechtslogik parallel 24.9.;
 > Bund Phase 1 folgt dahinter; David hat Veto.** Bisheriger Marker und Queue-Schwanz im Wortlaut:
 > ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
@@ -180,6 +180,24 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
   `@queue`. **Fertig, wenn** ein Schweizer Jurist jedes Bundesgesetz vollständig, strukturgleich und
   schneller als auf Fedlex liest.
   **Detail:** [FAHRPLAN-BUND-FERTIG.md](fahrplaene/FAHRPLAN-BUND-FERTIG.md) §3.
+
+- [ ] **Generalanweisungen («Ersatz von Ausdrücken») als Artikel-Ereignis in der Normtext-Historie** *(`W2·32-GENERALANWEISUNGEN`, Entscheid David 4.10.2026: «A, und C als eigenen Roadmap-Schritt anlegen»)*
+  <!-- @meta id: W2·32-GENERALANWEISUNGEN · status: ready · blocker: null · dep: [] · feld: korpus -->
+  Ziel: Änderungserlasse, die nur Ausdrücke im ganzen Erlass ersetzen (AS 1999 1118 Gewalt→Sorge, in
+  Kraft 1.1.2000; AS 2011 725 Kindesschutzbehörde, 1.1.2013), werden je betroffenem Artikel als
+  Ereignis erfasst. Heilt das falsche «Gilt seit 1978» schon auf main (ZGB 287, 288, 307, 313, 320,
+  322, 324, 325). **Pflicht (Entscheid David 4.10.2026 zu #1298, Option 1: «Schritt «C» bekommt den
+  Vermerk, dass er die 12 Daten zurückbringt»):** seit #1298 (Entscheid «A», Vorsichts-Proxy) zeigen
+  28 Artikel «Fassung» ohne Datum. C bringt die 12 amtlich korrekten Daten zurück (ZGB 28g, 303, 255,
+  286, 85; OR 706b, 717; PATG 50, 36; STGB 355b; LFG 37u; VWVG 76), setzt die 5 falschen richtig
+  (ZGB 28a, 299, 300 → 1.1.2000; ZGB 310 → 1.1.2013; PATG 110 «Institut»→«IGE» nach 2001, Datum
+  offen) und prüft die 11 übrigen amtlich. Kandidat aus GP #1298: OR-657-Knoten «K. Genussscheine»
+  gilt als geteilt, obwohl OR 658 seit 1992 aufgehoben ist. Risikopfad (`src/lib/normtext`,
+  `scripts/normtext`): Gegenprüfung Pflicht; Re-Bless/Kaskade `projektionen:normtext`. Einordnung:
+  Daten falsch auf main ⇒ in der `@queue` direkt hinter `W2·27`; keine harte `dep` (A gelandet),
+  aber nicht parallel zu `W2·5l-NORMTEXT-B2` (gleiches `feld`, M14 berührt Fussnoten).
+  Posten ex `W2·27`: GP-#1298-H2, Generalanweisung AS 1999 1118, Nachzug #1298.
+  **Detail:** [randtitel-fussnote-gilt-seit-2026-10-03.md](bibliothek/normtext/randtitel-fussnote-gilt-seit-2026-10-03.md) (Abschnitt «Bekannte Grenze: Generalanweisungen»).
 
 - [ ] **Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** *(`W2·5l-NORMTEXT-B2`)*
   <!-- @meta id: W2·5l-NORMTEXT-B2 · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md -->
