@@ -73,3 +73,34 @@ Neue Kantone/Gerichte: Kopfform an echten Köpfen prüfen und in
 
 **Abnahme-Status:** maschinell verifiziert (42/42 gegen amtliches PDF/HTML), `verifiziert:false`,
 fachliche Abnahme David offen.
+
+## Ergänzung 4.10.2026 — Basel-Stadt, Hinweis-Feld `datumPortal` (QS-KORPUS)
+
+Der Satz oben «BS … Kopf = Metadaten … die BS-Regel bleibt unberührt» (Stand 25.9.2026, Einzelprobe
+AK.2022.32) ist **widerlegt** und bleibt als damaliger Beleg stehen. Anlass: Gegenprüfung (Opus) von
+PR #1295, Abruf `rechtsprechung.gerichte.bs.ch` 4.10.2026: Portal-Metadatum «Entscheiddatum» ≠ Datum im
+Urteilskopf («ENTSCHEID/URTEIL vom …») bei AUS.2026.85, BES.2025.105, BES.2025.117, VD.2025.146 und im
+Bestand bei AUS.2022.46 (Urteilstext bestätigt den Kopf), AUS.2022.57, BES.2023.14, BEZ.2025.33.
+**Entscheid David 4.10.2026 (Chat):** Variante A auch für Basel, Bestand berichtigen, «jeweils hinweis wenn
+es abweicht».
+
+- **Regel BS** (`waehleBsDatum`, `scripts/rechtsprechung/bs-parse.ts`): Kopf-Datum gewinnt; Rückfall
+  Portal-Metadatum, dann der ehrliche Platzhalter (`datumUnbekannt`). Plausibilitäts-Wächter: Kopf-Datum vor
+  dem GN-Jahr, nach der Erstpublikation, in der Zukunft oder mehr als 60 Tage vom Portal-Datum entfernt wird
+  **nicht übernommen**, sondern als Verdacht ausgewiesen.
+- **Bestand:** 3954 Rohdokumente neu geholt (Abruf 4.10.2026) und mit derselben Regel gelesen — **257
+  Daten geändert** (6,5 %; Abstand −57 … +52 Tage), 31 Verdachtsfälle bleiben beim Portal-Datum, 0 nicht
+  angefasst. Jede Änderung mit Kopf-Fundstelle und Portal-Link:
+  [bs-datum-kopf-2026-10-04.md](bs-datum-kopf-2026-10-04.md) (generiert, `npm run entscheide:bs --
+  --datum-kopf-berichtigung`; Rohdokumente zuvor per `--fetch-only`). Die frühere Stichprobe 4/31 ≈ 13 %
+  überschätzte die Rate; massgeblich ist die Vollmessung. Ids bleiben stabil (ein docketSafe-Suffix trägt
+  weiter das Portal-Datum).
+- **Hinweis-Feld `datumPortal`** (optional im Snapshot): das Datum der Angabequelle, wo es vom Kopf abweicht
+  (BS: Gerichtsportal; kantonale OCL-Gerichte: OCL `decision_date`). Der Entscheid-Kopf und der Lesemodus
+  zeigen «Datum laut Urteilskopf; das Gerichtsportal / OpenCaseLaw nennt den …». Für die OCL-Kantone aus
+  demselben Mapper (`mappeEntscheidOCL`), Bestand per `--kopfdatum-refresh`: 35 von 90 Snapshots tragen den
+  Hinweis, kein Datum geändert, ZH ohne Abweichung.
+- **Stichprobe/Tore:** die Wochenlauf-Stichprobe (`pruefeBs`) und das Tor `check:bs-entscheide` prüfen
+  gegen dieselbe Regel (Kopf; Portal = `datumPortal ?? datum`), nicht mehr gegen das Portal-Feld allein (§6.7).
+- **Abnahme-Status:** maschinell verifiziert (Identitäts-Gegenleser 257/257 gegen den Rohtext), `verifiziert:false`,
+  fachliche Abnahme David offen.

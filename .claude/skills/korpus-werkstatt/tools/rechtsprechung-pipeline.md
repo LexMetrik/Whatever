@@ -37,6 +37,12 @@ npm run entscheide -- --datum=$(date +%F) --remap
 # Danach (sonst check:zaehler rot):
 npm run gen:zaehler && npm run gen:bezuege-zaehler && npm run datenhaltung:manifest
 
+# BS-Entscheiddatum aus dem Urteilskopf (Variante A, 4.10.2026): Rohdokumente holen (~45 Min, 0,7 s Abstand),
+# dann offline berichtigen; schreibt Korpus + Liste bibliothek/rechtsprechung/bs-datum-kopf-<datum>.md
+npm run entscheide:bs -- --fetch-only --datum=$(date +%F)
+npm run entscheide:bs -- --datum-kopf-berichtigung --datum=$(date +%F)   # --trocken: nur zählen + Liste
+npm run projektionen && npm run datenhaltung:manifest
+
 # Integritäts-Tor (Manifest⊇Snapshots · Provenienz · sha · Norm-Index⊆Manifest · BUDGET_MB)
 npm run check:entscheide
 # Vor dem Push bei JEDEM Korpus-Zuwachs die volle Sammelkette + korpusabhängige e2e, nicht nur
