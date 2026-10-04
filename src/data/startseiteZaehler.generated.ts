@@ -211,8 +211,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1340,
-  "materialien": 1685,
-  "materialienGesetzgebung": 1358,
+  "materialien": 1687,
+  "materialienGesetzgebung": 1360,
   "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
@@ -267,7 +267,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BUND",
       "kuerzel": "Bund",
       "name": "Bund (Vernehmlassungen)",
-      "anzahl": 831
+      "anzahl": 833
     },
     {
       "id": "BS-GR",
@@ -283,5 +283,5 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "standMaterialien": "2026-10-01",
   "juengsterGesetzStand": "2026-10-01",
   "juengsterEntscheid": "2026-09-21",
-  "juengsteMaterialie": "2026-09-23"
+  "juengsteMaterialie": "2026-10-01"
 };

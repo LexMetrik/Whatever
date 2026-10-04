@@ -12768,9 +12768,6 @@
     "VERN-2026-58": {
       "sha": "c57fc56aa9fd67e3569cfffd2d03d3242037a4c21b8ebc3842e68a1d6ecfb32e"
     },
-    "VERN-2025-10": {
-      "sha": "b9254bbde5240dfe03b7b6ec952d95ae72bc34edbf9cc08c716d4b300a7f1dc9"
-    },
     "VERN-2023-95": {
       "sha": "2c42814838f7e08db1986df00bf4a54756c64cbe7ca76b2d797f8192550bce92"
     },
@@ -12828,6 +12825,15 @@
     "VERN-2026-91": {
       "sha": "28b2cb0a7072c569e9f0d9ace09133b2c7e8686278830870a114a6d68005c035"
     },
+    "VERN-2026-92": {
+      "sha": "35ea6703a5204ec082ce08f8542a67c9820e91a27087f4ad675907ea0cfa0788"
+    },
+    "VERN-2026-94": {
+      "sha": "ccf5e2a58a535773c479a3ffd59e27d7b47e9806da3615cb61a2733de4d5c4a7"
+    },
+    "VERN-2025-10": {
+      "sha": "39330c4d7cdfe969545a0d36f639f457dbaafb8dfa5933687838c3699f2514d4"
+    },
     "VERN-2026-39": {
       "sha": "cc8f6f06cd7a27234d5d16d35cf05f9d396f10eb6a5a20a505573ae99bd82c1e"
     },
@@ -12836,9 +12842,6 @@
     },
     "VERN-2026-52": {
       "sha": "17b630df1a382ac4a4d90b9fa35e95b3609bc88c44e24f915a322a0864d77aa6"
-    },
-    "VERN-2026-45": {
-      "sha": "d1507dde93f786fee09aa96a2590e268d97dcd1c92713125fb4e92d857b4d27b"
     },
     "VERN-2026-19": {
       "sha": "3d0857c0a1f3aca05d5f4263681c4694947cc85e983ad01495e2389a5106380e"
@@ -12864,6 +12867,9 @@
     "VERN-2021-20": {
       "sha": "3c710256ba571bf1971be5e5dbe74505957e9de0103e011414258d340b99d770"
     },
+    "VERN-2026-45": {
+      "sha": "af37fc25161cd48ad5129f6352ea589f5384438b9366d6e5aeaf35dbd8b86e72"
+    },
     "VERN-2026-44": {
       "sha": "8320d70c6b453b4d526303785a0dbe710f4430c8d8840588ff36420bf1b1f240"
     },
@@ -12888,17 +12894,11 @@
     "VERN-2026-16": {
       "sha": "35ee4889432033180d1641bc6a3a4d6a2a5d40c743fee7bf0785e4325a4d3a1b"
     },
-    "VERN-2026-3": {
-      "sha": "b11fde1d9d23a0296974b1696a7e932f2005d1da9e88d7f92e1670a53d5b22de"
-    },
     "VERN-2025-49": {
       "sha": "90d42be9334afc30c2d87087a1a525f313630bcc793ba5db93f707a8bfe5dc3e"
     },
     "VERN-2025-79": {
       "sha": "93651a9680da52c8a3a1e3088bb5b1bc6ae10bffaaa53fb79d471ff0021735d8"
-    },
-    "VERN-2026-4": {
-      "sha": "ebb2a543b1892920f94976b8c16c8f930da868318ff96e87f00e65faeb804134"
     },
     "VERN-2026-1": {
       "sha": "ba2840fdd3e71672e4c068b59a8c56bce9083a7fe4860b06886955fb62ca9b0e"
@@ -13014,8 +13014,14 @@
     "VERN-6017-44": {
       "sha": "1571a8bb2c0758c106098946325557ee9bedebc772900e854e1482b40e418cc5"
     },
+    "VERN-2026-3": {
+      "sha": "bf7a5e8d4a041211046eefe6222ee93944953cfed524d0b1bcd2e3beb863f7d3"
+    },
     "VERN-2026-23": {
       "sha": "fbf8065b3e9b98ed0c13b37aa4379c2da374783e16611575caa46fbfd3f82fcf"
+    },
+    "VERN-2026-4": {
+      "sha": "05c29086d7f283df68f61ce33db304e6a750d135b226be06e7621c653b720297"
     },
     "VERN-2025-97": {
       "sha": "516469526acc372b581b967d3215add3809baa26748f13716df84c80f364e284"
