@@ -1,9 +1,14 @@
 // src/tests/plan-lage-alarme.test.ts — Alarm-Zeile im Lage-Block von `plan:next`
 // (QS-MONITOR-ROT, Entscheid David 1.10.2026). Leser der Alarm-Zettel
 // (Labels `alarm:*`, Autor github-actions[bot]) ist die nächste Session.
-import { readFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { chmodSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 import { alarmZeile, laufeEcht, lageBlock, type Laufe, sammleAlarme } from '../../scripts/plan/lage';
+import { kopfZeilen } from '../../scripts/plan/next';
+import type { Buckets } from '../../scripts/plan/aufloesen';
 
 const spion = vi.hoisted(() => ({ opt: undefined as Record<string, unknown> | undefined }));
 vi.mock('node:child_process', async (orig) => {
@@ -114,11 +119,56 @@ describe('Platz der Alarm-Zeile', () => {
     expect(laufe.mock.calls.some(([, a]) => a.join(' ').includes('issues?'))).toBe(false);
   });
 
-  it('plan:next gibt die Alarm-Zeile VOR der ⚠️-Schleife aus (nicht unter dem langen Lage-Block)', () => {
-    const q = readFileSync('scripts/plan/next.ts', 'utf8');
-    const alarm = q.indexOf('sammleAlarme(');
-    expect(alarm).toBeGreaterThan(0);
-    expect(alarm).toBeLessThan(q.indexOf('⚠️  Baufeld'));
-    expect(alarm).toBeGreaterThan(q.indexOf('🔨 in Arbeit'));
+  const buckets: Buckets = {
+    readyNow: ['A'], lanes: [['A']], wartetDep: [], blockiert: [], geparkt: [], inArbeit: ['W'],
+    feldBelegt: [{ id: 'A', feld: 'korpus', durch: 'W' }, { id: 'B', feld: 'korpus', durch: 'W' }],
+  };
+  const alarmLaufe: Laufe = () => JSON.stringify([issue(750, 'alarm:waechter', '2026-09-07T06:00:00Z')]);
+
+  it('kopfZeilen: Alarm-Zeile vorhanden UND vor der ersten ⚠️-Zeile', () => {
+    const z = kopfZeilen(buckets, alarmLaufe);
+    const alarm = z.findIndex((s) => s.startsWith('🚨 Alarme: #750 waechter'));
+    const warn = z.findIndex((s) => s.startsWith('⚠️'));
+    expect(alarm).toBeGreaterThan(-1);
+    expect(warn).toBeGreaterThan(-1);
+    expect(alarm).toBeLessThan(warn);
+    expect(z.filter((s) => s.startsWith('🚨'))).toHaveLength(1);
+  });
+
+  it('plan:next (Laufzeit, gefälschtes gh im PATH): Alarm-Zeile steht vor dem Lage-Block und vor jeder ⚠️-Zeile', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'fakegh-'));
+    writeFileSync(join(dir, 'gh'), `#!/bin/sh\necho '${JSON.stringify([issue(4711, 'alarm:test-alarm', '2026-10-02T00:00:00Z')])}'\n`);
+    chmodSync(join(dir, 'gh'), 0o755);
+    const env = { ...process.env, PATH: `${dir}:${process.env.PATH}` };
+    delete env.VITEST;
+    const r = spawnSync('node_modules/.bin/vite-node', ['scripts/plan/next.ts'], { env, encoding: 'utf8', timeout: 60_000 });
+    const out = r.stdout.split('\n');
+    const alarm = out.findIndex((s) => s === '🚨 Alarme: #4711 test-alarm (seit 2.10.)');
+    expect(alarm).toBeGreaterThan(-1);
+    const lage = out.findIndex((s) => s.startsWith('── Lage'));
+    expect(lage).toBeGreaterThan(alarm);
+    const warn = out.findIndex((s) => s.startsWith('⚠️'));
+    if (warn > -1) expect(alarm).toBeLessThan(warn);
+  }, 70_000);
+});
+
+describe('alarmZeile — Kappung', () => {
+  it('über 10 Alarme: die ältesten 10, dazu «+n weitere»', () => {
+    const json = JSON.stringify(Array.from({ length: 15 }, (_, k) => issue(100 + k, 'alarm:waechter', '2026-09-07T06:00:00Z')));
+    const z = alarmZeile(json);
+    expect(z.match(/#\d+ /g)).toHaveLength(10);
+    expect(z).toContain('#109 ');
+    expect(z).not.toContain('#110 ');
+    expect(z.endsWith(' · +5 weitere')).toBe(true);
+  });
+
+  it('genau 10 Alarme: keine Kappungsangabe', () => {
+    const json = JSON.stringify(Array.from({ length: 10 }, (_, k) => issue(100 + k, 'alarm:waechter', '2026-09-07T06:00:00Z')));
+    expect(alarmZeile(json)).not.toMatch(/weitere/);
+  });
+
+  it('Antwort bei der Abrufgrenze 100: ehrlicher Hinweis, dass weitere fehlen können', () => {
+    const json = JSON.stringify(Array.from({ length: 100 }, (_, k) => issue(100 + k, null, '2026-09-07T06:00:00Z')));
+    expect(alarmZeile(json)).toBe('🚨 Alarme: — (keine offenen) · Abruf bei 100 abgeschnitten');
   });
 });

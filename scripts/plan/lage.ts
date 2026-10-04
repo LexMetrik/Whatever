@@ -221,7 +221,8 @@ export function alarmZeile(json: string): string {
       .sort((a, b) => a.i.number - b.i.number)
       .map(({ i: { number, created_at: d, title }, l }) =>
         `#${+number} ${/^[a-z0-9-]+$/.test(l!.slice(6)) ? l!.slice(6) : '?'} (seit ${+d.slice(8, 10)}.${+d.slice(5, 7)}.${title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`);
-    return ALARM + (z.length ? z.join(TRENNER) : '— (keine offenen)');
+    const mehr = z.length > 10 ? `${TRENNER}+${z.length - 10} weitere` : '';
+    return ALARM + (z.length ? z.slice(0, 10).join(TRENNER) : '— (keine offenen)') + mehr + (liste.length >= 100 ? `${TRENNER}Abruf bei 100 abgeschnitten` : '');
   } catch {
     return `${ALARM}nicht abrufbar (Antwort unlesbar)`;
   }

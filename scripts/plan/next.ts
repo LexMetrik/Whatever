@@ -2,8 +2,8 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { parseRoadmap, ladeChronikDone } from './parse';
-import { resolve } from './aufloesen';
-import { laufeEcht, lageBlock, sammleAlarme } from './lage';
+import { resolve, type Buckets } from './aufloesen';
+import { laufeEcht, lageBlock, sammleAlarme, type Laufe } from './lage';
 import { flaechenZeile, klassiere } from './gitFlaechen';
 import { sammleFakten } from './gitFlaechenSammeln';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
@@ -13,6 +13,28 @@ import {
 } from '../analyse/steuerflaecheKern';
 export { resolve, type Buckets } from './aufloesen';
 
+/** Kopfzeilen vor dem Lage-Block; die Alarm-Zeile steht VOR den ⚠️-Warnungen (QS-MONITOR-ROT). */
+export function kopfZeilen(b: Buckets, laufe: Laufe = laufeEcht): string[] {
+  const z: string[] = [];
+  z.push(`▶ OBERSTER offener Schritt: ${b.readyNow[0] ?? '—'}`);
+  // Token-Diät 31.8.2026 (QS-EFFIZIENZ): Zähler statt ready-now-Liste (~-0.5 KB
+  // je Aufruf) — jede ID steht schon in den Lanes; Vollform: plan:dump.
+  z.push(`▶ JETZT baubar: ${b.readyNow.length} Schritte — nach Feld gebündelt in den Lanes (Vollliste: plan:dump):`);
+  z.push(`  Parallel-Lanes: ${b.lanes.map((l) => `[${l.join(' + ')}]`).join('  ') || '—'}`);
+  if (b.wartetDep.length) z.push(`⏳ wartet auf dep: ${b.wartetDep.map((x) => `${x.id}→${x.offen.join(',')}`).join(' · ')}`);
+  if (b.blockiert.length) z.push(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);
+  if (b.geparkt.length) z.push(`🅿️  geparkt: ${b.geparkt.join(', ')}`);
+  if (b.inArbeit.length) z.push(`🔨 in Arbeit (wip): ${b.inArbeit.join(', ')}`);
+  // Alarm-Zeile VOR den Warnungen (QS-MONITOR-ROT): gh mit hartem Timeout, Ausfall = Hinweis.
+  z.push(sammleAlarme(laufe));
+  // Kollisionswarnung (Steuerungs-Diät 29.8.2026): gleiches Baufeld auf wip.
+  // Die F6-Sonden (PRs, Remote-Branches, Worktrees) stehen im Lage-Block.
+  for (const x of b.feldBelegt) {
+    z.push(`⚠️  Baufeld «${x.feld}» ist von ${x.durch} (wip) belegt — ${x.id} nur im eigenen Worktree bauen (§12).`);
+  }
+  return z;
+}
+
 // CLI
 if (!process.env.VITEST) {
   const { einheiten, queue } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
@@ -20,22 +42,7 @@ if (!process.env.VITEST) {
   // 15.9.2026) — ihre dep-Kanten gelten als erfüllt (sonst «wartet auf dep»).
   const b = resolve(einheiten, queue, ladeChronikDone());
   const z = (s: string) => console.log(s);
-  z(`▶ OBERSTER offener Schritt: ${b.readyNow[0] ?? '—'}`);
-  // Token-Diät 31.8.2026 (QS-EFFIZIENZ): Zähler statt ready-now-Liste (~-0.5 KB
-  // je Aufruf) — jede ID steht schon in den Lanes; Vollform: plan:dump.
-  z(`▶ JETZT baubar: ${b.readyNow.length} Schritte — nach Feld gebündelt in den Lanes (Vollliste: plan:dump):`);
-  z(`  Parallel-Lanes: ${b.lanes.map((l) => `[${l.join(' + ')}]`).join('  ') || '—'}`);
-  if (b.wartetDep.length) z(`⏳ wartet auf dep: ${b.wartetDep.map((x) => `${x.id}→${x.offen.join(',')}`).join(' · ')}`);
-  if (b.blockiert.length) z(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);
-  if (b.geparkt.length) z(`🅿️  geparkt: ${b.geparkt.join(', ')}`);
-  if (b.inArbeit.length) z(`🔨 in Arbeit (wip): ${b.inArbeit.join(', ')}`);
-  // Alarm-Zeile VOR den Warnungen (QS-MONITOR-ROT): gh mit hartem Timeout, Ausfall = Hinweis.
-  z(sammleAlarme(laufeEcht));
-  // Kollisionswarnung (Steuerungs-Diät 29.8.2026): gleiches Baufeld auf wip.
-  // Die F6-Sonden (PRs, Remote-Branches, Worktrees) stehen im Lage-Block.
-  for (const x of b.feldBelegt) {
-    z(`⚠️  Baufeld «${x.feld}» ist von ${x.durch} (wip) belegt — ${x.id} nur im eigenen Worktree bauen (§12).`);
-  }
+  for (const zeile of kopfZeilen(b)) z(zeile);
   // Ab hier nur ANGEHÄNGTE Blöcke (nie dazwischen): zieht man einen ab, ist die
   // Ausgabe darüber byte-identisch zum Stand davor; Ausfall ⇒ still (§8).
   // Lage-Block (QS-PLAN-REVIEW/4a).
