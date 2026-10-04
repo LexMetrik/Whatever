@@ -89,6 +89,20 @@
    ],
    "absatz": null,
    "item": null,
+   "ueberschrift": "2. Kapitel: Verwaltungskosten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
    "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
   },
   {
@@ -1289,6 +1303,13 @@
     }
    ]
   },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
   "40": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
@@ -1481,28 +1502,28 @@
     }
    ],
    "erbt": [
-    5
+    6
    ]
   },
   "48": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "49": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "50": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "51": {
@@ -1620,7 +1641,7 @@
     }
    ],
    "erbt": [
-    6
+    7
    ]
   },
   "53": {
@@ -2080,7 +2101,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "67": {
@@ -2101,7 +2122,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "68": {
@@ -2135,7 +2156,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "71": {
@@ -2201,7 +2222,7 @@
     }
    ],
    "erbt": [
-    9
+    10
    ]
   },
   "73": {
@@ -2280,14 +2301,14 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "75": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    10
+    11
    ]
   },
   "76": {
@@ -2308,7 +2329,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "77": {
@@ -2329,7 +2350,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "78": {
@@ -2350,7 +2371,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "83": {
@@ -2535,7 +2556,7 @@
     }
    ],
    "erbt": [
-    6
+    7
    ]
   },
   "52_a": {
@@ -2561,7 +2582,7 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "52_c": {
@@ -2582,35 +2603,35 @@
     }
    ],
    "erbt": [
-    7
+    8
    ]
   },
   "52_d": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "52_e": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "52_f": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "52_g": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    7
+    8
    ]
   },
   "53_a": {
@@ -2957,7 +2978,7 @@
     }
    ],
    "erbt": [
-    8
+    9
    ]
   },
   "74_a": {
@@ -2978,7 +2999,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "76_a": {
@@ -3012,7 +3033,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "79_80": {

@@ -72,13 +72,13 @@ import {
   alleArtikelEids,
   ankerIdVonEid,
   dispTextAusserhalbArtikel,
-  fehlendeIndizes,
   fingerabdrueckeZuSoll,
   gleicheBasislinieAb,
   leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
-  projektionsBlob,
+  projektionsBlobVarianten,
+  fehlendeIndizesVarianten,
   segmentiereAnker,
   segmenteZuFingerabdruecken,
   SEGMENTER_VERSION,
@@ -285,8 +285,8 @@ function pruefeErlassGegenProjektion(
     }
     geprueftArtikel++;
     const fps = sollZuFingerabdruecke(paare);
-    const blob = projektionsBlob(eintrag);
-    for (const i of fehlendeIndizes(blob, fps)) {
+    const blobs = projektionsBlobVarianten(eintrag);
+    for (const i of fehlendeIndizesVarianten(blobs, fps)) {
       const fp = fps[i];
       funde.push({ erlass: key, eId, hash: fp.hash, laenge: fp.laenge, auszug: auszuegeJeEid?.get(eId)?.get(fp.hash) });
     }

@@ -80,6 +80,24 @@
    "ueberschrift": "2. Abschnitt: Ausserparlamentarische Kommissionen"
   },
   {
+   "typ": "eingefuegt",
+   "datum": "2000-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1891",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/293"
+    },
+    {
+     "label": "BBl 1999 9005",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_9005_8381_7979"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Viertes Kapitel: Bearbeitung von Personendaten und von Daten juristischer Personen"
+  },
+  {
    "typ": "fassung",
    "datum": "2023-09-01",
    "wirkung": false,
@@ -204,6 +222,42 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "Drittes Kapitel: Information über Verträge der Kantone unter sich oder mit dem Ausland"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 3071",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+    },
+    {
+     "label": "BBl 1998 2591",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Viertes Kapitel: Konzentriertes Entscheidverfahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 3543",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/510"
+    },
+    {
+     "label": "BBl 2001 3467 5428",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
   }
  ],
  "artikel": {
@@ -982,7 +1036,7 @@
     }
    ],
    "erbt": [
-    10
+    11
    ]
   },
   "63": {
@@ -1472,7 +1526,8 @@
    "erbt": [
     4,
     5,
-    6
+    6,
+    7
    ]
   },
   "57_h_ter": {
@@ -1481,7 +1536,8 @@
    "erbt": [
     4,
     5,
-    6
+    6,
+    7
    ]
   },
   "57_i": {
@@ -1542,7 +1598,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "57_j": {
@@ -1568,8 +1625,9 @@
    ],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_k": {
@@ -1595,8 +1653,9 @@
    ],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_l": {
@@ -1656,8 +1715,9 @@
    ],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_m": {
@@ -1665,8 +1725,9 @@
    "ereignisse": [],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_n": {
@@ -1674,8 +1735,9 @@
    "ereignisse": [],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_o": {
@@ -1683,8 +1745,9 @@
    "ereignisse": [],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_p": {
@@ -1692,8 +1755,9 @@
    "ereignisse": [],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_q": {
@@ -1701,8 +1765,9 @@
    "ereignisse": [],
    "erbt": [
     4,
-    7,
-    8
+    5,
+    8,
+    9
    ]
   },
   "57_r": {
@@ -1728,7 +1793,8 @@
     }
    ],
    "erbt": [
-    4
+    4,
+    5
    ]
   },
   "57_s": {
@@ -1736,7 +1802,8 @@
    "ereignisse": [],
    "erbt": [
     4,
-    9
+    5,
+    10
    ]
   },
   "57_t": {
@@ -1744,7 +1811,8 @@
    "ereignisse": [],
    "erbt": [
     4,
-    9
+    5,
+    10
    ]
   },
   "61_a": {
@@ -1917,6 +1985,20 @@
     }
    ]
   },
+  "62_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    12
+   ]
+  },
+  "62_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    12
+   ]
+  },
   "62_d": {
    "giltSeit": null,
    "ereignisse": [
@@ -1948,6 +2030,13 @@
      "item": null,
      "ueberschrift": "Fünftes Kapitel: Steuerbefreiung und Schutz des Eigentums des Bundes"
     }
+   ]
+  },
+  "62_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    13
    ]
   },
   "62_f": {

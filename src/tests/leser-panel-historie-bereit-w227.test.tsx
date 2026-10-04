@@ -61,7 +61,7 @@ function sonde(historie: { wert: HistorieShard | null; fertig: boolean }, blattH
     const t = usePanelTafeln({
       erlassKey: 'CISG', laden: true, quelleUrl: 'https://www.fedlex.admin.ch/', ebene: 'bund', stichtag: null,
       aktArtikel: '7', artikelLabel: 'Art. 7', blatt: { eintrag: EINTRAG, historie: blattHistorie },
-      normZitat: 'Art. 7 CISG', wort: 'Artikel', erlassSr: '0.221.211.1', inkraftSeit: '1991-03-01', historie,
+      normZitat: 'Art. 7 CISG', wort: 'Artikel', erlassSr: '0.221.211.1', inkraftSeit: '1991-03-01', inkraftGestaffelt: false, historie,
     });
     return createElement('div', null, t.tafeln.aenderungen);
   }

@@ -366,7 +366,33 @@
         },
         {
           "absatz": null,
-          "text": "Es bedeuten:"
+          "text": "Es bedeuten:",
+          "items": [
+            {
+              "marke": "",
+              "text": "DB = Durchführung mit voller Befriedigung."
+            },
+            {
+              "marke": "",
+              "text": "DV = Durchführung mit gänzlichem oder teilweisem Verlust."
+            },
+            {
+              "marke": "",
+              "text": "Z = Erlöschen durch Zahlung des Schuldners an das Betreibungsamt."
+            },
+            {
+              "marke": "",
+              "text": "E = Erlöschen aus andern Gründen (Abstellung durch den Gläubiger oder Verjährung)."
+            },
+            {
+              "marke": "",
+              "text": "T = Teilnahme weiterer Gläubiger an der Pfändung und zwar: TB mit voller Befriedigung. TV mit gänzlichem oder teilweisem Verlust"
+            },
+            {
+              "marke": "",
+              "text": "K = Konkurs."
+            }
+          ]
         },
         {
           "absatz": null,
@@ -381,7 +407,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_10",
       "abgerufen": "2026-09-12",
       "fassungsToken": "20160101",
-      "sha": "b74f9a6b054318c2ad29914f7a84fb5d5b5843a2fbece82b29803d510d0a1ac4"
+      "sha": "a8e973700af8be73ac225df4370e276411c00ab7ec483e29d83bd7a6ecaf2a98"
     },
     {
       "id": "bund/VBB/art_11",

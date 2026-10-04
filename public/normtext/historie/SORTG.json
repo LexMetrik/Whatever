@@ -60,6 +60,24 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3897",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+    },
+    {
+     "label": "BBl 2004 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
   }
  ],
  "artikel": {
@@ -202,21 +220,24 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0
+    0,
+    3
    ]
   },
   "7": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0
+    0,
+    3
    ]
   },
   "8": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0
+    0,
+    3
    ]
   },
   "9": {
@@ -1031,7 +1052,8 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    0
+    0,
+    3
    ]
   },
   "8_b": {

@@ -5,6 +5,7 @@
  */
 import { dekodiereEntities } from '../html-entities.ts';
 import { entferneTags } from './text.ts';
+import { SUFFIX_ALT } from '../../../src/lib/fedlex/nummer.ts';
 import { findeDlEnde, findeDdEnde } from './enden.ts';
 import type { ArtikelText } from './typen.ts';
 
@@ -191,11 +192,14 @@ export function parseDefinitionsListe(
     //      — ohne den nachgestellten Trenner — eine kanonische Ordinalmarke ist.
     //      Trifft das nicht zu, bleibt die Marke verbatim stehen. Damit ist jede
     //      bisher korrekte Marke byte-gleich und keine wird mehr erfunden (§1/§6).
-    // Die lat. Suffixe reichen bis `decies`: «asexies.»/«anovies.» (HMG Art. 9,
+    // Die lat. Suffixe: «asexies.»/«anovies.» (HMG Art. 9,
     // FINMA-GebV) wurden zuvor auf «a» gekürzt.
     // Der Anhang-Pfad behält seine mehrteiligen Ziffern «1.1.1»/«211.1»
     // (M13-Annex) — sie sind hier Teil des kanonischen Musters.
-    const LAT_SUFFIX = 'bis|ter|quater|quinquies|sexies|septies|octies|novies|decies';
+    // EINE Reihe (§5): SUFFIX_ALT aus src/lib/fedlex/nummer.ts (zwölf amtliche Glieder bis «tredecies»);
+    // bis 3.10.2026 eine eigene Handkopie bis «decies» (W2·27-BUND-FERTIG P8-B Nachzug). Alle Verwendungen
+    // stehen in anchored Mustern bzw. in einer Gruppe — die Reihenfolge der Alternation ist ohne Wirkung.
+    const LAT_SUFFIX = SUFFIX_ALT;
     const KANONISCHE_MARKE = anhang
       ? new RegExp(`^(?:[0-9]+(?:\\.[0-9]+)*(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)$`, 'i')
       : new RegExp(`^(?:[0-9]+(?:${LAT_SUFFIX})?[a-z]?|[a-z](?:${LAT_SUFFIX})?)$`, 'i');
@@ -283,11 +287,25 @@ export function parseDefinitionsListe(
     // empirisch nicht auf (alle Haupt-Artikel-<dl> der betroffenen Erlasse starten
     // lettered/nummeriert; Fedlex-Chapeaus stehen als eigenes <p> vor der <dl>).
     // §6: greift nur bei zuvor VERLORENEM Text — additiv, keine Marke fabriziert.
+    // [Beleg altert nicht — ERGÄNZT 3.10.2026, W2·27-BUND-FERTIG Nebenfund P4: die Aussage «tritt im Haupttext empirisch
+    // nicht auf» ist FALSIFIZIERT. Gemessen über alle 231 Bund-Caches (25 620 Einträge): 18 führende marke-lose Zeilen in
+    // 7 Artikeln gingen stumm verloren — ARGV1 art_30 (2, Unterliste unter lit. a), VBB art_10 (6, ganze Legende), ERV
+    // art_51/52 (je 1), MSTP art_119 (5, Unterliste unter lit. a), EBG art_6 (2), PATV art_97 (1). Sie stehen jetzt als Item
+    // `marke: ''` an ihrer Stelle (dritter Zweig unten); der Anhang-Weg und jeder bisher erhaltene Text bleiben byte-gleich.]
     let istNotiz = false;
-    if (!marke && text && subDlIdx < 0 && (anhang ? hostOffen : items.length > 0)) {
+    // Vorgänger zum Anhängen = ein MARKIERTES Item. Eine marke-lose Leitzeile (neu, `marke: ''`) ist kein Wirt: zwei
+    // marke-lose Zeilen hintereinander (ARGV1 «1.»/«2.», VBB-Legende) sind zwei Zeilen, nicht eine verschmolzene.
+    if (!marke && text && subDlIdx < 0 && (anhang ? hostOffen : items.length > 0 && items[items.length - 1].marke !== '')) {
       const vorheriges = items[items.length - 1];
       vorheriges.text = vorheriges.text ? `${vorheriges.text} ${text}` : text;
       absorbiert?.push(text);
+    } else if (!anhang && !marke && text) {
+      // Haupttext, W2·27-BUND-FERTIG (3.10.2026): marke-lose Zeile OHNE markiertes Vorgänger-Item auf dieser Ebene (erste
+      // Zeile der (Unter-)Liste) bzw. mit eigener Unterliste → Item `marke: ''` AN IHRER STELLE, Tiefe wie ihre Liste.
+      // Keine Marke fabriziert (§1/§7): CSS-Autonummern («auto-num», EBG art_6) und im Text eingebettete Ziffern («1.  in
+      // fünf …», ARGV1 art_30) bleiben, wie die Quelle sie führt. Darstellung/Zitat: ArtikelBody (marke '' = kein
+      // Zitierknopf, Text auf der Textspalte); die Unterliste der Zeile (falls vorhanden) folgt unten wie bei jedem Item.
+      items.push({ marke: '', text, ...(tiefe > 0 ? { tiefe } : {}) });
     } else if (anhang && absorbiert && !marke && text && (geordnet || items.length > 0)) {
       // Anhang, P4 (W2·27-BUND-FERTIG, 2.10.2026): marke-lose Zeile, die NICHT an ihr Item gehängt werden
       // kann (eigene Unterliste, oder Item davor trägt schon eine Unterliste/Zeile) → Zwischen-Notiz

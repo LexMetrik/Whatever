@@ -98,6 +98,24 @@
    "ueberschrift": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
   },
   {
+   "typ": "fassung",
+   "datum": "2004-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 2767",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+    },
+    {
+     "label": "BBl 2002 8060",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+  },
+  {
    "typ": "eingefuegt",
    "datum": "2023-01-01",
    "wirkung": false,
@@ -114,6 +132,24 @@
    "absatz": null,
    "item": null,
    "ueberschrift": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2004-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 2767",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/340"
+    },
+    {
+     "label": "BBl 2002 8060",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2002/1290"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dreizehnter Abschnitt: Einlagensicherung"
   },
   {
    "typ": "eingefuegt",
@@ -1502,6 +1538,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "35": {
@@ -1524,6 +1563,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "36": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "37": {
@@ -1546,6 +1595,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "38": {
@@ -2779,6 +2831,9 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37_b": {
@@ -2801,6 +2856,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37_c": {
@@ -2846,6 +2904,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37_e": {
@@ -2885,6 +2946,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "37_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "37_g": {
@@ -2941,6 +3012,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37_g_bis": {
@@ -2970,21 +3044,21 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "37_g_quinquies": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "37_g_ter": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    5
+    6
    ]
   },
   "37_h": {
@@ -3091,6 +3165,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "37_j": {
@@ -3130,6 +3207,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "37_j_bis": {
@@ -3152,6 +3232,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "37_k": {
@@ -3174,6 +3257,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "37_l": {
@@ -3238,7 +3324,7 @@
     }
    ],
    "erbt": [
-    6
+    8
    ]
   },
   "3_a": {
@@ -3280,7 +3366,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_b": {
@@ -3305,7 +3391,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_bis": {
@@ -3432,7 +3518,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_c": {
@@ -3474,7 +3560,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_d": {
@@ -3516,7 +3602,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_e": {
@@ -3541,7 +3627,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_f": {
@@ -3566,7 +3652,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_g": {
@@ -3625,7 +3711,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_h": {
@@ -3690,7 +3776,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "3_ter": {
@@ -3749,7 +3835,7 @@
     }
    ],
    "erbt": [
-    7
+    9
    ]
   },
   "40_45": {
@@ -3814,7 +3900,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "4_quater": {
@@ -3839,7 +3925,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "4_quinquies": {
@@ -3864,7 +3950,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "4_sexies": {
@@ -3889,7 +3975,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "4_ter": {
@@ -3931,7 +4017,7 @@
     }
    ],
    "erbt": [
-    8
+    10
    ]
   },
   "50_bis": {
@@ -4040,14 +4126,14 @@
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    11
    ]
   },
   "6_b": {
    "giltSeit": null,
    "ereignisse": [],
    "erbt": [
-    9
+    11
    ]
   }
  },

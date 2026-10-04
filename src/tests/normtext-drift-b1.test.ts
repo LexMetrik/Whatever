@@ -12,6 +12,7 @@ import {
   pruefeLabelUrlMitDeckung,
 } from '../../scripts/normtext/drift-logik.ts';
 import type { NormSnapshot } from '../../scripts/normtext/drift-logik.ts';
+import { ART_SUFFIXE } from '../lib/fedlex/nummer';
 
 const B = 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de';
 const snap = (id: string, artikelLabel: string, quelleUrl: string): NormSnapshot => ({
@@ -175,12 +176,23 @@ describe('B4 — Basis gebunden an das gepinnte ELI/Sprache (fedlex-cache.sh)', 
   });
 });
 
-describe('B2 — Wiederholungs-Adverbien ab vicies (20+)', () => {
+// W2·27-BUND-FERTIG P8 (3.10.2026, GP #1247 T4) — DEKLARIERTE FACHÄNDERUNG: der Riegel liess bis dahin
+// eine Morphologie-Regel zu (undecies … novemdecies, vicies, unvicies … novovicies, tricies, quadragies).
+// Gemessen an den 231 gepinnten Bund-HTMLs kennt der Korpus genau die zwölf Glieder bis … tredecies
+// (src/lib/fedlex/nummer.ts, EINE Quelle); «novovicies»/«novodecies» und alles ab vicies hat kein Erlass je
+// verwendet, die Schreibweisen 14–19 sind amtlich ungeklärt. Ein amtlich nicht belegtes Glied ist darum
+// rot — es soll im Korpus gemessen und in nummer.ts eingetragen werden, nicht hier durchgewunken (§7).
+describe('B2 — Wiederholungs-Adverb = amtliche Suffix-Reihe (nummer.ts)', () => {
   const basis = snap('bund/KKV/art_126_z', 'Art. 126z', `${B}#art_126_z`);
   const syn = (label: string) => snap('bund/KKV/art_126_z__2', label, `${B}#ta126z`);
-  it('vicies, unvicies, duovicies, tervicies, tricies, quadragies sind grün', () => {
-    for (const s of ['vicies', 'unvicies', 'duovicies', 'tervicies', 'novovicies', 'tricies', 'quadragies']) {
+  it('alle zwölf amtlich belegten Glieder sind grün (inkl. «tredecies», KKV Art. 126z)', () => {
+    for (const s of ART_SUFFIXE) {
       expect(regeln([basis, syn(`Art. 126z${s}`)]), s).toEqual([]);
+    }
+  });
+  it('Morphologie-Formen OHNE amtlichen Gebrauch sind rot (vorher grün: novovicies, tricies, quadragies …)', () => {
+    for (const s of ['vicies', 'unvicies', 'duovicies', 'tervicies', 'novovicies', 'novodecies', 'tricies', 'quadragies', 'terdecies', 'quaterdecies']) {
+      expect(regeln([basis, syn(`Art. 126z${s}`)]), s).toEqual(['B2-label']);
     }
   });
   it('Fantasie-Formen bleiben rot', () => {

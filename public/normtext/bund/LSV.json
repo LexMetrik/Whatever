@@ -2782,9 +2782,9 @@
               ],
               [
                 "II",
-                "47/50 1",
-                "50/55 1",
-                "60/65 1"
+                "47/50¹",
+                "50/55¹",
+                "60/65¹"
               ],
               [
                 "III",
@@ -3096,7 +3096,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1987/338_338_338/de#annex_5",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260401",
-      "sha": "b4c3e24e238c2cb86d3832b3cb5d232c21645858a81972978f05a1406c27fee7"
+      "sha": "32f47951e3be793dab85f4efe4b450fa2d3fb756bb801055bf9a524381b6fc8d"
     },
     {
       "id": "bund/LSV/annex_6",
@@ -3812,19 +3812,19 @@
         },
         {
           "absatz": "4",
-          "text": "Der Teilbeurteilungspegel Lrj ist die Summe des A-bewerteten Mittelungspegels Leqj, der durch den Betrieb von Flugzeugen mit Strahlantrieb verursacht wird, und den Pegelkorrekturen K 0 und K 1:"
+          "text": "Der Teilbeurteilungspegel Lrj ist die Summe des A-bewerteten Mittelungspegels Leqj, der durch den Betrieb von Flugzeugen mit Strahlantrieb verursacht wird, und den Pegelkorrekturen K₀ und K₁:"
         },
         {
           "absatz": null,
-          "text": "Lrj = Leqj + K 0 + K 1"
+          "text": "Lrj = Leqj + K₀ + K₁"
         },
         {
           "absatz": "5",
-          "text": "Der Teilbeurteilungspegel Lrp ist die Summe des A-bewerteten Mittelungspegels Leqp, der durch den Betrieb von Flugzeugen mit Propellerantrieb verursacht wird, und den Pegelkorrekturen K 0 und K 2:"
+          "text": "Der Teilbeurteilungspegel Lrp ist die Summe des A-bewerteten Mittelungspegels Leqp, der durch den Betrieb von Flugzeugen mit Propellerantrieb verursacht wird, und den Pegelkorrekturen K₀ und K₂:"
         },
         {
           "absatz": null,
-          "text": "Lrp = Leqp + K 0 + K 2"
+          "text": "Lrp = Leqp + K₀ + K₂"
         },
         {
           "absatz": "6",
@@ -3868,38 +3868,38 @@
         },
         {
           "absatz": "1",
-          "text": "Die Pegelkorrektur K 0 beträgt –8."
+          "text": "Die Pegelkorrektur K₀ beträgt –8."
         },
         {
           "absatz": "2",
-          "text": "Die Pegelkorrektur K 1 wird anhand der jährlichen Flugbewegungszahl von Flugzeugen mit Strahlantrieb Nj wie folgt berechnet:"
+          "text": "Die Pegelkorrektur K₁ wird anhand der jährlichen Flugbewegungszahl von Flugzeugen mit Strahlantrieb Nj wie folgt berechnet:"
         },
         {
           "absatz": null,
-          "text": "K 1 = 0 für Nj < 15 000"
+          "text": "K₁ = 0 für Nj < 15 000"
         },
         {
           "absatz": null,
-          "text": "K 1 = 10 · log (Nj/15 000) für Nj ≥ 15 000"
+          "text": "K₁ = 10 · log (Nj/15 000) für Nj ≥ 15 000"
         },
         {
           "absatz": "3",
-          "text": "Die Pegelkorrektur K 2 wird anhand der jährlichen Flugbewegungszahl von Flugzeugen mit Propellerantrieb Np wie folgt berechnet:"
+          "text": "Die Pegelkorrektur K₂ wird anhand der jährlichen Flugbewegungszahl von Flugzeugen mit Propellerantrieb Np wie folgt berechnet:"
         },
         {
           "absatz": null,
-          "text": "K 2 = 0 für Np < 15 000"
+          "text": "K₂ = 0 für Np < 15 000"
         },
         {
           "absatz": null,
-          "text": "K 2 = 10 · log (Np/15 000) für Np ≥ 15 000"
+          "text": "K₂ = 10 · log (Np/15 000) für Np ≥ 15 000"
         }
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1987/338_338_338/de#annex_8",
       "abgerufen": "2026-09-30",
       "fassungsToken": "20260401",
-      "sha": "450f25400a09bd4757e1499d7688a4714d4cdce46f2dbe207d48c8b7eb67a04a"
+      "sha": "f45e5fa1d56520b6a6c559b73e71c80ea01112faf1a8f220558cd08b87f91259"
     },
     {
       "id": "bund/LSV/annex_9",
