@@ -429,7 +429,7 @@ function bodyEinheiten(document: Document) {
  */
 export function bsPortalDaten(html: string): { portal: string | null; kopf: string | null; erstpublikation: string | null } {
   const { document } = parseHTML(bereinigeQuellDebris(html));
-  let kopf: string | null = null;
+  let kopf: string | null;
   try { kopf = kopfDatum(bodyEinheiten(document)); } catch { kopf = null; }
   return {
     portal: dIso(metaWert(document, 'Entscheiddatum')),
