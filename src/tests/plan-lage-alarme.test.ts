@@ -139,7 +139,7 @@ describe('Platz der Alarm-Zeile', () => {
     const dir = mkdtempSync(join(tmpdir(), 'fakegh-'));
     writeFileSync(join(dir, 'gh'), `#!/bin/sh\necho '${JSON.stringify([issue(4711, 'alarm:test-alarm', '2026-10-02T00:00:00Z')])}'\n`);
     chmodSync(join(dir, 'gh'), 0o755);
-    const env = { ...process.env, PATH: `${dir}:${process.env.PATH}` };
+    const env: NodeJS.ProcessEnv = { ...process.env, PATH: `${dir}:${process.env.PATH}` };
     delete env.VITEST;
     const r = spawnSync('node_modules/.bin/vite-node', ['scripts/plan/next.ts'], { env, encoding: 'utf8', timeout: 60_000 });
     const out = r.stdout.split('\n');
