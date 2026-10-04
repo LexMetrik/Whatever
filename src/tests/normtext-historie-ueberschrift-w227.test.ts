@@ -200,6 +200,18 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(historieVon(koerper(FASSUNG_1972.replace('AS 1971 1461', 'AS 1971 9999')), '299')!.giltSeit).toBe('1972-01-01'); // gleich alt, andere Fundstelle
   });
 
+  // A3 (Delta-GP 4.10.2026, §6.7): Randtitel MIT Gliederungszeichen, der von MEHREREN Artikeln geteilt wird (OR 657 «K. Genussscheine»,
+  // AS 2020 4005 → 2023), ist ein geteilter Gliederungsknoten (Vorgabe C), kein eigener Randtitel: der ältere Körper-Stand bleibt.
+  it('Entscheid A greift NICHT bei geteiltem Randtitel mit Gliederungszeichen (OR 657-Form): giltSeit bleibt der ältere eigene Körper-Stand', () => {
+    const geteilt: ErbArtikel[] = [
+      { token: '657', gliederung: [TITEL], marginalie: ['K. Genussscheine', 'Begriff'], fussnoten: [sek(FASSUNG_2007, 'K. Genussscheine'), { ...fn(FASSUNG_1972), nr: '2' }] },
+      { token: '658', gliederung: [TITEL], marginalie: ['K. Genussscheine', 'Rechte'] },
+    ];
+    expect(historieVon(geteilt, '657')!.giltSeit).toBe('1972-01-01');
+    // Kontrolle: derselbe Randtitel bei genau EINEM Artikel ist eigen ⇒ leer (Entscheid A)
+    expect(historieVon([geteilt[0]], '657')!.giltSeit).toBeNull();
+  });
+
   it('Entscheid A gilt nur für den eigenen Randtitel: Überschrift-Ereignis eines geteilten Gliederungsknotens ändert «giltSeit» weiter nicht (Vorgabe C)', () => {
     const geteilt: ErbArtikel[] = [
       { token: '319', gliederung: [TITEL], fussnoten: [sek(FASSUNG_2007, TITEL.label), { ...fn(FASSUNG_1972), nr: '2' }] },
@@ -511,6 +523,13 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
       expect(h.giltSeit, token).toBeNull();
       expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
     }
+  });
+
+  it('A3: geteilte Randtitel mit Gliederungszeichen bleiben datiert (Entscheid A betrifft nur eigene Randtitel): OR 657, 722, 973a, ZGB SchlT 7a^bis', () => {
+    expect(hist('OR', '657')!.giltSeit).toBe('1992-07-01'); // Randtitel «K. Genussscheine» 2023 (AS 2020 4005)
+    expect(hist('OR', '722')!.giltSeit).toBe('1992-07-01');
+    expect(hist('OR', '973_a')!.giltSeit).toBe('2010-01-01');
+    expect(hist('ZGB', 'disp_u1_art_7_a_bis')!.giltSeit).toBe('2000-01-01');
   });
 
   it('Randtitel zählt nicht: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → nicht mehr 2014-07-01, Chronik behält 2014', () => {

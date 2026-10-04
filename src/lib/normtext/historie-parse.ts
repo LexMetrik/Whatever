@@ -480,11 +480,13 @@ export function baueArtikelHistorie(
       if (!randtitelDatum || e.datum > randtitelDatum) randtitelDatum = e.datum;
     }
   }
-  // Entscheid David 4.10.2026 «A» (Randtitel zählt nicht, Folge): ein eigener Körper-Stand, der ÄLTER ist als der Randtitel-
-  // Eingriff, ist nicht belastbar — Generalanweisungen («Ersatz von Ausdrücken», z. B. AS 1999 1118 Gewalt → Sorge, 1.1.2000;
-  // AS 2011 725 Kindesschutzbehörde, 1.1.2013) ändern den Körper, ohne am Artikel zu stehen (ZGB 299/300/310). §8: lieber keine
-  // Aussage als eine falsche ⇒ leer; die Chronik bleibt. Rückbau: sobald die Generalanweisungen als Artikel-Ereignis
-  // modelliert sind (Roadmap-Schritt «C»), diese Zeile streichen.
+  // Entscheid David 4.10.2026 «A» (Randtitel zählt nicht, Folge): VORSICHTS-PROXY bis Schritt «C», keine Aussage, der ältere
+  // Körper-Stand sei falsch. Ein eigener Körper-Stand, der ÄLTER ist als der Randtitel-Eingriff, KANN durch eine Generalanweisung
+  // («Ersatz von Ausdrücken», AS 1999 1118 Gewalt → Sorge, 1.1.2000; AS 2011 725 Kindesschutzbehörde, 1.1.2013) überholt sein,
+  // die am Artikel nicht steht (ZGB 28a/299/300/310). Amtliche Stichprobe des Prüfers (Delta-GP 4.10.2026, 17 von 28 gegen
+  // historische Fedlex-Fassungen): 5 alte Daten wären falsch, 12 korrekt, 11 ungeprüft. «Fassung» ohne Datum ist nie falsch
+  // (§8), kostet aber bei rund zwei Dritteln der geprüften Fälle ein korrektes Datum. Die Chronik bleibt.
+  // Rückbau: sobald die Generalanweisungen als Artikel-Ereignis modelliert sind (Roadmap-Schritt «C»), diese Zeile streichen.
   if (giltSeit && randtitelDatum && randtitelDatum > giltSeit) giltSeit = null;
   // Ganz-Artikel-Aufhebung (RL-11, Befund R2-01): nur Aufhebungs-Ereignisse aus
   // Fussnoten, deren Marker im Artikelkopf steht und deren Prosa keinen Teil-Skopus
