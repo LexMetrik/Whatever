@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Kanton Basel - FindInfoWeb</title>
+	<!-- special styles for media = "screen" -->
+   <link rel="stylesheet" href="/findinfo/stylesheets/findinfoweb_screen.css" type="text/css" media="screen" />
+	<!-- special styles for media = "print" -->
+	<link rel="stylesheet" href="/findinfo/stylesheets/findinfoweb_print.css" type="text/css" media="print" />
+	<!-- WORD DOCUMENT STYLES (werden hier automatisch hinzugefügt, wenn die 1. Zahl im Juris Parameter "FindInfoWeb: Allgemeine Einstellungen" gleich 0 ist.) -->
+	<style type="text/css">
+	<!-- /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:'Cambria Math';
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+h1
+	{mso-style-link:'Überschrift 1 Zchn';
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:'Cambria',serif;
+	color:#365F91;
+	font-weight:normal;}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:'Kommentartext Zchn';
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoClosing, li.MsoClosing, div.MsoClosing
+	{margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:14.0pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:14.0pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:14.15pt;
+	line-height:200%;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+
+
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:'Kommentarthema Zchn';
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:'Tahoma',sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.JB-Standard, li.JB-Standard, div.JB-Standard
+	{mso-style-name:JB-Standard;
+	mso-style-link:'JB-Standard Char';
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	line-height:112%;
+	font-size:11.0pt;
+	font-family:'Arial',sans-serif;}
+span.JB-StandardChar
+	{mso-style-name:'JB-Standard Char';
+	mso-style-link:JB-Standard;
+	font-family:'Arial',sans-serif;}
+p.1berschrift1AG, li.1berschrift1AG, div.1berschrift1AG
+	{mso-style-name:'Ü1 Überschrift 1 AG';
+	mso-style-link:'Ü1 Überschrift 1 AG Zchn';
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.1berschrift1AGZchn
+	{mso-style-name:'Ü1 Überschrift 1 AG Zchn';
+	mso-style-link:'Ü1 Überschrift 1 AG';
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.2berschrift2AG, li.2berschrift2AG, div.2berschrift2AG
+	{mso-style-name:'Ü2 Überschrift 2 AG';
+	mso-style-link:'Ü2 Überschrift 2 AG Zchn';
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.3berschrift3AG, li.3berschrift3AG, div.3berschrift3AG
+	{mso-style-name:'Ü3 Überschrift 3 AG';
+	mso-style-link:'Ü3 Überschrift 3 AG Zchn';
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.2berschrift2AGZchn
+	{mso-style-name:'Ü2 Überschrift 2 AG Zchn';
+	mso-style-link:'Ü2 Überschrift 2 AG';
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.3berschrift3AGZchn
+	{mso-style-name:'Ü3 Überschrift 3 AG Zchn';
+	mso-style-link:'Ü3 Überschrift 3 AG';
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.T1TextAG, li.T1TextAG, div.T1TextAG
+	{mso-style-name:'T1 Text AG';
+	mso-style-link:'T1 Text AG Zchn';
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	line-height:120%;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;}
+span.T1TextAGZchn
+	{mso-style-name:'T1 Text AG Zchn';
+	mso-style-link:'T1 Text AG';
+	font-family:'Arial',sans-serif;}
+span.berschrift1Zchn
+	{mso-style-name:'Überschrift 1 Zchn';
+	mso-style-link:'Überschrift 1';
+	font-family:'Cambria',serif;
+	color:#365F91;}
+p.4berschrift4AG, li.4berschrift4AG, div.4berschrift4AG
+	{mso-style-name:'Ü4 Überschrift 4 AG';
+	mso-style-link:'Ü4 Überschrift 4 AG Zchn';
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.4berschrift4AGZchn
+	{mso-style-name:'Ü4 Überschrift 4 AG Zchn';
+	mso-style-link:'Ü4 Überschrift 4 AG';
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+p.5berschrift5AG, li.5berschrift5AG, div.5berschrift5AG
+	{mso-style-name:'Ü5 Überschrift 5 AG';
+	mso-style-link:'Ü5 Überschrift 5 AG Zchn';
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	line-height:120%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.5berschrift5AGZchn
+	{mso-style-name:'Ü5 Überschrift 5 AG Zchn';
+	mso-style-link:'Ü5 Überschrift 5 AG';
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+span.KommentartextZchn
+	{mso-style-name:'Kommentartext Zchn';
+	mso-style-link:Kommentartext;
+	font-family:'Arial',sans-serif;}
+span.KommentarthemaZchn
+	{mso-style-name:'Kommentarthema Zchn';
+	mso-style-link:Kommentarthema;
+	font-family:'Arial',sans-serif;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+	-->
+	</style>
+	<!-- /WORD DOCUMENT STYLES -->
+	<!-- FINDINFO STYLES -->
+	<style type="text/css">
+	<!--
+		/* special styles for media = "screen" */
+		a.searchterms {
+			color:black;
+			background-color:#FFFFC0;
+			font-weight:bold;
+		}
+		
+		div#fiwcontent *, table.default tr td {
+			font-size: 11pt;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+	-->
+	</style>
+	<!-- /FINDINFO STYLES -->
+	<!-- FINDINFOWEB JSCRIPT -->
+	<script src="/findinfo/scripts/script.js" type="text/javascript"></script>
+	<!-- /FINDINFOWEB JSCRIPT -->
+</head>
+<body>
+<!-- CUSTOM HEADER (customize as you wish) -->
+<div id="header">
+	<table class="header">
+		<tr align="left" valign="top"> 
+			<td><a href="http://www.gerichte.bs.ch" target="_top"><img src="/findinfo/images/logo_gerichte.png" alt="Basel-Stadt" border="0"></a></td>
+		</tr>
+	</table>
+</div>
+<!-- /CUSTOM HEADER -->
+
+<!-- FINDINFOWEB NAVIGATION PANEL (required) -->
+<div id="fiwnavigation">
+	<fiw:layout-component name="navigation" />
+</div>
+<!-- /FINDINFOWEB NAVIGATION PANEL -->
+
+<!-- FINDINFOWEB CONTENT PANEL (required) -->
+<div id="fiwcontent">
+	<table cellpadding="0" cellspacing="0" border="0">
+		<!-- This table is needed in order that scrolling works properly with IE7! -->
+		<tr>
+			<td>
+	<!-- GOTOFIRSTMATCH (fulltextsearch only) -->
+	<div class="notprintable">
+	<table width="100%" class="default">
+		<tr>
+			<td>
+				<br /><br />
+			</td>
+		</tr>
+	</table>
+	</div>
+	<!-- /GOTOFIRSTMATCH (fulltextsearch only) -->
+	
+	<!-- METADATA -->
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>
+				<table  border="0" cellspacing="0" cellpadding="0">
+					<tr>
+					<td nowrap="nowrap" width="180"><b>Gesch&auml;ftsnummer:</b></td> 
+						<td width="5000"><b>VD.2023.151</b> (AG.2024.206)</td>
+					</tr>
+					<tr>
+						<td nowrap="nowrap" >Instanz:</td> 
+						<td>Appellationsgericht</td>
+					</tr>  
+					<tr>
+						<td nowrap="nowrap" >Entscheiddatum:</td> 
+						<td>08.03.2024&nbsp;</td>
+					</tr>  
+					<tr>
+						<td nowrap="nowrap" class="customHeight"><acronym title="Datum der ersten Publikation im Internet">Erstpublikationsdatum</acronym>:</td> 
+						<td>04.04.2025</td>
+					</tr>  
+					<tr>
+						<td nowrap="nowrap" class="customHeight"><acronym title="Datum der letzten Aktualisierung im Internet">Aktualisierungsdatum</acronym>:</td> 
+						<td>04.04.2025</td>
+					</tr>
+					<tr><td colspan="2" height="10"></td></tr>
+					<tr>
+						<td style="vertical-align: top;"><b>Titel:</b></td> 
+						<td><b>Nichteintreten</b></td>
+					</tr>
+				</table>
+			</td>
+			<td>&nbsp;</td>
+			<td width="200" align="right" nowrap="nowrap" rowspan="6">
+				<table cellpadding="0" cellspacing="0" width="100%" class="stiwos">
+					<!--
+					<tr>
+						<td style="background-color: #636163; color: #FFFFFF; text-align: right; font-size: 11px;">Stichworte:</td>
+					</tr>
+					<tr>
+						<td style="padding: 3px 2px;">
+							
+						</td>
+					</tr>
+					<tr><td height="2px" style="background-color: #DDDDDD;"></td></tr>
+					-->
+					<!--
+					<tr>
+						<td style="background-color: #636163; color: #FFFFFF; text-align: right; font-size: 11px;">Gesetzesartikel:</td>
+					</tr>
+					<tr>
+						<td style="padding: 3px 2px;">
+							
+						</td>
+					</tr>
+					-->
+				</table>
+			</td>
+		</tr>
+	</table>
+	<!-- /METADATA -->
+	
+	<!-- DOCUMENT -->
+	<table width="100%">
+		<tr>
+			<td width="20">&nbsp;</td>
+			<td>
+				<br /><br />
+				
+
+<div class="WordSection1">
+
+<table class="MsoTableGrid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none">
+ <tr style="height:80.85pt">
+  <td width="79" valign="top" style="width:59.4pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:80.85pt">
+  <p class="MsoNormal"><img width="39" height="60" src="/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&amp;WebServerUrl=&amp;WebServerScript=/cgi-bin/nph-omniscgi.exe&amp;OmnisLibrary=JURISWEB&amp;OmnisClass=rtFindinfoWebHtmlService&amp;OmnisServer=JURISWEB,7000&amp;Parametername=WEB&amp;Schema=BS_FI_WEB&amp;Source=&amp;Aufruf=getImage&amp;nF38_KEY=132678" alt="" /></p>
+  </td>
+  <td width="535" valign="top" style="width:401.2pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:80.85pt">
+  <p class="MsoNormal"><span style="font-size:18.0pt">Appellationsgericht</span></p>
+  <div style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 0cm 1.0pt 0cm">
+  <p class="MsoNormal" style="border:none;padding:0cm"><span style="font-size:
+  18.0pt">des Kantons Basel-Stadt</span></p>
+  </div>
+  <p class="MsoNormal"><span style="font-size:16.0pt">als Verwaltungsgericht</span></p>
+  <p class="MsoNormal"><span style="font-size:16.0pt">Dreiergericht</span></p>
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt">VD.2023.151</span></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><b><span style="font-size:20.0pt">URTEIL</span></b></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">vom 8. März 2023</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt">Mitwirkende</span></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><span lang="FR">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-top:0cm;margin-right:3.6pt;margin-bottom:0cm;
+margin-left:63.0pt;margin-bottom:.0001pt">Dr. Stephan Wullschleger, lic. iur.
+André Equey,</p>
+
+<p class="MsoNormal" style="margin-top:0cm;margin-right:3.6pt;margin-bottom:0cm;
+margin-left:63.0pt;margin-bottom:.0001pt">lic. iur. Lucienne Renaud</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><a name="TN_AUTOTEXT_GS"></a>und
+a.o. Gerichtsschreiber MLaw Philip Vlahos</p>
+
+<div style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 0cm 1.0pt 0cm;
+margin-left:63.0pt;margin-right:0cm">
+
+<p class="MsoNormal" style="border:none;padding:0cm">&nbsp;</p>
+
+</div>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt">Beteiligte</span></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><b>A____</b>                                                                                         
+Rekurrent</p>
+
+<p class="MsoNormal" style="margin-top:0cm;margin-right:75.6pt;margin-bottom:
+0cm;margin-left:63.0pt;margin-bottom:.0001pt">[...]</p>
+
+<p class="MsoNormal" style="margin-top:0cm;margin-right:75.6pt;margin-bottom:
+0cm;margin-left:63.0pt;margin-bottom:.0001pt">vertreten durch [...], Rechtsanwalt,</p>
+
+<p class="MsoNormal" style="margin-top:0cm;margin-right:75.6pt;margin-bottom:
+0cm;margin-left:63.0pt;margin-bottom:.0001pt">[...]</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><a name="RU_AUTOTEXT_KLÄGER_X__B">&nbsp;</a></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">gegen</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt"><b>Bundesamt für Zoll und
+Grenzsicherheit</b></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">Zoll Basel-Flughafen</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">Postfach 4030 Basel</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal"><span style="font-size:10.0pt">Gegenstand</span></p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">Rekurs gegen einen Entscheid des
+Justiz- und Sicherheitsdepartements</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">vom 7. September 2023</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">betreffend Nichteintreten</p>
+
+<p class="MsoNormal" style="margin-left:63.0pt">&nbsp;</p>
+
+<b><span style="line-height:120%;font-family:'Arial',sans-serif"><br style="page-break-before:always" />
+</span></b>
+
+<p class="T1TextAG"><a name="_Toc112162491"></a><a name="_Toc112135057"><b>Sachverhalt</b></a></p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Der kosovarische
+Staatsangehörige A____, geboren am [...] (nachfolgend: Rekurrent), wurde durch
+das Bundesamt für Zoll und Grenzsicherheit BAZG, Zoll Basel-Flughafen
+(nachfolgend: BAZG) am 27. August 2023 um 20:00 Uhr am Flughafen Basel einer
+grenzpolizeilichen Kontrolle unterzogen. Dabei wurde festgestellt, dass er im
+automatisierten Polizeifahndungssystem (nachfolgend: RIPOL) beziehungsweise im
+Zentralen Migrationsinformationssystem (nachfolgend: ZEMIS) mit einem bereits
+eröffneten und vom 17. November 2022 bis und mit 16. November 2024 gültigen
+sowie mit einem noch nicht eröffneten und vom 17. November 2024 bis und mit 16.
+November 2025 währenden Einreiseverbot durch das Staatssekretariat für
+Migration SEM des Eidgenössischen Polizeidepartements EJPD (nachfolgend: SEM)
+belegt worden war. Darauf wurde dem Rekurrenten das noch nicht eröffnete
+Einreiseverbot durch das BAZG eröffnet und er wurde wegen des Verdachts, sich
+trotz gültigem Einreiseverbot in der Vergangenheit mehrfach rechtswidrig in der
+Schweiz aufgehalten zu haben, bei der Staatsanwaltschaft Basel-Stadt verzeigt.
+Schliesslich ordnete das BAZG mit Verfügung vom 27. August 2023 seine
+Wegweisung aus der Schweiz an.</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Dagegen liess
+der Rekurrent mit Eingabe vom 1. September 2023 unter Bezugnahme auf das
+«Einreiseverbot 2023 (3.7.2023)» Beschwerde an das Justiz- und
+Sicherheitsdepartement (nachfolgend: JSD) erheben. Damit beantragte er die
+ersatzlose Aufhebung des Einreiseverbots (act. 8/1 S. 1 f.). Auf diesen Rekurs
+trat das JSD mit Entscheid vom 7.&nbsp;September 2023 ohne Kosten zu erheben
+mit der Begründung nicht ein, dass das vom SEM mit Verfügung vom 3. Juli 2023
+ausgesprochene, vom 17. November 2024 bis zum 16. November 2025 währende
+Einreiseverbot, welches ihm anlässlich der grenzpolizeilichen Kontrolle vom 27.
+August 2023 durch das BAZG eröffnet worden sei, mit Beschwerde beim
+Bundesverwaltungsgericht angefochten werden könne, und dass das JSD zur
+Beurteilung des Rekurses daher nicht zuständig sei. Demgegenüber beziehe er
+sich mit seiner Eingabe vom 1. September 2023 nicht auf die beim JSD anfechtbare
+Wegweisung aus der Schweiz.</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Gegen diesen
+Entscheid liess der Rekurrent mit Eingabe vom 18. September 2023 Rekurs an den
+Regierungsrat erheben. Mit seinem Rekurs stellt er folgende Rechtsbegehren:</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">«1.  Der angefochtene Nichteintretensentscheid der
+Vorinstanz sei aufzuheben und es sei festzustellen, dass:</p>
+
+<p class="MsoNormal" style="margin-left:78.0pt;text-align:justify;text-indent:
+-21.25pt;line-height:120%">a.    der Rekurrent legitimiert ist/war, via
+Basel/Mulhouse nach Frankreich einzureisen;</p>
+
+<p class="MsoNormal" style="margin-left:78.0pt;text-align:justify;text-indent:
+-21.25pt;line-height:120%">b.    die Anzeige bzw. Wegweisungsverfügung vom 27.
+August 2023 gegen den Rekurrenten ohne Rechtsgrundlage und somit willkürlich
+erfolgte.</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">2.    Die Anzeige bzw. Wegweisungsverfügung vom 27.
+August 2023 gegen den Rekurrenten sei aus den Akten zu weisen und in den
+einschlägigen Datenbanken zu löschen.</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">3.    Eventualiter, nämlich für den Fall, dass dem
+Antrag gemäss Ziffer 1 und Ziffer 2 nicht stattgegeben wird, so sei der
+angefochtene Nichteintretensentscheid der Vorinstanz aufzuheben und an die
+Vorinstanz zur Neuentscheidung gemäss Antrag Ziff. 1 und Ziff. 2 zurück zu
+weisen.</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">4.    Es sei dem Rekurrenten für das vorinstanzliche
+Verfahren wie auch für das vorliegende Rekursverfahren eine Parteientschädigung
+auszurichten.</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">5.    Der Rekurrent behält sich ausdrücklich vor,
+seine Anträge zu ergänzen oder zu modifizieren.</p>
+
+<p class="MsoNormal" style="margin-left:2.0cm;text-align:justify;text-indent:
+-21.25pt;line-height:120%">6.    Ansonsten alles unter Kosten- und
+Entschädigungsfolgen zu Lasten der Staatskasse.»</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Diesen Rekurs
+überwies der Regierungspräsident mit Schreiben vom 13. Oktober 2023 dem
+Verwaltungsgericht zum Entscheid. Dessen Instruktionsrichter verzichtete nach
+erfolgtem Eingang des verfügten Kostenvorschusses mit Verfügung vom 27. November
+2023 auf die Einholung einer Vernehmlassung der Vorinstanz und zog die vorinstanzlichen
+Akten bei. Mit Eingabe vom 29. November 2023 liess der Rekurrent ein
+Strafurteil des Bezirksgerichts Hinwil vom 10. Oktober 2023 einreichen, mit
+welchem das Verfahren mit Bezug auf den Vorwurf der Ausübung einer
+Erwerbstätigkeit ohne Bewilligung, begangen im Jahr 2016/2017, eingestellt
+worden ist und er vom weiteren Vorwurf der Ausübung einer Erwerbstätigkeit ohne
+Bewilligung, begangen im Jahr&nbsp;2017/2018, freigesprochen worden ist.</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Die weiteren
+Tatsachen und die Einzelheiten der Parteistandpunkte ergeben sich, soweit sie
+für das Urteil von Bedeutung sind, aus dem angefochtenen Entscheid und den
+nachfolgenden Erwägungen. Das vorliegende Urteil erging auf dem Zirkulationsweg.</p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="T1TextAG"><a name="_Toc112162492"></a><a name="_Toc112135058"><b>Erwägungen</b></a></p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%"><b>1.</b></p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%"><b>1.1</b>      Die
+Zuständigkeit des Verwaltungsgerichts zur Beurteilung des vorliegenden Rekurses
+ergibt sich aus dem Überweisungsschreiben des Regierungspräsidenten vom 13.
+Oktober 2023 sowie aus § 42 des Organisationsgesetzes (OG, SG 153.100) und § 12
+des Verwaltungsrechtspflegegesetzes (VRPG, SG 270.100). Zuständig ist das
+Dreiergericht (§ 88 Abs. 2 und § 92 Abs. 1 Ziff. 11 des Gerichtsorganisationsgesetzes
+[GOG, SG 154.100]).</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%"><b>1.2</b>      Zum
+Rekurs ist legitimiert, wer durch den angefochtenen Entscheid berührt ist und
+ein schutzwürdiges Interesse an dessen Aufhebung oder Abänderung hat (§ 13 Abs.
+1 VRPG). Der Rekurs wurde rechtzeitig eingereicht und begründet (§ 46 OG).</p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="T1TextAG"><b>1.3</b></p>
+
+<p class="T1TextAG"><b>1.3.1   </b>Rekurse sind allerdings nur im Rahmen des
+Streitgegenstands zulässig. Streitgegenstand bildet das im angefochtenen
+Verwaltungsakt geregelte oder zu regelnde Rechtsverhältnis, soweit es
+angefochten wird. Er darf sich im Lauf des Rechtsmittelzugs nicht erweitern.
+Streitgegenstand des verwaltungsgerichtlichen Rekursverfahrens kann nur sein,
+was bereits Gegenstand des vorinstanzlichen Verfahrens gewesen ist oder hätte
+sein sollen. Gegenstände, über welche die Vorinstanz weder entschieden hat noch
+hätte entscheiden müssen, sind vom Verwaltungsgericht nicht zu behandeln.
+Dementsprechend tritt es auf erstmals bei ihm gestellte Anträge nicht ein (VGE&nbsp;VD.2022.80
+und VD.2022.81 vom 9. Dezember 2022 E. 1.5.1; vgl. § 19 Abs. 1 VRPG).</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>1.3.2</b>   Anlässlich der grenzpolizeilichen
+Einreisekontrolle vom 27. August 2023 hat das BAZG eine Anzeige an die
+Staatsanwaltschaft gemacht (act. 8/2 S. 1 ff. und 18 ff.), dem Rekurrenten das
+bisher nicht eröffnete Einreiseverbot des SEM vom 3. Juli 2023 für die Zeit vom
+17. November 2024 bis zum 16. November 2025 eröffnet (act. 8/2 S.&nbsp;1&nbsp;ff.
+und 15 ff.) und eine sofort vollstreckbare Wegweisungsverfügung erlassen (act.&nbsp;8/2
+S. 1 ff. und 22 ff.). Mit seinem Rekurs an das JSD beantragte der Rekurrent
+allein die Aufhebung des Einreiseverbots. Zur Begründung machte er unter dem
+Rubrum «Einreiseverbot 2023 (3.7.2023) / Beschwerde» geltend, dass er am
+Flughafen Basel/Mulhouse beabsichtigt habe, «nach Frankreich/Deutschland»
+einzureisen. Es sei daher willkürlich, wenn ihm eine versuchte Einreise in die
+Schweiz unterstellt und gestützt darauf ein einjähriges Einreiseverbot
+ausgesprochen werde (act. 8/1 S.&nbsp;12 f.). Der Beschwerde legte er eine
+Kopie dieses Einreiseverbots bei (act. 8/1 S.&nbsp;17), dem die Seiten 2 bis 4
+der Wegweisungsverfügung angehängt worden sind (act. 8/1 S. 18ff.).</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG">Mit dem vorliegenden Rekurs macht der Rekurrent geltend, er
+habe sich mit seiner Eingabe vom 1. September 2023 gegen die
+Wegweisungsverfügung vom 27. August 2023 beschwert und Akteneinsicht verlangt.
+Aufgrund der unvollständigen Unterlagen sei er damals davon ausgegangen, die «Grenzkontrolle»
+habe direkt ein einjähriges Einreiseverbot verfügt, was nicht der Fall zu sein
+scheine. Der Rekurs richte sich gegen die Wegweisungsverfügung und die Anzeige
+durch die Zollbehörden. Er anerkenne, dass in der Beschwerde von einem
+Einreiseverbot und nicht explizit von einer Wegweisungsverfügung beziehungsweise
+Anzeige die Rede gewesen sei. Allerdings habe er darauf aufmerksam gemacht,
+dass ihm nicht die vollständigen Unterlagen vorgelegen hätten und sich eine
+Vervollständigung der Eingabe vorbehalten.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG">Damit bezieht sich der vorliegende Rekurs auf eine Verfügung,
+welche im vorinstanzlichen Verfahren gar nicht Gegenstand der Beschwerde
+gewesen ist. Der anwaltlich vertretene Rekurrent hat diese Bestimmung des
+Streitgegenstandes im vorinstanz­lichen Verfahren gegen sich gelten zu lassen.
+Es kann daher auf den Rekurs nicht eingetreten werden, da er sich gegen eine
+Verfügung des BAZG richtet, die im vorinstanzlichen Verfahren nicht
+Streitgegenstand gewesen ist.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>1.3.3</b>   Selbst wenn man aber von einer irrtümlichen
+Ausdrucksweise des anwaltlichen Vertreters des Rekurrenten im vorinstanzlichen
+Verfahren und schon im vorinstanzlichen Verfahren von einer impliziten
+Anfechtung der Wegweisung ausgehen wollte, könnte auf den Rekurs nicht
+eingetreten werden.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>1.3.3.1</b> Mit seinem Rekurs verlangt der Rekurrent
+zunächst die Feststellung, dass er legitimiert gewesen sei, via Basel/Mulhouse
+nach Frankreich einzureisen und die Wegweisungsverfügung vom 27. August 2023
+ohne Rechtsgrundlage und somit willkürlich erfolgt sei. Feststellungsbegehren
+sind in aller Regel subsidiärer Natur und daher nur zulässig, wenn dem Anliegen
+der betroffenen Person nicht durch eine Leistungs- oder Gestaltungsverfügung
+entsprochen werden kann und die betroffene Person ohne eine vorgängige
+Feststellung einen unzumutbaren Nachteil erlitte. Zudem wird für ein
+Feststellungsurteil ein aktuelles Feststellungsinteresse vorausgesetzt (<span style="font-variant:small-caps">Wullschleger/ Schröder</span>, Praktische
+Fragen des Verwaltungsprozesses im Kanton Basel-Stadt, in: BJM 2005, S. 277,
+297; <span style="font-variant:small-caps">Rhinow/Koller/Kiss/Thurnherr/Brühl-Moser,</span>
+Öffentliches Prozessrecht, 4. Aufl., Basel 2021, N 1279 ff.; AGE 622/2009 vom
+25. August 2009 und VGE VD.2009.635 vom 2. Dezember 2009). Ein entsprechendes
+Rechtsschutzinteresse liegt dann vor, wenn die gesuchstellende Person ohne die
+verbindliche und sofortige Feststellung des Bestands, Nichtbestands oder
+Umfangs öffentlich-rechtlicher Rechte oder Pflichten Gefahr liefe, dass die
+Behörde ihr nachteilige Massnahmen treffen oder ihr günstige unterlassen würde.
+Dieses Interesse kann rechtlicher oder tatsächlicher Natur sein. Grundsätzlich
+muss auch das Feststellungsinteresse aktuell, individuell und konkret sein. Die
+festzustellende Rechtsfrage darf nicht abstrakter, rein theoretischer Natur
+sein, sondern muss einen Zusammenhang mit zu beurteilenden tatsächlichen
+Gegebenheiten aufweisen (<span style="font-variant:small-caps">Kölz/Häner/Bertschi,</span>
+Verwaltungsverfahren und Verwaltungsrechtspflege des Bundes, 3. Aufl., Zürich
+2013, N 340; vgl. <span style="font-variant:small-caps">Häner,</span> in:
+Waldmann/Krauskopf [Hrsg.], Praxiskommentar Verwaltungsverfahrensgesetz, 3.&nbsp;Aufl.,
+Zürich 2023, Art. 25 N 16; <span style="font-variant:small-caps">Schwank</span>,
+Das verwaltungsinterne Rekursverfahren des Kantons Basel-Stadt, Diss. Basel
+2003, S. 87; VGE&nbsp;VD.2022.80 vom 9. Dezember 2022 E. 1.5.3, VD.2021.25 vom
+10. Januar 2022 E. 1.4.1, VD.2018.29 vom 16. August 2018 E. 1.2.4). Der
+Rekurrent begründet ein entsprechendes Feststellungsinteresse nicht
+ansatzweise. Auch ist nicht ersichtlich, weshalb er nicht ein
+Gestaltungsbegehren auf Aufhebung der Wegweisungsverfügung vom 27. August 2023
+hätte stellen können.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b><span style="text-transform:uppercase">1.3.3.2</span></b> Ein
+solches Begehren enthält auch das unter Ziffer 2 gestellt Rechtsbegehren nicht,
+mit dem der Rekurrent verlangt, dass die Wegweisungsverfügung «aus den Akten zu
+weisen und in den einschlägigen Datenbanken zu löschen» sei. Selbst wenn man
+darin aber wiederum implizit den Antrag auf Aufhebung dieser
+Wegweisungsverfügung erblicken wollte, könnte darauf nicht eingetreten werden.
+Die Rekursbefugnis setzt nach § 13 Abs. 1 VRPG voraus, dass die rekurrierende
+Person ein schutzwürdiges Interesse an der Aufhebung oder Änderung des
+angefochtenen Entscheids hat. Um schutzwürdig zu sein, muss das Interesse des
+Rekurrenten aktuell sein (VGE VD.2014.248 vom 7.&nbsp;Juni 2016 E. 1.2.1, VD.2015.177
+vom 1. April 2016 E. 1, VD.2010.12 vom 27.&nbsp;Oktober 2010 E. 1.2; <span style="font-variant:small-caps">Wullschleger/Schröder</span>, a.a.O., S. 277,
+292). Dies ist dann der Fall, wenn die Anfechtung für den Rekurrenten sowohl
+beim Einreichen des Rekurses als auch zum Zeitpunkt der Urteilsfällung eine
+praktische Bedeutung hat und die Gutheissung seines Rechtsmittels ihm einen
+gegenwärtigen und praktischen Nutzen einträgt in dem Sinn, dass dadurch der
+Eintritt eines wirtschaftlichen, ideellen, materiellen oder anderweitigen
+Nachteils verhindert wird (vgl. VGE VD.2017.86 und VD.2017.175 vom 24. November
+2017 E. 1.3.1, VD.2010.12 vom 27.&nbsp;Oktober 2010 E. 1.2; <span style="font-variant:small-caps">Wullschleger/Schröder</span>, a.a.O., S. 277,
+292). Dabei muss dem drohenden Nachteil eine nicht unbedeutende Schwere
+zukommen, und der Schadenseintritt muss relativ wahrscheinlich sein;
+geringfügige, unwahrscheinliche Beeinträchtigungen reichen nicht aus (vgl. <span style="font-variant:small-caps">Moser/Beusch/Kneubühler</span>, Prozessieren vor
+dem Bundesverwaltungsgericht, 3.&nbsp;Aufla­ge, Basel 2022, Rz. 2.67).
+Demgegenüber fehlt es an einem aktuellen praktischen Interesse, wenn der
+Nachteil auch bei Gutheissung des Rekurses nicht mehr behoben werden könnte.
+Diese Situation liegt beispielsweise dann vor, wenn der angefochtene Akt zum
+Zeitpunkt des Urteils keine Rechtswirkung mehr entfalten kann, weil das
+Ereignis, auf welches er sich bezieht, bereits stattgefunden hat (vgl. BVGer
+B-1561/2016 und B-4177/2016 vom 21. März 2018 E.&nbsp;1.3.2.3, m.H.). Mit dem
+Erfordernis des aktuellen Rechtsschutzinteresses wird sichergestellt, dass dem
+Gericht nur konkrete und nicht bloss theoretische oder abstrakte Rechtsfragen
+unterbreitet werden. Fehlt das aktuelle Rechtsschutzinteresse bereits bei
+Einreichung des Rekurses, ist auf diesen nicht einzutreten (VGE VD.2022.116 vom
+7. Februar 2023 E. 1.2.1).</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG">Der Rekurrent macht geltend, dass er gar nicht in die Schweiz
+habe einreisen wollen. Es ist daher nicht ersichtlich, wie er durch die
+Wegweisungsverfügung belastet worden sein könnte. Hinzu kommt, dass ihm
+aufgrund des aktuell geltenden, rechtskräftigen Einreiseverbots derzeit sowieso
+untersagt wäre, in die Schweiz einzureisen. Es ist daher nicht erkennbar,
+welches aktuelle Interesse der Rekurrent an der Aufhebung der Wegweisungsverfügung
+hätte.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>1.3.3.3</b> Nur der Vollständigkeit halber sei darauf
+hingewiesen, dass diese Verfügung selbst dann, wenn sie aufgehoben werden
+müsste, in den Akten zu verbleiben hätte, weshalb auch das diesbezügliche
+Begehren an der Sache vorbeigeht.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>1.3.4</b>   Auf den Rekurs kann auch insoweit nicht
+eingetreten werden, als er sich gegen die Anzeige des BAZG an die
+Staatsanwaltschaft richtet. Das Rechtsmittelsystem gemäss dem
+Organisationsgesetz wie auch dem Verwaltungsrechtspflegegesetz geht vom Anfechtungsobjekt
+einer Verfügung aus (<span style="font-variant:small-caps">Schwank</span>, a.
+a. O., S. 435, 442). Das Verwaltungsgericht folgt beim Verfügungsbegriff
+praxisgemäss der Definition des Bundesgerichts zu Art. 5 Abs. 1 des
+Bundesgesetzes über das Verwaltungsverfahren (VwVG, SR 172.021; VD.2016.228 vom
+19. Juli 2017 E. 1.2.4). Die Verfügung stellt einen individuellen, auf
+öffentliches Recht gestützten und an den Einzelnen gerichteten Hoheitsakt dar,
+der eine verwaltungsrechtliche Rechtsbeziehung rechtsgestaltend oder
+feststellend in verbindlicher und erzwingbarer Weise regelt (<span style="font-variant:small-caps">Häfelin/ Müller/Uhlmann</span>, Allgemeines
+Verwaltungsrecht, 8. Auflage, Zürich 2020, Rz. 849; <span style="font-variant:
+small-caps">Stamm</span>, Die Verwaltungsgerichtsbarkeit, in: Buser [Hrsg.],
+Neues Handbuch des Staats- und Verwaltungsrecht des Kantons Basel-Stadt, 2008,
+S. 477, 481). Diese Vor-aussetzungen erfüllt die Anzeige des BAZG an die
+Staatsanwaltschaft nicht. Vielmehr wird diese auf deren Grundlage
+rechtsgestaltend zu beurteilen haben, ob dem Rekurrenten eine Verletzung des
+Migrationsrechts vorgeworfen werden kann. Der Rekurrent wird seine Rechte in
+diesem Verfahren wahren können.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>2.</b></p>
+
+<p class="T1TextAG">Daraus folgt, dass auf den Rekurs nicht eingetreten werden
+kann. Aufgrund der vorstehenden Ausführungen ist auch dem Kostenbegehren, mit
+dem auch für das vorinstanzliche Verfahren eine Parteientschädigung beantragt
+wird, die Grundlage entzogen. Bei diesem Ausgang des Verfahrens hat der
+Rekurrent die Gerichtskosten mit einer Gebühr von CHF 800.– zu tragen.</p>
+
+<p class="T1TextAG">&nbsp;</p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="T1TextAG"><b>Demgemäss erkennt das Verwaltungsgericht (Dreiergericht):</b></p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">://:        Auf den Rekurs wird nicht eingetreten.</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-.6pt;line-height:120%">Der Rekurrent trägt die Gerichtskosten des verwaltungsgerichtlichen
+Rekursverfahrens mit einer Gebühr von CHF 800.–, einschliesslich Auslagen.</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-.6pt;line-height:120%">Mitteilung an:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left:54.0pt;text-align:justify;
+text-indent:-18.0pt;line-height:120%">-<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rekurrent</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left:54.0pt;text-align:justify;
+text-indent:-18.0pt;line-height:120%">-<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Justiz- und Sicherheitsdepartement Basel-Stadt</p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left:54.0pt;text-align:justify;
+text-indent:-18.0pt;line-height:120%">-<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Regierungsrat des Kantons Basel-Stadt</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%;page-break-after:
+avoid">APPELLATIONSGERICHT BASEL-STADT</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%;page-break-after:avoid">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%;page-break-after:avoid">Der a.o. Gerichtsschreiber</p>
+
+<p class="MsoBodyText" style="text-align:justify;line-height:120%;page-break-after:
+avoid"><span style="line-height:120%">&nbsp;</span></p>
+
+<p class="MsoBodyText" style="text-align:justify;line-height:120%;page-break-after:
+avoid"><span style="line-height:120%">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%;page-break-after:avoid">MLaw Philip Vlahos</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-left:36.0pt;text-align:justify;text-indent:
+-36.0pt;line-height:120%">&nbsp;</p>
+
+<p class="T1TextAG"><b>Rechtsmittelbelehrung</b></p>
+
+<p class="T1TextAG"><b>&nbsp;</b></p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">Gegen diesen
+Entscheid kann unter den Voraussetzungen von Art. 82 ff. des Bundesgerichtsgesetzes
+(BGG) innert 30 Tagen seit schriftlicher Eröffnung <b>Beschwerde in
+öffentlich-rechtlichen Angelegenheiten</b> erhoben werden. Die
+Beschwerdeschrift ist fristgerecht dem Bundesgericht (Schweizerhofquai 6, 6004
+Luzern) einzureichen. Für die Anforderungen an deren Inhalt wird auf Art. 42
+BGG verwiesen. Über die Zulässigkeit des Rechtsmittels entscheidet das
+Bundesgericht.</p>
+
+<p class="MsoNormal" style="text-align:justify;line-height:120%">&nbsp;</p>
+
+<p class="MsoBodyTextIndent2" style="margin:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:120%">Ob an Stelle der Beschwerde in öffentlich-rechtlichen
+Angelegenheiten ein anderes Rechtsmittel in Frage kommt (z.B. die subsidiäre
+Verfassungsbeschwerde an das Bundesgericht gemäss Art. 113 BGG), ergibt sich
+aus den anwendbaren gesetzlichen Bestimmungen. Wird sowohl Beschwerde in
+öffentlich-rechtlichen Angelegenheiten als auch Verfassungsbeschwerde erhoben,
+sind beide Rechtsmittel in der gleichen Rechtsschrift einzureichen.</p>
+
+<p class="MsoBodyTextIndent2" style="margin:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:120%">&nbsp;</p>
+
+</div>
+
+
+				<br /><br />
+			</td>
+			<td width="20">&nbsp;</td>
+		</tr>
+	</table>
+	<!-- /DOCUMENT -->
+			</td>
+		</tr>
+	</table>
+	<!-- CUSTOM FOOTER (customize as you wish) -->
+	<div id="footer" class="notprintable">
+	</div>
+	<!-- /CUSTOM FOOTER -->
+</div>
+<!-- /FINDINFOWEB CONTENT PANEL -->
+</body>
+</html>

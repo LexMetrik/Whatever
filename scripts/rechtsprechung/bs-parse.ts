@@ -23,6 +23,7 @@ import { dekodiereBs, dokumentUrl } from './bs-client';
 import { rawPfad, BS_DATEN } from './bs-fetch';
 import { extrahiereBesetzung } from './bs-besetzung';
 import { gnJahr, type Inventar, type InventarZeile } from './bs-inventar';
+import { kopfDatumFund, waehleBsDatum, type BsDatumWahl, type KopfDatumFund } from './bs-datum';
 import { sha256EntscheidBloecke } from '../normtext/sha-entscheide';
 import { gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe } from '../normtext/entscheide-mapping';
 import { schreibeKorpus, ladeBestandSnapshots } from '../normtext/entscheide-schreiben';
@@ -211,6 +212,10 @@ function markeVon(e: Einheit, sektion: SektionsTyp): { marke: string; tiefe: num
 
 const trimFuehrend = (s: string): string => s.replace(/^\s+/, '');
 
+// Kopf-Datum-Regel: scripts/rechtsprechung/bs-datum.ts (hier re-exportiert, Aufrufer unverändert).
+export { kopfDatum, kopfDatumFund, plausiblesKopfDatum, waehleBsDatum, KOPF_PORTAL_FENSTER_TAGE } from './bs-datum';
+export type { KopfDatumFund, BsDatumWahl, BsDatumQuelle } from './bs-datum';
+
 export interface ParseErgebnis {
   gn: string;
   gnSekundaer: string | null;
@@ -223,6 +228,8 @@ export interface ParseErgebnis {
    * Optional, damit handgebaute Test-Ergebnisse ohne das Feld gültig bleiben.
    */
   datumKopf?: string | null;
+  /** Fundstelle des Kopf-Datums im Deckblatt (Titelzeile + Datumszeile) für die Änderungsliste. */
+  kopfFund?: KopfDatumFund | null;
   erstpublikation: string | null;
   aktualisiert: string | null;
   titel: string;
@@ -257,69 +264,40 @@ const dIso = (s: string | null): string | null => {
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 };
 
-// ─── Kopf-Datum: das Entscheiddatum aus dem Deckblatt (W2·29-WERKBANK-LESER D2/B-1) ──
-//
-// BEFUND (Prüfrunde 1, reproduziert 23.9.2026): 42 der 3'765 BS-Dokumente haben im
-// Metadaten-Kopf des Portals KEIN «Entscheiddatum» (Inventar `datum: null`). Der
-// Import führte sie darum als `datumUnbekannt` mit dem Platzhalter <GN-Jahr>-01-01
-// — und dieser Platzhalter wanderte ohne das Flag in die Bezugs-Shards, wo er als
-// echtes Datum «01.01.2024» erschien und das «revidiert»-Warnzeichen auslöste.
-// Das Datum steht aber im amtlichen Dokument selbst: das Deckblatt trägt unter der
-// Titelzeile «ENTSCHEID»/«URTEIL»/«Urteil der Präsidentin» einen eigenen Absatz
-// «vom 15. September 2025» (BES.2024.88, nF30_KEY 78827).
-//
-// DIE REGEL ist strukturell, kein Fliesstext-Raten (§1/§2): ein Absatz, der
-// VOLLSTÄNDIG aus «vom <T>. <Monat> <JJJJ>» besteht UND unmittelbar auf einen
-// Absatz folgt, der VOLLSTÄNDIG eine Entscheid-Titelzeile ist, innerhalb der
-// ersten KOPF_FENSTER Einheiten (Briefkopf-Tabelle, GN, Titel, Datum stehen real
-// an Position 3–6). Ein «vom …» im Sachverhalt ist nie ein ganzer Absatz direkt
-// nach «URTEIL» und trifft darum nicht.
-//
-// GEMESSEN 23.9.2026 (Rohdokumente frisch vom Portal): 42/42 datumlose Dokumente
-// tragen genau einen solchen Kopf; Gegenprobe an 42 Dokumenten MIT Metadaten-
-// Datum (jedes 90. des Inventars): Kopf-Datum == Metadaten-Datum in allen Fällen,
-// in denen die Regel greift (Zahl im PR-Bericht). Das Metadaten-Datum bleibt die
-// erste Quelle; das Kopf-Datum füllt nur die Lücke (`baueSnapshot`).
-const KOPF_FENSTER = 12;
-const MONATE: Record<string, string> = {
-  Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
-  Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12',
-};
-const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Urteil|Beschluss|Verfügung) de[rs] [A-ZÄÖÜ][a-zäöüß]+)$/;
-const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
-
-/** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
-const kopfText = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
-
 /**
- * Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den
- * Regressionstest; die Anwendung (nur als Lückenfüller) steht in `baueSnapshot`.
+ * Alle Inhalts-Einheiten des Bodys: ALLE WordSection-Divs in Dokument-Reihenfolge
+ * (Fidelity-Befund 19.7.2026: Word bricht bei Sektionswechseln in WordSection2/3 um —
+ * dort stehen real Dispositive und Anhänge, z. B. KE.2023.37/76512, ZB.2023.62/77467,
+ * SB.2020.87/75885; nur WordSection1 zu lesen verwarf diese Inhalte). Verschachtelte
+ * Treffer werden dedupliziert (nur Wurzeln — kein Doppelzug). Geteilt von
+ * `parseBsDokument` und `bsPortalDaten` (§5: eine Stelle).
  */
-export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | null {
-  const n = Math.min(einheiten.length, KOPF_FENSTER);
-  for (let i = 1; i < n; i++) {
-    const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
-    if (!m || !KOPF_TITEL_RE.test(kopfText(einheiten[i - 1].text))) continue;
-    const tag = m[1].padStart(2, '0');
-    const iso = `${m[3]}-${MONATE[m[2]]}-${tag}`;
-    // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
-    const d = new Date(`${iso}T00:00:00Z`);
-    if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
-    return iso;
-  }
-  return null;
+function bodyEinheiten(document: Document) {
+  const wsAlle = [...document.querySelectorAll('div')]
+    .filter((d) => /^WordSection\d+$/.test(d.getAttribute('class') ?? ''));
+  const roots = wsAlle.filter((d) => !wsAlle.some((o) => o !== d && o.contains(d)));
+  if (!roots.length) throw new Error('Body: div.WordSection1 fehlt');
+  const einheiten = roots.flatMap((r) => sammleEinheiten(r));
+  if (!einheiten.length) throw new Error('Body: keine Inhalts-Einheiten');
+  return einheiten;
 }
 
 /**
- * Plausibilitäts-Riegel für das Kopf-Datum: nicht vor dem Jahr der Geschäftsnummer
- * (Eingang), nicht nach der Erstpublikation. Scheitert er, bleibt das Datum
- * ehrlich unbekannt (Platzhalter + `datumUnbekannt`) statt geraten.
+ * Portal-Datum, Kopf-Datum und Erstpublikation einer bereits dekodierten
+ * Portal-Seite — für die Wochenlauf-Stichprobe (`pruefeBs`), die dieselbe Regel
+ * (`waehleBsDatum`) auf die frisch geholte Seite anwendet. Ohne lesbaren Body
+ * (Fragment/Hülle) bleibt `kopf` null (Rückfall Portal), nie ein Fehler.
  */
-export function plausiblesKopfDatum(kopf: string | null | undefined, gnJahrZahl: number | null, erstpublikation: string | null): string | null {
-  if (!kopf) return null;
-  if (gnJahrZahl !== null && Number(kopf.slice(0, 4)) < gnJahrZahl) return null;
-  if (erstpublikation && kopf > erstpublikation) return null;
-  return kopf;
+export function bsPortalDaten(html: string): { portal: string | null; kopf: string | null; kopfRektifikat: boolean; erstpublikation: string | null } {
+  const { document } = parseHTML(bereinigeQuellDebris(html));
+  let fund: KopfDatumFund | null;
+  try { fund = kopfDatumFund(bodyEinheiten(document)); } catch { fund = null; }
+  return {
+    portal: dIso(metaWert(document, 'Entscheiddatum')),
+    kopf: fund?.iso ?? null,
+    kopfRektifikat: !!fund?.rektifikat,
+    erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
+  };
 }
 
 /** Ein rohes BS-Dokument (windows-1252-Bytes) strukturell parsen. */
@@ -348,12 +326,7 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
   // WordSection2+3; SB.2020.87/75885: Zivilforderungs-Anhang). Nur WordSection1
   // zu lesen, verwarf diese Inhalte vollständig. Verschachtelte Treffer werden
   // dedupliziert (nur Wurzeln sammeln — kein Doppelzug).
-  const wsAlle = [...document.querySelectorAll('div')]
-    .filter((d) => /^WordSection\d+$/.test(d.getAttribute('class') ?? ''));
-  const roots = wsAlle.filter((d) => !wsAlle.some((o) => o !== d && o.contains(d)));
-  if (!roots.length) throw new Error('Body: div.WordSection1 fehlt');
-  const einheiten = roots.flatMap((r) => sammleEinheiten(r));
-  if (!einheiten.length) throw new Error('Body: keine Inhalts-Einheiten');
+  const einheiten = bodyEinheiten(document);
 
   // Spruchkörper aus dem Deckblatt-/Signatur-Block (eigener Pass, siehe unten).
   const besetzungRoh = extrahiereBesetzung(document);
@@ -487,10 +460,12 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
     }
   }
 
+  const kopfFund = kopfDatumFund(einheiten);
   return {
     gn, gnSekundaer: sekM ? sekM[1] : null, instanz, court: courtEintrag[1],
     datum: dIso(metaWert(document, 'Entscheiddatum')),
-    datumKopf: kopfDatum(einheiten),
+    datumKopf: kopfFund?.iso ?? null,
+    kopfFund,
     erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
     aktualisiert: dIso(metaWert(document, 'Aktualisierungsdatum')),
     titel, abschnitte, dispositivOrders, strukturQuelle,
@@ -528,15 +503,20 @@ export function docketSafeVergabe(
   return out;
 }
 
+/** Die Datums-Wahl eines geparsten Dokuments (eine Stelle für Import, Berichtigung, Liste — §5). */
+export function bsWahlVon(p: ParseErgebnis, abgerufen: string | null): BsDatumWahl {
+  return waehleBsDatum(p.datum, p.datumKopf ?? null, gnJahr(p.gn), p.erstpublikation, abgerufen, !!p.kopfFund?.rektifikat);
+}
+
 export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: string, abgerufen: string): EntscheidSnapshot {
   const gerichtName = gerichtAnzeigename(p.court, 'BS');
   const jahr = gnJahr(p.gn);
-  // Metadaten-Datum zuerst; fehlt es, das Deckblatt-Datum (B-1), sofern plausibel.
-  // Erst wenn beide fehlen, bleibt das Datum ehrlich unbekannt (Platzhalter + Flag).
-  const kopf = p.datum ? null : plausiblesKopfDatum(p.datumKopf, jahr, p.erstpublikation);
-  const datumlos = !p.datum && !kopf;
+  // Kopf-Datum vor Portal-Metadatum (Variante A, 4.10.2026); Rückfall Portal, dann
+  // der ehrliche Platzhalter (`datumUnbekannt`). Regel + Wächter: `waehleBsDatum`.
+  const wahl = bsWahlVon(p, abgerufen);
+  const datumlos = wahl.quelle === 'platzhalter';
   if (datumlos && !jahr) throw new Error(`${p.gn}: weder Entscheiddatum noch GN-Jahr`);
-  const datum = p.datum ?? kopf ?? `${jahr}-01-01`;
+  const datum = wahl.datum;
   const sachgebiet: Rechtsgebiet = kantonalSachgebiet(p.gn) ?? 'oeffentlich';
   const snap: EntscheidSnapshot = {
     id: `kanton/BS/${p.court}/${docketSafe}`,
@@ -574,6 +554,8 @@ export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: str
     sha: sha256EntscheidBloecke(p.abschnitte),
   };
   if (datumlos) snap.datumUnbekannt = true;
+  if (wahl.datumPortal) snap.datumPortal = wahl.datumPortal;
+  if (wahl.datumKopfAbweichend) snap.datumKopfAbweichend = wahl.datumKopfAbweichend;
   if (p.erstpublikation) snap.erstpublikation = p.erstpublikation;
   if (p.aktualisiert) snap.aktualisiert = p.aktualisiert;
   if (p.gnSekundaer) snap.nummerSekundaer = p.gnSekundaer;

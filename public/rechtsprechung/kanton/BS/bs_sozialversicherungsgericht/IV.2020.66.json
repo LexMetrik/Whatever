@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2020.66",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "IV.2020.66",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS IV.2020.66 vom 02.06.2022",
-      "datum": "2022-06-02",
+      "zitierung": "Sozialversicherungsgericht BS IV.2020.66 vom 02.07.2022",
+      "datum": "2022-07-02",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -276,13 +276,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73704&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2022-09-21",
       "sha": "efea486d2fce330b014404972bc203bf0057b2ef3aa04384c8e29967ed11c49b",
       "erstpublikation": "2022-09-21",
       "aktualisiert": "2022-09-21",
       "nummerSekundaer": "SVG.2022.146",
-      "ecli": "ECLI:CH:BSS:2022:IV.2020.66"
+      "ecli": "ECLI:CH:BSS:2022:IV.2020.66",
+      "datumPortal": "2022-06-02"
     }
   ]
 }

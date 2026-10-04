@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/AUS.2023.24",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "AUS.2023.24",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS AUS.2023.24 vom 26.05.2023",
-      "datum": "2023-05-26",
+      "zitierung": "Appellationsgericht BS AUS.2023.24 vom 31.05.2023",
+      "datum": "2023-05-31",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -206,13 +206,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=75220&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-06-02",
       "sha": "17a4ecc526ee7cc7fb827da7ca390fdf0a51aefa18ac0ca8f15cb67a9c3cae6e",
       "erstpublikation": "2023-06-02",
       "aktualisiert": "2023-06-02",
       "nummerSekundaer": "AG.2023.337",
-      "ecli": "ECLI:CH:BSA:2023:AUS.2023.24"
+      "ecli": "ECLI:CH:BSA:2023:AUS.2023.24",
+      "datumPortal": "2023-05-26"
     }
   ]
 }

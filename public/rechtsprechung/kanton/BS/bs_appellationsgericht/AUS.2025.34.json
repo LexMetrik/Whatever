@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/AUS.2025.34",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "AUS.2025.34",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS AUS.2025.34 vom 31.03.2025",
-      "datum": "2025-03-31",
+      "zitierung": "Appellationsgericht BS AUS.2025.34 vom 01.04.2025",
+      "datum": "2025-04-01",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -166,13 +166,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78200&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2025-04-15",
       "sha": "153aada07e629b0c662ae55aeb87facb0993a089ca4b9b361dd2862b0037d41f",
       "erstpublikation": "2025-04-15",
       "aktualisiert": "2025-04-15",
       "nummerSekundaer": "AG.2025.179",
-      "ecli": "ECLI:CH:BSA:2025:AUS.2025.34"
+      "ecli": "ECLI:CH:BSA:2025:AUS.2025.34",
+      "datumPortal": "2025-03-31"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZK.2020.3",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "ZK.2020.3",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS ZK.2020.3 vom 23.04.2024",
-      "datum": "2024-04-23",
+      "zitierung": "Appellationsgericht BS ZK.2020.3 vom 25.04.2024",
+      "datum": "2024-04-25",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -309,13 +309,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77411&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2025-07-02",
       "sha": "7ff36f014781f0d9e1f6491354146e835e798616122dec58cd00c311cbe90ead",
       "erstpublikation": "2025-07-02",
       "aktualisiert": "2025-07-02",
       "nummerSekundaer": "AG.2024.546",
-      "ecli": "ECLI:CH:BSA:2024:ZK.2020.3"
+      "ecli": "ECLI:CH:BSA:2024:ZK.2020.3",
+      "datumPortal": "2024-04-23"
     }
   ]
 }

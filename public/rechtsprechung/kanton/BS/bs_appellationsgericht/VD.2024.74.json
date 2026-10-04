@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2024.74",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "VD.2024.74",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS VD.2024.74 vom 24.09.2025",
-      "datum": "2025-09-24",
+      "zitierung": "Appellationsgericht BS VD.2024.74 vom 25.09.2025",
+      "datum": "2025-09-25",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -366,13 +366,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79173&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-06-25",
       "sha": "e035cea84bcaa5d283076877a96786cc849ae22b4bd3b32be5fceda2249c9bb6",
       "erstpublikation": "2026-06-25",
       "aktualisiert": "2026-06-25",
       "nummerSekundaer": "AG.2026.11",
-      "ecli": "ECLI:CH:BSA:2025:VD.2024.74"
+      "ecli": "ECLI:CH:BSA:2025:VD.2024.74",
+      "datumPortal": "2025-09-24"
     }
   ]
 }

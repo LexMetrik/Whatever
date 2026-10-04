@@ -461,3 +461,13 @@ const SUCHE_MIN_ZEICHEN = 2;
 export function sucheWirksam(suche: string): boolean {
   return suche.trim().length >= SUCHE_MIN_ZEICHEN;
 }
+
+/**
+ * §8-Hinweis zum Entscheiddatum (Entscheid David 4.10.2026, «jeweils hinweis wenn es abweicht»):
+ * der Snapshot trägt `datumPortal` (Kopf angezeigt, Quelle nennt ein anderes) oder
+ * `datumKopfAbweichend` (Quelle angezeigt, Kopf nennt ein anderes, Verdacht). Beim datumlosen
+ * Platzhalter nie.
+ */
+export function hatDatumHinweis(snap: { datumUnbekannt?: true; datumPortal?: string; datumKopfAbweichend?: string }): boolean {
+  return !snap.datumUnbekannt && !!(snap.datumPortal || snap.datumKopfAbweichend);
+}

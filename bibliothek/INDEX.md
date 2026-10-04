@@ -137,6 +137,9 @@ unzuverlässig (GR 6/6, BE 5/12, SG 6/6, AG 5/6 falsch; ZH/Bund korrekt); Regel 
 (eigener Titel > Plattform-Feld > PDF-Kopf > decision_date), Bestand via `--kopfdatum-refresh` (22
 korrigiert). SG-Plattform weicht 2× vom eigenen Kopf ab (BV 2024/21, UV 2025/14). Pflege: neue
 Kopfformen als Fixture. Abnahme David offen.
+Ergänzung 4.10.2026: Basel-Stadt gleiche Regel (Kopf vor Portal-Metadatum; 263 Bestandsdaten berichtigt,
+32 Verdachtsfälle mit Hinweis, Liste [rechtsprechung/bs-datum-kopf-2026-10-04.md](rechtsprechung/bs-datum-kopf-2026-10-04.md)),
+Hinweis-Felder `datumPortal` («Datum laut Urteilskopf; … nennt den …») und `datumKopfAbweichend` für BS und die OCL-Kantone.
 
 **Sprach-Homonyme bei Erlass-Kürzeln (QS-KORPUS):** [rechtsprechung/sprach-homonyme-abkuerzungen-2026-09-25.md](rechtsprechung/sprach-homonyme-abkuerzungen-2026-09-25.md) —
 Quelle Fedlex-SPARQL `jolux:titleShort`, Stand 25.9.2026. AIMP (it = IRSG, fr = IVöB) und OCP

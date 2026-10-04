@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/SB.2018.43",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "SB.2018.43",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS SB.2018.43 vom 10.06.2024",
-      "datum": "2024-06-10",
+      "zitierung": "Appellationsgericht BS SB.2018.43 vom 28.06.2024",
+      "datum": "2024-06-28",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "straf",
@@ -216,13 +216,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77086&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2025-02-27",
       "sha": "c19f9f5d7a242ba780d87472c38a0287ed2b79e6138494f87a15f89595902aa0",
       "erstpublikation": "2025-02-27",
       "aktualisiert": "2025-02-27",
       "nummerSekundaer": "AG.2024.414",
-      "ecli": "ECLI:CH:BSA:2024:SB.2018.43"
+      "ecli": "ECLI:CH:BSA:2024:SB.2018.43",
+      "datumPortal": "2024-06-10"
     }
   ]
 }

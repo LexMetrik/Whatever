@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/AH.2024.9",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "AH.2024.9",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS AH.2024.9 vom 14.04.2026",
-      "datum": "2026-04-14",
+      "zitierung": "Sozialversicherungsgericht BS AH.2024.9 vom 02.06.2026",
+      "datum": "2026-06-02",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -259,13 +259,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79861&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-07-25",
       "sha": "52adb551eace86eaf3174f72888995192d90122d20d0586e6fded8f7cbead461",
       "erstpublikation": "2026-07-24",
       "aktualisiert": "2026-07-25",
       "nummerSekundaer": "SVG.2026.132",
-      "ecli": "ECLI:CH:BSS:2026:AH.2024.9"
+      "ecli": "ECLI:CH:BSS:2026:AH.2024.9",
+      "datumPortal": "2026-04-14"
     }
   ]
 }
