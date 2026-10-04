@@ -218,7 +218,7 @@
  ],
  "artikel": {
   "1": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "inkraft",
@@ -235,7 +235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Betreibungs- und Konkurskreise"
     }
    ]
   },
@@ -8237,7 +8238,7 @@
    ]
   },
   "299": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8272,7 +8273,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Inventar und Pfandschätzung"
     }
    ],
    "erbt": [
@@ -8332,7 +8334,7 @@
    ]
   },
   "302": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8349,7 +8351,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "F. Gläubigerversammlung"
     }
    ],
    "erbt": [
@@ -8357,7 +8360,7 @@
    ]
   },
   "303": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8374,7 +8377,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Rechte gegen Mitverpflichtete"
     }
    ],
    "erbt": [
@@ -8382,7 +8386,7 @@
    ]
   },
   "304": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8399,7 +8403,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "H. Sachwalterbericht; öffentliche Bekanntmachung der Verhandlung vor dem Nachlassgericht"
     }
    ],
    "erbt": [

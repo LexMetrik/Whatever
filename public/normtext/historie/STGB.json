@@ -7316,7 +7316,7 @@
    "aufgehobenSeit": "2008-12-05"
   },
   "350": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7333,7 +7333,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Zuständigkeit"
     }
    ],
    "erbt": [
@@ -7342,7 +7343,7 @@
    ]
   },
   "351": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7359,7 +7360,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "b. Aufgaben"
     }
    ],
    "erbt": [
@@ -7402,7 +7404,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "c. Datenschutz"
     }
    ],
    "erbt": [
@@ -7411,7 +7414,7 @@
    ]
   },
   "353": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7428,7 +7431,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "d. Finanzhilfen und Abgeltungen"
     }
    ],
    "erbt": [
@@ -10827,7 +10831,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "a. Datenaustausch"
     }
    ],
    "erbt": [
@@ -10836,7 +10841,7 @@
    ]
   },
   "355_b": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -10870,7 +10875,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "b. Mandatserweiterung"
     }
    ],
    "erbt": [

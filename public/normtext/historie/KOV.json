@@ -153,7 +153,7 @@
    ]
   },
   "11": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -175,7 +175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "d. Edition"
     }
    ]
   },
@@ -1565,7 +1566,7 @@
    "aufgehobenSeit": "1997-01-01"
   },
   "95": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1578,7 +1579,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Einfluss von Prozessen nach Art. 260 SchKG"
     }
    ],
    "erbt": [
