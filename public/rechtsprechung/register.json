@@ -2,6 +2,69 @@
   "erzeugt": "2026-10-04",
   "entscheide": [
     {
+      "key": "bs_appellationsgericht_AUS.2026.85",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.85",
+      "bgeReferenz": null,
+      "datum": "2026-10-01",
+      "zitierung": "Appellationsgericht BS AUS.2026.85 vom 01.10.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Ausschaffungshaft",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.85.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80112&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "jucker-beat",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_AUS.2026.80",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "AUS.2026.80",
+      "bgeReferenz": null,
+      "datum": "2026-09-30",
+      "zitierung": "Appellationsgericht BS AUS.2026.80 vom 30.09.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Ausschaffungshaft",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG",
+        "STGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.80.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80115&Template=search_result_document.html",
+      "fassungsToken": "2026-10-03",
+      "richter": [
+        {
+          "s": "zurcher-alexander",
+          "r": "vorsitz"
+        }
+      ]
+    },
+    {
       "key": "gr_gerichte_SBK202616",
       "gericht": "gr_gerichte",
       "gerichtName": "Kantonsgericht GR",
@@ -2599,6 +2662,53 @@
       "fassungsToken": "a25d8fb5ba0fe2ebadf0c50b25741962a655c7f8df1da573c9710aa7389d18ba"
     },
     {
+      "key": "bs_appellationsgericht_VD.2025.73",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "VD.2025.73",
+      "bgeReferenz": null,
+      "datum": "2026-08-05",
+      "zitierung": "Appellationsgericht BS VD.2025.73 vom 05.08.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Polizeieinsatz vom 8. März 2023 (Beschwerde beim BGer hängig)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "ZGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.73.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79969&Template=search_result_document.html",
+      "fassungsToken": "2026-09-30",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "dillena-anja",
+          "r": "mitglied"
+        },
+        {
+          "s": "manyoki-martin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.64",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -2825,7 +2935,7 @@
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.63.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79890&Template=search_result_document.html",
-      "fassungsToken": "2026-08-06",
+      "fassungsToken": "2026-10-03",
       "richter": [
         {
           "s": "jucker-beat",
@@ -3756,6 +3866,53 @@
         },
         {
           "s": "wepfer-l",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_zivilgericht_GS.2024.38",
+      "gericht": "bs_zivilgericht",
+      "gerichtName": "Zivilgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "GS.2024.38",
+      "bgeReferenz": null,
+      "datum": "2026-06-18",
+      "zitierung": "Zivilgericht BS GS.2024.38 vom 18.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "(nicht rechtskräftig)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "IPRG",
+        "LUGUE",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_zivilgericht/GS.2024.38.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80116&Template=search_result_document.html",
+      "fassungsToken": "2026-10-03",
+      "richter": [
+        {
+          "s": "muller-p",
+          "r": "vorsitz"
+        },
+        {
+          "s": "eisenhart-a-k",
+          "r": "mitglied"
+        },
+        {
+          "s": "bachofer-martin-l",
+          "r": "mitglied"
+        },
+        {
+          "s": "ursprung-roosli-a",
           "r": "gerichtsschreiber"
         }
       ]
@@ -5467,6 +5624,50 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_BEZ.2026.7",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BEZ.2026.7",
+      "bgeReferenz": null,
+      "datum": "2026-05-21",
+      "zitierung": "Appellationsgericht BS BEZ.2026.7 vom 21.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Forderung aus Arbeitsvertrag",
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.7.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79674&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "steiner-olivier",
+          "r": "vorsitz"
+        },
+        {
+          "s": "gelzer-claudius",
+          "r": "mitglied"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "be_verwaltungsgericht_2002026230",
       "gericht": "be_verwaltungsgericht",
       "gerichtName": "Verwaltungsgericht BE",
@@ -5787,6 +5988,79 @@
         },
         {
           "s": "manyoki-martin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2025.36",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2025.36",
+      "bgeReferenz": null,
+      "datum": "2026-05-18",
+      "zitierung": "Appellationsgericht BS BES.2025.36 vom 18.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Verfahrenseinstellungen (Beschwerde am BG hängig)",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.36.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79643&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "hauenstein-pascal",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2026.49",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2026.49",
+      "bgeReferenz": null,
+      "datum": "2026-05-18",
+      "zitierung": "Appellationsgericht BS BES.2026.49 vom 18.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2026.49.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79656&Template=search_result_document.html",
+      "fassungsToken": "2026-09-29",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "juhasz-julian",
           "r": "gerichtsschreiber"
         }
       ]
@@ -6742,6 +7016,43 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_BES.2025.117",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2025.117",
+      "bgeReferenz": null,
+      "datum": "2026-05-06",
+      "zitierung": "Appellationsgericht BS BES.2025.117 vom 06.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Nichtigkeit des Strafbefehls und Aktenführung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.117.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79589&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_ZB.2025.23",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -7482,6 +7793,50 @@
         },
         {
           "s": "spring-andrin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_VD.2025.203",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "VD.2025.203",
+      "bgeReferenz": null,
+      "datum": "2026-04-27",
+      "zitierung": "Appellationsgericht BS VD.2025.203 vom 27.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Grenzgängerbewilligung",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG",
+        "BGG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.203.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79569&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "equey-andre",
+          "r": "mitglied"
+        },
+        {
+          "s": "dillena-anja",
+          "r": "mitglied"
+        },
+        {
+          "s": "menzinger-david",
           "r": "gerichtsschreiber"
         }
       ]
@@ -9071,6 +9426,50 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_VD.2025.146",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "VD.2025.146",
+      "bgeReferenz": null,
+      "datum": "2026-04-06",
+      "zitierung": "Appellationsgericht BS VD.2025.146 vom 06.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Strafverbüssung in Form der elektronischen Überwachung (Beschwerde beim Bundesgericht hängig)",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/VD.2025.146.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79598&Template=search_result_document.html",
+      "fassungsToken": "2026-09-29",
+      "richter": [
+        {
+          "s": "wullschleger-stephan",
+          "r": "vorsitz"
+        },
+        {
+          "s": "oser-marc",
+          "r": "mitglied"
+        },
+        {
+          "s": "weber-jonas",
+          "r": "mitglied"
+        },
+        {
+          "s": "macula-laura",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.28",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -9138,6 +9537,42 @@
       ]
     },
     {
+      "key": "bs_appellationsgericht_BES.2025.100",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2025.100",
+      "bgeReferenz": null,
+      "datum": "2026-04-01",
+      "zitierung": "Appellationsgericht BS BES.2025.100 vom 01.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Abwesenheit an der Hauptverhandlung vom 8. September 2025",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.100.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79505&Template=search_result_document.html",
+      "fassungsToken": "2026-09-30",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "hauenstein-pascal",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
       "key": "bs_appellationsgericht_BES.2025.128",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -9169,6 +9604,43 @@
         },
         {
           "s": "spring-andrin",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2025.105",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2025.105",
+      "bgeReferenz": null,
+      "datum": "2026-04-01",
+      "zitierung": "Appellationsgericht BS BES.2025.105 vom 01.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Rechtsverzögerung und Rechtsverweigerung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2025.105.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79504&Template=search_result_document.html",
+      "fassungsToken": "2026-10-02",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "menzinger-david",
           "r": "gerichtsschreiber"
         }
       ]
@@ -11351,7 +11823,7 @@
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.10.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80007&Template=search_result_document.html",
-      "fassungsToken": "2026-09-19",
+      "fassungsToken": "2026-09-29",
       "richter": [
         {
           "s": "schnyder-r",
@@ -11562,7 +12034,7 @@
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.42.json",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79440&Template=search_result_document.html",
-      "fassungsToken": "2026-07-30",
+      "fassungsToken": "2026-10-02",
       "richter": [
         {
           "s": "oser-marc",
@@ -13780,6 +14252,52 @@
         },
         {
           "s": "von-sprecher-stephanie",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_sozialversicherungsgericht_IV.2025.44",
+      "gericht": "bs_sozialversicherungsgericht",
+      "gerichtName": "Sozialversicherungsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "IV.2025.44",
+      "bgeReferenz": null,
+      "datum": "2026-02-11",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.44 vom 11.02.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "IVG",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.44.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80039&Template=search_result_document.html",
+      "fassungsToken": "2026-09-30",
+      "richter": [
+        {
+          "s": "thomi-g",
+          "r": "vorsitz"
+        },
+        {
+          "s": "prack-hoenen-m",
+          "r": "mitglied"
+        },
+        {
+          "s": "von-aarburg-r",
+          "r": "mitglied"
+        },
+        {
+          "s": "wepfer-l",
           "r": "gerichtsschreiber"
         }
       ]
@@ -20044,6 +20562,42 @@
         "ansicht": "voll",
         "bgeReferenz": "152 II 437"
       }
+    },
+    {
+      "key": "bs_appellationsgericht_DGS.2025.34",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "DGS.2025.34",
+      "bgeReferenz": null,
+      "datum": "2025-12-22",
+      "zitierung": "Appellationsgericht BS DGS.2025.34 vom 22.12.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Wiederherstellung der Frist zur Berufungsanmeldung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/DGS.2025.34.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79538&Template=search_result_document.html",
+      "fassungsToken": "2026-09-29",
+      "richter": [
+        {
+          "s": "oser-marc",
+          "r": "vorsitz"
+        },
+        {
+          "s": "menzinger-david",
+          "r": "gerichtsschreiber"
+        }
+      ]
     },
     {
       "key": "bs_appellationsgericht_AUS.2025.144",
@@ -33561,44 +34115,6 @@
       }
     },
     {
-      "key": "bs_appellationsgericht_BES.2024.85",
-      "gericht": "bs_appellationsgericht",
-      "gerichtName": "Appellationsgericht BS",
-      "gerichtstyp": "kantonal",
-      "kanton": "BS",
-      "nummer": "BES.2024.85",
-      "bgeReferenz": null,
-      "datum": "2025-09-16",
-      "zitierung": "Appellationsgericht BS BES.2024.85 vom 16.09.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": "Anonymisierung von Adresse und Kontoverbindungen eines Zeugen, Zeugenentschädigung",
-      "sachgebiet": "straf",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "BV",
-        "OR",
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BS/bs_appellationsgericht/BES.2024.85.json",
-      "quelle": "gerichte-bs",
-      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78814&Template=search_result_document.html",
-      "fassungsToken": "2026-07-16",
-      "richter": [
-        {
-          "s": "hoenen-christian",
-          "r": "vorsitz"
-        },
-        {
-          "s": "christ-lorena",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
       "key": "bs_appellationsgericht_SB.2025.50",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -33637,6 +34153,44 @@
         },
         {
           "s": "noser-dussy-barbara",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bs_appellationsgericht_BES.2024.85",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "nummer": "BES.2024.85",
+      "bgeReferenz": null,
+      "datum": "2025-09-16",
+      "zitierung": "Appellationsgericht BS BES.2024.85 vom 16.09.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": "Anonymisierung von Adresse und Kontoverbindungen eines Zeugen, Zeugenentschädigung",
+      "sachgebiet": "straf",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BS/bs_appellationsgericht/BES.2024.85.json",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78814&Template=search_result_document.html",
+      "fassungsToken": "2026-07-16",
+      "richter": [
+        {
+          "s": "hoenen-christian",
+          "r": "vorsitz"
+        },
+        {
+          "s": "christ-lorena",
           "r": "gerichtsschreiber"
         }
       ]

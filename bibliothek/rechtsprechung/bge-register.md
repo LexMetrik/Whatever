@@ -1,6 +1,6 @@
 # Rechtsprechungs-Register — alle zitierten Bundesgerichtsentscheide
 
-Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-09-28
+Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-10-03
 
 **Quelle + Stand:** SSoT ist `src/data/verifikation.ts` (93 Einträge);
 Links deterministisch aus `src/lib/bge.ts`. **URL-Schemata empirisch verifiziert**
@@ -125,7 +125,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 | BGE 81 II 56 | Prüf- und Rügeobliegenheit (Art. 201 OR) gilt analog beim Grundstückkauf und für zugesicherte Eigenschaften. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F81-II-56%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 98 II 191 | Massstab der sofortigen Mängelrüge; wenige Kalendertage nach Kenntnis genügen stets. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F98-II-191%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 
-## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (60)
+## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (62)
 
 - **1A.122/2005** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **1B_154/2007** — src/lib/strafRechtsmittel.ts
@@ -142,6 +142,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 - **7B_950/2024** — src/lib/rechtsprechung/besetzung/parser.ts
 - **8C_317/2021** — src/lib/kuendigungsfrist.ts
 - **9C_396/2018** — src/data/zpoFeiertage.ts · src/lib/bgerRechtsweg.ts · src/lib/bggVwvgFristen.ts
+- **9C_84/2023** — src/pages/gesetz-leser/v3/PanelEntscheideKontext.ts
 - **BGE 100 Ia 305** — src/lib/gerichtszitat.ts
 - **BGE 104 II 265** — src/lib/gewaehrleistung.ts
 - **BGE 115 II 464** — src/lib/vorlagen/auftrag.ts
@@ -170,6 +171,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 - **BGE 149 I 343** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **BGE 150 II 379** — src/components/rechtsprechung/EntscheidBody.tsx
 - **BGE 150 III 137** — src/lib/rechtsprechung/browse.ts
+- **BGE 150 III 160** — src/pages/gesetz-leser/artikelBezeichnung.ts
 - **BGE 150 III 34** — src/lib/suche/bgeQuery.ts
 - **BGE 150 III 38** — src/lib/suche/bgeQuery.ts
 - **BGE 150 III 385** — src/lib/suche/bgeQuery.ts

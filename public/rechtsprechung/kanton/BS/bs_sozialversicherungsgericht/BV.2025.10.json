@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-03",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.10",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der Versicherungszeit beeinflusst?",
+        "gegenstand": "Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der Versicherungszeit beeinflusst? (Beschwerde beim Bundesgericht hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, S. Schenker und Gerichtsschreiberin lic. iur. H. Hofer"
@@ -265,11 +265,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=80007&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
-      "fassungsToken": "2026-09-19",
+      "abgerufen": "2026-10-03",
+      "fassungsToken": "2026-09-29",
       "sha": "ddd74d84631f535ee919632d40b51d1bae8cd967eaf3bb2f85a77eda17e51eb4",
       "erstpublikation": "2026-09-10",
-      "aktualisiert": "2026-09-19",
+      "aktualisiert": "2026-09-29",
       "nummerSekundaer": "SVG.2026.147",
       "ecli": "ECLI:CH:BSS:2026:BV.2025.10"
     }
