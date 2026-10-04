@@ -5,7 +5,7 @@
     "entstehung": "2026-10-01",
     "synopse": "2026-09-12",
     "curia": "2026-10-01",
-    "provenienz": "2026-09-25",
+    "provenienz": "2026-10-01",
     "normtext": "2026-10-01"
   },
   "ebenen": {
@@ -24,23 +24,23 @@
     "verfahrenBund": {
       "haben": 409,
       "gesamt": null,
-      "stand": "2026-09-25",
+      "stand": "2026-10-01",
       "quelle": "Parlamentsdienste der Bundesversammlung, Bern (Curia Vista)"
     },
     "verfahrenBs": {
-      "haben": 114,
-      "gesamt": 117,
-      "stand": "2026-09-25",
+      "haben": 115,
+      "gesamt": 118,
+      "stand": "2026-10-01",
       "quelle": "Grosser Rat des Kantons Basel-Stadt (grosserrat.bs.ch)"
     },
     "bsKanten": {
       "amtlich": 8,
-      "maschinell": 114
+      "maschinell": 115
     },
     "zh": {
       "haben": 0,
       "gesamt": null,
-      "stand": "2026-09-25",
+      "stand": "2026-10-01",
       "quelle": "Kantonsrat Zürich — noch nicht erschlossen"
     }
   },

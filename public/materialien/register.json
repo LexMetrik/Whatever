@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-01",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -38217,6 +38217,29 @@
       }
     },
     {
+      "key": "BS-GR-26.1358",
+      "behoerde": "BS-GR",
+      "behoerdeName": "Grosser Rat des Kantons Basel-Stadt",
+      "behoerdeKuerzel": "GR BS",
+      "doktyp": "ratschlag",
+      "doktypLabel": "Ratschlag",
+      "titel": "Zehnte Rahmenausgabenbewilligung (RAB) für Staatsbeiträge in den Jahren 2026-2029 gemäss Gesetz über den Denkmalschutz vom 20. März 1980",
+      "nummer": "26.1358",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://grosserrat.bs.ch/?gnr=26.1358",
+      "stand": "2026-09-23",
+      "rang": 1,
+      "normKeys": [
+        "BS-497.100"
+      ],
+      "hinweis": "Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.",
+      "bsZuordnung": {
+        "BS-497.100": "maschinell"
+      }
+    },
+    {
       "key": "BS-GR-24.1692",
       "behoerde": "BS-GR",
       "behoerdeName": "Grosser Rat des Kantons Basel-Stadt",
@@ -38230,7 +38253,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=24.1692",
       "stand": "2026-08-12",
-      "rang": 1,
+      "rang": 2,
       "normKeys": [
         "BS-132.100"
       ],
@@ -38253,7 +38276,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=26.0600",
       "stand": "2026-06-17",
-      "rang": 2,
+      "rang": 3,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38276,7 +38299,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=26.0321",
       "stand": "2026-04-29",
-      "rang": 3,
+      "rang": 4,
       "normKeys": [
         "BS-861.500"
       ],
@@ -38299,7 +38322,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=26.0508",
       "stand": "2026-04-15",
-      "rang": 4,
+      "rang": 5,
       "normKeys": [
         "BS-494.300"
       ],
@@ -38322,7 +38345,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=25.1222",
       "stand": "2025-10-15",
-      "rang": 5,
+      "rang": 6,
       "normKeys": [
         "BS-610.500"
       ],
@@ -38345,7 +38368,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=25.1370",
       "stand": "2025-09-17",
-      "rang": 6,
+      "rang": 7,
       "normKeys": [
         "BS-162.100"
       ],
@@ -38368,7 +38391,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=25.0675",
       "stand": "2025-05-28",
-      "rang": 7,
+      "rang": 8,
       "normKeys": [
         "BS-164.100"
       ],
@@ -38391,7 +38414,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=25.0082",
       "stand": "2025-02-05",
-      "rang": 8,
+      "rang": 9,
       "normKeys": [
         "BS-410.100"
       ],
@@ -38414,7 +38437,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=24.1746",
       "stand": "2024-12-11",
-      "rang": 9,
+      "rang": 10,
       "normKeys": [
         "BS-820.100"
       ],
@@ -38437,7 +38460,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=24.0748",
       "stand": "2024-06-05",
-      "rang": 10,
+      "rang": 11,
       "normKeys": [
         "BS-164.100"
       ],
@@ -38460,7 +38483,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.1247",
       "stand": "2024-04-10",
-      "rang": 11,
+      "rang": 12,
       "normKeys": [
         "BS-119.500"
       ],
@@ -38483,7 +38506,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=23.0859",
       "stand": "2023-11-15",
-      "rang": 12,
+      "rang": 13,
       "normKeys": [
         "BS-300.100"
       ],
@@ -38506,7 +38529,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=23.1410",
       "stand": "2023-10-18",
-      "rang": 13,
+      "rang": 14,
       "normKeys": [
         "BS-410.100"
       ],
@@ -38529,7 +38552,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=23.1307",
       "stand": "2023-09-13",
-      "rang": 14,
+      "rang": 15,
       "normKeys": [
         "BS-410.100"
       ],
@@ -38552,7 +38575,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=22.1784",
       "stand": "2023-01-11",
-      "rang": 15,
+      "rang": 16,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38575,7 +38598,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=22.0538",
       "stand": "2022-05-04",
-      "rang": 16,
+      "rang": 17,
       "normKeys": [
         "BS-497.100"
       ],
@@ -38598,7 +38621,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=22.0168",
       "stand": "2022-02-23",
-      "rang": 17,
+      "rang": 18,
       "normKeys": [
         "BS-563.100"
       ],
@@ -38621,7 +38644,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.1809",
       "stand": "2022-01-19",
-      "rang": 18,
+      "rang": 19,
       "normKeys": [
         "BS-915.200"
       ],
@@ -38644,7 +38667,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.1696",
       "stand": "2021-12-08",
-      "rang": 19,
+      "rang": 20,
       "normKeys": [
         "BS-772.300"
       ],
@@ -38667,7 +38690,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.1239",
       "stand": "2021-09-29",
-      "rang": 20,
+      "rang": 21,
       "normKeys": [
         "BS-153.260"
       ],
@@ -38690,7 +38713,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.1675",
       "stand": "2021-05-26",
-      "rang": 21,
+      "rang": 22,
       "normKeys": [
         "BS-442.400"
       ],
@@ -38713,7 +38736,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.0550",
       "stand": "2021-05-12",
-      "rang": 22,
+      "rang": 23,
       "normKeys": [
         "BS-371.100"
       ],
@@ -38736,7 +38759,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.0406",
       "stand": "2021-04-21",
-      "rang": 23,
+      "rang": 24,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38759,7 +38782,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.1734",
       "stand": "2020-12-16",
-      "rang": 24,
+      "rang": 25,
       "normKeys": [
         "BS-510.100"
       ],
@@ -38782,7 +38805,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.0651",
       "stand": "2020-08-26",
-      "rang": 25,
+      "rang": 26,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38805,7 +38828,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.1038",
       "stand": "2020-08-12",
-      "rang": 26,
+      "rang": 27,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38828,7 +38851,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.0944",
       "stand": "2020-06-01",
-      "rang": 27,
+      "rang": 28,
       "normKeys": [
         "BS-610.500"
       ],
@@ -38851,7 +38874,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=20.0533",
       "stand": "2020-04-08",
-      "rang": 28,
+      "rang": 29,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38874,7 +38897,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=19.1830",
       "stand": "2020-01-08",
-      "rang": 29,
+      "rang": 30,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38897,7 +38920,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=19.1517",
       "stand": "2019-11-06",
-      "rang": 30,
+      "rang": 31,
       "normKeys": [
         "BS-561.100"
       ],
@@ -38920,7 +38943,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=19.0843",
       "stand": "2019-06-19",
-      "rang": 31,
+      "rang": 32,
       "normKeys": [
         "BS-640.100"
       ],
@@ -38943,7 +38966,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.0206",
       "stand": "2018-12-12",
-      "rang": 32,
+      "rang": 33,
       "normKeys": [
         "BS-780.100"
       ],
@@ -38966,7 +38989,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.1625",
       "stand": "2018-11-28",
-      "rang": 33,
+      "rang": 34,
       "normKeys": [
         "BS-300.100"
       ],
@@ -38989,7 +39012,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.0919",
       "stand": "2018-07-04",
-      "rang": 34,
+      "rang": 35,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39012,7 +39035,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.0541",
       "stand": "2018-05-09",
-      "rang": 35,
+      "rang": 36,
       "normKeys": [
         "BS-497.100"
       ],
@@ -39035,7 +39058,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.0110",
       "stand": "2018-02-07",
-      "rang": 36,
+      "rang": 37,
       "normKeys": [
         "BS-331.100"
       ],
@@ -39058,7 +39081,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=18.0111",
       "stand": "2018-02-07",
-      "rang": 37,
+      "rang": 38,
       "normKeys": [
         "BS-300.100"
       ],
@@ -39081,7 +39104,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.1961",
       "stand": "2017-12-20",
-      "rang": 38,
+      "rang": 39,
       "normKeys": [
         "BS-772.300"
       ],
@@ -39104,7 +39127,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.0752",
       "stand": "2017-10-31",
-      "rang": 39,
+      "rang": 40,
       "normKeys": [
         "BS-772.300"
       ],
@@ -39127,7 +39150,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.1203",
       "stand": "2017-08-21",
-      "rang": 40,
+      "rang": 41,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39150,7 +39173,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.0998",
       "stand": "2017-07-05",
-      "rang": 41,
+      "rang": 42,
       "normKeys": [
         "BS-153.260"
       ],
@@ -39173,7 +39196,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.0670",
       "stand": "2017-05-03",
-      "rang": 42,
+      "rang": 43,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39196,7 +39219,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.0347",
       "stand": "2017-03-10",
-      "rang": 43,
+      "rang": 44,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39219,7 +39242,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=17.0067",
       "stand": "2017-01-18",
-      "rang": 44,
+      "rang": 45,
       "normKeys": [
         "BS-811.100"
       ],
@@ -39242,7 +39265,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=16.1509",
       "stand": "2016-09-28",
-      "rang": 45,
+      "rang": 46,
       "normKeys": [
         "BS-300.100"
       ],
@@ -39265,7 +39288,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=16.0736",
       "stand": "2016-05-24",
-      "rang": 46,
+      "rang": 47,
       "normKeys": [
         "BS-162.100"
       ],
@@ -39288,7 +39311,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=16.0479",
       "stand": "2016-04-26",
-      "rang": 47,
+      "rang": 48,
       "normKeys": [
         "BS-151.200"
       ],
@@ -39311,7 +39334,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=16.0252",
       "stand": "2016-03-01",
-      "rang": 48,
+      "rang": 49,
       "normKeys": [
         "BS-371.100"
       ],
@@ -39334,7 +39357,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=16.0031",
       "stand": "2016-01-12",
-      "rang": 49,
+      "rang": 50,
       "normKeys": [
         "BS-132.100"
       ],
@@ -39357,7 +39380,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=15.1353",
       "stand": "2015-09-29",
-      "rang": 50,
+      "rang": 51,
       "normKeys": [
         "BS-132.100"
       ],
@@ -39380,7 +39403,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=15.1308",
       "stand": "2015-09-09",
-      "rang": 51,
+      "rang": 52,
       "normKeys": [
         "BS-420.200"
       ],
@@ -39403,7 +39426,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=15.1315",
       "stand": "2015-09-02",
-      "rang": 52,
+      "rang": 53,
       "normKeys": [
         "BS-410.100"
       ],
@@ -39426,7 +39449,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=15.1159",
       "stand": "2015-08-18",
-      "rang": 53,
+      "rang": 54,
       "normKeys": [
         "BS-300.100"
       ],
@@ -39449,7 +39472,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.1792",
       "stand": "2015-01-27",
-      "rang": 54,
+      "rang": 55,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39472,7 +39495,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.1864",
       "stand": "2015-01-14",
-      "rang": 55,
+      "rang": 56,
       "normKeys": [
         "BS-811.100"
       ],
@@ -39495,7 +39518,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.1710",
       "stand": "2014-12-09",
-      "rang": 56,
+      "rang": 57,
       "normKeys": [
         "BS-440.400"
       ],
@@ -39518,7 +39541,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.1218",
       "stand": "2014-09-02",
-      "rang": 57,
+      "rang": 58,
       "normKeys": [
         "BS-953.100"
       ],
@@ -39541,7 +39564,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.0923",
       "stand": "2014-08-20",
-      "rang": 58,
+      "rang": 59,
       "normKeys": [
         "BS-170.100"
       ],
@@ -39564,7 +39587,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=14.0386",
       "stand": "2014-04-02",
-      "rang": 59,
+      "rang": 60,
       "normKeys": [
         "BS-410.100"
       ],
@@ -39587,7 +39610,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=13.0779",
       "stand": "2013-05-28",
-      "rang": 60,
+      "rang": 61,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39610,7 +39633,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=13.0303",
       "stand": "2013-04-09",
-      "rang": 61,
+      "rang": 62,
       "normKeys": [
         "BS-111.100",
         "BS-132.100"
@@ -39635,7 +39658,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=13.0434",
       "stand": "2013-03-27",
-      "rang": 62,
+      "rang": 63,
       "normKeys": [
         "BS-811.100"
       ],
@@ -39658,7 +39681,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=13.0334",
       "stand": "2013-03-19",
-      "rang": 63,
+      "rang": 64,
       "normKeys": [
         "BS-410.100"
       ],
@@ -39681,7 +39704,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.2084",
       "stand": "2013-01-15",
-      "rang": 64,
+      "rang": 65,
       "normKeys": [
         "BS-258.100",
         "BS-510.100"
@@ -39706,7 +39729,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.2005",
       "stand": "2012-12-18",
-      "rang": 65,
+      "rang": 66,
       "normKeys": [
         "BS-162.100"
       ],
@@ -39729,7 +39752,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.1414",
       "stand": "2012-09-11",
-      "rang": 66,
+      "rang": 67,
       "normKeys": [
         "BS-497.100"
       ],
@@ -39752,7 +39775,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.0895",
       "stand": "2012-06-12",
-      "rang": 67,
+      "rang": 68,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39775,7 +39798,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.0652",
       "stand": "2012-05-23",
-      "rang": 68,
+      "rang": 69,
       "normKeys": [
         "BS-510.100"
       ],
@@ -39798,7 +39821,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.0697",
       "stand": "2012-05-08",
-      "rang": 69,
+      "rang": 70,
       "normKeys": [
         "BS-211.100"
       ],
@@ -39821,7 +39844,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.0472",
       "stand": "2012-04-24",
-      "rang": 70,
+      "rang": 71,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39844,7 +39867,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=12.0199",
       "stand": "2012-02-14",
-      "rang": 71,
+      "rang": 72,
       "normKeys": [
         "BS-131.100"
       ],
@@ -39867,7 +39890,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=11.1996",
       "stand": "2011-12-06",
-      "rang": 72,
+      "rang": 73,
       "normKeys": [
         "BS-811.100"
       ],
@@ -39890,7 +39913,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=11.1520",
       "stand": "2011-09-28",
-      "rang": 73,
+      "rang": 74,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39913,7 +39936,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=11.1273",
       "stand": "2011-09-20",
-      "rang": 74,
+      "rang": 75,
       "normKeys": [
         "BS-610.100"
       ],
@@ -39936,7 +39959,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=11.0152",
       "stand": "2011-05-18",
-      "rang": 75,
+      "rang": 76,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39959,7 +39982,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=10.1642",
       "stand": "2010-09-22",
-      "rang": 76,
+      "rang": 77,
       "normKeys": [
         "BS-640.100"
       ],
@@ -39982,7 +40005,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=10.1600",
       "stand": "2010-09-15",
-      "rang": 77,
+      "rang": 78,
       "normKeys": [
         "BS-132.100"
       ],
@@ -40005,7 +40028,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=10.1162",
       "stand": "2010-06-30",
-      "rang": 78,
+      "rang": 79,
       "normKeys": [
         "BS-164.100"
       ],
@@ -40028,7 +40051,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=10.0902",
       "stand": "2010-05-19",
-      "rang": 79,
+      "rang": 80,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40051,7 +40074,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=10.0197",
       "stand": "2010-03-03",
-      "rang": 80,
+      "rang": 81,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40074,7 +40097,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=09.0594",
       "stand": "2009-04-23",
-      "rang": 81,
+      "rang": 82,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40097,7 +40120,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=08.1776",
       "stand": "2008-11-19",
-      "rang": 82,
+      "rang": 83,
       "normKeys": [
         "BS-257.900"
       ],
@@ -40120,7 +40143,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=08.1828",
       "stand": "2008-11-12",
-      "rang": 83,
+      "rang": 84,
       "normKeys": [
         "BS-410.100"
       ],
@@ -40143,7 +40166,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=07.1956",
       "stand": "2008-07-09",
-      "rang": 84,
+      "rang": 85,
       "normKeys": [
         "BS-132.100"
       ],
@@ -40166,7 +40189,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=08.0948",
       "stand": "2008-06-25",
-      "rang": 85,
+      "rang": 86,
       "normKeys": [
         "BS-162.100"
       ],
@@ -40189,7 +40212,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=06.1706",
       "stand": "2007-10-16",
-      "rang": 86,
+      "rang": 87,
       "normKeys": [
         "BS-890.100"
       ],
@@ -40212,7 +40235,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=07.0128",
       "stand": "2007-09-25",
-      "rang": 87,
+      "rang": 88,
       "normKeys": [
         "BS-834.400"
       ],
@@ -40235,7 +40258,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=07.0972",
       "stand": "2007-06-27",
-      "rang": 88,
+      "rang": 89,
       "normKeys": [
         "BS-790.100"
       ],
@@ -40258,7 +40281,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=07.0904",
       "stand": "2007-06-20",
-      "rang": 89,
+      "rang": 90,
       "normKeys": [
         "BS-497.100"
       ],
@@ -40281,7 +40304,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=06.1970",
       "stand": "2007-03-06",
-      "rang": 90,
+      "rang": 91,
       "normKeys": [
         "BS-132.100"
       ],
@@ -40304,7 +40327,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=05.1156",
       "stand": "2006-07-12",
-      "rang": 91,
+      "rang": 92,
       "normKeys": [
         "BS-211.100"
       ],
@@ -40327,7 +40350,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=05.0699",
       "stand": "2006-05-08",
-      "rang": 92,
+      "rang": 93,
       "normKeys": [
         "BS-111.100"
       ],
@@ -40350,7 +40373,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=05.1161",
       "stand": "2006-03-17",
-      "rang": 93,
+      "rang": 94,
       "normKeys": [
         "BS-670.100"
       ],
@@ -40373,7 +40396,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=05.8376",
       "stand": "2005-11-09",
-      "rang": 94,
+      "rang": 95,
       "normKeys": [
         "BS-152.100"
       ],
@@ -40396,7 +40419,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.0683",
       "stand": "2005-09-14",
-      "rang": 95,
+      "rang": 96,
       "normKeys": [
         "BS-162.100"
       ],
@@ -40419,7 +40442,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.2014",
       "stand": "2004-12-22",
-      "rang": 96,
+      "rang": 97,
       "normKeys": [
         "BS-451.100"
       ],
@@ -40442,7 +40465,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.8107",
       "stand": "2004-12-16",
-      "rang": 97,
+      "rang": 98,
       "normKeys": [
         "BS-152.110",
         "BS-610.200"
@@ -40467,7 +40490,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.2068",
       "stand": "2004-10-20",
-      "rang": 98,
+      "rang": 99,
       "normKeys": [
         "BS-640.100",
         "BS-834.400"
@@ -40492,7 +40515,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.0728",
       "stand": "2004-07-07",
-      "rang": 99,
+      "rang": 100,
       "normKeys": [
         "BS-153.600"
       ],
@@ -40515,7 +40538,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.0801",
       "stand": "2004-06-23",
-      "rang": 100,
+      "rang": 101,
       "normKeys": [
         "BS-491.100"
       ],
@@ -40538,7 +40561,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.0869",
       "stand": "2004-06-23",
-      "rang": 101,
+      "rang": 102,
       "normKeys": [
         "BS-640.100",
         "BS-650.100"
@@ -40563,7 +40586,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=04.0707",
       "stand": "2004-06-02",
-      "rang": 102,
+      "rang": 103,
       "normKeys": [
         "BS-270.100"
       ],
@@ -40586,7 +40609,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.1945",
       "stand": "2003-12-03",
-      "rang": 103,
+      "rang": 104,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40609,7 +40632,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.1560",
       "stand": "2003-11-12",
-      "rang": 104,
+      "rang": 105,
       "normKeys": [
         "BS-253.100"
       ],
@@ -40632,7 +40655,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.1858",
       "stand": "2003-11-12",
-      "rang": 105,
+      "rang": 106,
       "normKeys": [
         "BS-772.100"
       ],
@@ -40655,7 +40678,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.1561",
       "stand": "2003-10-22",
-      "rang": 106,
+      "rang": 107,
       "normKeys": [
         "BS-835.200"
       ],
@@ -40678,7 +40701,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.1361",
       "stand": "2003-09-10",
-      "rang": 107,
+      "rang": 108,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40701,7 +40724,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=03.0267",
       "stand": "2003-03-19",
-      "rang": 108,
+      "rang": 109,
       "normKeys": [
         "BS-640.100"
       ],
@@ -40724,7 +40747,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=02.2030",
       "stand": "2003-01-08",
-      "rang": 109,
+      "rang": 110,
       "normKeys": [
         "BS-497.100"
       ],
@@ -40747,7 +40770,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=02.2427",
       "stand": "2002-12-18",
-      "rang": 110,
+      "rang": 111,
       "normKeys": [
         "BS-410.100"
       ],
@@ -40770,7 +40793,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=02.0403",
       "stand": "2002-03-11",
-      "rang": 111,
+      "rang": 112,
       "normKeys": [
         "BS-154.130"
       ],
@@ -40793,7 +40816,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=01.0353",
       "stand": "2001-03-13",
-      "rang": 112,
+      "rang": 113,
       "normKeys": [
         "BS-132.100"
       ],
@@ -40816,7 +40839,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=01.0221",
       "stand": "2001-02-20",
-      "rang": 113,
+      "rang": 114,
       "normKeys": [
         "BS-510.100"
       ],
@@ -40839,7 +40862,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=96.1713",
       "stand": "1996-03-12",
-      "rang": 114,
+      "rang": 115,
       "normKeys": [
         "BS-351.100"
       ],
@@ -40862,7 +40885,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=93.1135",
       "stand": "1993-12-31",
-      "rang": 115,
+      "rang": 116,
       "normKeys": [
         "BS-211.100"
       ],
@@ -40885,7 +40908,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=93.1938",
       "stand": "1993-12-31",
-      "rang": 116,
+      "rang": 117,
       "normKeys": [
         "BS-230.900"
       ],
@@ -40908,7 +40931,7 @@
       "status": "nur-live-link",
       "quelleUrl": "https://grosserrat.bs.ch/?gnr=85.0123",
       "stand": "1985-01-30",
-      "rang": 117,
+      "rang": 118,
       "normKeys": [
         "BS-650.500"
       ],
