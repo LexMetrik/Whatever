@@ -48,7 +48,10 @@ export function abweichungen(z: InventarZeile, s: EntscheidSnapshot): string[] {
   // Platzhalter oder ein Kopf-Datum (B-1) — dort ist kein Listenwert zu vergleichen
   // (Grenze: entzieht das Portal ein Datum, ohne `aktualisiert` zu setzen, bleibt
   // das unbemerkt; siehe Kopf).
-  if (z.datum !== null && s.datum !== z.datum) g.push(`datum ${s.datum}→${z.datum}`);
+  // Variante A (4.10.2026): `datum` ist das Kopf-Datum, das Portal-Metadatum steht —
+  // wo es abweicht — in `datumPortal`; verglichen wird mit dem, was das Portal nennt.
+  const portalDatum = s.datumPortal ?? s.datum;
+  if (z.datum !== null && portalDatum !== z.datum) g.push(`datum ${portalDatum}→${z.datum}`);
   if ((s.erstpublikation ?? null) !== z.erstpublikation) g.push(`erstpublikation ${s.erstpublikation ?? '–'}→${z.erstpublikation ?? '–'}`);
   if ((s.aktualisiert ?? null) !== z.aktualisiert) g.push(`aktualisiert ${s.aktualisiert ?? '–'}→${z.aktualisiert ?? '–'}`);
   if ((s.rubrum?.gegenstand ?? '') !== z.titel) g.push('titel');

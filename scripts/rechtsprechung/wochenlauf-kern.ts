@@ -17,6 +17,8 @@ import { bandJahrVon, istBandjahrPlatzhalter } from '../normtext/bge-bandjahr';
 import { inlineZuText, parseClirUrteilskopf } from '../normtext/clir-regeste';
 import { behalten } from '../gegenpruefung/kern';
 import { OCL_ABRUF } from '../normtext/ocl-abruf';
+import { bsPortalDaten, waehleBsDatum } from './bs-parse';
+import { gnJahr } from './bs-inventar';
 
 /** Register-Eintrag (public/rechtsprechung/register.json), nur die gelesenen Felder. */
 export interface RegEintrag {
@@ -343,16 +345,29 @@ export function pruefeBge(html: string, e: RegEintrag): Identitaet {
   return { treffer: true, akz: true, datum: true, detail: `${ref} · ${aza ?? '–'} · ${datumIso}` };
 }
 
-/** BS-Portal: «Geschäftsnummer: <nummer>» und «Entscheiddatum: TT.MM.JJJJ» = Korpus. */
+/**
+ * BS-Portal: «Geschäftsnummer: <nummer>» und das Entscheiddatum = Korpus. Seit der
+ * Variante A (4.10.2026, Entscheid David) ist das Soll-Datum das des URTEILSKOPFS
+ * («ENTSCHEID vom …»), nicht das Portal-Metadatum — sonst prüfte die Stichprobe
+ * gegen dasselbe Feld, das der Import (fälschlich) übernahm (§6.7, blinder Fleck:
+ * 13 % der Basler Daten waren so «bestätigt» falsch). Die Wahl macht dieselbe reine
+ * Regel wie der Import (`waehleBsDatum`) auf der frisch geholten Seite; ein Verdacht
+ * (Kopf-Datum unplausibel/weit vom Portal) ist «nicht prüfbar» → Handprüfung.
+ */
 export function pruefeBs(html: string, e: RegEintrag): Identitaet {
   const t = text(html);
   const nr = (e.nummer ?? '').trim();
   const m = /Gesch(?:ä|&auml;)ftsnummer:\s*(\S+)/.exec(t);
   if (!nr || !m || m[1] !== nr) return { treffer: false, akz: false, detail: `Geschäftsnummer amtlich «${m?.[1] ?? '–'}», erwartet «${nr}»` };
-  const d = /Entscheiddatum:\s*(\d{2})\.(\d{2})\.(\d{4})/.exec(t);
-  const iso = d ? `${d[3]}-${d[2]}-${d[1]}` : null;
-  if (iso !== e.datum) return { treffer: false, akz: true, datum: iso ? false : null, detail: `${nr}: Entscheiddatum amtlich ${iso ?? '–'} ≠ Korpus ${e.datum}` };
-  return { treffer: true, akz: true, datum: true, detail: `${nr} · ${iso}` };
+  const d = bsPortalDaten(html);
+  // Portal-Datum: Metadaten-Tabelle, sonst (Fragment ohne Tabelle) das Etikett im Text.
+  const pm = /Entscheiddatum:\s*(\d{2})\.(\d{2})\.(\d{4})/.exec(t);
+  const wahl = waehleBsDatum(d.portal ?? (pm ? `${pm[3]}-${pm[2]}-${pm[1]}` : null), d.kopf, gnJahr(nr), d.erstpublikation, null);
+  if (wahl.verdacht) return { treffer: null, akz: true, datum: null, detail: `${nr}: ${wahl.verdacht} (Korpus ${e.datum}) — Handprüfung` };
+  const quelle = wahl.quelle === 'kopf' ? 'Urteilskopf' : 'Portal-Metadatum';
+  if (wahl.quelle === 'platzhalter') return { treffer: null, akz: true, datum: null, detail: `${nr}: weder Kopf- noch Portal-Datum lesbar (Korpus ${e.datum}) — Handprüfung` };
+  if (wahl.datum !== e.datum) return { treffer: false, akz: true, datum: false, detail: `${nr}: Entscheiddatum amtlich ${wahl.datum} (${quelle}) ≠ Korpus ${e.datum}` };
+  return { treffer: true, akz: true, datum: true, detail: `${nr} · ${wahl.datum} (${quelle})` };
 }
 
 /**

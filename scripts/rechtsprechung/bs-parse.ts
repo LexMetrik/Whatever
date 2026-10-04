@@ -223,6 +223,8 @@ export interface ParseErgebnis {
    * Optional, damit handgebaute Test-Ergebnisse ohne das Feld gültig bleiben.
    */
   datumKopf?: string | null;
+  /** Fundstelle des Kopf-Datums im Deckblatt (Titelzeile + Datumszeile) für die Änderungsliste. */
+  kopfFund?: KopfDatumFund | null;
   erstpublikation: string | null;
   aktualisiert: string | null;
   titel: string;
@@ -280,6 +282,17 @@ const dIso = (s: string | null): string | null => {
 // Datum (jedes 90. des Inventars): Kopf-Datum == Metadaten-Datum in allen Fällen,
 // in denen die Regel greift (Zahl im PR-Bericht). Das Metadaten-Datum bleibt die
 // erste Quelle; das Kopf-Datum füllt nur die Lücke (`baueSnapshot`).
+//
+// ERGÄNZUNG 4.10.2026 (Belege altern nicht — der Absatz oben bleibt als Stand
+// 23.9.2026 stehen): «Kopf-Datum == Metadaten-Datum in allen Fällen» ist WIDERLEGT.
+// Gegenprüfung Opus von PR #1295 (Abruf rechtsprechung.gerichte.bs.ch, 4.10.2026):
+// AUS.2026.85 Portal 30.09.2026 / Kopf 1. Oktober 2026; BES.2025.105 04.03. / 1. April;
+// BES.2025.117 08.04. / 6. Mai; VD.2025.146 06.05. / 6. April 2026; im Bestand
+// AUS.2022.46 16.9. / 21.9.22 (der Urteilstext bestätigt den Kopf), AUS.2022.57,
+// BES.2023.14, BEZ.2025.33 (4 von 31 ≈ 13 %). Seit der Variante A (Entscheid David
+// 4.10.2026) gewinnt darum der KOPF, das Portal-Metadatum ist Rückfall und bleibt
+// als `datumPortal` sichtbar (`waehleBsDatum`); Bestandsberichtigung:
+// `berichtigeBsDatum`, Liste bibliothek/rechtsprechung/bs-datum-kopf-2026-10-04.md.
 const KOPF_FENSTER = 12;
 const MONATE: Record<string, string> = {
   Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
@@ -291,11 +304,20 @@ const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join
 /** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
 const kopfText = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
 
+/** Das gelesene Kopf-Datum samt Fundstelle im Deckblatt (für die Änderungsliste, §7). */
+export interface KopfDatumFund {
+  iso: string;
+  /** 0-basierte Einheit des Datums-Absatzes im Dokument-Body (Titelzeile = einheit − 1). */
+  einheit: number;
+  titel: string;
+  text: string;
+}
+
 /**
- * Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den
- * Regressionstest; die Anwendung (nur als Lückenfüller) steht in `baueSnapshot`.
+ * Entscheiddatum aus dem Deckblatt samt Fundstelle, oder null. Rein (§2). Die
+ * Anwendung steht in `waehleBsDatum` / `baueSnapshot`.
  */
-export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | null {
+export function kopfDatumFund(einheiten: ReadonlyArray<{ text: string }>): KopfDatumFund | null {
   const n = Math.min(einheiten.length, KOPF_FENSTER);
   for (let i = 1; i < n; i++) {
     const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
@@ -305,9 +327,14 @@ export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | 
     // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
     const d = new Date(`${iso}T00:00:00Z`);
     if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
-    return iso;
+    return { iso, einheit: i, titel: kopfText(einheiten[i - 1].text), text: kopfText(einheiten[i].text) };
   }
   return null;
+}
+
+/** Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den Regressionstest. */
+export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | null {
+  return kopfDatumFund(einheiten)?.iso ?? null;
 }
 
 /**
@@ -320,6 +347,95 @@ export function plausiblesKopfDatum(kopf: string | null | undefined, gnJahrZahl:
   if (gnJahrZahl !== null && Number(kopf.slice(0, 4)) < gnJahrZahl) return null;
   if (erstpublikation && kopf > erstpublikation) return null;
   return kopf;
+}
+
+/**
+ * Abstand Kopf-Datum ↔ Portal-Metadatum, ab dem das Kopf-Datum NICHT still
+ * übernommen, sondern als Verdacht gemeldet wird (Auftrag David 4.10.2026). Messung
+ * 4.10.2026 an den ersten acht Belegen: Abweichungen 2–30 Tage.
+ */
+export const KOPF_PORTAL_FENSTER_TAGE = 60;
+const tageZwischen = (von: string, bis: string): number =>
+  Math.round((Date.parse(`${bis}T00:00:00Z`) - Date.parse(`${von}T00:00:00Z`)) / 86_400_000);
+
+export type BsDatumQuelle = 'kopf' | 'portal' | 'platzhalter';
+export interface BsDatumWahl {
+  datum: string;
+  quelle: BsDatumQuelle;
+  /** Portal-Metadatum, wenn es vom gewählten `datum` abweicht (→ `datumPortal`). */
+  datumPortal: string | null;
+  /** Gesetzt, wenn ein gelesenes Kopf-Datum NICHT übernommen wurde (Plausibilität). */
+  verdacht: string | null;
+}
+
+/**
+ * VARIANTE A für Basel-Stadt (Entscheid David 4.10.2026, Regel der OCL-Kantone vom
+ * 25.9.2026): das Datum im Urteilskopf («ENTSCHEID/URTEIL vom …») gewinnt vor dem
+ * Portal-Metadatum «Entscheiddatum»; das Metadatum ist nur Rückfall, wenn kein
+ * Kopf-Datum lesbar ist. Fehlen beide: ehrlicher Platzhalter (`datumUnbekannt`).
+ *
+ * Plausibilitäts-Wächter (nie still übernehmen): ein Kopf-Datum vor dem GN-Jahr,
+ * nach der Erstpublikation, in der Zukunft (nach `abgerufen`) oder mehr als
+ * `KOPF_PORTAL_FENSTER_TAGE` Tage vom Portal-Datum entfernt wird nicht gewählt
+ * (Portal/Platzhalter bleibt) und als `verdacht` ausgewiesen.
+ */
+export function waehleBsDatum(
+  portal: string | null,
+  kopf: string | null,
+  gnJahrZahl: number | null,
+  erstpublikation: string | null,
+  abgerufen: string | null,
+): BsDatumWahl {
+  let verdacht: string | null = null;
+  let kopfOk: string | null = null;
+  if (kopf) {
+    if (plausiblesKopfDatum(kopf, gnJahrZahl, erstpublikation) === null) {
+      verdacht = `Kopf-Datum ${kopf} unplausibel (vor GN-Jahr ${gnJahrZahl ?? '–'} oder nach Erstpublikation ${erstpublikation ?? '–'})`;
+    } else if (abgerufen && kopf > abgerufen) {
+      verdacht = `Kopf-Datum ${kopf} liegt in der Zukunft (Abruf ${abgerufen})`;
+    } else if (portal && Math.abs(tageZwischen(portal, kopf)) > KOPF_PORTAL_FENSTER_TAGE) {
+      verdacht = `Kopf-Datum ${kopf} weicht ${tageZwischen(portal, kopf)} Tage vom Portal-Datum ${portal} ab (> ${KOPF_PORTAL_FENSTER_TAGE})`;
+    } else kopfOk = kopf;
+  }
+  if (kopfOk) return { datum: kopfOk, quelle: 'kopf', datumPortal: portal && portal !== kopfOk ? portal : null, verdacht };
+  if (portal) return { datum: portal, quelle: 'portal', datumPortal: null, verdacht };
+  const j = gnJahrZahl;
+  return { datum: j === null ? '' : `${j}-01-01`, quelle: 'platzhalter', datumPortal: null, verdacht };
+}
+
+/**
+ * Alle Inhalts-Einheiten des Bodys: ALLE WordSection-Divs in Dokument-Reihenfolge
+ * (Fidelity-Befund 19.7.2026: Word bricht bei Sektionswechseln in WordSection2/3 um —
+ * dort stehen real Dispositive und Anhänge, z. B. KE.2023.37/76512, ZB.2023.62/77467,
+ * SB.2020.87/75885; nur WordSection1 zu lesen verwarf diese Inhalte). Verschachtelte
+ * Treffer werden dedupliziert (nur Wurzeln — kein Doppelzug). Geteilt von
+ * `parseBsDokument` und `bsPortalDaten` (§5: eine Stelle).
+ */
+function bodyEinheiten(document: Document) {
+  const wsAlle = [...document.querySelectorAll('div')]
+    .filter((d) => /^WordSection\d+$/.test(d.getAttribute('class') ?? ''));
+  const roots = wsAlle.filter((d) => !wsAlle.some((o) => o !== d && o.contains(d)));
+  if (!roots.length) throw new Error('Body: div.WordSection1 fehlt');
+  const einheiten = roots.flatMap((r) => sammleEinheiten(r));
+  if (!einheiten.length) throw new Error('Body: keine Inhalts-Einheiten');
+  return einheiten;
+}
+
+/**
+ * Portal-Datum, Kopf-Datum und Erstpublikation einer bereits dekodierten
+ * Portal-Seite — für die Wochenlauf-Stichprobe (`pruefeBs`), die dieselbe Regel
+ * (`waehleBsDatum`) auf die frisch geholte Seite anwendet. Ohne lesbaren Body
+ * (Fragment/Hülle) bleibt `kopf` null (Rückfall Portal), nie ein Fehler.
+ */
+export function bsPortalDaten(html: string): { portal: string | null; kopf: string | null; erstpublikation: string | null } {
+  const { document } = parseHTML(bereinigeQuellDebris(html));
+  let kopf: string | null = null;
+  try { kopf = kopfDatum(bodyEinheiten(document)); } catch { kopf = null; }
+  return {
+    portal: dIso(metaWert(document, 'Entscheiddatum')),
+    kopf,
+    erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
+  };
 }
 
 /** Ein rohes BS-Dokument (windows-1252-Bytes) strukturell parsen. */
@@ -348,12 +464,7 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
   // WordSection2+3; SB.2020.87/75885: Zivilforderungs-Anhang). Nur WordSection1
   // zu lesen, verwarf diese Inhalte vollständig. Verschachtelte Treffer werden
   // dedupliziert (nur Wurzeln sammeln — kein Doppelzug).
-  const wsAlle = [...document.querySelectorAll('div')]
-    .filter((d) => /^WordSection\d+$/.test(d.getAttribute('class') ?? ''));
-  const roots = wsAlle.filter((d) => !wsAlle.some((o) => o !== d && o.contains(d)));
-  if (!roots.length) throw new Error('Body: div.WordSection1 fehlt');
-  const einheiten = roots.flatMap((r) => sammleEinheiten(r));
-  if (!einheiten.length) throw new Error('Body: keine Inhalts-Einheiten');
+  const einheiten = bodyEinheiten(document);
 
   // Spruchkörper aus dem Deckblatt-/Signatur-Block (eigener Pass, siehe unten).
   const besetzungRoh = extrahiereBesetzung(document);
@@ -487,10 +598,12 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
     }
   }
 
+  const kopfFund = kopfDatumFund(einheiten);
   return {
     gn, gnSekundaer: sekM ? sekM[1] : null, instanz, court: courtEintrag[1],
     datum: dIso(metaWert(document, 'Entscheiddatum')),
-    datumKopf: kopfDatum(einheiten),
+    datumKopf: kopfFund?.iso ?? null,
+    kopfFund,
     erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
     aktualisiert: dIso(metaWert(document, 'Aktualisierungsdatum')),
     titel, abschnitte, dispositivOrders, strukturQuelle,
@@ -528,15 +641,20 @@ export function docketSafeVergabe(
   return out;
 }
 
+/** Die Datums-Wahl eines geparsten Dokuments (eine Stelle für Import, Berichtigung, Liste — §5). */
+export function bsWahlVon(p: ParseErgebnis, abgerufen: string | null): BsDatumWahl {
+  return waehleBsDatum(p.datum, p.datumKopf ?? null, gnJahr(p.gn), p.erstpublikation, abgerufen);
+}
+
 export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: string, abgerufen: string): EntscheidSnapshot {
   const gerichtName = gerichtAnzeigename(p.court, 'BS');
   const jahr = gnJahr(p.gn);
-  // Metadaten-Datum zuerst; fehlt es, das Deckblatt-Datum (B-1), sofern plausibel.
-  // Erst wenn beide fehlen, bleibt das Datum ehrlich unbekannt (Platzhalter + Flag).
-  const kopf = p.datum ? null : plausiblesKopfDatum(p.datumKopf, jahr, p.erstpublikation);
-  const datumlos = !p.datum && !kopf;
+  // Kopf-Datum vor Portal-Metadatum (Variante A, 4.10.2026); Rückfall Portal, dann
+  // der ehrliche Platzhalter (`datumUnbekannt`). Regel + Wächter: `waehleBsDatum`.
+  const wahl = bsWahlVon(p, abgerufen);
+  const datumlos = wahl.quelle === 'platzhalter';
   if (datumlos && !jahr) throw new Error(`${p.gn}: weder Entscheiddatum noch GN-Jahr`);
-  const datum = p.datum ?? kopf ?? `${jahr}-01-01`;
+  const datum = wahl.datum;
   const sachgebiet: Rechtsgebiet = kantonalSachgebiet(p.gn) ?? 'oeffentlich';
   const snap: EntscheidSnapshot = {
     id: `kanton/BS/${p.court}/${docketSafe}`,
@@ -574,6 +692,7 @@ export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: str
     sha: sha256EntscheidBloecke(p.abschnitte),
   };
   if (datumlos) snap.datumUnbekannt = true;
+  if (wahl.datumPortal) snap.datumPortal = wahl.datumPortal;
   if (p.erstpublikation) snap.erstpublikation = p.erstpublikation;
   if (p.aktualisiert) snap.aktualisiert = p.aktualisiert;
   if (p.gnSekundaer) snap.nummerSekundaer = p.gnSekundaer;
@@ -708,4 +827,92 @@ export function nachtragKopfdatum(inventar: Inventar, datum: string): { datiert:
   console.log(`[kopfdatum] ${datiert.length} datiert, ${weiterUnbekannt.length} weiterhin ohne Datum (ehrlich datumUnbekannt).`);
   for (const d of datiert) console.log(`[kopfdatum]   ${d}`);
   return { datiert, weiterUnbekannt };
+}
+
+// ─── Berichtigung des Bestands: Kopf-Datum vor Portal-Metadatum (Variante A) ──
+//
+// Entscheid David 4.10.2026: «Ich lasse die Regel für Basel als eigenen geprüften
+// Schritt bauen, berichtige dabei auch die alten Basler Daten». Der Kopf steht NICHT
+// im Snapshot (`abschnitte` beginnen nach dem Deckblatt) — die Ableitung braucht die
+// Rohdokumente (`daten/bs-fiw/raw/`, nicht eingecheckt; Abruf: `bs-import
+// --fetch-only`). Je Bestands-Snapshot wird mit DERSELBEN Regel wie im Import neu
+// gebaut (`baueSnapshot`); übernommen werden ausschliesslich `datum`, `zitierung`,
+// `datumPortal`, `datumUnbekannt` und — nur bei geändertem Datum — `abgerufen`.
+// Vorbedingungen je Dokument (sonst NICHT angefasst, sondern ausgewiesen): Inventar-
+// Zeile da, gleiche GN, Portal-Metadatum == Inventar, gleiche id, gleicher Text-`sha`.
+// Die id bleibt auch dann stehen, wenn ein docketSafe-Suffix das alte Portal-Datum
+// trägt (stabile URLs, §6) — die Kollisionsregel rechnet weiter mit dem Portal-Datum.
+
+export interface BsDatumAenderung {
+  id: string;
+  gn: string;
+  key: number;
+  /** Bisheriges `datum` (= Portal-Metadatum, bzw. Platzhalter). */
+  alt: string;
+  neu: string;
+  /** Portal-Metadatum (Inventar) oder null. */
+  portal: string | null;
+  tage: number;
+  fund: KopfDatumFund | null;
+  zitierungAlt: string;
+  zitierungNeu: string;
+  url: string;
+}
+export interface BsDatumVerdacht { id: string; gn: string; key: number; grund: string; url: string }
+export interface BsDatumBericht {
+  geprueft: number;
+  /** Datum unverändert (Kopf == Portal oder kein Kopf lesbar). */
+  unveraendert: number;
+  /** Davon: Kopf lesbar und gleich dem Portal-Datum. */
+  kopfGleich: number;
+  /** Davon: kein Kopf-Datum lesbar (Rückfall Portal bzw. Platzhalter). */
+  ohneKopf: number;
+  aenderungen: BsDatumAenderung[];
+  verdacht: BsDatumVerdacht[];
+  uebersprungen: Array<{ id: string; grund: string }>;
+}
+
+export function berichtigeBsDatum(inventar: Inventar, datum: string, schreibe = true): BsDatumBericht {
+  const bestand = ladeBestandSnapshots();
+  const zeileVon = new Map(inventar.eintraege.map((z) => [z.key, z] as const));
+  const bericht: BsDatumBericht = { geprueft: 0, unveraendert: 0, kopfGleich: 0, ohneKopf: 0, aenderungen: [], verdacht: [], uebersprungen: [] };
+  bestand.forEach((alt, i) => {
+    if (alt.quelle !== 'gerichte-bs') return;
+    const m = /nF30_KEY=(\d+)/.exec(alt.quelleUrl);
+    if (!m) throw new Error(`[datum-kopf] ${alt.id}: kein nF30_KEY in quelleUrl`);
+    const key = Number(m[1]);
+    const z = zeileVon.get(key);
+    const skip = (grund: string) => { bericht.uebersprungen.push({ id: alt.id, grund }); };
+    if (!z) return skip('nicht im Inventar');
+    const pfad = rawPfad(key);
+    if (!existsSync(pfad)) throw new Error(`[datum-kopf] Rohdatei fehlt: ${alt.nummer} (key ${key}) — zuerst bs-import --fetch-only.`);
+    const p = parseBsDokument(readFileSync(pfad));
+    if (p.gn !== z.gn) return skip(`GN-Drift Kopf «${p.gn}» ≠ Inventar «${z.gn}»`);
+    if (p.datum !== z.datum) return skip(`Portal-Metadatum jetzt ${p.datum ?? '–'}, Inventar ${z.datum ?? '–'} — Delta/Vollimport`);
+    bericht.geprueft++;
+    const neu = baueSnapshot(p, z, alt.id.slice(alt.id.lastIndexOf('/') + 1), datum);
+    if (neu.id !== alt.id) return skip(`id-Drift ${alt.id} → ${neu.id}`);
+    if (neu.sha !== alt.sha) return skip('Text-sha weicht vom Bestand ab — Dokument seit dem Import geändert');
+    const wahl = bsWahlVon(p, datum);
+    if (wahl.verdacht) bericht.verdacht.push({ id: alt.id, gn: alt.nummer, key, grund: wahl.verdacht, url: alt.quelleUrl });
+    if (neu.datum === alt.datum && (neu.datumPortal ?? null) === (alt.datumPortal ?? null) && !!neu.datumUnbekannt === !!alt.datumUnbekannt) {
+      bericht.unveraendert++;
+      if (p.datumKopf && p.datumKopf === p.datum) bericht.kopfGleich++;
+      if (!p.datumKopf) bericht.ohneKopf++;
+      return;
+    }
+    const patch: EntscheidSnapshot = { ...alt, zitierung: neu.zitierung, datum: neu.datum, abgerufen: datum };
+    if (neu.datumPortal) patch.datumPortal = neu.datumPortal; else delete patch.datumPortal;
+    if (neu.datumUnbekannt) patch.datumUnbekannt = true; else delete patch.datumUnbekannt;
+    bestand[i] = patch;
+    bericht.aenderungen.push({
+      id: alt.id, gn: alt.nummer, key, alt: alt.datum, neu: neu.datum, portal: z.datum,
+      tage: Math.round((Date.parse(`${neu.datum}T00:00:00Z`) - Date.parse(`${alt.datum}T00:00:00Z`)) / 86_400_000),
+      fund: p.kopfFund ?? null, zitierungAlt: alt.zitierung, zitierungNeu: neu.zitierung, url: alt.quelleUrl,
+    });
+  });
+  bericht.aenderungen.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  bericht.verdacht.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  if (schreibe && bericht.aenderungen.length) schreibeKorpus(bestand, datum);
+  return bericht;
 }

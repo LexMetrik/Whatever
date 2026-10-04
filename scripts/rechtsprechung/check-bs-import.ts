@@ -5,7 +5,8 @@
 //  · Fehlerliste leer · jeder Scope-Eintrag hat genau einen Snapshot (GN-Multiset
 //    beidseitig gleich, keine Waisen) · Jahres-Counts == Portal-Anker ·
 //    datumlose Einträge tragen datumUnbekannt + Platzhalter <GN-Jahr>-01-01 oder
-//    ein plausibles Kopf-Datum (B-1) · Datum == Inventar-Metadaten ·
+//    ein plausibles Kopf-Datum (B-1) · Datum = Kopf-Datum, Portal-Datum (datumPortal ?? datum)
+//    == Inventar-Metadaten, Abweichung ≤ 60 Tage (Variante A, 4.10.2026) ·
 //    docketSafe-Kollisionsregel (§3.2) · statische Fidelity-Assertions
 //    (kein U+FFFD, kein Entity-/Tag-Rest, NBSP-Präsenzquote) · §7-Provenienz.
 // Kein Netz. Harte Verstösse → exit 1.
@@ -16,6 +17,7 @@ import type { EntscheidManifest } from '../../src/lib/rechtsprechung/register';
 import type { EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 import type { Inventar } from './bs-inventar';
 import { gnJahr } from './bs-inventar';
+import { KOPF_PORTAL_FENSTER_TAGE } from './bs-parse';
 
 const ROOT = process.cwd();
 const PUB = join(ROOT, 'public', 'rechtsprechung');
@@ -131,7 +133,18 @@ function main() {
     if (!z) {
       fehler.push(`${e.key}: kein Inventar-Eintrag zum nF30_KEY der Quelle`);
     } else if (z.datum) {
-      if (snap.datum !== z.datum || e.datum !== z.datum) fehler.push(`${e.key}: Datum ${snap.datum} ≠ Inventar-Metadaten ${z.datum}`);
+      // Variante A (4.10.2026): `datum` = Kopf-Datum, das Portal-Metadatum (Inventar) steht
+      // — wo es abweicht — in `datumPortal`; Register und Snapshot tragen dasselbe `datum`,
+      // die Abweichung bleibt im Wächter-Fenster (waehleBsDatum), die Zitierung nennt `datum`.
+      const portalDatum = snap.datumPortal ?? snap.datum;
+      if (portalDatum !== z.datum) fehler.push(`${e.key}: Portal-Datum ${portalDatum} ≠ Inventar-Metadaten ${z.datum}`);
+      if (e.datum !== snap.datum) fehler.push(`${e.key}: Register-Datum ${e.datum} ≠ Snapshot-Datum ${snap.datum}`);
+      if (snap.datumPortal !== undefined && snap.datumPortal === snap.datum) fehler.push(`${e.key}: datumPortal ${snap.datumPortal} gleich datum (nur bei Abweichung setzen)`);
+      if (Math.abs(Date.parse(`${snap.datum}T00:00:00Z`) - Date.parse(`${z.datum}T00:00:00Z`)) > KOPF_PORTAL_FENSTER_TAGE * 86_400_000) {
+        fehler.push(`${e.key}: Datum ${snap.datum} weicht um mehr als ${KOPF_PORTAL_FENSTER_TAGE} Tage vom Portal-Datum ${z.datum} ab (Verdacht, nie still)`);
+      }
+      const [zy, zm, zd] = snap.datum.split('-');
+      if (!snap.datumUnbekannt && !snap.zitierung.endsWith(` vom ${zd}.${zm}.${zy}`)) fehler.push(`${e.key}: Zitierung «${snap.zitierung}» nennt das Datum ${snap.datum} nicht`);
       if (snap.datumUnbekannt) fehler.push(`${e.key}: datumUnbekannt trotz Metadaten-Datum`);
       regJahr.set(z.datum.slice(0, 4), (regJahr.get(z.datum.slice(0, 4)) ?? 0) + 1);
     } else {
