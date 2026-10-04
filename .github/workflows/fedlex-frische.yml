@@ -511,10 +511,7 @@ jobs:
         run: |
           set -euo pipefail
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:fedlex-repin&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty') || { echo "::warning::Zettel-Suche gescheitert — Anlage ohne Fund"; offen=; }
+          [ -n "$offen" ] && exit 0
           rumpf="Ein überholter Bund-Pin ist NICHT automatisch re-pinnbar (keine kanonische html-Manifestation für die geltende Konsolidierung — oft: die Fassung ist eben erst in Kraft getreten, das HTML-Exemplar lagert noch nach). §7-Handschritt: html-N via SPARQL isExemplifiedBy prüfen, sobald verfügbar, dann fedlex:repin-batch erneut. Details im Lauf-Log: ${RUN_URL}"
-          if [ -n "$offen" ]; then
-            gh issue comment "$offen" --body "Erneut am $(date -u +%F). ${rumpf}"
-          else
-            for l in "--label alarm:fedlex-repin" ""; do gh issue create $l --title "🟠 Fedlex-Re-Pin Handschritt fällig ($(date -u +%F))" --body "$rumpf" && exit 0; done
-            exit 1
-          fi
+          for l in "--label alarm:fedlex-repin" ""; do gh issue create $l --title "🟠 Fedlex-Re-Pin Handschritt fällig ($(date -u +%F))" --body "$rumpf" && exit 0; done
+          exit 1

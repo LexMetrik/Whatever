@@ -87,7 +87,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
   const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
   const imText = new Set(reihenfolge);
   reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
-  const { erbe, geteilt } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+  const { erbe, geteilt, randtitelEigen } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
 
   const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
@@ -100,6 +100,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
       snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
       geerbt,
       geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
+      randtitelEigen: randtitelEigen.get(token) ?? new Set<string>(),
     });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;

@@ -197,6 +197,7 @@
     "check:artikel-revisionen": "vite-node scripts/verzahnung/extrahiere-artikel-revisionen.ts -- --check",
     "gen:historie": "vite-node scripts/normtext/historie-generieren.ts",
     "check:historie": "vite-node scripts/normtext/historie-generieren.ts -- --check",
+    "historie:vergleich": "vite-node scripts/normtext/historie-vergleich.ts --",
     "check:tor-paritaet": "vite-node scripts/check-tor-paritaet.ts",
     "check:ci-laeufe": "vite-node scripts/check-ci-laeufe.ts",
     "bericht:automatik": "vite-node scripts/check-ci-laeufe.ts -- --bericht",

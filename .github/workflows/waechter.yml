@@ -185,7 +185,9 @@ jobs:
       # (kein Such-Index-Verzug); Anlage erst MIT Label, scheitert das, OHNE — der
       # Alarm geht nie am Label verloren (Zweitprüfung #1237). fedlex-frische: dort
       # ist der Zettel das einzige Signal, nur die Suche wird Warnung, Anlage-Fehler = rot.
-      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
+      # Seit 1.10.2026 bei offenem Zettel KEIN Wiederhol-Kommentar (#750: 25 Bot-Kommentare,
+      # kein Leser) — Leser ist die Alarm-Zeile in `plan:next` (scripts/plan/lage.ts).
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
@@ -194,16 +196,12 @@ jobs:
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:waechter&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
-          if [ -n "$offen" ]; then
-            gh issue comment "$offen" --body "Weiterhin rot am $(date +%F). Lauf: ${RUN_URL}"
-            echo "Zettel #${offen} kommentiert (weiterhin rot)."
-          else
-            nr=$(for l in "--label alarm:waechter" ""; do gh issue create $l \
-              --title "🔴 Wächter rot seit $(date +%F) — geplante Läufe/PR-Kontexte prüfen" \
-              --body "Der tägliche Wächter (geplante Läufe, .github/workflows/waechter.yml) ist fehlgeschlagen — mindestens ein geplanter Workflow ist laut \`check:ci-laeufe\` nicht in Ordnung, ODER der PR-Kontext-Nachzug (K2/K11) ist an einer anderen Stelle als der bekannten, tolerierten Branch-Schutz-403-Lücke gescheitert. Lauf-Log prüfen. Lauf: ${RUN_URL}" \
-              && break; done | grep -oE '[0-9]+$')
-            echo "Zettel #${nr} angelegt (erstmals rot)."
-          fi
+          [ -n "$offen" ] && { echo "Zettel #${offen} offen — kein Kommentar."; exit 0; }
+          nr=$(for l in "--label alarm:waechter" ""; do gh issue create $l \
+            --title "🔴 Wächter rot seit $(date +%F) — geplante Läufe/PR-Kontexte prüfen" \
+            --body "Der tägliche Wächter (geplante Läufe, .github/workflows/waechter.yml) ist fehlgeschlagen — mindestens ein geplanter Workflow ist laut \`check:ci-laeufe\` nicht in Ordnung, ODER der PR-Kontext-Nachzug (K2/K11) ist an einer anderen Stelle als der bekannten, tolerierten Branch-Schutz-403-Lücke gescheitert. Lauf-Log prüfen. Lauf: ${RUN_URL}" \
+            && break; done | grep -oE '[0-9]+$')
+          echo "Zettel #${nr} angelegt (erstmals rot)."
 
       - name: Bei Grün — offenen Aufgaben-Zettel schliessen
         if: success()
