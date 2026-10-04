@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
-import { lageBlock } from './lage';
+import { laufeEcht, lageBlock, sammleAlarme } from './lage';
 import { flaechenZeile, klassiere } from './gitFlaechen';
 import { sammleFakten } from './gitFlaechenSammeln';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
@@ -29,6 +29,8 @@ if (!process.env.VITEST) {
   if (b.blockiert.length) z(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);
   if (b.geparkt.length) z(`🅿️  geparkt: ${b.geparkt.join(', ')}`);
   if (b.inArbeit.length) z(`🔨 in Arbeit (wip): ${b.inArbeit.join(', ')}`);
+  // Alarm-Zeile VOR den Warnungen (QS-MONITOR-ROT): gh mit hartem Timeout, Ausfall = Hinweis.
+  z(sammleAlarme(laufeEcht));
   // Kollisionswarnung (Steuerungs-Diät 29.8.2026): gleiches Baufeld auf wip.
   // Die F6-Sonden (PRs, Remote-Branches, Worktrees) stehen im Lage-Block.
   for (const x of b.feldBelegt) {

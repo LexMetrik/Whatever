@@ -52,7 +52,6 @@ export interface LageRoh {
   gelandet?: ReadonlySet<string>;
   /** Kurznamen der Remote-Zweige `origin/dependabot/*`; `null` = nicht abfragbar, fehlt = nicht erhoben. */
   dependabot?: string[] | null;
-  alarme?: string;
 }
 
 /**
@@ -64,7 +63,7 @@ export type Laufe = (cmd: string, args: string[], cwd?: string) => string;
 const TIMEOUT_MS = 5000;
 
 export const laufeEcht: Laufe = (cmd, args, cwd) =>
-  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, cwd });
+  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, killSignal: 'SIGKILL', cwd });
 
 /** Wie `laufe`, aber `null` statt Wurf — geteilt mit gitFlaechenSammeln.ts (§5). */
 export function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
@@ -210,27 +209,30 @@ export function sammleDependabot(laufe: Laufe): string[] | null {
 const TRENNER = ' · ';
 const ALARM = '🚨 Alarme: ';
 
-/** Offene `alarm:*`-Zettel; Titel = fremder Text (§14.7), nur das Präfix ESKALATION zählt. */
+/** Offene `alarm:*`-Zettel; Titel und Label = fremder Text (§14.7): Titel nur als ESKALATION-Präfix, Label nur als `[a-z0-9-]+` (sonst `?`). */
 export function alarmZeile(json: string): string {
   try {
     const liste: { number: number; title: string; created_at: string; labels: { name: string }[]; pull_request?: unknown }[] =
       JSON.parse(json);
     const z = liste
       .filter((i) => !i.pull_request)
-      .map((i) => ({ i, l: i.labels.find((l) => l.name.startsWith('alarm:'))?.name.slice(6) }))
-      .filter((x) => x.l)
+      .map((i) => ({ i, l: i.labels.find((l) => l.name.startsWith('alarm:'))?.name }))
+      .filter((x) => x.l !== undefined)
       .sort((a, b) => a.i.number - b.i.number)
       .map(({ i: { number, created_at: d, title }, l }) =>
-        `#${number} ${l} (seit ${+d.slice(8, 10)}.${+d.slice(5, 7)}.${title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`);
+        `#${+number} ${/^[a-z0-9-]+$/.test(l!.slice(6)) ? l!.slice(6) : '?'} (seit ${+d.slice(8, 10)}.${+d.slice(5, 7)}.${title.startsWith('ESKALATION') ? ', ESKALATION' : ''})`);
     return ALARM + (z.length ? z.join(TRENNER) : '— (keine offenen)');
   } catch {
     return `${ALARM}nicht abrufbar (Antwort unlesbar)`;
   }
 }
 
+/** `--jq`-Projektion (Bodies sprengten den 1-MB-Puffer, ENOBUFS); `per_page=100` aufsteigend: bei Überlauf fallen die NEUESTEN weg, nie die ältesten Alarme. */
+const ALARM_JQ = '[.[]|{number,title:((.title//"")[:10]),created_at,labels:[.labels[]|{name}],pull_request:(.pull_request!=null)}]';
+
 export function sammleAlarme(laufe: Laufe): string {
   try {
-    return alarmZeile(laufe('gh', ['api', 'repos/{owner}/{repo}/issues?state=open&creator=github-actions%5Bbot%5D&per_page=50']));
+    return alarmZeile(laufe('gh', ['api', 'repos/{owner}/{repo}/issues?state=open&creator=github-actions%5Bbot%5D&per_page=100&sort=created&direction=asc', '--jq', ALARM_JQ]));
   } catch (e) {
     return `${ALARM}nicht abrufbar (${(e as { code?: string }).code ?? 'gh-Fehler'})`;
   }
@@ -298,7 +300,6 @@ function bezug(name: string, ids: string[]): string {
 /** Formatiert den Lage-Block. Reine Funktion über `LageRoh` — im Test ohne git/gh prüfbar. */
 export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
   const z: string[] = ['', '── Lage: was gerade im Bau ist (Sichtbarkeit für Parallel-Sessions) ──'];
-  if (roh.alarme) z.push(roh.alarme);
 
   if (roh.wip.length === 0) {
     z.push('🔨 belegte Flächen (wip): — (kein Schritt auf wip)');
@@ -384,6 +385,5 @@ export function lageBlock(
   const roh = sammleLage(wipFlaechen(einheiten, inArbeit), opt);
   roh.dependabot = sammleDependabot(opt.laufe ?? laufeEcht);
   if (roh.dependabot === null) roh.ausfaelle.push('git for-each-ref (dependabot)');
-  roh.alarme = sammleAlarme(opt.laufe ?? laufeEcht);
   return lageZeilen(roh, einheiten.map((e) => e.id));
 }
