@@ -17,6 +17,7 @@ import { loeseSpyNachlauf } from './inhalt-hooks';
 import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 import { ersterArtikelDerSektion } from './v3/einzelModus';
+import { nachlaufUeberholt } from './v3/sprungWege';
 import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
 import type { GliederungsKnoten } from './gliederungsTypen';
@@ -218,7 +219,13 @@ export function useSektionSprung(opts: {
     // Eintrag OHNE `sprungErledigt` (der Einstieg, oder ein Blättern) und würde die Suche beenden —
     // wer zurückgeht, will den Artikel zurück, nicht seine Fundstellen verlieren. Der Scroll bleibt.
     const behalteSuche = navTyp === 'POP' && imEinzel?.() === true;
-    const id = window.requestAnimationFrame(() => springeZuArtikel(token, behalteSuche, ziffer));
+    // Flake 4.10.2026 (`v3/sprungWege.nachlaufUeberholt`): hat eine neuere Navigation die Adresse
+    // inzwischen weitergetragen (← gleich nach →), springt dieser Frame NICHT auf seinen alten Artikel zurück.
+    const hash = location.hash;
+    const id = window.requestAnimationFrame(() => {
+      if (nachlaufUeberholt(hash, window.location.hash, imEinzel?.() === true)) return;
+      springeZuArtikel(token, behalteSuche, ziffer);
+    });
     return () => window.cancelAnimationFrame(id);
   }, [location.key, location.hash, location.state, sektionen, springeZuArtikel, istSekundaer, navTyp, imEinzel]);
 
