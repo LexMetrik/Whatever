@@ -140,7 +140,7 @@ describe('Kopf-Titel: Komposita werden erkannt (A2)', () => {
     for (const t of ['ZWISCHENENTSCHEID', 'ZWISCHEN-ENTSCHEID', '(ZWISCHEN-)ENTSCHEID', 'ZWISCHEN-URTEIL', 'TEILURTEIL', 'ABWESENHEITS-URTEIL', 'ERLÄUTERUNGSENTSCHEID', 'Zwischenentscheid', 'Urteil', 'Beschluss']) {
       expect(f(t), t).toBe('2024-05-03');
     }
-    for (const t of ['URTEIL (Rektifikat)', 'REKTIFIKAT', 'Einspracheentscheid', 'Verfügungen', 'Mit Urteil']) expect(f(t), t).toBeNull();
+    for (const t of ['Einspracheentscheid', 'Verfügungen', 'Mit Urteil']) expect(f(t), t).toBeNull();
   });
 });
 
@@ -162,4 +162,30 @@ describe('Verdachtsfälle: Portal-Datum bleibt, Hinweis nennt den Kopf (A1)', ()
       expect(abweichungen(zeileVon(p), s)).toEqual([]);
     });
   }
+});
+
+// ── Delta-Gegenprüfung #1303, R1: Rektifikat-Köpfe lesen, Datum NICHT übernehmen, bei Abweichung Hinweis ──
+describe('Rektifikat-Köpfe (R1)', () => {
+  it('DGZ.2026.2 «REKTIFIKAT vom 21. April 2026» ↔ Portal 30.04.2026: Portal bleibt, Hinweis auf den Kopf', () => {
+    const p = parseBsDokument(fix('DGZ.2026.2'));
+    expect(p.datum).toBe('2026-04-30');
+    expect(p.kopfFund).toMatchObject({ iso: '2026-04-21', rektifikat: true });
+    const s = baueSnapshot(p, zeileVon(p), p.gn, '2026-10-04');
+    expect(s.datum).toBe('2026-04-30');
+    expect(s.datumPortal).toBeUndefined();
+    expect(s.datumKopfAbweichend).toBe('2026-04-21');
+  });
+  it('IV.2020.165 «URTEIL (Rektifikat vom 13.1.23)» nennt das Entscheid-Datum = Portal: kein Hinweis', () => {
+    const p = parseBsDokument(fix('IV.2020.165'));
+    expect(p.kopfFund).toMatchObject({ iso: '2022-12-01', rektifikat: true });
+    const s = baueSnapshot(p, zeileVon(p), p.gn, '2026-10-04');
+    expect(s.datum).toBe('2022-12-01');
+    expect(s.datumKopfAbweichend).toBeUndefined();
+    expect(s.datumPortal).toBeUndefined();
+  });
+  it('waehleBsDatum mit Rektifikat-Kopf: nie als Kopf-Datum gewählt', () => {
+    expect(waehleBsDatum('2026-04-30', '2026-04-21', 2026, null, null, true))
+      .toMatchObject({ datum: '2026-04-30', quelle: 'portal', datumPortal: null, datumKopfAbweichend: '2026-04-21' });
+    expect(waehleBsDatum('2022-12-01', '2022-12-01', 2020, null, null, true)).toMatchObject({ datum: '2022-12-01', datumKopfAbweichend: null, verdacht: null });
+  });
 });
