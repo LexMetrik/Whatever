@@ -107,6 +107,15 @@ Die acht von der Gegenprüfung genannten Artikel (287, 288, 307, 313, 320, 322, 
 
 - **ZGB 299/300/310: Wert offen, wartet auf Entscheid David** zu den Generalanweisungen AS 1999 1118 (299/300) und AS 2011 725 (310). Der Generator liefert derzeit 1978-01-01; das ist **nicht** als korrekt zugesichert (der Test sichert für 299/300 nur «nicht mehr 2018-01-01», für 310 nur «nicht mehr 2014-07-01 (Randtitel zählt nicht)»). Es wurde kein Wert gesetzt.
 
+## Ergänzung 4.10.2026 — Entscheid A: ohne Randtitel ältere Körper-Fassung ⇒ «Gilt seit» leer
+
+Entscheid David 4.10.2026 (Chat, Wortlaut «A, und C als eigenen Roadmap-Schritt anlegen»); Option A laut Posten `2026-10-03-zgb-299-300-nach-gp-1298-h2-…`: «Datum weglassen («Fassung» ohne Datum) bis Generalanweisungen modelliert». Der obige Absatz «Wert offen, wartet auf Entscheid David» (ZGB 299/300/310) ist damit **entschieden**, nicht überholt gemessen: der Messwert 1978-01-01 stand am 3.10.2026 so im Generator und wird nicht nachgeführt.
+
+- **Regel (`baueArtikelHistorie`, Option `randtitelEigen` aus `sektionsAnalyse`):** gibt es ein datiertes Ereignis an einem EIGENEN Randtitel (nur Chronik, «Randtitel zählt nicht») und ist es JÜNGER als das Maximum der eigenen Körper-Ereignisse, bleibt `giltSeit` leer (`null`). Ein gleich altes oder jüngeres Körper-Ereignis datiert weiter. Die Chronik bleibt unverändert. Warum: der ältere Körper-Stand wäre amtlich falsch, weil Generalanweisungen («Ersatz von Ausdrücken», AS 1999 1118 Gewalt → Sorge, in Kraft 1.1.2000; AS 2011 725 Kindesschutzbehörde, 1.1.2013) den Körper ändern, ohne am Artikel zu stehen (§8: lieber keine Aussage als eine falsche).
+- **Nicht betroffen:** geteilte Gliederungsknoten (Vorgabe C, unverändert), Sachüberschriften ohne Gliederungszeichen (VVG 47a, NHG 3), Ausdruck-/Körper-Ausnahmen (ZGB 124, OR 928c, ZGB 4).
+- **Wirkung (per Skript gezählt, Kommando in der PR-Beschreibung):** 28 Artikel in 6 Erlassen (LFG, OR, PATG, STGB, VWVG, ZGB), ausschliesslich `giltSeit` → `null`, sonst nichts geändert. Anzeige: Marke «Fassung», Schild «Fassungshistorie», Chronik mit «an der Überschrift «…»» (`fassungsEtikett.ts`) — kein falsches Datum, kein leeres Label.
+- **Rückbau:** sobald die Generalanweisungen als Artikel-Ereignis modelliert sind (eigener Roadmap-Schritt, Entscheid «C»), die Zeile `if (giltSeit && randtitelDatum && randtitelDatum > giltSeit) giltSeit = null;` streichen und `npm run gen:historie`.
+
 ## Erkennung der Ausdruck-Fussnote — Zählung je Muster und Rückbau (Nachzug 2, 3.10.2026, Delta-GP Auflage 2)
 
 Kommando: `npm run historie:vergleich -- --muster` (liest `public/normtext/struktur/bund/*.json`, 31 394 Fussnoten, Stand Kopf 246030710). Ergebnis:
@@ -128,4 +137,4 @@ Kommando: `npm run historie:vergleich -- --muster` (liest `public/normtext/struk
 - Werkzeug `npm run historie:vergleich` (`scripts/normtext/historie-vergleich.ts`): Vorher/Nachher «Gilt seit» gegen einen Git-Ref (`--basis`, `--kopf`, `--erlass`, `--token`, `--liste`) und Muster-Zählung (`--muster`) — bei jeder Änderung der Randtitel-Regel zuerst laufen lassen.
 
 - Neue lat. Suffixe in Gliederungszeichen (über «decies» hinaus) in `GLIEDERUNG_SUFFIX` nachtragen.
-- Nach jedem Re-Pin/neuer Extraktion: `npm run gen:historie` (Sidecars sind Projektion der Struktur-Sidecars); der Test `src/tests/normtext-historie-ueberschrift-w227.test.ts` hält ZGB 299/300 (nur «nicht 2018»), ZGB 310 (nur «nicht 2014-07-01»), ZGB 124 / OR 928c / ZGB 4 (Ausdruck-Ausnahme), VVG 47a, NHG 3 fest.
+- Nach jedem Re-Pin/neuer Extraktion: `npm run gen:historie` (Sidecars sind Projektion der Struktur-Sidecars); der Test `src/tests/normtext-historie-ueberschrift-w227.test.ts` hält ZGB 299/300/310 (seit 4.10.2026 `giltSeit` null, Entscheid A, Chronik behält 2018/2014), ZGB 124 / OR 928c / ZGB 4 (Ausdruck-Ausnahme), VVG 47a, NHG 3 fest.
