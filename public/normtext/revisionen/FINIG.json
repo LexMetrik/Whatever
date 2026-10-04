@@ -1,7 +1,7 @@
 {
   "erlassKey": "FINIG",
   "sr": "954.1",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -13,12 +13,11 @@
       "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
       "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
       "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
-      "sha": "b13429eb8b11a94d7291a6c05f42fb5a00e97d550d21e64db7273758b511e1cf"
+      "sha": "eb8a8d83f47e34bf7499a3b7e0e2e8e4567e77bc5435c5eeff9f22c36deff75d"
     },
     {
       "art": "aenderung",
@@ -139,5 +138,5 @@
       "sha": "049fa09a8b4c8dbd210b33fb6f21e301677b4ac7d833fb81577bb03245e47287"
     }
   ],
-  "sha": "9fdb41e01ff0d3729190ce5c240d147dc22bb50d518804faeb892acf6e515592"
+  "sha": "39914aa59ad365f1d17522a91b977a34a93911b362b39ef012d289b8cbf55d52"
 }

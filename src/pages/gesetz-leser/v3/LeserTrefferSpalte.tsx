@@ -84,7 +84,17 @@ export function LeserTrefferSpalte({ m, bestimmungsWort, vollflaechig, onSprung,
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller || !stelle) return;
-    const el = scroller.querySelector<HTMLElement>('[data-treffer-stelle-aktiv], [data-treffer-aktiv]');
+    // ── W2·17-UI-BEFUNDE · PE-C5-B01 / PE-C7-B02 (1.10.2026) ──────────────────
+    // ZWEI Abfragen mit Vorrang statt EINER Selektorliste: `querySelector` mit
+    // `a, b` liefert das ERSTE Element in DOKUMENT-Reihenfolge, nicht das nach
+    // Listenposition — und der Artikel-Knopf (`data-treffer-aktiv`) steht vor
+    // seinen Fundstellen-Knöpfen. Gemessen (OR «Mieter», Art. 271a mit 17
+    // Stellen, @1440×900): alle 17 laufenden Stellen lagen ausserhalb des
+    // Scrollers (top 702…1072 px bei 710 px Höhe), weil immer der KOPF gemessen
+    // und der Kopf nie bewegt werden musste. Der Artikel-Knopf ist nur der
+    // Ersatz, wo es keine Stellen-Zeile gibt (Stelle nicht gerendert).
+    const el = scroller.querySelector<HTMLElement>('[data-treffer-stelle-aktiv]')
+      ?? scroller.querySelector<HTMLElement>('[data-treffer-aktiv]');
     if (!el) return;
     const z = el.getBoundingClientRect();
     const s = scroller.getBoundingClientRect();
@@ -109,11 +119,29 @@ export function LeserTrefferSpalte({ m, bestimmungsWort, vollflaechig, onSprung,
           deckelt sich wie die Gliederungs-Spalte: EIN eigener Scroller, damit
           das Rad über der Liste die Liste bewegt und nicht die Seite darunter
           (`overscroll-contain`). `max-w-reading` ist das Lesemass — die Liste
-          steht damit exakt über dem Textkörper, den sie vertritt. */}
+          steht damit exakt über dem Textkörper, den sie vertritt.
+
+          ── W2·17-UI-BEFUNDE · PE-C5-D01 (1.10.2026) · DER ANKER KLEBT, NICHT DER
+              SCROLLER ──────────────────────────────────────────────────────────
+          GEMESSEN (OR/«Kündigung», Seite gescrollt, 768/1280/1680): endet die
+          Lese-Zelle über dem Seitenende — Dokument-Ende in der Fliess-Ansicht
+          (Fusszeile darunter), kurzer Artikel in `?ansicht=artikel` —, schiebt
+          die Elternkante den klebenden SCROLLER samt Werkzeugzeile nach oben aus
+          dem Bild (Segment −166/−255/−256 px, Zähler und ↑↓ unerreichbar, kein
+          Hinweis). `sticky` hält ein Element nur INNERHALB seines Elternkastens;
+          der Kasten ist die Zelle, und die Zelle ist kürzer als der Scroller
+          hoch ist, sobald man ans Ende kommt.
+          JETZT klebt ein ANKER OHNE HÖHE (`h-0`, dieselbe Bauart wie die
+          Blur-Kanten in `./LeserLeseZeile`), und der Scroller hängt `absolute`
+          darunter: ein Element ohne Höhe wird erst vom Zellenrand selbst
+          mitgenommen, nicht schon von dessen Nähe, und der Scroller ragt
+          darunter frei über die Zelle hinaus (er trägt deshalb seine eigene
+          Papier-Fläche). Der Anschlag ist derselbe (`--nt-stick`), im Fenster
+          wie im Pane. */}
+      <div data-v3-treffer-anker className="sticky h-0" style={{ top: 'var(--nt-stick)' }}>
       <div ref={scrollerRef} data-v3-treffer-spalte-scroller
-        className="sticky mx-auto w-full max-w-reading overflow-y-auto overscroll-contain [scrollbar-width:thin]"
+        className="absolute inset-x-0 top-0 mx-auto w-full max-w-reading overflow-y-auto overscroll-contain bg-paper [scrollbar-width:thin]"
         style={{
-          top: 'var(--nt-stick)',
           maxHeight: vollflaechig
             ? 'calc(100vh - var(--nt-stick) - 1.5rem)'
             : 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)',
@@ -143,6 +171,7 @@ export function LeserTrefferSpalte({ m, bestimmungsWort, vollflaechig, onSprung,
               sucht …
             </p>
           )}
+      </div>
       </div>
     </div>
   );

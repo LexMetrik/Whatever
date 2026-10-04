@@ -15,6 +15,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { parseFedlexCacheEintraege } from './inventar-bund.ts';
 import { pinBefund } from './cache-pin-befund.ts';
+import { istSternNote } from './stern-note.ts';
+import { ABSATZ_NR_INHALT } from './fedlex/absatz-nr.ts';
 
 // ─── Manifest: ENTSCHIEDENE Drop-Klassen (semantischer Leit-Token) ───────────
 // Diese Klassen treffen KEINE Extraktor-Alternative und werden BEWUSST nicht in
@@ -86,11 +88,13 @@ function istErfasst(attrs: string, inner: string, folgt: string): boolean {
   if (/\breferenz\b/.test(klasse)) return true;
   // alt7: man-template-tab-krpr (standalone; in-table wird vorab weggeschnitten)
   if (/man-template-tab-krpr/.test(klasse)) return true;
+  // alt8 (P3b, W2·27-BUND-FERTIG): Sternchen-Verweisnote als absatz8pt — dieselbe Definition wie der Extraktor.
+  if (istSternNote(klasse, inner)) return true;
   // Bild-Pfad: enthält <img>
   if (/<img\b/i.test(inner)) return true;
   // alt2: führendes nacktes Ziffern-<sup> OHNE <a> (Absatznummer)
   const sup = inner.match(/^(?:\s|&nbsp;|<\/?inl>)*<sup\b[^>]*>([\s\S]*?)<\/sup>/i);
-  if (sup && !/<a[\s>]/i.test(sup[1]) && /^\d+(?:bis|ter|quater|quinquies)?[a-z]?$/.test(sup[1].trim())) return true;
+  if (sup && !/<a[\s>]/i.test(sup[1]) && ABSATZ_NR_INHALT.test(sup[1].trim())) return true;
   // alt3: unmittelbar von <dl> gefolgt
   if (/^\s*<dl\b/i.test(folgt)) return true;
   return false;

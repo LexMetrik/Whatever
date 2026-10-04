@@ -49,7 +49,7 @@ async function fetchAufrufeFuer(ebene: string): Promise<string[]> {
       ebene, schluessel: 'X-TEST-999', navigate: (() => {}) as unknown as NavigateFunction, erlass: null, istSekundaer: false,
       meldeInhaltsKopf: (() => {}) as unknown as MeldeKopf,
       setManifest: () => {}, setCurrency: () => {}, setStruktur: () => {}, setKopf: () => {},
-      setKantonSys: () => {}, setKantonLuecken: () => {}, setErlass: () => {}, setEintraege: () => {},
+      setKantonSys: () => {}, setKantonLuecken: () => {}, setTeilausfall: () => {}, setErlass: () => {}, setEintraege: () => {},
       setFehler: () => {},
     });
     return null;

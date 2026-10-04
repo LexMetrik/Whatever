@@ -6,6 +6,50 @@
   "referenz": 25,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 703",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 703",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/703"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 5327",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2021-01-01",
@@ -376,7 +420,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
     }
    ]
   },
@@ -466,7 +511,7 @@
    ]
   },
   "40": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2020-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -505,7 +550,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen"
     }
    ]
   },
@@ -624,8 +670,60 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "45": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "46": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "47": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "50": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
    ]
   },
   "51": {
@@ -644,6 +742,26 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "52": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
+   ]
+  },
+  "53": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
    ]
   },
   "54": {
@@ -681,6 +799,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "56": {
@@ -699,6 +821,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "57": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "58": {
@@ -730,6 +862,23 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "59": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "61": {
@@ -748,6 +897,30 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "62": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "63": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "64": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "65": {
@@ -792,6 +965,23 @@
      "absatz": "1",
      "item": "e"
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "66": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "67": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "68": {
@@ -810,6 +1000,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "69": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "70": {
@@ -828,6 +1028,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "71": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "72": {
@@ -859,6 +1069,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "73": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "74": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "75": {
@@ -877,6 +1104,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "76": {
@@ -914,6 +1144,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25_a": {
@@ -993,7 +1226,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
     },
     {
      "typ": "fassung",
@@ -1039,6 +1273,10 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "65_a": {
@@ -1057,6 +1295,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "75_a": {
@@ -1088,6 +1329,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "78_a": {

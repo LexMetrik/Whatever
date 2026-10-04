@@ -6,6 +6,64 @@
   "referenz": 21,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 386",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/386"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Betriebsbewilligungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 386",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/386"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Einzelanbaubewilligung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 386",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/386"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 386",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/386"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Datenbearbeitung"
+  }
+ ],
  "artikel": {
   "5": {
    "giltSeit": "2022-08-01",
@@ -78,7 +136,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Betriebsbewilligungen"
     }
    ]
   },
@@ -111,6 +170,9 @@
      "absatz": "1bis",
      "item": "2"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13": {
@@ -129,6 +191,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "14": {
@@ -179,6 +244,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -223,6 +291,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -241,6 +312,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -272,6 +346,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -290,6 +367,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
@@ -308,6 +388,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -326,6 +416,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -602,7 +695,7 @@
    ]
   },
   "22_a": {
-   "giltSeit": "2022-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -615,12 +708,55 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Einzelanbaubewilligung"
     }
    ]
   },
+  "22_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "22_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "22_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "22_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "22_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "22_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "65_a": {
-   "giltSeit": "2022-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -633,8 +769,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
     }
+   ]
+  },
+  "65_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "65_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "65_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "65_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "65_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "6_a": {
@@ -656,7 +828,7 @@
    ]
   },
   "79_a": {
-   "giltSeit": "2022-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -669,8 +841,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Datenbearbeitung"
     }
+   ]
+  },
+  "79_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "88_a": {

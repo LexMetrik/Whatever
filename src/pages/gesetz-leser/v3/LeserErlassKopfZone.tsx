@@ -36,6 +36,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
       currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
       zukunft={zukunft}
       luecken={m.kantonLuecken[erlass.key]}
+      ladeAusfall={m.teilausfall}
       teilerfassung={teilerfassung(erlass.key)?.befund}
       kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
       kennung={titelKennung(erlass)}
@@ -56,7 +57,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
             toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
           }} />
           {erlass.pdfUrl && (
-            <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
+            <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern aufgehoben={!!erlass.aufgehoben} />
           )}
         </>
       } />

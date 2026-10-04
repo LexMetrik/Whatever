@@ -4,6 +4,7 @@ import { BezugZeitWahl } from '../../../components/verzahnung/BezugZeitWahl';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import type { Histogramm, Zeitbereich } from '../bezugZeit';
+import { istEingegrenzt } from '../bezugAuswahl';
 import { instanzStand, zeitStand } from './panelModell';
 import { PanelSachgebiet } from './PanelSachgebiet';
 
@@ -79,12 +80,16 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
 }
 
 export function PanelFilterZeile({
-  klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, histogramm, bereich,
+  klassen, kantone, kantoneVerfuegbar, kantoneOhneWirkung = [], kantonHinweis = null, klassenZahlen, zahlOrt, histogramm, bereich,
   onKlassen, onKantone, onBereich,
 }: {
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
   kantoneVerfuegbar: readonly string[];
+  /** Gewählte Kantone ohne Kante am gelesenen Artikel (`kantonenOhneWirkung`) — der Chip sagt es. */
+  kantoneOhneWirkung?: readonly string[];
+  /** Satz unter der Zeile, wenn die Kantonwahl am Artikel nichts schneidet (`kantonWirkung`); `null` = nichts zu sagen. */
+  kantonHinweis?: string | null;
   /** S6-W1b · D-9: Zahlen je Instanz am gelesenen ARTIKEL (nicht mehr am
    *  Erlass) — dieselbe Bezugsgrösse wie die Liste darunter. */
   klassenZahlen: Partial<Record<BezugStatus, KlassenZahlen>>;
@@ -97,22 +102,31 @@ export function PanelFilterZeile({
   onBereich: (von: string, bis: string) => void;
 }) {
   const basis = useId();
+  const hinweisId = `${basis}-kanton-hinweis`;
   const [auf, setAuf] = useState<'instanzen' | 'zeit' | null>(null);
 
   return (
+    <>
     <div data-v3-panel-filter className="flex flex-wrap items-center gap-1.5 border-b border-line px-3 py-2">
-      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen)}
+      <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen, kantone, kantoneOhneWirkung)}
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
         kinder={(
           <BezugFacettenWahl klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-            klassenZahlen={klassenZahlen} zahlOrt={zahlOrt} onKlassen={onKlassen} onKantone={onKantone} />
+            klassenZahlen={klassenZahlen} zahlOrt={zahlOrt} kantoneOhneWirkung={kantoneOhneWirkung} hinweisId={hinweisId} onKlassen={onKlassen} onKantone={onKantone} />
         )} />
       <Klappe id={`${basis}-zeit`} name="Zeitraum" stand={zeitStand(bereich)}
         offen={auf === 'zeit'} setOffen={(o) => setAuf(o ? 'zeit' : null)}
-        kinder={<BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich} />} />
+        kinder={(
+          <BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich}
+            keineInstanz={klassen.length === 0} instanzEingegrenzt={istEingegrenzt(klassen, kantone)} />
+        )} />
       {/* Vierter Filter — heute ohne Daten und darum ohne Element (Kap. 14).
           Die Datenlogik bleibt `W2·7-VZUI-SACHGEBIET` (Risikopfad). */}
       <PanelSachgebiet gebiete={[]} gewaehlt={[]} onGebiete={() => {}} />
     </div>
+    {kantonHinweis && (
+      <p id={hinweisId} data-v3-panel-kanton-hinweis role="status" className="px-3 pt-1.5 text-micro leading-snug text-ink-700">{kantonHinweis}</p>
+    )}
+    </>
   );
 }

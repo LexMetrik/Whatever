@@ -1,5 +1,7 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { offeneModaleDialoge } from '../../../components/layout/modalerDialog';
+import { tastendruckGehoertPane } from '../panePrioritaet';
 
 // ─── EIN Auto-Zu für alle aufziehbaren Flächen des Lesers V3 (H3) ────────────
 //
@@ -105,6 +107,11 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
   // Fokus-Falle + Esc + Fokus-Rückgabe aus der GETEILTEN Mechanik — dieselbe,
   // die das Ist-Menü und das Gliederungs-Blatt verwenden (§5). NICHT im Modus
   // `beiwerk`/`spalte`: dort ist die Falle gerade das, was nicht sein darf (Kopf oben).
+  // Hier KEIN Pane-Gating des Esc (F1-B02): ein Modus mit Falle ist modal, die
+  // Bedienung ausserhalb schliesst ihn (Aussenklick) — zwei offene gleichzeitig
+  // gibt es nicht, ein Gating könnte nie scheitern (§6.7). Ein modaler Dialog
+  // DARÜBER (Norm-Popover) nimmt das Esc dagegen selbst an: `modalDarueber`
+  // in `useDialogFokus`.
   useDialogFokus(offen && !OHNE_FALLE.includes(modus), panelRef, () => schliesseRef.current());
 
   // ── `beiwerk`/`spalte`: Fokus hinein, Esc, Rückgabe — OHNE Falle ─────────
@@ -139,7 +146,14 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     // vorher scrollte es 29 px (und zurück); die Spalte klebt ohnehin.
     wurzel.focus({ preventScroll: true });
     const taste = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' || e.key === 'Esc') schliesseRef.current();
+      if (e.key !== 'Escape' && e.key !== 'Esc') return;
+      // F1-B02: ein offener MODALER Dialog (Tastatur-Hilfe, Norm-Popover,
+      // Gliederungs-Sheet) ist die oberste Fläche und nimmt dieses Esc selbst
+      // an — das Blatt dahinter bleibt stehen, statt mitzugehen.
+      if (offeneModaleDialoge().length > 0) return;
+      // … und nur das Blatt DES Panes, das den Tastendruck beansprucht.
+      if (paneRolle != null && !tastendruckGehoertPane(paneRolle === 'sekundaer')) return;
+      schliesseRef.current();
     };
     window.addEventListener('keydown', taste);
     return () => {

@@ -6,6 +6,80 @@
   "referenz": 95,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 468",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/468"
+    },
+    {
+     "label": "BBl 2019 6697",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2368"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Unentgeltliche Rechtspflege für die Privatklägerschaft und das Opfer"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 309",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+    },
+    {
+     "label": "BBl 2021 44",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: DNA-Profil"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 309",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/309"
+    },
+    {
+     "label": "BBl 2021 44",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/44"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Phänotypisierung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2013-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1051",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/230"
+    },
+    {
+     "label": "BBl 2012 5591 5609",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
+  }
+ ],
  "artikel": {
   "19": {
    "giltSeit": "2024-01-01",
@@ -273,7 +347,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Verfahrensleitung"
     }
    ]
   },
@@ -1007,8 +1082,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Unentgeltliche Rechtspflege für die Privatklägerschaft und das Opfer"
     }
+   ]
+  },
+  "137": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "138": {
@@ -1031,6 +1114,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "141": {
@@ -1724,7 +1810,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: DNA-Profil"
     }
    ]
   },
@@ -1748,6 +1835,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "257": {
@@ -1770,6 +1860,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "258": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "259": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "261": {
@@ -3459,6 +3566,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "258_b": {
@@ -3496,7 +3606,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Phänotypisierung"
     }
    ]
   },
@@ -3592,12 +3703,14 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 286",
+     "ueberschrift": "5. Abschnitt: Verdeckte Ermittlung"
     }
    ]
   },
   "298_a": {
-   "giltSeit": "2013-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3614,8 +3727,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Verdeckte Fahndung"
     }
+   ]
+  },
+  "298_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "298_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "298_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "303_a": {

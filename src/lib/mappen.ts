@@ -1,4 +1,5 @@
 import { tabSchluessel, type TabEintrag } from './tabs';
+import { lokalSpeicher } from './sichererSpeicher';
 
 // ═══ W2·25 TEIL 2 · DIE ARBEITSMAPPE (Spec §7, §5a Ziff. 9) ═════════════════
 //
@@ -158,15 +159,15 @@ export function mappenAdresse(reiter: readonly TabEintrag[]): string {
 // ─── Der benannte Speicher ──────────────────────────────────────────────────
 
 function schreibe(mappen: Mappe[]): void {
-  try { localStorage.setItem(KEY, JSON.stringify(mappen)); }
-  catch { /* privater Modus — Mappen sind Komfort, kein Datenverlust */ }
+  // Gesperrt / privater Modus → still: Mappen sind Komfort, kein Datenverlust.
+  lokalSpeicher.schreib(KEY, JSON.stringify(mappen));
 }
 
 /** Alle Mappen, alphabetisch nach Namen (§2: eine feste Ordnung ohne Uhr).
  *  Korruptes oder fremdes JSON ergibt eine leere Liste, nie einen Absturz. */
 export function ladeMappen(): Mappe[] {
   try {
-    const roh = localStorage.getItem(KEY);
+    const roh = lokalSpeicher.lies(KEY);
     const arr = roh ? JSON.parse(roh) : [];
     if (!Array.isArray(arr)) return [];
     const namen = new Set<string>();
@@ -216,7 +217,7 @@ export function speichereMappe(name: string, reiter: readonly TabEintrag[]): voi
   // die älteste ist, ohne eine Uhr zu befragen (§2).
   const roh = (() => {
     try {
-      const a = JSON.parse(localStorage.getItem(KEY) ?? '[]');
+      const a = JSON.parse(lokalSpeicher.lies(KEY) ?? '[]');
       return Array.isArray(a) ? (a as Mappe[]) : [];
     } catch { return []; }
   })();
@@ -231,7 +232,7 @@ export function loescheMappe(name: string): void {
   const gesucht = name.trim();
   const roh = (() => {
     try {
-      const a = JSON.parse(localStorage.getItem(KEY) ?? '[]');
+      const a = JSON.parse(lokalSpeicher.lies(KEY) ?? '[]');
       return Array.isArray(a) ? (a as Mappe[]) : [];
     } catch { return []; }
   })();

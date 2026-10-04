@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from 'react';
 import type { AusgabeStil } from '../../lib/vorlagen/formatvorlagen';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Ausgabe-Stil-Wahl (nüchtern ⇄ modern) – geteilte UI-Präferenz ───────────
 //
@@ -16,7 +17,7 @@ let aktuell: AusgabeStil = leseGespeichert();
 
 function leseGespeichert(): AusgabeStil {
   try {
-    return localStorage.getItem(KEY) === 'nuechtern' ? 'nuechtern' : 'modern';
+    return lokalSpeicher.lies(KEY) === 'nuechtern' ? 'nuechtern' : 'modern';
   } catch {
     return 'modern';
   }
@@ -28,7 +29,7 @@ export const getAusgabeStil = (): AusgabeStil => aktuell;
 
 export const setAusgabeStil = (stil: AusgabeStil): void => {
   aktuell = stil;
-  try { localStorage.setItem(KEY, stil); } catch { /* SSR / privat-Modus */ }
+  lokalSpeicher.schreib(KEY, stil); // SSR / privat-Modus
   hoerer.forEach((f) => f());
 };
 

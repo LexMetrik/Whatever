@@ -44,6 +44,7 @@
 //
 
 import { readFileSync, existsSync } from 'node:fs';
+import { eigeneGattungAusTitel } from '../src/components/normtext/fremderlassGenitiv';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { chapeauZielFremdgesetz } from '../src/lib/fedlex';
@@ -64,7 +65,7 @@ const SNAPSHOT_WURZEL = join(WURZEL, 'public', 'normtext');
 // ─── 4 · Korpus-Lauf ────────────────────────────────────────────────────────
 
 interface RegisterErlass {
-  key: string; ebene: string; kanton: string | null; kuerzel: string; status: string; datei: string | null;
+  key: string; ebene: string; kanton: string | null; kuerzel: string; status: string; datei: string | null; titel?: string;
 }
 
 // ─── V-3 · Kürzel-Register je Kanton (Spiegel von baueKantonKuerzelKarte) ────
@@ -278,6 +279,7 @@ export function berechne(): Artefakt {
       // V-7c: NormText reicht das letzte Pfadsegment (= Register-Key) roh an
       // `fremdRoutingFormB` durch — Schlüssel der Trägergesetz-Tabelle.
       erlassKey: e.key,
+      eigeneGattung: eigeneGattungAusTitel(e.titel),
     };
 
     for (const eintrag of snap.eintraege) {
@@ -543,6 +545,12 @@ export function selbsttest(): void {
     // … und sie bleibt eng: ein anderes Wort hinter «des» ist weiter Sache des
     // des/der-Guards, die Weiche darf ihn nicht verdrängen.
     ['Der Vertreter im Sinne von Artikel 5 des Vertrages meldet.', ssv, 'art-desder-guard', false],
+    // ── W2·17 Nachzug (2.10.2026): Genitiv-Erlassname HINTER dem Passus ────
+    // Der des/der-Guard sieht nur den ROHEN Rest; mit «Absatz 1» dazwischen wurde
+    // «Artikel 2 Absatz 1 des Kulturgütertransfergesetzes» ein Selbst-Link (ZGB 728).
+    ['Es gilt Artikel 5 Absatz 1 des Kulturgütertransfergesetzes vom 20. Juni 2003.', artErlass, 'fremderlass-genitiv', false],
+    // … Prosa hinter dem Passus bleibt ein Selbstverweis (V-6: UVPV 6a, NW-521.1 118).
+    ['Es gilt Artikel 5 Absatz 1 der Quellensteuer unterliegen.', artErlass, 'art-self', false],
     // V-7a Kurztitel mit Geltung «bund»: im Bund Link, im Kanton Text (AR-146.1 heisst gleich).
     ['Es gilt Art. 7 des Datenschutzgesetzes.', ssv, 'n2b-genitiv', false],
     ['Es gilt Art. 7 des Datenschutzgesetzes.', kantonArt, 'art-desder-guard', false],

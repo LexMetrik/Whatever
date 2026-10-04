@@ -93,7 +93,7 @@ export function ArtikelIndex({ gruppen, aktivToken, onSprung, anhang }: ArtikelI
         // W2·29 S3: Etikett-Rolle `lc-overline` statt Versalien + Sperrsatz (F0.7).
         // `kopf === null` (T4: NHG/VMWG, oder freie Zwischenartikel bei T3)
         // bleibt ohne Überschrift — nichts erfunden (§8).
-        <div key={g.kopf ?? `frei-${gi}`}>
+        <div key={`${gi}-${g.kopf ?? 'frei'}`}>
           {g.kopf && (
             <p className="lc-overline mb-0.5 font-semibold [overflow-wrap:anywhere]">
               {margLabel(g.kopf)}

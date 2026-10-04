@@ -123,7 +123,7 @@ describe('usePanelTafeln · Fehlerzeile der Artikel-Gruppe nur beim Shard-Ausfal
     const t = usePanelTafeln({
       erlassKey: 'ARG', laden: true, quelleUrl: 'https://www.fedlex.admin.ch/', ebene: 'bund', stichtag: null,
       aktArtikel: '6', artikelLabel: 'Art. 6', blatt: { eintrag: { artikel: '6' } as unknown as NormSnapshot },
-      normZitat: 'Art. 6 ARG', wort: 'Artikel',
+      normZitat: 'Art. 6 ARG', wort: 'Artikel', historie: { wert: null, fertig: true },
     });
     return createElement('div', null, t.tafeln.erlaeuterungen);
   }

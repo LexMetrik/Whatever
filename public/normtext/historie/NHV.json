@@ -6,6 +6,50 @@
   "referenz": 10,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1996-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 225",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1996-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 225",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1996-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 225",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1996-02-01",
@@ -34,7 +78,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben"
     }
    ]
   },
@@ -106,6 +151,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "3": {
@@ -124,6 +172,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "4": {
@@ -153,7 +204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
     }
    ]
   },
@@ -173,6 +225,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "6": {
@@ -191,6 +246,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7": {
@@ -261,6 +319,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "8": {
@@ -279,6 +340,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "9": {
@@ -323,6 +387,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "10": {
@@ -341,6 +408,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -359,6 +429,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
@@ -403,6 +476,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "13": {
@@ -643,6 +719,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "23": {
@@ -946,6 +1025,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12_a": {
@@ -977,6 +1059,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_a": {
@@ -1019,7 +1104,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung"
     }
    ]
   },
@@ -1075,6 +1161,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "4_b": {
@@ -1093,6 +1182,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

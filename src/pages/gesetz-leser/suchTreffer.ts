@@ -56,8 +56,19 @@ export function kanonischerAnkerToken(roh: string, tokens: readonly string[]): s
   const n = normArtEingabe(roh);
   if (n === '') return roh;
   const treffer = tokens.filter((t) => normArtEingabe(t) === n);
-  return treffer.length === 1 ? treffer[0] : roh;
+  if (treffer.length > 0) return treffer.length === 1 ? treffer[0] : roh;
+  // W2·27 P2 #48 (1.10.2026): Endpunkt eines Sammelartikels («697_l_697_m» = Art. 697l–697m, «77_78»).
+  // Nur die BEIDEN Enden und nur bei eindeutigem Treffer; die Mitte («226_b» in «226_a_226_d») würde
+  // eine Buchstaben-/Ordinal-Reihenfolge voraussetzen und bleibt ungelöst (§8: kein Rate-Sprung).
+  const sammel = tokens.filter((t) => {
+    const m = SAMMEL_TOKEN.exec(t);
+    return !!m && (normArtEingabe(m[1]) === n || normArtEingabe(m[2]) === n);
+  });
+  return sammel.length === 1 ? sammel[0] : roh;
 }
+
+/** Token eines Sammelartikels: zwei Artikel-Kennungen («697_l» + «697_m»); «329_g_bis» ist keiner. */
+const SAMMEL_TOKEN = /^(\d+(?:_[a-z]+)?)_(\d+(?:_[a-z]+)?)$/;
 
 /**
  * Labels der aktiven Gliederungs-IDs, in Pfad-Reihenfolge («Sie sind hier»).

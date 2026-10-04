@@ -1,14 +1,212 @@
 {
  "erlass": "HREGV",
  "abdeckung": {
-  "fussnoten": 293,
-  "ereignis": 246,
-  "referenz": 46,
+  "fussnoten": 295,
+  "ereignis": 247,
+  "referenz": 47,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1663",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/304"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 4659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/667"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Elektronischer Geschäftsverkehr"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Kapitel: Zentrale Datenbanken"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Anmeldung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Gegenstand und Begriffe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 971",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/179"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Belege"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Währung des Aktienkapitals"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Ordentliche Kapitalerhöhung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Erhöhung aus bedingtem Kapital"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Abschnitt: Kapitalband"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/114"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10. Abschnitt: Auflösung und Löschung"
+  }
+ ],
  "artikel": {
   "1": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -21,8 +219,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Gegenstand und Begriffe"
     }
+   ]
+  },
+  "2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "3": {
@@ -112,7 +318,7 @@
    ]
   },
   "10": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -126,6 +332,19 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "g"
     }
    ]
   },
@@ -192,7 +411,7 @@
    ]
   },
   "13": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -205,12 +424,20 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Kapitel: Zentrale Datenbanken"
     }
    ]
   },
+  "14": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "15": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -236,7 +463,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Anmeldung"
     }
    ],
    "aufgehobenSeit": "2021-01-01"
@@ -257,6 +485,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "17": {
@@ -275,6 +506,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "18": {
@@ -293,6 +527,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "19": {
@@ -311,10 +548,13 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "20": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2018-02-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -340,7 +580,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Belege"
     }
    ]
   },
@@ -386,6 +627,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "22": {
@@ -417,6 +661,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "24": {
@@ -435,6 +689,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "26": {
@@ -925,7 +1189,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Ordentliche Kapitalerhöhung"
     }
    ]
   },
@@ -977,6 +1242,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "51": {
@@ -1045,7 +1313,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Erhöhung aus bedingtem Kapital"
     }
    ]
   },
@@ -1104,6 +1373,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "53": {
@@ -1122,6 +1394,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "54": {
@@ -1267,7 +1542,7 @@
    ]
   },
   "61": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1280,7 +1555,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle"
     }
    ]
   },
@@ -1300,10 +1576,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    12
    ]
   },
   "63": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1329,7 +1608,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Abschnitt: Auflösung und Löschung"
     }
    ]
   },
@@ -1362,6 +1642,16 @@
      "absatz": "3",
      "item": "c"
     }
+   ],
+   "erbt": [
+    13
+   ]
+  },
+  "65": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    13
    ]
   },
   "66": {
@@ -2695,7 +2985,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
     }
    ]
   },
@@ -2715,6 +3006,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "118": {
@@ -2733,6 +3027,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "119": {
@@ -2751,6 +3048,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "120": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "121": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "122": {
@@ -2782,6 +3096,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "123": {
@@ -3328,6 +3645,13 @@
     }
    ]
   },
+  "164": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
   "166": {
    "giltSeit": "2021-01-01",
    "ereignisse": [
@@ -3381,7 +3705,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
     }
    ]
   },
@@ -3401,6 +3726,16 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "168": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "169": {
@@ -3419,6 +3754,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "171": {
@@ -3455,6 +3793,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12_a": {
@@ -3489,7 +3830,7 @@
    ]
   },
   "12_b": {
-   "giltSeit": "2012-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3502,7 +3843,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Elektronischer Geschäftsverkehr"
     }
    ]
   },
@@ -3535,6 +3877,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "12_d": {
@@ -3556,6 +3901,13 @@
    ],
    "aufgehobenSeit": "2018-02-01"
   },
+  "12_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "14_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
@@ -3572,6 +3924,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "152_a": {
@@ -3662,7 +4017,7 @@
    ]
   },
   "162_163": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3675,7 +4030,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten"
     }
    ]
   },
@@ -3762,6 +4118,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "24_b": {
@@ -3793,6 +4152,9 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "29_a": {
@@ -3814,7 +4176,7 @@
    ]
   },
   "45_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3827,8 +4189,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Währung des Aktienkapitals"
     }
+   ]
+  },
+  "45_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "49_50": {
@@ -3851,7 +4221,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "59_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3864,8 +4234,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Abschnitt: Kapitalband"
     }
+   ]
+  },
+  "59_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
+   ]
+  },
+  "59_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "5_a": {
@@ -3926,7 +4311,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 90"
     },
     {
      "typ": "eingefuegt",
@@ -3960,8 +4346,8 @@
  "residuum": [
   {
    "token": "29_a",
-   "nr": "57",
-   "roh": "ISO/IEC 8859-15, 1999, Informationstechnik - 8-Bit-Einzelbyte-codierte Schriftzeichensätze - Teil 15: Lateinisches Alphabet Nr. 9. Die aufgeführte Norm kann eingesehen und bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur, www.snv.ch. Sie ist auch im Internet auf der Homepage der Internationalen Organisation für Normung (www.iso.org) abrufbar."
+   "nr": "59",
+   "roh": "ISO/IEC 8859-15, 1999, Informationstechnik - 8-Bit-Einzelbyte-codierte Schriftzeichensätze - Teil 15: Lateinisches Alphabet Nr. 9. Die aufgeführte Norm kann eingesehen und bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur, www.snv.ch . Sie ist auch im Internet auf der Homepage der Internationalen Organisation für Normung ( www.iso.org ) abrufbar."
   }
  ]
 }

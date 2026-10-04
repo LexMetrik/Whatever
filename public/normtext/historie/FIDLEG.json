@@ -1,8 +1,8 @@
 {
  "erlass": "FIDLEG",
  "abdeckung": {
-  "fussnoten": 50,
-  "ereignis": 9,
+  "fussnoten": 51,
+  "ereignis": 10,
   "referenz": 40,
   "unparsed": 1
  },
@@ -189,12 +189,34 @@
      "item": null
     }
    ]
+  },
+  "88": {
+   "giltSeit": "2026-10-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
   }
  },
  "residuum": [
   {
    "token": "96",
-   "nr": "52",
+   "nr": "53",
    "roh": "V vom 6. Nov. 2019 über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes (AS 2019 4631)."
   }
  ]

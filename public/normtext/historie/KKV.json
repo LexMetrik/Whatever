@@ -6,6 +6,92 @@
   "referenz": 45,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/759"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 73",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/73"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2015-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 4295",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/708"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Titel: Prüfung und Aufsicht"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 4295",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/708"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Prüfung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2014 4295",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2014/708"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Aufsicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/759"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": null,
@@ -431,7 +517,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: …"
     }
    ],
    "aufgehobenSeit": "2020-01-01"
@@ -749,7 +836,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
     }
    ]
   },
@@ -769,6 +857,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "33": {
@@ -787,6 +878,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "34": {
@@ -831,6 +925,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "36": {
@@ -2236,7 +2333,7 @@
    "aufgehobenSeit": "2020-01-01"
   },
   "108": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2013-03-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2275,7 +2372,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
     }
    ]
   },
@@ -2321,6 +2419,23 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "110": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "111": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "113": {
@@ -2793,7 +2908,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Prüfung und Aufsicht"
     },
     {
      "typ": "eingefuegt",
@@ -2806,7 +2922,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Prüfung"
     }
    ]
   },
@@ -2826,6 +2943,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "136": {
@@ -2863,10 +2984,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "141": {
-   "giltSeit": "2015-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2879,8 +3004,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Aufsicht"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "142": {
@@ -2899,6 +3028,10 @@
      "absatz": "1",
      "item": "d"
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "143": {
@@ -3106,6 +3239,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "110_a": {
@@ -3124,6 +3260,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "115_a": {
@@ -3181,7 +3320,7 @@
    ]
   },
   "126_a": {
-   "giltSeit": "2024-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3194,8 +3333,268 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
     }
+   ]
+  },
+  "126_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_u": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_v": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_w": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_x": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_y": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z__2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_bis": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_decies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_duodecies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_novies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_octies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_quater": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_quinquies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_septies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_sexies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_ter": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "126_z_undecies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "127_a": {
@@ -3571,7 +3970,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 1"
     }
    ]
   },
@@ -3795,6 +4195,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "32_a": {
@@ -3826,6 +4229,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "32_b": {
@@ -3857,6 +4263,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "34_a": {

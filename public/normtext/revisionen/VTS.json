@@ -1,7 +1,7 @@
 {
   "erlassKey": "VTS",
   "sr": "741.41",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -54,7 +54,6 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
@@ -63,7 +62,7 @@
         "2028-02-01"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/454/de",
-      "sha": "0e21dd9cacef634506f0eedfeddb42ec3e5f67563d3d4c7a0d5744d3fe074ecb"
+      "sha": "eae117e91d57c6e66846d0a96ac3c04dce323213b6bb7f89ceea8aeff02ed1c7"
     },
     {
       "art": "aenderung",
@@ -1260,5 +1259,5 @@
       "sha": "7ceac879d2407babf6a4986253d3cb9db10b021cbac8a780f06f99760300c67f"
     }
   ],
-  "sha": "fb33a4549eb7629b8f10aa42adeb9a2bd529a1a9c8e8986dc39a85812173c6c7"
+  "sha": "873e76cd625bb65f1496fec46630aef0318c9fc4c45ae8663d5999361e477a86"
 }

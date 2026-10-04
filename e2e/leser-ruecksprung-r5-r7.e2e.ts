@@ -288,7 +288,28 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     // die Rechnung für den Shard wird ein Vielfaches kleiner.
     await page.goto('/gesetze/bund/BV#art-8');
     const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
+    // §6.3-DEKLARATION (W2·18-FEHLERBUCH, 1.10.2026) · ERST ANKOMMEN, DANN ABWARTEN.
+    // `toHaveCount(0)` allein ist als Gatter vakuum-wahr: es ist schon erfüllt, BEVOR
+    // die Ansage überhaupt erscheint (`goto` kehrt beim load-Event zurück; die
+    // Ansage entsteht erst danach — Shell mountet, Effekt, rAF, `setAktiv`). Passt
+    // ein Poll in diese Lücke, kommt der Test mit dem Ergebnis «0» durch, und die
+    // Auswertung liest `__r7an` gesetzt, `__r7aus` null — «Overlay ist wieder
+    // verschwunden» rot, obwohl das Overlay noch gar nicht verschwinden konnte.
+    // Belegt an zwei Merge-Queue-Rauswürfen (Läufe 36048365734, 36073915574,
+    // 24.9.2026, beide Shard 5/8, nur im Retry grün); der Fehlerkontext des
+    // ersten Laufs zeigt zum Scheitern das Overlay NOCH stehend und den Reader
+    // bei «Wird geladen …». Der Schwestertest (H4) trägt dieselbe Vorbedingung
+    // schon seit 18.8.2026. Darum wartet die Spec zuerst auf das Erscheinen und
+    // dann auf das Verschwinden — beide Marken kommen aus dem MutationObserver
+    // oben, nicht aus einem Locator-Poll. Aussage unverändert: erscheint, steht
+    // > 300 ms, verschwindet; nichts gelockert, kein Timeout erhöht (25 s je Marke
+    // wie zuvor für das Ganze). Rot-Beweis im Commit-Body.
+    type R7Marken = { __r7an: number | null; __r7aus: number | null };
+    await page.waitForFunction(() => (window as unknown as R7Marken).__r7an !== null,
+      undefined, { timeout: 25000 });
     // Es verschwindet von selbst, sobald der Sprung gelandet ist.
+    await page.waitForFunction(() => (window as unknown as R7Marken).__r7aus !== null,
+      undefined, { timeout: 25000 });
     await expect(overlay).toHaveCount(0, { timeout: 25000 });
 
     interface P { t: number; top: number; bottom: number; vh: number; scrollY: number }

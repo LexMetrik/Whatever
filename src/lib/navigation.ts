@@ -37,6 +37,7 @@ import { kernerlasse } from '../components/gesetze/kernerlasse';
 // erfassungsgrad.ts (KEINE zweite Zähl-Wahrheit, §5).
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 import { erfassungsgrad, STUFE_WORT, type ErfassungsStufe } from './normtext/erfassungsgrad';
+import { sicherDekodiert } from './sicherDekodieren';
 
 /** Blatt: ein Navigationsziel (Route, ggf. mit Query/Hash für eine Teilsicht). */
 export interface NavLink {
@@ -209,7 +210,7 @@ export function saeulenZiel(zielAnker: string): string {
  * (§8 — kein stiller Sprung ins Leere). Ohne Hash bleibt es ohne Hash.
  */
 export function internationalAnkerAbbildung(hash: string): string {
-  const roh = decodeURIComponent(hash.replace(/^#/, ''));
+  const roh = sicherDekodiert(hash.replace(/^#/, '')); // PA-1-B01
   if (!roh) return '';
   return INTERNATIONAL_RUBRIK_IDS.includes(roh) ? roh : '';
 }

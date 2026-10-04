@@ -2,10 +2,48 @@
  "erlass": "STHG",
  "abdeckung": {
   "fussnoten": 276,
-  "ereignis": 236,
-  "referenz": 40,
+  "ereignis": 235,
+  "referenz": 41,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 1813",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    {
+     "label": "BBl 2015 657",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 1813",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    {
+     "label": "BBl 2015 657",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": "2011-01-01",
@@ -2380,7 +2418,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
     }
    ]
   },
@@ -2404,6 +2443,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "37": {
@@ -2463,7 +2505,7 @@
    ]
   },
   "38": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2480,7 +2522,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
     }
    ]
   },
@@ -2782,28 +2825,6 @@
       }
      ],
      "absatz": "4",
-     "item": null
-    }
-   ]
-  },
-  "55": {
-   "giltSeit": null,
-   "ereignisse": [
-    {
-     "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
      "item": null
     }
    ]
@@ -3526,6 +3547,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35_b": {
@@ -3548,6 +3572,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36_a": {
@@ -3570,6 +3597,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "38_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "38_b": {

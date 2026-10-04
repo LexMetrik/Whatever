@@ -1,7 +1,7 @@
 {
   "erlassKey": "VZAE",
   "sr": "142.201",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -13,12 +13,11 @@
       "titelDe": "Verordnung vom 26. August 2026 über das europäische und das nationale Reiseinformations- und -genehmigungssystem (ETIASV)",
       "titelFr": "Ordonnance du 26 août 2026 sur les systèmes européen et national d’information et d’autorisation concernant les voyages (OETIAS)",
       "titelIt": "Ordinanza del 26 agosto 2026 sui sistemi europeo e nazionale di informazione e autorizzazione ai viaggi (OETIAS)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/474/de",
-      "sha": "b6d6f7358c82c8d8809d1ae15ad45d53213fafa3652187e20a05b4a8d211bb31"
+      "sha": "39269c2d54b7bf3bbf15601bf9e61127a0517cc8723f1b8f9439063996a4e2c4"
     },
     {
       "art": "aenderung",
@@ -995,5 +994,5 @@
       "sha": "f934161cb134a26fe2b9c6dd3ac9a3333a73c664741e7f230a804fb0be1d6a03"
     }
   ],
-  "sha": "46442ea8661959e02ea5fa3311a19e43c7f132d1b3423dd0bea8c37ab0776fb0"
+  "sha": "628659b5953707ef1b38100b81db3a45bd97a529ae53ca7748c965aae8743beb"
 }

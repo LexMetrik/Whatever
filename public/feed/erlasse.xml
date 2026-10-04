@@ -2,12 +2,138 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://lexmetrik.vercel.app/feed/erlasse.xml</id>
   <title>LexMetrik — geänderte Erlasse</title>
-  <updated>2026-09-02T00:00:00Z</updated>
+  <updated>2026-10-01T00:00:00Z</updated>
   <link rel="self" type="application/atom+xml" href="https://lexmetrik.vercel.app/feed/erlasse.xml" />
   <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/" />
   <author>
     <name>LexMetrik</name>
   </author>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BBG</id>
+    <title>BBG — Bundesgesetz über die Berufsbildung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BBG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 412.10).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BBV</id>
+    <title>BBV — Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BBV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 412.101).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BEG</id>
+    <title>BEG — Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BEG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 957.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/BANKG</id>
+    <title>BankG — Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BANKG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 952.0).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/FIDLEG</id>
+    <title>FIDLEG — Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FIDLEG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 950.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/FINIG</id>
+    <title>FINIG — Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FINIG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 954.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/GWG</id>
+    <title>GwG — Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/GWG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 955.0).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/HREGV</id>
+    <title>HRegV — Handelsregisterverordnung</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/HREGV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 221.411).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/KAG</id>
+    <title>KAG — Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/KAG" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 951.31).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/OR</id>
+    <title>OR — Bundesgesetz betreffend die Ergänzung des ZGB (Obligationenrecht)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/OR" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 220).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/RVOV</id>
+    <title>RVOV — Regierungs- und Verwaltungsorganisationsverordnung (RVOV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/RVOV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 172.010.1).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/SSV</id>
+    <title>SSV — Signalisationsverordnung (SSV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SSV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 741.21).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/STGB</id>
+    <title>StGB — Schweizerisches Strafgesetzbuch</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/STGB" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 311.0).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VEV</id>
+    <title>VEV — Verordnung über die Einreise und die Visumerteilung (VEV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VEV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 142.204).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VRV</id>
+    <title>VRV — Verkehrsregelnverordnung (VRV)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VRV" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 741.11).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VTS</id>
+    <title>VTS — Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VTS" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 741.41).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/VZAE</id>
+    <title>VZAE — Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZAE" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 142.201).</summary>
+  </entry>
+  <entry>
+    <id>https://lexmetrik.vercel.app/gesetze/bund/ZEMIS_V</id>
+    <title>ZEMIS-V — Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)</title>
+    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ZEMIS_V" />
+    <updated>2026-10-01T00:00:00Z</updated>
+    <summary>Stand 2026-10-01 (SR 142.513).</summary>
+  </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/DBG</id>
     <title>DBG — Bundesgesetz über die direkte Bundessteuer</title>
@@ -205,13 +331,6 @@
     <summary>Stand 2026-08-01 (SR 814.600).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/ZEMIS_V</id>
-    <title>ZEMIS-V — Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/ZEMIS_V" />
-    <updated>2026-08-01T00:00:00Z</updated>
-    <summary>Stand 2026-08-01 (SR 142.513).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-424.100</id>
     <title>Berufsmaturitätsverordnung — Verordnung über die Berufsmaturität</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-424.100" />
@@ -338,13 +457,6 @@
     <summary>Stand 2026-07-01 (SR 700.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/SSV</id>
-    <title>SSV — Signalisationsverordnung (SSV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SSV" />
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Stand 2026-07-01 (SR 741.21).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/SVG</id>
     <title>SVG — Strassenverkehrsgesetz</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/SVG" />
@@ -357,20 +469,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VIL" />
     <updated>2026-07-01T00:00:00Z</updated>
     <summary>Stand 2026-07-01 (SR 748.131.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VRV</id>
-    <title>VRV — Verkehrsregelnverordnung (VRV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VRV" />
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Stand 2026-07-01 (SR 741.11).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VTS</id>
-    <title>VTS — Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VTS" />
-    <updated>2026-07-01T00:00:00Z</updated>
-    <summary>Stand 2026-07-01 (SR 741.41).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/ZH-175.2</id>
@@ -436,32 +534,11 @@
     <summary>Stand 2026-06-12 (SR 0.107).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/STGB</id>
-    <title>StGB — Schweizerisches Strafgesetzbuch</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/STGB" />
-    <updated>2026-06-12T00:00:00Z</updated>
-    <summary>Stand 2026-06-12 (SR 311.0).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VEV</id>
-    <title>VEV — Verordnung über die Einreise und die Visumerteilung (VEV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VEV" />
-    <updated>2026-06-12T00:00:00Z</updated>
-    <summary>Stand 2026-06-12 (SR 142.204).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/VGG</id>
     <title>VGG — Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VGG" />
     <updated>2026-06-12T00:00:00Z</updated>
     <summary>Stand 2026-06-12 (SR 173.32).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/VZAE</id>
-    <title>VZAE — Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/VZAE" />
-    <updated>2026-06-12T00:00:00Z</updated>
-    <summary>Stand 2026-06-12 (SR 142.201).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/MSTG</id>
@@ -735,13 +812,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-257.115" />
     <updated>2026-03-01T00:00:00Z</updated>
     <summary>Stand 2026-03-01 (SR 257.115).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/RVOV</id>
-    <title>RVOV — Regierungs- und Verwaltungsorganisationsverordnung (RVOV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/RVOV" />
-    <updated>2026-03-01T00:00:00Z</updated>
-    <summary>Stand 2026-03-01 (SR 172.010.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-819.610</id>
@@ -1134,13 +1204,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/MVV" />
     <updated>2026-01-01T00:00:00Z</updated>
     <summary>Stand 2026-01-01 (SR 833.11).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/OR</id>
-    <title>OR — Bundesgesetz betreffend die Ergänzung des ZGB (Obligationenrecht)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/OR" />
-    <updated>2026-01-01T00:00:00Z</updated>
-    <summary>Stand 2026-01-01 (SR 220).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-833.151</id>
@@ -2109,20 +2172,6 @@
     <summary>Stand 2025-03-15 (SR 812.212.1).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BBG</id>
-    <title>BBG — Bundesgesetz über die Berufsbildung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BBG" />
-    <updated>2025-03-01T00:00:00Z</updated>
-    <summary>Stand 2025-03-01 (SR 412.10).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BBV</id>
-    <title>BBV — Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BBV" />
-    <updated>2025-03-01T00:00:00Z</updated>
-    <summary>Stand 2025-03-01 (SR 412.101).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-650.410</id>
     <title>Gasttaxenverordnung — Verordnung zum Gesetz betreffend die Erhebung einer Gasttaxe</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-650.410" />
@@ -2429,13 +2478,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/HMG" />
     <updated>2025-01-01T00:00:00Z</updated>
     <summary>Stand 2025-01-01 (SR 812.21).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/HREGV</id>
-    <title>HRegV — Handelsregisterverordnung</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/HREGV" />
-    <updated>2025-01-01T00:00:00Z</updated>
-    <summary>Stand 2025-01-01 (SR 221.411).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/LU-645</id>
@@ -3236,39 +3278,11 @@
     <summary>Stand 2024-03-01 (SR 412.400).</summary>
   </entry>
   <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/FIDLEG</id>
-    <title>FIDLEG — Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FIDLEG" />
-    <updated>2024-03-01T00:00:00Z</updated>
-    <summary>Stand 2024-03-01 (SR 950.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/FINIG</id>
-    <title>FINIG — Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FINIG" />
-    <updated>2024-03-01T00:00:00Z</updated>
-    <summary>Stand 2024-03-01 (SR 954.1).</summary>
-  </entry>
-  <entry>
     <id>https://lexmetrik.vercel.app/gesetze/bund/FINMA_GEBV</id>
     <title>FINMA-GebV — FINMA-Gebühren- und Abgabenverordnung (FINMA-GebV)</title>
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/FINMA_GEBV" />
     <updated>2024-03-01T00:00:00Z</updated>
     <summary>Stand 2024-03-01 (SR 956.122).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/GWG</id>
-    <title>GwG — Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/GWG" />
-    <updated>2024-03-01T00:00:00Z</updated>
-    <summary>Stand 2024-03-01 (SR 955.0).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/KAG</id>
-    <title>KAG — Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/KAG" />
-    <updated>2024-03-01T00:00:00Z</updated>
-    <summary>Stand 2024-03-01 (SR 951.31).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-415.100</id>
@@ -3388,13 +3402,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BPG" />
     <updated>2024-01-01T00:00:00Z</updated>
     <summary>Stand 2024-01-01 (SR 172.220.1).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BANKG</id>
-    <title>BankG — Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BANKG" />
-    <updated>2024-01-01T00:00:00Z</updated>
-    <summary>Stand 2024-01-01 (SR 952.0).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/BS-835.600</id>
@@ -4088,13 +4095,6 @@
     <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/kanton/BS-BaB%20162.100" />
     <updated>2023-01-01T00:00:00Z</updated>
     <summary>Stand 2023-01-01 (SR BaB 162.100).</summary>
-  </entry>
-  <entry>
-    <id>https://lexmetrik.vercel.app/gesetze/bund/BEG</id>
-    <title>BEG — Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)</title>
-    <link rel="alternate" type="text/html" href="https://lexmetrik.vercel.app/gesetze/bund/BEG" />
-    <updated>2023-01-01T00:00:00Z</updated>
-    <summary>Stand 2023-01-01 (SR 957.1).</summary>
   </entry>
   <entry>
     <id>https://lexmetrik.vercel.app/gesetze/kanton/AR-750.11</id>

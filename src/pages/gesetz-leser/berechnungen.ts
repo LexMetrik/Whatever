@@ -6,6 +6,10 @@
 import type { RefObject } from 'react';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { zifferSuchWert, zifferAnkerToken, istAnkerZiffer, ZIFFER_TRENNER } from '../../lib/normtext/zifferAnker';
+
+/** Anker-Token mit Ziffer-Suffix (E2) — hier mitgeführt, damit der Sprung-Adapter nur EINEN Import braucht. */
+export { zifferAnkerToken };
 
 // ─── Pane-Scoping-Helfer (B-2.5) — MODUL-Ebene = referenzstabil ────────────
 // Bewusst KEIN React Compiler im Projekt → in-Komponente definierte Funktionen
@@ -31,6 +35,24 @@ export function findeArt(root: HTMLElement | null, token: string): HTMLElement |
   // nicht sprengen. getElementById (document-Pfad) ist ohnehin selektor-frei.
   const id = `art-${token}`;
   return root.querySelector(`#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id}`);
+}
+/**
+ * Sprungziel eines Ankers `#art-<token>[-ziff-<z>]`: der Ziffer-Block, sonst der ARTIKEL.
+ * Unbekannte oder nicht verankerbare Ziffer ⇒ der Artikel (nie «kein Ziel», E2). Gesucht wird
+ * im Artikel über `data-ziffer` (Einzelziffern, auch Sammel-Ziffer «2_3» für «3»), nicht über
+ * die id: dieselbe Auflösung wie «Art. 140 Ziff. 3» (`zifferTeile`, §5). VORRANG hat der
+ * Block mit EXAKT dieser id — die Sammel-Ziffer «2_3» trägt `data-ziffer="2 3"` und wäre über
+ * die Teil-Suche nie treffbar (`#art-122-ziff-2_3` landete sonst auf dem Artikel).
+ */
+export function findeZiel(root: HTMLElement | null, token: string, ziffer: string | null): HTMLElement | null {
+  const art = findeArt(root, token);
+  if (!art || ziffer == null) return art;
+  const exaktId = `${art.id}${ZIFFER_TRENNER}${ziffer}`;
+  const exakt = istAnkerZiffer(ziffer)
+    ? art.querySelector<HTMLElement>(`#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(exaktId) : exaktId}`)
+    : null;
+  const z = zifferSuchWert(ziffer);
+  return exakt ?? (z != null ? art.querySelector<HTMLElement>(`[data-ziffer~="${z}"]`) : null) ?? art;
 }
 
 // Dokument-Position (Index des ersten enthaltenen Artikels) je Sektion — EINMAL
@@ -339,4 +361,18 @@ export function bieteAenderungsvermerkeSchalter(
 export function fnNrSortKey(nr: string | undefined): [number, string] {
   const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
   return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
+}
+
+/** Vergleich zweier Fussnoten-Nummern in Anzeige-Ordnung (Nummer, dann Suffix;
+ *  nicht parsbare ans Ende, untereinander stabil). W2·17-UI-BEFUNDE PE-C9-B04:
+ *  Suchindex (`leserSuche.ts`) und Apparat müssen dieselbe Ordnung tragen — zwei
+ *  Ordnungen hiessen «Fundstelle 2 = Fussnote 34» in der Liste und «Fussnote 35»
+ *  im Sprung. EHRLICH (Gegenprüfung #1266): geteilt ist der SCHLÜSSEL
+ *  (`fnNrSortKey`); der Vergleich steht noch zweimal — hier und als Inline-Sort
+ *  in `fussnotenAnzeige` (`parts/ArtikelLeser.fussnoten.ts`, andere Session,
+ *  Nachzug: dort `vergleicheFnNr` aufrufen). Sie sind heute identisch, aber nicht
+ *  per Konstruktion. */
+export function vergleicheFnNr(a: string | undefined, b: string | undefined): number {
+  const ka = fnNrSortKey(a), kb = fnNrSortKey(b);
+  return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
 }

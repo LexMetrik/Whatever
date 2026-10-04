@@ -4073,7 +4073,13 @@
         },
         {
           "absatz": "2",
-          "text": "Die Beschreibung, die Zeichnungen und die Zusammenfassung können nicht geändert werden. Der Teilverzicht soll indessen eine Erklärung folgender Art enthalten:"
+          "text": "Die Beschreibung, die Zeichnungen und die Zusammenfassung können nicht geändert werden. Der Teilverzicht soll indessen eine Erklärung folgender Art enthalten:",
+          "items": [
+            {
+              "marke": "",
+              "text": "Soweit Teile der Beschreibung und der Zeichnungen mit der Neuordnung der Patentansprüche nicht vereinbar sind, sollen sie als nicht vorhanden gelten."
+            }
+          ]
         },
         {
           "absatz": "3",
@@ -4088,7 +4094,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1977/2027_2027_2027/de#art_97",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20250701",
-      "sha": "a479c9bd1180fef0e28087d6000f9416685f5ed3b2939dc73a077120b5abdc6d"
+      "sha": "403c547e9111d127071187b26ebf22ea1038546862454f4b935a93a020106774"
     },
     {
       "id": "bund/PATV/art_98",

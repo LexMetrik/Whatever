@@ -74,7 +74,9 @@ ohne Rückfrage nach diesem Zyklus.
 - **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
   aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
   der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
-  15.9.2026).
+  15.9.2026). Auch Arbeitslisten langer Läufe (Inventar, Befundliste): nie nur
+  im Scratchpad — der App-Neustart leerte ihn (2.10.2026: 464 Funktionen,
+  ~45 Befunddateien weg).
 
 ## Station C — Prüfung (unverändert)
 
@@ -149,9 +151,6 @@ fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
   15.8.2026 gemessen: 51 % aller Commits waren reine Doku-/Plan-Pflege.
 - **`npm run plan:bild`** — auf Abruf (David fragt das Lagebild an, wenn er
   es braucht); die Dock-Datei steuert keinen Bau.
-- **`npm run selbstopt:erheben`** — war bis 20.9.2026 auf Abruf; seither
-  ENTFALLEN samt der Zeitreihe (Entscheid David, Rückbau QS-EFFIZIENZ) —
-  Nachfolge-Messung `npm run tor:bewaehrung`.
 - **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook, dort nur
   prüfend (`LEXMETRIK_NO_ROTATE=1` in `.claude/settings.json` schaltet die
   Rotation ab; sie läuft von Hand, wenn der Wächter meldet), UND als CI-Tor

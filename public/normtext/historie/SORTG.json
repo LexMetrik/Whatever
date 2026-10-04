@@ -6,6 +6,80 @@
   "referenz": 4,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3897",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+    },
+    {
+     "label": "BBl 2004 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Sortenschutz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3897",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+    },
+    {
+     "label": "BBl 2004 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3897",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+    },
+    {
+     "label": "BBl 2004 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-09-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 3897",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/526"
+    },
+    {
+     "label": "BBl 2004 4155",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/683"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2008-09-01",
@@ -42,7 +116,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -91,7 +166,7 @@
    ]
   },
   "5": {
-   "giltSeit": "2008-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -108,7 +183,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Sortenschutz"
     },
     {
      "typ": "urspruenglich",
@@ -116,7 +192,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "2. Abschn. des 1. Kap.",
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
     },
     {
      "typ": "fassung",
@@ -133,8 +211,33 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Wirkungen des Sortenschutzes"
     }
+   ]
+  },
+  "6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    3
+   ]
+  },
+  "7": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    3
+   ]
+  },
+  "8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    3
    ]
   },
   "9": {
@@ -157,6 +260,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "10": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "11": {
@@ -179,10 +292,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "12": {
-   "giltSeit": "2008-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -199,8 +315,20 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Sortenbezeichnung und Marke"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "14": {
@@ -223,6 +351,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -245,6 +376,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "16": {
@@ -284,6 +418,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -306,6 +443,30 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "19": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "21": {
@@ -328,6 +489,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -350,6 +514,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -420,7 +587,7 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "26": {
-   "giltSeit": "2008-09-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -437,8 +604,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
     }
+   ]
+  },
+  "27": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "28": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "29": {
@@ -461,6 +643,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "30": {
@@ -483,6 +668,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "31": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "37": {
@@ -537,7 +732,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -621,7 +817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "…"
     }
    ]
   },
@@ -737,6 +934,22 @@
    ],
    "aufgehobenSeit": "2008-09-01"
   },
+  "13_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "13_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
   "22_a": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
@@ -757,6 +970,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22_b": {
@@ -779,6 +995,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31_a": {
@@ -801,6 +1020,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "39_40": {
@@ -826,6 +1048,14 @@
    ],
    "aufgehobenSeit": "2011-01-01"
   },
+  "8_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    3
+   ]
+  },
   "8_b": {
    "giltSeit": "2008-09-01",
    "ereignisse": [
@@ -846,6 +1076,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-10-01",
   "eintraege": [
     {
       "id": "bund/BANKG/art_1",
@@ -40,19 +40,19 @@
           "text": "Die Schweizerische Nationalbank (Nationalbank) und die Pfandbriefzentralen fallen nur soweit unter das Gesetz, als dies ausdrücklich gesagt ist."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2d052125cd128d66d80f835884f7a5f4ba88cd42bba3db7b6cf4fb7da20ba689"
     },
     {
-      "id": "bund/BANKG/art_1_bis",
+      "id": "bund/BANKG/art_1_a",
       "ebene": "bund",
       "quelle": "BANKG",
       "erlass": "BankG",
-      "artikel": "1_bis",
-      "artikelLabel": "Art. 1bis",
+      "artikel": "1_a",
+      "artikelLabel": "Art. 1a",
       "bloecke": [
         {
           "absatz": null,
@@ -73,19 +73,19 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "stand": "2026-10-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_a",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0a7acc1036f671a11fd4dcf5522079401d49b1d2176cece86e6705175d1986db"
     },
     {
-      "id": "bund/BANKG/art_1_a",
+      "id": "bund/BANKG/art_1_b",
       "ebene": "bund",
       "quelle": "BANKG",
       "erlass": "BankG",
-      "artikel": "1_a",
-      "artikelLabel": "Art. 1a",
+      "artikel": "1_b",
+      "artikelLabel": "Art. 1b",
       "bloecke": [
         {
           "absatz": "1",
@@ -158,19 +158,19 @@
           "text": "Wird der Schwellenwert von 100 Millionen Franken überschritten, so muss dies innerhalb von 10 Tagen der FINMA gemeldet und ihr innerhalb von 90 Tagen ein Bewilligungsgesuch nach Artikel 1a eingereicht werden. Vorbehalten bleibt Absatz 5."
         }
       ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "stand": "2026-10-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_b",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f727799772942168ac4b298540d417c4b46a81b8f2bac1daf76a4657eacb59e9"
     },
     {
-      "id": "bund/BANKG/art_1_b",
+      "id": "bund/BANKG/art_1_bis",
       "ebene": "bund",
       "quelle": "BANKG",
       "erlass": "BankG",
-      "artikel": "1_b",
-      "artikelLabel": "Art. 1b",
+      "artikel": "1_bis",
+      "artikelLabel": "Art. 1bis",
       "aufgehoben": true,
       "bloecke": [
         {
@@ -178,10 +178,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "stand": "2026-10-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_1_bis",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -215,10 +215,10 @@
           "text": "Der Bundesrat ist befugt, auf der Grundlage gegenseitiger Anerkennung von gleichwertigen Regelungen der Banktätigkeiten und von gleichwertigen Massnahmen im Bereich der Bankenaufsicht Staatsverträge abzuschliessen, welche vorsehen, dass Banken aus den Vertragsstaaten ohne Bewilligung der FINMA eine Zweigniederlassung oder eine Vertretung eröffnen können."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_2",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ffdb51496affa75e76d1b225077bf790d063dd467bfabea0e8a0de42ab66e589"
     },
     {
@@ -252,10 +252,10 @@
           "text": "Die FINMA bezeichnet die wesentlichen Gruppengesellschaften und führt darüber ein Verzeichnis. Dieses ist öffentlich zugänglich."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_2_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4c63817197ff91f0f228fac793b4b76a03d4dc9a567bda19de59a52059188345"
     },
     {
@@ -318,10 +318,10 @@
           "text": "Nach schweizerischem Recht organisierte Banken erstatten der FINMA Meldung, bevor sie im Ausland eine Tochtergesellschaft, eine Zweigniederlassung, eine Agentur oder eine Vertretung errichten."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7cc067f4febcf31cb59e40c0e9e9c1dc539d3080143667e89cffc1fd94d9af64"
     },
     {
@@ -337,10 +337,10 @@
           "text": "Als Kantonalbank gilt eine Bank, die aufgrund eines kantonalen gesetzlichen Erlasses als Anstalt oder Aktiengesellschaft errichtet wird. Der Kanton muss an der Bank eine Beteiligung von mehr als einem Drittel des Kapitals halten und über mehr als einen Drittel der Stimmen verfügen. Er kann für deren Verbindlichkeiten die vollumfängliche oder teilweise Haftung übernehmen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0a11c0b6ea812f5b73d486db04d5002fdbe36d09cb73e1fa3c16fefd4c1662af"
     },
     {
@@ -356,10 +356,10 @@
           "text": "Ist eine Bank Teil einer Finanzgruppe oder eines Finanzkonglomerats, so kann die FINMA ihre Bewilligung vom Bestehen einer angemessenen konsolidierten Aufsicht durch eine Finanzmarktaufsichtsbehörde abhängig machen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7d710b2589e5e6343ba2aae66d8ac6ccaae9bc4410187eac15c0cfdd90d0c210"
     },
     {
@@ -393,10 +393,10 @@
           "text": "Als bank- oder effektenhandelsdominiertes Finanzkonglomerat gilt eine Finanzgruppe gemäss Absatz 1, die hauptsächlich im Bank- oder Effektenhandelsbereich tätig ist und zu der mindestens ein Versicherungsunternehmen von erheblicher wirtschaftlicher Bedeutung gehört."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3484141b495b6a3ec8dde505fe6cc16e5a9027e3cc57a4cdd95aab8f837f3be7"
     },
     {
@@ -426,10 +426,10 @@
           "text": "Beanspruchen gleichzeitig andere ausländische Behörden die vollständige oder teilweise Aufsicht über die Finanzgruppe oder das Finanzkonglomerat, so verständigt sich die FINMA, unter Wahrung ihrer Kompetenzen, mit diesen über Zuständigkeiten, Modalitäten und Gegenstand der Gruppen- oder Konglomeratsaufsicht. Sie konsultiert vor ihrem Entscheid die in der Schweiz inkorporierten Unternehmungen der Finanzgruppe oder des Finanzkonglomerats."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6f49fac21983984151056eb39b5c348e3055cc5502ce8b81717579e8ce513ddd"
     },
     {
@@ -449,10 +449,10 @@
           "text": "Die Konglomeratsaufsicht durch die FINMA erfolgt in Ergänzung zur Einzelinstitutsaufsicht über eine Bank oder ein Versicherungsunternehmen und zur Aufsicht über eine Finanz- oder Versicherungsgruppe durch die jeweils zuständigen Aufsichtsbehörden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "43138946f46b7b82da99a405233b8ed6d38d963ca2dddc6ea4180a31e0aa6e2b"
     },
     {
@@ -472,10 +472,10 @@
           "text": "Die Finanzgruppe oder das Finanzkonglomerat muss so organisiert sein, dass sie oder es insbesondere alle wesentlichen Risiken erfassen, begrenzen und überwachen kann."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2950f32f4b36e95c822ac1c227e2c8819de9b3528231778fd726519f9656761e"
     },
     {
@@ -503,10 +503,10 @@
           "text": "Die Anforderungen an die finanzielle Ausstattung und die Organisation richten sich nach Umfang und Art der wesentlichen Dienstleistungen, die von den wesentlichen Gruppengesellschaften im Fall einer Sanierung oder Konkursliquidation der Gruppe zu erbringen sind."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "328394addf0cb8753b13f5437b0d2760ee614eebb5cbcfccd404c2c53bcab0be"
     },
     {
@@ -523,10 +523,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_h",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -582,10 +582,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "03d9f75205f689410e0e22386532191e6e417024b484bff9978ec172c7113c04"
     },
     {
@@ -609,10 +609,10 @@
           "text": "Die Mitglieder der Verwaltung und Geschäftsführung der Bank haben der FINMA alle Tatsachen zu melden, die auf eine ausländische Beherrschung der Bank oder auf einen Wechsel von Ausländern mit qualifizierten Beteiligungen schliessen lassen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_ter",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6a4bfd4e9846ba1d8899c34f0853228175a086a23bc335d2521377286c9ea8c2"
     },
     {
@@ -632,10 +632,10 @@
           "text": "Wird die juristische Person ihrerseits direkt oder indirekt von Staatsangehörigen aus einem Drittstaat oder von juristischen Personen mit Sitz in einem Drittstaat beherrscht, so sind die erwähnten Bestimmungen anwendbar."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_3_quater",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9c82c0ad0151f73f1f501b676702894d3e764585655754ab053c153b484b227f"
     },
     {
@@ -663,10 +663,10 @@
           "text": "Die qualifizierte Beteiligung einer Bank an einem Unternehmen ausserhalb des Finanz- und Versicherungsbereichs darf 15 Prozent ihrer eigenen Mittel nicht überschreiten. Solche Beteiligungen dürfen insgesamt nicht mehr als 60 Prozent der eigenen Mittel betragen. Der Bundesrat regelt die Ausnahmen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7a30a769790fce1df474f6bf750864835825a782964d1216936d2661e525ac5e"
     },
     {
@@ -690,10 +690,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "dd9986ba16fba3979688338c9e51c0252c3d567b8858b96b12f9081ccb5f6d2f"
     },
     {
@@ -713,10 +713,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4_ter",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3d75ecd99ffd9acfb8b9dbe8eed88826293344cdc5a0e837957478c85b9c96e6"
     },
     {
@@ -732,10 +732,10 @@
           "text": "Die Banken haben im In- und Ausland jede irreführende sowie jede aufdringliche Werbung mit ihrem schweizerischen Sitz oder mit schweizerischen Einrichtungen zu unterlassen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4_quater",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d20abdd7d0174e725261a215f9ec492f8c6fe998a8922a1aeceaebb9f018d042"
     },
     {
@@ -769,10 +769,10 @@
           "text": "Erscheinen die Voraussetzungen der Übermittlung nach Absatz 1 zweifelhaft, so können die Banken eine Verfügung der FINMA verlangen, welche die Übermittlung der Informationen erlaubt oder untersagt."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4_quinquies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ad6d81ef5445db4ed0ebae8fdeec4ca36bd9ae0b2f3715ec1d9f06e8e219e12e"
     },
     {
@@ -788,10 +788,10 @@
           "text": "Für kryptobasierte Vermögenswerte, die die Bank als Depotwerte für Depotkunden hält, kann die FINMA im Einzelfall einen Höchstbetrag festlegen, wenn dies aufgrund der mit dem Geschäft verbundenen Risiken als geboten erscheint. Sie berücksichtigt insbesondere die Funktion der kryptobasierten Vermögenswerte, die ihnen zugrunde liegenden Technologien sowie risikomindernde Faktoren."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_4_sexies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c6f9a44961c2d3ad6c7ef9ee0eef901fa3ccadbc3a406111d78329d3f52dfaab"
     },
     {
@@ -808,10 +808,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_5",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -853,10 +853,10 @@
           "text": "In ausserordentlichen Lagen kann der Bundesrat Abweichungen von Absatz 3 beschliessen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_6",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b0830f1c9da6b18c096bf4da634be261823f52d9dc91b965483d16fbe71ca630"
     },
     {
@@ -880,10 +880,10 @@
           "text": "Die Absätze 1 und 2 finden keine Anwendung auf Privatbankiers, die sich nicht öffentlich zur Annahme fremder Gelder empfehlen. Artikel 958e Absatz 2 des Obligationenrechts bleibt vorbehalten."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_6_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "0d5259e817b0d3f15ff784cd329f168b47487bd84f28a8dc97e922ae8741b53e"
     },
     {
@@ -911,10 +911,10 @@
           "text": "Die FINMA kann unter den Voraussetzungen von Absatz 2 die Anwendung der vom Bundesrat anerkannten Standards zur Rechnungslegung im Bereich der Banken einschränken."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_6_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a7de0020d5f9a7a2f8ca5d8d587585208b7406a09ea4179fed0e0733582d36aa"
     },
     {
@@ -934,10 +934,10 @@
           "text": "Die Bestimmungen dieses Abschnitts bezwecken, im Zusammenwirken mit den allgemein anwendbaren bankenrechtlichen Vorschriften die von systemrelevanten Banken ausgehenden Risiken für die Stabilität des schweizerischen Finanzsystems zusätzlich zu vermindern, die Fortführung volkswirtschaftlich wichtiger Funktionen zu gewährleisten und staatliche Beihilfen zu vermeiden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_7",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "1643ef0ad9a872008bfe0676661d10a59298364d29ea960435249fdbf96f382c"
     },
     {
@@ -979,10 +979,10 @@
           "text": "Die Nationalbank bezeichnet nach Anhörung der FINMA durch Verfügung die systemrelevanten Banken und deren systemrelevante Funktionen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_8",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f387d6d3882cf5fb05b4c1bf360cde3233a7fac5400268f1721efff3c7e3916e"
     },
     {
@@ -1040,10 +1040,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_9",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "58a11c47f67dd2e7c5bb009c6546c1b2ed59f81ac03651074168942c610de6a1"
     },
     {
@@ -1085,10 +1085,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_10",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8877d1763cae71ea73853bd7fd40f883a702d49d09cf213f165632cef235fa75"
     },
     {
@@ -1122,10 +1122,10 @@
           "text": "Systemrelevante Banken und ihre Konzernobergesellschaften sind verpflichtet, in ihren Vergütungssystemen verbindlich einen Vorbehalt anzubringen, wonach im Fall staatlicher Unterstützung nach diesem Artikel der Rechtsanspruch auf variable Vergütung beschränkt werden kann."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_10_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "cccb98e707ac269ada01bc0e1a3ae9db1a4db246c7c3ec54cf2eba5052cbf5a7"
     },
     {
@@ -1168,10 +1168,10 @@
           "text": "Das Kapital, das durch Ausgabe der Pflichtwandelanleihen oder der Anleihen mit Forderungsverzicht nach den Vorschriften dieses Abschnitts aufgenommen wird, kann auf die erforderlichen Eigenmittel angerechnet werden, soweit dies nach diesem Gesetz und seinen Ausführungsbestimmungen zulässig ist. Die Anrechnung setzt die Genehmigung der jeweiligen Ausgabebedingungen durch die FINMA voraus."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_11",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ef4b04bfb1196536707a3d12613661c441b2b09116fa297bcced8461c886fb23"
     },
     {
@@ -1213,10 +1213,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_12",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "83114e82d624c4fe1fafbadc45cf03fcc1ec99f4a6837020a78d775fea99a4b7"
     },
     {
@@ -1310,10 +1310,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_13",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7323099777954cf4f6a1828b1e95b17a61a0779736b1121cf9d568e76be296e6"
     },
     {
@@ -1349,10 +1349,10 @@
           "text": "Sie können der Generalversammlung, wenn dies zur Ausübung ihrer Rechte erforderlich ist, einen Antrag um Sonderprüfung stellen. Lehnt die Generalversammlung den Antrag ab, so können sie, wenn sie zusammen mindestens 10 Prozent des Beteiligungskapitals oder Beteiligungskapital im Nennwert von 2 Millionen Franken halten, innert dreier Monate das Gericht ersuchen, einen Sonderprüfer einzusetzen. Für das Verfahren sind die Artikel 697a–697g OR sinngemäss anwendbar."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_14",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3f29acc5f52850981825410c367f57c8858f5deb37746b71187234288fc73763"
     },
     {
@@ -1408,10 +1408,10 @@
           "text": "Der Prozentsatz nach Absatz 4 Buchstabe a kann bis zur Höchstgrenze von 20 Prozent überschritten werden, sofern die eigenen Beteiligungsscheine, die über die Grenze von 10 Prozent hinaus erworben wurden, innert zweier Jahre veräussert oder durch Kapitalherabsetzung vernichtet werden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_14_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d654e78b24df8da904be500d1f6aeaca1668b6d7ab8a7c1f0e84ad6ea00db03b"
     },
     {
@@ -1421,25 +1421,18 @@
       "erlass": "BankG",
       "artikel": "14_b",
       "artikelLabel": "Art. 14b",
+      "aufgehoben": true,
       "bloecke": [
         {
-          "absatz": "1",
-          "text": "Für den Erwerb von nicht kotierten Beteiligungsscheinen gelten die Melde-, Nachweis- und Identifizierungspflichten gegenüber der Genossenschaftsbank sinngemäss wie beim Erwerb von nicht kotierten Inhaberaktien gegenüber der Aktiengesellschaft (Art. 697i–697k und 697m OR)."
-        },
-        {
-          "absatz": "2",
-          "text": "Die Genossenschaftsbank trägt die Inhaber von Beteiligungsscheinen sowie die der Genossenschaftsbank gemeldeten wirtschaftlich berechtigten Personen ins Genossenschafterverzeichnis ein."
-        },
-        {
-          "absatz": "3",
-          "text": "Für das Verzeichnis gilt neben den Bestimmungen für das Genossenschafterverzeichnis die aktienrechtliche Bestimmung über das Verzeichnis der Inhaberaktionäre sowie der wirtschaftlich berechtigten Personen, die der Gesellschaft gemeldet sind, sinngemäss (Art. 697l OR)."
+          "absatz": null,
+          "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_14_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
-      "sha": "3010d73edc16c003d1583558d07d3b271490f1a330bd1b8649b0e7bdd12f6767"
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
       "id": "bund/BANKG/art_15",
@@ -1458,10 +1451,10 @@
           "text": "– 3 …"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_15",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "632707417c06749d6130da4056fde30d408692b4559f61c2cdbf76bdd92c1868"
     },
     {
@@ -1505,10 +1498,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_16",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2b6ab875fecb5539dd04734f8d30e69453640abd5cc126ab12107b66379d0350"
     },
     {
@@ -1525,10 +1518,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_17",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1548,10 +1541,10 @@
           "text": "Die Banken, Finanzgruppen und Finanzkonglomerate müssen ihre Jahresrechnung und gegebenenfalls ihre Konzernrechnung von einem staatlich beaufsichtigten Revisionsunternehmen nach den Grundsätzen der ordentlichen Revision des Obligationenrechts prüfen lassen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_18",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "2cb5ee55b7e2f74928851b0e8f70b6df682b40172b8bd66fe7839dbb915ce126"
     },
     {
@@ -1568,10 +1561,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_19_22",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1587,10 +1580,10 @@
           "text": "Die FINMA kann selbst direkte Prüfungen bei Banken, Bankgruppen und Finanzkonglomeraten durchführen, wenn dies angesichts von deren wirtschaftlichen Bedeutung, der Komplexität des abzuklärenden Sachverhalts oder zur Abnahme interner Modelle notwendig ist."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e86423d6ce1edaafdd73ddd9773d9e583f30b475f64056e7aba1e6cc8711da46"
     },
     {
@@ -1610,10 +1603,10 @@
           "text": "Die FINMA kann bei diesen Personen jederzeit Prüfungen vornehmen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7ed2115453b37230df2888af040995679de2772caf414d64d7cd11f61f5dd7ab"
     },
     {
@@ -1629,10 +1622,10 @@
           "text": "Zur Durchsetzung von Artikel 3 Absätze 2 Buchstabe cbis und 5 dieses Gesetzes kann die FINMA insbesondere das Stimmrecht suspendieren, das an Aktien oder Anteile gebunden ist, die von Aktionären oder Gesellschaftern mit einer qualifizierten Beteiligung gehalten werden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_ter",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "227da3e42ab5a0c52af68150b14d7c8bcf4597c94d42a36fd3ee605ea8c452c5"
     },
     {
@@ -1649,10 +1642,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_quater",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1672,10 +1665,10 @@
           "text": "Vorbehalten bleiben Massnahmen nach dem elften Abschnitt."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_quinquies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ba92a2fa85d4bd5f88acd40eb5265939da0c926173e60a8a0e87f1ccedeb6686"
     },
     {
@@ -1692,10 +1685,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_sexies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1712,10 +1705,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_septies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1732,10 +1725,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_23_octies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1752,10 +1745,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_24",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1797,10 +1790,10 @@
           "text": "Die Anordnungen der FINMA umfassen sämtliches Vermögen der Bank mit Aktiven und Passiven und Vertragsverhältnisse, ob sie sich nun im In- oder im Ausland befinden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_25",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "285776c1fb19135a691b85d3e38778d621c0f05cd20a215e9cb6552fdbb1dfd7"
     },
     {
@@ -1858,10 +1851,10 @@
           "text": "Soweit die FINMA in Bezug auf den Zinsenlauf nichts anderes verfügt, hat eine Stundung die Wirkungen nach Artikel 297 SchKG."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_26",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "17b7a242e4d3bec72a6d9c7d360d9798fa28df45ea23ae169317d2318ba82bb1"
     },
     {
@@ -1895,10 +1888,10 @@
           "text": "Vorbehalten bleibt Artikel 30a."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_27",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ee8ae983a3803e03385a2bbf39e47e81c69c5a19c44e27c4b790a1d0697934dc"
     },
     {
@@ -1926,10 +1919,10 @@
           "text": "Sie kann das Verfahren näher regeln."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_28",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "037be5884a2f628126b724c69ea1775ba0b64c3eaaed5a3a9d8047d054d5a24c"
     },
     {
@@ -1953,10 +1946,10 @@
           "text": "Die FINMA kann für Kantonalbanken Abweichungen von den Bestimmungen über das Sanierungsverfahren vorsehen, namentlich betreffend die vollständige Herabsetzung des Gesellschaftskapitals sowie Wandlung und Reduktion von Forderungen. Sie berücksichtigt dabei insbesondere Massnahmen, die der Kanton zur Sanierung der Bank trifft."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_28_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e9b3a84f5d4165772c46909fbd4b318026fca4aff545736b76e1bf781cf7cb6d"
     },
     {
@@ -1972,10 +1965,10 @@
           "text": "Bei einer Sanierung der Bank muss der Sanierungsplan sicherstellen, dass die Bank nach Durchführung der Sanierung die Bewilligungsvoraussetzungen und die übrigen gesetzlichen Vorschriften einhält."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_29",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "03bd87214c27f72820a4a97fca4ce6206ca8a204beefd429173a988d6d3732fb"
     },
     {
@@ -2017,10 +2010,10 @@
           "text": "Die Rechtsträger und die Übergangsbank nach Absatz 2 treten mit Genehmigung des Sanierungsplans im Umfang der erfolgten Übertragung des Vermögens an die Stelle der Bank. Das Fusionsgesetz vom 3. Oktober 2003 ist nicht anwendbar."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_30",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ea946433c3effef176554a6e5e90da24a81347d85fcf965ba4d8d9682e118d85"
     },
     {
@@ -2072,10 +2065,10 @@
           "text": "Werden nach Ablauf des Aufschubs die Bewilligungsvoraussetzungen und die übrigen gesetzlichen Vorschriften eingehalten, so besteht der Vertrag fort und die mit den Massnahmen zusammenhängenden Rechte nach Absatz 1 können nicht mehr ausgeübt werden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_30_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7fbfe29d3295852a2fe1836026768a6710bca405b0ad7382c99ace4fe42314c8"
     },
     {
@@ -2169,10 +2162,10 @@
           "text": "Die FINMA kann vorübergehend die Mitwirkungsrechte der neuen Eigner vollständig suspendieren."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_30_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "41e47ca014b8d42f974b2c94fc7a155b17ee77fea4f65ab0512661339c0658f3"
     },
     {
@@ -2252,10 +2245,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_30_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "394f5a35b51e2a7b90a975666103cc0f6f54af38bb05501f373b4b074ac573c2"
     },
     {
@@ -2283,10 +2276,10 @@
           "text": "Sie macht die Grundzüge des Sanierungsplans öffentlich bekannt. Sie orientiert dabei gleichzeitig darüber, wie die betroffenen Gläubiger und Eigner Einsicht nehmen können."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_31",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "eeb435dd1f1fd22fe6fe40d775de153bf95bf6b24b3c9a0f390f84806c9da23f"
     },
     {
@@ -2310,10 +2303,10 @@
           "text": "Die Absätze 1 und 2 finden keine Anwendung auf die Sanierung von systemrelevanten Banken und Gruppengesellschaften von systemrelevanten Finanzgruppen oder -konglomeraten."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_31_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3972ec71d3b8c709531b6caffd36612c66371059ecd5d0136da67b4940d8b784"
     },
     {
@@ -2333,10 +2326,10 @@
           "text": "Die FINMA kann zu deren Festlegung eine unabhängige Bewertung anordnen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_31_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "15c462a961e3e468a6fc6609d243e9d87db1317f1d30d1724d121bfcf2503b62"
     },
     {
@@ -2356,10 +2349,10 @@
           "text": "Der Wertausgleich kann namentlich durch Zuteilung von Aktien, anderen Beteiligungsrechten, Optionen oder Besserungsscheinen erfolgen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_31_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "a59b76e1b311554c660449d29631725ce762265b863a319e7c89f67167e71563"
     },
     {
@@ -2415,10 +2408,10 @@
           "text": "Eintragungen in das Grundbuch, das Handelsregister oder in andere Register haben lediglich deklaratorische Wirkung. Sie sind so rasch wie möglich vorzunehmen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_31_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "8d2745cfce3d11c2d623e774677f1acd7694a7a2064694ad2f2176bc1f92f9e0"
     },
     {
@@ -2454,10 +2447,10 @@
           "text": "Für die Geltendmachung von Verantwortlichkeitsansprüchen nach Artikel 39 gelten die Absätze 1–2bis sinngemäss."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_32",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "20d3d4e6fba5fd0f7cd47410de1d1ccd01b163017b9621c6152541795556bf71"
     },
     {
@@ -2481,10 +2474,10 @@
           "text": "Sie orientieren die Gläubiger mindestens einmal jährlich über den Stand des Verfahrens."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_33",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3c6f590dc616e0269cd28800c593fa48240cb7758222320887dd6454584495d5"
     },
     {
@@ -2508,10 +2501,10 @@
           "text": "Die FINMA kann das Verfahren näher regeln."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_34",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c6c39fa824de4bad61ada23d3a95488c0bbd326f904a766377144783abde6c93"
     },
     {
@@ -2541,10 +2534,10 @@
           "text": "Die FINMA ist nicht an die Anträge des Konkursliquidators gebunden."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_35",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5c7db4aac1b851c001d4783d2c2fe8f2ef8bc5c364a29dc366961a5915379dc2"
     },
     {
@@ -2564,10 +2557,10 @@
           "text": "Die Gläubiger können den Kollokationsplan einsehen, sofern und soweit es zur Wahrung ihrer Gläubigerrechte erforderlich ist; dabei ist das Berufsgeheimnis nach Artikel 47 so weit als möglich zu wahren."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_36",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c8f91903f13ed846b3bd66e8b6765af32aee8a94f3ba29b48156cf2961ccdef2"
     },
     {
@@ -2583,10 +2576,10 @@
           "text": "Verbindlichkeiten, die die Bank mit Genehmigung der FINMA oder eines von dieser eingesetzten Untersuchungs- oder Sanierungsbeauftragten während der Dauer der Massnahmen nach Artikel 26 Absatz 1 Buchstaben e–h oder während eines Sanierungsverfahrens eingehen durfte, werden im Falle einer Konkursliquidation vor allen anderen befriedigt."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "276d7530a7a7f103ad6d6094d266b898968e93b44f0597a5fedc0a42c27f5646"
     },
     {
@@ -2626,10 +2619,10 @@
           "text": "Der Bundesrat umschreibt die Einlagen und die Einleger nach Absatz 1 näher. Er kann den Höchstbetrag nach Absatz 1 der Geldentwertung anpassen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d931a1d440050db9a9404b9c286db58de4d213f9ca930d92568de3209d32f9df"
     },
     {
@@ -2659,10 +2652,10 @@
           "text": "Die FINMA legt im Einzelfall den Höchstbetrag der nach Absatz 1 auszahlbaren Einlagen fest. Sie trägt dabei der Rangordnung der übrigen Gläubiger nach Artikel 219 SchKG Rechnung."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_b",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ee6c42257d4f7fe660de971766ba0ccdfb0d1b7d401e8e0fae6bb6d0f61f7754"
     },
     {
@@ -2679,10 +2672,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_c",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2698,10 +2691,10 @@
           "text": "Depotwerte gemäss Artikel 16 dieses Gesetzes werden nach den Artikeln 17 und 18 des Bucheffektengesetzes vom 3. Oktober 2008 abgesondert. Auf sammelverwahrte Depotwerte findet im Falle eines Unterbestandes Artikel 19 des Bucheffektengesetzes Anwendung."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_d",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "6ad12dbdd23d834c08e9416abdab47c23beee1bca0dfab07195c4ca53cd340b3"
     },
     {
@@ -2725,10 +2718,10 @@
           "text": "Die FINMA trifft die nötigen Anordnungen zur Schliessung des Verfahrens. Sie macht die Schliessung öffentlich bekannt."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_e",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "843007ce90ac32e431f29b187aa891bb3ae034f666d39fe179fc0e18c2f59b33"
     },
     {
@@ -2748,10 +2741,10 @@
           "text": "Ist ein Gläubiger in einem ausländischen Verfahren, das mit dem Bankenkonkurs in Zusammenhang steht, teilweise befriedigt worden, so ist dieser Teil nach Abzug der ihm entstandenen Kosten im schweizerischen Verfahren auf die Konkursdividende anzurechnen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_f",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "5ebd1268e4345a8fe905b4d9bd22f35d4c456e0891af25373cf7ed6ed4df9cb1"
     },
     {
@@ -2797,10 +2790,10 @@
           "text": "Im Übrigen sind die Artikel 166–175 IPRG massgebend."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_g",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "367e49002770f65180a2dd99f96f8496ddc0ef39e1f3fac5a298076173e78b3d"
     },
     {
@@ -2820,10 +2813,10 @@
           "text": "Die Entschädigung erfolgt in der Regel durch Zuteilung von Aktien, anderen Beteiligungsrechten, Optionen oder Besserungsscheinen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_g_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "58e036771bca4243d1be038ff5e2a5be0a6d1395beb84e090cc02b5b0c3b62ff"
     },
     {
@@ -2861,10 +2854,10 @@
           "text": "Die Beschwerde nach Artikel 17 SchKG ist in diesen Verfahren ausgeschlossen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_g_ter",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "fa23f677388a81b92de0082e034b5191c96d1b3664979f9c3ee0b06e1ca85542"
     },
     {
@@ -2884,10 +2877,10 @@
           "text": "Der Fristenlauf für eine Beschwerde gegen die Genehmigung des Sanierungsplans beginnt am Tag nach der öffentlichen Bekanntgabe der Grundzüge des Sanierungsplans. Der Fristenlauf für eine Beschwerde gegen die Genehmigung der Verteilungsliste und der Schlussrechnung beginnt am Tag, nachdem die Genehmigung öffentlich bekannt gegeben wurde."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_g_quater",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "e065bee4e227ab7dfef4d03b9957b4707c210bb9d992e94c9d964436dc6667d0"
     },
     {
@@ -2921,10 +2914,10 @@
           ]
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_g_quinquies",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b1f041941c4ba7d45aaa6d5b384466ab858db9dbd8d0cc7d1937fe2bab112c61"
     },
     {
@@ -3010,10 +3003,10 @@
           "text": "Die Auswirkungen der Finanzierungsformen gemäss Absatz 3 Buchstabe c auf die Liquiditäts- und Eigenmittelanforderungen sind zu neutralisieren, indem die verschiedenen Finanzierungformen nach Möglichkeit gleichwertig zu behandeln sind. Der Bundesrat erlässt die technischen Ausführungsbestimmungen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_h",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3a2def7908999baeacbfb37572e8e7de6e5bffcc7b09b33d6d652249ad517df1"
     },
     {
@@ -3051,10 +3044,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_i",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "75ff67d54da8c006ed21348cfb6aa39540bb72548f92d910623c459074f5303b"
     },
     {
@@ -3104,10 +3097,10 @@
           "text": "Die Einlagen nach Absatz 5 werden in der durch die FINMA zu genehmigenden Selbstregulierung näher umschrieben."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_j",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "7942879fb8306c0d262dcc353fe920b409184a9b38609a24d1c9fabddd1084cc"
     },
     {
@@ -3131,10 +3124,10 @@
           "text": "Die Rechte der Einleger gehen im Umfang der Auszahlungen auf den Träger der Einlagensicherung über."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_j_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "88c5ffa11954d7d2c150503264515fa4aa30193bf33ad2d4d03649ecb69a40fa"
     },
     {
@@ -3154,10 +3147,10 @@
           "text": "Der Träger der Einlagensicherung erteilt der FINMA sowie dem von der FINMA eingesetzten Untersuchungsbeauftragten, Sanierungsbeauftragten oder Konkursliquidator alle Auskünfte und übermittelt diesen alle Unterlagen, die sie zur Durchsetzung der Einlagensicherung benötigen."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_k",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "9c3aae417f0857bb524682a4e5180cfb893a3f79189ad0c92b9cc8f2c6b98288"
     },
     {
@@ -3185,10 +3178,10 @@
           "text": "Der Bundesrat bestimmt, wann Vermögenswerte als nachrichtenlos gelten."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_l",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4233db8fbb17403177d4db00cbce8a7da25e22f4dd47812ac87af64641c5c925"
     },
     {
@@ -3216,10 +3209,10 @@
           "text": "Der Bundesrat regelt die Publikation und Liquidation nachrichtenloser Vermögenswerte."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_37_m",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "ed14cbf8a75b2bb7285e44f4fbcd028267a59a191787caf9f765cc80036353c6"
     },
     {
@@ -3239,10 +3232,10 @@
           "text": "Für die übrigen Banken gilt Artikel 39."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_38",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "3bdad582c95ba2512ede5b229e6eeace01c28afdb8c99a3f8b6014495334b09b"
     },
     {
@@ -3258,10 +3251,10 @@
           "text": "Die Verantwortlichkeit der Gründer einer Bank, der Organe für die Geschäftsführung, Oberleitung, Aufsicht und Kontrolle sowie der von der Bank ernannten Liquidatoren richtet sich nach den Bestimmungen des Aktienrechts (Art. 752–760 des Obligationenrechts)."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_39",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "04b1a79a1beb67f9e0a8b15979db3bf2c6eb3e40a94d9c3e50eac8306aaccedd"
     },
     {
@@ -3278,10 +3271,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_40_45",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3319,10 +3312,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_46",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "15fb0715785f01723531d83c9c837f46097af7ef9c20aeb9f61bea4166bbd68a"
     },
     {
@@ -3376,10 +3369,10 @@
           "text": "Verfolgung und Beurteilung der Handlungen nach dieser Bestimmung obliegen den Kantonen. Die allgemeinen Bestimmungen des Strafgesetzbuches kommen zur Anwendung."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_47",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "d7525e154a6cd8ee2d5652a5ca742f18a56a803ca203c66bcfd7a8329f1bc5f2"
     },
     {
@@ -3396,10 +3389,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_48",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3437,10 +3430,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_49",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "c202f0fd09e6041dba7dbaa7326dea9a5da95393d958c564df9d8ea28da9edb6"
     },
     {
@@ -3457,10 +3450,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_50",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3477,10 +3470,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_50_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3497,10 +3490,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_51",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3517,10 +3510,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_51_bis",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3536,10 +3529,10 @@
           "text": "Der Bundesrat hat spätestens 3 Jahre nach Inkrafttreten des fünften und sechsten Abschnitts der Änderung vom 30. September 2011 und danach jeweils innert 2 Jahren die Bestimmungen im Hinblick auf die Vergleichbarkeit und den Grad der Umsetzung der entsprechenden internationalen Standards im Ausland zu prüfen. Er erstattet der Bundesversammlung jeweils darüber Bericht und zeigt den allfälligen Anpassungsbedarf auf Gesetzes- und Verordnungsstufe auf."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_52",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "4972b7fa711950cfa03f8ef81d78dba9acf90e079b0fe8555120b5d94755e11e"
     },
     {
@@ -3555,10 +3548,10 @@
           "text": "Der Bundesrat hat spätestens drei Jahre nach Inkrafttreten der Änderung vom 15. Juni 2018 die Bestimmungen im Hinblick auf die Ziele der Finanzmarktaufsicht nach dem FINMAG zu prüfen. Er erstattet der Bundesversammlung darüber Bericht und zeigt den allfälligen Anpassungsbedarf auf Gesetzes- und Verordnungsstufe auf."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_52_a",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "499d02cbea53d445c7fb44f198089c816a79e77205797382b468bd2b92327aa9"
     },
     {
@@ -3588,10 +3581,10 @@
           "text": "Bisherige kantonale Bestimmungen über ein gesetzliches Pfandrecht zugunsten von Spareinlagen, die nicht innert drei Jahren nach Inkrafttreten dieses Gesetzes durch neue Vorschriften gemäss den Artikeln 15 und 16 ersetzt sind, fallen dahin."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_53",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "f6781944e8617b0a036ce5dad48d6a78c473d2918d75f294fa6dc328f1b3ccb9"
     },
     {
@@ -3608,10 +3601,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_54",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3628,10 +3621,10 @@
           "text": "…"
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_55",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3647,10 +3640,10 @@
           "text": "Der Bundesrat bestimmt den Zeitpunkt des Inkrafttretens dieses Gesetzes und erlässt die zum Vollzug nötigen Vorschriften."
         }
       ],
-      "stand": "2024-01-01",
+      "stand": "2026-10-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/51/117_121_129/de#art_56",
-      "abgerufen": "2026-09-14",
-      "fassungsToken": "20240101",
+      "abgerufen": "2026-10-01",
+      "fassungsToken": "20261001",
       "sha": "db3cd7752fc387eb3c77f01c93c557e3598ec8bca5ac7bbbe3b1ab2f2983acc8"
     }
   ]

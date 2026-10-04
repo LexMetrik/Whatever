@@ -20,6 +20,17 @@ describe('parsePassus', () => {
   it('Ziff.-Angabe wird als ziff erkannt', () => {
     expect(parsePassus('§ 11 Ziff. 17')).toEqual({ artikelToken: '11', absatz: null, ziff: '17' });
   });
+  // B3 (Befund-Runde #1251): lat. Suffix an der Ziffer bleibt vollständig («Ziff. 1bis» war «1b»);
+  // echte Buchstaben-Ziffern («3b», «5a») bleiben unverändert.
+  it('Ziff. mit lat. Suffix «1bis»/«2ter» bleibt vollständig (kein «1b»/«2t»)', () => {
+    expect(parsePassus('Art. 187 Ziff. 1bis StGB')).toEqual({ artikelToken: '187', absatz: null, ziff: '1bis' });
+    expect(parsePassus('Art. 305bis Ziff. 1bis StGB')).toEqual({ artikelToken: '305_bis', absatz: null, ziff: '1bis' });
+    expect(parsePassus('Art. 5 Ziffer 2ter OR')).toEqual({ artikelToken: '5', absatz: null, ziff: '2ter' });
+  });
+  it('Ziff. mit Buchstaben-Suffix «3b» bleibt «3b»', () => {
+    expect(parsePassus('Art. 5 Ziff. 3b OR')).toEqual({ artikelToken: '5', absatz: null, ziff: '3b' });
+    expect(parsePassus('Art. 187 Ziff. 1 StGB')).toEqual({ artikelToken: '187', absatz: null, ziff: '1' });
+  });
   // B2: lateinische Absatz-Suffixe (bis/ter/…) dürfen nicht verstümmelt werden
   // («Abs. 1bis» wurde früher zu «1b»).
   it('Absatz mit lat. Suffix «1bis» bleibt vollständig (B2 — kein «1b»)', () => {

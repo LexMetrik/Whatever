@@ -8,6 +8,7 @@ import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { KantonFeld } from '../components/ui/KantonFeld';
 import { SchriftgroessenRegler } from '../components/ui/SchriftgroessenRegler';
 import { useSchriftskala } from '../components/layout/useSchriftskala';
+import { lokalSpeicher } from '../lib/sichererSpeicher';
 
 // ─── Rubrik «Einstellungen» (Auftrag David) ─────────────────────────────────
 //
@@ -54,10 +55,10 @@ const FS_LABELS = ['Klein', 'Normal', 'Gross', 'Sehr gross'];
 const RESET_PRAEFIXE = ['lexmetrik', 'rsp:', 'rsp-'];
 
 function leseKey(key: string, fallback: string): string {
-  try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; }
+  try { return lokalSpeicher.lies(key) ?? fallback; } catch { return fallback; }
 }
 function schreibeKey(key: string, wert: string): void {
-  try { localStorage.setItem(key, wert); } catch { /* privat-Modus */ }
+  lokalSpeicher.schreib(key, wert); // privat-Modus
 }
 
 export function Einstellungen() {
@@ -80,15 +81,13 @@ export function Einstellungen() {
 
   const reset = () => {
     if (!window.confirm('Alle gespeicherten Einstellungen, Reiter, Favoriten und Vorlagen-Entwürfe zurücksetzen? Das kann nicht rückgängig gemacht werden.')) return;
-    try {
-      // Rückwärts iterieren (removeItem verschiebt die Indizes); alles mit einem
-      // App-Präfix löschen — deckt ALLE Einstellungen/Reiter/Favoriten/Vorlagen-
-      // Entwürfe/Zeiterfassung ab, ohne fragile Allowlist (Bug-Fix 26.6.).
-      for (let i = localStorage.length - 1; i >= 0; i--) {
-        const k = localStorage.key(i);
-        if (k && RESET_PRAEFIXE.some((p) => k.startsWith(p))) localStorage.removeItem(k);
-      }
-    } catch { /* privat-Modus */ }
+    // Alles mit einem App-Präfix löschen — deckt ALLE Einstellungen/Reiter/
+    // Favoriten/Vorlagen-Entwürfe/Zeiterfassung ab, ohne fragile Allowlist
+    // (Bug-Fix 26.6.). `schluessel()` ist eine Momentaufnahme: Löschen
+    // verschiebt keine Indizes.
+    for (const k of lokalSpeicher.schluessel()) {
+      if (RESET_PRAEFIXE.some((p) => k.startsWith(p))) lokalSpeicher.entferne(k);
+    }
     window.location.reload();
   };
 

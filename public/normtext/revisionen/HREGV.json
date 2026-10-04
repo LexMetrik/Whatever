@@ -1,7 +1,7 @@
 {
   "erlassKey": "HREGV",
   "sr": "221.411",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -13,12 +13,11 @@
       "titelDe": "Verordnung vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPV)",
       "titelFr": "Ordonnance du 12 juin 2026 sur la transparence des personnes morales et l’identification des ayants droit économiques (Ordonnance sur la transparence des personnes morales, OTPM)",
       "titelIt": "Ordinanza del 12 giugno 2026 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Ordinanza sulla trasparenza delle persone giuridiche, OTPG)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/364/de",
-      "sha": "7b71ac07c557b94d6175172d4870ec9f0e3585c7c356c1dd770287d193f1b3e4"
+      "sha": "9876c44dd822cee486647ecbe78a50c65aef8f66e793ac62ba32d97ccd06eb6c"
     },
     {
       "art": "aenderung",
@@ -317,5 +316,5 @@
       "sha": "b1c07f42e338069b003ccdeec3fc4df5722539e98ff6329ef9d6b61d1f2964ee"
     }
   ],
-  "sha": "6b5ec580862d63554d47e59d26db38c098d43babb85d97b1ae8c5c29b8312a76"
+  "sha": "8bfc7de2f2e5629286b947d89344cce935add795ca1605b478c2285f935ed0b4"
 }

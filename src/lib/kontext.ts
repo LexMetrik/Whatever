@@ -22,66 +22,19 @@ import { ladeKantenShardErgebnis, type KantenShard } from './materialien/kanten-
 import type { BrowseMaterial, MaterialManifest } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
 import { erlassPfad } from './normtext/erlassAdresse';
+import { nummerAusToken } from './reiterStelle';
 
 export type { MaterialBezug, EntscheidRef };
 
 /** Quelle-Korpus des Readers, der das Panel zeigt. */
 export type KontextTyp = 'norm' | 'entscheid' | 'material';
 
-// ─── Artikel-Kontext (W2·19-GLIEDERUNG/S7, Bau-Spec §5.2) ───────────────────
-//
-// Nur die TYPEN leben hier; gebaut wird die Ansicht im Gesetzes-Leser
-// (src/pages/gesetz-leser/artikelKontext.ts). Der Grund ist die Schichtung:
-// `components/kontext/KontextPanel.tsx` darf die Form kennen, aber nicht in die
-// Seiten-Schicht hinaufimportieren (check:zyklen). ADDITIV — kein bestehender
-// Export ändert sich.
-//
-// HARTE ABGRENZUNG zu `artikelZitate` (dieselbe Datei, `kontextSync` unten):
-// `artikelZitate` speist AUSSCHLIESSLICH `werkzeugeFuerZitate()` und ist die
-// Zitat-Liste eines ENTSCHEIDS. Der Artikel-Kontext ist etwas anderes — die
-// Leseposition im Gesetzes-Leser — und bekommt darum eine EIGENE Prop, statt
-// die bestehende umzudeuten: sonst verengte sich die erlass-weite Werkzeugliste
-// still, und die Werkzeug-Gruppe bewegte sich bei jedem Artikelwechsel in der
-// Höhe (Bau-Spec §5.2, mitten im E4-CLS-Messfenster).
-
-/** Ein ausgehender Verweis des Artikels — intern, wo wir den Erlass halten. */
-export interface KontextVerweis {
-  /** Anzeige-Label («ArG», «SR 822.11»). */
-  label: string;
-  /** Interner Reader-Pfad; fehlt er, ist `url` der amtliche Fallback (§8). */
-  pfad?: string;
-  url?: string;
-}
-
-/** Alles, was die gegatete «Zu Art. X»-Gruppe im KontextPanel zeigt. */
-export interface ArtikelKontextAnsicht {
-  /** «Art. 41» bzw. «§ 41»; leer = noch keine Leseposition erfasst (§8). */
-  label: string;
-  /** Artikel-Token des Sprungziels (Anker `art-<token>`). */
-  token: string;
-  /** Erfasste Leitentscheide zu diesem Artikel; `undefined` = Shard nicht geladen. */
-  leitentscheide?: number;
-  /** Artikelscharfe amtliche Materialien; `undefined` = Shard nicht geladen. */
-  materialien?: number;
-  /** Letzte belegte Textänderung; `null` = Urfassung, `undefined` = unbekannt. */
-  revision?: { iso: string; as: string } | null;
-  /** Ausgehende Verweise (Trägergesetz + Fussnoten-Erlassverweise), dedupliziert. */
-  verweise: KontextVerweis[];
-  /** Label der artikelscharfen Werkzeug-Gruppe («Art. 127–142»), falls vorhanden. */
-  werkzeugGruppe?: string;
-  //
-  // B4 (Bug-Check 9.8.2026, Entscheid delegierte Technik): hier stand ein
-  // `onSprung?: () => void` für einen «→»-Knopf an der Praxis-Zeile. Er ist
-  // ERSATZLOS entfernt, nicht bloss ungenutzt gelassen — ein Eingang, den
-  // niemand bedient, behauptet eine Fähigkeit, die es nicht gibt.
-  // Grund: der Sprung landete über `springeZuArtikel` am Artikel-ANFANG,
-  // während die Praxis-Liste am Artikelfuss steht; und im Default-
-  // Facettenzustand rendert dort seit W2·7-BEZUG/B4 gar keine Liste. Das
-  // Versprechen lief doppelt ins Leere (§8).
-  // WIEDEREINFÜHRUNG (Folge-Slice): Feld hier zurücknehmen, im Leser wieder
-  // durchreichen und auf einen FUSS-Anker zielen — erst dann, wenn dort im
-  // Regelfall wirklich etwas steht.
-}
+// Die frühere Ansicht des Artikel-Kontexts (W2·19-GLIEDERUNG/S7: Typen
+// `ArtikelKontextAnsicht`/`KontextVerweis`, gebaut in `src/pages/gesetz-leser/
+// artikelKontext.ts`, gezeigt als Wegweiser «Zu Art. X» im KontextPanel) ist am
+// 1.10.2026 gelöscht (W2·27-BUND-FERTIG, P3): kein Produktionsaufrufer.
+// ABGRENZUNG bleibt: `artikelZitate` (`kontextSync` unten) speist AUSSCHLIESSLICH
+// `werkzeugeFuerZitate()` und ist die Zitat-Liste eines ENTSCHEIDS.
 
 /** Verweis auf eine Erlass-Detailseite (aufgelöst über das ERLASS_REGISTER). */
 export interface NormBezug {
@@ -169,11 +122,6 @@ export function kontextSync(
 // maschinell); der Badge markiert die Abweichung ('maschinell', §1.2/§1.3 — der
 // kuratierte/amtliche Normalfall bleibt nackt). Rein projizierend (§3).
 
-/** Anzeige-Form eines Artikel-Tokens: Korpus-Unterstrich weg ('20_a' → '20a'). */
-function anzeigeArtikel(token: string): string {
-  return token.replace(/_/g, '');
-}
-
 /** §8-Herkunft je Dokument aggregiert. Doc-uniform in der Praxis; bei
  *  Misch-Provenienz gewinnt die schwächste (maschinell > kuratiert > amtlich),
  *  damit die UI nie eine Heuristik als 'amtlich' ausgibt. */
@@ -249,8 +197,8 @@ export async function kontextSoftLawErgebnis(typ: KontextTyp, normKeys: readonly
     if (repArtikel) {
       artikel = repArtikel;
       sublabel = artikelSort.length > 1
-        ? `via Art. ${anzeigeArtikel(repArtikel)} u. a.`
-        : `via Art. ${anzeigeArtikel(repArtikel)}`;
+        ? `via Art. ${nummerAusToken(repArtikel)} u. a.`
+        : `via Art. ${nummerAusToken(repArtikel)}`;
     } else if (s.ziffern.size === 1) {
       sublabel = [...s.ziffern][0]; // «Ziff. 6.10» — nur wenn eindeutig (sonst kein arbiträrer Griff)
     }

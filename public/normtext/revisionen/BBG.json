@@ -1,7 +1,7 @@
 {
   "erlassKey": "BBG",
   "sr": "412.10",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -30,12 +30,11 @@
       "titelDe": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
       "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
       "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/342/de",
-      "sha": "0211e3f26a3664b6f99db3330a26131fb1c5595bb55a86e9e44c7e09c03db5bb"
+      "sha": "46e48c5c0a53932ba73d7261270131c1796d65c9963fd2246a380e6c7b7bd0a4"
     },
     {
       "art": "aenderung",
@@ -334,5 +333,5 @@
       "sha": "cbe15406d65c5a11088817014e2522ad6ed789fcfd1d63d7cd595f23c0600345"
     }
   ],
-  "sha": "9ea439fcecf656aed3f6793c85c1e86a5dbccde943050daede01371403181b50"
+  "sha": "5321984645c24420ca40ae4e310e8333eaa78ef7e253f82e0fcb61133188acbe"
 }

@@ -116,7 +116,7 @@ im selben Block, den die spätere Entstehungs-Karte ergänzt.
 | A17 | E3 ohne Golden-Zeile | Hinweis | §11.7 E3: Golden byte-gleich (Prerender ohne Slot-Markup), rot ⇒ Abbruch, nie Test-Update (§6.3) |
 | A18/B1 | NR-Zahl = eigene Auszählung aus `Voting.Decision` (Enum undokumentiert); Personendaten in `Voting` | **B1 Blocker, A18 Hinweis** | §11.4/§11.6/§11.9: **Voting nur aggregiert; `FirstName/LastName/PersonNumber` werden nie extrahiert noch gespeichert**; UI-Beschriftung «eigene Auszählung der amtlichen Einzelstimmen, Abruf <Datum>»; Decision-Codes als geprüfte Tabelle in `bibliothek/`, unbekannter Code ⇒ rot |
 | A19 | Aufwand unterbietet R5 | Hinweis | §11.7: R5-Zahlen übernommen |
-| B3 | Curia-Vollabgleich ohne Request-Zahl/Kette | berechtigt | §11.6: ~6 Requests je Geschäft ⇒ ~2 300 je Lauf, ≤ 2/s ⇒ ~20 min; **eigener Monatslauf in `normen-monitor.yml`**, nie in der Gate-Kette; Offline-Tor prüft nur den Zustandsträger |
+| B3 | Curia-Vollabgleich ohne Request-Zahl/Kette | berechtigt | §11.6: ~6 Requests je Geschäft ⇒ ~2 300 je Lauf, ≤ 2/s ⇒ ~20 min; **eigener Monatslauf in `normen-monitor.yml`** (seit 1.10.2026 `normen-monatslauf.yml`, QS-MONITOR-ROT), nie in der Gate-Kette; Offline-Tor prüft nur den Zustandsträger |
 | B5 | «heute»-Punkt und künftige Stände | Hinweis | §11.5: Punkte nach heute heissen «tritt in Kraft am …», nie «gilt seit»; warn-Tick |
 
 **Runde 2 (Opus, 14 Befunde C1–C14 gegen Fassung 3; `…/KRITIK-R2.md`):**

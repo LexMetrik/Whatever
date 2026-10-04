@@ -1,3 +1,4 @@
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 // ─── Schnellwerkzeug der Startseite: welche Variante (U2, 24.9.2026) ─────────
 //
 // David 24.9.2026: «ich möchte dass man bei den schnellwerkzeugen auswählen
@@ -25,7 +26,7 @@ const istWahl = (v: unknown): v is SchnellWahl => SCHNELL_WAHLEN.some((w) => w.c
 /** Gespeicherte Wahl; ohne Speicher oder bei unbekanntem Wert der Standard. */
 export function leseSchnellWahl(): SchnellWahl {
   try {
-    const v = localStorage.getItem(SCHNELL_WAHL_KEY);
+    const v = lokalSpeicher.lies(SCHNELL_WAHL_KEY);
     return istWahl(v) ? v : SCHNELL_WAHL_STANDARD;
   } catch {
     return SCHNELL_WAHL_STANDARD;
@@ -34,5 +35,5 @@ export function leseSchnellWahl(): SchnellWahl {
 
 /** Merkt die Wahl; scheitert still (Komfort, kein Zustand, der fehlen darf). */
 export function speichereSchnellWahl(w: SchnellWahl): void {
-  try { localStorage.setItem(SCHNELL_WAHL_KEY, w); } catch { /* privat-Modus */ }
+  lokalSpeicher.schreib(SCHNELL_WAHL_KEY, w); // privat-Modus
 }

@@ -2,7 +2,12 @@ import { useLayoutEffect, useRef, type Dispatch, type MutableRefObject, type Set
 import { pfadZu } from '../helpers';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
-import { uebersetzeRohPfad } from '../gliederungsModell';
+import { uebersetzeRohPfad, findeSynthPfad } from '../gliederungsModell';
+import type { GliederungsKnoten } from '../gliederungsTypen';
+import { sammleArtikel } from '../gliederungsArtikel';
+import { kanonischerAnkerToken } from '../suchTreffer';
+import { sicherDekodiert } from '../../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../../lib/normtext/zifferAnker';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
 //    VOR DEM ERSTEN BILD ────────────────────────────────────────────────────
@@ -61,6 +66,10 @@ export function useTiefLinkZweig(opts: {
   erlassMarke: string;
   /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
   umhaengPraefix: Record<string, string[]>;
+  /** Zeilenbaum des Modells — für Artikel OHNE amtliche Sektion («Ohne Abschnitt», Anhang; B7). */
+  knoten?: GliederungsKnoten[];
+  /** Token → Dokumentposition ALLER Einträge (`useArtikelAbleitungen`) — die Liste, gegen die auch der Seed-Sprung kanonisiert. */
+  artIndex?: ReadonlyMap<string, number>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   autoOffenRef: MutableRefObject<Set<string>>;
   autoTickRef: MutableRefObject<Map<string, number>>;
@@ -69,17 +78,42 @@ export function useTiefLinkZweig(opts: {
   manuellZuRef: MutableRefObject<Set<string>>;
 }): void {
   const {
-    hash, sektionen, erlassMarke, umhaengPraefix, setTocBaum,
+    hash, sektionen, erlassMarke, umhaengPraefix, knoten, artIndex, setTocBaum,
     autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = opts;
   const pfadRef = useRef<string | null>(null);
   useLayoutEffect(() => {
     if (!hash.startsWith('#art-') || sektionen.length === 0) return;
-    const token = decodeURIComponent(hash.slice('#art-'.length));
-    if (!token) return;
+    const anker = sicherDekodiert(hash.slice('#art-'.length)); // PA-1-B01
+    if (!anker) return;
+    // E2 (Ziffer-Fragment): «197-ziff-12» ist kein Artikel-Token — das Suffix MUSS vor der Abbildung
+    // auf die Token-Liste ab, sonst trifft nichts und der Zweig bleibt zu (früherer Bug bei #art-1a).
+    const { artikel: roh } = zerlegeZifferAnker(anker);
+    // PA-4-B02 (W2·17-UI-BEFUNDE): «#art-336c» trifft den Token «336_c». Der Seed-
+    // Sprung kanonisiert (`kanonischerAnkerToken`, Nebenfund S6), dieser Zweig las
+    // den Rohtoken, fand keinen Pfad und öffnete die Gliederung erst nach dem
+    // Sprung — gemessen @1440 auf OR: CLS 0.0975 (336c) gegen 0.0004 (336_c).
+    // EINE Kanonisierung, dieselbe Funktion UND dieselbe Token-Liste wie der Seed-
+    // Sprung (§5): alle Einträge, nicht nur die der Sektionen. Nachzug PR #1267:
+    // gegen die Sektions-Tokens allein wurde «#art-1.1» (Anhang Ziff. 1.1, kein
+    // Sektions-Token) zu «11» und öffnete in ZH-211.17 den Zweig von § 11, während
+    // der Sprung auf 1.1 ging (Korpus: 8 Hashes). `artIndex` fehlt nur in Tests
+    // ohne Modell — dann bleibt es bei den Sektions-Tokens.
+    const token = kanonischerAnkerToken(
+      roh, artIndex ? [...artIndex.keys()] : sektionen.flatMap((s) => sammleArtikel(s).map((a) => a.artikel)),
+    );
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;
-    const ids = uebersetzeRohPfad(umhaengPraefix, pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? []);
+    const rohPfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    // B7 (W2·17-UI-BEFUNDE): ein Artikel ohne amtliche Sektion (vor dem ersten
+    // Abschnitt, dahinter, mittendrin, im Anhang) steht in einer synthetischen
+    // Zeile — «Ohne Abschnitt», «Anhänge». Ohne diese Auflösung blieb die Zeile
+    // bei ZH-230#art-5 zu, obwohl der Leser mitten in ihr stand. Welche Zeile den
+    // Artikel deckt, weiss allein das Modell (`findeSynthPfad`, §5) — dieselbe
+    // Frage beantwortet der Scroll-Spy ebenso.
+    const ids = rohPfad.length > 0
+      ? uebersetzeRohPfad(umhaengPraefix, rohPfad)
+      : (knoten ? findeSynthPfad(knoten, token) ?? [] : []);
     if (ids.length === 0) return;
     pfadRef.current = marke;
     const tick = autoTickNowRef.current;
@@ -92,6 +126,6 @@ export function useTiefLinkZweig(opts: {
       if (sprungZielOffen(o, ids, ids.slice(-1))) return o; // schon offen ⇒ kein Re-Render
       return oeffneSprungZiel(o, ids, ids.slice(-1));
     });
-  }, [hash, sektionen, erlassMarke, umhaengPraefix,
+  }, [hash, sektionen, erlassMarke, umhaengPraefix, knoten, artIndex,
       autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);
 }

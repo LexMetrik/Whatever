@@ -141,14 +141,33 @@ export function baueArtikelIndex(
   const gruppen: ArtikelIndexGruppe[] = [];
   if (sektionen.length > 0) {
     // Top-Level-Abschnitte als Zwischenköpfe; ihr GANZER Teilbaum (inkl. tiefer
-    // randtitel-promoteter Untergruppen) liefert die Artikel dokumentlinear —
-    // der Index zeigt die flache Liste, keine zweite Verschachtelung (§3.2).
-    for (const s of sektionen) {
-      const arts = sammleArtikel(s).filter((a) => !istAnhangEintrag(a));
-      if (arts.length > 0) gruppen.push({ kopf: s.label, zeilen: arts.map(zeileFuer) });
+    // randtitel-promoteter Untergruppen) gehört zum Kopf — der Index zeigt die
+    // flache Liste, keine zweite Verschachtelung (§3.2).
+    //
+    // REIHENFOLGE = DOKUMENTFOLGE (W2·17-UI-BEFUNDE B7, 2.10.2026). Bis hierher
+    // stand je Abschnitt ein Block und die «freien» Artikel (ohne Abschnitt)
+    // gesammelt am ENDE — NHG zeigte Art. 12–12f vor Art. 1, EMRK Art. 1 als
+    // letzten. Jetzt läuft der Index über die Einträge in Dokumentfolge und
+    // schneidet LÄUFE: wechselt die Zugehörigkeit (Abschnitt X ↔ frei), beginnt
+    // ein neuer Block. Ein Abschnitt, dessen Artikel zusammenhängen (der Regelfall),
+    // bleibt EIN Block; freie Artikel vor, zwischen oder nach den Abschnitten
+    // stehen dort, wo sie im Gesetz stehen (kopf `null`, §8: keine Zuschlagung).
+    // Aufgenommen wird, was vorher auch aufgenommen wurde (Abschnitts-Artikel
+    // oder `ohneGliederung`) — die Menge ändert sich nicht, nur die Folge.
+    const abschnittVon = new Map<string, number>();
+    sektionen.forEach((s, i) => { for (const a of sammleArtikel(s)) abschnittVon.set(a.artikel, i); });
+    const frei = new Set(ohneGliederung.map((a) => a.artikel));
+    let lauf: { abschnitt: number; zeilen: ArtikelIndexZeile[] } | null = null;
+    for (const e of eintraege) {
+      if (istAnhangEintrag(e)) continue;
+      const abschnitt = abschnittVon.get(e.artikel) ?? (frei.has(e.artikel) ? -1 : null);
+      if (abschnitt === null) continue;
+      if (lauf === null || lauf.abschnitt !== abschnitt) {
+        lauf = { abschnitt, zeilen: [] };
+        gruppen.push({ kopf: abschnitt >= 0 ? sektionen[abschnitt].label : null, zeilen: lauf.zeilen });
+      }
+      lauf.zeilen.push(zeileFuer(e));
     }
-    const frei = ohneGliederung.filter((a) => !istAnhangEintrag(a));
-    if (frei.length > 0) gruppen.push({ kopf: null, zeilen: frei.map(zeileFuer) });
   } else {
     const arts = eintraege.filter((a) => !istAnhangEintrag(a));
     if (arts.length > 0) gruppen.push({ kopf: null, zeilen: arts.map(zeileFuer) });
@@ -295,6 +314,13 @@ function istAnspringbar(k: GliederungsKnoten, arts: NormSnapshot[]): boolean {
  * folgen der Start-Regel, Artikel-Kinder erst einem ausdrücklichen Öffnen.
  * Ein expliziter Wert gewinnt in `zeileIstOffen` gegen die Tiefen-Regel, ein
  * Klick und der Scroll-Spy gewinnen weiterhin gegen ihn.
+ *
+ * ERGÄNZUNG 2.10.2026 (Entscheid David, W2·17-UI-BEFUNDE): der Satz «Artikel-
+ * Kinder erst einem ausdrücklichen Öffnen» gilt seit dem 19.9.2026 (PR #924,
+ * `artikelKinderOffen`) nur noch für Zeilen, die AUSSCHLIESSLICH Artikel
+ * tragen. Am gemischten Knoten folgen die Artikel der Zeile — auch beim Start
+ * (8 von 852 b1-offen-Erlassen starten deshalb mit > 40 Zeilen, max. 70,
+ * ZH-232.3). David: dem neueren Entscheid folgen. Siehe `waehleModus`.
  */
 export function haengeArtikelZeilen(
   knoten: GliederungsKnoten[],

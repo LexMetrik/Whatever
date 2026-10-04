@@ -1,7 +1,7 @@
 {
   "erlassKey": "BBV",
   "sr": "412.101",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -29,13 +29,12 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung",
         "aufhebung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/359/de",
-      "sha": "572352e852766fd2f931c8ff3460ca2d56426c443138aef8ad6acecb4f673d4d"
+      "sha": "d142158c3bbfd5175f3b7514a54bcb32a384470be8aa93caf3d33e8cd7125211"
     },
     {
       "art": "aenderung",
@@ -356,5 +355,5 @@
       "sha": "a774a1844455a4deccb1e818cfc25ddff0a406a3b03b03f22227a43511bdf022"
     }
   ],
-  "sha": "57c7e8132b71725fb07bfb17ec2ba099bb45e8e8836fdcf836a8227dbbf64140"
+  "sha": "a46910c5159c5660100e95d0064cad81648d241dd36915211f241aec525e4b6d"
 }

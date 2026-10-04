@@ -7343,8 +7343,8 @@
           "text": "Unterschreiten die nach Absatz 3 ermittelten Erfahrungsjahre am 1. Januar 2027 die funktionsbezogenen Mindestanforderungen, so erfolgt die Einreihung vorübergehend in eine um zwei Lohnklassen tiefere Lohnklasse. Die Tiefereinreihung entfällt, sobald die Anforderungen erfüllt sind, spätestens jedoch nach fünf Jahren. Der Lohn wird in der ursprünglichen Lohnklasse auf der Grundlage von null Erfahrungsjahren festgesetzt. Vorbehalten bleibt Absatz 3septies."
         },
         {
-          "absatz": null,
-          "text": "3sexies Als funktionsbezogene Mindestanforderung gelten:",
+          "absatz": "3sexies",
+          "text": "Als funktionsbezogene Mindestanforderung gelten:",
           "items": [
             {
               "marke": "a",
@@ -7357,8 +7357,8 @@
           ]
         },
         {
-          "absatz": null,
-          "text": "3septies Unterschreitet bei Funktionen der Informations- und Kommunikationstechnologien gemäss der Sparte Digitale Dienste / Informatik des vom EFD nach Artikel 52 Absatz 4 erstellten Referenzfunktionenkatalogs, die in den Lohnklassen 16–23 eingestuft sind, am 1. Januar 2027 die funktionsrelevante Erfahrung fünf Jahre, so erfolgt die Einreihung vorübergehend in der Lohnklasse 15. Die Tiefereinreihung entfällt, sobald die Anforderungen erfüllt sind, spätestens jedoch nach fünf Jahren. Die Verhältnisse auf dem Arbeitsmarkt sind zu berücksichtigen. Der Lohn wird in der ursprünglichen Lohnklasse bei null Erfahrungsjahren festgesetzt."
+          "absatz": "3septies",
+          "text": "Unterschreitet bei Funktionen der Informations- und Kommunikationstechnologien gemäss der Sparte Digitale Dienste / Informatik des vom EFD nach Artikel 52 Absatz 4 erstellten Referenzfunktionenkatalogs, die in den Lohnklassen 16–23 eingestuft sind, am 1. Januar 2027 die funktionsrelevante Erfahrung fünf Jahre, so erfolgt die Einreihung vorübergehend in der Lohnklasse 15. Die Tiefereinreihung entfällt, sobald die Anforderungen erfüllt sind, spätestens jedoch nach fünf Jahren. Die Verhältnisse auf dem Arbeitsmarkt sind zu berücksichtigen. Der Lohn wird in der ursprünglichen Lohnklasse bei null Erfahrungsjahren festgesetzt."
         },
         {
           "absatz": "4",
@@ -7369,7 +7369,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2001/319/de#art_116_m",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260701",
-      "sha": "6801b467ac769f6413a3be80af4fe77a3300b84b96f3fcb0c9b5c1596a55964e"
+      "sha": "c555f8d8e480f0a296e466beed371c175e14e2cb0bd635e0a80322858ce839ad"
     },
     {
       "id": "bund/BPV/art_116_n",
