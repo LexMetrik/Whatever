@@ -120,6 +120,29 @@ test.describe('W2·5m/E1 — der Umschalter und das Blättern', () => {
     await expect(page.locator('[data-einzel-tastaturhinweis]')).toHaveCount(1)
   })
 
+  test('← gleich nach →: der Frame-Nachlauf von → springt nicht zurück (Flake 4.10.2026)', async ({ page }) => {
+    // CI-Messung (Verlaufs-Sonde): → schrieb 337_d, ← 35 ms später 337_c, 3,5 ms danach der Frame-Nachlauf
+    // von → wieder 337_d. Hier deterministisch: ← fällt in den ersten Frame nach dem Commit von →, vor dessen
+    // Nachlauf. ROT: `v3/sprungWege.nachlaufUeberholt` immer `false` ⇒ 30/30 rot (gemessen 4.10.2026).
+    await page.goto(einzel(OR, '337_c'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="337_c"]')).toBeVisible({ timeout: 20_000 })
+    await page.evaluate(() => {
+      const taste = (key: string) => window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }))
+      const raf = window.requestAnimationFrame.bind(window)
+      let scharf = true
+      window.requestAnimationFrame = (cb) => raf((t) => {
+        if (scharf && document.querySelector('[data-einzel-artikel="337_d"]')) { scharf = false; taste('ArrowLeft') }
+        cb(t)
+      })
+      taste('ArrowRight')
+    })
+    await expect.poll(() => page.evaluate(() => location.hash), { timeout: 10_000 }).toBe('#art-337_c')
+    await page.waitForTimeout(800) // der Nachlauf läuft nach einem Frame — erst danach ist «bleibt» eine Aussage
+    await expect(page.locator('[data-einzel-artikel="337_c"]')).toBeVisible()
+    expect(await page.evaluate(() => location.hash)).toBe('#art-337_c')
+  })
+
   test('der Deep-Link trägt den Modus, und der Rückweg verlässt ihn (B4)', async ({ page }) => {
     await page.goto(einzel(OR, '337_c'))
     await rahmenBereit(page)
