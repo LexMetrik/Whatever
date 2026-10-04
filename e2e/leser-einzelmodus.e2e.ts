@@ -120,6 +120,29 @@ test.describe('W2·5m/E1 — der Umschalter und das Blättern', () => {
     await expect(page.locator('[data-einzel-tastaturhinweis]')).toHaveCount(1)
   })
 
+  test('← gleich nach →: der Frame-Nachlauf von → springt nicht zurück (Flake 4.10.2026)', async ({ page }) => {
+    // CI-Messung (Verlaufs-Sonde): → schrieb 337_d, ← 35 ms später 337_c, 3,5 ms danach der Frame-Nachlauf
+    // von → wieder 337_d. Hier deterministisch: ← fällt in den ersten Frame nach dem Commit von →, vor dessen
+    // Nachlauf. ROT: `v3/sprungWege.nachlaufUeberholt` immer `false` ⇒ 30/30 rot (gemessen 4.10.2026).
+    await page.goto(einzel(OR, '337_c'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="337_c"]')).toBeVisible({ timeout: 20_000 })
+    await page.evaluate(() => {
+      const taste = (key: string) => window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }))
+      const raf = window.requestAnimationFrame.bind(window)
+      let scharf = true
+      window.requestAnimationFrame = (cb) => raf((t) => {
+        if (scharf && document.querySelector('[data-einzel-artikel="337_d"]')) { scharf = false; taste('ArrowLeft') }
+        cb(t)
+      })
+      taste('ArrowRight')
+    })
+    await expect.poll(() => page.evaluate(() => location.hash), { timeout: 10_000 }).toBe('#art-337_c')
+    await page.waitForTimeout(800) // der Nachlauf läuft nach einem Frame — erst danach ist «bleibt» eine Aussage
+    await expect(page.locator('[data-einzel-artikel="337_c"]')).toBeVisible()
+    expect(await page.evaluate(() => location.hash)).toBe('#art-337_c')
+  })
+
   test('der Deep-Link trägt den Modus, und der Rückweg verlässt ihn (B4)', async ({ page }) => {
     await page.goto(einzel(OR, '337_c'))
     await rahmenBereit(page)
@@ -339,6 +362,15 @@ const suchfeld = (page: Page) => page.locator('[data-v3-suchsprung] input').firs
 /** Der gezeigte Artikel (aus dem DOM) und die Adresse (aus dem Router) — beide müssen übereinstimmen. */
 const gezeigt = (page: Page) => page.locator('[data-einzel-artikel]').getAttribute('data-einzel-artikel')
 const adressToken = (page: Page) => page.evaluate(() => decodeURIComponent(location.hash.replace(/^#art-/, '')))
+/** Anzeige und Adresse in EINEM Lesevorgang, als «gezeigt/Adresse» — zwei getrennte Lesungen können
+ *  zwischen `pushState` und Render fallen und widersprechen sich dann scheinbar (Flake 4.10.2026). */
+const gezeigtUndAdresse = (page: Page) => page.evaluate(() =>
+  `${document.querySelector('[data-einzel-artikel]')?.getAttribute('data-einzel-artikel') ?? ''}/${decodeURIComponent(location.hash.replace(/^#art-/, ''))}`)
+/** «gezeigt/Adresse» stimmen überein UND der Artikel ist nicht mehr `alt`. */
+const gleichUndNicht = (alt: string) => {
+  const roh = alt.replace(/[.*+?^$(){}|[\]\\]/g, '\\$&')
+  return new RegExp(`^(?!${roh}/)([^/]+)/\\1$`)
+}
 
 test.describe('W2·17 — Sprünge im Einzelmodus: Adresse und Anzeige stimmen überein', () => {
   test('PE-C3-B01 · Quickjump «Art. 12» zeigt Art. 12, nicht den alten Artikel', async ({ page }) => {
@@ -426,6 +458,11 @@ test.describe('W2·17 — Sprünge im Einzelmodus: Adresse und Anzeige stimmen �
     await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20_000 })
     await suchfeld(page).press('Enter')
     await expect(page.locator('[data-v3-treffer-spalte]')).toHaveCount(0)
+    // Enter springt SELBST zum ersten Treffer (BGFA: Art. 12). Erst dieser Stand ist der Ausgangspunkt
+    // des Klicks — sonst erfüllte schon der Enter-Sprung das «wechselt» unten (Flake 4.10.2026, gemessen
+    // mit Verlaufs-Sonde: pushState #art-12 nach Enter, #art-6 nach dem Klick; die Probe las 12 gegen 6).
+    await expect.poll(() => gezeigtUndAdresse(page), { timeout: 20_000 }).toMatch(gleichUndNicht('37'))
+    const vorKlick = await gezeigt(page)
     const streifen = page.locator('[data-treffer-landkarte]')
     await expect(streifen).toHaveCount(1, { timeout: 20_000 })
     const kasten = (await streifen.boundingBox())!
@@ -440,9 +477,9 @@ test.describe('W2·17 — Sprünge im Einzelmodus: Adresse und Anzeige stimmen �
       return (beste.von + beste.bis) / 2
     })
     await page.mouse.click(kasten.x + kasten.width / 2, luecke)
-    // Der Artikel wechselt UND stimmt mit der Adresse überein …
-    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('37')
-    expect(await adressToken(page)).toBe((await gezeigt(page))!)
+    // Der Artikel wechselt UND stimmt mit der Adresse überein — als EIN Zustand gelesen und abgewartet:
+    // zwischen `pushState` und dem Render steht die Adresse einen Frame vor der Anzeige.
+    await expect.poll(() => gezeigtUndAdresse(page), { timeout: 20_000 }).toMatch(gleichUndNicht(vorKlick!))
     // … und die Suche steht noch (Feldwert, Landkarte).
     await expect(suchfeld(page)).toHaveValue('Berufsregeln')
     await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(1)
