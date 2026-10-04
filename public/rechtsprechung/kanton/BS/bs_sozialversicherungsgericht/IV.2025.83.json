@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.83",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "IV.2025.83",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS IV.2025.83 vom 14.04.2026",
-      "datum": "2026-04-14",
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.83 vom 02.06.2026",
+      "datum": "2026-06-02",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -256,13 +256,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79763&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-07-25",
       "sha": "0eab5980aa1c4ab495a49f320785f754c1f80c1efe1d19a1a95f163a56d83cf5",
       "erstpublikation": "2026-07-24",
       "aktualisiert": "2026-07-25",
       "nummerSekundaer": "SVG.2026.121",
-      "ecli": "ECLI:CH:BSS:2026:IV.2025.83"
+      "ecli": "ECLI:CH:BSS:2026:IV.2025.83",
+      "datumPortal": "2026-04-14"
     }
   ]
 }

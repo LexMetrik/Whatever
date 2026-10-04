@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BEZ.2022.62",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BEZ.2022.62",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BEZ.2022.62 vom 26.08.2022",
-      "datum": "2022-08-26",
+      "zitierung": "Appellationsgericht BS BEZ.2022.62 vom 30.08.2022",
+      "datum": "2022-08-30",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -182,13 +182,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73885&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-06-17",
       "sha": "fac2fec70bce49540960d92d92bd1f05c0d310ce4dc62f4293acce025932311e",
       "erstpublikation": "2023-06-17",
       "aktualisiert": "2023-06-17",
       "nummerSekundaer": "AG.2022.534",
-      "ecli": "ECLI:CH:BSA:2022:BEZ.2022.62"
+      "ecli": "ECLI:CH:BSA:2022:BEZ.2022.62",
+      "datumPortal": "2022-08-26"
     }
   ]
 }

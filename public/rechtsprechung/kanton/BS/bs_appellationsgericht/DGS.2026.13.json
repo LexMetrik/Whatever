@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/DGS.2026.13",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "DGS.2026.13",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS DGS.2026.13 vom 10.04.2026",
-      "datum": "2026-04-10",
+      "zitierung": "Appellationsgericht BS DGS.2026.13 vom 14.04.2026",
+      "datum": "2026-04-14",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "straf",
@@ -137,13 +137,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79528&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-08-13",
       "sha": "94cbe050fd9f972da1be28adc58365c90a6612c4b52bb194cd2e8793097f4d4e",
       "erstpublikation": "2026-08-13",
       "aktualisiert": "2026-08-13",
       "nummerSekundaer": "AG.2026.230",
-      "ecli": "ECLI:CH:BSA:2026:DGS.2026.13"
+      "ecli": "ECLI:CH:BSA:2026:DGS.2026.13",
+      "datumPortal": "2026-04-10"
     }
   ]
 }

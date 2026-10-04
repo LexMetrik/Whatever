@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-25",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZZ.2025.2",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "ZZ.2025.2",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS ZZ.2025.2 vom 18.03.2026",
-      "datum": "2026-03-18",
+      "zitierung": "Appellationsgericht BS ZZ.2025.2 vom 20.01.2026",
+      "datum": "2026-01-20",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -140,13 +140,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79454&Template=search_result_document.html",
-      "abgerufen": "2026-09-25",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-08-20",
       "sha": "4a536209b468a5859b08a15b24335c8a52a807988ac30d1ea24c7fe09f8250cf",
       "erstpublikation": "2026-08-20",
       "aktualisiert": "2026-08-20",
       "nummerSekundaer": "AG.2026.178",
-      "ecli": "ECLI:CH:BSA:2026:ZZ.2025.2"
+      "ecli": "ECLI:CH:BSA:2026:ZZ.2025.2",
+      "datumPortal": "2026-03-18"
     }
   ]
 }

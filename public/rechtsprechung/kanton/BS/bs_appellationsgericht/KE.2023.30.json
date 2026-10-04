@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/KE.2023.30",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "KE.2023.30",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS KE.2023.30 vom 16.09.2023",
-      "datum": "2023-09-16",
+      "zitierung": "Appellationsgericht BS KE.2023.30 vom 19.09.2023",
+      "datum": "2023-09-19",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -132,13 +132,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=75788&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2024-10-08",
       "sha": "c40d772daef15a6d075d6ce57549209fbc2c31f6a67e8d55a2a54b191c1c73d0",
       "erstpublikation": "2024-10-08",
       "aktualisiert": "2024-10-08",
       "nummerSekundaer": "AG.2023.578",
-      "ecli": "ECLI:CH:BSA:2023:KE.2023.30"
+      "ecli": "ECLI:CH:BSA:2023:KE.2023.30",
+      "datumPortal": "2023-09-16"
     }
   ]
 }

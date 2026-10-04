@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BEZ.2022.37",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BEZ.2022.37",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BEZ.2022.37 vom 16.05.2022",
-      "datum": "2022-05-16",
+      "zitierung": "Appellationsgericht BS BEZ.2022.37 vom 17.05.2022",
+      "datum": "2022-05-17",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -141,13 +141,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=73517&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2023-06-17",
       "sha": "f5530a060834b6cd8527e23d771299817e9d4e3e8d82f42a56c615c459e31164",
       "erstpublikation": "2023-06-17",
       "aktualisiert": "2023-06-17",
       "nummerSekundaer": "AG.2022.336",
-      "ecli": "ECLI:CH:BSA:2022:BEZ.2022.37"
+      "ecli": "ECLI:CH:BSA:2022:BEZ.2022.37",
+      "datumPortal": "2022-05-16"
     }
   ]
 }

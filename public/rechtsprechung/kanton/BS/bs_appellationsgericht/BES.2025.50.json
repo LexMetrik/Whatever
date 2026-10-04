@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-10-04",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/BES.2025.50",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "BES.2025.50",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS BES.2025.50 vom 19.06.2025",
-      "datum": "2025-06-19",
+      "zitierung": "Appellationsgericht BS BES.2025.50 vom 24.06.2025",
+      "datum": "2025-06-24",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "straf",
@@ -152,13 +152,14 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78548&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-10-04",
       "fassungsToken": "2026-03-11",
       "sha": "ecc2c2632c34a4b1f80e014f70acc2fd0ae198e26b7f1d12a14fbea19df8c31c",
       "erstpublikation": "2026-03-11",
       "aktualisiert": "2026-03-11",
       "nummerSekundaer": "AG.2025.379",
-      "ecli": "ECLI:CH:BSA:2025:BES.2025.50"
+      "ecli": "ECLI:CH:BSA:2025:BES.2025.50",
+      "datumPortal": "2025-06-19"
     }
   ]
 }
