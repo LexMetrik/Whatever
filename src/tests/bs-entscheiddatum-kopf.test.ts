@@ -87,7 +87,7 @@ describe('waehleBsDatum — Regel und Plausibilitäts-Wächter', () => {
 describe('Kopf-Fundstelle, Delta, Stichprobe, Liste', () => {
   it('kopfDatumFund nennt Titelzeile, Datumszeile und Einheit', () => {
     const f = kopfDatumFund([{ text: 'Appellationsgericht' }, { text: 'BES.2024.88' }, { text: 'ENTSCHEID' }, { text: 'vom 15. September 2025' }]);
-    expect(f).toEqual({ iso: '2025-09-15', einheit: 3, titel: 'ENTSCHEID', text: 'vom 15. September 2025' });
+    expect(f).toEqual({ iso: '2025-09-15', einheit: 3, titel: 'ENTSCHEID', text: 'vom 15. September 2025', rektifikat: false });
   });
   it('Delta: ein Snapshot mit Kopf-Datum und datumPortal weicht NICHT vom Inventar ab', () => {
     const p = parseBsDokument(fix('AUS.2022.46'));

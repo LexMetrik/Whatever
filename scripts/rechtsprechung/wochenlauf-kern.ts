@@ -362,7 +362,7 @@ export function pruefeBs(html: string, e: RegEintrag): Identitaet {
   const d = bsPortalDaten(html);
   // Portal-Datum: Metadaten-Tabelle, sonst (Fragment ohne Tabelle) das Etikett im Text.
   const pm = /Entscheiddatum:\s*(\d{2})\.(\d{2})\.(\d{4})/.exec(t);
-  const wahl = waehleBsDatum(d.portal ?? (pm ? `${pm[3]}-${pm[2]}-${pm[1]}` : null), d.kopf, gnJahr(nr), d.erstpublikation, null);
+  const wahl = waehleBsDatum(d.portal ?? (pm ? `${pm[3]}-${pm[2]}-${pm[1]}` : null), d.kopf, gnJahr(nr), d.erstpublikation, null, d.kopfRektifikat);
   if (wahl.verdacht) return { treffer: null, akz: true, datum: null, detail: `${nr}: ${wahl.verdacht} (Korpus ${e.datum}) — Handprüfung` };
   const quelle = wahl.quelle === 'kopf' ? 'Urteilskopf' : 'Portal-Metadatum';
   if (wahl.quelle === 'platzhalter') return { treffer: null, akz: true, datum: null, detail: `${nr}: weder Kopf- noch Portal-Datum lesbar (Korpus ${e.datum}) — Handprüfung` };

@@ -23,7 +23,7 @@ import { dekodiereBs, dokumentUrl } from './bs-client';
 import { rawPfad, BS_DATEN } from './bs-fetch';
 import { extrahiereBesetzung } from './bs-besetzung';
 import { gnJahr, type Inventar, type InventarZeile } from './bs-inventar';
-import { kopfDatum, kopfDatumFund, waehleBsDatum, type BsDatumWahl, type KopfDatumFund } from './bs-datum';
+import { kopfDatumFund, waehleBsDatum, type BsDatumWahl, type KopfDatumFund } from './bs-datum';
 import { sha256EntscheidBloecke } from '../normtext/sha-entscheide';
 import { gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe } from '../normtext/entscheide-mapping';
 import { schreibeKorpus, ladeBestandSnapshots } from '../normtext/entscheide-schreiben';
@@ -288,13 +288,14 @@ function bodyEinheiten(document: Document) {
  * (`waehleBsDatum`) auf die frisch geholte Seite anwendet. Ohne lesbaren Body
  * (Fragment/Hülle) bleibt `kopf` null (Rückfall Portal), nie ein Fehler.
  */
-export function bsPortalDaten(html: string): { portal: string | null; kopf: string | null; erstpublikation: string | null } {
+export function bsPortalDaten(html: string): { portal: string | null; kopf: string | null; kopfRektifikat: boolean; erstpublikation: string | null } {
   const { document } = parseHTML(bereinigeQuellDebris(html));
-  let kopf: string | null;
-  try { kopf = kopfDatum(bodyEinheiten(document)); } catch { kopf = null; }
+  let fund: KopfDatumFund | null;
+  try { fund = kopfDatumFund(bodyEinheiten(document)); } catch { fund = null; }
   return {
     portal: dIso(metaWert(document, 'Entscheiddatum')),
-    kopf,
+    kopf: fund?.iso ?? null,
+    kopfRektifikat: !!fund?.rektifikat,
     erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
   };
 }
@@ -504,7 +505,7 @@ export function docketSafeVergabe(
 
 /** Die Datums-Wahl eines geparsten Dokuments (eine Stelle für Import, Berichtigung, Liste — §5). */
 export function bsWahlVon(p: ParseErgebnis, abgerufen: string | null): BsDatumWahl {
-  return waehleBsDatum(p.datum, p.datumKopf ?? null, gnJahr(p.gn), p.erstpublikation, abgerufen);
+  return waehleBsDatum(p.datum, p.datumKopf ?? null, gnJahr(p.gn), p.erstpublikation, abgerufen, !!p.kopfFund?.rektifikat);
 }
 
 export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: string, abgerufen: string): EntscheidSnapshot {

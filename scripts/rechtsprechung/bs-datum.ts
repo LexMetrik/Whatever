@@ -50,8 +50,14 @@ const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Ur
 // Titel «ZWISCHENENTSCHEID», «ZWISCHEN-ENTSCHEID», «(ZWISCHEN-)ENTSCHEID», «ZWISCHEN-URTEIL»,
 // «TEILENTSCHEID», «TEILURTEIL», «ABWESENHEITS-URTEIL», «ERLÄUTERUNGSENTSCHEID» sowie die Plain-
 // Titel in Gross-/Kleinschrift («Urteil», «Beschluss», «Zwischenentscheid»; SB.2018.43/2019.17/
-// 2022.8). NICHT erkannt (bewusst, Rückfall Portal): «URTEIL (Rektifikat)», «REKTIFIKAT» — das
-// Datum nennt dort den Berichtigungsakt, nicht gesichert den Entscheid.
+// 2022.8). [Der hier ursprünglich stehende Satz «NICHT erkannt … das Datum nennt dort den Berichtigungsakt»
+// ist WIDERLEGT — Delta-Gegenprüfung #1303, 4.10.2026: IV.2020.165, AUS.2025.82, SB.2024.7 tragen im
+// Rektifikat-Kopf das ENTSCHEID-Datum (= Portal); bleibt als Stand der ersten Fassung stehen.]
+// ERGÄNZUNG R1 (4.10.2026): Titel mit «Rektifikat» («URTEIL (Rektifikat)», «URTEIL (Rektifikat vom
+// 13.1.23)», «REKTIFIKAT») werden GELESEN (`KopfDatumFund.rektifikat`), das Datum aber NIE übernommen
+// (es kann den Berichtigungsakt nennen: DGZ.2026.2 «REKTIFIKAT vom 21. April 2026» ↔ Portal 30.04.2026);
+// bei Abweichung vom Portal steht derselbe neutrale Hinweis wie bei Verdacht (`datumKopfAbweichend`).
+const KOPF_TITEL_REKTIFIKAT_RE = /^.{0,60}rektifikat.{0,60}$/i;
 const KOPF_TITEL_KOMPOSITUM_RE = /^(?:\((?:ZWISCHEN)-\)ENTSCHEID|(?:(?:Zwischen|Teil|Abwesenheits|Erläuterungs)-?)?(?:Entscheid|Urteil|Beschluss|Verfügung))$/i;
 const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
 
@@ -65,6 +71,8 @@ export interface KopfDatumFund {
   einheit: number;
   titel: string;
   text: string;
+  /** Titel ist ein Rektifikat: das Datum wird gelesen, aber nie als Entscheiddatum übernommen. */
+  rektifikat: boolean;
 }
 
 /**
@@ -77,13 +85,14 @@ export function kopfDatumFund(einheiten: ReadonlyArray<{ text: string }>): KopfD
     const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
     if (!m) continue;
     const titelText = kopfText(einheiten[i - 1].text);
-    if (!KOPF_TITEL_RE.test(titelText) && !KOPF_TITEL_KOMPOSITUM_RE.test(titelText)) continue;
+    const rektifikat = KOPF_TITEL_REKTIFIKAT_RE.test(titelText);
+    if (!rektifikat && !KOPF_TITEL_RE.test(titelText) && !KOPF_TITEL_KOMPOSITUM_RE.test(titelText)) continue;
     const tag = m[1].padStart(2, '0');
     const iso = `${m[3]}-${MONATE[m[2]]}-${tag}`;
     // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
     const d = new Date(`${iso}T00:00:00Z`);
     if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
-    return { iso, einheit: i, titel: kopfText(einheiten[i - 1].text), text: kopfText(einheiten[i].text) };
+    return { iso, einheit: i, titel: titelText, text: kopfText(einheiten[i].text), rektifikat };
   }
   return null;
 }
@@ -149,11 +158,16 @@ export function waehleBsDatum(
   gnJahrZahl: number | null,
   erstpublikation: string | null,
   abgerufen: string | null,
+  kopfRektifikat = false,
 ): BsDatumWahl {
   let verdacht: string | null = null;
   let kopfOk: string | null = null;
   if (kopf) {
-    if (plausiblesKopfDatum(kopf, gnJahrZahl, erstpublikation) === null) {
+    if (kopfRektifikat) {
+      // R1: Rektifikat-Kopf nie als Entscheiddatum; nur bei Abweichung ein Hinweis (Verdacht).
+      if (portal && kopf !== portal) verdacht = `Rektifikat-Kopf nennt ${kopf}, Portal ${portal} — Berichtigungsakt oder Entscheid, ungeklärt`;
+      if (!portal) verdacht = `Rektifikat-Kopf nennt ${kopf}, Portal ohne Datum — nicht übernommen`;
+    } else if (plausiblesKopfDatum(kopf, gnJahrZahl, erstpublikation) === null) {
       verdacht = `Kopf-Datum ${kopf} unplausibel (vor GN-Jahr ${gnJahrZahl ?? '–'} oder nach Erstpublikation ${erstpublikation ?? '–'})`;
     } else if (abgerufen && kopf > abgerufen) {
       verdacht = `Kopf-Datum ${kopf} liegt in der Zukunft (Abruf ${abgerufen})`;

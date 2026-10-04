@@ -92,11 +92,16 @@ es abweicht».
   Datum zutrifft, ist ungeklärt» (`datumKopfAbweichend`). Das hält die Frage offen: bei SB.2021.107 und
   FZ.2022.7 hat amtlich der Kopf recht, bei VD.2023.151 und VD.2023.83 das Portal (Gegenprüfung #1303).
   Titel-Erkennung: Komposita (ZWISCHENENTSCHEID, ZWISCHEN-ENTSCHEID, TEILENTSCHEID, ABWESENHEITS-URTEIL,
-  ERLÄUTERUNGSENTSCHEID, …) und Plain-Titel in Klein-/Grossschrift; **nicht erkannt** (Rückfall Portal):
-  «URTEIL (Rektifikat)», «REKTIFIKAT» — dort nennt das Datum den Berichtigungsakt.
+  ERLÄUTERUNGSENTSCHEID, …) und Plain-Titel in Klein-/Grossschrift. **Rektifikat-Köpfe** («URTEIL
+  (Rektifikat)», «REKTIFIKAT») werden gelesen, das Datum aber nie übernommen; bei Abweichung vom Portal steht
+  der neutrale Hinweis (`datumKopfAbweichend`). Die Fassung dieser Notiz vom ersten Stand 4.10.2026 («nicht
+  erkannt, das Datum nennt dort den Berichtigungsakt») ist **widerlegt** (Delta-Gegenprüfung #1303): IV.2020.165,
+  AUS.2025.82, SB.2024.7 nennen im Rektifikat-Kopf das Entscheid-Datum (= Portal); abweichend nur DGZ.2026.2
+  («REKTIFIKAT vom 21. April 2026», Portal 30.04.2026). Nicht erkannt bleibt ein Rektifikat-Vermerk ausserhalb
+  des Titel-Absatzes (UV.2023.44).
 - **Bestand:** 3954 Rohdokumente neu geholt (Abruf 4.10.2026) und mit derselben Regel gelesen — **263
-  Daten gegenüber dem Portal geändert** (6,7 %; Abstand −57 … +52 Tage), 31 Verdachtsfälle (Portal bleibt,
-  Hinweis auf den Kopf), Kopf = Portal 3597, kein Kopf lesbar 15, Portal ohne Datum 48 (B-1), 0 nicht
+  Daten gegenüber dem Portal geändert** (6,7 %; Abstand −57 … +52 Tage), 32 Verdachtsfälle (Portal bleibt,
+  Hinweis auf den Kopf; davon 1 Rektifikat), Kopf = Portal 3600, kein Kopf lesbar 11, Portal ohne Datum 48 (B-1), 0 nicht
   angefasst. Jede Änderung mit Kopf-Fundstelle und Portal-Link:
   [bs-datum-kopf-2026-10-04.md](bs-datum-kopf-2026-10-04.md) (generiert, `npm run entscheide:bs --
   --datum-kopf-berichtigung`; Rohdokumente zuvor per `--fetch-only`; die Liste ist auf das Portal-Datum
@@ -114,4 +119,4 @@ es abweicht».
   gegen dieselbe Regel (Kopf; Portal = `datumPortal ?? datum`), nicht mehr gegen das Portal-Feld allein (§6.7).
   Bekannte Grenze: `pruefeBs` nutzt `waehleBsDatum` — nicht unabhängig vom Import (Posten angelegt).
 - **Abnahme-Status:** maschinell verifiziert (unabhängiger Regex-Leser über den Rohtext, alle 294 Zeilen
-  der Liste inkl. Verdacht; 5 per Hand), `verifiziert:false`, fachliche Abnahme David offen.
+  der Liste zum Stand vor R1; 5 per Hand), `verifiziert:false`, fachliche Abnahme David offen.

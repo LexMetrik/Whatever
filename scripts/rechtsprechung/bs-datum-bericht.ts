@@ -35,7 +35,7 @@ export function formatiereDatumBericht(b: BsDatumBericht, datum: string, inventa
   L.push(`- Nicht angefasst (Vorbedingung verletzt): ${b.uebersprungen.length}`);
   if (bis.length) L.push(`- Abstand Kopf − Portal in Tagen (übernommene): kleinster ${Math.min(...bis)}, grösster ${Math.max(...bis)}`);
   L.push('');
-  L.push('Regel: `scripts/rechtsprechung/bs-datum.ts` (`waehleBsDatum`, Titel-Erkennung `KOPF_TITEL_RE`/`KOPF_TITEL_KOMPOSITUM_RE`). Nicht erkannt (Rückfall Portal): Titel «… (Rektifikat)» und «REKTIFIKAT» — dort nennt das Datum den Berichtigungsakt.');
+  L.push('Regel: `scripts/rechtsprechung/bs-datum.ts` (`waehleBsDatum`, Titel-Erkennung `KOPF_TITEL_RE`/`KOPF_TITEL_KOMPOSITUM_RE`). Rektifikat-Köpfe («URTEIL (Rektifikat)», «REKTIFIKAT») werden gelesen, das Datum aber nie übernommen; bei Abweichung vom Portal steht der Verdachts-Hinweis (Delta-Gegenprüfung #1303, R1). Nicht erkannt (Rückfall Portal, ohne Hinweis): ein Rektifikat-Vermerk, der nicht der Titel-Absatz direkt vor «vom …» ist (UV.2023.44).');
   L.push('');
   L.push(`## Verdacht (${b.verdacht.length}) — Portal-Datum bleibt, Hinweis auf das Kopf-Datum`);
   L.push('');
