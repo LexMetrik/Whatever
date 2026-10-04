@@ -425,6 +425,10 @@ export function baueArtikelHistorie(
      *  (VVG 47a, NHG 3) oder an einem amtlichen Gliederungsknoten, der genau diesen einen Artikel enthält, ist sie ein EIGENES
      *  Ereignis. undefined = jede Sektions-Fussnote gilt als Überschrift-Ereignis (Aufrufer ohne Baum, z. B. Unit-Tests). */
     geteilteUeberschriften?: ReadonlySet<string>;
+    /** Entscheid David 4.10.2026 «A» (Posten zgb-299-300-nach-gp-1298-h2): Teilmenge von `geteilteUeberschriften` — die EIGENEN
+     *  Randtitel des Artikels, die erst durch «Randtitel zählt nicht» zum Überschrift-Ereignis wurden (`sektionsAnalyse`).
+     *  Fällt «giltSeit» ohne sie auf ein ÄLTERES eigenes Datum zurück, bleibt es leer (null). undefined = Regel aus. */
+    randtitelEigen?: ReadonlySet<string>;
   } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number; erbtAnzahl: number } {
   const ereignisse: HistorieEreignis[] = [];
@@ -468,11 +472,20 @@ export function baueArtikelHistorie(
   // datierten Ereignisse, am Träger wie an den Erben; ohne eigenes ⇒ null (Anzeige «Fassungshistorie», wie bei P7 #53).
   // Rückbau der Regel: die Bedingung `!e.ueberschrift` unten streichen und die Shards neu erzeugen.
   let aufgehobenSeit: string | undefined;
+  let randtitelDatum: string | null = null; // jüngstes datiertes Ereignis eines eigenen Randtitels (Entscheid A)
   for (const e of ereignisse) {
     if (e.datum && GILT_TYPEN.has(e.typ) && !e.ueberschrift) {
       if (!giltSeit || e.datum > giltSeit) giltSeit = e.datum;
+    } else if (e.datum && GILT_TYPEN.has(e.typ) && opts.randtitelEigen?.has(e.ueberschrift ?? '')) {
+      if (!randtitelDatum || e.datum > randtitelDatum) randtitelDatum = e.datum;
     }
   }
+  // Entscheid David 4.10.2026 «A» (Randtitel zählt nicht, Folge): ein eigener Körper-Stand, der ÄLTER ist als der Randtitel-
+  // Eingriff, ist nicht belastbar — Generalanweisungen («Ersatz von Ausdrücken», z. B. AS 1999 1118 Gewalt → Sorge, 1.1.2000;
+  // AS 2011 725 Kindesschutzbehörde, 1.1.2013) ändern den Körper, ohne am Artikel zu stehen (ZGB 299/300/310). §8: lieber keine
+  // Aussage als eine falsche ⇒ leer; die Chronik bleibt. Rückbau: sobald die Generalanweisungen als Artikel-Ereignis
+  // modelliert sind (Roadmap-Schritt «C»), diese Zeile streichen.
+  if (giltSeit && randtitelDatum && randtitelDatum > giltSeit) giltSeit = null;
   // Ganz-Artikel-Aufhebung (RL-11, Befund R2-01): nur Aufhebungs-Ereignisse aus
   // Fussnoten, deren Marker im Artikelkopf steht und deren Prosa keinen Teil-Skopus
   // nennt (artikelAufhebungMoeglich).
@@ -698,7 +711,11 @@ export function sektionsErbe(artikel: ReadonlyArray<ErbArtikel>): Map<string, Fn
  * `randtitelNurRandtitel`, alle in historie-randtitel.ts). Ein amtlicher Gliederungsknoten mit genau
  * einem Artikel oder die Sachüberschrift des Artikels selbst (ohne Gliederungszeichen) ist EIGEN.
  */
-export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map<string, FnEingang[]>; geteilt: Map<string, Set<string>> } {
+export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): {
+  erbe: Map<string, FnEingang[]>;
+  geteilt: Map<string, Set<string>>;
+  randtitelEigen: Map<string, Set<string>>;
+} {
   const erbe = new Map<string, FnEingang[]>();
   const ketten = new Map<string, Array<{ label: string; artikel: number }>>();
   // Derselbe Baum wie `baueGliederungsbaum`: je Ebene zählt nur der LETZTE Knoten; weicht (Ebene, Label) ab, beginnt ein
@@ -739,12 +756,21 @@ export function sektionsAnalyse(artikel: ReadonlyArray<ErbArtikel>): { erbe: Map
     }
   }
   const geteilt = new Map<string, Set<string>>();
+  const randtitelEigen = new Map<string, Set<string>>();
   for (const a of artikel) {
     const labels = new Set((ketten.get(a.token) ?? []).filter((k) => k.artikel > 1).map((k) => k.label));
-    for (const m of a.marginalie ?? []) if (randtitelMitAufzaehler(m) && randtitelNurRandtitel(a.fussnoten, m.trim())) labels.add(m.trim());
+    const eigen = new Set<string>();
+    for (const m of a.marginalie ?? []) {
+      if (!randtitelMitAufzaehler(m) || !randtitelNurRandtitel(a.fussnoten, m.trim())) continue;
+      // Nur der Randtitel, der erst durch Entscheid «Randtitel zählt nicht» zum Überschrift-Ereignis wird (nicht ein ohnehin
+      // geteilter Gliederungsknoten): nur für ihn gilt Entscheid A (`randtitelEigen`).
+      if (!labels.has(m.trim())) eigen.add(m.trim());
+      labels.add(m.trim());
+    }
+    if (eigen.size > 0) randtitelEigen.set(a.token, eigen);
     if (ketten.has(a.token) || labels.size > 0) geteilt.set(a.token, labels);
   }
-  return { erbe, geteilt };
+  return { erbe, geteilt, randtitelEigen };
 }
 
 /**

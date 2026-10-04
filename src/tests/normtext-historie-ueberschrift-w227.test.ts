@@ -32,8 +32,13 @@ const TITEL11 = stufe(2, 'Elfter Titel: Der Werkvertrag');
 /** Historie eines Artikels der Folge `folge` (Token → Erbe aus `sektionsErbe`). */
 function historieVon(folge: ErbArtikel[], token: string, opts: { snapshotAufgehoben?: boolean } = {}) {
   const a = folge.find((x) => x.token === token)!;
-  const { erbe, geteilt } = sektionsAnalyse(folge);
-  return baueArtikelHistorie(a.fussnoten, { geerbt: erbe.get(token), geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(), ...opts }).historie;
+  const { erbe, geteilt, randtitelEigen } = sektionsAnalyse(folge);
+  return baueArtikelHistorie(a.fussnoten, {
+    geerbt: erbe.get(token),
+    geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
+    randtitelEigen: randtitelEigen.get(token) ?? new Set<string>(),
+    ...opts,
+  }).historie;
 }
 
 describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunter', () => {
@@ -175,11 +180,32 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(h.ereignisse[0]).toMatchObject({ typ: 'fassung', datum: '2007-01-01', ueberschrift: 'Asexies. Stiefeltern' });
   });
 
-  it('Randtitel zählt nicht: eigener Körper-Eingriff datiert weiter («giltSeit» = Maximum der eigenen Ereignisse)', () => {
+  // Entscheid David 4.10.2026 «A» (Posten 2026-10-03-zgb-299-300-nach-gp-1298-h2…): fällt «Gilt seit» ohne den Randtitel auf ein
+  // ÄLTERES Körper-Datum zurück, bleibt es leer (null) — der ältere Körper-Stand wäre sonst amtlich falsch, weil Generalanweisungen
+  // («Ersatz von Ausdrücken», AS 1999 1118 Gewalt → Sorge, 1.1.2000) den Körper ändern, ohne am Artikel zu stehen. Die Chronik bleibt.
+  it('Randtitel zählt nicht + Entscheid A: nur ein ÄLTERER eigener Körper-Eingriff (1972 < Randtitel 2007) → giltSeit null, Chronik behält beide', () => {
     const f13b: ErbArtikel[] = [
       { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'A. Stiefeltern'), { ...fn(FASSUNG_1972), nr: '2' }] },
     ];
-    expect(historieVon(f13b, '299')!.giltSeit).toBe('1972-01-01');
+    const h = historieVon(f13b, '299')!;
+    expect(h.giltSeit).toBeNull();
+    expect(h.ereignisse.map((e) => [e.datum, e.ueberschrift])).toEqual([['2007-01-01', 'A. Stiefeltern'], ['1972-01-01', undefined]]);
+  });
+
+  it('Randtitel zählt nicht + Entscheid A: ein JÜNGERER oder gleich alter eigener Körper-Eingriff datiert weiter («giltSeit» = dessen Datum)', () => {
+    const koerper = (text: string): ErbArtikel[] => [
+      { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_1972, 'A. Stiefeltern'), { ...fn(text), nr: '2' }] },
+    ];
+    expect(historieVon(koerper(FASSUNG_2007), '299')!.giltSeit).toBe('2007-01-01'); // Körper jünger als Randtitel (1972)
+    expect(historieVon(koerper(FASSUNG_1972.replace('AS 1971 1461', 'AS 1971 9999')), '299')!.giltSeit).toBe('1972-01-01'); // gleich alt, andere Fundstelle
+  });
+
+  it('Entscheid A gilt nur für den eigenen Randtitel: Überschrift-Ereignis eines geteilten Gliederungsknotens ändert «giltSeit» weiter nicht (Vorgabe C)', () => {
+    const geteilt: ErbArtikel[] = [
+      { token: '319', gliederung: [TITEL], fussnoten: [sek(FASSUNG_2007, TITEL.label), { ...fn(FASSUNG_1972), nr: '2' }] },
+      { token: '320', gliederung: [TITEL] },
+    ];
+    expect(historieVon(geteilt, '319')!.giltSeit).toBe('1972-01-01');
   });
 
   it('Randtitel zählt nicht — Ausnahme: nennt eine Körper-Fussnote desselben Artikels dieselbe AS-Fundstelle («Randtitel und Abs. …»), bleibt das Datum eigen', () => {
@@ -480,21 +506,19 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
   it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → nicht mehr 2018-01-01, Chronik behält 2018', () => {
     for (const token of ['299', '300']) {
       const h = hist('ZGB', token)!;
-      // Wert offen, wartet auf Entscheid David zur Generalanweisung AS 1999 1118, GP #1298 H2 — der Generator liefert derzeit den
-      // Fussnotenwert 1978 (AS 1977 237); AS 1999 1118 ersetzt «Gewalt» → «Sorge» in Art. 299/300 (nicht im Modell), darum hier
-      // bewusst KEINE Zusicherung eines Positivwerts, nur die Entscheid-Wirkung («Randtitel zählt nicht»).
-      expect(h.giltSeit, token).not.toBe('2018-01-01');
+      // Entscheid David 4.10.2026 «A»: der Fussnotenwert 1978 (AS 1977 237) wäre amtlich falsch (AS 1999 1118 ersetzt «Gewalt» →
+      // «Sorge» in Art. 299/300, nicht im Modell) ⇒ «Gilt seit» bleibt leer, bis die Generalanweisungen modelliert sind (Schritt C).
+      expect(h.giltSeit, token).toBeNull();
       expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
     }
   });
 
   it('Randtitel zählt nicht: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → nicht mehr 2014-07-01, Chronik behält 2014', () => {
     const h = hist('ZGB', '310')!;
-    // Wert offen, wartet auf Entscheid David (Nachzug 2 Delta-GP, 3.10.2026): am Körper steht nur die Fassung 1978 (AS 1977 237);
+    // Entscheid David 4.10.2026 «A» (Nachzug 2 Delta-GP, 3.10.2026): am Körper steht nur die Fassung 1978 (AS 1977 237);
     // «Vormundschaftsbehörde» → «Kindesschutzbehörde» in Art. 310 steht in der Generalanweisung AS 2011 725 («Ersatz von Ausdrücken»,
-    // S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel). Der Generator liefert derzeit 1978-01-01; das ist NICHT als korrekt
-    // zugesichert — gesichert ist nur die Entscheid-Wirkung («Randtitel zählt nicht»), also bewusst kein Positivwert.
-    expect(h.giltSeit).not.toBe('2014-07-01');
+    // S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel). Der 1978-Stand wäre falsch ⇒ «Gilt seit» bleibt leer (null).
+    expect(h.giltSeit).toBeNull();
     expect(h.ereignisse.some((e) => e.datum === '2014-07-01' && e.ueberschrift)).toBe(true);
   });
 
