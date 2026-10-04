@@ -6,6 +6,64 @@
   "referenz": 63,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1976-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1976 164",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1976-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1976 164",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1976-04-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1976 164",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Requisitorialverwertungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 2900",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "II. Eigentum eines Dritten. Familienwohnung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1976-04-01",
@@ -403,7 +461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Pfändung eines Miteigentumsanteils"
     }
    ]
   },
@@ -439,7 +498,7 @@
    ]
   },
   "25": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -465,7 +524,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Verwertungsfrist"
     }
    ]
   },
@@ -1091,7 +1151,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Verwertung eines Miteigentumsanteils"
     }
    ]
   },
@@ -1109,7 +1170,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Requisitorialverwertungen"
     },
     {
      "typ": "fassung",
@@ -1142,6 +1204,23 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "76": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "77": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "78": {
@@ -1173,6 +1252,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "80": {
@@ -1336,7 +1418,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "II. Eigentum eines Dritten. Familienwohnung"
     }
    ]
   },
@@ -1369,6 +1452,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "90": {
@@ -2285,6 +2371,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_b": {
@@ -2316,6 +2405,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_c": {
@@ -2334,6 +2426,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23_d": {
@@ -2352,6 +2447,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "60_a": {
@@ -2401,6 +2499,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_b": {
@@ -2419,6 +2520,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_c": {
@@ -2437,6 +2541,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_d": {
@@ -2455,6 +2562,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_e": {
@@ -2486,6 +2596,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_f": {
@@ -2504,6 +2617,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_g": {
@@ -2522,6 +2638,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_h": {
@@ -2540,6 +2659,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "73_i": {
@@ -2558,6 +2680,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "78_a": {

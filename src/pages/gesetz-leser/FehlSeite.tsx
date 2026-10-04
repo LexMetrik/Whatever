@@ -6,6 +6,10 @@ import type { BrowseManifest } from '../../lib/normtext/browse-typen';
 import { erlassVorschlaege } from './helpers';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 import { FehlSeite } from '../../components/ui/FehlSeite';
+import { SeitenKopf } from '../../components/layout/SeitenKopf';
+import { usePaneKlasse } from '../../components/layout/PaneKontext';
+import { AbrufFehler } from '../../components/ui/AbrufFehler';
+import type { LeserFehler, LadefehlerZustand } from './inhalt-zustand';
 
 // ─── W2·10-UI-NAV/N0b: hilfreiche Fehlseite für einen unbekannten Erlass-Key ───
 //
@@ -26,7 +30,58 @@ import { FehlSeite } from '../../components/ui/FehlSeite';
 // deterministischen «Meinten Sie …?»-Vorschläge und das Register-Suchfeld.
 // Genau die Arbeitsteilung, die §5/§10 verlangt: die geteilte Anatomie oben,
 // die domänen-eigene Auskunft als Inhalt hineingereicht.
-export function GesetzFehlSeite({ schluessel, manifest }: {
+//
+// ── W2·17-UI-BEFUNDE (PA-3-B01/B02, PE-C10-D01) · ZWEI AUSKÜNFTE, EINE WEICHE ──
+// «Nicht im Bestand» ist eine Auskunft über den ERLASS (nicht im Register, Datei
+// 404). Ein Funkloch oder ein 5xx ist eine Auskunft über die VERBINDUNG — und
+// darf nie als erstere erscheinen: die alte Seite behauptete ««OR» ist nicht als
+// Erlass im Bestand» und schlug «OR» als Vorschlag vor (§8). Welche Auskunft
+// gilt, trägt das `fehler`-Feld DIESER Leser-Instanz (`LeserFehler`, gesetzt von
+// `useLeserDaten`) — kein Kanal je Erlass-Schlüssel: zwei Fenster mit demselben
+// Erlass können verschiedene Auskünfte haben (Auflage A1, Gegenprüfung #1256).
+export function GesetzFehlSeite({ schluessel, manifest, fehler }: {
+  schluessel: string;
+  manifest: BrowseManifest | null;
+  /** Das Fehlerfeld der Instanz; ohne Ladefehler gilt «nicht im Bestand». */
+  fehler: Exclude<LeserFehler, false>;
+}) {
+  return typeof fehler === 'object'
+    ? <GesetzLadeFehler schluessel={schluessel} manifest={manifest} ladefehler={fehler} />
+    : <GesetzNichtImBestand schluessel={schluessel} manifest={manifest} />;
+}
+
+/** Der Erlass lässt sich gerade nicht laden — ehrliche Meldung mit «Erneut laden»
+ *  statt «nicht im Bestand». Kein Vorschlags-/Suchblock: der Erlass ist nicht
+ *  unbekannt, es fehlt nur die Verbindung. Der Weiterweg bleibt (REGL:122/C1). */
+function GesetzLadeFehler({ schluessel, manifest, ladefehler }: {
+  schluessel: string;
+  manifest: BrowseManifest | null;
+  ladefehler: LadefehlerZustand;
+}) {
+  const art = ladefehler.grund;
+  const pk = usePaneKlasse();
+  // Bei «datei» steht der Erlass im Register: die amtliche Quelle ist ein echter Ausweg.
+  const quelle = art === 'datei' ? manifest?.erlasse.find((e) => e.key === schluessel)?.quelleUrl : undefined;
+  const erklaerung = art === 'datei'
+    ? 'Der Erlass ist im Bestand, seine Daten konnten aber gerade nicht abgerufen werden (Verbindung oder Server).'
+    : 'Das Verzeichnis der Erlasse konnte gerade nicht abgerufen werden (Verbindung oder Server). Ob dieser Erlass im Bestand ist, lässt sich so nicht sagen.';
+  return (
+    <div className={pk('py-16 space-y-6', 'py-6 space-y-5')} data-leser-ladefehler={art}>
+      <SeitenKopf overline="Gesetzessammlung" titel="Erlass nicht geladen" intro={erklaerung} />
+      <div role="alert">
+        <AbrufFehler gegenstand={`Der Erlass «${schluessel}»`} href={quelle || undefined}
+          onErneut={ladefehler.erneut} />
+      </div>
+      <nav aria-label="Weiterweg" className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+        <Link to="/gesetze" className="lc-link text-body-s font-medium text-brass-700 hover:text-brass-600">
+          ← Zur Gesetzessammlung
+        </Link>
+      </nav>
+    </div>
+  );
+}
+
+function GesetzNichtImBestand({ schluessel, manifest }: {
   schluessel: string;
   manifest: BrowseManifest | null;
 }) {

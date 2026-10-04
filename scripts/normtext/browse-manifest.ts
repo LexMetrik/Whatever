@@ -36,7 +36,7 @@ function ladePdfQuellen(basis: string): Record<string, PdfQuelle> {
 }
 
 /** V2/K-1: Ur-Inkrafttreten je Snapshot-Key (aus inkrafttreten.json, §5-Projektion). */
-type InkraftQuelle = { datum: string; quelle: string };
+type InkraftQuelle = { datum?: string; quelle: string; gestaffelt?: boolean };
 function ladeInkrafttreten(basis: string): Record<string, InkraftQuelle> {
   try {
     return JSON.parse(readFileSync(join(basis, 'inkrafttreten.json'), 'utf8')) as Record<string, InkraftQuelle>;
@@ -272,8 +272,13 @@ function pdfFelder(pq: PdfQuelle | undefined): { pdfUrl?: string; pdfStand?: str
 }
 
 /** V2/K-1: «in Kraft seit»-Feld aus dem Sidecar (§8: nur wenn vorhanden = Bund). */
-function inkraftFelder(iq: InkraftQuelle | undefined): { inkraftSeit?: string } {
-  return iq ? { inkraftSeit: iq.datum } : {};
+function inkraftFelder(iq: InkraftQuelle | undefined): { inkraftSeit?: string; inkraftGestaffelt?: boolean } {
+  return {
+    ...(iq?.datum ? { inkraftSeit: iq.datum } : {}),
+    // W2·27-BUND-FERTIG: Staffel-Kennzeichen durchreichen (der Generator setzt es
+    // fail-closed für JEDEN Bund-Erlass); fehlt es im Sidecar, fehlt es auch hier.
+    ...(typeof iq?.gestaffelt === 'boolean' ? { inkraftGestaffelt: iq.gestaffelt } : {}),
+  };
 }
 
 /** §8-Ehrlichkeit: Aufhebungs-Vermerk aus dem Register durchreichen (nur wenn

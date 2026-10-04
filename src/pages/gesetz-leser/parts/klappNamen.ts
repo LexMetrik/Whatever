@@ -17,9 +17,20 @@ import type { GliederungsKnoten } from '../gliederungsModell';
 
 /** Voller Anzeigetext einer Zeile: Titel plus, wenn zutreffend, das
  *  Aufgehoben-Signal — dieselbe Definition wie `title`/`aria-label` der
- *  Sprung-Zeile in SektionBaumTOC.tsx (§5: eine Stelle, kein Zweitrechner). */
+ *  Sprung-Zeile in SektionBaumTOC.tsx (§5: eine Stelle, kein Zweitrechner).
+ *
+ *  REIHENFOLGE = SEH-REIHENFOLGE (W2·17-UI-BEFUNDE B6-B01, 2.10.2026). Eine
+ *  verdichtete Einzelkind-Kette zeigt sichtbar «1. Übernahme (IV. Grundstücke)»
+ *  — das Blatt führt, die übersprungenen Stufen folgen gedämpft in Klammern.
+ *  Der Name lautete bis hierher `k.label` = «IV. Grundstücke › 1. Übernahme»
+ *  (Eltern zuerst): ein Screenreader las die Zeile in der umgekehrten Folge,
+ *  und der Name begann nicht mit dem sichtbaren Wort (WCAG 2.5.3, Sprach-
+ *  steuerung «klicke 1. Übernahme»). Ohne Kette (Normalfall) ist es unverändert
+ *  `k.label`. */
 export function vollText(k: GliederungsKnoten): string {
-  return [k.label, zustandsWort(k)].filter(Boolean).join(' — ');
+  const kette = k.labelKette;
+  const titel = kette.length > 1 ? `${kette[kette.length - 1]} (${kette.slice(0, -1).join(' › ')})` : k.label;
+  return [titel, zustandsWort(k)].filter(Boolean).join(' — ');
 }
 
 /** W2·27 (30.9.2026, Nachzug A2): das Zustandswort einer Baum-/Index-Zeile aus den Datenfeldern —

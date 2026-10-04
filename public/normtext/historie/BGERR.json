@@ -6,6 +6,36 @@
   "referenz": 23,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2023-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 268",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/268"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 770",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/770"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Titel: Information und Datenschutz"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": null,
@@ -303,7 +333,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Die acht Abteilungen"
     }
    ]
   },
@@ -323,6 +354,9 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -367,6 +401,9 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -437,6 +474,9 @@
      "absatz": null,
      "item": "j"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
@@ -448,7 +488,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 31"
     },
     {
      "typ": "fassung",
@@ -489,6 +530,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -500,7 +544,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 32"
     },
     {
      "typ": "fassung",
@@ -541,6 +586,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35": {
@@ -552,7 +600,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 33"
     },
     {
      "typ": "fassung",
@@ -567,6 +616,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -690,7 +742,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "frueher": "Abs. 4"
     },
     {
      "typ": "eingefuegt",
@@ -783,7 +836,7 @@
    ]
   },
   "57": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -796,8 +849,58 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Titel: Information und Datenschutz"
     }
+   ]
+  },
+  "58": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "59": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "61": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "62": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "63": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "64": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "66": {
@@ -860,6 +963,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_a": {
@@ -878,6 +984,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   }
  },

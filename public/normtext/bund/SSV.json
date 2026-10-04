@@ -2558,7 +2558,7 @@
             },
             {
               "marke": "c",
-              "text": "«H 2 » für Wasserstoff;"
+              "text": "«H₂» für Wasserstoff;"
             },
             {
               "marke": "d",
@@ -2587,7 +2587,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1979/1961_1961_1961/de#art_62",
       "abgerufen": "2026-10-01",
       "fassungsToken": "20261001",
-      "sha": "410e1eaadcb068ae75a6f647f2e0a2307e27ea1d2f0f30ead45d01b83b7b0f5f"
+      "sha": "8eb6f0edc8b1891e990e6fffd887a6ea1d3a164d1877e89dbe53b94b5249ad78"
     },
     {
       "id": "bund/SSV/art_63",
@@ -5622,11 +5622,13 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "1. Die Verordnung vom 31. Mai 1963 über die Strassensignalisation wird aufgehoben."
+          "text": "1. Die Verordnung vom 31. Mai 1963 über die Strassensignalisation wird aufgehoben.",
+          "ziffer": "1"
         },
         {
           "absatz": null,
-          "text": "2. und 3. …"
+          "text": "2. und 3. …",
+          "ziffer": "2_3"
         }
       ],
       "stand": "2026-10-01",
@@ -6719,7 +6721,7 @@
               ],
               [
                 "",
-                "Die Tafeln 5.13 kann auch in rechteckiger Form verwendet werden; Breite gleich der Breite des Signals, dem sie beigefügt sind, Höhe rund 1 / 3 der Breite."
+                "Die Tafeln 5.13 kann auch in rechteckiger Form verwendet werden; Breite gleich der Breite des Signals, dem sie beigefügt sind, Höhe rund ¹/₃ der Breite."
               ]
             ]
           }
@@ -7896,7 +7898,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1979/1961_1961_1961/de#annex_1",
       "abgerufen": "2026-10-01",
       "fassungsToken": "20261001",
-      "sha": "6955edfbda10a5acf91550e6abac9f9cbb60ac91ae741b2c267c3a1ad3cce85c"
+      "sha": "b13e3f0e942ab7e112f464345341c09b7dc72ef2478b39b96166d8c25541b7af"
     },
     {
       "id": "bund/SSV/annex_2",

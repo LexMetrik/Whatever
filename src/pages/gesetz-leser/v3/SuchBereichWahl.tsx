@@ -76,12 +76,38 @@ export function SuchBereichWahl({
     // hat den anderen aufgelöst — Herleitung stand in `v3/anfangSlot.ts` (seit
     // D38 unbesetzt; Knopf-Empfang hier mit W2·29 S4 zurückgebaut, die Datei
     // mit S3 gelöscht, Wortlaut in der Versionsgeschichte).
+    //
+    // ── W2·17-UI-BEFUNDE · PE-C6-B02 (1.10.2026) · DAS RADIO-MUSTER GANZ ───────
+    // Die Gruppe trug `role="radiogroup"` und versprach damit die APG-Bedienung,
+    // hielt sie aber nicht: alle vier Knöpfe waren Tab-Stopps, ←/→ taten nichts
+    // (gemessen: einzige `radiogroup` im Quelltext). JETZT roving tabindex —
+    // nur der gewählte Wert ist Tab-Stopp — und ←/↑ bzw. →/↓ wählen den
+    // Nachbarn (mit Umlauf) UND setzen den Fokus dorthin, `Home`/`End` den
+    // ersten/letzten (APG «Radio Group», Auswahl folgt dem Fokus). Die Taste
+    // wird hier verbraucht (`stopPropagation`): ←/→ sind im Einzelmodus global
+    // «Artikel blättern» (`parts/LeserTastatur`) und dürfen nicht zusätzlich
+    // den Artikel wechseln, während man den Suchbereich wählt.
     <div data-v3-suchbereich role="radiogroup" aria-label="Suchbereich"
+      onKeyDown={(e) => {
+        const i = REIHE.indexOf(wert);
+        const n = REIHE.length;
+        const ziel = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? (i + 1) % n
+          : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? (i - 1 + n) % n
+          : e.key === 'Home' ? 0
+          : e.key === 'End' ? n - 1
+          : -1;
+        if (ziel < 0) return;
+        e.preventDefault();
+        e.stopPropagation();
+        setzeWert(REIHE[ziel]);
+        e.currentTarget.querySelector<HTMLElement>(`[data-v3-bereich="${REIHE[ziel]}"]`)?.focus();
+      }}
       className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 border border-line bg-well p-0.5">
       {REIHE.map((b) => {
         const aktiv = wert === b;
         return (
           <button key={b} type="button" role="radio" aria-checked={aktiv}
+            tabIndex={aktiv ? 0 : -1}
             data-v3-bereich={b} data-v3-bereich-aktiv={aktiv ? '1' : undefined}
             title={LABEL[b].lang}
             onClick={() => setzeWert(b)}

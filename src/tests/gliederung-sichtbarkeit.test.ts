@@ -32,7 +32,7 @@ import { ladeNormFixture } from './fixtures/normtext-fixture';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { pfadZu } from '../pages/gesetz-leser/helpers';
 import { klappZeile } from '../pages/gesetz-leser/tocAutoZuklappen';
-import { oeffneSprungZiel, setzeAlle, alleOffen, alleKlappIds } from '../pages/gesetz-leser/klappKarte';
+import { oeffneSprungZiel, alleKlappIds } from '../pages/gesetz-leser/klappKarte';
 import {
   baueGliederungsModell, flacheZeilen, zeilenAnsicht, findeMarke, findeSynthPfad, uebersetzeRohPfad,
   type GliederungsModell, type GliederungsKnoten,
@@ -93,7 +93,7 @@ describe('W2·5m-LESER-V3 — eine offene Zeile zeigt alle ihre Kinder', () => {
   const zustaende: Array<[string, (m: GliederungsModell) => Karte]> = [
     ['Start', () => ({})],
     ['nach Mitlaufen', mitlaufenUeberall],
-    ['nach «alles auf»', (m) => setzeAlle({}, alleKlappIds(m.knoten), true)],
+    ['nach «alles auf»', (m) => klappZeile({}, alleKlappIds(m.knoten), false)],
   ];
   for (const [name, zustand] of zustaende) {
     it(`${name}: keine Zeile meldet «offen» mit fehlenden Kindern (alle Bundeserlasse + Stichprobe Kanton)`, () => {
@@ -133,7 +133,7 @@ describe('W2·5m-LESER-V3 — ein Klick genügt', () => {
   const zustaende: Array<[string, (m: GliederungsModell) => Karte]> = [
     ['Start', () => ({})],
     ['nach Mitlaufen', mitlaufenUeberall],
-    ['nach «alles auf»', (m) => setzeAlle({}, alleKlappIds(m.knoten), true)],
+    ['nach «alles auf»', (m) => klappZeile({}, alleKlappIds(m.knoten), false)],
   ];
   for (const [name, zustand] of zustaende) {
     it(`${name}: ein Chevron-Klick öffnet jede unvollständige Zeile ganz bzw. schliesst jede ganz offene`, () => {
@@ -163,9 +163,8 @@ describe('W2·5m-LESER-V3 — ein Klick genügt', () => {
     for (const [ebene, key] of FAELLE) {
       const m = modell(ebene, key);
       const ids = alleKlappIds(m.knoten);
-      const auf = setzeAlle(mitlaufenUeberall(m), ids, true);
-      if (ids.length > 0 && !alleOffen(auf, ids)) funde.push(`${key}: «alles auf» meldet nicht offen`);
-      const zu = setzeAlle(auf, ids, false);
+      const auf = klappZeile(mitlaufenUeberall(m), ids, false);
+      const zu = klappZeile(auf, ids, true);
       for (const k of flacheZeilen(m.knoten)) {
         if (k.kinder.length > 0 && zeilenAnsicht(k, zu, m.startOffeneTiefe).auf) funde.push(`${kurz(key, k)} bleibt offen`);
       }

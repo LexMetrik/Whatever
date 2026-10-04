@@ -60,38 +60,12 @@ export function kopfStufe(breitePx: number): KopfStufe {
  *  Fahrplans («nie der Artikel, nie Ansicht») eine Aussage über den Rückgabewert
  *  und nicht über abwesenden Code — ein Tor, das scheitern KANN (§6.7). */
 export interface KopfElemente {
-  /** ── Die FÜHRENDEN Krumen-Stufen «Gesetze › Bund ›». Fallen als erstes. ───
-   *  Hiess bis 17.8.2026 `sektion` und trug nur «Gesetze ›»: die Ebene-Stufe
-   *  («Bund», «Kanton BS», «International») stand in der App-Krumen-Leiste
-   *  darüber, die A-2 abgelöst hat. Seither trägt die Kopfzeile die ganze Kette
-   *  — aus EINER Quelle (`erlassAnsicht.brotkrume`, die auch die Ebene aus dem
-   *  Datenmodell ableitet statt aus `if (bund)`).
-   *  EIN Feld für beide Stufen und nicht zwei: sie beantworten dieselbe Frage
-   *  («woher komme ich»), und wo der Platz für die eine nicht reicht, reicht er
-   *  für die andere auch nicht — zwei Flags, die nie auseinandergehen können,
-   *  wären ein Tor, das nicht scheitern kann (§6.7/§17).
-   *
-   *  ── V2 (Nachzug 17.8.2026) · SIE FÄLLT NICHT MEHR GANZ, SIE SCHRUMPFT ─────
-   *  Das Feld war bis hierher ein `boolean`: unter 900 px Elementbreite (Handy
-   *  @390, JEDES Pane unter 900 px) gab es gar keine Krume. Solange die
-   *  App-Krumen-Leiste darüberstand, fing sie das auf — seit A-2 steht dort
-   *  nichts mehr, und der einzige Weg nach oben war das ✕ («Gesetz schliessen»),
-   *  das auf die Übersicht springt und die Ebene überspringt. Ein Zuschnitt, der
-   *  auf zwei von drei Breiten die Aufwärts-Navigation entfernt, ist keiner.
-   *  DARUM DREI WERTE — und ausdrücklich KEIN zweites Flag daneben:
-   *    'voll'  die ganze Kette «Gesetze › Bund ›»;
-   *    'kurz'  EIN klickbarer Rücksprung «‹ Gesetze» — die erste Stufe derselben
-   *            Kette, aus derselben Quelle (`erlassAnsicht.brotkrume`), nie ein
-   *            zweites Mal getextet.
-   *  Einen dritten Wert «weg» gibt es nicht: die Krume fällt auf KEINER Breite
-   *  ganz aus, und genau das prüft `leser-v3-kopfstufen.test.ts` über jede Breite
-   *  von 280 bis 2000 px — eine Aussage über den Rückgabewert, kein abwesender
-   *  Code (§6.7).
-   *  Die Kopf-ZEILE wächst dadurch nicht: der Rücksprung steht IN der Ort-Zone
-   *  (Design-Grundlage Kap. 6, ≤ 4 Elemente), die Höhe bleibt
-   *  `--leser-v3-kopf-h`, und das Suchfeld bleibt oberstes Element des klebenden
-   *  Blocks (Ä19). */
-  krume: 'voll' | 'kurz';
+  /** W2·17-UI-BEFUNDE H9-B01 (1.10.2026) · HIER STAND `krume: 'voll' | 'kurz'`
+   *  (die führenden Stufen «Gesetze › Bund ›» bzw. der Rücksprung «‹ Gesetze»,
+   *  V2 17.8.2026). Seit D27 (David 6.9.2026) rendert die Kopfzeile keine Krume;
+   *  `LeserKopf` las das Feld nie, nur `volltitel`. Ein Feld ohne Leser ist
+   *  gestrichen, nicht bewacht (§17-Gegengewicht); Herleitung und Messreihe in
+   *  der Versionshistorie (Stand 0880efac9, `kopfStufen.ts`). */
   /** Erlass-Volltitel neben dem Kürzel. Fällt als zweites. */
   volltitel: boolean;
   /** Erlass-Kürzel («StPO»). Bleibt immer — es ist die Ortsangabe. */
@@ -116,7 +90,6 @@ export interface KopfElemente {
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
   return {
-    krume: stufe === 'voll' ? 'voll' : 'kurz',
     volltitel: stufe === 'voll',
     kuerzel: true,
     artikel: true,
@@ -158,6 +131,11 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
 // entsteht: `erlassAnsicht.hatRuecksprung` samt Unit-Beweis über Bund, Kanton
 // und Staatsvertrag — DIESE Funktion kann rot werden, indem man `to` aus der
 // ersten Krumen-Stufe nimmt.
+//
+// ERGÄNZUNG 1.10.2026 (W2·17-UI-BEFUNDE H9-B01): die Krume ist seit D27 aus der
+// Kopfzeile genommen; `erlassAnsicht.brotkrume`/`hatRuecksprung` und das Feld
+// `krume` sind mit diesem Stand gestrichen (kein Aufrufer). Der Absatz oben
+// beschreibt den Stand vom 18.8.2026 und bleibt als Beleg stehen.
 //
 // §7-ABWEICHUNG, weiterhin offengelegt: der Auftrag zu Ä46 sagte «Einzelansicht
 // bleibt bei 1 ✕». Sie ist jetzt auf jeder Breite 0. Die Auflage ist im

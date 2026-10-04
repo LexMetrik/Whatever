@@ -49,6 +49,7 @@ import { BesetzungWert, DatumMeta, MassgeblicheFassung } from '../components/rec
 import { FS_STUFEN, ladeFsIdx, speichereFsIdx } from '../components/rechtsprechung/leseGroesse';
 import { LesemodusOverlay } from '../components/rechtsprechung/LesemodusOverlay';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
+import { sicherDekodiert } from '../lib/sicherDekodieren';
 
 // Provenienz-Fuss (§7): Daten-Label je Quelle — BS-Tranche §7.1 (vorher hart
 // «OpenCaseLaw», was für gerichte-bs falsch wäre). Deklariert, kein Raten.
@@ -417,7 +418,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   useEffect(() => {
     if (zustand !== 'da' || typeof window === 'undefined') return;
     if (!hashRoh) return;
-    const id = decodeURIComponent(hashRoh);
+    const id = sicherDekodiert(hashRoh); if (!id) return; // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung
     if (hashGesprungen.current === `${schluessel}#${id}`) return;
     let frames = 0;
     let raf = requestAnimationFrame(function versuche() {
@@ -1191,7 +1192,7 @@ function NormTextHinweis() {
 
 export function EntscheidLeser() {
   const { key: keyRoh } = useParams<{ key: string }>();
-  const schluessel = keyRoh ? decodeURIComponent(keyRoh) : '';
+  const schluessel = keyRoh ? (sicherDekodiert(keyRoh) ?? keyRoh) : ''; // PA-1-B01
   // Übersicht→Detail-Brücke: ?ansicht=voll|auszug wählt die Start-Fassung.
   const [sp] = useSearchParams();
   const ansichtParam = sp.get('ansicht');

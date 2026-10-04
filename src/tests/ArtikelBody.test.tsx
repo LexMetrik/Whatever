@@ -578,20 +578,30 @@ const kernSha = (s: string) => createHash('sha256').update(s).digest('hex');
 const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
 
 /** Erwartete Hashes [voll, struktur] je Fall — erzeugt 23.9.2026 auf dem
- *  Korpus-Stand des Commits S0-B (origin/main). */
+ *  Korpus-Stand des Commits S0-B (origin/main). W2·17-UI-BEFUNDE 2.10.2026
+ *  (deklarierte Darstellungsänderung, §6.3): die ZEHN [voll]-Hashes sind neu
+ *  gezogen, weil `ZitierMarke` die Klasse `lc-zitiermarke` trägt (Druck + Marke
+ *  ohne Wortbruch) und die Tabellen-Zellen neue Umbruch-Klassen; die [struktur]-
+ *  Hashes (Markup ohne Klassen) sind unverändert — Text und Aufbau sind gleich.
+ *  AUSNAHME Fall «T-A Staffel-Spanne» (AHVV Art. 28): `zelleText` setzt ein `<span
+ *  class="whitespace-nowrap">` um «50 000» (Zifferngruppe untrennbar) — beide Hashes dieses Falls sind
+ *  neu; der Text ist unverändert, es kommen keine Attribute hinzu (die Tabelle ist nicht `data-breit`).
+ *  AUSNAHME Fall «T-B mehrspaltig, ≥3 Zahlspalten» (AHVG Art. 40c): mit der Reserve-Korrektur 1.5 der
+ *  Vorab-Schätzung (`tabellenDruck.ts`) trägt die Tabelle jetzt `data-breit` und `--druck-zoom-vorab`;
+ *  beide Hashes dieses Falls sind neu, der Text ist unverändert. */
 const KERN_ERWARTET: Record<string, [string, string]> = {
-  'OR Art. 257d (Prosa, zwei Absätze)': ['80c4117233e44537634636109af2975cd648d2acc82ffee28cd17dfc7868265f', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
-  'T-A Staffel-Spanne verdichtet (bereich)': ['df91cbbf96992924c491b9601383234e0fcfc0628437a788115fdbdea1188339', 'ec2a8721ce88f5d6c910a387a13aff7057270edf91f752ce5560d3b97d2005f9'],
-  'T-B mehrspaltig, ≥3 Zahlspalten': ['fb6708751ad0c9d578f668e86dd3dda4da8371bad0e485681faca86d1f8c8f7d', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
-  'T-C Einzel-Leerzelle bleibt (T-C7)': ['1be2f0869943e633e460105d1f8c3d259cb99f76eff0c8b189192991589eab2d', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
-  'T-D kopflos (T-D6)': ['1fbc23a33acd46c027f33cb489b1272aacf35fd10e5a7c85630a4ba07b2b04f4', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
-  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['cf1fb40933016e0ac9ff6aa227ad072fd5d8296283199812862d0d71b3e623ee', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
-  'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['2a353abb5a3aa8037bde36b36caab7d1f9b36d05b83efad0f7eab9626ead5faf', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
-  'T-B5 Kurzform tabelle (Kanton)': ['adb4bc97974243eb3e51d199e590604cfdcc2918b36425450d44cad85c64f977', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
-  'Formelbild (DBG Art. 22)': ['2dcfb0e99eaaed263e2e3d64df3812fffe0b961a85962be1069a4965374b2c2e', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
+  'OR Art. 257d (Prosa, zwei Absätze)': ['42d989dc4feb377764bd10d812bc812340bb16327f276c99df56d1d4bdb1c29b', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
+  'T-A Staffel-Spanne verdichtet (bereich)': ['ebf3fb58723c22e4ba46a98863f05f14762f7b85dfa033974db50326b3c930df', 'f2cd0ac7f0ff74c40b14b1b6377327c1f3f9593a0b4487f478435aa6a9fee62b'],
+  'T-B mehrspaltig, ≥3 Zahlspalten': ['9558daa48b214f8b33c66c77a4c328c214d4babe2a125d9ec921ca1c5ed5ea27', 'bd240ec295dbec0c91fcba3df6dedd4cde70f2894b969cd631e652240946c63d'],
+  'T-C Einzel-Leerzelle bleibt (T-C7)': ['19821352e368b4951759e9ad3690dd7bc063e6c0a983d09b240eff4ca652d72a', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
+  'T-D kopflos (T-D6)': ['6b6dcc9dd3f6a42568839a4c88c50bc10bfbc1529aefa647b854b97d5ca16860', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
+  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['e2615deff69be8c55a63b60769cd0a95c835cd461d4e3b5098ad6eff7d4d8407', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
+  'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['39877124098e7d44dddc02400e1e976d3fd1d218eda9def6417383344d20320c', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
+  'T-B5 Kurzform tabelle (Kanton)': ['26e2d365456ec053e12c864353909d6fe04fdffa2e6ee94b94b41eb7f7273f5d', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
+  'Formelbild (DBG Art. 22)': ['d1edd7bed07f768642ecc4d2f016c4d95ffb60318fe885a48d7ecf3206340fa8', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
   'aufgehoben (ganzer Artikel)': ['ccb9a533dab7cb8e116602b12048386d2e5421a81c30b26d0bf50ac621d194f8', '0bb7a81471bf6b806a44ee8102ca716f7053db3c43116dc6da5035acf455d79e'],
   'leer, ungeklärt (Kanton, nicht aufgehoben)': ['e36083544edc02902c2a3d9dbde46e80a12674334d556e00c83976c5a274046f', '24fbe7f50467e80e7215a0ac27186ced52b8557f55b60c74dd81f63c7b5d0f5b'],
-  'Kantonsartikel (Absätze + Items)': ['1262314cb8c446e7feecb1a785f887de7863a1530b2296dbaf6882f741d8b0dd', 'cca846fd3519f717dc83252091bc3b4afedabd4e77cf27da200cd0cd2a1bceb9'],
+  'Kantonsartikel (Absätze + Items)': ['015be8d8982bbc2ea733112f5d4619af96747a32223a2a7ccd7d76049551a1f9', 'cca846fd3519f717dc83252091bc3b4afedabd4e77cf27da200cd0cd2a1bceb9'],
 };
 
 describe('Kern-Probe · Normtext-Körper byte-genau (S0)', () => {

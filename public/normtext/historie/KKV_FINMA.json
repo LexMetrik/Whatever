@@ -6,9 +6,25 @@
   "referenz": 47,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 5327",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/922"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen"
+  }
+ ],
  "artikel": {
   "66": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -21,7 +37,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen"
     }
    ]
   },
@@ -301,6 +318,20 @@
      "absatz": null,
      "item": null
     }
+   ]
+  },
+  "66_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "66_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "68_71": {

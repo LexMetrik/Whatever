@@ -6,6 +6,44 @@
   "referenz": 13,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 447 5405",
+     "url": ""
+    },
+    {
+     "label": "BBl 2004 5965",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-06-15",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 347",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/347"
+    },
+    {
+     "label": "BBl 2020 7983",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/2064"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2011-01-01",
@@ -695,7 +733,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
     },
     {
      "typ": "fassung",
@@ -712,7 +751,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
     }
    ]
   },
@@ -736,6 +776,18 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "19_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   }
  },

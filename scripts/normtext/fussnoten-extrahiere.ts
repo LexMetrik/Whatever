@@ -15,6 +15,8 @@
 
 import { findeDlEnde, findeDdEnde, ankerZuToken, parseArtikelInner } from './extrahiere-fedlex';
 import { berechneFnPositionen, type FnPos } from './fussnoten-offsets';
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+import { ABSATZ_NR_INHALT } from './fedlex/absatz-nr.ts';
 
 export interface FnLink {
   label: string;
@@ -55,8 +57,17 @@ export interface Fussnote {
 // fnTextMitLinks (Lesesicht) rendert daraus Rich-Text; die Link-Label-Erkennung
 // und die SR-Erkennung (M11) strippen die Tags wieder, bleiben also robust.
 function clean(s: string): string {
+  // P7 #11 (1.10.2026): nur MARKER-<sup> fallen — der führende Marker-Block (Nummer im <a>, leere <sup>, bei älteren
+  // Aspose-Dumps die nackte Nummer «<sup>12</sup>TEXT»), Link-Marker mitten im Text und leere <sup>. Hochstellungen im
+  // TEXT («Art. 29<sup>bis</sup>», «Bst. c<sup>ter</sup>») bleiben als Text: bis dahin warf `clean()` jedes <sup> und
+  // verstümmelte die Norm-Angabe («Ursprünglich Art. 29bis» stand als «… Art. 29»; 83 Fussnoten, 31 in «Ursprünglich»).
   return s
-    .replace(/<sup\b[\s\S]*?<\/sup>/gi, '')
+    .replace(/^\s*(?:<sup\b[^>]*>\s*(?:<a\b[\s\S]*?<\/a>|\d+[a-z]?)?\s*<\/sup>\s*)+/i, '')
+    .replace(/<sup\b[^>]*>\s*<a\b[\s\S]*?<\/a>\s*<\/sup>/gi, '')
+    .replace(/<sup\b[^>]*>\s*<\/sup>/gi, '')
+    // Nachzug P7 (Gegenprüfung #1249): Hochstellungen, die kein Text sind — Sternchen-Marker «<sup>*</sup>» (BV, 25×, vor
+    // «Mit Übergangsbestimmung.») und das Fedlex-Satzzeichen-Artefakt «<sup>¶h</sup>hh» (AVG Art. 2) — fielen vor P7 mit.
+    .replace(/<sup\b[^>]*>\s*(?:\*|¶h)\s*<\/sup>/gi, '')
     .replace(/<(b|i)\b[^>]*>/gi, (_m, t: string) => `<${t.toLowerCase()}>`)
     .replace(/<\/(b|i)\s*>/gi, (_m, t: string) => `</${t.toLowerCase()}>`)
     .replace(/<(?!\/?[bi]>)[^>]*>/g, '')
@@ -152,7 +163,7 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
     // die Marker der Eltern-Items NACH der Unterliste fielen auf die Artikelebene.
     // Marker im <dt>+Einleitungstext gehoeren zu DIESER Marke; verschachtelte
     // Unterlisten werden rekursiv der tieferen Marke zugeordnet.
-    const MARKE = /^([0-9]+(?:bis|ter|quater|quinquies)?[a-z]?|[a-z](?:bis|ter|quater|quinquies)?)\s*[.)]?/i;
+    const MARKE = new RegExp(`^([0-9]+${SUFFIX_ALT}?[a-z]?|[a-z]${SUFFIX_ALT}?)\\s*[.)]?`, 'i');
     const walkDl = (dlInner: string): number => {
       const dtRe = /<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>/gi;
       let dm: RegExpExecArray | null;
@@ -186,7 +197,7 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
         const pEnd = body.indexOf('</p>', blockStart.lastIndex);
         const seg = body.slice(blockStart.lastIndex, pEnd < 0 ? body.length : pEnd);
         const supM = seg.match(/^(?:\s|&nbsp;)*<sup(?:[^>]*)>([\s\S]*?)<\/sup>/i);
-        letzterAbsatz = supM && !/<a[\s>]/i.test(supM[1]) && /^\d+(?:bis|ter|quater|quinquies)?[a-z]?$/.test(supM[1].trim())
+        letzterAbsatz = supM && !/<a[\s>]/i.test(supM[1]) && ABSATZ_NR_INHALT.test(supM[1].trim())
           ? supM[1].trim() : null;
         for (const fm of seg.matchAll(/\bhref="#(fn-[^"]+)"/gi)) setze(fm[1], null);
         if (pEnd >= 0) blockStart.lastIndex = pEnd + '</p>'.length;

@@ -205,8 +205,21 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
     '--leser-lesemass-max': `${LESEMASS_MAX}rem`,
     '--nt-stick': vollflaechig
       ? `calc(${APP_TOPBAR_H} + var(--leser-v3-kopf-block-h))`
-      // Im Pane steht die Zone nie in der Zeile (dort gibt es keine linke
-      // Spur) — die Summe bleibt darum die Summe.
-      : 'calc(var(--leser-sub-h) + var(--leser-v3-such-h))',
+      // W2·17-UI-BEFUNDE · G1-B02 (2.10.2026): hier stand «im Pane steht die
+      // Zone nie in der Zeile (dort gibt es keine linke Spur) — die Summe
+      // bleibt darum die Summe», und das Argument galt nur bis `PANE_BREIT_PX`:
+      // ein Pane ab 1024 px trägt die Gliederung als Spalte (`spurVersatzRem
+      // > 0`), also steht die Such-Zone auch dort in der Zeile (`suchInZeile`).
+      // GEMESSEN am gebauten Stand, Split @2300 (Panes je 1148 px, OR | ZGB):
+      // klebender Kopf-Block 56 px (`--leser-v3-kopf-block-h` = max-Regel), aber
+      // `--nt-stick` 100 px (56 + 44 als SUMME) — jeder Artikel-Sprung und jede
+      // Bezugslinie im Pane landete 44 px UNTER der Kopf-Kante, eine Lücke, die
+      // die Einzelansicht in derselben Lage nicht hat (dort rechnet der Zweig
+      // oben aus dem Block). Das Pane klebt am Scroller-Anfang (`kopf-top` 0),
+      // sein Anschlag ist darum genau die Block-Höhe — aus derselben Variable
+      // wie der Kopf selbst, nicht aus einer zweiten Rechnung daneben (LM-003).
+      // Unter 1024 px (Zone unter den Griffen) ist der Block die Summe — dort
+      // ändert sich kein Wert.
+      : 'var(--leser-v3-kopf-block-h)',
   } as CSSProperties;
 }

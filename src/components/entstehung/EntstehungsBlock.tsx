@@ -132,6 +132,10 @@ function bblQuelle(e: HistorieEreignis): { label: string; url?: string } | null 
 
 /** Betroffener Teil des Artikels («Abs. 2, lit./Ziff. c»), sofern die Fussnote ihn trägt. */
 function betrifft(e: HistorieEreignis): string {
+  // W2·27 (Nachzug 2.10.2026, B6): bei einem Überschrift-Ereignis nennt die Karte neutral den FUNDORT — ob die Fussnote nur die
+  // Überschrift oder den ganzen Bereich betrifft, ist ihr Wortlaut nicht zu entnehmen (§8), «Betrifft: die Überschrift»
+  // würde das Erstere behaupten.
+  if (e.ueberschrift) return `Vermerkt an der Überschrift «${e.ueberschrift}»`;
   const teile: string[] = [];
   if (e.absatz) teile.push(`Abs. ${e.absatz}`);
   if (e.item) teile.push(`lit./Ziff. ${e.item}`);

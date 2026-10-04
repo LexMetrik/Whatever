@@ -25,6 +25,11 @@ import { ohneKommentare } from './appDateien';
 //  (d) `RECHTSPRECHUNG_BLOCK_FREI` still auf `true` gesetzt
 //      ⇒  M3-Fall ROT (genau der Diff, den M3 sichtbar halten will).
 // Alle vier danach zurückgenommen; die Sonde ist grün.
+// ERGÄNZT 2.10.2026 (Rückbau Rechtsprechungs-Zeilen, W2·17-UI-BEFUNDE): (d) und der
+// zugehörige M3-Fall entfallen — die Konstante `RECHTSPRECHUNG_BLOCK_FREI` und die
+// Rubrik `r` sind aus dem Dossier gelöscht. (Die e2e-Sonde `data-dossier-reg="r"` = 0
+// in `leser-einzelmodus.e2e.ts` ist am selben Tag gestrichen: sie konnte nicht mehr
+// scheitern. LADER unten: `entscheidZahl` gibt es nicht mehr.)
 
 const WURZEL = resolve(import.meta.dirname ?? '.', '..');
 const DOSSIER = 'pages/gesetz-leser/parts/ArtikelDossier.tsx';
@@ -50,7 +55,7 @@ const nurCode = (s: string): string => ohneKommentare(s).replace(/[ \t]\/\/.*$/g
  */
 const LADER = [
   'bezuegeLaden', 'bezuegeZaehler', 'artikelMaterialienLaden', 'historie-laden',
-  'werkzeuge', 'norm-index', 'panelKontextLaden', 'entscheidZahl', 'fassungsEtikett',
+  'werkzeuge', 'norm-index', 'panelKontextLaden', 'fassungsEtikett',
 ];
 
 describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
@@ -111,18 +116,6 @@ describe('W2·5m/E2 · die Dossier-Blöcke haben KEINE eigene Quelle', () => {
     }
     expect(bauer, `Marken werden an ${bauer.length} Stellen gebaut: ${bauer.join(', ')}`)
       .toEqual(['ArtikelLeser.bezuegeFuss.tsx']);
-  });
-
-  it('M3 · der Rechtsprechungs-Block ist angeschlossen, aber nicht freigegeben', () => {
-    // Kap. 15.2/M3: solange der Phantom-Filter unter `QS-KORPUS` offen ist,
-    // wird Block 3 NICHT ausgeliefert — ein prominenter Block mit erheblichem
-    // Fehlanteil ist negativer Mehrwert. Die Sonde hält den Stand fest: fällt
-    // die Konstante still auf `true`, ist DAS der Diff.
-    const quelle = nurCode(lies(DOSSIER));
-    expect(quelle).toMatch(/RECHTSPRECHUNG_BLOCK_FREI\s*=\s*false/);
-    // Und die Marke `r` wird ausschliesslich durch diese Konstante gefiltert —
-    // nicht dadurch, dass sie gar nicht erst hereinkäme.
-    expect(quelle).toMatch(/reg === 'r' && !RECHTSPRECHUNG_BLOCK_FREI/);
   });
 });
 

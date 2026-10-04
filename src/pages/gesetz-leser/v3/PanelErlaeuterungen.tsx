@@ -7,6 +7,7 @@ import { klassifiziereFassungsBezug, revisionFuerToken, type RevisionShard } fro
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 import { ordneErlaeuterungen, type ErlaeuterungPosten } from './erlaeuterungModell';
 import type { ErlaeuterungStand, Geladen } from './panelKontextLaden';
+import { nummerAusToken } from '../../../lib/reiterStelle';
 
 // ─── Reiter «Erläuterungen» (S6, Entscheid David 23.9.2026) ─────────────────
 //
@@ -58,7 +59,7 @@ function DokumentZeile({ m, revisionShard, eingerueckt = false }: {
       </span>
       {veraltet && m.artikel && (
         <span data-v3-erlaeuterung-veraltet className="mt-0.5 block text-micro text-warn-700">
-          Dokument-Stand vor der letzten Änderung von Art. {m.artikel.replace(/_/g, '')}.
+          Dokument-Stand vor der letzten Änderung von Art. {nummerAusToken(m.artikel)}.
         </span>
       )}
     </li>

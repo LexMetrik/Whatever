@@ -6,6 +6,62 @@
   "referenz": 49,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 1813",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    {
+     "label": "BBl 2015 657",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/56"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 673",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/673"
+    },
+    {
+     "label": "BBl 2020 4705",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1111"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Organisation, elektronische Verfahren und Aufsicht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2014-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 2397",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+    },
+    {
+     "label": "BBl 2011 3593",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/525"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Titel: Zeitliche Bemessung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1998-01-01",
@@ -1848,7 +1904,7 @@
    ]
   },
   "40": {
-   "giltSeit": "2014-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1865,8 +1921,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Titel: Zeitliche Bemessung"
     }
+   ]
+  },
+  "41": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "42": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "49": {
@@ -2916,7 +2987,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
     }
    ]
   },
@@ -2974,6 +3046,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "93": {
@@ -3030,6 +3105,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "94": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "95": {
@@ -3052,6 +3137,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "96": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "97": {
@@ -3120,6 +3215,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "100": {
@@ -3159,6 +3257,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "101": {
@@ -3246,7 +3347,7 @@
    ]
   },
   "104": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2014-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3280,7 +3381,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Organisation, elektronische Verfahren und Aufsicht"
     }
    ]
   },
@@ -4807,6 +4909,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "104_b": {
@@ -4818,7 +4923,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 104a"
     },
     {
      "typ": "eingefuegt",
@@ -4837,6 +4943,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "112_a": {
@@ -5373,7 +5482,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 220a"
     },
     {
      "typ": "eingefuegt",
@@ -5851,6 +5961,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "99_a": {
@@ -5873,6 +5986,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "99_b": {
@@ -5895,6 +6011,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

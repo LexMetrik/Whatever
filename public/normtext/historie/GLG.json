@@ -6,6 +6,27 @@
   "referenz": 12,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 2815",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/515"
+    },
+    {
+     "label": "BBl 2017 5507",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/1455"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+   "teilweise": "Eingefügt durch Ziff. I des BG vom 14. Dez. 2018, in Kraft vom 1. Juli 2020 bis zum 30. Juni 2032 (AS 2019 2815; BBl 2017 5507)."
+  }
+ ],
  "artikel": {
   "13": {
    "giltSeit": "2007-01-01",
@@ -87,7 +108,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "13_a": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -104,8 +125,66 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "teilweise": "Eingefügt durch Ziff. I des BG vom 14. Dez. 2018, in Kraft vom 1. Juli 2020 bis zum 30. Juni 2032 (AS 2019 2815; BBl 2017 5507)."
     }
+   ]
+  },
+  "13_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17_a": {

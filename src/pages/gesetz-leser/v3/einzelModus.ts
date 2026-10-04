@@ -1,6 +1,9 @@
 import type { Sektion } from '../../../lib/normtext/browse';
 import type { LeerstellenStatus } from '../../../lib/normtext/darstellung';
 import { pfadZu } from '../helpers';
+import { sicherDekodiert } from '../../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../../lib/normtext/zifferAnker';
+import { kanonischerAnkerToken } from '../suchTreffer';
 import { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 
 // ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT — DIE REINE SEITE ════════════════════
@@ -102,13 +105,12 @@ export function tokenAusHash(hash: string): string | null {
   if (!hash.startsWith('#art-')) return null;
   const roh = hash.slice('#art-'.length);
   if (!roh) return null;
-  try {
-    return decodeURIComponent(roh);
-  } catch {
-    // Ein kaputtes Prozent-Escape ist kein Artikel, sondern Müll in der
-    // Adresse — dann lieber kein Token als ein falscher (§8).
-    return null;
-  }
+  // Ein kaputtes Prozent-Escape ist kein Artikel, sondern Müll in der
+  // Adresse — dann lieber kein Token als ein falscher (§8).
+  const anker = sicherDekodiert(roh);
+  // E2 (Ziffer-Fragment): `#art-197-ziff-12` zeigt im Einzelmodus den Artikel 197; die Ziffer
+  // trägt der Sprung (`findeZiel`), nicht die Anzeige.
+  return anker === null ? null : zerlegeZifferAnker(anker).artikel;
 }
 
 /** Eine Stufe des Gliederungspfads über dem Artikel. */
@@ -141,6 +143,21 @@ function ersterArtikelIn(s: Sektion): string | null {
   if (s.artikel.length > 0) return s.artikel[0].artikel;
   for (const k of s.kinder) {
     const t = ersterArtikelIn(k);
+    if (t) return t;
+  }
+  return null;
+}
+
+/**
+ * Der erste Artikel einer Gliederungsstufe, über ihre Sektions-Id — `null`, wo die Stufe (samt
+ * Unterstufen) keinen führt. W2·17-UI-BEFUNDE (PE-B10-B02): im Einzelmodus gibt es keinen
+ * Sektionskopf zum Anspringen, der Klick auf eine Stufe der Gliederung führt zu DIESEM Artikel —
+ * dasselbe Ziel wie der Rückweg des Gliederungspfads (`PfadStufe.ersterArtikel`, §5).
+ */
+export function ersterArtikelDerSektion(sektionen: Sektion[], id: string): string | null {
+  for (const s of sektionen) {
+    if (s.id === id) return ersterArtikelIn(s);
+    const t = ersterArtikelDerSektion(s.kinder, id);
     if (t) return t;
   }
   return null;
@@ -261,4 +278,77 @@ export function vorschauZiel(
     marginalie: marginalieVon(ziel.token),
     zustand: ziel.zustand,
   };
+}
+
+// ═══ W2·17-UI-BEFUNDE · EIN SPRUNGWEG UND EHRLICHE ANKER (Befund-Cluster Einzelmodus) ═══
+//
+// Die vier Entscheide unten sind rein (§2/§3); die Verdrahtung steht in
+// `./useEinzelModus.ts` (Wechsel, Anker) und `./sprungWege.ts` (Sprung).
+
+/**
+ * Die Router-Adresse, zu der ein Sprung im Einzelmodus navigiert — `null`, wo die
+ * Gesamtansicht gilt (dort scrollt der Sprung und `replaceState` schreibt die Adresse).
+ *
+ * BEFUND (1.10.2026, PE-C3-B01 · PE-B10-B02 · PE-B12-B03): `springeZuArtikel` schrieb
+ * den Anker per `replaceState` am Router vorbei; der Einzelmodus leitet den gezeigten
+ * Artikel aber aus dem Router-Hash ab — Quickjump, Treffer, j/k, «Weiterlesen»,
+ * Gliederung, Index und Landkarte änderten nur die Adresse. Dieselbe Entscheidung
+ * wie `modusEntscheid` (Adresse vor Präferenz, §5), kein zweiter Weg daneben.
+ */
+export function einzelSprungAdresse(
+  basisPfad: string, search: string, gemerkt: LeserModus, token: string,
+): string | null {
+  return modusEntscheid(modusAusSuche(search), gemerkt) === 'artikel'
+    ? einzelAdresse(basisPfad, search, token, 'artikel')
+    : null;
+}
+
+/**
+ * Der Anker einer Einzelmodus-Adresse: der aufgelöste Token — oder, wenn der Anker
+ * keinem Eintrag des Erlasses entspricht, der rohe Anker als `unbekannt`.
+ *
+ * BEFUND E-D11-B04: `kanonischerAnkerToken` liefert bei einem Fehltreffer den rohen
+ * Anker zurück (nie `null`), der Rückfall `?? aktivToken ?? erster Artikel` war damit
+ * toter Code, und `?ansicht=artikel#art-99999` zeigte still den ganzen Erlass. Hier
+ * zählt nur ein Token, den der Erlass wirklich führt; der Rest wird benannt (§8).
+ */
+export function loeseEinzelToken(
+  hash: string, artTokens: readonly string[],
+): { token: string | null; unbekannt: string | null } {
+  const roh = tokenAusHash(hash);
+  if (roh === null) return { token: null, unbekannt: null };
+  const token = kanonischerAnkerToken(roh, artTokens);
+  return artTokens.includes(token) ? { token, unbekannt: null } : { token: null, unbekannt: roh };
+}
+
+/**
+ * Welche Bestimmung der Moduswechsel mitnimmt (und welche der Einzelmodus zeigt).
+ *
+ * In der GESAMTANSICHT ist der Router-Hash nur der Einstiegsanker (der Scroll-Spy
+ * schreibt die Adresse nicht) — massgebend ist die Lesestellung. Im Einzelmodus ist die
+ * Adresse die Auskunft, die Lesestellung nur der Ersatz. PA-15-B01/E-D11-B03: davor
+ * stand der Anker vor der Lesestellung, der Wechsel zeigte den Einstiegsartikel eines
+ * Tieflinks statt der Stelle, an der man las (OR#art-97, gelesen Art. 200 → Art. 97).
+ */
+export function lesestelle(
+  modus: LeserModus, ausAdresse: string | null, aktiv: string | null, erster: string | null,
+): string | null {
+  return modus === 'erlass' ? (aktiv ?? ausAdresse ?? erster) : (ausAdresse ?? aktiv ?? erster);
+}
+
+/**
+ * Der Rückweg in die Gesamtansicht (Gliederungspfad, B4) — mit ausdrücklichem
+ * `?ansicht=erlass`, wo die gemerkte Wahl «Einzelne Bestimmung» heisst.
+ *
+ * BEFUND E-D12-B02: `einzelAdresse(…, 'erlass')` lässt den Parameter weg (die Vorgabe
+ * wird nie ausgeschrieben), die schweigende Adresse lässt die gemerkte Wahl zu Wort
+ * kommen — der Link «im ganzen Erlass lesen» führte bei gemerktem Einzelmodus in den
+ * Einzelmodus. Die Adresse schlägt die Präferenz (Kap. 15.6); sie selbst bleibt unberührt.
+ */
+export function erlassAdresse(basisPfad: string, search: string, token: string, gemerkt: LeserModus): string {
+  const adresse = einzelAdresse(basisPfad, search, token, 'erlass');
+  if (gemerkt === 'erlass') return adresse;
+  const p = new URLSearchParams(search);
+  p.set(MODUS_PARAM, 'erlass');
+  return `${basisPfad}?${p.toString()}#art-${token}`;
 }

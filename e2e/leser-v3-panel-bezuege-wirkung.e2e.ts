@@ -216,10 +216,14 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
     const stand = await page.evaluate(() => JSON.parse(localStorage.getItem('lm.leser.optionen') ?? '{}'))
     expect(stand.zeitraum).toBeUndefined()
     expect(stand.bezugBis).toBe('')
+    // LOKALES Kalenderdatum wie `heuteIso` (src/lib/format.ts, W2·17 E-D1-B04) —
+    // die UTC-Rechnung lag zwischen 00:00 und 02:00 Schweizer Zeit einen Tag zurück
+    // und machte den Test jede Nacht rot (#1288, 3.10.2026 00:15).
     const erwartet = await page.evaluate(() => {
       const h = new Date()
-      const j = h.getUTCFullYear() - 5
-      const rest = h.toISOString().slice(4, 10)
+      const z = (n: number) => String(n).padStart(2, '0')
+      const j = h.getFullYear() - 5
+      const rest = `-${z(h.getMonth() + 1)}-${z(h.getDate())}`
       const schalt = (j % 4 === 0 && j % 100 !== 0) || j % 400 === 0
       return `${j}${rest === '-02-29' && !schalt ? '-02-28' : rest}`
     })

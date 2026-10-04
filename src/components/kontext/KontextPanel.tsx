@@ -27,6 +27,7 @@ import { RevisionenGruppe } from './RevisionenGruppe';
 // Re-Export hält den bisherigen Import-Pfad `./KontextPanel` für alle
 // Bestands-Aufrufer stabil (§6 Ziff. 3 — kein Test wird angefasst).
 import { KontextGruppe } from './KontextGruppe';
+import { nummerAusToken } from '../../lib/reiterStelle';
 export { KontextGruppe } from './KontextGruppe';
 import {
   ladeRevisionShard, revisionFuerToken, klassifiziereFassungsBezug, entscheidDatum,
@@ -78,11 +79,6 @@ function absicherWortgrenze(kurz: string): string {
   const ruecksprung = ohneEllipse.length - grenze;
   if (ruecksprung > ohneEllipse.length * 0.2) return kurz;
   return ohneEllipse.slice(0, grenze).trimEnd() + '…';
-}
-
-/** Korpus-Artikel-Token → Anzeige ('20_a' → '20a'). */
-function anzeigeArtikel(token: string): string {
-  return token.replace(/_/g, '');
 }
 
 // B-3-NACHZUG (R2-A, 31.8.2026): hier stand `kurzDatum` — die SECHSTE
@@ -573,7 +569,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                   )}
                   {veraltet && m.artikel && (
                     <span className="block text-micro text-warn-700">
-                      Dokument-Stand vor der letzten Änderung von Art. {anzeigeArtikel(m.artikel)}.
+                      Dokument-Stand vor der letzten Änderung von Art. {nummerAusToken(m.artikel)}.
                     </span>
                   )}
                 </li>

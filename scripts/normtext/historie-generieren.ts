@@ -21,10 +21,13 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   baueArtikelHistorie,
+  type HistorieEreignis,
+  sektionsAnalyse,
+  type ErbArtikel,
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
-import { pruefeAufgehobenLebend, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
+import { pruefeAufgehobenLebend, pruefeAufgehobenGiltSeit, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const QUELLE = resolve(wurzel, 'public/normtext/struktur/bund');
@@ -32,7 +35,7 @@ const ZIEL = resolve(wurzel, 'public/normtext/historie');
 const TEXT = resolve(wurzel, 'public/normtext/bund');
 
 interface Sidecar {
-  artikel?: Record<string, { fussnoten?: FnEingang[] }>;
+  artikel?: Record<string, { fussnoten?: FnEingang[]; gliederung?: ErbArtikel['gliederung']; marginalie?: string[] }>;
 }
 
 interface Abdeckung {
@@ -56,30 +59,48 @@ interface Korpus extends Abdeckung {
  * Rückgabe null, wenn der Erlass weder ein Ereignis noch ein Residuum trägt.
  */
 /** RL-11: Artikel-Token → «Körper trägt lebenden Normtext» aus dem Text-Shard
- *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt. */
-function koerperLebendIndex(erlass: string): Map<string, boolean> {
-  const m = new Map<string, boolean>();
+ *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt.
+ *  P7 #53: dazu das amtliche Feld `aufgehoben` desselben Eintrags (Token ohne Feld ⇒ false). */
+function textShardIndex(erlass: string): Map<string, { lebend: boolean; aufgehoben: boolean }> {
+  const m = new Map<string, { lebend: boolean; aufgehoben: boolean }>();
   const pfad = resolve(TEXT, `${erlass}.json`);
   if (!existsSync(pfad)) return m;
-  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: [] }> };
-  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), lebenderText(e).length > LEBEND_SCHWELLE);
+  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: []; aufgehoben?: boolean | null }> };
+  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), { lebend: lebenderText(e).length > LEBEND_SCHWELLE, aufgehoben: e.aufgehoben === true });
   return m;
 }
 
 function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abdeckung; artikelMitHistorie: number; ereignisse: number; ereignisseDatiert: number } | null {
-  const lebend = koerperLebendIndex(erlass);
+  const textIndex = textShardIndex(erlass);
   const artikel: Record<string, ArtikelHistorie> = {};
   const residuum: Array<{ token: string; nr: string; roh: string }> = [];
+  const tabelle: HistorieEreignis[] = [];
+  const tabellenIndex = new Map<string, number>();
   const abdeckung: Abdeckung = { fussnoten: 0, ereignis: 0, referenz: 0, unparsed: 0 };
   let ereignisse = 0;
   let ereignisseDatiert = 0;
 
-  const tokens = Object.keys(doc.artikel ?? {}).sort();
+  // W2·27-BUND-FERTIG (2.10.2026): Sektions-Fussnoten an Gliederungsüberschriften gelten für alle Artikel darunter.
+  // Dokumentreihenfolge = Reihenfolge der Text-Shard-Einträge (die Sidecar-Schlüssel sind NICHT dokumentgeordnet:
+  // JS ordnet ganzzahlige Schlüssel vorweg); Sidecar-Token ohne Text-Eintrag folgen sortiert am Ende.
+  const sidecar = doc.artikel ?? {};
+  const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
+  const imText = new Set(reihenfolge);
+  reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
+  const { erbe, geteilt } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+
+  const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
-    const fussnoten = doc.artikel![token].fussnoten ?? [];
-    if (fussnoten.length === 0) continue;
+    const fussnoten = sidecar[token].fussnoten ?? [];
+    const geerbt = erbe.get(token);
+    if (fussnoten.length === 0 && !geerbt) continue;
     abdeckung.fussnoten += fussnoten.length;
-    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, { koerperLebend: lebend.get(token) });
+    const { historie, unparsed, refCount, ereignisFnCount, erbtAnzahl } = baueArtikelHistorie(fussnoten, {
+      koerperLebend: textIndex.get(token)?.lebend,
+      snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
+      geerbt,
+      geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
+    });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
     abdeckung.unparsed += unparsed.length;
@@ -87,9 +108,21 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
       residuum.push({ token, nr: fn.nr ?? '', roh: (fn.text ?? '').replace(/<\/?[bi]>/gi, '').replace(/\s+/g, ' ').trim() });
     }
     if (historie) {
-      artikel[token] = historie;
       ereignisse += historie.ereignisse.length;
       ereignisseDatiert += historie.ereignisse.filter((e) => e.datum).length;
+      if (erbtAnzahl > 0) {
+        // Nutzlast (Deckel public/normtext/historie, check:entstehung): die geerbten Überschrift-Ereignisse stehen je
+        // Erlass EINMAL in der Tabelle (gleicher Inhalt = gleicher Eintrag), der Artikel führt nur die Indizes.
+        const erbt = historie.ereignisse.slice(0, erbtAnzahl).map((e) => {
+          const k = JSON.stringify(e);
+          let i = tabellenIndex.get(k);
+          if (i === undefined) { i = tabelle.length; tabelle.push(e); tabellenIndex.set(k, i); }
+          return i;
+        });
+        artikel[token] = { ...historie, ereignisse: historie.ereignisse.slice(erbtAnzahl), erbt };
+      } else {
+        artikel[token] = historie;
+      }
     }
   }
 
@@ -97,7 +130,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
 
   // Deterministische Serialisierung: Erlass-Meta zuerst, dann sortierte Artikel,
   // dann Residuum in Token-Reihenfolge (stabile Byte-Ausgabe, §2).
-  const shard = { erlass, abdeckung, artikel, residuum };
+  const shard = { erlass, abdeckung, ...(tabelle.length ? { ueberschriftEreignisse: tabelle } : {}), artikel, residuum };
   return {
     json: JSON.stringify(shard, null, 1) + '\n',
     abdeckung,
@@ -181,7 +214,15 @@ if (!process.env.VITEST) {
       for (const b of befunde) console.error(`  ${b.erlass} Art. ${b.token} aufgehobenSeit=${b.aufgehobenSeit} (${b.zeichen} Z.) «${b.auszug}»`);
       process.exit(1);
     }
+    // P7 #53: Gegenrichtung — Text-Shard «aufgehoben» ⇒ kein «Gilt seit» in der Historie.
+    const gegen = pruefeAufgehobenGiltSeit(parsed, TEXT);
+    if (gegen.befunde.length > 0) {
+      console.error(`check:historie ROT — ${gegen.befunde.length} von ${gegen.geprueft} amtlich aufgehobenen Artikeln tragen «Gilt seit» ohne datiertes «aufgehobenSeit»:`);
+      for (const b of gegen.befunde) console.error(`  ${b.erlass} Art. ${b.token} giltSeit=${b.giltSeit}`);
+      process.exit(1);
+    }
     console.log(`check:historie: ${geprueft} Artikel mit «aufgehobenSeit» ohne lebenden Normtext (${ohneText} ohne Text-Eintrag).`);
+    console.log(`check:historie: ${gegen.geprueft} amtlich aufgehobene Artikel mit Historie ohne «Gilt seit» (ausser datiert aufgehoben).`);
     console.log(`check:historie: ${shards.size} Shards synchron mit den Struktur-Sidecars.`);
   } else {
     rmSync(ZIEL, { recursive: true, force: true }); // verwaiste Shards entfernen (kein toter Rest)

@@ -5,7 +5,6 @@ import { zeigeKantenDatum, type VerzahnungsKante } from '../lib/verzahnung/typen
 import { GLOSSAR, glossarErklaerung } from '../lib/verzahnung/glossar';
 import { StatusBadge } from '../components/verzahnung/StatusBadge';
 import { KantenChip } from '../components/verzahnung/KantenChip';
-import { MehrKante } from '../components/verzahnung/MehrKante';
 
 // Reine Darstellung/Datenschicht (§3) — SSR-Rendering (renderToString) genügt für
 // den Initialzustand; useEffect (Begriff-Popover) läuft im SSR nicht, was hier
@@ -140,19 +139,5 @@ describe('KantenChip — Dichte-Regel (EIN Zusatz)', () => {
     expect(out).toContain('hover:border-slate-700');
     expect(out).not.toContain('hover:text-brass-700');
     expect(out).not.toContain('hover:border-brass-400');
-  });
-});
-
-describe('MehrKante — zwei Zustände', () => {
-  it('rest>0 && !offen → «+n weitere»', () => {
-    const out = ssr(<MehrKante rest={3} offen={false} onOeffne={() => {}} />);
-    expect(out).toContain('weitere');
-    expect(out).toContain('3');
-  });
-  it('rest 0 → nichts (kein reservierter Leerraum)', () => {
-    expect(ssr(<MehrKante rest={0} offen={false} onOeffne={() => {}} />)).toBe('');
-  });
-  it('offen → nichts (Rest steht bereits)', () => {
-    expect(ssr(<MehrKante rest={5} offen onOeffne={() => {}} />)).toBe('');
   });
 });

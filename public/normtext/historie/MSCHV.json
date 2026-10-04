@@ -6,6 +6,92 @@
   "referenz": 18,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3649",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5019",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Veröffentlichungen des IGE"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 865",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3649",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Kapitel: Herkunftsangaben"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 510",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1996-01-01",
@@ -1083,7 +1169,7 @@
    ]
   },
   "42": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1096,7 +1182,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Veröffentlichungen des IGE"
     }
    ]
   },
@@ -1116,6 +1203,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44": {
@@ -1216,7 +1306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Kapitel: Internationale Markenregistrierung"
     }
    ]
   },
@@ -1236,6 +1327,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "49": {
@@ -1267,6 +1361,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "50": {
@@ -1311,6 +1408,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "51": {
@@ -1329,6 +1429,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "52": {
@@ -1347,10 +1450,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "54": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1363,8 +1469,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "56": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "57": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "14_a": {
@@ -1435,7 +1563,7 @@
    ]
   },
   "24_a": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1448,8 +1576,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
     }
+   ]
+  },
+  "24_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "24_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "24_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "24_e": {
@@ -1468,6 +1618,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33_34": {
@@ -1605,10 +1758,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "52_a": {
-   "giltSeit": "2017-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1621,12 +1777,111 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Herkunftsangaben"
     }
    ]
   },
+  "52_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "52_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
   "52_p": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1639,8 +1894,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
     }
+   ]
+  },
+  "52_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "52_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "54_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "54_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "56_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "56_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "56_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "56_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "60_a": {

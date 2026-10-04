@@ -13,6 +13,7 @@ import { UebersichtBox } from './v3/UebersichtBox';
 import { uebersichtsAngaben } from './v3/uebersichtAngaben';
 import { grundartMeta } from './helpers';
 import { GesetzFehlSeite } from './FehlSeite';
+import type { LeserFehler, Teilausfall } from './inhalt-zustand';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
@@ -64,9 +65,10 @@ function FruehUebersicht({ erlass, kopf, currency }: {
 // Massgeblich bleibt die amtliche Fassung (sichtbarer Live-Link, §7/§8 — Nomen
 // aus `lib/benennung`, B-6-Nachzug R2-A 31.8.2026); Drift-
 // Tor: check:pdf (offline Integrität + netz Drift & geltende Konsolidierung).
-function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
+function PdfEmbedAnsicht({ erlass, currency, teilausfall, kopf, internRefs }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
+  teilausfall: Teilausfall | null;
   kopf: ErlassKopf | null;
   internRefs: InternRefs | undefined;
 }) {
@@ -85,7 +87,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — hier ohne Options-Leiste,
           da am eingebetteten PDF Fussnoten/Verweise wirkungslos wären
           (keine toten Steuerelemente, §13 F4). */}
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
+      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]} ladeAusfall={teilausfall}
         // «Staatsvertrag» hing hier an `ebene === 'bund'` — heute folgenlos, weil
         // beide pdf-embed-Erlasse (EMRK, NYUE) Staatsverträge SIND, aber die
         // Auskunft kam aus der falschen Frage: ein bundesrechtliches PDF ohne
@@ -94,7 +96,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
         overline={`${routenEbene(erlass) === 'international' ? 'Staatsvertrag' : ebeneAngabe(erlass).label} · amtliches PDF`}
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
-          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
+          <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} aufgehoben={!!erlass.aufgehoben} />
         }
         // M5: der Ingress auch im pdf-embed-Pfad (ohne Struktur-Sidecar `null`).
         ingress={kopf} intern={internRefs} />
@@ -151,7 +153,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="lc-link text-brass-700 hover:text-brass-800">Amtliches PDF in neuem Tab öffnen ↗</a>
       </nav>
     </div>
@@ -164,16 +166,17 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
 // §2.2⑧, Referenz DSGVO). Massgeblich bleibt die amtliche Fassung (§7/§8,
 // B-6-Nachzug R2-A). Reine
 // Darstellung; eintraege bleibt null (darum VOR dem Lade-Guard unten).
-function LiveVerweisAnsicht({ erlass, currency }: {
+function LiveVerweisAnsicht({ erlass, currency, teilausfall }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
+  teilausfall: Teilausfall | null;
 }) {
   // Dieselbe Ebene-Beschriftung wie Brotkrume und Reiter-Herkunft — bis Befund
   // 45 stand hier eine dritte Kopie der Vorrang-Regel (§5).
   const verweisOverline = `${ebeneAngabe(erlass).label} · amtlicher Verweis`;
   return (
     <div className="space-y-5">
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
+      <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]} ladeAusfall={teilausfall}
         overline={verweisOverline}
         hinweis="Verweis — massgeblich ist die amtliche Fassung" />
       <section data-verweiskarte className="max-w-reading space-y-4 rounded-lg border border-rule-struktur bg-paper-sunken/20 p-5">
@@ -202,7 +205,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
+        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Alle Gesetze</Link>
         {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} />}
       </nav>
     </div>
@@ -215,19 +218,21 @@ function LiveVerweisAnsicht({ erlass, currency }: {
 // Volltext». Kein Hook, keine Rechtsregel — reine Präsentationswahl (§3).
 // Der Lade-Guard `!erlass || !eintraege` bleibt bewusst im Aufrufer: er ist dort
 // zugleich die TypeScript-Verengung, von der der ganze Volltext-Zweig lebt.
-export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs }: {
-  fehler: boolean;
+export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, teilausfall, kopf, internRefs }: {
+  fehler: LeserFehler;
   schluessel: string;
   manifest: BrowseManifest | null;
   erlass: BrowseErlass | null;
   currency: CurrencyMap | null;
+  /** BG-02/03/04: ausgefallene Begleit-Sidecars — der Kopf weist sie aus. */
+  teilausfall: Teilausfall | null;
   kopf: ErlassKopf | null;
   internRefs: InternRefs | undefined;
 }): ReactNode | null {
   if (fehler) {
     // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
     // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
-    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} />;
+    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} fehler={fehler} />;
   }
   // ── A9 §15.2-Pin: Currency-Chips NICHT nachträglich einwachsen lassen ────────
   // Die Kopf-Chips «geltend geprüft am … / nächste Fassung ab …» (ErlassLeserKopf)
@@ -240,19 +245,21 @@ export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, k
   // Netz = 0.086). Darum ALLE Kopf-tragenden Render-Pfade (pdf-embed / nur-live-link
   // / Volltext) auf den AUFGELÖSTEN Currency-Stand pinnen (§15.2 «Client-Initialstate
   // auf den Server-Zustand pinnen»): solange `currency === null`, bleibt der
-  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `ladeCurrency`
-  // löst IMMER auf (Fetch-Fehler ⇒ {}), i. d. R. lange vor dem grossen eintraege-Fetch
-  // ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
+  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `currency` löst
+  // IMMER auf (Fetch-Fehler ⇒ `{}` im Hook `useLeserDaten`, dort zusätzlich als
+  // Teilausfall ausgewiesen, BG-02 2.10.2026; vorher stand das in `ladeCurrency`
+  // selbst, das den Fehlschlag still als `{}` cachte), i. d. R. lange vor dem grossen
+  // eintraege-Fetch ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
   if (erlass && currency === null) {
     return <LadeAnzeige />;
   }
   // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML) ──────
   if (erlass && erlass.status === 'pdf-embed' && erlass.pdfPfad) {
-    return <PdfEmbedAnsicht erlass={erlass} currency={currency} kopf={kopf} internRefs={internRefs} />;
+    return <PdfEmbedAnsicht erlass={erlass} currency={currency} teilausfall={teilausfall} kopf={kopf} internRefs={internRefs} />;
   }
   // ── ⑧ LIVE_VERWEIS: kein In-App-Volltext — ehrliche Verweiskarte (§8) ────────
   if (erlass && erlass.status === 'nur-live-link') {
-    return <LiveVerweisAnsicht erlass={erlass} currency={currency} />;
+    return <LiveVerweisAnsicht erlass={erlass} currency={currency} teilausfall={teilausfall} />;
   }
   return null;
 }

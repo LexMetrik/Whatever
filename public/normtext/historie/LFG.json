@@ -6,6 +6,44 @@
   "referenz": 46,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1978-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1977 2110",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1977/2110_2110_2110"
+    },
+    {
+     "label": "BBl 1976 III 1232",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1976/3_1232_1267_1235"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 3071",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/472"
+    },
+    {
+     "label": "BBl 1998 2591",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "1995-01-01",
@@ -425,6 +463,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "14": {
@@ -447,6 +495,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "15": {
@@ -469,6 +520,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -491,6 +552,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {
@@ -513,6 +577,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -535,6 +602,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
@@ -591,6 +661,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21": {
@@ -647,6 +720,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -669,6 +745,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -708,6 +787,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -730,6 +812,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -786,6 +871,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
@@ -808,6 +896,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
@@ -864,6 +955,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -903,6 +997,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -959,6 +1056,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -998,6 +1098,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "31": {
@@ -1020,6 +1123,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "32": {
@@ -1042,6 +1148,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "33": {
@@ -1064,6 +1173,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -1147,7 +1259,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Die Infrastruktur"
     }
    ]
   },
@@ -1188,6 +1301,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "38": {
@@ -1229,8 +1345,12 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Ziff. 3"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39": {
@@ -1253,6 +1373,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40": {
@@ -1292,6 +1415,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41": {
@@ -1314,6 +1440,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "42": {
@@ -1353,6 +1482,9 @@
      "absatz": "1bis",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "43": {
@@ -1426,6 +1558,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44": {
@@ -1516,6 +1651,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "45": {
@@ -1572,6 +1710,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "46": {
@@ -1617,6 +1758,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "48": {
@@ -1639,6 +1783,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "49": {
@@ -1661,6 +1808,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "50": {
@@ -3632,7 +3782,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Die Benützung des Luftraums und Sicherheitsmassnahmen"
     }
    ]
   },
@@ -3656,6 +3807,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_a": {
@@ -3678,6 +3832,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_b": {
@@ -3700,6 +3857,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_c": {
@@ -3756,6 +3916,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_d": {
@@ -3778,6 +3941,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_e": {
@@ -3800,6 +3966,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "21_f": {
@@ -3822,6 +3991,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_a": {
@@ -3878,6 +4050,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_b": {
@@ -3917,6 +4092,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_c": {
@@ -3979,6 +4157,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_b": {
@@ -4001,6 +4182,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_c": {
@@ -4023,6 +4207,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_d": {
@@ -4062,6 +4249,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36_e": {
@@ -4101,6 +4291,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_a": {
@@ -4140,6 +4333,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_b": {
@@ -4179,6 +4375,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_c": {
@@ -4201,6 +4400,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_d": {
@@ -4274,6 +4476,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_e": {
@@ -4370,6 +4575,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_g": {
@@ -4392,6 +4600,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_h": {
@@ -4414,6 +4625,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_i": {
@@ -4436,6 +4650,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_k": {
@@ -4509,6 +4726,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_l": {
@@ -4531,6 +4751,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_m": {
@@ -4553,6 +4776,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_n": {
@@ -4575,6 +4801,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_o": {
@@ -4597,6 +4826,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_p": {
@@ -4619,6 +4851,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_q": {
@@ -4641,6 +4876,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_r": {
@@ -4663,6 +4901,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_s": {
@@ -4702,6 +4943,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_t": {
@@ -4724,6 +4968,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "37_u": {
@@ -4735,7 +4982,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 36e"
     },
     {
      "typ": "eingefuegt",
@@ -4771,6 +5019,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "39_a": {
@@ -4793,6 +5044,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "3_a": {
@@ -4962,7 +5216,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 3bis"
     },
     {
      "typ": "fassung",
@@ -5105,6 +5360,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_a_bis": {
@@ -5116,7 +5374,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 40a"
     },
     {
      "typ": "eingefuegt",
@@ -5169,6 +5428,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_b": {
@@ -5208,6 +5470,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_b_bis": {
@@ -5230,6 +5495,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_c": {
@@ -5252,6 +5520,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_d": {
@@ -5274,6 +5545,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_e": {
@@ -5296,6 +5570,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_f": {
@@ -5318,6 +5595,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "40_g": {
@@ -5340,6 +5620,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_a": {
@@ -5362,6 +5645,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_b": {
@@ -5384,6 +5670,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44_a": {
@@ -5395,8 +5684,12 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 44bis"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "44_b": {
@@ -5425,8 +5718,12 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 44ter"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "53_54": {

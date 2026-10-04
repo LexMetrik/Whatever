@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { tabSchluessel } from '../../lib/tabs';
 import { kanonisierePfad } from '../../lib/normtext/erlassAdresse';
+import { lokalSpeicher } from '../../lib/sichererSpeicher';
 
 // ─── Pane-Layout (Split-View B-1) ──────────────────────────────────────────
 //
@@ -70,7 +71,7 @@ function ladePanes(): string[] {
       // Defektes/leeres ?p= darf gespeicherte Panes NICHT löschen → nur bei Treffer gewinnen.
       if (seed.length) return seed;
     }
-    const roh = window.localStorage.getItem(PANES_KEY);
+    const roh = lokalSpeicher.lies(PANES_KEY);
     if (!roh) return [];
     const arr = JSON.parse(roh);
     if (!Array.isArray(arr)) return [];
@@ -118,8 +119,7 @@ export function usePaneLayout(): PaneLayout {
   }, []);
 
   useEffect(() => {
-    try { window.localStorage.setItem(PANES_KEY, JSON.stringify(sekundaer)); }
-    catch { /* Speicher gesperrt — Zustand bleibt nur für die Sitzung */ }
+    lokalSpeicher.schreib(PANES_KEY, JSON.stringify(sekundaer)); // gesperrt → nur für die Sitzung
   }, [sekundaer]);
 
   const oeffneDaneben = useCallback((roh: string) => {

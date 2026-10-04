@@ -10,7 +10,7 @@
 // Historie-Fussnoten bzw. Kanton — kein Fehler, still), transiente Fehler NICHT
 // dauerhaft als null gecacht (ein späterer Zugriff darf neu versuchen, §8).
 
-import type { ArtikelHistorie } from './historie-parse';
+import { loeseErbeAuf, type ArtikelHistorie, type HistorieEreignis } from './historie-parse';
 import { kodiereSchluessel } from './dateiUrl';
 
 // Der Per-Artikel-Eintrag ist exakt die Generator-Projektion `ArtikelHistorie`
@@ -24,6 +24,8 @@ export interface HistorieShard {
   abdeckung: { fussnoten: number; ereignis: number; referenz: number; unparsed: number };
   /** Artikel-Token (roh, «40_a») → strukturierte Historie. */
   artikel: Record<string, ArtikelHistorie>;
+  /** W2·27 (2.10.2026): von Gliederungsüberschriften geerbte Ereignisse, je Erlass einmal; `artikel[…].erbt` zeigt hinein. */
+  ueberschriftEreignisse?: HistorieEreignis[];
   residuum: Array<{ token: string; nr: string; roh: string }>;
 }
 
@@ -66,8 +68,17 @@ export function historieFuerArtikel(
   shard: HistorieShard | null | undefined,
   artikel: string,
 ): ArtikelHistorie | undefined {
-  return shard?.artikel[artikel];
+  const a = shard?.artikel[artikel];
+  if (!a || !shard || !a.erbt) return a;
+  // Aufgelöst und je Shard-Eintrag gemerkt: dieselbe Objekt-Identität bei jedem Aufruf (memo-Komponenten, Effekte).
+  let cache = aufgeloest.get(shard);
+  if (!cache) aufgeloest.set(shard, (cache = new Map()));
+  let r = cache.get(artikel);
+  if (!r) cache.set(artikel, (r = loeseErbeAuf(a, shard.ueberschriftEreignisse)));
+  return r;
 }
+
+const aufgeloest = new WeakMap<HistorieShard, Map<string, ArtikelHistorie>>();
 
 /** Nur für Tests: Shard-Cache leeren (isolierte Fälle). */
 export function _leereHistorieCache(): void {

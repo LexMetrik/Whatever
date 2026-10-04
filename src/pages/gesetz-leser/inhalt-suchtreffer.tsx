@@ -6,7 +6,7 @@ import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz,
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz, setzeAktiveFundstelle,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
@@ -70,18 +70,31 @@ import {
 // und Marken — ein Schalter, der stumm über Suchen hinweg wirkte, liesse
 // Treffer verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt (§8,
 // dieselbe Begründung wie beim Suchbereich).
+//
+// ── W2·17-UI-BEFUNDE · PE-C4-B01 (1.10.2026) · LEEREN MASKIERTE NUR ──────────
+// Bis hierher stand hier `!sucheFeldLeer && markenAusRoh`: das Leeren
+// VERDECKTE den Rohwert bloss, solange das Feld leer war — der Kommentar
+// darüber versprach das Gegenteil. Gemessen (Sonde `marken.mjs`, OR/«Kündigung»):
+// Schalter aus → Feld leeren → «Kündigung» neu → `aria-pressed=false`, keine
+// Hervorhebung; der alte Stand lag unter der Maske und kam mit der nächsten
+// Eingabe zurück. JETZT wird der Rohwert im Render verworfen, sobald das Feld
+// leer ist («State beim Rendern anpassen», React-Doku — bedingt, endet nach
+// einem Durchlauf, kein Effekt). Dasselbe Ziel wie `entscheidSucheZustand.ts`
+// im Entscheid-Leser, dort im Setter; hier sieht der Hook den Feldwert nur als
+// Argument, darum der Render-Weg.
 export function useMarkenSchalter(sucheFeldLeer: boolean): {
   markenAus: boolean;
   setzeMarkenAus: (aus: boolean) => void;
 } {
   const [markenAusRoh, setzeMarkenAus] = useState(false);
+  if (sucheFeldLeer && markenAusRoh) setzeMarkenAus(false);
   return { markenAus: !sucheFeldLeer && markenAusRoh, setzeMarkenAus };
 }
 
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-  internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
-  bereich = 'alles', markenAus = false,
+  internRefs, aktArtikel, offen, setOffen, imPane, wurzel,
+  bereich = 'alles', markenAus = false, einzelSprung,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -93,7 +106,6 @@ export function useSuchTreffer({
   aktivIds: string[];
   internRefs: InternRefs | undefined;
   aktArtikel: string | null;
-  tokenByLabel: Map<string, string>;
   /** Klapp-Zustand der LESESPALTE (B3/B4): welche Sektionen aufgeklappt sind.
    *  Der Sprung braucht `setOffen`, um ein Ziel in einem zugeklappten Ast
    *  überhaupt erreichbar zu machen; der Markierungs-Beobachter braucht `offen`
@@ -121,6 +133,10 @@ export function useSuchTreffer({
    *  seit A35 zieht. Zähler, Trefferliste und ↑↓-Folge bleiben unberührt: der
    *  Schalter nimmt die FARBE, nicht die Auskunft (§8). */
   markenAus?: boolean;
+  /** W2·17-UI-BEFUNDE · Einzelmodus: wechselt den gezeigten Artikel (Router) und meldet `true`;
+   *  `false`, wo die Gesamtansicht gilt. Ohne ihn liegt ein Ziel ausserhalb des gezeigten Artikels
+   *  nicht im DOM — kein Scroll, kein Wechsel (PE-C3-B02, PE-B12-B03). */
+  einzelSprung?: (token: string) => boolean;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -166,7 +182,9 @@ export function useSuchTreffer({
       attributes: true,
       // S1: `data-verweise` ist entfallen (der Schalter ist gestrichen). D35-F3:
       // `data-fussnoten`/`data-histansicht` sind in `data-vermerke` aufgegangen.
-      attributeFilter: ['data-vermerke', 'data-leitfaelle'],
+      // 2.10.2026: `data-leitfaelle` wird seit D35-F2 von niemandem mehr gesetzt
+      // (`leserOptionen.ts`) und ist hier nicht mehr beobachtet.
+      attributeFilter: ['data-vermerke'],
     });
     return () => beob.disconnect();
   }, []);
@@ -276,9 +294,20 @@ export function useSuchTreffer({
   // in-effect). Damit kann nie eine Position zum falschen Begriff stehenbleiben
   // (§8) — dasselbe Muster, mit dem bis S8 die gemessene Fundstellenzahl
   // gültig gehalten wurde.
-  const [nav, setNav] = useState<{ begriff: string; pos: number; token: string | null }>(
-    { begriff: '', pos: -1, token: null });
-  const gueltig = nav.begriff === sucheTrim;
+  //
+  // ── W2·17-UI-BEFUNDE · PE-C6-B01 / PE-C8-B02 (1.10.2026) · AUCH DER BEREICH
+  //     GEHÖRT IN DEN SCHLÜSSEL ──────────────────────────────────────────────
+  // Der Schlüssel war nur `begriff`, die Folge hängt aber am BEREICH (`treffer`
+  // → `folge`): nach dem Wechsel stand die alte Laufnummer gegen eine andere
+  // Folge. Gemessen (OR, «Schadenersatz», ↓ 20× → «20 von 52»): «Überschriften»
+  // → «Fundstelle 20 von 11»; «Text» → «20 von 41» mit einer fremden Zeile
+  // (Art. 260) als aktiv, das nächste ↓ lief von dort weiter. JETZT gilt die
+  // Nummer nur bei gleichem Begriff UND gleichem Bereich; sonst «keine gewählt».
+  // `aenderungenAus` gehört NICHT dazu: es ändert nur `malRang`, nie Länge oder
+  // Reihenfolge der Folge — der Ansicht-Schalter darf die Position behalten.
+  const [nav, setNav] = useState<{ begriff: string; bereich: SuchBereich; pos: number; token: string | null }>(
+    { begriff: '', bereich, pos: -1, token: null });
+  const gueltig = nav.begriff === sucheTrim && nav.bereich === bereich;
   const trefferPos = gueltig ? nav.pos : -1;
   const aktivToken = gueltig ? nav.token : null;
 
@@ -307,7 +336,7 @@ export function useSuchTreffer({
     // Zielartikel in einer zugeklappten Sektion, blieb `nav.pos` stehen, und
     // jeder weitere ↑↓-Druck berechnete daraus dieselbe Position: die Folge kam
     // nicht vom Fleck, der Klick blieb ohne jede Rückmeldung (§8).
-    setNav({ begriff: sucheTrim, pos: n, token: eintrag.token });
+    setNav({ begriff: sucheTrim, bereich, pos: n, token: eintrag.token });
     const id = `art-${eintrag.token}`;
     // CSS.escape: ein Artikel-Token mit Sonderzeichen (belegt: «22 a», «36–42»)
     // darf den Selektor nicht sprengen — dieselbe Vorsicht wie `findeArt`.
@@ -336,6 +365,13 @@ export function useSuchTreffer({
       // das sichtbar zu spät.
       rangesRef.current.set(art.id, ranges);
       male();
+      // W2·17-UI-BEFUNDE: die Fundstelle, zu der dieser Sprung führt, ist die
+      // AKTIVE — derselbe `malRang` wie für das Scrollen unten (§5), nur
+      // umgefärbt. Nicht malbar (`null`) ⇒ keine aktive Stelle, es bleibt beim
+      // Artikel-Blink. Bei weggeschalteter Hervorhebung wird auch sie nicht gemalt.
+      setzeAktiveFundstelle(
+        markenAus || eintrag.malRang === null ? null : ranges[eintrag.malRang] ?? null,
+        highlightInstanz);
       const start = eintrag.malRang === null ? undefined : ranges[eintrag.malRang]?.startContainer;
       const el = (start
         ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
@@ -347,6 +383,15 @@ export function useSuchTreffer({
     };
     const da = finde();
     if (da) { zeige(da); return; }
+    if (einzelSprung?.(eintrag.token)) {
+      // Der Artikel entsteht erst im Commit der Navigation — spätestens nach ein paar Frames steht er da.
+      const warte = (n: number) => window.requestAnimationFrame(() => {
+        const el = finde();
+        if (el) zeige(el); else if (n > 0) warte(n - 1);
+      });
+      warte(8);
+      return;
+    }
     // ZIEL IN EINER ZUGEKLAPPTEN SEKTION (B3, zweite Hälfte). Die Lesespalte
     // bleibt seit S8 vollständig, aber sie bleibt auch klappbar — ein
     // Sektionskopf-Klick genügt, und der Zielartikel ist nicht im DOM. Der
@@ -365,7 +410,13 @@ export function useSuchTreffer({
       const el = finde();
       if (el) zeige(el);
     }));
-  }, [blinkAus, folge, male, sucheTrim, sektionen, setOffen]);
+  }, [blinkAus, folge, male, sucheTrim, bereich, sektionen, setOffen, einzelSprung, markenAus, highlightInstanz]);
+
+  // Die aktive Stelle gehört zu EINEM Begriff/Bereich: wechselt er (oder die
+  // Hervorhebung wird weggeschaltet, oder der Leser verschwindet), räumt der
+  // Cleanup sie — nie bleibt die Markierung am alten Begriff stehen.
+  useEffect(() => () => setzeAktiveFundstelle(null, highlightInstanz),
+    [sucheTrim, bereich, markenAus, highlightInstanz]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;
@@ -407,16 +458,13 @@ export function useSuchTreffer({
   // «Sie sind hier»: reine Projektion des SCHON vorhandenen Scroll-Spy-Zustands
   // (aktivIds) auf die Gliederungs-Labels — keine zusätzliche Beobachtung (§15).
   const siePfad = useMemo(() => pfadLabels(sektionen, aktivIds), [sektionen, aktivIds]);
-  // Fremdfund-Fix aus dem §9-Bug-Check (B5, echter main-Defekt seit #429): hier
-  // wurde ein LABEL in der TOKEN-Map nachgeschlagen (`artLabelByToken` ist
-  // token→label, `inhalt-hooks.tsx` setzt in `aktArtikel` aber bereits das
-  // fertige Label). Der Lookup ging darum IMMER ins Leere, `siePfadArtikel` war
-  // dauerhaft null und die Artikel-Angabe in «Sie sind hier» fehlte still — der
-  // Gliederungspfad allein füllte die Zeile, also fiel es nicht auf.
-  // `aktArtikel` IST das Anzeige-Label; die Umkehrkarte dient nur noch als
-  // Echtheitsprüfung: benannt wird ausschliesslich ein Label, das auf einen
-  // realen Artikel dieses Erlasses auflöst (§8).
-  const siePfadArtikel = aktArtikel && tokenByLabel.has(aktArtikel) ? aktArtikel : null;
+  // `aktArtikel` ist das aus dem TOKEN abgeleitete Anzeige-Label (`useArtikelTokens`)
+  // und nur dann gesetzt, wenn der Token zu einem realen Artikel dieses Erlasses
+  // gehört (§8) — die frühere Umkehrkarte Label→Token als Echtheitsprüfung ist
+  // damit überflüssig (W2·17-UI-BEFUNDE B10-B01: Labels sind nicht eindeutig).
+  // Fremdfund-Fix aus dem §9-Bug-Check (B5, #429): ein LABEL wurde dort in der
+  // TOKEN-Map nachgeschlagen und «Sie sind hier» blieb still ohne Artikel.
+  const siePfadArtikel = aktArtikel;
 
   // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der
   // Highlight-Registry hing ursprünglich AUSSCHLIESSLICH am Effekt oben — und

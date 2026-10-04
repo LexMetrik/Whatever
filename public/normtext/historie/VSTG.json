@@ -6,6 +6,26 @@
   "referenz": 42,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 5103",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/795"
+    },
+    {
+     "label": "BBl 2015 8387",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/2039"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "A. Rückerstattung der Steuer auf Kapitalerträgen und auf Gewinnen aus Geldspielen sowie aus Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2019-01-01",
@@ -415,7 +435,7 @@
        "url": ""
       }
      ],
-     "absatz": null,
+     "absatz": "1sexies",
      "item": null
     },
     {
@@ -432,7 +452,7 @@
        "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
       }
      ],
-     "absatz": null,
+     "absatz": "1septies",
      "item": null
     },
     {
@@ -909,8 +929,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Rückerstattung der Steuer auf Kapitalerträgen und auf Gewinnen aus Geldspielen sowie aus Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung"
     }
+   ]
+  },
+  "22": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -933,6 +961,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "24": {
@@ -955,6 +986,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "26": {
@@ -977,6 +1018,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
@@ -999,6 +1043,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -1021,6 +1068,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "29": {
@@ -1060,6 +1110,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -1082,6 +1135,23 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "31": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "35": {
@@ -1198,7 +1268,7 @@
    ]
   },
   "42": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1215,7 +1285,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Einsprache"
     }
    ]
   },

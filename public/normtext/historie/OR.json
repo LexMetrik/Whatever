@@ -6,6 +6,494 @@
   "referenz": 115,
   "unparsed": 7
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "1937-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünfte Abteilung: Die Wertpapiere"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1950-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1949 I 791",
+     "url": ""
+    },
+    {
+     "label": "BBl 1947 III 869",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1947/3_869_905_"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Abschnitt: Gläubigergemeinschaft bei Anleihensobligationen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1990-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1990 802",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1990/802_802_802"
+    },
+    {
+     "label": "BBl 1985 I 1389",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1985/1_1389_1369_1201"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titel: Die Miete"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1990-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1990 802",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1990/802_802_802"
+    },
+    {
+     "label": "BBl 1985 I 1389",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1985/1_1389_1369_1201"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Titelbis: Die Pacht"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1972-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1971 1465",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461"
+    },
+    {
+     "label": "BBl 1967 II 241",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1967/2_241_249_177"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zehnter Titel: Der Arbeitsvertrag"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2004-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 4557",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/674"
+    },
+    {
+     "label": "BBl 2000 5686",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2000/1232"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "A. Der Lehrvertrag"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1999 1118",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+    },
+    {
+     "label": "BBl 1996 I 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/1_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Abschnittbis: Auftrag zur Ehe- oder zur Partnerschaftsvermittlung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1950-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1949 I 802",
+     "url": ""
+    },
+    {
+     "label": "BBl 1947 III 661",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1947/3_661_681_"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Der Agenturvertrag"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1942-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1939 II 841",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1939/2_841_857_149"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwanzigster Titel: Die Bürgschaft"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1937-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritte Abteilung: Die Handelsgesellschaften und die Genossenschaft"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1992-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 733",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/733_733_733"
+    },
+    {
+     "label": "BBl 1983 II 745",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1983/2_745_757_713"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "B. Der Verwaltungsrat"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 4791",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/685"
+    },
+    {
+     "label": "BBl 2002 3148",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2002/443"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "C. Revisionsstelle"
+  },
+  {
+   "typ": "fassung",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4005",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind",
+   "teilweise": "Fassung gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023, Art. 734f in Kraft seit 1. Jan. 2021 (AS 2020 4005; 2022 109; BBl 2017 399)."
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 4791",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/685"
+    },
+    {
+     "label": "BBl 2002 3148",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2002/443"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achtundzwanzigster Titel: Die Gesellschaft mit beschränkter Haftung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1937-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierte Abteilung: Handelsregister, Geschäftsfirmen und kaufmännische Buchführung"
+  },
+  {
+   "typ": "fassung",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 957",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+    },
+    {
+     "label": "BBl 2015 3617",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/956"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dreissigster Titel: Das Handelsregister",
+   "teilweise": "Fassung gemäss Ziff. I 1 des BG vom 17. März 2017 (Handelsregisterrecht), in Kraft seit 1. Jan. 2021, Art. 928b und 928c in Kraft seit 1. April 2020 (AS 2020 957; BBl 2015 3617)."
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 6679",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/810"
+    },
+    {
+     "label": "BBl 2008 1589",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/416"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiunddreissigster Titel: Kaufmännische Buchführung, Rechnungslegung, weitere Transparenz- und Sorgfaltspflichten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 846",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/846"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiunddreissigster Titel: Kaufmännische Buchführung, Rechnungslegung, weitere Transparenz- und Sorgfaltspflichten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4005",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Abschnitt: Jahresrechnung und Zwischenabschluss"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 846",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/846"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Sechster Abschnitt: Transparenz über nichtfinanzielle Belange"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 4005",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Siebter Abschnitt: Transparenz bei Rohstoffunternehmen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 846",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/846"
+    },
+    {
+     "label": "BBl 2017 399",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/112"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Achter Abschnitt: Sorgfaltspflichten und Transparenz bezüglich Mineralien und Metallen aus Konfliktgebieten und Kinderarbeit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 33",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+    },
+    {
+     "label": "BBl 2020 233",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/16"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "G. Sammelverwahrung, Globalurkunde und einfache Wertrechte"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1990-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1990 802",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1990/802_802_802"
+    },
+    {
+     "label": "BBl 1985 I 1389",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1985/1_1389_1369_1201"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Schlussbestimmungen zum VIII. Titel und zum VIIIbis. Titel"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1972-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1971 1465",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461"
+    },
+    {
+     "label": "BBl 1967 II 241",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1967/2_241_249_177"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Schluss- und Übergangsbestimmungen zum X. Titel"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1950-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1949 I 802",
+     "url": ""
+    },
+    {
+     "label": "BBl 1947 III 661",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1947/3_661_681_"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Schlussbestimmungen zum vierten Abschnitt des XIII. Titels"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1937-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "BBl 1928 I 205",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1928/1_205_233_253"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Schluss- und Übergangsbestimmungen zu den Titeln XXIV–XXXIII"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1992-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 733",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/733_733_733"
+    },
+    {
+     "label": "BBl 1983 II 745",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1983/2_745_757_713"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Schlussbestimmungen zum XXVI. Titel"
+  }
+ ],
  "artikel": {
   "13": {
    "giltSeit": null,
@@ -1160,7 +1648,7 @@
    ]
   },
   "253": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1177,8 +1665,142 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Titel: Die Miete"
     }
+   ]
+  },
+  "254": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "255": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "256": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "258": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "260": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "261": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "262": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "263": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "264": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "265": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "267": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "268": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "269": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "270": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "271": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "272": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "273": {
@@ -1235,10 +1857,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "275": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1255,8 +1880,184 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Titelbis: Die Pacht"
     }
+   ]
+  },
+  "276": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "277": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "278": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "279": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "280": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "281": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "282": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "283": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "284": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "285": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "286": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "287": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "288": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "289": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "290": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "291": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "292": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "293": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "294": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "295": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "296": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "297": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "298": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "299": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "300": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "301": {
@@ -1279,10 +2080,34 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "302": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "303": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "304": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "319": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1299,8 +2124,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zehnter Titel: Der Arbeitsvertrag"
     }
+   ]
+  },
+  "320": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "321": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "322": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "323": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "324": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "325": {
@@ -1323,6 +2184,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "326": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "327": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "328": {
@@ -1370,6 +2248,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329": {
@@ -1392,6 +2273,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "330": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "331": {
@@ -1482,6 +2373,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "332": {
@@ -1504,6 +2398,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "333": {
@@ -1560,6 +2457,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "334": {
@@ -1582,6 +2482,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335": {
@@ -1604,6 +2507,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "336": {
@@ -1677,6 +2583,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "337": {
@@ -1699,6 +2608,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "338": {
@@ -1721,6 +2633,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "339": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "340": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "341": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "342": {
@@ -1743,6 +2679,9 @@
      "absatz": "1",
      "item": "a"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "343": {
@@ -1769,7 +2708,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "344": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1786,8 +2725,56 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "A. Der Lehrvertrag"
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "345": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4,
+    5
+   ]
+  },
+  "346": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4,
+    5
+   ]
+  },
+  "347": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "348": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "350": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "351": {
@@ -1810,6 +2797,72 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "352": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "353": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "354": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "355": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "356": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "357": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "358": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "359": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "360": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "361": {
@@ -1900,6 +2953,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "362": {
@@ -2177,6 +3233,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "364": {
@@ -2546,7 +3605,7 @@
    ]
   },
   "492": {
-   "giltSeit": "1942-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2559,8 +3618,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwanzigster Titel: Die Bürgschaft"
     }
+   ]
+  },
+  "493": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "494": {
@@ -2600,6 +3667,65 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    8
+   ]
+  },
+  "495": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "496": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "497": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "498": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "499": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "500": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "501": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "502": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "503": {
@@ -2622,6 +3748,72 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    8
+   ]
+  },
+  "504": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "505": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "506": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "507": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "508": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "509": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "510": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "511": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "512": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "519": {
@@ -2703,7 +3895,7 @@
    ]
   },
   "552": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2716,8 +3908,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritte Abteilung: Die Handelsgesellschaften und die Genossenschaft"
     }
+   ]
+  },
+  "553": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "554": {
@@ -2740,6 +3940,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "555": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "556": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "557": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "558": {
@@ -2779,6 +4003,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "559": {
@@ -2818,6 +4045,198 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "560": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "561": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "562": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "563": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "564": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "565": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "566": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "567": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "568": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "569": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "570": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "571": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "572": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "573": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "574": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "575": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "576": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "577": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "578": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "579": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "580": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "581": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "582": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "583": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "584": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "585": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "586": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "587": {
@@ -2840,6 +4259,37 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "588": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "589": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "590": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "591": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "592": {
@@ -2862,6 +4312,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "593": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "594": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "595": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "596": {
@@ -2918,6 +4392,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "597": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "598": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "599": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "600": {
@@ -2940,6 +4438,51 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "601": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "602": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "603": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "604": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "605": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "606": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "607": {
@@ -2965,6 +4508,27 @@
    ],
    "aufgehobenSeit": "2016-07-01"
   },
+  "608": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "609": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "610": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
   "611": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
@@ -2985,6 +4549,58 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "612": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "613": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "614": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "615": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "616": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "617": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "618": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "619": {
@@ -3007,6 +4623,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "620": {
@@ -3029,6 +4648,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "621": {
@@ -3051,6 +4673,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "622": {
@@ -3192,6 +4817,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "623": {
@@ -3231,6 +4859,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "624": {
@@ -3253,6 +4884,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "625": {
@@ -3398,8 +5032,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Gesetzlich vorgeschriebener Inhalt der Statuten"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "629": {
@@ -3473,6 +5111,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "630": {
@@ -3495,6 +5136,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "631": {
@@ -3534,6 +5178,9 @@
      "absatz": "2",
      "item": "6"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "632": {
@@ -3573,6 +5220,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "633": {
@@ -3595,6 +5245,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "634": {
@@ -3617,6 +5270,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "635": {
@@ -3656,6 +5312,9 @@
      "absatz": null,
      "item": "1"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "636": {
@@ -3678,6 +5337,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "640": {
@@ -3717,6 +5379,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "641": {
@@ -3802,6 +5467,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "644": {
@@ -3841,6 +5509,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "645": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "646": {
@@ -3886,6 +5564,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "650": {
@@ -3908,6 +5589,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "651": {
@@ -4002,8 +5686,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Aktienzeichnung"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653": {
@@ -4026,10 +5714,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "654": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4046,8 +5737,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Voraussetzungen"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "655": {
@@ -4093,10 +5788,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "657": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4130,8 +5828,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "K. Genussscheine"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "658": {
@@ -4177,6 +5879,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "660": {
@@ -4199,6 +5904,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "661": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "662": {
@@ -4336,6 +6051,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "672": {
@@ -4358,6 +6076,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "673": {
@@ -4380,6 +6101,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "674": {
@@ -4402,6 +6126,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "675": {
@@ -4441,6 +6168,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "676": {
@@ -4463,6 +6193,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "677": {
@@ -4502,6 +6235,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "678": {
@@ -4524,6 +6260,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "679": {
@@ -4580,6 +6319,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "680": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "681": {
@@ -4602,6 +6351,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "682": {
@@ -4624,6 +6376,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "683": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "684": {
@@ -4646,6 +6408,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685": {
@@ -4668,6 +6433,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "686": {
@@ -4741,6 +6509,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "687": {
@@ -4763,6 +6534,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "688": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "689": {
@@ -4802,6 +6583,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "690": {
@@ -4824,6 +6608,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "691": {
@@ -4846,6 +6633,9 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "692": {
@@ -4868,6 +6658,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "693": {
@@ -4941,6 +6734,16 @@
      "absatz": "3",
      "item": "4"
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "694": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "695": {
@@ -4963,6 +6766,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "696": {
@@ -5008,6 +6814,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "698": {
@@ -5149,6 +6958,9 @@
      "absatz": "3",
      "item": "4"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "699": {
@@ -5171,6 +6983,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "700": {
@@ -5193,6 +7008,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701": {
@@ -5215,6 +7033,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "702": {
@@ -5305,6 +7126,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "703": {
@@ -5327,6 +7151,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "704": {
@@ -5383,6 +7210,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "705": {
@@ -5422,6 +7252,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "706": {
@@ -5478,6 +7311,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "707": {
@@ -5532,7 +7368,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Der Verwaltungsrat"
     },
     {
      "typ": "fassung",
@@ -5549,8 +7386,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Wählbarkeit"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "708": {
@@ -5613,6 +7454,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "710": {
@@ -5635,6 +7480,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "711": {
@@ -5680,6 +7529,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "713": {
@@ -5736,6 +7589,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "714": {
@@ -5758,6 +7615,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "715": {
@@ -5780,6 +7641,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "716": {
@@ -5802,6 +7667,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "717": {
@@ -5841,6 +7710,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "718": {
@@ -5914,10 +7787,14 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "719": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5934,8 +7811,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Zeichnung"
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "720": {
@@ -5998,10 +7880,14 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "722": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6035,8 +7921,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "VI. Haftung für Organe"
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "725": {
@@ -6059,6 +7950,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "726": {
@@ -6081,6 +7976,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "727": {
@@ -6135,8 +8034,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Revisionsstelle"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "728": {
@@ -6159,6 +8062,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    11
    ]
   },
   "729": {
@@ -6181,10 +8088,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "730": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "731": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
    ]
   },
   "732": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6201,8 +8128,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Vergütungen bei Gesellschaften, deren Aktien an einer Börse kotiert sind",
+     "teilweise": "Fassung gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023, Art. 734f in Kraft seit 1. Jan. 2021 (AS 2020 4005; 2022 109; BBl 2017 399)."
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "733": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "735": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
    ]
   },
   "736": {
@@ -6242,6 +8198,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "737": {
@@ -6264,6 +8223,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "738": {
@@ -6286,6 +8248,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "739": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "740": {
@@ -6342,6 +8314,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "741": {
@@ -6364,6 +8339,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "742": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "743": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "744": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "745": {
@@ -6420,6 +8419,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "746": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "747": {
@@ -6442,6 +8451,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "751": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "752": {
@@ -6504,6 +8523,9 @@
      "absatz": null,
      "item": "1"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "754": {
@@ -6526,6 +8548,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "755": {
@@ -6565,6 +8590,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "756": {
@@ -6604,6 +8632,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "757": {
@@ -6643,6 +8674,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "758": {
@@ -6682,6 +8716,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "759": {
@@ -6704,6 +8741,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "760": {
@@ -6743,6 +8783,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "761": {
@@ -6839,6 +8882,23 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "763": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "764": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "765": {
@@ -6861,6 +8921,37 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "766": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "767": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "768": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "769": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "770": {
@@ -6883,10 +8974,20 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "771": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "772": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6903,8 +9004,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achtundzwanzigster Titel: Die Gesellschaft mit beschränkter Haftung"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "773": {
@@ -6927,6 +9032,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "774": {
@@ -6949,6 +9058,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "775": {
@@ -6994,6 +9107,10 @@
      "absatz": null,
      "item": "4"
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "777": {
@@ -7050,6 +9167,26 @@
      "absatz": "2",
      "item": "5"
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "778": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "779": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "780": {
@@ -7072,6 +9209,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "781": {
@@ -7111,6 +9252,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "782": {
@@ -7133,6 +9278,26 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "783": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "784": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "785": {
@@ -7155,6 +9320,42 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "786": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "787": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "788": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "789": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "790": {
@@ -7194,6 +9395,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "791": {
@@ -7216,6 +9421,58 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "792": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "793": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "794": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "795": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "796": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "797": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "798": {
@@ -7238,6 +9495,26 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "799": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "800": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "801": {
@@ -7260,6 +9537,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "802": {
@@ -7282,6 +9563,18 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "803": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "804": {
@@ -7338,6 +9631,10 @@
      "absatz": "2",
      "item": "5bis"
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "805": {
@@ -7411,6 +9708,42 @@
      "absatz": "5",
      "item": "5"
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "806": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "807": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "808": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "809": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "810": {
@@ -7450,6 +9783,34 @@
      "absatz": "2",
      "item": "7"
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "811": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "812": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "813": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "814": {
@@ -7506,6 +9867,50 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "815": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "816": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "817": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "818": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "819": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "820": {
@@ -7528,6 +9933,66 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "821": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "822": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "823": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "824": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "825": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "826": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "827": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "828": {
@@ -7550,6 +10015,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "829": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "830": {
@@ -7572,6 +10047,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "831": {
@@ -7594,6 +10072,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "832": {
@@ -7650,6 +10131,9 @@
      "absatz": null,
      "item": "5"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "833": {
@@ -7706,6 +10190,9 @@
      "absatz": null,
      "item": "8"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "834": {
@@ -7728,6 +10215,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "835": {
@@ -7750,6 +10240,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "836": {
@@ -7795,6 +10288,135 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "838": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "839": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "840": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "841": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "842": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "843": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "844": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "845": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "846": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "847": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "848": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "849": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "850": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "851": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "852": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "853": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "854": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "855": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "856": {
@@ -7851,6 +10473,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "857": {
@@ -7873,10 +10498,13 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "858": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -7910,10 +10538,18 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Allfällige Rechte auf den Jahresgewinn"
     }
    ],
    "aufgehobenSeit": "2013-01-01"
+  },
+  "859": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
   },
   "860": {
    "giltSeit": null,
@@ -7935,6 +10571,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "861": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "862": {
@@ -7957,6 +10603,79 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "863": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "864": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "865": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "866": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "867": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "868": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "869": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "870": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "871": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "872": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "873": {
@@ -7979,6 +10698,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "874": {
@@ -8001,6 +10723,30 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "875": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "876": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "877": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "878": {
@@ -8023,6 +10769,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "879": {
@@ -8096,6 +10845,16 @@
      "absatz": "2",
      "item": "3bis"
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "880": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "881": {
@@ -8118,6 +10877,44 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "882": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "883": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "884": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "885": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "886": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "887": {
@@ -8140,6 +10937,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "888": {
@@ -8162,6 +10962,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "889": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "890": {
@@ -8201,6 +11011,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "891": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "892": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "893": {
@@ -8223,6 +11050,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "894": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "895": {
@@ -8247,6 +11084,20 @@
     }
    ],
    "aufgehobenSeit": "2008-01-01"
+  },
+  "896": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "897": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
   },
   "898": {
    "giltSeit": "2015-07-01",
@@ -8285,6 +11136,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "899": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "900": {
@@ -8307,6 +11168,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "901": {
@@ -8352,6 +11216,9 @@
      "absatz": "3",
      "item": "3"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "903": {
@@ -8374,6 +11241,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "904": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "905": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "906": {
@@ -8396,6 +11280,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "907": {
@@ -8434,6 +11321,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "908": {
@@ -8456,6 +11346,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "911": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "912": {
@@ -8478,6 +11378,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "913": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "914": {
@@ -8503,6 +11413,13 @@
    ],
    "aufgehobenSeit": "2004-07-01"
   },
+  "915": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
   "916": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
@@ -8523,6 +11440,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "917": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "918": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "919": {
@@ -8562,6 +11496,51 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "920": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "921": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "922": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "923": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "924": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "925": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "926": {
@@ -8601,10 +11580,13 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "927": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8617,7 +11599,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierte Abteilung: Handelsregister, Geschäftsfirmen und kaufmännische Buchführung"
     },
     {
      "typ": "fassung",
@@ -8634,8 +11617,58 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dreissigster Titel: Das Handelsregister",
+     "teilweise": "Fassung gemäss Ziff. I 1 des BG vom 17. März 2017 (Handelsregisterrecht), in Kraft seit 1. Jan. 2021, Art. 928b und 928c in Kraft seit 1. April 2020 (AS 2020 957; BBl 2015 3617)."
     }
+   ]
+  },
+  "928": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "929": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "930": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "931": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "932": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "933": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
    ]
   },
   "934": {
@@ -8658,6 +11691,66 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "935": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "936": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "937": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "938": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "939": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "940": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "941": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
    ]
   },
   "942": {
@@ -8680,6 +11773,25 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "943": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "944": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14
    ]
   },
   "945": {
@@ -8719,6 +11831,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
+   ]
+  },
+  "946": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14
    ]
   },
   "949": {
@@ -8764,6 +11886,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
    ]
   },
   "951": {
@@ -8786,6 +11911,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
+   ]
+  },
+  "952": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14
    ]
   },
   "953": {
@@ -8811,6 +11946,13 @@
    ],
    "aufgehobenSeit": "2016-07-01"
   },
+  "954": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14
+   ]
+  },
   "955": {
    "giltSeit": "2008-01-01",
    "ereignisse": [
@@ -8831,6 +11973,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
    ]
   },
   "956": {
@@ -8853,10 +11998,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
    ]
   },
   "957": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8873,7 +12021,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiunddreissigster Titel: Kaufmännische Buchführung, Rechnungslegung, weitere Transparenz- und Sorgfaltspflichten"
     },
     {
      "typ": "fassung",
@@ -8890,12 +12039,25 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiunddreissigster Titel: Kaufmännische Buchführung, Rechnungslegung, weitere Transparenz- und Sorgfaltspflichten"
     }
+   ],
+   "erbt": [
+    14
+   ]
+  },
+  "958": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "959": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8912,8 +12074,51 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Jahresrechnung und Zwischenabschluss"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "960": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "961": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "962": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "963": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "964": {
@@ -8940,7 +12145,7 @@
    "aufgehobenSeit": "2002-06-01"
   },
   "965": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8953,8 +12158,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfte Abteilung: Die Wertpapiere"
     }
+   ]
+  },
+  "966": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "967": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "968": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "969": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "970": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "971": {
@@ -8977,6 +12218,72 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "972": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "973": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "974": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "975": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "976": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "977": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "978": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "979": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "980": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "981": {
@@ -9016,6 +12323,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "982": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "983": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "984": {
@@ -9038,6 +12362,37 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "985": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "986": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "987": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "988": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "989": {
@@ -9060,6 +12415,275 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "990": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "991": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "992": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "993": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "994": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "995": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "996": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "997": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "998": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "999": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1000": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1001": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1002": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1003": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1004": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1005": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1006": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1007": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1008": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1009": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1010": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1011": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1012": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1013": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1014": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1015": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1016": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1017": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1018": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1019": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1020": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1021": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1022": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1023": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1024": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1025": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1026": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1027": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1028": {
@@ -9082,6 +12706,310 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1029": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1030": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1031": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1032": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1033": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1034": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1035": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1036": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1037": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1038": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1039": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1040": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1041": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1042": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1043": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1044": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1045": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1046": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1047": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1048": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1049": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1050": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1051": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1052": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1053": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1054": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1055": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1056": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1057": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1058": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1059": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1060": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1061": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1062": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1063": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1064": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1065": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1066": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1067": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1068": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1069": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1070": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1071": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1072": {
@@ -9104,6 +13032,37 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1073": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1074": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1075": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1076": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1077": {
@@ -9126,6 +13085,289 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1078": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1079": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1080": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1081": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1082": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1083": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1084": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1085": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1086": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1087": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1088": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1089": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1090": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1091": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1092": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1093": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1094": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1095": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1096": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1097": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1098": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1099": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1100": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1101": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1102": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1103": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1104": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1105": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1106": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1107": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1108": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1109": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1110": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1111": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1112": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1113": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1114": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1115": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1116": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1117": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1118": {
@@ -9148,6 +13390,247 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1119": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1120": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1121": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1122": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1123": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1124": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1125": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1126": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1127": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1128": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1129": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1130": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1131": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1132": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1133": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1134": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1135": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1136": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1137": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1138": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1139": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1140": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1141": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1142": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1143": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1144": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1145": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1146": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1147": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1148": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1149": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1150": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1151": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1152": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1153": {
@@ -9170,6 +13653,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1154": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "1155": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1156": {
@@ -9196,7 +13696,7 @@
    "aufgehobenSeit": "2020-01-01"
   },
   "1157": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9213,8 +13713,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Abschnitt: Gläubigergemeinschaft bei Anleihensobligationen"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "1158": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1159": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1160": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1161": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1162": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1163": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1164": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "1165": {
@@ -9254,6 +13814,82 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1166": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1167": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1168": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1169": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1170": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1171": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1172": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1173": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1174": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "1175": {
@@ -9276,6 +13912,90 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1176": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1177": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1178": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1179": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1180": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1181": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1182": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1183": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1184": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "1185": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "1186": {
@@ -9298,6 +14018,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "1153_a": {
@@ -9320,6 +14044,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "128_a": {
@@ -9738,6 +14465,146 @@
    ],
    "aufgehobenSeit": "2014-07-01"
   },
+  "253_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "253_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "256_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "256_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "257_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "259_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "259_i": {
    "giltSeit": "2011-01-01",
    "ereignisse": [
@@ -9758,6 +14625,107 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "260_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "261_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "261_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "266_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "266_m": {
@@ -9780,6 +14748,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "266_n": {
@@ -9802,6 +14773,58 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "266_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "267_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "268_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "268_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "269_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "269_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "269_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "269_d": {
@@ -9841,6 +14864,79 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "270_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "270_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "270_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "270_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "270_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "271_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "272_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "272_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "272_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "272_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "273_a": {
@@ -9863,6 +14959,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "273_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "273_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "274_274_g": {
@@ -9908,6 +15021,86 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "289_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "297_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "297_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "299_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "299_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "299_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "321_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "321_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "321_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "321_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "321_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "322_a": {
@@ -9930,6 +15123,44 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "322_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "322_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "322_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "323_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "323_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "324_a": {
@@ -9952,6 +15183,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "324_b": {
@@ -9974,6 +15208,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "326_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "327_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "327_b": {
@@ -9996,6 +15247,23 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "327_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "328_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "328_b": {
@@ -10035,6 +15303,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_a": {
@@ -10074,6 +15345,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_b": {
@@ -10181,6 +15455,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_c": {
@@ -10203,6 +15480,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "329_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "329_e": {
@@ -10225,6 +15512,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_f": {
@@ -10281,6 +15571,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_g": {
@@ -10320,6 +15613,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_g_bis": {
@@ -10342,6 +15638,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_h": {
@@ -10364,6 +15663,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_i": {
@@ -10386,6 +15688,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "329_j": {
@@ -10408,6 +15713,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "330_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "330_b": {
@@ -10430,6 +15745,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_a": {
@@ -10452,6 +15770,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_b": {
@@ -10474,6 +15795,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_c": {
@@ -10496,6 +15820,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_d": {
@@ -10569,6 +15896,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_e": {
@@ -10642,6 +15972,9 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "331_f": {
@@ -10664,6 +15997,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "332_a": {
@@ -10709,6 +16045,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "333_b": {
@@ -10731,6 +16070,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_a": {
@@ -10753,6 +16095,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_b": {
@@ -10775,6 +16120,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_c": {
@@ -10831,6 +16179,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_d": {
@@ -10853,6 +16204,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_e": {
@@ -10892,6 +16246,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_f": {
@@ -10914,6 +16271,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_g": {
@@ -10936,6 +16296,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_h": {
@@ -10958,6 +16321,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_i": {
@@ -10980,6 +16346,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_j": {
@@ -11002,6 +16371,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "335_k": {
@@ -11024,6 +16396,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "336_a": {
@@ -11063,6 +16438,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "336_b": {
@@ -11085,6 +16463,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "336_c": {
@@ -11172,7 +16553,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "1",
-     "item": "cquater"
+     "item": "cquater",
+     "frueher": "Bst. cbis, dann cter"
     },
     {
      "typ": "eingefuegt",
@@ -11208,6 +16590,9 @@
      "absatz": "1",
      "item": "cquinquies"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "336_d": {
@@ -11230,6 +16615,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "337_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "337_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "337_c": {
@@ -11252,6 +16654,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "337_d": {
@@ -11291,6 +16696,23 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "338_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "339_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "339_b": {
@@ -11313,6 +16735,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "339_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "339_d": {
@@ -11335,6 +16767,187 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "340_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "340_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "340_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "344_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4,
+    5
+   ]
+  },
+  "345_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4,
+    5
+   ]
+  },
+  "346_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4,
+    5
+   ]
+  },
+  "347_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "348_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "348_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "349_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "350_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "351_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "352_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "353_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "353_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "356_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "356_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "356_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "357_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "357_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "359_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "360_a": {
@@ -11374,6 +16987,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "360_b": {
@@ -11413,6 +17029,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "360_c": {
@@ -11435,6 +17054,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "360_d": {
@@ -11457,6 +17079,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "360_e": {
@@ -11479,6 +17104,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "360_f": {
@@ -11501,6 +17129,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "397_a": {
@@ -11526,7 +17157,7 @@
    ]
   },
   "406_a": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -11543,8 +17174,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Abschnittbis: Auftrag zur Ehe- oder zur Partnerschaftsvermittlung"
     }
+   ]
+  },
+  "406_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "406_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "406_d": {
@@ -11584,6 +17230,9 @@
      "absatz": null,
      "item": "6"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "406_e": {
@@ -11606,6 +17255,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "406_f": {
@@ -11651,6 +17303,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
+   ]
+  },
+  "406_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "40_a": {
@@ -12064,7 +17726,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Der Agenturvertrag"
     }
    ]
   },
@@ -12088,6 +17751,142 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "418_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_u": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "418_v": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "515_a": {
@@ -12132,6 +17931,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "59_a": {
@@ -12233,6 +18035,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "634_b": {
@@ -12255,6 +18060,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "635_a": {
@@ -12294,6 +18102,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "637_639": {
@@ -12493,6 +18304,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_c": {
@@ -12532,6 +18346,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_d": {
@@ -12605,6 +18422,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_e": {
@@ -12661,6 +18481,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_f": {
@@ -12717,6 +18540,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_g": {
@@ -12756,6 +18582,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "652_h": {
@@ -12795,6 +18624,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_a": {
@@ -12834,6 +18666,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_b": {
@@ -12924,6 +18759,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_c": {
@@ -12963,6 +18801,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_d": {
@@ -13002,6 +18843,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_e": {
@@ -13058,6 +18902,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_f": {
@@ -13097,6 +18944,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_g": {
@@ -13136,6 +18986,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_h": {
@@ -13215,6 +19068,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_j": {
@@ -13237,6 +19093,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_k": {
@@ -13259,6 +19118,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_l": {
@@ -13281,6 +19143,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_m": {
@@ -13303,6 +19168,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_n": {
@@ -13325,6 +19193,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_o": {
@@ -13347,6 +19218,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_p": {
@@ -13369,6 +19243,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_q": {
@@ -13391,6 +19268,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_r": {
@@ -13413,6 +19293,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_s": {
@@ -13435,6 +19318,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_t": {
@@ -13457,6 +19343,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_u": {
@@ -13479,6 +19368,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "653_v": {
@@ -13501,6 +19393,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_a": {
@@ -13591,6 +19486,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_b": {
@@ -13647,6 +19545,9 @@
      "absatz": "4",
      "item": "3"
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_c": {
@@ -13703,6 +19604,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_d": {
@@ -13759,6 +19663,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_e": {
@@ -13781,6 +19688,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_f": {
@@ -13803,6 +19713,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "656_g": {
@@ -13825,6 +19738,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "659_a": {
@@ -13864,6 +19780,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "659_b": {
@@ -13903,6 +19822,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "662_a": {
@@ -14251,6 +20173,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "678_a": {
@@ -14273,6 +20198,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "684_a": {
@@ -14295,6 +20223,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_a": {
@@ -14317,6 +20248,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_b": {
@@ -14339,6 +20273,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_c": {
@@ -14361,6 +20298,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_d": {
@@ -14408,6 +20348,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_e": {
@@ -14430,6 +20373,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_f": {
@@ -14452,6 +20398,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "685_g": {
@@ -14474,6 +20423,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "686_a": {
@@ -14496,6 +20448,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_a": {
@@ -14569,6 +20524,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_b": {
@@ -14608,6 +20566,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_c": {
@@ -14647,6 +20608,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_d": {
@@ -14686,6 +20650,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_e": {
@@ -14725,6 +20692,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "689_f": {
@@ -14747,6 +20717,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_a": {
@@ -14786,6 +20759,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_b": {
@@ -14825,6 +20801,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_c": {
@@ -14864,6 +20843,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_d": {
@@ -14903,6 +20885,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_e": {
@@ -14942,6 +20927,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_f": {
@@ -14981,6 +20969,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_g": {
@@ -15020,6 +21011,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_h": {
@@ -15059,6 +21053,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_h_bis": {
@@ -15081,6 +21078,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "697_i": {
@@ -15263,6 +21263,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "699_a": {
@@ -15285,6 +21288,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "699_b": {
@@ -15307,6 +21313,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "6_a": {
@@ -15351,6 +21360,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701_b": {
@@ -15373,6 +21385,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701_c": {
@@ -15395,6 +21410,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701_d": {
@@ -15417,6 +21435,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701_e": {
@@ -15439,6 +21460,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "701_f": {
@@ -15461,6 +21485,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "702_a": {
@@ -15500,6 +21527,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "704_a": {
@@ -15522,6 +21552,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "704_b": {
@@ -15544,6 +21577,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "706_a": {
@@ -15583,6 +21619,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "706_b": {
@@ -15622,6 +21661,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "715_a": {
@@ -15644,6 +21686,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "716_a": {
@@ -15708,6 +21754,10 @@
      "absatz": "1",
      "item": "8"
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "716_b": {
@@ -15747,6 +21797,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "717_a": {
@@ -15769,6 +21823,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "718_a": {
@@ -15791,6 +21849,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "718_b": {
@@ -15830,6 +21892,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "723_724": {
@@ -15892,6 +21958,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "725_b": {
@@ -15914,6 +21984,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "725_c": {
@@ -15936,6 +22010,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    10
    ]
   },
   "727_a": {
@@ -15975,6 +22053,26 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "727_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "727_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
    ]
   },
   "728_a": {
@@ -15997,6 +22095,50 @@
      "absatz": "1",
      "item": "4"
     }
+   ],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "728_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "728_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "729_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "729_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "729_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
    ]
   },
   "730_a": {
@@ -16019,6 +22161,34 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "730_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "730_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
+   ]
+  },
+  "731_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    11
    ]
   },
   "731_b": {
@@ -16109,6 +22279,89 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "734_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "734_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "735_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "735_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "735_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
+   ]
+  },
+  "735_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    12
    ]
   },
   "748_750": {
@@ -16134,6 +22387,14 @@
    ],
    "aufgehobenSeit": "2004-07-01"
   },
+  "774_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
   "776_a": {
    "giltSeit": null,
    "ereignisse": [
@@ -16157,6 +22418,14 @@
    ],
    "aufgehobenSeit": "2023-01-01"
   },
+  "777_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
   "777_b": {
    "giltSeit": null,
    "ereignisse": [
@@ -16177,6 +22446,10 @@
      "absatz": "2",
      "item": "6"
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "777_c": {
@@ -16216,6 +22489,10 @@
      "absatz": "2",
      "item": "2"
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "778_a": {
@@ -16241,6 +22518,14 @@
    ],
    "aufgehobenSeit": "2021-01-01"
   },
+  "779_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
   "787_a": {
    "giltSeit": "2025-01-01",
    "ereignisse": [
@@ -16261,6 +22546,26 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "789_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "789_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "790_a": {
@@ -16303,6 +22608,38 @@
    ],
    "aufgehobenSeit": "2026-10-01"
   },
+  "795_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "795_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "795_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "795_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
   "797_a": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
@@ -16323,6 +22660,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
    ]
   },
   "798_a_798_b": {
@@ -16347,6 +22688,38 @@
     }
    ],
    "aufgehobenSeit": "2023-01-01"
+  },
+  "801_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "806_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "806_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "808_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
   },
   "808_b": {
    "giltSeit": "2023-01-01",
@@ -16402,6 +22775,42 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "808_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "821_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "822_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
+   ]
+  },
+  "825_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9,
+    13
    ]
   },
   "838_a": {
@@ -16424,6 +22833,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "893_a": {
@@ -16446,6 +22858,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "899_a": {
@@ -16468,6 +22883,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "902_a": {
@@ -16490,6 +22908,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "909_910": {
@@ -16569,6 +22990,10 @@
      "absatz": "2quater",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
    ]
   },
   "928_b": {
@@ -16642,6 +23067,10 @@
      "absatz": "3bis",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
    ]
   },
   "928_c": {
@@ -16664,6 +23093,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
    ]
   },
   "934_a": {
@@ -16686,6 +23119,26 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "936_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
+   ]
+  },
+  "936_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    15
    ]
   },
   "947_948": {
@@ -16731,6 +23184,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
    ]
   },
   "955_a": {
@@ -16753,6 +23209,27 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14
+   ]
+  },
+  "957_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "958_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "958_b": {
@@ -16775,6 +23252,29 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "958_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "958_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "958_e": {
@@ -16814,6 +23314,20 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "958_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "959_a": {
@@ -16887,6 +23401,22 @@
      "absatz": "2",
      "item": "g"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "959_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
    ]
   },
   "959_c": {
@@ -16943,6 +23473,62 @@
      "absatz": "2",
      "item": "15"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "960_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "960_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "960_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "960_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "960_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
    ]
   },
   "960_f": {
@@ -16965,6 +23551,39 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17,
+    18
+   ]
+  },
+  "961_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "961_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "961_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "961_d": {
@@ -17004,6 +23623,20 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "962_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "963_a": {
@@ -17043,10 +23676,24 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "963_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17
    ]
   },
   "964_a": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17063,12 +23710,38 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechster Abschnitt: Transparenz über nichtfinanzielle Belange"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "964_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    19
+   ]
+  },
+  "964_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    19
    ]
   },
   "964_d": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -17076,7 +23749,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Sechster Abschnitt und Art. 964a–964f",
+     "ueberschrift": "Siebter Abschnitt: Transparenz bei Rohstoffunternehmen"
     },
     {
      "typ": "eingefuegt",
@@ -17093,12 +23768,68 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebter Abschnitt: Transparenz bei Rohstoffunternehmen"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "964_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    20
+   ]
+  },
+  "964_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    20
+   ]
+  },
+  "964_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    20
+   ]
+  },
+  "964_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    20
+   ]
+  },
+  "964_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    20
    ]
   },
   "964_j": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17115,12 +23846,38 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Achter Abschnitt: Sorgfaltspflichten und Transparenz bezüglich Mineralien und Metallen aus Konfliktgebieten und Kinderarbeit"
     }
+   ],
+   "erbt": [
+    14,
+    16,
+    17
+   ]
+  },
+  "964_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    21
+   ]
+  },
+  "964_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    14,
+    16,
+    17,
+    21
    ]
   },
   "973_a": {
-   "giltSeit": "2021-02-01",
+   "giltSeit": "2010-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17154,8 +23911,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "G. Sammelverwahrung, Globalurkunde und einfache Wertrechte"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_b": {
@@ -17178,6 +23939,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    22
    ]
   },
   "973_c": {
@@ -17234,6 +23999,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    22
    ]
   },
   "973_d": {
@@ -17256,6 +24025,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_e": {
@@ -17278,6 +24050,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_f": {
@@ -17300,6 +24075,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_g": {
@@ -17322,6 +24100,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_h": {
@@ -17344,6 +24125,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "973_i": {
@@ -17366,10 +24150,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "disp_u12_art_1": {
-   "giltSeit": "1990-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17386,12 +24173,34 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schlussbestimmungen zum VIII. Titel und zum VIIIbis. Titel"
     }
    ]
   },
+  "disp_u12_art_2_4": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    23
+   ]
+  },
+  "disp_u12_art_5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    23
+   ]
+  },
+  "disp_u12_art_6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    23
+   ]
+  },
   "disp_u13_art_1": {
-   "giltSeit": "1972-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17408,8 +24217,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schluss- und Übergangsbestimmungen zum X. Titel"
     }
+   ]
+  },
+  "disp_u13_art_2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
+   ]
+  },
+  "disp_u13_art_3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
+   ]
+  },
+  "disp_u13_art_4": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
+   ]
+  },
+  "disp_u13_art_5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
+   ]
+  },
+  "disp_u13_art_6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
    ]
   },
   "disp_u13_art_7": {
@@ -17432,10 +24277,20 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    24
+   ]
+  },
+  "disp_u13_art_8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    24
    ]
   },
   "disp_u14_art_1": {
-   "giltSeit": "1950-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17452,12 +24307,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schlussbestimmungen zum vierten Abschnitt des XIII. Titels"
     }
    ]
   },
+  "disp_u14_art_2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    25
+   ]
+  },
+  "disp_u14_art_3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    25
+   ]
+  },
   "disp_u16_art_1": {
-   "giltSeit": "1937-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17470,8 +24340,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schluss- und Übergangsbestimmungen zu den Titeln XXIV–XXXIII"
     }
+   ]
+  },
+  "disp_u16_art_10": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_11": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_12": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
    ]
   },
   "disp_u16_art_14": {
@@ -17497,6 +24396,34 @@
    ],
    "aufgehobenSeit": "1989-01-01"
   },
+  "disp_u16_art_15": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_17": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
   "disp_u16_art_19": {
    "giltSeit": null,
    "ereignisse": [
@@ -17508,6 +24435,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
    ]
   },
   "disp_u16_art_4": {
@@ -17533,6 +24477,13 @@
    ],
    "aufgehobenSeit": "2004-07-01"
   },
+  "disp_u16_art_5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
   "disp_u16_art_6": {
    "giltSeit": null,
    "ereignisse": [
@@ -17549,8 +24500,29 @@
     "seit": null
    }
   },
+  "disp_u16_art_7": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
+  "disp_u16_art_9": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    26
+   ]
+  },
   "disp_u17_art_1": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -17567,8 +24539,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Schlussbestimmungen zum XXVI. Titel"
     }
+   ]
+  },
+  "disp_u17_art_2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_4": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_7": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
+   ]
+  },
+  "disp_u17_art_9": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    27
    ]
   }
  },

@@ -12,7 +12,9 @@ const ABS = /Abs\.?\s*(\d+(?:bis|ter|quater|quinquies)?[a-z]?)/i;
 // «lit» + «e» (Match mitten im Wort «litera») fehlinterpretiert wird (B3):
 // nach «lit»/«Bst» muss ein Punkt oder eine Wortgrenze (\b) folgen.
 const LIT = /(?:lit\.|Bst\.|\blit\b|\bBst\b)\s*([a-z](?:bis|ter)?)\b/i;
-const ZIFF = /(?:Ziff\.|Ziffer|\bZiff\b)\s*(\d+[a-z]?)/i;
+// Lat. Suffix vor dem Einzel-Buchstaben (wie ABS), sonst wird «Ziff. 1bis» zu «1b» und
+// «Art. 187 Ziff. 1bis StGB» löst nie auf (Befund-Runde #1251, B3). «3b»/«5a» bleiben Buchstaben-Ziffern.
+const ZIFF = /(?:Ziff\.|Ziffer|\bZiff\b)\s*(\d+(?:bis|ter|quater|quinquies)?[a-z]?)/i;
 const SUFFIX = /^(\d+)([a-z])?(bis|ter|quater|quinquies)?$/;
 // Anhang-/Tarif-Ziffer ohne Art./§ («Anhang Ziff. 1.1.1», «Tarif-Nr. 2.5»,
 // «Ziffer 4.4.3.1»). NUR als Fallback, wenn ART (Art./§) NICHT matcht — sonst

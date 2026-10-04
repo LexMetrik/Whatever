@@ -7,6 +7,7 @@
 // locale.tsx, weil es zur App-/UI-Schicht gehört, nicht zur Engine-Schicht.
 
 import { useSyncExternalStore } from 'react';
+import { lokalSpeicher } from '../lib/sichererSpeicher';
 
 export type Thema = 'hell' | 'dunkel';        // aufgelöst (was tatsächlich angewandt wird)
 export type ThemaWahl = Thema | 'auto';       // Nutzer-Wahl ('auto' folgt dem System)
@@ -16,7 +17,7 @@ const KEY = 'lexmetrik-thema';
 /** Ausdrückliche Wahl aus dem letzten Besuch (inkl. 'auto'); null → noch keine. */
 function gespeicherteWahl(): ThemaWahl | null {
   try {
-    const v = localStorage.getItem(KEY);
+    const v = lokalSpeicher.lies(KEY);
     return v === 'hell' || v === 'dunkel' || v === 'auto' ? v : null;
   } catch {
     return null;
@@ -86,11 +87,8 @@ export function wendeThemaAn(t: Thema): void {
 const themaHoerer = new Set<() => void>();
 
 export function speichereThema(t: ThemaWahl): void {
-  try {
-    localStorage.setItem(KEY, t);
-  } catch {
-    /* privater Modus o. Ä. — Thema gilt dann nur für die Sitzung */
-  }
+  // Privater Modus o. Ä. → Thema gilt dann nur für die Sitzung.
+  lokalSpeicher.schreib(KEY, t);
   themaHoerer.forEach((f) => f());
 }
 

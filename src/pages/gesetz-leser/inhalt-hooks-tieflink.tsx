@@ -18,14 +18,17 @@
 // `leser-adresse-lm202.test.ts` und `tab-titel-paritaet.test.ts` bewachen ihn
 // genau dort, und ein Refactoring passt keine Tests an (§6.3).
 
-import { useEffect, useLayoutEffect, useRef, type Dispatch, type RefObject, type SetStateAction } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type Dispatch, type RefObject, type SetStateAction } from 'react';
 import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { istHashVerbraucht } from './scrollAnker';
 import { pfadZu } from './helpers';
 import { kanonischerAnkerToken } from './suchTreffer';
-import { paneRoot, findeArt } from './berechnungen';
-import type { Sektion } from '../../lib/normtext/browse';
+import { paneRoot, findeZiel } from './berechnungen';
+import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
+import { ladeStruktur, type Sektion } from '../../lib/normtext/browse';
+import { datenEbeneVonRoute } from '../../lib/normtext/erlassAdresse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { sicherDekodiert } from '../../lib/sicherDekodieren';
 
 /**
  * Layout-Effekt im Browser, gewoehnlicher Effekt im Prerender (W2·24-R6/L1).
@@ -35,6 +38,34 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
  * laufen, und `useLayoutEffect` warnt im Server-Render.
  */
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+/**
+ * Ist das Struktur-Sidecar dieses Erlasses ENTSCHIEDEN (geladen, 404 oder
+ * Fehler)? W2·17-UI-BEFUNDE PA-4-B01.
+ *
+ * Der Tieflink-Sprung wartete mit `!sektionen.length`, bis die Gliederung
+ * steht — das ist für gegliederte Erlasse richtig (Sidecar noch unterwegs), für
+ * die rund 146 Erlasse OHNE Gliederung aber ein Warten ohne Ende: `sektionen`
+ * bleibt `[]`, der Sprung feuerte nie, die Seite blieb bei scrollY 0 (BS-954.510
+ * #art-40, BS-190.510#art-39, ZH-211.23#art-15; nachgestellt mit 1,2 s
+ * verzögerter Erlass-Datei — auf schneller Leitung rettete der Retry von
+ * `ScrollZuHash` in `App.tsx`, 30 Frames). Aus `struktur === null` allein ist
+ * «noch nicht geladen» nicht von «gibt es nicht» zu unterscheiden; darum die
+ * eigene Auskunft. Der Fetch ist derselbe geteilte Cache wie in `useLeserDaten`
+ * (`ladeStrukturDoc`), kein zweiter Request; die Erledigung kommt zwei
+ * Mikrotasks hinter dessen `setStruktur` und landet im selben Render.
+ */
+function useStrukturEntschieden(ebene: string, schluessel: string): boolean {
+  const marke = `${ebene}/${schluessel}`;
+  const [fertigFuer, setFertigFuer] = useState<string | null>(null);
+  useEffect(() => {
+    let lebt = true;
+    const fertig = () => { if (lebt) setFertigFuer(marke); };
+    void ladeStruktur(datenEbeneVonRoute(ebene), schluessel).then(fertig, fertig);
+    return () => { lebt = false; };
+  }, [ebene, schluessel, marke]);
+  return fertigFuer === marke;
+}
 
 /** Der Hash-Seed-Sprung. Signatur = genau die Werte, die der Block gelesen hat. */
 export function useTieflinkSprung(opts: {
@@ -46,15 +77,15 @@ export function useTieflinkSprung(opts: {
   imPane: boolean;
   wurzel: RefObject<HTMLElement | null> | null;
   paneLocationHash: string;
-  artLabelByToken: Map<string, string>;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
-  setAktArtikel: Dispatch<SetStateAction<string | null>>;
+  setAktToken: Dispatch<SetStateAction<string | null>>;
   setAktivIds: Dispatch<SetStateAction<string[]>>;
 }): void {
   const {
     ebene, schluessel, eintraege, sektionen, istSekundaer, imPane, wurzel,
-    paneLocationHash, artLabelByToken, setOffen, setAktArtikel, setAktivIds,
+    paneLocationHash, setOffen, setAktToken, setAktivIds,
   } = opts;
+  const strukturEntschieden = useStrukturEntschieden(ebene, schluessel);
 
   const oeffnePfad = (ids: string[]) => setOffen((o) => {
     const n = { ...o }; for (const id of ids) n[id] = true; return n;
@@ -80,7 +111,9 @@ export function useTieflinkSprung(opts: {
   // (`<Routes location={loc}>` → react-router `useLocation()` liefert den Pane-Pfad),
   // sonst wie bisher die echte Fenster-URL (Primär/Einzelansicht byte-gleich).
   useIsoLayoutEffect(() => {
-    if (!eintraege || !sektionen.length || typeof window === 'undefined') return;
+    // PA-4-B01: ohne Gliederung ist `sektionen` für immer leer — gewartet wird nur,
+    // solange das Sidecar noch unterwegs sein könnte (`useStrukturEntschieden`).
+    if (!eintraege || (!sektionen.length && !strukturEntschieden) || typeof window === 'undefined') return;
     // A34: nur der ERSTE inhaltsbereite Lauf sät den Sprung. Danach gesperrt —
     // ein `imPane`/`wurzel`-Wechsel (Split-View öffnet) re-triggert den Effekt,
     // darf aber NICHT erneut an den (alten) Hash springen. Wächter VOR dem Hash-
@@ -101,7 +134,11 @@ export function useTieflinkSprung(opts: {
     // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
     if (!istSekundaer) aktualisiereTabArtikel(window.location.pathname + window.location.search + window.location.hash);
     // Nebenfund S6 (23.9.2026): «#art-336c» trifft den Token «336_c» (`./suchTreffer`).
-    const token = kanonischerAnkerToken(decodeURIComponent(m[1]), eintraege?.map((e) => e.artikel) ?? []);
+    const ankerRoh = sicherDekodiert(m[1]); // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung
+    if (!ankerRoh) return;
+    // E2 (Ziffer-Fragment): Suffix `-ziff-<z>` ab, BEVOR gegen die Token-Liste abgebildet wird.
+    const { artikel: artikelRoh, ziffer } = zerlegeZifferAnker(ankerRoh);
+    const token = kanonischerAnkerToken(artikelRoh, eintraege?.map((e) => e.artikel) ?? []);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     // LM-157 (W2·17-UI-BEFUNDE-B4): der Seed-Sprung öffnete den TOC-Pfad
     // (`oeffnePfad`) und scrollte den Text, setzte aber nie `aktivIds`/`aktArtikel`
@@ -115,8 +152,7 @@ export function useTieflinkSprung(opts: {
     // erst nach dem ersten manuellen Scroll.
     if (ids.length) {
       setAktivIds(ids);
-      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
-      setAktArtikel(artLabel);
+      setAktToken(token);
     }
     if (ids.length) oeffnePfad(ids);
     // ═══ W2·24-R6/L1 · DER TIEFLINK-SPRUNG WIRD NICHT GEMALT, BEVOR ER STEHT ══
@@ -174,7 +210,7 @@ export function useTieflinkSprung(opts: {
     const wurzelEl = typeof document !== 'undefined' ? document.documentElement : null;
     let aufgedeckt = false;
     const aufdecken = () => { aufgedeckt = true; wurzelEl?.removeAttribute('data-lr6-anker-warten'); };
-    const ziel = () => findeArt(paneRoot(imPane, wurzel), token);
+    const ziel = () => findeZiel(paneRoot(imPane, wurzel), token, ziffer); // Ziffer-Block, sonst der Artikel (E2)
     // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
     // EINE Sprung-Stelle für Erst-Sprung, Einschwingen und Nachzug (§5).
     const springe = (el: HTMLElement) => el.scrollIntoView({ block: 'start', behavior: 'auto' });
@@ -379,5 +415,5 @@ export function useTieflinkSprung(opts: {
     // eine tote Zeile (eslint meldet sie selbst als «unused directive»). Die
     // Dep-Liste bleibt byte-gleich; abgeschaltet war die Prüfung vorher wie
     // nachher.
-  }, [eintraege, sektionen, istSekundaer, imPane, wurzel]);
+  }, [eintraege, sektionen, strukturEntschieden, istSekundaer, imPane, wurzel]);
 }

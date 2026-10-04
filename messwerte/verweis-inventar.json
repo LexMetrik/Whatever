@@ -2,20 +2,20 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "ef7a647a94c74fccb46955608be35695699e892e02c1579dac341c18e9d6d850",
+    "normTextSha256": "00609abcd80626f91049c1e53150ca403e4e6363491fd61fcae86ca448e59977",
     "guards": 24
   },
   "korpus": {
     "erlasse": 1570,
     "eintraege": 60527,
-    "texte": 214946
+    "texte": 215003
   },
   "gesamt": {
-    "stellen": 36281,
-    "self": 19686,
+    "stellen": 36313,
+    "self": 19198,
     "fremd": 11660,
-    "text": 4935,
-    "selbstmarker": 925
+    "text": 5455,
+    "selbstmarker": 963
   },
   "fremdZiele": {
     "geprueft": 10531,
@@ -75,31 +75,31 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 817,
-      "erlasse": 313,
+      "stellen": 801,
+      "erlasse": 309,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 302,
-      "erlasse": 130,
+      "stellen": 179,
+      "erlasse": 86,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 905,
-      "erlasse": 214,
+      "stellen": 734,
+      "erlasse": 150,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 995,
+      "stellen": 994,
       "erlasse": 264,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
@@ -115,10 +115,18 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12889,
-      "erlasse": 473,
-      "selbstmarker": 606,
+      "stellen": 12418,
+      "erlasse": 455,
+      "selbstmarker": 641,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
+    },
+    {
+      "klasse": "fremderlass-genitiv",
+      "entscheid": "TEXT",
+      "stellen": 843,
+      "erlasse": 324,
+      "selbstmarker": 0,
+      "was": "«Art. N Abs. M des/der … -gesetzes/-verordnung/-übereinkommens …» — Passus zwischen Nummer und Erlassname; nie Selbstverweis (W2·17 Nachzug, 2.10.2026)"
     },
     {
       "klasse": "gesetzes-genitiv",
@@ -195,8 +203,8 @@
     {
       "klasse": "paragraf-fremd-name",
       "entscheid": "TEXT",
-      "stellen": 912,
-      "erlasse": 302,
+      "stellen": 909,
+      "erlasse": 300,
       "selbstmarker": 0,
       "was": "«§ N des/der/über/vom …» — Fremd-Indiz, kein Link"
     },
@@ -211,17 +219,17 @@
     {
       "klasse": "paragraf-kein-token",
       "entscheid": "TEXT",
-      "stellen": 76,
-      "erlasse": 48,
+      "stellen": 60,
+      "erlasse": 33,
       "selbstmarker": 0,
       "was": "«§ N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3291,
+      "stellen": 3281,
       "erlasse": 464,
-      "selbstmarker": 316,
+      "selbstmarker": 319,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"
     },
     {
@@ -251,15 +259,15 @@
     {
       "klasse": "plural-glied-kein-token",
       "entscheid": "TEXT",
-      "stellen": 63,
-      "erlasse": 32,
+      "stellen": 58,
+      "erlasse": 30,
       "selbstmarker": 0,
       "was": "A10-Glied — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3500,
+      "stellen": 3493,
       "erlasse": 206,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -267,8 +275,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 514,
-      "erlasse": 94,
+      "stellen": 526,
+      "erlasse": 98,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }
@@ -586,9 +594,9 @@
     }
   ],
   "zeitKanten": {
-    "stellen": 29,
-    "erlasse": 15,
-    "uebergangsTitel": 20,
+    "stellen": 30,
+    "erlasse": 16,
+    "uebergangsTitel": 21,
     "altrechtBlock": 11
   }
 }

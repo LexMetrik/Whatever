@@ -689,7 +689,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "voraussichtlich mehr als 200 m 3 Bauabfälle anfallen; oder"
+              "text": "voraussichtlich mehr als 200 m³ Bauabfälle anfallen; oder"
             },
             {
               "marke": "b",
@@ -706,7 +706,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_16",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "13b94cef6e193363b63e27f84c2826160f83152a46399561f565bd4770016141"
+      "sha": "d1d0e5e9fdf7cb023f5370de73e6e32ec6a9a479ff94a8c389b919adf7523eb5"
     },
     {
       "id": "bund/VVEA/art_17",
@@ -1225,7 +1225,7 @@
             },
             {
               "marke": "c",
-              "text": "bei Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, mindestens 80 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen."
+              "text": "bei Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, mindestens 80 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO₂ aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen."
             }
           ]
         }
@@ -1234,7 +1234,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_31",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "eb1a44cf8ffafdcfd67cc37ba519d90fa7b0a797f66efcd55e8abafd06a64b61"
+      "sha": "908eb406a185117fdd89b52408504694687593e3a54d8bfc6672957bd65d3193"
     },
     {
       "id": "bund/VVEA/art_32",
@@ -1254,7 +1254,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "von Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 und Abfällen vergleichbarer Zusammensetzung mindestens 55 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen;"
+              "text": "von Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 und Abfällen vergleichbarer Zusammensetzung mindestens 55 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO₂ aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen;"
             },
             {
               "marke": "b",
@@ -1291,7 +1291,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_32",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "1a6f912b9e600142015d90817f7ff2cd59230f8aa80c4fc4318c4c5a889e5f11"
+      "sha": "c979a1561f01be030deba51543199b3733b4f1470123c528af55471b36173e11"
     },
     {
       "id": "bund/VVEA/art_33",
@@ -1489,15 +1489,15 @@
           "items": [
             {
               "marke": "a",
-              "text": "Typ A: 50 000 m 3 ;"
+              "text": "Typ A: 50 000 m³;"
             },
             {
               "marke": "b",
-              "text": "Typ B und Typ C: 100 000 m 3 ;"
+              "text": "Typ B und Typ C: 100 000 m³;"
             },
             {
               "marke": "c",
-              "text": "Typ D und Typ E: 300 000 m 3 ."
+              "text": "Typ D und Typ E: 300 000 m³."
             }
           ]
         },
@@ -1514,7 +1514,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_37",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "c4f4803935a7e4e93bb8fe7de5110ba25dad097e1bfab47d91d0182940ecd9a1"
+      "sha": "74d1bb945a4dc240eb44d3cc8ffc750445ecd2a11812f721eab3828c7833fdbe"
     },
     {
       "id": "bund/VVEA/art_38",
@@ -2646,12 +2646,12 @@
             },
             {
               "marke": "a",
-              "text": "Bei Deponien und Kompartimenten des Typs B muss eine 2 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren Durchlässigkeitsbeiwert (k) von 1,0 × 10-7 m/s vorhanden sein oder der Untergrund nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10-8 m/s, welche zusammen 60 cm mächtig sind, ergänzt werden. Für eine Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
+              "text": "Bei Deponien und Kompartimenten des Typs B muss eine 2 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren Durchlässigkeitsbeiwert (k) von 1,0 × 10⁻⁷ m/s vorhanden sein oder der Untergrund nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10⁻⁸ m/s, welche zusammen 60 cm mächtig sind, ergänzt werden. Für eine Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
               "tiefe": 1
             },
             {
               "marke": "b",
-              "text": "Bei Deponien der Typen C, D und E muss eine 7 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren k von 1,0 × 10-7 m/s vorhanden sein oder eine 2 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren k von 1,0 × 10-7 m/s, die nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10-9 m/s, welche zusammen 60 cm mächtig sind, ergänzt wird. Für die Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
+              "text": "Bei Deponien der Typen C, D und E muss eine 7 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren k von 1,0 × 10⁻⁷ m/s vorhanden sein oder eine 2 m mächtige, weitgehend homogene, natürliche geologische Barriere mit einem mittleren k von 1,0 × 10⁻⁷ m/s, die nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10⁻⁹ m/s, welche zusammen 60 cm mächtig sind, ergänzt wird. Für die Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
               "tiefe": 1
             },
             {
@@ -2671,7 +2671,7 @@
             },
             {
               "marke": "c",
-              "text": "der Untergrund nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10-9 m/s, welche zusammen 80 cm mächtig sind, ergänzt wird. Für die Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
+              "text": "der Untergrund nach den Regeln des Erdbaus durch 3 lagenweise geschüttete, homogene, mineralische Einbauschichten mit einem mittleren k von 1,0 × 10⁻⁹ m/s, welche zusammen 80 cm mächtig sind, ergänzt wird. Für die Ergänzung des Untergrunds darf nur Material verwendet werden, das die Anforderungen nach Anhang 3 Ziffer 1 einhält.",
               "tiefe": 1
             },
             {
@@ -2723,7 +2723,7 @@
             },
             {
               "marke": "a",
-              "text": "Mineralische Abdichtung: Sie muss eine Mindestmächtigkeit von 80 cm und einen mittleren k von weniger oder gleich 1 × 10-9 m/s aufweisen und in mindestens 3 Schichten eingebaut werden, wobei jede Schicht einzeln verdichtet und vor dem Austrocknen geschützt werden muss.",
+              "text": "Mineralische Abdichtung: Sie muss eine Mindestmächtigkeit von 80 cm und einen mittleren k von weniger oder gleich 1 × 10⁻⁹ m/s aufweisen und in mindestens 3 Schichten eingebaut werden, wobei jede Schicht einzeln verdichtet und vor dem Austrocknen geschützt werden muss.",
               "tiefe": 1
             },
             {
@@ -2779,7 +2779,7 @@
             },
             {
               "marke": "a",
-              "text": "Mineralische Abtrennungen: Sie müssen 80 cm mächtig sein und einen mittleren k von weniger oder gleich 1 × 10-9 m/s aufweisen.",
+              "text": "Mineralische Abtrennungen: Sie müssen 80 cm mächtig sein und einen mittleren k von weniger oder gleich 1 × 10⁻⁹ m/s aufweisen.",
               "tiefe": 1
             },
             {
@@ -2941,7 +2941,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_2",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "4f51eebd356da1060d78c393b6833d54bdf3f950f85b24cb402aafe7880209aa"
+      "sha": "6139294076ab6fabe4b52f4e36a788e2eeac6bbf770dc01d137c321365a60f4f"
     },
     {
       "id": "bund/VVEA/annex_3",
@@ -3048,11 +3048,11 @@
                 "0,1"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "1"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "50"
               ],
               [
@@ -3078,7 +3078,7 @@
                 "** Σ6 Kongenere × 4.3 (IUPAC-Nr.): 28, 52, 101, 138, 153, 180"
               ],
               [
-                "*** ΣC 5 - bis C 10 -KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
+                "*** ΣC₅- bis C₁₀-KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
               ],
               [
                 "**** Σ6BTEX: Benzol, Toluol, Ethylbenzol, o-Xylol, m-Xylol, p-Xylol"
@@ -3173,11 +3173,11 @@
                 "0,5"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "5"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "250"
               ],
               [
@@ -3222,7 +3222,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_3",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "b1facafa36824f5a999fa5853cd56aa585724a77ae40b4f16f306607d9666e91"
+      "sha": "7fcd5ee4f77ef1e4f2b25e2d7da494407a2cbd97a8aa0a6e8558111e4726ae39"
     },
     {
       "id": "bund/VVEA/annex_4",
@@ -3323,11 +3323,11 @@
                 "10"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "100"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "5 000"
               ],
               [
@@ -3357,7 +3357,7 @@
                 "** Σ6 Kongenere × 4.3 (IUPAC_Nr.): 28, 52, 101, 138, 153, 180"
               ],
               [
-                "*** ΣC 5 - bis C 10 -KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
+                "*** ΣC₅- bis C₁₀-KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
               ],
               [
                 "**** Σ6BTEX: Benzol, Toluol, Ethylbenzol, o-Xylol, m-Xylol, p-Xylol"
@@ -3837,7 +3837,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_4",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "8c4ec35fbf1d00d4610e3af094279870a995b9d0c0a1cab0485633b8dec080d7"
+      "sha": "29947425230ad6570feaf278678da8b259486fa7aa0ce1a6609a410a795af63d"
     },
     {
       "id": "bund/VVEA/annex_5",
@@ -4094,11 +4094,11 @@
                 "1"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "10"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "500"
               ],
               [
@@ -4128,7 +4128,7 @@
                 "** Σ6 Kongenere x 4.3 (IUPAC-Nr.): 28, 52, 101, 138, 153, 180"
               ],
               [
-                "*** ΣC 5 - bis C 10 -KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
+                "*** ΣC₅- bis C₁₀-KW: Fläche FID-Chromatogramm zwischen n-Pentan und n-Decan, multipliziert mit dem Response Faktor von n-Hexan, minus ΣBTEX"
               ],
               [
                 "**** Σ6BTEX: Benzol, Toluol, Ethylbenzol, o-Xylol, m-Xylol, p-Xylol"
@@ -4434,11 +4434,11 @@
                 "1"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "10"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "500"
               ],
               [
@@ -4623,11 +4623,11 @@
                 "1"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "10"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "500"
               ],
               [
@@ -4786,11 +4786,11 @@
                 "10"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 5 –C 10 ***",
+                "Aliphatische Kohlenwasserstoffe C₅–C₁₀***",
                 "100"
               ],
               [
-                "Aliphatische Kohlenwasserstoffe C 10 –C 40",
+                "Aliphatische Kohlenwasserstoffe C₁₀–C₄₀",
                 "5 000"
               ],
               [
@@ -4872,7 +4872,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_5",
       "abgerufen": "2026-09-14",
       "fassungsToken": "20260801",
-      "sha": "49301ffd81153585f4643b207a35b8e98b3c652594279a864ce6c85822433ab0"
+      "sha": "b1086137b1a4f473ecaf44637a8912789b6650e23c6e6abb042301f0a02afaf4"
     },
     {
       "id": "bund/VVEA/annex_6",

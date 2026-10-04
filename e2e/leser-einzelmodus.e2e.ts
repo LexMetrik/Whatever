@@ -281,17 +281,6 @@ test.describe('W2·5m/E2 — die Dossier-Blöcke', () => {
     await expect(inhalt).toContainText('Verjährung', { timeout: 20_000 })
   })
 
-  test('M3 · der Rechtsprechungs-Block wird NICHT ausgeliefert (Phantom-Filter offen)', async ({ page }) => {
-    // Kap. 15.2/M3: das Modul ist angeschlossen, der Block bleibt hinter der
-    // Vorbedingung. In der ZEILE am Artikelende (Gesamtansicht) steht die
-    // Rubrik unverändert — dieser Schritt nimmt nichts weg.
-    await page.goto(einzel(OR, '336_c'))
-    await rahmenBereit(page)
-    const dossier = page.locator('[data-artikel-dossier]')
-    await expect(dossier).toBeVisible({ timeout: 20_000 })
-    await expect(dossier.locator('[data-dossier-reg="r"]')).toHaveCount(0)
-  })
-
   test('B5/B7 · jeder Block trägt seine Zahl, ein leerer Block sagt es im Klartext', async ({ page }) => {
     await page.goto(einzel(OR, '336_c'))
     await rahmenBereit(page)
@@ -327,5 +316,233 @@ test.describe('W2·5m/E2 — die Dossier-Blöcke', () => {
     await expect(page.locator('[data-artikel-dossier]')).toBeVisible({ timeout: 20_000 })
     // Nur die Fassung ist offen; die übrigen Shards bleiben ungefragt.
     expect(gefragt.filter((u) => u.includes('/rechtsprechung/bezuege/'))).toEqual([])
+  })
+})
+
+// ═══ W2·17-UI-BEFUNDE · NAVIGATION IM EINZELMODUS (Befund-Cluster, 1.10.2026) ═══
+//
+// Gemeinsame Wurzel: `springeZuArtikel` schrieb die Adresse per `replaceState` am Router vorbei,
+// der Einzelmodus liest den gezeigten Artikel aber aus dem Router-Hash (PE-C3-B01 · PE-C3-B02 ·
+// PE-B10-B02 · PE-B12-B03). Dazu der Moduswechsel (PA-15-B01/B02), der Anker (E-D11-B04), das zweite
+// Fenster (E-D11-B05), der Rückweg (E-D12-B02) und die Breite @375 (E-D12-B07).
+//
+// ROT ZU BEKOMMEN (§6.7), je Fall gegen den QUELLCODE (nicht dist/):
+//  · «Quickjump»/«j/k»/«Trefferliste»/«Landkarte»: in `v3/sprungWege.ts` `einzelSprungAdresse` immer
+//    `null` liefern lassen ⇒ die Adresse nennt den neuen, der Bildschirm zeigt den alten Artikel.
+//  · «Moduswechsel»: in `v3/einzelModus.ts` `lesestelle` den Adress-Anker vor die Lesestellung setzen.
+//  · «gesetzte Stellung»: in `v3/useEinzelModus.ts` `|| m === modus` streichen.
+//  · «unbekannter Anker»: in `loeseEinzelToken` den rohen Anker als Token zurückgeben.
+//  · «zweites Fenster»: in `v3/LeserRahmenV3.tsx` `onModusWahl` wieder unbedingt reichen.
+//  · «Rückweg»: in `v3/einzelModus.ts` `erlassAdresse` den Zweig `gemerkt === 'erlass'` unbedingt nehmen.
+const BGFA = '/gesetze/bund/BGFA'
+const suchfeld = (page: Page) => page.locator('[data-v3-suchsprung] input').first()
+/** Der gezeigte Artikel (aus dem DOM) und die Adresse (aus dem Router) — beide müssen übereinstimmen. */
+const gezeigt = (page: Page) => page.locator('[data-einzel-artikel]').getAttribute('data-einzel-artikel')
+const adressToken = (page: Page) => page.evaluate(() => decodeURIComponent(location.hash.replace(/^#art-/, '')))
+
+test.describe('W2·17 — Sprünge im Einzelmodus: Adresse und Anzeige stimmen überein', () => {
+  test('PE-C3-B01 · Quickjump «Art. 12» zeigt Art. 12, nicht den alten Artikel', async ({ page }) => {
+    await page.goto(einzel(BGFA, '5'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="5"]')).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).click()
+    await suchfeld(page).fill('Art. 12')
+    await suchfeld(page).press('Enter')
+    await expect(page.locator('[data-einzel-artikel="12"]')).toBeVisible({ timeout: 20_000 })
+    expect(await adressToken(page)).toBe('12')
+    expect(await page.locator('#lc-lesespalte [id^="art-"]').count()).toBe(1)
+    // «Zurück» führt zum vorigen Artikel (der Sprung ist eine Geste wie das Blättern).
+    await page.goBack()
+    await expect(page.locator('[data-einzel-artikel="5"]')).toBeVisible({ timeout: 20_000 })
+  })
+
+  test('PE-B10-B02 · j/k gehen im Einzelmodus von dem GEZEIGTEN Artikel aus, mehrmals hintereinander', async ({ page }) => {
+    await page.goto(einzel(BGFA, '5'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="5"]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('body').click({ position: { x: 5, y: 5 } })
+    const stationen: string[] = ['5']
+    for (const taste of ['j', 'j', 'k']) {
+      await page.keyboard.press(taste)
+      await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe(stationen.at(-1))
+      const jetzt = (await gezeigt(page))!
+      expect(await adressToken(page), `nach «${taste}» nennt die Adresse einen anderen Artikel als der Bildschirm`).toBe(jetzt)
+      stationen.push(jetzt)
+    }
+    // vor, vor, zurück: Station 3 ist Station 1 — und keine der ersten drei fällt zusammen.
+    expect(new Set(stationen.slice(0, 3)).size).toBe(3)
+    expect(stationen[3]).toBe(stationen[1])
+  })
+
+  test('PE-C3-B02 · ↓ im Suchfeld führt im Einzelmodus zur Fundstelle — der Artikel wechselt, die Suche bleibt', async ({ page }) => {
+    await page.goto(einzel(BGFA, '37'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).click()
+    await suchfeld(page).fill('Berufsregeln')
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).press('ArrowDown')
+    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('37')
+    const jetzt = (await gezeigt(page))!
+    expect(await adressToken(page)).toBe(jetzt)
+    // Die Suche läuft weiter: das Feld steht, die Fundstelle ist gemalt.
+    await expect(suchfeld(page)).toHaveValue('Berufsregeln')
+    await expect.poll(() => page.evaluate(() => {
+      let n = 0
+      for (const h of (CSS as unknown as { highlights: Map<string, { size: number }> }).highlights.values()) n += h.size
+      return n
+    }), { timeout: 20_000 }).toBeGreaterThan(0)
+    // Die nächste Fundstelle ist ein zweiter Schritt, kein Stillstand — Adresse und Anzeige bleiben eins.
+    await suchfeld(page).press('ArrowDown')
+    await page.waitForTimeout(800)
+    expect(await adressToken(page)).toBe((await gezeigt(page))!)
+    await expect(suchfeld(page)).toHaveValue('Berufsregeln')
+  })
+
+  test('Nachzug #1265 · «Zurück» aus einer Fundstelle zeigt den vorigen Artikel — und die Suche bleibt', async ({ page }) => {
+    await page.goto(einzel(BGFA, '37'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).click()
+    await suchfeld(page).fill('Berufsregeln')
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).press('ArrowDown')
+    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('37')
+    // Der Einstiegs-Eintrag trägt kein `sprungErledigt`: «Zurück» landet auf einem Eintrag, den der
+    // Nachlauf-Effekt für einen fremden Sprung hielt und dessen Suche er beendete.
+    await page.goBack()
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(800) // der Nachlauf läuft nach einem Frame — erst danach ist «Suche bleibt» eine Aussage
+    await expect(suchfeld(page)).toHaveValue('Berufsregeln')
+  })
+
+  test('PE-B12-B03 · die Landkarte führt im Einzelmodus zum Artikel — und der Klick ins Leere beendet die Suche nicht (PE-B12-B02)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(einzel(BGFA, '37'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="37"]')).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).click()
+    await suchfeld(page).fill('Berufsregeln')
+    await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 20_000 })
+    await suchfeld(page).press('Enter')
+    await expect(page.locator('[data-v3-treffer-spalte]')).toHaveCount(0)
+    const streifen = page.locator('[data-treffer-landkarte]')
+    await expect(streifen).toHaveCount(1, { timeout: 20_000 })
+    const kasten = (await streifen.boundingBox())!
+    // Die grösste Lücke zwischen zwei Marken des Streifens: ein Klick dort trifft kein Treffer-Feld.
+    const luecke = await page.evaluate(() => {
+      const s = document.querySelector('[data-treffer-landkarte]')!.getBoundingClientRect()
+      const ys = [...document.querySelectorAll('[data-treffer-landkarte] svg rect > title')]
+        .map((t) => t.parentElement!.getBoundingClientRect()).map((r) => [r.top, r.bottom]).sort((a, b) => a[0] - b[0])
+      let beste = { von: s.top, bis: ys[0]?.[0] ?? s.bottom }
+      for (let i = 0; i + 1 < ys.length; i++) if (ys[i + 1][0] - ys[i][1] > beste.bis - beste.von) beste = { von: ys[i][1], bis: ys[i + 1][0] }
+      if (ys.length && s.bottom - ys[ys.length - 1][1] > beste.bis - beste.von) beste = { von: ys[ys.length - 1][1], bis: s.bottom }
+      return (beste.von + beste.bis) / 2
+    })
+    await page.mouse.click(kasten.x + kasten.width / 2, luecke)
+    // Der Artikel wechselt UND stimmt mit der Adresse überein …
+    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('37')
+    expect(await adressToken(page)).toBe((await gezeigt(page))!)
+    // … und die Suche steht noch (Feldwert, Landkarte).
+    await expect(suchfeld(page)).toHaveValue('Berufsregeln')
+    await expect(page.locator('[data-treffer-landkarte]')).toHaveCount(1)
+  })
+})
+
+test.describe('W2·17 — Gliederung im Einzelmodus', () => {
+  test('PE-B10-B02 · @1440 ein Klick auf einen Artikel und auf eine Stufe der Gliederung wechselt den gezeigten Artikel', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(einzel(BGFA, '3'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="3"]')).toBeVisible({ timeout: 20_000 })
+    const baum = page.locator('[data-toc-baum]')
+    await baum.getByRole('link', { name: /^Art\. 2 — / }).click()
+    await expect(page.locator('[data-einzel-artikel="2"]')).toBeVisible({ timeout: 20_000 })
+    expect(await adressToken(page)).toBe('2')
+    // Die Stufe «3. Abschnitt: Berufsregeln …» führt zu ihrem ersten Artikel (kein Sektionskopf im Bild).
+    await baum.getByRole('link', { name: /^3\. Abschnitt: Berufsregeln/ }).click()
+    await expect.poll(() => gezeigt(page), { timeout: 20_000 }).not.toBe('2')
+    expect(await adressToken(page)).toBe((await gezeigt(page))!)
+    expect(await page.locator('#lc-lesespalte [id^="art-"]').count()).toBe(1)
+  })
+})
+
+test.describe('W2·17 — Moduswechsel, Anker, zweites Fenster, Rückweg, Breite', () => {
+  /** Scrollt an den Artikel und wartet, bis der Scroll-Spy ihn als Lesestellung führt. */
+  async function leseBis(page: Page, token: string) {
+    await page.evaluate((t) => document.getElementById(`art-${t}`)!.scrollIntoView({ block: 'start' }), token)
+    await page.waitForTimeout(1500) // der Spy wertet erst nach dem Scroll aus (webseiten-pruefung.md, «Stop-and-go»)
+  }
+
+  test('PA-15-B01 · der Wechsel in den Einzelmodus zeigt die LESESTELLE, nicht den Einstiegsartikel des Tieflinks', async ({ page }) => {
+    await page.goto(`${BGFA}#art-3`)
+    await rahmenBereit(page)
+    await expect(page.locator('#art-3')).toBeVisible({ timeout: 20_000 })
+    await leseBis(page, '20')
+    await waehleLesart(page, 'artikel')
+    await expect(page.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 20_000 })
+    expect(await gezeigt(page)).toBe('20')
+    expect(await adressToken(page)).toBe('20')
+  })
+
+  test('PA-15-B02 · ein Klick auf die schon gesetzte Stellung «Ganzer Erlass» ändert nichts', async ({ page }) => {
+    await page.goto(`${BGFA}#art-3`)
+    await rahmenBereit(page)
+    await expect(page.locator('#art-3')).toBeVisible({ timeout: 20_000 })
+    await leseBis(page, '20')
+    const vorher = await page.evaluate(() => Math.round(window.scrollY))
+    await waehleLesart(page, 'erlass')
+    await page.waitForTimeout(1200)
+    // Kein Sprung zum Einstiegsanker zurück: die Lesestelle bleibt, die Adresse bleibt.
+    const nachher = await page.evaluate(() => Math.round(window.scrollY))
+    expect(Math.abs(nachher - vorher), `scrollY ${vorher} → ${nachher}`).toBeLessThan(150)
+    expect(await adressToken(page)).toBe('3')
+  })
+
+  test('E-D11-B04 · ein Anker, den der Erlass nicht führt, wird benannt, statt den ganzen Erlass zu zeigen', async ({ page }) => {
+    await page.goto(einzel(BGFA, '99999'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-unbekannt]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-einzel-unbekannt]')).toContainText('99999')
+    // Es steht EINE Bestimmung da (die Lesestelle bzw. die erste), nicht die ganze Lesespalte.
+    await expect(page.locator('[data-einzel-artikel]')).toBeVisible()
+    expect(await page.locator('#lc-lesespalte [id^="art-"]').count()).toBe(1)
+  })
+
+  test('E-D11-B05 · im zweiten Fenster wird die Lesart-Wahl nicht angeboten (sie schaltete das erste um)', async ({ page }) => {
+    await page.setViewportSize({ width: 1600, height: 900 })
+    await page.goto(`${BGFA}?p=${encodeURIComponent('/gesetze/bund/BV')}#art-5`)
+    const sek = page.locator('[data-pane="sekundaer"]')
+    await expect(sek).toBeVisible({ timeout: 60_000 })
+    await sek.getByRole('button', { name: /^Ansicht/ }).first().click()
+    // Das Menü steht (Gegenprobe: eine andere Gruppe ist da) — nur die Lesart fehlt.
+    await expect(sek.getByRole('menuitemradio').or(sek.getByRole('menuitemcheckbox')).first()).toBeVisible({ timeout: 10_000 })
+    await expect(sek.locator('[data-v3-modus-wahl]')).toHaveCount(0)
+    // Das primäre Fenster bietet sie weiter an.
+    await page.keyboard.press('Escape')
+    await page.locator('[data-pane="primaer"]').getByRole('button', { name: /^Ansicht/ }).first().click()
+    await expect(page.locator('[data-pane="primaer"] [data-v3-modus-wahl]')).toHaveCount(1)
+  })
+
+  test('E-D12-B02 · der Gliederungspfad führt auch bei GEMERKTER Wahl «Einzelne Bestimmung» in den ganzen Erlass', async ({ page }) => {
+    // Gemerkt wird über das Menü — dieselbe Handlung wie beim Leser, kein Eingriff in den Speicher.
+    await page.goto(BGFA)
+    await rahmenBereit(page)
+    await waehleLesart(page, 'artikel')
+    await expect(page.locator('[data-einzel-pfad]')).toBeVisible({ timeout: 20_000 })
+    // Ein Tieflink OHNE `?ansicht=`: die Adresse schweigt, die gemerkte Wahl gilt.
+    await page.goto(`${BGFA}#art-12`)
+    await expect(page.locator('[data-einzel-artikel="12"]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-einzel-pfad] a').last().click()
+    await expect(page.locator('[data-einzel-artikel]')).toHaveCount(0, { timeout: 20_000 })
+    await expect(page.locator('#lc-lesespalte article').nth(3)).toBeAttached()
+  })
+
+  test('E-D12-B07 · @375 wächst die Karte nicht über das Fenster (Tabelle im Artikel)', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 })
+    await page.goto(einzel('/gesetze/bund/AHVV', '21'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel="21"]')).toBeVisible({ timeout: 30_000 })
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth), { timeout: 10_000 }).toBeLessThanOrEqual(375)
   })
 })

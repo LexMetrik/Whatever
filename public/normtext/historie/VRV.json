@@ -6,6 +6,50 @@
   "referenz": 41,
   "unparsed": 3
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2002-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 1931",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/288"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1986-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1985 1841",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1985/1841_1841_1841"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/42"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-01-01",
@@ -2207,7 +2251,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
     }
    ]
   },
@@ -4405,7 +4450,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
     }
    ]
   },
@@ -4542,6 +4588,9 @@
      "absatz": "3",
      "item": "f"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "88": {
@@ -4573,6 +4622,9 @@
      "absatz": null,
      "item": "b"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "89": {
@@ -4591,6 +4643,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "90": {
@@ -4635,6 +4690,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "91": {
@@ -5446,6 +5504,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59_a": {
@@ -5488,7 +5549,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
     }
    ]
   },
@@ -5508,6 +5570,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "59_c": {
@@ -5526,6 +5591,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_a": {

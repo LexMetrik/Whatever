@@ -6,6 +6,78 @@
   "referenz": 29,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 719",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/719"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Abschnitt: Informationssystem"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 756",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/756"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 289",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/289"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 756",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/756"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 497",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/497"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2b. Kapitel: Adoptionsentschädigung"
+  }
+ ],
  "artikel": {
   "3": {
    "giltSeit": "2025-01-01",
@@ -344,7 +416,7 @@
    ]
   },
   "23": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -370,7 +442,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
     }
    ]
   },
@@ -390,6 +463,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "25": {
@@ -421,6 +497,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26": {
@@ -460,6 +539,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "27": {
@@ -491,6 +573,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "28": {
@@ -530,6 +615,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "29": {
@@ -600,6 +688,9 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "30": {
@@ -644,6 +735,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "31": {
@@ -753,6 +847,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "32": {
@@ -771,6 +868,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "33": {
@@ -789,6 +889,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "34": {
@@ -807,6 +910,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "35": {
@@ -864,6 +970,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "36": {
@@ -975,7 +1084,7 @@
    ]
   },
   "19_b": {
-   "giltSeit": "2025-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -988,8 +1097,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Abschnitt: Informationssystem"
     }
+   ]
+  },
+  "19_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "19_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "19_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "19_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28_a": {
@@ -1008,6 +1146,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "34_a": {
@@ -1052,10 +1193,13 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "35_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1068,7 +1212,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
     },
     {
      "typ": "fassung",
@@ -1081,8 +1226,17 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
     }
+   ]
+  },
+  "35_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    3
    ]
   },
   "35_c": {
@@ -1101,6 +1255,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "35_d": {
@@ -1132,6 +1290,17 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
+   ]
+  },
+  "35_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "35_f": {
@@ -1176,6 +1345,9 @@
      "absatz": "1",
      "item": "h"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "35_g": {
@@ -1194,6 +1366,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "35_h": {
@@ -1212,6 +1387,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "35_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "35_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "35_k": {
@@ -1230,10 +1422,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "35_l": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1246,8 +1441,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2b. Kapitel: Adoptionsentschädigung"
     }
+   ]
+  },
+  "35_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "35_n": {
@@ -1266,6 +1469,44 @@
      "absatz": "1",
      "item": "e"
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "35_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "35_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "35_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "35_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "35_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   }
  },

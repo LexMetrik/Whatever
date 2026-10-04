@@ -21,9 +21,8 @@ import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // ArtikelKontextGruppe, am 1.10.2026 gelöscht — die drei übrigen bleiben der
 // Beleg) und erzeugt keinen Zyklus (check:zyklen).
 import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
-
-import type { BildBlock, ZitierKontext, AusweisBasis } from './ArtikelBody.helfer';
-import { FREMD_LEER, NOOP, markenAnzeige, markenZitat, stufenFuer, vglFnNr } from './ArtikelBody.helfer';
+import { zifferAnkerAttribute } from '../../lib/normtext/zifferAnker';
+import { type BildBlock, type ZitierKontext, type AusweisBasis, FREMD_LEER, NOOP, markenAnzeige, anhangVorKette, einzugStil, itemZitatSegmente, stufenFuer, vglFnNr, zifferTeil } from './ArtikelBody.helfer';
 import { ZitierMarke } from './ArtikelBody.zitier';
 
 export type { ZitierKontext };
@@ -241,7 +240,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
    *  «gegenstandslos». Default `false` hält Fälle ohne Vermerk byte-gleich (golden, §6). */
   artikelGegenstandslos?: boolean;
 }) {
-  const { passusMarke, zielItemKey } = bestimmePassusZiel(bloecke, passus);
+  const { passusMarke, zielItemKey, zielBloecke } = bestimmePassusZiel(bloecke, passus);
+  // Ziffer-Ebene (P6): nur der ERSTE Ziel-Block trägt die Scroll-Marke (passusRef).
+  const ersterZielBlock = zielBloecke != null ? Math.min(...zielBloecke) : -1;
+  // Ziffer-Fragment (E2): `#art-<token>-ziff-<z>` am ersten Block jeder Ziffer — nur im Leser (Popover: id doppelt).
+  const zA = zitierKontext ? zifferAnkerAttribute(artikel, bloecke) : [];
   // W2·27 (30.9.2026): das Wort für den Ersatztext «…»/leer — am amtlichen Artikel-Vermerk,
   // nicht am Platzhalter (§1/§8). EINE Quelle: `leerstellenWort` (darstellung.ts, §5).
   const entfallWort = leerstellenWort(artikelGegenstandslos ? 'gegenstandslos' : 'aufgehoben');
@@ -357,6 +360,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             && zielItemKey.ji === j;
           // Gedankenstrich: ohne Punkt («–» statt «–.»).
           const istStrich = /^[–—-]$/.test(it.marke.trim());
+          // Marke-lose Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): die Quelle führt keine <dt>-Marke
+          // (ARGV1 art_30 «1.  in fünf …», VBB-Legende). Kein Zitierknopf, keine erfundene Marke; in der Lesesicht
+          // hält eine leere Markenspalte den Text auf der Textspalte der Geschwister-Punkte.
+          const ohneMarke = it.marke === '';
           // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
           // erscheinen nicht mehr zusätzlich am Item-Ende.
           // INVARIANTE (wie im Absatz-Pfad, Gegenprüfung 26.7., B2/B5): der
@@ -373,34 +380,21 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const markeAnzeige = markenAnzeige(it.marke, it.trenner);
           // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
           // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
-          // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
-          // Mit `vorKette` (Bild-Block-Fortsetzung) läuft die Kette über die
-          // VERSCHMOLZENE Liste (Vorgänger-Items + eigene Items bis j) — so
-          // findet die Fortsetzungs-Ziff. ihren lit.-Vorfahren im
-          // Vorgängerblock (DBG 22: «Abs. 3 lit. c Ziff. 2»). Ohne vorKette
-          // bleibt der Pfad byte-identisch block-lokal.
+          // rückwärts aufbauen (itemZitatSegmente, ArtikelBody.helfer.ts). Mit
+          // `vorKette` (Bild-Block-Fortsetzung, Anhang-Zwischennotiz) läuft die
+          // Kette über die VERSCHMOLZENE Liste (DBG 22: «Abs. 3 lit. c Ziff. 2»,
+          // FAV Anh. 4: «Ziff. 3.1 lit. a»); ohne bleibt der Pfad block-lokal.
+          const zitatSeg = zk ? itemZitatSegmente(b.items!, stufen, j, vorKette) : [];
+          // Kette am marke-losen Vorfahren abgebrochen (itemZitatSegmente: leer bei markiertem Nicht-Strich-Item):
+          // KEIN Zitierknopf — kein Zitat ist besser als ein falsches (§1/§8, A1 3.10.2026).
+          const zitatAbgebrochen = zk != null && !ohneMarke && !istStrich && zitatSeg.length === 0;
           const itemZitat = zk ? (() => {
-            const kette = vorKette != null && vorKette.length > 0
-              ? [...vorKette, ...b.items!.slice(0, j + 1)]
-              : b.items!.slice(0, j + 1);
-            const kStufen = vorKette != null && vorKette.length > 0 ? stufenFuer(kette) : stufen;
-            const seg: string[] = [];
-            const jK = kette.length - 1;
-            let lvl = kStufen[jK];
-            for (let k = jK; k >= 0 && lvl >= 0; k--) {
-              if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
-                const m2 = kette[k].marke;
-                // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE»
-                // ist in der VZV kein Zitat, die Kategorie heisst schlicht «BE».
-                seg.unshift(markenZitat(m2, kette[k].trenner));
-                lvl--;
-              }
-            }
+            const seg = zitatSeg;
             // Dieselbe normalisierte Absatzmarke wie das Absatz-Zitat
             // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
             // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
             // Absatzes bei Suffixen/Ziff.-Resten voneinander ab.
-            return `${zk.artikelLabel}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
+            return `${zk.artikelLabel}${zifferTeil(b)}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
           })() : '';
           return (
             <li
@@ -425,7 +419,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // BEIDEN Hüllen (der Befund ist in beiden derselbe, er ist heute
               // live). Golden ist unberührt (Engines/Vorlagen), der
               // Pixelvergleich PX misst den RUHEZUSTAND und sieht keinen Hover.
-              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition-colors lc-hover-flaeche' : ''} ${
+              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk && !ohneMarke && !zitatAbgebrochen ? 'transition-colors lc-hover-flaeche' : ''} ${
                 istItemZitiert
                   ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
                   : 'text-ink-700'
@@ -446,9 +440,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   Marken bleiben an derselben Kante ausgerichtet wie bisher, und nur
                   die lange Marke schiebt IHREN eigenen Text um ihren Überschuss
                   nach rechts. Hängend, aber nie überlappend. */}
-              {istStrich
+              {ohneMarke
+                ? (zk ? <span aria-hidden="true" className="shrink-0 min-w-6" /> : null)
+                : istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
-                : zk && !ohneZitierMarke
+                : zk && !ohneZitierMarke && !zitatAbgebrochen
                   ? <ZitierMarke klasse="shrink-0 min-w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
                   : zk
                     ? <span className="num shrink-0 min-w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
@@ -529,7 +525,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const flach = b.titel <= 2;
           return (
             <p
-              key={i}
+              key={i} {...zA[i]}
               // W2·19-GLIEDERUNG/S9 (Bau-Spec §3.4/§6·2 «Anhang-Zwischentitel in
               // der Lesespalte erhalten Anker, damit der Ast hineinzielen
               // kann»): bis hierher war dieser Zwischentitel NICHT anspringbar
@@ -543,8 +539,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
               // — im Popover wäre die Id doppelt vergeben (§7: kein Anker, der
               // zweimal im DOM steht). Index i ist die stabile Block-Position
               // im Snapshot (deterministisch, §2).
-              id={zitierKontext ? undefined : `anh-${artikel}-${i}`}
-              className={`${zitierKontext ? '' : 'text-body-s '}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
+              id={zA[i]?.id ?? (zitierKontext ? undefined : `anh-${artikel}-${i}`)}
+              className={`${zitierKontext ? '' : 'text-body-s '}${zA[i] ? 'nt-anker ' : ''}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
             >
               {b.text}
             </p>
@@ -606,7 +602,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             </div>
           );
         }
-        const istAbsatzZitiert = passus.absatz != null && absatzNorm(b.absatz) === absatzNorm(passus.absatz);
+        const istAbsatzZitiert = zielBloecke != null
+          ? zielBloecke.has(i)
+          : passus.absatz != null && absatzNorm(b.absatz) === absatzNorm(passus.absatz);
         // Starke Block-Hervorhebung nur, wenn KEIN Item zitiert ist; bei
         // zitiertem Item wird der Block dezent umrandet, das Item trägt die
         // starke Markierung.
@@ -626,8 +624,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         const inlineGesetzt = new Set<string>();
         return (
           <div
-            key={i}
-            ref={blockStark ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
+            key={i} {...zA[i]}
+            ref={blockStark && (zielBloecke == null || i === ersterZielBlock) ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
             data-passus={blockStark ? 'true' : 'false'}
             /* S2 (F3 = V2, David 17.8.2026 am Bildbogen): im LESER trägt dieser
                Block-Wrapper KEINEN eigenen Zeilenabstand mehr. `leading-relaxed`
@@ -642,7 +640,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                AUSSERHALB des Lesers bleibt alles unverändert (`text-body-s` hat
                lh 1.5 und braucht den lockereren Wert weiterhin) — die Änderung ist
                auf den Reader-Zweig gescopt, Vorschau/Popover sind byte-gleich. */
-            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${
+            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${zA[i] ? 'nt-anker ' : ''}${
               blockStark
                 ? 'rounded-md border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
                 : blockDezent
@@ -670,10 +668,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             {/* Ä8 (LESER-V3 H2b): derselbe leise Hover wie an der lit.-Zeile
                 oben — Herleitung dort. Ein Absatz und eine Aufzählungszeile sind
                 dieselbe Geste und dürfen nicht zwei Farben tragen (§5). */}
-            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
+            <p style={zk ? einzugStil(b) : undefined} className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
               {absMarke != null && (
                 zk
-                  ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
+                  ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel}${zifferTeil(b)} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
                   : <sup className="num mr-1 font-semibold text-ink-500">{absMarke}</sup>
               )}
               {/* DARSTELLUNGS-NORMALISIERUNG (§3, Wortlaut unverändert): nur im
@@ -785,7 +783,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 (Daten). Das zitierte Item wird stark hervorgehoben. Rendert über
                 den geteilten Item-Pfad (itemListe, §5) — derselbe wie bei
                 Bild-Blöcken mit items. */}
-            {itemListe(b, i, absMarke)}
+            {itemListe(b, i, absMarke, false, anhangVorKette(bloecke, i))}
           </div>
         );
       })}

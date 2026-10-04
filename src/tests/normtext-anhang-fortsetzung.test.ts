@@ -58,27 +58,33 @@ describe('Anhang-<dl>: leeres <dt> + Text-<dd> = Fortsetzung des vorausgehenden 
 
 // ── Grenzen der Regel (Mutationsfestigkeit, 2. Gegenprüfung #1204, 1.10.2026) ──────
 // Die Regel hängt eine Zeile NUR an ein Item OHNE Unterliste. Bei mehrdeutigem Bezug
-// bleibt sie wie bisher Prosa-Notiz (vorbestehend, eigener Posten W2·27-BUND-FERTIG).
+// blieb sie bis P4 Prosa-Notiz VOR der Liste; seit P4 (W2·27-BUND-FERTIG, 2.10.2026) steht
+// sie als eigener Block AN IHRER STELLE — DEKLARIERTE Fachänderung (§6.3): M1/M2 hielten das
+// frühere «lose vor der Liste» fest und halten jetzt die Quellreihenfolge fest (Regel und
+// Belege: scripts/normtext/anhang-fortsetzung.ts, Tests: normtext-anhang-zwischennotiz.test.ts).
 // Fixtures strukturtreu nach AVO Anh. 1 (B8-Definition) bzw. FIDLEV Anh. 2 (lit. e).
 const liste = (dl: string) => extrahiereAnhang(wrap(dl), 'annex_u1')!;
 const itemsVon = (ex: ReturnType<typeof liste>) => ex.bloecke.flatMap((b) => b.items ?? []);
 
-describe('Anhang-Fortsetzung: Zeile mit EIGENER Unterliste wird nicht angehängt (M1)', () => {
+describe('Anhang-Fortsetzung: Zeile mit EIGENER Unterliste wird nicht angehängt, sondern steht an ihrer Stelle (M1, P4)', () => {
   const ex = liste(
     '<dl><dt>B8 </dt><dd>Sonstige Sachschäden</dd>' +
       '<dt></dt><dd>Sämtliche Sachschäden durch:<dl><dt>a. </dt><dd>Hagel;</dd><dt>b. </dt><dd>Frost.</dd></dl></dd></dl>',
   );
-  it('Item B8 bleibt unverändert, der Einleitungssatz steht als eigene Notiz (genau einmal)', () => {
+  it('Item B8 bleibt unverändert, der Einleitungssatz steht als eigener Block (genau einmal) HINTER B8', () => {
     expect(itemsVon(ex).find((i) => i.marke === 'B8')!.text).toBe('Sonstige Sachschäden');
     expect(ex.bloecke.filter((b) => b.text === 'Sämtliche Sachschäden durch:')).toHaveLength(1);
     expect(JSON.stringify(ex.bloecke).match(/Sämtliche Sachschäden durch:/g)).toHaveLength(1);
+    const blockB8 = ex.bloecke.findIndex((b) => (b.items ?? []).some((i) => i.marke === 'B8'));
+    const blockSatz = ex.bloecke.findIndex((b) => b.text === 'Sämtliche Sachschäden durch:');
+    expect(blockSatz).toBeGreaterThan(blockB8); // vorher (M1 alt): VOR der Liste
   });
-  it('die Unterliste-Items bleiben erhalten', () => {
+  it('die Unterliste-Items bleiben erhalten, in Quellreihenfolge', () => {
     expect(itemsVon(ex).map((i) => i.marke)).toEqual(['B8', 'a', 'b']);
   });
 });
 
-describe('Anhang-Fortsetzung: Zeile NACH einem Item MIT Unterliste bleibt Notiz (M2)', () => {
+describe('Anhang-Fortsetzung: Zeile NACH einem Item MIT Unterliste steht hinter dessen Unterliste (M2, P4)', () => {
   const ex = liste(
     '<dl><dt>a. </dt><dd>Eltern:<dl><dt>1. </dt><dd>eins;</dd><dt>2. </dt><dd>zwei.</dd></dl></dd>' +
       '<dt></dt><dd>Schlusssatz ohne eigene Unterliste.</dd></dl>',
@@ -88,9 +94,13 @@ describe('Anhang-Fortsetzung: Zeile NACH einem Item MIT Unterliste bleibt Notiz 
     expect(it2.text).toBe('zwei.');
     expect(itemsVon(ex).find((i) => i.marke === 'a')!.text).toBe('Eltern:');
   });
-  it('der Schlusssatz steht genau einmal als eigene Notiz', () => {
+  it('der Schlusssatz steht genau einmal als eigene Notiz, NACH der Liste (vorher M2 alt: davor)', () => {
     expect(ex.bloecke.filter((b) => b.text === 'Schlusssatz ohne eigene Unterliste.')).toHaveLength(1);
     expect(JSON.stringify(ex.bloecke).match(/Schlusssatz ohne eigene Unterliste/g)).toHaveLength(1);
+    const letzter = ex.bloecke[ex.bloecke.length - 1];
+    expect(letzter.text).toBe('Schlusssatz ohne eigene Unterliste.');
+    expect(letzter.items).toBeUndefined(); // reiner Text-Block, nicht Lead der Liste davor (alt: Lead mit allen Items)
+    expect(itemsVon(ex).map((i) => i.marke)).toEqual(['a', '1', '2']);
   });
 });
 

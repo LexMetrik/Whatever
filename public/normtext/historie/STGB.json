@@ -6,9 +6,263 @@
   "referenz": 85,
   "unparsed": 6
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 3459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+    },
+    {
+     "label": "BBl 1999 1979",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1995-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1994 2290",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290"
+    },
+    {
+     "label": "BBl 1991 II 969",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1991/2_969_933_797"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1969-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 319",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
+    },
+    {
+     "label": "BBl 1968 I 585",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1969-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 319",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327"
+    },
+    {
+     "label": "BBl 1968 I 585",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_585_609_427"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
+  },
+  {
+   "typ": "fassung",
+   "datum": "1992-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1992 1670",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670"
+    },
+    {
+     "label": "BBl 1985 II 1009",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1985/2_1009_1021_901"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 2725",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/454"
+    },
+    {
+     "label": "BBl 1999 5327",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5327_4911_4611"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 4963",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    {
+     "label": "BBl 2008 3863",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2008/807"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1121",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/180"
+    },
+    {
+     "label": "BBl 1999 5497",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1999/1_5497_5045_4721"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Neunzehnter Titel: Bestechung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2006 3459",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+    },
+    {
+     "label": "BBl 1999 1979",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2010 1881",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    {
+     "label": "BBl 2006 1085",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2016 1249",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2016/249"
+    },
+    {
+     "label": "BBl 2012 4721",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2012/670"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 2273",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/432"
+    },
+    {
+     "label": "BBl 2017 7307",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/2095"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
+  }
+ ],
  "artikel": {
   "1": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -25,8 +279,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
     }
+   ]
+  },
+  "2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "4": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "5": {
@@ -100,6 +376,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "6": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "7": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "8": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "9": {
@@ -122,6 +422,72 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "10": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "11": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "12": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "14": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "15": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "17": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -144,6 +510,79 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "22": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "26": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "28": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "29": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -183,6 +622,30 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "31": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "33": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "34": {
@@ -271,8 +734,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Erster Abschnitt: Geldstrafe und Freiheitsstrafe"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "35": {
@@ -295,6 +762,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "36": {
@@ -317,6 +788,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "40": {
@@ -339,6 +814,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "41": {
@@ -361,6 +840,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    12
    ]
   },
   "42": {
@@ -417,6 +900,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "43": {
@@ -473,6 +959,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "44": {
@@ -495,6 +984,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "45": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "46": {
@@ -517,6 +1016,37 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "47": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "50": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "51": {
@@ -539,10 +1069,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "52": {
-   "giltSeit": "2020-07-01",
+   "giltSeit": "2004-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -559,7 +1092,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Abschnitt: Strafbefreiung sowie Sistierung und Einstellung des Verfahrens"
     },
     {
      "typ": "fassung",
@@ -578,6 +1112,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "53": {
@@ -600,6 +1137,26 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    13
+   ]
+  },
+  "54": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    13
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    13
    ]
   },
   "56": {
@@ -622,6 +1179,16 @@
      "absatz": "4bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "57": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "58": {
@@ -644,6 +1211,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "59": {
@@ -666,6 +1236,37 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "61": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "62": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "63": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "64": {
@@ -756,6 +1357,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "65": {
@@ -812,6 +1416,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "66": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "67": {
@@ -1021,6 +1635,30 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "68": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "69": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "70": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "71": {
@@ -1043,6 +1681,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "72": {
@@ -1065,6 +1706,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "73": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "74": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "75": {
@@ -1087,6 +1745,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "76": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "77": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "78": {
@@ -1109,6 +1784,9 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79": {
@@ -1134,6 +1812,34 @@
    ],
    "aufgehobenSeit": "2018-01-01"
   },
+  "80": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "81": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "82": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "83": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
   "84": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
@@ -1154,6 +1860,44 @@
      "absatz": "6bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "85": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "86": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "87": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "88": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "89": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "90": {
@@ -1227,6 +1971,9 @@
      "absatz": "4ter",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "91": {
@@ -1255,8 +2002,26 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "frueher": "Bst. c"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "92": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "93": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "94": {
@@ -1279,6 +2044,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "95": {
@@ -1301,6 +2069,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "96": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "97": {
@@ -1357,6 +2135,30 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "98": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "99": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "100": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "101": {
@@ -1447,6 +2249,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102": {
@@ -1469,6 +2274,23 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "103": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "104": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "105": {
@@ -1508,6 +2330,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "106": {
@@ -1530,6 +2355,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "107": {
@@ -1566,6 +2394,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "109": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "110": {
@@ -1588,6 +2426,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "111": {
@@ -2046,7 +2887,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Abs. 4"
     },
     {
      "typ": "eingefuegt",
@@ -2356,7 +3198,7 @@
    ]
   },
   "137": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2373,7 +3215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
     }
    ]
   },
@@ -2397,6 +3240,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "139": {
@@ -2436,6 +3282,9 @@
      "absatz": null,
      "item": "d"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "140": {
@@ -2475,6 +3324,30 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "141": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "142": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "143": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "144": {
@@ -2497,6 +3370,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "145": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "146": {
@@ -2519,6 +3402,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "147": {
@@ -2541,6 +3427,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "148": {
@@ -2563,6 +3452,44 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "149": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "150": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "151": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "152": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "153": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "154": {
@@ -2598,6 +3525,9 @@
      "absatz": "2",
      "item": "a"
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "155": {
@@ -2620,6 +3550,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "156": {
@@ -2659,6 +3592,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "157": {
@@ -2681,6 +3617,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "158": {
@@ -2703,6 +3642,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "159": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "160": {
@@ -2725,6 +3674,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "161": {
@@ -2750,6 +3702,27 @@
    ],
    "aufgehobenSeit": "2013-05-01"
   },
+  "162": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "163": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "164": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "165": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
@@ -2770,6 +3743,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "166": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "167": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "168": {
@@ -2792,6 +3782,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "169": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "170": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "171": {
@@ -2814,6 +3821,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "172": {
@@ -2891,7 +3901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Titel: Strafbare Handlungen gegen die Ehre und den Geheim- oder Privatbereich"
     }
    ]
   },
@@ -2915,6 +3926,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
+   ]
+  },
+  "175": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "176": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "177": {
@@ -2937,6 +3965,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "178": {
@@ -2976,10 +4007,13 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "179": {
-   "giltSeit": "1969-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2996,8 +4030,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "180": {
@@ -3298,7 +4336,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Fünfter Titel: Strafbare Handlungen gegen die sexuelle Integrität"
     },
     {
      "typ": "fassung",
@@ -3339,6 +4378,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "189": {
@@ -3361,6 +4403,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "190": {
@@ -3383,6 +4428,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "191": {
@@ -3405,6 +4453,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "192": {
@@ -3450,6 +4501,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "194": {
@@ -3472,6 +4526,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "195": {
@@ -3494,6 +4551,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "196": {
@@ -3516,6 +4576,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "197": {
@@ -3623,6 +4686,9 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "198": {
@@ -3645,6 +4711,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "199": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "200": {
@@ -3667,6 +4743,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "213": {
@@ -4677,7 +5756,7 @@
    ]
   },
   "264": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4694,7 +5773,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
     },
     {
      "typ": "fassung",
@@ -4711,7 +5791,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
     }
    ]
   },
@@ -4802,7 +5883,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Ziff. 2"
     }
    ]
   },
@@ -5939,7 +7021,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "19. Tit.",
+     "ueberschrift": "Zwanzigster Titel: Übertretungen bundesrechtlicher Bestimmungen"
     }
    ]
   },
@@ -6171,12 +7255,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Buch: Einführung und Anwendung des Gesetzes"
     }
    ]
   },
+  "334": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "335": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
   "349": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -6210,7 +7309,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Titel: Amtshilfe im Bereich der Polizei"
     }
    ],
    "aufgehobenSeit": "2008-12-05"
@@ -6235,6 +7335,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "351": {
@@ -6257,6 +7361,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "352": {
@@ -6296,6 +7404,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "353": {
@@ -6318,6 +7430,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "354": {
@@ -6450,6 +7566,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355": {
@@ -6503,6 +7623,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "357": {
@@ -6542,6 +7666,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "362": {
@@ -6564,6 +7692,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "363": {
@@ -6645,6 +7777,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10
+   ]
+  },
+  "373": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "374": {
@@ -6684,6 +7826,44 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    10
+   ]
+  },
+  "375": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "376": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "377": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "378": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "379": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "380": {
@@ -6706,6 +7886,9 @@
      "absatz": "2",
      "item": "c"
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "381": {
@@ -6728,6 +7911,9 @@
      "absatz": null,
      "item": "a"
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "382": {
@@ -6750,6 +7936,30 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    10
+   ]
+  },
+  "383": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "384": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "385": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "386": {
@@ -6768,6 +7978,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "387": {
@@ -6807,6 +8020,44 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10
+   ]
+  },
+  "388": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "389": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "390": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "391": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "392": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   },
   "102_a": {
@@ -6877,6 +8128,13 @@
    ],
    "aufgehobenSeit": "1990-01-01"
   },
+  "141_bis": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "143_bis": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
@@ -6897,6 +8155,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "144_bis": {
@@ -6936,6 +8197,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "148_a": {
@@ -6958,6 +8222,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "150_bis": {
@@ -6997,6 +8264,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "161_bis": {
@@ -7085,6 +8355,13 @@
    ],
    "aufgehobenSeit": "2018-01-01"
   },
+  "172_ter": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "179_bis": {
    "giltSeit": "1969-05-01",
    "ereignisse": [
@@ -7105,6 +8382,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_decies": {
@@ -7127,6 +8408,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_novies": {
@@ -7166,6 +8451,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_octies": {
@@ -7222,6 +8511,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_quater": {
@@ -7244,6 +8537,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_quinquies": {
@@ -7300,6 +8597,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_septies": {
@@ -7339,6 +8640,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_sexies": {
@@ -7361,6 +8666,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "179_ter": {
@@ -7400,6 +8709,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "181_a": {
@@ -7505,6 +8818,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "197_a": {
@@ -7527,6 +8843,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "226_bis": {
@@ -7900,10 +9219,14 @@
      "absatz": "1",
      "item": "g"
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "264_b": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -7920,8 +9243,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter Titelter: Kriegsverbrechen"
     }
+   ]
+  },
+  "264_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "264_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_e": {
@@ -7944,10 +9282,48 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "264_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "264_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "264_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "264_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "264_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "264_k": {
-   "giltSeit": "2011-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -7964,8 +9340,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Zwölfter Titelquater: Gemeinsame Bestimmungen für den zwölften Titelbis und den zwölften Titelter"
     }
+   ]
+  },
+  "264_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "264_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "264_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "266_bis": {
@@ -8106,6 +9504,9 @@
      "absatz": "2",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "305_bis": {
@@ -8546,6 +9947,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_novies": {
@@ -8568,6 +9972,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_octies": {
@@ -8590,6 +9997,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
+   ]
+  },
+  "322_quater": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
    ]
   },
   "322_quinquies": {
@@ -8612,6 +10029,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_septies": {
@@ -8634,6 +10054,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_sexies": {
@@ -8656,10 +10079,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "322_ter": {
-   "giltSeit": "2000-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8676,7 +10102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Neunzehnter Titel: Bestechung"
     }
    ]
   },
@@ -8711,7 +10138,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Artikel 325bis"
     },
     {
      "typ": "eingefuegt",
@@ -9040,6 +10468,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_b": {
@@ -9062,6 +10494,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_c": {
@@ -9118,6 +10554,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_d": {
@@ -9140,6 +10580,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_e": {
@@ -9162,6 +10606,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_f": {
@@ -9184,6 +10632,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_g": {
@@ -9240,6 +10692,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "349_h": {
@@ -9296,6 +10752,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_a": {
@@ -9369,6 +10829,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_b": {
@@ -9408,6 +10872,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_c": {
@@ -9430,6 +10898,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_d": {
@@ -9509,6 +10981,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    10,
+    11
    ]
   },
   "355_f_355_g": {
@@ -9743,6 +11219,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    10
+   ]
+  },
+  "48_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "55_a": {
@@ -9918,6 +11404,31 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    13
+   ]
+  },
+  "56_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "62_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "62_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "62_c": {
@@ -9940,6 +11451,30 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "62_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "63_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "63_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "64_a": {
@@ -9962,6 +11497,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_b": {
@@ -9984,6 +11522,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "64_c": {
@@ -10006,6 +11547,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_a": {
@@ -10181,6 +11725,9 @@
      "absatz": "1",
      "item": "p"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_a_bis": {
@@ -10203,6 +11750,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_b": {
@@ -10225,6 +11775,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_c": {
@@ -10247,6 +11800,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "66_d": {
@@ -10282,6 +11838,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_a": {
@@ -10355,6 +11914,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_b": {
@@ -10377,6 +11939,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_c": {
@@ -10467,6 +12032,9 @@
      "absatz": "7bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_d": {
@@ -10489,6 +12057,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_e": {
@@ -10500,8 +12071,12 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 67b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "67_f": {
@@ -10549,6 +12124,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "77_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "77_b": {
@@ -10571,6 +12156,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79_a": {
@@ -10593,6 +12181,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "79_b": {
@@ -10615,6 +12206,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "92_a": {
@@ -10637,6 +12231,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   }
  },

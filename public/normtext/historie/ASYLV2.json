@@ -6,6 +6,176 @@
   "referenz": 38,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2018-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6545",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/721"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 233",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/233"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Verwaltungskosten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 3991",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2020-11-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 3991",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/743"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Rückkehrberatung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Programme im Ausland"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2008-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 5585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/768"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2023-01-01",
@@ -34,7 +204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Titel: Sozialhilfe und Nothilfe"
     },
     {
      "typ": "fassung",
@@ -47,7 +218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
     }
    ]
   },
@@ -158,6 +330,10 @@
      "absatz": "3",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "4": {
@@ -176,6 +352,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "5": {
@@ -233,6 +413,10 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "6": {
@@ -251,6 +435,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "7": {
@@ -269,6 +457,10 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "10": {
@@ -300,6 +492,11 @@
      "absatz": "1",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "11": {
@@ -318,6 +515,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "12": {
@@ -336,6 +538,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "16": {
@@ -380,6 +587,11 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "17": {
@@ -430,6 +642,11 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "20": {
@@ -550,8 +767,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Sozial- und Nothilfe"
     }
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "22": {
@@ -622,6 +847,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "23": {
@@ -705,6 +933,9 @@
      "absatz": null,
      "item": "n"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "24": {
@@ -796,6 +1027,16 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "26": {
@@ -879,6 +1120,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "27": {
@@ -897,6 +1141,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "28": {
@@ -915,6 +1162,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "29": {
@@ -959,6 +1209,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30": {
@@ -977,6 +1230,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "31": {
@@ -1027,7 +1283,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 29",
+     "ueberschrift": "2. Kapitel: Verwaltungskosten"
     },
     {
      "typ": "fassung",
@@ -1040,8 +1298,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Verwaltungskosten"
     }
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "40": {
@@ -1128,7 +1394,9 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sicherheitskosten",
+     "teilweise": "Eingefügt durch Anhang der V vom 4. Sept. 2013, in Kraft vom 1. Okt. 2013 bis zum 28. Sept. 2015 (AS 2013 3065)."
     }
    ]
   },
@@ -1159,7 +1427,9 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Einrichtungen für traumatisierte Personen",
+     "teilweise": "Fassung gemäss Anhang der V vom 4. Sept. 2013, in Kraft vom 1. Okt. 2013 bis zum 28. Sept. 2015 (AS 2013 3065)."
     }
    ]
   },
@@ -1209,7 +1479,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
     }
    ]
   },
@@ -1229,6 +1500,30 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    6
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "50": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "51": {
@@ -1323,7 +1618,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
     }
    ]
   },
@@ -1343,6 +1639,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "53": {
@@ -1766,7 +2065,7 @@
    ]
   },
   "65": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1779,7 +2078,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rückkehrberatung"
     }
    ]
   },
@@ -1799,6 +2099,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "67": {
@@ -1817,6 +2120,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "68": {
@@ -1848,6 +2154,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "71": {
@@ -1890,7 +2199,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Programme im Ausland"
     }
    ]
   },
@@ -1910,10 +2220,13 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    10
    ]
   },
   "73": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1926,7 +2239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Individuelle Rückkehrhilfe"
     }
    ]
   },
@@ -1985,6 +2299,16 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    11
+   ]
+  },
+  "75": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    11
    ]
   },
   "76": {
@@ -2003,6 +2327,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "77": {
@@ -2021,6 +2348,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "78": {
@@ -2039,6 +2369,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "83": {
@@ -2139,6 +2472,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "27_a": {
@@ -2157,6 +2493,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "30_a": {
@@ -2175,6 +2514,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "42_43": {
@@ -2212,10 +2554,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "52_a": {
-   "giltSeit": "2020-11-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2228,8 +2573,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
     }
+   ]
+  },
+  "52_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "52_c": {
@@ -2248,6 +2601,37 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    8
+   ]
+  },
+  "52_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "52_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "52_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "52_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "53_a": {
@@ -2535,6 +2919,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "5_b": {
@@ -2566,6 +2954,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "68_a": {
@@ -2584,6 +2976,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    9
    ]
   },
   "74_a": {
@@ -2602,6 +2997,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "76_a": {
@@ -2633,6 +3031,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    11
    ]
   },
   "79_80": {
@@ -2655,7 +3056,7 @@
    "aufgehobenSeit": "2019-03-01"
   },
   "8_9": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2681,7 +3082,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
     },
     {
      "typ": "fassung",
@@ -2694,7 +3096,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
     }
    ],
    "aufgehobenSeit": "2018-01-01"

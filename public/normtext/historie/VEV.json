@@ -6,6 +6,50 @@
   "referenz": 85,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 240",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 240",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/240"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-06-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 261",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/261"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2026-06-12",
@@ -1217,7 +1261,7 @@
    ]
   },
   "45": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1230,7 +1274,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
     },
     {
      "typ": "fassung",
@@ -1243,12 +1288,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
     }
    ]
   },
   "54": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1261,8 +1307,65 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
     }
+   ]
+  },
+  "55": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "56": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "57": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "58": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "59": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "60": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "61": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "62": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "63": {
@@ -1338,7 +1441,7 @@
    ]
   },
   "10_a": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1351,8 +1454,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
     }
+   ]
+  },
+  "10_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "29_a": {
@@ -1845,7 +1956,7 @@
    ]
   },
   "68_a": {
-   "giltSeit": "2026-06-12",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1858,8 +1969,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
     }
+   ]
+  },
+  "68_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "68_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "68_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "68_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "68_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   }
  },

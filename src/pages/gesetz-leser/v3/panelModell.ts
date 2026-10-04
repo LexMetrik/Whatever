@@ -7,6 +7,8 @@ import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
+import type { Fussnote, StrukturMap } from '../../../lib/normtext/browse';
+import { zitatKuerzel } from '../artikelBezeichnung';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 
 // ─── Modell des Rechtsprechungs-/Kontext-Panels (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─
@@ -195,12 +197,23 @@ function aufzaehlung(teile: readonly string[]): string {
  * ist eine falsche Auskunft über den Bestand (§8). Die Kurznamen kommen aus
  * `KLASSE_SCHALTER` (derselben Quelle wie die Schalter selbst, §5).
  */
-export function instanzStand(klassen: readonly BezugStatus[]): string {
+export function instanzStand(klassen: readonly BezugStatus[], kantone: readonly string[] = [], ohneWirkung: readonly string[] = []): string {
   const erste = klassen[0];
   if (erste === undefined) return 'keine';
-  return klassen.length === 1
+  const klassenTeil = klassen.length === 1
     ? KLASSE_SCHALTER[erste]
     : `${KLASSE_SCHALTER[erste]} +${klassen.length - 1}`;
+  // W2·17-UI-BEFUNDE (E4-B03/D01, 1.10.2026): die Kantonwahl gehört zum Stand —
+  // sonst stand «BGE +3» im Grundzustand UND bei «nur BE» (gemessen OR Art. 41),
+  // und die eingeklappte Facette war genau das versteckte Filter, das Ä54
+  // verbietet. Nur bei eingeschalteter Klasse «kantonal»: ohne sie wirkt der
+  // Kanton nicht (`bauePraedikate`), eine Nennung behauptete eine Einschränkung,
+  // die nicht greift. Bis zwei Kantone beim Namen, darüber die Zahl.
+  // Entscheid David 2.10.2026 (Variante A): ein Kanton ohne Kante am Artikel schneidet dort nichts
+  // (`kantonenOhneWirkung`) — er steht nicht im Stand, sonst läse sich «BGE +3 · BE» wie ein wirkender Filter.
+  const wirkend = kantone.filter((k) => !ohneWirkung.includes(k));
+  if (wirkend.length === 0 || !klassen.includes('kantonal')) return klassenTeil;
+  return `${klassenTeil} · ${wirkend.length <= 2 ? wirkend.join(', ') : `${wirkend.length} Kantone`}`;
 }
 
 /** Kurzstand des Zeitraums. `bereichLabel` liefert bei offenem Bereich `null` —
@@ -359,6 +372,9 @@ export function panelBezug(
  */
 export interface BlattArtikel {
   eintrag: NormSnapshot;
+  /** Amtliche Fussnoten des Artikels (Struktur-Sidecar) — dieselbe Eingabe wie im Wortlaut
+   *  (Marker zerlegen den Text; die Verweis-Liste braucht dieselben Segmente, §5). */
+  fussnoten?: Fussnote[];
   /** `undefined` = kein Historie-Eintrag (oder Shard noch unterwegs). */
   historie?: ArtikelHistorie;
 }
@@ -368,11 +384,12 @@ export function blattArtikel(
   artIndex: ReadonlyMap<string, number>,
   historieFuer: (token: string) => ArtikelHistorie | undefined,
   token: string | null,
+  fussnotenFuer?: (token: string) => Fussnote[] | undefined,
 ): BlattArtikel | null {
   const i = token ? artIndex.get(token) : undefined;
   const eintrag = i === undefined ? undefined : eintraege[i];
   if (!eintrag || !token) return null;
-  return { eintrag, historie: historieFuer(token) };
+  return { eintrag, historie: historieFuer(token), fussnoten: fussnotenFuer?.(token) };
 }
 
 /**
@@ -390,4 +407,12 @@ export function blattArtikel(
  */
 export function normZitat(artikelLabel: string | null, kuerzel: string): string {
   return artikelLabel ? `${artikelLabel} ${kuerzel}` : kuerzel;
+}
+
+/** Panel-Zitat des gelesenen Artikels; bei Übergangsartikeln mit Gruppe («Art. 3 SchlT ZGB», `../artikelBezeichnung`). */
+export function panelZitat(
+  ziel: { label: string | null; token: string | null }, kuerzel: string,
+  struktur: StrukturMap | null, eintraege: readonly NormSnapshot[],
+): string {
+  return normZitat(ziel.label, zitatKuerzel(ziel.token, ziel.label, kuerzel, struktur, eintraege));
 }
