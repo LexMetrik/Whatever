@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·27-BUND-FERTIG
+dach: W2·32-GENERALANWEISUNGEN
 titel: Generalanweisung AS 1999 1118 nennt weit mehr ZGB-Artikel (1, 28, 35, 172–180, 286, 287 Abs. 3, 288, 308 …)
 anlass: Session-Notizen 2026-10-03
 -->
