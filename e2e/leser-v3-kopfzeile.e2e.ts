@@ -865,6 +865,44 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
+  // ── (d2) W2·17-UI-BEFUNDE PA-10-B03 (1.10.2026) · AUCH BEI EINGEKLAPPTER GLIEDERUNG ──
+  // BEFUND, gemessen @1440: nach «Gliederung ausblenden» ist der linke Streifen
+  // nur die Schiene breit (`--leser-spur-versatz` = 56 px), und das Kürzel stand
+  // dort in `min-w-0 truncate` — «Staatenlose» (66 px) wurde zu «Staaten…», obwohl
+  // zwischen Suchfeld und «Ansicht» ~250 px frei lagen. (d) misst nur die OFFENE
+  // Gliederung (81 von 81) und sah das nie.
+  // ROT ZU BEKOMMEN (§6.7): in `v3/LeserKopf.tsx` den Streifen wieder fest auf
+  // `width: var(--leser-spur-versatz)` setzen — dann misst STAATENLOSE hier 66 in 56.
+  test('(d2) UI-BEFUNDE PA-10-B03 · das Kürzel ist auch bei EINGEKLAPPTER Gliederung nie angeschnitten', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    for (const pfad of [
+      '/gesetze/international/STAATENLOSE', // 66 px Kürzel in 56 px Schiene
+      '/gesetze/international/UNO_PAKT_II',
+      '/gesetze/bund/FINFRAV_FINMA', // 81 px
+    ]) {
+      await page.goto(pfad)
+      const el = page.locator('[data-v3-kopf-kuerzel]')
+      await expect(el).toBeVisible({ timeout: 20_000 })
+      // Die Wahl «zu» merkt sich der Leser (Gedächtnis): ab dem zweiten Erlass steht
+      // die Gliederung schon zu, und der Griff «ausblenden» fehlt.
+      const griff = page.locator('[data-v3-gliederung-zu]')
+      if (await griff.count() > 0) await griff.click()
+      await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+      await page.waitForTimeout(400)
+      const mass = await el.evaluate((n) => ({
+        text: (n.textContent ?? '').trim(), sw: n.scrollWidth, cw: n.clientWidth,
+      }))
+      expect(mass.text, `${pfad}: kein Kürzel im Kopf`).not.toBe('')
+      expect(mass.sw, `${pfad} bei eingeklappter Gliederung: «${mass.text}» ist ellipsiert (${mass.sw} in ${mass.cw})`)
+        .toBeLessThanOrEqual(mass.cw)
+      // Das Suchfeld daneben bleibt benutzbar (der Streifen wächst nur um das Kürzel).
+      const feld = await page.locator('[data-v3-suchsprung] input').first().boundingBox()
+      expect(feld?.width ?? 0, `${pfad}: das Suchfeld ist zu schmal`).toBeGreaterThan(200)
+    }
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
   // ── (e) V6 (Nachzug 17.8.2026) · DER KOPF WÄCHST, DER TEXT BLEIBT STEHEN ───
   //
   // BEFUND des Ästhetik-Reviews, gemessen @1440 an der StPO: klappt man die
@@ -948,5 +986,91 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
     expect(auf.artOben, 'nach dem Aufklappen aus dem Bild gescrollt').toBeLessThan(900)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+})
+
+// ═══ W2·17-UI-BEFUNDE (1.10.2026) · Erlass-Titel im Kopf und im Reiter ═══════
+//
+// Browser-Seite zu `src/tests/leser-titel-kopf.test.ts` (die Regeln selbst sind
+// dort unit-bewiesen, auch über alle 1580 Register-Einträge). Hier steht, was nur
+// gerendert prüfbar ist: kein horizontaler Seitenüberlauf, der Titel steht EINMAL.
+//
+//  · E-D16-B01 — AR-822.111 @390 hatte documentElement.scrollWidth 1434 (nicht
+//    umbrechende «Kennung» = der ganze Titel, danach noch einmal der Titel);
+//    BS-390.760 trug ein Satzfragment als Kennung vor dem Titel; BS-410.130 @390
+//    eine 35 Zeichen lange Kennung, 452 px in 318 px.
+//  · PA-6-B04/B05 — ArGV 3: «… (ArGV 3) (ArGV 3)» statt des Sachtitels; RBÜ ohne
+//    Revisionsangabe.
+//  · PA-6-B06 — Reiter «RBÜ (revidiert in Paris am 24. Juli 1971, RBÜ)».
+//
+// ROT ZU BEKOMMEN (§6.7): in `src/pages/gesetz-leser/v3/erlassWortlaut.ts` den
+// Zweig `kuerzelIstTitelSchluss` aus `titelKennung` streichen — dann steht an
+// BS-390.760 wieder eine Kennung vor dem Titel (und `startsWith`-Zweig: AR-822.111
+// bleibt durch `titelOhneKlammerSuffix(…, kuerzel)` geschützt).
+// NACHZUG 2.10.2026 (F1): der Längen-Deckel ist durch die inhaltliche Regel
+// `titelSchluss.ts` ersetzt; BS-390.760 zeigt den VOLLEN amtlichen Titel.
+
+async function oeffneTitel(page: Page, pfad: string, breite: number) {
+  await page.setViewportSize({ width: breite, height: 900 })
+  await page.goto(pfad)
+  const h1 = page.locator('h1').first()
+  await expect(h1).toBeVisible({ timeout: 20_000 })
+  return h1
+}
+
+const seitenBreite = (page: Page) => page.evaluate(() => ({
+  scroll: document.documentElement.scrollWidth, fenster: window.innerWidth,
+}))
+
+test.describe('W2·17-UI-BEFUNDE — Erlass-Titel im Kopf (Browser-Seite zu leser-titel-kopf.test.ts)', () => {
+  test('E-D16-B01 · AR-822.111 @390: der Titel steht einmal, die Seite läuft nicht über', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    const h1 = await oeffneTitel(page, '/gesetze/kanton/AR-822.111', 390)
+    const text = ((await h1.textContent()) ?? '').replace(/\s+/g, ' ').trim()
+    expect(text.split('Gebührentarif zum Bundesgesetz').length - 1, `Titel doppelt: «${text}»`).toBe(1)
+    await expect(page.locator('[data-kopf-kennung]')).toHaveCount(0)
+    const b = await seitenBreite(page)
+    expect(b.scroll, `Seitenüberlauf: scrollWidth ${b.scroll} > ${b.fenster}`).toBeLessThanOrEqual(b.fenster)
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  test('E-D16-B01/F1 · BS-390.760: kein Satzfragment als Kennung, die H1 trägt den vollen amtlichen Titel', async ({ page }) => {
+    const h1 = await oeffneTitel(page, '/gesetze/kanton/BS-390.760', 390)
+    await expect(page.locator('[data-kopf-kennung]')).toHaveCount(0)
+    const text = ((await h1.textContent()) ?? '').replace(/\s+/g, ' ').trim()
+    expect(text.startsWith('Vertrag betreffend die Kremation'), `H1 beginnt mit «${text.slice(0, 40)}»`).toBe(true)
+    // F1: der abgespaltene Schluss gehört zum amtlichen Titel und steht in der H1
+    expect(text.endsWith('des Kantons Aargau vom 28. November 1919'), `H1 endet mit «${text.slice(-60)}»`).toBe(true)
+    const b = await seitenBreite(page)
+    expect(b.scroll).toBeLessThanOrEqual(b.fenster)
+  })
+
+  test('E-D16-B01 · BS-410.130 @390: die 35 Zeichen lange Kennung umbricht statt zu überlaufen', async ({ page }) => {
+    await oeffneTitel(page, '/gesetze/kanton/BS-410.130', 390)
+    const kennung = page.locator('[data-kopf-kennung]')
+    await expect(kennung).toHaveText('Absenzen- und Disziplinarverordnung')
+    const b = await seitenBreite(page)
+    expect(b.scroll, `Seitenüberlauf: scrollWidth ${b.scroll} > ${b.fenster}`).toBeLessThanOrEqual(b.fenster)
+  })
+
+  test('Gegenprobe: LugÜ behält die kurze, unteilbare Kennung', async ({ page }) => {
+    await oeffneTitel(page, '/gesetze/international/LUGUE', 390)
+    const kennung = page.locator('[data-kopf-kennung]')
+    await expect(kennung).toHaveText('LugÜ')
+    await expect(kennung).toHaveClass(/whitespace-nowrap/)
+  })
+
+  test('PA-6-B04 · ArGV 3: der amtliche Sachtitel steht in der H1, das Kürzel einmal; der Reiter ebenso', async ({ page }) => {
+    const h1 = await oeffneTitel(page, '/gesetze/bund/ARGV3', 1440)
+    const text = ((await h1.textContent()) ?? '').replace(/\s+/g, ' ').trim()
+    expect(text).toBe('Verordnung 3 zum Arbeitsgesetz (ArGV 3) (Gesundheitsschutz)')
+    await expect(page).toHaveTitle(/^ArGV 3 \(Gesundheitsschutz\) — LexMetrik/)
+  })
+
+  test('PA-6-B05/B06 · RBÜ: die Revisionsangabe bleibt im Titel, der Reiter nennt das Kürzel einmal', async ({ page }) => {
+    const h1 = await oeffneTitel(page, '/gesetze/international/RBUE', 1440)
+    const text = ((await h1.textContent()) ?? '').replace(/\s+/g, ' ').trim()
+    expect(text).toContain('revidiert in Paris am 24. Juli 1971')
+    await expect(page).toHaveTitle(/^RBÜ \(revidiert in Paris am 24\. Juli 1971\) — LexMetrik/)
   })
 })

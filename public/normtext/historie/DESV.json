@@ -6,6 +6,22 @@
   "referenz": 4,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 376",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/376"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2025-07-01",
@@ -734,7 +750,7 @@
    ]
   },
   "37": {
-   "giltSeit": "2025-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -747,8 +763,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
     }
+   ]
+  },
+  "38": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "40": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "21_a": {
@@ -767,6 +805,48 @@
      "absatz": null,
      "item": null
     }
+   ]
+  },
+  "37_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "37_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "39_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "43_a": {

@@ -76,6 +76,7 @@ export function LeserUebersicht({ m, bestimmungsWort }: {
       kantonErlassAnzahl: m.kantonErlassAnzahl,
       nichtKonsolidiert: m.nichtKonsolidiert,
       nichtKonsolidiertSeit: m.nichtKonsolidiertSeit,
+      strukturAusgefallen: m.teilausfall?.teile.includes('struktur') ?? false,
     })}
       // W2·5m · der Weg zu UNSEREM Schnappschuss (§7-Transparenz). Auch das ist
       // nur Verdrahtung: die Entscheidung, OB und WOHIN, trifft die reine

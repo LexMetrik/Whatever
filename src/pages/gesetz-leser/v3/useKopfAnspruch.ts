@@ -15,7 +15,9 @@ import { useMeldeInhaltsKopf } from '../../../components/layout/InhaltsKopfKonte
 // heisst nicht «kein Kopf», sondern «ich melde nichts» — die Shell fällt dann auf
 // `kopfVonPfad()` zurück (`components/layout/Shell.tsx`), also exakt auf das Bild,
 // das jede Nicht-V3-Seite bekommt. Es entsteht keine zweite Krumen-Ableitung, die
-// neben `erlassAnsicht.brotkrume` veralten könnte (§5).
+// neben `erlassAnsicht.brotkrume` veralten könnte (§5). [Nachtrag W2·17 H9-B01,
+// 1.10.2026: `brotkrume` ist gestrichen (kein Aufrufer) — die Aussage gilt
+// unverändert für die Shell-Ableitung `kopfVonPfad()`.]
 //
 // WARUM ZWEI SCHREIBER AUF EINEM SLOT HIER VERTRETBAR SIND: die Fassade
 // RESERVIERT datenunabhängig und synchron — sie muss, denn der Rahmen ist `lazy`,

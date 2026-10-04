@@ -10,7 +10,6 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
 import { parseFedlexCacheEintraege } from './normtext/inventar-bund.ts';
 import { pinIdentitaet, pinBefund, warFrischGeschrieben } from './normtext/cache-pin-befund.ts';
 import {
@@ -59,7 +58,7 @@ import { baueManifest } from './normtext/kanton-manifest.ts';
 import { mischeGoldenKanton, mischeGoldenVollLauf } from './normtext/golden-kanton-merge.ts';
 import { baueBrowseManifest } from './normtext/browse-manifest.ts';
 import type { NormSnapshot, NormSnapshotDatei } from '../src/lib/normtext/typen.ts';
-import type { BildRef } from './normtext/extrahiere-fedlex.ts';
+import { erstelleBilderSitzung } from './normtext/bilder-sync.ts';
 import { ERLASS_REGISTER } from '../src/lib/normtext/register.ts';
 
 // ── Argument --datum= auslesen ────────────────────────────────────────────────
@@ -148,53 +147,8 @@ function sortiereTokens(tokens: string[]): string[] {
 // Der sha muss auch die items abdecken, sonst erkennt der Drift-Check
 // Inhaltsänderungen in den lit./Ziff.-Punkten nicht. marke + text je item
 // fliessen ein (Reihenfolge stabil).
-// ─── Bilder herunterladen + selbst hosten (Bilder&Formeln 1.7.2026) ─────────
-// Der Extraktor hat je Bild die RELATIVE Quell-src («image/imageN.png») erfasst.
-// Hier: → absolute Filestore-URL (gleiche Basis wie fedlex-cache.sh), herunterladen
-// nach public/normtext/bilder/<erlass>/, sha über die Bytes, `datei` auf den lokalen
-// Pfad setzen. IDEMPOTENT (Datei existiert → nur sha aus den Bytes; kein Re-Fetch).
-// ESCAPE-HATCH: Nicht-200 / Content-Type ≠ image/* → Build-Fehler (nie stilles Loch).
-const BILDER_BASIS = 'https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli';
-
-async function ladeBilder(
-  bloecke: Array<{ bild?: BildRef; bildKacheln?: Array<{ bild?: BildRef }> }>,
-  name: string,
-  eli: string,
-  konsolidierung: string,
-): Promise<void> {
-  const nameLc = name.toLowerCase();
-  const dir = `public/normtext/bilder/${nameLc}`;
-  const base = `${BILDER_BASIS}/${eli}/${konsolidierung}/de/html/`;
-  const refs: BildRef[] = [];
-  for (const b of bloecke) {
-    if (b.bild) refs.push(b.bild);
-    for (const k of b.bildKacheln ?? []) if (k.bild) refs.push(k.bild);
-  }
-  for (const ref of refs) {
-    if (ref.sha) continue; // im selben Lauf bereits verarbeitet
-    const relName = ref.datei.split('/').pop() ?? ref.datei; // imageN.png
-    const lokal = `${dir}/${relName}`;
-    let bytes: Buffer;
-    if (existsSync(lokal)) {
-      bytes = readFileSync(lokal);
-    } else {
-      const url = `${base}${ref.datei}`; // base + «image/imageN.png»
-      const res = await fetch(url);
-      const ct = res.headers.get('content-type') ?? '';
-      if (!res.ok || !ct.startsWith('image/')) {
-        throw new Error(
-          `[Bilder] Download fehlgeschlagen: ${name} ${url} → http=${res.status}, type=${ct}. ` +
-            `(Filestore-URL instabil? Escape-Hatch: Erlass ausnehmen statt stilles Bild-Loch.)`,
-        );
-      }
-      bytes = Buffer.from(await res.arrayBuffer());
-      mkdirSync(dir, { recursive: true });
-      writeFileSync(lokal, bytes);
-    }
-    ref.sha = createHash('sha256').update(bytes).digest('hex');
-    ref.datei = `bilder/${nameLc}/${relName}`;
-  }
-}
+// Bilder: Abruf, Selbst-Hosting und Aufräumen → normtext/bilder-sync.ts (W2·27-BUND-FERTIG,
+// 1.10.2026: Bytes immer aus der gepinnten Konsolidierung, verwaiste Dateien je Erlass entfernt).
 
 // sha256Bloecke → geteilte Definition (§5 SSoT), siehe unten importiert.
 
@@ -1252,6 +1206,7 @@ async function main(): Promise<void> {
       continue;
     }
 
+    const bilder = erstelleBilderSitzung({ name, eli, konsolidierung });
     // Alle Artikel-Token aus dem HTML extrahieren (führende Ziffer = Pflicht)
     const tokens = alleArtikelTokens(html);
     const snapshotListe: NormSnapshot[] = [];
@@ -1266,7 +1221,7 @@ async function main(): Promise<void> {
         uebersprungen.push({ gesetz: gesetzKey, token: ankerVoll });
         continue;
       }
-      await ladeBilder(extrakt.bloecke, name, eli, konsolidierung);
+      await bilder.lade(extrakt.bloecke);
 
       const id = `bund/${gesetzKey}/${ankerVoll}`;
       const snapshot: NormSnapshot = {
@@ -1305,7 +1260,7 @@ async function main(): Promise<void> {
         uebersprungen.push({ gesetz: gesetzKey, token: anker });
         continue;
       }
-      await ladeBilder(extrakt.bloecke, name, eli, konsolidierung);
+      await bilder.lade(extrakt.bloecke);
       const token = ankerZuToken(anker);
       const id = `bund/${gesetzKey}/${token}`;
       const snapshot: NormSnapshot = {
@@ -1343,7 +1298,7 @@ async function main(): Promise<void> {
         uebersprungen.push({ gesetz: gesetzKey, token: anker });
         continue;
       }
-      await ladeBilder(extrakt.bloecke, name, eli, konsolidierung);
+      await bilder.lade(extrakt.bloecke);
       const token = ankerZuToken(anker); // annex_1 / annex_1_1 — kein «art_», kein «/» → unverändert
       const id = `bund/${gesetzKey}/${token}`;
       const snapshot: NormSnapshot = {
@@ -1365,6 +1320,9 @@ async function main(): Promise<void> {
       snapshotListe.push(snapshot);
       goldenIndex[id] = snapshot.sha;
     }
+
+    const verwaist = bilder.raeumeAuf(); // Re-Pin mit umnummerierten Bildern: alte Dateien dieses Erlasses entfernen (check:bilder Punkt 3)
+    if (verwaist.length > 0) console.log(`  [Bilder] ${gesetzKey}: ${verwaist.length} verwaiste Bild-Datei(en) entfernt: ${verwaist.join(', ')}`);
 
     // JSON schreiben — E1-Rest (§6-Schritt, FAHRPLAN-DATENHALTUNG §5): die
     // Bund-Dateien public/normtext/bund/*.json entstehen AUSSCHLIESSLICH aus der

@@ -6,6 +6,22 @@
   "referenz": 79,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2022-05-26",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 291",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/291"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2022-05-26",
@@ -272,7 +288,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation"
     }
    ]
   },
@@ -305,6 +322,9 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -362,6 +382,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "18": {

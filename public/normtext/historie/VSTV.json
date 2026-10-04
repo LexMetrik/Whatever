@@ -3,9 +3,39 @@
  "abdeckung": {
   "fussnoten": 101,
   "ereignis": 85,
-  "referenz": 15,
-  "unparsed": 1
+  "referenz": 16,
+  "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4633",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/763"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 5155",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/796"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2023-01-01",
@@ -310,7 +340,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
     }
    ]
   },
@@ -343,6 +374,9 @@
      "absatz": "1bis",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22": {
@@ -361,6 +395,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {
@@ -405,6 +442,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "25": {
@@ -423,6 +470,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26": {
@@ -441,6 +491,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "27": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "28": {
@@ -496,7 +556,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
     }
    ]
   },
@@ -664,7 +725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Nichterhebung der Steuer gegen Domizilerklärung"
     }
    ]
   },
@@ -850,6 +912,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "42": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "47": {
@@ -1181,6 +1253,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "26_a": {
@@ -1225,6 +1300,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "38_a": {
@@ -1246,7 +1324,7 @@
    ]
   },
   "39_40": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1272,7 +1350,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
     }
    ],
    "aufgehobenSeit": "2019-01-01"
@@ -1306,6 +1385,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_b": {
@@ -1337,6 +1419,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41_c": {
@@ -1368,6 +1453,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_a": {
@@ -1389,11 +1477,5 @@
    ]
   }
  },
- "residuum": [
-  {
-   "token": "70",
-   "nr": "100",
-   "roh": "BS 6 338]"
-  }
- ]
+ "residuum": []
 }

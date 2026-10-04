@@ -6,6 +6,80 @@
   "referenz": 36,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2010-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 6579",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/814"
+    },
+    {
+     "label": "BBl 2006 9315",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/1228"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2007-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 2849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/374"
+    },
+    {
+     "label": "BBl 2006 551",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/54"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9a. Kapitel: Trusts"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2007-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 5685",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/782"
+    },
+    {
+     "label": "BBl 2003 1288",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2003/194"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Eingetragene Partnerschaft"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1035",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/226"
+    },
+    {
+     "label": "BBl 2011 2185",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/292"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Eingetragene Partnerschaft"
+  }
+ ],
  "artikel": {
   "5": {
    "giltSeit": "2025-01-01",
@@ -2473,8 +2547,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
     }
+   ]
+  },
+  "108_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "108_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "108_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "11_a": {
@@ -2678,7 +2774,7 @@
    ]
   },
   "149_a": {
-   "giltSeit": "2007-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2695,8 +2791,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9a. Kapitel: Trusts"
     }
+   ]
+  },
+  "149_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "149_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "149_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "149_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "163_a": {
@@ -3208,7 +3333,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Eingetragene Partnerschaft"
     },
     {
      "typ": "fassung",
@@ -3225,7 +3351,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Eingetragene Partnerschaft"
     }
    ]
   },
@@ -3272,6 +3399,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "65_d": {

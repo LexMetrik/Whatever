@@ -1,7 +1,7 @@
 {
   "erlassKey": "ZEMIS_V",
   "sr": "142.513",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -13,12 +13,11 @@
       "titelDe": "Verordnung vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPV)",
       "titelFr": "Ordonnance du 12 juin 2026 sur la transparence des personnes morales et l’identification des ayants droit économiques (Ordonnance sur la transparence des personnes morales, OTPM)",
       "titelIt": "Ordinanza del 12 giugno 2026 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Ordinanza sulla trasparenza delle persone giuridiche, OTPG)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/364/de",
-      "sha": "7b71ac07c557b94d6175172d4870ec9f0e3585c7c356c1dd770287d193f1b3e4"
+      "sha": "9876c44dd822cee486647ecbe78a50c65aef8f66e793ac62ba32d97ccd06eb6c"
     },
     {
       "art": "aenderung",
@@ -714,5 +713,5 @@
       "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     }
   ],
-  "sha": "de367ce539dea3956f5eefc1ec6a853e634c0df102f291a4eae692d35bcceb5a"
+  "sha": "b462682db3bef5b6cb2a12febb837ff99f1b4a17ae8cabf673a331f480f1286b"
 }

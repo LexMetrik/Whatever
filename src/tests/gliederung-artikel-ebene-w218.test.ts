@@ -322,16 +322,38 @@ describe('W2·18 — artikel-granulare Bäume: jeder Artikel erreichbar, keine D
     }
   });
 
-  it('OR: das Doppelungs-Verbot trägt — 115 Artikel-Zeilen, nicht 1686', () => {
+  it('OR: das Doppelungs-Verbot trägt — Artikel-Zeilen nur an den Lücken, nicht je Artikel (1686 Zeilen)', () => {
     const m = lade('bund', 'OR');
     const artikelZeilen = flacheZeilen(m.knoten).filter((k) => k.art === 'artikel').length;
-    // 115 Zeilen schliessen 83 Lücken: ein Knoten mit mehreren Artikeln gibt
-    // auch seinem ERSTEN eine Zeile — eine Teilliste «alle ausser dem ersten»
-    // wäre die verwirrendere Wahl. Weit entfernt von den 1686 Zeilen, die eine
-    // Ebene ohne Lücken-Regel erzeugt hätte.
-    expect(artikelZeilen).toBe(115);
+    // Gemessen 20260101: 115 Zeilen schliessen 83 Lücken (ein Knoten mit mehreren Artikeln gibt
+    // auch seinem ERSTEN eine Zeile — eine Teilliste «alle ausser dem ersten» wäre die
+    // verwirrendere Wahl); 20261001: 116 (Fedlex fasst OR Art. 697l/697m zu einem Element
+    // zusammen, die Lücken-Struktur verschiebt sich). GEÄNDERTE ERWARTUNG, deklariert
+    // (W2·27-BUND-FERTIG, 1.10.2026): das Literal 115 riss bei jedem Re-Pin des OR und der
+    // Frische-Workflow kann es nicht nachziehen. Die Invariante bleibt: weit entfernt von den
+    // Zeilen, die eine Ebene ohne Lücken-Regel erzeugt hätte (eine je Artikel), und beide
+    // Zählwege (Art-Feld, ID-Präfix) stimmen überein.
+    expect(artikelZeilen).toBeGreaterThan(0);
     expect(artikelZeilen).toBeLessThan(m.kennzahlen.artikelAnzahl / 10);
-    expect(flacheZeilen(m.knoten).filter((k) => k.id.startsWith(`${ID_ARTIKEL}:`)).length).toBe(115);
+    expect(flacheZeilen(m.knoten).filter((k) => k.id.startsWith(`${ID_ARTIKEL}:`)).length).toBe(artikelZeilen);
+  });
+
+  it('OR: die Lücken-Regel gibt auch dem ERSTEN Artikel eines reinen Artikel-Knotens eine Zeile (Re-Pin-fest)', () => {
+    // Datenunabhängige Invariante statt Zeilenzahl-Literal (W2·27-BUND-FERTIG, 1.10.2026). Ein Knoten, der
+    // AUSSCHLIESSLICH Artikel-Zeilen trägt, springt (ersterArtikel) seinen ersten Artikel selbst an; die
+    // Lücken-Regel hängt trotzdem ALLE seine Artikel als Zeilen auf — die erste Zeile MUSS also genau diesen
+    // ersten Artikel tragen. Fehlte sie (Mutation M2b 1.10.2026: in haengeArtikelZeilen `arts.slice(1)`, wo der Knoten
+    // den ersten Artikel selbst anspringt), sänke die Zeilenzahl 115 -> 83 und diese Gleichung bricht
+    // («sek-67: expected '40_g' to be '40_f'»); der «jeder Artikel erreichbar»-Test merkt es nicht (der
+    // Knoten springt den ersten Artikel ja selbst an) — gemessen: mit M2b rot NUR dieser Test.
+    const m = lade('bund', 'OR');
+    const reineArtikelKnoten = flacheZeilen(m.knoten)
+      .filter((k) => k.art !== 'artikel' && k.kinder.length > 0 && k.kinder.every((kk) => kk.art === 'artikel'));
+    // Nicht-vakuös: der OR hat solche Knoten (Untergrenze, kein Literal).
+    expect(reineArtikelKnoten.length).toBeGreaterThan(0);
+    for (const k of reineArtikelKnoten) {
+      expect(k.kinder[0].ersterArtikel, `Knoten ${k.id}: erste Artikel-Zeile`).toBe(k.ersterArtikel);
+    }
   });
 
   it('die 20 artikel-granularen Erlasse, namentlich (F4 des §9-Bug-Checks)', () => {

@@ -6,6 +6,44 @@
   "referenz": 40,
   "unparsed": 3
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 5583",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/785"
+    },
+    {
+     "label": "BBl 2010 7059",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1290"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Abschnitt: Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2007-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2007 2239",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2007/313"
+    },
+    {
+     "label": "BBl 2005 5829",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2005/951"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2021-01-01",
@@ -810,7 +848,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Abschnitt: Datenbearbeitung"
     }
    ]
   },
@@ -885,6 +924,9 @@
      "absatz": "1quater",
      "item": "d"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "30": {
@@ -1343,6 +1385,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27_e": {
@@ -1420,8 +1465,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4b. Abschnitt: Berufliche Vorsorge"
     }
+   ]
+  },
+  "32_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "32_c": {
@@ -1461,6 +1514,9 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "32_d": {
@@ -1506,7 +1562,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "frueher": "2. Satz"
     },
     {
      "typ": "eingefuegt",
@@ -1525,6 +1582,23 @@
      "absatz": "2bis",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "32_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "32_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "32_g": {
@@ -1547,6 +1621,23 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "32_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "32_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "32_j": {
@@ -1603,6 +1694,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "32_k": {
@@ -1625,6 +1719,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "32_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "32_m": {
@@ -1647,6 +1751,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "34_a": {

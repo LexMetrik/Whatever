@@ -2,10 +2,103 @@
  "erlass": "AHVG",
  "abdeckung": {
   "fussnoten": 469,
-  "ereignis": 387,
-  "referenz": 81,
+  "ereignis": 386,
+  "referenz": 82,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 758",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/758"
+    },
+    {
+     "label": "BBl 2019 7359",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2681"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1996 2466",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466"
+    },
+    {
+     "label": "BBl 1990 II 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1990/2_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
+  },
+  {
+   "typ": "fassung",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 92",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/92"
+    },
+    {
+     "label": "BBl 2019 6305",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IV. Flexibler Rentenbezug",
+   "teilweise": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40c in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92; BBl 2019 6305). Siehe auch die UeB dieser Änd. am Schluss des Textes."
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1969 111",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120"
+    },
+    {
+     "label": "BBl 1968 I 602",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1968/1_602_627_671"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2012-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 5659",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/799"
+    },
+    {
+     "label": "BBl 2010 1817",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/340"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-01-01",
@@ -1380,7 +1473,7 @@
    "aufgehobenSeit": "1997-01-01"
   },
   "23": {
-   "giltSeit": "1997-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1397,8 +1490,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Der Anspruch auf Witwen- und Witwerrente"
     }
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "25": {
@@ -1760,7 +1861,7 @@
    ]
   },
   "39": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1777,8 +1878,17 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IV. Flexibler Rentenbezug",
+     "teilweise": "Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40c in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92; BBl 2019 6305). Siehe auch die UeB dieser Änd. am Schluss des Textes."
     }
+   ]
+  },
+  "40": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "41": {
@@ -1841,7 +1951,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "als Ziff. IV vor Art. 39 und später 40"
     }
    ]
   },
@@ -1897,7 +2008,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "C. Die ausserordentlichen Renten"
     }
    ]
   },
@@ -3702,23 +3814,6 @@
      ],
      "absatz": null,
      "item": null
-    },
-    {
-     "typ": "fassung",
-     "datum": null,
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2006 3459",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
-      },
-      {
-       "label": "BBl 1999 1979",
-       "url": ""
-      }
-     ],
-     "absatz": null,
-     "item": null
     }
    ]
   },
@@ -4495,7 +4590,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Dritter bzw. Vierter Teil",
+     "ueberschrift": "Fünfter Teil: Schlussbestimmungen"
     }
    ]
   },
@@ -4862,7 +4959,7 @@
    ]
   },
   "153_b": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4879,8 +4976,58 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
     }
+   ]
+  },
+  "153_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "153_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "1_a": {
@@ -4892,7 +5039,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 1"
     },
     {
      "typ": "inkraft",
@@ -5138,7 +5286,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Erster Abschn.",
+     "ueberschrift": "Erster Abschnitt a: Die versicherten Personen"
     }
    ]
   },
@@ -5271,6 +5421,13 @@
     }
    ]
   },
+  "24_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "24_b": {
    "giltSeit": "2026-01-01",
    "ereignisse": [
@@ -5291,6 +5448,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "26_28": {
@@ -5746,7 +5906,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 29bis"
     },
     {
      "typ": "eingefuegt",
@@ -6279,6 +6440,27 @@
     }
    ]
   },
+  "40_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "40_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "40_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "43_bis": {
    "giltSeit": "2024-01-01",
    "ereignisse": [
@@ -6484,7 +6666,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
     },
     {
      "typ": "fassung",
@@ -6501,7 +6684,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
     }
    ]
   },
@@ -6514,7 +6698,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 43ter"
     },
     {
      "typ": "eingefuegt",
@@ -6584,6 +6769,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "43_quinquies": {
@@ -6621,7 +6810,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "E. Verschiedene Bestimmungen"
     }
    ]
   },
@@ -6662,6 +6852,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_bis_48_sexies": {
@@ -6734,7 +6928,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 49a"
     },
     {
      "typ": "eingefuegt",

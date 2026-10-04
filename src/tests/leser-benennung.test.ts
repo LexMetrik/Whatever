@@ -56,7 +56,8 @@ const V3_DIR = `${WURZEL}/v3`;
 const GETEILTE_BAUSTEINE = [
   'parts/ErlassLeserKopf.tsx',
   'parts/ArtikelLeser.tsx',
-  'parts/ArtikelLeser.leitfaelle.tsx',
+  // (Hier stand `parts/ArtikelLeser.leitfaelle.tsx`; gelöscht 2.10.2026, Rückbau
+  // Rechtsprechungs-Zeilen W2·17-UI-BEFUNDE — Eintrag mit der Datei ausgetragen.)
   // W2·24-F (7.9.2026): die zwei §6.6-Splits von `ArtikelLeser.tsx` — sie
   // tragen sichtbare Wörter («Materialien», «Verweise», «Rechnen», «Vorlage»,
   // «Rechner») und standen bis zum Split IN der Datei darüber. Ohne diese zwei

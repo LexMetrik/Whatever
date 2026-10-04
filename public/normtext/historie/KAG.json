@@ -1,11 +1,103 @@
 {
  "erlass": "KAG",
  "abdeckung": {
-  "fussnoten": 252,
+  "fussnoten": 250,
   "ereignis": 196,
-  "referenz": 56,
+  "referenz": 54,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 53",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+    },
+    {
+     "label": "BBl 2020 6885",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1852"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+    },
+    {
+     "label": "BBl 2012 3639",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2012/495"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "7. Titel: Schlussbestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2013-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 585",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+    },
+    {
+     "label": "BBl 2012 3639",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2012/495"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Vollzug; Aufhebung und Änderung bisherigen Rechts"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 4417",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/758"
+    },
+    {
+     "label": "BBl 2015 8901",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/2141"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2015-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1389",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    {
+     "label": "BBl 2014 605",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2020-01-01",
@@ -972,7 +1064,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Wahrung der Anlegerinteressen"
     }
    ]
   },
@@ -1013,6 +1106,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "22": {
@@ -1037,6 +1133,13 @@
     }
    ],
    "aufgehobenSeit": "2020-01-01"
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
   },
   "24": {
    "giltSeit": null,
@@ -1262,20 +1365,20 @@
    ]
   },
   "46": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
-     "typ": "eingefuegt",
-     "datum": "2015-07-01",
+     "typ": "fassung",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2015 1389",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
       },
       {
-       "label": "BBl 2014 605",
-       "url": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
       }
      ],
      "absatz": "3",
@@ -1313,7 +1416,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Rechte und Pflichten der Aktionärinnen und Aktionäre"
     }
    ]
   },
@@ -1337,6 +1441,23 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "49": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "50": {
@@ -2544,7 +2665,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Titel: Prüfung und Aufsicht"
     }
    ]
   },
@@ -3501,7 +3623,7 @@
    "aufgehobenSeit": "2009-01-01"
   },
   "152": {
-   "giltSeit": "2013-03-01",
+   "giltSeit": "2009-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3535,7 +3657,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "7. Titel: Schlussbestimmungen"
     },
     {
      "typ": "eingefuegt",
@@ -3552,8 +3675,17 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Vollzug; Aufhebung und Änderung bisherigen Rechts"
     }
+   ]
+  },
+  "153": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1,
+    2
    ]
   },
   "159": {
@@ -3593,6 +3725,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "102_a": {
@@ -3618,7 +3753,7 @@
    ]
   },
   "118_a": {
-   "giltSeit": "2024-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3635,8 +3770,114 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Titel: Limited Qualified Investor Fund"
     }
+   ]
+  },
+  "118_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "118_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "127_129": {
@@ -3956,11 +4197,11 @@
    ]
   },
   "46_a": {
-   "giltSeit": "2015-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2015-07-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -3974,8 +4215,26 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2026-10-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2026 323",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/323"
+      },
+      {
+       "label": "BBl 2024 1607",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2024/1607"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
-   ]
+   ],
+   "aufgehobenSeit": "2026-10-01"
   },
   "75_77": {
    "giltSeit": null,

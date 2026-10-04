@@ -137,7 +137,7 @@
     "check:pdf": "vite-node scripts/normtext/check-pdf.ts",
     "check:pdf-netz": "vite-node scripts/normtext/check-pdf.ts -- --netz",
     "gen:pdf-quellen": "vite-node scripts/normtext/pdf-quellen-generieren.ts --",
-    "gen:inkrafttreten": "vite-node scripts/normtext/inkrafttreten-generieren.ts --",
+    "gen:inkrafttreten": "vite-node scripts/normtext/inkrafttreten-generieren-run.ts --",
     "gen:abk-aliase": "vite-node scripts/normtext/abk-aliase-generieren.ts --",
     "gen:artikel-bestand": "vite-node scripts/normtext/artikel-bestand-generieren.ts",
     "check:artikel-bestand": "vite-node scripts/normtext/artikel-bestand-generieren.ts -- --check",

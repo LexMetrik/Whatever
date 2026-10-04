@@ -1,10 +1,7 @@
-# ─── Prod-Smoke: Watchdog über die eigene Live-Site ─────────────────────────
-# FAHRPLAN-BASIS-AUSBAU §A5 (B-11). Gegenstück zu normen-monitor.yml: jener
-# überwacht die QUELLEN (Fedlex/LexWork/Materialien), dieser die eigene PROD.
-# Prüft Kernrouten (200 + Inhalt), den ehrlichen JSON-503/200 der Edge-Suche,
-# Sitemap, statische Assets und die CSP-Kopfzeile. Bei Rot ein sichtbarer Issue
-# (Muster wie normen-monitor; keine Issue-Flut). Reine Netz-Prüfung, kein
-# npm-Build, keine Env-Secrets nötig — läuft kontolos mit dem Repo.
+# ─── Prod-Smoke: Watchdog über die eigene Live-Site ────────────────
+# FAHRPLAN-BASIS-AUSBAU §A5 (B-11). Gegenstück zu normen-monitor.yml (QUELLEN):
+# prüft die eigene PROD — Kernrouten, Edge-Suche (JSON-503/200), Sitemap, Assets,
+# CSP. Reine Netz-Prüfung ohne Build/Secrets. Bei Rot ein Zettel (Muster: waechter.yml).
 name: Prod-Smoke
 
 on:
@@ -26,8 +23,7 @@ jobs:
       issues: write
     steps:
       # fetch-depth: 0 — der Prod-Stand-Wächter (QS-AUTOMATIK 16.8.2026) vergleicht
-      # den ausgelieferten Build-SHA gegen origin/main. Ein flacher Klon kennt den
-      # Build-Commit oft nicht und der Wächter meldete «unbekannter Build-SHA».
+      # den Build-SHA gegen origin/main; ein flacher Klon kennt ihn oft nicht.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -40,7 +36,6 @@ jobs:
         env:
           SMOKE_BASE_URL: ${{ github.event.inputs.base_url }}
         run: npm run smoke:prod
-      # Bei Rot: sichtbaren Aufgaben-Zettel anlegen/aktualisieren (kein Issue-Regen).
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
         if: failure()
         env:
@@ -48,12 +43,13 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Prod-Smoke rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:prod-smoke&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           rumpf="Der Prod-Smoke ist rot — die Live-Site verletzt einen harten Betriebs-Vertrag (Kernroute nicht 200, Edge-Suche liefert HTML statt JSON, Sitemap/Asset weg oder CSP-Kopf fehlt). **Neu seit 16.8.2026**: auch «Prod hinkt hinter main» — dann ist die AUSLIEFERUNG defekt, nicht die Site. Erst den Ignored Build Step und den Deployment-State in Vercel prüfen (READY statt CANCELED), nicht rollbacken. **Rückweg** bei echtem Site-Defekt: docs/betrieb/rollback-runbook.md (\`vercel rollback\`). Lauf: ${RUN_URL}"
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Erneut rot am $(date +%F). ${rumpf}"
           else
-            gh issue create --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf"
+            for l in "--label alarm:prod-smoke" ""; do gh issue create $l --title "🔴 Prod-Smoke rot ($(date +%F)) — Live-Site prüfen / ggf. Rollback" --body "$rumpf" && break; done
           fi
 
       - name: Bei Grün — offenen Zettel schliessen
@@ -63,6 +59,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
-          offen=$(gh issue list --state open --search 'Prod-Smoke rot in:title' --json number --jq '.[0].number // empty')
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:prod-smoke&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           [ -z "$offen" ] && exit 0
           gh issue close "$offen" --reason completed --comment "🟢 Wieder grün am $(date +%F): ${RUN_URL}"

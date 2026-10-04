@@ -6,6 +6,45 @@
   "referenz": 34,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 731",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/731"
+    },
+    {
+     "label": "BBl 2022 1673",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2022/1673"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+   "teilweise": "Eingefügt durch Ziff. I des BG vom 17. März 2023 (Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz), in Kraft vom 1. Jan. 2024 bis zum 31. Dez. 2028 (AS 2023 731; BBl 2022 1673)."
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 33",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+    },
+    {
+     "label": "BBl 2020 233",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/16"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: DLT-Handelssysteme"
+  }
+ ],
  "artikel": {
   "2": {
    "giltSeit": "2021-08-01",
@@ -798,7 +837,7 @@
    ]
   },
   "41_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -815,12 +854,28 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+     "teilweise": "Eingefügt durch Ziff. I des BG vom 17. März 2023 (Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz), in Kraft vom 1. Jan. 2024 bis zum 31. Dez. 2028 (AS 2023 731; BBl 2022 1673)."
     }
    ]
   },
+  "41_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "41_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
   "73_a": {
-   "giltSeit": "2021-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -837,8 +892,44 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: DLT-Handelssysteme"
     }
+   ]
+  },
+  "73_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "73_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "73_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "73_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "73_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   }
  },

@@ -76,9 +76,19 @@ describe('F41 — bare «Art. N» wird in §-Erlassen nicht self-verlinkt', () =
     expect(ssr(<NormText text={text} intern={refs('BS-427.800', true)} />)).not.toContain('#art-18');
   });
 
-  it('BS-427.800 § 1 Abs. 4: OHNE die Weiche entstünde der falsche Self-Link (Ist vor F41)', () => {
-    const text = snapshotText('BS-427.800', '1', '4');
+  // Rot-Probe der Weiche (§6.7): ohne `paragrafDesigniert` entsteht der Self-Link. Seit
+  // 2.10.2026 (W2·17-UI-BEFUNDE Nachzug) fängt die Belegstelle selbst auch FREMDERLASS_GENITIV
+  // («Art. 18 Abs. 2 des Bundesgesetzes» — Genitiv-Erlassname hinter dem Passus); zwei
+  // unabhängige Guards. Die Probe nimmt darum einen Text, über den NUR F41 entscheidet.
+  it('OHNE die Weiche entstünde der falsche Self-Link (Ist vor F41; Text ohne Erlassnamen)', () => {
+    const text = 'Gemäss Art. 18 Abs. 2 kann die Behörde im Einzelfall abweichen.';
     expect(ssr(<NormText text={text} intern={refs('BS-427.800', false)} />)).toContain('#art-18');
+    expect(ssr(<NormText text={text} intern={refs('BS-427.800', true)} />)).not.toContain('#art-18');
+  });
+
+  it('BS-427.800 § 1 Abs. 4: auch ohne F41 bleibt «Art. 18 Abs. 2 des Bundesgesetzes» Text (Genitiv-Erlassname)', () => {
+    const text = snapshotText('BS-427.800', '1', '4');
+    expect(ssr(<NormText text={text} intern={refs('BS-427.800', false)} />)).not.toContain('#art-18');
   });
 
   // Belegstelle 2: SO-615.11 § 12 Abs. 1 — «Art. 80 Abs. 2 des Bundesgesetzes

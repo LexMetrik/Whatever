@@ -6,6 +6,170 @@
   "referenz": 26,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 447",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/112"
+    },
+    {
+     "label": "BBl 2004 5965",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2004/1084"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2022-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 385",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/385"
+    },
+    {
+     "label": "BBl 2020 6069",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1492"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Datenbearbeitung"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2013-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1451",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
+    },
+    {
+     "label": "BBl 2011 8195",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1451",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/334"
+    },
+    {
+     "label": "BBl 2011 8195",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2011/1437"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Strafverfolgung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2020-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2017 6559",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2017/725"
+    },
+    {
+     "label": "BBl 2015 959",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2015/96"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Strafverfolgung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 2623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
+    },
+    {
+     "label": "BBl 2006 8573",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2009 2623",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2009/352"
+    },
+    {
+     "label": "BBl 2006 8573",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2006/1086"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2011-07-01",
@@ -42,7 +206,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -868,7 +1033,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: …"
     }
    ],
    "aufgehobenSeit": "2011-07-01"
@@ -1050,7 +1216,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Strafbare Handlungen"
     }
    ]
   },
@@ -1108,6 +1275,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "21": {
@@ -1164,6 +1334,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "22": {
@@ -1186,6 +1359,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "23": {
@@ -1225,6 +1401,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "24": {
@@ -1281,6 +1460,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "25": {
@@ -1305,6 +1487,13 @@
     }
    ],
    "aufgehobenSeit": "1975-08-01"
+  },
+  "26": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
   },
   "27": {
    "giltSeit": "2017-05-01",
@@ -1343,10 +1532,13 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "28": {
-   "giltSeit": "2020-01-01",
+   "giltSeit": "2011-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1380,7 +1572,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Strafverfolgung"
     },
     {
      "typ": "fassung",
@@ -1397,12 +1590,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Strafverfolgung"
     }
    ]
   },
   "29": {
-   "giltSeit": "2011-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1436,7 +1630,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Aufgaben der Kantone und des Bundes"
     }
    ]
   },
@@ -1588,7 +1783,7 @@
    "aufgehobenSeit": "2011-07-01"
   },
   "18_a": {
-   "giltSeit": "2022-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1605,7 +1800,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
     },
     {
      "typ": "fassung",
@@ -1622,7 +1818,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3a. Kapitel: Datenschutz und Datenbearbeitung"
     },
     {
      "typ": "eingefuegt",
@@ -1639,7 +1836,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
     }
    ]
   },
@@ -1703,6 +1901,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    2
    ]
   },
   "18_d": {
@@ -1757,8 +1960,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Datenbearbeitung"
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "18_e": {
@@ -1781,6 +1989,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    3
    ]
   },
   "18_f": {
@@ -1803,6 +2016,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1,
+    3
    ]
   },
   "19_a": {
@@ -1859,6 +2077,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_b": {
@@ -1915,6 +2136,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_bis": {
@@ -1937,6 +2161,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "19_c": {
@@ -1959,6 +2186,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "1_a": {
@@ -2025,6 +2255,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5,
+    6
    ]
   },
   "28_b_28_l": {
@@ -2087,6 +2321,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "29_b": {
@@ -2109,6 +2346,30 @@
      "absatz": "2",
      "item": "2"
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "29_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "29_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "29_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "2_a": {
@@ -2241,7 +2502,7 @@
    "aufgehobenSeit": "2011-07-01"
   },
   "3_b": {
-   "giltSeit": "2011-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2258,7 +2519,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
     }
    ]
   },
@@ -2278,6 +2540,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    8
+   ]
+  },
+  "3_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "3_e": {
@@ -2296,6 +2568,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "3_f": {
@@ -2320,6 +2595,48 @@
     }
    ],
    "aufgehobenSeit": "2022-08-01"
+  },
+  "3_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "3_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "3_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "3_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "3_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
+  },
+  "3_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
+   ]
   },
   "8_a": {
    "giltSeit": "2021-05-15",

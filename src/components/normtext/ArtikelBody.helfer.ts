@@ -111,12 +111,17 @@ export function markenZitat(marke: string, trenner?: string): string {
  *  Aufzählungsmarke mit «.», Label-Marke mit «:»; trägt das Label schon ein
  *  Satzzeichen, wird keines verdoppelt. */
 export function markenAnzeige(marke: string, trenner?: string): string {
+  // Marke-lose Haupttext-Zeile (`marke: ''`, W2·27-BUND-FERTIG 3.10.2026): nichts anzeigen — KEIN erfundenes «.».
+  if (marke === '') return '';
   const art = markenArt(marke, trenner);
   if (art === 'strich') return '–';
   if (trenner !== undefined) return `${marke.trimEnd()}${trenner}`;
-  if (art !== 'label') return `${marke}.`;
+  // W2·17 E-D2-B02: endet die Marke schon auf ein Satzzeichen (Phrasen-Marke
+  // «1. Légalisation de signature:» aus Tabellenzeilen-Items, «a)»), wird keines
+  // angehängt — «signature:.» war ein erfundenes Zeichen (§1).
   const m = marke.trimEnd();
-  return /[:.;,]$/.test(m) ? m : `${m}:`;
+  if (/[:.;,)]$/.test(m)) return m;
+  return art !== 'label' ? `${marke}.` : `${m}:`;
 }
 
 /** Verschachtelungsstufe je Item. PRIMÄR aus der EXPLIZITEN `tiefe` des
@@ -131,13 +136,28 @@ export function markenAnzeige(marke: string, trenner?: string): string {
 export function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): number[] {
   const hatTiefe = items.some((it) => typeof it.tiefe === 'number');
   if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
-  const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  // `leer` = marke-lose Zeile (W2·27-BUND-FERTIG 3.10.2026): trägt keine Ebene aus ihrer Marke — sie steht auf Stufe 0
+  // und verändert weder `sahLit` noch die Strich-Kette noch die `erste`-Erkennung (sonst kippte «'' 1. 2.» auf Stufe 1).
+  const typ = (m: string) => m === '' ? 'leer' : /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  const arten = items.map((it) => typ(it.marke));
+  // W2·17 E-D2-B01: kantonale Listen «1. a. b. c. 2. 3.» stellen die lit. UNTER
+  // die Ziff. Erkennbar daran, dass die erste Nicht-Strich-Marke eine Ziffer ist
+  // UND später eine lit. auf eine Ziff. folgt (Ziff.→lit.-Übergang). Dann ist die
+  // Ziff. die äussere Stufe; die Bund-Reihenfolge «a. 1. 2. b.» (lit. zuerst)
+  // bleibt unverändert. Ohne diese Umkehr stand Ziff. 2 ff. als Kind der letzten
+  // lit. — und der Zitierknopf lieferte «Art. 1 Abs. 1 lit. c Ziff. 2».
+  const erste = arten.find((a) => a !== 'strich' && a !== 'leer');
+  // «Echte» lit. = Kleinbuchstaben-Marke («a», «abis», «a)»); Phrasen-, Symbol-
+  // und Leer-Marken («[tab]», «½‰», «Somme du gage:») lösen die Umkehr nicht aus.
+  const echteLit = (i: number) => arten[i] === 'lit' && /^\p{Ll}+[).]?$/u.test(items[i].marke.trim());
+  const ziffAussen = erste === 'ziff' && arten.some((_, i) => echteLit(i) && arten.slice(0, i).includes('ziff'));
   const stufen: number[] = [];
   let sahLit = false, letzteNichtStrich = 0;
-  for (const it of items) {
-    const t = typ(it.marke);
+  for (const t of arten) {
     let lv: number;
-    if (t === 'strich') lv = letzteNichtStrich + 1;
+    if (t === 'leer') lv = 0;
+    else if (t === 'strich') lv = letzteNichtStrich + 1;
+    else if (ziffAussen) { lv = t === 'ziff' ? 0 : 1; letzteNichtStrich = lv; }
     else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
     else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
     stufen.push(lv);
@@ -160,3 +180,84 @@ export function vglFnNr(a: string, b: string): number {
   const ka = key(a), kb = key(b);
   return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
 }
+
+/** Zitat-Segment der Ziffer-Ebene («Art. 197 Ziff. 9 Abs. 1 BV»): ohne `ziffer` leer = byte-gleich. */
+export const zifferTeil = (b: { ziffer?: string }): string => (b.ziffer != null ? ` Ziff. ${b.ziffer}` : '');
+
+type ZitatItem = NonNullable<NormSnapshot['bloecke'][number]['items']>[number];
+
+/** Zitat-Segmente eines Items («lit. a», «Ziff. 3.1 lit. a»): nächster Vorfahre je
+ *  flacherer Stufe, rückwärts über die Kette. EINE Stelle (§5) für den Zitierknopf
+ *  der Item-Zeile (vormals inline in ArtikelBody.tsx, Wortlaut der Logik unverändert).
+ *  Mit `vorKette` (Items der unterbrochenen Liste aus Vorgänger-Blöcken: Bild-Block-
+ *  Fortsetzung, Anhang-Zwischennotiz) läuft die Kette über die VERSCHMOLZENE Liste;
+ *  ohne bleibt der Pfad byte-identisch block-lokal (`stufen` = stufenFuer(items)). */
+export function itemZitatSegmente(
+  items: ZitatItem[],
+  stufen: number[],
+  j: number,
+  vorKette?: ZitatItem[],
+): string[] {
+  const mitVor = vorKette != null && vorKette.length > 0;
+  const kette = mitVor ? [...vorKette, ...items.slice(0, j + 1)] : items.slice(0, j + 1);
+  const kStufen = mitVor ? stufenFuer(kette) : stufen;
+  const seg: string[] = [];
+  let lvl = kStufen[kette.length - 1];
+  // Marke-lose Zeile (`marke: ''`) trägt selbst kein Zitat (kein Zitierknopf).
+  if (kette[kette.length - 1].marke === '') return seg;
+  for (let k = kette.length - 1; k >= 0 && lvl >= 0; k--) {
+    // Marke-loser VORFAHRE (nächstflachere Ebene, Wurzel-Ebene eingeschlossen): die Kette bricht ab. Übersprungen
+    // erbte das Kind das Geschwister davor als Eltern («lit. b Ziff. 1») oder verlöre das Eltern-Glied («Ziff. 1»)
+    // — kein Zitat ist besser als ein falsches (§1/§8; Gegenprüfung PR #1299, A1).
+    if (kStufen[k] === lvl && kette[k].marke === '') return [];
+    if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
+      // QS-UI: Label-Marken ohne «lit.»-Präfix (markenZitat) — «lit. BE» ist in der
+      // VZV kein Zitat, die Kategorie heisst schlicht «BE».
+      seg.unshift(markenZitat(kette[k].marke, kette[k].trenner));
+      lvl--;
+    }
+  }
+  return seg;
+}
+
+type ListenBlock = NormSnapshot['bloecke'][number] & { bild?: unknown; bildKacheln?: unknown[] };
+
+// Block, der die Item-Liste eines Anhangs NICHT unterbricht: marke-lose Zwischen-Notiz
+// (nur Text) oder Items-Block. Absatz-, Titel-, Tabellen- und Bild-Blöcke sind eine Grenze.
+const gehoertZurListe = (b: ListenBlock): boolean =>
+  b.titel === undefined && b.absatz == null && b.bild == null
+  && !(b.bildKacheln != null && b.bildKacheln.length > 0)
+  && b.mehrspaltig == null && !(b.tabelle != null && b.tabelle.length > 0);
+
+/** Anhang-Zwischennotiz (W2·27 P4): die Extraktion teilt die Item-Liste an einer
+ *  marke-losen Zeile (Block mit `einzug`). Der Notiz-Block und der Block danach beginnen
+ *  dann mit Punkten der Tiefe ≥ 1, deren Eltern-Punkt in einem Vorblock liegt — ohne
+ *  diese Kette verlöre der Zitierknopf den übergeordneten Punkt («Anhang 4 lit. a» statt
+ *  «Anhang 4 Ziff. 3.1 lit. a», §1: ein verkürztes Zitat ist ein falsches). Liefert die
+ *  Items der Vorgänger derselben Liste bis zum nächstvorherigen Punkt der Wurzel-Ebene
+ *  (genug, um die Kette zu schliessen). Leer, wenn der Block an der Wurzel beginnt (block-
+ *  lokal vollständig) oder weder er noch sein unmittelbarer Vorgänger ein Notiz-Block ist:
+ *  ein gewöhnlicher Absatz-Block mit eigener Unterliste (ARGV1 Anh., RBUE Anh.) hat seinen
+ *  Eltern im eigenen Text, nicht im Vorblock — dort bliebe jede Kette erfunden (§1). */
+export function anhangVorKette(bloecke: NormSnapshot['bloecke'], i: number): ZitatItem[] {
+  const b = bloecke[i] as ListenBlock;
+  if (b.items == null || b.items.length === 0 || !gehoertZurListe(b)) return [];
+  if (stufenFuer(b.items)[0] <= 0) return [];
+  if (b.einzug == null && (i === 0 || bloecke[i - 1].einzug == null)) return [];
+  const vor: ZitatItem[] = [];
+  for (let k = i - 1; k >= 0; k--) {
+    const vb = bloecke[k] as ListenBlock;
+    if (!gehoertZurListe(vb)) break;
+    if (vb.items == null || vb.items.length === 0) continue; // Notiz ohne Unterliste
+    vor.unshift(...vb.items);
+    if (vb.items.some((it) => (it.tiefe ?? 0) === 0)) break;
+  }
+  return vor;
+}
+
+/** Linker Einzug (Lesesicht) einer marke-losen Anhang-Zeile: die Textspalte der Items ihrer
+ *  Ebene (Liste pl-8 + Ebene·1.6 rem + Zeilen-px-2 + Markenspalte min-w-6 + gap-2 = 4.5 rem
+ *  + Ebene·1.6 rem, vgl. itemListe) — die Zeile steht unter dem Text ihres Eltern-Punkts, ihre
+ *  Unterliste eine Stufe tiefer. Ohne `einzug`: kein Eingriff (Prosa-Kante pl-9 bleibt). */
+export const einzugStil = (b: { einzug?: number }): { paddingLeft: string } | undefined =>
+  b.einzug != null ? { paddingLeft: `${(4.5 + 1.6 * b.einzug).toFixed(1)}rem` } : undefined;

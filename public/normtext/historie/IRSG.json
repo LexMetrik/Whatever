@@ -6,6 +6,98 @@
   "referenz": 34,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 625",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/111"
+    },
+    {
+     "label": "BBl 2017 6941",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2017/2057"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+    },
+    {
+     "label": "BBl 1995 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 360",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/360"
+    },
+    {
+     "label": "BBl 2018 6427",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2018/2301"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+    },
+    {
+     "label": "BBl 1995 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Beschwerde"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "1997-02-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 114",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114"
+    },
+    {
+     "label": "BBl 1995 III 1",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1995/3_1_1_1"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2021-06-01",
@@ -1623,7 +1715,7 @@
    ]
   },
   "78": {
-   "giltSeit": "1997-02-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1640,7 +1732,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Behandlung des Ersuchens"
     }
    ]
   },
@@ -1664,6 +1757,16 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "80": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "85": {
@@ -1935,7 +2038,7 @@
    ]
   },
   "11_b": {
-   "giltSeit": "2019-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1952,7 +2055,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1b. Kapitel: Schutz von Personendaten"
     }
    ]
   },
@@ -2010,6 +2114,44 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "11_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "11_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "11_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "11_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "11_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17_a": {
@@ -2266,6 +2408,41 @@
     }
    ]
   },
+  "79_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "80_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "80_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "80_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
+  "80_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
+   ]
+  },
   "80_d_bis": {
    "giltSeit": "2021-07-01",
    "ereignisse": [
@@ -2286,10 +2463,69 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "80_d_decies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_duodecies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_novies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_octies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_quater": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_quinquies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_septies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "80_d_sexies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "80_d_ter": {
-   "giltSeit": "2021-07-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2306,8 +2542,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
     }
+   ]
+  },
+  "80_d_undecies": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "80_e": {
@@ -2345,7 +2589,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschwerde"
     }
    ]
   },
@@ -2372,6 +2617,13 @@
    ],
    "aufgehobenSeit": "2007-01-01"
   },
+  "80_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
   "80_i": {
    "giltSeit": null,
    "ereignisse": [
@@ -2392,6 +2644,16 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "80_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "80_l": {
@@ -2431,10 +2693,13 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "80_m": {
-   "giltSeit": "1997-02-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2451,8 +2716,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Besondere Bestimmungen"
     }
+   ]
+  },
+  "80_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
+   ]
+  },
+  "80_o": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "80_p": {
@@ -2475,6 +2755,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    4
+   ]
+  },
+  "80_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "81_84": {

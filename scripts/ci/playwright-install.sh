@@ -58,6 +58,19 @@
 #     Wartelogik still abschalten. Fix: einmalige `::warning` beim Start und
 #     bewusstes Überspringen der Wartelogik statt eines stillen Fehlschlags.
 #
+# Wurzel-Fix «apt nur wenn nötig» (W2·18-FEHLERBUCH, 1.10.2026): vier
+# Merge-Queue-/PR-Rauswürfe an einem Tag (Läufe 36893290218 Shard 1+2,
+# 36887676700 Shard 3, 36890985162 Shard 8, 36885150267) — Browser-Cache war
+# HIT, aber `install --with-deps` zog trotzdem 4 Upgrades + 10 Pakete (v. a.
+# Fonts, 32 MB) vom Ubuntu-Spiegel mit ~50 kB/s und lief zweimal ins 240-s-
+# Limit (Exit 124). ZUERST jetzt: `playwright install chromium` ohne apt (lädt
+# nur bei Cache-Miss), dann Startprobe (Chromium headless + leere Seite).
+# Startet er, ist der Schritt fertig; sonst läuft der Weg unten UNVERÄNDERT.
+# Kein stiller Grün-Durchlauf: scheitern Probe UND apt, bleibt der Shard rot.
+# Zeitbudget (B1): Weg 1 kostet im Störfall höchstens 45+15 s (no-deps) +
+# 15+15 s (Probe) = 90 s zusätzlich → Worst Case 630+90 = 720 s = Reserve des
+# 28-min-Jobs; Regelfall: ~3 s. Limits bewusst knapp, nicht erhöhen.
+#
 # Testmodus für lokale Beweise (kein echtes CI, kein sudo nötig):
 #   LEXMETRIK_SPERRE_TEST=<pfad>   sperre_belegt() prüft "Datei existiert"
 #                                  statt `sudo fuser`/`sudo lsof`; alle
@@ -67,7 +80,10 @@
 #                                  (Default: "npx playwright install --with-deps chromium")
 #   LEXMETRIK_SPERRE_MAX=<s>       überschreibt die 30-s-Wartegrenze
 #   LEXMETRIK_INSTALL_TIMEOUT=<s>  überschreibt die 240-s-Versuchsdauer
-#   Diese vier Variablen sind in echter CI gesperrt (B2) — siehe Riegel unten.
+#   LEXMETRIK_NODEPS_CMD=<cmd>     ersetzt `npx playwright install chromium` (ohne apt)
+#   LEXMETRIK_PROBE_CMD=<cmd>      ersetzt die Chromium-Startprobe
+#   LEXMETRIK_PROBE_TIMEOUT=<s>    überschreibt die 15-s-Dauer der Startprobe
+#   Diese Variablen sind in echter CI gesperrt (B2) — siehe Riegel unten.
 #
 # Portabilität (KORRIGIERT nach Opus-Gegenprüfung 8.9.2026 — die vorherige
 # Behauptung war falsch, s. B3): kein externes `timeout`-Binary vorausgesetzt
@@ -85,6 +101,9 @@ set -euo pipefail
 sperre_max="${LEXMETRIK_SPERRE_MAX:-30}"
 install_timeout="${LEXMETRIK_INSTALL_TIMEOUT:-240}"
 install_cmd="${LEXMETRIK_INSTALL_CMD:-npx playwright install --with-deps chromium}"
+nodeps_cmd="${LEXMETRIK_NODEPS_CMD:-npx playwright install chromium}"
+nodeps_timeout=45
+probe_timeout="${LEXMETRIK_PROBE_TIMEOUT:-15}"
 
 testmodus=0
 if [ -n "${LEXMETRIK_SPERRE_TEST:-}" ]; then
@@ -93,7 +112,7 @@ fi
 
 # B2: Testmodus-Variablen dürfen in echter CI nie gesetzt sein — sonst liefe
 # ein Fake-Install still grün durch, ohne dass jemand es merkt.
-if [ -n "${GITHUB_ACTIONS:-}" ] && [ -n "${LEXMETRIK_SPERRE_TEST:-}${LEXMETRIK_INSTALL_CMD:-}" ]; then
+if [ -n "${GITHUB_ACTIONS:-}" ] && [ -n "${LEXMETRIK_SPERRE_TEST:-}${LEXMETRIK_INSTALL_CMD:-}${LEXMETRIK_NODEPS_CMD:-}${LEXMETRIK_PROBE_CMD:-}${LEXMETRIK_PROBE_TIMEOUT:-}" ]; then
   echo "::error::Testmodus-Variablen in CI gesetzt — Abbruch"
   exit 1
 fi
@@ -233,6 +252,39 @@ fuehre_dpkg_configure() {
     echo "::warning::dpkg --configure -a nicht sauber (Exit ${status}) — Versuch trotzdem"
   fi
 }
+
+# Startprobe: echter Browser-Start + leere Seite. Nur Exit 0 zählt; jede
+# fehlende Systembibliothek («error while loading shared libraries») macht den
+# Start rot und schickt uns in den apt-Zweig (§6.7: die Probe kann scheitern).
+probe_js='const{chromium}=require("@playwright/test");(async()=>{const b=await chromium.launch();try{const p=await b.newPage();await p.setContent("<p>ok</p>");}finally{await b.close();}})().catch(e=>{console.error(String(e.message).split("\n").slice(0,6).join("\n"));process.exit(1);});'
+
+chromium_startet() {
+  local status=0
+  if [ -n "${LEXMETRIK_PROBE_CMD:-}" ]; then
+    read -ra probe_arr <<< "$LEXMETRIK_PROBE_CMD"
+    laufe_mit_wache "$probe_timeout" "${probe_arr[@]}" || status=$?
+  else
+    laufe_mit_wache "$probe_timeout" node -e "$probe_js" || status=$?
+  fi
+  return "$status"
+}
+
+# Weg 1 (kein apt): Browser nur laden, wenn der Cache fehlt, dann Startprobe.
+# Ein Fehlschlag hier ist nie fatal — er führt nur in den apt-Weg unten.
+read -ra nodeps_arr <<< "$nodeps_cmd"
+nodeps_status=0
+laufe_mit_wache "$nodeps_timeout" "${nodeps_arr[@]}" || nodeps_status=$?
+if [ "$nodeps_status" -eq 0 ]; then
+  probe_status=0
+  chromium_startet || probe_status=$?
+  if [ "$probe_status" -eq 0 ]; then
+    echo "::notice::Chromium startet, Systembibliotheken vorhanden — apt übersprungen."
+    exit 0
+  fi
+  echo "::warning::Chromium-Startprobe fehlgeschlagen (Exit ${probe_status}) — Systembibliotheken fehlen, apt-Weg folgt."
+else
+  echo "::warning::playwright install chromium (ohne apt) fehlgeschlagen (Exit ${nodeps_status}) — apt-Weg folgt."
+fi
 
 if [ "$testmodus" -eq 0 ]; then
   echo 'Acquire::Retries "3"; Acquire::http::Timeout "30"; Acquire::https::Timeout "30";' \

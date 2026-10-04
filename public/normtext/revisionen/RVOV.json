@@ -1,7 +1,7 @@
 {
   "erlassKey": "RVOV",
   "sr": "172.010.1",
-  "abgerufen": "2026-09-23",
+  "abgerufen": "2026-10-01",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
@@ -29,12 +29,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
-      "nichtKonsolidiert": true,
       "wirkungen": [
         "aenderung"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/420/de",
-      "sha": "62f9b248ef7440205306316b74ab3145b4a6dc17e247361a0cf19d417bb9b730"
+      "sha": "2850f48d11a76535ff042fe7adcab5f5ee952c6b4e371132ed4007785ee84e2d"
     },
     {
       "art": "aenderung",
@@ -2029,5 +2028,5 @@
       "sha": "38449fdecc8f71d1b00cf2fd6d41f4acec28a56d455041df5a7009ba4b67b110"
     }
   ],
-  "sha": "679ac1edc19ea9180ca4a20131a714511d9ab626dfd7f09ce3d6c9fb29636cbc"
+  "sha": "1e295d4541d84f8add392421ef3953141dc2fe9db2c6be787e228458236f1419"
 }

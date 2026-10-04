@@ -23,6 +23,8 @@
 import { parseHTML } from 'linkedom';
 import { lokalisiereAnker } from './segmente-anker.ts';
 import { leereZeilenStatistik, type Fingerabdruck, type ZeilenStatistik } from './segmente-soll.ts';
+import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+import { hochTiefZuAscii, MINUS_VARIANTEN } from './fedlex/text.ts';
 
 // Soll-/Basislinien-Logik liegt seit Runde 3 (25.9.2026) in `segmente-soll.ts`
 // (§6.6); hier re-exportiert, damit Aufrufer und Tests EINE Import-Quelle behalten.
@@ -336,8 +338,7 @@ export function alleAnhangEids(dokument: { querySelectorAll: (sel: string) => It
 
 // Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —
 // ganze Zeichenkette muss passen (§7 CLAUDE.md: kein Teilstring-Treffer).
-const ABSATZNUMMER_MUSTER =
-  /^\d+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)?[a-z]?\.?$/;
+const ABSATZNUMMER_MUSTER = new RegExp(`^\\d+${SUFFIX_ALT}?[a-z]?\\.?$`);
 
 /** Entfernt Fussnoten-Verweismarken (<sup> MIT <a>) aus einem (bereits geklonten) Teilbaum. */
 function ohneFussnotenmarken(klon: Knoten): Knoten {
@@ -733,11 +734,36 @@ export interface ProjektionsEintrag {
  * JEDES referenz-Vorkommen ein Tor-Artefakt gewesen (empirisch an VOEB
  * geprüft: 19 Artikel tragen `grundlage`, keines davon in `bloecke`).
  */
-export function projektionsBlob(eintrag: Pick<ProjektionsEintrag, 'bloecke' | 'grundlage'>): string {
+export function projektionsBlob(eintrag: Pick<ProjektionsEintrag, 'bloecke' | 'grundlage'>, minus = '-'): string {
   const teile: string[] = [];
   sammleStrings(eintrag.bloecke, teile);
   if (typeof eintrag.grundlage === 'string') teile.push(eintrag.grundlage);
-  return normalisiere(teile.join(''));
+  // P8: der Snapshot trägt Hoch-/Tiefstellungen als Unicode («m²»), der DOM-Text der Quelle «m2» — Rück-Faltung.
+  return normalisiere(hochTiefZuAscii(teile.join(''), minus));
+}
+
+/**
+ * Such-Blobs eines Eintrags: genau einer; trägt der Text ein Unicode-Minus (⁻/₋ — «10⁻⁹», «NO₃⁻»), zusätzlich je
+ * Minus-Variante der Quelle einen (die Quelle schreibt «-», «–» oder U+2011, der Snapshot hat die Variante verloren).
+ */
+export function projektionsBlobVarianten(eintrag: Pick<ProjektionsEintrag, 'bloecke' | 'grundlage'>): string[] {
+  const erst = projektionsBlob(eintrag);
+  const roh: string[] = [];
+  sammleStrings(eintrag.bloecke, roh);
+  if (typeof eintrag.grundlage === 'string') roh.push(eintrag.grundlage);
+  if (!/[⁻₋]/.test(roh.join(''))) return [erst];
+  return MINUS_VARIANTEN.map((m) => projektionsBlob(eintrag, m));
+}
+
+/** Fehlende Fingerabdrücke über alle Blob-Varianten: fehlt nur, was in KEINER Variante steht (Verlust bleibt sichtbar). */
+export function fehlendeIndizesVarianten(blobs: readonly string[], fps: readonly Fingerabdruck[]): number[] {
+  let fehl = fehlendeIndizes(blobs[0], fps);
+  for (const b of blobs.slice(1)) {
+    if (fehl.length === 0) break;
+    const f2 = new Set(fehlendeIndizes(b, fps));
+    fehl = fehl.filter((i) => f2.has(i));
+  }
+  return fehl;
 }
 
 

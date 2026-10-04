@@ -6,6 +6,22 @@
   "referenz": 5,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2015-10-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1079",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/214"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-10-01",
@@ -261,8 +277,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
     }
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "17": {
@@ -281,6 +305,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "19": {
@@ -301,6 +335,20 @@
     }
    ],
    "aufgehobenSeit": "2010-05-01"
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
   },
   "22": {
    "giltSeit": "2015-10-01",
@@ -331,6 +379,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "23": {

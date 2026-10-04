@@ -1,4 +1,7 @@
+import type React from 'react';
 import { gruppiereTausender } from '../../lib/normtext/darstellung';
+import { vorabDruck, type VorabDruck } from './tabellenDruck';
+import { KENNZAHL_TITEL, gruppiereZelle, istJahrSpalte, istProsaZelle, teileNachZifferngruppen } from './tarifText';
 
 // Tarif- und Tabellen-KOMPONENTEN des Normtext-Artikels. Aus ArtikelBody.tsx
 // ausgelagert (verhaltensneutral, §6/§6.6-Churn-Regrowth: die Vereinigung von
@@ -39,6 +42,27 @@ export function StaffelTabelle({ zeilen }: { zeilen: string[] }) {
       ))}
     </span>
   );
+}
+
+// Vorab-Markierung für den Druck (tabellenDruck.ts): `data-breit` und die geschätzte Schrift stehen
+// schon im Render-Markup — kein Druck-Ereignis nötig. `data-gekuerzt` + Link: gedruckte Hinweiszeile,
+// wenn die Zellschrift unter MIN_PT fällt.
+function vorabAttribute(v: VorabDruck) {
+  if (!v.breit) return {};
+  return {
+    'data-breit': '',
+    ...(v.klein ? { 'data-gekuerzt': '', 'data-permalink': typeof window === 'undefined' ? '' : `${window.location.origin}${window.location.pathname}` } : {}),
+    style: { '--druck-zoom-vorab': String(Math.round(v.zoom * 100) / 100) } as React.CSSProperties,
+  };
+}
+
+// Zifferngruppen mit Leerzeichen («Fr. 1 000», «300 000») brechen nie mitten in der Zahl
+// (Gegenprüfung #1279, §1: ZH-215.3 § 4 «300 ⏎ 000»). `nowrap`-Span statt U+202F: der
+// Text für Suche und Kopieren bleibt Zeichen für Zeichen derselbe.
+function zelleText(text: string): React.ReactNode {
+  const teile = teileNachZifferngruppen(text);
+  if (teile.length === 1 && !teile[0].nowrap) return text;
+  return teile.map((x, i) => (x.nowrap ? <span key={i} className="whitespace-nowrap">{x.t}</span> : x.t));
 }
 
 // Hilfsfunktion: Zelle gilt als (rechtsbündiger) Betrag, wenn sie Ziffern
@@ -84,21 +108,35 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
   }
   const rechts = (typ: TabSpalte['typ']) => typ === 'zahl' || typ === 'betrag';
   const gruppieren = (typ: TabSpalte['typ']) => typ !== 'text'; // bereich/zahl/betrag: Swiss-Apostroph
+  // W2·17 E-D4-B03: Jahres-/Kennzahl-Spalten (Referenzdatum, Jahrgang, Code) und
+  // Datums-/Nummern-Zellen bekommen keinen Tausender-Apostroph («31.01.2'022»).
+  const ohneGruppe = spalten.map((s, ci) => KENNZAHL_TITEL.test(s.titel) || istJahrSpalte(zeilen.map((z) => z[ci])));
   const hatKopf = spalten.some((s) => s.titel !== '');
-  const zelleCls = (typ: TabSpalte['typ'], kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${rechts(typ) ? ' text-right whitespace-nowrap lc-ziffern' : ''}${
-      kopfZeile || rechts(typ) ? ' font-medium text-ink-800' : ' text-ink-700'
-    }`;
+  // W2·17-UI-BEFUNDE DFG-D02 (2.10.2026): `w-max` hielt JEDE Zelle einzeilig, auch
+  // die Textspalte (ZH-211.11 § 4: Tabelle 1'077 px in einem 603-px-Kasten,
+  // Spalte 3 abgeschnitten, links und rechts je ~400 px frei). Jetzt bricht nur
+  // um, was Prosa ist (Text-Spalte, ab `PROSA_AB` Zeichen) und jede Kopfzelle
+  // (nur dort, wo die Breite fehlt: «Restschuld/Franken» belegte sonst allein
+  // 199 px); Zahlen, Beträge, Bereiche und kurze Zellen bleiben einzeilig
+  // (§N-4a). Der Typ steuert weiter allein die Ausrichtung (dumme Projektion).
+  const zelleCls = (typ: TabSpalte['typ'], kopfZeile: boolean, zelle: string) =>
+    `table-cell px-3 py-1.5 leading-snug align-baseline${rechts(typ) ? ' text-right lc-ziffern' : ''}${
+      (istProsaZelle(zelle) && typ === 'text') || kopfZeile ? ' lc-zelltext' : ' whitespace-nowrap'
+    }${kopfZeile || rechts(typ) ? ' font-medium text-ink-800' : ' text-ink-700'}`;
+  const vorab = vorabDruck(spalten.map((sp, ci) => [
+    { text: sp.titel, umbrechbar: true },
+    ...zeilen.map((z) => ({ text: z[ci] ?? '', umbrechbar: istProsaZelle(z[ci] ?? '') && sp.typ === 'text' })),
+  ]));
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
+    <span data-mehrspaltig="" {...vorabAttribute(vorab)} tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
       {/* ARIA-Tabellen-Semantik auf den display:table-Spans; je Datenzeile genau
           N cell zu N columnheader (folgt aus T-B2). Echtes <table> ist im
           Phrasing-/<p>-Kontext nicht möglich. */}
-      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full w-max">
+      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full">
         {hatKopf && (
           <span role="row" className="table-row bg-paper-sunken/40">
             {spalten.map((s, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(s.typ, true)}>{s.titel}</span>
+              <span key={ci} role="columnheader" className={zelleCls(s.typ, true, s.titel)}>{zelleText(s.titel)}</span>
             ))}
           </span>
         )}
@@ -108,9 +146,9 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
               <span
                 key={ci}
                 role="cell"
-                className={`${zelleCls(spalten[ci].typ, false)}${ri > 0 || hatKopf ? ' border-t border-rule-artikel' : ''}`}
+                className={`${zelleCls(spalten[ci].typ, false, cell)}${ri > 0 || hatKopf ? ' border-t border-rule-artikel' : ''}`}
               >
-                {gruppieren(spalten[ci].typ) ? gruppiereTausender(cell) : cell}
+                {zelleText(gruppieren(spalten[ci].typ) && !ohneGruppe[ci] ? gruppiereZelle(cell) : cell)}
               </span>
             ))}
           </span>
@@ -119,6 +157,9 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
     </span>
   );
 }
+
+/** Beschriftung der ersten Spalte ab dieser Länge darf umbrechen; kürzere Marken («a.», «1.1.») nicht. */
+const LABEL_AB = 4;
 
 // Alt-Renderer für Legacy-`{kopf,zeilen}` (Kanton/nicht migrierte Bund-Fallbacks):
 // UNVERÄNDERT übernommen — Inhalts-Heuristik + Padding bleiben, damit Kanton-Tabellen
@@ -149,6 +190,16 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
 //     bleiben wie bisher einzeilig (`whitespace-nowrap`, Daten/Zahlen brechen nie,
 //     §N-4a). Passt die Tabelle schon heute, ändert sich nichts (`min-w-full`).
 //     Reicht die Breite auch so nicht, bleibt der Querscroll samt Affordanz.
+//
+// ── ERGÄNZUNG W2·17-UI-BEFUNDE DFG-D01 (2.10.2026) ──
+// Gemessen am Build 9bb82d7de, GebV SchKG Art. 37 (Legacy, 8 aufgefüllte Spalten):
+// Tabelle 1'549 px in 603 px, die Gebühren 945 px rechts ausserhalb — «alle übrigen
+// einzeilig» (oben) galt auch für die Prosa-Zellen der Spalten 2–8 («für die
+// Vorlegung des Registers oder für eine sich darauf stützende Auskunft» als eine
+// Zeile). Jetzt brechen Prosa-Zellen (`istProsaZelle`) in jeder Spalte um; die
+// einzeiligen Zahlen/Beträge/Daten bleiben. Nachher 724 px → siehe e2e
+// `leser-druck-tabellen-w217`. Die Arität (3 Kopfzellen, Zeilen mit 2–8 Zellen)
+// ist ein DATENbefund und liegt bei der Korpus-Werkstatt, nicht hier.
 function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string[]; zeilen: string[][] }) {
   const spalten = Math.max(kopf?.length ?? 0, ...alleZeilen.map((z) => z.length));
   let rumpfEnde = alleZeilen.length;
@@ -163,17 +214,45 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
   const spalteNumerisch = Array.from({ length: spalten }, (_, ci) =>
     alleZeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
   );
-  const zelleCls = (ci: number, kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem] lc-wortumbruch'}${
-      kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
-    }`;
+  // W2·17 E-D4-B04: reine Jahres-Spalten («1996 B», «2003») nie gruppieren; Daten in
+  // Prosa-Zellen («8. März 1960») schützt `gruppiereZelle`.
+  const jahrSpalte = Array.from({ length: spalten }, (_, ci) => istJahrSpalte(zeilen.map((z) => z[ci] ?? '')));
+  // W2·17-UI-BEFUNDE DFG-D01 (2.10.2026), Ergänzung zu B11: «alle übrigen
+  // einzeilig» galt auch für Prosa-Zellen ab Spalte 2 — GebV SchKG Art. 37 stand
+  // 1'549 px breit in einem 603-px-Kasten, die Gebühren 945 px rechts davon.
+  // Umbrechen darf jetzt Spalte 1 (Beschriftung, wie B11, aber nicht mehr die
+  // Aufzählungs-Marke «a.»: Art. 37 hielt dafür 144 px frei) UND jede Prosa-Zelle
+  // (ab `PROSA_AB` Zeichen, `istProsaZelle`, KEINE Mindestbreite: die Spalte
+  // schrumpft nur bis zum längsten Wort, nie mitten hinein); Zahlen, Beträge, Daten,
+  // Bereiche und kurze Zellen bleiben einzeilig.
+  // Spalten ohne jeden Inhalt (Auffüll-Spalten aus `padZeile`: GebV SchKG Art. 37
+  // hat zwei davon) tragen keinen Innenabstand — sie hielten je 24 px frei.
+  const leereSpalte = Array.from({ length: spalten }, (_, ci) =>
+    ![kopf ?? [], ...zeilen].some((z) => (z[ci] ?? '').trim() !== ''),
+  );
+  const zelleCls = (ci: number, kopfZeile: boolean, zelle: string) =>
+    `table-cell ${leereSpalte[ci] ? 'px-0' : 'px-3'} py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right' : ''}${
+      ci === 0 && !spalteNumerisch[ci] && zelle.trim().length > LABEL_AB
+        ? ' min-w-[9rem] lc-wortumbruch'
+        : istProsaZelle(zelle) || kopfZeile ? ' lc-zelltext' : ' whitespace-nowrap'
+    }${kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'}`;
+  const vorab = vorabDruck(Array.from({ length: spalten }, (_, ci) => {
+    if (leereSpalte[ci]) return [];
+    const zellen = zeilen.map((z) => {
+      const t = z[ci] ?? '';
+      // Beschriftungsspalte: mindestens 9 rem (144 px), angesetzt als 18 Zeichen einzeilig.
+      if (ci === 0 && !spalteNumerisch[ci] && t.trim().length > LABEL_AB) return { text: 'x'.repeat(18), umbrechbar: false };
+      return { text: t, umbrechbar: istProsaZelle(t) };
+    });
+    return [{ text: kopf?.[ci] ?? '', umbrechbar: true }, ...zellen];
+  }));
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
+    <span data-mehrspaltig="" {...vorabAttribute(vorab)} tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
       <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full">
         {kopf && kopf.length > 0 && (
           <span role="row" className="table-row bg-paper-sunken/40">
             {padZeile(kopf).map((h, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(ci, true)}>{h}</span>
+              <span key={ci} role="columnheader" className={zelleCls(ci, true, h)}>{zelleText(h)}</span>
             ))}
           </span>
         )}
@@ -183,9 +262,9 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
               <span
                 key={ci}
                 role="cell"
-                className={`${zelleCls(ci, false)}${ri > 0 || (kopf && kopf.length) ? ' border-t border-rule-artikel' : ''}`}
+                className={`${zelleCls(ci, false, cell)}${ri > 0 || (kopf && kopf.length) ? ' border-t border-rule-artikel' : ''}`}
               >
-                {gruppiereTausender(cell)}
+                {zelleText(jahrSpalte[ci] ? cell : gruppiereZelle(cell))}
               </span>
             ))}
           </span>

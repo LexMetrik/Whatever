@@ -15,6 +15,11 @@ import { metaFuerPfad } from './seo';
 import type { BrowseManifest, BrowseErlass } from './normtext/browse-typen';
 import type { EntscheidManifest } from './rechtsprechung/register';
 import type { MaterialManifest } from './materialien/typen';
+import type { StelleDatenMap } from './reiterStelle';
+import { sicherDekodiert } from './sicherDekodieren';
+
+/** Pfad-Segment dekodieren; kaputtes %-Escape ⇒ Rohsegment (PA-1-B01, kein Wurf in der Reiterleiste). */
+const dek = (s: string): string => sicherDekodiert(s) ?? s;
 
 const SUFFIX = /\s*[—–-]\s*LexMetrik\s*$/;
 
@@ -26,13 +31,13 @@ export function pfadTeil(path: string): string {
 /** Gesetzes-Leser-Pfad → {ebene, key} oder null. */
 export function gesetzPfad(path: string): { ebene: string; key: string } | null {
   const m = /^\/gesetze\/([^/]+)\/([^/]+)\/?$/.exec(pfadTeil(path));
-  return m ? { ebene: decodeURIComponent(m[1]), key: decodeURIComponent(m[2]) } : null;
+  return m ? { ebene: dek(m[1]), key: dek(m[2]) } : null;
 }
 
 /** Entscheid-Leser-Pfad → {key} oder null. */
 export function entscheidPfad(path: string): { key: string } | null {
   const m = /^\/rechtsprechung\/([^/]+)\/?$/.exec(pfadTeil(path));
-  return m ? { key: decodeURIComponent(m[1]) } : null;
+  return m ? { key: dek(m[1]) } : null;
 }
 
 /** Material-Leser-Pfad → {key} oder null. */
@@ -46,7 +51,7 @@ export function materialPfad(path: string): { key: string } | null {
   // jede künftige statische Unterseite von /materialien.
   if (metaFuerPfad(p)) return null;
   const m = /^\/materialien\/([^/]+)\/?$/.exec(p);
-  return m ? { key: decodeURIComponent(m[1]) } : null;
+  return m ? { key: dek(m[1]) } : null;
 }
 
 /** ── M7 · KATALOG-KURZFORM EINER RECHNER-/VORLAGEN-ROUTE ────────────────────
@@ -65,6 +70,10 @@ export function labelAusMeta(path: string): string | null {
 }
 
 export interface VerlaufManifeste {
+  /** Einträge je Erlass-Schlüssel für die Stelle im Reiter (`reiterStelle`,
+   *  DFG-F01): wo sie fehlen, greift die Rückfallform. Geladen von
+   *  `useStelleDaten` — nie vom Manifest selbst, das die Einträge nicht trägt. */
+  artikel?: StelleDatenMap;
   gesetze?: BrowseManifest | null;
   entscheide?: EntscheidManifest | null;
   materialien?: MaterialManifest | null;

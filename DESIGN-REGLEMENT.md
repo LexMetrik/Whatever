@@ -401,6 +401,16 @@ zu Archivo — kein Widerspruch, sondern die Abgrenzung (Zweitprüfung #1190).
   und Quellsonde; die noch nicht umgestellten Aufrufer stehen dort als Schuldliste,
   die nur schrumpfen darf).
 
+**F0.12 — Dichte-Variante eines Bausteins ist eine Bool-Prop, nie `className`
+(W2·27-BUND-FERTIG P2 #12, 1.10.2026).** Steht ein Baustein in einer Fläche mit
+kleinerer Schriftstufe (11-px-Kasten `text-micro`, `EntstehungsBlock`), bekommt er
+die Variante als additive Prop — Vorbild `ui/GruppenKopf dicht`, `ui/RubrikKachel
+kompakt`; für `ui/AbrufFehler` heisst sie `klein` (Satz und Knopf `text-micro`,
+Zeilenhöhe der Nachbarzeile). Grund: zwei Schriftgrad-Klassen am selben Element
+gelten nach der Reihenfolge des Stylesheets, nicht des Attributs — ein `className`
+kann den Schriftgrad des Bausteins also nicht übersteuern. Der Standard bleibt die
+Stufe des Bausteins (B2: nur Skalen-Stufen). Wächter: `src/tests/abruf-fehler-klein-w227.test.tsx`.
+
 ---
 
 Gegründet auf doppelt-verifizierte UI-Design-Recherche (25.6.2026,

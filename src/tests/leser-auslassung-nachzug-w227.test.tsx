@@ -94,13 +94,39 @@ describe('A3 — SynopseKarte: dieselbe Wortlaut-Sperre wie ArtikelBody', () => 
   const karteMit = (alt: Bl[], neu: Bl[], zustand: LeerstellenStatus) => renderToStaticMarkup(
     <SynopseKarte lage={lage(neu, alt)} shard={shard} geltend={{ stand: '2026-06-12' }} zustand={zustand} id="x" />);
 
-  it('B1: gemischt «…» + «Aufgehoben» ⇒ BEIDE Entfall-Zeilen «aufgehoben» (vorsichtig; die Zeile kennt ihren Block nicht)', () => {
+  it('B1 → P2 #42: gemischt «…» + «Aufgehoben» ⇒ je Zeile das Wort IHRES Blocks (wie der Körper, §5)', () => {
+    // Bis P2 (1.10.2026) kannte die Zeile ihren Block nicht und schrieb vorsichtig BEIDE «aufgehoben».
+    // Seit `SynopseZeile.neuErsatz` ordnet die Karte über Absatz/Etikett zu: «…» ⇒ «kein Text im
+    // Snapshot», amtlicher Wortlaut «Aufgehoben» ⇒ «aufgehoben» — dieselbe Entscheidung wie
+    // `ArtikelBody` (Test A1, «gemischt ohne Feld»).
     const out = karteMit(
       [['1', '', 'Wortlaut eins.'], ['2', '', 'Wortlaut zwei.']],
       [['1', '', '…'], ['2', '', 'Aufgehoben']],
       'leer-ungeklaert');
-    expect(zeilenWorte(out)).toEqual(['aufgehoben', 'aufgehoben']);
-    expect(out).not.toContain(KURZ);
+    expect(zeilenWorte(out)).toEqual([KURZ, 'aufgehoben']);
+  });
+
+  it('P2 #42: dieselbe Zuordnung bei umgekehrter Reihenfolge und mit Listen-Etikett', () => {
+    const out = karteMit(
+      [['1', 'a.', 'Wortlaut a.'], ['1', 'b.', 'Wortlaut b.']],
+      [['1', 'a', 'Aufgehoben'], ['1', 'b', '…']],
+      'leer-ungeklaert');
+    expect(zeilenWorte(out)).toEqual(['aufgehoben', KURZ]);
+  });
+
+  it('P2 #42: Zeile OHNE Gegenblock rechts (Alt-Block ganz weg) bleibt vorsichtig — gemischte rechte Spalte ⇒ «aufgehoben»', () => {
+    const out = karteMit(
+      [['1', '', 'Wortlaut eins.'], ['2', '', 'Wortlaut zwei.'], ['3', '', 'Wortlaut drei.']],
+      [['1', '', '…'], ['2', '', 'Aufgehoben']],
+      'leer-ungeklaert');
+    expect(zeilenWorte(out)).toEqual([KURZ, 'aufgehoben', 'aufgehoben']);
+  });
+
+  it('P2 #42: amtliches Feld schlägt die Zuordnung — Zustand «aufgehoben»/«gegenstandslos» sagt für jede Zeile sein Wort', () => {
+    const alt: Bl[] = [['1', '', 'Wortlaut eins.'], ['2', '', 'Wortlaut zwei.']];
+    const neu: Bl[] = [['1', '', '…'], ['2', '', 'Aufgehoben']];
+    expect(zeilenWorte(karteMit(alt, neu, 'aufgehoben'))).toEqual(['aufgehoben', 'aufgehoben']);
+    expect(zeilenWorte(karteMit(alt, neu, 'gegenstandslos'))).toEqual(['gegenstandslos', 'gegenstandslos']);
   });
 
   it('B1: Kontrolle — beide rechts «…» ⇒ BEIDE Entfall-Zeilen «kein Text im Snapshot»', () => {

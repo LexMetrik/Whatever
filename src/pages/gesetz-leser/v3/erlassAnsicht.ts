@@ -1,4 +1,4 @@
-import { formatiereDatum, verifiziertesSachgebiet } from '../helpers';
+import { verifiziertesSachgebiet } from '../helpers';
 import { GEBIET_LABEL, type ErlassTyp } from '../../../lib/normtext/register';
 import { erlassPfad as adresse, routenEbene } from '../../../lib/normtext/erlassAdresse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
@@ -42,7 +42,9 @@ import type { KantonSystematik } from '../../../lib/normtext/systematik';
 // prüft beide Richtungen — hier kein Bestimmungswort, dort keine Ebene.
 export * from './erlassWortlaut';
 
-/** Die Ebene-Stufe der Brotkrume: Beschriftung + Ziel der gefilterten Übersicht. */
+/** Die Ebene-Stufe (Overline/Adresse): Beschriftung + Ziel der gefilterten Übersicht.
+ *  W2·17 H9-B01 (1.10.2026): `brotkrume`/`hatRuecksprung`/`uebersichtsZeile` sind gestrichen
+ *  (kein Aufrufer; die Kopfzeile trägt seit D27 keine Krume). */
 export interface EbeneAngabe {
   label: string;
   to: string;
@@ -78,27 +80,6 @@ export function overlineGebiet(
 ): string | null {
   if (erlass.ebene === 'bund') return GEBIET_LABEL[erlass.rechtsgebiet] ?? null;
   return verifiziertesSachgebiet(erlass, kantonSys)?.top ?? null;
-}
-
-/**
- * Die eine Zeile der zugeklappten Übersichtsbox: «SR 312.0 · 480 Artikel ·
- * Stand 01.04.2025». Fehlende Angaben entfallen ERSATZLOS — ein Kantons-Erlass
- * ohne SR-Nummer bekommt keinen leeren Platzhalter (§8), und ein Erlass ohne
- * Stand behauptet keinen.
- *
- * `bestimmungsWort` kommt aus dem Grundart-Register (SSoT, §5): kantonale
- * Erlasse zählen «Paragraphen», nicht «Artikel».
- */
-export function uebersichtsZeile(
-  erlass: Pick<BrowseErlass, 'sr' | 'stand'>,
-  anzahl: number,
-  bestimmungsWort: string,
-): string {
-  return [
-    erlass.sr ? `SR ${erlass.sr}` : null,
-    `${anzahl} ${bestimmungsWort}`,
-    erlass.stand ? `Stand ${formatiereDatum(erlass.stand)}` : null,
-  ].filter(Boolean).join(' · ');
 }
 
 /**
@@ -158,40 +139,4 @@ export function erlassArt(
     : erlassTyp === 'verordnung' ? 'Verordnung'
     : erlassTyp === 'verfassung' ? 'Verfassung'
     : null;
-}
-
-/** Brotkrume für die App-Leiste: Gesetze › Ebene › Kürzel. */
-export function brotkrume(
-  erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>,
-): { label: string; to?: string }[] {
-  const e = ebeneAngabe(erlass);
-  return [
-    { label: 'Gesetze', to: '/gesetze' },
-    { label: e.label, to: e.to },
-    { label: erlass.kuerzel },
-  ];
-}
-
-/**
- * Trägt die Kopfzeile einen BESCHRIFTETEN Rücksprung zur Gesetzesübersicht?
- *
- * ── WOZU DIESE FRAGE EINEN NAMEN HAT (Ä87/Ä91, H4-Nachzug 18.8.2026) ────────
- * Das Kopf-✕ («Gesetz schliessen — zur Übersicht») ist gestrichen, weil sein
- * Ziel `/gesetze` in derselben Zeile schon als WORT steht: die erste Stufe der
- * Krume, auf `voll` als Kette «Gesetze › Bund ›», auf `kompakt`/`mini` als
- * Rücksprung «‹ Gesetze» (Herleitung und Messreihe in `./kopfStufen`, Block
- * «DAS KOPF-✕ IST GESTRICHEN»). Diese Streichung ruht auf genau EINER Zusage —
- * dass die erste Krumen-Stufe immer ein Ziel trägt. Eine Zusage, auf der etwas
- * ruht, gehört geprüft und nicht angenommen (§6.7): nimmt jemand das `to` aus
- * `brotkrume` (oder tritt eine Ebene hinzu, die keines liefert), wird diese
- * Funktion `false` und der Unit-Beweis in `leser-v3-erlassansicht.test.ts` rot
- * — statt dass still eine Kopfzeile ohne jeden Weg nach oben entsteht.
- *
- * Sie ist bewusst KEINE zweite Ableitung: sie liest `brotkrume`, die eine
- * Quelle, und behauptet nichts eigenes (§5).
- */
-export function hatRuecksprung(
-  erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>,
-): boolean {
-  return brotkrume(erlass)[0]?.to != null;
 }

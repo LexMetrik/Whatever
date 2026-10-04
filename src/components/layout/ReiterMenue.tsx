@@ -88,7 +88,7 @@ export function ReiterMenue({ x, y, name, eintraege, onSchliessen }: {
   };
 
   return createPortal(
-    <div ref={ref} tabIndex={-1} role="menu" aria-label={`Reiter «${name}»`} onKeyDown={onKey}
+    <div ref={ref} tabIndex={-1} role="menu" data-menue-flaeche aria-label={`Reiter «${name}»`} onKeyDown={onKey}
       style={{ left: pos.x, top: pos.y }}
       // GEMESSEN 6.9.2026 (Screen `r11-kontextmenue-1440-hell`, erster Lauf): bei
       // `w-56` (14 rem) brach «Rechts davon schliessen» auf «Rechts davon

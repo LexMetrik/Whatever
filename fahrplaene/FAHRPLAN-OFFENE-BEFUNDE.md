@@ -180,6 +180,23 @@ zu vollziehen), behoben mit PR #865 — Herleitung unten in §4.R4. Gleiche Fami
 `uinav-j-rechtsprechung` 201/200 Links (Reiterbreiten am Ladezeitpunkt). Wer eine solche Sonde
 nur neu startet, verliert den Befund. Tor dazu besteht: `check:e2e-flake`.
 
+**Flake-Wurzel messen — Methodik (1.10.2026, §17, Session Flake-Rauswürfe, PRs #1238–#1244):**
+(1) Vor dem Messen `git log --since=<createdAt des Laufs> origin/main -- <spec>` und die
+App-Stelle prüfen — 2 von 6 gemeldeten Specs waren schon gefixt (d39 durch #1008, Marken-Geometrie
+durch #984). (2) Reine CPU-Drossel reproduziert Reihenfolge-Rennen meist NICHT (R7 24/24, Panel 0/30,
+Position-U 0/13 grün); die Lücke gezielt verlängern: `page.route` hält/verzögert EINEN Fetch
+(Position-U: `currency.json`), Init-Script verzögert rAF (R7) oder hält `history.back()` an einem Tor
+(Panel (f3)), Pause zwischen Eingabe und Aktion (A9). Rennen per Tor, nicht per Takt; bei
+Reihenfolge-Fixes BEIDE Reihenfolgen nachstellen. (3) Belegt ist ein Flake-Fix erst, wenn der EIGENE
+PR-Lauf die Spec im Erstversuch grün zeigt — #1239 war lokal 20/20 grün und flackerte im PR-Lauf.
+(4) Fallen: ein Wartegatter `toHaveCount(0)`/`toBeHidden` auf ein flüchtiges Element ist vakuum-wahr
+ohne vorherigen Erscheinens-Nachweis (#1238); Playwright `fill()` setzt kein `hadRecentInput` — CLS
+über inhaltsumordnende Eingaben nach Shift-Quelle (`sources[].previousRect/currentRect`) und Phase
+werten, nie Latte anheben (#1244); `history.back()` nie ohne Nutzergeste (asynchron, bricht fremde
+Navigation ab, #1239); ein «einmal»-Seed-Wächter erst beim Erreichen des Ziels setzen (#1240).
+(5) Ein Shard-Rot mit «playwright install … Paketspiegel gestört» war Infrastruktur — Wurzel #1242
+(apt nur, wenn Chromium ohne Systempakete nicht startet).
+
 Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 
   - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*

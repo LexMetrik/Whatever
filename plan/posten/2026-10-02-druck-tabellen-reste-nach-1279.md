@@ -1,0 +1,7 @@
+<!-- @posten
+dach: W2·17-UI-BEFUNDE
+titel: Druck-Tabellen nach #1279: Hinweis-Link ohne Artikel-Anker, Querformat per Schätzung (115 überflüssige Querseiten), nur Chromium geprüft
+anlass: Abschluss Session «Gesetzesleser Funktionen inventarisieren» 2.10.2026 (Station E)
+-->
+
+#1279 gelandet 2.10.2026 (4 Prüfrunden Opus; echter page.pdf-Sweep 150 Erlasse/676 Tabellen: keine Zelle fehlt). Reste: (a) Die gedruckte Hinweiszeile «Tabelle im Druck stark verkleinert oder gekürzt – vollständig und lesbar: <Link>» verlinkt nur den Erlass, nicht den Artikel (`#art-…` fehlt); bei CHEMRRV (576 S.) und FINFRAV muss man den Anhang selbst suchen. Betroffen: VVK, ZEMIS-V, ERV, FINFRAV Anh. 2/4, FINFRAV-FINMA, CHEMRRV, VAM, ASYLV3 Anh. 5. (b) Statische Vorab-Markierung `vorabDruck` (src/components/normtext/tabellenDruck.ts) schätzt die Breite; nach CI-Rot unter Linux-Schriften (LRV Anh. 3 verlor eine Zelle) auf KORREKTUR 1.5 mit Reserve gesetzt: 169 von 674 Tabellen markiert, davon 115 ohne Not (passen hochkant; eigene Querseite mit Umbruch davor/danach), 0 verpasst. Besser: echte Messung statt Schätzung, damit nur wirklich breite Tabellen quer gedruckt werden — ohne die Reserve gegen andere Schriftmetriken zu verlieren. (c) Nur Chromium (page.pdf) geprüft, Firefox/Safari-Druck offen. (d) Lesespalte sitzt im Druck rechts der Mitte (ml-52 + Raster), nutzbare Breite darum 20.5 cm statt ~26 cm quer. Quelle: Prüfberichte #1279 (Session «Gesetzesleser Funktionen inventarisieren»).

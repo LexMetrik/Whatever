@@ -6,6 +6,162 @@
   "referenz": 26,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2024-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/849"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1a. Abschnitt: Geltungsbereich"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Standortidentifikation"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 243",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/243"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Weitere Pflichten"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 6183",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4a. Kapitel: Nummernportabilität"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 6183",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 6183",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2020 6183",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2020/1020"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Sicherheitskommunikation"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 726",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2023-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2022 726",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2022/726"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2026-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2026 42",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2026/42"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2014-07-01",
@@ -524,7 +680,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
     }
    ]
   },
@@ -544,6 +701,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "29": {
@@ -573,7 +733,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Standortidentifikation"
     }
    ]
   },
@@ -593,10 +754,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "31": {
-   "giltSeit": "2026-07-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -622,7 +786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Weitere Pflichten"
     }
    ]
   },
@@ -655,6 +820,16 @@
      "absatz": "1",
      "item": "c"
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "33": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "34": {
@@ -684,7 +859,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4a. Kapitel: Nummernportabilität"
     }
    ]
   },
@@ -1183,7 +1359,7 @@
    ]
   },
   "75": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1196,8 +1372,30 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
     }
+   ]
+  },
+  "76": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "77": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "78": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "79": {
@@ -1216,6 +1414,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "80": {
@@ -1245,7 +1446,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
     }
    ]
   },
@@ -1291,6 +1493,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82": {
@@ -1309,6 +1514,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "83": {
@@ -1327,6 +1535,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "84": {
@@ -1410,6 +1621,30 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    6
+   ]
+  },
+  "85": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "86": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
+   ]
+  },
+  "87": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    6
    ]
   },
   "88": {
@@ -1441,6 +1676,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "89": {
@@ -1459,6 +1697,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "90": {
@@ -1488,7 +1729,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Sicherheitskommunikation"
     }
    ]
   },
@@ -1540,6 +1782,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "93": {
@@ -1558,6 +1803,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "94": {
@@ -1952,7 +2200,7 @@
    ]
   },
   "14_a": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1965,8 +2213,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1a. Abschnitt: Geltungsbereich"
     }
+   ]
+  },
+  "14_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "19_a": {
@@ -2091,6 +2347,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "29_a": {
@@ -2135,6 +2394,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "29_b": {
@@ -2205,6 +2467,9 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "34_a": {
@@ -2223,6 +2488,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_b": {
@@ -2241,6 +2509,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_c": {
@@ -2259,6 +2530,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_d": {
@@ -2277,6 +2551,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_e": {
@@ -2295,6 +2572,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    4
    ]
   },
   "34_f": {
@@ -2497,6 +2777,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "78_b": {
@@ -2515,6 +2798,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "78_c": {
@@ -2533,6 +2819,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "89_a": {
@@ -2551,6 +2840,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "89_b": {
@@ -2569,6 +2861,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "94_a": {
@@ -2608,7 +2903,7 @@
    ]
   },
   "96_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2621,8 +2916,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
     }
+   ]
+  },
+  "96_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   },
   "96_c": {
@@ -2641,10 +2944,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    8
    ]
   },
   "96_d": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2657,12 +2963,34 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
     }
    ]
   },
+  "96_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "96_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
+  "96_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    9
+   ]
+  },
   "96_h": {
-   "giltSeit": "2026-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2675,8 +3003,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
     }
+   ]
+  },
+  "96_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
+   ]
+  },
+  "96_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    10
    ]
   }
  },

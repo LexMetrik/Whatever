@@ -6,6 +6,134 @@
   "referenz": 73,
   "unparsed": 5
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 3371",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/510"
+    },
+    {
+     "label": "BBl 1991 II 185 910",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Siebenter Titel: Besonderheiten des Verfahrens und der Rechtspflege"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2006-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2005 5427",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2005/740"
+    },
+    {
+     "label": "BBl 2005 759",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2005/108"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Drittes Kapitel: Übergangsbestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1728",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+    },
+    {
+     "label": "BBl 2001 2245",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1728",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+    },
+    {
+     "label": "BBl 2001 2245",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1728",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+    },
+    {
+     "label": "BBl 2001 2245",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Beschäftigungsmassnahmen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1728",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+    },
+    {
+     "label": "BBl 2001 2245",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2003 1728",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2003/260"
+    },
+    {
+     "label": "BBl 2001 2245",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/493"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2003-07-01",
@@ -2084,7 +2212,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Sanktionen"
     }
    ]
   },
@@ -2774,7 +2903,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "frueher": "Bst. b"
     },
     {
      "typ": "eingefuegt",
@@ -3020,7 +3150,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Sechstes Kapitel: Arbeitsmarktliche Massnahmen"
     },
     {
      "typ": "fassung",
@@ -3037,7 +3168,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -3144,8 +3276,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Bildungsmassnahmen"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "65": {
@@ -3217,8 +3353,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Spezielle Massnahmen"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "66": {
@@ -3343,6 +3483,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "67": {
@@ -3388,6 +3532,18 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
+   ]
+  },
+  "69": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2,
+    5
    ]
   },
   "70": {
@@ -3410,6 +3566,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "71": {
@@ -3510,7 +3670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebentes Kapitel: Weitere Massnahmen"
     }
    ]
   },
@@ -5296,7 +5457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Siebenter Titel: Besonderheiten des Verfahrens und der Rechtspflege"
     }
    ]
   },
@@ -5320,6 +5482,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "102": {
@@ -5342,6 +5507,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "105": {
@@ -5734,7 +5902,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "Drittes Kapitel: Übergangsbestimmungen"
     }
    ]
   },
@@ -5812,7 +5981,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 121"
     },
     {
      "typ": "urspruenglich",
@@ -5820,7 +5990,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Viertes Kap."
     }
    ]
   },
@@ -5968,6 +6139,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "120_b": {
@@ -5990,6 +6164,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "18_a": {
@@ -6446,6 +6623,10 @@
      "absatz": null,
      "item": "c"
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "59_b": {
@@ -6485,6 +6666,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "59_c": {
@@ -6507,6 +6692,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "59_c_bis": {
@@ -6542,6 +6731,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "59_d": {
@@ -6581,6 +6774,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    3
    ]
   },
   "61_62": {
@@ -6698,8 +6895,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beschäftigungsmassnahmen"
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "64_b": {
@@ -6722,6 +6923,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    4
    ]
   },
   "65_a": {
@@ -6886,6 +7091,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "66_b": {
@@ -6999,6 +7208,10 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "71_a": {
@@ -7072,6 +7285,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "71_b": {
@@ -7162,6 +7379,10 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "71_c": {
@@ -7275,6 +7496,10 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2,
+    5
    ]
   },
   "72_a_72_c": {
@@ -7337,6 +7562,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "74_75": {
@@ -7382,6 +7610,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "75_b": {
@@ -7404,6 +7635,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_a": {

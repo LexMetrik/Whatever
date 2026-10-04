@@ -6,6 +6,148 @@
   "referenz": 4,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Verkehrswege"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Licht, Raumluft"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Industrielle Betriebe"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Schlussbestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2000-08-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2000 1636",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2000/245"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Arbeitsräume"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2008-12-01",
@@ -151,7 +293,7 @@
    ]
   },
   "2": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "urspruenglich",
@@ -159,7 +301,9 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 4",
+     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
     },
     {
      "typ": "fassung",
@@ -172,7 +316,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
     },
     {
      "typ": "eingefuegt",
@@ -185,12 +330,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Allgemeine Bestimmungen"
     }
+   ]
+  },
+  "3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    6
    ]
   },
   "4": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -203,12 +357,24 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Arbeitsräume"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "5": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    9
    ]
   },
   "6": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -221,8 +387,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Verkehrswege"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "7": {
@@ -241,6 +411,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "8": {
@@ -285,6 +459,10 @@
      "absatz": "7",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "9": {
@@ -316,6 +494,10 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
    ]
   },
   "10": {
@@ -334,10 +516,62 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "11": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "12": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "13": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "14": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "15": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "16": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "17": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -350,8 +584,20 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Licht, Raumluft"
     }
+   ],
+   "erbt": [
+    0
+   ]
+  },
+  "18": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2
    ]
   },
   "19": {
@@ -381,8 +627,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Betriebe mit besonderen Gefahren"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20": {
@@ -401,6 +651,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "21": {
@@ -419,6 +673,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "22": {
@@ -437,6 +695,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "23": {
@@ -455,6 +717,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "24": {
@@ -473,6 +739,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "25": {
@@ -491,6 +761,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    3
    ]
   },
   "26": {
@@ -520,8 +794,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "27": {
@@ -553,10 +831,14 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "28": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -569,7 +851,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
     },
     {
      "typ": "urspruenglich",
@@ -577,8 +860,31 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 6",
+     "ueberschrift": "3. Kapitel: Industrielle Betriebe"
     }
+   ]
+  },
+  "29": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "30": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "31": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "32": {
@@ -597,6 +903,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "33": {
@@ -615,6 +924,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "34": {
@@ -633,6 +945,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "35": {
@@ -651,6 +966,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "36": {
@@ -669,6 +987,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    5
    ]
   },
   "37": {
@@ -698,7 +1019,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
     },
     {
      "typ": "urspruenglich",
@@ -706,8 +1028,24 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 17",
+     "ueberschrift": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
     }
+   ]
+  },
+  "38": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "39": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "40": {
@@ -726,6 +1064,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "41": {
@@ -770,6 +1111,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "42": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "43": {
@@ -788,6 +1139,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "44": {
@@ -819,10 +1173,27 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
+   ]
+  },
+  "45": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
+  },
+  "46": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
    ]
   },
   "47": {
-   "giltSeit": "2000-08-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -835,7 +1206,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Schlussbestimmungen"
     },
     {
      "typ": "urspruenglich",
@@ -843,8 +1215,17 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "vor Art. 19",
+     "ueberschrift": "5. Kapitel: Schlussbestimmungen"
     }
+   ]
+  },
+  "48": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    8
    ]
   }
  },

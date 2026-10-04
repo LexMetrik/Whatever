@@ -3,7 +3,7 @@ import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { ordneTabsUm, tabSchluessel, type TabEintrag, reiterKurzformText, reiterTitel } from '../../lib/tabs';
 import { type VerlaufManifeste } from '../../lib/verlaufLabel';
 import {
-  reiterKategorie, herkunftVon, artikelLabelVonPfad, gleicheReiterGruppe,
+  reiterKategorie, herkunftVon, stelleVonReiter, gleicheReiterGruppe,
   KAT_META, KAT_ORDER, HERKUNFT_ORDER, HERKUNFT_LABEL,
   type Herkunft,
 } from '../../lib/tabGruppen';
@@ -104,7 +104,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
     // jetzt `lib/tabs` — Kurzform in der Zeile, Volltitel im `title`.
     const name = reiterKurzformText(t, manifeste);
     const titel = reiterTitel(t, manifeste);
-    const art = alsGesetz ? artikelLabelVonPfad(t.path) : null;
+    const art = alsGesetz ? stelleVonReiter(t, manifeste)?.gelesen || null : null;
     const ueber = ueberPath === t.path;
     const vorher = liste[idx - 1];
     const nachher = liste[idx + 1];

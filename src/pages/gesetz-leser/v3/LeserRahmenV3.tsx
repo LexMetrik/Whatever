@@ -18,7 +18,7 @@ import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
-import { blattArtikel, normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { blattArtikel, OEFFNER_NAME, OEFFNER_WORT, panelBezug, panelZitat, usePanelBezuege, usePanelZustand } from './panelModell';
 import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
@@ -143,7 +143,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
   const frueheAnsicht = FruehAnsicht({
     fehler: m.fehler, schluessel, manifest: m.manifest, erlass: m.erlass,
-    currency: m.currency, kopf: m.kopf, internRefs: m.internRefs,
+    currency: m.currency, teilausfall: m.teilausfall, kopf: m.kopf, internRefs: m.internRefs,
   });
   // V1: Der Kopf-Anspruch der Fassade ist eine RESERVIERUNG und auf drei Wegen falsch
   // (Fehlseite · pdf-embed · nur-live-link — dort stand weder App-Krume noch ✕); der
@@ -295,9 +295,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         ...bild.breite,
       }}>
 
-      {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. */}
+      {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. Die Lesart-Wahl nur im PRIMÄREN Pane (E-D11-B05): im zweiten Fenster schaltete sie das erste um. */}
       <LeserKopf erlass={erlass} fussnotenAnzahl={m.fussnotenAnzahl}
-        hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={einzel.waehleModus}
+        hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={umgebung.istSekundaer ? undefined : einzel.waehleModus}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
         suchInZeile={suchInZeile} tocOffen={m.tocOffen}
         onGliederungZu={zweiSpalten ? () => setzeTocOffen(false) : undefined}
@@ -343,7 +343,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
-            oeffneBlatt={bild.blatt ? rohPanel.oeffne : undefined} bezuegeGeweckt={rohPanel.jeGeoeffnet}
+            bezuegeGeweckt={rohPanel.jeGeoeffnet}
             einzelToken={imEinzel ? einzel.token : null} search={einzel.search} />
         </>}
         // D38 · Trefferliste über der Lesespalte — `absolute`, ohne Platz im
@@ -366,10 +366,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
         panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
-              paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)}
-              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
-              normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
-              artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
+              paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token, (tok) => m.struktur?.[tok]?.fussnoten)}
+              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl} erlassSr={erlass.sr} inkraftSeit={erlass.inkraftSeit} inkraftGestaffelt={erlass.inkraftGestaffelt} historie={m.historieStand}
+              normZitat={panelZitat(panelZiel, erlass.kuerzel, m.struktur, eintraege)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
+              artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel} intern={m.internRefs}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
           )} />
@@ -386,7 +386,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           Platz brauchen. Ein Träger ohne eigene Box nimmt den Margin entgegen
           und wirft ihn weg. */}
       <div className="contents">
-        <LandkarteZone m={m} bestimmungsWort={bestimmungsWort} randluft={!umgebung.imPane} listeSteht={trefferSteht} onVorSprung={trefferSicht.schliesse} />
+        <LandkarteZone m={m} bestimmungsWort={bestimmungsWort} randluft={!umgebung.imPane && !bild.blattSpur} listeSteht={trefferSteht} onVorSprung={trefferSicht.schliesse} />
         {/* Der Reiter-Toast gehört hierher, nicht an den Kopf des Rahmens: er
             ist `fixed` und braucht keinen Platz, stand als ERSTES Grid-Kind aber
             im `space-y-5`-Fluss und gab der Kopfzeile darunter ein `mt-5` — ein
@@ -407,8 +407,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         {/* H3 · «r» schaltet das Blatt (KEINE zweite Tastaturebene, Kap. 4h).
             A2: der Listener läuft in BEIDEN Panes und beansprucht die Taste nur
             mit dem Fokus in SEINEM Pane (`../panePrioritaet`, wie ⌘K). */}
-        {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
-        <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
+        {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert, im Einzelmodus ab dem GEZEIGTEN Artikel (der Spy folgt dem Blättern nicht, PE-B10-B02). */}
+        <LeserTastatur tokens={m.artTokens} aktivToken={imEinzel ? einzel.token : m.aktivToken} onSprung={m.springeZuArtikel}
           onPanel={!bild.blatt ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
           onBlaettern={imEinzel ? einzel.blaettere : undefined}
           imSekundaerenPane={umgebung.istSekundaer} />

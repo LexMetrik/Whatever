@@ -6,6 +6,134 @@
   "referenz": 26,
   "unparsed": 1
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2017-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 3631",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+    },
+    {
+     "label": "BBl 2009 8533",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2009/1471"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2a. Kapitel: Geografische Marke"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2005-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2004 5085",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2004/788"
+    },
+    {
+     "label": "BBl 2001 5679",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2001/889"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+  },
+  {
+   "typ": "fassung",
+   "datum": "1997-05-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 1997 1028",
+     "url": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028"
+    },
+    {
+     "label": "BBl 1996 II 1425",
+     "url": "https://fedlex.data.admin.ch/eli/fga/1996/2_1425_1393_1273"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2021-12-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2021 742",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    {
+     "label": "BBl 2020 5827",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2020/1366"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2025-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2025 313",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2025/313"
+    },
+    {
+     "label": "BBl 2023 1184",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2023/1184"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+  }
+ ],
  "artikel": {
   "9": {
    "giltSeit": "2017-01-01",
@@ -348,7 +476,7 @@
    "aufgehobenSeit": "2007-01-01"
   },
   "37": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -365,7 +493,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
     }
    ]
   },
@@ -389,6 +518,16 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    1
+   ]
+  },
+  "39": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    1
    ]
   },
   "40": {
@@ -411,6 +550,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "41": {
@@ -531,7 +673,7 @@
    ]
   },
   "44": {
-   "giltSeit": "1997-05-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -548,12 +690,27 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Internationale Markenregistrierung"
     }
    ]
   },
+  "45": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
+  "46": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "47": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -621,7 +778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Titel: Herkunftsangaben und geografische Angaben"
     },
     {
      "typ": "eingefuegt",
@@ -638,7 +796,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Allgemeine Bestimmungen"
     }
    ]
   },
@@ -662,6 +821,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "49": {
@@ -684,6 +847,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50": {
@@ -706,6 +873,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "53": {
@@ -1195,7 +1366,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
     }
    ]
   },
@@ -1219,6 +1391,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72": {
@@ -1241,6 +1416,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "78": {
@@ -1339,8 +1517,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2a. Kapitel: Geografische Marke"
     }
+   ]
+  },
+  "27_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "27_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "35_a": {
@@ -1409,6 +1616,13 @@
     }
    ]
   },
+  "46_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
+   ]
+  },
   "48_a": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
@@ -1429,6 +1643,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_b": {
@@ -1451,6 +1669,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_c": {
@@ -1473,6 +1695,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "48_d": {
@@ -1495,6 +1721,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "49_a": {
@@ -1517,6 +1747,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50_a": {
@@ -1528,8 +1762,13 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 51"
     }
+   ],
+   "erbt": [
+    3,
+    4
    ]
   },
   "50_b": {
@@ -1541,7 +1780,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 50a (ohne Sachüberschrift)"
     },
     {
      "typ": "eingefuegt",
@@ -1577,10 +1817,13 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "50_c": {
-   "giltSeit": "2021-12-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -1597,8 +1840,36 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "50_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
+   ]
+  },
+  "50_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
+   ]
+  },
+  "50_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3,
+    5
    ]
   },
   "51_a": {
@@ -1678,6 +1949,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_b": {
@@ -1700,6 +1974,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_c": {
@@ -1773,6 +2050,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_d": {
@@ -1795,6 +2075,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_e": {
@@ -1817,6 +2100,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_f": {
@@ -1839,6 +2125,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_g": {
@@ -1861,6 +2150,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_h": {
@@ -1883,6 +2175,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "72_i": {
@@ -1905,6 +2200,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "78_a": {

@@ -10,6 +10,7 @@ import { RouteSwitch } from './RouteSwitch';
 import { prefetchLeser } from './leserPrefetch';
 import { tabSchluessel } from './lib/tabs';
 import { leseAnker, aufloeseAnkerY, setzeHashVerbraucht } from './pages/gesetz-leser/scrollAnker';
+import { sicherDekodiert } from './lib/sicherDekodieren';
 
 // SPA-Scroll-Reset: Beim Routenwechsel nach oben scrollen (sonst behält die
 // neue Seite die alte Scrollposition und man «landet unten»). Trägt die Route
@@ -227,7 +228,8 @@ function ScrollZuHash({ hashVerbraucht }: { hashVerbraucht: boolean }) {
     // gewinnt die Anker-Restauration (ScrollWiederherstellung), nicht der
     // Einstiegs-Anker — sonst kapert der stehende #hash die Rückkehr-Position.
     if (!hash || hashVerbraucht) return;
-    const id = decodeURIComponent(hash.slice(1));
+    const id = sicherDekodiert(hash.slice(1)); // PA-1-B01: kaputtes %-Escape ⇒ kein Sprung statt weisse App
+    if (!id) return;
     let frames = 0;
     let raf = requestAnimationFrame(function versuche() {
       const el = document.getElementById(id);

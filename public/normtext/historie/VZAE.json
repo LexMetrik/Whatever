@@ -1,11 +1,125 @@
 {
  "erlass": "VZAE",
  "abdeckung": {
-  "fussnoten": 260,
-  "ereignis": 197,
+  "fussnoten": 261,
+  "ereignis": 198,
   "referenz": 63,
   "unparsed": 0
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2008-12-12",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2008 5421",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2019 1431",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2019/279"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2024-06-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2024 190",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2024/190"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2011-01-24",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 99",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5. Kapitel: Ausländerausweis"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2011-01-24",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2011 99",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2011/18"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3173",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "6a. Kapitel: Integrationskriterien"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2019-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2018 3173",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2018/510"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2015-07-20",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 1849",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/358"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "10a. Kapitel: Eurodac"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2015-07-01",
@@ -60,8 +174,23 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Kapitel: Geltungsbereich und Begriffe"
     }
+   ]
+  },
+  "2": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "3": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "4": {
@@ -80,23 +209,34 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "5": {
-   "giltSeit": "2008-12-12",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2008-12-12",
+     "datum": "2026-10-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2008 5421",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2008/757"
+       "label": "AS 2026 474",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/474"
       }
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": "b"
     }
    ]
   },
@@ -1034,7 +1174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
     }
    ]
   },
@@ -1145,10 +1286,13 @@
      "absatz": "8",
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "66": {
-   "giltSeit": "2024-06-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1161,8 +1305,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
     }
+   ]
+  },
+  "67": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    2
    ]
   },
   "68": {
@@ -1194,6 +1346,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "69": {
@@ -1212,6 +1367,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "70": {
@@ -1230,6 +1388,9 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "71": {
@@ -1259,8 +1420,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5. Kapitel: Ausländerausweis"
     }
+   ]
+  },
+  "72": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "74": {
@@ -1371,7 +1540,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
     }
    ]
   },
@@ -1611,7 +1781,7 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2014/23"
       }
      ],
-     "absatz": null,
+     "absatz": "1sexies",
      "item": null
     },
     {
@@ -1860,6 +2030,9 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "20_a": {
@@ -1938,7 +2111,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 22a"
     },
     {
      "typ": "eingefuegt",
@@ -2139,6 +2313,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_b": {
@@ -2170,6 +2347,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "65_c": {
@@ -2201,6 +2381,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1
    ]
   },
   "67_a": {
@@ -2219,6 +2402,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    2
    ]
   },
   "71_a": {
@@ -2263,6 +2449,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_b": {
@@ -2333,6 +2522,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "71_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_d": {
@@ -2416,6 +2615,9 @@
      "absatz": "6",
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "71_e": {
@@ -2447,6 +2649,16 @@
      "absatz": "4",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "71_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_g": {
@@ -2478,6 +2690,16 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "71_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "71_i": {
@@ -2496,6 +2718,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "72_a": {
@@ -2514,6 +2739,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "72_b": {
@@ -2543,8 +2771,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
     }
+   ]
+  },
+  "72_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    4
    ]
   },
   "73_a": {
@@ -2628,7 +2864,7 @@
    ]
   },
   "77_a": {
-   "giltSeit": "2019-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -2641,8 +2877,37 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "6a. Kapitel: Integrationskriterien"
     }
+   ]
+  },
+  "77_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "77_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "77_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
+   ]
+  },
+  "77_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "77_f": {
@@ -2661,6 +2926,16 @@
      "absatz": null,
      "item": "4"
     }
+   ],
+   "erbt": [
+    5
+   ]
+  },
+  "77_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    5
    ]
   },
   "82_a": {
@@ -2679,6 +2954,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_b": {
@@ -2697,6 +2975,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_c": {
@@ -2741,6 +3022,9 @@
      "absatz": "1bis",
      "item": "b"
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_d": {
@@ -2759,6 +3043,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_e": {
@@ -2777,6 +3064,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_f": {
@@ -2795,6 +3085,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    6
    ]
   },
   "82_g": {
@@ -2806,7 +3099,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 82a"
     },
     {
      "typ": "eingefuegt",
@@ -2924,7 +3218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "10a. Kapitel: Eurodac"
     }
    ]
   },
@@ -2944,6 +3239,9 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "87_c": {
@@ -2964,6 +3262,13 @@
     }
    ],
    "aufgehobenSeit": "2026-06-12"
+  },
+  "87_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    7
+   ]
   },
   "87_e": {
    "giltSeit": "2026-06-12",
@@ -2997,6 +3302,9 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    7
    ]
   },
   "88_a": {

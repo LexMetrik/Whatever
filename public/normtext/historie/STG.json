@@ -2036,7 +2036,7 @@
    ]
   },
   "39": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2070,7 +2070,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "III. Einsprache"
     }
    ]
   },

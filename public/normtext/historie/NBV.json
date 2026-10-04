@@ -6,6 +6,78 @@
   "referenz": 16,
   "unparsed": 2
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-07-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2013 1987",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2013/420"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2016-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2015 5307",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2015/850"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2016-01-01",
@@ -472,7 +544,7 @@
    ]
   },
   "18": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "fassung",
@@ -485,7 +557,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
     },
     {
      "typ": "fassung",
@@ -498,8 +571,25 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
     }
+   ]
+  },
+  "19": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
+   ]
+  },
+  "20": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    1
    ]
   },
   "22": {
@@ -518,6 +608,47 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "24": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "25": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "26": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "27": {
@@ -536,6 +667,20 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "28": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "29": {
@@ -567,6 +712,20 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "30": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "31": {
@@ -585,6 +744,29 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "32": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "33": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "34": {
@@ -603,6 +785,11 @@
      "absatz": "2",
      "item": "e"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "35": {
@@ -632,8 +819,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "36": {
@@ -678,6 +869,10 @@
      "absatz": "3",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "37": {
@@ -709,6 +904,10 @@
      "absatz": "1",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "38": {
@@ -727,6 +926,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    4
    ]
   },
   "39": {
@@ -811,7 +1014,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
     },
     {
      "typ": "fassung",
@@ -824,8 +1028,12 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
     }
+   ],
+   "erbt": [
+    0
    ]
   },
   "22_a": {
@@ -844,6 +1052,11 @@
      "absatz": "5",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "22_b": {
@@ -862,6 +1075,11 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "23_a": {
@@ -893,6 +1111,20 @@
      "absatz": "1",
      "item": "h"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "24_a": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "24_b": {
@@ -930,6 +1162,11 @@
      "absatz": "1",
      "item": "b"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "25_b": {
@@ -948,6 +1185,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "25_c": {
@@ -966,6 +1208,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_a": {
@@ -984,6 +1231,20 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "28_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "28_c": {
@@ -1015,6 +1276,20 @@
      "absatz": "2",
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "28_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_a": {
@@ -1033,6 +1308,29 @@
      "absatz": "3",
      "item": "j"
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "32_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
+   ]
+  },
+  "32_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   },
   "32_d": {
@@ -1051,6 +1349,11 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    0,
+    2,
+    3
    ]
   }
  },

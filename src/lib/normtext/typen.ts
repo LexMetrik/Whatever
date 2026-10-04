@@ -88,14 +88,30 @@ export interface NormSnapshot {
      *  Wert = Heading-Tiefe (2–6). Nur Anhang-Einträge tragen das Feld; der
      *  Renderer (ArtikelBody) zeigt den `text` dann als Zwischenüberschrift. */
     titel?: number;
+    /** Ziffer-Ebene (P6, HN-05-Auflage): nackte Ziffer-Marke («12», «5bis»), zu der dieser
+     *  Block gehört — BV Art. 197 (Überschrift-Ziffern, jede zählt ihre Absätze neu) und
+     *  StGB-Strafnormen («1. Wer …»). Reine Struktur wie `titel`/`absatz`, NICHT im sha.
+     *  Fehlt, wo der Artikel keine Ziffer-Gliederung trägt. Auflösung: passusZiel.ts. */
+    ziffer?: string;
     /** `trenner` (#679, 12.9.2026): der AMTLICHE Trenner hinter der <dt>-Marke
      *  der Quelle — ':' (Label/Kategorie, «BE:»), ')' (Ordinalmarke «a)»), '.'
      *  (Punkt bei nicht-kanonischer Marke) oder '' (kein Trenner, «BAS»).
      *  FEHLT das Feld, ist es der Normalfall «kanonische Ordinalmarke + Punkt»
      *  ODER eine Quelle, die den Trenner nicht mitführt (Kanton-Adapter) — die
      *  Lesesicht fällt dann auf ihre Marken-Heuristik zurück
-     *  (ArtikelBody.helfer.ts `markenArt`). */
+     *  (ArtikelBody.helfer.ts `markenArt`).
+     *
+     *  `marke: ''` (W2·27-BUND-FERTIG, 3.10.2026): marke-lose Zeile am Anfang einer
+     *  (Unter-)Liste — die Quelle führt keine <dt>-Marke (ARGV1 art_30 «1.  in fünf …»,
+     *  VBB art_10 Legende, EBG art_6 CSS-Autonummer). Der Text steht an seiner Stelle, es
+     *  gibt weder Marke noch Zitierknopf (keine Marke erfunden, §1/§7); `tiefe` wie bei
+     *  jedem Item. Nur der Haupttext-Pfad schreibt sie (Anhang: eigener Block, `einzug`). */
     items?: Array<{ marke: string; text: string; tiefe?: number; trenner?: string }>;
+    /** Anhang-Zwischennotiz (P4, W2·27-BUND-FERTIG): Ebene (`tiefe`, 0 = Wurzelliste) der marke-losen
+     *  Zeile, die diesen Block ausmacht (`text` = die Zeile, `items` = ihre Unterliste). Render-Hinweis,
+     *  nicht im sha: Einrückung auf die Ebene des Eltern-Punkts; der Folgeblock führt die Kette des
+     *  Zitats über die Blockgrenze (ArtikelBody.helfer.ts `anhangVorKette`). Fehlt: gewöhnlicher Block. */
+    einzug?: number;
     /** Stufe 1: Füllpunkt-Tarifzeilen (Beschreibung | Betrag). */
     tabelle?: Array<{ beschreibung: string; betrag: string }>;
     /**

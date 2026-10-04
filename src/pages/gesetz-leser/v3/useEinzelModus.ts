@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { setzeLeserAnsicht, useLeserAnsicht } from '../leserOptionen';
-import { kanonischerAnkerToken } from '../suchTreffer';
 import {
-  einzelAdresse, modusAusSuche, modusEntscheid, nachbarToken, sucheMitModus, tokenAusHash,
+  einzelAdresse, lesestelle, loeseEinzelToken, modusAusSuche, modusEntscheid, nachbarToken, sucheMitModus,
   type LeserModus,
 } from './einzelModus';
 import type { LeserV3Modell } from './leserV3Modell';
@@ -110,9 +109,14 @@ export function useEinzelModus(
   // S6-W1a schon ab (`../inhalt-hooks-tieflink`), der Einzelmodus nicht —
   // jetzt über DIESELBE Abbildung (`kanonischerAnkerToken`, §5): exakt vor
   // unscharf, unscharf nur bei eindeutigem Treffer (§8: kein Rate-Sprung).
-  const ausAdresse = tokenAusHash(location.hash);
-  const token = (ausAdresse === null ? null : kanonischerAnkerToken(ausAdresse, artTokens))
-    ?? aktivToken ?? artTokens[0] ?? null;
+  //
+  // W2·17-UI-BEFUNDE (1.10.2026): zwei Nachträge, beide in `./einzelModus`. (1) Ein Anker, den der
+  // Erlass nicht führt, liefert keinen Token mehr (`unbekannt`) — davor lief die obige Kette ins
+  // Leere, und der Leser sah still den ganzen Erlass; jetzt zeigt der Einzelmodus die Lesestelle und
+  // sagt, was fehlt (`./LeserEinzelAnsicht`, dieselbe Auflösung `loeseEinzelToken`). (2) In der GESAMTANSICHT ist der Hash nur der
+  // Einstiegsanker, die Lesestellung gewinnt (`lesestelle`) — das macht den Wechsel erst verlustfrei.
+  const { token: ausAdresse } = loeseEinzelToken(location.hash, artTokens);
+  const token = lesestelle(modus, ausAdresse, aktivToken, artTokens[0] ?? null);
 
   const gehZu = useCallback((ziel: string) => {
     // `pushState` (react-router `navigate` ohne `replace`) — die Begründung
@@ -124,7 +128,9 @@ export function useEinzelModus(
 
   const waehleModus = useCallback((m: LeserModus) => {
     setzeLeserAnsicht(m);
-    if (!fuehrtAdresse) return;
+    // Die schon geltende Lesart noch einmal zu wählen ist ein No-op (`LeserModusWahl` sagt es zu) —
+    // PA-15-B02: die Adresse wurde neu geschrieben und die Gesamtansicht sprang zum Einstiegsanker zurück.
+    if (!fuehrtAdresse || m === modus) return;
     // VERLUSTFREI in beide Richtungen: die Adresse behält den Anker des
     // Artikels, an dem der Leser steht. Nach «Ganzer Erlass» springt die
     // Gesamtansicht damit an genau diese Stelle, nach «Einzelner Artikel»
@@ -134,7 +140,7 @@ export function useEinzelModus(
       ? einzelAdresse(basisPfad, location.search, ziel, m)
       : `${basisPfad}${sucheMitModus(location.search, m)}`;
     navigate(adresse, { replace: true });
-  }, [basisPfad, fuehrtAdresse, location.search, navigate, token]);
+  }, [basisPfad, fuehrtAdresse, location.search, modus, navigate, token]);
 
   const vor = nachbarToken(artTokens, token, -1);
   const nach = nachbarToken(artTokens, token, 1);

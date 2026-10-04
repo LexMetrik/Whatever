@@ -1,7 +1,9 @@
 import {
   labelMitBereich, artikelLeerstellenStatus, type LeerstellenStatus,
 } from '../../../lib/normtext/darstellung';
+import type { StrukturMap } from '../../../lib/normtext/browse';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
+import { eindeutigeBezeichnung } from '../artikelBezeichnung';
 
 // ═══ W2·5m · NACHBAR-ARTIKEL: «‹ Art. 89» / «Art. 90a ›» ════════════════════
 //
@@ -47,6 +49,12 @@ export interface NachbarZiel {
   /** Belegstufe des Nachbarn — geht in den aria-Namen, nie ins Weglassen.
    *  Wortlaut über `leerstellenWort` (§5, nie hier abgeschrieben). */
   zustand: LeerstellenStatus;
+  /** B11-D04 · liegt der Nachbar in einer ANDEREN Gruppe als der Artikel, auf dem
+   *  der Pfeil steht — Hauptteil gegen eine Schlusstitel-/Übergangsgruppe, oder
+   *  zwei verschiedene Gruppen? Nur dann ist «Art. 3» als Beschriftung mehrdeutig:
+   *  innerhalb einer Gruppe trägt der Gliederungspfad des gelesenen Artikels die
+   *  Gruppe schon (Herleitung bei `nachbarBezeichnung`). Rein aus den Token (§2). */
+  gruppeWechsel: boolean;
 }
 
 /** Was an EINEM Artikel steht. Beide Seiten dürfen fehlen (erster/letzter Eintrag). */
@@ -55,7 +63,10 @@ export interface ArtikelNachbarn {
   nach: NachbarZiel | null;
 }
 
-const ziel = (e: NormSnapshot): NachbarZiel => ({
+/** Gruppe eines Tokens: `disp_u<N>` für Schlusstitel-/Übergangsartikel, sonst leer. */
+const gruppeVon = (token: string): string => /^disp_u\d+/.exec(token)?.[0] ?? '';
+
+const ziel = (e: NormSnapshot, von: NormSnapshot): NachbarZiel => ({
   token: e.artikel,
   // §5: dieselbe Ableitung, die `../inhalt-ableitungen.tsx` für
   // `artLabelByToken` benutzt — ein Schlusstitel-Token («disp_u1_art_3») lässt
@@ -64,6 +75,7 @@ const ziel = (e: NormSnapshot): NachbarZiel => ({
   // §5: dieselbe Prüfung, die `parts/ArtikelLeser` für seine eigene Statuszeile
   // stellt — Marker vor Text-Heuristik, Beleggrund im Ergebnis.
   zustand: artikelLeerstellenStatus(e.bloecke, e.aufgehoben, e.gegenstandslos),
+  gruppeWechsel: gruppeVon(e.artikel) !== gruppeVon(von.artikel),
 });
 
 /**
@@ -84,9 +96,34 @@ export function baueNachbarn(eintraege: NormSnapshot[] | null): Map<string, Arti
   const liste = eintraege ?? [];
   for (let i = 0; i < liste.length; i++) {
     map.set(liste[i].artikel, {
-      vor: i > 0 ? ziel(liste[i - 1]) : null,
-      nach: i < liste.length - 1 ? ziel(liste[i + 1]) : null,
+      vor: i > 0 ? ziel(liste[i - 1], liste[i]) : null,
+      nach: i < liste.length - 1 ? ziel(liste[i + 1], liste[i]) : null,
     });
   }
   return map;
+}
+
+// ─── B11-D04 · «Art. 1» NACH Art. 1186 IST NICHT ART. 1 ──────────────────────
+// Am Übergang vom Hauptteil in eine Schlusstitel-/Übergangsgruppe nannte der
+// Pfeil den Nachbarn mit dem blossen Label (OR Art. 1186 → «Art. 1 ›», ZGB
+// Art. 977 → «Art. 1 ›»): wer ihn drückt, landet in den Schlussbestimmungen, nicht
+// bei Art. 1. Die eindeutige Bezeichnung liefert dieselbe Quelle wie der
+// «Weiterlesen»-Chip und das Panel-Zitat (`../artikelBezeichnung`, §5): Label
+// plus amtlicher Name der Gruppe aus der Gliederung. Die Gruppe steht als ZWEITE
+// Zeile unter dem Label (kein zweites Vokabular, keine Kurzform — §8), die volle
+// Bezeichnung im zugänglichen Namen und im `title`.
+//
+// Nur beim Gruppenwechsel qualifiziert (`NachbarZiel.gruppeWechsel`): innerhalb
+// einer 104-teiligen Schlusstitel-Gruppe stünde sonst unter JEDEM Pfeil derselbe
+// lange Gruppenname.
+
+/** Volle Bezeichnung und — wo sie das Label ergänzt — der Gruppenname allein. */
+export function nachbarBezeichnung(
+  ziel: NachbarZiel,
+  struktur: StrukturMap | null,
+): { voll: string; gruppe: string | null } {
+  const voll = ziel.gruppeWechsel ? eindeutigeBezeichnung(ziel.token, ziel.label, struktur) : ziel.label;
+  // `eindeutigeBezeichnung` hängt die Gruppe als « (…)» an das unveränderte Label.
+  const gruppe = voll.length > ziel.label.length ? voll.slice(ziel.label.length).replace(/^ \(|\)$/g, '') : null;
+  return { voll, gruppe };
 }

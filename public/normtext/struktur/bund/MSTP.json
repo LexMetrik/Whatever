@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-09-14",
+ "erzeugt": "2026-10-01",
  "stand": "2024-07-01",
  "fassungsToken": "20240701",
  "kopf": {
@@ -4904,6 +4904,12 @@
      ],
      "absatz": "1",
      "item": null,
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 2,
+      "l": 4
+     },
      "kl": "A"
     },
     {
@@ -4923,7 +4929,7 @@
      "item": "b",
      "pos": {
       "b": 0,
-      "it": 1,
+      "it": 6,
       "o": 98,
       "l": 98
      },
@@ -11194,7 +11200,7 @@
     },
     {
      "nr": "132",
-     "text": "Ursprünglich Abschnitt 11. Eingefügt durch Anhang Ziff. 2 des Opferhilfegesetzes vom 23. März 2007 (AS <b>2008</b> 1607; BBl <b>2005</b> 7165). Fassung gemäss Ziff. I des BG vom 17. Juni 2016, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 3911; BBl <b>2015</b> 6059 7711).",
+     "text": "Ursprünglich Abschnitt 11bis. Eingefügt durch Anhang Ziff. 2 des Opferhilfegesetzes vom 23. März 2007 (AS <b>2008</b> 1607; BBl <b>2005</b> 7165). Fassung gemäss Ziff. I des BG vom 17. Juni 2016, in Kraft seit 1. Jan. 2019 (AS <b>2018</b> 3911; BBl <b>2015</b> 6059 7711).",
      "links": [
       {
        "label": "AS <b>2008</b> 1607",

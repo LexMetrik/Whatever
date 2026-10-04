@@ -3,9 +3,84 @@
  "abdeckung": {
   "fussnoten": 296,
   "ereignis": 242,
-  "referenz": 46,
-  "unparsed": 8
+  "referenz": 47,
+  "unparsed": 7
  },
+ "ueberschriftEreignisse": [
+  {
+   "typ": "eingefuegt",
+   "datum": "2025-03-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2023 453",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2023/453"
+    },
+    {
+     "label": "BBl 2021 3026",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2021/3026"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": "2003-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2002 2767",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2002/408"
+    },
+    {
+     "label": "BBl 1999 4462",
+     "url": ""
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
+  },
+  {
+   "typ": "fassung",
+   "datum": "2013-01-01",
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 6291",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
+    },
+    {
+     "label": "BBl 2010 8447",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
+  },
+  {
+   "typ": "eingefuegt",
+   "datum": null,
+   "wirkung": false,
+   "quellen": [
+    {
+     "label": "AS 2012 6291",
+     "url": "https://fedlex.data.admin.ch/eli/oc/2012/744"
+    },
+    {
+     "label": "BBl 2010 8447",
+     "url": "https://fedlex.data.admin.ch/eli/fga/2010/1610"
+    }
+   ],
+   "absatz": null,
+   "item": null,
+   "ueberschrift": "IVa. Titel: Informationssysteme",
+   "teilweise": "Eingefügt durch Ziff. I des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit 1. Jan. 2013, Abschn. 3 in Kraft seit 1. Jan. 2014 und Abschn. 1 in Kraft seit 1. Jan. 2019 (AS 2012 6291, 2013 4669, 2018 4985; BBl 2010 8447)."
+  }
+ ],
  "artikel": {
   "1": {
    "giltSeit": "2013-01-01",
@@ -3993,7 +4068,7 @@
    ]
   },
   "25_a": {
-   "giltSeit": "2025-03-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4010,8 +4085,58 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
     }
+   ]
+  },
+  "25_b": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_d": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_e": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
+   ]
+  },
+  "25_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    0
    ]
   },
   "2_a": {
@@ -4084,7 +4209,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "frueher": "Art. 57bis"
     },
     {
      "typ": "eingefuegt",
@@ -4163,7 +4289,7 @@
    "aufgehobenSeit": "2013-01-01"
   },
   "57_c": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4197,7 +4323,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
     },
     {
      "typ": "fassung",
@@ -4214,7 +4341,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IIIa. Titel: Verkehrsmanagement"
     }
    ]
   },
@@ -4238,6 +4366,10 @@
      "absatz": null,
      "item": null
     }
+   ],
+   "erbt": [
+    1,
+    2
    ]
   },
   "68_a": {
@@ -4592,7 +4724,7 @@
    ]
   },
   "89_a": {
-   "giltSeit": "2013-01-01",
+   "giltSeit": null,
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4609,7 +4741,9 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "ueberschrift": "IVa. Titel: Informationssysteme",
+     "teilweise": "Eingefügt durch Ziff. I des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit 1. Jan. 2013, Abschn. 3 in Kraft seit 1. Jan. 2014 und Abschn. 1 in Kraft seit 1. Jan. 2019 (AS 2012 6291, 2013 4669, 2018 4985; BBl 2010 8447)."
     }
    ]
   },
@@ -4667,6 +4801,16 @@
      "absatz": null,
      "item": "m"
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "89_c": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_d": {
@@ -4791,6 +4935,9 @@
      "absatz": null,
      "item": "h"
     }
+   ],
+   "erbt": [
+    3
    ]
   },
   "89_e": {
@@ -4836,7 +4983,8 @@
      "wirkung": false,
      "quellen": [],
      "absatz": null,
-     "item": "abis"
+     "item": "abis",
+     "frueher": "Bst. a"
     },
     {
      "typ": "fassung",
@@ -4872,6 +5020,72 @@
      "absatz": null,
      "item": "g"
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "89_f": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_g": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_h": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_i": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_j": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_k": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_l": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_m": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_n": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "89_o": {
@@ -4890,6 +5104,44 @@
      "absatz": "3",
      "item": null
     }
+   ],
+   "erbt": [
+    3
+   ]
+  },
+  "89_p": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_q": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_r": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_s": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
+   ]
+  },
+  "89_t": {
+   "giltSeit": null,
+   "ereignisse": [],
+   "erbt": [
+    3
    ]
   },
   "90_a": {
@@ -5023,11 +5275,6 @@
    "token": "108",
    "nr": "300",
    "roh": "Art. 14 Abs. 1 des BRB vom 22. Nov. 1966 (AS 1966 1493)."
-  },
-  {
-   "token": "83",
-   "nr": "208",
-   "roh": ""
   },
   {
    "token": "99",

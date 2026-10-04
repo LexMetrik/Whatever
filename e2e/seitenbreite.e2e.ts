@@ -2,6 +2,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { SEITENBREITE, type Breitenstufe, type Seitenart } from '../src/components/layout/seitenbreite';
 import tailwindConfig from '../tailwind.config.js';
+import { IMMER, TAGESZEITEN } from '../src/lib/begruessungen';
 
 // ─── Breitenwächter je Seitenart (W2·31-BILDSCHIRMBREITE B1c, 25.9.2026) ─────
 //
@@ -589,6 +590,40 @@ test.describe(`Schriftskala ${SKALA} Handy 320–560 (W2·31 L)`, () => {
         });
         expect(m.ueber, `${pfad} @${width} Skala ${SKALA}: Seiten-Querscroll +${m.ueber} px — ${m.quellen.join(' | ') || 'keine Quelle'}`).toBeLessThanOrEqual(0);
       }
+    });
+  }
+});
+
+// ─── Startseite: JEDER Gruss des Pools ohne Querscroll (QS-CI-MINUTEN, 2.10.2026) ─
+//
+// BEFUND (Flake `/`-Fall oben, Läufe 37030890002 und 37057308844): die Startseite
+// zieht ihren Gruss PRO BESUCH aus dem Pool (`lib/begruessungen.ts`, Inline-Skript);
+// der Fall oben sah darum bei jedem Lauf einen anderen Gruss. «Ihr Nachschlagewerk.»
+// (ein Wort, 35.84 px kursiv) ist @320 unter Skala 1.4 breiter als die Spalte und
+// weitete die Startseite um +8 px (CI +12) — ein ECHTER Überlauf, den nur etwa jeder
+// 60. Besuch trifft (lokal 1/60 Ladevorgänge; Messung über den Pool: 2 von 324
+// Grüssen, nur @320 Skala 1.4). Fix im Layout (`SuchBlock.tsx`: `min-w-0` + `lc-wortumbruch`),
+// der Test bleibt streng. Dieser Test macht die Zufallsziehung DETERMINISTISCH:
+// er setzt jeden der Grüsse in die h1 und misst; die Messung hängt nicht mehr am Los.
+// ROT ZU BEKOMMEN (§6.7, gegen `src/`): in `SuchBlock.tsx` `min-w-0` an der Hülle
+// UND `lc-wortumbruch` am Gruss entfernen → rot @320 mit «Ihr Nachschlagewerk.».
+test.describe(`Startseite: alle Grüsse ohne Querscroll, Skala ${SKALA} (QS-CI-MINUTEN)`, () => {
+  const GRUESSE = [...new Set([...IMMER, ...TAGESZEITEN.flatMap((t) => t.pool)])];
+  for (const width of [320, 375, 560]) {
+    test(`@${width}: alle ${GRUESSE.length} Grüsse`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: 'light' });
+      await page.addInitScript(([k, v]) => { try { localStorage.setItem(k, v); } catch { /* gesperrt */ } }, [SKALA_KEY, SKALA]);
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/');
+      await bereit(page);
+      const aus = await page.evaluate((gruesse) => {
+        const h1 = document.querySelector('main#inhalt h1') as HTMLElement;
+        const de = document.documentElement;
+        return gruesse
+          .map((g) => { h1.textContent = g; return { g, ueber: de.scrollWidth - de.clientWidth }; })
+          .filter((m) => m.ueber > 0);
+      }, GRUESSE);
+      expect(aus, `@${width} Skala ${SKALA}: Grüsse mit Seiten-Querscroll — ${aus.map((m) => `«${m.g}» +${m.ueber} px`).join(', ')}`).toEqual([]);
     });
   }
 });

@@ -1,9 +1,9 @@
 {
  "erlass": "ZEMIS_V",
  "abdeckung": {
-  "fussnoten": 169,
-  "ereignis": 95,
-  "referenz": 74,
+  "fussnoten": 173,
+  "ereignis": 97,
+  "referenz": 76,
   "unparsed": 0
  },
  "artikel": {
@@ -433,7 +433,7 @@
    ]
   },
   "9": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -785,11 +785,24 @@
      ],
      "absatz": null,
      "item": "t"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "u"
     }
    ]
   },
   "10": {
-   "giltSeit": "2025-06-15",
+   "giltSeit": "2026-10-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1076,6 +1089,19 @@
      ],
      "absatz": null,
      "item": "r"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 364",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/364"
+      }
+     ],
+     "absatz": null,
+     "item": "s"
     }
    ]
   },

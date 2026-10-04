@@ -8,6 +8,13 @@ import { parseFedlexCacheEintraege } from '../../scripts/normtext/inventar-bund'
 
 const shellQuelle = readFileSync('scripts/fedlex-cache.sh', 'utf8');
 
+// Konsolidierungsdatum (3. Pipe-Feld) einer Pin-Zeile, UNABHÄNGIG vom Parser aus dem Rohtext gelesen.
+// W2·27-BUND-FERTIG (1.10.2026): die früheren Literale ('20260101' OR, '20260612' STGB) rissen bei
+// JEDEM Re-Pin dieser Erlasse — der Frische-Workflow kann sie nicht nachziehen und blieb am
+// «npm test»-Schritt hängen. Der Test prüft die Parser-Leistung (richtiges Feld der richtigen Zeile).
+const pinDatum = (name: string): string | undefined =>
+  shellQuelle.match(new RegExp(`^\\s*"${name}\\|[^|]*\\|(\\d{8})\\|`, 'm'))?.[1];
+
 describe('parseFedlexCacheEintraege', () => {
   it('parst die echte fedlex-cache.sh und liefert mindestens 15 Gesetze', () => {
     const eintraege = parseFedlexCacheEintraege(shellQuelle);
@@ -19,7 +26,8 @@ describe('parseFedlexCacheEintraege', () => {
     const or = eintraege.find((e) => e.name === 'or');
     expect(or).toBeDefined();
     expect(or!.eli).toBe('cc/27/317_321_377');
-    expect(or!.konsolidierung).toBe('20260101');
+    expect(or!.konsolidierung).toMatch(/^\d{8}$/);
+    expect(or!.konsolidierung).toBe(pinDatum('or'));
   });
 
   it('OR-Anker enthält art_335_c', () => {
@@ -62,10 +70,11 @@ describe('parseFedlexCacheEintraege', () => {
     expect(or!.anker.length).toBe(10);
   });
 
-  it('stgb hat konsolidierung 20260612', () => {
+  it('stgb trägt das Konsolidierungsdatum seiner Pin-Zeile', () => {
     const eintraege = parseFedlexCacheEintraege(shellQuelle);
     const stgb = eintraege.find((e) => e.name === 'stgb');
     expect(stgb).toBeDefined();
-    expect(stgb!.konsolidierung).toBe('20260612');
+    expect(stgb!.konsolidierung).toMatch(/^\d{8}$/);
+    expect(stgb!.konsolidierung).toBe(pinDatum('stgb'));
   });
 });

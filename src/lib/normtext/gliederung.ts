@@ -31,6 +31,8 @@ export const GLIEDERUNGEN: ReadonlyArray<{ id: Gliederung; label: string }> = [
 
 const GLIEDERUNG_DEFAULT: Gliederung = 'systematisch';
 
+import { lokalSpeicher } from '../sichererSpeicher';
+
 const KEY = 'lm.gesetze.gliederung';
 
 function istGliederung(v: unknown): v is Gliederung {
@@ -40,22 +42,15 @@ function istGliederung(v: unknown): v is Gliederung {
 /** Gespeicherte Wahl (localStorage) oder Default. SSR-sicher. */
 function ladeGliederung(): Gliederung {
   if (typeof window === 'undefined') return GLIEDERUNG_DEFAULT;
-  try {
-    const roh = localStorage.getItem(KEY);
-    return istGliederung(roh) ? roh : GLIEDERUNG_DEFAULT;
-  } catch {
-    // localStorage gesperrt (privater Modus) → Default.
-    return GLIEDERUNG_DEFAULT;
-  }
+  // Gesperrter Speicher (privater Modus) → `lies` liefert null → Default.
+  const roh = lokalSpeicher.lies(KEY);
+  return istGliederung(roh) ? roh : GLIEDERUNG_DEFAULT;
 }
 
 /** Persistiert die Wahl (best effort — bei gesperrtem Speicher nur für die Sitzung). */
 export function speichereGliederung(g: Gliederung): void {
-  try {
-    localStorage.setItem(KEY, g);
-  } catch {
-    /* Speicher gesperrt — die Wahl gilt dann nur für die Sitzung (URL trägt sie). */
-  }
+  // Speicher gesperrt — die Wahl gilt dann nur für die Sitzung (URL trägt sie).
+  lokalSpeicher.schreib(KEY, g);
 }
 
 /** Auflösung URL → Persistenz → Default (Rangfolge oben). Der URL-Parameter

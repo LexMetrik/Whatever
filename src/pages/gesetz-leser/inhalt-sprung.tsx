@@ -1,9 +1,10 @@
+import { eigeneGattungAusTitel } from '../../components/normtext/fremderlassGenitiv';
 import {
   useCallback, useEffect, useMemo, useRef,
   type Dispatch, type MutableRefObject, type RefObject, type SetStateAction,
 } from 'react';
 import { flushSync } from 'react-dom';
-import type { NavigateFunction } from 'react-router-dom';
+import { useNavigationType, type NavigateFunction } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
@@ -15,8 +16,12 @@ import { paneRoot } from './berechnungen';
 import { loeseSpyNachlauf } from './inhalt-hooks';
 import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
+import { ersterArtikelDerSektion } from './v3/einzelModus';
 import { oeffneSprungZiel } from './klappKarte';
 import { uebersetzeRohPfad } from './gliederungsModell';
+import type { GliederungsKnoten } from './gliederungsTypen';
+import { sicherDekodiert } from '../../lib/sicherDekodieren';
+import { zerlegeZifferAnker } from '../../lib/normtext/zifferAnker';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -42,12 +47,14 @@ const KEIN_PRAEFIX: Record<string, string[]> = {};
 export function useSektionSprung(opts: {
   sektionen: Sektion[];
   sekRefs: SekRefs;
-  location: { key: string; hash: string };
+  location: { key: string; hash: string; state?: unknown };
   istSekundaer: boolean;
   imPane: boolean;
   wurzel: PaneWurzel;
   sucheDebounced: string;
-  springeZuArtikel: (token: string) => void;
+  springeZuArtikel: (token: string, behalteSuche?: boolean, ziffer?: string | null) => void;
+  /** W2·17-UI-BEFUNDE · gilt gerade der Einzelmodus? Dort steht kein Sektionskopf im DOM (PE-B10-B02). */
+  imEinzel?: () => boolean;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   setAktivIds: Dispatch<SetStateAction<string[]>>;
@@ -64,6 +71,10 @@ export function useSektionSprung(opts: {
   scrollBeiSuchwechsel?: boolean;
   /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
   umhaengPraefix?: Record<string, string[]>;
+  /** Zeilenbaum des Modells (B7: Tieflink auf einen Artikel ohne Sektion). */
+  knoten?: GliederungsKnoten[];
+  /** Token → Position aller Einträge (Tieflink-Zweig kanonisiert gegen dieselbe Liste wie der Sprung). */
+  artIndex?: ReadonlyMap<string, number>;
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -77,9 +88,9 @@ export function useSektionSprung(opts: {
   };
 }) {
   const {
-    sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
+    sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel, imEinzel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
-    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX,
+    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX, knoten, artIndex,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -87,7 +98,7 @@ export function useSektionSprung(opts: {
   // dem ersten Bild — er gehört zu den Sprüngen und steht darum hier. Befund,
   // Messreihe und Herleitung: `./v3/tiefLinkZweig`.
   useTiefLinkZweig({
-    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix,
+    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix, knoten, artIndex,
     setTocBaum, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   });
 
@@ -98,6 +109,10 @@ export function useSektionSprung(opts: {
   // Muss ÜBER dem early-return (`!erlass || !eintraege`) stehen, sonst wäre der Hook
   // bedingt (Rules of Hooks) — das war der in Batch 1 zurückgestellte Reorder.
   const springeZuSektion = useCallback((zeilenIds: string[]) => {
+    // Einzelmodus: kein Sektionskopf im DOM — der Klick führt zum ersten Artikel der Stufe, über denselben
+    // Sprungweg wie jeder Artikel-Sprung (Adresse, Anzeige und Gliederung bleiben eins).
+    const erster = imEinzel?.() ? ersterArtikelDerSektion(sektionen, zeilenIds[0]) : null;
+    if (erster) { springeZuArtikel(erster); return; }
     // B3 (Bug-Check 9.8.2026), zweiter Hebel: eine verdichtete Einzelkind-Kette
     // ist EINE Zeile mit mehreren Sektions-Ids. `pfadZu` findet nur die
     // ÄUSSERSTE (sie trägt die Zeile) und lieferte damit einen Pfad, in dem die
@@ -169,13 +184,14 @@ export function useSektionSprung(opts: {
     // kann die Regel die Stabilität nicht mehr belegen; Deps bleiben byte-gleich
     // zum Inline-Stand (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, umhaengPraefix]);
+  }, [sektionen, umhaengPraefix, imEinzel, springeZuArtikel]);
 
   // Wechsel zwischen zwei Instanzen DESSELBEN Gesetzes (?r) bzw. ein Tab-Klick mit
   // #art-Anker remountet den Reader nicht (gleicher pathname) — darum bei jeder
   // Navigation mit Artikel-Anker gezielt dorthin springen (Auftrag David: Klick
   // auf den Reiter führt zum gemerkten Artikel der Instanz).
   const letzteNavKey = useRef<string | null>(null);
+  const navTyp = useNavigationType();
   useEffect(() => {
     if (!sektionen.length || typeof window === 'undefined') return;
     if (istSekundaer) return; // sekundäres Pane: location.key ist fix («default»), kein Instanz-Wechsel
@@ -191,12 +207,20 @@ export function useSektionSprung(opts: {
     // über eine Reiter-Identitätsgrenze, z. B. ?r-Instanzwechsel ohne Remount) —
     // die A16-Anker-Restauration (App.tsx) übernimmt, kein Hash-Sprung.
     if (istHashVerbraucht()) return;
+    // W2·17-UI-BEFUNDE: der Einzelmodus-Sprung (`v3/sprungWege`) hat den Artikel selbst angesprungen.
+    if ((location.state as { sprungErledigt?: boolean } | null)?.sprungErledigt) return;
     const m = location.hash.match(/^#art-(.+)$/);
     if (!m) return;
-    const token = decodeURIComponent(m[1]);
-    const id = window.requestAnimationFrame(() => springeZuArtikel(token));
+    const anker = sicherDekodiert(m[1]); // PA-1-B01
+    if (!anker) return;
+    const { artikel: token, ziffer } = zerlegeZifferAnker(anker); // E2: `#art-197-ziff-12` ⇒ Artikel + Ziffer
+    // W2·17-UI-BEFUNDE (Nachzug zu #1265): «Zurück/Vor» (POP) im Einzelmodus landet auf einem Verlaufs-
+    // Eintrag OHNE `sprungErledigt` (der Einstieg, oder ein Blättern) und würde die Suche beenden —
+    // wer zurückgeht, will den Artikel zurück, nicht seine Fundstellen verlieren. Der Scroll bleibt.
+    const behalteSuche = navTyp === 'POP' && imEinzel?.() === true;
+    const id = window.requestAnimationFrame(() => springeZuArtikel(token, behalteSuche, ziffer));
     return () => window.cancelAnimationFrame(id);
-  }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
+  }, [location.key, location.hash, location.state, sektionen, springeZuArtikel, istSekundaer, navTyp, imEinzel]);
 
   // Suche aktivieren → an den Anfang scrollen; Suche schliessen/leeren → an die
   // Scrollposition VOR der Suche zurück (Auftrag David). Grund fürs Hoch-Scrollen
@@ -403,6 +427,8 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
       // V-3: kantons-gescopetes Kürzel-Register; der gelesene Erlass steckt
       // im Basispfad (dieselbe Ableitung wie `istParagrafDesigniert`).
       kantonKuerzel: baueKantonKuerzelKarte(manifestErlasse, kanton, schluesselAusPfad(basisPfad)),
+      // W2·17 Nachzug: Gattung des gelesenen Erlasses — blosses «des Abkommens» ist dort ein Selbstverweis.
+      eigeneGattung: eigeneGattungAusTitel(manifestErlasse?.find((e) => e.key === schluesselAusPfad(basisPfad))?.titel),
     };
   }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel, manifestErlasse, kanton]);
 }

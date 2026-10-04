@@ -34,6 +34,7 @@ import {
 } from '../../lib/mappen';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { manifestBedarf } from '../../lib/tabGruppen';
+import { useStelleDaten } from './useStelleDaten';
 import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
@@ -149,7 +150,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
-  const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
+  const [manifesteGeladen, setManifeste] = useState<VerlaufManifeste>({});
+  // DFG-F01: dieselben Manifeste samt den Einträgen für die Stelle im Reiter
+  // («§ 4», «Art. 12 SchlT ZGB»); bis sie da sind, trägt der Reiter die Rückfallform.
+  const manifeste = useStelleDaten(tabs, manifesteGeladen);
   // ── W2·18 Punkt 6 · EIN ZUSTAND FÜR BLATT UND FILTER ─────────────────────
   // Hier standen ZWEI Zustände: `blattOffen` und daneben `suche`. Das Blatt
   // ging zu (acht Wege: ✕, Esc, Klick daneben, Navigation, «daneben öffnen»,
