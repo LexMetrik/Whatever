@@ -330,6 +330,12 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
   (Tests ×2 · Lint · Typen · Checks) unter dem Sammel-Kontext «Tore»; Lighthouse nur nachts
   (`perf-nacht.yml`, Zettel `alarm:perf-nacht`), «Perf-Budget» wertet Treue + Bundle-Topologie;
   Caches speichert nur `main`. Anlässe: `archiv/ci-yml-kommentare.md` ci-063…071.
+- **Queue- vs. Nacht-Specs (Entscheid David 5.10.2026, #1326):** 6 Queue-Shards; Specs mit
+  `// @shard-gruppe: nacht` laufen nur im Job `e2e-nacht` (`perf-nacht.yml`, Zettel `alarm:e2e-nacht`).
+  Neue Specs bekommen eine Zahl. `nacht` nur für reine Geometrie/Fokus/CLS/Navigation/Kontrast —
+  wer einstuft, liest die Spec VOLLSTÄNDIG; prüft sie Rechenwerte oder Rechtstext-Inhalt
+  (Wortlaut, Reihenfolge, Treffer/Verweise gegen Normtext, Zähler/Quoten): Queue, im Zweifel Queue
+  (Lehre #1326: 14 von 66 Erst-Einstufungen widerlegt). Anlass: ci-072/073.
 - **Browser-Installation** über `scripts/ci/playwright-install.sh` (#785). Ein roter Shard ohne
   rote Tests ⇒ zuerst den Schritt lesen, nicht die Suite verdächtigen.
 - **Reine Doku-PRs** (Diff-Klasse «doku») überspringen `bau` und `e2e`; die Doku-Tore laufen

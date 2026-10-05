@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // Browser-Smoke der Normrevisions-Ehrlichkeit (FAHRPLAN-VERZAHNUNG-UI §V1c).
 // Läuft gegen `vite preview` (dist).
 //

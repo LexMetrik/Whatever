@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── Rechtsprechung auf Stufe `weit` (W2·31-BILDSCHIRMBREITE B6, 25.9.2026) ──

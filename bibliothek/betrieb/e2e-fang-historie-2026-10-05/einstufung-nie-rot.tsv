@@ -1,0 +1,108 @@
+spec	lauf	grund	nachtrag
+e2e/a31a-fussnote-inline.e2e.ts	QUEUE	Fussnoten-Position im Normtext (ZGB 798a, SchKG 56)	
+e2e/ag-gruendung-wizard.e2e.ts	QUEUE	Vorlagen-Durchlauf bis «Checkliste & Dokumente» (Zweifel: Vorlage)	
+e2e/bild-block-items.e2e.ts	QUEUE	Normtext-Bildblock zeigt Bild und lit./Ziff.-Items samt Fundstelle (DBG 22, STHG 7)	
+e2e/d36-einstellungen-fuss.e2e.ts	NACHT	Lage des Eintrags «Einstellungen» in der Seitenleiste	
+e2e/deckung-seite.e2e.ts	QUEUE	Deckungs-Übersicht (Bestandszahlen, kein Rechtstext), Sortierung, Breite	GP R2: Summen/Quote sind Rechnergebnisse
+e2e/design-tinte-leise.e2e.ts	NACHT	Designsystem-Farbrolle	
+e2e/entscheid-verweis-praezision.e2e.ts	QUEUE	Urteilstext BGE 151 III 377: Verweis-Verlinkung und Sprung zur Erwägung	
+e2e/expect-vorwarten.e2e.ts	QUEUE	Stolperdraht des zentralen expect-Helfers (Scheitern bleibt Scheitern) — schützt die Aussagekraft der Queue-Specs	
+e2e/fn5-wortposition.e2e.ts	QUEUE	Fussnoten-Marker an der amtlichen Wortstelle im Normtext	
+e2e/fremdgesetz-verweis-aig.e2e.ts	QUEUE	Verweise im Normtext (AIG 5) zeigen auf StGB/MStG statt auf das AIG	
+e2e/fussnote-absatz-altform.e2e.ts	QUEUE	Fussnoten im richtigen Absatz (VZG, KOV)	
+e2e/gesetze-ia4-scope.e2e.ts	NACHT	Filter-Bedienung der Gesetze-Übersicht	
+e2e/gesetze-ia5-rechtsgebiet-kanon.e2e.ts	NACHT	URL-Alias und Umschalter der Gesetze-Übersicht	
+e2e/gesetze-rechtsgebiet-g6.e2e.ts	QUEUE	Rechtsgebiets-Sicht der Übersicht (Navigation, Overflow)	GP R2: Artikelspanne ist Normtext-Verweis
+e2e/gesetze-rechtsgebiet-uebersicht-j3.e2e.ts	NACHT	Rechtsgebiets-Gliederung der Übersicht, axe	
+e2e/gesetze-schnellzugriff-filter.e2e.ts	NACHT	Kürzelzeile der Übersicht beim Filtern	
+e2e/gesetze-wahl-kopf-reserve.e2e.ts	NACHT	Spaltenkopf-Breite der Gesetze-Wahl	
+e2e/ics-export-z1.e2e.ts	QUEUE	ICS-Export enthält das berechnete Fristende (Export-Inhalt)	
+e2e/info-seiten-breite.e2e.ts	NACHT	Titelband-Breite der Info-Seiten	
+e2e/international-adresse-b45.e2e.ts	QUEUE	Erlass-Adresse und Weiterleitung: Alt-Link landet auf demselben Artikel (Zweifel)	
+e2e/katalog-breite.e2e.ts	NACHT	Raster/Zeilenlänge der Katalog-Übersichten	
+e2e/katalog-themenleiste-fokusring.e2e.ts	NACHT	Fokusring der Themenleiste	
+e2e/katalog-themenleiste-sticky.e2e.ts	NACHT	Klebende Themenleiste	
+e2e/katalog-zeile-untertitel-kappung.e2e.ts	NACHT	Untertitel-Kappung im Katalog	
+e2e/klebende-leisten-abstand.e2e.ts	NACHT	Abstand klebender Leisten und Sprungziele unter der Arbeitsleiste (Geometrie)	
+e2e/kontrast-fristmarker.e2e.ts	NACHT	Farbkontrast der Frist-Marken (kein Rechenwert)	
+e2e/kopfsuche-esc.e2e.ts	NACHT	Esc-Verhalten der Kopf-Suche	
+e2e/leser-bezuege-fuss-d34.e2e.ts	QUEUE	Tieflink landet nach dem Nachrendern auf dem Zielartikel	
+e2e/leser-gliederung-klappen-w217.e2e.ts	QUEUE	Klappen/Tastatur der Gliederung	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — Test f prüft die NHG-Artikelreihenfolge (Regression B7) und EMRK-Anhang/VwVG-Index (Reihenfolge/Inhalt von Gesetzestext); blockierend
+e2e/leser-kein-ueberlauf.e2e.ts	QUEUE	Normtext-Tabelle ZH-211.11 bleibt im Scroller (Tabellen in Normtexten, Zweifel)	
+e2e/leser-klapp-sonde.e2e.ts	NACHT	Kopf-Geometrie beim Klappen	
+e2e/leser-kopf-cls-s3.e2e.ts	NACHT	CLS des Erlass-Kopfs	
+e2e/leser-lade-cls.e2e.ts	NACHT	Lade-CLS Entscheid-/Material-Leser	
+e2e/leser-nachbar-rohdaten.e2e.ts	QUEUE	Nachbar-Pfeile führen zum richtigen Artikel (337b/337d), Anker-Integrität	
+e2e/leser-suche-klappzustand.e2e.ts	QUEUE	Suche × Klappzustand (Bedienung)	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: B3/B4 Treffer in zugeklappter Sektion — Fundstelle im Normtext wird geöffnet und markiert
+e2e/leser-suche-vertrag-b8.e2e.ts	QUEUE	Suchmarken im Normtext: gemalt ≤ gezählt, Beträge/«aufgehoben» (Zweifel: Markierung im Rechtstext)	
+e2e/leser-suchfeld.e2e.ts	QUEUE	Enter-/Highlight-Bedienung des Suchfelds	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: (b)/(e) Enter springt zur Fundstelle des Begriffs im Normtext, aktive Fundstelle wird dort markiert
+e2e/leser-tabelle-nachspann.e2e.ts	QUEUE	EMRK-Tabelle: keine Zeile verloren, Fussnoten als Nachspann	
+e2e/leser-tastatur-menue-tabelle.e2e.ts	NACHT	Tastatur im Leser (Menü, Tabelle scrollen, Overlay)	
+e2e/leser-tieflink-robust-w217.e2e.ts	QUEUE	Tieflinks landen auf dem Artikel bzw. stürzen nicht ab (ZH-230 Art. 5)	
+e2e/leser-toc-sprung.e2e.ts	QUEUE	Gliederungs-Klick landet auf dem Abschnitt, nicht davor	
+e2e/leser-v3-auskunft.e2e.ts	QUEUE	Suchfeld/Trefferliste: Fokusring, Zähler, Platzhalter	GP R2: Normtext-Schnipsel mit Markierungen
+e2e/leser-v3-esc-ohne-sprung.e2e.ts	NACHT	Esc ohne Scrollsprung	
+e2e/leser-v3-fokusring-suchfeld.e2e.ts	NACHT	Fokusring des Suchfelds	
+e2e/leser-v3-kopf.e2e.ts	QUEUE	Standausweis, «nächste Fassung ab», nicht konsolidierte Änderung im Kopf	
+e2e/leser-v3-ortsangabe.e2e.ts	QUEUE	Ortsangabe nennt die tatsächlich sichtbare Bestimmung (Zweifel)	
+e2e/leser-v3-panel-blatt-leerstellen.e2e.ts	NACHT	Methoden-Hinweis im Materialien-Blatt (kein Rechtstext)	
+e2e/leser-v3-panel-erlaeuterungen.e2e.ts	QUEUE	Panel-Reiter Erläuterungen/Werkzeuge	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: (a)-(c) welche Erläuterungen/Werkzeuge je Erlass (ARG, VMWG, DBG, OR) angezeigt werden — Inhalt, nicht nur Bedienung
+e2e/leser-v3-panel-facetten.e2e.ts	QUEUE	Panel-Facetten, Reiter, axe	GP R2: Urteils-Auswahl je Erlass (Filterung)
+e2e/leser-v3-panel-filter-befunde.e2e.ts	QUEUE	Bedienung des Entscheide-Filters	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: Entscheide-Filter — Kantonsfilter und Zeitraum bestimmen, welche Urteile an Art. 5 StPO gelistet bleiben (Urteilsliste)
+e2e/leser-v3-panel-revision-badge.e2e.ts	QUEUE	Revisions-Badge mit Revisionsdatum und AS-Fundstelle am Entscheid	
+e2e/leser-v3-prerender-bezuege.e2e.ts	QUEUE	Prerender trägt den Artikel-Volltext, lesbar ohne JavaScript	
+e2e/leser-v3-schriftskala.e2e.ts	NACHT	Schriftgrössen-Regler	
+e2e/leser-v3-suche-sprung.e2e.ts	QUEUE	Eingabe «429» springt zu Art. 429 (Zweifel: Sprungziel)	
+e2e/leser-v3-suchfeld-ueberall.e2e.ts	NACHT	Erreichbarkeit des Suchfelds je Breite	
+e2e/leser-v3-treffer-deckel.e2e.ts	NACHT	Trefferliste deckt das Suchfeld nicht zu	
+e2e/leser-v3-treffer-reihenfolge.e2e.ts	QUEUE	Reihenfolge/Gruppierung der Trefferliste	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: (a)/(c) die Trefferliste läuft in der Reihenfolge des Gesetzestexts, eine Zeile je Fundstelle
+e2e/leser-v3-uebersicht.e2e.ts	QUEUE	Übersichtsbox: Stand/Erlassdatum nicht gekappt, nicht doppelt (Zweifel: Erlass-Metadaten)	
+e2e/leser-w224-g.e2e.ts	NACHT	Panel-Reiter und Kopfzeile passen ins Blatt	
+e2e/leser-w228-landkarte.e2e.ts	QUEUE	Treffer-Landkarte (Bedienung)	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — im Zweifel Queue: (b)/(d)/(h) Marken sind die Treffer im Gesetzestext, Klick führt an die richtige Stelle im Dokument
+e2e/leser-wortlaut-w217.e2e.ts	QUEUE	Wortlaut-Darstellung (Anhang-Titel, Jahreszahl, lit. unter Ziff., Marke)	
+e2e/leser-ziffer-fragment-w227.e2e.ts	QUEUE	Ziffer-Anker landet auf der Ziffer (BV 197, StGB 187, MStG 122)	
+e2e/leser-zukunftsfassung-w2-27.e2e.ts	QUEUE	Hinweis auf künftige Fassung mit Link zur datierten amtlichen Fassung	
+e2e/material-leser-randspalte.e2e.ts	NACHT	Spalten-Layout des Material-Lesers	
+e2e/materialien-cls.e2e.ts	NACHT	Lade-CLS /materialien	
+e2e/materialien-deckel.e2e.ts	NACHT	DOM-Deckel und «Weitere anzeigen»	
+e2e/materialien-m1-estv-mwst.e2e.ts	QUEUE	Sichtbarer amtlicher Live-Link der Material-Karte (§7 lit. c, Zweifel)	
+e2e/materialien-m2-seco.e2e.ts	QUEUE	Sichtbarer amtlicher Live-Link der Material-Karte (§7 lit. c, Zweifel)	
+e2e/materialien-m3-edoeb.e2e.ts	QUEUE	Sichtbarer amtlicher Live-Link der Material-Karte (§7 lit. c, Zweifel)	
+e2e/materialien-m4-estv-ks.e2e.ts	QUEUE	Sichtbarer amtlicher Live-Link der Material-Karte (§7 lit. c, Zweifel)	
+e2e/materialien-m5-verzahnung.e2e.ts	QUEUE	«nur Verweis»-Ausweis der Material-Karte (§7/§8, Zweifel)	
+e2e/plz-wahl.e2e.ts	QUEUE	PLZ-Wahl setzt Gemeinde und Kanton für Betreibungsort/Zuständigkeit (Rechenergebnis)	
+e2e/rechner-breite.e2e.ts	NACHT	Spalten-Layout der Rechner @1920	
+e2e/rechtsprechung-besetzung-links.e2e.ts	QUEUE	Verlinkung der Besetzung, a11y, CLS (Urteilstext unberührt)	5.10.2026 nach Gegenprüfung (PR #1326): war NACHT, zurück in die Queue — Test 1 prüft den amtlichen Rubrum-Wortlaut «Besetzung» per toBe (Anzeige von Urteilstext); blockierend
+e2e/rechtsprechung-breite.e2e.ts	NACHT	Breitenstufe der Rechtsprechung	
+e2e/reiter-fokusring.e2e.ts	NACHT	Fokusring der Reiter	
+e2e/schnellrechner-kalender.e2e.ts	NACHT	Lage/Overflow des Kompakt-Kalenders	
+e2e/smoke.e2e.ts	QUEUE	Kernrouten (auch Rechner/Leser) rendern mit Inhalt ohne Fehler (Zweifel: weisser Bildschirm)	
+e2e/startseite-blatt.e2e.ts	QUEUE	Kachelfeld/Blatt der Startseite	GP R2: Suchtreffer/Zähler sind Dateninhalte
+e2e/startseite-breite.e2e.ts	NACHT	Breitenstufe der Startseite	
+e2e/startseite-schnellwerkzeug.e2e.ts	QUEUE	Schnell-Fristrechner: Rechnen, Normbezüge je Ferien-Regime	
+e2e/suche-randspalte.e2e.ts	NACHT	Spalten-Layout der Suche	
+e2e/tagerechner-datum-ungueltig.e2e.ts	QUEUE	Unmögliches Datum leert das alte Fristende (Rechenergebnis)	
+e2e/tagerechner-rechenweg-sync.e2e.ts	QUEUE	Rechenweg folgt den Eingaben, Regime im Hash (Rechenergebnis)	
+e2e/topbar-kein-ueberlauf-320.e2e.ts	NACHT	Topbar @320	
+e2e/uinav-o2-sidebar.e2e.ts	NACHT	Seitenleisten-Navigation	
+e2e/verlauf-o1.e2e.ts	NACHT	Verlauf-Panel	
+e2e/vorlagen-hinweise-lesemass.e2e.ts	NACHT	Zeilenlänge der Vorlagen-Hinweise	
+e2e/vorlagen-pruefschritt-d5.e2e.ts	QUEUE	Prüfschritt vor dem Dokument-Export einer Vorlage	
+e2e/vorlagen-wizard-fokus.e2e.ts	NACHT	Fokus beim Schrittwechsel	
+e2e/w223b-kopf-seitenleiste.e2e.ts	NACHT	Kopf-Suche und Seitenleiste	
+e2e/w224-d35-f2-kopf.e2e.ts	NACHT	Kopf ohne Entscheid-Zahl	
+e2e/w224-d35-f3-vermerke.e2e.ts	QUEUE	Fussnoten-Schalter: ob Fussnoten im Normtext stehen, Migration ohne stilles Kippen	
+e2e/w224-d37-seitenleiste-gruppen.e2e.ts	NACHT	Seitenleisten-Abschnitte starten zu	
+e2e/w224-ga-kopf.e2e.ts	NACHT	Kopfangaben nicht doppelt (Chrome)	
+e2e/w224-kopfsuche-d23.e2e.ts	NACHT	Geometrie der Kopf-Suche	
+e2e/w224-leser-d32-d33.e2e.ts	NACHT	Geometrie der Leser-Kopfzone	
+e2e/w224-plus-reiter.e2e.ts	QUEUE	Reiter per «+»	GP R2: Zitat-Auflösung ist Normtext-Sprungziel
+e2e/w224-r13-reiter.e2e.ts	NACHT	Reiterleiste	
+e2e/w224-r13b-reiter-cls.e2e.ts	NACHT	CLS der Reiterleiste	
+e2e/w224-r14-reiter-modell.e2e.ts	NACHT	Reiter-Modell	
+e2e/w224-r14b-meta-reiter.e2e.ts	NACHT	Meta-Seiten-Reiter	
+e2e/w224-r6i-vorschau-schrift.e2e.ts	QUEUE	Tieflink landet auf der Leselinie (OR 336c), Insel ohne Umbruch (Zweifel)	
+e2e/w229-blatt-runde2.e2e.ts	QUEUE	Einzelmodus-Anker zeigt Art. 336c, «Entwurf»-Status je Werkzeug (Zweifel)	
+e2e/w229-w1f-blatt-scroll.e2e.ts	NACHT	Scroll-Reset des Blatts	
+e2e/werkzeugkopf-intro-mobil.e2e.ts	NACHT	Kürzung der Werkzeugkopf-Einleitung	
+e2e/zustaendigkeit-fluss.e2e.ts	QUEUE	Zuständigkeits-Rechner bis zum Behörden-Ergebnis	

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // FN-4 (W2·5d/A21, FAHRPLAN-GESETZESDARSTELLUNG-V2.md §2 F1): Absatz-Zuordnung
 // der Fussnoten in der Alt-Form-Familie (VZG, KOV, ENTG, FZA, LugÜ …).
 //

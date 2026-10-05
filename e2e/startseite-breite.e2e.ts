@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── Startseite auf Stufe `weit` (W2·31-BILDSCHIRMBREITE, 25.9.2026) ─────────

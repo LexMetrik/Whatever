@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 // §6-Refactor-Sicherheitsnetz (19.6.2026): führt den Zuständigkeits-Rechner durch
 // die Zivil-Schritte bis zum Ergebnis und prüft den SchKG-Pfad — so fängt eine
 // spätere verhaltensneutrale Datei-Schlankheit (JSX-Extraktion) eine kaputte

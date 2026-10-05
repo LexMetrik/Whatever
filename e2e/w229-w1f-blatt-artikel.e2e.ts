@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 4
 // ═══ W2·29-WERKBANK-LESER S6 W1f · DIE FUNKTIONSZEILE IST AUFGELÖST ══════════
 //
 // Entscheid David 24.9.2026, wörtlich: «also blatt teil soll raus. verweise

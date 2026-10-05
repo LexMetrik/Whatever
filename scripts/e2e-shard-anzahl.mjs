@@ -20,6 +20,11 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
+// Annotations-Wert und JSON-Schlüssel für Specs, die nicht in den Queue-Shards,
+// sondern im Nachtlauf gegen main fahren (Entscheid David 5.10.2026, QS-CI-ZEIT
+// N2). Steht hier, weil Generator UND Union-Wächter ihn brauchen (§5).
+export const NACHT = 'nacht'
+
 const HIER = dirname(fileURLToPath(import.meta.url))
 const CI_YML = join(HIER, '..', '.github', 'workflows', 'ci.yml')
 

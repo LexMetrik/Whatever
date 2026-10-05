@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 1
 // E6a M2 · Content-Release-DoD (§7c Playwright-Beweis): eine SECO-DB-Material-Karte rendert
 // den SICHTBAREN amtlichen Live-Link; die Materialien-Übersicht listet die neuen Einträge und
 // bleibt bei 390 px ohne horizontalen Overflow (§15 gefühlte Last / Lesbarkeit).

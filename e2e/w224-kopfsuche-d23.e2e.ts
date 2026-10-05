@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: nacht
 // ═══ D23 · KOPF-SUCHE IST EIN OBJEKT (David 6.9.2026) ═══════════════════════
 //
 // Davids Wortlaut zum Bild des Leerzustands nach «+»: «schau mal wie das
