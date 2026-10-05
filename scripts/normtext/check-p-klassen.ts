@@ -16,7 +16,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { parseFedlexCacheEintraege } from './inventar-bund.ts';
 import { pinBefund } from './cache-pin-befund.ts';
 import { istSternNote } from './stern-note.ts';
-import { ABSATZ_NR_INHALT } from './fedlex/absatz-nr.ts';
+import { ABSATZ_NR_INHALT, istAbsatzKlasse } from './fedlex/absatz-nr.ts';
 
 // ─── Manifest: ENTSCHIEDENE Drop-Klassen (semantischer Leit-Token) ───────────
 // Diese Klassen treffen KEINE Extraktor-Alternative und werden BEWUSST nicht in
@@ -34,16 +34,13 @@ const BEWUSST_IGNORIERT: Record<string, string> = {
   // Verträgen (RBÜ/CMR/Montreal/HKsÜ/HUVÜ/EAUe/UNO-BRK/Istanbul); Fundstelle bleibt
   // über den Live-Link zur amtlichen Fassung (§7/§8) einsehbar.
   schlussint: 'Staatsvertrags-Testimonium (Unterzeichnungs-Attestat) — nicht-normative Schluss-Boilerplate ohne art_-Anker (Paket 4)',
-  // Präsentations-Varianten der Absatz-Klasse (Punktgrösse/Kursiv), die die
-  // wortgebundene alt1-Regex (\babsatz\b) NICHT trifft. Inhalt gemischt
-  // (Inkrafttreten-Kleindruck-Datumslisten UND vereinzelt Sondertext: ParlG-Eid,
-  // UVPV art_13 Abs. 3/4). DEFERIERT als eigener Schritt (Absatz-Nr in <span>-
-  // Wrapper + <sup><br></sup>-Artefakte brauchen eigene Behandlung) — dokumentiert,
-  // NICHT mehr still. Bekannte Rest-Lücke: p3-drop-klassen-inventar-2026-07-05.md §Defer.
-  absatz8pt: 'Präsentations-Absatz-Variante (8pt Kleindruck) — DEFERIERT, dokumentiert',
-  absatz09pt: 'Präsentations-Absatz-Variante (9pt) — DEFERIERT, dokumentiert',
-  absatz10pt: 'Präsentations-Absatz-Variante (10pt) — DEFERIERT, dokumentiert',
-  absatzkurs: 'Präsentations-Absatz-Variante (kursiv) — DEFERIERT, dokumentiert',
+  // Präsentations-Variante der Absatz-Klasse im Kleindruck (8pt): Inkrafttreten-Datumslisten («Art. 27 Abs. 1 …:
+  // 15. Oktober 1959», IVG 86, MSchG 79, SVG 108, WAG 57, MG 152) — Besitzer NT-10 (eigener Schritt, Darstellung der
+  // Inkrafttreten-Angaben). Die Sternchen-Verweisnoten derselben Klasse trägt stern-note.ts (Alt 8), im Anhang geht
+  // jedes <p> über den Anhang-Pfad. NT-01 (HN-05, 5.10.2026): `absatz09pt`, `absatzkurs` (und das nie gemessene
+  // `absatz10pt`) sind aus dem Manifest gestrichen — sie gehören zur Absatz-Familie (fedlex/absatz-nr.ts) und werden
+  // extrahiert; ein neues Vorkommen von `absatz10pt` o. ä. bricht dieses Tor wieder (gewollt).
+  absatz8pt: 'Kleindruck-Absatz-Variante (8pt, Inkrafttreten-Datumslisten) — DEFERIERT an NT-10, dokumentiert',
   // Leerer Seiten-Abstandshalter (<p class="abstand1seite">) — Layout-Spacer ohne
   // Textinhalt (z.B. GebV-SchKG art_63a). Kein Normtext.
   abstand1seite: 'Leerer Layout-Abstandshalter — kein Textinhalt',
@@ -81,9 +78,9 @@ function leitToken(klasse: string): string {
 /** Trifft die <p> eine Extraktor-Block-Alternative (→ erfasst, kein Drop)? */
 function istErfasst(attrs: string, inner: string, folgt: string): boolean {
   const klasse = (attrs.match(/\bclass="([^"]*)"/i)?.[1] ?? '').toLowerCase();
-  // alt1: class enthält «absatz» — EXAKT die \b-Wortgrenze des Extraktors (JS-\b
-  // zählt Ziffern als Wortzeichen → «absatz8pt»/«absatzkurs» treffen NICHT).
-  if (/\babsatz\b/.test(klasse)) return true;
+  // alt1: Absatz-Familie (absatz · absatzkurs · absatz09pt) — dieselbe Definition wie der Extraktor (fedlex/absatz-nr.ts, NT-01/HN-05;
+  // JS-\b zählt Ziffern als Wortzeichen → «absatz8pt»/«absatz10pt» gehören NICHT dazu).
+  if (istAbsatzKlasse(klasse)) return true;
   // grundlage: class enthält «referenz» (inkl. man-template-referenz), \b wie Extraktor.
   if (/\breferenz\b/.test(klasse)) return true;
   // alt7: man-template-tab-krpr (standalone; in-table wird vorab weggeschnitten)

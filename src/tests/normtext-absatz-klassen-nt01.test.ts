@@ -32,10 +32,10 @@ describe('NT-01 · Absatz-Klassen-Varianten (absatz09pt / absatzkurs) gehen nich
   it('VZV Art. 143 Ziff. 3: alle drei Tatbestände vor der Strafdrohung, unter Ziffer 3', () => {
     const b = bloecke('VZV');
     const z3 = b.filter((x) => x.ziffer === '3').map((x) => x.text);
-    expect(z3).toHaveLength(5);
+    expect(z3).toHaveLength(4);
     expect(z3[1]).toBe('wer Duplikate von Ausweisen beim Wiederauffinden des Originals der Behörde nicht fristgemäss zurückgibt,');
     expect(z3[2]).toMatch(/^wer als Inhaber des Führerausweises der Kategorie A, beschränkt auf 25 kW, ein Motorrad .* nicht hat im Führerausweis eintragen lassen,$/);
-    expect(z3[4]).toBe('wird mit Busse bis 100 Franken bestraft.');
+    expect(z3[3]).toBe('wird mit Busse bis 100 Franken bestraft.');
   });
 
   it('VZG Art. 119: Grundsatz 1 («Diejenigen Grundpfandforderungen …») steht zwischen Einleitung und Grundsatz 2', () => {
