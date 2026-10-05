@@ -1,4 +1,4 @@
-// @shard-gruppe: nacht
+// @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test'
 
 // ─── W2·29-WERKBANK-START S1 · Startseite: Kachelfeld, das vor Ort aufklappt ──

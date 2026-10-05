@@ -285,6 +285,40 @@ Gruppenzahl bleibt 6 (Entscheid David 5.10.2026).
 an der StPO und fällt rot, sobald Fedlex konsolidiert, ohne Produktdefekt
 (EINGANG-Zeile in `ROADMAP.md`). Die Spec bleibt vorerst in der Nacht.
 
+## Nachtrag 2, 5.10.2026 — Gegenprüfung Runde 2: 6 weitere Specs zurück in die Queue
+
+Die zweite Gegenprüfungs-Runde (GP R2) von PR #1326 fand sechs weitere Specs,
+deren Einstufung in der Nacht nicht haltbar ist. Neubewertung je Spec aus den
+Asserts:
+
+| Spec | Grund |
+|---|---|
+| `startseite-blatt` | Suchtreffer-Zähler und Registerzähler sind Dateninhalte (Suchdaten) |
+| `leser-v3-auskunft` | Normtext-Schnipsel mit Markierungen, Artikel-/Paragraph-Zählung im Suchfeld |
+| `gesetze-rechtsgebiet-g6` | Artikelspanne «Art. 319–362» ist ein Normtext-Verweis |
+| `deckung-seite` | Summen und Quote der Deckungsübersicht sind Rechnergebnisse |
+| `w224-plus-reiter` | Zitat-Auflösung «OR 257d» → «#art-257_d» ist ein Normtext-Sprungziel |
+| `leser-v3-panel-facetten` | Erscheinende Entscheide je Erlass (Urteils-Auswahl) —Inhalt/Filterung, nicht Bedienung |
+
+**Neue Zählung** (nie rote Specs, Stand nach Gegenprüfung R2):
+
+| | Specs | Tests | Testminuten |
+|---|---:|---:|---:|
+| nie rot → QUEUE | 55 | 351 | 16,6 |
+| nie rot → NACHT | 52 | 433 | 14,7 |
+| Queue gesamt (inkl. aller je roten) | 151 | 1511 | 78,9 |
+| Nacht gesamt | 52 | 433 | 14,7 |
+
+(Vorher nach GP R1: 49/58 Specs, 279/505 Tests, 14,3/17,0 min. Unverändert die
+Summen: 107 nie rote Specs mit 784 Tests und rund 31 min; alle 203 Specs mit
+1944 Tests und ~93,6 min. Die Packungs-Spanne «1,2 s» im Nachtrag 1 beruht auf
+ungerundeten Lauf-Dauern; aus der ganzzahligen spec-tabelle.csv ergeben sich
+~6 s bei der Neupackung der 151 Queue-Specs auf 6 Gruppen.)
+
+**Neupackung** mit derselben LPT-Mechanik (Dauern aus Queue-Lauf 37344516589):
+151 Queue-Specs auf 6 Gruppen; je 751–757 s je Shard, Spanne 6 s. Alle 203
+Specs mit 1944 Tests und ~93,6 Testminuten je Queue-Lauf.
+
 ## Pflegebedarf
 
 - **Neue Spec:** trägt eine Zahl (Queue) oder `nacht`; die Grenze aus §3 gilt

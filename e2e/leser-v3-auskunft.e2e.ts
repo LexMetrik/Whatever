@@ -1,4 +1,4 @@
-// @shard-gruppe: nacht
+// @shard-gruppe: 1
 // ─── H2b · Was die Trefferliste und das Suchfeld AUSSAGEN (Ä14–Ä23) ──────────
 //
 // Fünf Positionen des Ästhetik-Reviews H1 mit einem gemeinsamen Kern: die

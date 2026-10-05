@@ -1,4 +1,4 @@
-// @shard-gruppe: nacht
+// @shard-gruppe: 1
 // ═══ W2·6c-DECKUNGS-SEITE · «WAS WIR NICHT HABEN» ═══════════════════════════
 //
 // §11.5 FAHRPLAN-MATERIALIEN-VERZAHNUNG (Muster Lex /coverage), ausgelöst durch
