@@ -6,8 +6,12 @@
 # Ablauf: npm run materialien:nachzug (scripts/materialien/nachzug.ts, Begründungen dort):
 #   check:materialien-netz → je driftender Quelle materialien:snapshot + materialien →
 #   materialien:kaskade --ohne-revisionen → Pfad-Wache → Rauschschutz (angehängte dok-Zeilen).
-#   Vorprüfung (vor jedem Netz-Abruf): offener Nachzug-PR oder (schedule) letzter Lauf rot ⇒
-#   ::notice::, status=keine — kein wöchentlicher Wiederholungs-Vollcrawl (B1, 6.10.2026).
+#   Vorprüfung (vor jedem Netz-Abruf): offener Nachzug-PR oder (schedule) offener Pause-Zettel
+#   alarm:materialien-nachzug ⇒ ::notice::, status=keine — kein Wiederholungs-Vollcrawl (B1/B2,
+#   6.10.2026). Jeder rote Lauf legt den Pause-Zettel an; nur ein grüner Lauf mit echtem Ergebnis
+#   (nachgeladen/keine Drift) schliesst ihn — nach Reparatur per workflow_dispatch. Ein
+#   geschlossener, nicht gemergter Nachzug-PR gibt frei (Schliessen = Entscheid). trockenlauf
+#   fasst keine Zettel an.
 #   status=keine     → nichts zu tun / nur Datumsstempel / Netzfehler beim Nachladen, kein PR
 #                      (Netzfehler: Zettel alarm:materialien-nachzug-netz; zweiter in Folge ⇒ rot).
 #   status=anfuegung → nur neue Dokumente: normaler PR.
@@ -76,7 +80,7 @@ jobs:
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
 
       # Vorprüfung VOR jedem Netz-Abruf (Gegenprüfung 6.10.2026, B1; Logik: vorpruefung() in
-      # nachzug.ts): offener Bot-PR ⇒ Abbruch; letzter Lauf rot ∧ schedule ⇒ Abbruch
+      # nachzug.ts): offener Bot-PR ⇒ Abbruch; Pause-Zettel offen ∧ schedule ⇒ Abbruch
       # (workflow_dispatch übersteuert). Exit 0 + ::notice::, status=keine.
       - name: Nachzug + Rauschschutz
         id: lauf
@@ -87,9 +91,9 @@ jobs:
         run: |
           set -euo pipefail
           OFFENE_KOEPFE=$(gh pr list --state open --limit 500 --json headRefName --jq '.[].headRefName')
-          LETZTER_LAUF=$(gh run list --workflow materialien-nachzug.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion // ""')
+          PAUSE_ZETTEL=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           NETZ_ZETTEL=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug-netz&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
-          export OFFENE_KOEPFE LETZTER_LAUF NETZ_ZETTEL
+          export OFFENE_KOEPFE PAUSE_ZETTEL NETZ_ZETTEL
           npm run materialien:nachzug -- --datum=${{ steps.datum.outputs.iso }} --quellen="${QUELLEN}"
 
       # Netz-Zettel (Muster normen-monitor.yml): erster Netzfehler beim Nachladen ⇒ anlegen (Lauf
@@ -97,7 +101,7 @@ jobs:
       # keine Drift ⇒ schliessen. FAIL-SAFE: scheitert Anlegen/Kommentieren, wird der Lauf ROT —
       # ohne Zettel griffe die Zwei-Läufe-Grenze nie. Schliessen scheitert ⇒ Warnung (wie Monitor).
       - name: Netz-Zettel pflegen
-        if: steps.lauf.outputs.zettel != ''
+        if: steps.lauf.outputs.zettel != '' && !inputs.trockenlauf
         env:
           GH_TOKEN: ${{ github.token }}
           AKTION: ${{ steps.lauf.outputs.zettel }}
@@ -220,3 +224,45 @@ jobs:
           fi
           if [ "${TORE:-0}" != 0 ]; then echo "::error::Tore auf dem nachgeführten Materialien-Stand rot — siehe Stufe «Tore»."; fi
           exit 1
+
+      # Pause-Zettel (Delta-Gegenprüfung 6.10.2026, B2; Vorprüfung in nachzug.ts): JEDER rote Lauf
+      # (Widerspruch, Tore rot, zweiter Netzfehler, Werkzeugfehler, Abbruch/Zeitüberschreitung)
+      # legt ihn an bzw. kommentiert ihn — der schedule pausiert dann, bis ein grüner Lauf mit
+      # echtem Ergebnis ihn schliesst. FAIL-SAFE: scheitert die Pflege, bleibt der Lauf rot.
+      - name: Bei Rot — Pause-Zettel anlegen oder kommentieren
+        if: (failure() || cancelled()) && !inputs.trockenlauf
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          LAUF: ${{ steps.lauf.outcome }}
+          WIDERSPRUCH: ${{ steps.lauf.outputs.widerspruch }}
+          TORE: ${{ steps.tore.outputs.rc }}
+          ZETTEL: ${{ steps.lauf.outputs.zettel }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::error::Pause-Zettel-Pflege gescheitert (Z. $LINENO) — der Takt pausiert NICHT, Lauf-Log lesen"; exit 1' ERR
+          grund=""
+          [ "$LAUF" = failure ] && grund="${grund} Werkzeugfehler des Bots (Stufe «Nachzug»);"
+          [ -n "$WIDERSPRUCH" ] && grund="${grund} Widerspruch Detektor ↔ Snapshot (${WIDERSPRUCH});"
+          [ -n "$TORE" ] && [ "$TORE" != 0 ] && grund="${grund} Tore rot auf dem nachgeführten Stand;"
+          [ "$ZETTEL" = kommentieren ] && grund="${grund} zweiter Netzfehler beim Nachladen in Folge;"
+          [ -z "$grund" ] && grund=" Lauf rot oder abgebrochen in einer anderen Stufe (PR, Zettel, Zeitüberschreitung);"
+          text="Lauf ROT am $(date +%F):${grund} Nach Reparatur: workflow_dispatch; ein grüner Lauf schliesst den Zettel. Lauf: ${RUN_URL}"
+          nr=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          if [ -n "$nr" ]; then
+            gh issue comment "$nr" --body "$text"
+          else
+            gh label create alarm:materialien-nachzug --color D93F0B --description "Materialien-Nachzug: roter Lauf, schedule pausiert (materialien-nachzug.yml)" >/dev/null 2>&1 || true
+            gh issue create --label alarm:materialien-nachzug --title "🔴 Materialien-Nachzug pausiert ($(date +%F)) — roter Lauf" --body "$text"
+          fi
+
+      - name: Grün mit echtem Ergebnis — Pause-Zettel schliessen
+        if: success() && !inputs.trockenlauf && steps.lauf.outputs.ergebnis == 'echt' && steps.lauf.outputs.pausezettel != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          NR: ${{ steps.lauf.outputs.pausezettel }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Pause-Zettel-Schliessen gescheitert (Z. $LINENO) — schedule bleibt pausiert"; exit 0' ERR
+          gh issue close "$NR" --reason completed --comment "🟢 Materialien-Nachzug am $(date +%F) grün mit echtem Ergebnis — schedule läuft wieder. Lauf: ${RUN_URL}"

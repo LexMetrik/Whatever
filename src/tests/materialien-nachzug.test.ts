@@ -11,7 +11,8 @@ import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileS
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import {
-  ERLAUBTE_PFADE, NACHZUG_ZWEIG_PRAEFIX, NETZ_ZETTEL_LABEL, Werkzeugfehler, netzZettelAktion, fremdePfade, klassifiziereZustand, nachzug, netzfehlerAus,
+  ERLAUBTE_PFADE, NACHZUG_ZWEIG_PRAEFIX, NETZ_ZETTEL_LABEL, PAUSE_ZETTEL_LABEL, Werkzeugfehler, echtesErgebnis, netzZettelAktion,
+  type NachzugErgebnis, fremdePfade, klassifiziereZustand, nachzug, netzfehlerAus,
   parseQuellenFilter, prText, vorpruefung, werteNetzAus, type Lauf, type Werkzeuge,
 } from '../../scripts/materialien/nachzug';
 import { istRisikoPfad, behalten } from '../../scripts/gegenpruefung/kern';
@@ -83,6 +84,7 @@ describe('werteNetzAus — Drift nur per Positiv-Liste', () => {
 // ── Rauschschutz ─────────────────────────────────────────────────────────────────────────────
 const lauf = (q: string) => JSON.stringify({ typ: 'lauf', quelle: q, abgerufen: '2026-10-12', indexSha: 'x' });
 const dok = (id: string, status = 'gelistet') => JSON.stringify({ typ: 'dok', id, status });
+const lauf_ = lauf;
 const ALT = [lauf('seco'), dok('SECO-A'), dok('SECO-B'), dok('SECO-C'), dok('SECO-C', 'entlistet')].join('\n') + '\n';
 
 describe('klassifiziereZustand — Rauschschutz über angehängte dok-Zeilen', () => {
@@ -162,7 +164,7 @@ describe('netzfehlerAus — nur der erschöpfte Abruf ist ein Netzfehler (K1)', 
 
 describe('vorpruefung — kein Wiederholungs-Vollcrawl (B1)', () => {
   const v = (o: Partial<Parameters<typeof vorpruefung>[0]>) =>
-    vorpruefung({ offeneKoepfe: [], letzterLauf: 'success', ausloeser: 'schedule', ...o });
+    vorpruefung({ offeneKoepfe: [], pauseZettel: '', ausloeser: 'schedule', ...o });
   it('offener Nachzug-PR ⇒ Abbruch, gleich welcher Auslöser und welches Datum', () => {
     expect(v({ offeneKoepfe: ['feat/x', 'chore/materialien-nachzug-2026-09-28'] })).toMatch(/Nachzug-PR noch offen \(chore\/materialien-nachzug-2026-09-28\)/);
     expect(v({ offeneKoepfe: ['chore/materialien-nachzug-2026-10-12'], ausloeser: 'workflow_dispatch' })).not.toBeNull();
@@ -170,13 +172,12 @@ describe('vorpruefung — kein Wiederholungs-Vollcrawl (B1)', () => {
   it('fremde Köpfe (auch ähnlich benannt) ⇒ kein Abbruch', () => {
     expect(v({ offeneKoepfe: ['chore/materialien-nachzugX', 'feat/chore/materialien-nachzug-1', ''] })).toBeNull();
   });
-  it('letzter Lauf rot (failure/timed_out) + schedule ⇒ Abbruch; workflow_dispatch übersteuert', () => {
-    expect(v({ letzterLauf: 'failure' })).toMatch(/Takt pausiert/);
-    expect(v({ letzterLauf: 'timed_out' })).not.toBeNull();
-    expect(v({ letzterLauf: 'failure', ausloeser: 'workflow_dispatch' })).toBeNull();
+  it('B2: offener Pause-Zettel + schedule ⇒ Abbruch; workflow_dispatch übersteuert', () => {
+    expect(v({ pauseZettel: '23' })).toMatch(/Pause-Zettel #23 offen .*Takt pausiert/);
+    expect(v({ pauseZettel: '23', ausloeser: 'workflow_dispatch' })).toBeNull();
   });
-  it('letzter Lauf grün/abgebrochen/keiner ⇒ Nachzug fahren', () => {
-    for (const l of ['success', 'cancelled', '']) expect(v({ letzterLauf: l })).toBeNull();
+  it('kein Pause-Zettel ⇒ Nachzug fahren', () => {
+    for (const p of ['', '  ']) expect(v({ pauseZettel: p })).toBeNull();
   });
 });
 
@@ -333,6 +334,13 @@ describe('nachzug — Reihenfolge und Fehlerpfade', () => {
       expect(netzZettelAktion(erfolg, false)).toBe('');
       expect(netzZettelAktion(keineDrift, false)).toBe('');
     });
+    it('echtesErgebnis: nachgeladen oder keine Drift ja; Netzfehler, nur Hinweise, Filter-Auslassung nein', () => {
+      expect(echtesErgebnis(nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: ANGEHAENGT2 })))).toBe(true);
+      expect(echtesErgebnis(nachzug('2026-10-12', null, attrappe({})))).toBe(true);
+      expect(echtesErgebnis(netzfehler())).toBe(false);
+      expect(echtesErgebnis(nachzug('2026-10-12', null, attrappe({ netz: { status: 1, ausgabe: netz('ESTV-MWST: Live-Inventar ROT — Timeout') } })))).toBe(false);
+      expect(echtesErgebnis(nachzug('2026-10-12', ['edoeb'], attrappe({ netz: DRIFT2 })))).toBe(false);
+    });
     it('nur Hinweise des Netz-Tors oder Vorprüfungs-Abbruch ⇒ Zettel unberührt', () => {
       const hinweise = nachzug('2026-10-12', null, attrappe({ netz: { status: 1, ausgabe: netz('ESTV-MWST: Live-Inventar ROT — Timeout') } }));
       expect(netzZettelAktion(hinweise, true)).toBe('');
@@ -376,27 +384,28 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
   }
   it('B1: Vorprüfung bricht VOR jedem npm-/Netz-Aufruf ab — Exit 0, ::notice::, status=keine', () => {
     for (const env of [
-      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'failure', NETZ_ZETTEL: '7' },
-      { AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: 'feat/x\nchore/materialien-nachzug-2026-10-05', LETZTER_LAUF: 'success', NETZ_ZETTEL: '' },
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', PAUSE_ZETTEL: '23', NETZ_ZETTEL: '7' },
+      { AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: 'feat/x\nchore/materialien-nachzug-2026-10-05', PAUSE_ZETTEL: '', NETZ_ZETTEL: '' },
     ]) {
       const { r, npm, out } = runner(env);
       expect(r.status).toBe(0);
       expect(r.stdout).toContain('::notice::Materialien-Nachzug übersprungen');
       expect(npm).toBe('');
-      expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\nzettel=\n');
+      expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\nzettel=\nergebnis=\n');
     }
   }, 60_000);
-  it('Netz-Zettel: Runner gibt offene Nummer und Aktion aus — keine Drift + Zettel #17 offen ⇒ zettel=schliessen', () => {
-    const { r, npm, out } = runner({ AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'success', NETZ_ZETTEL: '17' }, 0);
+  it('Zettel: Runner gibt Nummern und Aktion aus — dispatch trotz Pause, keine Drift ⇒ zettel=schliessen, ergebnis=echt', () => {
+    const { r, npm, out } = runner({ AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: '', PAUSE_ZETTEL: '23', NETZ_ZETTEL: '17' }, 0);
     expect(r.status).toBe(0);
     expect(npm.trim()).toBe('run check:materialien-netz');
     expect(out).toContain('status=keine\n');
-    expect(out).toContain('zettel=schliessen\nnetzzettel=17\nnetzfehler=\n');
+    expect(out).toContain('zettel=schliessen\nnetzzettel=17\nnetzfehler=\nergebnis=echt\npausezettel=23\n');
   }, 60_000);
-  it('B1: AUSLOESER ohne OFFENE_KOEPFE/LETZTER_LAUF/NETZ_ZETTEL ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
+  it('B1: AUSLOESER ohne OFFENE_KOEPFE/PAUSE_ZETTEL/NETZ_ZETTEL ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
     for (const env of [
       { AUSLOESER: 'schedule' },
-      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'success' },
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', PAUSE_ZETTEL: '' },
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', NETZ_ZETTEL: '' },
     ]) {
       const { r, npm } = runner(env);
       expect(r.status).toBe(1);
@@ -502,25 +511,24 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(runBlock(yml, 'Nachzug + Rauschschutz')).toMatch(/^set -euo pipefail$/m);
   });
 
-  it('B1: Stufe «Nachzug» holt offene PR-Köpfe und letzten Lauf VOR dem Bot-Aufruf und reicht sie durch', () => {
+  it('B1/B2: Stufe «Nachzug» holt offene PR-Köpfe, Pause- und Netz-Zettel VOR dem Bot-Aufruf und reicht sie durch', () => {
     const dir = mkdtempSync(join(tmpdir(), 'mat-vp-'));
     const log = join(dir, 'log');
     writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash
 echo "gh $*" >> "${log}"
 if [ "$1 $2" = "pr list" ]; then printf 'feat/x\\nchore/materialien-nachzug-2026-10-05\\n'; fi
-if [ "$1 $2" = "run list" ]; then echo failure; fi
-if [ "$1" = "api" ]; then echo 17; fi
+case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=alarm:materialien-nachzug&'*) echo 23 ;; esac
 `);
-    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $LETZTER_LAUF | $NETZ_ZETTEL | $OFFENE_KOEPFE" >> "${log}"\n`);
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $PAUSE_ZETTEL | $NETZ_ZETTEL | $OFFENE_KOEPFE" >> "${log}"\n`);
     for (const n of ['gh', 'npm']) chmodSync(join(dir, n), 0o755);
     const block = runBlock(yml, 'Nachzug + Rauschschutz').replace('${{ steps.datum.outputs.iso }}', '2026-10-12');
     const r = spawnSync('bash', ['-c', block], { encoding: 'utf8', env: { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule', GITHUB_REPOSITORY: 'o/r' } });
     expect(r.status).toBe(0);
     const z = readFileSync(log, 'utf8').trim().split('\n');
     expect(z[0]).toMatch(/^gh pr list --state open --limit \d+ --json headRefName /);
-    expect(z[1]).toMatch(/^gh run list --workflow materialien-nachzug\.yml --status completed --limit 1 --json conclusion /);
+    expect(z[1]).toBe(`gh api repos/o/r/issues?labels=${PAUSE_ZETTEL_LABEL}&state=open&creator=github-actions%5Bbot%5D -q [.[]|select(.pull_request|not)][0].number // empty`);
     expect(z[2]).toBe(`gh api repos/o/r/issues?labels=${NETZ_ZETTEL_LABEL}&state=open&creator=github-actions%5Bbot%5D -q [.[]|select(.pull_request|not)][0].number // empty`);
-    expect(z[3]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | failure | 17 | feat/x');
+    expect(z[3]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | 23 | 17 | feat/x');
     expect(z[4]).toBe('chore/materialien-nachzug-2026-10-05');
     expect(yml).toMatch(/AUSLOESER: \$\{\{ github\.event_name \}\}/);
     expect(yml).toContain(`branch="${NACHZUG_ZWEIG_PRAEFIX}\${DATUM}"`);
@@ -541,7 +549,7 @@ if [ "$1" = "api" ]; then echo 17; fi
     it('Stufe läuft genau bei gesetzter Aktion, mit github.token', () => {
       const zeilen = yml.split('\n');
       const i = zeilen.findIndex((z) => z.includes('- name: Netz-Zettel pflegen'));
-      expect(zeilen[i + 1]).toBe("        if: steps.lauf.outputs.zettel != ''");
+      expect(zeilen[i + 1]).toBe("        if: steps.lauf.outputs.zettel != '' && !inputs.trockenlauf");
       expect(zeilen[i + 3]).toContain('GH_TOKEN: ${{ github.token }}');
     });
     it('anlegen ⇒ Label + Zettel mit Label; kommentieren ⇒ Kommentar auf #NR; schliessen ⇒ close #NR', () => {
@@ -561,6 +569,144 @@ if [ "$1" = "api" ]; then echo 17; fi
       expect(s.status).toBe(0);
       expect(s.out).toContain('::warning::Netz-Zettel-Schliessen gescheitert');
       expect(zettel('loeschen').status).toBe(1);
+    });
+  });
+
+  describe('Lauffolge: Pause-Zettel hält bis zur Quittung (B2), trockenlauf fasst keine Zettel an', () => {
+    /** `if:` des Schritts mit diesem Namens-Anfang ('true' ohne if:, d. h. implizit success()). */
+    const ifVon = (name: string) => {
+      const z = yml.split('\n');
+      const i = z.findIndex((x) => x.includes(`- name: ${name}`));
+      if (i < 0) throw new Error(`Schritt «${name}» fehlt`);
+      for (let k = i + 1; k < z.length && !/^\s+- name: /.test(z[k]); k++) {
+        const m = /^\s+if: (.+)$/.exec(z[k]);
+        if (m) return m[1];
+      }
+      return 'true';
+    };
+    interface Kontext { out: Record<string, Record<string, string>>; outcome: Record<string, string>; job: 'success' | 'failure'; trockenlauf: boolean }
+    /** Mini-Auswerter GitHub-Ausdruck; ohne Status-Funktion gilt implizit success() (Actions-Semantik). */
+    const ghIf = (ausdruck: string, k: Kontext): boolean => {
+      const js = ausdruck
+        .replace(/steps\.(\w+)\.outputs\.(\w+)/g, (_, st: string, x: string) => JSON.stringify(k.out[st]?.[x] ?? ''))
+        .replace(/steps\.(\w+)\.outcome/g, (_, st: string) => JSON.stringify(k.outcome[st] ?? ''))
+        .replace(/inputs\.trockenlauf/g, String(k.trockenlauf))
+        .replace(/success\(\)/g, String(k.job === 'success'))
+        .replace(/failure\(\)/g, String(k.job === 'failure'))
+        .replace(/cancelled\(\)/g, 'false')
+        .replace(/([!=])=/g, '$1==');
+      expect(js).toMatch(/^[\s"'\w,()|&!=-]*$/);
+      const wert = new Function(`return (${js});`)() as boolean;
+      return /\b(success|failure|cancelled|always)\(\)/.test(ausdruck) ? wert : k.job === 'success' && wert;
+    };
+    interface Zustand { pause: string; netz: string }
+    /** Ein Lauf: Vorprüfung (nachzug.ts) → Runner-Ausgaben → if:-Ausdrücke der Workflow-Stufen. */
+    function lauf(z: Zustand, ausloeser: string, o: { e?: NachzugErgebnis; werkzeugfehler?: boolean; tore?: string; trockenlauf?: boolean }) {
+      const k: Kontext = { out: { lauf: {} }, outcome: { lauf: 'success' }, job: 'success', trockenlauf: !!o.trockenlauf };
+      const grund = vorpruefung({ offeneKoepfe: [], pauseZettel: z.pause, ausloeser });
+      if (grund !== null) {
+        k.out.lauf = { status: 'keine', quellen: '', widerspruch: '', hinweise: '0', zettel: '', ergebnis: '' };
+      } else if (o.werkzeugfehler) {
+        k.outcome.lauf = 'failure';
+        k.job = 'failure';
+      } else {
+        const e = o.e!;
+        const zettel = netzZettelAktion(e, z.netz !== '');
+        k.out.lauf = {
+          status: e.status, widerspruch: e.widerspruch.join(','), zettel, netzzettel: z.netz,
+          ergebnis: echtesErgebnis(e) ? 'echt' : '', pausezettel: z.pause,
+        };
+        if (ghIf(ifVon('Netz-Zettel pflegen'), k)) z.netz = zettel === 'anlegen' ? 'N' : zettel === 'schliessen' ? '' : z.netz;
+        if (ghIf(ifVon('Tore auf dem nachgeführten Stand'), k)) k.out.tore = { rc: o.tore ?? '0' };
+        if (ghIf(ifVon('Lauf rot färben'), k)) k.job = 'failure';
+      }
+      if (ghIf(ifVon('Bei Rot — Pause-Zettel'), k)) z.pause = z.pause || 'P';
+      if (ghIf(ifVon('Grün mit echtem Ergebnis — Pause-Zettel schliessen'), k)) z.pause = '';
+      return { uebersprungen: grund !== null, rot: k.job === 'failure' };
+    }
+    const keineDrift = () => nachzug('2026-10-12', null, attrappe({}));
+    const netzfehler = () => nachzug('2026-10-12', null, attrappe({
+      netz: DRIFT2, exit: { 'materialien:snapshot --quelle=estv-mwst': 1 },
+      stderr: { 'materialien:snapshot --quelle=estv-mwst': 'soft-law-snapshot ROT: fetchMitWiederholung: 4 Versuche erschöpft für https://a — fetch failed\n' },
+    }));
+
+    it('rot → skip → skip → dispatch grün schliesst → schedule läuft wieder', () => {
+      const z: Zustand = { pause: '', netz: '' };
+      expect(lauf(z, 'schedule', { werkzeugfehler: true })).toEqual({ uebersprungen: false, rot: true });
+      expect(z.pause).toBe('P');
+      expect(lauf(z, 'schedule', {})).toEqual({ uebersprungen: true, rot: false });
+      expect(lauf(z, 'schedule', {})).toEqual({ uebersprungen: true, rot: false });
+      expect(z.pause).toBe('P'); // der grüne Skip gibt NICHT frei (B2)
+      expect(lauf(z, 'workflow_dispatch', { e: keineDrift() })).toEqual({ uebersprungen: false, rot: false });
+      expect(z.pause).toBe('');
+      expect(lauf(z, 'schedule', { e: keineDrift() })).toEqual({ uebersprungen: false, rot: false });
+    });
+
+    it('Netz 1 grün + Netz-Zettel → Netz 2 rot + Pause-Zettel → schedule übersprungen', () => {
+      const z: Zustand = { pause: '', netz: '' };
+      expect(lauf(z, 'schedule', { e: netzfehler() })).toEqual({ uebersprungen: false, rot: false });
+      expect(z).toEqual({ pause: '', netz: 'N' });
+      expect(lauf(z, 'schedule', { e: netzfehler() })).toEqual({ uebersprungen: false, rot: true });
+      expect(z).toEqual({ pause: 'P', netz: 'N' });
+      expect(lauf(z, 'schedule', {}).uebersprungen).toBe(true);
+      expect(lauf(z, 'workflow_dispatch', { e: keineDrift() }).rot).toBe(false);
+      expect(z).toEqual({ pause: '', netz: '' }); // grüner Lauf mit echtem Ergebnis schliesst beide
+    });
+
+    it('Widerspruch und Tore rot legen den Pause-Zettel an; dispatch-Netzfehler (grün) schliesst ihn nicht', () => {
+      const z: Zustand = { pause: '', netz: '' };
+      const widerspruch = nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: [lauf_('seco'), lauf_('estv-mwst')].join('\n') + '\n' }));
+      expect(lauf(z, 'schedule', { e: widerspruch }).rot).toBe(true);
+      expect(z.pause).toBe('P');
+      const pruefen = nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: ANGEHAENGT2 }));
+      expect(lauf({ pause: '', netz: '' }, 'schedule', { e: pruefen, tore: '1' }).rot).toBe(true);
+      const z2: Zustand = { pause: '', netz: '' };
+      lauf(z2, 'schedule', { e: pruefen, tore: '1' });
+      expect(z2.pause).toBe('P');
+      expect(lauf(z, 'workflow_dispatch', { e: netzfehler() }).rot).toBe(false);
+      expect(z.pause).toBe('P');
+    });
+
+    it('trockenlauf: weder Pause- noch Netz-Zettel anlegen, kommentieren oder schliessen', () => {
+      const z: Zustand = { pause: '', netz: '' };
+      expect(lauf(z, 'workflow_dispatch', { werkzeugfehler: true, trockenlauf: true }).rot).toBe(true);
+      expect(lauf(z, 'workflow_dispatch', { e: netzfehler(), trockenlauf: true }).rot).toBe(false);
+      expect(z).toEqual({ pause: '', netz: '' });
+      const offen: Zustand = { pause: 'P', netz: 'N' };
+      expect(lauf(offen, 'workflow_dispatch', { e: keineDrift(), trockenlauf: true }).rot).toBe(false);
+      expect(offen).toEqual({ pause: 'P', netz: 'N' });
+    });
+  });
+
+  describe('Pause-Zettel-Stufen gegen Ersatz-gh', () => {
+    function fahre(schritt: string, env: Record<string, string>, ghExit = 0, offen = '') {
+      const dir = mkdtempSync(join(tmpdir(), 'mat-pz-'));
+      const log = join(dir, 'log');
+      writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash\necho "gh $1 $2 $3 $4 $5" >> "${log}"\nif [ "$1" = api ]; then echo "${offen}"; fi\nexit ${ghExit}\n`);
+      chmodSync(join(dir, 'gh'), 0o755);
+      const r = spawnSync('bash', ['-c', runBlock(yml, schritt)], {
+        encoding: 'utf8',
+        env: { PATH: `${dir}:${process.env.PATH}`, RUN_URL: 'https://x/1', GITHUB_REPOSITORY: 'o/r', LAUF: 'success', WIDERSPRUCH: '', TORE: '', ZETTEL: '', NR: '23', ...env },
+      });
+      return { status: r.status, out: r.stdout, aufrufe: existsSync(log) ? readFileSync(log, 'utf8').trim().split('\n') : [] };
+    }
+    const ROT = 'Bei Rot — Pause-Zettel';
+    it('kein offener Zettel ⇒ Label + Zettel mit Grund und Quittungs-Hinweis; offener ⇒ Kommentar', () => {
+      const a = fahre(ROT, { LAUF: 'failure', WIDERSPRUCH: 'seco' });
+      expect(a.status).toBe(0);
+      expect(a.aufrufe[1]).toBe(`gh label create ${PAUSE_ZETTEL_LABEL} --color D93F0B`);
+      expect(a.aufrufe[2]).toBe(`gh issue create --label ${PAUSE_ZETTEL_LABEL} --title`);
+      const b = runBlock(yml, ROT);
+      expect(b).toContain('Nach Reparatur: workflow_dispatch; ein grüner Lauf schliesst den Zettel.');
+      const k = fahre(ROT, { ZETTEL: 'kommentieren' }, 0, '41');
+      expect(k.aufrufe[1]).toMatch(/^gh issue comment 41 --body Lauf ROT am \d{4}-\d{2}-\d{2}: zweiter Netzfehler beim Nachladen in Folge; Nach Reparatur/);
+    });
+    it('FAIL-SAFE: Pflege scheitert ⇒ rot; Schliessen scheitert ⇒ Warnung', () => {
+      expect(fahre(ROT, { LAUF: 'failure' }, 1).status).toBe(1);
+      const s = fahre('Grün mit echtem Ergebnis', {}, 1);
+      expect(s.status).toBe(0);
+      expect(s.out).toContain('::warning::Pause-Zettel-Schliessen gescheitert');
+      expect(fahre('Grün mit echtem Ergebnis', {}).aufrufe[0]).toBe('gh issue close 23 --reason completed');
     });
   });
 

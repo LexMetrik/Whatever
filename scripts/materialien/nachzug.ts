@@ -40,15 +40,19 @@
 //      alarm:normen-monitor-netz): der erste Netzfehler legt den Netz-Zettel an (Lauf grün); ist
 //      er beim nächsten Netzfehler noch offen, wird der Lauf ROT — sonst sähe ein dauerhafter
 //      Timeout (Vorfall 5.9.2026: zwei ~80-min-Läufe brachen an derselben ESTV-Publikation ab)
-//      wie ein Wackler aus und führe jede Woche einen Vollcrawl ohne PR. Der rote Lauf pausiert
-//      dann über die Vorprüfung den Takt. Erfolgreicher Nachzug oder «keine Drift» schliesst ihn.
+//      wie ein Wackler aus und führe jede Woche einen Vollcrawl ohne PR. Der rote Lauf legt den
+//      Pause-Zettel an (s. VORPRÜFUNG). Erfolgreicher Nachzug oder «keine Drift» schliesst ihn.
 //
 // VORPRÜFUNG (Gegenprüfung 6.10.2026, B1) — vor JEDEM Netz-Abruf, im Runner: offener Bot-PR
 // (Kopf-Präfix NACHZUG_ZWEIG_PRAEFIX) ⇒ Abbruch, sonst meldete das Netz-Tor dieselbe Drift jede
-// Woche erneut (Vollcrawl ESTV-MWST + zweiter, kollidierender PR). Letzter abgeschlossener Lauf
-// rot und Auslöser `schedule` ⇒ Abbruch (Widerspruch/Werkzeugfehler noch nicht behoben — sonst
-// derselbe Vollcrawl jede Woche); `workflow_dispatch` übersteuert das bewusst (Handprobe nach der
-// Reparatur, deren grüner Lauf den Takt wieder freigibt).
+// Woche erneut (Vollcrawl ESTV-MWST + zweiter, kollidierender PR). Ein geschlossener, nicht
+// gemergter Bot-PR gibt frei (Schliessen = Entscheid). Offener PAUSE-ZETTEL (PAUSE_ZETTEL_LABEL)
+// und Auslöser `schedule` ⇒ Abbruch. Den Zettel legt JEDER rote Lauf an bzw. kommentiert ihn
+// (Workflow-Stufe `if: failure() || cancelled()`); schliessen darf ihn nur ein grüner Lauf mit
+// echtem Ergebnis (echtesErgebnis: nachgeladen oder keine Drift), nie ein Vorprüfungs-Abbruch.
+// Delta-Gegenprüfung 6.10.2026 (B2): die frühere Regel «letzter Lauf rot» hielt nur eine Woche —
+// der übersprungene Lauf war grün und gab den Takt wieder frei (Vollcrawl alle 2 Wochen ohne
+// Quittung). `workflow_dispatch` übersteuert die Pause bewusst (Handprobe nach der Reparatur).
 //
 // Exit-Politik (Monitor-Entscheid David 5.10.2026): Materialien färben nie rot — rot NUR bei
 // Werkzeugfehler (Klasse Werkzeugfehler unten bzw. widerspruch ≠ ∅).
@@ -149,14 +153,14 @@ export function werteNetzAus(ausgabe: string): NetzAuswertung {
 
 /** Kopf-Präfix der Bot-Zweige; der Workflow hängt das Abrufdatum an (Test koppelt). */
 export const NACHZUG_ZWEIG_PRAEFIX = 'chore/materialien-nachzug-';
-/** `conclusion`-Werte (gh run list) eines roten Laufs. */
-const ROTE_SCHLUESSE = new Set(['failure', 'timed_out']);
+/** Label des Pause-Zettels (Workflow fragt/legt an/schliesst; Test koppelt). */
+export const PAUSE_ZETTEL_LABEL = 'alarm:materialien-nachzug';
 
 export interface VorpruefEingabe {
   /** headRefName aller offenen PRs (gh pr list --state open). */
   offeneKoepfe: string[];
-  /** conclusion des letzten ABGESCHLOSSENEN Laufs dieses Workflows ('' = keiner). */
-  letzterLauf: string;
+  /** Nummer des offenen Pause-Zettels ('' = keiner). */
+  pauseZettel: string;
   /** github.event_name des laufenden Laufs. */
   ausloeser: string;
 }
@@ -167,8 +171,8 @@ export function vorpruefung(v: VorpruefEingabe): string | null {
   if (offen.length) {
     return `Nachzug-PR noch offen (${offen.join(', ')}) — erst prüfen und landen oder schliessen; kein erneuter Abruf.`;
   }
-  if (v.ausloeser === 'schedule' && ROTE_SCHLUESSE.has(v.letzterLauf.trim())) {
-    return `Letzter Lauf endete «${v.letzterLauf.trim()}» (Werkzeugfehler/Widerspruch offen) — Takt pausiert bis zu einem grünen Lauf per workflow_dispatch.`;
+  if (v.ausloeser === 'schedule' && v.pauseZettel.trim() !== '') {
+    return `Pause-Zettel #${v.pauseZettel.trim()} offen (roter Lauf nicht quittiert) — Takt pausiert bis zu einem grünen Lauf per workflow_dispatch.`;
   }
   return null;
 }
@@ -437,9 +441,17 @@ export type ZettelAktion = 'anlegen' | 'kommentieren' | 'schliessen' | '';
 export function netzZettelAktion(e: NachzugErgebnis | null, zettelOffen: boolean): ZettelAktion {
   if (e === null) return '';
   if (e.netzfehler !== null) return zettelOffen ? 'kommentieren' : 'anlegen';
-  const nachgeladen = e.quellen.length > 0;
-  const keineDrift = e.befunde.size === 0 && e.hinweise.length === 0;
-  return zettelOffen && (nachgeladen || keineDrift) ? 'schliessen' : '';
+  return zettelOffen && echtesErgebnis(e) ? 'schliessen' : '';
+}
+
+/**
+ * Echtes Nachzug-Ergebnis = Snapshot-Stufe ohne Netzfehler durchlaufen, oder das Netz-Tor meldete
+ * keine Drift. Nur-Hinweise (Netz-Tor blind), Filter-Auslassung und Netzfehler sind es nicht.
+ * Grundlage für das Schliessen von Netz- und Pause-Zettel (Runner-Ausgabe ergebnis=echt).
+ */
+export function echtesErgebnis(e: NachzugErgebnis): boolean {
+  if (e.netzfehler !== null) return false;
+  return e.quellen.length > 0 || (e.befunde.size === 0 && e.hinweise.length === 0);
 }
 
 function verwirf(w: Werkzeuge): void {

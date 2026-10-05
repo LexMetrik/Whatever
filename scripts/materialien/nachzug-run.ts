@@ -3,10 +3,11 @@
 //
 // Aufruf: npm run materialien:nachzug -- --datum=$(date +%F) [--quellen=seco,estv-mwst]
 // Vorprüfung (B1, nachzug.ts Kopf): gesetzt `AUSLOESER` (github.event_name) ⇒ Pflicht auch
-// `OFFENE_KOEPFE` (headRefName je Zeile) und `LETZTER_LAUF` (conclusion); Abbruch VOR jedem
+// `OFFENE_KOEPFE` (headRefName je Zeile) und `PAUSE_ZETTEL` (Nummer oder leer); Abbruch VOR jedem
 // Netz-Abruf mit ::notice:: und status=keine, Exit 0. Ohne AUSLOESER (Handlauf) entfällt sie.
 // Netz-Zettel (nachzug.ts Kopf Ziff. 7): `NETZ_ZETTEL` (offene Nummer oder leer) ⇒ Ausgaben
-// zettel=<netzZettelAktion> und netzzettel=<Nummer>; der Workflow pflegt den Zettel.
+// zettel=<netzZettelAktion> und netzzettel=<Nummer>; ergebnis=echt|'' und pausezettel=<Nummer>
+// (Schliessen des Pause-Zettels bei grünem Lauf). Der Workflow pflegt die Zettel.
 // Ausgaben: Schlüssel status/quellen/widerspruch/hinweise auf stdout und nach $GITHUB_OUTPUT;
 // PR-Text nach $NACHZUG_TMP/pr-body.md (Default .gate/materialien-nachzug, gitignoriert).
 // Exit 1 = Werkzeugfehler (Lauf rot). Drift, Hinweise und «nichts zu tun» = Exit 0.
@@ -15,7 +16,7 @@ import { spawnSync } from 'node:child_process';
 import { appendFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ZUSTAND_PFAD } from './soft-law-zustand.ts';
-import { ERLAUBTE_PFADE, Werkzeugfehler, nachzug, parseQuellenFilter, prText, vorpruefung, netzZettelAktion, type Werkzeuge } from './nachzug.ts';
+import { ERLAUBTE_PFADE, Werkzeugfehler, nachzug, parseQuellenFilter, prText, vorpruefung, netzZettelAktion, echtesErgebnis, type Werkzeuge } from './nachzug.ts';
 
 function arg(name: string): string | undefined {
   return process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
@@ -62,11 +63,11 @@ try {
   const filter = parseQuellenFilter(arg('quellen'));
   const ausloeser = process.env.AUSLOESER;
   if (ausloeser !== undefined) {
-    const { OFFENE_KOEPFE: koepfe, LETZTER_LAUF: letzter, NETZ_ZETTEL: zettel } = process.env;
-    if (koepfe === undefined || letzter === undefined || zettel === undefined) {
-      throw new Werkzeugfehler('AUSLOESER gesetzt, aber OFFENE_KOEPFE, LETZTER_LAUF oder NETZ_ZETTEL fehlt — Vorprüfung nicht verdrahtet.');
+    const { OFFENE_KOEPFE: koepfe, PAUSE_ZETTEL: pause, NETZ_ZETTEL: zettel } = process.env;
+    if (koepfe === undefined || pause === undefined || zettel === undefined) {
+      throw new Werkzeugfehler('AUSLOESER gesetzt, aber OFFENE_KOEPFE, PAUSE_ZETTEL oder NETZ_ZETTEL fehlt — Vorprüfung nicht verdrahtet.');
     }
-    const grund = vorpruefung({ offeneKoepfe: koepfe.split('\n'), letzterLauf: letzter, ausloeser });
+    const grund = vorpruefung({ offeneKoepfe: koepfe.split('\n'), pauseZettel: pause, ausloeser });
     if (grund !== null) {
       console.log(`::notice::Materialien-Nachzug übersprungen — ${grund}`);
       ausgabe('status', 'keine');
@@ -74,6 +75,7 @@ try {
       ausgabe('widerspruch', '');
       ausgabe('hinweise', '0');
       ausgabe('zettel', '');
+      ausgabe('ergebnis', '');
       process.exit(0);
     }
   }
@@ -90,6 +92,8 @@ try {
   ausgabe('zettel', zettel);
   ausgabe('netzzettel', zettelNr);
   ausgabe('netzfehler', e.netzfehler ?? '');
+  ausgabe('ergebnis', echtesErgebnis(e) ? 'echt' : '');
+  ausgabe('pausezettel', (process.env.PAUSE_ZETTEL ?? '').trim());
   if (zettel === 'kommentieren') {
     console.log(`::error::Netzfehler beim Nachladen im zweiten Lauf in Folge (Netz-Zettel #${zettelNr} offen) — Lauf ROT, Takt pausiert bis zu einem grünen Lauf per workflow_dispatch.`);
   }
