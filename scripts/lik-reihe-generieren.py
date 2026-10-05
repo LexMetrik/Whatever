@@ -6,6 +6,10 @@ Monatlicher Pflege-Lauf (nach BFS-Publikation, erste Folgemonatswoche):
   2) DAM-URL extrahieren, XLSX laden (siehe unten) — oder direkt:
      curl -sL <dam-api…/master> -o /tmp/lik.xlsx
   3) python3 scripts/lik-reihe-generieren.py /tmp/lik.xlsx
+  4) Danach die eingefrorene Export-Zeile des Teuerungsrechners nachziehen (sie traegt den
+     letzten LIK-Monat und den PDF-sha; ohne Nachzug ist rechner-export-ratsche rot):
+     RECHNER_EXPORT_SCHREIBEN=1 npx vitest run src/tests/rechner-export-ratsche.test.tsx
+     (Beleg 5.10.2026: Nachfuehrung 2026-07 -> 2026-09 bewegte genau diese Zeile.)
 
 Quelle: BFS «Landesindex der Konsumentenpreise, Indexierungstabelle»
 (cc-d-05.02.08), Lizenz OPEN-BY (Quellenangabe Pflicht).
