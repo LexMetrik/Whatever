@@ -134,7 +134,6 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - N · Sammel · Oberfläche und übrige Verweise — FB Bereiche 6 und 4
 - S · 5.10. · ci.yml CODE_FERN_RE klassiert ^scripts/plan/ code-fern, dort liegt jetzt echter Code (aufraeumen:git) ⇒ Code-Tore übersprungen — ci.yml:70
 - I · 5.10. · Rückbau nach Umstieg: flaechenZeile (scripts/plan), trendZeile (steuerflaecheKern.ts), wip-Zweig abschluss-wache.py (+Tests), Rotation struktur-rotieren.py — cowork-Rest ci.yml:70
-- I · 5.10. · prozess:kennzahlen erkennt Prozess-Commits am Betreff-Muster (QS-/lehre/tor/hook/check:); 6 von 8 Umstieg-Commits fehlen ⇒ 4-Wochen-Prüfung zu günstig — prozess-kennzahlen.ts:83
 - I · 5.10. · Termin 8.10.: CI-Sparplan nachmessen (Ausgangswert 61 381 min/30 Tage, gleiche Methode) — Skill landung, «Nachmessung Sparplan»
 - S · Sammel · Sicherheit/Betrieb übrige — FB Bereich 7
 - S · Sammel · bekannte Prüf-Lücken auf Rechtsdaten, Gruppe «latent» — kein Bauauftrag — FB Teil C
@@ -187,6 +186,6 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - `ls plan/posten/*.md | wc -l` — schrumpft (Start 472 nach L3); mindestens zwei JETZT-Vorhaben
   sichtbar fertig.
 - `wc -c ROADMAP.md` — unter 15 KB.
-- `npm run prozess:kennzahlen` — Prozessanteil der Commits unter 30 % (25.9.: 207/582 = 35,6 %;
-  Fenster 30 Tage, eine Ablesung am 20.10. zeigt noch überwiegend die Zeit vor dem Umstieg).
+- `npm run prozess:kennzahlen` — Prozessanteil der Commits unter 30 % (25.9.: 207/582 = 35,6 % nach
+  alter Betreff-Regel; nach Pfad-Regel seit 5.10. 200/546 = 36,6 %, 5.10. 193/635 = 30,4 %; Fenster 30 Tage, eine Ablesung am 20.10. zeigt noch überwiegend die Zeit vor dem Umstieg).
 - `grep -n 'Go David' ROADMAP.md` — keine Marke älter als 14 Tage ohne Grund im Abschlussbericht.
