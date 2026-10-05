@@ -43,7 +43,7 @@ Fedlex-Stelle (SPARQL-Endpoint + Filestore-HTML) — nie ein Dritt-Repo.
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut auf** vorhandener Currency-/
-  Drift-Infra: `check:fedlex-versionen`, `check:rss-oc`, `scripts/fedlex-wiedervorlage-generieren.ts`,
+  Drift-Infra: `check:fedlex-versionen`, `check:rss-oc` (gestrichen 5.10.2026, MONITOR-Rückbau), `scripts/fedlex-wiedervorlage-generieren.ts`,
   `register/parameter-verfall.md`, `public/normtext/currency.json`, Muster `src/lib/zuletztVerwendet.ts`.
   **Feasibility bewusst gespalten (§8) — die zwei baubaren Stufen sind NICHT das, wonach es klingt:**
   **B1 🟢 statischer Änderungs-Feed** (RSS/Atom/JSON, zur Build-Zeit aus `currency.json` + Verfallsregister
@@ -61,7 +61,7 @@ Fedlex-Stelle (SPARQL-Endpoint + Filestore-HTML) — nie ein Dritt-Repo.
   `bund/ADOV` Art. 1 (`stand: 2023-01-23`, `fassungsToken: 20230123`). Der Watchlist-Vergleich läuft
   darum gegen `fassungsToken`/`sha`, nicht gegen `geprueftAm`.
   **Gerichts-Hälfte — eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt (§8, Korrektur zum
-  Erst-Intake):** die oben genannten Belege (`check:fedlex-versionen`, `check:rss-oc`,
+  Erst-Intake):** die oben genannten Belege (`check:fedlex-versionen`, `check:rss-oc` (gestrichen 5.10.2026, MONITOR-Rückbau),
   `fedlex-wiedervorlage-generieren.ts`, `currency.json`) sind **ausnahmslos Norm-seitig** — auch
   `check:rss-oc` prüft den Amtliche-Sammlung-RSS, nicht Gerichte. Der Bestand, der «Gericht X entscheidet
   neu» trägt, ist ein **anderer**: `public/rechtsprechung/register.json` (6341 Einträge, je Eintrag

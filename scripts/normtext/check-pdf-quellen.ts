@@ -7,8 +7,9 @@
 // Generators kippt dieses Tor ROT (check:fedlex-versionen bleibt Currency-Arbiter
 // der Pins selbst). §7/§8: massgeblich ist die amtliche Quelle.
 //
-// Netz (--netz, in check:netz): jede Bund-URL + eine Kanton-Stichprobe liefern
-// tatsächlich ein PDF (HTTP 200 + application/pdf) — fängt tote/verschobene Dateien.
+// Die frühere Netz-Variante (--netz: HEAD-Abruf jeder Bund-URL + Kanton-Stichprobe) ist im
+// Monitor-Rückbau 5.10.2026 gestrichen (Entscheid David: nur Gesetzestext färbt rot; sie fand
+// nie einen Befund). Die Bund-PDF-URLs hängen an den Pins, deren Abruf check:caches prüft.
 //
 // Exit 0 grün · 1 Befund.
 import { readFileSync } from 'node:fs';
@@ -156,35 +157,7 @@ export function pruefeOffline(
   return befunde;
 }
 
-async function pruefeNetz(quellen: Record<string, PdfQuelle>): Promise<Befund[]> {
-  const befunde: Befund[] = [];
-  const fedlex = Object.entries(quellen).filter(([, q]) => q.quelle === 'fedlex');
-  const lexwork = Object.entries(quellen).filter(([, q]) => q.quelle === 'lexwork');
-  // Alle Bund + Kanton-Stichprobe (jede Nte, gedeckelt bei 30) — höflich.
-  const schritt = Math.max(1, Math.ceil(lexwork.length / 30));
-  const stichprobe = lexwork.filter((_, i) => i % schritt === 0).slice(0, 30);
-  const ziel = [...fedlex, ...stichprobe];
-
-  let i = 0;
-  async function arbeiter() {
-    while (i < ziel.length) {
-      const [key, q] = ziel[i++];
-      try {
-        const res = await fetch(q.url, { method: 'HEAD' });
-        const ct = res.headers.get('content-type') ?? '';
-        if (!res.ok) befunde.push(`${key}: HTTP ${res.status} auf ${q.url}`);
-        else if (!/pdf/i.test(ct)) befunde.push(`${key}: Content-Type '${ct}' (kein PDF) auf ${q.url}`);
-      } catch (err) {
-        befunde.push(`${key}: Netz-Fehler ${err instanceof Error ? err.message : err}`);
-      }
-    }
-  }
-  await Promise.all(Array.from({ length: Math.min(8, ziel.length || 1) }, arbeiter));
-  return befunde;
-}
-
-async function main() {
-  const netz = process.argv.includes('--netz');
+function main() {
   let quellen: Record<string, PdfQuelle>;
   try {
     quellen = JSON.parse(readFileSync(PDF_QUELLEN_JSON, 'utf8')) as Record<string, PdfQuelle>;
@@ -196,7 +169,6 @@ async function main() {
   const erlasse = (JSON.parse(readFileSync(REGISTER_JSON, 'utf8')) as { erlasse: Erlass[] }).erlasse;
 
   const befunde = pruefeOffline(quellen, erlasse, lesePins());
-  if (netz) befunde.push(...await pruefeNetz(quellen));
 
   if (befunde.length) {
     console.error(`check:pdf-quellen ROT — ${befunde.length} Befund(e):`);
@@ -210,9 +182,9 @@ async function main() {
   const bundSnap = snaps.filter((e) => e.ebene === 'bund').length;
   const kantonSnap = snaps.filter((e) => e.ebene === 'kanton').length;
   const kantonLuecke = snaps.filter((e) => e.ebene === 'kanton' && !quellen[e.key]).length;
-  console.log(`check:pdf-quellen grün${netz ? ' (inkl. Netz)' : ''}: ${bund}/${bundSnap} Bund + ${kanton}/${kantonSnap} Kanton amtliche PDF-URLs, Bund an Pins gebunden.`);
+  console.log(`check:pdf-quellen grün: ${bund}/${bundSnap} Bund + ${kanton}/${kantonSnap} Kanton amtliche PDF-URLs, Bund an Pins gebunden.`);
   // §8: die Kanton-Lücke wird auch im grünen Lauf benannt, nie stumm geschluckt.
   console.log(`  Kanton-Lücke ${kantonLuecke} (Basislinie ${KANTON_OHNE_PDF_BASISLINIE}) — LexWork ohne pdf_link_tol der gepinnten Fassung.`);
 }
 
-if (!process.env.VITEST) void main();
+if (!process.env.VITEST) main();

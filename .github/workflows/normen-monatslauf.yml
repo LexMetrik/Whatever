@@ -198,7 +198,8 @@ jobs:
     # check:materialien Finding 7 prüft seither deterministisch gegen den committeten
     # `stand` (Erhebungsdatum) statt gegen die Wanduhr — das reicht aber nur, wenn der
     # Erhebungsstand selbst regelmässig nachgeführt wird (dafür der Alterungs-Wächter
-    # im selben Tor, 35-Tage-Deckel). Dieser Job ist der Kreislauf, der ihn frisch hält.
+    # im selben Tor, 35-Tage-Deckel; gestrichen im Monitor-Rückbau 5.10.2026). Dieser Job
+    # ist der Kreislauf, der ihn frisch hält.
     # Eigener Job wie Curia/BS: er schreibt (generierte Datei + Projektion + Zähler)
     # und braucht Schreibrechte; läuft nur am Monats-Cron oder auf Zuruf.
     if: github.event_name == 'workflow_dispatch' || github.event.schedule == '11 4 1 * *'
@@ -228,7 +229,7 @@ jobs:
       # jedem Lauf, was ungeprüft in deckungs-sicht.json einginge.
       - name: Entstehungs-/Deckungs-Projektion + Zähler + Manifest nachziehen (Teilkaskade)
         run: npm run entstehung:projektion-kaskade
-      - name: Vorflug-Pruefung gegen die eben geschriebenen Dateien (Finding 7 + Alterungs-Waechter; kein Drift-Tor — das ist die PR-CI)
+      - name: Vorflug-Pruefung gegen die eben geschriebenen Dateien (Finding 7; kein Drift-Tor — das ist die PR-CI)
         run: npm run check:materialien && npm run check:entstehung && npm run check:datenhaltung
       - name: Änderungen feststellen
         id: diff
@@ -254,7 +255,7 @@ jobs:
           data.admin.ch). Quelle: Bundeskanzlei/Fedlex. Hält den Erhebungsstand
           (`stand`) der Vernehmlassungen frisch, gegen den check:materialien
           Finding 7 deterministisch prüft (§17-Wurzelfix, FAHRPLAN-OFFENE-BEFUNDE §2
-          QS-MONITOR-ROT) — verhindert den Alterungs-Wächter-Rotlauf (35-Tage-Deckel).
+          QS-MONITOR-ROT).
 
           Roadmap: QS-MONITOR-ROT
           Gegenpruefung: ausstehend — automatischer Lauf, adversariale Pruefung nachgelagert

@@ -35,7 +35,7 @@ let argLog: string;
 // reihenfolgeunabhängig (auch unter `-t`); argLog entsteht in demselben Lauf, nicht in einem Fremdtest.
 let ergebnis: { status: number | null; out: string };
 
-function lauf(): { status: number | null; out: string } {
+function lauf(extra: Record<string, string> = {}): { status: number | null; out: string } {
   const r = spawnSync('bash', ['scripts/fedlex-cache.sh'], {
     encoding: 'utf8',
     env: {
@@ -45,6 +45,7 @@ function lauf(): { status: number | null; out: string } {
       STUB_AUSFALL: AUSFALL.eli,
       STUB_ABBRUCH: ABBRUCH.eli,
       STUB_ARGLOG: argLog,
+      ...extra,
     },
     maxBuffer: 64 * 1024 * 1024,
   });
@@ -113,10 +114,20 @@ describe('fedlex-cache.sh — .pin-Marker und curl-Timeout', () => {
     }
   });
 
-  it('curl-Exit ≠ 0 trotz «200» (-m-Abbruch nach den Headern) ist FEHLER: kein OK, kein Marker, keine Teil-Datei', () => {
-    expect(ergebnis.out).toMatch(new RegExp(`^FEHLER  ${ABBRUCH.name}: .*curl-Exit 28`, 'm'));
+  // Seit 5.10.2026 (Monitor-Rückbau, Entscheid David «wichtig ist gesetzestext»): ein curl-Abbruch
+  // ist «keine Aussage» (NETZ, Exit 2 wenn allein) statt FEHLER — die Schutz-Invarianten aus
+  // PR #1247 (kein OK, kein Marker, keine Teil-Datei) gelten unverändert.
+  it('curl-Exit ≠ 0 trotz «200» (-m-Abbruch nach den Headern) ist NETZ: kein OK, kein Marker, keine Teil-Datei', () => {
+    expect(ergebnis.out).toMatch(new RegExp(`^NETZ    ${ABBRUCH.name}: .*curl-Exit 28`, 'm'));
     expect(ergebnis.out).not.toContain(`OK      ${ABBRUCH.name} `);
     expect(existsSync(join(cacheDir, `${ABBRUCH.name}.html.pin`)), 'Marker nach Abbruch').toBe(false);
     expect(existsSync(join(cacheDir, `${ABBRUCH.name}.html`)), 'Teil-Datei nach Abbruch').toBe(false);
   });
+
+  it('nur Netz-Ausfall, kein echter Befund ⇒ Exit 2 («keine Aussage», nie Exit 0)', () => {
+    const r = lauf({ STUB_AUSFALL: 'kein/treffer' });
+    expect(r.out).not.toMatch(/^FEHLER/m);
+    expect(r.out).toMatch(new RegExp(`^NETZ    ${ABBRUCH.name}: `, 'm'));
+    expect(r.status).toBe(2);
+  }, 60_000);
 });

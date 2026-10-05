@@ -1,6 +1,6 @@
 // scripts/materialien/check-bs-grossrat-netz.ts
 // K-16 (W2·13-KANTONE-DATEN): Live-Drift-Arbiter der BS-Materialien gegen data.bs.ch.
-// Verdrahtet in `check:netz:kette`, NIE in der Offline-Gate-Kette (§9: Netz gehört nicht
+// Verdrahtet in `check:netz:bericht` (seit 5.10.2026 Bericht, kein Rot), NIE in der Offline-Gate-Kette (§9: Netz gehört nicht
 // zwischen Merge und Deploy). Exit 0 OK · 1 Drift · 2 Netzfehler.
 //
 // VOLLABGLEICH statt Stichprobe (Lehre aus dem Botschaften-Tor, Befund (d) 1.9.2026: eine

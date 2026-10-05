@@ -96,6 +96,27 @@ abgeleitete Checkliste, samt den sieben Materialien-System-Befunden (a)–(h):
 - Befund (a) war bereits behoben (`soft-law-projektion-run.ts` Z. 48–63: ohne Harvest-Kanten
   keine Orphan-Bereinigung) — hier nur festgestellt, nicht neu gebaut.
 
+**Rückbau 5.10.2026 (Roadmap `MONITOR`, Entscheid David 5.10.2026: «wichtig ist gesetzestext.
+der rest muss nicht zu einem rot führen.» — Ergänzung, die Diagnosen oben bleiben):**
+
+- Betriebsstand: `normen-monitor.yml` fährt nur noch `npm run check:netz`. Rot + EIN Zettel
+  (`alarm:normen-monitor`, ohne Eskalationsstufe) nur bei `check:netz:kette` = Gesetzestext
+  (caches · zitate · fedlex-versionen `--kanonik-textvergleich` · normtext-netz · pdf-netz).
+  `check:netz:bericht` (Tarif, Materialien-Familie, Revisionen, Abkürzungen, BE-Sprengel, FR/IT,
+  Verfall, LIK) = Wochenbericht in der Step-Summary, nie Rot. Exit 2 (Quelle weg) = Hinweis
+  nach einer Wiederholung. Runner: `scripts/run-netz-alle.ts`.
+- Rotgrund B (Kanonik) entschärft: gleicher sichtbarer Text ⇒ Hinweis; Beleg OR 20261001
+  html-2→3 (36 Diff-Zeilen, nur `<i>`→`<span class="man-link-no-link">`). Text-Drift bleibt rot.
+- Gestrichen: Prod-Smoke-Duplikat (Korpus-JSONs in `scripts/betrieb/prod-smoke.ts` übernommen),
+  API-Vertragstests, `check:rss-oc`, `check:pdf-quellen-netz`, `check:vernehmlassungen-alter`.
+- Ein roter Monitor ist damit Session-Arbeit nur noch bei Gesetzestext; Bericht-Hinweise sind
+  kein Auftrag ohne EINGANG-Zeile.
+- Nachtrag 5.10.2026 (Entscheid David «reduziere sonst einfach nur noch auf bund.»): die
+  Kette oben ist überholt — `check:normtext-netz` (Kantons-Drift LexWork/HTM/ZH/kantonale PDFs,
+  ~1300 Erlasse) wanderte in `check:netz:bericht`. Kette = caches · zitate · fedlex-versionen
+  `--kanonik-textvergleich` · pdf-netz (EMRK/NYÜ über Fedlex). Kantons-Drift wird weiter
+  erkannt und gemeldet, färbt nie rot, ihr Exit 2 öffnet keinen Netz-Zettel.
+
 Erledigt und hier als Beleg belassen:
 
 - *13 erledigte Einträge dieses Abschnitts wörtlich in [`archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md`](../archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md), Abschnitt «§2 — `QS-MONITOR-ROT` · Normen-Monitor seit ≥5 Wochen rot» (verschoben 24.9.2026).*

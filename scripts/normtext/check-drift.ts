@@ -8,6 +8,9 @@
  *   3. Kanton-Drift (NETZ, nur mit --netz): versionUid aus LexWork vs. fassungsToken im Snapshot.
  *
  * §2: kein Date.now/Math.random. §8: kein stilles Versagen (Exit 1 bei echten Problemen).
+ * Exit 2 (nur --netz): mindestens eine Gruppe war nicht erreichbar — keine vollständige
+ * Aussage; echte Drift (Exit 1) hat Vorrang. Vorher endete das als Warnung mit Exit 0
+ * (Gegenprüfung 5.10.2026, MONITOR-Rückbau); der Runner check:netz begrenzt Exit 2.
  *
  * Aufruf:
  *   vite-node scripts/normtext/check-drift.ts           # offline (1+2)
@@ -28,6 +31,7 @@ import {
 } from './inventar-kanton.ts';
 import { holeLexWork, LexWorkShellError } from './adapter-lexwork.ts';
 import { holeHtm } from './adapter-htm.ts';
+import { verbindeExits } from './drift-logik.ts';
 import { holeZhPdf } from './adapter-zh-pdf.ts';
 import { holePdf, PDF_PROFILE } from './adapter-pdf.ts';
 import { pdfLawIdSafe } from './lawid-safe.ts';
@@ -153,6 +157,7 @@ async function main(): Promise<void> {
   const { snapshots, snapshotIds } = ladeBundSnapshots();
 
   let exitCode = 0;
+  let netzFehler = 0; // Gruppen ohne Aussage (Quelle nicht erreichbar), alle Netz-Prüfungen
 
   // ─── Prüfung 1: Bund-Fassung (offline) ─────────────────────────────────────
   const mismatches = pruefeBundFassung(snapshots, cacheMap);
@@ -285,6 +290,7 @@ async function main(): Promise<void> {
         // Transienter Netzfehler → Warnung, kein harter Fehler (§8: transparent).
         console.warn(`WARNUNG Kanton-Netz: ${gruppe.kanton} ${gruppe.lawId}: ${abruf.msg}`);
         kantonWarnungen++;
+        netzFehler++;
         continue;
       }
       const ergebnis = abruf.ergebnis;
@@ -347,6 +353,7 @@ async function main(): Promise<void> {
       if (!abruf.ok) {
         console.warn(`WARNUNG HTM-Netz: ${g.kanton} ${g.quelleUrl}: ${abruf.msg}`);
         htmWarnungen++;
+        netzFehler++;
         continue;
       }
       const ergebnis = abruf.ergebnis;
@@ -419,6 +426,7 @@ async function main(): Promise<void> {
       if (!abruf.ok) {
         console.warn(`WARNUNG ZH-Netz: ${g.kanton} ${g.quelleUrl}: ${abruf.msg}`);
         zhWarnungen++;
+        netzFehler++;
         continue;
       }
       const ergebnis = abruf.ergebnis;
@@ -481,6 +489,7 @@ async function main(): Promise<void> {
       if (!abruf.ok) {
         console.warn(`WARNUNG PDF-Netz: ${g.kanton} ${g.quelleUrl}: ${abruf.msg}`);
         pdfWarnungen++;
+        netzFehler++;
         continue;
       }
       const ergebnis = abruf.ergebnis;
@@ -504,7 +513,13 @@ async function main(): Promise<void> {
     }
   }
 
-  process.exit(exitCode);
+  if (netzFehler > 0) {
+    console.error(
+      `\ncheck:normtext-netz: ${netzFehler} Gruppe(n) nicht erreichbar — KEINE vollständige Aussage` +
+        (exitCode === 0 ? ' (Exit 2).' : ' (echter Befund hat Vorrang, Exit 1).'),
+    );
+  }
+  process.exit(verbindeExits([exitCode, netzFehler > 0 ? 2 : 0]));
 }
 
 main().catch((err) => {

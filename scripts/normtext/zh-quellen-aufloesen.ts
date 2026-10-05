@@ -36,10 +36,16 @@
  *
  * Netz-Disziplin (Dossier §5): ~1 req/s seriell gegen zh.ch, UA mit Kontakt,
  * AEM-Komponenten-ID zur Laufzeit aufgelöst, HTTP-204-Leerbody abgefangen.
+ *
+ * EXIT 2 (5.10.2026, MONITOR-Rückbau): Quelle nach allen Wiederholungen nicht erreichbar
+ * (Netzfehler, 429/5xx) ⇒ «keine Aussage» statt Exit 1 — vorher stand ein Netz-Ausfall als
+ * Gesetzestext-ROT in der Monitor-Tafel. Eine echte Abweichung (Exit 1) hat Vorrang;
+ * strukturelle Fehler (Komponenten-ID, Kappung) bleiben rot. Probe: fetch-Stub, der wirft ⇒
+ * Exit 2.
  */
 
 import { ZH_QUELLEN, type ZhQuelle } from './zh-quellen.ts';
-import { fetchMitWiederholung } from './netz-retry.ts';
+import { fetchMitWiederholung, istWiederholbarerStatus } from './netz-retry.ts';
 
 const UA = 'LexMetrik-Import/1.0 (kontakt: david.graf95@gmail.com)';
 const BASIS = 'https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung';
@@ -47,9 +53,25 @@ const ABSTAND_MS = 1100;
 
 const schlaf = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
 
+/** Quelle nach allen Wiederholungen nicht erreichbar — keine Aussage (Exit 2). */
+class NetzFehler extends Error {}
+
 async function hole(url: string): Promise<Response> {
   await schlaf(ABSTAND_MS);
-  return fetchMitWiederholung(url, { headers: { 'User-Agent': UA } });
+  let res: Response;
+  try {
+    res = await fetchMitWiederholung(url, { headers: { 'User-Agent': UA } });
+  } catch (e) {
+    throw new NetzFehler(e instanceof Error ? e.message : String(e));
+  }
+  if (istWiederholbarerStatus(res.status)) throw new NetzFehler(`HTTP ${res.status} für ${url}`);
+  return res;
+}
+
+function keineAussage(e: unknown): never {
+  if (!(e instanceof NetzFehler)) throw e;
+  console.error(`zh-quellen KEINE AUSSAGE (Exit 2) — Quelle nicht erreichbar: ${e.message}`);
+  process.exit(2);
 }
 
 /** AEM-Komponenten-ID aus der server-gerenderten Suchseite (nie verdrahten). */
@@ -170,7 +192,7 @@ function alsEintrag(q: ZhQuelle): string {
 }
 
 const argumente = process.argv.slice(2).filter((a) => !a.startsWith('-'));
-const id = await komponentenId();
+const id = await komponentenId().catch(keineAussage);
 console.log(`AEM-Komponenten-ID (Laufzeit aufgelöst): ${id}`);
 
 const ordnerArg = process.argv.slice(2).find((a) => a.startsWith('--ordner='))?.slice(9);
@@ -192,8 +214,17 @@ if (ordnerArg) {
   }
 } else {
   let abweichungen = 0;
+  let netzfehler = 0;
   for (const soll of ZH_QUELLEN) {
-    const ist = await loese(id, soll.nr);
+    let ist: ZhQuelle | null;
+    try {
+      ist = await loese(id, soll.nr);
+    } catch (e) {
+      if (!(e instanceof NetzFehler)) throw e;
+      console.error(`  NETZ ${soll.nr}: ${e.message}`);
+      netzfehler++;
+      continue;
+    }
     if (!ist) {
       console.error(`  FEHLER ${soll.nr}: kein eindeutiger geltender Treffer am JSON-Endpunkt`);
       abweichungen++;
@@ -218,6 +249,7 @@ if (ordnerArg) {
       console.log(`  ok ${soll.nr.padEnd(8)} ${soll.kuerzel || '—'}`);
     }
   }
-  console.log(`\nzh-quellen: ${ZH_QUELLEN.length} Erlasse geprüft, ${abweichungen} Abweichung(en).`);
+  console.log(`\nzh-quellen: ${ZH_QUELLEN.length} Erlasse geprüft, ${abweichungen} Abweichung(en), ${netzfehler} nicht erreichbar.`);
   if (abweichungen > 0) process.exit(1);
+  if (netzfehler > 0) process.exit(2);
 }

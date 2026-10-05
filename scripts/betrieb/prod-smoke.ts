@@ -329,6 +329,12 @@ async function main() {
   await pruefeSitemap();
   await pruefeAsset('/og.png', 'image/');
   await pruefeAsset('/robots.txt', 'text/plain');
+  // Je 1 Stichproben-JSON pro Korpus (übernommen aus dem gestrichenen
+  // .github/scripts/prod-smoke.sh des Normen-Monitors, Rückbau 5.10.2026 — dort die einzige
+  // Deckung, die dieser Smoke noch nicht trug; FAHRPLAN-BASIS-AUSBAU Ist-Korrektur 15.8.2026).
+  for (const pfad of ['/normtext/register.json', '/rechtsprechung/register.json', '/materialien/register.json', '/such-index/artikel.json']) {
+    await pruefeAsset(pfad, 'application/json');
+  }
   await pruefeCsp();
   await pruefeSoft404();
   // Zuletzt, weil es als einziges die Repo-Seite braucht (QS-AUTOMATIK 16.8.2026).

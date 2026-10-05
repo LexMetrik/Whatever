@@ -14,7 +14,7 @@ Optionen-Vergleich gegen den Repo-Stand vom 20.7.2026, kein adversarialer Zweitd
 | Entscheid-Register | `public/rechtsprechung/register.json` (6341 Einträge; `gericht`/`datum`/`normKeys`/`fassungsToken`) | Datenquelle Gerichts-Signal |
 | Entscheid-Import-Strecke | `scripts/rechtsprechung/`, `scripts/normtext-entscheide.ts` | bestimmt die Signal-Latenz |
 | Wiedervorlage-Generator (Bau-Muster) | `scripts/fedlex-wiedervorlage-generieren.ts` | Vorbild B1 |
-| Currency-/Drift-Tore | `check:fedlex-versionen`, `check:rss-oc` | Erkennung |
+| Currency-/Drift-Tore | `check:fedlex-versionen`, `check:rss-oc` (gestrichen 5.10.2026, MONITOR-Rückbau) | Erkennung |
 | Verfallsregister | `bibliothek/register/parameter-verfall.md` | datierte Parameter |
 | Client-Persistenz-Muster | `src/lib/zuletztVerwendet.ts` | Vorbild B2 |
 | Zustandslosigkeits-Regel | CLAUDE.md §5 | **die Leitplanke** |
@@ -70,7 +70,7 @@ Ausgang:  «geändert seit deinem letzten Besuch» + Sprung zur amtlichen Fundst
 **B3 — Gerichts-Signal (Build-Zeit; eigenes Verdikt 🟡, NICHT unter dem Fedlex-🟢 mitgeführt):**
 
 Der Erst-Entwurf führte «Gericht X entscheidet neu» unter denselben Belegen wie die Norm-Seite.
-Das war falsch: `check:fedlex-versionen`, `check:rss-oc`, `fedlex-wiedervorlage-generieren.ts` und
+Das war falsch: `check:fedlex-versionen`, `check:rss-oc` (gestrichen 5.10.2026, MONITOR-Rückbau), `fedlex-wiedervorlage-generieren.ts` und
 `currency.json` sind **ausnahmslos Norm-seitig** — auch `check:rss-oc` prüft den
 Amtliche-Sammlung-RSS, nicht Gerichte. Der tragende Bestand ist ein anderer:
 
@@ -114,7 +114,7 @@ einzigen der obigen Folgekosten. Push erst danach neu bewerten, wenn überhaupt.
 
 B1/B2 führen **keine neuen datierten Rechts-Parameter** ein; sie lesen die bestehende
 Currency-Kette. Pflegepunkt ist allein, dass `currency.json` aktuell bleibt — das leisten die
-vorhandenen Tore (`check:fedlex-versionen`, `check:rss-oc`), hier entsteht keine zweite Wahrheit (§5).
+vorhandenen Tore (`check:fedlex-versionen`; `check:rss-oc` ist seit 5.10.2026 gestrichen, MONITOR-Rückbau), hier entsteht keine zweite Wahrheit (§5).
 
 ## §7 · Abnahme-Status
 

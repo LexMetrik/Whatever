@@ -2056,6 +2056,14 @@
       "belege": []
     },
     {
+      "name": "check:netz:bericht",
+      "art": "tor",
+      "seit": "2026-10-05",
+      "letztesRot": null,
+      "laeufe": 0,
+      "belege": []
+    },
+    {
       "name": "check:netz:kette",
       "art": "tor",
       "seit": "2026-09-02",
@@ -2281,14 +2289,6 @@
       ]
     },
     {
-      "name": "check:pdf-quellen-netz",
-      "art": "tor",
-      "seit": "2026-07-11",
-      "letztesRot": null,
-      "laeufe": 0,
-      "belege": []
-    },
-    {
       "name": "check:perf-budget",
       "art": "tor",
       "seit": "2026-06-30",
@@ -2423,14 +2423,6 @@
       "name": "check:revisionen-rectifies",
       "art": "tor",
       "seit": "2026-09-12",
-      "letztesRot": null,
-      "laeufe": 0,
-      "belege": []
-    },
-    {
-      "name": "check:rss-oc",
-      "art": "tor",
-      "seit": "2026-07-18",
       "letztesRot": null,
       "laeufe": 0,
       "belege": []
@@ -2880,14 +2872,6 @@
       "seit": "2026-07-24",
       "letztesRot": null,
       "laeufe": 84,
-      "belege": []
-    },
-    {
-      "name": "check:vernehmlassungen-alter",
-      "art": "tor",
-      "seit": "2026-09-12",
-      "letztesRot": null,
-      "laeufe": 0,
       "belege": []
     },
     {
