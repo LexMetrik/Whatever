@@ -52,8 +52,10 @@ describe('VRV-Sternchen-Verweisnoten (absatz8pt)', () => {
     expect(t).toEqual(['Parkieren ist das Abstellen des Fahrzeugs.', 'Es ist platzsparend zu parkieren.']);
   });
 
-  it('GRENZE: ein Stern mitten im Satz in einer ANDEREN Klasse (absatz09pt) löst die Alternative nicht aus', () => {
-    const t = texte(art('art_19', '<p class="absatz09pt">* Kleindruck-Hinweis ausserhalb des Geltungsbereichs dieser Regel.</p>'), '19');
+  // NT-01 (HN-05, 5.10.2026): absatz09pt gehört seither zur Absatz-Familie (Alt 1, fedlex/absatz-nr.ts) und wird
+  // als Absatz-Text übernommen — die Grenze der Stern-Regel zeigt jetzt «absatz10pt» (in keinem Pin vorhanden).
+  it('GRENZE: ein Stern in einer ANDEREN, nicht erfassten Klasse (absatz10pt) löst die Alternative nicht aus', () => {
+    const t = texte(art('art_19', '<p class="absatz10pt">* Kleindruck-Hinweis ausserhalb des Geltungsbereichs dieser Regel.</p>'), '19');
     expect(t).toHaveLength(2);
   });
 });

@@ -24,6 +24,7 @@ import { entferneTags, entferneFussnotenSups } from './fedlex/text.ts';
 import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
 import {
   ABSATZ_NR_EIN_SUP, ABSATZ_NR_ZWEI_SUPS, SUFFIX_WORT_ODER_BUCHSTABE, ABSATZ_NR_INHALT,
+  ABSATZ_KLASSE_QUELLE, ABSATZ_ERSTES_SUP, ABSATZ_ZWEI_SUPS_ANFANG,
 } from './fedlex/absatz-nr.ts';
 import { findeDlEnde } from './fedlex/enden.ts';
 import { parseDefinitionsListe, ergaenzeFortsetzungsTiefe } from './fedlex/listen.ts';
@@ -139,7 +140,8 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
   // art_30). Ein non-greedy `[\s\S]*?</dl>` stoppte sonst am ERSTEN — also dem
   // INNEREN — </dl> und verlor lit-Ebene + Einleitung (Bug 25.6.2026, §1).
   const bloeckeUndListenRe = new RegExp(
-    '<p[^>]*\\bclass="[^"]*\\babsatz\\b[^"]*"[^>]*>([\\s\\S]*?)</p>' +
+    // Alt 1: Absatz-Familie (absatz · absatzkurs · absatz09pt — EINE Definition, NT-01/HN-05, fedlex/absatz-nr.ts)
+    `<p[^>]*\\bclass="[^"]*${ABSATZ_KLASSE_QUELLE}[^"]*"[^>]*>([\\s\\S]*?)</p>` +
       `|<p[^>]*>((?:\\s|&nbsp;|<\\/?inl>)*<sup\\b[^>]*>\\d+${SUFFIX_ALT}?[a-z]?</sup>${NICHT_P})</p>` +
       `|<p[^>]*>(${NICHT_P})</p>(?=\\s*<dl)` +
       '|(<dl[^>]*>)' +
@@ -204,7 +206,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
 
       // Absatznummer: erstes <sup>, das KEIN <a>-Kind enthält und nur Ziffern/[a-z] enthält.
       // Fussnoten-<sup> sehen so aus: <sup><a href="...">188</a></sup> → verwerfen.
-      const supMatch = roh.match(/^(?:\s|&nbsp;|<\/?inl>)*<sup(?:[^>]*)>([\s\S]*?)<\/sup>/i);
+      const supMatch = roh.match(ABSATZ_ERSTES_SUP);
       let absatz: string | null = null;
       // Regex, die die erkannte Absatz-Nummer (ein ODER — bei gespaltenem Suffix —
       // zwei <sup>) vom Roh-Text abtrennt. Default deckt den Ein-<sup>-Fall.
@@ -219,9 +221,7 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
         // ZWEITE <sup> ein Suffix-Wort oder ein einzelner Buchstabe ist — NIE eine
         // reine Ziffer, damit ein Exponent («72³», «133¹⁄₃») nie zur Nummer wird (§1).
         const split = /^\d+$/.test(supInhalt)
-          ? roh.match(
-              /^(?:\s|&nbsp;|<\/?inl>)*<sup[^>]*>\s*(\d+)\s*<\/sup>(?:&nbsp;|\s|<\/?inl>)*<sup[^>]*>\s*([^<]*?)\s*<\/sup>/i,
-            )
+          ? roh.match(ABSATZ_ZWEI_SUPS_ANFANG)
           : null;
         // Nur LIVE-Absätze verkleben: folgt nach dem Suffix ein Konnektor / eine
         // Ellipsis / ein weiteres <sup> («2bis und 2ter …»), ist das ein AUFGEHOBENER

@@ -16,7 +16,7 @@
 import { findeDlEnde, findeDdEnde, ankerZuToken, parseArtikelInner } from './extrahiere-fedlex';
 import { berechneFnPositionen, type FnPos } from './fussnoten-offsets';
 import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
-import { ABSATZ_NR_INHALT } from './fedlex/absatz-nr.ts';
+import { ABSATZ_NR_INHALT, ABSATZ_KLASSE_QUELLE, ABSATZ_ERSTES_SUP } from './fedlex/absatz-nr.ts';
 
 export interface FnLink {
   label: string;
@@ -190,13 +190,14 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
       return paare;
     };
     // Block-Walk in DOKUMENTREIHENFOLGE: <p ...absatz...> ODER balancierte <dl>.
-    const blockStart = /<p[^>]*\bclass="[^"]*\babsatz\b[^"]*"[^>]*>|<dl\b[^>]*>/gi;
+    // Absatz-Familie wie der Extraktor (EINE Definition, NT-01/HN-05): absatz · absatzkurs · absatz09pt.
+    const blockStart = new RegExp(`<p[^>]*\\bclass="[^"]*${ABSATZ_KLASSE_QUELLE}[^"]*"[^>]*>|<dl\\b[^>]*>`, 'gi');
     let bm: RegExpExecArray | null;
     while ((bm = blockStart.exec(body)) !== null) {
       if (bm[0].toLowerCase().startsWith('<p')) {
         const pEnd = body.indexOf('</p>', blockStart.lastIndex);
         const seg = body.slice(blockStart.lastIndex, pEnd < 0 ? body.length : pEnd);
-        const supM = seg.match(/^(?:\s|&nbsp;)*<sup(?:[^>]*)>([\s\S]*?)<\/sup>/i);
+        const supM = seg.match(ABSATZ_ERSTES_SUP);
         letzterAbsatz = supM && !/<a[\s>]/i.test(supM[1]) && ABSATZ_NR_INHALT.test(supM[1].trim())
           ? supM[1].trim() : null;
         for (const fm of seg.matchAll(/\bhref="#(fn-[^"]+)"/gi)) setze(fm[1], null);

@@ -26,6 +26,7 @@
 // eine Alternative, einen Zweig und einen Aufruf trägt.
 
 import { SUFFIX_ALT } from '../../src/lib/fedlex/nummer.ts';
+import { ABSATZ_KLASSE_QUELLE } from './fedlex/absatz-nr.ts';
 
 /** Heading-Tiefe der Ziffer-Überschrift (kein <h>-Tag in der Quelle; 3 = «nicht flach», s. ArtikelBody). */
 export const ZIFFER_TITEL_TIEFE = 3;
@@ -79,7 +80,7 @@ const SAMMEL_ZIFFER_RE = new RegExp(`${VOR}(${ZIFFER})\\.(?:&nbsp;|\\s)*(?:und|�
 /** Quell-Span eines Blocks (`<p class="absatz">…</p>`) → Ziffer der Absatz-Ziffer-Form oder null. */
 export function zifferAbsatzNummer(quellSpan: string | null): string | null {
   if (quellSpan == null) return null;
-  const k = quellSpan.match(/^<p\b[^>]*\bclass="[^"]*\babsatz\b[^"]*"[^>]*>([\s\S]*)<\/p>$/i);
+  const k = quellSpan.match(new RegExp(`^<p\\b[^>]*\\bclass="[^"]*${ABSATZ_KLASSE_QUELLE}[^"]*"[^>]*>([\\s\\S]*)<\\/p>$`, 'i'));
   if (k == null) return null;
   const sm = k[1].match(SAMMEL_ZIFFER_RE);
   if (sm) return `${sm[1]}_${sm[2]}`;
