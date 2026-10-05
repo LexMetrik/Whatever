@@ -7,6 +7,8 @@
 > **Provenienz:** Modell seit 5.10.2026, Entscheid David (U1–U8 der Umstiegsvorlage wie empfohlen;
 > Vault `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/umstieg-schlanker-plan-2026-10-05.md`).
 > Alt-Fassung wörtlich: [`archiv/ROADMAP-bis-2026-10-05.md`](archiv/ROADMAP-bis-2026-10-05.md).
+> *U1–U8* = Entscheidpunkte dieser Vorlage, «(a)» = die von David gewählte Option; *FB* = deren Anhang
+> «Fehlerbestand» (gleicher Ordner), Zeilen-IDs wie B-76 gelten nur dort.
 
 **Regeln**
 
@@ -20,7 +22,7 @@
    Zeile ohne R, ohne Go und ohne Herkunft «David» weg (git behält sie).
 
 Der letzte PR eines Vorhabens streicht es aus JETZT, legt erledigte Merkzettel nach `archiv/posten/`
-und rückt nach Regel 2 nach; jede JETZT-Änderung steht als Zeile im Abschlussbericht. *Merkzettel* =
+und rückt nach Regel 2 nach (Meldung an David: Skill `bauschritt`). *Merkzettel* =
 Dateien in `plan/posten/`, Gruppen über das Feld `dach:` (`grep -l '^dach: <DACH>' plan/posten/*.md`).
 
 ---
@@ -105,12 +107,12 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ## EINGANG
 
 ```
-- S · Frist 8.10. · Test-Ausnahme w224-reiterverhalten läuft ab (Korrektur-Session dran) — e2e/flake-ausnahmen.json; FB S-24
+- S · Frist 8.10. · Test-Ausnahme w224-reiterverhalten läuft ab — e2e/flake-ausnahmen.json; FB S-24
 - S · Frist 20./24.10. · vier weitere Test-Ausnahmen laufen ab — e2e/flake-ausnahmen.json; FB S-24
-- S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft: Verbrauch messen/senken, David Preis+Optionen — FB S-10
+- S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26
 - S · 5.10. · Deploy nutzt npx vercel@latest; Such-API gibt Fehlertexte an Anonyme, DB-Fehler als «0 Treffer» — FB S-18
-- S · 5.10. · Handgriffe David: Secret Scanning + Push Protection einschalten; Ablaufdatum AUTOMERGE_TOKEN nennen — FB S-15, S-14
+- S · 5.10. · Secret Scanning/Push Protection im öffentlichen Repo aus; Ablaufdatum AUTOMERGE_TOKEN unbekannt — FB S-15, S-14
 - S · 4.10. · Merge-Treiber regen behält eigenes daten-manifest.json ⇒ Hand-Regeneration je Daten-PR — Merkzettel 2026-10-04-merge-treiber-regen-…
 - F · Mandat 14.9. · Tabellen im Bundestext (W2·5l, bisher Platz 3 der Reihenfolge) — fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md; Dach W2·5l-NORMTEXT-B2
 - R · Go David 24.9. · Verweise: 371 falsche Selbstlinks + Verweisziele (HN-09), danach Normverweis öffnet eigenen Leser (HN-D1 «ja unbedingt») — FB V-06
@@ -120,7 +122,7 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - N · Go David 19.9. · Merkliste bauen (Reiterleisten-Abgleich) — Merkzettel 2026-09-18-reiterleisten-abgleich-merkliste-bauen
 - N · Go David 8.8. · Kalender-Export: Termine als «frei» markieren — Merkzettel 2026-09-24-kalender-export-termine-als-frei-…
 - N · Entscheid David 1.10. (a) · Deaktiviert-/Hover-Varianten vereinheitlichen — Merkzettel 2026-10-01-deaktiviert-hover-varianten-angleichen
-- I · Entscheid David 2.10. · Rest-Rückbau revisionFuer (unnötiger Netzabruf) — Merkzettel 2026-10-02-rest-rueckbau-tote-rechtsprechungs-zeilen-…
+- I · Entscheid David 2.10. · Rest-Rückbau tote Rechtsprechungs-Zeilen (revisionFuer gebaut #1276; Reste vor Bau reproduzieren) — Merkzettel 2026-10-02-rest-rueckbau-tote-rechtsprechungs-zeilen-…
 - I · Freigabe David 22.9./Entscheid 1.10. (a) · einmalige Streich-Runde nie fündiger Tore (+ Sperrklinke 21.9.) — Dach QS-TORE-DIAET
 - I · Auftrag David 3.10. · Regelsätze von eingewobenen Belegen entflechten — Merkzettel 2026-10-03-regelsaetze-mit-eingewobenen-belegen-…
 - R · Sammel · übriger Bundestext — FB Bereich 1
@@ -130,8 +132,8 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - R · David 21.9. · Impressum/Datenschutz/Nutzungsbedingungen — erst vor dem Live-Gang — Dach SEO-A11Y; FB S-01
 - N · Sammel · Oberfläche und übrige Verweise — FB Bereiche 6 und 4
 - S · Sammel · Sicherheit/Betrieb übrige — FB Bereich 7
-- S · Sammel · 35 bekannte Prüf-Lücken auf Rechtsdaten, Gruppe «latent» — kein Bauauftrag — FB Teil C
-- I · Sammel · 61 Merkzettel mit Entscheid oder Frage Davids, ruhend — nicht nachfragen — FB Teil B
+- S · Sammel · bekannte Prüf-Lücken auf Rechtsdaten, Gruppe «latent» — kein Bauauftrag — FB Teil C
+- I · Sammel · Merkzettel mit Entscheid oder Frage Davids, ruhend — nicht nachfragen — FB Teil B
 ```
 
 ---
