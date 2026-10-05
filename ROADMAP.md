@@ -67,10 +67,13 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`. *FB
 Vault, `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/fehlerbestand-2026-10-05.md` (Zeilen-IDs
 nur dort gültig; Angaben aus Merkzetteln, vor der Behebung gegen die amtliche Quelle prüfen, §7).
 
-1. **Normen-Monitor wieder grün** (`MONITOR`) · S · Gegenprüfung ja
-   *Herkunft:* rot seit 29.6. mit Unterbrüchen; Alarm #956 (ESKALATION, seit 21.9.).
-   *Fertig, wenn* der Monitor-Lauf grün ist und #956 geschlossen.
-   *Ort:* Dach `QS-MONITOR-ROT`; `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md`.
+1. **Normen-Monitor zurückbauen** (`MONITOR`) · S · Gegenprüfung ja
+   *Herkunft:* **Go David 05.10.** («wichtig ist gesetzestext. der rest muss nicht zu einem rot
+   führen.» · «achte darauf wie sich das ganze system noch mehr automatisiert.»); Inventar 5.10.:
+   31 Läufe seit 29.6., 24 rot, nur ~7 wegen echter Textänderung; Alarm #956 seit 21.9.
+   *Fertig, wenn* nur noch Gesetzestext-Abweichung rot färbt, der Rest Bericht oder Automatik ist
+   und #956 geschlossen.
+   *Ort:* Zweig `MONITOR/rueckbau`; Dach `QS-MONITOR-ROT`.
 2. **«Gilt seit» stimmt im Kern-Bund** (`GILTSEIT`) · R + Phase 1 · Gegenprüfung ja
    *Herkunft:* Mandat 14.9.; Entscheid David 4.10. «A, und C als eigenen Roadmap-Schritt anlegen»
    (#1305, 74b366602).
@@ -109,6 +112,14 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ## EINGANG
 
 ```
+- R · 5.10. · check:zitate meldet Zitate auf aufgehobene Artikel nicht, solange das Artikel-Element besteht (697j/790a OR liefen grün, nur das Sammelelement 697l–697m fiel auf) — Wurzel: «Aufgehoben»-Text als Befund; Fund RECHTSLOGIK/or-697l
+- R · 5.10. · TJPG (SR 955.3) fehlt in FEDLEX-Linktabelle, Normtext-Korpus und Zitat-Muster von check:zitate («Art. 9 TJPG» ohne Link, maschinell ungeprüft)
+- R · 5.10. · Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
+- R · Abnahme David · Gründungs-Checklisten AG/GmbH nach TJPG: Hinweistext, «als Organ» bei AG (Art. 11 TJPG), Übergangsrecht weggelassen; nicht erwähnt: Gemeinwesen-Ausnahme Art. 3 lit. c TJPG, vereinfachtes Verfahren Art. 35/36 TJPV — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
+- R · 5.10. · ZH LS 215.2: Quell-URL gewechselt (Normen-Monitor 5.10.) — neue Fassung? vor Bau reproduzieren
+- S · 5.10. · Geplante Läufe starten 5–9 h verspätet (Frische 11:48 statt 04:43, Monitor 16:07 statt 07:17) — Fedlex-Frische verpasst Publikationen des Tages
+- I · Go David 05.10. · Automatik nach Monitor-Rückbau: LIK-Nachführung, Fedlex-Abkürzungen, Tarif-Stand, Verfall, ESTV-Snapshots sind Handarbeit nach Wochenbericht — Bots statt Sessions
+- I · 5.10. · Sessions lassen Worktrees und Zweige nach der Landung liegen (5.10.: 21 Zweige, 6 Worktrees; aufraeumen:git wird nicht gefahren) — Wurzel: automatisch statt Abschluss-Punkt
 - S · 5.10. · e2e/w224-r11-reiterleiste.e2e.ts «auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot (8/8), Ausnahmeliste zurückgebaut (QS-CI-ZEIT E2) — Wurzel beheben; FB S-24
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
 - S · 5.10. · tor-paritaet: (1) Sonde ignoriert Job-if (z. B. event_name != 'pull_request'), Tor in PR-gesperrtem Job zählt als PR-gedeckt; (2) check:perf-lighthouse gilt durch perf-kalibrierung.yml (--messen, ohne Assertion) als gedeckt — perf-nacht.yml könnte die Prüfung still verlieren (GP #1323) — Dach QS-CI-ZEIT
