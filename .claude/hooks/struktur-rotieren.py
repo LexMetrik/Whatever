@@ -433,10 +433,8 @@ def modus_hook(repo):
         hinweis = (
             "⚠️ Steuer-Doku-Budget überschritten (QS-TOK Re-Akkumulations-Wächter):\n"
             + "\n".join(meldungen)
-            + "\n\nAbschluss-Prosa gehört DIREKT in die Chronik/ins Archiv "
-            "(ROADMAP-CHRONIK.md bzw. archiv/STRUKTUR-SESSIONKARTEN.md), nicht in den "
-            "Session-Einstieg. Rotation läuft automatisch nur im sauberen Haupt-Checkout; "
-            "hier ggf. `npm run struktur:rotieren -- --write` und Karten/Chronik pflegen."
+            + "\n\nROADMAP.md auf ZIEL/JETZT/EINGANG kürzen; Erledigtes streicht der "
+            "abschliessende PR (Skill bauschritt Station D)."
         )
         print(
             json.dumps(
