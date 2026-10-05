@@ -97,7 +97,7 @@ ohne Rückfrage nach diesem Zyklus.
 ## Station C — Prüfung (unverändert)
 
 - Genannte **Tore nackt fahren** (kein `--silent`, keine Filter, volle
-  Ausgabe lesen); Abschluss `npm run gate`.
+  Ausgabe lesen); Abschluss = CI-Lauf grün am Kopf-SHA (Lauf-ID), kein lokales gate.
 - **Rot-Beweise (§6.7) nur mit sauberem Index:** erst eigene neue Dateien
   committen, DANN Wegwerf-Probe-Commit anlegen/verwerfen — `git reset
   --hard` danach verschluckt sonst untracked Neu-Dateien und uncommittete

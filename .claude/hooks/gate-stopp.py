@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""VORSCHLAGSDATEI (QS-SELBSTOPT 7.8.2026) — ersetzt .claude/hooks/gate-stopp.py.
-
-Anwendung durch David (die Berechtigungsschicht sperrt Hook-Änderungen für
-Sessions — zu Recht):
-
-    cp scripts/hooks-vorschlag-gate-stopp.py .claude/hooks/gate-stopp.py
-    git add .claude/hooks/gate-stopp.py scripts/hooks-vorschlag-gate-stopp.py
-    git rm scripts/hooks-vorschlag-gate-stopp.py
-
-Danach diese Vorschlagsdatei löschen (sonst zweite Wahrheit, §5).
-
-────────────────────────────────────────────────────────────────────────────
-Stop-Hook (FAHRPLAN-TOKEN-DISZIPLIN.md T-2, Ja David 11.6.2026): fährt
+"""Stop-Hook (FAHRPLAN-TOKEN-DISZIPLIN.md T-2, Ja David 11.6.2026): fährt
 das schnelle Tor (tsc · vitest · golden:vergleich via scripts/gate.sh
 schnell) NATIV nach jeder Antwort, wenn tor-relevante Dateien geändert sind.
 
@@ -31,12 +19,9 @@ läuft weiterhin; Rot speichert nie einen Fingerabdruck. mtime als Zutat ist
 bewusst konservativ — erneutes Speichern erzeugt höchstens einen ÜBERFLÜSSIGEN
 Lauf, nie einen übersprungenen nötigen.
 
-§17-Nachtrag 5.10.2026 (QS-CPU, feste Regel David «schwere Läufe in die
-CI»): statt `gate.sh schnell` (tsc · VOLLE vitest-Suite · golden, nach jeder
-Antwort jeder parallelen Session — Mac-Load ~27) läuft nur noch
-`vitest related` für die geänderten src/scripts-Dateien (gezielt, lokal
-höchstens 2 Worker per vite.config.ts). Typen, volle Suite und Golden
-belegt der PR-Lauf (Lauf-ID am Kopf-SHA).
+§17-Nachtrag 5.10.2026 (QS-CPU, Regel David «schwere Läufe in die CI»):
+statt gate.sh schnell nur `vitest related` der geänderten Dateien; Typen,
+volle Suite und Golden belegt der CI-Lauf am Kopf-SHA.
 
 Grenze (Anthropic best-practices, Abruf 7.8.2026): Claude Code übersteuert
 einen Stop-Hook nach 8 Blockierungen in Folge — dieser Hook ist ein
@@ -107,15 +92,10 @@ try:
 except OSError:
     pass
 
-# Gezielt statt voll: nur Tests, die von den geänderten Quellen abhängen.
-ziele = []
-for zeile in st.stdout.splitlines():
-    pfad = zeile[3:].split(" -> ")[-1].strip().strip('"')
-    if pfad.startswith(("src/", "scripts/")) and pfad.endswith((".ts", ".tsx")) \
-            and os.path.exists(os.path.join(repo, pfad)):
-        ziele.append(pfad)
+ziele = [z[3:].split(" -> ")[-1].strip().strip('"') for z in st.stdout.splitlines()]
+ziele = [z for z in ziele if z.startswith(("src/", "scripts/")) and os.path.isfile(os.path.join(repo, z))]
 if not ziele:
-    sys.exit(0)  # nur Konfig/Doku/gelöscht: Beleg ist der PR-Lauf
+    sys.exit(0)  # nur Konfig/gelöscht: Beleg ist der CI-Lauf
 
 try:
     gate = subprocess.run(
@@ -124,9 +104,7 @@ try:
         cwd=repo, capture_output=True, text=True, timeout=240,
     )
 except Exception as e:
-    print(f"gate-stopp.py: vitest related fehlgeschlagen ({e}) — gezielt "
-          f"`npx vitest run <datei>` fahren, Rest belegt der PR-Lauf.",
-          file=sys.stderr)
+    print(f"gate-stopp.py: vitest related fehlgeschlagen ({e}).", file=sys.stderr)
     sys.exit(2)
 
 if gate.returncode == 0:
