@@ -41,8 +41,11 @@ Push, keine Übergabe an `landung`** (§9).
   `check:sweep`, `check:smoke`, `check:normtext`, `check:vollstaendigkeit`, `check:entscheide`,
   `check:materialien`, `check:pdf`. Deckt beide Korpora gegen den **eingecheckten** Stand ab.
 - **`npm run check:netz`** — die **netzabhängigen** Tore separat (nicht in `gate`, weil sie eine
-  Quelle erreichen müssen): `check:caches`, `check:zitate`, `check:fedlex-versionen`,
-  `check:normtext-netz`, `check:pdf-netz`.
+  Quelle erreichen müssen; Runner `scripts/run-netz-alle.ts`, Stand 5.10.2026):
+  `check:netz:kette` = Gesetzestext (`check:caches`, `check:zitate`, `check:fedlex-versionen`,
+  `check:normtext-netz`, `check:pdf-netz`) — Exit 1 ⇒ **rot**; `check:netz:bericht` = alles
+  andere ⇒ nur Warnung. Exit 2 = Quelle nicht erreichbar ⇒ Lauf **unvollständig** (sichtbar,
+  nicht grün); im Monitor zwei Läufe in Folge ⇒ rot.
 
 **Wann was:** `check` läuft als Teil von `gate` ohnehin mit. `check:netz` **bewusst zusätzlich
 fahren**, wenn die Quelle wandern kann — also nach jedem Normtext-Bau/-Update und bei einem
