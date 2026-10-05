@@ -5,6 +5,8 @@
 // `lighthouse-budget.ts`; der Deckel (13000 OR / 12000 Start) steht dort in SCHWELLEN.
 //
 // ── ENTSCHEID DAVID 5.10.2026 («ja, TTI normieren wie TBT») ──
+// Variante D statt wörtlich «wie TBT» (B) — nach Vorlage der Messtabelle unten
+// bestätigt: «ja, D» (David, Chat 5.10.2026).
 //
 // ANLASS: Die OR-TTI riss den 13000-ms-Deckel mehrfach auf Ständen ohne
 // Produktänderung — 24.9.2026 (13.14 s bei Faktor 1.253; 13.01 s; laut Merkzettel,
