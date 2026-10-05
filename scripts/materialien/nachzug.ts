@@ -450,7 +450,7 @@ export function netzZettelAktion(e: NachzugErgebnis | null, zettelOffen: boolean
  * Grundlage für das Schliessen von Netz- und Pause-Zettel (Runner-Ausgabe ergebnis=echt).
  */
 export function echtesErgebnis(e: NachzugErgebnis): boolean {
-  if (e.netzfehler !== null) return false;
+  // Netzfehler: quellen=[] (Rückgabe vor der Kaskade) und befunde ≠ ∅ ⇒ false ohne Sonderzweig.
   return e.quellen.length > 0 || (e.befunde.size === 0 && e.hinweise.length === 0);
 }
 
