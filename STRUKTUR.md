@@ -12,8 +12,7 @@ dem 14.8.2026 (Entscheid David) **kein Bestand mehr**, sondern ein Erzeugnis:
 laufenden Fahrpläne liegen seit AP-8 der QS-TOK-Aufräumwelle (31.7.2026) NICHT
 mehr im Root, sondern in **`fahrplaene/`** (Stand 3.8.2026: 27 Dateien —
 NOTEBOOKLM-EINSATZ und OPENCASELAW-QUELLEN sind mit der Aufräumung 3.8.2026 nach
-`archiv/` gewandert; Dateinamen unverändert, geführt über `ROADMAP.md` /
-`npm run plan:next`; das Link-Tor `check:plan` scannt genau diesen Ordner). Aus der früheren Aufzählung
+`archiv/` gewandert; Dateinamen unverändert, seit 5.10.2026 eingefroren als Spezifikation, Stand und Reihenfolge in `ROADMAP.md`). Aus der früheren Aufzählung
 ist nur noch VORLAGEN-AUSBAU aktiv; GRUNDLAGEN, GMBH-GRUENDUNG, BGER-RECHTSWEG,
 VERTRAGS-VARIANTEN und FUNDAMENT-UMBAU sind mit der Archiv-Welle 31.7.2026
 nach `archiv/` gewandert, AG-GRUENDUNG schon am 7.6.2026. Abgeschlossene
