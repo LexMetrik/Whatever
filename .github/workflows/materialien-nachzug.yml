@@ -6,7 +6,9 @@
 # Ablauf: npm run materialien:nachzug (scripts/materialien/nachzug.ts, Begründungen dort):
 #   check:materialien-netz → je driftender Quelle materialien:snapshot + materialien →
 #   materialien:kaskade --ohne-revisionen → Pfad-Wache → Rauschschutz (angehängte dok-Zeilen).
-#   status=keine     → nichts zu tun / nur Datumsstempel, kein PR (idempotent).
+#   Vorprüfung (vor jedem Netz-Abruf): offener Nachzug-PR oder (schedule) letzter Lauf rot ⇒
+#   ::notice::, status=keine — kein wöchentlicher Wiederholungs-Vollcrawl (B1, 6.10.2026).
+#   status=keine     → nichts zu tun / nur Datumsstempel / Netzfehler beim Nachladen, kein PR.
 #   status=anfuegung → nur neue Dokumente: normaler PR.
 #   status=pruefen   → Dokument geändert, entlistet oder wieder gelistet: PR als ENTWURF.
 # Netz-/Count-Gate-Befunde (nicht von echter Drift unterscheidbar) sind ::warning::, kein PR,
@@ -70,11 +72,21 @@ jobs:
         id: datum
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
 
+      # Vorprüfung VOR jedem Netz-Abruf (Gegenprüfung 6.10.2026, B1; Logik: vorpruefung() in
+      # nachzug.ts): offener Bot-PR ⇒ Abbruch; letzter Lauf rot ∧ schedule ⇒ Abbruch
+      # (workflow_dispatch übersteuert). Exit 0 + ::notice::, status=keine.
       - name: Nachzug + Rauschschutz
         id: lauf
         env:
           QUELLEN: ${{ inputs.quellen }}
-        run: npm run materialien:nachzug -- --datum=${{ steps.datum.outputs.iso }} --quellen="${QUELLEN}"
+          AUSLOESER: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          OFFENE_KOEPFE=$(gh pr list --state open --limit 500 --json headRefName --jq '.[].headRefName')
+          LETZTER_LAUF=$(gh run list --workflow materialien-nachzug.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion // ""')
+          export OFFENE_KOEPFE LETZTER_LAUF
+          npm run materialien:nachzug -- --datum=${{ steps.datum.outputs.iso }} --quellen="${QUELLEN}"
 
       - name: Tore auf dem nachgeführten Stand
         id: tore
@@ -115,12 +127,8 @@ jobs:
             echo "::error::Nur neue Dokumente, aber Tore rot — kein PR. Log der Tor-Stufe lesen."
             exit 1
           fi
+          # Offener Bot-PR ⇒ schon die Stufe «Nachzug» bricht ab (vorpruefung, B1) — hier kein Zweitcheck.
           branch="chore/materialien-nachzug-${DATUM}"
-          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
-          if [ -n "$offen" ]; then
-            echo "PR #${offen} für ${branch} ist bereits offen (idempotent) — nichts zu tun."
-            exit 0
-          fi
           body="$NACHZUG_TMP/pr-body.md"
           if [ "$TORE" != 0 ]; then
             printf '\n**Tore im Bot-Lauf: ROT** — Log des Laufs %s/%s/actions/runs/%s.\n' \

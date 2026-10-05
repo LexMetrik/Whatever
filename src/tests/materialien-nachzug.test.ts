@@ -2,15 +2,17 @@
 // Bewiesen wird: Drift-Auswertung nur per Positiv-Liste (Netzfehler/Count-Gate = Hinweis, kein
 // Vollcrawl), Rauschschutz über angehängte dok-Zeilen, Reihenfolge snapshot → materialien je Quelle
 // vor EINER Kaskade ohne Revisionen, Werkzeugfehler ⇒ Exit ≠ 0, und die Workflow-Struktur
-// (kein Auto-Merge, Entwurf bei «pruefen», Staging = ERLAUBTE_PFADE).
+// (kein Auto-Merge, Entwurf bei «pruefen», Staging = ERLAUBTE_PFADE). Nachzug nach Gegenprüfung
+// 6.10.2026: Vorprüfung vor jedem Netz-Abruf (B1), rote Stufe festgenagelt (S1), Netzfehler im
+// Snapshot ⇒ verworfen statt rot (K1).
 import { describe, expect, it, beforeAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import {
-  ERLAUBTE_PFADE, Werkzeugfehler, fremdePfade, klassifiziereZustand, nachzug, parseQuellenFilter, prText,
-  werteNetzAus, type Lauf, type Werkzeuge,
+  ERLAUBTE_PFADE, NACHZUG_ZWEIG_PRAEFIX, Werkzeugfehler, fremdePfade, klassifiziereZustand, nachzug, netzfehlerAus,
+  parseQuellenFilter, prText, vorpruefung, werteNetzAus, type Lauf, type Werkzeuge,
 } from '../../scripts/materialien/nachzug';
 import { istRisikoPfad, behalten } from '../../scripts/gegenpruefung/kern';
 
@@ -135,6 +137,49 @@ describe('Pfad-Wache', () => {
   });
 });
 
+describe('netzfehlerAus — nur der erschöpfte Abruf ist ein Netzfehler (K1)', () => {
+  const ROT = 'soft-law-snapshot ROT: ';
+  it('erschöpfter Abruf (Timeout/fetch failed) ⇒ Grund', () => {
+    expect(netzfehlerAus(`x\n${ROT}fetchMitWiederholung: 4 Versuche erschöpft für https://a/b — fetch failed\n`))
+      .toBe('fetchMitWiederholung: 4 Versuche erschöpft für https://a/b — fetch failed');
+  });
+  it('Count-Gate, HTTP-Status, kein/zwei ROT-Zeilen, Marker nicht am Zeilenanfang ⇒ null', () => {
+    expect(netzfehlerAus(`${ROT}adapter-estv-mwst: ToC-Baum leer — Snapshot NICHT schreiben.`)).toBeNull();
+    expect(netzfehlerAus(`${ROT}adapter-seco: https://a HTTP 503.`)).toBeNull();
+    expect(netzfehlerAus('')).toBeNull();
+    const e = `${ROT}fetchMitWiederholung: 4 Versuche erschöpft für https://a — x`;
+    expect(netzfehlerAus(`${e}\n${e}`)).toBeNull();
+    expect(netzfehlerAus(`  ${e}`)).toBeNull();
+    expect(netzfehlerAus(`${ROT}Fehler: fetchMitWiederholung: 4 Versuche erschöpft für https://a — x`)).toBeNull();
+  });
+  it('Vertrag: soft-law-snapshot.ts und netz-retry.ts schreiben diese Formen wörtlich', () => {
+    expect(readFileSync(join(ROOT, 'scripts/materialien/soft-law-snapshot.ts'), 'utf8'))
+      .toContain('console.error(`soft-law-snapshot ROT: ${(e as Error).message}`)');
+    expect(readFileSync(join(ROOT, 'scripts/normtext/netz-retry.ts'), 'utf8'))
+      .toContain('throw new Error(`fetchMitWiederholung: ${versuche} Versuche erschöpft für ${url} — ${grund}`)');
+  });
+});
+
+describe('vorpruefung — kein Wiederholungs-Vollcrawl (B1)', () => {
+  const v = (o: Partial<Parameters<typeof vorpruefung>[0]>) =>
+    vorpruefung({ offeneKoepfe: [], letzterLauf: 'success', ausloeser: 'schedule', ...o });
+  it('offener Nachzug-PR ⇒ Abbruch, gleich welcher Auslöser und welches Datum', () => {
+    expect(v({ offeneKoepfe: ['feat/x', 'chore/materialien-nachzug-2026-09-28'] })).toMatch(/Nachzug-PR noch offen \(chore\/materialien-nachzug-2026-09-28\)/);
+    expect(v({ offeneKoepfe: ['chore/materialien-nachzug-2026-10-12'], ausloeser: 'workflow_dispatch' })).not.toBeNull();
+  });
+  it('fremde Köpfe (auch ähnlich benannt) ⇒ kein Abbruch', () => {
+    expect(v({ offeneKoepfe: ['chore/materialien-nachzugX', 'feat/chore/materialien-nachzug-1', ''] })).toBeNull();
+  });
+  it('letzter Lauf rot (failure/timed_out) + schedule ⇒ Abbruch; workflow_dispatch übersteuert', () => {
+    expect(v({ letzterLauf: 'failure' })).toMatch(/Takt pausiert/);
+    expect(v({ letzterLauf: 'timed_out' })).not.toBeNull();
+    expect(v({ letzterLauf: 'failure', ausloeser: 'workflow_dispatch' })).toBeNull();
+  });
+  it('letzter Lauf grün/abgebrochen/keiner ⇒ Nachzug fahren', () => {
+    for (const l of ['success', 'cancelled', '']) expect(v({ letzterLauf: l })).toBeNull();
+  });
+});
+
 // ── Ablauf mit Attrappen ─────────────────────────────────────────────────────────────────────
 interface Attrappe extends Werkzeuge {
   aufrufe: string[];
@@ -144,6 +189,8 @@ interface Attrappe extends Werkzeuge {
 function attrappe(o: {
   netz?: Lauf;
   exit?: Record<string, number>;
+  /** stderr je «skript --quelle=…»-Aufruf (Schlüssel: Aufruf ohne --datum) bzw. je Skript. */
+  stderr?: Record<string, string>;
   statusNach?: string;
   angehaengt?: string;
   sauberVorher?: boolean;
@@ -157,7 +204,9 @@ function attrappe(o: {
       a.aufrufe.push([skript, ...args].join(' '));
       if (skript === 'check:materialien-netz') return o.netz ?? { status: 0, ausgabe: '' };
       gefahren = true;
-      return { status: o.exit?.[skript] ?? 0, ausgabe: '' };
+      const quelle = args.find((x) => x.startsWith('--quelle='));
+      const exit = o.exit?.[quelle ? `${skript} ${quelle}` : skript] ?? o.exit?.[skript] ?? 0;
+      return { status: exit, ausgabe: (quelle && o.stderr?.[`${skript} ${quelle}`]) ?? o.stderr?.[skript] ?? '' };
     },
     gitStatus() {
       if (!gefahren) return o.sauberVorher === false ? ' M src/x.ts\n' : '';
@@ -242,6 +291,32 @@ describe('nachzug — Reihenfolge und Fehlerpfade', () => {
     expect(() => nachzug('heute', null, attrappe({}))).toThrow(/--datum/);
   });
 
+  it('K1: Netzfehler im Snapshot NACH erkannter Drift ⇒ verworfen, status keine, Warnung, keine Kaskade, kein Rot', () => {
+    const erschoepft = 'soft-law-snapshot ROT: fetchMitWiederholung: 4 Versuche erschöpft für https://www.gate.estv.admin.ch/x — The operation was aborted due to timeout\n';
+    const w = attrappe({
+      netz: DRIFT2,
+      exit: { 'materialien:snapshot --quelle=estv-mwst': 1 },
+      stderr: { 'materialien:snapshot --quelle=estv-mwst': `Warnung irgendwas\n${erschoepft}` },
+    });
+    const e = nachzug('2026-10-12', null, w);
+    expect(e.status).toBe('keine');
+    expect(e.netzfehler).toMatch(/^estv-mwst: fetchMitWiederholung: 4 Versuche erschöpft/);
+    expect(w.verworfen).toBe(1);
+    expect(e.widerspruch).toEqual([]);
+    expect(w.aufrufe.at(-1)).toBe('materialien:snapshot --datum=2026-10-12 --quelle=estv-mwst'); // keine Kaskade danach
+    expect(w.warnungen.at(-1)).toContain('Netzfehler beim Nachladen (estv-mwst) — nächster Lauf versucht erneut');
+  });
+
+  it('K1-Grenze: Count-Gate/Struktur-Bruch bei erreichbarer Quelle bleibt Werkzeugfehler (rot)', () => {
+    const w = attrappe({
+      netz: DRIFT2,
+      exit: { 'materialien:snapshot': 1 },
+      stderr: { 'materialien:snapshot': 'soft-law-snapshot ROT: adapter-seco: ARG nur 3 Artikel-PDFs (< 60) — Quell-Bruch? Snapshot NICHT schreiben.\n' },
+    });
+    expect(() => nachzug('2026-10-12', null, w)).toThrow(/snapshot --quelle=seco rot/);
+    expect(w.verworfen).toBe(0);
+  });
+
   it('PR-Text nennt Status, Quellen-Tabelle und Hinweise', () => {
     const e = nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: ANGEHAENGT2 }));
     const t = prText(e, '2026-10-12');
@@ -255,6 +330,37 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
     const r = spawnSync('npx', ['vite-node', 'scripts/materialien/nachzug-run.ts', '--', '--quellen=bger'], { cwd: ROOT, encoding: 'utf8' });
     expect(r.status).toBe(1);
     expect(r.stderr).toContain('Werkzeugfehler');
+  }, 60_000);
+
+  /** Runner mit Ersatz-npm (nie Netz): Protokoll der npm-Aufrufe + Prozess-Ergebnis. */
+  function runner(env: Record<string, string>) {
+    const dir = mkdtempSync(join(tmpdir(), 'mat-nr-'));
+    const log = join(dir, 'log');
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "$*" >> "${log}"\nexit 2\n`);
+    chmodSync(join(dir, 'npm'), 0o755);
+    const r = spawnSync(join(ROOT, 'node_modules/.bin/vite-node'), ['scripts/materialien/nachzug-run.ts', '--', '--datum=2026-10-12'], {
+      cwd: ROOT, encoding: 'utf8',
+      env: { ...process.env, PATH: `${dir}:${process.env.PATH}`, GITHUB_OUTPUT: join(dir, 'out'), GITHUB_STEP_SUMMARY: '', ...env },
+    });
+    return { r, npm: existsSync(log) ? readFileSync(log, 'utf8') : '', out: existsSync(join(dir, 'out')) ? readFileSync(join(dir, 'out'), 'utf8') : '' };
+  }
+  it('B1: Vorprüfung bricht VOR jedem npm-/Netz-Aufruf ab — Exit 0, ::notice::, status=keine', () => {
+    for (const env of [
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'failure' },
+      { AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: 'feat/x\nchore/materialien-nachzug-2026-10-05', LETZTER_LAUF: 'success' },
+    ]) {
+      const { r, npm, out } = runner(env);
+      expect(r.status).toBe(0);
+      expect(r.stdout).toContain('::notice::Materialien-Nachzug übersprungen');
+      expect(npm).toBe('');
+      expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\n');
+    }
+  }, 60_000);
+  it('B1: AUSLOESER ohne OFFENE_KOEPFE/LETZTER_LAUF ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
+    const { r, npm } = runner({ AUSLOESER: 'schedule' });
+    expect(r.status).toBe(1);
+    expect(r.stderr).toContain('nicht verdrahtet');
+    expect(npm).toBe('');
   }, 60_000);
 });
 
@@ -324,6 +430,54 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(yml).toContain('gh workflow run ci.yml --ref "$branch"');
   });
 
+  it('S1: rote Stufe — Widerspruch ODER (Nachzug ∧ Tore rot); Werkzeugfehler färbt über die Stufe selbst', () => {
+    const zeilen = yml.split('\n');
+    const i = zeilen.findIndex((z) => z.includes('- name: Lauf rot färben'));
+    expect(i).toBeGreaterThan(0);
+    const ausdruck = /^\s+if: (.+)$/.exec(zeilen[i + 1])![1];
+    // Mini-Auswerter für genau diese GitHub-Ausdrucksform (Ausgaben sind Strings, '' = nicht gesetzt).
+    const wahr = (ctx: Record<string, Record<string, string>>): boolean => {
+      const js = ausdruck
+        .replace(/steps\.(\w+)\.outputs\.(\w+)/g, (_, st: string, k: string) => JSON.stringify(ctx[st]?.[k] ?? ''))
+        .replace(/([!=])=/g, '$1==');
+      expect(js).toMatch(/^[\s"'\w,()|&!=-]*$/);
+      return new Function(`return (${js});`)() as boolean;
+    };
+    const lauf = (status: string, widerspruch = '') => ({ status, widerspruch });
+    expect(wahr({ lauf: lauf('keine', 'seco') })).toBe(true); // Widerspruch, Tore übersprungen
+    expect(wahr({ lauf: lauf('anfuegung', 'estv-mwst'), tore: { rc: '0' } })).toBe(true);
+    expect(wahr({ lauf: lauf('anfuegung'), tore: { rc: '1' } })).toBe(true);
+    expect(wahr({ lauf: lauf('pruefen'), tore: { rc: '1' } })).toBe(true);
+    expect(wahr({ lauf: lauf('pruefen'), tore: { rc: '0' } })).toBe(false);
+    expect(wahr({ lauf: lauf('keine') })).toBe(false); // nichts zu tun / Netzfehler / Vorprüfung
+    // Werkzeugfehler: Exit 1 der Stufe «Nachzug» färbt den Lauf selbst — nichts darf das schlucken.
+    expect(yml).not.toMatch(/continue-on-error/);
+    expect(zeilen[zeilen.findIndex((z) => z.includes('- name: Nachzug + Rauschschutz')) + 1]).toMatch(/^\s+id: lauf$/);
+    expect(runBlock(yml, 'Nachzug + Rauschschutz')).toMatch(/^set -euo pipefail$/m);
+  });
+
+  it('B1: Stufe «Nachzug» holt offene PR-Köpfe und letzten Lauf VOR dem Bot-Aufruf und reicht sie durch', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'mat-vp-'));
+    const log = join(dir, 'log');
+    writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash
+echo "gh $*" >> "${log}"
+if [ "$1 $2" = "pr list" ]; then printf 'feat/x\\nchore/materialien-nachzug-2026-10-05\\n'; fi
+if [ "$1 $2" = "run list" ]; then echo failure; fi
+`);
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $LETZTER_LAUF | $OFFENE_KOEPFE" >> "${log}"\n`);
+    for (const n of ['gh', 'npm']) chmodSync(join(dir, n), 0o755);
+    const block = runBlock(yml, 'Nachzug + Rauschschutz').replace('${{ steps.datum.outputs.iso }}', '2026-10-12');
+    const r = spawnSync('bash', ['-c', block], { encoding: 'utf8', env: { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule' } });
+    expect(r.status).toBe(0);
+    const z = readFileSync(log, 'utf8').trim().split('\n');
+    expect(z[0]).toMatch(/^gh pr list --state open --limit \d+ --json headRefName /);
+    expect(z[1]).toMatch(/^gh run list --workflow materialien-nachzug\.yml --status completed --limit 1 --json conclusion /);
+    expect(z[2]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | failure | feat/x');
+    expect(z[3]).toBe('chore/materialien-nachzug-2026-10-05');
+    expect(yml).toMatch(/AUSLOESER: \$\{\{ github\.event_name \}\}/);
+    expect(yml).toContain(`branch="${NACHZUG_ZWEIG_PRAEFIX}\${DATUM}"`);
+  });
+
   it('Staging = genau ERLAUBTE_PFADE (eine Liste, zwei Leser)', () => {
     const m = /git add -A -- (.+)$/m.exec(yml);
     expect(m).not.toBeNull();
@@ -341,7 +495,6 @@ describe('Workflow materialien-nachzug.yml', () => {
         writeFileSync(
           join(dir, 'bin', name),
           `#!/usr/bin/env bash\necho "${name} $*" >> "$LOG"\n` +
-            (name === 'gh' ? 'if [ "$1 $2" = "pr list" ]; then printf \'%s\' "${GH_OFFEN:-}"; fi\n' : '') +
             'exit 0\n',
         );
         chmodSync(join(dir, 'bin', name), 0o755);
@@ -372,10 +525,8 @@ describe('Workflow materialien-nachzug.yml', () => {
     it('pruefen ⇒ PR als Entwurf', () => {
       expect(fahre({ STATUS: 'pruefen' }).aufrufe.find((a) => a.startsWith('gh pr create'))).toContain('--draft');
     });
-    it('PR schon offen ⇒ nichts gepusht (idempotent)', () => {
-      const r = fahre({ STATUS: 'anfuegung', GH_OFFEN: '42' });
-      expect(r.status).toBe(0);
-      expect(r.aufrufe.some((a) => a.startsWith('git '))).toBe(false);
+    it('kein Zweitcheck auf offene PRs mehr (die Vorprüfung trägt die Sorge, B1)', () => {
+      expect(fahre({ STATUS: 'anfuegung' }).aufrufe.some((a) => a.startsWith('gh pr list'))).toBe(false);
     });
     it('anfuegung mit roten Toren ⇒ Exit 1, kein git/gh', () => {
       const r = fahre({ STATUS: 'anfuegung', TORE: '1' });

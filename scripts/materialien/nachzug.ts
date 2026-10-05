@@ -31,6 +31,19 @@
 //      ist ein Werkzeugfehler: der Lauf wird rot (der Wächter sieht ihn), sonst führe der Bot
 //      jede Woche denselben Vollcrawl, ohne dass es jemand merkt.
 //
+//   7. NETZFEHLER IM SNAPSHOT (Entscheid Orchestrator nach Gegenprüfung 6.10.2026, K1): bricht
+//      ein Snapshot NACH erkannter Drift an einem erschöpften Abruf ab (fetchMitWiederholung wirft
+//      nur, wenn auch der letzte Versuch WARF — Fetch-Fehler/Timeout, nie ein HTTP-Status), ist das
+//      kein Werkzeugfehler: Arbeitsbaum verwerfen, Warnung, Status «keine», kein PR — der nächste
+//      Lauf versucht erneut. Count-Gate/Struktur-Bruch bei erreichbarer Quelle bleibt rot.
+//
+// VORPRÜFUNG (Gegenprüfung 6.10.2026, B1) — vor JEDEM Netz-Abruf, im Runner: offener Bot-PR
+// (Kopf-Präfix NACHZUG_ZWEIG_PRAEFIX) ⇒ Abbruch, sonst meldete das Netz-Tor dieselbe Drift jede
+// Woche erneut (Vollcrawl ESTV-MWST + zweiter, kollidierender PR). Letzter abgeschlossener Lauf
+// rot und Auslöser `schedule` ⇒ Abbruch (Widerspruch/Werkzeugfehler noch nicht behoben — sonst
+// derselbe Vollcrawl jede Woche); `workflow_dispatch` übersteuert das bewusst (Handprobe nach der
+// Reparatur, deren grüner Lauf den Takt wieder freigibt).
+//
 // Exit-Politik (Monitor-Entscheid David 5.10.2026): Materialien färben nie rot — rot NUR bei
 // Werkzeugfehler (Klasse Werkzeugfehler unten bzw. widerspruch ≠ ∅).
 
@@ -124,6 +137,53 @@ export function werteNetzAus(ausgabe: string): NetzAuswertung {
     );
   }
   return { drift: QUELLEN.filter((q) => befunde.has(q)), befunde, hinweise };
+}
+
+// ── Vorprüfung (B1): vor jedem Netz-Abruf ────────────────────────────────────────────────────
+
+/** Kopf-Präfix der Bot-Zweige; der Workflow hängt das Abrufdatum an (Test koppelt). */
+export const NACHZUG_ZWEIG_PRAEFIX = 'chore/materialien-nachzug-';
+/** `conclusion`-Werte (gh run list) eines roten Laufs. */
+const ROTE_SCHLUESSE = new Set(['failure', 'timed_out']);
+
+export interface VorpruefEingabe {
+  /** headRefName aller offenen PRs (gh pr list --state open). */
+  offeneKoepfe: string[];
+  /** conclusion des letzten ABGESCHLOSSENEN Laufs dieses Workflows ('' = keiner). */
+  letzterLauf: string;
+  /** github.event_name des laufenden Laufs. */
+  ausloeser: string;
+}
+
+/** Abbruchgrund (Exit 0 + ::notice::, kein Netz-Abruf) oder null = Nachzug fahren. */
+export function vorpruefung(v: VorpruefEingabe): string | null {
+  const offen = v.offeneKoepfe.map((k) => k.trim()).filter((k) => k.startsWith(NACHZUG_ZWEIG_PRAEFIX));
+  if (offen.length) {
+    return `Nachzug-PR noch offen (${offen.join(', ')}) — erst prüfen und landen oder schliessen; kein erneuter Abruf.`;
+  }
+  if (v.ausloeser === 'schedule' && ROTE_SCHLUESSE.has(v.letzterLauf.trim())) {
+    return `Letzter Lauf endete «${v.letzterLauf.trim()}» (Werkzeugfehler/Widerspruch offen) — Takt pausiert bis zu einem grünen Lauf per workflow_dispatch.`;
+  }
+  return null;
+}
+
+// ── Netzfehler im Snapshot (K1) ──────────────────────────────────────────────────────────────
+
+/** Schlusszeile von soft-law-snapshot.ts bei Abbruch + Wurf-Text von fetchMitWiederholung (Test koppelt). */
+const SNAPSHOT_ROT = /^soft-law-snapshot ROT: (.*)$/;
+const ERSCHOEPFT = /^fetchMitWiederholung: \d+ Versuche erschöpft für \S+ — /;
+
+/**
+ * Der Abrufgrund, wenn ein roter Snapshot GENAU an einem erschöpften Abruf scheiterte (stderr),
+ * sonst null (⇒ Werkzeugfehler). Verlangt genau eine ROT-Schlusszeile.
+ */
+export function netzfehlerAus(stderr: string): string | null {
+  const rot = stderr
+    .split('\n')
+    .map((z) => SNAPSHOT_ROT.exec(z.normalize('NFC').replace(/\r$/, '')))
+    .filter((m): m is RegExpExecArray => m !== null);
+  if (rot.length !== 1) return null;
+  return ERSCHOEPFT.test(rot[0][1]) ? rot[0][1] : null;
 }
 
 // ── Rauschschutz: angehängte Zustandszeilen klassifizieren ────────────────────────────────────
@@ -256,7 +316,10 @@ export interface Lauf {
 
 /** Seiteneffekte, injiziert (CLI: echte Prozesse/git; Test: Attrappen). */
 export interface Werkzeuge {
-  /** `npm run <skript> -- <args>`; erfasst=true ⇒ stdout+stderr in `ausgabe` (sonst durchgereicht). */
+  /**
+   * `npm run <skript> -- <args>`; erfasst=true ⇒ stdout+stderr in `ausgabe`; sonst stdout live
+   * durchgereicht und nur stderr in `ausgabe` (Netzfehler-Erkennung K1).
+   */
   npm(skript: string, args: string[], erfasst?: boolean): Lauf;
   gitStatus(): string;
   /** Inhalt des Zustands-Manifests in HEAD bzw. im Arbeitsbaum. */
@@ -279,6 +342,8 @@ export interface NachzugErgebnis {
   widerspruch: Quelle[];
   befunde: Map<Quelle, string[]>;
   klassifikation: Klassifikation | null;
+  /** Snapshot an erschöpftem Abruf abgebrochen (K1) ⇒ verworfen, kein PR, nächster Lauf erneut. */
+  netzfehler: string | null;
 }
 
 export function parseQuellenFilter(roh: string | undefined): Quelle[] | null {
@@ -294,6 +359,7 @@ export function nachzug(datum: string, filter: Quelle[] | null, w: Werkzeuge): N
   if (!/^\d{4}-\d{2}-\d{2}$/.test(datum)) throw new Werkzeugfehler('--datum=YYYY-MM-DD erforderlich (§2, kein Date.now).');
   const leer: NachzugErgebnis = {
     status: 'keine', quellen: [], hinweise: [], ausgelassen: [], widerspruch: [], befunde: new Map(), klassifikation: null,
+    netzfehler: null,
   };
   const vorher = w.gitStatus();
   if (vorher.trim() !== '') throw new Werkzeugfehler(`Arbeitsbaum nicht sauber vor dem Nachzug:\n${vorher}`);
@@ -319,7 +385,13 @@ export function nachzug(datum: string, filter: Quelle[] | null, w: Werkzeuge): N
   for (const q of quellen) {
     w.log(`── Quelle ${q}: materialien:snapshot, dann materialien ──`);
     const s = w.npm('materialien:snapshot', [`--datum=${datum}`, `--quelle=${q}`]);
-    if (s.status !== 0) throw new Werkzeugfehler(`materialien:snapshot --quelle=${q} rot (Exit ${s.status}).`);
+    if (s.status !== 0) {
+      const nf = netzfehlerAus(s.ausgabe);
+      if (nf === null) throw new Werkzeugfehler(`materialien:snapshot --quelle=${q} rot (Exit ${s.status}).`);
+      verwirf(w);
+      w.warnung(`Netzfehler beim Nachladen (${q}) — nächster Lauf versucht erneut; Änderungen verworfen, kein PR: ${nf}`);
+      return { ...basis, netzfehler: `${q}: ${nf}` };
+    }
     const p = w.npm('materialien', [`--datum=${datum}`]);
     if (p.status !== 0) throw new Werkzeugfehler(`materialien (Projektion nach ${q}) rot (Exit ${p.status}).`);
   }
@@ -339,12 +411,16 @@ export function nachzug(datum: string, filter: Quelle[] | null, w: Werkzeuge): N
     w.warnung(`WIDERSPRUCH ${q}: check:materialien-netz meldet Drift, der Snapshot schrieb keine Zustandsänderung — Detektor oder Snapshot defekt (Lauf wird rot).`);
   }
   if (kl.status === 'keine') {
-    w.verwerfe();
-    const rest = w.gitStatus();
-    if (rest.trim() !== '') throw new Werkzeugfehler(`Verwerfen liess Änderungen stehen:\n${rest}`);
+    verwirf(w);
     w.log('Nur Lauf-Kopfzeilen/Datumsstempel — Arbeitsbaum verworfen, kein PR.');
   }
   return { ...basis, status: kl.status, quellen, widerspruch, klassifikation: kl };
+}
+
+function verwirf(w: Werkzeuge): void {
+  w.verwerfe();
+  const rest = w.gitStatus();
+  if (rest.trim() !== '') throw new Werkzeugfehler(`Verwerfen liess Änderungen stehen:\n${rest}`);
 }
 
 // ── PR-Text ────────────────────────────────────────────────────────────────────────────────────
