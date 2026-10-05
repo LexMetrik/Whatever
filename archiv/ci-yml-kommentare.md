@@ -896,6 +896,13 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # bevor eine unbalancierte oder lückenhafte Verteilung Tests verschluckt.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E1, Ergänzung, Block oben unverändert):**
+> Der Union-Wächter steht seither im Job `tore-checks` (einmal je Lauf, auch im
+> PR-Lauf), nicht mehr in jedem Shard: die Shards starten im PR-Lauf nicht mehr
+> (ci-068), der Wächter soll dort trotzdem greifen. «Kein Test verloren» ist
+> damit vor dem Merge geprüft — im PR UND in der Warteschlange (tore-checks
+> läuft in beiden, ausser bei art=doku).
+
 ## ci-044 · e2e · Playwright-Browser (Chromium)
 
 ```text
@@ -999,6 +1006,13 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # Testlauf bleibt rot, ganz gleich, wie dieser Schritt ausgeht.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E2, Ergänzung, Block oben unverändert):**
+> Die Regel «Flackern ist ROT» samt Ausnahmeliste (`e2e/flake-ausnahmen.json`)
+> und Melde-Modus (`e2e/flake-modus.json`) ist durch den Entscheid David
+> 5.10.2026 abgelöst: Retry-Grün ist eine Warnung plus Reparatur-Zettel, kein
+> Rot mehr. Beide Dateien sind zurückgebaut. Neue Regel, Begründung und
+> Zettel-Mechanik: ci-069. Stellung und `!cancelled()` des Schritts bleiben.
+
 ## ci-048 · e2e · Playwright-Traces ablegen (nur bei rotem Shard)
 
 ```text
@@ -1056,6 +1070,17 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
   # code-fern-Läufe ihre Shards ohnehin nie fahren.
 ```
 
+> **Richtigstellung 5.10.2026 (QS-CI-ZEIT E6, Ergänzung, Block oben unverändert —
+> §2b: der Satz bleibt als Beleg seines Standes stehen):** Der Absatz «WARUM
+> `bau` NICHT in `needs` steht» trifft nicht zu: `tore` lädt KEIN dist-Artefakt
+> (weder vor noch nach der Aufteilung QS-CI-ZEIT T2, ci-063/ci-065), ein rotes
+> `bau` macht `tore` also nicht rot. Gedeckt ist der Fall trotzdem — über Fall
+> (3) dieses Jobs: rotes `bau` ⇒ Shards `skipped` bei art=code ⇒ «Browser-Smoke
+> (Ergebnis)» ROT; seit 5.10.2026 zusätzlich über «Perf-Budget» (verlangt
+> Browser-Smoke = success, ci-066) und über `tore-typen` für den häufigsten
+> Bau-Bruch, den Typfehler (ci-067). Im PR-Lauf läuft `bau` seit 5.10.2026
+> nicht mehr (ci-068); dort greift Fall (2d).
+
 ## ci-050 · e2e-ergebnis · if
 
 ```text
@@ -1100,6 +1125,14 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
     # Messung am Job `bau`); sonst misst `perf` weiterhin echt.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> Der Entscheid David 26.7.2026 «Perf nur auf main/merge_group» (auch ci-001
+> Punkt 4) wird durch den Entscheid David 5.10.2026 ergänzt: die
+> Lighthouse-Metriken (`check:perf-lighthouse`) laufen nicht mehr in
+> merge_group/push, sondern nächtlich gegen main (`perf-nacht.yml`, Zettel bei
+> Rot). In merge_group/push bleibt die Bundle-Topologie (`check:perf-budget`)
+> merge-blockierend; Job-`if:` unverändert. Detail: ci-070.
+
 ## ci-052 · perf · needs
 
 ```text
@@ -1127,6 +1160,10 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # Single Source of Truth statt Duplikat — Details in
       # scripts/ci/playwright-install.sh.
 ```
+
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> Der Schritt ist aus `perf-messung` entfallen — ohne Lighthouse braucht der Job
+> keinen Chromium mehr. Derselbe Aufruf steht jetzt in `perf-nacht.yml` (ci-070).
 
 ## ci-054 · merge-schutz · merge-schutz
 
@@ -1318,6 +1355,11 @@ verschobener Altkommentar).
   # `!cancelled()`: läuft auch, wenn ein Teil rot ist — genau dafür ist er da.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E4, Ergänzung, Block oben unverändert):**
+> Fünfter Teil-Job `tore-typen` (`tsc -b`, ci-067). Er steht in der Fallmatrix
+> neben Tests und Lint: (1) verlangt auch typen=success, (2) lässt typen=skipped
+> nur bei art=doku gelten, (3)–(5) gelten für typen genauso.
+
 ## ci-066 · perf · perf
 
 ```text
@@ -1345,4 +1387,186 @@ verschobener Altkommentar).
   # art=code, nicht bei bau_perf_belegt); bau=success fordert `perf-messung`.
   # KOSTEN: bei roter Treue läuft die Messung trotzdem (Runner-Minuten, keine
   # Wanduhr) — bewusst in Kauf genommen.
+```
+
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> «perf-messung» misst seither nur noch die Bundle-Topologie (Name: «Perf-Messung
+> (Bundle-Topologie, parallel zu den Shards)»); der Required-Kontext «Perf-Budget
+> (§15 — nur bei grüner Treue)» behält Namen und Wertung (Tore + Browser-Smoke
+> (Ergebnis) + Messung), die Messung ist nur schmaler. Lighthouse: ci-070.
+
+## ci-067 · tore-typen · tore-typen
+
+Neu 5.10.2026 (QS-CI-ZEIT E4, Auftrag David «CI-Zeit verringern»; kein
+verschobener Altkommentar). Gilt auch für den Schritt «Build» im Job `bau`.
+
+```text
+  # ── Typprüfung aus `bau` gelöst (QS-CI-ZEIT E4, 5.10.2026) ──────────────────
+  # ANLASS: 71 von 95 s des Schritts «Build» im Job `bau` waren `tsc -b`
+  # (Messung 5.10.2026). `bau` liegt im merge_group-Lauf auf dem kritischen
+  # Pfad (bau → Browser-Shards); die Typprüfung braucht dort niemand — sie ist
+  # ein Tor, kein Bau-Schritt.
+  #
+  # NACHWEIS, dass `vite build` die Typprüfung nicht braucht (lokal 5.10.2026,
+  # Commit-Basis 14c9ecab5): alle drei tsconfig-Projekte (app/node/scripts)
+  # tragen `noEmit: true`, `tsc -b` schreibt nur `node_modules/.tmp/*.tsbuildinfo`.
+  # `npm run build` (mit tsc) und `npm run build:dist` (ohne tsc, nach
+  # `rm -rf dist node_modules/.tmp public/such-index`) ergaben ein BYTE-GLEICHES
+  # dist: 20095 Dateien, sha256-Liste identisch (`cmp` ohne Abweichung).
+  # Und `tsc -b` läuft ohne die gen:*-Ausgaben grün (public/such-index fehlte,
+  # Exit 0) — die Reihenfolge `tsc -b && build:dist` in package.json ist frei.
+  # ROT-BEWEIS (§6.7) lokal: eingeschleuster Typfehler in src/main.tsx ⇒
+  # `npx tsc -b` Exit 2 (TS2322).
+  #
+  # `tore-typen` geht in den Sammel-Job `tore` ein (dieselbe Regel wie Tests/
+  # Lint: nur success, Skip nur bei art=doku; Fallmatrix ci-065 + Nachtrag).
+  # `npm run build` (lokal, Vercel buildCommand) bleibt MIT `tsc -b`.
+```
+
+Abgelöster Inline-Kommentar am Schritt «Build» im Job `bau` (stand bis 5.10.2026
+direkt in ci.yml, nicht im Archiv; wörtlich):
+
+```text
+      # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
+      # hier die ganze Kette, bevor tore/e2e überhaupt starten.
+```
+
+## ci-068 · bau/e2e/e2e-ergebnis · if (Browser nur in der Warteschlange)
+
+Neu 5.10.2026 (QS-CI-ZEIT E1; kein verschobener Altkommentar).
+
+```text
+  # ── Browser-Smoke nur noch in merge_group/workflow_dispatch/push ─────────────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «(a) Browser nur in
+  # Warteschlange + Wackel-Regel dort lockern + Tempo-Messung nachts?»; die
+  # Warteschlange bleibt ausdrücklich bestehen).
+  # MESSBASIS (Recherche 5.10.2026, 300 Queue-Läufe): 10× Browser-rot in der
+  # Queue nach grünem PR-Lauf, davon 0 echte Zusammenstösse (7× Flacker-
+  # Wächter, 4× Install-Timeout 1.10.2026). Der PR-Lauf der Shards fand also
+  # nichts, was die Queue nicht ohnehin fand — er kostete nur Wanduhr.
+  #
+  # UMSETZUNG:
+  #   · `e2e` (8 Shards): `github.event_name != 'pull_request'` im Job-`if:`.
+  #     push (ohne Push-Diät) und workflow_dispatch fahren unverändert.
+  #   · `bau`: ebenfalls nicht im PR-Lauf — im PR braucht kein Job das dist
+  #     (Tore lesen es nicht, Perf läuft im PR seit 26.7.2026 nicht, Deploy nur
+  #     auf push). Typfehler fängt im PR `tore-typen` (ci-067), SSR-Fehler
+  #     `check:smoke` in `tore-checks`. Restrisiko: ein reiner vite-/prerender-
+  #     Bruch ohne Typ-/SSR-Fehler zeigt sich erst in der Queue — dort weiterhin
+  #     merge-blockierend (bau → Shards → Browser-Smoke (Ergebnis)).
+  #   · `e2e-ergebnis` (Required-Kontext «Browser-Smoke (Ergebnis)»): neuer Fall
+  #     (2d) e2e=skipped UND event=pull_request → grün, mit ::notice und Zeile
+  #     in der Step-Summary («bewusst nicht gelaufen»). In merge_group gelten die
+  #     alten Fälle unverändert: nur success grün; skipped nur bei art=doku/
+  #     code-fern; cancelled/failure/verirrter Skip ROT (F2c).
+  #   · Union-Wächter `check:e2e-shards` von den Shards nach `tore-checks`
+  #     (Nachtrag ci-043).
+  # Die Rechtslogik-/Rechtsdaten-Tore (Vitest, Korpus, Golden) laufen im PR
+  # UND in der Queue unverändert merge-blockierend (Job `tore`).
+```
+
+## ci-069 · e2e/e2e-ergebnis · Flacker-Wächter + Reparatur-Zettel
+
+Neu 5.10.2026 (QS-CI-ZEIT E2; kein verschobener Altkommentar).
+
+```text
+  # ── Wackel-Regel gelockert: Retry-Grün = Warnung + Zettel (QS-CI-ZEIT E2) ────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «… Wackel-Regel dort
+  # lockern …»); löst die Regel vom 8.9.2026 (#779, ci-047) ab.
+  # MESSBASIS (300 Queue-Läufe): von 10 Browser-Röten in der Queue nach grünem
+  # PR waren 7 Flacker-Wächter-Rot, 0 echte Zusammenstösse. Ein Rauswurf aus der
+  # Queue kostet den ganzen Eintrag samt Nachfolgern — für einen Test, der beim
+  # zweiten Versuch grün war.
+  #
+  # NEU (scripts/check-e2e-flake.ts):
+  #   · Retry-Grün ⇒ Exit 0, `::warning::FLACKERT …` im Log und in der
+  #     Step-Summary, Fund-Datei `flake-funde-gruppe-N.json` (Artefakt, 1 Tag).
+  #   · HART ROT bleibt: Test in allen Versuchen rot (`stats.unexpected > 0`,
+  #     zusätzlich zum ohnehin roten Playwright-Schritt); Report fehlt/unlesbar/
+  #     ohne Zähler; `stats.flaky > 0` ohne zuordenbaren Test. Nicht gelaufene
+  #     Specs fängt weiterhin der Union-Wächter `check:e2e-shards` (F2-
+  #     Verschärfung i, jetzt in tore-checks, Nachtrag ci-043).
+  #   · REPARATUR-ZETTEL im Job `e2e-ergebnis` (nur merge_group/push; bei
+  #     workflow_dispatch nur die Warnung, weil der Stand dort ein beliebiger
+  #     Arbeitszweig sein kann): scripts/ci/flake-zettel.sh legt je Spec ein
+  #     Issue «Flackert: e2e/<spec>» (Label `flake`) an; offenes Issue ⇒ höchstens
+  #     ein Kommentar je Tag. Muster und Fehlerseite wie prod-smoke.yml («Bei Rot
+  #     — sichtbaren Aufgaben-Zettel anlegen»): trap ERR ⇒ ::warning, nie rot;
+  #     alle drei Zettel-Schritte `continue-on-error`, damit die Wertung im
+  #     Folgeschritt nie an der Zettel-Pflege hängt.
+  #   · RECHTE: `issues: write` (+ `contents: read` für den Sparse-Checkout von
+  #     scripts/ci, `actions: read` für den Artefakt-Download) NUR in diesem Job,
+  #     nicht in den Shards, die PR-Code ausführen.
+  #
+  # RÜCKBAU (§17-Gegengewicht): `e2e/flake-ausnahmen.json` (Duldung mit 30-Tage-
+  # Verfall) und `e2e/flake-modus.json` (Melde-Modus bis Stichtag) hatten nur
+  # die Aufgabe, ein ROT zu unterdrücken bzw. aufzuschieben. Ohne Rot dulden sie
+  # nichts mehr; ihre Erinnerungsfunktion (Verfall erzwingt Wurzel-Fix) trägt
+  # jetzt der offene Zettel. Der deterministische Erstfehler w224-r11 (8/8 Läufe
+  # im 1. Versuch rot, Ausnahme lief bis 20.10.2026) steht als Wurzelfix-Posten
+  # im ROADMAP-EINGANG.
+```
+
+## ci-070 · perf-messung · perf-messung (Lighthouse nachts)
+
+Neu 5.10.2026 (QS-CI-ZEIT E3; kein verschobener Altkommentar).
+
+```text
+  # ── Lighthouse aus der Warteschlange in den Nachtlauf (QS-CI-ZEIT E3) ────────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «… Tempo-Messung
+  # nachts?»); ergänzt den Entscheid 26.7.2026 «Perf nur auf main/merge_group»
+  # (ci-001 Punkt 4, ci-051).
+  # MESSBASIS (300 Queue-Läufe): 7 von 17 Queue-Röten waren Lighthouse-Rauschen,
+  # z. B. TTI 13,61 s > Deckel 13,0 s bei unverändertem Code — die Messung
+  # streut auf dem heterogenen Runner-Pool stärker als die Deckel-Reserve.
+  #
+  # UMSETZUNG:
+  #   · `perf-messung` (ci.yml): nur noch `check:perf-budget` (Bundle-Topologie,
+  #     Chrome-frei, deterministisch); Playwright-Cache/-Install entfallen.
+  #   · Required-Kontext «Perf-Budget (§15 — nur bei grüner Treue)» bleibt als
+  #     Name (Ruleset unverändert) und wertet Treue (Tore + Browser-Smoke
+  #     (Ergebnis)) + Bundle-Prüfung.
+  #   · NEU `.github/workflows/perf-nacht.yml`: täglich 02:17 UTC + Handstart,
+  #     baut main (`build:dist`), misst Lighthouse mit Assertion; bei Rot Issue
+  #     (Label `alarm:perf-nacht`, Muster prod-smoke.yml), bei Grün schliessen.
+  #     perf-kalibrierung.yml geprüft und NICHT genutzt (§17 Satz 1): sie ist
+  #     eine 8-fache Messreihe ohne Assertion für die Schwellen-Erhebung —
+  #     anderer Zweck, Begründung im Kopf von perf-nacht.yml.
+  #   · check-tor-paritaet: ALLOWLIST_NUR_CI-Eintrag `check:perf-lighthouse`
+  #     gestrichen (Regel 5: ci.yml ruft es nicht mehr); Deckung über Regel 6
+  #     (perf-nacht.yml).
+  # FOLGE: ein Lighthouse-Rückschritt blockiert die Queue nicht mehr, er
+  # erscheint spätestens am nächsten Morgen als Zettel. Bundle-Grösse/-Topologie
+  # bleibt bei jedem Queue-Eintrag (art=code) merge-blockierend.
+```
+
+## ci-071 · (mehrere Jobs) · npm-ci / Playwright-Browser-Cache (Cache nur lesen)
+
+Neu 5.10.2026 (QS-CI-ZEIT E5; kein verschobener Altkommentar).
+
+```text
+  # ── Actions-Cache: speichern nur auf main, sonst nur lesen (QS-CI-ZEIT E5) ───
+  # ANLASS: Actions-Cache 8,78 von 10 GB (5.10.2026). `gh cache list`
+  # (5.10.2026): unter refs/pull/*/merge und refs/heads/gh-readonly-queue/*
+  # 10 npm-Caches à ~136 MB und 15 Playwright-Caches à 258 MB. Ursache: ein
+  # Lauf auf einem PR-/Queue-Ref, dessen Schlüssel (package-lock-Hash) auf main
+  # noch fehlt, speichert einen EIGENEN Eintrag — für alle anderen Refs
+  # unsichtbar (Cache-Scope je Ref), also reine Kopie. Typischer Auslöser: ein
+  # PR, der package-lock.json ändert (gesehen am Schlüssel 68f9a10…: PR-,
+  # Queue- und main-Einträge nebeneinander).
+  #
+  # UMSETZUNG:
+  #   · npm: die acht Jobs mit `setup-node … cache: npm` + `npx -y npm@11 ci`
+  #     nutzen die lokale Composite-Action `.github/actions/npm-ci`
+  #     (setup-node OHNE Auto-Cache, `actions/cache/restore` mit setup-nodes
+  #     Schlüssel/Pfad, `npm ci`). Gespeichert wird der npm-Cache nur noch auf
+  #     main: `deploy` (push main) behält `cache: npm`, ebenso die geplanten
+  #     Workflows (laufen auf main).
+  #   · Playwright (e2e-Shards): `actions/cache/restore` statt `actions/cache`.
+  #     Speicherer für main ist perf-nacht.yml (täglich, `actions/cache` mit
+  #     demselben Schlüssel). Nach einem package-lock-Wechsel fehlt der Eintrag
+  #     bis zum nächsten Nachtlauf — die Shards laden Chromium dann aus dem Netz
+  #     (scripts/ci/playwright-install.sh, mit Wache), Kosten: Sekunden bis
+  #     ~1 min je Shard, kein Korrektheitsrisiko.
+  # Fehlgriff ist nie ein Fehler, nur langsamer (Registry/CDN statt Cache).
 ```

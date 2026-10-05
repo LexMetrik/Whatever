@@ -3,111 +3,58 @@
 // PROBLEM (Beleg 8.9.2026, Lauf 34209371435, Shard 8/8): unter `retries: 2`
 // zählt ein erst im zweiten Versuch grüner Test als `flaky`, der Prozess endet
 // mit Exit 0, GitHub meldet grün — so verdeckt beim echten Defekt
-// `a-ueberlauf-ohne-scroller`. REGEL (Entscheid David 8.9.2026): Flackern ist
-// ROT, ausser die Spec steht mit Datum und Grund in `e2e/flake-ausnahmen.json`;
-// jeder Eintrag verfällt nach höchstens 30 Tagen (Fang-Vermerk, keine Amnestie).
-// FEHLERSEITE (§6.7 lit. b) — jede Unklarheit ist rot: Report fehlt/unlesbar ·
-// ohne `stats`-Block · `stats.flaky > 0` ohne auffindbaren `flaky`-Test ·
-// Ausnahmeliste formwidrig (auch bei grünem Lauf). Format-Beleg: Playwright
-// 1.60.0, `JSONReport.stats.flaky` und `JSONReportTest.status … | 'flaky'`.
-// Der JSON-Reporter ist nur unter `CI` verdrahtet — darum steht das Tor
-// begründet auf `ALLOWLIST_NUR_CI` (scripts/check-tor-paritaet.ts).
+// `a-ueberlauf-ohne-scroller`. Bis 5.10.2026 machte dieser Wächter Flackern
+// ROT (Entscheid David 8.9.2026, #779; Ausnahmeliste `e2e/flake-ausnahmen.json`
+// mit 30-Tage-Verfall, Melde-Modus über `e2e/flake-modus.json`).
 //
-// MELDE-MODUS (`e2e/flake-modus.json`, 8.9.2026): 6 wechselnde Specs im
-// eigenen PR — Ausnahmeliste würde nur wachsen. Bis `hart_ab` nur `::warning`
-// (Exit 0), danach hart wie oben; Modus-Datei fehlt/formwidrig ⇒ hart.
-import { readFileSync } from 'node:fs';
+// REGEL SEIT 5.10.2026 (Entscheid David, Chat: «Wackel-Regel dort lockern»,
+// QS-CI-ZEIT E2; Messbasis 300 Queue-Läufe: 7 von 10 Browser-Röten in der
+// Queue waren Flacker-Wächter-Rot, 0 echte Zusammenstösse):
+//   · Retry-Grün macht den Shard NICHT mehr rot. Es wird SICHTBAR gemeldet:
+//     `::warning::FLACKERT …` im Log und in der Step-Summary, dazu eine
+//     Fund-Datei (`E2E_FLAKE_FUNDE`), aus der ci.yml je Spec einen
+//     Reparatur-Zettel (GitHub-Issue, Label `flake`) anlegt oder kommentiert.
+//     Der Zettel ersetzt den Verfall der Ausnahmeliste als «Erinnerung» —
+//     Ausnahmeliste und Modus-Datei sind darum zurückgebaut (§17-Gegengewicht:
+//     ohne Rot hätten sie nichts mehr zu dulden).
+//   · HART ROT bleibt: ein Test, der in ALLEN Versuchen rot ist
+//     (`stats.unexpected > 0`) — zusätzlich zum ohnehin roten Playwright-
+//     Schritt, damit der Wächter allein schon nie ein Dauer-Rot durchwinkt.
+//   · FEHLERSEITE (§6.7 lit. b) — jede Unklarheit ist rot: Report fehlt/
+//     unlesbar · ohne `stats.flaky`/`stats.unexpected` · `stats.flaky > 0`
+//     ohne auffindbaren `flaky`-Test. Nicht gelaufene Specs fängt der
+//     Union-Wächter `check:e2e-shards` (Gruppen == `playwright --list`).
+// Format-Beleg: Playwright 1.60.0, `JSONReport.stats.{flaky,unexpected}` und
+// `JSONReportTest.status … | 'flaky' | 'unexpected'`. Der JSON-Reporter ist
+// nur unter `CI` verdrahtet — darum steht das Tor begründet auf
+// `ALLOWLIST_NUR_CI` (scripts/check-tor-paritaet.ts).
+import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
 
-/** Eintrag der Ausnahmeliste: Spec, Eintragungstag, Pflicht-Grund, letzter Geltungstag (ISO). */
-export type FlakeAusnahme = { spec: string; seit: string; grund: string; ablauf: string };
-
-/** `e2e/flake-modus.json`: bis `hart_ab` (ISO) nur Meldung, danach hart. */
-export type FlakeModus = { modus: 'melden' | 'hart'; hart_ab: string; grund: string };
-
-/** Flackernde Spec: Summe der Wiederholungen, Testtitel, greifende Ausnahme oder `null`. */
-export type FlackerFund = { spec: string; retries: number; titel: string[]; ausnahme: FlakeAusnahme | null };
+/** Flackernde Spec: Summe der Wiederholungen und Testtitel. */
+export type FlackerFund = { spec: string; retries: number; titel: string[] };
 
 /** `meldungen` inkl. GitHub-Annotationen (`::error`/`::warning`), Schlusszeile zuletzt. */
-export type Verdikt = { rot: boolean; funde: FlackerFund[]; meldungen: string[]; zusammenfassung: string };
-
-/** Höchstdauer einer Ausnahme in Tagen (Entscheid David 8.9.2026). */
-export const AUSNAHME_TAGE_MAX = 30;
-
-const TAG_MS = 86_400_000;
-const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
-const FELDER = ['spec', 'seit', 'grund', 'ablauf'] as const;
-
-/** ISO-Tag → UTC-Zeitstempel; `null` bei falscher Form oder Kalenderwert (`2026-02-30`). */
-function tag(wert: unknown): number | null {
-  if (typeof wert !== 'string' || !ISO_TAG.test(wert)) return null;
-  const ms = Date.parse(`${wert}T00:00:00Z`);
-  if (Number.isNaN(ms)) return null;
-  return new Date(ms).toISOString().slice(0, 10) === wert ? ms : null;
-}
-
-/** `flake-modus.json` parsen; formwidrig/fehlend ⇒ `null` (Aufrufer fällt auf hart zurück). */
-function modusLesen(roh: string | null | undefined): FlakeModus | null {
-  if (roh == null) return null;
-  try {
-    const g = JSON.parse(roh) as Record<string, unknown>;
-    if ((g.modus !== 'melden' && g.modus !== 'hart') || tag(g.hart_ab) === null) return null;
-    return { modus: g.modus, hart_ab: g.hart_ab as string, grund: typeof g.grund === 'string' ? g.grund : '' };
-  } catch {
-    return null;
-  }
-}
+export type Verdikt = {
+  rot: boolean;
+  funde: FlackerFund[];
+  /** Titel der in allen Versuchen roten Tests (je `spec › titel`). */
+  dauerRot: string[];
+  meldungen: string[];
+  zusammenfassung: string;
+};
 
 /** `./e2e/x.e2e.ts`, `e2e/x.e2e.ts`, `x.e2e.ts` ⇒ `x.e2e.ts`. */
 export function specNormalisieren(pfad: string): string {
   return pfad.trim().replace(/\\/g, '/').replace(/^\.\//, '').replace(/^e2e\//, '');
 }
 
-/** Ausnahmeliste prüfen: geprüfte Einträge + Formfehler-Meldungen. */
-function ausnahmenPruefen(roh: unknown): { liste: FlakeAusnahme[]; fehler: string[] } {
-  if (!Array.isArray(roh)) return { liste: [], fehler: ['Ausnahmeliste ist kein JSON-Array.'] };
-  const fehler: string[] = [];
-  const liste: FlakeAusnahme[] = [];
-  const gesehen = new Set<string>();
-  roh.forEach((eintrag, i) => {
-    const ort = `Eintrag ${i + 1}`;
-    if (typeof eintrag !== 'object' || eintrag === null || Array.isArray(eintrag)) {
-      fehler.push(`${ort}: kein Objekt.`);
-      return;
-    }
-    const e = eintrag as Record<string, unknown>;
-    const fremd = Object.keys(e).filter((k) => !(FELDER as readonly string[]).includes(k));
-    if (fremd.length) fehler.push(`${ort}: unbekannte Felder ${fremd.join(', ')} — erlaubt: ${FELDER.join(', ')}.`);
-    const spec = typeof e.spec === 'string' ? specNormalisieren(e.spec) : '';
-    if (!spec) fehler.push(`${ort}: Feld 'spec' fehlt oder ist leer.`);
-    const grund = typeof e.grund === 'string' ? e.grund.trim() : '';
-    if (!grund) fehler.push(`${ort} (${spec || '?'}): Feld 'grund' fehlt oder ist leer — eine Ausnahme ohne Begründung ist keine.`);
-    const seit = tag(e.seit);
-    const ablauf = tag(e.ablauf);
-    for (const [feld, wert] of [['seit', seit], ['ablauf', ablauf]] as const) {
-      if (wert === null) fehler.push(`${ort} (${spec || '?'}): Feld '${feld}' fehlt oder ist kein ISO-Datum (YYYY-MM-DD).`);
-    }
-    if (seit !== null && ablauf !== null) {
-      if (ablauf < seit) fehler.push(`${ort} (${spec}): 'ablauf' (${e.ablauf as string}) liegt vor 'seit' (${e.seit as string}).`);
-      else if (ablauf - seit > AUSNAHME_TAGE_MAX * TAG_MS)
-        fehler.push(`${ort} (${spec}): Ausnahme läuft ${Math.round((ablauf - seit) / TAG_MS)} Tage — Höchstdauer ist ${AUSNAHME_TAGE_MAX} Tage.`);
-    }
-    if (spec) {
-      if (gesehen.has(spec)) fehler.push(`${ort}: '${spec}' steht mehrfach in der Liste.`);
-      gesehen.add(spec);
-    }
-    if (spec && grund && seit !== null && ablauf !== null && !fremd.length) {
-      liste.push({ spec, seit: e.seit as string, grund, ablauf: e.ablauf as string });
-    }
-  });
-  return { liste, fehler };
-}
-
 type RohTest = { status?: unknown; results?: unknown };
 type RohSpec = { file?: unknown; title?: unknown; tests?: unknown };
 type RohSuite = { file?: unknown; specs?: unknown; suites?: unknown };
+type Sammlung = { flaky: Map<string, { retries: number; titel: string[] }>; dauerRot: string[] };
 
-/** Suiten-Baum abgehen und alle `flaky`-Tests je Spec-Datei sammeln. */
-function flackerndeSammeln(suites: unknown, aus: Map<string, { retries: number; titel: string[] }>): void {
+/** Suiten-Baum abgehen: `flaky`-Tests je Spec-Datei und `unexpected`-Tests sammeln. */
+function sammeln(suites: unknown, aus: Sammlung): void {
   if (!Array.isArray(suites)) return;
   for (const s of suites as RohSuite[]) {
     if (typeof s !== 'object' || s === null) continue;
@@ -116,22 +63,30 @@ function flackerndeSammeln(suites: unknown, aus: Map<string, { retries: number; 
       const datei = specNormalisieren(
         typeof spec.file === 'string' ? spec.file : typeof s.file === 'string' ? s.file : '(unbekannt)',
       );
+      const titel = typeof spec.title === 'string' ? spec.title : '(ohne Titel)';
       for (const t of (Array.isArray(spec.tests) ? spec.tests : []) as RohTest[]) {
-        if (typeof t !== 'object' || t === null || t.status !== 'flaky') continue;
-        const eintrag = aus.get(datei) ?? { retries: 0, titel: [] };
+        if (typeof t !== 'object' || t === null) continue;
+        if (t.status === 'unexpected') {
+          const eintrag = `${datei} › ${titel}`;
+          if (!aus.dauerRot.includes(eintrag)) aus.dauerRot.push(eintrag);
+          continue;
+        }
+        if (t.status !== 'flaky') continue;
+        const eintrag = aus.flaky.get(datei) ?? { retries: 0, titel: [] };
         eintrag.retries += Math.max(0, (Array.isArray(t.results) ? t.results.length : 1) - 1);
-        const titel = typeof spec.title === 'string' ? spec.title : '(ohne Titel)';
         if (!eintrag.titel.includes(titel)) eintrag.titel.push(titel);
-        aus.set(datei, eintrag);
+        aus.flaky.set(datei, eintrag);
       }
     }
-    flackerndeSammeln(s.suites, aus);
+    sammeln(s.suites, aus);
   }
 }
 
-type BerichtErgebnis = { fehler: string } | { fehler: null; stats: { flaky: number }; suites: unknown };
+type BerichtErgebnis =
+  | { fehler: string }
+  | { fehler: null; stats: { flaky: number; unexpected: number }; suites: unknown };
 
-/** Report lesen: `null`-Fehler, unlesbares JSON und fehlender `stats.flaky` sind rot (beide Modi). */
+/** Report lesen: fehlend, unlesbar oder ohne `stats.flaky`/`stats.unexpected` ist rot. */
 function berichtLesen(roh: string | null, pfad: string): BerichtErgebnis {
   if (roh === null) return { fehler: `Flacker-Wächter: Playwright-Report ${pfad} fehlt — ein Lauf ohne Report ist nicht bewertbar (nie stilles Grün).` };
   let report: unknown;
@@ -140,149 +95,66 @@ function berichtLesen(roh: string | null, pfad: string): BerichtErgebnis {
   } catch (e) {
     return { fehler: `Flacker-Wächter: ${pfad} ist kein lesbares JSON — ${(e as Error).message}` };
   }
-  const stats = (report as { stats?: unknown })?.stats as { flaky?: unknown } | undefined;
-  if (typeof stats !== 'object' || stats === null || typeof stats.flaky !== 'number') {
-    return { fehler: `Flacker-Wächter: ${pfad} trägt keinen 'stats.flaky'-Zähler — Report-Format geändert? Bis zur Klärung rot.` };
+  const stats = (report as { stats?: unknown })?.stats as { flaky?: unknown; unexpected?: unknown } | undefined;
+  if (typeof stats !== 'object' || stats === null || typeof stats.flaky !== 'number' || typeof stats.unexpected !== 'number') {
+    return { fehler: `Flacker-Wächter: ${pfad} trägt keine Zähler 'stats.flaky'/'stats.unexpected' — Report-Format geändert? Bis zur Klärung rot.` };
   }
-  return { fehler: null, stats: stats as { flaky: number }, suites: (report as { suites?: unknown }).suites };
+  return {
+    fehler: null,
+    stats: { flaky: stats.flaky, unexpected: stats.unexpected },
+    suites: (report as { suites?: unknown }).suites,
+  };
 }
 
-/** Öffentlicher Einstieg: wählt Melde- oder Hart-Modus nach `e2e/flake-modus.json` + Stichtag. */
-export function flackerVerdikt(eingabe: {
-  reportRoh: string | null;
-  ausnahmenRoh: string | null;
-  heute: Date;
-  reportPfad?: string;
-  ausnahmenPfad?: string;
-  modusRoh?: string | null;
-}): Verdikt {
-  const modus = modusLesen(eingabe.modusRoh);
-  const heuteMs = tag(eingabe.heute.toISOString().slice(0, 10));
-  const hartAbMs = modus ? tag(modus.hart_ab) : null;
-  if (!modus || modus.modus !== 'melden' || hartAbMs === null || heuteMs === null || heuteMs >= hartAbMs) {
-    return verdiktHart(eingabe);
-  }
-  // Vor dem Stichtag: melden statt blocken; Report bleibt Pflicht, Ausnahmeliste nicht.
+/** Reine Verdikt-Funktion (§2). `null` als Rohtext heisst «Report fehlt» und ist rot. */
+export function flackerVerdikt(eingabe: { reportRoh: string | null; reportPfad?: string }): Verdikt {
   const reportPfad = eingabe.reportPfad ?? 'playwright-report.json';
   const gelesen = berichtLesen(eingabe.reportRoh, reportPfad);
-  if (gelesen.fehler !== null) return meldeAbschluss(true, [], [`::error::${gelesen.fehler}`], modus.hart_ab);
-  const gesammelt = new Map<string, { retries: number; titel: string[] }>();
-  flackerndeSammeln(gelesen.suites, gesammelt);
-  if (gelesen.stats.flaky > 0 && gesammelt.size === 0) {
-    return meldeAbschluss(
-      true,
-      [],
-      [`::error::Flacker-Wächter: ${reportPfad} meldet stats.flaky=${gelesen.stats.flaky} ohne zuordenbaren Test — die Zuordnung schlägt fehl.`],
-      modus.hart_ab,
-    );
-  }
-  const funde: FlackerFund[] = [];
-  const meldungen: string[] = [];
-  for (const [spec, { retries, titel }] of [...gesammelt].sort((a, b) => a[0].localeCompare(b[0]))) {
-    funde.push({ spec, retries, titel, ausnahme: null });
-    meldungen.push(
-      `::warning file=e2e/${spec}::FLACKERT: ${spec} — ${retries}× Retry (${titel.join(' · ')}) — MELDE-MODUS bis ${modus.hart_ab}: ${modus.grund}`,
-    );
-  }
-  return meldeAbschluss(false, funde, meldungen, modus.hart_ab);
-}
+  if (gelesen.fehler !== null) return abschluss(true, [], [], [`::error::${gelesen.fehler}`]);
 
-function meldeAbschluss(rot: boolean, funde: FlackerFund[], meldungen: string[], hartAb: string): Verdikt {
-  const zusammenfassung = rot
-    ? `Flacker-Wächter (MELDE-MODUS bis ${hartAb}): ROT (Report- oder Formfehler, s. oben)`
-    : `Flacker-Wächter (MELDE-MODUS bis ${hartAb}): ${funde.length} flackern · Stichtag hart ab ${hartAb}`;
-  return { rot, funde, meldungen: [...meldungen, zusammenfassung], zusammenfassung };
-}
-
-/** Reine Verdikt-Funktion (§2), Hart-Modus. `null` als Rohtext heisst «Datei fehlt» und ist rot. */
-function verdiktHart(eingabe: {
-  reportRoh: string | null;
-  ausnahmenRoh: string | null;
-  heute: Date;
-  reportPfad?: string;
-  ausnahmenPfad?: string;
-}): Verdikt {
-  const reportPfad = eingabe.reportPfad ?? 'playwright-report.json';
-  const ausnahmenPfad = eingabe.ausnahmenPfad ?? 'e2e/flake-ausnahmen.json';
+  const gesammelt: Sammlung = { flaky: new Map(), dauerRot: [] };
+  sammeln(gelesen.suites, gesammelt);
   const meldungen: string[] = [];
   let rot = false;
 
-  let ausnahmen: FlakeAusnahme[] = [];
-  if (eingabe.ausnahmenRoh === null) {
+  if (gelesen.stats.unexpected > 0) {
     rot = true;
-    meldungen.push(`::error::Flacker-Wächter: Ausnahmeliste ${ausnahmenPfad} fehlt — ohne sie ist kein Verdikt möglich.`);
-  } else {
-    let geparst: unknown;
-    try {
-      geparst = JSON.parse(eingabe.ausnahmenRoh);
-    } catch (e) {
-      rot = true;
-      meldungen.push(`::error::Flacker-Wächter: ${ausnahmenPfad} ist kein lesbares JSON — ${(e as Error).message}`);
-    }
-    if (geparst !== undefined) {
-      const { liste, fehler } = ausnahmenPruefen(geparst);
-      ausnahmen = liste;
-      for (const f of fehler) {
-        rot = true;
-        meldungen.push(`::error file=${ausnahmenPfad}::Formfehler in der Flacker-Ausnahmeliste — ${f}`);
-      }
-    }
+    const liste = gesammelt.dauerRot.length ? gesammelt.dauerRot.join(' · ') : '(keinem Test zuordenbar)';
+    meldungen.push(
+      `::error::Flacker-Wächter: ${gelesen.stats.unexpected} Test(s) in ALLEN Versuchen rot — das ist kein Flackern, sondern ein Defekt: ${liste}`,
+    );
   }
-
-  // Report: jede Unklarheit endet hier, ohne Fund-Liste, aber als ROT.
-  const abbruch = (grund: string): Verdikt => abschluss(true, [], [...meldungen, `::error::${grund}`], ausnahmen);
-  const gelesen = berichtLesen(eingabe.reportRoh, reportPfad);
-  if (gelesen.fehler !== null) return abbruch(gelesen.fehler);
-  const stats = gelesen.stats;
-
-  const gesammelt = new Map<string, { retries: number; titel: string[] }>();
-  flackerndeSammeln(gelesen.suites, gesammelt);
-  if (stats.flaky > 0 && gesammelt.size === 0) {
+  if (gelesen.stats.flaky > 0 && gesammelt.flaky.size === 0) {
     rot = true;
     meldungen.push(
-      `::error::Flacker-Wächter: ${reportPfad} meldet stats.flaky=${stats.flaky}, aber kein Test trägt den Status 'flaky' — die Zuordnung zur Spec-Datei schlägt fehl. Rot, damit der Fund nicht verloren geht.`,
+      `::error::Flacker-Wächter: ${reportPfad} meldet stats.flaky=${gelesen.stats.flaky}, aber kein Test trägt den Status 'flaky' — die Zuordnung zur Spec-Datei schlägt fehl. Rot, damit der Fund nicht verloren geht.`,
     );
   }
 
-  const heuteMs = tag(eingabe.heute.toISOString().slice(0, 10));
   const funde: FlackerFund[] = [];
-  for (const [spec, { retries, titel }] of [...gesammelt].sort((a, b) => a[0].localeCompare(b[0]))) {
-    const kandidat = ausnahmen.find((a) => a.spec === spec) ?? null;
-    const ablaufMs = kandidat ? tag(kandidat.ablauf) : null;
-    const gueltig = kandidat !== null && ablaufMs !== null && heuteMs !== null && heuteMs <= ablaufMs;
-    funde.push({ spec, retries, titel, ausnahme: gueltig ? kandidat : null });
-    const kopf = `FLACKERT: ${spec} — ${retries}× Retry (${titel.join(' · ')})`;
-    if (gueltig && kandidat) {
-      meldungen.push(`::warning file=e2e/${spec}::${kopf} — geduldet bis ${kandidat.ablauf}: ${kandidat.grund}`);
-      continue;
-    }
-    rot = true;
+  for (const [spec, { retries, titel }] of [...gesammelt.flaky].sort((a, b) => a[0].localeCompare(b[0]))) {
+    funde.push({ spec, retries, titel });
     meldungen.push(
-      kandidat
-        ? `::error file=e2e/${spec}::${kopf} — Ausnahme ist am ${kandidat.ablauf} ABGELAUFEN. Wurzel messen (§17) oder Eintrag mit neuem Datum und Grund erneuern.`
-        : `::error file=e2e/${spec}::${kopf} — nur im Wiederholungsversuch grün. Wurzel beheben oder mit Datum und Grund in e2e/flake-ausnahmen.json eintragen (max. ${AUSNAHME_TAGE_MAX} Tage).`,
+      `::warning file=e2e/${spec}::FLACKERT: ${spec} — ${retries}× Retry (${titel.join(' · ')}) — nur im Wiederholungsversuch grün; Reparatur-Zettel (Issue, Label flake) folgt aus der Warteschlange.`,
     );
   }
-
-  // Ungenutzte Ausnahme = Hinweis, kein Rot: ein Shard sieht nur seine Spec-Gruppe.
-  for (const a of ausnahmen) {
-    if (gesammelt.has(a.spec)) continue;
-    meldungen.push(`Hinweis: Ausnahme ${a.spec} (bis ${a.ablauf}) griff in diesem Shard nicht — bei grünen Läufen entfernen.`);
-  }
-
-  return abschluss(rot, funde, meldungen, ausnahmen);
+  return abschluss(rot, funde, gesammelt.dauerRot, meldungen);
 }
 
-function abschluss(rot: boolean, funde: FlackerFund[], meldungen: string[], ausnahmen: FlakeAusnahme[]): Verdikt {
-  const genutzt = funde.flatMap((f) => (f.ausnahme ? [f.ausnahme] : []));
-  const rotZahl = funde.length - genutzt.length;
-  const teil = genutzt.length
-    ? `${genutzt.length} Ausnahme${genutzt.length === 1 ? '' : 'n'} (gültig bis ${genutzt.map((a) => a.ablauf).sort().join(', ')})`
-    : `0 Ausnahmen (${ausnahmen.length} in der Liste)`;
-  // Rot ohne Spec-Zuordnung (fehlender Report, Formfehler) darf nicht als «0 rot» erscheinen.
-  const kopf = rot && rotZahl === 0 ? 'ROT (Report- oder Formfehler, s. oben)' : `${rotZahl} rot`;
-  const zusammenfassung = `Flacker-Wächter: ${kopf} · ${teil}`;
-  return { rot, funde, meldungen: [...meldungen, zusammenfassung], zusammenfassung };
+function abschluss(rot: boolean, funde: FlackerFund[], dauerRot: string[], meldungen: string[]): Verdikt {
+  const zusammenfassung = rot
+    ? `Flacker-Wächter: ROT (Dauer-Rot, Report- oder Zuordnungsfehler, s. oben) · ${funde.length} flackern`
+    : `Flacker-Wächter: grün · ${funde.length} flackern (Warnung, kein Rot)`;
+  return { rot, funde, dauerRot, meldungen: [...meldungen, zusammenfassung], zusammenfassung };
+}
+
+/** Markdown für `$GITHUB_STEP_SUMMARY` — nur wenn es etwas zu melden gibt. */
+export function stepSummary(v: Verdikt): string {
+  if (!v.rot && v.funde.length === 0) return '';
+  const zeilen = [`### ${v.zusammenfassung}`, ''];
+  for (const f of v.funde) zeilen.push(`- FLACKERT \`e2e/${f.spec}\` — ${f.retries}× Retry (${f.titel.join(' · ')})`);
+  for (const d of v.dauerRot) zeilen.push(`- DAUER-ROT \`${d}\``);
+  return `${zeilen.join('\n')}\n`;
 }
 
 // Entry-Erkennung über `VITEST`, nicht über `process.argv[1]`: unter vite-node
@@ -298,15 +170,14 @@ if (!process.env.VITEST) {
   };
   const reportPfad =
     process.argv.slice(2).filter((a) => !a.startsWith('-'))[0] ?? process.env.E2E_FLAKE_REPORT ?? 'playwright-report.json';
-  const ausnahmenPfad = 'e2e/flake-ausnahmen.json';
-  const verdikt = flackerVerdikt({
-    reportRoh: lies(reportPfad),
-    ausnahmenRoh: lies(ausnahmenPfad),
-    heute: new Date(),
-    reportPfad,
-    ausnahmenPfad,
-    modusRoh: lies('e2e/flake-modus.json'),
-  });
+  const verdikt = flackerVerdikt({ reportRoh: lies(reportPfad), reportPfad });
   for (const z of verdikt.meldungen) console.log(z);
+  const summary = stepSummary(verdikt);
+  if (summary && process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+  // Fund-Datei nur bei Funden: ci.yml lädt sie als Artefakt hoch (`if-no-files-found: ignore`)
+  // und legt daraus je Spec den Reparatur-Zettel an.
+  if (verdikt.funde.length && process.env.E2E_FLAKE_FUNDE) {
+    writeFileSync(process.env.E2E_FLAKE_FUNDE, `${JSON.stringify({ funde: verdikt.funde }, null, 2)}\n`);
+  }
   process.exit(verdikt.rot ? 1 : 0);
 }

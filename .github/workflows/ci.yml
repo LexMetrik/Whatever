@@ -361,8 +361,10 @@ jobs:
     name: Bau (dist-Artefakt)
     needs: diff
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-007
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
     if: >-
       !cancelled()
+      && github.event_name != 'pull_request'
       && needs.diff.outputs.art != 'doku'
       && needs.diff.outputs.bau_perf_belegt != 'true'
     runs-on: ubuntu-latest
@@ -371,15 +373,11 @@ jobs:
     steps:
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-008
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
-      # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
-      # hier die ganze Kette, bevor tore/e2e überhaupt starten.
-      - name: Build
-        run: npm run build
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+      - name: Build (ohne Typprüfung — die macht `tore-typen`)
+        run: npm run build:dist
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
         uses: actions/upload-artifact@v7
         with:
@@ -408,11 +406,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
       - name: Tests (volle Ausgabe, Shard ${{ matrix.shard }}/2)
         run: npm test -- --shard=${{ matrix.shard }}/2
@@ -429,18 +424,33 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: Lint (volle Ausgabe, nie tail!)
         run: npm run lint
+
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+  tore-typen:
+    name: Tore · Typen (tsc -b)
+    needs: diff
+    if: >-
+      !cancelled()
+      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.art != 'doku'
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v7
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
+      - name: Typprüfung (tsc -b, alle drei Projekte)
+        run: npx tsc -b
 
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-065
   tore:
     name: Tore (Tests · Lint · Checks)
-    needs: [diff, tore-tests, tore-lint, tore-checks]
+    needs: [diff, tore-tests, tore-lint, tore-typen, tore-checks]
     if: >-
       !cancelled()
       && needs.diff.outputs.push_diaet != 'true'
@@ -450,17 +460,18 @@ jobs:
         env:
           TESTS: ${{ needs.tore-tests.result }}
           LINT: ${{ needs.tore-lint.result }}
+          TYPEN: ${{ needs.tore-typen.result }}
           CHECKS: ${{ needs.tore-checks.result }}
           ART: ${{ needs.diff.outputs.art }}
         run: |
           set -euo pipefail
-          echo "tests=${TESTS} · lint=${LINT} · checks=${CHECKS} · art=${ART:-<leer>}"
+          echo "tests=${TESTS} · lint=${LINT} · typen=${TYPEN} · checks=${CHECKS} · art=${ART:-<leer>}"
           rot=0
           if [ "${CHECKS}" != "success" ]; then
             echo "::error::Tore · Checks nicht bestanden: ${CHECKS} (nur success zählt)."
             rot=1
           fi
-          for paar in "Tests=${TESTS}" "Lint=${LINT}"; do
+          for paar in "Tests=${TESTS}" "Lint=${LINT}" "Typen=${TYPEN}"; do
             teil="${paar%%=*}"; stand="${paar#*=}"
             if [ "${stand}" = "success" ]; then
               continue
@@ -493,11 +504,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-013
       - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
         env:
@@ -586,6 +594,12 @@ jobs:
       - name: Tor-Parität (CI/lokal)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tor-paritaet
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-043
+      # Seit 5.10.2026 hier statt im Shard-Job (ci-068): läuft so auch im
+      # PR-Lauf, in dem die Shards nicht mehr starten, und nur einmal statt 8×.
+      - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:e2e-shards
       - name: Dispatch-Pflichtklausel (§0-Generator lauffähig)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:dispatch-klausel
@@ -677,8 +691,10 @@ jobs:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
     needs: [diff, bau]
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-041
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
     if: >-
       !cancelled()
+      && github.event_name != 'pull_request'
       && needs.bau.result == 'success'
       && needs.diff.outputs.art != 'doku'
       && needs.diff.outputs.art != 'code-fern'
@@ -694,21 +710,16 @@ jobs:
         gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-043
-      - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
-        run: npm run check:e2e-shards
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist
-      - name: Playwright-Browser-Cache
-        uses: actions/cache@v6
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - name: Playwright-Browser-Cache (nur lesen, gespeichert nachts auf main)
+        uses: actions/cache/restore@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
@@ -729,9 +740,21 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-047
-      - name: Flacker-Wächter (Retry-Grün ist kein Grün)
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+      - name: Flacker-Wächter (Retry-Grün = Warnung + Zettel, Dauer-Rot = rot)
         if: ${{ !cancelled() }}
+        env:
+          E2E_FLAKE_FUNDE: flake-funde-gruppe-${{ matrix.gruppe }}.json
         run: npm run check:e2e-flake
+      - name: Flacker-Funde ablegen (für den Reparatur-Zettel im Ergebnis-Job)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: flake-funde-gruppe-${{ matrix.gruppe }}
+          path: flake-funde-gruppe-${{ matrix.gruppe }}.json
+          retention-days: 1
+          if-no-files-found: ignore
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-048
       - name: Playwright-Traces ablegen (nur bei rotem Shard)
         if: failure()
@@ -749,24 +772,72 @@ jobs:
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-050
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+    permissions:
+      actions: read
+      contents: read
+      issues: write
     steps:
+      - name: Zettel-Skript holen (nur scripts/ci)
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        continue-on-error: true
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts/ci
+      - name: Flacker-Funde der Shards einsammeln
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: flake-funde-gruppe-*
+          path: flake-funde
+          merge-multiple: true
+      - name: Reparatur-Zettel je flackernder Spec (Issue, Label flake, dedupliziert)
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+        continue-on-error: true
+        run: bash scripts/ci/flake-zettel.sh flake-funde
       - name: Shard-Ergebnis gegen die Diff-Klasse werten
         env:
           ERGEBNIS: ${{ needs.e2e.result }}
           ART: ${{ needs.diff.outputs.art }}
           DIAET: ${{ needs.diff.outputs.push_diaet }}
+          EVENT: ${{ github.event_name }}
+        # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
         run: |
           set -euo pipefail
-          echo "e2e=${ERGEBNIS} · art=${ART:-<leer>} · push_diaet=${DIAET:-<leer>}"
+          echo "e2e=${ERGEBNIS} · art=${ART:-<leer>} · push_diaet=${DIAET:-<leer>} · event=${EVENT}"
           if [ "${ERGEBNIS}" = "success" ]; then
             echo "Alle Browser-Shards grün."
+            exit 0
+          fi
+          if [ "${ERGEBNIS}" = "skipped" ] && [ "${EVENT}" = "pull_request" ]; then
+            hinweis="Browser-Smoke im PR-Lauf BEWUSST NICHT GELAUFEN (Entscheid David 5.10.2026): die Browser-Shards laufen nur in der Merge-Warteschlange (merge_group) und bei workflow_dispatch — dort sind sie Pflicht und merge-blockierend."
+            echo "${hinweis}"
+            echo "::notice::${hinweis}"
+            echo "### Browser-Smoke: im PR-Lauf übersprungen" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
+            echo "${hinweis}" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
             exit 0
           fi
           if [ "${ERGEBNIS}" = "skipped" ] && { [ "${ART}" = "doku" ] || [ "${ART}" = "code-fern" ] || [ "${DIAET}" = "true" ]; }; then
             echo "Browser-Shards planmässig übersprungen (art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}) — Begründung im Job \`diff\`."
             exit 0
           fi
-          echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}. Ein Skip ist nur bei art=doku, art=code-fern oder push_diaet=true zulässig."
+          echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}, event=${EVENT}. Ein Skip ist nur bei event=pull_request, art=doku, art=code-fern oder push_diaet=true zulässig."
           exit 1
 
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-066
@@ -803,16 +874,17 @@ jobs:
             rot=1
           fi
           if [ "${MESSUNG}" != "success" ]; then
-            echo "::error::Perf-Messung nicht bestanden: ${MESSUNG}."
+            echo "::error::Perf-Messung (Bundle-Topologie) nicht bestanden: ${MESSUNG}."
             rot=1
           fi
           if [ "${rot}" -ne 0 ]; then
             exit 1
           fi
-          echo "Treue grün (Tore + Browser-Smoke) und Perf-Budget eingehalten."
+          echo "Treue grün (Tore + Browser-Smoke) und Bundle-Budget eingehalten. Lighthouse misst nächtlich (perf-nacht.yml)."
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-070
   perf-messung:
-    name: Perf-Messung (Bundle · Lighthouse, parallel zu den Shards)
+    name: Perf-Messung (Bundle-Topologie, parallel zu den Shards)
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
@@ -825,28 +897,17 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist
-      - name: Playwright-Browser-Cache
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-053
-      - name: Playwright-Browser (Chromium)
-        run: bash scripts/ci/playwright-install.sh
       - name: Perf-Budget — Bundle-Topologie (Chrome-frei)
         run: npm run check:perf-budget
-      - name: Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)
-        run: npm run check:perf-lighthouse
+      # Lighthouse-Metriken: seit 5.10.2026 nächtlich gegen main
+      # (.github/workflows/perf-nacht.yml), nicht mehr hier — ci-070.
 
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-054
   merge-schutz:
@@ -858,11 +919,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
         run: npm run check:merge-schutz
 

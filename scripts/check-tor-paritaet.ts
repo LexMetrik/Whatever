@@ -45,9 +45,9 @@ const ALLOWLIST_NUR_CI: Record<string, string> = {
   'check:perf-budget':
     'braucht `dist/assets/` (Build-Artefakt aus `npm run build`) — kein Gate-Schritt baut vor jedem Lauf. Lokal bei Bedarf: `npm run build && npm run check:perf-budget`.',
   'check:e2e-flake':
-    'braucht `playwright-report.json` — den erzeugt der JSON-Reporter laut playwright.config.ts NUR unter `CI`, und nur der Shard-Lauf selbst füllt ihn. Lokal fehlt die Datei, das Tor wäre bei jedem Gate-Lauf rot. Lokales Pendant ist der Verdikt-Test src/tests/e2e-flake-waechter.test.ts (läuft in check:seriell über die Vitest-Suite); Arbiter bleibt ci.yml (PR-Pfad, e2e-Job).',
-  'check:perf-lighthouse':
-    'braucht `dist/` (Build-Artefakt) und eine echte Chrome/Lighthouse-Messung über mehrere Läufe für den Median (mehrere Minuten) — ungeeignet für einen Gate-Lauf bei jedem WIP-Commit. Arbiter bleibt ci.yml (Job Perf, PR-Pfad).',
+    'braucht `playwright-report.json` — den erzeugt der JSON-Reporter laut playwright.config.ts NUR unter `CI`, und nur der Shard-Lauf selbst füllt ihn. Lokal fehlt die Datei, das Tor wäre bei jedem Gate-Lauf rot. Lokales Pendant ist der Verdikt-Test src/tests/e2e-flake-waechter.test.ts (läuft in check:seriell über die Vitest-Suite); Arbiter bleibt ci.yml (e2e-Job — seit 5.10.2026 nur noch merge_group/push/workflow_dispatch, nicht im PR-Lauf; Entscheid David, QS-CI-ZEIT E1).',
+  // 5.10.2026 · check:perf-lighthouse gestrichen: läuft nicht mehr in ci.yml, sondern
+  // nächtlich in perf-nacht.yml (Entscheid David, QS-CI-ZEIT E3) — Regel (6) deckt es dort.
 };
 
 /**
@@ -62,7 +62,7 @@ const ALLOWLIST_UNVERDRAHTET: Record<string, string> = {
   'check:be-sprengel':
     'reine Kommandozeilen-Hülle um pruefeBeSprengel(); DIESELBE Prüfung läuft merge-blockierend als src/tests/beSprengel.test.ts über die Vitest-Suite (und damit in check:seriell und im PR-CI). Ein zweiter Lauf desselben Prädikats prüft nichts Zusätzliches — er verdoppelt nur die Laufzeit (§17-Gegengewicht).',
   'check:suchindex':
-    'Drift-Tor des Suchindex-Generators — aber `npm run build` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build"). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
+    'Drift-Tor des Suchindex-Generators — aber `npm run build:dist` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build:dist"; `npm run build` = `tsc -b` + `build:dist`, seit QS-CI-ZEIT 5.10.2026). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
 };
 
 const seriell = seriellTore();
