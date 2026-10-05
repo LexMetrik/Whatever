@@ -69,7 +69,7 @@ Nach seinem Verdikt (abgenommen / mit Auflagen / zurückgewiesen):
    betroffene `verified:true` in den Norm-/Schema-Daten.
 4. Tore: `npm test` (abnahmeGate!) · `npm run lint` · `npx tsc -b` ·
    `npm run golden:vergleich`.
-5. Commit mit Pathspec; STRUKTUR.md-Abnahme-Zähler nachführen.
+5. Commit mit Pathspec.
 
 ## Regeln
 
