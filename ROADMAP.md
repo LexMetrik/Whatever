@@ -9,6 +9,8 @@
 > Alt-Fassung wörtlich: [`archiv/ROADMAP-bis-2026-10-05.md`](archiv/ROADMAP-bis-2026-10-05.md).
 > *U1–U8* = Entscheidpunkte dieser Vorlage, «(a)» = die von David gewählte Option; *FB* = deren Anhang
 > «Fehlerbestand» (gleicher Ordner), Zeilen-IDs wie B-76 gelten nur dort.
+> **Grenze des Entscheids:** Vorlage §8 «Sofort» ist nicht freigegeben (dortige Punkte stehen nur als
+> EINGANG-Zeilen); Budget-/Kostenentscheide und Merkzettel mit Davids Frage oder Abnahme nur auf sein Wort.
 
 **Regeln**
 
