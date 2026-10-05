@@ -183,6 +183,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -239,6 +253,25 @@
      ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "16": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": "d",
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -349,6 +382,39 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
+    }
+   ]
+  },
+  "41": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": "d",
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -393,6 +459,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -449,6 +529,25 @@
      ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "63": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": "d",
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -515,6 +614,25 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "80": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },
@@ -603,6 +721,25 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "89": {
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zwischenbilanz» → «Zwischenabschluss»"
     }
    ]
   },

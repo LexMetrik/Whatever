@@ -4103,8 +4103,23 @@
    ]
   },
   "565": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4365,6 +4380,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zwischenbilanzen» → «Zwischenabschlüsse»"
     }
    ],
    "erbt": [
@@ -8572,7 +8601,7 @@
    ]
   },
   "743": {
-   "giltSeit": "2021-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "ausdruck",
@@ -8587,6 +8616,20 @@
      "absatz": "2",
      "item": null,
      "anweisung": "«Richter» → «Gericht»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "anweisung": "«Zwischenbilanzen» → «Zwischenabschlüsse»"
     }
    ],
    "erbt": [
@@ -10823,14 +10866,29 @@
    "aufgehobenSeit": "2013-01-01"
   },
   "859": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1–3",
+     "item": null,
+     "anweisung": "«Reinertrag» → «Jahresgewinn»"
+    }
+   ],
    "erbt": [
     9
    ]
   },
   "860": {
-   "giltSeit": "2006-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -10848,6 +10906,20 @@
      ],
      "absatz": "4",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Reinertrag» → «Jahresgewinn»"
     }
    ],
    "erbt": [
@@ -10855,8 +10927,23 @@
    ]
   },
   "861": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1–3",
+     "item": null,
+     "anweisung": "«Reinertrag» → «Jahresgewinn»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -10887,8 +10974,23 @@
    ]
   },
   "863": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1 und 3",
+     "item": null,
+     "anweisung": "«Reinertrag» → «Jahresgewinn»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -12587,6 +12689,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -12657,7 +12773,7 @@
    ]
   },
   "981": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -12692,6 +12808,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -12731,6 +12861,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -12738,22 +12882,67 @@
    ]
   },
   "985": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "986": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "987": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -13383,7 +13572,7 @@
    ]
   },
   "1072": {
-   "giltSeit": "2001-01-01",
+   "giltSeit": "2023-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -13401,6 +13590,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -13408,8 +13611,23 @@
    ]
   },
   "1073": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -13422,15 +13640,45 @@
    ]
   },
   "1075": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "1076": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -13454,6 +13702,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -13461,22 +13723,67 @@
    ]
   },
   "1078": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "1079": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "1080": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -14125,8 +14432,23 @@
    ]
   },
   "1162": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": "3 und 4",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0,
     1
@@ -14338,8 +14660,23 @@
    ]
   },
   "1182": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2023-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2023-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 4005",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     0,
     1

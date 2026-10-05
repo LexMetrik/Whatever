@@ -20,6 +20,7 @@ const ZGB_1999_2 = anw('ZGB-AS-1999-1118-richterlich-gerichtlich');
 const ZGB_1999_3 = anw('ZGB-AS-1999-1118-gewalt-sorge');
 const ZGB_2011 = anw('ZGB-AS-2011-725-vormundschaftsbehoerde-kindesschutzbehoerde');
 const OR_2020 = anw('OR-AS-2020-957-richter-gericht');
+const OR_4005 = anw('OR-AS-2020-4005-richter-gericht');
 const STGB_2006 = anw('STGB-AS-2006-3459-erstes-buch');
 const liste = (a: typeof ZGB_1999_1) => ('liste' in a.umfang ? a.umfang.liste : '');
 
@@ -75,6 +76,23 @@ describe('parseListe · Artikelliste im AS-Wortlaut', () => {
     for (const a of ['55a', '66a', '66b', '66c', '66d', '67c', '67d', '67e', '67f', '79a', '79b', '92a']) expect(l.koerper.has(a), a).toBe(false);
   });
 
+  it('AS 2020 4005: «Randtitel» allein / «Randtitel und Absätze 1 und 3» / «Randtitel und Text», «Buchstabe d», «Gliederungstitel vor den Artikeln»', () => {
+    const o = parseListe(liste(OR_4005));
+    expect(o.koerper.size).toBe(43);
+    expect(o.koerper.get('941a')).toEqual({ absatz: '1 und 3', item: null }); // «Randtitel und Absätze 1 und 3»
+    expect(o.koerper.get('1080')).toEqual({ absatz: '1', item: null });
+    expect(o.koerper.get('1162')).toEqual({ absatz: '3 und 4', item: null }); // «… sowie Artikel 1182»
+    expect(o.koerper.get('1182')).toEqual({ absatz: null, item: null });
+    expect(o.koerper.get('1072')).toEqual({ absatz: null, item: null }); // «1072, 1073, 1075»: ganze Artikel
+    const r = parseListe('858 Randtitel, 859 Absätze 1–3, 861 Randtitel und Absätze 1‒3');
+    expect(r.nurRandtitel).toEqual(['858']);
+    expect(r.koerper.get('861')).toEqual({ absatz: '1–3', item: null });
+    const f = parseListe('Gliederungstitel vor den Artikeln 9, 32 und 57 sowie Artikel 11, 16 Absatz 1 Buchstabe d, 80 und 89');
+    expect(f.nurGliederungstitel).toEqual(['9', '32', '57']);
+    expect([...f.koerper.keys()]).toEqual(['11', '16', '80', '89']);
+    expect(f.koerper.get('16')).toEqual({ absatz: '1', item: 'd' });
+  });
+
   it('wirft bei unbekanntem Stück statt still zu raten (§8)', () => {
     expect(() => parseListe('Art. 1 Abs. 2, Beispiel')).toThrow(/Artikelnummer erwartet/);
     expect(() => parseListe('Art. 1 Abs. x')).toThrow(/Nummer erwartet/);
@@ -118,11 +136,31 @@ describe('anweisungsEreignisse · Ereignis je Artikel', () => {
     expect(anweisungsEreignisse('ZGB', '410')).toHaveLength(1); // ohne Text (Unit-Fälle) keine Prüfung
   });
 
-  it('`ausser`: ZGB 430 (Wortlaut seit 2013, Abteilungs-Fussnote) und OR 565 (Wortlaut seit 2023) tragen kein Ereignis, auch wenn der Text den Stamm enthält', () => {
+  it('`ausser`: ZGB 430 (Wortlaut seit 2013, Abteilungs-Fussnote) trägt kein Ereignis, auch wenn der Text den Stamm enthält; OR 565 (Wortlaut seit 2023) nur das von AS 2020 4005, nicht das von AS 2020 957', () => {
     expect(anweisungsEreignisse('ZGB', '430', 'Das Gericht …')).toEqual([]);
-    expect(anweisungsEreignisse('OR', '565', 'gerichtliche …')).toEqual([]);
+    const o565 = anweisungsEreignisse('OR', '565', 'gerichtliche …').map((x) => x.ereignis);
+    expect(o565.map((e) => [e.datum, e.quellen[0].label])).toEqual([['2023-01-01', 'AS 2020 4005']]);
     expect(ZGB_1999_1.ausser?.map((x) => x.artikel)).toEqual(['430']);
     expect(OR_2020.ausser?.map((x) => x.artikel)).toEqual(['565']);
+  });
+
+  it('AS 2020 4005 (Aktienrecht, 1.1.2023): Richter/Reinertrag/Zwischenbilanzen als Ereignis; wo AS 2020 957 schon am 1.1.2021 ersetzt hat, trägt Abs. 1 keine Wirkung (`ausser`)', () => {
+    // OR 743: Absatz 2 «Richter» (schon 2021 «Gericht» → ausser) UND Absatz 5 «Zwischenbilanzen» → «Zwischenabschlüsse» (2023): je EIN Ereignis
+    expect(anweisungsEreignisse('OR', '743', 'Zwischenabschlüsse … Gericht').map((x) => [x.ereignis.datum, x.ereignis.quellen[0].label, x.ereignis.absatz])).toEqual([
+      ['2021-01-01', 'AS 2020 957', '2'],
+      ['2023-01-01', 'AS 2020 4005', '5'],
+    ]);
+    expect(anweisungsEreignisse('OR', '860', 'Jahresgewinn').map((x) => [x.ereignis.datum, x.ereignis.anweisung, x.ereignis.absatz])).toEqual([['2023-01-01', '«Reinertrag» → «Jahresgewinn»', '1']]);
+    expect(anweisungsEreignisse('OR', '858', 'Jahresgewinn')).toEqual([]); // nur Randtitel
+    expect(anweisungsEreignisse('OR', '981', 'durch das Gericht').map((x) => x.ereignis.datum)).toEqual(['2023-01-01']);
+    expect(anweisungsEreignisse('OR', '706', 'Gericht').map((x) => x.ereignis.datum)).toEqual(['2021-01-01']); // Abs. 1 von 4005 ohne Wirkung
+    expect(OR_4005.ausser?.length).toBe(24);
+  });
+
+  it('AS 2020 4005 FusG: «Zwischenbilanz» → «Zwischenabschluss» in Artikeln mit lit. d; Gliederungstitel zählen nicht', () => {
+    for (const t of ['16', '41', '63']) expect(anweisungsEreignisse('FUSG', t, 'ein Zwischenabschluss')[0].ereignis).toMatchObject({ datum: '2023-01-01', absatz: '1', item: 'd', anweisung: '«Zwischenbilanz» → «Zwischenabschluss»' });
+    expect(anweisungsEreignisse('FUSG', '80', 'Zwischenabschluss').map((x) => x.ereignis.absatz)).toEqual([null]);
+    for (const t of ['9', '32', '57']) expect(anweisungsEreignisse('FUSG', t, 'Zwischenabschluss')).toEqual([]);
   });
 
   it('«Im ganzen Erlass» (PATG «Institut» → «IGE»): nur mit heutigem Text «IGE», nur echte Artikel, mit Überschrift-Vorbehalt', () => {
@@ -147,7 +185,7 @@ describe('anweisungsEreignisse · Ereignis je Artikel', () => {
   });
 
   it('Register: jede Anweisung trägt Fundstelle, Link auf fedlex.data.admin.ch, Beleg, ISO-Datum und Abrufdatum (§7 a–c)', () => {
-    expect(ANWEISUNGEN.length).toBe(7);
+    expect(ANWEISUNGEN.length).toBe(11);
     for (const a of ANWEISUNGEN) {
       expect(a.as, a.id).toMatch(/^AS \d{4} \d+$/);
       expect(a.eli, a.id).toMatch(/^https:\/\/fedlex\.data\.admin\.ch\/eli\/oc\/\d{4}\/\d+$/);
@@ -241,6 +279,12 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     ['PATG', '36', '1995-07-01'], ['PATG', '50', '1978-01-01'],
     ['PATG', '110', '2017-01-01'], // Anweisung AS 2015 3631 («Institut» → «IGE», 1.1.2017)
     ['STGB', '355_b', '2006-04-01'], ['LFG', '37_u', '2018-01-01'], ['VWVG', '76', '1992-02-15'],
+    // Nachzug Gegenprüfung 5.10.2026 (B1): AS 2020 4005 Ziff. I «Ersatz von Ausdrücken», in Kraft 1.1.2023 (AS 2022 109). Soll je Artikel am Text
+    // belegt (Fedlex-Konsolidierung AKN-XML 1.1.2022 «Richter»/«Reinertrag»/«Zwischenbilanzen» → 1.1.2023 «Gericht»/«Jahresgewinn»/«Zwischenabschlüsse»)
+    ['OR', '743', '2023-01-01'], ['OR', '860', '2023-01-01'], ['OR', '981', '2023-01-01'], ['OR', '1072', '2023-01-01'], ['OR', '565', '2023-01-01'],
+    ['OR', '859', '2023-01-01'], ['OR', '861', '2023-01-01'], ['OR', '863', '2023-01-01'], ['OR', '1182', '2023-01-01'],
+    ['OR', '928_c', '2022-01-01'], ['OR', '973_c', '2021-02-01'], // Konsolidierung 1.1.2022 = 1.1.2023: AS 2020 4005 ändert den Wortlaut nicht
+    ['FUSG', '16', '2023-01-01'], ['FUSG', '41', '2023-01-01'], ['FUSG', '63', '2023-01-01'], ['FUSG', '80', '2023-01-01'], ['FUSG', '89', '2023-01-01'],
     ['STGB', '52', '2007-01-01'], // Neufassung erstes Buch AS 2006 3459; die Sachüberschrift-Fussnote 2004 änderte nur den Randtitel (AS 2004 1403)
   ];
 
@@ -257,10 +301,11 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     }
   });
 
-  it('bewusst OHNE Anweisungs-Ereignis: ZGB 430 (`ausser`), OR 565 (`ausser`), ZGB 410/368/383/385/860/864 (Text trägt den Ersatzausdruck nicht mehr), PATG 140n–v (jüngere Überschrift), STGB 67e/67f/66a', () => {
+  it('bewusst OHNE Anweisungs-Ereignis: ZGB 430 (`ausser`), OR 565 (nur von AS 2020 957 aus; `ausser`), ZGB 410/368/383/385/860/864 (Text trägt den Ersatzausdruck nicht mehr), PATG 140n–v (jüngere Überschrift), STGB 67e/67f/66a', () => {
     const hat = (erlass: string, t: string) => lade(erlass).artikel[t]?.ereignisse.some((e) => e.anweisung) ?? false;
     for (const t of ['430', '410', '368', '383', '385', '860', '864']) expect(hat('ZGB', t), `ZGB ${t}`).toBe(false);
-    expect(hat('OR', '565')).toBe(false);
+    const hat957 = (t: string) => lade('OR').artikel[t]?.ereignisse.some((e) => e.anweisung && e.quellen[0].label === 'AS 2020 957') ?? false;
+    expect(hat957('565')).toBe(false); // «richterliche» → «gerichtliche» erst durch AS 2020 4005 (2023); `ausser` der 957-Zeile
     for (const t of ['140_n', '140_o', '140_p', '140_r', '140_s', '140_t', '140_v']) expect(hat('PATG', t), `PATG ${t}`).toBe(false);
     for (const t of ['67_e', '67_f', '66_a']) expect(hat('STGB', t), `STGB ${t}`).toBe(false);
   });
@@ -268,7 +313,7 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
   it('Invariante: jedes Anweisungs-Ereignis stimmt in Datum, Fundstelle und Link mit dem Register überein und wird ein «Gilt seit»-Beitrag (kein `ueberschrift`)', () => {
     const nachAs = new Map(ANWEISUNGEN.map((a) => [`${a.erlass}|${a.as}`, a]));
     const zaehl: Record<string, number[]> = {};
-    for (const erlass of ['ZGB', 'OR', 'PATG', 'STGB']) {
+    for (const erlass of ['ZGB', 'OR', 'PATG', 'STGB', 'FUSG']) {
       let artikel = 0;
       let ereignisse = 0;
       for (const [token, a] of Object.entries(lade(erlass).artikel)) {
@@ -287,7 +332,8 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     }
     // Stand 5.10.2026 (Artikel, Ereignisse): ZGB 89/94 (88+5+13+24 genannte Stellen, minus aufgehobene/zusammengelegte/Text-Prüfung/ausser),
     // OR 33/33, PATG 41/41 («IGE» im Text, ohne jüngere Überschrift), STGB 121/121 (127 der AS-Liste, 6 heute nicht im Korpus).
-    expect(zaehl).toEqual({ ZGB: [89, 94], OR: [33, 33], PATG: [41, 41], STGB: [121, 121] });
+    // Nachzug 5.10.2026: OR + AS 2020 4005 (22 Artikel mit Ereignis, 23 Ereignisse), FUSG 8/8.
+    expect(zaehl).toEqual({ ZGB: [89, 94], OR: [55, 56], PATG: [41, 41], STGB: [121, 121], FUSG: [8, 8] });
   });
 
   it('Tripwire Register ↔ Korpus: jede genannte Stelle ist ein Ereignis ODER hat einen belegten Grund (nicht im Korpus, aufgehoben, `ausser`, Stamm fehlt)', () => {
@@ -301,11 +347,13 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
       for (const label of stellen.keys()) {
         const e = nachLabel.get(label);
         const token = e ? tokenAusId(e.id) : '';
-        const hat = !!e && (shard.artikel[token]?.ereignisse.some((x) => x.anweisung && x.quellen[0].label === a.as) ?? false);
+        const ausdruck = a.art === 'ausdruck' ? `«${a.alt}» → «${a.neu}»` : null;
+        const hat = !!e && (shard.artikel[token]?.ereignisse.some((x) => x.anweisung && x.quellen[0].label === a.as && (ausdruck === null || x.anweisung === ausdruck)) ?? false);
         if (hat) continue;
-        ohne++;
+        const belegt = a.ausser?.some((x) => x.artikel === label) ?? false; // `ausser` trägt je Artikel einen amtlichen Beleg (kein Zähl-Limit)
+        if (!belegt) ohne++;
         const grund =
-          !e || e.aufgehoben === true || a.ausser?.some((x) => x.artikel === label) ||
+          !e || e.aufgehoben === true || belegt ||
           (!!a.stamm && !lebenderText(e).toLowerCase().includes(a.stamm));
         expect(grund, `${a.id} «${label}» hat weder Ereignis noch Grund`).toBe(true);
       }

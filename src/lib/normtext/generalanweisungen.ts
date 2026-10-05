@@ -63,6 +63,13 @@ export interface Anweisung {
 
 const FEDLEX_OC = 'https://fedlex.data.admin.ch/eli/oc/';
 
+/** AS 2020 4005 Abs. 1 nennt auch Artikel, die AS 2020 957 schon am 1.1.2021 ersetzt hat: ihr Text ist 1.1.2022 = 1.1.2023 (kein Ereignis 2023). */
+const OR_2023_OHNE_WIRKUNG_GRUND =
+  'Wortlaut unverändert: Fedlex-Konsolidierung (AKN-XML) 1.1.2022 und 1.1.2023 tragen denselben Artikeltext — «Gericht» steht seit der Ersetzung durch AS 2020 957 (1.1.2021), AS 2020 4005 Abs. 1 ist hier ohne Wirkung';
+const OR_2023_OHNE_WIRKUNG: readonly string[] = [
+  '545', '574', '577', '579', '580', '583', '585', '601', '643', '685b', '706', '706a', '731b', '740', '741', '743', '846', '857', '881', '890', '891', '904', '918', '924',
+];
+
 /**
  * Das Register. Jede Zeile ist am AS-Erlass selbst belegt (PDF-A der Amtlichen Sammlung, Abruf 5.10.2026):
  * Seite und Ziffer der Anweisung sowie die Inkraftsetzungs-Klausel stehen in `beleg`.
@@ -157,12 +164,79 @@ export const ANWEISUNGEN: readonly Anweisung[] = [
     ausser: [
       {
         artikel: '565',
-        grund: 'Fedlex-Konsolidierung 1.1.2021–1.1.2022 trägt noch «richterliche»; der heutige Wortlaut «gerichtliche» gilt erst seit 1.1.2023 (parallele Anweisung AS 2020 4005, Aktienrecht, nicht erfasst)',
+        grund: 'Fedlex-Konsolidierung 1.1.2021–1.1.2022 trägt noch «richterliche»; der heutige Wortlaut «gerichtliche» gilt erst seit 1.1.2023 (parallele Anweisung AS 2020 4005, Aktienrecht: seit dem Nachzug 5.10.2026 als eigene Zeile OR-AS-2020-4005-richter-gericht erfasst)',
       },
     ],
     umfang: {
       liste:
         '545 Absatz 1 Ziffer 7, 565 Absatz 2, 574 Absatz 3, 577 Randtitel und Text, 579 Absatz 2, 580 Absatz 2, 583 Absatz 2, 585 Absatz 3, 601 Absatz 2, 643 Absatz 3, 685b Absatz 5, 697a Absatz 2, 697b Absatz 1, 697c, 697d Absatz 2, 697e Absätze 1 und 2, 697g Absatz 1, 699 Absatz 4, 706 Absatz 1, 706a Absatz 2, 716a Absatz 1 Ziffer 7, 725 Absatz 2, 725a Absätze 1 und 2, 731b Absätze 1–3, 736 Ziffer 4, 740 Absatz 4, 741 Absatz 2, 743 Absatz 2, 759 Absätze 2 und 3, 846 Absatz 3, 857 Absatz 3, 881 Absatz 3, 890 Absatz 2, 891 Absatz 1, 903 Absätze 2, 4 und 5, 904 Absatz 3, 918 Absatz 2 und 924 Absatz 2',
+    },
+  },
+  // ── OR · AS 2020 4005 (Aktienrecht, abschliessend in Kraft 1.1.2023), Ziff. I «Ersatz von Ausdrücken» S. 4005, Absätze 1, 2, 4 ──
+  // Die Liste von Abs. 1 überschneidet sich mit AS 2020 957 (Handelsregisterrecht, 1.1.2021): dort bereits ersetzte Artikel tragen
+  // am Stichtag keinen Unterschied (Konsolidierung 1.1.2022 = 1.1.2023) — `ausser` (OR_2023_OHNE_WIRKUNG), je am Text belegt.
+  {
+    id: 'OR-AS-2020-4005-richter-gericht',
+    erlass: 'OR',
+    as: 'AS 2020 4005',
+    eli: `${FEDLEX_OC}2020/746`,
+    beleg: 'AS 2020 4005, Ziff. I «Ersatz von Ausdrücken» Abs. 1 («Richter» durch «Gericht» ersetzt, mit den nötigen grammatikalischen Anpassungen); abschliessende Inkraftsetzung AS 2022 109 («tritt am 1. Januar 2023 abschliessend in Kraft»; vorab in Kraft AS 2020 4005 S. 4063, 4145, AS 2021 846/848 — nicht die Ersatzlisten)',
+    inKraft: '2023-01-01',
+    abgerufen: '2026-10-05',
+    art: 'ausdruck',
+    alt: 'Richter',
+    neu: 'Gericht',
+    stamm: 'gericht',
+    ausser: OR_2023_OHNE_WIRKUNG.map((artikel) => ({ artikel, grund: OR_2023_OHNE_WIRKUNG_GRUND })),
+    umfang: {
+      liste:
+        '545 Absatz 1 Ziffer 7, 565 Absatz 2, 574 Absatz 3, 577 Randtitel und Text, 579 Absatz 2, 580 Absatz 2, 583 Absatz 2, 585 Absatz 3, 601 Absatz 2, 643 Absatz 3, 685b Absatz 5, 706 Absatz 1, 706a Absatz 2, 731b Absätze 1–3, 740 Absatz 4, 741 Absatz 2, 743 Absatz 2, 846 Absatz 3, 857 Absatz 3, 881 Absatz 3, 890 Absatz 2, 891 Absatz 1, 904 Absatz 3, 918 Absatz 2, 924 Absatz 2, 938a Absatz 2, 941a Randtitel und Absätze 1 und 3, 971 Absatz 1, 981 Absatz 1, 984 Absatz 2, 985 Absätze 1 und 2, 986 Absätze 1 und 2, 987 Absätze 1 und 2, 1072, 1073, 1075, 1076 Absatz 2, 1077 Absatz 2, 1078, 1079 Absatz 1, 1080 Randtitel und Absatz 1, 1162 Absätze 3 und 4 sowie Artikel 1182',
+    },
+  },
+  {
+    id: 'OR-AS-2020-4005-reinertrag-jahresgewinn',
+    erlass: 'OR',
+    as: 'AS 2020 4005',
+    eli: `${FEDLEX_OC}2020/746`,
+    beleg: 'AS 2020 4005, Ziff. I «Ersatz von Ausdrücken» Abs. 2 («Reinertrag» durch «Jahresgewinn» ersetzt); abschliessende Inkraftsetzung AS 2022 109 («am 1. Januar 2023»)',
+    inKraft: '2023-01-01',
+    abgerufen: '2026-10-05',
+    art: 'ausdruck',
+    alt: 'Reinertrag',
+    neu: 'Jahresgewinn',
+    stamm: 'jahresgewinn',
+    umfang: { liste: '858 Randtitel, 859 Absätze 1–3, 860 Absatz 1, 861 Randtitel und Absätze 1‒3 sowie 863 Absätze 1 und 3' },
+  },
+  {
+    id: 'OR-AS-2020-4005-zwischenbilanzen-zwischenabschluesse',
+    erlass: 'OR',
+    as: 'AS 2020 4005',
+    eli: `${FEDLEX_OC}2020/746`,
+    beleg: 'AS 2020 4005, Ziff. I «Ersatz von Ausdrücken» Abs. 4 («Zwischenbilanzen» durch «Zwischenabschlüsse» ersetzt); abschliessende Inkraftsetzung AS 2022 109 («am 1. Januar 2023»)',
+    inKraft: '2023-01-01',
+    abgerufen: '2026-10-05',
+    art: 'ausdruck',
+    alt: 'Zwischenbilanzen',
+    neu: 'Zwischenabschlüsse',
+    stamm: 'zwischenabschl',
+    umfang: { liste: '587 Absatz 2 und 743 Absatz 5' },
+  },
+  // ── FusG · AS 2020 4005 (Aktienrecht, 1.1.2023), Ziff. II Anhang Ziff. 2 «Fusionsgesetz», «Ersatz eines Ausdrucks» S. 4065 ──
+  {
+    id: 'FUSG-AS-2020-4005-zwischenbilanz-zwischenabschluss',
+    erlass: 'FUSG',
+    as: 'AS 2020 4005',
+    eli: `${FEDLEX_OC}2020/746`,
+    beleg: 'AS 2020 4065, Anhang Ziff. 2 «Fusionsgesetz vom 3. Oktober 2003», «Ersatz eines Ausdrucks» («Zwischenbilanz» durch «Zwischenabschluss» ersetzt); abschliessende Inkraftsetzung AS 2022 109 («am 1. Januar 2023»)',
+    inKraft: '2023-01-01',
+    abgerufen: '2026-10-05',
+    art: 'ausdruck',
+    alt: 'Zwischenbilanz',
+    neu: 'Zwischenabschluss',
+    stamm: 'zwischenabschl',
+    umfang: {
+      liste:
+        'Gliederungstitel vor den Artikeln 9, 32 und 57 sowie Artikel 11, 16 Absatz 1 Buchstabe d, 35, 41 Absatz 1 Buchstabe d, 58, 63 Absatz 1 Buchstabe d, 80 und 89',
     },
   },
   // ── PATG · AS 2015 3631 (Markenschutzgesetz/«Swissness», in Kraft 1.1.2017), Ziff. II 6 «Ersatz eines Ausdrucks» S. 3645 ──
@@ -215,17 +289,21 @@ export interface Liste {
   nurRandtitel: string[];
   /** Schlusstitel-Artikel (Korpus-Schlüssel hier nicht ableitbar). */
   schlusstitel: string[];
+  /** Artikel, vor denen ein Gliederungstitel steht («Gliederungstitel vor den Artikeln 9, 32 und 57»): Überschrift, kein Körper. */
+  nurGliederungstitel: string[];
 }
 
 const NUM = String.raw`\d+[a-z]*`;
+// Buchstabe einer lit. («Buchstabe d», «Buchstabe abis»): kleinbuchstabig, kein Artikel.
+const BST = String.raw`[a-z](?:bis|ter|quater)?`;
 // Der nächste Posten beginnt mit Absatz-/Ziffer-Stichwort ⇒ «und 385 Abs. 3» ist ein neuer Artikel, kein weiterer Absatz.
 const FOLGT_STICHWORT = /^\s+(?:Abs\.|Absatz|Absätze|Ziff\.|Ziffer|Ziffern|Randtitel)(?=\s|$)/;
 // Absatz-/Ziffer-Nummern sind klein; eine grössere Zahl hinter «und» ist ein Artikel.
 const KLEIN = (n: string): boolean => parseInt(n, 10) <= 20;
 
 /** Absatz-/Ziffer-Gruppe ab `s` (hinter dem Stichwort): «2», «2 und 3», «1–3», bei Plural auch «2, 4 und 5». */
-function gruppe(s: string, plural: boolean): { text: string; rest: string } {
-  const erste = new RegExp(`^(${NUM})`).exec(s);
+function gruppe(s: string, plural: boolean, num: string = NUM): { text: string; rest: string } {
+  const erste = new RegExp(`^(${num})(?![\\w])`).exec(s);
   if (!erste) throw new Error(`Anweisungsliste: Absatz-/Ziffer-Nummer erwartet bei «${s.slice(0, 24)}»`);
   let text = erste[1];
   let rest = s.slice(erste[0].length);
@@ -256,6 +334,8 @@ export function parseListe(wortlaut: string): Liste {
   const koerper = new Map<string, Stelle>();
   const randtitel = new Set<string>();
   const schluss = new Set<string>();
+  const titel = new Set<string>();
+  let titelModus = false;
   const trenner = /^(?:\s|,|\bund\b|\bsowie\b)+/;
   while (s.length > 0) {
     const t = trenner.exec(s);
@@ -264,8 +344,11 @@ export function parseListe(wortlaut: string): Liste {
     if (rtVon) s = s.slice(rtVon[0].length);
     const schlussTitel = /^Schlusstitel\s+/.exec(s);
     if (schlussTitel) s = s.slice(schlussTitel[0].length);
-    const artKopf = /^(?:Art\.|Artikeln?)\s*/.exec(s);
-    if (artKopf) s = s.slice(artKopf[0].length);
+    // «Gliederungstitel vor den Artikeln 9, 32 und 57»: die folgenden Nummern sind Überschriften, bis ein neuer Artikel-Kopf kommt.
+    const glTitel = /^Gliederungstitel vor (?:den )?Artikeln?\s+/.exec(s);
+    if (glTitel) { s = s.slice(glTitel[0].length); titelModus = true; }
+    const artKopf = /^(?:in den\s+)?(?:Art\.|Artikeln?)\s*/.exec(s);
+    if (artKopf) { s = s.slice(artKopf[0].length); titelModus = false; }
     const label = new RegExp(`^(${NUM})(?![\\w])`).exec(s);
     if (!label) throw new Error(`Anweisungsliste: Artikelnummer erwartet bei «${s.slice(0, 30)}»`);
     s = s.slice(label[0].length);
@@ -275,8 +358,15 @@ export function parseListe(wortlaut: string): Liste {
     for (;;) {
       const sp = /^\s+/.exec(s);
       const t2 = sp ? s.slice(sp[0].length) : s;
-      const rtText = /^Randtitel und Text\b/.exec(t2);
-      if (rtText) { koerperTreffer = true; s = t2.slice(rtText[0].length); continue; }
+      // Hinter der Nummer: «Randtitel» allein (nur Randtitel, zählt nicht), «Randtitel und Text» (Körper ganz) oder «Randtitel und
+      // Absätze 1 und 3» (Randtitel zählt nicht, die Absätze schon).
+      const rtText = /^Randtitel(?:\s+und\s+(Text)\b|\s+und(?=\s+(?:Abs\.|Absatz|Absätze|Ziff\.|Ziffer|Ziffern)\s))?/.exec(t2);
+      if (rtText && !/^Randtitel von\b/.test(t2)) {
+        if (rtText[1]) koerperTreffer = true;
+        else if (!/^Randtitel\s+und\b/.test(t2)) koerperTreffer = false;
+        s = t2.slice(rtText[0].length);
+        continue;
+      }
       const abs = /^(Abs\.|Absatz|Absätze)\s+/.exec(t2);
       if (abs) {
         const g = gruppe(t2.slice(abs[0].length), abs[1] === 'Absätze');
@@ -287,11 +377,14 @@ export function parseListe(wortlaut: string): Liste {
         const g = gruppe(t2.slice(zif[0].length), zif[1] === 'Ziffern');
         items = [...items, g.text]; koerperTreffer = true; s = g.rest; continue;
       }
+      const bst = new RegExp(`^(?:Bst\\.|Buchstaben?)\\s+(${BST})(?![\\w])`).exec(t2);
+      if (bst) { items = [...items, bst[1]]; koerperTreffer = true; s = t2.slice(bst[0].length); continue; }
       const teil = /^(?:erster|zweiter|dritter|vierter)\s+(?:Satz|Teilsatz|Halbsatz)\b/.exec(t2);
       if (teil) { koerperTreffer = true; s = t2.slice(teil[0].length); continue; }
       break;
     }
     if (schlussTitel) { schluss.add(label[1]); continue; }
+    if (titelModus) { titel.add(label[1]); continue; }
     if (!koerperTreffer) { randtitel.add(label[1]); continue; }
     const alt = koerper.get(label[1]);
     const neu: Stelle = {
@@ -308,7 +401,7 @@ export function parseListe(wortlaut: string): Liste {
     }
   }
   // Ein Artikel, der auch im Körper steht, ist kein Nur-Randtitel-Artikel.
-  return { koerper, nurRandtitel: [...randtitel].filter((l) => !koerper.has(l)), schlusstitel: [...schluss] };
+  return { koerper, nurRandtitel: [...randtitel].filter((l) => !koerper.has(l)), schlusstitel: [...schluss], nurGliederungstitel: [...titel] };
 }
 
 const listeCache = new Map<string, Liste>();
