@@ -84,6 +84,10 @@ jobs:
       # (workflow_dispatch übersteuert). Exit 0 + ::notice::, status=keine.
       - name: Nachzug + Rauschschutz
         id: lauf
+        # Step-Timeout unter dem Job-Timeout: eine Zeitüberschreitung des Vollcrawls
+        # färbt den Schritt rot, failure() greift sicher und der Pause-Zettel entsteht
+        # (bei Job-Timeout ist das Laufen der cancelled()-Stufe nicht belegt; GP 6.10.).
+        timeout-minutes: 110
         env:
           QUELLEN: ${{ inputs.quellen }}
           AUSLOESER: ${{ github.event_name }}

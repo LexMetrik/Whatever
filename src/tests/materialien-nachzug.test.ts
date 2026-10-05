@@ -472,6 +472,7 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(yml).toMatch(/^permissions: \{\}$/m);
     expect(yml).toMatch(/permissions:\n\s+contents: write\n\s+pull-requests: write\n[\s\S]*?actions: write\n[\s\S]*?issues: write\n/);
     expect(yml).toContain('timeout-minutes: 120');
+    expect(yml).toMatch(/name: Nachzug \+ Rauschschutz\n\s+id: lauf\n(?:\s+#.*\n)*\s+timeout-minutes: 110\n/);
     expect(yml).toContain('npm run materialien:nachzug -- --datum=');
   });
 
