@@ -131,7 +131,7 @@ bleibt offen (15.9.2026, `W2·5m-LESER-V3`, vier Posten, vier Wochen).** Die Ber
 ihr im Weg steht — die eigene Checkbox ist das Einzige, was nicht stört, wenn es
 stehenbleibt; und ein Doku-Aufräumen nach Zeichenzahl entfernt Warn-Absätze zuverlässiger,
 als es die darin hinterlegten Aufträge ausführt. Schaden: vier Wochen falsche Steuerung (Archiv §F17-Schaden).
-**Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** *(Werkzeug abgebaut 5.10.2026, Umstieg; seither nur Prosa — Skill `bauschritt` Station D, `landung` Ziff. 9: der letzte PR streicht das Vorhaben aus JETZT und archiviert erledigte Merkzettel; die Klasse ist damit wieder ungeschützt)* — trägt eine eingerückte
+**Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** *(Werkzeug abgebaut 5.10.2026, Umstieg; ersetzt 5.10.2026 durch die Nachlass-Wache `.claude/hooks/abschluss-wache.py` (Auftrag David 5.10.2026): landet ein PR mit `Roadmap: <Kürzel>` der Session und steht das Vorhaben noch in JETZT, meldet die Folge-Session «Fertig-Kriterium prüfen» — Meldung, kein Sperr-Tor; Grenzen im Hook-Kopf)* — trägt eine eingerückte
 Checklisten-Zeile eine Etappen-Kennung und markiert der per `fahrplan:` verlinkte Fahrplan
 dieselbe Kennung mit ✅/«VOLLZOGEN», ist die offene Checkbox rot
 (`scripts/plan/etappenBuchung.ts`, `src/tests/plan-check.etappen-buchung.test.ts`).
