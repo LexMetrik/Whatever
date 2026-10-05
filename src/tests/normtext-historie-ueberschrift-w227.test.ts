@@ -10,7 +10,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
-import { baueArtikelHistorie, sektionsErbe, sektionsAnalyse, ganzeFassung, teilweiseFussnote, loeseErbeAuf, type ArtikelHistorie, type ErbArtikel, type HistorieEreignis, type FnEingang } from '../lib/normtext/historie-parse';
+import { baueArtikelHistorie, sektionsErbe, sektionsAnalyse, ganzeFassung, teilweiseFussnote, nurTeilDaten, loeseErbeAuf, type ArtikelHistorie, type ErbArtikel, type HistorieEreignis, type FnEingang } from '../lib/normtext/historie-parse';
 import { historieFuerArtikel, type HistorieShard } from '../lib/normtext/historie-laden';
 import { baueGliederungsbaum, type Sektion } from '../lib/normtext/browse';
 import { tokenAusId } from '../../scripts/normtext/historie-aufgehoben-lebend';
@@ -352,6 +352,22 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(traeger.giltSeit).toBeNull();
   });
 
+  // W2·32 (5.10.2026, SVG 89a): Fussnote mit NUR Teil-Daten, kein Haupt-Datum ⇒ auch der Träger zeigt kein einzelnes Datum.
+  it('nurTeilDaten: «…, Abschn. 2 in Kraft seit …» ja; «… (AHV 21), in Kraft seit …, Art. 40c …» und einfache Fassung nein', () => {
+    const SVG_89 = 'Eingefügt durch Ziff. I des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit 1. Jan. 2013, Abschn. 3 in Kraft seit 1. Jan. 2014 und Abschn. 1 in Kraft seit 1. Jan. 2019 (AS 2012 6291, 2013 4669, 2018 4985; BBl 2010 8447).';
+    expect(nurTeilDaten(SVG_89)).toBe(true);
+    expect(nurTeilDaten('Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40c in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92).')).toBe(false);
+    expect(nurTeilDaten(FASSUNG_2007)).toBe(false);
+    const f: ErbArtikel[] = [
+      { token: '89_a', gliederung: [TITEL], fussnoten: [sek(SVG_89, TITEL.label)] },
+      { token: '89_b', gliederung: [TITEL] },
+    ];
+    const traeger = historieVon(f, '89_a')!;
+    expect(traeger.giltSeit).toBeNull();
+    expect(traeger.ereignisse[0]).toMatchObject({ typ: 'eingefuegt', datum: null, wirkung: false, ueberschrift: TITEL.label });
+    expect(traeger.ereignisse[0].teilweise).toBe(SVG_89);
+  });
+
   it('amtlich aufgehobener Artikel (Text-Shard) und Artikel mit eigener Ganzaufhebung erben nichts', () => {
     const f8: ErbArtikel[] = [
       { token: '1', gliederung: [TITEL], fussnoten: [sek(FASSUNG_1972, TITEL.label)] },
@@ -571,6 +587,13 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
       expect(e.teilweise, `${erlass} ${token}`).toContain(wortlaut);
       expect(h.giltSeit, `${erlass} ${token}`).toBeNull();
     }
+  });
+
+  it('SVG 89a (Korpus): «Eingefügt» ohne Datum mit Wortlaut der Staffelung; SVG 89 («Gilt seit» 2013, Abs. 1) unberührt', () => {
+    const e = hist('SVG', '89_a')!.ereignisse.find((x) => x.teilweise)!;
+    expect(e).toMatchObject({ typ: 'eingefuegt', datum: null, wirkung: false });
+    expect(e.teilweise).toContain('Abschn. 1 in Kraft seit 1. Jan. 2019');
+    expect(hist('SVG', '89')!.giltSeit).toBe('2013-01-01');
   });
 
   it('B2: jedes Ereignis mit `teilweise` trägt in der Überschrift-Tabelle kein Datum (alle Erlasse)', () => {

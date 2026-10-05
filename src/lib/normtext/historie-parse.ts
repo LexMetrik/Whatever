@@ -454,7 +454,11 @@ export function baueArtikelHistorie(
         // Herkunft (§8): Ereignisse einer Sektions-Fussnote an einem geteilten Gliederungsknoten tragen das Überschrift-
         // Label — auch am Träger-Artikel. Eigene Sachüberschrift/Randtitel bzw. Ein-Artikel-Knoten (B4) bleiben eigen.
         if (opts.geteilteUeberschriften === undefined || opts.geteilteUeberschriften.has(fn.sektion)) {
-          const teilweise = teilweiseFussnote(text) ? { teilweise: text } : {};
+          // W2·32 (SVG 89a): nennt die Fussnote NUR Teil-Daten («…, Abschn. 2 in Kraft seit …, Abschn. 1 in Kraft seit …»), ohne
+          // unqualifiziertes Haupt-Datum, gehört das erste Datum nicht dem Träger-Artikel — dann auch am Träger ohne Datum.
+          const teilweise = teilweiseFussnote(text)
+            ? { teilweise: text, ...(nurTeilDaten(text) ? { datum: null, wirkung: false } : {}) }
+            : {};
           evs = evs.map((e) => ({ ...e, ueberschrift: fn.sektion!, ...teilweise }));
         }
       }
@@ -642,6 +646,16 @@ function fussnoteText(fn: FnEingang): string {
  */
 export function ganzeFassung(text: string): boolean {
   return /^\s*(?:\d+[a-z]*\s+)?(?:Fassung gemäss|[Ee]ingefügt durch|Fassung des [^\s]+ (?:Titels|Abschnitts|Kapitels))/.test(text);
+}
+
+/**
+ * W2·32: alle Inkrafttretens-Daten der Fussnote hängen an einer Teil-Klausel (Abschn./Art./Abs. …); unmittelbar nach dem
+ * Erlass-Kopf («… des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit …») steht kein unqualifiziertes Haupt-Datum.
+ * Beispiel SVG 89a–89c: Abschn. 2 → 2013, Abschn. 3 → 2014, Abschn. 1 → 2019. Gegenbeispiel AHVG 39 («… (AHV 21), in Kraft
+ * seit 1. Jan. 2024, Art. 40c in Kraft vom …»): das Haupt-Datum gilt für den Träger.
+ */
+export function nurTeilDaten(text: string): boolean {
+  return /\bvom\s+\d{1,2}\.\s+\p{L}+\.?\s+\d{4}(?:\s*\([^)]*\))?\s*,\s*(?:Art|Abschn|Abs|Bst|Kap|Ziff|Tit)\.\s*\d/u.test(text);
 }
 
 /**
