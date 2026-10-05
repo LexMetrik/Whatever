@@ -769,6 +769,7 @@ jobs:
           echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}. Ein Skip ist nur bei art=doku, art=code-fern oder push_diaet=true zulässig."
           exit 1
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-066
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-051
@@ -777,11 +778,48 @@ jobs:
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
       && needs.diff.outputs.bau_perf_belegt != 'true'
-      && needs.bau.result == 'success'
-      && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
-      && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-052
-    needs: [diff, bau, tore, e2e]
+    needs: [diff, tore, e2e-ergebnis, perf-messung]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Messung nur bei grüner Treue werten
+        env:
+          MESSUNG: ${{ needs.perf-messung.result }}
+          TORE: ${{ needs.tore.result }}
+          E2E: ${{ needs.e2e-ergebnis.result }}
+          DIAET: ${{ needs.diff.outputs.push_diaet }}
+        run: |
+          set -euo pipefail
+          echo "tore=${TORE} · browser-smoke=${E2E} · perf-messung=${MESSUNG} · push_diaet=${DIAET:-<leer>}"
+          rot=0
+          if [ "${TORE}" = "success" ] || { [ "${TORE}" = "skipped" ] && [ "${DIAET}" = "true" ]; }; then
+            :
+          else
+            echo "::error::Treue nicht grün: Tore=${TORE} (skipped nur bei push_diaet=true zulässig) — Perf wird nicht gewertet."
+            rot=1
+          fi
+          if [ "${E2E}" != "success" ]; then
+            echo "::error::Treue nicht grün: Browser-Smoke (Ergebnis)=${E2E} — Perf wird nicht gewertet."
+            rot=1
+          fi
+          if [ "${MESSUNG}" != "success" ]; then
+            echo "::error::Perf-Messung nicht bestanden: ${MESSUNG}."
+            rot=1
+          fi
+          if [ "${rot}" -ne 0 ]; then
+            exit 1
+          fi
+          echo "Treue grün (Tore + Browser-Smoke) und Perf-Budget eingehalten."
+
+  perf-messung:
+    name: Perf-Messung (Bundle · Lighthouse, parallel zu den Shards)
+    if: >-
+      !cancelled()
+      && github.event_name != 'pull_request'
+      && needs.diff.outputs.art == 'code'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
+      && needs.bau.result == 'success'
+    needs: [diff, bau]
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
