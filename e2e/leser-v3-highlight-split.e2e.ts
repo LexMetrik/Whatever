@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 3
 // FAHRPLAN-LESER-V3 Kap. 14 / Etappe H2 — absorbierter ROADMAP-Schritt
 // `QS-UI-HIGHLIGHT`: «::highlight()-Registry je Leser-Instanz; heute löscht im
 // Split-View das Rail-Suchfeld die Markierung des Nachbar-Panes».

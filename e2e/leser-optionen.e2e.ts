@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 import {
   ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, RECHTSPRECHUNG_SCHALTER_NAME, SCHALTER_ROLLE, WAHL_ROLLE,

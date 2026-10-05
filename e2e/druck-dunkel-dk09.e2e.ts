@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 3
 // ═══ DK-09 · DRUCK AUS DEM DUNKELMODUS (W2·29-WERKBANK-REST S3, 25.9.2026) ═══
 //
 // Befund (Herz-und-Nieren-Prüfung, bestätigt 25.9.2026, Bericht

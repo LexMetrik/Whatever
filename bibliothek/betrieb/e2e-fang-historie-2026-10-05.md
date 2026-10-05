@@ -235,6 +235,56 @@ Routen (gelesen am Stand `b1d4f029b`).
 | `werkzeugkopf-intro-mobil` | NACHT | Kürzung der Werkzeugkopf-Einleitung |
 | `zustaendigkeit-fluss` | QUEUE | Zuständigkeits-Rechner bis zum Behörden-Ergebnis |
 
+## Nachtrag 5.10.2026 — nach Gegenprüfung (PR #1326) zurück in die Queue
+
+Die Gegenprüfung von PR #1326 widerlegte die Einstufung für acht Specs. Die
+Tabellen in §3/§4 oben stehen unverändert als Stand der Erhebung; hier gilt
+seither der Ist-Stand. Zählweg: `.gate/nz-zaehlen.py` gegen `spec-tabelle.csv`
+(Tests, `dauer_s`) und `einstufung-nie-rot.tsv` (nie rot: 107 Specs).
+
+**Nach Gegenprüfung 5.10.2026 zurück in die Queue** (die Spalte `nachtrag` der
+Einstufungstabelle trägt dieselben Gründe):
+
+| Spec | Grund |
+|---|---|
+| `rechtsprechung-besetzung-links` | **blockierend:** Test 1 prüft den amtlichen Rubrum-Wortlaut «Besetzung» per toBe — Anzeige von Urteilstext (die Einstufung las «Urteilstext unberührt») |
+| `leser-gliederung-klappen-w217` | **blockierend:** Test f prüft die NHG-Artikelreihenfolge (Regression B7), EMRK-Anhang/VwVG-Index — Reihenfolge/Inhalt von Gesetzestext (die Einstufung las «Klappen/Tastatur») |
+| `leser-v3-treffer-reihenfolge` | im Zweifel Queue: Trefferliste in der Reihenfolge des Gesetzestexts, eine Zeile je Fundstelle |
+| `leser-suchfeld` | im Zweifel Queue: Enter springt zur Fundstelle im Normtext, aktive Fundstelle wird markiert |
+| `leser-suche-klappzustand` | im Zweifel Queue: Treffer in zugeklappter Sektion öffnet und markiert die Fundstelle im Normtext |
+| `leser-v3-panel-erlaeuterungen` | im Zweifel Queue: welche Erläuterungen/Werkzeuge je Erlass erscheinen (Inhalt, nicht nur Bedienung) |
+| `leser-v3-panel-filter-befunde` | im Zweifel Queue: Kantons-/Zeitraumfilter bestimmen, welche Urteile gelistet bleiben |
+| `leser-w228-landkarte` | im Zweifel Queue: Marken sind die Treffer im Gesetzestext, Klick führt an die richtige Stelle |
+
+**Neue Zählung** (nie rote Specs, Stand nach Gegenprüfung):
+
+| | Specs | Tests | Testminuten |
+|---|---:|---:|---:|
+| nie rot → QUEUE | 49 | 279 | 14,3 |
+| nie rot → NACHT | 58 | 505 | 17,0 |
+| Queue gesamt (inkl. aller je roten) | 145 | 1439 | 76,6 |
+| Nacht gesamt | 58 | 505 | 17,0 |
+
+(Vorher 41/66 Specs, 221/563 Tests, 9,2/22,1 min. Unverändert die Summen: 107
+nie rote Specs mit 784 Tests und rund 31 min (Rundung der Dauern je Spec); alle 203 Specs mit 1944 Tests und
+93,6 min. Zählung per Skript, nicht von Hand.)
+
+**Neupackung** der 145 Queue-Specs auf 6 Gruppen mit derselben Mechanik wie
+im Nachtrag N2 (LPT: Greedy nach absteigender Spec-Dauer, Gleichstand →
+niedrigste Gruppe; Dauern aus dem Queue-Lauf 37344516589): je 765–767 s
+Testzeit, Spanne 1,2 s (vorher 715–716 s). Die Probe der Mechanik auf den 137
+alten Queue-Specs reproduziert die damalige Packung exakt (0 Wechsel); mit
+den acht neuen wechseln 109 der 137 Altspecs die Gruppe (der inkrementelle
+Einbau der acht ohne Umzug hätte 87 s Spanne ergeben und wurde verworfen). Die
+Zeitrechnung (Testsumme / Shards / 2 Worker + ~70 s Rüstzeit) ergibt bei
+6 Shards ~7,5 min Wanduhr je Shard (8: 6,0 · 7: 6,6 · 5: 8,8 · 4: 10,7); die
+Gruppenzahl bleibt 6 (Entscheid David 5.10.2026).
+
+**Offener Fund aus derselben Gegenprüfung (kein Umbau hier):**
+`e2e/leser-kopf-cls-s3.e2e.ts:80-84` wartet auf den Fedlex-Konsolidierungshinweis
+an der StPO und fällt rot, sobald Fedlex konsolidiert, ohne Produktdefekt
+(EINGANG-Zeile in `ROADMAP.md`). Die Spec bleibt vorerst in der Nacht.
+
 ## Pflegebedarf
 
 - **Neue Spec:** trägt eine Zahl (Queue) oder `nacht`; die Grenze aus §3 gilt

@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 4
 // ═══ W2·17-UI-BEFUNDE · Gesetzesleser: Druck ohne Rechtsinhalt-Verlust, Tabellen, Marken ═══
 //
 // Finder-Befunde DFG-G02 / DFG-G03 / DFG-D01 / DFG-D02 / DFG-D03 vom 2.10.2026

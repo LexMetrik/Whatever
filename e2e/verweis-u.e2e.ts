@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 5
 import { blattFuerArtikel } from './helpers/fassungsRubrik';
 import { test, expect } from '@playwright/test';
 import { fehlerSammeln } from './helpers/fehlerSammeln';

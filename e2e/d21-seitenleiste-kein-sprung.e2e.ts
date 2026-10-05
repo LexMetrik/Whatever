@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 //
 // ── D21/D25 · DIE INHALTSSPALTE SPRINGT BEIM ROUTENWECHSEL NICHT ────────────
 //

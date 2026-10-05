@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
 // PLZ-Mehrdeutigkeit als Auswahl (TODO 5 betreibungskreise-kantone.md,
 // 10.6.2026): bei PLZ mit mehreren Gemeinden erscheinen klickbare Kacheln
 // (PlzGemeindeWahl); der Klick setzt Gemeinde UND Kanton. Geprüft im

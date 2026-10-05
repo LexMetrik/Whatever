@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 5
 // W2·29-WERKBANK-START-UEBERARBEITUNG U2 · Schnellwerkzeug wählbar (24.9.2026)
 import { test, expect, type Page } from '@playwright/test'
 

@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 3
 // U-UEBERSICHT (W2·5d · A14 + A15) — Gliederungs-Umschalter auf allen drei
 // Säulen (Relevanz · Systematisch · Rechtsgebiet), Kanton-Titelumbruch statt
 // Kappen, Persistenz + Deep-Links, URL-Kompatibilität, Flüssigkeit @6×-Throttle

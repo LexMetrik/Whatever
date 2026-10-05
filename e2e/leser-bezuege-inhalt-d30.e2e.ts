@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 2
 // ── W2·24-R5-F1K · D30 · DIE BEZÜGE-ZEILE ZEIGT, WAS SIE ZÄHLT ──────────────
 //
 // BEFUND David 6.9.2026, wörtlich: die Zeile «Bezüge · 11 Entscheide · 1 Rechner ›»

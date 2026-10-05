@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // ─── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 2) ───
 //
 // Deckt die WIRKUNG von `BezugFacettenWahl`/`BezugZeitWahl` AM V3-PANEL —

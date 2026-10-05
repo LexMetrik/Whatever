@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 import { ANSICHT_OEFFNER, warteLeserBereit } from './helpers/leserBereit';
 import { ANSICHT_PANEL, SCHALTER_ROLLE } from './helpers/leserBeschriftung';

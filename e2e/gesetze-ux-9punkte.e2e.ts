@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';

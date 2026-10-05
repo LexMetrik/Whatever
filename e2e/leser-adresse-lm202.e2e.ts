@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 6
 // ── §6.3-DEKLARATION (W2·26/Z6, Mandat David 11.9.2026) ─────────────────────
 // Die drei Artikel-Aktionen («Zitat», «Link», «Amtliche Fassung ↗») stehen
 // unverändert in der Funktionszeile am Artikelende, werden aber erst GERENDERT,

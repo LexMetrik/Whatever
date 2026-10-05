@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 2
 // E7 / A33 (FAHRPLAN-GESETZES-UX §10.10) — «Gliederung springt umher. Wenn man
 // sich darin bewegt.» (David 16.7.2026). Regressions-Wächter für die Ruhe des
 // Gliederungs-Baums (Scroll-Spy / TOC-Mitscroll). Läuft gegen `vite preview`

@@ -110,6 +110,7 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 
 ```
 - S · 5.10. · Dauer-Wackler reparieren (Go David 05.10.): Wurzelfix je Spec, nicht löschen — Kandidaten aus bibliothek/betrieb/e2e-fang-historie-2026-10-05/spec-tabelle.csv (≥ 7 Flakes, kein Produkt-Fang): leser-v3-suche-ohne-gliederung 13, druck-fundstellen-z2 13, gesetze-ux-9punkte 12 (+7 offen), w224-r11-reiterleiste 11 («auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot 8/8, Ausnahmeliste zurückgebaut, QS-CI-ZEIT E2), leser-v3-blatt 10, tastatur 7; FB S-24 — Dach QS-CI-ZEIT
+- S · 5.10. · e2e/leser-kopf-cls-s3.e2e.ts:80-84 wartet auf den Fedlex-Konsolidierungshinweis an STPO — fällt rot, sobald Fedlex konsolidiert, ohne Defekt (GP #1326) — Dach QS-CI-ZEIT
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
 - S · 5.10. · tor-paritaet: (1) Sonde ignoriert Job-if (z. B. event_name != 'pull_request'), Tor in PR-gesperrtem Job zählt als PR-gedeckt; (2) check:perf-lighthouse gilt durch perf-kalibrierung.yml (--messen, ohne Assertion) als gedeckt — perf-nacht.yml könnte die Prüfung still verlieren (GP #1323) — Dach QS-CI-ZEIT
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10

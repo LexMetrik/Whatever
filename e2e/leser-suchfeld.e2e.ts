@@ -1,4 +1,4 @@
-// @shard-gruppe: nacht
+// @shard-gruppe: 2
 // W2·17-UI-BEFUNDE · Suchfeld des Gesetzesleser (2.10.2026), drei Befunde:
 //
 //  C1-B01  Enter sucht mit dem AKTUELLEN Feldinhalt. Die Trefferliste hängt an

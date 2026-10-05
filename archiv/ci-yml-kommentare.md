@@ -1605,6 +1605,25 @@ Neu 5.10.2026 (QS-CI-ZEIT N2; kein verschobener Altkommentar).
   # später als Zettel (Label alarm:e2e-nacht) statt die Queue zu blockieren.
 ```
 
+**Nachtrag 5.10.2026 (nach Gegenprüfung PR #1326, QS-CI-ZEIT; Ergänzung, der
+Kommentar oben bleibt als Stand N2 stehen):** acht der 66 Nacht-Specs
+(`rechtsprechung-besetzung-links`, `leser-gliederung-klappen-w217`,
+`leser-v3-treffer-reihenfolge`, `leser-suchfeld`, `leser-suche-klappzustand`,
+`leser-v3-panel-erlaeuterungen`, `leser-v3-panel-filter-befunde`,
+`leser-w228-landkarte`) laufen wieder in der Queue — die ersten beiden prüfen
+Urteils-/Gesetzestext (Rubrum-Wortlaut «Besetzung»; NHG-Artikelreihenfolge,
+EMRK-Anhang), die übrigen sechs im Zweifel (Davids Grenze 5.10.2026). Damit:
+nie rote Specs 49 Queue / 58 Nacht (statt 41 / 66); Queue gesamt 145 Specs,
+1439 Tests, 76,6 Testminuten (statt 137 / 1381 / 71,5), Nacht 58 Specs,
+505 Tests, 17,0 Testminuten (statt 66 / 563 / 22,1). Shard-Rechnung neu:
+Queue-Summe 4595 s, LPT-Neupackung (dieselbe Mechanik, Gleichstand →
+niedrigste Gruppe) auf 6 Gruppen je 765–767 s (Spanne 1,2 s, 109 der 137
+Altspecs wechseln die Gruppe, nur Annotationen), Wanduhr je Shard
+(Testsumme / Shards / 2 Worker + ~70 s Rüstzeit): 8 → 6,0 min, 7 → 6,6,
+6 → 7,5, 5 → 8,8, 4 → 10,7. Gruppenzahl bleibt 6 (Entscheid David); ci.yml
+unverändert. Beleg und Einzelgründe:
+`bibliothek/betrieb/e2e-fang-historie-2026-10-05.md` (Nachtrag).
+
 ## ci-073 · (perf-nacht.yml) · e2e-nacht (Browser-Nacht gegen main)
 
 Neu 5.10.2026 (QS-CI-ZEIT N3; Gegenstück zu ci-072, steht hier, weil der
