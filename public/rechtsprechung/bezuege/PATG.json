@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"PATG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -28,7 +28,8 @@
 "bpatger_S2024_003":{"zitierung":"BPatGer S2024_003 vom 10. Juli 2024","regesteKurz":"Erfinderische Tätigkeit, Massnahme superprovisorisch abgewiesen, Neuheit","datum":"2024-07-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bpatger_S2024_005_S2024_006_S2024_007":{"zitierung":"BPatGer S2024_005, S2024_006, S2024_007 vom 8. Juli 2025","regesteKurz":"Erfinderische Tätigkeit, Neuheit, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bpatger_S2024_008":{"zitierung":"BPatGer S2024_008 vom 12. Juni 2025","regesteKurz":"Einschränkung, Schutzzertifikat, Vorsorgliche Massnahme (provisorisch)","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
-"bpatger_S2025_003":{"zitierung":"BPatGer S2025_003 vom 17. Juli 2026","regesteKurz":"Äquivalenz, Erfinderische Tätigkeit, Legitimation (aktiv), Legitimation (passiv), Neuheit, Priorität, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2026-07-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}}
+"bpatger_S2025_003":{"zitierung":"BPatGer S2025_003 vom 17. Juli 2026","regesteKurz":"Äquivalenz, Erfinderische Tätigkeit, Legitimation (aktiv), Legitimation (passiv), Neuheit, Priorität, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2026-07-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
+"bpatger_S2026_003":{"zitierung":"BPatGer S2026_003 vom 20. Juli 2026","regesteKurz":"Massnahme superprovisorisch abgewiesen, Übertragung von Patent","datum":"2026-07-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_149_III_351__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"bge_146_III_403__voll","gewicht":0,"erwaegungen":["E. 7"]},{"key":"bpatger_S2025_003","gewicht":null},{"key":"bpatger_O2024_007","gewicht":null},{"key":"bpatger_O2024_002","gewicht":null},{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null},{"key":"bpatger_O2023_017","gewicht":null},{"key":"bpatger_O2023_002_O2023_008","gewicht":null},{"key":"bpatger_O2023_010","gewicht":null},{"key":"bpatger_O2023_012","gewicht":null},{"key":"bpatger_O2023_007","gewicht":null},{"key":"bpatger_S2024_003","gewicht":null},{"key":"bpatger_O2022_006","gewicht":null},{"key":"bpatger_O2022_007","gewicht":null}],
@@ -56,7 +57,7 @@
 "67":[{"key":"bpatger_O2022_007","gewicht":null}],
 "68":[{"key":"bpatger_S2023_011","gewicht":null},{"key":"bpatger_O2024_002","gewicht":null}],
 "75":[{"key":"bpatger_S2025_003","gewicht":null}],
-"77":[{"key":"bpatger_S2023_011","gewicht":null},{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null},{"key":"bpatger_S2024_008","gewicht":null},{"key":"bpatger_S2024_001","gewicht":null},{"key":"bpatger_S2024_002","gewicht":null}],
+"77":[{"key":"bpatger_S2026_003","gewicht":null},{"key":"bpatger_S2023_011","gewicht":null},{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null},{"key":"bpatger_S2024_008","gewicht":null},{"key":"bpatger_S2024_001","gewicht":null},{"key":"bpatger_S2024_002","gewicht":null}],
 "109":[{"key":"bpatger_O2022_007","gewicht":null}],
 "145":[{"key":"bpatger_S2025_003","gewicht":null}],
 "140a":[{"key":"bpatger_S2024_008","gewicht":null}],
@@ -92,7 +93,7 @@
 "67":{"eidg":1},
 "68":{"eidg":2},
 "75":{"eidg":1},
-"77":{"eidg":5},
+"77":{"eidg":6},
 "109":{"eidg":1},
 "145":{"eidg":1},
 "140a":{"eidg":1},

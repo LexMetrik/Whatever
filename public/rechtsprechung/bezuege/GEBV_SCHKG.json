@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"GEBV_SCHKG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -20,6 +20,7 @@
 "bs_appellationsgericht_BEZ.2025.34":{"zitierung":"Appellationsgericht BS BEZ.2025.34 vom 18.05.2026","regesteKurz":"Pfändung (Kosten)","datum":"2026-05-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BEZ.2026.3":{"zitierung":"Appellationsgericht BS BEZ.2026.3 vom 27.01.2026","regesteKurz":"Konkurseröffnung nach Art. 166 SchKG","datum":"2026-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "gr_gerichte_SBK202638":{"zitierung":"Kantonsgericht GR SBK 2026 38 vom 28.04.2026","regesteKurz":null,"datum":"2026-04-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
+"gr_gerichte_SBK202674":{"zitierung":"Kantonsgericht GR SBK 2026 74 vom 16.09.2026","regesteKurz":null,"datum":"2026-09-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "gr_gerichte_SBK202688":{"zitierung":"Kantonsgericht GR SBK 2026 88 vom 21.09.2026","regesteKurz":null,"datum":"2026-09-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "zh_obergericht_PS260072":{"zitierung":"Obergericht ZH PS260072 vom 21.07.2026","regesteKurz":null,"datum":"2026-07-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260142":{"zitierung":"Obergericht ZH PS260142 vom 24.07.2026","regesteKurz":null,"datum":"2026-07-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
@@ -51,7 +52,7 @@
 "54":[{"key":"zh_obergericht_PS260072","gewicht":null}],
 "55":[{"key":"zh_obergericht_PS260072","gewicht":null}],
 "61":[{"key":"gr_gerichte_SBK202688","gewicht":null},{"key":"zh_obergericht_RT260100","gewicht":null},{"key":"zh_obergericht_PS260245","gewicht":null},{"key":"zh_obergericht_PS260270","gewicht":null},{"key":"gr_gerichte_SBK202638","gewicht":null},{"key":"zh_obergericht_PS260151","gewicht":null}],
-"62":[{"key":"bge_149_III_210","gewicht":0},{"key":"bge_149_III_28__voll","gewicht":0,"erwaegungen":["E. 7"]},{"key":"zh_obergericht_PS260265","gewicht":null},{"key":"zh_obergericht_PS260142","gewicht":null},{"key":"zh_obergericht_PS260195","gewicht":null}],
+"62":[{"key":"bge_149_III_210","gewicht":0},{"key":"bge_149_III_28__voll","gewicht":0,"erwaegungen":["E. 7"]},{"key":"gr_gerichte_SBK202674","gewicht":null},{"key":"zh_obergericht_PS260265","gewicht":null},{"key":"zh_obergericht_PS260142","gewicht":null},{"key":"zh_obergericht_PS260195","gewicht":null}],
 "10bis":[{"key":"bge_150_III_223","gewicht":0}]
 },
 "gesamtProArtikel":{
@@ -74,7 +75,7 @@
 "54":{"kantonal":1},
 "55":{"kantonal":1},
 "61":{"kantonal":6},
-"62":{"bge":1,"bger":1,"kantonal":3},
+"62":{"bge":1,"bger":1,"kantonal":4},
 "10bis":{"bge":1}
 }
 }

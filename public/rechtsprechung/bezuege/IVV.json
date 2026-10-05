@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"IVV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -292,7 +292,8 @@
 "bs_sozialversicherungsgericht_UV.2025.40":{"zitierung":"Sozialversicherungsgericht BS UV.2025.40 vom 26.11.2025","regesteKurz":"Anspruch auf ein Teiltaggeld gemäss Art. 23 Abs. 9 UVV bei Abbruch und Wiederaufnahme der Berufsausbildung","datum":"2025-11-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_UV.2025.58":{"zitierung":"Sozialversicherungsgericht BS UV.2025.58 vom 21.05.2026","regesteKurz":"UVG Rente","datum":"2026-05-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_UV.2025.6":{"zitierung":"Sozialversicherungsgericht BS UV.2025.6 vom 28.08.2025","regesteKurz":"Zumutbarkeitsprofil nicht zu beanstanden; Anwendbarkeit eines Pauschalabzugs i.S.v. Art. 26bis Abs. 3 IVV im…","datum":"2025-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_UV.2025.9":{"zitierung":"Sozialversicherungsgericht BS UV.2025.9 vom 24.03.2026","regesteKurz":"UVG, Rente; Integritätsentschädigung","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_UV.2025.9":{"zitierung":"Sozialversicherungsgericht BS UV.2025.9 vom 24.03.2026","regesteKurz":"UVG, Rente; Integritätsentschädigung","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_SV2202512":{"zitierung":"Kantonsgericht GR SV2 2025 12 vom 04.09.2026","regesteKurz":null,"datum":"2026-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "3":[{"key":"bge_151_V_322","gewicht":0},{"key":"bge_150_V_410__voll","gewicht":0,"erwaegungen":["E. 9.4.2"]},{"key":"bs_sozialversicherungsgericht_IV.2024.69","gewicht":null},{"key":"bs_sozialversicherungsgericht_IV.2024.32","gewicht":null}],
@@ -352,7 +353,7 @@
 "32bis":[{"key":"bge_147_V_133","gewicht":0}],
 "35ter":[{"key":"bge_151_V_212","gewicht":0},{"key":"bge_151_V_88","gewicht":1},{"key":"bge_146_V_322","gewicht":2},{"key":"bs_sozialversicherungsgericht_IV.2024.6","gewicht":null}],
 "39a":[{"key":"bge_150_V_410","gewicht":0},{"key":"bge_147_V_251","gewicht":0},{"key":"bge_147_V_73","gewicht":0}],
-"39c":[{"key":"bge_148_V_408","gewicht":0}],
+"39c":[{"key":"bge_148_V_408","gewicht":0},{"key":"gr_gerichte_SV2202512","gewicht":null}],
 "39e":[{"key":"bge_148_V_408","gewicht":0}],
 "39f":[{"key":"bge_148_V_408","gewicht":0}],
 "39g":[{"key":"bge_148_V_408","gewicht":0}],
@@ -431,7 +432,7 @@
 "32bis":{"bge":1},
 "35ter":{"bge":3,"kantonal":1},
 "39a":{"bge":3},
-"39c":{"bge":1},
+"39c":{"bge":1,"kantonal":1},
 "39e":{"bge":1},
 "39f":{"bge":1},
 "39g":{"bge":1},

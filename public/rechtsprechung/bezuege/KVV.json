@@ -1,8 +1,9 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"KVV",
 "erlassEbene":"bund",
 "dokumente":{
+"be_verwaltungsgericht_2002025513":{"zitierung":"Verwaltungsgericht BE 200 2025 513 vom 14.09.2026","regesteKurz":null,"datum":"2026-09-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BE","gericht":"be_verwaltungsgericht","status":"kantonal"}},
 "be_verwaltungsgericht_2002025685":{"zitierung":"Verwaltungsgericht BE 200 2025 685 vom 18.08.2026","regesteKurz":null,"datum":"2026-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BE","gericht":"be_verwaltungsgericht","status":"kantonal"}},
 "bge_146_V_129":{"zitierung":"BGE 146 V 129","regesteKurz":"Art. 70 Abs. 2 ATSG; Vorleistungspflicht; Gesetzeslücke. In Ergänzung von Art. 70 Abs. 2 ATSG ist die Invalidenversicherung vorleistungspflichtig für Hilfsmittel, deren Übernahme durch die Invaliden- oder Unfallversicherung umstritten (und…","datum":"2020-05-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_V_152":{"zitierung":"BGE 146 V 152","regesteKurz":"a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten…","datum":"2020-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -84,7 +85,8 @@
 "bs_sozialversicherungsgericht_KV.2025.6":{"zitierung":"Sozialversicherungsgericht BS KV.2025.6 vom 12.06.2026","regesteKurz":"Prämien/Kostenbeteiligungen; Rechtsöffnung","datum":"2026-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2025.8":{"zitierung":"Sozialversicherungsgericht BS KV.2025.8 vom 11.02.2026","regesteKurz":"Wechsel der Krankenversicherung; Anrechnung der Franchise durch den neuen Versicherer","datum":"2026-02-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2026.1":{"zitierung":"Sozialversicherungsgericht BS KV.2026.1 vom 04.06.2026","regesteKurz":"Prämienausstände, Mahngebühren und Spesenpauschale, Rechtsöffnungsverfahren","datum":"2026-06-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_SG.2019.2":{"zitierung":"Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022","regesteKurz":"Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten…","datum":"2022-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_SG.2019.2":{"zitierung":"Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022","regesteKurz":"Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten…","datum":"2022-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_SV2202512":{"zitierung":"Kantonsgericht GR SV2 2025 12 vom 04.09.2026","regesteKurz":null,"datum":"2026-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_152_V_149","gewicht":0},{"key":"bge_146_V_152","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2022.7","gewicht":null}],
@@ -103,8 +105,8 @@
 "40":[{"key":"bge_150_V_129","gewicht":0}],
 "46":[{"key":"bge_146_V_253","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
 "47":[{"key":"bge_146_V_253","gewicht":0},{"key":"bge_151_V_284__voll","gewicht":0,"erwaegungen":["E. 4.6.1"]},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
-"49":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16__voll","gewicht":1,"erwaegungen":["E. 3.2"]},{"key":"be_verwaltungsgericht_2002025685","gewicht":null}],
-"51":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_151_V_1__voll","gewicht":0,"erwaegungen":["E. 1.2.1"]},{"key":"bge_147_V_16__voll","gewicht":2,"erwaegungen":["E. 3.2"]},{"key":"be_verwaltungsgericht_2002025685","gewicht":null}],
+"49":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16__voll","gewicht":1,"erwaegungen":["E. 3.2"]},{"key":"be_verwaltungsgericht_2002025513","gewicht":null},{"key":"gr_gerichte_SV2202512","gewicht":null},{"key":"be_verwaltungsgericht_2002025685","gewicht":null}],
+"51":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_151_V_1__voll","gewicht":0,"erwaegungen":["E. 1.2.1"]},{"key":"bge_147_V_16__voll","gewicht":2,"erwaegungen":["E. 3.2"]},{"key":"be_verwaltungsgericht_2002025513","gewicht":null},{"key":"gr_gerichte_SV2202512","gewicht":null},{"key":"be_verwaltungsgericht_2002025685","gewicht":null}],
 "59":[{"key":"bge_151_V_30","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_SG.2019.2","gewicht":null}],
 "63":[{"key":"bge_150_V_210","gewicht":0},{"key":"bge_146_V_240","gewicht":0}],
 "65":[{"key":"bge_150_V_210","gewicht":0},{"key":"bge_149_V_119","gewicht":0},{"key":"bge_148_V_128","gewicht":0},{"key":"bge_147_V_470","gewicht":1},{"key":"bge_147_V_328","gewicht":0},{"key":"bge_146_V_240","gewicht":0},{"key":"bge_146_V_38","gewicht":0},{"key":"bge_147_V_194__voll","gewicht":3,"erwaegungen":["E. 6.5.3.3"]}],
@@ -129,6 +131,7 @@
 "30c":[{"key":"bge_151_V_30","gewicht":0}],
 "50c":[{"key":"bge_151_V_258","gewicht":0},{"key":"bge_151_V_233","gewicht":1},{"key":"bge_151_V_284__voll","gewicht":0,"erwaegungen":["E. 4.6.1"]}],
 "52a":[{"key":"bge_146_V_253","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
+"58g":[{"key":"gr_gerichte_SV2202512","gewicht":null}],
 "59c":[{"key":"bge_151_V_1__voll","gewicht":0,"erwaegungen":["E. 6.4.2"]},{"key":"bs_sozialversicherungsgericht_SG.2019.2","gewicht":null}],
 "64a":[{"key":"bge_150_V_372","gewicht":0},{"key":"bge_148_V_348","gewicht":0},{"key":"bge_147_V_328","gewicht":1}],
 "65a":[{"key":"bge_147_V_328","gewicht":0}],
@@ -163,8 +166,8 @@
 "40":{"bge":1},
 "46":{"bge":1,"kantonal":1},
 "47":{"bge":1,"bger":1,"kantonal":1},
-"49":{"bge":4,"bger":1,"kantonal":1},
-"51":{"bge":4,"bger":2,"kantonal":1},
+"49":{"bge":4,"bger":1,"kantonal":3},
+"51":{"bge":4,"bger":2,"kantonal":3},
 "59":{"bge":1,"kantonal":2},
 "63":{"bge":2},
 "65":{"bge":7,"bger":1},
@@ -189,6 +192,7 @@
 "30c":{"bge":1},
 "50c":{"bge":2,"bger":1},
 "52a":{"bge":1,"kantonal":1},
+"58g":{"kantonal":1},
 "59c":{"bger":1,"kantonal":1},
 "64a":{"bge":3},
 "65a":{"bge":1},

@@ -1,0 +1,86 @@
+{
+  "erzeugt": "2026-10-05",
+  "eintraege": [
+    {
+      "id": "bund/bstger/CA_2026_15",
+      "gericht": "bstger",
+      "gerichtName": "Bundesstrafgericht",
+      "gerichtstyp": "bundesstrafgericht",
+      "kanton": "CH",
+      "abteilung": "CA",
+      "nummer": "CA.2026.15",
+      "bgeReferenz": null,
+      "zitierung": "BStGer CA.2026.15 vom 26. August 2026",
+      "datum": "2026-08-26",
+      "sprache": "it",
+      "leitcharakter": "routine",
+      "sachgebiet": "straf",
+      "legalArea": "criminal",
+      "rubrum": {
+        "besetzung": "Giudici Maurizio Albisetti Bernasconi, Presidente del Collegio giudicante, Andrea Ermotti e Katharina Giovannone-Hofmann, Cancelliera Leda Ferretti",
+        "parteien": "MINISTERO PUBBLICO DELLA CONFEDERAZIONE, Esecuzione delle sentenze istante contro A., controparte",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Istanza di accertamento dell'obbligo di restituzione ai sensi dell'art. 135 cpv. 4 CPP\nRitiro dell'istanza",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "sachverhalt",
+          "vollstaendig": false,
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "Ministero pubblico della Confederazione, Esecuzione delle sentenze - Tribunale penale federale, Corte penale (copia brevi manu) Ad avvenuta crescita in giudicato, comunicazione a (raccomandata) - Ministero pubblico della Confederazione, Esecuzione delle sentenze Rimedi giuridici Ricorso al Tribunale federale La presente sentenza può essere impugnata mediante ricorso in materia penale al Tribunale federale entro 30 giorni dalla notificazione del testo integrale della decisione. Il diritto di ricorso e gli altri requisiti di ammissibilità sono previsti dagli art. 78-81 e 90 ss. della Legge sul Tribunale federale del 17 giugno 2005 (LTF). L’atto di ricorso motivato deve essere inoltrato al Tribunale federale, 1000 Losanna 14. L’osservanza del termine per la presentazione del ricorso in Svizzera, all’estero oppure in caso di trasmissione per via elettronica è disciplinata dall’art. 48 cpv. 1 e 2 LTF. Spedizione: 26 agosto 2026"
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "L’istanza del 10 giugno 2026 è divenuta priva d’oggetto in quanto ritirata."
+            },
+            {
+              "marke": "2.",
+              "text": "La causa CA.2026.15 è stralciata dai ruoli."
+            },
+            {
+              "marke": "3.",
+              "text": "Per la presente decisione non vengono prelevate spese. In nome della Corte d’appello del Tribunale penale federale Il Presidente del Collegio giudicante La Cancelliera Maurizio Albisetti Bernasconi Leda Ferretti Notificazione della sentenza motivata a (atto giudiziale) - A. - Ministero pubblico della Confederazione, Esecuzione delle sentenze - Tribunale penale federale, Corte penale (copia brevi manu) Ad avvenuta crescita in giudicato, comunicazione a (raccomandata) - Ministero pubblico della Confederazione, Esecuzione delle sentenze Rimedi giuridici Ricorso al Tribunale federale La presente sentenza può essere impugnata mediante ricorso in materia penale al Tribunale federale entro 30 giorni dalla notificazione del testo integrale della decisione. Il diritto di ricorso e gli altri requisiti di ammissibilità sono previsti dagli art. 78-81 e 90 ss. della Legge sul Tribunale federale del 17 giugno 2005 (LTF). L’atto di ricorso motivato deve essere inoltrato al Tribunale federale, 1000 Losanna 14. L’osservanza del termine per la presentazione del ricorso in Svizzera, all’estero oppure in caso di trasmissione per via elettronica è disciplinata dall’art. 48 cpv. 1 e 2 LTF. Spedizione: 26 agosto 2026"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "L’istanza del 10 giugno 2026 è divenuta priva d’oggetto in quanto ritirata.",
+        "La causa CA.2026.15 è stralciata dai ruoli.",
+        "Per la presente decisione non vengono prelevate spese."
+      ],
+      "zitierteNormen": [
+        "Art. 135 Abs. 4 CPP"
+      ],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
+      "zitierteEntscheide": [
+        "CA.2022.27",
+        "CA.2026.15",
+        "SK.2022.20"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bstger.weblaw.ch/api/getDocumentContent/3f0d46bb-281c-3a29-b049-48b9ba6d0f49",
+      "abgerufen": "2026-10-05",
+      "fassungsToken": "006e6de3c0ee1fa0191bd5b6d84bf731da8b52ff1b9a9965c20ff782f1d4c7b7",
+      "sha": "294017ab55fb0700d67535525b8b325902984859f0acc51e4b93912ab0a9fc3d",
+      "ecli": "ECLI:CH:BSTGER:2026:CA.2026.15"
+    }
+  ]
+}

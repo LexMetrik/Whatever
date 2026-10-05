@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"ELV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -34,7 +34,8 @@
 "bs_sozialversicherungsgericht_EL.2024.8":{"zitierung":"Sozialversicherungsgericht BS EL.2024.8 vom 30.01.2025","regesteKurz":"ELG Zu Recht EL-Anspruch vorsorglich eingestellt (Art. 52a ATSG) nach Anrechnung eines Vermögensverzichts infolge…","datum":"2025-01-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EL.2025.2":{"zitierung":"Sozialversicherungsgericht BS EL.2025.2 vom 16.10.2025","regesteKurz":"Unterbruch der fünfjährigen Karenzfrist durch Landesabwesenheit","datum":"2025-10-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EL.2025.6":{"zitierung":"Sozialversicherungsgericht BS EL.2025.6 vom 16.04.2026","regesteKurz":"Sachurteilsvoraussetzungen; Verfahrensrechte; Ergänzungsleistungen des Kindes","datum":"2026-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_EL.2025.7":{"zitierung":"Sozialversicherungsgericht BS EL.2025.7 vom 09.12.2025","regesteKurz":"Unterbrechung der Karenzfrist infolge Auslandaufenthalts","datum":"2025-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_EL.2025.7":{"zitierung":"Sozialversicherungsgericht BS EL.2025.7 vom 09.12.2025","regesteKurz":"Unterbrechung der Karenzfrist infolge Auslandaufenthalts","datum":"2025-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_SV220262":{"zitierung":"Kantonsgericht GR SV2 2026 2 vom 10.09.2026","regesteKurz":null,"datum":"2026-09-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_V_105","gewicht":0}],
@@ -55,9 +56,9 @@
 "15a":[{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null}],
 "16c":[{"key":"bs_sozialversicherungsgericht_EL.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2023.1","gewicht":null}],
 "16e":[{"key":"bge_147_V_312","gewicht":0}],
-"17a":[{"key":"bge_152_V_99","gewicht":0},{"key":"bge_146_V_306","gewicht":1},{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2022.6","gewicht":null}],
+"17a":[{"key":"bge_152_V_99","gewicht":0},{"key":"bge_146_V_306","gewicht":1},{"key":"gr_gerichte_SV220262","gewicht":null},{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2022.6","gewicht":null}],
 "17c":[{"key":"be_verwaltungsgericht_2002025648","gewicht":null}],
-"17e":[{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.8","gewicht":null}],
+"17e":[{"key":"gr_gerichte_SV220262","gewicht":null},{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.8","gewicht":null}],
 "19b":[{"key":"bge_150_V_105","gewicht":0},{"key":"bs_sozialversicherungsgericht_EL.2021.11","gewicht":null}],
 "1a":[{"key":"bs_sozialversicherungsgericht_EL.2025.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2025.2","gewicht":null}],
 "1b":[{"key":"bs_sozialversicherungsgericht_EL.2025.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2025.2","gewicht":null}],
@@ -84,9 +85,9 @@
 "15a":{"kantonal":1},
 "16c":{"kantonal":3},
 "16e":{"bge":1},
-"17a":{"bge":2,"kantonal":4},
+"17a":{"bge":2,"kantonal":5},
 "17c":{"kantonal":1},
-"17e":{"kantonal":2},
+"17e":{"kantonal":3},
 "19b":{"bge":1,"kantonal":1},
 "1a":{"kantonal":2},
 "1b":{"kantonal":2},

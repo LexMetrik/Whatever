@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"GFK",
 "erlassEbene":"bund",
 "dokumente":{
@@ -10,14 +10,17 @@
 "bs_appellationsgericht_SB.2023.35":{"zitierung":"Appellationsgericht BS SB.2023.35 vom 22.04.2024","regesteKurz":"Landesverweisung","datum":"2024-04-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.87":{"zitierung":"Appellationsgericht BS SB.2023.87 vom 26.11.2024","regesteKurz":"versuchte vorsätzliche Tötung","datum":"2024-11-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2024.36":{"zitierung":"Appellationsgericht BS SB.2024.36 vom 18.02.2025","regesteKurz":"versuchte vorsätzliche Tötung","datum":"2025-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2023.26":{"zitierung":"Appellationsgericht BS VD.2023.26 vom 05.08.2023","regesteKurz":"Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)","datum":"2023-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2023.26":{"zitierung":"Appellationsgericht BS VD.2023.26 vom 05.08.2023","regesteKurz":"Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)","datum":"2023-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202560":{"zitierung":"Kantonsgericht GR VR1 2025 60 vom 22.09.2026","regesteKurz":null,"datum":"2026-09-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
+"1":[{"key":"gr_gerichte_VR1202560","gewicht":null}],
 "32":[{"key":"bs_appellationsgericht_SB.2023.87","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.19","gewicht":null}],
-"33":[{"key":"bs_appellationsgericht_SB.2024.36","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.35","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.82","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.37","gewicht":null}]
+"33":[{"key":"gr_gerichte_VR1202560","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.36","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.35","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.82","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.37","gewicht":null}]
 },
 "gesamtProArtikel":{
+"1":{"kantonal":1},
 "32":{"kantonal":2},
-"33":{"kantonal":6}
+"33":{"kantonal":7}
 }
 }

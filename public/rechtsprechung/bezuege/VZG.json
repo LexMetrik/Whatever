@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"VZG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -11,7 +11,8 @@
 "bge_151_III_405__voll":{"zitierung":"Urteil 4A_637/2023 (nicht publ. in BGE 151 III 405)","regesteKurz":null,"datum":"2024-12-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 405","urteil":"4A_637/2023"}},
 "bge_151_III_505":{"zitierung":"BGE 151 III 505","regesteKurz":"Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei…","datum":"2025-04-14","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BEZ.2023.54":{"zitierung":"Appellationsgericht BS BEZ.2023.54 vom 25.09.2023","regesteKurz":"Nichteintreten (BGer-Nr. 5A_857/2023 vom 21. November 2023)","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_BEZ.2026.29":{"zitierung":"Appellationsgericht BS BEZ.2026.29 vom 22.05.2026","regesteKurz":"Grundstückverwertung (BGer Nr. 5A_543/2026 vom 17.06.2026)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_BEZ.2026.29":{"zitierung":"Appellationsgericht BS BEZ.2026.29 vom 22.05.2026","regesteKurz":"Grundstückverwertung (BGer Nr. 5A_543/2026 vom 17.06.2026)","datum":"2026-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"gr_gerichte_SBK202674":{"zitierung":"Kantonsgericht GR SBK 2026 74 vom 16.09.2026","regesteKurz":null,"datum":"2026-09-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "9":[{"key":"bge_149_III_165","gewicht":0},{"key":"bs_appellationsgericht_BEZ.2023.54","gewicht":null}],
@@ -19,20 +20,22 @@
 "18":[{"key":"bge_151_III_239__voll","gewicht":0,"erwaegungen":["E. 2.6.2","E. 2.6.3"]}],
 "28":[{"key":"bge_151_III_505","gewicht":0}],
 "29":[{"key":"bs_appellationsgericht_BEZ.2026.29","gewicht":null}],
-"33":[{"key":"bge_151_III_505","gewicht":0}],
+"33":[{"key":"bge_151_III_505","gewicht":0},{"key":"gr_gerichte_SBK202674","gewicht":null}],
 "34":[{"key":"bge_151_III_505","gewicht":0}],
-"36":[{"key":"bge_151_III_505","gewicht":0}],
-"37":[{"key":"bge_151_III_505","gewicht":0},{"key":"bge_148_III_46","gewicht":0}],
+"36":[{"key":"bge_151_III_505","gewicht":0},{"key":"gr_gerichte_SBK202674","gewicht":null}],
+"37":[{"key":"bge_151_III_505","gewicht":0},{"key":"bge_148_III_46","gewicht":0},{"key":"gr_gerichte_SBK202674","gewicht":null}],
 "43":[{"key":"bge_151_III_505","gewicht":0}],
-"45":[{"key":"bge_151_III_505","gewicht":0}],
+"45":[{"key":"bge_151_III_505","gewicht":0},{"key":"gr_gerichte_SBK202674","gewicht":null}],
 "46":[{"key":"bge_151_III_505","gewicht":0}],
 "49":[{"key":"bge_151_III_505","gewicht":0}],
 "53":[{"key":"bge_151_III_505","gewicht":0}],
+"65":[{"key":"gr_gerichte_SBK202674","gewicht":null}],
 "66":[{"key":"bge_151_III_239__voll","gewicht":0}],
 "85":[{"key":"bge_151_III_405","gewicht":0}],
 "88":[{"key":"bge_151_III_405","gewicht":0}],
 "89":[{"key":"bge_146_III_441","gewicht":0},{"key":"bge_151_III_405__voll","gewicht":0}],
 "99":[{"key":"bge_149_III_165","gewicht":0},{"key":"bs_appellationsgericht_BEZ.2023.54","gewicht":null}],
+"108":[{"key":"gr_gerichte_SBK202674","gewicht":null}],
 "78a":[{"key":"bge_149_III_165","gewicht":0}]
 },
 "gesamtProArtikel":{
@@ -41,20 +44,22 @@
 "18":{"bger":1},
 "28":{"bge":1},
 "29":{"kantonal":1},
-"33":{"bge":1},
+"33":{"bge":1,"kantonal":1},
 "34":{"bge":1},
-"36":{"bge":1},
-"37":{"bge":2},
+"36":{"bge":1,"kantonal":1},
+"37":{"bge":2,"kantonal":1},
 "43":{"bge":1},
-"45":{"bge":1},
+"45":{"bge":1,"kantonal":1},
 "46":{"bge":1},
 "49":{"bge":1},
 "53":{"bge":1},
+"65":{"kantonal":1},
 "66":{"bger":1},
 "85":{"bge":1},
 "88":{"bge":1},
 "89":{"bge":1,"bger":1},
 "99":{"bge":1,"kantonal":1},
+"108":{"kantonal":1},
 "78a":{"bge":1}
 }
 }

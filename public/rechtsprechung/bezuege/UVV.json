@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"UVV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -94,6 +94,7 @@
 "bs_sozialversicherungsgericht_UV.2025.57":{"zitierung":"Sozialversicherungsgericht BS UV.2025.57 vom 04.06.2026","regesteKurz":"UVG Unselbständige Akkordarbeit sowie Inaktivität von juristischen Personen (Subunternehmen); Umgehungsgeschäft.","datum":"2026-06-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_UV.2025.6":{"zitierung":"Sozialversicherungsgericht BS UV.2025.6 vom 28.08.2025","regesteKurz":"Zumutbarkeitsprofil nicht zu beanstanden; Anwendbarkeit eines Pauschalabzugs i.S.v. Art. 26bis Abs. 3 IVV im…","datum":"2025-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_UV.2025.9":{"zitierung":"Sozialversicherungsgericht BS UV.2025.9 vom 24.03.2026","regesteKurz":"UVG, Rente; Integritätsentschädigung","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_SV2202512":{"zitierung":"Kantonsgericht GR SV2 2025 12 vom 04.09.2026","regesteKurz":null,"datum":"2026-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}},
 "sg_gerichte_UV2025_14":{"zitierung":"Verwaltungs-/Versicherungsgericht SG UV 2025/14 vom 21.10.2025","regesteKurz":"Art. 6 Abs. 1 UVG; Art. 11 UVV; Leistungspflicht der Unfallversicherung für Rückfall/Spätfolge einer Handgelenksverletzung; es bestehen mindestens geringe Zweifel an der versicherungsmedizinischen Beurteilung, sodass der Sachverhalt als…","datum":"2025-10-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
@@ -108,7 +109,7 @@
 "13":[{"key":"bge_150_V_391","gewicht":0},{"key":"bge_150_V_33","gewicht":0},{"key":"bs_sozialversicherungsgericht_UV.2021.39","gewicht":null}],
 "14":[{"key":"bs_sozialversicherungsgericht_UV.2025.49","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2024.13","gewicht":null}],
 "15":[{"key":"bge_149_V_224","gewicht":0},{"key":"bge_148_V_311","gewicht":0}],
-"18":[{"key":"bge_150_V_334","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_35","gewicht":2},{"key":"bge_147_V_16","gewicht":3},{"key":"bge_146_V_364","gewicht":2},{"key":"bge_151_V_1__voll","gewicht":0,"erwaegungen":["E. 5.1.2"]}],
+"18":[{"key":"bge_150_V_334","gewicht":0},{"key":"bge_148_V_311","gewicht":0},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_35","gewicht":2},{"key":"bge_147_V_16","gewicht":3},{"key":"bge_146_V_364","gewicht":2},{"key":"bge_151_V_1__voll","gewicht":0,"erwaegungen":["E. 5.1.2"]},{"key":"gr_gerichte_SV2202512","gewicht":null}],
 "19":[{"key":"bge_146_V_129","gewicht":0}],
 "22":[{"key":"bge_150_V_391","gewicht":0},{"key":"bge_150_V_33","gewicht":0},{"key":"bge_149_V_224","gewicht":0},{"key":"bge_150_V_44","gewicht":0},{"key":"bge_148_V_286","gewicht":1},{"key":"bge_148_V_84","gewicht":2},{"key":"bge_147_V_213","gewicht":3},{"key":"bge_146_V_104","gewicht":0},{"key":"bge_148_V_138__voll","gewicht":0,"erwaegungen":["E. 6.1.1"]},{"key":"bs_sozialversicherungsgericht_UV.2025.57","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2025.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2024.27","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2023.27","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2023.16","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2021.28","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2020.40","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2023.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_AH.2022.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2021.38","gewicht":null}],
 "23":[{"key":"bge_150_V_33","gewicht":0},{"key":"bs_sozialversicherungsgericht_UV.2025.40","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2025.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_UV.2021.28","gewicht":null}],
@@ -158,7 +159,7 @@
 "13":{"bge":2,"kantonal":1},
 "14":{"kantonal":2},
 "15":{"bge":2},
-"18":{"bge":6,"bger":1},
+"18":{"bge":6,"bger":1,"kantonal":1},
 "19":{"bge":1},
 "22":{"bge":8,"bger":1,"kantonal":10},
 "23":{"bge":1,"kantonal":3},

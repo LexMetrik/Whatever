@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"MWSTG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -38,7 +38,8 @@
 "bge_152_II_250":{"zitierung":"BGE 152 II 250","regesteKurz":"Art. 3 lit. e, Art. 8 Abs. 1 und 2 (in der vom 1. Januar 2010 bis 31. Dezember 2024 geltenden Fassung), Art. 10 Abs. 1 und 2 lit. a und b Teilsatz 1 und 2 (in der vom 1. Januar 2010 bis 31. Dezember 2017 geltenden Fassung [nachfolgend:…","datum":"2025-08-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_II_250__voll":{"zitierung":"Urteil 9C_590/2024 (nicht publ. in BGE 152 II 250)","regesteKurz":null,"datum":"2025-08-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 II 250","urteil":"9C_590/2024"}},
 "bs_appellationsgericht_BEZ.2021.36":{"zitierung":"Appellationsgericht BS BEZ.2021.36 vom 16.03.2022","regesteKurz":"Arrest","datum":"2022-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2022.126":{"zitierung":"Appellationsgericht BS VD.2022.126 vom 09.12.2022","regesteKurz":"Gesuche um Ausfallentschädigung im Kulturbereich","datum":"2022-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2022.126":{"zitierung":"Appellationsgericht BS VD.2022.126 vom 09.12.2022","regesteKurz":"Gesuche um Ausfallentschädigung im Kulturbereich","datum":"2022-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bstger_BE_2026_12":{"zitierung":"BStGer BE.2026.12 vom 19. August 2026","regesteKurz":"Entsiegelung (Art. 50 Abs. 3 VStrR)","datum":"2026-08-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_152_II_250","gewicht":0},{"key":"bge_151_II_345","gewicht":0},{"key":"bge_151_II_569","gewicht":0},{"key":"bge_149_II_290","gewicht":0},{"key":"bge_149_II_255","gewicht":1},{"key":"bge_149_II_43","gewicht":2},{"key":"bge_149_II_147","gewicht":1},{"key":"bge_148_II_233","gewicht":4},{"key":"bge_151_II_364__voll","gewicht":0,"erwaegungen":["E. 3.1"]},{"key":"bge_151_II_2__voll","gewicht":0,"erwaegungen":["E. 2.1"]},{"key":"bs_appellationsgericht_BEZ.2021.36","gewicht":null}],
@@ -98,7 +99,7 @@
 "96":[{"key":"bge_151_II_364","gewicht":0},{"key":"bge_150_II_177","gewicht":0},{"key":"bge_149_IV_395","gewicht":0},{"key":"bge_148_IV_96","gewicht":1}],
 "97":[{"key":"bge_149_IV_395","gewicht":0},{"key":"bge_148_IV_96","gewicht":1}],
 "101":[{"key":"bge_150_II_177","gewicht":0},{"key":"bge_148_IV_96","gewicht":0}],
-"103":[{"key":"bge_149_IV_395","gewicht":0},{"key":"bge_148_IV_96","gewicht":1}],
+"103":[{"key":"bge_149_IV_395","gewicht":0},{"key":"bge_148_IV_96","gewicht":1},{"key":"bstger_BE_2026_12","gewicht":null}],
 "104":[{"key":"bge_149_IV_395","gewicht":0},{"key":"bge_148_IV_96","gewicht":1}],
 "105":[{"key":"bge_150_II_177","gewicht":0},{"key":"bge_149_IV_395__voll","gewicht":0,"erwaegungen":["E. 5.2"]},{"key":"bge_148_IV_96__voll","gewicht":1,"erwaegungen":["E. 3.2","E. 3.3","E. 3.4","E. 3.5"]}],
 "107":[{"key":"bge_150_II_191__voll","gewicht":0,"erwaegungen":["E. 2.1"]}],
@@ -163,7 +164,7 @@
 "96":{"bge":4},
 "97":{"bge":2},
 "101":{"bge":2},
-"103":{"bge":2},
+"103":{"bge":2,"eidg":1},
 "104":{"bge":2},
 "105":{"bge":1,"bger":2},
 "107":{"bger":1},

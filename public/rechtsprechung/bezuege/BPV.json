@@ -1,17 +1,18 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"BPV",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_149_IV_57":{"zitierung":"BGE 149 IV 57","regesteKurz":"Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten…","datum":"2022-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bvger_A_5126_2024":{"zitierung":"BVGer A-5126/2024 vom 24. September 2026","regesteKurz":"Auflösung des Arbeitsverhältnisses","datum":"2026-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}}
 },
 "proArtikel":{
 "2":[{"key":"bge_149_I_129","gewicht":0}],
 "3":[{"key":"bge_149_I_129","gewicht":0}],
 "7":[{"key":"bge_149_I_129","gewicht":0}],
-"31":[{"key":"bge_149_I_129","gewicht":0}],
-"78":[{"key":"bge_149_I_129","gewicht":0}],
+"31":[{"key":"bge_149_I_129","gewicht":0},{"key":"bvger_A_5126_2024","gewicht":null}],
+"78":[{"key":"bge_149_I_129","gewicht":0},{"key":"bvger_A_5126_2024","gewicht":null}],
 "93":[{"key":"bge_149_IV_57","gewicht":0}],
 "93a":[{"key":"bge_149_IV_57","gewicht":0}]
 },
@@ -19,8 +20,8 @@
 "2":{"bge":1},
 "3":{"bge":1},
 "7":{"bge":1},
-"31":{"bge":1},
-"78":{"bge":1},
+"31":{"bge":1,"eidg":1},
+"78":{"bge":1,"eidg":1},
 "93":{"bge":1},
 "93a":{"bge":1}
 }

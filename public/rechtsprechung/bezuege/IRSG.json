@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-10-04",
+"erzeugt":"2026-10-05",
 "erlass":"IRSG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -32,6 +32,7 @@
 "bs_appellationsgericht_SB.2024.44":{"zitierung":"Appellationsgericht BS SB.2024.44 vom 05.12.2025","regesteKurz":"versuchte Erpressung, mehrfache Drohung, mehrfache Beschimpfung, Strafzumessung und Anordnung einer ambulanten…","datum":"2025-12-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZS.2024.8":{"zitierung":"Appellationsgericht BS ZS.2024.8 vom 04.02.2025","regesteKurz":"Entschädigung gemäss Art. 431 StPO (Rückweisungsverfahren betr. BES.2022.4)","datum":"2025-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bstger_RH_2026_8":{"zitierung":"BStGer RH.2026.8 vom 8. September 2026","regesteKurz":"Entraide judiciaire internationale en matière pénale à la France; mandat d'arrêt en vue d'extradition (art. 48 al. 2 EIMP)","datum":"2026-09-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
+"bstger_RH_2026_9":{"zitierung":"BStGer RH.2026.9 vom 21. September 2026","regesteKurz":"Assistenza giudiziaria internazionale in materia penale all'Italia; ordine di arresto in vista di estradizione (art. 48 cpv. 2 AIMP)","datum":"2026-09-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_RR_2025_198":{"zitierung":"BStGer RR.2025.198 vom 26. August 2026","regesteKurz":"Entraide judiciaire internationale en matière pénale à l'Ukraine; remise de moyens de preuve (art. 74 EIMP)","datum":"2026-08-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_RR_2026_110":{"zitierung":"BStGer RR.2026.110 vom 31. August 2026","regesteKurz":"Acte de l'OFJ (art. 17 al. 2 en lien avec l'art. 25 al. 1 EIMP); refus de réexamen de la décision de délégation; assistance judiciaire gratuite et désignation d'un mandataire d'office (art. 65 PA; art. 21 al. 2 EIMP et art. 65 al. 2 PA)","datum":"2026-08-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_RR_2026_46":{"zitierung":"BStGer RR.2026.46 vom 19. Mai 2026","regesteKurz":"Assistenza giudiziaria internazionale in materia penale all'Italia; Decisione di estradizione (art. 55 AIMP); Domanda di estensione","datum":"2026-05-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
@@ -39,7 +40,7 @@
 "bstger_RR_2026_97":{"zitierung":"BStGer RR.2026.97 vom 3. September 2026","regesteKurz":"Assistenza giudiziaria internazionale in materia penale all'Italia; decisione di estradizione (art. 55 AIMP)","datum":"2026-09-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_150_IV_139","gewicht":0},{"key":"bge_147_II_432","gewicht":0},{"key":"bge_147_IV_518","gewicht":0},{"key":"bge_152_I_20__voll","gewicht":0,"erwaegungen":["E. 1"]},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2025_198","gewicht":null},{"key":"bstger_RR_2026_68","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.61","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
+"1":[{"key":"bge_150_IV_139","gewicht":0},{"key":"bge_147_II_432","gewicht":0},{"key":"bge_147_IV_518","gewicht":0},{"key":"bge_152_I_20__voll","gewicht":0,"erwaegungen":["E. 1"]},{"key":"bstger_RH_2026_9","gewicht":null},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2025_198","gewicht":null},{"key":"bstger_RR_2026_68","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.61","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
 "2":[{"key":"bge_150_IV_121","gewicht":0},{"key":"bge_150_IV_201","gewicht":0},{"key":"bge_149_IV_376","gewicht":1},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2025_198","gewicht":null}],
 "3":[{"key":"bge_149_IV_376","gewicht":0},{"key":"bge_146_IV_338","gewicht":0}],
 "4":[{"key":"bge_147_II_432__voll","gewicht":0,"erwaegungen":["E. 3.4"]}],
@@ -59,10 +60,11 @@
 "30":[{"key":"bge_150_IV_308","gewicht":0},{"key":"bge_146_IV_36","gewicht":0}],
 "35":[{"key":"bge_150_IV_121","gewicht":0},{"key":"bge_147_II_432","gewicht":0},{"key":"bge_146_IV_338","gewicht":1},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null}],
 "37":[{"key":"bge_148_I_127","gewicht":0},{"key":"bstger_RR_2026_97","gewicht":null}],
-"47":[{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 6"]},{"key":"bstger_RH_2026_8","gewicht":null}],
-"48":[{"key":"bstger_RH_2026_8","gewicht":null}],
+"47":[{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 6"]},{"key":"bstger_RH_2026_9","gewicht":null},{"key":"bstger_RH_2026_8","gewicht":null}],
+"48":[{"key":"bstger_RH_2026_9","gewicht":null},{"key":"bstger_RH_2026_8","gewicht":null}],
 "49":[{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 3"]}],
-"51":[{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 6"]}],
+"50":[{"key":"bstger_RH_2026_9","gewicht":null}],
+"51":[{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 6"]},{"key":"bstger_RH_2026_9","gewicht":null}],
 "55":[{"key":"bge_148_I_127","gewicht":0},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null}],
 "63":[{"key":"bge_149_IV_376","gewicht":0},{"key":"bge_147_IV_518","gewicht":0},{"key":"bstger_RR_2025_198","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.61","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
 "64":[{"key":"bstger_RR_2025_198","gewicht":null}],
@@ -96,7 +98,7 @@
 "80p":[{"key":"bge_149_IV_144","gewicht":0},{"key":"bge_148_I_127","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":3,"bger":1,"eidg":4,"kantonal":2},
+"1":{"bge":3,"bger":1,"eidg":5,"kantonal":2},
 "2":{"bge":3,"eidg":2},
 "3":{"bge":2},
 "4":{"bger":1},
@@ -116,10 +118,11 @@
 "30":{"bge":2},
 "35":{"bge":3,"eidg":1,"kantonal":1},
 "37":{"bge":1,"eidg":1},
-"47":{"bger":1,"eidg":1},
-"48":{"eidg":1},
+"47":{"bger":1,"eidg":2},
+"48":{"eidg":2},
 "49":{"bger":1},
-"51":{"bger":1},
+"50":{"eidg":1},
+"51":{"bger":1,"eidg":1},
 "55":{"bge":1,"eidg":2},
 "63":{"bge":2,"eidg":1,"kantonal":2},
 "64":{"eidg":1},
