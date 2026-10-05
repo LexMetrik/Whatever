@@ -12,9 +12,9 @@
 #   • Alles andere (`check:netz:bericht`: Materialien, Revisionen, Abkürzungen, BE-Sprengel,
 #     Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
 #     (::warning:: + Tafel), färbt den Lauf aber NICHT rot. Wo ein Generator existiert,
-#     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen,
-#     Fedlex-Abkürzungen) und fedlex-frische.yml (Re-Pins, Revisionen); der Rest bleibt
-#     Handarbeit nach Bericht (§7: Materialien-Snapshots, Tarif, LIK, Verfall).
+#     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen)
+#     und fedlex-frische.yml (Re-Pins, Revisionen); der Rest bleibt Handarbeit nach Bericht
+#     (§7: Materialien-Snapshots, Fedlex-Abkürzungen, Tarif, LIK, Verfall).
 # Gestrichen im Rückbau (nie ein echter Befund): Prod-Smoke-Duplikat (prod-smoke.yml prüft
 # die Live-Site alle 6 h, inkl. der Korpus-JSONs), Runtime-API-Vertragstests, rss-oc,
 # pdf-quellen-netz, vernehmlassungen-alter; ebenso die Eskalationsstufe des Zettels.
