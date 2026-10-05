@@ -14,15 +14,22 @@
 // der von Playwright gesammelten Specs sein; das erzwingt der `--pruefen`-
 // Wächter unten (in `check:seriell` und als CI-Schritt vor den Shards).
 //
+// NACHTLAUF (Entscheid David 5.10.2026, QS-CI-ZEIT N2): neben den Queue-
+// Gruppen trägt die JSON die Liste `nacht` — Specs, die täglich gegen main
+// laufen statt in der Warteschlange (perf-nacht.yml, Job e2e-nacht). Der
+// Wächter prüft die VEREINIGUNG Queue ∪ Nacht gegen `playwright --list` und
+// den SCHNITT auf leer: keine Spec darf in keiner Liste fehlen, keine in
+// beiden stehen (sonst führe sie doppelt oder, schlimmer, nirgends).
+//
 // Verwendung:
-//   node scripts/e2e-shard-gruppen.mjs --pruefen        Union-Wächter (Gruppen == playwright --list)
-//   node scripts/e2e-shard-gruppen.mjs --fahren <N>     Gruppe N mit Playwright fahren (Exit-Code durchgereicht)
-//   node scripts/e2e-shard-gruppen.mjs --dateien <N>    Datei-Argumente der Gruppe N ausgeben
+//   node scripts/e2e-shard-gruppen.mjs --pruefen        Union-Wächter (Queue ∪ Nacht == playwright --list, Schnitt leer)
+//   node scripts/e2e-shard-gruppen.mjs --fahren <N>     Gruppe N (oder `nacht`) mit Playwright fahren (Exit-Code durchgereicht)
+//   node scripts/e2e-shard-gruppen.mjs --dateien <N>    Datei-Argumente der Gruppe N (oder `nacht`) ausgeben
 import { execFileSync, spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { gruppenAnzahl } from './e2e-shard-anzahl.mjs'
+import { gruppenAnzahl, NACHT } from './e2e-shard-anzahl.mjs'
 
 const HIER = dirname(fileURLToPath(import.meta.url))
 const WURZEL = join(HIER, '..')
@@ -34,11 +41,11 @@ const GRUPPEN_JSON = join(WURZEL, 'e2e', 'shard-gruppen.json')
 // Fehlerseite in scripts/e2e-shard-anzahl.mjs. Nicht lesbare Matrix = rot.
 const GRUPPEN_MAX = gruppenAnzahl()
 
-/** Gruppen-Definition laden: { "1": [datei, …], "2": […], "3": […] }. */
+/** Gruppen-Definition laden: { gruppen: { "1": [datei, …], … }, nacht: [datei, …] }. */
 function ladeGruppen() {
   const roh = JSON.parse(readFileSync(GRUPPEN_JSON, 'utf8'))
   const schluessel = Object.keys(roh.gruppen)
-  return { meta: roh, schluessel, gruppen: roh.gruppen }
+  return { meta: roh, schluessel, gruppen: roh.gruppen, nacht: roh[NACHT] }
 }
 
 /**
@@ -66,7 +73,13 @@ function ungueltigeSchluessel(schluessel) {
 }
 
 function pruefen() {
-  const { gruppen, schluessel } = ladeGruppen()
+  const { gruppen, schluessel, nacht } = ladeGruppen()
+
+  if (!Array.isArray(nacht)) {
+    console.error(`✗ e2e-Shard-Union-Wächter ROT — e2e/shard-gruppen.json trägt keine Liste "${NACHT}" (auch leer muss sie stehen).`)
+    console.error('\n   Fix: `npm run gen:e2e-shards` erzeugt die Datei aus den Annotationen neu.')
+    process.exit(1)
+  }
 
   const schlechteSchluessel = ungueltigeSchluessel(schluessel)
   if (schlechteSchluessel.length) {
@@ -82,7 +95,11 @@ function pruefen() {
   const gesehen = new Map() // datei -> gruppe (Duplikat-Erkennung)
   const union = new Set()
 
-  for (const [g, dateien] of Object.entries(gruppen)) {
+  // Queue-Gruppen und Nachtliste in EINEM Durchgang: so meldet derselbe
+  // DOPPELT-Zweig auch eine Spec, die zugleich in einer Queue-Gruppe und in der
+  // Nacht steht (Schnitt ≠ leer).
+  const listen = [...Object.entries(gruppen), [NACHT, nacht]]
+  for (const [g, dateien] of listen) {
     for (const d of dateien) {
       if (gesehen.has(d)) {
         fehler.push(`DOPPELT: ${d} in Gruppe ${gesehen.get(d)} UND Gruppe ${g}`)
@@ -96,7 +113,7 @@ function pruefen() {
   }
   for (const d of gesamt) {
     if (!union.has(d)) {
-      fehler.push(`FEHLT: ${d} — in keiner Gruppe zugeordnet (neue Spec? → in shard-gruppen.json packen)`)
+      fehler.push(`FEHLT: ${d} — weder in einer Queue-Gruppe noch in «${NACHT}» (neue Spec? → Annotation \`// @shard-gruppe: N\` setzen, dann npm run gen:e2e-shards)`)
     }
   }
 
@@ -107,15 +124,17 @@ function pruefen() {
     process.exit(1)
   }
   console.log(
-    `✓ e2e-Shard-Union-Wächter grün — ${gesamt.size} Specs, Union der ${Object.keys(gruppen).length} Gruppen exakt deckungsgleich, keine Doppelten.`,
+    `✓ e2e-Shard-Union-Wächter grün — ${gesamt.size} Specs, Union der ${Object.keys(gruppen).length} Queue-Gruppen und der Nachtliste (${nacht.length}) exakt deckungsgleich, keine Doppelten.`,
   )
 }
 
 function dateienDerGruppe(n) {
-  const { gruppen } = ladeGruppen()
-  const dateien = gruppen[String(n)]
-  if (!dateien) {
-    console.error(`Unbekannte Gruppe: ${n} (bekannt: ${Object.keys(gruppen).join(', ')})`)
+  const { gruppen, nacht } = ladeGruppen()
+  const dateien = n === NACHT ? nacht : gruppen[String(n)]
+  if (!Array.isArray(dateien) || dateien.length === 0) {
+    // Leere Liste = rot, nicht «nichts zu tun»: `playwright test` OHNE Datei-
+    // Argumente führe sonst ALLE Specs (§6.7 — kein stilles Falsch-Grün/-Voll).
+    console.error(`Unbekannte oder leere Gruppe: ${n} (bekannt: ${Object.keys(gruppen).join(', ')}, ${NACHT})`)
     process.exit(2)
   }
   return dateien.map((d) => `e2e/${d}`)

@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: nacht
 // J3 · Gesetzesübersicht nach Rechtsgebieten (ROADMAP.md W2·10-UI-NAV, Idee
 // David 16.8.2026, dejure.org-Vorbild «Gesetze nach Rechtsgebieten»): auf dem
 // neutralen G4-Landeplatz /gesetze eine dichte Rechtsgebiets-Gliederung als

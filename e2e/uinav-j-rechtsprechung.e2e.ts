@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 4
 // J1/J2/J4 · Rechtsprechungs-Seiten (W2·10-UI-NAV-J). Die vier Prüfpunkte des
 // Fahrplans, die nur im echten Browser beweisbar sind — SSR führt keine Effekte
 // aus, kennt keine Klicks, keinen Verlauf und keine Scrollposition.

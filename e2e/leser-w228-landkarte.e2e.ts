@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 6
 // ═══ W2·28-TREFFER-LANDKARTE · L-1/L-2 · DIE VERDRAHTUNG IM BROWSER ══════════
 //
 // Der Rechenkern (`components/leser/landkarteModell.ts`) und seine zwei Adapter

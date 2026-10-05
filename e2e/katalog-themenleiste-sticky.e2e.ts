@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
 
 // ─── Themenleiste /rechner: sticky ab dem Spalten-Breakpoint (W2·31 B) ──────

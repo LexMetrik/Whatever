@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 3
 // Browser-Smoke der /suche-Ergebnisseite (UI-NAV S5). Kontrakt: die im
 // Header-Dropdown gekappten Gesetzestext-Treffer werden hier ungekappt
 // zugänglich; der Deep-Link ?q= ist stabil/teilbar; die Inhaltstyp-Facette

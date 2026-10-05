@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── Rubrik-Übersichten /rechner und /vorlagen auf Stufe `weit` (W2·31 B10) ──

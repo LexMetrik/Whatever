@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: nacht
 // ═══ KONTRAST DER FRIST-MARKEN (W2·29-WERKBANK-REST S3, 25.9.2026) ═══════════
 //
 // Posten 19.9./20.9.2026 (blockieren Dependabot #918 = axe 4.13): axe meldete

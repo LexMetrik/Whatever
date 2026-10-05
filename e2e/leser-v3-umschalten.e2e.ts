@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 1
 // Ansicht-Menü im Leser: D1 (bedingtes Angebot des Vermerke-Schalters) und
 // B3 (aria-controls erst, wenn das Panel wirklich da ist).
 //

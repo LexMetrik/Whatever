@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 // ─── W2·19 · Fokus beim Schrittwechsel des Vorlagen-Wizards ─────────────────
 //
 // Gemessen 30.9.2026 auf /vorlagen/mahnung: nach «Weiter →»/«← Zurück» lag

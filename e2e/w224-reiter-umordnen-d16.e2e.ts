@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // ═══ D16/D15 · REITER UMORDNEN, ÜBER ALLE ARTEN HINWEG ══════════════════════
 //
 // GEMESSENER ANLASS (David 6.9.2026, Dev-Server d284a1fd8): «per drag and drop
