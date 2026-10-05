@@ -355,14 +355,21 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
     expect(r.stderr).toContain('Werkzeugfehler');
   }, 60_000);
 
-  /** Runner mit Ersatz-npm (nie Netz): Protokoll der npm-Aufrufe + Prozess-Ergebnis. */
-  function runner(env: Record<string, string>) {
+  /**
+   * Runner mit Ersatz-npm (nie Netz; Exit `npmExit`): Protokoll der npm-Aufrufe + Prozess-Ergebnis.
+   * cwd = frisches, sauberes git-Repo — unabhängig vom Arbeitsbaum (die Tor-Stufe des Bots fährt
+   * diese Datei auf einem nachgeführten, also schmutzigen Stand).
+   */
+  function runner(env: Record<string, string>, npmExit = 2) {
     const dir = mkdtempSync(join(tmpdir(), 'mat-nr-'));
     const log = join(dir, 'log');
-    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "$*" >> "${log}"\nexit 2\n`);
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "$*" >> "${log}"\nexit ${npmExit}\n`);
     chmodSync(join(dir, 'npm'), 0o755);
-    const r = spawnSync(join(ROOT, 'node_modules/.bin/vite-node'), ['scripts/materialien/nachzug-run.ts', '--', '--datum=2026-10-12'], {
-      cwd: ROOT, encoding: 'utf8',
+    const repo = join(dir, 'repo');
+    mkdirSync(repo);
+    spawnSync('git', ['init', '-q'], { cwd: repo });
+    const r = spawnSync(join(ROOT, 'node_modules/.bin/vite-node'), [join(ROOT, 'scripts/materialien/nachzug-run.ts'), '--', '--datum=2026-10-12'], {
+      cwd: repo, encoding: 'utf8',
       env: { ...process.env, PATH: `${dir}:${process.env.PATH}`, GITHUB_OUTPUT: join(dir, 'out'), GITHUB_STEP_SUMMARY: '', ...env },
     });
     return { r, npm: existsSync(log) ? readFileSync(log, 'utf8') : '', out: existsSync(join(dir, 'out')) ? readFileSync(join(dir, 'out'), 'utf8') : '' };
@@ -378,6 +385,13 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
       expect(npm).toBe('');
       expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\nzettel=\n');
     }
+  }, 60_000);
+  it('Netz-Zettel: Runner gibt offene Nummer und Aktion aus — keine Drift + Zettel #17 offen ⇒ zettel=schliessen', () => {
+    const { r, npm, out } = runner({ AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'success', NETZ_ZETTEL: '17' }, 0);
+    expect(r.status).toBe(0);
+    expect(npm.trim()).toBe('run check:materialien-netz');
+    expect(out).toContain('status=keine\n');
+    expect(out).toContain('zettel=schliessen\nnetzzettel=17\nnetzfehler=\n');
   }, 60_000);
   it('B1: AUSLOESER ohne OFFENE_KOEPFE/LETZTER_LAUF/NETZ_ZETTEL ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
     for (const env of [
