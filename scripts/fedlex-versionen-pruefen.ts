@@ -30,6 +30,15 @@
 // Exit 0 → alle Pins aktuell; künftige Fassungen/Aufhebungen nur als HINWEIS;
 //          anerkannte Aufhebungen als ehrliches OK «bewusst historisch».
 // Exit 2 → Endpoint/Netz-Fehler (keine Aussage möglich).
+//
+// --kanonik-textvergleich (nur im Normen-Monitor, `check:netz:kette`; Entscheid David
+// 5.10.2026 «wichtig ist gesetzestext»): ein nicht-kanonischer Pin wird gegen die kanonische
+// Revision TEXTUELL verglichen (Tags weg, Leerraum normiert). Gleicher Text ⇒ nur HINWEIS
+// (Fedlex hat nur das Markup neu publiziert, z. B. OR html-2→3 am 5.10.2026: 36 Diff-Zeilen,
+// alle <i>→<span class="man-link-no-link">; fedlex-frische.yml re-pint das von selbst);
+// anderer Text ⇒ ROT wie bisher; Abruf scheitert ⇒ Exit 2. OHNE Flag bleibt jeder
+// nicht-kanonische Pin ROT — darauf baut die Selbstheilung in fedlex-frische.yml
+// («Arbiter rot ⇒ repin-kanonik»).
 // SSoT §5: die Pin-Liste wird aus scripts/fedlex-cache.sh geparst — die
 // Parse-Logik liegt einmal in scripts/fedlex-pins.ts (auch vom Gegenprüfungs-Tor genutzt).
 import { lesePins, lesePinsVoll, type Pin } from './fedlex-pins';
@@ -38,6 +47,29 @@ import { PDF_EMBED_QUELLEN } from '../src/lib/normtext/pdf-embed.ts';
 import { anerkannteAufhebungNachEli } from '../src/lib/normtext/aufhebungen.ts';
 
 const ENDPOINT = 'https://fedlex.data.admin.ch/sparqlendpoint';
+const FILESTORE = 'https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli';
+
+/** Sichtbarer Text einer Fedlex-HTML-Manifestation: Tags weg, Leerraum normiert. */
+export function sichtbarerText(html: string): string {
+  return html
+    .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** URL des gepinnten html-N, wie fedlex-cache.sh sie baut (n=0 ⇒ Alias ohne Suffix). */
+export function gepinnteHtmlUrl(p: { eli: string; konsKompakt: string; n: number }): string {
+  const pfad = p.eli.replace(/\//g, '-');
+  const basis = `${FILESTORE}/${p.eli}/${p.konsKompakt}/de/html/fedlex-data-admin-ch-eli-${pfad}-${p.konsKompakt}-de-html`;
+  return p.n === 0 ? `${basis}.html` : `${basis}-${p.n}.html`;
+}
+
+async function holeText(url: string): Promise<string> {
+  const res = await fetch(url, { signal: AbortSignal.timeout(90_000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status} auf ${url}`);
+  return sichtbarerText(await res.text());
+}
 
 // P1-b (QS-CURRENCY): die 'pdf-embed'-Erlasse (EMRK, NYÜ) waren im Versions-
 // Monitoring strukturell blind — check:fedlex-versionen sah nur lesePins()
@@ -250,21 +282,33 @@ async function main() {
   // dieselbe Konsolidierung (Fussnoten/Soft-Hyphen), das -N inkrementiert → ein
   // Pin unter der neuesten Revision ist die einzige treue Fassung (§7).
   const vollPins = lesePinsVoll();
+  const textvergleich = process.argv.includes('--kanonik-textvergleich');
   let unkanonisch = 0;
+  let nurMarkup = 0;
   try {
     const manifeste = await loeseHtmlManifeste(vollPins);
     console.log('\n── Kanonik-Arbiter (html-N vs. isExemplifiedBy) ──');
     for (const p of vollPins) {
       const b = manifeste.get(p.name);
-      if (!b || b.n === null) continue; // keine html-Manifestation → Alias+Sonde, s. cache.sh
+      if (!b || b.n === null || !b.file) continue; // keine html-Manifestation → Alias+Sonde, s. cache.sh
       if (b.n !== p.n) {
+        if (textvergleich) {
+          // Abruf-Fehler fallen in den catch unten ⇒ Exit 2 (keine Aussage), nie ROT.
+          const [alt, neu] = [await holeText(gepinnteHtmlUrl(p)), await holeText(b.file)];
+          if (alt === neu) {
+            console.log(`HINWEIS    ${p.name}: gepinnt html-${p.n}, kanonisch html-${b.n} — sichtbarer Text GLEICH (${neu.length} Zeichen), nur Markup neu publiziert → fedlex-frische re-pinnt.`);
+            nurMarkup++;
+            continue;
+          }
+          console.log(`TEXT-DRIFT ${p.name}: html-${p.n} ≠ html-${b.n} im sichtbaren Text (${alt.length} vs. ${neu.length} Zeichen).`);
+        }
         console.log(`NICHT-KANONISCH  ${p.name}: gepinnt html-${p.n}, kanonisch html-${b.n} (${b.file}) → re-pinnen (fedlex-repin-kanonik.ts) + regenerieren!`);
         unkanonisch++;
       }
     }
-    if (unkanonisch === 0) console.log('Alle Pins docken an der kanonischen html-Manifestation (isExemplifiedBy).');
+    if (unkanonisch === 0 && nurMarkup === 0) console.log('Alle Pins docken an der kanonischen html-Manifestation (isExemplifiedBy).');
   } catch (e) {
-    console.error(`FEHLER: Kanonik-Auflösung (isExemplifiedBy) nicht möglich (${e instanceof Error ? e.message : e}).`);
+    console.error(`FEHLER: Kanonik-Auflösung/-Textvergleich nicht möglich (${e instanceof Error ? e.message : e}).`);
     process.exit(2);
   }
 

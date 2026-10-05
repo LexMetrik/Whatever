@@ -68,6 +68,8 @@
  * Tripel je wieder ändern. Da dieser Arm nur in `check:netz:kette`
  * (Schedule/`workflow_dispatch`, s. `normen-monitor.yml`) läuft, blockiert ein Rot-Fund hier
  * nie einen PR-Merge — er öffnet den «Bei Rot»-Aufgaben-Zettel des Monitors.
+ * Nachtrag 5.10.2026 (Monitor-Rückbau, Entscheid David): das Tor läuft jetzt in
+ * `check:netz:bericht` — ein Rot-Fund ist ein Hinweis im Wochenbericht, kein Zettel.
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {

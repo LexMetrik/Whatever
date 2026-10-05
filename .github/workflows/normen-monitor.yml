@@ -1,78 +1,46 @@
-# ─── Normen-Monitor: wöchentliche Wache über Rechtsstände UND die Live-Site ──
-# (STRATEGIE-PLATTFORM.md F2.4 · QS-OPT O-1/O-2)
+# ─── Normen-Monitor: wöchentliche Wache über den GESETZESTEXT ───────────────
+# (STRATEGIE-PLATTFORM.md F2.4 · QS-OPT O-1 · Rückbau MONITOR 5.10.2026)
 #
-# Zwei Wach-Ebenen:
-#  1. Rechtsstände (amtliche Quellen): `npm run check:netz` — die EINE Netz-Tor-
-#     Kette (Fedlex-Caches, Zitate, Konsolidierungs-Versionen, RSS-OC-Stale-
-#     Pending, Kantons-version_uid, ZH-Registry-Pins gegen die amtliche Suche
-#     [zh-quellen-aufloesen Prüfmodus, B3 31.8.2026: eine alte Registry-Seite
-#     liefert ewig HTTP 200 + altes PDF — ein NEUER Nachtrag bliebe dem
-#     Hash-Drift-Tor sonst unsichtbar], PDF-Erreichbarkeit, PDF-Quellen,
-#     Materialien-, Botschaften-, Revisionen- (seit W2·18-FEHLERBUCH inkl. der
-#     rectifies-Ziel-Gegenprobe `check:revisionen-rectifies` — Berichtigungstext
-#     vs. das amtliche jolux:rectifies-Tripel), Vernehmlassungs- und
-#     Fedlex-Abkürzungs-Drift).
-#     Vorher liefen nur 6 von 10 Toren einzeln (O-1.3) — Abdeckung ist jetzt
-#     = `check:netz` per Konstruktion.
-#     `check:rss-oc` kam am 7.8.2026 dazu (QS-SELBSTOPT, Ent-Regulierung): es war
-#     das einzige Netz-Tor AUSSERHALB der Kette und machte die Vollständigkeits-
-#     Behauptung dieses Kopfes still falsch. Es lief nirgends, obwohl es genau die
-#     Lücke schliesst, die `check:fedlex-versionen` bauartbedingt nicht sieht:
-#     ein AS-Akt ist in Kraft, die Konsolidierung hinkt nach — in diesem Fenster
-#     servieren wir veraltetes Recht ohne Flag.
-#  2. Die Live-Site selbst (O-1.2): Prod-Smoke gegen lexmetrik.vercel.app —
-#     Startseite, /api/suche, je 1 Stichproben-JSON pro Korpus, Soft-404-Signal.
-#     Plus Vertragstests der Runtime-APIs Zefix/geo.admin.ch (O-1.8) und das
-#     LIK-Frische-Tor (O-1.6). Bisher prüfte der Monitor NIE die Site selbst —
-#     ein totes Feature (CSP frisst LiveSuche) blieb so wochenlang unbemerkt.
-#
-# Schlägt ein Schritt fehl, ist ein gepinnter Stand überholt, ein Anker weg, eine
-# amtliche Quelle nicht erreichbar ODER die Live-Site/eine Runtime-API defekt →
-# sichtbarer Aufgaben-Zettel (§7-Verifikation bzw. Betriebs-Fix).
+# Entscheid David 5.10.2026: «wichtig ist gesetzestext. der rest muss nicht zu einem rot
+# führen.» Darum zwei Klassen in EINEM Lauf (`npm run check:netz`, Runner
+# scripts/run-netz-alle.ts — Klassen-Begründung dort):
+#   • ROT + Alarm-Zettel nur, wenn gespeicherter Normtext/Pin von der amtlichen Fassung
+#     abweicht oder ein Zitat ins Leere zeigt (`check:netz:kette`: caches · zitate ·
+#     fedlex-versionen · normtext-netz · pdf-netz). Ein Kanonik-Wechsel ohne Textänderung
+#     ist nur ein Hinweis (fedlex-frische.yml re-pinnt ihn von selbst); eine nicht
+#     erreichbare Quelle (Exit 2) wird einmal wiederholt und bleibt sonst ein Hinweis.
+#   • Alles andere (`check:netz:bericht`: Materialien, Revisionen, Abkürzungen, BE-Sprengel,
+#     Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
+#     (::warning:: + Tafel), färbt den Lauf aber NICHT rot. Wo ein Generator existiert,
+#     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen,
+#     Fedlex-Abkürzungen) und fedlex-frische.yml (Re-Pins, Revisionen); der Rest bleibt
+#     Handarbeit nach Bericht (§7: Materialien-Snapshots, Tarif, LIK, Verfall).
+# Gestrichen im Rückbau (nie ein echter Befund): Prod-Smoke-Duplikat (prod-smoke.yml prüft
+# die Live-Site alle 6 h, inkl. der Korpus-JSONs), Runtime-API-Vertragstests, rss-oc,
+# pdf-quellen-netz, vernehmlassungen-alter; ebenso die Eskalationsstufe des Zettels.
 name: Normen-Monitor
 
 on:
   schedule:
-    # Montags 07:17 UTC — seit 1.9.2026 2,5 h NACH dem Reparatur-Arm (fedlex-frische.yml,
-    # 04:43 UTC). Verfahrens-Gap QS-MONITOR-ROT: bei 05:17 lief der Detektor 34 min nach
-    # dem Reparatur-Lauf, dessen PR (CI ≈ 15 min + Auto-Merge) noch nicht auf main war —
-    # der Monitor meldete den Pin rot, den der Reparatur-Arm schon gehoben hatte (24.8.:
-    # 10 Pins, 31.8.: StGB). Reihenfolge-Entscheid: erst reparieren, dann messen; der
-    # Detektor prüft main, nicht den Reparatur-Branch.
+    # Montags 07:17 UTC — 2,5 h NACH dem Reparatur-Arm (fedlex-frische.yml, 04:43 UTC):
+    # erst reparieren, dann messen (QS-MONITOR-ROT, 1.9.2026). Die Monatsläufe liegen seit
+    # 1.10.2026 in normen-monatslauf.yml.
     - cron: '17 7 * * 1'
-    # Die drei Monatsläufe (Curia, BS-Grossrat, Vernehmlassungen) liegen seit 1.10.2026 in
-    # normen-monatslauf.yml: eigene Datei = eigener «jüngster Lauf» für den Wächter
-    # (check:ci-laeufe wertet je Workflow-Datei) und eigene Rot-Serie dieses Zettels.
   workflow_dispatch:
 
 env:
-  PROD_URL: https://lexmetrik.vercel.app
-  # Zeitzone wie in ci.yml (dort mit Begründung, Zeilen 79–83): GitHub-Runner
-  # laufen in UTC, die Schweizer Rechtsstände und die datumsabhängigen Tore
-  # rechnen aber wie die Nutzer. Betrifft hier `check:verfall` (Zeile 52) —
-  # Verfallstermine sind Kalendertage, und ein UTC-Runner kippt sie im Fenster
-  # zwischen 22:00/23:00 und Mitternacht Zürich einen Tag zu früh bzw. zu spät.
-  # Nachtrag 26.7.2026: dieselbe fehlende Zeile war in fedlex-frische.yml die
-  # Ursache eines strukturell garantierten Fehlschlags (dort dokumentiert).
+  # Zeitzone wie ci.yml: Verfallstermine (`check:verfall`) sind Kalendertage in Zürich.
   TZ: Europe/Zurich
 
 jobs:
   normen:
-    name: Rechtsstände (check:netz) · Live-Site-Smoke · Runtime-APIs
+    name: Gesetzestext (check:netz) · Wochenbericht
     runs-on: ubuntu-latest
-    # 45 statt 25 seit 18.9.2026 (§17): der Netz-Lauf ist seriell und wächst mit dem Korpus —
-    # 5.9. grün in 22 min, 14.9. bei 25 min mitten in `check:be-sprengel-netz` abgewürgt
-    # (Lauf 34853464780: caches 4 min · normtext-netz 10 min · materialien-netz 8 min).
-    # `cancelled` färbt GitHub grau, der Wächter meldet es rot. Das Limit ist Notbremse mit
-    # Reserve, nicht Taktgeber (gleiche Regel wie turso-sync.yml); reisst der Lauf 35 min,
-    # ist der Zeitfresser zu messen, nicht das Limit erneut zu heben.
+    # Notbremse mit Reserve, nicht Taktgeber (Lauf 5.10.2026: ~25 min seriell).
     timeout-minutes: 45
     permissions:
       contents: read
       issues: write
-      # `actions: read` seit 3.8.2026 — die Eskalationsstufe unten zählt die
-      # vorangehenden Läufe dieses Workflows (`gh run list`).
-      actions: read
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
@@ -81,156 +49,38 @@ jobs:
           cache: npm
       - run: npx -y npm@11 ci
 
-      # ── 1. Rechtsstände: die EINE Netz-Tor-Kette (O-1.3) ────────────────────
-      - name: Rechtsstände — npm run check:netz (alle Netz-Tore, Zahl druckt der Runner)
+      - name: Gesetzestext rot · Rest Bericht — npm run check:netz
+        id: netz
+        env:
+          NETZ_TAFEL_DATEI: ${{ runner.temp }}/netz-tafel.md
         run: npm run check:netz
 
-      # ── Verfalls-/Frische-Tore (nicht in check:netz, wanduhr-abhängig) ──────
-      #
-      # SEIT 3.8.2026 (K7) ist das hier der PRIMÄRE Laufort von check:verfall:
-      # aus dem PR-Pfad (ci.yml, Job `tore`) wurde es entfernt, weil ein
-      # wanduhr-abhängiges Tor dort schlagartig alle offenen PRs rot färbt, die
-      # nichts damit zu tun haben (Lauf 30764225649 vom 2.8.2026). Der WÖCHENT-
-      # LICHE Takt ist der richtige: ein Registertermin ist ein Rechtsstands-
-      # Befund, kein Diff-Befund, und gehört zu den übrigen §7-Wachen.
-      #
-      # VORLAUF-WARNUNG ist eingebaut und braucht kein Flag: verfall-pruefen.ts
-      # druckt jeden Termin der nächsten VORLAUF_TAGE (= 45, Zeile ~35) als
-      # «FÄLLIG <Datum> <Label>» und zählt sie am Ende. Damit sieht dieser Lauf
-      # kommende Verfälle rund sechs Wochen im Voraus — deutlich mehr als der
-      # ursprünglich vorgesehene 14-Tage-Vorlauf, darum wurde die Schwelle NICHT
-      # angefasst (sie ist zudem bewusst mit VerfallUebersicht.tsx gespiegelt).
-      # `if: always()` bleibt: das Tor muss auch laufen, wenn check:netz oben
-      # bereits rot war — sonst verdeckt ein Netzfehler den Verfall.
-      - name: Verfallsregister (Termine · mit Vorlauf-Warnung ≤45 Tage)
-        if: always()
-        run: npm run check:verfall
-
-      # Derselbe K7-Platz wie check:verfall oben (§17-Wurzelfix PR #803, Gegenprüfungs-
-      # Auflage A1): der Alterungs-Wächter des Vernehmlassungs-Registers ist wanduhr-
-      # abhängig und darf darum NICHT in check-materialien.ts hängen — dort würde er
-      # fachfremde Aufrufer (z. B. den Job `bs-grossrat` in normen-monatslauf.yml) vor deren PR-Schritt
-      # töten. Sein einziger Aufrufer ist dieser wöchentliche Detektor. `if: always()`
-      # aus demselben Grund wie oben — ein Netzfehler soll den Alterungs-Befund nicht
-      # verdecken. Begründung ausführlich: scripts/materialien/vernehmlassungen-tor.ts.
-      - name: Vernehmlassungs-Register-Alter (Wächter, verhindert keinen Merge)
-        if: always()
-        run: npm run check:vernehmlassungen-alter
-      - name: LIK-Reihe frisch (BFS-Monatsindex, O-1.6)
-        if: always()
-        run: npm run check:lik-frische
-
-      # ── 2. Live-Site-Prod-Smoke (O-1.2 + O-1.4 Soft-404-Signal) ─────────────
-      - name: Prod-Smoke — Live-Site (Startseite, /api/suche, Korpus-JSON, Soft-404)
-        if: always()
-        run: bash .github/scripts/prod-smoke.sh
-
-      # ── 2b. Vertragstests Runtime-APIs Zefix / geo.admin.ch (O-1.8) ─────────
-      - name: Runtime-API-Vertragstests (Zefix + geo.admin.ch)
-        if: always()
-        run: bash .github/scripts/api-vertragstests.sh
-
-      # ── 3. FR/IT-Drift Stufe 1 (QS-FRIT-DRIFT, 15.8.2026) ──────────────────
-      #
-      # Bis hierher prüft dieser Monitor ausschliesslich die DEUTSCHE Fassung —
-      # eine französische oder italienische Fassung konnte beliebig abweichen,
-      # ohne dass ein Tor es sah. `check:frit-drift` vergleicht je Kern-Erlass
-      # die eId-Mengen der drei Amtssprachen AM GEPINNTEN Stand und meldet
-      # Abweichungen (Details: scripts/fedlex-frit-drift.ts).
-      #
-      # Der Exit-2-Fall wird bewusst NICHT rot: Exit 2 heisst «Fedlex/Filestore
-      # nicht erreichbar, keine Aussage möglich» — das ist kein Rechtsstands-
-      # Befund, und ein Rot dafür würde denselben Alarm entwerten, den die
-      # Triage unten scharf halten soll. Er wird als ::warning:: annotiert, ist
-      # also sichtbar und nicht still (§6.7); lokal bleibt der Exit-Code 2.
-      # Exit 1 (echte Sprach-Drift) färbt den Lauf rot — `continue-on-error`
-      # bleibt deshalb false.
-      - name: FR/IT-Drift Stufe 1 (eId-Mengenvergleich DE/FR/IT, Kern-Erlasse)
-        if: always()
-        continue-on-error: false
-        run: |
-          set -uo pipefail
-          # `set +e` ist nötig: GitHub startet `run:`-Blöcke mit `bash -e`, und
-          # -e würde den Lauf beim Exit-Code 2 abbrechen, BEVOR die Netz-Warnung
-          # unterschieden werden kann. Der Exit-Code wird unverändert
-          # weitergereicht (nie durch Pipe/|| verschluckt, §6-Lehre 6./7.6.).
-          set +e
-          npm run check:frit-drift
-          code=$?
-          set -e
-          if [ "$code" = "2" ]; then
-            echo "::warning title=FR/IT-Drift unvollständig::Fedlex/Filestore nicht vollständig erreichbar — kein Sprachvergleich möglich (kein Drift-Befund, kein Grün)."
-            exit 0
-          fi
-          exit "$code"
-
-      # A2 (2.7.2026): Ein roter Lauf verhallte bisher still in der Verlaufsliste (15.6./29.6.
-      # real rot, unbemerkt). Bei Rot legen wir einen sichtbaren Aufgaben-Zettel an — ODER
-      # kommentieren den bestehenden, damit keine Issue-Flut entsteht.
-      #
-      # ── TRIAGE-NACHZUG (3.8.2026, Fehlerklasse K5) ──────────────────────────
-      # Die Kommentar-Sammelstelle hat ihr Ziel verfehlt: Issue #166 (angelegt
-      # 6.7.2026) trug am 3.8. vier Kommentare — «Erneut rot am …», immer
-      # derselbe Text, nie geschlossen, nie eskaliert. Ein Alarm, der sich vier
-      # Wochen lang unverändert wiederholt, ist kein Alarm mehr, sondern
-      # Rauschen; die 8 nicht-kanonischen Pins standen genau in dieser Zeit.
-      # Zwei Ergänzungen, beide gegen dieselbe Wurzel:
-      #   (1) Bei GRÜN wird der Zettel GESCHLOSSEN. Ohne Schliessung sagt ein
-      #       offener Zettel nichts mehr über die Gegenwart aus — er ist dann
-      #       nur noch ein Beleg, dass es einmal ein Problem gab.
-      #   (2) Ab dem 3. roten Lauf IN FOLGE bekommt der Titel das Präfix
-      #       «ESKALATION:». Der Unterschied zwischen «einmal rot» (Quelle
-      #       kurz weg) und «dauerhaft rot» (echter Rechtsstands-Defekt) muss
-      #       im Titel stehen, nicht im vierten Kommentar.
-      # Zettel-Muster (1.10.2026, QS-MONITOR-ROT): Label `alarm:normen-monitor`, ERR-Trap
-      # → Warnung statt Lauf-Rot; Wortlaut bei waechter.yml.
-      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/eskalieren
-        if: failure()
+      # EIN Zettel (Label alarm:normen-monitor): bei Rot anlegen, falls keiner offen ist;
+      # kein Wiederhol-Kommentar (Leser ist die Startabfrage jeder Session:
+      # gh issue list --state open --author "github-actions[bot]", Skill bauschritt).
+      # ERR-Trap → Warnung statt Lauf-Rot (Zettel-Muster waechter.yml, 1.10.2026).
+      # Nur bei rotem check:netz (nicht bei Infrastruktur-Rot wie `npm ci` — das meldet der
+      # Wächter): der Zettel behauptet einen Gesetzestext-Befund.
+      - name: Bei Rot — Aufgaben-Zettel anlegen (falls keiner offen)
+        if: failure() && steps.netz.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          TAFEL: ${{ runner.temp }}/netz-tafel.md
         run: |
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
-          rumpf="Der wöchentliche Normen-Monitor ist fehlgeschlagen — ein gepinnter Rechtsstand ist möglicherweise überholt, ein Anker weg, eine amtliche Quelle nicht erreichbar ODER die Live-Site/eine Runtime-API defekt. Prüfen: **§7-Verifikation** (Pins/Wortlaute/Verfallsregister) bzw. **Betriebs-Fix** (Site/API). Lauf: ${RUN_URL}"
+          if [ -n "$offen" ]; then echo "Zettel #${offen} ist offen — kein neuer."; exit 0; fi
+          tafel=$( [ -f "$TAFEL" ] && cat "$TAFEL" || echo "(Tafel fehlt — Lauf-Log lesen)")
+          rumpf="Gespeicherter Gesetzestext weicht von der amtlichen Fassung ab (oder ein Zitat zeigt ins Leere). Vor jeder Handarbeit: offene Bot-PRs prüfen (Fedlex-Frische re-pinnt überholte Fassungen selbst). Lauf: ${RUN_URL}
 
-          # Rot-Serie zählen: abgeschlossene Vorläufer, solange sie NICHT
-          # 'success' sind. 'cancelled'/'timed_out' brechen die Serie NICHT —
-          # ein grauer Lauf ist kein bestandener Lauf (CLAUDE.md §6 Ziff. 7
-          # lit. c, dieselbe Regel wie in check:ci-laeufe). Der laufende Lauf
-          # ist noch nicht 'completed', darum zählt er als +1.
-          serie=1
-          runs=$(gh run list --workflow normen-monitor.yml --limit 15 --json conclusion,status \
-                   --jq '.[] | select(.status=="completed") | .conclusion') \
-            || { echo "::warning::Rot-Serie nicht ermittelbar"; runs=; }
-          for c in $runs; do
-            [ "$c" = "success" ] && break
-            serie=$((serie + 1))
+          ${tafel}"
+          for l in "--label alarm:normen-monitor" ""; do
+            gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Gesetzestext prüfen (§7)" --body "$rumpf" && break
           done
-          echo "Rot-Serie in Folge (inkl. diesem Lauf): ${serie}"
 
-          # Offener Zettel: kein Wiederhol-Kommentar (seit 1.10.2026, Leser = Alarm-Zeile in plan:next).
-          # Seit 5.10.2026 (Umstieg L1, plan:next abgebaut) liest die Startabfrage jeder Session:
-          # gh issue list --state open --author "github-actions[bot]" (Skill bauschritt, Station A).
-          nr="$offen"
-          [ -n "$nr" ] || nr=$(for l in "--label alarm:normen-monitor" ""; do gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" && break; done | grep -oE '[0-9]+$')
-
-          if [ "$serie" -ge 3 ]; then
-            titel=$(gh issue view "$nr" --json title --jq '.title')
-            case "$titel" in
-              ESKALATION:*) echo "Zettel #${nr} ist bereits eskaliert — Titel unverändert." ;;
-              *)
-                gh issue edit "$nr" --title "ESKALATION: ${titel}"
-                gh issue comment "$nr" --body "**Eskalationsstufe erreicht**: ${serie} rote Läufe in Folge. Das ist kein Aussetzer einer amtlichen Quelle mehr, sondern ein stehender Befund — §7-Verifikation ist fällig."
-                echo "Zettel #${nr} eskaliert (${serie} rote Läufe in Folge)."
-                ;;
-            esac
-          fi
-
-      # Gegenstück zur Triage: bei GRÜN wird der Zettel geschlossen. Ein
-      # Monitor, der nur anlegt und nie schliesst, produziert eine Liste, die
-      # nur wächst — und über die Gegenwart nichts mehr aussagt (§8).
+      # Gegenstück: bei Grün (= kein Gesetzestext-Befund) den offenen Zettel schliessen (§8).
       - name: Bei Grün — offenen Aufgaben-Zettel schliessen
         if: success()
         env:
@@ -240,9 +90,5 @@ jobs:
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
-          if [ -z "$offen" ]; then
-            echo "Monitor grün, kein offener Zettel — nichts zu schliessen."
-            exit 0
-          fi
-          gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor wieder grün am $(date +%F) — alle Netz-Tore, Live-Site und Runtime-APIs bestanden. Zettel geschlossen; bei erneutem Rot legt der Monitor einen neuen an. Lauf: ${RUN_URL}"
-          echo "Zettel #${offen} geschlossen (Monitor grün)."
+          if [ -z "$offen" ]; then echo "Monitor grün, kein offener Zettel."; exit 0; fi
+          gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor grün am $(date +%F) — kein Gesetzestext-Befund mehr. Lauf: ${RUN_URL}"

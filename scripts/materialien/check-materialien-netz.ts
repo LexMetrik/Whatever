@@ -1,7 +1,8 @@
 // scripts/materialien/check-materialien-netz.ts
 // E6a Stufe 1 (FAHRPLAN-MATERIALIEN-VERZAHNUNG §4 «check:materialien-netz»): Live-Drift-Arbiter
-// der Materialien-Quellen gegen das committete Zustands-Manifest. Verdrahtet in `check:netz` UND
-// als eigener Step in normen-monitor.yml (§0/B8, sonst läuft Drift nie automatisch).
+// der Materialien-Quellen gegen das committete Zustands-Manifest. Verdrahtet in `check:netz`
+// (seit 5.10.2026 `check:netz:bericht`: Drift ist ein Wochenbericht-Hinweis, kein Monitor-Rot;
+// Nachführung unten beschrieben, §7 kein Auto-Fix).
 //
 // Struktur: pro Quelle ein Arbiter (M1 ESTV-MWST / M3 EDÖB / M4 ESTV-KS docken hier an). M2 = SECO.
 // Drift ⇒ ROT = «Snapshot neu ziehen» (npm run materialien:snapshot …), NIE Auto-Fix (§7 Build-Regel).
