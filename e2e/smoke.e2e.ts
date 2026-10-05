@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 2
 // Browser-Smoke über die Kernrouten: rendert die Seite, sammelt Console-/
 // Page-Errors und prüft den 390px-Viewport auf horizontalen Overflow.
 // Bewusst nur stabile Routen (kein fristenspiegel — wird per S-5c aufgelöst).

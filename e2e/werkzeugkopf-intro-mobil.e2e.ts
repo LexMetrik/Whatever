@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 // ═══ WERKZEUGKOPF-EINLEITUNG MOBIL (W2·29-WERKBANK-REST S3, 25.9.2026) ══════
 //
 // Posten «WerkzeugKopf-Intro serif text-body-l ist mobil (390) sehr hoch»: der

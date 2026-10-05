@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 // ═══ W2·6c-E3 · DIE ENTSTEHUNG AM ARTIKEL ═══════════════════════════════════
 //
 // AUFTRAG David 6.9.2026, wörtlich: «Materialien und Wegleitungen maximal

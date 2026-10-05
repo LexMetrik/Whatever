@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 import { F_BLOCK, blattFuerArtikel, blattReiter, fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';

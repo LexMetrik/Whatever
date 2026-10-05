@@ -22,7 +22,29 @@
 # Save); ci.yml stellt den Cache in PR/merge_group nur wieder her (ci-071).
 # Überwacht von waechter.yml (check:ci-laeufe: geplanter Workflow ohne Lauf
 # = rot).
-name: Perf-Nacht (Lighthouse-Budget gegen main)
+#
+# ── NACHTRAG 5.10.2026 (QS-CI-ZEIT N3): zweiter Job `e2e-nacht` ──────────────
+# ENTSCHEID David 5.10.2026 (Chat, «(a) Nachts statt Queue» auf «Was soll mit
+# den 107 Browser-Testdateien geschehen, die in 2½ Monaten nie rot waren?»).
+# Die nie-roten Specs OHNE Rechen- oder Rechtstext-Prüfung tragen
+# `// @shard-gruppe: nacht` (Liste `nacht` in e2e/shard-gruppen.json) und laufen
+# hier täglich gegen main statt in der Merge-Warteschlange; GRENZE der Freigabe:
+# wer Rechenergebnisse oder die Anzeige von Gesetzes-/Urteilstext prüft, bleibt
+# in der Queue. Einstufung: bibliothek/betrieb/e2e-fang-historie-2026-10-05.md.
+# WARUM HIER und kein eigener Workflow (§17 Satz 1 geprüft): derselbe Takt
+# (nachts gegen main), derselbe Playwright-Cache, dieselbe Wächter-Deckung
+# (check:ci-laeufe liest den Workflow-Ausgang — ein rotes e2e-nacht färbt ihn
+# rot, genau wie ein rotes Lighthouse), und ein Handstart vom Arbeitszweig
+# bleibt möglich, weil die Datei auf main schon existiert (workflow_dispatch
+# verlangt den Workflow auf dem Standardzweig). Zwei Jobs, zwei Zettel-Labels:
+# ein Lighthouse-Rot und ein Browser-Rot bleiben auseinanderzuhalten.
+# EIN JOB, KEINE SHARDS: ~22 Testminuten (Queue-Lauf 37344516589) bei 2 Workern
+# ≈ 11–12 min Playwright + Bau; nachts zählt die Wanduhr nicht, eine Matrix
+# kostete nur Rüstzeit.
+# BEI ROT: Zettel `alarm:e2e-nacht` (dedupliziert, bei Grün geschlossen);
+# Retry-Grün = Warnung + `flake`-Zettel über scripts/ci/flake-zettel.sh wie in
+# ci.yml (e2e-ergebnis).
+name: Nacht-Läufe gegen main (Lighthouse-Budget + Browser-Nacht)
 
 on:
   schedule:
@@ -98,5 +120,97 @@ jobs:
           set -euo pipefail
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:perf-nacht&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          [ -z "$offen" ] && exit 0
+          gh issue close "$offen" --reason completed --comment "🟢 Wieder grün am $(date +%F) (${GITHUB_SHA:0:8}): ${RUN_URL}"
+
+  e2e-nacht:
+    name: Browser-Nacht (nie-rote Specs ohne Rechen-/Rechtstext-Prüfung)
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      issues: write
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+      - name: Build (dist, ohne Typprüfung — die macht ci.yml)
+        run: npm run build:dist
+      # Nur lesen: gespeichert wird der Cache im Job `lighthouse` (ein Speicherer je Lauf).
+      - name: Playwright-Browser-Cache wiederherstellen
+        uses: actions/cache/restore@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Playwright-Browser (Chromium)
+        run: bash scripts/ci/playwright-install.sh
+      - name: Browser-Nacht (Playwright, Liste `nacht` gegen dist)
+        run: npm run test:e2e:gruppe -- nacht
+      - name: Playwright-JSON-Report ablegen
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report-nacht
+          path: playwright-report.json
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Flacker-Wächter (Retry-Grün = Warnung + Zettel, Dauer-Rot = rot)
+        if: ${{ !cancelled() }}
+        env:
+          E2E_FLAKE_FUNDE: flake-funde/flake-funde-nacht.json
+        run: |
+          mkdir -p flake-funde
+          npm run check:e2e-flake
+      - name: Reparatur-Zettel je flackernder Spec (Issue, Label flake, dedupliziert)
+        if: ${{ !cancelled() && github.ref == 'refs/heads/main' }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+        run: bash scripts/ci/flake-zettel.sh flake-funde
+      - name: Playwright-Traces ablegen (nur bei Rot)
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-traces-nacht
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen
+        if: failure() && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          gh label create alarm:e2e-nacht --color D93F0B --description "Nächtliche Browser-Specs rot (perf-nacht.yml, Job e2e-nacht)" >/dev/null 2>&1 || true
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:e2e-nacht&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          if [ -n "$offen" ]; then
+            gh issue comment "$offen" --body "Weiterhin rot am $(date +%F) (${GITHUB_SHA:0:8}): ${RUN_URL}"
+            exit 0
+          fi
+          rumpf="Die nächtlichen Browser-Specs (Liste \`nacht\` in e2e/shard-gruppen.json, Job \`e2e-nacht\`) sind gegen main rot — mindestens ein Test scheiterte in allen Versuchen. Diese Specs laufen seit dem Entscheid David 5.10.2026 nicht mehr in der Merge-Warteschlange; der Defekt ist also schon auf main. Report und Traces des Laufs lesen, verursachenden Commit eingrenzen (§0 Ziff. 3: erst Re-Run per workflow_dispatch, ein Einzelrot ist ein Verdacht), Wurzel beheben. Stand: ${GITHUB_SHA:0:8}. Lauf: ${RUN_URL}"
+          for l in "--label alarm:e2e-nacht" ""; do gh issue create $l --title "🟠 Browser-Nacht rot ($(date +%F)) — nächtliche Browser-Specs gegen main" --body "$rumpf" && break; done
+
+      - name: Bei Grün — offenen Zettel schliessen
+        if: success() && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:e2e-nacht&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           [ -z "$offen" ] && exit 0
           gh issue close "$offen" --reason completed --comment "🟢 Wieder grün am $(date +%F) (${GITHUB_SHA:0:8}): ${RUN_URL}"

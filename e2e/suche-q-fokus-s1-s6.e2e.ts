@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 4
 // Browser-Kontrakt der beiden Suche-Rest-Schritte (FAHRPLAN-UI-NAVIGATION §2):
 //
 //   S1 · Query-Durchreichung `?q=` — der «alle N →»-Sprung der Universal-Suche

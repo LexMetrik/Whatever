@@ -17,6 +17,8 @@ gezielten Wege.
 
 ## Die zwei Routine-Tore (pro Iteration vs. vor Abschluss)
 
+Seit 5.10.2026 (Regel David, lokal CPU sparen) laufen beide Ketten als PR-Lauf in der CI; lokal nur gezielte Einzelprüfungen.
+
 | Befehl | Kette | Dauer | Wann |
 |---|---|---|---|
 | `npm run gate:schnell` | tsc · vitest · golden:vergleich | ~7 s | **nach jedem Teilschritt** während der Arbeit (iterativer §6-/§14.4-Bug-Check) |

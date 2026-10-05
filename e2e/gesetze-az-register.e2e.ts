@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // IA-3 · A–Z-/Kürzel-Register auf /gesetze (FAHRPLAN-GESETZES-UX §11.5/§11.6):
 // Browse-Zwilling zum Norm-Sprung (Muster M6 gesetze-im-internet) auf dem
 // neutralen G4-Landeplatz. Beweise dieser Spec:

@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── Material-Leser: Lesespalte + Randspalte (W2·31-BILDSCHIRMBREITE B8, 25.9.2026) ─

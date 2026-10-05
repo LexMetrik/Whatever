@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: nacht
 // D6 (W2·24-Funktions-Inventar, Funktions-Inventar-Sonde 6./7.9.2026): auf dem
 // Landeplatz /gesetze blieben die zehn Kernerlasse-Kürzel (`.ub-kern`, R12A)
 // beim Filtern stehen und standen ÜBER den echten Treffern — z. B. «miet» mit

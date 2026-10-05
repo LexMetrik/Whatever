@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 4
 // FAHRPLAN-LESER-V3, Etappe H2 (Kap. 4b Pos. 5) — die Trefferliste ist ein
 // VERZEICHNIS in Erlass-Reihenfolge, je Artikel gruppiert.
 //

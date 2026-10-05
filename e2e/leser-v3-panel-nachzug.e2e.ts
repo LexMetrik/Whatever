@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 1
 // ─── H3-NACHZUG · die sieben Befunde der drei Prüfer, gemessen ───────────────
 //
 // Jede Zusage hier hat einen VORHER-MESSWERT (17.8.2026, gebauter H3-Stand) und

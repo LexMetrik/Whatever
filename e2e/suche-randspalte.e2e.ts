@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── /suche: Lesespalte + klebende Filterspalte (W2·31-BILDSCHIRMBREITE B9, 25.9.2026) ─

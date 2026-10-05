@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 4
 import { test, expect } from '@playwright/test';
 
 // ─── Materialien auf Stufe `weit` (W2·31-BILDSCHIRMBREITE B2, 25.9.2026) ─────
