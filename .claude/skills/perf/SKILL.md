@@ -84,8 +84,8 @@ Zwei getrennte Tore (Faktenkorrektur 7.8.2026, Reglement-Audit — die frühere
 Beschreibung vermischte sie): **`check:perf-budget`** prüft gzip-Bundle-Budgets
 (`scripts/check-perf-budget.ts`, Chrome-frei, läuft auch lokal);
 **`check:perf-lighthouse`** fährt die Lighthouse-Messung
-(`scripts/perf/lighthouse-budget.ts`) und läuft in CI nach dem Merge auf main
-(ci.yml, designt: nicht auf PR-Läufen). **Ein lokales Grün ohne
+(`scripts/perf/lighthouse-budget.ts`) und läuft nächtlich gegen main
+(`perf-nacht.yml`, seit 5.10.2026 nicht mehr in PR/Queue; Entscheid David). **Ein lokales Grün ohne
 `check:perf-lighthouse` beweist also keine Lighthouse-Werte.**
 
 Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und

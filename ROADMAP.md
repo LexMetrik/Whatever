@@ -111,6 +111,7 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ```
 - S · 5.10. · e2e/w224-r11-reiterleiste.e2e.ts «auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot (8/8), Ausnahmeliste zurückgebaut (QS-CI-ZEIT E2) — Wurzel beheben; FB S-24
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
+- S · 5.10. · tor-paritaet-sonden.ts ignoriert Job-if (z. B. event_name != 'pull_request'): Tor in PR-gesperrtem Job zählt als PR-gedeckt — Dach QS-CI-ZEIT
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26
 - S · 5.10. · Deploy nutzt npx vercel@latest; Such-API gibt Fehlertexte an Anonyme, DB-Fehler als «0 Treffer» — FB S-18

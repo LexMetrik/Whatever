@@ -190,10 +190,11 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    `merge_group`-Lauf bis MERGED verfolgen (pollen, Ziff. 7c).
    **`cancelled`/`skipped` zählen als ROT**; einzige Ausnahme: dokumentiert
    designter konditionaler Skip mit anderweitig belegter Substanz (heute:
-   «Perf-Budget» auf `pull_request` — läuft im `merge_group`; «Deploy» im
-   `merge_group`). **FEHLENDE Checks zählen als PENDING, nie als grün** —
-   nach dem Push die Präsenz der Kern-Batterie (Tore + Bau +
-   letzter Shard) verifizieren. Keine überflüssigen Zwischen-Pushes.
+   «Perf-Budget», `bau` und die Browser-Shards auf `pull_request` — laufen im
+   `merge_group` (Entscheid David 5.10.2026); «Deploy» im `merge_group`).
+   **FEHLENDE Checks zählen als PENDING, nie als grün** — nach dem Push die
+   Präsenz der Kern-Batterie (Tore-Teiljobs inkl. «Tore · Typen») verifizieren,
+   im `merge_group` zusätzlich Bau + letzter Shard. Keine überflüssigen Zwischen-Pushes.
    Sonderfälle (kein pull_request-Lauf, Grenzfall-Skip) + Wortlaute:
    `referenz-ci.md`.
 
@@ -321,11 +322,14 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
 - **Pflicht-Kontexte umstellen:** vorher `referenz-ci.md` §Pflicht-Kontexte lesen (Lehre
   8.9.2026, #774: erst alten UND neuen Kontext melden, dann Branch-Schutz umstellen; der
   Nachzug offener PRs ist unter der Queue UNGEMESSEN).
-- **Flacker-Wächter** `check:e2e-flake` (#779): ein Shard, der nur im Wiederholungsversuch grün
-  wird, ist rot — ausser die Spec steht mit Datum/Grund in `e2e/flake-ausnahmen.json` (Verfall
-  30 Tage). **Melde-Modus bis 22.9.2026** (`e2e/flake-modus.json`), danach automatisch hart;
-  fehlende/kaputte Modus-Datei ⇒ hart. Wurzel je Spec messen
-  (Fund als EINGANG-Zeile), nicht Ausnahmen sammeln.
+- **Flacker-Wächter** `check:e2e-flake` (#779; gelockert 5.10.2026, Entscheid David, QS-CI-ZEIT):
+  Retry-Grün ist Warnung + Reparatur-Zettel (Issue, Label `flake`, `scripts/ci/flake-zettel.sh`),
+  kein Rot; rot bleiben Dauer-Rot und Report-/Zuordnungsfehler. Ausnahmeliste und Modus-Datei
+  sind abgebaut. Offene `flake`-Issues sind Wurzelfix-Posten, nicht Dauerzustand.
+- **QS-CI-ZEIT (5.10.2026):** Browser-Shards und `bau` nur im `merge_group`; Tore in Teiljobs
+  (Tests ×2 · Lint · Typen · Checks) unter dem Sammel-Kontext «Tore»; Lighthouse nur nachts
+  (`perf-nacht.yml`, Zettel `alarm:perf-nacht`), «Perf-Budget» wertet Treue + Bundle-Topologie;
+  Caches speichert nur `main`. Anlässe: `archiv/ci-yml-kommentare.md` ci-063…071.
 - **Browser-Installation** über `scripts/ci/playwright-install.sh` (#785). Ein roter Shard ohne
   rote Tests ⇒ zuerst den Schritt lesen, nicht die Suite verdächtigen.
 - **Reine Doku-PRs** (Diff-Klasse «doku») überspringen `bau` und `e2e`; die Doku-Tore laufen
@@ -393,9 +397,9 @@ Wächter: Startabfrage (Skill `bauschritt` Station A) und `npm run aufraeumen:gi
    `/rechner/verjaehrung`, `/rechner/mietrecht`, `/vorlagen`, eine
    Vorlagen-Detailroute. Prod = https://lexmetrik.vercel.app (lexmetrik.ch
    existiert NICHT).
-4. Lighthouse (QS-PERF/§15): läuft automatisiert als `check:perf-lighthouse`
-   nach dem Merge (Solls: `fahrplaene/FAHRPLAN-PERFORMANCE.md`); manuell nur
-   bei Verdacht.
+4. Lighthouse (QS-PERF/§15): läuft nächtlich als `check:perf-lighthouse`
+   (`perf-nacht.yml`, seit 5.10.2026; Solls: `fahrplaene/FAHRPLAN-PERFORMANCE.md`);
+   rot ⇒ Issue `alarm:perf-nacht`; manuell nur bei Verdacht.
 5. Aufräumen: gemergten Branch + Worktree entfernen (lokal + remote).
 6. Hat der Merge `package-lock.json` geändert: `npm ci` im Haupt-Checkout
    nachziehen (Beleg 3.9.2026: fehlende `valibot`/`date-holidays` machten

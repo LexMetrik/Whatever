@@ -174,6 +174,8 @@ dabei.
 
 - Vier Browser-Shards statt acht; Pflicht-Kontext ist der Sammel-Job «Browser-Smoke (Ergebnis)» (#780, 8.9.2026), Flacker-Wächter `check:e2e-flake` (#779), Browser-Installation `scripts/ci/playwright-install.sh` (#785). Grund des Sammel-Jobs: ein per `if:` übersprungener **Matrix**-Job meldet nur einen Check-Run mit unexpandiertem Namen — Shard-Kontexte würden nie gemeldet, der PR hinge (K12-Falle). Flackern wird einmal angeschaut, nie stillschweigend weggeklickt. Wortlaut der drei Punkte mit Anlässen: Archiv §Pruefstrasse-Wortlaut; die Regeln stehen vollständig in Skill `landung` §Prüfstrasse.
 
+- **Nachtrag 5.10.2026 (QS-CI-ZEIT, #1321/#1323):** wieder acht Shards (seit #971); neue Jobnamen «Tore · Tests (vitest 1/2|2/2)», «Tore · Lint», «Tore · Typen (tsc -b)», «Tore · Checks (…)», «Perf-Messung (Bundle-Topologie, …)»; Composite-Action `.github/actions/npm-ci` (Cache nur lesen); Flacker-Wächter meldet statt rot. Messbasis: 300 Queue-Läufe, 10× Browser-rot nach grünem PR, davon 0 echte Zusammenstösse.
+
 ### §Pflicht-Kontexte umstellen, ohne fremde PRs zu blockieren
 
 - **Pflicht-Kontexte umstellen, ohne fremde PRs zu blockieren** (Lehre der Parallel-Session
