@@ -24,10 +24,20 @@
 ## 0 · Pflicht-Klausel — wörtlich in JEDEN Sub-Agenten-Prompt
 
 Diese sechs Punkte gehen **unverändert** in jeden Auftrag. Sie sind der einzige
-Ort, an dem ein Sub-Agent sie überhaupt sehen kann: **Sub-Agenten erhalten
-`CLAUDE.md` nicht** (verifiziert 20.7.2026 an einem workflow-gespawnten Agenten —
-er bekam nur den Memory-Index). Eine Regel, die nur in `CLAUDE.md` steht,
-existiert für delegierte Arbeit nicht.
+Ort, den **jeder** Sub-Agent sicher sieht. Ob `CLAUDE.md` ankommt, hängt vom
+Agent-Typ ab:
+
+- **20.7.2026:** Ein workflow-gespawnter Agent bekam nur den Memory-Index.
+- **Sonde 5.10.2026:** Zwei Agenten bekamen dieselben fünf Fragen zu ihrem
+  Kontext und durften dabei kein Werkzeug benutzen.
+  - `lex-recherche` sah die Projekt- und die globale `CLAUDE.md` sowie den
+    Memory-Index.
+  - Die vom SessionStart-Hook eingespeiste `START.md` sah er nicht.
+  - Der eingebaute `Explore`-Agent sah von allem nichts (Gegenprobe).
+
+Das deckt sich mit der Claude-Code-Doku zu Sub-Agenten: Explore und Plan sind
+dort ausgenommen. Eine Regel, die nur in `CLAUDE.md` steht, erreicht delegierte
+Arbeit darum nicht verlässlich.
 
 Byte-stabil halten — der Block wird maschinell eingefügt: `npm run dispatch -- <klasse>`.
 

@@ -1592,6 +1592,13 @@ Beträge-/Zuständigkeits-Rechner tragen ihn nicht.
 ```
 
 Beispiel-Chips (`BeispielChips`) stehen, wo vorhanden, zwischen 2 und 3.
+
+**Aus Vorfällen (Vault-Lektionen, überführt 5.10.2026):**
+- Mobile Raster haben `grid-cols-1` als Basis.
+- In Legenden keine Text-Pseudo-Muster.
+- PLZ → Gemeinde: Die Auflösung braucht den Fallback `hauptTreffer()` und
+  die Auswahl-Kacheln `PlzGemeindeWahl`. Mehrdeutige PLZ sind der Normalfall:
+  Eine PLZ gilt oft für mehrere Gemeinden, Beispiel Aarau und Suhr.
 Das Aktenzeichen ist KEIN Eingabefeld des Falls, sondern Teil der
 Mitnahme — es steht im Ergebnisblock (R4 Ziff. 5), nicht bei den
 Eingaben.

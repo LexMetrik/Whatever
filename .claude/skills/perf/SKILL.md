@@ -53,9 +53,16 @@ bleibt.
 nur mit Default-Komparator, `useCallback` mit vollständigen Deps, `useMemo` für
 teure Ableitungen, geteilt via WeakMap auf die Datenreferenz — nie über einen
 globalen Token-Key, das kollidiert zwischen Erlassen.
+**Falle:** Die Lint-Regel `react-hooks/preserve-manual-memoization` ist trotz
+abgeschaltetem Compiler aktiv. Ein `useCallback`, das `ref.current` liest, wird
+rot; wer dann auf eine Plain-Funktion in den Effect-Deps ausweicht, baut eine
+Re-Render-Schleife. Vorfall: Split-View, nur beim `#art-`-Deeplink, Gate und
+e2e waren grün. **Fix:** den `ref.current`-Helfer auf Modul-Ebene legen und in
+die Deps nur Primitive plus die Ref selbst geben.
 
 **5. Render-then-replace bleibt; kein naives `hydrateRoot`** — ein
-Markup-Mismatch ist stiller Normtext-Verlust. Bundle-Splitting und Sharding sind
+Markup-Mismatch ist stiller Normtext-Verlust. Für SSR werden zusammengesetzte
+JSX-Textsegmente als EIN Template-Literal geschrieben. Bundle-Splitting und Sharding sind
 erlaubt, solange die Union byte-identisch bleibt und golden,
 `check:normtext` und `check:struktur-konsistenz` grün bleiben.
 
@@ -106,6 +113,9 @@ nacheinander in dieselben Fallen gelaufen):
    IO-Callbacks GAR NICHT — auch nicht für handgebaute Observer; das sieht wie ein
    Produktfehler aus (real ~20 Min. Diagnose gekostet, W2·19/S8). IO-/Sichtbarkeits-
    Verhalten in Playwright prüfen, nie in der Pane.
+7. **macOS reproduziert die Geometrie der Linux-Runner nicht**, weil dort andere
+   Fallback-Fonts greifen. Den Mechanismus analysieren oder die Fonts per
+   Playwright `route.abort` erzwingen.
 
 ## §-Konkordanz (für Alt-Verweise im Bestand)
 

@@ -160,6 +160,25 @@ Keine Allowlist: der Zuschnitt trägt den Bestand ohne Ausnahme. *(Die Wiedervor
 Eintrags läuft mit dieser Erweiterung neu — massgeblich ist der Marker hier.)*
 <!-- @wiedervorlage: 2027-09-20 -->
 
+## Diagnose-Heuristiken (aus dem Vault überführt 5.10.2026)
+
+Für Werkzeug-Fallen ohne Fehlerklasse. Was eine Klasse trägt, gehört ins Register.
+
+- **Playwright:** `××F` heisst hart rot, `×±` heisst flaky.
+  `getByRole({name})` sucht über den Accessible Name, nicht über den sichtbaren
+  Text. `test:e2e` läuft nicht im schnellen `gate`.
+- **`git mv` per Pathspec-Commit:** In `--stat` auf `Rxxx old -> new` prüfen.
+  Steht dort `create mode`, wurde die Datei neu angelegt statt verschoben.
+- **«Failed to fetch dynamically imported module» nach `vite build`:** Meist hat
+  eine Parallel-Session Dateien geändert. Zuerst `git status`.
+- **`vite preview` sendet keine CSP-Header.** Ein CSP-Befund ist dort weder
+  belegt noch widerlegt.
+- **CI-«failure» nach 3–4 s mit Zahlungs-Annotation** bedeutet eine Billing-Sperre,
+  keinen Code-Fehler. Seit 19.9.2026 ist das Repo öffentlich; ob die Sperre damit
+  wegfällt, ist nicht verifiziert.
+- **Workflow-Unteragenten am Limit:** mit `resumeFromRunId` fortsetzen, nicht neu
+  starten.
+
 ## Eine neue Lehre ablegen
 
 1. **Klasse bestimmen.** Passt der Vorfall in eine Register-Klasse? Dann dort
