@@ -3894,20 +3894,6 @@
      ],
      "absatz": "1",
      "item": "7"
-    },
-    {
-     "typ": "ausdruck",
-     "datum": "2021-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 957",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
-      }
-     ],
-     "absatz": "1",
-     "item": "7",
-     "anweisung": "«Richter» → «Gericht»"
     }
    ]
   },
@@ -4380,20 +4366,6 @@
      ],
      "absatz": "2",
      "item": null
-    },
-    {
-     "typ": "ausdruck",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4005",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
-      }
-     ],
-     "absatz": "2",
-     "item": null,
-     "anweisung": "«Zwischenbilanzen» → «Zwischenabschlüsse»"
     }
    ],
    "erbt": [
@@ -12689,20 +12661,6 @@
      ],
      "absatz": "1",
      "item": null
-    },
-    {
-     "typ": "ausdruck",
-     "datum": "2023-01-01",
-     "wirkung": false,
-     "quellen": [
-      {
-       "label": "AS 2020 4005",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2020/746"
-      }
-     ],
-     "absatz": "1",
-     "item": null,
-     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [

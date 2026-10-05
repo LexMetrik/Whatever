@@ -24,7 +24,7 @@ import { ursprungVorsatzSchnitte } from './historie-ursprung';
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
 import { randtitelMitAufzaehler, randtitelNurRandtitel } from './historie-randtitel';
-import { ganzeFassung, nurTeilDaten } from './historie-fassungsform';
+import { ganzeFassung, nurTeilDaten, schonAlsFussnote } from './historie-fassungsform';
 export { ganzeFassung, nurTeilDaten };
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
@@ -485,7 +485,7 @@ export function baueArtikelHistorie(
     const jungeUeberschrift = (datum: string | null): boolean =>
       !!datum && [...ereignisse, ...erbe].some((e) => e.ueberschrift && (e.typ === 'fassung' || e.typ === 'eingefuegt') && e.datum && e.datum > datum);
     for (const { ereignis: a, ueberschriftVorbehalt } of opts.anweisungen ?? []) {
-      if (ueberschriftVorbehalt && jungeUeberschrift(a.datum)) continue;
+      if ((ueberschriftVorbehalt && jungeUeberschrift(a.datum)) || schonAlsFussnote(ereignisse, a)) continue;
       const i = ereignisse.findIndex((e) => e.datum && a.datum && e.datum > a.datum);
       ereignisse.splice(i < 0 ? ereignisse.length : i, 0, a);
     }

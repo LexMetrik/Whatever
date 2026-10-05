@@ -9,7 +9,8 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { ANWEISUNGEN, anweisungsEreignisse, parseListe, tokenZuLabel } from '../lib/normtext/generalanweisungen';
+import { anweisungsEreignisse, parseListe, tokenZuLabel } from '../lib/normtext/generalanweisungen';
+import { ANWEISUNGEN } from '../lib/normtext/generalanweisungen-register';
 import { baueArtikelHistorie, type FnEingang, type HistorieEreignis } from '../lib/normtext/historie-parse';
 import type { HistorieShard } from '../lib/normtext/historie-laden';
 import { lebenderText, tokenAusId } from '../../scripts/normtext/historie-aufgehoben-lebend';
@@ -181,11 +182,31 @@ describe('anweisungsEreignisse · Ereignis je Artikel', () => {
     expect(t[0].ereignis).toMatchObject({ typ: 'fassung', datum: '2007-01-01', anweisung: 'Erstes Buch: Allgemeine Bestimmungen neu gefasst' });
     expect(t[0].ereignis.quellen).toEqual([{ label: 'AS 2006 3459', url: 'https://fedlex.data.admin.ch/eli/oc/2006/549' }]);
     expect(anweisungsEreignisse('STGB', '67_e')).toEqual([]);
-    expect(anweisungsEreignisse('STGB', '111')).toEqual([]);
+    expect(anweisungsEreignisse('STGB', '111').map((x) => x.ereignis.typ)).toEqual(['ausdruck']); // Zweites Buch: Ziff. II 1 Abs. 1, kein Neufassungs-Ereignis
+  });
+
+  it('Nachzug I2: Ziff. II 1 (StGB) — Absatz-/Ziffer-/Satz-Angaben der AS-Listen zerlegt; LFG «im ganzen Erlass» mit `ausser` für später in Kraft tretende Artikel', () => {
+    const a2 = parseListe(liste(anw('STGB-AS-2006-3459-ii1-abs2')));
+    expect(a2.koerper.get('114')).toEqual({ absatz: null, item: null });
+    expect(a2.koerper.get('144bis')).toEqual({ absatz: null, item: '1 und 2' }); // «Ziffer 1 erster Satz und Ziffer 2 erster Satz»
+    expect(a2.koerper.get('318')).toEqual({ absatz: null, item: '1' }); // «Ziffer 1 erster und zweiter Satz»
+    expect(a2.koerper.get('320')).toEqual({ absatz: null, item: '1' });
+    expect(a2.koerper.get('321')).toEqual({ absatz: null, item: '1' }); // «320 Ziffer 1 erster Satz und 321 Ziffer 1 erster Satz»
+    expect(a2.koerper.get('322quinquies')).toEqual({ absatz: null, item: null });
+    const neu = parseListe(liste(anw('STGB-AS-2006-3459-ii1-strafdrohung-neu')));
+    expect(neu.koerper.size).toBe(35); // 34 Überschriften von Abs. 16 + Art. 294 (Abs. 17)
+    expect(neu.koerper.get('135')).toEqual({ absatz: '1bis', item: null });
+    expect(neu.koerper.get('305bis')).toEqual({ absatz: null, item: '2' });
+    expect(neu.koerper.get('294')).toEqual({ absatz: null, item: null }); // Abs. 17: Strafrahmen heraufgesetzt
+    const lfg = anw('LFG-AS-2011-1119-bundesamt-bazl');
+    expect(lfg.ausser?.map((x) => x.artikel)).toEqual(['8', '24', '25', '26', '26a', '26b', '26c', '39']);
+    expect(anweisungsEreignisse('LFG', '9', 'Das BAZL …').map((x) => [x.ereignis.datum, x.ereignis.anweisung])).toEqual([['2011-04-01', '«Bundesamt» → «BAZL»']]);
+    expect(anweisungsEreignisse('LFG', '39', 'Das BAZL …')).toEqual([]); // später in Kraft
+    expect(anweisungsEreignisse('LFG', '9', 'Das UVEK und das BAZL …')).toHaveLength(2);
   });
 
   it('Register: jede Anweisung trägt Fundstelle, Link auf fedlex.data.admin.ch, Beleg, ISO-Datum und Abrufdatum (§7 a–c)', () => {
-    expect(ANWEISUNGEN.length).toBe(11);
+    expect(ANWEISUNGEN.length).toBe(30); // 7 (5.10. Bau) + 4 (B1: AS 2020 4005 ×3, FusG) + 17 (I2: StGB Ziff. II 1 Abs. 1–15, 16/17, später eingefügte) + 2 (LFG)
     for (const a of ANWEISUNGEN) {
       expect(a.as, a.id).toMatch(/^AS \d{4} \d+$/);
       expect(a.eli, a.id).toMatch(/^https:\/\/fedlex\.data\.admin\.ch\/eli\/oc\/\d{4}\/\d+$/);
@@ -248,6 +269,23 @@ describe('baueArtikelHistorie · Anweisungen als Ereignis', () => {
     expect(baueArtikelHistorie([fn(F2018, { sektion: 'Asexies. Stiefeltern' })], { anweisungen: treffer('ZGB', '299') }).historie?.giltSeit).toBe('2000-01-01');
   });
 
+  it('I1: trägt Fedlex das Ereignis schon als Fussnote («Ausdruck gemäss … im ganzen Erlass berücksichtigt»), steht es nicht doppelt — Typ, Datum, Fundstelle und Absatz gleich', () => {
+    const fussnote = fn('Ausdruck gemäss Ziff. I des BG vom 26. Juni 1998, in Kraft seit 1. Jan. 2000 (AS 1999 1118; BBl 1996 I 1). Diese Änd. wurde im ganzen Erlass berücksichtigt.', {
+      absatz: '2', links: [{ label: 'AS 1999 1118', url: 'https://fedlex.data.admin.ch/eli/oc/1999/149' }],
+    });
+    const eins = baueArtikelHistorie([fussnote], { anweisungen: treffer('ZGB', '1') }).historie!; // ZGB 1: Abs. 2 «der Richter» → «das Gericht»
+    expect(eins.ereignisse.filter((e) => e.datum === '2000-01-01')).toHaveLength(1);
+    expect(eins.ereignisse.some((e) => e.anweisung)).toBe(false); // die Fussnote gewinnt, die Anweisung steht nicht zusätzlich
+    expect(eins.giltSeit).toBe('2000-01-01');
+    // anderer Absatz an der Fussnote ⇒ zwei Ereignisse (die Anweisung nennt Abs. 2, die Fussnote Abs. 3)
+    const andere = baueArtikelHistorie([{ ...fussnote, absatz: '3' }], { anweisungen: treffer('ZGB', '1') }).historie!;
+    expect(andere.ereignisse.filter((e) => e.datum === '2000-01-01')).toHaveLength(2);
+    // Überschrift-Fussnote (zählt nicht in «Gilt seit») ersetzt die Anweisung NIE
+    const ueber = baueArtikelHistorie([{ ...fussnote, absatz: null, sektion: 'Titel' }], { anweisungen: treffer('ZGB', '1') }).historie!;
+    expect(ueber.ereignisse.some((e) => e.anweisung)).toBe(true);
+    expect(ueber.giltSeit).toBe('2000-01-01');
+  });
+
   it('Ereignis-Typen: «ausdruck» und «fassung» aus Anweisungen gehen in «giltSeit» ein, tragen aber nie `ueberschrift`', () => {
     const e: HistorieEreignis[] = [...treffer('ZGB', '299'), ...treffer('STGB', '1')].map((x) => x.ereignis);
     for (const x of e) expect(x.ueberschrift).toBeUndefined();
@@ -285,6 +323,13 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     ['OR', '859', '2023-01-01'], ['OR', '861', '2023-01-01'], ['OR', '863', '2023-01-01'], ['OR', '1182', '2023-01-01'],
     ['OR', '928_c', '2022-01-01'], ['OR', '973_c', '2021-02-01'], // Konsolidierung 1.1.2022 = 1.1.2023: AS 2020 4005 ändert den Wortlaut nicht
     ['FUSG', '16', '2023-01-01'], ['FUSG', '41', '2023-01-01'], ['FUSG', '63', '2023-01-01'], ['FUSG', '80', '2023-01-01'], ['FUSG', '89', '2023-01-01'],
+    // Nachzug 5.10.2026 (I2): AS 2006 3459 Ziff. II 1 (Strafdrohungen, 1.1.2007; AS 2006 3535 Abs. 2) und AS 2011 1119 (LFG, BAZL/UVEK, 1.4.2011).
+    // Soll je Artikel am Text belegt: Fedlex-Konsolidierung (pdf-a) 1.12.2006 «Zuchthaus/Gefängnis/Haft» → 1.1.2007 «Freiheitsstrafe/Geldstrafe»
+    // bzw. 1.1.2011 «Bundesamt/Departement» → 1.4.2011 «BAZL/UVEK»; an 89 StGB- und 29 LFG-Artikeln wechselt der Wortlaut genau dort.
+    ['STGB', '116', '2007-01-01'], ['STGB', '117', '2007-01-01'], ['STGB', '213', '2007-01-01'], ['STGB', '128_bis', '2007-01-01'], ['STGB', '266', '2007-01-01'],
+    ['STGB', '230_bis', '2007-01-01'], ['STGB', '260_quinquies', '2007-01-01'], // nicht in den AS-Listen (später eingefügt), Fussnote 1.1.2007 bzw. Konsolidierung
+    ['LFG', '9', '2011-04-01'], ['LFG', '14', '2011-04-01'], ['LFG', '15', '2011-04-01'], ['LFG', '37_s', '2011-04-01'], ['LFG', '98', '2011-04-01'],
+    ['LFG', '39', '2012-06-01'], // Art. 39 tritt später in Kraft (AS 2011 1119 Inkraftsetzung Abs. 3): Fussnote-Datum bleibt
     ['STGB', '52', '2007-01-01'], // Neufassung erstes Buch AS 2006 3459; die Sachüberschrift-Fussnote 2004 änderte nur den Randtitel (AS 2004 1403)
   ];
 
@@ -313,7 +358,7 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
   it('Invariante: jedes Anweisungs-Ereignis stimmt in Datum, Fundstelle und Link mit dem Register überein und wird ein «Gilt seit»-Beitrag (kein `ueberschrift`)', () => {
     const nachAs = new Map(ANWEISUNGEN.map((a) => [`${a.erlass}|${a.as}`, a]));
     const zaehl: Record<string, number[]> = {};
-    for (const erlass of ['ZGB', 'OR', 'PATG', 'STGB', 'FUSG']) {
+    for (const erlass of ['ZGB', 'OR', 'PATG', 'STGB', 'FUSG', 'LFG']) {
       let artikel = 0;
       let ereignisse = 0;
       for (const [token, a] of Object.entries(lade(erlass).artikel)) {
@@ -332,8 +377,9 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     }
     // Stand 5.10.2026 (Artikel, Ereignisse): ZGB 89/94 (88+5+13+24 genannte Stellen, minus aufgehobene/zusammengelegte/Text-Prüfung/ausser),
     // OR 33/33, PATG 41/41 («IGE» im Text, ohne jüngere Überschrift), STGB 121/121 (127 der AS-Liste, 6 heute nicht im Korpus).
-    // Nachzug 5.10.2026: OR + AS 2020 4005 (22 Artikel mit Ereignis, 23 Ereignisse), FUSG 8/8.
-    expect(zaehl).toEqual({ ZGB: [89, 94], OR: [55, 56], PATG: [41, 41], STGB: [121, 121], FUSG: [8, 8] });
+    // Nachzug 5.10.2026: OR + AS 2020 4005 (+22 Artikel, +23 Ereignisse), FUSG 8/8, STGB + Ziff. II (Strafdrohungen) 305/367, LFG 60/66 (BAZL/UVEK, zwei Anweisungen);
+    // I1: Ereignisse, die Fedlex schon als Fussnote trägt, stehen nicht doppelt (ZGB 1/4/25 → 86/91, OR 545/587/971 → 52/53, PATG 4 → 40/40).
+    expect(zaehl).toEqual({ ZGB: [86, 91], OR: [52, 53], PATG: [40, 40], STGB: [305, 367], FUSG: [8, 8], LFG: [60, 66] });
   });
 
   it('Tripwire Register ↔ Korpus: jede genannte Stelle ist ein Ereignis ODER hat einen belegten Grund (nicht im Korpus, aufgehoben, `ausser`, Stamm fehlt)', () => {
@@ -348,7 +394,8 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
         const e = nachLabel.get(label);
         const token = e ? tokenAusId(e.id) : '';
         const ausdruck = a.art === 'ausdruck' ? `«${a.alt}» → «${a.neu}»` : null;
-        const hat = !!e && (shard.artikel[token]?.ereignisse.some((x) => x.anweisung && x.quellen[0].label === a.as && (ausdruck === null || x.anweisung === ausdruck)) ?? false);
+        // Ereignis der Anweisung ODER das gleiche Ereignis als Fussnote (I1: dann steht es nicht doppelt in der Chronik)
+        const hat = !!e && (shard.artikel[token]?.ereignisse.some((x) => x.quellen[0]?.label === a.as && x.datum === a.inKraft && (!x.anweisung || ausdruck === null || x.anweisung === ausdruck)) ?? false);
         if (hat) continue;
         const belegt = a.ausser?.some((x) => x.artikel === label) ?? false; // `ausser` trägt je Artikel einen amtlichen Beleg (kein Zähl-Limit)
         if (!belegt) ohne++;

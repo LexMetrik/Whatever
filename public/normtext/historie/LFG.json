@@ -103,12 +103,54 @@
      ],
      "absatz": "1",
      "item": "e"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
   "3": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-08-01",
@@ -198,6 +240,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -421,6 +477,44 @@
     }
    ]
   },
+  "9": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ]
+  },
+  "10": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ]
+  },
   "11": {
    "giltSeit": "1964-05-01",
    "ereignisse": [
@@ -469,14 +563,29 @@
    ]
   },
   "13": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "14": {
-   "giltSeit": "1974-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -494,6 +603,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -501,7 +624,7 @@
    ]
   },
   "15": {
-   "giltSeit": "1964-05-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -519,6 +642,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -558,7 +695,7 @@
    ]
   },
   "18": {
-   "giltSeit": null,
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -577,6 +714,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "III. Landungszwang"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -584,7 +735,7 @@
    ]
   },
   "19": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -602,6 +753,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -727,7 +892,7 @@
    ]
   },
   "22": {
-   "giltSeit": null,
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -746,6 +911,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "1. Rettungs- und Bergungsdienst"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -771,6 +950,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     },
     {
      "typ": "fassung",
@@ -956,6 +1149,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -963,7 +1170,7 @@
    ]
   },
   "28": {
-   "giltSeit": "2007-04-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -998,6 +1205,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -1057,6 +1278,20 @@
      ],
      "absatz": "4",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -1099,6 +1334,34 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -1156,7 +1419,7 @@
    ]
   },
   "33": {
-   "giltSeit": "1998-11-15",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1174,6 +1437,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -1302,6 +1579,34 @@
      ],
      "absatz": "1bis",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -1427,6 +1732,20 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -1467,6 +1786,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     },
     {
      "typ": "eingefuegt",
@@ -1560,6 +1893,34 @@
      ],
      "absatz": "4",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -1636,6 +1997,20 @@
      ],
      "absatz": "3",
      "item": "b"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     },
     {
      "typ": "fassung",
@@ -1810,6 +2185,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -1862,7 +2251,7 @@
    ]
   },
   "52": {
-   "giltSeit": "1994-04-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1897,6 +2286,20 @@
      ],
      "absatz": "2",
      "item": "c"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -1919,6 +2322,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -1975,11 +2392,39 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ]
   },
   "58": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2031,12 +2476,73 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
+    }
+   ]
+  },
+  "59": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
   "60": {
    "giltSeit": "2023-08-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-08-01",
@@ -2113,6 +2619,25 @@
    ],
    "aufgehobenSeit": "2011-04-01"
   },
+  "62": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ]
+  },
   "67": {
    "giltSeit": null,
    "ereignisse": [
@@ -2177,6 +2702,44 @@
      ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "71": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ]
+  },
+  "73": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -2436,6 +2999,25 @@
     }
    ]
   },
+  "92": {
+   "giltSeit": "2011-04-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    }
+   ]
+  },
   "93": {
    "giltSeit": "1998-11-15",
    "ereignisse": [
@@ -2599,7 +3181,7 @@
    ]
   },
   "98": {
-   "giltSeit": "1975-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2651,6 +3233,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -2747,6 +3343,20 @@
   "100": {
    "giltSeit": "2022-05-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -2943,6 +3553,20 @@
    "giltSeit": "2023-08-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -3114,6 +3738,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     },
     {
      "typ": "fassung",
@@ -3442,6 +4080,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
@@ -3547,6 +4199,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -3569,6 +4235,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -3791,7 +4471,7 @@
    ]
   },
   "19_a": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3809,6 +4489,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4141,7 +4835,7 @@
    "aufgehobenSeit": "2011-11-01"
   },
   "36_a": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4159,6 +4853,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -4166,7 +4874,7 @@
    ]
   },
   "36_b": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4184,6 +4892,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4191,7 +4913,7 @@
    ]
   },
   "36_c": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4209,6 +4931,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4251,6 +4987,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4609,7 +5359,7 @@
    ]
   },
   "37_h": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4627,6 +5377,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -4735,7 +5499,7 @@
    ]
   },
   "37_l": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4753,6 +5517,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Departement» → «UVEK»"
     }
    ],
    "erbt": [
@@ -4760,7 +5538,7 @@
    ]
   },
   "37_m": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4778,6 +5556,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4785,7 +5577,7 @@
    ]
   },
   "37_n": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4803,6 +5595,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4835,7 +5641,7 @@
    ]
   },
   "37_p": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4853,6 +5659,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4860,7 +5680,7 @@
    ]
   },
   "37_q": {
-   "giltSeit": "2000-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4878,6 +5698,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -4910,7 +5744,7 @@
    ]
   },
   "37_s": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": "2011-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -4945,6 +5779,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -5047,6 +5895,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ],
    "erbt": [
@@ -5342,12 +6204,40 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "1b. Zusammenarbeit mit ausländischen Behörden"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
   "40_a": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -5417,6 +6307,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-08-01",
      "wirkung": false,
@@ -5459,6 +6363,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -5483,6 +6401,20 @@
   "40_b_bis": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -5817,6 +6749,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },
@@ -5923,6 +6869,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2011-04-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 1119",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Bundesamt» → «BAZL»"
     }
    ]
   },

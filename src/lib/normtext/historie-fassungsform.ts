@@ -24,3 +24,22 @@ export function ganzeFassung(text: string): boolean {
 export function nurTeilDaten(text: string): boolean {
   return /\bvom\s+\d{1,2}\.\s+\p{L}+\.?\s+\d{4}(?:\s*\([^)]*\))?\s*,\s*(?:Art|Abschn|Abs|Bst|Kap|Ziff|Tit)\.\s*\d/u.test(text);
 }
+
+/**
+ * W2·32 (Nachzug 5.10.2026, I1): ein Anweisungs-Ereignis, das Fedlex am Artikel schon selbst als Fussnote trägt («Ausdruck gemäss …
+ * im ganzen Erlass berücksichtigt», ZGB 1/4/25, OR 545, StGB 1), steht nicht zweimal in der Chronik. Gleich = Typ (eine In-Kraft-Klausel
+ * ohne Verb, `inkraft`, deckt jeden Typ), Datum, Amtsblatt-Fundstelle und Absatz (eine Fussnote ohne Absatz gilt für den ganzen Artikel).
+ * Nie gegen Überschrift-Ereignisse (`ueberschrift`): sie zählen nicht in «Gilt seit», die Anweisung muss dort tragen; nie gegen andere
+ * Anweisungs-Ereignisse (`anweisung`): zwei Anweisungen am selben Artikel sind zwei Ereignisse.
+ */
+export function schonAlsFussnote(
+  vorhanden: ReadonlyArray<{ typ: string; datum: string | null; absatz: string | null; ueberschrift?: string; anweisung?: string; quellen: ReadonlyArray<{ label: string }> }>,
+  a: { typ: string; datum: string | null; absatz: string | null; quellen: ReadonlyArray<{ label: string }> },
+): boolean {
+  const as = a.quellen[0]?.label;
+  return vorhanden.some(
+    (e) =>
+      !e.ueberschrift && !e.anweisung && e.datum === a.datum && (e.typ === a.typ || e.typ === 'inkraft') && (e.absatz === null || e.absatz === a.absatz) &&
+      e.quellen.some((q) => q.label === as || q.label.startsWith(`${as} `)),
+  );
+}
