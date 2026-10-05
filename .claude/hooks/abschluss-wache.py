@@ -31,11 +31,18 @@ BEWUSSTE GRENZEN (ehrlich, §8):
     setzt timeout=15. Alle git-Aufrufe tragen eigene kurze Timeouts, bei
     Überschreitung entsteht schlimmstenfalls KEIN Nachlass (nie ein Hänger).
   - JETZT-Abgleich (F17, ersetzt den toten wip-Zweig, Umstieg 5.10.2026):
-    Kürzel der Session (Zweig-Präfix + Trailer `Roadmap:` der letzten 30
-    Commits) ∩ Kürzel in ROADMAP.md `## JETZT` (origin/main) ∩ Commit mit
-    diesem Trailer auf origin/main in den letzten 24 h = Vorhaben gelandet,
-    aber nicht gestrichen. Nur lokale git-Aufrufe (kein fetch). Der Nachlass
-    ist Meldung, kein Urteil — das Vorhaben kann bewusst offen bleiben.
+    Kürzel der Session (Zweig-Präfix + Body-Zeilen `Roadmap: X` der EIGENEN
+    Commits `origin/main..HEAD`) ∩ Kürzel in ROADMAP.md `## JETZT`
+    (origin/main) ∩ Commit mit `Roadmap: X` im Body auf origin/main in den
+    letzten 24 h = Vorhaben gelandet, aber nicht gestrichen. Der Body wird
+    zeilenweise gelesen (Squash-Commits der Merge-Queue tragen den Trailer vor
+    `---------`/Co-authored-by, `%(trailers)` sähe ihn nicht; Gegenprüfung
+    5.10.2026). Nur lokale git-Aufrufe (kein fetch). Der Nachlass ist
+    Meldung, kein Urteil — das Vorhaben kann bewusst offen bleiben.
+  - Grenzen des JETZT-Abgleichs: ein lokaler origin/main kann veraltet sein
+    (kein fetch — dann fehlt die frische Landung, nie umgekehrt); die
+    Archivierung erledigter Merkzettel wird NICHT geprüft, nur im Hinweis
+    genannt; das 24-h-Fenster lässt ältere Landungen unberührt.
 
 Fehler jeder Art → still Exit 0 (eine Wache am Session-Ende darf nie stören).
 """
@@ -56,35 +63,44 @@ def git(*args: str) -> str:
     try:
         r = subprocess.run(
             ["git", "-C", REPO, *args],
-            capture_output=True, text=True, timeout=5,
+            capture_output=True, text=True, timeout=2,
         )
         return r.stdout if r.returncode == 0 else ""
     except Exception:
         return ""
 
 
+_ROADMAP_ZEILE = re.compile(r"^Roadmap:\s*(\S+)\s*$", re.M)
+
+
+def roadmap_kuerzel(body: str) -> list[str]:
+    """Body-Zeilen `Roadmap: X` → Kürzel (exakter Identitätstreffer je Zeile)."""
+    return _ROADMAP_ZEILE.findall(body)
+
+
 def jetzt_offen() -> list[dict]:
-    """F17-Abgleich: gelandete Vorhaben (Trailer auf origin/main, 24 h), die
-    noch in ROADMAP.md `## JETZT` stehen → [{kuerzel, commit}]. Fehler → []."""
+    """F17-Abgleich: gelandete Vorhaben (Roadmap-Zeile auf origin/main, 24 h),
+    die noch in ROADMAP.md `## JETZT` stehen → [{kuerzel, commit}]. Fehler → []."""
     try:
         zweig = git("rev-parse", "--abbrev-ref", "HEAD").strip()
         k = {(zweig.split("/")[0] if "/" in zweig else zweig.split("-")[0]).upper()}
-        for z in git("log", "-30", "--format=%(trailers:key=Roadmap,valueonly)").splitlines():
-            k.update(t.strip() for t in z.split(",") if t.strip())
+        # Nur EIGENE Commits (nicht die geerbte main-Historie): Fehlalarm-Schutz.
+        k.update(x.upper() for x in roadmap_kuerzel(git("log", "origin/main..HEAD", "--format=%B")))
         text = git("show", "origin/main:ROADMAP.md")
         if not text:
             with open(os.path.join(REPO, "ROADMAP.md"), encoding="utf-8") as f:
                 text = f.read()
         jetzt = re.search(r"^## JETZT\b(.*?)(?=^## |\Z)", text, re.S | re.M)
-        j = set(re.findall(r"^\d+\.\s.*?\(`([A-Z0-9][A-Z0-9·_-]*)`\)",
-                           jetzt.group(1) if jetzt else "", re.M))
+        j = re.findall(r"^\d+\.\s.*?\(`([A-Za-z0-9][A-Za-z0-9·_-]*)`\)",
+                       jetzt.group(1) if jetzt else "", re.M)
         treffer = {}
         for blk in git("log", "origin/main", "--since=24.hours",
-                       "--format=%h %s%x1f%(trailers:key=Roadmap,valueonly,separator=%x1e)%x1d").split("\x1d"):
-            kopf, _, tr = blk.strip().partition("\x1f")
-            for t in re.split(r"[\x1e,\n]", tr):
-                treffer.setdefault(t.strip(), kopf)  # neuester zuerst
-        return [{"kuerzel": x, "commit": treffer[x]} for x in sorted(k & j) if x in treffer]
+                       "--format=%h %s%x1f%B%x1e").split("\x1e"):
+            kopf, _, body = blk.strip().partition("\x1f")
+            for t in roadmap_kuerzel(body):
+                treffer.setdefault(t.upper(), kopf)  # neuester zuerst
+        return [{"kuerzel": x, "commit": treffer[x.upper()]}
+                for x in sorted(set(j)) if x.upper() in k and x.upper() in treffer]
     except Exception:
         return []
 
@@ -177,7 +193,7 @@ def modus_start() -> None:
             f"Vorhaben {v.get('kuerzel')}: PR gelandet ({v.get('commit')}), steht noch "
             "in JETZT — Fertig-Kriterium prüfen; erfüllt ⇒ im nächsten PR aus JETZT "
             "streichen und erledigte Merkzettel nach archiv/posten/ (Skill bauschritt "
-            "Station D), sonst bewusst offen lassen."
+            "Station D), sonst bewusst offen lassen"
         )
     if b.get("uncommitted"):
         teile.append(f"{len(b['uncommitted'])} uncommittete Datei(en)")

@@ -232,7 +232,19 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
   const ROADMAP_MIT = '# Roadmap\n\n## JETZT\n\n1. **Normen-Monitor** (`MONITOR`) · S · Gegenprüfung ja\n\n## EINGANG\n';
   const ROADMAP_OHNE = '# Roadmap\n\n## JETZT\n\n1. **Anderes** (`ANDERES`) · S\n\n## EINGANG\n- MONITOR erwähnt\n';
 
-  function repoMitMain(roadmap: string, trailer: string | null, zweig: string): string {
+  // Format der origin/main-Commits: «squash» = echtes GitHub-Merge-Queue-Squash
+  // (Trailer NICHT im letzten Absatz — danach `---------` und Co-authored-by,
+  // Gegenprüfung 5.10.2026 B1), «plain» = Trailer im letzten Absatz.
+  function mainMessage(trailer: string | null, format: 'squash' | 'plain'): string {
+    if (!trailer) return 'feat: x';
+    return format === 'squash'
+      ? `feat: x (#1)\n\nText\n\nRoadmap: ${trailer}\n\n---------\n\nCo-authored-by: X <x@example.invalid>`
+      : `feat: x\n\nRoadmap: ${trailer}`;
+  }
+  function repoMitMain(
+    roadmap: string, trailer: string | null, zweig: string,
+    opt: { format?: 'squash' | 'plain'; eigenerTrailer?: string } = {},
+  ): string {
     const dir = neuesTmpDir();
     const g = (...a: string[]) => execFileSync('git', a, { cwd: dir, encoding: 'utf8' }).trim();
     g('init', '-q', '-b', 'main');
@@ -240,9 +252,12 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
     g('config', 'user.name', 'Test');
     writeFileSync(join(dir, 'ROADMAP.md'), roadmap);
     g('add', 'ROADMAP.md');
-    g('commit', '-q', '-m', trailer ? `feat: x\n\nRoadmap: ${trailer}` : 'feat: x');
+    g('commit', '-q', '-m', mainMessage(trailer, opt.format ?? 'squash'));
     g('update-ref', 'refs/remotes/origin/main', g('rev-parse', 'HEAD'));
     g('checkout', '-q', '-b', zweig);
+    if (opt.eigenerTrailer) {  // eigener Commit der Session über origin/main hinaus
+      g('commit', '-q', '--allow-empty', '-m', `feat: y\n\nRoadmap: ${opt.eigenerTrailer}`);
+    }
     return dir;
   }
   const nachlassVon = (dir: string) => {
@@ -252,12 +267,17 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
     return existsSync(pfad) ? JSON.parse(readFileSync(pfad, 'utf8')) : null;
   };
 
-  it('(i) SessionEnd: Zweig MONITOR/x, MONITOR in JETZT, Trailer-Commit auf origin/main → Nachlass jetzt_offen', () => {
+  it('(i) SessionEnd: Zweig MONITOR/x, MONITOR in JETZT, Squash-Commit (Trailer vor «---------») auf origin/main → Nachlass jetzt_offen', () => {
     const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'MONITOR/x'));
     expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
     expect(n?.jetzt_offen[0].commit).toContain('feat: x');
     expect(n?.uncommitted).toEqual([]);
     expect(n?.unpushed).toEqual([]);
+  });
+
+  it('(i-b) wie (i), Commit-Format «plain» (Trailer im letzten Absatz) → ebenfalls Nachlass', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'MONITOR/x', { format: 'plain' }));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
   });
 
   it('(ii) SessionEnd: wie (i), aber MONITOR steht nicht mehr in JETZT → kein Nachlass', () => {
@@ -270,9 +290,21 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
     expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR2', 'MONITOR/x'))).toBeNull();
   });
 
-  it('(iv) SessionEnd: Zweig claude/xyz, aber HEAD-Trailer Roadmap: MONITOR → Nachlass', () => {
-    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz'));
+  it('(iv) Fehlalarm-Schutz: Zweig claude/xyz OHNE eigenen Commit, origin/main-HEAD trägt Roadmap: MONITOR → KEIN Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz'))).toBeNull();
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz', { format: 'plain' }))).toBeNull();
+  });
+
+  it('(v) Zweig claude/xyz mit EIGENEM Commit (Trailer Roadmap: MONITOR), origin/main frischer Squash-Commit mit MONITOR → Nachlass', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz', { eigenerTrailer: 'MONITOR' }));
     expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+    expect(n?.unpushed).toEqual([]);  // ohne Upstream zählt nichts als ungepusht
+  });
+
+  it('(vi) Kürzel mit Kleinbuchstaben (W2·5l) wird erkannt, Vergleich case-insensitiv', () => {
+    const roadmap = '# Roadmap\n\n## JETZT\n\n1. **X** (`W2·5l`) · S\n\n## EINGANG\n';
+    const n = nachlassVon(repoMitMain(roadmap, 'W2·5l', 'claude/xyz', { eigenerTrailer: 'w2·5L' }));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('W2·5l');
   });
 
   it('SessionEnd: uncommitted löst Nachlass aus, jetzt_offen bleibt dabei leer', () => {
