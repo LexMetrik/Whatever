@@ -26,8 +26,8 @@ import { fileURLToPath } from 'node:url';
 //     stop_hook_active; Erfolgs-/Negationswörter mit Wortgrenzen + Negations-
 //     fenster; Artefakt-SHA nur kontextgebunden (commit|sha|head vor dem Hex).
 //   - abschluss-wache: stdin-/JSON-Feld heisst reason (nicht end_reason);
-//     Nachlass entsteht nur noch bei uncommitted/unpushed (wip allein löst
-//     nichts mehr aus, bleibt aber als Kontextfeld im Nachlass); korrupte
+//     Nachlass entsteht bei uncommitted/unpushed oder jetzt_offen (F17:
+//     gelandetes Vorhaben steht noch in ROADMAP JETZT, Abgleich 5.10.2026); korrupte
 //     .session-nachlass.json wird bei --start still geräumt.
 //
 // WICHTIG (Isolation): CLAUDE_PROJECT_DIR zeigt für jeden Testlauf auf ein
@@ -202,13 +202,14 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
         branch: 'x',
         uncommitted: ['M a'],
         unpushed: [],
-        wip: ['QS-X'],
+        jetzt_offen: [{ kuerzel: 'MONITOR', commit: 'abc fix' }],
       }),
     );
 
     const erster = laufe(ABSCHLUSS_WACHE, dir, '', ['--start']);
     expect(erster.status).toBe(0);
     expect(erster.stdout).toContain('NACHLASS-WACHE');
+    expect(erster.stdout).toContain('Vorhaben MONITOR');
     expect(existsSync(nachlassPfad)).toBe(false);
 
     const zweiter = laufe(ABSCHLUSS_WACHE, dir, '', ['--start']);
@@ -227,50 +228,60 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
     expect(existsSync(nachlassPfad)).toBe(false);
   });
 
-  it('SessionEnd: wip allein (ohne uncommitted/unpushed) löst KEINEN Nachlass aus', () => {
+  // F17-JETZT-Abgleich (Umstieg 5.10.2026): origin/main wird per update-ref simuliert.
+  const ROADMAP_MIT = '# Roadmap\n\n## JETZT\n\n1. **Normen-Monitor** (`MONITOR`) · S · Gegenprüfung ja\n\n## EINGANG\n';
+  const ROADMAP_OHNE = '# Roadmap\n\n## JETZT\n\n1. **Anderes** (`ANDERES`) · S\n\n## EINGANG\n- MONITOR erwähnt\n';
+
+  function repoMitMain(roadmap: string, trailer: string | null, zweig: string): string {
     const dir = neuesTmpDir();
-    execFileSync('git', ['init', '-q'], { cwd: dir });
-    execFileSync('git', ['config', 'user.email', 'test@example.invalid'], { cwd: dir });
-    execFileSync('git', ['config', 'user.name', 'Test'], { cwd: dir });
-
-    writeFileSync(
-      join(dir, 'ROADMAP.md'),
-      '# Roadmap\n\n<!-- @meta id: QS-TEST · status: wip -->\n',
-    );
-    execFileSync('git', ['add', 'ROADMAP.md'], { cwd: dir });
-    execFileSync('git', ['commit', '-q', '-m', 'init'], { cwd: dir });
-    // Arbeitsbaum ist jetzt sauber — nur der wip-Status in ROADMAP.md steht.
-
+    const g = (...a: string[]) => execFileSync('git', a, { cwd: dir, encoding: 'utf8' }).trim();
+    g('init', '-q', '-b', 'main');
+    g('config', 'user.email', 'test@example.invalid');
+    g('config', 'user.name', 'Test');
+    writeFileSync(join(dir, 'ROADMAP.md'), roadmap);
+    g('add', 'ROADMAP.md');
+    g('commit', '-q', '-m', trailer ? `feat: x\n\nRoadmap: ${trailer}` : 'feat: x');
+    g('update-ref', 'refs/remotes/origin/main', g('rev-parse', 'HEAD'));
+    g('checkout', '-q', '-b', zweig);
+    return dir;
+  }
+  const nachlassVon = (dir: string) => {
     const r = laufe(ABSCHLUSS_WACHE, dir, JSON.stringify({ reason: 'other' }));
     expect(r.status).toBe(0);
-    expect(existsSync(join(dir, '.session-nachlass.json'))).toBe(false);
+    const pfad = join(dir, '.session-nachlass.json');
+    return existsSync(pfad) ? JSON.parse(readFileSync(pfad, 'utf8')) : null;
+  };
+
+  it('(i) SessionEnd: Zweig MONITOR/x, MONITOR in JETZT, Trailer-Commit auf origin/main → Nachlass jetzt_offen', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'MONITOR/x'));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+    expect(n?.jetzt_offen[0].commit).toContain('feat: x');
+    expect(n?.uncommitted).toEqual([]);
+    expect(n?.unpushed).toEqual([]);
   });
 
-  it('SessionEnd: uncommitted löst Nachlass aus, wip erscheint darin als Kontext', () => {
-    const dir = neuesTmpDir();
-    execFileSync('git', ['init', '-q'], { cwd: dir });
-    execFileSync('git', ['config', 'user.email', 'test@example.invalid'], { cwd: dir });
-    execFileSync('git', ['config', 'user.name', 'Test'], { cwd: dir });
+  it('(ii) SessionEnd: wie (i), aber MONITOR steht nicht mehr in JETZT → kein Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_OHNE, 'MONITOR', 'MONITOR/x'))).toBeNull();
+  });
 
-    writeFileSync(
-      join(dir, 'ROADMAP.md'),
-      '# Roadmap\n\n<!-- @meta id: QS-TEST · status: wip -->\n',
-    );
-    execFileSync('git', ['add', 'ROADMAP.md'], { cwd: dir });
-    execFileSync('git', ['commit', '-q', '-m', 'init'], { cwd: dir });
+  it('(iii) SessionEnd: wie (i), aber kein Trailer-Commit auf origin/main → kein Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, null, 'MONITOR/x'))).toBeNull();
+    // Trailer eines ANDEREN Vorhabens zählt nicht (Identität, nicht Substring).
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR2', 'MONITOR/x'))).toBeNull();
+  });
 
-    // Uncommittete Änderung, damit der Nachlass-Zweig greift.
+  it('(iv) SessionEnd: Zweig claude/xyz, aber HEAD-Trailer Roadmap: MONITOR → Nachlass', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz'));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+  });
+
+  it('SessionEnd: uncommitted löst Nachlass aus, jetzt_offen bleibt dabei leer', () => {
+    const dir = repoMitMain(ROADMAP_OHNE, null, 'claude/xyz');
     writeFileSync(join(dir, 'unstaged.txt'), 'x\n');
-
-    const r = laufe(ABSCHLUSS_WACHE, dir, JSON.stringify({ reason: 'other' }));
-    expect(r.status).toBe(0);
-
-    const nachlassPfad = join(dir, '.session-nachlass.json');
-    expect(existsSync(nachlassPfad)).toBe(true);
-    const nachlass = JSON.parse(readFileSync(nachlassPfad, 'utf8'));
-    expect(nachlass.reason).toBe('other');
-    expect(nachlass.wip).toContain('QS-TEST');
-    expect(nachlass.uncommitted.length).toBeGreaterThan(0);
+    const n = nachlassVon(dir);
+    expect(n?.reason).toBe('other');
+    expect(n?.jetzt_offen).toEqual([]);
+    expect(n?.uncommitted.length).toBeGreaterThan(0);
   });
 });
 
