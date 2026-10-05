@@ -7,15 +7,22 @@
 // parallel), jedes mit voller Ausgabe, am Ende die Tafel aller Verdikte.
 //
 // ZWEI KLASSEN (Entscheid David 5.10.2026: «wichtig ist gesetzestext. der rest muss nicht zu
-// einem rot führen.»):
-//   • `check:netz:kette`   — GESETZESTEXT: gespeicherter Normtext/Pin weicht von der amtlichen
-//     Fassung ab oder ein Zitat zeigt ins Leere. Exit 1 eines Glieds ⇒ check:netz ROT (Exit 1).
-//   • `check:netz:bericht` — alles andere (Materialien, Revisionen, Abkürzungen, Sprengel,
-//     Tarif, FR/IT, Verfall, LIK). Rot eines Glieds ⇒ ::warning:: + Bericht, NIE Exit 1.
+// einem rot führen.» · später am Tag: «reduziere sonst einfach nur noch auf bund.»):
+//   • `check:netz:kette`   — BUNDES-GESETZESTEXT: gespeicherter Bundes-Normtext/Pin weicht von
+//     der amtlichen Fassung ab oder ein Zitat zeigt ins Leere (caches · zitate · fedlex-versionen
+//     · pdf-netz = EMRK/NYÜ über Fedlex). Exit 1 eines Glieds ⇒ check:netz ROT (Exit 1).
+//   • `check:netz:bericht` — alles andere, darunter die KANTONS-Drift `check:normtext-netz`
+//     (LexWork, HTM NE/GE/TI, ZH-PDF + Auflöser, kantonale PDFs; ~1300 Erlasse — ein einzelner
+//     dauerhaft unerreichbarer Kantonserlass hätte sonst nach zwei Wochen rot gefärbt; Kantone
+//     ruhen bis Phase 2). Die Drift wird weiter erkannt (§7 d) und als ::warning:: + Tafelzeile
+//     gemeldet, aber nie Exit 1; ihr Exit 2 macht den Lauf nicht unvollständig. Die Offline-
+//     Bundteile von check-drift (Fassung/Vollständigkeit/Label) laufen als `check:normtext` im
+//     gate. Übrige Bericht-Glieder: Materialien, Revisionen, Abkürzungen, Sprengel, Tarif, FR/IT,
+//     Verfall, LIK. Rot eines Bericht-Glieds ⇒ ::warning:: + Bericht, NIE Exit 1.
 //     Nachgeführt wird über die Bots (normen-monatslauf.yml, fedlex-frische.yml), nicht über
 //     einen Alarm.
 // EXIT 2 eines Glieds heisst «Quelle nicht erreichbar, keine Aussage» (Konvention der
-// Netz-Tore). Ein Gesetzestext-Glied mit Exit 2 wird nach einer Pause (NETZ_PAUSE_S, Default
+// Netz-Tore). Ein Bundes-Gesetzestext-Glied mit Exit 2 wird nach einer Pause (NETZ_PAUSE_S, Default
 // 90 s) EINMAL wiederholt; bleibt es bei 2, ist der Lauf UNVOLLSTÄNDIG: Warnung, Tafel-Zeile,
 // `netz_unvollstaendig=1` nach $GITHUB_OUTPUT (der Workflow schliesst dann keinen Alarm-Zettel
 // und führt den Netz-Zettel `alarm:normen-monitor-netz`). OBERGRENZE (Gegenprüfung 5.10.2026,
@@ -28,6 +35,8 @@
 // und nach $NETZ_TAFEL_DATEI (falls gesetzt; der Alarm-Zettel des Monitors zitiert sie).
 // Rot-Beweis: NETZ_KETTE='npm run check:nope-a' NETZ_BERICHT='npm run check:nope-b' ⇒ Exit 1,
 // nur nope-a rot; NETZ_KETTE='' NETZ_BERICHT='npm run check:nope-b' ⇒ Exit 0 mit Warnung.
+// Kantons-Rot (5.10.2026): NETZ_KETTE='' NETZ_BERICHT='npm run check:normtext-netz' mit
+// rotem/unerreichbarem Kanton ⇒ Exit 0, ::warning::, netz_unvollstaendig=0.
 // Netz-Grenze (5.10.2026, fetch-Stub wirft): NETZ_KETTE='npm run check:pdf-netz' NETZ_BERICHT=''
 // NETZ_PAUSE_S=0 ⇒ Exit 0 + netz_unvollstaendig=1; dazu NETZ_ZETTEL_OFFEN=1 ⇒ Exit 1.
 
@@ -111,7 +120,7 @@ function pause(sekunden: number): void {
 function main(): void {
   const glieder = leseKetten();
   const verdikte: Verdikt[] = [];
-  console.log(`check:netz — ${glieder.length} Netz-Tore (${glieder.filter((g) => g.klasse === 'gesetzestext').length} Gesetzestext · Rest Bericht), sequentiell:\n`);
+  console.log(`check:netz — ${glieder.length} Netz-Tore (${glieder.filter((g) => g.klasse === 'gesetzestext').length} Bundes-Gesetzestext · Rest Bericht inkl. Kantone), sequentiell:\n`);
   for (const g of glieder) {
     const start = Date.now();
     console.log(`\n══ ${g.tor}${g.args.length ? ' ' + g.args.join(' ') : ''} [${g.klasse}] ══`);
@@ -132,14 +141,14 @@ function main(): void {
   console.log('\n── check:netz — Tafel ───────────────────────────────────────');
   for (const v of verdikte) console.log(`  ${status(v).padEnd(7)} ${v.tor.padEnd(32)} [${v.klasse}] exit ${v.exit}  (${v.sekunden}s)`);
   for (const v of warnungen) {
-    const was = v.exit === 2 ? 'Quelle nicht erreichbar — keine Aussage' : 'Abweichung (Bericht, kein Gesetzestext-Rot)';
+    const was = v.exit === 2 ? 'Quelle nicht erreichbar — keine Aussage' : 'Abweichung (Bericht, kein Bundes-Gesetzestext-Rot)';
     console.log(`::warning title=check:netz ${v.tor}::${was} (exit ${v.exit}); Details im Lauf-Log.`);
   }
   const netzZeile = blind.length
     ? `\n**Lauf unvollständig** — ohne Aussage (Exit 2 nach Wiederholung): ${blind.map((v) => `\`${v.tor}\``).join(', ')}. ` +
       (netzRot ? 'Schon der vorige Lauf war unvollständig ⇒ ROT (Zwei-Wochen-Grenze).\n' : 'Bleibt das im nächsten Lauf so, wird der Monitor rot.\n')
     : '';
-  const kopf = rot.length ? `ROT (${rot.length} Gesetzestext-Befund(e))` : netzRot ? 'ROT (Gesetzestext zwei Läufe in Folge ungeprüft)' : blind.length ? 'Gesetzestext UNVOLLSTÄNDIG geprüft' : 'Gesetzestext grün';
+  const kopf = rot.length ? `ROT (${rot.length} Bundes-Gesetzestext-Befund(e))` : netzRot ? 'ROT (Bundes-Gesetzestext zwei Läufe in Folge ungeprüft)' : blind.length ? 'Bundes-Gesetzestext UNVOLLSTÄNDIG geprüft' : 'Bundes-Gesetzestext grün';
   const md = `## check:netz — ${kopf}` +
     `${warnungen.length ? ` · ${warnungen.length} Bericht/Netz-Hinweis(e)` : ''}\n${netzZeile}\n${tafelMarkdown(verdikte)}\n`;
   try { if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, md); } catch { /* Bericht ist Beiwerk */ }
@@ -149,12 +158,12 @@ function main(): void {
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, ausgabeZeilen(u));
 
   if (rot.length || netzRot) {
-    if (rot.length) console.error(`\ncheck:netz ROT — Gesetzestext: ${rot.map((v) => v.tor).join(', ')}.`);
+    if (rot.length) console.error(`\ncheck:netz ROT — Bundes-Gesetzestext: ${rot.map((v) => v.tor).join(', ')}.`);
     if (netzRot) console.error(`\ncheck:netz ROT — zweiter Lauf in Folge ohne Aussage: ${blind.map((v) => v.tor).join(', ')} (Netz-Zettel war schon offen).`);
     process.exit(1);
   }
-  if (blind.length) console.log(`::warning title=check:netz unvollständig::Gesetzestext ohne Aussage: ${blind.map((v) => v.tor).join(', ')} — im nächsten Lauf erneut ⇒ rot.`);
-  console.log(`\ncheck:netz grün (Gesetzestext${blind.length ? ', UNVOLLSTÄNDIG' : ''}) — ${verdikte.length} Tore gefahren, ${warnungen.length} Hinweis(e) im Bericht.`);
+  if (blind.length) console.log(`::warning title=check:netz unvollständig::Bundes-Gesetzestext ohne Aussage: ${blind.map((v) => v.tor).join(', ')} — im nächsten Lauf erneut ⇒ rot.`);
+  console.log(`\ncheck:netz grün (Bundes-Gesetzestext${blind.length ? ', UNVOLLSTÄNDIG' : ''}) — ${verdikte.length} Tore gefahren, ${warnungen.length} Hinweis(e) im Bericht.`);
 }
 
 if (!process.env.VITEST) main();
