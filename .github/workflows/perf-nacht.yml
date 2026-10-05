@@ -52,13 +52,23 @@ jobs:
       - run: npx -y npm@11 ci
       - name: Build (dist für die Messung, ohne Typprüfung — die macht ci.yml)
         run: npm run build:dist
-      - name: Playwright-Browser-Cache (speichert auf main)
-        uses: actions/cache@v6
+      - name: Playwright-Browser-Cache wiederherstellen
+        id: pw-cache
+        uses: actions/cache/restore@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Playwright-Browser (Chromium — Lighthouse steuert ihn)
+        id: pw-install
         run: bash scripts/ci/playwright-install.sh
+      # Speichern unabhängig vom Lighthouse-Ergebnis (Auflage GP #1323 A2,
+      # 5.10.2026): ein rotes Budget darf den Cache für die Shards nicht aushungern.
+      - name: Playwright-Browser-Cache speichern (main)
+        if: always() && steps.pw-install.outcome == 'success' && steps.pw-cache.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
+        uses: actions/cache/save@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)
         run: npm run check:perf-lighthouse
 
