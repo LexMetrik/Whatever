@@ -572,7 +572,7 @@
    ]
   },
   "10": {
-   "giltSeit": null,
+   "giltSeit": "2005-12-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -1401,7 +1401,7 @@
    ]
   },
   "32": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": "2005-12-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2378,7 +2378,7 @@
    ]
   },
   "73": {
-   "giltSeit": "2003-02-01",
+   "giltSeit": "2012-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -4728,7 +4728,7 @@
    "ereignisse": [
     {
      "typ": "eingefuegt",
-     "datum": "2013-01-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {

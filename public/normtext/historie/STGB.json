@@ -262,7 +262,7 @@
  ],
  "artikel": {
   "1": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -281,26 +281,85 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ]
   },
   "2": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "3": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "4": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -308,6 +367,20 @@
   "5": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -382,22 +455,67 @@
    ]
   },
   "6": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "7": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "8": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -421,6 +539,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -428,64 +560,199 @@
    ]
   },
   "10": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "11": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "12": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "13": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "14": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "15": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "16": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "17": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "18": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -493,6 +760,20 @@
   "19": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -516,71 +797,221 @@
    ]
   },
   "20": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "21": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "22": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "23": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "24": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "25": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "26": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "27": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "28": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "29": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -588,6 +1019,20 @@
   "30": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -628,22 +1073,67 @@
    ]
   },
   "31": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "32": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "33": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -651,6 +1141,20 @@
   "34": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -747,6 +1251,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -769,8 +1287,22 @@
    ]
   },
   "36": {
-   "giltSeit": null,
+   "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2018-01-01",
@@ -799,6 +1331,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -825,6 +1371,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -849,6 +1409,20 @@
   "42": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -910,6 +1484,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -968,6 +1556,20 @@
    "giltSeit": "2023-01-23",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-23",
      "wirkung": false,
@@ -990,8 +1592,23 @@
    ]
   },
   "45": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -999,6 +1616,20 @@
   "46": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1022,29 +1653,89 @@
    ]
   },
   "47": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "48": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "49": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "50": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1052,6 +1743,20 @@
   "51": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1075,8 +1780,22 @@
    ]
   },
   "52": {
-   "giltSeit": "2004-04-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2020-07-01",
@@ -1122,6 +1841,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2019-07-01",
      "wirkung": false,
      "quellen": [
@@ -1144,16 +1877,46 @@
    ]
   },
   "54": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0,
     13
    ]
   },
   "55": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0,
     13
@@ -1162,6 +1925,20 @@
   "56": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -1185,15 +1962,44 @@
    ]
   },
   "57": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "58": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1235,6 +2041,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -1242,29 +2062,89 @@
    ]
   },
   "60": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "61": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1288,6 +2168,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     },
     {
      "typ": "fassung",
@@ -1367,6 +2261,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2008-08-01",
      "wirkung": false,
      "quellen": [
@@ -1422,8 +2330,23 @@
    ]
   },
   "66": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1431,6 +2354,20 @@
   "67": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -1641,29 +2578,88 @@
    ]
   },
   "68": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "69": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "70": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "71": {
-   "giltSeit": null,
+   "giltSeit": "2024-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2024-01-01",
@@ -1691,6 +2687,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-07-01",
      "wirkung": false,
      "quellen": [
@@ -1712,22 +2722,66 @@
    ]
   },
   "73": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "74": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "75": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1751,15 +2805,45 @@
    ]
   },
   "76": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "77": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1767,6 +2851,20 @@
   "78": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -1813,29 +2911,89 @@
    "aufgehobenSeit": "2018-01-01"
   },
   "80": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "81": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "82": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "83": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1843,6 +3001,20 @@
   "84": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -1866,36 +3038,111 @@
    ]
   },
   "85": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "86": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "87": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "88": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "89": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1903,6 +3150,20 @@
   "90": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -2004,6 +3265,20 @@
      "absatz": "2",
      "item": "d",
      "frueher": "Bst. c"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -2011,15 +3286,45 @@
    ]
   },
   "92": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "93": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2027,6 +3332,20 @@
   "94": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -2054,6 +3373,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2015-01-01",
      "wirkung": false,
      "quellen": [
@@ -2075,8 +3408,23 @@
    ]
   },
   "96": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2084,6 +3432,20 @@
   "97": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -2141,22 +3503,67 @@
    ]
   },
   "98": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "99": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "100": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2180,6 +3587,20 @@
      ],
      "absatz": "1",
      "item": "e"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     },
     {
      "typ": "fassung",
@@ -2259,6 +3680,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-07-01",
      "wirkung": false,
      "quellen": [
@@ -2280,15 +3715,45 @@
    ]
   },
   "103": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "104": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2296,6 +3761,20 @@
   "105": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2016-10-01",
@@ -2338,6 +3817,20 @@
   "106": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -2384,7 +3877,7 @@
    "aufgehobenSeit": "2018-01-01"
   },
   "108": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "berichtigt",
@@ -2393,6 +3886,20 @@
      "quellen": [],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -2400,8 +3907,23 @@
    ]
   },
   "109": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2425,6 +3947,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -2593,7 +4129,7 @@
    ]
   },
   "116": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2611,6 +4147,39 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "117": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -2667,6 +4236,34 @@
      ],
      "absatz": "4",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -2759,6 +4356,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
      "quellen": [
@@ -2795,6 +4406,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     },
     {
      "typ": "aufgehoben",
@@ -3023,11 +4648,25 @@
      ],
      "absatz": "2",
      "item": "c"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     }
    ]
   },
   "127": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3045,11 +4684,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
   "128": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3067,11 +4720,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
   "129": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3089,11 +4756,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
   "133": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3111,6 +4792,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -3157,6 +4852,48 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Gefängnis und Busse.» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. Mit Freiheitsstrafe ist eine Geldstrafe zu verbinden.»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1bis",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -3179,6 +4916,20 @@
    "giltSeit": "2011-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2011-07-01",
      "wirkung": false,
@@ -3198,7 +4949,7 @@
    ]
   },
   "137": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3217,6 +4968,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "Zweiter Titel: Strafbare Handlungen gegen das Vermögen"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -3248,6 +5013,48 @@
   "139": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis nicht unter drei Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 90 Tagessätzen»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "3",
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder Gefängnis nicht unter sechs Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 180 Tagessätzen»"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -3330,22 +5137,81 @@
    ]
   },
   "141": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "142": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "143": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3353,6 +5219,34 @@
   "144": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -3376,8 +5270,23 @@
    ]
   },
   "145": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3385,6 +5294,34 @@
   "146": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis nicht unter drei Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 90 Tagessätzen»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -3411,6 +5348,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis nicht unter drei Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 90 Tagessätzen»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -3436,6 +5401,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis bis zu fünf Jahren» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis nicht unter drei Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 90 Tagessätzen»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -3458,36 +5451,111 @@
    ]
   },
   "149": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "150": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "151": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "152": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "153": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3533,6 +5601,20 @@
   "155": {
    "giltSeit": "2009-02-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2009-02-01",
@@ -3601,6 +5683,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -3626,6 +5736,48 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -3648,8 +5800,23 @@
    ]
   },
   "159": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3657,6 +5824,34 @@
   "160": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis nicht unter drei Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 90 Tagessätzen»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -3703,22 +5898,95 @@
    "aufgehobenSeit": "2013-05-01"
   },
   "162": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "163": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "164": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3726,6 +5994,20 @@
   "165": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis bis zu fünf Jahren» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2023-07-01",
@@ -3749,15 +6031,45 @@
    ]
   },
   "166": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "167": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -3765,6 +6077,20 @@
   "168": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -3788,21 +6114,51 @@
    ]
   },
   "169": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "170": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "171": {
-   "giltSeit": null,
+   "giltSeit": "2023-07-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3870,6 +6226,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis bis zu sechs Monaten oder Busse» → «Geldstrafe bis zu 180 Tagessätzen»"
+    },
+    {
      "typ": "inkraft",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -3909,6 +6279,34 @@
   "174": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -4013,7 +6411,7 @@
    ]
   },
   "179": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4032,6 +6430,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "2. Strafbare Handlungen gegen den Geheim- oder Privatbereich."
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     }
    ],
    "erbt": [
@@ -4074,11 +6486,44 @@
      ],
      "absatz": "2",
      "item": "b"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "181": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
   "182": {
-   "giltSeit": "2006-12-01",
+   "giltSeit": "2023-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4117,7 +6562,7 @@
    ]
   },
   "183": {
-   "giltSeit": "1982-10-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4135,11 +6580,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
   "184": {
-   "giltSeit": "1982-10-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4157,6 +6616,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
     }
    ]
   },
@@ -4213,12 +6686,87 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2 und 3",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
+  "186": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
   "187": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "4",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4362,6 +6910,20 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4386,6 +6948,34 @@
   "189": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4412,6 +7002,34 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4436,6 +7054,20 @@
   "191": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4485,6 +7117,20 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4509,6 +7155,20 @@
   "194": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis bis zu sechs Monaten oder Busse» → «Geldstrafe bis zu 180 Tagessätzen»"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -4535,6 +7195,20 @@
    "giltSeit": "2014-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
@@ -4560,6 +7234,34 @@
    "giltSeit": "2014-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1 und 3",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
      "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
@@ -4584,6 +7286,48 @@
   "197": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 3",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "4",
+     "anweisung": "«Gefängnis und Busse.» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. Mit Freiheitsstrafe ist eine Geldstrafe zu verbinden.»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "3bis",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2014-07-01",
@@ -4695,6 +7439,20 @@
    "giltSeit": "2024-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    },
+    {
      "typ": "fassung",
      "datum": "2024-07-01",
      "wirkung": false,
@@ -4717,8 +7475,23 @@
    ]
   },
   "199": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    }
+   ],
    "erbt": [
     4
    ]
@@ -4749,7 +7522,7 @@
    ]
   },
   "213": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4784,6 +7557,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -4829,6 +7616,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -4873,7 +7674,7 @@
    "aufgehobenSeit": "1990-01-01"
   },
   "217": {
-   "giltSeit": "1990-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4891,6 +7692,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -4938,6 +7753,34 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -4960,6 +7803,20 @@
    "giltSeit": "2014-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
@@ -4978,9 +7835,70 @@
     }
    ]
   },
+  "221": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
   "222": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5000,9 +7918,89 @@
     }
    ]
   },
+  "223": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
+  "224": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
   "225": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis bis zu fünf Jahren» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5042,6 +8040,34 @@
   "226": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu zehn Jahren oder Gefängnis nicht unter sechs Monaten» → «Freiheitsstrafe bis zu zehn Jahren oder Geldstrafe nicht unter 180 Tagessätzen»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder (mit) Gefängnis nicht unter einem Monat» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe nicht unter 30 Tagessätzen»"
+    },
     {
      "typ": "inkraft",
      "datum": "2018-01-01",
@@ -5095,9 +8121,70 @@
     }
    ]
   },
+  "227": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
   "228": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5121,6 +8208,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis und Busse.» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. Mit Freiheitsstrafe ist eine Geldstrafe zu verbinden.»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -5142,6 +8257,34 @@
   "230": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis und Busse.» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe. Mit Freiheitsstrafe ist eine Geldstrafe zu verbinden.»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5165,6 +8308,34 @@
    "giltSeit": "2016-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
      "typ": "fassung",
      "datum": "2016-01-01",
      "wirkung": false,
@@ -5183,9 +8354,103 @@
     }
    ]
   },
+  "232": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    }
+   ]
+  },
+  "233": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    }
+   ]
+  },
   "234": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder (mit) Gefängnis nicht unter einem Monat» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe nicht unter 30 Tagessätzen»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5208,6 +8473,34 @@
   "235": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5248,6 +8541,20 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -5269,6 +8576,34 @@
   "237": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5315,6 +8650,20 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -5350,9 +8699,70 @@
     }
    ]
   },
+  "240": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
   "241": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "inkraft",
      "datum": "2018-01-01",
@@ -5391,6 +8801,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -5451,7 +8875,7 @@
    ]
   },
   "244": {
-   "giltSeit": "2000-05-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5469,12 +8893,54 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
     }
    ]
   },
   "245": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5498,6 +8964,20 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -5513,6 +8993,44 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "247": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "248": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -5539,7 +9057,7 @@
    ]
   },
   "251": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2023-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5557,6 +9075,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     },
     {
      "typ": "aufgehoben",
@@ -5578,7 +9124,7 @@
    ]
   },
   "252": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5596,11 +9142,101 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "253": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "254": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "256": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "257": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
   "258": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5618,6 +9254,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -5640,6 +9290,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     },
     {
      "typ": "fassung",
@@ -5694,9 +9358,42 @@
     }
    ]
   },
+  "260": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "261": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis bis zu sechs Monaten oder Busse» → «Geldstrafe bis zu 180 Tagessätzen»"
+    },
     {
      "typ": "inkraft",
      "datum": "2018-01-01",
@@ -5716,9 +9413,56 @@
     }
    ]
   },
+  "262": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "263": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis bis zu sechs Monaten oder Busse» → «Geldstrafe bis zu 180 Tagessätzen»"
+    },
     {
      "typ": "inkraft",
      "datum": "2018-01-01",
@@ -5756,7 +9500,7 @@
    ]
   },
   "264": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5775,6 +9519,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "Zwölfter Titelbis: Völkermord und Verbrechen gegen die Menschlichkeit"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
     },
     {
      "typ": "fassung",
@@ -5819,7 +9577,7 @@
    ]
   },
   "266": {
-   "giltSeit": "1951-01-05",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5837,11 +9595,39 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus oder mit Gefängnis von einem bis zu fünf Jahren» → «Freiheitsstrafe nicht unter einem Jahr»"
     }
    ]
   },
   "267": {
-   "giltSeit": "1998-04-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5885,6 +9671,105 @@
      "absatz": null,
      "item": null,
      "frueher": "Ziff. 2"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "3",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus oder mit Gefängnis von einem bis zu fünf Jahren» → «Freiheitsstrafe nicht unter einem Jahr»"
+    }
+   ]
+  },
+  "268": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "269": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus oder (mit) Gefängnis» → «Freiheitsstrafe oder Geldstrafe»"
+    }
+   ]
+  },
+  "270": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -5928,7 +9813,7 @@
    ]
   },
   "272": {
-   "giltSeit": "1951-01-05",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5946,12 +9831,54 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
     }
    ]
   },
   "273": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -5992,6 +9919,34 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -6011,7 +9966,7 @@
    ]
   },
   "275": {
-   "giltSeit": "1951-01-05",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6029,12 +9984,87 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis bis zu fünf Jahren» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "276": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Zuchthaus oder (mit) Gefängnis» → «Freiheitsstrafe oder Geldstrafe»"
     }
    ]
   },
   "277": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus oder (mit) Gefängnis» → «Freiheitsstrafe oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6058,6 +10088,20 @@
    "giltSeit": "2018-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis bis zu sechs Monaten oder Busse» → «Geldstrafe bis zu 180 Tagessätzen»"
+    },
+    {
      "typ": "inkraft",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -6076,9 +10120,94 @@
     }
    ]
   },
+  "279": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "280": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "281": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "282": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6095,6 +10224,25 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "283": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -6124,6 +10272,34 @@
   "285": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6182,6 +10358,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2010-01-01",
      "wirkung": false,
      "quellen": [
@@ -6216,6 +10406,25 @@
     }
    ]
   },
+  "287": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "288": {
    "giltSeit": null,
    "ereignisse": [
@@ -6239,9 +10448,99 @@
    ],
    "aufgehobenSeit": "2000-05-01"
   },
+  "289": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "290": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "291": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "292": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    }
+   ]
+  },
   "293": {
    "giltSeit": "2018-03-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    },
     {
      "typ": "fassung",
      "datum": "2018-03-01",
@@ -6300,6 +10599,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2015-01-01",
      "wirkung": false,
      "quellen": [
@@ -6340,7 +10653,7 @@
    ]
   },
   "296": {
-   "giltSeit": "1951-01-05",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6358,11 +10671,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
   "297": {
-   "giltSeit": "1951-01-05",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6380,6 +10707,96 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "298": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "299": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
+  "300": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus oder (mit) Gefängnis» → «Freiheitsstrafe oder Geldstrafe»"
+    }
+   ]
+  },
+  "301": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -6426,6 +10843,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus oder (mit) Gefängnis» → «Freiheitsstrafe oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -6445,8 +10890,22 @@
    ]
   },
   "304": {
-   "giltSeit": null,
+   "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -6521,6 +10980,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -6542,6 +11015,34 @@
   "306": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -6579,8 +11080,36 @@
    ]
   },
   "307": {
-   "giltSeit": "2018-01-01",
+   "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2023-07-01",
@@ -6665,6 +11194,34 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -6686,6 +11243,20 @@
   "311": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6722,9 +11293,42 @@
     }
    ]
   },
+  "312": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "313": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6747,6 +11351,20 @@
   "314": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6787,6 +11405,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -6808,6 +11440,20 @@
   "318": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -6844,9 +11490,42 @@
     }
    ]
   },
+  "319": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ]
+  },
   "320": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-01-01",
@@ -6869,6 +11548,20 @@
   "321": {
    "giltSeit": "2020-02-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2020-02-01",
@@ -6982,6 +11675,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -7066,6 +11773,25 @@
     }
    ]
   },
+  "325": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    }
+   ]
+  },
   "326": {
    "giltSeit": null,
    "ereignisse": [
@@ -7134,6 +11860,25 @@
     }
    ],
    "aufgehobenSeit": "2023-07-01"
+  },
+  "329": {
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    }
+   ]
   },
   "330": {
    "giltSeit": null,
@@ -7988,7 +12733,7 @@
    ]
   },
   "387": {
-   "giltSeit": "2008-08-01",
+   "giltSeit": "2023-01-23",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8088,7 +12833,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "128_bis": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8106,6 +12851,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ]
   },
@@ -8133,8 +12892,23 @@
    "aufgehobenSeit": "1990-01-01"
   },
   "141_bis": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     1
    ]
@@ -8142,6 +12916,20 @@
   "143_bis": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -8167,6 +12955,34 @@
   "144_bis": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1 und 2",
+     "anweisung": "«Zuchthaus» → «Freiheitsstrafe von einem Jahr»"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -8360,14 +13176,29 @@
    "aufgehobenSeit": "2018-01-01"
   },
   "172_ter": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    }
+   ],
    "erbt": [
     1
    ]
   },
   "179_bis": {
-   "giltSeit": "1969-05-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8385,6 +13216,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ],
    "erbt": [
@@ -8439,6 +13284,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-09-01",
      "wirkung": false,
@@ -8462,7 +13321,7 @@
    ]
   },
   "179_octies": {
-   "giltSeit": "2002-01-01",
+   "giltSeit": "2024-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8522,7 +13381,7 @@
    ]
   },
   "179_quater": {
-   "giltSeit": "1969-05-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8540,6 +13399,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ],
    "erbt": [
@@ -8651,7 +13524,7 @@
    ]
   },
   "179_sexies": {
-   "giltSeit": "1969-05-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8669,6 +13542,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     }
    ],
    "erbt": [
@@ -8695,6 +13582,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
     },
     {
      "typ": "fassung",
@@ -8931,7 +13832,7 @@
    ]
   },
   "230_bis": {
-   "giltSeit": "2004-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -8949,6 +13850,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
     }
    ]
   },
@@ -8971,6 +13886,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     },
     {
      "typ": "eingefuegt",
@@ -9082,7 +14011,7 @@
    ]
   },
   "260_quinquies": {
-   "giltSeit": "2003-10-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9100,6 +14029,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Strafdrohung neu gefasst"
     }
    ]
   },
@@ -9146,6 +14089,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2021-07-01",
      "wirkung": false,
@@ -9183,6 +14140,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
     },
     {
      "typ": "fassung",
@@ -9391,6 +14362,34 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis bis zu fünf Jahren» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Zuchthaus» bzw. «Zuchthaus oder Gefängnis nicht unter einem Jahr» → «Freiheitsstrafe nicht unter einem Jahr»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -9450,7 +14449,7 @@
    "aufgehobenSeit": "2023-07-01"
   },
   "282_bis": {
-   "giltSeit": "1978-07-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -9468,12 +14467,40 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     }
    ]
   },
   "28_a": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "ausdruck",
      "datum": "2023-07-01",
@@ -9532,6 +14559,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "1",
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": "2",
+     "anweisung": "Strafdrohung neu gefasst"
     },
     {
      "typ": "fassung",
@@ -9874,6 +14929,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -9911,6 +14980,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     },
     {
      "typ": "fassung",
@@ -10007,8 +15104,23 @@
    ]
   },
   "322_quater": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -10016,6 +15128,20 @@
   "322_quinquies": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -10039,7 +15165,7 @@
    ]
   },
   "322_septies": {
-   "giltSeit": "2006-07-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -10057,6 +15183,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ],
    "erbt": [
@@ -10066,6 +15206,20 @@
   "322_sexies": {
    "giltSeit": "2016-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gefängnis» bzw. «Gefängnis oder (mit) Busse» bzw. «Zuchthaus bis zu drei Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu drei Jahren oder Geldstrafe»"
+    },
     {
      "typ": "fassung",
      "datum": "2016-07-01",
@@ -10089,7 +15243,7 @@
    ]
   },
   "322_ter": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -10108,12 +15262,40 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "Neunzehnter Titel: Bestechung"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Zuchthaus bis zu fünf Jahren oder mit Gefängnis» → «Freiheitsstrafe bis zu fünf Jahren oder Geldstrafe»"
     }
    ]
   },
   "325_bis": {
    "giltSeit": "2022-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-01-01",
@@ -10260,7 +15442,7 @@
    ]
   },
   "326_quater": {
-   "giltSeit": "1995-01-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -10278,6 +15460,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     }
    ]
   },
@@ -10300,6 +15496,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Haft oder (mit) Busse» → «Busse»"
     },
     {
      "typ": "fassung",
@@ -10841,7 +16051,7 @@
    ]
   },
   "355_b": {
-   "giltSeit": null,
+   "giltSeit": "2006-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -11231,8 +16441,23 @@
    ]
   },
   "48_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11417,22 +16642,67 @@
    ]
   },
   "56_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62_b": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11440,6 +16710,20 @@
   "62_c": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -11463,22 +16747,67 @@
    ]
   },
   "62_d": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63_b": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11486,6 +16815,20 @@
   "64_a": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2008-08-01",
@@ -11527,6 +16870,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -11854,6 +17211,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2015-01-01",
      "wirkung": false,
      "quellen": [
@@ -11928,6 +17299,20 @@
   "67_b": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -12129,6 +17514,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -12136,8 +17535,23 @@
    ]
   },
   "77_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -12145,6 +17559,20 @@
   "77_b": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
