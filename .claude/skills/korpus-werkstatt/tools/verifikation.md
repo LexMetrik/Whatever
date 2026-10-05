@@ -17,6 +17,8 @@ gezielten Wege.
 
 ## Die zwei Routine-Tore (pro Iteration vs. vor Abschluss)
 
+Seit 5.10.2026 (Regel David, lokal CPU sparen) laufen beide Ketten als PR-Lauf in der CI; lokal nur gezielte Einzelprüfungen.
+
 | Befehl | Kette | Dauer | Wann |
 |---|---|---|---|
 | `npm run gate:schnell` | tsc · vitest · golden:vergleich | ~7 s | **nach jedem Teilschritt** während der Arbeit (iterativer §6-/§14.4-Bug-Check) |
@@ -41,8 +43,12 @@ Push, keine Übergabe an `landung`** (§9).
   `check:sweep`, `check:smoke`, `check:normtext`, `check:vollstaendigkeit`, `check:entscheide`,
   `check:materialien`, `check:pdf`. Deckt beide Korpora gegen den **eingecheckten** Stand ab.
 - **`npm run check:netz`** — die **netzabhängigen** Tore separat (nicht in `gate`, weil sie eine
-  Quelle erreichen müssen): `check:caches`, `check:zitate`, `check:fedlex-versionen`,
-  `check:normtext-netz`, `check:pdf-netz`.
+  Quelle erreichen müssen; Runner `scripts/run-netz-alle.ts`, Stand 5.10.2026):
+  `check:netz:kette` = **Bundes**-Gesetzestext (`check:caches`, `check:zitate`,
+  `check:fedlex-versionen`, `check:pdf-netz`) — Exit 1 ⇒ **rot**; `check:netz:bericht` = alles
+  andere, auch die Kantons-Drift `check:normtext-netz` (Entscheid David 5.10.2026 «nur noch auf
+  bund») ⇒ nur Warnung, ihr Exit 2 macht den Lauf nicht unvollständig. Exit 2 = Quelle nicht erreichbar ⇒ Lauf **unvollständig** (sichtbar,
+  nicht grün); im Monitor zwei Läufe in Folge ⇒ rot.
 
 **Wann was:** `check` läuft als Teil von `gate` ohnehin mit. `check:netz` **bewusst zusätzlich
 fahren**, wenn die Quelle wandern kann — also nach jedem Normtext-Bau/-Update und bei einem

@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 // ═══ D2/D3 (W2·24-Gesamtprüfung 7.9.2026) · Esc in der Kopf-Suche ══════════
 //
 // GEMESSEN am Stand `018b41a37`: Escape leerte das Feld (nativer

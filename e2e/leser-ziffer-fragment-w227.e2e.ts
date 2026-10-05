@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 // W2·27-BUND-FERTIG E2 · Ziffer-Fragment `#art-197-ziff-12` (Form A, Entscheid David 2.10.2026).
 //
 //  Der Anker `art-<token>-ziff-<z>` steht am ersten Block jeder Ziffer (BV Art. 196/197,

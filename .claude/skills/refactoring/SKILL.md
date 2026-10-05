@@ -11,7 +11,7 @@ Strukturverbesserung.
 
 ## 1. Ablauf
 
-1. **Vorher grün.** `npm run gate` (bzw. `gate:schnell` pro Iteration). Die
+1. **Vorher grün.** CI-Lauf grün (Lauf-ID; lokal je Iteration nur gezielte Tests, Regel David 5.10.2026). Die
    Einzelbefehle `npx tsc -b` · `npm test` · `npm run lint` · `npm run build`
    mit **voller Ausgabe** nur zur Diagnose eines roten Gates, nie `tail -1`.
    Der Wrapper kürzt ausschliesslich die grüne Ausgabe.
@@ -127,7 +127,7 @@ Teil-Kennzahl `erlassNr === ''` bei 267 lag (Mehrheits-Heuristik statt
 **Einordnung beim Bau** (Klassierung, damit die lokale Kette nicht monoton
 wächst):
 
-- **K1** — schützt Rechtsinhalt oder Datentreue → lokale `gate`-Kette.
+- **K1** — schützt Rechtsinhalt oder Datentreue → `gate`-Kette (PR-Lauf).
 - **K2** — schützt Konsistenz oder Stil → nur CI.
 
 Ein neues Tor ohne Klasse wird nicht aufgenommen.

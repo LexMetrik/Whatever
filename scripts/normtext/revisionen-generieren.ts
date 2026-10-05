@@ -150,7 +150,7 @@ export interface RevisionEintrag {
    * `rectifies-berichtigung.ts`): holt je rectifies-Kante den Filestore-HTML-Berichtigungstext
    * und misst dessen Headline-Zitat gegen `zielFundstelle`/`fremdeSr`. Klassen: uebereinstimmend ·
    * abweichend (SKV ist der erste dokumentierte Fund, `bibliothek/normtext/rectifies-ausnahmen.json`) ·
-   * sammelberichtigung · nicht-abrufbar. Läuft in `check:netz:kette` (Schedule/`workflow_dispatch`),
+   * sammelberichtigung · nicht-abrufbar. Läuft in `check:netz:bericht` (seit 5.10.2026; Schedule/`workflow_dispatch`),
    * blockiert daher keinen PR-Merge.
    */
   plausibilitaet?: 'berichtigung-fremdes-as-dokument';

@@ -27,7 +27,7 @@ npm run normtext -- --nur=bund --datum=$(date +%F)     # regeneriert ALLE Bund-S
 npm run normtext:struktur -- --datum=$(date +%F)       # Struktur-Sidecar BUND (NICHT struktur-kanton)
 npm run normtext:register -- --datum=$(date +%F)       # Browse-Register public/normtext/register.json
 npm run gen:suchindex                                  # Such-Index nachziehen
-npm run check:fedlex-versionen && npm run check:normtext && npm run check:suchindex && npm run gate
+npm run check:fedlex-versionen && npm run check:normtext && npm run check:suchindex  # volles gate: PR-Lauf
 ```
 
 Alle zehn Namen sind als Script in `package.json` hinterlegt (per `grep '"<name>":' package.json` prüfbar).
@@ -243,7 +243,7 @@ npm run normtext -- --nur=kanton --kanton=<KT> --discovery   # bzw. --nur=zh  (r
 npm run normtext:struktur-kanton -- --datum=$(date +%F)      # NICHT normtext:struktur (= Bund)
 npm run report:confidence -- --schwelle=0.95 --schreibe       # Treue-Gate / Confidence-Quarantaene
 npm run check:vollstaendigkeit                               # Kanton-Zitat-Abdeckung + Manifest-Konsistenz
-npm run gate
+# volles gate: PR-Lauf in der CI
 ```
 
 Belege: alle Befehle sind npm-Scripts in `package.json` (`normtext`,

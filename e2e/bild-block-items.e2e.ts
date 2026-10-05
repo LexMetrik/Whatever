@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 6
 // Wächter (FN-5-Gegenprüfung R2, 26.7.2026): Bild-/Kachel-Blöcke, die zusätzlich
 // `items` tragen, müssen Bild UND Aufzählung rendern. Vorbestehender main-Defekt:
 // ArtikelBody kehrte bei bb.bild/bb.bildKacheln früh zurück und verschluckte die

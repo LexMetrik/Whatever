@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
 // axe-core-Stichprobe (FAHRPLAN-DESIGN 3.7, Zielniveau WCAG 2.1 AA aus
 // Etappe 3): Startseite (zu + mit offenem Register-Panel), ein Rechner
 // (Tagerechner: DatumsFeld/FristenKalender — grösste A11y-Posten, auch mit

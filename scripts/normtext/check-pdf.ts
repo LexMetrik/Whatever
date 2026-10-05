@@ -41,6 +41,10 @@ for (const q of PDF_EMBED_QUELLEN) {
 }
 
 // ── NETZ: Drift gegen Live-Quelle + geltende Konsolidierung ──
+// Seit 5.10.2026 (Monitor-Rückbau, Entscheid David «wichtig ist gesetzestext»): ein Abruf-
+// Ausfall (HTTP 5xx, Timeout, SPARQL-Fehler oder -Leerantwort) ist KEIN Befund, sondern
+// «keine Aussage» ⇒ Exit 2 (sichtbar, nie still grün). DRIFT/ÜBERHOLT/4xx bleiben Exit 1.
+const netzfehler: string[] = [];
 if (netz && fehler.length === 0) {
   const ENDPOINT = 'https://fedlex.data.admin.ch/sparqlendpoint';
   const heute = new Date().toISOString().slice(0, 10);
@@ -49,12 +53,12 @@ if (netz && fehler.length === 0) {
     // (a) Live-PDF-sha == hinterlegt (15s-Timeout — kein stilles Hängen, §8)
     try {
       const res = await fetch(pdfaUrl(q.eli, q.kons, q.pdfSuffix), { signal: AbortSignal.timeout(15_000) });
-      if (!res.ok) { fehler.push(`${q.key}: Live-pdf-a HTTP ${res.status}`); }
+      if (!res.ok) { (res.status >= 500 ? netzfehler : fehler).push(`${q.key}: Live-pdf-a HTTP ${res.status}`); }
       else {
         const sha = createHash('sha256').update(Buffer.from(await res.arrayBuffer())).digest('hex');
         if (sha !== idx.sha) fehler.push(`${q.key}: DRIFT — Live-sha ≠ hinterlegt (neu: npm run normtext:pdf)`);
       }
-    } catch (e) { fehler.push(`${q.key}: Live-Fetch ${e instanceof Error ? e.message : e}`); }
+    } catch (e) { netzfehler.push(`${q.key}: Live-Fetch ${e instanceof Error ? e.message : e}`); }
     // (b) gepinnte Konsolidierung == geltende (SPARQL, Currency-Arbiter). LEERES
     //     Resultat = ROT (Currency nicht verifizierbar) — kein stilles Bestehen (§8).
     //     FALLE (P1-a-Fix 5.7.2026): die frühere notation-Join × `LIMIT 300`-Query
@@ -68,14 +72,18 @@ if (netz && fehler.length === 0) {
       const bnd = ((await r.json()) as { results: { bindings: Array<{ date?: { value: string } }> } }).results.bindings;
       const daten = [...new Set(bnd.filter((b) => b.date).map((b) => b.date!.value.slice(0, 10)))].sort();
       const geltend = daten.filter((d) => d <= heute).pop()?.replace(/-/g, '');
-      if (!geltend) fehler.push(`${q.key}: SPARQL lieferte keine Konsolidierung — Currency NICHT verifizierbar (ROT statt stillem Bestehen)`);
+      if (!geltend) netzfehler.push(`${q.key}: SPARQL lieferte keine Konsolidierung — Currency NICHT verifizierbar (Exit 2 statt stillem Bestehen)`);
       else if (geltend !== q.kons) fehler.push(`${q.key}: Konsolidierung ${q.kons} ÜBERHOLT — geltend ${geltend}`);
-    } catch (e) { fehler.push(`${q.key}: SPARQL ${e instanceof Error ? e.message : e}`); }
+    } catch (e) { netzfehler.push(`${q.key}: SPARQL ${e instanceof Error ? e.message : e}`); }
   }
 }
 
 if (fehler.length) {
   console.error(`check:pdf ROT${netz ? ' (offline+netz)' : ''} — ${fehler.length} Befund(e):\n  ${fehler.join('\n  ')}`);
   process.exit(1);
+}
+if (netzfehler.length) {
+  console.error(`check:pdf KEINE AUSSAGE (Exit 2) — Quelle nicht erreichbar:\n  ${netzfehler.join('\n  ')}`);
+  process.exit(2);
 }
 console.log(`check:pdf${netz ? ' (offline+netz)' : ' (offline)'} GRÜN — ${PDF_EMBED_QUELLEN.length} pdf-embed-Erlass(e) integer${netz ? ' + driftfrei + geltende Konsolidierung' : ''}.`);

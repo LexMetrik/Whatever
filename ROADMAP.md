@@ -67,24 +67,20 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`. *FB
 Vault, `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/fehlerbestand-2026-10-05.md` (Zeilen-IDs
 nur dort gültig; Angaben aus Merkzetteln, vor der Behebung gegen die amtliche Quelle prüfen, §7).
 
-1. **Normen-Monitor wieder grün** (`MONITOR`) · S · Gegenprüfung ja
-   *Herkunft:* rot seit 29.6. mit Unterbrüchen; Alarm #956 (ESKALATION, seit 21.9.).
-   *Fertig, wenn* der Monitor-Lauf grün ist und #956 geschlossen.
-   *Ort:* Dach `QS-MONITOR-ROT`; `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md`.
-2. **«Gilt seit» stimmt im Kern-Bund** (`GILTSEIT`) · R + Phase 1 · Gegenprüfung ja
+1. **«Gilt seit» stimmt im Kern-Bund** (`GILTSEIT`) · R + Phase 1 · Gegenprüfung ja
    *Herkunft:* Mandat 14.9.; Entscheid David 4.10. «A, und C als eigenen Roadmap-Schritt anlegen»
    (#1305, 74b366602).
    *Fertig, wenn* ZGB 299, 300, 307 das amtliche Datum zeigen (Norm, Link, Stand), nicht leer und
    nicht 1978; StGB 52, SVG 89a, OR 631 richtig.
    *Ort:* Dach `W2·32-GENERALANWEISUNGEN`, `W2·27-BUND-FERTIG`; FB B-76, B-40, B-42, B-68.
-3. **Bundestext vollständig** (`BUNDTEXT`) · R + Phase 1 · Gegenprüfung ja
+2. **Bundestext vollständig** (`BUNDTEXT`) · R + Phase 1 · Gegenprüfung ja
    *Herkunft:* Herz-und-Nieren-Prüfung 24.9. (HN-05, Teile 2–4 offen).
    *Fertig, wenn* verworfene Absätze, Listen, Zwischentitel (69 Segmente in 24 Artikeln: StHG, VZV,
    OHG, BV, ZGB, DBG u. a.) im Leser stehen; AHVG-Anhang korrekt (vor Bau reproduzieren: Sonden
    widersprechen sich).
    *Ort:* Merkzettel `2026-09-25-hn-05-gesetzestext-vollstaendig-…`, Dach `W2·27-BUND-FERTIG`;
    FB B-16, B-21.
-4. **Rechtslogik ohne falsche Ergebnisse** (`RECHTSLOGIK`) · R · **ausserhalb des Mandats** (U5 (a))
+3. **Rechtslogik ohne falsche Ergebnisse** (`RECHTSLOGIK`) · R · **ausserhalb des Mandats** (U5 (a))
    · Gegenprüfung ja
    *Herkunft:* **Go David 23./24.9.** («einverstanden» zum Urner Tarif; «a» = Rechtslogik parallel in
    eigener Session; «Alle nach Empfehlung»).
@@ -94,7 +90,7 @@ nur dort gültig; Angaben aus Merkzetteln, vor der Behebung gegen die amtliche Q
    *Ort:* Dach `W2·30-RL-W2B`, `W2·30-RL-W2C`, `W2·30-RL-W3`, `QS-CODE-PROP`;
    `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` (§4 Entscheide W-01…W-22); FB RV-17 bis RV-24, RV-06, RV-30,
    RV-31, RV-77.
-5. **Urteilsdaten richtig zitiert** (`URTEILE`) · R · im Mandat 14.9. · Gegenprüfung nein (David
+4. **Urteilsdaten richtig zitiert** (`URTEILE`) · R · im Mandat 14.9. · Gegenprüfung nein (David
    25.9.: Urteilsdaten noch kein Risikopfad)
    *Herkunft:* Gegenprüfungen 24./25.9. und #1295.
    *Fertig, wenn* kein «Art. … BGE»-Phantomzitat mehr; Bündner Aktenzeichen und Gerichtsname amtlich;
@@ -109,8 +105,24 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ## EINGANG
 
 ```
-- S · 5.10. · e2e/w224-r11-reiterleiste.e2e.ts «auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot (8/8), Ausnahmeliste zurückgebaut (QS-CI-ZEIT E2) — Wurzel beheben; FB S-24
+- R · 5.10. · check:zitate meldet Zitate auf aufgehobene Artikel nicht, solange das Artikel-Element besteht (697j/790a OR liefen grün, nur das Sammelelement 697l–697m fiel auf) — Wurzel: «Aufgehoben»-Text als Befund; Fund RECHTSLOGIK/or-697l
+- R · 5.10. · TJPG (SR 955.3) fehlt in FEDLEX-Linktabelle, Normtext-Korpus und Zitat-Muster von check:zitate («Art. 9 TJPG» ohne Link, maschinell ungeprüft)
+- R · 5.10. · Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
+- R · Abnahme David · Gründungs-Checklisten AG/GmbH nach TJPG: Hinweistext, «als Organ» bei AG (Art. 11 TJPG), Übergangsrecht weggelassen; nicht erwähnt: Gemeinwesen-Ausnahme Art. 3 lit. c TJPG, vereinfachtes Verfahren Art. 35/36 TJPV — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
+- S · 5.10. · Geplante Läufe starten 5–9 h verspätet (Frische 11:48 statt 04:43, Monitor 16:07 statt 07:17) — Fedlex-Frische verpasst Publikationen des Tages
+- I · Go David 05./06.10. · Automatik nach Monitor-Rückbau: LIK-Bot und Ablauf-Erinnerungen (verfall-erinnerung.yml) im Bau, Materialien-Nachzug-Bot folgt (Go David 06.10. «mach die materialien»: wöchentlich check:materialien-netz ⇒ je Quelle materialien:snapshot, dann materialien:kaskade; reine Datumsstempel ⇒ kein PR; PR offen + Gegenprüfung; Probelauf soft-law.db im Runner); Tarif-Stand und Fedlex-Abkürzungen bewusst Handarbeit
+- S · 6.10. · normen-monatslauf.yml stösst keine CI an (kein `gh workflow run ci.yml`) ⇒ ab 20.10. (AUTOMERGE_TOKEN-Ablauf) laufen Curia/BS/Vernehmlassungs-PRs ohne CI
+- S · 6.10. · Netz-Robustheit Fedlex: fedlex-frische.yml:137 behandelt Exit 2 (Netz) wie Rot ⇒ repin --write; frageKonsolidierungen ohne AbortSignal.timeout (hängt bis Job-Limit); SPARQL-HTML-200/404 ⇒ Exit 1 (Fehlalarm bei Überlast)
+- I · 6.10. · Fedlex-Frische-PR-Titel «(Auto-Merge)» irreführend (Merge-Schutz sperrt), #1311 ohne CI-Lauf — verwandt mit ruhender Frage «Auto-Merge beim Fedlex-Abgleich»
+- I · 6.10. · ZH-Generator nicht je Erlass fahrbar (--nur überspringt ZH ⇒ 110 Datums-Änderungen); 68 ZH_ZURUECKGESTELLT ohne Auflöser — ruht mit Kantonstext bis Phase 2
+- I · 6.10. · Normtext-Daten-PR fällt in der CI Projektion für Projektion: report:confidence --schreibe ändert confidence.json (Tabelle dokument trägt es byte-genau) ⇒ danach datenhaltung:manifest rot; Checks-Job bricht beim ersten Rot ab; danach noch check:feed (gen:feed) — #1329: 3 rote Läufe, 2 Nach-Verdikte — Wurzel: Nachzug fährt report:confidence → datenhaltung:manifest → projektionen selbst, oder Skript «alle Schritte des Checks-Jobs lokal» (npm-Skript, aus ci.yml abgeleitet)
+- I · 6.10. · Doku pdf-netz nennt EMRK/NYÜ, seit 14.9. nur NYÜ (Runner-Kommentar, Fahrplan, Workflow)
+- I · 5.10. · Sessions lassen Worktrees und Zweige nach der Landung liegen (5.10.: 21 Zweige, 6 Worktrees; aufraeumen:git wird nicht gefahren) — Wurzel: automatisch statt Abschluss-Punkt
+- S · 5.10. · Dauer-Wackler reparieren (Go David 05.10.): Wurzelfix je Spec, nicht löschen — Kandidaten aus bibliothek/betrieb/e2e-fang-historie-2026-10-05/spec-tabelle.csv (≥ 7 Flakes, kein Produkt-Fang): leser-v3-suche-ohne-gliederung 13, druck-fundstellen-z2 13, gesetze-ux-9punkte 12 (+7 offen), w224-r11-reiterleiste 11 («auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot 8/8, Ausnahmeliste zurückgebaut, QS-CI-ZEIT E2), leser-v3-blatt 10, tastatur 7; FB S-24 — Dach QS-CI-ZEIT
+- S · 5.10. · e2e/leser-kopf-cls-s3.e2e.ts:80-84 wartet auf den Fedlex-Konsolidierungshinweis an STPO — fällt rot, sobald Fedlex konsolidiert, ohne Defekt (GP #1326) — Dach QS-CI-ZEIT
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
+- S · 5.10. · tor-schutz.py Regel 1 zerlegt an `|` in Anführungszeichen (grep -E 'a|b' gilt als Pipe-Tor); quote-/heredoc-fester Split liegt als Diff in 5260e0118 (QS-CPU) — Dach QS-CPU
+- S · 5.10. · gate-stopp.py (vitest related) übersieht neue untracked Verzeichnisse und Nicht-ASCII-Dateinamen (porcelain-Quoting), ab ~400 related Dateien reisst das 240-s-Limit (Review #1328) — Dach QS-CPU
 - S · 5.10. · tor-paritaet: (1) Sonde ignoriert Job-if (z. B. event_name != 'pull_request'), Tor in PR-gesperrtem Job zählt als PR-gedeckt; (2) check:perf-lighthouse gilt durch perf-kalibrierung.yml (--messen, ohne Assertion) als gedeckt — perf-nacht.yml könnte die Prüfung still verlieren (GP #1323) — Dach QS-CI-ZEIT
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26

@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 4
 // ─── W2·17-UI-BEFUNDE · Zwei-Fenster-Ansicht (Split-Pane) des Gesetzeslesers ───
 //
 // Fünf Befunde, die nur im echten Browser sichtbar sind (Fokus, Tastatur,

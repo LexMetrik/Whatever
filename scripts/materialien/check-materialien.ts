@@ -25,12 +25,10 @@
 //  · Vernehmlassungen Finding 7 (§17-Wurzelfix PR #803, war wanduhr-abhängig): 'laufend' mit
 //    fristEnde < r.stand (Erhebungsdatum, vom Generator geschrieben) = Datenfehler zum
 //    Erhebungszeitpunkt. Deterministisch, KEIN heute/Date.now — dieses Tor liest an KEINER
-//    Stelle mehr die Wanduhr (Gegenprüfungs-Auflage A1). Der zugehörige Alterungs-Wächter
-//    (Erhebungsdatum zu alt ⇒ rot) lebt bewusst NICHT hier, sondern im eigenen, standalone
-//    Tor `check:vernehmlassungen-alter` (K7-Entscheid, Begründung dort UND in
-//    scripts/materialien/vernehmlassungen-tor.ts) — sonst würde ein wanduhr-Rot fachfremde
-//    Aufrufer dieses Tors (z. B. normen-monatslauf.yml Job `bs-grossrat`) vor deren PR-Schritt
-//    mit einem Vernehmlassungs-Befund töten.
+//    Stelle mehr die Wanduhr (Gegenprüfungs-Auflage A1). Ein Alterungs-Wächter gehört
+//    NIE hierher (K7: ein wanduhr-Rot träfe fachfremde Aufrufer wie normen-monatslauf.yml
+//    Job `bs-grossrat`); der frühere eigene Wächter ist seit dem Monitor-Rückbau 5.10.2026
+//    gestrichen (Begründung: scripts/materialien/vernehmlassungen-tor.ts).
 // Harte Verstösse → exit 1.
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
@@ -175,9 +173,7 @@ function main(): void {
         }
         // Finding 7 (P0, user-sichtbar), deterministisch seit §17-Wurzelfix PR #803 (war
         // wanduhr-abhängig, #789/Befund 12.9.2026) — reine Funktion in vernehmlassungen-tor.ts,
-        // testbar ohne den ganzen check-materialien-Lauf. Der zugehörige Alterungs-Wächter (liest
-        // `heute`) lebt bewusst NICHT hier, sondern im eigenen Tor `check:vernehmlassungen-alter`
-        // (K7-Entscheid, Begründung im Kopf dieser Datei und in vernehmlassungen-tor.ts).
+        // testbar ohne den ganzen check-materialien-Lauf; kein Wanduhr-Bezug (K7, Kopf dieser Datei).
         const f7 = finding7Fehler(r.key, v.status, v.fristEnde, r.stand);
         if (f7) fehler.push(f7);
       }

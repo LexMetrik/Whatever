@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 4
 // Regressionsschutz für die einheitliche Randtitel-Formatierung (Auftrag 6a,
 // David 26.6.2026 «uneinheitliche Bold-Formatierung»). Zwei stabile Rollen
 // (margStufeStil): das BLATT (unterste gezeigte Stufe = Sachüberschrift) ist

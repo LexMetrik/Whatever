@@ -11,6 +11,7 @@ import {
   pruefeCoverage,
   fedlexEliAusUrl,
   pruefeLabelUrl,
+  verbindeExits,
 } from '../../scripts/normtext/drift-logik.ts';
 import type { NormSnapshot, RegisterEintragLite } from '../../scripts/normtext/drift-logik.ts';
 
@@ -268,4 +269,18 @@ describe('pruefeLabelUrl', () => {
       ]),
     ).toEqual([]);
   });
+});
+
+// Gegenprüfung 5.10.2026 (MONITOR-Rückbau, Nebenbefund): Netzfehler einer Kanton-/HTM-/ZH-/
+// PDF-Gruppe endeten als console.warn mit Exit 0 — ein dauerhaft blindes Netz-Glied blieb
+// grün. Jetzt Exit 2 («keine Aussage»), echte Drift (1) hat Vorrang.
+describe('verbindeExits', () => {
+  it('alles grün ⇒ 0', () => expect(verbindeExits([0, 0])).toBe(0));
+  it('Netzfehler ohne Drift ⇒ 2', () => expect(verbindeExits([0, 2])).toBe(2));
+  it('echte Drift hat Vorrang vor Netzfehler ⇒ 1', () => {
+    expect(verbindeExits([2, 1])).toBe(1);
+    expect(verbindeExits([1, 2])).toBe(1);
+  });
+  it('unerwarteter Exit (Absturz, 127) ist rot ⇒ 1', () => expect(verbindeExits([2, 127])).toBe(1));
+  it('leere Liste ⇒ 0', () => expect(verbindeExits([])).toBe(0));
 });

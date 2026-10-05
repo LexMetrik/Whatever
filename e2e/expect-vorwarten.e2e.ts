@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 6
 // Stolperdraht und Aussage-Gleichheit für `e2e/helpers/expectVorwarten.ts`
 // (W2·29-WERKBANK-LESER, QS-Nebenfund 23.9.2026).
 //

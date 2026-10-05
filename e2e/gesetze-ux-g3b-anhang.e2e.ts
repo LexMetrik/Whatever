@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d G3b — Anhang-Rendering (③ ERLASS_MIT_ANHANG + ⑤ STAATSVERTRAG-Protokolle),

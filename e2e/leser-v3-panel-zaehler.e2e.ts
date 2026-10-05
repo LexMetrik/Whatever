@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // ─── H3 · Zähler und Erreichbarkeit des Rechtsprechungs-Panels ───────────────
 //
 // ZWEI ZUSAGEN, die diese Spec messbar macht:

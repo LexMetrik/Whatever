@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 5
 // W2·17-UI-BEFUNDE · PE-H1-D01/D02 + Erlass-Blatt — Tab in modalen Leser-Flächen.
 //
 // ── DER BEFUND (Inventar-Lauf 1.10.2026, gemessen am gebauten Stand) ─────────

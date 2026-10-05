@@ -1,17 +1,5 @@
 #!/usr/bin/env python3
-"""VORSCHLAGSDATEI (QS-SELBSTOPT 7.8.2026) — ersetzt .claude/hooks/gate-stopp.py.
-
-Anwendung durch David (die Berechtigungsschicht sperrt Hook-Änderungen für
-Sessions — zu Recht):
-
-    cp scripts/hooks-vorschlag-gate-stopp.py .claude/hooks/gate-stopp.py
-    git add .claude/hooks/gate-stopp.py scripts/hooks-vorschlag-gate-stopp.py
-    git rm scripts/hooks-vorschlag-gate-stopp.py
-
-Danach diese Vorschlagsdatei löschen (sonst zweite Wahrheit, §5).
-
-────────────────────────────────────────────────────────────────────────────
-Stop-Hook (FAHRPLAN-TOKEN-DISZIPLIN.md T-2, Ja David 11.6.2026): fährt
+"""Stop-Hook (FAHRPLAN-TOKEN-DISZIPLIN.md T-2, Ja David 11.6.2026): fährt
 das schnelle Tor (tsc · vitest · golden:vergleich via scripts/gate.sh
 schnell) NATIV nach jeder Antwort, wenn tor-relevante Dateien geändert sind.
 
@@ -30,6 +18,10 @@ GRÜN geprüften, wird übersprungen. Kein Schutzverlust: jeder neue Zustand
 läuft weiterhin; Rot speichert nie einen Fingerabdruck. mtime als Zutat ist
 bewusst konservativ — erneutes Speichern erzeugt höchstens einen ÜBERFLÜSSIGEN
 Lauf, nie einen übersprungenen nötigen.
+
+§17-Nachtrag 5.10.2026 (QS-CPU, Regel David «schwere Läufe in die CI»):
+statt gate.sh schnell nur `vitest related` der geänderten Dateien; Typen,
+volle Suite und Golden belegt der CI-Lauf am Kopf-SHA.
 
 Grenze (Anthropic best-practices, Abruf 7.8.2026): Claude Code übersteuert
 einen Stop-Hook nach 8 Blockierungen in Folge — dieser Hook ist ein
@@ -100,14 +92,19 @@ try:
 except OSError:
     pass
 
+ziele = [z[3:].split(" -> ")[-1].strip().strip('"') for z in st.stdout.splitlines()]
+ziele = [z for z in ziele if z.startswith(("src/", "scripts/")) and os.path.isfile(os.path.join(repo, z))]
+if not ziele:
+    sys.exit(0)  # nur Konfig/gelöscht: Beleg ist der CI-Lauf
+
 try:
     gate = subprocess.run(
-        ["bash", "scripts/gate.sh", "schnell"],
+        ["npx", "vitest", "related", "--run", "--passWithNoTests",
+         "--reporter=dot", *ziele],
         cwd=repo, capture_output=True, text=True, timeout=240,
     )
 except Exception as e:
-    print(f"gate-stopp.py: Tor-Lauf fehlgeschlagen ({e}) — bitte "
-          f"`npm run gate:schnell` von Hand fahren.", file=sys.stderr)
+    print(f"gate-stopp.py: vitest related fehlgeschlagen ({e}).", file=sys.stderr)
     sys.exit(2)
 
 if gate.returncode == 0:
@@ -119,9 +116,9 @@ if gate.returncode == 0:
     sys.exit(0)
 
 print(
-    "STOP-HOOK: gate:schnell ist ROT (automatischer Lauf nach deiner "
-    "Antwort; Änderungen in tor-relevanten Dateien liegen vor).\n\n"
-    + gate.stdout + gate.stderr +
+    "STOP-HOOK: `vitest related` ist ROT (automatischer Lauf nach deiner "
+    "Antwort für die geänderten Dateien).\n\n"
+    + "\n".join((gate.stdout + gate.stderr).splitlines()[-120:]) +
     "\nUrsache im Code beheben (§6: kein `npm run golden`, Tests nicht "
     "aufweichen; Diagnose nach §6 Ziff. 5 — rote Datei gezielt, "
     "golden:diff je Fall). Stammt der Bruch NICHT von deiner Änderung "

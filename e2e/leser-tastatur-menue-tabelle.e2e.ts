@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: nacht
 // ═══ W2·17-UI-BEFUNDE · Leser-Tastatur im Browser: Menü, Tabelle, Auto-Repeat ═
 //
 // Gegenstück zu `src/tests/leser-tastatur-menue-tabelle-w217.test.tsx` (dort die

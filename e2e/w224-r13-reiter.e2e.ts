@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: nacht
 // ═══ W2·24 R13 · DIE REITERLEISTE ALS BROWSER-REITERBAND ════════════════════
 //
 // Die Prüfrunde R13 (7.9.2026, `scratchpad/w224-r13-befunde.md`) hat die Leiste
