@@ -225,7 +225,7 @@ EINTRAEGE=(
   "pueg|cc/1986/895_895_895|20260508|1|art_1|942.20"
   "fidleg|cc/2019/758|20261001|3|art_1|950.1"
   "kag|cc/2006/822|20261001|2|art_1|951.31"
-  "finig|cc/2018/801|20261001|0|art_1|954.1"
+  "finig|cc/2018/801|20261001|1|art_1|954.1"
   "finfrag|cc/2015/853|20240201|5|art_1|958.1"
   "vag|cc/2005/734|20240901|6|art_1|961.01"
   # ── Punkt 12 Batch 2 (24.6.2026, Bund-VERORDNUNGEN Volltext, Promotion aus

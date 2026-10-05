@@ -1455,7 +1455,8 @@
     "2023-08-01",
     "2024-01-01",
     "2024-07-01",
-    "2025-04-01"
+    "2025-04-01",
+    "2027-01-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {},
@@ -1781,6 +1782,11 @@
         "typ": 1,
         "datum": "2025-04-01",
         "fassung": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/509",
+        "typ": 1,
+        "datum": "2027-01-01"
       }
     ],
     "ocStamm": {
@@ -2101,6 +2107,13 @@
         "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
         "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
         "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/509": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2025-03-21",
+        "titelDe": "Bundesgesetz vom 21. März 2025 über die Aufsicht und Transparenz in den Energiegrosshandelsmärkten (BATE)",
+        "titelFr": "Loi fédérale du 21 mars 2025 sur la surveillance et la transparence des marchés de gros de l’énergie (LSTE)",
+        "titelIt": "Legge federale del 21 marzo 2025 sulla vigilanza e la trasparenza nei mercati dell’energia all’ingrosso (LVTE)"
       }
     }
   }
