@@ -292,9 +292,9 @@ Check in den Branch-Regeln · kantonale Verifikationen ausserhalb BS.
   Merge-Treiber-Politik für Register und generierte Projektionen;
   Session-Karten-Pflicht in `STRUKTUR.md` (Rotation nach
   `archiv/STRUKTUR-SESSIONKARTEN.md`).
-- **Plan-Steuerung**: `npm run plan:next` (oberster offener Schritt) ·
-  `npm run fahrplan` (Detail-Slice) · Erledigtes wird abgehakt — der
-  Plan wird in beide Richtungen gepflegt (§14).
+- **Plan-Steuerung**: `ROADMAP.md` (ZIEL · JETZT · EINGANG) ·
+  `npm run fahrplan` (Detail-Slice) · der letzte PR eines Vorhabens
+  streicht es aus JETZT (§14; Planwerkzeug abgebaut 5.10.2026).
 - **Daten-Pflege**: LIK-Reihe monatlich nach BFS-Publikation ·
   Referenzzinssatz, Feiertage, Behördenadressen periodisch ·
   Fedlex-Konsolidierungsstände und LexWork-`version_uid` über

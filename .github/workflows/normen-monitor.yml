@@ -211,6 +211,8 @@ jobs:
           echo "Rot-Serie in Folge (inkl. diesem Lauf): ${serie}"
 
           # Offener Zettel: kein Wiederhol-Kommentar (seit 1.10.2026, Leser = Alarm-Zeile in plan:next).
+          # Seit 5.10.2026 (Umstieg L1, plan:next abgebaut) liest die Startabfrage jeder Session:
+          # gh issue list --state open --author "github-actions[bot]" (Skill bauschritt, Station A).
           nr="$offen"
           [ -n "$nr" ] || nr=$(for l in "--label alarm:normen-monitor" ""; do gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" && break; done | grep -oE '[0-9]+$')
 

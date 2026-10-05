@@ -449,9 +449,10 @@ Wirkung ist **dollar-seitig** (höhere cacheRead-Quote), das Token-*Volumen* ble
 
 ## 7 · Offen / abhängig
 
-- **T19 Warn-Injektions-Entfernung** erledigt 11.7.2026: Präfix byte-stabil; Schutzfunktion trägt `struktur-rotieren.py`, Lag-Audit on demand `npm run struktur:aktuell`. (Wortlaut der Begründung: Archiv §7-Offen.)
+- **T19 Warn-Injektions-Entfernung** erledigt 11.7.2026: Präfix byte-stabil; Schutzfunktion trägt `struktur-rotieren.py`, Lag-Audit on demand `npm run struktur:aktuell` (abgebaut 5.10.2026, Umstieg L1). (Wortlaut der Begründung: Archiv §7-Offen.)
 - **check:plan** ist auf `origin/main` bis zum Merge von #176 rot (`QS-TOK`-@meta verwaist);
-  wird von #176 geheilt. P3 fixt das nicht selbst (P1b-Fläche).
+  wird von #176 geheilt. P3 fixt das nicht selbst (P1b-Fläche). *(Erledigt; Tor
+  mit dem Planwerkzeug abgebaut 5.10.2026, Umstieg L1.)*
 
 ---
 

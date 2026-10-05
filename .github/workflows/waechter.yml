@@ -186,7 +186,9 @@ jobs:
       # Alarm geht nie am Label verloren (Zweitprüfung #1237). fedlex-frische: dort
       # ist der Zettel das einzige Signal, nur die Suche wird Warnung, Anlage-Fehler = rot.
       # Seit 1.10.2026 bei offenem Zettel KEIN Wiederhol-Kommentar (#750: 25 Bot-Kommentare,
-      # kein Leser) — Leser ist die Alarm-Zeile in `plan:next` (scripts/plan/lage.ts).
+      # kein Leser) — Leser war die Alarm-Zeile in `plan:next` (scripts/plan/lage.ts);
+      # seit 5.10.2026 (Umstieg L1, Planwerkzeug abgebaut) die Startabfrage jeder Session
+      # `gh issue list --state open --author "github-actions[bot]"` (Skill bauschritt, Station A).
       - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen
         if: failure()
         env:
