@@ -136,8 +136,9 @@ npm run check:perf-budget  # liest dist, Chrome-frei
   zuordnen, dann über Neu-Schreiben entscheiden (nur deklariert).
 - Bei zusätzlichem `check:netz`/`check:zitate`: vorher Anker-Count der
   /tmp-Fedlex-Caches verifizieren (Workflow-Agents überschreiben sie).
-  `check:netz` ist nur bei Gesetzestext-Befund rot (Exit 1); Bericht-Tore
-  warnen; Exit 2 heisst «unvollständig», nicht grün (Stand 5.10.2026).
+  `check:netz` ist nur bei Bundes-Gesetzestext-Befund rot (Exit 1); Bericht-
+  Tore (auch Kantons-Drift `normtext-netz`) warnen; Exit 2 eines Bundes-Glieds
+  heisst «unvollständig», nicht grün (Stand 5.10.2026).
 
 ## 2 · Bug-Check §9 (nach Diff-Klasse, 15.8.2026)
 

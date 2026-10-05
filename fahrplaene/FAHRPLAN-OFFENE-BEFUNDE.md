@@ -111,6 +111,11 @@ der rest muss nicht zu einem rot führen.» — Ergänzung, die Diagnosen oben b
   API-Vertragstests, `check:rss-oc`, `check:pdf-quellen-netz`, `check:vernehmlassungen-alter`.
 - Ein roter Monitor ist damit Session-Arbeit nur noch bei Gesetzestext; Bericht-Hinweise sind
   kein Auftrag ohne EINGANG-Zeile.
+- Nachtrag 5.10.2026 (Entscheid David «reduziere sonst einfach nur noch auf bund.»): die
+  Kette oben ist überholt — `check:normtext-netz` (Kantons-Drift LexWork/HTM/ZH/kantonale PDFs,
+  ~1300 Erlasse) wanderte in `check:netz:bericht`. Kette = caches · zitate · fedlex-versionen
+  `--kanonik-textvergleich` · pdf-netz (EMRK/NYÜ über Fedlex). Kantons-Drift wird weiter
+  erkannt und gemeldet, färbt nie rot, ihr Exit 2 öffnet keinen Netz-Zettel.
 
 Erledigt und hier als Beleg belassen:
 

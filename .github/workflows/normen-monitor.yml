@@ -1,21 +1,23 @@
-# ─── Normen-Monitor: wöchentliche Wache über den GESETZESTEXT ───────────────
+# ─── Normen-Monitor: wöchentliche Wache über den BUNDES-GESETZESTEXT ────────
 # (STRATEGIE-PLATTFORM.md F2.4 · QS-OPT O-1 · Rückbau MONITOR 5.10.2026)
 #
 # Entscheid David 5.10.2026: «wichtig ist gesetzestext. der rest muss nicht zu einem rot
-# führen.» Darum zwei Klassen in EINEM Lauf (`npm run check:netz`, Runner
-# scripts/run-netz-alle.ts — Klassen-Begründung dort):
-#   • ROT + Alarm-Zettel nur, wenn gespeicherter Normtext/Pin von der amtlichen Fassung
-#     abweicht oder ein Zitat ins Leere zeigt (`check:netz:kette`: caches · zitate ·
-#     fedlex-versionen · normtext-netz · pdf-netz). Ein Kanonik-Wechsel ohne Textänderung
+# führen.» und «reduziere sonst einfach nur noch auf bund.» Darum zwei Klassen in EINEM
+# Lauf (`npm run check:netz`, Runner scripts/run-netz-alle.ts — Klassen-Begründung dort):
+#   • ROT + Alarm-Zettel nur, wenn gespeicherter BUNDES-Normtext/Pin von der amtlichen
+#     Fassung abweicht oder ein Zitat ins Leere zeigt (`check:netz:kette`: caches · zitate ·
+#     fedlex-versionen · pdf-netz). Ein Kanonik-Wechsel ohne Textänderung
 #     ist nur ein Hinweis (fedlex-frische.yml re-pinnt ihn von selbst).
-#   • Nicht erreichbare Quelle (Exit 2) eines Gesetzestext-Glieds: Wiederholung nach 90 s;
+#   • Nicht erreichbare Quelle (Exit 2) eines Bundes-Glieds: Wiederholung nach 90 s;
 #     bleibt sie, ist der Lauf UNVOLLSTÄNDIG — Netz-Zettel (alarm:normen-monitor-netz), kein
 #     Schliessen des Alarm-Zettels. Ist der Netz-Zettel schon offen (voriger Lauf ebenso
 #     blind), wird der Lauf ROT: dauerhafte Blindheit spätestens im zweiten Wochenlauf
 #     (Gegenprüfung 5.10.2026, Befund 1). Vollständiger Lauf schliesst den Netz-Zettel.
-#   • Alles andere (`check:netz:bericht`: Materialien, Revisionen, Abkürzungen, BE-Sprengel,
-#     Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
-#     (::warning:: + Tafel), färbt den Lauf aber NICHT rot. Wo ein Generator existiert,
+#   • Alles andere (`check:netz:bericht`: KANTONS-Drift `normtext-netz` — LexWork, HTM, ZH,
+#     kantonale PDFs; Kantone ruhen bis Phase 2 —, Materialien, Revisionen, Abkürzungen,
+#     BE-Sprengel, Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
+#     (::warning:: + Tafel), färbt den Lauf aber NICHT rot und öffnet keinen Zettel (auch
+#     Exit 2 eines Bericht-Glieds nicht). Wo ein Generator existiert,
 #     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen)
 #     und fedlex-frische.yml (Re-Pins, Revisionen); der Rest bleibt Handarbeit nach Bericht
 #     (§7: Materialien-Snapshots, Fedlex-Abkürzungen, Tarif, LIK, Verfall).
@@ -38,7 +40,7 @@ env:
 
 jobs:
   normen:
-    name: Gesetzestext (check:netz) · Wochenbericht
+    name: Bundes-Gesetzestext (check:netz) · Wochenbericht
     runs-on: ubuntu-latest
     # Notbremse mit Reserve, nicht Taktgeber (Lauf 5.10.2026: ~25 min seriell).
     timeout-minutes: 45
@@ -65,7 +67,7 @@ jobs:
           nr=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor-netz&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           echo "nummer=${nr}" >> "$GITHUB_OUTPUT"
 
-      - name: Gesetzestext rot · Rest Bericht — npm run check:netz
+      - name: Bundes-Gesetzestext rot · Rest Bericht — npm run check:netz
         id: netz
         env:
           NETZ_TAFEL_DATEI: ${{ runner.temp }}/netz-tafel.md
@@ -77,7 +79,7 @@ jobs:
       # gh issue list --state open --author "github-actions[bot]", Skill bauschritt).
       # ERR-Trap → Warnung statt Lauf-Rot (Zettel-Muster waechter.yml, 1.10.2026).
       # Nur bei rotem check:netz (nicht bei Infrastruktur-Rot wie `npm ci` — das meldet der
-      # Wächter): der Zettel behauptet einen Gesetzestext-Befund.
+      # Wächter): der Zettel behauptet einen Bundes-Gesetzestext-Befund.
       # rot_grund=netz (nur die Zwei-Wochen-Grenze griff) ⇒ kein Gesetzestext-Zettel; das
       # trägt der Netz-Zettel unten.
       - name: Bei Rot — Aufgaben-Zettel anlegen (falls keiner offen)
@@ -92,11 +94,11 @@ jobs:
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           if [ -n "$offen" ]; then echo "Zettel #${offen} ist offen — kein neuer."; exit 0; fi
           tafel=$( [ -f "$TAFEL" ] && cat "$TAFEL" || echo "(Tafel fehlt — Lauf-Log lesen)")
-          rumpf="Gespeicherter Gesetzestext weicht von der amtlichen Fassung ab (oder ein Zitat zeigt ins Leere). Vor jeder Handarbeit: offene Bot-PRs prüfen (Fedlex-Frische re-pinnt überholte Fassungen selbst). Lauf: ${RUN_URL}
+          rumpf="Gespeicherter Bundes-Gesetzestext weicht von der amtlichen Fassung ab (oder ein Zitat zeigt ins Leere). Vor jeder Handarbeit: offene Bot-PRs prüfen (Fedlex-Frische re-pinnt überholte Fassungen selbst). Lauf: ${RUN_URL}
 
           ${tafel}"
           for l in "--label alarm:normen-monitor" ""; do
-            gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Gesetzestext prüfen (§7)" --body "$rumpf" && break
+            gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Bundes-Gesetzestext prüfen (§7)" --body "$rumpf" && break
           done
 
       # Netz-Zettel (EIN Zettel, Label alarm:normen-monitor-netz): unvollständig ⇒ anlegen bzw.
@@ -120,7 +122,7 @@ jobs:
           if [ -n "$NR" ]; then
             # Wortlaut nach rot_grund (Nebenfund B): Gesetzestext-Rot trägt der Alarm-Zettel.
             if [ "$ROT_GRUND" = "gesetzestext" ]; then
-              wie="Lauf ROT wegen eines Gesetzestext-Befunds (Alarm-Zettel alarm:normen-monitor); die Zwei-Wochen-Grenze ist zusätzlich erreicht"
+              wie="Lauf ROT wegen eines Bundes-Gesetzestext-Befunds (Alarm-Zettel alarm:normen-monitor); die Zwei-Wochen-Grenze ist zusätzlich erreicht"
             else
               wie="Lauf ROT (Zwei-Wochen-Grenze)"
             fi
@@ -129,8 +131,8 @@ jobs:
           ${tafel}"
             exit 0
           fi
-          gh label create alarm:normen-monitor-netz --color FBCA04 --description "Normen-Monitor: Gesetzestext-Quelle nicht erreichbar (normen-monitor.yml)" >/dev/null 2>&1 || true
-          gh issue create --label alarm:normen-monitor-netz --title "🟠 Normen-Monitor unvollständig ($(date +%F)) — Gesetzestext-Quelle nicht erreichbar" --body "Mindestens ein Gesetzestext-Tor lieferte auch nach Wiederholung Exit 2 (keine Aussage). Bleibt das im nächsten Wochenlauf so, wird der Monitor ROT. Quelle/Endpunkt prüfen (§8). Lauf: ${RUN_URL}
+          gh label create alarm:normen-monitor-netz --color FBCA04 --description "Normen-Monitor: Bundes-Gesetzestext-Quelle nicht erreichbar (normen-monitor.yml)" >/dev/null 2>&1 || true
+          gh issue create --label alarm:normen-monitor-netz --title "🟠 Normen-Monitor unvollständig ($(date +%F)) — Bundes-Gesetzestext-Quelle nicht erreichbar" --body "Mindestens ein Bundes-Gesetzestext-Tor lieferte auch nach Wiederholung Exit 2 (keine Aussage). Bleibt das im nächsten Wochenlauf so, wird der Monitor ROT. Quelle/Endpunkt prüfen (§8). Lauf: ${RUN_URL}
 
           ${tafel}"
 
@@ -143,9 +145,9 @@ jobs:
         run: |
           set -euo pipefail
           trap 'echo "::warning::Netz-Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
-          gh issue close "$NR" --reason completed --comment "🟢 Gesetzestext-Tore am $(date +%F) wieder vollständig geprüft. Lauf: ${RUN_URL}"
+          gh issue close "$NR" --reason completed --comment "🟢 Bundes-Gesetzestext-Tore am $(date +%F) wieder vollständig geprüft. Lauf: ${RUN_URL}"
 
-      # Gegenstück: bei Grün (= kein Gesetzestext-Befund) den offenen Zettel schliessen (§8) —
+      # Gegenstück: bei Grün (= kein Bundes-Gesetzestext-Befund) den offenen Zettel schliessen (§8) —
       # NUR bei vollständigem Lauf: ein blindes Tor ist keine Entwarnung (Befund 1, 5.10.2026).
       - name: Bei Grün — offenen Aufgaben-Zettel schliessen
         if: success() && steps.netz.outputs.netz_unvollstaendig != '1'
@@ -157,4 +159,4 @@ jobs:
           trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
           offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
           if [ -z "$offen" ]; then echo "Monitor grün, kein offener Zettel."; exit 0; fi
-          gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor grün am $(date +%F) — kein Gesetzestext-Befund mehr. Lauf: ${RUN_URL}"
+          gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor grün am $(date +%F) — kein Bundes-Gesetzestext-Befund mehr. Lauf: ${RUN_URL}"
