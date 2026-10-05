@@ -1528,3 +1528,34 @@ Neu 5.10.2026 (QS-CI-ZEIT E3; kein verschobener Altkommentar).
   # erscheint spätestens am nächsten Morgen als Zettel. Bundle-Grösse/-Topologie
   # bleibt bei jedem Queue-Eintrag (art=code) merge-blockierend.
 ```
+
+## ci-071 · (mehrere Jobs) · npm-ci / Playwright-Browser-Cache (Cache nur lesen)
+
+Neu 5.10.2026 (QS-CI-ZEIT E5; kein verschobener Altkommentar).
+
+```text
+  # ── Actions-Cache: speichern nur auf main, sonst nur lesen (QS-CI-ZEIT E5) ───
+  # ANLASS: Actions-Cache 8,78 von 10 GB (5.10.2026). `gh cache list`
+  # (5.10.2026): unter refs/pull/*/merge und refs/heads/gh-readonly-queue/*
+  # 10 npm-Caches à ~136 MB und 15 Playwright-Caches à 258 MB. Ursache: ein
+  # Lauf auf einem PR-/Queue-Ref, dessen Schlüssel (package-lock-Hash) auf main
+  # noch fehlt, speichert einen EIGENEN Eintrag — für alle anderen Refs
+  # unsichtbar (Cache-Scope je Ref), also reine Kopie. Typischer Auslöser: ein
+  # PR, der package-lock.json ändert (gesehen am Schlüssel 68f9a10…: PR-,
+  # Queue- und main-Einträge nebeneinander).
+  #
+  # UMSETZUNG:
+  #   · npm: die acht Jobs mit `setup-node … cache: npm` + `npx -y npm@11 ci`
+  #     nutzen die lokale Composite-Action `.github/actions/npm-ci`
+  #     (setup-node OHNE Auto-Cache, `actions/cache/restore` mit setup-nodes
+  #     Schlüssel/Pfad, `npm ci`). Gespeichert wird der npm-Cache nur noch auf
+  #     main: `deploy` (push main) behält `cache: npm`, ebenso die geplanten
+  #     Workflows (laufen auf main).
+  #   · Playwright (e2e-Shards): `actions/cache/restore` statt `actions/cache`.
+  #     Speicherer für main ist perf-nacht.yml (täglich, `actions/cache` mit
+  #     demselben Schlüssel). Nach einem package-lock-Wechsel fehlt der Eintrag
+  #     bis zum nächsten Nachtlauf — die Shards laden Chromium dann aus dem Netz
+  #     (scripts/ci/playwright-install.sh, mit Wache), Kosten: Sekunden bis
+  #     ~1 min je Shard, kein Korrektheitsrisiko.
+  # Fehlgriff ist nie ein Fehler, nur langsamer (Registry/CDN statt Cache).
+```

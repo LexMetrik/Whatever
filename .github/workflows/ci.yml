@@ -373,11 +373,8 @@ jobs:
     steps:
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-008
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
       - name: Build (ohne Typprüfung — die macht `tore-typen`)
         run: npm run build:dist
@@ -409,11 +406,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
       - name: Tests (volle Ausgabe, Shard ${{ matrix.shard }}/2)
         run: npm test -- --shard=${{ matrix.shard }}/2
@@ -430,11 +424,8 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: Lint (volle Ausgabe, nie tail!)
         run: npm run lint
 
@@ -451,11 +442,8 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: Typprüfung (tsc -b, alle drei Projekte)
         run: npx tsc -b
 
@@ -516,11 +504,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-013
       - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
         env:
@@ -725,18 +710,16 @@ jobs:
         gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist
-      - name: Playwright-Browser-Cache
-        uses: actions/cache@v6
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - name: Playwright-Browser-Cache (nur lesen, gespeichert nachts auf main)
+        uses: actions/cache/restore@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
@@ -914,11 +897,8 @@ jobs:
       TZ: Europe/Zurich
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
@@ -939,11 +919,8 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
+      - uses: ./.github/actions/npm-ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
         run: npm run check:merge-schutz
 

@@ -1,0 +1,36 @@
+# .github/actions/npm-ci — Node 22 + npm ci, npm-Cache NUR LESEN.
+#
+# ANLASS (QS-CI-ZEIT E5, 5.10.2026): Actions-Cache bei 8,78 von 10 GB. Messung
+# `gh cache list` 5.10.2026: unter refs/pull/*/merge und
+# refs/heads/gh-readonly-queue/* lagen 10 npm-Caches à ~136 MB und 15
+# Playwright-Caches à 258 MB — Kopien desselben Schlüssels, weil jeder Lauf auf
+# einem PR-/Queue-Ref bei einem Fehlgriff (neuer package-lock-Hash, noch kein
+# main-Eintrag) seinen EIGENEN Eintrag speichert, und die sind für andere Refs
+# unsichtbar (Cache-Scope je Ref). `actions/setup-node` mit `cache: npm`
+# speichert implizit im Post-Schritt; einen Nur-Lesen-Schalter hat es nicht.
+#
+# REGEL: in ci.yml wird der npm-Cache nur WIEDERHERGESTELLT (actions/cache/
+# restore); GESPEICHERT wird er nur auf main — durch Jobs, die dort mit
+# `setup-node … cache: npm` laufen (ci.yml `deploy`, perf-nacht.yml und die
+# übrigen geplanten Workflows). Damit der Treffer klappt, sind Schlüssel UND
+# Pfad die von setup-node: `node-cache-<RUNNER_OS>-x64-npm-<hashFiles(lock)>`
+# (gemessen: derselbe Hash-Teil wie beim Playwright-Schlüssel, der
+# `hashFiles('package-lock.json')` nutzt) und `npm config get cache` =
+# /home/runner/.npm (der Pfad geht in die Cache-Version ein).
+# Fehlgriff = kein Schaden: `npm ci` lädt dann aus der Registry.
+name: npm ci (Cache nur lesen)
+description: setup-node 22 ohne Auto-Cache, npm-Cache aus main wiederherstellen, npx -y npm@11 ci
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v5
+      with:
+        node-version: 22
+    - name: npm-Cache wiederherstellen (nur lesen, gespeichert wird auf main)
+      uses: actions/cache/restore@v6
+      with:
+        path: /home/runner/.npm
+        key: node-cache-${{ runner.os }}-x64-npm-${{ hashFiles('package-lock.json') }}
+    - name: npm ci
+      shell: bash
+      run: npx -y npm@11 ci
