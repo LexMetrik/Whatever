@@ -24,10 +24,10 @@
 // Nicht erfasst werden «Randtitel von Art. N» (Randtitel zählt nicht, Entscheid David 3.10.2026) und Schlusstitel-Artikel (kein
 // Korpus-Schlüssel ableitbar).
 
-import type { HistorieEreignis } from './historie-parse';
+import type { AnweisungsTreffer, HistorieEreignis } from './historie-parse';
 
 /** Umfang einer Anweisung (siehe Kopf). */
-export type AnweisungsUmfang = { liste: string } | { ganzerErlass: true; erwartet: string };
+type AnweisungsUmfang = { liste: string } | { ganzerErlass: true; erwartet: string };
 
 /** Eine Anweisung eines Änderungserlasses, die den Körper von Artikeln ändert, ohne am Artikel zu stehen. */
 export interface Anweisung {
@@ -200,7 +200,7 @@ export const ANWEISUNGEN: readonly Anweisung[] = [
 // ── Artikelliste → Stellen ─────────────────────────────────────────────────────────────────────────────────────
 
 /** Eine Stelle einer Anweisung: ein Artikel (Label ohne Unterstrich: «28a») und der Absatz/die Ziffer, falls genannt. */
-export interface Stelle {
+interface Stelle {
   /** Absatz-Angabe im Wortlaut («1», «2 und 3», «1–3»); null = der ganze Artikel (kein Absatz genannt). */
   absatz: string | null;
   /** Ziffer-Angabe («1», «1–4»); null = keine. */
@@ -335,15 +335,6 @@ function ereignis(a: Anweisung, stelle: Stelle | null): HistorieEreignis {
 
 /** Korpus-Token («28_a») → Artikel-Label der Listen («28a»). */
 export const tokenZuLabel = (token: string): string => token.replace(/_/g, '');
-
-/** Ein Anweisungs-Ereignis samt dem Vorbehalt, unter dem es gilt (siehe `anweisungsEreignisse`). */
-export interface AnweisungsTreffer {
-  ereignis: HistorieEreignis;
-  /** true = abgeleitete Betroffenheit («Im ganzen Erlass»): `baueArtikelHistorie` streicht das Ereignis, wenn ein JÜNGERES
-   *  Überschrift-Ereignis (Neufassung/Einfügung des Abschnitts) den Artikel nach der Anweisung geschaffen oder neu gefasst
-   *  haben kann. Bei genannten Artikeln (`liste`) false. */
-  ueberschriftVorbehalt: boolean;
-}
 
 /**
  * Die Anweisungs-Ereignisse EINES Artikels (nach In-Kraft-Datum aufsteigend). `koerperText` = der heutige Körper-Text des Artikels:

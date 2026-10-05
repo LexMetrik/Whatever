@@ -24,7 +24,8 @@ import { ursprungVorsatzSchnitte } from './historie-ursprung';
 import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 import { randtitelKnoten } from './darstellung';
 import { randtitelMitAufzaehler, randtitelNurRandtitel } from './historie-randtitel';
-import type { AnweisungsTreffer } from './generalanweisungen';
+import { ganzeFassung, nurTeilDaten } from './historie-fassungsform';
+export { ganzeFassung, nurTeilDaten };
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
 interface FnLink {
@@ -66,6 +67,15 @@ export type HistorieTyp =
   | 'berichtigt' // «Berichtigt durch/von … / Berichtigung …» (Redaktionskorrektur)
   | 'inkraft' // datierte In-Kraft-Klausel OHNE erkennbaren Änderungs-Verb-Kopf
   | 'urspruenglich'; // «Ursprünglich Art. X» (Ur-Nummerierung, undatiert)
+
+/** Ein Anweisungs-Ereignis samt dem Vorbehalt, unter dem es gilt (siehe `anweisungsEreignisse` in generalanweisungen.ts). */
+export interface AnweisungsTreffer {
+  ereignis: HistorieEreignis;
+  /** true = abgeleitete Betroffenheit («Im ganzen Erlass»): `baueArtikelHistorie` streicht das Ereignis, wenn ein JÜNGERES
+   *  Überschrift-Ereignis (Neufassung/Einfügung des Abschnitts) den Artikel nach der Anweisung geschaffen oder neu gefasst
+   *  haben kann. Bei genannten Artikeln (`liste`) false. */
+  ueberschriftVorbehalt: boolean;
+}
 
 /** Ein strukturiertes Historie-Ereignis (aus genau einem Prosa-Segment). */
 export interface HistorieEreignis {
@@ -454,11 +464,8 @@ export function baueArtikelHistorie(
         // Herkunft (§8): Ereignisse einer Sektions-Fussnote an einem geteilten Gliederungsknoten tragen das Überschrift-
         // Label — auch am Träger-Artikel. Eigene Sachüberschrift/Randtitel bzw. Ein-Artikel-Knoten (B4) bleiben eigen.
         if (opts.geteilteUeberschriften === undefined || opts.geteilteUeberschriften.has(fn.sektion)) {
-          // W2·32 (SVG 89a): nennt die Fussnote NUR Teil-Daten («…, Abschn. 2 in Kraft seit …, Abschn. 1 in Kraft seit …»), ohne
-          // unqualifiziertes Haupt-Datum, gehört das erste Datum nicht dem Träger-Artikel — dann auch am Träger ohne Datum.
-          const teilweise = teilweiseFussnote(text)
-            ? { teilweise: text, ...(nurTeilDaten(text) ? { datum: null, wirkung: false } : {}) }
-            : {};
+          // W2·32 (SVG 89a): nur Teil-Daten, kein Haupt-Datum ⇒ auch der Träger ohne Datum (`nurTeilDaten`).
+          const teilweise = teilweiseFussnote(text) ? { teilweise: text, ...(nurTeilDaten(text) ? { datum: null, wirkung: false } : {}) } : {};
           evs = evs.map((e) => ({ ...e, ueberschrift: fn.sektion!, ...teilweise }));
         }
       }
@@ -500,24 +507,18 @@ export function baueArtikelHistorie(
       if (!giltSeit || e.datum > giltSeit) giltSeit = e.datum;
     }
   }
-  // Teilaufhebung (W2·32, 5.10.2026; Befund R2-02 der Prüfung Rechtslogik 23.9.2026, OR 631): «Aufgehoben durch …» an einem
-  // Absatz, einer Ziffer/lit., einem Satz oder einer Körper-Position des Artikels ändert den Wortlaut des Artikels — er gilt in
-  // seiner heutigen Fassung erst seit diesem Tag. Dasselbe Prädikat wie bei der Ganzaufhebung, umgekehrt: nur Fussnoten, die
-  // `artikelAufhebungMoeglich` AUSSCHLIESST (Körper-Anker oder Teil-Skopus in der Prosa), und nie die einer Überschrift
-  // (`sektion`; deren Aufhebung trifft den Artikel nicht). Die Aufhebung der Sachüberschrift im Kopf bleibt aussen vor (Randtitel
-  // zählt nicht). Ein amtlich aufgehobener Artikel trägt kein «Gilt seit» (P7 #53, unten).
+  // Teilaufhebung (W2·32, Befund R2-02, OR 631): «Aufgehoben durch …» an einem Absatz/einer Ziffer/lit. ändert den Wortlaut — der
+  // Artikel gilt in heutiger Fassung erst seit diesem Tag. Umgekehrtes Prädikat zur Ganzaufhebung (`artikelAufhebungMoeglich`),
+  // nie Überschrift-Fussnoten (`sektion`), Aufhebung der Sachüberschrift zählt nicht (Randtitel). Ein amtlich aufgehobener
+  // Artikel trägt kein «Gilt seit» (P7 #53, unten).
   for (const fn of fussnoten ?? []) {
     if (fn.sektion || artikelAufhebungMoeglich(fn)) continue;
     for (const e of parseFussnoteHistorie(fn).ereignisse) {
       if (e.typ === 'aufgehoben' && e.datum && (!giltSeit || e.datum > giltSeit)) giltSeit = e.datum;
     }
   }
-  // Zurückgebaut am 5.10.2026 (W2·32-GENERALANWEISUNGEN, Entscheid David 4.10.2026 «A, und C als eigenen Roadmap-Schritt»): der
-  // Vorsichts-Proxy von Entscheid A (28 Artikel «Fassung» ohne Datum, wenn ein eigener Randtitel jünger war als der Körper-Stand)
-  // ist durch die erfassten Anweisungen (`opts.anweisungen`) ersetzt. Die 28 Artikel sind amtlich gegen die Fedlex-Konsolidierungen
-  // geprüft: 6 bekommen durch eine Anweisung ein jüngeres Datum (ZGB 28a/299/300/310, OR 706, PATG 110), 22 behalten ihr
-  // Fussnoten-Datum (bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md). Die Chronik zeigte den Randtitel-Eingriff
-  // durchgehend weiter.
+  // Entscheid-A-Proxy (Randtitel jünger als Körper ⇒ «Fassung» ohne Datum) am 5.10.2026 zurückgebaut (W2·32): ersetzt durch
+  // `opts.anweisungen`; Beleg und Ist/Soll der 28 Artikel: bibliothek/normtext/generalanweisungen-gilt-seit-2026-10-05.md.
   // Ganz-Artikel-Aufhebung (RL-11, Befund R2-01): nur Aufhebungs-Ereignisse aus
   // Fussnoten, deren Marker im Artikelkopf steht und deren Prosa keinen Teil-Skopus
   // nennt (artikelAufhebungMoeglich).
@@ -634,28 +635,6 @@ const SEKTION_ERBT: ReadonlySet<HistorieTyp> = new Set<HistorieTyp>(['eingefuegt
 /** Fussnoten-Text in Vergleichs-Normalform (wie `parseFussnoteHistorie`: ohne Auszeichnung, ein Leerzeichen, Tippfehler-Fix). */
 function fussnoteText(fn: FnEingang): string {
   return normalisiere(fn.text ?? '').replace(/^Aufgehobn durch(?=\s)/, 'Aufgehoben durch');
-}
-
-/**
- * B1 (Nachzug 2.10.2026): eine GANZE Fassung — die Fussnote beginnt (nach führendem Marker/Leerraum) mit «Fassung gemäss …»,
- * «Eingefügt durch …» oder «Fassung des <Ordnungszahl> Titels/Abschnitts/Kapitels …». Nur sie gilt für den ganzen Bereich unter
- * der Überschrift. Teil-Formeln — «Fassung dieses Wortes gemäss …» (ZGB 457–460), «Fassung des Randtit. …» (ZGB 20/21),
- * «Fassung des Tit. …» (AHVG 42/43), «Titel eingefügt durch …» — nennen die Überschrift
- * selbst oder einen Teil und werden nicht vererbt; Satzfragmente («… in der Fassung des BG …») erst recht nicht (B5).
- * Ein «Ursprünglich …»-VORSATZ vor dem Anker schneidet `ohneUrsprungVorsatz` vorher ab.
- */
-export function ganzeFassung(text: string): boolean {
-  return /^\s*(?:\d+[a-z]*\s+)?(?:Fassung gemäss|[Ee]ingefügt durch|Fassung des [^\s]+ (?:Titels|Abschnitts|Kapitels))/.test(text);
-}
-
-/**
- * W2·32: alle Inkrafttretens-Daten der Fussnote hängen an einer Teil-Klausel (Abschn./Art./Abs. …); unmittelbar nach dem
- * Erlass-Kopf («… des BG vom 15. Juni 2012, Abschn. 2 in Kraft seit …») steht kein unqualifiziertes Haupt-Datum.
- * Beispiel SVG 89a–89c: Abschn. 2 → 2013, Abschn. 3 → 2014, Abschn. 1 → 2019. Gegenbeispiel AHVG 39 («… (AHV 21), in Kraft
- * seit 1. Jan. 2024, Art. 40c in Kraft vom …»): das Haupt-Datum gilt für den Träger.
- */
-export function nurTeilDaten(text: string): boolean {
-  return /\bvom\s+\d{1,2}\.\s+\p{L}+\.?\s+\d{4}(?:\s*\([^)]*\))?\s*,\s*(?:Art|Abschn|Abs|Bst|Kap|Ziff|Tit)\.\s*\d/u.test(text);
 }
 
 /**
