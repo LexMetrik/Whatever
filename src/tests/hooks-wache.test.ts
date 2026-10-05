@@ -26,8 +26,8 @@ import { fileURLToPath } from 'node:url';
 //     stop_hook_active; Erfolgs-/Negationswörter mit Wortgrenzen + Negations-
 //     fenster; Artefakt-SHA nur kontextgebunden (commit|sha|head vor dem Hex).
 //   - abschluss-wache: stdin-/JSON-Feld heisst reason (nicht end_reason);
-//     Nachlass entsteht nur noch bei uncommitted/unpushed (wip allein löst
-//     nichts mehr aus, bleibt aber als Kontextfeld im Nachlass); korrupte
+//     Nachlass entsteht bei uncommitted/unpushed oder jetzt_offen (F17:
+//     gelandetes Vorhaben steht noch in ROADMAP JETZT, Abgleich 5.10.2026); korrupte
 //     .session-nachlass.json wird bei --start still geräumt.
 //
 // WICHTIG (Isolation): CLAUDE_PROJECT_DIR zeigt für jeden Testlauf auf ein
@@ -202,13 +202,14 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
         branch: 'x',
         uncommitted: ['M a'],
         unpushed: [],
-        wip: ['QS-X'],
+        jetzt_offen: [{ kuerzel: 'MONITOR', commit: 'abc fix' }],
       }),
     );
 
     const erster = laufe(ABSCHLUSS_WACHE, dir, '', ['--start']);
     expect(erster.status).toBe(0);
     expect(erster.stdout).toContain('NACHLASS-WACHE');
+    expect(erster.stdout).toContain('Vorhaben MONITOR');
     expect(existsSync(nachlassPfad)).toBe(false);
 
     const zweiter = laufe(ABSCHLUSS_WACHE, dir, '', ['--start']);
@@ -227,50 +228,92 @@ describe('abschluss-wache.py — SessionEnd/--start-Hook (§17)', () => {
     expect(existsSync(nachlassPfad)).toBe(false);
   });
 
-  it('SessionEnd: wip allein (ohne uncommitted/unpushed) löst KEINEN Nachlass aus', () => {
+  // F17-JETZT-Abgleich (Umstieg 5.10.2026): origin/main wird per update-ref simuliert.
+  const ROADMAP_MIT = '# Roadmap\n\n## JETZT\n\n1. **Normen-Monitor** (`MONITOR`) · S · Gegenprüfung ja\n\n## EINGANG\n';
+  const ROADMAP_OHNE = '# Roadmap\n\n## JETZT\n\n1. **Anderes** (`ANDERES`) · S\n\n## EINGANG\n- MONITOR erwähnt\n';
+
+  // Format der origin/main-Commits: «squash» = echtes GitHub-Merge-Queue-Squash
+  // (Trailer NICHT im letzten Absatz — danach `---------` und Co-authored-by,
+  // Gegenprüfung 5.10.2026 B1), «plain» = Trailer im letzten Absatz.
+  function mainMessage(trailer: string | null, format: 'squash' | 'plain'): string {
+    if (!trailer) return 'feat: x';
+    return format === 'squash'
+      ? `feat: x (#1)\n\nText\n\nRoadmap: ${trailer}\n\n---------\n\nCo-authored-by: X <x@example.invalid>`
+      : `feat: x\n\nRoadmap: ${trailer}`;
+  }
+  function repoMitMain(
+    roadmap: string, trailer: string | null, zweig: string,
+    opt: { format?: 'squash' | 'plain'; eigenerTrailer?: string } = {},
+  ): string {
     const dir = neuesTmpDir();
-    execFileSync('git', ['init', '-q'], { cwd: dir });
-    execFileSync('git', ['config', 'user.email', 'test@example.invalid'], { cwd: dir });
-    execFileSync('git', ['config', 'user.name', 'Test'], { cwd: dir });
-
-    writeFileSync(
-      join(dir, 'ROADMAP.md'),
-      '# Roadmap\n\n<!-- @meta id: QS-TEST · status: wip -->\n',
-    );
-    execFileSync('git', ['add', 'ROADMAP.md'], { cwd: dir });
-    execFileSync('git', ['commit', '-q', '-m', 'init'], { cwd: dir });
-    // Arbeitsbaum ist jetzt sauber — nur der wip-Status in ROADMAP.md steht.
-
+    const g = (...a: string[]) => execFileSync('git', a, { cwd: dir, encoding: 'utf8' }).trim();
+    g('init', '-q', '-b', 'main');
+    g('config', 'user.email', 'test@example.invalid');
+    g('config', 'user.name', 'Test');
+    writeFileSync(join(dir, 'ROADMAP.md'), roadmap);
+    g('add', 'ROADMAP.md');
+    g('commit', '-q', '-m', mainMessage(trailer, opt.format ?? 'squash'));
+    g('update-ref', 'refs/remotes/origin/main', g('rev-parse', 'HEAD'));
+    g('checkout', '-q', '-b', zweig);
+    if (opt.eigenerTrailer) {  // eigener Commit der Session über origin/main hinaus
+      g('commit', '-q', '--allow-empty', '-m', `feat: y\n\nRoadmap: ${opt.eigenerTrailer}`);
+    }
+    return dir;
+  }
+  const nachlassVon = (dir: string) => {
     const r = laufe(ABSCHLUSS_WACHE, dir, JSON.stringify({ reason: 'other' }));
     expect(r.status).toBe(0);
-    expect(existsSync(join(dir, '.session-nachlass.json'))).toBe(false);
+    const pfad = join(dir, '.session-nachlass.json');
+    return existsSync(pfad) ? JSON.parse(readFileSync(pfad, 'utf8')) : null;
+  };
+
+  it('(i) SessionEnd: Zweig MONITOR/x, MONITOR in JETZT, Squash-Commit (Trailer vor «---------») auf origin/main → Nachlass jetzt_offen', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'MONITOR/x'));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+    expect(n?.jetzt_offen[0].commit).toContain('feat: x');
+    expect(n?.uncommitted).toEqual([]);
+    expect(n?.unpushed).toEqual([]);
   });
 
-  it('SessionEnd: uncommitted löst Nachlass aus, wip erscheint darin als Kontext', () => {
-    const dir = neuesTmpDir();
-    execFileSync('git', ['init', '-q'], { cwd: dir });
-    execFileSync('git', ['config', 'user.email', 'test@example.invalid'], { cwd: dir });
-    execFileSync('git', ['config', 'user.name', 'Test'], { cwd: dir });
+  it('(i-b) wie (i), Commit-Format «plain» (Trailer im letzten Absatz) → ebenfalls Nachlass', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'MONITOR/x', { format: 'plain' }));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+  });
 
-    writeFileSync(
-      join(dir, 'ROADMAP.md'),
-      '# Roadmap\n\n<!-- @meta id: QS-TEST · status: wip -->\n',
-    );
-    execFileSync('git', ['add', 'ROADMAP.md'], { cwd: dir });
-    execFileSync('git', ['commit', '-q', '-m', 'init'], { cwd: dir });
+  it('(ii) SessionEnd: wie (i), aber MONITOR steht nicht mehr in JETZT → kein Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_OHNE, 'MONITOR', 'MONITOR/x'))).toBeNull();
+  });
 
-    // Uncommittete Änderung, damit der Nachlass-Zweig greift.
+  it('(iii) SessionEnd: wie (i), aber kein Trailer-Commit auf origin/main → kein Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, null, 'MONITOR/x'))).toBeNull();
+    // Trailer eines ANDEREN Vorhabens zählt nicht (Identität, nicht Substring).
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR2', 'MONITOR/x'))).toBeNull();
+  });
+
+  it('(iv) Fehlalarm-Schutz: Zweig claude/xyz OHNE eigenen Commit, origin/main-HEAD trägt Roadmap: MONITOR → KEIN Nachlass', () => {
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz'))).toBeNull();
+    expect(nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz', { format: 'plain' }))).toBeNull();
+  });
+
+  it('(v) Zweig claude/xyz mit EIGENEM Commit (Trailer Roadmap: MONITOR), origin/main frischer Squash-Commit mit MONITOR → Nachlass', () => {
+    const n = nachlassVon(repoMitMain(ROADMAP_MIT, 'MONITOR', 'claude/xyz', { eigenerTrailer: 'MONITOR' }));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('MONITOR');
+    expect(n?.unpushed).toEqual([]);  // ohne Upstream zählt nichts als ungepusht
+  });
+
+  it('(vi) Kürzel mit Kleinbuchstaben (W2·5l) wird erkannt, Vergleich case-insensitiv', () => {
+    const roadmap = '# Roadmap\n\n## JETZT\n\n1. **X** (`W2·5l`) · S\n\n## EINGANG\n';
+    const n = nachlassVon(repoMitMain(roadmap, 'W2·5l', 'claude/xyz', { eigenerTrailer: 'w2·5L' }));
+    expect(n?.jetzt_offen[0].kuerzel).toBe('W2·5l');
+  });
+
+  it('SessionEnd: uncommitted löst Nachlass aus, jetzt_offen bleibt dabei leer', () => {
+    const dir = repoMitMain(ROADMAP_OHNE, null, 'claude/xyz');
     writeFileSync(join(dir, 'unstaged.txt'), 'x\n');
-
-    const r = laufe(ABSCHLUSS_WACHE, dir, JSON.stringify({ reason: 'other' }));
-    expect(r.status).toBe(0);
-
-    const nachlassPfad = join(dir, '.session-nachlass.json');
-    expect(existsSync(nachlassPfad)).toBe(true);
-    const nachlass = JSON.parse(readFileSync(nachlassPfad, 'utf8'));
-    expect(nachlass.reason).toBe('other');
-    expect(nachlass.wip).toContain('QS-TEST');
-    expect(nachlass.uncommitted.length).toBeGreaterThan(0);
+    const n = nachlassVon(dir);
+    expect(n?.reason).toBe('other');
+    expect(n?.jetzt_offen).toEqual([]);
+    expect(n?.uncommitted.length).toBeGreaterThan(0);
   });
 });
 
