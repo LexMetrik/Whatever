@@ -1604,3 +1604,23 @@ Neu 5.10.2026 (QS-CI-ZEIT N2; kein verschobener Altkommentar).
   # FOLGE: ein Defekt, den nur eine Nacht-Spec fängt, landet bis zu einem Tag
   # später als Zettel (Label alarm:e2e-nacht) statt die Queue zu blockieren.
 ```
+
+## ci-073 · (perf-nacht.yml) · e2e-nacht (Browser-Nacht gegen main)
+
+Neu 5.10.2026 (QS-CI-ZEIT N3; Gegenstück zu ci-072, steht hier, weil der
+Nachtlauf die aus ci.yml genommenen Specs auffängt; Kopfkommentar in
+perf-nacht.yml trägt denselben Anlass).
+
+```text
+  # ── Nacht-Specs täglich gegen main (QS-CI-ZEIT N3) ─────────────────────────
+  # perf-nacht.yml bekommt den zweiten Job `e2e-nacht` (02:17 UTC + Handstart):
+  # npm ci, build:dist, Playwright-Cache nur lesen (Speicherer bleibt der Job
+  # lighthouse), `npm run test:e2e:gruppe -- nacht`, Flacker-Wächter mit
+  # flake-zettel.sh (nur ref main), Zettel `alarm:e2e-nacht` bei Rot
+  # (dedupliziert, Kommentar statt Duplikat), Schliessen bei Grün.
+  # Ein Job ohne Shards (~22 Testminuten, 2 Worker). Workflow-Name neu
+  # «Nacht-Läufe gegen main (Lighthouse-Budget + Browser-Nacht)», Datei-Name
+  # unverändert (check:ci-laeufe und Skills referenzieren die Datei).
+  # check:ci-laeufe deckt den Job ohne Änderung: es wertet den Workflow-Ausgang
+  # jeder Datei mit schedule-Trigger.
+```
