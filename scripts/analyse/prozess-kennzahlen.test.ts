@@ -1,9 +1,7 @@
 // scripts/analyse/prozess-kennzahlen.test.ts — Spec der Prozess-Zeitreihe.
 //
-// Geprüft wird der Rechenweg, nicht die git-Beschaffung. Der wichtigste Fall
-// ist die Heuristik: sie weicht bewusst vom Auftrag ab (Substring → Wortgrenze,
-// Begründung im Skript-Kopf), und genau diese Abweichung muss festgenagelt
-// sein — sonst gleitet sie bei der nächsten Berührung stillschweigend zurück.
+// Geprüft wird der Rechenweg, nicht die git-Beschaffung. Wichtigster Fall: die
+// Pfad-Regel (seit 5.10.2026 statt Betreff-Muster, Begründung im Skript-Kopf).
 import { describe, expect, it } from 'vitest';
 import {
   SPALTEN,
@@ -28,36 +26,39 @@ const zeile = (datum: string, tore = 0): Zeile => ({
   steuerflaeche_bytes: 8,
 });
 
-describe('istProzessCommit', () => {
-  it('erkennt echte Prozess-Commits', () => {
-    for (const s of [
-      'QS-BEWAEHRUNG: Tor-Register',
-      'STEUER-DOKU: Lehre F15 verankert',
-      'feat: neues Tor check:zaehler',
-      'fix(hooks): tor-schutz.py meldet Pfad',
-      'QS-EFFIZIENZ 3: Tore entschlackt',
-    ]) {
-      expect(istProzessCommit(s), s).toBe(true);
-    }
+describe('istProzessCommit (Pfad-Regel)', () => {
+  it('reiner Plan-Commit zählt als Prozess', () => {
+    expect(istProzessCommit(['ROADMAP.md', 'plan/posten/x.md'])).toBe(true);
   });
 
-  it('zählt einen refactor-Commit NICHT als Prozess-Commit — das ist der Kern der Abweichung', () => {
-    const s = 'refactor(entstehung): synopse.ts unter 800 Zeilen';
-    expect(istProzessCommit(s)).toBe(false);
-    // Und dies ist der Beleg, dass die Auftrags-Variante ihn fälschlich nähme:
-    expect(istProzessCommit(s, true)).toBe(true);
+  it('Skill + Hook zählen als Prozess', () => {
+    expect(istProzessCommit(['.claude/skills/lehren/SKILL.md', '.claude/hooks/tor-schutz.py'])).toBe(true);
   });
 
-  it('fällt nicht auf «tor» im Wortinneren herein', () => {
-    for (const s of ['W2: Historie-Block je Artikel', 'Bump deps across 1 directory', 'Autor-Feld ergänzt']) {
-      expect(istProzessCommit(s), s).toBe(false);
-      expect(istProzessCommit(s, true), `${s} (roh)`).toBe(true);
-    }
+  it('gemischter Commit (Feature + ROADMAP-Nachführung) zählt als Produkt', () => {
+    expect(istProzessCommit(['src/lib/x.ts', 'ROADMAP.md'])).toBe(false);
   });
 
-  it('nimmt Tor auch in Zusammensetzungen mit Bindestrich', () => {
-    expect(istProzessCommit('Tor-Parität geschärft')).toBe(true);
-    expect(istProzessCommit('Zwei neue Tore verdrahtet')).toBe(true);
+  it('reiner Daten-Commit zählt nicht als Prozess', () => {
+    expect(istProzessCommit(['public/normtext/bund/x.json'])).toBe(false);
+  });
+
+  it('leere Pfadliste zählt nicht als Prozess', () => {
+    expect(istProzessCommit([])).toBe(false);
+  });
+
+  it('Rechtsschutz-Datei folgt istFlaeche und zählt nicht als Prozess', () => {
+    expect(istProzessCommit(['scripts/check-gegenpruefung.ts'])).toBe(false);
+  });
+
+  it('der Test eines Steuerungs-Skripts zählt als Prozess', () => {
+    expect(istProzessCommit(['scripts/analyse/foo.test.ts'])).toBe(true);
+    expect(istProzessCommit(['src/lib/foo.test.ts'])).toBe(false);
+  });
+
+  it('Messwerte-Dateien und Plan-Ordner sind Prozess-Pfade, andere messwerte nicht', () => {
+    expect(istProzessCommit(['messwerte/prozess-kennzahlen.csv', 'messwerte/steuerflaeche.json', 'fahrplaene/x.md', 'archiv/y.md'])).toBe(true);
+    expect(istProzessCommit(['messwerte/tor-bewaehrung.json'])).toBe(false);
   });
 });
 
