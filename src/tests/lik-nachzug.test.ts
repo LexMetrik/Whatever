@@ -101,15 +101,17 @@ describe('LIK-Nachzug: Bot-Tor «nur Anfügung»', () => {
     expect(vergleicheLik(ALT, ohne, xlsxVon(ohne)).status).toBe('pruefen');
   });
 
-  it('echte Reihe: unverändert ⇒ keine; Anfügung 2026-09 ⇒ anfuegung; Bestandswert geändert ⇒ pruefen', () => {
+  it('echte Reihe: unverändert ⇒ keine; Anfügung letzter Monat ⇒ anfuegung; Bestandswert geändert ⇒ pruefen', () => {
     // Deklarierte Änderung (Gegenprüfung 5.10.2026, Befund 1): bis 5.10.2026 nahm dieser Fall
     // einen neuen Monat mit Wert 150 in allen Basen als gültige Anfügung hin. Seit der
     // Plausibilitätsprüfung neuer Werte ist 150 ein Monatssprung > 3 % ⇒ pruefen; als
     // gültige Anfügung dient nun der echte Nachzug 2026-09.
-    expect(LIK_LETZTER_MONAT).toBe('2026-09');
+    // Nicht auf einen Monat festnageln: der Bot fährt diesen Test bei jedem Nachzug
+    // (Gegenprüfung 6.10.2026, Befund 1 — fest '2026-09' hätte den nächsten Bot-PR blockiert).
+    expect(LIK_LETZTER_MONAT).toMatch(/^\d{4}-\d{2}$/);
     const echt = kopie(LIK_REIHEN);
     expect(vergleicheLik(echt, kopie(echt), xlsxVon(echt)).status).toBe('keine');
-    const alt = ohneMonat(echt, '2026-09');
+    const alt = ohneMonat(echt, LIK_LETZTER_MONAT);
     const v = vergleicheLik(alt, echt, xlsxVon(echt));
     expect(v.gruende).toEqual([]);
     expect(v.status).toBe('anfuegung');
@@ -118,7 +120,7 @@ describe('LIK-Nachzug: Bot-Tor «nur Anfügung»', () => {
     for (const basis of Object.keys(neu)) neu[basis]['2099-01'] = 200;
     expect(vergleicheLik(alt, neu, xlsxVon(neu)).status).toBe('pruefen');
     const hundertfuenfzig = kopie(alt);
-    for (const basis of Object.keys(hundertfuenfzig)) hundertfuenfzig[basis]['2026-09'] = 150;
+    for (const basis of Object.keys(hundertfuenfzig)) hundertfuenfzig[basis][LIK_LETZTER_MONAT] = 150;
     expect(vergleicheLik(alt, hundertfuenfzig, xlsxVon(hundertfuenfzig)).status).toBe('pruefen');
     const geaendert = kopie(echt);
     geaendert['2020-12']['2024-01'] += 0.1;
@@ -158,20 +160,20 @@ describe('LIK-Nachzug: Bot-Tor «nur Anfügung»', () => {
 
   it('echte Reihe: Tippfehler 10.2 statt ~101 in einer Basis, alle Basen +50 %, Teil-Lieferung ⇒ pruefen', () => {
     const echt = kopie(LIK_REIHEN);
-    const alt = ohneMonat(echt, '2026-09');
+    const alt = ohneMonat(echt, LIK_LETZTER_MONAT);
     const tipp = kopie(echt);
-    tipp['2025-12']['2026-09'] = 10.2;
+    tipp['2025-12'][LIK_LETZTER_MONAT] = 10.2;
     const v = vergleicheLik(alt, tipp, xlsxVon(tipp));
     expect(v.status).toBe('pruefen');
     expect(v.spruenge.map((s) => s.basis)).toEqual(['2025-12']);
     expect(v.basisabweichungen.map((b) => b.basisNeu)).toEqual(['2025-12']);
     const plus50 = kopie(echt);
-    for (const basis of Object.keys(plus50)) plus50[basis]['2026-09'] = Math.round(plus50[basis]['2026-09'] * 15) / 10;
+    for (const basis of Object.keys(plus50)) plus50[basis][LIK_LETZTER_MONAT] = Math.round(plus50[basis][LIK_LETZTER_MONAT] * 15) / 10;
     const v50 = vergleicheLik(alt, plus50, xlsxVon(plus50));
     expect(v50.status).toBe('pruefen');
     expect(v50.spruenge).toHaveLength(Object.keys(echt).length);
     const teil = kopie(alt);
-    teil['2025-12']['2026-09'] = echt['2025-12']['2026-09'];
+    teil['2025-12'][LIK_LETZTER_MONAT] = echt['2025-12'][LIK_LETZTER_MONAT];
     const vt = vergleicheLik(alt, teil, xlsxVon(teil));
     expect(vt.status).toBe('pruefen');
     expect(vt.teillieferung).toHaveLength(Object.keys(echt).length - 1);
