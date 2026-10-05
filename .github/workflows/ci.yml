@@ -361,8 +361,10 @@ jobs:
     name: Bau (dist-Artefakt)
     needs: diff
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-007
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
     if: >-
       !cancelled()
+      && github.event_name != 'pull_request'
       && needs.diff.outputs.art != 'doku'
       && needs.diff.outputs.bau_perf_belegt != 'true'
     runs-on: ubuntu-latest
@@ -607,6 +609,12 @@ jobs:
       - name: Tor-Parität (CI/lokal)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tor-paritaet
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-043
+      # Seit 5.10.2026 hier statt im Shard-Job (ci-068): läuft so auch im
+      # PR-Lauf, in dem die Shards nicht mehr starten, und nur einmal statt 8×.
+      - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:e2e-shards
       - name: Dispatch-Pflichtklausel (§0-Generator lauffähig)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:dispatch-klausel
@@ -698,8 +706,10 @@ jobs:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
     needs: [diff, bau]
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-041
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
     if: >-
       !cancelled()
+      && github.event_name != 'pull_request'
       && needs.bau.result == 'success'
       && needs.diff.outputs.art != 'doku'
       && needs.diff.outputs.art != 'code-fern'
@@ -720,9 +730,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npx -y npm@11 ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-043
-      - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
-        run: npm run check:e2e-shards
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v8
         with:
@@ -776,18 +783,28 @@ jobs:
           ERGEBNIS: ${{ needs.e2e.result }}
           ART: ${{ needs.diff.outputs.art }}
           DIAET: ${{ needs.diff.outputs.push_diaet }}
+          EVENT: ${{ github.event_name }}
+        # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
         run: |
           set -euo pipefail
-          echo "e2e=${ERGEBNIS} · art=${ART:-<leer>} · push_diaet=${DIAET:-<leer>}"
+          echo "e2e=${ERGEBNIS} · art=${ART:-<leer>} · push_diaet=${DIAET:-<leer>} · event=${EVENT}"
           if [ "${ERGEBNIS}" = "success" ]; then
             echo "Alle Browser-Shards grün."
+            exit 0
+          fi
+          if [ "${ERGEBNIS}" = "skipped" ] && [ "${EVENT}" = "pull_request" ]; then
+            hinweis="Browser-Smoke im PR-Lauf BEWUSST NICHT GELAUFEN (Entscheid David 5.10.2026): die Browser-Shards laufen nur in der Merge-Warteschlange (merge_group) und bei workflow_dispatch — dort sind sie Pflicht und merge-blockierend."
+            echo "${hinweis}"
+            echo "::notice::${hinweis}"
+            echo "### Browser-Smoke: im PR-Lauf übersprungen" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
+            echo "${hinweis}" >> "${GITHUB_STEP_SUMMARY:-/dev/null}"
             exit 0
           fi
           if [ "${ERGEBNIS}" = "skipped" ] && { [ "${ART}" = "doku" ] || [ "${ART}" = "code-fern" ] || [ "${DIAET}" = "true" ]; }; then
             echo "Browser-Shards planmässig übersprungen (art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}) — Begründung im Job \`diff\`."
             exit 0
           fi
-          echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}. Ein Skip ist nur bei art=doku, art=code-fern oder push_diaet=true zulässig."
+          echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}, event=${EVENT}. Ein Skip ist nur bei event=pull_request, art=doku, art=code-fern oder push_diaet=true zulässig."
           exit 1
 
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-066

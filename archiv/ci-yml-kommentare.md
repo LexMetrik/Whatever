@@ -896,6 +896,13 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # bevor eine unbalancierte oder lückenhafte Verteilung Tests verschluckt.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E1, Ergänzung, Block oben unverändert):**
+> Der Union-Wächter steht seither im Job `tore-checks` (einmal je Lauf, auch im
+> PR-Lauf), nicht mehr in jedem Shard: die Shards starten im PR-Lauf nicht mehr
+> (ci-068), der Wächter soll dort trotzdem greifen. «Kein Test verloren» ist
+> damit vor dem Merge geprüft — im PR UND in der Warteschlange (tore-checks
+> läuft in beiden, ausser bei art=doku).
+
 ## ci-044 · e2e · Playwright-Browser (Chromium)
 
 ```text
@@ -1386,4 +1393,38 @@ direkt in ci.yml, nicht im Archiv; wörtlich):
 ```text
       # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
       # hier die ganze Kette, bevor tore/e2e überhaupt starten.
+```
+
+## ci-068 · bau/e2e/e2e-ergebnis · if (Browser nur in der Warteschlange)
+
+Neu 5.10.2026 (QS-CI-ZEIT E1; kein verschobener Altkommentar).
+
+```text
+  # ── Browser-Smoke nur noch in merge_group/workflow_dispatch/push ─────────────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «(a) Browser nur in
+  # Warteschlange + Wackel-Regel dort lockern + Tempo-Messung nachts?»; die
+  # Warteschlange bleibt ausdrücklich bestehen).
+  # MESSBASIS (Recherche 5.10.2026, 300 Queue-Läufe): 10× Browser-rot in der
+  # Queue nach grünem PR-Lauf, davon 0 echte Zusammenstösse (7× Flacker-
+  # Wächter, 4× Install-Timeout 1.10.2026). Der PR-Lauf der Shards fand also
+  # nichts, was die Queue nicht ohnehin fand — er kostete nur Wanduhr.
+  #
+  # UMSETZUNG:
+  #   · `e2e` (8 Shards): `github.event_name != 'pull_request'` im Job-`if:`.
+  #     push (ohne Push-Diät) und workflow_dispatch fahren unverändert.
+  #   · `bau`: ebenfalls nicht im PR-Lauf — im PR braucht kein Job das dist
+  #     (Tore lesen es nicht, Perf läuft im PR seit 26.7.2026 nicht, Deploy nur
+  #     auf push). Typfehler fängt im PR `tore-typen` (ci-067), SSR-Fehler
+  #     `check:smoke` in `tore-checks`. Restrisiko: ein reiner vite-/prerender-
+  #     Bruch ohne Typ-/SSR-Fehler zeigt sich erst in der Queue — dort weiterhin
+  #     merge-blockierend (bau → Shards → Browser-Smoke (Ergebnis)).
+  #   · `e2e-ergebnis` (Required-Kontext «Browser-Smoke (Ergebnis)»): neuer Fall
+  #     (2d) e2e=skipped UND event=pull_request → grün, mit ::notice und Zeile
+  #     in der Step-Summary («bewusst nicht gelaufen»). In merge_group gelten die
+  #     alten Fälle unverändert: nur success grün; skipped nur bei art=doku/
+  #     code-fern; cancelled/failure/verirrter Skip ROT (F2c).
+  #   · Union-Wächter `check:e2e-shards` von den Shards nach `tore-checks`
+  #     (Nachtrag ci-043).
+  # Die Rechtslogik-/Rechtsdaten-Tore (Vitest, Korpus, Golden) laufen im PR
+  # UND in der Queue unverändert merge-blockierend (Job `tore`).
 ```
