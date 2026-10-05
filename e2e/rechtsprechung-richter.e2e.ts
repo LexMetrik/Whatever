@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // Richter-/Spruchkörper-Facette der Übersicht /rechtsprechung (R-RICHTER Block B).
 //
 // Prüft die Achse end-to-end gegen den ECHTEN Korpus: eintippen → auswählen →

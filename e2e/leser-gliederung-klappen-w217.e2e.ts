@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: nacht
 // W2·17-UI-BEFUNDE · Gliederung — Klappen, «alles auf/zu», Tastatur (2.10.2026).
 // Läuft gegen `vite preview` (dist). Je Fall der Befund, sein Beleg und der Weg zu rot (§6.7).
 //

@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 3
 // ─── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 5) ───
 //
 // V3-Mirror von `split-view-a34.e2e.ts` (A34/Bug1, A34/Bug2) — derselbe

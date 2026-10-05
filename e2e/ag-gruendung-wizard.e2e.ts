@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 // §6-Refactor-Sicherheitsnetz (19.6.2026): klickt den AG-Gründungs-Wizard durch
 // ALLE Schritte und prüft, dass jeder Schritt ohne Render-/Console-Fehler rendert.
 // So fängt eine spätere verhaltensneutrale Datei-Schlankheit (JSX-Extraktion in

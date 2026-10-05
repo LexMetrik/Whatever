@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // ── P3 · TEXTLINKS IM GESETZESLESER TRAGEN EINEN UNTERSTRICH ────────────────
 //
 // BEFUND (Prüfer R6, 6.9.2026, Bau-Runde W2·24-DESIGN-IDENTITAET): von 6'291

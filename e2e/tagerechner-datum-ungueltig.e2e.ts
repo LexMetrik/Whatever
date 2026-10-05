@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 2
 // ═══ D1 (W2·24-Gesamtprüfung 7.9.2026) · unmögliches Datum im Tagerechner ═══
 //
 // GEMESSEN am Stand `018b41a37`: `01.01.2026` + 30 Tage ⇒ Fristende

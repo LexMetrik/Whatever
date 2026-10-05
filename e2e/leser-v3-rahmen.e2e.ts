@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test'
 
 // ═══ §6.3-DEKLARATION (Entscheid A, David 24.9.2026) · DIE DRITTE SPUR IST ZURÜCK

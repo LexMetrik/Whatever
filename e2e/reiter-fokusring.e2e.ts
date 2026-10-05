@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── W2·19 DK-A · Reiter (`.lc-tab`) zeigen den Tastatur-Fokus (F3) ──────────

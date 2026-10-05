@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── Gegenprüfung PR #1153 (mittel) · Fokusring in der Themenleiste beschnitten ─

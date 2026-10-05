@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 3
 // ═══ H4-NACHZUG (18.8.2026) · ZWEI WEGE IN DIE GLIEDERUNG, BEIDE GEMESSEN ════
 //
 // Zwei Befunde aus dem Klick-Test vom 18.8.2026 (Protokoll

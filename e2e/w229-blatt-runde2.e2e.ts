@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 1
 // e2e/w229-blatt-runde2.e2e.ts —Erlass-Blatt Runde 2 (W2·29-WERKBANK-LESER, 24.9.2026).
 //
 // Vier Befunde, je vorher gemessen (Build, OR, Chromium headless):

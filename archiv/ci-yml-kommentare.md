@@ -1570,3 +1570,37 @@ Neu 5.10.2026 (QS-CI-ZEIT E5; kein verschobener Altkommentar).
   #     ~1 min je Shard, kein Korrektheitsrisiko.
   # Fehlgriff ist nie ein Fehler, nur langsamer (Registry/CDN statt Cache).
 ```
+
+## ci-072 · e2e · Queue-Shards nur noch Queue-Specs, 8 → 6 Gruppen
+
+Neu 5.10.2026 (QS-CI-ZEIT N2; kein verschobener Altkommentar).
+
+```text
+  # ── Nie-rote Browser-Specs nachts statt in der Queue (QS-CI-ZEIT N2) ─────────
+  # ENTSCHEID David 5.10.2026 (Chat, «(a) Nachts statt Queue» auf «Was soll mit
+  # den 107 Browser-Testdateien geschehen, die in 2½ Monaten nie rot waren?»).
+  # GRENZE (Teil der Freigabe): Specs, die Rechenergebnisse oder die Anzeige
+  # von Gesetzes-/Urteilstext prüfen, bleiben in der Queue, auch wenn nie rot;
+  # Löschen ist NICHT freigegeben.
+  # MESSBASIS: 261 Läufe mit Browser-Befund (18.7.–4.10.2026), 709 Ereignisse
+  # (bibliothek/betrieb/e2e-fang-historie-2026-10-05.md). 107 von 203 Specs
+  # nie rot; davon 41 Queue (Grenze, im Zweifel Queue), 66 Nacht.
+  #
+  # UMSETZUNG:
+  #   · Kopf-Annotation `// @shard-gruppe: nacht` statt einer Zahl (dieselbe
+  #     Annotation, kein zweites Feld — eine Spec liegt so in genau EINER
+  #     Liste). Generator schreibt `nacht` als eigene Liste in
+  #     e2e/shard-gruppen.json; Union-Wächter (check:e2e-shards, tore-checks)
+  #     prüft Queue ∪ Nacht == playwright --list und Schnitt leer.
+  #   · Matrix 8 → 6 Gruppen, LPT-Neupackung der Queue-Specs (Testdauern aus
+  #     Queue-Lauf 37344516589): je 715–716 s. Rechnung im _kommentar der JSON;
+  #     6 hält die Shard-Wanduhr auf dem Vor-Umbau-Niveau und spart 2 Läufer je
+  #     Queue-Lauf (Stau 5.10.: +3–4 Jobs, 2,8 min Wartezeit).
+  #   · Job-/Schritt-Name zählt die Gruppen aus `strategy.job-total` statt
+  #     einer festen «/8» — die Zahl steht nur noch in der Matrix (§5, wie
+  #     scripts/e2e-shard-anzahl.mjs).
+  #   · Required-Kontext bleibt «Browser-Smoke (Ergebnis)»; Ruleset und
+  #     Warteschlange unverändert.
+  # FOLGE: ein Defekt, den nur eine Nacht-Spec fängt, landet bis zu einem Tag
+  # später als Zettel (Label alarm:e2e-nacht) statt die Queue zu blockieren.
+```

@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
 
 // ─── Katalog-Zeile: Untertitel auf zwei Zeilen gekappt (W2·31 B) ────────────

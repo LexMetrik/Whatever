@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 4
 // ─── Ä1 / D27 · EINE ORTSANGABE, EINE QUELLE (§7-Wahrheitsproblem) ───────────
 //
 // DER ANLASS (unverändert gültig): der Ästhetik-Review H1 meldete, die

@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 2
 // ─── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 3) ───
 //
 // Deckt `leitfaelle-chips.e2e.ts` Fall (d) («V3: Chip zeigt den Kurztext auf

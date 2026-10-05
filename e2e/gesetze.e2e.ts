@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 1
 // Browser-Smoke der Rubrik V «Gesetze»: Übersicht rendert + lädt das Manifest,
 // Klick führt in die Lesesicht (Volltext + TOC + In-Gesetz-Suche), keine
 // Console-/Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).

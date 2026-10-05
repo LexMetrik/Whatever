@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 3
 // ═══ S6 W1f · JEDER REITER FOLGT DEM ARTIKEL (Auftrag 24.9.2026) ═════════════
 //
 // Präzisierung zu Davids Meldung «erlassblatt scrollt nicht mit wenn sich

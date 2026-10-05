@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 6
 import { test, expect } from '@playwright/test'
 
 // W2·17-UI-BEFUNDE (1.10.2026) — Wortlaut und Gliederung im Gesetzesleser folgen dem

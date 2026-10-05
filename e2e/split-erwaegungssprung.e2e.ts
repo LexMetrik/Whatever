@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 3
 // ─── Entscheid-Klick springt zur zitierenden Erwägung — auch im SPLIT ────────
 //
 // AUFTRAG DAVID 30.8.2026 (wörtlich): «fixxe dass wenn ich im gesetz split

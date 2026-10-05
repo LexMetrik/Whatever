@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 import { SEITENBREITE, type Breitenstufe, type Seitenart } from '../src/components/layout/seitenbreite';
 import tailwindConfig from '../tailwind.config.js';

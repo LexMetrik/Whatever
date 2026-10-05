@@ -32,13 +32,16 @@
 // `_kommentar` ist Hand-Narrativ (Mess-Historie) und wird unverändert aus der
 // bestehenden Datei übernommen — dieser Generator schreibt ihn nie selbst.
 //
+// NACHTLAUF (5.10.2026): Wert `nacht` statt einer Zahl → Liste `nacht` in der
+// JSON statt einer Queue-Gruppe (Begründung bei NACHT unten).
+//
 // Verwendung:
 //   node scripts/e2e-shard-gruppen-generieren.mjs           schreibt e2e/shard-gruppen.json
 //   node scripts/e2e-shard-gruppen-generieren.mjs --check   nur prüfen, kein Schreiben (Exit 1 bei Drift)
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
-import { gruppenAnzahl } from './e2e-shard-anzahl.mjs'
+import { gruppenAnzahl, NACHT } from './e2e-shard-anzahl.mjs'
 
 const HIER = dirname(fileURLToPath(import.meta.url))
 const WURZEL = join(HIER, '..')
@@ -77,9 +80,23 @@ function annotationenLesen(pfad) {
   return treffer
 }
 
-/** roh (String) → kanonische Gruppen-Nummer als String, oder null wenn ungültig
- *  (nicht-numerisch, führende Null wie "01", ausserhalb 1..GRUPPEN_MAX). */
+// ── NACHTLAUF (Entscheid David 5.10.2026, QS-CI-ZEIT N2) ────────────────────
+// `// @shard-gruppe: nacht` statt einer Zahl: die Spec läuft NICHT in den
+// Queue-Shards der Merge-Warteschlange, sondern täglich gegen main
+// (perf-nacht.yml, Job e2e-nacht). Bewusst DIESELBE Annotation und keine
+// zweite (`@lauf:`): eine Spec trägt genau einen Wert, also liegt sie in genau
+// EINER Liste — Queue-Gruppe ODER Nacht; ein Widerspruch zwischen zwei
+// Annotationen kann gar nicht entstehen. Die Vereinigung beider Listen prüft
+// der Union-Wächter gegen `playwright --list` (e2e-shard-gruppen.mjs).
+// Wer eine Spec in die Nacht verschiebt, hält die GRENZE der Freigabe ein:
+// Specs, die Rechenergebnisse oder die Anzeige von Gesetzes-/Urteilstext
+// prüfen, bleiben in der Warteschlange (Einstufung und Begründung:
+// bibliothek/betrieb/e2e-fang-historie-2026-10-05.md).
+
+/** roh (String) → kanonische Gruppen-Nummer als String bzw. NACHT, oder null wenn
+ *  ungültig (nicht-numerisch, führende Null wie "01", ausserhalb 1..GRUPPEN_MAX). */
 function gruppeParsen(roh) {
+  if (roh === NACHT) return NACHT
   if (!/^[1-9]\d*$/.test(roh)) return null
   const n = Number(roh)
   if (!Number.isInteger(n) || n < 1 || n > GRUPPEN_MAX) return null
@@ -153,33 +170,38 @@ function bauen() {
       for (const { spec, werte } of mehrdeutig) console.error(`     ${spec} (Werte: ${werte.join(', ')})`)
     }
     if (ungueltig.length) {
-      console.error(`  UNGÜLTIG — Wert ausserhalb 1–${GRUPPEN_MAX} oder falsch formatiert (z. B. führende Null):`)
+      console.error(`  UNGÜLTIG — Wert weder 1–${GRUPPEN_MAX} noch «${NACHT}» oder falsch formatiert (z. B. führende Null):`)
       for (const { spec, roh } of ungueltig) console.error(`     ${spec} (Wert: "${roh}")`)
     }
     console.error(
-      `\n   Fix: genau EINE gültige Annotation \`// @shard-gruppe: 1\`..\`${GRUPPEN_MAX}\` in Zeile 1–${KOPF_ZEILEN} der Spec-Datei, dann neu laufen lassen.`,
+      `\n   Fix: genau EINE gültige Annotation \`// @shard-gruppe: 1\`..\`${GRUPPEN_MAX}\` oder \`// @shard-gruppe: ${NACHT}\` in Zeile 1–${KOPF_ZEILEN} der Spec-Datei, dann neu laufen lassen.`,
     )
     process.exit(1)
   }
 
   const alt = altesJson()
   const alteGruppen = alt?.gruppen ?? {}
-  const gruppenNummern = [...new Set(gruppeVon.values())].sort((a, b) => Number(a) - Number(b))
+  const gruppenNummern = [...new Set(gruppeVon.values())]
+    .filter((g) => g !== NACHT)
+    .sort((a, b) => Number(a) - Number(b))
 
-  const gruppen = {}
-  for (const g of gruppenNummern) {
-    const bisherigeReihenfolge = Array.isArray(alteGruppen[g]) ? alteGruppen[g] : []
+  /** Stabile Reihenfolge: bisherige Folge erhalten, Neue alphabetisch anhängen. */
+  const stabil = (bisher, g) => {
+    const bisherigeReihenfolge = Array.isArray(bisher) ? bisher : []
     const dieserGruppe = new Set([...gruppeVon.entries()].filter(([, v]) => v === g).map(([k]) => k))
-
     const erhalten = bisherigeReihenfolge.filter((f) => dieserGruppe.has(f))
     const neu = [...dieserGruppe].filter((f) => !bisherigeReihenfolge.includes(f)).sort()
-
-    gruppen[g] = [...erhalten, ...neu]
+    return [...erhalten, ...neu]
   }
+
+  const gruppen = {}
+  for (const g of gruppenNummern) gruppen[g] = stabil(alteGruppen[g], g)
 
   const kommentar = typeof alt?._kommentar === 'string' ? alt._kommentar : DEFAULT_KOMMENTAR
 
-  return { _kommentar: kommentar, gruppen }
+  // `nacht` steht IMMER im Objekt (auch leer): der Union-Wächter liest es ohne
+  // Sonderfall, und eine fehlende Liste ist dort ein Befund, kein Default.
+  return { _kommentar: kommentar, gruppen, [NACHT]: stabil(alt?.[NACHT], NACHT) }
 }
 
 function serialisieren(objekt) {
@@ -202,7 +224,8 @@ function main() {
   }
 
   writeFileSync(GRUPPEN_JSON, neu)
-  console.log(`✓ e2e/shard-gruppen.json generiert (${Object.keys(bauen().gruppen).length} Gruppen).`)
+  const b = bauen()
+  console.log(`✓ e2e/shard-gruppen.json generiert (${Object.keys(b.gruppen).length} Queue-Gruppen, ${b[NACHT].length} Specs im Nachtlauf).`)
 }
 
 main()

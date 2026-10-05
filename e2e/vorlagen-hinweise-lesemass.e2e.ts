@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: nacht
 import { test, expect, type Page } from '@playwright/test';
 import tailwindConfig from '../tailwind.config.js';
 import { weiterKnopf } from './helpers/weiterKnopf';

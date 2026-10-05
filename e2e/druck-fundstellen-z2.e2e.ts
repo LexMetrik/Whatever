@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // ─── W2·10-UI-NAV-Z2 · Print-CSS für Fundstellen ───────────────────────────
 //
 // Reproduktion VOR dem Fix (§0.2 «erst reproduzieren, dann fixen»): der

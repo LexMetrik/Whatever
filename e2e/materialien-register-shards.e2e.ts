@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 6
 import { test, expect } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 

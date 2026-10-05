@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 6
 import { test, expect, type Page } from '@playwright/test';
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 import { OR_LESER_FRIST } from './helpers/orLeser';

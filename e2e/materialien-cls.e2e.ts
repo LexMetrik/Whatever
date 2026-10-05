@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 

@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test'
 
 // ─── W2·29-WERKBANK-REST S5b · Gesetze-Wahl: Spaltenköpfe mit Breitenreserve ──

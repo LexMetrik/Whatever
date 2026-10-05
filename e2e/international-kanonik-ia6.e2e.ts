@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 1
 // IA-6 · International-Kanonik STUFE 2 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3,
 // §11.8 Y-C, W2·5d — David-Go 3.8.2026): /international ist keine Alias-Seite
 // mehr, sondern ein echter Redirect auf die Säule /gesetze?ebene=international.

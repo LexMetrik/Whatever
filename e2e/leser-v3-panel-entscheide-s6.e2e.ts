@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 2
 // ─── S6-W1b · Reiter «Entscheide» des Erlass-Blatts (W2·29-WERKBANK-LESER) ────
 //
 // Misst am gebauten Leser, was der Audit vom 23.9.2026 bemängelt und David am

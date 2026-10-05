@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test'
 
 // W2·31-BILDSCHIRMBREITE B11 (26.9.2026) — breite Legacy-Tabellen im Gesetz-Leser.

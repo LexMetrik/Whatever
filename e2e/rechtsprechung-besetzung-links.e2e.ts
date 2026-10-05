@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 // Klickbare Besetzung im Entscheid-Leser (Richter:in → ihre übrigen Entscheide).
 //
 // Prüft gegen den ECHTEN Korpus, dass der amtliche Besetzungs-Freitext eines

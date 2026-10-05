@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 2
 // FAHRPLAN-LESER-V3, Kap. 4b — feste Reihenfolge der Seitenleiste:
 //
 //   ▸ Übersicht  (SR 312.0 · 480 Art. · Stand …)        scrollt weg

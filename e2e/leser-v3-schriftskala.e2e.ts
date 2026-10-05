@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 // LESER-SCHRIFTSKALA — David-Anmerkung 16.8.2026, Punkt 4:
 // «Schriftgrössen-Regler wirkt auf die ganze Seite.»
 //

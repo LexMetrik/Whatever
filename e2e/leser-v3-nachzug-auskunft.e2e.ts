@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 3
 // ═══ H2b-NACHZUG · AUSKUNFT UND FLÄCHE (A1 · A5 · Ä27 · Ä28 · Ä30 · Ä31) ════
 //
 // Fünf Befunde der drei Prüfer, alle GEMESSEN am gebauten H2b-Stand 17.8.2026:

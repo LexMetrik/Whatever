@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 1
 /**
  * W2·24-NACHZUG R6I · DIE VORSCHAU-INSEL BRICHT BEIM SCHRIFT-SWAP NICHT NEU UM
  * — und der Tieflink landet auf der Leselinie.

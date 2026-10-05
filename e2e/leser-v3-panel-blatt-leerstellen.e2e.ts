@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: nacht
 // ═══ Posten 24.9.2026 · Materialien-Artikelteil im Erlass-Blatt: ehrliche
 // Offenlegung der Zuordnungsmethode (§8) ═══════════════════════════════════
 //
