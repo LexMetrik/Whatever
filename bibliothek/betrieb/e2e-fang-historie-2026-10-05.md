@@ -315,9 +315,12 @@ Summen: 107 nie rote Specs mit 784 Tests und rund 31 min; alle 203 Specs mit
 ungerundeten Lauf-Dauern; aus der ganzzahligen spec-tabelle.csv ergeben sich
 ~6 s bei der Neupackung der 151 Queue-Specs auf 6 Gruppen.)
 
-**Neupackung** mit derselben LPT-Mechanik (Dauern aus Queue-Lauf 37344516589):
-151 Queue-Specs auf 6 Gruppen; je 751–757 s je Shard, Spanne 6 s. Alle 203
-Specs mit 1944 Tests und ~93,6 Testminuten je Queue-Lauf.
+**Packung (korrigiert durch die orchestrierende Session, 5.10.2026):** Commit
+8cee72a2d legte alle sechs Specs in Gruppe 1 (905 s gegen ~767 s der übrigen;
+die Angabe «751–757 s» stimmte nicht). Die sechs sind nun einzeln per LPT auf
+die Gruppen verteilt, ohne die übrigen 145 umzuziehen: Gruppen 771–840 s
+(spec-tabelle.csv, dauer_s), Spanne ~69 s ≈ 35 s Wanduhr. Eine volle
+Neupackung brächte ~789 s je Gruppe, kostete aber ~100 Annotations-Umzüge.
 
 ## Pflegebedarf
 

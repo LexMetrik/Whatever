@@ -24,12 +24,7 @@
    "tagerechner-rechenweg-sync.e2e.ts",
    "uinav-v2-v4-normchip.e2e.ts",
    "w224-reiter-umordnen-d16.e2e.ts",
-   "deckung-seite.e2e.ts",
-   "gesetze-rechtsgebiet-g6.e2e.ts",
-   "leser-v3-auskunft.e2e.ts",
-   "leser-v3-panel-facetten.e2e.ts",
-   "startseite-blatt.e2e.ts",
-   "w224-plus-reiter.e2e.ts"
+   "leser-v3-panel-facetten.e2e.ts"
   ],
   "2": [
    "a11y.e2e.ts",
@@ -55,7 +50,8 @@
    "leser-wortlaut-w217.e2e.ts",
    "materialien-m3-edoeb.e2e.ts",
    "plz-wahl.e2e.ts",
-   "smoke.e2e.ts"
+   "smoke.e2e.ts",
+   "leser-v3-auskunft.e2e.ts"
   ],
   "3": [
    "gesetze-pdf-download.e2e.ts",
@@ -81,7 +77,8 @@
    "normrevision-badge.e2e.ts",
    "suche-seite.e2e.ts",
    "tastatur.e2e.ts",
-   "w224-gb-register.e2e.ts"
+   "w224-gb-register.e2e.ts",
+   "startseite-blatt.e2e.ts"
   ],
   "4": [
    "entscheid-verweis-praezision.e2e.ts",
@@ -108,7 +105,8 @@
    "vorlagen-pruefschritt-d5.e2e.ts",
    "w224-r11-reiterleiste.e2e.ts",
    "w229-w1f-blatt-artikel.e2e.ts",
-   "w229-w1f-blatt-folgt.e2e.ts"
+   "w229-w1f-blatt-folgt.e2e.ts",
+   "w224-plus-reiter.e2e.ts"
   ],
   "5": [
    "materialien-m1-estv-mwst.e2e.ts",
@@ -135,7 +133,8 @@
    "vorlagen-breite.e2e.ts",
    "w224-d35-f3-vermerke.e2e.ts",
    "w224-r6i-vorschau-schrift.e2e.ts",
-   "w224-reiterverhalten.e2e.ts"
+   "w224-reiterverhalten.e2e.ts",
+   "deckung-seite.e2e.ts"
   ],
   "6": [
    "gesetze-ux-g3a.e2e.ts",
@@ -162,7 +161,8 @@
    "w224-d35-f4-menue.e2e.ts",
    "w224-l6-panekopf.e2e.ts",
    "w229-blatt-runde2.e2e.ts",
-   "zustaendigkeit-fluss.e2e.ts"
+   "zustaendigkeit-fluss.e2e.ts",
+   "gesetze-rechtsgebiet-g6.e2e.ts"
   ]
  },
  "nacht": [
