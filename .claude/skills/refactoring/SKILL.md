@@ -32,6 +32,12 @@ Strukturverbesserung.
 - **Kein `npm run golden` zum Reparieren einer Abweichung.** Golden neu zu
   schreiben, weil der Vergleich rot ist, zerstört das Orakel.
 
+Ergänzend zum ersten Satz: **Ein Test fällt nur mit dem Code, den er
+prüft.** Vor dem Mitlöschen jeder Testdatei ihre Importe lesen: zeigt einer auf ein Modul, das bleibt,
+bleibt der Test (Umstieg L1, 5.10.2026: `plan-fremdagenten.test.ts`
+mitgelöscht, obwohl `fremdagenten-messung.ts` weiterlebt — Gegenprüfung
+fand es; Lehre aufgenommen auf Wort David 5.10.2026).
+
 ## 3. Was verschmolzen werden darf — und was nicht
 
 Engine-Verschmelzung ist erlaubt unter zwei Bedingungen:
