@@ -195,10 +195,59 @@ describe('AG-Gründungsunterlagen (Art. 43/44 HRegV)', () => {
     expect(txt).toContain('50 000');
   });
 
-  it('Nach Eintrag: Aktienbuch (686) und 697l-Verzeichnis mit 697j-Meldepflicht', () => {
+  // Fachliche Änderung (§6.3, RECHTSLOGIK 5.10.2026): Art. 697j, 697l und 697m OR
+  // aufgehoben und Art. 718 Abs. 4 dritter Satz OR neu gefasst durch Anhang Ziff. 2
+  // TJPG vom 26.9.2025, in Kraft seit 1.10.2026 (AS 2026 323; SR 955.3). Die
+  // Pflichten liegen seither bei der Gesellschaft (Identifikation, Dokumentation,
+  // Meldung an das Transparenzregister, Art. 7–9 TJPG) und den Aktionär:innen
+  // (Meldung an die Gesellschaft, Art. 13 TJPG). Vorher: «697l-Verzeichnis mit
+  // 697j-Meldepflicht» (Fassung OR 20260101).
+  it('Nach Eintrag: Aktienbuch (686) und wirtschaftlich Berechtigte nach TJPG (Transparenzregister)', () => {
     const r = agGruendungsunterlagen(agBasis());
     expect(r.unterlagen.find((u) => u.id === 'aktienbuch')?.norm).toBe('Art. 686 OR');
-    expect(r.unterlagen.find((u) => u.id === 'wb-verzeichnis')?.hinweis).toContain('Art. 697j OR');
+    const wb = r.unterlagen.find((u) => u.id === 'wb-verzeichnis');
+    expect(wb?.norm).toBe('Art. 9 TJPG');
+    expect(wb?.hinweis).toContain('Art. 9 Abs. 4 TJPG');
+    expect(wb?.hinweis).toContain('Art. 13 Abs. 3 TJPG');
+    expect(wb?.hinweis).toContain('Art. 3 TJPG');
+  });
+
+  it('CH-Vertretung: Zugang zum Aktienbuch (718 IV OR) und zu den WB-Angaben (Art. 8 Abs. 4 TJPG), kein 697l mehr', () => {
+    const r = agGruendungsunterlagen(agBasis({ chWohnsitzVertretung: false }));
+    expect(r.blocker[0]).toContain('Art. 8 Abs. 4 TJPG');
+    expect(r.blocker[0]).not.toMatch(/\b697l\b/);
+  });
+});
+
+// Wächter (RECHTSLOGIK 5.10.2026): seit 1.10.2026 aufgehobene Artikel dürfen in
+// keiner Ausgabe der Gründungs-Engine mehr zitiert werden — Art. 697j/697l/697m
+// und 790a OR (Anhang Ziff. 2 TJPG, AS 2026 323). Identitäts-Treffer mit
+// Wortgrenze (§7), über die Maximal-Kombination beider Rechtsformen.
+describe('Aufgehobene OR-Artikel (TJPG, AS 2026 323) nicht mehr zitiert', () => {
+  const AUFGEHOBEN = /\bArt(?:\.|ikel)\s*(?:697[jlm]|790a)\b|\b(?:697[jlm]|790a)\s+OR\b|nach\s+Art\.\s*697l\b/;
+  const ausgabe = (r: { unterlagen: unknown; blocker: unknown; hinweise: unknown }) =>
+    JSON.stringify([r.unterlagen, r.blocker, r.hinweise]);
+
+  it('Sonde ist scharf (Rot-Beweis gegen die Altfassung)', () => {
+    expect(AUFGEHOBEN.test('Meldepflicht innert Monatsfrist (Art. 697j OR, nicht kotiert)')).toBe(true);
+    expect(AUFGEHOBEN.test('Verzeichnis nach Art. 697l (Art. 718 Abs. 4 OR)')).toBe(true);
+    expect(AUFGEHOBEN.test('Art. 790a OR')).toBe(true);
+    expect(AUFGEHOBEN.test('Art. 697n OR')).toBe(false);
+  });
+
+  it('GmbH: weder Art. 790a noch 697l; WB-Pflichten nach TJPG', () => {
+    const r = gmbhGruendungsunterlagen(gmbhBasis({ chWohnsitzVertretung: false }));
+    expect(ausgabe(r)).not.toMatch(AUFGEHOBEN);
+    const wb = r.unterlagen.find((u) => u.id === 'wb-verzeichnis');
+    expect(wb?.norm).toBe('Art. 9 TJPG');
+    expect(wb?.hinweis).toContain('Art. 11 TJPG');
+    expect(wb?.hinweis).toContain('Art. 13 Abs. 3 TJPG');
+    expect(r.blocker[0]).toContain('Art. 8 Abs. 4 TJPG');
+  });
+
+  it('AG: weder Art. 697j noch 697l/697m', () => {
+    const r = agGruendungsunterlagen(agBasis({ chWohnsitzVertretung: false }));
+    expect(ausgabe(r)).not.toMatch(AUFGEHOBEN);
   });
 });
 
