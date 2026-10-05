@@ -218,8 +218,7 @@ landen lassen.
    wieder voll. Nicht liegen lassen. Offen seit 8.9.2026: 48 h nach der ersten
    Landung die Vercel-Nutzungsseite (Deployment Storage, war 262 GB gegen
    10 GB Hobby-Grenze) messen; bleibt sie über 10 GB, ist der nächste Schritt
-   das Auslagern der 455 MB Korpus-Dateien aus jedem Stand (Roadmap-Eintrag
-   anlegen, sobald der Deckel Luft hat).
+   das Auslagern der 455 MB Korpus-Dateien aus jedem Stand (EINGANG-Zeile).
 
 8. **Projektionen nachziehen:** `npm run projektionen` (Zähler/Feed/Historie +
    `gen:e2e-shards`, seriell) — vor dem Öffnen eines PR, der Quelldaten

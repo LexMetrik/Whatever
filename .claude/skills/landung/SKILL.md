@@ -59,9 +59,9 @@ Belege: `referenz-ci.md` §Merge-Queue.
   keinen Queue-Eintrag: nur diese Abfrage entscheidet (#1066, 24.9.2026).
 - **Parallele Nachträge an dieselbe Fahrplan-Stelle** kollidieren: der erste
   gelandete PR macht alle übrigen CONFLICTING (#1068/#1070/#1071 an
-  FAHRPLAN-WERKBANK-UMBAU.md §5d-bis, 24.9.2026). Bei mehreren offenen PRs
-  eines Vorhabens: je Nachtrag eine eigene Merkzettel-Datei in `plan/posten/` statt
-  Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein. Gleiches im Code: zwei
+  FAHRPLAN-WERKBANK-UMBAU.md §5d-bis, 24.9.2026). Parallele Nachträge an
+  dieselbe Steuer-Stelle (ROADMAP JETZT/EINGANG) kollidieren; bei mehreren
+  offenen PRs eines Vorhabens trägt der letzte PR gesammelt nach. Gleiches im Code: zwei
   eigene PRs am selben Dateiende (#1275/#1277, 2.10.2026) — Landereihenfolge vorab
   festlegen, beim Rebase beide Blöcke behalten.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
@@ -269,7 +269,7 @@ jeder hängt eine Register-Zeile an (Ziff. 3.4).
 PR-Titel + PR-Body — ein im Body verkürztes Verdikt («… — keine», Befund-Teil
 < 15 Zeichen) ist lokal grün und fällt in der Queue. Das Verdikt im PR-Body
 muss dieselbe volle Form haben wie im Commit; vor dem Einreihen den Body
-gegenlesen (Vorab-Check: ROADMAP `QS-CI-MINUTEN`).
+gegenlesen.
 **Falle (3.10.2026, #1299, zweimal BLOCKIERT):** `tor-schutz.py` prüft den Body
 VOR dem Bash-Aufruf — `gh pr edit --body-file …` und `gh pr merge` darum nie in
 EINEM Aufruf ketten, sonst sieht der Hook noch den alten Body. Kurz-Trailer
@@ -325,7 +325,7 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
   wird, ist rot — ausser die Spec steht mit Datum/Grund in `e2e/flake-ausnahmen.json` (Verfall
   30 Tage). **Melde-Modus bis 22.9.2026** (`e2e/flake-modus.json`), danach automatisch hart;
   fehlende/kaputte Modus-Datei ⇒ hart. Wurzel je Spec messen
-  (Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4), nicht Ausnahmen sammeln.
+  (Fund als EINGANG-Zeile), nicht Ausnahmen sammeln.
 - **Browser-Installation** über `scripts/ci/playwright-install.sh` (#785). Ein roter Shard ohne
   rote Tests ⇒ zuerst den Schritt lesen, nicht die Suite verdächtigen.
 - **Reine Doku-PRs** (Diff-Klasse «doku») überspringen `bau` und `e2e`; die Doku-Tore laufen
@@ -418,8 +418,7 @@ Wächter: Startabfrage (Skill `bauschritt` Station A) und `npm run aufraeumen:gi
    aber durch eine Leerzeile unsichtbar → Merge-Schutz rot). Vor jedem PR
    lokal `npm run check:merge-schutz` (Sekunden, spart den CI-Lauf).
 2. *(entfällt 20.9.2026 — galt nur für die abgebaute `plan-buchung.yml`-
-   Auto-Buchung; `@blockers`-Slug bleibt Pflicht, das prüft `check:plan`.)*
-   *(`check:plan` und `@blockers` abgebaut 5.10.2026, Umstieg.)*
+   Auto-Buchung; `check:plan` und `@blockers` abgebaut 5.10.2026, Umstieg.)*
 3. **PR zeigt «no checks reported» → ZUERST Mergeability prüfen**
    (`gh pr view N --json mergeable`): bei CONFLICTING baut GitHub gar keinen
    CI-Lauf (PR #605). Fix ist der main-Merge, nicht das Neu-Triggern.
