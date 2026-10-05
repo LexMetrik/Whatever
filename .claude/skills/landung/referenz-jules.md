@@ -32,7 +32,7 @@ gh pr list --state open --json number,headRefName \
    Golden-Dateien ⇒ Ablehnung (§6.3).
 5. **Neue Abhängigkeiten** in `package.json`/Lockfile ⇒ Ablehnung, ausser der
    Auftrag hat sie ausdrücklich erlaubt.
-6. Trailer prüfen: `Roadmap: <ID>` im letzten Absatz. `Gegenpruefung: n/a —
+6. Trailer prüfen: `Roadmap: <Kürzel>` im letzten Absatz. `Gegenpruefung: n/a —
    kein Risikopfad` nur eintragen, wenn `npm run check:gegenpruefung` das
    bestätigt. Golden byte-gleich, wo berührt.
 7. **Nie Auto-Merge**, auch nicht ausserhalb der Risiko-Pfade.

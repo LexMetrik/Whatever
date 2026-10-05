@@ -152,7 +152,7 @@ Pfad ist ein Risiko-Pfad. Dort ist die adversariale Gegenprüfung **verpflichten
   Gegentest-Kandidat: der dokumentierte **Tabelle-verloren / Spaltenmerge**-Befund (52 Gesetze +
   22 Kantonstarife, `STRUKTUR.md`).
 - **Tor:** das maschinelle `check:gegenpruefung` ist **implementiert und in `npm run check`
-  verdrahtet** (CI-ausgenommen; Querschnitt **`QS-GP`** im Querschnitt-Band der `ROADMAP.md`): es
+  verdrahtet** (CI-ausgenommen): es
   liest `bibliothek/.gegenpruefung-pending` und geht **nur wenn Risiko-Globs im Diff sind**
   (`scripts/normtext/**`, `public/normtext/*.json`, `src/lib/normtext/**`, `scripts/fedlex-*`, …)
   bei fehlendem Nachweis, Hash-Mismatch oder Verdikt ≠ «bestanden» ROT. **Reine Entscheid-Outputs
