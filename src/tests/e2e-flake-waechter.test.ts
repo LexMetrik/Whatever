@@ -1,204 +1,161 @@
 // src/tests/e2e-flake-waechter.test.ts — Verdikt-Logik des Flacker-Wächters.
 //
-// Prüft die reine Funktion `flackerVerdikt` (Report-JSON + Ausnahmeliste +
-// Datum ⇒ Verdikt). Das Tor selbst läuft nur in CI (Playwright-JSON-Report),
-// seine ENTSCHEIDUNGSREGEL ist hier deterministisch nachgestellt — inklusive
-// der Fehlerseite (§6.7 lit. b): fehlender Report, formwidrige Ausnahme und
-// abgelaufene Duldung sind rot, nie stilles Grün.
+// Prüft die reine Funktion `flackerVerdikt` (Report-JSON ⇒ Verdikt) und einmal
+// den Kommandozeilen-Rand (Exit-Code, Fund-Datei, Step-Summary). Das Tor selbst
+// läuft nur in CI (Playwright-JSON-Report); seine ENTSCHEIDUNGSREGEL ist hier
+// deterministisch nachgestellt.
+//
+// REGEL SEIT 5.10.2026 (Entscheid David, QS-CI-ZEIT E2): Retry-Grün ist eine
+// WARNUNG (+ Reparatur-Zettel aus ci.yml), kein Rot mehr. Rot bleiben: ein Test,
+// der in allen Versuchen rot ist, und jede Unklarheit im Report (§6.7 lit. b).
+// Die frühere Ausnahmeliste/Modus-Datei ist zurückgebaut — ihre Tests mit ihr.
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { flackerVerdikt, specNormalisieren } from '../../scripts/check-e2e-flake.ts';
+import { flackerVerdikt, specNormalisieren, stepSummary } from '../../scripts/check-e2e-flake.ts';
 
-const HEUTE = new Date('2026-09-08T10:00:00Z');
+type Status = 'expected' | 'flaky' | 'unexpected';
 
-/** Minimaler Playwright-JSON-Report mit n flackernden Tests in einer Spec. */
-function report(opts: { flaky: number; datei?: string; versuche?: number }): string {
-  const datei = opts.datei ?? 'gesetze-a-ueberlauf.e2e.ts';
-  const specs =
-    opts.flaky > 0
-      ? [
-          {
-            title: 'A-Überlauf ohne Scroller',
-            file: datei,
-            tests: [
-              {
-                status: 'flaky',
-                results: Array.from({ length: (opts.versuche ?? 2) }, (_, i) => ({ retry: i })),
-              },
-            ],
-          },
-        ]
-      : [{ title: 'alles ruhig', file: datei, tests: [{ status: 'expected', results: [{ retry: 0 }] }] }];
+/** Minimaler Playwright-JSON-Report: ein Test je Eintrag, mit Status und Versuchszahl. */
+function report(tests: { status: Status; datei?: string; titel?: string; versuche?: number }[]): string {
+  const zaehle = (s: Status): number => tests.filter((t) => t.status === s).length;
+  const specs = tests.map((t) => ({
+    title: t.titel ?? 'A-Überlauf ohne Scroller',
+    file: t.datei ?? 'gesetze-a-ueberlauf.e2e.ts',
+    tests: [
+      {
+        status: t.status,
+        results: Array.from({ length: t.versuche ?? (t.status === 'expected' ? 1 : 3) }, (_, i) => ({ retry: i })),
+      },
+    ],
+  }));
   return JSON.stringify({
-    suites: [{ title: datei, file: datei, specs }],
-    stats: { expected: 1, unexpected: 0, flaky: opts.flaky, skipped: 0 },
+    suites: [{ title: 'wurzel', file: 'gesetze-a-ueberlauf.e2e.ts', specs }],
+    stats: { expected: zaehle('expected'), unexpected: zaehle('unexpected'), flaky: zaehle('flaky'), skipped: 0 },
   });
-}
-
-function ausnahme(felder: Partial<Record<'spec' | 'seit' | 'grund' | 'ablauf', unknown>>): string {
-  return JSON.stringify([
-    {
-      spec: 'gesetze-a-ueberlauf.e2e.ts',
-      seit: '2026-09-08',
-      grund: 'Chevron-Drehung, Wurzel in Arbeit (#778)',
-      ablauf: '2026-10-08',
-      ...felder,
-    },
-  ]);
 }
 
 describe('Flacker-Wächter — Verdikt', () => {
-  it('kein Flackern ⇒ grün', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 0 }), ausnahmenRoh: '[]', heute: HEUTE });
+  it('kein Flackern ⇒ grün, keine Funde', () => {
+    const v = flackerVerdikt({ reportRoh: report([{ status: 'expected' }]) });
     expect(v.rot).toBe(false);
     expect(v.funde).toEqual([]);
-    expect(v.zusammenfassung).toBe('Flacker-Wächter: 0 rot · 0 Ausnahmen (0 in der Liste)');
+    expect(v.zusammenfassung).toBe('Flacker-Wächter: grün · 0 flackern (Warnung, kein Rot)');
+    expect(stepSummary(v)).toBe('');
   });
 
-  it('Flackern ohne Ausnahme ⇒ rot, mit ::error und Retry-Zahl', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 1, versuche: 2 }), ausnahmenRoh: '[]', heute: HEUTE });
-    expect(v.rot).toBe(true);
-    expect(v.funde).toHaveLength(1);
-    expect(v.funde[0].retries).toBe(1);
-    expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('FLACKERT: gesetze-a-ueberlauf.e2e.ts — 1× Retry'))).toBe(true);
-    expect(v.zusammenfassung).toContain('1 rot');
-  });
-
-  it('Flackern mit gültiger Ausnahme ⇒ grün mit ::warning-Hinweis', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 1 }), ausnahmenRoh: ausnahme({}), heute: HEUTE });
+  it('Retry-Grün ⇒ NICHT rot, aber ::warning FLACKERT mit Retry-Zahl und Fund', () => {
+    const v = flackerVerdikt({ reportRoh: report([{ status: 'flaky', versuche: 2 }]) });
     expect(v.rot).toBe(false);
-    expect(v.funde[0].ausnahme?.grund).toContain('Chevron-Drehung');
-    expect(v.meldungen.some((m) => m.startsWith('::warning') && m.includes('geduldet bis 2026-10-08'))).toBe(true);
-    expect(v.zusammenfassung).toBe('Flacker-Wächter: 0 rot · 1 Ausnahme (gültig bis 2026-10-08)');
+    expect(v.funde).toEqual([{ spec: 'gesetze-a-ueberlauf.e2e.ts', retries: 1, titel: ['A-Überlauf ohne Scroller'] }]);
+    const warnung = v.meldungen.find((m) => m.startsWith('::warning file=e2e/gesetze-a-ueberlauf.e2e.ts::FLACKERT'));
+    expect(warnung).toContain('1× Retry');
+    expect(v.meldungen.some((m) => m.startsWith('::error'))).toBe(false);
+    expect(stepSummary(v)).toContain('FLACKERT `e2e/gesetze-a-ueberlauf.e2e.ts`');
   });
 
-  it('abgelaufene Ausnahme ⇒ rot (Duldung verfällt nach 30 Tagen)', () => {
-    const alt = ausnahme({ seit: '2026-08-01', ablauf: '2026-08-31' });
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 1 }), ausnahmenRoh: alt, heute: HEUTE });
+  it('Test in ALLEN Versuchen rot ⇒ ROT, mit Spec und Titel', () => {
+    const v = flackerVerdikt({ reportRoh: report([{ status: 'unexpected', titel: 'Reiter tragen Registerfarbe' }]) });
     expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('ABGELAUFEN'))).toBe(true);
+    expect(v.dauerRot).toEqual(['gesetze-a-ueberlauf.e2e.ts › Reiter tragen Registerfarbe']);
+    expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('in ALLEN Versuchen rot'))).toBe(true);
+    expect(stepSummary(v)).toContain('DAUER-ROT');
   });
 
-  it('letzter Geltungstag zählt noch, der Folgetag nicht mehr', () => {
-    const bis = ausnahme({ seit: '2026-08-09', ablauf: '2026-09-08' });
-    expect(flackerVerdikt({ reportRoh: report({ flaky: 1 }), ausnahmenRoh: bis, heute: HEUTE }).rot).toBe(false);
-    expect(
-      flackerVerdikt({ reportRoh: report({ flaky: 1 }), ausnahmenRoh: bis, heute: new Date('2026-09-09T00:01:00Z') }).rot,
-    ).toBe(true);
-  });
-
-  it('Ausnahme ohne Grund ⇒ rot (Formfehler), auch bei grünem Lauf', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 0 }), ausnahmenRoh: ausnahme({ grund: '   ' }), heute: HEUTE });
-    expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.includes("Feld 'grund' fehlt"))).toBe(true);
-  });
-
-  it('Ausnahme ohne Datum ⇒ rot (Formfehler)', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 1 }), ausnahmenRoh: ausnahme({ seit: undefined }), heute: HEUTE });
-    expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.includes("Feld 'seit' fehlt"))).toBe(true);
-  });
-
-  it('Ausnahme länger als 30 Tage ⇒ rot (Formfehler)', () => {
+  it('Dauer-Rot neben Flackern ⇒ rot; das Flackern wird trotzdem als Fund gemeldet', () => {
     const v = flackerVerdikt({
-      reportRoh: report({ flaky: 1 }),
-      ausnahmenRoh: ausnahme({ seit: '2026-09-08', ablauf: '2026-10-09' }),
-      heute: HEUTE,
+      reportRoh: report([
+        { status: 'unexpected', datei: 'a.e2e.ts' },
+        { status: 'flaky', datei: 'b.e2e.ts' },
+      ]),
     });
     expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.includes('Höchstdauer ist 30 Tage'))).toBe(true);
+    expect(v.funde.map((f) => f.spec)).toEqual(['b.e2e.ts']);
   });
 
   it('Report fehlt ⇒ rot, nie stilles Grün', () => {
-    const v = flackerVerdikt({ reportRoh: null, ausnahmenRoh: '[]', heute: HEUTE });
+    const v = flackerVerdikt({ reportRoh: null });
     expect(v.rot).toBe(true);
     expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('fehlt'))).toBe(true);
-    // Die Schlusszeile darf ein Rot ohne Spec-Zuordnung nicht als «0 rot» tarnen.
-    expect(v.zusammenfassung).toContain('ROT (Report- oder Formfehler');
+    expect(v.zusammenfassung).toContain('ROT');
   });
 
-  it('Report unlesbar oder ohne stats.flaky ⇒ rot', () => {
-    expect(flackerVerdikt({ reportRoh: '{kaputt', ausnahmenRoh: '[]', heute: HEUTE }).rot).toBe(true);
-    expect(flackerVerdikt({ reportRoh: '{"suites":[]}', ausnahmenRoh: '[]', heute: HEUTE }).rot).toBe(true);
+  it('Report unlesbar oder ohne stats.flaky / stats.unexpected ⇒ rot', () => {
+    expect(flackerVerdikt({ reportRoh: '{kaputt' }).rot).toBe(true);
+    expect(flackerVerdikt({ reportRoh: '{"suites":[]}' }).rot).toBe(true);
+    expect(flackerVerdikt({ reportRoh: JSON.stringify({ suites: [], stats: { flaky: 0 } }) }).rot).toBe(true);
+    expect(flackerVerdikt({ reportRoh: JSON.stringify({ suites: [], stats: { unexpected: 0 } }) }).rot).toBe(true);
   });
 
   it('stats.flaky > 0 ohne zuordenbaren Test ⇒ rot (Formatwechsel darf nichts verschlucken)', () => {
     const roh = JSON.stringify({ suites: [], stats: { flaky: 2, expected: 0, unexpected: 0, skipped: 0 } });
-    const v = flackerVerdikt({ reportRoh: roh, ausnahmenRoh: '[]', heute: HEUTE });
+    const v = flackerVerdikt({ reportRoh: roh });
     expect(v.rot).toBe(true);
     expect(v.meldungen.some((m) => m.includes('stats.flaky=2'))).toBe(true);
   });
 
-  it('Ausnahmeliste fehlt oder ist kein Array ⇒ rot', () => {
-    expect(flackerVerdikt({ reportRoh: report({ flaky: 0 }), ausnahmenRoh: null, heute: HEUTE }).rot).toBe(true);
-    expect(flackerVerdikt({ reportRoh: report({ flaky: 0 }), ausnahmenRoh: '{}', heute: HEUTE }).rot).toBe(true);
+  it('stats.unexpected > 0 ohne zuordenbaren Test ⇒ trotzdem rot', () => {
+    const roh = JSON.stringify({ suites: [], stats: { flaky: 0, expected: 0, unexpected: 1, skipped: 0 } });
+    const v = flackerVerdikt({ reportRoh: roh });
+    expect(v.rot).toBe(true);
+    expect(v.meldungen.some((m) => m.includes('(keinem Test zuordenbar)'))).toBe(true);
   });
 
-  it('ungenutzte Ausnahme ist ein Hinweis, kein Rot (Shard sieht nur seine Gruppe)', () => {
-    const v = flackerVerdikt({ reportRoh: report({ flaky: 0 }), ausnahmenRoh: ausnahme({}), heute: HEUTE });
-    expect(v.rot).toBe(false);
-    expect(v.meldungen.some((m) => m.startsWith('Hinweis: Ausnahme'))).toBe(true);
-  });
-
-  it('Spec-Pfade werden einheitlich normalisiert (Ausnahme greift mit und ohne e2e/-Präfix)', () => {
+  it('Spec-Pfade werden einheitlich normalisiert, Retries je Spec summiert', () => {
     expect(specNormalisieren('./e2e/x.e2e.ts')).toBe('x.e2e.ts');
     const v = flackerVerdikt({
-      reportRoh: report({ flaky: 1, datei: 'e2e/gesetze-a-ueberlauf.e2e.ts' }),
-      ausnahmenRoh: ausnahme({ spec: 'e2e/gesetze-a-ueberlauf.e2e.ts' }),
-      heute: HEUTE,
+      reportRoh: report([
+        { status: 'flaky', datei: 'e2e/x.e2e.ts', titel: 'eins', versuche: 2 },
+        { status: 'flaky', datei: './e2e/x.e2e.ts', titel: 'zwei', versuche: 3 },
+      ]),
     });
-    expect(v.rot).toBe(false);
+    expect(v.funde).toEqual([{ spec: 'x.e2e.ts', retries: 3, titel: ['eins', 'zwei'] }]);
   });
 });
 
-// Melde-Modus mit Stichtag (Entscheid Orchestrator 8.9.2026, e2e/flake-modus.json):
-// bis `hart_ab` wird Flackern nur gemeldet (::warning, Exit 0), ab dem Stichtag
-// gilt wieder die harte Ausnahme-Regel oben. Modus-Datei fehlt/formwidrig ⇒ hart.
-describe('Flacker-Wächter — Melde-Modus (Stichtag)', () => {
-  const modus = (hartAb: string): string =>
-    JSON.stringify({ modus: 'melden', hart_ab: hartAb, grund: 'Messung 8.9.2026: 6 Specs flackern, Wurzeln messen' });
+// Rot-und-Grün-Beweis am Kommandozeilen-Rand (§6.7): der Exit-Code ist das, was
+// den Shard-Schritt in ci.yml rot oder grün macht. `VITEST` wird dem Kind
+// entzogen, sonst überspringt der Entry-Guard den Rand.
+describe('Flacker-Wächter — Exit-Code (CLI)', () => {
+  const ordner = mkdtempSync(join(tmpdir(), 'flake-waechter-'));
+  const fahre = (reportRoh: string): { exit: number; ausgabe: string; funde: string; summary: string } => {
+    const reportPfad = join(ordner, `report-${Math.random().toString(36).slice(2)}.json`);
+    const funde = `${reportPfad}.funde.json`;
+    const summary = `${reportPfad}.summary.md`;
+    writeFileSync(reportPfad, reportRoh);
+    writeFileSync(summary, '');
+    const env: NodeJS.ProcessEnv = { ...process.env, E2E_FLAKE_FUNDE: funde, GITHUB_STEP_SUMMARY: summary };
+    delete env.VITEST;
+    try {
+      const ausgabe = execFileSync('npx', ['vite-node', 'scripts/check-e2e-flake.ts', reportPfad], { env, encoding: 'utf8' });
+      return { exit: 0, ausgabe, funde: existsSync(funde) ? readFileSync(funde, 'utf8') : '', summary: readFileSync(summary, 'utf8') };
+    } catch (e) {
+      const f = e as { status: number; stdout: string };
+      return { exit: f.status, ausgabe: f.stdout, funde: existsSync(funde) ? readFileSync(funde, 'utf8') : '', summary: readFileSync(summary, 'utf8') };
+    }
+  };
 
-  it('melden vor dem Stichtag ⇒ 0 rot, Flackern nur als Warnung', () => {
-    const v = flackerVerdikt({
-      reportRoh: report({ flaky: 1 }),
-      ausnahmenRoh: '[]',
-      heute: new Date('2026-09-10T00:00:00Z'),
-      modusRoh: modus('2026-09-22'),
-    });
-    expect(v.rot).toBe(false);
-    expect(v.meldungen.some((m) => m.startsWith('::warning') && m.includes('FLACKERT'))).toBe(true);
-    expect(v.zusammenfassung).toBe('Flacker-Wächter (MELDE-MODUS bis 2026-09-22): 1 flackern · Stichtag hart ab 2026-09-22');
-  });
+  it('durchgängig roter Test ⇒ Exit ≠ 0', () => {
+    const r = fahre(report([{ status: 'unexpected' }]));
+    expect(r.exit).not.toBe(0);
+    expect(r.ausgabe).toContain('in ALLEN Versuchen rot');
+  }, 60_000);
 
-  it('melden am/nach dem Stichtag ⇒ hart, rot ohne Ausnahme', () => {
-    const v = flackerVerdikt({
-      reportRoh: report({ flaky: 1 }),
-      ausnahmenRoh: '[]',
-      heute: new Date('2026-09-22T00:00:00Z'),
-      modusRoh: modus('2026-09-22'),
+  it('Retry-Grün ⇒ Exit 0, ::warning FLACKERT, Fund-Datei und Step-Summary geschrieben', () => {
+    const r = fahre(report([{ status: 'flaky', versuche: 2 }]));
+    expect(r.exit).toBe(0);
+    expect(r.ausgabe).toContain('::warning file=e2e/gesetze-a-ueberlauf.e2e.ts::FLACKERT');
+    expect(JSON.parse(r.funde)).toEqual({
+      funde: [{ spec: 'gesetze-a-ueberlauf.e2e.ts', retries: 1, titel: ['A-Überlauf ohne Scroller'] }],
     });
-    expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('FLACKERT'))).toBe(true);
-  });
+    expect(r.summary).toContain('FLACKERT');
+  }, 60_000);
 
-  it('Modus-Datei fehlt ⇒ hart (bestehende Ausnahme-Logik unverändert)', () => {
-    const v = flackerVerdikt({
-      reportRoh: report({ flaky: 0 }),
-      ausnahmenRoh: '[]',
-      heute: new Date('2026-09-10T00:00:00Z'),
-      modusRoh: null,
-    });
-    expect(v.rot).toBe(false);
-    expect(v.zusammenfassung).toBe('Flacker-Wächter: 0 rot · 0 Ausnahmen (0 in der Liste)');
-  });
-
-  it('Report fehlt im Melde-Modus ⇒ rot (nie stilles Grün)', () => {
-    const v = flackerVerdikt({
-      reportRoh: null,
-      ausnahmenRoh: '[]',
-      heute: new Date('2026-09-10T00:00:00Z'),
-      modusRoh: modus('2026-09-22'),
-    });
-    expect(v.rot).toBe(true);
-    expect(v.meldungen.some((m) => m.startsWith('::error') && m.includes('fehlt'))).toBe(true);
-  });
+  it('alles grün ⇒ Exit 0, keine Fund-Datei', () => {
+    const r = fahre(report([{ status: 'expected' }]));
+    expect(r.exit).toBe(0);
+    expect(r.funde).toBe('');
+  }, 60_000);
 });

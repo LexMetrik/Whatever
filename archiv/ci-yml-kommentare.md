@@ -1006,6 +1006,13 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # Testlauf bleibt rot, ganz gleich, wie dieser Schritt ausgeht.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E2, Ergänzung, Block oben unverändert):**
+> Die Regel «Flackern ist ROT» samt Ausnahmeliste (`e2e/flake-ausnahmen.json`)
+> und Melde-Modus (`e2e/flake-modus.json`) ist durch den Entscheid David
+> 5.10.2026 abgelöst: Retry-Grün ist eine Warnung plus Reparatur-Zettel, kein
+> Rot mehr. Beide Dateien sind zurückgebaut. Neue Regel, Begründung und
+> Zettel-Mechanik: ci-069. Stellung und `!cancelled()` des Schritts bleiben.
+
 ## ci-048 · e2e · Playwright-Traces ablegen (nur bei rotem Shard)
 
 ```text
@@ -1427,4 +1434,46 @@ Neu 5.10.2026 (QS-CI-ZEIT E1; kein verschobener Altkommentar).
   #     (Nachtrag ci-043).
   # Die Rechtslogik-/Rechtsdaten-Tore (Vitest, Korpus, Golden) laufen im PR
   # UND in der Queue unverändert merge-blockierend (Job `tore`).
+```
+
+## ci-069 · e2e/e2e-ergebnis · Flacker-Wächter + Reparatur-Zettel
+
+Neu 5.10.2026 (QS-CI-ZEIT E2; kein verschobener Altkommentar).
+
+```text
+  # ── Wackel-Regel gelockert: Retry-Grün = Warnung + Zettel (QS-CI-ZEIT E2) ────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «… Wackel-Regel dort
+  # lockern …»); löst die Regel vom 8.9.2026 (#779, ci-047) ab.
+  # MESSBASIS (300 Queue-Läufe): von 10 Browser-Röten in der Queue nach grünem
+  # PR waren 7 Flacker-Wächter-Rot, 0 echte Zusammenstösse. Ein Rauswurf aus der
+  # Queue kostet den ganzen Eintrag samt Nachfolgern — für einen Test, der beim
+  # zweiten Versuch grün war.
+  #
+  # NEU (scripts/check-e2e-flake.ts):
+  #   · Retry-Grün ⇒ Exit 0, `::warning::FLACKERT …` im Log und in der
+  #     Step-Summary, Fund-Datei `flake-funde-gruppe-N.json` (Artefakt, 1 Tag).
+  #   · HART ROT bleibt: Test in allen Versuchen rot (`stats.unexpected > 0`,
+  #     zusätzlich zum ohnehin roten Playwright-Schritt); Report fehlt/unlesbar/
+  #     ohne Zähler; `stats.flaky > 0` ohne zuordenbaren Test. Nicht gelaufene
+  #     Specs fängt weiterhin der Union-Wächter `check:e2e-shards` (F2-
+  #     Verschärfung i, jetzt in tore-checks, Nachtrag ci-043).
+  #   · REPARATUR-ZETTEL im Job `e2e-ergebnis` (nur merge_group/push; bei
+  #     workflow_dispatch nur die Warnung, weil der Stand dort ein beliebiger
+  #     Arbeitszweig sein kann): scripts/ci/flake-zettel.sh legt je Spec ein
+  #     Issue «Flackert: e2e/<spec>» (Label `flake`) an; offenes Issue ⇒ höchstens
+  #     ein Kommentar je Tag. Muster und Fehlerseite wie prod-smoke.yml («Bei Rot
+  #     — sichtbaren Aufgaben-Zettel anlegen»): trap ERR ⇒ ::warning, nie rot;
+  #     alle drei Zettel-Schritte `continue-on-error`, damit die Wertung im
+  #     Folgeschritt nie an der Zettel-Pflege hängt.
+  #   · RECHTE: `issues: write` (+ `contents: read` für den Sparse-Checkout von
+  #     scripts/ci, `actions: read` für den Artefakt-Download) NUR in diesem Job,
+  #     nicht in den Shards, die PR-Code ausführen.
+  #
+  # RÜCKBAU (§17-Gegengewicht): `e2e/flake-ausnahmen.json` (Duldung mit 30-Tage-
+  # Verfall) und `e2e/flake-modus.json` (Melde-Modus bis Stichtag) hatten nur
+  # die Aufgabe, ein ROT zu unterdrücken bzw. aufzuschieben. Ohne Rot dulden sie
+  # nichts mehr; ihre Erinnerungsfunktion (Verfall erzwingt Wurzel-Fix) trägt
+  # jetzt der offene Zettel. Der deterministische Erstfehler w224-r11 (8/8 Läufe
+  # im 1. Versuch rot, Ausnahme lief bis 20.10.2026) steht als Wurzelfix-Posten
+  # im ROADMAP-EINGANG.
 ```

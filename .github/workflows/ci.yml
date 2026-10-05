@@ -757,9 +757,21 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-047
-      - name: Flacker-Wächter (Retry-Grün ist kein Grün)
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+      - name: Flacker-Wächter (Retry-Grün = Warnung + Zettel, Dauer-Rot = rot)
         if: ${{ !cancelled() }}
+        env:
+          E2E_FLAKE_FUNDE: flake-funde-gruppe-${{ matrix.gruppe }}.json
         run: npm run check:e2e-flake
+      - name: Flacker-Funde ablegen (für den Reparatur-Zettel im Ergebnis-Job)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: actions/upload-artifact@v7
+        with:
+          name: flake-funde-gruppe-${{ matrix.gruppe }}
+          path: flake-funde-gruppe-${{ matrix.gruppe }}.json
+          retention-days: 1
+          if-no-files-found: ignore
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-048
       - name: Playwright-Traces ablegen (nur bei rotem Shard)
         if: failure()
@@ -777,7 +789,45 @@ jobs:
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-050
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-069
+    permissions:
+      actions: read
+      contents: read
+      issues: write
     steps:
+      - name: Zettel-Skript holen (nur scripts/ci)
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        continue-on-error: true
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts/ci
+      - name: Flacker-Funde der Shards einsammeln
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          pattern: flake-funde-gruppe-*
+          path: flake-funde
+          merge-multiple: true
+      - name: Reparatur-Zettel je flackernder Spec (Issue, Label flake, dedupliziert)
+        if: >-
+          !cancelled()
+          && needs.e2e.result != 'skipped'
+          && (github.event_name == 'merge_group' || github.event_name == 'push')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+        continue-on-error: true
+        run: bash scripts/ci/flake-zettel.sh flake-funde
       - name: Shard-Ergebnis gegen die Diff-Klasse werten
         env:
           ERGEBNIS: ${{ needs.e2e.result }}
