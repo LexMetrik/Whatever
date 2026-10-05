@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // ── W2·24-R5-F1K · D31 · EIN POPOVER MUSS DECKEN ───────────────────────────
 //
 // BEFUND David 6.9.2026, wörtlich: das Hover-Popover über einem Artikel-/

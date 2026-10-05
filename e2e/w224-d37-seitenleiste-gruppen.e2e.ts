@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: nacht
 //
 // ── D37 (David 7.9.2026, Rückfrage beantwortet) · ABSCHNITTE STARTEN ZU ─────
 //

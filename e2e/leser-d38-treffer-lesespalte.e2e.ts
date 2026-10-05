@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 6
 // ═══ D38 (David 7.9.2026) · DIE TREFFER ERSETZEN DEN GESETZESTEXT ═══════════
 //
 // BEFUND, wörtlich: «die suchresultate die erscheinen wenn man im gesetz sucht

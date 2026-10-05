@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
 
 // ─── Klebende Seitenleisten: Abstand unter der Arbeitsleiste (W2·31 Bündel I) ─

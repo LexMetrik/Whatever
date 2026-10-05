@@ -170,8 +170,8 @@ wechseln. *Warum NICHT `npm run golden:vergleich`:* Das prüft den Engine-Golden
 (`golden/lexmetrik-golden.json`), nicht den Normtext-Index — falsches Tor für
 diesen Pfad.
 
-**5 — Tore + DoD.** `npm run check:fedlex-versionen && npm run check:normtext &&
-npm run gate` grün, dann DoD-Abschluss wie oben Schritt 6/7 (Gegenprüfung nur,
+**5 — Tore + DoD.** `npm run check:fedlex-versionen && npm run check:normtext` und
+der PR-Lauf grün, dann DoD-Abschluss wie oben Schritt 6/7 (Gegenprüfung nur,
 falls die Extraktion sich inhaltlich änderte; reines Stand-Bump ohne
 Body-Änderung → `Gegenpruefung: n/a — reine Prüflogik`). §11-Ablage-Eintrag auf
 den neuen Stand aktualisieren.

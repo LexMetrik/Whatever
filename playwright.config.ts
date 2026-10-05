@@ -70,7 +70,9 @@ export default defineConfig({
   // 2 Workern 3 Läufe × 4 Shards alle grün, Shard-Job 8,3–11,7 statt 16,8 min,
   // Flaky je Lauf 2/3/4 gegen 3–4 mit 1 Worker (vier Vergleichsläufe). Darum 2.
   // Kehrt die Klick-Blockade zurück: zurück auf 1, nicht Timeouts erhöhen.
-  workers: process.env.CI ? 2 : undefined,
+  // Lokal 1 Worker (Auftrag David 5.10.2026, CPU bei parallelen Sessions;
+  // vorher undefined = halbe Kernzahl).
+  workers: process.env.CI ? 2 : 1,
   retries: process.env.CI ? 2 : 0,
   // CI zusätzlich als JSON: der `github`-Reporter druckt KEINE Per-Test-Dauern
   // (das tut nur das lokale `list`-Format), und `reportSlowTests` flaggt erst ab

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: nacht
 // ═══ GA · JEDE ANGABE GENAU EINMAL IM KOPF (W2·24, 7.9.2026) ════════════════
 //
 // FAHRPLAN-DESIGN-IDENTITAET §5 D4 («Kopf-/Ortsprüfung: jede Angabe genau

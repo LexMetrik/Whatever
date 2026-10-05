@@ -162,5 +162,8 @@ export default defineConfig({
     // Agent-Worktrees unter .claude/ nicht mittesten (sonst doppelte Suite
     // bzw. Fehlschläge aus halbfertigen Ständen fremder Sessions, 6.6.2026).
     exclude: ['**/node_modules/**', '**/dist/**', '**/.claude/**'],
+    // Lokal hoechstens 2 Worker (Auftrag David 5.10.2026, CPU bei parallelen
+    // Sessions; Mac 10 Kerne, Last ~27 gemessen) — CI unveraendert (Default).
+    maxWorkers: process.env.CI ? undefined : 2,
   },
 });

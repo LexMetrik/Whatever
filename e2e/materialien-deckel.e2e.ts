@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: nacht
 import { test, expect } from '@playwright/test';
 
 // ─── /materialien: DOM-Deckel je Behörde (W2·31-BILDSCHIRMBREITE P6, 30.9.2026)

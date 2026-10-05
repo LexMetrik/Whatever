@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // ═══ D19 · «+»-KNOPF ERZEUGT EINEN NEUEN REITER (David 6.9.2026) ════════════
 //
 // David wörtlich: «in der tab zeile oben soll man mit plus einen neuen reiter

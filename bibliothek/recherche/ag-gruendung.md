@@ -150,3 +150,26 @@ Regelinhalt je Rechtsform, §4) mit AG-Zusatzweichen: Inhaberaktien (Gate
 622 Ibis) · VR-Konstituierungsprotokoll immer Pflicht · Emissionsabgabe-
 Hinweis, wenn Leistungen > CHF 1 Mio. (harte Rechenregel: 1 % des
 übersteigenden Teils — §2-geeignet) · 697j/697l-Hinweisblock nach Eintrag.
+
+**Nachtrag 5.10.2026 (RECHTSLOGIK, §7 — Rechtsänderung, die Angaben oben sind
+der Stand ihres Datums und bleiben stehen):** Art. 697j, 697l, 697m und 790a OR
+sind aufgehoben, Art. 718 Abs. 4 und 814 Abs. 3 dritter Satz OR neu gefasst
+(nur noch «Zugang zum Aktienbuch» bzw. «Zugang zum Anteilbuch») — durch
+Anhang Ziff. 2 des Bundesgesetzes vom 26.9.2025 über die Transparenz
+juristischer Personen und die Identifikation der wirtschaftlich berechtigten
+Personen (TJPG), in Kraft seit 1.10.2026 (AS 2026 323; BBl 2024 1607).
+Belegt am Fedlex-Filestore-XML: OR SR 220 Konsolidierung 20261001 (gilt
+1.10.2026–30.6.2027) gegen 20260101; TJPG **SR 955.3**,
+https://www.fedlex.admin.ch/eli/cc/2026/323/de, Konsolidierung 20261001
+(Ausführungsverordnung TJPV SR 955.31, eli/cc/2026/364). Geltende Regel:
+Gesellschaft identifiziert/überprüft und dokumentiert ihre wirtschaftlich
+berechtigten Personen (Art. 4: ≥ 25 % Kapital oder Stimmen oder Kontrolle
+auf andere Weise, subsidiär oberstes Mitglied des leitenden Organs;
+Art. 7/8, 10 Jahre), meldet sie innert eines Monats nach HR-Eintragung dem
+Transparenzregister (Art. 9 Abs. 4; Änderungen Art. 10; Weg über das
+HR-Amt Art. 11), die CH-Vertretungsperson hat Zugang zu den Angaben
+(Art. 8 Abs. 4); Aktionär:innen/Gesellschafter:innen melden der Gesellschaft
+innert eines Monats nach Entstehung der Kontrolle (Art. 13 Abs. 3);
+Ausnahmen Art. 3. Engine `src/lib/gruendungsunterlagen.ts` (Eintrag
+`wb-verzeichnis`, Blocker CH-Vertretung) am 5.10.2026 nachgezogen.
+Abnahme-Status: offen (fachliche Abnahme David).

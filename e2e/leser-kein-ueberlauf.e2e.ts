@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 1
 // ═══ DER LESER LÄUFT NICHT QUER — SEITE UND GLIEDERUNG ══════════════════════
 //
 // ZUSAMMENGELEGT 31.8.2026 (Ent-Regulierung Runde 2 / Batch A, QS-EFFIZIENZ) aus

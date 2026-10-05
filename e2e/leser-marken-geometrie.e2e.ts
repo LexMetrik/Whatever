@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test'
 
 // ═══ S2-NACHZUG · MARKEN-GEOMETRIE IM LESEKÖRPER (17.8.2026) ═════════════════

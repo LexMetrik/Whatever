@@ -97,7 +97,7 @@ ohne Rückfrage nach diesem Zyklus.
 ## Station C — Prüfung (unverändert)
 
 - Genannte **Tore nackt fahren** (kein `--silent`, keine Filter, volle
-  Ausgabe lesen); Abschluss `npm run gate`.
+  Ausgabe lesen); Abschluss = CI-Lauf grün am Kopf-SHA (Lauf-ID), kein lokales gate.
 - **Rot-Beweise (§6.7) nur mit sauberem Index:** erst eigene neue Dateien
   committen, DANN Wegwerf-Probe-Commit anlegen/verwerfen — `git reset
   --hard` danach verschluckt sonst untracked Neu-Dateien und uncommittete
@@ -145,7 +145,7 @@ Sorgfalt, eigener Commit mit eigenem Roadmap-Trailer).
       ⇒ verankert nach Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill >
       Prosa) — nur im Chat gilt als nicht gezogen. Danach Datei löschen;
       Übergabe: Datei bleibt, Pfad im Chip. Einen PR/Zweig nennt die Übergabe
-      nur mit Beleg «fertig» (gate-Exit 0 + Kopf-SHA), sonst «in Arbeit» —
+      nur mit Beleg «fertig» (CI-Lauf grün + Kopf-SHA), sonst «in Arbeit» —
       Beleg D2/#1072 (24.9.2026): «fertig, nicht eingereicht», war gate-rot
       mit 5 Tests, Lint und Schlankheit (§14.7).
 - [ ] **JETZT nachgeführt** im abschliessenden PR (Station D); jede

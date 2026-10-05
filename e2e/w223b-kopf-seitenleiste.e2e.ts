@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: nacht
 // ── Kopf- und Seitenleiste nach W2·23-STARTSEITE-V4 §6 (Arbeitspaket B) ──────
 //
 // Drei Zusagen, je mit Gegenprobe (§6.7 — ein Fall, der nicht rot werden kann,

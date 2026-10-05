@@ -67,10 +67,13 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`. *FB
 Vault, `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/fehlerbestand-2026-10-05.md` (Zeilen-IDs
 nur dort gültig; Angaben aus Merkzetteln, vor der Behebung gegen die amtliche Quelle prüfen, §7).
 
-1. **Normen-Monitor wieder grün** (`MONITOR`) · S · Gegenprüfung ja
-   *Herkunft:* rot seit 29.6. mit Unterbrüchen; Alarm #956 (ESKALATION, seit 21.9.).
-   *Fertig, wenn* der Monitor-Lauf grün ist und #956 geschlossen.
-   *Ort:* Dach `QS-MONITOR-ROT`; `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md`.
+1. **Normen-Monitor zurückbauen** (`MONITOR`) · S · Gegenprüfung ja
+   *Herkunft:* **Go David 05.10.** («wichtig ist gesetzestext. der rest muss nicht zu einem rot
+   führen.» · «achte darauf wie sich das ganze system noch mehr automatisiert.»); Inventar 5.10.:
+   31 Läufe seit 29.6., 24 rot, nur ~7 wegen echter Textänderung; Alarm #956 seit 21.9.
+   *Fertig, wenn* nur noch Gesetzestext-Abweichung rot färbt, der Rest Bericht oder Automatik ist
+   und #956 geschlossen.
+   *Ort:* Zweig `MONITOR/rueckbau`; Dach `QS-MONITOR-ROT`.
 2. **«Gilt seit» stimmt im Kern-Bund** (`GILTSEIT`) · R + Phase 1 · Gegenprüfung ja
    *Herkunft:* Mandat 14.9.; Entscheid David 4.10. «A, und C als eigenen Roadmap-Schritt anlegen»
    (#1305, 74b366602).
@@ -109,8 +112,19 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ## EINGANG
 
 ```
-- S · 5.10. · e2e/w224-r11-reiterleiste.e2e.ts «auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot (8/8), Ausnahmeliste zurückgebaut (QS-CI-ZEIT E2) — Wurzel beheben; FB S-24
+- R · 5.10. · check:zitate meldet Zitate auf aufgehobene Artikel nicht, solange das Artikel-Element besteht (697j/790a OR liefen grün, nur das Sammelelement 697l–697m fiel auf) — Wurzel: «Aufgehoben»-Text als Befund; Fund RECHTSLOGIK/or-697l
+- R · 5.10. · TJPG (SR 955.3) fehlt in FEDLEX-Linktabelle, Normtext-Korpus und Zitat-Muster von check:zitate («Art. 9 TJPG» ohne Link, maschinell ungeprüft)
+- R · 5.10. · Gegenprüfungs-Pin «fedlex OR 20260101» überholt (Cache 20261001) ⇒ Gegenprüfungen der OR-Engines neu fällig
+- R · Abnahme David · Gründungs-Checklisten AG/GmbH nach TJPG: Hinweistext, «als Organ» bei AG (Art. 11 TJPG), Übergangsrecht weggelassen; nicht erwähnt: Gemeinwesen-Ausnahme Art. 3 lit. c TJPG, vereinfachtes Verfahren Art. 35/36 TJPV — bibliothek/recherche/ag-gruendung.md, gmbh-gruendung.md
+- R · 5.10. · ZH LS 215.2: Quell-URL gewechselt (Normen-Monitor 5.10.) — neue Fassung? vor Bau reproduzieren
+- S · 5.10. · Geplante Läufe starten 5–9 h verspätet (Frische 11:48 statt 04:43, Monitor 16:07 statt 07:17) — Fedlex-Frische verpasst Publikationen des Tages
+- I · Go David 05.10. · Automatik nach Monitor-Rückbau: LIK-Nachführung, Fedlex-Abkürzungen, Tarif-Stand, Verfall, ESTV-Snapshots sind Handarbeit nach Wochenbericht — Bots statt Sessions
+- I · 5.10. · Sessions lassen Worktrees und Zweige nach der Landung liegen (5.10.: 21 Zweige, 6 Worktrees; aufraeumen:git wird nicht gefahren) — Wurzel: automatisch statt Abschluss-Punkt
+- S · 5.10. · Dauer-Wackler reparieren (Go David 05.10.): Wurzelfix je Spec, nicht löschen — Kandidaten aus bibliothek/betrieb/e2e-fang-historie-2026-10-05/spec-tabelle.csv (≥ 7 Flakes, kein Produkt-Fang): leser-v3-suche-ohne-gliederung 13, druck-fundstellen-z2 13, gesetze-ux-9punkte 12 (+7 offen), w224-r11-reiterleiste 11 («auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot 8/8, Ausnahmeliste zurückgebaut, QS-CI-ZEIT E2), leser-v3-blatt 10, tastatur 7; FB S-24 — Dach QS-CI-ZEIT
+- S · 5.10. · e2e/leser-kopf-cls-s3.e2e.ts:80-84 wartet auf den Fedlex-Konsolidierungshinweis an STPO — fällt rot, sobald Fedlex konsolidiert, ohne Defekt (GP #1326) — Dach QS-CI-ZEIT
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
+- S · 5.10. · tor-schutz.py Regel 1 zerlegt an `|` in Anführungszeichen (grep -E 'a|b' gilt als Pipe-Tor); quote-/heredoc-fester Split liegt als Diff in 5260e0118 (QS-CPU) — Dach QS-CPU
+- S · 5.10. · gate-stopp.py (vitest related) übersieht neue untracked Verzeichnisse und Nicht-ASCII-Dateinamen (porcelain-Quoting), ab ~400 related Dateien reisst das 240-s-Limit (Review #1328) — Dach QS-CPU
 - S · 5.10. · tor-paritaet: (1) Sonde ignoriert Job-if (z. B. event_name != 'pull_request'), Tor in PR-gesperrtem Job zählt als PR-gedeckt; (2) check:perf-lighthouse gilt durch perf-kalibrierung.yml (--messen, ohne Assertion) als gedeckt — perf-nacht.yml könnte die Prüfung still verlieren (GP #1323) — Dach QS-CI-ZEIT
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26
