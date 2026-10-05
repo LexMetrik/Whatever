@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-10-05",
   "eintraege": [
     {
       "id": "bund/VBB/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "833613bd48270820ab80ef7f170529e8ee01eab6ee93cd1c3297e1e61b9ad52f"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "20f43c445b691f7446402f11cf7e04130fbbf63407aa0c7349f34fada0d182a2"
     },
@@ -70,7 +70,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_3",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "66d75bccd0a1af84da5cb40835bc8c40490df1a9c5a2ed333c1f02c09cb1bf66"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_4",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "7c4f0639e2dc61ddeae4f820edd63eb2594f316c0780bfd5937ab22c5d70d31b"
     },
@@ -112,7 +112,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_5",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "2a99b908186717fa399a6b96ee546eca078fda1823942160286b4dfcc1dc213c"
     },
@@ -131,7 +131,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_6",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "a6804d68be37b1f7209d3b6b1a9dff71b9ec65d0b5a263bb56bf8c5ee8c08d68"
     },
@@ -150,7 +150,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_7",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "ef18bfac0303537145de3cbfd648e0440a755a168a219c0c18620a546e88bac8"
     },
@@ -203,7 +203,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_8",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "cf8391a8e949f94bc2c82f1881cebc46b8808c720c4c8f14a238543b971ff460"
     },
@@ -267,7 +267,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_9",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "99b3e03b71def895d871c538829ac0c15d85605fe9767da96b8b2a02a21761d1"
     },
@@ -330,6 +330,10 @@
         },
         {
           "absatz": null,
+          "text": "Datum der Absendung und Zustellung des Zahlungsbefehls; durch Bruchzahl zu bezeichnen, wenn beide Daten nicht zusammenfallen."
+        },
+        {
+          "absatz": null,
           "text": "Datum des Rechtsvorschlags, wenn ein solcher erfolgt ist. Bei Bestreitung nur eines Teils der Forderung, Angabe des bestrittenen Betrags."
         },
         {
@@ -338,7 +342,15 @@
         },
         {
           "absatz": null,
+          "text": "Datum der provisorischen Rechtsöffnung."
+        },
+        {
+          "absatz": null,
           "text": "Datum der definitiven Rechtsöffnung."
+        },
+        {
+          "absatz": null,
+          "text": "Datum des Eingangs des Begehrens um Fortsetzung der Betreibung."
         },
         {
           "absatz": null,
@@ -363,6 +375,10 @@
         {
           "absatz": null,
           "text": "Datum der Übersendung der Konkursandrohung."
+        },
+        {
+          "absatz": null,
+          "text": "Angabe der Art der Erledigung der Betreibung, durch einen Anfangsbuchstaben:"
         },
         {
           "absatz": null,
@@ -405,9 +421,9 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_10",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
-      "sha": "a8e973700af8be73ac225df4370e276411c00ab7ec483e29d83bd7a6ecaf2a98"
+      "sha": "968dbf98534f2c381ad9bd3f5a7970f8c9aed40725002826825cf0559e745eae"
     },
     {
       "id": "bund/VBB/art_11",
@@ -492,7 +508,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_11",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "2e093209555d94e3ec7d0d0a6c5268172a4a276a1bf6f5bab0f9810246c1451f"
     },
@@ -515,7 +531,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_12",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "a9837d9aa80b30bb7a5daafb5b0c2784897dcbe6c745e7b75967f5fd8a74a347"
     },
@@ -538,7 +554,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_13",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "2e3451dd8c9073cf59da66c009930579a8a223dfcc16bd30256f2cb13b42a2c4"
     },
@@ -561,7 +577,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_14",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "96f1245ee6c6151db20a2a0c519c7f24d840fec1180c369e41677546038e58a8"
     },
@@ -584,7 +600,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_15",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "385b41a635b4ea96d2a2db5d11e715f4e5a9bc6ba406e9567f802ea5d2a24860"
     },
@@ -617,7 +633,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_16",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "e27d5cf8e80f32bd0e31777ea1fc97ede1396032f571585c9a8387c8cad9bf38"
     },
@@ -650,7 +666,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_17",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "a92db3a435be02a1083792f2db9d712b634d3f5d4e79d058ff6c1f7911d7b465"
     },
@@ -669,7 +685,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_18",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "597575cff98ecb00e1150136d500401bb4cbb69b7a564006f9f139fc211bac66"
     },
@@ -696,7 +712,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1996/2877_2877_2877/de#art_19",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-10-05",
       "fassungsToken": "20160101",
       "sha": "7ee540fc97e9dc89ff2394a8684c445459e20c41247ae6f843e0871c1f969cfa"
     }
