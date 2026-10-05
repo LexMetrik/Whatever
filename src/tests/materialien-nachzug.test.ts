@@ -4,14 +4,14 @@
 // vor EINER Kaskade ohne Revisionen, Werkzeugfehler ⇒ Exit ≠ 0, und die Workflow-Struktur
 // (kein Auto-Merge, Entwurf bei «pruefen», Staging = ERLAUBTE_PFADE). Nachzug nach Gegenprüfung
 // 6.10.2026: Vorprüfung vor jedem Netz-Abruf (B1), rote Stufe festgenagelt (S1), Netzfehler im
-// Snapshot ⇒ verworfen statt rot (K1).
+// Snapshot ⇒ verworfen statt rot (K1), zweiter Netzfehler in Folge ⇒ rot über den Netz-Zettel.
 import { describe, expect, it, beforeAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import {
-  ERLAUBTE_PFADE, NACHZUG_ZWEIG_PRAEFIX, Werkzeugfehler, fremdePfade, klassifiziereZustand, nachzug, netzfehlerAus,
+  ERLAUBTE_PFADE, NACHZUG_ZWEIG_PRAEFIX, NETZ_ZETTEL_LABEL, Werkzeugfehler, netzZettelAktion, fremdePfade, klassifiziereZustand, nachzug, netzfehlerAus,
   parseQuellenFilter, prText, vorpruefung, werteNetzAus, type Lauf, type Werkzeuge,
 } from '../../scripts/materialien/nachzug';
 import { istRisikoPfad, behalten } from '../../scripts/gegenpruefung/kern';
@@ -317,6 +317,29 @@ describe('nachzug — Reihenfolge und Fehlerpfade', () => {
     expect(w.verworfen).toBe(0);
   });
 
+  describe('netzZettelAktion — Zwei-Läufe-Grenze (Muster Normen-Monitor)', () => {
+    const NF = { 'materialien:snapshot --quelle=estv-mwst': 1 };
+    const NF_ERR = { 'materialien:snapshot --quelle=estv-mwst': 'soft-law-snapshot ROT: fetchMitWiederholung: 4 Versuche erschöpft für https://a — fetch failed\n' };
+    const netzfehler = () => nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, exit: NF, stderr: NF_ERR }));
+    it('Netzfehler: erster Lauf ⇒ anlegen (grün), Zettel schon offen ⇒ kommentieren (rot)', () => {
+      expect(netzZettelAktion(netzfehler(), false)).toBe('anlegen');
+      expect(netzZettelAktion(netzfehler(), true)).toBe('kommentieren');
+    });
+    it('erfolgreicher Nachzug oder keine Drift schliesst einen offenen Zettel; ohne Zettel nichts', () => {
+      const erfolg = nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: ANGEHAENGT2 }));
+      const keineDrift = nachzug('2026-10-12', null, attrappe({}));
+      expect(netzZettelAktion(erfolg, true)).toBe('schliessen');
+      expect(netzZettelAktion(keineDrift, true)).toBe('schliessen');
+      expect(netzZettelAktion(erfolg, false)).toBe('');
+      expect(netzZettelAktion(keineDrift, false)).toBe('');
+    });
+    it('nur Hinweise des Netz-Tors oder Vorprüfungs-Abbruch ⇒ Zettel unberührt', () => {
+      const hinweise = nachzug('2026-10-12', null, attrappe({ netz: { status: 1, ausgabe: netz('ESTV-MWST: Live-Inventar ROT — Timeout') } }));
+      expect(netzZettelAktion(hinweise, true)).toBe('');
+      expect(netzZettelAktion(null, true)).toBe('');
+    });
+  });
+
   it('PR-Text nennt Status, Quellen-Tabelle und Hinweise', () => {
     const e = nachzug('2026-10-12', null, attrappe({ netz: DRIFT2, angehaengt: ANGEHAENGT2 }));
     const t = prText(e, '2026-10-12');
@@ -346,21 +369,26 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
   }
   it('B1: Vorprüfung bricht VOR jedem npm-/Netz-Aufruf ab — Exit 0, ::notice::, status=keine', () => {
     for (const env of [
-      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'failure' },
-      { AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: 'feat/x\nchore/materialien-nachzug-2026-10-05', LETZTER_LAUF: 'success' },
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'failure', NETZ_ZETTEL: '7' },
+      { AUSLOESER: 'workflow_dispatch', OFFENE_KOEPFE: 'feat/x\nchore/materialien-nachzug-2026-10-05', LETZTER_LAUF: 'success', NETZ_ZETTEL: '' },
     ]) {
       const { r, npm, out } = runner(env);
       expect(r.status).toBe(0);
       expect(r.stdout).toContain('::notice::Materialien-Nachzug übersprungen');
       expect(npm).toBe('');
-      expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\n');
+      expect(out).toBe('status=keine\nquellen=\nwiderspruch=\nhinweise=0\nzettel=\n');
     }
   }, 60_000);
-  it('B1: AUSLOESER ohne OFFENE_KOEPFE/LETZTER_LAUF ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
-    const { r, npm } = runner({ AUSLOESER: 'schedule' });
-    expect(r.status).toBe(1);
-    expect(r.stderr).toContain('nicht verdrahtet');
-    expect(npm).toBe('');
+  it('B1: AUSLOESER ohne OFFENE_KOEPFE/LETZTER_LAUF/NETZ_ZETTEL ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
+    for (const env of [
+      { AUSLOESER: 'schedule' },
+      { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', LETZTER_LAUF: 'success' },
+    ]) {
+      const { r, npm } = runner(env);
+      expect(r.status).toBe(1);
+      expect(r.stderr).toContain('nicht verdrahtet');
+      expect(npm).toBe('');
+    }
   }, 60_000);
 });
 
@@ -419,7 +447,7 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(yml).toMatch(/trockenlauf:[\s\S]*?type: boolean/);
     expect(yml).toMatch(/concurrency:\n\s+group: materialien-nachzug\n\s+cancel-in-progress: false/);
     expect(yml).toMatch(/^permissions: \{\}$/m);
-    expect(yml).toMatch(/permissions:\n\s+contents: write\n\s+pull-requests: write\n[\s\S]*?actions: write/);
+    expect(yml).toMatch(/permissions:\n\s+contents: write\n\s+pull-requests: write\n[\s\S]*?actions: write\n[\s\S]*?issues: write\n/);
     expect(yml).toContain('timeout-minutes: 120');
     expect(yml).toContain('npm run materialien:nachzug -- --datum=');
   });
@@ -450,6 +478,10 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(wahr({ lauf: lauf('pruefen'), tore: { rc: '1' } })).toBe(true);
     expect(wahr({ lauf: lauf('pruefen'), tore: { rc: '0' } })).toBe(false);
     expect(wahr({ lauf: lauf('keine') })).toBe(false); // nichts zu tun / Netzfehler / Vorprüfung
+    // Zwei-Läufe-Grenze: zweiter Netzfehler in Folge rot, erster nicht.
+    expect(wahr({ lauf: { status: 'keine', widerspruch: '', zettel: 'kommentieren' } })).toBe(true);
+    expect(wahr({ lauf: { status: 'keine', widerspruch: '', zettel: 'anlegen' } })).toBe(false);
+    expect(wahr({ lauf: { status: 'anfuegung', widerspruch: '', zettel: 'schliessen' }, tore: { rc: '0' } })).toBe(false);
     // Werkzeugfehler: Exit 1 der Stufe «Nachzug» färbt den Lauf selbst — nichts darf das schlucken.
     expect(yml).not.toMatch(/continue-on-error/);
     expect(zeilen[zeilen.findIndex((z) => z.includes('- name: Nachzug + Rauschschutz')) + 1]).toMatch(/^\s+id: lauf$/);
@@ -463,19 +495,59 @@ describe('Workflow materialien-nachzug.yml', () => {
 echo "gh $*" >> "${log}"
 if [ "$1 $2" = "pr list" ]; then printf 'feat/x\\nchore/materialien-nachzug-2026-10-05\\n'; fi
 if [ "$1 $2" = "run list" ]; then echo failure; fi
+if [ "$1" = "api" ]; then echo 17; fi
 `);
-    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $LETZTER_LAUF | $OFFENE_KOEPFE" >> "${log}"\n`);
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $LETZTER_LAUF | $NETZ_ZETTEL | $OFFENE_KOEPFE" >> "${log}"\n`);
     for (const n of ['gh', 'npm']) chmodSync(join(dir, n), 0o755);
     const block = runBlock(yml, 'Nachzug + Rauschschutz').replace('${{ steps.datum.outputs.iso }}', '2026-10-12');
-    const r = spawnSync('bash', ['-c', block], { encoding: 'utf8', env: { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule' } });
+    const r = spawnSync('bash', ['-c', block], { encoding: 'utf8', env: { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule', GITHUB_REPOSITORY: 'o/r' } });
     expect(r.status).toBe(0);
     const z = readFileSync(log, 'utf8').trim().split('\n');
     expect(z[0]).toMatch(/^gh pr list --state open --limit \d+ --json headRefName /);
     expect(z[1]).toMatch(/^gh run list --workflow materialien-nachzug\.yml --status completed --limit 1 --json conclusion /);
-    expect(z[2]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | failure | feat/x');
-    expect(z[3]).toBe('chore/materialien-nachzug-2026-10-05');
+    expect(z[2]).toBe(`gh api repos/o/r/issues?labels=${NETZ_ZETTEL_LABEL}&state=open&creator=github-actions%5Bbot%5D -q [.[]|select(.pull_request|not)][0].number // empty`);
+    expect(z[3]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | failure | 17 | feat/x');
+    expect(z[4]).toBe('chore/materialien-nachzug-2026-10-05');
     expect(yml).toMatch(/AUSLOESER: \$\{\{ github\.event_name \}\}/);
     expect(yml).toContain(`branch="${NACHZUG_ZWEIG_PRAEFIX}\${DATUM}"`);
+  });
+
+  describe('Netz-Zettel-Stufe gegen Ersatz-gh', () => {
+    function zettel(aktion: string, ghExit = 0) {
+      const dir = mkdtempSync(join(tmpdir(), 'mat-zt-'));
+      const log = join(dir, 'log');
+      writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash\necho "gh $1 $2 $3 $4 $5" >> "${log}"\nexit ${ghExit}\n`);
+      chmodSync(join(dir, 'gh'), 0o755);
+      const r = spawnSync('bash', ['-c', runBlock(yml, 'Netz-Zettel pflegen')], {
+        encoding: 'utf8',
+        env: { PATH: `${dir}:${process.env.PATH}`, AKTION: aktion, NR: '17', NETZFEHLER: 'estv-mwst: x', RUN_URL: 'https://x/1' },
+      });
+      return { status: r.status, out: r.stdout, aufrufe: existsSync(log) ? readFileSync(log, 'utf8').trim().split('\n') : [] };
+    }
+    it('Stufe läuft genau bei gesetzter Aktion, mit github.token', () => {
+      const zeilen = yml.split('\n');
+      const i = zeilen.findIndex((z) => z.includes('- name: Netz-Zettel pflegen'));
+      expect(zeilen[i + 1]).toBe("        if: steps.lauf.outputs.zettel != ''");
+      expect(zeilen[i + 3]).toContain('GH_TOKEN: ${{ github.token }}');
+    });
+    it('anlegen ⇒ Label + Zettel mit Label; kommentieren ⇒ Kommentar auf #NR; schliessen ⇒ close #NR', () => {
+      const a = zettel('anlegen');
+      expect(a.status).toBe(0);
+      expect(a.aufrufe[0]).toBe(`gh label create ${NETZ_ZETTEL_LABEL} --color FBCA04`);
+      expect(a.aufrufe[1]).toBe(`gh issue create --label ${NETZ_ZETTEL_LABEL} --title`);
+      const k = zettel('kommentieren').aufrufe;
+      expect(k).toHaveLength(1);
+      expect(k[0]).toMatch(/^gh issue comment 17 --body Erneut Netzfehler beim Nachladen am \d{4}-\d{2}-\d{2} — Lauf ROT \(Zwei-Läufe-Grenze\).* estv-mwst: x\. Lauf: https:\/\/x\/1$/);
+      expect(zettel('schliessen').aufrufe[0]).toBe('gh issue close 17 --reason completed');
+    });
+    it('FAIL-SAFE: Anlegen/Kommentieren scheitert ⇒ rot; Schliessen scheitert ⇒ Warnung; unbekannte Aktion ⇒ rot', () => {
+      expect(zettel('anlegen', 1).status).toBe(1);
+      expect(zettel('kommentieren', 1).status).toBe(1);
+      const s = zettel('schliessen', 1);
+      expect(s.status).toBe(0);
+      expect(s.out).toContain('::warning::Netz-Zettel-Schliessen gescheitert');
+      expect(zettel('loeschen').status).toBe(1);
+    });
   });
 
   it('Staging = genau ERLAUBTE_PFADE (eine Liste, zwei Leser)', () => {

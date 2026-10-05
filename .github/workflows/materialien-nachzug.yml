@@ -8,7 +8,8 @@
 #   materialien:kaskade --ohne-revisionen → Pfad-Wache → Rauschschutz (angehängte dok-Zeilen).
 #   Vorprüfung (vor jedem Netz-Abruf): offener Nachzug-PR oder (schedule) letzter Lauf rot ⇒
 #   ::notice::, status=keine — kein wöchentlicher Wiederholungs-Vollcrawl (B1, 6.10.2026).
-#   status=keine     → nichts zu tun / nur Datumsstempel / Netzfehler beim Nachladen, kein PR.
+#   status=keine     → nichts zu tun / nur Datumsstempel / Netzfehler beim Nachladen, kein PR
+#                      (Netzfehler: Zettel alarm:materialien-nachzug-netz; zweiter in Folge ⇒ rot).
 #   status=anfuegung → nur neue Dokumente: normaler PR.
 #   status=pruefen   → Dokument geändert, entlistet oder wieder gelistet: PR als ENTWURF.
 # Netz-/Count-Gate-Befunde (nicht von echter Drift unterscheidbar) sind ::warning::, kein PR,
@@ -61,6 +62,8 @@ jobs:
       pull-requests: write
       # `gh workflow run ci.yml` — von github.token erzeugte PR-Events lösen keine CI aus.
       actions: write
+      # Netz-Zettel alarm:materialien-nachzug-netz (Zwei-Läufe-Grenze, nachzug.ts Kopf Ziff. 7).
+      issues: write
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
@@ -85,8 +88,39 @@ jobs:
           set -euo pipefail
           OFFENE_KOEPFE=$(gh pr list --state open --limit 500 --json headRefName --jq '.[].headRefName')
           LETZTER_LAUF=$(gh run list --workflow materialien-nachzug.yml --status completed --limit 1 --json conclusion --jq '.[0].conclusion // ""')
-          export OFFENE_KOEPFE LETZTER_LAUF
+          NETZ_ZETTEL=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug-netz&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          export OFFENE_KOEPFE LETZTER_LAUF NETZ_ZETTEL
           npm run materialien:nachzug -- --datum=${{ steps.datum.outputs.iso }} --quellen="${QUELLEN}"
+
+      # Netz-Zettel (Muster normen-monitor.yml): erster Netzfehler beim Nachladen ⇒ anlegen (Lauf
+      # grün); zweiter in Folge ⇒ kommentieren, Lauf ROT (Stufe unten); erfolgreicher Nachzug oder
+      # keine Drift ⇒ schliessen. FAIL-SAFE: scheitert Anlegen/Kommentieren, wird der Lauf ROT —
+      # ohne Zettel griffe die Zwei-Läufe-Grenze nie. Schliessen scheitert ⇒ Warnung (wie Monitor).
+      - name: Netz-Zettel pflegen
+        if: steps.lauf.outputs.zettel != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AKTION: ${{ steps.lauf.outputs.zettel }}
+          NR: ${{ steps.lauf.outputs.netzzettel }}
+          NETZFEHLER: ${{ steps.lauf.outputs.netzfehler }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::error::Netz-Zettel-Pflege gescheitert (Z. $LINENO) — ohne Zettel greift die Zwei-Läufe-Grenze nie, darum Lauf ROT (fail-safe)"; exit 1' ERR
+          case "$AKTION" in
+            schliessen)
+              trap 'echo "::warning::Netz-Zettel-Schliessen gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+              gh issue close "$NR" --reason completed --comment "🟢 Materialien-Nachzug am $(date +%F) wieder ohne Netzfehler. Lauf: ${RUN_URL}"
+              ;;
+            kommentieren)
+              gh issue comment "$NR" --body "Erneut Netzfehler beim Nachladen am $(date +%F) — Lauf ROT (Zwei-Läufe-Grenze); der Takt pausiert bis zu einem grünen Lauf per workflow_dispatch. ${NETZFEHLER}. Lauf: ${RUN_URL}"
+              ;;
+            anlegen)
+              gh label create alarm:materialien-nachzug-netz --color FBCA04 --description "Materialien-Nachzug: Netzfehler beim Nachladen (materialien-nachzug.yml)" >/dev/null 2>&1 || true
+              gh issue create --label alarm:materialien-nachzug-netz --title "🟠 Materialien-Nachzug: Netzfehler beim Nachladen ($(date +%F))" --body "Snapshot nach erkannter Drift an einem erschöpften Abruf abgebrochen, Änderungen verworfen: ${NETZFEHLER}. Bleibt das im nächsten Lauf so, wird er ROT. Lauf: ${RUN_URL}"
+              ;;
+            *) echo "::error::Unbekannte Zettel-Aktion «${AKTION}»"; exit 1 ;;
+          esac
 
       - name: Tore auf dem nachgeführten Stand
         id: tore
@@ -173,12 +207,14 @@ jobs:
             echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
           fi
 
-      - name: Lauf rot färben bei Werkzeugfehler (Tore rot oder Widerspruch Detektor ↔ Snapshot)
-        if: steps.lauf.outputs.widerspruch != '' || (steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0')
+      - name: Lauf rot färben bei Werkzeugfehler (Tore rot, Widerspruch Detektor ↔ Snapshot, zweiter Netzfehler in Folge)
+        if: steps.lauf.outputs.widerspruch != '' || (steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0') || steps.lauf.outputs.zettel == 'kommentieren'
         env:
           WIDERSPRUCH: ${{ steps.lauf.outputs.widerspruch }}
           TORE: ${{ steps.tore.outputs.rc }}
+          ZETTEL: ${{ steps.lauf.outputs.zettel }}
         run: |
+          if [ "$ZETTEL" = kommentieren ]; then echo "::error::Zweiter Netzfehler beim Nachladen in Folge (Netz-Zettel offen) — Zwei-Läufe-Grenze."; fi
           if [ -n "$WIDERSPRUCH" ]; then
             echo "::error::Widerspruch ${WIDERSPRUCH}: check:materialien-netz meldet Drift, der Snapshot schrieb keine Zustandsänderung — Detektor oder Snapshot defekt."
           fi

@@ -36,6 +36,12 @@
 //      nur, wenn auch der letzte Versuch WARF — Fetch-Fehler/Timeout, nie ein HTTP-Status), ist das
 //      kein Werkzeugfehler: Arbeitsbaum verwerfen, Warnung, Status «keine», kein PR — der nächste
 //      Lauf versucht erneut. Count-Gate/Struktur-Bruch bei erreichbarer Quelle bleibt rot.
+//      ZWEI-LÄUFE-GRENZE (Entscheid Orchestrator 6.10.2026, Muster normen-monitor.yml
+//      alarm:normen-monitor-netz): der erste Netzfehler legt den Netz-Zettel an (Lauf grün); ist
+//      er beim nächsten Netzfehler noch offen, wird der Lauf ROT — sonst sähe ein dauerhafter
+//      Timeout (Vorfall 5.9.2026: zwei ~80-min-Läufe brachen an derselben ESTV-Publikation ab)
+//      wie ein Wackler aus und führe jede Woche einen Vollcrawl ohne PR. Der rote Lauf pausiert
+//      dann über die Vorprüfung den Takt. Erfolgreicher Nachzug oder «keine Drift» schliesst ihn.
 //
 // VORPRÜFUNG (Gegenprüfung 6.10.2026, B1) — vor JEDEM Netz-Abruf, im Runner: offener Bot-PR
 // (Kopf-Präfix NACHZUG_ZWEIG_PRAEFIX) ⇒ Abbruch, sonst meldete das Netz-Tor dieselbe Drift jede
@@ -415,6 +421,25 @@ export function nachzug(datum: string, filter: Quelle[] | null, w: Werkzeuge): N
     w.log('Nur Lauf-Kopfzeilen/Datumsstempel — Arbeitsbaum verworfen, kein PR.');
   }
   return { ...basis, status: kl.status, quellen, widerspruch, klassifikation: kl };
+}
+
+// ── Netz-Zettel (Zwei-Läufe-Grenze, Kopf Ziff. 7) ──────────────────────────────────────────────
+
+/** Label des einen Netz-Zettels (Workflow fragt/legt an; Test koppelt). */
+export const NETZ_ZETTEL_LABEL = 'alarm:materialien-nachzug-netz';
+
+/**
+ * Was der Workflow mit dem Netz-Zettel tut. `kommentieren` = zweiter Netzfehler in Folge ⇒ Lauf
+ * ROT. `e` = null: Vorprüfung brach ab (keine Aussage über das Netz). Nur Hinweise aus dem
+ * Netz-Tor (Live-Crawl/Count-Gate) sagen ebenfalls nichts über das Nachladen ⇒ unverändert.
+ */
+export type ZettelAktion = 'anlegen' | 'kommentieren' | 'schliessen' | '';
+export function netzZettelAktion(e: NachzugErgebnis | null, zettelOffen: boolean): ZettelAktion {
+  if (e === null) return '';
+  if (e.netzfehler !== null) return zettelOffen ? 'kommentieren' : 'anlegen';
+  const nachgeladen = e.quellen.length > 0;
+  const keineDrift = e.befunde.size === 0 && e.hinweise.length === 0;
+  return zettelOffen && (nachgeladen || keineDrift) ? 'schliessen' : '';
 }
 
 function verwirf(w: Werkzeuge): void {
