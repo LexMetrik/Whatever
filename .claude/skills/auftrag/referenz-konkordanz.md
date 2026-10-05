@@ -10,7 +10,7 @@ Die Unterparagraphen von §14 sind seit dem A4-Umzug (25.7.2026) in den Skill
 | Alt (`CLAUDE.md`) | Neu (Skill `auftrag`) |
 |---|---|
 | §14.1 Eingang ist `ROADMAP.md` | Ziff. 1 |
-| §14.2 Plan-Stand abfragen, bündeln | Ziff. 2 + 3 |
+| §14.2 Plan-Stand abfragen (seit 5.10.2026: Startabfrage), bündeln | Ziff. 2 + 3 |
 | §14.3 Verortung nach Thema/Abhängigkeit/Risiko | Ziff. 3 |
 | §14.4 Definition of Done | Ziff. 4 (inkl. STRUKTUR-Pflicht, früher 4a) |
 | §14.5 Trailer-Konvention | Ziff. 5 |
