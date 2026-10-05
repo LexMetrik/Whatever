@@ -878,7 +878,7 @@
    ]
   },
   "28": {
-   "giltSeit": "1985-07-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -896,6 +896,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -956,8 +970,22 @@
    ]
   },
   "35": {
-   "giltSeit": null,
+   "giltSeit": "2001-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2001-01-01",
@@ -974,6 +1002,25 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -1449,6 +1496,63 @@
     }
    ]
   },
+  "75": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
+  "78": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
+  "79": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "81": {
    "giltSeit": "2006-01-01",
    "ereignisse": [
@@ -1550,7 +1654,7 @@
    ]
   },
   "85": {
-   "giltSeit": null,
+   "giltSeit": "2006-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1590,7 +1694,7 @@
    ]
   },
   "86": {
-   "giltSeit": null,
+   "giltSeit": "2006-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1633,6 +1737,20 @@
    "giltSeit": "2006-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2006-01-01",
      "wirkung": false,
@@ -1654,6 +1772,20 @@
   "88": {
    "giltSeit": "2006-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "fassung",
      "datum": "2006-01-01",
@@ -1696,7 +1828,7 @@
    ]
   },
   "90": {
-   "giltSeit": null,
+   "giltSeit": "2025-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2300,7 +2432,7 @@
    ]
   },
   "107": {
-   "giltSeit": null,
+   "giltSeit": "2013-07-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2457,7 +2589,7 @@
    ]
   },
   "112": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2578,7 +2710,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "117": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -2897,6 +3029,20 @@
    "giltSeit": "2014-07-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1 und 3",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
+    },
+    {
      "typ": "fassung",
      "datum": "2014-07-01",
      "wirkung": false,
@@ -3088,8 +3234,23 @@
    ]
   },
   "166": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": "1",
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
@@ -3109,15 +3270,45 @@
    ]
   },
   "169": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
   },
   "170": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
@@ -3132,6 +3323,20 @@
   "172": {
    "giltSeit": "2007-07-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2007-07-01",
@@ -3155,15 +3360,45 @@
    ]
   },
   "173": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
   },
   "174": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
@@ -3178,6 +3413,20 @@
   "176": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -3218,8 +3467,22 @@
    ]
   },
   "177": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "fassung",
      "datum": "2017-01-01",
@@ -3244,8 +3507,23 @@
    ]
   },
   "178": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     3
    ]
@@ -3269,6 +3547,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -3414,8 +3706,23 @@
    ]
   },
   "185": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     4
    ]
@@ -3444,8 +3751,23 @@
    "aufgehobenSeit": "2001-01-01"
   },
   "187": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     4
    ]
@@ -3458,8 +3780,23 @@
    ]
   },
   "189": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     4
    ]
@@ -3507,8 +3844,23 @@
    ]
   },
   "191": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     4
    ]
@@ -3642,7 +3994,7 @@
    ]
   },
   "208": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -3888,6 +4240,20 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -4095,6 +4461,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2022-07-01",
      "wirkung": false,
@@ -4196,7 +4576,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "255": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4257,7 +4637,7 @@
    ]
   },
   "256": {
-   "giltSeit": null,
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4275,6 +4655,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -4467,6 +4861,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -4507,7 +4915,7 @@
    ]
   },
   "261": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4525,6 +4933,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ],
    "erbt": [
@@ -4639,6 +5061,20 @@
   "265": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -4805,7 +5241,7 @@
    ]
   },
   "269": {
-   "giltSeit": "1973-04-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -4823,6 +5259,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ],
    "erbt": [
@@ -4975,6 +5425,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -5044,6 +5508,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     },
     {
      "typ": "fassung",
@@ -5312,6 +5790,20 @@
    "giltSeit": "2017-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -5335,7 +5827,7 @@
    ]
   },
   "286": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5372,6 +5864,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2017-01-01",
      "wirkung": false,
@@ -5396,7 +5902,7 @@
    ]
   },
   "287": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5414,6 +5920,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -5422,7 +5956,7 @@
    ]
   },
   "288": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5450,6 +5984,34 @@
      "item": null,
      "frueher": "Ziff. II",
      "ueberschrift": "III. Abfindung"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": "1",
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "2",
+     "item": "1",
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -5527,7 +6089,7 @@
    ]
   },
   "291": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5545,6 +6107,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ],
    "erbt": [
@@ -5649,6 +6225,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -5823,7 +6413,7 @@
    ]
   },
   "299": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5841,6 +6431,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     },
     {
      "typ": "fassung",
@@ -5868,7 +6472,7 @@
    ]
   },
   "300": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5886,6 +6490,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     },
     {
      "typ": "fassung",
@@ -6036,7 +6654,7 @@
    ]
   },
   "303": {
-   "giltSeit": null,
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6081,7 +6699,7 @@
    ]
   },
   "304": {
-   "giltSeit": null,
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6195,6 +6813,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     },
     {
      "typ": "fassung",
@@ -6316,7 +6948,7 @@
    ]
   },
   "307": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6334,6 +6966,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -6361,6 +7007,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     },
     {
      "typ": "fassung",
@@ -6428,7 +7102,7 @@
    "aufgehobenSeit": "2014-07-01"
   },
   "310": {
-   "giltSeit": null,
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6446,6 +7120,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     },
     {
      "typ": "fassung",
@@ -6491,6 +7179,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     },
     {
      "typ": "fassung",
@@ -6571,6 +7273,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
+    },
+    {
      "typ": "fassung",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -6612,7 +7328,7 @@
    ]
   },
   "313": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6630,6 +7346,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     }
    ],
    "erbt": [
@@ -6728,7 +7458,7 @@
    ]
   },
   "316": {
-   "giltSeit": "2003-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6763,6 +7493,20 @@
      ],
      "absatz": "1bis",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -6817,6 +7561,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Gewalt» → «Sorge»"
     },
     {
      "typ": "fassung",
@@ -6902,7 +7660,7 @@
    ]
   },
   "320": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6920,6 +7678,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -6954,7 +7726,7 @@
    ]
   },
   "322": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6972,6 +7744,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -7006,7 +7792,7 @@
    ]
   },
   "324": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7024,6 +7810,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -7032,7 +7832,7 @@
    ]
   },
   "325": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2013-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7050,6 +7850,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     }
    ],
    "erbt": [
@@ -7151,6 +7965,20 @@
   "329": {
    "giltSeit": "2017-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-01-01",
@@ -7320,6 +8148,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2013-01-01",
      "wirkung": false,
@@ -7335,6 +8177,25 @@
      ],
      "absatz": "1",
      "item": null
+    }
+   ]
+  },
+  "348": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -7623,7 +8484,7 @@
    ]
   },
   "395": {
-   "giltSeit": null,
+   "giltSeit": "2024-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -8786,6 +9647,25 @@
     }
    ]
   },
+  "548": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "551": {
    "giltSeit": "2001-01-01",
    "ereignisse": [
@@ -8893,7 +9773,7 @@
    "aufgehobenSeit": "1988-01-01"
   },
   "586": {
-   "giltSeit": null,
+   "giltSeit": "2020-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -8915,7 +9795,7 @@
    ]
   },
   "598": {
-   "giltSeit": null,
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -8955,6 +9835,25 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "604": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -9175,6 +10074,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": "1",
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -9293,6 +10206,25 @@
     }
    ]
   },
+  "651": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "655": {
    "giltSeit": "2012-01-01",
    "ereignisse": [
@@ -9349,6 +10281,25 @@
     }
    ]
   },
+  "656": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«richterlich» → «gerichtlich»"
+    }
+   ]
+  },
   "660": {
    "giltSeit": null,
    "ereignisse": [
@@ -9372,8 +10323,27 @@
     }
    ]
   },
+  "662": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "665": {
-   "giltSeit": "1988-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -9391,6 +10361,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -9413,6 +10397,25 @@
      ],
      "absatz": "3",
      "item": null
+    }
+   ]
+  },
+  "672": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -9768,6 +10771,44 @@
     }
    ]
   },
+  "706": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
+  "717": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "720": {
    "giltSeit": null,
    "ereignisse": [
@@ -9866,6 +10907,25 @@
      ],
      "absatz": "1bis",
      "item": null
+    }
+   ]
+  },
+  "726": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -10103,6 +11163,25 @@
    ],
    "aufgehobenSeit": "1988-01-01"
   },
+  "762": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ]
+  },
   "779": {
    "giltSeit": null,
    "ereignisse": [
@@ -10319,6 +11398,20 @@
    "giltSeit": "2012-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -10351,6 +11444,25 @@
      ],
      "absatz": "4",
      "item": null
+    }
+   ]
+  },
+  "809": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ]
   },
@@ -10827,7 +11939,7 @@
    ]
   },
   "915": {
-   "giltSeit": null,
+   "giltSeit": "1991-02-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -11005,7 +12117,7 @@
    ]
   },
   "944": {
-   "giltSeit": null,
+   "giltSeit": "1994-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -11204,6 +12316,20 @@
    "giltSeit": "2011-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2011-01-01",
      "wirkung": false,
@@ -11241,6 +12367,25 @@
      ],
      "absatz": null,
      "item": null
+    }
+   ]
+  },
+  "966": {
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«richterlich» → «gerichtlich»"
     }
    ]
   },
@@ -11356,8 +12501,22 @@
    ]
   },
   "977": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
     {
      "typ": "fassung",
      "datum": "2012-01-01",
@@ -11835,7 +12994,7 @@
    ]
   },
   "260_a": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -11853,6 +13012,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     }
    ],
    "erbt": [
@@ -12084,6 +13257,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
+    },
+    {
      "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
@@ -12211,6 +13398,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     },
     {
      "typ": "fassung",
@@ -12962,7 +14163,7 @@
    ]
   },
   "28_a": {
-   "giltSeit": null,
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -12980,6 +14181,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -13020,6 +14235,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -13076,6 +14305,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "fassung",
@@ -13137,7 +14380,7 @@
    "aufgehobenSeit": "2011-01-01"
   },
   "28_g": {
-   "giltSeit": null,
+   "giltSeit": "1985-07-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -13243,7 +14486,7 @@
    ]
   },
   "28_l": {
-   "giltSeit": "1985-07-01",
+   "giltSeit": "2011-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -13261,6 +14504,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1–3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
     },
     {
      "typ": "aufgehoben",
@@ -13317,6 +14574,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2013-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2011 725",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Vormundschaftsbehörde» oder «vormundschaftliche Aufsichtsbehörde» → «Kindesschutzbehörde»"
     },
     {
      "typ": "fassung",
@@ -14611,6 +15882,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«richterlich» → «gerichtlich»"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2012-01-01",
      "wirkung": false,
@@ -14647,7 +15932,7 @@
    ]
   },
   "649_b": {
-   "giltSeit": "1965-01-01",
+   "giltSeit": "2000-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -14665,6 +15950,34 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«richterlich» → «gerichtlich»"
     }
    ]
   },
@@ -15241,8 +16554,23 @@
    ]
   },
   "712_i": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     18
    ]
@@ -15308,15 +16636,59 @@
    ]
   },
   "712_q": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    }
+   ],
    "erbt": [
     18
    ]
   },
   "712_r": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2000-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«der Richter» → «das Gericht»"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2000-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1999 1118",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1999/149"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«richterlich» → «gerichtlich»"
+    }
+   ],
    "erbt": [
     18
    ]
@@ -18171,7 +19543,7 @@
    "aufgehobenSeit": "2012-01-01"
   },
   "disp_u1_art_33": {
-   "giltSeit": null,
+   "giltSeit": "1991-02-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -18363,7 +19735,7 @@
    ]
   },
   "disp_u1_art_41": {
-   "giltSeit": null,
+   "giltSeit": "2008-07-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -18768,7 +20140,7 @@
    ]
   },
   "disp_u1_art_59": {
-   "giltSeit": "1912-01-01",
+   "giltSeit": "1988-01-01",
    "ereignisse": [
     {
      "typ": "inkraft",

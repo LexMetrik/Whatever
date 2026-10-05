@@ -1,6 +1,8 @@
 # FAHRPLAN — Phase 1: Bund fertig machen (Entscheide David 14.9.2026)
 <!-- @lagebild name: Bund fertig machen · zweck: Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund zuerst — Datenstruktur schliessen, Leser schärfen, dann alle Bundeserlasse. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §0 und §4 (Entscheide David 14.9.2026).
+
 > **ROADMAP-Schritt:** `W2·27-BUND-FERTIG` (`feld: korpus`) — Dach der Phase 1.
 > **Messgrundlage:** Ist-Messung des Bundes-Normtext-Korpus vom **14.9.2026** (N = 228
 > Snapshot-Dateien, 25 463 Artikel; node-Aggregation über `public/normtext/bund/*.json` +

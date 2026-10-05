@@ -1,6 +1,8 @@
 # Fahrplan — entscheidsuche voll ausschöpfen (Teil-B-Ausbau)
 <!-- @lagebild name: Entscheide filtern · zweck: Filter nach Gericht und Facetten; Richternamen-Auflösung (Risikopfad). -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP-Schritte `W2·6` (Dach, Checklisten-Zeile «Entscheid-Filter»; vormals
 `W2·6-FILTER`) und `W2·6-RESOLVER` (vormals `W2·6-RNAME`) — Etiketten-Konsolidierung 15.8.2026.**
 

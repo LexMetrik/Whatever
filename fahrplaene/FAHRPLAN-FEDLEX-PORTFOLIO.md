@@ -1,6 +1,8 @@
 # FAHRPLAN-FEDLEX-PORTFOLIO — Nützliche Fedlex-Datenarten für LexMetrik
 <!-- @lagebild name: Bundesrecht aktuell halten · zweck: Wächter gegen Abweichungen zur amtlichen Quelle; Korpus-Lücken schliessen; Watchlist. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP-Schritte `QS-CURRENCY` und `W2·14-SIGNAL`** (je Paket am Ende dieses
 Dokuments benannt). *Nachtrag 14.8.2026 (QS-PLAN-EINFACH): die früheren Teil-Etiketten
 `W2·14-SIGNAL-B1/-B2/-GER` sind Checklisten-Zeilen des Dachs — Trailer ist einheitlich

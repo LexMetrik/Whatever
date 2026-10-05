@@ -1,6 +1,8 @@
 # FAHRPLAN-RECHTSPRECHUNG.md
 <!-- @lagebild name: Gerichtsentscheide · zweck: Rechtsprechungs-Korpus: präzisere Verweise, Mehrsprachigkeit, Übersicht. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP-Schritte `W2·6` und `W3·15-RICHTER`** (Detail auch für
 `R-RICHTER`/Direktauftrag, §12/§13).
 

@@ -1,6 +1,8 @@
 # FAHRPLAN — Fremde Agenten im Bau (Jules · Antigravity · Gemini)
 <!-- @lagebild name: Fremde Agenten im Bau · zweck: Wer ausser Claude am Projekt mitbauen darf, wofür genau, und woran wir merken, dass es sich lohnt. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §6 Entscheide D1 ff. (David, 3.9.2026) und §1 Rollenmodell (Freigabe David 3.9.2026).
+
 **Heimat: ROADMAP-Schritt `QS-FREMDAGENTEN`** (Band «Betrieb & Prüfstrasse»).
 
 > **Stand 3.9.2026.** Freigabe David 2./3.9.2026 (Chat), Entscheide D1–D7 am

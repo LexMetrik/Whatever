@@ -1,5 +1,7 @@
 # FAHRPLAN — Rechtslogik-Umsetzungsplan (Befund-Wellen, Stand 23.9.2026)
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §4 «Wartet auf David» mit Davids Entscheiden W-01…W-22.
+
 > **Detailquelle zu den ROADMAP-Schritten `W2·30-RL-W0` … `W2·30-RL-W4`** (Abschnitt
 > «Rechtslogik — Befunde Prüfung 23.9.2026») — nie zweiter Einstieg, immer nur
 > verlinkte Detailquelle. Je RL-Einheit liegt zusätzlich EIN Posten unter dem

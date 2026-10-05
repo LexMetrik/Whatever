@@ -1,6 +1,8 @@
 # FAHRPLAN — Oberflächen-Qualität app-weit (`QS-UI`)
 <!-- @lagebild name: Oberflächen-Qualität & Anleitung · zweck: Laufender UI-Qualitäts-Pass; später Funktions-Inventar und Bedienungsanleitung. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **ROADMAP-Schritt:** `QS-UI` (Querschnitt-Band — **kontinuierlich, kein Reihenfolge-Slot**).
 > **Anlass:** Ideen-Intake 20.7.2026, Idee 8a («UI app-weit optimieren»); die Gesetzes-Fläche
 > folgt als 8b in `W2·5h-GESETZ-UI`. Dieser Schritt hängt **nicht per `dep`** an diesem Strang —

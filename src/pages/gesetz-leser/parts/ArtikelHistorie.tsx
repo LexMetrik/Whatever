@@ -193,6 +193,10 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
                 {/* P7 #11: «Ursprünglich» nennt die alte Bezeichnung im Wortlaut der Fussnote («Art. 29bis»,
                     «Bst. cbis, dann cter»). Kein Datum dazu — die Fussnote datiert nur das Folge-Ereignis (§7). */}
                 {e.frueher && <span className="text-ink-500"> · «{e.frueher}»</span>}
+                {/* W2·32-GENERALANWEISUNGEN (5.10.2026): das Ereignis stammt aus einer Anweisung des Änderungserlasses, die am
+                    Artikel nicht als Fussnote steht («Ersatz von Ausdrücken», Neufassung eines Buches). Die Herkunft bleibt
+                    sichtbar (§8): «Anweisung: «Gewalt» → «Sorge»». */}
+                {e.anweisung && <span className="text-ink-500" data-historie-anweisung> · Anweisung: {e.anweisung}</span>}
                 {/* W2·27 (2.10.2026): Fedlex vermerkt «Fassung gemäss …»/«Eingefügt durch …» oft an der Gliederungs-
                     überschrift; sie gilt für alle Artikel darunter (Entscheid David 2.10.2026). Die Kennzeichnung steht
                     an jedem solchen Punkt — am Träger-Artikel wie an den übrigen — und nennt die Überschrift (§8). */}

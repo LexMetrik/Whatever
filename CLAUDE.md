@@ -10,9 +10,9 @@ umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die bestehenden
 Bestand ist vierstellig — Zahl nie von Hand führen, bei Bedarf messen;
 Reglement-Audit 7.8.2026).
 
-**Aktueller Stand und nächster Schritt:** `npm run plan:next`, Detail-Slice per
-`npm run fahrplan` (Schlusstabelle). `ROADMAP.md`/`STRUKTUR.md` sind
-Nachschlagewerke, keine Pflichtlektüre.
+**Aktueller Stand und nächster Schritt:** `ROADMAP.md` (ZIEL · JETZT ·
+EINGANG, Pflichtlektüre beim Start), Detail-Slice per `npm run fahrplan`.
+`STRUKTUR.md` ist Nachschlagewerk.
 
 **Leitbild:** «Schweizer Taschenmesser für Juristen» — die eine Anlaufplattform
 für alle Rechtsanwender, **nur amtliche und urheberrechtsfreie Quellen**
@@ -155,8 +155,8 @@ Design-Tokens).
 ## §14 Aufnahme und Einordnung neuer Aufträge → Skill `auftrag`
 <!-- @wiedervorlage: 2027-03-15 -->
 
-Eingang ist `ROADMAP.md`; Plan-Stand vor dem Start über `npm run plan:next`
-abfragen und Erledigtes danach abhaken; verwandte Schritte zu einer Bau-Einheit
+Eingang ist `ROADMAP.md` (EINGANG); gebaut wird JETZT; Erledigtes streicht der
+abschliessende PR; verwandte Schritte zu einer Bau-Einheit
 bündeln, ohne Risiko-Klassen zu mischen. **§14.4** (Definition of Done),
 **§14.5** (Trailer-Konvention) und **§14.6** (Delegation, Kontext-Hygiene)
 stehen im Skill **`auftrag`**.
@@ -238,7 +238,7 @@ wie §14.7 immer, nie lazy.)
 | Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
 | Deploy, Merge-Schutz, Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` (§9 + §12) |
 | Session-Lebenszyklus Einstieg → Bau → Landung → Weiterbau → Abschluss | Skill `bauschritt` |
-| Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `bauschritt`, Datei `aufraeumen.md` |
+| Struktur-Rotation, Deckel (Chronik eingefroren seit 5.10.2026) | Skill `bauschritt`, Datei `aufraeumen.md` |
 | Geräte-Last, Performance | Skill `perf` |
 | Design, Tokens, Sprache, UI-Zustände | `DESIGN-REGLEMENT.md` + Domänen-Reglemente |
-| Aktueller Bau-Stand | `npm run plan:next` · `npm run fahrplan` |
+| Aktueller Bau-Stand | `ROADMAP.md` (JETZT) · `npm run fahrplan` |
