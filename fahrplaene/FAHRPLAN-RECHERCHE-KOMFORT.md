@@ -1,6 +1,8 @@
 # FAHRPLAN — Recherche-Komfort: Treffer-Landkarte, Zitatnetz am Urteil, Reiterleisten-Abgleich (Auftrag David 18.9.2026)
 <!-- @lagebild name: Recherche-Komfort · zweck: Man sieht auf einen Blick, wo im Dokument die Treffer liegen, springt von Urteil zu Urteil bis auf die Erwägung und findet alle Urteile zu einem Artikel. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §3 Merkliste-Entscheid.
+
 > **ROADMAP-Schritte:** `W2·28-TREFFER-LANDKARTE` (`feld: leser`, §1) · Unterschritt
 > «Zitationsnetz» im Dach `W2·6` (`feld: rechtsprechung`, §2) · Unterschritt
 > «Reiterleisten-Abgleich + Merkliste-Entscheid» im Dach `W2·18-FEHLERBUCH`

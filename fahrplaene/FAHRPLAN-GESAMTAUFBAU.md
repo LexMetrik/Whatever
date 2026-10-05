@@ -1,6 +1,8 @@
 # FAHRPLAN-GESAMTAUFBAU - Chronologischer Zukunfts-Ausbau der LexMetrik-Website
 <!-- @lagebild name: Gesamtkarte (7 Phasen) · zweck: Ordnet alle Stränge chronologisch bis zum Nordstern; reine Lese-Sicht. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP «Funktions-Katalog (Aufbau + Auflagen je Werkzeug)» §1 (Kern-Auflagen je
 Werkzeug) und «Strang-Detailpunkte & Hygiene» §2** (Offene Detailpunkte · Infrastruktur-
 Fundament · Archiv-Kandidaten · Stale Doku-Köpfe · Klein-Backlog) — kein eigener `@meta`-Schritt,

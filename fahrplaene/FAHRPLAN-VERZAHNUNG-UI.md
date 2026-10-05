@@ -1,6 +1,8 @@
 # FAHRPLAN-VERZAHNUNG-UI — Die Verzahnung sichtbar machen (V1 vor VPS · V2 Masse · V3 Soft-Law)
 <!-- @lagebild name: Verzahnung sichtbar machen · zweck: Das Alleinstellungsmerkmal: Gesetz, Entscheid und Werkzeug verknüpft anzeigen. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §12 David-Entscheid 2.8.2026 (nur Sachgebiet).
+
 **Stand:** 3.7.2026 · **Auftrag:** David 3.7.2026 («Verzahnung sichtbar machen») · **Erarbeitet:** Fable (Konzept + adversariale Gegenprüfung eingearbeitet) · **Rolle:** Detailquelle der `ROADMAP.md` für Schritt **W2·7-VZUI** (§14 — die ROADMAP bleibt die eine Steuerungsquelle, dieser Fahrplan trägt das Wie).
 
 ## §0 · Zweck und Leitplanken

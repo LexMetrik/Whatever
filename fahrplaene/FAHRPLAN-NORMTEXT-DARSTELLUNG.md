@@ -1,6 +1,8 @@
 # Fahrplan — Gesetzesdarstellung Bund/DE (Normtext-Umbau)
 <!-- @lagebild name: Normtext-Darstellung · zweck: Treue Darstellung der Gesetzestexte im Leser. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP «Querschnitt-Band»** — Quell-Architektur-Entscheid + Intake
 («Informations-Nutzung der Gesetze») verlinkt aus `W2·5d`; SIDECAR-Spec (§M14)
 zusätzlich Grundlage für `W2·5g-ZEIT` (zeit-historik-poc). Kein eigener `@meta`-Schritt.

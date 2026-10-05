@@ -1,6 +1,8 @@
 # FAHRPLAN — UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.2026)
 <!-- @lagebild name: Suchen & Navigieren · zweck: App-weite Suche und Wege zwischen Gesetzen, Entscheiden und Werkzeugen. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **ROADMAP-Schritt:** `W2·10-UI-NAV` (Welle 2, nach den laufenden W2·5d-Einheiten).
 > **Quelle:** Ultracode-Recherche 11.7.2026 — 60 empirische UI-Befunde (Playwright/DOM/Code)
 > plus 3 adversariale Kritik-Linsen (**david-treue** · **repo-realität** · **praxis-nutzen**)

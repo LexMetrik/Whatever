@@ -1,6 +1,8 @@
 # FAHRPLAN — Offene Befunde ohne eigenen Strang-Fahrplan
 <!-- @lagebild name: Offene Befunde · zweck: Befundlisten und Belege der Dächer Korpus-Pflege, Normen-Monitor, Ingest-Drift, Fehlerbuch und Eigenschafts-Tests. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Zweck.** Fünf Dach-Schritte der ROADMAP hatten bis zum Plan-Neuschnitt vom 29.8.2026 keinen
 eigenen Fahrplan und trugen ihre Befundlisten deshalb IM Plan — teils als einzelne Zeilen von
 mehreren Kilobyte. Diese Datei ist ihre Detailquelle: die Listen stehen hier **wörtlich** so, wie

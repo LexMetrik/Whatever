@@ -1,6 +1,8 @@
 # FAHRPLAN — Prozesskosten-Cockpit (Vertiefung & Ausbau)
 <!-- @lagebild name: Prozesskosten-Cockpit · zweck: Der Haupt-Rechner: Restbau plus Verzahnung Frist und Kosten. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP-Schritte `W1·4` und `W1·5-PRAXIS`.**
 *24.9.2026: `W1·5-PRAXIS` ist in `W3-AUSBAU` aufgegangen — Posten dort (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 

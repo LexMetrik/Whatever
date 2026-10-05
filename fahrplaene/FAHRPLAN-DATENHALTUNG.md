@@ -1,6 +1,8 @@
 # FAHRPLAN-DATENHALTUNG — DB als die EINE Wahrheit, Projektion, Massen-Korpus, Edge-Suche
 <!-- @lagebild name: Eigene Datenbank / Server · zweck: Fundament für Selbst-Hosting und «DB = die eine Wahrheit». -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: «0. Entschiedene Richtung» (Council-Entscheid 2.7.2026) und Entscheid David 15.9.2026 (Turso: nicht zahlen).
+
 > **Rolle (§14):** Detailquelle zu `ROADMAP.md` → Querschnitt **QS-DATA** + Bau-Schritt
 > **W2·6-DATA**. Nie zweiter Einstieg. **Council-Entscheid 2.7.2026** (Richtung entschieden,
 > nicht mehr offen); löst die drei „DAVID-ENTSCHEID"-Punkte aus `PLAN-OCL-ABBAU.md`
