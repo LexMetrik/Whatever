@@ -28,6 +28,7 @@ import { join } from 'node:path';
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 import { erlassPfadVonKey } from '../../src/lib/normtext/erlassAdresse';
+import { bewerteTti } from './tti-bewertung';
 
 const requireCJS = createRequire(import.meta.url);
 
@@ -137,6 +138,16 @@ const RUNS = zahlAusUmgebung('PERF_RUNS', process.env.CI ? 3 : 1);
 // das Tor wird dadurch nie stiller. Kein Durchwinken ohne Messung (§8).
 // Abschaltbar über PERF_NORMIEREN=0.
 const NORMIEREN = process.env.PERF_NORMIEREN !== '0';
+
+// ── TTI-Normierung: ENTSCHEID DAVID 5.10.2026 («ja, TTI normieren wie TBT») ──
+//
+// Bewertet wird die OR-/Start-TTI als `bewerteTti()` (tti-bewertung.ts): nur der
+// Blockier-Anteil, nur zugunsten LANGSAMER Runner — NICHT die Ganz-Division wie bei
+// der TBT (gemessen: sie liesse alle schnellen Runner den Deckel reissen). Deckel
+// 13000/12000 unverändert, Rohwert weiter gedruckt und im PERF-MESSPUNKT-JSON,
+// Fallback = Rohwert. Messtabelle (n = 47), Begründung der Abweichung vom Wortlaut
+// und ehrliche Grenze: Kopfkommentar von scripts/perf/tti-bewertung.ts.
+
 // Blockzahl × Iterationen je Block der Kalibrier-Last. Bewusst in ~8 mittellange
 // Tasks zerlegt (statt eines Riesen-Tasks): so ähnelt das Lastprofil einer echten
 // Seite (viele Long Tasks), TBT summiert über alle, und die TTI-Erkennung von
@@ -183,7 +194,7 @@ type Schwelle = {
   clsMax: number;          // Cumulative Layout Shift (geräteunabhängig — der harte Regressions-Fänger)
   lcpMax: number | null;   // Largest Contentful Paint (ms) — CPU-abhängig, grosszügiger Deckel
   tbtMax: number | null;   // Total Blocking Time (ms) — bewertet auf dem NORMIERTEN Wert (3.8.2026)
-  ttiMax: number | null;   // Time To Interactive (ms)
+  ttiMax: number | null;   // Time To Interactive (ms) — bewertet via bewerteTti (5.10.2026)
   scoreMin: number | null; // Performance-Score 0..100
 };
 
@@ -228,10 +239,12 @@ type Schwelle = {
 //
 // WAS DAS HEISST — und was bewusst NICHT geändert wurde (kein Anlass, §14):
 //   • **OR TBT** ist die einzige gerissene Metrik und wird deshalb hier umgestellt.
-//   • **OR TTI** trägt dieselbe Runner-Abhängigkeit (sd 931 ms, Kopffreiheit von
-//     ehemals 2.7 sd auf 1.8 sd geschrumpft ⇒ Rausch-Rot ~3 % statt ~0.4 %). Sie ist
-//     der nächste Kandidat, hat aber KEINEN belegten Fehlschlag — darum unverändert
-//     auf dem Rohwert. Wird sie rot, ist dieser Block die Vorlage.
+//   • **OR TTI** (Stand 3.8.2026): sd 931 ms, Kopffreiheit von ehemals 2.7 sd auf
+//     1.8 sd geschrumpft ⇒ Rausch-Rot ~3 % statt ~0.4 %; damals KEIN belegter
+//     Fehlschlag und darum noch auf dem Rohwert. Am 24.9., 4.10. und 5.10.2026
+//     riss sie dann ohne Produktänderung (13.14 s und 13.01 s; 13.09 s; 13.61 s) — seit
+//     5.10.2026 wird sie normiert bewertet, aber NICHT wie die TBT: siehe den
+//     Kopfkommentar von tti-bewertung.ts (Entscheid David 5.10.2026).
 //   • **OR LCP** bleibt bimodal (3× ~3.5 s, 5× ~11.6–12.1 s) und ist damit NICHT
 //     runner-geschwindigkeits-getrieben — Normieren würde hier nichts bereinigen,
 //     sondern den niedrigen Modus verzerren. Ursache weiterhin offen (unten).
@@ -668,7 +681,11 @@ async function main(): Promise<void> {
       // plausible Kalibrierung vorliegt — sonst der Rohwert (konservativer Fallback,
       // Begründung im NORMIEREN-Block oben). Beide Werte gehen in den Bericht.
       const tbtBewertet = tbtNorm ?? m.tbt;
-      bericht[key] = { ...m, tbtNorm: tbtNorm ?? null, tbtBewertet };
+      // BEWERTETE TTI (Entscheid David 5.10.2026): Blockier-Anteil auf Basis-
+      // Geschwindigkeit, nur zugunsten langsamer Runner — Herleitung im Kopf-
+      // kommentar von tti-bewertung.ts. Fällt die Kalibrierung aus, ist es der Rohwert.
+      const tti = bewerteTti(m.tti, m.tbt, faktor);
+      bericht[key] = { ...m, tbtNorm: tbtNorm ?? null, tbtBewertet, ttiBewertet: tti.bewertet };
       // «unkalibriert» statt einer Deckel-Zahl, wo die Schwelle `null` ist —
       // der Wert wird gemessen und gedruckt, aber nicht assertiert (§8).
       const d = (v: number | null, einheit = '') => (v === null ? 'unkalibriert' : `${v}${einheit}`);
@@ -680,7 +697,9 @@ async function main(): Promise<void> {
         (tbtNorm !== undefined
           ? `TBT ${Math.round(tbtNorm)} ms normiert (≤ ${d(s.tbtMax)}) · roh ${Math.round(m.tbt)} ms [Transparenz]  `
           : `TBT ${Math.round(m.tbt)} ms roh (≤ ${d(s.tbtMax)}, keine Kalibrierung)  `) +
-        `TTI ${(m.tti / 1000).toFixed(2)} s (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`})`,
+        (tti.normiert
+          ? `TTI ${(tti.bewertet / 1000).toFixed(2)} s bewertet (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`}) · roh ${(m.tti / 1000).toFixed(2)} s [Transparenz]`
+          : `TTI ${(m.tti / 1000).toFixed(2)} s roh (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`}, keine Kalibrierung)`),
       );
       if (!MESSEN_NUR) {
         // §6.7-Backstop (Bug-Check #565 B1): liefert Lighthouse keinen numericValue
@@ -704,7 +723,14 @@ async function main(): Promise<void> {
               : `${label}: TBT ${Math.round(m.tbt)} ms roh > ${s.tbtMax} ms (keine gültige Kalibrierung — Rohwert-Fallback).`,
           );
         }
-        if (s.ttiMax !== null && m.tti > s.ttiMax) fehler.push(`${label}: TTI ${(m.tti / 1000).toFixed(2)} s > ${(s.ttiMax / 1000).toFixed(1)} s.`);
+        // TTI seit 5.10.2026 auf dem BEWERTETEN Wert (Entscheid David); Deckel unverändert.
+        if (s.ttiMax !== null && tti.bewertet > s.ttiMax) {
+          fehler.push(
+            tti.normiert
+              ? `${label}: TTI ${(tti.bewertet / 1000).toFixed(2)} s bewertet > ${(s.ttiMax / 1000).toFixed(1)} s (roh ${(m.tti / 1000).toFixed(2)} s).`
+              : `${label}: TTI ${(m.tti / 1000).toFixed(2)} s roh > ${(s.ttiMax / 1000).toFixed(1)} s (keine gültige Kalibrierung — Rohwert-Fallback).`,
+          );
+        }
         if (s.scoreMin !== null && m.score < s.scoreMin) fehler.push(`${label}: Score ${m.score} < ${s.scoreMin}.`);
       }
     }
@@ -734,7 +760,7 @@ async function main(): Promise<void> {
   // Die Schlusszeile benennt, WORAUF assertiert wurde — im Fallback ist das der
   // Rohwert, und dann darf hier nicht «normiert» stehen (§8).
   console.log(
-    `check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[${bericht.kalibrierFaktor ? 'normiert' : 'roh, ohne Kalibrierung'}]/TTI/Score) eingehalten.`,
+    `check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[${bericht.kalibrierFaktor ? 'normiert' : 'roh, ohne Kalibrierung'}]/TTI[${bericht.kalibrierFaktor ? 'bewertet' : 'roh, ohne Kalibrierung'}]/Score) eingehalten.`,
   );
 }
 
