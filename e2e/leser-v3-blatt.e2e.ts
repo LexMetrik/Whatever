@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // ═══ H2b-NACHZUG · DAS BLATT UND DAS KÜRZEL (A2 · A3 · Ä32 · B11) ═══════════
 //
 // Diese Spec deckt die Befunde, die nur im echten Browser sichtbar sind, weil sie

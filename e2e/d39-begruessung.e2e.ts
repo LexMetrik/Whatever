@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 1
 // ─── D39 · Begrüssung als Kopf, «Sammlung» weg, Datum + Uhrzeit darunter ────
 //
 // David 7.9.2026, wörtlich: «auf der homeseite entferne oberhalb der

@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: nacht
 /**
  * W2·5m-LESER-V3 · S3 — CLS-Wächter für den neuen Erlass-Kopf.
  *

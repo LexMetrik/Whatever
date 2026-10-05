@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // IA-1 · Interaktions-Zähl-Walks + Named-Article-Klick-Beweis (FAHRPLAN-GESETZES-UX
 // §11.3-Tabelle / §11.6 Punkt 1+2). Jeder Walk ZÄHLT die Interaktionen (1 Klick ODER
 // 1 Eingabe+Enter = 1) und asserted das Budget der jeweiligen Praxis-Task-Zeile.

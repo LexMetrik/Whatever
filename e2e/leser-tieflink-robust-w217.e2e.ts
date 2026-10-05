@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 // W2·17-UI-BEFUNDE · Tieflink-Robustheit im Gesetzes-Leser.
 //
 //  PA-1-B01 (hoch)  `/gesetze/bund/OR#art-97%` — ein kaputtes %-Escape im Anker

@@ -1570,3 +1570,76 @@ Neu 5.10.2026 (QS-CI-ZEIT E5; kein verschobener Altkommentar).
   #     ~1 min je Shard, kein Korrektheitsrisiko.
   # Fehlgriff ist nie ein Fehler, nur langsamer (Registry/CDN statt Cache).
 ```
+
+## ci-072 · e2e · Queue-Shards nur noch Queue-Specs, 8 → 6 Gruppen
+
+Neu 5.10.2026 (QS-CI-ZEIT N2; kein verschobener Altkommentar).
+
+```text
+  # ── Nie-rote Browser-Specs nachts statt in der Queue (QS-CI-ZEIT N2) ─────────
+  # ENTSCHEID David 5.10.2026 (Chat, «(a) Nachts statt Queue» auf «Was soll mit
+  # den 107 Browser-Testdateien geschehen, die in 2½ Monaten nie rot waren?»).
+  # GRENZE (Teil der Freigabe): Specs, die Rechenergebnisse oder die Anzeige
+  # von Gesetzes-/Urteilstext prüfen, bleiben in der Queue, auch wenn nie rot;
+  # Löschen ist NICHT freigegeben.
+  # MESSBASIS: 261 Läufe mit Browser-Befund (18.7.–4.10.2026), 709 Ereignisse
+  # (bibliothek/betrieb/e2e-fang-historie-2026-10-05.md). 107 von 203 Specs
+  # nie rot; davon 41 Queue (Grenze, im Zweifel Queue), 66 Nacht.
+  #
+  # UMSETZUNG:
+  #   · Kopf-Annotation `// @shard-gruppe: nacht` statt einer Zahl (dieselbe
+  #     Annotation, kein zweites Feld — eine Spec liegt so in genau EINER
+  #     Liste). Generator schreibt `nacht` als eigene Liste in
+  #     e2e/shard-gruppen.json; Union-Wächter (check:e2e-shards, tore-checks)
+  #     prüft Queue ∪ Nacht == playwright --list und Schnitt leer.
+  #   · Matrix 8 → 6 Gruppen, LPT-Neupackung der Queue-Specs (Testdauern aus
+  #     Queue-Lauf 37344516589): je 715–716 s. Rechnung im _kommentar der JSON;
+  #     6 hält die Shard-Wanduhr auf dem Vor-Umbau-Niveau und spart 2 Läufer je
+  #     Queue-Lauf (Stau 5.10.: +3–4 Jobs, 2,8 min Wartezeit).
+  #   · Job-/Schritt-Name zählt die Gruppen aus `strategy.job-total` statt
+  #     einer festen «/8» — die Zahl steht nur noch in der Matrix (§5, wie
+  #     scripts/e2e-shard-anzahl.mjs).
+  #   · Required-Kontext bleibt «Browser-Smoke (Ergebnis)»; Ruleset und
+  #     Warteschlange unverändert.
+  # FOLGE: ein Defekt, den nur eine Nacht-Spec fängt, landet bis zu einem Tag
+  # später als Zettel (Label alarm:e2e-nacht) statt die Queue zu blockieren.
+```
+
+**Nachtrag 5.10.2026 (nach Gegenprüfung PR #1326, QS-CI-ZEIT; Ergänzung, der
+Kommentar oben bleibt als Stand N2 stehen):** acht der 66 Nacht-Specs
+(`rechtsprechung-besetzung-links`, `leser-gliederung-klappen-w217`,
+`leser-v3-treffer-reihenfolge`, `leser-suchfeld`, `leser-suche-klappzustand`,
+`leser-v3-panel-erlaeuterungen`, `leser-v3-panel-filter-befunde`,
+`leser-w228-landkarte`) laufen wieder in der Queue — die ersten beiden prüfen
+Urteils-/Gesetzestext (Rubrum-Wortlaut «Besetzung»; NHG-Artikelreihenfolge,
+EMRK-Anhang), die übrigen sechs im Zweifel (Davids Grenze 5.10.2026). Damit:
+nie rote Specs 49 Queue / 58 Nacht (statt 41 / 66); Queue gesamt 145 Specs,
+1439 Tests, 76,6 Testminuten (statt 137 / 1381 / 71,5), Nacht 58 Specs,
+505 Tests, 17,0 Testminuten (statt 66 / 563 / 22,1). Shard-Rechnung neu:
+Queue-Summe 4595 s, LPT-Neupackung (dieselbe Mechanik, Gleichstand →
+niedrigste Gruppe) auf 6 Gruppen je 765–767 s (Spanne 1,2 s, 109 der 137
+Altspecs wechseln die Gruppe, nur Annotationen), Wanduhr je Shard
+(Testsumme / Shards / 2 Worker + ~70 s Rüstzeit): 8 → 6,0 min, 7 → 6,6,
+6 → 7,5, 5 → 8,8, 4 → 10,7. Gruppenzahl bleibt 6 (Entscheid David); ci.yml
+unverändert. Beleg und Einzelgründe:
+`bibliothek/betrieb/e2e-fang-historie-2026-10-05.md` (Nachtrag).
+
+## ci-073 · (perf-nacht.yml) · e2e-nacht (Browser-Nacht gegen main)
+
+Neu 5.10.2026 (QS-CI-ZEIT N3; Gegenstück zu ci-072, steht hier, weil der
+Nachtlauf die aus ci.yml genommenen Specs auffängt; Kopfkommentar in
+perf-nacht.yml trägt denselben Anlass).
+
+```text
+  # ── Nacht-Specs täglich gegen main (QS-CI-ZEIT N3) ─────────────────────────
+  # perf-nacht.yml bekommt den zweiten Job `e2e-nacht` (02:17 UTC + Handstart):
+  # npm ci, build:dist, Playwright-Cache nur lesen (Speicherer bleibt der Job
+  # lighthouse), `npm run test:e2e:gruppe -- nacht`, Flacker-Wächter mit
+  # flake-zettel.sh (nur ref main), Zettel `alarm:e2e-nacht` bei Rot
+  # (dedupliziert, Kommentar statt Duplikat), Schliessen bei Grün.
+  # Ein Job ohne Shards (~22 Testminuten, 2 Worker). Workflow-Name neu
+  # «Nacht-Läufe gegen main (Lighthouse-Budget + Browser-Nacht)», Datei-Name
+  # unverändert (check:ci-laeufe und Skills referenzieren die Datei).
+  # check:ci-laeufe deckt den Job ohne Änderung: es wertet den Workflow-Ausgang
+  # jeder Datei mit schedule-Trigger.
+```

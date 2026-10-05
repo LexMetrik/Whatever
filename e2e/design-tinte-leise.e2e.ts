@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: nacht
 // ═══ FLÄCHEN-ROLLE «TINTE LEISE» — DIE KASKADE, GEMESSEN (W2·19 DK-16) ═══════
 //
 // Gegenprüfung 30.9.2026 (PR #1177): die Rolle in `index.css` ist ungeschichtet

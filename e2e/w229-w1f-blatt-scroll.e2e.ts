@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: nacht
 // ═══ S6 W1f · DAS BLATT SCROLLT MIT DEM ARTIKEL (Meldung David 24.9.2026) ════
 //
 // Wörtlich: «erlass blatt scrollt nicht mit wenn sich artikel verändert».

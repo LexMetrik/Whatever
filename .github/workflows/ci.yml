@@ -688,10 +688,11 @@ jobs:
         run: echo "Kein Code im Diff — Merge-Schutz, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
-    name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
+    name: Browser-Smoke Shard ${{ matrix.gruppe }}/${{ strategy.job-total }} (Playwright)
     needs: [diff, bau]
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-041
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-068
+    # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-072
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
@@ -707,7 +708,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
+        gruppe: [1, 2, 3, 4, 5, 6]
     steps:
       - uses: actions/checkout@v7
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-071
@@ -727,7 +728,7 @@ jobs:
       - name: Playwright-Browser (Chromium)
         run: bash scripts/ci/playwright-install.sh
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-045
-      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
+      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/${{ strategy.job-total }})
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-046
       - name: Playwright-JSON-Report ablegen (Shard-Balancing-Datengrundlage)
