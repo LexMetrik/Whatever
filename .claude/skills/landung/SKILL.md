@@ -119,10 +119,10 @@ blockt sie), volle Ausgabe lesen, Exit-Code prüfen. Dann:
 
 ## 1 · Tore vor dem Merge (alle grün, volle Ausgabe)
 
-Beleg = CI-Lauf grün am Kopf-SHA (Lauf-ID: tsc · vitest · lint · build · golden · check · e2e · perf-budget); lokal nur gezielte Einzelprüfungen (Regel David 5.10.2026).
+Beleg = PR-Lauf grün am Kopf-SHA (Lauf-ID: tsc · vitest · lint · golden · check); build · e2e · perf-budget belegt der `merge_group`-Lauf; lokal nur gezielte Einzelprüfungen (Regel David 5.10.2026).
 
 - **`test:e2e` und `check:perf-budget` sind zwingend vor jedem Merge nach
-  main** und bewusst nicht im schnellen `gate` — Begründung: `referenz-ci.md`.
+  main** — sie laufen im `merge_group`-Lauf, bewusst nicht im schnellen `gate` — Begründung: `referenz-ci.md`.
 - Golden-Abweichungen ERST den interleaved Commits der Parallel-Session
   zuordnen, dann über Neu-Schreiben entscheiden (nur deklariert).
 - Bei zusätzlichem `check:netz`/`check:zitate`: vorher Anker-Count der

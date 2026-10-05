@@ -111,6 +111,8 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ```
 - S · 5.10. · e2e/w224-r11-reiterleiste.e2e.ts «auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot (8/8), Ausnahmeliste zurückgebaut (QS-CI-ZEIT E2) — Wurzel beheben; FB S-24
 - S · 5.10. · Läufer-Kontingent nach QS-CI-ZEIT beobachten (+3–4 Jobs je Lauf; Stau 2,8 min im Messlauf 37334185073) — Dach QS-CI-ZEIT
+- S · 5.10. · tor-schutz.py Regel 1 zerlegt an `|` in Anführungszeichen (grep -E 'a|b' gilt als Pipe-Tor); quote-/heredoc-fester Split liegt als Diff in 5260e0118 (QS-CPU) — Dach QS-CPU
+- S · 5.10. · gate-stopp.py (vitest related) übersieht neue untracked Verzeichnisse und Nicht-ASCII-Dateinamen (porcelain-Quoting), ab ~400 related Dateien reisst das 240-s-Limit (Review #1328) — Dach QS-CPU
 - S · 5.10. · tor-paritaet: (1) Sonde ignoriert Job-if (z. B. event_name != 'pull_request'), Tor in PR-gesperrtem Job zählt als PR-gedeckt; (2) check:perf-lighthouse gilt durch perf-kalibrierung.yml (--messen, ohne Assertion) als gedeckt — perf-nacht.yml könnte die Prüfung still verlieren (GP #1323) — Dach QS-CI-ZEIT
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26
