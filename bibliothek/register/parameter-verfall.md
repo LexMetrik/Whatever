@@ -4,6 +4,13 @@ Alle **datierten Parameter** im Code: Werte, die sich ausserhalb des Repos ände
 und darum regelmässig geprüft werden müssen. Wer einen neuen datierten Wert
 verdrahtet, trägt ihn HIER ein (mit Fundstelle, Stand, Prüfrhythmus).
 
+**Erinnerung (seit 6.10.2026):** der Workflow `.github/workflows/verfall-erinnerung.yml`
+(montags, `npm run report:verfall-erinnerung`) öffnet EINEN Zettel (Label
+`erinnerung:verfall`), sobald ein Termin dieser Tabelle oder der Freitext-Fristen
+innerhalb von 45 Tagen liegt oder verstrichen ist, und schliesst ihn selbst, sobald
+das Register nachgeführt ist. Er färbt nie rot; den neuen Wert prüft weiterhin eine
+Session (§7).
+
 Stand des Registers: 6.9.2026 (fortlaufend gepflegt — zuletzt inhaltlich
 ergänzt um die maschinelle Fassungsprüfung der kantonalen Tarif-Stammdaten
 (`check:tarif-drift`, W3-TARIF-STAND); davor die BWO-Publikation vom 1.9.2026 zum hypothekarischen
