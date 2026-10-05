@@ -31,6 +31,13 @@ läuft weiterhin; Rot speichert nie einen Fingerabdruck. mtime als Zutat ist
 bewusst konservativ — erneutes Speichern erzeugt höchstens einen ÜBERFLÜSSIGEN
 Lauf, nie einen übersprungenen nötigen.
 
+§17-Nachtrag 5.10.2026 (QS-CPU, feste Regel David «schwere Läufe in die
+CI»): statt `gate.sh schnell` (tsc · VOLLE vitest-Suite · golden, nach jeder
+Antwort jeder parallelen Session — Mac-Load ~27) läuft nur noch
+`vitest related` für die geänderten src/scripts-Dateien (gezielt, lokal
+höchstens 2 Worker per vite.config.ts). Typen, volle Suite und Golden
+belegt der PR-Lauf (Lauf-ID am Kopf-SHA).
+
 Grenze (Anthropic best-practices, Abruf 7.8.2026): Claude Code übersteuert
 einen Stop-Hook nach 8 Blockierungen in Folge — dieser Hook ist ein
 Bremsklotz, kein Zaun. Harte Sperren bleiben PreToolUse + Berechtigungssystem.
@@ -100,14 +107,26 @@ try:
 except OSError:
     pass
 
+# Gezielt statt voll: nur Tests, die von den geänderten Quellen abhängen.
+ziele = []
+for zeile in st.stdout.splitlines():
+    pfad = zeile[3:].split(" -> ")[-1].strip().strip('"')
+    if pfad.startswith(("src/", "scripts/")) and pfad.endswith((".ts", ".tsx")) \
+            and os.path.exists(os.path.join(repo, pfad)):
+        ziele.append(pfad)
+if not ziele:
+    sys.exit(0)  # nur Konfig/Doku/gelöscht: Beleg ist der PR-Lauf
+
 try:
     gate = subprocess.run(
-        ["bash", "scripts/gate.sh", "schnell"],
+        ["npx", "vitest", "related", "--run", "--passWithNoTests",
+         "--reporter=dot", *ziele],
         cwd=repo, capture_output=True, text=True, timeout=240,
     )
 except Exception as e:
-    print(f"gate-stopp.py: Tor-Lauf fehlgeschlagen ({e}) — bitte "
-          f"`npm run gate:schnell` von Hand fahren.", file=sys.stderr)
+    print(f"gate-stopp.py: vitest related fehlgeschlagen ({e}) — gezielt "
+          f"`npx vitest run <datei>` fahren, Rest belegt der PR-Lauf.",
+          file=sys.stderr)
     sys.exit(2)
 
 if gate.returncode == 0:
@@ -119,9 +138,9 @@ if gate.returncode == 0:
     sys.exit(0)
 
 print(
-    "STOP-HOOK: gate:schnell ist ROT (automatischer Lauf nach deiner "
-    "Antwort; Änderungen in tor-relevanten Dateien liegen vor).\n\n"
-    + gate.stdout + gate.stderr +
+    "STOP-HOOK: `vitest related` ist ROT (automatischer Lauf nach deiner "
+    "Antwort für die geänderten Dateien).\n\n"
+    + "\n".join((gate.stdout + gate.stderr).splitlines()[-120:]) +
     "\nUrsache im Code beheben (§6: kein `npm run golden`, Tests nicht "
     "aufweichen; Diagnose nach §6 Ziff. 5 — rote Datei gezielt, "
     "golden:diff je Fall). Stammt der Bruch NICHT von deiner Änderung "
