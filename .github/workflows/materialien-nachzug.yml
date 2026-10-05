@@ -1,0 +1,178 @@
+# ─── Materialien-Nachzug: Soft-Law-Snapshots bei erkannter Drift nachführen (MONITOR, 6.10.2026) ──
+# Auftrag David 6.10.2026 «mach die materialien». Bis hierher meldete check:materialien-netz
+# Drift nur im Wochenbericht des Normen-Monitors (check:netz:bericht) — nachgeführt wurde von
+# Hand (materialien:snapshot je Quelle + materialien:kaskade). Dieser Bot macht den Handablauf.
+#
+# Ablauf: npm run materialien:nachzug (scripts/materialien/nachzug.ts, Begründungen dort):
+#   check:materialien-netz → je driftender Quelle materialien:snapshot + materialien →
+#   materialien:kaskade --ohne-revisionen → Pfad-Wache → Rauschschutz (angehängte dok-Zeilen).
+#   status=keine     → nichts zu tun / nur Datumsstempel, kein PR (idempotent).
+#   status=anfuegung → nur neue Dokumente: normaler PR.
+#   status=pruefen   → Dokument geändert, entlistet oder wieder gelistet: PR als ENTWURF.
+# Netz-/Count-Gate-Befunde (nicht von echter Drift unterscheidbar) sind ::warning::, kein PR,
+# kein Rot. Rot NUR bei Werkzeugfehler (Exit 1 des Bots, Widerspruch Detektor ↔ Snapshot,
+# rote Tore auf dem nachgeführten Stand) — check:ci-laeufe (waechter.yml) sieht den Lauf.
+#
+# ESTV-MWST (robots.txt `Disallow: /`): Vollabruf (~3100 Abrufe, Concurrency ≤ 2, 300 ms Delay,
+# identifizierender UA — adapter-estv-mwst.ts) NUR bei erkannter Änderung. Entscheid David
+# 6.10.2026 (Chat): «Ja, mit einschliessen»; Grenze: kein zusätzlicher periodischer Vollcrawl.
+#
+# NIE Auto-Merge: public/materialien/** und das Zustands-Manifest liegen auf dem Risikopfad
+# (istRisikoPfad, scripts/gegenpruefung/kern.ts); der Merge-Schutz verlangt ein Verdikt.
+# Montags 05:43 UTC: nach dem Reparatur-Arm fedlex-frische.yml (04:43), vor dem Normen-Monitor
+# (07:17) — der Wochenbericht misst dann den nachgeführten Stand (Bauplan Befund 6).
+name: Materialien-Nachzug
+
+on:
+  schedule:
+    - cron: '43 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      quellen:
+        description: 'Nur diese Quellen nachführen (Komma-Liste aus seco, edoeb, estv-ks, estv-mwst; leer = alle mit Drift)'
+        required: false
+        default: ''
+        type: string
+      trockenlauf:
+        description: 'Nachzug und Tore fahren, aber keinen Zweig/PR anlegen (Probelauf, Laufzeit messen)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: materialien-nachzug
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  nachzug:
+    name: Materialien-Snapshots nachführen (SECO · EDÖB · ESTV-KS · ESTV-MWST)
+    runs-on: ubuntu-latest
+    # ESTV-MWST-Vollcrawl ungemessen (Untergrenze ~8 min reiner Delay, Bauplan Befund 2).
+    timeout-minutes: 120
+    env:
+      TZ: Europe/Zurich
+      NACHZUG_TMP: ${{ runner.temp }}/materialien-nachzug
+    permissions:
+      contents: write
+      pull-requests: write
+      # `gh workflow run ci.yml` — von github.token erzeugte PR-Events lösen keine CI aus.
+      actions: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci  # bares `npm ci` bricht am npm-11-Lockfile (s. normen-monatslauf.yml)
+      - name: Abrufdatum (Zürich, nie Date.now im Generator)
+        id: datum
+        run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Nachzug + Rauschschutz
+        id: lauf
+        env:
+          QUELLEN: ${{ inputs.quellen }}
+        run: npm run materialien:nachzug -- --datum=${{ steps.datum.outputs.iso }} --quellen="${QUELLEN}"
+
+      - name: Tore auf dem nachgeführten Stand
+        id: tore
+        if: steps.lauf.outputs.status != 'keine'
+        run: |
+          set +e
+          rc=0
+          npm run check:materialien || rc=1
+          npm run check:entstehung || rc=1
+          npm run check:zaehler || rc=1
+          npm run check:paritaet || rc=1
+          npm run check:datenhaltung || rc=1
+          npx vitest run src/tests/materialien-register.test.ts src/tests/materialien-zustand.test.ts src/tests/soft-law-zustand.test.ts src/tests/kanten-erlasse.test.ts src/tests/materialien-nachzug.test.ts --maxWorkers=2 || rc=1
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          if [ "$rc" != 0 ]; then echo "::warning::Tore rot auf dem nachgeführten Materialien-Stand"; fi
+          exit 0
+
+      - name: Trockenlauf — Änderungen nur anzeigen
+        if: steps.lauf.outputs.status != 'keine' && inputs.trockenlauf
+        run: |
+          git -c core.quotePath=false status --short | head -200
+          git diff --stat | tail -5
+          cat "$NACHZUG_TMP/pr-body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: PR eröffnen (NIE Auto-Merge — Risikopfad)
+        if: steps.lauf.outputs.status != 'keine' && !inputs.trockenlauf
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
+          STATUS: ${{ steps.lauf.outputs.status }}
+          QUELLEN_LAUF: ${{ steps.lauf.outputs.quellen }}
+          DATUM: ${{ steps.datum.outputs.iso }}
+          TORE: ${{ steps.tore.outputs.rc }}
+        run: |
+          set -euo pipefail
+          # Nur neue Dokumente, aber Tore rot: kein PR, Lauf rot (Wächter). Ein Entwurf (pruefen)
+          # geht mit Tor-Vermerk raus — er braucht ohnehin eine Session.
+          if [ "$STATUS" = anfuegung ] && [ "$TORE" != 0 ]; then
+            echo "::error::Nur neue Dokumente, aber Tore rot — kein PR. Log der Tor-Stufe lesen."
+            exit 1
+          fi
+          branch="chore/materialien-nachzug-${DATUM}"
+          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$offen" ]; then
+            echo "PR #${offen} für ${branch} ist bereits offen (idempotent) — nichts zu tun."
+            exit 0
+          fi
+          body="$NACHZUG_TMP/pr-body.md"
+          if [ "$TORE" != 0 ]; then
+            printf '\n**Tore im Bot-Lauf: ROT** — Log des Laufs %s/%s/actions/runs/%s.\n' \
+              "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
+          else
+            printf '\nTore im Bot-Lauf grün: check:materialien · check:entstehung · check:zaehler · check:paritaet · check:datenhaltung · vitest Materialien-Register/-Zustand/Kanten/Nachzug.\n' >> "$body"
+          fi
+          git config user.name  "materialien-nachzug-bot"
+          git config user.email "noreply@anthropic.com"
+          git checkout -b "$branch"
+          # GENAU die erlaubten Pfade (ERLAUBTE_PFADE in scripts/materialien/nachzug.ts — Test koppelt);
+          # -A, damit verwaiste Kanten-Shards als Löschung mitgehen.
+          git add -A -- bibliothek/register/soft-law-zustand.jsonl public/materialien/ src/data/startseiteZaehler.generated.ts daten-manifest.json
+          {
+            echo "chore(materialien): Soft-Law-Nachzug ${DATUM} (${QUELLEN_LAUF})"
+            echo
+            echo "Automatischer Lauf materialien-nachzug.yml (scripts/materialien/nachzug.ts),"
+            echo "Bot-Tor: ${STATUS}. Je Quelle materialien:snapshot + materialien, dann"
+            echo "materialien:kaskade --ohne-revisionen. Quellen: amtliche Publikationen von"
+            echo "SECO, EDOEB und ESTV (Hub-/Index-/ToC-Seiten, Abruf ${DATUM})."
+            echo
+            echo "Roadmap: MONITOR"
+            echo "Gegenpruefung: ausstehend — Bot-PR, Session prüft"
+            echo "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          } > "$NACHZUG_TMP/commit.txt"
+          git commit -F "$NACHZUG_TMP/commit.txt"
+          # Bot-eigener Zweig: ein Rest aus einem abgebrochenen Lauf (Zweig ohne PR) wird überschrieben.
+          git push --force -u origin "$branch"
+          if [ "$STATUS" = pruefen ]; then
+            gh pr create --draft --base main --head "$branch" \
+              --title "chore(materialien): Soft-Law-Nachzug ${DATUM} — ENTWURF, geänderte/entlistete Dokumente prüfen" \
+              --body-file "$body"
+          else
+            gh pr create --base main --head "$branch" \
+              --title "chore(materialien): Soft-Law-Nachzug ${DATUM} — neue Dokumente (${QUELLEN_LAUF})" \
+              --body-file "$body"
+          fi
+          # CI anstossen (github.token löst keine PR-Workflows aus; workflow_dispatch ist die Ausnahme).
+          if gh workflow run ci.yml --ref "$branch"; then
+            echo "CI (ci.yml) auf '${branch}' angestossen."
+          else
+            echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
+          fi
+
+      - name: Lauf rot färben bei Werkzeugfehler (Tore rot oder Widerspruch Detektor ↔ Snapshot)
+        if: steps.lauf.outputs.widerspruch != '' || (steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0')
+        env:
+          WIDERSPRUCH: ${{ steps.lauf.outputs.widerspruch }}
+          TORE: ${{ steps.tore.outputs.rc }}
+        run: |
+          if [ -n "$WIDERSPRUCH" ]; then
+            echo "::error::Widerspruch ${WIDERSPRUCH}: check:materialien-netz meldet Drift, der Snapshot schrieb keine Zustandsänderung — Detektor oder Snapshot defekt."
+          fi
+          if [ "${TORE:-0}" != 0 ]; then echo "::error::Tore auf dem nachgeführten Materialien-Stand rot — siehe Stufe «Tore»."; fi
+          exit 1
