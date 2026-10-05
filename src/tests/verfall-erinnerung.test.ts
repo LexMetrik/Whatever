@@ -1,6 +1,9 @@
 // Tests der Verfall-Erinnerung: reine Auswahl (Stichtag als Parameter, §2), Zettel-Text
 // und das CLI-Verhalten «Exit 0 auch bei Überschreitung» (Erinnerung färbt nie rot).
 // Stichtag bewusst ≠ Monatserster (2026-10-06); Monats-/Jahres-/Schaltjahrgrenzen explizit.
+// Rechen-Fälle laufen gegen ein FIXTURE-Register (feste Termine): ein planmässig nachgeführtes
+// echtes Register darf einen reinen Register-PR nie rot färben. Gegen das echte Register wird nur
+// geprüft, dass es lesbar ist und ≥ 1 Termin liefert (und der CLI-Lauf funktioniert).
 import { describe, it, expect } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync } from 'node:fs';
@@ -10,7 +13,20 @@ import { sammleTermine, type Termin } from '../../scripts/verfall-parse.ts';
 import { findeZeile, tageZwischen, waehleErinnerungen, zettelText, zettelTitel } from '../../scripts/verfall-erinnerung-kern.ts';
 
 const WURZEL = resolve(__dirname, '../..');
-const md = readFileSync(join(WURZEL, 'bibliothek/register/parameter-verfall.md'), 'utf8');
+const echtesRegister = readFileSync(join(WURZEL, 'bibliothek/register/parameter-verfall.md'), 'utf8');
+
+/** Fixture-Register im Format des echten (Tabelle + Freitext «bis DD.MM.YYYY»), Termine fest. */
+const md = [
+  '| Parameter | Fundstelle | Wert/Stand | Rhythmus | Nächste Prüfung |',
+  '|---|---|---|---|---|',
+  '| Formularpflicht-Kantone (Mietzins) | `mietvertrag.ts` | BWO 4.2.2026 | jährlich | **1.11.2026 (BE!)** |',
+  '| Hypothekarischer Referenzzinssatz | `mietvertrag.ts` | 1.25 % | quartalsweise | 1.12.2026 |',
+  '| Kantonale Mindestlöhne | `arbeitsvertrag.ts` | je Eintrag datiert | jährlich | Jan. 2027 |',
+  '| Künftige Fassung X | `fedlex-cache.sh` | Pin | automatisch | 1.3.2027 |',
+  '| Ohne Termin | `x.ts` | — | offen | bei Nutzerbedarf |',
+  '',
+  '- Übergangsfrist Muster läuft BIS 30.6.2027 — Folgefassung prüfen.',
+].join('\n');
 const { termine: registerTermine } = sammleTermine(md);
 
 const t = (datum: string, label = `T ${datum}`): Termin => ({ label, datum, quelle: 'Tabelle', fundstelle: '`x.ts`' });
@@ -57,10 +73,13 @@ describe('waehleErinnerungen — Fenster ≤ 45 Tage / überschritten / später'
   });
 });
 
-describe('gegen das echte Register (fester Stichtag)', () => {
+describe('Fixture-Register (feste Termine, unabhängig vom echten Register)', () => {
   const finde = (a: ReturnType<typeof waehleErinnerungen>, teil: string) =>
     [...a.ueberschritten, ...a.bald].find((f) => f.termin.label.includes(teil));
-  it('6.10.2026: BE-Formularpflicht (1.11.2026) ist im Fenster, nicht überschritten', () => {
+  it('Fixture liefert die vier Tabellen-Termine plus den Freitext-Termin', () => {
+    expect(registerTermine.map((x) => x.datum)).toEqual(['2026-11-01', '2026-12-01', '2027-01-01', '2027-03-01', '2027-06-30']);
+  });
+  it('6.10.2026: Formularpflicht (1.11.2026) ist im Fenster, nicht überschritten', () => {
     const f = finde(waehleErinnerungen(registerTermine, STICHTAG), 'Formularpflicht-Kantone');
     expect(f?.tage).toBe(26);
   });
@@ -71,6 +90,12 @@ describe('gegen das echte Register (fester Stichtag)', () => {
   });
   it('1.9.2026: Formularpflicht (Tag 61) liegt noch ausserhalb', () => {
     expect(finde(waehleErinnerungen(registerTermine, '2026-09-01'), 'Formularpflicht-Kantone')).toBeUndefined();
+  });
+});
+
+describe('echtes Register (nur Lesbarkeit, keine Termin-Abhängigkeit)', () => {
+  it('ist lesbar und liefert mindestens einen Termin', () => {
+    expect(sammleTermine(echtesRegister).termine.length).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -116,19 +141,28 @@ describe('CLI report:verfall-erinnerung', () => {
   it('Exit 0 auch bei überschrittenen Terminen; schreibt auswahl.json + zettel.md; GITHUB_OUTPUT-Zahlen', () => {
     const out = mkdtempSync(join(tmpdir(), 've-'));
     const gh = join(out, 'github-output');
-    const r = lauf(['--stichtag=2026-12-15', `--out=${out}`], { GITHUB_OUTPUT: gh });
+    // Stichtag weit in der Zukunft: jeder Termin des echten Registers ist überschritten,
+    // unabhängig von dessen Pflegestand.
+    const r = lauf(['--stichtag=2099-06-15', `--out=${out}`], { GITHUB_OUTPUT: gh });
     expect(r.status).toBe(0);
     const ausgabe = readFileSync(gh, 'utf8');
-    const a0 = waehleErinnerungen(registerTermine, '2026-12-15');
+    const a0 = waehleErinnerungen(sammleTermine(echtesRegister).termine, '2099-06-15');
     expect(ausgabe).toContain(`faellig=${a0.bald.length + a0.ueberschritten.length}\n`);
     expect(ausgabe).toContain(`ueberschritten=${a0.ueberschritten.length}\n`);
     const auswahl = JSON.parse(readFileSync(join(out, 'auswahl.json'), 'utf8'));
     expect(auswahl.ueberschritten.length).toBeGreaterThan(0);
     expect(readFileSync(join(out, 'zettel.md'), 'utf8')).toContain('ÜBERSCHRITTEN');
   });
-  it('Exit 1 nur bei kaputter Eingabe (ungültiger Stichtag)', () => {
-    const r = lauf(['--stichtag=15.12.2026', `--out=${mkdtempSync(join(tmpdir(), 've-'))}`]);
-    expect(r.status).toBe(1);
-    expect(r.stderr).toContain('--stichtag');
+  it.each(['15.12.2026', '2026-13-45', '2026-02-30', '2027-02-29', '2026-00-10'])(
+    'Exit 1 nur bei kaputter Eingabe (ungültiger Stichtag «%s»)',
+    (stichtag) => {
+      const r = lauf([`--stichtag=${stichtag}`, `--out=${mkdtempSync(join(tmpdir(), 've-'))}`]);
+      expect(r.status).toBe(1);
+      expect(r.stderr).toContain('--stichtag');
+    },
+  );
+  it('gültiger Schalttag 2028-02-29 wird akzeptiert (Exit 0)', () => {
+    const r = lauf(['--stichtag=2028-02-29', `--out=${mkdtempSync(join(tmpdir(), 've-'))}`]);
+    expect(r.status).toBe(0);
   });
 });

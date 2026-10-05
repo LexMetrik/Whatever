@@ -36,9 +36,18 @@ function fehler(msg: string): never {
   process.exit(1);
 }
 
+/** Format UND Kalender: Round-Trip über Date.UTC lehnt 2026-13-45 / 2026-02-30 / 2027-02-29 ab. */
+function istKalendertag(s: string): boolean {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (!m) return false;
+  const [j, mo, t] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  const d = new Date(Date.UTC(j, mo - 1, t));
+  return d.getUTCFullYear() === j && d.getUTCMonth() === mo - 1 && d.getUTCDate() === t;
+}
+
 const jetzt = new Date();
 const stichtag = arg('stichtag') ?? iso(jetzt.getFullYear(), jetzt.getMonth() + 1, jetzt.getDate());
-if (!/^\d{4}-\d{2}-\d{2}$/.test(stichtag)) fehler(`--stichtag muss YYYY-MM-DD sein, war «${stichtag}»`);
+if (!istKalendertag(stichtag)) fehler(`--stichtag muss ein gültiger Kalendertag YYYY-MM-DD sein, war «${stichtag}»`);
 const out = resolve(arg('out') ?? join(WURZEL, '.gate/verfall-erinnerung'));
 
 let md: string;

@@ -58,8 +58,6 @@ export function findeZeile(md: string, t: Termin): number | null {
   return i < 0 ? null : i + 1;
 }
 
-export const ZETTEL_MARKE = '<!-- verfall-erinnerung -->';
-
 export type ZettelOptionen = {
   /** Register-Pfad relativ zum Repo-Wurzel. */
   registerPfad: string;
@@ -100,7 +98,7 @@ function zeile(f: Faelligkeit, o: ZettelOptionen): string {
 
 /** Zettel-Text (Markdown). Überschrittene stehen zuoberst und deutlich markiert; nie ein Rot-Symbol. */
 export function zettelText(a: Auswahl, o: ZettelOptionen): string {
-  const teile: string[] = [ZETTEL_MARKE];
+  const teile: string[] = [];
   teile.push(
     `Erinnerung, kein Alarm: Stand ${a.stichtag}. Der neue Wert wird weiterhin von einer Session fachlich geprüft (§7) — dieser Zettel schliesst sich selbst, sobald das Register nachgeführt ist und kein Termin mehr im Fenster liegt.`,
   );

@@ -35,7 +35,7 @@ beforeAll(() => {
   dir = mkdtempSync(join(tmpdir(), 've-wf-'));
   mkdirSync(join(dir, 'bin'));
   mkdirSync(join(dir, 'out'));
-  writeFileSync(join(dir, 'out/zettel.md'), '<!-- verfall-erinnerung -->\nText\n');
+  writeFileSync(join(dir, 'out/zettel.md'), 'Zettel-Text\n');
   writeFileSync(join(dir, 'out/zettel-titel.txt'), 'Verfall-Erinnerung (2026-10-06): 3 Termine in ≤ 45 Tagen, 0 überschritten\n');
   // Ersatz-gh: protokolliert jeden Aufruf; GH_NR = Nummer des offenen Zettels (leer = keiner);
   // GH_FAIL = Unterbefehl, der scheitern soll (api | label | issue-create | issue-edit | issue-close).
