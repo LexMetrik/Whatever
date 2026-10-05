@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""PreToolUse-Hook (Bash + MCP-Shell-Kanäle): blockiert die drei teuersten
-Unfall-Muster.
+"""PreToolUse-Hook (Bash + MCP-Shell-Kanäle): blockiert die teuersten
+Unfall-Muster (1–3) und schwere lokale Läufe (4, Regel David 5.10.2026).
 
 1. Tor-Kommandos (Lint/Test/tsc/Golden/Check) durch Pipes jagen —
    Pipes verschlucken den Exit-Code (real passiert: 8 Lint-Fehler und
@@ -110,19 +110,89 @@ def ist_tor_lauf(stufe: str) -> bool:
     return all(STARTER.match(t) for t in kopf.split())
 
 
-# je Segment (getrennt durch && ; oder Zeilenende): schluckt eine Pipe bzw.
-# ein '||' den Exit-Code eines Tores? Nur Stufen VOR der letzten sind relevant —
-# dort geht der Exit-Code verloren ('|| true' zerfaellt ebenfalls hier).
-for seg in re.split(r"&&|;|\n", cmd):
-    stufen = seg.split("|")
-    if any(ist_tor_lauf(s) for s in stufen[:-1]):
-        probleme.append(
-            "BLOCKIERT (§6/§9): Tor-Kommando durch Pipe/|| gejagt — der "
-            "Exit-Code wird verschluckt (Lektion vom 6./7.6.: 8 Lint-Fehler "
-            "bzw. eine Golden-Abweichung gingen so verloren). Kommando NACKT "
-            "laufen lassen und die volle Ausgabe lesen."
-        )
-        break
+def segmente(text: str) -> list:
+    """Segmente (getrennt an UNGEQUOTETEN && ; Zeilenende) als Listen ihrer
+    Pipeline-Stufen (getrennt an ungequoteten | und ||). Heredoc-Rümpfe
+    (<<EOF … EOF) sind Daten und fallen vorher weg.
+
+    §17-Wurzelfix 5.10.2026 (QS-CPU): die Zerlegung per re.split sah auch das
+    `|` INNERHALB von Quotes — `grep -rn -E 'npm run gate|npm test' .claude`
+    wurde als Tor-durch-Pipe geblockt (dreimal reproduziert 5.10.2026)."""
+    zeilen, rumpf_ende = [], None
+    for z in text.split("\n"):
+        if rumpf_ende is not None:
+            if z.strip() == rumpf_ende:
+                rumpf_ende = None
+            continue
+        zeilen.append(z)
+        m = re.search(r"<<-?\s*['\"]?(\w+)['\"]?", z)
+        if m:
+            rumpf_ende = m.group(1)
+    t = "\n".join(zeilen)
+    segs, stufen, akt, q, i = [], [], "", None, 0
+    while i < len(t):
+        c = t[i]
+        if c == "\\" and q != "'" and i + 1 < len(t):
+            akt += t[i:i + 2]
+            i += 2
+            continue
+        if q:
+            q = None if c == q else q
+            akt += c
+        elif c in "'\"":
+            q = c
+            akt += c
+        elif c == "|":
+            stufen.append(akt)
+            akt = ""
+            i += 2 if t.startswith("||", i) else 1
+            continue
+        elif c in ";\n" or t.startswith("&&", i):
+            segs.append(stufen + [akt])
+            stufen, akt = [], ""
+            i += 2 if c == "&" else 1
+            continue
+        else:
+            akt += c
+        i += 1
+    segs.append(stufen + [akt])
+    return segs
+
+
+def shell_c_arg(stufe: str):
+    """Argument von `bash|sh|zsh -c "…"` in Kommando-Position, sonst None."""
+    try:
+        tok = shlex.split(stufe)
+    except ValueError:
+        return None
+    k = 0
+    while k < len(tok) and STARTER.match(tok[k]) and tok[k] not in ("bash", "sh", "zsh"):
+        k += 1
+    if k + 2 < len(tok) and tok[k] in ("bash", "sh", "zsh") and tok[k + 1] in ("-c", "-lc"):
+        return tok[k + 2]
+    return None
+
+
+def pipe_verschluckt(text: str, tiefe: int = 0) -> bool:
+    """Schluckt eine Pipe bzw. ein '||' den Exit-Code eines Tores? Nur Stufen
+    VOR der letzten eines Segments sind relevant ('|| true' zerfaellt ebenso)."""
+    for stufen in segmente(text):
+        if any(ist_tor_lauf(s) for s in stufen[:-1]):
+            return True
+        for s in stufen:
+            innen = shell_c_arg(s) if tiefe < 3 else None
+            if innen and pipe_verschluckt(innen, tiefe + 1):
+                return True
+    return False
+
+
+if pipe_verschluckt(cmd):
+    probleme.append(
+        "BLOCKIERT (§6/§9): Tor-Kommando durch Pipe/|| gejagt — der "
+        "Exit-Code wird verschluckt (Lektion vom 6./7.6.: 8 Lint-Fehler "
+        "bzw. eine Golden-Abweichung gingen so verloren). Kommando NACKT "
+        "laufen lassen und die volle Ausgabe lesen."
+    )
 
 if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
     probleme.append(
@@ -291,6 +361,91 @@ if merge_stufen:
             "Merge nicht freigegeben — erst das Tor lauffähig machen "
             "(`npm run check:merge-schutz`), dann erneut."
         )
+
+# ── 4. Schwere Läufe in die CI (feste Regel David 5.10.2026) ──────────────
+# Anlass: Mac-Load ~27 bei 10 Kernen durch parallele Sessions (volle Vitest-
+# Suiten, gates, Builds). Volles gate, Vitest/`npm test` OHNE Dateifilter,
+# Playwright, Build und das Sammeltor `check` laufen im PR-Lauf bzw. per
+# workflow_dispatch; die Lauf-ID am Kopf-SHA ist der Beleg. Lokal nur
+# gezielte Einzelprüfungen (`npx vitest run src/tests/x.test.ts`, einzelne
+# `check:*`, `npx tsc -b`). Override, wenn unvermeidbar (CI-Rot, das nur
+# lokal diagnostizierbar ist): LEXMETRIK_LOKAL_SCHWER=1 im selben Kommando
+# oder in der Umgebung. Zerlegung quote-bewusst: ein `grep -E 'a|npm test'`
+# ist Text, kein Lauf; `bash -c "…"` wird in seinem Argument geprüft.
+SCHWER = [
+    # (Muster, Dateifilter macht den Lauf gezielt?)
+    (re.compile(r"\bnpm\s+run\s+(?:gate(?::schnell)?|build(?::dist)?|check(?::seriell)?"
+                r"|test:e2e(?::kurz|:gruppe)?)(?![\w:-])"), False),
+    (re.compile(r"\bscripts/gate\.sh\b"), False),
+    (re.compile(r"\bplaywright\s+test\b"), False),
+    (re.compile(r"\bvite\s+build\b"), False),
+    (re.compile(r"\bnpm\s+(?:run\s+)?(?:test(?::kurz|:watch)?|t)(?![\w:-])"), True),
+    (re.compile(r"\bvitest(?![\w:.-])"), True),
+]
+WERT_SCHALTER = {"--reporter", "--maxWorkers", "--project", "--config", "-c",
+                 "-t", "--testNamePattern", "--shard", "--pool", "--root", "-r"}
+
+
+def gefiltert(rest: str) -> bool:
+    """Trägt der Rest der Stufe einen Datei-/Pfadfilter (positionales Argument)?"""
+    try:
+        tok = shlex.split(rest)
+    except ValueError:
+        tok = rest.split()
+    if tok and tok[0] in ("run", "watch", "dev"):
+        tok = tok[1:]
+    if tok and tok[0] == "related":
+        return True  # `vitest related <dateien>` ist per Definition gezielt
+    i = 0
+    while i < len(tok):
+        w = tok[i]
+        if re.match(r"^\d*[<>]", w) or w == "&":
+            i += 2 if re.fullmatch(r"\d*[<>]+&?", w) else 1
+            continue
+        if w == "--":
+            i += 1
+            continue
+        if w.startswith("-"):
+            i += 2 if (w in WERT_SCHALTER and "=" not in w) else 1
+            continue
+        return True
+    return False
+
+
+def schwerer_lauf(text: str, tiefe: int = 0) -> str:
+    """Erster schwerer Lauf in KOMMANDO-Position, sonst ''."""
+    for stufe in (s for stufen in segmente(text) for s in stufen):
+        innen = shell_c_arg(stufe) if tiefe < 3 else None
+        if innen is not None:
+            treffer = schwerer_lauf(innen, tiefe + 1)
+            if treffer:
+                return treffer
+            continue
+        for muster, filterbar in SCHWER:
+            m = muster.search(stufe)
+            if not m:
+                continue
+            kopf = PFAD_ENDE.sub("", stufe[: m.start()])
+            if not all(STARTER.match(t) or re.fullmatch(r"timeout|\d+[smh]?", t)
+                       for t in kopf.split()):
+                continue
+            if filterbar and gefiltert(stufe[m.end():]):
+                continue
+            return m.group(0)
+    return ""
+
+
+schwer = schwerer_lauf(cmd)
+if schwer and "LEXMETRIK_LOKAL_SCHWER=1" not in cmd \
+        and os.environ.get("LEXMETRIK_LOKAL_SCHWER") != "1":
+    probleme.append(
+        f"BLOCKIERT (Regel David 5.10.2026, CPU): `{schwer}` ist ein schwerer "
+        "Lauf — der gehoert in die CI (PR-Lauf oder workflow_dispatch; Beleg "
+        "= Lauf-ID am Kopf-SHA). Lokal nur gezielte Einzelpruefungen: einzelne "
+        "Testdatei (`npx vitest run src/tests/x.test.ts`), einzelnes "
+        "`npm run check:<name>`, `npx tsc -b`. Unvermeidbar (CI-Rot nur lokal "
+        "diagnostizierbar)? Override bewusst: `LEXMETRIK_LOKAL_SCHWER=1 <kommando>`."
+    )
 
 if probleme:
     print("\n".join(probleme), file=sys.stderr)
