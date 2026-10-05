@@ -6,7 +6,7 @@ Punkt 1 (§17, Weisung David 15.9.2026). Datei je Session unter
 nie committen) — Kopie ab hier:
 
 ```
-Session: <YYYY-MM-DD> <session-slug> · Schritt: <ID>
+Session: <YYYY-MM-DD> <session-slug> · Vorhaben: <JETZT-Kürzel oder Chat-Auftrag>
 
 ## Nebenfunde (→ EINGANG-Zeile in ROADMAP.md, nie nur Chat)
 - [ ] Titel — Wortlaut
