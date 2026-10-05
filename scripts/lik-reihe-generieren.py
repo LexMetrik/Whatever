@@ -6,6 +6,10 @@ Monatlicher Pflege-Lauf (nach BFS-Publikation, erste Folgemonatswoche):
   2) DAM-URL extrahieren, XLSX laden (siehe unten) — oder direkt:
      curl -sL <dam-api…/master> -o /tmp/lik.xlsx
   3) python3 scripts/lik-reihe-generieren.py /tmp/lik.xlsx
+  4) Danach die eingefrorene Export-Zeile des Teuerungsrechners nachziehen (sie traegt den
+     letzten LIK-Monat und den PDF-sha; ohne Nachzug ist rechner-export-ratsche rot):
+     RECHNER_EXPORT_SCHREIBEN=1 npx vitest run src/tests/rechner-export-ratsche.test.tsx
+     (Beleg 5.10.2026: Nachfuehrung 2026-07 -> 2026-09 bewegte genau diese Zeile.)
 
 Quelle: BFS «Landesindex der Konsumentenpreise, Indexierungstabelle»
 (cc-d-05.02.08), Lizenz OPEN-BY (Quellenangabe Pflicht).
@@ -46,7 +50,9 @@ zeilen = [
     '//',
     '// Amtliche Quelle (Live-Fassung, massgeblich — nie dieses Artefakt):',
     '//   Asset-Seite: https://www.bfs.admin.ch/asset/de/cc-d-05.02.08',
-    '//   XLSX-Master: https://dam-api.bfs.admin.ch/hub/api/dam/assets/36773872/master',
+    '//   XLSX-Master: https://dam-api.bfs.admin.ch/hub/api/dam/assets/36878072/master',
+    '//   (Asset-ID wechselt je BFS-Publikation; die alte ID 36773872 liefert nur den Stand 30.7.2026 —',
+    '//    die aktuelle ID steht jeweils auf der Asset-Seite, Pflege-Lauf Schritt 2.)',
     f'// Abgerufen: {abrufdatum}. Frische-Tor: npm run check:lik-frische.',
     '//',
     f"export const LIK_LETZTER_MONAT = '{letzter}';",
