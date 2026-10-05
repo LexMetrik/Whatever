@@ -15,7 +15,8 @@
 //
 // BEWUSST KEIN TOR (§17-Gegengewicht, §12): ein rotes Tor wegen eines fremden
 // Worktrees würde Parallel-Sessions blockieren. Gebaut ist stattdessen
-// Anzeige (`plan:next`) + Befehl (`npm run aufraeumen:git`).
+// Anzeige (`plan:next`) + Befehl (`npm run aufraeumen:git`). Seit 5.10.2026
+// (Umstieg L1, Planwerkzeug abgebaut) bleibt nur der Befehl.
 //
 // Drei Bauregeln dieser Datei:
 //
@@ -160,6 +161,7 @@ export interface Befunde {
  *
  * Eine Quelle für die Porcelain-Zerlegung (§5): `parseWorktrees` in lage.ts
  * setzt seit 21.9.2026 auf dieser Funktion auf statt auf einem zweiten Regex.
+ * (lage.ts mit dem Planwerkzeug am 5.10.2026 abgebaut, Umstieg L1.)
  */
 export interface WorktreeRoh {
   pfad: string;
@@ -399,6 +401,8 @@ export function berichtZeilen(bef: Befunde, jetztUnix: number): string[] {
 
 /**
  * Die EINE Zeile für `plan:next` — `null`, wenn es nichts zu melden gibt.
+ * (Seit 5.10.2026 ohne Produktiv-Aufrufer: plan:next abgebaut, Umstieg L1;
+ * bleibt, weil plan-git-flaechen.test.ts sie prüft — §6.3.)
  *
  * **Nur Zähler, keine Namen** (Bug-Check 21.9.2026, Auflage 5): der
  * Lage-Block darüber nennt jeden Worktree und jeden Branch bereits beim

@@ -16,60 +16,43 @@ git-Historie und im Register des Skills `lehren`.)*
 
 | Neuer Eingang | Ablage |
 |---|---|
-| Kleinbefund unterhalb Sessiongrösse | `npm run plan:posten -- neu --dach <ID> --titel "…"` → eigene Datei in `plan/posten/` (Davids Alltags-Funde: `W2·18-FEHLERBUCH`; Dach steckt im ID-Präfix) — **nie** eigener Schritt, **nie** eine Zeile in `ROADMAP.md` (`check:plan` 16) |
-| Sessionfähige Bau-Einheit | Schritt mit `@meta` in der passenden Welle bzw. im Querschnitt-Band; Spec-Prosa in den Fahrplan, hier nur Titel + Ziel + `**Detail:**`-Link |
-| Grosses Detail / neuer Strang | `fahrplaene/FAHRPLAN-*.md`, verlinkt aus einem Roadmap-Schritt — nie als zweiter Einstieg |
+| Neuer Fehler, Frist, offenes Go, Idee | eine EINGANG-Zeile in `ROADMAP.md` (Go mit Marke, Skill `bauschritt` Regel 4) — Format und Grenze im ROADMAP-Kopf |
+| Sessionfähiges Vorhaben | JETZT in `ROADMAP.md` — nach der Reihenfolge-Regel im ROADMAP-Kopf oder auf Davids Wort; Spec-Prosa in den Detailplan bzw. Fahrplan, nie als zweiter Einstieg |
 | Recherche-Erkenntnis | `bibliothek/` + Eintrag in `INDEX.md` (CLAUDE.md §11) |
-| Erledigtes / Abgelöstes | wörtlich in `ROADMAP-CHRONIK.md` (Streichung: mit Begründungszeile) |
-| Über der Plan-Kapazität | Ideen-Zeile ohne `@meta` (§17-Gegengewicht: Plan bildet Kapazität ab, nicht Absicht) |
+| Erledigtes | der letzte PR des Vorhabens streicht es aus JETZT, erledigte Merkzettel nach `archiv/posten/` (Skill `landung` Ziff. 9) |
 
-**Schritte nennen Ziel und Grenzen, nicht den Weg** (ROADMAP-Kopf, David
-14.8.2026). Fahrpläne liegen in `fahrplaene/` (erledigt → `archiv/`); Wächter:
-`check:plan` Regel 7. Slicer: `npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>`.
+**Vorhaben nennen Ziel und Grenzen, nicht den Weg** (David 14.8.2026).
+Slicer für die Fahrpläne: `npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>`.
 **Deckel:** Root-Markdown ~20 Dateien.
 
-**Lagebild-Konventionen** (`npm run plan:bild` erzeugt Davids Übersicht
-mechanisch; Definitionen: Lagebild-Seite «Arbeitsweise & Glossar»):
+**Kürzel:** jedes neue Vorhaben trägt einen **sprechenden Namensteil**
+(`W2·6-RESOLVER`, nie nur `W2·5l`) und einen Klartext-Titel, der ohne Kürzel
+verständlich ist. Bestehende Kürzel werden **nie umbenannt** (Verweis-Anker) —
+übersetzen statt umbenennen.
 
-- Jeder neue Fahrplan trägt unter der Titelzeile
-  `<!-- @lagebild name: <Klartext-Name> · zweck: <1 Laien-Satz> -->`.
-- Jeder Schritt schreibt seinen Spec-Verweis als `**Detail:** [Datei](…) §N` —
-  maschinell gelesen, macht den generierten Bau-Prompt konkret.
-- Jede neue Schritt-ID trägt einen **sprechenden Namensteil**
-  (`W2·6-RESOLVER`, nie nur `W2·5l`) und einen Klartext-Titel, der ohne Kürzel
-  verständlich ist. Bestehende Kürzel werden **nie umbenannt** (Verweis-Anker) —
-  übersetzen statt umbenennen. *(Ausnahme: die Etiketten-Konsolidierung
-  15.8.2026 hat verwandte Schritte zu Dach-IDs verschmolzen — eine Fusion ist
-  kein Umbenennen, der alte Anker lebt in der Chronik weiter.)*
-- **`feld:` ist zugleich die Themen-Klassierung** (Steuerungs-Diät 29.8.2026,
-  löst `kollision:` ab): genau einer der sieben Baufelder-Werte `leser` ·
-  `korpus` · `rechtsprechung` · `suche` · `design` · `werkzeuge` · `betrieb`;
-  daraus leitet das Lagebild den Wirkungsbereich ab, und danach wird gebündelt.
-  Ohne `feld:` ist der Schritt rot (`check:plan`).
+*(Bis 5.10.2026 trug diese Ziffer die Posten-Ablage per `plan:posten`, das
+`@meta`-Schema mit `feld:` und die Lagebild-Konventionen; mit dem Umstieg
+abgebaut, Wortlaut in der git-Historie.)*
 
-## 2 · Vor dem Start: Plan-Stand abfragen
+## 2 · Vor dem Start: Startabfrage und Detail-Slice
 
 ```
-npm run plan:next                # oberster offener Schritt, dep/Blocker, was wip ist
 npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>   # Detail-Slice statt Volltext
-npm run plan:set -- <id> status=wip    # vor Baubeginn; status=done zum Abhaken
-                                 # danach immer: npm run check:plan
 ```
 
-- **Vor Baubeginn `wip` setzen und pushen** — sonst ist die Session für
-  parallele unsichtbar (F6-Beleg: `W2·6-NKEY` doppelt gebaut, 28.7.2026).
-- **Erledigtes danach abhaken** — der Plan wird in beide Richtungen gepflegt.
-- **Fertige Arbeit in offenen PRs heisst `parked` + `grund: pr-NNN`, nie
-  `ready`** — `ready` heisst «niemand baut das gerade» (F6-Beleg: QS-CODE-Reihe
-  in zehn offenen PRs als `ready`, 4./5.8.2026).
-- **Branch-/Worktree-Namen tragen den Schritt-ID-Slug** (`feat/w26-resolver`)
-  — die wip-Verstoss-Sonde des Lagebilds liest den Namen; opake Namen sind für
-  sie unsichtbar.
+- **Startabfrage und Belegung:** Skill `bauschritt` Station A — Zweig mit
+  Vorhaben-Kürzel anlegen und pushen, bevor der Detailplan entsteht; sonst ist
+  die Session für parallele unsichtbar (F6-Beleg: `W2·6-NKEY` doppelt gebaut,
+  28.7.2026).
+- **JETZT/EINGANG danach nachführen** — der Plan wird in beide Richtungen
+  gepflegt.
+- **Branch-/Worktree-Namen tragen das Vorhaben-Kürzel** (`feat/w26-resolver`)
+  — die Startabfrage erkennt Belegung nur am Namen; opake Namen sind für sie
+  unsichtbar.
 
 ## 3 · Bündeln — aber nicht über-bündeln
 
-**Bündeln** bei verwandter Fläche — seit der Steuerungs-Diät 29.8.2026 ist
-das **gleiche `feld:`** der Schnitt (dieselben Dateien, dasselbe Subsystem,
+**Bündeln** bei verwandter Fläche (dieselben Dateien, dasselbe Subsystem,
 dieselbe Prüf-Fläche): einmal bauen, prüfen, deployen. **Nicht über-bündeln:**
 keine Risiko-Klassen mischen (Rechtsinhalt ≠ reines UI, §1/§3); nie zwei
 Vollausbauten über alle 26 Kantone parallel.
@@ -80,8 +63,8 @@ mehrere M-Schritte seriell landet (Beleg 14./15.8.: acht Schritte, fünf PRs).
 Daraus: **S** trägt nie allein — bündeln; **M** ist ein Session-*Teil*, nicht
 die Session (Station W baut per Default weiter); **L** wird erst geschnitten,
 wenn echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus
-Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
-`dep`-Ketten nur bei echtem fachlichem Zwang; bei Überschneidung
+Gewohnheit. Neue Vorhaben gleich in dieser Grössenordnung anlegen. Serielle
+Abhängigkeiten nur bei echtem fachlichem Zwang; bei Überschneidung
 **zusammenführen statt daneben**.
 
 ## 4 · Definition of Done
@@ -95,7 +78,8 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 5. **Regeländerung zieht ihre Kurzfassungen mit:** wer eine Regel ändert,
    greppt alle Stellen, die sie zitieren (Reglement, `.claude/rules/*`,
    Skills) — GRUNDTON übersah 23.9.2026 `rules/design.md` «Alle Radien 0».
-6. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
+6. **JETZT/EINGANG nachgeführt** im abschliessenden PR (Skill `landung`
+   Ziff. 9).
 7. **Nur wenn Jules oder Gemini beteiligt war:** Messwerte in
    `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 nachtragen
    (`npm run fremdagenten:messung` für Jules-Quote/Dauer; Gemini echt/Schein
@@ -103,12 +87,12 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 
 ## 5 · Commit-Trailer
 
-- Schritt-Commit: `Roadmap: <ID>`.
-- **Schritt-Status fährt im PR mit (seit 19.9.2026, Merge-Queue):**
-  `plan:set -- <ID> status=…` im eigenen PR, `Roadmap-Status:` im PR-Body
-  weglassen — die Auto-Buchung (`plan-buchung.yml`) ist am 20.9.2026
-  abgebaut (0 Buchungs-Commits in 12 Läufen). Massgeblich: Skill `landung`
-  Ziff. 9.
+- Vorhaben-Commit: `Roadmap: <Kürzel>`.
+- **Der Plan fährt im PR mit (seit 19.9.2026, Merge-Queue):** JETZT/EINGANG
+  im eigenen PR nachführen, `Roadmap-Status:` im PR-Body weglassen — die
+  Auto-Buchung (`plan-buchung.yml`) ist am 20.9.2026 abgebaut (0
+  Buchungs-Commits in 12 Läufen), `plan:set` am 5.10.2026 (Umstieg).
+  Massgeblich: Skill `landung` Ziff. 9.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
 - Geänderte/entfernte Assertion in Risiko-Engine-Tests oder Golden-Diff
@@ -219,7 +203,7 @@ laufender Agent dieselben Dateien auf einem Branch hat; (c) keine
 main-Commits bei offener eigener Landekette (seit 19.9.2026 ohnehin
 unmöglich: main nimmt nur die Merge-Queue, Skill `landung`); (d) keine Orchestrator-COMMITS in einem Worktree,
 solange ein Bau-Agent darin baut (geteilter git-Index — `git add -A` des
-Agenten nimmt fremde Edits mit); Datei-Edits ohne git sind das Maximum. **(e) Peer-Session-Sonde (F6, 3. Beleg 6.9.2026):** vor dem ersten Dispatch auf ein `feld:` die laufenden Peer-Sessions prüfen (ListAgents bzw. `list_sessions`) und bei einer aktiven Session auf demselben Feld ZUERST per `send_message` koordinieren, wer den Zweig hält — eine Übergabe-Datei, die «gelandet» sagt, ersetzt die Sonde nicht (Beleg: Archiv §6-Orch/e). **(f) Prüfer-Worktree-Sperre (12.9.2026, PR #828):** nie einen Fixer-Agenten in einen Worktree schicken, in dem eine Gegenprüfung noch läuft — der Prüfer meldete dort fremdes, uncommittetes WIP (§12/§14.7); ein Worktree geht an einen Fixer erst nach Abschluss der laufenden Prüfrunde, oder der Fixer bekommt einen eigenen, dritten Worktree.
+Agenten nimmt fremde Edits mit); Datei-Edits ohne git sind das Maximum. **(e) Peer-Session-Sonde (F6, 3. Beleg 6.9.2026):** vor dem ersten Dispatch auf eine Fläche die laufenden Peer-Sessions prüfen (ListAgents bzw. `list_sessions`) und bei einer aktiven Session auf derselben Fläche ZUERST per `send_message` koordinieren, wer den Zweig hält — eine Übergabe-Datei, die «gelandet» sagt, ersetzt die Sonde nicht (Beleg: Archiv §6-Orch/e). **(f) Prüfer-Worktree-Sperre (12.9.2026, PR #828):** nie einen Fixer-Agenten in einen Worktree schicken, in dem eine Gegenprüfung noch läuft — der Prüfer meldete dort fremdes, uncommittetes WIP (§12/§14.7); ein Worktree geht an einen Fixer erst nach Abschluss der laufenden Prüfrunde, oder der Fixer bekommt einen eigenen, dritten Worktree.
 
 **Modellwahl nach Stufen** (Abbildung Stufe → Modell nur in `PALETTE`,
 `scripts/dispatch.ts`): anspruchsvoller Bau **stark** · eng umrissener
@@ -263,7 +247,7 @@ informieren, 25.9.2026); Wächter auf CI je
 SHA prüfen (`gh run list --branch … headSha`), nicht per `gh pr checks`, das
 auch abgebrochene Alt-Läufe als «fail» zeigt; (d) `test:e2e` prüft ohne vorherigen
 `npm run build` ein altes `dist` — Wurzel-Fix im `webServer` (F11), bis dahin
-immer erst bauen. (e) CI-Annotationen `::error` listen FLAKY-Retries als Fehler — nur die Playwright-Schlusszeile «N failed · M flaky» trennt. (f) Prüf- und Bau-Worktrees ohne `node_modules` melden `vite-node: command not found` (Exit 127) = falscher Rot-Befund — erst `npm ci --prefer-offline`. (i) Monitor-/Hintergrund-Skripte in Bash-Syntax schreiben (`if [[ … ]]`), nie `case … ;;` in einer Zeile — zsh parst das anders, das Skript stirbt still; `timeout` gibt es auf macOS nicht (`--print-timeout`/eigene Schleife); jede Abbruchbedingung einmal mit einem Testwert gegenprüfen (Beleg: Archiv §6-Fallen/i-2). (h) Unter `vite-node` zeigt `process.argv[1]` auf das vite-node-Binary, nicht auf die Datei — eine Entry-Erkennung darüber ist still wirkungslos (Wächter läuft stumm grün durch); Repo-Muster ist `!process.env.VITEST`. (g) Nach jedem main-Merge in einem PR die Projektionen neu erzeugen (Daten: Zähler/Feed/Historie/Manifest; e2e: `gen:e2e-shards`; `report:confidence -- --schreibe --datum=YYYY-MM-DD` (ohne `--datum` wirft das Skript, #848; Beleg 3.10.2026) zählt zu den Manifest-Dateien — danach immer `datenhaltung:manifest` (#888); und jede Neuextraktion eines Bund-Erlasses bewegt den artikel-sha, also `report:confidence --schreibe` VOR dem PR, sonst ist `check:confidence-frische` rot), sonst kostet jede Landung einen CI-Lauf (5 Läufe am 5.9.2026). Bei Berührung des Normtext-/Rechtsprechungs-Korpus gehört die VOLLE Kaskade dazu, nicht nur das Manifest: `gen:entstehung-projektion`, `gen:entstehung-deckung`, `datenhaltung:manifest`, `gen:zaehler`, `check:verweis-inventar -- --schreiben`, `gen:e2e-shards` (Beleg #820, 12.9.2026 — ein Rebase, der nur das Manifest nachzieht, riskiert die stille Rückkehr des gerade behobenen Fehlers; weiterer Beleg #827 12.9.2026: Archiv §6-Fallen/g-3). Diese Kaskade (Artikel-Bestand/Zähler/Entstehung/Deckung/Verweis-Inventar/E2E-Shards + Sandwich Manifest→`report:confidence`→Manifest — `report:confidence` LIEST den artikel-sha aus dem Manifest und wird selbst darin gepinnt, darum Manifest davor UND danach; der #888-Halbsatz oben nennt nur die zweite Hälfte) bündelt seit 18.9.2026 `npm run projektionen:normtext -- --datum=YYYY-MM-DD` (`scripts/normtext-repin-kaskade.sh`, genutzt von `fedlex-frische.yml`) — bei Normtext-Berührung dieses Skript statt der Einzelbefehle; es PINNT das Manifest bewusst (Korpus-Bewegung = die Ausnahme zu Skill `landung` Ziff. 8), also nur nach echter Normtext-Bewegung und mit Begründung im Commit. Auf der Materialien-Seite bündelt `npm run materialien:kaskade -- --datum=…` (`scripts/materialien/kaskade-run.ts`) dieselbe Rolle für Soft-Law-Projektion/Revisionen/Churn-Reset; ihr letztes Glied `npm run entstehung:projektion-kaskade` (Entstehungs-Projektion → Deckungs-Sicht → Zähler → Manifest, `scripts/entstehung/projektion-kaskade.ts`) ist derselbe Nachzug, den die Curia-/BS-Grossrat-/Vernehmlassungs-Workflow-Jobs direkt aufrufen, weil sie kein volles `materialien:kaskade` fahren (Beleg: Archiv §6-Fallen/g-5). Nach einer Kanton-Nachführung (`normtext --nur=<KEY>`-Lauf oder blosse Snapshot-Stand-Änderung) gehört zusätzlich `npm run gen:pdf-quellen -- --nur=kanton --kanton=<K> --datum=…` + `check:pdf-quellen` in dieselbe Kaskade (Beleg: Archiv §6-Fallen/g-6). Muster-Spec für Batch-Nächte: `docs/token-oekonomie/batch-spec-ui-befunde.md`. **(h) Orchestrator-Fallen W2·24 (6.9.2026, ~30 Worktrees an einem Tag):** Worktree + eigenes `npm ci` als EIGENEN Schritt VOR dem Dispatch anlegen (kein `node_modules`-Symlink auf den Haupt-Checkout mehr — veralteter Haupt-Checkout ⇒ gate falsch rot), nie hinter Tore ketten (`… && git worktree add`) — ein rotes Tor liess den Worktree fehlen, während der Agent schon lief; `git worktree add` nur mit ABSOLUTEM Pfad oder `git -C <hauptrepo>` (relativ aus einem Worktree-cwd erzeugt verschachtelte Worktrees); nach jedem Merge zweier Zweige mit je regenerierter `e2e/shard-gruppen.json` sofort `gen:e2e-shards` (dreimal rot); Perf-Messungen nie neben laufenden Builds/Agenten; Ein PR-Kopf mit `[skip ci]` (z. B. Doku-/Karten-Commit als letzter) bekommt KEINE Required-Checks — Landung blockiert stumm; letzter Commit vor dem Merge nie `[skip ci]` — und beim SQUASH landen ALLE PR-Betreffs in der main-Message: ein `[skip ci]` irgendwo im PR schaltet auf main CI, Deploy und Plan-Buchung stumm; Wächter: CI-Step «Squash-Schutz» (Required). Ein Nachbesserungs-Commit erbt diese Regel nicht automatisch vom Erstversuch — sie gehört in JEDEN Fixer-Prompt, auch den der Nachbesserung (Beleg #822→#824, 12.9.2026: Archiv §6-Fallen/h2-5). Messserver: `npx vite preview` ohne `--port` (Port aus Worktree-Pfad, strictPort), nie einen festen Port im Auftrag vorgeben; fremde Prozesse nie beenden (Belege 7.9./30.9./2.10.2026: Archiv §6-Fallen/h2-6). Verschachtelte Worktree-Ordner nie mit `rm -rf <wt>/.claude` wegräumen — das löscht die GETRACKTEN Skills/Hooks im Worktree (4 Tests rot); nur `git worktree move` + `rmdir` (7.9.2026). **Zwei Messfallen aus den Nachwunsch-Fixern (7.9.2026):** Playwright `locator.filter({ has: … })` wertet bei JEDER Zusicherung neu aus — nach einem Klick trifft dieselbe Zeile ein anderes Element, die Sonde prüft still das Falsche; stattdessen einmal auflösen und `nth()` festhalten. Und **Deckkraft ist kumulativ**: `opacity` multipliziert sich über die Elternkette, ein am Kind gemessener Wert belegt darum nie, was der Nutzer sieht — immer am sichtbaren Ergebnis messen. Die serielle Landung selbst steht als Werkzeug in `scripts/landung/landung-kette.sh` (Skill `landung` Ziff. 7c). Fortgesetzte Session nach Kontext-Kürzung: Session-Einstieg (Plan-Stand `plan:next`, Vault-`START.md` gemäss globaler CLAUDE.md, Peer-Sonde) nachholen, sobald die Anleitung im Kontext auftaucht. (j) Dispatch in einen BESTEHENDEN Branch des Haupt-Checkouts: der Agent prüft als Erstes und unmittelbar vor dem Commit `git branch --show-current` gegen den Auftrag und bricht bei Abweichung ab (nie selbst wechseln, nie «ist wohl schon gemergt» folgern); der Orchestrator prüft nach der Rückkehr Reflog + Branch, BEVOR er pusht (Beleg 18.9.2026: Archiv §6-Fallen/j. Wurzel bleibt §12: laufen zwei Sessions, baut jede im eigenen Worktree). (k) **Worktree-Schreibsperre vererbt sich:** Sub-Agenten erben die Edit/Write-Sperre der Haupt-Session auf DEREN Worktree — Bau in einem anderen Worktree geht nur mit Agent-Parameter `isolation: "worktree"` (Agent checkt den Zielzweig selbst aus und pusht). Beleg 19.9.2026 (Fixer brach ab). (l) **Isolations-Worktrees halten den Zweig belegt:** vor einem Nachzug-Dispatch auf denselben Zweig den Worktree des beendeten Bauers entfernen (`git status` leer + HEAD == origin prüfen, dann `git worktree remove`), sonst `checkout` Exit 128. Und: einen abgebrochenen Isolations-Agenten NIE per SendMessage fortsetzen — sein unveränderter Worktree ist auto-bereinigt, der fortgesetzte Agent läuft dann im SESSION-Worktree und wechselt dort den Zweig (Beleg 19.9.2026, ohne Verlust). Neu dispatchen. (m) **Bau-Agenten grundsätzlich isoliert, Session-Worktree bleibt dem Orchestrator:** der Stop-Hook `gate-stopp.py` fährt `gate:schnell` im Session-Worktree bei jeder Orchestrator-Antwort — ein Agent, der dort «Tests zuerst» baut, erzeugt Falsch-Rot (19.9.2026). (n) **CI-/Queue-Wächter aus EINER Abfrage entscheiden** (ein `gh … --json` + Auswertung), nie aus zwei zeitversetzten — sonst «fertig» bei `pending` (Race 19.9.2026); `gh run list --commit` braucht die VOLLE SHA (Kurz-SHA ⇒ leere Liste ⇒ Wächter läuft leer aus). (o) **Tor-Liste im Bau-Auftrag bei Test-Zuwachs um `check:schlankheit` ergänzen** (fehlt in `gate:schnell`; 19.9.2026, Beleg: Archiv §6-Fallen/o). (p) **«Reiner Churn»-Heuristik in Merge-/Kaskaden-Aufträgen:** ein Datumsfeld lässt sich nach einem Merge nur zurücknehmen, wenn sich im selben Hash-Verbund (Manifest `dokument.sha`) sonst nichts bewegt hat — per Nullprobe (`check:datenhaltung`) belegen lassen, nicht annehmen (#909-Nachzug 19.9.2026).
+immer erst bauen. (e) CI-Annotationen `::error` listen FLAKY-Retries als Fehler — nur die Playwright-Schlusszeile «N failed · M flaky» trennt. (f) Prüf- und Bau-Worktrees ohne `node_modules` melden `vite-node: command not found` (Exit 127) = falscher Rot-Befund — erst `npm ci --prefer-offline`. (i) Monitor-/Hintergrund-Skripte in Bash-Syntax schreiben (`if [[ … ]]`), nie `case … ;;` in einer Zeile — zsh parst das anders, das Skript stirbt still; `timeout` gibt es auf macOS nicht (`--print-timeout`/eigene Schleife); jede Abbruchbedingung einmal mit einem Testwert gegenprüfen (Beleg: Archiv §6-Fallen/i-2). (h) Unter `vite-node` zeigt `process.argv[1]` auf das vite-node-Binary, nicht auf die Datei — eine Entry-Erkennung darüber ist still wirkungslos (Wächter läuft stumm grün durch); Repo-Muster ist `!process.env.VITEST`. (g) Nach jedem main-Merge in einem PR die Projektionen neu erzeugen (Daten: Zähler/Feed/Historie/Manifest; e2e: `gen:e2e-shards`; `report:confidence -- --schreibe --datum=YYYY-MM-DD` (ohne `--datum` wirft das Skript, #848; Beleg 3.10.2026) zählt zu den Manifest-Dateien — danach immer `datenhaltung:manifest` (#888); und jede Neuextraktion eines Bund-Erlasses bewegt den artikel-sha, also `report:confidence --schreibe` VOR dem PR, sonst ist `check:confidence-frische` rot), sonst kostet jede Landung einen CI-Lauf (5 Läufe am 5.9.2026). Bei Berührung des Normtext-/Rechtsprechungs-Korpus gehört die VOLLE Kaskade dazu, nicht nur das Manifest: `gen:entstehung-projektion`, `gen:entstehung-deckung`, `datenhaltung:manifest`, `gen:zaehler`, `check:verweis-inventar -- --schreiben`, `gen:e2e-shards` (Beleg #820, 12.9.2026 — ein Rebase, der nur das Manifest nachzieht, riskiert die stille Rückkehr des gerade behobenen Fehlers; weiterer Beleg #827 12.9.2026: Archiv §6-Fallen/g-3). Diese Kaskade (Artikel-Bestand/Zähler/Entstehung/Deckung/Verweis-Inventar/E2E-Shards + Sandwich Manifest→`report:confidence`→Manifest — `report:confidence` LIEST den artikel-sha aus dem Manifest und wird selbst darin gepinnt, darum Manifest davor UND danach; der #888-Halbsatz oben nennt nur die zweite Hälfte) bündelt seit 18.9.2026 `npm run projektionen:normtext -- --datum=YYYY-MM-DD` (`scripts/normtext-repin-kaskade.sh`, genutzt von `fedlex-frische.yml`) — bei Normtext-Berührung dieses Skript statt der Einzelbefehle; es PINNT das Manifest bewusst (Korpus-Bewegung = die Ausnahme zu Skill `landung` Ziff. 8), also nur nach echter Normtext-Bewegung und mit Begründung im Commit. Auf der Materialien-Seite bündelt `npm run materialien:kaskade -- --datum=…` (`scripts/materialien/kaskade-run.ts`) dieselbe Rolle für Soft-Law-Projektion/Revisionen/Churn-Reset; ihr letztes Glied `npm run entstehung:projektion-kaskade` (Entstehungs-Projektion → Deckungs-Sicht → Zähler → Manifest, `scripts/entstehung/projektion-kaskade.ts`) ist derselbe Nachzug, den die Curia-/BS-Grossrat-/Vernehmlassungs-Workflow-Jobs direkt aufrufen, weil sie kein volles `materialien:kaskade` fahren (Beleg: Archiv §6-Fallen/g-5). Nach einer Kanton-Nachführung (`normtext --nur=<KEY>`-Lauf oder blosse Snapshot-Stand-Änderung) gehört zusätzlich `npm run gen:pdf-quellen -- --nur=kanton --kanton=<K> --datum=…` + `check:pdf-quellen` in dieselbe Kaskade (Beleg: Archiv §6-Fallen/g-6). Muster-Spec für Batch-Nächte: `docs/token-oekonomie/batch-spec-ui-befunde.md`. **(h) Orchestrator-Fallen W2·24 (6.9.2026, ~30 Worktrees an einem Tag):** Worktree + eigenes `npm ci` als EIGENEN Schritt VOR dem Dispatch anlegen (kein `node_modules`-Symlink auf den Haupt-Checkout mehr — veralteter Haupt-Checkout ⇒ gate falsch rot), nie hinter Tore ketten (`… && git worktree add`) — ein rotes Tor liess den Worktree fehlen, während der Agent schon lief; `git worktree add` nur mit ABSOLUTEM Pfad oder `git -C <hauptrepo>` (relativ aus einem Worktree-cwd erzeugt verschachtelte Worktrees); nach jedem Merge zweier Zweige mit je regenerierter `e2e/shard-gruppen.json` sofort `gen:e2e-shards` (dreimal rot); Perf-Messungen nie neben laufenden Builds/Agenten; Ein PR-Kopf mit `[skip ci]` (z. B. Doku-/Karten-Commit als letzter) bekommt KEINE Required-Checks — Landung blockiert stumm; letzter Commit vor dem Merge nie `[skip ci]` — und beim SQUASH landen ALLE PR-Betreffs in der main-Message: ein `[skip ci]` irgendwo im PR schaltet auf main CI, Deploy und Plan-Buchung stumm; Wächter: CI-Step «Squash-Schutz» (Required). Ein Nachbesserungs-Commit erbt diese Regel nicht automatisch vom Erstversuch — sie gehört in JEDEN Fixer-Prompt, auch den der Nachbesserung (Beleg #822→#824, 12.9.2026: Archiv §6-Fallen/h2-5). Messserver: `npx vite preview` ohne `--port` (Port aus Worktree-Pfad, strictPort), nie einen festen Port im Auftrag vorgeben; fremde Prozesse nie beenden (Belege 7.9./30.9./2.10.2026: Archiv §6-Fallen/h2-6). Verschachtelte Worktree-Ordner nie mit `rm -rf <wt>/.claude` wegräumen — das löscht die GETRACKTEN Skills/Hooks im Worktree (4 Tests rot); nur `git worktree move` + `rmdir` (7.9.2026). **Zwei Messfallen aus den Nachwunsch-Fixern (7.9.2026):** Playwright `locator.filter({ has: … })` wertet bei JEDER Zusicherung neu aus — nach einem Klick trifft dieselbe Zeile ein anderes Element, die Sonde prüft still das Falsche; stattdessen einmal auflösen und `nth()` festhalten. Und **Deckkraft ist kumulativ**: `opacity` multipliziert sich über die Elternkette, ein am Kind gemessener Wert belegt darum nie, was der Nutzer sieht — immer am sichtbaren Ergebnis messen. Die serielle Landung selbst steht als Werkzeug in `scripts/landung/landung-kette.sh` (Skill `landung` Ziff. 7c). Fortgesetzte Session nach Kontext-Kürzung: Session-Einstieg (Startabfrage Skill `bauschritt` Station A, Vault-`START.md` gemäss globaler CLAUDE.md, Peer-Sonde) nachholen, sobald die Anleitung im Kontext auftaucht. (j) Dispatch in einen BESTEHENDEN Branch des Haupt-Checkouts: der Agent prüft als Erstes und unmittelbar vor dem Commit `git branch --show-current` gegen den Auftrag und bricht bei Abweichung ab (nie selbst wechseln, nie «ist wohl schon gemergt» folgern); der Orchestrator prüft nach der Rückkehr Reflog + Branch, BEVOR er pusht (Beleg 18.9.2026: Archiv §6-Fallen/j. Wurzel bleibt §12: laufen zwei Sessions, baut jede im eigenen Worktree). (k) **Worktree-Schreibsperre vererbt sich:** Sub-Agenten erben die Edit/Write-Sperre der Haupt-Session auf DEREN Worktree — Bau in einem anderen Worktree geht nur mit Agent-Parameter `isolation: "worktree"` (Agent checkt den Zielzweig selbst aus und pusht). Beleg 19.9.2026 (Fixer brach ab). (l) **Isolations-Worktrees halten den Zweig belegt:** vor einem Nachzug-Dispatch auf denselben Zweig den Worktree des beendeten Bauers entfernen (`git status` leer + HEAD == origin prüfen, dann `git worktree remove`), sonst `checkout` Exit 128. Und: einen abgebrochenen Isolations-Agenten NIE per SendMessage fortsetzen — sein unveränderter Worktree ist auto-bereinigt, der fortgesetzte Agent läuft dann im SESSION-Worktree und wechselt dort den Zweig (Beleg 19.9.2026, ohne Verlust). Neu dispatchen. (m) **Bau-Agenten grundsätzlich isoliert, Session-Worktree bleibt dem Orchestrator:** der Stop-Hook `gate-stopp.py` fährt `gate:schnell` im Session-Worktree bei jeder Orchestrator-Antwort — ein Agent, der dort «Tests zuerst» baut, erzeugt Falsch-Rot (19.9.2026). (n) **CI-/Queue-Wächter aus EINER Abfrage entscheiden** (ein `gh … --json` + Auswertung), nie aus zwei zeitversetzten — sonst «fertig» bei `pending` (Race 19.9.2026); `gh run list --commit` braucht die VOLLE SHA (Kurz-SHA ⇒ leere Liste ⇒ Wächter läuft leer aus). (o) **Tor-Liste im Bau-Auftrag bei Test-Zuwachs um `check:schlankheit` ergänzen** (fehlt in `gate:schnell`; 19.9.2026, Beleg: Archiv §6-Fallen/o). (p) **«Reiner Churn»-Heuristik in Merge-/Kaskaden-Aufträgen:** ein Datumsfeld lässt sich nach einem Merge nur zurücknehmen, wenn sich im selben Hash-Verbund (Manifest `dokument.sha`) sonst nichts bewegt hat — per Nullprobe (`check:datenhaltung`) belegen lassen, nicht annehmen (#909-Nachzug 19.9.2026).
 
 ## 7 · Vertrauensgrenze — wörtlich in jeden Sub-Agenten-Auftrag
 

@@ -4,15 +4,17 @@
 // Warum getrennt: der Kern muss ohne Repo und ohne Netz prüfbar sein (§2/§3 —
 // Logik ≠ Beschaffung). Hier steht ausschliesslich Beschaffung; jede
 // Entscheidung fällt drüben in `klassiere`. Der Kommando-Runner ist
-// injizierbar (`Laufe` aus lage.ts, seit 21.9.2026 mit `cwd`), damit der
-// Integrationstest gegen ein temporäres Repo fahren kann.
+// injizierbar (`Laufe`, seit 21.9.2026 mit `cwd`), damit der
+// Integrationstest gegen ein temporäres Repo fahren kann. Runner bis 5.10.2026
+// in lage.ts (Lage-Block von plan:next); mit dem Abbau des Planwerkzeugs
+// (Umstieg L1) unverändert hierher verschoben.
 //
 // Fail-closed an jeder Ausfallstelle: was nicht sicher gemessen werden konnte,
 // wird als «nicht abräumbar» gemeldet, nie als «weg damit» (s. Kopf von
 // gitFlaechen.ts).
 
+import { execFileSync } from 'node:child_process';
 import { realpathSync } from 'node:fs';
-import { laufeEcht, stillLaufen, type Laufe } from './lage';
 import {
   klassiere,
   parseWorktreeFakten,
@@ -23,6 +25,26 @@ import {
   type PrFakt,
   type WorktreeFakt,
 } from './gitFlaechen';
+
+/**
+ * Kommando-Ausführung; wirft bei Fehler, Timeout oder fehlendem Programm. `cwd`
+ * optional (seit 21.9.2026): `git status` läuft je Worktree in DESSEN Verzeichnis.
+ */
+export type Laufe = (cmd: string, args: string[], cwd?: string) => string;
+
+const TIMEOUT_MS = 5000;
+
+export const laufeEcht: Laufe = (cmd, args, cwd) =>
+  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, killSignal: 'SIGKILL', cwd });
+
+/** Wie `laufe`, aber `null` statt Wurf. */
+export function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
+  try {
+    return laufe(cmd, args, cwd);
+  } catch {
+    return null;
+  }
+}
 
 /** Ein PR, wie `gh pr list --json number,headRefName,headRefOid,state` ihn liefert. */
 export interface PrRoh {
@@ -43,7 +65,7 @@ export interface SammelOpt {
   /**
    * Commits vor `main` je Branch zählen (ein `git rev-list` pro Branch)?
    *
-   * Default `true`. `plan:next` setzt `false`: die Zahl steht dort in keiner
+   * Default `true`. `plan:next` (bis 5.10.2026) setzte `false`: die Zahl steht dort in keiner
    * Zeile, und bei zwanzig Alt-Branches wären es zwanzig Prozessstarts am
    * Pflicht-Einstieg. Die ENTSCHEIDUNG hängt nicht daran — «leer ja/nein»
    * liefert ein einziges `git branch --merged`.
@@ -53,7 +75,7 @@ export interface SammelOpt {
    * Worktrees tief prüfen — `git status --porcelain --ignored` je Platz plus
    * EIN globales `lsof` für die Belegung?
    *
-   * Default `true`. `plan:next` setzt `false` — gemessen 21.9.2026 im
+   * Default `true`. `plan:next` (bis 5.10.2026) setzte `false` — gemessen 21.9.2026 im
    * Haupt-Repo: mit Tiefprüfung 137 ms, ohne 37–53 ms (4 Worktrees), bei
    * einer Gesamtlaufzeit von ~540 ms. Ohne Tiefprüfung gelten Belegung und
    * Sauberkeit als «nicht gemessen» ⇒ kein Worktree ist abräumbar

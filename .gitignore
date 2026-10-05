@@ -94,7 +94,7 @@ COWORK.md
 COWORK-KURZ.md
 scripts/cowork/
 
-# Lagebild-Projektion (regenerierbar: npm run plan:bild) — nie einchecken (§5)
+# Arbeitsablage tmp/ — nie einchecken (§5; bis 5.10.2026 Lagebild-Projektion)
 tmp/
 
 # Tor-Ereignis-Log: je Zeile ein gelaufenes Tor {ts, tor, ok}, geschrieben von

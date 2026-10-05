@@ -8,18 +8,17 @@ nie committen) — Kopie ab hier:
 ```
 Session: <YYYY-MM-DD> <session-slug> · Schritt: <ID>
 
-## Nebenfunde (→ Posten-Datei/Fahrplan, nie nur Chat)
-- [ ] [<DACH-ID>] Titel — Wortlaut
+## Nebenfunde (→ EINGANG-Zeile in ROADMAP.md, nie nur Chat)
+- [ ] Titel — Wortlaut
 
 ## Lehren-Kandidaten (Formregel Skill lehren)
 - [ ]
 
 ## Wartet auf David
-- [ ] [<DACH-ID>] Titel — Wortlaut
+- [ ] Titel — Wortlaut
 ```
 
-Jeder Punkt als eigene `- [ ]`-Zeile; in den zwei markierten Abschnitten mit
-`[<DACH-ID>]` als erstem Element — `plan:posten -- aus-notizen <datei>` macht
-daraus Posten-Dateien und hakt die Zeile ab, ohne ID-Marke meldet es «braucht
-Dach» statt zu raten. Station E: Rest an seinen Repo-Ort, Datei löschen; bei
+Jeder Punkt als eigene `- [ ]`-Zeile. Station E: echte Fehler und offene
+Fragen von Hand als EINGANG-Zeilen in `ROADMAP.md` übertragen und abhaken,
+Lehren nach Formregel verankern, Rest verwerfen; danach Datei löschen. Bei
 Übergabe bleibt sie stehen, Pfad in den Übergabe-Chip.
