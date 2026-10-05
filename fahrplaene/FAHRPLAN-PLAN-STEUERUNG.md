@@ -1,6 +1,8 @@
 # FAHRPLAN — Plan-Steuerung «ein Etikett pro Schritt» (Detailquelle)
 <!-- @lagebild name: Plan-Steuerung · zweck: Werkzeuge, mit denen der Plan selbst geführt wird (plan:next, dieses Lagebild). -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **Stand 1.7.2026.** Detailquelle zum Querschnitt **`QS-PH`** (Plan-Hygiene-Wächter) in
 > `ROADMAP.md`. Verlinkt aus dem `QS-PH`-Eintrag des Querschnitt-Bands (Pflicht §14.1; das Tor
 > `check:plan` setzt die Verlinkung selbst durch — s. u.). *Das Wie steht hier; gesteuert wird über

@@ -1,6 +1,8 @@
 # FAHRPLAN VORLAGEN-AUSBAU — Verträge-Rahmen, P1-Vorlagen, Rechner-Erweiterungen
 <!-- @lagebild name: Schriften-Baukasten · zweck: Vorlagen für Berufung, BGG-Beschwerde, Sistierung, Beweisverzeichnis. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 *24.9.2026: `W2·8` ist in `W3-AUSBAU` aufgegangen — Posten dort (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 **Heimat: ROADMAP-Schritt `W2·8`.** (Der separat genannte `ROADMAP-Anker: W3-AUSBAU`

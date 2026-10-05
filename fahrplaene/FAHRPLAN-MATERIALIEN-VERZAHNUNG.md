@@ -1,6 +1,8 @@
 # FAHRPLAN-MATERIALIEN-VERZAHNUNG — E6a Stufe 1 vorgezogen
 <!-- @lagebild name: Amtliche Materialien · zweck: Botschaften, Rundschreiben und Co. einbinden und mit den Normen verzahnen. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §11.9 David-Entscheide 1–6 (11.9.2026).
+
 **Heimat: ROADMAP-Schritte `W2·6a-MAT` und `W2·6b-MAT-FINMA`.**
 **Stufe 3 «Entstehung am Artikel» (6.9.2026): §11 — Heimat `W2·6c-ENTSTEHUNG-DATEN/-LESER/-SYNOPSE`.**
 **Lesehinweis:** Scope, Datenmodell, Adapter, Tore und UI der gebauten Stufe 1 liegen wörtlich im

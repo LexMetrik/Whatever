@@ -1,6 +1,8 @@
 # FAHRPLAN — Prüfstrasse sparsamer ohne Prüftiefe-Verlust
 <!-- @lagebild name: CI-Minuten · zweck: Die Prüfstrasse billiger fahren, ohne ein Tor oder Prüftiefe aufzugeben. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **ROADMAP-Schritt:** `QS-CI-MINUTEN` (Auftrag David 8.9.2026). Ziel unverändert im Plan:
 > CI-Minuten senken, **kein Tor entfällt**, `check:e2e-shards` bleibt.
 > **Datenquelle der Sparrechnung:** [`bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md`](../bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md)

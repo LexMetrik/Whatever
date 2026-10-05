@@ -1,6 +1,8 @@
 # FAHRPLAN — Geräte-Last / Performance (Detailquelle)
 <!-- @lagebild name: Tempo · zweck: Geräte-Last und Ladezeit, ohne Logikverlust (§15). -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **Heimat:** Verlinkt aus `ROADMAP.md` → Querschnitt-Band **`QS-PERF`**. Diese Datei ist
 > **nur Detailquelle**, nie zweiter Einstieg (CLAUDE.md §14). Der Bau-Grundsatz steht
 > verbindlich in **CLAUDE.md §15** und als **Leitprinzip 7** in `ROADMAP.md`.

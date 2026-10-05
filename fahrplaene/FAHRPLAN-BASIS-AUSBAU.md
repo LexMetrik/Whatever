@@ -1,6 +1,8 @@
 # FAHRPLAN — Basis-Ausbau LexMetrik (Fundament-Handlungsplan, Stand 17.7.2026)
 <!-- @lagebild name: CI & Wächter · zweck: Zustandsberichte, tote Abhängigkeiten, Paritäts-Sonden — hält den Bau sicher. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **Detailquelle zum ROADMAP-Querschnitt `QS-BASIS`** (§14.1) — nie zweiter Einstieg, immer
 > nur verlinkte Detailquelle.
 

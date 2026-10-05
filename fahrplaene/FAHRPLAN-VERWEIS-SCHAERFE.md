@@ -1,6 +1,8 @@
 # FAHRPLAN — Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar (Auftrag David 31.8.2026)
 <!-- @lagebild name: Verweis-Schärfe · zweck: Verweise in Gesetzen springen richtig — im Gesetz selbst, und Aussenverweise sind als solche erkennbar. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **ROADMAP-Schritt:** `W2·20-VERWEIS-SCHAERFE` (`feld: leser`).
 > **Auftrag David 31.8.2026 (wörtlich):** «baue noch vertieft anhand der vorhandenen daten wie
 > das gesetz selbst verlinkt ist, also dass es wenn es bspw. bestimmt sich nach art. xx dieses

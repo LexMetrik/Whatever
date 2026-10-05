@@ -1,6 +1,8 @@
 # Fahrplan Lernphase 2026 — Bauen ohne Davids Fachzeit (bis 1.12.2026)
 <!-- @lagebild name: Prüfwerkzeuge schärfen · zweck: Gegenprüfung schneller melden, Tests stabiler, Beweis-Werkzeuge. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat: ROADMAP-Schritte `LERNPHASE-AB` und `QS-GP`.**
 
 ## §0 · Zweck

@@ -1,6 +1,8 @@
 # FAHRPLAN — Optimierungs-Research Juli 2026 (Ablage, Stand 12.7.2026)
 <!-- @lagebild name: Betriebs-Optimierung · zweck: Kleinere Betriebs- und Auslieferungs-Verbesserungen. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 > **Nur Plan, kein Bau.** Ergebnis des allgemeinen Ultracode-Optimierungs-Research
 > (Auftrag David 12.7.2026) nach adversarialer Kritik-Filterung (10 Stichproben
 > repo+live verifiziert, 0 Befunde widerlegt, 2 Prämissen veraltet). Detailquelle

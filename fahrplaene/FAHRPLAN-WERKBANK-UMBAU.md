@@ -1,6 +1,8 @@
 # FAHRPLAN — Werkbank-Umbau: das neue Design an Ort, Rubrik für Rubrik
 <!-- @lagebild name: Werkbank-Umbau · zweck: Die Website bekommt das Aussehen des Werkbank-Entwurfs — eine Rubrik nach der anderen, und die alte Hülle wird dabei jedes Mal gelöscht. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §1 Anlass und Entscheid (Auftrag David 22.9.2026).
+
 > **ROADMAP-Dach:** neun Schritte `W2·29-WERKBANK-*` (TOR · TOKENS · LESER · KATALOGE ·
 > VORLAGEN · RECHNER · REST, dazu parallel GRUNDTON · START), Trailer `Roadmap: W2·29-WERKBANK-<X>`. Serielle `dep`-Kette —
 > Grund in §2 (Abbruchkriterium).

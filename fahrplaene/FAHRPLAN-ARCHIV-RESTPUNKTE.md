@@ -1,6 +1,8 @@
 # Archiv-Restpunkte — offene Reste der 20 archivierten Fahrpläne (Archiv-Welle 31.7.2026)
 <!-- @lagebild name: Archiv-Restpunkte · zweck: Übriggebliebene Einzelposten älterer Aufträge. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert.
+
 **Heimat:** ROADMAP «Strang-Detailpunkte & Hygiene» — dort steht je Strang ein Einzeiler,
 hier der wörtliche Rest. Diese Datei steuert nicht; sie hält fest, was beim `git mv` der 20
 Fahrpläne nach `archiv/` sonst verloren ginge.

@@ -1,6 +1,8 @@
 # FAHRPLAN — Design-Identität: nicht aussehen wie jede andere Claude-Seite (Auftrag David 5.9.2026)
 <!-- @lagebild name: Design-Identität · zweck: LexMetrik bekommt eine eigene Farb- und Schrift-Handschrift, damit es nicht wie die übliche Creme-Gold-Juristenseite aussieht. -->
 
+> **Eingefroren 5.10.2026:** Spezifikation, kein Bau-Stand; Fortschritts-Häkchen werden nicht mehr nachgeführt; Entscheidtabellen gelten unverändert — hier ausdrücklich: §5 Freigabe David 6.9.2026 (Zielbild «Sammlung», bindend).
+
 > **ROADMAP-Schritt:** `W2·24-DESIGN-IDENTITAET` (`feld: design`).
 > **Anlass (David 5.9.2026):** legaldeadline.ch/methodik — «wahrscheinlich auch von claude erstellt
 > und sieht sehr ähnlich aus, wie lexmetrik. was können wir machen um designtechnisch nicht so
