@@ -235,8 +235,8 @@ Spec-Heimat. **→ Bau-Spec: «Die priorisierte Abarbeitung» dieser Datei.***
   - → Posten `plan/posten/2026-09-24-artikel-suchindex-kostet-28-5-s-main-thread-aufbau.md` (Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau)
   - → Posten `plan/posten/2026-09-24-eager-kette-shell-sidebar-lib-navigation-normtext-register-l.md` (Eager-Kette Shell→Sidebar→lib/navigation→normtext/register lädt ~276 KB roh auf JEDER Route)
   - → Posten `plan/posten/2026-09-24-8-auskunftsluecke-im-fehlerpfad-der-artikel-suche.md` (§8-Auskunftslücke im Fehlerpfad der Artikel-Suche)
-  - → Posten `plan/posten/2026-09-24-4-mb-artikel-index-ist-in-10-kommentaren-falsch-real-45-7-mi.md` («~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB)
-  - → Posten `plan/posten/2026-09-24-dauer-raf-sampler-in-e2e-helpers-cls-ts-ohne-abschalt-beding.md` (Dauer-rAF-Sampler in e2e/helpers/cls.ts ohne Abschalt-Bedingung)
+  - → Posten `archiv/posten/2026-09-24-4-mb-artikel-index-ist-in-10-kommentaren-falsch-real-45-7-mi.md` («~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB)
+  - → Posten `archiv/posten/2026-09-24-dauer-raf-sampler-in-e2e-helpers-cls-ts-ohne-abschalt-beding.md` (Dauer-rAF-Sampler in e2e/helpers/cls.ts ohne Abschalt-Bedingung)
   - [x] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — Shards nach gemessener Wanduhr statt nach Datei-Zahl. **Entkoppelt 3.8.2026:** die frühere Kopplung «erst Merge Queue G7, dann packen» ist hinfällig — `QS-BASIS-MQ` ist am 3.8.2026 gestrichen (GitHub-Feature-Gate, nur Org-Repos; Chronik). **Gebaut 4.8.2026 (Bau-Evaluations-Session):** LPT-Neupackung aus den per-Spec-Dauern des grünen Laufs 30852386612 (63 Specs, 44.2 min) — Max-Gruppe von 8.5 auf 5.6 min Testzeit, alle 8 Gruppen ausgeglichen; Schieflage kam aus 8 seit dem 25.7. zugewachsenen Specs. Union-Wächter grün.
 
 ---

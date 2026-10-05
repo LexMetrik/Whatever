@@ -31,7 +31,7 @@ nicht nachgeführt, nur ergänzt):**
   `KARTEN_ANKER`-Logik ab Z. 75). Session-Edits an `.claude/hooks/**` sind TABU — der
   Klassifizierer blockt sie; darum **Hook-Diff für David vorbereiten**, nicht selbst
   anwenden (gleiches Muster wie im offenen Posten
-  `plan/posten/2026-09-20-hook-prosa-nennt-retro-17-das-abgebaut-wird.md`, dort für die
+  `archiv/posten/2026-09-20-hook-prosa-nennt-retro-17-das-abgebaut-wird.md`, dort für die
   retro:17-Prosa — beide Diffs liessen sich in derselben David-Runde vorlegen).
 - Weitere Fundstellen, ungeprüft, beim Bau mitzunehmen: `scripts/dispatch-agents.ts`,
   `scripts/plan/bildMethode.ts`, `.claude/agents/lex-synthese.md`,

@@ -30,11 +30,11 @@ Token (Rückbau 5.9.2026, QS-EFFIZIENZ Runde 2).
 Offen (Altbestand):
 
 - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
-- → Posten `plan/posten/2026-09-24-prozess-kleinfunde-session-qs-monitor-rot-18-9-2026.md` (Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026))
-- → Posten `plan/posten/2026-09-24-lsp-typescript-language-server-ist-keine-devdependency-mehr.md` (LSP: typescript-language-server ist keine devDependency mehr)
-- → Posten `plan/posten/2026-09-24-runner-kontentions-ausreisser-beobachten.md` (Runner-Kontentions-Ausreisser beobachten)
-- → Posten `plan/posten/2026-09-24-entregulierung-runde-2.md` (ENTREGULIERUNG RUNDE 2)
-- → Posten `plan/posten/2026-09-24-subagent-wache-live-beweis.md` (subagent-wache Live-Beweis)
+- → Posten `archiv/posten/2026-09-24-prozess-kleinfunde-session-qs-monitor-rot-18-9-2026.md` (Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026))
+- → Posten `archiv/posten/2026-09-24-lsp-typescript-language-server-ist-keine-devdependency-mehr.md` (LSP: typescript-language-server ist keine devDependency mehr)
+- → Posten `archiv/posten/2026-09-24-runner-kontentions-ausreisser-beobachten.md` (Runner-Kontentions-Ausreisser beobachten)
+- → Posten `archiv/posten/2026-09-24-entregulierung-runde-2.md` (ENTREGULIERUNG RUNDE 2)
+- → Posten `archiv/posten/2026-09-24-subagent-wache-live-beweis.md` (subagent-wache Live-Beweis)
 
 Geschlossen 5.9.2026 (Belege):
 
@@ -62,11 +62,11 @@ je Punkt ein eigener Commit/PR):
   F17-Erweiterung im Lehren-Register). Anlass: 15 Posten wochenlang unsichtbar, darunter eine
   offene §7-Fachfrage an David. Geburtsbeweis §6.7: rot 14/14 auf `0e4999b48`, grün 0 auf
   `8f6fe6971`, beide vom Orchestrator unabhängig nachgemessen. PR #942.
-- → Posten `plan/posten/2026-09-24-tor-verwaister-posten-ohne-kopf.md` (Tor «verwaister Posten ohne Kopf»)
-- → Posten `plan/posten/2026-09-24-tor-prosa-verweis-auf-schritt-id-ohne-meta.md` (Tor «Prosa-Verweis auf Schritt-ID ohne @meta»)
-- → Posten `plan/posten/2026-09-24-check-regel-wiedervorlage-haerten.md` (check:regel-wiedervorlage härten)
-- → Posten `plan/posten/2026-09-24-qs-ci-minuten-widerspricht-sich-selbst-m1-m5-gebaut-aber-als.md` (QS-CI-MINUTEN widerspricht sich selbst — M1–M5 gebaut, aber als offen geführt (M4 im Fahrplan, M5- und M2-Posten))
-- → Posten `plan/posten/2026-09-24-nachlass-wache-meldet-fehlalarm-bei-inhaltsgleichem-commit.md` (Nachlass-Wache meldet Fehlalarm bei inhaltsgleichem Commit)
+- → Posten `archiv/posten/2026-09-24-tor-verwaister-posten-ohne-kopf.md` (Tor «verwaister Posten ohne Kopf»)
+- → Posten `archiv/posten/2026-09-24-tor-prosa-verweis-auf-schritt-id-ohne-meta.md` (Tor «Prosa-Verweis auf Schritt-ID ohne @meta»)
+- → Posten `archiv/posten/2026-09-24-check-regel-wiedervorlage-haerten.md` (check:regel-wiedervorlage härten)
+- → Posten `archiv/posten/2026-09-24-qs-ci-minuten-widerspricht-sich-selbst-m1-m5-gebaut-aber-als.md` (QS-CI-MINUTEN widerspricht sich selbst — M1–M5 gebaut, aber als offen geführt (M4 im Fahrplan, M5- und M2-Posten))
+- → Posten `archiv/posten/2026-09-24-nachlass-wache-meldet-fehlalarm-bei-inhaltsgleichem-commit.md` (Nachlass-Wache meldet Fehlalarm bei inhaltsgleichem Commit)
 - → Posten `plan/posten/2026-09-24-antigravity-drift.md` (Antigravity-Drift)
 
 **WARTET AUF DAVID (Planungsentscheid, kein Bau):** Der 120-KB-Deckel auf `ROADMAP.md` ist durch
