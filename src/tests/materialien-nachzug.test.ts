@@ -258,6 +258,24 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
   }, 60_000);
 });
 
+describe('kaskade-run.ts --ohne-revisionen (gegen Ersatz-npm)', () => {
+  function glieder(...extra: string[]): string[] {
+    const dir = mkdtempSync(join(tmpdir(), 'mat-ks-'));
+    const log = join(dir, 'log');
+    writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "$*" >> "${log}"\nexit 0\n`);
+    chmodSync(join(dir, 'npm'), 0o755);
+    const r = spawnSync(join(ROOT, 'node_modules/.bin/vite-node'), ['scripts/materialien/kaskade-run.ts', '--', '--datum=2026-10-12', ...extra], {
+      cwd: ROOT, encoding: 'utf8', env: { ...process.env, PATH: `${dir}:${process.env.PATH}` },
+    });
+    expect(r.status).toBe(0);
+    return readFileSync(log, 'utf8').trim().split('\n').map((z) => z.split(' ')[1]);
+  }
+  it('ohne Schalter alle vier Glieder, mit Schalter genau normtext:revisionen weg — Reihenfolge sonst gleich', () => {
+    expect(glieder()).toEqual(['materialien', 'normtext:revisionen', 'normtext:churn-reset', 'entstehung:projektion-kaskade']);
+    expect(glieder('--ohne-revisionen')).toEqual(['materialien', 'normtext:churn-reset', 'entstehung:projektion-kaskade']);
+  }, 60_000);
+});
+
 describe('Risikopfad', () => {
   it('Bot-Dateien sind gegenprüfungspflichtig (istRisikoPfad ∧ behalten)', () => {
     for (const p of ['scripts/materialien/nachzug.ts', 'scripts/materialien/nachzug-run.ts', 'scripts/materialien/kaskade-run.ts']) {
