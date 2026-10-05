@@ -20,6 +20,7 @@ Verzweigung erkennbar und werden nie zu einer gemeinsamen Regel kollabiert.
 Protokoll: Skill **`refactoring`**.
 
 ## Code-Konventionen aus Vorfällen
+<!-- @wiedervorlage: 2027-03-24 -->
 
 <!-- Aus dem Vault-Eintrag «Operative Lektionen» überführt (5.10.2026). -->
 
