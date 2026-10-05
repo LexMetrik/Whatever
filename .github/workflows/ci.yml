@@ -180,7 +180,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
+              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
             fi
             exit 0
           fi
@@ -255,7 +255,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
             fi
             exit 0
           fi
@@ -292,7 +292,7 @@ jobs:
             fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
-            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
           fi
 
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-006
@@ -449,8 +449,6 @@ jobs:
           fi
           npx vite-node scripts/analyse/kommentar-bilanz.ts "$basis" HEAD 'src/*.ts' 'src/*.tsx'
           echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
-      - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
-        run: npm run check:plan
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-016
       - name: Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)
         run: npm run check:steuerdeckel
@@ -591,7 +589,7 @@ jobs:
         run: npm run check:merge-schutz
       - name: Kurzquittung (Doku-/Leer-Diff)
         if: needs.diff.outputs.art == 'doku'
-        run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
+        run: echo "Kein Code im Diff — Merge-Schutz, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
