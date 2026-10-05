@@ -376,10 +376,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npx -y npm@11 ci
-      # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
-      # hier die ganze Kette, bevor tore/e2e überhaupt starten.
-      - name: Build
-        run: npm run build
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+      - name: Build (ohne Typprüfung — die macht `tore-typen`)
+        run: npm run build:dist
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
         uses: actions/upload-artifact@v7
         with:
@@ -437,10 +436,31 @@ jobs:
       - name: Lint (volle Ausgabe, nie tail!)
         run: npm run lint
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-067
+  tore-typen:
+    name: Tore · Typen (tsc -b)
+    needs: diff
+    if: >-
+      !cancelled()
+      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.art != 'doku'
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+      - name: Typprüfung (tsc -b, alle drei Projekte)
+        run: npx tsc -b
+
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-065
   tore:
     name: Tore (Tests · Lint · Checks)
-    needs: [diff, tore-tests, tore-lint, tore-checks]
+    needs: [diff, tore-tests, tore-lint, tore-typen, tore-checks]
     if: >-
       !cancelled()
       && needs.diff.outputs.push_diaet != 'true'
@@ -450,17 +470,18 @@ jobs:
         env:
           TESTS: ${{ needs.tore-tests.result }}
           LINT: ${{ needs.tore-lint.result }}
+          TYPEN: ${{ needs.tore-typen.result }}
           CHECKS: ${{ needs.tore-checks.result }}
           ART: ${{ needs.diff.outputs.art }}
         run: |
           set -euo pipefail
-          echo "tests=${TESTS} · lint=${LINT} · checks=${CHECKS} · art=${ART:-<leer>}"
+          echo "tests=${TESTS} · lint=${LINT} · typen=${TYPEN} · checks=${CHECKS} · art=${ART:-<leer>}"
           rot=0
           if [ "${CHECKS}" != "success" ]; then
             echo "::error::Tore · Checks nicht bestanden: ${CHECKS} (nur success zählt)."
             rot=1
           fi
-          for paar in "Tests=${TESTS}" "Lint=${LINT}"; do
+          for paar in "Tests=${TESTS}" "Lint=${LINT}" "Typen=${TYPEN}"; do
             teil="${paar%%=*}"; stand="${paar#*=}"
             if [ "${stand}" = "success" ]; then
               continue

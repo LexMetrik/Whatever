@@ -62,7 +62,7 @@ const ALLOWLIST_UNVERDRAHTET: Record<string, string> = {
   'check:be-sprengel':
     'reine Kommandozeilen-Hülle um pruefeBeSprengel(); DIESELBE Prüfung läuft merge-blockierend als src/tests/beSprengel.test.ts über die Vitest-Suite (und damit in check:seriell und im PR-CI). Ein zweiter Lauf desselben Prädikats prüft nichts Zusätzliches — er verdoppelt nur die Laufzeit (§17-Gegengewicht).',
   'check:suchindex':
-    'Drift-Tor des Suchindex-Generators — aber `npm run build` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build"). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
+    'Drift-Tor des Suchindex-Generators — aber `npm run build:dist` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build:dist"; `npm run build` = `tsc -b` + `build:dist`, seit QS-CI-ZEIT 5.10.2026). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
 };
 
 const seriell = seriellTore();

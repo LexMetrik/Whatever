@@ -1318,6 +1318,11 @@ verschobener Altkommentar).
   # `!cancelled()`: läuft auch, wenn ein Teil rot ist — genau dafür ist er da.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E4, Ergänzung, Block oben unverändert):**
+> Fünfter Teil-Job `tore-typen` (`tsc -b`, ci-067). Er steht in der Fallmatrix
+> neben Tests und Lint: (1) verlangt auch typen=success, (2) lässt typen=skipped
+> nur bei art=doku gelten, (3)–(5) gelten für typen genauso.
+
 ## ci-066 · perf · perf
 
 ```text
@@ -1345,4 +1350,40 @@ verschobener Altkommentar).
   # art=code, nicht bei bau_perf_belegt); bau=success fordert `perf-messung`.
   # KOSTEN: bei roter Treue läuft die Messung trotzdem (Runner-Minuten, keine
   # Wanduhr) — bewusst in Kauf genommen.
+```
+
+## ci-067 · tore-typen · tore-typen
+
+Neu 5.10.2026 (QS-CI-ZEIT E4, Auftrag David «CI-Zeit verringern»; kein
+verschobener Altkommentar). Gilt auch für den Schritt «Build» im Job `bau`.
+
+```text
+  # ── Typprüfung aus `bau` gelöst (QS-CI-ZEIT E4, 5.10.2026) ──────────────────
+  # ANLASS: 71 von 95 s des Schritts «Build» im Job `bau` waren `tsc -b`
+  # (Messung 5.10.2026). `bau` liegt im merge_group-Lauf auf dem kritischen
+  # Pfad (bau → Browser-Shards); die Typprüfung braucht dort niemand — sie ist
+  # ein Tor, kein Bau-Schritt.
+  #
+  # NACHWEIS, dass `vite build` die Typprüfung nicht braucht (lokal 5.10.2026,
+  # Commit-Basis 14c9ecab5): alle drei tsconfig-Projekte (app/node/scripts)
+  # tragen `noEmit: true`, `tsc -b` schreibt nur `node_modules/.tmp/*.tsbuildinfo`.
+  # `npm run build` (mit tsc) und `npm run build:dist` (ohne tsc, nach
+  # `rm -rf dist node_modules/.tmp public/such-index`) ergaben ein BYTE-GLEICHES
+  # dist: 20095 Dateien, sha256-Liste identisch (`cmp` ohne Abweichung).
+  # Und `tsc -b` läuft ohne die gen:*-Ausgaben grün (public/such-index fehlte,
+  # Exit 0) — die Reihenfolge `tsc -b && build:dist` in package.json ist frei.
+  # ROT-BEWEIS (§6.7) lokal: eingeschleuster Typfehler in src/main.tsx ⇒
+  # `npx tsc -b` Exit 2 (TS2322).
+  #
+  # `tore-typen` geht in den Sammel-Job `tore` ein (dieselbe Regel wie Tests/
+  # Lint: nur success, Skip nur bei art=doku; Fallmatrix ci-065 + Nachtrag).
+  # `npm run build` (lokal, Vercel buildCommand) bleibt MIT `tsc -b`.
+```
+
+Abgelöster Inline-Kommentar am Schritt «Build» im Job `bau` (stand bis 5.10.2026
+direkt in ci.yml, nicht im Archiv; wörtlich):
+
+```text
+      # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
+      # hier die ganze Kette, bevor tore/e2e überhaupt starten.
 ```

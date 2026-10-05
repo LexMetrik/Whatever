@@ -6,7 +6,8 @@
   "scripts": {
     "prepare": "bash scripts/git-setup.sh",
     "dev": "vite",
-    "build": "npm run gen:suchindex && npm run gen:feed && tsc -b && vite build && vite-node scripts/prerender.ts",
+    "build": "tsc -b && npm run build:dist",
+    "build:dist": "npm run gen:suchindex && npm run gen:feed && vite build && vite-node scripts/prerender.ts",
     "gen:suchindex": "vite-node scripts/such-index-generieren.ts",
     "gen:feed": "vite-node scripts/feed-generieren.ts",
     "check:feed": "vite-node scripts/feed-generieren.ts -- --check",
