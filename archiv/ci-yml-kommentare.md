@@ -1112,6 +1112,13 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
     # das Gegenteil von §15. Bleibt an `needs.e2e`.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT T1, Ergänzung, Block oben unverändert):**
+> Der Verwurf vom 21.9.2026 ist aufgehoben — Entscheid der orchestrierenden
+> Session nach Davids «keine Präferenz» (5.10.2026). Die §15-Gegenkopplung
+> bleibt erhalten, sitzt aber nicht mehr in der Start-Reihenfolge, sondern in
+> der Wertung: gemessen wird parallel (`perf-messung` nach `bau`), gewertet
+> erst im Sammel-Job `perf`. Begründung und Fallmatrix: ci-066.
+
 ## ci-053 · perf · Playwright-Browser (Chromium)
 
 ```text
@@ -1260,4 +1267,82 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
         # hängender Aufräumer darf den bereits live verifizierten Deploy
         # nicht als Job-Timeout rot machen — darum ein eigenes, kleineres
         # Zeitlimit für diesen Schritt (Auflage Gegenprüfung, PR #774).
+```
+
+## ci-063 · tore-tests · tore-tests
+
+Neu 5.10.2026 (QS-CI-ZEIT T2, Auftrag David «CI-Zeit verringern»; kein
+verschobener Altkommentar).
+
+```text
+  # ── Tore-Job aufgeteilt (QS-CI-ZEIT T2, 5.10.2026) ──────────────────────────
+  # ANLASS: Der Tore-Job lief 6–11 min am Stück (Recherche 5.10.2026, 13 Läufe:
+  # vitest ≈316 s, Lint ≈60 s, übrige Checks ≈178 s, Setup ≈64 s). Aufgeteilt in
+  # vier parallele Läufer: `tore-tests` (vitest in 2 Datei-Shards, `vitest run
+  # --shard=N/2`), `tore-lint`, `tore-checks` (alle übrigen Schritte unverändert,
+  # inkl. Merge-Schutz und Fachänderungs-Riegel) und den Sammel-Job `tore`, der
+  # den Required-Kontext «Tore (Tests · Lint · Checks)» EXAKT weiterträgt (K12:
+  # Name unverändert, sonst hinge die Queue an einem nie gemeldeten Kontext).
+  #
+  # Job-`if:` `art != 'doku'` statt der früheren Schritt-`if:` an Tests/Lint:
+  # bei Doku-Läufen starten die beiden Läufer gar nicht (kein Runner-Anlauf,
+  # vgl. M4 an ci-007). Der Sammel-Job lässt den Skip NUR bei art=doku gelten.
+```
+
+## ci-064 · tore-tests · uses: actions/checkout@v7
+
+```text
+      # fetch-depth: 0 auch hier (nicht nur in `tore-checks`, das
+      # check:merge-schutz/check:fachaenderung fährt): mehrere Vitest-Dateien
+      # lesen die Versionsgeschichte (merge-base, log, show) — bis 5.10.2026
+      # liefen sie im selben Job mit voller Historie; die Aufteilung ändert
+      # daran nichts (Verhaltensneutralität vor Sekunden-Gewinn).
+```
+
+## ci-065 · tore · tore
+
+```text
+  # ── Sammel-Kontext der Tore (QS-CI-ZEIT T2, 5.10.2026) ──────────────────────
+  # Trägt den Required-Kontext «Tore (Tests · Lint · Checks)» — Push-Diät
+  # (`diff`, Schritt «Push-Diät prüfen») und `deploy`/`perf` lesen ihn unter
+  # diesem Namen bzw. dieser Job-ID weiter. Muster wie `e2e-ergebnis` (ci-049).
+  #
+  # ROT-BEWEIS (§6.7), Fallmatrix:
+  #   (1) checks=success, tests=success, lint=success      → grün
+  #   (2) checks=success, tests/lint=skipped, art=doku     → grün (planmässig)
+  #   (3) tests oder lint skipped, art≠doku (auch leer)    → ROT (verirrter Skip)
+  #   (4) irgendein Teil failure                           → ROT
+  #   (5) irgendein Teil cancelled                         → ROT
+  #   (6) checks skipped                                   → ROT (checks läuft
+  #       ausser bei push_diaet=true immer — dann skippt auch dieser Job)
+  # `!cancelled()`: läuft auch, wenn ein Teil rot ist — genau dafür ist er da.
+```
+
+## ci-066 · perf · perf
+
+```text
+  # ── Perf parallel zu den Shards, gewertet erst bei grüner Treue ─────────────
+  # (QS-CI-ZEIT T1, 5.10.2026; hebt den Verwurf ci-052 vom 21.9.2026 auf,
+  # Entscheid orchestrierende Session nach Davids «keine Präferenz».)
+  # ANLASS: im merge_group-Lauf lag Perf (3,2–4,4 min) HINTER den Browser-
+  # Shards auf dem kritischen Pfad (bau → e2e → perf). Jetzt misst
+  # `perf-messung` direkt nach `bau`, parallel zu den Shards; Lauf-Ende ≈
+  # max(Shards, Perf) statt Summe.
+  #
+  # §15-GEGENKOPPLUNG «Tempo zählt nur bei grüner Treue» bleibt erhalten — sie
+  # sitzt jetzt in der WERTUNG statt in der Start-Reihenfolge: der Required-
+  # Kontext «Perf-Budget (§15 — nur bei grüner Treue)» ist dieser Sammel-Job,
+  # und er ist NUR grün, wenn
+  #   · Tore = success (skipped nur bei push_diaet=true, Treue dann im
+  #     merge_group-Lauf am selben SHA bewiesen) UND
+  #   · Browser-Smoke (Ergebnis) = success (wertet seinerseits Shard-Skips
+  #     gegen die Diff-Klasse, ci-049) UND
+  #   · perf-messung = success.
+  # Ein grünes Perf kann eine rote Treue damit nicht maskieren: rote Shards ⇒
+  # dieser Kontext ROT (bisher: perf `skipped`, Rot nur über «Browser-Smoke
+  # (Ergebnis)») — strenger als zuvor, nicht lockerer.
+  # Job-`if:` unverändert zur früheren Fassung (nicht auf PR-Läufen, nur
+  # art=code, nicht bei bau_perf_belegt); bau=success fordert `perf-messung`.
+  # KOSTEN: bei roter Treue läuft die Messung trotzdem (Runner-Minuten, keine
+  # Wanduhr) — bewusst in Kauf genommen.
 ```

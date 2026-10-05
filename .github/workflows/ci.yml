@@ -67,7 +67,7 @@ jobs:
           # (§6.7-Beweis dort, `npx vitest run src/tests/steuerwerkzeuge.
           # test.ts`) — die Pfadliste hier ist wortgleich zu deren
           # CODE_FERNE_MUSTER, damit beide Fassungen nicht auseinanderlaufen.
-          CODE_FERN_RE='(\.md$|^scripts/plan/|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
+          CODE_FERN_RE='(\.md$|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
           # Trotz `.md`-Endung KEIN reiner Doku-Fall (Anlass PR #619, 2.9.2026):
           # .claude/agents/lex-bau.md wurde von Hand geändert, der reine-.md-
           # Kurzschluss unten stufte den Diff als `doku` ein, der Tore-Job
@@ -388,8 +388,97 @@ jobs:
           retention-days: 1
           include-hidden-files: true
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-063
+  tore-tests:
+    name: Tore · Tests (vitest ${{ matrix.shard }}/2)
+    needs: diff
+    if: >-
+      !cancelled()
+      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.art != 'doku'
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Zurich
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-064
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
+      - name: Tests (volle Ausgabe, Shard ${{ matrix.shard }}/2)
+        run: npm test -- --shard=${{ matrix.shard }}/2
+
+  tore-lint:
+    name: Tore · Lint
+    needs: diff
+    if: >-
+      !cancelled()
+      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.art != 'doku'
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+      - name: Lint (volle Ausgabe, nie tail!)
+        run: npm run lint
+
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-065
   tore:
     name: Tore (Tests · Lint · Checks)
+    needs: [diff, tore-tests, tore-lint, tore-checks]
+    if: >-
+      !cancelled()
+      && needs.diff.outputs.push_diaet != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Teil-Jobs gegen die Diff-Klasse werten
+        env:
+          TESTS: ${{ needs.tore-tests.result }}
+          LINT: ${{ needs.tore-lint.result }}
+          CHECKS: ${{ needs.tore-checks.result }}
+          ART: ${{ needs.diff.outputs.art }}
+        run: |
+          set -euo pipefail
+          echo "tests=${TESTS} · lint=${LINT} · checks=${CHECKS} · art=${ART:-<leer>}"
+          rot=0
+          if [ "${CHECKS}" != "success" ]; then
+            echo "::error::Tore · Checks nicht bestanden: ${CHECKS} (nur success zählt)."
+            rot=1
+          fi
+          for paar in "Tests=${TESTS}" "Lint=${LINT}"; do
+            teil="${paar%%=*}"; stand="${paar#*=}"
+            if [ "${stand}" = "success" ]; then
+              continue
+            fi
+            if [ "${stand}" = "skipped" ] && [ "${ART}" = "doku" ]; then
+              echo "Tore · ${teil} planmässig übersprungen (art=doku)."
+              continue
+            fi
+            echo "::error::Tore · ${teil} nicht bestanden: ${stand}, art=${ART:-<leer>}. Ein Skip ist nur bei art=doku zulässig."
+            rot=1
+          done
+          if [ "${rot}" -ne 0 ]; then
+            exit 1
+          fi
+          echo "Alle Tore-Teil-Jobs grün."
+
+  tore-checks:
+    name: Tore · Checks (Riegel · Kanon · Projektionen)
     needs: diff
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-009
     if: >-
@@ -455,13 +544,6 @@ jobs:
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-017
       - name: Steuerungs-Fläche (Sperrklinke, Byte-Summe + Anhebungs-Schutz)
         run: npm run check:steuerflaeche
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-018
-      - name: Tests (volle Ausgabe)
-        if: needs.diff.outputs.art != 'doku'
-        run: npm test
-      - name: Lint (volle Ausgabe, nie tail!)
-        if: needs.diff.outputs.art != 'doku'
-        run: npm run lint
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-019
       - name: Bibliotheks-Standards (S1–S10)
         run: npm run check:bibliothek
@@ -687,6 +769,7 @@ jobs:
           echo "::error::Browser-Smoke nicht bestanden: needs.e2e.result=${ERGEBNIS}, art=${ART:-<leer>}, push_diaet=${DIAET:-<leer>}. Ein Skip ist nur bei art=doku, art=code-fern oder push_diaet=true zulässig."
           exit 1
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-066
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-051
@@ -695,11 +778,48 @@ jobs:
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
       && needs.diff.outputs.bau_perf_belegt != 'true'
-      && needs.bau.result == 'success'
-      && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
-      && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
     # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-052
-    needs: [diff, bau, tore, e2e]
+    needs: [diff, tore, e2e-ergebnis, perf-messung]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Messung nur bei grüner Treue werten
+        env:
+          MESSUNG: ${{ needs.perf-messung.result }}
+          TORE: ${{ needs.tore.result }}
+          E2E: ${{ needs.e2e-ergebnis.result }}
+          DIAET: ${{ needs.diff.outputs.push_diaet }}
+        run: |
+          set -euo pipefail
+          echo "tore=${TORE} · browser-smoke=${E2E} · perf-messung=${MESSUNG} · push_diaet=${DIAET:-<leer>}"
+          rot=0
+          if [ "${TORE}" = "success" ] || { [ "${TORE}" = "skipped" ] && [ "${DIAET}" = "true" ]; }; then
+            :
+          else
+            echo "::error::Treue nicht grün: Tore=${TORE} (skipped nur bei push_diaet=true zulässig) — Perf wird nicht gewertet."
+            rot=1
+          fi
+          if [ "${E2E}" != "success" ]; then
+            echo "::error::Treue nicht grün: Browser-Smoke (Ergebnis)=${E2E} — Perf wird nicht gewertet."
+            rot=1
+          fi
+          if [ "${MESSUNG}" != "success" ]; then
+            echo "::error::Perf-Messung nicht bestanden: ${MESSUNG}."
+            rot=1
+          fi
+          if [ "${rot}" -ne 0 ]; then
+            exit 1
+          fi
+          echo "Treue grün (Tore + Browser-Smoke) und Perf-Budget eingehalten."
+
+  perf-messung:
+    name: Perf-Messung (Bundle · Lighthouse, parallel zu den Shards)
+    if: >-
+      !cancelled()
+      && github.event_name != 'pull_request'
+      && needs.diff.outputs.art == 'code'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
+      && needs.bau.result == 'success'
+    needs: [diff, bau]
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich

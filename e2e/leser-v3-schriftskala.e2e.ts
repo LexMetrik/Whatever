@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 // LESER-SCHRIFTSKALA — David-Anmerkung 16.8.2026, Punkt 4:
 // «Schriftgrössen-Regler wirkt auf die ganze Seite.»
 //

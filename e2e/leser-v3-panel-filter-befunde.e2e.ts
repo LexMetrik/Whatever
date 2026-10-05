@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 1
 // ─── W2·17-UI-BEFUNDE · Entscheide-Filter im Browser (Prüflauf 1.10.2026) ────
 //
 // Was nur mit echtem Browser prüfbar ist und in `src/tests/leser-entscheide-filter.test.tsx`

@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 4
 // B7-N1 · LM-010/LM-015 — die abdunkelnde Fläche hinter den Menüfenstern des
 // Lesers (Entscheid David 8.8.2026).
 //

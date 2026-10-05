@@ -31,7 +31,6 @@
  * bleibt `code`. */
 export const CODE_FERNE_MUSTER: readonly RegExp[] = [
   /\.md$/,
-  /^scripts\/plan\//,
   /^scripts\/cowork\//,
   /^\.claude\//,
   /^docs\//,
