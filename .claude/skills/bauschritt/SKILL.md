@@ -1,6 +1,6 @@
 ---
 name: bauschritt
-description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadmap-Schritt — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», Bau-Auftrag aus plan-bild.html. Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»).
+description: Verwenden für einen Bau-Auftrag von David oder ein Vorhaben aus ROADMAP.md (JETZT) — Trigger «Baue …», «bau das», «nimm das nächste Vorhaben». Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Steuer-Doku verschlanken», «aufraeumen:git»).
 ---
 
 # Bauschritt — Standard-Lebenszyklus einer Bau-Session
@@ -13,40 +13,54 @@ unten unter «Gestrichene Pflichten» — **Station C (Prüfung) ist unveränder
 und §9/§12/§14.7/§18 bleiben Wort für Wort in Kraft.
 
 **Dünne Klammer, keine Kopien:** entscheidet nur *was wann* dran ist, nicht
-*wie* (§5). **Eine Bau-Einheit = ein Schritt:** angefangen, geprüft, gelandet,
-Status geschlossen; Neues unterwegs → in den Plan (Station B), nicht in die
+*wie* (§5). **Eine Bau-Einheit = ein Vorhaben:** angefangen, geprüft, gelandet,
+aus JETZT gestrichen; Neues unterwegs → EINGANG (Station B), nicht in die
 Session. Nach Landung baut eine tragfähige Session automatisch weiter
 (Station W). Davids einziger Input ist der Bau-Prompt — alles Übrige läuft
 ohne Rückfrage nach diesem Zyklus.
 
 ## Station A — Einstieg (4 Punkte)
 
-1. **`git fetch --prune`, dann `plan:next`**, Lage-Block **lesen**: stale
-   `wip`, gleiches `feld:` auf `wip`, fremde Bau-Plätze = Kollisionsmeldung →
-   melden, nie parallel in dieselbe Fläche bauen. Bündeln nach `feld:`:
-   kollisionsfreie `ready-now`-Nachbarn desselben Feldes gleich mitnehmen
-   (je eigener Commit/Trailer), bis die Session gefüllt ist.
-2. **ID gegen `ready-now`.** Nicht darin (Abhängigkeit offen, `done`,
-   blockiert) ⇒ **STOPP, melden, nicht bauen** — massgeblich ist `plan:next`,
-   nicht der Prompt.
-3. **Sichtbar werden** (F6): Branch `feat/<slug-der-id>` anlegen,
-   `plan:set -- <id> status=wip && check:plan`, committen, **Feature-Branch**
-   pushen — nie main (main nimmt seit 19.9.2026 nur die Merge-Queue, kein
-   Bypass; Hook `tor-schutz.py` blockt, Skill `landung` Ziff. 7).
-   Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
-   als Slice: `npm run fahrplan -- <fahrplan-datei> <§>`.
+1. **Startabfrage** (Regel 6 unten): `git fetch --prune`;
+   `gh pr list --state open`; `git worktree list`;
+   `gh issue list --state open --author "github-actions[bot]"` (Bot-Alarme —
+   einziger Leser seit 5.10.2026). Dann `ROADMAP.md` lesen (ZIEL · JETZT ·
+   EINGANG). Fremder Zweig, Worktree oder PR auf derselben Fläche =
+   Kollision → melden, nie parallel in dieselbe Fläche bauen.
+2. **Was gebaut wird:** was David im Chat aufträgt, sonst das oberste freie
+   JETZT-Vorhaben. Belegt (Zweig/PR mit seinem Kürzel) ⇒ **STOPP, melden**.
+3. **Sichtbar werden** (F6, Regel 7 unten): Zweig anlegen und **pushen,
+   bevor der Detailplan entsteht** — nie main (main nimmt seit 19.9.2026 nur
+   die Merge-Queue, kein Bypass; Hook `tor-schutz.py` blockt, Skill
+   `landung` Ziff. 7). Parallel-Session ⇒ eigener Worktree (§12). Detailplan
+   danach aus Fahrplan-Slice (`npm run fahrplan -- <fahrplan-datei> <§>`)
+   und Merkzetteln des Themas, geprüft gegen den Ist-Stand.
 4. **Notizen-Datei anlegen** (§17, Weisung David 15.9.2026): aus der Vorlage
    `docs/token-oekonomie/session-notizen-vorlage.md` unter
    `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<session-slug>.md`
    (gitignored; aus einem Worktree per Bash, `cat > … <<'EOF'` — das
-   Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Zeigt `plan:next`
-   eine Vorgänger-Datei mit offenen Posten (`📝 Session-Notizen: … — N
-   offen`), wird sie ÜBERNOMMEN (weiterführen), nicht ignoriert.
+   Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Liegt dort eine
+   Vorgänger-Datei mit offenen Punkten, wird sie ÜBERNOMMEN (weiterführen),
+   nicht ignoriert.
    **Falle (Beleg 20.9.2026):** `tor-schutz.py` blockt das Bash-Kommando
    schon, wenn die Hauptzweig-Push-Zeichenfolge nur als ZITAT im
    Heredoc-Text der Notiz steht (keine Ausführung) — solche Zitate beim
    Formulieren umschreiben; ohne Worktree (Haupt-Session) geht `Write`/`Edit`
    mit dem absoluten Haupt-Checkout-Pfad direkt, statt des Heredoc-Umwegs.
+
+### Plan-Regeln (Umstieg 5.10.2026, Freigabe David)
+
+4. Gibt David ein Bau-Go, schreibt die Session den Gedächtnis-Eintrag und im
+   selben Zug eine EINGANG- oder JETZT-Zeile mit der Marke «Go David
+   TT.MM.»; sie verfällt nie; nach 14 Tagen ohne Bau nennt der
+   Abschlussbericht sie einmal mit Grund.
+5. Jede Änderung an JETZT steht als eine Zeile im Abschlussbericht (Davids
+   Veto).
+6. Die Startabfrage (Station A Ziff. 1) ersetzt den Lage-Block von
+   `plan:next`.
+7. Der Zweigname beginnt mit dem Vorhaben-Kürzel; der Zweig wird
+   hochgeladen, BEVOR der Detailplan geschrieben wird (so sieht eine zweite
+   Session die Belegung).
 
 ## Station B — Bau
 
@@ -54,8 +68,7 @@ ohne Rückfrage nach diesem Zyklus.
 - **Lebendige Spec (David 15.8.2026):** Weicht die Spec vom Ist-Code ab, wird
   sie **sofort in der Fahrplan-Datei korrigiert** (datiert, Anlass-Halbsatz)
   und weitergebaut — nie gegen die veraltete Spec bauen, nie die Abweichung
-  nur im Chat vermerken. Erledigte §§ wandern bei der Rotation ins Archiv
-  ([aufraeumen.md](aufraeumen.md)).
+  nur im Chat vermerken.
 - **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
   diese Session orchestriert und landet.
 - **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
@@ -68,9 +81,8 @@ ohne Rückfrage nach diesem Zyklus.
   folgt der nächste Zug oder ein ausdrücklicher Zwischenstand — eine leere Antwort
   archiviert die Session, und der Bau steht bis zum nächsten Menschen still (Nacht
   5./6.9.2026).
-- **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
-  `plan:posten -- neu --dach <ID> --titel "…"`, sonst ROADMAP-Schritt (Skill
-  `auftrag` Ziff. 3), weiterbauen.
+- **Nebenfunde** nie in diese Session oder als Chip: neuer echter Fehler ⇒
+  eine EINGANG-Zeile in `ROADMAP.md`, sonst verwerfen; weiterbauen.
 - **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
   aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
   der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
@@ -93,10 +105,11 @@ ohne Rückfrage nach diesem Zyklus.
 ## Station D — Landung
 
 Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge, Bug-Check,
-Einreihen in die Merge-Queue, CI-Grün, Nachkontrolle). **Status schliessen
-gehört IN den PR**, der den Schritt abschliesst (`plan:set -- <id>
-status=done`/`ready`/`parked`, `check:plan`, committen — `landung` Ziff. 9),
-nicht hinter die Landung.
+Einreihen in die Merge-Queue, CI-Grün, Nachkontrolle). **JETZT nachführen
+gehört IN den PR**, der das Vorhaben abschliesst: der letzte PR streicht es
+aus JETZT, legt erledigte Merkzettel nach `archiv/posten/` und rückt nach
+(Reihenfolge-Regel im ROADMAP-Kopf; `landung` Ziff. 9) — nicht hinter die
+Landung.
 
 **Kein Stillstand ohne David (Auftrag 16.8.2026, nach 7 h stummem Warten):**
 Wer eine Landekette per Wächter begleitet, setzt einen **Stillstands-Anker** —
@@ -111,28 +124,29 @@ ist der Merge-Zeitstempel auf origin/main.
 ## Station W — Weiterbau (David 8.8.2026)
 
 Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
-(a) nächster offener Posten desselben Dachs (`plan:posten -- <ID>`); (b) oberster `ready`-Schritt
-**gleicher Risikoklasse** und möglichst gleichen `feld:`-Werts (`plan:next` +
+(a) nächster offener Merkzettel desselben Vorhabens; (b) oberstes freies
+JETZT-Vorhaben **gleicher Risikoklasse** (Startabfrage als
 Kollisionsprüfung); (c) nichts Sinnvolles mehr ⇒ Station E.
 
-Je Weiterbau voller Zyklus im Kleinen (`status=wip`, volle Sorgfalt, eigener
-Commit mit eigenem Roadmap-Trailer).
+Je Weiterbau voller Zyklus im Kleinen (Zweig zuerst hochladen, volle
+Sorgfalt, eigener Commit mit eigenem Roadmap-Trailer).
 **NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss
 **spätestens bevor der Kontext zur Neige geht** — lieber sauber landen.
 
 ## Station E — Abschluss (3 Punkte)
 
-- [ ] **Notizen-Datei überführen:** `plan:posten -- aus-notizen <datei>` erntet
-      «Nebenfunde»/«Wartet auf David»; der Rest an seinen Repo-Ort (Fahrplan,
-      Skill, Tor). Einzeilig dabei der **§17-Lehren-Check**: Lehre aufgekommen
+- [ ] **Notizen-Datei überführen:** «Nebenfunde»/«Wartet auf David» von Hand
+      als EINGANG-Zeilen in `ROADMAP.md`; der Rest an seinen Repo-Ort
+      (Skill, Tor) oder verwerfen. Einzeilig dabei der **§17-Lehren-Check**: Lehre aufgekommen
       ⇒ verankert nach Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill >
       Prosa) — nur im Chat gilt als nicht gezogen. Danach Datei löschen;
       Übergabe: Datei bleibt, Pfad im Chip. Einen PR/Zweig nennt die Übergabe
       nur mit Beleg «fertig» (gate-Exit 0 + Kopf-SHA), sonst «in Arbeit» —
       Beleg D2/#1072 (24.9.2026): «fertig, nicht eingereicht», war gate-rot
       mit 5 Tests, Lint und Schlankheit (§14.7).
-- [ ] **Status geschlossen:** `plan:set -- <id> status=done` + `check:plan`
-      stehen im Feature-PR (Station D). Ein **separater Doku-PR nur dann**,
+- [ ] **JETZT nachgeführt** im abschliessenden PR (Station D); jede
+      Änderung an JETZT als Zeile im Abschlussbericht (Regel 5), Go-Marken
+      nach Regel 4. Ein **separater Doku-PR nur dann**,
       wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
       — nicht als Ritual.
 - [ ] **Bau-Flächen abräumen:** `npm run aufraeumen:git` (räumt nur LOKAL;
@@ -149,8 +163,7 @@ fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
 
 - **Volle Session-Karte als Default** — nur noch bei Risikopfad/Lehre;
   15.8.2026 gemessen: 51 % aller Commits waren reine Doku-/Plan-Pflege.
-- **`npm run plan:bild`** — auf Abruf (David fragt das Lagebild an, wenn er
-  es braucht); die Dock-Datei steuert keinen Bau.
+- **`npm run plan:bild`** — Lagebild abgebaut 5.10.2026 (Umstieg).
 - **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook, dort nur
   prüfend (`LEXMETRIK_NO_ROTATE=1` in `.claude/settings.json` schaltet die
   Rotation ab; sie läuft von Hand, wenn der Wächter meldet), UND als CI-Tor
@@ -159,23 +172,22 @@ fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
   einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
   CI-Lauf verloren).
 - **Karten-ZEILE / Session-Karte in `STRUKTUR.md`** (20.9.2026) — kein
-  Werkzeug liest den Karten-INHALT: `struktur-aktuell.py` misst nur den
-  git-Abstand, `struktur-rotieren.py` nur Grösse und Alter; gemessen ~1 500
+  Werkzeug liest den Karten-INHALT: `struktur-aktuell.py` (abgebaut
+  5.10.2026) mass nur den git-Abstand, `struktur-rotieren.py` nur Grösse und Alter; gemessen ~1 500
   geänderte Zeilen in 14 Tagen reine Ablage. Ersatz ist der PR-Body.
   STRUKTUR.md bleibt als Struktur-Nachschlagewerk.
 - **Fremdagenten-Messwerte und Kontingent-Lauf als Pflichtpunkte** (20.9.2026)
   — jetzt bedingt (Station E, letzter Absatz): Jules-Suggestions sind seit
   14.9.2026 aus.
 - **Memory-Durchsicht** — nur wenn die Session das Memory berührt hat.
-- **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr; Bündelung
-  läuft über `feld:` (Station A Ziff. 1).
+- **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr.
 
 ---
 
 ## Token-Regeln (in jeder Station)
 
-- **Slices statt Dateien:** `fahrplan -- <datei> <§>`, `plan:next` —
-  ROADMAP/STRUKTUR nie am Stück gelesen.
+- **Slices statt Dateien:** `fahrplan -- <datei> <§>`; STRUKTUR nie am
+  Stück gelesen.
 - **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
 - **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
   Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
