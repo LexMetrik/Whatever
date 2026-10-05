@@ -438,8 +438,10 @@ Wächter: Startabfrage (Skill `bauschritt` Station A) und `npm run aufraeumen:gi
    sieht am Squash-Commit NUR Co-authored-by, lange Trailer zerfallen in
    Fortsetzungszeilen (Beleg 9b125ce8e). Gelesen wird darum der PR-Body per
    API (PR #628, 2.9.2026). Mehrere IDs nie auf mehrere `Roadmap:`-Zeilen
-   verteilen — nur die letzte Zeile gilt als Konvention (kein automatischer
-   Leser mehr seit dem Abbau der `plan-buchung.yml`-Auto-Buchung 20.9.2026).
+   verteilen — nur die letzte Zeile gilt als Konvention. Einziger Leser seit
+   5.10.2026: `abschluss-wache.py` (F17) — Leser auf main-Commits werten die
+   Body-Zeilen, nie `%(trailers)`, und testen mit Fixtures im Squash-Format
+   (Beleg 5.10.2026: Bau und Tests nahmen `%(trailers)` an, Wache blind).
    Gleiches gilt für `Fachaenderung:` und `Gegenpruefung:`: ein Trailer nur im
    Commit reicht nicht, `check:fachaenderung` liest im PR-Lauf den
    Queue-Squash aus Titel + Body — Zeile in den Schlussabsatz des Bodys
