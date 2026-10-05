@@ -28,8 +28,9 @@ ohne Rückfrage nach diesem Zyklus.
    EINGANG). Fremder Zweig, Worktree oder PR auf derselben Fläche =
    Kollision → melden, nie parallel in dieselbe Fläche bauen.
 2. **Was gebaut wird:** was David im Chat aufträgt, sonst das oberste freie
-   JETZT-Vorhaben. Belegt (Zweig, Worktree oder PR, dessen Name das Kürzel enthält —
-   `git branch -r | grep -i <Kürzel>`, Gross-/Kleinschreibung egal) ⇒
+   JETZT-Vorhaben. Belegt (Zweig, Worktree oder PR, dessen Name mit dem Kürzel beginnt —
+   Worktrees/PRs aus Ziff. 1, gepushte Zweige ohne PR per
+   `git branch -r | grep -iE '^ *origin/<Kürzel>(/|-|$)'`) ⇒
    **STOPP, melden**.
 3. **Sichtbar werden** (F6, Regel 7 unten): Zweig anlegen und **pushen,
    bevor der Detailplan entsteht** — nie main (main nimmt seit 19.9.2026 nur

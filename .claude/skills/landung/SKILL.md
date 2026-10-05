@@ -418,7 +418,8 @@ Wächter: Startabfrage (Skill `bauschritt` Station A) und `npm run aufraeumen:gi
    aber durch eine Leerzeile unsichtbar → Merge-Schutz rot). Vor jedem PR
    lokal `npm run check:merge-schutz` (Sekunden, spart den CI-Lauf).
 2. *(entfällt 20.9.2026 — galt nur für die abgebaute `plan-buchung.yml`-
-   Auto-Buchung; `check:plan` und `@blockers` abgebaut 5.10.2026, Umstieg.)*
+   Auto-Buchung; `@blockers`-Slug bleibt Pflicht, das prüft `check:plan`.)*
+   *(`check:plan` und `@blockers` abgebaut 5.10.2026, Umstieg.)*
 3. **PR zeigt «no checks reported» → ZUERST Mergeability prüfen**
    (`gh pr view N --json mergeable`): bei CONFLICTING baut GitHub gar keinen
    CI-Lauf (PR #605). Fix ist der main-Merge, nicht das Neu-Triggern.

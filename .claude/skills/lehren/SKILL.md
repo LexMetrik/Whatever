@@ -91,8 +91,8 @@ Beobachtung (2.9.2026, #629): Merge-Lauf auf main `cancelled`, Live-Build blieb 
 26.7.2026 `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` — die
 Concurrency kann es nicht gewesen sein (Mechanik-Agent 2.9., Reproduktion
 negativ). Kandidaten: ein Selbst-Cancel-Schritt im Workflow bei bewegtem HEAD,
-oder ein GitHub-seitiger Abbruch. Ursache offen — die ROADMAP-Zeile `QS-AUTOMATIK`
-entfiel mit dem Umstieg 5.10.2026; tritt es wieder auf: EINGANG-Zeile (Ursache klären, Rot-Beweis). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
+oder ein GitHub-seitiger Abbruch. Ursache klären, Rot-Beweis: offen, getragen von der
+Wiedervorlage unten (die ROADMAP-Zeile `QS-AUTOMATIK` entfiel mit dem Umstieg 5.10.2026). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
 einem Code-Merge kein weiterer main-Push, bis der Deploy-Job grün ist. <!-- @wiedervorlage: 2027-03-02 -->
 **F14 — Additiver Refresh überschreibt gute Bestandsdaten statt sie zu mergen
 (12.9.2026, PR #816, Delta-Prüfung).** Der B1-Zweig von `--regeste-refresh` (`scripts/normtext-entscheide.ts`) übernahm Auszug-only-Ergebnisse vollständig und löschte bei 6 von 1259 BGE die `regeste.sprachfassungen` (Beleg: Archiv §F14). Gegenmittel

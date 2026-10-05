@@ -133,9 +133,9 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - R · David 21.9. · Impressum/Datenschutz/Nutzungsbedingungen — erst vor dem Live-Gang — Dach SEO-A11Y; FB S-01
 - N · Sammel · Oberfläche und übrige Verweise — FB Bereiche 6 und 4
 - S · 5.10. · ci.yml CODE_FERN_RE klassiert ^scripts/plan/ code-fern, dort liegt jetzt echter Code (aufraeumen:git) ⇒ Code-Tore übersprungen — ci.yml:70
-- I · 5.10. · Rückbau nach Umstieg: flaechenZeile/trendZeile (scripts/plan), wip-Zweig abschluss-wache.py (+Tests), Rotation struktur-rotieren.py, cowork-Reste — ci.yml:70, .gitignore
-- I · 5.10. · prozess:kennzahlen zählt Prozess-Commits am Betreff «QS-…»; Umstieg-Commits fallen raus ⇒ 4-Wochen-Prüfung «< 30 %» zu günstig — scripts/analyse/prozess-kennzahlen.ts:83
-- I · Termin 8.10. · CI-Sparplan nachmessen (Ausgangswert 61 381 min/30 Tage, gleiche Methode) — Skill landung, «Nachmessung Sparplan»
+- I · 5.10. · Rückbau nach Umstieg: flaechenZeile (scripts/plan), trendZeile (steuerflaecheKern.ts), wip-Zweig abschluss-wache.py (+Tests), Rotation struktur-rotieren.py — cowork-Rest ci.yml:70
+- I · 5.10. · prozess:kennzahlen erkennt Prozess-Commits am Betreff-Muster (QS-/lehre/tor/hook/check:); 6 von 8 Umstieg-Commits fehlen ⇒ 4-Wochen-Prüfung zu günstig — prozess-kennzahlen.ts:83
+- I · 5.10. · Termin 8.10.: CI-Sparplan nachmessen (Ausgangswert 61 381 min/30 Tage, gleiche Methode) — Skill landung, «Nachmessung Sparplan»
 - S · Sammel · Sicherheit/Betrieb übrige — FB Bereich 7
 - S · Sammel · bekannte Prüf-Lücken auf Rechtsdaten, Gruppe «latent» — kein Bauauftrag — FB Teil C
 - I · Sammel · Merkzettel mit Entscheid oder Frage Davids, ruhend — nicht nachfragen — FB Teil B

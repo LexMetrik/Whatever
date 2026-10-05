@@ -433,8 +433,9 @@ def modus_hook(repo):
         hinweis = (
             "⚠️ Steuer-Doku-Budget überschritten (QS-TOK Re-Akkumulations-Wächter):\n"
             + "\n".join(meldungen)
-            + "\n\nROADMAP.md auf ZIEL/JETZT/EINGANG kürzen; Erledigtes streicht der "
-            "abschliessende PR (Skill bauschritt Station D)."
+            + "\n\nBetroffene Datei kürzen — ROADMAP.md: ZIEL/JETZT/EINGANG, Erledigtes streicht "
+            "der abschliessende PR (Skill bauschritt Station D); STRUKTUR-Karten: "
+            "`npm run struktur:rotieren -- --write`."
         )
         print(
             json.dumps(
