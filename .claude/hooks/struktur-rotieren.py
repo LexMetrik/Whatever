@@ -38,9 +38,9 @@ from datetime import date
 # Grundlinie:
 #  · STRUKTUR.md 60 KB = §3 T1 DoD; nach der Rotation ~37 KB → Wächter schweigt,
 #    meldet erst echtes Re-Anschwellen.
-#  · ROADMAP.md 120 KB = NUR WARNUNG (NUR_WARNUNG, Exit 0) seit 18.9.2026, Entscheid David:
-#    54 % offene Zeilen, Erledigtes 0,4 KB — vier Überführungen in fünf Tagen kauften je < 3 KB
-#    und färbten fremde Läufe rot. Hebel: Befund-Prosa in die Fahrpläne (ROADMAP QS-EFFIZIENZ).
+#  · ROADMAP.md 15 KB = NUR WARNUNG (NUR_WARNUNG, Exit 0) seit 18.9.2026, Entscheid David
+#    (damals 120 KB: vier Überführungen in fünf Tagen färbten fremde Läufe rot). Seit 5.10.2026
+#    15 KB: schlanker Bauplan ZIEL/JETZT/EINGANG (Umstieg, Entscheid David U1–U8, Regel 1).
 #  · CLAUDE.md 14 KB = Drift-Wächter (QS-AUDIT-VERWEISE 8.8.2026; Audit 7.8.:
 #    36 von 38 Commits vergrössern die Datei, Kürzungen in 5–11 Tagen wieder
 #    aufgeholt — Drift ist strukturell). Ist beim Setzen: ~11.8 KB / 234 Z.;
@@ -50,7 +50,7 @@ from datetime import date
 #    7.8.2026: neue Regeln nur als Tor/Hook, nie als Prosa).
 BUDGET = {
     "STRUKTUR.md": 60 * 1024,
-    "ROADMAP.md": 120 * 1024,
+    "ROADMAP.md": 15 * 1024,
     "CLAUDE.md": 14 * 1024,
 }
 NUR_WARNUNG = {"ROADMAP.md"}
