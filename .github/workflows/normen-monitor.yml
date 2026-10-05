@@ -102,19 +102,29 @@ jobs:
       # Netz-Zettel (EIN Zettel, Label alarm:normen-monitor-netz): unvollständig ⇒ anlegen bzw.
       # kommentieren; vollständig ⇒ schliessen. Ohne Label findet die nächste Abfrage ihn
       # nicht — darum Label zuerst sicherstellen und KEIN Rückfall auf einen label-losen Zettel.
+      # FAIL-SAFE (Gegenprüfung Runde 2, 5.10.2026, Nebenfund A): scheitert die Zettel-Pflege,
+      # wird der Lauf ROT statt nur gewarnt — ohne Netz-Zettel startet die Zwei-Wochen-Grenze
+      # nie, der Monitor bliebe dauerhaft blind ohne Rot.
       - name: Netz unvollständig — Netz-Zettel anlegen oder kommentieren
         if: always() && steps.netz.outputs.netz_unvollstaendig == '1'
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           NR: ${{ steps.netzzettel.outputs.nummer }}
+          ROT_GRUND: ${{ steps.netz.outputs.rot_grund }}
           TAFEL: ${{ runner.temp }}/netz-tafel.md
         run: |
           set -euo pipefail
-          trap 'echo "::warning::Netz-Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          trap 'echo "::error::Netz-Zettel-Pflege gescheitert (Z. $LINENO) — ohne Netz-Zettel greift die Zwei-Wochen-Grenze nie, darum Lauf ROT (fail-safe)"; exit 1' ERR
           tafel=$( [ -f "$TAFEL" ] && cat "$TAFEL" || echo "(Tafel fehlt — Lauf-Log lesen)")
           if [ -n "$NR" ]; then
-            gh issue comment "$NR" --body "Erneut unvollständig am $(date +%F) — Lauf ROT (Zwei-Wochen-Grenze). Lauf: ${RUN_URL}
+            # Wortlaut nach rot_grund (Nebenfund B): Gesetzestext-Rot trägt der Alarm-Zettel.
+            if [ "$ROT_GRUND" = "gesetzestext" ]; then
+              wie="Lauf ROT wegen eines Gesetzestext-Befunds (Alarm-Zettel alarm:normen-monitor); die Zwei-Wochen-Grenze ist zusätzlich erreicht"
+            else
+              wie="Lauf ROT (Zwei-Wochen-Grenze)"
+            fi
+            gh issue comment "$NR" --body "Erneut unvollständig am $(date +%F) — ${wie}. Lauf: ${RUN_URL}
 
           ${tafel}"
             exit 0
