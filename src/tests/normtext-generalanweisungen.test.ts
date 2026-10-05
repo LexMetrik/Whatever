@@ -233,7 +233,9 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
     // Fussnoten-Datum gilt (Entscheid-A-Proxy zurückgebaut): 12 «zurückzubringende» + 11 «ungeprüfte» Daten
     ['ZGB', '28_g', '1985-07-01'], ['ZGB', '85', '2006-01-01'], ['ZGB', '86', '2006-01-01'], ['ZGB', '255', '2000-01-01'], ['ZGB', '256', '2013-01-01'],
     ['ZGB', '286', '2000-01-01'], ['ZGB', '303', '1978-01-01'], ['ZGB', '304', '2013-01-01'],
-    ['OR', '640', '2008-01-01'], ['OR', '652_c', '1992-07-01'], ['OR', '652_f', '2008-01-01'], ['OR', '677', '1992-07-01'], ['OR', '679', '1992-07-01'],
+    ['OR', '640', '2008-01-01'], ['OR', '652_c', '1992-07-01'], ['OR', '652_f', '2008-01-01'], ['OR', '677', '1992-07-01'], ['OR', '679', '2014-01-01'], // Abs. 2 aufgehoben (AS 2013 4111, 1.1.2014): Teilaufhebung zählt (R2-02)
+    ['OR', '631', '2023-01-01'], // Generalanweisung AS 2020 4005 + Teilaufhebung; siehe Bibliothek-Doku
+    ['NHG', '3', '2014-09-01'], // Abs. teilaufgehoben (Teilaufhebung zählt)
     ['OR', '706_b', '1992-07-01'], ['OR', '709', '1992-07-01'], ['OR', '717', '1992-07-01'], ['OR', '721', '1992-07-01'],
     ['OR', '706', '2021-01-01'], // Anweisung AS 2020 957 (Richter → Gericht, 1.1.2021); Fussnote nur 1992/2008
     ['PATG', '36', '1995-07-01'], ['PATG', '50', '1978-01-01'],
@@ -338,5 +340,23 @@ describe('Korpus · «Gilt seit» der Artikel aus W2·32 (Soll gegen die Fedlex-
       if (a.ereignisse.some((x) => x.anweisung)) n++;
     }
     expect(n).toBeGreaterThanOrEqual(80);
+  });
+});
+
+describe('Teilaufhebung zählt für «Gilt seit» (OR 631/679, W2·32, 5.10.2026)', () => {
+  const fussnote = (text: string, absatz: string): FnEingang => ({ nr: '1', text, links: [], absatz, item: null });
+  it('aufgehobener Absatz eines weiterlebenden Artikels datiert «Gilt seit» (jünger als die Fassung)', () => {
+    const h = baueArtikelHistorie([
+      fussnote('Fassung gemäss Ziff. I 3 des BG vom 16. Dez. 2005, in Kraft seit 1. Jan. 2008 (AS 2007 4791; BBl 2002 3148).', '1'),
+      fussnote('Aufgehoben durch Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), mit Wirkung seit 1. Jan. 2023 (AS 2020 4005; BBl 2017 399).', '2'),
+    ]).historie!;
+    expect(h.giltSeit).toBe('2023-01-01');
+  });
+  it('eine ältere Aufhebung verdrängt eine jüngere Fassung nicht', () => {
+    const h = baueArtikelHistorie([
+      fussnote('Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).', '2'),
+      fussnote('Fassung gemäss Ziff. I des BG vom 1. Jan. 2000, in Kraft seit 1. Jan. 2001 (AS 2000 99).', '1'),
+    ]).historie!;
+    expect(h.giltSeit).toBe('2001-01-01');
   });
 });

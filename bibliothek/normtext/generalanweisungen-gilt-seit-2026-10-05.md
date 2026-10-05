@@ -24,6 +24,7 @@ Das Fussnoten-Modell (G-HIST, `historie-parse.ts`) sieht solche Änderungen nich
 4. **`ausser` mit Beleg** für Artikel, deren heutiger Wortlaut später gilt, obwohl die Anweisung sie nennt: ZGB 430 (Wortlaut seit 1.1.2013, Abteilung «Der Erwachsenenschutz» neu gefasst) und OR 565 (Fedlex-Konsolidierungen 1.1.2021–1.1.2022 tragen noch «richterliche»; heutiges «gerichtliche» erst seit 1.1.2023, parallele Anweisung AS 2020 4005).
 5. **«Im ganzen Erlass»** (PATG: «Institut» → «IGE», AS 2015 3631): die Anweisung nennt keine Artikel; betroffen ist ein Artikel, dessen heutiger Text «IGE» (Wortgrenze) trägt — abgeleitet, nicht genannt, darum mit **Überschrift-Vorbehalt**: ein jüngeres Überschrift-Ereignis (Fassung/Einfügung des Abschnitts, eigenes oder geerbtes) streicht das Ereignis (PATG 140n–140v, 2019 eingefügt; Vorgabe C: lieber keine Aussage). Nur echte Artikel, keine Schluss-/Übergangsbestimmungen.
 6. Der **Vorsichts-Proxy von Entscheid A** (`giltSeit = null`, wenn ein eigener Randtitel jünger ist als der Körper-Stand) ist zurückgebaut, samt `randtitelEigen`-Durchleitung. Der Leser nennt die Herkunft («Anweisung: …», `data-historie-anweisung`).
+7. **Teilaufhebung zählt** — siehe Abschnitt unten.
 
 ## Register (Stand 5.10.2026)
 
@@ -56,13 +57,21 @@ Ist = `giltSeit` der committeten Shards auf `origin/main` (d029534c2). Soll = er
 | ZGB 256, 304 | null | 2013-01-01 | Fussnote 2013; Stand 2012-01-01 abweichend |
 | OR 706 | null | **2021-01-01** | AS 2020 957 «706 Absatz 1, 706a Absatz 2» («Richter» → «Gericht»); Stand 2020-04-01 «Richter», 2021-01-01 «Gericht» |
 | OR 640, 652f | null | 2008-01-01 | Fussnote 2008; Stand 2007-05-01 abweichend |
-| OR 652c, 677, 679, 706b, 709, 717, 721 | null | 1992-07-01 | Fussnote 1992; Wortlaut ab Stand 2000-01-01 gleich |
+| OR 652c, 677, 706b, 709, 717, 721 | null | 1992-07-01 | Fussnote 1992; Wortlaut ab Stand 2000-01-01 gleich |
+| OR 679 | null | **2014-01-01** | Abs. 2 «Aufgehoben durch Anhang des BG vom 21. Juni 2013, mit Wirkung seit 1. Jan. 2014 (AS 2013 4111)»; Stand 2013-01-01 trägt Abs. 2, Stand 2014-01-01 «2 …». Teilaufhebung zählt (unten). Die Fussnote 1992 allein (erste Fassung dieses Entwurfs) war überholt |
+| OR 631 | 2008-01-01 | **2023-01-01** | Abs. 2 Ziff. 6 aufgehoben, AS 2020 4005 (1.1.2023); Stand 2022-01-01 «6. bereits vorliegende Sachübernahmeverträge», Stand 2023-01-01 «6. …». Reine Teilaufhebung, keine Generalanweisung — Ursache: das Modell zählte aufgehobene Absätze/Ziffern nicht |
 | PATG 110 | null | **2017-01-01** | AS 2015 3631 «Institut» → «IGE»; Stand 2012-01-01 «Institut», 2017-01-01 «IGE» |
 | PATG 36, 50 | null | 1995-07-01 / 1978-01-01 | Fussnote; Wortlaut ab Stand 2001-01-01 gleich |
 | STGB 52 | 2004-04-01 | **2007-01-01** | AS 2006 3459; Stand 2006-12-01 anderer Text, 2007-01-01 = heute. Die Sachüberschrift-Fussnote (AS 2004 1403) «ist der Randtitel zu Artikel 52 neu StGB wie folgt zu ergänzen» — nur der Randtitel |
 | STGB 355b | null | 2006-04-01 | Fussnote; Text erstmals im Stand 2006-04-01 |
 | LFG 37u | null | 2018-01-01 | Fussnote; Text erstmals im Stand 2018-01-01 |
 | VWVG 76 | null | 1992-02-15 | Fussnote; Stand ab 2000-03-01 gleich bis auf die redaktionelle Zitat-Ergänzung «vom 19. September 1978» (2007; AS 2006 2197 Anhang Ziff. 10 ändert nur «Art. 76 Randtitel») |
+
+## Teilaufhebung zählt (Regel 7, im selben Schritt nachgezogen)
+
+Ein Artikel, dessen Absatz oder Ziffer aufgehoben wurde (Fussnote «Aufgehoben durch … in Kraft seit …» am Absatz, Artikel lebt weiter), ändert seinen heutigen Wortlaut zum Datum der Aufhebung: «Gilt seit» ist dann das jüngere Datum (Modellentscheid R2-02 der Historie-Erfassung; hier erstmals auch auf Artikel angewandt, deren übrige Ereignisse ohne Datum oder älter sind). Umsetzung: `historie-parse.ts`, zweite Schleife nach der Datumsbildung — nur Fussnoten am Artikel selbst (nicht Sektionsfussnoten), nur Typ «aufgehoben» mit Datum, nur wenn jünger als das bisherige «Gilt seit». Anlass: OR 631 (Soll 2023-01-01) und OR 679 (2014-01-01) waren mit der Regel 1–5 allein nicht erklärbar.
+
+**Wirkung (gemessen):** `npm run historie:vergleich -- --basis HEAD --liste` (HEAD = Stand vor dieser Regel) zeigt 394 Artikel mit neuem «Gilt seit» über alle Erlasse (grösste Gruppen OR 18, ZGB 15, AHVV 13, STGB 12). Typisch: STGB 36 2007 → 2018, STGB 71 2007 → 2024, DBG 112a 2007 → 2022, NHG 3 2000 → 2014-09-01 (Abs. 4 aufgehoben, AS 2014 2629). Stichprobe gegen die Konsolidierungen (Stand vor/nach dem Datum, Wort-Multimenge; Skript wie unten): von 29 geprüften Artikeln (Befehl `python3 .gate/verify2.py <ERLASS> <Artikel>:<Datum> …`, Wegwerf-Skript) trägt der Stand vor dem Datum jeweils mehr Text als der Stand ab dem Datum bei 19 (z. B. OR 689/692/765 2023-01-01, STGB 58/75 2011-01-01, STGB 182/304 2023-07-01, ZGB 117/598 2011-01-01, PATG 72 2008-07-01); die übrigen 10 sind Messgrenzen des Skripts (Spill der Fussnotenzeilen in den Span: ZGB 112, OR 13/860, ZGB 35, PATG 73 — alle fünf mit Fussnote «Aufgehoben durch …» am Absatz; Artikel in Teil-Spans nicht auffindbar: ZGB 28l, OR 656b; Datum vor dem frühesten Stand: STGB 213, PATG 40) oder amtlich über die Fussnote belegt, weil die Konsolidierung die Aufhebung schon vor dem Fussnoten-Datum zeigt (ZGB 586: Stand 2019-01-01 «2 …», Fussnote «in Kraft seit 1. Jan. 2020», AS 2018 5343 — amtliches Datum der Fussnote gilt; Stand-Datum der Konsolidierung ist kein In-Kraft-Beleg). Für OR 631 und OR 679 zusätzlich von Hand im Stand-PDF gelesen. **David bitte beachten:** diese Regel verschiebt viele «Gilt seit» nach hinten; sie folgt dem bereits geltenden R2-02, wurde hier aber auf Artikel ohne weitere Ereignisse ausgedehnt.
 
 ## Verifikation (alle 213 geänderten Daten gegen die Konsolidierungen)
 

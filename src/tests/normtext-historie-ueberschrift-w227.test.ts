@@ -227,9 +227,10 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     const h = historieVon(artikel981(koerperFn('Aufgehoben durch Ziff. I 1 des BG vom 13. Dez. 2002, in Kraft seit 1. Jan. 2007 (AS 2006 3459; BBl 1999 1979).')), '981')!;
     expect(h.giltSeit).toBe('2007-01-01');
     expect(h.ereignisse.find((e) => e.typ === 'fassung')!.ueberschrift).toBeUndefined();
-    // andere AS-Fundstelle im Körper ⇒ reine Randtitel-Änderung ⇒ nur Chronik
+    // andere AS-Fundstelle im Körper ⇒ der Randtitel zählt nicht (eigenes Datum 2007 nicht übernommen); die Teilaufhebung des
+    // Körpers zählt aber (R2-02, 5.10.2026) ⇒ 1991, nicht 2007
     const andere = artikel981(koerperFn('Aufgehoben durch Ziff. I des BG vom 1. Jan. 1990, in Kraft seit 1. Jan. 1991 (AS 1990 99).'));
-    expect(historieVon(andere, '981')!.giltSeit).toBeNull();
+    expect(historieVon(andere, '981')!.giltSeit).toBe('1991-01-01');
   });
 
   // H1 (Gegenprüfung GP #1298, 3.10.2026): Das Gliederungszeichen allein trägt die Regel nicht. Eine «Ausdruck»-Fussnote am
@@ -511,7 +512,7 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
 
   it('B4: VVG 47a (Fassung 2022) und NHG 3 (Fassung 2000) behalten ihr eigenes Datum (Sachüberschrift, Änderungserlass änderte auch den Körper)', () => {
     expect(hist('VVG', '47_a')!.giltSeit).toBe('2022-01-01');
-    expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
+    expect(hist('NHG', '3')!.giltSeit).toBe('2014-09-01'); // damals 2000-01-01; seit Teilaufhebung-Regel (5.10.2026) 2014-09-01
   });
 
   it('Randtitel zählt nicht (Entscheid David 3.10.2026) + Generalanweisung: ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → «Gilt seit» 1.1.2000 (AS 1999 1118 Gewalt → Sorge), Chronik behält 2018', () => {

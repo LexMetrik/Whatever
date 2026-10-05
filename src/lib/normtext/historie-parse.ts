@@ -496,6 +496,18 @@ export function baueArtikelHistorie(
       if (!giltSeit || e.datum > giltSeit) giltSeit = e.datum;
     }
   }
+  // Teilaufhebung (W2·32, 5.10.2026; Befund R2-02 der Prüfung Rechtslogik 23.9.2026, OR 631): «Aufgehoben durch …» an einem
+  // Absatz, einer Ziffer/lit., einem Satz oder einer Körper-Position des Artikels ändert den Wortlaut des Artikels — er gilt in
+  // seiner heutigen Fassung erst seit diesem Tag. Dasselbe Prädikat wie bei der Ganzaufhebung, umgekehrt: nur Fussnoten, die
+  // `artikelAufhebungMoeglich` AUSSCHLIESST (Körper-Anker oder Teil-Skopus in der Prosa), und nie die einer Überschrift
+  // (`sektion`; deren Aufhebung trifft den Artikel nicht). Die Aufhebung der Sachüberschrift im Kopf bleibt aussen vor (Randtitel
+  // zählt nicht). Ein amtlich aufgehobener Artikel trägt kein «Gilt seit» (P7 #53, unten).
+  for (const fn of fussnoten ?? []) {
+    if (fn.sektion || artikelAufhebungMoeglich(fn)) continue;
+    for (const e of parseFussnoteHistorie(fn).ereignisse) {
+      if (e.typ === 'aufgehoben' && e.datum && (!giltSeit || e.datum > giltSeit)) giltSeit = e.datum;
+    }
+  }
   // Zurückgebaut am 5.10.2026 (W2·32-GENERALANWEISUNGEN, Entscheid David 4.10.2026 «A, und C als eigenen Roadmap-Schritt»): der
   // Vorsichts-Proxy von Entscheid A (28 Artikel «Fassung» ohne Datum, wenn ein eigener Randtitel jünger war als der Körper-Stand)
   // ist durch die erfassten Anweisungen (`opts.anweisungen`) ersetzt. Die 28 Artikel sind amtlich gegen die Fedlex-Konsolidierungen
