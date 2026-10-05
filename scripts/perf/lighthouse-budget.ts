@@ -28,6 +28,7 @@ import { join } from 'node:path';
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 import { erlassPfadVonKey } from '../../src/lib/normtext/erlassAdresse';
+import { bewerteTti } from './tti-bewertung';
 
 const requireCJS = createRequire(import.meta.url);
 
@@ -137,6 +138,62 @@ const RUNS = zahlAusUmgebung('PERF_RUNS', process.env.CI ? 3 : 1);
 // das Tor wird dadurch nie stiller. Kein Durchwinken ohne Messung (§8).
 // Abschaltbar über PERF_NORMIEREN=0.
 const NORMIEREN = process.env.PERF_NORMIEREN !== '0';
+
+// ── TTI-Normierung: ENTSCHEID DAVID 5.10.2026 («ja, TTI normieren wie TBT») ──
+//
+// ANLASS: Die OR-TTI riss den 13000-ms-Deckel mehrfach auf Ständen ohne
+// Produktänderung — 24.9.2026 (13.14 s bei Faktor 1.253; 13.01 s), 4.10. und
+// 5.10.2026 (13.61 s, Faktor 1.249, TBT roh 5529 ms, Lauf 37322845469). Der
+// Deckel bleibt UNVERÄNDERT bei 13000 (keine Anhebung, keine Senkung); bewertet
+// wird eine runner-bereinigte Grösse (reine Funktion: `tti-bewertung.ts`, getestet
+// in src/tests/perf-tti-bewertung.test.ts). Rohwert wird weiter gedruckt und im
+// PERF-MESSPUNKT-JSON geführt (§8); Fallback bei unplausibler Kalibrierung oder
+// PERF_NORMIEREN=0 ist der Rohwert, genau wie bei der TBT.
+//
+// MESSUNG VOR DEM BAU (5.10.2026): alle in CI auffindbaren PERF-MESSPUNKT-Zeilen,
+// n = 47 unabhängige Runner-Zuteilungen (23 Läufe des Jobs «Perf-Budget», 24
+// Messpunkte aus `perf-kalibrierung.yml` inkl. der Reihe vom 20.7.), Faktor
+// 0.36–1.32, davon 18 «schnelle» Runner (Faktor < 0.9). OR-Route, je Median aus 3:
+//
+//   Variante                          min   Median    max    sd    CV   corr(faktor)  > 13000  schnelle > 13000
+//   A  roh                           9368    11418  13609   967   8.5 %     +0.38        2/47        0/18
+//   B  tti / faktor  (wie TBT)       7818    10419  31598  5700  43.1 %     −0.88       18/47       18/18
+//   C  tti − tbt + tbt/faktor        8937    11333  16771  1701  14.4 %     −0.79       11/47       11/18
+//   D  C mit Klemme faktor ≥ 1       8937    11199  12506   839   7.7 %     −0.09        0/47        0/18
+//
+// BEFUND — warum NICHT «exakt wie TBT» (§7: Auftrag mit Messung geprüft, Abweichung
+// offengelegt): Die TTI hängt am simulierten langsamen 4G (Netzanteil TTI − TBT
+// im Median ~7.5 s, ohne Bezug zum Faktor: corr −0.16; log-log-Steigung TTI~Faktor
+// nur 0.07, bei der TBT 0.65) und fällt auf einem SCHNELLEN Runner nicht mit. Teilt
+// man sie ganz durch den Faktor (B), wird sie dort aufgeblasen: Faktor 0.36 ergibt
+// 31.6 s, alle 18 schnellen Runner reissen den Deckel — Falsch-Rot im grossen Stil.
+// Auch C (nur den Blockier-Anteil, aber beidseitig) reisst 11/18 schnelle Runner.
+// D bereinigt deshalb nur in Richtung LANGSAM: `faktor_wirksam = max(1, faktor)`.
+// Schnelle Runner bleiben auf dem Rohwert (kein neues Rot, nichts hochgerechnet),
+// langsame bekommen ihren Blockier-Anteil auf Basis-Geschwindigkeit zurück.
+//
+// WAS D AM 5.10.-FEHLSCHLAG GEMACHT HÄTTE: 13609 roh (Faktor 1.249, TBT roh 5529)
+// ⇒ 13609 − 5529 + 5529/1.249 ≈ 12.5 s (12506 ms mit dem ungerundeten Faktor) ⇒ grün
+// (Kopffreiheit 3.8 %).
+//
+// §15-LOGIKVERLUST-BEWERTUNG: KEINE. Die Zahl 13000 bleibt; es wechselt allein die
+// Messgrösse, und nur zugunsten langsamer Runner. Ein echter Seiten-Regress (mehr
+// Hauptthread-Arbeit) erhöht den Blockier-Anteil und damit auch den bewerteten
+// Wert; ein Netz-/Lade-Regress (Nicht-TBT-Anteil) wird nicht bereinigt und schlägt
+// voll an. Kein App-Code, keine Rechtslogik berührt.
+//
+// EHRLICHE GRENZE (§8): (1) Beobachtet sind nur ZWEI Falsch-Rot-Läufe; die Korrektur
+// stützt sich auf die Modellannahme «der Blockier-Anteil skaliert mit dem Faktor»,
+// die für die TBT belegt ist (Steigung 0.65), für den TBT-Anteil innerhalb der TTI
+// aber nur schwach (corr(TTI, TBT) = +0.07). D ist darum vor allem eine vorsichtige
+// Entlastung langsamer Runner, kein Rauschfilter. (2) Der Roh-Wert ist bei Faktor
+// ≥ 1.2 ohnehin nicht mit dem Faktor korreliert (−0.08, n = 22, Spanne 1.22–1.32 —
+// eng); die TTI-Streuung bleibt zu grossen Teilen Rauschen. (3) Das 13000er-Limit
+// hat auch bewertet nur ~2.1 sd Kopffreiheit (max D 12506 ms; Rausch-Rot ~2 %):
+// wird es wieder rot, ist die nächste Frage der Deckel, nicht die Normierung.
+// (4) n = 47 mit 3 Punkten aus der Reihe vom 20.7. (Faktor 0.36–0.37, anderes
+// Runner-Regime); ohne sie bleiben die Befunde gleich (B: 10/39 über 13000, max
+// 18.1 s; D: max 12506 ms, 0/39).
 // Blockzahl × Iterationen je Block der Kalibrier-Last. Bewusst in ~8 mittellange
 // Tasks zerlegt (statt eines Riesen-Tasks): so ähnelt das Lastprofil einer echten
 // Seite (viele Long Tasks), TBT summiert über alle, und die TTI-Erkennung von
@@ -183,7 +240,7 @@ type Schwelle = {
   clsMax: number;          // Cumulative Layout Shift (geräteunabhängig — der harte Regressions-Fänger)
   lcpMax: number | null;   // Largest Contentful Paint (ms) — CPU-abhängig, grosszügiger Deckel
   tbtMax: number | null;   // Total Blocking Time (ms) — bewertet auf dem NORMIERTEN Wert (3.8.2026)
-  ttiMax: number | null;   // Time To Interactive (ms)
+  ttiMax: number | null;   // Time To Interactive (ms) — bewertet via bewerteTti (5.10.2026)
   scoreMin: number | null; // Performance-Score 0..100
 };
 
@@ -228,10 +285,12 @@ type Schwelle = {
 //
 // WAS DAS HEISST — und was bewusst NICHT geändert wurde (kein Anlass, §14):
 //   • **OR TBT** ist die einzige gerissene Metrik und wird deshalb hier umgestellt.
-//   • **OR TTI** trägt dieselbe Runner-Abhängigkeit (sd 931 ms, Kopffreiheit von
-//     ehemals 2.7 sd auf 1.8 sd geschrumpft ⇒ Rausch-Rot ~3 % statt ~0.4 %). Sie ist
-//     der nächste Kandidat, hat aber KEINEN belegten Fehlschlag — darum unverändert
-//     auf dem Rohwert. Wird sie rot, ist dieser Block die Vorlage.
+//   • **OR TTI** (Stand 3.8.2026): sd 931 ms, Kopffreiheit von ehemals 2.7 sd auf
+//     1.8 sd geschrumpft ⇒ Rausch-Rot ~3 % statt ~0.4 %; damals KEIN belegter
+//     Fehlschlag und darum noch auf dem Rohwert. Am 24.9., 4.10. und 5.10.2026
+//     riss sie dann ohne Produktänderung (13.14 s, 13.01 s, 13.61 s) — seit
+//     5.10.2026 wird sie normiert bewertet, aber NICHT wie die TBT: siehe den
+//     Block «TTI-Normierung» unten (Entscheid David 5.10.2026).
 //   • **OR LCP** bleibt bimodal (3× ~3.5 s, 5× ~11.6–12.1 s) und ist damit NICHT
 //     runner-geschwindigkeits-getrieben — Normieren würde hier nichts bereinigen,
 //     sondern den niedrigen Modus verzerren. Ursache weiterhin offen (unten).
@@ -668,7 +727,11 @@ async function main(): Promise<void> {
       // plausible Kalibrierung vorliegt — sonst der Rohwert (konservativer Fallback,
       // Begründung im NORMIEREN-Block oben). Beide Werte gehen in den Bericht.
       const tbtBewertet = tbtNorm ?? m.tbt;
-      bericht[key] = { ...m, tbtNorm: tbtNorm ?? null, tbtBewertet };
+      // BEWERTETE TTI (Entscheid David 5.10.2026): Blockier-Anteil auf Basis-
+      // Geschwindigkeit, nur zugunsten langsamer Runner — Herleitung im Block
+      // «TTI-Normierung» oben. Fällt die Kalibrierung aus, ist es der Rohwert.
+      const tti = bewerteTti(m.tti, m.tbt, faktor);
+      bericht[key] = { ...m, tbtNorm: tbtNorm ?? null, tbtBewertet, ttiBewertet: tti.bewertet };
       // «unkalibriert» statt einer Deckel-Zahl, wo die Schwelle `null` ist —
       // der Wert wird gemessen und gedruckt, aber nicht assertiert (§8).
       const d = (v: number | null, einheit = '') => (v === null ? 'unkalibriert' : `${v}${einheit}`);
@@ -680,7 +743,9 @@ async function main(): Promise<void> {
         (tbtNorm !== undefined
           ? `TBT ${Math.round(tbtNorm)} ms normiert (≤ ${d(s.tbtMax)}) · roh ${Math.round(m.tbt)} ms [Transparenz]  `
           : `TBT ${Math.round(m.tbt)} ms roh (≤ ${d(s.tbtMax)}, keine Kalibrierung)  `) +
-        `TTI ${(m.tti / 1000).toFixed(2)} s (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`})`,
+        (tti.normiert
+          ? `TTI ${(tti.bewertet / 1000).toFixed(2)} s bewertet (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`}) · roh ${(m.tti / 1000).toFixed(2)} s [Transparenz]`
+          : `TTI ${(m.tti / 1000).toFixed(2)} s roh (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`}, keine Kalibrierung)`),
       );
       if (!MESSEN_NUR) {
         // §6.7-Backstop (Bug-Check #565 B1): liefert Lighthouse keinen numericValue
@@ -704,7 +769,14 @@ async function main(): Promise<void> {
               : `${label}: TBT ${Math.round(m.tbt)} ms roh > ${s.tbtMax} ms (keine gültige Kalibrierung — Rohwert-Fallback).`,
           );
         }
-        if (s.ttiMax !== null && m.tti > s.ttiMax) fehler.push(`${label}: TTI ${(m.tti / 1000).toFixed(2)} s > ${(s.ttiMax / 1000).toFixed(1)} s.`);
+        // TTI seit 5.10.2026 auf dem BEWERTETEN Wert (Entscheid David); Deckel unverändert.
+        if (s.ttiMax !== null && tti.bewertet > s.ttiMax) {
+          fehler.push(
+            tti.normiert
+              ? `${label}: TTI ${(tti.bewertet / 1000).toFixed(2)} s bewertet > ${(s.ttiMax / 1000).toFixed(1)} s (roh ${(m.tti / 1000).toFixed(2)} s).`
+              : `${label}: TTI ${(m.tti / 1000).toFixed(2)} s roh > ${(s.ttiMax / 1000).toFixed(1)} s (keine gültige Kalibrierung — Rohwert-Fallback).`,
+          );
+        }
         if (s.scoreMin !== null && m.score < s.scoreMin) fehler.push(`${label}: Score ${m.score} < ${s.scoreMin}.`);
       }
     }
@@ -734,7 +806,7 @@ async function main(): Promise<void> {
   // Die Schlusszeile benennt, WORAUF assertiert wurde — im Fallback ist das der
   // Rohwert, und dann darf hier nicht «normiert» stehen (§8).
   console.log(
-    `check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[${bericht.kalibrierFaktor ? 'normiert' : 'roh, ohne Kalibrierung'}]/TTI/Score) eingehalten.`,
+    `check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[${bericht.kalibrierFaktor ? 'normiert' : 'roh, ohne Kalibrierung'}]/TTI[${bericht.kalibrierFaktor ? 'bewertet' : 'roh, ohne Kalibrierung'}]/Score) eingehalten.`,
   );
 }
 
