@@ -101,9 +101,9 @@ zusammengestellt.
   Einzelmodus, Split-Pane, kantonal, Druck, <1024/≥1024 (Beleg #1040,
   24.9.2026: Blatt-Spur im Einzelmodus erst in der Gegenpruefung gefunden).
 4c RAM SPAREN (Weisung David 24.9.2026, «versuche ram zu sparen»; Absturz
-  23.9.2026 bei zu vielen Parallel-Laeufen). Playwright lokal hoechstens
-  --workers=2; die volle e2e-Suite nur EINMAL am Schluss, dazwischen gezielte
-  Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
+  23.9.2026 bei zu vielen Parallel-Laeufen). Schwere Laeufe (gate, volle
+  vitest-Suite, e2e, build) nur in CI, Beleg Lauf-ID (Regel David 5.10.2026);
+  lokal gezielte Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
   Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
   Per Port NUR den lauschenden Prozess: `lsof -ti tcp:PORT -sTCP:LISTEN` —
@@ -116,7 +116,7 @@ zusammengestellt.
   KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
   gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
   24.9.2026: @ast-grep/cli 0.45.2 vs ^0.45.3).
-  Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
+  Ohne lokales `npm run gate` trotzdem die schnellen
   Tore `npx vitest run src/tests/design-` und `npm run check:sediment`
   (Sekunden, kein Browser) — Belege #1053 (24.9.2026, Kasten-Optik design-r5
   erst im Orchestrator-Gate) und #1073/#1087 (25.9.2026, Export ohne Aufrufer).
