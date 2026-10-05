@@ -109,12 +109,11 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 ## EINGANG
 
 ```
-- S · Frist 8.10. · Test-Ausnahme w224-reiterverhalten läuft ab — e2e/flake-ausnahmen.json; FB S-24
 - S · Frist 20./24.10. · vier weitere Test-Ausnahmen laufen ab — e2e/flake-ausnahmen.json; FB S-24
 - S · Frist 20.10. · Such-DB (Turso) ~26.10. wieder erschöpft; Entscheid David 15.9. «nicht zahlen» beachten — FB S-10
 - S · Frist ~Nov. · Rechtsprechungs-Register bei 91 % des Daten-Budgets, aufteilen — Dach QS-PERF; FB S-26
 - S · 5.10. · Deploy nutzt npx vercel@latest; Such-API gibt Fehlertexte an Anonyme, DB-Fehler als «0 Treffer» — FB S-18
-- S · 5.10. · Secret Scanning/Push Protection im öffentlichen Repo aus; Ablaufdatum AUTOMERGE_TOKEN unbekannt — FB S-15, S-14
+- S · Frist 20.10. · AUTOMERGE_TOKEN (lexmetrik-automerge-2026-09) läuft ab: David erneuert, setzt Repo-Secret neu — FB S-14
 - S · 4.10. · Merge-Treiber regen behält eigenes daten-manifest.json ⇒ Hand-Regeneration je Daten-PR — Merkzettel 2026-10-04-merge-treiber-regen-…
 - F · Mandat 14.9. · Tabellen im Bundestext (W2·5l, bisher Platz 3 der Reihenfolge) — fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md; Dach W2·5l-NORMTEXT-B2
 - R · Go David 24.9. · Verweise: 371 falsche Selbstlinks + Verweisziele (HN-09), danach Normverweis öffnet eigenen Leser (HN-D1 «ja unbedingt») — FB V-06
