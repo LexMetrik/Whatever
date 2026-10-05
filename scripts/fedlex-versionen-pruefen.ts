@@ -29,14 +29,19 @@
 //          nachführen.
 // Exit 0 → alle Pins aktuell; künftige Fassungen/Aufhebungen nur als HINWEIS;
 //          anerkannte Aufhebungen als ehrliches OK «bewusst historisch».
-// Exit 2 → Endpoint/Netz-Fehler (keine Aussage möglich).
+// Exit 2 → Endpoint/Netz-Fehler (keine Aussage möglich) — NUR wenn kein Rot-Befund vorliegt:
+//          Drift (1) hat Vorrang vor «keine Aussage» (2), `verbindeExits` (drift-logik.ts).
+//          Netzfehler = NetzFehler aus netzFetch (fetch-Wurf, Timeout, 429/5xx, Abbruch beim
+//          Lesen). Struktur-/Programmfehler (leere Pin-Liste, 4xx, HTML statt JSON, Parse- und
+//          Code-Fehler) sind KEIN Netzausfall ⇒ Exit 1 (Gegenprüfung Runde 2, 5.10.2026).
 //
 // --kanonik-textvergleich (nur im Normen-Monitor, `check:netz:kette`; Entscheid David
 // 5.10.2026 «wichtig ist gesetzestext»): ein nicht-kanonischer Pin wird gegen die kanonische
 // Revision TEXTUELL verglichen (Tags weg, Leerraum normiert). Gleicher Text ⇒ nur HINWEIS
 // (Fedlex hat nur das Markup neu publiziert, z. B. OR html-2→3 am 5.10.2026: 36 Diff-Zeilen,
 // alle <i>→<span class="man-link-no-link">; fedlex-frische.yml re-pint das von selbst);
-// anderer Text ⇒ ROT wie bisher; Abruf scheitert ⇒ Exit 2. OHNE Flag bleibt jeder
+// anderer Text ⇒ ROT wie bisher; Abruf scheitert am Netz ⇒ «keine Aussage» (Exit 2, nur
+// ohne Rot-Befund). OHNE Flag bleibt jeder
 // nicht-kanonische Pin ROT — darauf baut die Selbstheilung in fedlex-frische.yml
 // («Arbiter rot ⇒ repin-kanonik»).
 // SSoT §5: die Pin-Liste wird aus scripts/fedlex-cache.sh geparst — die
@@ -45,6 +50,8 @@ import { lesePins, lesePinsVoll, type Pin } from './fedlex-pins';
 import { loeseHtmlManifeste } from './fedlex-manifest';
 import { PDF_EMBED_QUELLEN } from '../src/lib/normtext/pdf-embed.ts';
 import { anerkannteAufhebungNachEli } from '../src/lib/normtext/aufhebungen.ts';
+import { istWiederholbarerStatus } from './normtext/netz-retry';
+import { verbindeExits } from './normtext/drift-logik';
 
 const ENDPOINT = 'https://fedlex.data.admin.ch/sparqlendpoint';
 const FILESTORE = 'https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli';
@@ -65,8 +72,44 @@ export function gepinnteHtmlUrl(p: { eli: string; konsKompakt: string; n: number
   return p.n === 0 ? `${basis}.html` : `${basis}-${p.n}.html`;
 }
 
-async function holeText(url: string): Promise<string> {
-  const res = await fetch(url, { signal: AbortSignal.timeout(90_000) });
+/** Quelle nicht erreichbar — keine Aussage (Exit 2). Alles andere, was wirft, ist Exit 1. */
+export class NetzFehler extends Error {}
+
+const meldung = (e: unknown): string => (e instanceof Error ? e.message : String(e));
+
+/**
+ * fetch-Hülle mit Netz-Klassifikation an EINER Stelle (Befund 2, Gegenprüfung 5.10.2026):
+ * Wurf von fetch (DNS, Verbindung, Timeout/Abort) und wiederholbare Status (429/5xx,
+ * istWiederholbarerStatus aus netz-retry.ts) ⇒ NetzFehler. Der Body wird gepuffert, damit ein
+ * Abbruch beim Lesen ebenfalls als NetzFehler gilt. 4xx, HTML statt JSON und Parse-Fehler
+ * bleiben gewöhnliche Fehler ⇒ Exit 1 (löst sich nicht von selbst).
+ */
+export function netzFetch(fetchImpl: typeof fetch): typeof fetch {
+  return (async (input: RequestInfo | URL, init?: RequestInit) => {
+    const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+    let res: Response;
+    try {
+      res = await fetchImpl(input, init);
+    } catch (e) {
+      throw new NetzFehler(`${url}: ${meldung(e)}`);
+    }
+    if (istWiederholbarerStatus(res.status)) throw new NetzFehler(`HTTP ${res.status} auf ${url}`);
+    let body: ArrayBuffer;
+    try {
+      body = await res.arrayBuffer();
+    } catch (e) {
+      throw new NetzFehler(`${url}: Abbruch beim Lesen (${meldung(e)})`);
+    }
+    return new Response([204, 205, 304].includes(res.status) ? null : body, {
+      status: res.status,
+      statusText: res.statusText,
+      headers: res.headers,
+    });
+  }) as typeof fetch;
+}
+
+async function holeText(url: string, fetchImpl: typeof fetch): Promise<string> {
+  const res = await fetchImpl(url, { signal: AbortSignal.timeout(90_000) });
   if (!res.ok) throw new Error(`HTTP ${res.status} auf ${url}`);
   return sichtbarerText(await res.text());
 }
@@ -113,7 +156,7 @@ export function parseKonsolidierungen(bindings: SparqlBinding[]): Map<string, Ko
   return map;
 }
 
-async function frageKonsolidierungen(pins: Pin[]): Promise<Map<string, KonsBefund>> {
+async function frageKonsolidierungen(pins: Pin[], fetchImpl: typeof fetch): Promise<Map<string, KonsBefund>> {
   const werte = pins.map((p) => `<https://fedlex.data.admin.ch/eli/${p.eli}>`).join(' ');
   // G-AUFH: dateNoLongerInForce (Ganz-Aufhebung) additiv per OPTIONAL abfragen —
   // liegt auf der ConsolidationAbstract (?abstract), nicht auf der Consolidation.
@@ -124,7 +167,7 @@ SELECT ?abstract ?date ?noLonger WHERE {
   ?c jolux:isMemberOf ?abstract ; jolux:dateApplicability ?date .
   OPTIONAL { ?abstract jolux:dateNoLongerInForce ?noLonger }
 }`;
-  const res = await fetch(ENDPOINT, {
+  const res = await fetchImpl(ENDPOINT, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -237,30 +280,49 @@ export function bewerte(
 }
 
 // ─── Lauf ────────────────────────────────────────────────────────────────────
-async function main() {
-  const cachePins = lesePins();
+// Erst ALLE Pins prüfen, dann entscheiden (Befund 1, Gegenprüfung 5.10.2026): früher brach ein
+// Netzfehler im Kanonik-Teil mit Exit 2 ab, BEVOR der Rot-Exit erreicht war — ein überholter
+// Pin verschwand dann hinter dem Netz-Zettel. Jetzt zählt ein Netzfehler je Pin/Abfrage als
+// «ohne Aussage», und am Ende entscheidet verbindeExits: Rot (1) vor Netz (2) vor Grün (0).
+export type LaufOptionen = {
+  /** Injizierbar für Tests; wird immer in netzFetch gehüllt. */
+  fetchImpl?: typeof fetch;
+  /** ISO-Datum; Default: heutiges Lokaldatum. */
+  heute?: string;
+  textvergleich?: boolean;
+  /** Inhalt von fedlex-cache.sh (Tests); Default: die Datei. */
+  shText?: string;
+};
+
+async function lauf(opt: LaufOptionen = {}): Promise<number> {
+  const f = netzFetch(opt.fetchImpl ?? fetch);
+  const cachePins = lesePins(opt.shText);
   if (cachePins.length === 0) {
-    console.error('FEHLER: keine EINTRAEGE in scripts/fedlex-cache.sh gefunden (Format geändert?).');
-    process.exit(2);
+    // Strukturfehler, kein Netzausfall (Befund 2): Exit 1, nie «keine Aussage».
+    console.error('FEHLER: keine EINTRAEGE in scripts/fedlex-cache.sh gefunden (Format geändert?) — Strukturfehler, Exit 1.');
+    return 1;
   }
   // cache.sh-Pins UND PDF-Embed-Pins gemeinsam prüfen (DoD: beide Pin-Quellen).
   const pins = [...cachePins, ...lesePdfEmbedPins()];
 
   const jetzt = new Date();
-  const heute = `${jetzt.getFullYear()}-${String(jetzt.getMonth() + 1).padStart(2, '0')}-${String(jetzt.getDate()).padStart(2, '0')}`;
+  const heute = opt.heute ?? `${jetzt.getFullYear()}-${String(jetzt.getMonth() + 1).padStart(2, '0')}-${String(jetzt.getDate()).padStart(2, '0')}`;
 
   let konsolidierungen: Map<string, KonsBefund>;
   try {
-    konsolidierungen = await frageKonsolidierungen(pins);
+    konsolidierungen = await frageKonsolidierungen(pins, f);
   } catch (e) {
-    console.error(`FEHLER: Fedlex-SPARQL nicht erreichbar (${e instanceof Error ? e.message : e}) — keine Aussage möglich.`);
-    process.exit(2);
+    if (!(e instanceof NetzFehler)) throw e; // Struktur-/Programmfehler ⇒ Exit 1 (Aufrufer)
+    // Ohne Konsolidierungsdaten liegt noch KEIN Befund vor — reine Netzlage.
+    console.error(`FEHLER: Fedlex-SPARQL nicht erreichbar (${e.message}) — keine Aussage möglich.`);
+    return 2;
   }
 
   let ueberholt = 0;
   let angekuendigt = 0;
   let aufgehoben = 0;
   let aufhebungAngekuendigt = 0;
+  let ohneAussage = 0; // Netzfehler NACH der Datums-Prüfung (Kanonik-Teil)
 
   console.log(`Fedlex-Versions-Monitoring: ${pins.length} gepinnte Gesetze (${cachePins.length} cache.sh + ${pins.length - cachePins.length} pdf-embed; heute: ${heute})\n`);
   for (const pin of pins) {
@@ -281,20 +343,36 @@ async function main() {
   // isExemplifiedBy auflösen und gegen das gepinnte n prüfen. Fedlex re-issued
   // dieselbe Konsolidierung (Fussnoten/Soft-Hyphen), das -N inkrementiert → ein
   // Pin unter der neuesten Revision ist die einzige treue Fassung (§7).
-  const vollPins = lesePinsVoll();
-  const textvergleich = process.argv.includes('--kanonik-textvergleich');
+  const vollPins = lesePinsVoll(opt.shText);
+  const textvergleich = opt.textvergleich ?? false;
   let unkanonisch = 0;
   let nurMarkup = 0;
+  let manifeste: Awaited<ReturnType<typeof loeseHtmlManifeste>> | null = null;
   try {
-    const manifeste = await loeseHtmlManifeste(vollPins);
+    manifeste = await loeseHtmlManifeste(vollPins, f);
+  } catch (e) {
+    if (!(e instanceof NetzFehler)) throw e;
+    console.error(`FEHLER: Kanonik-Auflösung nicht möglich (${e.message}) — Kanonik-Arbiter ohne Aussage.`);
+    ohneAussage++;
+  }
+  if (manifeste) {
     console.log('\n── Kanonik-Arbiter (html-N vs. isExemplifiedBy) ──');
     for (const p of vollPins) {
       const b = manifeste.get(p.name);
       if (!b || b.n === null || !b.file) continue; // keine html-Manifestation → Alias+Sonde, s. cache.sh
       if (b.n !== p.n) {
         if (textvergleich) {
-          // Abruf-Fehler fallen in den catch unten ⇒ Exit 2 (keine Aussage), nie ROT.
-          const [alt, neu] = [await holeText(gepinnteHtmlUrl(p)), await holeText(b.file)];
+          let alt: string;
+          let neu: string;
+          try {
+            [alt, neu] = [await holeText(gepinnteHtmlUrl(p), f), await holeText(b.file, f)];
+          } catch (e) {
+            // Nur ein NetzFehler ist «keine Aussage»; 4xx/Programmfehler ⇒ Exit 1 (Aufrufer).
+            if (!(e instanceof NetzFehler)) throw e;
+            console.log(`KEINE AUSSAGE ${p.name}: gepinnt html-${p.n}, kanonisch html-${b.n} — Textvergleich nicht möglich (${e.message}).`);
+            ohneAussage++;
+            continue;
+          }
           if (alt === neu) {
             console.log(`HINWEIS    ${p.name}: gepinnt html-${p.n}, kanonisch html-${b.n} — sichtbarer Text GLEICH (${neu.length} Zeichen), nur Markup neu publiziert → fedlex-frische re-pinnt.`);
             nurMarkup++;
@@ -306,19 +384,21 @@ async function main() {
         unkanonisch++;
       }
     }
-    if (unkanonisch === 0 && nurMarkup === 0) console.log('Alle Pins docken an der kanonischen html-Manifestation (isExemplifiedBy).');
-  } catch (e) {
-    console.error(`FEHLER: Kanonik-Auflösung/-Textvergleich nicht möglich (${e instanceof Error ? e.message : e}).`);
-    process.exit(2);
+    if (unkanonisch === 0 && nurMarkup === 0 && ohneAussage === 0) console.log('Alle Pins docken an der kanonischen html-Manifestation (isExemplifiedBy).');
   }
 
   console.log('');
-  if (ueberholt > 0 || unkanonisch > 0 || aufgehoben > 0) {
+  const rot = ueberholt > 0 || unkanonisch > 0 || aufgehoben > 0;
+  if (rot) {
     if (aufgehoben > 0) console.log(`${aufgehoben} Pin(s) AUFGEHOBEN — der Erlass ist ganz ausser Kraft bzw. die Aufhebungs-Deklaration stimmt nicht mit der amtlichen Quelle überein: Snapshot entfernen/ersetzen oder aufhebungen.ts nachführen (§7/§8).`);
     if (ueberholt > 0) console.log(`${ueberholt} Pin(s) überholt oder unauffindbar — Caches/Quellen-Register nachführen, betroffene Anker und Wortlaute neu verifizieren (§7).`);
     if (unkanonisch > 0) console.log(`${unkanonisch} Pin(s) nicht-kanonisch (html-N ≠ isExemplifiedBy) — Alias-/Alt-Revisions-Wurzel: re-pinnen + Snapshots/Struktur regenerieren.`);
-    process.exit(1);
   }
+  if (ohneAussage > 0) {
+    console.log(`${ohneAussage} Kanonik-Prüfung(en) ohne Aussage (Quelle nicht erreichbar)${rot ? ' — echter Befund hat Vorrang, Exit 1.' : ' — Exit 2.'}`);
+  }
+  const exit = verbindeExits([rot ? 1 : 0, ohneAussage > 0 ? 2 : 0]);
+  if (exit !== 0) return exit;
   // G-AUFH: künftige Ganz-Aufhebung(en) sind eine Vorwarnung, blockieren nicht.
   if (aufhebungAngekuendigt > 0) {
     console.log(`${aufhebungAngekuendigt} Gesetz(e) mit ANGEKÜNDIGTER Ganz-Aufhebung — Ablösung/Entfernung im Verfallsregister/Gesetzgebungs-Monitoring einplanen.`);
@@ -328,6 +408,19 @@ async function main() {
   } else {
     console.log('Alle Pins aktuell, keine künftigen Fassungen angekündigt.');
   }
+  return 0;
 }
 
-if (!process.env.VITEST) void main();
+/** Exit-Code des Laufs: Struktur-/Programmfehler (alles ausser NetzFehler) ⇒ 1, nie 2 (Befund 2). */
+export async function fuehreAus(opt: LaufOptionen = {}): Promise<number> {
+  try {
+    return await lauf(opt);
+  } catch (e) {
+    console.error(`FEHLER (Struktur/Programm, Exit 1): ${e instanceof Error ? (e.stack ?? e.message) : String(e)}`);
+    return 1;
+  }
+}
+
+if (!process.env.VITEST) {
+  void fuehreAus({ textvergleich: process.argv.includes('--kanonik-textvergleich') }).then((code) => process.exit(code));
+}
