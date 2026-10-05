@@ -104,7 +104,7 @@
     "check:revisionen-netz": "vite-node scripts/normtext/check-revisionen.ts -- --netz",
     "check:revisionen-rectifies": "vite-node scripts/normtext/check-revisionen-rectifies.ts",
     "materialien:vernehmlassungen": "vite-node scripts/materialien/vernehmlassungen-generieren-run.ts --",
-    "check:normtext-netz": "vite-node scripts/normtext/check-drift.ts -- --netz && vite-node scripts/normtext/zh-quellen-aufloesen.ts",
+    "check:normtext-netz": "vite-node scripts/normtext/normtext-netz.ts",
     "check:tarif-drift": "vite-node scripts/tarif/tarif-drift.ts",
     "entscheide": "vite-node scripts/normtext-entscheide.ts --",
     "entscheide:seed": "vite-node scripts/normtext/seed-aus-cache.ts --",

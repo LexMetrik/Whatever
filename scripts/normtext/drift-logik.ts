@@ -503,3 +503,14 @@ export function labelDeckungText(d: LabelDeckung, kantonEintraege: number): stri
     `Kanton-Labels UNGEPRÜFT: ${kantonEintraege} Einträge`
   );
 }
+
+/**
+ * Gesamt-Exit mehrerer Teil-Prüfungen nach der Netz-Tor-Konvention: Rot (jeder Exit ≠ 0,
+ * ≠ 2 — Drift, Absturz) vor «keine Aussage» (2, Quelle nicht erreichbar) vor Grün (0).
+ * Genutzt von check-drift.ts (Befund-Exit + Netzfehler) und normtext-netz.ts (Drift + ZH).
+ * Gegenprüfung 5.10.2026: Netzfehler endeten vorher still mit Exit 0.
+ */
+export function verbindeExits(exits: number[]): number {
+  if (exits.some((e) => e !== 0 && e !== 2)) return 1;
+  return exits.includes(2) ? 2 : 0;
+}

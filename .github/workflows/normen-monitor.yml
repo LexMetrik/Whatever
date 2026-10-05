@@ -7,8 +7,12 @@
 #   • ROT + Alarm-Zettel nur, wenn gespeicherter Normtext/Pin von der amtlichen Fassung
 #     abweicht oder ein Zitat ins Leere zeigt (`check:netz:kette`: caches · zitate ·
 #     fedlex-versionen · normtext-netz · pdf-netz). Ein Kanonik-Wechsel ohne Textänderung
-#     ist nur ein Hinweis (fedlex-frische.yml re-pinnt ihn von selbst); eine nicht
-#     erreichbare Quelle (Exit 2) wird einmal wiederholt und bleibt sonst ein Hinweis.
+#     ist nur ein Hinweis (fedlex-frische.yml re-pinnt ihn von selbst).
+#   • Nicht erreichbare Quelle (Exit 2) eines Gesetzestext-Glieds: Wiederholung nach 90 s;
+#     bleibt sie, ist der Lauf UNVOLLSTÄNDIG — Netz-Zettel (alarm:normen-monitor-netz), kein
+#     Schliessen des Alarm-Zettels. Ist der Netz-Zettel schon offen (voriger Lauf ebenso
+#     blind), wird der Lauf ROT: dauerhafte Blindheit spätestens im zweiten Wochenlauf
+#     (Gegenprüfung 5.10.2026, Befund 1). Vollständiger Lauf schliesst den Netz-Zettel.
 #   • Alles andere (`check:netz:bericht`: Materialien, Revisionen, Abkürzungen, BE-Sprengel,
 #     Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
 #     (::warning:: + Tafel), färbt den Lauf aber NICHT rot. Wo ein Generator existiert,
@@ -49,10 +53,23 @@ jobs:
           cache: npm
       - run: npx -y npm@11 ci
 
+      # Netz-Grenze: war schon der vorige Lauf unvollständig (Netz-Zettel offen), macht ein
+      # erneuter Exit 2 den Lauf rot. Abfrage scheitert ⇒ Warnung, Lauf misst trotzdem.
+      - name: Netz-Zettel offen? (Zwei-Wochen-Grenze für Exit 2)
+        id: netzzettel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Netz-Zettel-Abfrage gescheitert (Z. $LINENO) — Grenze diesen Lauf nicht scharf"; exit 0' ERR
+          nr=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:normen-monitor-netz&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          echo "nummer=${nr}" >> "$GITHUB_OUTPUT"
+
       - name: Gesetzestext rot · Rest Bericht — npm run check:netz
         id: netz
         env:
           NETZ_TAFEL_DATEI: ${{ runner.temp }}/netz-tafel.md
+          NETZ_ZETTEL_OFFEN: ${{ steps.netzzettel.outputs.nummer != '' && '1' || '' }}
         run: npm run check:netz
 
       # EIN Zettel (Label alarm:normen-monitor): bei Rot anlegen, falls keiner offen ist;
@@ -61,8 +78,10 @@ jobs:
       # ERR-Trap → Warnung statt Lauf-Rot (Zettel-Muster waechter.yml, 1.10.2026).
       # Nur bei rotem check:netz (nicht bei Infrastruktur-Rot wie `npm ci` — das meldet der
       # Wächter): der Zettel behauptet einen Gesetzestext-Befund.
+      # rot_grund=netz (nur die Zwei-Wochen-Grenze griff) ⇒ kein Gesetzestext-Zettel; das
+      # trägt der Netz-Zettel unten.
       - name: Bei Rot — Aufgaben-Zettel anlegen (falls keiner offen)
-        if: failure() && steps.netz.outcome == 'failure'
+        if: failure() && steps.netz.outcome == 'failure' && steps.netz.outputs.rot_grund != 'netz'
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
@@ -80,9 +99,46 @@ jobs:
             gh issue create $l --title "🔴 Normen-Monitor rot ($(date +%F)) — Gesetzestext prüfen (§7)" --body "$rumpf" && break
           done
 
-      # Gegenstück: bei Grün (= kein Gesetzestext-Befund) den offenen Zettel schliessen (§8).
+      # Netz-Zettel (EIN Zettel, Label alarm:normen-monitor-netz): unvollständig ⇒ anlegen bzw.
+      # kommentieren; vollständig ⇒ schliessen. Ohne Label findet die nächste Abfrage ihn
+      # nicht — darum Label zuerst sicherstellen und KEIN Rückfall auf einen label-losen Zettel.
+      - name: Netz unvollständig — Netz-Zettel anlegen oder kommentieren
+        if: always() && steps.netz.outputs.netz_unvollstaendig == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          NR: ${{ steps.netzzettel.outputs.nummer }}
+          TAFEL: ${{ runner.temp }}/netz-tafel.md
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Netz-Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          tafel=$( [ -f "$TAFEL" ] && cat "$TAFEL" || echo "(Tafel fehlt — Lauf-Log lesen)")
+          if [ -n "$NR" ]; then
+            gh issue comment "$NR" --body "Erneut unvollständig am $(date +%F) — Lauf ROT (Zwei-Wochen-Grenze). Lauf: ${RUN_URL}
+
+          ${tafel}"
+            exit 0
+          fi
+          gh label create alarm:normen-monitor-netz --color FBCA04 --description "Normen-Monitor: Gesetzestext-Quelle nicht erreichbar (normen-monitor.yml)" >/dev/null 2>&1 || true
+          gh issue create --label alarm:normen-monitor-netz --title "🟠 Normen-Monitor unvollständig ($(date +%F)) — Gesetzestext-Quelle nicht erreichbar" --body "Mindestens ein Gesetzestext-Tor lieferte auch nach Wiederholung Exit 2 (keine Aussage). Bleibt das im nächsten Wochenlauf so, wird der Monitor ROT. Quelle/Endpunkt prüfen (§8). Lauf: ${RUN_URL}
+
+          ${tafel}"
+
+      - name: Netz vollständig — Netz-Zettel schliessen
+        if: always() && steps.netz.outputs.netz_unvollstaendig == '0' && steps.netzzettel.outputs.nummer != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          NR: ${{ steps.netzzettel.outputs.nummer }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Netz-Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          gh issue close "$NR" --reason completed --comment "🟢 Gesetzestext-Tore am $(date +%F) wieder vollständig geprüft. Lauf: ${RUN_URL}"
+
+      # Gegenstück: bei Grün (= kein Gesetzestext-Befund) den offenen Zettel schliessen (§8) —
+      # NUR bei vollständigem Lauf: ein blindes Tor ist keine Entwarnung (Befund 1, 5.10.2026).
       - name: Bei Grün — offenen Aufgaben-Zettel schliessen
-        if: success()
+        if: success() && steps.netz.outputs.netz_unvollstaendig != '1'
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
