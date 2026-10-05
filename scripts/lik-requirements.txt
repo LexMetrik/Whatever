@@ -8,4 +8,6 @@
 # Liegt bewusst NICHT im Repo-Wurzelverzeichnis: eine requirements.txt in der Wurzel
 # lässt Vercel «Python» erkennen und `vercel build` im CI-Deploy an `uv` scheitern
 # (Vorfall 17.8.2026, erster CI-Deploy). Aufruf: pip install -r scripts/lik-requirements.txt
-openpyxl
+# Gepinnt (Gegenprüfung 5.10.2026, Befund 3): lokal verwendete Version; ein stiller
+# Versionssprung im Bot-Lauf könnte die Zell-Einlesung des Generators verändern.
+openpyxl==3.1.5

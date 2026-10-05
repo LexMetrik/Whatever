@@ -76,7 +76,7 @@ fi
 if [ "$werte" = 0 ]; then
   git checkout -- "$ZIEL"
   cat "$TMP/beleg.md" >&2
-  fehler "Bot-Tor rot ohne Datenänderung (siehe Gründe oben) — Generator/Quelle von Hand prüfen, kein PR."
+  fehler "Bot-Tor rot ohne Datenänderung (Gründe oben) — kein PR. Häufigster Fall «XLSX trägt Basis/Basen, die der Generator nicht kennt»: das BFS hat eine neue Basis (Rebasierung) publiziert. Dann in einer Session scripts/lik-reihe-generieren.py um die Basis erweitern (Risikopfad, mit Gegenprüfung), Rebasierung gegen die BFS-Publikation belegen und den Lauf per workflow_dispatch neu starten. Bei «Abweichung(en) Generator ↔ Neu-Einlesung»: Spaltenzuordnung beider Leser gegen die XLSX-Kopfzeile prüfen."
 fi
 
 # ── 5. Export-Ratsche (eingefrorene Teuerungs-Exportzeile trägt den letzten Monat) ──
