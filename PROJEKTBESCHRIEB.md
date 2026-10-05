@@ -5,9 +5,9 @@
 
 Dieses Dokument beschreibt das Projekt als Ganzes: Idee, Prinzipien,
 Architektur, Inventar, Qualitätssicherung und Pflege. Es ergänzt
-`CLAUDE.md` (verbindliche Arbeitsprinzipien §1–§16), `STRUKTUR.md`
+`CLAUDE.md` (verbindliche Arbeitsprinzipien §1–§18), `STRUKTUR.md`
 (laufend gepflegter technischer Stand, Session-Karten), `ROADMAP.md`
-(DER eine Handlungsplan mit Bau-Reihenfolge), `FAHRPLAN-GESAMTAUFBAU.md`
+(DER eine Bauplan: ZIEL · JETZT · EINGANG), `fahrplaene/FAHRPLAN-GESAMTAUFBAU.md`
 (chronologische Ordnung: 7 Phasen bis zum Nordstern, Juli 2026 → ab Mitte
 2027), `KATALOG-ROADMAP.md` (Praxis-Abdeckungskarte) und die
 `bibliothek/` (recherchierte Grundlagen mit Quellen-Registern).
@@ -30,7 +30,7 @@ besser verlinken als die Quellen selbst — **Nachweisdatenbank statt
 Volltextsammlung** (16.8.2026). Kopiert wird nur, was am Artikel etwas
 zeigt, das der Link nicht kann (Zitat unter §7), und im eigenen Leser
 gehalten wird nur, was er besser darstellt als die Quelle (heute die
-Gesetze). Regel: `ROADMAP.md` Leitprinzip 8. Vier «Klingen»:
+Gesetze). Regel: Leitprinzip 8 der Alt-ROADMAP (`archiv/ROADMAP-bis-2026-10-05.md`). Vier «Klingen»:
 
 1. **Konsultieren** — Gesetze des Bundes und der Kantone (`/gesetze`)
    mit amtlicher Gliederung, Marginalien, Fussnoten, Fassungs-Timeline
@@ -75,7 +75,7 @@ gebraucht»-Zeile, «Zuletzt verwendet» rein lokal. `/pro` und
 
 ---
 
-## 2. Prinzipien (Kurzfassung — verbindlich in CLAUDE.md §1–§16)
+## 2. Prinzipien (Kurzfassung — verbindlich in CLAUDE.md §1–§18)
 
 1. **Fachliche Korrektheit vor allem** (§1) — lieber Duplikat als eine
    Abstraktion, die zwei rechtlich verschiedene Fälle gleich behandelt.
@@ -112,7 +112,7 @@ gebraucht»-Zeile, «Zuletzt verwendet» rein lokal. `/pro` und
     Rechtswert mit Norm + Link + Stand.
 11. **Ein Eingang für Aufträge** (§14) — `ROADMAP.md` ist der eine
     Handlungsplan; Fahrpläne sind Detailquellen, nie zweiter Einstieg;
-    Trailer-Konvention `Roadmap: <ID>`; Kontext-Hygiene und
+    Trailer-Konvention `Roadmap: <Kürzel>`; Kontext-Hygiene und
     Vertrauensgrenze für Agenten-Arbeit.
 12. **Geräte-Last** (§15) — nicht merklich langsamer, ausser es drohte
     Logikverlust; Treue schlägt Tempo (`check:perf-budget` in CI).
@@ -303,5 +303,5 @@ Check in den Branch-Regeln · kantonale Verifikationen ausserhalb BS.
 - **Kontext-/Token-Ökonomie**: Skills in `.claude/skills/` (abnahme,
   bauschritt, korpus-werkstatt, landung, lehren, gegenpruefung),
   Hooks in `.claude/hooks/` (tor-schutz, lese-schutz,
-  struktur-aktuell/-rotieren), Dispatch-Template für Sub-Agenten
+  struktur-rotieren), Dispatch-Template für Sub-Agenten
   (`docs/token-oekonomie/dispatch-template.md`).

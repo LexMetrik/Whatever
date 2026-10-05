@@ -65,7 +65,8 @@ src/lib/vorlagen/**
 ```
 
 **(b) Steuer-Doku und Infrastruktur:** `CLAUDE.md`, `AGENTS.md`, `ROADMAP.md`,
-`ROADMAP-CHRONIK.md`, `STRUKTUR.md`, `fahrplaene/**`, `bibliothek/**`,
+`ROADMAP-CHRONIK.md`, `STRUKTUR.md`, `fahrplaene/**`, `plan/**`, `archiv/**`,
+`bibliothek/**`,
 `.claude/**`, `.github/**`, `package.json` und Lockfile, `scripts/**`
 insgesamt.
 
@@ -135,7 +136,7 @@ Tor-Ausgabe von `npm run gate`, (3) was bewusst **nicht** gemacht wurde,
 (4) offene Fragen.
 
 Im **letzten Absatz** der Commit-Message steht der Trailer-Block
-`Roadmap: <Schritt-ID>` — genau eine Leerzeile davor, keine Leerzeile
+`Roadmap: <Kürzel>` — genau eine Leerzeile davor, keine Leerzeile
 innerhalb, jeder Trailer einzeilig (git liest Trailer nur im letzten Absatz).
 
 Commit-Betreff nie mit Typ `refactor`, wenn der Commit Dateien unter
