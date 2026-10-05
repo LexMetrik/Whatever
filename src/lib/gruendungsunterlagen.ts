@@ -418,13 +418,17 @@ export function gmbhGruendungsunterlagen(e: GmbhGruendungEingaben): Gruendungsun
       // https://www.fedlex.admin.ch/eli/cc/2026/323/de (Konsolidierung 20261001;
       // OR-Konsolidierung 20261001 der Vorfassung 20260101 gegenübergestellt). Die id
       // bleibt «wb-verzeichnis», weil die Dokumentmappen sie als Nicht-Beilage führen.
+      // Gegenprüfung 5.10.2026: Tochter-Ausnahme nur «zu mehr als 75 Prozent» (Art. 3
+      // lit. a TJPG); HR-Weg nur «wenn sie eine Tatsache ins Handelsregister eintragen
+      // lässt» (Art. 11 Abs. 1 TJPG), separates Dokument zur Anmeldung (Art. 33 Abs. 1
+      // TJPV, SR 955.31, https://www.fedlex.admin.ch/eli/cc/2026/364/de, Stand 1.10.2026).
       id: 'wb-verzeichnis',
       titel: 'Wirtschaftlich berechtigte Personen dokumentieren und dem Transparenzregister melden',
       norm: 'Art. 9 TJPG',
       phase: 'nachEintrag',
       ersteller: 'gruender',
       hinweis:
-        'Wirtschaftlich berechtigt ist, wer die Gesellschaft mit mindestens 25 % des Kapitals oder der Stimmen oder auf andere Weise letztendlich kontrolliert, subsidiär das oberste Mitglied des leitenden Organs (Art. 4 TJPG). Die Gesellschaft identifiziert und überprüft diese Personen, dokumentiert die Angaben aktuell und mit jederzeitigem Zugriff in der Schweiz und bewahrt Informationen und Belege 10 Jahre über den Wegfall der Eigenschaft hinaus auf (Art. 7 und 8 TJPG). Meldung an das Transparenzregister innert eines Monats nach der Handelsregister-Eintragung (Art. 9 Abs. 4 TJPG), Änderungen innert eines Monats ab Kenntnis (Art. 10 TJPG); sind alle wirtschaftlich berechtigten Personen als Gesellschafter:innen oder Organ im Handelsregister eingetragen, kann die Meldung über das Handelsregisteramt erfolgen (Art. 11 TJPG). Gesellschafter:innen, deren Anteile die letztendliche Kontrolle ermöglichen, melden der Gesellschaft die wirtschaftlich berechtigte Person innert eines Monats nach Entstehung der Kontrolle (Art. 13 Abs. 3 TJPG). Ausnahmen, etwa börsenkotierte Gesellschaften und ihre Tochtergesellschaften: Art. 3 TJPG.',
+        'Wirtschaftlich berechtigt ist, wer die Gesellschaft mit mindestens 25 % des Kapitals oder der Stimmen oder auf andere Weise letztendlich kontrolliert, subsidiär das oberste Mitglied des leitenden Organs (Art. 4 TJPG). Die Gesellschaft identifiziert und überprüft diese Personen, dokumentiert die Angaben aktuell und mit jederzeitigem Zugriff in der Schweiz und bewahrt Informationen und Belege 10 Jahre über den Wegfall der Eigenschaft hinaus auf (Art. 7 und 8 TJPG). Meldung direkt an das Transparenzregister innert eines Monats nach der Handelsregister-Eintragung (Art. 9 Abs. 4 TJPG), Änderungen innert eines Monats ab Kenntnis (Art. 10 TJPG). Sind alle wirtschaftlich berechtigten Personen als Gesellschafter:innen oder Organ im Handelsregister eingetragen, kann die Meldung stattdessen über das Handelsregisteramt erfolgen, aber nur zusammen mit einer Handelsregister-Anmeldung – bei der Gründung also zusammen mit der Anmeldung, in einem separaten Dokument (Art. 11 TJPG, Art. 33 Abs. 1 TJPV). Gesellschafter:innen, deren Anteile die letztendliche Kontrolle ermöglichen, melden der Gesellschaft die wirtschaftlich berechtigte Person innert eines Monats nach Entstehung der Kontrolle (Art. 13 Abs. 3 TJPG). Ausnahmen, etwa börsenkotierte Gesellschaften und Tochtergesellschaften, die zu mehr als 75 % direkt oder indirekt von solchen gehalten werden: Art. 3 TJPG.',
     },
   );
 
@@ -693,13 +697,17 @@ export function agGruendungsunterlagen(e: AgGruendungEingaben): Gruendungsunterl
       // https://www.fedlex.admin.ch/eli/cc/2026/323/de (Konsolidierung 20261001;
       // OR-Konsolidierung 20261001 der Vorfassung 20260101 gegenübergestellt). Die id
       // bleibt «wb-verzeichnis», weil die Dokumentmappen sie als Nicht-Beilage führen.
+      // Gegenprüfung 5.10.2026: Tochter-Ausnahme nur «zu mehr als 75 Prozent» (Art. 3
+      // lit. a TJPG); HR-Weg nur «wenn sie eine Tatsache ins Handelsregister eintragen
+      // lässt» (Art. 11 Abs. 1 TJPG), separates Dokument zur Anmeldung (Art. 33 Abs. 1
+      // TJPV, SR 955.31, https://www.fedlex.admin.ch/eli/cc/2026/364/de, Stand 1.10.2026).
       id: 'wb-verzeichnis',
       titel: 'Wirtschaftlich berechtigte Personen dokumentieren und dem Transparenzregister melden',
       norm: 'Art. 9 TJPG',
       phase: 'nachEintrag',
       ersteller: 'gruender',
       hinweis:
-        'Wirtschaftlich berechtigt ist, wer die Gesellschaft mit mindestens 25 % des Kapitals oder der Stimmen oder auf andere Weise letztendlich kontrolliert, subsidiär das oberste Mitglied des leitenden Organs (Art. 4 TJPG). Die Gesellschaft identifiziert und überprüft diese Personen, dokumentiert die Angaben aktuell und mit jederzeitigem Zugriff in der Schweiz und bewahrt Informationen und Belege 10 Jahre über den Wegfall der Eigenschaft hinaus auf (Art. 7 und 8 TJPG). Meldung an das Transparenzregister innert eines Monats nach der Handelsregister-Eintragung (Art. 9 Abs. 4 TJPG), Änderungen innert eines Monats ab Kenntnis (Art. 10 TJPG); sind alle wirtschaftlich berechtigten Personen als Organ im Handelsregister eingetragen, kann die Meldung über das Handelsregisteramt erfolgen (Art. 11 TJPG). Aktionär:innen, deren Anteile die letztendliche Kontrolle ermöglichen, melden der Gesellschaft die wirtschaftlich berechtigte Person innert eines Monats nach Entstehung der Kontrolle (Art. 13 Abs. 3 TJPG). Ausnahmen, etwa börsenkotierte Gesellschaften und ihre Tochtergesellschaften: Art. 3 TJPG.',
+        'Wirtschaftlich berechtigt ist, wer die Gesellschaft mit mindestens 25 % des Kapitals oder der Stimmen oder auf andere Weise letztendlich kontrolliert, subsidiär das oberste Mitglied des leitenden Organs (Art. 4 TJPG). Die Gesellschaft identifiziert und überprüft diese Personen, dokumentiert die Angaben aktuell und mit jederzeitigem Zugriff in der Schweiz und bewahrt Informationen und Belege 10 Jahre über den Wegfall der Eigenschaft hinaus auf (Art. 7 und 8 TJPG). Meldung direkt an das Transparenzregister innert eines Monats nach der Handelsregister-Eintragung (Art. 9 Abs. 4 TJPG), Änderungen innert eines Monats ab Kenntnis (Art. 10 TJPG). Sind alle wirtschaftlich berechtigten Personen als Organ im Handelsregister eingetragen, kann die Meldung stattdessen über das Handelsregisteramt erfolgen, aber nur zusammen mit einer Handelsregister-Anmeldung – bei der Gründung also zusammen mit der Anmeldung, in einem separaten Dokument (Art. 11 TJPG, Art. 33 Abs. 1 TJPV). Aktionär:innen, deren Anteile die letztendliche Kontrolle ermöglichen, melden der Gesellschaft die wirtschaftlich berechtigte Person innert eines Monats nach Entstehung der Kontrolle (Art. 13 Abs. 3 TJPG). Ausnahmen, etwa börsenkotierte Gesellschaften und Tochtergesellschaften, die zu mehr als 75 % direkt oder indirekt von solchen gehalten werden: Art. 3 TJPG.',
     },
   );
 

@@ -251,6 +251,32 @@ describe('Aufgehobene OR-Artikel (TJPG, AS 2026 323) nicht mehr zitiert', () => 
   });
 });
 
+// Fachliche Änderung (§6.3, RECHTSLOGIK 5.10.2026, Gegenprüfung TJPG-Fix):
+// (1) Art. 3 lit. a TJPG nimmt Tochtergesellschaften nur aus, wenn sie «zu mehr
+// als 75 Prozent» von kotierten Gesellschaften gehalten werden; (2) der Weg über
+// das Handelsregisteramt (Art. 11 Abs. 1 TJPG) setzt ein HR-Geschäft voraus
+// («wenn sie eine Tatsache ins Handelsregister eintragen lässt»), separates
+// Dokument zur Anmeldung (Art. 33 Abs. 1 TJPV, SR 955.31). Fedlex eli/cc/2026/323
+// und eli/cc/2026/364, Stand 1.10.2026. Vorher: «börsenkotierte Gesellschaften
+// und ihre Tochtergesellschaften» und HR-Weg ohne Bezug zur Anmeldung.
+describe('WB-Hinweis: Tochter-Ausnahme > 75 % und HR-Weg nur mit Anmeldung (TJPG/TJPV)', () => {
+  const faelle = [
+    ['AG', () => agGruendungsunterlagen(agBasis())],
+    ['GmbH', () => gmbhGruendungsunterlagen(gmbhBasis())],
+  ] as const;
+  for (const [rf, lauf] of faelle) {
+    it(`${rf}: «zu mehr als 75 %» und HR-Weg zusammen mit der Anmeldung (Art. 33 TJPV)`, () => {
+      const hinweis = lauf().unterlagen.find((u) => u.id === 'wb-verzeichnis')?.hinweis ?? '';
+      expect(hinweis).toMatch(/Tochtergesellschaften, die zu mehr als 75\s%/);
+      expect(hinweis).not.toMatch(/kotierte Gesellschaften und ihre Tochtergesellschaften/);
+      expect(hinweis).toMatch(/zusammen mit der Anmeldung/);
+      expect(hinweis).toMatch(/\bArt\. 33 Abs\. 1 TJPV\b/);
+      expect(hinweis).toMatch(/\bArt\. 11 TJPG\b/);
+      expect(hinweis).toMatch(/\bArt\. 9 Abs\. 4 TJPG\b/);
+    });
+  }
+});
+
 describe('Emissionsabgabe (Art. 8 Abs. 1 / Art. 6 Abs. 1 lit. h StG)', () => {
   it('Freibetrag: bis CHF 1 Mio. keine Abgabe (Grenzwert inklusive — «soweit … nicht übersteigen»)', () => {
     expect(emissionsabgabe(undefined)).toBeNull();
