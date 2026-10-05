@@ -132,7 +132,6 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - R · Sammel · Kantonstext — ruht bis Phase 2 (U4 (a)) — FB Bereich 2; Dach W2·13-KANTONE-DATEN
 - R · David 21.9. · Impressum/Datenschutz/Nutzungsbedingungen — erst vor dem Live-Gang — Dach SEO-A11Y; FB S-01
 - N · Sammel · Oberfläche und übrige Verweise — FB Bereiche 6 und 4
-- S · 5.10. · ci.yml CODE_FERN_RE klassiert ^scripts/plan/ code-fern, dort liegt jetzt echter Code (aufraeumen:git) ⇒ Code-Tore übersprungen — ci.yml:70
 - I · 5.10. · Rückbau nach Umstieg: flaechenZeile (scripts/plan), trendZeile (steuerflaecheKern.ts), wip-Zweig abschluss-wache.py (+Tests), Rotation struktur-rotieren.py — cowork-Rest ci.yml:70
 - I · 5.10. · prozess:kennzahlen erkennt Prozess-Commits am Betreff-Muster (QS-/lehre/tor/hook/check:); 6 von 8 Umstieg-Commits fehlen ⇒ 4-Wochen-Prüfung zu günstig — prozess-kennzahlen.ts:83
 - I · 5.10. · Termin 8.10.: CI-Sparplan nachmessen (Ausgangswert 61 381 min/30 Tage, gleiche Methode) — Skill landung, «Nachmessung Sparplan»

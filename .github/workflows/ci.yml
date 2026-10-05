@@ -67,7 +67,7 @@ jobs:
           # (§6.7-Beweis dort, `npx vitest run src/tests/steuerwerkzeuge.
           # test.ts`) — die Pfadliste hier ist wortgleich zu deren
           # CODE_FERNE_MUSTER, damit beide Fassungen nicht auseinanderlaufen.
-          CODE_FERN_RE='(\.md$|^scripts/plan/|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
+          CODE_FERN_RE='(\.md$|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
           # Trotz `.md`-Endung KEIN reiner Doku-Fall (Anlass PR #619, 2.9.2026):
           # .claude/agents/lex-bau.md wurde von Hand geändert, der reine-.md-
           # Kurzschluss unten stufte den Diff als `doku` ein, der Tore-Job

@@ -264,16 +264,22 @@ describe('klassifiziereDiff — Auftrags-Testmatrix', () => {
     expect(klassifiziereDiff(['ROADMAP.md'])).toBe('doku');
   });
 
-  it('[scripts/plan/x.ts] → code-fern', () => {
-    expect(klassifiziereDiff(['scripts/plan/x.ts'])).toBe('code-fern');
+  it('[scripts/cowork/x.ts] → code-fern', () => {
+    expect(klassifiziereDiff(['scripts/cowork/x.ts'])).toBe('code-fern');
+  });
+
+  // QS-CI-ZEIT 5.10.2026: scripts/plan/ trägt seit dem Umstieg echten Code
+  // (Aufräum-Werkzeuge) — bis dahin code-fern, jetzt app-nah (Tore laufen).
+  it('[scripts/plan/x.ts] → code (seit 5.10.2026 nicht mehr code-fern)', () => {
+    expect(klassifiziereDiff(['scripts/plan/x.ts'])).toBe('code');
   });
 
   it('[src/App.tsx] → code', () => {
     expect(klassifiziereDiff(['src/App.tsx'])).toBe('code');
   });
 
-  it('[scripts/plan/x.ts + src/App.tsx] → code (eine app-nahe Datei genügt)', () => {
-    expect(klassifiziereDiff(['scripts/plan/x.ts', 'src/App.tsx'])).toBe('code');
+  it('[scripts/cowork/x.ts + src/App.tsx] → code (eine app-nahe Datei genügt)', () => {
+    expect(klassifiziereDiff(['scripts/cowork/x.ts', 'src/App.tsx'])).toBe('code');
   });
 
   // Anlass PR #619 (2.9.2026): .claude/agents/lex-bau.md wurde von Hand
@@ -349,11 +355,11 @@ describe('klassifiziereDateien — die einzelnen code-fernen Flächen', () => {
   });
 
   it('mehrere code-ferne Dateien zusammen bleiben code-fern', () => {
-    expect(klassifiziereDateien(['scripts/plan/x.ts', 'docs/y.md', 'ROADMAP.md'])).toBe('code-fern');
+    expect(klassifiziereDateien(['scripts/cowork/x.ts', 'docs/y.md', 'ROADMAP.md'])).toBe('code-fern');
   });
 
   // KONSERVATIV: jede andere Fläche kippt auf `code` — auch scripts/** ausserhalb
-  // von plan/cowork, e2e/** und package.json (Auftrag: "konservativ").
+  // von cowork (bis 5.10.2026: plan/cowork), e2e/** und package.json (Auftrag: "konservativ").
   it('package.json ist code (keine Ausnahme)', () => {
     expect(klassifiziereDateien(['package.json'])).toBe('code');
   });
@@ -362,12 +368,16 @@ describe('klassifiziereDateien — die einzelnen code-fernen Flächen', () => {
     expect(klassifiziereDateien(['e2e/foo.e2e.ts'])).toBe('code');
   });
 
-  it('scripts/** ausserhalb plan/cowork ist code', () => {
+  it('scripts/** ausserhalb cowork ist code', () => {
     expect(klassifiziereDateien(['scripts/logik-sweep.ts'])).toBe('code');
   });
 
-  it('scripts/plan/x.ts + scripts/logik-sweep.ts → code (ein Ausreisser genügt)', () => {
-    expect(klassifiziereDateien(['scripts/plan/x.ts', 'scripts/logik-sweep.ts'])).toBe('code');
+  it('scripts/plan/** ist code (seit 5.10.2026, QS-CI-ZEIT)', () => {
+    expect(klassifiziereDateien(['scripts/plan/gitFlaechen.ts'])).toBe('code');
+  });
+
+  it('scripts/cowork/x.ts + scripts/logik-sweep.ts → code (ein Ausreisser genügt)', () => {
+    expect(klassifiziereDateien(['scripts/cowork/x.ts', 'scripts/logik-sweep.ts'])).toBe('code');
   });
 });
 
@@ -440,7 +450,7 @@ describe('Bash↔TS-Parität — alle Literale, echtes grep -E, drei Zweige (19.
     'src/lib/x.ts',
     'src/docs/x.ts', // `^docs/`: Anfangsanker
     'scripts/plan/x.ts',
-    'scripts/planung/x.ts', // `^scripts/plan/`: Schrägstrich gehört zum Muster
+    'scripts/planung/x.ts', // bis 5.10.2026 Grenzfall von `^scripts/plan/`
     'scripts/cowork/y.ts',
     'scripts/check-perf-budget.ts',
     '.claude/agents/lex-bau.md',
