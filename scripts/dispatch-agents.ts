@@ -84,7 +84,7 @@ export const AGENTEN: Record<string, AgentSpez> = {
   synthese: {
     stufe: 'mittel', effort: 'medium',
     beschreibung:
-      'LexMetrik-Synthese (Klasse synthese): Session-Karten, Handoffs, Register- und Chronik-Einträge — Texte, die Folge-Sessions steuern. Nie unter die Mittel-Stufe routen.',
+      'LexMetrik-Synthese (Klasse synthese): Handoffs, EINGANG-Zeilen, Register-Einträge — Texte, die Folge-Sessions steuern. Nie unter die Mittel-Stufe routen.',
     rolle:
       'Du schreibst Steuer-Doku im LexMetrik-Repo — Texte, die künftige Sessions lenken. Ehrlich und mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.',
   },

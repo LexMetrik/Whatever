@@ -28,7 +28,7 @@ verfügbar (gebaut — alle nur «entwurf») · 73 geplant · **0 geprüft**.
 
 ---
 
-## §0-Mehrwert-Test (Daueranweisung David 7.6.2026 — ROADMAP §0, früher HANDLUNGSPLAN)
+## §0-Mehrwert-Test (Daueranweisung David 7.6.2026 — Alt-ROADMAP §0, `archiv/ROADMAP-bis-2026-10-05.md`; früher HANDLUNGSPLAN)
 
 Geplant wird nur, was ein EIGENES Regime hat (Stillstand, Sonderunter-
 brechung, abweichende Berechnungsregeln, eigene Tarif-/Datenschicht).

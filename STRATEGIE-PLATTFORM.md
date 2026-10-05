@@ -20,7 +20,7 @@ in `ROADMAP.md` (früher HANDLUNGSPLAN.md).
 > Prioritäts-Direktive unten gilt NICHT mehr — seit dem 8.8. gilt «Prozess
 > geht grundsätzlich vor Produkt» (Session-Karte 8.8., Memory Nordstern).
 > Der Block bleibt als historischer Kontext stehen; massgeblich sind
-> `npm run plan:next` und die Nordstern-Notiz, nicht dieser Absatz.
+> `ROADMAP.md` (ZIEL/JETZT) und die Nordstern-Notiz, nicht dieser Absatz.
 
 **Übersteuert die Tagespriorität bis zu den ersten Kanzleigesprächen (G1, erst in
 einigen Monaten).** Bis dahin gilt NICHT Nutzer-Validierung als Maßstab, sondern

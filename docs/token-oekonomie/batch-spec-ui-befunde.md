@@ -6,6 +6,7 @@
 
 
 Rolle: UI-Bauer für EINEN Batch der externen UI-Befundliste. Steuerung: `fahrplaene/FAHRPLAN-UI-BEFUNDE.md`
+(eingefroren 5.10.2026: Spezifikation, Häkchen werden nicht nachgeführt)
 (§0 Quer-Lektionen VOR dem Batch vollständig lesen, dann NUR den §-Block deines Batches). Wortlaut der Befunde:
 `docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md` (nur die Zeilen deiner LM-Nummern per grep).
 Regeln, die du lesen musst: `.claude/rules/design.md`, `.claude/rules/schichtentrennung.md`,
@@ -21,34 +22,34 @@ Regeln, die du lesen musst: `.claude/rules/design.md`, `.claude/rules/schichtent
 
 ## Ablauf je Befund (Fahrplan §0.1 Vintage-Regel, §0.2 Referenz-Pflicht)
 - Erst am Prod-Stand (https://lexmetrik.vercel.app) ODER lokalem Preview von origin/main REPRODUZIEREN, genau nach Spalte «Prüfen».
-  Nicht reproduzierbar ⇒ Checkbox `[x]` + «erledigt (überholt): <ein Satz warum>» — NICHT bauen.
+  Nicht reproduzierbar ⇒ im PR-Body «überholt: <ein Satz warum>» — NICHT bauen.
 - `dedup_referenz` lesen; dokumentierte Entscheide (verworfen/aufgeschoben) nicht still kippen.
 - Fix minimal, Darstellungsschicht (§3), Tokens statt Rohwerten (§13/design.md). Keine Änderung an Engines, Tests, Korpus-Daten,
-  Such-/Ranking-Logik, Eingabe-Parsing. Was in diese Klassen fällt ⇒ Checkbox offen lassen + Zeile «zurückgestellt: <Grund>».
+  Such-/Ranking-Logik, Eingabe-Parsing. Was in diese Klassen fällt ⇒ im PR-Body «zurückgestellt: <Grund>».
 - Nachher per Playwright am Preview belegen (Screenshot/Assertion). Programmatisches Scrollen täuscht (§0.4) — echte `mouse.wheel`.
-- Fahrplan-Checkbox `[x]` + Kurzbeleg (Commit-Kurz-SHA folgt beim Abschluss; Dateiname reicht). Altbestand-Auflage §0.2: angefasste
+- Kurzbeleg im PR-Body (Dateiname reicht). Altbestand-Auflage §0.2: angefasste
   `Z.`-Referenzen bekommen zusätzlich den §-/Überschriften-Anker.
-- WIP-Commit nach jedem Befund (F5). Commit-Message erste Zeile: `W2·17-UI-BEFUNDE <Batch>: LM-xxx <Klartext>`.
+- WIP-Commit nach jedem Befund (F5). Commit-Message erste Zeile: `<Kürzel> <Batch>: LM-xxx <Klartext>`.
 
 ## Tore (nackt, volle Ausgabe lesen) und Landung
 - `npx tsc -b`, `npm run test -- --run` (oder das Projekt-Äquivalent laut package.json), `npm run check:design-tokens`,
   `npm run check:farbwelt`, `npm run golden:vergleich`, zuletzt `npm run gate`. Rot = fixen oder Befund zurückstellen, nie umgehen.
 - `npm run check:gegenpruefung` muss «kein Risikopfad» melden; sonst Datei aus dem Diff nehmen und Befund zurückstellen.
 - `npm run check:merge-schutz` vor dem PR.
-- Push Feature-Branch, PR gegen main: Titel `W2·17-UI-BEFUNDE <Batch>: <n> Befunde (<Themen>)`. PR-Body: Tabelle LM · Ergebnis
+- Push Feature-Branch, PR gegen main: Titel `<Kürzel> <Batch>: <n> Befunde (<Themen>)`. PR-Body: Tabelle LM · Ergebnis
   (gebaut/überholt/zurückgestellt) · Beleg; Tor-Schlusszeilen wörtlich; Vorher/Nachher-Screenshots NICHT hochladen (Text reicht).
   LETZTER Absatz des Bodys, eigener Absatz, unformatiert, ohne Leerzeile innerhalb:
   ```
   🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-  Roadmap: W2·17-UI-BEFUNDE
+  Roadmap: <Kürzel>
   ```
   (kein `Roadmap-Status:` — der Dach-Schritt bleibt offen.) KEIN `--auto`, KEIN Merge — landet die Haupt-Session.
 - Preview-Prozess beenden. Worktree NICHT entfernen (Haupt-Session räumt ab).
 
 ## TABU
 Kein Push nach main · keine Änderung an ROADMAP.md/STRUKTUR.md · kein `git stash`/`--amend`/`reset --hard` · nichts ausserhalb `src/**`,
-`public/**` (nur Nicht-Korpus-Assets), `fahrplaene/FAHRPLAN-UI-BEFUNDE.md`, `DESIGN-REGLEMENT*.md` (nur wenn ein Befund eine Reglement-Zeile
+`public/**` (nur Nicht-Korpus-Assets), `DESIGN-REGLEMENT*.md` (nur wenn ein Befund eine Reglement-Zeile
 verlangt) · keine neuen Abhängigkeiten · keine Test-Anpassung (§6.3; nötig ⇒ Befund zurückstellen und begründen).
 
 ## Vertrauensgrenze (§14.7)

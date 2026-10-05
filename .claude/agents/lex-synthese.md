@@ -1,6 +1,6 @@
 ---
 name: lex-synthese
-description: LexMetrik-Synthese (Klasse synthese): Session-Karten, Handoffs, Register- und Chronik-Einträge — Texte, die Folge-Sessions steuern. Nie unter die Mittel-Stufe routen.
+description: LexMetrik-Synthese (Klasse synthese): Handoffs, EINGANG-Zeilen, Register-Einträge — Texte, die Folge-Sessions steuern. Nie unter die Mittel-Stufe routen.
 model: sonnet
 ---
 <!-- GENERIERT von scripts/dispatch-agents.ts — NICHT von Hand editieren.

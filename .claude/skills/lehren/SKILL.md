@@ -61,8 +61,8 @@ im Fahrplan-Register. Nachfolge-Messung `npm run tor:bewaehrung` (Belege: Archiv
 
 **F2-Verschärfungen (29.8.2026, dritter und vierter Beleg der Familie):**
 (i) *Retry-/Abschneide-Maskierung:* (Beleg 29.8.2026: Archiv §F2-Verschaerfungen.) Gegenmittel wie
-F2b/F2e: Erstversuchs-Rot und nicht-gelaufene Specs sind Meldungen; Diagnose-
-Posten im Fehlerbuch, Retry-Politik ist David-Entscheid.
+F2b/F2e: Erstversuchs-Rot und nicht-gelaufene Specs sind Meldungen; Diagnose
+als EINGANG-Zeile, Retry-Politik ist David-Entscheid.
 (ii) *Automatik prüft Teilmenge:* der Fedlex-Frische-Lauf fuhr 5 handverlesene Offline-Tore statt des Gates (Beleg: Archiv §F2-Verschaerfungen-ii). Gegenmittel: Workflow auf Gate-Lauf
 (Frische-Fix-PR); die Auto-Merge-Politik auf Risikopfaden (Verdikt-Pflicht vs.
 David-Rahmen 16.7.) wartet auf David.
@@ -91,8 +91,8 @@ Beobachtung (2.9.2026, #629): Merge-Lauf auf main `cancelled`, Live-Build blieb 
 26.7.2026 `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` — die
 Concurrency kann es nicht gewesen sein (Mechanik-Agent 2.9., Reproduktion
 negativ). Kandidaten: ein Selbst-Cancel-Schritt im Workflow bei bewegtem HEAD,
-oder ein GitHub-seitiger Abbruch. ROADMAP-Zeile unter `QS-AUTOMATIK` (Ursache
-klären, Rot-Beweis). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
+oder ein GitHub-seitiger Abbruch. Ursache klären, Rot-Beweis: offen, getragen von der
+Wiedervorlage unten (die ROADMAP-Zeile `QS-AUTOMATIK` entfiel mit dem Umstieg 5.10.2026). Bis dahin Regel Skill `landung` Nachkontrolle 0: nach
 einem Code-Merge kein weiterer main-Push, bis der Deploy-Job grün ist. <!-- @wiedervorlage: 2027-03-02 -->
 **F14 — Additiver Refresh überschreibt gute Bestandsdaten statt sie zu mergen
 (12.9.2026, PR #816, Delta-Prüfung).** Der B1-Zweig von `--regeste-refresh` (`scripts/normtext-entscheide.ts`) übernahm Auszug-only-Ergebnisse vollständig und löschte bei 6 von 1259 BGE die `regeste.sprachfassungen` (Beleg: Archiv §F14). Gegenmittel
@@ -131,7 +131,7 @@ bleibt offen (15.9.2026, `W2·5m-LESER-V3`, vier Posten, vier Wochen).** Die Ber
 ihr im Weg steht — die eigene Checkbox ist das Einzige, was nicht stört, wenn es
 stehenbleibt; und ein Doku-Aufräumen nach Zeichenzahl entfernt Warn-Absätze zuverlässiger,
 als es die darin hinterlegten Aufträge ausführt. Schaden: vier Wochen falsche Steuerung (Archiv §F17-Schaden).
-**Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** *(Werkzeug abgebaut 5.10.2026, Umstieg)* — trägt eine eingerückte
+**Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** *(Werkzeug abgebaut 5.10.2026, Umstieg; seither nur Prosa — Skill `bauschritt` Station D, `landung` Ziff. 9: der letzte PR streicht das Vorhaben aus JETZT und archiviert erledigte Merkzettel; die Klasse ist damit wieder ungeschützt)* — trägt eine eingerückte
 Checklisten-Zeile eine Etappen-Kennung und markiert der per `fahrplan:` verlinkte Fahrplan
 dieselbe Kennung mit ✅/«VOLLZOGEN», ist die offene Checkbox rot
 (`scripts/plan/etappenBuchung.ts`, `src/tests/plan-check.etappen-buchung.test.ts`).
@@ -229,7 +229,7 @@ steht es schon in Datei, Konfiguration oder `--help`? Dann Verweis statt
 Wortlaut; bleiben dürfen Konvention, Grund, Falle. (c) *Leitwort:* dieselbe
 Aufzählung an mehreren Orten wird ein Wort (Muster «Nullprobe»). Sicherung
 F17 (#577 → #876): trägt ein Satz einen Auftrag, wird er vor dem Streichen
-ausgeführt oder als Posten angelegt; Rechtsschutz-Text bleibt aussen vor.
+ausgeführt oder als EINGANG-Zeile angelegt; Rechtsschutz-Text bleibt aussen vor.
 
 ## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
 
@@ -287,3 +287,4 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
   getragen: die Befunde sind Inhalts-**Frische**, nicht Architektur; ein
   zweiter autoritativer Artefakt hätte die Drift verdoppelt.
   *Nachsatz 20.9.2026:* David gab das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`, Wächter `check:plan` 16 *(Werkzeug abgebaut 5.10.2026, Umstieg)* — keine zweite Wahrheit, sondern Auslagerung der Nebenfunde aus der einen. Keine neue F-Klasse (Messzahlen: Archiv §Bewusst-nicht-ROADMAP-Restrukturierung).
+  *Nachsatz 5.10.2026:* Restrukturierung doch vollzogen (Umstieg U1–U8, Entscheid David): ROADMAP = ZIEL · JETZT · EINGANG; ein Nebenfund = eine EINGANG-Zeile, `plan/posten/` bleibt Merkzettel-Ablage ohne Anlegepflicht.

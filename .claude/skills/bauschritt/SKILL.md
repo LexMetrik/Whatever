@@ -28,7 +28,10 @@ ohne Rückfrage nach diesem Zyklus.
    EINGANG). Fremder Zweig, Worktree oder PR auf derselben Fläche =
    Kollision → melden, nie parallel in dieselbe Fläche bauen.
 2. **Was gebaut wird:** was David im Chat aufträgt, sonst das oberste freie
-   JETZT-Vorhaben. Belegt (Zweig/PR mit seinem Kürzel) ⇒ **STOPP, melden**.
+   JETZT-Vorhaben. Belegt (Zweig, Worktree oder PR, dessen Name mit dem Kürzel beginnt —
+   Worktrees/PRs aus Ziff. 1, gepushte Zweige ohne PR per
+   `git branch -r | grep -iE '^ *origin/<Kürzel>(/|-|$)'`) ⇒
+   **STOPP, melden**.
 3. **Sichtbar werden** (F6, Regel 7 unten): Zweig anlegen und **pushen,
    bevor der Detailplan entsteht** — nie main (main nimmt seit 19.9.2026 nur
    die Merge-Queue, kein Bypass; Hook `tor-schutz.py` blockt, Skill
@@ -68,7 +71,8 @@ ohne Rückfrage nach diesem Zyklus.
 - **Lebendige Spec (David 15.8.2026):** Weicht die Spec vom Ist-Code ab, wird
   sie **sofort in der Fahrplan-Datei korrigiert** (datiert, Anlass-Halbsatz)
   und weitergebaut — nie gegen die veraltete Spec bauen, nie die Abweichung
-  nur im Chat vermerken.
+  nur im Chat vermerken. Spec-Korrektur bleibt erlaubt; «eingefroren»
+  betrifft nur Fortschritts-Häkchen und Bau-Stand.
 - **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
   diese Session orchestriert und landet.
 - **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
