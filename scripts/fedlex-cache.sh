@@ -453,6 +453,7 @@ EINTRAEGE=(
 )
 
 fehler=0
+netzfehler=0  # Exit 2: Quelle nicht erreichbar (curl-Fehler/Timeout, HTTP 000/5xx) — keine Aussage
 for e in "${EINTRAEGE[@]}"; do
   # 6. Feld (sr) ist OPTIONAL: trägt es eine SR-Nummer, prüft das Tor die im
   # HTML eingebettete <p class="srnummer">NNN</p> gegen die erwartete SR. Das
@@ -502,9 +503,18 @@ for e in "${EINTRAEGE[@]}"; do
   #      auf dieselbe Frage (§5).
   # Darum jetzt: der gepinnte Abruf scheitert LAUT. Reparatur ist Sache des
   # Re-Pins, nicht dieses Skripts.
-  if [ "$rc" -ne 0 ] || [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
+  # NETZ ≠ BEFUND (Monitor-Rückbau 5.10.2026, Entscheid David «wichtig ist gesetzestext»): ein
+  # curl-Fehler/Timeout oder HTTP 000/5xx sagt nichts über den Pin — Exit 2 («keine Aussage»,
+  # Konvention der Netz-Tore; check:netz wiederholt einmal und meldet sonst einen Hinweis).
+  # HTTP 404 oder ein zu kleiner 200-Body bleiben FEHLER (Pin weg bzw. Shell).
+  if [ "$rc" -ne 0 ] || [ "$code" = "000" ] || [ "${code:0:1}" = "5" ]; then
+    echo "NETZ    ${name}: Abruf nicht möglich (HTTP ${code}, curl-Exit ${rc}) — keine Aussage"
+    echo "        URL: ${url}"
+    rm -f "$datei"  # Fehlerseite/Teil-Datei nie als Cache stehen lassen (check:zitate läse sie)
+    netzfehler=$((netzfehler+1)); continue
+  fi
+  if [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
     echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, curl-Exit ${rc}, ${groesse} B)"
-    [ "$rc" -ne 0 ] && rm -f "$datei"  # Teil-Datei nie als Cache stehen lassen
     echo "        URL: ${url}"
     echo "        KEIN Fallback auf andere html-Revisionen — das würde still eine"
     echo "        nicht-kanonische Fassung einsetzen. Reparatur: Konsolidierung ${kons}"
@@ -555,5 +565,9 @@ done
 if [ "$fehler" -gt 0 ]; then
   echo; echo "${fehler} Gesetz(e) mit Problemen — Konsolidierungsstände im Quellen-Register prüfen."
   exit 1
+fi
+if [ "$netzfehler" -gt 0 ]; then
+  echo; echo "${netzfehler} Gesetz(e) nicht abrufbar (Netz/Quelle) — keine Aussage, Exit 2."
+  exit 2
 fi
 echo; echo "Alle Caches aktuell, alle Pflicht-Anker vorhanden."

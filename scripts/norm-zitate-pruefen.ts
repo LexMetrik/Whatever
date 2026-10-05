@@ -129,12 +129,15 @@ console.log(`\n${total} eindeutige Zitate geprüft · ${fehler} Befunde`);
 // kann, ist gefährlicher als keines. Rot bei echten Befunden UND wenn kein
 // einziger Cache lesbar war (Caches besorgt `check:caches`, das in check:netz
 // davor läuft).
+// Reihenfolge seit 5.10.2026 (Monitor-Rückbau): echte Zitat-Befunde zuerst (Exit 1); fehlt
+// nur ein Cache (check:caches meldet Netz-Ausfall mit Exit 2 und löscht die Datei), ist das
+// «keine Aussage» — Exit 2, nie still grün und nie ein Gesetzestext-Rot.
 const fehlendeCaches = Object.keys(CACHES).filter((g) => !(g in html));
-if (fehlendeCaches.length > 0) {
-  console.error(`check:zitate ROT: ${fehlendeCaches.length} Gesetzes-Cache(s) nicht lesbar (${fehlendeCaches.join(', ')}) — Zitate dieser Gesetze wären still übersprungen (erst \`npm run check:caches\`).`);
-  process.exit(1);
-}
 if (fehler > 0) {
   console.error(`check:zitate ROT: ${fehler} Zitat-Befunde (Liste oben).`);
   process.exit(1);
+}
+if (fehlendeCaches.length > 0) {
+  console.error(`check:zitate KEINE AUSSAGE (Exit 2): ${fehlendeCaches.length} Gesetzes-Cache(s) nicht lesbar (${fehlendeCaches.join(', ')}) — Zitate dieser Gesetze ungeprüft (erst \`npm run check:caches\`).`);
+  process.exit(2);
 }
