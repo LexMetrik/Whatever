@@ -233,14 +233,14 @@ Stufen-Status `[~]`).
 
 **B · aus `W2·13-KANTONE-DATEN` (Daten & Extraktion):**
 
-  - → Posten `plan/posten/2026-09-24-k-4-einzel-nachzuege-stand-currency.md` (K-4 · Einzel-Nachzüge Stand/Currency)
-  - → Posten `plan/posten/2026-09-24-k-6-quellen-hygiene-lexfind-amtlich-dedupe.md` (K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe)
-  - → Posten `plan/posten/2026-09-24-k-7-pdf-werkstatt-vd-sz-zh-range-platzhalter.md` (K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter)
-  - → Posten `plan/posten/2026-09-24-k-8-xhtml-p-strukturerhalt.md` (K-8 · xhtml-<p>-Strukturerhalt)
-  - → Posten `plan/posten/2026-09-24-k-9-erlass-werkzeug-bruecke-kanton.md` (K-9 · Erlass→Werkzeug-Brücke Kanton)
-  - → Posten `plan/posten/2026-09-24-k-10-ar-sidecar-batch.md` (K-10 · AR-Sidecar-Batch)
-  - → Posten `plan/posten/2026-09-24-k-12-reports-kuratierte-listen.md` (K-12 · Reports & kuratierte Listen)
-  - → Posten `plan/posten/2026-09-24-k-13-systematik-baeume-7-kantone.md` (K-13 · Systematik-Bäume 7 Kantone)
+  - → Posten `archiv/posten/2026-09-24-k-4-einzel-nachzuege-stand-currency.md` (K-4 · Einzel-Nachzüge Stand/Currency)
+  - → Posten `archiv/posten/2026-09-24-k-6-quellen-hygiene-lexfind-amtlich-dedupe.md` (K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe)
+  - → Posten `archiv/posten/2026-09-24-k-7-pdf-werkstatt-vd-sz-zh-range-platzhalter.md` (K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter)
+  - → Posten `archiv/posten/2026-09-24-k-8-xhtml-p-strukturerhalt.md` (K-8 · xhtml-<p>-Strukturerhalt)
+  - → Posten `archiv/posten/2026-09-24-k-9-erlass-werkzeug-bruecke-kanton.md` (K-9 · Erlass→Werkzeug-Brücke Kanton)
+  - → Posten `archiv/posten/2026-09-24-k-10-ar-sidecar-batch.md` (K-10 · AR-Sidecar-Batch)
+  - → Posten `archiv/posten/2026-09-24-k-12-reports-kuratierte-listen.md` (K-12 · Reports & kuratierte Listen)
+  - → Posten `archiv/posten/2026-09-24-k-13-systematik-baeume-7-kantone.md` (K-13 · Systematik-Bäume 7 Kantone)
   - [x] **Erledigt:** ZH-Stufe 2 · 2b · 2c · Kern-Erlasse · ZH-4e · K-14 · `inkraftSeit` (geprüft und abgelehnt) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - → Posten `plan/posten/2026-09-24-r1-restposten.md` (R1-Restposten)
   - → Posten `plan/posten/2026-09-24-zh-4d-gliederung-uebergangsbestimmungen.md` (ZH-4d · Gliederung + Übergangsbestimmungen)
@@ -252,7 +252,7 @@ Stufen-Status `[~]`).
   - → Posten `plan/posten/2026-09-24-kern-kategorie-als-registerfeld-statt-titel-muster.md` (Kern-Kategorie als Registerfeld statt Titel-Muster)
   - → Posten `plan/posten/2026-09-24-sg-langform-erstzitate-heben-recall-der-zitat-bruecke.md` (SG-Langform-Erstzitate heben Recall der Zitat-Brücke)
   - → Posten `plan/posten/2026-09-24-manifest-sprache-ehrlich-dubletten.md` (Manifest-Sprache ehrlich + Dubletten)
-  - → Posten `plan/posten/2026-09-24-lexfind-api-vertrag-gebrochen.md` (lexfind-API-Vertrag gebrochen)
+  - → Posten `archiv/posten/2026-09-24-lexfind-api-vertrag-gebrochen.md` (lexfind-API-Vertrag gebrochen)
 
 
 

@@ -21,7 +21,7 @@ anlass: Rückbau retro:17/Selbstopt (PR #951, 20.9.2026) — Restfrage aus der N
   (`selbstopt:erheben` gelöscht) ist er zusätzlich ein toter Verweis.
 
 **Bereits erfasst, keine doppelte Arbeit:** Dieser exakte Befund steht wortgleich schon im
-offenen Posten `plan/posten/2026-09-20-hook-prosa-nennt-retro-17-das-abgebaut-wird.md`
+offenen Posten `archiv/posten/2026-09-20-hook-prosa-nennt-retro-17-das-abgebaut-wird.md`
 („Nachtrag Bug-Check 20.9.2026" — dort: „der Spool ist ein vorbestehendes Artefakt ohne
 Leser. Im selben Hook-Diff mit erledigen."). Diese Datei hier bestätigt den Befund
 unabhängig (21.9.2026) und ergänzt die Schreiber-Bestätigung; der Fix (Schreib-Aufruf

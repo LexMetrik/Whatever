@@ -47,18 +47,18 @@ nie in der Projektion, immer in der Pipeline-Quelle (§5).
   - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
   - → Posten `plan/posten/2026-09-24-avg-normkeys-nachfuehren-alias-kollisionen.md` (AVG-normKeys nachführen + Alias-Kollisionen)
   - → Posten `plan/posten/2026-09-24-bezuege-kanten-mit-phantom-zitaten.md` (Bezüge-Kanten mit Phantom-Zitaten)
-  - → Posten `plan/posten/2026-09-24-kernerlasse-tranche-2.md` (Kernerlasse-Tranche 2)
+  - → Posten `archiv/posten/2026-09-24-kernerlasse-tranche-2.md` (Kernerlasse-Tranche 2)
   - → Posten `plan/posten/2026-09-24-17-scripts-fedlex-eli-aufloesen-ts-44-56-liefert-falsche-eli.md` (§17 · scripts/fedlex-eli-aufloesen.ts:44-56 liefert falsche ELI)
   - → Posten `plan/posten/2026-09-24-erlass-filtert-nur-die-bund-route.md` (--erlass= filtert nur die Bund-Route)
-  - → Posten `plan/posten/2026-09-24-check-pdf-quellen-kanton-ratsche-152-erlasse-ohne-pdf.md` (check:pdf-quellen: Kanton-Ratsche, 152 Erlasse ohne PDF)
-  - → Posten `plan/posten/2026-09-24-golden-token-blind-fuer-randtitel.md` (Golden-Token blind für Randtitel)
+  - → Posten `archiv/posten/2026-09-24-check-pdf-quellen-kanton-ratsche-152-erlasse-ohne-pdf.md` (check:pdf-quellen: Kanton-Ratsche, 152 Erlasse ohne PDF)
+  - → Posten `archiv/posten/2026-09-24-golden-token-blind-fuer-randtitel.md` (Golden-Token blind für Randtitel)
   - → Posten `plan/posten/2026-09-24-gl-schluessel-auf-amtliche-canonical-link-form-iii-b-7-1.md` (GL-Schlüssel auf amtliche canonical_link-Form (III-B.7.1))
-  - → Posten `plan/posten/2026-09-24-public-normtext-historie-ausserhalb-des-paritaets-ingest.md` (public/normtext/historie/** ausserhalb des Paritäts-Ingest)
-  - → Posten `plan/posten/2026-09-24-zitat-extraktion-dreistufig-trennen.md` (Zitat-Extraktion dreistufig trennen)
-  - → Posten `plan/posten/2026-09-24-testdaten-fuer-die-zitat-extraktion-aus-rcds-hugging-face.md` (Testdaten für die Zitat-Extraktion aus rcds/* (Hugging Face))
+  - → Posten `archiv/posten/2026-09-24-public-normtext-historie-ausserhalb-des-paritaets-ingest.md` (public/normtext/historie/** ausserhalb des Paritäts-Ingest)
+  - → Posten `archiv/posten/2026-09-24-zitat-extraktion-dreistufig-trennen.md` (Zitat-Extraktion dreistufig trennen)
+  - → Posten `archiv/posten/2026-09-24-testdaten-fuer-die-zitat-extraktion-aus-rcds-hugging-face.md` (Testdaten für die Zitat-Extraktion aus rcds/* (Hugging Face))
   - → Posten `plan/posten/2026-09-24-lexwork-standlesung-kennt-in-vollzug-seit-nicht.md` (LexWork-Standlesung kennt «in Vollzug seit» nicht)
-  - → Posten `plan/posten/2026-09-24-tor-gegen-import-nebenwirkung-void-main.md` (Tor gegen Import-Nebenwirkung void main())
-  - → Posten `plan/posten/2026-09-24-bund-korpus-gegen-legalize-ch-abgleichen-nur-test-bericht.md` (Bund-Korpus gegen legalize-ch abgleichen (nur Test/Bericht))
+  - → Posten `archiv/posten/2026-09-24-tor-gegen-import-nebenwirkung-void-main.md` (Tor gegen Import-Nebenwirkung void main())
+  - → Posten `archiv/posten/2026-09-24-bund-korpus-gegen-legalize-ch-abgleichen-nur-test-bericht.md` (Bund-Korpus gegen legalize-ch abgleichen (nur Test/Bericht))
 
   - → Posten `plan/posten/2026-09-24-einheit-hochzahl-zerrissen-125-cm-3-statt-cm.md` (Einheit + Hochzahl zerrissen («125 cm 3» statt cm³))
   - → Posten `plan/posten/2026-09-24-fuehrende-klammer-guillemet-in-dt-marken-verstuemmelt.md` (Führende Klammer/Guillemet in <dt>-Marken verstümmelt)
@@ -104,7 +104,7 @@ Erledigt und hier als Beleg belassen:
 
 **Nacht 5.9.2026 (#687/#695, Läufe 33936281247/33937353756):**
 - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
-- → Posten `plan/posten/2026-09-24-anker-modell-estv-zieht-nur-verlinkte-normen.md` (Anker-Modell ESTV zieht nur verlinkte Normen)
+- → Posten `archiv/posten/2026-09-24-anker-modell-estv-zieht-nur-verlinkte-normen.md` (Anker-Modell ESTV zieht nur verlinkte Normen)
 
 ### Restposten aus ROADMAP.md *(verlagert 20.9.2026, Nachzug Deckel-Puffer)*
 
@@ -121,19 +121,19 @@ in der Pipeline-Quelle (§5).
 
 - *7 erledigte Einträge dieses Abschnitts wörtlich in [`archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md`](../archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md), Abschnitt «Restposten aus ROADMAP.md *(verlagert 20.9.2026, Nachzug Deckel-Puffer)*» (verschoben 24.9.2026).*
   - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
-  - → Posten `plan/posten/2026-09-24-automatik-pr-auto-merge-auf-risikopfad-haengt-immer-am-merge.md` (Automatik-PR «(Auto-Merge)» auf Risikopfad hängt immer am Merge-Schutz)
-  - → Posten `plan/posten/2026-09-24-re-pin-ohne-snapshot-lauf-laesst-lokale-pin-marker-veralten.md` (Re-Pin ohne Snapshot-Lauf lässt lokale Pin-Marker veralten)
+  - → Posten `archiv/posten/2026-09-24-automatik-pr-auto-merge-auf-risikopfad-haengt-immer-am-merge.md` (Automatik-PR «(Auto-Merge)» auf Risikopfad hängt immer am Merge-Schutz)
+  - → Posten `archiv/posten/2026-09-24-re-pin-ohne-snapshot-lauf-laesst-lokale-pin-marker-veralten.md` (Re-Pin ohne Snapshot-Lauf lässt lokale Pin-Marker veralten)
   - → Posten `plan/posten/2026-09-24-check-vernehmlassungen-netz-sieht-nur-8-erlasse.md` (check:vernehmlassungen-netz sieht nur 8 Erlasse)
-  - → Posten `plan/posten/2026-09-24-uebrige-raw-caches-sortiert-schreiben.md` (Übrige Raw-Caches sortiert schreiben)
+  - → Posten `archiv/posten/2026-09-24-uebrige-raw-caches-sortiert-schreiben.md` (Übrige Raw-Caches sortiert schreiben)
   - → Posten `plan/posten/2026-09-24-kleinfunde-materialien-gegenpruefung-910.md` (Kleinfunde Materialien (Gegenprüfung #910))
   - → Posten `plan/posten/2026-09-24-17-wurzel-fix-soft-law-detektor-prueft-nur-den-toc-token-nic.md` (§17-Wurzel-Fix: soft-law-Detektor prüft nur den ToC-Token, nicht das Publikationsdatum)
-  - → Posten `plan/posten/2026-09-24-17-tor-reihenfolge-generat-konsistenz-vor-merge-schutz.md` (§17 Tor-Reihenfolge: Generat-Konsistenz vor Merge-Schutz)
+  - → Posten `archiv/posten/2026-09-24-17-tor-reihenfolge-generat-konsistenz-vor-merge-schutz.md` (§17 Tor-Reihenfolge: Generat-Konsistenz vor Merge-Schutz)
   - → Posten `plan/posten/2026-09-24-gate-flaky-parallel-zu-check-drift-ts-netz.md` (gate flaky parallel zu check-drift.ts --netz)
-  - → Posten `plan/posten/2026-09-24-deckungs-sicht-stand-aus-quell-statt-lauf-datum.md` (Deckungs-Sicht: stand aus Quell- statt Lauf-Datum)
+  - → Posten `archiv/posten/2026-09-24-deckungs-sicht-stand-aus-quell-statt-lauf-datum.md` (Deckungs-Sicht: stand aus Quell- statt Lauf-Datum)
   - → Posten `plan/posten/2026-09-12-rectifies-waechter-blind-fuer-fedlex-berichtigungen-ohne-htm.md` (Punkt 1: rectifies-Tor: 20 Berichtigungen nur als doc/pdf, Obergrenze 20/20 ohne Luft)
   - → Posten `plan/posten/2026-09-24-rectifies-tor-sr-fallback-blind-fuer-fassungsfehler.md` (rectifies-Tor: SR-Fallback blind für Fassungsfehler)
   - → Posten `plan/posten/2026-09-24-fedlex-filestore-http-200-angular-shell-statt-404.md` (Fedlex-Filestore: HTTP 200 + Angular-Shell statt 404)
-  - → Posten `plan/posten/2026-09-24-monats-jobs-eroeffnen-prs-mit-reinem-datums-churn.md` (Monats-Jobs eröffnen PRs mit reinem Datums-Churn)
+  - → Posten `archiv/posten/2026-09-24-monats-jobs-eroeffnen-prs-mit-reinem-datums-churn.md` (Monats-Jobs eröffnen PRs mit reinem Datums-Churn)
 
 ## §3 — `QS-DATA-INGEST-DRIFT` · Ingest-Strecke 3× langsamer
 
@@ -202,37 +202,37 @@ Navigation ab, #1239); ein «einmal»-Seed-Wächter erst beim Erreichen des Ziel
 Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 
   - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
-  - → Posten `plan/posten/2026-09-24-frische-workflow-faehrt-kein-check-netz-fedlex-versionen.md` (Frische-Workflow fährt kein check:netz/fedlex-versionen)
+  - → Posten `archiv/posten/2026-09-24-frische-workflow-faehrt-kein-check-netz-fedlex-versionen.md` (Frische-Workflow fährt kein check:netz/fedlex-versionen)
 - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 7: DIAGNOSE · e2e-Flake suche-seite.e2e.ts («Deep-Link ?q=Miete … ungekappt»))
 - → Posten `plan/posten/2026-09-24-gliederungsbaum-knoten-merge-ohne-adjazenz-bedingung.md` (Gliederungsbaum: Knoten-Merge ohne Adjazenz-Bedingung)
 - → Posten `plan/posten/2026-09-24-lm-165-deep-link-auf-grossen-erlassen-scrollt-weit-uebers-zi.md` (LM-165 · Deep-Link auf grossen Erlassen scrollt weit übers Ziel)
-- → Posten `plan/posten/2026-09-24-prozess-befund-anker-sweep-vor-jedem-rest-batch.md` (PROZESS · Befund-Anker-Sweep vor jedem Rest-Batch)
+- → Posten `archiv/posten/2026-09-24-prozess-befund-anker-sweep-vor-jedem-rest-batch.md` (PROZESS · Befund-Anker-Sweep vor jedem Rest-Batch)
 - → Posten `plan/posten/2026-09-24-k-waechter-seit-16-8-auf-ci-im-erstversuch-69-69-rot-von-ret.md` (⌘K-Wächter seit ≥16.8. auf CI im Erstversuch 69/69 rot — von retries:2 maskiert)
-- → Posten `plan/posten/2026-09-24-leerflaechen-reservierung-gesetze-messbasiert-loesen-l1-l2-s.md` (Leerflächen-Reservierung /gesetze messbasiert lösen (L1↔L2-Spannung))
-- → Posten `plan/posten/2026-09-17-check-lizenzen-in-agent-worktrees-ohne-node-modules-immer-ro.md` (Punkt 9: Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig))
+- → Posten `archiv/posten/2026-09-24-leerflaechen-reservierung-gesetze-messbasiert-loesen-l1-l2-s.md` (Leerflächen-Reservierung /gesetze messbasiert lösen (L1↔L2-Spannung))
+- → Posten `archiv/posten/2026-09-17-check-lizenzen-in-agent-worktrees-ohne-node-modules-immer-ro.md` (Punkt 9: Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig))
   - → Posten `plan/posten/2026-09-24-flexsearch-suggest-true-wirkt-bei-mehrwort-queries-wie-oder.md` (FlexSearch suggest:true wirkt bei Mehrwort-Queries wie ODER/fuzzy)
   - *5 erledigte Einträge dieses Abschnitts (vormals zwischen den Zeigern) wörtlich in [`archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md`](../archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md), Abschnitt «Nachzug 24.9.2026» (verschoben 24.9.2026).*
-  - → Posten `plan/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 2: e2e-Assertions-Latten unter CPU-Aushungerung)
+  - → Posten `archiv/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 2: e2e-Assertions-Latten unter CPU-Aushungerung)
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 8: druck-fundstellen-z2 flakt NUR auf CI-Runnern)
   - → Posten `plan/posten/2026-09-24-kalender-export-termine-als-frei-markieren-transp-transparen.md` (Kalender-Export: Termine als «frei» markieren (TRANSP:TRANSPARENT))
-  - → Posten `plan/posten/2026-09-24-lm-016-wurzel-topbar-icon-zeile-an-die-brotkrume-breite-angl.md` (LM-016-Wurzel: Topbar-Icon-Zeile an die Brotkrume-Breite angleichen)
-  - → Posten `plan/posten/2026-09-24-perf-blick-auf-den-langen-artikel-index-aus-pr-486.md` (Perf-Blick auf den langen Artikel-Index (aus PR #486))
-  - → Posten `plan/posten/2026-09-24-check-materialien-laeuft-durch-blossen-kalender-ablauf-rot.md` (check:materialien läuft durch blossen Kalender-Ablauf rot)
-  - → Posten `plan/posten/2026-09-24-muster-test-pinnt-von-hand-tageswert-anderswo-suchen.md` (Muster «Test pinnt von-Hand-Tageswert» anderswo suchen)
+  - → Posten `archiv/posten/2026-09-24-lm-016-wurzel-topbar-icon-zeile-an-die-brotkrume-breite-angl.md` (LM-016-Wurzel: Topbar-Icon-Zeile an die Brotkrume-Breite angleichen)
+  - → Posten `archiv/posten/2026-09-24-perf-blick-auf-den-langen-artikel-index-aus-pr-486.md` (Perf-Blick auf den langen Artikel-Index (aus PR #486))
+  - → Posten `archiv/posten/2026-09-24-check-materialien-laeuft-durch-blossen-kalender-ablauf-rot.md` (check:materialien läuft durch blossen Kalender-Ablauf rot)
+  - → Posten `archiv/posten/2026-09-24-muster-test-pinnt-von-hand-tageswert-anderswo-suchen.md` (Muster «Test pinnt von-Hand-Tageswert» anderswo suchen)
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 9: Alt-Flake qsui-hierarchie.e2e.ts (Vorlagen-Block, ~25 %/Fall, Nullprobe-belegt 25/84 auf main))
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 10: Alt-Flake leser-weiterlesen-r4-r8 (Shard-Kontext, vorbestehend, Befund 9.8.2026))
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 11: Alt-Flake leser-ohne-gliederungslinie.e2e.ts:71 (OR Art. 319, Befund 16.8.2026, Vorprobe LESER-V3))
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 12: Flake-Beobachtung 14.8.2026 (Voll-Suite, isoliert grün))
-  - → Posten `plan/posten/2026-09-24-klick-pfad-der-gliederungs-zeile-perf-restposten-w2-19.md` (Klick-Pfad der Gliederungs-Zeile (Perf-Restposten W2·19))
-  - → Posten `plan/posten/2026-09-24-lese-kadenz-tbt-4-u3-rest-10-s-32-s-1-unmerklich.md` (Lese-Kadenz-TBT @4× (U3-Rest, ~10 s/32 s, @1× unmerklich))
-  - → Posten `plan/posten/2026-09-24-liste-gesetze-370-px-leerflaeche-am-seitenende-schliessen.md` (Liste /gesetze: ~370-px-Leerfläche am Seitenende schliessen)
-  - → Posten `plan/posten/2026-09-24-tor-gegen-case-blinde-korpus-pfad-literale.md` (Tor gegen case-blinde Korpus-Pfad-Literale)
+  - → Posten `archiv/posten/2026-09-24-klick-pfad-der-gliederungs-zeile-perf-restposten-w2-19.md` (Klick-Pfad der Gliederungs-Zeile (Perf-Restposten W2·19))
+  - → Posten `archiv/posten/2026-09-24-lese-kadenz-tbt-4-u3-rest-10-s-32-s-1-unmerklich.md` (Lese-Kadenz-TBT @4× (U3-Rest, ~10 s/32 s, @1× unmerklich))
+  - → Posten `archiv/posten/2026-09-24-liste-gesetze-370-px-leerflaeche-am-seitenende-schliessen.md` (Liste /gesetze: ~370-px-Leerfläche am Seitenende schliessen)
+  - → Posten `archiv/posten/2026-09-24-tor-gegen-case-blinde-korpus-pfad-literale.md` (Tor gegen case-blinde Korpus-Pfad-Literale)
   - → Posten `plan/posten/2026-09-24-tor-schutz-py-trailer-block-format-beim-commit-pruefen.md` (tor-schutz.py: Trailer-Block-Format beim Commit prüfen)
   - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 13: Tor gegen die Flake-Familie «einmaliges DOM-Lesen ohne Wartung»)
-  - → Posten `plan/posten/2026-09-24-eingebettetes-pdf-ladephase-ohne-messung.md` (Eingebettetes PDF: Ladephase ohne Messung)
-  - → Posten `plan/posten/2026-09-24-fr-it-band-nicht-reproduzierbar-wie-beschrieben.md` (FR/IT-Band: nicht reproduzierbar wie beschrieben)
+  - → Posten `archiv/posten/2026-09-24-eingebettetes-pdf-ladephase-ohne-messung.md` (Eingebettetes PDF: Ladephase ohne Messung)
+  - → Posten `archiv/posten/2026-09-24-fr-it-band-nicht-reproduzierbar-wie-beschrieben.md` (FR/IT-Band: nicht reproduzierbar wie beschrieben)
   - → Posten `plan/posten/2026-09-24-kantonskarten-paket-befunde-41-12-und-49-karte-und-umschalte.md` (Kantonskarten-Paket: Befunde 41, 12 und 49 (Karte und Umschalter nach der Wahl, Hover-Rand, Legende))
-  - → Posten `plan/posten/2026-09-24-brotkrume-kantonsebene-zu-flach.md` (Brotkrume Kantonsebene zu flach)
+  - → Posten `archiv/posten/2026-09-24-brotkrume-kantonsebene-zu-flach.md` (Brotkrume Kantonsebene zu flach)
   - → Posten `plan/posten/2026-09-24-kantonskarten-paket-befunde-41-12-und-49-karte-und-umschalte.md` (Kantonskarten-Paket: Befunde 41, 12 und 49 (Karte und Umschalter nach der Wahl, Hover-Rand, Legende))
   - → Posten `plan/posten/2026-09-24-kantonskarten-paket-befunde-41-12-und-49-karte-und-umschalte.md` (Kantonskarten-Paket: Befunde 41, 12 und 49 (Karte und Umschalter nach der Wahl, Hover-Rand, Legende))
   - → Posten `plan/posten/2026-09-24-4-490-fokussierbare-elemente-unter-24-24-px-wcag-2-5-8.md` (4'490 fokussierbare Elemente unter 24×24 px (WCAG 2.5.8))
@@ -242,26 +242,26 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 ---
 
 **Nacht 5.9.2026 (CI #691/#683):**
-- → Posten `plan/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 3: Kontention (5.9.2026, Nachmittag))
+- → Posten `archiv/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 3: Kontention (5.9.2026, Nachmittag))
 - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 14: Flake-Sammlung 5.9.2026 (je 1 failed, Retry grün))
 - *2 erledigte Einträge dieses Abschnitts wörtlich in [`archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md`](../archiv/FAHRPLAN-OFFENE-BEFUNDE-erledigt.md), Abschnitt «§4 — `W2·18-FEHLERBUCH` · Davids Alltags-Fehlerfunde» (verschoben 24.9.2026).*
 - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 15: ⌘K-Vorlauf im Split)
 - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 16: Flacker-Fall leser-v3-blatt (c), gemessen 13.9.2026)
-- → Posten `plan/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 4: check:e2e-shards deckelt Laufzeit je Shard)
+- → Posten `archiv/posten/2026-09-05-or-leser-e2e-timeouts-app-weit-haerten-shard-laufzeit-deckel.md` (Punkt 4: check:e2e-shards deckelt Laufzeit je Shard)
 
 - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 17: Flackernde Browser-Tests, Wurzel messen)
 
 **Befunde 14.9.2026 (Phase-1-Welle #846–#869):**
 
-- → Posten `plan/posten/2026-09-24-17-doku-pr-gegen-offenen-bau-pr-nicht-behind-sondern-dirty.md` (§17 · Doku-PR gegen offenen Bau-PR: nicht BEHIND, sondern DIRTY)
+- → Posten `archiv/posten/2026-09-24-17-doku-pr-gegen-offenen-bau-pr-nicht-behind-sondern-dirty.md` (§17 · Doku-PR gegen offenen Bau-PR: nicht BEHIND, sondern DIRTY)
 
-- → Posten `plan/posten/2026-09-24-confidence-logik-ts-78-n-ist-nie-legitimer-normtext-ist-fals.md` (confidence-logik.ts:78 — «[N] ist nie legitimer Normtext» ist falsch)
+- → Posten `archiv/posten/2026-09-24-confidence-logik-ts-78-n-ist-nie-legitimer-normtext-ist-fals.md` (confidence-logik.ts:78 — «[N] ist nie legitimer Normtext» ist falsch)
 - → Posten `plan/posten/2026-09-24-vd-vd-106879-art-81-echte-tabellen-verklebung-auto-akzeptier.md` (VD-vd-106879 Art. 81: echte Tabellen-Verklebung auto-akzeptiert)
 - → Posten `plan/posten/2026-09-24-confidence-json-ohne-frische-tor.md` (confidence.json ohne Frische-Tor)
 - → Posten `plan/posten/2026-09-24-vil-traegt-den-token-27-bbis.md` (VIL trägt den Token 27_bbis)
 - → Posten `plan/posten/2026-09-24-erlass-filtert-nur-die-bund-route.md` (--erlass= filtert nur die Bund-Route)
-- → Posten `plan/posten/2026-09-24-scripts-ui-normzitate-kommentare-ts-40-hand-lexer-wertet-in.md` (scripts/ui-normzitate-kommentare.ts:40 — Hand-Lexer wertet // in URLs als Kommentar)
-- → Posten `plan/posten/2026-09-24-altzahl-10-254-an-zwei-stellen.md` (Altzahl «10 254» an zwei Stellen)
+- → Posten `archiv/posten/2026-09-24-scripts-ui-normzitate-kommentare-ts-40-hand-lexer-wertet-in.md` (scripts/ui-normzitate-kommentare.ts:40 — Hand-Lexer wertet // in URLs als Kommentar)
+- → Posten `archiv/posten/2026-09-24-altzahl-10-254-an-zwei-stellen.md` (Altzahl «10 254» an zwei Stellen)
 
 ### §4.R — Reiterleiste: sechs stille Fehler (13.9.2026)
 
