@@ -7,7 +7,7 @@
 // Funktion wie der Generator) und je Erlass die Verfahrens-Key-Menge + die intrinsische Signatur
 // (Status/Frist/Titel/Link) gegen das committete vernehmlassungen.generated.ts vergleichen. Drift
 // (neues/verschwundenes Verfahren, Statuswechsel, Fristverlängerung) ⇒ ROT = «Generator neu laufen»
-// (nie Auto-Fix, §7). Zusätzlich Referenzfall-Assertionen (OR→33, DSG→3, MWSTG→14).
+// (nie Auto-Fix, §7). Zusätzlich Referenzfall-UNTERGRENZEN (OR≥34, DSG≥3, MWSTG≥14; s. MINDEST).
 // Exit 0 OK · 1 Drift · 2 Netzfehler.
 
 import {
@@ -29,8 +29,19 @@ function intrinsischeSig(e: MaterialRegistereintrag): string {
 
 // Stratifiziert: Referenzfälle (OR/DSG/MWSTG) + Legacy-6xxx-Reichweite + Verordnung (Mantel-Treffer).
 const STICHPROBE_KEYS = ['OR', 'DSG', 'MWSTG', 'ZGB', 'STGB', 'AHVG', 'AIG', 'VRV'];
-// Referenzfälle (POC 10.7.2026 live reproduziert): distinkte Consultations je Erlass.
-const REFERENZ: Record<string, number> = { OR: 33, DSG: 3, MWSTG: 14 };
+// Referenzfälle (POC 10.7.2026 live reproduziert): distinkte Consultations je Erlass als
+// UNTERGRENZE, nicht als Gleichheit. Zweck = Parser-/Query-Verlust-Schutz, der auch dann trägt,
+// wenn der Generator mit dem Verlust neu gelaufen und dieser mit-committet wurde (der
+// Committet-vs-Live-Mengenvergleich in main() sähe dann keinen Unterschied). Vernehmlassungen
+// wachsen aber mit jedem neuen Verfahren (OR: 33 am 10.7.2026, 34 am 5.10.2026 — die
+// frühere Gleichheit kippte mit jedem neuen OR-Verfahren, Normen-Monitor rot ab 21.9.2026,
+// Alarm-Issue #956). Wartungsweg: kein laufendes Nachführen nötig; anheben nur, wenn der
+// Verlust-Schutz enger greifen soll, senken nie ohne amtlichen Beleg (Fedlex-Graph, Verfahren
+// wirklich entfallen).
+// Ratsche (Rot-Probe 5.10.2026 an diesem Tor): mit OR=33 blieb ein mit-committeter Verlust von
+// genau einem OR-Verfahren (34→33) unentdeckt; deshalb OR=34 (Stand 5.10.2026) — DSG/MWSTG stehen
+// schon auf ihrem Live-Wert. Anheben nur nach oben.
+const MINDEST: Record<string, number> = { OR: 34, DSG: 3, MWSTG: 14 };
 
 function keysProErlass(eintraege: { key: string; normKeys?: string[] }[]): Map<string, Set<string>> {
   const m = new Map<string, Set<string>>();
@@ -82,10 +93,10 @@ async function main(): Promise<void> {
     if (sc && sc !== s) fehler.push(`${k}: Currency-Drift (Status/Frist/Titel/Link geändert) — Generator neu laufen.`);
   }
 
-  // Referenzfall-Assertionen (DoD): distinkte Verfahren je Erlass.
-  for (const [key, erwartet] of Object.entries(REFERENZ)) {
+  // Referenzfall-Untergrenzen (DoD): distinkte Verfahren je Erlass dürfen nie darunter fallen.
+  for (const [key, mindest] of Object.entries(MINDEST)) {
     const n = (liveProErlass.get(key) ?? new Set()).size;
-    if (n !== erwartet) fehler.push(`Referenzfall ${key}: erwartet ${erwartet} Verfahren, live ${n} (Reichweite/Query-Drift?).`);
+    if (n < mindest) fehler.push(`Referenzfall ${key}: mindestens ${mindest} Verfahren erwartet, live ${n} (Parser-/Query-Verlust?).`);
   }
 
   if (fehler.length) {
@@ -93,7 +104,7 @@ async function main(): Promise<void> {
     console.error(`\ncheck:vernehmlassungen-netz — ${fehler.length} Drift-Befund(e). 'npm run materialien:vernehmlassungen -- --datum=$(date +%F)' + 'npm run materialien -- …' neu laufen (nie Auto-Fix).`);
     process.exit(1);
   }
-  console.log(`check:vernehmlassungen-netz OK — ${STICHPROBE_KEYS.length} Erlasse stichprobenweise currency-frei gegen den Fedlex-Graphen (OR:33·DSG:3·MWSTG:14).`);
+  console.log(`check:vernehmlassungen-netz OK — ${STICHPROBE_KEYS.length} Erlasse stichprobenweise currency-frei gegen den Fedlex-Graphen (Untergrenzen eingehalten: ${Object.entries(MINDEST).map(([k, m]) => `${k}≥${m} live ${(liveProErlass.get(k) ?? new Set()).size}`).join(' · ')}).`);
 }
 
 main().catch((e) => {

@@ -60,7 +60,7 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Parallele Nachträge an dieselbe Fahrplan-Stelle** kollidieren: der erste
   gelandete PR macht alle übrigen CONFLICTING (#1068/#1070/#1071 an
   FAHRPLAN-WERKBANK-UMBAU.md §5d-bis, 24.9.2026). Bei mehreren offenen PRs
-  eines Dachs: je Nachtrag eine Posten-Datei (`plan:posten -- neu`) statt
+  eines Vorhabens: je Nachtrag eine eigene Merkzettel-Datei in `plan/posten/` statt
   Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein. Gleiches im Code: zwei
   eigene PRs am selben Dateiende (#1275/#1277, 2.10.2026) — Landereihenfolge vorab
   festlegen, beim Rebase beide Blöcke behalten.
@@ -154,7 +154,7 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 ## 3 · Serielle Landung — strikt der Reihe nach, EIN Kommando aufs Mal
 
 1. **Landungs-Rolle ansagen — nur bei sichtbarer Parallel-Session** (fremder
-   wip/Worktree/Branch/PR auf gleicher Fläche): PR-Kommentar «Landung
+   Worktree/Branch/PR auf gleicher Fläche): PR-Kommentar «Landung
    übernommen — <Session>»; wer einen fremden jüngeren Landungs-Kommentar
    sieht, merged NICHT. Ein-Session-Betrieb: entfällt.
 2. **Kollisionen sichten:** `gh pr list --state open` UND die Queue-Abfrage
@@ -238,14 +238,15 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    (Ziff. 3.2, zurück zu Schritt 1); überschneidungsfreie dürfen
    nebeneinander in der Queue stehen, auch ohne Ratschen-Kopplung (#1194).
 
-9. **Schritt-Status schliessen — wip verlässt die Session nie.** **Der PR,
-   der den Schritt abschliesst, trägt den Status im Diff:** `plan:set --
-   <id> status=done|ready|parked` + `check:plan`, im eigenen PR committet.
-   Keine Auto-Buchung mehr (`plan-buchung.yml` abgebaut 20.9.2026). Zuordnung per
+9. **JETZT/EINGANG im abschliessenden PR nachführen.** **Der PR, der ein
+   Vorhaben abschliesst, trägt es im Diff:** er streicht es aus JETZT, legt
+   erledigte Merkzettel nach `archiv/posten/` und rückt nach
+   (Reihenfolge-Regel im ROADMAP-Kopf); neue Funde als EINGANG-Zeile.
+   Keine Auto-Buchung mehr (`plan-buchung.yml` abgebaut 20.9.2026,
+   `plan:set`/`check:plan` 5.10.2026). Zuordnung per
    Trailer **im PR-BODY**, eigener letzter Absatz, unformatiert: `Roadmap:
-   <ID>` — kein `Roadmap-Status:` mehr nötig, auch wenn der Schritt `wip`
-   bleibt. Form: Skill `auftrag` Ziff. 5, Formregel 5 unten; Historie:
-   `referenz-ci.md`.
+   <Kürzel>` — kein `Roadmap-Status:` mehr nötig. Form: Skill `auftrag`
+   Ziff. 5, Formregel 5 unten; Historie: `referenz-ci.md`.
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
@@ -353,8 +354,8 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    LOKALE Kopf, nicht `origin/<branch>` — vorher `git log origin/<branch>..<branch>`
    prüfen (Beleg 25.9.2026: Tag auf den Remote-Kopf gesetzt, drei nie gepushte
    Commits nur per Reflog gerettet → zweites Tag).
-3. **Dependabot je Session einordnen:** `plan:next` zeigt die offenen Zweige
-   (`origin/dependabot/*`, netzfrei nach `git fetch --prune`). Patch/Minor
+3. **Dependabot je Session einordnen:** `gh pr list --state open` (Startabfrage,
+   Skill `bauschritt` Station A) zeigt die offenen Dependabot-PRs. Patch/Minor
    einreihen (`gh pr merge <n> --squash`, `--auto` zulässig — kein Risikopfad,
    kein Nachzug), Hauptversionen mit Begründung schliessen — nie liegen lassen
    (8.9.2026: 113 CI-Läufe aus 13 Zweigen). Sicherheits-PR (Alert offen) sofort
@@ -365,7 +366,8 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    lösen nicht mehr auf). Reihenfolge: Doku-PR landen, abräumen,
    Nachkontrolle, Bericht — **erst zuletzt** der eigene. Festgefahren:
    `git worktree add --detach <pfad> main`; nie Ersatz-Hooks.
-Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
+Wächter: Startabfrage (Skill `bauschritt` Station A) und `npm run aufraeumen:git`
+(Trockenlauf), auch am Session-Ende.
 
 ## 4 · Nachkontrolle
 
@@ -417,6 +419,7 @@ Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
    lokal `npm run check:merge-schutz` (Sekunden, spart den CI-Lauf).
 2. *(entfällt 20.9.2026 — galt nur für die abgebaute `plan-buchung.yml`-
    Auto-Buchung; `@blockers`-Slug bleibt Pflicht, das prüft `check:plan`.)*
+   *(`check:plan` und `@blockers` abgebaut 5.10.2026, Umstieg.)*
 3. **PR zeigt «no checks reported» → ZUERST Mergeability prüfen**
    (`gh pr view N --json mergeable`): bei CONFLICTING baut GitHub gar keinen
    CI-Lauf (PR #605). Fix ist der main-Merge, nicht das Neu-Triggern.
