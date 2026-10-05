@@ -1,6 +1,6 @@
 {
  "zaehler":{"1":[1,0],"3":[1,0],"5":[2,0],"6":[3,0]},
- "erzeugt": "2026-09-14",
+ "erzeugt": "2026-10-05",
  "stand": "2025-01-01",
  "fassungsToken": "20250101",
  "kopf": {
@@ -481,8 +481,13 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
       }
      ],
-     "absatz": null,
+     "absatz": "3",
      "item": null,
+     "pos": {
+      "b": 2,
+      "o": 213,
+      "l": 213
+     },
      "kl": "A"
     },
     {
@@ -494,8 +499,13 @@
        "url": "https://fedlex.data.admin.ch/eli/oc/2008/646"
       }
      ],
-     "absatz": null,
+     "absatz": "4",
      "item": null,
+     "pos": {
+      "b": 3,
+      "o": 143,
+      "l": 143
+     },
      "kl": "A"
     }
    ]
