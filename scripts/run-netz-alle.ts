@@ -15,13 +15,21 @@
 //     Nachgeführt wird über die Bots (normen-monatslauf.yml, fedlex-frische.yml), nicht über
 //     einen Alarm.
 // EXIT 2 eines Glieds heisst «Quelle nicht erreichbar, keine Aussage» (Konvention der
-// Netz-Tore). Ein Gesetzestext-Glied mit Exit 2 wird EINMAL wiederholt; bleibt es bei 2, ist
-// das eine sichtbare Warnung, kein Rot — ein Netz-Aussetzer ist kein Rechtsstands-Befund.
+// Netz-Tore). Ein Gesetzestext-Glied mit Exit 2 wird nach einer Pause (NETZ_PAUSE_S, Default
+// 90 s) EINMAL wiederholt; bleibt es bei 2, ist der Lauf UNVOLLSTÄNDIG: Warnung, Tafel-Zeile,
+// `netz_unvollstaendig=1` nach $GITHUB_OUTPUT (der Workflow schliesst dann keinen Alarm-Zettel
+// und führt den Netz-Zettel `alarm:normen-monitor-netz`). OBERGRENZE (Gegenprüfung 5.10.2026,
+// Befund 1 — vorher blieb ein dauerhaft blindes Tor ewig grün): meldet der Workflow per
+// NETZ_ZETTEL_OFFEN=1, dass schon der VORIGE Lauf unvollständig war, ist ein erneuter Exit 2
+// ROT (Exit 1, `rot_grund=netz`). Dauerhafte Blindheit wird so spätestens im zweiten
+// Wochenlauf rot; ein einzelner Netz-Aussetzer bleibt ein Hinweis.
 //
 // Die Tafel geht auf stdout, als Markdown nach $GITHUB_STEP_SUMMARY (Wochenbericht im Lauf)
 // und nach $NETZ_TAFEL_DATEI (falls gesetzt; der Alarm-Zettel des Monitors zitiert sie).
 // Rot-Beweis: NETZ_KETTE='npm run check:nope-a' NETZ_BERICHT='npm run check:nope-b' ⇒ Exit 1,
 // nur nope-a rot; NETZ_KETTE='' NETZ_BERICHT='npm run check:nope-b' ⇒ Exit 0 mit Warnung.
+// Netz-Grenze (5.10.2026, fetch-Stub wirft): NETZ_KETTE='npm run check:pdf-netz' NETZ_BERICHT=''
+// NETZ_PAUSE_S=0 ⇒ Exit 0 + netz_unvollstaendig=1; dazu NETZ_ZETTEL_OFFEN=1 ⇒ Exit 1.
 
 import { spawnSync } from 'node:child_process';
 import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
@@ -40,11 +48,25 @@ export function parseKette(roh: string, klasse: Klasse): Glied[] {
   return glieder;
 }
 
-/** Gesamturteil: rot NUR bei Exit 1 (bzw. ≠0, ≠2) eines Gesetzestext-Glieds. */
-export function urteil(verdikte: Verdikt[]): { rot: Verdikt[]; warnungen: Verdikt[] } {
+/**
+ * Gesamturteil. `rot`: Exit 1 (bzw. ≠0, ≠2) eines Gesetzestext-Glieds. `blind`: Gesetzestext-
+ * Glieder, die auch nach der Wiederholung bei Exit 2 blieben (Lauf unvollständig).
+ * `netzRot`: blind UND schon der vorige Lauf war unvollständig (Netz-Zettel offen) ⇒ Exit 1.
+ */
+export function urteil(
+  verdikte: Verdikt[],
+  netzZettelOffen = false,
+): { rot: Verdikt[]; warnungen: Verdikt[]; blind: Verdikt[]; netzRot: boolean } {
   const rot = verdikte.filter((v) => v.klasse === 'gesetzestext' && v.exit !== 0 && v.exit !== 2);
   const warnungen = verdikte.filter((v) => v.exit !== 0 && !rot.includes(v));
-  return { rot, warnungen };
+  const blind = verdikte.filter((v) => v.klasse === 'gesetzestext' && v.exit === 2);
+  return { rot, warnungen, blind, netzRot: blind.length > 0 && netzZettelOffen };
+}
+
+/** Zeilen für $GITHUB_OUTPUT — der Workflow steuert damit Zettel-Schliessung und Netz-Zettel. */
+export function ausgabeZeilen(u: ReturnType<typeof urteil>): string {
+  const grund = u.rot.length ? 'gesetzestext' : u.netzRot ? 'netz' : '';
+  return `netz_unvollstaendig=${u.blind.length ? 1 : 0}\nrot_grund=${grund}\n`;
 }
 
 export function status(v: Verdikt): string {
@@ -81,6 +103,11 @@ function fahre(g: Glied): number {
   return spawnSync('npm', ['run', g.tor, ...g.args], { stdio: 'inherit', env: process.env }).status ?? 1;
 }
 
+/** Synchrone Pause vor der Wiederholung (ein Aussetzer heilt selten in Millisekunden). */
+function pause(sekunden: number): void {
+  if (sekunden > 0) Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, sekunden * 1000);
+}
+
 function main(): void {
   const glieder = leseKetten();
   const verdikte: Verdikt[] = [];
@@ -91,30 +118,43 @@ function main(): void {
     let exit = fahre(g);
     let versuche = 1;
     if (exit === 2 && g.klasse === 'gesetzestext') {
-      console.log(`\n── ${g.tor}: Exit 2 (Quelle nicht erreichbar) — eine Wiederholung ──`);
+      const s = Number(process.env.NETZ_PAUSE_S ?? 90);
+      console.log(`\n── ${g.tor}: Exit 2 (Quelle nicht erreichbar) — Wiederholung nach ${s}s Pause ──`);
+      pause(s);
       exit = fahre(g);
       versuche = 2;
     }
     verdikte.push({ ...g, exit, versuche, sekunden: Math.round((Date.now() - start) / 1000) });
   }
 
-  const { rot, warnungen } = urteil(verdikte);
+  const u = urteil(verdikte, process.env.NETZ_ZETTEL_OFFEN === '1');
+  const { rot, warnungen, blind, netzRot } = u;
   console.log('\n── check:netz — Tafel ───────────────────────────────────────');
   for (const v of verdikte) console.log(`  ${status(v).padEnd(7)} ${v.tor.padEnd(32)} [${v.klasse}] exit ${v.exit}  (${v.sekunden}s)`);
   for (const v of warnungen) {
     const was = v.exit === 2 ? 'Quelle nicht erreichbar — keine Aussage' : 'Abweichung (Bericht, kein Gesetzestext-Rot)';
     console.log(`::warning title=check:netz ${v.tor}::${was} (exit ${v.exit}); Details im Lauf-Log.`);
   }
-  const md = `## check:netz — ${rot.length ? `ROT (${rot.length} Gesetzestext-Befund(e))` : 'Gesetzestext grün'}` +
-    `${warnungen.length ? ` · ${warnungen.length} Bericht/Netz-Hinweis(e)` : ''}\n\n${tafelMarkdown(verdikte)}\n`;
+  const netzZeile = blind.length
+    ? `\n**Lauf unvollständig** — ohne Aussage (Exit 2 nach Wiederholung): ${blind.map((v) => `\`${v.tor}\``).join(', ')}. ` +
+      (netzRot ? 'Schon der vorige Lauf war unvollständig ⇒ ROT (Zwei-Wochen-Grenze).\n' : 'Bleibt das im nächsten Lauf so, wird der Monitor rot.\n')
+    : '';
+  const kopf = rot.length ? `ROT (${rot.length} Gesetzestext-Befund(e))` : netzRot ? 'ROT (Gesetzestext zwei Läufe in Folge ungeprüft)' : blind.length ? 'Gesetzestext UNVOLLSTÄNDIG geprüft' : 'Gesetzestext grün';
+  const md = `## check:netz — ${kopf}` +
+    `${warnungen.length ? ` · ${warnungen.length} Bericht/Netz-Hinweis(e)` : ''}\n${netzZeile}\n${tafelMarkdown(verdikte)}\n`;
   try { if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, md); } catch { /* Bericht ist Beiwerk */ }
   try { if (process.env.NETZ_TAFEL_DATEI) writeFileSync(process.env.NETZ_TAFEL_DATEI, md); } catch { /* dito */ }
+  // Steuer-Ausgabe für den Workflow: KEIN stilles Schlucken — ohne sie würde «Bei Grün» einen
+  // Zettel schliessen, obwohl der Lauf blind war (§8).
+  if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, ausgabeZeilen(u));
 
-  if (rot.length) {
-    console.error(`\ncheck:netz ROT — Gesetzestext: ${rot.map((v) => v.tor).join(', ')}.`);
+  if (rot.length || netzRot) {
+    if (rot.length) console.error(`\ncheck:netz ROT — Gesetzestext: ${rot.map((v) => v.tor).join(', ')}.`);
+    if (netzRot) console.error(`\ncheck:netz ROT — zweiter Lauf in Folge ohne Aussage: ${blind.map((v) => v.tor).join(', ')} (Netz-Zettel war schon offen).`);
     process.exit(1);
   }
-  console.log(`\ncheck:netz grün (Gesetzestext) — ${verdikte.length} Tore gefahren, ${warnungen.length} Hinweis(e) im Bericht.`);
+  if (blind.length) console.log(`::warning title=check:netz unvollständig::Gesetzestext ohne Aussage: ${blind.map((v) => v.tor).join(', ')} — im nächsten Lauf erneut ⇒ rot.`);
+  console.log(`\ncheck:netz grün (Gesetzestext${blind.length ? ', UNVOLLSTÄNDIG' : ''}) — ${verdikte.length} Tore gefahren, ${warnungen.length} Hinweis(e) im Bericht.`);
 }
 
 if (!process.env.VITEST) main();

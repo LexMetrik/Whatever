@@ -1,7 +1,7 @@
 // Rückbau MONITOR 5.10.2026 (Entscheid David: «wichtig ist gesetzestext. der rest muss nicht
 // zu einem rot führen.») — Klassen-Urteil des Runners scripts/run-netz-alle.ts, ohne Netz.
 import { describe, it, expect } from 'vitest';
-import { parseKette, urteil, status, type Verdikt } from '../../scripts/run-netz-alle';
+import { parseKette, urteil, status, ausgabeZeilen, type Verdikt } from '../../scripts/run-netz-alle';
 
 const v = (tor: string, klasse: Verdikt['klasse'], exit: number): Verdikt =>
   ({ tor, args: [], klasse, exit, sekunden: 1, versuche: 1 });
@@ -36,5 +36,37 @@ describe('urteil', () => {
   });
   it('ein unerwarteter Exit (z. B. 127, Skript fehlt) eines Gesetzestext-Glieds ist ROT', () => {
     expect(urteil([v('check:nope', 'gesetzestext', 127)]).rot).toHaveLength(1);
+  });
+});
+
+// Gegenprüfung 5.10.2026, Befund 1: Exit 2 hatte keine Obergrenze — ein dauerhaft blindes
+// Gesetzestext-Glied (z. B. leere SPARQL-Antwort in check:pdf-netz) blieb ewig grün, und
+// «Bei Grün» schloss sogar den Alarm-Zettel. Jetzt: unvollständig sichtbar, zweiter Lauf rot.
+describe('Netz-Grenze (Exit 2 eines Gesetzestext-Glieds)', () => {
+  it('erster Lauf: kein Rot, aber unvollständig ⇒ netz_unvollstaendig=1 (Zettel-Schliessung unterdrückt)', () => {
+    const u = urteil([v('check:caches', 'gesetzestext', 0), v('check:pdf-netz', 'gesetzestext', 2)]);
+    expect(u.rot).toEqual([]);
+    expect(u.netzRot).toBe(false);
+    expect(u.blind.map((x) => x.tor)).toEqual(['check:pdf-netz']);
+    expect(ausgabeZeilen(u)).toBe('netz_unvollstaendig=1\nrot_grund=\n');
+  });
+  it('Netz-Zettel schon offen + erneut Exit 2 ⇒ ROT (rot_grund=netz)', () => {
+    const u = urteil([v('check:pdf-netz', 'gesetzestext', 2)], true);
+    expect(u.netzRot).toBe(true);
+    expect(ausgabeZeilen(u)).toBe('netz_unvollstaendig=1\nrot_grund=netz\n');
+  });
+  it('Netz-Zettel offen, aber Lauf vollständig ⇒ grün und netz_unvollstaendig=0 (Zettel wird geschlossen)', () => {
+    const u = urteil([v('check:pdf-netz', 'gesetzestext', 0)], true);
+    expect(u.netzRot).toBe(false);
+    expect(ausgabeZeilen(u)).toBe('netz_unvollstaendig=0\nrot_grund=\n');
+  });
+  it('Exit 2 eines BERICHT-Glieds macht den Lauf nicht unvollständig und nie rot', () => {
+    const u = urteil([v('check:materialien-netz', 'bericht', 2)], true);
+    expect(u.blind).toEqual([]);
+    expect(u.netzRot).toBe(false);
+  });
+  it('echter Gesetzestext-Befund hat Vorrang vor dem Netz-Grund', () => {
+    const u = urteil([v('check:zitate', 'gesetzestext', 1), v('check:pdf-netz', 'gesetzestext', 2)], true);
+    expect(ausgabeZeilen(u)).toBe('netz_unvollstaendig=1\nrot_grund=gesetzestext\n');
   });
 });
