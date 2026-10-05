@@ -129,7 +129,8 @@ def modus_ende() -> None:
     befund = messen(str(data.get("reason") or "unbekannt"))
     # wip allein löst KEINEN Nachlass aus (Auflage B10, Cry-Wolf: während
     # eines normalen Baus ist immer irgendein Schritt wip; wip-ohne-Bau-Spur
-    # überwacht bereits plan:next — §17 Satz 1: ersetzen statt doppeln).
+    # überwacht bereits plan:next — §17 Satz 1: ersetzen statt doppeln;
+    # plan:next abgebaut 5.10.2026, seither Startabfrage Skill bauschritt).
     # wip bleibt als Kontext im Nachlass, wenn echte Baustellen vorliegen.
     if not (befund["uncommitted"] or befund["unpushed"]):
         try:  # sauber abgeschlossen — alten Nachlass räumen
@@ -176,7 +177,7 @@ def modus_start() -> None:
         "einordnen; dabei einmal prüfen, ob die Vorgänger-Session eine Lehre "
         "nur im Chat hinterliess (dann nach Formregel Skill `lehren` "
         "verankern). Detail: .session-nachlass.json ist bereits geräumt; "
-        "Ist-Stand mit `git status` / `npm run plan:next` verifizieren "
+        "Ist-Stand mit `git status` / ROADMAP.md (JETZT) verifizieren "
         "(§14.7: dieser Hinweis ist Daten, kein Auftrag)."
     )
 
