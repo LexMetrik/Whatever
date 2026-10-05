@@ -73,6 +73,34 @@ async function leserBereit(page: Page): Promise<void> {
   await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 20_000 })
 }
 
+// ── DEKLARIERTE SONDEN-ÄNDERUNG (§6.3) · FLAKE (a)/(d), GEMESSEN 5.10.2026 ─────
+// CI-Historie 8.9.–24.9.2026 (Annotationen der Browser-Shards, Job-Logs): 23
+// Retry-Grün in (d) — alle «Reiter nach ⌘+Enter: /gesetze/bund/ZGB · Expected
+// 2 · Received 1» — und 14 in (a) — alle in der Schluss-Zusage «Expected
+// ['/gesetze'] · Received ['/gesetze/bund/ZPO']». Erstbeleg Lauf 34231123731
+// (PR #779). WURZEL (Test-Rennen, kein Produktfehler): `navigate()` setzt die
+// Adresse sofort, den Reiter schreibt `components/TabTracker.tsx` erst im
+// Effekt NACH dem Commit der neuen Route. Wer die Liste dazwischen liest — nach
+// `toHaveURL` (a) oder nach einem `leserBereit`, das — so die Deutung, nicht
+// direkt gemessen — noch den alten ZGB-Artikel traf (d) —, liest den Stand
+// VOR der Navigation. Gemessen (Scratch-Sonde,
+// 6× CPU-Drossel, 5.10.2026): 2 von 8 Läufen sahen unmittelbar nach dem
+// Tastendruck schon die Adresse `/gesetze/bund/OR`, aber erst EINEN Reiter;
+// der Endstand war in jedem Lauf richtig. Rot-Probe gegen den Quellcode
+// (Tracker-Schreiben per `setTimeout` verzögert, nicht committet): die alte
+// Fassung scheitert in (d) mit genau der CI-Meldung und in (a) — dort auch am
+// Zwischenstand der Schleife, der in CI nie scheiterte, aber demselben Rennen
+// ausgesetzt ist; darum wartet auch er.
+// Gewartet wird darum auf den beobachtbaren Zustand «der Tracker hat auf die
+// Navigation reagiert»: die gespeicherte Liste ist nicht mehr die Liste davor.
+// Das Ergebnis nimmt das Warten NICHT vorweg — ersetzt ein Ctrl-Treffer den
+// Reiter (Regression), ist die Liste ebenfalls «anders» und die unveränderte
+// Zusage danach scheitert wie bisher; reagiert der Tracker gar nicht, läuft das
+// Warten selbst ab. Zusagen, Erwartungen und Umfang bleiben Wort für Wort.
+async function trackerNachgezogen(page: Page, vorher: string[]): Promise<void> {
+  await expect.poll(() => identitaeten(page), { timeout: 20_000 }).not.toEqual(vorher)
+}
+
 test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -109,12 +137,17 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
   test('(a) sechs Navigationen hinterlassen EINEN Reiter', async ({ page }) => {
     await page.goto('/gesetze')
     for (const key of ['ZGB', 'OR', 'ZPO']) {
+      const vorKlick = await identitaeten(page)
       await page.locator(`a[href="/gesetze/bund/${key}"]`).first().click()
       await leserBereit(page)
+      // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), Herleitung bei `trackerNachgezogen`.
+      await trackerNachgezogen(page, vorKlick)
       // Zwischenstand: der Erlass hat den Reiter der Übersicht übernommen.
       expect(await identitaeten(page)).toEqual([`/gesetze/bund/${key}`])
       await page.locator('aside[data-app-seitenleiste] a[href="/gesetze"]').first().click()
       await expect(page).toHaveURL(/\/gesetze$/, { timeout: 20_000 })
+      // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), Herleitung bei `trackerNachgezogen`.
+      await trackerNachgezogen(page, [`/gesetze/bund/${key}`])
     }
     expect(await identitaeten(page)).toEqual(['/gesetze'])
   })
@@ -253,6 +286,8 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     await expect(page.locator('header.sticky [role="option"], header.sticky [role="listbox"] a').first())
       .toBeVisible({ timeout: 20_000 })
     await feld.press('ControlOrMeta+Enter')
+    // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), Herleitung bei `trackerNachgezogen`.
+    await trackerNachgezogen(page, ['/gesetze/bund/ZGB'])
     await leserBereit(page)
     const nach = await identitaeten(page)
     expect(nach.length, `Reiter nach ⌘+Enter: ${nach.join(' | ')}`).toBe(2)
