@@ -67,10 +67,6 @@ Kürzel = Präfix des Arbeitszweigs und Wert des Commit-Trailers `Roadmap:`. *FB
 Vault, `03_Projekte/LexMetrik/inventar-optimierung-2026-10-04/fehlerbestand-2026-10-05.md` (Zeilen-IDs
 nur dort gültig; Angaben aus Merkzetteln, vor der Behebung gegen die amtliche Quelle prüfen, §7).
 
-1. **Normen-Monitor wieder grün** (`MONITOR`) · S · Gegenprüfung ja
-   *Herkunft:* rot seit 29.6. mit Unterbrüchen; Alarm #956 (ESKALATION, seit 21.9.).
-   *Fertig, wenn* der Monitor-Lauf grün ist und #956 geschlossen.
-   *Ort:* Dach `QS-MONITOR-ROT`; `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md`.
 2. **«Gilt seit» stimmt im Kern-Bund** (`GILTSEIT`) · R + Phase 1 · Gegenprüfung ja
    *Herkunft:* Mandat 14.9.; Entscheid David 4.10. «A, und C als eigenen Roadmap-Schritt anlegen»
    (#1305, 74b366602).
