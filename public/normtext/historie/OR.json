@@ -3894,6 +3894,20 @@
      ],
      "absatz": "1",
      "item": "7"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": "7",
+     "anweisung": "«Richter» → «Gericht»"
     }
    ]
   },
@@ -4152,8 +4166,23 @@
    ]
   },
   "574": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4173,8 +4202,23 @@
    ]
   },
   "577": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4187,15 +4231,45 @@
    ]
   },
   "579": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
   },
   "580": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4215,8 +4289,23 @@
    ]
   },
   "583": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4229,8 +4318,23 @@
    ]
   },
   "585": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -4447,8 +4551,23 @@
    ]
   },
   "601": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -5346,7 +5465,7 @@
    ]
   },
   "640": {
-   "giltSeit": null,
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -5435,7 +5554,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "643": {
-   "giltSeit": null,
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "aufgehoben",
@@ -5453,6 +5572,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     },
     {
      "typ": "fassung",
@@ -6206,7 +6339,7 @@
    ]
   },
   "677": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6274,7 +6407,7 @@
    ]
   },
   "679": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -6978,6 +7111,20 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "4",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -7269,7 +7416,7 @@
    ]
   },
   "706": {
-   "giltSeit": null,
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7322,6 +7469,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "1. Legitimation und Gründe"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -7430,7 +7591,7 @@
    "aufgehobenSeit": "2008-01-01"
   },
   "709": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7687,7 +7848,7 @@
    ]
   },
   "717": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -7858,7 +8019,7 @@
    "aufgehobenSeit": "2023-01-01"
   },
   "721": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8182,6 +8343,20 @@
    "giltSeit": "2023-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": null,
+     "item": "4",
+     "anweisung": "«Richter» → «Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -8278,7 +8453,7 @@
    ]
   },
   "740": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8330,6 +8505,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "4",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -8337,7 +8526,7 @@
    ]
   },
   "741": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8355,6 +8544,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -8369,8 +8572,23 @@
    ]
   },
   "743": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -8739,7 +8957,7 @@
    ]
   },
   "759": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -8757,6 +8975,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2 und 3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -10367,8 +10599,23 @@
    ]
   },
   "846": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -10496,7 +10743,7 @@
    ]
   },
   "857": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -10514,6 +10761,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -10875,7 +11136,7 @@
    ]
   },
   "881": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -10893,6 +11154,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -10992,7 +11267,7 @@
    ]
   },
   "890": {
-   "giltSeit": "2008-01-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -11027,6 +11302,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -11034,8 +11323,23 @@
    ]
   },
   "891": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -11265,8 +11569,23 @@
    ]
   },
   "904": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -11471,8 +11790,23 @@
    ]
   },
   "918": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -11548,8 +11882,23 @@
    ]
   },
   "924": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2021-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    }
+   ],
    "erbt": [
     9
    ]
@@ -18332,7 +18681,7 @@
    ]
   },
   "652_c": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -18510,7 +18859,7 @@
    ]
   },
   "652_f": {
-   "giltSeit": null,
+   "giltSeit": "2008-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -20278,7 +20627,7 @@
    ]
   },
   "685_b": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -20296,6 +20645,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "5",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -20809,6 +21172,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -20849,6 +21226,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     },
     {
      "typ": "fassung",
@@ -20893,6 +21284,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    },
+    {
      "typ": "fassung",
      "datum": "2023-01-01",
      "wirkung": false,
@@ -20933,6 +21338,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1 und 2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     },
     {
      "typ": "fassung",
@@ -21017,6 +21436,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     },
     {
      "typ": "fassung",
@@ -21607,7 +22040,7 @@
    ]
   },
   "706_a": {
-   "giltSeit": "1992-07-01",
+   "giltSeit": "2021-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -21642,6 +22075,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "2",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
     }
    ],
    "erbt": [
@@ -21649,7 +22096,7 @@
    ]
   },
   "706_b": {
-   "giltSeit": null,
+   "giltSeit": "1992-07-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -21744,6 +22191,20 @@
      "quellen": [],
      "absatz": "1",
      "item": "6"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1",
+     "item": "7",
+     "anweisung": "«Richter» → «Gericht»"
     },
     {
      "typ": "fassung",
@@ -22219,6 +22680,20 @@
   "731_b": {
    "giltSeit": "2026-10-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2021-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2020 957",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+      }
+     ],
+     "absatz": "1–3",
+     "item": null,
+     "anweisung": "«Richter» → «Gericht»"
+    },
     {
      "typ": "fassung",
      "datum": "2026-10-01",

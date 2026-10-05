@@ -519,11 +519,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "5": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -558,6 +572,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -744,6 +772,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-04-01",
      "wirkung": false,
@@ -853,7 +895,7 @@
    ]
   },
   "15": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -888,6 +930,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -1094,7 +1150,7 @@
    ]
   },
   "19": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1112,6 +1168,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -1138,7 +1208,7 @@
    ]
   },
   "24": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1173,11 +1243,25 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "25": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1195,6 +1279,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -1234,6 +1332,25 @@
      ],
      "absatz": "2",
      "item": null
+    }
+   ]
+  },
+  "27": {
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -1399,7 +1516,7 @@
    ]
   },
   "36": {
-   "giltSeit": null,
+   "giltSeit": "1995-07-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1596,7 +1713,7 @@
    ]
   },
   "47": {
-   "giltSeit": null,
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1615,6 +1732,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "B. Wiedereinsetzung in den früheren Stand"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -1681,7 +1812,7 @@
    ]
   },
   "49": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1750,11 +1881,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "50": {
-   "giltSeit": null,
+   "giltSeit": "1978-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1877,7 +2022,7 @@
    ]
   },
   "56": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1946,6 +2091,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -2011,7 +2170,7 @@
    ]
   },
   "59": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2131,11 +2290,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "60": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2205,11 +2378,25 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "61": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2295,6 +2482,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -2325,7 +2526,7 @@
    "aufgehobenSeit": "2008-07-01"
   },
   "63": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2378,6 +2579,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "II. Patentschrift"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -2385,8 +2600,23 @@
    ]
   },
   "64": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    }
+   ],
    "erbt": [
     18
    ]
@@ -2977,7 +3207,7 @@
    ]
   },
   "110": {
-   "giltSeit": null,
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3049,6 +3279,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "I. Wirkungen"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3083,7 +3327,7 @@
    ]
   },
   "117": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3119,6 +3363,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "3. Abschnitt: Verwaltung des europäischen Patentes"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3126,7 +3384,7 @@
    ]
   },
   "118": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -3144,6 +3402,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3326,7 +3598,7 @@
    ]
   },
   "122": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3344,6 +3616,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3352,7 +3638,7 @@
    ]
   },
   "123": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3370,6 +3656,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3585,7 +3885,7 @@
    ]
   },
   "130": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3620,6 +3920,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3627,7 +3941,7 @@
    ]
   },
   "131": {
-   "giltSeit": "1995-09-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3697,11 +4011,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "132": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3737,6 +4065,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3744,7 +4086,7 @@
    ]
   },
   "133": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3762,6 +4104,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3770,7 +4126,7 @@
    ]
   },
   "134": {
-   "giltSeit": "1995-09-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3841,6 +4197,20 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3848,7 +4218,7 @@
    ]
   },
   "135": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3866,6 +4236,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3902,7 +4286,7 @@
    ]
   },
   "137": {
-   "giltSeit": "1978-06-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3920,6 +4304,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -3929,7 +4327,7 @@
    ]
   },
   "138": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -3964,6 +4362,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -4265,6 +4677,20 @@
      "item": null
     },
     {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4499,6 +4925,20 @@
    "giltSeit": "2019-01-01",
    "ereignisse": [
     {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -4523,8 +4963,23 @@
    ]
   },
   "140_g": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2017-01-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    }
+   ],
    "erbt": [
     10,
     11,
@@ -4578,6 +5033,20 @@
   "140_i": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -4666,6 +5135,20 @@
   "140_l": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
     {
      "typ": "fassung",
      "datum": "2019-01-01",
@@ -4869,6 +5352,20 @@
   "140_z": {
    "giltSeit": "2019-01-01",
    "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2019-01-01",
@@ -5365,6 +5862,20 @@
      "item": "g"
     },
     {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
+    },
+    {
      "typ": "fassung",
      "datum": "2019-01-01",
      "wirkung": false,
@@ -5571,7 +6082,7 @@
    ]
   },
   "58_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5589,11 +6100,25 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
   "59_a": {
-   "giltSeit": "1978-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5628,6 +6153,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -5672,7 +6211,7 @@
    "aufgehobenSeit": "2008-07-01"
   },
   "59_c": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5707,6 +6246,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },
@@ -5791,7 +6344,7 @@
    "aufgehobenSeit": "2008-07-01"
   },
   "65_a": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5809,6 +6362,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ],
    "erbt": [
@@ -5816,7 +6383,7 @@
    ]
   },
   "70_a": {
-   "giltSeit": "2008-07-01",
+   "giltSeit": "2017-01-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5834,6 +6401,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "ausdruck",
+     "datum": "2017-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2015 3631",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2015/609"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "«Institut» → «IGE»"
     }
    ]
   },

@@ -27,6 +27,7 @@ import {
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
+import { anweisungsEreignisse } from '../../src/lib/normtext/generalanweisungen.ts';
 import { pruefeAufgehobenLebend, pruefeAufgehobenGiltSeit, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -61,12 +62,15 @@ interface Korpus extends Abdeckung {
 /** RL-11: Artikel-Token → «Körper trägt lebenden Normtext» aus dem Text-Shard
  *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt.
  *  P7 #53: dazu das amtliche Feld `aufgehoben` desselben Eintrags (Token ohne Feld ⇒ false). */
-function textShardIndex(erlass: string): Map<string, { lebend: boolean; aufgehoben: boolean }> {
-  const m = new Map<string, { lebend: boolean; aufgehoben: boolean }>();
+function textShardIndex(erlass: string): Map<string, { lebend: boolean; aufgehoben: boolean; text: string }> {
+  const m = new Map<string, { lebend: boolean; aufgehoben: boolean; text: string }>();
   const pfad = resolve(TEXT, `${erlass}.json`);
   if (!existsSync(pfad)) return m;
   const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: []; aufgehoben?: boolean | null }> };
-  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), { lebend: lebenderText(e).length > LEBEND_SCHWELLE, aufgehoben: e.aufgehoben === true });
+  for (const e of doc.eintraege ?? []) {
+    const text = lebenderText(e);
+    m.set(tokenAusId(e.id), { lebend: text.length > LEBEND_SCHWELLE, aufgehoben: e.aufgehoben === true, text });
+  }
   return m;
 }
 
@@ -87,20 +91,22 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
   const reihenfolge = [...textIndex.keys()].filter((t) => t in sidecar);
   const imText = new Set(reihenfolge);
   reihenfolge.push(...Object.keys(sidecar).filter((t) => !imText.has(t)).sort());
-  const { erbe, geteilt, randtitelEigen } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
+  const { erbe, geteilt } = sektionsAnalyse(reihenfolge.map((token) => ({ token, ...sidecar[token] })));
 
   const tokens = Object.keys(sidecar).sort();
   for (const token of tokens) {
     const fussnoten = sidecar[token].fussnoten ?? [];
     const geerbt = erbe.get(token);
-    if (fussnoten.length === 0 && !geerbt) continue;
+    // W2·32: Anweisungen des Änderungserlasses ohne Fussnote am Artikel (generalanweisungen.ts).
+    const anweisungen = anweisungsEreignisse(erlass, token, textIndex.get(token)?.text);
+    if (fussnoten.length === 0 && !geerbt && anweisungen.length === 0) continue;
     abdeckung.fussnoten += fussnoten.length;
     const { historie, unparsed, refCount, ereignisFnCount, erbtAnzahl } = baueArtikelHistorie(fussnoten, {
       koerperLebend: textIndex.get(token)?.lebend,
       snapshotAufgehoben: textIndex.get(token)?.aufgehoben,
       geerbt,
       geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
-      randtitelEigen: randtitelEigen.get(token) ?? new Set<string>(),
+      anweisungen,
     });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;

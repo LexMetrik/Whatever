@@ -262,7 +262,7 @@
  ],
  "artikel": {
   "1": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -281,26 +281,85 @@
      "absatz": null,
      "item": null,
      "ueberschrift": "Erstes Buch: Allgemeine Bestimmungen"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ]
   },
   "2": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "3": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "4": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -308,6 +367,20 @@
   "5": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -382,22 +455,67 @@
    ]
   },
   "6": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "7": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "8": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -421,6 +539,20 @@
      ],
      "absatz": "2",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -428,64 +560,199 @@
    ]
   },
   "10": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "11": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "12": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "13": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "14": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "15": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "16": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "17": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "18": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -493,6 +760,20 @@
   "19": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -516,71 +797,221 @@
    ]
   },
   "20": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "21": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "22": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "23": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "24": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "25": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "26": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "27": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "28": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "29": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -588,6 +1019,20 @@
   "30": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -628,22 +1073,67 @@
    ]
   },
   "31": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "32": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "33": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -651,6 +1141,20 @@
   "34": {
    "giltSeit": "2023-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -747,6 +1251,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -769,8 +1287,22 @@
    ]
   },
   "36": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2018-01-01",
@@ -799,6 +1331,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -825,6 +1371,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -849,6 +1409,20 @@
   "42": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -910,6 +1484,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2018-01-01",
      "wirkung": false,
      "quellen": [
@@ -968,6 +1556,20 @@
    "giltSeit": "2023-01-23",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2023-01-23",
      "wirkung": false,
@@ -990,8 +1592,23 @@
    ]
   },
   "45": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -999,6 +1616,20 @@
   "46": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1022,29 +1653,89 @@
    ]
   },
   "47": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "48": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "49": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "50": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1052,6 +1743,20 @@
   "51": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",
@@ -1075,8 +1780,22 @@
    ]
   },
   "52": {
-   "giltSeit": "2004-04-01",
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2020-07-01",
@@ -1122,6 +1841,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2019-07-01",
      "wirkung": false,
      "quellen": [
@@ -1144,16 +1877,46 @@
    ]
   },
   "54": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0,
     13
    ]
   },
   "55": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0,
     13
@@ -1162,6 +1925,20 @@
   "56": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -1185,15 +1962,44 @@
    ]
   },
   "57": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "58": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1235,6 +2041,20 @@
      ],
      "absatz": "3",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -1242,29 +2062,89 @@
    ]
   },
   "60": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "61": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1288,6 +2168,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     },
     {
      "typ": "fassung",
@@ -1367,6 +2261,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2008-08-01",
      "wirkung": false,
      "quellen": [
@@ -1422,8 +2330,23 @@
    ]
   },
   "66": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1431,6 +2354,20 @@
   "67": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2015-01-01",
@@ -1641,29 +2578,88 @@
    ]
   },
   "68": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "69": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "70": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "71": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2024-01-01",
@@ -1691,6 +2687,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2021-07-01",
      "wirkung": false,
      "quellen": [
@@ -1712,22 +2722,66 @@
    ]
   },
   "73": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "74": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "75": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "aufgehoben",
      "datum": "2011-01-01",
@@ -1751,15 +2805,45 @@
    ]
   },
   "76": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "77": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1767,6 +2851,20 @@
   "78": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -1813,29 +2911,89 @@
    "aufgehobenSeit": "2018-01-01"
   },
   "80": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "81": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "82": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "83": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1843,6 +3001,20 @@
   "84": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2008-08-01",
@@ -1866,36 +3038,111 @@
    ]
   },
   "85": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "86": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "87": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "88": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "89": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -1903,6 +3150,20 @@
   "90": {
    "giltSeit": "2022-06-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2022-06-01",
@@ -2004,6 +3265,20 @@
      "absatz": "2",
      "item": "d",
      "frueher": "Bst. c"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -2011,15 +3286,45 @@
    ]
   },
   "92": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "93": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2027,6 +3332,20 @@
   "94": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2024-07-01",
@@ -2054,6 +3373,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2015-01-01",
      "wirkung": false,
      "quellen": [
@@ -2075,8 +3408,23 @@
    ]
   },
   "96": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2084,6 +3432,20 @@
   "97": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2014-01-01",
@@ -2141,22 +3503,67 @@
    ]
   },
   "98": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "99": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "100": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2180,6 +3587,20 @@
      ],
      "absatz": "1",
      "item": "e"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     },
     {
      "typ": "fassung",
@@ -2259,6 +3680,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2016-07-01",
      "wirkung": false,
      "quellen": [
@@ -2280,15 +3715,45 @@
    ]
   },
   "103": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "104": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2296,6 +3761,20 @@
   "105": {
    "giltSeit": "2016-10-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2016-10-01",
@@ -2338,6 +3817,20 @@
   "106": {
    "giltSeit": "2023-07-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2023-07-01",
@@ -2384,7 +3877,7 @@
    "aufgehobenSeit": "2018-01-01"
   },
   "108": {
-   "giltSeit": null,
+   "giltSeit": "2007-01-01",
    "ereignisse": [
     {
      "typ": "berichtigt",
@@ -2393,6 +3886,20 @@
      "quellen": [],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -2400,8 +3907,23 @@
    ]
   },
   "109": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -2425,6 +3947,20 @@
      ],
      "absatz": "1",
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -9475,6 +11011,20 @@
    "giltSeit": "2023-07-01",
    "ereignisse": [
     {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
      "typ": "ausdruck",
      "datum": "2023-07-01",
      "wirkung": false,
@@ -10841,7 +12391,7 @@
    ]
   },
   "355_b": {
-   "giltSeit": null,
+   "giltSeit": "2006-04-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -11231,8 +12781,23 @@
    ]
   },
   "48_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11417,22 +12982,67 @@
    ]
   },
   "56_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "62_b": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11440,6 +13050,20 @@
   "62_c": {
    "giltSeit": "2013-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2013-01-01",
@@ -11463,22 +13087,67 @@
    ]
   },
   "62_d": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
   },
   "63_b": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -11486,6 +13155,20 @@
   "64_a": {
    "giltSeit": "2008-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2008-08-01",
@@ -11527,6 +13210,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -11854,6 +13551,20 @@
    "ereignisse": [
     {
      "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
+    {
+     "typ": "fassung",
      "datum": "2015-01-01",
      "wirkung": false,
      "quellen": [
@@ -11928,6 +13639,20 @@
   "67_b": {
    "giltSeit": "2015-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "eingefuegt",
      "datum": "2015-01-01",
@@ -12129,6 +13854,20 @@
      ],
      "absatz": null,
      "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
     }
    ],
    "erbt": [
@@ -12136,8 +13875,23 @@
    ]
   },
   "77_a": {
-   "giltSeit": null,
-   "ereignisse": [],
+   "giltSeit": "2007-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    }
+   ],
    "erbt": [
     0
    ]
@@ -12145,6 +13899,20 @@
   "77_b": {
    "giltSeit": "2018-01-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2007-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2006 3459",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2006/549"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "anweisung": "Erstes Buch: Allgemeine Bestimmungen neu gefasst"
+    },
     {
      "typ": "fassung",
      "datum": "2018-01-01",

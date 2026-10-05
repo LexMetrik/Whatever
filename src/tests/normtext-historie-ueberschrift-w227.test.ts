@@ -32,11 +32,10 @@ const TITEL11 = stufe(2, 'Elfter Titel: Der Werkvertrag');
 /** Historie eines Artikels der Folge `folge` (Token → Erbe aus `sektionsErbe`). */
 function historieVon(folge: ErbArtikel[], token: string, opts: { snapshotAufgehoben?: boolean } = {}) {
   const a = folge.find((x) => x.token === token)!;
-  const { erbe, geteilt, randtitelEigen } = sektionsAnalyse(folge);
+  const { erbe, geteilt } = sektionsAnalyse(folge);
   return baueArtikelHistorie(a.fussnoten, {
     geerbt: erbe.get(token),
     geteilteUeberschriften: geteilt.get(token) ?? new Set<string>(),
-    randtitelEigen: randtitelEigen.get(token) ?? new Set<string>(),
     ...opts,
   }).historie;
 }
@@ -180,19 +179,19 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
     expect(h.ereignisse[0]).toMatchObject({ typ: 'fassung', datum: '2007-01-01', ueberschrift: 'Asexies. Stiefeltern' });
   });
 
-  // Entscheid David 4.10.2026 «A» (Posten 2026-10-03-zgb-299-300-nach-gp-1298-h2…): fällt «Gilt seit» ohne den Randtitel auf ein
-  // ÄLTERES Körper-Datum zurück, bleibt es leer (null) — der ältere Körper-Stand wäre sonst amtlich falsch, weil Generalanweisungen
-  // («Ersatz von Ausdrücken», AS 1999 1118 Gewalt → Sorge, 1.1.2000) den Körper ändern, ohne am Artikel zu stehen. Die Chronik bleibt.
-  it('Randtitel zählt nicht + Entscheid A: nur ein ÄLTERER eigener Körper-Eingriff (1972 < Randtitel 2007) → giltSeit null, Chronik behält beide', () => {
+  // Entscheid David 4.10.2026 «A» hatte «Gilt seit» leer gelassen, wenn ein ÄLTERER Körper-Stand + jüngerer eigener Randtitel
+  // zusammentrafen (Vorsichts-Proxy für nicht erfasste Generalanweisungen). Zurückgebaut 5.10.2026 (W2·32-GENERALANWEISUNGEN):
+  // die Anweisungen sind jetzt Artikel-Ereignisse (generalanweisungen.ts), der Fussnoten-Stand gilt wieder.
+  it('Randtitel zählt nicht (Proxy von Entscheid A zurückgebaut, W2·32): ein ÄLTERER eigener Körper-Eingriff (1972 < Randtitel 2007) datiert wieder, Chronik behält beide', () => {
     const f13b: ErbArtikel[] = [
       { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_2007, 'A. Stiefeltern'), { ...fn(FASSUNG_1972), nr: '2' }] },
     ];
     const h = historieVon(f13b, '299')!;
-    expect(h.giltSeit).toBeNull();
+    expect(h.giltSeit).toBe('1972-01-01');
     expect(h.ereignisse.map((e) => [e.datum, e.ueberschrift])).toEqual([['2007-01-01', 'A. Stiefeltern'], ['1972-01-01', undefined]]);
   });
 
-  it('Randtitel zählt nicht + Entscheid A: ein JÜNGERER oder gleich alter eigener Körper-Eingriff datiert weiter («giltSeit» = dessen Datum)', () => {
+  it('Randtitel zählt nicht: ein JÜNGERER oder gleich alter eigener Körper-Eingriff datiert («giltSeit» = dessen Datum)', () => {
     const koerper = (text: string): ErbArtikel[] => [
       { token: '299', gliederung: [TITEL], marginalie: ['A. Stiefeltern'], fussnoten: [sek(FASSUNG_1972, 'A. Stiefeltern'), { ...fn(text), nr: '2' }] },
     ];
@@ -202,17 +201,17 @@ describe('sektionsErbe · Überschrift-Fussnoten gelten für alle Artikel darunt
 
   // A3 (Delta-GP 4.10.2026, §6.7): Randtitel MIT Gliederungszeichen, der von MEHREREN Artikeln geteilt wird (OR 657 «K. Genussscheine»,
   // AS 2020 4005 → 2023), ist ein geteilter Gliederungsknoten (Vorgabe C), kein eigener Randtitel: der ältere Körper-Stand bleibt.
-  it('Entscheid A greift NICHT bei geteiltem Randtitel mit Gliederungszeichen (OR 657-Form): giltSeit bleibt der ältere eigene Körper-Stand', () => {
+  it('Geteilter Randtitel mit Gliederungszeichen (OR 657-Form): giltSeit bleibt der ältere eigene Körper-Stand', () => {
     const geteilt: ErbArtikel[] = [
       { token: '657', gliederung: [TITEL], marginalie: ['K. Genussscheine', 'Begriff'], fussnoten: [sek(FASSUNG_2007, 'K. Genussscheine'), { ...fn(FASSUNG_1972), nr: '2' }] },
       { token: '658', gliederung: [TITEL], marginalie: ['K. Genussscheine', 'Rechte'] },
     ];
     expect(historieVon(geteilt, '657')!.giltSeit).toBe('1972-01-01');
-    // Kontrolle: derselbe Randtitel bei genau EINEM Artikel ist eigen ⇒ leer (Entscheid A)
-    expect(historieVon([geteilt[0]], '657')!.giltSeit).toBeNull();
+    // Kontrolle: derselbe Randtitel bei genau EINEM Artikel ist ein eigener Randtitel — «Gilt seit» bleibt gleichwohl der Körper-Stand
+    expect(historieVon([geteilt[0]], '657')!.giltSeit).toBe('1972-01-01');
   });
 
-  it('Entscheid A gilt nur für den eigenen Randtitel: Überschrift-Ereignis eines geteilten Gliederungsknotens ändert «giltSeit» weiter nicht (Vorgabe C)', () => {
+  it('Überschrift-Ereignis eines geteilten Gliederungsknotens ändert «giltSeit» nicht (Vorgabe C)', () => {
     const geteilt: ErbArtikel[] = [
       { token: '319', gliederung: [TITEL], fussnoten: [sek(FASSUNG_2007, TITEL.label), { ...fn(FASSUNG_1972), nr: '2' }] },
       { token: '320', gliederung: [TITEL] },
@@ -515,29 +514,30 @@ describe('Korpus · Vorgaben C/B1/B2/B4/B5 (committete Shards, aufgelöst über 
     expect(hist('NHG', '3')!.giltSeit).toBe('2000-01-01');
   });
 
-  it('Randtitel zählt nicht (Entscheid David 3.10.2026): ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → nicht mehr 2018-01-01, Chronik behält 2018', () => {
+  it('Randtitel zählt nicht (Entscheid David 3.10.2026) + Generalanweisung: ZGB 299/300 (Randtitel «Asexies./Asepties.», 2018) → «Gilt seit» 1.1.2000 (AS 1999 1118 Gewalt → Sorge), Chronik behält 2018', () => {
     for (const token of ['299', '300']) {
       const h = hist('ZGB', token)!;
-      // Entscheid David 4.10.2026 «A»: der Fussnotenwert 1978 (AS 1977 237) wäre amtlich falsch (AS 1999 1118 ersetzt «Gewalt» →
-      // «Sorge» in Art. 299/300, nicht im Modell) ⇒ «Gilt seit» bleibt leer, bis die Generalanweisungen modelliert sind (Schritt C).
-      expect(h.giltSeit, token).toBeNull();
+      // Der Fussnotenwert 1978 (AS 1977 237) war amtlich überholt: AS 1999 1118 S. 1143 ersetzt «Gewalt» → «Sorge» in Art. 299 und
+      // 300 Abs. 1 (in Kraft 1.1.2000), ohne Vermerk am Artikel — jetzt als Anweisungs-Ereignis modelliert (W2·32).
+      expect(h.giltSeit, token).toBe('2000-01-01');
+      expect(h.ereignisse.some((e) => e.datum === '2000-01-01' && e.anweisung === '«Gewalt» → «Sorge»'), token).toBe(true);
       expect(h.ereignisse.some((e) => e.datum === '2018-01-01' && e.ueberschrift), token).toBe(true);
     }
   });
 
-  it('A3: geteilte Randtitel mit Gliederungszeichen bleiben datiert (Entscheid A betrifft nur eigene Randtitel): OR 657, 722, 973a, ZGB SchlT 7a^bis', () => {
+  it('A3: geteilte Randtitel mit Gliederungszeichen bleiben datiert: OR 657, 722, 973a, ZGB SchlT 7a^bis', () => {
     expect(hist('OR', '657')!.giltSeit).toBe('1992-07-01'); // Randtitel «K. Genussscheine» 2023 (AS 2020 4005)
     expect(hist('OR', '722')!.giltSeit).toBe('1992-07-01');
     expect(hist('OR', '973_a')!.giltSeit).toBe('2010-01-01');
     expect(hist('ZGB', 'disp_u1_art_7_a_bis')!.giltSeit).toBe('2000-01-01');
   });
 
-  it('Randtitel zählt nicht: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → nicht mehr 2014-07-01, Chronik behält 2014', () => {
+  it('Randtitel zählt nicht + Generalanweisung: ZGB 310 (Randtitel «III. Aufhebung des Aufenthaltsbestimmungsrechts», AS 2014 357) → «Gilt seit» 1.1.2013, Chronik behält 2014', () => {
     const h = hist('ZGB', '310')!;
-    // Entscheid David 4.10.2026 «A» (Nachzug 2 Delta-GP, 3.10.2026): am Körper steht nur die Fassung 1978 (AS 1977 237);
-    // «Vormundschaftsbehörde» → «Kindesschutzbehörde» in Art. 310 steht in der Generalanweisung AS 2011 725 («Ersatz von Ausdrücken»,
-    // S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel). Der 1978-Stand wäre falsch ⇒ «Gilt seit» bleibt leer (null).
-    expect(h.giltSeit).toBeNull();
+    // Am Körper steht nur die Fassung 1978 (AS 1977 237); «Vormundschaftsbehörde» → «Kindesschutzbehörde» in Art. 310 steht in
+    // der Generalanweisung AS 2011 725 («Ersatz von Ausdrücken», S. 755, in Kraft 1.1.2013, ohne Vermerk am Artikel).
+    expect(h.giltSeit).toBe('2013-01-01');
+    expect(h.ereignisse.some((e) => e.datum === '2013-01-01' && e.anweisung)).toBe(true);
     expect(h.ereignisse.some((e) => e.datum === '2014-07-01' && e.ueberschrift)).toBe(true);
   });
 
