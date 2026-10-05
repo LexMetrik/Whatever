@@ -1,10 +1,13 @@
 # Python-Abhängigkeiten des Repos — EINZIGER Python-Lauf:
-#   scripts/lik-reihe-generieren.py  (monatlicher manueller Pflege-Lauf nach
-#   BFS-Publikation; liest die BFS-XLSX, schreibt src/data/likReihe.ts).
-# Alle übrigen Generatoren laufen in TypeScript via vite-node. Dieses Skript
-# steht bewusst ausserhalb von gate/golden/CI (manuell, nicht tor-relevant).
+#   scripts/lik-reihe-generieren.py  (monatlicher Pflege-Lauf nach BFS-Publikation;
+#   liest die BFS-XLSX, schreibt src/data/likReihe.ts). Seit 5.10.2026 ruft ihn der
+#   Bot .github/workflows/lik-nachzug.yml (scripts/lik/nachzug.sh), der diese Datei
+#   installiert; ausserhalb von gate/golden/PR-CI (nicht tor-relevant).
+# Alle übrigen Generatoren laufen in TypeScript via vite-node.
 # Installation:  python3 -m pip install -r requirements.txt
 # Liegt bewusst NICHT im Repo-Wurzelverzeichnis: eine requirements.txt in der Wurzel
 # lässt Vercel «Python» erkennen und `vercel build` im CI-Deploy an `uv` scheitern
 # (Vorfall 17.8.2026, erster CI-Deploy). Aufruf: pip install -r scripts/lik-requirements.txt
-openpyxl
+# Gepinnt (Gegenprüfung 5.10.2026, Befund 3): lokal verwendete Version; ein stiller
+# Versionssprung im Bot-Lauf könnte die Zell-Einlesung des Generators verändern.
+openpyxl==3.1.5

@@ -191,6 +191,15 @@ describe('Risiko-/Prüflogik-Prädikate', () => {
     // auf jene Botschaft zurück» (Rot-Beweis 11.9.2026: ohne die kern.ts-Zeile
     // liefert dieselbe Abfrage false).
     expect(istRisikoPfad('public/materialien/entstehung/OR.json')).toBe(true);
+    // LIK-Nachzug-Bot (MONITOR, 5.10.2026): Generator + Bot-Tor («nur Anfügung»)
+    // erzeugen src/data/likReihe.ts (RECHTSLOGIK_DATEIEN) — das Tor, das die
+    // Rechtsdaten schützt, muss selbst Risiko-Pfad sein (Rot-Beweis: vorher false).
+    expect(istRisikoPfad('scripts/lik-reihe-generieren.py')).toBe(true);
+    expect(istRisikoPfad('scripts/lik/nachzug.sh')).toBe(true);
+    expect(istRisikoPfad('scripts/lik/neu-einlesen.py')).toBe(true);
+    expect(istRisikoPfad('scripts/lik/vergleich-kern.ts')).toBe(true);
+    expect(istRisikoPfad('scripts/lik/vergleich.ts')).toBe(true);
+    expect(behalten('scripts/lik/vergleich-kern.ts')).toBe(true); // kein «check»-Basename
     // public/materialien nur EINE Ebene für nackte *.json (kanten/** separat als Präfix)
     expect(istRisikoPfad('public/materialien/liesmich.md')).toBe(false);
   });
