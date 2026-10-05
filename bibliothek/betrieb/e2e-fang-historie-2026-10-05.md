@@ -298,7 +298,7 @@ Asserts:
 | `gesetze-rechtsgebiet-g6` | Artikelspanne «Art. 319–362» ist ein Normtext-Verweis |
 | `deckung-seite` | Summen und Quote der Deckungsübersicht sind Rechnergebnisse |
 | `w224-plus-reiter` | Zitat-Auflösung «OR 257d» → «#art-257_d» ist ein Normtext-Sprungziel |
-| `leser-v3-panel-facetten` | Erscheinende Entscheide je Erlass (Urteils-Auswahl) —Inhalt/Filterung, nicht Bedienung |
+| `leser-v3-panel-facetten` | Erscheinende Entscheide je Erlass (Urteils-Auswahl) — Inhalt/Filterung, nicht Bedienung |
 
 **Neue Zählung** (nie rote Specs, Stand nach Gegenprüfung R2):
 
