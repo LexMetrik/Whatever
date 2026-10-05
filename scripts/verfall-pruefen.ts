@@ -26,11 +26,11 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { iso, sammleTermine } from './verfall-parse.ts';
+import { iso, sammleTermine, VORLAUF_TAGE } from './verfall-parse.ts';
 
-// Bei Änderung die Anzeige-Schwelle in src/components/VerfallUebersicht.tsx
+// VORLAUF_TAGE (45) lebt in verfall-parse.ts (geteilt mit der Verfall-Erinnerung);
+// bei Änderung die Anzeige-Schwelle in src/components/VerfallUebersicht.tsx
 // gleich halten (bewusste Spiegelung, Anzeige ≠ Rechtsregel).
-const VORLAUF_TAGE = 45;
 
 const REGISTER = resolve(
   dirname(fileURLToPath(import.meta.url)),

@@ -50,6 +50,7 @@
     "check:bibliothek": "bash scripts/bibliothek-check.sh",
     "check:verfall": "vite-node scripts/verfall-pruefen.ts",
     "check:lik-frische": "vite-node scripts/check-lik-frische.ts",
+    "report:verfall-erinnerung": "vite-node scripts/verfall-erinnerung.ts",
     "gen:verfall": "vite-node scripts/verfall-generieren.ts",
     "check:verfall-ui": "vite-node scripts/verfall-generieren.ts -- --check",
     "gen:zaehler": "vite-node scripts/gen-startseite-zaehler.ts",
