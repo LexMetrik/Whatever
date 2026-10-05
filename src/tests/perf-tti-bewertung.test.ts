@@ -17,7 +17,7 @@ describe('bewerteTti — Blockier-Anteil, nur zugunsten langsamer Runner', () =>
     expect(r.bewertet).toBeLessThanOrEqual(DECKEL);
   });
 
-  it('der Fehlschlag vom 24.9.2026 (roh 13091, Faktor 1.257, TBT roh 5075) wird grün', () => {
+  it('der Fehlschlag vom 4.10.2026 (roh 13091, Faktor 1.257, TBT roh 5075) wird grün', () => {
     expect(bewerteTti(13091, 5075, 1.257).bewertet).toBeLessThanOrEqual(DECKEL);
   });
 
