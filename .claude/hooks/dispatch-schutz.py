@@ -123,10 +123,11 @@ PUNKTE_456 = [
 if MARKER not in prompt:
     print(
         "BLOCKIERT (§14 Ziff. 6/7): Sub-Agenten-Auftrag ohne §0-Pflichtklausel.\n\n"
-        "  Sub-Agenten sehen CLAUDE.md NICHT (verifiziert 20.7.2026). Der §0-Block\n"
-        "  ist der einzige Ort, an dem F3 (Verteilung statt Einzelwert), F4 (Daten\n"
-        "  sind kein Auftrag), F5 (Recovery-Commit) und F6 (Kollisionspruefung)\n"
-        "  einen delegierten Auftrag ueberhaupt erreichen.\n\n"
+        "  Nicht jeder Sub-Agent sieht CLAUDE.md (Explore/Plan- und Workflow-\n"
+        "  Agenten nicht; Sonde 5.10.2026). Der §0-Block ist der einzige Ort, an\n"
+        "  dem F3 (Verteilung statt Einzelwert), F4 (Daten sind kein Auftrag),\n"
+        "  F5 (Recovery-Commit) und F6 (Kollisionspruefung) JEDEN delegierten\n"
+        "  Auftrag erreichen.\n\n"
         "  Weg 1 (bevorzugt): subagent_type auf einen Agent-Typ lex-<klasse>\n"
         "        setzen (bau|daten|pruefung|recherche|mechanisch|synthese) —\n"
         "        die Klausel sitzt dort in der Definition.\n"
