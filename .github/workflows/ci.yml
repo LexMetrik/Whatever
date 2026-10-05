@@ -891,16 +891,17 @@ jobs:
             rot=1
           fi
           if [ "${MESSUNG}" != "success" ]; then
-            echo "::error::Perf-Messung nicht bestanden: ${MESSUNG}."
+            echo "::error::Perf-Messung (Bundle-Topologie) nicht bestanden: ${MESSUNG}."
             rot=1
           fi
           if [ "${rot}" -ne 0 ]; then
             exit 1
           fi
-          echo "Treue grün (Tore + Browser-Smoke) und Perf-Budget eingehalten."
+          echo "Treue grün (Tore + Browser-Smoke) und Bundle-Budget eingehalten. Lighthouse misst nächtlich (perf-nacht.yml)."
 
+  # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-070
   perf-messung:
-    name: Perf-Messung (Bundle · Lighthouse, parallel zu den Shards)
+    name: Perf-Messung (Bundle-Topologie, parallel zu den Shards)
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
@@ -923,18 +924,10 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Playwright-Browser-Cache
-        uses: actions/cache@v6
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-053
-      - name: Playwright-Browser (Chromium)
-        run: bash scripts/ci/playwright-install.sh
       - name: Perf-Budget — Bundle-Topologie (Chrome-frei)
         run: npm run check:perf-budget
-      - name: Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)
-        run: npm run check:perf-lighthouse
+      # Lighthouse-Metriken: seit 5.10.2026 nächtlich gegen main
+      # (.github/workflows/perf-nacht.yml), nicht mehr hier — ci-070.
 
   # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-054
   merge-schutz:

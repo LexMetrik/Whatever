@@ -1,0 +1,92 @@
+# ─── Perf-Nacht: Lighthouse-Budget (§15) nächtlich gegen main ──────────────────
+#
+# ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «… Tempo-Messung nachts?»,
+# QS-CI-ZEIT E3). Bis dahin lief `check:perf-lighthouse` in jedem merge_group-
+# Lauf (ci.yml, Job perf-messung) und warf Einträge aus der Warteschlange:
+# 7 von 17 Queue-Röten in 300 Läufen waren Lighthouse-Rauschen (z. B. TTI
+# 13,61 s > Deckel 13,0 s bei unverändertem Code). Die Bundle-Topologie
+# (`check:perf-budget`, Chrome-frei, deterministisch) bleibt in ci.yml
+# merge-blockierend; nur die streuende Browser-Messung zieht hierher.
+#
+# WARUM EIN EIGENER WORKFLOW und nicht perf-kalibrierung.yml (§17 Satz 1 geprüft):
+# die Kalibrierung ist eine 8-fache Messreihe, die bewusst NICHTS assertiert
+# (`--messen`) und nur per Hand startet — sie liefert Schwellen, kein Urteil.
+# Hier wird EINMAL gegen die Schwellen geurteilt und bei Rot ein Zettel
+# geschrieben. Beides in eine Datei zu legen hiesse, eine Matrix mit Schalter
+# für «assertiert / assertiert nicht» zu bauen — zwei Zwecke, eine Datei.
+#
+# BEI ROT: sichtbarer Aufgaben-Zettel (Issue, Label `alarm:perf-nacht`), Muster
+# prod-smoke.yml; bei Grün wird ein offener Zettel geschlossen. Rot hält
+# nichts auf (kein Required-Kontext) — der Zettel ist der Hebel.
+# PLAYWRIGHT-CACHE: dieser Lauf ist der Speicherer für main (actions/cache mit
+# Save); ci.yml stellt den Cache in PR/merge_group nur wieder her (ci-071).
+# Überwacht von waechter.yml (check:ci-laeufe: geplanter Workflow ohne Lauf
+# = rot).
+name: Perf-Nacht (Lighthouse-Budget gegen main)
+
+on:
+  schedule:
+    - cron: '17 2 * * *' # täglich 02:17 UTC, entzerrt gegen die anderen Wächter
+  workflow_dispatch:
+
+concurrency:
+  group: perf-nacht
+  cancel-in-progress: false
+
+jobs:
+  lighthouse:
+    name: Lighthouse-Budget (4× CPU + langsames 4G)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: write
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+      - name: Build (dist für die Messung, ohne Typprüfung — die macht ci.yml)
+        run: npm run build:dist
+      - name: Playwright-Browser-Cache (speichert auf main)
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Playwright-Browser (Chromium — Lighthouse steuert ihn)
+        run: bash scripts/ci/playwright-install.sh
+      - name: Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)
+        run: npm run check:perf-lighthouse
+
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen
+        if: failure() && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          gh label create alarm:perf-nacht --color D93F0B --description "Nächtliches Lighthouse-Budget rot (perf-nacht.yml)" >/dev/null 2>&1 || true
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:perf-nacht&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          if [ -n "$offen" ]; then
+            gh issue comment "$offen" --body "Weiterhin rot am $(date +%F) (${GITHUB_SHA:0:8}): ${RUN_URL}"
+            exit 0
+          fi
+          rumpf="Die nächtliche Lighthouse-Messung (§15, \`check:perf-lighthouse\`) gegen main ist rot — ein Seiten-Budget (LCP/TBT/TTI/CLS) ist gerissen. Erst Streuung prüfen (§0 Ziff. 3: Re-Run per workflow_dispatch, ein Einzelwert ist ein Verdacht, keine Ursache), dann den verursachenden Commit eingrenzen (Skill \`perf\`). Seit 5.10.2026 blockiert dieses Budget die Warteschlange nicht mehr (Entscheid David) — dieser Zettel ist der Hebel. Stand: ${GITHUB_SHA:0:8}. Lauf: ${RUN_URL}"
+          for l in "--label alarm:perf-nacht" ""; do gh issue create $l --title "🟠 Perf-Nacht rot ($(date +%F)) — Lighthouse-Budget gegen main gerissen" --body "$rumpf" && break; done
+
+      - name: Bei Grün — offenen Zettel schliessen
+        if: success() && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'echo "::warning::Zettel-Pflege gescheitert (Z. $LINENO), Lauf unberührt"; exit 0' ERR
+          offen=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=alarm:perf-nacht&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          [ -z "$offen" ] && exit 0
+          gh issue close "$offen" --reason completed --comment "🟢 Wieder grün am $(date +%F) (${GITHUB_SHA:0:8}): ${RUN_URL}"

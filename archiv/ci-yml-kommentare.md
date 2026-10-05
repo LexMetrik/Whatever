@@ -1114,6 +1114,14 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
     # Messung am Job `bau`); sonst misst `perf` weiterhin echt.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> Der Entscheid David 26.7.2026 «Perf nur auf main/merge_group» (auch ci-001
+> Punkt 4) wird durch den Entscheid David 5.10.2026 ergänzt: die
+> Lighthouse-Metriken (`check:perf-lighthouse`) laufen nicht mehr in
+> merge_group/push, sondern nächtlich gegen main (`perf-nacht.yml`, Zettel bei
+> Rot). In merge_group/push bleibt die Bundle-Topologie (`check:perf-budget`)
+> merge-blockierend; Job-`if:` unverändert. Detail: ci-070.
+
 ## ci-052 · perf · needs
 
 ```text
@@ -1141,6 +1149,10 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # Single Source of Truth statt Duplikat — Details in
       # scripts/ci/playwright-install.sh.
 ```
+
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> Der Schritt ist aus `perf-messung` entfallen — ohne Lighthouse braucht der Job
+> keinen Chromium mehr. Derselbe Aufruf steht jetzt in `perf-nacht.yml` (ci-070).
 
 ## ci-054 · merge-schutz · merge-schutz
 
@@ -1366,6 +1378,12 @@ verschobener Altkommentar).
   # Wanduhr) — bewusst in Kauf genommen.
 ```
 
+> **Nachtrag 5.10.2026 (QS-CI-ZEIT E3, Ergänzung, Block oben unverändert):**
+> «perf-messung» misst seither nur noch die Bundle-Topologie (Name: «Perf-Messung
+> (Bundle-Topologie, parallel zu den Shards)»); der Required-Kontext «Perf-Budget
+> (§15 — nur bei grüner Treue)» behält Namen und Wertung (Tore + Browser-Smoke
+> (Ergebnis) + Messung), die Messung ist nur schmaler. Lighthouse: ci-070.
+
 ## ci-067 · tore-typen · tore-typen
 
 Neu 5.10.2026 (QS-CI-ZEIT E4, Auftrag David «CI-Zeit verringern»; kein
@@ -1476,4 +1494,37 @@ Neu 5.10.2026 (QS-CI-ZEIT E2; kein verschobener Altkommentar).
   # jetzt der offene Zettel. Der deterministische Erstfehler w224-r11 (8/8 Läufe
   # im 1. Versuch rot, Ausnahme lief bis 20.10.2026) steht als Wurzelfix-Posten
   # im ROADMAP-EINGANG.
+```
+
+## ci-070 · perf-messung · perf-messung (Lighthouse nachts)
+
+Neu 5.10.2026 (QS-CI-ZEIT E3; kein verschobener Altkommentar).
+
+```text
+  # ── Lighthouse aus der Warteschlange in den Nachtlauf (QS-CI-ZEIT E3) ────────
+  # ENTSCHEID David 5.10.2026 (Chat, «Ja, so bauen» auf «… Tempo-Messung
+  # nachts?»); ergänzt den Entscheid 26.7.2026 «Perf nur auf main/merge_group»
+  # (ci-001 Punkt 4, ci-051).
+  # MESSBASIS (300 Queue-Läufe): 7 von 17 Queue-Röten waren Lighthouse-Rauschen,
+  # z. B. TTI 13,61 s > Deckel 13,0 s bei unverändertem Code — die Messung
+  # streut auf dem heterogenen Runner-Pool stärker als die Deckel-Reserve.
+  #
+  # UMSETZUNG:
+  #   · `perf-messung` (ci.yml): nur noch `check:perf-budget` (Bundle-Topologie,
+  #     Chrome-frei, deterministisch); Playwright-Cache/-Install entfallen.
+  #   · Required-Kontext «Perf-Budget (§15 — nur bei grüner Treue)» bleibt als
+  #     Name (Ruleset unverändert) und wertet Treue (Tore + Browser-Smoke
+  #     (Ergebnis)) + Bundle-Prüfung.
+  #   · NEU `.github/workflows/perf-nacht.yml`: täglich 02:17 UTC + Handstart,
+  #     baut main (`build:dist`), misst Lighthouse mit Assertion; bei Rot Issue
+  #     (Label `alarm:perf-nacht`, Muster prod-smoke.yml), bei Grün schliessen.
+  #     perf-kalibrierung.yml geprüft und NICHT genutzt (§17 Satz 1): sie ist
+  #     eine 8-fache Messreihe ohne Assertion für die Schwellen-Erhebung —
+  #     anderer Zweck, Begründung im Kopf von perf-nacht.yml.
+  #   · check-tor-paritaet: ALLOWLIST_NUR_CI-Eintrag `check:perf-lighthouse`
+  #     gestrichen (Regel 5: ci.yml ruft es nicht mehr); Deckung über Regel 6
+  #     (perf-nacht.yml).
+  # FOLGE: ein Lighthouse-Rückschritt blockiert die Queue nicht mehr, er
+  # erscheint spätestens am nächsten Morgen als Zettel. Bundle-Grösse/-Topologie
+  # bleibt bei jedem Queue-Eintrag (art=code) merge-blockierend.
 ```

@@ -46,8 +46,8 @@ const ALLOWLIST_NUR_CI: Record<string, string> = {
     'braucht `dist/assets/` (Build-Artefakt aus `npm run build`) — kein Gate-Schritt baut vor jedem Lauf. Lokal bei Bedarf: `npm run build && npm run check:perf-budget`.',
   'check:e2e-flake':
     'braucht `playwright-report.json` — den erzeugt der JSON-Reporter laut playwright.config.ts NUR unter `CI`, und nur der Shard-Lauf selbst füllt ihn. Lokal fehlt die Datei, das Tor wäre bei jedem Gate-Lauf rot. Lokales Pendant ist der Verdikt-Test src/tests/e2e-flake-waechter.test.ts (läuft in check:seriell über die Vitest-Suite); Arbiter bleibt ci.yml (e2e-Job — seit 5.10.2026 nur noch merge_group/push/workflow_dispatch, nicht im PR-Lauf; Entscheid David, QS-CI-ZEIT E1).',
-  'check:perf-lighthouse':
-    'braucht `dist/` (Build-Artefakt) und eine echte Chrome/Lighthouse-Messung über mehrere Läufe für den Median (mehrere Minuten) — ungeeignet für einen Gate-Lauf bei jedem WIP-Commit. Arbiter bleibt ci.yml (Job Perf, PR-Pfad).',
+  // 5.10.2026 · check:perf-lighthouse gestrichen: läuft nicht mehr in ci.yml, sondern
+  // nächtlich in perf-nacht.yml (Entscheid David, QS-CI-ZEIT E3) — Regel (6) deckt es dort.
 };
 
 /**
