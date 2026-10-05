@@ -1070,6 +1070,17 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
   # code-fern-Läufe ihre Shards ohnehin nie fahren.
 ```
 
+> **Richtigstellung 5.10.2026 (QS-CI-ZEIT E6, Ergänzung, Block oben unverändert —
+> §2b: der Satz bleibt als Beleg seines Standes stehen):** Der Absatz «WARUM
+> `bau` NICHT in `needs` steht» trifft nicht zu: `tore` lädt KEIN dist-Artefakt
+> (weder vor noch nach der Aufteilung QS-CI-ZEIT T2, ci-063/ci-065), ein rotes
+> `bau` macht `tore` also nicht rot. Gedeckt ist der Fall trotzdem — über Fall
+> (3) dieses Jobs: rotes `bau` ⇒ Shards `skipped` bei art=code ⇒ «Browser-Smoke
+> (Ergebnis)» ROT; seit 5.10.2026 zusätzlich über «Perf-Budget» (verlangt
+> Browser-Smoke = success, ci-066) und über `tore-typen` für den häufigsten
+> Bau-Bruch, den Typfehler (ci-067). Im PR-Lauf läuft `bau` seit 5.10.2026
+> nicht mehr (ci-068); dort greift Fall (2d).
+
 ## ci-050 · e2e-ergebnis · if
 
 ```text
