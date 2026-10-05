@@ -291,7 +291,7 @@ export const ZH_QUELLEN: readonly ZhQuelle[] = [
     nr: '215.2',
     titel: "Verordnung des Obergerichts über die Aufsichtskommission über die Anwältinnen und Anwälte",
     kuerzel: "",
-    registryUrl: `${BASIS}erlass-215_2-2004_12_15-2005_01_01-091.html`,
+    registryUrl: `${BASIS}erlass-215_2-2004_12_15-2005_01_01-134.html`,
   },
   {
     nr: '215.3',
