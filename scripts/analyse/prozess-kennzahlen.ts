@@ -33,27 +33,38 @@
 // ── REGEL `prozess_commits_30d` — Pfad-Regel ────────────────────────────
 // Ein «Prozess-Commit» ist ein Commit mit mindestens einer geänderten Datei,
 // dessen geänderte Pfade ALLE Prozess-Pfade sind (`istProzessPfad`): die
-// Steuerungs-Fläche (`istFlaeche` aus steuerflaecheKern.ts, Tests eines
-// Steuerungs-Skripts eingeschlossen) und die Plan-Doku (ROADMAP, Chronik,
-// STRUKTUR, fahrplaene/, plan/, archiv/, .claude/, die beiden messwerte-Dateien).
-// Gemischte Commits (Feature-PR mit ROADMAP-Nachführung) zählen als Produkt.
-// Beobachtungsgrösse, kein Urteil: sie speist nie ein Tor (§2).
+// Steuerungs-Fläche (`FLAECHE` aus steuerflaecheKern.ts, importiert, nicht
+// kopiert; bewusst OHNE die RECHTSSCHUTZ-Ausnahme von `istFlaeche`, die ist
+// Byte-Druck-Schutz und beantwortet nicht «ist das Prozessarbeit?»), die
+// Plan-Doku (ROADMAP, Chronik, STRUKTUR, fahrplaene/, plan/, archiv/, .claude/,
+// drei messwerte-Dateien, bibliothek/betrieb/), scripts/{landung,ci,gegenpruefung}/
+// und die Tests der Prozess-Werkzeuge (abschliessende Präfix-Liste PROZESS_TESTS).
 //
 // OFFENLEGUNG (§7). Seit 5.10.2026 Pfad-Regel statt Betreff-Muster (Auftrag
 // David 5.10.2026): der Bauplan-Umstieg entfernte die `QS-`-Präfixe aus den
 // Betreffen, 6 von 8 Umstieg-Commits fielen heraus. Die ganze Reihe ist nach
-// der Pfad-Regel neu erhoben; alte Werte nur in git.
+// der Pfad-Regel neu erhoben; alte Werte nur in git. Grenzen der Zahl:
+//  · Gemischte Commits (Prozess- UND Produkt-Pfad, z. B. Feature + ROADMAP) zählen
+//    als Produkt; Anteil im Fenster bis 25.9.2026: 217 von 546 (40 %,
+//    gemessen 5.10.2026) — die Zahl ist eine Untergrenze der Prozessarbeit.
+//  · Die Liste ist abschliessend und gilt rückwirkend für alte Commits: wer
+//    `FLAECHE`, PLAN_DOKU oder PROZESS_TESTS ändert, verschiebt die ganze Reihe.
+//  · Stichtag = UTC-Mitternacht (`<tag>T00:00:00Z`), Fenster [tag−30 T, tag T):
+//    jeder Wert ist unabhängig von der Uhrzeit des Laufs reproduzierbar.
+// Beobachtungsgrösse, kein Urteil: sie speist nie ein Tor (§2).
 //
 // ── SEEDING OHNE CHECKOUT ────────────────────────────────────────────────
-// `--seed` erzeugt Zeilen für den 1. und 15. jedes Monats seit 2026-07-01 und
-// erhebt die schon in der CSV stehenden Daten neu (eine Regel für die Reihe).
-// Je Stichtag: `git rev-list -1 --before=<tag> origin/main` (sonst `main`)
-// liefert den letzten Commit davor, alle Kennzahlen kommen aus `git ls-tree` und `git show
-// <sha>:<pfad>`. KEIN Checkout — ein `git checkout` im Worktree würde fremde
+// `--seed` erzeugt Zeilen für den 1. und 15. jedes Monats seit 2026-07-01 (volle
+// Erhebung). Daten, die schon in der CSV stehen, behalten ihre Live-Messung und
+// erhalten NUR neu `commits_30d` und `prozess_commits_30d` (eine Regel für die
+// Reihe; die übrigen Spalten waren zum Messtag erhoben und sind nicht
+// rekonstruierbar). Je Stichtag: `git rev-list -1 --before=<tag>T00:00:00Z
+// origin/main` (sonst `main`) liefert den letzten Commit davor, alle Kennzahlen
+// kommen aus `git ls-tree` und `git show <sha>:<pfad>`. KEIN Checkout — ein `git checkout` im Worktree würde fremde
 // Sessions und den laufenden Bau zerschiessen (§12).
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { flaecheImCommit, istFlaeche } from './steuerflaecheKern';
+import { FLAECHE, flaecheImCommit } from './steuerflaecheKern';
 
 export const CSV_DATEI = 'messwerte/prozess-kennzahlen.csv';
 export const SEED_START = '2026-07-01';
@@ -73,11 +84,28 @@ export const SPALTEN = [
 
 export type Zeile = Record<(typeof SPALTEN)[number], string | number>;
 
-/** Plan-Doku: Pfade, die den Bau steuern, ohne unter `istFlaeche` zu fallen. */
-const PLAN_DOKU = /^(ROADMAP\.md|ROADMAP-CHRONIK\.md|STRUKTUR\.md|messwerte\/prozess-kennzahlen\.csv|messwerte\/steuerflaeche\.json)$|^(fahrplaene|plan|archiv|\.claude)\//;
+/** Plan-Doku: Pfade, die den Bau steuern, ohne unter `FLAECHE` zu fallen. */
+const PLAN_DOKU =
+  /^(ROADMAP\.md|ROADMAP-CHRONIK\.md|STRUKTUR\.md|messwerte\/(prozess-kennzahlen\.csv|steuerflaeche\.json|tor-bewaehrung\.json))$|^(fahrplaene|plan|archiv|\.claude|bibliothek\/betrieb|scripts\/(landung|ci|gegenpruefung))\//;
+
+/**
+ * Tests der Prozess-Werkzeuge in `src/tests/` — ABSCHLIESSENDE Präfix-Liste,
+ * kein Laufzeit-Import-Scan (die Regel muss für alte Commits gelten). Ermittelt
+ * 5.10.2026: `src/tests/*.test.ts(x)`, die aus Prozess-Pfaden importieren
+ * (scripts/{plan,analyse,check-*,landung,ci,gegenpruefung,dispatch*,fahrplan-slice},
+ * .claude/hooks) und aus keinem Produkt-Modul (src/lib|data|components|pages|hooks),
+ * dazu die zwei Hook-Tests (Pfad per spawn, kein Import) und gelöschte Alt-Tests
+ * (plan-check.*, check-testtreue, ci-diff-klassieren, dispatch-klausel, fahrplanSlice).
+ * Bewusst NICHT dabei: fedlex-*, rechtsprechung-*, check-segmente-* (Rechtsdaten;
+ * sie importieren nur beiläufig `istRisikoPfad`).
+ */
+const PROZESS_TESTS =
+  /^src\/tests\/(plan-|hooks-wache|hook-mcp-deckung|steuerflaeche|steuerwerkzeuge|ci-laeufe|ci-diff-klassieren|check-lizenzen|check-schlankheit|check-testtreue|dispatch-klausel|e2e-flake-waechter|fachaenderung|fahrplanSlice|gegenpruefung|merge-schutz-|playwright-install-skript|agy-status)/;
 
 export function istProzessPfad(p: string): boolean {
-  return PLAN_DOKU.test(p) || istFlaeche(p.replace(/\.test(\.tsx?)$/, '$1'));
+  if (PLAN_DOKU.test(p) || PROZESS_TESTS.test(p)) return true;
+  const ohneTest = p.replace(/\.test(\.tsx?)$/, '$1');
+  return FLAECHE.some((m) => m.re.test(ohneTest));
 }
 
 /** Prozess-Commit: ≥ 1 Datei, und alle geänderten Pfade sind Prozess-Pfade. */
@@ -160,6 +188,29 @@ function tagMinus(iso: string, tage: number): string {
   return new Date(Date.parse(`${iso}T00:00:00Z`) - tage * 86_400_000).toISOString().slice(0, 10);
 }
 
+/** Fenstergrenzen eines Stichtags: UTC-Mitternacht, nie die Uhrzeit des Laufs (git nähme sonst «jetzt»). */
+export function fensterGrenzen(datum: string): { seit: string; bis: string } {
+  return { seit: `${tagMinus(datum, FENSTER_TAGE)}T00:00:00Z`, bis: `${datum}T00:00:00Z` };
+}
+
+/** Pfadlisten aller Nicht-Merge-Commits im Fenster [datum−30 T, datum T). */
+export function fensterCommits(sha: string, datum: string): string[][] {
+  const { seit, bis } = fensterGrenzen(datum);
+  // Je Commit eine Pfadliste: `\0<sha>\n\n<pfad>\n…` (--no-renames: Ziel-Pfad genügt).
+  return (
+    git(['-c', 'core.quotepath=false', 'log', sha, `--since=${seit}`, `--until=${bis}`, '--no-merges', '--no-renames', '--format=%x00%H', '--name-only']) ?? ''
+  )
+    .split('\0')
+    .filter(Boolean)
+    .map((block) => block.split('\n').slice(1).filter(Boolean));
+}
+
+/** Nur die zwei Commit-Spalten (für schon gemessene Stichtage, s. `--seed`). */
+export function erhebeCommitSpalten(sha: string, datum: string): Pick<Zeile, 'commits_30d' | 'prozess_commits_30d'> {
+  const commits = fensterCommits(sha, datum);
+  return { commits_30d: commits.length, prozess_commits_30d: commits.filter(istProzessCommit).length };
+}
+
 /** Alle Kennzahlen eines Commits, ohne Checkout (s. Kopf). */
 export function erhebe(sha: string, datum: string): Zeile {
   const baum = (git(['ls-tree', '-r', '--name-only', sha]) ?? '').split('\n').filter(Boolean);
@@ -180,15 +231,6 @@ export function erhebe(sha: string, datum: string): Zeile {
     }
   }
 
-  const seit = tagMinus(datum, FENSTER_TAGE);
-  // Je Commit eine Pfadliste: `\0<sha>\n\n<pfad>\n…` (--no-renames: Ziel-Pfad genügt).
-  const commits = (
-    git(['-c', 'core.quotepath=false', 'log', sha, `--since=${seit}`, `--until=${datum}`, '--no-merges', '--no-renames', '--format=%x00%H', '--name-only']) ?? ''
-  )
-    .split('\0')
-    .filter(Boolean)
-    .map((block) => block.split('\n').slice(1).filter(Boolean));
-
   return {
     datum,
     claude_md_zeilen: zaehleZeilen(zeige(sha, 'CLAUDE.md')),
@@ -196,8 +238,7 @@ export function erhebe(sha: string, datum: string): Zeile {
     rules_zeilen: summe(rules),
     tore,
     hooks: hooks.length,
-    commits_30d: commits.length,
-    prozess_commits_30d: commits.filter(istProzessCommit).length,
+    ...erhebeCommitSpalten(sha, datum),
     roadmap_bytes: Buffer.byteLength(zeige(sha, 'ROADMAP.md') ?? '', 'utf8'),
     steuerflaeche_bytes: flaecheImCommit(sha),
   };
@@ -240,12 +281,14 @@ function main(): void {
     const ref = git(['rev-parse', '--verify', '-q', 'origin/main']) ? 'origin/main' : 'main';
     const tage = [...new Set([...stichtage(SEED_START, heute), ...vorhanden.map((z) => String(z.datum))])].sort();
     for (const tag of tage) {
-      const sha = git(['rev-list', '-1', `--before=${tag}`, ref])?.trim();
+      const sha = git(['rev-list', '-1', `--before=${fensterGrenzen(tag).bis}`, ref])?.trim();
       if (!sha) {
         console.log(`  ${tag}: kein Commit davor auf ${ref} — übersprungen`);
         continue;
       }
-      neu.push(erhebe(sha, tag));
+      const alt = vorhanden.find((z) => String(z.datum) === tag);
+      // Schon gemessene Stichtage: Live-Spalten bleiben, nur die Commit-Spalten neu.
+      neu.push(alt ? { ...alt, ...erhebeCommitSpalten(sha, tag) } : erhebe(sha, tag));
     }
   }
 

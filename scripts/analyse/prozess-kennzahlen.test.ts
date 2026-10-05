@@ -6,6 +6,7 @@ import { describe, expect, it } from 'vitest';
 import {
   SPALTEN,
   csvZeile,
+  fensterGrenzen,
   istProzessCommit,
   mischeZeilen,
   parseCsv,
@@ -47,8 +48,23 @@ describe('istProzessCommit (Pfad-Regel)', () => {
     expect(istProzessCommit([])).toBe(false);
   });
 
-  it('Rechtsschutz-Datei folgt istFlaeche und zählt nicht als Prozess', () => {
-    expect(istProzessCommit(['scripts/check-gegenpruefung.ts'])).toBe(false);
+  it('Tor-Hüllen zählen als Prozess, auch die RECHTSSCHUTZ-Ausnahme von istFlaeche (nur Byte-Druck-Schutz)', () => {
+    expect(istProzessCommit(['scripts/check-merge-schutz.ts'])).toBe(true);
+    expect(istProzessCommit(['scripts/check-gegenpruefung.ts', '.github/workflows/waechter.yml'])).toBe(true);
+  });
+
+  it('Landungs-, CI- und Gegenprüfungs-Skripte, Betriebs-Doku und Tor-Bewährung zählen als Prozess', () => {
+    expect(istProzessCommit(['scripts/landung/landung-kette.sh'])).toBe(true);
+    expect(istProzessCommit(['scripts/ci/diff-klassieren.ts', 'scripts/gegenpruefung/kern.ts'])).toBe(true);
+    expect(istProzessCommit(['bibliothek/betrieb/vps-auswahl-2026-09-08.md', 'messwerte/tor-bewaehrung.json'])).toBe(true);
+  });
+
+  it('Tests der Prozess-Werkzeuge in src/tests zählen als Prozess, Produkt-Tests nicht', () => {
+    expect(istProzessCommit(['src/tests/plan-check.test.ts'])).toBe(true);
+    expect(istProzessCommit(['src/tests/plan-check.dep-chronik.test.ts', 'src/tests/hooks-wache.test.ts', 'src/tests/steuerflaeche.test.ts'])).toBe(true);
+    expect(istProzessCommit(['src/tests/verjaehrung.test.ts'])).toBe(false);
+    expect(istProzessCommit(['src/tests/fedlex-pins.test.ts'])).toBe(false);
+    expect(istProzessCommit(['src/tests/check-segmente-annex-vorkommen.test.ts'])).toBe(false);
   });
 
   it('der Test eines Steuerungs-Skripts zählt als Prozess', () => {
@@ -58,7 +74,14 @@ describe('istProzessCommit (Pfad-Regel)', () => {
 
   it('Messwerte-Dateien und Plan-Ordner sind Prozess-Pfade, andere messwerte nicht', () => {
     expect(istProzessCommit(['messwerte/prozess-kennzahlen.csv', 'messwerte/steuerflaeche.json', 'fahrplaene/x.md', 'archiv/y.md'])).toBe(true);
-    expect(istProzessCommit(['messwerte/tor-bewaehrung.json'])).toBe(false);
+    expect(istProzessCommit(['messwerte/verweis-inventar.json'])).toBe(false);
+  });
+});
+
+describe('fensterGrenzen (Stichtag UTC)', () => {
+  it('nimmt UTC-Mitternacht statt der Uhrzeit des Laufs, über Monatsgrenzen', () => {
+    expect(fensterGrenzen('2026-10-05')).toEqual({ seit: '2026-09-05T00:00:00Z', bis: '2026-10-05T00:00:00Z' });
+    expect(fensterGrenzen('2026-09-15')).toEqual({ seit: '2026-08-16T00:00:00Z', bis: '2026-09-15T00:00:00Z' });
   });
 });
 
