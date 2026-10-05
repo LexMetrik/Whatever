@@ -7,7 +7,7 @@
 // Funktion wie der Generator) und je Erlass die Verfahrens-Key-Menge + die intrinsische Signatur
 // (Status/Frist/Titel/Link) gegen das committete vernehmlassungen.generated.ts vergleichen. Drift
 // (neues/verschwundenes Verfahren, Statuswechsel, Fristverlängerung) ⇒ ROT = «Generator neu laufen»
-// (nie Auto-Fix, §7). Zusätzlich Referenzfall-UNTERGRENZEN (OR≥33, DSG≥3, MWSTG≥14; s. MINDEST).
+// (nie Auto-Fix, §7). Zusätzlich Referenzfall-UNTERGRENZEN (OR≥34, DSG≥3, MWSTG≥14; s. MINDEST).
 // Exit 0 OK · 1 Drift · 2 Netzfehler.
 
 import {
@@ -38,7 +38,10 @@ const STICHPROBE_KEYS = ['OR', 'DSG', 'MWSTG', 'ZGB', 'STGB', 'AHVG', 'AIG', 'VR
 // Alarm-Issue #956). Wartungsweg: kein laufendes Nachführen nötig; anheben nur, wenn der
 // Verlust-Schutz enger greifen soll, senken nie ohne amtlichen Beleg (Fedlex-Graph, Verfahren
 // wirklich entfallen).
-const MINDEST: Record<string, number> = { OR: 33, DSG: 3, MWSTG: 14 };
+// Ratsche (Rot-Probe 5.10.2026 an diesem Tor): mit OR=33 blieb ein mit-committeter Verlust von
+// genau einem OR-Verfahren (34→33) unentdeckt; deshalb OR=34 (Stand 5.10.2026) — DSG/MWSTG stehen
+// schon auf ihrem Live-Wert. Anheben nur nach oben.
+const MINDEST: Record<string, number> = { OR: 34, DSG: 3, MWSTG: 14 };
 
 function keysProErlass(eintraege: { key: string; normKeys?: string[] }[]): Map<string, Set<string>> {
   const m = new Map<string, Set<string>>();
