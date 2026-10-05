@@ -130,6 +130,11 @@ Pflicht-Rückgabe-Schema, `model` + `effort` explizit. **Höchstens 3–4 Agente
 gleichzeitig** (Nacht 1./2.10.2026: 20 parallel → Load ~40, Gate-Timeouts;
 Weisung David «arbeite langsamer»).
 
+**Sweeps nach offenen Entscheiden, Gos oder Befunden** nennen im Auftrag
+`plan/posten/` UND `archiv/posten/` als Suchraum — sonst gilt Gebautes als
+offen (Inventur 4.10.2026: HN-D3 als «offen» gemeldet, war mit #1170 gebaut;
+Lehre aufgenommen auf Wort David 5.10.2026).
+
 Bau-/Prüf-Aufträge mit Webseiten-Sichtung (Browser-Sonden, Screenshots,
 Sichtprüfungen) geben zusätzlich den Verweis auf
 `.claude/rules/webseiten-pruefung.md` mit — pfad-gescopte Regeln erben
