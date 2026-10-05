@@ -32,7 +32,7 @@
 // Z.75-77, -run.ts) — die Soft-Law-Quellen (SECO/EDÖB/ESTV) gehen nicht ein. Ein Soft-Law-
 // Nachzug bewegt die Revisions-Sidecars also nie; fährt er das Glied trotzdem, zieht er
 // sachfremde Fedlex-Bewegungen in einen Materialien-PR (Risikoklassen gemischt) und kollidiert
-// mit dem Reparatur-Arm fedlex-frische.yml, der genau diese Sidecars täglich nachführt. Die
+// mit dem Reparatur-Arm fedlex-frische.yml, der genau diese Sidecars montags (04:43 UTC) nachführt. Die
 // Glieder-Liste bleibt EINE (§5) — der Schalter filtert sie, statt eine zweite Liste zu führen.
 // Die Folge-Glieder lesen dann die committeten Sidecars (gleiche Lage wie in den Curia-/BS-Jobs
 // von normen-monatslauf.yml, die die Teilkaskade ohne Revisionen fahren).
