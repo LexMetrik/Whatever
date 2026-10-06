@@ -402,11 +402,12 @@ describe('CLI nachzug-run.ts — Werkzeugfehler ⇒ Exit ≠ 0', () => {
     expect(out).toContain('zettel=schliessen\nnetzzettel=17\nnetzfehler=\nergebnis=echt\npausezettel=23\n');
   }, 60_000);
   it('B1: AUSLOESER ohne OFFENE_KOEPFE/PAUSE_ZETTEL/NETZ_ZETTEL ⇒ Werkzeugfehler (Verdrahtung kaputt), kein npm', () => {
-    for (const env of [
+    const faelle: Record<string, string>[] = [
       { AUSLOESER: 'schedule' },
       { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', PAUSE_ZETTEL: '' },
       { AUSLOESER: 'schedule', OFFENE_KOEPFE: '', NETZ_ZETTEL: '' },
-    ]) {
+    ];
+    for (const env of faelle) {
       const { r, npm } = runner(env);
       expect(r.status).toBe(1);
       expect(r.stderr).toContain('nicht verdrahtet');
