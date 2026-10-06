@@ -37,6 +37,7 @@ NICHT erledigt, offener Punkt.
 |---|---|---|
 | alle 6 h (automatisch) | Prod-Smoke: Kernrouten 200+Inhalt, Edge-Suche JSON-503/200, Sitemap, Assets, CSP | GitHub Action `prod-smoke.yml` (`npm run smoke:prod` lokal); rot → **Rollback**: `docs/betrieb/rollback-runbook.md` |
 | wöchentlich (automatisch) | Normen-Monitor: Caches + Zitate + neue Konsolidierungen | GitHub Action `normen-monitor.yml`; rot → §7-Verifikation fällig |
+| wöchentlich (automatisch) | Verfall-Erinnerung: Zettel (Label `erinnerung:verfall`) für Register-Termine ≤ 45 Tage oder überschritten; färbt nie rot, schliesst sich nach Register-Nachführung selbst | GitHub Action `verfall-erinnerung.yml` (`npm run report:verfall-erinnerung` lokal) |
 | monatlich | LIK-Reihe nach BFS-Publikation | `scripts/lik-reihe-generieren.py` (Anleitung im Skript-Kopf) |
 | quartalsweise | Hypothekarischer Referenzzins | referenzzinssatz.admin.ch → `mietvertrag.ts` (`MV_PARAMETER`) |
 | jährlich + terminiert | alles Weitere | SSoT: `bibliothek/register/parameter-verfall.md` |

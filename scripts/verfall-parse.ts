@@ -20,6 +20,10 @@ const MONATE: Record<string, number> = {
   okt: 10, nov: 11, dez: 12,
 };
 
+/** Vorlauf in Tagen: ab hier gilt ein Termin als «bald fällig» (check:verfall-Warnung,
+ *  Verfall-Erinnerung). Spiegel für die UI-Anzeige: src/components/VerfallUebersicht.tsx. */
+export const VORLAUF_TAGE = 45;
+
 export type Termin = {
   label: string;
   datum: string; // ISO «YYYY-MM-DD», als String vergleichbar

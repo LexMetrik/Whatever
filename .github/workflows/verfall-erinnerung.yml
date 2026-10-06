@@ -1,0 +1,91 @@
+# .github/workflows/verfall-erinnerung.yml — Ablauf-Erinnerung aus dem Parameter-Verfallsregister.
+#
+# WARUM: Das Register (bibliothek/register/parameter-verfall.md) kennt terminierte Werte
+# (Referenzzins, Formularpflicht, Mindestlöhne, Befristungen …). `check:verfall` meldet einen
+# VERFALLENEN Termin erst, wenn er verstrichen ist — und nur als Bericht im Wochenlauf. Dieser
+# Workflow erinnert VORHER: 45 Tage vor einem Termin öffnet er EINEN Zettel, nennt je Eintrag
+# Termin + Register-Zeile + Handgriff, aktualisiert den Text wöchentlich und schliesst sich
+# selbst, sobald das Register nachgeführt ist (kein Termin mehr im Fenster).
+# Entscheid David 6.10.2026 («ja, mach die Ablauf-Erinnerungen»).
+#
+# FÄRBT NIE ROT wegen einer Fälligkeit (Entscheid David 5.10.2026: Rot ist dem Bundes-
+# Gesetzestext vorbehalten). Überschrittene Termine stehen im Zettel zuoberst und markiert,
+# der Lauf bleibt grün. Den NEUEN WERT prüft weiterhin eine Session (§7) — das ist
+# fachliche Arbeit und wird nicht automatisiert.
+#
+# ROT nur, wenn die Erinnerung selbst ausfällt (fail-safe, Muster normen-monitor.yml
+# Netz-Zettel): das Skript ist kaputt (Exit 1) oder die Zettel-Pflege scheitert — sonst
+# merkt niemand, dass die Erinnerung nicht mehr kommt.
+#
+# Auswahl und Zettel-Text: scripts/verfall-erinnerung.ts (+ -kern.ts, Stichtag als Parameter, §2).
+# Zettel-Logik hier ist testbar: src/tests/verfall-erinnerung-workflow.test.ts fährt den
+# run-Block des Schritts «Zettel pflegen» gegen ein Ersatz-`gh`.
+name: Verfall-Erinnerung (Zettel)
+
+on:
+  schedule:
+    # Montags 08:37 UTC — nach fedlex-frische (04:43), Rechtsprechung (05:37) und dem
+    # Normen-Monitor (07:17, ~25 min): erinnert auf dem Stand, den die Bots schon nachgeführt haben.
+    - cron: '37 8 * * 1'
+  workflow_dispatch:
+
+env:
+  # Verfallstermine sind Kalendertage in Zürich (wie ci.yml / normen-monitor.yml).
+  TZ: Europe/Zurich
+
+concurrency:
+  group: verfall-erinnerung
+  cancel-in-progress: false
+
+jobs:
+  erinnerung:
+    name: Ablauftermine ≤ 45 Tage · Zettel
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci
+
+      # Exit 0 auch bei überschrittenen Terminen; Exit 1 nur bei kaputtem Skript/Register.
+      - name: Auswahl — npm run report:verfall-erinnerung
+        id: auswahl
+        run: npm run report:verfall-erinnerung -- --out="$RUNNER_TEMP/verfall-erinnerung"
+
+      # EIN Zettel (Label erinnerung:verfall): fällige Einträge ⇒ anlegen bzw. Text
+      # aktualisieren; keine ⇒ offenen Zettel schliessen. Label zuerst sicherstellen (ohne
+      # Label findet die nächste Abfrage den Zettel nicht — KEIN Rückfall auf label-losen Zettel).
+      # FAIL-SAFE: scheitert irgendein gh-Aufruf, wird der Lauf ROT (nicht nur Warnung).
+      - name: Zettel pflegen (anlegen / aktualisieren / schliessen)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          FAELLIG: ${{ steps.auswahl.outputs.faellig }}
+          OUT: ${{ runner.temp }}/verfall-erinnerung
+        run: |
+          set -Eeuo pipefail
+          trap 'echo "::error::Zettel-Pflege gescheitert (Z. $LINENO) — ohne Zettel merkt niemand, dass die Erinnerung ausfällt, darum Lauf ROT (fail-safe)"; exit 1' ERR
+          [ -n "${FAELLIG:-}" ] || { echo "::error::Auswahl lieferte keine Anzahl (faellig leer) — Lauf ROT (fail-safe)"; exit 1; }
+          nr=$(gh api "repos/$GITHUB_REPOSITORY/issues?labels=erinnerung:verfall&state=open&creator=github-actions%5Bbot%5D" -q '[.[]|select(.pull_request|not)][0].number // empty')
+          if [ "$FAELLIG" != "0" ]; then
+            titel=$(cat "$OUT/zettel-titel.txt")
+            if [ -n "$nr" ]; then
+              gh issue edit "$nr" --title "$titel" --body-file "$OUT/zettel.md"
+              echo "Zettel #${nr} aktualisiert (${FAELLIG} fällig)."
+            else
+              gh label create erinnerung:verfall --color 1D76DB --description "Verfall-Erinnerung: Register-Termine in <= 45 Tagen (verfall-erinnerung.yml)" >/dev/null 2>&1 || true
+              gh issue create --label erinnerung:verfall --title "$titel" --body-file "$OUT/zettel.md"
+              echo "Zettel angelegt (${FAELLIG} fällig)."
+            fi
+          elif [ -n "$nr" ]; then
+            gh issue close "$nr" --reason completed --comment "Kein Register-Termin mehr in den nächsten 45 Tagen oder überschritten (Stand $(date +%F)) — Register nachgeführt. Lauf: ${RUN_URL}"
+            echo "Zettel #${nr} geschlossen."
+          else
+            echo "Nichts fällig, kein offener Zettel."
+          fi
