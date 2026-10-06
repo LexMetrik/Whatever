@@ -1,0 +1,144 @@
+# ─── LIK-Nachzug: BFS-Landesindex automatisch nachführen (MONITOR, 5.10.2026) ──
+# Auftrag David 5.10.2026 «automatik-kandidaten»: die LIK-Reihe (src/data/likReihe.ts)
+# wurde viermal in vier Monaten von Hand nachgeführt (#499, #581, #1308). Ohne
+# Nachzug lehnt der Teuerungsrechner neue Monate mit «noch nicht publiziert» ab;
+# check:lik-frische im Normen-Monitor meldet es erst, wenn es zu spät ist.
+#
+# Ablauf: scripts/lik/nachzug.sh (Asset-ID → XLSX → Generator → unabhängige
+# Neu-Einlesung → Bot-Tor «nur Anfügung» → Export-Ratsche). Danach Tore, dann PR:
+#   status=keine     → nichts zu tun, kein PR (idempotent).
+#   status=anfuegung → normaler PR.
+#   status=pruefen   → PR als ENTWURF (Bestandswert geändert/entfernt, Lücke, Basiswechsel
+#                      oder Abweichung zur Gegenlesung — rechtsrelevant für Indexmieten).
+# NIE Auto-Merge: likReihe.ts liegt auf dem Risikopfad (RECHTSLOGIK_DATEIEN in
+# scripts/gegenpruefung/kern.ts); der Merge-Schutz verlangt ein Gegenprüfungs-Verdikt.
+#
+# Eigene Datei, nicht in normen-monatslauf.yml: anderer Takt (BFS publiziert Anfang
+# Monat), eigener «jüngster Lauf» für den Wächter (check:ci-laeufe liest alle
+# geplanten Workflows selbst).
+name: LIK-Nachzug
+
+on:
+  schedule:
+    # 5. und 15. des Monats, 05:17 UTC. Das BFS publiziert den LIK des Vormonats in
+    # den ersten Tagen des Folgemonats (Beleg: Asset 36878072, Last-Modified 29.9.2026
+    # für den Wert 2026-09); der 15. fängt eine verspätete Publikation ab.
+    - cron: '17 5 5,15 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: lik-nachzug
+  cancel-in-progress: false
+
+jobs:
+  nachzug:
+    name: LIK-Reihe nachführen (BFS cc-d-05.02.08)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Wie ci.yml/fedlex-frische.yml: Golden-Basis und Abrufdatum in Zürcher Zeit.
+      TZ: Europe/Zurich
+    permissions:
+      contents: write
+      pull-requests: write
+      # `gh workflow run ci.yml` — von github.token erzeugte PR-Events lösen keine CI aus.
+      actions: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci  # bares `npm ci` bricht am npm-11-Lockfile (s. normen-monatslauf.yml)
+      - name: Python-Abhängigkeit des Generators (openpyxl)
+        run: python3 -m pip install --quiet -r scripts/lik-requirements.txt
+
+      - name: Nachzug + Bot-Tor «nur Anfügung»
+        id: lauf
+        env:
+          LIK_TMP: ${{ runner.temp }}/lik-nachzug
+        run: bash scripts/lik/nachzug.sh
+
+      - name: Tore auf dem nachgeführten Stand
+        id: tore
+        if: steps.lauf.outputs.status != 'keine'
+        run: |
+          set +e
+          rc=0
+          npm run check:lik-frische || rc=1
+          npx vitest run src/tests/teuerung.test.ts src/tests/rechner-export-ratsche.test.tsx src/tests/lik-nachzug.test.ts --maxWorkers=2 || rc=1
+          npm run golden:vergleich || rc=1
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+          if [ "$rc" != 0 ]; then echo "::warning::Tore rot auf dem nachgeführten Stand"; fi
+          exit 0
+
+      - name: PR eröffnen (NIE Auto-Merge — Risikopfad)
+        if: steps.lauf.outputs.status != 'keine'
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
+          STATUS: ${{ steps.lauf.outputs.status }}
+          MONAT: ${{ steps.lauf.outputs.letzter_monat }}
+          ASSET: ${{ steps.lauf.outputs.asset_id }}
+          TORE: ${{ steps.tore.outputs.rc }}
+          LIK_TMP: ${{ runner.temp }}/lik-nachzug
+        run: |
+          set -euo pipefail
+          # Eine reine Anfügung mit roten Toren wird NICHT als PR angeboten: der Lauf
+          # endet rot (Wächter sieht ihn). Ein Entwurf (pruefen) geht mit Tor-Vermerk
+          # raus — er braucht ohnehin eine Session.
+          if [ "$STATUS" = anfuegung ] && [ "$TORE" != 0 ]; then
+            echo "::error::Reine Anfügung, aber Tore rot — kein PR. Log der Tor-Stufe lesen."
+            exit 1
+          fi
+          branch="chore/lik-nachzug-${MONAT}"
+          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$offen" ]; then
+            echo "PR #${offen} für ${branch} ist bereits offen (idempotent) — nichts zu tun."
+            exit 0
+          fi
+          body="$LIK_TMP/pr-body.md"
+          if [ "$TORE" != 0 ]; then
+            printf '\n**Tore im Bot-Lauf: ROT** (check:lik-frische / teuerung / rechner-export-ratsche / golden:vergleich) — Log des Laufs %s/%s/actions/runs/%s.\n' \
+              "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" >> "$body"
+          else
+            printf '\nTore im Bot-Lauf grün: check:lik-frische · vitest teuerung + rechner-export-ratsche + lik-nachzug · golden:vergleich.\n' >> "$body"
+          fi
+          git config user.name  "lik-nachzug-bot"
+          git config user.email "noreply@anthropic.com"
+          git checkout -b "$branch"
+          git add src/data/likReihe.ts src/tests/fixtures/rechner-export.json
+          {
+            echo "chore(lik): LIK-Reihe bis ${MONAT} nachgeführt (BFS, Asset ${ASSET})"
+            echo
+            echo "Automatischer Lauf lik-nachzug.yml (scripts/lik/nachzug.sh), Bot-Tor: ${STATUS}."
+            echo "Quelle: BFS Landesindex der Konsumentenpreise, Indexierungstabelle"
+            echo "cc-d-05.02.08, https://www.bfs.admin.ch/asset/de/cc-d-05.02.08 (OPEN-BY)."
+            echo
+            echo "Roadmap: MONITOR"
+            echo "Gegenpruefung: ausstehend — Bot-PR, Session prüft"
+            echo "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          } > "$LIK_TMP/commit.txt"
+          git commit -F "$LIK_TMP/commit.txt"
+          # Bot-eigener Zweig: ein Rest aus einem abgebrochenen Lauf (Zweig ohne PR) wird überschrieben.
+          git push --force -u origin "$branch"
+          if [ "$STATUS" = pruefen ]; then
+            gh pr create --draft --base main --head "$branch" \
+              --title "chore(lik): LIK-Nachzug bis ${MONAT} — ENTWURF, Bestandswerte prüfen" \
+              --body-file "$body"
+          else
+            gh pr create --base main --head "$branch" \
+              --title "chore(lik): LIK-Reihe bis ${MONAT} nachgeführt (BFS)" \
+              --body-file "$body"
+          fi
+          # CI anstossen (github.token löst keine PR-Workflows aus; workflow_dispatch ist die Ausnahme).
+          if gh workflow run ci.yml --ref "$branch"; then
+            echo "CI (ci.yml) auf '${branch}' angestossen."
+          else
+            echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
+          fi
+
+      - name: Lauf rot färben, wenn die Tore rot waren
+        if: steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0'
+        run: |
+          echo "::error::Tore auf dem nachgeführten LIK-Stand rot — siehe Stufe «Tore»."
+          exit 1

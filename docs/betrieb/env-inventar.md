@@ -46,9 +46,9 @@ kann ein verfallenes Secret nicht als «alles grün» durchgehen (§8). *(Bis 15
 stand hier «keine zusätzlichen Repo-Secrets»; das war schon seit dem 16.7.2026
 nicht mehr richtig — nachgetragen, nicht umgeschrieben.)* Ebenso nicht kontolos:
 `normen-monatslauf.yml` (am 1.10.2026 aus `normen-monitor.yml` herausgelöst) eröffnet
-seine Monats-PRs mit dem Repo-Secret **`AUTOMERGE_TOKEN`**. Ebenso `materialien-nachzug.yml` (seit 6.10.2026,
-Materialien-Nachzug montags 05:43 UTC): PR mit `AUTOMERGE_TOKEN || github.token`, CI per
-`gh workflow run ci.yml` (`actions: write`), nie Auto-Merge. Kämen später weitere
+seine Monats-PRs mit dem Repo-Secret **`AUTOMERGE_TOKEN`**. Ebenso `lik-nachzug.yml` (seit 5.10.2026, LIK-Nachzug am 5./15.)
+und `materialien-nachzug.yml` (seit 6.10.2026, Materialien-Nachzug montags 05:43 UTC): je PR mit
+`AUTOMERGE_TOKEN || github.token`, CI per `gh workflow run ci.yml` (`actions: write`), nie Auto-Merge. Kämen später weitere
 dazu (z. B. externe-Sonden-Token), werden sie hier eingetragen.
 
 ## Zugänge (Werte NICHT hier — Passwort-Nachlass)

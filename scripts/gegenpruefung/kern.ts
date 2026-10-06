@@ -334,6 +334,16 @@ export function istRisikoPfad(p: string): boolean {
   if (p.startsWith('scripts/verzahnung/')) return true;
   if (p === 'src/lib/verzahnung/revisionen-extrakt.ts') return true;
   if (p.startsWith('public/verzahnung/artikel-revisionen/')) return true;
+  // LIK-Nachzug-Bot (MONITOR, 5.10.2026): Generator scripts/lik-reihe-generieren.py
+  // und der Bot unter scripts/lik/ (nachzug.sh, neu-einlesen.py, vergleich-kern.ts
+  // mit dem Tor «nur Anfügung, sonst Entwurf») erzeugen src/data/likReihe.ts
+  // (RECHTSLOGIK_DATEIEN). Ohne diese Zeilen liesse sich das Bot-Tor abschwächen,
+  // ohne dass check:gegenpruefung anschlägt — das Tor, das Rechtsdaten schützt,
+  // muss selbst geschützt sein (§6.7). Rot-Beweis im Test: vorher false.
+  // Den Workflow lik-nachzug.yml bewusst NICHT: auch fedlex-frische.yml und
+  // rechtsprechung-wochenlauf.yml der übrigen Daten-Bots sind kein Risiko-Pfad.
+  if (p === 'scripts/lik-reihe-generieren.py') return true;
+  if (p.startsWith('scripts/lik/')) return true;
   // Rechnen
   if (/^src\/lib\/[^/]+\.ts$/.test(p) && RECHNEN_RE.test(basename(p))) return true;
   // RL-02 (S1-01): explizite Rechtslogik-Liste + Katalogtexte + Bezüge-Shards
