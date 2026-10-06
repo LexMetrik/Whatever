@@ -1,0 +1,117 @@
+# ─── Materialien-Nachzug: Soft-Law-Snapshots bei erkannter Drift nachführen (MONITOR, 6.10.2026) ──
+# Ablauf, Zettel-Logik und Begründungen: scripts/materialien/nachzug-stufen.sh (Kopf) und
+# scripts/materialien/nachzug.ts. Hier stehen nur Takt, Rechte und die if:-Steuerung der Stufen.
+# NIE Auto-Merge (Risikopfad public/materialien/**). Mo 05:43 UTC: nach fedlex-frische, vor Monitor.
+name: Materialien-Nachzug
+
+on:
+  schedule:
+    - cron: '43 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      quellen:
+        description: 'Nur diese Quellen nachführen (Komma-Liste aus seco, edoeb, estv-ks, estv-mwst; leer = alle mit Drift)'
+        required: false
+        default: ''
+        type: string
+      trockenlauf:
+        description: 'Nachzug und Tore fahren, aber keinen Zweig/PR anlegen (Probelauf, Laufzeit messen)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: materialien-nachzug
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  nachzug:
+    name: Materialien-Snapshots nachführen (SECO · EDÖB · ESTV-KS · ESTV-MWST)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      TZ: Europe/Zurich
+      NACHZUG_TMP: ${{ runner.temp }}/materialien-nachzug
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    # actions: gh workflow run ci.yml · issues: Netz- und Pause-Zettel
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npx -y npm@11 ci  # bares `npm ci` bricht am npm-11-Lockfile (s. normen-monatslauf.yml)
+      - name: Abrufdatum (Zürich, nie Date.now im Generator)
+        id: datum
+        run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
+
+      # Step-Timeout unter dem Job-Timeout: Zeitüberschreitung ⇒ failure() ⇒ Pause-Zettel.
+      - name: Nachzug + Rauschschutz
+        id: lauf
+        timeout-minutes: 110
+        env:
+          QUELLEN: ${{ inputs.quellen }}
+          AUSLOESER: ${{ github.event_name }}
+          DATUM: ${{ steps.datum.outputs.iso }}
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/materialien/nachzug-stufen.sh lauf
+
+      - name: Netz-Zettel pflegen
+        if: steps.lauf.outputs.zettel != '' && !inputs.trockenlauf
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AKTION: ${{ steps.lauf.outputs.zettel }}
+          NR: ${{ steps.lauf.outputs.netzzettel }}
+          NETZFEHLER: ${{ steps.lauf.outputs.netzfehler }}
+        run: bash scripts/materialien/nachzug-stufen.sh netz-zettel
+
+      - name: Tore auf dem nachgeführten Stand
+        id: tore
+        if: steps.lauf.outputs.status != 'keine'
+        run: bash scripts/materialien/nachzug-stufen.sh tore
+
+      - name: Trockenlauf — Änderungen nur anzeigen
+        if: steps.lauf.outputs.status != 'keine' && inputs.trockenlauf
+        run: bash scripts/materialien/nachzug-stufen.sh trocken
+
+      - name: PR eröffnen (NIE Auto-Merge — Risikopfad)
+        if: steps.lauf.outputs.status != 'keine' && !inputs.trockenlauf
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
+          STATUS: ${{ steps.lauf.outputs.status }}
+          QUELLEN_LAUF: ${{ steps.lauf.outputs.quellen }}
+          DATUM: ${{ steps.datum.outputs.iso }}
+          TORE: ${{ steps.tore.outputs.rc }}
+        run: bash scripts/materialien/nachzug-stufen.sh pr
+
+      - name: Lauf rot färben (Widerspruch, Tore rot, zweiter Netzfehler in Folge)
+        if: steps.lauf.outputs.widerspruch != '' || (steps.lauf.outputs.status != 'keine' && steps.tore.outputs.rc != '0') || steps.lauf.outputs.zettel == 'kommentieren'
+        env:
+          WIDERSPRUCH: ${{ steps.lauf.outputs.widerspruch }}
+          TORE: ${{ steps.tore.outputs.rc }}
+          ZETTEL: ${{ steps.lauf.outputs.zettel }}
+        run: bash scripts/materialien/nachzug-stufen.sh rot
+
+      - name: Bei Rot — Pause-Zettel anlegen oder kommentieren
+        if: (failure() || cancelled()) && !inputs.trockenlauf
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LAUF: ${{ steps.lauf.outcome }}
+          WIDERSPRUCH: ${{ steps.lauf.outputs.widerspruch }}
+          TORE: ${{ steps.tore.outputs.rc }}
+          ZETTEL: ${{ steps.lauf.outputs.zettel }}
+        run: bash scripts/materialien/nachzug-stufen.sh pause-rot
+
+      - name: Grün mit echtem Ergebnis — Pause-Zettel schliessen
+        if: success() && !inputs.trockenlauf && steps.lauf.outputs.ergebnis == 'echt' && steps.lauf.outputs.pausezettel != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NR: ${{ steps.lauf.outputs.pausezettel }}
+        run: bash scripts/materialien/nachzug-stufen.sh pause-gruen

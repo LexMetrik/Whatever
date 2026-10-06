@@ -18,9 +18,12 @@
 #     BE-Sprengel, Tarif, FR/IT, Verfall, LIK) erscheint als Wochenbericht in der Lauf-Zusammenfassung
 #     (::warning:: + Tafel), färbt den Lauf aber NICHT rot und öffnet keinen Zettel (auch
 #     Exit 2 eines Bericht-Glieds nicht). Wo ein Generator existiert,
-#     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen)
-#     und fedlex-frische.yml (Re-Pins, Revisionen); der Rest bleibt Handarbeit nach Bericht
-#     (§7: Materialien-Snapshots, Fedlex-Abkürzungen, Tarif, LIK, Verfall).
+#     führen die Bots nach: normen-monatslauf.yml (Curia, BS-Grossrat, Vernehmlassungen),
+#     fedlex-frische.yml (Re-Pins, Revisionen) und seit 6.10.2026 materialien-nachzug.yml
+#     (Materialien-Snapshots SECO/EDÖB/ESTV, montags 05:43 UTC — VOR diesem Lauf; meldet der
+#     Bericht hier trotzdem Materialien-Drift, ist es ein Netz-Hinweis oder ein Bot-Entwurf, der
+#     auf Prüfung wartet); der Rest bleibt Handarbeit nach Bericht (§7: Fedlex-Abkürzungen,
+#     Tarif, LIK, Verfall). (Bis 6.10.2026 stand hier «Materialien-Snapshots» bei der Handarbeit.)
 # Gestrichen im Rückbau (nie ein echter Befund): Prod-Smoke-Duplikat (prod-smoke.yml prüft
 # die Live-Site alle 6 h, inkl. der Korpus-JSONs), Runtime-API-Vertragstests, rss-oc,
 # pdf-quellen-netz, vernehmlassungen-alter; ebenso die Eskalationsstufe des Zettels.

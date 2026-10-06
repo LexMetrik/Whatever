@@ -24,7 +24,18 @@
 // stehen, während der Churn-Reset denselben Wert im Register gleich wieder zurücknahm —
 // die beiden Artefakte liefen auseinander, ohne dass sich fachlich etwas geändert hätte.
 //
-// Aufruf: npm run materialien:kaskade -- --datum=$(date +%F) (§2: Datum aus der Shell)
+// Aufruf: npm run materialien:kaskade -- --datum=$(date +%F) [--ohne-revisionen] (§2: Datum aus der Shell)
+//
+// `--ohne-revisionen` (Materialien-Nachzug-Bot, MONITOR 6.10.2026, scripts/materialien/nachzug.ts):
+// lässt NUR das Glied `normtext:revisionen` aus. Grund: dessen Eingaben sind Fedlex-SPARQL
+// (Netz), ERLASS_REGISTER, BOTSCHAFTEN und die fedlex-cache.sh-Pins (revisionen-generieren.ts
+// Z.75-77, -run.ts) — die Soft-Law-Quellen (SECO/EDÖB/ESTV) gehen nicht ein. Ein Soft-Law-
+// Nachzug bewegt die Revisions-Sidecars also nie; fährt er das Glied trotzdem, zieht er
+// sachfremde Fedlex-Bewegungen in einen Materialien-PR (Risikoklassen gemischt) und kollidiert
+// mit dem Reparatur-Arm fedlex-frische.yml, der genau diese Sidecars montags (04:43 UTC) nachführt. Die
+// Glieder-Liste bleibt EINE (§5) — der Schalter filtert sie, statt eine zweite Liste zu führen.
+// Die Folge-Glieder lesen dann die committeten Sidecars (gleiche Lage wie in den Curia-/BS-Jobs
+// von normen-monatslauf.yml, die die Teilkaskade ohne Revisionen fahren).
 
 import { spawnSync } from 'node:child_process';
 
@@ -35,12 +46,14 @@ if (!datum || !/^\d{4}-\d{2}-\d{2}$/.test(datum)) {
   process.exit(1);
 }
 
+const ohneRevisionen = process.argv.includes('--ohne-revisionen');
+
 const GLIEDER: string[][] = [
   ['materialien', '--', `--datum=${datum}`],
   ['normtext:revisionen', '--', `--datum=${datum}`],
   ['normtext:churn-reset', '--', '--pfad=public/normtext,public/materialien'],
   ['entstehung:projektion-kaskade'],
-];
+].filter(([name]) => !(ohneRevisionen && name === 'normtext:revisionen'));
 
 for (const [name, ...rest] of GLIEDER) {
   console.log(`\n══ materialien:kaskade → npm run ${name} ${rest.filter((r) => r !== '--').join(' ')} ══`);
@@ -50,4 +63,4 @@ for (const [name, ...rest] of GLIEDER) {
     process.exit(r.status ?? 1);
   }
 }
-console.log(`\nmaterialien:kaskade fertig — ${GLIEDER.length} Glieder grün (datum=${datum}).`);
+console.log(`\nmaterialien:kaskade fertig — ${GLIEDER.length} Glieder grün (datum=${datum}${ohneRevisionen ? ', ohne normtext:revisionen' : ''}).`);
