@@ -701,6 +701,19 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
     });
   });
 
+  it('Stufe «Lauf rot färben» endet für jeden der drei Gründe mit Exit 1 und ::error:: (GP Delta 3, T1)', () => {
+    const faelle: Array<[Record<string, string>, RegExp]> = [
+      [{ ZETTEL: 'kommentieren', WIDERSPRUCH: '', TORE: '0' }, /::error::Zweiter Netzfehler/],
+      [{ ZETTEL: '', WIDERSPRUCH: 'seco', TORE: '0' }, /::error::Widerspruch seco/],
+      [{ ZETTEL: '', WIDERSPRUCH: '', TORE: '1' }, /::error::Tore auf dem nachgeführten Materialien-Stand rot/],
+    ];
+    for (const [env, meldung] of faelle) {
+      const r = fahreSchritt(yml, 'Lauf rot färben', { PATH: process.env.PATH ?? '', ...env });
+      expect(r.status).toBe(1);
+      expect(r.stdout).toMatch(meldung);
+    }
+  });
+
   describe('Pause-Zettel-Stufen gegen Ersatz-gh', () => {
     function fahre(name: string, env: Record<string, string>, ghExit = 0, offen = '') {
       const dir = mkdtempSync(join(tmpdir(), 'mat-pz-'));
