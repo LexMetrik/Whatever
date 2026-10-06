@@ -33,7 +33,6 @@ jobs:
     timeout-minutes: 120
     env:
       TZ: Europe/Zurich
-      NACHZUG_TMP: ${{ runner.temp }}/materialien-nachzug
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     # actions: gh workflow run ci.yml · issues: Netz- und Pause-Zettel
     permissions:

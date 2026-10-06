@@ -54,6 +54,12 @@
 #                FAIL-SAFE: scheitert die Pflege, bleibt der Lauf rot.
 #   pause-gruen  Pause-Zettel schliessen (grüner Lauf mit echtem Ergebnis); Scheitern ⇒ Warnung.
 
+# Arbeitsordner (PR-Text, Commit-Text). NICHT im Job-level env des Workflows: dort gibt es den
+# runner-Kontext nicht, GitHub verwarf die ganze Datei (HTTP 422, Vorfall #1336, 6.10.2026; Tor
+# src/tests/workflow-kontexte.test.ts). RUNNER_TEMP ist in jeder Stufe gleich; Default wie nachzug-run.ts.
+NACHZUG_TMP="${NACHZUG_TMP:-${RUNNER_TEMP:-.gate}/materialien-nachzug}"
+export NACHZUG_TMP
+
 PAUSE_ABFRAGE="repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug&state=open&creator=github-actions%5Bbot%5D"
 NETZ_ABFRAGE="repos/$GITHUB_REPOSITORY/issues?labels=alarm:materialien-nachzug-netz&state=open&creator=github-actions%5Bbot%5D"
 ERSTE_NR='[.[]|select(.pull_request|not)][0].number // empty'
