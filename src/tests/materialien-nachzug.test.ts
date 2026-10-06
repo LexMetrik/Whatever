@@ -445,21 +445,34 @@ describe('Risikopfad', () => {
 
 // ── Workflow-Struktur ────────────────────────────────────────────────────────────────────────
 const WORKFLOW = join(ROOT, '.github/workflows/materialien-nachzug.yml');
+// Die Bash-Rümpfe der Stufen liegen seit 6.10.2026 im Skript (Steuerflächen-Deckel); die Tests
+// fahren sie über die run-Zeile des Workflows, die if:-Ausdrücke weiter direkt aus dem Workflow.
+const STUFEN = join(ROOT, 'scripts/materialien/nachzug-stufen.sh');
+const SKRIPT = readFileSync(STUFEN, 'utf8');
 
-/** run-Block des Schritts mit dem gegebenen Namens-Anfang, entrückt (Muster verfall-erinnerung-workflow.test.ts). */
-function runBlock(yml: string, schrittName: string): string {
+/** Zeilen des Schritts mit dem gegebenen Namens-Anfang bis zum nächsten Schritt. */
+function schritt(yml: string, schrittName: string): string {
   const zeilen = yml.split('\n');
   const i = zeilen.findIndex((z) => z.includes(`- name: ${schrittName}`));
   if (i < 0) throw new Error(`Schritt «${schrittName}» fehlt`);
-  const r = zeilen.findIndex((z, k) => k > i && /^\s+run: \|\s*$/.test(z));
-  const einzug = zeilen[r].match(/^\s*/)![0].length;
-  const block: string[] = [];
-  for (let k = r + 1; k < zeilen.length; k++) {
-    const z = zeilen[k];
-    if (z.trim() !== '' && z.match(/^\s*/)![0].length <= einzug) break;
-    block.push(z.slice(einzug + 2));
-  }
-  return block.join('\n') + '\n';
+  const ende = zeilen.findIndex((z, k) => k > i && /^\s+- (name|uses|run): /.test(z));
+  return zeilen.slice(i, ende < 0 ? undefined : ende).join('\n');
+}
+/** Stufe im Skript, die der Schritt aufruft — genau `run: bash scripts/materialien/nachzug-stufen.sh <stufe>`. */
+function stufe(yml: string, schrittName: string): string {
+  const m = /^\s+run: bash scripts\/materialien\/nachzug-stufen\.sh ([\w-]+)$/m.exec(schritt(yml, schrittName));
+  if (!m) throw new Error(`Schritt «${schrittName}» ruft nachzug-stufen.sh nicht auf`);
+  return m[1];
+}
+/** case-Zweig der Stufe im Skript, entrückt (für Text-Assertions). */
+function zweig(name: string): string {
+  const m = new RegExp(`^  ${name}\\)\\n([\\s\\S]*?)^    ;;$`, 'm').exec(SKRIPT);
+  if (!m) throw new Error(`Stufe «${name}» fehlt im Skript`);
+  return m[1].split('\n').map((z) => z.slice(4)).join('\n');
+}
+/** Rumpf des Schritts im Skript ausführen (bash, nur die übergebene Umgebung). */
+function fahreSchritt(yml: string, schrittName: string, env: Record<string, string>) {
+  return spawnSync('bash', [STUFEN, stufe(yml, schrittName)], { encoding: 'utf8', env });
 }
 
 describe('Workflow materialien-nachzug.yml', () => {
@@ -474,13 +487,25 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(yml).toMatch(/permissions:\n\s+contents: write\n\s+pull-requests: write\n[\s\S]*?actions: write\n[\s\S]*?issues: write\n/);
     expect(yml).toContain('timeout-minutes: 120');
     expect(yml).toMatch(/name: Nachzug \+ Rauschschutz\n\s+id: lauf\n(?:\s+#.*\n)*\s+timeout-minutes: 110\n/);
-    expect(yml).toContain('npm run materialien:nachzug -- --datum=');
+    expect(zweig(stufe(yml, 'Nachzug + Rauschschutz'))).toContain('npm run materialien:nachzug -- --datum=');
+  });
+
+  it('jede Stufe ruft genau ihren Rumpf im Skript; RUN_URL und DATUM kommen aus dem Workflow', () => {
+    const soll: Record<string, string> = {
+      'Nachzug + Rauschschutz': 'lauf', 'Netz-Zettel pflegen': 'netz-zettel', 'Tore auf dem nachgeführten Stand': 'tore',
+      'Trockenlauf': 'trocken', 'PR eröffnen': 'pr', 'Lauf rot färben': 'rot',
+      'Bei Rot — Pause-Zettel': 'pause-rot', 'Grün mit echtem Ergebnis': 'pause-gruen',
+    };
+    for (const [name, sub] of Object.entries(soll)) expect(stufe(yml, name)).toBe(sub);
+    expect(yml.match(/run: bash scripts\/materialien\/nachzug-stufen\.sh /g)).toHaveLength(Object.keys(soll).length);
+    expect(yml).toMatch(/^ {6}RUN_URL: \$\{\{ github\.server_url \}\}\/\$\{\{ github\.repository \}\}\/actions\/runs\/\$\{\{ github\.run_id \}\}$/m);
+    for (const name of ['Nachzug + Rauschschutz', 'PR eröffnen']) expect(schritt(yml, name)).toContain('DATUM: ${{ steps.datum.outputs.iso }}');
   });
 
   it('nie Auto-Merge; Token-Fallback; CI per workflow_dispatch angestossen', () => {
-    expect(yml).not.toMatch(/gh pr merge|--auto\b/);
-    expect(yml).toContain('GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}');
-    expect(yml).toContain('gh workflow run ci.yml --ref "$branch"');
+    expect(yml + SKRIPT).not.toMatch(/gh pr merge|--auto\b/);
+    expect(schritt(yml, 'PR eröffnen')).toContain('GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}');
+    expect(zweig(stufe(yml, 'PR eröffnen'))).toContain('gh workflow run ci.yml --ref "$branch"');
   });
 
   it('S1: rote Stufe — Widerspruch ODER (Nachzug ∧ Tore rot); Werkzeugfehler färbt über die Stufe selbst', () => {
@@ -508,9 +533,9 @@ describe('Workflow materialien-nachzug.yml', () => {
     expect(wahr({ lauf: { status: 'keine', widerspruch: '', zettel: 'anlegen' } })).toBe(false);
     expect(wahr({ lauf: { status: 'anfuegung', widerspruch: '', zettel: 'schliessen' }, tore: { rc: '0' } })).toBe(false);
     // Werkzeugfehler: Exit 1 der Stufe «Nachzug» färbt den Lauf selbst — nichts darf das schlucken.
-    expect(yml).not.toMatch(/continue-on-error/);
+    expect(yml + SKRIPT).not.toMatch(/continue-on-error/);
     expect(zeilen[zeilen.findIndex((z) => z.includes('- name: Nachzug + Rauschschutz')) + 1]).toMatch(/^\s+id: lauf$/);
-    expect(runBlock(yml, 'Nachzug + Rauschschutz')).toMatch(/^set -euo pipefail$/m);
+    expect(zweig(stufe(yml, 'Nachzug + Rauschschutz'))).toMatch(/^set -euo pipefail$/m);
   });
 
   it('B1/B2: Stufe «Nachzug» holt offene PR-Köpfe, Pause- und Netz-Zettel VOR dem Bot-Aufruf und reicht sie durch', () => {
@@ -523,8 +548,7 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
 `);
     writeFileSync(join(dir, 'npm'), `#!/usr/bin/env bash\necho "npm $* | $AUSLOESER | $PAUSE_ZETTEL | $NETZ_ZETTEL | $OFFENE_KOEPFE" >> "${log}"\n`);
     for (const n of ['gh', 'npm']) chmodSync(join(dir, n), 0o755);
-    const block = runBlock(yml, 'Nachzug + Rauschschutz').replace('${{ steps.datum.outputs.iso }}', '2026-10-12');
-    const r = spawnSync('bash', ['-c', block], { encoding: 'utf8', env: { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule', GITHUB_REPOSITORY: 'o/r' } });
+    const r = fahreSchritt(yml, 'Nachzug + Rauschschutz', { PATH: `${dir}:${process.env.PATH}`, QUELLEN: '', AUSLOESER: 'schedule', DATUM: '2026-10-12', GITHUB_REPOSITORY: 'o/r' });
     expect(r.status).toBe(0);
     const z = readFileSync(log, 'utf8').trim().split('\n');
     expect(z[0]).toMatch(/^gh pr list --state open --limit \d+ --json headRefName /);
@@ -533,7 +557,7 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
     expect(z[3]).toBe('npm run materialien:nachzug -- --datum=2026-10-12 --quellen= | schedule | 23 | 17 | feat/x');
     expect(z[4]).toBe('chore/materialien-nachzug-2026-10-05');
     expect(yml).toMatch(/AUSLOESER: \$\{\{ github\.event_name \}\}/);
-    expect(yml).toContain(`branch="${NACHZUG_ZWEIG_PRAEFIX}\${DATUM}"`);
+    expect(zweig(stufe(yml, 'PR eröffnen'))).toContain(`branch="${NACHZUG_ZWEIG_PRAEFIX}\${DATUM}"`);
   });
 
   describe('Netz-Zettel-Stufe gegen Ersatz-gh', () => {
@@ -542,10 +566,7 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
       const log = join(dir, 'log');
       writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash\necho "gh $1 $2 $3 $4 $5" >> "${log}"\nexit ${ghExit}\n`);
       chmodSync(join(dir, 'gh'), 0o755);
-      const r = spawnSync('bash', ['-c', runBlock(yml, 'Netz-Zettel pflegen')], {
-        encoding: 'utf8',
-        env: { PATH: `${dir}:${process.env.PATH}`, AKTION: aktion, NR: '17', NETZFEHLER: 'estv-mwst: x', RUN_URL: 'https://x/1' },
-      });
+      const r = fahreSchritt(yml, 'Netz-Zettel pflegen', { PATH: `${dir}:${process.env.PATH}`, AKTION: aktion, NR: '17', NETZFEHLER: 'estv-mwst: x', RUN_URL: 'https://x/1' });
       return { status: r.status, out: r.stdout, aufrufe: existsSync(log) ? readFileSync(log, 'utf8').trim().split('\n') : [] };
     }
     it('Stufe läuft genau bei gesetzter Aktion, mit github.token', () => {
@@ -681,15 +702,12 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
   });
 
   describe('Pause-Zettel-Stufen gegen Ersatz-gh', () => {
-    function fahre(schritt: string, env: Record<string, string>, ghExit = 0, offen = '') {
+    function fahre(name: string, env: Record<string, string>, ghExit = 0, offen = '') {
       const dir = mkdtempSync(join(tmpdir(), 'mat-pz-'));
       const log = join(dir, 'log');
       writeFileSync(join(dir, 'gh'), `#!/usr/bin/env bash\necho "gh $1 $2 $3 $4 $5" >> "${log}"\nif [ "$1" = api ]; then echo "${offen}"; fi\nexit ${ghExit}\n`);
       chmodSync(join(dir, 'gh'), 0o755);
-      const r = spawnSync('bash', ['-c', runBlock(yml, schritt)], {
-        encoding: 'utf8',
-        env: { PATH: `${dir}:${process.env.PATH}`, RUN_URL: 'https://x/1', GITHUB_REPOSITORY: 'o/r', LAUF: 'success', WIDERSPRUCH: '', TORE: '', ZETTEL: '', NR: '23', ...env },
-      });
+      const r = fahreSchritt(yml, name, { PATH: `${dir}:${process.env.PATH}`, RUN_URL: 'https://x/1', GITHUB_REPOSITORY: 'o/r', LAUF: 'success', WIDERSPRUCH: '', TORE: '', ZETTEL: '', NR: '23', ...env });
       return { status: r.status, out: r.stdout, aufrufe: existsSync(log) ? readFileSync(log, 'utf8').trim().split('\n') : [] };
     }
     const ROT = 'Bei Rot — Pause-Zettel';
@@ -698,7 +716,7 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
       expect(a.status).toBe(0);
       expect(a.aufrufe[1]).toBe(`gh label create ${PAUSE_ZETTEL_LABEL} --color D93F0B`);
       expect(a.aufrufe[2]).toBe(`gh issue create --label ${PAUSE_ZETTEL_LABEL} --title`);
-      const b = runBlock(yml, ROT);
+      const b = zweig(stufe(yml, ROT));
       expect(b).toContain('Nach Reparatur: workflow_dispatch; ein grüner Lauf schliesst den Zettel.');
       const k = fahre(ROT, { ZETTEL: 'kommentieren' }, 0, '41');
       expect(k.aufrufe[1]).toMatch(/^gh issue comment 41 --body Lauf ROT am \d{4}-\d{2}-\d{2}: zweiter Netzfehler beim Nachladen in Folge; Nach Reparatur/);
@@ -713,16 +731,14 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
   });
 
   it('Staging = genau ERLAUBTE_PFADE (eine Liste, zwei Leser)', () => {
-    const m = /git add -A -- (.+)$/m.exec(yml);
+    const m = /git add -A -- (.+)$/m.exec(zweig(stufe(yml, 'PR eröffnen')));
     expect(m).not.toBeNull();
     expect(m![1].trim().split(/\s+/)).toEqual([...ERLAUBTE_PFADE]);
   });
 
   describe('PR-Stufe gegen Ersatz-git/gh', () => {
     let dir: string;
-    let block: string;
     beforeAll(() => {
-      block = runBlock(yml, 'PR eröffnen');
       dir = mkdtempSync(join(tmpdir(), 'mat-nz-'));
       mkdirSync(join(dir, 'bin'));
       for (const name of ['gh', 'git']) {
@@ -738,13 +754,10 @@ case "$*" in *'labels=alarm:materialien-nachzug-netz&'*) echo 17 ;; *'labels=ala
       const log = join(dir, `log-${Math.random().toString(36).slice(2)}`);
       const tmp = mkdtempSync(join(dir, 't-'));
       writeFileSync(join(tmp, 'pr-body.md'), 'Text\n');
-      const r = spawnSync('bash', ['-c', block], {
-        encoding: 'utf8',
-        env: {
-          PATH: `${join(dir, 'bin')}:${process.env.PATH}`, LOG: log, NACHZUG_TMP: tmp,
-          DATUM: '2026-10-12', QUELLEN_LAUF: 'seco', TORE: '0', GITHUB_SERVER_URL: 'https://x', GITHUB_REPOSITORY: 'o/r', GITHUB_RUN_ID: '1',
-          ...env,
-        },
+      const r = fahreSchritt(yml, 'PR eröffnen', {
+        PATH: `${join(dir, 'bin')}:${process.env.PATH}`, LOG: log, NACHZUG_TMP: tmp,
+        DATUM: '2026-10-12', QUELLEN_LAUF: 'seco', TORE: '0', GITHUB_SERVER_URL: 'https://x', GITHUB_REPOSITORY: 'o/r', GITHUB_RUN_ID: '1',
+        ...env,
       });
       return { status: r.status, aufrufe: existsSync(log) ? readFileSync(log, 'utf8').trim().split('\n') : [] };
     }
