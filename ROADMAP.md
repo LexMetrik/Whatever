@@ -54,7 +54,7 @@ Schlusstitel, Anhänge, Tabellen an ihrem Platz) und **schneller als auf Fedlex*
 
 | Merkmal | Messung je Lieferung von ≤ 500 Erlassen (Messlauf, kein Tor) | erfüllt, wenn | heute (5.10.2026) |
 |---|---|---|---|
-| jedes | Fedlex-Abfrage: geltende Erlasse mit deutscher Fassung, die bei uns fehlen | 0 | 231 Snapshot-Dateien (`ls public/normtext/bund/*.json \| wc -l`); Fahrplan nennt 238 gepinnte Erlasse, Differenz 7 ungeklärt; Ziel ~5100 (Schätzung) |
+| jedes | Fedlex-Abfrage: geltende Erlasse mit deutscher Fassung, die bei uns fehlen | 0 | 231 Snapshot-Dateien (`ls public/normtext/bund/*.json \| wc -l`); Fahrplan nennt 238 gepinnte Erlasse, Differenz 7 ungeklärt — *geklärt 6.10.:* 238 = Bund-Register am 2.9. (227 snapshot, 9 nur-live-link, 2 pdf-embed; d49b9e3d8), keine Pinzahl; heute 231 Pins, Register 241; Ziel ~5100 (Schätzung) |
 | vollständig | offene R-Fehler zu Textverlust, «aufgehoben», «Gilt seit» + Stichprobe ≥ 10 Erlasse Artikel für Artikel gegen Fedlex | 0, Stichprobe ohne Abweichung | 83 R-Zeilen im Fehlerbestand Bereich 1 (nicht alle betreffen diese Merkmale) |
 | strukturgleich | je Erlass Zählung Gliederung, Randtitel, Fussnoten, Schlusstitel, Anhänge, Tabellen bei uns und bei Fedlex | 0 Abweichungen | nicht gemessen |
 | schneller | Zeit bis zum ersten lesbaren Artikel, gleiches Gerät/Netz, Fedlex daneben: OR, ZGB, grosse Verordnung | alle drei schneller | nicht gemessen (laut Merkzettel OR 3,5 s oder 11,3 s) |
@@ -117,6 +117,8 @@ Reihenfolge) — erste F-Zeile im EINGANG.
 - I · 6.10. · ZH-Generator nicht je Erlass fahrbar (--nur überspringt ZH ⇒ 110 Datums-Änderungen); 68 ZH_ZURUECKGESTELLT ohne Auflöser — ruht mit Kantonstext bis Phase 2
 - I · 6.10. · Normtext-Daten-PR fällt in der CI Projektion für Projektion: report:confidence --schreibe ändert confidence.json (Tabelle dokument trägt es byte-genau) ⇒ danach datenhaltung:manifest rot; Checks-Job bricht beim ersten Rot ab; danach noch check:feed (gen:feed) — #1329: 3 rote Läufe, 2 Nach-Verdikte — Wurzel: Nachzug fährt report:confidence → datenhaltung:manifest → projektionen selbst, oder Skript «alle Schritte des Checks-Jobs lokal» (npm-Skript, aus ci.yml abgeleitet)
 - I · 6.10. · Doku pdf-netz nennt EMRK/NYÜ, seit 14.9. nur NYÜ (Runner-Kommentar, Fahrplan, Workflow)
+- R · 6.10. · Sammelcodes ag_/sg_gerichte setzen pauschal einen Gerichtsnamen (AG VBE.2024.399 Versicherungsgericht als «Obergericht AG»): Tor Präfix→Gericht — Dach QS-KORPUS, JETZT URTEILE, FB U-24
+- I · Auftrag David 6.10. · Omnilex-Sichtung: 7 Posten U2–U8 mit Reihenfolge (Datums-Tor zu GILTSEIT, Ausgang-Label wartet auf David) — bibliothek/recherche/omnilex-app-sichtung-2026-10-06.md §6
 - I · 5.10. · Sessions lassen Worktrees und Zweige nach der Landung liegen (5.10.: 21 Zweige, 6 Worktrees; aufraeumen:git wird nicht gefahren) — Wurzel: automatisch statt Abschluss-Punkt
 - S · 5.10. · Dauer-Wackler reparieren (Go David 05.10.): Wurzelfix je Spec, nicht löschen — Kandidaten aus bibliothek/betrieb/e2e-fang-historie-2026-10-05/spec-tabelle.csv (≥ 7 Flakes, kein Produkt-Fang): leser-v3-suche-ohne-gliederung 13, druck-fundstellen-z2 13, gesetze-ux-9punkte 12 (+7 offen), w224-r11-reiterleiste 11 («auch inaktive Reiter tragen ihre Registerfarbe»: 1. Versuch deterministisch rot 8/8, Ausnahmeliste zurückgebaut, QS-CI-ZEIT E2), leser-v3-blatt 10, tastatur 7; FB S-24 — Dach QS-CI-ZEIT
 - S · 5.10. · e2e/leser-kopf-cls-s3.e2e.ts:80-84 wartet auf den Fedlex-Konsolidierungshinweis an STPO — fällt rot, sobald Fedlex konsolidiert, ohne Defekt (GP #1326) — Dach QS-CI-ZEIT

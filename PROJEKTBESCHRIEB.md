@@ -145,12 +145,15 @@ statische Seiten) läuft. Detail: `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md`.
 - **Korpus-Daten** (Normtexte, Rechtsprechung, Materialien): kanonisch
   in `daten/` als SQLite-Artefakte (normtext.db ~187 MB ·
   rechtsprechung.db ~466 MB · soft-law.db), gespiegelt als HOT-Daten
-  auf Turso (Ist: 1'458 Erlasse / 55'822 Artikel / 5'093 Entscheide);
+  auf Turso (Ist 21.7.2026: 1'458 Erlasse / 55'822 Artikel / 5'093 Entscheide;
+  ausgelieferte Zahlen laufend in `src/data/startseiteZaehler.generated.ts`);
   ausgeliefert als deterministische, byte-gleiche Projektionen nach
   `public/` (Paritäts-Tor) und prerenderte Seiten. Quellen: Fedlex
   (Bund, gepinnte Konsolidierungen), LexWork-API (Kantone),
   OpenCaseLaw/CC0-Korpora (Rechtsprechung; BGer-Massenkorpus 195'342
-  Entscheide in der E3-Pipeline). Details: `FAHRPLAN-DATENHALTUNG.md`.
+  Entscheide lokal in `daten/masse.db` importiert (Stand 29.8.2026, nicht neu
+  gemessen), **nicht ausgeliefert** — Serving wartet auf den VPS-Entscheid).
+  Details: `FAHRPLAN-DATENHALTUNG.md`.
 
 **Routen:** `/` · `/rechner(/:slug)` · `/vorlagen` ·
 `/gesetze(/:ebene/:key)` · `/rechtsprechung(/:key)` ·
@@ -230,10 +233,11 @@ Fedlex-Portfolio: Botschaften, Vernehmlassungen, Staatsverträge,
 AS-Änderungshistorie mit Fassungs-Timeline.
 
 **Rechtsprechung:** amtliche BGE-Bände (404 amtliche BGE nachgezogen)
-plus Entscheid-Korpus (5'093 Entscheide HOT; Besetzung extrahiert:
+plus Entscheid-Korpus (5'093 Entscheide HOT, Ist 21.7.2026; Besetzung extrahiert:
 4'961 Entscheide, 19'467 Richter-Nennungen zugeordnet, Rubrum
 klickbar); Regesten-Extraktion adversarial gegengeprüft;
-BGer-Massenkorpus (191'304 Entscheide 1986–2026, CC0) in Etappen E3 ff.
+BGer-Massenkorpus (191'304 Entscheide 1986–2026, CC0 — Quellzählung Gericht
+`bger`; importiert wurden 195'342, s. oben; 6.10.2026) in Etappen E3 ff.
 (Serving blockiert bis VPS-Entscheid).
 
 **Praxis-Querschnitte auf den Rechnern:** .ics-Export mit
